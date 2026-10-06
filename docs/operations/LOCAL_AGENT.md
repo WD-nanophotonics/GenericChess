@@ -81,6 +81,38 @@ candidate with a fixed existing search configuration and common comparison
 entry; reuse existing recording/state helpers. Broader proofs and new adapters
 should address an observed failure or explicit use, not precede all useful tests.
 
+User2026-10-06 explicitly requested review/discussion of dot's efficiency
+diagnosis. Adopt its practical priority: one repeatable candidate/search comparison,
+then failure-driven improvements. Start with a declared tactical development batch;
+hold rules, horizon, ordering/TT and resource conditions equal across evaluators.
+Record concrete tactical errors, selected moves, completeness and cost. Internal
+score differences or no short mate alone do not measure playing improvement.
+Short games/external references may follow through the same entry; depth2 smoke
+tests do not establish amateur strength or generic-rule transfer. Keep exposed
+data exposed and old proofs intact, without requiring new per-case admission
+reports. Ask dot for a critical objection and one useful next action; do not
+automatically turn its possible risks into tasks. Consultation is not approval.
+
+Same-thread followup efficiency-20261006-01 received a complete dot reply at
+14:04:28 JST (sent14:03:47;41seconds), read all6 posts and preserved raw output.
+Adopt: use existing tactical problems/independent reference answers, fixing
+acceptable move sets and their basis before candidate runs; disputed answers are
+separate, never revised to favor a result. Primary development metric is explicit
+tactical error rate with paired candidate-correct/baseline-wrong and reverse
+counts. Equally acceptable different moves imply no gain. Incomplete search is
+a separate execution failure. Record nodes/time as costs. Then run short games
+without a pass-all gate or searching new problems until a difference appears.
+Do not build a new problem generator. Dot's local search numbers were Agent
+reports, not independently reproduced. Raw receipts/reads are ignored locally;
+thread: https://nanomelon.slack.com/archives/C0C6L21UU20/p1791263068910849
+
+The implemented comparison is documented in CHESS_DEVELOPMENT.md. Original
+reference answers may be nonexhaustive: report agreement, not an asserted
+tactical error rate, until a concrete error has supporting evidence. Keep the
+original answer sets fixed; bounded independent child scores/actual games can
+diagnose errors without turning every case into a certificate. One result file
+and the existing common serializer suffice; raw local histories remain preserved.
+
 ## Finish and limits
 
 Before a final research reply use `session finish --reason REASON --evidence REF`.

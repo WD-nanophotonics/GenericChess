@@ -1,0 +1,28 @@
+{
+  "scope": "exposed short development games; paired colors; truncated games are unfinished, not draws; declared before tactical candidate runs",
+  "source": "initial native Chess and original BK.01/BK.19 (no model-based selection)",
+  "cases": [
+    {
+      "id": "initial",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    },
+    {
+      "id": "BK.01",
+      "fen": "1k1r4/pp1b1R2/3q2pp/4p3/2B5/4Q3/PPP2B2/2K5 b - - 0 1",
+      "accepted_uci": [
+        "d6d1"
+      ],
+      "answer_basis": "python-chess pinned Bratko-Kopec EPD bm; original reference answers, not exhaustive acceptable-move proof",
+      "answer_scope": "curated reference; includes positional problems; nonmatch is not automatically a tactical blunder"
+    },
+    {
+      "id": "BK.19",
+      "fen": "3rr3/2pq2pk/p2p1pnp/8/2QBPP2/1P6/P5PP/4RRK1 b - - 0 1",
+      "accepted_uci": [
+        "e8e4"
+      ],
+      "answer_basis": "python-chess pinned Bratko-Kopec EPD bm; original reference answers, not exhaustive acceptable-move proof",
+      "answer_scope": "curated reference; includes positional problems; nonmatch is not automatically a tactical blunder"
+    }
+  ]
+}

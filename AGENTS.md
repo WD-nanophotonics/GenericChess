@@ -44,6 +44,13 @@ unexposed validation status. Compare methods under the same resource condition
 or report resource/result curves. No result-driven extension of frozen tests,
 runaway jobs, extra fees/workers or access bypass. See LOCAL_AGENT.md Budget.
 
+Current development priority is a runnable candidate, existing fixed search and
+one reusable comparison entry. Limited tactical/game measurements need not first
+have exact WDL, all-defense proofs or independent holdout status; label scope.
+Preserve legality/semantic checks and fair conditions. Broader proofs address
+observed failures or concrete uses. Advisor suggestions are not a branch backlog:
+choose the decision-changing objection and one next action, not every risk.
+
 Before60 minutes, a normal/no-next-action finish is forbidden. Early finish
 requires explicit user stop, actual tool/quota/runtime limit, a genuinely
 necessary user decision, or evidence-supported scientific completion. A missing

@@ -700,6 +700,31 @@ tie-risk evidence now exists; detailed coefficient quality/general strength
 remain OPEN. No human holdout, extra worker, public upload or new approval
 framework supplied these developments.
 
+Current development priority (user/dot efficiency review2026-10-06): combine the
+existing material candidate and production search in one repeatable comparison
+entry. The post-commit depth2/q0/no-TT/no-order exposed controls yielded no
+canonical source-proxy utility gain for contact versus unit: promotion1 versus1,
+R/N capture0 versus0. Narrow full-tie risk proofs are not deployed strength gains.
+Use a declared tactical development sample and concrete errors/cost first;
+exact WDL/all-defense certification is not an entry requirement. Keep semantics,
+exposure and equal configurations truthful. Extend proofs only for observed need.
+
+The runnable entry now exists: scripts/chess_development.py and
+CHESS_DEVELOPMENT.md. All24 original Bratko-Kopec cases run unchanged: fixed
+depth3/native/q0/common-order/TT material hits4/3/1; shared existing dynamic
+ablation2/2/3, nearly twice aggregate cost. Limited Stockfish child references
+show some real material-selection gains and nonexclusive reference answers;
+agreement is not a certified error rate. All48 internal/external games and2008
+played steps replay consistently. Six limited-strength external games yield
+3local wins/1loss/2unfinished; the additional six material-only controls yield
+4losses/2unfinished. Retain the shared activity playing option despite worse
+answer agreement, but neither batch is Elo or amateur/generic strength evidence.
+Default geometric remains a candidate; mixed evidence does not promote dynamic
+terms or fit weights. Actual horizon failures and one played EP noisy omission
+now supply concrete next search repairs. A local generation-delay hook has
+bounded cost/score controls; production unchanged. One reusable result record
+data/chess_development_results_20261006.json replaces per-case admission reports.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.
