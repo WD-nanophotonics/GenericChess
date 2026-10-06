@@ -4086,5 +4086,25 @@
         "capture_qactions": 6
       }
     ]
+  },
+  "suite_line_ending_normalization": {
+    "docs/research/data/chess_development_external_starts.json": {
+      "original_bytes_git_commit": "063721482b826ae51ce616cc368545b04d4b36cc",
+      "original_sha256": "49ae69b974872b771d2cb5b3a81c7b56dfcad15dd95a3e72af3ecfb0e84426fb",
+      "lf_sha256": "7316a2dd96b472d10ec0faded236c48afbe5a92d39da8344707eebdba07ccc80",
+      "change": "CRLF to LF only; parsed JSON unchanged; original report hashes remain bound to original bytes"
+    },
+    "docs/research/data/chess_development_game_starts.json": {
+      "original_bytes_git_commit": "063721482b826ae51ce616cc368545b04d4b36cc",
+      "original_sha256": "30d34a08b78b76c54c920e09dd3e70ab288d0771b58ab25e4a1ec9e77555e0c7",
+      "lf_sha256": "4b69cdf008e1771e4af12cf265bc1b56e0483524b55a728d372f43c3640df54f",
+      "change": "CRLF to LF only; parsed JSON unchanged; original report hashes remain bound to original bytes"
+    },
+    "docs/research/data/chess_development_suite.json": {
+      "original_bytes_git_commit": "063721482b826ae51ce616cc368545b04d4b36cc",
+      "original_sha256": "2eb628d404226400bdb6ff87b7779fe638e1f2e06c0e75cf6413f891d9b59bed",
+      "lf_sha256": "3d90e8e7dc6c3c0f3942c5ba4bb9b70481e89283587d8cbceb2ba7b671d9788a",
+      "change": "CRLF to LF only; parsed JSON unchanged; original report hashes remain bound to original bytes"
+    }
   }
 }
