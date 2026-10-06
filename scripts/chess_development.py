@@ -107,8 +107,11 @@ def root_from_fen(fen, compiled):
     return state
 
 
-def search_move(state, compiled, policy, limits, *, provider=None, ordering=False, use_tt=False, dynamic=False, tuning=None, _history_witnesses=None):
+def search_move(state, compiled, policy, limits, *, provider=None, ordering=False, use_tt=False, dynamic=False, tuning=None, _history_witnesses=None, capture_risk=False):
     evaluation = evaluator(policy, compiled=compiled, dynamic=dynamic)
+    if capture_risk:
+        from scripts.chess_capture_risk import SemanticHangingRisk
+        evaluation = SemanticHangingRisk(evaluation, provider)
     stats = SearchStatistics()
     wall, cpu = perf_counter(), process_time()
     action, score, pv, reason = run_root_search(
@@ -120,10 +123,13 @@ def search_move(state, compiled, policy, limits, *, provider=None, ordering=Fals
                         score=score, pv=[uci(a) for a in pv], reason=reason,
                         wall_seconds=perf_counter()-wall, cpu_seconds=process_time()-cpu,
                         evaluation_calls=evaluation.calls, statistics=asdict(stats),
-                        integer_weights=evaluation.weights)
+                        integer_weights=evaluation.weights,
+                        capture_risk=(dict(calls=evaluation.risk_calls, queries=evaluation.queries,
+                                           wall_seconds=evaluation.risk_seconds)
+                                      if capture_risk else None))
 
 
-def compare_case(case, compiled, limits, *, provider=None, ordering=False, use_tt=False, dynamic=False, tuning=None):
+def compare_case(case, compiled, limits, *, provider=None, ordering=False, use_tt=False, dynamic=False, tuning=None, capture_risk=False):
     state = root_from_fen(case['fen'], compiled)
     if state.terminal_status.is_terminal:
         raise ValueError(f"terminal tactical root: {case['id']}")
@@ -136,7 +142,7 @@ def compare_case(case, compiled, limits, *, provider=None, ordering=False, use_t
     for policy in POLICIES:
         try:
             action, row = search_move(state, compiled, policy, limits, provider=provider,
-                                      ordering=ordering, use_tt=use_tt, dynamic=dynamic, tuning=tuning)
+                                      ordering=ordering, use_tt=use_tt, dynamic=dynamic, tuning=tuning, capture_risk=capture_risk)
             row['legal'] = row['move'] in legal
             row['completed'] = (row['legal'] and row['reason'] == 'completed_depth'
                                 and row['statistics']['completed_depth'] == limits.max_depth
@@ -185,7 +191,7 @@ def comparison_summary(cases):
                 interpretation='Reference-answer agreement, not proof of tactical error, Elo or generic strength')
 
 
-def play_game(fen, compiled, white, black, limits, max_plies, save_move=None, *, provider=None, ordering=False, use_tt=False, dynamic=False, external=None, tuning=None):
+def play_game(fen, compiled, white, black, limits, max_plies, save_move=None, *, provider=None, ordering=False, use_tt=False, dynamic=False, external=None, tuning=None, capture_risk=False):
     state = root_from_fen(fen, compiled)
     # These are our actual Core-produced positions, as in GameSession. Retain
     # them across played moves; never replace history with a fresh FEN snapshot.
@@ -207,7 +213,7 @@ def play_game(fen, compiled, white, black, limits, max_plies, save_move=None, *,
         else:
             action, row = search_move(state, compiled, policy, limits,
                                       provider=provider, ordering=ordering, use_tt=use_tt, dynamic=dynamic,
-                                      tuning=tuning, _history_witnesses=tuple(witnesses))
+                                      tuning=tuning, _history_witnesses=tuple(witnesses), capture_risk=capture_risk)
         row['ply'] = state.ply_count
         row['side'] = state.position.side_to_move
         row['completed'] = (action in legal and (row['reason'] == 'uci_bestmove' or reason_complete(row, limits)))
@@ -304,6 +310,8 @@ def main(argv=None):
     p.add_argument('--tt', action='store_true', help='fresh per-search production TT, same capacity65536 for all methods')
     p.add_argument('--dynamic', action='store_true', help='shared existing mobility/anchor terms; no coefficient fitting')
     p.add_argument('--pvs', action='store_true', help='existing principal variation search; explicit common search ablation')
+    p.add_argument('--capture-risk', action='store_true', help='opt-in half-discount of semantically pseudo-attacked unprotected inventory; approximate, requires native')
+    p.add_argument('--check-only', action='store_true', help='opt-in mandatory check evasions at otherwise static qdepth0 leaves')
     p.add_argument('--engine', type=Path, help='optional existing local UCI executable for play-uci')
     p.add_argument('--uci-python', type=Path, help='optional local python-chess import root; otherwise use installed package')
     p.add_argument('--opponent-nodes', type=int, default=50000)
@@ -315,6 +323,10 @@ def main(argv=None):
         p.error('finite positive search conditions required; <=60 sec/move, <=200 plies')
     if args.output.exists():
         p.error('output exists; preserve prior results and select another path')
+    if args.capture_risk and not args.native_legality:
+        p.error('capture-risk requires --native-legality')
+    if args.check_only and args.qdepth != 0:
+        p.error('check-only requires --qdepth 0; use ordinary qdepth otherwise')
     if args.mode in ('play-uci', 'reference') and (args.engine is None or args.opponent_nodes <= 0):
         p.error('UCI modes require an engine and positive opponent node limit')
     if args.mode == 'reference' and args.comparison is None:
@@ -327,7 +339,8 @@ def main(argv=None):
                           quiescence_max_depth=args.qdepth, quiescence_hard_max_depth=args.qhard,
                           quiescence_max_nodes=args.nodes, deterministic=True)
     compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
-    tuning = SearchTuning(use_root_tactical=False, use_pvs=args.pvs)
+    tuning = SearchTuning(use_root_tactical=False, use_pvs=args.pvs,
+                          use_check_only_qsearch=args.check_only)
     provider = None
     if args.native_legality:
         from generic_chess.ai.alphabeta.native_legality import NativeSemanticLegalityProvider
@@ -338,7 +351,8 @@ def main(argv=None):
                   producer_sha256={path: hashlib.sha256((ROOT/path).read_bytes()).hexdigest()
                       for path in ('scripts/chess_development.py', 'scripts/chess_approx_static_inventory.py',
                                    'scripts/chess_exact_contact_family.py', 'scripts/research_record.py',
-                                   'generic_chess/ai/alphabeta/search.py', 'generic_chess/ai/alphabeta/quiescence.py')},
+                                   'generic_chess/ai/alphabeta/search.py', 'generic_chess/ai/alphabeta/quiescence.py',
+                                   'scripts/chess_capture_risk.py')},
                   suite_source=suite.get('source'), scope=suite['scope'], limits=asdict(limits),
                   tuning=asdict(tuning), use_tt=args.tt, use_ordering=args.ordering,
                   ruleset_fingerprint=compiled.ruleset_fingerprint, cases=[], games=[])
@@ -348,6 +362,10 @@ def main(argv=None):
     report['ordering_weights'] = evaluator('unit').order_values if args.ordering else None
     report['evaluation_terms'] = ('material + shared existing mobility2/anchor5; residual x100; no promotion bonus'
                                   if args.dynamic else 'material only')
+    report['capture_risk'] = dict(enabled=args.capture_risk, discount='1/2 fixed development hypothesis',
+        scope='Semantic pseudo-attacks; pins/check/recapture/postconditions/off-target capture omissions; no legal-exchange or calibrated-risk claim')
+    if args.capture_risk:
+        report['evaluation_terms'] += ' + half-discount of pseudo-attacked unprotected inventory'
     if provider is not None:
         from generic_chess.native import native_version
         import generic_chess._native_core as extension
@@ -359,7 +377,7 @@ def main(argv=None):
         if args.mode == 'compare':
             for case in suite['cases']:
                 report['cases'].append(compare_case(case, compiled, limits, provider=provider,
-                                                   ordering=args.ordering, use_tt=args.tt, dynamic=args.dynamic, tuning=tuning))
+                                                   ordering=args.ordering, use_tt=args.tt, dynamic=args.dynamic, tuning=tuning, capture_risk=args.capture_risk))
                 report['summary'] = comparison_summary(report['cases'])
                 write_record(args.output, report)
                 print(case['id'], report['summary']['paired'], flush=True)
@@ -371,7 +389,7 @@ def main(argv=None):
                             report['active_game'] = dict(id=case['id'], **game)
                             write_record(args.output, report)
                         game = play_game(case['fen'], compiled, white, black, limits, args.max_plies, save,
-                                         provider=provider, ordering=args.ordering, use_tt=args.tt, dynamic=args.dynamic, tuning=tuning)
+                                         provider=provider, ordering=args.ordering, use_tt=args.tt, dynamic=args.dynamic, tuning=tuning, capture_risk=args.capture_risk)
                         report.pop('active_game', None)
                         report['games'].append(dict(id=case['id'], **game))
                         write_record(args.output, report)
@@ -395,7 +413,7 @@ def main(argv=None):
                             external = UciOpponent(engine, case['fen'], args.opponent_nodes)
                             game = play_game(case['fen'], compiled, white, black, limits, args.max_plies, save,
                                 provider=provider, ordering=args.ordering, use_tt=args.tt,
-                                dynamic=args.dynamic, external=external, tuning=tuning)
+                                dynamic=args.dynamic, external=external, tuning=tuning, capture_risk=args.capture_risk)
                             report.pop('active_game', None)
                             report['games'].append(dict(id=case['id'], **game))
                             write_record(args.output, report)
@@ -408,7 +426,7 @@ def main(argv=None):
             comparison = json.loads(inputs)
             if len(comparison['cases']) != len(suite['cases']):
                 raise ValueError('reference comparison/suite case count differs')
-            if [(c['id'], c['fen'], c['accepted_uci']) for c in comparison['cases']] != [
+            if [(c['id'], c['fen'], sorted(c['accepted_uci'])) for c in comparison['cases']] != [
                     (c['id'], c['fen'], sorted(c['accepted_uci'])) for c in suite['cases']]:
                 raise ValueError('reference comparison/suite cases or answers differ')
             binary_hash = hashlib.sha256(args.engine.read_bytes()).hexdigest()

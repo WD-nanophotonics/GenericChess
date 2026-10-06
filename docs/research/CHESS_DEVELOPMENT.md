@@ -340,6 +340,193 @@ retains all declarations/outcomes/selected moves, full game move streams and
 raw hashes. Per-move game telemetry stays in the untouched local raw run;
 the portable file uses per-game aggregates rather than duplicate private counters.
 
+## Capture-risk development continuation2026-10-06
+
+Before outcomes: test a fixed half-discount of material that is semantically
+pseudo-attacked and not pseudo-protected. This is an explicitly approximate
+leaf residual, not legal exchange value or a calibrated loss probability.
+Use the existing semantic attacked-square API, without changing side/history;
+legacy movement-atoms omit Western Pawn capture rules. Native/Python semantic
+agreement and Pawn/pin/EP scope controls precede the first search. Pins, checks,
+recapture sequences, off-target removals and postconditions are omissions.
+All three inventory candidates receive the same declared law; no Queen-specific
+condition, human-price tuning, answer fitting or new holdout is introduced.
+Measure native packing/query overhead on the actual played trap and selected
+declared controls. If feasible, compare risk off/on at shared3ply/q0/native/
+ordering/TT/PVS/dynamic conditions on the original24 cases, plus the exposed
+actual prefix. Keep every failure and finite source-proxy limitation. This is
+development, not a requirement that every prototype first prove exact WDL.
+
+Followup declared before game outcomes:12 short external games, all three
+unchanged inventory policies, both colors, risk off/on. Shared3ply/q0/PVS/
+native/order/TT/dynamic,32768nodes,5sec,80plies; Stockfish17.1 configured1320,
+50000nodes/1sec,Threads1/Hash16 and original initial position. Weak-choice
+randomness and only one game per cell prevent causal strength/Elo inference.
+Keep terminal versus unfinished, completed search depth and all move streams.
+No answer-agreement pass gate is imposed before playing. This costs at most
+2400 local-search seconds plus bounded opponent/transport, normally much less;
+single local process, progress saved, interruptible. The decision is whether
+the residual merits further playing development rather than default promotion.
+
+Check-only followup declared before its searches: preserve qdepth0 default,
+add opt-in entry to the existing bounded qsearch only when a static leaf is
+in semantic check. It searches all mandatory evasions (including quiet ones)
+and stops at the first noncheck static leaf; no ordinary captures are added.
+Existing hard check depth, node/time, cancellation and terminal gates remain.
+Test checking and nonchecking leaves, terminal priority and hard-limit aborts.
+Compare all24 at identical3ply/q0/PVS/native/order/TT/dynamic32768nodes/5sec,
+risk off/on, with the earlier no-extension records retained. No selective
+answer changes. Then compare ordinary4ply versus check-only4ply on all24 under
+the same32768node/5sec condition to learn depth/completeness/cost tradeoffs,
+risk off in both. This is a resource curve and new explicit feature, not an
+extension of old frozen failed q1 experiments or changed success criterion.
+
+The advisor's same-thread followup is adopted: primary interpretation is risk
+OFF ordinary q0 versus risk OFF check-only, one changed search feature. The
+already declared combined risk-on observations are exploratory, not a common
+repair or prerequisite. Five discrepant selected PV leaves do not estimate
+the incidence across search nodes. Dot reviewed reported evidence, not local
+code execution. No new attacker interface is required for this next action.
+
+Playing followup declared before outcomes: six check-only/risk-OFF external
+games, original initial start, all three policies and both colors. Keep the
+same3ply/q0/PVS/native/order/TT/dynamic32768nodes/5sec/hard8/80plies and pinned
+1320-limited Stockfish50knodes/1sec/Threads1/Hash16 opponent. The earlier six
+risk-OFF games are retained as descriptive comparison, without rerunning them
+or claiming stochastic opponent choices are paired. Unknown: do mandatory
+evasions expose new practical failures or reduce those already observed?
+All outcomes, incomplete searches and full histories remain; no Elo/default
+promotion claim. Expected a few minutes, worst1200 local-search seconds;
+single process, interruptible progress, no external worker/model/cost.
+
+One deterministic playing complement is declared before outcomes: existing
+`play` entry, initial start only, geometric versus linear and versus unit,
+both colors (four games), check-only ON/risk OFF, otherwise identical3ply
+conditions above,80plies. This changes the search premise of older internal
+games. Unknown: do price-dependent trajectories survive the common evasion
+search, and do terminal/repetition paths remain aligned? Report all outcomes
+and moves, not a rating or proof from winning against another weak candidate.
+The geometric/linear pair and color reversal help distinguish unequal prices
+from a single stochastic external-opponent trace. Expected several minutes;
+maximum1600 local-search seconds with saved interruptible progress. No result-
+driven retry or escalation of a frozen test is involved.
+
+The risk experiment completes144/144 paired3ply searches. Hits change2/2/3
+to4/2/2 (geometric/linear/unit), while observed aggregate time rises84.711
+to102.114sec. Finite50knode child-score pairs are mixed: geometric8 improve,
+6 regress,9 equal; linear5/8/10; unit9/7/7, plus one mate-valued pair each.
+BK12 geometric regresses559cp and BK14 geometric/linear549cp. The actual
+prefix changes geometric/linear from f6(-599cp finite Black child) to Ng6
+(-152cp), but unit changes Bxc3(-114cp) to Qxh2(-690cp). A concrete legal
+Ng6,g3,a6,gxh4,Nxh4 trace still trades Queen for Pawn: Boolean protection
+misses exchange magnitude. This is a mechanism counterexample, not a forced
+opponent strategy or exact utility. Risk remains an optional approximation.
+
+All12 risk off/on games complete their declared horizons: off2 local wins,
+1 loss,3 unfinished; on0 wins,1 loss,5 unfinished. All837 played steps match
+author/public complete legal sets, board, rights, raw EP and final Core state.
+Every local move's3ply search completes; outcome difference remains a tiny
+stochastic observation, not evidence of a causal strength decrease.
+
+Primary risk-OFF3ply check-only result (all24 complete for every policy):
+
+| Policy | Finite cp improved / regressed / equal | Sum delta cp | Time off / on sec |
+| --- | --- | --- | --- |
+| geometric | 4 / 4 / 16 | -427 | 29.672 / 34.550 |
+| linear | 3 / 4 / 17 | -950 | 29.272 / 33.935 |
+| unit | 6 / 0 / 18 | +938 | 25.767 / 30.220 |
+
+Original answer hits stay2/2/3. Paired sums are descriptive finite engine
+proxies, not a new pass threshold, calibrated regret or WDL. Combined risk-ON
+check-only comparisons show geometric0/2/21,linear1/0/22,unit2/1/20 cp changes
+plus one mate pair each; no universal common fix appears. Actual played prefix
+all three policies choose Bxc3 with check-only, either risk setting.
+
+Under the SAME five-second4ply curve, ordinary completion is8/9/13 versus
+check-only5/5/9 (30to19/72); all19 jointly completed choices are identical.
+Observed total time is314.615 versus325.497sec. All incomplete time-limit records remain, without
+counting their shallower results as completed4ply. Threeply remains the cheap
+playing condition. Fourply incompleteness is a resource observation, not a
+universal prohibition on future higher-information calculations.14 new finite
+child references reuse91 identical engine/conditions/cache entries; answers
+and exposed status are unchanged. No default search or material price changes.
+
+The six check-only/risk-OFF external games finish: geometric White mates
+at57plies; the other five reach80plies unfinished. All229 local searches
+complete3ply; observed local-search time324.572sec, not an isolated performance
+test. Earlier stochastic risk-OFF2W/1L/3unfinished versus this1W/0L/5unfinished
+does not establish either improvement or loss of strength. Retain all outcomes,
+not only the one mate. The deterministic candidate games and full semantic
+replay provide the next practical checks; no rating claim or price tuning.
+
+Cost followup declared before running: turn ONLY existing PVS OFF for the
+check-only/risk-OFF3ply condition on all24 original cases/allthree policies,
+same32768nodes/5sec/native/order/TT/dynamic. Compare with the saved PVS-ON
+check-only result; no rerun of the latter. Unknown: is the existing PVS saving
+enough work at this new shallow evasion condition to offset part of its cost?
+Report score/action parity, completeness, actual main+q nodes and time; if
+scores differ, preserve the disagreement before considering a search change.
+No new sample, price, feature, API or increased comparison budget is needed.
+
+The four deterministic check-only games finish: geometric White mates unit
+at49plies, reverse colors and both geometric/linear games remain unfinished80.
+Final full-move audit corrects the preliminary completeness summary:287/289
+internal local searches complete3ply. Two geometric Black turns (absolute
+plies43and53 in the last linear/geometric game) hit the five-second limit
+and legally retain completed2ply results. These are preserved incomplete3ply
+searches, not full-depth successes. All ten new games/746plies replay with zero
+complete legal-set, board, rights, raw-EP or final Core-state discrepancies.
+Combined with the twelve risk games this is22 games/1583 actual played plies;
+the internal win shows only a difference between these specific weak players.
+It is neither a human rating nor proof of performance against all responses.
+
+One cost-attribution diagnostic is also declared before execution: profile a
+single geometric/check-only/risk-OFF3ply search on the already exposed actual
+nine-move played prefix, all Core history witnesses retained. Same32768node
+condition,20sec profiling safety fuse (not a strength-comparison extension).
+Unknown: are repeated check queries, leaf dynamics or state/transition work the
+largest actionable cost? Use cProfile call/cumulative/self costs to select one
+next bottleneck, not its instrumented wall time as an optimization speedup.
+Save outcome and profiler output; no new implementation/API follows merely
+from profiling. No unchanged outcome trial or old frozen result is overwritten.
+
+The new check-only3ply PVS comparison completes all72 on both sides; every
+paired action and score matches. PVS reduces main+q nodes179998to146439
+(-18.6%) and observed time122.018to98.704sec(-19.1%). The short746ply replay
+overlapped part of PVS-off execution, so wall improvement is observational;
+node parity/savings do not depend on isolated hardware timing. This supports
+retaining existing PVS, without a new price or global default promotion.
+
+The single actual-prefix profile completes3ply in7.667 instrumented seconds,
+choosing Bxc3. Existing dynamic evaluation consumes3.133 cumulative seconds,
+anchor escape1.884 within it, repeated pseudo-attacks2.925 across callers;
+the new checking-leaf gate itself0.494sec. These categories overlap and cannot
+be added as disjoint shares. Prefer one existing dynamic/attack bottleneck
+investigation over a new attacker API merely to chase one risk failure.
+
+Source inspection gives a NEW semantic concern in the shared residual:
+`Evaluator` uses legacy movement-atom pseudo-attacks for mobility, escapes
+and its check penalty; Western Pawn capture rules are omitted. Two explicit
+minimal Pawn controls demonstrate missed actual check and an unsafe empty
+King escape, with256 native/semantic square-query agreements and unchanged
+states. Diagnostic unscaled dynamics9versus-45 and35versus26 show a concrete
+difference; these are counterfactual values, not a tested replacement or error
+rate. Initial audit mistakenly compared all King moves (including a capture)
+to an empty-square count; it was corrected to the matching empty-target subset.
+Core legality/search checking remains semantic and was not changed. All old
+dynamic comparisons retain their actual legacy residual and cannot be relabeled
+as semantic. Next qualify a cheap semantic shared residual separately, keeping
+prices and search fixed and testing actual usefulness/cost before replacement.
+
+One portable record data/chess_capture_risk_results_20261006.json contains all
+504 full-suite searches (including incomplete4ply), actual-prefix results,
+22 full move streams, finite references, replay, cost and approximation limits.
+Raw local output and failed reference transport remain untouched and hashed.
+Exact intermediate runner/search/tuning bytes are inertly preserved alongside
+the older producer snapshots; positional SearchTuning compatibility is retained
+by appending the new option.115 current regressions and39 historical pin checks
+pass. No default, Core rule, human holdout, extra worker or public push changes.
+
 ## Reuse
 
 The supported deeper material comparison (choose a new output path):

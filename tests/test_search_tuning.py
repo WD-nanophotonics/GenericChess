@@ -26,6 +26,16 @@ def test_tuning_defaults():
     assert t.history_max == 2**16
 
 
+def test_new_check_option_preserves_existing_positional_configuration():
+    t = SearchTuning(True, False, False, False, False, True, False,
+                     75, 6, 8192, 3)
+    assert t.aspiration_delta == 75
+    assert t.aspiration_start_depth == 6
+    assert t.history_max == 8192
+    assert t.quiet_buckets == 3
+    assert t.use_check_only_qsearch is False
+
+
 def test_profiles_map_to_single_features():
     assert not profile_by_name("baseline").tuning.use_pvs
     assert profile_by_name("pvs").tuning.use_pvs

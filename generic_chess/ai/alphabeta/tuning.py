@@ -32,3 +32,7 @@ class SearchTuning:
     aspiration_start_depth: int = 4
     history_max: int = 2**16
     quiet_buckets: int = 8
+
+    # Opt-in: at a static qdepth=0 leaf, search mandatory check evasions only.
+    # Nonchecking leaves keep static evaluation; ordinary captures are not added.
+    use_check_only_qsearch: bool = False

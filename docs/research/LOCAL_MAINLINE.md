@@ -738,6 +738,27 @@ gain. An actual f7f6,g3 trace identifies a checking intermezzo delaying forced
 Queen removal to6halfplies;189 native/public/author legal-set+board checks match.
 CHESS_DEVELOPMENT.md preserves limitations and the next practical game outcomes.
 
+The next practical continuation tests an explicitly approximate half-discount
+of pseudo-attacked unprotected material and mandatory checking-leaf evasions,
+both opt-in. No price fitting or default change. The risk144-search comparison
+and twelve games are mixed; actual legal exchange shows Boolean protection can
+hide Queen-for-Pawn loss. All837 moves replay without semantic discrepancies.
+Primary riskoff check-only3ply completes all72, unit finite child proxies improve
+six/no regressions, while geometric/linear have large negatives. Time+16.5%;
+five-second4ply completion drops30to19/72 and the19 shared choices are identical.
+Six new external check-only games yield1win/5unfinished, all229 local searches
+complete, without a rating/causal-strength claim. CHESS_DEVELOPMENT.md carries
+the all-case outcomes, advisor single-variable interpretation and deterministic
+playing/PVS cost continuation. PVS3 retains all72 identical moves/scores with
+18.6% fewer total nodes. Profiling identifies shared dynamics as a major cost;
+two new Pawn controls then expose missed check and unsafe empty King escape
+in its legacy geometry. Core legality/checking stays semantic. Qualify a cheap
+semantic shared residual separately; old outcomes retain their actual legacy
+term. All22 new games/1583plies replay consistently; two internal turns retain
+2ply after time limits rather than complete3ply.115 current and39 historical
+tests pass. Useful practical behavior, not a universally
+calibrated residual or completion of the generic prior objective, is the target.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.

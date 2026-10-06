@@ -215,6 +215,19 @@ def _ordinary_qdepth_limit(ctx: _Context) -> int:
     if ctx.first_main_iteration_complete is False:
         return 0
     return ctx.qdepth_limit
+
+
+def _leaf_requires_qsearch(state, ctx: _Context) -> bool:
+    if ctx.qdepth_limit > 0:
+        return True
+    if not ctx.tuning.use_check_only_qsearch:
+        return False
+    engine = semantic_engine_for(ctx.compiled)
+    side = state.position.side_to_move
+    return (engine.in_check(state.position, side, checkpoint=ctx.checkpoint)
+            if engine is not None else is_in_check(state.position, side, ctx.compiled))
+
+
 def _tt_key(state: GameState, compiled) -> SearchStateIdentity:
     """Build the authoritative, path-aware search/transposition identity."""
     return search_state_identity(state, compiled)
@@ -246,11 +259,11 @@ def negamax(
     if winning is not None:
         return SearchResult(MATE_SCORE - ply, None, (), winning)
     if depth <= 0:
-        # An explicit qdepth=0 caller retains the historical static-eval
-        # contract.  The F35 reserve applies to the production qdepth=4
+        # qdepth=0 retains static evaluation unless check-only is opted in.
+        # The F35 reserve applies to the production qdepth=4
         # run-root path while still entering qsearch before its first
         # completed iteration.
-        if ctx.qdepth_limit > 0:
+        if _leaf_requires_qsearch(state, ctx):
             with ctx.recorder.time_block(AuditMetric.QUIESCENCE):
                 score = quiescence(state, alpha, beta, ply, 0, ctx)
         else:

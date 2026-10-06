@@ -1,0 +1,27 @@
+{
+  "scope": "Inert exact uncommitted producer bytes before whitespace/positional-compatibility cleanup, no active imports or policy",
+  "archive": "docs/archive/development_before_20261006_qfix/check_only_before_cleanup_sources.zip",
+  "sources": {
+    "scripts/chess_development.py": {
+      "bytes": 29094,
+      "sha256": "ec67ff5801fcbd33219e54f353dfb2d484b800dc35ea7c17bb03e6c1ba3daa1c"
+    },
+    "generic_chess/ai/alphabeta/search.py": {
+      "bytes": 45732,
+      "sha256": "588b84288d69187847b244189cd04342f2fa206fb6ff9201f2578cce35f9768e"
+    },
+    "generic_chess/ai/alphabeta/tuning.py": {
+      "bytes": 1468,
+      "sha256": "596ad2d343d30478c918815ec19bfad6cac98b651db53e8ab6c515a2a6d3a7cf"
+    },
+    "scripts/chess_capture_risk.py": {
+      "bytes": 2873,
+      "sha256": "a2c8a7061d2ef735366d9b6b49d55034d45f1b96ab5f4f42154a293f961b2258"
+    }
+  },
+  "pilot_runner": {
+    "git_revision": "4fe58477db8a04e60b311ce1abbafb10912740ed",
+    "path": "scripts/chess_development.py",
+    "sha256": "76397d03a74561e97865f7a7d889415a4c28aa0db11d2308b2d85f82f8642ce6"
+  }
+}
