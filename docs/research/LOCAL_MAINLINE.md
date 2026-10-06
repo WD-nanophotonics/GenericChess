@@ -863,6 +863,23 @@ Next one common positional pilot at explicit Pawn208 scale or targeted resource
 allocation; continue playable feedback, no price fitting/default promotion.
 CHESS_DEVELOPMENT.md and the two20261007 data indexes preserve exact ZIP evidence.
 
+Targeted common1/4sec pilot retains23game streams plus75ply recording failure;
+targeted11wins/1unfinished versus fixed4 eight wins/one loss/two unfinished,
+plus the interrupted cell. Eleven complete pairs save4.387percent measured
+local search wall, but strong per-cell cost/unfinished reversals remain;
+optional development only, no default/Elo/price inference. Replay2561played+
+96prefixplies zero differences,28checks pass. Avoid long Windows reads of
+active atomic reports; preserve failure, never silently rerun the cell.
+Common nonroyal attack-union pilot at4native units/Pawn208 passes60static
+controls under approval-reviewed execution. Root16 helps unit but slightly
+regresses geometric/linear; root32 improves all finite child proxies. Next
+prospectively compare unchanged pure/activity builds in actual small games,
+not coefficient fitting or broader proof gates. Shogi19legal prefix plies
+reach five checked evasions; q0andunitq2 finish2ply, geometricq2 stays depth1
+partial at both10/20sec symmetric conditions. Preserve both failures and
+investigate actual filtering cost if returning. Compact data/verified ZIPs:
+data/chess_targeted_budget_20261007.json, CHESS_DEVELOPMENT.md. Science OPEN.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.

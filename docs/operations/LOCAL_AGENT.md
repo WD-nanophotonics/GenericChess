@@ -113,6 +113,13 @@ original answer sets fixed; bounded independent child scores/actual games can
 diagnose errors without turning every case into a certificate. One result file
 and the existing common serializer suffice; raw local histories remain preserved.
 
+On Windows, do not hold a large active JSON report open with `Get-Content`
+while its producer uses atomic replacement. An observed long read interrupted
+a game with WinError5; the previous frontier survived. Monitor producer stdout
+and read completed reports, or use a reader explicitly sharing delete access.
+Keep an interrupted sample distinct from a capped unfinished game; preserve the
+old report and continue untouched declared cells, without silently rerunning it.
+
 ## Finish and limits
 
 Before a final research reply use `session finish --reason REASON --evidence REF`.

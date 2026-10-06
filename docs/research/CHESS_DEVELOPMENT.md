@@ -1182,3 +1182,81 @@ failed masking prediction, naive phase probes and corrected direct observations.
 28 adapter/development/record tests pass again; no production code changes.
 Native CPU/cache/leaf and exact model-token costs remain unavailable, not zero.
 No human-label fitting, Xiangqi holdout read, extra worker, Goal or public push.
+
+## Common activity and targeted time pilot20261007
+
+Before outcomes, declare one nonroyal pseudo-attack union residual:4native
+units per unique attacked square, at common Pawn208 (1.923cp/square), all
+three frozen tables. It includes friendly occupied and pinned-piece attack
+squares, excludes King attacks, and is not legal mobility or king safety.
+An isolated Eval object links with original hashed search objects in2.025sec;
+pure source/binary remain unchanged. Initial managed execution blocks the
+new executable (WinError4551) before the first static control. Retain that
+failure; subsequent approval-reviewed execution is reported below, without
+changing machine policy or inferring playing strength.
+
+Switch to the declared resource alternative:4sec on check or any legal capture,
+otherwise1sec, same rule for all tables. Compare to fixed4sec on the same two
+prefixes, colors and1800-configured reference, Threads1/Hash16/160ply maximum.
+This policy is independent of scores/outcomes; preserve every positive/adverse
+cell, no retuning or extra result-driven cells. On the exposed unfinished
+linear history its first40plies would request56rather than80local seconds,
+but it is not a positional-evaluation repair.
+
+A recording failure interrupts the third cell after75persisted plies: a
+concurrent long PowerShell read of the active single-line JSON holds a Windows
+handle and os.replace receives WinError5, including the final save. Previous
+evidence remains intact. Preserve the original report, skip that interrupted
+cell, continue the remaining declared cells into a separate report. Outcomes
+and cost comparisons must separate interrupted/unfinished; paired cost
+summaries exclude both members of the interrupted pair. Do not hold an active
+large report open during writes; stdout is sufficient progress monitoring.
+
+After the timed batch, normal approval-reviewed execution runs the unchanged
+activity build without modifying system policy. All60 independent python-chess
+pseudo-attack count, mirror, side-to-move and table controls pass. At exposed
+actual root16, activity selectsBa3 for all three tables: finite strong child
+proxy-117cp, versus pure geometric/linearRa2-109 and unitf3-171. Thus it helps
+unit on this root but preserves an adverse8cp geometric/linear difference.
+At root32 all three changeKe1(-321) toKg2(-255). These two finite diagnostic
+points motivate prospective small games, not WDL, strength or default promotion;
+the coefficient remains the one declared before outcomes, no price tuning.
+
+Declared time pilot retains23 complete game streams and one75ply recording
+interruption. Targeted: geometric4wins, linear4wins, unit3wins/1unfinished.
+Fixed4: geometric3wins/1recording interruption, linear3wins/1loss,
+unit2wins/2unfinished. The interrupted sample is never counted as a draw/loss.
+The11complete root/color/table pairs request2124/2236local seconds and measure
+2037.102/2130.581search wall seconds: targeted4.387percent less measured local
+search time, nodes6804276341/7025187485. Paths are independently stochastic,
+small and exposed; not deterministic paired strength/price/Elo validation.
+Strong adverse cells remain: open linearBlack249vs148requested seconds;
+central geometricBlack243vs108; open unitWhite209unfinishedvs196win.
+Targeting is an optional further-development policy, not a default replacement.
+Continuation wall4138.920sec covers remaining21games only; its persisted
+recording counter70.269sec/3138373051bytes excludes the final write. The first
+failed batch's lost action/write cost is unknown; never report it as zero.
+All24streams replay2561persisted played+96prefixplies: author/Core legality,
+full final histories on23streams, and all budget predicates agree. The partial
+stream has legal prefix validation, not a complete terminal-state certificate.
+
+Standard Shogi now has a19ply legal cooperative capture/promotion/drop prefix
+from initial full stock/history, ending in a Pawn-protected checking Bishop
+drop and five evasions. This is a constructed development control, not a
+representative game. At2ply/2048nodes/10sec q0geometric Gd9xd8(-44092) and
+unit Rh8xd8(-200000) finish; unitq2 retains choice/score and finishes.
+Geometricq2 instead returns a depth1 partial Rh8xd8(+993), time-limited,
+with21406runtime pushes. A separately declared symmetric4096node/20sec
+continuation retains that failure: depth1,42127pushes; q0andunit results remain.
+No more blind extension or defaultq2 promotion. Candidate filtering cost is a
+concrete next diagnostic; immediate terminal quiet actions cannot be blindly
+excluded. All eight searches retain actual counters and balanced paths.
+
+28related adapter/development/atomic-record tests pass. Production search,
+price/defaults and old qualification records remain unchanged. Exact raw
+records and inert producer sources are verified ZIPs under
+../archive/development_targeted_budget_20261007; the compact data index is
+`data/chess_targeted_budget_20261007.json`, SHA256
+42b954cdbc1b4c969976d3f0a5f310a612093faf2e2745a00d39b6fa8d460e00.
+Native CPU/cache/leaf and exact engineering/model-token costs remain unavailable.
+No human fitting, Xiangqi holdout access, worker, Goal or public push.
