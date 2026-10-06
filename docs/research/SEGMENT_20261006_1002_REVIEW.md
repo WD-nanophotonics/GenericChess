@@ -29,6 +29,12 @@ Actual chain, with each milestone followed by the next executed question:
 13. Construct context/dependent-duration normalizer counterexamples and TV
     bounds. Derive conditional109-event exchange cost and inspect the missing
     source automatic-draw contract before any new trial.
+14. AFTER tested publication, continue source-adjudicated task analysis:
+    automatic draws cap exchange at the enemy layer. A broader root population
+    fits106 transitions/4972 charged entries under explicit stricter120-proposal
+    assumptions; no new trial is run or old failed proposal stream restarted.
+    See ADJUDICATED_FIRST_QUIET_ADMISSION.md. These are structural bounds,
+    not runtime/legality qualification or positive proxy evidence.
 
 Daily advisor request was sent once. Exact native arguments, successful receipt
 and full readback are bound. One1026 DOT_REPLY was fully read/reconciled and
