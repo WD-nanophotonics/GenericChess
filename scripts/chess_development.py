@@ -6,6 +6,7 @@ Reference-answer misses are not automatically proven tactical mistakes.
 from __future__ import annotations
 
 import argparse
+from contextlib import ExitStack
 from dataclasses import asdict, replace
 from fractions import Fraction
 import hashlib
@@ -113,6 +114,23 @@ def root_from_fen(fen, compiled):
     return state
 
 
+def replay_prefix(fen, compiled, prefix=(), players=()):
+    """Retain actual Core and UCI histories, rather than importing the last FEN."""
+    state = root_from_fen(fen, compiled)
+    witnesses = [state.position]
+    for move in prefix:
+        if state.terminal_status.is_terminal:
+            raise ValueError('opening prefix continues after terminal position')
+        legal = {uci(a): a for a in iter_legal_actions(state, compiled)}
+        if move not in legal:
+            raise ValueError(f'illegal opening prefix move: {move}')
+        state = apply_action(state, legal[move], compiled)
+        witnesses.append(state.position)
+        for player in players:
+            player.push(move, state)
+    return state, witnesses
+
+
 def search_move(state, compiled, policy, limits, *, provider=None, ordering=False, use_tt=False, dynamic=False, tuning=None, _history_witnesses=None, capture_risk=False):
     evaluation = evaluator(policy, compiled=compiled, dynamic=dynamic, provider=provider)
     if capture_risk:
@@ -136,7 +154,8 @@ def search_move(state, compiled, policy, limits, *, provider=None, ordering=Fals
 
 
 def compare_case(case, compiled, limits, *, provider=None, ordering=False, use_tt=False, dynamic=False, tuning=None, capture_risk=False):
-    state = root_from_fen(case['fen'], compiled)
+    prefix = case.get('opening_uci', ())
+    state, witnesses = replay_prefix(case['fen'], compiled, prefix)
     if state.terminal_status.is_terminal:
         raise ValueError(f"terminal tactical root: {case['id']}")
     legal = {uci(a): a for a in iter_legal_actions(state, compiled)}
@@ -148,7 +167,8 @@ def compare_case(case, compiled, limits, *, provider=None, ordering=False, use_t
     for policy in POLICIES:
         try:
             action, row = search_move(state, compiled, policy, limits, provider=provider,
-                                      ordering=ordering, use_tt=use_tt, dynamic=dynamic, tuning=tuning, capture_risk=capture_risk)
+                                      ordering=ordering, use_tt=use_tt, dynamic=dynamic, tuning=tuning,
+                                      capture_risk=capture_risk, _history_witnesses=tuple(witnesses))
             row['legal'] = row['move'] in legal
             row['completed'] = (row['legal'] and row['reason'] == 'completed_depth'
                                 and row['statistics']['completed_depth'] == limits.max_depth
@@ -162,6 +182,7 @@ def compare_case(case, compiled, limits, *, provider=None, ordering=False, use_t
                        error=f'{type(exc).__name__}: {exc}')
         rows.append(row)
     return dict(id=case['id'], fen=case['fen'], accepted_uci=sorted(accepted),
+                opening_uci=list(prefix),
                 answer_basis=case['answer_basis'], answer_scope=case.get('answer_scope', 'reference'),
                 root_legal_count=len(legal), rows=rows)
 
@@ -175,8 +196,14 @@ def comparison_summary(cases):
             execution_failures=len(rows)-len(complete), reference_hits=sum(r['reference_hit'] for r in complete),
             reference_misses=sum(not r['reference_hit'] for r in complete),
             wall_seconds=sum(r.get('wall_seconds', 0) for r in rows),
-            cpu_seconds=sum(r.get('cpu_seconds', 0) for r in rows),
-            nodes=sum(r.get('statistics', {}).get('nodes', 0) for r in rows))
+            cpu_seconds=(None if any('controller_cpu_seconds' in r for r in rows)
+                         else sum(r.get('cpu_seconds', 0) for r in rows)),
+            controller_cpu_seconds=(sum(r['controller_cpu_seconds'] for r in rows)
+                if rows and all('controller_cpu_seconds' in r for r in rows) else None),
+            nodes=(None if any('engine_nodes' in r for r in rows)
+                   else sum(r.get('statistics', {}).get('nodes', 0) for r in rows)),
+            engine_nodes=(sum(r['engine_nodes'] for r in rows)
+                if rows and all(r.get('engine_nodes') is not None for r in rows) else None))
     paired = {}
     for other in ('unit', 'linear_mixture'):
         count = dict(paired_completed=0, candidate_only_hit=0, other_only_hit=0,
@@ -197,24 +224,29 @@ def comparison_summary(cases):
                 interpretation='Reference-answer agreement, not proof of tactical error, Elo or generic strength')
 
 
-def play_game(fen, compiled, white, black, limits, max_plies, save_move=None, *, provider=None, ordering=False, use_tt=False, dynamic=False, external=None, tuning=None, capture_risk=False):
-    state = root_from_fen(fen, compiled)
+def play_game(fen, compiled, white, black, limits, max_plies, save_move=None, *, provider=None, ordering=False, use_tt=False, dynamic=False, external=None, tuning=None, capture_risk=False, local_external=None, prefix=()):
+    players = tuple(p for p in (external, local_external) if p is not None)
+    state, witnesses = replay_prefix(fen, compiled, prefix, players)
     # These are our actual Core-produced positions, as in GameSession. Retain
     # them across played moves; never replace history with a fresh FEN snapshot.
-    witnesses = [state.position]
     policies = (white, black)
     moves = []
     result = dict(white=white, black=black, initial_fen=fen, moves=moves,
-                  end='ply_limit', winner=None, finished=False)
+                  opening_uci=list(prefix), end='ply_limit', winner=None, finished=False)
     for _ in range(max_plies):
         if state.terminal_status.is_terminal:
             break
         legal = set(iter_legal_actions(state, compiled))
+        if local_external is not None:
+            for player in players:
+                if {m.uci() for m in player.board.legal_moves} != {uci(a) for a in legal}:
+                    raise ValueError('UCI/Core played root legal-set mismatch')
         policy = policies[state.position.side_to_move]
-        if policy == 'uci_reference':
-            if external is None:
+        if policy == 'uci_reference' or local_external is not None:
+            player = external if policy == 'uci_reference' else local_external
+            if player is None:
                 raise ValueError('external player required')
-            move, row = external.choose()
+            move, row = player.choose()
             action = next((a for a in legal if uci(a) == move), None)
         else:
             action, row = search_move(state, compiled, policy, limits,
@@ -231,8 +263,8 @@ def play_game(fen, compiled, white, black, limits, max_plies, save_move=None, *,
         # Fallback choices are playable but recorded separately from completed searches.
         state = apply_action(state, action, compiled)
         witnesses.append(state.position)
-        if external:
-            external.push(uci(action), state)
+        for player in players:
+            player.push(uci(action), state)
         if state.terminal_status != terminal_result(state, compiled):
             raise ValueError('stale terminal after played move')
         if save_move:
@@ -301,6 +333,85 @@ class UciOpponent:
             raise ValueError('external/local EP mismatch')
 
 
+def material_tables():
+    """Frozen PawnEg208 gauge; integer rounding, no outcome-dependent fitting."""
+    return {policy: {kind: round(208*value/evaluator(policy).weights['P'])
+                     for kind, value in evaluator(policy).weights.items()}
+            for policy in POLICIES}
+
+
+def material_config_text():
+    lines = []
+    for policy, weights in material_tables().items():
+        values = ' '.join(f'{kind.lower()}:{value}' for kind, value in weights.items())
+        lines.extend((f'[gc_{policy}:chess]', 'pieceValueMg = '+values,
+                      'pieceValueEg = '+values, ''))
+    return '\n'.join(lines)
+
+
+class UciMaterial(UciOpponent):
+    """Adapter for the documented patched material build; standard Chess only.
+
+    A config cannot establish the Eval hook's semantics. Record the executable
+    hash and retain its source/build/gauge qualification with the experiment.
+    Engine SEE, ordering and pruning remain those of the frozen build.
+    """
+    def __init__(self, engine, fen, policy, seconds):
+        import chess, chess.engine
+        if policy not in POLICIES or not 0 < seconds <= 60:
+            raise ValueError('supported material policy and finite time required')
+        super().__init__(engine, fen, 1)
+        self.policy = policy
+        self.board = type('MaterialBoard', (chess.Board,),
+                          {'uci_variant': 'gc_'+policy})(fen)
+        self.limit = chess.engine.Limit(time=seconds)
+        engine.configure({'Clear Hash': None})
+
+    def choose(self):
+        from chess.engine import INFO_ALL
+        wall, cpu = perf_counter(), process_time()
+        result = self.engine.play(self.board, self.limit, game=self.game, info=INFO_ALL)
+        move = result.move.uci() if result.move else None
+        score = result.info.get('score')
+        score = score.pov(self.board.turn) if score is not None else None
+        return move, dict(policy=self.policy, move=move, reason='uci_bestmove',
+            score=None, score_cp=None if score is None else score.score(),
+            score_mate=None if score is None else score.mate(),
+            wall_seconds=perf_counter()-wall, controller_cpu_seconds=process_time()-cpu,
+            engine_nodes=result.info.get('nodes'), engine_depth=result.info.get('depth'),
+            engine_seldepth=result.info.get('seldepth'), engine_seconds=result.info.get('time'),
+            pv=[m.uci() for m in result.info.get('pv', ())], statistics={},
+            search_completion_scope='UCI bestmove within time limit; not complete fixed-depth search')
+
+
+def compare_material_case(case, compiled, engine, seconds):
+    prefix = case.get('opening_uci', ())
+    state, _ = replay_prefix(case['fen'], compiled, prefix)
+    if state.terminal_status.is_terminal:
+        raise ValueError(f"terminal tactical root: {case['id']}")
+    legal = {uci(a) for a in iter_legal_actions(state, compiled)}
+    accepted = set(case['accepted_uci'])
+    if not accepted or not accepted <= legal:
+        raise ValueError(f"invalid declared answers: {case['id']}")
+    initial = record_value(state)
+    rows = []
+    for policy in POLICIES:
+        player = UciMaterial(engine, case['fen'], policy, seconds)
+        replay_prefix(case['fen'], compiled, prefix, (player,))
+        if {m.uci() for m in player.board.legal_moves} != legal:
+            raise ValueError('material/Core root legal-set mismatch')
+        move, row = player.choose()
+        row.update(legal=move in legal, completed=move in legal,
+                   reference_hit=(move in accepted) if move in legal else None,
+                   state_preserved=record_value(state) == initial)
+        if not row['state_preserved']:
+            raise ValueError('material search mutated public root')
+        rows.append(row)
+    return dict(id=case['id'], fen=case['fen'], opening_uci=list(prefix),
+                accepted_uci=sorted(accepted), answer_basis=case['answer_basis'],
+                answer_scope=case.get('answer_scope', 'reference'), root_legal_count=len(legal), rows=rows)
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('mode', choices=('compare', 'play', 'play-uci', 'reference'))
@@ -323,12 +434,24 @@ def main(argv=None):
     p.add_argument('--capture-risk', action='store_true', help='opt-in half-discount of semantically pseudo-attacked unprotected inventory; approximate, requires native')
     p.add_argument('--check-only', action='store_true', help='opt-in mandatory check evasions at otherwise static qdepth0 leaves')
     p.add_argument('--engine', type=Path, help='optional existing local UCI executable for play-uci')
+    p.add_argument('--material-engine', type=Path, help='opt-in qualified pure-material Fairy build for compare/play-uci')
+    p.add_argument('--material-config', type=Path, help='exact frozen gc_* Pawn208 config; requires --material-engine')
     p.add_argument('--uci-python', type=Path, help='optional local python-chess import root; otherwise use installed package')
     p.add_argument('--opponent-nodes', type=int, default=50000)
     p.add_argument('--comparison', type=Path, help='saved compare report for optional independent reference')
     p.add_argument('--reference-cache', type=Path, help='reuse identical pinned engine/condition/FEN child references')
     p.add_argument('--max-plies', type=int, default=40)
     args = p.parse_args(argv)
+    if bool(args.material_engine) != bool(args.material_config):
+        p.error('material-engine and material-config must be supplied together')
+    if args.material_engine:
+        if args.mode not in ('compare', 'play-uci'):
+            p.error('material backend supports compare or play-uci only')
+        if any((args.native_legality, args.ordering, args.tt, args.dynamic, args.pvs,
+                args.qordering, args.qcaptures_only, args.capture_risk, args.check_only, args.qdepth)):
+            p.error('local production-search switches do not configure the material UCI backend')
+        if args.material_config.read_text(encoding='utf-8') != material_config_text():
+            p.error('material config differs from frozen Pawn208 tables')
     if args.depth < 1 or args.nodes < 1 or args.qdepth < 0 or args.qhard < args.qdepth or not 0 < args.seconds <= 60 or not 1 <= args.max_plies <= 200:
         p.error('finite positive search conditions required; <=60 sec/move, <=200 plies')
     if args.output.exists():
@@ -377,13 +500,28 @@ def main(argv=None):
                   suite_source=suite.get('source'), scope=suite['scope'], limits=asdict(limits),
                   tuning=asdict(tuning), use_tt=args.tt, use_ordering=args.ordering,
                   ruleset_fingerprint=compiled.ruleset_fingerprint, cases=[], games=[])
-    report['history_handoff'] = ('retained Core-produced played positions' if args.mode in ('play','play-uci')
-                                else 'existing fresh-root search import')
+    report['history_handoff'] = 'fresh declared FEN followed by full Core-produced opening/played history'
     report['legality_backend'] = 'production_native' if provider is not None else 'python_reference'
     report['ordering_weights'] = evaluator('unit').order_values if args.ordering else None
     report['evaluation_terms'] = ('material + shared existing mobility2/anchor5; residual x100; no promotion bonus'
                                   if args.dynamic else 'material only')
     report['dynamic_backend'] = args.dynamic_backend if args.dynamic else None
+    report['search_backend'] = 'material_uci' if args.material_engine else 'production'
+    if args.material_engine:
+        report['material'] = dict(binary_sha256=hashlib.sha256(args.material_engine.read_bytes()).hexdigest(),
+            config_sha256=hashlib.sha256(args.material_config.read_bytes()).hexdigest(),
+            tables=material_tables(), seconds_per_search=args.seconds, threads=1, hash_mib=16,
+            leaf_scope='Requires documented patched Eval build/source and static gauge qualification; config alone proves neither',
+            search_scope='Frozen external search/SEE/ordering/pruning; UCI depth/nodes not equivalent to production counters',
+            resource_scope='Time limited; production depth/nodes/q limits are not applied')
+        report['limits'] = None
+        report['tuning'] = None
+        report['use_tt'] = None
+        report['use_ordering'] = None
+        report['material']['native_engine_cpu_seconds'] = None
+        report['material']['cache_hits'] = None
+        report['material']['scored_leaves'] = None
+        report['evaluation_terms'] = 'documented pure board material leaf; no shared legacy residual'
     if args.dynamic and args.dynamic_backend != 'legacy':
         report['evaluation_terms'] = ('material + shared mobility2/anchor5; residual x100; no promotion bonus; '+args.dynamic_backend+' pseudo-attacks; empty escape approximation')
     report['capture_risk'] = dict(enabled=args.capture_risk, discount='1/2 fixed development hypothesis',
@@ -398,98 +536,116 @@ def main(argv=None):
     args.output.parent.mkdir(parents=True, exist_ok=True)
     write_record(args.output, report)
     try:
-        if args.mode == 'compare':
-            for case in suite['cases']:
-                report['cases'].append(compare_case(case, compiled, limits, provider=provider,
-                                                   ordering=args.ordering, use_tt=args.tt, dynamic=dynamic, tuning=tuning, capture_risk=args.capture_risk))
-                report['summary'] = comparison_summary(report['cases'])
-                write_record(args.output, report)
-                print(case['id'], report['summary']['paired'], flush=True)
-        elif args.mode == 'play':
-            for case in suite['cases']:
-                for other in ('unit', 'linear_mixture'):
-                    for white, black in (('geometric_half', other), (other, 'geometric_half')):
-                        def save(game):
-                            report['active_game'] = dict(id=case['id'], **game)
-                            write_record(args.output, report)
-                        game = play_game(case['fen'], compiled, white, black, limits, args.max_plies, save,
-                                         provider=provider, ordering=args.ordering, use_tt=args.tt, dynamic=dynamic, tuning=tuning, capture_risk=args.capture_risk)
-                        report.pop('active_game', None)
-                        report['games'].append(dict(id=case['id'], **game))
-                        write_record(args.output, report)
-                        print(case['id'], white, black, game['end'], game['plies_played'], flush=True)
-        elif args.mode == 'play-uci':
-            if args.uci_python:
-                sys.path.insert(0, str(args.uci_python.resolve()))
-            import chess.engine
-            with chess.engine.SimpleEngine.popen_uci(str(args.engine.resolve()), timeout=10) as engine:
-                engine.configure({'Threads': 1, 'Hash': 16, 'UCI_LimitStrength': True, 'UCI_Elo': 1320})
-                report['opponent'] = dict(id=engine.id, threads=1, hash_mib=16, configured_elo=1320,
-                    nodes=args.opponent_nodes, seconds_fuse=1,
-                    binary_sha256=hashlib.sha256(args.engine.read_bytes()).hexdigest(),
-                    scope='limited-strength setting with bounded search, not a calibrated rating claim')
+        with ExitStack() as engines:
+            material_engine = None
+            if args.material_engine:
+                if args.uci_python:
+                    sys.path.insert(0, str(args.uci_python.resolve()))
+                import chess.engine
+                material_engine = engines.enter_context(chess.engine.SimpleEngine.popen_uci(
+                    [str(args.material_engine.resolve()), 'load', str(args.material_config.resolve())], timeout=15))
+                material_engine.configure({'Threads':1, 'Hash':16, 'Use NNUE':False})
+                report['material']['engine_id'] = material_engine.id
+            if args.mode == 'compare':
                 for case in suite['cases']:
-                    for policy in POLICIES:
-                        for white, black in ((policy, 'uci_reference'), ('uci_reference', policy)):
+                    report['cases'].append(compare_material_case(case, compiled, material_engine, args.seconds)
+                        if material_engine is not None else compare_case(case, compiled, limits, provider=provider,
+                            ordering=args.ordering, use_tt=args.tt, dynamic=dynamic, tuning=tuning, capture_risk=args.capture_risk))
+                    report['summary'] = comparison_summary(report['cases'])
+                    write_record(args.output, report)
+                    print(case['id'], report['summary']['paired'], flush=True)
+            elif args.mode == 'play':
+                for case in suite['cases']:
+                    for other in ('unit', 'linear_mixture'):
+                        for white, black in (('geometric_half', other), (other, 'geometric_half')):
                             def save(game):
                                 report['active_game'] = dict(id=case['id'], **game)
-                                write_record(args.output, report)
-                            external = UciOpponent(engine, case['fen'], args.opponent_nodes)
+                                write_record(args.output, report, indent=None)
                             game = play_game(case['fen'], compiled, white, black, limits, args.max_plies, save,
-                                provider=provider, ordering=args.ordering, use_tt=args.tt,
-                                dynamic=dynamic, external=external, tuning=tuning, capture_risk=args.capture_risk)
+                                             provider=provider, ordering=args.ordering, use_tt=args.tt, dynamic=dynamic,
+                                             tuning=tuning, capture_risk=args.capture_risk, prefix=case.get('opening_uci', ()))
                             report.pop('active_game', None)
                             report['games'].append(dict(id=case['id'], **game))
                             write_record(args.output, report)
-                            print(policy, white, black, game['end'], game['plies_played'], flush=True)
-        else:
-            if args.uci_python:
-                sys.path.insert(0, str(args.uci_python.resolve()))
-            import chess, chess.engine
-            inputs = args.comparison.read_bytes()
-            comparison = json.loads(inputs)
-            if len(comparison['cases']) != len(suite['cases']):
-                raise ValueError('reference comparison/suite case count differs')
-            if [(c['id'], c['fen'], sorted(c['accepted_uci'])) for c in comparison['cases']] != [
-                    (c['id'], c['fen'], sorted(c['accepted_uci'])) for c in suite['cases']]:
-                raise ValueError('reference comparison/suite cases or answers differ')
-            binary_hash = hashlib.sha256(args.engine.read_bytes()).hexdigest()
-            conditions = dict(threads=1, hash_mib=16, nodes_per_child=args.opponent_nodes, fresh_game_each_child=True)
-            cache = {}
-            if args.reference_cache:
-                cached = json.loads(args.reference_cache.read_bytes())
-                cached_hash = cached.get('acquisition', {}).get('binary_sha256', cached.get('binary_sha256'))
-                if cached_hash != binary_hash or cached['conditions'] != conditions:
-                    raise ValueError('reference cache engine/conditions mismatch')
-                cache = {c['fen']: c['references'] for c in cached['cases']}
-                report['reference_cache_sha256'] = hashlib.sha256(args.reference_cache.read_bytes()).hexdigest()
-            report.update(comparison_sha256=hashlib.sha256(inputs).hexdigest(), binary_sha256=binary_hash,
-                          conditions=conditions, new_analyses=0, cached_analyses=0,
-                          reference_scope='limited standard-Chess child scores, not exact regret/WDL/Elo or local-goal equivalence')
-            with chess.engine.SimpleEngine.popen_uci(str(args.engine.resolve()), timeout=10) as engine:
-                engine.configure({'Threads':1, 'Hash':16})
-                report['engine_id'] = engine.id
-                for case in comparison['cases']:
-                    board = chess.Board(case['fen'])
-                    keys = sorted(set(case['accepted_uci']) | {r['move'] for r in case['rows'] if r['completed']})
-                    row = dict(id=case['id'], fen=case['fen'], accepted_uci=case['accepted_uci'], references={})
-                    report['cases'].append(row)
-                    for move in keys:
-                        if move in cache.get(case['fen'], {}):
-                            row['references'][move] = dict(cache[case['fen']][move], cached=True)
-                            report['cached_analyses'] += 1
-                        else:
-                            child = board.copy(stack=True)
-                            child.push_uci(move)
-                            info = engine.analyse(child, chess.engine.Limit(nodes=args.opponent_nodes), game=object())
-                            score = info['score'].pov(board.turn)
-                            row['references'][move] = dict(cp=score.score(), mate=score.mate(), score=str(score),
-                                nodes=info.get('nodes'), depth=info.get('depth'), seconds=info.get('time'),
-                                pv=[m.uci() for m in info.get('pv', [])], cached=False)
-                            report['new_analyses'] += 1
-                        write_record(args.output, report)
-                    print(case['id'], report['new_analyses'], report['cached_analyses'], flush=True)
-        report['complete'] = True
+                            print(case['id'], white, black, game['end'], game['plies_played'], flush=True)
+            elif args.mode == 'play-uci':
+                if args.uci_python:
+                    sys.path.insert(0, str(args.uci_python.resolve()))
+                import chess.engine
+                with chess.engine.SimpleEngine.popen_uci(str(args.engine.resolve()), timeout=10) as engine:
+                    engine.configure({'Threads': 1, 'Hash': 16, 'UCI_LimitStrength': True, 'UCI_Elo': 1320})
+                    report['opponent'] = dict(id=engine.id, threads=1, hash_mib=16, configured_elo=1320,
+                        nodes=args.opponent_nodes, seconds_fuse=1,
+                        binary_sha256=hashlib.sha256(args.engine.read_bytes()).hexdigest(),
+                        scope='limited-strength setting with bounded search, not a calibrated rating claim')
+                    for case in suite['cases']:
+                        for policy in POLICIES:
+                            for white, black in ((policy, 'uci_reference'), ('uci_reference', policy)):
+                                def save(game):
+                                    report['active_game'] = dict(id=case['id'], **game)
+                                    write_record(args.output, report, indent=None)
+                                external = UciOpponent(engine, case['fen'], args.opponent_nodes)
+                                local_external = (UciMaterial(material_engine, case['fen'], policy, args.seconds)
+                                                  if material_engine is not None else None)
+                                game = play_game(case['fen'], compiled, white, black, limits, args.max_plies, save,
+                                    provider=provider, ordering=args.ordering, use_tt=args.tt,
+                                    dynamic=dynamic, external=external, tuning=tuning, capture_risk=args.capture_risk,
+                                    local_external=local_external, prefix=case.get('opening_uci', ()))
+                                report.pop('active_game', None)
+                                report['games'].append(dict(id=case['id'], **game))
+                                write_record(args.output, report)
+                                print(policy, white, black, game['end'], game['plies_played'], flush=True)
+            else:
+                if args.uci_python:
+                    sys.path.insert(0, str(args.uci_python.resolve()))
+                import chess, chess.engine
+                inputs = args.comparison.read_bytes()
+                comparison = json.loads(inputs)
+                if len(comparison['cases']) != len(suite['cases']):
+                    raise ValueError('reference comparison/suite case count differs')
+                if [(c['id'], c['fen'], c.get('opening_uci', []), sorted(c['accepted_uci'])) for c in comparison['cases']] != [
+                        (c['id'], c['fen'], c.get('opening_uci', []), sorted(c['accepted_uci'])) for c in suite['cases']]:
+                    raise ValueError('reference comparison/suite cases or answers differ')
+                binary_hash = hashlib.sha256(args.engine.read_bytes()).hexdigest()
+                conditions = dict(threads=1, hash_mib=16, nodes_per_child=args.opponent_nodes, fresh_game_each_child=True)
+                cache = {}
+                if args.reference_cache:
+                    cached = json.loads(args.reference_cache.read_bytes())
+                    cached_hash = cached.get('acquisition', {}).get('binary_sha256', cached.get('binary_sha256'))
+                    if cached_hash != binary_hash or cached['conditions'] != conditions:
+                        raise ValueError('reference cache engine/conditions mismatch')
+                    cache = {c['fen']: c['references'] for c in cached['cases']}
+                    report['reference_cache_sha256'] = hashlib.sha256(args.reference_cache.read_bytes()).hexdigest()
+                report.update(comparison_sha256=hashlib.sha256(inputs).hexdigest(), binary_sha256=binary_hash,
+                              conditions=conditions, new_analyses=0, cached_analyses=0,
+                              reference_scope='limited standard-Chess child scores, not exact regret/WDL/Elo or local-goal equivalence')
+                with chess.engine.SimpleEngine.popen_uci(str(args.engine.resolve()), timeout=10) as engine:
+                    engine.configure({'Threads':1, 'Hash':16})
+                    report['engine_id'] = engine.id
+                    for case in comparison['cases']:
+                        board = chess.Board(case['fen'])
+                        for move in case.get('opening_uci', ()):
+                            board.push_uci(move)
+                        keys = sorted(set(case['accepted_uci']) | {r['move'] for r in case['rows'] if r['completed']})
+                        row = dict(id=case['id'], fen=case['fen'], opening_uci=case.get('opening_uci', []),
+                                   accepted_uci=case['accepted_uci'], references={})
+                        report['cases'].append(row)
+                        for move in keys:
+                            if not case.get('opening_uci') and move in cache.get(case['fen'], {}):
+                                row['references'][move] = dict(cache[case['fen']][move], cached=True)
+                                report['cached_analyses'] += 1
+                            else:
+                                child = board.copy(stack=True)
+                                child.push_uci(move)
+                                info = engine.analyse(child, chess.engine.Limit(nodes=args.opponent_nodes), game=object())
+                                score = info['score'].pov(board.turn)
+                                row['references'][move] = dict(cp=score.score(), mate=score.mate(), score=str(score),
+                                    nodes=info.get('nodes'), depth=info.get('depth'), seconds=info.get('time'),
+                                    pv=[m.uci() for m in info.get('pv', [])], cached=False)
+                                report['new_analyses'] += 1
+                            write_record(args.output, report)
+                        print(case['id'], report['new_analyses'], report['cached_analyses'], flush=True)
+            report['complete'] = True
     except (Exception, KeyboardInterrupt) as exc:
         report['error'] = f'{type(exc).__name__}: {exc}'
         raise

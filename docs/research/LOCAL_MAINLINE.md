@@ -828,6 +828,25 @@ data/chess_runtime_cost_results_20261006.json. Next consolidate the working
 mature material entry and broaden declared useful feedback; retain generic Core
 and optional q2, no price/default promotion, human fitting or holdout reads.
 
+Reusable mature-material compare/play-uci now transports complete prefixes and
+histories under fixed qualified standard-Chess search.36declared budget/start
+games give12/11/12wins at0.25/1/4sec (one1sec unfinished); weak saturation prevents
+ranking and4sec costs10.7times without extra winning cells.12direct games yield
+unit8losses, geom/linear one linear win/three unfinished.12separately declared
+1800-configured reference games give geom3wins/1unfinished, linear4wins,
+unit2losses/2unfinished. All60games5527played+240prefixplies replay zero differences.
+Finite actual unfinished-game points are negative well before the endpoint;
+focus next on its0–40ply deterioration, retaining an adverse alternate rather
+than fitting prices. Checked Shogi8action full-stock control completes2ply with
+different drop choices but placement ties remain; held-half law is approximate.
+Measured recording35.366/258.106sec motivates only compact per-action formatting,
+same atomic schema/default final reports. Offline write pairs reduce bytes36percent
+and time41percent, not a measured game-chain speedup.28targeted checks pass.
+Full raw traces/failures/source hashes are in CHESS_DEVELOPMENT.md and
+data/chess_mature_entry_results_20261006.json; final format control separately in
+data/chess_recording_format_20261006.json. No Elo/default/price promotion or holdout
+claim; current public-push hold remains. Continue practical failure diagnosis.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.

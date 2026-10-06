@@ -19,10 +19,10 @@ def record_value(value):
     if value is None or type(value) in (str,int,float,bool):return value
     raise TypeError(f'unsupported research record: {type(value).__name__}')
 
-def write_record(path,value):
+def write_record(path,value,*,indent=2):
     # Finish conversion BEFORE opening the evidence file. Producers persist
     # initial/all-action/progress records before advancing to another event.
-    body=json.dumps(record_value(value),indent=2,allow_nan=False)+'\n'
+    body=json.dumps(record_value(value),indent=indent,allow_nan=False)+'\n'
     path=Path(path)
     temporary=None
     try:

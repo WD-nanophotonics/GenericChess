@@ -1006,3 +1006,99 @@ to use the slower legal reference. Output refuses overwrite and preserves errors
 Optional `--dynamic-backend cached_legacy` preserves the old residual with per-leaf reuse; `semantic_bulk` selects semantic pseudo-attacks and requires `--native-legality`. Legacy remains default. Use `--pvs --check-only --qdepth 0` for the fixed practical condition above.
 
 Optional `--qordering` requires `--ordering`; `--qcaptures-only` requires positive `--qdepth`. Both default OFF. For the prospective capture-only player use `--qdepth 2 --qcaptures-only --qordering --pvs --dynamic --dynamic-backend cached_legacy --native-legality --ordering --tt`; omit `--check-only` for positive qdepth.
+
+
+### Reusable mature-material entry and useful budget feedback (2026-10-06)
+
+The existing `compare` and `play-uci` entry now accepts a qualified pure-material
+UCI engine plus its exact frozen config, with no new interface or default price.
+Each case may specify `opening_uci` from its original FEN. Both engines and Core
+retain that full history, including repetitions/rights/raw EP; child references
+never use fresh-FEN cached values for a nonempty prefix. Legal sets are checked
+before each material-player move. Reported UCI nodes/depth/time/PV are retained;
+a legal time-bound best move does not certify a complete fixed-depth search.
+Native CPU/cache/scored-leaf counts remain unknown, not zero. Production TT and
+ordering flags are not controls over the external search.
+
+Only the pinned standard-Chess pure-Eval build is qualified here: official
+Fairy-Stockfish source9f778da667f6e07dae1e85d3e2ea204fc6dee94d, binary SHA256
+477628ae141c6e5fb7dcb562e31e3bc40eab95b20c8b966ece131a1dbf090999.
+Original SEE/ordering/pruning remain fixed. Pawn208/report100cp and frozen
+geometric(208,605,549,1071,1194), linear(208,483,394,767,855), unit(all208)
+were fixed before results. The config guard alone cannot certify a pure Eval
+binary. Qualification and six static gauge controls are in
+`data/chess_runtime_cost_results_20261006.json`. This is a standard-Chess testbed,
+not a full GenericChess rules transplantation or independent price validation.
+
+Thirty-six prospectively declared games used two four-move legal prefixes:
+e4/e5/Nf3/Nc6 and d4/d5/c4/e6; three tables, both colors and three local resource
+points. Each game had at most160 *subsequent* plies, fresh Hash16/Threads1,
+against1320-configured Stockfish17.1,50000nodes with1sec fuse. The initial save
+callback launch failed before games; its record remains intact. A separate
+resume changed the callback argument only, not conditions or source.
+
+| Local seconds/move | Wins / losses / unfinished | Batch wall seconds |
+| --- | --- | --- |
+| 0.25 | 12 / 0 / 0 | 148.795 |
+| 1 | 11 / 0 / 1 | 542.508 |
+| 4 | 12 / 0 / 0 | 1593.479 |
+
+The4sec batch costs about10.7times the0.25sec batch without extra winning cells
+on this weak comparator. Stochastic trajectories and capped games prohibit a
+causal strength conclusion or universal budget cutoff. Saturation is a reason
+to change the decision question, not to repeat easy games or fit prices.
+
+A separately declared direct12-game comparison used all unordered table pairs,
+both colors and the same starts at0.25sec each side. Unit lost all eight games
+against geometric/linear. Geometric versus linear produced one linear Black
+win and three160ply unfinished games. These are not draws or an Elo ranking.
+A further single1800-configured comparator batch, keeping local0.25sec and
+reference50000nodes/1sec, produced geometric3wins/1unfinished, linear4wins,
+unit2losses/2unfinished. The1800 setting is not a calibrated rating claim.
+All60 games replayed5527 new played moves and240 opening-prefix moves with
+zero full legal-set/state/history discrepancies. No defaults are promoted.
+
+The sole1sec unfinished linear White game was already deteriorating before its
+late endpoint. Five preselected full-history points0/40/80/120/158 gave limited
+strong-reference actual-child proxies-34/-227/-541/-543/-653cp. At40, current
+geometric/unit h3h4 scored-347 versus actual/current linear g4g5-227; retain this
+adverse alternate. At0, Nc3+26 versus actual c5-34 is only finite proxy feedback.
+It does not prove WDL or original examined leaves. Next inspect the actual0–40
+interval rather than assuming a winning-endgame finish defect or tuning prices.
+
+The separate checked full-stock Shogi control had8 legal evasions. Under the
+existing2ply/2048node/10sec conditions geometric/unit both completed2ply,
+choosing R@e2/B@e2 at421/261nodes and0.531/0.278sec. Static placement ties remain
+2/4. Held values equal half normalized board values, an explicit approximation;
+neither certified held-price law nor historic reachability is claimed. A draft
+Bishop/Rook identity error was corrected before execution, with old records kept.
+
+The1800 batch measured1441 writes,1,427,552,225 serialized bytes and35.366sec
+recording within258.106sec wall. A small corrective change makes only per-action
+progress compact; completed reports keep the prior pretty default and same
+schema/conversion/atomic replacement. Four alternating offline final-frontier
+write pairs retained equal parsed values:8,209,772→5,218,812bytes and
+0.177→0.105sec. This is not measured game-chain acceleration. Replacement-failure
+tests preserve the old frontier and clean temporary files in both modes.
+28 targeted adapter/development/record checks pass; actual six2ply CLI transport
+games also complete. A formatting indentation error was found by collection and
+fixed before the benchmark. No experiments ran under changed source conditions.
+
+`data/chess_mature_entry_results_20261006.json` preserves16 complete raw records
+and hashes (SHA25667dd4d6e9d322c26d3659ac032565d83b8dd558ddfc246111900385f29efed1f).
+The exact60-game source SHA2561472c03f88e7ea06f464eeea68e1afac301f99feddada7e47c9dcdf1fcb240b6
+is in `../archive/development_mature_entry_20261006/frozen_entry.zip`.
+`sources.zip` holds13 inert producers/test sources before the final formatting
+repair; `recording_format.zip` separately holds final writer/entry/tests/benchmark.
+Each archive has a hash/size manifest and was read back byte-for-byte. Offline
+format results are in `data/chess_recording_format_20261006.json`. No binary,
+credential, local username path or Slack record is in these portable archives.
+
+Example with an already qualified local build (output must be new):
+```
+.venv/Scripts/python.exe -m scripts.chess_development compare --suite .local_agent/mature-openings/suite.json --output .local_agent/next-material-compare.json --material-engine .local_agent/mature-search/build/fairy-material.exe --material-config .local_agent/mature-search/material-variants.ini --uci-python .local_agent/certificate_source/python-chess --seconds 0.25
+.venv/Scripts/python.exe -m scripts.chess_development play-uci --suite .local_agent/mature-openings/suite.json --output .local_agent/next-material-play.json --material-engine .local_agent/mature-search/build/fairy-material.exe --material-config .local_agent/mature-search/material-variants.ini --engine .local_agent/stockfish-reference/stockfish/stockfish-windows-x86-64.exe --uci-python .local_agent/certificate_source/python-chess --seconds 0.25 --opponent-nodes 50000 --max-plies 160
+```
+These runs are development measurements, not independent held-out validation.
+No human-label fitting, Xiangqi holdout read or general amateur-strength claim.
+The objective remains OPEN. Public publication remains on its existing hold.
