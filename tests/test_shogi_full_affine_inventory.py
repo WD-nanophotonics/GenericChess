@@ -1,3 +1,4 @@
+from frozen_research_sources import source_digest
 """Full custody, shared uncertainty and actual frozen complete root coverage."""
 import hashlib,json
 from dataclasses import replace
@@ -37,7 +38,7 @@ def test_complete_legal_capture_reference_and_cumulative_budget(control):
     assert set(raw['certificate']['margins'][winner].values())=={'7711'}
     assert robust_dominators(raw['rows'],owner=0)['strict_dominators']==[winner]
     assert not robust_dominators(raw['rows'],owner=1)['strict_dominators']
-    for path,pin in raw['source_sha256'].items():assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==pin
+    for path,pin in raw['source_sha256'].items():assert source_digest(ROOT, path, pin) == pin
 
 def test_owner_zero_rows_keep_shared_custody_and_current_base_separate(control):
     raw,_,_,e=control;state=static_view(raw['root'])

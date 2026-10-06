@@ -1,3 +1,4 @@
+from frozen_research_sources import source_digest
 import hashlib,json
 from pathlib import Path
 from dataclasses import replace
@@ -35,4 +36,4 @@ def test_full_box_certificate_and_one_new_point_accounting():
     assert r['conservative_enumeration_charge']==1707 and r['cumulative_seconds']<15
     assert row['statistics']['qnodes']==0 and row['reason']=='completed_depth'
     assert r['public_transitions']==r['source_queries']==0
-    for path,pin in r['source_sha256'].items():assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==pin
+    for path,pin in r['source_sha256'].items():assert source_digest(ROOT, path, pin) == pin

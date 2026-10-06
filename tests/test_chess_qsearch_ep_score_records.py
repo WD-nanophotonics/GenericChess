@@ -1,3 +1,4 @@
+from frozen_research_sources import source_digest
 import hashlib,json
 from pathlib import Path
 from types import SimpleNamespace as NS
@@ -11,7 +12,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def test_actual_qsearch_capture_and_full_restoration_records():
     r=json.loads((ROOT/'docs/research/data/chess_qsearch_ep_score_20261006.json').read_text())
     assert r['complete'] and r['source_hashes_unchanged'] and r['seconds']<15
-    for p,pin in r['source_sha256'].items():assert hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==pin
+    for p,pin in r['source_sha256'].items():assert source_digest(ROOT, p, pin) == pin
     assert r['public_transitions']==r['source_pushes']==6
     assert r['runtime_pushes']==r['runtime_pops']==11
     assert r['entries']==88 and r['source_entries']==10
@@ -33,7 +34,7 @@ def test_first_cheap_hint_failure_preserved_without_tree_retries():
     assert not r['complete'] and r['error']=='ValueError: unqualified effect vocabulary'
     assert r['source_hashes_unchanged'] and r['compilations']==1 and r['terms']==0
     assert r['public_transitions']==r['runtime_pushes']==r['source_pushes']==0
-    for p,pin in r['source_sha256'].items():assert hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==pin
+    for p,pin in r['source_sha256'].items():assert source_digest(ROOT, p, pin) == pin
 
 
 def test_hint_rejects_native_clear_right_instead_of_silent_fallback():

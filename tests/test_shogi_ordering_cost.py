@@ -1,3 +1,4 @@
+from frozen_research_sources import source_digest
 import hashlib,json
 from pathlib import Path
 from fractions import Fraction as F
@@ -22,4 +23,4 @@ def test_full_result_and_accounted_cost_without_control_rerun():
     assert r['runtime_pushes']==r['runtime_pops']==25 and r['paired_pushes']==74 and r['conservative_enumeration_charge']==1431
     assert r['cumulative_seconds']<15 and r['public_transitions']==r['source_queries']==0
     assert row['reason']=='completed_depth' and row['statistics']['qnodes']==0 and not row['statistics']['root_scan_used_fallback']
-    for path,pin in r['source_sha256'].items():assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==pin
+    for path,pin in r['source_sha256'].items():assert source_digest(ROOT, path, pin) == pin

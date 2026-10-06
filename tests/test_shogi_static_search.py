@@ -1,3 +1,4 @@
+from frozen_research_sources import source_digest
 import hashlib,json
 from pathlib import Path
 from dataclasses import replace
@@ -35,4 +36,4 @@ def test_actual_runtime_matches_complete_saved_reference_and_full_ties():
         assert row['statistics']['completed_depth']==2 and row['statistics']['qnodes']==0
         assert row['reason']=='completed_depth' and not row['statistics']['root_scan_used_fallback']
         assert len(row['visited'])==row['statistics']['runtime_pushes']
-    for path,pin in r['source_sha256'].items():assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==pin
+    for path,pin in r['source_sha256'].items():assert source_digest(ROOT, path, pin) == pin

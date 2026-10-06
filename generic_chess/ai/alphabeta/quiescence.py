@@ -15,6 +15,15 @@ from ...core.position import GameState
 from .statistics import SearchStatistics
 
 
+def enemy_board_count(position, side: int) -> int:
+    """Conservative material-removal signal, including off-target captures.
+
+    Read the parent count before pushing a mutable runtime view. This does
+    not infer capture from a debug name, board geometry or an EP slot.
+    """
+    return sum(piece is not None and piece.owner != side for piece in position.board)
+
+
 def classify_noisy(
     state: GameState,
     successors,
@@ -29,6 +38,7 @@ def classify_noisy(
     """
     n = state.position.board_size()
     side = state.position.side_to_move
+    parent_enemies = enemy_board_count(state.position, side)
     from ...core.semantic_executor import semantic_engine_for
 
     semantic_engine = semantic_engine_for(compiled)
@@ -47,6 +57,11 @@ def classify_noisy(
                 if stats is not None:
                     stats.capture_qactions += 1
                 continue
+        if enemy_board_count(child.position, side) < parent_enemies:
+            noisy.append(action)
+            if stats is not None:
+                stats.capture_qactions += 1
+            continue
         if child.terminal_status.is_terminal:
             noisy.append(action)
             continue

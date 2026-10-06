@@ -1,3 +1,4 @@
+from frozen_research_sources import source_digest
 import hashlib
 import json
 from dataclasses import replace
@@ -26,7 +27,7 @@ def test_full_actual_search_records_and_original_input_pins():
     r = record()
     assert r['complete'] and r['source_hashes_unchanged']
     for path, digest in r['source_sha256'].items():
-        assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest() == digest
+        assert source_digest(ROOT, path, digest) == digest
     assert r['public_transitions'] == r['author_pushes'] == 20
     assert r['runtime_pushes'] == r['runtime_pops'] == 58
     assert r['returned_actions'] == 1444

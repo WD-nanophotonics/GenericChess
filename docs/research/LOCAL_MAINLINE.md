@@ -643,7 +643,7 @@ preserved (LICHESS_DAILY_REFERENCE_RESULTS.md,SHALLOW_REFERENCE_FEATURE_RESULTS.
 Fresh richer-controller admission finds both current noisy classifiers omit
 nonchecking en-passant e5xd6 on complete native initial history. All31 source
 children and65 combined public/runtime events qualify. Research-only removal
-adapter includes it; production is NOT fixed or qsearch-admitted. Native
+adapter includes it; at that frozen snapshot production was NOT fixed. Native
 board-count criterion is not a generic semantic theorem. Versioned capture
 events and actual qsearch path require qualification before a fresh trial
 (CHESS_QSEARCH_EP_RESULTS.md). Actual direct qsearch on a different synthetic
@@ -652,7 +652,7 @@ Two cheap global hints fail before states; structural50-term review identifies
 inactive drop catalog patterns. Versioned empty-hand board-only hint then
 qualifies actual mirror qsearch without changing production. Direct qsearch
 has no root reserve; depth1 production root still suppresses ordinary qsearch
-in its first iteration. Richer ROOT controller admission remains OPEN
+in its first iteration. Richer ROOT admission for that frozen protocol stays OPEN
 (CHESS_QSEARCH_EP_SCORE_RESULTS.md,CHESS_CAPTURE_EFFECT_V3_RESULTS.md).
 No closed trial budget was enlarged.
 
@@ -722,8 +722,21 @@ answer agreement, but neither batch is Elo or amateur/generic strength evidence.
 Default geometric remains a candidate; mixed evidence does not promote dynamic
 terms or fit weights. Actual horizon failures and one played EP noisy omission
 now supply concrete next search repairs. A local generation-delay hook has
-bounded cost/score controls; production unchanged. One reusable result record
+bounded cost/score controls; production was unchanged at that checkpoint. One result
 data/chess_development_results_20261006.json replaces per-case admission reports.
+
+The next development segment installs conservative off-target enemy-removal
+classification in both production q paths and defers unused noncheck q generation.
+Old producer bytes/results remain pinned inertly in an archive; new regressions
+are separate. Repaired full-suite q1 is expensive and incomplete (26/72 complete,
+no answer hits), so q0 remains the practical condition. Existing PVS completes
+66/72 versus60/72 under a shared4ply budget; all60 shared actions/scores match,
+main nodes drop15.6%, observed time12.6%. This supports a search option, not a
+price gain. Played Core positions now reach the existing private history entry;
+122376 opaque child hashes disappear in a scoped replay, without a wall-time
+gain. An actual f7f6,g3 trace identifies a checking intermezzo delaying forced
+Queen removal to6halfplies;189 native/public/author legal-set+board checks match.
+CHESS_DEVELOPMENT.md preserves limitations and the next practical game outcomes.
 
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult

@@ -107,14 +107,15 @@ def root_from_fen(fen, compiled):
     return state
 
 
-def search_move(state, compiled, policy, limits, *, provider=None, ordering=False, use_tt=False, dynamic=False):
+def search_move(state, compiled, policy, limits, *, provider=None, ordering=False, use_tt=False, dynamic=False, tuning=None, _history_witnesses=None):
     evaluation = evaluator(policy, compiled=compiled, dynamic=dynamic)
     stats = SearchStatistics()
     wall, cpu = perf_counter(), process_time()
     action, score, pv, reason = run_root_search(
         state, compiled, evaluation, TranspositionTable(max_entries=65536 if use_tt else 16), limits,
         None, stats, use_tt=use_tt, use_ordering=ordering,
-        tuning=SearchTuning(use_root_tactical=False), legal_binding_provider=provider)
+        tuning=tuning if tuning is not None else SearchTuning(use_root_tactical=False),
+        _history_witnesses=_history_witnesses, legal_binding_provider=provider)
     return action, dict(policy=policy, move=None if action is None else uci(action),
                         score=score, pv=[uci(a) for a in pv], reason=reason,
                         wall_seconds=perf_counter()-wall, cpu_seconds=process_time()-cpu,
@@ -122,7 +123,7 @@ def search_move(state, compiled, policy, limits, *, provider=None, ordering=Fals
                         integer_weights=evaluation.weights)
 
 
-def compare_case(case, compiled, limits, *, provider=None, ordering=False, use_tt=False, dynamic=False):
+def compare_case(case, compiled, limits, *, provider=None, ordering=False, use_tt=False, dynamic=False, tuning=None):
     state = root_from_fen(case['fen'], compiled)
     if state.terminal_status.is_terminal:
         raise ValueError(f"terminal tactical root: {case['id']}")
@@ -135,7 +136,7 @@ def compare_case(case, compiled, limits, *, provider=None, ordering=False, use_t
     for policy in POLICIES:
         try:
             action, row = search_move(state, compiled, policy, limits, provider=provider,
-                                      ordering=ordering, use_tt=use_tt, dynamic=dynamic)
+                                      ordering=ordering, use_tt=use_tt, dynamic=dynamic, tuning=tuning)
             row['legal'] = row['move'] in legal
             row['completed'] = (row['legal'] and row['reason'] == 'completed_depth'
                                 and row['statistics']['completed_depth'] == limits.max_depth
@@ -184,8 +185,11 @@ def comparison_summary(cases):
                 interpretation='Reference-answer agreement, not proof of tactical error, Elo or generic strength')
 
 
-def play_game(fen, compiled, white, black, limits, max_plies, save_move=None, *, provider=None, ordering=False, use_tt=False, dynamic=False, external=None):
+def play_game(fen, compiled, white, black, limits, max_plies, save_move=None, *, provider=None, ordering=False, use_tt=False, dynamic=False, external=None, tuning=None):
     state = root_from_fen(fen, compiled)
+    # These are our actual Core-produced positions, as in GameSession. Retain
+    # them across played moves; never replace history with a fresh FEN snapshot.
+    witnesses = [state.position]
     policies = (white, black)
     moves = []
     result = dict(white=white, black=black, initial_fen=fen, moves=moves,
@@ -202,7 +206,8 @@ def play_game(fen, compiled, white, black, limits, max_plies, save_move=None, *,
             action = next((a for a in legal if uci(a) == move), None)
         else:
             action, row = search_move(state, compiled, policy, limits,
-                                      provider=provider, ordering=ordering, use_tt=use_tt, dynamic=dynamic)
+                                      provider=provider, ordering=ordering, use_tt=use_tt, dynamic=dynamic,
+                                      tuning=tuning, _history_witnesses=tuple(witnesses))
         row['ply'] = state.ply_count
         row['side'] = state.position.side_to_move
         row['completed'] = (action in legal and (row['reason'] == 'uci_bestmove' or reason_complete(row, limits)))
@@ -213,6 +218,7 @@ def play_game(fen, compiled, white, black, limits, max_plies, save_move=None, *,
             break
         # Fallback choices are playable but recorded separately from completed searches.
         state = apply_action(state, action, compiled)
+        witnesses.append(state.position)
         if external:
             external.push(uci(action), state)
         if state.terminal_status != terminal_result(state, compiled):
@@ -297,6 +303,7 @@ def main(argv=None):
     p.add_argument('--ordering', action='store_true', help='existing orderer with shared frozen capture prices')
     p.add_argument('--tt', action='store_true', help='fresh per-search production TT, same capacity65536 for all methods')
     p.add_argument('--dynamic', action='store_true', help='shared existing mobility/anchor terms; no coefficient fitting')
+    p.add_argument('--pvs', action='store_true', help='existing principal variation search; explicit common search ablation')
     p.add_argument('--engine', type=Path, help='optional existing local UCI executable for play-uci')
     p.add_argument('--uci-python', type=Path, help='optional local python-chess import root; otherwise use installed package')
     p.add_argument('--opponent-nodes', type=int, default=50000)
@@ -320,6 +327,7 @@ def main(argv=None):
                           quiescence_max_depth=args.qdepth, quiescence_hard_max_depth=args.qhard,
                           quiescence_max_nodes=args.nodes, deterministic=True)
     compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
+    tuning = SearchTuning(use_root_tactical=False, use_pvs=args.pvs)
     provider = None
     if args.native_legality:
         from generic_chess.ai.alphabeta.native_legality import NativeSemanticLegalityProvider
@@ -330,10 +338,12 @@ def main(argv=None):
                   producer_sha256={path: hashlib.sha256((ROOT/path).read_bytes()).hexdigest()
                       for path in ('scripts/chess_development.py', 'scripts/chess_approx_static_inventory.py',
                                    'scripts/chess_exact_contact_family.py', 'scripts/research_record.py',
-                                   'generic_chess/ai/alphabeta/search.py')},
+                                   'generic_chess/ai/alphabeta/search.py', 'generic_chess/ai/alphabeta/quiescence.py')},
                   suite_source=suite.get('source'), scope=suite['scope'], limits=asdict(limits),
-                  tuning=asdict(SearchTuning(use_root_tactical=False)), use_tt=args.tt, use_ordering=args.ordering,
+                  tuning=asdict(tuning), use_tt=args.tt, use_ordering=args.ordering,
                   ruleset_fingerprint=compiled.ruleset_fingerprint, cases=[], games=[])
+    report['history_handoff'] = ('retained Core-produced played positions' if args.mode in ('play','play-uci')
+                                else 'existing fresh-root search import')
     report['legality_backend'] = 'production_native' if provider is not None else 'python_reference'
     report['ordering_weights'] = evaluator('unit').order_values if args.ordering else None
     report['evaluation_terms'] = ('material + shared existing mobility2/anchor5; residual x100; no promotion bonus'
@@ -349,7 +359,7 @@ def main(argv=None):
         if args.mode == 'compare':
             for case in suite['cases']:
                 report['cases'].append(compare_case(case, compiled, limits, provider=provider,
-                                                   ordering=args.ordering, use_tt=args.tt, dynamic=args.dynamic))
+                                                   ordering=args.ordering, use_tt=args.tt, dynamic=args.dynamic, tuning=tuning))
                 report['summary'] = comparison_summary(report['cases'])
                 write_record(args.output, report)
                 print(case['id'], report['summary']['paired'], flush=True)
@@ -361,7 +371,7 @@ def main(argv=None):
                             report['active_game'] = dict(id=case['id'], **game)
                             write_record(args.output, report)
                         game = play_game(case['fen'], compiled, white, black, limits, args.max_plies, save,
-                                         provider=provider, ordering=args.ordering, use_tt=args.tt, dynamic=args.dynamic)
+                                         provider=provider, ordering=args.ordering, use_tt=args.tt, dynamic=args.dynamic, tuning=tuning)
                         report.pop('active_game', None)
                         report['games'].append(dict(id=case['id'], **game))
                         write_record(args.output, report)
@@ -385,7 +395,7 @@ def main(argv=None):
                             external = UciOpponent(engine, case['fen'], args.opponent_nodes)
                             game = play_game(case['fen'], compiled, white, black, limits, args.max_plies, save,
                                 provider=provider, ordering=args.ordering, use_tt=args.tt,
-                                dynamic=args.dynamic, external=external)
+                                dynamic=args.dynamic, external=external, tuning=tuning)
                             report.pop('active_game', None)
                             report['games'].append(dict(id=case['id'], **game))
                             write_record(args.output, report)

@@ -1,3 +1,4 @@
+from frozen_research_sources import source_digest
 import hashlib
 import json
 from pathlib import Path
@@ -15,7 +16,7 @@ def test_frozen_complete_check_and_strict_budget():
     r=record()
     assert r['complete'] and r['source_hashes_unchanged'] and r['seconds']<15
     for p,pin in r['source_sha256'].items():
-        assert hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==pin
+        assert source_digest(ROOT, p, pin) == pin
     assert r['public_transitions']==r['source_pushes']==35
     assert r['runtime_pushes']==r['runtime_pops']==30
     assert r['entries']==269 and r['source_entries']==119

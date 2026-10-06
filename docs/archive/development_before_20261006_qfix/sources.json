@@ -1,0 +1,30 @@
+{
+  "purpose": "Historical producer bytes only; not active code or policy",
+  "git_revision": "9ff920e5b212a0c998eb074e5c48e03a9e63b310",
+  "sources": {
+    "generic_chess/ai/alphabeta/search.py": {
+      "sha256": "18130acd610eb6f41d9cc299cbc2b5a265875f85633f1c8127e1efd5469a75f5",
+      "archive": "docs/archive/development_before_20261006_qfix/producer_sources.zip",
+      "member": "generic_chess/ai/alphabeta/search.py"
+    },
+    "generic_chess/ai/alphabeta/quiescence.py": {
+      "sha256": "6f6c15bbc855fe208e49bbccd198d67b76584bbaa037a669df2ecc2d26661c78",
+      "archive": "docs/archive/development_before_20261006_qfix/producer_sources.zip",
+      "member": "generic_chess/ai/alphabeta/quiescence.py"
+    }
+  },
+  "followup_sources": {
+    "pvs_comparison_runner": {
+      "sha256": "11b0a626b60269a30e6b1ef40b96a83898a626c72d351395194398af5f870a38",
+      "member": "followup/pvs_comparison_runner.py",
+      "archive": "docs/archive/development_before_20261006_qfix/producer_sources.zip",
+      "provenance": "Uncommitted intermediate source snapshot from active1004abdc segment, preserved for exact raw producer bindings"
+    },
+    "patched_quiescence_before_lf": {
+      "sha256": "69440cf6952f07bfa35f8bdeaae642c9d99d1452c555f1e9141b4e5e7ed77eb5",
+      "member": "followup/patched_quiescence_before_lf.py",
+      "archive": "docs/archive/development_before_20261006_qfix/producer_sources.zip",
+      "provenance": "Uncommitted intermediate source snapshot from active1004abdc segment, preserved for exact raw producer bindings"
+    }
+  }
+}

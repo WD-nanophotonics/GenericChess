@@ -1,3 +1,4 @@
+from frozen_research_sources import source_digest
 import hashlib,json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -8,7 +9,7 @@ def load(name):return json.loads((ROOT/f'docs/research/data/chess_q1_reference_{
 
 def test_prospective_local_admission_and_all_original_pins():
     r=load('local');assert r['complete'] and r['source_hashes_unchanged']
-    for p,pin in r['source_sha256'].items():assert hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==pin
+    for p,pin in r['source_sha256'].items():assert source_digest(ROOT, p, pin) == pin
     assert r['preflight']==dict(root_actions=5,all_replies=22,combined_event_upper_bound=93,source_trees_qualified=True,external_labels_read=False)
     assert r['public_transitions']==r['source_pushes']==27
     assert r['runtime_pushes']==r['runtime_pops']==66
@@ -22,7 +23,7 @@ def test_prospective_local_admission_and_all_original_pins():
 
 def test_actual_single_transport_failure_is_not_an_outcome_certificate():
     r=load('external');assert not r['complete'] and r['source_hashes_unchanged']
-    for p,pin in r['source_sha256'].items():assert hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==pin
+    for p,pin in r['source_sha256'].items():assert source_digest(ROOT, p, pin) == pin
     assert r['request_attempts']==1 and '10013' in r['error']
     assert 'http_status' not in r and 'root_owner_outcomes' not in r
     assert r['local_policy_record_sha256']==hashlib.sha256((ROOT/'docs/research/data/chess_q1_reference_local_20261006.json').read_bytes()).hexdigest()

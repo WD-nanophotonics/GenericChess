@@ -189,6 +189,157 @@ activity playing option despite worse tactical-reference agreement. Keep both
 conditions explicit, rather than tune prices or claim statistical superiority.
 The dynamic sample alone supplies the214-move finite postgame analysis above.
 
+## Followup declared2026-10-06 q repair
+
+Production qsearch now conservatively recognizes enemy board removals, including
+off-target captures, in immutable/runtime paths. Capture the parent count before
+the mutable push. Noncheck qdepth/stand-pat exits avoid unused legal generation;
+in-check nodes retain all legal evasions. Focused regressions cover the actual
+EP fixture, positive material score/full root restoration and zero unnecessary
+generation. Net enemy-board decrease is a conservative additional signal; it
+does not certify every compound removal/spawn or custody effect in arbitrary
+rules. Old frozen reports retain their original source hashes/results;
+two original producer files are compressed as inert byte evidence under
+docs/archive/development_before_20261006_qfix. Historical tests validate those
+bytes explicitly, not a claim that the current search is the old producer.
+
+First full24-case same2sec/depth2/q2 native condition after repair completes
+6/5/8 versus original6/5/7; no reference hits. This small repair does not by itself
+make q2 usable as a default. Before observing the next batch, declare practical
+depth3/q1/hard8, native/shared-order/TT/shared-dynamic,65536nodes/10sec across all
+24 original cases/all3 methods. Unknown: can repaired q1 provide concrete useful
+choices with affordable complete searches? Outcomes inform whether to try q1
+games or keep q0 while diagnosing cost. Maximum12min/single local process;
+save every incomplete/worse result, without price/label tuning. Old caps stay.
+
+Completed repaired q1 batch: geometric/linear/unit complete6/6/14 of24, with
+zero reference hits;46 time-limit failures are separate. Aggregate588.780sec,
+324617 main+q nodes and1559123 runtime pushes. Both classifiers also now include
+the actual played h4g3 EP opportunity, retaining score28539 and full root/history.
+Keep q0 as the practical playing condition; a broader q default is not supported
+by these observations. Old18 jointly complete q2 action/score pairs are unchanged.
+
+Next declared failure probe: reconstruct external dynamic geometric Black game1
+through its first9 actual plies, preserving history, then compare all3 methods
+at depth3/4/5,q0,native/shared-order/TT/shared-dynamic,65536nodes/20sec.
+The played f7f6 has an exposed finite reference drop529cp; the question is
+whether deeper search changes it affordably, not fitting prices to that reply.
+Nine searches at most3min, sequential after the full-suite q1 batch.
+
+This complete probe reproduces f7f6 for geometric/linear atdepth3; unit instead
+chooses b4c3. Allthree complete depth4 and choose f7f6. Allthree depth5 runs time
+out20sec, retaining completed depth4. Independent finite played-history child
+scores at50knodes give b4c3 -114cp and f7f6 -599cp from Black's perspective.
+This is a real exposed horizon/evaluation problem even in an eventual won game,
+not an argument for tuning the candidate to that move or claiming exact regret.
+
+The runner also exposes the existing PVS switch without changing defaults.
+Declare a separate full24-case depth4/q0/native/shared-order/TT/shared-dynamic
+comparison at65536nodes/10sec, PVS off then on, all3 methods unchanged. Its
+decision is whether the existing search feature makes completed deeper searches
+cheaper/useful. Report search effects separately from price effects and preserve
+incompletes. Two interruptible72-search batches at most24min; do not extend the
+same condition on unfavorable results. This is exposed development, not holdout.
+
+Completed PVS comparison: off17/19/24 complete versus on19/23/24; source hits
+remain3/3/2. All60 shared completed actions/scores are identical. Their main
+nodes fall592841to500632 (~15.6%) and observed wall343.758to300.291sec (~12.6%).
+Six additional searches complete, none lose completeness. Full-batch wall
+463.690to413.809sec; cost evidence supports the explicit PVS playing option,
+not a price improvement or a global default change. Both runs bind identical
+producer hashes/conditions except the declared switch. Finite deeper misses
+remain, and alternate acceptable source moves are not automatically errors.
+
+Observed played-history overhead supplies a further changed premise: the runner
+uses explicit default auxiliary slots in the fresh initial FEN, whereas Core's
+canonical initial position omits them. Stable public identity is equal, but
+exact reconstruction from canonical setup fails; played imports therefore use
+opaque historical SHA bridges and lose TT eligibility. Never drop those records.
+Here eligibility refers to the runtime history flag, not a claim that every
+ordinary Western-Chess TT probe is disabled; its applicable probes still run.
+Declare the same9 played-depth probes with Core-produced position witnesses
+retained from each actual prefix transition via the existing private search
+entry. Verify every witness/public identity, history/root preservation and
+zero opaque child hashes. Same methods/depths/nodes/time; maximum3min. This tests
+the runner's history handoff, not a price change or a broader Core rewrite.
+
+Witness probe completed: all6 complete depth3/4 rows keep exactly the same
+actions/scores/main-node counts and full root. All3 depth5 runs still time out
+at20sec. Opaque child SHA calculations fall122376to0 and all10 actual prefix
+witnesses are available, but complete-row wall is slightly slower, not faster
+(geometric depth4,7.627to8.017sec; linear7.206to7.643; unit5.381to5.688).
+Retain the matching GameSession-style handoff as correct information reuse,
+without a performance claim or weakened repetition/terminal rules.30 relevant
+runner/tuning/history-context tests pass. Intermediate PVS runner/pre-LF patched
+q source bytes also reside inertly in the same archive for exact raw bindings;
+their provenance is a working snapshot, distinct from the original9ff920e files.
+
+Declare the ensuing playing check, after the search/handoff regressions:
+same initial root, all3 fixed methods both colors, existing shared dynamic
+terms, native/common-order/TT/PVS,q0,depth4,65536nodes/5sec,80ply limit, same
+limited-strength Stockfish1320/50knodes/1sec opponent. Six games, at most20min
+local Agent-search time, one interruptible local process. Unknown: does the
+repaired history handoff plus supported deeper configuration produce affordable
+actual play, or frequent incomplete choices/tactical losses? Preserve all wins,
+losses, unfinished games and fallback searches; no Elo/causal comparison with
+the earlier stochastic3ply games. Do not tune prices or require pass-all tactics.
+
+Completed six4ply playing cases: geometric White loses78/Black unfinished80;
+linear White wins63/Black loses75; unit White unfinished80/Black loses71.
+One local win/three losses/two unfinished,447 played plies, all author pushes
+and board/side/rights/raw-EP align.223 local choices include104 complete4ply
+searches and119 time-limited searches whose last complete iteration is3ply.
+Local search wall911.759sec; every runtime restores balance and has zero missing
+witnesses/opaque child hashes. This condition does not justify replacing the
+cheaper3ply playing option: its depth target is often unmet and observed outcomes
+are mixed. Different stochastic opponent lines/preexisting3ply samples do not
+identify a causal strength effect. Preserve these unfavorable results.
+
+Failure-driven local trace explains the f7f6 horizon: after Whiteg3,40 of41
+legal Black replies admit an immediate legal capture of its Queen. The exception
+Bxc3+ is a checking intermezzo; Whitebxc3 leaves36 Black replies, all admitting
+a Queen capture.176 actual public transitions preserve the complete prefix.
+This supplies a scoped White Queen-removal strategy within6 halfmoves from the
+original root, not a full material/WDL certificate. It explains why the complete
+4ply PV (f6,e5,Bxc3,bxc3) can prefer a shallow alternative to the trap; no missing
+move or price fitting has been established.189 prefix/branch/capture states
+match independent python-chess and native/public legal sets and boards. The
+short mechanical audit overlapped part of the playing batch; game latencies
+remain observational, not an isolated hardware performance comparison.
+
+Declare a targeted descendant check after the six games: reconstruct the actual
+f6,g3 prefix with all12 Core-produced witnesses. Compare shared native/order/TT/
+dynamic/PVS under (main4,q0),(main3,q0),(main3,q1),(main3,q2), all3 prices with
+65536 total nodes/20sec/hard8 each. At most12 searches/4min, all results retained.
+Unknown: does an extra ordinary ply or tactical q extension expose the delayed
+Queen removal affordably here? The earlier full-suite q failure does not forbid
+this changed-premise diagnostic; no return to unexposed validation or price
+tuning. Different horizon types are resource/result observations, not matched
+price superiority. Reference each unique returned child at the existing finite
+50knode condition, keeping disagreement/incompleteness visible.
+
+One final finite-reference followup uses the same24 original cases and the
+completed PVS-on choices, reusing only identical engine/condition/FEN/child cache
+entries from the existing dynamic3 report. Unknown: are newly completed deeper
+choices useful or just complete? All source children remain finite standard-
+Chess proxies; keep all cases, original answers and misses, no requalification.
+
+The targeted12 searches all complete. Main3/q0 picks Bxc3+ and still reports
+positive material scores; ordinary main4 and main3/q1 expose large negative
+geometric/linear scores and select Qg5. Q1 costs6.045/5.429sec versus ordinary
+4ply5.585/4.900sec here, no clear saving. Unit selects Qxh2 at4ply/q1; the finite
+child proxy is -717cp versus Qg5 -611cp. Q2 selects Bxc3 for geometric/linear and
+Nc6 for unit, with finite proxies -645/-685cp; all are losing-score proxies,
+not exact utility. This confirms a meaningful horizon effect without certifying
+a globally better q setting.24 new PVS-child references reuse41 identical cached
+analyses; BK01 unit retains the source mate line while geometric/linear retain
+negative finite alternatives. Cost/completeness gain does not imply tactical gain.
+
+One portable followup file data/chess_development_qfix_results_20261006.json
+retains all declarations/outcomes/selected moves, full game move streams and
+raw hashes. Per-move game telemetry stays in the untouched local raw run;
+the portable file uses per-game aggregates rather than duplicate private counters.
+
 ## Reuse
 
 The supported deeper material comparison (choose a new output path):

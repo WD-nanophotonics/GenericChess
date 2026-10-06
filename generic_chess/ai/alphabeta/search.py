@@ -40,7 +40,7 @@ from ..evaluation.evaluator import Evaluator
 from ..limits import SearchLimits
 from ..audit_instrumentation import AuditMetric, AuditRecorder, NullAuditRecorder
 from .ordering import MoveOrderer, StagedMovePicker
-from .quiescence import classify_noisy
+from .quiescence import classify_noisy, enemy_board_count
 from .statistics import SearchStatistics
 from .transposition import BoundType, TranspositionTable, score_from_tt, score_to_tt
 from .tuning import SearchTuning
@@ -508,6 +508,7 @@ def _runtime_noisy_actions(ctx: _Context, actions):
     runtime = ctx.runtime
     state = runtime.state
     side = state.position.side_to_move
+    parent_enemies = enemy_board_count(state.position, side)
     noisy = []
     for action in actions:
         from ...core.coordinates import square_to_index
@@ -525,6 +526,10 @@ def _runtime_noisy_actions(ctx: _Context, actions):
                 continue
         with runtime.pushed(action, checkpoint=ctx.checkpoint):
             child = runtime.state
+            if enemy_board_count(child.position, side) < parent_enemies:
+                noisy.append(action)
+                ctx.stats.capture_qactions += 1
+                continue
             if child.terminal_status.is_terminal:
                 noisy.append(action)
                 continue
@@ -565,11 +570,11 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
         engine.in_check(state.position, side, checkpoint=ctx.checkpoint)
         if engine is not None else is_in_check(state.position, side, ctx.compiled)
     )
-    actions = list(runtime.legal_actions(ctx.checkpoint))
-    ctx.stats.legal_generation_calls += 1
-    ctx.stats.legal_actions_generated += len(actions)
-    ctx.budget.check(ctx.stats, force=True)
     if in_check:
+        actions = list(runtime.legal_actions(ctx.checkpoint))
+        ctx.stats.legal_generation_calls += 1
+        ctx.stats.legal_actions_generated += len(actions)
+        ctx.budget.check(ctx.stats, force=True)
         ctx.stats.in_check_qnodes += 1
         if qdepth >= ctx.qhard_depth_limit:
             ctx.stats.qsearch_check_hard_limit_aborts += 1
@@ -604,6 +609,12 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
     if ctx.qnode_limit is not None and ctx.stats.qnodes >= ctx.qnode_limit:
         ctx.stats.qsearch_budget_aborts += 1
         raise SearchAborted("qsearch_budget")
+    # Terminal status is already authoritative. Noncheck stand-pat/depth
+    # exits need no legal list; keep full evasion generation above.
+    actions = list(runtime.legal_actions(ctx.checkpoint))
+    ctx.stats.legal_generation_calls += 1
+    ctx.stats.legal_actions_generated += len(actions)
+    ctx.budget.check(ctx.stats, force=True)
     for action in sorted(_runtime_noisy_actions(ctx, actions), key=str):
         with runtime.pushed(action, checkpoint=ctx.checkpoint):
             score = -_quiescence_runtime(-beta, -alpha, ply + 1, qdepth + 1, ctx)

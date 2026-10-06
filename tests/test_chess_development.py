@@ -95,6 +95,39 @@ def test_shared_dynamic_terms_do_not_change_leaf_prices(compiled):
     assert len(set(deltas)) == 1
 
 
+def test_existing_pvs_reaches_same_complete_scores_and_preserves_root(compiled):
+    from generic_chess.ai.alphabeta.tuning import SearchTuning
+    case = dict(id='capture', fen='7K/8/8/8/8/1Rk5/2N5/8 b - - 0 1',
+                accepted_uci=['c3b3'], answer_basis='exposed source control')
+    baseline = compare_case(case, compiled, limits(), ordering=True, use_tt=True)
+    pvs = compare_case(case, compiled, limits(), ordering=True, use_tt=True,
+                       tuning=SearchTuning(use_root_tactical=False, use_pvs=True))
+    assert all(r['completed'] and r['state_preserved'] for r in pvs['rows'])
+    assert [(r['move'],r['score']) for r in baseline['rows']] == [(r['move'],r['score']) for r in pvs['rows']]
+    assert sum(r['statistics']['pvs_null_window_searches'] for r in pvs['rows']) > 0
+
+
+def test_play_hands_off_every_actual_history_position(compiled, monkeypatch):
+    import scripts.chess_development as development
+    from generic_chess.core.identity import position_identity_key
+    original = development.run_root_search
+    observed = []
+    def checked(state, *args, **kwargs):
+        witnesses = kwargs['_history_witnesses']
+        assert len(witnesses) == len(state.history) == state.ply_count+1
+        assert witnesses[-1] == state.position
+        assert all(position_identity_key(p, compiled) == r.position_key
+                   for p,r in zip(witnesses, state.history))
+        observed.append(len(witnesses))
+        return original(state, *args, **kwargs)
+    monkeypatch.setattr(development, 'run_root_search', checked)
+    game = play_game('7K/8/8/8/8/1Rk5/2N5/8 b - - 0 1', compiled,
+                     'geometric_half', 'unit', limits(), 3)
+    assert observed == [1,2,3] and game['plies_played'] == 3
+    assert all(m['statistics']['runtime_history_witness_misses'] == 0 for m in game['moves'])
+    assert all(m['statistics']['runtime_opaque_history_child_external_key_computations'] == 0 for m in game['moves'])
+
+
 def test_terminal_game_is_finished_without_inventing_a_move(compiled):
     game = play_game('7k/6Q1/5K2/8/8/8/8/8 b - - 0 1', compiled, 'unit', 'geometric_half', limits(), 3)
     assert game['finished'] and game['end'] == 'checkmate'

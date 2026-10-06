@@ -1,3 +1,4 @@
+from frozen_research_sources import source_digest
 import hashlib,json
 from pathlib import Path
 from types import SimpleNamespace as NS
@@ -10,7 +11,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def test_actual_native_mirror_qsearch_scope_and_pins():
     r=json.loads((ROOT/'docs/research/data/chess_capture_effect_v3_20261006.json').read_text())
     assert r['complete'] and r['source_hashes_unchanged'] and r['seconds']<15
-    for p,pin in r['source_sha256'].items():assert hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==pin
+    for p,pin in r['source_sha256'].items():assert source_digest(ROOT, p, pin) == pin
     assert r['public_transitions']==r['source_pushes']==6
     assert r['runtime_pushes']==r['runtime_pops']==10 and r['entries']==83
     assert len(r['pattern_bits'])==20 and len(r['excluded_drop_patterns'])==5
@@ -25,7 +26,7 @@ def test_second_global_hint_failure_is_kept_with_zero_events():
     r=json.loads((ROOT/'docs/research/data/chess_capture_effect_v2_20261006.json').read_text())
     assert not r['complete'] and r['error']=='ValueError: unqualified effect vocabulary'
     assert r['public_transitions']==r['runtime_pushes']==r['source_pushes']==0
-    for p,pin in r['source_sha256'].items():assert hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==pin
+    for p,pin in r['source_sha256'].items():assert source_digest(ROOT, p, pin) == pin
 
 
 def test_actual_effect_catalog_explains_first_failure_and_later_rights():
@@ -37,7 +38,7 @@ def test_actual_effect_catalog_explains_first_failure_and_later_rights():
     assert rows[0]['pattern_id']=='legacy_064'
     rights=[p for p in r['patterns'] if p['unsupported_v1']==['clear_right']]
     assert len(rights)==4 and not any(p['unsupported_v2'] for p in rights)
-    for p,pin in r['source_sha256'].items():assert hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==pin
+    for p,pin in r['source_sha256'].items():assert source_digest(ROOT, p, pin) == pin
 
 
 def test_excluded_drop_is_not_accepted_as_quiet_board_action():
