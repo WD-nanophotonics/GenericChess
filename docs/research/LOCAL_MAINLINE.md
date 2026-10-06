@@ -36,7 +36,10 @@ independent motivation, declared context/scale/time assumptions and a smallest
 falsifier. Do not require universal valuation axioms, full WDL calibration or
 rules uniquely selecting a population. Old failures reject their tested claims,
 not all mobility/service/context approaches. Revisit only with a changed premise;
-no unchanged reruns, exposed-label fitting or enlarged experiment budgets.
+no unchanged reruns, exposed-label fitting or retrospective changes to frozen
+comparison budgets. User2026-10-06 replaces universal development compute
+cutoffs with information-per-cost checkpoints (LOCAL_AGENT.md Budget); bounded
+followups retain old failures and do not regain independent-validation status.
 The previous 'no new principle, so stop' notes are superseded as exit policies.
 
 Current executable Main/Backup tasks live in memo; execute and revise them.
@@ -652,6 +655,50 @@ has no root reserve; depth1 production root still suppresses ordinary qsearch
 in its first iteration. Richer ROOT controller admission remains OPEN
 (CHESS_QSEARCH_EP_SCORE_RESULTS.md,CHESS_CAPTURE_EFFECT_V3_RESULTS.md).
 No closed trial budget was enlarged.
+
+## Latest2026-10-06 continuation
+
+CHESS_Q1_ROOT_RESULTS.md qualifies a complete research root controller on all
+four Pawn-risk choices/18 replies,76 combined events; a fresh five-choice root
+qualifies93events but its single independent reference GET fails before any
+response (CHESS_Q1_REFERENCE_RESULTS.md). Both trees are intrinsically
+price-blind: SEARCH_PRICE_INFORMATION.md supplies the fixed-tree affine-ray
+certificate. Production root/qsearch remains separate. A new multi-type
+checking tree qualifies69 public edges/17 evasions,375 score terms but still
+matches static choices (MULTITYPE_QTREE_RESULTS.md). Endpoint-only mixture
+agreement fails after min envelopes, even with actual price endpoints:
+SEARCH_ENDPOINT_ROBUSTNESS_RESULTS.md. These are precise integration/scope
+results, not yet general pricing improvement.
+
+HORSE_INTERIOR_DETOUR_RESULTS.md proves a conditional separated-interior-hole
+path bound120 for39072 worlds, cumulative4994 analytic terms. It is not full H
+reachability or additive prefix mass. That historical budget count is preserved;
+user's new information/cost policy governs justified development followups.
+
+User2026-10-06 budget consultation with dot is fully read/reconciled/adopted:
+LOCAL_AGENT.md Budget. No universal128/5000/15sec scientific veto; permission,
+safety, frozen comparison conditions/exposure stay intact. Actual information
+value is now demonstrated by PROMOTED_QUEEN_STRATEGY_RESULTS.md:196-node/242-edge
+source-guided local strategy, independently unfolded without source calls into
+692 local transitions/167 actual White mate leaves through absolute ply15.
+Both construction/verification exceed old5000 list counts and take~3.3sec.
+This proves the exact selected Queen child locally, not all root utilities or
+global formula superiority. THREEPIECE_PROMOTION_USE_RESULTS.md reports full
+source tie-risk; unit may select the same winning child. B/N no-mate geometry
+is complete over447888 worlds with16 actual native/Pawn-origin dispatch controls,
+keeping its inspected geometry/executor correspondence scope explicit
+(BARE_MINOR_MATE_GEOMETRY_RESULTS.md).
+
+Small independent sources now cover allfive3piece modes and24 pawn-free3/4piece
+classes (THREEPIECE_SOURCE_EXTENSION_RESULTS.md,MIXED_SYZYGY_SOURCE_RESULTS.md).
+Native-double-Queen failure is preserved; continuation reuses10 previous probes
+and explicitly binds second Queen to Pawn origin. Source WDL50/DTZ/local-goal
+boundaries stay separate. New four-choice R/N capture fork has source utility
+contact[0,0] versus unit[-1,0]; canonical unit also draws, and any positiveR>N
+weights behave the same (ROOK_KNIGHT_CAPTURE_FORK_RESULTS.md). Narrow independent
+tie-risk evidence now exists; detailed coefficient quality/general strength
+remain OPEN. No human holdout, extra worker, public upload or new approval
+framework supplied these developments.
 
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult

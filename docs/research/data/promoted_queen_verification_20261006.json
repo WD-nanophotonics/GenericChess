@@ -1,0 +1,22 @@
+{
+  "complete": true,
+  "source_calls": 0,
+  "transitions": 692,
+  "visits": 693,
+  "legal_entries": 10048,
+  "mate_leaves": 167,
+  "max_absolute_ply": 15,
+  "owner_zero_win": true,
+  "full_path_history_replay": true,
+  "seconds": 1.0,
+  "source_sha256": {
+    "docs/research/data/promoted_queen_strategy_20261006.json": "c51972e400ecc5106ea0cb06f7a4e8e2d1a340b3e94c01dfa425053629db9999",
+    "scripts/verify_promoted_queen_certificate.py": "2f3ec3c9057de2d1c032cbf49604e96bd9e4c35ccb743381cfc4a28c1b7066f1",
+    "scripts/research_state_replay.py": "8cdab874dc2bf2a5f1fd884a9c5049e00d6f3abd55cf0b78a09167e15177e400",
+    "scripts/public_goal_intervals.py": "51d1e9b9ae78578b7e4a4353f41f590939c4b4ce4961b3e8cd027030941e41b5",
+    "scripts/audit_lichess_complete_children.py": "e6b25e84802cb18efb47fb19b89f43dd150aa15988ae07e3a1208933398e3465",
+    "generic_chess/core/transition.py": "0437cba33051366584591e5330904087e4bd12427e1e8d2ad510744fc8e02177",
+    "generic_chess/core/terminal.py": "6f5958eeeb941ab50acc3acd323edeb48215c860029e9d7ff7e5579927ae6e92",
+    "generic_chess/rules/western_chess.py": "2b3bc415763ce209264504c751fa3a94d66de016262da0cd91f6c82172d3ae2a"
+  }
+}

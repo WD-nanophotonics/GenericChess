@@ -32,7 +32,17 @@ distinguish semantics, approximation and independent deployment evidence.
 Old failures restrict tested claims, not entire fields. Revisit a failed route
 only with a changed premise and a specific decision-changing check; no unchanged
 reruns, exposed-label fitting, human-price tuning or Xiangqi human-holdout reads.
-Preserve Chess/Shogi/Xiangqi semantic boundaries and existing experiment caps.
+Preserve Chess/Shogi/Xiangqi semantic boundaries and frozen comparison records.
+User2026-10-06 prioritizes information per cost, not universal compute cutoffs.
+Development time/count limits are cost checkpoints; within existing permission,
+continue a bounded, interruptible batch when its possible outcomes can change a
+specific decision. Briefly record the unknown, decision-changing outcomes and
+incremental cost; count engineering/token overhead too, without approval queues.
+Permissions, machine safety and declared fair-comparison conditions remain hard
+boundaries. Keep old cap failures intact; added development never restores
+unexposed validation status. Compare methods under the same resource condition
+or report resource/result curves. No result-driven extension of frozen tests,
+runaway jobs, extra fees/workers or access bypass. See LOCAL_AGENT.md Budget.
 
 Before60 minutes, a normal/no-next-action finish is forbidden. Early finish
 requires explicit user stop, actual tool/quota/runtime limit, a genuinely

@@ -41,8 +41,45 @@ are allowed without a complete WDL bridge or uniquely rule-given population.
 Freeze a proposed empirical test before observing its validation evidence;
 keep old failures and report assumption-dependent conclusions accurately.
 Revisit old routes only with a changed premise and a decision-changing test.
-Do not tune exposed/human labels, read the Xiangqi human holdout, exceed original
-experiment caps, repeat failed batches or substitute framework work for science.
+Do not tune exposed/human labels, read the Xiangqi human holdout, rewrite frozen
+experiment conditions, repeat unchanged failed batches or substitute framework
+work for science. Development continuation follows the Budget section below.
+
+## Budget
+
+User2026-10-06 requests value per cost rather than universal time/count gates.
+Dot's complete reply was read, reconciled and adopted in the same Slack thread:
+https://nanomelon.slack.com/archives/C0C6L21UU20/p1791260944221889
+Request GC-SLACK-20261006-132838-03368ffa; raw reply remains in the ignored
+local Slack record. Dot reviewed the request/user preference and earlier public
+cost records; it did not run today's69-edge tree or change machine permissions.
+
+Use a short continuation record: what is unknown; which possible outcomes change
+the next decision; expected incremental resources. Include implementation and
+explanation/token costs. No numeric ROI fiction or new approval framework.
+Within existing authorization, an interruptible small batch may continue past
+a development cost checkpoint when it has concrete information value. Record
+actual transitions, cache accesses, scoring, time and bytes separately:129 as
+a conservative upper bound is not129 measured transitions.128/5000/15seconds
+are not universal scientific thresholds;60-90minutes remains the user's active
+research-continuation target, not an experiment-value or machine-safety metric.
+
+Keep permission, stop flags, finite machine-safety protections and formally
+declared comparison conditions. Discuss material new cost, long machine
+occupation or uncontrolled growth before proceeding; no heavy jobs/extra worker
+or access bypass. Preserve all old frozen trials and failures. Additional
+development must explain changed premises and its adaptive/exposed status;
+renaming phases/seeds cannot restore an independent holdout. Report favorable,
+unfavorable and unchanged outcomes alike. Give candidate and baseline the same
+resource condition or show resource/result curves. Pause a route whose possible
+outcomes no longer change decisions; choose useful independent work instead.
+
+Exploratory development measurements may be useful without exact WDL, complete
+all-defense certificates or an unexposed holdout. Label their limitations and
+reserve those stronger requirements for stronger claims. Prioritize a runnable
+candidate with a fixed existing search configuration and common comparison
+entry; reuse existing recording/state helpers. Broader proofs and new adapters
+should address an observed failure or explicit use, not precede all useful tests.
 
 ## Finish and limits
 

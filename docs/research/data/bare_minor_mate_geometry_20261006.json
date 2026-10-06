@@ -1,0 +1,38 @@
+{
+  "complete": true,
+  "modes": {
+    "N": {
+      "worlds": 223944,
+      "checked_worlds": 18448,
+      "escape_witnesses": 18448,
+      "capture_witnesses": 0,
+      "ordered_witness_sha256": "cf67101dc90c81da7c583789c2713874e2031b167289b9e8f1d3c0e1afa0b7c5"
+    },
+    "B": {
+      "worlds": 223944,
+      "checked_worlds": 30660,
+      "escape_witnesses": 30660,
+      "capture_witnesses": 2568,
+      "ordered_witness_sha256": "c59401773273a7a6cfc9c8e9aa60d8fe2af5f7709f13ca1ce0a358402ba77cdc"
+    }
+  },
+  "source_calls": 0,
+  "public_transitions": 0,
+  "source_sha256": {
+    "scripts/audit_bare_minor_mate_geometry.py": "6921d4653ad36711a0421ef24d25a97a92c52a9e31546a4ac98e4bd18a68d941",
+    "docs/research/BARE_MINOR_MATE_GEOMETRY_PROTOCOL.md": "74c3a0eb1b8c8cf279d634f3965fd01b61ae47c47a4dcdbe04fcb5edfc4714f9",
+    "generic_chess/rules/western_chess.py": "2b3bc415763ce209264504c751fa3a94d66de016262da0cd91f6c82172d3ae2a",
+    "generic_chess/core/semantic_executor.py": "0d6c0f72bd29b36f3d607a32de1dbae26fb9fa677dd0af6bf28c4f1122f17ae8",
+    "generic_chess/core/terminal.py": "6f5958eeeb941ab50acc3acd323edeb48215c860029e9d7ff7e5579927ae6e92",
+    "scripts/research_record.py": "3ea168a814d28735bce97351ecda6b96e61a6fec0b271aac3e7cd2e180d6f72d"
+  },
+  "rule_scope": {
+    "max_ply": 1000,
+    "repetition_limit": 100000,
+    "stalemate": "draw"
+  },
+  "no_bare_minor_checkmate": true,
+  "seconds": 0.06200000015087426,
+  "scope": "complete geometry, conditional inspected native/current promoted move correspondence; not semantic replay of every world",
+  "source_hashes_unchanged": true
+}
