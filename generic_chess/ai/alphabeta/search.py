@@ -516,6 +516,20 @@ def negamax(
     return SearchResult(best, best_action, best_pv, best_declaration)
 
 
+def _order_qactions(state, actions, ply, ctx: _Context):
+    """Order the same q action set; preserve the default lexical traversal."""
+    if not ctx.tuning.use_ordered_qsearch or not ctx.use_ordering:
+        return sorted(actions, key=str)
+    actions = list(actions)
+    started = time.monotonic()
+    ordered = ctx.orderer.order(state, actions, ctx.evaluator, -ply - 1,
+                                None, None, ctx.tuning)
+    ctx.stats.ordering_calls += 1
+    ctx.stats.ordered_moves += len(actions)
+    ctx.stats.ordering_seconds += time.monotonic() - started
+    return ordered
+
+
 def _runtime_noisy_actions(ctx: _Context, actions):
     """Classify qsearch actions without materializing immutable child states."""
     runtime = ctx.runtime
@@ -545,6 +559,8 @@ def _runtime_noisy_actions(ctx: _Context, actions):
                 continue
             if child.terminal_status.is_terminal:
                 noisy.append(action)
+                continue
+            if ctx.tuning.use_capture_only_qsearch:
                 continue
             engine = semantic_engine_for(ctx.compiled)
             child_in_check = (
@@ -597,7 +613,7 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
             raise SearchAborted("qsearch_budget")
         if not actions:
             raise SearchAborted("qsearch_check_no_evasions")
-        for action in sorted(actions, key=str):
+        for action in _order_qactions(state, actions, ply, ctx):
             with runtime.pushed(action, checkpoint=ctx.checkpoint):
                 score = -_quiescence_runtime(-beta, -alpha, ply + 1, qdepth + 1, ctx)
             if score >= beta:
@@ -628,7 +644,14 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
     ctx.stats.legal_generation_calls += 1
     ctx.stats.legal_actions_generated += len(actions)
     ctx.budget.check(ctx.stats, force=True)
-    for action in sorted(_runtime_noisy_actions(ctx, actions), key=str):
+    if ctx.tuning.use_ordered_qsearch:
+        # Classify on demand so a cutoff avoids probing remaining quiet moves.
+        ordered = _order_qactions(state, actions, ply, ctx)
+    else:
+        ordered = sorted(_runtime_noisy_actions(ctx, actions), key=str)
+    for action in ordered:
+        if ctx.tuning.use_ordered_qsearch and not _runtime_noisy_actions(ctx, (action,)):
+            continue
         with runtime.pushed(action, checkpoint=ctx.checkpoint):
             score = -_quiescence_runtime(-beta, -alpha, ply + 1, qdepth + 1, ctx)
         if score >= beta:
@@ -688,7 +711,7 @@ def quiescence(
             ):
                 handle_by_action[handle.action] = handle
                 ctx.checkpoint()
-            ordered_actions = sorted(handle_by_action, key=str)
+            ordered_actions = _order_qactions(state, handle_by_action, ply, ctx)
             successors = None
         else:
             successors = legal_successors(state, ctx.compiled)
@@ -704,10 +727,12 @@ def quiescence(
             # A non-terminal, in-check state with no evasions is a Core
             # invariant violation; never fall back to static evaluation.
             raise SearchAborted("qsearch_check_no_evasions")
+        child_by_action = {a: child for a, child in successors} if semantic_engine is None else None
         ordered = (
             ((action, handle_by_action[action]) for action in ordered_actions)
             if semantic_engine is not None
-            else ((action, child) for action, child in sorted(successors, key=lambda pair: str(pair[0])))
+            else ((action, child_by_action[action]) for action in
+                  _order_qactions(state, child_by_action, ply, ctx))
         )
         for action, child_or_handle in ordered:
             child = (
@@ -759,15 +784,15 @@ def quiescence(
     if semantic_engine is not None:
         ordered = (
             (action, handle_by_action[action])
-            for action in sorted(handle_by_action, key=str)
+            for action in _order_qactions(state, handle_by_action, ply, ctx)
         )
     else:
-        noisy = classify_noisy(state, successors, ctx.compiled, ctx.stats)
+        noisy = classify_noisy(state, successors, ctx.compiled, ctx.stats,
+                               capture_only=ctx.tuning.use_capture_only_qsearch)
         ctx.budget.check(ctx.stats, force=True)
-        ordered = sorted(
-            (pair for pair in successors if pair[0] in noisy),
-            key=lambda pair: str(pair[0]),
-        )
+        child_by_action = {action: child for action, child in successors if action in noisy}
+        ordered = [(action, child_by_action[action]) for action in
+                   _order_qactions(state, child_by_action, ply, ctx)]
     for action, child_or_handle in ordered:
         child = (
             materialize_legal_successor(
@@ -779,7 +804,8 @@ def quiescence(
         )
         if semantic_engine is not None:
             noisy_one = classify_noisy(
-                state, ((action, child),), ctx.compiled, ctx.stats
+                state, ((action, child),), ctx.compiled, ctx.stats,
+                capture_only=ctx.tuning.use_capture_only_qsearch,
             )
             ctx.budget.check(ctx.stats, force=True)
             if not noisy_one:

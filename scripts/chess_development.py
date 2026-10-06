@@ -318,6 +318,8 @@ def main(argv=None):
     p.add_argument('--dynamic-backend', choices=('legacy', 'cached_legacy', 'semantic', 'semantic_bulk'), default='legacy',
                    help='opt-in shared dynamic attack backend; semantic requires native, legacy remains default')
     p.add_argument('--pvs', action='store_true', help='existing principal variation search; explicit common search ablation')
+    p.add_argument('--qordering', action='store_true', help='opt-in existing common move orderer inside qsearch; requires --ordering')
+    p.add_argument('--qcaptures-only', action='store_true', help='opt-in captures/promotions/terminal actions outside check; full evasions retained')
     p.add_argument('--capture-risk', action='store_true', help='opt-in half-discount of semantically pseudo-attacked unprotected inventory; approximate, requires native')
     p.add_argument('--check-only', action='store_true', help='opt-in mandatory check evasions at otherwise static qdepth0 leaves')
     p.add_argument('--engine', type=Path, help='optional existing local UCI executable for play-uci')
@@ -340,6 +342,10 @@ def main(argv=None):
         p.error('capture-risk requires --native-legality')
     if args.check_only and args.qdepth != 0:
         p.error('check-only requires --qdepth 0; use ordinary qdepth otherwise')
+    if args.qordering and not args.ordering:
+        p.error('qordering requires --ordering')
+    if args.qcaptures_only and args.qdepth <= 0:
+        p.error('qcaptures-only requires positive ordinary qdepth')
     if args.mode in ('play-uci', 'reference') and (args.engine is None or args.opponent_nodes <= 0):
         p.error('UCI modes require an engine and positive opponent node limit')
     if args.mode == 'reference' and args.comparison is None:
@@ -353,7 +359,9 @@ def main(argv=None):
                           quiescence_max_nodes=args.nodes, deterministic=True)
     compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
     tuning = SearchTuning(use_root_tactical=False, use_pvs=args.pvs,
-                          use_check_only_qsearch=args.check_only)
+                          use_check_only_qsearch=args.check_only,
+                          use_ordered_qsearch=args.qordering,
+                          use_capture_only_qsearch=args.qcaptures_only)
     provider = None
     if args.native_legality:
         from generic_chess.ai.alphabeta.native_legality import NativeSemanticLegalityProvider

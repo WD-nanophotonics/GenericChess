@@ -29,6 +29,8 @@ def classify_noisy(
     successors,
     compiled,
     stats: SearchStatistics | None = None,
+    *,
+    capture_only: bool = False,
 ) -> list[Action]:
     """Noisy qsearch actions from ``(action, child)`` successor pairs.
 
@@ -64,6 +66,8 @@ def classify_noisy(
             continue
         if child.terminal_status.is_terminal:
             noisy.append(action)
+            continue
+        if capture_only:
             continue
         child_in_check = (
             semantic_engine.in_check(child.position, 1 - side)

@@ -36,3 +36,11 @@ class SearchTuning:
     # Opt-in: at a static qdepth=0 leaf, search mandatory check evasions only.
     # Nonchecking leaves keep static evaluation; ordinary captures are not added.
     use_check_only_qsearch: bool = False
+
+    # Opt-in reuse of the existing move orderer inside qsearch only.
+    # Preserves all noisy actions/evasions; changes neither evaluation nor depth.
+    use_ordered_qsearch: bool = False
+
+    # Development hypothesis: outside check, omit quiet checking actions from
+    # ordinary qsearch. Captures/promotions/terminal actions and all evasions stay.
+    use_capture_only_qsearch: bool = False

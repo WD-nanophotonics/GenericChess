@@ -679,6 +679,134 @@ pass. Final thread reread includes two additional user/dot status posts; they
 add no technical objection and are not independent reproduction or newly
 authenticated request replies. No routine acknowledgement sent.
 
+## Earlier loss diagnosis and bounded capture search (2026-10-06)
+
+The next segment executes all memo-selected actual White roots16/20/24/26/30/
+32/36/38/40/42 before the first Queen loss. Fresh50000-node root/selected-child/
+best-child references preserve actual full history, Core/author child alignment
+and every point. The conspicuous negative finite differences are20Qh4(-460cp),
+26Bc6(-399),40Kf3(-348). Earlier checkpoint incorrectly called e2f3 a Bishop
+capture; it is a King move. Later corrected explicitly, raw checkpoint retained.
+These are finite reference differences, not certified regret/blunder incidence.
+
+At20 the legal saved continuation Qh4 g5 Qxg5 permits hxg5 removing White's
+Queen. Direct author qsearch on that legal endpoint gives Black-perspective
+static-19917 versus capture-only q1+83083/q2+65666 (all complete,~0.00024/
+0.0140/0.0260sec). This is a diagnostic control, not proof the original search
+visited/evaluated that endpoint; saved PV omits TT/q continuations. Ten original
+root comparisons under4ply/32768nodes/five seconds find ordinary q1 mostly
+retains1/2main layers versus q0mostly3/4 and often keeps the same bad choices.
+Extra nominal extension alone does not guarantee a longer effective horizon.
+
+First predeclare a new2x2 resource curve: ordinary q0/check-only versus q1;
+lexical q traversal versus reusing existing shared-price move orderer. All24
+original cases/three prices,4ply/32768nodes/five seconds, cached legacy residual,
+PVS/root ordering/TT unchanged.288 searches at most24minutes on one core,
+interruptible, every partial result kept. The exact initially loaded source is
+archived; later lazy-classification/capture-only changes do not relabel it.
+Brief tests and actual-root probes overlap some cells, so timings are observed
+interleaved cost, not isolated hardware or guaranteed completion counts.
+
+Observed continuation cost motivates one changed algorithm hypothesis: outside
+check retain captures, promotions and terminal actions, omit quiet checks;
+in check keep every legal evasion and existing hard abort. Off-target removals,
+including EP, retain the actual child enemy-board-count signal. No SEE/price
+fitting, automatic tactical pruning, changed Core/defaults or native API.
+Optional ordered traversal classifies each candidate on demand before search,
+so a beta cutoff avoids probing the unused remainder. First capture-q1/q2/q3
+pilot is fixed to20/26/40; all12 partial searches remain. Capture q2 selects
+bxa5/Bd2/Qd4 with finite child proxies-331/-235/-823 versus-634/-633/-924.
+q3 is mixed (26Qxf6-665). No general-strength claim or coefficient calibration.
+
+Declare the q2 followup before broad results: all24 cases/three unchanged prices,
+same4ply/32768nodes/five seconds, cached legacy, existing common ordering/TT/PVS;
+72 cells at most6minutes. Then twelve playing cells: three prices, both colors,
+q0check-only versus capture-only q2, both new lazy qordering. Original initial
+position;120ply ceiling to reduce the earlier80ply unfinished censoring. Same
+Stockfish17.1 weak1320 setting/50000nodes/one-second fuse/Threads1/Hash16;
+fresh game each cell. At most60minutes local search, interruptible each move;
+all losses, incomplete searches and unfinished games retained. One stochastic
+cell per condition is practical development, not Elo or isolated q2/price cause.
+No adverse-result budget extension or human-holdout access.
+
+Dot supports this scoped player comparison and asks one essential contract check:
+interrupted iterations must not replace the last complete root. Existing
+run_root_search only assigns returned complete negamax results; injected
+time/node/qbudget interruptions preserve exact prior move/score/PV/depth for
+q0/q2. Reaching a finite q boundary is normal completion, actual interruption
+is recorded separately. Advice was report-based, not independent reproduction.
+
+Completed ordering-only curve: q0 lexical/ordered each finishes4ply on33/72,
+retaining3ply on39. Ordinary q1 lexical/ordered each finishes4ply on3/72,
+retaining3/2/1ply on7/57/5. All33 shared complete q0 and3 shared complete q1
+actions/scores match. Observed aggregate wall308.261/307.862sec for q0 and
+348.375/348.198sec for q1; total main+qnodes606473/604111 and189132/176611.
+Original answer agreement8/72 for q0 and6/72 for q1. Ordering alone does not
+recover useful completion depth or wall time in this curve; do not promote it
+as a measured speed improvement. Preserve partial searches rather than counting
+only returned records as completed4ply searches.
+
+The separate capture-only/lazy q2 suite finishes all72 records, with3 searches
+completing4ply,33 retaining3ply and36 retaining2ply; zero1ply results. Original
+answer agreement12/72, observed wall347.328sec and392599 main+qnodes. This is a
+practical tradeoff against the q0 and ordinary q1 conditions, not evidence that
+more extension always improves a move or that answer agreement is an error rate.
+The exposed three-root pilot and full-suite sample retain distinct scopes.
+
+Existing counters offer a concrete next cost question, not a causal profile:
+ordered q0/q1/capture-q2 suites make592631/952599/1009089 runtime pushes versus
+573049/66128/153019 recorded searched successors. Full semantic diff fallback
+counts592646/952637/1009123 track those pushes closely. Measured ordering time
+6.341/0.820/3.804sec is small against aggregate308/348/347sec; evaluation and
+native-legality timers are scoped and not necessarily a disjoint wall-time
+partition. Profile classification/state updates before adding nominal depth or
+discarding semantic/history guards. No runtime optimization is claimed here.
+
+All selected q0ordered/capture-q2 suite children, including interrupted-search
+choices, receive finite50000-node references:24 new analyses plus43 matching
+cached analyses under the same exact engine/hash/threads/nodes conditions.
+Across23 cp-valued pairs geometric improves9/regresses5/equals9, sum+169cp;
+linear6/9/8, sum-47cp. Their remaining BK.01 pair changes d6d4 to d6d1 with
+reference mate2 instead of a cp result; do not convert mate to an arbitrary
+scalar or silently omit it. Unit's24 cp pairs improve7/regress9/equal8, sum+1198.
+These sums are descriptive finite proxies, not certified regret or fitted
+selection criteria. Explicit negatives include linear BK.11-554cp, geometric
+BK.20-215, unit BK.17-305. More answer hits do not imply every choice improves.
+References here use supplied BK FEN history, unlike actual-loss full histories.
+
+All twelve declared120ply playing cells finish their records in2397.806sec wall:
+
+| Profile | Local wins | Local losses | Unfinished | Played halfplies | Complete4ply local turns | Retained3ply | Retained2ply |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| q0 check-only | 1 | 3 | 2 | 591 | 162 | 133 | 0 |
+| capture-only q2 | 2 | 1 | 3 | 524 | 44 | 162 | 56 |
+
+q0/q2 local search wall1080.570/1233.697sec and main+qnodes1524865/1235571.
+All351 incomplete local searches are time_limit and retain the last completed
+iteration. Longer nominal q extension spends more wall while reducing main
+depth. Geometric q0 loses White and leaves Black unfinished; q2 leaves White
+unfinished and wins Black. Linear q0 leaves White unfinished and loses Black;
+q2 wins White and leaves Black unfinished. Unit q0 loses White/wins Black;
+q2 leaves White unfinished/loses Black at61halfplies. This last regression is
+retained, not hidden by the aggregate. Winner/color are checked explicitly:
+an earlier spoken Black q2 result was reversed, then corrected from raw winner1.
+Unfinished is not draw. One stochastic cell per condition, one initial position
+and weak opponent do not establish Elo, independent price quality or isolated
+causal q2 strength. Keep capture-only as a useful development option; do not
+promote prices/defaults from this small mixed batch.
+
+All1115 moves replay through public/author full legal sets, board/rights/rawEP
+and exact final Core state/history with zero discrepancies.82 relevant current
+and39 historical source-pin tests pass; no full-repository test claim. One
+portable record `data/chess_qcapture_results_20261006.json` contains13 exact
+raw reports/summaries with hashes,360 suite searches,32 actual-root q calls,
+twelve games and full replay. Exact earlier/order-only/capture producers and11
+drivers are inertly archived; original manifest bindings remain unchanged.
+Latest full advisor thread read has15 posts and no further technical supplement;
+the interruption objection was adopted without turning remaining risks into
+a backlog or waiting for approval. The next practical question is classification/
+state-update cost; the actual unit Black q2 loss supplies a separate error check.
+
 ## Reuse
 
 The supported deeper material comparison (choose a new output path):
@@ -695,3 +823,5 @@ an account/model/worker. A native build is optional: omit `--native-legality`
 to use the slower legal reference. Output refuses overwrite and preserves errors.
 
 Optional `--dynamic-backend cached_legacy` preserves the old residual with per-leaf reuse; `semantic_bulk` selects semantic pseudo-attacks and requires `--native-legality`. Legacy remains default. Use `--pvs --check-only --qdepth 0` for the fixed practical condition above.
+
+Optional `--qordering` requires `--ordering`; `--qcaptures-only` requires positive `--qdepth`. Both default OFF. For the prospective capture-only player use `--qdepth 2 --qcaptures-only --qordering --pvs --dynamic --dynamic-backend cached_legacy --native-legality --ordering --tt`; omit `--check-only` for positive qdepth.

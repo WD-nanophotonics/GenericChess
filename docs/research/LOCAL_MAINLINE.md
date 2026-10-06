@@ -778,6 +778,27 @@ Next inspect earlier actual deterioration, keeping single-variable comparisons
 and avoiding weight fitting or universal proofs. CHESS_DEVELOPMENT.md and
 data/chess_shared_dynamic_results_20261006.json preserve full traces and scope.
 
+Earlier loss continuation references all ten specified actual roots with full
+history;20Qh4/26Bc6/40Kf3 have conspicuous finite deficits before the later Queen
+loss. Direct recapture control motivates opt-in capture-only q2, retaining all
+check evasions/EP/promotions/terminal actions. Defaults/prices/Core are unchanged.
+Ordering alone gives no useful time/completion gain in the288-call curve;
+capture-only/lazy q2 has12/72 original-answer agreements,3complete4ply and
+33/36 retained3/2ply, versus q0eight agreements/33complete4ply. These are exposed
+development tradeoffs, not calibrated errors or general strength. Six injected
+interruption controls preserve the exact previous complete root result.
+Full12cell playing gives q0one win/three losses/two unfinished versus q2two/one/
+three; all1115 moves replay without discrepancies. q2retains2/3ply more often
+and unit Black reverses a q0win to a q2loss. All chosen-child finite references
+retain regressions and mate-valued pairs; mixed evidence keeps q2 optional,
+without default/price promotion.360suite calls,32actual-root comparisons and
+exact producers are in data/chess_qcapture_results_20261006.json and
+CHESS_DEVELOPMENT.md.82current/39historical checks pass. Existing counters show
+roughly1million capture-q2runtime pushes versus153019 searched successors;
+profile actual classification/state-update cost next, preserving semantic guards.
+The unit Black61ply loss is an executable separate error diagnostic. Do not
+infer original examined leaves merely from saved PV endpoints.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.
