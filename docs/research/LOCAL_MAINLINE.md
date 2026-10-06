@@ -569,6 +569,45 @@ aggregate masses, alongside old R. H complete qualification is still open,
 but its direct-count upper bound independently proves both-law R normalization
 (DIAGNOSTIC_MOMENT_BOUNDS_RESULTS.md). S/C law reversal is retained, not fitted.
 
+The fresh mixed-mode Chess case freezes all three choices before87 complete
+replies. Its two-ply SESSION window is0 for every choice: positive gain fails,
+eventual utilities unknown. Pinned python-chess independently matches90
+transitions,91 states and4 full action sets. Contact's Queen capture remains
+static-depth2 stable for all shared law mixtures, but this does not produce
+goal gain (CHESS_MULTIMODE_RESPONSE_RESULTS.md, CHESS_MULTIMODE_SOURCE_REPLAY_RESULTS.md,
+CHESS_MULTIMODE_STATIC2_RESULTS.md). The closed case is not deepened/replaced.
+
+SHARED_PARAMETER_WINDOW_CONTRACT.md and SHARED_PARAMETER_ORDER_RESULTS.md
+qualify four envelope orientations, positive common denominators and strict/
+canonical-equality cutoff gates on saved complete tables. Scalar PVS/TT are
+not production-integrated with those proofs. HORSE_TARGET_GRAPH_RESULTS.md
+rejects target-free leg reuse and independently derives tau2=147848;
+HORSE_ZERO_OBSTRUCTION_RESULTS.md establishes at least400 zeros, not complete
+H reachability. Both fixed-law H lower bounds now exceed S/C/E/A.
+
+DIAGNOSTIC_DURATION_ORDER_RESULTS.md generalizes R normalization to EVERY
+common independent duration with positive nonzero mass, for the fixed uniform
+world population. C/S and C/E have exact duration reversals; H/S beyond7
+remains unproved. DIAGNOSTIC_DURATION_TAIL_RESULTS.md provides explicit
+sufficient H/S and C/E gates, without choosing a law or using full H distances.
+POPULATION_DURATION_SCOPE_RESULTS.md limits the theorem: context reweighting
+or world-dependent duration can reverse R/A. Conservative common-population
+TV gates are assumptions, not deployment calibration or fitted tolerances.
+
+The new retention diagnostic preserves87 actual joint reply vectors: marginal
+worst P/R losses are incompatible, and hidden versus revealed probes change
+the proxy. Unit's tie includes contact's choice, so no strict tie-invariant
+gain follows. Dot's reviewed1026 reply supports unweighted correlated outcome
+sets and explicit incomparability. OUTCOME_SET_ORDER_CONTRACT.md qualifies
+the sufficient relation, not cross-type prices or official goals. The new
+first-quiet pilot fails admission after128 proposals with0 transitions/labels,
+and closes without substitution (CHESS_FIRST_QUIET_PILOT_RESULTS.md).
+FIRST_QUIET_COST_AND_TERMINAL_PREFLIGHT.md derives a conditional109-event bound
+but identifies author automatic-material draws absent from SESSION. Future
+trial admission needs that goal contract and actual information increment,
+not a larger old budget. GOAL_PROXY_PRIMARY_REVIEW_20261006.md records five
+primary-source assumptions; no imported/trained prices or human holdout reads.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.

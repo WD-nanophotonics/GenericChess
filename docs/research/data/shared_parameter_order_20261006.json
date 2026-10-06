@@ -1,0 +1,73 @@
+{
+  "complete": true,
+  "vertices": 224,
+  "rows": [
+    {
+      "candidate": "legacy_029:g21:a7-a8=TP",
+      "baseline": "legacy_010:g13:a6-a5",
+      "numerator_lower": "109130830537/392010418800",
+      "normalized_lower": "218261661074/241261155135",
+      "denominator_range": [
+        "393997/1919700",
+        "315059/1023840"
+      ],
+      "value_cutoff_proved": true,
+      "canonical_action_prune_proved": true,
+      "scope": "complete same-domain oriented rational envelopes and positive common denominator; supplied-proof sufficient only"
+    },
+    {
+      "candidate": "legacy_029:g21:a7-a8=TP",
+      "baseline": "legacy_014:g15:a6-b5",
+      "numerator_lower": "109130830537/392010418800",
+      "normalized_lower": "218261661074/241261155135",
+      "denominator_range": [
+        "393997/1919700",
+        "315059/1023840"
+      ],
+      "value_cutoff_proved": true,
+      "canonical_action_prune_proved": true,
+      "scope": "complete same-domain oriented rational envelopes and positive common denominator; supplied-proof sufficient only"
+    },
+    {
+      "candidate": "legacy_029:g21:a7-a8=TP",
+      "baseline": "legacy_016:g16:a6-b6",
+      "numerator_lower": "109130830537/392010418800",
+      "normalized_lower": "218261661074/241261155135",
+      "denominator_range": [
+        "393997/1919700",
+        "315059/1023840"
+      ],
+      "value_cutoff_proved": true,
+      "canonical_action_prune_proved": true,
+      "scope": "complete same-domain oriented rational envelopes and positive common denominator; supplied-proof sufficient only"
+    },
+    {
+      "candidate": "legacy_029:g21:a7-a8=TP",
+      "baseline": "legacy_029:g21:a7-a8",
+      "numerator_lower": "490597410091/9930930609600",
+      "normalized_lower": "490597410091/3055974631710",
+      "denominator_range": [
+        "393997/1919700",
+        "315059/1023840"
+      ],
+      "value_cutoff_proved": true,
+      "canonical_action_prune_proved": true,
+      "scope": "complete same-domain oriented rational envelopes and positive common denominator; supplied-proof sufficient only"
+    }
+  ],
+  "public_transitions": 0,
+  "runtime_pushes": 0,
+  "source_queries": 0,
+  "source_sha256": {
+    "scripts/audit_shared_parameter_order.py": "a7552d7ed2cce655c7e87d2d5fe4f86e962af998a47eb086af3b07e1017cc69b",
+    "scripts/shared_parameter_order.py": "4d95f8c46027bcda10b0b0bf4dd8d8fb73fd030c4f7f23887972214c0eec76ef",
+    "scripts/multiaffine_envelope_certificate.py": "aba5813d3b870b7af77b6dd83bed3d679290f6937d1e03902b44bde8ded1ba33",
+    "scripts/research_record.py": "3ea168a814d28735bce97351ecda6b96e61a6fec0b271aac3e7cd2e180d6f72d",
+    "docs/research/SHARED_PARAMETER_ORDER_PROTOCOL.md": "ae488fb107ceec1a55fe2a55a1d47c0ed692c0f26e6a9cdec2aca22288d7b90a",
+    "docs/research/SHARED_PARAMETER_WINDOW_CONTRACT.md": "af0fdbc923344270b18182c1de70ddde89dc58d3aef23098ae574f4ac4a3893d",
+    "docs/research/data/shared_law_hand_20261006.json": "0afc53e91eab6a0bd56573bee055747a35a472faa19bc7e22fcc9c562164d1e1"
+  },
+  "not_proved": "production PVS/TT/int integration, unobserved branches, avoided Core cost or goal improvement",
+  "seconds": 0.0,
+  "source_hashes_unchanged": true
+}

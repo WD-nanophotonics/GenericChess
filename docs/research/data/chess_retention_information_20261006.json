@@ -1,0 +1,553 @@
+{
+  "complete": true,
+  "rows": 87,
+  "branches": {
+    "sem_00_k_quiet:g4:c4-b3": {
+      "action_vectors": {
+        "sem_00_k_quiet:g10:h8-g8": [
+          1,
+          1
+        ],
+        "sem_00_k_quiet:g11:h8-g7": [
+          1,
+          1
+        ],
+        "sem_00_k_quiet:g8:h8-h7": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g12:d5-c3": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g14:d5-e3": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g15:d5-f4": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g16:d5-c7": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g17:d5-b6": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g18:d5-e7": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g19:d5-f6": [
+          1,
+          1
+        ],
+        "sem_03_n_capture:g13:d5-b4": [
+          0,
+          1
+        ],
+        "sem_04_b_quiet:g0:d4-c3": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g0:d4-b2": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g0:d4-a1": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g1:d4-e3": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g1:d4-f2": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g1:d4-g1": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g2:d4-c5": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g2:d4-b6": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g2:d4-a7": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g3:d4-e5": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g3:d4-f6": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g3:d4-g7": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g20:b5-a5": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g21:b5-c5": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g23:b5-b6": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g23:b5-b7": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g23:b5-b8": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g24:b5-a4": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g25:b5-c4": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g25:b5-d3": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g25:b5-e2": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g26:b5-a6": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g27:b5-c6": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g27:b5-d7": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g27:b5-e8": [
+          1,
+          1
+        ],
+        "sem_09_q_capture:g22:b5-b4": [
+          0,
+          1
+        ],
+        "sem_09_q_capture:g25:b5-f1": [
+          1,
+          0
+        ]
+      },
+      "hidden": "1/2",
+      "revealed": "0",
+      "marginal_minimum": [
+        0,
+        0
+      ],
+      "marginal_witnesses": [
+        [
+          "sem_03_n_capture:g13:d5-b4",
+          "sem_09_q_capture:g22:b5-b4"
+        ],
+        [
+          "sem_09_q_capture:g25:b5-f1"
+        ]
+      ],
+      "common_witnesses": [],
+      "hidden_witnesses": [
+        "sem_03_n_capture:g13:d5-b4",
+        "sem_09_q_capture:g22:b5-b4",
+        "sem_09_q_capture:g25:b5-f1"
+      ],
+      "marginal_vector_is_actual": false
+    },
+    "sem_01_k_capture:g10:c4-d4": {
+      "action_vectors": {
+        "sem_00_k_quiet:g10:h8-g8": [
+          1,
+          1
+        ],
+        "sem_00_k_quiet:g11:h8-g7": [
+          1,
+          1
+        ],
+        "sem_00_k_quiet:g8:h8-h7": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g12:d5-c3": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g14:d5-e3": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g15:d5-f4": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g16:d5-c7": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g17:d5-b6": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g18:d5-e7": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g19:d5-f6": [
+          1,
+          1
+        ],
+        "sem_03_n_capture:g13:d5-b4": [
+          0,
+          1
+        ],
+        "sem_08_q_quiet:g20:b5-a5": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g21:b5-c5": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g23:b5-b6": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g23:b5-b7": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g23:b5-b8": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g24:b5-a4": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g25:b5-c4": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g25:b5-d3": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g25:b5-e2": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g26:b5-a6": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g27:b5-c6": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g27:b5-d7": [
+          1,
+          1
+        ],
+        "sem_08_q_quiet:g27:b5-e8": [
+          1,
+          1
+        ],
+        "sem_09_q_capture:g22:b5-b4": [
+          0,
+          1
+        ],
+        "sem_09_q_capture:g25:b5-f1": [
+          1,
+          0
+        ]
+      },
+      "hidden": "1/2",
+      "revealed": "0",
+      "marginal_minimum": [
+        0,
+        0
+      ],
+      "marginal_witnesses": [
+        [
+          "sem_03_n_capture:g13:d5-b4",
+          "sem_09_q_capture:g22:b5-b4"
+        ],
+        [
+          "sem_09_q_capture:g25:b5-f1"
+        ]
+      ],
+      "common_witnesses": [],
+      "hidden_witnesses": [
+        "sem_03_n_capture:g13:d5-b4",
+        "sem_09_q_capture:g22:b5-b4",
+        "sem_09_q_capture:g25:b5-f1"
+      ],
+      "marginal_vector_is_actual": false
+    },
+    "sem_01_k_capture:g6:c4-b5": {
+      "action_vectors": {
+        "sem_00_k_quiet:g10:h8-g8": [
+          1,
+          1
+        ],
+        "sem_00_k_quiet:g11:h8-g7": [
+          1,
+          1
+        ],
+        "sem_00_k_quiet:g8:h8-h7": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g12:d5-c3": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g14:d5-e3": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g15:d5-f4": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g16:d5-c7": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g17:d5-b6": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g18:d5-e7": [
+          1,
+          1
+        ],
+        "sem_02_n_quiet:g19:d5-f6": [
+          1,
+          1
+        ],
+        "sem_03_n_capture:g13:d5-b4": [
+          0,
+          1
+        ],
+        "sem_04_b_quiet:g0:d4-c3": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g0:d4-b2": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g0:d4-a1": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g1:d4-e3": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g1:d4-f2": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g1:d4-g1": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g2:d4-c5": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g2:d4-b6": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g2:d4-a7": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g3:d4-e5": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g3:d4-f6": [
+          1,
+          1
+        ],
+        "sem_04_b_quiet:g3:d4-g7": [
+          1,
+          1
+        ]
+      },
+      "hidden": "1/2",
+      "revealed": "1/2",
+      "marginal_minimum": [
+        0,
+        1
+      ],
+      "marginal_witnesses": [
+        [
+          "sem_03_n_capture:g13:d5-b4"
+        ],
+        [
+          "sem_00_k_quiet:g10:h8-g8",
+          "sem_00_k_quiet:g11:h8-g7",
+          "sem_00_k_quiet:g8:h8-h7",
+          "sem_02_n_quiet:g12:d5-c3",
+          "sem_02_n_quiet:g14:d5-e3",
+          "sem_02_n_quiet:g15:d5-f4",
+          "sem_02_n_quiet:g16:d5-c7",
+          "sem_02_n_quiet:g17:d5-b6",
+          "sem_02_n_quiet:g18:d5-e7",
+          "sem_02_n_quiet:g19:d5-f6",
+          "sem_03_n_capture:g13:d5-b4",
+          "sem_04_b_quiet:g0:d4-a1",
+          "sem_04_b_quiet:g0:d4-b2",
+          "sem_04_b_quiet:g0:d4-c3",
+          "sem_04_b_quiet:g1:d4-e3",
+          "sem_04_b_quiet:g1:d4-f2",
+          "sem_04_b_quiet:g1:d4-g1",
+          "sem_04_b_quiet:g2:d4-a7",
+          "sem_04_b_quiet:g2:d4-b6",
+          "sem_04_b_quiet:g2:d4-c5",
+          "sem_04_b_quiet:g3:d4-e5",
+          "sem_04_b_quiet:g3:d4-f6",
+          "sem_04_b_quiet:g3:d4-g7"
+        ]
+      ],
+      "common_witnesses": [
+        "sem_03_n_capture:g13:d5-b4"
+      ],
+      "hidden_witnesses": [
+        "sem_03_n_capture:g13:d5-b4"
+      ],
+      "marginal_vector_is_actual": true
+    }
+  },
+  "comparisons": {
+    "geometric_half": {
+      "hidden": {
+        "canonical_margin": "0",
+        "tie_margin": [
+          "0",
+          "0"
+        ]
+      },
+      "revealed": {
+        "canonical_margin": "1/2",
+        "tie_margin": [
+          "0",
+          "1/2"
+        ]
+      }
+    },
+    "linear_mixture": {
+      "hidden": {
+        "canonical_margin": "0",
+        "tie_margin": [
+          "0",
+          "0"
+        ]
+      },
+      "revealed": {
+        "canonical_margin": "1/2",
+        "tie_margin": [
+          "0",
+          "1/2"
+        ]
+      }
+    },
+    "unit": {
+      "hidden": {
+        "canonical_margin": "0",
+        "tie_margin": [
+          "0",
+          "0"
+        ]
+      },
+      "revealed": {
+        "canonical_margin": "0",
+        "tie_margin": [
+          "-1/2",
+          "0"
+        ]
+      }
+    },
+    "zero": {
+      "hidden": {
+        "canonical_margin": "0",
+        "tie_margin": [
+          "0",
+          "0"
+        ]
+      },
+      "revealed": {
+        "canonical_margin": "0",
+        "tie_margin": [
+          "-1/2",
+          "0"
+        ]
+      }
+    }
+  },
+  "public_transitions": 0,
+  "source_queries": 0,
+  "source_sha256": {
+    "scripts/audit_chess_retention_information.py": "3f04ab602f92604d506373c90d5d7d7daa9c962db82b0e25990e1d2627654021",
+    "scripts/retention_probe.py": "f1f0504717d0d6e80e938b7369fc13ddc74793e5220f502df61e8ce9cb7ccefa",
+    "docs/research/CHESS_RETENTION_INFORMATION_PROTOCOL.md": "bcd689493349fa74873983a6d2e7203d24c2eeffa064c465e9ae6536d8fe5e3d",
+    "scripts/research_record.py": "3ea168a814d28735bce97351ecda6b96e61a6fec0b271aac3e7cd2e180d6f72d",
+    "docs/research/data/chess_multimode_response_20261006.json": "3ce22ddf15b0c212cac4267d5af776dfc57a7def1985464891ebc8c0a1362a55",
+    "docs/research/data/chess_multimode_source_replay_20261006.json": "130a14d9ea4c1c608ec7552a82d8296b1f54358ca4d5383c0596af8c848a5892"
+  },
+  "status": "exposed-root diagnostic, not strength validation",
+  "tags": [
+    {
+      "square": 25,
+      "physical": {
+        "owner": 0,
+        "base_type_id": "P",
+        "current_type_id": "P",
+        "promoted": false
+      }
+    },
+    {
+      "square": 5,
+      "physical": {
+        "owner": 0,
+        "base_type_id": "R",
+        "current_type_id": "R",
+        "promoted": false
+      }
+    }
+  ],
+  "window_gain_unchanged": true,
+  "seconds": 0.0,
+  "source_hashes_unchanged": true
+}

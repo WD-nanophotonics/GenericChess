@@ -1,0 +1,35 @@
+{
+  "complete": false,
+  "proposals": 128,
+  "enumerated": 281,
+  "public_transitions": 0,
+  "source_queries": 0,
+  "rejection_counts": {
+    "previous_mover_check": 25,
+    "branch_count": 53,
+    "not_checked": 50
+  },
+  "nodes": {},
+  "leaves": {},
+  "policies": {},
+  "outcomes": {},
+  "compilations": 1,
+  "source_sha256": {
+    "scripts/audit_chess_first_quiet_pilot.py": "b816e8b2c3744f63a239913a17b841cadff8f77669ec80181a99debf9f90802a",
+    "docs/research/CHESS_FIRST_QUIET_PILOT_PROTOCOL.md": "e5f33eb89b87eed744072febf35b7ea8e5dc16abeca7138b5fa3037dd1176472",
+    "scripts/audit_exchange_custody.py": "78253c1ac85d4fbda3e897224ad9bf07d868f58df4ae06a0bd19dfabaa3f3aa4",
+    "scripts/native_chess_contact_intervals.py": "741035271b773ae18f9f90865815632c36f5a7f79f8190ff3116191e84b2dbd7",
+    "scripts/chess_exact_contact_family.py": "016e306da30462624f5ce32026b3cc32b3ab7ae1d851cd246c615eba970e2e1d",
+    "scripts/material_leaf_choice.py": "63dd5e206d7673cbe54a37a9fe25e0bbc222d0c940024ac326dc2ea50f3a9795",
+    "scripts/public_goal_intervals.py": "51d1e9b9ae78578b7e4a4353f41f590939c4b4ce4961b3e8cd027030941e41b5",
+    "scripts/outcome_set_order.py": "88abd17ab57ec2d0fa09bdb471d7ff305f932fc3fffb4dbe7249b5b850bb8833",
+    "scripts/research_record.py": "3ea168a814d28735bce97351ecda6b96e61a6fec0b271aac3e7cd2e180d6f72d",
+    "generic_chess/rules/western_chess.py": "2b3bc415763ce209264504c751fa3a94d66de016262da0cd91f6c82172d3ae2a",
+    "generic_chess/core/transition.py": "0437cba33051366584591e5330904087e4bd12427e1e8d2ad510744fc8e02177",
+    "generic_chess/core/semantic_executor.py": "0d6c0f72bd29b36f3d607a32de1dbae26fb9fa677dd0af6bf28c4f1122f17ae8",
+    "docs/research/data/chess_zero_target_correction_20261005.json": "684d876dafba07efed2271e51d0216ff2c0b3f8d267aa7f3b23af542d55077c1"
+  },
+  "seconds": 0.0940000000409782,
+  "error": "ValueError: no eligible root within128 proposals",
+  "source_hashes_unchanged": true
+}

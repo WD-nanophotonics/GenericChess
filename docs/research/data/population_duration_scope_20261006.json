@@ -1,0 +1,78 @@
+{
+  "complete": true,
+  "world_queries": 2,
+  "arithmetic_terms": 92,
+  "geometry_queries": 0,
+  "public_transitions": 0,
+  "source_queries": 0,
+  "source_sha256": {
+    "scripts/audit_population_duration_scope.py": "4c781c1fab1b1e81bda2ffae22bd5b4fa96ad464bdb72be94983f0dd5452d301",
+    "docs/research/POPULATION_DURATION_SCOPE_PROTOCOL.md": "4ffe41d717f2c117be9af0c1728df22fe1296c18781560553215abbc3366dd9d",
+    "scripts/diagnostic_contact_coordinate_oracle.py": "e814860c711303281ab78bd93f6d1eedc403155f2f9bf4ad6ece7b5aaf593689",
+    "scripts/research_record.py": "3ea168a814d28735bce97351ecda6b96e61a6fec0b271aac3e7cd2e180d6f72d",
+    "docs/research/data/diagnostic_duration_order_20261006.json": "393ef5f418308a9d1ffbf8d3fee10d586f06b14b5476c7e4e4198ca8e10642bd",
+    "docs/research/data/diagnostic_moment_bounds_20261006.json": "ea43915b794251ee727bb1e923a9f2dd58019457955694bd1fc26479405095a7",
+    "docs/research/data/horse_zero_obstruction_20261006.json": "6e3b3773e9a2365dd0dbf592847ca98817af8edb94c5d52d779d5a1a24cea0ed",
+    "generic_chess/rules/xiangqi_diagnostic.py": "00d0772a0bb1b6aa1c49bcbd5fd38c16c59897584e6ee233cb946111c056c99d"
+  },
+  "counterexample": {
+    "source": 13,
+    "target": 23,
+    "blocker": 0,
+    "distances": {
+      "A": 1,
+      "R": 2
+    },
+    "point_population_duration1": {
+      "A": 1,
+      "R": 0
+    },
+    "uniform_dependent_duration": {
+      "A": "1/704880",
+      "R": "0"
+    },
+    "compiled_per_world_reproduced": false,
+    "official_goal_claim": false
+  },
+  "universal_tv_gates": {
+    "C": {
+      "minimum_count_gap": 126960,
+      "strict_epsilon_below": "529/5874",
+      "not_necessary": true
+    },
+    "S": {
+      "minimum_count_gap": 116632,
+      "strict_epsilon_below": "14579/176220",
+      "not_necessary": true
+    },
+    "E": {
+      "minimum_count_gap": 123492,
+      "strict_epsilon_below": "10291/117480",
+      "not_necessary": true
+    },
+    "A": {
+      "minimum_count_gap": 129392,
+      "strict_epsilon_below": "8087/88110",
+      "not_necessary": true
+    },
+    "H": {
+      "minimum_count_gap": 400,
+      "strict_epsilon_below": "5/17622",
+      "not_necessary": true
+    }
+  },
+  "endpoint_horse_tv_gates": {
+    "geometric_half": {
+      "raw_gap_lower": "170651/1409760",
+      "strict_epsilon_below": "170651/1409760",
+      "not_necessary": true
+    },
+    "linear_mixture": {
+      "raw_gap_lower": "363053/5286600",
+      "strict_epsilon_below": "363053/3524400",
+      "not_necessary": true
+    }
+  },
+  "seconds": 0.0,
+  "source_hashes_unchanged": true
+}

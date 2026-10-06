@@ -1,0 +1,177 @@
+{
+  "complete": true,
+  "forward_nodes": 1579,
+  "motifs": 3216,
+  "public_transitions": 0,
+  "compiled_queries": 0,
+  "source_queries": 0,
+  "rows": [
+    {
+      "width": 3,
+      "height": 3,
+      "worlds": 504,
+      "histogram": {
+        "0": 296,
+        "1": 96,
+        "2": 64,
+        "3": 24,
+        "4": 16,
+        "5": 8
+      },
+      "formula": {
+        "direct": 96,
+        "second": 64,
+        "direct_edges": 16,
+        "two_step_pairs": 16,
+        "motifs": 32,
+        "intersection_size_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 16
+        }
+      }
+    },
+    {
+      "width": 4,
+      "height": 2,
+      "worlds": 336,
+      "histogram": {
+        "0": 296,
+        "1": 40
+      },
+      "formula": {
+        "direct": 40,
+        "second": 0,
+        "direct_edges": 8,
+        "two_step_pairs": 0,
+        "motifs": 8,
+        "intersection_size_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0
+        }
+      }
+    }
+  ],
+  "controls": [
+    {
+      "source": 0,
+      "target": 9,
+      "blocker": 1,
+      "exact": 0,
+      "target_free": 5
+    },
+    {
+      "source": 8,
+      "target": 17,
+      "blocker": 7,
+      "exact": 0,
+      "target_free": 5
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "blocker": 9,
+      "exact": 0,
+      "target_free": 5
+    }
+  ],
+  "source_sha256": {
+    "scripts/audit_horse_target_graph.py": "4bd2eb52938ce1d2f5930a58c4a3f2668d06d5cc86effd8591fb290ed0b16d37",
+    "scripts/horse_target_graph.py": "2831d18732687b87b255170ad585c8da72125d2e9fad0c25019c2e807366fd14",
+    "docs/research/HORSE_TARGET_GRAPH_PROTOCOL.md": "6cf21a1f90bac7db06cfe195362a601ce11eb3ae7527f200e43e78655b007d81",
+    "scripts/research_record.py": "3ea168a814d28735bce97351ecda6b96e61a6fec0b271aac3e7cd2e180d6f72d",
+    "docs/research/data/diagnostic_native_contact_mirrored_20261005.json": "e3b5575302c7363c3ce6c7b6de0b868c15e1fd578f4cf134709406fd4c38659f",
+    "docs/research/data/diagnostic_moment_bounds_20261006.json": "ea43915b794251ee727bb1e923a9f2dd58019457955694bd1fc26479405095a7"
+  },
+  "seconds": 0.015999999828636646,
+  "full_analytic_prefix": {
+    "direct": 44196,
+    "second": 147848,
+    "direct_edges": 508,
+    "two_step_pairs": 1708,
+    "motifs": 3216,
+    "intersection_size_counts": {
+      "0": 668,
+      "1": 332,
+      "2": 0,
+      "3": 708
+    }
+  },
+  "saved_horse_unreachable": 400,
+  "slab_zero_metadata": [
+    {
+      "target": 9,
+      "zero": 2,
+      "consistent_with_one_trap": true,
+      "scope": "slab count only, no compiled ordered-world attribution"
+    },
+    {
+      "target": 17,
+      "zero": 2,
+      "consistent_with_one_trap": true,
+      "scope": "slab count only, no compiled ordered-world attribution"
+    },
+    {
+      "target": 1,
+      "zero": 2,
+      "consistent_with_one_trap": true,
+      "scope": "slab count only, no compiled ordered-world attribution"
+    }
+  ],
+  "moments": [
+    {
+      "law": "geometric_half",
+      "horse_interval": [
+        "2953/35244",
+        "246329/1409760"
+      ],
+      "normalized_interval": [
+        "2953/10422",
+        "246329/416880"
+      ],
+      "above": {
+        "R": false,
+        "C": true,
+        "S": true,
+        "E": true,
+        "A": true
+      },
+      "below": {
+        "R": true,
+        "C": false,
+        "S": false,
+        "E": false,
+        "A": false
+      }
+    },
+    {
+      "law": "linear_mixture",
+      "horse_interval": [
+        "2953/52866",
+        "679927/5286600"
+      ],
+      "normalized_interval": [
+        "14765/52134",
+        "679927/1042680"
+      ],
+      "above": {
+        "R": false,
+        "C": true,
+        "S": true,
+        "E": true,
+        "A": true
+      },
+      "below": {
+        "R": true,
+        "C": false,
+        "S": false,
+        "E": false,
+        "A": false
+      }
+    }
+  ],
+  "source_hashes_unchanged": true
+}
