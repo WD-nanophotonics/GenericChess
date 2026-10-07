@@ -57,15 +57,23 @@ first frontier both optimal and all26 conditional four-ply control deltas agree.
 Matched immobile-reference ability premiums are nonnegative in an explicit
 virtual-pass law, but the shared baseline changes ratios, not stock calibration.
 Boundary and partial-pawn promotion checks quantify additional context bias.
-Next: one concrete rule/promotion/intervention pilot, without a new broad census
-or human-reference fitting. CONTRIBUTION_MODEL.md owns this construction check;
+Independent Native replay now verifies all208 original-horizon paths, while
+Core exact latent-tag distributions match all conditional first moments.
+This remains unstable signed service, not a generic hand-price correction.
+A supported promotion pilot finds finite wins, including a Core-confirmed
+underpromotion/stalemate contrast. The concrete next priority is the observed
+static valuation input gap: semantic-only movement is absent from generic-v1
+atoms. SEMANTIC_CAPABILITY.md owns the scoped rule-only approximation/check;
+no price default or human-reference fit is selected. CONTRIBUTION_MODEL.md
+owns the prior construction check;
 JOINT_SERVICE_DIAGNOSTIC.md/CUSTODY_CONTINUATION.md retain prior finite evidence.
 
 ## Unfamiliar-rule search
 
 Use existing compile_ruleset_for_execution, not raw semantic IR. Its existing
-ExecutableSemanticRuleset connects supported semantic legality and profile
-geometry. scripts/unfamiliar_search.py --rules accepts declarative inputs;
+ExecutableSemanticRuleset connects supported semantic legality and retained
+legacy metadata; it does not synthesize semantic profile geometry. Reports
+now qualify this static-input limitation. scripts/unfamiliar_search.py --rules accepts declarative inputs;
 supplied/generated comparisons share one loop. No new adapter is required.
 
 Four familiar-movement mixtures have32 complete depth2/3 public calls with

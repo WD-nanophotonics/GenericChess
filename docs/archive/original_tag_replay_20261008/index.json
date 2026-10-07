@@ -1,0 +1,71 @@
+{
+  "original_directory": ".local_agent/original-contribution-20261008",
+  "repository_base_sha": "58f8aa936d899eb6f61df22819eed05f81d59ddd",
+  "current_result": {
+    "path": "docs/research/data/original_tag_replay_20261008.json",
+    "sha256": "6a28bb68928f521b4512b745d84d3dc75fddefbf42f4c5adfa8f9956da5f204e"
+  },
+  "archives": {
+    "sources.zip": {
+      "sha256": "31743a4de018ee5612c4a64a11be21716a500b2b07bf59667b5b1eb833b334e0",
+      "members": {
+        "tag-native-oracle.py": {
+          "bytes": 5299,
+          "sha256": "44d34c9677e51ab1b328769ed784b224603f3e22e5dc5ed87789cef5e747c2fe"
+        },
+        "tag-mass.py": {
+          "bytes": 4988,
+          "sha256": "6e6c915b84c0158cbadd4a994a579af464a06fdfca3d0f061a3437e9c48436ec"
+        },
+        "tag-distribution-core.py": {
+          "bytes": 4927,
+          "sha256": "34fe8df4ffda841d6b66e06d206be7c6aa172d99d4a956dc3f8e0d478c819315"
+        },
+        "collect.py": {
+          "bytes": 9039,
+          "sha256": "1cd10ea6aacc3d45cc9b6b83b01eaa71d905716f0bdeae995bce5314c1ebe01a"
+        }
+      },
+      "extracted_rehashed": true
+    },
+    "raw.zip": {
+      "sha256": "4e7367f990965dc213aa80a468e3c87f03128b19207fbba93a244999b88bd31e",
+      "members": {
+        "tag-native-oracle.json": {
+          "bytes": 47974,
+          "sha256": "df985a73a6ac6718efaf1df4313ba64c07d7c5796b7b2ec6a82663b88908962d"
+        },
+        "tag-mass.json": {
+          "bytes": 63661,
+          "sha256": "0686e44db143825dd3c676fd4de67e62044263983475ac22fbac1b5b83ba0196"
+        },
+        "tag-distribution-core.json": {
+          "bytes": 44160,
+          "sha256": "eb89e4f8cc28c4cf377fc95cee02d07b88230a9a53dc798117ae8e0a43f80959"
+        },
+        "failures.json": {
+          "bytes": 598,
+          "sha256": "870ede046d3ba2bd98ceb66de1a5fc16df0a0d94678611fa1a57c1337ba8bcf3"
+        }
+      },
+      "extracted_rehashed": true
+    }
+  },
+  "dependencies": [
+    {
+      "path": "docs/archive/original_horizon_preflight_20261008/remaining-custody.json",
+      "sha256": "bb112723999a07a8721c303ebbdec4b33781386ae96f1dff3993ac1b89b09ee9",
+      "recovery": "existing original_horizon_preflight_20261008 archive"
+    },
+    {
+      "path": ".local_agent/custody-kernel-20261008/kernel-completed.json",
+      "sha256": "fea62b29af22d2f5dd4749a15d0b7b3a1ac232e678cdb992ca50d415c08e7a4b",
+      "recovery": "custody_continuation_20261008/raw.zip"
+    },
+    {
+      "path": ".local_agent/custody-kernel-20261008/pretransfer-coupling.json",
+      "sha256": "ad648f48c4506c2bacdabab3c252761c7a85308cf00e7ece022b18f88e89322e",
+      "recovery": "custody_continuation_20261008/raw.zip"
+    }
+  ]
+}

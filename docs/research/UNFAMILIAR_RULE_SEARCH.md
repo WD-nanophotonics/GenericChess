@@ -224,3 +224,50 @@ deployment evidence. Defaults and sufficient-depth reuse remain unchanged.
 Sources, exact histories, failed initial versions and results:
 data/contribution_model_20261008.json and
 ../archive/contribution_model_20261008/index.json.
+
+## Supported promotion outcomes and actual callers
+
+Eight predeclared sparse8x8 roots use canonical movement/anchor legality but
+remove castling, double-step and en-passant. Four promotion interventions and
+4/8/12ply terminal-outcome utility give77/96 complete cells under equal200000
+calls/30sec ceilings. Incomplete cells remain unknown. Exact occupancy caches
+are justified only in this no-aux, repetition100000/maxply1000, short-horizon
+subset; they are not a replacement for product full-history TT identity.
+
+Reusing proven terminal wins at adequate remaining horizons raises complete
+ablation cells from29/48 (geometric-ordering only) to33/48 (proof only/both).
+Nonterminal zeros are never reused this way. These finite +/-1 outcomes are
+not product heuristic scores or shortest-mate distances; reusing a witness
+does not establish an exact deeper product score. Defaults remain unchanged.
+
+Restricting only the winning player's promotion choices to Q, with every enemy
+defense retained in the full rules, proves wins in contexts3/4/6 within8plies.
+All eight policy checks cost about3.39sec; independent Core verifies each winning
+strategy. Failure of the restricted policy does not imply a full-game draw/loss.
+
+The existing public interface then completes64 cold calls with zero nonterminal
+evaluation, the same ordering tables,4096/16384nodes, targetdepth8 and5sec/q0.
+No time fuse fires; all32 within-configuration repeats agree. Existing default
+and staged ordering have equal depths/scores/node counts on16 paired conditions,
+but context3 can choose different equally scored actions. They show no general
+speed/depth benefit here. Only context7 at16384 completesdepth8; other calls
+stop atdepth5..7. A completed shallower mate is not a completeddepth8 result.
+
+Crucially, context5 reveals a real underpromotion mechanism. After the same
+two-ply prefix, Q immediately stalemates the opponent while R retains one reply.
+Independent plain Core search at5plies proves R-only/full-policy wins and no
+B/N/Q-only win within that horizon. Thus geometry ordering may prioritize Q,
+but removing the other legal choices would lose useful options. This is a
+scoped semantic/terminal diagnostic, not an estimate of pawn material value.
+
+Source inspection finds that UI move acceptance and match traces consume the
+action, not a uniform-depth score/full PV. The analysis CLI does print score/PV
+and already offers `--fresh-tt`. Its supplied-rule loader now uses the existing
+execution compiler, so semantic definitions no longer hit the legacy-only
+rejection. A cannon-rule CLI regression exercises two fresh-TT calls. No new
+interface or global full-PV default is needed. Static-profile input limitations
+are independently explained in SEMANTIC_CAPABILITY.md.
+
+Exact declarations, incomplete/failed versions and measured costs:
+data/promotion_rule_probe_20261008.json and
+../archive/promotion_rule_probe_20261008/. These are on-demand research evidence.

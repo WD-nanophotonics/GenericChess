@@ -1,0 +1,79 @@
+{
+  "original_directory": ".local_agent/original-contribution-20261008",
+  "repository_base_sha": "58f8aa936d899eb6f61df22819eed05f81d59ddd",
+  "current_result": {
+    "path": "docs/research/data/semantic_capability_20261008.json",
+    "sha256": "ebe37b1d272dc1a07e58a8ab8d7951bb97171717fbc952874b8e9a124f69bef1"
+  },
+  "archives": {
+    "sources.zip": {
+      "sha256": "be7ba8182868ae13b63c9a394a73fe61b00c93fd92ad74e5e22a9ee85a7c18ba",
+      "members": {
+        "semantic-geometry.py": {
+          "bytes": 6267,
+          "sha256": "67292ec198505daa78cecf85186a7f8a87e95a19de48f07fd76d81caa0a07f61"
+        },
+        "semantic-geometry-initial.py": {
+          "bytes": 6120,
+          "sha256": "03a53d8756841a05d718bbdea9486b262a3d544b8d2eb37da47156382ff859bf"
+        },
+        "semantic-core-check.py": {
+          "bytes": 4172,
+          "sha256": "076d5556c0842e4c364fb93f8029d9b19ca8208039182a89e17c3bc00cace60b"
+        },
+        "semantic-guard-bias.py": {
+          "bytes": 3023,
+          "sha256": "97bc7c8f15b02946d35301dcb46f87f05a00d4165062896506df2ef9731fcffb"
+        },
+        "semantic-search-witness.py": {
+          "bytes": 5812,
+          "sha256": "e1977d45087ce469f65272aa5210a9ebcd732cb40deb1cc8b1191c882251bb90"
+        },
+        "semantic-search-witness-initial.py": {
+          "bytes": 5351,
+          "sha256": "a155a7b10ba31245e8f746b34ca05180fa1ec9effe753435aed1d48d86b65c26"
+        },
+        "collect.py": {
+          "bytes": 9039,
+          "sha256": "1cd10ea6aacc3d45cc9b6b83b01eaa71d905716f0bdeae995bce5314c1ebe01a"
+        }
+      },
+      "extracted_rehashed": true
+    },
+    "raw.zip": {
+      "sha256": "7befedff2d30d6551b2d814316f5ab2352553e754979420ba08dd0bd051f1646",
+      "members": {
+        "semantic-geometry.json": {
+          "bytes": 520946,
+          "sha256": "05c840d0e361e58f6158f6fba3dee47a66cf8405a6a30b682962ccc8742512f5"
+        },
+        "semantic-core-check.json": {
+          "bytes": 6063,
+          "sha256": "1fab6b8d3633019b17ab124439c939836657e1ba2e137208ac6f3480cfd177c2"
+        },
+        "semantic-guard-bias.json": {
+          "bytes": 10103,
+          "sha256": "bcbe56037da05eff67c1970676b51172629ca61e783a9555b8547bf1280aa616"
+        },
+        "semantic-search-witness.json": {
+          "bytes": 126252,
+          "sha256": "26b95287a952836ebbe18e493c01fa0b7fd82db014c418935689298841e380e8"
+        },
+        "semantic-search-witness-initial.json": {
+          "bytes": 126252,
+          "sha256": "26b95287a952836ebbe18e493c01fa0b7fd82db014c418935689298841e380e8"
+        },
+        "semantic-search-witness-localized.json": {
+          "bytes": 127144,
+          "sha256": "affddad53fbfaf6bfb79ed27fd19524d74b920ed8b930f5a398168eedca22171"
+        },
+        "failures.json": {
+          "bytes": 598,
+          "sha256": "870ede046d3ba2bd98ceb66de1a5fc16df0a0d94678611fa1a57c1337ba8bcf3"
+        }
+      },
+      "extracted_rehashed": true
+    }
+  },
+  "dependencies": []
+}

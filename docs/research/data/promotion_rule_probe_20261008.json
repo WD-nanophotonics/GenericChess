@@ -1,0 +1,1000 @@
+{
+  "scope": "Finite supported three-entity derivative, no prices/strength/universal TT claim",
+  "baseline": {
+    "complete_cells": 77,
+    "total_cells": 96,
+    "calls": 6439924,
+    "seconds": 209.28540929988958
+  },
+  "ablations": {
+    "ordering_only": {
+      "complete_cells": 29,
+      "total_cells": 48,
+      "calls": 4470157,
+      "seconds": 133.26988310017623
+    },
+    "proof_only": {
+      "complete_cells": 33,
+      "total_cells": 48,
+      "calls": 3636375,
+      "seconds": 108.2236801001709
+    },
+    "both": {
+      "complete_cells": 33,
+      "total_cells": 48,
+      "calls": 3636198,
+      "seconds": 108.3998631995637
+    }
+  },
+  "subpolicy": {
+    "complete": true,
+    "producer_sha256": "bccde64958b0872b04ff1bbfa707f649e48a33db0b260f8ae7b025b522d6e693",
+    "source_sha256": "d68978eae26c471fc855fc9d90aed1b8139b3be144f0e1f85dfe3cb45f13d47d",
+    "declaration": "All8 original full-choice roots, horizon8, same200000calls/30sec ceilings. Native full promotion rules for both players. Restrict ONLY owner0 promotion choices to Q, retain all other owner0 actions and every opponent action; no restriction of enemy defenses. Proving terminal owner0 win in this subpolicy gives a valid lower bound+1 in the full game. False is not full-game draw/loss. Same declared history-independent3piece subset, not a product TT/score change. Store winning strategy as state/remaining->selected legal owner0 action; losing replies retain complete legal branching.",
+    "seconds": 3.38739679986611
+  },
+  "subpolicy_cells": [
+    {
+      "context": 0,
+      "complete": true,
+      "subpolicy_win": false,
+      "calls": 3055,
+      "transitions": 3054,
+      "seconds": 0.15657290001399815
+    },
+    {
+      "context": 1,
+      "complete": true,
+      "subpolicy_win": false,
+      "calls": 3070,
+      "transitions": 3069,
+      "seconds": 0.1594745998736471
+    },
+    {
+      "context": 2,
+      "complete": true,
+      "subpolicy_win": false,
+      "calls": 2912,
+      "transitions": 2911,
+      "seconds": 0.15111209987662733
+    },
+    {
+      "context": 3,
+      "complete": true,
+      "subpolicy_win": true,
+      "calls": 15540,
+      "transitions": 15539,
+      "seconds": 0.7347381999716163
+    },
+    {
+      "context": 4,
+      "complete": true,
+      "subpolicy_win": true,
+      "calls": 15522,
+      "transitions": 15521,
+      "seconds": 0.7311345001216978
+    },
+    {
+      "context": 5,
+      "complete": true,
+      "subpolicy_win": false,
+      "calls": 21708,
+      "transitions": 21707,
+      "seconds": 0.9934454001486301
+    },
+    {
+      "context": 6,
+      "complete": true,
+      "subpolicy_win": true,
+      "calls": 3664,
+      "transitions": 3663,
+      "seconds": 0.17864790000021458
+    },
+    {
+      "context": 7,
+      "complete": true,
+      "subpolicy_win": false,
+      "calls": 1299,
+      "transitions": 1298,
+      "seconds": 0.06939679989591241
+    }
+  ],
+  "core_strategy_verification": {
+    "complete": true,
+    "producer_sha256": "ae2bd2c504baa1d241822124f510d1a9ec2010a1cb1c94e605222128f343a541",
+    "source_sha256": "dafc1586afbf9f663e1268dacd4067e626ab622a99ea441282f078cc165b9824",
+    "declaration": "Verify every produced winning strategy with independent Core legality and terminal execution; own player follows one saved action and opponent branches over ALL legal actions. This is a narrow finite winning bound, not a broad price validation gate. Reuse verified occupancy/side/remaining only in the explicitly no-aux, no-repetition-in8plies subset.",
+    "rows": [
+      {
+        "context": 3,
+        "core_calls": 14,
+        "core_transitions": 13,
+        "terminal_wins": 2,
+        "cache_hits": 0,
+        "opponent_branches": 6,
+        "owner_actions": 7,
+        "verified": true,
+        "seconds": 0.011435100110247731
+      },
+      {
+        "context": 4,
+        "core_calls": 14,
+        "core_transitions": 13,
+        "terminal_wins": 2,
+        "cache_hits": 0,
+        "opponent_branches": 6,
+        "owner_actions": 7,
+        "verified": true,
+        "seconds": 0.01108089997433126
+      },
+      {
+        "context": 6,
+        "core_calls": 8,
+        "core_transitions": 7,
+        "terminal_wins": 1,
+        "cache_hits": 0,
+        "opponent_branches": 3,
+        "owner_actions": 4,
+        "verified": true,
+        "seconds": 0.006893800105899572
+      }
+    ],
+    "seconds": 0.07832990004681051
+  },
+  "underpromotion": {
+    "complete": true,
+    "producer_sha256": "648da4f1431bfc9cd1da1e8580986d276ff1d2cbb968161384d88104e88eeb45",
+    "source_sha256": "d68978eae26c471fc855fc9d90aed1b8139b3be144f0e1f85dfe3cb45f13d47d",
+    "search_sha256": "4720847794fc4f585b681c2703df520baa2d0e85bf53e56957f3a18a82e8b5ee",
+    "declaration": "Exposed localization of public-search context5 positive mate, not an independent holdout. Compare all four owner promotion choices at the same actual two-ply prefix, then plain Core force-win search at exactly5plies with own promotions restricted separately to B/N/R/Q and full choices. Opponent always keeps every legal action; false is inability to force a win within5 under that own subpolicy, not infinite-game WDL. Same100000calls/30sec checkpoint per policy, serial; no unchanged failed extension.",
+    "counterfactuals": [
+      {
+        "target": "B",
+        "action": {
+          "pattern_id": "sem_10_pawn_one_step",
+          "geometry_id": "g33",
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 5,
+            "rank": 6
+          },
+          "to_square": {
+            "file": 5,
+            "rank": 7
+          },
+          "promotion_target_id": "B"
+        },
+        "terminal": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "opponent_legal_actions": 2
+      },
+      {
+        "target": "N",
+        "action": {
+          "pattern_id": "sem_10_pawn_one_step",
+          "geometry_id": "g33",
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 5,
+            "rank": 6
+          },
+          "to_square": {
+            "file": 5,
+            "rank": 7
+          },
+          "promotion_target_id": "N"
+        },
+        "terminal": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "opponent_legal_actions": 3
+      },
+      {
+        "target": "R",
+        "action": {
+          "pattern_id": "sem_10_pawn_one_step",
+          "geometry_id": "g33",
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 5,
+            "rank": 6
+          },
+          "to_square": {
+            "file": 5,
+            "rank": 7
+          },
+          "promotion_target_id": "R"
+        },
+        "terminal": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "opponent_legal_actions": 1
+      },
+      {
+        "target": "Q",
+        "action": {
+          "pattern_id": "sem_10_pawn_one_step",
+          "geometry_id": "g33",
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 5,
+            "rank": 6
+          },
+          "to_square": {
+            "file": 5,
+            "rank": 7
+          },
+          "promotion_target_id": "Q"
+        },
+        "terminal": {
+          "status": "stalemate",
+          "winner": null
+        },
+        "opponent_legal_actions": 0
+      }
+    ],
+    "policies": [
+      {
+        "own_promotion": "B",
+        "calls": 951,
+        "transitions": 950,
+        "terminal_wins": 0,
+        "complete": true,
+        "win_within5": false,
+        "seconds": 0.41694380016997457
+      },
+      {
+        "own_promotion": "N",
+        "calls": 853,
+        "transitions": 852,
+        "terminal_wins": 0,
+        "complete": true,
+        "win_within5": false,
+        "seconds": 0.3574383999221027
+      },
+      {
+        "own_promotion": "R",
+        "calls": 134,
+        "transitions": 133,
+        "terminal_wins": 1,
+        "complete": true,
+        "win_within5": true,
+        "seconds": 0.05959159997291863
+      },
+      {
+        "own_promotion": "Q",
+        "calls": 1568,
+        "transitions": 1567,
+        "terminal_wins": 0,
+        "complete": true,
+        "win_within5": false,
+        "seconds": 1.0080512999556959
+      },
+      {
+        "own_promotion": "all",
+        "calls": 218,
+        "transitions": 217,
+        "terminal_wins": 1,
+        "complete": true,
+        "win_within5": true,
+        "seconds": 0.10084489989094436
+      }
+    ],
+    "seconds": 1.960852999938652
+  },
+  "public_search": {
+    "total_calls": 64,
+    "nodes": 630400,
+    "seconds": 116.73574020015076,
+    "cells": [
+      {
+        "context": 0,
+        "ceiling": 4096,
+        "staged": false,
+        "repeat": 0,
+        "depth": 6,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7533412999473512
+      },
+      {
+        "context": 0,
+        "ceiling": 4096,
+        "staged": false,
+        "repeat": 1,
+        "depth": 6,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7420684001408517
+      },
+      {
+        "context": 0,
+        "ceiling": 4096,
+        "staged": true,
+        "repeat": 0,
+        "depth": 6,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7414122000336647
+      },
+      {
+        "context": 0,
+        "ceiling": 4096,
+        "staged": true,
+        "repeat": 1,
+        "depth": 6,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7453185999765992
+      },
+      {
+        "context": 0,
+        "ceiling": 16384,
+        "staged": false,
+        "repeat": 0,
+        "depth": 6,
+        "score": 0,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.864788099890575
+      },
+      {
+        "context": 0,
+        "ceiling": 16384,
+        "staged": false,
+        "repeat": 1,
+        "depth": 6,
+        "score": 0,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.8662518998607993
+      },
+      {
+        "context": 0,
+        "ceiling": 16384,
+        "staged": true,
+        "repeat": 0,
+        "depth": 6,
+        "score": 0,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.8612776999361813
+      },
+      {
+        "context": 0,
+        "ceiling": 16384,
+        "staged": true,
+        "repeat": 1,
+        "depth": 6,
+        "score": 0,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.86974720004946
+      },
+      {
+        "context": 1,
+        "ceiling": 4096,
+        "staged": false,
+        "repeat": 0,
+        "depth": 6,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.756816599983722
+      },
+      {
+        "context": 1,
+        "ceiling": 4096,
+        "staged": false,
+        "repeat": 1,
+        "depth": 6,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7602074998430908
+      },
+      {
+        "context": 1,
+        "ceiling": 4096,
+        "staged": true,
+        "repeat": 0,
+        "depth": 6,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7716810000129044
+      },
+      {
+        "context": 1,
+        "ceiling": 4096,
+        "staged": true,
+        "repeat": 1,
+        "depth": 6,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.756052799988538
+      },
+      {
+        "context": 1,
+        "ceiling": 16384,
+        "staged": false,
+        "repeat": 0,
+        "depth": 7,
+        "score": 0,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.897203599801287
+      },
+      {
+        "context": 1,
+        "ceiling": 16384,
+        "staged": false,
+        "repeat": 1,
+        "depth": 7,
+        "score": 0,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.890525600174442
+      },
+      {
+        "context": 1,
+        "ceiling": 16384,
+        "staged": true,
+        "repeat": 0,
+        "depth": 7,
+        "score": 0,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.9346539000980556
+      },
+      {
+        "context": 1,
+        "ceiling": 16384,
+        "staged": true,
+        "repeat": 1,
+        "depth": 7,
+        "score": 0,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.906280299881473
+      },
+      {
+        "context": 2,
+        "ceiling": 4096,
+        "staged": false,
+        "repeat": 0,
+        "depth": 6,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7459382000379264
+      },
+      {
+        "context": 2,
+        "ceiling": 4096,
+        "staged": false,
+        "repeat": 1,
+        "depth": 6,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7583703000564128
+      },
+      {
+        "context": 2,
+        "ceiling": 4096,
+        "staged": true,
+        "repeat": 0,
+        "depth": 6,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7259914998430759
+      },
+      {
+        "context": 2,
+        "ceiling": 4096,
+        "staged": true,
+        "repeat": 1,
+        "depth": 6,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7285067997872829
+      },
+      {
+        "context": 2,
+        "ceiling": 16384,
+        "staged": false,
+        "repeat": 0,
+        "depth": 7,
+        "score": 0,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 3.2724967999383807
+      },
+      {
+        "context": 2,
+        "ceiling": 16384,
+        "staged": false,
+        "repeat": 1,
+        "depth": 7,
+        "score": 0,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 3.234544700011611
+      },
+      {
+        "context": 2,
+        "ceiling": 16384,
+        "staged": true,
+        "repeat": 0,
+        "depth": 7,
+        "score": 0,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 3.3141350001096725
+      },
+      {
+        "context": 2,
+        "ceiling": 16384,
+        "staged": true,
+        "repeat": 1,
+        "depth": 7,
+        "score": 0,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 3.30701020010747
+      },
+      {
+        "context": 3,
+        "ceiling": 4096,
+        "staged": false,
+        "repeat": 0,
+        "depth": 5,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.6657169000245631
+      },
+      {
+        "context": 3,
+        "ceiling": 4096,
+        "staged": false,
+        "repeat": 1,
+        "depth": 5,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.672515399986878
+      },
+      {
+        "context": 3,
+        "ceiling": 4096,
+        "staged": true,
+        "repeat": 0,
+        "depth": 5,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.6949069001711905
+      },
+      {
+        "context": 3,
+        "ceiling": 4096,
+        "staged": true,
+        "repeat": 1,
+        "depth": 5,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.6827942000236362
+      },
+      {
+        "context": 3,
+        "ceiling": 16384,
+        "staged": false,
+        "repeat": 0,
+        "depth": 6,
+        "score": 0,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.891786799998954
+      },
+      {
+        "context": 3,
+        "ceiling": 16384,
+        "staged": false,
+        "repeat": 1,
+        "depth": 6,
+        "score": 0,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.8910264000296593
+      },
+      {
+        "context": 3,
+        "ceiling": 16384,
+        "staged": true,
+        "repeat": 0,
+        "depth": 6,
+        "score": 0,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.922921200050041
+      },
+      {
+        "context": 3,
+        "ceiling": 16384,
+        "staged": true,
+        "repeat": 1,
+        "depth": 6,
+        "score": 0,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.911290699848905
+      },
+      {
+        "context": 4,
+        "ceiling": 4096,
+        "staged": false,
+        "repeat": 0,
+        "depth": 5,
+        "score": 999999995,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.6746634000446647
+      },
+      {
+        "context": 4,
+        "ceiling": 4096,
+        "staged": false,
+        "repeat": 1,
+        "depth": 5,
+        "score": 999999995,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.6823060000315309
+      },
+      {
+        "context": 4,
+        "ceiling": 4096,
+        "staged": true,
+        "repeat": 0,
+        "depth": 5,
+        "score": 999999995,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7124214000068605
+      },
+      {
+        "context": 4,
+        "ceiling": 4096,
+        "staged": true,
+        "repeat": 1,
+        "depth": 5,
+        "score": 999999995,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.6975553000811487
+      },
+      {
+        "context": 4,
+        "ceiling": 16384,
+        "staged": false,
+        "repeat": 0,
+        "depth": 6,
+        "score": 999999995,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.8887287001125515
+      },
+      {
+        "context": 4,
+        "ceiling": 16384,
+        "staged": false,
+        "repeat": 1,
+        "depth": 6,
+        "score": 999999995,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.924187700031325
+      },
+      {
+        "context": 4,
+        "ceiling": 16384,
+        "staged": true,
+        "repeat": 0,
+        "depth": 6,
+        "score": 999999995,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 3.0312976001296192
+      },
+      {
+        "context": 4,
+        "ceiling": 16384,
+        "staged": true,
+        "repeat": 1,
+        "depth": 6,
+        "score": 999999995,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.980506299994886
+      },
+      {
+        "context": 5,
+        "ceiling": 4096,
+        "staged": false,
+        "repeat": 0,
+        "depth": 5,
+        "score": 999999995,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.6904064000118524
+      },
+      {
+        "context": 5,
+        "ceiling": 4096,
+        "staged": false,
+        "repeat": 1,
+        "depth": 5,
+        "score": 999999995,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.6890987998340279
+      },
+      {
+        "context": 5,
+        "ceiling": 4096,
+        "staged": true,
+        "repeat": 0,
+        "depth": 5,
+        "score": 999999995,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7152894998434931
+      },
+      {
+        "context": 5,
+        "ceiling": 4096,
+        "staged": true,
+        "repeat": 1,
+        "depth": 5,
+        "score": 999999995,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7350993000436574
+      },
+      {
+        "context": 5,
+        "ceiling": 16384,
+        "staged": false,
+        "repeat": 0,
+        "depth": 6,
+        "score": 999999995,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.97007149993442
+      },
+      {
+        "context": 5,
+        "ceiling": 16384,
+        "staged": false,
+        "repeat": 1,
+        "depth": 6,
+        "score": 999999995,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.9838650000747293
+      },
+      {
+        "context": 5,
+        "ceiling": 16384,
+        "staged": true,
+        "repeat": 0,
+        "depth": 6,
+        "score": 999999995,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.9759943999815732
+      },
+      {
+        "context": 5,
+        "ceiling": 16384,
+        "staged": true,
+        "repeat": 1,
+        "depth": 6,
+        "score": 999999995,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 2.950189499882981
+      },
+      {
+        "context": 6,
+        "ceiling": 4096,
+        "staged": false,
+        "repeat": 0,
+        "depth": 5,
+        "score": 999999997,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7838170998729765
+      },
+      {
+        "context": 6,
+        "ceiling": 4096,
+        "staged": false,
+        "repeat": 1,
+        "depth": 5,
+        "score": 999999997,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7550673000514507
+      },
+      {
+        "context": 6,
+        "ceiling": 4096,
+        "staged": true,
+        "repeat": 0,
+        "depth": 5,
+        "score": 999999997,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7614313999656588
+      },
+      {
+        "context": 6,
+        "ceiling": 4096,
+        "staged": true,
+        "repeat": 1,
+        "depth": 5,
+        "score": 999999997,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7686306000687182
+      },
+      {
+        "context": 6,
+        "ceiling": 16384,
+        "staged": false,
+        "repeat": 0,
+        "depth": 6,
+        "score": 999999997,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 3.046470999950543
+      },
+      {
+        "context": 6,
+        "ceiling": 16384,
+        "staged": false,
+        "repeat": 1,
+        "depth": 6,
+        "score": 999999997,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 3.031955499900505
+      },
+      {
+        "context": 6,
+        "ceiling": 16384,
+        "staged": true,
+        "repeat": 0,
+        "depth": 6,
+        "score": 999999997,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 3.0548595001455396
+      },
+      {
+        "context": 6,
+        "ceiling": 16384,
+        "staged": true,
+        "repeat": 1,
+        "depth": 6,
+        "score": 999999997,
+        "nodes": 16384,
+        "termination": "node_limit",
+        "seconds": 3.043696300126612
+      },
+      {
+        "context": 7,
+        "ceiling": 4096,
+        "staged": false,
+        "repeat": 0,
+        "depth": 6,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7458820999599993
+      },
+      {
+        "context": 7,
+        "ceiling": 4096,
+        "staged": false,
+        "repeat": 1,
+        "depth": 6,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.73707429994829
+      },
+      {
+        "context": 7,
+        "ceiling": 4096,
+        "staged": true,
+        "repeat": 0,
+        "depth": 6,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7681986999232322
+      },
+      {
+        "context": 7,
+        "ceiling": 4096,
+        "staged": true,
+        "repeat": 1,
+        "depth": 6,
+        "score": 0,
+        "nodes": 4096,
+        "termination": "node_limit",
+        "seconds": 0.7636607000604272
+      },
+      {
+        "context": 7,
+        "ceiling": 16384,
+        "staged": false,
+        "repeat": 0,
+        "depth": 8,
+        "score": 0,
+        "nodes": 10144,
+        "termination": "completed_depth",
+        "seconds": 2.0964784000534564
+      },
+      {
+        "context": 7,
+        "ceiling": 16384,
+        "staged": false,
+        "repeat": 1,
+        "depth": 8,
+        "score": 0,
+        "nodes": 10144,
+        "termination": "completed_depth",
+        "seconds": 2.0673541999422014
+      },
+      {
+        "context": 7,
+        "ceiling": 16384,
+        "staged": true,
+        "repeat": 0,
+        "depth": 8,
+        "score": 0,
+        "nodes": 10144,
+        "termination": "completed_depth",
+        "seconds": 2.0772569000255316
+      },
+      {
+        "context": 7,
+        "ceiling": 16384,
+        "staged": true,
+        "repeat": 1,
+        "depth": 8,
+        "score": 0,
+        "nodes": 10144,
+        "termination": "completed_depth",
+        "seconds": 2.108653699979186
+      }
+    ]
+  }
+}

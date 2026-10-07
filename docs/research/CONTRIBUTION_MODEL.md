@@ -117,7 +117,7 @@ cutoff; a continuation should receive only32 minus its already-consumed plies,
 then return to the original64-path weights, including non-transfer zero
 contrasts. The current frontier-local whole-control/ability experiments use
 different declared utilities/horizons and cannot substitute for that estimate.
-Next action: continue all13 saved frontiers under the original signed-tag
+The resulting action was to continue all13 saved frontiers under the original signed-tag
 utility and uniform response, retaining full states and exchangeable hand tags,
 before deciding whether custody information adds a material construction input.
 The advisor read the prior note but did not execute its code/tests; no new
@@ -130,8 +130,18 @@ continuation transitions per repeat. This is setup, not a continuation estimate:
 The declared eight-repeat continuation then completes4320 transitions in33.77sec.
 After original64-path weighting, mean G-minus-P signed service is-9/512;
 repeat contrasts range-3/64..1/64 and change sign. This exposed small pilot
-does not support a stable generic hand correction. Full actions/events are
-saved in that archive; independent tag-path replay is the next check.
+does not support a stable generic hand correction. All208 saved paths/4320
+transitions now independently replay with Native: legal action RNG, full
+tag-service events, terminal/history and original64 weights agree exactly.
+An exact latent tag mass calculation on those fixed paths gives-13/768 rather
+than sampled-9/512 (difference1/1536). Independent Core replay enumerates the
+conditional integer-reward distributions and verifies all208 first moments;
+only3 paths have nonzero tag-allocation variance. Removing that noise does not
+remove action-path/prefix uncertainty or convert tag service into stock prices.
+Exact source and distributions: ../archive/original_tag_replay_20261008/.
+No further unchanged signed-tag sweep is warranted by this result. The supported
+promotion intervention and observed semantic valuation-input gap are the next
+construction evidence; see SEMANTIC_CAPABILITY.md and UNFAMILIAR_RULE_SEARCH.md.
 
 Compact observations: data/contribution_model_20261008.json. Exact sources,
 raw/failed versions and dependency hashes: ../archive/contribution_model_20261008/.

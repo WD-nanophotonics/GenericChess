@@ -1,0 +1,3043 @@
+{
+  "scope": "Four predeclared rule variants: canonical, longer semantic capture, capture-only, and type-ID rename. Same legacy atoms, no human coefficients. Project only simple actor moves, target removal, empty/enemy target and optional clear path. Exclude guards/aux/compound/drop/zone/postconditions with explicit reasons. Own-anchor safety is deliberately ignored, so this is a pseudo-geometric density approximation, NOT full legal mobility or a deployed price. Independent square occupancy: empty1-d, friendly/enemy d/2. Quiet and capture endpoints have different availability; promotion choices deduplicated by endpoint. Exact path-clear union under this law, future promotion/custody ignored. Product evaluator stays unchanged.",
+  "variants": [
+    {
+      "variant": "canonical",
+      "fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+      "types": {
+        "K": {
+          "included": [
+            "sem_00_k_quiet",
+            "sem_01_k_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "sem_16_castle_w_ks",
+              "reasons": [
+                "compound/state effect",
+                "non-anchor invariant",
+                "not simple actor move",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_17_castle_w_qs",
+              "reasons": [
+                "compound/state effect",
+                "non-anchor invariant",
+                "not simple actor move",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_18_castle_b_ks",
+              "reasons": [
+                "compound/state effect",
+                "non-anchor invariant",
+                "not simple actor move",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_19_castle_b_qs",
+              "reasons": [
+                "compound/state effect",
+                "non-anchor invariant",
+                "not simple actor move",
+                "state/zone/postcondition"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 420,
+          "capture_endpoint_count": 420,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 6.5625,
+              "capture": 0.0,
+              "total": 6.5625
+            },
+            {
+              "density": 0.125,
+              "quiet": 5.7421875,
+              "capture": 0.41015625,
+              "total": 6.15234375
+            },
+            {
+              "density": 0.25,
+              "quiet": 4.921875,
+              "capture": 0.8203125,
+              "total": 5.7421875
+            },
+            {
+              "density": 0.375,
+              "quiet": 4.1015625,
+              "capture": 1.23046875,
+              "total": 5.33203125
+            },
+            {
+              "density": 0.5,
+              "quiet": 3.28125,
+              "capture": 1.640625,
+              "total": 4.921875
+            }
+          ],
+          "projected_weighted_mobility": 5.816015625,
+          "old_signature": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]",
+          "old_raw": 5.976541940789473,
+          "old_value": 0
+        },
+        "P": {
+          "included": [
+            "sem_10_pawn_one_step",
+            "sem_12_pawn_capture_right",
+            "sem_13_pawn_capture_left"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_066",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            },
+            {
+              "pattern": "sem_11_pawn_double_step",
+              "reasons": [
+                "compound/state effect",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_14_en_passant_right",
+              "reasons": [
+                "compound/state effect",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_15_en_passant_left",
+              "reasons": [
+                "compound/state effect",
+                "state/zone/postcondition"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 56,
+          "capture_endpoint_count": 98,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 0.875,
+              "capture": 0.0,
+              "total": 0.875
+            },
+            {
+              "density": 0.125,
+              "quiet": 0.765625,
+              "capture": 0.095703125,
+              "total": 0.861328125
+            },
+            {
+              "density": 0.25,
+              "quiet": 0.65625,
+              "capture": 0.19140625,
+              "total": 0.84765625
+            },
+            {
+              "density": 0.375,
+              "quiet": 0.546875,
+              "capture": 0.287109375,
+              "total": 0.833984375
+            },
+            {
+              "density": 0.5,
+              "quiet": 0.4375,
+              "capture": 0.3828125,
+              "total": 0.8203125
+            }
+          ],
+          "projected_weighted_mobility": 0.8501171875,
+          "old_signature": "[]",
+          "old_raw": 0.0,
+          "old_value": 1
+        },
+        "N": {
+          "included": [
+            "sem_02_n_quiet",
+            "sem_03_n_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_065",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 336,
+          "capture_endpoint_count": 336,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 5.25,
+              "capture": 0.0,
+              "total": 5.25
+            },
+            {
+              "density": 0.125,
+              "quiet": 4.59375,
+              "capture": 0.328125,
+              "total": 4.921875
+            },
+            {
+              "density": 0.25,
+              "quiet": 3.9375,
+              "capture": 0.65625,
+              "total": 4.59375
+            },
+            {
+              "density": 0.375,
+              "quiet": 3.28125,
+              "capture": 0.984375,
+              "total": 4.265625
+            },
+            {
+              "density": 0.5,
+              "quiet": 2.625,
+              "capture": 1.3125,
+              "total": 3.9375
+            }
+          ],
+          "projected_weighted_mobility": 4.6528125000000005,
+          "old_signature": "[[\"L\",-2,-1],[\"L\",-2,1],[\"L\",-1,-2],[\"L\",-1,2],[\"L\",1,-2],[\"L\",1,2],[\"L\",2,-1],[\"L\",2,1]]",
+          "old_raw": 4.815702525575447,
+          "old_value": 775
+        },
+        "B": {
+          "included": [
+            "sem_04_b_quiet",
+            "sem_05_b_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_064",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 560,
+          "capture_endpoint_count": 560,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 8.75,
+              "capture": 0.0,
+              "total": 8.75
+            },
+            {
+              "density": 0.125,
+              "quiet": 6.460531920194626,
+              "capture": 0.46146656572818756,
+              "total": 6.921998485922813
+            },
+            {
+              "density": 0.25,
+              "quiet": 4.724407196044922,
+              "capture": 0.7874011993408203,
+              "total": 5.511808395385742
+            },
+            {
+              "density": 0.375,
+              "quiet": 3.397900015115738,
+              "capture": 1.0193700045347214,
+              "total": 4.417270019650459
+            },
+            {
+              "density": 0.5,
+              "quiet": 2.37353515625,
+              "capture": 1.186767578125,
+              "total": 3.560302734375
+            }
+          ],
+          "projected_weighted_mobility": 6.074621444642544,
+          "old_signature": "[[\"R\",-1,-1,-1],[\"R\",-1,1,-1],[\"R\",1,-1,-1],[\"R\",1,1,-1]]",
+          "old_raw": 6.217622245358478,
+          "old_value": 1000
+        },
+        "R": {
+          "included": [
+            "sem_06_r_quiet",
+            "sem_07_r_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_068",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 896,
+          "capture_endpoint_count": 896,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 14.0,
+              "capture": 0.0,
+              "total": 14.0
+            },
+            {
+              "density": 0.125,
+              "quiet": 9.621049642562866,
+              "capture": 0.6872178316116333,
+              "total": 10.3082674741745
+            },
+            {
+              "density": 0.25,
+              "quiet": 6.600677490234375,
+              "capture": 1.1001129150390625,
+              "total": 7.7007904052734375
+            },
+            {
+              "density": 0.375,
+              "quiet": 4.496184587478638,
+              "capture": 1.3488553762435913,
+              "total": 5.845039963722229
+            },
+            {
+              "density": 0.5,
+              "quiet": 3.00390625,
+              "capture": 1.501953125,
+              "total": 4.505859375
+            }
+          ],
+          "projected_weighted_mobility": 8.91991486310959,
+          "old_signature": "[[\"R\",-1,0,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,0,-1]]",
+          "old_raw": 9.08791486310959,
+          "old_value": 1462
+        },
+        "Q": {
+          "included": [
+            "sem_08_q_quiet",
+            "sem_09_q_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_067",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 1456,
+          "capture_endpoint_count": 1456,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 22.75,
+              "capture": 0.0,
+              "total": 22.75
+            },
+            {
+              "density": 0.125,
+              "quiet": 16.081581562757492,
+              "capture": 1.1486843973398209,
+              "total": 17.230265960097313
+            },
+            {
+              "density": 0.25,
+              "quiet": 11.325084686279297,
+              "capture": 1.8875141143798828,
+              "total": 13.21259880065918
+            },
+            {
+              "density": 0.375,
+              "quiet": 7.894084602594376,
+              "capture": 2.3682253807783127,
+              "total": 10.262309983372688
+            },
+            {
+              "density": 0.5,
+              "quiet": 5.37744140625,
+              "capture": 2.688720703125,
+              "total": 8.066162109375
+            }
+          ],
+          "projected_weighted_mobility": 14.994536307752133,
+          "old_signature": "[[\"R\",-1,-1,-1],[\"R\",-1,0,-1],[\"R\",-1,1,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,-1,-1],[\"R\",1,0,-1],[\"R\",1,1,-1]]",
+          "old_raw": 15.163483676173186,
+          "old_value": 2439
+        }
+      }
+    },
+    {
+      "variant": "semantic_long_capture",
+      "fingerprint": "acd078fbb8bd44b27665b8a2dedf973f04f860c991877d22c3a1395e24d2e196",
+      "types": {
+        "K": {
+          "included": [
+            "sem_00_k_quiet",
+            "sem_01_k_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "sem_16_castle_w_ks",
+              "reasons": [
+                "compound/state effect",
+                "non-anchor invariant",
+                "not simple actor move",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_17_castle_w_qs",
+              "reasons": [
+                "compound/state effect",
+                "non-anchor invariant",
+                "not simple actor move",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_18_castle_b_ks",
+              "reasons": [
+                "compound/state effect",
+                "non-anchor invariant",
+                "not simple actor move",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_19_castle_b_qs",
+              "reasons": [
+                "compound/state effect",
+                "non-anchor invariant",
+                "not simple actor move",
+                "state/zone/postcondition"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 420,
+          "capture_endpoint_count": 420,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 6.5625,
+              "capture": 0.0,
+              "total": 6.5625
+            },
+            {
+              "density": 0.125,
+              "quiet": 5.7421875,
+              "capture": 0.41015625,
+              "total": 6.15234375
+            },
+            {
+              "density": 0.25,
+              "quiet": 4.921875,
+              "capture": 0.8203125,
+              "total": 5.7421875
+            },
+            {
+              "density": 0.375,
+              "quiet": 4.1015625,
+              "capture": 1.23046875,
+              "total": 5.33203125
+            },
+            {
+              "density": 0.5,
+              "quiet": 3.28125,
+              "capture": 1.640625,
+              "total": 4.921875
+            }
+          ],
+          "projected_weighted_mobility": 5.816015625,
+          "old_signature": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]",
+          "old_raw": 5.976541940789473,
+          "old_value": 0
+        },
+        "P": {
+          "included": [
+            "sem_10_pawn_one_step",
+            "sem_12_pawn_capture_right",
+            "sem_13_pawn_capture_left"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_066",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            },
+            {
+              "pattern": "sem_11_pawn_double_step",
+              "reasons": [
+                "compound/state effect",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_14_en_passant_right",
+              "reasons": [
+                "compound/state effect",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_15_en_passant_left",
+              "reasons": [
+                "compound/state effect",
+                "state/zone/postcondition"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 56,
+          "capture_endpoint_count": 84,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 0.875,
+              "capture": 0.0,
+              "total": 0.875
+            },
+            {
+              "density": 0.125,
+              "quiet": 0.765625,
+              "capture": 0.08203125,
+              "total": 0.84765625
+            },
+            {
+              "density": 0.25,
+              "quiet": 0.65625,
+              "capture": 0.1640625,
+              "total": 0.8203125
+            },
+            {
+              "density": 0.375,
+              "quiet": 0.546875,
+              "capture": 0.24609375,
+              "total": 0.79296875
+            },
+            {
+              "density": 0.5,
+              "quiet": 0.4375,
+              "capture": 0.328125,
+              "total": 0.765625
+            }
+          ],
+          "projected_weighted_mobility": 0.825234375,
+          "old_signature": "[]",
+          "old_raw": 0.0,
+          "old_value": 1
+        },
+        "N": {
+          "included": [
+            "sem_02_n_quiet",
+            "sem_03_n_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_065",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 336,
+          "capture_endpoint_count": 336,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 5.25,
+              "capture": 0.0,
+              "total": 5.25
+            },
+            {
+              "density": 0.125,
+              "quiet": 4.59375,
+              "capture": 0.328125,
+              "total": 4.921875
+            },
+            {
+              "density": 0.25,
+              "quiet": 3.9375,
+              "capture": 0.65625,
+              "total": 4.59375
+            },
+            {
+              "density": 0.375,
+              "quiet": 3.28125,
+              "capture": 0.984375,
+              "total": 4.265625
+            },
+            {
+              "density": 0.5,
+              "quiet": 2.625,
+              "capture": 1.3125,
+              "total": 3.9375
+            }
+          ],
+          "projected_weighted_mobility": 4.6528125000000005,
+          "old_signature": "[[\"L\",-2,-1],[\"L\",-2,1],[\"L\",-1,-2],[\"L\",-1,2],[\"L\",1,-2],[\"L\",1,2],[\"L\",2,-1],[\"L\",2,1]]",
+          "old_raw": 4.815702525575447,
+          "old_value": 775
+        },
+        "B": {
+          "included": [
+            "sem_04_b_quiet",
+            "sem_05_b_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_064",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 560,
+          "capture_endpoint_count": 560,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 8.75,
+              "capture": 0.0,
+              "total": 8.75
+            },
+            {
+              "density": 0.125,
+              "quiet": 6.460531920194626,
+              "capture": 0.46146656572818756,
+              "total": 6.921998485922813
+            },
+            {
+              "density": 0.25,
+              "quiet": 4.724407196044922,
+              "capture": 0.7874011993408203,
+              "total": 5.511808395385742
+            },
+            {
+              "density": 0.375,
+              "quiet": 3.397900015115738,
+              "capture": 1.0193700045347214,
+              "total": 4.417270019650459
+            },
+            {
+              "density": 0.5,
+              "quiet": 2.37353515625,
+              "capture": 1.186767578125,
+              "total": 3.560302734375
+            }
+          ],
+          "projected_weighted_mobility": 6.074621444642544,
+          "old_signature": "[[\"R\",-1,-1,-1],[\"R\",-1,1,-1],[\"R\",1,-1,-1],[\"R\",1,1,-1]]",
+          "old_raw": 6.217622245358478,
+          "old_value": 1000
+        },
+        "R": {
+          "included": [
+            "sem_06_r_quiet",
+            "sem_07_r_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_068",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 896,
+          "capture_endpoint_count": 896,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 14.0,
+              "capture": 0.0,
+              "total": 14.0
+            },
+            {
+              "density": 0.125,
+              "quiet": 9.621049642562866,
+              "capture": 0.6872178316116333,
+              "total": 10.3082674741745
+            },
+            {
+              "density": 0.25,
+              "quiet": 6.600677490234375,
+              "capture": 1.1001129150390625,
+              "total": 7.7007904052734375
+            },
+            {
+              "density": 0.375,
+              "quiet": 4.496184587478638,
+              "capture": 1.3488553762435913,
+              "total": 5.845039963722229
+            },
+            {
+              "density": 0.5,
+              "quiet": 3.00390625,
+              "capture": 1.501953125,
+              "total": 4.505859375
+            }
+          ],
+          "projected_weighted_mobility": 8.91991486310959,
+          "old_signature": "[[\"R\",-1,0,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,0,-1]]",
+          "old_raw": 9.08791486310959,
+          "old_value": 1462
+        },
+        "Q": {
+          "included": [
+            "sem_08_q_quiet",
+            "sem_09_q_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_067",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 1456,
+          "capture_endpoint_count": 1456,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 22.75,
+              "capture": 0.0,
+              "total": 22.75
+            },
+            {
+              "density": 0.125,
+              "quiet": 16.081581562757492,
+              "capture": 1.1486843973398209,
+              "total": 17.230265960097313
+            },
+            {
+              "density": 0.25,
+              "quiet": 11.325084686279297,
+              "capture": 1.8875141143798828,
+              "total": 13.21259880065918
+            },
+            {
+              "density": 0.375,
+              "quiet": 7.894084602594376,
+              "capture": 2.3682253807783127,
+              "total": 10.262309983372688
+            },
+            {
+              "density": 0.5,
+              "quiet": 5.37744140625,
+              "capture": 2.688720703125,
+              "total": 8.066162109375
+            }
+          ],
+          "projected_weighted_mobility": 14.994536307752133,
+          "old_signature": "[[\"R\",-1,-1,-1],[\"R\",-1,0,-1],[\"R\",-1,1,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,-1,-1],[\"R\",1,0,-1],[\"R\",1,1,-1]]",
+          "old_raw": 15.163483676173186,
+          "old_value": 2439
+        }
+      }
+    },
+    {
+      "variant": "semantic_capture_only",
+      "fingerprint": "d110b0dbba1ca027426e9d06a9e10f92545fa4792bf7cccfa2672710efa0f57b",
+      "types": {
+        "K": {
+          "included": [
+            "sem_00_k_quiet",
+            "sem_01_k_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "sem_14_castle_w_ks",
+              "reasons": [
+                "compound/state effect",
+                "non-anchor invariant",
+                "not simple actor move",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_15_castle_w_qs",
+              "reasons": [
+                "compound/state effect",
+                "non-anchor invariant",
+                "not simple actor move",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_16_castle_b_ks",
+              "reasons": [
+                "compound/state effect",
+                "non-anchor invariant",
+                "not simple actor move",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_17_castle_b_qs",
+              "reasons": [
+                "compound/state effect",
+                "non-anchor invariant",
+                "not simple actor move",
+                "state/zone/postcondition"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 420,
+          "capture_endpoint_count": 420,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 6.5625,
+              "capture": 0.0,
+              "total": 6.5625
+            },
+            {
+              "density": 0.125,
+              "quiet": 5.7421875,
+              "capture": 0.41015625,
+              "total": 6.15234375
+            },
+            {
+              "density": 0.25,
+              "quiet": 4.921875,
+              "capture": 0.8203125,
+              "total": 5.7421875
+            },
+            {
+              "density": 0.375,
+              "quiet": 4.1015625,
+              "capture": 1.23046875,
+              "total": 5.33203125
+            },
+            {
+              "density": 0.5,
+              "quiet": 3.28125,
+              "capture": 1.640625,
+              "total": 4.921875
+            }
+          ],
+          "projected_weighted_mobility": 5.816015625,
+          "old_signature": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]",
+          "old_raw": 5.976541940789473,
+          "old_value": 0
+        },
+        "P": {
+          "included": [
+            "sem_10_pawn_capture_right",
+            "sem_11_pawn_capture_left"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_066",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            },
+            {
+              "pattern": "sem_12_en_passant_right",
+              "reasons": [
+                "compound/state effect",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_13_en_passant_left",
+              "reasons": [
+                "compound/state effect",
+                "state/zone/postcondition"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 0,
+          "capture_endpoint_count": 98,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 0.0,
+              "capture": 0.0,
+              "total": 0.0
+            },
+            {
+              "density": 0.125,
+              "quiet": 0.0,
+              "capture": 0.095703125,
+              "total": 0.095703125
+            },
+            {
+              "density": 0.25,
+              "quiet": 0.0,
+              "capture": 0.19140625,
+              "total": 0.19140625
+            },
+            {
+              "density": 0.375,
+              "quiet": 0.0,
+              "capture": 0.287109375,
+              "total": 0.287109375
+            },
+            {
+              "density": 0.5,
+              "quiet": 0.0,
+              "capture": 0.3828125,
+              "total": 0.3828125
+            }
+          ],
+          "projected_weighted_mobility": 0.1741796875,
+          "old_signature": "[]",
+          "old_raw": 0.0,
+          "old_value": 1
+        },
+        "N": {
+          "included": [
+            "sem_02_n_quiet",
+            "sem_03_n_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_065",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 336,
+          "capture_endpoint_count": 336,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 5.25,
+              "capture": 0.0,
+              "total": 5.25
+            },
+            {
+              "density": 0.125,
+              "quiet": 4.59375,
+              "capture": 0.328125,
+              "total": 4.921875
+            },
+            {
+              "density": 0.25,
+              "quiet": 3.9375,
+              "capture": 0.65625,
+              "total": 4.59375
+            },
+            {
+              "density": 0.375,
+              "quiet": 3.28125,
+              "capture": 0.984375,
+              "total": 4.265625
+            },
+            {
+              "density": 0.5,
+              "quiet": 2.625,
+              "capture": 1.3125,
+              "total": 3.9375
+            }
+          ],
+          "projected_weighted_mobility": 4.6528125000000005,
+          "old_signature": "[[\"L\",-2,-1],[\"L\",-2,1],[\"L\",-1,-2],[\"L\",-1,2],[\"L\",1,-2],[\"L\",1,2],[\"L\",2,-1],[\"L\",2,1]]",
+          "old_raw": 4.815702525575447,
+          "old_value": 775
+        },
+        "B": {
+          "included": [
+            "sem_04_b_quiet",
+            "sem_05_b_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_064",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 560,
+          "capture_endpoint_count": 560,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 8.75,
+              "capture": 0.0,
+              "total": 8.75
+            },
+            {
+              "density": 0.125,
+              "quiet": 6.460531920194626,
+              "capture": 0.46146656572818756,
+              "total": 6.921998485922813
+            },
+            {
+              "density": 0.25,
+              "quiet": 4.724407196044922,
+              "capture": 0.7874011993408203,
+              "total": 5.511808395385742
+            },
+            {
+              "density": 0.375,
+              "quiet": 3.397900015115738,
+              "capture": 1.0193700045347214,
+              "total": 4.417270019650459
+            },
+            {
+              "density": 0.5,
+              "quiet": 2.37353515625,
+              "capture": 1.186767578125,
+              "total": 3.560302734375
+            }
+          ],
+          "projected_weighted_mobility": 6.074621444642544,
+          "old_signature": "[[\"R\",-1,-1,-1],[\"R\",-1,1,-1],[\"R\",1,-1,-1],[\"R\",1,1,-1]]",
+          "old_raw": 6.217622245358478,
+          "old_value": 1000
+        },
+        "R": {
+          "included": [
+            "sem_06_r_quiet",
+            "sem_07_r_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_068",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 896,
+          "capture_endpoint_count": 896,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 14.0,
+              "capture": 0.0,
+              "total": 14.0
+            },
+            {
+              "density": 0.125,
+              "quiet": 9.621049642562866,
+              "capture": 0.6872178316116333,
+              "total": 10.3082674741745
+            },
+            {
+              "density": 0.25,
+              "quiet": 6.600677490234375,
+              "capture": 1.1001129150390625,
+              "total": 7.7007904052734375
+            },
+            {
+              "density": 0.375,
+              "quiet": 4.496184587478638,
+              "capture": 1.3488553762435913,
+              "total": 5.845039963722229
+            },
+            {
+              "density": 0.5,
+              "quiet": 3.00390625,
+              "capture": 1.501953125,
+              "total": 4.505859375
+            }
+          ],
+          "projected_weighted_mobility": 8.91991486310959,
+          "old_signature": "[[\"R\",-1,0,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,0,-1]]",
+          "old_raw": 9.08791486310959,
+          "old_value": 1462
+        },
+        "Q": {
+          "included": [
+            "sem_08_q_quiet",
+            "sem_09_q_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_067",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 1456,
+          "capture_endpoint_count": 1456,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 22.75,
+              "capture": 0.0,
+              "total": 22.75
+            },
+            {
+              "density": 0.125,
+              "quiet": 16.081581562757492,
+              "capture": 1.1486843973398209,
+              "total": 17.230265960097313
+            },
+            {
+              "density": 0.25,
+              "quiet": 11.325084686279297,
+              "capture": 1.8875141143798828,
+              "total": 13.21259880065918
+            },
+            {
+              "density": 0.375,
+              "quiet": 7.894084602594376,
+              "capture": 2.3682253807783127,
+              "total": 10.262309983372688
+            },
+            {
+              "density": 0.5,
+              "quiet": 5.37744140625,
+              "capture": 2.688720703125,
+              "total": 8.066162109375
+            }
+          ],
+          "projected_weighted_mobility": 14.994536307752133,
+          "old_signature": "[[\"R\",-1,-1,-1],[\"R\",-1,0,-1],[\"R\",-1,1,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,-1,-1],[\"R\",1,0,-1],[\"R\",1,1,-1]]",
+          "old_raw": 15.163483676173186,
+          "old_value": 2439
+        }
+      }
+    },
+    {
+      "variant": "renamed",
+      "fingerprint": "f29387ec8da7946537c2bb0a87c1b449a6fe08a4ddc7c23ba35aa9788a9d0486",
+      "types": {
+        "K": {
+          "included": [
+            "sem_00_k_quiet",
+            "sem_01_k_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "sem_16_castle_w_ks",
+              "reasons": [
+                "compound/state effect",
+                "non-anchor invariant",
+                "not simple actor move",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_17_castle_w_qs",
+              "reasons": [
+                "compound/state effect",
+                "non-anchor invariant",
+                "not simple actor move",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_18_castle_b_ks",
+              "reasons": [
+                "compound/state effect",
+                "non-anchor invariant",
+                "not simple actor move",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_19_castle_b_qs",
+              "reasons": [
+                "compound/state effect",
+                "non-anchor invariant",
+                "not simple actor move",
+                "state/zone/postcondition"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 420,
+          "capture_endpoint_count": 420,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 6.5625,
+              "capture": 0.0,
+              "total": 6.5625
+            },
+            {
+              "density": 0.125,
+              "quiet": 5.7421875,
+              "capture": 0.41015625,
+              "total": 6.15234375
+            },
+            {
+              "density": 0.25,
+              "quiet": 4.921875,
+              "capture": 0.8203125,
+              "total": 5.7421875
+            },
+            {
+              "density": 0.375,
+              "quiet": 4.1015625,
+              "capture": 1.23046875,
+              "total": 5.33203125
+            },
+            {
+              "density": 0.5,
+              "quiet": 3.28125,
+              "capture": 1.640625,
+              "total": 4.921875
+            }
+          ],
+          "projected_weighted_mobility": 5.816015625,
+          "old_signature": "[[\"L\",-1,-1],[\"L\",-1,0],[\"L\",-1,1],[\"L\",0,-1],[\"L\",0,1],[\"L\",1,-1],[\"L\",1,0],[\"L\",1,1]]",
+          "old_raw": 5.976541940789473,
+          "old_value": 0
+        },
+        "Z": {
+          "included": [
+            "sem_10_pawn_one_step",
+            "sem_12_pawn_capture_right",
+            "sem_13_pawn_capture_left"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_068",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            },
+            {
+              "pattern": "sem_11_pawn_double_step",
+              "reasons": [
+                "compound/state effect",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_14_en_passant_right",
+              "reasons": [
+                "compound/state effect",
+                "state/zone/postcondition"
+              ]
+            },
+            {
+              "pattern": "sem_15_en_passant_left",
+              "reasons": [
+                "compound/state effect",
+                "state/zone/postcondition"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 56,
+          "capture_endpoint_count": 98,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 0.875,
+              "capture": 0.0,
+              "total": 0.875
+            },
+            {
+              "density": 0.125,
+              "quiet": 0.765625,
+              "capture": 0.095703125,
+              "total": 0.861328125
+            },
+            {
+              "density": 0.25,
+              "quiet": 0.65625,
+              "capture": 0.19140625,
+              "total": 0.84765625
+            },
+            {
+              "density": 0.375,
+              "quiet": 0.546875,
+              "capture": 0.287109375,
+              "total": 0.833984375
+            },
+            {
+              "density": 0.5,
+              "quiet": 0.4375,
+              "capture": 0.3828125,
+              "total": 0.8203125
+            }
+          ],
+          "projected_weighted_mobility": 0.8501171875,
+          "old_signature": "[]",
+          "old_raw": 0.0,
+          "old_value": 1
+        },
+        "N": {
+          "included": [
+            "sem_02_n_quiet",
+            "sem_03_n_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_065",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 336,
+          "capture_endpoint_count": 336,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 5.25,
+              "capture": 0.0,
+              "total": 5.25
+            },
+            {
+              "density": 0.125,
+              "quiet": 4.59375,
+              "capture": 0.328125,
+              "total": 4.921875
+            },
+            {
+              "density": 0.25,
+              "quiet": 3.9375,
+              "capture": 0.65625,
+              "total": 4.59375
+            },
+            {
+              "density": 0.375,
+              "quiet": 3.28125,
+              "capture": 0.984375,
+              "total": 4.265625
+            },
+            {
+              "density": 0.5,
+              "quiet": 2.625,
+              "capture": 1.3125,
+              "total": 3.9375
+            }
+          ],
+          "projected_weighted_mobility": 4.6528125000000005,
+          "old_signature": "[[\"L\",-2,-1],[\"L\",-2,1],[\"L\",-1,-2],[\"L\",-1,2],[\"L\",1,-2],[\"L\",1,2],[\"L\",2,-1],[\"L\",2,1]]",
+          "old_raw": 4.815702525575447,
+          "old_value": 775
+        },
+        "B": {
+          "included": [
+            "sem_04_b_quiet",
+            "sem_05_b_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_064",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 560,
+          "capture_endpoint_count": 560,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 8.75,
+              "capture": 0.0,
+              "total": 8.75
+            },
+            {
+              "density": 0.125,
+              "quiet": 6.460531920194626,
+              "capture": 0.46146656572818756,
+              "total": 6.921998485922813
+            },
+            {
+              "density": 0.25,
+              "quiet": 4.724407196044922,
+              "capture": 0.7874011993408203,
+              "total": 5.511808395385742
+            },
+            {
+              "density": 0.375,
+              "quiet": 3.397900015115738,
+              "capture": 1.0193700045347214,
+              "total": 4.417270019650459
+            },
+            {
+              "density": 0.5,
+              "quiet": 2.37353515625,
+              "capture": 1.186767578125,
+              "total": 3.560302734375
+            }
+          ],
+          "projected_weighted_mobility": 6.074621444642544,
+          "old_signature": "[[\"R\",-1,-1,-1],[\"R\",-1,1,-1],[\"R\",1,-1,-1],[\"R\",1,1,-1]]",
+          "old_raw": 6.217622245358478,
+          "old_value": 1000
+        },
+        "R": {
+          "included": [
+            "sem_06_r_quiet",
+            "sem_07_r_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_067",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 896,
+          "capture_endpoint_count": 896,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 14.0,
+              "capture": 0.0,
+              "total": 14.0
+            },
+            {
+              "density": 0.125,
+              "quiet": 9.621049642562866,
+              "capture": 0.6872178316116333,
+              "total": 10.3082674741745
+            },
+            {
+              "density": 0.25,
+              "quiet": 6.600677490234375,
+              "capture": 1.1001129150390625,
+              "total": 7.7007904052734375
+            },
+            {
+              "density": 0.375,
+              "quiet": 4.496184587478638,
+              "capture": 1.3488553762435913,
+              "total": 5.845039963722229
+            },
+            {
+              "density": 0.5,
+              "quiet": 3.00390625,
+              "capture": 1.501953125,
+              "total": 4.505859375
+            }
+          ],
+          "projected_weighted_mobility": 8.91991486310959,
+          "old_signature": "[[\"R\",-1,0,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,0,-1]]",
+          "old_raw": 9.08791486310959,
+          "old_value": 1462
+        },
+        "Q": {
+          "included": [
+            "sem_08_q_quiet",
+            "sem_09_q_capture"
+          ],
+          "excluded": [
+            {
+              "pattern": "legacy_066",
+              "reasons": [
+                "compound/state effect",
+                "drop",
+                "not simple actor move"
+              ]
+            }
+          ],
+          "quiet_endpoint_count": 1456,
+          "capture_endpoint_count": 1456,
+          "curves": [
+            {
+              "density": 0.0,
+              "quiet": 22.75,
+              "capture": 0.0,
+              "total": 22.75
+            },
+            {
+              "density": 0.125,
+              "quiet": 16.081581562757492,
+              "capture": 1.1486843973398209,
+              "total": 17.230265960097313
+            },
+            {
+              "density": 0.25,
+              "quiet": 11.325084686279297,
+              "capture": 1.8875141143798828,
+              "total": 13.21259880065918
+            },
+            {
+              "density": 0.375,
+              "quiet": 7.894084602594376,
+              "capture": 2.3682253807783127,
+              "total": 10.262309983372688
+            },
+            {
+              "density": 0.5,
+              "quiet": 5.37744140625,
+              "capture": 2.688720703125,
+              "total": 8.066162109375
+            }
+          ],
+          "projected_weighted_mobility": 14.994536307752133,
+          "old_signature": "[[\"R\",-1,-1,-1],[\"R\",-1,0,-1],[\"R\",-1,1,-1],[\"R\",0,-1,-1],[\"R\",0,1,-1],[\"R\",1,-1,-1],[\"R\",1,0,-1],[\"R\",1,1,-1]]",
+          "old_raw": 15.163483676173186,
+          "old_value": 2439
+        }
+      }
+    }
+  ],
+  "core_checks": {
+    "complete": true,
+    "producer_sha256": "076d5556c0842e4c364fb93f8029d9b19ca8208039182a89e17c3bc00cace60b",
+    "source_sha256": "05c840d0e361e58f6158f6fba3dee47a66cf8405a6a30b682962ccc8742512f5",
+    "declaration": "All4 declared semantic variants; both owner orientations, all64 actor sources, empty-board quiet targets and every63 single-enemy target independently checked through Core executor. Pseudo contexts intentionally have no anchors; own-anchor safety therefore adds no filter. Filter only the explicitly projected patterns, deduplicate promotion choices by endpoint. Also predeclared512 independent occupancy samples per5densities/variant, seed2026100817 and identical random boards across variants. No terminal-game/whole-legal-mobility or calibrated-price claim.",
+    "rows": [
+      {
+        "variant": "canonical",
+        "quiet_contexts": 128,
+        "capture_contexts": 8064,
+        "endpoint_checks": 308,
+        "curves": [
+          {
+            "density": 0.0,
+            "mean": 0.89453125,
+            "standard_error": 0.01358780194114759,
+            "predicted": 0.875,
+            "delta": 0.01953125,
+            "samples": 512
+          },
+          {
+            "density": 0.125,
+            "mean": 0.888671875,
+            "standard_error": 0.023350543751928618,
+            "predicted": 0.861328125,
+            "delta": 0.02734375,
+            "samples": 512
+          },
+          {
+            "density": 0.25,
+            "mean": 0.876953125,
+            "standard_error": 0.029601068749968817,
+            "predicted": 0.84765625,
+            "delta": 0.029296875,
+            "samples": 512
+          },
+          {
+            "density": 0.375,
+            "mean": 0.828125,
+            "standard_error": 0.031697806673274445,
+            "predicted": 0.833984375,
+            "delta": -0.005859375,
+            "samples": 512
+          },
+          {
+            "density": 0.5,
+            "mean": 0.79296875,
+            "standard_error": 0.03341078348496386,
+            "predicted": 0.8203125,
+            "delta": -0.02734375,
+            "samples": 512
+          }
+        ],
+        "complete": true,
+        "seconds": 1.6718784999102354
+      },
+      {
+        "variant": "semantic_long_capture",
+        "quiet_contexts": 128,
+        "capture_contexts": 8064,
+        "endpoint_checks": 280,
+        "curves": [
+          {
+            "density": 0.0,
+            "mean": 0.89453125,
+            "standard_error": 0.01358780194114759,
+            "predicted": 0.875,
+            "delta": 0.01953125,
+            "samples": 512
+          },
+          {
+            "density": 0.125,
+            "mean": 0.876953125,
+            "standard_error": 0.02273631463185314,
+            "predicted": 0.84765625,
+            "delta": 0.029296875,
+            "samples": 512
+          },
+          {
+            "density": 0.25,
+            "mean": 0.822265625,
+            "standard_error": 0.02742811693709557,
+            "predicted": 0.8203125,
+            "delta": 0.001953125,
+            "samples": 512
+          },
+          {
+            "density": 0.375,
+            "mean": 0.822265625,
+            "standard_error": 0.03252805854710895,
+            "predicted": 0.79296875,
+            "delta": 0.029296875,
+            "samples": 512
+          },
+          {
+            "density": 0.5,
+            "mean": 0.767578125,
+            "standard_error": 0.033024577132164556,
+            "predicted": 0.765625,
+            "delta": 0.001953125,
+            "samples": 512
+          }
+        ],
+        "complete": true,
+        "seconds": 1.6761735999025404
+      },
+      {
+        "variant": "semantic_capture_only",
+        "quiet_contexts": 128,
+        "capture_contexts": 8064,
+        "endpoint_checks": 196,
+        "curves": [
+          {
+            "density": 0.0,
+            "mean": 0.0,
+            "standard_error": 0.0,
+            "predicted": 0.0,
+            "delta": 0.0,
+            "samples": 512
+          },
+          {
+            "density": 0.125,
+            "mean": 0.1015625,
+            "standard_error": 0.013923192901588817,
+            "predicted": 0.095703125,
+            "delta": 0.005859375,
+            "samples": 512
+          },
+          {
+            "density": 0.25,
+            "mean": 0.203125,
+            "standard_error": 0.018637033307868263,
+            "predicted": 0.19140625,
+            "delta": 0.01171875,
+            "samples": 512
+          },
+          {
+            "density": 0.375,
+            "mean": 0.271484375,
+            "standard_error": 0.020806541061431053,
+            "predicted": 0.287109375,
+            "delta": -0.015625,
+            "samples": 512
+          },
+          {
+            "density": 0.5,
+            "mean": 0.33984375,
+            "standard_error": 0.024013306633437675,
+            "predicted": 0.3828125,
+            "delta": -0.04296875,
+            "samples": 512
+          }
+        ],
+        "complete": true,
+        "seconds": 1.4175887999590486
+      },
+      {
+        "variant": "renamed",
+        "quiet_contexts": 128,
+        "capture_contexts": 8064,
+        "endpoint_checks": 308,
+        "curves": [
+          {
+            "density": 0.0,
+            "mean": 0.89453125,
+            "standard_error": 0.01358780194114759,
+            "predicted": 0.875,
+            "delta": 0.01953125,
+            "samples": 512
+          },
+          {
+            "density": 0.125,
+            "mean": 0.888671875,
+            "standard_error": 0.023350543751928618,
+            "predicted": 0.861328125,
+            "delta": 0.02734375,
+            "samples": 512
+          },
+          {
+            "density": 0.25,
+            "mean": 0.876953125,
+            "standard_error": 0.029601068749968817,
+            "predicted": 0.84765625,
+            "delta": 0.029296875,
+            "samples": 512
+          },
+          {
+            "density": 0.375,
+            "mean": 0.828125,
+            "standard_error": 0.031697806673274445,
+            "predicted": 0.833984375,
+            "delta": -0.005859375,
+            "samples": 512
+          },
+          {
+            "density": 0.5,
+            "mean": 0.79296875,
+            "standard_error": 0.03341078348496386,
+            "predicted": 0.8203125,
+            "delta": -0.02734375,
+            "samples": 512
+          }
+        ],
+        "complete": true,
+        "seconds": 1.683685699943453
+      }
+    ],
+    "seconds": 6.547661500051618
+  },
+  "guard_bias": {
+    "complete": true,
+    "producer_sha256": "97bc7c8f15b02946d35301dcb46f87f05a00d4165062896506df2ef9731fcffb",
+    "source_sha256": "05c840d0e361e58f6158f6fba3dee47a66cf8405a6a30b682962ccc8742512f5",
+    "declaration": "Reuse the exact512boards per density and seed from the independent Core projection check. Count every executable action from the actor, then compare the same-position projected subset after endpoint deduplication. Ordinary enemy/friendly N background, no hands, aux initialized normally, no anchors in these virtual contexts. Full here means all actor patterns in these contexts, not a real-game distribution or full legal material price. No resampling or profile choice based on human labels.",
+    "rows": [
+      {
+        "variant": "canonical",
+        "curves": [
+          {
+            "density": 0.0,
+            "full_mean": 1.017578125,
+            "partial_mean": 0.89453125,
+            "paired_missing_mean": 0.123046875,
+            "paired_standard_error": 0.014531586592986348,
+            "contexts_with_missing": 63,
+            "excluded_pattern_occurrences": {
+              "sem_11_pawn_double_step": 63
+            },
+            "source_ranks_for_omitted_patterns": {
+              "sem_11_pawn_double_step": [
+                1
+              ]
+            }
+          },
+          {
+            "density": 0.125,
+            "full_mean": 0.98046875,
+            "partial_mean": 0.888671875,
+            "paired_missing_mean": 0.091796875,
+            "paired_standard_error": 0.012773061239386438,
+            "contexts_with_missing": 47,
+            "excluded_pattern_occurrences": {
+              "sem_11_pawn_double_step": 47
+            },
+            "source_ranks_for_omitted_patterns": {
+              "sem_11_pawn_double_step": [
+                1
+              ]
+            }
+          },
+          {
+            "density": 0.25,
+            "full_mean": 0.9453125,
+            "partial_mean": 0.876953125,
+            "paired_missing_mean": 0.068359375,
+            "paired_standard_error": 0.011163819360747115,
+            "contexts_with_missing": 35,
+            "excluded_pattern_occurrences": {
+              "sem_11_pawn_double_step": 35
+            },
+            "source_ranks_for_omitted_patterns": {
+              "sem_11_pawn_double_step": [
+                1
+              ]
+            }
+          },
+          {
+            "density": 0.375,
+            "full_mean": 0.876953125,
+            "partial_mean": 0.828125,
+            "paired_missing_mean": 0.048828125,
+            "paired_standard_error": 0.009533537383727834,
+            "contexts_with_missing": 25,
+            "excluded_pattern_occurrences": {
+              "sem_11_pawn_double_step": 25
+            },
+            "source_ranks_for_omitted_patterns": {
+              "sem_11_pawn_double_step": [
+                1
+              ]
+            }
+          },
+          {
+            "density": 0.5,
+            "full_mean": 0.82421875,
+            "partial_mean": 0.79296875,
+            "paired_missing_mean": 0.03125,
+            "paired_standard_error": 0.007696981071337285,
+            "contexts_with_missing": 16,
+            "excluded_pattern_occurrences": {
+              "sem_11_pawn_double_step": 16
+            },
+            "source_ranks_for_omitted_patterns": {
+              "sem_11_pawn_double_step": [
+                1
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "variant": "semantic_long_capture",
+        "curves": [
+          {
+            "density": 0.0,
+            "full_mean": 1.017578125,
+            "partial_mean": 0.89453125,
+            "paired_missing_mean": 0.123046875,
+            "paired_standard_error": 0.014531586592986348,
+            "contexts_with_missing": 63,
+            "excluded_pattern_occurrences": {
+              "sem_11_pawn_double_step": 63
+            },
+            "source_ranks_for_omitted_patterns": {
+              "sem_11_pawn_double_step": [
+                1
+              ]
+            }
+          },
+          {
+            "density": 0.125,
+            "full_mean": 0.96875,
+            "partial_mean": 0.876953125,
+            "paired_missing_mean": 0.091796875,
+            "paired_standard_error": 0.012773061239386438,
+            "contexts_with_missing": 47,
+            "excluded_pattern_occurrences": {
+              "sem_11_pawn_double_step": 47
+            },
+            "source_ranks_for_omitted_patterns": {
+              "sem_11_pawn_double_step": [
+                1
+              ]
+            }
+          },
+          {
+            "density": 0.25,
+            "full_mean": 0.890625,
+            "partial_mean": 0.822265625,
+            "paired_missing_mean": 0.068359375,
+            "paired_standard_error": 0.011163819360747115,
+            "contexts_with_missing": 35,
+            "excluded_pattern_occurrences": {
+              "sem_11_pawn_double_step": 35
+            },
+            "source_ranks_for_omitted_patterns": {
+              "sem_11_pawn_double_step": [
+                1
+              ]
+            }
+          },
+          {
+            "density": 0.375,
+            "full_mean": 0.87109375,
+            "partial_mean": 0.822265625,
+            "paired_missing_mean": 0.048828125,
+            "paired_standard_error": 0.009533537383727834,
+            "contexts_with_missing": 25,
+            "excluded_pattern_occurrences": {
+              "sem_11_pawn_double_step": 25
+            },
+            "source_ranks_for_omitted_patterns": {
+              "sem_11_pawn_double_step": [
+                1
+              ]
+            }
+          },
+          {
+            "density": 0.5,
+            "full_mean": 0.798828125,
+            "partial_mean": 0.767578125,
+            "paired_missing_mean": 0.03125,
+            "paired_standard_error": 0.007696981071337285,
+            "contexts_with_missing": 16,
+            "excluded_pattern_occurrences": {
+              "sem_11_pawn_double_step": 16
+            },
+            "source_ranks_for_omitted_patterns": {
+              "sem_11_pawn_double_step": [
+                1
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "variant": "semantic_capture_only",
+        "curves": [
+          {
+            "density": 0.0,
+            "full_mean": 0.0,
+            "partial_mean": 0.0,
+            "paired_missing_mean": 0.0,
+            "paired_standard_error": 0.0,
+            "contexts_with_missing": 0,
+            "excluded_pattern_occurrences": {},
+            "source_ranks_for_omitted_patterns": {}
+          },
+          {
+            "density": 0.125,
+            "full_mean": 0.1015625,
+            "partial_mean": 0.1015625,
+            "paired_missing_mean": 0.0,
+            "paired_standard_error": 0.0,
+            "contexts_with_missing": 0,
+            "excluded_pattern_occurrences": {},
+            "source_ranks_for_omitted_patterns": {}
+          },
+          {
+            "density": 0.25,
+            "full_mean": 0.203125,
+            "partial_mean": 0.203125,
+            "paired_missing_mean": 0.0,
+            "paired_standard_error": 0.0,
+            "contexts_with_missing": 0,
+            "excluded_pattern_occurrences": {},
+            "source_ranks_for_omitted_patterns": {}
+          },
+          {
+            "density": 0.375,
+            "full_mean": 0.271484375,
+            "partial_mean": 0.271484375,
+            "paired_missing_mean": 0.0,
+            "paired_standard_error": 0.0,
+            "contexts_with_missing": 0,
+            "excluded_pattern_occurrences": {},
+            "source_ranks_for_omitted_patterns": {}
+          },
+          {
+            "density": 0.5,
+            "full_mean": 0.33984375,
+            "partial_mean": 0.33984375,
+            "paired_missing_mean": 0.0,
+            "paired_standard_error": 0.0,
+            "contexts_with_missing": 0,
+            "excluded_pattern_occurrences": {},
+            "source_ranks_for_omitted_patterns": {}
+          }
+        ]
+      },
+      {
+        "variant": "renamed",
+        "curves": [
+          {
+            "density": 0.0,
+            "full_mean": 1.017578125,
+            "partial_mean": 0.89453125,
+            "paired_missing_mean": 0.123046875,
+            "paired_standard_error": 0.014531586592986348,
+            "contexts_with_missing": 63,
+            "excluded_pattern_occurrences": {
+              "sem_11_pawn_double_step": 63
+            },
+            "source_ranks_for_omitted_patterns": {
+              "sem_11_pawn_double_step": [
+                1
+              ]
+            }
+          },
+          {
+            "density": 0.125,
+            "full_mean": 0.98046875,
+            "partial_mean": 0.888671875,
+            "paired_missing_mean": 0.091796875,
+            "paired_standard_error": 0.012773061239386438,
+            "contexts_with_missing": 47,
+            "excluded_pattern_occurrences": {
+              "sem_11_pawn_double_step": 47
+            },
+            "source_ranks_for_omitted_patterns": {
+              "sem_11_pawn_double_step": [
+                1
+              ]
+            }
+          },
+          {
+            "density": 0.25,
+            "full_mean": 0.9453125,
+            "partial_mean": 0.876953125,
+            "paired_missing_mean": 0.068359375,
+            "paired_standard_error": 0.011163819360747115,
+            "contexts_with_missing": 35,
+            "excluded_pattern_occurrences": {
+              "sem_11_pawn_double_step": 35
+            },
+            "source_ranks_for_omitted_patterns": {
+              "sem_11_pawn_double_step": [
+                1
+              ]
+            }
+          },
+          {
+            "density": 0.375,
+            "full_mean": 0.876953125,
+            "partial_mean": 0.828125,
+            "paired_missing_mean": 0.048828125,
+            "paired_standard_error": 0.009533537383727834,
+            "contexts_with_missing": 25,
+            "excluded_pattern_occurrences": {
+              "sem_11_pawn_double_step": 25
+            },
+            "source_ranks_for_omitted_patterns": {
+              "sem_11_pawn_double_step": [
+                1
+              ]
+            }
+          },
+          {
+            "density": 0.5,
+            "full_mean": 0.82421875,
+            "partial_mean": 0.79296875,
+            "paired_missing_mean": 0.03125,
+            "paired_standard_error": 0.007696981071337285,
+            "contexts_with_missing": 16,
+            "excluded_pattern_occurrences": {
+              "sem_11_pawn_double_step": 16
+            },
+            "source_ranks_for_omitted_patterns": {
+              "sem_11_pawn_double_step": [
+                1
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "seconds": 5.062640900025144
+  },
+  "raw_pins": {
+    "semantic-geometry.json": {
+      "bytes": 520946,
+      "sha256": "05c840d0e361e58f6158f6fba3dee47a66cf8405a6a30b682962ccc8742512f5"
+    },
+    "semantic-core-check.json": {
+      "bytes": 6063,
+      "sha256": "1fab6b8d3633019b17ab124439c939836657e1ba2e137208ac6f3480cfd177c2"
+    },
+    "semantic-guard-bias.json": {
+      "bytes": 10103,
+      "sha256": "bcbe56037da05eff67c1970676b51172629ca61e783a9555b8547bf1280aa616"
+    }
+  },
+  "source_audit": {
+    "generic_chess/ui/controller.py": {
+      "sha256": "c501908106a6594ca5ac7b59d518abeefb1937b148194ca80801c29b0731e13f",
+      "observation": "finish_ai_move validates root and commits action; no fixed-depth score/PV consumer."
+    },
+    "generic_chess/ai/benchmark/runner.py": {
+      "sha256": "00d09449253d19099947c54c865a3a481ba645366b567535b57f7d4b1b91d4b7",
+      "observation": "Move trace uses action/depth/nodes/time, not fixed-depth decision score or full PV."
+    },
+    "generic_chess/ai/cli/benchmark_alphabeta.py": {
+      "sha256": "c41255f4ca0536d6deed0cc5e0194290a1b5c02c4b32998537adc5a46076dfb6",
+      "observation": "Analysis prints score/PV; existing fresh-tt resets repeats. Supplied semantic rules now use existing execution compiler, preserving legacy route for ordinary definitions."
+    },
+    "generic_chess/ai/evaluation/profile.py": {
+      "sha256": "7d6c702139b1a3b8338279571eed9e7911cc7b80bcdda112f91eeefd6f238d0b",
+      "observation": "Static capability reads movement_atoms, not semantic IR patterns."
+    },
+    "generic_chess/rules/execution.py": {
+      "sha256": "19c3e797578a68d30958ec13d3dc6a77765bf5c78bb2b35379a8e0a90af1859b",
+      "observation": "Adapter exposes retained metadata, does not synthesize semantic movement atoms."
+    },
+    "scripts/unfamiliar_search.py": {
+      "sha256": "9b2168f8bd535a2451c5b7fd7f97e77607d1bbf6b87f9d45afa610a3721cb4f4",
+      "observation": "Existing report now labels static-profile source and semantic-only omissions."
+    }
+  },
+  "ratio_diagnostic": {
+    "scope": "Ratios of the declared weighted opportunity proxy, NOT selected material prices. Guard term below is specific to these all-N-background virtual contexts, not a general semantic guard solver.",
+    "pawn_normalized": {
+      "P": 1.0,
+      "N": 5.473142489546478,
+      "B": 7.145628313323031,
+      "R": 10.492570899949708,
+      "Q": 17.63819921327274
+    },
+    "queen_rook_ratio": 1.6810178726890739,
+    "missing_double_step_expected": [
+      {
+        "density": 0.0,
+        "expected_missing": 0.125
+      },
+      {
+        "density": 0.125,
+        "expected_missing": 0.095703125
+      },
+      {
+        "density": 0.25,
+        "expected_missing": 0.0703125
+      },
+      {
+        "density": 0.375,
+        "expected_missing": 0.048828125
+      },
+      {
+        "density": 0.5,
+        "expected_missing": 0.03125
+      }
+    ]
+  },
+  "search_input_witness": {
+    "complete": true,
+    "producer_sha256": "e1977d45087ce469f65272aa5210a9ebcd732cb40deb1cc8b1191c882251bb90",
+    "projection_sha256": "05c840d0e361e58f6158f6fba3dee47a66cf8405a6a30b682962ccc8742512f5",
+    "declaration": "One predeclared 8x8 unfamiliar recombination: atomless P has semantic rook movement; six-piece root gives a P-for-N capture followed by enemy P recapture. No human coefficients or label fitting. Compare old fixed material table with ONLY P replaced by the declared projected opportunity scaled by the unchanged legacy median. Every other value, search, legality and resource condition stays fixed. This is an input-sensitivity witness, not validation or selection of a material formula. All depth1/2 cells x2cold repeats,4096nodes/5sec/q0; Core plain material minimax references.",
+    "baseline_values": {
+      "K": 0,
+      "P": 1,
+      "N": 775,
+      "B": 1000,
+      "R": 1462,
+      "Q": 2439
+    },
+    "candidate_values": {
+      "K": 0,
+      "P": 1435,
+      "N": 775,
+      "B": 1000,
+      "R": 1462,
+      "Q": 2439
+    },
+    "scale": 160.83318679363495,
+    "semantic_geometry_matches_rook": true,
+    "rows": [
+      {
+        "control": "baseline",
+        "depth": 1,
+        "core_reference": {
+          "score": 775,
+          "action": {
+            "pattern_id": "sem_20_recombined_r_capture",
+            "geometry_id": "g43",
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 3,
+              "rank": 3
+            },
+            "to_square": {
+              "file": 3,
+              "rank": 5
+            },
+            "promotion_target_id": null
+          }
+        },
+        "calls": [
+          {
+            "action": {
+              "pattern_id": "sem_20_recombined_r_capture",
+              "geometry_id": "g43",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 5
+              },
+              "promotion_target_id": null
+            },
+            "score": 775,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_20_recombined_r_capture",
+                "geometry_id": "g43",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 3,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 5
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 1,
+            "selective_depth": 1,
+            "nodes": 23,
+            "qnodes": 0,
+            "elapsed_seconds": 0.01600000006146729,
+            "tt_probes": 1,
+            "tt_hits": 0,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 0,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.01600000006146729,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 1,
+            "ordered_moves": 22,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 1,
+            "legal_generation_seconds": 0.0,
+            "evaluation_calls": 0,
+            "evaluation_seconds": 0.0,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 22,
+            "successor_handles_created": 22,
+            "successors_materialized": 22,
+            "successors_searched": 22,
+            "terminal_results_computed": 22,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 23,
+            "position_key_cache_hits": 22,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false
+          },
+          {
+            "action": {
+              "pattern_id": "sem_20_recombined_r_capture",
+              "geometry_id": "g43",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 5
+              },
+              "promotion_target_id": null
+            },
+            "score": 775,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_20_recombined_r_capture",
+                "geometry_id": "g43",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 3,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 5
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 1,
+            "selective_depth": 1,
+            "nodes": 23,
+            "qnodes": 0,
+            "elapsed_seconds": 0.0,
+            "tt_probes": 1,
+            "tt_hits": 0,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 0,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.0,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 1,
+            "ordered_moves": 22,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 1,
+            "legal_generation_seconds": 0.0,
+            "evaluation_calls": 0,
+            "evaluation_seconds": 0.0,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 22,
+            "successor_handles_created": 22,
+            "successors_materialized": 22,
+            "successors_searched": 22,
+            "terminal_results_computed": 22,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 23,
+            "position_key_cache_hits": 22,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false
+          }
+        ]
+      },
+      {
+        "control": "baseline",
+        "depth": 2,
+        "core_reference": {
+          "score": 0,
+          "action": {
+            "pattern_id": "sem_02_n_quiet",
+            "geometry_id": "g12",
+            "actor_type_id": "N",
+            "from_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "to_square": {
+              "file": 6,
+              "rank": 4
+            },
+            "promotion_target_id": null
+          }
+        },
+        "calls": [
+          {
+            "action": {
+              "pattern_id": "sem_20_recombined_r_capture",
+              "geometry_id": "g43",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 5
+              },
+              "promotion_target_id": null
+            },
+            "score": 0,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_20_recombined_r_capture",
+                "geometry_id": "g43",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 3,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 5
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "sem_20_recombined_r_capture",
+                "geometry_id": "g43",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 5,
+                  "rank": 5
+                },
+                "to_square": {
+                  "file": 5,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 2,
+            "selective_depth": 2,
+            "nodes": 79,
+            "qnodes": 0,
+            "elapsed_seconds": 0.01500000013038516,
+            "tt_probes": 24,
+            "tt_hits": 1,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 21,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.01500000013038516,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 24,
+            "ordered_moves": 449,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 24,
+            "legal_generation_seconds": 0.0,
+            "evaluation_calls": 0,
+            "evaluation_seconds": 0.0,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 449,
+            "successor_handles_created": 449,
+            "successors_materialized": 77,
+            "successors_searched": 77,
+            "terminal_results_computed": 77,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 101,
+            "position_key_cache_hits": 77,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false
+          },
+          {
+            "action": {
+              "pattern_id": "sem_20_recombined_r_capture",
+              "geometry_id": "g43",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 5
+              },
+              "promotion_target_id": null
+            },
+            "score": 0,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_20_recombined_r_capture",
+                "geometry_id": "g43",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 3,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 5
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "sem_20_recombined_r_capture",
+                "geometry_id": "g43",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 5,
+                  "rank": 5
+                },
+                "to_square": {
+                  "file": 5,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 2,
+            "selective_depth": 2,
+            "nodes": 79,
+            "qnodes": 0,
+            "elapsed_seconds": 0.01600000006146729,
+            "tt_probes": 24,
+            "tt_hits": 1,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 21,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.01600000006146729,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 24,
+            "ordered_moves": 449,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 24,
+            "legal_generation_seconds": 0.01600000006146729,
+            "evaluation_calls": 0,
+            "evaluation_seconds": 0.0,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 449,
+            "successor_handles_created": 449,
+            "successors_materialized": 77,
+            "successors_searched": 77,
+            "terminal_results_computed": 77,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 101,
+            "position_key_cache_hits": 77,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false
+          }
+        ]
+      },
+      {
+        "control": "input_repaired_candidate",
+        "depth": 1,
+        "core_reference": {
+          "score": 775,
+          "action": {
+            "pattern_id": "sem_20_recombined_r_capture",
+            "geometry_id": "g43",
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 3,
+              "rank": 3
+            },
+            "to_square": {
+              "file": 3,
+              "rank": 5
+            },
+            "promotion_target_id": null
+          }
+        },
+        "calls": [
+          {
+            "action": {
+              "pattern_id": "sem_20_recombined_r_capture",
+              "geometry_id": "g43",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 5
+              },
+              "promotion_target_id": null
+            },
+            "score": 775,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_20_recombined_r_capture",
+                "geometry_id": "g43",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 3,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 5
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 1,
+            "selective_depth": 1,
+            "nodes": 23,
+            "qnodes": 0,
+            "elapsed_seconds": 0.0,
+            "tt_probes": 1,
+            "tt_hits": 0,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 0,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.0,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 1,
+            "ordered_moves": 22,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 1,
+            "legal_generation_seconds": 0.0,
+            "evaluation_calls": 0,
+            "evaluation_seconds": 0.0,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 22,
+            "successor_handles_created": 22,
+            "successors_materialized": 22,
+            "successors_searched": 22,
+            "terminal_results_computed": 22,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 23,
+            "position_key_cache_hits": 22,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false
+          },
+          {
+            "action": {
+              "pattern_id": "sem_20_recombined_r_capture",
+              "geometry_id": "g43",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 5
+              },
+              "promotion_target_id": null
+            },
+            "score": 775,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_20_recombined_r_capture",
+                "geometry_id": "g43",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 3,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 5
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 1,
+            "selective_depth": 1,
+            "nodes": 23,
+            "qnodes": 0,
+            "elapsed_seconds": 0.0,
+            "tt_probes": 1,
+            "tt_hits": 0,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 0,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.0,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 1,
+            "ordered_moves": 22,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 1,
+            "legal_generation_seconds": 0.0,
+            "evaluation_calls": 0,
+            "evaluation_seconds": 0.0,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 22,
+            "successor_handles_created": 22,
+            "successors_materialized": 22,
+            "successors_searched": 22,
+            "terminal_results_computed": 22,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 23,
+            "position_key_cache_hits": 22,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false
+          }
+        ]
+      },
+      {
+        "control": "input_repaired_candidate",
+        "depth": 2,
+        "core_reference": {
+          "score": 0,
+          "action": {
+            "pattern_id": "sem_02_n_quiet",
+            "geometry_id": "g12",
+            "actor_type_id": "N",
+            "from_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "to_square": {
+              "file": 6,
+              "rank": 4
+            },
+            "promotion_target_id": null
+          }
+        },
+        "calls": [
+          {
+            "action": {
+              "pattern_id": "sem_02_n_quiet",
+              "geometry_id": "g12",
+              "actor_type_id": "N",
+              "from_square": {
+                "file": 5,
+                "rank": 2
+              },
+              "to_square": {
+                "file": 6,
+                "rank": 4
+              },
+              "promotion_target_id": null
+            },
+            "score": 0,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_02_n_quiet",
+                "geometry_id": "g12",
+                "actor_type_id": "N",
+                "from_square": {
+                  "file": 5,
+                  "rank": 2
+                },
+                "to_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "sem_00_k_quiet",
+                "geometry_id": "g10",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 7,
+                  "rank": 7
+                },
+                "to_square": {
+                  "file": 6,
+                  "rank": 7
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 2,
+            "selective_depth": 2,
+            "nodes": 98,
+            "qnodes": 0,
+            "elapsed_seconds": 0.030999999959021807,
+            "tt_probes": 24,
+            "tt_hits": 1,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 20,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.030999999959021807,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 24,
+            "ordered_moves": 449,
+            "ordering_seconds": 0.015999999828636646,
+            "legal_generation_calls": 24,
+            "legal_generation_seconds": 0.0,
+            "evaluation_calls": 0,
+            "evaluation_seconds": 0.0,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 449,
+            "successor_handles_created": 449,
+            "successors_materialized": 96,
+            "successors_searched": 96,
+            "terminal_results_computed": 96,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 120,
+            "position_key_cache_hits": 96,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false
+          },
+          {
+            "action": {
+              "pattern_id": "sem_02_n_quiet",
+              "geometry_id": "g12",
+              "actor_type_id": "N",
+              "from_square": {
+                "file": 5,
+                "rank": 2
+              },
+              "to_square": {
+                "file": 6,
+                "rank": 4
+              },
+              "promotion_target_id": null
+            },
+            "score": 0,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_02_n_quiet",
+                "geometry_id": "g12",
+                "actor_type_id": "N",
+                "from_square": {
+                  "file": 5,
+                  "rank": 2
+                },
+                "to_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "sem_00_k_quiet",
+                "geometry_id": "g10",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 7,
+                  "rank": 7
+                },
+                "to_square": {
+                  "file": 6,
+                  "rank": 7
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 2,
+            "selective_depth": 2,
+            "nodes": 98,
+            "qnodes": 0,
+            "elapsed_seconds": 0.03100000019185245,
+            "tt_probes": 24,
+            "tt_hits": 1,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 20,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.03100000019185245,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 24,
+            "ordered_moves": 449,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 24,
+            "legal_generation_seconds": 0.0,
+            "evaluation_calls": 0,
+            "evaluation_seconds": 0.0,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 449,
+            "successor_handles_created": 449,
+            "successors_materialized": 96,
+            "successors_searched": 96,
+            "terminal_results_computed": 96,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 120,
+            "position_key_cache_hits": 96,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false
+          }
+        ]
+      }
+    ],
+    "isolated_capture_values": [
+      {
+        "control": "baseline",
+        "own_capture": {
+          "pattern_id": "sem_20_recombined_r_capture",
+          "geometry_id": "g43",
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 3
+          },
+          "to_square": {
+            "file": 3,
+            "rank": 5
+          },
+          "promotion_target_id": null
+        },
+        "core_two_ply_value": 0
+      },
+      {
+        "control": "input_repaired_candidate",
+        "own_capture": {
+          "pattern_id": "sem_20_recombined_r_capture",
+          "geometry_id": "g43",
+          "actor_type_id": "P",
+          "from_square": {
+            "file": 3,
+            "rank": 3
+          },
+          "to_square": {
+            "file": 3,
+            "rank": 5
+          },
+          "promotion_target_id": null
+        },
+        "core_two_ply_value": -660
+      }
+    ],
+    "seconds": 1.1083560998085886
+  }
+}

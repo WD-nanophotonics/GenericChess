@@ -17,7 +17,7 @@ from ...core.movegen import legal_actions
 from ...generation.config import GeneratorConfig
 from ...generation.generator import generate_game
 from ...rules.serialization import deserialize_ruleset
-from ...rules.compiler import compile_ruleset
+from ...rules.compiler import compile_ruleset_for_execution
 from ...session.result import SessionStatus
 from ...session.session import GameSession
 from ..alphabeta.player import AlphaBetaPlayer
@@ -28,7 +28,7 @@ def _load_compiled(args):
     if args.ruleset:
         with open(args.ruleset, "r", encoding="utf-8") as fh:
             ruleset = deserialize_ruleset(fh.read())
-        return compile_ruleset(ruleset)
+        return compile_ruleset_for_execution(ruleset)
     game = generate_game(
         GeneratorConfig(
             seed=args.seed,

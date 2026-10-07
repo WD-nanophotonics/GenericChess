@@ -1,0 +1,91 @@
+{
+  "original_directory": ".local_agent/original-contribution-20261008",
+  "repository_base_sha": "58f8aa936d899eb6f61df22819eed05f81d59ddd",
+  "current_result": {
+    "path": "docs/research/data/promotion_rule_probe_20261008.json",
+    "sha256": "ddb300b989da8faf0201c03e19a018caf031156c72bd64a8ebbfc0866e23fc72"
+  },
+  "archives": {
+    "sources.zip": {
+      "sha256": "92ed25761f49d3e840dd798ec26bb2edb3a7b911aabff042ec09b213a9977343",
+      "members": {
+        "promotion-law.py": {
+          "bytes": 5852,
+          "sha256": "675f64cc955f5f88b3bb0aa4f64c1160d12fd8a4f9dff9b1ddcace00ee51a522"
+        },
+        "promotion-law-initial.py": {
+          "bytes": 5784,
+          "sha256": "b680f12691b170545a77926a9df26250a5132559c42b12ff5a56bfee343e5d7a"
+        },
+        "promotion-search-ablation.py": {
+          "bytes": 5730,
+          "sha256": "d72d11b967173a6f63bcfc31cd6c165984a4524b59a68c75a91ef4948cc0fa2f"
+        },
+        "promotion-subpolicy.py": {
+          "bytes": 3916,
+          "sha256": "bccde64958b0872b04ff1bbfa707f649e48a33db0b260f8ae7b025b522d6e693"
+        },
+        "promotion-core-verify.py": {
+          "bytes": 2867,
+          "sha256": "ae2bd2c504baa1d241822124f510d1a9ec2010a1cb1c94e605222128f343a541"
+        },
+        "promotion-core-verify-initial.py": {
+          "bytes": 2851,
+          "sha256": "16098ad90c463c7b0248baa55dd7fc7d451972978011b6224d227f88a7db3365"
+        },
+        "promotion-public-search.py": {
+          "bytes": 4075,
+          "sha256": "8bed9462c6f06d45a9290376591e544d0556de9e04bdbb2979774dbb70fb86bd"
+        },
+        "underpromotion-core.py": {
+          "bytes": 3599,
+          "sha256": "648da4f1431bfc9cd1da1e8580986d276ff1d2cbb968161384d88104e88eeb45"
+        },
+        "collect.py": {
+          "bytes": 9039,
+          "sha256": "1cd10ea6aacc3d45cc9b6b83b01eaa71d905716f0bdeae995bce5314c1ebe01a"
+        }
+      },
+      "extracted_rehashed": true
+    },
+    "raw.zip": {
+      "sha256": "7076ae6afffe5739262d43f17860fa0517eee1bab37f85c56b3fe5e56b04c925",
+      "members": {
+        "promotion-law.json": {
+          "bytes": 2996,
+          "sha256": "1a1029e406262f3a30db64e253c44eef69e61c0c44b1bfd5a17d5a56742765a7"
+        },
+        "promotion-search-ablation.json": {
+          "bytes": 268233,
+          "sha256": "88c2df3d63d20e86bf8f88cc66591d31954d0212c0b8433e2beb3b7fdf604106"
+        },
+        "promotion-subpolicy.json": {
+          "bytes": 529665,
+          "sha256": "dafc1586afbf9f663e1268dacd4067e626ab622a99ea441282f078cc165b9824"
+        },
+        "promotion-core-verify.json": {
+          "bytes": 1380,
+          "sha256": "3f0a15db7d6fb681fbf04606cfd90a2ba3b762dd1a87df824d6df575e4ebf852"
+        },
+        "promotion-public-search.json": {
+          "bytes": 353893,
+          "sha256": "4720847794fc4f585b681c2703df520baa2d0e85bf53e56957f3a18a82e8b5ee"
+        },
+        "underpromotion-core.json": {
+          "bytes": 3777,
+          "sha256": "f2e1ceea804ffaf257cc21e53c779e7be88a03d499c8da75f4a37cf6911a4a34"
+        },
+        "failures.json": {
+          "bytes": 598,
+          "sha256": "870ede046d3ba2bd98ceb66de1a5fc16df0a0d94678611fa1a57c1337ba8bcf3"
+        },
+        "promotion-law-completed.json": {
+          "bytes": 2066261,
+          "sha256": "d68978eae26c471fc855fc9d90aed1b8139b3be144f0e1f85dfe3cb45f13d47d"
+        }
+      },
+      "extracted_rehashed": true
+    }
+  },
+  "dependencies": []
+}

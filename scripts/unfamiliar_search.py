@@ -54,6 +54,25 @@ def validate_pv(session, decision):
         raise AssertionError('illegal selected action')
 
 
+def profile_input_scope(compiled):
+    """Describe the fixed control's inputs; execution support is not valuation."""
+    ir = getattr(compiled, 'ir', None)
+    semantic_movers = set()
+    if ir is not None:
+        for pattern in ir.patterns:
+            if any(effect.kind == 'move' and effect.from_ref is not None
+                   and effect.from_ref.kind == 'source' for effect in pattern.effects):
+                semantic_movers.update(pattern.type_ids)
+    return dict(
+        static_capability_source='legacy_movement_atoms',
+        semantic_patterns_used_for_static_capability=False,
+        semantic_moving_types_without_atoms=sorted(
+            pt.type_id for pt in compiled.piece_types
+            if pt.type_id in semantic_movers and not pt.movement_atoms),
+        limitation='Semantic legality is executed, but generic-v1 static capability does not analyze semantic movement/guards/effects. Even nonempty atoms can differ from replaced or augmented semantics; an empty list here is not completeness evidence.',
+    )
+
+
 def _compare_searches(session, evaluator, cache, reference, depth, case, save):
     """One comparison loop for generated and supplied product rules."""
     case['repeat_equal'] = {}
@@ -112,6 +131,7 @@ def run_rule(output: Path, definition, *, depth=2):
     report['compile_seconds'] = time.perf_counter()-start
     report['compiled_class'] = type(compiled).__name__
     report['fingerprint'] = compiled.ruleset_fingerprint
+    report['profile_input_scope'] = profile_input_scope(compiled)
     cache = EvaluationProfileCache(use_disk=False)
     start = time.perf_counter()
     profile = cache.get_or_build(compiled, EvaluationConfig())[0]
@@ -175,6 +195,7 @@ def run(output: Path, *, depth=2, shared_profile=False):
             reference = dict(complete=False, score=None, action=None)
         reference.update(wall_seconds=time.perf_counter()-start, leaf_evaluations=counted.calls)
         case = dict(config=config, fingerprint=compiled.ruleset_fingerprint,
+                    profile_input_scope=profile_input_scope(compiled),
                     ruleset=ruleset_to_dict(game.ruleset), filters=record_value(game.generation_report),
                     generation_seconds=generation_seconds, profile_seconds=profile_seconds,
                     opening_legal_actions=len(session.legal_actions()), reference=reference, searches=[])

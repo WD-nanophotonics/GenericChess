@@ -13,6 +13,11 @@ class ExecutableSemanticRuleset(CompiledSemanticRuleset):
     movement metadata; semantic compilation already retains that metadata as
     an inspection handle, so this adapter exposes it without changing the
     semantic executor or introducing a game-specific branch.
+
+    Exposing metadata does not synthesize movement atoms from semantic actions.
+    Static evaluators reading those atoms can omit semantic-only movement or
+    retain geometry replaced by semantic rules; execution support is not a
+    claim of complete semantic valuation.
     """
 
     __slots__ = ()

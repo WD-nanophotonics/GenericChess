@@ -1,0 +1,43 @@
+{
+  "scope": "Observed original-horizon signed tag-service, not stock material prices",
+  "native_replay": {
+    "native_transitions": 4320,
+    "mean_difference": -0.017578125,
+    "seconds": 6.676186400000006
+  },
+  "exact_mass": {
+    "mean_difference": "-13/768",
+    "original_population_repeat_differences": [
+      "-1/64",
+      "-1/64",
+      "-1/32",
+      "-1/32",
+      "-1/24",
+      "0",
+      "-1/64",
+      "1/64"
+    ],
+    "seconds": 5.405521099921316
+  },
+  "independent_core_distribution": {
+    "core_transitions": 4320,
+    "peak_latent_states": 3,
+    "nonzero_variance_paths": 3,
+    "sum_conditional_variance": "13/18",
+    "seconds": 32.21553699998185
+  },
+  "raw_pins": {
+    "tag-native-oracle.json": {
+      "bytes": 47974,
+      "sha256": "df985a73a6ac6718efaf1df4313ba64c07d7c5796b7b2ec6a82663b88908962d"
+    },
+    "tag-mass.json": {
+      "bytes": 63661,
+      "sha256": "0686e44db143825dd3c676fd4de67e62044263983475ac22fbac1b5b83ba0196"
+    },
+    "tag-distribution-core.json": {
+      "bytes": 44160,
+      "sha256": "eb89e4f8cc28c4cf377fc95cee02d07b88230a9a53dc798117ae8e0a43f80959"
+    }
+  }
+}
