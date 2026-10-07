@@ -1,0 +1,272 @@
+{
+  "complete": true,
+  "question": "Does warm exact-root timing deliver equivalent PV output?",
+  "source_sha256": "8d6e6363aac773b82cef5c5bfd542494807600397a369b8d404f782335c73699",
+  "producer_sha256": "647248ad2e68d81d1151b9c7992e4fb73286f3ddd17773102c5f274c72d7af5a",
+  "rows": [
+    {
+      "name": "mixture0",
+      "target_depth": 3,
+      "all_complete": true,
+      "calls": [
+        {
+          "entry": "public",
+          "repeat": 0,
+          "seconds": 0.047939599957317114,
+          "completed_depth": 3,
+          "nodes": 162,
+          "pv_length": 3,
+          "score": 378
+        },
+        {
+          "entry": "public",
+          "repeat": 1,
+          "seconds": 0.0005119999404996634,
+          "completed_depth": 3,
+          "nodes": 3,
+          "pv_length": 0,
+          "score": 378
+        },
+        {
+          "entry": "native",
+          "repeat": 0,
+          "seconds": 0.011762900045141578,
+          "completed_depth": 3,
+          "nodes": 355,
+          "pv_length": 3,
+          "score": 378
+        },
+        {
+          "entry": "native",
+          "repeat": 1,
+          "seconds": 0.008505099918693304,
+          "completed_depth": 3,
+          "nodes": 217,
+          "pv_length": 3,
+          "score": 378
+        }
+      ]
+    },
+    {
+      "name": "mixture0",
+      "target_depth": 5,
+      "all_complete": true,
+      "calls": [
+        {
+          "entry": "public",
+          "repeat": 0,
+          "seconds": 0.9822627999819815,
+          "completed_depth": 5,
+          "nodes": 2993,
+          "pv_length": 5,
+          "score": 378
+        },
+        {
+          "entry": "public",
+          "repeat": 1,
+          "seconds": 0.000654200091958046,
+          "completed_depth": 5,
+          "nodes": 5,
+          "pv_length": 0,
+          "score": 378
+        },
+        {
+          "entry": "native",
+          "repeat": 0,
+          "seconds": 0.1810455999802798,
+          "completed_depth": 5,
+          "nodes": 7839,
+          "pv_length": 5,
+          "score": 378
+        },
+        {
+          "entry": "native",
+          "repeat": 1,
+          "seconds": 0.1071401999797672,
+          "completed_depth": 5,
+          "nodes": 4682,
+          "pv_length": 5,
+          "score": 378
+        }
+      ]
+    },
+    {
+      "name": "open",
+      "target_depth": 3,
+      "all_complete": true,
+      "calls": [
+        {
+          "entry": "public",
+          "repeat": 0,
+          "seconds": 0.010524099925532937,
+          "completed_depth": 3,
+          "nodes": 73,
+          "pv_length": 3,
+          "score": 3239
+        },
+        {
+          "entry": "public",
+          "repeat": 1,
+          "seconds": 0.00039490009658038616,
+          "completed_depth": 3,
+          "nodes": 3,
+          "pv_length": 0,
+          "score": 3239
+        },
+        {
+          "entry": "native",
+          "repeat": 0,
+          "seconds": 0.0048853999469429255,
+          "completed_depth": 3,
+          "nodes": 202,
+          "pv_length": 3,
+          "score": 3239
+        },
+        {
+          "entry": "native",
+          "repeat": 1,
+          "seconds": 0.0034621001686900854,
+          "completed_depth": 3,
+          "nodes": 173,
+          "pv_length": 3,
+          "score": 3239
+        }
+      ]
+    },
+    {
+      "name": "open",
+      "target_depth": 5,
+      "all_complete": true,
+      "calls": [
+        {
+          "entry": "public",
+          "repeat": 0,
+          "seconds": 0.1500618001446128,
+          "completed_depth": 5,
+          "nodes": 977,
+          "pv_length": 5,
+          "score": 3239
+        },
+        {
+          "entry": "public",
+          "repeat": 1,
+          "seconds": 0.0004197999369353056,
+          "completed_depth": 5,
+          "nodes": 5,
+          "pv_length": 0,
+          "score": 3239
+        },
+        {
+          "entry": "native",
+          "repeat": 0,
+          "seconds": 0.05041920021176338,
+          "completed_depth": 5,
+          "nodes": 5780,
+          "pv_length": 5,
+          "score": 3239
+        },
+        {
+          "entry": "native",
+          "repeat": 1,
+          "seconds": 0.04276659991592169,
+          "completed_depth": 5,
+          "nodes": 4907,
+          "pv_length": 5,
+          "score": 3239
+        }
+      ]
+    },
+    {
+      "name": "custody-G",
+      "target_depth": 3,
+      "all_complete": true,
+      "calls": [
+        {
+          "entry": "public",
+          "repeat": 0,
+          "seconds": 0.720029299845919,
+          "completed_depth": 3,
+          "nodes": 1716,
+          "pv_length": 3,
+          "score": 1317
+        },
+        {
+          "entry": "public",
+          "repeat": 1,
+          "seconds": 0.0014007000718265772,
+          "completed_depth": 3,
+          "nodes": 3,
+          "pv_length": 0,
+          "score": 1317
+        },
+        {
+          "entry": "native",
+          "repeat": 0,
+          "seconds": 0.24436039989814162,
+          "completed_depth": 3,
+          "nodes": 4482,
+          "pv_length": 3,
+          "score": 1317
+        },
+        {
+          "entry": "native",
+          "repeat": 1,
+          "seconds": 0.09829679992981255,
+          "completed_depth": 3,
+          "nodes": 1444,
+          "pv_length": 3,
+          "score": 1317
+        }
+      ]
+    },
+    {
+      "name": "custody-G",
+      "target_depth": 5,
+      "all_complete": false,
+      "calls": [
+        {
+          "entry": "public",
+          "repeat": 0,
+          "seconds": 4.997032399987802,
+          "completed_depth": 3,
+          "nodes": 9847,
+          "pv_length": 3,
+          "score": 1317
+        },
+        {
+          "entry": "public",
+          "repeat": 1,
+          "seconds": 4.992607799824327,
+          "completed_depth": 4,
+          "nodes": 9874,
+          "pv_length": 1,
+          "score": -1746
+        },
+        {
+          "entry": "native",
+          "repeat": 0,
+          "seconds": 1.038452500011772,
+          "completed_depth": 3,
+          "nodes": 20000,
+          "pv_length": 3,
+          "score": 1317
+        },
+        {
+          "entry": "native",
+          "repeat": 1,
+          "seconds": 1.033945200033486,
+          "completed_depth": 3,
+          "nodes": 20000,
+          "pv_length": 3,
+          "score": 1317
+        }
+      ]
+    }
+  ],
+  "explanation": "Five fully completed warm public cells return zero-length PV with legal selected action and matching score; native retains full-depth PV. Core negamax returns exact TT score/action with empty PV. Native gates TT cutoffs on non-PV nodes and re-searches selected principal branches with full PV windows. This is an output/caching tradeoff, not evidence of failed native reuse or pure execution-speed difference.",
+  "source_pins": {
+    "generic_chess/ai/alphabeta/search.py": "bf9f262aa18fa108e556ec5215cbd81d776edbcce940d69b8a5ce3d67b234ec8",
+    "generic_chess/_native/native_module.c": "ff99666921f5cb0a4ce3e540fa13b793c2763379b2c0473327b432eca7475db9"
+  },
+  "next": "Before changing warm-root behavior, specify whether callers need full canonical PV or just score/action and preserve complete history/evaluator identity. No production optimization selected."
+}

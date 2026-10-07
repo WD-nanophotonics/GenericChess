@@ -67,10 +67,10 @@ The first full-dictionary parity assertion found47vs52 nodes but identical
 mate score, best move and PV. Retain that interrupted record: node-count equality
 is not semantic parity. The completed diagnostic compares decision fields and
 reports both counts; no score or success rule was changed to favor a move.
-The semantic fixed-depth API works on these inputs; public generated-player
-and semantic-player integration is still not unified. Next: one concrete
-recombined mechanic and persistent root/history reuse via existing supported
-semantic search, with declared leaf, budgets and separate startup/steady costs.
+The semantic fixed-depth API works on these inputs. The initial claim of a
+missing public integration route was too broad: the failed call used raw IR.
+The supported product compilation boundary already connects semantic rules
+and the public player's geometry-derived profile, as tested below.
 
 Exact declarations, all successes/failures and source recovery are indexed in
 data/direction_reset_20261008.json and the matching archive. No learning/NNUE,
@@ -100,3 +100,71 @@ Scores are -1/7; no strength or price-quality inference follows. Three initial
 producer construction errors (missing guard fields, missing promotion sets,
 wrong promotion-set shape) remain separate incomplete records and source versions.
 This is a small tier2 interface witness, not all mechanics or history coverage.
+
+## Supported product boundary and actual history
+
+Use the existing compile_ruleset_for_execution boundary, not raw semantic IR.
+It returns ExecutableSemanticRuleset, retaining semantic legality and read-only
+geometry compatibility for profile construction. No new adapter is required.
+The same small comparison entry now accepts declarative rules:
+
+```powershell
+.venv/Scripts/python.exe -m scripts.unfamiliar_search --rules <rules.json> --output <new-result.json> --depth 3
+```
+
+Supplied and generated inputs share the same comparison loop and persist each
+observed call. Both recombined roots complete depth2 public plain/bundle repeats
+with reference parity; renaming type IDs preserves the same scores -686/3147.
+Four6x6 familiar-movement mixtures combine R/B/Western N/G/S/F/K with mirrored
+inventories. These are movement mixtures, not complete Chess/Shogi specials.
+Their32 depth2/3 calls complete with legal PVs, repeat stability and independent
+Core reference parity. Zero depth2 opening scores are interface checks, not
+discrimination between piece prices. Fixed generic-v1 includes dynamic heuristic
+terms; this is not evidence for the contact formula.
+
+The open recombined root also follows actual capture, enemy reply and drop,
+selected before search. Across four history roots,24 reused/fresh/warm native
+calls at depth3/4 complete with equal scores and legal PVs. All8 independent
+Core minimax cells match that same ordinal debug leaf, with135..4426 leaf
+evaluations. This extends persistence beyond the earlier one quiet child;
+it does not cover all repetition/declaration histories.
+
+## Fixed leaf, incomplete cells and terminal units
+
+Separate whole-native/Core controls freeze explicit existing generic-v1 board
+and hand tables, with dynamic terms excluded. Six roots (two mixtures, two
+recombined and two Shogi custody counterfactuals), depths3/5, cold/warm1MiB TT:
+24native calls have Core-legal PVs. Six complete reference cells match; six
+references hit their independent20000-leaf/15sec fuse and remain unknown.
+Both Shogi depth5 cold/warm pairs stop at depth3 under20000nodes/5sec; they
+are incomplete, not parity evidence. Reference and native budgets measure
+different resources and do not establish a resource-matched speed ratio.
+
+Source inspection raised a concrete terminal-score issue, checked separately
+on an existing sparse semantic mate construction with unit static values.
+At depth1/2, independent Core scores999999999, whole-native99999999; both
+selected continuations give Core checkmate for player0. Their terminal sentinels
+are1e9 and1e8 respectively. The earlier six matching cells contained ordinary
+scores; they never established raw mate-scale parity. Retain this API distinction
+and report outcome/mate distance separately when crossing these APIs; no
+production constant, old result or pass criterion has been rewritten.
+
+A separately declared equal-ceiling comparison selects mixture0, the open
+recombined root and custody G before outcomes: both entries use identical
+static tables,20000nodes/5sec, q0, cold/warm TT repeats at depth3/5. Five fully
+completed cells agree on ordinary scores; Shogi depth5 is incomplete. Cold
+whole-native search is faster in the completed cells despite visiting more
+nodes. Warm public exact-root searches are faster, but their PV is empty;
+whole-native keeps a full-depth principal line. Source inspection confirms
+Core's exact-TT return versus native's non-PV cutoff/full-window PV replay.
+This output distinction qualifies the apparent cache-speed advantage; do not
+remove native replay just to match a cheaper, different output contract.
+TT sizes, ordering and node definitions differ. Setup/search costs and incomplete
+depths are separate in data/search_pv_contract_20261008.json. The first missing
+capture-order method and interim custom ordering run survive separately; the
+qualified comparison uses existing public capture ranking, not that custom rule.
+
+Exact definitions, histories, costs, incomplete/failed versions and pinned
+sources: data/joint_service_20261008.json and its indexed archive. Next useful
+search work is an observed decision-changing mechanism/history or cost issue,
+using this supported route; no new compatibility framework or Elo campaign.

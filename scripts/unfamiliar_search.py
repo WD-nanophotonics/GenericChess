@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import time
 from pathlib import Path
 
@@ -19,6 +20,7 @@ from generic_chess.core.transition import apply_action
 from generic_chess.generation.config import GeneratorConfig
 from generic_chess.generation.generator import generate_game
 from generic_chess.rules.schema import ruleset_to_dict
+from generic_chess.rules.compiler import compile_ruleset_for_execution
 from generic_chess.session.session import GameSession
 from scripts.research_record import record_value, write_record
 
@@ -50,6 +52,87 @@ def validate_pv(session, decision):
         state = apply_action(state, action, session.compiled)
     if decision.action is not None and decision.action not in session.legal_actions():
         raise AssertionError('illegal selected action')
+
+
+def _compare_searches(session, evaluator, cache, reference, depth, case, save):
+    """One comparison loop for generated and supplied product rules."""
+    case['repeat_equal'] = {}
+    for optimized in (False, True):
+        signatures = []
+        for repeat in range(2):
+            start = time.perf_counter()
+            player = AlphaBetaPlayer(session.compiled, use_disk_cache=False,
+                profile_cache=cache, use_native_semantic_legality=optimized,
+                use_tt=optimized, use_ordering=optimized, evaluator_override=evaluator,
+                tt_max_entries=4096, tuning=SearchTuning(use_root_tactical=False))
+            setup = time.perf_counter()-start
+            start = time.perf_counter()
+            decision = player.choose_action(session, SearchLimits(max_depth=depth,
+                max_nodes=4096, max_time_seconds=5, quiescence_max_depth=0,
+                quiescence_hard_max_depth=0))
+            observed = time.perf_counter()-start
+            validate_pv(session, decision)
+            signatures.append((record_value(decision.action), decision.score,
+                               decision.completed_depth))
+            complete = decision.completed_depth == depth
+            case['searches'].append(dict(
+                control='public_bundle' if optimized else 'python_plain',
+                optimized=optimized, repeat=repeat, setup_seconds=setup,
+                observed_search_seconds=observed,
+                native_provider_present=player.native_legality_provider is not None,
+                complete=complete,
+                reference_score_equal=(decision.score == reference['score'])
+                    if complete and reference['complete'] else None,
+                decision=record_value(decision)))
+            save()
+        case['repeat_equal']['public_bundle' if optimized else 'python_plain'] = signatures[0] == signatures[1]
+        save()
+
+
+def run_rule(output: Path, definition, *, depth=2):
+    """Inspect a supplied rule through the existing product execution boundary.
+
+    Semantic DSL inputs keep semantic legality; plain inputs keep their legacy
+    route. This does not create actions, adapt raw IR or select piece prices.
+    """
+    if output.exists():
+        raise FileExistsError(output)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    report = dict(complete=False, declaration=dict(
+        question='Does the supported product boundary search this rule legally and consistently?',
+        search=dict(depth=depth, nodes=4096, seconds=5, qdepth=0, repeats=2),
+        evaluator='Existing fixed generic-v1; this control does not use a contact prior.',
+        reference='Plain Core minimax;4096 leaf evaluations/5sec cost fuse. Incomplete reference is unknown.',
+        limitations='One supplied initial root, exposed development, no strength or universal coverage claim.'),
+        source_definition=definition, searches=[],
+        producer_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
+    write_record(output, report)
+    start = time.perf_counter()
+    compiled = compile_ruleset_for_execution(definition)
+    report['compile_seconds'] = time.perf_counter()-start
+    report['compiled_class'] = type(compiled).__name__
+    report['fingerprint'] = compiled.ruleset_fingerprint
+    cache = EvaluationProfileCache(use_disk=False)
+    start = time.perf_counter()
+    profile = cache.get_or_build(compiled, EvaluationConfig())[0]
+    report['profile_seconds'] = time.perf_counter()-start
+    evaluator = Evaluator(compiled, profile, EvaluationConfig())
+    session = GameSession(compiled)
+    report['opening_legal_actions'] = len(session.legal_actions())
+    counted = CountedEvaluator(evaluator)
+    start = time.perf_counter()
+    try:
+        score, action = reference_minimax(session.state, depth, counted, compiled)
+        report['reference'] = dict(complete=True, score=score, action=record_value(action))
+    except ReferenceLimit:
+        report['reference'] = dict(complete=False, score=None, action=None)
+    report['reference'].update(wall_seconds=time.perf_counter()-start,
+                               leaf_evaluations=counted.calls)
+    _compare_searches(session, evaluator, cache, report['reference'], depth, report,
+                      lambda: write_record(output, report))
+    report['complete'] = True
+    write_record(output, report)
+    return report
 
 
 def run(output: Path, *, depth=2, shared_profile=False):
@@ -95,30 +178,9 @@ def run(output: Path, *, depth=2, shared_profile=False):
                     ruleset=ruleset_to_dict(game.ruleset), filters=record_value(game.generation_report),
                     generation_seconds=generation_seconds, profile_seconds=profile_seconds,
                     opening_legal_actions=len(session.legal_actions()), reference=reference, searches=[])
-        for optimized in (False, True):
-            signatures = []
-            for repeat in range(2):
-                start = time.perf_counter()
-                player = AlphaBetaPlayer(compiled, use_disk_cache=False,
-                    profile_cache=cache,
-                    use_native_semantic_legality=optimized, use_tt=optimized, use_ordering=optimized,
-                    evaluator_override=evaluator, tt_max_entries=4096,
-                    tuning=SearchTuning(use_root_tactical=False))
-                setup_seconds = time.perf_counter()-start
-                start = time.perf_counter()
-                decision = player.choose_action(session, SearchLimits(max_depth=depth, max_nodes=4096,
-                    max_time_seconds=5, quiescence_max_depth=0, quiescence_hard_max_depth=0))
-                observed_search_seconds = time.perf_counter()-start
-                validate_pv(session, decision)
-                signatures.append((record_value(decision.action), decision.score, decision.completed_depth))
-                complete = decision.completed_depth == depth
-                case['searches'].append(dict(control='public_bundle' if optimized else 'python_plain',
-                    repeat=repeat, setup_seconds=setup_seconds, observed_search_seconds=observed_search_seconds,
-                    native_provider_present=player.native_legality_provider is not None,
-                    complete=complete, reference_score_equal=(decision.score == reference['score']) if complete and reference['complete'] else None,
-                    decision=record_value(decision)))
-            case.setdefault('repeat_equal', {})['public_bundle' if optimized else 'python_plain'] = signatures[0] == signatures[1]
         report['cases'].append(case)
+        _compare_searches(session, evaluator, cache, reference, depth, case,
+                          lambda: write_record(output, report))
         write_record(output, report)
         print(config, 'legal',case['opening_legal_actions'],'reference',reference['complete'],
               'searches',[(s['control'],s['complete'],s['reference_score_equal'],s['decision']['nodes']) for s in case['searches']],flush=True)
@@ -132,8 +194,15 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--depth', type=int, choices=(2, 3), default=2)
     parser.add_argument('--shared-profile', action='store_true')
+    parser.add_argument('--rules', type=Path,
+                        help='Optional declarative RuleSet JSON; use existing product compiler')
     args = parser.parse_args()
-    run(args.output, depth=args.depth, shared_profile=args.shared_profile)
+    if args.rules is not None:
+        if args.shared_profile:
+            parser.error('--shared-profile applies to the generated cohort only')
+        run_rule(args.output, json.loads(args.rules.read_text(encoding='utf-8-sig')), depth=args.depth)
+    else:
+        run(args.output, depth=args.depth, shared_profile=args.shared_profile)
 
 
 if __name__ == '__main__':
