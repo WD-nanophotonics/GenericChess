@@ -1,0 +1,1943 @@
+{
+  "scope": "Arithmetic-only fast SEE price contrast, unchanged half-risk leaf, LVA/capture ordering and thresholds. Exposed development, no default/strength/Elo/holdout or generic SEE claim.",
+  "declaration": {
+    "question": "Does arithmetic-only fast SEE obey the fixed gc capture prices, and change practical same-leaf search choices?",
+    "premise": "Concrete isolated unit-price QxP/PxQ exchange is zero, while original standard fast SEE prices Queen above Pawn. This is a pricing contract test, not proof that SEE caused game losses.",
+    "scope": "Only8SEE arithmetic reads switch to CapturePieceValue, including5hardcoded recapture constants. Pawn/Knight/Bishop/Rook/Queen LVA order, capture ordering, thresholds, all other search and exchange leaf remain unchanged. Partial arithmetic consistency only, not generic least-value ordering or WDL proof.",
+    "controls": "Diagnostic gcsee command identical in both private binaries; no product interface/default changes. Original source/exchange binary untouched;27other native objects reused.",
+    "prospective_checks": "Three unchanged tables x original/mirrored single legal QxP/PxQ fixture x thresholds -1,0,1; fullCore/PythonChess legal and material delta. Then retained8actual roots and c6c5 failure at1/4sec, same leaf/settings, fullhistory/PV and finite child reference when choices differ.",
+    "decision": "Passing fixture establishes only local arithmetic contract. Changed actual bad-root choice motivates one fixed paired12direct cells; unchanged roots or adverse outcomes remain and do not promote default. No tier or weight sweep, fitting, worker or public push.",
+    "cost": "Two compile objects+two links; fixed36fixture predicates,8paired1secroots+onepaired1/4secroot and up to18x500k/1sec child refs. If useful practical differences, one declared12directgame cohort1sec/160plies ~1920requested player seconds maximum. All sequential after feedback24, interruptible.",
+    "source_pin": "9f778da667f6e07dae1e85d3e2ea204fc6dee94d",
+    "position_source_sha256": "16f28fecb31f9d68fcd6010e3d231aea9c08182db10edf66ed232964ecc684fc",
+    "uci_source_sha256": "a087a5ee7a26f23fc80dbf5f4891f609e338ed8bd38d3532689806c03a9389ac",
+    "position_price_sha256": "a95032e1e281d1068e97adc14436ea6811dd0afe9f5b6d5a42b063b3c7f322c9",
+    "uci_diagnostic_sha256": "9b013e12938063c2baa7dc63862e27b4f3bc76b72b2a7252832c7f5dad35d741",
+    "patch_sha256": "7032a642d37138264bf7b5783d466701d36b0ceffe56e4491cdbaa2d20040593",
+    "feedback_declared_before_run": "feedback-20261007/declaration.json; no retroactive change"
+  },
+  "build": {
+    "complete": true,
+    "commands": [
+      {
+        "command": [
+          "ROOT\\.venv\\Scripts\\python.exe",
+          "-m",
+          "ziglang",
+          "c++",
+          "-target",
+          "x86_64-windows-gnu",
+          "-std=c++17",
+          "-O2",
+          "-fno-exceptions",
+          "-fno-strict-aliasing",
+          "-DNDEBUG",
+          "-DIS_64BIT",
+          "-DNNUE_EMBEDDING_OFF",
+          "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+          "-I",
+          "ROOT\\.local_agent\\mature-search\\Fairy-Stockfish-9f778da667f6e07dae1e85d3e2ea204fc6dee94d\\src",
+          "-c",
+          "ROOT\\.local_agent\\see-price-20261007\\position-price.cpp",
+          "-o",
+          "ROOT\\.local_agent\\see-price-20261007\\position-price.cpp.o"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "ROOT\\.venv\\Scripts\\python.exe",
+          "-m",
+          "ziglang",
+          "c++",
+          "-target",
+          "x86_64-windows-gnu",
+          "-std=c++17",
+          "-O2",
+          "-fno-exceptions",
+          "-fno-strict-aliasing",
+          "-DNDEBUG",
+          "-DIS_64BIT",
+          "-DNNUE_EMBEDDING_OFF",
+          "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+          "-I",
+          "ROOT\\.local_agent\\mature-search\\Fairy-Stockfish-9f778da667f6e07dae1e85d3e2ea204fc6dee94d\\src",
+          "-c",
+          "ROOT\\.local_agent\\see-price-20261007\\uci-diagnostic.cpp",
+          "-o",
+          "ROOT\\.local_agent\\see-price-20261007\\uci-diagnostic.cpp.o"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "ROOT\\.venv\\Scripts\\python.exe",
+          "-m",
+          "ziglang",
+          "c++",
+          "-target",
+          "x86_64-windows-gnu",
+          "-std=c++17",
+          "-O2",
+          "-fno-exceptions",
+          "-fno-strict-aliasing",
+          "-DNDEBUG",
+          "-DIS_64BIT",
+          "-DNNUE_EMBEDDING_OFF",
+          "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+          "ROOT\\.local_agent\\mature-search\\build\\benchmark.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\bitbase.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\bitboard.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\endgame.cpp.o",
+          "ROOT\\.local_agent\\exchange-20261007\\evaluate.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\main.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\material.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\misc.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\movegen.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\movepick.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\pawns.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\position.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\psqt.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\search.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\thread.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\timeman.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\tt.cpp.o",
+          "ROOT\\.local_agent\\see-price-20261007\\uci-diagnostic.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\ucioption.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\tune.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\syzygy_tbprobe.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\nnue_evaluate_nnue.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\nnue_features_half_ka_v2.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\partner.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\parser.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\piece.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\variant.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\xboard.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\nnue_features_half_ka_v2_variants.cpp.o",
+          "-o",
+          "ROOT\\.local_agent\\see-price-20261007\\fairy-original.exe",
+          "-lpthread",
+          "-ladvapi32",
+          "-Wl,--stack,8388608"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "ROOT\\.venv\\Scripts\\python.exe",
+          "-m",
+          "ziglang",
+          "c++",
+          "-target",
+          "x86_64-windows-gnu",
+          "-std=c++17",
+          "-O2",
+          "-fno-exceptions",
+          "-fno-strict-aliasing",
+          "-DNDEBUG",
+          "-DIS_64BIT",
+          "-DNNUE_EMBEDDING_OFF",
+          "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+          "ROOT\\.local_agent\\mature-search\\build\\benchmark.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\bitbase.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\bitboard.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\endgame.cpp.o",
+          "ROOT\\.local_agent\\exchange-20261007\\evaluate.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\main.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\material.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\misc.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\movegen.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\movepick.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\pawns.cpp.o",
+          "ROOT\\.local_agent\\see-price-20261007\\position-price.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\psqt.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\search.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\thread.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\timeman.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\tt.cpp.o",
+          "ROOT\\.local_agent\\see-price-20261007\\uci-diagnostic.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\ucioption.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\tune.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\syzygy_tbprobe.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\nnue_evaluate_nnue.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\nnue_features_half_ka_v2.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\partner.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\parser.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\piece.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\variant.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\xboard.cpp.o",
+          "ROOT\\.local_agent\\mature-search\\build\\nnue_features_half_ka_v2_variants.cpp.o",
+          "-o",
+          "ROOT\\.local_agent\\see-price-20261007\\fairy-price.exe",
+          "-lpthread",
+          "-ladvapi32",
+          "-Wl,--stack,8388608"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    ],
+    "binaries": {
+      "original": "4d94a3ba093838dc421f018b3c10d1b203c017b8bfd97e5e0dfafc70f6716e2c",
+      "price": "4bf528024876079474f1ee74b9b024652e0020c6274b61f9f9632a5119629b64"
+    },
+    "reused_objects": {
+      "benchmark.cpp": "0c51f9748a29d6caa34342b8a77015b9d1872a65a89155cf5e29d9db9054c29a",
+      "bitbase.cpp": "a53b312e704268afd93c2eb6d75c4c48e4989c2d8f4bdeb87a681f380307517d",
+      "bitboard.cpp": "d08a7b206b8bcbfae6070b68b975b596ddd96d61fd1bbc7596f7bebf02eee884",
+      "endgame.cpp": "5bda2bb9aabb2e1ed8ad9a5fb7f24d618d6a7f0552b4e16765df5760fbe5c21d",
+      "main.cpp": "315d6b3b9465e8930a9b8a7453353f982d02f9886539b79adcc958666ce1438c",
+      "material.cpp": "f4d3a760b881e217f9691e86794a5adabc5bd8e0ee50226bc680862be2e5efb8",
+      "misc.cpp": "b844d9b3a32f19306195ddbba3225cd9ecc4daea2b2dff85bffffeca405621ea",
+      "movegen.cpp": "1978d3a78e2dc2278d24d190648ec5858c8c43f8031cb62f552adddf002277c2",
+      "movepick.cpp": "6e7a77628d389786afe99c8862ba080bb01319815cf0c69548cbc4bce3a3aada",
+      "pawns.cpp": "643bfba3ef80cddb1c39c9b7b67870cf1ae46ff72c5807ffb8fffadfb8eba0b9",
+      "psqt.cpp": "8e644790bbd1c5c8e3cd61140f6ca55d73ec4393759abd067de56484b3e7c6b8",
+      "search.cpp": "94e67fcd134bbe680d6ecd4ef753aa81d908595701918092f522a7ce1a994e02",
+      "thread.cpp": "86bd378d5bfe9e5cf40e24bc19ccf4c65a2a6ba892e6dd33ca3b0df623533e77",
+      "timeman.cpp": "298801b756aa3aee4286c87d5cd38f9dccf0f4e79a32134f909542494687e2e0",
+      "tt.cpp": "e91763147e830b485fba6fb55a1e52238ca3b144f3b02f56a5cad542b3dc3b15",
+      "ucioption.cpp": "553e996024cb7f713000c4e4e5d2c251cb0ea96c2534e0d24709ce865d09b7a3",
+      "tune.cpp": "9592ec801fa5145edaf194e9be018a51f5840fc2506ec2f1f5fc496d2f9e3bee",
+      "syzygy/tbprobe.cpp": "1947ef6bf304cdb602366fcd4de9543d9acca13fcac3d0a22ce878442052e2b5",
+      "nnue/evaluate_nnue.cpp": "49955cefc952cc88540706c3471d718e14569df7ef6359a8aa4257647969ccaf",
+      "nnue/features/half_ka_v2.cpp": "d5a48b7900e08012d4ef9bbebfcf9f44807ff65254bda13f1e1ee207ad76415e",
+      "partner.cpp": "05ec0c68c7733b6603037fc1fcb6d766db64321149ec7364513ebe197cf18217",
+      "parser.cpp": "d6d9d295bdfe068fe4d3f062d9ac2c57d674381305e5f63d4383d3e2e4bf40a0",
+      "piece.cpp": "6db2b4128899199c5dccc6f7500970b2a2b0b51e6b7b2c172d851bac78c9e861",
+      "variant.cpp": "215f2cf2237c231da98abb0fe6fd5f63123b9ec13f025f88a23414fe4a684102",
+      "xboard.cpp": "c1954b614bf1d19f1266e4fe5f5f119cc733c539042c03c876366cafe023b38a",
+      "nnue/features/half_ka_v2_variants.cpp": "98564ec47293b3b62d93a14dd60c72392a6073387ab461d180bd65d21b289443"
+    },
+    "shared_evaluate_sha256": "9ab93d73959f055fc38f6cbcf1ba83891dbf790ba2f947d5f2b0c616bf22d213",
+    "wall_seconds": 3.3819265998899937
+  },
+  "qualification": {
+    "complete": true,
+    "errors": [],
+    "scope": "Single ordinary legal two-capture fixture and color mirror only; arithmetic contract, unchanged LVA, no general SEE/strength correctness.",
+    "predicates": 36,
+    "core_replayed_capture_plies": 4,
+    "changed_contract_cases": 2,
+    "leaf_equality": "Six original/price complete native eval trace pairs identical; shared evaluate object unchanged."
+  },
+  "roots": {
+    "question": "Does isolated SEE arithmetic pricing change the already exposed actual root choices with exchange leaf fixed?",
+    "declaration": {
+      "question": "Does arithmetic-only fast SEE obey the fixed gc capture prices, and change practical same-leaf search choices?",
+      "premise": "Concrete isolated unit-price QxP/PxQ exchange is zero, while original standard fast SEE prices Queen above Pawn. This is a pricing contract test, not proof that SEE caused game losses.",
+      "scope": "Only8SEE arithmetic reads switch to CapturePieceValue, including5hardcoded recapture constants. Pawn/Knight/Bishop/Rook/Queen LVA order, capture ordering, thresholds, all other search and exchange leaf remain unchanged. Partial arithmetic consistency only, not generic least-value ordering or WDL proof.",
+      "controls": "Diagnostic gcsee command identical in both private binaries; no product interface/default changes. Original source/exchange binary untouched;27other native objects reused.",
+      "prospective_checks": "Three unchanged tables x original/mirrored single legal QxP/PxQ fixture x thresholds -1,0,1; fullCore/PythonChess legal and material delta. Then retained8actual roots and c6c5 failure at1/4sec, same leaf/settings, fullhistory/PV and finite child reference when choices differ.",
+      "decision": "Passing fixture establishes only local arithmetic contract. Changed actual bad-root choice motivates one fixed paired12direct cells; unchanged roots or adverse outcomes remain and do not promote default. No tier or weight sweep, fitting, worker or public push.",
+      "cost": "Two compile objects+two links; fixed36fixture predicates,8paired1secroots+onepaired1/4secroot and up to18x500k/1sec child refs. If useful practical differences, one declared12directgame cohort1sec/160plies ~1920requested player seconds maximum. All sequential after feedback24, interruptible.",
+      "source_pin": "9f778da667f6e07dae1e85d3e2ea204fc6dee94d",
+      "position_source_sha256": "16f28fecb31f9d68fcd6010e3d231aea9c08182db10edf66ed232964ecc684fc",
+      "uci_source_sha256": "a087a5ee7a26f23fc80dbf5f4891f609e338ed8bd38d3532689806c03a9389ac",
+      "position_price_sha256": "a95032e1e281d1068e97adc14436ea6811dd0afe9f5b6d5a42b063b3c7f322c9",
+      "uci_diagnostic_sha256": "9b013e12938063c2baa7dc63862e27b4f3bc76b72b2a7252832c7f5dad35d741",
+      "patch_sha256": "7032a642d37138264bf7b5783d466701d36b0ceffe56e4491cdbaa2d20040593",
+      "feedback_declared_before_run": "feedback-20261007/declaration.json; no retroactive change"
+    },
+    "source_sha256": "b1528f392d7f1cf24068c0c2ad811c22bc53ba1bd18287bcc555ec4e0acf2fb5",
+    "rows": [
+      {
+        "game": 4,
+        "id": "open-file-e",
+        "policy": "unit",
+        "threshold": 16,
+        "side": 0,
+        "index": 16,
+        "fen": "r1b1k2r/ppp3pp/5p2/3nb3/8/8/PPP1QPPP/RNB1K2R w KQkq - 0 11",
+        "history_prefix": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1c4",
+          "g8f6",
+          "d2d3",
+          "d7d5",
+          "e4d5",
+          "d8d5",
+          "c4d5",
+          "f6d5",
+          "f3e5",
+          "c6e5",
+          "d1e2",
+          "f7f6",
+          "d3d4",
+          "f8d6",
+          "d4e5",
+          "d6e5"
+        ],
+        "choices": [
+          {
+            "policy": "unit",
+            "move": "f2f4",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": 117,
+            "score_mate": null,
+            "wall_seconds": 1.0081495998892933,
+            "controller_cpu_seconds": 0.015625,
+            "engine_nodes": 2685898,
+            "engine_depth": 21,
+            "engine_seldepth": 26,
+            "engine_seconds": 1.001,
+            "pv": [
+              "f2f4",
+              "e8g8",
+              "f4e5",
+              "f8e8",
+              "c2c4",
+              "d5b6",
+              "c1f4",
+              "c7c6",
+              "e1g1",
+              "c8e6",
+              "e5f6",
+              "e6c4",
+              "e2g4",
+              "g7g6",
+              "b1a3",
+              "c4d5",
+              "g1h1",
+              "d5e6",
+              "g4g5",
+              "b6c4",
+              "a3c4",
+              "e6c4",
+              "f4e3",
+              "c4d5"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "original",
+            "multipv": 1
+          },
+          {
+            "policy": "unit",
+            "move": "f2f4",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": 119,
+            "score_mate": null,
+            "wall_seconds": 1.0105009998660535,
+            "controller_cpu_seconds": 0.0,
+            "engine_nodes": 3234717,
+            "engine_depth": 20,
+            "engine_seldepth": 24,
+            "engine_seconds": 1.002,
+            "pv": [
+              "f2f4",
+              "e8g8",
+              "f4e5",
+              "f6e5",
+              "e2e5",
+              "f8f5",
+              "e5e8",
+              "f5f8",
+              "e8e4",
+              "c7c6",
+              "h1f1",
+              "f8f1",
+              "e1f1",
+              "c8d7",
+              "e4d4",
+              "a8f8",
+              "f1e1",
+              "f8a8",
+              "c1e3",
+              "d5e3",
+              "d4e3",
+              "b7b6"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "price",
+            "multipv": 1
+          }
+        ],
+        "references": {},
+        "all_equal": true
+      },
+      {
+        "game": 4,
+        "id": "open-file-e",
+        "policy": "unit",
+        "threshold": 16,
+        "side": 1,
+        "index": 17,
+        "fen": "r1b1k2r/ppp3pp/5p2/3nb3/5P2/8/PPP1Q1PP/RNB1K2R b KQkq f3 0 11",
+        "history_prefix": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1c4",
+          "g8f6",
+          "d2d3",
+          "d7d5",
+          "e4d5",
+          "d8d5",
+          "c4d5",
+          "f6d5",
+          "f3e5",
+          "c6e5",
+          "d1e2",
+          "f7f6",
+          "d3d4",
+          "f8d6",
+          "d4e5",
+          "d6e5",
+          "f2f4"
+        ],
+        "choices": [
+          {
+            "policy": "unit",
+            "move": "e8g8",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": -107,
+            "score_mate": null,
+            "wall_seconds": 1.008953900076449,
+            "controller_cpu_seconds": 0.015625,
+            "engine_nodes": 2913107,
+            "engine_depth": 21,
+            "engine_seldepth": 27,
+            "engine_seconds": 1.001,
+            "pv": [
+              "e8g8",
+              "f4e5",
+              "f8e8",
+              "e5f6",
+              "e8e2",
+              "e1e2",
+              "g7f6",
+              "b1a3",
+              "c8g4",
+              "e2f2",
+              "c7c6",
+              "h1e1",
+              "g8f7",
+              "c1d2",
+              "d5b6",
+              "c2c4",
+              "a8d8",
+              "d2b4",
+              "d8d7",
+              "b4c3",
+              "g4f5",
+              "f2g3"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "original",
+            "multipv": 1
+          },
+          {
+            "policy": "unit",
+            "move": "e8g8",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": -115,
+            "score_mate": null,
+            "wall_seconds": 1.0097352000884712,
+            "controller_cpu_seconds": 0.03125,
+            "engine_nodes": 3310529,
+            "engine_depth": 19,
+            "engine_seldepth": 26,
+            "engine_seconds": 1.001,
+            "pv": [
+              "e8g8",
+              "f4e5"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "price",
+            "multipv": 1
+          }
+        ],
+        "references": {},
+        "all_equal": true
+      },
+      {
+        "game": 4,
+        "id": "open-file-e",
+        "policy": "unit",
+        "threshold": 32,
+        "side": 0,
+        "index": 32,
+        "fen": "4rr1k/B1p1n1pp/2b5/1N2p3/2Q5/8/PPP3PP/R3K2R w KQ - 1 19",
+        "history_prefix": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1c4",
+          "g8f6",
+          "d2d3",
+          "d7d5",
+          "e4d5",
+          "d8d5",
+          "c4d5",
+          "f6d5",
+          "f3e5",
+          "c6e5",
+          "d1e2",
+          "f7f6",
+          "d3d4",
+          "f8d6",
+          "d4e5",
+          "d6e5",
+          "f2f4",
+          "c8d7",
+          "f4e5",
+          "e8g8",
+          "b1c3",
+          "d7c6",
+          "e2c4",
+          "a8e8",
+          "c1f4",
+          "f6e5",
+          "f4e3",
+          "b7b5",
+          "c3b5",
+          "g8h8",
+          "e3a7",
+          "d5e7"
+        ],
+        "choices": [
+          {
+            "policy": "unit",
+            "move": "b5c7",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": 390,
+            "score_mate": null,
+            "wall_seconds": 1.0099422000348568,
+            "controller_cpu_seconds": 0.03125,
+            "engine_nodes": 2718503,
+            "engine_depth": 21,
+            "engine_seldepth": 24,
+            "engine_seconds": 1.001,
+            "pv": [
+              "b5c7",
+              "e8c8",
+              "a7c5",
+              "c6g2",
+              "c5e7",
+              "f8f4",
+              "c4e6",
+              "c8c7",
+              "e1c1",
+              "h7h6",
+              "e6e5",
+              "c7c2",
+              "c1c2",
+              "f4f2",
+              "c2b3",
+              "g2h1",
+              "d1h1",
+              "h8h7",
+              "e7c5"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "original",
+            "multipv": 1
+          },
+          {
+            "policy": "unit",
+            "move": "b5c7",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": 372,
+            "score_mate": null,
+            "wall_seconds": 1.0061964001506567,
+            "controller_cpu_seconds": 0.015625,
+            "engine_nodes": 3348012,
+            "engine_depth": 19,
+            "engine_seldepth": 25,
+            "engine_seconds": 1.001,
+            "pv": [
+              "b5c7"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "price",
+            "multipv": 1
+          }
+        ],
+        "references": {},
+        "all_equal": true
+      },
+      {
+        "game": 4,
+        "id": "open-file-e",
+        "policy": "unit",
+        "threshold": 32,
+        "side": 1,
+        "index": 33,
+        "fen": "4rr1k/B1p1n1pp/2b5/1N2p3/2Q5/8/PPP3PP/2KR3R b - - 2 19",
+        "history_prefix": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1c4",
+          "g8f6",
+          "d2d3",
+          "d7d5",
+          "e4d5",
+          "d8d5",
+          "c4d5",
+          "f6d5",
+          "f3e5",
+          "c6e5",
+          "d1e2",
+          "f7f6",
+          "d3d4",
+          "f8d6",
+          "d4e5",
+          "d6e5",
+          "f2f4",
+          "c8d7",
+          "f4e5",
+          "e8g8",
+          "b1c3",
+          "d7c6",
+          "e2c4",
+          "a8e8",
+          "c1f4",
+          "f6e5",
+          "f4e3",
+          "b7b5",
+          "c3b5",
+          "g8h8",
+          "e3a7",
+          "d5e7",
+          "e1c1"
+        ],
+        "choices": [
+          {
+            "policy": "unit",
+            "move": "e8a8",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": -340,
+            "score_mate": null,
+            "wall_seconds": 1.0094230000395328,
+            "controller_cpu_seconds": 0.015625,
+            "engine_nodes": 2696418,
+            "engine_depth": 18,
+            "engine_seldepth": 24,
+            "engine_seconds": 1.001,
+            "pv": [
+              "e8a8",
+              "c4e6"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "original",
+            "multipv": 1
+          },
+          {
+            "policy": "unit",
+            "move": "c6g2",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": -338,
+            "score_mate": null,
+            "wall_seconds": 1.0127675000112504,
+            "controller_cpu_seconds": 0.015625,
+            "engine_nodes": 3334584,
+            "engine_depth": 17,
+            "engine_seldepth": 27,
+            "engine_seconds": 1.001,
+            "pv": [
+              "c6g2",
+              "b5c7",
+              "e8c8",
+              "h1g1",
+              "g2h3",
+              "c4c3",
+              "f8f7",
+              "a7b6",
+              "e7g8",
+              "c3e5",
+              "h3f5",
+              "g1g7",
+              "f7g7",
+              "e5f5",
+              "g7c7",
+              "b6c7",
+              "c8c7",
+              "d1d8"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "price",
+            "multipv": 1
+          }
+        ],
+        "references": {
+          "c6g2": {
+            "cp": -651,
+            "mate": null,
+            "nodes": 500341,
+            "depth": 20,
+            "wall_seconds": 0.20851070014759898,
+            "pv": [
+              "b5c7",
+              "e8c8",
+              "h1g1",
+              "g2f3",
+              "d1f1",
+              "e7g6",
+              "b2b4",
+              "f8f4",
+              "c4b3",
+              "f3h5",
+              "f1f4",
+              "g6f4",
+              "c7e6",
+              "f4e2",
+              "c1b2",
+              "e2g1",
+              "a7g1"
+            ]
+          },
+          "e8a8": {
+            "cp": -676,
+            "mate": null,
+            "nodes": 500609,
+            "depth": 20,
+            "wall_seconds": 0.2113572999369353,
+            "pv": [
+              "h1f1",
+              "f8f1",
+              "c4f1",
+              "e7d5",
+              "f1f7",
+              "d5f4",
+              "b5c7",
+              "a8g8",
+              "a7c5",
+              "c6g2",
+              "a2a3",
+              "g2d5",
+              "c7d5"
+            ]
+          }
+        },
+        "all_equal": false
+      },
+      {
+        "game": 0,
+        "id": "open-file-e",
+        "policy": "geometric_half",
+        "threshold": 16,
+        "side": 0,
+        "index": 16,
+        "fen": "r1b2rk1/1pp1npp1/3p1q1p/p1b1p3/2B1P3/2PP1NPP/PP3P1R/RN1QK3 w Q - 2 11",
+        "history_prefix": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1c4",
+          "f8c5",
+          "d2d3",
+          "g8f6",
+          "c1g5",
+          "h7h6",
+          "g5f6",
+          "d8f6",
+          "c2c3",
+          "e8g8",
+          "h2h3",
+          "d7d6",
+          "g2g3",
+          "a7a5",
+          "h1h2",
+          "c6e7"
+        ],
+        "choices": [
+          {
+            "policy": "geometric_half",
+            "move": "d3d4",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": 25,
+            "score_mate": null,
+            "wall_seconds": 1.0108093998860568,
+            "controller_cpu_seconds": 0.0,
+            "engine_nodes": 2367210,
+            "engine_depth": 21,
+            "engine_seldepth": 23,
+            "engine_seconds": 1.001,
+            "pv": [
+              "d3d4",
+              "c5b6",
+              "d4d5",
+              "f6g6",
+              "b1d2",
+              "a5a4",
+              "d1e2",
+              "c8d7",
+              "a1b1",
+              "h6h5",
+              "c4d3",
+              "g6h6",
+              "b2b4",
+              "a4b3",
+              "a2b3",
+              "f7f5",
+              "d2c4",
+              "f5e4"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "original",
+            "multipv": 1
+          },
+          {
+            "policy": "geometric_half",
+            "move": "b1d2",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": 23,
+            "score_mate": null,
+            "wall_seconds": 1.0124236000701785,
+            "controller_cpu_seconds": 0.015625,
+            "engine_nodes": 2520792,
+            "engine_depth": 21,
+            "engine_seldepth": 21,
+            "engine_seconds": 1.001,
+            "pv": [
+              "b1d2",
+              "c7c6",
+              "a2a4",
+              "c8e6",
+              "a1b1",
+              "e6c4",
+              "d3c4",
+              "b7b6",
+              "d1c2",
+              "a8a7",
+              "b2b3",
+              "f8a8",
+              "f3h4",
+              "g7g6",
+              "e1e2",
+              "g8g7",
+              "h4f3",
+              "d6d5",
+              "e4d5",
+              "c6d5",
+              "b1e1"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "price",
+            "multipv": 1
+          }
+        ],
+        "references": {
+          "b1d2": {
+            "cp": -141,
+            "mate": null,
+            "nodes": 500438,
+            "depth": 22,
+            "wall_seconds": 0.8336239999625832,
+            "pv": [
+              "a5a4",
+              "a2a3",
+              "c7c6",
+              "d1e2",
+              "b7b5",
+              "c4a2",
+              "c5b6",
+              "h3h4",
+              "c8e6",
+              "a2e6",
+              "f6e6",
+              "h4h5",
+              "f7f5",
+              "f3h4",
+              "f5e4",
+              "d3e4",
+              "d6d5",
+              "e1c1",
+              "d5d4",
+              "c3d4",
+              "b6d4",
+              "c1b1",
+              "c6c5",
+              "f2f4",
+              "b5b4"
+            ]
+          },
+          "d3d4": {
+            "cp": -217,
+            "mate": null,
+            "nodes": 500107,
+            "depth": 21,
+            "wall_seconds": 0.7564149000681937,
+            "pv": [
+              "e5d4",
+              "c3d4",
+              "d6d5",
+              "e4d5",
+              "b7b5",
+              "c4b5",
+              "e7d5",
+              "b1d2",
+              "c5d4",
+              "d2e4",
+              "f6f5",
+              "d1d4",
+              "d5b4",
+              "d4c4",
+              "a8b8",
+              "f3h4",
+              "f5b5",
+              "c4b5",
+              "b8b5",
+              "f2f3",
+              "f8d8",
+              "h2d2",
+              "d8d2",
+              "e1d2",
+              "c8h3"
+            ]
+          }
+        },
+        "all_equal": false
+      },
+      {
+        "game": 0,
+        "id": "open-file-e",
+        "policy": "geometric_half",
+        "threshold": 16,
+        "side": 1,
+        "index": 17,
+        "fen": "r1b2rk1/1pp1npp1/3p1q1p/p1b1p3/2BPP3/2P2NPP/PP3P1R/RN1QK3 b Q - 0 11",
+        "history_prefix": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1c4",
+          "f8c5",
+          "d2d3",
+          "g8f6",
+          "c1g5",
+          "h7h6",
+          "g5f6",
+          "d8f6",
+          "c2c3",
+          "e8g8",
+          "h2h3",
+          "d7d6",
+          "g2g3",
+          "a7a5",
+          "h1h2",
+          "c6e7",
+          "d3d4"
+        ],
+        "choices": [
+          {
+            "policy": "geometric_half",
+            "move": "c5b6",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": -28,
+            "score_mate": null,
+            "wall_seconds": 1.0141556998714805,
+            "controller_cpu_seconds": 0.015625,
+            "engine_nodes": 2367454,
+            "engine_depth": 20,
+            "engine_seldepth": 25,
+            "engine_seconds": 1.001,
+            "pv": [
+              "c5b6",
+              "d4d5",
+              "h6h5",
+              "b1d2",
+              "f6h6",
+              "d1e2",
+              "g8h7",
+              "c4b5",
+              "c7c6",
+              "d5c6",
+              "b7c6",
+              "b5c4",
+              "h7h8",
+              "e2d3",
+              "a5a4",
+              "a1d1",
+              "c8d7"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "original",
+            "multipv": 1
+          },
+          {
+            "policy": "geometric_half",
+            "move": "c5b6",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": -26,
+            "score_mate": null,
+            "wall_seconds": 1.0137740999925882,
+            "controller_cpu_seconds": 0.03125,
+            "engine_nodes": 2521579,
+            "engine_depth": 20,
+            "engine_seldepth": 23,
+            "engine_seconds": 1.001,
+            "pv": [
+              "c5b6",
+              "d4d5",
+              "f6g6",
+              "b1d2",
+              "f8d8",
+              "f3h4",
+              "g6g5",
+              "a2a4",
+              "f7f5",
+              "h4f3",
+              "g5f6",
+              "f3g1",
+              "f5f4",
+              "g3g4",
+              "c8d7",
+              "d2f3",
+              "f6g6",
+              "d1e2",
+              "g8f7"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "price",
+            "multipv": 1
+          }
+        ],
+        "references": {},
+        "all_equal": true
+      },
+      {
+        "game": 0,
+        "id": "open-file-e",
+        "policy": "geometric_half",
+        "threshold": 32,
+        "side": 0,
+        "index": 32,
+        "fen": "rbb2rk1/3qnpp1/2pQ3p/pp2P3/8/2N2NPP/PPB2P1R/R3K3 w Q - 5 19",
+        "history_prefix": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1c4",
+          "f8c5",
+          "d2d3",
+          "g8f6",
+          "c1g5",
+          "h7h6",
+          "g5f6",
+          "d8f6",
+          "c2c3",
+          "e8g8",
+          "h2h3",
+          "d7d6",
+          "g2g3",
+          "a7a5",
+          "h1h2",
+          "c6e7",
+          "d3d4",
+          "e5d4",
+          "c3d4",
+          "c5a7",
+          "b1c3",
+          "c7c6",
+          "c4b3",
+          "b7b5",
+          "e4e5",
+          "d6e5",
+          "d4e5",
+          "f6f5",
+          "b3c2",
+          "f5d7",
+          "d1d6",
+          "a7b8"
+        ],
+        "choices": [
+          {
+            "policy": "geometric_half",
+            "move": "d6d7",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": 11,
+            "score_mate": null,
+            "wall_seconds": 1.0152970999479294,
+            "controller_cpu_seconds": 0.015625,
+            "engine_nodes": 2662671,
+            "engine_depth": 19,
+            "engine_seldepth": 24,
+            "engine_seconds": 1.001,
+            "pv": [
+              "d6d7",
+              "c8d7"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "original",
+            "multipv": 1
+          },
+          {
+            "policy": "geometric_half",
+            "move": "d6d7",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": 5,
+            "score_mate": null,
+            "wall_seconds": 1.0088583000469953,
+            "controller_cpu_seconds": 0.015625,
+            "engine_nodes": 2827841,
+            "engine_depth": 21,
+            "engine_seldepth": 27,
+            "engine_seconds": 1.001,
+            "pv": [
+              "d6d7",
+              "c8d7",
+              "e1c1",
+              "d7e6",
+              "c1b1",
+              "b5b4",
+              "c3e4",
+              "e6d5",
+              "e4d2",
+              "f8d8",
+              "d1e1",
+              "d5f3",
+              "d2f3",
+              "b8a7",
+              "c2e4",
+              "f7f5",
+              "e5f6",
+              "g7f6",
+              "b1a1",
+              "f6f5"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "price",
+            "multipv": 1
+          }
+        ],
+        "references": {},
+        "all_equal": true
+      },
+      {
+        "game": 0,
+        "id": "open-file-e",
+        "policy": "geometric_half",
+        "threshold": 32,
+        "side": 1,
+        "index": 33,
+        "fen": "rbb2rk1/3Qnpp1/2p4p/pp2P3/8/2N2NPP/PPB2P1R/R3K3 b Q - 0 19",
+        "history_prefix": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1c4",
+          "f8c5",
+          "d2d3",
+          "g8f6",
+          "c1g5",
+          "h7h6",
+          "g5f6",
+          "d8f6",
+          "c2c3",
+          "e8g8",
+          "h2h3",
+          "d7d6",
+          "g2g3",
+          "a7a5",
+          "h1h2",
+          "c6e7",
+          "d3d4",
+          "e5d4",
+          "c3d4",
+          "c5a7",
+          "b1c3",
+          "c7c6",
+          "c4b3",
+          "b7b5",
+          "e4e5",
+          "d6e5",
+          "d4e5",
+          "f6f5",
+          "b3c2",
+          "f5d7",
+          "d1d6",
+          "a7b8",
+          "d6d7"
+        ],
+        "choices": [
+          {
+            "policy": "geometric_half",
+            "move": "c8d7",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": -3,
+            "score_mate": null,
+            "wall_seconds": 1.0135588999837637,
+            "controller_cpu_seconds": 0.015625,
+            "engine_nodes": 2773444,
+            "engine_depth": 20,
+            "engine_seldepth": 23,
+            "engine_seconds": 1.001,
+            "pv": [
+              "c8d7",
+              "e1f1",
+              "d7e6",
+              "a2a3",
+              "e6d5",
+              "c3d5",
+              "c6d5",
+              "c2d3",
+              "b5b4",
+              "f1g2",
+              "e7c6",
+              "a1e1",
+              "b8a7",
+              "d3b5",
+              "c6d4",
+              "f3d4",
+              "a7d4",
+              "b5c6",
+              "a8a7",
+              "c6d5"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "original",
+            "multipv": 1
+          },
+          {
+            "policy": "geometric_half",
+            "move": "c8d7",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": -12,
+            "score_mate": null,
+            "wall_seconds": 1.0123770998325199,
+            "controller_cpu_seconds": 0.0,
+            "engine_nodes": 2811661,
+            "engine_depth": 19,
+            "engine_seldepth": 24,
+            "engine_seconds": 1.001,
+            "pv": [
+              "c8d7",
+              "a2a3"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "price",
+            "multipv": 1
+          }
+        ],
+        "references": {},
+        "all_equal": true
+      }
+    ],
+    "complete": true,
+    "scope": "Eight exposed actual roots, paired equal time. Child cp/mate finite diagnostics only, not exact WDL or independent strength validation."
+  },
+  "adverse": {
+    "complete": true,
+    "source_sha256": "07c559ab7051b9ab32977d0308edcfe6e949e2315872f242ea55a09f47f0b9f4",
+    "fen": "r1bq1k1r/pp1nn3/2p2pp1/5P1p/P1BP4/B1P3QN/6P1/4RRK1 b - - 5 19",
+    "history_prefix": [
+      "d2d4",
+      "d7d5",
+      "c2c4",
+      "e7e6",
+      "b1c3",
+      "d5c4",
+      "e2e4",
+      "f8b4",
+      "f1c4",
+      "b4c3",
+      "b2c3",
+      "c7c6",
+      "d1g4",
+      "d8f6",
+      "h2h4",
+      "f6g6",
+      "g4f3",
+      "h7h5",
+      "g1h3",
+      "g6g4",
+      "f3d3",
+      "g4h4",
+      "e1g1",
+      "h4d8",
+      "a2a4",
+      "g7g6",
+      "f2f4",
+      "e8f8",
+      "f4f5",
+      "e6f5",
+      "e4f5",
+      "f7f6",
+      "d3g3",
+      "b8d7",
+      "c1a3",
+      "g8e7",
+      "a1e1"
+    ],
+    "scope": "Retained exposed linearBlack failure, both private debug-identical builds at1/4sec. Same leaf/conditions; cp/mate children are finite reference, not WDL or proof of pricing cause.",
+    "choices": [
+      {
+        "mode": "original",
+        "requested_seconds": 1,
+        "policy": "linear_mixture",
+        "move": "c6c5",
+        "reason": "uci_bestmove",
+        "score": null,
+        "score_cp": -354,
+        "score_mate": null,
+        "wall_seconds": 1.0099328998476267,
+        "controller_cpu_seconds": 0.03125,
+        "engine_nodes": 2788880,
+        "engine_depth": 18,
+        "engine_seldepth": 35,
+        "engine_seconds": 1.001,
+        "pv": [
+          "c6c5",
+          "a3c5"
+        ],
+        "statistics": {},
+        "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search"
+      },
+      {
+        "mode": "original",
+        "requested_seconds": 4,
+        "policy": "linear_mixture",
+        "move": "c6c5",
+        "reason": "uci_bestmove",
+        "score": null,
+        "score_cp": -444,
+        "score_mate": null,
+        "wall_seconds": 4.0096338000148535,
+        "controller_cpu_seconds": 0.03125,
+        "engine_nodes": 11273989,
+        "engine_depth": 22,
+        "engine_seldepth": 37,
+        "engine_seconds": 4.001,
+        "pv": [
+          "c6c5",
+          "a3c5"
+        ],
+        "statistics": {},
+        "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search"
+      },
+      {
+        "mode": "price",
+        "requested_seconds": 1,
+        "policy": "linear_mixture",
+        "move": "g6f5",
+        "reason": "uci_bestmove",
+        "score": null,
+        "score_cp": -502,
+        "score_mate": null,
+        "wall_seconds": 1.0083604000974447,
+        "controller_cpu_seconds": 0.0,
+        "engine_nodes": 2827055,
+        "engine_depth": 14,
+        "engine_seldepth": 22,
+        "engine_seconds": 1.001,
+        "pv": [
+          "g6f5",
+          "a3e7"
+        ],
+        "statistics": {},
+        "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search"
+      },
+      {
+        "mode": "price",
+        "requested_seconds": 4,
+        "policy": "linear_mixture",
+        "move": "g6f5",
+        "reason": "uci_bestmove",
+        "score": null,
+        "score_cp": -603,
+        "score_mate": null,
+        "wall_seconds": 4.009383999975398,
+        "controller_cpu_seconds": 0.046875,
+        "engine_nodes": 11600110,
+        "engine_depth": 18,
+        "engine_seldepth": 26,
+        "engine_seconds": 4.001,
+        "pv": [
+          "g6f5",
+          "a3e7"
+        ],
+        "statistics": {},
+        "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search"
+      }
+    ],
+    "references": {
+      "c6c5": {
+        "cp": -866,
+        "mate": null,
+        "nodes": 500237,
+        "depth": 21,
+        "wall_seconds": 0.31203179992735386,
+        "pv": [
+          "h3f4",
+          "b7b5",
+          "f4e6",
+          "f8e8",
+          "e6d8",
+          "e8d8",
+          "c4b5",
+          "c8a6",
+          "b5a6",
+          "h5h4",
+          "g3d6",
+          "h8h7",
+          "a3c5",
+          "h4h3",
+          "e1e7",
+          "h7e7",
+          "d6e7",
+          "d8c7",
+          "f5g6",
+          "h3g2",
+          "f1f6"
+        ]
+      },
+      "g6f5": {
+        "cp": -861,
+        "mate": null,
+        "nodes": 500223,
+        "depth": 18,
+        "wall_seconds": 0.2496404000557959,
+        "pv": [
+          "e1e7",
+          "d8e7",
+          "a3e7",
+          "f8e7",
+          "f1e1",
+          "e7d8",
+          "h3f4",
+          "d7f8",
+          "g3g7",
+          "h8h7",
+          "g7f8",
+          "d8c7",
+          "f8g8",
+          "a7a6",
+          "g8h7",
+          "c7b8",
+          "h7h6"
+        ]
+      }
+    }
+  },
+  "root_replay": {
+    "complete": true,
+    "roots": 9,
+    "choice_pvs": 20,
+    "reference_pvs": 6,
+    "errors": [],
+    "source_sha256": {
+      "roots": "3295493fb453354924dc304f245103f52160724116bc00c24427d68061a08a49",
+      "adverse": "b6d15f60dba57e77981fcc9c23afb871d570a67c4fd725dd0cd393a8006f998d"
+    }
+  },
+  "game_declaration": {
+    "question": "Do observed same-leaf SEE arithmetic changes have useful practical effect?",
+    "design": "Fixed12price/original color-paired cells, two existing prefixes x three unchanged gc tables.1sec SinglePV1 Threads1 Hash16 NNUEfalse,160subsequentplies. Fresh engines/hash/game, sequential, complete history/PV/results; no replacement or extension.",
+    "scope": "Exposed development, not human-price fitting, default/Elo/holdout or fully generic SEE. Only arithmetic prices change; LVA/capture order and all thresholds fixed. New condition does not rewrite earlier24feedback results.",
+    "binary_sha256": {
+      "original": "4d94a3ba093838dc421f018b3c10d1b203c017b8bfd97e5e0dfafc70f6716e2c",
+      "price": "4bf528024876079474f1ee74b9b024652e0020c6274b61f9f9632a5119629b64"
+    },
+    "config_sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0",
+    "suite_sha256": "51a8382618d6bdb9c3cc347ac9257c51d4a07861ae8e9d5cfbc83e3c3efb16e0",
+    "adapter_sha256": "3f23f85996f60f42e4aab3f9c704331fa4214483c6956d55ba0f9669ea7047d1",
+    "producer_sha256": "fb0b173786563da2a1c474d4e9625528c16637c68f4970eea936c6f480bb5d7a",
+    "recording": "Existing per-action active snapshots and per-completed-game cohort, cost measured; no shared entry/schema edits.",
+    "cost": "At most1920requested search seconds plus legal/Core/logging; interruptible every action, no extra worker. Unknown effect; win/loss/unfinished changes next decision, none automatically promote default."
+  },
+  "totals": {
+    "wins": 2,
+    "losses": 2,
+    "draws": 0,
+    "unfinished": 8
+  },
+  "tables": {
+    "geometric_half": {
+      "wins": 2,
+      "losses": 0,
+      "draws": 0,
+      "unfinished": 2
+    },
+    "linear_mixture": {
+      "wins": 0,
+      "losses": 0,
+      "draws": 0,
+      "unfinished": 4
+    },
+    "unit": {
+      "wins": 0,
+      "losses": 2,
+      "draws": 0,
+      "unfinished": 2
+    }
+  },
+  "cells": [
+    {
+      "index": 0,
+      "id": "open-file-e",
+      "table": "geometric_half",
+      "price_color": 0,
+      "plies": 160,
+      "prefix_plies": 4,
+      "end": "ply_limit",
+      "winner": null,
+      "finished": false,
+      "cost": {
+        "price": {
+          "calls": 80,
+          "wall_seconds": 80.2489379006438,
+          "reported_nodes": 296131631
+        },
+        "original": {
+          "calls": 80,
+          "wall_seconds": 80.26829469995573,
+          "reported_nodes": 294185077
+        }
+      }
+    },
+    {
+      "index": 1,
+      "id": "open-file-e",
+      "table": "geometric_half",
+      "price_color": 1,
+      "plies": 156,
+      "prefix_plies": 4,
+      "end": "checkmate",
+      "winner": 1,
+      "finished": true,
+      "cost": {
+        "original": {
+          "calls": 78,
+          "wall_seconds": 75.25115339993499,
+          "reported_nodes": 223796689
+        },
+        "price": {
+          "calls": 78,
+          "wall_seconds": 75.24307159986347,
+          "reported_nodes": 231719114
+        }
+      }
+    },
+    {
+      "index": 2,
+      "id": "open-file-e",
+      "table": "linear_mixture",
+      "price_color": 0,
+      "plies": 160,
+      "prefix_plies": 4,
+      "end": "ply_limit",
+      "winner": null,
+      "finished": false,
+      "cost": {
+        "price": {
+          "calls": 80,
+          "wall_seconds": 80.25813300185837,
+          "reported_nodes": 213153915
+        },
+        "original": {
+          "calls": 80,
+          "wall_seconds": 80.24027909780852,
+          "reported_nodes": 201953576
+        }
+      }
+    },
+    {
+      "index": 3,
+      "id": "open-file-e",
+      "table": "linear_mixture",
+      "price_color": 1,
+      "plies": 160,
+      "prefix_plies": 4,
+      "end": "ply_limit",
+      "winner": null,
+      "finished": false,
+      "cost": {
+        "original": {
+          "calls": 80,
+          "wall_seconds": 80.22465359931812,
+          "reported_nodes": 236415207
+        },
+        "price": {
+          "calls": 80,
+          "wall_seconds": 80.24781239777803,
+          "reported_nodes": 244047798
+        }
+      }
+    },
+    {
+      "index": 4,
+      "id": "open-file-e",
+      "table": "unit",
+      "price_color": 0,
+      "plies": 160,
+      "prefix_plies": 4,
+      "end": "ply_limit",
+      "winner": null,
+      "finished": false,
+      "cost": {
+        "price": {
+          "calls": 80,
+          "wall_seconds": 80.21331560006365,
+          "reported_nodes": 274910532
+        },
+        "original": {
+          "calls": 80,
+          "wall_seconds": 80.20328149944544,
+          "reported_nodes": 237997437
+        }
+      }
+    },
+    {
+      "index": 5,
+      "id": "open-file-e",
+      "table": "unit",
+      "price_color": 1,
+      "plies": 135,
+      "prefix_plies": 4,
+      "end": "checkmate",
+      "winner": 0,
+      "finished": true,
+      "cost": {
+        "original": {
+          "calls": 68,
+          "wall_seconds": 65.30805979971774,
+          "reported_nodes": 224139973
+        },
+        "price": {
+          "calls": 67,
+          "wall_seconds": 64.27721050055698,
+          "reported_nodes": 245021346
+        }
+      }
+    },
+    {
+      "index": 6,
+      "id": "central-d",
+      "table": "geometric_half",
+      "price_color": 0,
+      "plies": 121,
+      "prefix_plies": 4,
+      "end": "checkmate",
+      "winner": 0,
+      "finished": true,
+      "cost": {
+        "price": {
+          "calls": 61,
+          "wall_seconds": 57.372529299231246,
+          "reported_nodes": 178286451
+        },
+        "original": {
+          "calls": 60,
+          "wall_seconds": 56.40570460003801,
+          "reported_nodes": 169651014
+        }
+      }
+    },
+    {
+      "index": 7,
+      "id": "central-d",
+      "table": "geometric_half",
+      "price_color": 1,
+      "plies": 160,
+      "prefix_plies": 4,
+      "end": "ply_limit",
+      "winner": null,
+      "finished": false,
+      "cost": {
+        "original": {
+          "calls": 80,
+          "wall_seconds": 80.21637079957873,
+          "reported_nodes": 211310872
+        },
+        "price": {
+          "calls": 80,
+          "wall_seconds": 80.20978710078634,
+          "reported_nodes": 217416404
+        }
+      }
+    },
+    {
+      "index": 8,
+      "id": "central-d",
+      "table": "linear_mixture",
+      "price_color": 0,
+      "plies": 160,
+      "prefix_plies": 4,
+      "end": "ply_limit",
+      "winner": null,
+      "finished": false,
+      "cost": {
+        "price": {
+          "calls": 80,
+          "wall_seconds": 77.22212689882144,
+          "reported_nodes": 264654643
+        },
+        "original": {
+          "calls": 80,
+          "wall_seconds": 80.22776189842261,
+          "reported_nodes": 270029886
+        }
+      }
+    },
+    {
+      "index": 9,
+      "id": "central-d",
+      "table": "linear_mixture",
+      "price_color": 1,
+      "plies": 160,
+      "prefix_plies": 4,
+      "end": "ply_limit",
+      "winner": null,
+      "finished": false,
+      "cost": {
+        "original": {
+          "calls": 80,
+          "wall_seconds": 80.2104702994693,
+          "reported_nodes": 234789689
+        },
+        "price": {
+          "calls": 80,
+          "wall_seconds": 80.22764790081419,
+          "reported_nodes": 246178221
+        }
+      }
+    },
+    {
+      "index": 10,
+      "id": "central-d",
+      "table": "unit",
+      "price_color": 0,
+      "plies": 160,
+      "prefix_plies": 4,
+      "end": "ply_limit",
+      "winner": null,
+      "finished": false,
+      "cost": {
+        "price": {
+          "calls": 80,
+          "wall_seconds": 80.19477759860456,
+          "reported_nodes": 307687367
+        },
+        "original": {
+          "calls": 80,
+          "wall_seconds": 80.18013430014253,
+          "reported_nodes": 274423219
+        }
+      }
+    },
+    {
+      "index": 11,
+      "id": "central-d",
+      "table": "unit",
+      "price_color": 1,
+      "plies": 133,
+      "prefix_plies": 4,
+      "end": "checkmate",
+      "winner": 0,
+      "finished": true,
+      "cost": {
+        "original": {
+          "calls": 67,
+          "wall_seconds": 62.89675979898311,
+          "reported_nodes": 193933866
+        },
+        "price": {
+          "calls": 66,
+          "wall_seconds": 62.03237130003981,
+          "reported_nodes": 218026385
+        }
+      }
+    }
+  ],
+  "replay": {
+    "streams": 12,
+    "played_plies": 1825,
+    "prefix_plies": 48,
+    "mismatches": 0
+  },
+  "wall_seconds": 1822.9838996001054,
+  "recording_cost_before_final_save": {
+    "active": {
+      "writes": 1825,
+      "bytes": 109978638,
+      "seconds": 10.602459107059985
+    },
+    "cohort": {
+      "writes": 13,
+      "bytes": 14429852,
+      "seconds": 0.37372009991668165
+    }
+  },
+  "raw_entries": {
+    "declaration.json": {
+      "bytes": 2345,
+      "sha256": "0f187b37c03cb9199fc1478a2bd4ae6f3ea486ea981729ae87a9707dac0965b4"
+    },
+    "build.json": {
+      "bytes": 9410,
+      "sha256": "610605f139aaea1150256675ca7021ce00eb819fb0adc9313ee570c17b7d06cb"
+    },
+    "qualification.json": {
+      "bytes": 57899,
+      "sha256": "ee0e8182404f4c573cc8c9e4565929585fc247aef780aed25bfa60a5be486f46"
+    },
+    "roots.json": {
+      "bytes": 26252,
+      "sha256": "3295493fb453354924dc304f245103f52160724116bc00c24427d68061a08a49"
+    },
+    "adverse.json": {
+      "bytes": 4238,
+      "sha256": "b6d15f60dba57e77981fcc9c23afb871d570a67c4fd725dd0cd393a8006f998d"
+    },
+    "root-replay.json": {
+      "bytes": 284,
+      "sha256": "5017ddd67d995a4d6408c9dcfb528aece2d1bb3377f581ded5961b3120ea7786"
+    },
+    "first-pair.json": {
+      "bytes": 590,
+      "sha256": "b056a3dd577b895724e4d30439a0ddc347da6b79b1193d3f2cf2366b19018504"
+    },
+    "game-declaration.json": {
+      "bytes": 1478,
+      "sha256": "2b2fa3e14c88b7a5f775f0545a10457e4b878cf5af33e3c13eabcf39299a2a48"
+    },
+    "direct.json": {
+      "bytes": 2171957,
+      "sha256": "7b1a31b356e22e6b27047257036455b61de2d4e607a835d69d62dc5cc712bced"
+    },
+    "direct-replay.json": {
+      "bytes": 6493,
+      "sha256": "0a3b98a2273b4f81c32efacdb446cf320c0a583c8b017875f868e85291139def"
+    }
+  },
+  "sources": {
+    "see-price-20261007/adverse.py": {
+      "bytes": 2913,
+      "sha256": "df2df84bd463cd772cac1617d8d4bf15f0b708cfcd90f0ddd54332c70ed7596d"
+    },
+    "see-price-20261007/build.py": {
+      "bytes": 2951,
+      "sha256": "9abb3afd585e6407b95d93573edcc2c407eb44236b9d78feec08b69b3617f491"
+    },
+    "see-price-20261007/check-roots.py": {
+      "bytes": 1530,
+      "sha256": "c8934c5b6013c8929290d89e302e138e4324b321ae35107f7c70bd2392f0fd1c"
+    },
+    "see-price-20261007/collect.py": {
+      "bytes": 4148,
+      "sha256": "aa97752f6413a47fced2c06af63c30a7f793997728b6d1fb36d633a88e36523d"
+    },
+    "see-price-20261007/games.py": {
+      "bytes": 4503,
+      "sha256": "fb0b173786563da2a1c474d4e9625528c16637c68f4970eea936c6f480bb5d7a"
+    },
+    "see-price-20261007/prepare-roots.py": {
+      "bytes": 1487,
+      "sha256": "4a06832dfa6f04733555f30e110c340b9d6b234ec326de5e69f1aa6783e8ed53"
+    },
+    "see-price-20261007/qualify.py": {
+      "bytes": 3349,
+      "sha256": "c5bcc792e049fe6a4eb385c0427b8001af9c1463d13d13bd7267805c749432ef"
+    },
+    "see-price-20261007/replay.py": {
+      "bytes": 2259,
+      "sha256": "ce1771cfb22fd12e936d49d30682629d5108f0ad5cc8955754b870429ba457e4"
+    },
+    "see-price-20261007/roots.py": {
+      "bytes": 3605,
+      "sha256": "9d0eb5c7b3616f73d8832a4ef84f660cb88e77447656d84612ad45456be4fb10"
+    },
+    "position-price.cpp": {
+      "bytes": 122912,
+      "sha256": "a95032e1e281d1068e97adc14436ea6811dd0afe9f5b6d5a42b063b3c7f322c9"
+    },
+    "uci-diagnostic.cpp": {
+      "bytes": 22654,
+      "sha256": "9b013e12938063c2baa7dc63862e27b4f3bc76b72b2a7252832c7f5dad35d741"
+    },
+    "price.patch": {
+      "bytes": 2297,
+      "sha256": "7032a642d37138264bf7b5783d466701d36b0ceffe56e4491cdbaa2d20040593"
+    },
+    "pinned-position.cpp": {
+      "bytes": 122811,
+      "sha256": "16f28fecb31f9d68fcd6010e3d231aea9c08182db10edf66ed232964ecc684fc"
+    },
+    "pinned-uci.cpp": {
+      "bytes": 22339,
+      "sha256": "a087a5ee7a26f23fc80dbf5f4891f609e338ed8bd38d3532689806c03a9389ac"
+    },
+    "upstream-Copying.txt": {
+      "bytes": 35821,
+      "sha256": "0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b"
+    },
+    "evaluate-exchange.cpp": {
+      "bytes": 75285,
+      "sha256": "5f7eb02cffa1e804ce04fe48c773f721339611ffeeae9c4a6dcf10365eac4e9b"
+    },
+    "shared-chess_development.py": {
+      "bytes": 42701,
+      "sha256": "3f23f85996f60f42e4aab3f9c704331fa4214483c6956d55ba0f9669ea7047d1"
+    },
+    "shared-research_record.py": {
+      "bytes": 1869,
+      "sha256": "4d026c4c30859ff4c7b9ad02e66378eb15a1f771a6b1fd67deab54e3e54d597b"
+    },
+    "material-variants.ini": {
+      "bytes": 355,
+      "sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0"
+    },
+    "suite.json": {
+      "bytes": 658,
+      "sha256": "51a8382618d6bdb9c3cc347ac9257c51d4a07861ae8e9d5cfbc83e3c3efb16e0"
+    }
+  },
+  "raw_archive": "docs/archive/development_see_price_20261007/raw.zip",
+  "sources_archive": "docs/archive/development_see_price_20261007/sources.zip",
+  "raw_zip_sha256": "c7e8d13c124b9af6bcaafaca8edca42f7ee02fd8d9508179322a3f0387ee4207",
+  "sources_zip_sha256": "18d61cd0c456de83aeae4c8d5adc6f3ba991b370a4f272d65697f37666f26180",
+  "production_changes": "None; isolated source/binaries only",
+  "public_push": "User2026-10-07 authorized Agent-generated code/evidence; verify actual publication independently after commit/push.",
+  "parent_sha": "3d9426bb605e244ee6b6679b4a161e8f45e34308"
+}

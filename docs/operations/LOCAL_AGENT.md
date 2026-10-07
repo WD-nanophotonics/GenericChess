@@ -244,6 +244,16 @@ Explicit stop persists flags;
 Agent pauses heartbeat/cancels dot monitoring, no scheduled automatic resume.
 Transport/local Agent allowance boundaries remain in advisor.json.
 Inspect outgoing diffs, run relevant tests, publish and verify origin/sandbox.
+User2026-10-07 grants continuing publication authorization for Agent-generated
+GenericChess code, results and evidence, including the held backlog. Finish each
+work segment by committing/syncing that work to origin/sandbox so dot can inspect
+the actual code; no repeated push approval. Review the entire outgoing history
+and archive contents for user-authored/private input, raw Slack/account records
+and credentials, which remain excluded. The standing grant ends only if revoked;
+explicit project stop suspends publication. Previous held statuses describe
+their original segment, not a current approval requirement. Keep tests/diff
+review and exact remote SHA verification; report failures instead of claiming
+publication. No force push or automatic untested master promotion.
 Recovery/isolation evidence remains REBUILD_20261003.md; never import old
 App databases, credentials, Goals or retired queues. Do not touch other projects.
 

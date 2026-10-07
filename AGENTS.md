@@ -98,6 +98,15 @@ dot/transport must not delegate workers. Quota evidence is in advisor.json.
 
 Git is version control/final delivery, not mandatory communication. Inspect
 outgoing diffs and relevant tests before publish; verify full origin/sandbox SHA.
+User2026-10-07 grants standing publication authorization for this project's
+Agent-generated code, research results and evidence, including the pending
+backlog. At every completed work segment commit and sync these to origin/sandbox
+so dot can inspect actual changes, without per-push confirmation. Exclude user-
+authored/private input data, raw Slack/account records and credentials, including
+inside archives and outgoing history. Authorization persists until revoked;
+explicit project stop suspends publication. Old held-publication records are
+historical status, not an active gate. Review and test; report push failures and
+verify the exact remote SHA. Never claim a local commit was published.
 Master promotion is tested fast-forward only; never force-push. Report truthfully.
 Notify only meaningful results, failures or required decisions. Scientific
 completion requires the evidence in LOCAL_MAINLINE.md, not a phase/turn boundary.

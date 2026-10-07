@@ -11,7 +11,9 @@ Chess first, Standard Shogi control, then frozen formula/protocol before the
 Xiangqi human-value holdout. Human values validate, never fit/select prices.
 Science remains OPEN: no formula is admitted or generic amateur strength proven.
 Completion needs scoped Chess/control/holdout results, reproducible semantics,
-formula, preprocessing cost and relevant tests; public delivery is currently held.
+formula, preprocessing cost and relevant tests. User2026-10-07 authorizes regular
+publication of Agent-generated code/evidence; user inputs, Slack records and
+credentials remain excluded, including archive contents and outgoing history.
 
 Approximate construction need not first prove exact WDL/all-defense certificates
 or a unique context law. Separate semantics, approximation and useful deployment
@@ -67,15 +69,28 @@ not all-defense safety. No default promotion or coefficient retuning.
 data/chess_exchange_20261007.json binds complete verified raw/source packages.
 Prior royal pilot remains in data/chess_royal_20261007.json, without active backlog.
 
-Next priority: one fixed, actually supported intermediate external opponent
-setting2400 (observed UCI range1320-3190), paired exchange/activity with unchanged
-local settings and prefixes. Setting is not measured Elo; no tier/weight fishing.
-Dot agrees feedback-first, independently reading visible patch only. If both
-methods again saturate, stop adding that setting's games and isolate one same-leaf
-SEE/capture-price contrast. Source audit confirms variant overrides feed
-EvalPieceValue/CapturePieceValue while normal capture ordering/fast SEE use
-PieceValue; this is not proof of the cause of observed losses. No broad theory or
-framework expansion before useful failure feedback. Science remains OPEN.
+Fixed supported intermediate reference setting2400 (UCI range1320-3190) is now
+complete: exchange4W1L7U versus activity6W1L5U,24streams3217played+96prefix
+replayzero. Same local resources/prefixes/tables; label is not measured Elo and
+weakened play is stochastic. Feedback is not saturated, but candidate advantage
+is not established. data/chess_feedback_20261007.json preserves all outcomes,
+costs and raw/source packages. No tier/weight fishing or default promotion.
+
+Current follow-up checks a concrete search-price contract, independently of the
+non-triggered saturation branch. Variant overrides feed EvalPieceValue and
+CapturePieceValue, while standard SEE arithmetic uses PieceValue plus hardcoded
+recapture constants. An isolated8-read arithmetic-only patch fixes a unit-price
+QxP/PxQ fixture and mirror;36predicates and6identical leaf trace pairs pass.
+LVA order, capture ordering and thresholds remain unchanged: not fully generic
+SEE.8exposed roots2changed; retained failure1/4sec c6c5->g6f5 has finite reference
+cp-866/-861, both poor, not safety or loss-cause proof. Fixed12paired direct
+contrast completes2W2L8U:geometric2W2U,linear4U,unit2L2U;1825played+48prefix
+replayzero. It does not establish improvement; no defaults change. Evidence:
+data/chess_see_price_20261007.json. Next decision is whether the arithmetic repair
+helps under the same fixed2400 external feedback, with fresh matched controls;
+no extra tier/weight search. Dot's feedback-first suggestion was adopted; local
+follow-up is not an advisor backlog.
+Science remains OPEN; no broad framework expansion before practical evidence.
 
 ## Recover detailed evidence only as needed
 
@@ -88,5 +103,6 @@ FINITE_RESOURCE_LIFETIME_PROPOSAL.md, CHESS_CONTACT_COMMON_LAW_RESULTS.md,
 V2H_HISTORICAL_EVIDENCE_RECONCILIATION.md and CHESS_TABLEBASE_APPLICABILITY.md.
 Public goal WIN is exact, RESTART unknown; source WDL50/DTZ/DTM/local-goal
 contracts remain distinct. No old snapshot admits a new formula or holdout status.
-Git is version control/final delivery; public push remains held. Scientific
+Git is version control/final delivery; sync generated work to origin/sandbox
+after each completed work segment under the standing user authorization. Scientific
 completion is evidence-based, never a milestone, consultation or turn boundary.

@@ -1,0 +1,35 @@
+{
+  "state": "DECLARED_NOT_RUN",
+  "question": "Does arithmetic-only SEE correction improve the same fixed2400 external feedback beyond the original half-risk leaf?",
+  "proposed_setting": 2400,
+  "rationale": "One round-number point between prior1800 and full strength, chosen before new results, not fitted. Option label is not measured Elo. No tier/weight search.",
+  "design": "New fixed24cells:12price/reference and12original/reference, same two existing prefixes x three unchanged gc tables x both colors. Fresh matched control cohort because weakened play/time-limited searches can vary; old24records stay frozen. Sequential1sec local/50000nodes+1sec reference,160subsequentplies,SinglePV1 Threads1 Hash16 NNUEfalse, no tier/weight search.",
+  "decision": "Unknown incremental effect. Improvements motivate retaining partial correction as experimental candidate; neutral/adverse feedback stops expansion and returns to one actual failure root. No default/strength/Elo/holdout claim from small exposed samples, no result-driven extension.",
+  "cost": "At most1920local+1920reference fuse seconds across24cells, plus Core/startup/logging; prior fixed2400 measured about28minutes cohort wall. Bounded sequential, interruptible per action; no extra workers. Both methods use same settings, never candidate-only extension.",
+  "opponent_setting": 2400,
+  "option_range": [
+    1320,
+    3190
+  ],
+  "options_snapshot_sha256": "2fe9984d139e42beabf7acefbebda05717909fca1c4f6ed78d736b88d98073e9",
+  "reference_sha256": "55aa40c857de30b79dbe4f8e4c335ee2b23815cf2f100a6630d54761fcad3b85",
+  "config_sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0",
+  "adapter_sha256": "3f23f85996f60f42e4aab3f9c704331fa4214483c6956d55ba0f9669ea7047d1",
+  "suite_sha256": "51a8382618d6bdb9c3cc347ac9257c51d4a07861ae8e9d5cfbc83e3c3efb16e0",
+  "producer_sha256": "5d84891de4eb80fdb9bdffd0414871a7fb5b7426457f275f678918db4e77d841",
+  "binaries": {
+    "price": {
+      "path": ".local_agent/see-price-20261007/fairy-price.exe",
+      "sha256": "4bf528024876079474f1ee74b9b024652e0020c6274b61f9f9632a5119629b64"
+    },
+    "original": {
+      "path": ".local_agent/see-price-20261007/fairy-original.exe",
+      "sha256": "4d94a3ba093838dc421f018b3c10d1b203c017b8bfd97e5e0dfafc70f6716e2c"
+    }
+  },
+  "advisor_request": "GC-SLACK-20261007-171457-16ba3473",
+  "advisor_reply_sha256": "6c4e29f536ce44570183a95614f08629f27de008f5f08f72a9fd48d46ce613f4",
+  "replay_sha256": "a165d26c8521d046295b018bcf2a4651b6ef5e86ea312e2e97d969a670395826",
+  "basis": "36price-contract predicates,6identical leaf pairs; exposed12direct2W2L8U does not settle external usefulness. All3tables kept, none selected/retuned from outcomes.",
+  "public_push": "Standing2026-10-07 authorization for generated evidence; next batch is not executed."
+}

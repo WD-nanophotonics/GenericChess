@@ -32,6 +32,8 @@ conditions stay visible. Development budget is justified by information per cost
 | Restored human-engineered classical leaf, same gc prices/search |22W2Ldirect;10L2Ustrong; ordinary native control1L3U | data/chess_classical_20261007.json |
 | Fixed4 royal-zone-pressure pilot |36cells:6W2L4Uactivity,2W10Lclassical,11L1Ustrong reference | data/chess_royal_20261007.json |
 | Native old half pseudo hanging-risk plus coverage |36cells:4W1L7Uactivity,1W11Lclassical,11L1Ustrong reference | data/chess_exchange_20261007.json |
+| One fixed supported reference option2400, SinglePV1 |exchange4W1L7U;activity6W1L5U;24streams, no established candidate advantage | data/chess_feedback_20261007.json |
+| Same half-risk leaf; only8fast SEE arithmetic price reads changed |12direct:2W2L8U;geometric2W2U,linear4U,unit2L2U; no established improvement | data/chess_see_price_20261007.json |
 
 Classical is a diagnostic benchmark, not the rule-derived candidate. Native human
 SEE/pruning thresholds remain a disclosed coupling in material/coverage pilots.
@@ -50,14 +52,16 @@ replayzero.8exposed roots6same2finite worse, with trace/root overlap disclosed.
 Old bad root selects c6c5 at1/4sec; equal finite references mate-16forg6g5 versus
 cp-866forc6c5 do not certify safety. No default promotion or coefficient fitting.
 
-Next declared feedback comparison fixes one supported UCI strength setting2400
-(range1320-3190) for both exchange/activity, identical two prefixes/three tables/
-colors/search resources. Stockfish's label is not measured Elo; weakened play can
-be stochastic. Complete games/PV/history stay recorded. If both methods saturate,
-stop adding matches at that setting and isolate one same-leaf SEE/capture-price
-contrast; do not hunt for a tier where the candidate wins. Native source confirms
-normal PieceValue capture ordering/fast SEE differ from variant EvalPieceValue/
-CapturePieceValue; it does not establish the cause of an observed failure.
+Completed fixed2400 feedback uses identical two prefixes/three tables/colors and
+local search resources. Its3217played+96prefix plies replay with zero differences.
+Stockfish's label is not measured Elo; weakened play can be stochastic. Neither
+method saturates the predeclared threshold, and no candidate advantage is shown.
+Do not hunt for a tier where it wins. The next isolated contrast fixes only SEE
+arithmetic's8price reads, leaving LVA order/capture ordering/thresholds and leaf
+unchanged.36fixture predicates and6identical leaf trace pairs pass;8actual roots
+2changed. Retained c6c5->g6f5 finite references remain poor. Direct12paired games
+finish2W2L8U with1825played+48prefix replayzero; no improvement/default or generic
+SEE claim. Both complete evidence packs retain all unfavorable/unfinished cells.
 
 Shogi reachable neighbor q0/q2 often chooses identically at3.3-12x cost, while
 some old checked controls differ. Keep targeted q2 optional; Chess/Shogi semantic
