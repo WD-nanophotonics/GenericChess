@@ -1,0 +1,1619 @@
+{
+  "scope": "StandardChess exposed development; old fixed half pseudo hanging-risk at native bitboard cost. No coefficient/price fitting, default/Elo/holdout/generic-strength claim. Pins, King safety, EP/off-target and exchange-chain limitations remain.",
+  "source_pin": "9f778da667f6e07dae1e85d3e2ea204fc6dee94d",
+  "parent_sha": "607c7047ea000fbc5bc45c29dcaadcf300c08a64",
+  "build": {
+    "declaration": {
+      "question": "Can old fixed half hanging-risk approximation work better at native bitboard cost?",
+      "scope": "StandardChess only: own piece attacked by enemy pseudo union, not own pseudo union; includes King attacks in attack/defense, excludes Kings from discounted inventory. Pins, illegal King captures, EP off-target victim, exchanges and postconditions not modeled. No turn/history rewrite.",
+      "term": "Material+4nonroyal union delta+(hangingBlack-hangingWhite)/2, symmetric integer truncation. Prices from unchanged gc tables; half is old independently declared SemanticHangingRisk hypothesis, not fitted probability or rule-unique context law. Native implementation changes cost premise, not refits exposed labels.",
+      "decision": "Before outcomes declare all36activity/classical/reference cells; retain all loss/unfinished/failure evidence. No coefficient sweep, human prices fitting, default promotion, Elo or generic-strength claim.",
+      "unchanged": "Original search objects/SEE/pruning/NNUEfalse, SinglePV1 Threads1 Hash16. Activity cost shifts reachable nodes; report actual resource usage.",
+      "cost": "One compile object,28reused unchanged; small static and actual-root controls, then bounded sequential36streams under existing1sec conditions. Interruptible on user stop; no extra model/worker.",
+      "pure_binary_sha256": "477628ae141c6e5fb7dcb562e31e3bc40eab95b20c8b966ece131a1dbf090999",
+      "source_eval_sha256": "b875e3f460216430daf5ad61bee19bf5c5d2efb4c0377a2cde5c2d9172012fc3"
+    },
+    "commands": [
+      {
+        "command": [
+          "{PROJECT_ROOT}\\.venv\\Scripts\\python.exe",
+          "-m",
+          "ziglang",
+          "c++",
+          "-target",
+          "x86_64-windows-gnu",
+          "-std=c++17",
+          "-O2",
+          "-fno-exceptions",
+          "-fno-strict-aliasing",
+          "-DNDEBUG",
+          "-DIS_64BIT",
+          "-DNNUE_EMBEDDING_OFF",
+          "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+          "-I",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\Fairy-Stockfish-9f778da667f6e07dae1e85d3e2ea204fc6dee94d\\src",
+          "-c",
+          "{PROJECT_ROOT}\\.local_agent\\exchange-20261007\\evaluate-exchange.cpp",
+          "-o",
+          "{PROJECT_ROOT}\\.local_agent\\exchange-20261007\\evaluate.cpp.o"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "{PROJECT_ROOT}\\.venv\\Scripts\\python.exe",
+          "-m",
+          "ziglang",
+          "c++",
+          "-target",
+          "x86_64-windows-gnu",
+          "-std=c++17",
+          "-O2",
+          "-fno-exceptions",
+          "-fno-strict-aliasing",
+          "-DNDEBUG",
+          "-DIS_64BIT",
+          "-DNNUE_EMBEDDING_OFF",
+          "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\benchmark.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\bitbase.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\bitboard.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\endgame.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\exchange-20261007\\evaluate.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\main.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\material.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\misc.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\movegen.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\movepick.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\pawns.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\position.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\psqt.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\search.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\thread.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\timeman.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\tt.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\uci.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\ucioption.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\tune.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\syzygy_tbprobe.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\nnue_evaluate_nnue.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\nnue_features_half_ka_v2.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\partner.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\parser.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\piece.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\variant.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\xboard.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\nnue_features_half_ka_v2_variants.cpp.o",
+          "-o",
+          "{PROJECT_ROOT}\\.local_agent\\exchange-20261007\\fairy-exchange.exe",
+          "-lpthread",
+          "-ladvapi32",
+          "-Wl,--stack,8388608"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    ],
+    "complete": true,
+    "reused_objects": {
+      "benchmark.cpp": "0c51f9748a29d6caa34342b8a77015b9d1872a65a89155cf5e29d9db9054c29a",
+      "bitbase.cpp": "a53b312e704268afd93c2eb6d75c4c48e4989c2d8f4bdeb87a681f380307517d",
+      "bitboard.cpp": "d08a7b206b8bcbfae6070b68b975b596ddd96d61fd1bbc7596f7bebf02eee884",
+      "endgame.cpp": "5bda2bb9aabb2e1ed8ad9a5fb7f24d618d6a7f0552b4e16765df5760fbe5c21d",
+      "main.cpp": "315d6b3b9465e8930a9b8a7453353f982d02f9886539b79adcc958666ce1438c",
+      "material.cpp": "f4d3a760b881e217f9691e86794a5adabc5bd8e0ee50226bc680862be2e5efb8",
+      "misc.cpp": "b844d9b3a32f19306195ddbba3225cd9ecc4daea2b2dff85bffffeca405621ea",
+      "movegen.cpp": "1978d3a78e2dc2278d24d190648ec5858c8c43f8031cb62f552adddf002277c2",
+      "movepick.cpp": "6e7a77628d389786afe99c8862ba080bb01319815cf0c69548cbc4bce3a3aada",
+      "pawns.cpp": "643bfba3ef80cddb1c39c9b7b67870cf1ae46ff72c5807ffb8fffadfb8eba0b9",
+      "position.cpp": "129e66b930ac21ccfc018ca55e6882baba3a79743a2db0557d74c0ff218e0bd3",
+      "psqt.cpp": "8e644790bbd1c5c8e3cd61140f6ca55d73ec4393759abd067de56484b3e7c6b8",
+      "search.cpp": "94e67fcd134bbe680d6ecd4ef753aa81d908595701918092f522a7ce1a994e02",
+      "thread.cpp": "86bd378d5bfe9e5cf40e24bc19ccf4c65a2a6ba892e6dd33ca3b0df623533e77",
+      "timeman.cpp": "298801b756aa3aee4286c87d5cd38f9dccf0f4e79a32134f909542494687e2e0",
+      "tt.cpp": "e91763147e830b485fba6fb55a1e52238ca3b144f3b02f56a5cad542b3dc3b15",
+      "uci.cpp": "aeeb106ae7d67e069d1a32bee683bdc75b2661c1fb1eb8ab61d2ad46ab5f4d8e",
+      "ucioption.cpp": "553e996024cb7f713000c4e4e5d2c251cb0ea96c2534e0d24709ce865d09b7a3",
+      "tune.cpp": "9592ec801fa5145edaf194e9be018a51f5840fc2506ec2f1f5fc496d2f9e3bee",
+      "syzygy/tbprobe.cpp": "1947ef6bf304cdb602366fcd4de9543d9acca13fcac3d0a22ce878442052e2b5",
+      "nnue/evaluate_nnue.cpp": "49955cefc952cc88540706c3471d718e14569df7ef6359a8aa4257647969ccaf",
+      "nnue/features/half_ka_v2.cpp": "d5a48b7900e08012d4ef9bbebfcf9f44807ff65254bda13f1e1ee207ad76415e",
+      "partner.cpp": "05ec0c68c7733b6603037fc1fcb6d766db64321149ec7364513ebe197cf18217",
+      "parser.cpp": "d6d9d295bdfe068fe4d3f062d9ac2c57d674381305e5f63d4383d3e2e4bf40a0",
+      "piece.cpp": "6db2b4128899199c5dccc6f7500970b2a2b0b51e6b7b2c172d851bac78c9e861",
+      "variant.cpp": "215f2cf2237c231da98abb0fe6fd5f63123b9ec13f025f88a23414fe4a684102",
+      "xboard.cpp": "c1954b614bf1d19f1266e4fe5f5f119cc733c539042c03c876366cafe023b38a",
+      "nnue/features/half_ka_v2_variants.cpp": "98564ec47293b3b62d93a14dd60c72392a6073387ab461d180bd65d21b289443"
+    },
+    "binary_sha256": "40d5689fe0da14762b1f30dd1fe7cb0df722dfa7bb6598dd8a30010b45d47f5b",
+    "wall_seconds": 2.0684609999880195
+  },
+  "declaration": {
+    "question": "Can old fixed half hanging-risk approximation work better at native bitboard cost?",
+    "term": "Material+4nonroyal union delta+(hangingBlack-hangingWhite)/2, symmetric integer truncation. Prices from unchanged gc tables; half is old independently declared SemanticHangingRisk hypothesis, not fitted probability or rule-unique context law. Native implementation changes cost premise, not refits exposed labels.",
+    "design": "36prospectively fixed streams:12exchange/activity,12exchange/classical,12exchange/fullstrengthreference. Each two existing prefixes x three unchanged gc tables x both colors. Local1sec SinglePV1 Threads1 Hash16 NNUEfalse; reference50000nodes/1sec;160subsequentplies; fresh hash/game per cell. Cohorts sequential with stop checks every action. Retain losses/unfinished/interruption; no silent rerun or coefficient search.",
+    "decision": "Old fixed half pseudo hanging-risk under native efficient implementation; all36originally fixed cells, no fitting or post-result retune. Development only, no exact WDL/Elo/holdout/default claim.",
+    "cost": "Each direct/classical cohort <=1920requestedlocal sec; reference<=960local+960fuse sec plus Core/logging. One game at a time. All bounded interruptible, no extra models/workers.",
+    "recording": "Existing atomic serializer: per-action snapshot of active game, cohort save after every completed game and finally. Same complete final game schema and all rows/history; no new CLI/protocol. Separately count active/cohort writes/bytes/time. Changed producer recording affects elapsed time, not per-player search condition; no old/new throughput causal claim.",
+    "binary_sha256": {
+      "activity": "8f9dab0fc47ef7a29014d55a349502344509d5a65d6a8a19a7f5a9bfb8dad099",
+      "classical": "2f67539e3b58295901e365edb722fba1e43220185e97eaafb18f38df9d7a8232",
+      "exchange": "40d5689fe0da14762b1f30dd1fe7cb0df722dfa7bb6598dd8a30010b45d47f5b"
+    },
+    "reference_sha256": "55aa40c857de30b79dbe4f8e4c335ee2b23815cf2f100a6630d54761fcad3b85",
+    "config_sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0",
+    "adapter_sha256": "3f23f85996f60f42e4aab3f9c704331fa4214483c6956d55ba0f9669ea7047d1",
+    "new_premise": "Native bitboards remove old per-leaf Python packing/per-piece FFI queries; same old approximation and documented pin/EP/off-target boundary.",
+    "suite_sha256": "51a8382618d6bdb9c3cc347ac9257c51d4a07861ae8e9d5cfbc83e3c3efb16e0"
+  },
+  "feature_checks": {
+    "core_and_semantic": 37,
+    "native_mirror_turn": 144,
+    "mismatches": 0,
+    "history_import_failure_preserved": true
+  },
+  "groups": {
+    "direct": {
+      "methods": {
+        "geometric_half": {
+          "wins": 1,
+          "losses": 1,
+          "draws": 0,
+          "unfinished": 2
+        },
+        "linear_mixture": {
+          "wins": 2,
+          "losses": 0,
+          "draws": 0,
+          "unfinished": 2
+        },
+        "unit": {
+          "wins": 1,
+          "losses": 0,
+          "draws": 0,
+          "unfinished": 3
+        }
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "open-file-e",
+          "table": "geometric_half",
+          "exchange_color": 0,
+          "opponent_mode": "activity",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "cost": {
+            "exchange": {
+              "calls": 80,
+              "wall_seconds": 80.16669680085033,
+              "reported_nodes": 227381071
+            },
+            "activity": {
+              "calls": 80,
+              "wall_seconds": 80.19076239992864,
+              "reported_nodes": 240463003
+            }
+          }
+        },
+        {
+          "index": 1,
+          "id": "open-file-e",
+          "table": "geometric_half",
+          "exchange_color": 1,
+          "opponent_mode": "activity",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "cost": {
+            "activity": {
+              "calls": 80,
+              "wall_seconds": 80.14259670116007,
+              "reported_nodes": 203290679
+            },
+            "exchange": {
+              "calls": 80,
+              "wall_seconds": 80.15154539886862,
+              "reported_nodes": 198743964
+            }
+          }
+        },
+        {
+          "index": 2,
+          "id": "open-file-e",
+          "table": "linear_mixture",
+          "exchange_color": 0,
+          "opponent_mode": "activity",
+          "plies": 147,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "exchange": {
+              "calls": 74,
+              "wall_seconds": 70.22542079910636,
+              "reported_nodes": 234309166
+            },
+            "activity": {
+              "calls": 73,
+              "wall_seconds": 69.2900694005657,
+              "reported_nodes": 239673251
+            }
+          }
+        },
+        {
+          "index": 3,
+          "id": "open-file-e",
+          "table": "linear_mixture",
+          "exchange_color": 1,
+          "opponent_mode": "activity",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "cost": {
+            "activity": {
+              "calls": 80,
+              "wall_seconds": 75.23079450102523,
+              "reported_nodes": 224278454
+            },
+            "exchange": {
+              "calls": 80,
+              "wall_seconds": 80.21562610170804,
+              "reported_nodes": 232772040
+            }
+          }
+        },
+        {
+          "index": 4,
+          "id": "open-file-e",
+          "table": "unit",
+          "exchange_color": 0,
+          "opponent_mode": "activity",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "cost": {
+            "exchange": {
+              "calls": 80,
+              "wall_seconds": 80.19435869995505,
+              "reported_nodes": 268688620
+            },
+            "activity": {
+              "calls": 80,
+              "wall_seconds": 80.20561400009319,
+              "reported_nodes": 281308142
+            }
+          }
+        },
+        {
+          "index": 5,
+          "id": "open-file-e",
+          "table": "unit",
+          "exchange_color": 1,
+          "opponent_mode": "activity",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "cost": {
+            "activity": {
+              "calls": 80,
+              "wall_seconds": 77.49576480034739,
+              "reported_nodes": 297802621
+            },
+            "exchange": {
+              "calls": 80,
+              "wall_seconds": 76.48760180012323,
+              "reported_nodes": 281350574
+            }
+          }
+        },
+        {
+          "index": 6,
+          "id": "central-d",
+          "table": "geometric_half",
+          "exchange_color": 0,
+          "opponent_mode": "activity",
+          "plies": 86,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "exchange": {
+              "calls": 43,
+              "wall_seconds": 40.11629829928279,
+              "reported_nodes": 102266955
+            },
+            "activity": {
+              "calls": 43,
+              "wall_seconds": 40.108859199564904,
+              "reported_nodes": 107257273
+            }
+          }
+        },
+        {
+          "index": 7,
+          "id": "central-d",
+          "table": "geometric_half",
+          "exchange_color": 1,
+          "opponent_mode": "activity",
+          "plies": 92,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "activity": {
+              "calls": 46,
+              "wall_seconds": 42.65033860108815,
+              "reported_nodes": 124232711
+            },
+            "exchange": {
+              "calls": 46,
+              "wall_seconds": 42.50624460121617,
+              "reported_nodes": 122748145
+            }
+          }
+        },
+        {
+          "index": 8,
+          "id": "central-d",
+          "table": "linear_mixture",
+          "exchange_color": 0,
+          "opponent_mode": "activity",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "cost": {
+            "exchange": {
+              "calls": 80,
+              "wall_seconds": 80.14615290099755,
+              "reported_nodes": 236004067
+            },
+            "activity": {
+              "calls": 80,
+              "wall_seconds": 80.1782718996983,
+              "reported_nodes": 248929954
+            }
+          }
+        },
+        {
+          "index": 9,
+          "id": "central-d",
+          "table": "linear_mixture",
+          "exchange_color": 1,
+          "opponent_mode": "activity",
+          "plies": 130,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "activity": {
+              "calls": 65,
+              "wall_seconds": 61.321156902005896,
+              "reported_nodes": 194173008
+            },
+            "exchange": {
+              "calls": 65,
+              "wall_seconds": 61.343051799573004,
+              "reported_nodes": 186100944
+            }
+          }
+        },
+        {
+          "index": 10,
+          "id": "central-d",
+          "table": "unit",
+          "exchange_color": 0,
+          "opponent_mode": "activity",
+          "plies": 127,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "exchange": {
+              "calls": 64,
+              "wall_seconds": 60.26886580046266,
+              "reported_nodes": 177099028
+            },
+            "activity": {
+              "calls": 63,
+              "wall_seconds": 59.235811399063095,
+              "reported_nodes": 178419309
+            }
+          }
+        },
+        {
+          "index": 11,
+          "id": "central-d",
+          "table": "unit",
+          "exchange_color": 1,
+          "opponent_mode": "activity",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "cost": {
+            "activity": {
+              "calls": 80,
+              "wall_seconds": 80.20979459770024,
+              "reported_nodes": 242768857
+            },
+            "exchange": {
+              "calls": 80,
+              "wall_seconds": 80.20064409915358,
+              "reported_nodes": 235236920
+            }
+          }
+        }
+      ],
+      "wall_seconds": 1678.1955371999647,
+      "recording_cost_before_final_save": {
+        "active": {
+          "writes": 1702,
+          "bytes": 97423725,
+          "seconds": 7.755340197822079
+        },
+        "cohort": {
+          "writes": 13,
+          "bytes": 13284117,
+          "seconds": 0.3315703000407666
+        }
+      },
+      "replay": {
+        "streams": 12,
+        "played_plies": 1702,
+        "prefix_plies": 48,
+        "mismatches": 0
+      },
+      "approximation_frequency": {
+        "roots": 1702,
+        "any_hanging": 708,
+        "nonzero_half": 589
+      }
+    },
+    "classical": {
+      "methods": {
+        "geometric_half": {
+          "wins": 0,
+          "losses": 4,
+          "draws": 0,
+          "unfinished": 0
+        },
+        "linear_mixture": {
+          "wins": 0,
+          "losses": 4,
+          "draws": 0,
+          "unfinished": 0
+        },
+        "unit": {
+          "wins": 1,
+          "losses": 3,
+          "draws": 0,
+          "unfinished": 0
+        }
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "open-file-e",
+          "table": "geometric_half",
+          "exchange_color": 0,
+          "opponent_mode": "classical",
+          "plies": 140,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "exchange": {
+              "calls": 70,
+              "wall_seconds": 66.59415089921094,
+              "reported_nodes": 182191848
+            },
+            "classical": {
+              "calls": 70,
+              "wall_seconds": 66.64280010061339,
+              "reported_nodes": 121974151
+            }
+          }
+        },
+        {
+          "index": 1,
+          "id": "open-file-e",
+          "table": "geometric_half",
+          "exchange_color": 1,
+          "opponent_mode": "classical",
+          "plies": 87,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 44,
+              "wall_seconds": 41.16315639996901,
+              "reported_nodes": 66028383
+            },
+            "exchange": {
+              "calls": 43,
+              "wall_seconds": 40.1502389984671,
+              "reported_nodes": 100959040
+            }
+          }
+        },
+        {
+          "index": 2,
+          "id": "open-file-e",
+          "table": "linear_mixture",
+          "exchange_color": 0,
+          "opponent_mode": "classical",
+          "plies": 68,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "exchange": {
+              "calls": 34,
+              "wall_seconds": 31.223825599998236,
+              "reported_nodes": 80202520
+            },
+            "classical": {
+              "calls": 34,
+              "wall_seconds": 31.231265999609604,
+              "reported_nodes": 51780062
+            }
+          }
+        },
+        {
+          "index": 3,
+          "id": "open-file-e",
+          "table": "linear_mixture",
+          "exchange_color": 1,
+          "opponent_mode": "classical",
+          "plies": 87,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 44,
+              "wall_seconds": 41.24436269933358,
+              "reported_nodes": 59913788
+            },
+            "exchange": {
+              "calls": 43,
+              "wall_seconds": 40.245300200302154,
+              "reported_nodes": 91320589
+            }
+          }
+        },
+        {
+          "index": 4,
+          "id": "open-file-e",
+          "table": "unit",
+          "exchange_color": 0,
+          "opponent_mode": "classical",
+          "plies": 95,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "exchange": {
+              "calls": 48,
+              "wall_seconds": 45.05182050098665,
+              "reported_nodes": 112067043
+            },
+            "classical": {
+              "calls": 47,
+              "wall_seconds": 44.03502409928478,
+              "reported_nodes": 74879129
+            }
+          }
+        },
+        {
+          "index": 5,
+          "id": "open-file-e",
+          "table": "unit",
+          "exchange_color": 1,
+          "opponent_mode": "classical",
+          "plies": 83,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 42,
+              "wall_seconds": 39.03122360026464,
+              "reported_nodes": 61360044
+            },
+            "exchange": {
+              "calls": 41,
+              "wall_seconds": 37.89510220102966,
+              "reported_nodes": 84699855
+            }
+          }
+        },
+        {
+          "index": 6,
+          "id": "central-d",
+          "table": "geometric_half",
+          "exchange_color": 0,
+          "opponent_mode": "classical",
+          "plies": 98,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "exchange": {
+              "calls": 49,
+              "wall_seconds": 45.69111800030805,
+              "reported_nodes": 115301710
+            },
+            "classical": {
+              "calls": 49,
+              "wall_seconds": 45.739505799952894,
+              "reported_nodes": 76557832
+            }
+          }
+        },
+        {
+          "index": 7,
+          "id": "central-d",
+          "table": "geometric_half",
+          "exchange_color": 1,
+          "opponent_mode": "classical",
+          "plies": 93,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 47,
+              "wall_seconds": 43.56287039979361,
+              "reported_nodes": 76556763
+            },
+            "exchange": {
+              "calls": 46,
+              "wall_seconds": 42.55857380060479,
+              "reported_nodes": 116181870
+            }
+          }
+        },
+        {
+          "index": 8,
+          "id": "central-d",
+          "table": "linear_mixture",
+          "exchange_color": 0,
+          "opponent_mode": "classical",
+          "plies": 90,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "exchange": {
+              "calls": 45,
+              "wall_seconds": 41.9079497999046,
+              "reported_nodes": 102610024
+            },
+            "classical": {
+              "calls": 45,
+              "wall_seconds": 41.71821959898807,
+              "reported_nodes": 67262911
+            }
+          }
+        },
+        {
+          "index": 9,
+          "id": "central-d",
+          "table": "linear_mixture",
+          "exchange_color": 1,
+          "opponent_mode": "classical",
+          "plies": 77,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 39,
+              "wall_seconds": 36.18127690022811,
+              "reported_nodes": 55914387
+            },
+            "exchange": {
+              "calls": 38,
+              "wall_seconds": 35.178855400998145,
+              "reported_nodes": 83286962
+            }
+          }
+        },
+        {
+          "index": 10,
+          "id": "central-d",
+          "table": "unit",
+          "exchange_color": 0,
+          "opponent_mode": "classical",
+          "plies": 86,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "exchange": {
+              "calls": 43,
+              "wall_seconds": 40.115917299175635,
+              "reported_nodes": 108430784
+            },
+            "classical": {
+              "calls": 43,
+              "wall_seconds": 39.90433369996026,
+              "reported_nodes": 73504364
+            }
+          }
+        },
+        {
+          "index": 11,
+          "id": "central-d",
+          "table": "unit",
+          "exchange_color": 1,
+          "opponent_mode": "classical",
+          "plies": 91,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 46,
+              "wall_seconds": 43.13949829991907,
+              "reported_nodes": 68779139
+            },
+            "exchange": {
+              "calls": 45,
+              "wall_seconds": 42.1371376006864,
+              "reported_nodes": 109200214
+            }
+          }
+        }
+      ],
+      "wall_seconds": 1037.0244388999417,
+      "recording_cost_before_final_save": {
+        "active": {
+          "writes": 1095,
+          "bytes": 37165253,
+          "seconds": 4.319199298974127
+        },
+        "cohort": {
+          "writes": 13,
+          "bytes": 8281004,
+          "seconds": 0.22779839951545
+        }
+      },
+      "replay": {
+        "streams": 12,
+        "played_plies": 1095,
+        "prefix_plies": 48,
+        "mismatches": 0
+      },
+      "approximation_frequency": {
+        "roots": 1095,
+        "any_hanging": 479,
+        "nonzero_half": 431
+      }
+    },
+    "reference": {
+      "methods": {
+        "geometric_half": {
+          "wins": 0,
+          "losses": 4,
+          "draws": 0,
+          "unfinished": 0
+        },
+        "linear_mixture": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0,
+          "unfinished": 1
+        },
+        "unit": {
+          "wins": 0,
+          "losses": 4,
+          "draws": 0,
+          "unfinished": 0
+        }
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "open-file-e",
+          "table": "geometric_half",
+          "exchange_color": 0,
+          "opponent_mode": "reference",
+          "plies": 144,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "exchange": {
+              "calls": 72,
+              "wall_seconds": 69.2185258010868,
+              "reported_nodes": 187996691
+            },
+            "reference": {
+              "calls": 72,
+              "wall_seconds": 3.7879643011838198,
+              "reported_nodes": 3527345
+            }
+          }
+        },
+        {
+          "index": 1,
+          "id": "open-file-e",
+          "table": "geometric_half",
+          "exchange_color": 1,
+          "opponent_mode": "reference",
+          "plies": 83,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 42,
+              "wall_seconds": 1.8925297989044338,
+              "reported_nodes": 2039003
+            },
+            "exchange": {
+              "calls": 41,
+              "wall_seconds": 37.518605400575325,
+              "reported_nodes": 99663844
+            }
+          }
+        },
+        {
+          "index": 2,
+          "id": "open-file-e",
+          "table": "linear_mixture",
+          "exchange_color": 0,
+          "opponent_mode": "reference",
+          "plies": 74,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "exchange": {
+              "calls": 37,
+              "wall_seconds": 34.10492349974811,
+              "reported_nodes": 89990280
+            },
+            "reference": {
+              "calls": 37,
+              "wall_seconds": 1.8731163993943483,
+              "reported_nodes": 1776134
+            }
+          }
+        },
+        {
+          "index": 3,
+          "id": "open-file-e",
+          "table": "linear_mixture",
+          "exchange_color": 1,
+          "opponent_mode": "reference",
+          "plies": 143,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 72,
+              "wall_seconds": 3.9619669006206095,
+              "reported_nodes": 3542756
+            },
+            "exchange": {
+              "calls": 71,
+              "wall_seconds": 67.983378498815,
+              "reported_nodes": 194985599
+            }
+          }
+        },
+        {
+          "index": 4,
+          "id": "open-file-e",
+          "table": "unit",
+          "exchange_color": 0,
+          "opponent_mode": "reference",
+          "plies": 120,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "exchange": {
+              "calls": 60,
+              "wall_seconds": 56.908650000113994,
+              "reported_nodes": 153661469
+            },
+            "reference": {
+              "calls": 60,
+              "wall_seconds": 3.041421700036153,
+              "reported_nodes": 2927304
+            }
+          }
+        },
+        {
+          "index": 5,
+          "id": "open-file-e",
+          "table": "unit",
+          "exchange_color": 1,
+          "opponent_mode": "reference",
+          "plies": 129,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 65,
+              "wall_seconds": 3.664182001724839,
+              "reported_nodes": 3166993
+            },
+            "exchange": {
+              "calls": 64,
+              "wall_seconds": 60.293864100473,
+              "reported_nodes": 188049480
+            }
+          }
+        },
+        {
+          "index": 6,
+          "id": "central-d",
+          "table": "geometric_half",
+          "exchange_color": 0,
+          "opponent_mode": "reference",
+          "plies": 118,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "exchange": {
+              "calls": 59,
+              "wall_seconds": 55.19960429985076,
+              "reported_nodes": 153836582
+            },
+            "reference": {
+              "calls": 59,
+              "wall_seconds": 3.8101273018401116,
+              "reported_nodes": 2874498
+            }
+          }
+        },
+        {
+          "index": 7,
+          "id": "central-d",
+          "table": "geometric_half",
+          "exchange_color": 1,
+          "opponent_mode": "reference",
+          "plies": 105,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 53,
+              "wall_seconds": 3.3957575005479157,
+              "reported_nodes": 2585031
+            },
+            "exchange": {
+              "calls": 52,
+              "wall_seconds": 49.15215059951879,
+              "reported_nodes": 122616998
+            }
+          }
+        },
+        {
+          "index": 8,
+          "id": "central-d",
+          "table": "linear_mixture",
+          "exchange_color": 0,
+          "opponent_mode": "reference",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "cost": {
+            "exchange": {
+              "calls": 80,
+              "wall_seconds": 80.10432580066845,
+              "reported_nodes": 244599836
+            },
+            "reference": {
+              "calls": 80,
+              "wall_seconds": 4.1886718003079295,
+              "reported_nodes": 4002930
+            }
+          }
+        },
+        {
+          "index": 9,
+          "id": "central-d",
+          "table": "linear_mixture",
+          "exchange_color": 1,
+          "opponent_mode": "reference",
+          "plies": 83,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 42,
+              "wall_seconds": 2.646580599946901,
+              "reported_nodes": 2030788
+            },
+            "exchange": {
+              "calls": 41,
+              "wall_seconds": 38.0818779990077,
+              "reported_nodes": 96700011
+            }
+          }
+        },
+        {
+          "index": 10,
+          "id": "central-d",
+          "table": "unit",
+          "exchange_color": 0,
+          "opponent_mode": "reference",
+          "plies": 148,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "exchange": {
+              "calls": 74,
+              "wall_seconds": 70.9229140994139,
+              "reported_nodes": 199941833
+            },
+            "reference": {
+              "calls": 74,
+              "wall_seconds": 2.806577199837193,
+              "reported_nodes": 3612326
+            }
+          }
+        },
+        {
+          "index": 11,
+          "id": "central-d",
+          "table": "unit",
+          "exchange_color": 1,
+          "opponent_mode": "reference",
+          "plies": 97,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 49,
+              "wall_seconds": 1.8164742996450514,
+              "reported_nodes": 2376716
+            },
+            "exchange": {
+              "calls": 48,
+              "wall_seconds": 45.099700200837106,
+              "reported_nodes": 124388068
+            }
+          }
+        }
+      ],
+      "wall_seconds": 717.8340787000488,
+      "recording_cost_before_final_save": {
+        "active": {
+          "writes": 1404,
+          "bytes": 48773836,
+          "seconds": 5.233610708732158
+        },
+        "cohort": {
+          "writes": 13,
+          "bytes": 8758087,
+          "seconds": 0.23601750005036592
+        }
+      },
+      "replay": {
+        "streams": 12,
+        "played_plies": 1404,
+        "prefix_plies": 48,
+        "mismatches": 0
+      },
+      "approximation_frequency": {
+        "roots": 1404,
+        "any_hanging": 592,
+        "nonzero_half": 541
+      }
+    }
+  },
+  "root_diagnostics": {
+    "roots": 8,
+    "contrast": {
+      "same": 6,
+      "finite_better": 0,
+      "finite_worse": 2,
+      "finite_equal": 0,
+      "mate": []
+    },
+    "declaration": {
+      "question": "Is the native half risk decision-changing on eight pre-existing actual roots, including favorable and unfavorable royal/classical cases?",
+      "sampling": "All8rows of prior classical-roots.json, identical game/policy/full history. Exposed outcome-conditioned diagnostics, no new sampling by candidate result.",
+      "design": "exchange/activity, two fresh1sec SinglePV1 Threads1 Hash16 NNUEfalse gc calls per root. Distinct chosen children fresh fullstrength Stockfish500000nodes/1sec, cp/mate separate. No concurrency with timed cohort.",
+      "cost": "<=16local+16referencefuse seconds plus replay/log. No tuned parameters, default/Elo/error-rate/causal-component claim.",
+      "source_sha256": "b1528f392d7f1cf24068c0c2ad811c22bc53ba1bd18287bcc555ec4e0acf2fb5"
+    },
+    "resource_note": {
+      "scope": "The eight-root run briefly overlapped the completed direct frequency trace, which repeatedly reconstructed fixed material tables. Roots retain requested equal1sec options and full outcomes, but are exploratory choices; no isolated node-rate or per-leaf-cost inference. No silent rerun.",
+      "trace_source_before_sha256": "b30cdec949fec30c2df9930d373f4b7c49dd20b067b714f541b5bf9ed6097796",
+      "correction": "Compute unchanged material tables once in later trace runs; qualified geometry body unchanged. Original direct trace and pre-cache producer retained."
+    },
+    "interpretation": "Exposed outcome-conditioned finite references, not error rates or causal feature isolation."
+  },
+  "adverse": {
+    "complete": true,
+    "question": "Does the old fixed half hanging-risk distinguish the retained bad g6g5 root?",
+    "declaration": "One exposed linearBlack root with full history. New exchange build only, two fresh SinglePV1 calls1/4sec Threads1 Hash16 NNUEfalse,5requested seconds. Three previously observed children immediate pseudo coverage/risk geometry; no coefficient fitting or unchanged old-engine reruns. Static equality cannot predict searched leaf values.",
+    "source_sha256": "07c559ab7051b9ab32977d0308edcfe6e949e2315872f242ea55a09f47f0b9f4",
+    "fen": "r1bq1k1r/pp1nn3/2p2pp1/5P1p/P1BP4/B1P3QN/6P1/4RRK1 b - - 5 19",
+    "history_prefix": [
+      "d2d4",
+      "d7d5",
+      "c2c4",
+      "e7e6",
+      "b1c3",
+      "d5c4",
+      "e2e4",
+      "f8b4",
+      "f1c4",
+      "b4c3",
+      "b2c3",
+      "c7c6",
+      "d1g4",
+      "d8f6",
+      "h2h4",
+      "f6g6",
+      "g4f3",
+      "h7h5",
+      "g1h3",
+      "g6g4",
+      "f3d3",
+      "g4h4",
+      "e1g1",
+      "h4d8",
+      "a2a4",
+      "g7g6",
+      "f2f4",
+      "e8f8",
+      "f4f5",
+      "e6f5",
+      "e4f5",
+      "f7f6",
+      "d3g3",
+      "b8d7",
+      "c1a3",
+      "g8e7",
+      "a1e1"
+    ],
+    "geometry": {
+      "root": {
+        "coverage_white": 40,
+        "coverage_black": 26,
+        "hanging_white": 0,
+        "hanging_black": 0,
+        "half_risk_white": 0,
+        "positional_white": 56
+      },
+      "g6g5": {
+        "coverage_white": 40,
+        "coverage_black": 28,
+        "hanging_white": 0,
+        "hanging_black": 0,
+        "half_risk_white": 0,
+        "positional_white": 48
+      },
+      "g6f5": {
+        "coverage_white": 41,
+        "coverage_black": 27,
+        "hanging_white": 0,
+        "hanging_black": 0,
+        "half_risk_white": 0,
+        "positional_white": 56
+      },
+      "c6c5": {
+        "coverage_white": 40,
+        "coverage_black": 27,
+        "hanging_white": 0,
+        "hanging_black": 0,
+        "half_risk_white": 0,
+        "positional_white": 52
+      }
+    },
+    "rows": [
+      {
+        "requested_seconds": 1,
+        "policy": "linear_mixture",
+        "move": "c6c5",
+        "reason": "uci_bestmove",
+        "score": null,
+        "score_cp": -337,
+        "score_mate": null,
+        "wall_seconds": 1.01229969994165,
+        "controller_cpu_seconds": 0.0,
+        "engine_nodes": 2416182,
+        "engine_depth": 18,
+        "engine_seldepth": 35,
+        "engine_seconds": 1.001,
+        "pv": [
+          "c6c5",
+          "a3c5"
+        ],
+        "statistics": {},
+        "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search"
+      },
+      {
+        "requested_seconds": 4,
+        "policy": "linear_mixture",
+        "move": "c6c5",
+        "reason": "uci_bestmove",
+        "score": null,
+        "score_cp": -444,
+        "score_mate": null,
+        "wall_seconds": 4.008477099938318,
+        "controller_cpu_seconds": 0.015625,
+        "engine_nodes": 9600904,
+        "engine_depth": 22,
+        "engine_seldepth": 37,
+        "engine_seconds": 4.001,
+        "pv": [
+          "c6c5",
+          "a3c5"
+        ],
+        "statistics": {},
+        "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search"
+      }
+    ]
+  },
+  "adverse_reference": {
+    "complete": true,
+    "question": "Does the new c6c5 choice avoid the finite mate reference retained for old g6g5?",
+    "declaration": "Two already exposed legal children c6c5/g6g5, same full history, fresh full-strength Stockfish500000nodes/1sec Threads1 Hash16 each. <=2referencefuse seconds plus replay; sequential after games. cp/mate separated, finite diagnostic not all-defense proof or price fitting.",
+    "source_sha256": "ff466bd9a39f200f262cf9072ec7ab1f8702bc264a609c476c00aae3296f3449",
+    "fen": "r1bq1k1r/pp1nn3/2p2pp1/5P1p/P1BP4/B1P3QN/6P1/4RRK1 b - - 5 19",
+    "history_prefix": [
+      "d2d4",
+      "d7d5",
+      "c2c4",
+      "e7e6",
+      "b1c3",
+      "d5c4",
+      "e2e4",
+      "f8b4",
+      "f1c4",
+      "b4c3",
+      "b2c3",
+      "c7c6",
+      "d1g4",
+      "d8f6",
+      "h2h4",
+      "f6g6",
+      "g4f3",
+      "h7h5",
+      "g1h3",
+      "g6g4",
+      "f3d3",
+      "g4h4",
+      "e1g1",
+      "h4d8",
+      "a2a4",
+      "g7g6",
+      "f2f4",
+      "e8f8",
+      "f4f5",
+      "e6f5",
+      "e4f5",
+      "f7f6",
+      "d3g3",
+      "b8d7",
+      "c1a3",
+      "g8e7",
+      "a1e1"
+    ],
+    "rows": [
+      {
+        "move": "c6c5",
+        "cp": -866,
+        "mate": null,
+        "nodes": 500237,
+        "depth": 21,
+        "wall_seconds": 0.3290287998970598,
+        "pv": [
+          "h3f4",
+          "b7b5",
+          "f4e6",
+          "f8e8",
+          "e6d8",
+          "e8d8",
+          "c4b5",
+          "c8a6",
+          "b5a6",
+          "h5h4",
+          "g3d6",
+          "h8h7",
+          "a3c5",
+          "h4h3",
+          "e1e7",
+          "h7e7",
+          "d6e7",
+          "d8c7",
+          "f5g6",
+          "h3g2",
+          "f1f6"
+        ]
+      },
+      {
+        "move": "g6g5",
+        "cp": null,
+        "mate": -16,
+        "nodes": 501173,
+        "depth": 28,
+        "wall_seconds": 0.3380237999372184,
+        "pv": [
+          "h3g5",
+          "c6c5",
+          "g5e6",
+          "f8e8",
+          "g3g7",
+          "h8h7",
+          "g7h7",
+          "d8b6",
+          "h7h8",
+          "e7g8",
+          "h8g8",
+          "e8e7",
+          "e6c5",
+          "d7e5",
+          "d4e5",
+          "c8f5",
+          "e5f6",
+          "e7d6",
+          "g8d5",
+          "d6c7",
+          "e1e7",
+          "c7c8",
+          "d5g8",
+          "b6d8",
+          "c4e6",
+          "f5e6",
+          "g8e6",
+          "d8d7",
+          "e6d7",
+          "c8b8",
+          "d7b7"
+        ]
+      }
+    ]
+  },
+  "raw_entries": {
+    "build-portable.json": {
+      "bytes": 8373,
+      "sha256": "a27c9cf36c07590413e99698a14b2383b8d5a1e42252918f64d1fd8cb432a017"
+    },
+    "features-failed-root-import-portable.json": {
+      "bytes": 60031,
+      "sha256": "2e2d78891dabb21859517be3191688fcb82e3beedd4579e10ecab987a33fcb5f"
+    },
+    "declaration.json": {
+      "bytes": 1508,
+      "sha256": "8de3e2cd2a604fce305a6acf342a65684352121feaf909bba908b292bcd610e1"
+    },
+    "game-declaration.json": {
+      "bytes": 2436,
+      "sha256": "84d6fe8c4c77cfe46955cc0838a7e11698eb74257049b3697e285a653ce4ef90"
+    },
+    "features.json": {
+      "bytes": 697619,
+      "sha256": "787bc73d07ce26fdc85816979ae736df17a724b8d4080be5870aa896ea3844a9"
+    },
+    "root-inspection.json": {
+      "bytes": 1612,
+      "sha256": "2c0ceb81f2104a803f0a5fc211a21db99f685f1a01c3c023e225c1443c5101a7"
+    },
+    "roots-declaration.json": {
+      "bytes": 773,
+      "sha256": "7d37c43c894d64e1657cad2687e7848e4be79378b38616d3f96ff38a2f049d9c"
+    },
+    "roots.json": {
+      "bytes": 24590,
+      "sha256": "58604179ed766dea0148f38dce4c3599587870ce1549dd9e188c3b5d1da83d48"
+    },
+    "adverse.json": {
+      "bytes": 3035,
+      "sha256": "ff466bd9a39f200f262cf9072ec7ab1f8702bc264a609c476c00aae3296f3449"
+    },
+    "adverse-reference.json": {
+      "bytes": 2246,
+      "sha256": "3a11893ea98a1475076267d9b044513d3d925b6a0f15523a3664a5081e581458"
+    },
+    "analysis-cost-note.json": {
+      "bytes": 572,
+      "sha256": "c6e87af6329c993f9b0dc6bf97a721940b9fb09096f674a71a10e4a6d20748de"
+    },
+    "coupling-audit.json": {
+      "bytes": 5357,
+      "sha256": "1358a21507ff88a144f8525aa87eeb95936263ae6e3121e574bac60a28346e24"
+    },
+    "direct.json": {
+      "bytes": 2005260,
+      "sha256": "04f978c6665e015c6f6ad16b4910d73a0242f92d1c9e9b8a5113814d980f87f1"
+    },
+    "direct-replay.json": {
+      "bytes": 6982,
+      "sha256": "109940644e02eb63eed18f31f2a44916b86809bd4d636e69f3e99c1f513772e1"
+    },
+    "direct-trace.json": {
+      "bytes": 324922,
+      "sha256": "3c73ce06c9eeb0269c8e1bbd8a41971c473b80758e345720bc4fef6bd5cef7a3"
+    },
+    "classical.json": {
+      "bytes": 1231338,
+      "sha256": "e9661e2c1429a7ea94e084c566f99c869164d54e5c7c5a4f1d9a4d2bd96e3666"
+    },
+    "classical-replay.json": {
+      "bytes": 6955,
+      "sha256": "568aede7c1f3b9ad5f97ccdf77b69f6a13121d3700584ea7d585e0ce0788ccdd"
+    },
+    "classical-trace.json": {
+      "bytes": 212828,
+      "sha256": "afb4a6b56552103ca632663858091f85e94932a52d51020e251f9c06a7e60eec"
+    },
+    "reference.json": {
+      "bytes": 1356425,
+      "sha256": "4c6af8bdeecef66b120a42f6e77024123a2d7f6d78dc913092aa14548ef117da"
+    },
+    "reference-replay.json": {
+      "bytes": 6955,
+      "sha256": "98e77257b752927b3e28e0badd61f850e9729ba210cb8dc2e55e22ba526247bf"
+    },
+    "reference-trace.json": {
+      "bytes": 269781,
+      "sha256": "caaef0148060dacf62cd7fdcc79da381ddd37c12de9d4f8ce7a0ef9d30f492ae"
+    }
+  },
+  "sources": {
+    "exchange-20261007/build.py": {
+      "bytes": 5121,
+      "sha256": "2ddc4b6f81e7f7c10a17aafcb7a31e7cf77a9277f01cee2e954372f132659bb7"
+    },
+    "exchange-20261007/features.py": {
+      "bytes": 4532,
+      "sha256": "281cef61ee010da1afc87dfc2a4ca7b4759d520b48ffb2bbe06ff0673d4ef040"
+    },
+    "exchange-20261007/games.py": {
+      "bytes": 5689,
+      "sha256": "63e936cef4fc9c83fde2cecedef853fd515972bbbbe797eca99d74c595e7951e"
+    },
+    "exchange-20261007/replay.py": {
+      "bytes": 2547,
+      "sha256": "08befe036e4904c0173c7c6edc62491323b525b019a6b3bb837186df35935325"
+    },
+    "exchange-20261007/roots.py": {
+      "bytes": 3660,
+      "sha256": "cdfa99157752e44ff485478e1acd796a4fdcde67b19e63e1e1514c02d4a40a8f"
+    },
+    "exchange-20261007/adverse.py": {
+      "bytes": 3350,
+      "sha256": "23f5960563765b9d3f87cb5dfcb65b10285cc345104a1a6df6bcd0213a53bc8e"
+    },
+    "exchange-20261007/adverse_reference.py": {
+      "bytes": 2650,
+      "sha256": "990ebfdee194e1eaceb797556d13ade18e6916fef75e2bfccdcc7f3944ef66d7"
+    },
+    "exchange-20261007/trace.py": {
+      "bytes": 2586,
+      "sha256": "331b311682446cf55af8dbaa26c76a3e1f28ef92360efe98e5a94b8d9b69711c"
+    },
+    "exchange-20261007/collect.py": {
+      "bytes": 6783,
+      "sha256": "9fda778c5167ab686e3c5b5ef081f7be4f9e2bb2b943c2e45417e3d6f3c8549e"
+    },
+    "exchange-20261007/features-failed-root-import.py.txt": {
+      "bytes": 4424,
+      "sha256": "5bcfbd8f9ffca9063c3f98be3c441b3e542543dd5da0ef8075a9cd7fd94ae97a"
+    },
+    "exchange-20261007/trace-pre-cache.py.txt": {
+      "bytes": 2480,
+      "sha256": "b30cdec949fec30c2df9930d373f4b7c49dd20b067b714f541b5bf9ed6097796"
+    },
+    "exchange-20261007/collect-failed.py.txt": {
+      "bytes": 6493,
+      "sha256": "51edc9401c51b4049286c8b7a57e26aae13786db36f1a0f53629652094d6bd04"
+    },
+    "shared-chess_development.py": {
+      "bytes": 42701,
+      "sha256": "3f23f85996f60f42e4aab3f9c704331fa4214483c6956d55ba0f9669ea7047d1"
+    },
+    "shared-chess_capture_risk.py": {
+      "bytes": 2873,
+      "sha256": "a2c8a7061d2ef735366d9b6b49d55034d45f1b96ab5f4f42154a293f961b2258"
+    },
+    "shared-research_record.py": {
+      "bytes": 1869,
+      "sha256": "4d026c4c30859ff4c7b9ad02e66378eb15a1f771a6b1fd67deab54e3e54d597b"
+    },
+    "evaluate-exchange.cpp": {
+      "bytes": 75285,
+      "sha256": "5f7eb02cffa1e804ce04fe48c773f721339611ffeeae9c4a6dcf10365eac4e9b"
+    },
+    "exchange.patch": {
+      "bytes": 1760,
+      "sha256": "5a19acfc6e577930e653a4e4a4351391a19d58a257218f8a7ced81281fb5dee1"
+    },
+    "pinned-evaluate.cpp": {
+      "bytes": 74305,
+      "sha256": "b875e3f460216430daf5ad61bee19bf5c5d2efb4c0377a2cde5c2d9172012fc3"
+    },
+    "upstream-Copying.txt": {
+      "bytes": 35821,
+      "sha256": "0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b"
+    },
+    "material-variants.ini": {
+      "bytes": 355,
+      "sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0"
+    },
+    "suite.json": {
+      "bytes": 658,
+      "sha256": "51a8382618d6bdb9c3cc347ac9257c51d4a07861ae8e9d5cfbc83e3c3efb16e0"
+    }
+  },
+  "raw_archive": "docs/archive/development_exchange_20261007/raw.zip",
+  "sources_archive": "docs/archive/development_exchange_20261007/sources.zip",
+  "raw_zip_sha256": "1559c6175d36da6338a2789eeb4edfd9edf47fbab49396acdcfc7544008d927a",
+  "sources_zip_sha256": "c487957ff415ccec36c7a32780effabfd9b27dd3a94337902ae7268317e7d5b8",
+  "packaging_failure": {
+    "error": "Summary assembly AttributeError: tuple has no read_bytes after an overbroad source edit; all game/static/replay results and raw ZIP unaffected.",
+    "failed_collector_sha256": "51edc9401c51b4049286c8b7a57e26aae13786db36f1a0f53629652094d6bd04",
+    "failed_sources_zip_sha256": "a9a81b20b5535dd3e27c470b08f4cb96439e99ea215a4434ff71fc3539dcf0e7",
+    "action": "Preserve failed producer and derived sources ZIP locally; reuse independently verified unchanged raw ZIP; rebuild final source ZIP with corrected producer and failure record. No game/statics rerun."
+  },
+  "production_changes": "None; shared search/table/default APIs unchanged",
+  "public_push": "held"
+}

@@ -53,26 +53,29 @@ specific horizon failure, not blanket expansion. Chess/Shogi semantics differ.
 
 ## Immediate research direction
 
-Execute memo Main and its two revisable alternatives. Completed pilot adds one independently motivated royal-zone pressure term at4:
-material+4*(coverageWhite-coverageBlack-pressureWhite+pressureBlack).
-Zone is King square plus one-step pseudo destinations, including occupied
-neighbors; pressure is enemy nonroyal union intersecting it. Approximate
-positional feedback, not legal escape count, exact safety or intrinsic prices.
-25actual root/children and108native static controls match;28other objects reused.
+Execute memo Main and its two revisable alternatives. Latest native pilot uses
+material+4nonroyal coverage delta+(hangingBlack-hangingWhite)/2, the old fixed
+half pseudo hanging-risk approximation at native bitboard cost. Kings contribute
+attack/defense but are not discounted; pins/King legality/EP/exchanges remain
+limits.37Core/semantic and144native mirror/turn controls pass;28objects unchanged.
 
-All36prospective cells complete:royal/activity6W2L4U;royal/classical2W10L;
-royal/fullstrengthreference11L1U.3939played+144prefix replayzero. Same-root
-royal/activity12controls7same3finitebetter2worse;royal/classical8controls
-3same3finitebetter2worse. Exposed finite child references, not error rates/Elo.
-The retained adverse move g6g5 remains at1sec;4sec changes to c6c5, without
-establishing a unique selective-search fault. No default promotion or retuning.
+All36declared cells complete:4W1L7Uactivity,1W11Lclassical,11L1Ufull reference.
+4201played+144prefix replayzero.8exposed actual roots6same2finite worse;
+root/trace overlap is disclosed, not isolated node-cost evidence. Old bad root
+changes g6g5 to c6c5 at1/4sec; finite child references mate-16 versus cp-866,
+not all-defense safety. No default promotion or coefficient retuning.
+data/chess_exchange_20261007.json binds complete verified raw/source packages.
+Prior royal pilot remains in data/chess_royal_20261007.json, without active backlog.
 
-Identical3939action snapshots serialize2849928258to162534517bytes with no
-row/history/PV/final-state omission:94.296891percent fewer action bytes. Cohort
-and final saves remain additional; this is not a measured playing speedup.
-data/chess_royal_20261007.json links verified raw/source packages. Next select
-one decision-changing actual weakness, not further weight sweeps or a broad
-proof backlog. Current package/search defaults and unexposed holdout stay intact.
+Next priority: one fixed, actually supported intermediate external opponent
+setting2400 (observed UCI range1320-3190), paired exchange/activity with unchanged
+local settings and prefixes. Setting is not measured Elo; no tier/weight fishing.
+Dot agrees feedback-first, independently reading visible patch only. If both
+methods again saturate, stop adding that setting's games and isolate one same-leaf
+SEE/capture-price contrast. Source audit confirms variant overrides feed
+EvalPieceValue/CapturePieceValue while normal capture ordering/fast SEE use
+PieceValue; this is not proof of the cause of observed losses. No broad theory or
+framework expansion before useful failure feedback. Science remains OPEN.
 
 ## Recover detailed evidence only as needed
 

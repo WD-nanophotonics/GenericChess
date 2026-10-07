@@ -30,7 +30,8 @@ conditions stay visible. Development budget is justified by information per cost
 | Native material+4/Pawn208 nonroyal coverage, SinglePV1 |12direct wins; all6strong-reference cells lose | data/chess_activity_games_20261007.json |
 | Coverage, MultiPV3 |10W1L1Udirect;24strong-reference losses | data/chess_allocation_20261007.json |
 | Restored human-engineered classical leaf, same gc prices/search |22W2Ldirect;10L2Ustrong; ordinary native control1L3U | data/chess_classical_20261007.json |
-| Fixed4 royal-zone-pressure pilot | 36cells:6W2L4Uactivity,2W10Lclassical,11L1Ustrong reference | data/chess_royal_20261007.json |
+| Fixed4 royal-zone-pressure pilot |36cells:6W2L4Uactivity,2W10Lclassical,11L1Ustrong reference | data/chess_royal_20261007.json |
+| Native old half pseudo hanging-risk plus coverage |36cells:4W1L7Uactivity,1W11Lclassical,11L1Ustrong reference | data/chess_exchange_20261007.json |
 
 Classical is a diagnostic benchmark, not the rule-derived candidate. Native human
 SEE/pruning thresholds remain a disclosed coupling in material/coverage pilots.
@@ -40,16 +41,23 @@ replay differences. Verified raw/source packages are linked from each JSON index
 
 Retained adverse linearBlack root chooses g6g5 despite a finite mate reference;
 activity1/4sec retains it, while forced root/child searches and MultiPV avoid it.
-The royal pilot checks one approximation, not a weight sweep or exact safety law.
-Current formula: material+4*(nonroyalCoverageDelta-pressureWhite+pressureBlack),
-King zone=current square+one-step pseudo squares, including occupied neighbors.
-Semantic checks25actual roots/children+108static controls pass; all36games
-3939played+144prefix replayzero.12activity common roots7same3finitebetter2worse;
-8classical roots3same3finitebetter2worse. These exposed, outcome-conditioned
-finite references do not prove error rate. No default promotion or retuning.
-Identical per-action records reduce counterfactual action serialization by
-94.296891percent; completed cohorts and final writes remain additional. No
-selected PV/history omission and no measured old/new playing-throughput claim.
+The royal and half-risk pilots are optional approximations, not tuned laws or
+exact safety. Latest half-risk formula adds (hangingBlack-hangingWhite)/2 to
+material+4nonroyal coverage delta, with symmetric integer truncation. Kings
+attack/defend but are not discounted; pseudo pins/King legality/EP/exchange limits
+remain.37Core/semantic+144native mirror/turn checks pass,4201played+144prefix
+replayzero.8exposed roots6same2finite worse, with trace/root overlap disclosed.
+Old bad root selects c6c5 at1/4sec; equal finite references mate-16forg6g5 versus
+cp-866forc6c5 do not certify safety. No default promotion or coefficient fitting.
+
+Next declared feedback comparison fixes one supported UCI strength setting2400
+(range1320-3190) for both exchange/activity, identical two prefixes/three tables/
+colors/search resources. Stockfish's label is not measured Elo; weakened play can
+be stochastic. Complete games/PV/history stay recorded. If both methods saturate,
+stop adding matches at that setting and isolate one same-leaf SEE/capture-price
+contrast; do not hunt for a tier where the candidate wins. Native source confirms
+normal PieceValue capture ordering/fast SEE differ from variant EvalPieceValue/
+CapturePieceValue; it does not establish the cause of an observed failure.
 
 Shogi reachable neighbor q0/q2 often chooses identically at3.3-12x cost, while
 some old checked controls differ. Keep targeted q2 optional; Chess/Shogi semantic
