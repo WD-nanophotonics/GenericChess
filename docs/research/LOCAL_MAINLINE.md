@@ -132,6 +132,24 @@ for both, with28shared objects equal. Preserve earlier exchangee5c6 as timed-cho
 variation. Root hanging correction104native is not decision/loss causality;
 data/chess_candidate_risk_ablation_20261007.json binds the separate exact source.
 
+## Current fixed-prior feedback
+
+Latest fixed-prior feedback:24interleaved exchange/classical cells at native
+1.5sec against one fixed2400 reference setting give6W3D3U versus7W3L1D1U.
+Initial candidate-failure expectation is contradicted; classical's unit cells
+remain0W3L1U, while geometric3W1D and linear4W. Separate8same-classical-leaf
+rule-table versus unit cells give each rule table4W. This is scoped useful prior
+deployment within a human positional/price-coupled search bundle, not fitting,
+table selection, generic evaluator admission or calibrated Elo. Old stronger
+reference failures and changed resource/policy conditions stay distinct.
+All32streams3386played+192prefix replayzero;19archive entries extracted/rehashed.
+Root28 fixed1M/3M/10M allocation curve reaches all9budgets: exchange h2h4/e5c6/
+e5d3, activity alwaysh2h4, classicale5c6/e5c6/e5d3. Leaf/allocation interaction
+precludes stable single-term blame; reused child scores remain finite references.
+data/chess_positional_feedback_20261007.json retains exact raw/source evidence.
+Next useful decision distinguishes unchanged rule priors against a stronger,
+non-saturated control within the same supported bundle; no new root-fitted term.
+
 ## Recover detailed evidence only as needed
 
 Exact previous941line mainline is in repository-root

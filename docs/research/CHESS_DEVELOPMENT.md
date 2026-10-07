@@ -109,6 +109,50 @@ earlier e5c6 exchange call as timed-choice variability, not a cherry-picked
 failure certificate. The104native hanging correction is a static contribution,
 not a proven cause. data/chess_candidate_risk_ablation_20261007.json binds source.
 
+## Fixed-prior feedback, 2026-10-07
+
+Two existing6ply prefixes, all three frozen tables and both native colors give
+24interleaved exchange/classical streams versus the same reference2400 setting.
+Native SinglePV1/Threads1/Hash16/NNUEfalse uses1.5sec; reference500000nodes/1.5sec
+fuse, Threads1/Hash16, UCI_LimitStrengthtrue. Fresh engines/hash per cell,
+160subsequentplies, explicit immediate Chess claim policy. The reference label
+is stochastic and is not measured Elo; old full-strength failures remain intact.
+
+| Frozen table | Half-risk candidate | Classical diagnostic bundle |
+|---|---|---|
+| geometric_half |3W0L0D1U|3W0L1D0U|
+| linear_mixture |2W0L1D1U|4W0L0D0U|
+| unit |1W0L2D1U|0W3L0D1U|
+
+The initial candidate-failure expectation is contradicted here:6W3D3U. Classical
+7W3L1D1U is not universal improvement; its adverse unit cells are retained.
+These differing resources/prefix/draw conditions are not a causal before/after
+strength gain. No price choice, coefficient fitting or default admission follows.
+
+A separate8cell direct comparison holds the classical executable/leaf/search
+fixed, both players1.5sec, and changes only their configured fixed tables.
+Geometric and linear each win4/4 versus unit across the same prefixes/colors.
+This is useful fixed-prior deployment feedback within a supported human positional
+bundle. Native PSQT/material/SEE/pruning remain price-coupled: not a pure prior
+effect, a generic rule-derived position evaluator or independent holdout evidence.
+Unit is now a weak/saturated direct control in these cells; the next useful test
+must distinguish the unchanged rule priors without fitting or selecting a table.
+
+The separate exposed root28 fixed-node curve uses1M/3M/10Mnodes, fresh hash,
+SinglePV1/Threads1/Hash16, full history and10sec safety fuse. All9cells reach the
+node budget. Exchange chooses h2h4/e5c6/e5d3, activity h2h4/h2h4/h2h4, classical
+e5c6/e5c6/e5d3. This establishes leaf/allocation interaction, not single-term
+loss causality. Reused child reference scores remain finite old observations.
+
+Both game cohorts complete:3386played+192prefix plies, full Core/legal sets,
+history/selectedPV/finalstate/draw-witness replayzero;19ZIPentries actually
+extracted/rehashed. Cohort compute/recording wall3684.630sec; the24stream logger
+records2625writes/109001617bytes/11.546sec before final save. Controller CPU,
+native-reported nodes/time are separate; native CPU/cache/scored leaves unknown.
+Different trajectory lengths prohibit interpreting total nodes as throughput.
+Portable record: data/chess_positional_feedback_20261007.json. Exact raw/producers
+and recovery index: ../archive/development_positional_feedback_20261007/.
+
 ## Historical detail
 
 The full preceding guide, old protocols and failed attempts are preserved in the
