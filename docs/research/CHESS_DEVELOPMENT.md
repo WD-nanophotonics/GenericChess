@@ -1481,3 +1481,78 @@ and verified rawZIP reuse repaired it. Exact failed collector/partial sourceZIP
 remain ignored locally; public sources contain no private address. No scientific
 samples rerun or overwritten. Keep optional activity and defaultSinglePV;
 continue a concrete failure, not a universal robustness proof. Science OPEN.
+
+## Restored classical leaf control:20261007
+
+The pinned material macro occurs only at Eval::evaluate. An isolated object
+compiled without it restores the native classical bundle; all other objects
+are hash-identical, NNUE disabled. This is a human-engineered external
+benchmark, never a rule-derived candidate or price fitting target. In gc
+paired controls the fixed tables remain equal, but native PSQT, imbalance,
+pawn structure, mobility, king danger, threats, passed pawns, scaling, tempo
+and specialized endgame logic return. Many internal thresholds still use
+native PieceValue. gc names disable chess-only lazy shortcuts. Therefore
+this does not isolate a single positional term or claim default engine strength.
+
+Prospectively fixed two exposed prefixes, three unchanged tables, both colors,
+SinglePV1/Threads1/Hash16/NNUEfalse,1sec each,160 subsequent-ply cap:
+
+| Classical opponent | Geometric | Linear | Unit |
+|---|---|---|---|
+| Pure, same table/search |4W|4W|4W|
+| Activity, same table/search |4W|4W|2W2L|
+| Full-strength reference50000nodes/1sec |3L1U|3L1U|4L|
+
+Direct24streams22W2L took2066.760sec,2134played+96prefix replayzero.
+Both adverse unit/activity cells remain: open-file-e classicalWhite loses
+126plies, central-d classicalBlack loses101plies. The declared12reference
+streams10L2U took841.006sec,1587played+48prefix replayzero. Unfinished is not
+draw, late defeat is not improvement, and small exposed cohorts imply no Elo.
+
+One bounded followup changes the configuration bundle: ordinary Chess variant,
+original native human prices and lazy shortcuts, same classical binary/search,
+1sec versus the same reference. Four fixed prefix/color cells give1L3U,
+345.834sec,638played+16prefix replayzero. Existing unit routing token only
+selects the local adapter; actual policy is native_classical and chess.Board.
+This separates configuration context but does not isolate prices, establish
+strength, or license fitting candidates to human values. All40streams retain
+4359played+160prefix plies, legal-set/board/rights/EP/history/final-state and
+reported PV replay, zero differences. No production/default changes.
+
+Fixed first classical win/loss versus activity,16/32 roots for both sides:
+8same-root controls compare all3leaves at equal1sec, freshhash. For both
+classical-versus-pure and classical-versus-activity:2same,4finitecpbetter,
+1worse,1equal. Child reference500000nodes/1sec; finite small deltas unreliable,
+outcome-conditioned exposed sampling is not a tactical error-rate. Preserve
+all histories, choices and unfavorable children. Source/build qualification
+and command hashes are archived; private project paths in portable build
+report are normalized, original build hash and local original retained.
+Qualification options field records defaults, while executed configure calls
+explicitly set NNUEfalse/Threads1/Hash16.
+
+Memo Shogi Silver c9xd8 reply20 is an actual new legal fullstock neighbor of
+the19-ply checking-drop prefix. Four existing orderedTTq2ply controls complete
+with same choices: geometric d7d8=TP,unit d7d8. q0/q2 costs1.076/6.087sec
+and1.046/3.406sec respectively; geometry score34691to43103,unit50000
+unchanged. Classification pushes0to3856/2189. No general q2 promotion, no
+representative game/holdout/WDL claim; held-half law remains approximate.
+
+Static compact MultiPV projection retains2390 old completed rows, original
+rich raw unchanged:4079696to2791122bytes,31.585049percent fewer. Selected
+move, full selected PV and top-level resource fields have zero mismatches;
+removed other full PVs/per-line duplicate nodes/time remain in original ZIPs.
+This is byte accounting, not measured game throughput. Session checkpoint
+31.586percent was a rounded arithmetic typo; exact byte totals above govern.
+New direct/reference/default recording console totals include final saves:
+2160writes/2594489538bytes/59.049sec;1601/1175010042/31.358sec;
+644/172739405/5.963sec. Stored cost snapshots exclude each final save.
+These observed costs justify keeping compact evidence, not a new framework.
+
+Decision: retain activity optional, SinglePV default. The classical bundle
+materially improves direct play but leaves stronger-reference ability open;
+next diagnose a concrete royal-safety/positional failure and form one
+independently motivated generic hypothesis, not a coefficient sweep or broad
+proof backlog. Portable index data/chess_classical_20261007.json and verified
+raw/source ZIPs in docs/archive/development_classical_20261007 preserve
+conditions, build/source hashes, all failures and separate Shogi evidence.
+No Xiangqi human holdout, price fitting, extra workers or public push.

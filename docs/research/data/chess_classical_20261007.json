@@ -1,0 +1,3039 @@
+{
+  "scope": "StandardChess exposed development; classical human-engineered benchmark, not generic rule-derived candidate, price calibration or isolated positional-term effect. No default/Elo/holdout/strength claim. Shogi distinct reachable cooperative prefix control.",
+  "source_pin": "9f778da667f6e07dae1e85d3e2ea204fc6dee94d",
+  "parent_sha": "04a756f51642060e4f6e000ac786f7d03a1aa575",
+  "build": {
+    "complete": true,
+    "commands": [
+      {
+        "command": [
+          "{PROJECT_ROOT}\\.venv\\Scripts\\python.exe",
+          "-m",
+          "ziglang",
+          "c++",
+          "-target",
+          "x86_64-windows-gnu",
+          "-std=c++17",
+          "-O2",
+          "-fno-exceptions",
+          "-fno-strict-aliasing",
+          "-DNDEBUG",
+          "-DIS_64BIT",
+          "-DNNUE_EMBEDDING_OFF",
+          "-I",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\Fairy-Stockfish-9f778da667f6e07dae1e85d3e2ea204fc6dee94d\\src",
+          "-c",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\Fairy-Stockfish-9f778da667f6e07dae1e85d3e2ea204fc6dee94d\\src\\evaluate.cpp",
+          "-o",
+          "{PROJECT_ROOT}\\.local_agent\\classical-control-20261007\\evaluate.cpp.o"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "{PROJECT_ROOT}\\.venv\\Scripts\\python.exe",
+          "-m",
+          "ziglang",
+          "c++",
+          "-target",
+          "x86_64-windows-gnu",
+          "-std=c++17",
+          "-O2",
+          "-fno-exceptions",
+          "-fno-strict-aliasing",
+          "-DNDEBUG",
+          "-DIS_64BIT",
+          "-DNNUE_EMBEDDING_OFF",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\benchmark.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\bitbase.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\bitboard.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\endgame.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\classical-control-20261007\\evaluate.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\main.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\material.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\misc.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\movegen.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\movepick.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\pawns.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\position.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\psqt.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\search.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\thread.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\timeman.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\tt.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\uci.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\ucioption.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\tune.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\syzygy_tbprobe.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\nnue_evaluate_nnue.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\nnue_features_half_ka_v2.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\partner.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\parser.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\piece.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\variant.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\xboard.cpp.o",
+          "{PROJECT_ROOT}\\.local_agent\\mature-search\\build\\nnue_features_half_ka_v2_variants.cpp.o",
+          "-o",
+          "{PROJECT_ROOT}\\.local_agent\\classical-control-20261007\\fairy-classical.exe",
+          "-lpthread",
+          "-ladvapi32",
+          "-Wl,--stack,8388608"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    ],
+    "wall_seconds": 2.5587676998693496,
+    "binary_sha256": {
+      "pure": "477628ae141c6e5fb7dcb562e31e3bc40eab95b20c8b966ece131a1dbf090999",
+      "activity": "8f9dab0fc47ef7a29014d55a349502344509d5a65d6a8a19a7f5a9bfb8dad099",
+      "classical": "2f67539e3b58295901e365edb722fba1e43220185e97eaafb18f38df9d7a8232"
+    }
+  },
+  "qualification_note": "qualification.json options field records option defaults, not configured values; original executed calls explicitly configure Threads1/Hash16/Use NNUEfalse. Build and producers preserve those settings.",
+  "groups": {
+    "direct": {
+      "declaration": {
+        "question": "Can unchanged search with restored classical leaf play effectively, and how do pure/activity compare under the same tables?",
+        "scope": "Exposed Standard Chess development. Classical human-engineered positional/material machinery is an external benchmark, never a rule-derived candidate or price fitting target. Same gc tables for paired games; classical PSQT/imbalance/endgame heuristics remain native and are a deliberate bundle, not an isolated single term.",
+        "design": "First qualify source/build/options. Then24direct games: two fixed prefixes, three unchanged gc tables, both colors, classical versus pure/activity interleaved. Follow12classical versus fixed full-strength reference games under the same prefixes/tables/colors. All native engines SinglePV1/Threads1/Hash16/NNUEfalse; local1sec, reference50000nodes/1sec,160subsequentplies. Fresh game/hash each cell. Retain failures/unfinished; no silent rerun.",
+        "decision": "Classical success while candidates fail implicates leaf/search coupling rather than basic search capacity; failure cannot establish search incapacity. Neither direction isolates a single classical term or proves generic strength. No coefficient/default promotion.",
+        "cost": "Finite36sequential games; direct upper3840requestedsec, reference upper960local+960referencefuse sec plus Core/recording. One game at a time, stop check each action. Checkpoint after direct cohort before continuing declared reference cohort; no result-dependent budget extension.",
+        "source_eval_sha256": "b875e3f460216430daf5ad61bee19bf5c5d2efb4c0377a2cde5c2d9172012fc3",
+        "config_sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0",
+        "adapter_sha256": "3f23f85996f60f42e4aab3f9c704331fa4214483c6956d55ba0f9669ea7047d1",
+        "reference_sha256": "55aa40c857de30b79dbe4f8e4c335ee2b23815cf2f100a6630d54761fcad3b85",
+        "reused_objects": {
+          "benchmark.cpp": "0c51f9748a29d6caa34342b8a77015b9d1872a65a89155cf5e29d9db9054c29a",
+          "bitbase.cpp": "a53b312e704268afd93c2eb6d75c4c48e4989c2d8f4bdeb87a681f380307517d",
+          "bitboard.cpp": "d08a7b206b8bcbfae6070b68b975b596ddd96d61fd1bbc7596f7bebf02eee884",
+          "endgame.cpp": "5bda2bb9aabb2e1ed8ad9a5fb7f24d618d6a7f0552b4e16765df5760fbe5c21d",
+          "main.cpp": "315d6b3b9465e8930a9b8a7453353f982d02f9886539b79adcc958666ce1438c",
+          "material.cpp": "f4d3a760b881e217f9691e86794a5adabc5bd8e0ee50226bc680862be2e5efb8",
+          "misc.cpp": "b844d9b3a32f19306195ddbba3225cd9ecc4daea2b2dff85bffffeca405621ea",
+          "movegen.cpp": "1978d3a78e2dc2278d24d190648ec5858c8c43f8031cb62f552adddf002277c2",
+          "movepick.cpp": "6e7a77628d389786afe99c8862ba080bb01319815cf0c69548cbc4bce3a3aada",
+          "pawns.cpp": "643bfba3ef80cddb1c39c9b7b67870cf1ae46ff72c5807ffb8fffadfb8eba0b9",
+          "position.cpp": "129e66b930ac21ccfc018ca55e6882baba3a79743a2db0557d74c0ff218e0bd3",
+          "psqt.cpp": "8e644790bbd1c5c8e3cd61140f6ca55d73ec4393759abd067de56484b3e7c6b8",
+          "search.cpp": "94e67fcd134bbe680d6ecd4ef753aa81d908595701918092f522a7ce1a994e02",
+          "thread.cpp": "86bd378d5bfe9e5cf40e24bc19ccf4c65a2a6ba892e6dd33ca3b0df623533e77",
+          "timeman.cpp": "298801b756aa3aee4286c87d5cd38f9dccf0f4e79a32134f909542494687e2e0",
+          "tt.cpp": "e91763147e830b485fba6fb55a1e52238ca3b144f3b02f56a5cad542b3dc3b15",
+          "uci.cpp": "aeeb106ae7d67e069d1a32bee683bdc75b2661c1fb1eb8ab61d2ad46ab5f4d8e",
+          "ucioption.cpp": "553e996024cb7f713000c4e4e5d2c251cb0ea96c2534e0d24709ce865d09b7a3",
+          "tune.cpp": "9592ec801fa5145edaf194e9be018a51f5840fc2506ec2f1f5fc496d2f9e3bee",
+          "syzygy/tbprobe.cpp": "1947ef6bf304cdb602366fcd4de9543d9acca13fcac3d0a22ce878442052e2b5",
+          "nnue/evaluate_nnue.cpp": "49955cefc952cc88540706c3471d718e14569df7ef6359a8aa4257647969ccaf",
+          "nnue/features/half_ka_v2.cpp": "d5a48b7900e08012d4ef9bbebfcf9f44807ff65254bda13f1e1ee207ad76415e",
+          "partner.cpp": "05ec0c68c7733b6603037fc1fcb6d766db64321149ec7364513ebe197cf18217",
+          "parser.cpp": "d6d9d295bdfe068fe4d3f062d9ac2c57d674381305e5f63d4383d3e2e4bf40a0",
+          "piece.cpp": "6db2b4128899199c5dccc6f7500970b2a2b0b51e6b7b2c172d851bac78c9e861",
+          "variant.cpp": "215f2cf2237c231da98abb0fe6fd5f63123b9ec13f025f88a23414fe4a684102",
+          "xboard.cpp": "c1954b614bf1d19f1266e4fe5f5f119cc733c539042c03c876366cafe023b38a",
+          "nnue/features/half_ka_v2_variants.cpp": "98564ec47293b3b62d93a14dd60c72392a6073387ab461d180bd65d21b289443"
+        }
+      },
+      "methods": {
+        "geometric_half/pure": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 0,
+          "unfinished": 0
+        },
+        "geometric_half/activity": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 0,
+          "unfinished": 0
+        },
+        "linear_mixture/pure": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 0,
+          "unfinished": 0
+        },
+        "linear_mixture/activity": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 0,
+          "unfinished": 0
+        },
+        "unit/pure": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 0,
+          "unfinished": 0
+        },
+        "unit/activity": {
+          "wins": 2,
+          "losses": 2,
+          "draws": 0,
+          "unfinished": 0
+        }
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "open-file-e",
+          "table": "geometric_half",
+          "classical_color": 0,
+          "opponent_mode": "pure",
+          "plies": 89,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 45,
+              "wall_seconds": 41.16865709959529,
+              "reported_nodes": 66561569
+            },
+            "pure": {
+              "calls": 44,
+              "wall_seconds": 40.17196340137161,
+              "reported_nodes": 133060872
+            }
+          }
+        },
+        {
+          "index": 1,
+          "id": "open-file-e",
+          "table": "geometric_half",
+          "classical_color": 0,
+          "opponent_mode": "activity",
+          "plies": 107,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 54,
+              "wall_seconds": 51.296200999291614,
+              "reported_nodes": 81700766
+            },
+            "activity": {
+              "calls": 53,
+              "wall_seconds": 50.366280001122504,
+              "reported_nodes": 145671991
+            }
+          }
+        },
+        {
+          "index": 2,
+          "id": "open-file-e",
+          "table": "geometric_half",
+          "classical_color": 1,
+          "opponent_mode": "pure",
+          "plies": 112,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "pure": {
+              "calls": 56,
+              "wall_seconds": 52.581890400266275,
+              "reported_nodes": 197783784
+            },
+            "classical": {
+              "calls": 56,
+              "wall_seconds": 52.427426300244406,
+              "reported_nodes": 116035773
+            }
+          }
+        },
+        {
+          "index": 3,
+          "id": "open-file-e",
+          "table": "geometric_half",
+          "classical_color": 1,
+          "opponent_mode": "activity",
+          "plies": 100,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "activity": {
+              "calls": 50,
+              "wall_seconds": 47.16791140008718,
+              "reported_nodes": 143090295
+            },
+            "classical": {
+              "calls": 50,
+              "wall_seconds": 47.1353541999124,
+              "reported_nodes": 85266883
+            }
+          }
+        },
+        {
+          "index": 4,
+          "id": "open-file-e",
+          "table": "linear_mixture",
+          "classical_color": 0,
+          "opponent_mode": "pure",
+          "plies": 65,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 33,
+              "wall_seconds": 30.074823699658737,
+              "reported_nodes": 57506379
+            },
+            "pure": {
+              "calls": 32,
+              "wall_seconds": 29.11165989912115,
+              "reported_nodes": 100122685
+            }
+          }
+        },
+        {
+          "index": 5,
+          "id": "open-file-e",
+          "table": "linear_mixture",
+          "classical_color": 0,
+          "opponent_mode": "activity",
+          "plies": 95,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 48,
+              "wall_seconds": 44.406074800528586,
+              "reported_nodes": 93617365
+            },
+            "activity": {
+              "calls": 47,
+              "wall_seconds": 43.3603985006921,
+              "reported_nodes": 147365470
+            }
+          }
+        },
+        {
+          "index": 6,
+          "id": "open-file-e",
+          "table": "linear_mixture",
+          "classical_color": 1,
+          "opponent_mode": "pure",
+          "plies": 128,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "pure": {
+              "calls": 64,
+              "wall_seconds": 61.1470676001627,
+              "reported_nodes": 187711381
+            },
+            "classical": {
+              "calls": 64,
+              "wall_seconds": 60.927306298632175,
+              "reported_nodes": 111556603
+            }
+          }
+        },
+        {
+          "index": 7,
+          "id": "open-file-e",
+          "table": "linear_mixture",
+          "classical_color": 1,
+          "opponent_mode": "activity",
+          "plies": 88,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "activity": {
+              "calls": 44,
+              "wall_seconds": 41.15893659950234,
+              "reported_nodes": 101052754
+            },
+            "classical": {
+              "calls": 44,
+              "wall_seconds": 41.1599167000968,
+              "reported_nodes": 65655380
+            }
+          }
+        },
+        {
+          "index": 8,
+          "id": "open-file-e",
+          "table": "unit",
+          "classical_color": 0,
+          "opponent_mode": "pure",
+          "plies": 57,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 29,
+              "wall_seconds": 26.129151300061494,
+              "reported_nodes": 45649631
+            },
+            "pure": {
+              "calls": 28,
+              "wall_seconds": 25.137359498767182,
+              "reported_nodes": 78307443
+            }
+          }
+        },
+        {
+          "index": 9,
+          "id": "open-file-e",
+          "table": "unit",
+          "classical_color": 0,
+          "opponent_mode": "activity",
+          "plies": 126,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 63,
+              "wall_seconds": 59.4239273997955,
+              "reported_nodes": 132612766
+            },
+            "activity": {
+              "calls": 63,
+              "wall_seconds": 59.24472500011325,
+              "reported_nodes": 214496165
+            }
+          }
+        },
+        {
+          "index": 10,
+          "id": "open-file-e",
+          "table": "unit",
+          "classical_color": 1,
+          "opponent_mode": "pure",
+          "plies": 62,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "pure": {
+              "calls": 31,
+              "wall_seconds": 28.11850669956766,
+              "reported_nodes": 95603967
+            },
+            "classical": {
+              "calls": 31,
+              "wall_seconds": 28.114430099725723,
+              "reported_nodes": 53743890
+            }
+          }
+        },
+        {
+          "index": 11,
+          "id": "open-file-e",
+          "table": "unit",
+          "classical_color": 1,
+          "opponent_mode": "activity",
+          "plies": 158,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "activity": {
+              "calls": 79,
+              "wall_seconds": 76.27855310053565,
+              "reported_nodes": 248590656
+            },
+            "classical": {
+              "calls": 79,
+              "wall_seconds": 76.2654313009698,
+              "reported_nodes": 149818199
+            }
+          }
+        },
+        {
+          "index": 12,
+          "id": "central-d",
+          "table": "geometric_half",
+          "classical_color": 0,
+          "opponent_mode": "pure",
+          "plies": 59,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 30,
+              "wall_seconds": 27.13330340082757,
+              "reported_nodes": 48623223
+            },
+            "pure": {
+              "calls": 29,
+              "wall_seconds": 26.136423299787566,
+              "reported_nodes": 82579952
+            }
+          }
+        },
+        {
+          "index": 13,
+          "id": "central-d",
+          "table": "geometric_half",
+          "classical_color": 0,
+          "opponent_mode": "activity",
+          "plies": 85,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 43,
+              "wall_seconds": 40.22740349895321,
+              "reported_nodes": 64549618
+            },
+            "activity": {
+              "calls": 42,
+              "wall_seconds": 39.241532700369135,
+              "reported_nodes": 104828163
+            }
+          }
+        },
+        {
+          "index": 14,
+          "id": "central-d",
+          "table": "geometric_half",
+          "classical_color": 1,
+          "opponent_mode": "pure",
+          "plies": 66,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "pure": {
+              "calls": 33,
+              "wall_seconds": 30.11272060009651,
+              "reported_nodes": 95171082
+            },
+            "classical": {
+              "calls": 33,
+              "wall_seconds": 30.10550559964031,
+              "reported_nodes": 52241868
+            }
+          }
+        },
+        {
+          "index": 15,
+          "id": "central-d",
+          "table": "geometric_half",
+          "classical_color": 1,
+          "opponent_mode": "activity",
+          "plies": 60,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "activity": {
+              "calls": 30,
+              "wall_seconds": 27.146436200477183,
+              "reported_nodes": 73400495
+            },
+            "classical": {
+              "calls": 30,
+              "wall_seconds": 27.13435530033894,
+              "reported_nodes": 47121051
+            }
+          }
+        },
+        {
+          "index": 16,
+          "id": "central-d",
+          "table": "linear_mixture",
+          "classical_color": 0,
+          "opponent_mode": "pure",
+          "plies": 57,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 29,
+              "wall_seconds": 26.11318270000629,
+              "reported_nodes": 46816998
+            },
+            "pure": {
+              "calls": 28,
+              "wall_seconds": 25.121131299529225,
+              "reported_nodes": 79576467
+            }
+          }
+        },
+        {
+          "index": 17,
+          "id": "central-d",
+          "table": "linear_mixture",
+          "classical_color": 0,
+          "opponent_mode": "activity",
+          "plies": 59,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 30,
+              "wall_seconds": 27.07706889999099,
+              "reported_nodes": 49877039
+            },
+            "activity": {
+              "calls": 29,
+              "wall_seconds": 26.091564600123093,
+              "reported_nodes": 74747588
+            }
+          }
+        },
+        {
+          "index": 18,
+          "id": "central-d",
+          "table": "linear_mixture",
+          "classical_color": 1,
+          "opponent_mode": "pure",
+          "plies": 78,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "pure": {
+              "calls": 39,
+              "wall_seconds": 36.21595189976506,
+              "reported_nodes": 115986005
+            },
+            "classical": {
+              "calls": 39,
+              "wall_seconds": 36.21156889991835,
+              "reported_nodes": 62058844
+            }
+          }
+        },
+        {
+          "index": 19,
+          "id": "central-d",
+          "table": "linear_mixture",
+          "classical_color": 1,
+          "opponent_mode": "activity",
+          "plies": 108,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "activity": {
+              "calls": 54,
+              "wall_seconds": 51.27303539891727,
+              "reported_nodes": 150753292
+            },
+            "classical": {
+              "calls": 54,
+              "wall_seconds": 51.26435650046915,
+              "reported_nodes": 88871206
+            }
+          }
+        },
+        {
+          "index": 20,
+          "id": "central-d",
+          "table": "unit",
+          "classical_color": 0,
+          "opponent_mode": "pure",
+          "plies": 59,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 30,
+              "wall_seconds": 27.12014660006389,
+              "reported_nodes": 51297661
+            },
+            "pure": {
+              "calls": 29,
+              "wall_seconds": 26.141653100028634,
+              "reported_nodes": 90061499
+            }
+          }
+        },
+        {
+          "index": 21,
+          "id": "central-d",
+          "table": "unit",
+          "classical_color": 0,
+          "opponent_mode": "activity",
+          "plies": 63,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 32,
+              "wall_seconds": 29.180334799923003,
+              "reported_nodes": 48192942
+            },
+            "activity": {
+              "calls": 31,
+              "wall_seconds": 28.313818799797446,
+              "reported_nodes": 74839637
+            }
+          }
+        },
+        {
+          "index": 22,
+          "id": "central-d",
+          "table": "unit",
+          "classical_color": 1,
+          "opponent_mode": "pure",
+          "plies": 152,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "pure": {
+              "calls": 76,
+              "wall_seconds": 72.53299620049074,
+              "reported_nodes": 287924582
+            },
+            "classical": {
+              "calls": 76,
+              "wall_seconds": 72.29321080027148,
+              "reported_nodes": 174251058
+            }
+          }
+        },
+        {
+          "index": 23,
+          "id": "central-d",
+          "table": "unit",
+          "classical_color": 1,
+          "opponent_mode": "activity",
+          "plies": 101,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "activity": {
+              "calls": 51,
+              "wall_seconds": 47.387974401703104,
+              "reported_nodes": 165352866
+            },
+            "classical": {
+              "calls": 50,
+              "wall_seconds": 46.44842950068414,
+              "reported_nodes": 101637247
+            }
+          }
+        }
+      ],
+      "wall_seconds": 2066.7601041998714,
+      "recording_cost_before_final_save": {
+        "writes": 2159,
+        "bytes": 2592048876,
+        "seconds": 58.983001607703045
+      },
+      "replay": {
+        "streams": 24,
+        "played_plies": 2134,
+        "prefix_plies": 96,
+        "mismatches": 0
+      }
+    },
+    "reference": {
+      "declaration": {
+        "question": "Can unchanged search with restored classical leaf play effectively, and how do pure/activity compare under the same tables?",
+        "scope": "Exposed Standard Chess development. Classical human-engineered positional/material machinery is an external benchmark, never a rule-derived candidate or price fitting target. Same gc tables for paired games; classical PSQT/imbalance/endgame heuristics remain native and are a deliberate bundle, not an isolated single term.",
+        "design": "First qualify source/build/options. Then24direct games: two fixed prefixes, three unchanged gc tables, both colors, classical versus pure/activity interleaved. Follow12classical versus fixed full-strength reference games under the same prefixes/tables/colors. All native engines SinglePV1/Threads1/Hash16/NNUEfalse; local1sec, reference50000nodes/1sec,160subsequentplies. Fresh game/hash each cell. Retain failures/unfinished; no silent rerun.",
+        "decision": "Classical success while candidates fail implicates leaf/search coupling rather than basic search capacity; failure cannot establish search incapacity. Neither direction isolates a single classical term or proves generic strength. No coefficient/default promotion.",
+        "cost": "Finite36sequential games; direct upper3840requestedsec, reference upper960local+960referencefuse sec plus Core/recording. One game at a time, stop check each action. Checkpoint after direct cohort before continuing declared reference cohort; no result-dependent budget extension.",
+        "source_eval_sha256": "b875e3f460216430daf5ad61bee19bf5c5d2efb4c0377a2cde5c2d9172012fc3",
+        "config_sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0",
+        "adapter_sha256": "3f23f85996f60f42e4aab3f9c704331fa4214483c6956d55ba0f9669ea7047d1",
+        "reference_sha256": "55aa40c857de30b79dbe4f8e4c335ee2b23815cf2f100a6630d54761fcad3b85",
+        "reused_objects": {
+          "benchmark.cpp": "0c51f9748a29d6caa34342b8a77015b9d1872a65a89155cf5e29d9db9054c29a",
+          "bitbase.cpp": "a53b312e704268afd93c2eb6d75c4c48e4989c2d8f4bdeb87a681f380307517d",
+          "bitboard.cpp": "d08a7b206b8bcbfae6070b68b975b596ddd96d61fd1bbc7596f7bebf02eee884",
+          "endgame.cpp": "5bda2bb9aabb2e1ed8ad9a5fb7f24d618d6a7f0552b4e16765df5760fbe5c21d",
+          "main.cpp": "315d6b3b9465e8930a9b8a7453353f982d02f9886539b79adcc958666ce1438c",
+          "material.cpp": "f4d3a760b881e217f9691e86794a5adabc5bd8e0ee50226bc680862be2e5efb8",
+          "misc.cpp": "b844d9b3a32f19306195ddbba3225cd9ecc4daea2b2dff85bffffeca405621ea",
+          "movegen.cpp": "1978d3a78e2dc2278d24d190648ec5858c8c43f8031cb62f552adddf002277c2",
+          "movepick.cpp": "6e7a77628d389786afe99c8862ba080bb01319815cf0c69548cbc4bce3a3aada",
+          "pawns.cpp": "643bfba3ef80cddb1c39c9b7b67870cf1ae46ff72c5807ffb8fffadfb8eba0b9",
+          "position.cpp": "129e66b930ac21ccfc018ca55e6882baba3a79743a2db0557d74c0ff218e0bd3",
+          "psqt.cpp": "8e644790bbd1c5c8e3cd61140f6ca55d73ec4393759abd067de56484b3e7c6b8",
+          "search.cpp": "94e67fcd134bbe680d6ecd4ef753aa81d908595701918092f522a7ce1a994e02",
+          "thread.cpp": "86bd378d5bfe9e5cf40e24bc19ccf4c65a2a6ba892e6dd33ca3b0df623533e77",
+          "timeman.cpp": "298801b756aa3aee4286c87d5cd38f9dccf0f4e79a32134f909542494687e2e0",
+          "tt.cpp": "e91763147e830b485fba6fb55a1e52238ca3b144f3b02f56a5cad542b3dc3b15",
+          "uci.cpp": "aeeb106ae7d67e069d1a32bee683bdc75b2661c1fb1eb8ab61d2ad46ab5f4d8e",
+          "ucioption.cpp": "553e996024cb7f713000c4e4e5d2c251cb0ea96c2534e0d24709ce865d09b7a3",
+          "tune.cpp": "9592ec801fa5145edaf194e9be018a51f5840fc2506ec2f1f5fc496d2f9e3bee",
+          "syzygy/tbprobe.cpp": "1947ef6bf304cdb602366fcd4de9543d9acca13fcac3d0a22ce878442052e2b5",
+          "nnue/evaluate_nnue.cpp": "49955cefc952cc88540706c3471d718e14569df7ef6359a8aa4257647969ccaf",
+          "nnue/features/half_ka_v2.cpp": "d5a48b7900e08012d4ef9bbebfcf9f44807ff65254bda13f1e1ee207ad76415e",
+          "partner.cpp": "05ec0c68c7733b6603037fc1fcb6d766db64321149ec7364513ebe197cf18217",
+          "parser.cpp": "d6d9d295bdfe068fe4d3f062d9ac2c57d674381305e5f63d4383d3e2e4bf40a0",
+          "piece.cpp": "6db2b4128899199c5dccc6f7500970b2a2b0b51e6b7b2c172d851bac78c9e861",
+          "variant.cpp": "215f2cf2237c231da98abb0fe6fd5f63123b9ec13f025f88a23414fe4a684102",
+          "xboard.cpp": "c1954b614bf1d19f1266e4fe5f5f119cc733c539042c03c876366cafe023b38a",
+          "nnue/features/half_ka_v2_variants.cpp": "98564ec47293b3b62d93a14dd60c72392a6073387ab461d180bd65d21b289443"
+        }
+      },
+      "methods": {
+        "geometric_half/reference": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0,
+          "unfinished": 1
+        },
+        "linear_mixture/reference": {
+          "wins": 0,
+          "losses": 3,
+          "draws": 0,
+          "unfinished": 1
+        },
+        "unit/reference": {
+          "wins": 0,
+          "losses": 4,
+          "draws": 0,
+          "unfinished": 0
+        }
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "open-file-e",
+          "table": "geometric_half",
+          "classical_color": 0,
+          "opponent_mode": "reference",
+          "plies": 158,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 79,
+              "wall_seconds": 75.33035120018758,
+              "reported_nodes": 227074748
+            },
+            "reference": {
+              "calls": 79,
+              "wall_seconds": 3.5122993998229504,
+              "reported_nodes": 3871289
+            }
+          }
+        },
+        {
+          "index": 1,
+          "id": "open-file-e",
+          "table": "geometric_half",
+          "classical_color": 1,
+          "opponent_mode": "reference",
+          "plies": 135,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 68,
+              "wall_seconds": 3.14172129961662,
+              "reported_nodes": 3324230
+            },
+            "classical": {
+              "calls": 67,
+              "wall_seconds": 63.707495300564915,
+              "reported_nodes": 128707141
+            }
+          }
+        },
+        {
+          "index": 2,
+          "id": "open-file-e",
+          "table": "linear_mixture",
+          "classical_color": 0,
+          "opponent_mode": "reference",
+          "plies": 132,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 66,
+              "wall_seconds": 62.36354439891875,
+              "reported_nodes": 173857665
+            },
+            "reference": {
+              "calls": 66,
+              "wall_seconds": 3.2747298979666084,
+              "reported_nodes": 3231301
+            }
+          }
+        },
+        {
+          "index": 3,
+          "id": "open-file-e",
+          "table": "linear_mixture",
+          "classical_color": 1,
+          "opponent_mode": "reference",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "cost": {
+            "reference": {
+              "calls": 80,
+              "wall_seconds": 4.729101199889556,
+              "reported_nodes": 4002498
+            },
+            "classical": {
+              "calls": 80,
+              "wall_seconds": 80.24076439952478,
+              "reported_nodes": 155487126
+            }
+          }
+        },
+        {
+          "index": 4,
+          "id": "open-file-e",
+          "table": "unit",
+          "classical_color": 0,
+          "opponent_mode": "reference",
+          "plies": 138,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 69,
+              "wall_seconds": 65.41883870167658,
+              "reported_nodes": 126748429
+            },
+            "reference": {
+              "calls": 69,
+              "wall_seconds": 2.721366500481963,
+              "reported_nodes": 3382833
+            }
+          }
+        },
+        {
+          "index": 5,
+          "id": "open-file-e",
+          "table": "unit",
+          "classical_color": 1,
+          "opponent_mode": "reference",
+          "plies": 123,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 62,
+              "wall_seconds": 2.2857264997437596,
+              "reported_nodes": 3017843
+            },
+            "classical": {
+              "calls": 61,
+              "wall_seconds": 57.47583070024848,
+              "reported_nodes": 140687172
+            }
+          }
+        },
+        {
+          "index": 6,
+          "id": "central-d",
+          "table": "geometric_half",
+          "classical_color": 0,
+          "opponent_mode": "reference",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "cost": {
+            "classical": {
+              "calls": 80,
+              "wall_seconds": 80.23866890091449,
+              "reported_nodes": 164571153
+            },
+            "reference": {
+              "calls": 80,
+              "wall_seconds": 5.335453500505537,
+              "reported_nodes": 4002614
+            }
+          }
+        },
+        {
+          "index": 7,
+          "id": "central-d",
+          "table": "geometric_half",
+          "classical_color": 1,
+          "opponent_mode": "reference",
+          "plies": 131,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 66,
+              "wall_seconds": 3.115974699612707,
+              "reported_nodes": 3229095
+            },
+            "classical": {
+              "calls": 65,
+              "wall_seconds": 61.92049020039849,
+              "reported_nodes": 125933968
+            }
+          }
+        },
+        {
+          "index": 8,
+          "id": "central-d",
+          "table": "linear_mixture",
+          "classical_color": 0,
+          "opponent_mode": "reference",
+          "plies": 118,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 59,
+              "wall_seconds": 56.203735599527135,
+              "reported_nodes": 117893898
+            },
+            "reference": {
+              "calls": 59,
+              "wall_seconds": 2.726489900611341,
+              "reported_nodes": 2879406
+            }
+          }
+        },
+        {
+          "index": 9,
+          "id": "central-d",
+          "table": "linear_mixture",
+          "classical_color": 1,
+          "opponent_mode": "reference",
+          "plies": 133,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 67,
+              "wall_seconds": 4.201597299659625,
+              "reported_nodes": 3286438
+            },
+            "classical": {
+              "calls": 66,
+              "wall_seconds": 63.24047390092164,
+              "reported_nodes": 113640711
+            }
+          }
+        },
+        {
+          "index": 10,
+          "id": "central-d",
+          "table": "unit",
+          "classical_color": 0,
+          "opponent_mode": "reference",
+          "plies": 128,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 64,
+              "wall_seconds": 60.32426120038144,
+              "reported_nodes": 149569808
+            },
+            "reference": {
+              "calls": 64,
+              "wall_seconds": 3.4150397998746485,
+              "reported_nodes": 3127976
+            }
+          }
+        },
+        {
+          "index": 11,
+          "id": "central-d",
+          "table": "unit",
+          "classical_color": 1,
+          "opponent_mode": "reference",
+          "plies": 71,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 36,
+              "wall_seconds": 1.049778399989009,
+              "reported_nodes": 1739764
+            },
+            "classical": {
+              "calls": 35,
+              "wall_seconds": 32.14706329978071,
+              "reported_nodes": 53588562
+            }
+          }
+        }
+      ],
+      "wall_seconds": 841.0062872001436,
+      "recording_cost_before_final_save": {
+        "writes": 1600,
+        "bytes": 1173498207,
+        "seconds": 31.319401301210746
+      },
+      "replay": {
+        "streams": 12,
+        "played_plies": 1587,
+        "prefix_plies": 48,
+        "mismatches": 0
+      }
+    },
+    "default": {
+      "declaration": {
+        "question": "Is the classical gc bundle failure representative of ordinary native classical search?",
+        "changed_premise": "Use ordinary Chess board/variant and original native human-engineered prices instead of gc overrides. Also restores chess-name lazy shortcuts, so this is a configuration-bundle benchmark, not pure price isolation or rule-derived candidate.",
+        "design": "Four prospectively fixed cells: two existing prefixes,both colors; fresh hash/game, SinglePV1 Threads1 Hash16 NNUEfalse, local1sec, referencefullstrength50000nodes/1sec,160subsequentplies. Preserve all adverse/unfinished/interrupted outcomes; no silent rerun, tuning or default change.",
+        "cost": "At most320requestedlocal+320referencefuse sec plus Core/recording; single game, stop check each action.",
+        "decision": "A useful native baseline supports practical leaf/configuration coupling exploration; failure remains finite benchmark evidence and cannot prove incapacity. Never fit candidate prices to this human-engineered control.",
+        "binary_sha256": "2f67539e3b58295901e365edb722fba1e43220185e97eaafb18f38df9d7a8232",
+        "reference_sha256": "55aa40c857de30b79dbe4f8e4c335ee2b23815cf2f100a6630d54761fcad3b85",
+        "prior": "direct/reference cohorts in classical-control-20261007",
+        "routing": "Existing unit route token selects local_external only; actual leaf policy and table are native_classical, with ordinary chess.Board and UCI_Variant chess."
+      },
+      "methods": {
+        "native_classical/reference": {
+          "wins": 0,
+          "losses": 1,
+          "draws": 0,
+          "unfinished": 3
+        }
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "open-file-e",
+          "table": "native_classical",
+          "classical_color": 0,
+          "opponent_mode": "reference",
+          "plies": 158,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "classical": {
+              "calls": 79,
+              "wall_seconds": 76.21637230087072,
+              "reported_nodes": 155992317
+            },
+            "reference": {
+              "calls": 79,
+              "wall_seconds": 4.502202399773523,
+              "reported_nodes": 3880838
+            }
+          }
+        },
+        {
+          "index": 1,
+          "id": "open-file-e",
+          "table": "native_classical",
+          "classical_color": 1,
+          "opponent_mode": "reference",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "cost": {
+            "reference": {
+              "calls": 80,
+              "wall_seconds": 4.503908598795533,
+              "reported_nodes": 4002659
+            },
+            "classical": {
+              "calls": 80,
+              "wall_seconds": 80.22132210060954,
+              "reported_nodes": 154504033
+            }
+          }
+        },
+        {
+          "index": 2,
+          "id": "central-d",
+          "table": "native_classical",
+          "classical_color": 0,
+          "opponent_mode": "reference",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "cost": {
+            "classical": {
+              "calls": 80,
+              "wall_seconds": 80.26473549916409,
+              "reported_nodes": 149414124
+            },
+            "reference": {
+              "calls": 80,
+              "wall_seconds": 5.633872800739482,
+              "reported_nodes": 4002709
+            }
+          }
+        },
+        {
+          "index": 3,
+          "id": "central-d",
+          "table": "native_classical",
+          "classical_color": 1,
+          "opponent_mode": "reference",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "cost": {
+            "reference": {
+              "calls": 80,
+              "wall_seconds": 3.7460225999820977,
+              "reported_nodes": 4002358
+            },
+            "classical": {
+              "calls": 80,
+              "wall_seconds": 80.17426049918868,
+              "reported_nodes": 197724782
+            }
+          }
+        }
+      ],
+      "wall_seconds": 345.8343159998767,
+      "recording_cost_before_final_save": {
+        "writes": 643,
+        "bytes": 172145087,
+        "seconds": 5.940248597878963
+      },
+      "replay": {
+        "streams": 4,
+        "played_plies": 638,
+        "prefix_plies": 16,
+        "mismatches": 0
+      }
+    }
+  },
+  "root_sampling": {
+    "declaration": "Fixed first completed classical win and loss versus activity from24directgames; no substitute if absent. First actual root at/after16/32 for each side. Up to8roots, three leaves pure/activity/classical, same table, SinglePV1, freshhash1sec Threads1 Hash16 NNUEfalse; <=24local+24referencefuse sec. Every distinct selected child freshfullstrength500000node/1sec. Finite mate/cp separate, no error-rate/holdout/Elo, no concurrency.",
+    "games": [
+      1,
+      9
+    ],
+    "roots": 8,
+    "contrasts": {
+      "activity": {
+        "same": 2,
+        "finite_better": 4,
+        "finite_worse": 1,
+        "finite_equal": 1,
+        "mate": []
+      },
+      "pure": {
+        "same": 2,
+        "finite_better": 4,
+        "finite_worse": 1,
+        "finite_equal": 1,
+        "mate": []
+      }
+    },
+    "interpretation": "Outcome-conditioned exposed sampling, finite reference cp differences; small deltas unreliable, not tactical error-rate."
+  },
+  "shogi": {
+    "question": "Does the existing orderedTTq setting give usable q0/q2 decisions on new reachable Silver-capture reply20 root?",
+    "scope": "Constructed legal cooperative prefix with Pawn-protected checking Bishop drop; not representative game/holdout/WDL. One common approximate held-half law, no strength promotion.",
+    "prefix_plan": [
+      [
+        19,
+        28
+      ],
+      [
+        54,
+        45
+      ],
+      [
+        28,
+        37
+      ],
+      [
+        45,
+        36
+      ],
+      [
+        37,
+        46
+      ],
+      [
+        36,
+        27
+      ],
+      [
+        46,
+        55
+      ],
+      [
+        27,
+        18
+      ],
+      [
+        55,
+        64
+      ],
+      [
+        18,
+        9
+      ],
+      [
+        21,
+        30
+      ],
+      [
+        9,
+        0,
+        "TP"
+      ],
+      [
+        30,
+        39
+      ],
+      [
+        62,
+        53
+      ],
+      [
+        39,
+        48
+      ],
+      [
+        53,
+        44
+      ],
+      [
+        48,
+        57
+      ],
+      [
+        44,
+        35
+      ],
+      [
+        "B",
+        66
+      ]
+    ],
+    "prefix": [
+      "legacy_028:g21:b3-b4",
+      "legacy_028:g21:a7-a6",
+      "legacy_028:g21:b4-b5",
+      "legacy_028:g21:a6-a5",
+      "legacy_028:g21:b5-b6",
+      "legacy_028:g21:a5-a4",
+      "legacy_029:g21:b6-b7",
+      "legacy_029:g21:a4-a3",
+      "legacy_029:g21:b7-b8",
+      "legacy_028:g21:a3-a2",
+      "legacy_028:g21:d3-d4",
+      "legacy_029:g21:a2-a1=TP",
+      "legacy_028:g21:d4-d5",
+      "legacy_028:g21:i7-i6",
+      "legacy_028:g21:d5-d6",
+      "legacy_028:g21:i6-i5",
+      "legacy_029:g21:d6-d7",
+      "legacy_028:g21:i5-i4",
+      "legacy_142:g71:B@d8"
+    ],
+    "models": [
+      {
+        "root_label": "silver_reply20",
+        "root_legal_count": 43,
+        "config": "ordered_tt_q",
+        "classification": {
+          "calls": 0,
+          "candidates": 0,
+          "selected": 0,
+          "pushes": 0,
+          "seconds": 0.0
+        },
+        "qdepth": 0,
+        "policy": "geometric_half",
+        "selected": "legacy_029:g21:d7-d8=TP",
+        "score": 34691,
+        "pv": [
+          "legacy_029:g21:d7-d8=TP",
+          "legacy_035:g24:h8-d8"
+        ],
+        "reason": "completed_depth",
+        "statistics": {
+          "declaration_checks": 596,
+          "declaration_win_options": 0,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "root_declaration": null,
+          "nodes": 289,
+          "qnodes": 8,
+          "tt_probes": 46,
+          "tt_hits": 2,
+          "tt_cutoffs": 0,
+          "tt_stores": 46,
+          "tt_eligible_nodes": 46,
+          "tt_skipped_ineligible_nodes": 0,
+          "beta_cutoffs": 42,
+          "completed_depth": 2,
+          "selective_depth": 2,
+          "termination_reason": "completed_depth",
+          "time_to_first_legal_action": 0.01600000006146729,
+          "time_to_first_completed_iteration": 0.9380000000819564,
+          "qdepth_cutoffs": 4,
+          "qsearch_budget_aborts": 0,
+          "qsearch_check_hard_limit_aborts": 0,
+          "in_check_qnodes": 4,
+          "stand_pat_cutoffs": 0,
+          "capture_qactions": 0,
+          "promotion_qactions": 0,
+          "checking_move_qactions": 0,
+          "checking_drop_qactions": 0,
+          "nonchecking_drop_excluded": 0,
+          "pvs_null_window_searches": 237,
+          "pvs_researches": 4,
+          "aspiration_fail_low": 0,
+          "aspiration_fail_high": 0,
+          "aspiration_researches": 0,
+          "root_scan_nodes": 0,
+          "root_scan_seconds": 0.0,
+          "root_scan_used_fallback": false,
+          "move_picker_generated": 0,
+          "move_picker_yielded": 0,
+          "move_picker_yielded_by_stage": {},
+          "ordering_calls": 50,
+          "ordered_moves": 6317,
+          "ordering_seconds": 0.0,
+          "legal_generation_calls": 50,
+          "legal_generation_seconds": 0.75,
+          "evaluation_calls": 4,
+          "evaluation_seconds": 0.0,
+          "countermove_hits": 0,
+          "mate_pruning_cutoffs": 0,
+          "legal_actions_generated": 6317,
+          "successor_handles_created": 6295,
+          "successors_materialized": 283,
+          "successors_searched": 283,
+          "terminal_results_computed": 283,
+          "terminal_cache_hits": 0,
+          "position_keys_computed": 329,
+          "position_key_cache_hits": 283,
+          "runtime_pushes": 291,
+          "runtime_pops": 291,
+          "runtime_hash_updates": 291,
+          "runtime_exact_key_computations": 1,
+          "runtime_child_external_key_computations": 0,
+          "runtime_exact_position_comparisons": 291,
+          "runtime_legacy_incremental_updates": 0,
+          "runtime_semantic_full_diff_fallbacks": 291,
+          "runtime_snapshot_exact_comparisons": 0,
+          "runtime_collision_checks": 582,
+          "runtime_collision_fallbacks": 0,
+          "runtime_history_reconstruction_attempts": 0,
+          "runtime_history_reconstruction_key_computations": 0,
+          "runtime_history_witness_hits": 21,
+          "runtime_history_witness_misses": 0,
+          "runtime_opaque_history_child_external_key_computations": 0,
+          "runtime_history_context_updates": 291,
+          "runtime_history_context_exact_comparisons": 0,
+          "runtime_tt_eligible": 1,
+          "runtime_snapshot_updates": 291,
+          "runtime_snapshot_entry_digest_calls": 291,
+          "runtime_search_key_calls": 46,
+          "runtime_history_tuple_copies": 0,
+          "runtime_repetition_tuple_copies": 0,
+          "runtime_root_imports": 1,
+          "runtime_peak_depth": 3,
+          "runtime_depth_balanced": true,
+          "native_legality_enabled": 0,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "native_legality_seconds": 0.0,
+          "native_legality_payload_seconds": 0.0,
+          "native_legality_decode_binding_seconds": 0.0,
+          "native_legality_fallbacks": 0,
+          "native_legality_operational_failures": 0
+        },
+        "seconds": 1.0762347001582384,
+        "evaluations": 243
+      },
+      {
+        "root_label": "silver_reply20",
+        "root_legal_count": 43,
+        "config": "ordered_tt_q",
+        "classification": {
+          "calls": 0,
+          "candidates": 0,
+          "selected": 0,
+          "pushes": 0,
+          "seconds": 0.0
+        },
+        "qdepth": 0,
+        "policy": "unit",
+        "selected": "legacy_029:g21:d7-d8",
+        "score": 50000,
+        "pv": [
+          "legacy_029:g21:d7-d8",
+          "legacy_019:g17:e9-d8"
+        ],
+        "reason": "completed_depth",
+        "statistics": {
+          "declaration_checks": 584,
+          "declaration_win_options": 0,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "root_declaration": null,
+          "nodes": 283,
+          "qnodes": 8,
+          "tt_probes": 45,
+          "tt_hits": 1,
+          "tt_cutoffs": 0,
+          "tt_stores": 45,
+          "tt_eligible_nodes": 45,
+          "tt_skipped_ineligible_nodes": 0,
+          "beta_cutoffs": 42,
+          "completed_depth": 2,
+          "selective_depth": 2,
+          "termination_reason": "completed_depth",
+          "time_to_first_legal_action": 0.015999999828636646,
+          "time_to_first_completed_iteration": 0.9069999998901039,
+          "qdepth_cutoffs": 4,
+          "qsearch_budget_aborts": 0,
+          "qsearch_check_hard_limit_aborts": 0,
+          "in_check_qnodes": 4,
+          "stand_pat_cutoffs": 0,
+          "capture_qactions": 0,
+          "promotion_qactions": 0,
+          "checking_move_qactions": 0,
+          "checking_drop_qactions": 0,
+          "nonchecking_drop_excluded": 0,
+          "pvs_null_window_searches": 236,
+          "pvs_researches": 0,
+          "aspiration_fail_low": 0,
+          "aspiration_fail_high": 0,
+          "aspiration_researches": 0,
+          "root_scan_nodes": 0,
+          "root_scan_seconds": 0.0,
+          "root_scan_used_fallback": false,
+          "move_picker_generated": 0,
+          "move_picker_yielded": 0,
+          "move_picker_yielded_by_stage": {},
+          "ordering_calls": 49,
+          "ordered_moves": 6313,
+          "ordering_seconds": 0.0,
+          "legal_generation_calls": 49,
+          "legal_generation_seconds": 0.7030000002123415,
+          "evaluation_calls": 4,
+          "evaluation_seconds": 0.0,
+          "countermove_hits": 0,
+          "mate_pruning_cutoffs": 0,
+          "legal_actions_generated": 6313,
+          "successor_handles_created": 6291,
+          "successors_materialized": 281,
+          "successors_searched": 281,
+          "terminal_results_computed": 281,
+          "terminal_cache_hits": 0,
+          "position_keys_computed": 326,
+          "position_key_cache_hits": 281,
+          "runtime_pushes": 285,
+          "runtime_pops": 285,
+          "runtime_hash_updates": 285,
+          "runtime_exact_key_computations": 1,
+          "runtime_child_external_key_computations": 0,
+          "runtime_exact_position_comparisons": 285,
+          "runtime_legacy_incremental_updates": 0,
+          "runtime_semantic_full_diff_fallbacks": 285,
+          "runtime_snapshot_exact_comparisons": 0,
+          "runtime_collision_checks": 570,
+          "runtime_collision_fallbacks": 0,
+          "runtime_history_reconstruction_attempts": 0,
+          "runtime_history_reconstruction_key_computations": 0,
+          "runtime_history_witness_hits": 21,
+          "runtime_history_witness_misses": 0,
+          "runtime_opaque_history_child_external_key_computations": 0,
+          "runtime_history_context_updates": 285,
+          "runtime_history_context_exact_comparisons": 0,
+          "runtime_tt_eligible": 1,
+          "runtime_snapshot_updates": 285,
+          "runtime_snapshot_entry_digest_calls": 285,
+          "runtime_search_key_calls": 45,
+          "runtime_history_tuple_copies": 0,
+          "runtime_repetition_tuple_copies": 0,
+          "runtime_root_imports": 1,
+          "runtime_peak_depth": 3,
+          "runtime_depth_balanced": true,
+          "native_legality_enabled": 0,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "native_legality_seconds": 0.0,
+          "native_legality_payload_seconds": 0.0,
+          "native_legality_decode_binding_seconds": 0.0,
+          "native_legality_fallbacks": 0,
+          "native_legality_operational_failures": 0
+        },
+        "seconds": 1.0463250000029802,
+        "evaluations": 238
+      },
+      {
+        "root_label": "silver_reply20",
+        "root_legal_count": 43,
+        "config": "ordered_tt_q",
+        "classification": {
+          "calls": 4525,
+          "candidates": 4525,
+          "selected": 669,
+          "pushes": 3856,
+          "seconds": 1.1702515012584627
+        },
+        "qdepth": 2,
+        "policy": "geometric_half",
+        "selected": "legacy_029:g21:d7-d8=TP",
+        "score": 43103,
+        "pv": [
+          "legacy_029:g21:d7-d8=TP",
+          "legacy_035:g24:h8-d8"
+        ],
+        "reason": "completed_depth",
+        "statistics": {
+          "declaration_checks": 2912,
+          "declaration_win_options": 0,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "root_declaration": null,
+          "nodes": 293,
+          "qnodes": 1162,
+          "tt_probes": 46,
+          "tt_hits": 2,
+          "tt_cutoffs": 0,
+          "tt_stores": 46,
+          "tt_eligible_nodes": 46,
+          "tt_skipped_ineligible_nodes": 0,
+          "beta_cutoffs": 41,
+          "completed_depth": 2,
+          "selective_depth": 2,
+          "termination_reason": "completed_depth",
+          "time_to_first_legal_action": 0.01600000006146729,
+          "time_to_first_completed_iteration": 5.9530000002123415,
+          "qdepth_cutoffs": 137,
+          "qsearch_budget_aborts": 0,
+          "qsearch_check_hard_limit_aborts": 0,
+          "in_check_qnodes": 104,
+          "stand_pat_cutoffs": 744,
+          "capture_qactions": 384,
+          "promotion_qactions": 285,
+          "checking_move_qactions": 0,
+          "checking_drop_qactions": 0,
+          "nonchecking_drop_excluded": 0,
+          "pvs_null_window_searches": 240,
+          "pvs_researches": 5,
+          "aspiration_fail_low": 0,
+          "aspiration_fail_high": 0,
+          "aspiration_researches": 0,
+          "root_scan_nodes": 0,
+          "root_scan_seconds": 0.0,
+          "root_scan_used_fallback": false,
+          "move_picker_generated": 0,
+          "move_picker_yielded": 0,
+          "move_picker_yielded_by_stage": {},
+          "ordering_calls": 327,
+          "ordered_moves": 23701,
+          "ordering_seconds": 0.06199999991804361,
+          "legal_generation_calls": 327,
+          "legal_generation_seconds": 0.7219999998342246,
+          "evaluation_calls": 1058,
+          "evaluation_seconds": 0.06199999991804361,
+          "countermove_hits": 0,
+          "mate_pruning_cutoffs": 0,
+          "legal_actions_generated": 23701,
+          "successor_handles_created": 6295,
+          "successors_materialized": 286,
+          "successors_searched": 286,
+          "terminal_results_computed": 286,
+          "terminal_cache_hits": 0,
+          "position_keys_computed": 332,
+          "position_key_cache_hits": 286,
+          "runtime_pushes": 5062,
+          "runtime_pops": 5062,
+          "runtime_hash_updates": 5062,
+          "runtime_exact_key_computations": 1,
+          "runtime_child_external_key_computations": 0,
+          "runtime_exact_position_comparisons": 5062,
+          "runtime_legacy_incremental_updates": 0,
+          "runtime_semantic_full_diff_fallbacks": 5062,
+          "runtime_snapshot_exact_comparisons": 0,
+          "runtime_collision_checks": 10124,
+          "runtime_collision_fallbacks": 0,
+          "runtime_history_reconstruction_attempts": 0,
+          "runtime_history_reconstruction_key_computations": 0,
+          "runtime_history_witness_hits": 21,
+          "runtime_history_witness_misses": 0,
+          "runtime_opaque_history_child_external_key_computations": 0,
+          "runtime_history_context_updates": 5062,
+          "runtime_history_context_exact_comparisons": 0,
+          "runtime_tt_eligible": 1,
+          "runtime_snapshot_updates": 5062,
+          "runtime_snapshot_entry_digest_calls": 5062,
+          "runtime_search_key_calls": 46,
+          "runtime_history_tuple_copies": 0,
+          "runtime_repetition_tuple_copies": 0,
+          "runtime_root_imports": 1,
+          "runtime_peak_depth": 5,
+          "runtime_depth_balanced": true,
+          "native_legality_enabled": 0,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "native_legality_seconds": 0.0,
+          "native_legality_payload_seconds": 0.0,
+          "native_legality_decode_binding_seconds": 0.0,
+          "native_legality_fallbacks": 0,
+          "native_legality_operational_failures": 0
+        },
+        "seconds": 6.087196900043637,
+        "evaluations": 1058
+      },
+      {
+        "root_label": "silver_reply20",
+        "root_legal_count": 43,
+        "config": "ordered_tt_q",
+        "classification": {
+          "calls": 2527,
+          "candidates": 2527,
+          "selected": 338,
+          "pushes": 2189,
+          "seconds": 0.636102099204436
+        },
+        "qdepth": 2,
+        "policy": "unit",
+        "selected": "legacy_029:g21:d7-d8",
+        "score": 50000,
+        "pv": [
+          "legacy_029:g21:d7-d8",
+          "legacy_019:g17:e9-d8"
+        ],
+        "reason": "completed_depth",
+        "statistics": {
+          "declaration_checks": 1812,
+          "declaration_win_options": 0,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "root_declaration": null,
+          "nodes": 283,
+          "qnodes": 622,
+          "tt_probes": 45,
+          "tt_hits": 1,
+          "tt_cutoffs": 0,
+          "tt_stores": 45,
+          "tt_eligible_nodes": 45,
+          "tt_skipped_ineligible_nodes": 0,
+          "beta_cutoffs": 42,
+          "completed_depth": 2,
+          "selective_depth": 2,
+          "termination_reason": "completed_depth",
+          "time_to_first_legal_action": 0.01600000006146729,
+          "time_to_first_completed_iteration": 3.2660000000614673,
+          "qdepth_cutoffs": 79,
+          "qsearch_budget_aborts": 0,
+          "qsearch_check_hard_limit_aborts": 0,
+          "in_check_qnodes": 46,
+          "stand_pat_cutoffs": 416,
+          "capture_qactions": 201,
+          "promotion_qactions": 137,
+          "checking_move_qactions": 0,
+          "checking_drop_qactions": 0,
+          "nonchecking_drop_excluded": 0,
+          "pvs_null_window_searches": 236,
+          "pvs_researches": 0,
+          "aspiration_fail_low": 0,
+          "aspiration_fail_high": 0,
+          "aspiration_researches": 0,
+          "root_scan_nodes": 0,
+          "root_scan_seconds": 0.0,
+          "root_scan_used_fallback": false,
+          "move_picker_generated": 0,
+          "move_picker_yielded": 0,
+          "move_picker_yielded_by_stage": {},
+          "ordering_calls": 172,
+          "ordered_moves": 14305,
+          "ordering_seconds": 0.01500000013038516,
+          "legal_generation_calls": 172,
+          "legal_generation_seconds": 0.7179999996442348,
+          "evaluation_calls": 576,
+          "evaluation_seconds": 0.03199999965727329,
+          "countermove_hits": 0,
+          "mate_pruning_cutoffs": 0,
+          "legal_actions_generated": 14305,
+          "successor_handles_created": 6291,
+          "successors_materialized": 281,
+          "successors_searched": 281,
+          "terminal_results_computed": 281,
+          "terminal_cache_hits": 0,
+          "position_keys_computed": 326,
+          "position_key_cache_hits": 281,
+          "runtime_pushes": 2854,
+          "runtime_pops": 2854,
+          "runtime_hash_updates": 2854,
+          "runtime_exact_key_computations": 1,
+          "runtime_child_external_key_computations": 0,
+          "runtime_exact_position_comparisons": 2854,
+          "runtime_legacy_incremental_updates": 0,
+          "runtime_semantic_full_diff_fallbacks": 2854,
+          "runtime_snapshot_exact_comparisons": 0,
+          "runtime_collision_checks": 5708,
+          "runtime_collision_fallbacks": 0,
+          "runtime_history_reconstruction_attempts": 0,
+          "runtime_history_reconstruction_key_computations": 0,
+          "runtime_history_witness_hits": 21,
+          "runtime_history_witness_misses": 0,
+          "runtime_opaque_history_child_external_key_computations": 0,
+          "runtime_history_context_updates": 2854,
+          "runtime_history_context_exact_comparisons": 0,
+          "runtime_tt_eligible": 1,
+          "runtime_snapshot_updates": 2854,
+          "runtime_snapshot_entry_digest_calls": 2854,
+          "runtime_search_key_calls": 45,
+          "runtime_history_tuple_copies": 0,
+          "runtime_repetition_tuple_copies": 0,
+          "runtime_root_imports": 1,
+          "runtime_peak_depth": 5,
+          "runtime_depth_balanced": true,
+          "native_legality_enabled": 0,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "native_legality_seconds": 0.0,
+          "native_legality_payload_seconds": 0.0,
+          "native_legality_decode_binding_seconds": 0.0,
+          "native_legality_fallbacks": 0,
+          "native_legality_operational_failures": 0
+        },
+        "seconds": 3.406460199970752,
+        "evaluations": 576
+      }
+    ],
+    "complete": true,
+    "resource_continuation": "Original failures remain. Four equal2ply4096node20sec controls: q0/q2, geometric/unit, lexical/noTT versus ordering+TT versus ordering+TT+orderedq. At most80sec plus setup. Inert classification wrapper counts candidates/actual pushes; no semantics or coefficient change.",
+    "root": {
+      "position": {
+        "board": [
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "TP",
+            "promoted": true
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "S",
+            "current_type_id": "S",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "G",
+            "current_type_id": "G",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "G",
+            "current_type_id": "G",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "S",
+            "current_type_id": "S",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "L",
+            "current_type_id": "L",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "L",
+            "current_type_id": "L",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "S",
+            "current_type_id": "S",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "G",
+            "current_type_id": "G",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "G",
+            "current_type_id": "G",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "S",
+            "current_type_id": "S",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "L",
+            "current_type_id": "L",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": [
+              [
+                "P",
+                2
+              ]
+            ]
+          },
+          {
+            "counts": [
+              [
+                "L",
+                1
+              ],
+              [
+                "P",
+                1
+              ]
+            ]
+          }
+        ],
+        "side_to_move": 1,
+        "ruleset_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+        "aux_state": [],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 19,
+      "repetition_counts": [
+        [
+          "011cb482f131f68911f883d7f3550a5a5d5074d553d9dc797c0264b2c22c319f",
+          1
+        ],
+        [
+          "235f38a395748dee5b4a97c95b079925ac9a2f43beecb34bcebe0f929b31c243",
+          1
+        ],
+        [
+          "3000f66feb734cb40ec8e23203b3259911b074e4626331da84212173c0f1b610",
+          1
+        ],
+        [
+          "4a3104b06796797c5bc770093550352b1fb7e9e2371712ba031d4cfe8a8d3d60",
+          1
+        ],
+        [
+          "51ffb22e9279cd025bdab7c3b0945da63da0ec5d072d5f120f11ffa5a08604be",
+          1
+        ],
+        [
+          "7a674c75c0a36f7348248fcb1e07499641f6afc2b275c94c5e2d9db7680654e9",
+          1
+        ],
+        [
+          "8b5ed83a4f468c5a55c2d6a2045724bca0c078423aae3aa516f64922f22e1e9f",
+          1
+        ],
+        [
+          "8ffcdbeab5b19da40597b5aa6da2b87aad36cb9d6e45549c07cffc48a5a66f6c",
+          1
+        ],
+        [
+          "9bb680e4a9ab92b834241a833d3a34e43724117541fd27311b584ef40fed7a17",
+          1
+        ],
+        [
+          "9ddfcf7aa69c143f4e9186b5cb5ba10a2eff3176972b694dd3a1571d1c9c6e2b",
+          1
+        ],
+        [
+          "ab4f4adf4acdcccb17744310940e123c6e55dff6d7fd28885bd0b64574ce67b5",
+          1
+        ],
+        [
+          "af4db97dfb8d967ecb183e9dee1ce1e374e016a995ea2bb1d96f79a9f21f4a6e",
+          1
+        ],
+        [
+          "b2d8d7d24934284f43fa36a7146553a68902705a392b693cabf86ea53623a4ff",
+          1
+        ],
+        [
+          "b7bff5373ddd5e676d317dc0c6a877ce4443bb396965d3484e65c9f0577d5616",
+          1
+        ],
+        [
+          "bd5ff1538bcc860b0cf90b738451d0229cb4572f0b67c5738744fa1f601fea61",
+          1
+        ],
+        [
+          "bdf16a28bc76d35debc885c62ae4cf8e5b144cd9f68e853893bfbde03e686fc7",
+          1
+        ],
+        [
+          "d5be6076a8fa3aab768aa5c86fe3a74b0306aadf950359a2cddf6cf5f454af8d",
+          1
+        ],
+        [
+          "e1bcf50705b5a9125131b6e6d67106bed5df13f07e277d8164d8694fc0c4fa3b",
+          1
+        ],
+        [
+          "e39265f27458f84fc06e0af98f8d097d8be6fba06ad5bd4029d37dad79c676b4",
+          1
+        ],
+        [
+          "e65ebdfab9ca2d758771f61d9db4b5491904e783fb1a5a5a79f2636c173f383d",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "bdf16a28bc76d35debc885c62ae4cf8e5b144cd9f68e853893bfbde03e686fc7",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "e39265f27458f84fc06e0af98f8d097d8be6fba06ad5bd4029d37dad79c676b4",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[1,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[1,3]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "9bb680e4a9ab92b834241a833d3a34e43724117541fd27311b584ef40fed7a17",
+          "actor": 1,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[0,6],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,5]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "4a3104b06796797c5bc770093550352b1fb7e9e2371712ba031d4cfe8a8d3d60",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[1,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[1,4]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "b7bff5373ddd5e676d317dc0c6a877ce4443bb396965d3484e65c9f0577d5616",
+          "actor": 1,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[0,5],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,4]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "7a674c75c0a36f7348248fcb1e07499641f6afc2b275c94c5e2d9db7680654e9",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[1,4],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[1,5]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "ab4f4adf4acdcccb17744310940e123c6e55dff6d7fd28885bd0b64574ce67b5",
+          "actor": 1,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[0,4],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,3]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "011cb482f131f68911f883d7f3550a5a5d5074d553d9dc797c0264b2c22c319f",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[1,5],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_029\",\"promotion_target_id\":null,\"to\":[1,6]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "bd5ff1538bcc860b0cf90b738451d0229cb4572f0b67c5738744fa1f601fea61",
+          "actor": 1,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[0,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_029\",\"promotion_target_id\":null,\"to\":[0,2]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "af4db97dfb8d967ecb183e9dee1ce1e374e016a995ea2bb1d96f79a9f21f4a6e",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[1,6],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_029\",\"promotion_target_id\":null,\"to\":[1,7]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "8b5ed83a4f468c5a55c2d6a2045724bca0c078423aae3aa516f64922f22e1e9f",
+          "actor": 1,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[0,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,1]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "e65ebdfab9ca2d758771f61d9db4b5491904e783fb1a5a5a79f2636c173f383d",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[3,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[3,3]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "9ddfcf7aa69c143f4e9186b5cb5ba10a2eff3176972b694dd3a1571d1c9c6e2b",
+          "actor": 1,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[0,1],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_029\",\"promotion_target_id\":\"TP\",\"to\":[0,0]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "8ffcdbeab5b19da40597b5aa6da2b87aad36cb9d6e45549c07cffc48a5a66f6c",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[3,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[3,4]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "e1bcf50705b5a9125131b6e6d67106bed5df13f07e277d8164d8694fc0c4fa3b",
+          "actor": 1,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[8,6],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,5]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "b2d8d7d24934284f43fa36a7146553a68902705a392b693cabf86ea53623a4ff",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[3,4],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[3,5]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "51ffb22e9279cd025bdab7c3b0945da63da0ec5d072d5f120f11ffa5a08604be",
+          "actor": 1,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[8,5],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,4]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "d5be6076a8fa3aab768aa5c86fe3a74b0306aadf950359a2cddf6cf5f454af8d",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[3,5],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_029\",\"promotion_target_id\":null,\"to\":[3,6]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "235f38a395748dee5b4a97c95b079925ac9a2f43beecb34bcebe0f929b31c243",
+          "actor": 1,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[8,4],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,3]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "3000f66feb734cb40ec8e23203b3259911b074e4626331da84212173c0f1b610",
+          "actor": 0,
+          "action_signature": "{\"base_type_id\":\"B\",\"geometry_id\":\"g71\",\"kind\":\"semantic_drop\",\"pattern_id\":\"legacy_142\",\"to\":[3,7]}",
+          "gave_check": true
+        }
+      ]
+    },
+    "history_plies": 19,
+    "legal_actions": 5,
+    "neighbor_plan": "Exactly new Silver c9xd8 reply20; existing orderedTTq/q0/q2, geometric/unit, same2ply4096node20sec per cell.4cells at most80sec plus setup. Preserve partial/adverse, no extension/default/strength claim.",
+    "neighbors": [
+      {
+        "label": "silver_reply20",
+        "state": {
+          "position": {
+            "board": [
+              {
+                "owner": 1,
+                "base_type_id": "P",
+                "current_type_id": "TP",
+                "promoted": true
+              },
+              {
+                "owner": 0,
+                "base_type_id": "N",
+                "current_type_id": "N",
+                "promoted": false
+              },
+              {
+                "owner": 0,
+                "base_type_id": "S",
+                "current_type_id": "S",
+                "promoted": false
+              },
+              {
+                "owner": 0,
+                "base_type_id": "G",
+                "current_type_id": "G",
+                "promoted": false
+              },
+              {
+                "owner": 0,
+                "base_type_id": "K",
+                "current_type_id": "K",
+                "promoted": false
+              },
+              {
+                "owner": 0,
+                "base_type_id": "G",
+                "current_type_id": "G",
+                "promoted": false
+              },
+              {
+                "owner": 0,
+                "base_type_id": "S",
+                "current_type_id": "S",
+                "promoted": false
+              },
+              {
+                "owner": 0,
+                "base_type_id": "N",
+                "current_type_id": "N",
+                "promoted": false
+              },
+              {
+                "owner": 0,
+                "base_type_id": "L",
+                "current_type_id": "L",
+                "promoted": false
+              },
+              null,
+              {
+                "owner": 0,
+                "base_type_id": "R",
+                "current_type_id": "R",
+                "promoted": false
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "owner": 0,
+                "base_type_id": "B",
+                "current_type_id": "B",
+                "promoted": false
+              },
+              null,
+              null,
+              null,
+              {
+                "owner": 0,
+                "base_type_id": "P",
+                "current_type_id": "P",
+                "promoted": false
+              },
+              null,
+              {
+                "owner": 0,
+                "base_type_id": "P",
+                "current_type_id": "P",
+                "promoted": false
+              },
+              {
+                "owner": 0,
+                "base_type_id": "P",
+                "current_type_id": "P",
+                "promoted": false
+              },
+              {
+                "owner": 0,
+                "base_type_id": "P",
+                "current_type_id": "P",
+                "promoted": false
+              },
+              {
+                "owner": 0,
+                "base_type_id": "P",
+                "current_type_id": "P",
+                "promoted": false
+              },
+              {
+                "owner": 0,
+                "base_type_id": "P",
+                "current_type_id": "P",
+                "promoted": false
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "owner": 1,
+                "base_type_id": "P",
+                "current_type_id": "P",
+                "promoted": false
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              {
+                "owner": 1,
+                "base_type_id": "P",
+                "current_type_id": "P",
+                "promoted": false
+              },
+              {
+                "owner": 0,
+                "base_type_id": "P",
+                "current_type_id": "P",
+                "promoted": false
+              },
+              {
+                "owner": 1,
+                "base_type_id": "P",
+                "current_type_id": "P",
+                "promoted": false
+              },
+              {
+                "owner": 1,
+                "base_type_id": "P",
+                "current_type_id": "P",
+                "promoted": false
+              },
+              {
+                "owner": 1,
+                "base_type_id": "P",
+                "current_type_id": "P",
+                "promoted": false
+              },
+              {
+                "owner": 1,
+                "base_type_id": "P",
+                "current_type_id": "P",
+                "promoted": false
+              },
+              null,
+              null,
+              {
+                "owner": 0,
+                "base_type_id": "P",
+                "current_type_id": "P",
+                "promoted": false
+              },
+              null,
+              {
+                "owner": 1,
+                "base_type_id": "S",
+                "current_type_id": "S",
+                "promoted": false
+              },
+              null,
+              null,
+              null,
+              {
+                "owner": 1,
+                "base_type_id": "R",
+                "current_type_id": "R",
+                "promoted": false
+              },
+              null,
+              {
+                "owner": 1,
+                "base_type_id": "L",
+                "current_type_id": "L",
+                "promoted": false
+              },
+              {
+                "owner": 1,
+                "base_type_id": "N",
+                "current_type_id": "N",
+                "promoted": false
+              },
+              null,
+              {
+                "owner": 1,
+                "base_type_id": "G",
+                "current_type_id": "G",
+                "promoted": false
+              },
+              {
+                "owner": 1,
+                "base_type_id": "K",
+                "current_type_id": "K",
+                "promoted": false
+              },
+              {
+                "owner": 1,
+                "base_type_id": "G",
+                "current_type_id": "G",
+                "promoted": false
+              },
+              {
+                "owner": 1,
+                "base_type_id": "S",
+                "current_type_id": "S",
+                "promoted": false
+              },
+              {
+                "owner": 1,
+                "base_type_id": "N",
+                "current_type_id": "N",
+                "promoted": false
+              },
+              {
+                "owner": 1,
+                "base_type_id": "L",
+                "current_type_id": "L",
+                "promoted": false
+              }
+            ],
+            "hands": [
+              {
+                "counts": [
+                  [
+                    "P",
+                    2
+                  ]
+                ]
+              },
+              {
+                "counts": [
+                  [
+                    "B",
+                    1
+                  ],
+                  [
+                    "L",
+                    1
+                  ],
+                  [
+                    "P",
+                    1
+                  ]
+                ]
+              }
+            ],
+            "side_to_move": 0,
+            "ruleset_fingerprint": "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
+            "aux_state": [],
+            "board_width": null,
+            "board_height": null
+          },
+          "ply_count": 20,
+          "repetition_counts": [
+            [
+              "011cb482f131f68911f883d7f3550a5a5d5074d553d9dc797c0264b2c22c319f",
+              1
+            ],
+            [
+              "235f38a395748dee5b4a97c95b079925ac9a2f43beecb34bcebe0f929b31c243",
+              1
+            ],
+            [
+              "3000f66feb734cb40ec8e23203b3259911b074e4626331da84212173c0f1b610",
+              1
+            ],
+            [
+              "4a3104b06796797c5bc770093550352b1fb7e9e2371712ba031d4cfe8a8d3d60",
+              1
+            ],
+            [
+              "51ffb22e9279cd025bdab7c3b0945da63da0ec5d072d5f120f11ffa5a08604be",
+              1
+            ],
+            [
+              "7a674c75c0a36f7348248fcb1e07499641f6afc2b275c94c5e2d9db7680654e9",
+              1
+            ],
+            [
+              "8b5ed83a4f468c5a55c2d6a2045724bca0c078423aae3aa516f64922f22e1e9f",
+              1
+            ],
+            [
+              "8ffcdbeab5b19da40597b5aa6da2b87aad36cb9d6e45549c07cffc48a5a66f6c",
+              1
+            ],
+            [
+              "9bb680e4a9ab92b834241a833d3a34e43724117541fd27311b584ef40fed7a17",
+              1
+            ],
+            [
+              "9ddfcf7aa69c143f4e9186b5cb5ba10a2eff3176972b694dd3a1571d1c9c6e2b",
+              1
+            ],
+            [
+              "ab4f4adf4acdcccb17744310940e123c6e55dff6d7fd28885bd0b64574ce67b5",
+              1
+            ],
+            [
+              "af4db97dfb8d967ecb183e9dee1ce1e374e016a995ea2bb1d96f79a9f21f4a6e",
+              1
+            ],
+            [
+              "b2d8d7d24934284f43fa36a7146553a68902705a392b693cabf86ea53623a4ff",
+              1
+            ],
+            [
+              "b7bff5373ddd5e676d317dc0c6a877ce4443bb396965d3484e65c9f0577d5616",
+              1
+            ],
+            [
+              "bd5ff1538bcc860b0cf90b738451d0229cb4572f0b67c5738744fa1f601fea61",
+              1
+            ],
+            [
+              "bdf16a28bc76d35debc885c62ae4cf8e5b144cd9f68e853893bfbde03e686fc7",
+              1
+            ],
+            [
+              "cb3eee3ef115d98bb86f6f09f39d896c5fcdff8416d73bb054decfb89ee50072",
+              1
+            ],
+            [
+              "d5be6076a8fa3aab768aa5c86fe3a74b0306aadf950359a2cddf6cf5f454af8d",
+              1
+            ],
+            [
+              "e1bcf50705b5a9125131b6e6d67106bed5df13f07e277d8164d8694fc0c4fa3b",
+              1
+            ],
+            [
+              "e39265f27458f84fc06e0af98f8d097d8be6fba06ad5bd4029d37dad79c676b4",
+              1
+            ],
+            [
+              "e65ebdfab9ca2d758771f61d9db4b5491904e783fb1a5a5a79f2636c173f383d",
+              1
+            ]
+          ],
+          "terminal_status": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "history": [
+            {
+              "position_key": "bdf16a28bc76d35debc885c62ae4cf8e5b144cd9f68e853893bfbde03e686fc7",
+              "actor": -1,
+              "action_signature": "",
+              "gave_check": false
+            },
+            {
+              "position_key": "e39265f27458f84fc06e0af98f8d097d8be6fba06ad5bd4029d37dad79c676b4",
+              "actor": 0,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[1,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[1,3]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "9bb680e4a9ab92b834241a833d3a34e43724117541fd27311b584ef40fed7a17",
+              "actor": 1,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[0,6],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,5]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "4a3104b06796797c5bc770093550352b1fb7e9e2371712ba031d4cfe8a8d3d60",
+              "actor": 0,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[1,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[1,4]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "b7bff5373ddd5e676d317dc0c6a877ce4443bb396965d3484e65c9f0577d5616",
+              "actor": 1,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[0,5],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,4]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "7a674c75c0a36f7348248fcb1e07499641f6afc2b275c94c5e2d9db7680654e9",
+              "actor": 0,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[1,4],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[1,5]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "ab4f4adf4acdcccb17744310940e123c6e55dff6d7fd28885bd0b64574ce67b5",
+              "actor": 1,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[0,4],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,3]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "011cb482f131f68911f883d7f3550a5a5d5074d553d9dc797c0264b2c22c319f",
+              "actor": 0,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[1,5],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_029\",\"promotion_target_id\":null,\"to\":[1,6]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "bd5ff1538bcc860b0cf90b738451d0229cb4572f0b67c5738744fa1f601fea61",
+              "actor": 1,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[0,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_029\",\"promotion_target_id\":null,\"to\":[0,2]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "af4db97dfb8d967ecb183e9dee1ce1e374e016a995ea2bb1d96f79a9f21f4a6e",
+              "actor": 0,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[1,6],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_029\",\"promotion_target_id\":null,\"to\":[1,7]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "8b5ed83a4f468c5a55c2d6a2045724bca0c078423aae3aa516f64922f22e1e9f",
+              "actor": 1,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[0,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[0,1]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "e65ebdfab9ca2d758771f61d9db4b5491904e783fb1a5a5a79f2636c173f383d",
+              "actor": 0,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[3,2],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[3,3]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "9ddfcf7aa69c143f4e9186b5cb5ba10a2eff3176972b694dd3a1571d1c9c6e2b",
+              "actor": 1,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[0,1],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_029\",\"promotion_target_id\":\"TP\",\"to\":[0,0]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "8ffcdbeab5b19da40597b5aa6da2b87aad36cb9d6e45549c07cffc48a5a66f6c",
+              "actor": 0,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[3,3],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[3,4]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "e1bcf50705b5a9125131b6e6d67106bed5df13f07e277d8164d8694fc0c4fa3b",
+              "actor": 1,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[8,6],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,5]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "b2d8d7d24934284f43fa36a7146553a68902705a392b693cabf86ea53623a4ff",
+              "actor": 0,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[3,4],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[3,5]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "51ffb22e9279cd025bdab7c3b0945da63da0ec5d072d5f120f11ffa5a08604be",
+              "actor": 1,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[8,5],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,4]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "d5be6076a8fa3aab768aa5c86fe3a74b0306aadf950359a2cddf6cf5f454af8d",
+              "actor": 0,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[3,5],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_029\",\"promotion_target_id\":null,\"to\":[3,6]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "235f38a395748dee5b4a97c95b079925ac9a2f43beecb34bcebe0f929b31c243",
+              "actor": 1,
+              "action_signature": "{\"actor_type_id\":\"P\",\"from\":[8,4],\"geometry_id\":\"g21\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_028\",\"promotion_target_id\":null,\"to\":[8,3]}",
+              "gave_check": false
+            },
+            {
+              "position_key": "3000f66feb734cb40ec8e23203b3259911b074e4626331da84212173c0f1b610",
+              "actor": 0,
+              "action_signature": "{\"base_type_id\":\"B\",\"geometry_id\":\"g71\",\"kind\":\"semantic_drop\",\"pattern_id\":\"legacy_142\",\"to\":[3,7]}",
+              "gave_check": true
+            },
+            {
+              "position_key": "cb3eee3ef115d98bb86f6f09f39d896c5fcdff8416d73bb054decfb89ee50072",
+              "actor": 1,
+              "action_signature": "{\"actor_type_id\":\"S\",\"from\":[2,8],\"geometry_id\":\"g27\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_041\",\"promotion_target_id\":null,\"to\":[3,7]}",
+              "gave_check": false
+            }
+          ]
+        },
+        "history_plies": 20
+      }
+    ]
+  },
+  "compact_pv": {
+    "question": "How many bytes does the shared compact MultiPV view remove without changing selected decision/PV/resource metadata?",
+    "scope": "Projection of completed old raw rows, not a new engine trial or measured game throughput. Preserves original raw sources unchanged.",
+    "groups": [
+      {
+        "source": "activity-multipv-direct-20261007/games.json",
+        "source_sha256": "830d889e4aa474835c0911257ea04b9af6d0cf8b3d6731ca09c963e693b740ad",
+        "rows": 1283,
+        "rich_bytes": 2260138,
+        "compact_bytes": 1517955,
+        "bytes_saved": 742183,
+        "selected_move_full_pv_top_level_resource_mismatches": 0,
+        "removed": "Nonselected full PVs and duplicate per-line nodes/time; top-level aggregate resources remain exact. These views are not substitutes for archived rich raw evidence."
+      },
+      {
+        "source": "activity-multipv-stronger-20261007/games.json",
+        "source_sha256": "c1dabcde8003683c36c73c8608d8c6a0aad0bb64f8bccd9ab21819e2390ca059",
+        "rows": 1107,
+        "rich_bytes": 1819558,
+        "compact_bytes": 1273167,
+        "bytes_saved": 546391,
+        "selected_move_full_pv_top_level_resource_mismatches": 0,
+        "removed": "Nonselected full PVs and duplicate per-line nodes/time; top-level aggregate resources remain exact. These views are not substitutes for archived rich raw evidence."
+      }
+    ]
+  },
+  "raw_entries": {
+    "declaration.json": {
+      "bytes": 4374,
+      "sha256": "dcfce0539688da5154544c430711f92c5db97bb8900adb99ed18a12716728a4e"
+    },
+    "default-declaration.json": {
+      "bytes": 1440,
+      "sha256": "c6aa2b481f65fcae22070048ca26e05b5d49f7d3a3a7774e9c4b0db8ddf66cf2"
+    },
+    "build-portable.json": {
+      "bytes": 4446,
+      "sha256": "a3a872c6d8a39a2243f2bbd26d9db3544c47af2aaa7a66cd46cfc74404a39d13"
+    },
+    "qualification.json": {
+      "bytes": 2070,
+      "sha256": "bb4bbdff5c1a8a7e10af0bff4a924c6f80060ffecde338710991c0c1e1fd08b6"
+    },
+    "source-analysis.md": {
+      "bytes": 1661,
+      "sha256": "9b2864f21fdefffab8a3b044bc6304f3d7ddd77f066d613336fd4b1264a21f19"
+    },
+    "direct-roots.json": {
+      "bytes": 40042,
+      "sha256": "5fe28265c37ba3695fa91fe0fd31a78492503e44f4b2827c7c2894290c05495c"
+    },
+    "shogi-silver.json": {
+      "bytes": 52020,
+      "sha256": "9c235c97b63ae0446431d26b23eb1f6846fcdfff4c3da422a5267e62b9b0efa6"
+    },
+    "compact-pv-cost.json": {
+      "bytes": 1350,
+      "sha256": "deaf7ec01050b0b17cb2abfeea1ad5065979d57891302b4e1ee58b52a567872c"
+    },
+    "direct.json": {
+      "bytes": 2440662,
+      "sha256": "57e3de2153d372d36a9607cf00f9bb50c3b7dafec2cd34e9987e0f990e5701e3"
+    },
+    "direct-replay.json": {
+      "bytes": 13653,
+      "sha256": "d9ffae7a0d35b5521bc8ac526c0a8ccc1ab0cc6e6bf13e9397ed6137838149c9"
+    },
+    "reference.json": {
+      "bytes": 1511835,
+      "sha256": "b279bd4a3ddc171f29de0782c4f40ab447f198eddd9a58962583b681b23cde57"
+    },
+    "reference-replay.json": {
+      "bytes": 6989,
+      "sha256": "e4bd2c85d43b35d880fe6c07ec5f2f5f531ab1658aaa1c6442bea55dad917c76"
+    },
+    "default.json": {
+      "bytes": 594318,
+      "sha256": "dc3970cc70fdf4ccde3bfb3252c93821718214fa2fb491245af88ee2efad2e0c"
+    },
+    "default-replay.json": {
+      "bytes": 2484,
+      "sha256": "5cce8382d4130bba2efbfff90e7f952e908d1ac6dd1beafc9433638a32d37d56"
+    }
+  },
+  "sources": {
+    "classical_control_20261007.py": {
+      "bytes": 7105,
+      "sha256": "93f356a8ea24c1caba4c295919bd0ac3c7fd42f84b822246b1836e89bf07a1a8"
+    },
+    "classical_default_20261007.py": {
+      "bytes": 4383,
+      "sha256": "c9146919bae66c4cd33a1c407f48ac64d4f3f9061bfab8fe01b6b6d8890b6dce"
+    },
+    "classical_roots_20261007.py": {
+      "bytes": 4299,
+      "sha256": "db7a102d18e0d43de89298533cd2f6620886ab08045f35cd634abf398378cb53"
+    },
+    "replay_classical_20261007.py": {
+      "bytes": 2534,
+      "sha256": "b21b58b414a1dfedea0697956c1de49aef0f45e0c0048e8fb8509195002935ea"
+    },
+    "replay_classical_default_20261007.py": {
+      "bytes": 2546,
+      "sha256": "a789ec48ec37ee0ae0426fbb38f8073aa6afd2a8c7bbc79bf5c823e607de4552"
+    },
+    "shogi_silver_20261007.py": {
+      "bytes": 7000,
+      "sha256": "dae93243f8a2af87655d871a1d769a31bbf5e6b2bfd9332615c7f90edaaf17b1"
+    },
+    "compact_pv_cost_20261007.py": {
+      "bytes": 2043,
+      "sha256": "7b08842530c48a64e9f0c4439dc89e4c8833cb1599a0bc8adbd0ccc500f141e4"
+    },
+    "collect_classical_20261007.py": {
+      "bytes": 5827,
+      "sha256": "8ad52d0a1e20909e69f5798f4b939c4d281c74029b10aff5b4023249be78acd6"
+    },
+    "multipv_player_20261007.py": {
+      "bytes": 1728,
+      "sha256": "ef10b7539010153edc18340ed0cb4f7e1976ee8f98edd10540febca425bade3a"
+    },
+    "shared-chess_development.py": {
+      "bytes": 42701,
+      "sha256": "3f23f85996f60f42e4aab3f9c704331fa4214483c6956d55ba0f9669ea7047d1"
+    },
+    "pinned-evaluate.cpp": {
+      "bytes": 74305,
+      "sha256": "b875e3f460216430daf5ad61bee19bf5c5d2efb4c0377a2cde5c2d9172012fc3"
+    },
+    "upstream-Copying.txt": {
+      "bytes": 35821,
+      "sha256": "0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b"
+    },
+    "material-variants.ini": {
+      "bytes": 355,
+      "sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0"
+    },
+    "suite.json": {
+      "bytes": 658,
+      "sha256": "51a8382618d6bdb9c3cc347ac9257c51d4a07861ae8e9d5cfbc83e3c3efb16e0"
+    }
+  },
+  "raw_archive": "docs/archive/development_classical_20261007/raw.zip",
+  "sources_archive": "docs/archive/development_classical_20261007/sources.zip",
+  "raw_zip_sha256": "8282125b929ef7278ef5309645438df8efa8ee3f226e3d00176b5bbf36e45c44",
+  "sources_zip_sha256": "469fad7e6fb57cf589399cb8bb30f07470c88b8722dc6ca98596a274dba19844",
+  "production_changes": "None; all search/price/default APIs unchanged",
+  "public_push": "held"
+}

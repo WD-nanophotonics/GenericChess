@@ -917,6 +917,23 @@ Data/chess_allocation_20261007.json and verified raw/sourceZIPs retain all cases
 recording costs and packaging/timing/counter corrections. Continue concrete
 safety failure and independent useful work; no price fitting or public push.
 
+Restored classical-leaf benchmark reuses all search objects and unchanged gc
+tables, NNUEfalse.24direct games22W2L (both losses unit/activity);12fixed
+strong-reference games10L2U. Ordinary-native classical configuration followup
+4games1L3U. All40streams4359played+160prefix replayzero; no Elo/default/
+price fitting or generic strength claim. Eight fixed common roots retain
+classical versus either candidate2same/4finitebetter/1worse/1equal. Human
+classical bundle includes PSQT/king/pawn/endgame logic and native thresholds;
+it is a benchmark, not the rule-derived formula. Source/build objects and
+normalized portable commands qualified; original local build retained.
+New reachable Silver-reply Shogi4controls choose unchanged q0/q2 moves,
+with3.3-5.7times greater q2cost; no blanket extension. Existing compact PV
+projection cuts2390old-row bytes31.585percent with selected decision/PV/
+total-resource invariants, not throughput proof. CHESS_DEVELOPMENT.md and
+data/chess_classical_20261007.json/verifiedZIPs retain adverse cases. Next
+one concrete generic royal-safety/positional hypothesis or native/gc matched
+root diagnosis; do not tune the activity coefficient or grow a proof backlog.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.
