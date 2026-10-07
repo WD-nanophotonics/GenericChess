@@ -86,9 +86,10 @@ No self-reply loops, automatic re-execution or additional workers.
 Daily10:00 Asia/Tokyo is the main substantive dot window; skip empty/duplicate
 questions and missed-day catchup. Work independently otherwise; consult as needed.
 Read/wait briefly at useful checkpoints and continue independent work. The sole
-native four-hour heartbeat resumes this chat without overlap or a second writer.
-Its Asia/Tokyo slots are02:00,06:00,10:00,14:00,18:00,22:00, preserving the
-daily10:00 consultation window within the same heartbeat, without another task.
+native90-minute heartbeat resumes this chat without overlap or a second writer.
+Daily10:00 Asia/Tokyo stays the main consultation window; if no turn is active,
+the first heartbeat after10:00 handles that day once, without missed-day catchup
+or another task. Existing active research never starts a second writer.
 No Windows scheduler, Goal, ownership/Supervisor policy, Chat approval, Courier,
 native Chat send or Socket Mode prerequisite. Historical snapshots are evidence.
 Explicit user stop suspends consultation/heartbeat and cancels dot monitoring;

@@ -227,11 +227,13 @@ TWO_VICTIM_FIRST_REWARD_BOUND.md, TWO_VICTIM_DIRECT_INTERVAL_PILOT.md and the
 ignored local segment receipt. The separate review, not elapsed time alone,
 qualifies these three observations; keep observing future normal continuations.
 
-One native four-hour heartbeat, same chat, preserving notification intent.
-User changed cadence on2026-10-04: Asia/Tokyo02:00,06:00,10:00,14:00,18:00,22:00.
-The existing automation was updated through the native tool, not duplicated;
-daily10:00 consultation stays in that same schedule. Historical two-hour
-receipts remain evidence of the earlier configuration, not current policy.
+One native90-minute heartbeat, same chat, preserving notification intent.
+User changed cadence on2026-10-07 from four hours to90minutes; the existing
+automation was updated through the native tool, not duplicated.
+Daily10:00 Tokyo consultation remains the main window; if no turn is active,
+the first continuation after10:00 handles the current day once. No missed-day
+catchup, extra task or concurrent writer. Historical two/four-hour receipts
+remain evidence of previous configurations, not proof of new dispatch timing.
 Daily10:00 Tokyo substantive dot window, no mandatory external response or
 routine acknowledgement. Standing Slack authorization and complete-reply/
 uncertain-send handling: SLACK_WORKFLOW.md. Standing authorization includes

@@ -6,8 +6,10 @@ body, immutable IDs/hashes and account/channel/thread checks remain exact.
 Preserve raw output and the ledger; formatting alone never warrants resend.
 
 The current user accepted active Agent plugin reads/waits, with one native
-same-chat heartbeat every four hours for recovery, at Asia/Tokyo02:00,06:00,
-10:00,14:00,18:00,22:00; this preserves daily10:00 in the existing automation.
+same-chat heartbeat every90minutes for recovery, updated2026-10-07.
+Daily10:00 Asia/Tokyo remains the main consultation window; if no turn is
+active, its first continuation after10:00 handles that day once, without
+missed-day catchup, another task or concurrent writer.
 A separate Socket Mode app
 and immediate model wake are no longer required. Their prototype is historical
 text only; no token, daemon, Windows task or extra model is needed here.
