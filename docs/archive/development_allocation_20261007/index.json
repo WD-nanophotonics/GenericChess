@@ -1,0 +1,147 @@
+{
+  "raw_entries": {
+    "activity-multipv-direct-20261007/declaration.json": {
+      "bytes": 2114,
+      "sha256": "90ab647bc4e277fa4fb0e174eb0d24a323f4b4819fd6b003b4d88158241767b4"
+    },
+    "activity-multipv-direct-20261007/suite.json": {
+      "bytes": 658,
+      "sha256": "51a8382618d6bdb9c3cc347ac9257c51d4a07861ae8e9d5cfbc83e3c3efb16e0"
+    },
+    "activity-multipv-direct-20261007/games.json": {
+      "bytes": 5507284,
+      "sha256": "830d889e4aa474835c0911257ea04b9af6d0cf8b3d6731ca09c963e693b740ad"
+    },
+    "activity-multipv-direct-20261007/replay.json": {
+      "bytes": 5546,
+      "sha256": "569ee05b17f1cb743314df95e6a1f003496ad4f283986a22140ea6b3b2df7f3b"
+    },
+    "activity-multipv-stronger-20261007/declaration.json": {
+      "bytes": 1870,
+      "sha256": "099782503b7c43cf09674bce3b8caf661031d2fe5d84532ddedb64b9c76e11eb"
+    },
+    "activity-multipv-stronger-20261007/suite.json": {
+      "bytes": 658,
+      "sha256": "51a8382618d6bdb9c3cc347ac9257c51d4a07861ae8e9d5cfbc83e3c3efb16e0"
+    },
+    "activity-multipv-stronger-20261007/games.json": {
+      "bytes": 5821199,
+      "sha256": "c1dabcde8003683c36c73c8608d8c6a0aad0bb64f8bccd9ab21819e2390ca059"
+    },
+    "activity-multipv-stronger-20261007/replay.json": {
+      "bytes": 9055,
+      "sha256": "24b91c6bb9191e1adc13407f036be6aa8185d9ec1f556056536dcca18203e62a"
+    },
+    "activity-safety-20261007/forced.json": {
+      "bytes": 7306,
+      "sha256": "07c559ab7051b9ab32977d0308edcfe6e949e2315872f242ea55a09f47f0b9f4"
+    },
+    "activity-safety-20261007/multipv-root.json": {
+      "bytes": 17351,
+      "sha256": "995768f66b7c3873b69172a60ac0c8bbe728894a9e5e689ef7b4910255d79bf0"
+    },
+    "activity-safety-20261007/allocation-roots.json": {
+      "bytes": 522362,
+      "sha256": "79f3933fd242585607ebbf81008a9d233c8f65d75cf15fc688f21e083e55a102"
+    },
+    "activity-safety-20261007/shogi-ordered-drop.json": {
+      "bytes": 96663,
+      "sha256": "a5a83d00e27c663c134228a7e9a4230940a44bb19260555483ebfd6b06a514b3"
+    },
+    "activity-safety-20261007/source-analysis.md": {
+      "bytes": 2170,
+      "sha256": "c6b7c24e4277faa4920663810c338cfb7614cb28bdb4699c063f28fce8e57c5a"
+    },
+    "activity-safety-20261007/static-adverse.json": {
+      "bytes": 1385,
+      "sha256": "0c638598d8fa0105604001bf2ed5841b4aa9e94e5e8ed909fbf5f218f5fb724d"
+    },
+    "activity-safety-20261007/white-threat.json": {
+      "bytes": 7542,
+      "sha256": "3aaeeca3e3571d8ebd28f2e452b85a18f4ebdd96636622b2c31403e78bd6f684"
+    },
+    "activity-safety-20261007/new-failure-roots.json": {
+      "bytes": 86106,
+      "sha256": "f28e61bfa38fbf54f92f33b66af981d707aa460b8d03fac4bd727980dc14a75e"
+    },
+    "activity-safety-20261007/shared-api.json": {
+      "bytes": 8547,
+      "sha256": "88e98fc0d8ce21c8afd6a76ac99d52873afcbca437dd3a2f185945b858a27f2b"
+    },
+    "activity-safety-20261007/execution-notes.json": {
+      "bytes": 653,
+      "sha256": "019b09b94c373301a15adc05b0c3241d4c93bc101420c21d33978e06401a504b"
+    }
+  },
+  "sources": {
+    "activity_forced_20261007.py": {
+      "bytes": 3009,
+      "sha256": "6bafbf73bc3e59ffb6650020c57c111fba5b0f5d94e835ad02519d4edaa4c30b"
+    },
+    "activity_white_threat_20261007.py": {
+      "bytes": 3128,
+      "sha256": "d6826d97be0e2bd6f8fdb28521ee8856907b64cb88ea0ff20d9f8205ee6c0467"
+    },
+    "activity_new_failures_20261007.py": {
+      "bytes": 4553,
+      "sha256": "8a3ce8a3b652ac0b2295481bfd29b2ecfb3864d75bf2540d2c4f02665130bac8"
+    },
+    "shared_multipv_check_20261007.py": {
+      "bytes": 2418,
+      "sha256": "b0ca17d62e41486cc5cb32010140aa9224e21f8017cb57764528f3718188d899"
+    },
+    "static_adverse_20261007.py": {
+      "bytes": 1599,
+      "sha256": "5bd2a8c3dc47cbc10edc9bfc6185d4cf8a69c17ebc7055363240f3ee3344574d"
+    },
+    "activity_multipv_root_20261007.py": {
+      "bytes": 2274,
+      "sha256": "846a3d00bd19b379f75ea8ae9b4e63e8ddfefeed45f8e8e3e3cfbd13e94f30c8"
+    },
+    "multipv_player_20261007.py": {
+      "bytes": 1728,
+      "sha256": "ef10b7539010153edc18340ed0cb4f7e1976ee8f98edd10540febca425bade3a"
+    },
+    "activity_multipv_direct_20261007.py": {
+      "bytes": 5333,
+      "sha256": "73b3cfd990a29274eba1c2b4e9505b0cedeedf8cd8fae326e2c400beed343378"
+    },
+    "activity_multipv_stronger_20261007.py": {
+      "bytes": 5188,
+      "sha256": "6a96579a72945734ea6addf7106a724c2f00442a09560dbf8855377f916adf5b"
+    },
+    "activity_allocation_roots_20261007.py": {
+      "bytes": 4116,
+      "sha256": "7c48b61ee207672be5531835c74e53be16b6cdb564c5b8d6878a08b3d5f2cf69"
+    },
+    "shogi_ordered_drop_20261007.py": {
+      "bytes": 5057,
+      "sha256": "779cdd1f09c10ad8c1361d7a037c9cde51b000391dc506334f0e61d492db9579"
+    },
+    "replay_multipv_direct_20261007.py": {
+      "bytes": 2423,
+      "sha256": "270e7e723fefee438ee72895119766e58f2da02e8408bd8b41052399433733e5"
+    },
+    "replay_multipv_stronger_20261007.py": {
+      "bytes": 2281,
+      "sha256": "8308ce9417263eac4265b362d97075f6291f22ffe069e7c9a45054682782f7cd"
+    },
+    "collect_allocation_20261007.py": {
+      "bytes": 7187,
+      "sha256": "0998095276e3d9220f86613e2e04792d513ec9e9fd70f3aad84643e3f33493b5"
+    },
+    "frozen-chess_development.py": {
+      "bytes": 40929,
+      "sha256": "e7abd7122df2dee80dc4be2b7af40a7a851b26c85a4b6038ebb372eb2d431a6a"
+    },
+    "shared-chess_development.py": {
+      "bytes": 42701,
+      "sha256": "3f23f85996f60f42e4aab3f9c704331fa4214483c6956d55ba0f9669ea7047d1"
+    },
+    "archive-failure.json": {
+      "bytes": 586,
+      "sha256": "bf9ea952e289549dae72c13b55b75a21f7e6a49b7a687e9ce82a1b67b8a58d5f"
+    }
+  },
+  "portable_sha256": "210924c8ca8c31dfac5b2fc60b45a78ec34a965aca3a8b95e2399d2469ead4f0"
+}

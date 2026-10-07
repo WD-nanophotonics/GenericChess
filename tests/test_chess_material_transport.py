@@ -148,3 +148,44 @@ def test_material_summary_does_not_turn_unknown_resources_into_zero():
     methods=d.comparison_summary([dict(rows=rows)])['methods']
     assert all(m['cpu_seconds'] is None and m['nodes'] is None for m in methods.values())
     assert all(m['controller_cpu_seconds']==.01 and m['engine_nodes']==20 for m in methods.values())
+
+
+def test_multipv_uses_final_bestmove_not_stale_highest_score(compiled, author):
+    import chess
+    class Analysis:
+        multipv = [dict(multipv=1, pv=[chess.Move.from_uci('g1f3')],
+                         score=author.PovScore(author.Cp(17), chess.WHITE), depth=8, nodes=90),
+                   dict(multipv=2, pv=[chess.Move.from_uci('b1c3')],
+                         score=author.PovScore(author.Cp(900), chess.WHITE), depth=7, nodes=80)]
+        def __enter__(self): return self
+        def __exit__(self, *args): pass
+        def wait(self): return author.BestMove(chess.Move.from_uci('g1f3'), None)
+    class Engine:
+        def configure(self, options): assert options == {'Clear Hash': None}
+        def play(self, *args, **kwargs): pytest.fail('MultiPV must await analysis bestmove')
+        def analysis(self, board, limit, *, multipv, game):
+            assert multipv == 3 and limit.time == .25
+            assert [m.uci() for m in board.move_stack] == ['e2e4', 'e7e5']
+            return Analysis()
+    player = d.UciMaterial(Engine(), FEN, 'unit', .25, multipv=3)
+    d.replay_prefix(FEN, compiled, ['e2e4', 'e7e5'], (player,))
+    move, row = player.choose()
+    assert move == 'g1f3' and row['score_cp'] == 17 and row['engine_depth'] == 8
+    assert row['engine_nodes'] == 90 and row['multipv'] == 3
+    assert row['multipv_lines'][1]['score_cp'] == 900
+    assert 'pv' not in row['multipv_lines'][1]  # Only selected full PV is stored.
+
+
+def test_multipv_missing_info_preserves_unknown_costs(author):
+    import chess
+    class Analysis:
+        multipv = []
+        def __enter__(self): return self
+        def __exit__(self, *args): pass
+        def wait(self): return author.BestMove(chess.Move.from_uci('e2e4'), None)
+    class Engine:
+        def configure(self, options): pass
+        def analysis(self, *args, **kwargs): return Analysis()
+    move, row = d.UciMaterial(Engine(), FEN, 'unit', .25, multipv=3).choose()
+    assert move == 'e2e4' and row['pv'] == [] and row['score_cp'] is None
+    assert row['engine_nodes'] is None and row['engine_seconds'] is None

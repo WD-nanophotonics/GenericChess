@@ -355,13 +355,18 @@ class UciMaterial(UciOpponent):
     A config cannot establish the Eval hook's semantics. Record the executable
     hash and retain its source/build/gauge qualification with the experiment.
     Engine SEE, ordering and pruning remain those of the frozen build.
+    Optional native MultiPV changes root allocation, not material prices.
+    Its final bestmove is authoritative; timed lines may have unequal depths.
     """
-    def __init__(self, engine, fen, policy, seconds):
+    def __init__(self, engine, fen, policy, seconds, *, multipv=1):
         import chess, chess.engine
         if policy not in POLICIES or not 0 < seconds <= 60:
             raise ValueError('supported material policy and finite time required')
+        if type(multipv) is not int or multipv < 1:
+            raise ValueError('multipv must be a positive integer')
         super().__init__(engine, fen, 1)
         self.policy = policy
+        self.multipv = multipv
         self.board = type('MaterialBoard', (chess.Board,),
                           {'uci_variant': 'gc_'+policy})(fen)
         self.limit = chess.engine.Limit(time=seconds)
@@ -370,18 +375,45 @@ class UciMaterial(UciOpponent):
     def choose(self):
         from chess.engine import INFO_ALL
         wall, cpu = perf_counter(), process_time()
-        result = self.engine.play(self.board, self.limit, game=self.game, info=INFO_ALL)
+        extra = {}
+        if self.multipv == 1:
+            result = self.engine.play(self.board, self.limit, game=self.game, info=INFO_ALL)
+            info = result.info
+        else:
+            with self.engine.analysis(self.board, self.limit, multipv=self.multipv,
+                                      game=self.game) as analysis:
+                result = analysis.wait()
+                lines = analysis.multipv
+            # Timed PV lines can finish at different depths. Use the native
+            # final bestmove, never sort stale cross-depth scores ourselves.
+            info = dict(next((line for line in lines if line.get('pv')
+                              and line['pv'][0] == result.move), {}))
+            extra['multipv'] = self.multipv
+            extra['multipv_lines'] = []
+            for line in lines:
+                value = line.get('score')
+                value = value.pov(self.board.turn) if value is not None else None
+                extra['multipv_lines'].append(dict(rank=line.get('multipv'),
+                    move=line['pv'][0].uci() if line.get('pv') else None,
+                    depth=line.get('depth'),
+                    score_cp=None if value is None else value.score(),
+                    score_mate=None if value is None else value.mate(),
+                    lowerbound=line.get('lowerbound'), upperbound=line.get('upperbound')))
+            for key in ('nodes', 'time'):
+                known = [line[key] for line in lines if line.get(key) is not None]
+                info[key] = max(known) if known else None
         move = result.move.uci() if result.move else None
-        score = result.info.get('score')
+        score = info.get('score')
         score = score.pov(self.board.turn) if score is not None else None
         return move, dict(policy=self.policy, move=move, reason='uci_bestmove',
             score=None, score_cp=None if score is None else score.score(),
             score_mate=None if score is None else score.mate(),
             wall_seconds=perf_counter()-wall, controller_cpu_seconds=process_time()-cpu,
-            engine_nodes=result.info.get('nodes'), engine_depth=result.info.get('depth'),
-            engine_seldepth=result.info.get('seldepth'), engine_seconds=result.info.get('time'),
-            pv=[m.uci() for m in result.info.get('pv', ())], statistics={},
-            search_completion_scope='UCI bestmove within time limit; not complete fixed-depth search')
+            engine_nodes=info.get('nodes'), engine_depth=info.get('depth'),
+            engine_seldepth=info.get('seldepth'), engine_seconds=info.get('time'),
+            pv=[m.uci() for m in info.get('pv', ())], statistics={},
+            search_completion_scope='UCI bestmove within time limit; not complete fixed-depth search',
+            **extra)
 
 
 def compare_material_case(case, compiled, engine, seconds):

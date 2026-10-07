@@ -902,6 +902,21 @@ use it when a concrete horizon failure can change a decision. Neighbor-plan/raw
 scope note, complete counters and source ZIPs are in
 data/shogi_neighbor_cost_20261007.json. Continue concrete failure work.
 
+Native root-allocation followup keeps activity optional and SinglePV default.
+Forced adverseg6g5 and White child-root4sec searches reveal mate, while native
+MultiPV3/5 avoid it; immediate union gain does not overturn the pawn capture.
+But36newMultiPV3game streams give activity10W1L1Udirect and24strong-reference
+losses;3509played+144prefixplies replayzero. Fixed48same-root controls give
+activity3vs1 31same/8finitebetter/9worse, with first-row timing uncertainty and
+47row sensitivity preserved; no error-rate/default/Elo inference. Shogi8old
+checked-root orderedTTq controls complete and retain relocatedq2decision changes,
+without overturning reachable-neighbor no-choice-gain results. Existing Python
+UciMaterial adds opt-in MultiPV with native finalbestmove/compact line metadata;
+8actual option-restoration checks and30tests pass, default1 and CLI unchanged.
+Data/chess_allocation_20261007.json and verified raw/sourceZIPs retain all cases,
+recording costs and packaging/timing/counter corrections. Continue concrete
+safety failure and independent useful work; no price fitting or public push.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.

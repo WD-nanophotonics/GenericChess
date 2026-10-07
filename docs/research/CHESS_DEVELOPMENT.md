@@ -1405,3 +1405,79 @@ this experiment's design. The compact index explicitly records that distinction.
 Hash-verified raw/source ZIPs: ../archive/development_shogi_neighbors_20261007.
 Index data/shogi_neighbor_cost_20261007.json SHA256
 abee63f6f8c4a1ed37d0a49693cb8cd30a16dc599310a50d259e4e9dc2a02d15.
+
+## Existing native root allocation:20261007
+
+The exposed linearBlack33 g6g5 failure is searchable without a new coefficient.
+At its full-history root, forced g6g5 gives pure mate-11/-10 at1/4sec and
+activity-2337cp/mate-11. From the White child after g6g5, both unrestricted
+4sec searches choose Ng5/mate11. Legal terminal PVs verify one line, not all
+defenses. An immediate pseudo-attack geometry crosscheck gives Black g6g5
+297pure/249activity versus g6f5 505pure/449activity: the bonus shrinks a208native
+capture advantage to200, rather than reversing it. Evaluation-driven history,
+futility/null/ProbCut and reduced zero-window/full-PV re-search couple the
+unchanged leaf to tree allocation; no unique SEE/pruning defect is established.
+
+Existing MultiPV3/5 avoids g6g5 at both1/4sec on this one root. Before new
+outcomes, declare native MultiPV3 for both leaves:12same-table reciprocal direct
+games(two old prefixes, three tables, both colors), then24unlimited-reference
+cells(same two prefixes, three tables, both colors, two leaves). Every local
+move1sec/Threads1/Hash16/NNUEfalse; reference50000nodes/1sec fuse;160ply ceiling.
+SinglePV records remain immutable. Activity direct10W1L1U, against the preceding
+SinglePV12W. Geometric direct2W1L1U; linear/unit4W each. The36new streams include
+24strong-reference losses,12each leaf. These different game paths do not measure
+isolated allocation effects, Elo or price quality; unfinished is not draw.
+Full Core/author-board legal/state/history/hash/finalbestmove replay verifies
+3509played+144prefixplies without a difference. A longer survival is not a win.
+
+A separately predeclared48root union from old direct games selects first root
+at/after16/32 for each side. Pure/activity x SinglePV/MultiPV3, fresh hash/game,
+1sec each; distinct selected children get fresh500000node/1sec finite references.
+Activity3vs1:31same,8positive,9negative cp; activity1vspure1:23same,17positive,
+8negative; activity3vspure3:28same,10positive,9negative,one separate mate/cp.
+Pure3vs1:30same,11positive,6negative,one separate mate/cp. These are finite
+score signs, not tactical error rates; small deltas are unreliable. Replay was
+not explicitly polled complete before root launch, so brief first-row overlap
+cannot be excluded. The47row sensitivity gives activity3vs1:31same/8positive/
+8negative, with other contrasts retained in the index. No silent rerun.
+The first new direct activity loss(game0) and unfinished(game6) supply a separate
+fixed8root diagnosis; activity3vs1:5same/1positive/2negative. Keep both signs.
+Worst old-union finite activity allocation regression is game4/unitBlack32,
+f4g3 versus f4g4,149cp worse; retain for a specific followup, not reward fitting.
+
+Shogi's two earlier exposed synthetic full-stock8action checked roots now use
+the supported ordering+TT+orderedq, fresh TT, common990000 capture ordering,
+unchanged half-held inventory;2ply2048nodes10sec/hardq8, q0/q2, geometric/unit.
+All8complete2ply, balanced runtime/immutable child parity,0.10-1.80sec each.
+Original q0/q2 choices/scores agree. Relocated geometric q0B@e3/-113755 changes
+toq2B@e2/-58840; unitB@e2/-200000 changes toKe1d2/-100000. This retains a
+concrete useful horizon case at the supported cost setting; it does not reverse
+the reachable-neighbor no-choice-gain evidence or promoteq2 generally.
+
+UciMaterial in the existing Python comparison entry now accepts keyword
+multipv=1 by default. Explicit multipv=3 uses native analysis finalbestmove,
+not a sort of stale scores at unequal depths. Full selected PV plus compact
+other-root move/depth/score/bound summaries avoid storing every branch PV.
+No new CLI, native search patch, price/term/default change. Eight actual native
+3->1->3->1 controls verify both builds restore the option, full history and legal
+PVs;30related tests pass including stale-high-score and unknown-cost regression
+checks. Timed game cohorts used the frozen5ec9a12 adapter, preserved in sourceZIP;
+the new API is a verified reusable development option, not a strength promotion.
+
+Direct wall1298.871sec; reference1244.594sec. Console final-save-inclusive
+record costs are1.802GB/59.699sec and3.542GB/123.261sec, much greater than the
+older one-PV logger. Persisted pre-final counters are distinct. Compact API
+metadata reduces redundant information, but no new-game throughput gain is
+claimed. Native CPU/cache/evaluation counts and exact model-token cost remain
+unknown. Stop checks retained; no extra workers/Goal/scheduler or public push.
+
+Portable index: data/chess_allocation_20261007.json SHA256
+210924c8ca8c31dfac5b2fc60b45a78ec34a965aca3a8b95e2399d2469ead4f0.
+Verified raw/sourceZIPs and member manifests: ../archive/development_allocation_20261007.
+Forced declaration18calls is corrected to actual12/30sec, and a stray checkpoint
+counter is corrected to24games/2226plies in the index, without changing history.
+Packaging first stopped on its own private-address scan needle; generic scans
+and verified rawZIP reuse repaired it. Exact failed collector/partial sourceZIP
+remain ignored locally; public sources contain no private address. No scientific
+samples rerun or overwritten. Keep optional activity and defaultSinglePV;
+continue a concrete failure, not a universal robustness proof. Science OPEN.
