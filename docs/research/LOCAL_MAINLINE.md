@@ -93,7 +93,10 @@ versus10W1L1U. Across48streams both win15; repair2L7U versus original3L6U.
 stable advantage/default promotion or tier/weight fishing. Full records:
 data/chess_see_feedback_20261007.json and chess_see_opening_20261007.json.
 Earlier unitBlack loss root both builds and finite reference choose g3f4;
-not a uniquely identified SEE fault. Supported automatic/claim draw audit0/48.
+not a uniquely identified SEE fault. Three later declared roots129/133/137
+also show negative finite references; two select the recorded move. Preserve
+data/chess_loss_bracket_20261007.json; do not treat a late doomed-looking root as
+an isolated bad-move witness. Supported automatic/claim draw audit0/48.
 
 Canonical Western Core fixture uses repetition100000/max1000 and lacks complete
 FIDE draw adjudication; these old outcomes stay frozen. Existing Chess match

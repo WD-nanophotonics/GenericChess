@@ -1,0 +1,27 @@
+"""Three declared late loss roots, finite reference only, no price fitting."""
+import sys,json,hashlib,time
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT),str(ROOT/'.local_agent/certificate_source/python-chess')]
+import chess,chess.engine
+import scripts.chess_development as d
+p=Path(__file__).parent;out=p/'loss-bracket.json';assert not out.exists()
+source=ROOT/'.local_agent/feedback-20261007/exchange.json';raw=source.read_bytes();assert hashlib.sha256(raw).hexdigest()=='2da6b75dfda26ee92e0e359930760b4523be0ec675a7539b6fb1a577cdbfaf62';g=json.loads(raw)['games'][5]
+plan=dict(question='Where between earlier root125 and first mate report141 does a concrete late loss decision worsen?',indices=[129,133,137],conditions='One full-strength500000nodes/1sec root and recorded child each, Threads1 Hash16, full history, fresh game/hash per search. No local retuning, changed root premise, no unchanged root125 rerun.',decision='Finite root/played-child distinctions identify a practical next root or show these sampled roots already poor; independent limited scores are not exact WDL or unique causal proof.',cost='At most6reference fuse seconds plus3Core history roots/PV legal checks. No more sampling after seeing unfavorable results.')
+report=dict(complete=False,plan=plan,source_sha256=hashlib.sha256(raw).hexdigest(),rows=[]);d.write_record(out,report)
+c=d.compile_ruleset_for_execution(d.build_western_chess_ruleset());ref=ROOT/'.local_agent/stockfish-reference/stockfish/stockfish-windows-x86-64.exe';assert hashlib.sha256(ref.read_bytes()).hexdigest()=='55aa40c857de30b79dbe4f8e4c335ee2b23815cf2f100a6630d54761fcad3b85'
+with chess.engine.SimpleEngine.popen_uci(str(ref),timeout=15) as e:
+ e.configure({'Threads':1,'Hash':16,'UCI_LimitStrength':False})
+ for i in plan['indices']:
+  for n in ('rollout','advisor','slack'):
+   x=json.loads((ROOT/'.local_agent'/(n+'.json')).read_bytes());assert not x.get('stopped') and not x.get('user_paused')
+  history=g['opening_uci']+[r['move'] for r in g['moves'][:i]];s,_=d.replay_prefix(g['initial_fen'],c,history);b=chess.Board(g['initial_fen'])
+  for m in history:b.push_uci(m)
+  legal={d.uci(a) for a in d.iter_legal_actions(s,c)};assert legal=={m.uci() for m in b.legal_moves};played=g['moves'][i]['move'];assert played in legal and g['moves'][i]['side']==1
+  row=dict(index=i,fen=b.fen(en_passant='fen'),history_prefix=history,recorded=g['moves'][i],core_history_plies=len(history))
+  for kind,board in [('root',b),('played_child',b.copy(stack=True))]:
+   if kind=='played_child':board.push_uci(played)
+   e.configure({'Clear Hash':None});start=time.perf_counter();info=e.analyse(board,chess.engine.Limit(nodes=500000,time=1),game=object());score=info['score'].pov(b.turn);pv=board.copy(stack=True)
+   for m in info.get('pv',()):assert m in pv.legal_moves;pv.push(m)
+   row[kind]=dict(cp=score.score(),mate=score.mate(),nodes=info.get('nodes'),depth=info.get('depth'),wall_seconds=time.perf_counter()-start,pv=[m.uci() for m in info.get('pv',())])
+  report['rows'].append(row);d.write_record(out,report);print(i,played,row['root'],row['played_child'],flush=True)
+report.update(complete=True,core_roots=3,pv_legal_checks=6,errors=[]);d.write_record(out,report)

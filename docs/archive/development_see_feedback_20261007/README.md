@@ -19,3 +19,8 @@ rehashed with zero differences. Restore to a separate investigation directory;
 script-local path assumptions must be adapted, never overlay the active tree.
 SEE derivative build/patch pins remain in the preceding SEE-price source pack.
 Private account/Slack records, user inputs and credentials are excluded.
+
+Separate subsequent [loss-bracket diagnostic](../../research/data/chess_loss_bracket_20261007.json)
+binds loss-bracket-source.txt by its own producer hash; it is outside the earlier
+immutable20entry ZIP index. Three new declared history roots and six finite PV
+checks do not isolate a unique blunder or certify forced loss.
