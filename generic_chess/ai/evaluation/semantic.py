@@ -10,6 +10,7 @@ from __future__ import annotations
 import hashlib
 from itertools import combinations
 
+from ...rules.compiler import compile_semantic_ir
 from ...rules.ir import geometry_candidates
 from ...rules.schema import canonical_json
 from .config import EvaluationConfig, MAX_STATIC_EVAL, config_hash
@@ -90,8 +91,12 @@ def _path_union(events, density):
 
 def semantic_opportunity(compiled, type_id, config: EvaluationConfig):
     """Average both owners/all source squares; return explicit projection scope."""
-    ir = compiled.ir
-    total = compiled.board_shape.area
+    ir = compiled.ir if hasattr(compiled, 'ir') else compile_semantic_ir(compiled)
+    return _semantic_opportunity(compiled, ir, type_id, config)
+
+
+def _semantic_opportunity(compiled, ir, type_id, config):
+    total = compiled.board_shape.area if hasattr(compiled, 'ir') else compiled.board_size ** 2
     edges = {kind: [{} for _ in range(2 * total)]
              for kind in ('target_empty', 'target_enemy')}
     included, excluded = [], []
@@ -146,15 +151,19 @@ def build_semantic_opportunity_profile(compiled, config: EvaluationConfig):
     conventions, not evidence for transfer/promotion utility. Dynamic terms
     remain owned by Evaluator and are not repaired by this static candidate.
     """
-    if not hasattr(compiled, 'ir'):
-        raise ValueError('semantic opportunity candidate requires compiled semantic IR')
     if compiled.board_size is None:
         raise ValueError('candidate profile currently requires square-board legacy evaluation metadata')
     if (len(config.density_points) != len(config.density_weights)
             or not config.density_points or any(not 0 <= d <= 1 for d in config.density_points)
             or any(w < 0 for w in config.density_weights) or sum(config.density_weights) <= 0):
         raise ValueError('density law requires matched nonnegative weights and densities in[0,1]')
-    rows = {pt.type_id: semantic_opportunity(compiled, pt.type_id, config) for pt in compiled.piece_types}
+    # Existing legacy-to-IR lowering supplies the same projection boundary for
+    # generated legacy rules. It is analysis only: search keeps its original
+    # executable, with no artificial semantic action or executor conversion.
+    semantic_input = hasattr(compiled, 'ir')
+    ir = compiled.ir if semantic_input else compile_semantic_ir(compiled)
+    rows = {pt.type_id: _semantic_opportunity(compiled, ir, pt.type_id, config)
+            for pt in compiled.piece_types}
     median = _median([rows[pt.type_id]['raw'] for pt in compiled.piece_types if not pt.is_anchor])
     board = {}
     for pt in compiled.piece_types:
@@ -183,6 +192,7 @@ def build_semantic_opportunity_profile(compiled, config: EvaluationConfig):
         board_value_by_type=board, hand_value_by_base_type=hand, promotion_gain_by_type=gains,
         median_non_anchor_value=_median([board[p.type_id] for p in compiled.piece_types if not p.is_anchor]))
     scope = dict(candidate='semantic-opportunity-v1', complete_legal_mobility=False,
+                 ir_source='compiled_semantic' if semantic_input else 'existing_legacy_lowering',
                  law='Independent square occupancy: empty1-d, friend/enemy d/2; equal owner/source weighting.',
                  ignored='Anchor safety, future promotion/custody utility; excluded patterns listed per type. Hand scaling, promotion differences, drop diagnostics and dynamic terms retain legacy conventions, not validated semantic utility.',
                  types=rows)

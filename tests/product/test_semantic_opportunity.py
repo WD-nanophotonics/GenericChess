@@ -205,3 +205,30 @@ def test_nonempty_identical_atoms_do_not_hide_different_capture_semantics():
 def test_candidate_rejects_invalid_declared_context_law(config):
     with pytest.raises(ValueError, match='density law'):
         build_semantic_opportunity_profile(compile_variant(), config)
+
+
+@pytest.mark.parametrize('seed', [7, 21])
+def test_generated_legacy_rules_use_existing_lowering_without_executor_change(seed):
+    from generic_chess.generation.config import GeneratorConfig
+    from generic_chess.generation.generator import generate_game
+    from generic_chess.ai.evaluation.mobility import atoms_overlap, analytic_mobility_at_density
+    from generic_chess.rules.compiled import CompiledRuleSet
+    generated = generate_game(GeneratorConfig(seed=seed, board_size=4,
+        setup_preset='bilateral_random', allow_hybrid=True))
+    compiled = compile_ruleset_for_execution(generated.ruleset)
+    assert isinstance(compiled, CompiledRuleSet)
+    assert not generated.ruleset.semantic_actions
+    candidate, scope = build_semantic_opportunity_profile(compiled, EvaluationConfig())
+    assert scope['ir_source'] == 'existing_legacy_lowering'
+    assert not hasattr(compiled, 'ir')
+    assert candidate.ruleset_fingerprint == compiled.ruleset_fingerprint
+    checked = 0
+    for piece in compiled.piece_types:
+        row = scope['types'][piece.type_id]
+        assert semantic_opportunity(compiled, piece.type_id, EvaluationConfig()) == row
+        if not atoms_overlap(piece.movement_atoms):
+            checked += 1
+            for curve in row['curves']:
+                assert curve['total'] == pytest.approx(analytic_mobility_at_density(
+                    4, piece.movement_atoms, curve['density']))
+    assert checked

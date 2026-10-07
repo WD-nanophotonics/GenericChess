@@ -128,6 +128,31 @@ callable accepts `semantic_candidate=True` and an explicit `evaluation_config`;
 no new CLI or workflow interface is required. Dynamic terms remain separate
 legacy approximations; all controlled candidate experiments here set them to0.
 
+Generated legacy rules use the existing `compile_semantic_ir` analysis lowering;
+their product executor remains `CompiledRuleSet`. Empty semantic DSL still fails
+its original validation. No fake action, new adapter or executor switch is needed.
+Four predeclared board4/6, seed7/21 generated rules complete32 cold depth2 calls
+with repeat/Core parity. Nonoverlapping mobility curves match independent
+analytic formulas; separate legacy Core occupancy samples test hybrid unions.
+The generator's current filters ensure structural mobility/safe anchors/opening
+moves, not useful price discrimination: board4 seed7 admits an immediate mate.
+That root remains in the results as a tactical control, never silently replaced.
+
+Forty real lexical-history roots give120 complete fresh/reused/repeated calls
+with Core scores equal. Those routes contain no hands or promoted entities.
+Separate declared promotion and C-drop-enabled fixtures cover12 roots/36 complete
+public calls, actual promotion, captured base types and two drops. Eleven Core
+references complete; one remains unknown, including a separate10-second/8192-leaf
+development follow-up. Fresh/reused agreement does not certify that unknown cell.
+The original cannon mixture forbids drops; preliminary short routes and a
+premature checkpoint claim are retained with corrections, not counted as drops.
+
+Two real Shogi capture transitions expose a useful distinction: G and promotedP
+have equal current opportunity/board value1000, but captured hands reset to
+G900 versus P156. Existing static lookup already sees gains1900 versus1156
+under hand_weight0.9. This verifies execution/accounting, not those hand prices
+or a theoretically justified capture-reset liability in the board table.
+
 The initial v0 omitted cannon screens. V1 supports exact occupied-count paths:
 independent Core one/two-screen checks and10240 density samples agree with the
 projected action set in the declared cannon contexts. Exhaustive small overlapping

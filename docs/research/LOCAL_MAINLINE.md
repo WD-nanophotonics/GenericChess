@@ -26,6 +26,9 @@ quiet/capture geometry, clear/occupied-count paths and equal owner/source
 contexts. It sees atomless movement and replaced nonempty atoms; guards and
 future utility remain qualified. Defaults are unchanged. SEMANTIC_CAPABILITY.md
 owns its scope, actual interface/alias checks and finite approximation evidence.
+Existing legacy-to-IR analysis also covers generated rules without changing
+their executor. An observed immediate-mate generated opening is a tactical
+control, not price discrimination; future populations need a declared purpose.
 
 A cannon/rook mixture now distinguishes identical legacy atoms with different
 capture semantics; Core verifies table-induced exchange sensitivity, not true

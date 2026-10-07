@@ -64,3 +64,19 @@ def test_existing_benchmark_ruleset_option_executes_semantics(tmp_path, capsys):
                  '--repeat', '2', '--fresh-tt', '--no-disk']) == 0
     output = capsys.readouterr().out
     assert 'run 1:' in output and 'run 2:' in output
+
+
+def test_generated_candidate_uses_legacy_execution_and_core_reference(tmp_path):
+    from generic_chess.generation.config import GeneratorConfig
+    from generic_chess.generation.generator import generate_game
+    from generic_chess.ai.evaluation.config import EvaluationConfig
+    generated = generate_game(GeneratorConfig(seed=21, board_size=4,
+        setup_preset='bilateral_random', allow_hybrid=True))
+    config = EvaluationConfig(dynamic_mobility_weight=0, anchor_escape_weight=0,
+                              promotion_potential_weight=0)
+    report = run_rule(tmp_path / 'candidate.json', ruleset_to_dict(generated.ruleset),
+                      semantic_candidate=True, evaluation_config=config)
+    assert report['compiled_class'] == 'CompiledRuleSet'
+    assert report['candidate_scope']['ir_source'] == 'existing_legacy_lowering'
+    assert report['reference']['complete'] and all(report['repeat_equal'].values())
+    assert all(s['complete'] and s['reference_score_equal'] for s in report['searches'])

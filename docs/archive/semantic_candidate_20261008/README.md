@@ -22,3 +22,11 @@ Producers refuse output overwrite: preserve originals and use a fresh isolated
 recovery output directory for reruns. Collector is packaging, not an experiment.
 Future-opportunity/native are explicit virtual tasks with no terminal utility
 or claim that opponent pass is legal in Chess. They are not material tables.
+
+Generated/history supplement: generated-sources.zip and generated-raw.zip.
+Original sources.zip/raw.zip bytes remain unchanged. Supplement base is3a6135.
+Restore semantic-v1-generated.py for these analyses; the legacy search executor
+remains original. Initial/short event routes and corrections stay separate.
+One drop-history Core reference is unknown at the declared fuse, not zero.
+The new C-drop-enabled fixture changes drop permissions explicitly; it is not
+a retroactive alteration of the frozen cannon/rook price comparison.
