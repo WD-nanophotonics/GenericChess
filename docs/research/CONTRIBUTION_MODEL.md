@@ -123,6 +123,10 @@ before deciding whether custody information adds a material construction input.
 The advisor read the prior note but did not execute its code/tests; no new
 independent validation is inferred from the reply. Further broad search work
 is deferred until an actual caller/output requirement needs it.
+The immediate setup check recovers all13 histories in292 transitions and
+validates enemy hand tags. Remaining horizons2..30 require at most540 paired
+continuation transitions per repeat. This is setup, not a continuation estimate:
+../archive/original_horizon_preflight_20261008/ retains exact source/output.
 
 Compact observations: data/contribution_model_20261008.json. Exact sources,
 raw/failed versions and dependency hashes: ../archive/contribution_model_20261008/.
