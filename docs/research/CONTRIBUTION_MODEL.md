@@ -127,6 +127,11 @@ The immediate setup check recovers all13 histories in292 transitions and
 validates enemy hand tags. Remaining horizons2..30 require at most540 paired
 continuation transitions per repeat. This is setup, not a continuation estimate:
 ../archive/original_horizon_preflight_20261008/ retains exact source/output.
+The declared eight-repeat continuation then completes4320 transitions in33.77sec.
+After original64-path weighting, mean G-minus-P signed service is-9/512;
+repeat contrasts range-3/64..1/64 and change sign. This exposed small pilot
+does not support a stable generic hand correction. Full actions/events are
+saved in that archive; independent tag-path replay is the next check.
 
 Compact observations: data/contribution_model_20261008.json. Exact sources,
 raw/failed versions and dependency hashes: ../archive/contribution_model_20261008/.
