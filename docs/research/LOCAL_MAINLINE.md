@@ -89,6 +89,8 @@ replayzero. It does not establish improvement; no defaults change. Evidence:
 data/chess_see_price_20261007.json. Fresh fixed2400 feedback gives repair7W0L5U
 versus original5W2L5U; separate two6ply-prefix feedback reverses this:8W2L2U
 versus10W1L1U. Across48streams both win15; repair2L7U versus original3L6U.
+Keep table differences visible: geometric5W3U versus6W2U; linear7W1U versus
+4W1L3U; unit3W2L3U versus5W2L1U. No result-based table selection or retuning.
 5384played+240prefix replayzero,38archive entries extracted/rehashedzero. No
 stable advantage/default promotion or tier/weight fishing. Full records:
 data/chess_see_feedback_20261007.json and chess_see_opening_20261007.json.
