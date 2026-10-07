@@ -50,10 +50,16 @@ the destination kernel exactly. A separate two-cycle virtual census retains
 negative N means; survivor continuation alone does not resolve that limitation.
 Original-owner coupled trajectories now retain13 first-transfer frontiers;
 1778 paired pre-transfer legal sets and tagged service agree. Stopping before
-capture cannot identify this base-dependent effect on inspected paths. Next:
-choose one paired frontier continuation with a decision-changing outcome,
-keeping context/policy/base-current assumptions explicit; no reference fitting.
-JOINT_SERVICE_DIAGNOSTIC.md and CUSTODY_CONTINUATION.md own detailed evidence.
+capture cannot identify this base-dependent effect on inspected paths. The
+paired full-state control pilot exposes response-law dilution: all13
+two-ply uniform differences disappear under category response/minimax. At the
+first frontier both optimal and all26 conditional four-ply control deltas agree.
+Matched immobile-reference ability premiums are nonnegative in an explicit
+virtual-pass law, but the shared baseline changes ratios, not stock calibration.
+Boundary and partial-pawn promotion checks quantify additional context bias.
+Next: one concrete rule/promotion/intervention pilot, without a new broad census
+or human-reference fitting. CONTRIBUTION_MODEL.md owns this construction check;
+JOINT_SERVICE_DIAGNOSTIC.md/CUSTODY_CONTINUATION.md retain prior finite evidence.
 
 ## Unfamiliar-rule search
 

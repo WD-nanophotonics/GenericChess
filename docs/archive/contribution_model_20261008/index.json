@@ -1,0 +1,221 @@
+{
+  "original_directory": ".local_agent/frontier-contribution-20261008",
+  "repository_base_sha": "d3449839769fe10c0739e31da860fdaec7f85399",
+  "current_result": {
+    "path": "docs/research/data/contribution_model_20261008.json",
+    "sha256": "0a0133290989d1055a919b4c5fbc9c0e6a75e5f4be5aef51f8d9f5595d0f0604"
+  },
+  "archives": {
+    "sources.zip": {
+      "sha256": "db8cfe65b870553e1804ad32950ca8d467fa853a4ea72b38345347253de315ff",
+      "members": {
+        "ability-premium.py": {
+          "bytes": 3513,
+          "sha256": "b626f50d3ee4ca33b00c9e392143d54f42c982b8278878a3e1598108f1617c98"
+        },
+        "action-dilution.py": {
+          "bytes": 5190,
+          "sha256": "12ff240b969f9d3ff3e103c5a0ec5fea8ba9604fb08d5d778f542d18d82dd7ec"
+        },
+        "boundary-oracle.py": {
+          "bytes": 3452,
+          "sha256": "ac131c84cad8ac2bc705450218f42e4eb95911cffadeab83e74a845edce0b151"
+        },
+        "collect.py": {
+          "bytes": 10945,
+          "sha256": "b9dfe8fcc12fe264c7f65c815d3d04a7a03e0891e9a695ee2951b48b42020700"
+        },
+        "conditional-spectrum.py": {
+          "bytes": 4681,
+          "sha256": "c92d577ed4a0692cbcf426ef861ff661c89c230fe5b71770b199adaefdcf5233"
+        },
+        "generated-history-pv-initial.py": {
+          "bytes": 5783,
+          "sha256": "029c2c6e2b4f74beb2c77575072b26f25c5f76a2ab95146dbf7d3408ce12c669"
+        },
+        "generated-history-pv.py": {
+          "bytes": 5794,
+          "sha256": "49b8217987a3d58ae8b37ef3329fdbf12248a8afe1f68f610d278b7f661769eb"
+        },
+        "partial-pawn-premium.py": {
+          "bytes": 4061,
+          "sha256": "253b16b6c4b7045a216072ad8718167731432cffc33588c0d2a6e200ebe92c66"
+        },
+        "pawn-promotion.py": {
+          "bytes": 4090,
+          "sha256": "629f7a02a5d3af23493f9dbbcc208abed099f4be1692276a7b75ccf19e25afe2"
+        },
+        "policy-control-initial.py": {
+          "bytes": 2816,
+          "sha256": "eeb92e172c949809d3450c38088ba2abc894c84087819466bc905155c60780f7"
+        },
+        "policy-control.py": {
+          "bytes": 2878,
+          "sha256": "b9d666febd8658a5a3ec20328f18ea80260f370456505ae02d4d707866c7aa53"
+        },
+        "premium-boundary-expanded.py": {
+          "bytes": 3957,
+          "sha256": "b18267b9ddd3174312292effcef8309989d1036cab119dbe24d7fb00fdb4e492"
+        },
+        "premium-boundary.py": {
+          "bytes": 3613,
+          "sha256": "fcd6410ebe6c234caf3beb34c020966dbf16906b6c8dabd1dcacce781e266a6d"
+        },
+        "premium-oracle.py": {
+          "bytes": 3318,
+          "sha256": "11e14cb8efcc77e6108b1af3d8f6b5757f82ef774c32d0015dc774f98e0c269c"
+        },
+        "record-cadence.py": {
+          "bytes": 2420,
+          "sha256": "28fab937358c8f6fd763d380deb1c200e1df65ebfa6f5faa31f431dbdd628efd"
+        },
+        "tt-provenance.py": {
+          "bytes": 4521,
+          "sha256": "ab560c2b70ce3163cf869d7629452c501b8caa590448b0d70010cee7bd5ff788"
+        },
+        "whole-core-oracle.py": {
+          "bytes": 3553,
+          "sha256": "41c82d6a2c7bc31b1b14540905a5d99e286db6b461ae3ebdb72472c4d32af765"
+        },
+        "whole-minimax.py": {
+          "bytes": 4611,
+          "sha256": "78e7c834d9d940aa91f0c15c3c319305950027b4e5332b094d491cb22abe6f33"
+        },
+        "whole-native-oracle-initial.py": {
+          "bytes": 3949,
+          "sha256": "2685932d4f16994bc386b0f02fc4ced37a90021da47a8834d45cc125078dabdc"
+        },
+        "whole-native-oracle.py": {
+          "bytes": 3956,
+          "sha256": "9bbe805c57668b276f091b8ff50f3d43569045e40c6e64407b96e5502729c9bf"
+        },
+        "whole-state.py": {
+          "bytes": 5720,
+          "sha256": "7c36bad7ca97e083c56e3194b517350b038f2b400c7804ace5e5be130bfe8141"
+        }
+      },
+      "physically_extracted_rehashed": true
+    },
+    "raw.zip": {
+      "sha256": "c940b788ff9b5dcb26473b4fc658525ac277955af03e9fd53fbc460c0de515f5",
+      "members": {
+        "whole-state.json": {
+          "bytes": 5239620,
+          "sha256": "3349d88395fb408683ac02de9e924b417d722ca98056b13a540c136a5ea0c280"
+        },
+        "action-dilution.json": {
+          "bytes": 420922,
+          "sha256": "ad4efe787f1656d5f581f035aef95c6c34c7be840f6c58f6c2354e658ae52d24"
+        },
+        "policy-control.json": {
+          "bytes": 4858,
+          "sha256": "fa49abb949fdf9687cf654e7ae21634228460ce831a439bf9cc8f2e0035cc4c3"
+        },
+        "policy-control-corrected.json": {
+          "bytes": 4858,
+          "sha256": "c334a5395888e2d6f6b787f06e5a326b23fbc382c3c23662a5ede93d85472c09"
+        },
+        "tt-provenance.json": {
+          "bytes": 273074,
+          "sha256": "59dc70ad3d4635a6652695c9a5ffbd971365c2846ca2c0c62c6eefc2286e5443"
+        },
+        "ability-premium.json": {
+          "bytes": 9866532,
+          "sha256": "e9e74a036516ce9cec031b683163beae35ad6ac01275c1f2539d31441c32de03"
+        },
+        "premium-oracle.json": {
+          "bytes": 3853,
+          "sha256": "94e76b0b7803a9e58cde9386fd97b83d5b403804ed78b34b2d0d36f4fde057dc"
+        },
+        "premium-boundary.json": {
+          "bytes": 256297,
+          "sha256": "ca0fae2a6ae1aa1476336d95559bd55b3238c3c5d25740c7169fa0ff586b50d3"
+        },
+        "premium-boundary-expanded.json": {
+          "bytes": 2040896,
+          "sha256": "0668ffd014f7e7995576a39e665719186c55a8e3434854d2a1363dd05852af5c"
+        },
+        "boundary-oracle.json": {
+          "bytes": 3191,
+          "sha256": "0d4447459f7e57b4a179c8a0ed87c50d01534bd67a552c0d49be4637bf890541"
+        },
+        "partial-pawn-premium.json": {
+          "bytes": 2479055,
+          "sha256": "2238e2d776bc3bb1aea878f64fa30b073e5247dcdbc2998ef3d5e3eb9c7093f8"
+        },
+        "pawn-promotion.json": {
+          "bytes": 9622344,
+          "sha256": "92d8adf40bf323b1d21491d09df990ca426bddddda419ddd397eb048f8270cd0"
+        },
+        "whole-native-oracle.json": {
+          "bytes": 606,
+          "sha256": "5b75ac4bb0cbf3ff529228553824c854b3c7353d5559f1f19a514a3f1053ffbf"
+        },
+        "whole-native-oracle-completed.json": {
+          "bytes": 16237,
+          "sha256": "0277d8b3a6da929687286e0f3a8668e869d50c6513adb65ebd569c284ad00fa1"
+        },
+        "generated-history-pv.json": {
+          "bytes": 943,
+          "sha256": "aadbce1bb4608ea119fcfe33dea619a0f7b3e8ba85ff857e651b88001488a1a9"
+        },
+        "generated-history-pv-completed.json": {
+          "bytes": 88368,
+          "sha256": "41cf8b10526c7931029302a2f0190a0d62fff4254bd504c25f6bfa77a28e2bd5"
+        },
+        "whole-minimax.json": {
+          "bytes": 10033,
+          "sha256": "28e4ab442dab7a23890c8d43f3401f90d4f8de98e78147ca29281c78bd492195"
+        },
+        "whole-core-oracle.json": {
+          "bytes": 2246,
+          "sha256": "3060db045275a728c404354f48ea24455818b2c7f120356d5acc3992c5a2ccaa"
+        },
+        "conditional-spectrum.json": {
+          "bytes": 34381,
+          "sha256": "afc3bcfa0b1cd032157aadfbbd7057881b374c77f29f7d5fe06f2d54b7921d33"
+        },
+        "record-cadence.json": {
+          "bytes": 1873,
+          "sha256": "f2197cebbe225627c39d942341e923e5d22a647568e3f594bc9bb373cd4bf0d7"
+        }
+      },
+      "physically_extracted_rehashed": true
+    }
+  },
+  "dependencies": [
+    {
+      "archive": "docs/archive/joint_service_20261008/sources.zip",
+      "member": "census.py",
+      "sha256": "816a8831d96a92965b9c23ffa1b3da9efc2723b5dd381ff9f85924f277aa0324"
+    },
+    {
+      "archive": "docs/archive/custody_continuation_20261008/raw.zip",
+      "member": "kernel-completed.json",
+      "sha256": "fea62b29af22d2f5dd4749a15d0b7b3a1ac232e678cdb992ca50d415c08e7a4b"
+    },
+    {
+      "archive": "docs/archive/custody_continuation_20261008/raw.zip",
+      "member": "pretransfer-coupling.json",
+      "sha256": "ad648f48c4506c2bacdabab3c252761c7a85308cf00e7ece022b18f88e89322e"
+    },
+    {
+      "archive": "docs/archive/custody_continuation_20261008/raw.zip",
+      "member": "returned-history-search.json",
+      "sha256": "491e270a26f95c48b50c3f492cb2d6aa86501f22cf8e2ad7a8c09c6893cb434e"
+    }
+  ],
+  "repository_dependencies": [
+    {
+      "path": "generic_chess/ai/alphabeta/search.py",
+      "commit": "d3449839769fe10c0739e31da860fdaec7f85399",
+      "sha256": "b3af205f1555223290fe6dc767c226f5f0ee2914c3c53f28d238936e4013aa99"
+    },
+    {
+      "path": "generic_chess/ai/alphabeta/transposition.py",
+      "commit": "d3449839769fe10c0739e31da860fdaec7f85399",
+      "sha256": "120ea3195058c120bfc4d1e9f7166a93c857e57558dba2aafb74bb2c83595a2b"
+    }
+  ],
+  "producer_and_source_pins_resolved": true
+}

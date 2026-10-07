@@ -66,6 +66,13 @@ cost records; it did not run today's69-edge tree or change machine permissions.
 Use a short continuation record: what is unknown; which possible outcomes change
 the next decision; expected incremental resources. Include implementation and
 explanation/token costs. No numeric ROI fiction or new approval framework.
+For bulk context producers, retain an initial declaration and bounded batch
+checkpoints rather than rewriting the entire growing result after every tiny
+context. A2026-10-08 representative512-context recording control wrote86.8MB
+in514 calls versus5.86MB in34 calls with16-context checkpoints; final hashes
+match. Timing includes byte-count checks, not a production speed guarantee.
+Use the existing atomic writer; document the small unsaved-batch bound, retain
+stop checks, and do not change frozen evidence or add a new logging framework.
 Within existing authorization, an interruptible small batch may continue past
 a development cost checkpoint when it has concrete information value. Record
 actual transitions, cache accesses, scoring, time and bytes separately:129 as

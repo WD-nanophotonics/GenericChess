@@ -54,6 +54,30 @@ def test_default_score_action_cache_contract_is_preserved():
     assert warm.principal_variation == ()
 
 
+def test_full_pv_keeps_deeper_cache_semantics_until_reset():
+    compiled = build_4x4_rooks()
+    session = GameSession(compiled)
+    player = AlphaBetaPlayer(compiled, use_disk_cache=False,
+        tuning=SearchTuning(require_full_pv=True, use_root_tactical=False))
+    shallow = SearchLimits(max_depth=1, quiescence_max_depth=0,
+                           quiescence_hard_max_depth=0)
+    deep = SearchLimits(max_depth=2, quiescence_max_depth=0,
+                        quiescence_hard_max_depth=0)
+    shallow_score, _ = reference_minimax(session.state, 1, player._evaluator, compiled)
+    deep_score, _ = reference_minimax(session.state, 2, player._evaluator, compiled)
+    assert shallow_score != deep_score
+    deeper = player.choose_action(session, deep)
+    assert deeper.score == deep_score
+    retained = player.choose_action(session, shallow)
+    assert retained.completed_depth == 1
+    assert retained.score == deep_score
+    _replay(compiled, retained)
+    player.reset()
+    reset = player.choose_action(session, shallow)
+    assert reset.score == shallow_score
+    _replay(compiled, reset)
+
+
 def test_full_pv_may_end_at_real_terminal_before_target_depth():
     compiled = build_mate(2)
     player = AlphaBetaPlayer(compiled, use_disk_cache=False,
@@ -97,3 +121,39 @@ def test_warm_full_pv_does_not_override_user_cancellation():
     assert cancelled.termination_reason == 'cancelled'
     assert cancelled.completed_depth == 0
     assert cancelled.principal_variation == ()
+
+
+def test_cancellation_during_cached_line_replay_keeps_session_reusable(monkeypatch):
+    from generic_chess.ai.cancellation import CancellationToken
+    from generic_chess.core.search_runtime import SearchPathRuntime
+    compiled = build_4x4_rooks()
+    session = GameSession(compiled)
+    player = AlphaBetaPlayer(compiled, use_disk_cache=False,
+        tuning=SearchTuning(require_full_pv=True, use_root_tactical=False))
+    limits = SearchLimits(max_depth=3, quiescence_max_depth=0,
+                          quiescence_hard_max_depth=0)
+    cold = player.choose_action(session, limits)
+    before = session.state
+    before_history = session.history
+    token = CancellationToken()
+    original = SearchPathRuntime.legal_actions
+    replay_frontiers = []
+
+    def cancel_inside_replay(runtime, checkpoint=None):
+        if runtime.depth > 0:
+            replay_frontiers.append(runtime.depth)
+            token.cancel()
+        return original(runtime, checkpoint)
+
+    with monkeypatch.context() as scoped:
+        scoped.setattr(SearchPathRuntime, 'legal_actions', cancel_inside_replay)
+        cancelled = player.choose_action(session, limits, cancel_token=token)
+    assert replay_frontiers
+    assert cancelled.termination_reason == 'cancelled'
+    assert cancelled.completed_depth < 3
+    assert session.state == before
+    assert session.history == before_history
+    recovered = player.choose_action(session, limits)
+    assert recovered.completed_depth == 3
+    assert recovered.score == cold.score
+    _replay(compiled, recovered)

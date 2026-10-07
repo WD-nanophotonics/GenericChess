@@ -76,8 +76,9 @@ that stops before capture cannot identify this base-dependent continuation
 effect on inspected paths. These frontiers supply a less conditioned next
 population than the earlier forced prefix; they do not establish full-game
 contribution, reachability or equality over every future legal history.
-Next: select one paired frontier continuation whose outcomes change a concrete
-construction decision, without tuning its law to exposed human ratios.
+The subsequent full-state control and matched-reference checks are now in
+CONTRIBUTION_MODEL.md. They separate response dilution from contribution and
+retain finite-task limits without tuning a law to exposed human ratios.
 Compact observations: data/custody_continuation_20261008.json.
 Exact sources/raw/failed versions: ../archive/custody_continuation_20261008/.
 No active imports use the historical producers.

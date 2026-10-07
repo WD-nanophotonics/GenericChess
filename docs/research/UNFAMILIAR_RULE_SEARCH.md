@@ -202,3 +202,25 @@ history and resource/result curves. No hidden change to depth acceptance,
 terminal sentinels, evaluator or default tuning was made.
 Exact controls/source versions: data/custody_continuation_20261008.json and
 ../archive/custody_continuation_20261008/index.json.
+
+## Deterministic cache provenance and generated capture history
+
+The next fixed-node control has36 calls, two repeats per output/cap condition,
+and no time-limit cells. Retained deeper entries can change a shallower nominal
+score reproducibly: full-output nominaldepth2 at1024nodes gives3603 retained
+versus2557 reset; at16384nodes retained depth4 score2557 is reused for target3,
+whose reset score is3603. Complete legal lines do not imply uniform-depth values.
+Two product regressions cover deeper-cache/reset semantics and cancellation
+during cached-line replay, including unchanged state/history and engine reuse.
+
+A preselected generated6x6 seed21 history contains12 ordinary captures; despite
+the declared selection preference it contains no actual promotion or drop.
+Its32 fixed-table cold/warm calls expose the same output/resource distinction:
+at4096nodes full warm completeddepth2 can score2716 versus cold121, while at
+16384nodes default warm reachesdepth4 and full warm stays atdepth3. The complete
+Core depth2 reference is121; depth3 remains unknown at its declared cost
+checkpoint. These are cache/history interface measurements, not new price
+deployment evidence. Defaults and sufficient-depth reuse remain unchanged.
+Sources, exact histories, failed initial versions and results:
+data/contribution_model_20261008.json and
+../archive/contribution_model_20261008/index.json.
