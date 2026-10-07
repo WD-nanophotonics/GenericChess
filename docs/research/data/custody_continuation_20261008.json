@@ -1,0 +1,5056 @@
+{
+  "complete": true,
+  "scope": "Explicit finite tasks and optional search-output contract; no material-price/default/strength promotion",
+  "producer_sha256": "8e562566565b7514bdc978e26679f1138ce3e690ccf796ca92582cbbbb858f54",
+  "sources": {
+    "exchangeable-custody.json": "ddb967fa156f37c423e6544b38bb79da02a9abcfa8f6e674e4c75c663a50307a",
+    "full-pv-ablation.json": "c850eb5ff58eba9f833d752c20da0335cfbd978b0af6d0e23bfd567297382bcf",
+    "full-pv-chain-ablation.json": "e9fabd83672327d897ab3e9eb007bc02f82bf8cd2b5a629478268ee12bd48bfb",
+    "kernel-completed.json": "fea62b29af22d2f5dd4749a15d0b7b3a1ac232e678cdb992ca50d415c08e7a4b",
+    "kernel-missing-piece-type-method.json": "b9945207b9b9019d08ff002cace9433ef6d2dbba733f7372f78f68bab1d633d4",
+    "kernel.json": "b9945207b9b9019d08ff002cace9433ef6d2dbba733f7372f78f68bab1d633d4",
+    "native-witness-completed.json": "7efa266afa9690f8d28b2b21ed92db5f22b3831c80c998586dc29e2027950b54",
+    "native-witness-type-map-failed.json": "ba5dd005976e4065fc456198edf199a8f4d1d4cbe8c0be4e88903660426a178d",
+    "native-witness.json": "ba5dd005976e4065fc456198edf199a8f4d1d4cbe8c0be4e88903660426a178d",
+    "projection-witness.json": "6914c93cd088893f41767ccf1429b0272bea4f78fe5d8046d93fb516de455c17",
+    "recombined-full-pv.json": "55652e999e873ad2585611cb0589443bf9bff738f68bde7b35666b3587695aa9",
+    "returned-history-search.json": "491e270a26f95c48b50c3f492cb2d6aa86501f22cf8e2ad7a8c09c6893cb434e",
+    "surviving-service.json": "205819f70a875a2a0afb048c9b9806c2a5d14b3f586e5da8a0ae39f0ea22cdbc",
+    "survivor-oracle.json": "171926471ea94140efd17a4df1e18cae206e735635779ad8b832534af6607a15",
+    "tt-chain-feasibility.json": "c608b163266800c1ed897777aeb9fed96b2c5b7a889240c59d1d05b675f1bac2",
+    "two-turn.json": "5c2ea3a687f2b6573d10fbbabe484b11f7e3b24a46b41282ffafa90f49f7c46c"
+  },
+  "immediate": {
+    "cost": {
+      "transitions": 1420,
+      "legal_calls": 1422,
+      "reply_states": 1366,
+      "seconds": 12.676804999820888
+    },
+    "cases": [
+      {
+        "base": "G",
+        "best_drop_service": 0,
+        "drops": [
+          {
+            "square": [
+              0,
+              1
+            ],
+            "reply_count": 29,
+            "worst": 0,
+            "uniform_reply": "27/29",
+            "returns": 2
+          },
+          {
+            "square": [
+              0,
+              2
+            ],
+            "reply_count": 30,
+            "worst": 0,
+            "uniform_reply": "14/15",
+            "returns": 2
+          },
+          {
+            "square": [
+              0,
+              3
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "30/31",
+            "returns": 1
+          },
+          {
+            "square": [
+              0,
+              5
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "30/31",
+            "returns": 1
+          },
+          {
+            "square": [
+              0,
+              7
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              1,
+              3
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "30/31",
+            "returns": 1
+          },
+          {
+            "square": [
+              1,
+              4
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "30/31",
+            "returns": 0
+          },
+          {
+            "square": [
+              2,
+              1
+            ],
+            "reply_count": 25,
+            "worst": 0,
+            "uniform_reply": "23/25",
+            "returns": 2
+          },
+          {
+            "square": [
+              2,
+              3
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "30/31",
+            "returns": 1
+          },
+          {
+            "square": [
+              2,
+              4
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "3/31",
+            "returns": 0
+          },
+          {
+            "square": [
+              2,
+              5
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              2,
+              6
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              2,
+              7
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              3,
+              0
+            ],
+            "reply_count": 3,
+            "worst": 0,
+            "uniform_reply": "2/3",
+            "returns": 1
+          },
+          {
+            "square": [
+              3,
+              1
+            ],
+            "reply_count": 4,
+            "worst": 0,
+            "uniform_reply": "1/4",
+            "returns": 3
+          },
+          {
+            "square": [
+              3,
+              4
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "3/31",
+            "returns": 0
+          },
+          {
+            "square": [
+              3,
+              5
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              3,
+              7
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              4,
+              1
+            ],
+            "reply_count": 3,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 3
+          },
+          {
+            "square": [
+              4,
+              3
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "30/31",
+            "returns": 1
+          },
+          {
+            "square": [
+              4,
+              4
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "3/31",
+            "returns": 0
+          },
+          {
+            "square": [
+              4,
+              5
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              4,
+              7
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              5,
+              1
+            ],
+            "reply_count": 6,
+            "worst": 0,
+            "uniform_reply": "1/3",
+            "returns": 4
+          },
+          {
+            "square": [
+              5,
+              3
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "30/31",
+            "returns": 1
+          },
+          {
+            "square": [
+              5,
+              4
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "3/31",
+            "returns": 0
+          },
+          {
+            "square": [
+              5,
+              5
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              5,
+              7
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              6,
+              1
+            ],
+            "reply_count": 30,
+            "worst": 0,
+            "uniform_reply": "9/10",
+            "returns": 3
+          },
+          {
+            "square": [
+              6,
+              3
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "30/31",
+            "returns": 1
+          },
+          {
+            "square": [
+              6,
+              4
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "3/31",
+            "returns": 0
+          },
+          {
+            "square": [
+              6,
+              5
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              6,
+              7
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              7,
+              3
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "30/31",
+            "returns": 1
+          },
+          {
+            "square": [
+              7,
+              4
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "3/31",
+            "returns": 0
+          },
+          {
+            "square": [
+              7,
+              5
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              7,
+              7
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              8,
+              1
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "30/31",
+            "returns": 1
+          },
+          {
+            "square": [
+              8,
+              3
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "30/31",
+            "returns": 1
+          },
+          {
+            "square": [
+              8,
+              4
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "2/31",
+            "returns": 0
+          },
+          {
+            "square": [
+              8,
+              5
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              8,
+              7
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          }
+        ]
+      },
+      {
+        "base": "P",
+        "best_drop_service": 0,
+        "drops": [
+          {
+            "square": [
+              2,
+              1
+            ],
+            "reply_count": 27,
+            "worst": 0,
+            "uniform_reply": "8/9",
+            "returns": 2
+          },
+          {
+            "square": [
+              2,
+              3
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "30/31",
+            "returns": 1
+          },
+          {
+            "square": [
+              2,
+              4
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "1/31",
+            "returns": 0
+          },
+          {
+            "square": [
+              2,
+              5
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              2,
+              6
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          },
+          {
+            "square": [
+              2,
+              7
+            ],
+            "reply_count": 31,
+            "worst": 0,
+            "uniform_reply": "0",
+            "returns": 0
+          }
+        ]
+      }
+    ]
+  },
+  "native_zero_witnesses": {
+    "count": 48,
+    "seconds": 2.0918173000682145
+  },
+  "two_turn": [
+    {
+      "complete": true,
+      "force_capture": false,
+      "base": "G",
+      "square": [
+        2,
+        1
+      ],
+      "transitions": 17,
+      "calls": 17,
+      "seconds": 0.09882740001194179
+    },
+    {
+      "complete": true,
+      "force_capture": false,
+      "base": "G",
+      "square": [
+        2,
+        3
+      ],
+      "transitions": 17,
+      "calls": 17,
+      "seconds": 0.11114910012111068
+    },
+    {
+      "complete": true,
+      "force_capture": false,
+      "base": "G",
+      "square": [
+        2,
+        4
+      ],
+      "transitions": 52,
+      "calls": 52,
+      "seconds": 0.33421629993245006
+    },
+    {
+      "complete": true,
+      "force_capture": false,
+      "base": "G",
+      "square": [
+        2,
+        5
+      ],
+      "transitions": 20,
+      "calls": 20,
+      "seconds": 0.13035600003786385
+    },
+    {
+      "complete": true,
+      "force_capture": false,
+      "base": "G",
+      "square": [
+        2,
+        6
+      ],
+      "transitions": 7,
+      "calls": 7,
+      "seconds": 0.044743800070136786
+    },
+    {
+      "complete": true,
+      "force_capture": false,
+      "base": "G",
+      "square": [
+        2,
+        7
+      ],
+      "transitions": 5,
+      "calls": 5,
+      "seconds": 0.03312429995276034
+    },
+    {
+      "complete": true,
+      "force_capture": false,
+      "base": "P",
+      "square": [
+        2,
+        1
+      ],
+      "transitions": 19,
+      "calls": 19,
+      "seconds": 0.10247520008124411
+    },
+    {
+      "complete": true,
+      "force_capture": false,
+      "base": "P",
+      "square": [
+        2,
+        3
+      ],
+      "transitions": 17,
+      "calls": 17,
+      "seconds": 0.10258590010926127
+    },
+    {
+      "complete": true,
+      "force_capture": false,
+      "base": "P",
+      "square": [
+        2,
+        4
+      ],
+      "transitions": 19,
+      "calls": 19,
+      "seconds": 0.1214030000846833
+    },
+    {
+      "complete": true,
+      "force_capture": false,
+      "base": "P",
+      "square": [
+        2,
+        5
+      ],
+      "transitions": 3,
+      "calls": 3,
+      "seconds": 0.02081670006737113
+    },
+    {
+      "complete": true,
+      "force_capture": false,
+      "base": "P",
+      "square": [
+        2,
+        6
+      ],
+      "transitions": 3,
+      "calls": 3,
+      "seconds": 0.0200785999186337
+    },
+    {
+      "complete": true,
+      "force_capture": false,
+      "base": "P",
+      "square": [
+        2,
+        7
+      ],
+      "transitions": 3,
+      "calls": 3,
+      "seconds": 0.019909200025722384
+    }
+  ],
+  "stochastic": {
+    "declaration": {
+      "question": "Can an explicit full-state stochastic custody process retain capture/reset/drop/return without circular hand prices?",
+      "policy": "Uniform over canonical sorted legal actions for both players; identical seed list per matched common drop, no optimum or game-strength interpretation. Aggregate same-base hands use exchangeable latent provenance: probability1/count that a matching drop selects the tracked tag.",
+      "population": "Same six common drops of qualified counterfactual G/TP capture roots;32 trajectories per cell,32 subsequent plies,seed2026100803+trajectory; fixed before result. Whole Core history, nifu and promotion legality retained. Descriptive Monte Carlo under this law, not reachability or universal material coefficients.",
+      "reward": "Every ordinary capture performed by the tagged entity earns+1 if its current controller is original owner0, -1 if owner1. Tag capture is an ownership transfer, never arbitrary inventory loss penalty. No unknown prices, discount or fitted phase weights. Terminal states stop with no additional game utility.",
+      "cost": "384trajectories maximum12288 postdrop transitions, serial, persist per trajectory, stop flags before every trajectory; no worker, no altered frozen records."
+    },
+    "seconds": 89.12923570000567,
+    "cells": [
+      {
+        "base": "G",
+        "square": [
+          2,
+          1
+        ],
+        "trajectories": 32,
+        "reward_histogram": {
+          "0": 14,
+          "1": 4,
+          "-2": 3,
+          "-1": 11
+        },
+        "reward_sum": -13,
+        "plies": 1024,
+        "events": {
+          "capture_transfer": 15,
+          "exchangeable_drop": 14,
+          "service": 21
+        }
+      },
+      {
+        "base": "G",
+        "square": [
+          2,
+          3
+        ],
+        "trajectories": 32,
+        "reward_histogram": {
+          "0": 9,
+          "-2": 6,
+          "-1": 15,
+          "-3": 2
+        },
+        "reward_sum": -33,
+        "plies": 1024,
+        "events": {
+          "capture_transfer": 11,
+          "exchangeable_drop": 10,
+          "service": 33
+        }
+      },
+      {
+        "base": "G",
+        "square": [
+          2,
+          4
+        ],
+        "trajectories": 32,
+        "reward_histogram": {
+          "0": 27,
+          "-1": 5
+        },
+        "reward_sum": -5,
+        "plies": 1024,
+        "events": {
+          "service": 5,
+          "capture_transfer": 5,
+          "exchangeable_drop": 5
+        }
+      },
+      {
+        "base": "G",
+        "square": [
+          2,
+          5
+        ],
+        "trajectories": 32,
+        "reward_histogram": {
+          "0": 27,
+          "-1": 3,
+          "-2": 2
+        },
+        "reward_sum": -7,
+        "plies": 1024,
+        "events": {
+          "service": 7,
+          "capture_transfer": 1
+        }
+      },
+      {
+        "base": "G",
+        "square": [
+          2,
+          6
+        ],
+        "trajectories": 32,
+        "reward_histogram": {
+          "0": 29,
+          "1": 2,
+          "-1": 1
+        },
+        "reward_sum": 1,
+        "plies": 1024,
+        "events": {
+          "capture_transfer": 4,
+          "exchangeable_drop": 4,
+          "service": 3
+        }
+      },
+      {
+        "base": "G",
+        "square": [
+          2,
+          7
+        ],
+        "trajectories": 32,
+        "reward_histogram": {
+          "0": 30,
+          "-1": 1,
+          "1": 1
+        },
+        "reward_sum": 0,
+        "plies": 1024,
+        "events": {
+          "service": 2,
+          "capture_transfer": 2,
+          "exchangeable_drop": 1
+        }
+      },
+      {
+        "base": "P",
+        "square": [
+          2,
+          1
+        ],
+        "trajectories": 32,
+        "reward_histogram": {
+          "0": 23,
+          "-1": 7,
+          "2": 1,
+          "-2": 1
+        },
+        "reward_sum": -7,
+        "plies": 1024,
+        "events": {
+          "capture_transfer": 17,
+          "exchangeable_drop": 8,
+          "service": 11
+        }
+      },
+      {
+        "base": "P",
+        "square": [
+          2,
+          3
+        ],
+        "trajectories": 32,
+        "reward_histogram": {
+          "0": 16,
+          "-1": 13,
+          "-2": 3
+        },
+        "reward_sum": -19,
+        "plies": 1024,
+        "events": {
+          "capture_transfer": 14,
+          "exchangeable_drop": 10,
+          "service": 19
+        }
+      },
+      {
+        "base": "P",
+        "square": [
+          2,
+          4
+        ],
+        "trajectories": 32,
+        "reward_histogram": {
+          "0": 25,
+          "-1": 7
+        },
+        "reward_sum": -7,
+        "plies": 1024,
+        "events": {
+          "service": 7,
+          "capture_transfer": 5,
+          "exchangeable_drop": 2
+        }
+      },
+      {
+        "base": "P",
+        "square": [
+          2,
+          5
+        ],
+        "trajectories": 32,
+        "reward_histogram": {
+          "0": 31,
+          "-1": 1
+        },
+        "reward_sum": -1,
+        "plies": 1024,
+        "events": {
+          "service": 1
+        }
+      },
+      {
+        "base": "P",
+        "square": [
+          2,
+          6
+        ],
+        "trajectories": 32,
+        "reward_histogram": {
+          "0": 32
+        },
+        "reward_sum": 0,
+        "plies": 1024,
+        "events": {
+          "capture_transfer": 3,
+          "exchangeable_drop": 1
+        }
+      },
+      {
+        "base": "P",
+        "square": [
+          2,
+          7
+        ],
+        "trajectories": 32,
+        "reward_histogram": {
+          "0": 32
+        },
+        "reward_sum": 0,
+        "plies": 1024,
+        "events": {}
+      }
+    ]
+  },
+  "projection": [
+    {
+      "base": "G",
+      "projection": [
+        "G",
+        0,
+        0,
+        1
+      ],
+      "left_drop_count": 42,
+      "right_drop_count": 42,
+      "different_destination_sets": true
+    },
+    {
+      "base": "P",
+      "projection": [
+        "P",
+        0,
+        0,
+        1
+      ],
+      "left_drop_count": 6,
+      "right_drop_count": 12,
+      "different_destination_sets": true
+    }
+  ],
+  "survivor": {
+    "declaration": "Frozen4x4 ordered source/activeenemy/passiveenemy contexts3360 per mode pair. Each side receives two action opportunities (four plies), either initial order. Ordinary enemy captures+1; own actor capture-1 once. Capture removes entities, absent/no-action actor passes, no anchors/hands/promotion. Minimax optimizes fresh after every action; survivorship keeps next service. Same unit task, not material weights. Depth2 must equal prior producer at every root before any depth4 interpretation. Persist per mode pair;300sec cost checkpoint; retain all strata and signed paired contributions, no phase fitting or outcome-driven extension.",
+    "seconds": 1.571502499980852,
+    "roots": 53760,
+    "edges": 2266240,
+    "means": {
+      "Q": "1121/1344",
+      "R": "1747/3360",
+      "B": "13/160",
+      "N": "-299/3360"
+    },
+    "strata": [
+      {
+        "actor": "Q",
+        "opponent": "Q",
+        "orders": [
+          {
+            "order": "actor_first",
+            "histogram": {
+              "-1": 0,
+              "0": 912,
+              "1": 1232,
+              "2": 1216
+            },
+            "net_mean": "229/210"
+          },
+          {
+            "order": "opponent_first",
+            "histogram": {
+              "-1": 2040,
+              "0": 144,
+              "1": 1176,
+              "2": 0
+            },
+            "net_mean": "-9/35"
+          }
+        ]
+      },
+      {
+        "actor": "Q",
+        "opponent": "R",
+        "orders": [
+          {
+            "order": "actor_first",
+            "histogram": {
+              "-1": 0,
+              "0": 240,
+              "1": 1904,
+              "2": 1216
+            },
+            "net_mean": "271/210"
+          },
+          {
+            "order": "opponent_first",
+            "histogram": {
+              "-1": 1280,
+              "0": 0,
+              "1": 2080,
+              "2": 0
+            },
+            "net_mean": "5/21"
+          }
+        ]
+      },
+      {
+        "actor": "Q",
+        "opponent": "B",
+        "orders": [
+          {
+            "order": "actor_first",
+            "histogram": {
+              "-1": 0,
+              "0": 92,
+              "1": 1796,
+              "2": 1472
+            },
+            "net_mean": "79/56"
+          },
+          {
+            "order": "opponent_first",
+            "histogram": {
+              "-1": 760,
+              "0": 0,
+              "1": 2272,
+              "2": 328
+            },
+            "net_mean": "271/420"
+          }
+        ]
+      },
+      {
+        "actor": "Q",
+        "opponent": "N",
+        "orders": [
+          {
+            "order": "actor_first",
+            "histogram": {
+              "-1": 0,
+              "0": 0,
+              "1": 1708,
+              "2": 1652
+            },
+            "net_mean": "179/120"
+          },
+          {
+            "order": "opponent_first",
+            "histogram": {
+              "-1": 672,
+              "0": 0,
+              "1": 2140,
+              "2": 548
+            },
+            "net_mean": "641/840"
+          }
+        ]
+      },
+      {
+        "actor": "R",
+        "opponent": "Q",
+        "orders": [
+          {
+            "order": "actor_first",
+            "histogram": {
+              "-1": 0,
+              "0": 1728,
+              "1": 1216,
+              "2": 416
+            },
+            "net_mean": "64/105"
+          },
+          {
+            "order": "opponent_first",
+            "histogram": {
+              "-1": 2040,
+              "0": 868,
+              "1": 452,
+              "2": 0
+            },
+            "net_mean": "-397/840"
+          }
+        ]
+      },
+      {
+        "actor": "R",
+        "opponent": "R",
+        "orders": [
+          {
+            "order": "actor_first",
+            "histogram": {
+              "-1": 0,
+              "0": 1336,
+              "1": 1608,
+              "2": 416
+            },
+            "net_mean": "61/84"
+          },
+          {
+            "order": "opponent_first",
+            "histogram": {
+              "-1": 1280,
+              "0": 168,
+              "1": 1912,
+              "2": 0
+            },
+            "net_mean": "79/420"
+          }
+        ]
+      },
+      {
+        "actor": "R",
+        "opponent": "B",
+        "orders": [
+          {
+            "order": "actor_first",
+            "histogram": {
+              "-1": 0,
+              "0": 384,
+              "1": 2512,
+              "2": 464
+            },
+            "net_mean": "43/42"
+          },
+          {
+            "order": "opponent_first",
+            "histogram": {
+              "-1": 760,
+              "0": 368,
+              "1": 2200,
+              "2": 32
+            },
+            "net_mean": "47/105"
+          }
+        ]
+      },
+      {
+        "actor": "R",
+        "opponent": "N",
+        "orders": [
+          {
+            "order": "actor_first",
+            "histogram": {
+              "-1": 0,
+              "0": 196,
+              "1": 2628,
+              "2": 536
+            },
+            "net_mean": "185/168"
+          },
+          {
+            "order": "opponent_first",
+            "histogram": {
+              "-1": 672,
+              "0": 224,
+              "1": 2456,
+              "2": 8
+            },
+            "net_mean": "15/28"
+          }
+        ]
+      },
+      {
+        "actor": "B",
+        "opponent": "Q",
+        "orders": [
+          {
+            "order": "actor_first",
+            "histogram": {
+              "-1": 864,
+              "0": 1632,
+              "1": 736,
+              "2": 128
+            },
+            "net_mean": "4/105"
+          },
+          {
+            "order": "opponent_first",
+            "histogram": {
+              "-1": 2696,
+              "0": 556,
+              "1": 108,
+              "2": 0
+            },
+            "net_mean": "-647/840"
+          }
+        ]
+      },
+      {
+        "actor": "B",
+        "opponent": "R",
+        "orders": [
+          {
+            "order": "actor_first",
+            "histogram": {
+              "-1": 128,
+              "0": 2040,
+              "1": 1064,
+              "2": 128
+            },
+            "net_mean": "149/420"
+          },
+          {
+            "order": "opponent_first",
+            "histogram": {
+              "-1": 1600,
+              "0": 1420,
+              "1": 340,
+              "2": 0
+            },
+            "net_mean": "-3/8"
+          }
+        ]
+      },
+      {
+        "actor": "B",
+        "opponent": "B",
+        "orders": [
+          {
+            "order": "actor_first",
+            "histogram": {
+              "-1": 0,
+              "0": 1464,
+              "1": 1768,
+              "2": 128
+            },
+            "net_mean": "253/420"
+          },
+          {
+            "order": "opponent_first",
+            "histogram": {
+              "-1": 760,
+              "0": 1456,
+              "1": 1136,
+              "2": 8
+            },
+            "net_mean": "7/60"
+          }
+        ]
+      },
+      {
+        "actor": "B",
+        "opponent": "N",
+        "orders": [
+          {
+            "order": "actor_first",
+            "histogram": {
+              "-1": 88,
+              "0": 1248,
+              "1": 1848,
+              "2": 176
+            },
+            "net_mean": "22/35"
+          },
+          {
+            "order": "opponent_first",
+            "histogram": {
+              "-1": 936,
+              "0": 1336,
+              "1": 1056,
+              "2": 32
+            },
+            "net_mean": "23/420"
+          }
+        ]
+      },
+      {
+        "actor": "N",
+        "opponent": "Q",
+        "orders": [
+          {
+            "order": "actor_first",
+            "histogram": {
+              "-1": 1784,
+              "0": 904,
+              "1": 568,
+              "2": 104
+            },
+            "net_mean": "-3/10"
+          },
+          {
+            "order": "opponent_first",
+            "histogram": {
+              "-1": 3116,
+              "0": 240,
+              "1": 4,
+              "2": 0
+            },
+            "net_mean": "-389/420"
+          }
+        ]
+      },
+      {
+        "actor": "N",
+        "opponent": "R",
+        "orders": [
+          {
+            "order": "actor_first",
+            "histogram": {
+              "-1": 752,
+              "0": 1728,
+              "1": 776,
+              "2": 104
+            },
+            "net_mean": "29/420"
+          },
+          {
+            "order": "opponent_first",
+            "histogram": {
+              "-1": 2032,
+              "0": 1256,
+              "1": 72,
+              "2": 0
+            },
+            "net_mean": "-7/12"
+          }
+        ]
+      },
+      {
+        "actor": "N",
+        "opponent": "B",
+        "orders": [
+          {
+            "order": "actor_first",
+            "histogram": {
+              "-1": 184,
+              "0": 1568,
+              "1": 1480,
+              "2": 128
+            },
+            "net_mean": "97/210"
+          },
+          {
+            "order": "opponent_first",
+            "histogram": {
+              "-1": 1216,
+              "0": 1416,
+              "1": 728,
+              "2": 0
+            },
+            "net_mean": "-61/420"
+          }
+        ]
+      },
+      {
+        "actor": "N",
+        "opponent": "N",
+        "orders": [
+          {
+            "order": "actor_first",
+            "histogram": {
+              "-1": 48,
+              "0": 1608,
+              "1": 1592,
+              "2": 112
+            },
+            "net_mean": "221/420"
+          },
+          {
+            "order": "opponent_first",
+            "histogram": {
+              "-1": 672,
+              "0": 1392,
+              "1": 1296,
+              "2": 0
+            },
+            "net_mean": "13/70"
+          }
+        ]
+      }
+    ],
+    "independent_checks": 2048
+  },
+  "search_controls": {
+    "returned-history-search.json": {
+      "declaration": "For each baseG/P choose first recorded return-to-original-hand zero witness, not a result-selected search position. Replay five actual plies. Both entries use frozen static generic-v1 tables, depth3/4,20000nodes/5sec,q0,no root tactics, fresh engine per depth then warm repeat. Require legal action and full PV through completed depth or terminal. No production change; report differing contracts and incomplete score cells explicitly.",
+      "complete": true,
+      "rows": [
+        {
+          "base": "G",
+          "square": [
+            0,
+            1
+          ],
+          "cells": [
+            {
+              "depth": 3,
+              "entry": "public",
+              "repeat": 0,
+              "seconds": 1.4082935000769794,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 2856,
+                "qnodes": 0,
+                "tt_hits": 49,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              },
+              "full_pv_contract": true
+            },
+            {
+              "depth": 3,
+              "entry": "public",
+              "repeat": 1,
+              "seconds": 0.00418239994905889,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 3,
+                "qnodes": 0,
+                "tt_hits": 3,
+                "termination_reason": "completed_depth",
+                "pv_length": 0
+              },
+              "full_pv_contract": false
+            },
+            {
+              "depth": 3,
+              "entry": "native",
+              "repeat": 0,
+              "seconds": 0.6423879000358284,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 11194,
+                "qnodes": 0,
+                "tt_hits": 323,
+                "termination_reason": "completed",
+                "pv_length": 3
+              },
+              "full_pv_contract": true
+            },
+            {
+              "depth": 3,
+              "entry": "native",
+              "repeat": 1,
+              "seconds": 0.2983890001196414,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 4501,
+                "qnodes": 0,
+                "tt_hits": 824,
+                "termination_reason": "completed",
+                "pv_length": 3
+              },
+              "full_pv_contract": true
+            },
+            {
+              "depth": 4,
+              "entry": "public",
+              "repeat": 0,
+              "seconds": 4.994134300155565,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 10229,
+                "qnodes": 0,
+                "tt_hits": 181,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              },
+              "full_pv_contract": true
+            },
+            {
+              "depth": 4,
+              "entry": "public",
+              "repeat": 1,
+              "seconds": 4.378847199957818,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                },
+                "score": 1746,
+                "completed_depth": 4,
+                "nodes": 5458,
+                "qnodes": 0,
+                "tt_hits": 181,
+                "termination_reason": "completed_depth",
+                "pv_length": 2
+              },
+              "full_pv_contract": false
+            },
+            {
+              "depth": 4,
+              "entry": "native",
+              "repeat": 0,
+              "seconds": 1.112534899963066,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 20000,
+                "qnodes": 0,
+                "tt_hits": 375,
+                "termination_reason": "node_budget",
+                "pv_length": 3
+              },
+              "full_pv_contract": true
+            },
+            {
+              "depth": 4,
+              "entry": "native",
+              "repeat": 1,
+              "seconds": 1.1021255000960082,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 20000,
+                "qnodes": 0,
+                "tt_hits": 1567,
+                "termination_reason": "node_budget",
+                "pv_length": 3
+              },
+              "full_pv_contract": true
+            }
+          ]
+        },
+        {
+          "base": "P",
+          "square": [
+            2,
+            1
+          ],
+          "cells": [
+            {
+              "depth": 3,
+              "entry": "public",
+              "repeat": 0,
+              "seconds": 1.1922452000435442,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 2570,
+                "qnodes": 0,
+                "tt_hits": 49,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              },
+              "full_pv_contract": true
+            },
+            {
+              "depth": 3,
+              "entry": "public",
+              "repeat": 1,
+              "seconds": 0.004199400078505278,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 3,
+                "qnodes": 0,
+                "tt_hits": 3,
+                "termination_reason": "completed_depth",
+                "pv_length": 0
+              },
+              "full_pv_contract": false
+            },
+            {
+              "depth": 3,
+              "entry": "native",
+              "repeat": 0,
+              "seconds": 0.4233634998090565,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 7307,
+                "qnodes": 0,
+                "tt_hits": 229,
+                "termination_reason": "completed",
+                "pv_length": 3
+              },
+              "full_pv_contract": true
+            },
+            {
+              "depth": 3,
+              "entry": "native",
+              "repeat": 1,
+              "seconds": 0.21430759993381798,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 3254,
+                "qnodes": 0,
+                "tt_hits": 1387,
+                "termination_reason": "completed",
+                "pv_length": 3
+              },
+              "full_pv_contract": true
+            },
+            {
+              "depth": 4,
+              "entry": "public",
+              "repeat": 0,
+              "seconds": 4.994906000094488,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 9329,
+                "qnodes": 0,
+                "tt_hits": 189,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              },
+              "full_pv_contract": true
+            },
+            {
+              "depth": 4,
+              "entry": "public",
+              "repeat": 1,
+              "seconds": 1.6959509002044797,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                },
+                "score": 2557,
+                "completed_depth": 4,
+                "nodes": 2033,
+                "qnodes": 0,
+                "tt_hits": 106,
+                "termination_reason": "completed_depth",
+                "pv_length": 1
+              },
+              "full_pv_contract": false
+            },
+            {
+              "depth": 4,
+              "entry": "native",
+              "repeat": 0,
+              "seconds": 1.0856419000774622,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 20000,
+                "qnodes": 0,
+                "tt_hits": 573,
+                "termination_reason": "node_budget",
+                "pv_length": 3
+              },
+              "full_pv_contract": true
+            },
+            {
+              "depth": 4,
+              "entry": "native",
+              "repeat": 1,
+              "seconds": 1.095665000146255,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 20000,
+                "qnodes": 0,
+                "tt_hits": 1598,
+                "termination_reason": "node_budget",
+                "pv_length": 3
+              },
+              "full_pv_contract": true
+            }
+          ]
+        }
+      ],
+      "calls": null,
+      "references": null
+    },
+    "full-pv-ablation.json": {
+      "declaration": "Same two frozen five-ply returned-hand G/P histories and static leaf. Public require_full_pv false/true x PVS false/true x depths3/4 x cold/warm, each20000nodes/5sec/q0/no root tactics,fresh TT per cell. Completed requested-depth PV must reach depth or true terminal. Costs, incomplete depths and different tie actions retained. Independent Core depth3 reference20000leaves/15sec; unknown on fuse. No output-only cache bypass or evaluator change.",
+      "complete": true,
+      "rows": [
+        {
+          "base": "G",
+          "calls": [
+            {
+              "full_pv": false,
+              "pvs": false,
+              "depth": 3,
+              "repeat": 0,
+              "seconds": 1.4101398000493646,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 2856,
+                "qnodes": 0,
+                "tt_hits": 49,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": false,
+              "depth": 3,
+              "repeat": 1,
+              "seconds": 0.0062912998255342245,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 3,
+                "qnodes": 0,
+                "tt_hits": 3,
+                "termination_reason": "completed_depth",
+                "pv_length": 0
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": false,
+              "depth": 4,
+              "repeat": 0,
+              "seconds": 4.993206599960104,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 10387,
+                "qnodes": 0,
+                "tt_hits": 184,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": false,
+              "depth": 4,
+              "repeat": 1,
+              "seconds": 4.239341599866748,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                },
+                "score": 1746,
+                "completed_depth": 4,
+                "nodes": 5302,
+                "qnodes": 0,
+                "tt_hits": 181,
+                "termination_reason": "completed_depth",
+                "pv_length": 2
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": true,
+              "depth": 3,
+              "repeat": 0,
+              "seconds": 1.6276936000213027,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 3024,
+                "qnodes": 0,
+                "tt_hits": 146,
+                "termination_reason": "completed_depth",
+                "pv_length": 2
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": true,
+              "depth": 3,
+              "repeat": 1,
+              "seconds": 0.003928099991753697,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 3,
+                "qnodes": 0,
+                "tt_hits": 3,
+                "termination_reason": "completed_depth",
+                "pv_length": 0
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": true,
+              "depth": 4,
+              "repeat": 0,
+              "seconds": 4.993981400039047,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 9789,
+                "qnodes": 0,
+                "tt_hits": 434,
+                "termination_reason": "time_limit",
+                "pv_length": 2
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": true,
+              "depth": 4,
+              "repeat": 1,
+              "seconds": 4.27214670018293,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                },
+                "score": 1746,
+                "completed_depth": 4,
+                "nodes": 5430,
+                "qnodes": 0,
+                "tt_hits": 196,
+                "termination_reason": "completed_depth",
+                "pv_length": 2
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": false,
+              "depth": 3,
+              "repeat": 0,
+              "seconds": 1.397322200005874,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 2856,
+                "qnodes": 0,
+                "tt_hits": 49,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": false,
+              "depth": 3,
+              "repeat": 1,
+              "seconds": 1.9427513000555336,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 3069,
+                "qnodes": 0,
+                "tt_hits": 358,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": false,
+              "depth": 4,
+              "repeat": 0,
+              "seconds": 4.997381499968469,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 10435,
+                "qnodes": 0,
+                "tt_hits": 185,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": false,
+              "depth": 4,
+              "repeat": 1,
+              "seconds": 5.000329200178385,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 7106,
+                "qnodes": 0,
+                "tt_hits": 919,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": true,
+              "depth": 3,
+              "repeat": 0,
+              "seconds": 1.7474750999826938,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 3257,
+                "qnodes": 0,
+                "tt_hits": 203,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": true,
+              "depth": 3,
+              "repeat": 1,
+              "seconds": 0.7637150997761637,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 989,
+                "qnodes": 0,
+                "tt_hits": 470,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": true,
+              "depth": 4,
+              "repeat": 0,
+              "seconds": 4.994231600081548,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 9945,
+                "qnodes": 0,
+                "tt_hits": 458,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": true,
+              "depth": 4,
+              "repeat": 1,
+              "seconds": 4.999240699922666,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 7170,
+                "qnodes": 0,
+                "tt_hits": 1060,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            }
+          ],
+          "reference": {
+            "complete": false,
+            "score": null,
+            "leaf_evaluations": 5340,
+            "seconds": 15.126207900000736
+          }
+        },
+        {
+          "base": "P",
+          "calls": [
+            {
+              "full_pv": false,
+              "pvs": false,
+              "depth": 3,
+              "repeat": 0,
+              "seconds": 1.195549599826336,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 2570,
+                "qnodes": 0,
+                "tt_hits": 49,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": false,
+              "depth": 3,
+              "repeat": 1,
+              "seconds": 0.00598460016772151,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 3,
+                "qnodes": 0,
+                "tt_hits": 3,
+                "termination_reason": "completed_depth",
+                "pv_length": 0
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": false,
+              "depth": 4,
+              "repeat": 0,
+              "seconds": 4.992136900080368,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 9472,
+                "qnodes": 0,
+                "tt_hits": 193,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": false,
+              "depth": 4,
+              "repeat": 1,
+              "seconds": 1.5316493001300842,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                },
+                "score": 2557,
+                "completed_depth": 4,
+                "nodes": 1891,
+                "qnodes": 0,
+                "tt_hits": 102,
+                "termination_reason": "completed_depth",
+                "pv_length": 1
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": true,
+              "depth": 3,
+              "repeat": 0,
+              "seconds": 1.3395010000094771,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 2630,
+                "qnodes": 0,
+                "tt_hits": 133,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": true,
+              "depth": 3,
+              "repeat": 1,
+              "seconds": 0.003985999850556254,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 3,
+                "qnodes": 0,
+                "tt_hits": 3,
+                "termination_reason": "completed_depth",
+                "pv_length": 0
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": true,
+              "depth": 4,
+              "repeat": 0,
+              "seconds": 4.998577099991962,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 8799,
+                "qnodes": 0,
+                "tt_hits": 431,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": true,
+              "depth": 4,
+              "repeat": 1,
+              "seconds": 1.7208912000060081,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                },
+                "score": 2557,
+                "completed_depth": 4,
+                "nodes": 2049,
+                "qnodes": 0,
+                "tt_hits": 94,
+                "termination_reason": "completed_depth",
+                "pv_length": 1
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": false,
+              "depth": 3,
+              "repeat": 0,
+              "seconds": 1.2341982999350876,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 2570,
+                "qnodes": 0,
+                "tt_hits": 49,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": false,
+              "depth": 3,
+              "repeat": 1,
+              "seconds": 1.5528681001160294,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 2631,
+                "qnodes": 0,
+                "tt_hits": 251,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": false,
+              "depth": 4,
+              "repeat": 0,
+              "seconds": 4.990489900112152,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 9271,
+                "qnodes": 0,
+                "tt_hits": 187,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": false,
+              "depth": 4,
+              "repeat": 1,
+              "seconds": 5.002712199930102,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 6829,
+                "qnodes": 0,
+                "tt_hits": 929,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": true,
+              "depth": 3,
+              "repeat": 0,
+              "seconds": 1.505384200019762,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 2834,
+                "qnodes": 0,
+                "tt_hits": 133,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": true,
+              "depth": 3,
+              "repeat": 1,
+              "seconds": 0.5133038000203669,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 698,
+                "qnodes": 0,
+                "tt_hits": 292,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": true,
+              "depth": 4,
+              "repeat": 0,
+              "seconds": 4.989386500092223,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 9116,
+                "qnodes": 0,
+                "tt_hits": 418,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": true,
+              "depth": 4,
+              "repeat": 1,
+              "seconds": 4.701241600094363,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2557,
+                "completed_depth": 4,
+                "nodes": 6157,
+                "qnodes": 0,
+                "tt_hits": 940,
+                "termination_reason": "completed_depth",
+                "pv_length": 4
+              }
+            }
+          ],
+          "reference": {
+            "complete": false,
+            "score": null,
+            "leaf_evaluations": 5294,
+            "seconds": 15.050850300118327
+          }
+        }
+      ],
+      "calls": null,
+      "references": null
+    },
+    "full-pv-chain-ablation.json": {
+      "declaration": "Same two frozen five-ply returned-hand G/P histories and static leaf. Public require_full_pv false/true x PVS false/true x depths3/4 x cold/warm, each20000nodes/5sec/q0/no root tactics,fresh TT per cell. Completed requested-depth PV must reach depth or true terminal. Costs, incomplete depths and different tie actions retained. Earlier independent Core depth3 references remain unknown; not repeated here. Existing sufficient-depth cache scores may supply shorter legal PV prefixes, as in the default cache contract. No output-only cache bypass or evaluator change.",
+      "complete": true,
+      "rows": [
+        {
+          "base": "G",
+          "calls": [
+            {
+              "full_pv": false,
+              "pvs": false,
+              "depth": 3,
+              "repeat": 0,
+              "seconds": 1.4262471999973059,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 2856,
+                "qnodes": 0,
+                "tt_hits": 49,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": false,
+              "depth": 3,
+              "repeat": 1,
+              "seconds": 0.007520100101828575,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 3,
+                "qnodes": 0,
+                "tt_hits": 3,
+                "termination_reason": "completed_depth",
+                "pv_length": 0
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": false,
+              "depth": 4,
+              "repeat": 0,
+              "seconds": 4.99258999992162,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 10344,
+                "qnodes": 0,
+                "tt_hits": 183,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": false,
+              "depth": 4,
+              "repeat": 1,
+              "seconds": 4.347701799822971,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                },
+                "score": 1746,
+                "completed_depth": 4,
+                "nodes": 5349,
+                "qnodes": 0,
+                "tt_hits": 187,
+                "termination_reason": "completed_depth",
+                "pv_length": 2
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": true,
+              "depth": 3,
+              "repeat": 0,
+              "seconds": 1.6723248998168856,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 3024,
+                "qnodes": 0,
+                "tt_hits": 146,
+                "termination_reason": "completed_depth",
+                "pv_length": 2
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": true,
+              "depth": 3,
+              "repeat": 1,
+              "seconds": 0.004104499937966466,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 3,
+                "qnodes": 0,
+                "tt_hits": 3,
+                "termination_reason": "completed_depth",
+                "pv_length": 0
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": true,
+              "depth": 4,
+              "repeat": 0,
+              "seconds": 4.987589299911633,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 9741,
+                "qnodes": 0,
+                "tt_hits": 431,
+                "termination_reason": "time_limit",
+                "pv_length": 2
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": true,
+              "depth": 4,
+              "repeat": 1,
+              "seconds": 4.3434580999892205,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                },
+                "score": 1746,
+                "completed_depth": 4,
+                "nodes": 5476,
+                "qnodes": 0,
+                "tt_hits": 197,
+                "termination_reason": "completed_depth",
+                "pv_length": 2
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": false,
+              "depth": 3,
+              "repeat": 0,
+              "seconds": 1.3932184998411685,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 2856,
+                "qnodes": 0,
+                "tt_hits": 49,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": false,
+              "depth": 3,
+              "repeat": 1,
+              "seconds": 0.010800400050356984,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 3,
+                "qnodes": 0,
+                "tt_hits": 6,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": false,
+              "depth": 4,
+              "repeat": 0,
+              "seconds": 5.000054999953136,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 10417,
+                "qnodes": 0,
+                "tt_hits": 184,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": false,
+              "depth": 4,
+              "repeat": 1,
+              "seconds": 4.998642300022766,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 5897,
+                "qnodes": 0,
+                "tt_hits": 444,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": true,
+              "depth": 3,
+              "repeat": 0,
+              "seconds": 1.80050710006617,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 3257,
+                "qnodes": 0,
+                "tt_hits": 203,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": true,
+              "depth": 3,
+              "repeat": 1,
+              "seconds": 0.010880100075155497,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 3,
+                "qnodes": 0,
+                "tt_hits": 6,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": true,
+              "depth": 4,
+              "repeat": 0,
+              "seconds": 4.987059299834073,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 10003,
+                "qnodes": 0,
+                "tt_hits": 459,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": true,
+              "depth": 4,
+              "repeat": 1,
+              "seconds": 4.999741100007668,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2205,
+                "completed_depth": 3,
+                "nodes": 6362,
+                "qnodes": 0,
+                "tt_hits": 279,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            }
+          ]
+        },
+        {
+          "base": "P",
+          "calls": [
+            {
+              "full_pv": false,
+              "pvs": false,
+              "depth": 3,
+              "repeat": 0,
+              "seconds": 1.2111001999583095,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 2570,
+                "qnodes": 0,
+                "tt_hits": 49,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": false,
+              "depth": 3,
+              "repeat": 1,
+              "seconds": 0.005436500068753958,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 3,
+                "qnodes": 0,
+                "tt_hits": 3,
+                "termination_reason": "completed_depth",
+                "pv_length": 0
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": false,
+              "depth": 4,
+              "repeat": 0,
+              "seconds": 5.002553400117904,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 9445,
+                "qnodes": 0,
+                "tt_hits": 193,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": false,
+              "depth": 4,
+              "repeat": 1,
+              "seconds": 1.5195271999109536,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                },
+                "score": 2557,
+                "completed_depth": 4,
+                "nodes": 1904,
+                "qnodes": 0,
+                "tt_hits": 89,
+                "termination_reason": "completed_depth",
+                "pv_length": 1
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": true,
+              "depth": 3,
+              "repeat": 0,
+              "seconds": 1.3367198999039829,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 2630,
+                "qnodes": 0,
+                "tt_hits": 133,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": true,
+              "depth": 3,
+              "repeat": 1,
+              "seconds": 0.004985000006854534,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 3,
+                "qnodes": 0,
+                "tt_hits": 3,
+                "termination_reason": "completed_depth",
+                "pv_length": 0
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": true,
+              "depth": 4,
+              "repeat": 0,
+              "seconds": 4.9973424999043345,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 8880,
+                "qnodes": 0,
+                "tt_hits": 433,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": false,
+              "pvs": true,
+              "depth": 4,
+              "repeat": 1,
+              "seconds": 1.5949673000723124,
+              "full_contract": false,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                },
+                "score": 2557,
+                "completed_depth": 4,
+                "nodes": 1973,
+                "qnodes": 0,
+                "tt_hits": 96,
+                "termination_reason": "completed_depth",
+                "pv_length": 1
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": false,
+              "depth": 3,
+              "repeat": 0,
+              "seconds": 1.190321900183335,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 2570,
+                "qnodes": 0,
+                "tt_hits": 49,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": false,
+              "depth": 3,
+              "repeat": 1,
+              "seconds": 0.009959900053218007,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 3,
+                "qnodes": 0,
+                "tt_hits": 6,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": false,
+              "depth": 4,
+              "repeat": 0,
+              "seconds": 4.995804500067607,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 9485,
+                "qnodes": 0,
+                "tt_hits": 193,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": false,
+              "depth": 4,
+              "repeat": 1,
+              "seconds": 5.00141719984822,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 2576,
+                "completed_depth": 3,
+                "nodes": 5035,
+                "qnodes": 0,
+                "tt_hits": 1041,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": true,
+              "depth": 3,
+              "repeat": 0,
+              "seconds": 1.4210838999133557,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 2834,
+                "qnodes": 0,
+                "tt_hits": 133,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": true,
+              "depth": 3,
+              "repeat": 1,
+              "seconds": 0.010125299915671349,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 3,
+                "qnodes": 0,
+                "tt_hits": 6,
+                "termination_reason": "completed_depth",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": true,
+              "depth": 4,
+              "repeat": 0,
+              "seconds": 5.000256299972534,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": "TR"
+                },
+                "score": 3603,
+                "completed_depth": 3,
+                "nodes": 9318,
+                "qnodes": 0,
+                "tt_hits": 424,
+                "termination_reason": "time_limit",
+                "pv_length": 3
+              }
+            },
+            {
+              "full_pv": true,
+              "pvs": true,
+              "depth": 4,
+              "repeat": 1,
+              "seconds": 2.75052999984473,
+              "full_contract": true,
+              "decision": {
+                "action": {
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                },
+                "score": 2557,
+                "completed_depth": 4,
+                "nodes": 2958,
+                "qnodes": 0,
+                "tt_hits": 511,
+                "termination_reason": "completed_depth",
+                "pv_length": 4
+              }
+            }
+          ]
+        }
+      ],
+      "calls": null,
+      "references": null
+    },
+    "recombined-full-pv.json": {
+      "declaration": "Frozen open-leg5x5 actual three-ply capture/reply/drop history. Same static generic-v1 tables, public PVS false/true PV contract and native full PV,depth3/4,cold/warm,20000nodes/5sec/q0. Public PVS on in both output modes; independent Core references20000leaves/15sec at each depth. Incomplete=unknown, default not promoted.",
+      "complete": true,
+      "rows": null,
+      "calls": [
+        {
+          "depth": 3,
+          "mode": "public-default",
+          "repeat": 0,
+          "seconds": 0.012066799914464355,
+          "full_pv": true,
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_010",
+              "geometry_id": "g5",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 4,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": -1363,
+            "completed_depth": 3,
+            "nodes": 63,
+            "qnodes": 0,
+            "tt_hits": 8,
+            "termination_reason": "completed_depth",
+            "pv_length": 3
+          }
+        },
+        {
+          "depth": 3,
+          "mode": "public-default",
+          "repeat": 1,
+          "seconds": 0.0009574999567121267,
+          "full_pv": false,
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_010",
+              "geometry_id": "g5",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 4,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": -1363,
+            "completed_depth": 3,
+            "nodes": 3,
+            "qnodes": 0,
+            "tt_hits": 3,
+            "termination_reason": "completed_depth",
+            "pv_length": 0
+          }
+        },
+        {
+          "depth": 3,
+          "mode": "public-full",
+          "repeat": 0,
+          "seconds": 0.01229930017143488,
+          "full_pv": true,
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_010",
+              "geometry_id": "g5",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 4,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": -1363,
+            "completed_depth": 3,
+            "nodes": 67,
+            "qnodes": 0,
+            "tt_hits": 12,
+            "termination_reason": "completed_depth",
+            "pv_length": 3
+          }
+        },
+        {
+          "depth": 3,
+          "mode": "public-full",
+          "repeat": 1,
+          "seconds": 0.008607600117102265,
+          "full_pv": true,
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_010",
+              "geometry_id": "g5",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 4,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": -1363,
+            "completed_depth": 3,
+            "nodes": 33,
+            "qnodes": 0,
+            "tt_hits": 18,
+            "termination_reason": "completed_depth",
+            "pv_length": 3
+          }
+        },
+        {
+          "depth": 3,
+          "mode": "native-full",
+          "repeat": 0,
+          "seconds": 0.0028369000647217035,
+          "full_pv": true,
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_010",
+              "geometry_id": "g5",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 4,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": -1363,
+            "completed_depth": 3,
+            "nodes": 129,
+            "qnodes": 0,
+            "tt_hits": 22,
+            "termination_reason": "completed",
+            "pv_length": 3
+          }
+        },
+        {
+          "depth": 3,
+          "mode": "native-full",
+          "repeat": 1,
+          "seconds": 0.0027040999848395586,
+          "full_pv": true,
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_010",
+              "geometry_id": "g5",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 4,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": -1363,
+            "completed_depth": 3,
+            "nodes": 99,
+            "qnodes": 0,
+            "tt_hits": 60,
+            "termination_reason": "completed",
+            "pv_length": 3
+          }
+        },
+        {
+          "depth": 4,
+          "mode": "public-default",
+          "repeat": 0,
+          "seconds": 0.02509000012651086,
+          "full_pv": true,
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_010",
+              "geometry_id": "g5",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 4,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": -1363,
+            "completed_depth": 4,
+            "nodes": 135,
+            "qnodes": 0,
+            "tt_hits": 21,
+            "termination_reason": "completed_depth",
+            "pv_length": 4
+          }
+        },
+        {
+          "depth": 4,
+          "mode": "public-default",
+          "repeat": 1,
+          "seconds": 0.0034915998112410307,
+          "full_pv": false,
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_010",
+              "geometry_id": "g5",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 4,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": -1363,
+            "completed_depth": 4,
+            "nodes": 4,
+            "qnodes": 0,
+            "tt_hits": 4,
+            "termination_reason": "completed_depth",
+            "pv_length": 0
+          }
+        },
+        {
+          "depth": 4,
+          "mode": "public-full",
+          "repeat": 0,
+          "seconds": 0.029347799951210618,
+          "full_pv": true,
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_010",
+              "geometry_id": "g5",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 4,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": -1363,
+            "completed_depth": 4,
+            "nodes": 139,
+            "qnodes": 0,
+            "tt_hits": 25,
+            "termination_reason": "completed_depth",
+            "pv_length": 4
+          }
+        },
+        {
+          "depth": 4,
+          "mode": "public-full",
+          "repeat": 1,
+          "seconds": 0.013372999848797917,
+          "full_pv": true,
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_010",
+              "geometry_id": "g5",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 4,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": -1363,
+            "completed_depth": 4,
+            "nodes": 54,
+            "qnodes": 0,
+            "tt_hits": 34,
+            "termination_reason": "completed_depth",
+            "pv_length": 4
+          }
+        },
+        {
+          "depth": 4,
+          "mode": "native-full",
+          "repeat": 0,
+          "seconds": 0.005784799810498953,
+          "full_pv": true,
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_010",
+              "geometry_id": "g5",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 4,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": -1363,
+            "completed_depth": 4,
+            "nodes": 453,
+            "qnodes": 0,
+            "tt_hits": 71,
+            "termination_reason": "completed",
+            "pv_length": 4
+          }
+        },
+        {
+          "depth": 4,
+          "mode": "native-full",
+          "repeat": 1,
+          "seconds": 0.004917799960821867,
+          "full_pv": true,
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_010",
+              "geometry_id": "g5",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 4,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": -1363,
+            "completed_depth": 4,
+            "nodes": 328,
+            "qnodes": 0,
+            "tt_hits": 129,
+            "termination_reason": "completed",
+            "pv_length": 4
+          }
+        }
+      ],
+      "references": [
+        {
+          "complete": true,
+          "depth": 3,
+          "score": -1363,
+          "action": {
+            "pattern_id": "legacy_010",
+            "geometry_id": "g5",
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 4,
+              "rank": 3
+            },
+            "to_square": {
+              "file": 4,
+              "rank": 2
+            },
+            "promotion_target_id": null
+          },
+          "seconds": 0.022867900086566806,
+          "leaf_evaluations": 85
+        },
+        {
+          "complete": true,
+          "depth": 4,
+          "score": -1363,
+          "action": {
+            "pattern_id": "legacy_010",
+            "geometry_id": "g5",
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 4,
+              "rank": 3
+            },
+            "to_square": {
+              "file": 4,
+              "rank": 2
+            },
+            "promotion_target_id": null
+          },
+          "seconds": 0.12154620001092553,
+          "leaf_evaluations": 506
+        }
+      ]
+    },
+    "tt-chain-feasibility.json": {
+      "declaration": "Inspect existing exact-depth TT action chains immediately after cold searches of frozen returned-hand histories, PVS on/off and full-PV on/off, depth3. Replay through authoritative full-history runtime; every entry must be exact at remaining depth, every action legal and final leaf/terminal value must agree. This measures eligibility only; no production TT reconstruction/cache or budget bypass.",
+      "complete": true,
+      "rows": [
+        {
+          "base": "G",
+          "full": false,
+          "pvs": false,
+          "search_decision": {
+            "action": {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": "TR"
+            },
+            "score": 2205,
+            "completed_depth": 3,
+            "nodes": 2856,
+            "qnodes": 0,
+            "tt_hits": 49,
+            "termination_reason": "completed_depth",
+            "pv_length": 3
+          },
+          "entries": [
+            {
+              "depth": 3,
+              "bound": "EXACT",
+              "score": 2205
+            },
+            {
+              "depth": 2,
+              "bound": "EXACT",
+              "score": -2205
+            },
+            {
+              "depth": 1,
+              "bound": "EXACT",
+              "score": 2205
+            }
+          ],
+          "path": [
+            {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": "TR"
+            },
+            {
+              "pattern_id": "legacy_028",
+              "geometry_id": "g21",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 5,
+                "rank": 2
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 3
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_099",
+              "geometry_id": "g53",
+              "actor_type_id": "TP",
+              "from_square": {
+                "file": 1,
+                "rank": 5
+              },
+              "to_square": {
+                "file": 0,
+                "rank": 4
+              },
+              "promotion_target_id": null
+            }
+          ],
+          "complete": true,
+          "reason": "depth",
+          "value_agrees": true,
+          "replay_seconds": 0.0044257000554353
+        },
+        {
+          "base": "G",
+          "full": false,
+          "pvs": true,
+          "search_decision": {
+            "action": {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": "TR"
+            },
+            "score": 2205,
+            "completed_depth": 3,
+            "nodes": 3024,
+            "qnodes": 0,
+            "tt_hits": 146,
+            "termination_reason": "completed_depth",
+            "pv_length": 2
+          },
+          "entries": [
+            {
+              "depth": 3,
+              "bound": "EXACT",
+              "score": 2205
+            },
+            {
+              "depth": 2,
+              "bound": "LOWER",
+              "score": -2205
+            }
+          ],
+          "path": [
+            {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": "TR"
+            }
+          ],
+          "complete": false,
+          "reason": "missing_or_nonexact",
+          "value_agrees": null,
+          "replay_seconds": 0.0016499999910593033
+        },
+        {
+          "base": "G",
+          "full": true,
+          "pvs": false,
+          "search_decision": {
+            "action": {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": "TR"
+            },
+            "score": 2205,
+            "completed_depth": 3,
+            "nodes": 2856,
+            "qnodes": 0,
+            "tt_hits": 49,
+            "termination_reason": "completed_depth",
+            "pv_length": 3
+          },
+          "entries": [
+            {
+              "depth": 3,
+              "bound": "EXACT",
+              "score": 2205
+            },
+            {
+              "depth": 2,
+              "bound": "EXACT",
+              "score": -2205
+            },
+            {
+              "depth": 1,
+              "bound": "EXACT",
+              "score": 2205
+            }
+          ],
+          "path": [
+            {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": "TR"
+            },
+            {
+              "pattern_id": "legacy_028",
+              "geometry_id": "g21",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 5,
+                "rank": 2
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 3
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_099",
+              "geometry_id": "g53",
+              "actor_type_id": "TP",
+              "from_square": {
+                "file": 1,
+                "rank": 5
+              },
+              "to_square": {
+                "file": 0,
+                "rank": 4
+              },
+              "promotion_target_id": null
+            }
+          ],
+          "complete": true,
+          "reason": "depth",
+          "value_agrees": true,
+          "replay_seconds": 0.004174900008365512
+        },
+        {
+          "base": "G",
+          "full": true,
+          "pvs": true,
+          "search_decision": {
+            "action": {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": "TR"
+            },
+            "score": 2205,
+            "completed_depth": 3,
+            "nodes": 3257,
+            "qnodes": 0,
+            "tt_hits": 203,
+            "termination_reason": "completed_depth",
+            "pv_length": 3
+          },
+          "entries": [
+            {
+              "depth": 3,
+              "bound": "EXACT",
+              "score": 2205
+            },
+            {
+              "depth": 2,
+              "bound": "EXACT",
+              "score": -2205
+            },
+            {
+              "depth": 1,
+              "bound": "EXACT",
+              "score": 2205
+            }
+          ],
+          "path": [
+            {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": "TR"
+            },
+            {
+              "pattern_id": "legacy_028",
+              "geometry_id": "g21",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 5,
+                "rank": 2
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 3
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_099",
+              "geometry_id": "g53",
+              "actor_type_id": "TP",
+              "from_square": {
+                "file": 1,
+                "rank": 5
+              },
+              "to_square": {
+                "file": 0,
+                "rank": 4
+              },
+              "promotion_target_id": null
+            }
+          ],
+          "complete": true,
+          "reason": "depth",
+          "value_agrees": true,
+          "replay_seconds": 0.004448199877515435
+        },
+        {
+          "base": "P",
+          "full": false,
+          "pvs": false,
+          "search_decision": {
+            "action": {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": "TR"
+            },
+            "score": 3603,
+            "completed_depth": 3,
+            "nodes": 2570,
+            "qnodes": 0,
+            "tt_hits": 49,
+            "termination_reason": "completed_depth",
+            "pv_length": 3
+          },
+          "entries": [
+            {
+              "depth": 3,
+              "bound": "EXACT",
+              "score": 3603
+            },
+            {
+              "depth": 2,
+              "bound": "EXACT",
+              "score": -3603
+            },
+            {
+              "depth": 1,
+              "bound": "EXACT",
+              "score": 3603
+            }
+          ],
+          "path": [
+            {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": "TR"
+            },
+            {
+              "pattern_id": "legacy_034",
+              "geometry_id": "g24",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 2,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_003",
+              "geometry_id": "g1",
+              "actor_type_id": "B",
+              "from_square": {
+                "file": 1,
+                "rank": 7
+              },
+              "to_square": {
+                "file": 6,
+                "rank": 2
+              },
+              "promotion_target_id": "TB"
+            }
+          ],
+          "complete": true,
+          "reason": "depth",
+          "value_agrees": true,
+          "replay_seconds": 0.003777399891987443
+        },
+        {
+          "base": "P",
+          "full": false,
+          "pvs": true,
+          "search_decision": {
+            "action": {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": "TR"
+            },
+            "score": 3603,
+            "completed_depth": 3,
+            "nodes": 2630,
+            "qnodes": 0,
+            "tt_hits": 133,
+            "termination_reason": "completed_depth",
+            "pv_length": 3
+          },
+          "entries": [
+            {
+              "depth": 3,
+              "bound": "EXACT",
+              "score": 3603
+            },
+            {
+              "depth": 2,
+              "bound": "EXACT",
+              "score": -3603
+            },
+            {
+              "depth": 1,
+              "bound": "EXACT",
+              "score": 3603
+            }
+          ],
+          "path": [
+            {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": "TR"
+            },
+            {
+              "pattern_id": "legacy_034",
+              "geometry_id": "g24",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 2,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_003",
+              "geometry_id": "g1",
+              "actor_type_id": "B",
+              "from_square": {
+                "file": 1,
+                "rank": 7
+              },
+              "to_square": {
+                "file": 6,
+                "rank": 2
+              },
+              "promotion_target_id": "TB"
+            }
+          ],
+          "complete": true,
+          "reason": "depth",
+          "value_agrees": true,
+          "replay_seconds": 0.003755599958822131
+        },
+        {
+          "base": "P",
+          "full": true,
+          "pvs": false,
+          "search_decision": {
+            "action": {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": "TR"
+            },
+            "score": 3603,
+            "completed_depth": 3,
+            "nodes": 2570,
+            "qnodes": 0,
+            "tt_hits": 49,
+            "termination_reason": "completed_depth",
+            "pv_length": 3
+          },
+          "entries": [
+            {
+              "depth": 3,
+              "bound": "EXACT",
+              "score": 3603
+            },
+            {
+              "depth": 2,
+              "bound": "EXACT",
+              "score": -3603
+            },
+            {
+              "depth": 1,
+              "bound": "EXACT",
+              "score": 3603
+            }
+          ],
+          "path": [
+            {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": "TR"
+            },
+            {
+              "pattern_id": "legacy_034",
+              "geometry_id": "g24",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 2,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_003",
+              "geometry_id": "g1",
+              "actor_type_id": "B",
+              "from_square": {
+                "file": 1,
+                "rank": 7
+              },
+              "to_square": {
+                "file": 6,
+                "rank": 2
+              },
+              "promotion_target_id": "TB"
+            }
+          ],
+          "complete": true,
+          "reason": "depth",
+          "value_agrees": true,
+          "replay_seconds": 0.003755400190129876
+        },
+        {
+          "base": "P",
+          "full": true,
+          "pvs": true,
+          "search_decision": {
+            "action": {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": "TR"
+            },
+            "score": 3603,
+            "completed_depth": 3,
+            "nodes": 2834,
+            "qnodes": 0,
+            "tt_hits": 133,
+            "termination_reason": "completed_depth",
+            "pv_length": 3
+          },
+          "entries": [
+            {
+              "depth": 3,
+              "bound": "EXACT",
+              "score": 3603
+            },
+            {
+              "depth": 2,
+              "bound": "EXACT",
+              "score": -3603
+            },
+            {
+              "depth": 1,
+              "bound": "EXACT",
+              "score": 3603
+            }
+          ],
+          "path": [
+            {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": "TR"
+            },
+            {
+              "pattern_id": "legacy_034",
+              "geometry_id": "g24",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 2,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_003",
+              "geometry_id": "g1",
+              "actor_type_id": "B",
+              "from_square": {
+                "file": 1,
+                "rank": 7
+              },
+              "to_square": {
+                "file": 6,
+                "rank": 2
+              },
+              "promotion_target_id": "TB"
+            }
+          ],
+          "complete": true,
+          "reason": "depth",
+          "value_agrees": true,
+          "replay_seconds": 0.0038556999061256647
+        }
+      ],
+      "calls": null,
+      "references": null
+    }
+  },
+  "derivation_sha256": "45449ef6f9205842e2d1eb233fda0e466e78afaa48e965b3ff3c32c3054fd17d",
+  "pretransfer_coupling": {
+    "declaration": "Original qualified matched nativeG/baseG versus currentTP/baseP at3,3, originally controlled by owner0; no forced capture prefix.64 trajectories,at most32plies,seed2026100805+i. Until first tag capture, uniform matched behavioral action keys couple legal policies. Tag moves ignore only differing G/TP pattern/type IDs; all other semantic metadata retained. Require unique keys and equal sets, no silent projection of duplicate/effect actions. Stop at first custody transfer or terminal; retain paired full frontiers. This isolates pre-transfer contribution and generates unconditioned boundary contexts, not whole prices or historical reachability.",
+    "trajectories": 64,
+    "first_transfer_frontiers": 13,
+    "paired_checks": 1778,
+    "transitions": 3556,
+    "seconds": 30.981673900038004,
+    "pretransfer_reward_sum": [
+      17,
+      17
+    ],
+    "source_sha256": "ad648f48c4506c2bacdabab3c252761c7a85308cf00e7ece022b18f88e89322e"
+  }
+}

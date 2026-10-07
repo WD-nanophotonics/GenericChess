@@ -93,5 +93,13 @@ enemy's base G service exceeds base P service. No b or V_P is fitted or admitted
 as a common hand price. Actual drop constraints, actions and context determine
 those continuation terms; the observed trace verifies only one such distinction.
 
+The explicit finite continuation now replaces speculation about a common b:
+all48 drops have zero forced immediate service, and12 common-drop two-tag-turn
+cells remain zero. A uniform legal-action custody law retains return/redrop and
+exchangeable hand provenance, but yields context-dependent signed task rewards.
+It does not establish positive inventory prices. CUSTODY_CONTINUATION.md owns
+this next stage and its distinct conditions; the earlier mechanic witnesses
+and scalar restricted approximation remain qualified historical evidence.
+
 Evidence/source hashes, full histograms, failed versions and actual semantic
 traces are retained in data/joint_service_20261008.json and its indexed archive.

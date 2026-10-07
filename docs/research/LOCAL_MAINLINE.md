@@ -42,11 +42,18 @@ legal drops, P6; among6common drops three yield different next-capture service
 and three do not. Native/Core legal sets agree. These are conditional mechanic
 witnesses, not historical reachability, a context distribution or numeric prices.
 
-Next: construct one explicit signed custody-continuation or replacement-service
-approximation, preserving base/current ownership and drop constraints. Identify
-its payoff/context law and one decision-changing falsifier before comparing
-cross-game bias; do not tune phase weights or unknown prices to reference labels.
-JOINT_SERVICE_DIAGNOSTIC.md and data/joint_service_20261008.json own details.
+A finite signed custody continuation preserves capture/reset/drop/return without
+unknown prices. All48 drops have zero forced immediate service; an additional
+tagged turn still gives zero on12 paired cells. Uniform finite custody gives
+context-dependent service, not positive prices. Local tag labels cannot generate
+the destination kernel exactly. A separate two-cycle virtual census retains
+negative N means; survivor continuation alone does not resolve that limitation.
+Original-owner coupled trajectories now retain13 first-transfer frontiers;
+1778 paired pre-transfer legal sets and tagged service agree. Stopping before
+capture cannot identify this base-dependent effect on inspected paths. Next:
+choose one paired frontier continuation with a decision-changing outcome,
+keeping context/policy/base-current assumptions explicit; no reference fitting.
+JOINT_SERVICE_DIAGNOSTIC.md and CUSTODY_CONTINUATION.md own detailed evidence.
 
 ## Unfamiliar-rule search
 
@@ -66,8 +73,11 @@ Equal resource-ceiling cost controls expose two output distinctions: raw Core/
 whole-native mate sentinels differ (1e9/1e8); warm public exact-TT hits return
 empty PV while native retains full-depth PV. Cold native is faster on completed
 cells, but caching, ordering, node definitions and PV contracts differ. No
-universal acceleration or identical-output warm-speed claim. Next optimization
-must name its output contract and preserve full-history/evaluator identity.
+universal acceleration or identical-output warm-speed claim. Optional public
+SearchTuning.require_full_pv validates an adequate cached line or replays
+principal nodes; non-principal TT cutoffs stay available. It defaults off.
+Full output has measurable cost/depth tradeoffs. Preserve that declared
+contract, full-history/evaluator identity and existing cached-depth semantics.
 See UNFAMILIAR_RULE_SEARCH.md and data/search_pv_contract_20261008.json.
 
 ## Evidence and delivery

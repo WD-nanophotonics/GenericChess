@@ -168,3 +168,37 @@ Exact definitions, histories, costs, incomplete/failed versions and pinned
 sources: data/joint_service_20261008.json and its indexed archive. Next useful
 search work is an observed decision-changing mechanism/history or cost issue,
 using this supported route; no new compatibility framework or Elo campaign.
+
+## Optional complete principal lines
+
+SearchTuning.require_full_pv defaults off. When enabled, an exact TT hit is
+usable only with a complete legal principal chain for the requested main depth,
+or a real earlier terminal. Missing/bounded/inconsistent links fall back to
+principal re-search; non-principal cutoffs remain. The existing path-aware TT
+and runtime own identity, legality, push/pop and cancellation; no extra cache.
+Declaration endpoints retain existing out-of-band semantics. This fixes
+cache-caused line truncation, not every possible interpretation of a PV.
+
+Two frozen actual five-ply capture/drop/recapture histories have32 public
+ablation calls; all16 enabled calls meet their completed-depth line contract.
+Warm depth3 enabled replay is about10ms with score2205/3603 and length3;
+default warm calls are cheaper but empty. A frozen recombined three-ply history
+has12 complete depth3/4 public/native calls and two independent Core references
+(85/506 leaves), all score-1363. These limited measurements do not establish
+broad speed superiority. The first recombined control ran alongside the
+default suite, so its timings are descriptive.
+
+Full output can lower completed depth. On the return-hand depth4 ceiling,
+some full-output warm calls stay atdepth3 while default calls reachdepth4.
+The direct depth3 independent Core references hit15-second fuses and remain
+unknown; no fixed-depth reference parity is claimed for those Shogi roots.
+
+Persistent sufficient-depth TT reuse retains existing variable-horizon semantics.
+Partial deeper searches can leave deeper child entries: a later nominal depth3
+result can differ from the earlier depth3 result (P control:3603 versus2576).
+A legal complete PV does not prove a uniform-horizon minimax value. Use fresh/
+reset engines for declared fixed-depth comparisons, or report persistent cache
+history and resource/result curves. No hidden change to depth acceptance,
+terminal sentinels, evaluator or default tuning was made.
+Exact controls/source versions: data/custody_continuation_20261008.json and
+../archive/custody_continuation_20261008/index.json.

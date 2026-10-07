@@ -233,6 +233,42 @@ def _tt_key(state: GameState, compiled) -> SearchStateIdentity:
     return search_state_identity(state, compiled)
 
 
+def _tt_principal_line(ctx: _Context, depth: int, ply: int, score: int, entry=None):
+    """Validate a sufficient-depth line in the existing path-aware table.
+
+    A missing/bounded/mismatched child is not a truncated explanation: the
+    caller re-searches its principal branch. Runtime push/pop also keeps
+    history and cancellation authoritative during this metadata replay.
+    """
+    if ctx.runtime is None:
+        return None
+    ctx.budget.check(ctx.stats, force=True)
+    if ctx.runtime.terminal_status.is_terminal:
+        return () if terminal_score(ctx.runtime.terminal_status,
+            ctx.runtime.state.position.side_to_move, ply) == score else None
+    if depth == 0:
+        return ()
+    if entry is None:
+        ctx.stats.position_keys_computed += 1
+        ctx.stats.tt_probes += 1
+        entry = ctx.tt.probe(ctx.runtime.search_key())
+        if entry is not None:
+            ctx.stats.tt_hits += 1
+    if (entry is None or entry.depth < depth or entry.bound is not BoundType.EXACT
+            or score_from_tt(entry.score, ply) != score):
+        return None
+    started = time.monotonic()
+    actions = ctx.runtime.legal_actions(ctx.checkpoint)
+    ctx.stats.legal_generation_calls += 1
+    ctx.stats.legal_actions_generated += len(actions)
+    ctx.stats.legal_generation_seconds += time.monotonic() - started
+    if entry.best_action not in actions:
+        return None
+    with ctx.runtime.pushed(entry.best_action, checkpoint=ctx.checkpoint):
+        suffix = _tt_principal_line(ctx, depth - 1, ply + 1, -score)
+    return None if suffix is None else (entry.best_action,) + suffix
+
+
 def negamax(
     state: GameState,
     depth: int,
@@ -242,6 +278,7 @@ def negamax(
     ctx: _Context,
     prev_action: Action | None = None,
     node_key: str | None = None,
+    pv_node: bool = True,
 ) -> SearchResult:
     if ctx.runtime is not None:
         state = ctx.runtime.state
@@ -319,7 +356,12 @@ def negamax(
             entry = ctx.tt.probe(key)
         if entry is not None:
             ctx.stats.tt_hits += 1
-            if entry.depth >= depth:
+            if ctx.tuning.require_full_pv and pv_node and entry.bound is BoundType.EXACT:
+                cached_score = score_from_tt(entry.score, ply)
+                cached_line = _tt_principal_line(ctx, depth, ply, cached_score, entry)
+                if cached_line is not None:
+                    return SearchResult(cached_score, entry.best_action, cached_line)
+            if entry.depth >= depth and not (ctx.tuning.require_full_pv and pv_node):
                 with ctx.recorder.time_block(AuditMetric.TT_PROBE_STORE):
                     score = score_from_tt(entry.score, ply)
                     if entry.bound is BoundType.EXACT:
@@ -453,30 +495,30 @@ def negamax(
             child = child_by_action[action]
             child_key = None
             ctx.budget.check(ctx.stats, force=True)
-        def child_search(window_alpha, window_beta):
+        def child_search(window_alpha, window_beta, child_pv):
             if ctx.runtime is not None:
                 with ctx.runtime.pushed(action, checkpoint=ctx.checkpoint):
                     return negamax(
                         ctx.runtime.state, depth - 1, window_alpha, window_beta,
-                        ply + 1, ctx, prev_action=action,
+                        ply + 1, ctx, prev_action=action, pv_node=child_pv,
                     )
             return negamax(
                 child, depth - 1, window_alpha, window_beta, ply + 1, ctx,
-                prev_action=action, node_key=child_key,
+                prev_action=action, node_key=child_key, pv_node=child_pv,
             )
 
         if ctx.tuning.use_pvs and move_index > 0:
             ctx.stats.pvs_null_window_searches += 1
-            null_score = -child_search(-alpha - 1, -alpha).score
+            null_score = -child_search(-alpha - 1, -alpha, False).score
             if alpha < null_score < beta:
                 ctx.stats.pvs_researches += 1
-                child_result = child_search(-beta, -alpha)
+                child_result = child_search(-beta, -alpha, pv_node)
                 score = -child_result.score
             else:
                 score = null_score
                 child_result = SearchResult(null_score, None, ())
         else:
-            child_result = child_search(-beta, -alpha)
+            child_result = child_search(-beta, -alpha, pv_node)
             score = -child_result.score
         if score > best:
             best = score
