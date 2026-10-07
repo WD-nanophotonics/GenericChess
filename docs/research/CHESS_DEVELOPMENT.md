@@ -1260,3 +1260,129 @@ records and inert producer sources are verified ZIPs under
 42b954cdbc1b4c969976d3f0a5f310a612093faf2e2745a00d39b6fa8d460e00.
 Native CPU/cache/leaf and exact engineering/model-token costs remain unavailable.
 No human fitting, Xiangqi holdout access, worker, Goal or public push.
+
+
+## Unchanged native attack-union practical comparison20261007
+
+The4-native-unit nonroyal pseudo-attack-union term is an optional standard
+Chess development candidate, not a fitted coefficient/default or exact
+mobility/king-safety model. Pawn208, all three tables, compiled search/SEE/
+ordering/pruning, Threads1/Hash16 remain frozen. Two existing exposed prefixes,
+reciprocal colors, pure/activity interleaved produce24fresh1sec games against
+Stockfish17.1 limit-strength1800 setting/50000nodes/1sec fuse. Maximum160
+subsequent plies is an unfinished frontier, never automatically a draw.
+
+Exact first-cohort replay-derived aggregate: pure6wins3losses3unfinished;
+activity10wins0losses2unfinished. Pure per table: geometric2W1L1U,
+linear3W1L, unit1W1L2U; activity geometric4W, linear4W, unit2W2U.
+Keep adverse central-d unit White: pure wins in71plies, activity reaches160
+unfinished. Other same-cell move counts/costs also reverse. Same prefixes,
+colors and tables do not ensure the same stochastic game path or deterministic
+paired inference. The first session checkpoint hand-transcribed pure as7W3L2U;
+the next documentation checkpoint corrects it without erasing that error.
+
+All24streams replay2332played+96prefixplies: whole author/Core legal sets,
+full history/final states and per-move binary/mode tags agree. Measured local
+search wall593.128sec pure versus524.485sec activity; fewer game search calls
+are not per-node efficiency. Total1258.919sec;2358writes,2.668GB cumulative
+serialized bytes,58.856sec including final output. Raw persisted counters
+exclude final save and are explicitly distinguished in the final index.
+Native CPU/cache/leaf counts and exact engineering/model-token cost unknown.
+
+Dot's complete10:06:35 same-thread advice was read among all24posts and
+reconciled before adoption. It recommends a fixed early-root union to distinguish
+same-root choice changes from different lost game trajectories; it did not
+reproduce local controls or games. The fixed stronger-reference and direct
+comparison conditions plus fixed sampling rule are in the retained prospective
+analysis plan. No extra worker, Goal, coefficient fitting or public push.
+
+
+Stronger condition was declared separately before execution: only central-d,
+three tables, reciprocal colors, both leaves, unlimited Stockfish17.1 with
+50000node/1sec fuse, same local1sec. All12games lost (six each leaf).
+Replay1178played+48prefixplies zero differences. Total606.606sec. Activity
+frequently survived longer, which is not a gain in win rate or independent
+strength. Relative local/reference compute is not equal; the candidate/base
+conditions are equal. This is an intentional harder opponent, not an Elo test.
+
+Before this stronger batch, fixed sampling selected first local-to-move roots
+at/after subsequent16/32 from each stream, with complete history.24roots,
+48unchanged1sec leaf searches, fresh unlimited500000node/1sec child diagnostics:
+14equal selections (exactly no action difference), eight positive finite cp
+deltas, one negative, one separate mate/cp comparison. The8/1count is not an
+error rate and a1cp difference is not reliable evidence of improvement.
+Adverse unit White root16 chooses h3f4(-40cp) instead of e3f4(-30cp).
+The important separate linear Black source-pure root33 comparison is activity
+g6g5 with mate-16 reference versus pure g6f5 with-861cp. No conversion of mate
+to cp, exact WDL claim or coefficient adjustment. Broader fixed games need not
+wait for an all-defense proof; retain this root for focused failure diagnosis.
+
+Reachable Shogi19-ply checked root now has12instrumented same-budget controls:
+lexical/noTT, ordering+TT and ordering+TT+orderedq; q0/q2; geometric/unit;
+2ply4096nodes20sec, identical approximate half-held inventory. Original lab
+Point lacked capture_order_value: four lexical controls survived, first ordered
+cell failed. The inert continuation supplies common constant990000 unit
+capture priority, lexical capture ties, identical for all models; no human or
+model-specific ordering prices. It continues eight unexecuted cells, retaining
+original report and interface failure. Production code/defaults unchanged.
+
+Geometric q2 lexical remains depth1/time_limit20.020sec;39747runtime pushes,
+37211classification pushes and11.147sec classification. Existing ordering+TT
+completes2ply Gold d9xd8 score-74850 in3.647sec,7503classification pushes.
+Adding existing orderedq preserves full choice/score,1.804sec and1637classification
+pushes (1966total versus7872). This combines q traversal and on-demand
+classification; do not attribute all improvement solely to one operation.
+Unit q2 complete score-200000 remains, tied root action changes with ordering;
+orderedTT0.957sec/1919classification pushes, orderedTTq0.614sec/737pushes.
+All paths balance and selected actions match immutable apply. No terminal quiet
+moves removed, no new search filter or cap. One constructed root gives a concrete
+supported-cost setting, not representative Shogi playing-strength evidence.
+
+The retained linearBlack adverse root is
+`r1bq1k1r/pp1nn3/2p2pp1/5P1p/P1BP4/B1P3QN/6P1/4RRK1 b - - 5 19`.
+Pure captures the white f5Pawn with g6f5; activity pushes the same g6Pawn to g5.
+Both local PVs begin the White reply a3e7; pure reports depth16/2644496nodes,
+activity depth15/2410000nodes. Cross-leaf local cp(-437/-473) is not an
+independent ranking. The independent finite children above retain the failure,
+but the changed leaf can also alter pruning and reachable depth at fixed time.
+A future prospectively symmetric root resource curve can distinguish a
+persistent adverse choice from a1sec search-frontier effect; do not assert
+that the union bonus directly caused the error or silently fix its coefficient.
+
+
+Direct comparison was separately predeclared to remove the third-party-opponent
+condition: same table on both sides, pure/activity reciprocal colors, both
+existing prefixes,1sec/Threads1/Hash16/160plies. Activity wins all12games
+(four each table);1252played+48prefixplies replayzero. Existing adapter's
+uci_reference routing role here is an activity UciMaterial, not Stockfish;
+explicit per-side and per-move leaf tags/binary hashes establish the transport.
+First replay expected a single whole-game leaf tag and failed KeyError before
+writing output; corrected per-move hash check passes, no game rerun. The failed
+source and error remain. Total1207.163sec, console1266writes/926.1MB/22.235sec;
+persisted pre-final counters are separate. Small exposed timed direct games
+justify retaining an optional candidate, not default/Elo or price selection.
+
+Separately declared exposed adverse-root1/4sec symmetric resource diagnostic
+retains g6g5 for activity at both budgets (depth15/19); pure changes g6f5 to
+c6c5(depth16/18). Fresh1million-node/2sec finite children report g6g5 mate-12,
+g6f5-944cp, c6c5-866cp. The earlier500000node mate-16/-861 record is untouched.
+No exact mate certificate or automatic coefficient fit. This specific failure
+persists when activity reaches greater reported depth than pure; lack of a
+single ply at1sec is not an adequate explanation. Investigate the native
+search's existing safety/SEE/evaluation coupling on this root next.
+
+Decision: retain the unchanged optional activity candidate and the existing
+Shogi orderedTTq setting for further practical development; neither becomes
+a production default. Reference1800, unlimited-strength reference and direct
+play answer different questions; do not pool them into a strength rating.
+All48game streams replay4762played+192prefixplies, zero mismatches;24same-root
+pairs and12Shogi controls preserve adverse/partial results. Production source
+unchanged. 28related entry/transport/atomic-record tests pass after the observed label
+repair; full actual-game parity is the new semantic check.
+
+Compact index: data/chess_activity_games_20261007.json, SHA256
+7a2b7a52b49402c87d1892a57ca351c3c47c7b4c87816605d49e4037ba51bb76.
+Exact raw records, declarations, failed/inert producers and hash-verified ZIPs
+are in ../archive/development_activity_games_20261007. Source/build qualification
+links to the preceding targeted-budget index. Native CPU/cache/leaf costs and
+exact model-token cost remain unavailable. No public push or scientific completion.

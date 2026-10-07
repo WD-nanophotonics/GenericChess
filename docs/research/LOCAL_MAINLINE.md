@@ -880,6 +880,21 @@ partial at both10/20sec symmetric conditions. Preserve both failures and
 investigate actual filtering cost if returning. Compact data/verified ZIPs:
 data/chess_targeted_budget_20261007.json, CHESS_DEVELOPMENT.md. Science OPEN.
 
+Unchanged native activity pilot now has48actual development streams across
+three comparator conditions: reference1800 pure6W3L3U/activity10W2U;
+unlimited-strength reference6losses each; same-table direct reciprocal games
+activity12wins across all3tables. Replay4762played+192prefixplies zero.
+Retain optional candidate, not default/Elo/material-price selection.24fixed
+actual-root pairs give14same,8finitecpbetter,1worse and1separate mate regression.
+The linearBlack adverse g6g5 persists at common1/4sec; fresh finite reference
+mate-12, while pure alternatives are negative ordinary cp. Diagnose existing
+safety/search coupling, no coefficient fit. Shogi existing orderingTT completes
+previously partial geometricq2; adding orderedq preserves fullchoice/score and
+reduces3.647to1.804sec,7503to1637classification pushes on one reachable root.
+Keep lab capture-order interface failure and replay schema repair. Raw/source
+verified ZIPs and compact data/chess_activity_games_20261007.json preserve all
+conditions/adverse results. No production default or public push; scienceOPEN.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.

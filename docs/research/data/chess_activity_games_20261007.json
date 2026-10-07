@@ -1,0 +1,2599 @@
+{
+  "scope": "Fixed optional4-native-unit attack union through unchanged qualified standard Chess search; exposed development, no fitted coefficient, default, Elo or generic-rule strength claim.",
+  "prior_build_qualification": "docs/research/data/chess_targeted_budget_20261007.json",
+  "adverse_resource_curve": {
+    "question": "Does the observed activity g6g5 regression persist under symmetric extra root time?",
+    "declaration": "One exposed linearBlack root33, same full history, pure/activity at1/4sec; fresh hash each call, Threads1/Hash16, unchanged scale/term.10sec requested local plus at most8sec child reference; no game extension, tuning or holdout claim. A switch motivates resource/frontier diagnosis; persistent regression motivates specific safety failure work, not coefficient fitting.",
+    "source_sha256": "ee2227ffb92e1aad97d20b002e10c63fde4f21d304d97dce2e4bab41b96b1659",
+    "rows": [
+      {
+        "policy": "linear_mixture",
+        "move": "g6f5",
+        "reason": "uci_bestmove",
+        "score": null,
+        "score_cp": -429,
+        "score_mate": null,
+        "wall_seconds": 1.005456699989736,
+        "controller_cpu_seconds": 0.0,
+        "engine_nodes": 2498385,
+        "engine_depth": 16,
+        "engine_seldepth": 25,
+        "engine_seconds": 1.001,
+        "pv": [
+          "g6f5",
+          "a3e7"
+        ],
+        "statistics": {},
+        "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+        "leaf_mode": "pure",
+        "requested_seconds": 1
+      },
+      {
+        "policy": "linear_mixture",
+        "move": "g6g5",
+        "reason": "uci_bestmove",
+        "score": null,
+        "score_cp": -473,
+        "score_mate": null,
+        "wall_seconds": 1.0049858000129461,
+        "controller_cpu_seconds": 0.0,
+        "engine_nodes": 2347961,
+        "engine_depth": 15,
+        "engine_seldepth": 27,
+        "engine_seconds": 1.001,
+        "pv": [
+          "g6g5",
+          "a3e7"
+        ],
+        "statistics": {},
+        "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+        "leaf_mode": "activity",
+        "requested_seconds": 1
+      },
+      {
+        "policy": "linear_mixture",
+        "move": "c6c5",
+        "reason": "uci_bestmove",
+        "score": null,
+        "score_cp": -615,
+        "score_mate": null,
+        "wall_seconds": 4.005420800065622,
+        "controller_cpu_seconds": 0.0,
+        "engine_nodes": 9820409,
+        "engine_depth": 18,
+        "engine_seldepth": 25,
+        "engine_seconds": 4.001,
+        "pv": [
+          "c6c5",
+          "h3f4"
+        ],
+        "statistics": {},
+        "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+        "leaf_mode": "pure",
+        "requested_seconds": 4
+      },
+      {
+        "policy": "linear_mixture",
+        "move": "g6g5",
+        "reason": "uci_bestmove",
+        "score": null,
+        "score_cp": -582,
+        "score_mate": null,
+        "wall_seconds": 4.004805099917576,
+        "controller_cpu_seconds": 0.015625,
+        "engine_nodes": 9545222,
+        "engine_depth": 19,
+        "engine_seldepth": 36,
+        "engine_seconds": 4.001,
+        "pv": [
+          "g6g5",
+          "a3e7"
+        ],
+        "statistics": {},
+        "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+        "leaf_mode": "activity",
+        "requested_seconds": 4
+      }
+    ],
+    "references": {
+      "c6c5": {
+        "cp": -866,
+        "mate": null,
+        "nodes": 1000141,
+        "depth": 21,
+        "engine_seconds": 0.553,
+        "wall_seconds": 0.5564800999127328,
+        "pv": [
+          "h3f4",
+          "b7b5",
+          "f4e6",
+          "f8e8",
+          "e6d8",
+          "e8d8",
+          "c4b5",
+          "c8a6",
+          "b5a6",
+          "h5h4",
+          "g3d6",
+          "h8h7",
+          "a3c5",
+          "h4h3",
+          "e1e7",
+          "h7e7",
+          "d6e7",
+          "d8c7",
+          "f5g6",
+          "h3g2",
+          "f1f6"
+        ]
+      },
+      "g6f5": {
+        "cp": -944,
+        "mate": null,
+        "nodes": 1000433,
+        "depth": 20,
+        "engine_seconds": 0.497,
+        "wall_seconds": 0.5031592000741512,
+        "pv": [
+          "e1e7",
+          "d8e7",
+          "a3e7",
+          "f8e7",
+          "f1e1",
+          "e7d8",
+          "h3f4",
+          "d7f8",
+          "g3g7",
+          "c8d7",
+          "g7f6",
+          "d8c7",
+          "f6e5",
+          "c7c8",
+          "e5h8",
+          "c8c7",
+          "h8e5",
+          "c7c8",
+          "a4a5"
+        ]
+      },
+      "g6g5": {
+        "cp": null,
+        "mate": -12,
+        "nodes": 1000343,
+        "depth": 33,
+        "engine_seconds": 0.847,
+        "wall_seconds": 0.8518134001642466,
+        "pv": [
+          "h3g5",
+          "c6c5",
+          "g5e6",
+          "f8e8",
+          "g3g7",
+          "d8b6",
+          "g7h8",
+          "e7g8",
+          "h8g8",
+          "e8e7",
+          "e6c5",
+          "d7e5",
+          "d4e5",
+          "c8f5",
+          "e5f6",
+          "e7d6",
+          "g8g3",
+          "d6c6",
+          "c4d5",
+          "c6d5",
+          "f1f5",
+          "d5c4",
+          "e1e4"
+        ]
+      }
+    },
+    "complete": true
+  },
+  "groups": {
+    "reference1800": {
+      "declaration": {
+        "question": "Does the unchanged common attack-union pilot improve actual development games?",
+        "scope": "Standard Chess; exposed openings; stochastic reference, no Elo, independent holdout or generic-rule strength claim.",
+        "term": "4 native units per white-minus-black unique nonroyal pseudo-attacked square; Pawn208. Unchanged coefficient, no outcome-based tuning.",
+        "conditions": {
+          "local_seconds": 1,
+          "reference_nodes": 50000,
+          "reference_time_fuse": 1,
+          "reference_elo_setting": 1800,
+          "threads": 1,
+          "hash_mib": 16,
+          "max_subsequent_plies": 160
+        },
+        "design": "24 sequential cells: two existing prefixes, three unchanged tables, both colors, pure/activity interleaved by pair. Fresh hash/game per cell. Preserve all losses, unfinished and interrupted cells; no silent rerun.",
+        "decision": "Retain or defer optional positional candidate based on actual outcomes/cost and specific failures; no default promotion. Stochastic/time-limited pairs are descriptive, not exact causal estimates.",
+        "cost": "At most1920sec requested local search plus reference fuse and authoritative-state/recording overhead. Stop check each action. No concurrent engines/tests/builds outside the current game.",
+        "binary_sha256": {
+          "pure": "477628ae141c6e5fb7dcb562e31e3bc40eab95b20c8b966ece131a1dbf090999",
+          "activity": "8f9dab0fc47ef7a29014d55a349502344509d5a65d6a8a19a7f5a9bfb8dad099"
+        },
+        "config_sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0",
+        "reference_sha256": "55aa40c857de30b79dbe4f8e4c335ee2b23815cf2f100a6630d54761fcad3b85",
+        "adapter_sha256": "e7abd7122df2dee80dc4be2b7af40a7a851b26c85a4b6038ebb372eb2d431a6a"
+      },
+      "methods": {
+        "pure": {
+          "geometric_half": {
+            "wins": 2,
+            "losses": 1,
+            "draws": 0,
+            "unfinished": 1,
+            "local_calls": 213,
+            "local_wall_seconds": 202.15051880199462,
+            "engine_nodes": 622664893
+          },
+          "linear_mixture": {
+            "wins": 3,
+            "losses": 1,
+            "draws": 0,
+            "unfinished": 0,
+            "local_calls": 158,
+            "local_wall_seconds": 146.81291290093213,
+            "engine_nodes": 473247692
+          },
+          "unit": {
+            "wins": 1,
+            "losses": 1,
+            "draws": 0,
+            "unfinished": 2,
+            "local_calls": 252,
+            "local_wall_seconds": 244.16448720125481,
+            "engine_nodes": 798265964
+          },
+          "scope": "Independent time-limited paths; root/color/table match, not deterministic paired causal strength."
+        },
+        "activity": {
+          "geometric_half": {
+            "wins": 4,
+            "losses": 0,
+            "draws": 0,
+            "unfinished": 0,
+            "local_calls": 158,
+            "local_wall_seconds": 150.76568910013884,
+            "engine_nodes": 457605999
+          },
+          "linear_mixture": {
+            "wins": 4,
+            "losses": 0,
+            "draws": 0,
+            "unfinished": 0,
+            "local_calls": 125,
+            "local_wall_seconds": 116.06063940166496,
+            "engine_nodes": 308099745
+          },
+          "unit": {
+            "wins": 2,
+            "losses": 0,
+            "draws": 0,
+            "unfinished": 2,
+            "local_calls": 263,
+            "local_wall_seconds": 257.65837269835174,
+            "engine_nodes": 811105476
+          },
+          "scope": "Independent time-limited paths; root/color/table match, not deterministic paired causal strength."
+        }
+      },
+      "wall_seconds": 1258.9191493999679,
+      "recording_cost": {
+        "writes": 2357,
+        "bytes": 2664859082,
+        "seconds": 58.76196780661121
+      },
+      "replay": {
+        "streams": 24,
+        "played_plies": 2332,
+        "prefix_plies": 96,
+        "mismatches": 0
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "open-file-e",
+          "mode": "pure",
+          "white": "geometric_half",
+          "black": "uci_reference",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "local_calls": 80,
+          "local_wall_seconds": 80.24105289997533,
+          "reported_engine_nodes": 247538054
+        },
+        {
+          "index": 1,
+          "id": "open-file-e",
+          "mode": "activity",
+          "white": "geometric_half",
+          "black": "uci_reference",
+          "plies": 61,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 31,
+          "local_wall_seconds": 29.17220199969597,
+          "reported_engine_nodes": 89546329
+        },
+        {
+          "index": 2,
+          "id": "open-file-e",
+          "mode": "activity",
+          "white": "uci_reference",
+          "black": "geometric_half",
+          "plies": 116,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 58,
+          "local_wall_seconds": 55.46364080021158,
+          "reported_engine_nodes": 197842903
+        },
+        {
+          "index": 3,
+          "id": "open-file-e",
+          "mode": "pure",
+          "white": "uci_reference",
+          "black": "geometric_half",
+          "plies": 72,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 36,
+          "local_wall_seconds": 33.131381400860846,
+          "reported_engine_nodes": 119612140
+        },
+        {
+          "index": 4,
+          "id": "open-file-e",
+          "mode": "pure",
+          "white": "linear_mixture",
+          "black": "uci_reference",
+          "plies": 110,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 55,
+          "local_wall_seconds": 49.36093110078946,
+          "reported_engine_nodes": 174755588
+        },
+        {
+          "index": 5,
+          "id": "open-file-e",
+          "mode": "activity",
+          "white": "linear_mixture",
+          "black": "uci_reference",
+          "plies": 73,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 37,
+          "local_wall_seconds": 35.128369599580765,
+          "reported_engine_nodes": 96995658
+        },
+        {
+          "index": 6,
+          "id": "open-file-e",
+          "mode": "activity",
+          "white": "uci_reference",
+          "black": "linear_mixture",
+          "plies": 58,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 29,
+          "local_wall_seconds": 27.069099300075322,
+          "reported_engine_nodes": 70506374
+        },
+        {
+          "index": 7,
+          "id": "open-file-e",
+          "mode": "pure",
+          "white": "uci_reference",
+          "black": "linear_mixture",
+          "plies": 68,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 34,
+          "local_wall_seconds": 32.18082519969903,
+          "reported_engine_nodes": 106660427
+        },
+        {
+          "index": 8,
+          "id": "open-file-e",
+          "mode": "pure",
+          "white": "unit",
+          "black": "uci_reference",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "local_calls": 80,
+          "local_wall_seconds": 80.26487800083123,
+          "reported_engine_nodes": 282676349
+        },
+        {
+          "index": 9,
+          "id": "open-file-e",
+          "mode": "activity",
+          "white": "unit",
+          "black": "uci_reference",
+          "plies": 65,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 33,
+          "local_wall_seconds": 30.153450099285692,
+          "reported_engine_nodes": 96284794
+        },
+        {
+          "index": 10,
+          "id": "open-file-e",
+          "mode": "activity",
+          "white": "uci_reference",
+          "black": "unit",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "local_calls": 80,
+          "local_wall_seconds": 80.20307899964973,
+          "reported_engine_nodes": 239745119
+        },
+        {
+          "index": 11,
+          "id": "open-file-e",
+          "mode": "pure",
+          "white": "uci_reference",
+          "black": "unit",
+          "plies": 113,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 56,
+          "local_wall_seconds": 52.8438891004771,
+          "reported_engine_nodes": 169191545
+        },
+        {
+          "index": 12,
+          "id": "central-d",
+          "mode": "pure",
+          "white": "geometric_half",
+          "black": "uci_reference",
+          "plies": 120,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 60,
+          "local_wall_seconds": 53.571256801253185,
+          "reported_engine_nodes": 153053812
+        },
+        {
+          "index": 13,
+          "id": "central-d",
+          "mode": "activity",
+          "white": "geometric_half",
+          "black": "uci_reference",
+          "plies": 41,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 21,
+          "local_wall_seconds": 19.05523380008526,
+          "reported_engine_nodes": 44034248
+        },
+        {
+          "index": 14,
+          "id": "central-d",
+          "mode": "activity",
+          "white": "uci_reference",
+          "black": "geometric_half",
+          "plies": 96,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 48,
+          "local_wall_seconds": 47.07461250014603,
+          "reported_engine_nodes": 126182519
+        },
+        {
+          "index": 15,
+          "id": "central-d",
+          "mode": "pure",
+          "white": "uci_reference",
+          "black": "geometric_half",
+          "plies": 74,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 37,
+          "local_wall_seconds": 35.20682769990526,
+          "reported_engine_nodes": 102460887
+        },
+        {
+          "index": 16,
+          "id": "central-d",
+          "mode": "pure",
+          "white": "linear_mixture",
+          "black": "uci_reference",
+          "plies": 55,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 28,
+          "local_wall_seconds": 26.140520400134847,
+          "reported_engine_nodes": 74191010
+        },
+        {
+          "index": 17,
+          "id": "central-d",
+          "mode": "activity",
+          "white": "linear_mixture",
+          "black": "uci_reference",
+          "plies": 65,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 33,
+          "local_wall_seconds": 31.0781262004748,
+          "reported_engine_nodes": 79106840
+        },
+        {
+          "index": 18,
+          "id": "central-d",
+          "mode": "activity",
+          "white": "uci_reference",
+          "black": "linear_mixture",
+          "plies": 52,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 26,
+          "local_wall_seconds": 22.78504430153407,
+          "reported_engine_nodes": 61490873
+        },
+        {
+          "index": 19,
+          "id": "central-d",
+          "mode": "pure",
+          "white": "uci_reference",
+          "black": "linear_mixture",
+          "plies": 82,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 41,
+          "local_wall_seconds": 39.1306362003088,
+          "reported_engine_nodes": 117640667
+        },
+        {
+          "index": 20,
+          "id": "central-d",
+          "mode": "pure",
+          "white": "unit",
+          "black": "uci_reference",
+          "plies": 71,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 36,
+          "local_wall_seconds": 35.06936229974963,
+          "reported_engine_nodes": 110203040
+        },
+        {
+          "index": 21,
+          "id": "central-d",
+          "mode": "activity",
+          "white": "unit",
+          "black": "uci_reference",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "local_calls": 80,
+          "local_wall_seconds": 80.12898829905316,
+          "reported_engine_nodes": 281049280
+        },
+        {
+          "index": 22,
+          "id": "central-d",
+          "mode": "activity",
+          "white": "uci_reference",
+          "black": "unit",
+          "plies": 140,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 70,
+          "local_wall_seconds": 67.17285530036315,
+          "reported_engine_nodes": 194026283
+        },
+        {
+          "index": 23,
+          "id": "central-d",
+          "mode": "pure",
+          "white": "uci_reference",
+          "black": "unit",
+          "plies": 160,
+          "prefix_plies": 4,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "local_calls": 80,
+          "local_wall_seconds": 75.98635780019686,
+          "reported_engine_nodes": 236195030
+        }
+      ]
+    },
+    "unlimited": {
+      "declaration": {
+        "question": "Does the unchanged activity pilot retain useful feedback against the unlimited reference?",
+        "scope": "Standard Chess; exposed openings; unlimited reference fixed50000node/1sec fuse, no Elo, independent holdout or generic-rule strength claim.",
+        "term": "4 native units per white-minus-black unique nonroyal pseudo-attacked square; Pawn208. Unchanged coefficient, no outcome-based tuning.",
+        "conditions": {
+          "local_seconds": 1,
+          "reference_nodes": 50000,
+          "reference_time_fuse": 1,
+          "reference_elo_setting": null,
+          "threads": 1,
+          "hash_mib": 16,
+          "max_subsequent_plies": 160
+        },
+        "design": "12 sequential cells: one existing central-d prefix, three unchanged tables, both colors, pure/activity interleaved by pair. Fresh hash/game per cell. Preserve all losses, unfinished and interrupted cells; no silent rerun.",
+        "decision": "Retain or defer optional positional candidate based on actual outcomes/cost and specific failures; no default promotion. Stochastic/time-limited pairs are descriptive, not exact causal estimates.",
+        "cost": "At most960sec requested local search plus reference fuse and authoritative-state/recording overhead. Stop check each action. No concurrent engines/tests/builds outside the current game.",
+        "binary_sha256": {
+          "pure": "477628ae141c6e5fb7dcb562e31e3bc40eab95b20c8b966ece131a1dbf090999",
+          "activity": "8f9dab0fc47ef7a29014d55a349502344509d5a65d6a8a19a7f5a9bfb8dad099"
+        },
+        "config_sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0",
+        "reference_sha256": "55aa40c857de30b79dbe4f8e4c335ee2b23815cf2f100a6630d54761fcad3b85",
+        "adapter_sha256": "e7abd7122df2dee80dc4be2b7af40a7a851b26c85a4b6038ebb372eb2d431a6a"
+      },
+      "methods": {
+        "pure": {
+          "geometric_half": {
+            "wins": 0,
+            "losses": 2,
+            "draws": 0,
+            "unfinished": 0,
+            "local_calls": 92,
+            "local_wall_seconds": 86.2983646998182,
+            "engine_nodes": 261118102
+          },
+          "linear_mixture": {
+            "wins": 0,
+            "losses": 2,
+            "draws": 0,
+            "unfinished": 0,
+            "local_calls": 60,
+            "local_wall_seconds": 54.25807869853452,
+            "engine_nodes": 154171689
+          },
+          "unit": {
+            "wins": 0,
+            "losses": 2,
+            "draws": 0,
+            "unfinished": 0,
+            "local_calls": 76,
+            "local_wall_seconds": 70.23990680044517,
+            "engine_nodes": 218152419
+          },
+          "scope": "Independent time-limited paths; root/color/table match, not deterministic paired causal strength."
+        },
+        "activity": {
+          "geometric_half": {
+            "wins": 0,
+            "losses": 2,
+            "draws": 0,
+            "unfinished": 0,
+            "local_calls": 124,
+            "local_wall_seconds": 117.02639509853907,
+            "engine_nodes": 357442320
+          },
+          "linear_mixture": {
+            "wins": 0,
+            "losses": 2,
+            "draws": 0,
+            "unfinished": 0,
+            "local_calls": 110,
+            "local_wall_seconds": 103.74971109977923,
+            "engine_nodes": 301123435
+          },
+          "unit": {
+            "wins": 0,
+            "losses": 2,
+            "draws": 0,
+            "unfinished": 0,
+            "local_calls": 124,
+            "local_wall_seconds": 118.24945959937759,
+            "engine_nodes": 353468659
+          },
+          "scope": "Independent time-limited paths; root/color/table match, not deterministic paired causal strength."
+        }
+      },
+      "wall_seconds": 606.6063180000056,
+      "recording_cost": {
+        "writes": 1191,
+        "bytes": 662719920,
+        "seconds": 16.17414040165022
+      },
+      "replay": {
+        "streams": 12,
+        "played_plies": 1178,
+        "prefix_plies": 48,
+        "mismatches": 0
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "central-d",
+          "mode": "pure",
+          "white": "geometric_half",
+          "black": "uci_reference",
+          "plies": 118,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 59,
+          "local_wall_seconds": 56.18486070027575,
+          "reported_engine_nodes": 172638500
+        },
+        {
+          "index": 1,
+          "id": "central-d",
+          "mode": "activity",
+          "white": "geometric_half",
+          "black": "uci_reference",
+          "plies": 126,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 63,
+          "local_wall_seconds": 60.229382799007,
+          "reported_engine_nodes": 178169074
+        },
+        {
+          "index": 2,
+          "id": "central-d",
+          "mode": "activity",
+          "white": "uci_reference",
+          "black": "geometric_half",
+          "plies": 123,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 61,
+          "local_wall_seconds": 56.79701229953207,
+          "reported_engine_nodes": 179273246
+        },
+        {
+          "index": 3,
+          "id": "central-d",
+          "mode": "pure",
+          "white": "uci_reference",
+          "black": "geometric_half",
+          "plies": 67,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 33,
+          "local_wall_seconds": 30.113503999542445,
+          "reported_engine_nodes": 88479602
+        },
+        {
+          "index": 4,
+          "id": "central-d",
+          "mode": "pure",
+          "white": "linear_mixture",
+          "black": "uci_reference",
+          "plies": 70,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 35,
+          "local_wall_seconds": 32.17940019979142,
+          "reported_engine_nodes": 92290378
+        },
+        {
+          "index": 5,
+          "id": "central-d",
+          "mode": "activity",
+          "white": "linear_mixture",
+          "black": "uci_reference",
+          "plies": 138,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 69,
+          "local_wall_seconds": 65.92001649970189,
+          "reported_engine_nodes": 195000787
+        },
+        {
+          "index": 6,
+          "id": "central-d",
+          "mode": "activity",
+          "white": "uci_reference",
+          "black": "linear_mixture",
+          "plies": 83,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 41,
+          "local_wall_seconds": 37.829694600077346,
+          "reported_engine_nodes": 106122648
+        },
+        {
+          "index": 7,
+          "id": "central-d",
+          "mode": "pure",
+          "white": "uci_reference",
+          "black": "linear_mixture",
+          "plies": 51,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 25,
+          "local_wall_seconds": 22.078678498743102,
+          "reported_engine_nodes": 61881311
+        },
+        {
+          "index": 8,
+          "id": "central-d",
+          "mode": "pure",
+          "white": "unit",
+          "black": "uci_reference",
+          "plies": 86,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 43,
+          "local_wall_seconds": 40.09718950022943,
+          "reported_engine_nodes": 124709534
+        },
+        {
+          "index": 9,
+          "id": "central-d",
+          "mode": "activity",
+          "white": "unit",
+          "black": "uci_reference",
+          "plies": 144,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 72,
+          "local_wall_seconds": 69.20423949812539,
+          "reported_engine_nodes": 208556279
+        },
+        {
+          "index": 10,
+          "id": "central-d",
+          "mode": "activity",
+          "white": "uci_reference",
+          "black": "unit",
+          "plies": 105,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 52,
+          "local_wall_seconds": 49.0452201012522,
+          "reported_engine_nodes": 144912380
+        },
+        {
+          "index": 11,
+          "id": "central-d",
+          "mode": "pure",
+          "white": "uci_reference",
+          "black": "unit",
+          "plies": 67,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 33,
+          "local_wall_seconds": 30.142717300215736,
+          "reported_engine_nodes": 93442885
+        }
+      ]
+    },
+    "direct": {
+      "declaration": {
+        "question": "Does activity improve direct play against the same pure search at the same table and time?",
+        "scope": "Standard Chess; exposed openings; direct leaf pair, limited time/hardware variability, no Elo, independent holdout or generic-rule strength claim.",
+        "term": "4 native units per white-minus-black unique nonroyal pseudo-attacked square; Pawn208. Unchanged coefficient, no outcome-based tuning.",
+        "conditions": {
+          "local_seconds": 1,
+          "reference_nodes": null,
+          "reference_time_fuse": null,
+          "reference_elo_setting": null,
+          "threads": 1,
+          "hash_mib": 16,
+          "max_subsequent_plies": 160
+        },
+        "transport_alias": "Existing uci_reference role routes to activity Player here, not Stockfish; explicit white_leaf_mode/black_leaf_mode/table and per-move leaf_mode identify both players.",
+        "design": "12 sequential cells: two existing prefixes, three unchanged tables, reciprocal pure/activity colors in the same game. No third-party opponent. Fresh hash/game per cell. Preserve all losses, unfinished and interrupted cells; no silent rerun.",
+        "decision": "Retain or defer optional positional candidate based on actual outcomes/cost and specific failures; no default promotion. Stochastic/time-limited pairs are descriptive, not exact causal estimates.",
+        "cost": "At most1920sec requested total search across both players, no reference and authoritative-state/recording overhead. Stop check each action. No concurrent engines/tests/builds outside the current game.",
+        "binary_sha256": {
+          "pure": "477628ae141c6e5fb7dcb562e31e3bc40eab95b20c8b966ece131a1dbf090999",
+          "activity": "8f9dab0fc47ef7a29014d55a349502344509d5a65d6a8a19a7f5a9bfb8dad099"
+        },
+        "config_sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0",
+        "reference_sha256": "55aa40c857de30b79dbe4f8e4c335ee2b23815cf2f100a6630d54761fcad3b85",
+        "adapter_sha256": "e7abd7122df2dee80dc4be2b7af40a7a851b26c85a4b6038ebb372eb2d431a6a"
+      },
+      "methods": {
+        "geometric_half": {
+          "pure": {
+            "wins": 0,
+            "losses": 4,
+            "draws": 0,
+            "unfinished": 0
+          },
+          "activity": {
+            "wins": 4,
+            "losses": 0,
+            "draws": 0,
+            "unfinished": 0
+          }
+        },
+        "linear_mixture": {
+          "pure": {
+            "wins": 0,
+            "losses": 4,
+            "draws": 0,
+            "unfinished": 0
+          },
+          "activity": {
+            "wins": 4,
+            "losses": 0,
+            "draws": 0,
+            "unfinished": 0
+          }
+        },
+        "unit": {
+          "pure": {
+            "wins": 0,
+            "losses": 4,
+            "draws": 0,
+            "unfinished": 0
+          },
+          "activity": {
+            "wins": 4,
+            "losses": 0,
+            "draws": 0,
+            "unfinished": 0
+          }
+        }
+      },
+      "wall_seconds": 1207.1627142000943,
+      "recording_cost": {
+        "writes": 1265,
+        "bytes": 923776814,
+        "seconds": 22.171605099458247
+      },
+      "replay": {
+        "streams": 12,
+        "played_plies": 1252,
+        "prefix_plies": 48,
+        "mismatches": 0
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "open-file-e",
+          "table": "geometric_half",
+          "white_leaf_mode": "pure",
+          "black_leaf_mode": "activity",
+          "white": "geometric_half",
+          "black": "uci_reference",
+          "plies": 158,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 158,
+          "local_wall_seconds": 151.93312429916114,
+          "reported_engine_nodes": 519892777
+        },
+        {
+          "index": 1,
+          "id": "open-file-e",
+          "table": "geometric_half",
+          "white_leaf_mode": "activity",
+          "black_leaf_mode": "pure",
+          "white": "uci_reference",
+          "black": "geometric_half",
+          "plies": 105,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 105,
+          "local_wall_seconds": 98.71249509952031,
+          "reported_engine_nodes": 292110109
+        },
+        {
+          "index": 2,
+          "id": "open-file-e",
+          "table": "linear_mixture",
+          "white_leaf_mode": "pure",
+          "black_leaf_mode": "activity",
+          "white": "linear_mixture",
+          "black": "uci_reference",
+          "plies": 134,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 134,
+          "local_wall_seconds": 126.58986120019108,
+          "reported_engine_nodes": 438518243
+        },
+        {
+          "index": 3,
+          "id": "open-file-e",
+          "table": "linear_mixture",
+          "white_leaf_mode": "activity",
+          "black_leaf_mode": "pure",
+          "white": "uci_reference",
+          "black": "linear_mixture",
+          "plies": 111,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 111,
+          "local_wall_seconds": 103.6701930987183,
+          "reported_engine_nodes": 320790984
+        },
+        {
+          "index": 4,
+          "id": "open-file-e",
+          "table": "unit",
+          "white_leaf_mode": "pure",
+          "black_leaf_mode": "activity",
+          "white": "unit",
+          "black": "uci_reference",
+          "plies": 46,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 46,
+          "local_wall_seconds": 40.20861359988339,
+          "reported_engine_nodes": 121397555
+        },
+        {
+          "index": 5,
+          "id": "open-file-e",
+          "table": "unit",
+          "white_leaf_mode": "activity",
+          "black_leaf_mode": "pure",
+          "white": "uci_reference",
+          "black": "unit",
+          "plies": 75,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 75,
+          "local_wall_seconds": 69.22801820049062,
+          "reported_engine_nodes": 237075260
+        },
+        {
+          "index": 6,
+          "id": "central-d",
+          "table": "geometric_half",
+          "white_leaf_mode": "pure",
+          "black_leaf_mode": "activity",
+          "white": "geometric_half",
+          "black": "uci_reference",
+          "plies": 136,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 136,
+          "local_wall_seconds": 128.48214770038612,
+          "reported_engine_nodes": 401890821
+        },
+        {
+          "index": 7,
+          "id": "central-d",
+          "table": "geometric_half",
+          "white_leaf_mode": "activity",
+          "black_leaf_mode": "pure",
+          "white": "uci_reference",
+          "black": "geometric_half",
+          "plies": 125,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 125,
+          "local_wall_seconds": 119.3304649007041,
+          "reported_engine_nodes": 385213916
+        },
+        {
+          "index": 8,
+          "id": "central-d",
+          "table": "linear_mixture",
+          "white_leaf_mode": "pure",
+          "black_leaf_mode": "activity",
+          "white": "linear_mixture",
+          "black": "uci_reference",
+          "plies": 146,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 146,
+          "local_wall_seconds": 138.71541860024445,
+          "reported_engine_nodes": 415057396
+        },
+        {
+          "index": 9,
+          "id": "central-d",
+          "table": "linear_mixture",
+          "white_leaf_mode": "activity",
+          "black_leaf_mode": "pure",
+          "white": "uci_reference",
+          "black": "linear_mixture",
+          "plies": 73,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 73,
+          "local_wall_seconds": 67.31811500014737,
+          "reported_engine_nodes": 180112870
+        },
+        {
+          "index": 10,
+          "id": "central-d",
+          "table": "unit",
+          "white_leaf_mode": "pure",
+          "black_leaf_mode": "activity",
+          "white": "unit",
+          "black": "uci_reference",
+          "plies": 88,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "local_calls": 88,
+          "local_wall_seconds": 82.21494089905173,
+          "reported_engine_nodes": 246975681
+        },
+        {
+          "index": 11,
+          "id": "central-d",
+          "table": "unit",
+          "white_leaf_mode": "activity",
+          "black_leaf_mode": "pure",
+          "white": "uci_reference",
+          "black": "unit",
+          "plies": 55,
+          "prefix_plies": 4,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "local_calls": 55,
+          "local_wall_seconds": 49.380337399663404,
+          "reported_engine_nodes": 134680055
+        }
+      ]
+    }
+  },
+  "paired_roots": [
+    {
+      "game_index": 0,
+      "source_mode": "pure",
+      "policy": "geometric_half",
+      "local_side": 0,
+      "threshold": 16,
+      "played_index": 16,
+      "equal_move": false,
+      "moves": {
+        "pure": "h2h3",
+        "activity": "e2e3"
+      },
+      "references": {
+        "pure": {
+          "cp": -285,
+          "mate": null,
+          "nodes": 500051,
+          "depth": 22,
+          "engine_seconds": 0.866,
+          "wall_seconds": 0.871492899954319,
+          "pv": [
+            "e8g8",
+            "e2e3",
+            "d5d4",
+            "g1f3",
+            "c8b7",
+            "f1e2",
+            "d4e3",
+            "f2e3",
+            "d8b8",
+            "e1g1",
+            "e7f5",
+            "d2e1",
+            "c6e5",
+            "f3e5",
+            "f6e5",
+            "e2d3",
+            "f8d8",
+            "d3f5",
+            "e6f5",
+            "f1f5"
+          ]
+        },
+        "activity": {
+          "cp": -209,
+          "mate": null,
+          "nodes": 500455,
+          "depth": 19,
+          "engine_seconds": 0.888,
+          "wall_seconds": 0.8921674001030624,
+          "pv": [
+            "e8g8"
+          ]
+        }
+      },
+      "finite_cp_delta": 76,
+      "interpretation": "finite child score only; mate and cp separately; no WDL certificate"
+    },
+    {
+      "game_index": 0,
+      "source_mode": "pure",
+      "policy": "geometric_half",
+      "local_side": 0,
+      "threshold": 32,
+      "played_index": 32,
+      "equal_move": true,
+      "moves": {
+        "pure": "b5c4",
+        "activity": "b5c4"
+      },
+      "finite_cp_delta": 0,
+      "interpretation": "same move, no difference"
+    },
+    {
+      "game_index": 1,
+      "source_mode": "activity",
+      "policy": "geometric_half",
+      "local_side": 0,
+      "threshold": 16,
+      "played_index": 16,
+      "equal_move": true,
+      "moves": {
+        "pure": "b3b6",
+        "activity": "b3b6"
+      },
+      "finite_cp_delta": 0,
+      "interpretation": "same move, no difference"
+    },
+    {
+      "game_index": 1,
+      "source_mode": "activity",
+      "policy": "geometric_half",
+      "local_side": 0,
+      "threshold": 32,
+      "played_index": 32,
+      "equal_move": false,
+      "moves": {
+        "pure": "a2a3",
+        "activity": "b1d2"
+      },
+      "references": {
+        "pure": {
+          "cp": -404,
+          "mate": null,
+          "nodes": 500061,
+          "depth": 21,
+          "engine_seconds": 0.801,
+          "wall_seconds": 0.807445399928838,
+          "pv": [
+            "c5a7",
+            "c2a4",
+            "e6e5",
+            "b1d2",
+            "a7b6",
+            "d2e4",
+            "f6e6",
+            "a1c1",
+            "c8b7",
+            "f1e1",
+            "e6g6",
+            "e4g3",
+            "a6c5",
+            "c1c5",
+            "b6c5",
+            "f3d2",
+            "c5b6",
+            "a4b4",
+            "e5e4",
+            "b4b5"
+          ]
+        },
+        "activity": {
+          "cp": -344,
+          "mate": null,
+          "nodes": 500454,
+          "depth": 21,
+          "engine_seconds": 0.807,
+          "wall_seconds": 0.8150063999928534,
+          "pv": [
+            "c8b7",
+            "a1c1",
+            "f8c8",
+            "a2a3",
+            "c5a7",
+            "c2c8",
+            "b7c8",
+            "c1c8",
+            "g8h7",
+            "g2g3",
+            "f6e7",
+            "f1g2",
+            "a6c7",
+            "h2h4",
+            "c7d5",
+            "d2e4",
+            "d4d3",
+            "g2h3",
+            "f7f5",
+            "f3g5",
+            "h7g6"
+          ]
+        }
+      },
+      "finite_cp_delta": 60,
+      "interpretation": "finite child score only; mate and cp separately; no WDL certificate"
+    },
+    {
+      "game_index": 2,
+      "source_mode": "activity",
+      "policy": "geometric_half",
+      "local_side": 1,
+      "threshold": 16,
+      "played_index": 17,
+      "equal_move": false,
+      "moves": {
+        "pure": "b7b5",
+        "activity": "d8d6"
+      },
+      "references": {
+        "pure": {
+          "cp": -189,
+          "mate": null,
+          "nodes": 500144,
+          "depth": 22,
+          "engine_seconds": 0.875,
+          "wall_seconds": 0.880281199933961,
+          "pv": [
+            "c4a2",
+            "e8g8"
+          ]
+        },
+        "activity": {
+          "cp": -171,
+          "mate": null,
+          "nodes": 500609,
+          "depth": 22,
+          "engine_seconds": 0.837,
+          "wall_seconds": 0.8432366999331862,
+          "pv": [
+            "f1e1",
+            "e8g8",
+            "e3e4",
+            "f5e4",
+            "e1e4",
+            "c8d7",
+            "c3d3",
+            "h7h6",
+            "c1d2",
+            "f8f6",
+            "c4b3",
+            "d7e8",
+            "a1e1",
+            "e8f7",
+            "d3e2",
+            "d6d7",
+            "f3e5",
+            "c6e5",
+            "d4e5"
+          ]
+        }
+      },
+      "finite_cp_delta": 18,
+      "interpretation": "finite child score only; mate and cp separately; no WDL certificate"
+    },
+    {
+      "game_index": 2,
+      "source_mode": "activity",
+      "policy": "geometric_half",
+      "local_side": 1,
+      "threshold": 32,
+      "played_index": 33,
+      "equal_move": false,
+      "moves": {
+        "pure": "f8f6",
+        "activity": "f8f7"
+      },
+      "references": {
+        "pure": {
+          "cp": -308,
+          "mate": null,
+          "nodes": 500328,
+          "depth": 22,
+          "engine_seconds": 0.883,
+          "wall_seconds": 0.8904806999489665,
+          "pv": [
+            "f2f3",
+            "h7h6",
+            "c5b6",
+            "c7b6",
+            "c1c8",
+            "b7c8",
+            "e1c1",
+            "c8b7",
+            "d2e1",
+            "g6e7",
+            "d3e5",
+            "b7d5",
+            "b3d1",
+            "d8f7",
+            "e5d7",
+            "f6g6",
+            "d7b6",
+            "e6e5",
+            "b6d5",
+            "e7d5",
+            "e1d2",
+            "e5d4",
+            "e3d4"
+          ]
+        },
+        "activity": {
+          "cp": -286,
+          "mate": null,
+          "nodes": 500576,
+          "depth": 21,
+          "engine_seconds": 0.821,
+          "wall_seconds": 0.8261988998856395,
+          "pv": [
+            "f2f3",
+            "c8a8",
+            "h2h4",
+            "b7d5",
+            "b3d5",
+            "b6c5",
+            "c1c5",
+            "e6d5",
+            "h4h5",
+            "g6e7",
+            "c5c7",
+            "e7c6",
+            "c7f7",
+            "g8f7",
+            "e1c1",
+            "c6e7",
+            "d2e1",
+            "a8c8",
+            "c1c8",
+            "e7c8",
+            "e1g3",
+            "g7g6",
+            "h5g6",
+            "h7g6"
+          ]
+        }
+      },
+      "finite_cp_delta": 22,
+      "interpretation": "finite child score only; mate and cp separately; no WDL certificate"
+    },
+    {
+      "game_index": 3,
+      "source_mode": "pure",
+      "policy": "geometric_half",
+      "local_side": 1,
+      "threshold": 16,
+      "played_index": 17,
+      "equal_move": true,
+      "moves": {
+        "pure": "f8g7",
+        "activity": "f8g7"
+      },
+      "finite_cp_delta": 0,
+      "interpretation": "same move, no difference"
+    },
+    {
+      "game_index": 3,
+      "source_mode": "pure",
+      "policy": "geometric_half",
+      "local_side": 1,
+      "threshold": 32,
+      "played_index": 33,
+      "equal_move": false,
+      "moves": {
+        "pure": "g6g5",
+        "activity": "a7a5"
+      },
+      "references": {
+        "pure": {
+          "cp": -512,
+          "mate": null,
+          "nodes": 500325,
+          "depth": 22,
+          "engine_seconds": 0.827,
+          "wall_seconds": 0.8352290000766516,
+          "pv": [
+            "f4h5",
+            "g7f7",
+            "f2f4",
+            "c7c5",
+            "d4d5",
+            "g8e7",
+            "g2g4",
+            "h8g8",
+            "h5f6",
+            "g5f4",
+            "f1f4",
+            "g8g6",
+            "g1h1",
+            "f7g7",
+            "f4f1",
+            "d8f7",
+            "g4f5",
+            "e7f5",
+            "e2h5",
+            "g6g5"
+          ]
+        },
+        "activity": {
+          "cp": -454,
+          "mate": null,
+          "nodes": 500329,
+          "depth": 21,
+          "engine_seconds": 0.876,
+          "wall_seconds": 0.8817164998035878,
+          "pv": [
+            "d4d5",
+            "c7c5",
+            "d5c6",
+            "b7c6",
+            "c2d2",
+            "a8a7",
+            "d2e3",
+            "a7b7",
+            "f4d3",
+            "d7e8",
+            "h2h3",
+            "d8f7",
+            "d3c5",
+            "b7e7",
+            "d1b1",
+            "g7h7",
+            "c5a4",
+            "e7b7",
+            "b1b7",
+            "c8b7",
+            "a4c5"
+          ]
+        }
+      },
+      "finite_cp_delta": 58,
+      "interpretation": "finite child score only; mate and cp separately; no WDL certificate"
+    },
+    {
+      "game_index": 4,
+      "source_mode": "pure",
+      "policy": "linear_mixture",
+      "local_side": 0,
+      "threshold": 16,
+      "played_index": 16,
+      "equal_move": true,
+      "moves": {
+        "pure": "b2f6",
+        "activity": "b2f6"
+      },
+      "finite_cp_delta": 0,
+      "interpretation": "same move, no difference"
+    },
+    {
+      "game_index": 4,
+      "source_mode": "pure",
+      "policy": "linear_mixture",
+      "local_side": 0,
+      "threshold": 32,
+      "played_index": 32,
+      "equal_move": true,
+      "moves": {
+        "pure": "f2f3",
+        "activity": "f2f3"
+      },
+      "finite_cp_delta": 0,
+      "interpretation": "same move, no difference"
+    },
+    {
+      "game_index": 5,
+      "source_mode": "activity",
+      "policy": "linear_mixture",
+      "local_side": 0,
+      "threshold": 16,
+      "played_index": 16,
+      "equal_move": false,
+      "moves": {
+        "pure": "g2g3",
+        "activity": "h2h3"
+      },
+      "references": {
+        "pure": {
+          "cp": -49,
+          "mate": null,
+          "nodes": 500053,
+          "depth": 20,
+          "engine_seconds": 0.894,
+          "wall_seconds": 0.9016716000624001,
+          "pv": [
+            "h4e7"
+          ]
+        },
+        "activity": {
+          "cp": -48,
+          "mate": null,
+          "nodes": 500121,
+          "depth": 22,
+          "engine_seconds": 0.852,
+          "wall_seconds": 0.8559447000734508,
+          "pv": [
+            "b8d7"
+          ]
+        }
+      },
+      "finite_cp_delta": 1,
+      "interpretation": "finite child score only; mate and cp separately; no WDL certificate"
+    },
+    {
+      "game_index": 5,
+      "source_mode": "activity",
+      "policy": "linear_mixture",
+      "local_side": 0,
+      "threshold": 32,
+      "played_index": 32,
+      "equal_move": true,
+      "moves": {
+        "pure": "e2c4",
+        "activity": "e2c4"
+      },
+      "finite_cp_delta": 0,
+      "interpretation": "same move, no difference"
+    },
+    {
+      "game_index": 6,
+      "source_mode": "activity",
+      "policy": "linear_mixture",
+      "local_side": 1,
+      "threshold": 16,
+      "played_index": 17,
+      "equal_move": true,
+      "moves": {
+        "pure": "b7b5",
+        "activity": "b7b5"
+      },
+      "finite_cp_delta": 0,
+      "interpretation": "same move, no difference"
+    },
+    {
+      "game_index": 6,
+      "source_mode": "activity",
+      "policy": "linear_mixture",
+      "local_side": 1,
+      "threshold": 32,
+      "played_index": 33,
+      "equal_move": true,
+      "moves": {
+        "pure": "e7g6",
+        "activity": "e7g6"
+      },
+      "finite_cp_delta": 0,
+      "interpretation": "same move, no difference"
+    },
+    {
+      "game_index": 7,
+      "source_mode": "pure",
+      "policy": "linear_mixture",
+      "local_side": 1,
+      "threshold": 16,
+      "played_index": 17,
+      "equal_move": false,
+      "moves": {
+        "pure": "g4g2",
+        "activity": "g4h4"
+      },
+      "references": {
+        "pure": {
+          "cp": -511,
+          "mate": null,
+          "nodes": 500186,
+          "depth": 22,
+          "engine_seconds": 0.612,
+          "wall_seconds": 0.618574800202623,
+          "pv": [
+            "h1g1",
+            "g2g4",
+            "g1g4",
+            "h5g4",
+            "h3g5",
+            "b7b5",
+            "c1a3",
+            "b5c4",
+            "d3g3",
+            "g8e7",
+            "g3d6",
+            "c6c5",
+            "e1c1",
+            "b8d7",
+            "d4c5",
+            "e8g8",
+            "d6e7",
+            "d7e5",
+            "e7d6",
+            "e5d3",
+            "d1d3",
+            "c4d3",
+            "c5c6",
+            "c8a6",
+            "c6c7",
+            "d3d2",
+            "d6d2",
+            "f8e8",
+            "e4e5"
+          ]
+        },
+        "activity": {
+          "cp": -301,
+          "mate": null,
+          "nodes": 500410,
+          "depth": 21,
+          "engine_seconds": 0.932,
+          "wall_seconds": 0.9354816998820752,
+          "pv": [
+            "c1g5",
+            "h4g4",
+            "e1g1",
+            "h5h4",
+            "d3c2",
+            "g4h5",
+            "e4e5",
+            "b8d7",
+            "c4e2",
+            "h5h7",
+            "e2d3",
+            "h7h5",
+            "a1e1",
+            "d7f8",
+            "c3c4",
+            "g8e7",
+            "c2b2",
+            "f8h7",
+            "g5e7",
+            "e8e7",
+            "e1e3",
+            "h5h6",
+            "d3h7",
+            "h6h7"
+          ]
+        }
+      },
+      "finite_cp_delta": 210,
+      "interpretation": "finite child score only; mate and cp separately; no WDL certificate"
+    },
+    {
+      "game_index": 7,
+      "source_mode": "pure",
+      "policy": "linear_mixture",
+      "local_side": 1,
+      "threshold": 32,
+      "played_index": 33,
+      "equal_move": false,
+      "moves": {
+        "pure": "g6f5",
+        "activity": "g6g5"
+      },
+      "references": {
+        "pure": {
+          "cp": -861,
+          "mate": null,
+          "nodes": 500223,
+          "depth": 18,
+          "engine_seconds": 0.268,
+          "wall_seconds": 0.27279119985178113,
+          "pv": [
+            "e1e7",
+            "d8e7",
+            "a3e7",
+            "f8e7",
+            "f1e1",
+            "e7d8",
+            "h3f4",
+            "d7f8",
+            "g3g7",
+            "h8h7",
+            "g7f8",
+            "d8c7",
+            "f8g8",
+            "a7a6",
+            "g8h7",
+            "c7b8",
+            "h7h6"
+          ]
+        },
+        "activity": {
+          "cp": null,
+          "mate": -16,
+          "nodes": 501173,
+          "depth": 28,
+          "engine_seconds": 0.339,
+          "wall_seconds": 0.34512529987841845,
+          "pv": [
+            "h3g5",
+            "c6c5",
+            "g5e6",
+            "f8e8",
+            "g3g7",
+            "h8h7",
+            "g7h7",
+            "d8b6",
+            "h7h8",
+            "e7g8",
+            "h8g8",
+            "e8e7",
+            "e6c5",
+            "d7e5",
+            "d4e5",
+            "c8f5",
+            "e5f6",
+            "e7d6",
+            "g8d5",
+            "d6c7",
+            "e1e7",
+            "c7c8",
+            "d5g8",
+            "b6d8",
+            "c4e6",
+            "f5e6",
+            "g8e6",
+            "d8d7",
+            "e6d7",
+            "c8b8",
+            "d7b7"
+          ]
+        }
+      },
+      "finite_cp_delta": null,
+      "interpretation": "finite child score only; mate and cp separately; no WDL certificate"
+    },
+    {
+      "game_index": 8,
+      "source_mode": "pure",
+      "policy": "unit",
+      "local_side": 0,
+      "threshold": 16,
+      "played_index": 16,
+      "equal_move": true,
+      "moves": {
+        "pure": "b2d4",
+        "activity": "b2d4"
+      },
+      "finite_cp_delta": 0,
+      "interpretation": "same move, no difference"
+    },
+    {
+      "game_index": 8,
+      "source_mode": "pure",
+      "policy": "unit",
+      "local_side": 0,
+      "threshold": 32,
+      "played_index": 32,
+      "equal_move": true,
+      "moves": {
+        "pure": "d3a6",
+        "activity": "d3a6"
+      },
+      "finite_cp_delta": 0,
+      "interpretation": "same move, no difference"
+    },
+    {
+      "game_index": 9,
+      "source_mode": "activity",
+      "policy": "unit",
+      "local_side": 0,
+      "threshold": 16,
+      "played_index": 16,
+      "equal_move": false,
+      "moves": {
+        "pure": "e3f4",
+        "activity": "h3f4"
+      },
+      "references": {
+        "pure": {
+          "cp": -30,
+          "mate": null,
+          "nodes": 500370,
+          "depth": 20,
+          "engine_seconds": 0.837,
+          "wall_seconds": 0.8443619001191109,
+          "pv": [
+            "e8g8",
+            "e1g1"
+          ]
+        },
+        "activity": {
+          "cp": -40,
+          "mate": null,
+          "nodes": 500008,
+          "depth": 22,
+          "engine_seconds": 0.837,
+          "wall_seconds": 0.8414584998972714,
+          "pv": [
+            "b8d7",
+            "e2f3",
+            "e8g8",
+            "e1g1",
+            "e7d6",
+            "g2g3",
+            "d8f6",
+            "g1g2",
+            "a8e8",
+            "f1e1",
+            "f6h6",
+            "e1e2",
+            "d7f6"
+          ]
+        }
+      },
+      "finite_cp_delta": -10,
+      "interpretation": "finite child score only; mate and cp separately; no WDL certificate"
+    },
+    {
+      "game_index": 9,
+      "source_mode": "activity",
+      "policy": "unit",
+      "local_side": 0,
+      "threshold": 32,
+      "played_index": 32,
+      "equal_move": true,
+      "moves": {
+        "pure": "b5c4",
+        "activity": "b5c4"
+      },
+      "finite_cp_delta": 0,
+      "interpretation": "same move, no difference"
+    },
+    {
+      "game_index": 10,
+      "source_mode": "activity",
+      "policy": "unit",
+      "local_side": 1,
+      "threshold": 16,
+      "played_index": 17,
+      "equal_move": true,
+      "moves": {
+        "pure": "c6e5",
+        "activity": "c6e5"
+      },
+      "finite_cp_delta": 0,
+      "interpretation": "same move, no difference"
+    },
+    {
+      "game_index": 10,
+      "source_mode": "activity",
+      "policy": "unit",
+      "local_side": 1,
+      "threshold": 32,
+      "played_index": 33,
+      "equal_move": false,
+      "moves": {
+        "pure": "b7b6",
+        "activity": "e8c8"
+      },
+      "references": {
+        "pure": {
+          "cp": -522,
+          "mate": null,
+          "nodes": 500521,
+          "depth": 20,
+          "engine_seconds": 0.648,
+          "wall_seconds": 0.6531204001512378,
+          "pv": [
+            "g1h1",
+            "f7f5",
+            "b1d3",
+            "b6b5",
+            "a1d1",
+            "e8c8",
+            "d3b1",
+            "c6a5",
+            "b1a2",
+            "f5f4",
+            "e3f4",
+            "a5c4",
+            "a2c4",
+            "b5c4",
+            "a3a4",
+            "e7f6",
+            "f4e5",
+            "d7c6",
+            "d1d8",
+            "f6d8",
+            "e5g7"
+          ]
+        },
+        "activity": {
+          "cp": -472,
+          "mate": null,
+          "nodes": 500334,
+          "depth": 21,
+          "engine_seconds": 0.568,
+          "wall_seconds": 0.5746108000166714,
+          "pv": [
+            "b1c2",
+            "g7g5",
+            "a1d1",
+            "g5g4",
+            "h3g4",
+            "c6e5",
+            "f2f3",
+            "e5c4",
+            "e3f2",
+            "f7f5",
+            "d1b1",
+            "e7g5"
+          ]
+        }
+      },
+      "finite_cp_delta": 50,
+      "interpretation": "finite child score only; mate and cp separately; no WDL certificate"
+    },
+    {
+      "game_index": 11,
+      "source_mode": "pure",
+      "policy": "unit",
+      "local_side": 1,
+      "threshold": 16,
+      "played_index": 17,
+      "equal_move": true,
+      "moves": {
+        "pure": "b7b5",
+        "activity": "b7b5"
+      },
+      "finite_cp_delta": 0,
+      "interpretation": "same move, no difference"
+    },
+    {
+      "game_index": 11,
+      "source_mode": "pure",
+      "policy": "unit",
+      "local_side": 1,
+      "threshold": 32,
+      "played_index": 33,
+      "equal_move": true,
+      "moves": {
+        "pure": "h8d8",
+        "activity": "h8d8"
+      },
+      "finite_cp_delta": 0,
+      "interpretation": "same move, no difference"
+    }
+  ],
+  "paired_sampling_skipped": [],
+  "shogi": {
+    "question": "Can existing ordering/TT and lazy ordered q classification resolve the reachable q2 filtering cost under the same resource condition?",
+    "resource": "Original failures remain. Twelve equal2ply4096node20sec controls: q0/q2, geometric/unit, lexical/noTT versus ordering+TT versus ordering+TT+orderedq. At most240sec plus setup. Inert classification wrapper counts candidates/actual pushes; no semantics or coefficient change.",
+    "models": [
+      {
+        "config": "lexical",
+        "policy": "geometric_half",
+        "qdepth": 0,
+        "selected": "legacy_069:g4:d9-d8",
+        "score": -44092,
+        "reason": "completed_depth",
+        "seconds": 0.3811545998323709,
+        "evaluations": 330,
+        "classification": {
+          "calls": 0,
+          "candidates": 0,
+          "selected": 0,
+          "pushes": 0,
+          "seconds": 0.0
+        },
+        "statistics": {
+          "nodes": 336,
+          "qnodes": 24,
+          "completed_depth": 2,
+          "runtime_pushes": 348,
+          "runtime_pops": 348,
+          "runtime_depth_balanced": true,
+          "tt_hits": 0,
+          "ordering_seconds": 0.0
+        }
+      },
+      {
+        "config": "lexical",
+        "policy": "unit",
+        "qdepth": 0,
+        "selected": "legacy_035:g24:h8-d8",
+        "score": -200000,
+        "reason": "completed_depth",
+        "seconds": 0.23741859989240766,
+        "evaluations": 165,
+        "classification": {
+          "calls": 0,
+          "candidates": 0,
+          "selected": 0,
+          "pushes": 0,
+          "seconds": 0.0
+        },
+        "statistics": {
+          "nodes": 173,
+          "qnodes": 12,
+          "completed_depth": 2,
+          "runtime_pushes": 177,
+          "runtime_pops": 177,
+          "runtime_depth_balanced": true,
+          "tt_hits": 0,
+          "ordering_seconds": 0.0
+        }
+      },
+      {
+        "config": "lexical",
+        "policy": "geometric_half",
+        "qdepth": 2,
+        "selected": "legacy_035:g24:h8-d8",
+        "score": 993,
+        "reason": "time_limit",
+        "seconds": 20.02024280000478,
+        "evaluations": 2414,
+        "classification": {
+          "calls": 692,
+          "candidates": 43595,
+          "selected": 6299,
+          "pushes": 37211,
+          "seconds": 11.146895398618653
+        },
+        "statistics": {
+          "nodes": 235,
+          "qnodes": 2530,
+          "completed_depth": 1,
+          "runtime_pushes": 39747,
+          "runtime_pops": 39747,
+          "runtime_depth_balanced": true,
+          "tt_hits": 0,
+          "ordering_seconds": 0.0
+        }
+      },
+      {
+        "config": "lexical",
+        "policy": "unit",
+        "qdepth": 2,
+        "selected": "legacy_035:g24:h8-d8",
+        "score": -200000,
+        "reason": "completed_depth",
+        "seconds": 2.603354000020772,
+        "evaluations": 378,
+        "classification": {
+          "calls": 66,
+          "candidates": 5177,
+          "selected": 511,
+          "pushes": 4666,
+          "seconds": 1.4414609998930246
+        },
+        "statistics": {
+          "nodes": 174,
+          "qnodes": 398,
+          "completed_depth": 2,
+          "runtime_pushes": 5070,
+          "runtime_pops": 5070,
+          "runtime_depth_balanced": true,
+          "tt_hits": 0,
+          "ordering_seconds": 0.0
+        }
+      },
+      {
+        "config": "ordered_tt",
+        "policy": "geometric_half",
+        "qdepth": 0,
+        "selected": "legacy_069:g4:d9-d8",
+        "score": -44092,
+        "reason": "completed_depth",
+        "seconds": 0.19408239983022213,
+        "evaluations": 143,
+        "classification": {
+          "calls": 0,
+          "candidates": 0,
+          "selected": 0,
+          "pushes": 0,
+          "seconds": 0.0
+        },
+        "statistics": {
+          "nodes": 148,
+          "qnodes": 9,
+          "completed_depth": 2,
+          "runtime_pushes": 152,
+          "runtime_pops": 152,
+          "runtime_depth_balanced": true,
+          "tt_hits": 2,
+          "ordering_seconds": 0.0
+        }
+      },
+      {
+        "config": "ordered_tt",
+        "policy": "unit",
+        "qdepth": 0,
+        "selected": "legacy_041:g27:c9-d8",
+        "score": -200000,
+        "reason": "completed_depth",
+        "seconds": 0.11349639995023608,
+        "evaluations": 52,
+        "classification": {
+          "calls": 0,
+          "candidates": 0,
+          "selected": 0,
+          "pushes": 0,
+          "seconds": 0.0
+        },
+        "statistics": {
+          "nodes": 59,
+          "qnodes": 2,
+          "completed_depth": 2,
+          "runtime_pushes": 58,
+          "runtime_pops": 58,
+          "runtime_depth_balanced": true,
+          "tt_hits": 1,
+          "ordering_seconds": 0.0
+        }
+      },
+      {
+        "config": "ordered_tt",
+        "policy": "geometric_half",
+        "qdepth": 2,
+        "selected": "legacy_069:g4:d9-d8",
+        "score": -74850,
+        "reason": "completed_depth",
+        "seconds": 3.646685800049454,
+        "evaluations": 349,
+        "classification": {
+          "calls": 81,
+          "candidates": 7913,
+          "selected": 410,
+          "pushes": 7503,
+          "seconds": 2.239593999227509
+        },
+        "statistics": {
+          "nodes": 154,
+          "qnodes": 363,
+          "completed_depth": 2,
+          "runtime_pushes": 7872,
+          "runtime_pops": 7872,
+          "runtime_depth_balanced": true,
+          "tt_hits": 2,
+          "ordering_seconds": 0.0
+        }
+      },
+      {
+        "config": "ordered_tt",
+        "policy": "unit",
+        "qdepth": 2,
+        "selected": "legacy_041:g27:c9-d8",
+        "score": -200000,
+        "reason": "completed_depth",
+        "seconds": 0.9570826000999659,
+        "evaluations": 102,
+        "classification": {
+          "calls": 19,
+          "candidates": 2048,
+          "selected": 129,
+          "pushes": 1919,
+          "seconds": 0.5712266995105892
+        },
+        "statistics": {
+          "nodes": 59,
+          "qnodes": 103,
+          "completed_depth": 2,
+          "runtime_pushes": 2027,
+          "runtime_pops": 2027,
+          "runtime_depth_balanced": true,
+          "tt_hits": 1,
+          "ordering_seconds": 0.0
+        }
+      },
+      {
+        "config": "ordered_tt_q",
+        "policy": "geometric_half",
+        "qdepth": 0,
+        "selected": "legacy_069:g4:d9-d8",
+        "score": -44092,
+        "reason": "completed_depth",
+        "seconds": 0.19800309999845922,
+        "evaluations": 140,
+        "classification": {
+          "calls": 0,
+          "candidates": 0,
+          "selected": 0,
+          "pushes": 0,
+          "seconds": 0.0
+        },
+        "statistics": {
+          "nodes": 148,
+          "qnodes": 6,
+          "completed_depth": 2,
+          "runtime_pushes": 149,
+          "runtime_pops": 149,
+          "runtime_depth_balanced": true,
+          "tt_hits": 2,
+          "ordering_seconds": 0.0
+        }
+      },
+      {
+        "config": "ordered_tt_q",
+        "policy": "unit",
+        "qdepth": 0,
+        "selected": "legacy_041:g27:c9-d8",
+        "score": -200000,
+        "reason": "completed_depth",
+        "seconds": 0.11559319985099137,
+        "evaluations": 52,
+        "classification": {
+          "calls": 0,
+          "candidates": 0,
+          "selected": 0,
+          "pushes": 0,
+          "seconds": 0.0
+        },
+        "statistics": {
+          "nodes": 59,
+          "qnodes": 2,
+          "completed_depth": 2,
+          "runtime_pushes": 58,
+          "runtime_pops": 58,
+          "runtime_depth_balanced": true,
+          "tt_hits": 1,
+          "ordering_seconds": 0.0
+        }
+      },
+      {
+        "config": "ordered_tt_q",
+        "policy": "geometric_half",
+        "qdepth": 2,
+        "selected": "legacy_069:g4:d9-d8",
+        "score": -74850,
+        "reason": "completed_depth",
+        "seconds": 1.804364199982956,
+        "evaluations": 316,
+        "classification": {
+          "calls": 1795,
+          "candidates": 1795,
+          "selected": 158,
+          "pushes": 1637,
+          "seconds": 0.5209614008199424
+        },
+        "statistics": {
+          "nodes": 154,
+          "qnodes": 323,
+          "completed_depth": 2,
+          "runtime_pushes": 1966,
+          "runtime_pops": 1966,
+          "runtime_depth_balanced": true,
+          "tt_hits": 2,
+          "ordering_seconds": 0.0
+        }
+      },
+      {
+        "config": "ordered_tt_q",
+        "policy": "unit",
+        "qdepth": 2,
+        "selected": "legacy_041:g27:c9-d8",
+        "score": -200000,
+        "reason": "completed_depth",
+        "seconds": 0.6144757000729442,
+        "evaluations": 100,
+        "classification": {
+          "calls": 785,
+          "candidates": 785,
+          "selected": 48,
+          "pushes": 737,
+          "seconds": 0.2341378980781883
+        },
+        "statistics": {
+          "nodes": 59,
+          "qnodes": 101,
+          "completed_depth": 2,
+          "runtime_pushes": 843,
+          "runtime_pops": 843,
+          "runtime_depth_balanced": true,
+          "tt_hits": 1,
+          "ordering_seconds": 0.0
+        }
+      }
+    ]
+  },
+  "raw_entries": {
+    "activity-games-20261007/declaration.json": {
+      "bytes": 1684,
+      "sha256": "43c303cc700fe6edc27aa28e47a0f9ec96c19b8489c88cdd18007f008003c2c8"
+    },
+    "activity-games-20261007/suite.json": {
+      "bytes": 658,
+      "sha256": "51a8382618d6bdb9c3cc347ac9257c51d4a07861ae8e9d5cfbc83e3c3efb16e0"
+    },
+    "activity-games-20261007/games.json": {
+      "bytes": 3565493,
+      "sha256": "ee7a4eebdf5122d8d238137d7281dce435839463d68dcd7efc6e83ec56774b9e"
+    },
+    "activity-games-20261007/replay.json": {
+      "bytes": 9075,
+      "sha256": "ab7f3e0ce064fa81474d3e6d9d27c5cea6e868ad095de96b2074778fe0d91cc9"
+    },
+    "activity-stronger-20261007/declaration.json": {
+      "bytes": 1726,
+      "sha256": "9b6fbe62e7475d3eab6c2de3c008fb6bc37d9edca1af811951702013406a836b"
+    },
+    "activity-stronger-20261007/suite.json": {
+      "bytes": 451,
+      "sha256": "8c02f686497b3b5e0c258e862732923c9473b7380e49f46e1fca7e555a52b709"
+    },
+    "activity-stronger-20261007/games.json": {
+      "bytes": 1781667,
+      "sha256": "4d4fa3be18edcfe419dd6a4a85e10f5eecd94fbc3631fe9bac217490b192fe42"
+    },
+    "activity-stronger-20261007/replay.json": {
+      "bytes": 4605,
+      "sha256": "e50db0129bfe1d4caa77c654a70e26ef7536fd04829fd547ba89e2c8ef610fa9"
+    },
+    "activity-direct-20261007/declaration.json": {
+      "bytes": 1962,
+      "sha256": "e7fc79411890018e07e1758957d6a5a1b1fc50539f6d1fe5340ff8f4474ebaca"
+    },
+    "activity-direct-20261007/suite.json": {
+      "bytes": 658,
+      "sha256": "51a8382618d6bdb9c3cc347ac9257c51d4a07861ae8e9d5cfbc83e3c3efb16e0"
+    },
+    "activity-direct-20261007/games.json": {
+      "bytes": 2323639,
+      "sha256": "79d1d936b976666cf76f798e9a3b98ae6c4c9262b8bd5daed7174d8ea1a2441b"
+    },
+    "activity-direct-20261007/replay.json": {
+      "bytes": 5541,
+      "sha256": "493bb4d3b754043aa26124f20aa8238e7606a067cc46513a666102ab403fae4e"
+    },
+    "activity-direct-20261007/replay-failure.json": {
+      "bytes": 187,
+      "sha256": "20fc118e45694dd24c041440dbe0104865a93ad01a61fb2e880ca84d9b509507"
+    },
+    "activity-stronger-20261007/paired-roots.json": {
+      "bytes": 78996,
+      "sha256": "ee2227ffb92e1aad97d20b002e10c63fde4f21d304d97dce2e4bab41b96b1659"
+    },
+    "activity-stronger-20261007/adverse-curve.json": {
+      "bytes": 4652,
+      "sha256": "01a7733bc4797384f0968c47b8fbd5a73f666e90b2327d8dcea0828eded5beac"
+    },
+    "activity-games-20261007/shogi-ordering-continuation.json": {
+      "bytes": 67110,
+      "sha256": "3e0d696dd22e5e339f99e7c65c1cc0ce271823e221211f63a5609f3bd7520f93"
+    },
+    "activity-games-20261007/shogi-ordering.json": {
+      "bytes": 33716,
+      "sha256": "2301599f6a08dea9f16b0778947e8bfca090bc1705175f6efb55225e61f2279c"
+    },
+    "activity-games-20261007/shogi-ordering-failure.json": {
+      "bytes": 470,
+      "sha256": "85d42898eeae1a98eb08c85ae64ff9049e4d0c7401c4c56804fdefeb2db74dc0"
+    },
+    "activity_analysis_plan_20261007.md": {
+      "bytes": 2891,
+      "sha256": "f429a6e95cbacc00b10f770ccd8844ef264b9c95bc5ca8bd849d3500aa2aeedc"
+    }
+  },
+  "sources": {
+    "activity_games_20261007.py": {
+      "bytes": 4967,
+      "sha256": "6b7d9f89ef7265494c326d92c78b006af7947a6a8fd20c1816a083bb741c8431"
+    },
+    "activity_stronger_20261007.py": {
+      "bytes": 5125,
+      "sha256": "2e3e861b102f65c70200b42f7726f48a0880b49bb50d11fd7f0ab1afe30fd6c6"
+    },
+    "activity_direct_20261007.py": {
+      "bytes": 5193,
+      "sha256": "b299330f2ccf35b403b1937fa625d7fdc7bc8c6b38fdfcec5b26bb561338bbe8"
+    },
+    "replay_activity_games_20261007.py": {
+      "bytes": 2094,
+      "sha256": "0fbaa7d441c7817ff0614e6f14d77563dcca86aef959aef4d9c87b03f7af8ceb"
+    },
+    "replay_activity_stronger_20261007.py": {
+      "bytes": 2121,
+      "sha256": "1cef02bb822df8e3830e156a7765c0d4a2a7430683a4756182727c7bccbc0aaa"
+    },
+    "replay_activity_direct_failed_20261007.py": {
+      "bytes": 2263,
+      "sha256": "ff35c540a0f2d5d73a17a85a6b1d49250fee19b72ff8c15f9418e6f21f9b37c7"
+    },
+    "replay_activity_direct_20261007.py": {
+      "bytes": 2263,
+      "sha256": "a832396fa8af8dbd526676879a6aeb612605b78875978a898d5c693cd6289d42"
+    },
+    "activity_paired_roots_20261007.py": {
+      "bytes": 3500,
+      "sha256": "eaf81e1eea3ec30ca99efa310455aacba2c4c1fd8c19a6c34b9931217afcfd7d"
+    },
+    "activity_adverse_curve_20261007.py": {
+      "bytes": 3256,
+      "sha256": "6149075356ad444d806cbcd9d4edf39553f9c6d4f4cba130af405df315b5ee3a"
+    },
+    "shogi_ordering_20261007.py": {
+      "bytes": 6165,
+      "sha256": "d31585811c6fc87d77e7a96d9811250b40e86082f7c968333af4ada9736e5142"
+    },
+    "shogi_ordering_continuation_20261007.py": {
+      "bytes": 6533,
+      "sha256": "dcb7ab00874284b56d11de02956357a86cbbc83390a0b2aeb5ba9554ec91ccf5"
+    },
+    "collect_activity_games_20261007.py": {
+      "bytes": 7220,
+      "sha256": "3ec6f8401ea143e9719478dcda11a2293964357d0cbd77bfbdc53bbeedc8f32c"
+    }
+  },
+  "raw_archive": "docs/archive/development_activity_games_20261007/raw.zip",
+  "sources_archive": "docs/archive/development_activity_games_20261007/sources.zip",
+  "raw_zip_sha256": "2628e6264a1f9410272c310e024d510ea9187b419fa813339c79bfa2126f5318",
+  "sources_zip_sha256": "d915e88002b7ae6ce0abe33ed66ec0d4db84afbdfe2a5d9e9570fba31d6a213a",
+  "production_code_changed": false,
+  "public_push": "held"
+}
