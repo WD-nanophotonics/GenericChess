@@ -1,9 +1,0 @@
-# Material change alone does not distinguish terminal outcomes
-
-**Unknown.** Does adding a genuine capture alternative to the certified non-shortcut Chess root make its quiescence comparison informative about W/D/L material-prior decision loss?
-
-**Smallest observation.** Add one Black pawn at a5, freezing `8/8/8/pR6/8/8/5R2/k2K4 w - - 0 1`. `scripts/audit_chess_material_change_outcome.py` reuses the capped exact three-ply certificate (8,192 successors, 10 seconds), the same indexed F156 material profile, and Python depth-2 q0/q4 search (2,000 total nodes and five seconds each). It separately checks the q0 choice with a capped five-ply attacker-OR/defender-AND proof and retains native no-quiescence depth 2 as a control.
-
-The root is ongoing. The 1,611 certificate successors identify three forced mates within three plies and 30 actions unresolved at that bound. Python q0 and native q0 both choose Rb5xa5, removing the Black pawn; Python q4 chooses Kd1c1, a certified forced mate within three plies. Both Python iterations complete depth 2. The independent deeper proof finds that Rb5xa5 also forces mate within five plies (95 generated successors), though not within three.
-
-**Conclusion.** This root has a real material-changing decision and a search-policy-dependent action, but both selected actions are certified White wins. W/D/L regret is zero for each under exact terminal outcome; their certified mate horizons differ. The result neither identifies a material coefficient nor chooses a context weighting. Adding a pawn to a mate fixture did not solve the static-prior validation problem. Return to the model question: what game-independent, independently justified comparison objective and context selection would make a static material prior identifiable? Do not select that objective by matching human material values or consuming the Xiangqi holdout.

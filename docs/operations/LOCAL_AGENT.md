@@ -246,3 +246,9 @@ Transport/local Agent allowance boundaries remain in advisor.json.
 Inspect outgoing diffs, run relevant tests, publish and verify origin/sandbox.
 Recovery/isolation evidence remains REBUILD_20261003.md; never import old
 App databases, credentials, Goals or retired queues. Do not touch other projects.
+
+## Repository layers
+
+REPOSITORY_LAYOUT.md owns the purpose map and isolated historical recovery.
+Default pytest uses product/development/workflow/specification directories; old
+experiment receipts and retired policies are evidence, not active requirements.

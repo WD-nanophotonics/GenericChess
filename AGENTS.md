@@ -103,3 +103,6 @@ Notify only meaningful results, failures or required decisions. Scientific
 completion requires the evidence in LOCAL_MAINLINE.md, not a phase/turn boundary.
 Operations: docs/operations/LOCAL_AGENT.md and SLACK_WORKFLOW.md.
 Recovery: docs/operations/REBUILD_20261003.md.
+
+Repository layers and isolated historical recovery: docs/operations/REPOSITORY_LAYOUT.md.
+Default pytest covers the four active test layers; old receipt tests are history.

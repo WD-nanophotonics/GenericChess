@@ -54,5 +54,6 @@ sources = [
 optional = true
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["tests/product", "tests/development", "tests/workflow", "tests/specification"]
+pythonpath = ["tests"]
 addopts = "-q"

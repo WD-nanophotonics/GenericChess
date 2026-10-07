@@ -23,3 +23,10 @@ The removed local `chat` worktree also contained an uncommitted partial migratio
 from `gc-bridge` to `gmail-courier ensure/once`. That intermediate interface was
 already superseded by ChatCourier's typed request lifecycle and was intentionally
 not committed.
+
+##20261007 structure cleanup
+
+[Verified snapshot and path indexes](repository_cleanup_20261007/README.md) separate
+historical runners/tests/research/output from the current product and comparison
+route. See [current layout](../operations/REPOSITORY_LAYOUT.md). Old coordination
+interfaces mentioned above are recovery evidence, not current transport policy.

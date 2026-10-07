@@ -1,0 +1,61 @@
+{
+  "scope": "GenericChess only; archive and active-route reorganization, no product or frozen experiment changes.",
+  "source_files_retired": 1133,
+  "research_records_retired": 745,
+  "old_output_files_retired": 2846,
+  "local_history_files_retired": 235,
+  "live_scripts": 18,
+  "live_research_files": 26,
+  "default_collected_tests": 1480,
+  "full_regression": {
+    "passed": 1480,
+    "failed": 0,
+    "seconds": 167.36
+  },
+  "preexisting_failures": {
+    "original_tests_reproduction": "9 failed,43 passed; exact same nine failures, only root location adapted.",
+    "repairs": "Missing old trained checkpoint replaced by independent unit trace fixture; mock engines accept current keyword arguments; geometry validation code matches rectangular schema; standard Chess does not expose PassAction despite public union; promotion fixture carries BoardShape; historical full-payload hash anchor archived, current square geometry regression retained. Product implementation unchanged.",
+    "original_failures_preserved": true
+  },
+  "dependency_review": "Retained import closure plus subprocess/config/data/test fixture paths; actual full regressions and entry smoke, not proof for every retired experiment.",
+  "dot_advice": {
+    "thread_ts": "1791353610.688219",
+    "reply_ts": "1791353661.185029",
+    "adopted": "Explicit active collection, real semantic/search regressions, runtime paths and bounded smoke; avoid speculative product guard rewrite.",
+    "independent_scope": "Dot checked thread only, not local inventory or hashes."
+  },
+  "defensive_cleanup": "Retired unused safe_cleanup registry/resource_limits/flow shim and historical source-digest fallback. Semantic, stop, atomic-write and delivery guards retained.",
+  "public_publish": "HELD; local Git only.",
+  "receipts": {
+    "layout-active-tests-20261007.log": {
+      "sha256": "00a1e8a0b142ed8d401d1b29e2446e43528f1768047c6289f447726cd1b73e48",
+      "bytes": 27802,
+      "local_path": ".local_agent/layout-active-tests-20261007.log"
+    },
+    "layout-original-test-check-20261007.log": {
+      "sha256": "a08615b1bdf31a60de46090c6abeb9cf51cd00c7018817a3e69b65fb758da3cd",
+      "bytes": 26676,
+      "local_path": ".local_agent/layout-original-test-check-20261007.log"
+    },
+    "layout-repaired-tests-20261007.log": {
+      "sha256": "a3636f2ba7a7258f3c903150f83e884f3472555c6e442b16290d291b364d8aad",
+      "bytes": 264,
+      "local_path": ".local_agent/layout-repaired-tests-20261007.log"
+    },
+    "layout-active-tests-final-20261007.log": {
+      "sha256": "94264fe25e2e76e353c6b8ac35e1c1c15a662387bf61a305756f8372228cfd3e",
+      "bytes": 1735,
+      "local_path": ".local_agent/layout-active-tests-final-20261007.log"
+    },
+    "layout-collection-final-20261007.log": {
+      "sha256": "22105676f826ad72beef027175a49485ba9f2a395d42eb0246ac5b4f6ded46b7",
+      "bytes": 155029,
+      "local_path": ".local_agent/layout-collection-final-20261007.log"
+    },
+    "layout-entry-smoke-20261007.log": {
+      "sha256": "24a894eb0157aeea1ae6cbf6abc1231f5820d4bd0d93e9c28d7d9664936f2f22",
+      "bytes": 3732,
+      "local_path": ".local_agent/layout-entry-smoke-20261007.log"
+    }
+  }
+}

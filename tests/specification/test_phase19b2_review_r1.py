@@ -240,7 +240,7 @@ def test_existing_public_core_lifecycle_accepts_semantic_rulesets():
 
 
 def test_forced_promotion_with_no_alive_target_has_no_unpromoted_fallback():
-    from generic_chess.core.coordinates import Square
+    from generic_chess.core.coordinates import BoardShape, Square
     from generic_chess.core.pieces import Piece
     from generic_chess.core.semantic_executor import SemanticEngine
 
@@ -253,6 +253,7 @@ def test_forced_promotion_with_no_alive_target_has_no_unpromoted_fallback():
     engine = object.__new__(SemanticEngine)
     engine.support = SimpleNamespace(
         board_size=n,
+        board_shape=BoardShape(n, n),
         promotion_allowed={
             "P": (frozenset({(from_sq, to_sq)}), frozenset())
         },
