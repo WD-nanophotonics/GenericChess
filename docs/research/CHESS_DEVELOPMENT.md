@@ -30,7 +30,7 @@ conditions stay visible. Development budget is justified by information per cost
 | Native material+4/Pawn208 nonroyal coverage, SinglePV1 |12direct wins; all6strong-reference cells lose | data/chess_activity_games_20261007.json |
 | Coverage, MultiPV3 |10W1L1Udirect;24strong-reference losses | data/chess_allocation_20261007.json |
 | Restored human-engineered classical leaf, same gc prices/search |22W2Ldirect;10L2Ustrong; ordinary native control1L3U | data/chess_classical_20261007.json |
-| Fixed4 royal-zone-pressure pilot | Original36cells unfinished verification; direct6W2L4U, classical2W10L replayzero | Private .local_agent/royal-20261007, pending final portable index |
+| Fixed4 royal-zone-pressure pilot | 36cells:6W2L4Uactivity,2W10Lclassical,11L1Ustrong reference | data/chess_royal_20261007.json |
 
 Classical is a diagnostic benchmark, not the rule-derived candidate. Native human
 SEE/pruning thresholds remain a disclosed coupling in material/coverage pilots.
@@ -43,8 +43,13 @@ activity1/4sec retains it, while forced root/child searches and MultiPV avoid it
 The royal pilot checks one approximation, not a weight sweep or exact safety law.
 Current formula: material+4*(nonroyalCoverageDelta-pressureWhite+pressureBlack),
 King zone=current square+one-step pseudo squares, including occupied neighbors.
-Current semantic checks25actual roots/children+108static controls pass; no default
-promotion. Finish its declared reference, same-root and recording checks unchanged.
+Semantic checks25actual roots/children+108static controls pass; all36games
+3939played+144prefix replayzero.12activity common roots7same3finitebetter2worse;
+8classical roots3same3finitebetter2worse. These exposed, outcome-conditioned
+finite references do not prove error rate. No default promotion or retuning.
+Identical per-action records reduce counterfactual action serialization by
+94.296891percent; completed cohorts and final writes remain additional. No
+selected PV/history omission and no measured old/new playing-throughput claim.
 
 Shogi reachable neighbor q0/q2 often chooses identically at3.3-12x cost, while
 some old checked controls differ. Keep targeted q2 optional; Chess/Shogi semantic
