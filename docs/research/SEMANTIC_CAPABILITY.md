@@ -104,3 +104,88 @@ construction, not a result of either paper.
 Compact observations: data/semantic_capability_20261008.json. Exact producers,
 failed initial rename comparison and complete records:
 ../archive/semantic_geometry_probe_20261008/. Archived code is on-demand evidence.
+
+## Optional executable candidate and observed costs
+
+`generic_chess.ai.evaluation.semantic.build_semantic_opportunity_profile`
+now returns an explicit candidate profile and its scope report. It reads both
+owner geometries, conditions empty/enemy targets separately and deduplicates
+endpoints/promotion alternatives. Clear and exact occupied-count paths with
+`owner_filter=any` are supported; joint overlapping-path events use their
+shared cells, not independent-path multiplication. Foreign legacy atom bindings
+are ignored just as Core does. Guards, zones, auxiliary/compound effects,
+postconditions and other path predicates remain explicitly excluded. Anchor
+safety and future promotion/custody utility are outside this static projection.
+The callable profile currently requires square-board legacy evaluation metadata;
+that restriction is not a statement about rectangular rule legality.
+
+The candidate normalizes projected opportunity by the non-anchor median.
+Its hand scaling, promotion-value differences and drop diagnostics reuse legacy
+conventions, not validated transfer utility. It does not enter the default cache
+or replace generic-v1. Use it explicitly with the existing `Evaluator` and
+`AlphaBetaPlayer(evaluator_override=...)`. The existing `run_rule` comparison
+callable accepts `semantic_candidate=True` and an explicit `evaluation_config`;
+no new CLI or workflow interface is required. Dynamic terms remain separate
+legacy approximations; all controlled candidate experiments here set them to0.
+
+The initial v0 omitted cannon screens. V1 supports exact occupied-count paths:
+independent Core one/two-screen checks and10240 density samples agree with the
+projected action set in the declared cannon contexts. Exhaustive small overlapping
+path tests independently check the probability calculation. This is current
+pseudo-opportunity scope, not full-game legality or material-value validation.
+
+Four initial rules produced32 complete depth2 calls with repeat/Core parity.
+Their zero-valued starting roots mostly establish integration, not discrimination.
+The original record incorrectly said ordering stayed legacy: public ordering
+actually calls the active evaluator's capture/type values. Raw records are
+retained with a correction. A crossed scoring/ordering32-call control isolates
+that distinction; neither the fixed promotion root nor capped recombination
+establishes a universal candidate speed gain.
+
+A new cannon/rook mixture has identical legacy rays but different executable
+capture conditions. The old table gives both1000; v1 gives C976/R1024. Two
+predeclared capture/recapture continuations have Core static values0/0 before,
+and+48/-48 afterward. Eight cold comparisons match Core; aliasing the cannon
+type preserves numerical results. Hand weight0 isolates board-table effects,
+without altering actual capture/drop rules. These are table-induced decisions,
+not an independent true-value oracle, winning proof or player improvement.
+
+An observed engineering cost was removed: `Evaluator` now skips dynamic feature
+calculations whose weight is0. On264 deterministic history states, old/new scores
+match under two profiles and default/static configurations;158400 paired leaf
+evaluations were timed. Static-only leaves became much cheaper, while default
+timings remain comparable. Thirty-two matched end-to-end calls show about15–35%
+median time reduction on equal-node non-time-capped pairs in these two fixtures.
+One before-control hits the time fuse while its after-control reaches the node
+ceiling at the same completed depth; that pair is a resource/result observation,
+not an equal-work speed certificate. This does not change weights, defaults,
+search algorithms or scores and is not a universal acceleration claim.
+
+## Remaining approximation boundary
+
+The observed double-step source guard admits eight sources per owner;64 blocker
+checks and16 actual auxiliary-token transitions agree with Core. Under this
+particular independent occupancy law, its omitted opportunity is `(1-d)^2/8`,
+weighted0.0785546875. Adding that term would move the N/P opportunity ratio from
+5.473 to5.010; it is not a selected correction or a full guard implementation.
+
+A separate finite single-actor task checks why future promotion cannot be
+identified by current mobility alone. It retains actual supported movement and
+all promotion choices but removes castling/double-step/en-passant. There are no
+anchors/opponent/capture rewards or game adjudication. An explicit virtual
+opponent pass returns the actor's turn; that pass is not claimed legal in Chess.
+Uniform target choice then uniform promotion choice is a declared behavior law.
+The reward is quiet endpoints, not WDL or material utility. Both Core and Native
+verify all20 type/population/mode rows and every declared horizon1/4/8/16.
+
+For uniform all-source P, mean opportunity per turn atH1/4/8/16 is
+0.875/2.963/5.934/8.655 with promotion, versus0.875/0.688/0.438/0.219 without.
+At owner-relative rank1 the promotion sequence is1/1/3.788/8.391 instead.
+The no-promotion values also match a direct remaining-distance sum. This exposes
+phase and duration dependence; it does not justify choosing a horizon to fit
+human prices, assigning virtual-pass utility to real play or a universal point
+vector. The scientific price question remains OPEN.
+
+Current compact evidence: data/semantic_candidate_20261008.json. Exact sources,
+version snapshots, immutable raw records and corrections are isolated in
+../archive/semantic_candidate_20261008/. They are evidence, not active imports.

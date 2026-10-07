@@ -1,0 +1,203 @@
+{
+  "original_directory": ".local_agent/semantic-candidate-20261008",
+  "repository_base_sha": "69fdf6146570938b5f859c9063f5674c524d0c48",
+  "current_result": {
+    "path": "docs/research/data/semantic_candidate_20261008.json",
+    "bytes": 48298,
+    "sha256": "b11ca9c80afa30daaa1e02906439209d03403d5d2b4faed3849e8d8e991b3119"
+  },
+  "archives": {
+    "sources.zip": {
+      "bytes": 50524,
+      "sha256": "065823432e484e13ba77f4a56fc7f5c3fab523a47ff8952eba4660fcdb901eba",
+      "members": {
+        "compare.py": {
+          "bytes": 3155,
+          "sha256": "4d71631d7d1b08472ed810732be8f7de128780efb1213d1fe01601bae7d72329"
+        },
+        "counted-core.py": {
+          "bytes": 4074,
+          "sha256": "dc36d4cdb369e5cc681329e0e409abb32cff437fc429054d784ca10644eb0a32"
+        },
+        "source-guard.py": {
+          "bytes": 3645,
+          "sha256": "61f34b1aa98d0bc9c4051b30110bb16ba73e053b2ad801aee3f0086982e0c89f"
+        },
+        "source-guard-initial.py": {
+          "bytes": 3817,
+          "sha256": "db1d67aa739f4d620cdda79d4554c5eb93bf66998e174c85fd84f75ae5b5aff6"
+        },
+        "evaluation-cost.py": {
+          "bytes": 4056,
+          "sha256": "4a74ea2547845797d8f2f60826477ec4b14479ff93b1b2b8af70c32f61ab3602"
+        },
+        "search-cost.py": {
+          "bytes": 3772,
+          "sha256": "9ca79aec7cd20d16d699ee3d6021fd959a788c976b80d41dcd1afc44c5c39b40"
+        },
+        "ordering-ablation.py": {
+          "bytes": 4358,
+          "sha256": "0afb11d4720e6823371929df9daa28d40689d9aaa0e3b6ea136fa1270e2bc5a5"
+        },
+        "future-opportunity.py": {
+          "bytes": 5577,
+          "sha256": "db86043212c6f5b361f3737742a1a206671e3f92fe2a1888e441f29fa0e9bb83"
+        },
+        "future-native.py": {
+          "bytes": 4708,
+          "sha256": "87d1938a2c9d0f429bb83404f75cd1e032dce0ab410606adc5cc0ce8d8248467"
+        },
+        "cannon-mixture.py": {
+          "bytes": 4818,
+          "sha256": "a35a573d8641478179cd63138f4185526233934db3e89089da353fb455d0e379"
+        },
+        "semantic-v0.py": {
+          "bytes": 7718,
+          "sha256": "d49cec583cf7c0f26ea7cf42774dfbbd7e65f4d29e7604ba2478a7a9e2b13e68"
+        },
+        "semantic-v1-core-snapshot.py": {
+          "bytes": 10244,
+          "sha256": "9ad4a24335b10548dcc4aa872e48d286087abeacbc2940f6b41190c8f8d3eacd"
+        },
+        "semantic-v1-ablation-snapshot.py": {
+          "bytes": 10615,
+          "sha256": "6db054a03a59718f05ffe6b919ac3e14e5b1f3e1c0418ad3961c7d58579610eb"
+        },
+        "semantic-v1-measured.py": {
+          "bytes": 10760,
+          "sha256": "3910a49ba8de96edb6f2931a06b7f33eb8da2b585cc7b631d6714672ca15fb2e"
+        },
+        "semantic-v1-library.py": {
+          "bytes": 10866,
+          "sha256": "7f82ecd285b017565dbb5354101bef4f0669f342d6bf92185615625092eb4810"
+        },
+        "unfamiliar-search-v0.py": {
+          "bytes": 13156,
+          "sha256": "9334867a737bd5220f829099d31917780788fb8f389cd2bb730b495915d2bc64"
+        },
+        "unfamiliar-search-v1.py": {
+          "bytes": 13249,
+          "sha256": "4bd44e83311b3ac196339c8f0092dcb7fd221222e5ff55bc9421193c902d445a"
+        },
+        "evaluator-before.py": {
+          "bytes": 5925,
+          "sha256": "10fa59b364e3519456d16a6913e12084d803dbde51a2e638fddf48133466fda3"
+        },
+        "evaluator-after-measured.py": {
+          "bytes": 6109,
+          "sha256": "ff78b75085815fa668c777f70c4d13d95776bee4f1fe8dd54b0999cb78926853"
+        },
+        "collect.py": {
+          "bytes": 8093,
+          "sha256": "705a9541fb7f38258ac3fc8599966cc40be2a0889256b49eb6ded7436a8d1894"
+        }
+      },
+      "extracted_rehashed": true
+    },
+    "raw.zip": {
+      "bytes": 122681,
+      "sha256": "f1f2a79c0b7f5d41957d1677ae5650d67cc1b1bc1c6aae896d3a49b34c2557c4",
+      "members": {
+        "comparisons.json": {
+          "bytes": 28712,
+          "sha256": "cd90adff5bf9331b8ce0112b0513ee2291656856908f80c17b8a10185d837350"
+        },
+        "counted-core.json": {
+          "bytes": 3099,
+          "sha256": "b80bd07ae28d9ea0d39d8dd15e434e337c675705e46ab652e07738e4f39a1e70"
+        },
+        "source-guard.json": {
+          "bytes": 1870,
+          "sha256": "b65ded64c662b275bc9b4e5d5fec4a990d1b682fe3cdb86cfd5f83fce26a0a84"
+        },
+        "evaluation-cost.json": {
+          "bytes": 21223,
+          "sha256": "70b11cb426714da198310bf62c734dfce44cedcecf8d186019d99a6a0c034d8b"
+        },
+        "search-cost.json": {
+          "bytes": 162595,
+          "sha256": "cfc040bd315769d548f7a2c114024d522efbb04a436e46901d7fd8bef23c1e4b"
+        },
+        "ordering-ablation.json": {
+          "bytes": 340442,
+          "sha256": "a9211e09ea6cc3347b13992085527f315c14b1bc0ffb291af7290dcadd04843a"
+        },
+        "future-opportunity.json": {
+          "bytes": 177537,
+          "sha256": "ce8f898d5eb92d096771d6d3dbbbd646a24fd9973444e2bc072535f7e2d813cd"
+        },
+        "future-native.json": {
+          "bytes": 52206,
+          "sha256": "6fb7eb66232cd0e8218902d81762aab0bdb88bd22d454c2aad575d5cc6017666"
+        },
+        "cannon-mixture.json": {
+          "bytes": 47958,
+          "sha256": "33e691319dbe36a6d05cd5467bbfb1e2c7e856c0a67c37e06a68600d4703ac50"
+        },
+        "cannon-mixture-baseline.json": {
+          "bytes": 30319,
+          "sha256": "f6e6dd25dd6d02509e31e5135ecdf93313ae2341649fe12899d8d55721bf94b2"
+        },
+        "cannon-mixture-candidate.json": {
+          "bytes": 35458,
+          "sha256": "cc741f8c7d67b4e283e6a4748f6718d71adae87fe7d130ecb41964885bdd08de"
+        },
+        "ordering-qualification.json": {
+          "bytes": 602,
+          "sha256": "007a9d058b0b82c1843ec3e96f5b93ff4d758938b7bac8e2a20df8ff111f9fa7"
+        },
+        "failures.json": {
+          "bytes": 761,
+          "sha256": "5e6529d5c130d39ac631405d264bcb8d3d311167cccbba476330ab7ece8b5518"
+        },
+        "recombined-baseline.json": {
+          "bytes": 114250,
+          "sha256": "de8adfa8e4996fe925649d38d928a474ccdb2803cbdb982ad40f6c9ffbcdcf4a"
+        },
+        "recombined-candidate.json": {
+          "bytes": 123991,
+          "sha256": "9f521d73a68e6acd55f9c3b9dc4314c63820781a2d396afae3077ca29665910a"
+        },
+        "canonical-baseline.json": {
+          "bytes": 118984,
+          "sha256": "78b7a0be50f2801cfc0dbe394ab979d944627a2b0b1b855bec71748e60258dad"
+        },
+        "canonical-candidate.json": {
+          "bytes": 129080,
+          "sha256": "9422db3bc7259e58183dd3e9b93c5377dce416ff70189c7b91a58a5ad3258f8f"
+        },
+        "cannon-baseline.json": {
+          "bytes": 26339,
+          "sha256": "39ed531a4ca76624d5201995970599cf2fa7ae17c34188943d28a71f191e85dc"
+        },
+        "cannon-candidate.json": {
+          "bytes": 29783,
+          "sha256": "eb878cf8ceb3c3d67024aefa04762f07a2eb83a5c7fdb3316a599ebabf0f8093"
+        },
+        "shogi-baseline.json": {
+          "bytes": 329968,
+          "sha256": "e7295dedaea498970585ba6044ea18195ebdc5a7afc4eab69b2ff9efe3f86fbc"
+        },
+        "shogi-candidate.json": {
+          "bytes": 352994,
+          "sha256": "8f2183e29c2257c9013b833ce3864974023741e4b2c008b3ffb193ec7376f3fd"
+        }
+      },
+      "extracted_rehashed": true
+    }
+  },
+  "dependencies": [
+    {
+      "path": ".local_agent/original-contribution-20261008/semantic-search-witness-localized.json",
+      "recovery": "docs/archive/semantic_geometry_probe_20261008/raw.zip",
+      "bytes": 127144,
+      "sha256": "affddad53fbfaf6bfb79ed27fd19524d74b920ed8b930f5a398168eedca22171"
+    },
+    {
+      "path": ".local_agent/original-contribution-20261008/promotion-law-completed.json",
+      "recovery": "docs/archive/promotion_rule_probe_20261008/raw.zip",
+      "bytes": 2066261,
+      "sha256": "d68978eae26c471fc855fc9d90aed1b8139b3be144f0e1f85dfe3cb45f13d47d"
+    }
+  ]
+}

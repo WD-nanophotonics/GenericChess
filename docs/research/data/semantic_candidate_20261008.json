@@ -1,0 +1,1671 @@
+{
+  "scope": "Opt-in semantic opportunity input and execution cost; no selected universal material table/WDL/strength claim",
+  "initial_integration": {
+    "calls": 32,
+    "core_parity": true,
+    "seconds": 10.304269399959594,
+    "ordering_correction": {
+      "original_record_sha256": "cd90adff5bf9331b8ce0112b0513ee2291656856908f80c17b8a10185d837350",
+      "correction": "Original declaration wrongly described all ordering as legacy. Inspection of ordering.py confirms capture_order_value/type_value use active evaluator_override, so public candidate changes valuation AND ordering. Plain control has ordering disabled. No numerical records changed and no speed gain attribution.",
+      "verified_sources": [
+        "generic_chess/ai/alphabeta/ordering.py",
+        "generic_chess/ai/alphabeta/search.py",
+        "generic_chess/ai/evaluation/evaluator.py"
+      ]
+    }
+  },
+  "counted_path": {
+    "exact_checks": 1824,
+    "samples": 10240,
+    "curves": [
+      {
+        "density": 0.0,
+        "samples": 2048,
+        "mean": 14.0,
+        "standard_error": 0.0,
+        "predicted": 14.0,
+        "delta": 0.0,
+        "full_projected_same": true
+      },
+      {
+        "density": 0.125,
+        "samples": 2048,
+        "mean": 9.806640625,
+        "standard_error": 0.06925551798889329,
+        "predicted": 9.780877113342285,
+        "delta": 0.025763511657714844,
+        "full_projected_same": true
+      },
+      {
+        "density": 0.25,
+        "samples": 2048,
+        "mean": 7.064453125,
+        "standard_error": 0.06502790368964337,
+        "predicted": 7.06787109375,
+        "delta": -0.00341796875,
+        "full_projected_same": true
+      },
+      {
+        "density": 0.375,
+        "samples": 2048,
+        "mean": 5.158203125,
+        "standard_error": 0.0570169511353938,
+        "predicted": 5.268401145935059,
+        "delta": -0.1101980209350586,
+        "full_projected_same": true
+      },
+      {
+        "density": 0.5,
+        "samples": 2048,
+        "mean": 3.9970703125,
+        "standard_error": 0.046431407480297664,
+        "predicted": 4.0234375,
+        "delta": -0.0263671875,
+        "full_projected_same": true
+      }
+    ],
+    "seconds": 9.731780499918386
+  },
+  "source_guard": {
+    "complete": true,
+    "eligible_sources": {
+      "0": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "1": [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ]
+    },
+    "block_checks": 64,
+    "token_checks": 16,
+    "curves": [
+      {
+        "density": 0.0,
+        "projected": 0.875,
+        "double_step_extra": 0.125,
+        "qualified_augmented": 1.0
+      },
+      {
+        "density": 0.125,
+        "projected": 0.861328125,
+        "double_step_extra": 0.095703125,
+        "qualified_augmented": 0.95703125
+      },
+      {
+        "density": 0.25,
+        "projected": 0.84765625,
+        "double_step_extra": 0.0703125,
+        "qualified_augmented": 0.91796875
+      },
+      {
+        "density": 0.375,
+        "projected": 0.833984375,
+        "double_step_extra": 0.048828125,
+        "qualified_augmented": 0.8828125
+      },
+      {
+        "density": 0.5,
+        "projected": 0.8203125,
+        "double_step_extra": 0.03125,
+        "qualified_augmented": 0.8515625
+      }
+    ],
+    "extra_weighted": 0.0785546875,
+    "base_pawn_raw": 0.8501171875,
+    "augmented_pawn_raw": 0.928671875,
+    "knight_to_pawn_before": 5.473142489546478,
+    "knight_to_pawn_after": 5.010179187347523,
+    "seconds": 0.04433439997956157
+  },
+  "evaluation_cost": {
+    "score_states": 264,
+    "paired_evaluations": 158400,
+    "rows": [
+      {
+        "case": "recombined",
+        "static_only": false,
+        "candidate": false,
+        "states": 17,
+        "parity": true,
+        "before_median_seconds": 0.13234449992887676,
+        "after_median_seconds": 0.13317979988642037
+      },
+      {
+        "case": "recombined",
+        "static_only": false,
+        "candidate": true,
+        "states": 17,
+        "parity": true,
+        "before_median_seconds": 0.13367000012658536,
+        "after_median_seconds": 0.1348340001422912
+      },
+      {
+        "case": "recombined",
+        "static_only": true,
+        "candidate": false,
+        "states": 17,
+        "parity": true,
+        "before_median_seconds": 0.13386909989640117,
+        "after_median_seconds": 0.001808699918910861
+      },
+      {
+        "case": "recombined",
+        "static_only": true,
+        "candidate": true,
+        "states": 17,
+        "parity": true,
+        "before_median_seconds": 0.1325116998050362,
+        "after_median_seconds": 0.0018770999740809202
+      },
+      {
+        "case": "canonical",
+        "static_only": false,
+        "candidate": false,
+        "states": 17,
+        "parity": true,
+        "before_median_seconds": 0.17732820007950068,
+        "after_median_seconds": 0.17814840003848076
+      },
+      {
+        "case": "canonical",
+        "static_only": false,
+        "candidate": true,
+        "states": 17,
+        "parity": true,
+        "before_median_seconds": 0.17686450015753508,
+        "after_median_seconds": 0.17931189993396401
+      },
+      {
+        "case": "canonical",
+        "static_only": true,
+        "candidate": false,
+        "states": 17,
+        "parity": true,
+        "before_median_seconds": 0.17849870002828538,
+        "after_median_seconds": 0.0036776999477297068
+      },
+      {
+        "case": "canonical",
+        "static_only": true,
+        "candidate": true,
+        "states": 17,
+        "parity": true,
+        "before_median_seconds": 0.17925589997321367,
+        "after_median_seconds": 0.003658199915662408
+      },
+      {
+        "case": "cannon",
+        "static_only": false,
+        "candidate": false,
+        "states": 17,
+        "parity": true,
+        "before_median_seconds": 0.07516000000759959,
+        "after_median_seconds": 0.07567099994048476
+      },
+      {
+        "case": "cannon",
+        "static_only": false,
+        "candidate": true,
+        "states": 17,
+        "parity": true,
+        "before_median_seconds": 0.07458089990541339,
+        "after_median_seconds": 0.07567859999835491
+      },
+      {
+        "case": "cannon",
+        "static_only": true,
+        "candidate": false,
+        "states": 17,
+        "parity": true,
+        "before_median_seconds": 0.07492180005647242,
+        "after_median_seconds": 0.0015322999097406864
+      },
+      {
+        "case": "cannon",
+        "static_only": true,
+        "candidate": true,
+        "states": 17,
+        "parity": true,
+        "before_median_seconds": 0.07848719996400177,
+        "after_median_seconds": 0.001550300046801567
+      },
+      {
+        "case": "shogi",
+        "static_only": false,
+        "candidate": false,
+        "states": 15,
+        "parity": true,
+        "before_median_seconds": 0.3983045001514256,
+        "after_median_seconds": 0.39848560001701117
+      },
+      {
+        "case": "shogi",
+        "static_only": false,
+        "candidate": true,
+        "states": 15,
+        "parity": true,
+        "before_median_seconds": 0.40694999997504056,
+        "after_median_seconds": 0.39782539987936616
+      },
+      {
+        "case": "shogi",
+        "static_only": true,
+        "candidate": false,
+        "states": 15,
+        "parity": true,
+        "before_median_seconds": 0.3966075999196619,
+        "after_median_seconds": 0.003970500081777573
+      },
+      {
+        "case": "shogi",
+        "static_only": true,
+        "candidate": true,
+        "states": 15,
+        "parity": true,
+        "before_median_seconds": 0.3972002000082284,
+        "after_median_seconds": 0.004023700021207333
+      }
+    ],
+    "seconds": 16.134385500103235
+  },
+  "search_cost": {
+    "calls": 32,
+    "rows": [
+      {
+        "root": "recombined",
+        "candidate": false,
+        "ceiling": 4096,
+        "calls": [
+          {
+            "label": "before",
+            "repeat": 0,
+            "seconds": 1.2019478001166135,
+            "depth": 4,
+            "score": 0,
+            "nodes": 4096,
+            "termination": "node_limit"
+          },
+          {
+            "label": "after",
+            "repeat": 0,
+            "seconds": 0.955201999982819,
+            "depth": 4,
+            "score": 0,
+            "nodes": 4096,
+            "termination": "node_limit"
+          },
+          {
+            "label": "after",
+            "repeat": 1,
+            "seconds": 0.9673484000377357,
+            "depth": 4,
+            "score": 0,
+            "nodes": 4096,
+            "termination": "node_limit"
+          },
+          {
+            "label": "before",
+            "repeat": 1,
+            "seconds": 1.2022973001003265,
+            "depth": 4,
+            "score": 0,
+            "nodes": 4096,
+            "termination": "node_limit"
+          }
+        ]
+      },
+      {
+        "root": "recombined",
+        "candidate": false,
+        "ceiling": 16384,
+        "calls": [
+          {
+            "label": "before",
+            "repeat": 0,
+            "seconds": 5.007436500163749,
+            "depth": 5,
+            "score": 0,
+            "nodes": 16066,
+            "termination": "time_limit"
+          },
+          {
+            "label": "after",
+            "repeat": 0,
+            "seconds": 4.410108499927446,
+            "depth": 5,
+            "score": 0,
+            "nodes": 16384,
+            "termination": "node_limit"
+          },
+          {
+            "label": "after",
+            "repeat": 1,
+            "seconds": 4.241282499860972,
+            "depth": 5,
+            "score": 0,
+            "nodes": 16384,
+            "termination": "node_limit"
+          },
+          {
+            "label": "before",
+            "repeat": 1,
+            "seconds": 4.996295399963856,
+            "depth": 5,
+            "score": 0,
+            "nodes": 16062,
+            "termination": "time_limit"
+          }
+        ]
+      },
+      {
+        "root": "recombined",
+        "candidate": true,
+        "ceiling": 4096,
+        "calls": [
+          {
+            "label": "before",
+            "repeat": 0,
+            "seconds": 1.2334404001012444,
+            "depth": 4,
+            "score": 0,
+            "nodes": 4096,
+            "termination": "node_limit"
+          },
+          {
+            "label": "after",
+            "repeat": 0,
+            "seconds": 1.058685400057584,
+            "depth": 4,
+            "score": 0,
+            "nodes": 4096,
+            "termination": "node_limit"
+          },
+          {
+            "label": "after",
+            "repeat": 1,
+            "seconds": 1.0329479998908937,
+            "depth": 4,
+            "score": 0,
+            "nodes": 4096,
+            "termination": "node_limit"
+          },
+          {
+            "label": "before",
+            "repeat": 1,
+            "seconds": 1.234316899906844,
+            "depth": 4,
+            "score": 0,
+            "nodes": 4096,
+            "termination": "node_limit"
+          }
+        ]
+      },
+      {
+        "root": "recombined",
+        "candidate": true,
+        "ceiling": 16384,
+        "calls": [
+          {
+            "label": "before",
+            "repeat": 0,
+            "seconds": 4.84275329997763,
+            "depth": 5,
+            "score": 0,
+            "nodes": 16384,
+            "termination": "node_limit"
+          },
+          {
+            "label": "after",
+            "repeat": 0,
+            "seconds": 4.001840400043875,
+            "depth": 5,
+            "score": 0,
+            "nodes": 16384,
+            "termination": "node_limit"
+          },
+          {
+            "label": "after",
+            "repeat": 1,
+            "seconds": 3.8263256000354886,
+            "depth": 5,
+            "score": 0,
+            "nodes": 16384,
+            "termination": "node_limit"
+          },
+          {
+            "label": "before",
+            "repeat": 1,
+            "seconds": 4.854473100043833,
+            "depth": 5,
+            "score": 0,
+            "nodes": 16384,
+            "termination": "node_limit"
+          }
+        ]
+      },
+      {
+        "root": "promotion-context3",
+        "candidate": false,
+        "ceiling": 4096,
+        "calls": [
+          {
+            "label": "before",
+            "repeat": 0,
+            "seconds": 1.0451712999492884,
+            "depth": 5,
+            "score": 2439,
+            "nodes": 4096,
+            "termination": "node_limit"
+          },
+          {
+            "label": "after",
+            "repeat": 0,
+            "seconds": 0.717578399926424,
+            "depth": 5,
+            "score": 2439,
+            "nodes": 4096,
+            "termination": "node_limit"
+          },
+          {
+            "label": "after",
+            "repeat": 1,
+            "seconds": 0.6962072998285294,
+            "depth": 5,
+            "score": 2439,
+            "nodes": 4096,
+            "termination": "node_limit"
+          },
+          {
+            "label": "before",
+            "repeat": 1,
+            "seconds": 1.0526787999551743,
+            "depth": 5,
+            "score": 2439,
+            "nodes": 4096,
+            "termination": "node_limit"
+          }
+        ]
+      },
+      {
+        "root": "promotion-context3",
+        "candidate": false,
+        "ceiling": 16384,
+        "calls": [
+          {
+            "label": "before",
+            "repeat": 0,
+            "seconds": 2.233872199896723,
+            "depth": 6,
+            "score": 2439,
+            "nodes": 8893,
+            "termination": "completed_depth"
+          },
+          {
+            "label": "after",
+            "repeat": 0,
+            "seconds": 1.6043172997888178,
+            "depth": 6,
+            "score": 2439,
+            "nodes": 8893,
+            "termination": "completed_depth"
+          },
+          {
+            "label": "after",
+            "repeat": 1,
+            "seconds": 1.607302200049162,
+            "depth": 6,
+            "score": 2439,
+            "nodes": 8893,
+            "termination": "completed_depth"
+          },
+          {
+            "label": "before",
+            "repeat": 1,
+            "seconds": 2.2510637000668794,
+            "depth": 6,
+            "score": 2439,
+            "nodes": 8893,
+            "termination": "completed_depth"
+          }
+        ]
+      },
+      {
+        "root": "promotion-context3",
+        "candidate": true,
+        "ceiling": 4096,
+        "calls": [
+          {
+            "label": "before",
+            "repeat": 0,
+            "seconds": 1.0738839998375624,
+            "depth": 5,
+            "score": 2468,
+            "nodes": 4096,
+            "termination": "node_limit"
+          },
+          {
+            "label": "after",
+            "repeat": 0,
+            "seconds": 0.692459600046277,
+            "depth": 5,
+            "score": 2468,
+            "nodes": 4096,
+            "termination": "node_limit"
+          },
+          {
+            "label": "after",
+            "repeat": 1,
+            "seconds": 0.7058149001095444,
+            "depth": 5,
+            "score": 2468,
+            "nodes": 4096,
+            "termination": "node_limit"
+          },
+          {
+            "label": "before",
+            "repeat": 1,
+            "seconds": 1.0784676999319345,
+            "depth": 5,
+            "score": 2468,
+            "nodes": 4096,
+            "termination": "node_limit"
+          }
+        ]
+      },
+      {
+        "root": "promotion-context3",
+        "candidate": true,
+        "ceiling": 16384,
+        "calls": [
+          {
+            "label": "before",
+            "repeat": 0,
+            "seconds": 2.237399699864909,
+            "depth": 6,
+            "score": 2468,
+            "nodes": 8893,
+            "termination": "completed_depth"
+          },
+          {
+            "label": "after",
+            "repeat": 0,
+            "seconds": 1.6135254998225719,
+            "depth": 6,
+            "score": 2468,
+            "nodes": 8893,
+            "termination": "completed_depth"
+          },
+          {
+            "label": "after",
+            "repeat": 1,
+            "seconds": 1.6425596000626683,
+            "depth": 6,
+            "score": 2468,
+            "nodes": 8893,
+            "termination": "completed_depth"
+          },
+          {
+            "label": "before",
+            "repeat": 1,
+            "seconds": 2.2407702000346035,
+            "depth": 6,
+            "score": 2468,
+            "nodes": 8893,
+            "termination": "completed_depth"
+          }
+        ]
+      }
+    ],
+    "seconds": 68.79074100009166
+  },
+  "ordering_ablation": {
+    "calls": 32,
+    "seconds": 77.95476689981297,
+    "scope": "Scoring and ordering table crossed; complete context3 cells all8893 nodes atdepth6, no ordering gain. Recombination cells capped; no universal acceleration claim."
+  },
+  "mixture": {
+    "controls": [
+      {
+        "label": "baseline",
+        "values": {
+          "K": 0,
+          "C": 1000,
+          "R": 1000
+        },
+        "reference": {
+          "complete": true,
+          "score": 0,
+          "action": {
+            "pattern_id": "legacy_008",
+            "geometry_id": "g12",
+            "actor_type_id": "R",
+            "from_square": {
+              "file": 3,
+              "rank": 4
+            },
+            "to_square": {
+              "file": 7,
+              "rank": 4
+            },
+            "promotion_target_id": null
+          },
+          "wall_seconds": 1.0869547999463975,
+          "leaf_evaluations": 1182
+        },
+        "repeat_equal": {
+          "python_plain": true,
+          "public_bundle": true
+        }
+      },
+      {
+        "label": "candidate",
+        "values": {
+          "K": 0,
+          "C": 976,
+          "R": 1024
+        },
+        "reference": {
+          "complete": true,
+          "score": 48,
+          "action": {
+            "pattern_id": "sem_01_cannon_capture",
+            "geometry_id": "g2",
+            "actor_type_id": "C",
+            "from_square": {
+              "file": 3,
+              "rank": 3
+            },
+            "to_square": {
+              "file": 3,
+              "rank": 5
+            },
+            "promotion_target_id": null
+          },
+          "wall_seconds": 1.0752574000507593,
+          "leaf_evaluations": 1182
+        },
+        "repeat_equal": {
+          "python_plain": true,
+          "public_bundle": true
+        }
+      }
+    ],
+    "isolated_captures": [
+      {
+        "control": "baseline",
+        "action": {
+          "pattern_id": "legacy_013",
+          "geometry_id": "g14",
+          "actor_type_id": "R",
+          "from_square": {
+            "file": 5,
+            "rank": 2
+          },
+          "to_square": {
+            "file": 5,
+            "rank": 5
+          },
+          "promotion_target_id": null
+        },
+        "own_two_ply_value": 0
+      },
+      {
+        "control": "baseline",
+        "action": {
+          "pattern_id": "sem_01_cannon_capture",
+          "geometry_id": "g2",
+          "actor_type_id": "C",
+          "from_square": {
+            "file": 3,
+            "rank": 3
+          },
+          "to_square": {
+            "file": 3,
+            "rank": 5
+          },
+          "promotion_target_id": null
+        },
+        "own_two_ply_value": 0
+      },
+      {
+        "control": "candidate",
+        "action": {
+          "pattern_id": "legacy_013",
+          "geometry_id": "g14",
+          "actor_type_id": "R",
+          "from_square": {
+            "file": 5,
+            "rank": 2
+          },
+          "to_square": {
+            "file": 5,
+            "rank": 5
+          },
+          "promotion_target_id": null
+        },
+        "own_two_ply_value": -48
+      },
+      {
+        "control": "candidate",
+        "action": {
+          "pattern_id": "sem_01_cannon_capture",
+          "geometry_id": "g2",
+          "actor_type_id": "C",
+          "from_square": {
+            "file": 3,
+            "rank": 3
+          },
+          "to_square": {
+            "file": 3,
+            "rank": 5
+          },
+          "promotion_target_id": null
+        },
+        "own_two_ply_value": 48
+      }
+    ],
+    "alias": {
+      "values": {
+        "K": 0,
+        "Z": 976,
+        "R": 1024
+      },
+      "score": 48,
+      "numerical_equal": true
+    },
+    "calls": 8,
+    "seconds": 4.4027903999667615
+  },
+  "future_task": {
+    "core_states": 1792,
+    "core_transitions": 19760,
+    "native_states": 1792,
+    "native_transitions": 19760,
+    "native_all_rows_core_equal": true,
+    "rows": [
+      {
+        "mode": "no_promotion",
+        "type": "P",
+        "population": "all_sources",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 0.875,
+            "cumulative_opportunity": 0.875,
+            "mean_per_step": 0.875,
+            "mass": 1.0,
+            "states": 56
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 0.5,
+            "cumulative_opportunity": 2.75,
+            "mean_per_step": 0.6875,
+            "mass": 1.0,
+            "states": 32
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 0.0,
+            "cumulative_opportunity": 3.5,
+            "mean_per_step": 0.4375,
+            "mass": 1.0,
+            "states": 8
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 0.0,
+            "cumulative_opportunity": 3.5,
+            "mean_per_step": 0.21875,
+            "mass": 1.0,
+            "states": 8
+          }
+        ]
+      },
+      {
+        "mode": "no_promotion",
+        "type": "P",
+        "population": "relative_rank1",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 1.0,
+            "cumulative_opportunity": 1.0,
+            "mean_per_step": 1.0,
+            "mass": 1.0,
+            "states": 8
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 1.0,
+            "cumulative_opportunity": 4.0,
+            "mean_per_step": 1.0,
+            "mass": 1.0,
+            "states": 8
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 0.0,
+            "cumulative_opportunity": 6.0,
+            "mean_per_step": 0.75,
+            "mass": 1.0,
+            "states": 8
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 0.0,
+            "cumulative_opportunity": 6.0,
+            "mean_per_step": 0.375,
+            "mass": 1.0,
+            "states": 8
+          }
+        ]
+      },
+      {
+        "mode": "no_promotion",
+        "type": "N",
+        "population": "all_sources",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 5.25,
+            "cumulative_opportunity": 5.25,
+            "mean_per_step": 5.25,
+            "mass": 1.0,
+            "states": 64
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 6.003200954861111,
+            "cumulative_opportunity": 23.150770399305557,
+            "mean_per_step": 5.787692599826389,
+            "mass": 0.9999999999999999,
+            "states": 64
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 5.980587058597139,
+            "cumulative_opportunity": 47.04439870222115,
+            "mean_per_step": 5.880549837777644,
+            "mass": 0.9999999999999998,
+            "states": 64
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 5.976299074224641,
+            "cumulative_opportunity": 94.85219972757318,
+            "mean_per_step": 5.928262482973324,
+            "mass": 0.9999999999999997,
+            "states": 64
+          }
+        ]
+      },
+      {
+        "mode": "no_promotion",
+        "type": "N",
+        "population": "relative_rank1",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 4.75,
+            "cumulative_opportunity": 4.75,
+            "mean_per_step": 4.75,
+            "mass": 1.0,
+            "states": 24
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 5.922309027777777,
+            "cumulative_opportunity": 22.57161458333333,
+            "mean_per_step": 5.642903645833332,
+            "mass": 0.9999999999999999,
+            "states": 64
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 5.964755038665646,
+            "cumulative_opportunity": 46.49577521492914,
+            "mean_per_step": 5.811971901866142,
+            "mass": 0.9999999999999998,
+            "states": 64
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 5.975891869630382,
+            "cumulative_opportunity": 94.30964381133403,
+            "mean_per_step": 5.894352738208377,
+            "mass": 0.9999999999999997,
+            "states": 64
+          }
+        ]
+      },
+      {
+        "mode": "no_promotion",
+        "type": "B",
+        "population": "all_sources",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 8.75,
+            "cumulative_opportunity": 8.75,
+            "mean_per_step": 8.75,
+            "mass": 1.0,
+            "states": 64
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 9.137790386259232,
+            "cumulative_opportunity": 36.17238551018169,
+            "mean_per_step": 9.043096377545423,
+            "mass": 0.9999999999999999,
+            "states": 64
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 9.142153877004068,
+            "cumulative_opportunity": 72.7366184104334,
+            "mean_per_step": 9.092077301304174,
+            "mass": 0.9999999999999999,
+            "states": 64
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 9.14284188162538,
+            "cumulative_opportunity": 145.87838549877608,
+            "mean_per_step": 9.117399093673505,
+            "mass": 0.9999999999999998,
+            "states": 64
+          }
+        ]
+      },
+      {
+        "mode": "no_promotion",
+        "type": "B",
+        "population": "relative_rank1",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 8.5,
+            "cumulative_opportunity": 8.5,
+            "mean_per_step": 8.5,
+            "mass": 1.0,
+            "states": 50
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 9.154040501092922,
+            "cumulative_opportunity": 36.02441615718286,
+            "mean_per_step": 9.006104039295716,
+            "mass": 0.9999999999999999,
+            "states": 64
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 9.143324440917503,
+            "cumulative_opportunity": 72.60666961291298,
+            "mean_per_step": 9.075833701614123,
+            "mass": 0.9999999999999998,
+            "states": 64
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 9.142832237770712,
+            "cumulative_opportunity": 145.7493561823951,
+            "mean_per_step": 9.109334761399694,
+            "mass": 0.9999999999999996,
+            "states": 64
+          }
+        ]
+      },
+      {
+        "mode": "no_promotion",
+        "type": "R",
+        "population": "all_sources",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 14.0,
+            "cumulative_opportunity": 14.0,
+            "mean_per_step": 14.0,
+            "mass": 0.9999999999999997,
+            "states": 64
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 13.999999999999998,
+            "cumulative_opportunity": 56.0,
+            "mean_per_step": 14.0,
+            "mass": 0.9999999999999996,
+            "states": 64
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 13.999999999999998,
+            "cumulative_opportunity": 112.0,
+            "mean_per_step": 14.0,
+            "mass": 0.9999999999999996,
+            "states": 64
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 13.999999999999998,
+            "cumulative_opportunity": 224.0,
+            "mean_per_step": 14.0,
+            "mass": 0.9999999999999996,
+            "states": 64
+          }
+        ]
+      },
+      {
+        "mode": "no_promotion",
+        "type": "R",
+        "population": "relative_rank1",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 14.0,
+            "cumulative_opportunity": 14.0,
+            "mean_per_step": 14.0,
+            "mass": 0.9999999999999999,
+            "states": 64
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 14.000000000000016,
+            "cumulative_opportunity": 56.00000000000003,
+            "mean_per_step": 14.000000000000007,
+            "mass": 1.0,
+            "states": 64
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 13.999999999999986,
+            "cumulative_opportunity": 111.99999999999997,
+            "mean_per_step": 13.999999999999996,
+            "mass": 1.0,
+            "states": 64
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 13.999999999999991,
+            "cumulative_opportunity": 224.00000000000006,
+            "mean_per_step": 14.000000000000004,
+            "mass": 1.0000000000000009,
+            "states": 64
+          }
+        ]
+      },
+      {
+        "mode": "no_promotion",
+        "type": "Q",
+        "population": "all_sources",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 22.75,
+            "cumulative_opportunity": 22.75,
+            "mean_per_step": 22.75,
+            "mass": 1.0,
+            "states": 64
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 22.89976708653979,
+            "cumulative_opportunity": 91.41964879682664,
+            "mean_per_step": 22.85491219920666,
+            "mass": 0.9999999999999999,
+            "states": 64
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 22.901092948083864,
+            "cumulative_opportunity": 183.02359703823691,
+            "mean_per_step": 22.877949629779614,
+            "mass": 0.9999999999999997,
+            "states": 64
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 22.901098900945247,
+            "cumulative_opportunity": 366.2323860902573,
+            "mean_per_step": 22.88952413064108,
+            "mass": 0.9999999999999992,
+            "states": 64
+          }
+        ]
+      },
+      {
+        "mode": "no_promotion",
+        "type": "Q",
+        "population": "relative_rank1",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 22.5,
+            "cumulative_opportunity": 22.5,
+            "mean_per_step": 22.5,
+            "mass": 1.0,
+            "states": 64
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 22.896124377785767,
+            "cumulative_opportunity": 91.11589553430551,
+            "mean_per_step": 22.778973883576377,
+            "mass": 0.9999999999999997,
+            "states": 64
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 22.901064749419362,
+            "cumulative_opportunity": 182.7182417441682,
+            "mean_per_step": 22.839780218021026,
+            "mass": 0.9999999999999994,
+            "states": 64
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 22.901098900020802,
+            "cumulative_opportunity": 365.9270198196335,
+            "mean_per_step": 22.870438738727092,
+            "mass": 0.9999999999999991,
+            "states": 64
+          }
+        ]
+      },
+      {
+        "mode": "all_choices",
+        "type": "P",
+        "population": "all_sources",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 0.875,
+            "cumulative_opportunity": 0.875,
+            "mean_per_step": 0.875,
+            "mass": 1.0,
+            "states": 88
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 5.1500483537994315,
+            "cumulative_opportunity": 11.85215028832324,
+            "mean_per_step": 2.96303757208081,
+            "mass": 1.0,
+            "states": 280
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 11.155096600425507,
+            "cumulative_opportunity": 47.47130859509148,
+            "mean_per_step": 5.933913574386435,
+            "mass": 1.0,
+            "states": 264
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 11.379228419230358,
+            "cumulative_opportunity": 138.48782339376407,
+            "mean_per_step": 8.655488962110255,
+            "mass": 0.9999999999999999,
+            "states": 264
+          }
+        ]
+      },
+      {
+        "mode": "all_choices",
+        "type": "P",
+        "population": "relative_rank1",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 1.0,
+            "cumulative_opportunity": 1.0,
+            "mean_per_step": 1.0,
+            "mass": 1.0,
+            "states": 8
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 1.0,
+            "cumulative_opportunity": 4.0,
+            "mean_per_step": 1.0,
+            "mass": 1.0,
+            "states": 8
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 12.991815476190473,
+            "cumulative_opportunity": 30.304315476190474,
+            "mean_per_step": 3.7880394345238093,
+            "mass": 1.0,
+            "states": 232
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 13.008095728731892,
+            "cumulative_opportunity": 134.26269369051576,
+            "mean_per_step": 8.391418355657235,
+            "mass": 0.9999999999999999,
+            "states": 256
+          }
+        ]
+      },
+      {
+        "mode": "all_choices",
+        "type": "N",
+        "population": "all_sources",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 5.25,
+            "cumulative_opportunity": 5.25,
+            "mean_per_step": 5.25,
+            "mass": 1.0,
+            "states": 64
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 6.003200954861111,
+            "cumulative_opportunity": 23.150770399305557,
+            "mean_per_step": 5.787692599826389,
+            "mass": 0.9999999999999999,
+            "states": 64
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 5.980587058597139,
+            "cumulative_opportunity": 47.04439870222115,
+            "mean_per_step": 5.880549837777644,
+            "mass": 0.9999999999999998,
+            "states": 64
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 5.976299074224641,
+            "cumulative_opportunity": 94.85219972757318,
+            "mean_per_step": 5.928262482973324,
+            "mass": 0.9999999999999997,
+            "states": 64
+          }
+        ]
+      },
+      {
+        "mode": "all_choices",
+        "type": "N",
+        "population": "relative_rank1",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 4.75,
+            "cumulative_opportunity": 4.75,
+            "mean_per_step": 4.75,
+            "mass": 1.0,
+            "states": 24
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 5.922309027777777,
+            "cumulative_opportunity": 22.57161458333333,
+            "mean_per_step": 5.642903645833332,
+            "mass": 0.9999999999999999,
+            "states": 64
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 5.964755038665646,
+            "cumulative_opportunity": 46.49577521492914,
+            "mean_per_step": 5.811971901866142,
+            "mass": 0.9999999999999998,
+            "states": 64
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 5.975891869630382,
+            "cumulative_opportunity": 94.30964381133403,
+            "mean_per_step": 5.894352738208377,
+            "mass": 0.9999999999999997,
+            "states": 64
+          }
+        ]
+      },
+      {
+        "mode": "all_choices",
+        "type": "B",
+        "population": "all_sources",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 8.75,
+            "cumulative_opportunity": 8.75,
+            "mean_per_step": 8.75,
+            "mass": 1.0,
+            "states": 64
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 9.137790386259232,
+            "cumulative_opportunity": 36.17238551018169,
+            "mean_per_step": 9.043096377545423,
+            "mass": 0.9999999999999999,
+            "states": 64
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 9.142153877004068,
+            "cumulative_opportunity": 72.7366184104334,
+            "mean_per_step": 9.092077301304174,
+            "mass": 0.9999999999999999,
+            "states": 64
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 9.14284188162538,
+            "cumulative_opportunity": 145.87838549877608,
+            "mean_per_step": 9.117399093673505,
+            "mass": 0.9999999999999998,
+            "states": 64
+          }
+        ]
+      },
+      {
+        "mode": "all_choices",
+        "type": "B",
+        "population": "relative_rank1",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 8.5,
+            "cumulative_opportunity": 8.5,
+            "mean_per_step": 8.5,
+            "mass": 1.0,
+            "states": 50
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 9.154040501092922,
+            "cumulative_opportunity": 36.02441615718286,
+            "mean_per_step": 9.006104039295716,
+            "mass": 0.9999999999999999,
+            "states": 64
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 9.143324440917503,
+            "cumulative_opportunity": 72.60666961291298,
+            "mean_per_step": 9.075833701614123,
+            "mass": 0.9999999999999998,
+            "states": 64
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 9.142832237770712,
+            "cumulative_opportunity": 145.7493561823951,
+            "mean_per_step": 9.109334761399694,
+            "mass": 0.9999999999999996,
+            "states": 64
+          }
+        ]
+      },
+      {
+        "mode": "all_choices",
+        "type": "R",
+        "population": "all_sources",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 14.0,
+            "cumulative_opportunity": 14.0,
+            "mean_per_step": 14.0,
+            "mass": 0.9999999999999997,
+            "states": 64
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 13.999999999999998,
+            "cumulative_opportunity": 56.0,
+            "mean_per_step": 14.0,
+            "mass": 0.9999999999999996,
+            "states": 64
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 13.999999999999998,
+            "cumulative_opportunity": 112.0,
+            "mean_per_step": 14.0,
+            "mass": 0.9999999999999996,
+            "states": 64
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 13.999999999999998,
+            "cumulative_opportunity": 224.0,
+            "mean_per_step": 14.0,
+            "mass": 0.9999999999999996,
+            "states": 64
+          }
+        ]
+      },
+      {
+        "mode": "all_choices",
+        "type": "R",
+        "population": "relative_rank1",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 14.0,
+            "cumulative_opportunity": 14.0,
+            "mean_per_step": 14.0,
+            "mass": 0.9999999999999999,
+            "states": 64
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 14.000000000000016,
+            "cumulative_opportunity": 56.00000000000003,
+            "mean_per_step": 14.000000000000007,
+            "mass": 1.0,
+            "states": 64
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 13.999999999999986,
+            "cumulative_opportunity": 111.99999999999997,
+            "mean_per_step": 13.999999999999996,
+            "mass": 1.0,
+            "states": 64
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 13.999999999999991,
+            "cumulative_opportunity": 224.00000000000006,
+            "mean_per_step": 14.000000000000004,
+            "mass": 1.0000000000000009,
+            "states": 64
+          }
+        ]
+      },
+      {
+        "mode": "all_choices",
+        "type": "Q",
+        "population": "all_sources",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 22.75,
+            "cumulative_opportunity": 22.75,
+            "mean_per_step": 22.75,
+            "mass": 1.0,
+            "states": 64
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 22.89976708653979,
+            "cumulative_opportunity": 91.41964879682664,
+            "mean_per_step": 22.85491219920666,
+            "mass": 0.9999999999999999,
+            "states": 64
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 22.901092948083864,
+            "cumulative_opportunity": 183.02359703823691,
+            "mean_per_step": 22.877949629779614,
+            "mass": 0.9999999999999997,
+            "states": 64
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 22.901098900945247,
+            "cumulative_opportunity": 366.2323860902573,
+            "mean_per_step": 22.88952413064108,
+            "mass": 0.9999999999999992,
+            "states": 64
+          }
+        ]
+      },
+      {
+        "mode": "all_choices",
+        "type": "Q",
+        "population": "relative_rank1",
+        "owner0": [
+          {
+            "horizon": 1,
+            "current_step_opportunity": 22.5,
+            "cumulative_opportunity": 22.5,
+            "mean_per_step": 22.5,
+            "mass": 1.0,
+            "states": 64
+          },
+          {
+            "horizon": 4,
+            "current_step_opportunity": 22.896124377785767,
+            "cumulative_opportunity": 91.11589553430551,
+            "mean_per_step": 22.778973883576377,
+            "mass": 0.9999999999999997,
+            "states": 64
+          },
+          {
+            "horizon": 8,
+            "current_step_opportunity": 22.901064749419362,
+            "cumulative_opportunity": 182.7182417441682,
+            "mean_per_step": 22.839780218021026,
+            "mass": 0.9999999999999994,
+            "states": 64
+          },
+          {
+            "horizon": 16,
+            "current_step_opportunity": 22.901098900020802,
+            "cumulative_opportunity": 365.9270198196335,
+            "mean_per_step": 22.870438738727092,
+            "mass": 0.9999999999999991,
+            "states": 64
+          }
+        ]
+      }
+    ],
+    "scope": "Observed future-promotion omission only. Actual supported Western derivative removes castling/double-step/en-passant, preserving simple movement and all promotion choices. One ordinary actor alone on8x8, no anchors/opponent/captures/terminal utility; actual Core legal actions and transitions, then explicit virtual opponent pass to return own turn. Rule pass_enabled is not changed: this is a virtual task, not a legal game. Choose uniformly among distinct target endpoints, then uniformly among legal promotion alternatives to that endpoint. Reward is number of current quiet endpoints, not WDL or prices. Predeclared horizons1/4/8/16, every both-owner source; source populations equal all squares or owner-relative rank1 for every type. Compare full promotion rules against explicit no-promotion rule; no outcome-driven law choice/human data. Float mass propagation, bounded4096graph states/100000actual Core transitions per rule; partial on cost limit, not zero.",
+    "core_seconds": 3.136986500117928,
+    "native_seconds": 0.4225218999199569
+  },
+  "raw_pins": {
+    "comparisons.json": {
+      "bytes": 28712,
+      "sha256": "cd90adff5bf9331b8ce0112b0513ee2291656856908f80c17b8a10185d837350"
+    },
+    "counted-core.json": {
+      "bytes": 3099,
+      "sha256": "b80bd07ae28d9ea0d39d8dd15e434e337c675705e46ab652e07738e4f39a1e70"
+    },
+    "source-guard.json": {
+      "bytes": 1870,
+      "sha256": "b65ded64c662b275bc9b4e5d5fec4a990d1b682fe3cdb86cfd5f83fce26a0a84"
+    },
+    "evaluation-cost.json": {
+      "bytes": 21223,
+      "sha256": "70b11cb426714da198310bf62c734dfce44cedcecf8d186019d99a6a0c034d8b"
+    },
+    "search-cost.json": {
+      "bytes": 162595,
+      "sha256": "cfc040bd315769d548f7a2c114024d522efbb04a436e46901d7fd8bef23c1e4b"
+    },
+    "ordering-ablation.json": {
+      "bytes": 340442,
+      "sha256": "a9211e09ea6cc3347b13992085527f315c14b1bc0ffb291af7290dcadd04843a"
+    },
+    "future-opportunity.json": {
+      "bytes": 177537,
+      "sha256": "ce8f898d5eb92d096771d6d3dbbbd646a24fd9973444e2bc072535f7e2d813cd"
+    },
+    "future-native.json": {
+      "bytes": 52206,
+      "sha256": "6fb7eb66232cd0e8218902d81762aab0bdb88bd22d454c2aad575d5cc6017666"
+    },
+    "cannon-mixture.json": {
+      "bytes": 47958,
+      "sha256": "33e691319dbe36a6d05cd5467bbfb1e2c7e856c0a67c37e06a68600d4703ac50"
+    },
+    "cannon-mixture-baseline.json": {
+      "bytes": 30319,
+      "sha256": "f6e6dd25dd6d02509e31e5135ecdf93313ae2341649fe12899d8d55721bf94b2"
+    },
+    "cannon-mixture-candidate.json": {
+      "bytes": 35458,
+      "sha256": "cc741f8c7d67b4e283e6a4748f6718d71adae87fe7d130ecb41964885bdd08de"
+    },
+    "ordering-qualification.json": {
+      "bytes": 602,
+      "sha256": "007a9d058b0b82c1843ec3e96f5b93ff4d758938b7bac8e2a20df8ff111f9fa7"
+    },
+    "failures.json": {
+      "bytes": 761,
+      "sha256": "5e6529d5c130d39ac631405d264bcb8d3d311167cccbba476330ab7ece8b5518"
+    },
+    "recombined-baseline.json": {
+      "bytes": 114250,
+      "sha256": "de8adfa8e4996fe925649d38d928a474ccdb2803cbdb982ad40f6c9ffbcdcf4a"
+    },
+    "recombined-candidate.json": {
+      "bytes": 123991,
+      "sha256": "9f521d73a68e6acd55f9c3b9dc4314c63820781a2d396afae3077ca29665910a"
+    },
+    "canonical-baseline.json": {
+      "bytes": 118984,
+      "sha256": "78b7a0be50f2801cfc0dbe394ab979d944627a2b0b1b855bec71748e60258dad"
+    },
+    "canonical-candidate.json": {
+      "bytes": 129080,
+      "sha256": "9422db3bc7259e58183dd3e9b93c5377dce416ff70189c7b91a58a5ad3258f8f"
+    },
+    "cannon-baseline.json": {
+      "bytes": 26339,
+      "sha256": "39ed531a4ca76624d5201995970599cf2fa7ae17c34188943d28a71f191e85dc"
+    },
+    "cannon-candidate.json": {
+      "bytes": 29783,
+      "sha256": "eb878cf8ceb3c3d67024aefa04762f07a2eb83a5c7fdb3316a599ebabf0f8093"
+    },
+    "shogi-baseline.json": {
+      "bytes": 329968,
+      "sha256": "e7295dedaea498970585ba6044ea18195ebdc5a7afc4eab69b2ff9efe3f86fbc"
+    },
+    "shogi-candidate.json": {
+      "bytes": 352994,
+      "sha256": "8f2183e29c2257c9013b833ce3864974023741e4b2c008b3ffb193ec7376f3fd"
+    }
+  }
+}

@@ -108,7 +108,8 @@ def _compare_searches(session, evaluator, cache, reference, depth, case, save):
         save()
 
 
-def run_rule(output: Path, definition, *, depth=2):
+def run_rule(output: Path, definition, *, depth=2, semantic_candidate=False,
+             evaluation_config=None):
     """Inspect a supplied rule through the existing product execution boundary.
 
     Semantic DSL inputs keep semantic legality; plain inputs keep their legacy
@@ -132,11 +133,20 @@ def run_rule(output: Path, definition, *, depth=2):
     report['compiled_class'] = type(compiled).__name__
     report['fingerprint'] = compiled.ruleset_fingerprint
     report['profile_input_scope'] = profile_input_scope(compiled)
+    config = evaluation_config or EvaluationConfig()
     cache = EvaluationProfileCache(use_disk=False)
     start = time.perf_counter()
-    profile = cache.get_or_build(compiled, EvaluationConfig())[0]
+    profile = cache.get_or_build(compiled, config)[0]
+    if semantic_candidate:
+        from generic_chess.ai.evaluation.semantic import build_semantic_opportunity_profile
+        profile, scope = build_semantic_opportunity_profile(compiled, config)
+        report['candidate_scope'] = scope
+        report['declaration']['evaluator'] = 'Opt-in semantic-opportunity-v1; projected opportunity, not selected material prices.'
+        report['declaration']['ordering'] = 'Public capture/promotion ordering reads the active evaluator table; plain control disables ordering. Candidate/public cost changes therefore combine score and ordering effects.'
+    report['evaluation_config'] = record_value(config)
+    report['board_values'] = dict(profile.board_value_by_type)
     report['profile_seconds'] = time.perf_counter()-start
-    evaluator = Evaluator(compiled, profile, EvaluationConfig())
+    evaluator = Evaluator(compiled, profile, config)
     session = GameSession(compiled)
     report['opening_legal_actions'] = len(session.legal_actions())
     counted = CountedEvaluator(evaluator)

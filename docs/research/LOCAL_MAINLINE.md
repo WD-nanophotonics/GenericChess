@@ -20,53 +20,33 @@ permission, machine safety and fair frozen comparison conditions as hard limits.
 
 ## Piece-value construction
 
-Frozen first-contact Chess geometric pawn-normalized outputs N2.910,B2.639,
-R5.151,Q5.741; Shogi L2.339,N1.727,S4.085,G3.898,B9.556,R12.550. These are
-virtual-law outputs, not fitted material tables. All promoted/linear vectors
-and reference qualifications: CROSS_GAME_PRICE_DIAGNOSTIC.md.
+Current executable development candidate: semantic-opportunity-v1 in
+ai/evaluation/semantic.py, explicit opt-in only. It projects compiled semantic
+quiet/capture geometry, clear/occupied-count paths and equal owner/source
+contexts. It sees atomless movement and replaced nonempty atoms; guards and
+future utility remain qualified. Defaults are unchanged. SEMANTIC_CAPABILITY.md
+owns its scope, actual interface/alias checks and finite approximation evidence.
 
-Q/R<=261/160 for any nonnegative shared duration moments in the fixed one-contact
-census. Changing only that common law cannot reach the descriptive9/5 reference.
-Two stationary removals do not rescue this model. Retain that restriction on
-this tested claim; it does not ban lifetime/opponent-response hypotheses.
+A cannon/rook mixture now distinguishes identical legacy atoms with different
+capture semantics; Core verifies table-induced exchange sensitivity, not true
+prices or strength. Source-rank guard correction is small under the declared
+law; a separate actual-transition promotion task exposes strong phase/horizon
+bias. That virtual task is not legal play or material utility. Next construction
+should address one decision-changing approximation with an explicit law and
+counterexample, without fitting human references or changing defaults by outcome.
 
-The new active-opponent law separates signed task utility, matched replacement
-contribution and compensation prices. Full4x4/8x8 virtual censuses plus independent
-checks show phase/boundary dependence: equal-order N changes -1/560 to209/124992.
-Q-R dominance is trivial under nested actions; B-N has individual sign reversals.
-Do not normalize these signed rewards as positive material coefficients.
+Retained restrictions: frozen first-contact common moments give Q/R<=261/160
+in that census; changing only that law cannot fix its descriptive reference gap.
+Active-opponent/custody finite signed service does not identify stable positive
+material coefficients. Actual Shogi gold/promoted-small geometry cannot by
+itself distinguish capture-reset/drop liability. Old failures restrict those
+claims, not entire lifetime/response fields. Do not normalize signed rewards
+into a material table or restore exposed validation status.
 
-Actual Shogi counterfactual histories keep equal current G/TP geometry but
-capture/reset/drop transfers enemy G/P. In the fixed captured context G has42
-legal drops, P6; among6common drops three yield different next-capture service
-and three do not. Native/Core legal sets agree. These are conditional mechanic
-witnesses, not historical reachability, a context distribution or numeric prices.
-
-A finite signed custody continuation preserves capture/reset/drop/return without
-unknown prices. All48 drops have zero forced immediate service; an additional
-tagged turn still gives zero on12 paired cells. Uniform finite custody gives
-context-dependent service, not positive prices. Local tag labels cannot generate
-the destination kernel exactly. A separate two-cycle virtual census retains
-negative N means; survivor continuation alone does not resolve that limitation.
-Original-owner coupled trajectories now retain13 first-transfer frontiers;
-1778 paired pre-transfer legal sets and tagged service agree. Stopping before
-capture cannot identify this base-dependent effect on inspected paths. The
-paired full-state control pilot exposes response-law dilution: all13
-two-ply uniform differences disappear under category response/minimax. At the
-first frontier both optimal and all26 conditional four-ply control deltas agree.
-Matched immobile-reference ability premiums are nonnegative in an explicit
-virtual-pass law, but the shared baseline changes ratios, not stock calibration.
-Boundary and partial-pawn promotion checks quantify additional context bias.
-Independent Native replay now verifies all208 original-horizon paths, while
-Core exact latent-tag distributions match all conditional first moments.
-This remains unstable signed service, not a generic hand-price correction.
-A supported promotion pilot finds finite wins, including a Core-confirmed
-underpromotion/stalemate contrast. The concrete next priority is the observed
-static valuation input gap: semantic-only movement is absent from generic-v1
-atoms. SEMANTIC_CAPABILITY.md owns the scoped rule-only approximation/check;
-no price default or human-reference fit is selected. CONTRIBUTION_MODEL.md
-owns the prior construction check;
-JOINT_SERVICE_DIAGNOSTIC.md/CUSTODY_CONTINUATION.md retain prior finite evidence.
+Frozen cross-game vectors and attributed descriptive references:
+CROSS_GAME_PRICE_DIAGNOSTIC.md. Exact prior construction/custody evidence:
+CONTRIBUTION_MODEL.md, JOINT_SERVICE_DIAGNOSTIC.md and CUSTODY_CONTINUATION.md.
+These linked histories preserve all qualifications; they are not a task backlog.
 
 ## Unfamiliar-rule search
 
@@ -93,6 +73,12 @@ principal nodes; non-principal TT cutoffs stay available. It defaults off.
 Full output has measurable cost/depth tradeoffs. Preserve that declared
 contract, full-history/evaluator identity and existing cached-depth semantics.
 See UNFAMILIAR_RULE_SEARCH.md and data/search_pv_contract_20261008.json.
+
+Zero-weight dynamic features now skip unnecessary computation; matched static
+search fixtures retain scores/nodes and show local cost reductions. This is an
+execution optimization, not a changed evaluation/search policy or universal gain.
+Scoring/ordering effects of candidate tables are explicitly separated in
+SEMANTIC_CAPABILITY.md and data/semantic_candidate_20261008.json.
 
 ## Evidence and delivery
 
