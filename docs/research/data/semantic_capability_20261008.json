@@ -2115,6 +2115,13 @@
       }
     ]
   },
+  "dynamic_input_qualification": {
+    "source": "generic_chess/ai/evaluation/evaluator.py",
+    "sha256": "10fa59b364e3519456d16a6913e12084d803dbde51a2e638fddf48133466fda3",
+    "observed_canonical_P_zone_cells": 64,
+    "board_cells": 64,
+    "construction": "Legacy empty_forward_mobility classifies all squares as promotion zone for atomless semantic P; static witness zeros dynamic terms and does not repair this component."
+  },
   "search_input_witness": {
     "complete": true,
     "producer_sha256": "e1977d45087ce469f65272aa5210a9ebcd732cb40deb1cc8b1191c882251bb90",

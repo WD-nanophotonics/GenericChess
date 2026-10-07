@@ -13,6 +13,13 @@ semantic capture and a capture-only variant retain exactly those old values.
 Nonempty atoms can also differ from replaced/augmented semantic movement.
 Correct legality therefore does not establish correct capability inputs.
 
+This concerns the static component, not the whole default evaluator score.
+Its promotion-zone construction also reads legacy empty-forward metadata:
+canonical semantic P currently gets all64 squares classified as its zone.
+The isolated input witness below zeros dynamic terms; it does not validate or
+repair that separate dynamic approximation. Input-source repair should precede
+piece-specific positional patches.
+
 The existing unfamiliar-search report now states this input scope and lists
 semantic moving types without atoms. That list detects a concrete omission;
 an empty list does not certify complete semantic valuation. Frozen outputs,
