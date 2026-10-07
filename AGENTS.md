@@ -107,6 +107,8 @@ inside archives and outgoing history. Authorization persists until revoked;
 explicit project stop suspends publication. Old held-publication records are
 historical status, not an active gate. Review and test; report push failures and
 verify the exact remote SHA. Never claim a local commit was published.
+Use existing generic-chess-local.cmd publish --tests <relevant pytest targets>;
+the repository hook requires this tested entry for sandbox pushes.
 Master promotion is tested fast-forward only; never force-push. Report truthfully.
 Notify only meaningful results, failures or required decisions. Scientific
 completion requires the evidence in LOCAL_MAINLINE.md, not a phase/turn boundary.

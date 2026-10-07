@@ -254,6 +254,11 @@ explicit project stop suspends publication. Previous held statuses describe
 their original segment, not a current approval requirement. Keep tests/diff
 review and exact remote SHA verification; report failures instead of claiming
 publication. No force push or automatic untested master promotion.
+Use generic-chess-local.cmd publish --tests <relevant pytest targets>, which
+fetches, checks fast-forward ancestry, runs the chosen tests, pushes and verifies
+the full remote SHA. Direct git push is rejected by the existing repository
+hook; do not bypass it. A full passing regression may precede the focused checks
+required by this publication entry.
 Recovery/isolation evidence remains REBUILD_20261003.md; never import old
 App databases, credentials, Goals or retired queues. Do not touch other projects.
 
