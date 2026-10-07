@@ -895,6 +895,13 @@ Keep lab capture-order interface failure and replay schema repair. Raw/source
 verified ZIPs and compact data/chess_activity_games_20261007.json preserve all
 conditions/adverse results. No production default or public push; scienceOPEN.
 
+Three fixed reachable Shogi neighbors18/20plies also finish all12orderedTTq
+q0/q2 controls. Six pairs choose identical moves; q2costs3.4-12.1sec against
+q0~1.1-2.0sec, despite some geometric score changes. No generalq2 promotion:
+use it when a concrete horizon failure can change a decision. Neighbor-plan/raw
+scope note, complete counters and source ZIPs are in
+data/shogi_neighbor_cost_20261007.json. Continue concrete failure work.
+
 Earlier route details: docs/archive/continuation_before_20261004/LOCAL_MAINLINE.txt
 (repository-root path; historical only), plus linked research reports. Consult
 specific evidence when relevant; do not reread all historical material at each start.

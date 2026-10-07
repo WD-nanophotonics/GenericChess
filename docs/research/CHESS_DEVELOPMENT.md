@@ -1386,3 +1386,22 @@ Exact raw records, declarations, failed/inert producers and hash-verified ZIPs
 are in ../archive/development_activity_games_20261007. Source/build qualification
 links to the preceding targeted-budget index. Native CPU/cache/leaf costs and
 exact model-token cost remain unavailable. No public push or scientific completion.
+
+
+After the first local evidence commit, a separate fixed reachable-neighbor
+cost check continued the research: pre-drop18, Gold/Rook replies20 from the
+same19-ply source construction. Existing orderedTTq, geometric/unit, q0/q2,
+2ply4096node20sec,12cells; all complete, balanced paths/immutable action parity.
+Six pairs all choose the same move. q0times1.995/1.815sec pre-drop,
+1.091/1.053sec Gold reply,1.096/1.066sec Rook reply; corresponding q2times
+10.414/9.151,7.790/3.495,12.136/3.436sec. Geometric q2 changes scores but
+not chosen actions, unit scores unchanged. This is cost without an observed
+choice gain, so do not enable q2 generally on the basis of its now finishing.
+Keep the supported ordering setting and use q2 for decision-changing failures.
+These neighboring constructed states are not representative game evidence.
+Raw resource_continuation contains the prior-control template description;
+neighbor_plan, declared before the neighbor runs, and actual row labels give
+this experiment's design. The compact index explicitly records that distinction.
+Hash-verified raw/source ZIPs: ../archive/development_shogi_neighbors_20261007.
+Index data/shogi_neighbor_cost_20261007.json SHA256
+abee63f6f8c4a1ed37d0a49693cb8cd30a16dc599310a50d259e4e9dc2a02d15.

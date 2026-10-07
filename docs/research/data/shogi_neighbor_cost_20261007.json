@@ -1,0 +1,288 @@
+{
+  "scope": "Three mechanically chosen neighboring reachable states around the retained19ply checking-drop construction; not representative Shogi games or strength/WDL evidence.",
+  "plan": "Exactly pre-drop18 and Gold d9xd8/Rook h8xd8 replies20; existing orderedTTq/q0/q2, geometric/unit, same2ply4096node20sec per cell.12cells at most240sec plus setup. Preserve partial/adverse, no extension/default/strength claim.",
+  "template_note": "Raw resource_continuation text describes the preceding lexical/ordered control template; neighbor_plan and actual rows are the current experiment design.",
+  "rows": [
+    {
+      "root": "pre_drop18",
+      "qdepth": 0,
+      "policy": "geometric_half",
+      "action": "legacy_029:g21:b8-b9=TP",
+      "score": 81103,
+      "seconds": 1.995044199982658,
+      "nodes": 631,
+      "qnodes": 12,
+      "runtime_pushes": 635,
+      "classification": {
+        "calls": 0,
+        "candidates": 0,
+        "selected": 0,
+        "pushes": 0,
+        "seconds": 0.0
+      }
+    },
+    {
+      "root": "pre_drop18",
+      "qdepth": 0,
+      "policy": "unit",
+      "action": "legacy_029:g21:i3-i4",
+      "score": 150000,
+      "seconds": 1.8153274999931455,
+      "nodes": 382,
+      "qnodes": 8,
+      "runtime_pushes": 384,
+      "classification": {
+        "calls": 0,
+        "candidates": 0,
+        "selected": 0,
+        "pushes": 0,
+        "seconds": 0.0
+      }
+    },
+    {
+      "root": "pre_drop18",
+      "qdepth": 2,
+      "policy": "geometric_half",
+      "action": "legacy_029:g21:b8-b9=TP",
+      "score": 83016,
+      "seconds": 10.414053099928424,
+      "nodes": 634,
+      "qnodes": 1684,
+      "runtime_pushes": 9300,
+      "classification": {
+        "calls": 8553,
+        "candidates": 8553,
+        "selected": 1027,
+        "pushes": 7526,
+        "seconds": 2.2866597997490317
+      }
+    },
+    {
+      "root": "pre_drop18",
+      "qdepth": 2,
+      "policy": "unit",
+      "action": "legacy_029:g21:i3-i4",
+      "score": 150000,
+      "seconds": 9.15052939997986,
+      "nodes": 382,
+      "qnodes": 1159,
+      "runtime_pushes": 7180,
+      "classification": {
+        "calls": 6693,
+        "candidates": 6693,
+        "selected": 761,
+        "pushes": 5932,
+        "seconds": 1.8052590014413
+      }
+    },
+    {
+      "root": "gold_reply20",
+      "qdepth": 0,
+      "policy": "geometric_half",
+      "action": "legacy_029:g21:d7-d8=TP",
+      "score": 32526,
+      "seconds": 1.0910646000411361,
+      "nodes": 292,
+      "qnodes": 8,
+      "runtime_pushes": 294,
+      "classification": {
+        "calls": 0,
+        "candidates": 0,
+        "selected": 0,
+        "pushes": 0,
+        "seconds": 0.0
+      }
+    },
+    {
+      "root": "gold_reply20",
+      "qdepth": 0,
+      "policy": "unit",
+      "action": "legacy_029:g21:d7-d8",
+      "score": 50000,
+      "seconds": 1.0525936000049114,
+      "nodes": 283,
+      "qnodes": 8,
+      "runtime_pushes": 285,
+      "classification": {
+        "calls": 0,
+        "candidates": 0,
+        "selected": 0,
+        "pushes": 0,
+        "seconds": 0.0
+      }
+    },
+    {
+      "root": "gold_reply20",
+      "qdepth": 2,
+      "policy": "geometric_half",
+      "action": "legacy_029:g21:d7-d8=TP",
+      "score": 40938,
+      "seconds": 7.789711500052363,
+      "nodes": 296,
+      "qnodes": 1399,
+      "runtime_pushes": 7072,
+      "classification": {
+        "calls": 6491,
+        "candidates": 6491,
+        "selected": 862,
+        "pushes": 5629,
+        "seconds": 1.7913282974623144
+      }
+    },
+    {
+      "root": "gold_reply20",
+      "qdepth": 2,
+      "policy": "unit",
+      "action": "legacy_029:g21:d7-d8",
+      "score": 50000,
+      "seconds": 3.494890399975702,
+      "nodes": 283,
+      "qnodes": 627,
+      "runtime_pushes": 2855,
+      "classification": {
+        "calls": 2528,
+        "candidates": 2528,
+        "selected": 343,
+        "pushes": 2185,
+        "seconds": 0.6556448971386999
+      }
+    },
+    {
+      "root": "rook_reply20",
+      "qdepth": 0,
+      "policy": "geometric_half",
+      "action": "legacy_029:g21:d7-d8=TP",
+      "score": 132596,
+      "seconds": 1.0963556999340653,
+      "nodes": 294,
+      "qnodes": 8,
+      "runtime_pushes": 296,
+      "classification": {
+        "calls": 0,
+        "candidates": 0,
+        "selected": 0,
+        "pushes": 0,
+        "seconds": 0.0
+      }
+    },
+    {
+      "root": "rook_reply20",
+      "qdepth": 0,
+      "policy": "unit",
+      "action": "legacy_029:g21:d7-d8",
+      "score": 50000,
+      "seconds": 1.0659636000636965,
+      "nodes": 281,
+      "qnodes": 8,
+      "runtime_pushes": 283,
+      "classification": {
+        "calls": 0,
+        "candidates": 0,
+        "selected": 0,
+        "pushes": 0,
+        "seconds": 0.0
+      }
+    },
+    {
+      "root": "rook_reply20",
+      "qdepth": 2,
+      "policy": "geometric_half",
+      "action": "legacy_029:g21:d7-d8=TP",
+      "score": 141008,
+      "seconds": 12.135659900028259,
+      "nodes": 298,
+      "qnodes": 1941,
+      "runtime_pushes": 17058,
+      "classification": {
+        "calls": 16615,
+        "candidates": 16615,
+        "selected": 1542,
+        "pushes": 15073,
+        "seconds": 4.880593603942543
+      }
+    },
+    {
+      "root": "rook_reply20",
+      "qdepth": 2,
+      "policy": "unit",
+      "action": "legacy_029:g21:d7-d8",
+      "score": 50000,
+      "seconds": 3.4362925000023097,
+      "nodes": 281,
+      "qnodes": 624,
+      "runtime_pushes": 2846,
+      "classification": {
+        "calls": 2522,
+        "candidates": 2522,
+        "selected": 343,
+        "pushes": 2179,
+        "seconds": 0.6454369006678462
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "root": "pre_drop18",
+      "policy": "geometric_half",
+      "same_action": true,
+      "q0_seconds": 1.995044199982658,
+      "q2_seconds": 10.414053099928424,
+      "q0_score": 81103,
+      "q2_score": 83016
+    },
+    {
+      "root": "pre_drop18",
+      "policy": "unit",
+      "same_action": true,
+      "q0_seconds": 1.8153274999931455,
+      "q2_seconds": 9.15052939997986,
+      "q0_score": 150000,
+      "q2_score": 150000
+    },
+    {
+      "root": "gold_reply20",
+      "policy": "geometric_half",
+      "same_action": true,
+      "q0_seconds": 1.0910646000411361,
+      "q2_seconds": 7.789711500052363,
+      "q0_score": 32526,
+      "q2_score": 40938
+    },
+    {
+      "root": "gold_reply20",
+      "policy": "unit",
+      "same_action": true,
+      "q0_seconds": 1.0525936000049114,
+      "q2_seconds": 3.494890399975702,
+      "q0_score": 50000,
+      "q2_score": 50000
+    },
+    {
+      "root": "rook_reply20",
+      "policy": "geometric_half",
+      "same_action": true,
+      "q0_seconds": 1.0963556999340653,
+      "q2_seconds": 12.135659900028259,
+      "q0_score": 132596,
+      "q2_score": 141008
+    },
+    {
+      "root": "rook_reply20",
+      "policy": "unit",
+      "same_action": true,
+      "q0_seconds": 1.0659636000636965,
+      "q2_seconds": 3.4362925000023097,
+      "q0_score": 50000,
+      "q2_score": 50000
+    }
+  ],
+  "decision": "Existing orderedTTq completes all12at same2ply4096node20sec. Six q0/q2 pairs select same action, so no defaultq2 promotion or observed decision gain here; retain q2 only for specific useful horizon questions.",
+  "raw_sha256": "c44ba143da5e409bb4b466a6a25cb090cd6f9450f2f38998286cd2849476cdc7",
+  "producer_sha256": "3fbab85f8a68e6ead7b6e407a8faff34deee1868ed81ecd0966fb22c5d8bb723",
+  "raw_archive": "docs/archive/development_shogi_neighbors_20261007/raw.zip",
+  "sources_archive": "docs/archive/development_shogi_neighbors_20261007/sources.zip",
+  "raw_zip_sha256": "72e938f09f37c4869eff83c3e9ee19c91122ae5560f4c8ec095c4b6efdf03b0a",
+  "sources_zip_sha256": "0b4b77b79e0231c78ba7d51d3b356297606c4ef1b014c908e461b28cbb60913e",
+  "prior_cost_control": "docs/research/data/chess_activity_games_20261007.json",
+  "production_changed": false
+}
