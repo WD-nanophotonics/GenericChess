@@ -34,6 +34,7 @@ conditions stay visible. Development budget is justified by information per cost
 | Native old half pseudo hanging-risk plus coverage |36cells:4W1L7Uactivity,1W11Lclassical,11L1Ustrong reference | data/chess_exchange_20261007.json |
 | One fixed supported reference option2400, SinglePV1 |exchange4W1L7U;activity6W1L5U;24streams, no established candidate advantage | data/chess_feedback_20261007.json |
 | Same half-risk leaf; only8fast SEE arithmetic price reads changed |12direct:2W2L8U;geometric2W2U,linear4U,unit2L2U; no established improvement | data/chess_see_price_20261007.json |
+| Arithmetic-only repair vs fresh original at fixed2400 |first24:7W0L5U vs5W2L5U; new6ply-prefix24:8W2L2U vs10W1L1U; signal reverses | data/chess_see_feedback_20261007.json; data/chess_see_opening_20261007.json |
 
 Classical is a diagnostic benchmark, not the rule-derived candidate. Native human
 SEE/pruning thresholds remain a disclosed coupling in material/coverage pilots.
@@ -66,6 +67,21 @@ SEE claim. Both complete evidence packs retain all unfavorable/unfinished cells.
 Shogi reachable neighbor q0/q2 often chooses identically at3.3-12x cost, while
 some old checked controls differ. Keep targeted q2 optional; Chess/Shogi semantic
 boundaries and Xiangqi human holdout remain intact. Science remains OPEN.
+
+## Optional Chess match adjudication
+
+For new play/play-uci batches explicitly declare --claim-chess-draws and, when
+needed, --uci-python <existing python-chess import root>. Omission retains the
+old canonical Core fixture. The option uses full initial/prefix/played history,
+automatic outcomes first, then immediate legal claims before search. A prospective
+claim saves its legal witness without playing it. Automatic terminal detection
+also runs after the last allowed halfmove; mate precedes the75move rule.
+Match decisions and Core final_state are separate, with library version/hash.
+Library insufficient-material detection is not proof of every dead position.
+See [FIDE9.2/9.3/9.6](https://handbook.fide.com/chapter/E012023).
+Do not retrospectively rescore old datasets. The latest48streams had no supported
+automatic/claim draw, but the fixture's repetition100000/max1000 is not full
+FIDE WDL. Price/search defaults remain unchanged; no stable SEE repair advantage.
 
 ## Historical detail
 

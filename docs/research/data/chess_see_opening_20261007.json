@@ -1,0 +1,1256 @@
+{
+  "scope": "Fixed2400option exposed development feedback; native price/original arithmetic-only SEE contrast at identical conditions. Option label not measured Elo, limited play can be stochastic. No human/exposed-label fitting, tier fishing, coefficient/default/Elo/holdout claim.",
+  "parent_sha": "9c1c9d671c0092ada0f622ece850f2538e571eb3",
+  "declaration": {
+    "state": "DECLARED_NOT_RUN",
+    "question": "Is the exposed arithmetic-only SEE feedback signal sensitive to two new6ply prefixes?",
+    "proposed_setting": 2400,
+    "rationale": "One round-number point between prior1800 and full strength, chosen before new results, not fitted. Option label is not measured Elo. No tier/weight search.",
+    "design": "Separate prospectively declared24cells:price12/original12, same fixed2400/table/color/1sec/SinglePV/Threads1/Hash16/NNUEfalse/160ply resources. Only prefixes change, full history retained. Original24 stay frozen.",
+    "decision": "Complete all24 cells once. Neutral/adverse results stay visible; no selective extension, price selection, extra tier or coefficient sweep. Assess whether signal persists or weakens across starts; no default promotion from this batch.",
+    "cost": "At most1920local+1920reference fuse seconds across24cells, plus Core/startup/logging; prior fixed2400 measured about28minutes cohort wall. Bounded sequential, interruptible per action; no extra workers. Both methods use same settings, never candidate-only extension.",
+    "opponent_setting": 2400,
+    "option_range": [
+      1320,
+      3190
+    ],
+    "options_snapshot_sha256": "2fe9984d139e42beabf7acefbebda05717909fca1c4f6ed78d736b88d98073e9",
+    "reference_sha256": "55aa40c857de30b79dbe4f8e4c335ee2b23815cf2f100a6630d54761fcad3b85",
+    "config_sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0",
+    "adapter_sha256": "3f23f85996f60f42e4aab3f9c704331fa4214483c6956d55ba0f9669ea7047d1",
+    "suite_sha256": "2b9a6f2a8d2844fb9bef9fa03c689d1d50d40e8ab99d89cc82c8658cd0b47925",
+    "producer_sha256": "a543590b0384c84ecbbcd30ec47b8886bae3fcad370da30b9308616d945ea6b3",
+    "binaries": {
+      "price": {
+        "path": ".local_agent/see-price-20261007/fairy-price.exe",
+        "sha256": "4bf528024876079474f1ee74b9b024652e0020c6274b61f9f9632a5119629b64"
+      },
+      "original": {
+        "path": ".local_agent/see-price-20261007/fairy-original.exe",
+        "sha256": "4d94a3ba093838dc421f018b3c10d1b203c017b8bfd97e5e0dfafc70f6716e2c"
+      }
+    },
+    "advisor_request": "GC-SLACK-20261007-171457-16ba3473",
+    "advisor_reply_sha256": "6c4e29f536ce44570183a95614f08629f27de008f5f08f72a9fd48d46ce613f4",
+    "replay_sha256": "3dba5e42fa0c9f0ad6cff28914e23a410a225012a0514a2a8212abc2ef80b5ee",
+    "basis": "First24 price7W0L5U/original5W2L5U signal is small and stochastic, no default or strength claim. Earlier unit loss root sameg3f4 in both and finite reference; no isolated cause. Check new starts rather than tune prices.",
+    "public_push": "Standing2026-10-07 authorization for generated evidence; next batch is not executed.",
+    "parent_sha": "9c1c9d671c0092ada0f622ece850f2538e571eb3"
+  },
+  "groups": {
+    "price": {
+      "methods": {
+        "geometric_half": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 0,
+          "unfinished": 0
+        },
+        "linear_mixture": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 0,
+          "unfinished": 0
+        },
+        "unit": {
+          "wins": 0,
+          "losses": 2,
+          "draws": 0,
+          "unfinished": 2
+        }
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "open-file-e-bishop",
+          "table": "geometric_half",
+          "candidate_color": 0,
+          "opponent_setting": 2400,
+          "plies": 79,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "price": {
+              "calls": 40,
+              "wall_seconds": 38.10183810000308,
+              "reported_nodes": 102202836
+            },
+            "reference": {
+              "calls": 39,
+              "wall_seconds": 2.298854799475521,
+              "reported_nodes": 1896126
+            }
+          }
+        },
+        {
+          "index": 1,
+          "id": "open-file-e-bishop",
+          "table": "geometric_half",
+          "candidate_color": 1,
+          "opponent_setting": 2400,
+          "plies": 64,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 32,
+              "wall_seconds": 1.53252620017156,
+              "reported_nodes": 1553248
+            },
+            "price": {
+              "calls": 32,
+              "wall_seconds": 29.906413900200278,
+              "reported_nodes": 82494089
+            }
+          }
+        },
+        {
+          "index": 2,
+          "id": "open-file-e-bishop",
+          "table": "linear_mixture",
+          "candidate_color": 0,
+          "opponent_setting": 2400,
+          "plies": 129,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "price": {
+              "calls": 65,
+              "wall_seconds": 62.19524830044247,
+              "reported_nodes": 168545535
+            },
+            "reference": {
+              "calls": 64,
+              "wall_seconds": 4.276635300368071,
+              "reported_nodes": 3152355
+            }
+          }
+        },
+        {
+          "index": 3,
+          "id": "open-file-e-bishop",
+          "table": "linear_mixture",
+          "candidate_color": 1,
+          "opponent_setting": 2400,
+          "plies": 50,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 25,
+              "wall_seconds": 0.7354437003377825,
+              "reported_nodes": 1194585
+            },
+            "price": {
+              "calls": 25,
+              "wall_seconds": 23.070148000260815,
+              "reported_nodes": 69979102
+            }
+          }
+        },
+        {
+          "index": 4,
+          "id": "open-file-e-bishop",
+          "table": "unit",
+          "candidate_color": 0,
+          "opponent_setting": 2400,
+          "plies": 114,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "price": {
+              "calls": 57,
+              "wall_seconds": 53.15577799989842,
+              "reported_nodes": 184471089
+            },
+            "reference": {
+              "calls": 57,
+              "wall_seconds": 2.4951127995736897,
+              "reported_nodes": 2851698
+            }
+          }
+        },
+        {
+          "index": 5,
+          "id": "open-file-e-bishop",
+          "table": "unit",
+          "candidate_color": 1,
+          "opponent_setting": 2400,
+          "plies": 160,
+          "prefix_plies": 6,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "cost": {
+            "reference": {
+              "calls": 80,
+              "wall_seconds": 5.306109401630238,
+              "reported_nodes": 4002479
+            },
+            "price": {
+              "calls": 80,
+              "wall_seconds": 80.11682280036621,
+              "reported_nodes": 265259074
+            }
+          }
+        },
+        {
+          "index": 6,
+          "id": "central-d-knight",
+          "table": "geometric_half",
+          "candidate_color": 0,
+          "opponent_setting": 2400,
+          "plies": 119,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "price": {
+              "calls": 60,
+              "wall_seconds": 56.234869501087815,
+              "reported_nodes": 161283713
+            },
+            "reference": {
+              "calls": 59,
+              "wall_seconds": 3.441988999489695,
+              "reported_nodes": 2859557
+            }
+          }
+        },
+        {
+          "index": 7,
+          "id": "central-d-knight",
+          "table": "geometric_half",
+          "candidate_color": 1,
+          "opponent_setting": 2400,
+          "plies": 104,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 52,
+              "wall_seconds": 3.0882283998653293,
+              "reported_nodes": 2527105
+            },
+            "price": {
+              "calls": 52,
+              "wall_seconds": 48.40883560082875,
+              "reported_nodes": 131596082
+            }
+          }
+        },
+        {
+          "index": 8,
+          "id": "central-d-knight",
+          "table": "linear_mixture",
+          "candidate_color": 0,
+          "opponent_setting": 2400,
+          "plies": 101,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "price": {
+              "calls": 51,
+              "wall_seconds": 49.109307900071144,
+              "reported_nodes": 130963883
+            },
+            "reference": {
+              "calls": 50,
+              "wall_seconds": 2.90086039993912,
+              "reported_nodes": 2448241
+            }
+          }
+        },
+        {
+          "index": 9,
+          "id": "central-d-knight",
+          "table": "linear_mixture",
+          "candidate_color": 1,
+          "opponent_setting": 2400,
+          "plies": 108,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 54,
+              "wall_seconds": 3.1317116995342076,
+              "reported_nodes": 2644782
+            },
+            "price": {
+              "calls": 54,
+              "wall_seconds": 51.447190600214526,
+              "reported_nodes": 155174260
+            }
+          }
+        },
+        {
+          "index": 10,
+          "id": "central-d-knight",
+          "table": "unit",
+          "candidate_color": 0,
+          "opponent_setting": 2400,
+          "plies": 160,
+          "prefix_plies": 6,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "cost": {
+            "price": {
+              "calls": 80,
+              "wall_seconds": 80.17420990113169,
+              "reported_nodes": 278036769
+            },
+            "reference": {
+              "calls": 80,
+              "wall_seconds": 4.740185799077153,
+              "reported_nodes": 4002724
+            }
+          }
+        },
+        {
+          "index": 11,
+          "id": "central-d-knight",
+          "table": "unit",
+          "candidate_color": 1,
+          "opponent_setting": 2400,
+          "plies": 129,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 65,
+              "wall_seconds": 2.802559400210157,
+              "reported_nodes": 3252316
+            },
+            "price": {
+              "calls": 64,
+              "wall_seconds": 59.3356790994294,
+              "reported_nodes": 212546692
+            }
+          }
+        }
+      ],
+      "wall_seconds": 683.9453769000247,
+      "recording_cost_before_final_save": {
+        "active": {
+          "writes": 1317,
+          "bytes": 43521748,
+          "seconds": 4.726200898177922
+        },
+        "cohort": {
+          "writes": 13,
+          "bytes": 7674452,
+          "seconds": 0.20553699973970652
+        }
+      },
+      "replay": {
+        "streams": 12,
+        "played_plies": 1317,
+        "prefix_plies": 72,
+        "mismatches": 0
+      }
+    },
+    "original": {
+      "methods": {
+        "geometric_half": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 0,
+          "unfinished": 0
+        },
+        "linear_mixture": {
+          "wins": 3,
+          "losses": 0,
+          "draws": 0,
+          "unfinished": 1
+        },
+        "unit": {
+          "wins": 3,
+          "losses": 1,
+          "draws": 0,
+          "unfinished": 0
+        }
+      },
+      "cells": [
+        {
+          "index": 0,
+          "id": "open-file-e-bishop",
+          "table": "geometric_half",
+          "candidate_color": 0,
+          "opponent_setting": 2400,
+          "plies": 45,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "original": {
+              "calls": 23,
+              "wall_seconds": 21.049913599388674,
+              "reported_nodes": 58078388
+            },
+            "reference": {
+              "calls": 22,
+              "wall_seconds": 0.8622078003827482,
+              "reported_nodes": 1035568
+            }
+          }
+        },
+        {
+          "index": 1,
+          "id": "open-file-e-bishop",
+          "table": "geometric_half",
+          "candidate_color": 1,
+          "opponent_setting": 2400,
+          "plies": 86,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 43,
+              "wall_seconds": 2.1451080997940153,
+              "reported_nodes": 2092828
+            },
+            "original": {
+              "calls": 43,
+              "wall_seconds": 39.128050200408325,
+              "reported_nodes": 107012688
+            }
+          }
+        },
+        {
+          "index": 2,
+          "id": "open-file-e-bishop",
+          "table": "linear_mixture",
+          "candidate_color": 0,
+          "opponent_setting": 2400,
+          "plies": 160,
+          "prefix_plies": 6,
+          "end": "ply_limit",
+          "winner": null,
+          "finished": false,
+          "cost": {
+            "original": {
+              "calls": 80,
+              "wall_seconds": 80.153958898969,
+              "reported_nodes": 215726813
+            },
+            "reference": {
+              "calls": 80,
+              "wall_seconds": 5.297840102110058,
+              "reported_nodes": 4002138
+            }
+          }
+        },
+        {
+          "index": 3,
+          "id": "open-file-e-bishop",
+          "table": "linear_mixture",
+          "candidate_color": 1,
+          "opponent_setting": 2400,
+          "plies": 92,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 46,
+              "wall_seconds": 2.3498846001457423,
+              "reported_nodes": 2253647
+            },
+            "original": {
+              "calls": 46,
+              "wall_seconds": 42.68409669958055,
+              "reported_nodes": 126254604
+            }
+          }
+        },
+        {
+          "index": 4,
+          "id": "open-file-e-bishop",
+          "table": "unit",
+          "candidate_color": 0,
+          "opponent_setting": 2400,
+          "plies": 105,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "original": {
+              "calls": 53,
+              "wall_seconds": 51.20694970083423,
+              "reported_nodes": 141325000
+            },
+            "reference": {
+              "calls": 52,
+              "wall_seconds": 2.8924517007544637,
+              "reported_nodes": 2566160
+            }
+          }
+        },
+        {
+          "index": 5,
+          "id": "open-file-e-bishop",
+          "table": "unit",
+          "candidate_color": 1,
+          "opponent_setting": 2400,
+          "plies": 133,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 67,
+              "wall_seconds": 2.9272373996209353,
+              "reported_nodes": 3352044
+            },
+            "original": {
+              "calls": 66,
+              "wall_seconds": 59.156560498289764,
+              "reported_nodes": 191860878
+            }
+          }
+        },
+        {
+          "index": 6,
+          "id": "central-d-knight",
+          "table": "geometric_half",
+          "candidate_color": 0,
+          "opponent_setting": 2400,
+          "plies": 87,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "original": {
+              "calls": 44,
+              "wall_seconds": 41.12519710045308,
+              "reported_nodes": 107965478
+            },
+            "reference": {
+              "calls": 43,
+              "wall_seconds": 2.407871699426323,
+              "reported_nodes": 2079976
+            }
+          }
+        },
+        {
+          "index": 7,
+          "id": "central-d-knight",
+          "table": "geometric_half",
+          "candidate_color": 1,
+          "opponent_setting": 2400,
+          "plies": 116,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 58,
+              "wall_seconds": 3.239996800897643,
+              "reported_nodes": 2810127
+            },
+            "original": {
+              "calls": 58,
+              "wall_seconds": 54.89217049814761,
+              "reported_nodes": 145836165
+            }
+          }
+        },
+        {
+          "index": 8,
+          "id": "central-d-knight",
+          "table": "linear_mixture",
+          "candidate_color": 0,
+          "opponent_setting": 2400,
+          "plies": 137,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "original": {
+              "calls": 69,
+              "wall_seconds": 67.70716390199959,
+              "reported_nodes": 230366855
+            },
+            "reference": {
+              "calls": 68,
+              "wall_seconds": 3.3117877994664013,
+              "reported_nodes": 3394051
+            }
+          }
+        },
+        {
+          "index": 9,
+          "id": "central-d-knight",
+          "table": "linear_mixture",
+          "candidate_color": 1,
+          "opponent_setting": 2400,
+          "plies": 150,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 75,
+              "wall_seconds": 4.833177000517026,
+              "reported_nodes": 3670178
+            },
+            "original": {
+              "calls": 75,
+              "wall_seconds": 72.25040629971772,
+              "reported_nodes": 215517895
+            }
+          }
+        },
+        {
+          "index": 10,
+          "id": "central-d-knight",
+          "table": "unit",
+          "candidate_color": 0,
+          "opponent_setting": 2400,
+          "plies": 115,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 0,
+          "finished": true,
+          "cost": {
+            "original": {
+              "calls": 58,
+              "wall_seconds": 54.80465780128725,
+              "reported_nodes": 176274309
+            },
+            "reference": {
+              "calls": 57,
+              "wall_seconds": 3.242278699297458,
+              "reported_nodes": 2804207
+            }
+          }
+        },
+        {
+          "index": 11,
+          "id": "central-d-knight",
+          "table": "unit",
+          "candidate_color": 1,
+          "opponent_setting": 2400,
+          "plies": 58,
+          "prefix_plies": 6,
+          "end": "checkmate",
+          "winner": 1,
+          "finished": true,
+          "cost": {
+            "reference": {
+              "calls": 29,
+              "wall_seconds": 1.4652012002188712,
+              "reported_nodes": 1345567
+            },
+            "original": {
+              "calls": 29,
+              "wall_seconds": 25.99536820058711,
+              "reported_nodes": 74977555
+            }
+          }
+        }
+      ],
+      "wall_seconds": 660.500900000101,
+      "recording_cost_before_final_save": {
+        "active": {
+          "writes": 1284,
+          "bytes": 42954082,
+          "seconds": 4.7923634017352015
+        },
+        "cohort": {
+          "writes": 13,
+          "bytes": 7981880,
+          "seconds": 0.21206759987398982
+        }
+      },
+      "replay": {
+        "streams": 12,
+        "played_plies": 1284,
+        "prefix_plies": 72,
+        "mismatches": 0
+      }
+    }
+  },
+  "totals": {
+    "price": {
+      "wins": 8,
+      "losses": 2,
+      "draws": 0,
+      "unfinished": 2
+    },
+    "original": {
+      "wins": 10,
+      "losses": 1,
+      "draws": 0,
+      "unfinished": 1
+    }
+  },
+  "paired_cells": [
+    {
+      "id": "open-file-e-bishop",
+      "table": "geometric_half",
+      "candidate_color": 0,
+      "price": "win",
+      "original": "win",
+      "price_plies": 79,
+      "original_plies": 45
+    },
+    {
+      "id": "open-file-e-bishop",
+      "table": "geometric_half",
+      "candidate_color": 1,
+      "price": "win",
+      "original": "win",
+      "price_plies": 64,
+      "original_plies": 86
+    },
+    {
+      "id": "open-file-e-bishop",
+      "table": "linear_mixture",
+      "candidate_color": 0,
+      "price": "win",
+      "original": "unfinished",
+      "price_plies": 129,
+      "original_plies": 160
+    },
+    {
+      "id": "open-file-e-bishop",
+      "table": "linear_mixture",
+      "candidate_color": 1,
+      "price": "win",
+      "original": "win",
+      "price_plies": 50,
+      "original_plies": 92
+    },
+    {
+      "id": "open-file-e-bishop",
+      "table": "unit",
+      "candidate_color": 0,
+      "price": "loss",
+      "original": "win",
+      "price_plies": 114,
+      "original_plies": 105
+    },
+    {
+      "id": "open-file-e-bishop",
+      "table": "unit",
+      "candidate_color": 1,
+      "price": "unfinished",
+      "original": "loss",
+      "price_plies": 160,
+      "original_plies": 133
+    },
+    {
+      "id": "central-d-knight",
+      "table": "geometric_half",
+      "candidate_color": 0,
+      "price": "win",
+      "original": "win",
+      "price_plies": 119,
+      "original_plies": 87
+    },
+    {
+      "id": "central-d-knight",
+      "table": "geometric_half",
+      "candidate_color": 1,
+      "price": "win",
+      "original": "win",
+      "price_plies": 104,
+      "original_plies": 116
+    },
+    {
+      "id": "central-d-knight",
+      "table": "linear_mixture",
+      "candidate_color": 0,
+      "price": "win",
+      "original": "win",
+      "price_plies": 101,
+      "original_plies": 137
+    },
+    {
+      "id": "central-d-knight",
+      "table": "linear_mixture",
+      "candidate_color": 1,
+      "price": "win",
+      "original": "win",
+      "price_plies": 108,
+      "original_plies": 150
+    },
+    {
+      "id": "central-d-knight",
+      "table": "unit",
+      "candidate_color": 0,
+      "price": "unfinished",
+      "original": "win",
+      "price_plies": 160,
+      "original_plies": 115
+    },
+    {
+      "id": "central-d-knight",
+      "table": "unit",
+      "candidate_color": 1,
+      "price": "loss",
+      "original": "win",
+      "price_plies": 129,
+      "original_plies": 58
+    }
+  ],
+  "raw_entries": {
+    "declaration.json": {
+      "bytes": 2747,
+      "sha256": "98e47bf322febc231bf62d29b3cf76b428b882e16e5ae9f25dd832bcb3ccf0e9"
+    },
+    "suite.json": {
+      "bytes": 858,
+      "sha256": "2b9a6f2a8d2844fb9bef9fa03c689d1d50d40e8ab99d89cc82c8658cd0b47925"
+    },
+    "draw-audit.json": {
+      "bytes": 11507,
+      "sha256": "1b407e09dcd5bd87305a69a0f2ee705bb439219d1bed3663a8fb86afc22b0353"
+    },
+    "price.json": {
+      "bytes": 1279927,
+      "sha256": "f0bad6b29551fbe080bdba1029333babbd6afb3f942511fe53a8d5af521de4ba"
+    },
+    "price-replay.json": {
+      "bytes": 6975,
+      "sha256": "3d6008b1d822bc9fc929dfd5f4312e848fb9aff576492a44f6fc9f4022be084b"
+    },
+    "original.json": {
+      "bytes": 1264366,
+      "sha256": "9eac968b76b0521f5e9ffea36d1f47f7fc711d484b74dc0599778b081d6465ea"
+    },
+    "original-replay.json": {
+      "bytes": 7007,
+      "sha256": "8373a2807eeba1b7581428deab1b350d3d41daca1d44b600a0ac1d57b0d471f8"
+    }
+  },
+  "sources": {
+    "see-opening-20261007/games.py": {
+      "bytes": 3410,
+      "sha256": "a543590b0384c84ecbbcd30ec47b8886bae3fcad370da30b9308616d945ea6b3"
+    },
+    "see-opening-20261007/replay.py": {
+      "bytes": 2572,
+      "sha256": "3dba5e42fa0c9f0ad6cff28914e23a410a225012a0514a2a8212abc2ef80b5ee"
+    },
+    "see-opening-20261007/collect.py": {
+      "bytes": 5240,
+      "sha256": "fdfc67ac0667f432859725e1cdb215e5b8b656842a9fece9c4f78f21a9c0cabf"
+    },
+    "see-opening-20261007/draw-audit.py": {
+      "bytes": 3102,
+      "sha256": "17411eeaee3a17ecfe9d0bc278be04925194bb0b85183082901aa1cfaadf2d2f"
+    },
+    "shared-chess_development.py": {
+      "bytes": 42701,
+      "sha256": "3f23f85996f60f42e4aab3f9c704331fa4214483c6956d55ba0f9669ea7047d1"
+    },
+    "shared-research_record.py": {
+      "bytes": 1869,
+      "sha256": "4d026c4c30859ff4c7b9ad02e66378eb15a1f771a6b1fd67deab54e3e54d597b"
+    },
+    "shared-western_chess.py": {
+      "bytes": 12135,
+      "sha256": "2b3bc415763ce209264504c751fa3a94d66de016262da0cd91f6c82172d3ae2a"
+    },
+    "pinned-position.cpp": {
+      "bytes": 122811,
+      "sha256": "16f28fecb31f9d68fcd6010e3d231aea9c08182db10edf66ed232964ecc684fc"
+    },
+    "upstream-Copying.txt": {
+      "bytes": 35821,
+      "sha256": "0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b"
+    },
+    "material-variants.ini": {
+      "bytes": 355,
+      "sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0"
+    },
+    "suite.json": {
+      "bytes": 858,
+      "sha256": "2b9a6f2a8d2844fb9bef9fa03c689d1d50d40e8ab99d89cc82c8658cd0b47925"
+    }
+  },
+  "raw_archive": "docs/archive/development_see_opening_20261007/raw.zip",
+  "sources_archive": "docs/archive/development_see_opening_20261007/sources.zip",
+  "raw_zip_sha256": "b02d583e89f6e7ce46429a0916c78b4a57748cf072765069325d3494cfdcaf20",
+  "sources_zip_sha256": "8a848bf2855c245959b756bcb6b358144fd3040d8ef1f00b636c3b2d2a35eb98",
+  "production_changes": "None; two isolated binaries, same half-risk leaf/search/defaults. SEE LVA ordering and thresholds unchanged; not a generic SEE repair",
+  "public_push": "Standing user authorization; actual publication verified separately after commit and push",
+  "draw_audit": {
+    "complete": true,
+    "scope": "Post-hoc diagnostics of completed frozen streams, not rescored WDL. Library automatic draw and hypothetical first available draw claim are separate; no actual claim was issued. Insufficient-material detector is not an exhaustive proof of all dead positions.",
+    "fide_source": "https://handbook.fide.com/chapter/E012023",
+    "library_sha256": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+    "core_rules_sha256": "2b3bc415763ce209264504c751fa3a94d66de016262da0cd91f6c82172d3ae2a",
+    "core_contract": {
+      "repetition_limit": 100000,
+      "max_ply": 1000,
+      "stalemate_result": "draw"
+    },
+    "groups": {
+      "price": {
+        "source_sha256": "f0bad6b29551fbe080bdba1029333babbd6afb3f942511fe53a8d5af521de4ba",
+        "games": [
+          {
+            "index": 0,
+            "id": "open-file-e-bishop",
+            "table": "geometric_half",
+            "candidate_color": 0,
+            "fixture_end": "checkmate",
+            "fixture_winner": 0,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 1,
+            "id": "open-file-e-bishop",
+            "table": "geometric_half",
+            "candidate_color": 1,
+            "fixture_end": "checkmate",
+            "fixture_winner": 1,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 2,
+            "id": "open-file-e-bishop",
+            "table": "linear_mixture",
+            "candidate_color": 0,
+            "fixture_end": "checkmate",
+            "fixture_winner": 0,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 3,
+            "id": "open-file-e-bishop",
+            "table": "linear_mixture",
+            "candidate_color": 1,
+            "fixture_end": "checkmate",
+            "fixture_winner": 1,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 4,
+            "id": "open-file-e-bishop",
+            "table": "unit",
+            "candidate_color": 0,
+            "fixture_end": "checkmate",
+            "fixture_winner": 1,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 5,
+            "id": "open-file-e-bishop",
+            "table": "unit",
+            "candidate_color": 1,
+            "fixture_end": "ply_limit",
+            "fixture_winner": null,
+            "fixture_finished": false,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 6,
+            "id": "central-d-knight",
+            "table": "geometric_half",
+            "candidate_color": 0,
+            "fixture_end": "checkmate",
+            "fixture_winner": 0,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 7,
+            "id": "central-d-knight",
+            "table": "geometric_half",
+            "candidate_color": 1,
+            "fixture_end": "checkmate",
+            "fixture_winner": 1,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 8,
+            "id": "central-d-knight",
+            "table": "linear_mixture",
+            "candidate_color": 0,
+            "fixture_end": "checkmate",
+            "fixture_winner": 0,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 9,
+            "id": "central-d-knight",
+            "table": "linear_mixture",
+            "candidate_color": 1,
+            "fixture_end": "checkmate",
+            "fixture_winner": 1,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 10,
+            "id": "central-d-knight",
+            "table": "unit",
+            "candidate_color": 0,
+            "fixture_end": "ply_limit",
+            "fixture_winner": null,
+            "fixture_finished": false,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 11,
+            "id": "central-d-knight",
+            "table": "unit",
+            "candidate_color": 1,
+            "fixture_end": "checkmate",
+            "fixture_winner": 0,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          }
+        ],
+        "automatic_draw_streams": 0,
+        "claim_available_streams": 0,
+        "finished_after_auto": 0,
+        "finished_after_claim": 0
+      },
+      "original": {
+        "source_sha256": "9eac968b76b0521f5e9ffea36d1f47f7fc711d484b74dc0599778b081d6465ea",
+        "games": [
+          {
+            "index": 0,
+            "id": "open-file-e-bishop",
+            "table": "geometric_half",
+            "candidate_color": 0,
+            "fixture_end": "checkmate",
+            "fixture_winner": 0,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 1,
+            "id": "open-file-e-bishop",
+            "table": "geometric_half",
+            "candidate_color": 1,
+            "fixture_end": "checkmate",
+            "fixture_winner": 1,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 2,
+            "id": "open-file-e-bishop",
+            "table": "linear_mixture",
+            "candidate_color": 0,
+            "fixture_end": "ply_limit",
+            "fixture_winner": null,
+            "fixture_finished": false,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 3,
+            "id": "open-file-e-bishop",
+            "table": "linear_mixture",
+            "candidate_color": 1,
+            "fixture_end": "checkmate",
+            "fixture_winner": 1,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 4,
+            "id": "open-file-e-bishop",
+            "table": "unit",
+            "candidate_color": 0,
+            "fixture_end": "checkmate",
+            "fixture_winner": 0,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 5,
+            "id": "open-file-e-bishop",
+            "table": "unit",
+            "candidate_color": 1,
+            "fixture_end": "checkmate",
+            "fixture_winner": 0,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 6,
+            "id": "central-d-knight",
+            "table": "geometric_half",
+            "candidate_color": 0,
+            "fixture_end": "checkmate",
+            "fixture_winner": 0,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 7,
+            "id": "central-d-knight",
+            "table": "geometric_half",
+            "candidate_color": 1,
+            "fixture_end": "checkmate",
+            "fixture_winner": 1,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 8,
+            "id": "central-d-knight",
+            "table": "linear_mixture",
+            "candidate_color": 0,
+            "fixture_end": "checkmate",
+            "fixture_winner": 0,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 9,
+            "id": "central-d-knight",
+            "table": "linear_mixture",
+            "candidate_color": 1,
+            "fixture_end": "checkmate",
+            "fixture_winner": 1,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 10,
+            "id": "central-d-knight",
+            "table": "unit",
+            "candidate_color": 0,
+            "fixture_end": "checkmate",
+            "fixture_winner": 0,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          },
+          {
+            "index": 11,
+            "id": "central-d-knight",
+            "table": "unit",
+            "candidate_color": 1,
+            "fixture_end": "checkmate",
+            "fixture_winner": 1,
+            "fixture_finished": true,
+            "first_supported_automatic_draw": null,
+            "first_hypothetical_claim": null,
+            "continued_after_auto": false,
+            "continued_after_claim": false
+          }
+        ],
+        "automatic_draw_streams": 0,
+        "claim_available_streams": 0,
+        "finished_after_auto": 0,
+        "finished_after_claim": 0
+      }
+    },
+    "wall_seconds": 0.3250325999688357
+  },
+  "interpretation": "Separate24cells at two new6ply prefixes, all outcomes retained. Conditions otherwise match prior24; stochastic exposed development feedback, no tier/weight/default/strength/Elo/holdout claim. Draw diagnostics do not retrospectively alter fixture outcomes; future policy is separate."
+}

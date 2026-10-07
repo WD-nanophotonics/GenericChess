@@ -224,8 +224,9 @@ def comparison_summary(cases):
                 interpretation='Reference-answer agreement, not proof of tactical error, Elo or generic strength')
 
 
-def play_game(fen, compiled, white, black, limits, max_plies, save_move=None, *, provider=None, ordering=False, use_tt=False, dynamic=False, external=None, tuning=None, capture_risk=False, local_external=None, prefix=()):
-    players = tuple(p for p in (external, local_external) if p is not None)
+def play_game(fen, compiled, white, black, limits, max_plies, save_move=None, *, provider=None, ordering=False, use_tt=False, dynamic=False, external=None, tuning=None, capture_risk=False, local_external=None, prefix=(), claim_chess_draws=False):
+    adjudicator = ChessAdjudicator(fen) if claim_chess_draws else None
+    players = tuple(p for p in (external, local_external, adjudicator) if p is not None)
     state, witnesses = replay_prefix(fen, compiled, prefix, players)
     # These are our actual Core-produced positions, as in GameSession. Retain
     # them across played moves; never replace history with a fresh FEN snapshot.
@@ -233,8 +234,20 @@ def play_game(fen, compiled, white, black, limits, max_plies, save_move=None, *,
     moves = []
     result = dict(white=white, black=black, initial_fen=fen, moves=moves,
                   opening_uci=list(prefix), end='ply_limit', winner=None, finished=False)
+    if adjudicator is not None:
+        result['chess_adjudication_policy'] = 'automatic_then_immediate_claim'
+        result['chess_adjudication_library'] = adjudicator.library
+    def adjudicate(*, claims=True):
+        decision = adjudicator.decision(claims=claims) if adjudicator is not None else None
+        if decision is None:
+            return False
+        result.update(end='chess_'+decision['reason'].lower(), winner=decision['winner'],
+                      finished=True, adjudication=dict(ply=state.ply_count, **decision))
+        return True
     for _ in range(max_plies):
         if state.terminal_status.is_terminal:
+            break
+        if adjudicate():
             break
         legal = set(iter_legal_actions(state, compiled))
         if local_external is not None:
@@ -269,6 +282,11 @@ def play_game(fen, compiled, white, black, limits, max_plies, save_move=None, *,
             raise ValueError('stale terminal after played move')
         if save_move:
             save_move(result)
+        if adjudicate(claims=False):
+            break
+    # Also adjudicate a prefix/zero-move run and the final permitted halfmove.
+    if not state.terminal_status.is_terminal and not result['finished']:
+        adjudicate(claims=False)
     if state.terminal_status.is_terminal:
         result.update(end=state.terminal_status.status.value, winner=state.terminal_status.winner, finished=True)
     result['final_state'] = record_value(state)
@@ -331,6 +349,48 @@ class UciOpponent:
         local_ep = None if ep is None else ep[1]*8+ep[0]
         if local_ep != self.board.ep_square:
             raise ValueError('external/local EP mismatch')
+
+
+class ChessAdjudicator(UciOpponent):
+    """Opt-in Chess match policy, separate from canonical Core termination.
+
+    Library dead-material detection is not exhaustive dead-position proof.
+    Prospective claims retain a legal witness; the witness is never played.
+    """
+    def __init__(self, fen):
+        super().__init__(None, fen, 1)
+        import chess
+        self.library = dict(version=chess.__version__,
+                            sha256=hashlib.sha256(Path(chess.__file__).read_bytes()).hexdigest())
+
+    def decision(self, *, claims=True):
+        board = self.board
+        outcome = board.outcome(claim_draw=False)
+        if outcome is not None:
+            return dict(kind='automatic', reason=outcome.termination.name,
+                        winner=None if outcome.winner is None else 0 if outcome.winner else 1,
+                        witness_uci=None)
+        if not claims:
+            return None
+        for reason, claimable, present in (
+                ('FIFTY_MOVES', board.can_claim_fifty_moves, board.is_fifty_moves),
+                ('THREEFOLD_REPETITION', board.can_claim_threefold_repetition,
+                 lambda: board.is_repetition(3))):
+            if not claimable():
+                continue
+            witness = None
+            if not present():
+                for move in list(board.legal_moves):
+                    board.push(move)
+                    try:
+                        qualifies = present()
+                    finally:
+                        board.pop()
+                    if qualifies:
+                        witness = move.uci()
+                        break
+            return dict(kind='claim', reason=reason, winner=None, witness_uci=witness)
+        return None
 
 
 def material_tables():
@@ -473,7 +533,14 @@ def main(argv=None):
     p.add_argument('--comparison', type=Path, help='saved compare report for optional independent reference')
     p.add_argument('--reference-cache', type=Path, help='reuse identical pinned engine/condition/FEN child references')
     p.add_argument('--max-plies', type=int, default=40)
+    p.add_argument('--claim-chess-draws', action='store_true',
+                   help='opt-in Chess match policy: automatic draws then immediate legal claims; old Core policy remains default')
     args = p.parse_args(argv)
+    if args.claim_chess_draws:
+        if args.mode not in ('play', 'play-uci'):
+            p.error('claim-chess-draws is only for Chess play modes')
+        if args.uci_python:
+            sys.path.insert(0, str(args.uci_python.resolve()))
     if bool(args.material_engine) != bool(args.material_config):
         p.error('material-engine and material-config must be supplied together')
     if args.material_engine:
@@ -533,6 +600,8 @@ def main(argv=None):
                   tuning=asdict(tuning), use_tt=args.tt, use_ordering=args.ordering,
                   ruleset_fingerprint=compiled.ruleset_fingerprint, cases=[], games=[])
     report['history_handoff'] = 'fresh declared FEN followed by full Core-produced opening/played history'
+    report['chess_adjudication_policy'] = ('automatic_then_immediate_claim'
+                                          if args.claim_chess_draws else 'canonical_Core_fixture')
     report['legality_backend'] = 'production_native' if provider is not None else 'python_reference'
     report['ordering_weights'] = evaluator('unit').order_values if args.ordering else None
     report['evaluation_terms'] = ('material + shared existing mobility2/anchor5; residual x100; no promotion bonus'
@@ -595,7 +664,8 @@ def main(argv=None):
                                 write_record(args.output, report, indent=None)
                             game = play_game(case['fen'], compiled, white, black, limits, args.max_plies, save,
                                              provider=provider, ordering=args.ordering, use_tt=args.tt, dynamic=dynamic,
-                                             tuning=tuning, capture_risk=args.capture_risk, prefix=case.get('opening_uci', ()))
+                                             tuning=tuning, capture_risk=args.capture_risk, prefix=case.get('opening_uci', ()),
+                                             claim_chess_draws=args.claim_chess_draws)
                             report.pop('active_game', None)
                             report['games'].append(dict(id=case['id'], **game))
                             write_record(args.output, report)
@@ -622,7 +692,8 @@ def main(argv=None):
                                 game = play_game(case['fen'], compiled, white, black, limits, args.max_plies, save,
                                     provider=provider, ordering=args.ordering, use_tt=args.tt,
                                     dynamic=dynamic, external=external, tuning=tuning, capture_risk=args.capture_risk,
-                                    local_external=local_external, prefix=case.get('opening_uci', ()))
+                                    local_external=local_external, prefix=case.get('opening_uci', ()),
+                                    claim_chess_draws=args.claim_chess_draws)
                                 report.pop('active_game', None)
                                 report['games'].append(dict(id=case['id'], **game))
                                 write_record(args.output, report)

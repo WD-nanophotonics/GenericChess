@@ -86,10 +86,24 @@ SEE.8exposed roots2changed; retained failure1/4sec c6c5->g6f5 has finite referen
 cp-866/-861, both poor, not safety or loss-cause proof. Fixed12paired direct
 contrast completes2W2L8U:geometric2W2U,linear4U,unit2L2U;1825played+48prefix
 replayzero. It does not establish improvement; no defaults change. Evidence:
-data/chess_see_price_20261007.json. Next decision is whether the arithmetic repair
-helps under the same fixed2400 external feedback, with fresh matched controls;
-no extra tier/weight search. Dot's feedback-first suggestion was adopted; local
-follow-up is not an advisor backlog.
+data/chess_see_price_20261007.json. Fresh fixed2400 feedback gives repair7W0L5U
+versus original5W2L5U; separate two6ply-prefix feedback reverses this:8W2L2U
+versus10W1L1U. Across48streams both win15; repair2L7U versus original3L6U.
+5384played+240prefix replayzero,38archive entries extracted/rehashedzero. No
+stable advantage/default promotion or tier/weight fishing. Full records:
+data/chess_see_feedback_20261007.json and chess_see_opening_20261007.json.
+Earlier unitBlack loss root both builds and finite reference choose g3f4;
+not a uniquely identified SEE fault. Supported automatic/claim draw audit0/48.
+
+Canonical Western Core fixture uses repetition100000/max1000 and lacks complete
+FIDE draw adjudication; these old outcomes stay frozen. Existing Chess match
+entry now offers opt-in --claim-chess-draws, automatic outcomes before immediate
+claims, full Board history and an unplayed prospective claim witness. Final-step
+automatic/mate precedence is tested; library material detection is not exhaustive
+dead-position proof. Core, Shogi/Xiangqi and default search/evaluation stay intact.
+Next practical comparison must explicitly freeze this match policy and resources;
+no further bare SEE expansion based on the first favorable batch. Advisor's
+prospective-claim timing objection was adopted, without an approval gate.
 Science remains OPEN; no broad framework expansion before practical evidence.
 
 ## Recover detailed evidence only as needed
