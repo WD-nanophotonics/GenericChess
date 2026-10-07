@@ -27,6 +27,15 @@ revisable reserves, not work quotas or an approval queue.
 
 ## Research loop
 
+Current science has two primary lines (user clarification verified2026-10-08):
+rule-derived generic prices with cross-game bias explanation, and unfamiliar-rule
+search efficiency/stability/interfaces. Games only diagnose price holes. Frozen
+human references are comparisons, never fitting targets or universal optima.
+Do not expand player patches/reference tiers to chase strength. Explore mixtures,
+recombined mechanics and generated rules; generic NNUE/learning remains later.
+Earlier practical-player efficiency advice below describes historical context;
+it does not override this current priority. Keep semantic and fair-resource checks.
+
 Execute Main immediately. Validate each milestone, assess mainline impact,
 record checkpoint and actually begin the next task. CLI:
 `session checkpoint --question Q --observation NEW --evidence REF --next-action ACTION`

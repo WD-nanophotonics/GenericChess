@@ -44,8 +44,18 @@ unexposed validation status. Compare methods under the same resource condition
 or report resource/result curves. No result-driven extension of frozen tests,
 runaway jobs, extra fees/workers or access bypass. See LOCAL_AGENT.md Budget.
 
-Current development priority is a runnable candidate, existing fixed search and
-one reusable comparison entry. Limited tactical/game measurements need not first
+Current primary research, clarified by user2026-10-07 and verified2026-10-08,
+has two lines: rule-only generic piece-value generation, cross-game ordering/
+ratio comparisons and explanation of bias; and efficient/stable search with a
+generic interface on unfamiliar rules (familiar-piece mixtures, recombined
+mechanics, existing-generator random rules with simple playability filtering).
+Games are secondary price-hole diagnostics, not a player-strength optimization
+goal. Do not keep adding positional patches or chasing classical/engine Elo.
+Generic NNUE/self-evolution is later work, not a prerequisite or current task.
+Use existing frozen outputs and search entries; expose one decision-changing
+mechanism or interface issue at a time. Human-reference agreement is descriptive
+validation, never proof of a universal optimum or permission to fit the formula.
+Limited tactical/game measurements need not first
 have exact WDL, all-defense proofs or independent holdout status; label scope.
 Preserve legality/semantic checks and fair conditions. Broader proofs address
 observed failures or concrete uses. Advisor suggestions are not a branch backlog:

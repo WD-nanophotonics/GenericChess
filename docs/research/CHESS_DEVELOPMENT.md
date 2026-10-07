@@ -1,10 +1,19 @@
 # Runnable Chess development comparison
 
-Current objective: useful play with a cheap rule-derived material prior, a fixed
-supported search and one comparison entry. This is development, not generic
-amateur-strength certification, independent holdout evidence or human-price fitting.
+Current role: auxiliary deployment/price-hole diagnostics with frozen material
+priors and fixed supported search. Main research now concerns generic rule-only
+prices and unfamiliar-rule search; see LOCAL_MAINLINE.md. This entry does not
+set a goal of strengthening a Chess player, certify amateur strength or fit prices.
 
 ## Run and interpret
+
+Direction-alignment auxiliary closeout2026-10-08: four same-classical geometric
+versus linear cells (same1.5sec/search/explicit draw policy) give two draws and
+two160ply-limit unfinished streams.581played+24prefix plies replayzero. Three
+preselected unique capture contexts x2tables x2leaves reach all12fixed3Mnode
+budgets; tables choose the same move within each leaf/context. This does not
+select a formula. No further opening/time/player-patch expansion from this
+negative discrimination result. data/direction_reset_20261008.json retains all.
 
 ```powershell
 .venv/Scripts/python.exe -m scripts.chess_development compare --suite docs/research/data/chess_development_suite.json --output .local_agent/compare-new.json

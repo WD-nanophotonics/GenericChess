@@ -3,7 +3,7 @@
 | Location | Purpose | Normal use |
 |---|---|---|
 | generic_chess/ | Product rules/Core/search/CLI/UI/native and supported learning APIs | Imports and product changes |
-| scripts/ | Small retained development entry and its tested dependency closure | Start at chess_development.py; old audit-named helpers remain only where a live caller needs them |
+| scripts/ | Small retained development entries and tested dependency closure | chess_development.py for auxiliary games; unfamiliar_search.py for generated-rule search; old audit helpers only where a live caller needs them |
 | tools/local_agent/ | Current local execution, session, Slack and Git workflow | generic-chess-local.cmd |
 | tests/product/ | Fresh product semantic/search/API regressions | Default pytest |
 | tests/development/ | Current evaluator/comparison regressions | Default pytest |
