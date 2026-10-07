@@ -1,0 +1,2266 @@
+{
+  "scope": "Exposed development, half-risk candidate vs human classical diagnostic; paired allocation conditions, no price fitting/Elo/holdout/default claim.",
+  "declaration": {
+    "question": "Does equal-time root allocation help the fixed half-risk candidate against classical leaf on actual play?",
+    "trigger": "Root28 changes e5c6 to e5d3 under MultiPV3 with favorable finite child reference; not an isolated evaluation repair.",
+    "design": "24streams: two existing6ply prefixes x three unchanged tables x both candidate colors x SinglePV1/MultiPV3. Classical SinglePV1 throughout. Fresh engines/hash/cell, local1sec Threads1 Hash16 NNUEfalse,160subsequentplies. Sequential alternating allocation; no extra budget for candidate.",
+    "match_policy": "Explicit claim_chess_draws=True; automatic outcomes first and prospective legal claim witness unplayed. Library material detection not exhaustive dead position. Core defaults unchanged.",
+    "decision": "All tables retained; not price selection/Elo/holdout/strength or default promotion. If allocation does not improve practical feedback, do not blindly add breadth; inspect actionable game failure.",
+    "cost": "<=3840 requested local seconds plus Core/logging; interruptible after every action. One game at a time, no other timed experiments.",
+    "binary_sha256": {
+      "exchange": "40d5689fe0da14762b1f30dd1fe7cb0df722dfa7bb6598dd8a30010b45d47f5b",
+      "classical": "2f67539e3b58295901e365edb722fba1e43220185e97eaafb18f38df9d7a8232"
+    },
+    "config_sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0",
+    "suite_sha256": "2b9a6f2a8d2844fb9bef9fa03c689d1d50d40e8ab99d89cc82c8658cd0b47925",
+    "adapter_sha256": "cb64679d05e93b0f4f6924d20d9fe767441e38a075ea039078d7a89b6cf5add8",
+    "producer_sha256": "9eaf4f56ea6f28e52243388df058110c4d484ab3da3a6e6ffdec29d4039e51cd"
+  },
+  "groups": {
+    "1": {
+      "geometric_half": {
+        "win": 0,
+        "loss": 4,
+        "draw": 0,
+        "unfinished": 0
+      },
+      "linear_mixture": {
+        "win": 0,
+        "loss": 3,
+        "draw": 1,
+        "unfinished": 0
+      },
+      "unit": {
+        "win": 1,
+        "loss": 2,
+        "draw": 1,
+        "unfinished": 0
+      }
+    },
+    "3": {
+      "geometric_half": {
+        "win": 0,
+        "loss": 4,
+        "draw": 0,
+        "unfinished": 0
+      },
+      "linear_mixture": {
+        "win": 1,
+        "loss": 2,
+        "draw": 1,
+        "unfinished": 0
+      },
+      "unit": {
+        "win": 2,
+        "loss": 1,
+        "draw": 1,
+        "unfinished": 0
+      }
+    }
+  },
+  "paired_cells": [
+    {
+      "id": "open-file-e-bishop",
+      "table": "geometric_half",
+      "candidate_color": 0,
+      "single": "loss",
+      "multi": "loss",
+      "single_plies": 86,
+      "multi_plies": 70
+    },
+    {
+      "id": "open-file-e-bishop",
+      "table": "geometric_half",
+      "candidate_color": 1,
+      "single": "loss",
+      "multi": "loss",
+      "single_plies": 89,
+      "multi_plies": 83
+    },
+    {
+      "id": "open-file-e-bishop",
+      "table": "linear_mixture",
+      "candidate_color": 0,
+      "single": "loss",
+      "multi": "loss",
+      "single_plies": 102,
+      "multi_plies": 102
+    },
+    {
+      "id": "open-file-e-bishop",
+      "table": "linear_mixture",
+      "candidate_color": 1,
+      "single": "loss",
+      "multi": "draw",
+      "single_plies": 115,
+      "multi_plies": 62
+    },
+    {
+      "id": "open-file-e-bishop",
+      "table": "unit",
+      "candidate_color": 0,
+      "single": "loss",
+      "multi": "loss",
+      "single_plies": 122,
+      "multi_plies": 52
+    },
+    {
+      "id": "open-file-e-bishop",
+      "table": "unit",
+      "candidate_color": 1,
+      "single": "loss",
+      "multi": "win",
+      "single_plies": 143,
+      "multi_plies": 98
+    },
+    {
+      "id": "central-d-knight",
+      "table": "geometric_half",
+      "candidate_color": 0,
+      "single": "loss",
+      "multi": "loss",
+      "single_plies": 102,
+      "multi_plies": 68
+    },
+    {
+      "id": "central-d-knight",
+      "table": "geometric_half",
+      "candidate_color": 1,
+      "single": "loss",
+      "multi": "loss",
+      "single_plies": 69,
+      "multi_plies": 109
+    },
+    {
+      "id": "central-d-knight",
+      "table": "linear_mixture",
+      "candidate_color": 0,
+      "single": "draw",
+      "multi": "win",
+      "single_plies": 63,
+      "multi_plies": 153
+    },
+    {
+      "id": "central-d-knight",
+      "table": "linear_mixture",
+      "candidate_color": 1,
+      "single": "loss",
+      "multi": "loss",
+      "single_plies": 53,
+      "multi_plies": 89
+    },
+    {
+      "id": "central-d-knight",
+      "table": "unit",
+      "candidate_color": 0,
+      "single": "draw",
+      "multi": "win",
+      "single_plies": 94,
+      "multi_plies": 63
+    },
+    {
+      "id": "central-d-knight",
+      "table": "unit",
+      "candidate_color": 1,
+      "single": "win",
+      "multi": "draw",
+      "single_plies": 118,
+      "multi_plies": 79
+    }
+  ],
+  "roots": {
+    "complete": true,
+    "declaration": {
+      "question": "Does the first geometric candidate loss expose early evaluation/allocation weakness?",
+      "indices": [
+        4,
+        28,
+        60
+      ],
+      "selection": "First geometric loss, early b2b4/king exposure, midgame h2h4, later h4h5 before own first material collapse. Chosen from recorded trajectory, exposed diagnostic; all retained.",
+      "conditions": "exchange SinglePV1/MultiPV3 and classical SinglePV1, each fresh1sec Threads1 Hash16 NNUEfalse; same full history/prices. Full reference root/unique children500000nodes/1sec fresh hash. Finite cp/mate not WDL.",
+      "decision": "If allocation rescues a materially worse choice, compare allocation in actual games. If not, inspect concrete leaf failure rather than broad SEE framework.",
+      "cost": "9local calls plus <=15finite-reference calls/replay; no concurrency with timed games.",
+      "source_sha256": "e9661e2c1429a7ea94e084c566f99c869164d54e5c7c5a4f1d9a4d2bd96e3666",
+      "binary_sha256": {
+        "exchange": "40d5689fe0da14762b1f30dd1fe7cb0df722dfa7bb6598dd8a30010b45d47f5b",
+        "classical": "2f67539e3b58295901e365edb722fba1e43220185e97eaafb18f38df9d7a8232"
+      },
+      "config_sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0",
+      "reference_sha256": "55aa40c857de30b79dbe4f8e4c335ee2b23815cf2f100a6630d54761fcad3b85",
+      "adapter_sha256": "cb64679d05e93b0f4f6924d20d9fe767441e38a075ea039078d7a89b6cf5add8"
+    },
+    "shared_link_object_sha256": {
+      "benchmark.cpp.o": "0c51f9748a29d6caa34342b8a77015b9d1872a65a89155cf5e29d9db9054c29a",
+      "bitbase.cpp.o": "a53b312e704268afd93c2eb6d75c4c48e4989c2d8f4bdeb87a681f380307517d",
+      "bitboard.cpp.o": "d08a7b206b8bcbfae6070b68b975b596ddd96d61fd1bbc7596f7bebf02eee884",
+      "endgame.cpp.o": "5bda2bb9aabb2e1ed8ad9a5fb7f24d618d6a7f0552b4e16765df5760fbe5c21d",
+      "main.cpp.o": "315d6b3b9465e8930a9b8a7453353f982d02f9886539b79adcc958666ce1438c",
+      "material.cpp.o": "f4d3a760b881e217f9691e86794a5adabc5bd8e0ee50226bc680862be2e5efb8",
+      "misc.cpp.o": "b844d9b3a32f19306195ddbba3225cd9ecc4daea2b2dff85bffffeca405621ea",
+      "movegen.cpp.o": "1978d3a78e2dc2278d24d190648ec5858c8c43f8031cb62f552adddf002277c2",
+      "movepick.cpp.o": "6e7a77628d389786afe99c8862ba080bb01319815cf0c69548cbc4bce3a3aada",
+      "pawns.cpp.o": "643bfba3ef80cddb1c39c9b7b67870cf1ae46ff72c5807ffb8fffadfb8eba0b9",
+      "position.cpp.o": "129e66b930ac21ccfc018ca55e6882baba3a79743a2db0557d74c0ff218e0bd3",
+      "psqt.cpp.o": "8e644790bbd1c5c8e3cd61140f6ca55d73ec4393759abd067de56484b3e7c6b8",
+      "search.cpp.o": "94e67fcd134bbe680d6ecd4ef753aa81d908595701918092f522a7ce1a994e02",
+      "thread.cpp.o": "86bd378d5bfe9e5cf40e24bc19ccf4c65a2a6ba892e6dd33ca3b0df623533e77",
+      "timeman.cpp.o": "298801b756aa3aee4286c87d5cd38f9dccf0f4e79a32134f909542494687e2e0",
+      "tt.cpp.o": "e91763147e830b485fba6fb55a1e52238ca3b144f3b02f56a5cad542b3dc3b15",
+      "uci.cpp.o": "aeeb106ae7d67e069d1a32bee683bdc75b2661c1fb1eb8ab61d2ad46ab5f4d8e",
+      "ucioption.cpp.o": "553e996024cb7f713000c4e4e5d2c251cb0ea96c2534e0d24709ce865d09b7a3",
+      "tune.cpp.o": "9592ec801fa5145edaf194e9be018a51f5840fc2506ec2f1f5fc496d2f9e3bee",
+      "syzygy_tbprobe.cpp.o": "1947ef6bf304cdb602366fcd4de9543d9acca13fcac3d0a22ce878442052e2b5",
+      "nnue_evaluate_nnue.cpp.o": "49955cefc952cc88540706c3471d718e14569df7ef6359a8aa4257647969ccaf",
+      "nnue_features_half_ka_v2.cpp.o": "d5a48b7900e08012d4ef9bbebfcf9f44807ff65254bda13f1e1ee207ad76415e",
+      "partner.cpp.o": "05ec0c68c7733b6603037fc1fcb6d766db64321149ec7364513ebe197cf18217",
+      "parser.cpp.o": "d6d9d295bdfe068fe4d3f062d9ac2c57d674381305e5f63d4383d3e2e4bf40a0",
+      "piece.cpp.o": "6db2b4128899199c5dccc6f7500970b2a2b0b51e6b7b2c172d851bac78c9e861",
+      "variant.cpp.o": "215f2cf2237c231da98abb0fe6fd5f63123b9ec13f025f88a23414fe4a684102",
+      "xboard.cpp.o": "c1954b614bf1d19f1266e4fe5f5f119cc733c539042c03c876366cafe023b38a",
+      "nnue_features_half_ka_v2_variants.cpp.o": "98564ec47293b3b62d93a14dd60c72392a6073387ab461d180bd65d21b289443"
+    },
+    "rows": [
+      {
+        "index": 4,
+        "history_prefix": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1c4",
+          "f8c5",
+          "c2c3",
+          "g8f6"
+        ],
+        "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq - 1 5",
+        "recorded_choice": "b2b4",
+        "choices": [
+          {
+            "policy": "geometric_half",
+            "move": "b2b4",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": 23,
+            "score_mate": null,
+            "wall_seconds": 1.0106310998089612,
+            "controller_cpu_seconds": 0.03125,
+            "engine_nodes": 2382562,
+            "engine_depth": 21,
+            "engine_seldepth": 27,
+            "engine_seconds": 1.001,
+            "pv": [
+              "b2b4",
+              "c5b6",
+              "f3g5",
+              "f6e4",
+              "c4f7",
+              "e8e7",
+              "g5e4",
+              "e7f7",
+              "b4b5",
+              "c6e7",
+              "d1f3",
+              "f7g8",
+              "d2d3",
+              "d7d5",
+              "e4d2",
+              "c7c6",
+              "b5c6",
+              "b7c6",
+              "d2b3",
+              "e7g6",
+              "a2a4",
+              "d8f6"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "exchange",
+            "multipv": 1
+          },
+          {
+            "policy": "geometric_half",
+            "move": "b2b4",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": 25,
+            "score_mate": null,
+            "wall_seconds": 1.0145312999375165,
+            "controller_cpu_seconds": 0.015625,
+            "engine_nodes": 2436742,
+            "engine_depth": 18,
+            "engine_seldepth": 22,
+            "engine_seconds": 1.001,
+            "pv": [
+              "b2b4",
+              "c5f8",
+              "d2d3",
+              "d7d6",
+              "h2h3",
+              "h7h6",
+              "c4b5",
+              "d8d7",
+              "c1e3",
+              "a7a6",
+              "b5c6",
+              "d7c6",
+              "a2a4",
+              "c8e6",
+              "h1g1",
+              "h8g8"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "multipv": 3,
+            "multipv_lines": [
+              {
+                "rank": 1,
+                "move": "b2b4",
+                "depth": 18,
+                "score_cp": 25,
+                "score_mate": null,
+                "lowerbound": null,
+                "upperbound": null
+              },
+              {
+                "rank": 2,
+                "move": "c4d5",
+                "depth": 18,
+                "score_cp": 19,
+                "score_mate": null,
+                "lowerbound": null,
+                "upperbound": null
+              },
+              {
+                "rank": 3,
+                "move": "d2d3",
+                "depth": 18,
+                "score_cp": 19,
+                "score_mate": null,
+                "lowerbound": null,
+                "upperbound": true
+              }
+            ],
+            "mode": "exchange"
+          },
+          {
+            "policy": "geometric_half",
+            "move": "d2d4",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": 46,
+            "score_mate": null,
+            "wall_seconds": 1.00626299995929,
+            "controller_cpu_seconds": 0.015625,
+            "engine_nodes": 1339854,
+            "engine_depth": 17,
+            "engine_seldepth": 28,
+            "engine_seconds": 1.002,
+            "pv": [
+              "d2d4",
+              "e5d4"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "classical",
+            "multipv": 1
+          }
+        ],
+        "children": {
+          "b2b4": {
+            "cp": -2,
+            "mate": null,
+            "nodes": 500445,
+            "depth": 23,
+            "wall_seconds": 0.7536319000646472,
+            "pv": [
+              "c5e7"
+            ]
+          },
+          "d2d4": {
+            "cp": 5,
+            "mate": null,
+            "nodes": 500220,
+            "depth": 21,
+            "wall_seconds": 0.7136535998433828,
+            "pv": [
+              "e5d4"
+            ]
+          }
+        },
+        "reference_root": {
+          "cp": 22,
+          "mate": null,
+          "nodes": 500558,
+          "depth": 21,
+          "wall_seconds": 0.7515251999720931,
+          "pv": [
+            "b2b4"
+          ]
+        }
+      },
+      {
+        "index": 28,
+        "history_prefix": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1c4",
+          "f8c5",
+          "c2c3",
+          "g8f6",
+          "b2b4",
+          "c5f2",
+          "e1f2",
+          "f6e4",
+          "f2g1",
+          "d7d5",
+          "c4b5",
+          "d8e7",
+          "d2d4",
+          "e5d4",
+          "d1d4",
+          "e8g8",
+          "b5c6",
+          "b7c6",
+          "c1f4",
+          "a7a5",
+          "b1d2",
+          "a5b4",
+          "c3b4",
+          "f8d8",
+          "d2b3",
+          "a8a4",
+          "f3e5",
+          "d8e8"
+        ],
+        "fen": "2b1r1k1/2p1qppp/2p5/3pN3/rP1QnB2/1N6/P5PP/R5KR w - - 5 17",
+        "recorded_choice": "h2h4",
+        "choices": [
+          {
+            "policy": "geometric_half",
+            "move": "e5c6",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": 79,
+            "score_mate": null,
+            "wall_seconds": 1.0128434000071138,
+            "controller_cpu_seconds": 0.0,
+            "engine_nodes": 2388916,
+            "engine_depth": 18,
+            "engine_seldepth": 21,
+            "engine_seconds": 1.001,
+            "pv": [
+              "e5c6",
+              "e7e6",
+              "b3a5",
+              "c8d7",
+              "a1c1",
+              "a4a2",
+              "h2h3",
+              "e4d6",
+              "c6e5",
+              "d6b5",
+              "d4e3",
+              "f7f6",
+              "e5d7",
+              "e6e3",
+              "f4e3",
+              "e8e3",
+              "g1h2",
+              "e3e4"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "exchange",
+            "multipv": 1
+          },
+          {
+            "policy": "geometric_half",
+            "move": "e5d3",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": 92,
+            "score_mate": null,
+            "wall_seconds": 1.0128151001408696,
+            "controller_cpu_seconds": 0.015625,
+            "engine_nodes": 2533461,
+            "engine_depth": 17,
+            "engine_seldepth": 20,
+            "engine_seconds": 1.001,
+            "pv": [
+              "e5d3",
+              "g7g5",
+              "f4g3",
+              "f7f5",
+              "a2a3",
+              "a4a8",
+              "d3c5",
+              "f5f4",
+              "g3f2",
+              "e7f7",
+              "a3a4",
+              "g5g4",
+              "b4b5",
+              "g4g3",
+              "f2e1",
+              "c6b5",
+              "a4b5",
+              "a8a1"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "multipv": 3,
+            "multipv_lines": [
+              {
+                "rank": 1,
+                "move": "e5d3",
+                "depth": 17,
+                "score_cp": 92,
+                "score_mate": null,
+                "lowerbound": null,
+                "upperbound": null
+              },
+              {
+                "rank": 2,
+                "move": "e5c6",
+                "depth": 17,
+                "score_cp": 56,
+                "score_mate": null,
+                "lowerbound": null,
+                "upperbound": null
+              },
+              {
+                "rank": 3,
+                "move": "h2h4",
+                "depth": 17,
+                "score_cp": 54,
+                "score_mate": null,
+                "lowerbound": null,
+                "upperbound": true
+              }
+            ],
+            "mode": "exchange"
+          },
+          {
+            "policy": "geometric_half",
+            "move": "e5c6",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": -37,
+            "score_mate": null,
+            "wall_seconds": 1.0114403998013586,
+            "controller_cpu_seconds": 0.015625,
+            "engine_nodes": 1527934,
+            "engine_depth": 20,
+            "engine_seldepth": 27,
+            "engine_seconds": 1.001,
+            "pv": [
+              "e5c6"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "classical",
+            "multipv": 1
+          }
+        ],
+        "children": {
+          "e5c6": {
+            "cp": -136,
+            "mate": null,
+            "nodes": 500532,
+            "depth": 18,
+            "wall_seconds": 0.6960225999355316,
+            "pv": [
+              "e7e6",
+              "a1c1",
+              "e6g4",
+              "f4d2",
+              "a4a2",
+              "h2h3",
+              "g4g6",
+              "d4d5",
+              "h7h5",
+              "c6e5",
+              "g6f5",
+              "c1c7",
+              "e8e5",
+              "d5d8",
+              "g8h7",
+              "c7c8",
+              "f5f2",
+              "g1h2"
+            ]
+          },
+          "e5d3": {
+            "cp": 145,
+            "mate": null,
+            "nodes": 500556,
+            "depth": 18,
+            "wall_seconds": 0.596450800076127,
+            "pv": [
+              "e7h4",
+              "f4c7",
+              "a4a3",
+              "d3f2",
+              "h7h5",
+              "h2h3",
+              "c8f5",
+              "f2e4",
+              "e8e4",
+              "d4b2",
+              "h4e7",
+              "b2a3",
+              "e4e2",
+              "a3a8",
+              "g8h7",
+              "c7g3",
+              "e7e3",
+              "g1h2"
+            ]
+          },
+          "h2h4": {
+            "cp": 32,
+            "mate": null,
+            "nodes": 500535,
+            "depth": 22,
+            "wall_seconds": 0.7072286999318749,
+            "pv": [
+              "c6c5",
+              "d4d5"
+            ]
+          }
+        },
+        "reference_root": {
+          "cp": 141,
+          "mate": null,
+          "nodes": 500222,
+          "depth": 19,
+          "wall_seconds": 0.5781531999818981,
+          "pv": [
+            "e5d3",
+            "e7h4",
+            "f4c7",
+            "h7h5",
+            "a2a3",
+            "c8h3",
+            "d3f2",
+            "h4e7",
+            "f2e4",
+            "d5e4",
+            "c7g3",
+            "h5h4",
+            "b3c5"
+          ]
+        }
+      },
+      {
+        "index": 60,
+        "history_prefix": [
+          "e2e4",
+          "e7e5",
+          "g1f3",
+          "b8c6",
+          "f1c4",
+          "f8c5",
+          "c2c3",
+          "g8f6",
+          "b2b4",
+          "c5f2",
+          "e1f2",
+          "f6e4",
+          "f2g1",
+          "d7d5",
+          "c4b5",
+          "d8e7",
+          "d2d4",
+          "e5d4",
+          "d1d4",
+          "e8g8",
+          "b5c6",
+          "b7c6",
+          "c1f4",
+          "a7a5",
+          "b1d2",
+          "a5b4",
+          "c3b4",
+          "f8d8",
+          "d2b3",
+          "a8a4",
+          "f3e5",
+          "d8e8",
+          "h2h4",
+          "e7f6",
+          "g2g3",
+          "c8b7",
+          "e5f3",
+          "f6d4",
+          "f3d4",
+          "a4b4",
+          "f4c7",
+          "c6c5",
+          "d4f3",
+          "e8a8",
+          "b3c1",
+          "a8a3",
+          "f3e1",
+          "b4b5",
+          "e1c2",
+          "a3a4",
+          "h1h2",
+          "h7h6",
+          "c2e3",
+          "d5d4",
+          "e3f5",
+          "a4a3",
+          "c7f4",
+          "b5b6",
+          "f4c7",
+          "b6b4",
+          "c7e5",
+          "f7f6",
+          "e5f4",
+          "d4d3"
+        ],
+        "fen": "6k1/1b4p1/5p1p/2p2N2/1r2nB1P/r2p2P1/P6R/R1N3K1 w - - 0 33",
+        "recorded_choice": "h4h5",
+        "choices": [
+          {
+            "policy": "geometric_half",
+            "move": "h4h5",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": -7,
+            "score_mate": null,
+            "wall_seconds": 1.0150566999800503,
+            "controller_cpu_seconds": 0.03125,
+            "engine_nodes": 2845493,
+            "engine_depth": 20,
+            "engine_seldepth": 29,
+            "engine_seconds": 1.001,
+            "pv": [
+              "h4h5",
+              "g8h7",
+              "f4e3",
+              "b7d5",
+              "f5d6",
+              "d3d2",
+              "e3d2",
+              "a3g3",
+              "g1f1",
+              "e4d2",
+              "h2d2",
+              "g3g5",
+              "d6c8",
+              "g5h5",
+              "a2a3",
+              "h5h1",
+              "f1f2",
+              "h1h2",
+              "f2e1",
+              "b4e4",
+              "e1d1"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "exchange",
+            "multipv": 1
+          },
+          {
+            "policy": "geometric_half",
+            "move": "h4h5",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": 0,
+            "score_mate": null,
+            "wall_seconds": 1.0102115999907255,
+            "controller_cpu_seconds": 0.03125,
+            "engine_nodes": 2811317,
+            "engine_depth": 16,
+            "engine_seldepth": 15,
+            "engine_seconds": 1.001,
+            "pv": [
+              "h4h5",
+              "g8f8",
+              "f4e3",
+              "b4b5",
+              "e3f4"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "multipv": 3,
+            "multipv_lines": [
+              {
+                "rank": 1,
+                "move": "h4h5",
+                "depth": 16,
+                "score_cp": 0,
+                "score_mate": null,
+                "lowerbound": null,
+                "upperbound": null
+              },
+              {
+                "rank": 2,
+                "move": "g3g4",
+                "depth": 16,
+                "score_cp": -79,
+                "score_mate": null,
+                "lowerbound": null,
+                "upperbound": true
+              },
+              {
+                "rank": 3,
+                "move": "f5e7",
+                "depth": 15,
+                "score_cp": -32,
+                "score_mate": null,
+                "lowerbound": null,
+                "upperbound": true
+              }
+            ],
+            "mode": "exchange"
+          },
+          {
+            "policy": "geometric_half",
+            "move": "c1d3",
+            "reason": "uci_bestmove",
+            "score": null,
+            "score_cp": -238,
+            "score_mate": null,
+            "wall_seconds": 1.0119668999686837,
+            "controller_cpu_seconds": 0.015625,
+            "engine_nodes": 1631125,
+            "engine_depth": 17,
+            "engine_seldepth": 26,
+            "engine_seconds": 1.001,
+            "pv": [
+              "c1d3",
+              "a3d3",
+              "a2a3",
+              "b4b3",
+              "a3a4",
+              "g7g6",
+              "f5h6",
+              "g8g7",
+              "a1e1",
+              "e4g3",
+              "h2d2",
+              "d3d2",
+              "f4d2",
+              "b3b2",
+              "e1e7",
+              "g7f8",
+              "e7e3",
+              "g3f5"
+            ],
+            "statistics": {},
+            "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+            "mode": "classical",
+            "multipv": 1
+          }
+        ],
+        "children": {
+          "c1d3": {
+            "cp": -285,
+            "mate": null,
+            "nodes": 500021,
+            "depth": 20,
+            "wall_seconds": 0.6962786999065429,
+            "pv": [
+              "a3d3"
+            ]
+          },
+          "g3g4": {
+            "cp": -237,
+            "mate": null,
+            "nodes": 500095,
+            "depth": 20,
+            "wall_seconds": 0.7380996001884341,
+            "pv": [
+              "g8h7",
+              "g4g5",
+              "e4g5",
+              "h4g5",
+              "b4f4",
+              "f5d6",
+              "f4g4",
+              "g1f2",
+              "b7d5",
+              "f2e3",
+              "f6g5",
+              "d6b5",
+              "a3a5",
+              "b5c3",
+              "c5c4",
+              "c3d5",
+              "a5d5",
+              "a2a4",
+              "g4g1",
+              "h2d2",
+              "g1f1",
+              "a4a5",
+              "g5g4",
+              "a5a6"
+            ]
+          },
+          "h4h5": {
+            "cp": -296,
+            "mate": null,
+            "nodes": 500467,
+            "depth": 21,
+            "wall_seconds": 0.7638695000205189,
+            "pv": [
+              "g8h7",
+              "f5d6",
+              "d3d2",
+              "h2d2",
+              "e4d2",
+              "f4d2",
+              "a3g3",
+              "g1f2",
+              "g3g2",
+              "f2e3",
+              "g2d2",
+              "e3d2",
+              "b4d4",
+              "d2e3",
+              "d4d6",
+              "c1d3",
+              "c5c4",
+              "d3f4",
+              "c4c3",
+              "a2a4",
+              "b7c8",
+              "a1c1",
+              "d6c6",
+              "f4d5",
+              "c3c2"
+            ]
+          }
+        },
+        "reference_root": {
+          "cp": -261,
+          "mate": null,
+          "nodes": 500508,
+          "depth": 17,
+          "wall_seconds": 0.7930675998795778,
+          "pv": [
+            "g3g4",
+            "c5c4",
+            "h2g2",
+            "b4b5",
+            "g2h2",
+            "a3a4",
+            "h2g2",
+            "b7a8",
+            "a2a3",
+            "g8h7",
+            "g1h2",
+            "h6h5"
+          ]
+        }
+      }
+    ],
+    "legal_history_pv_mismatches": 0
+  },
+  "leaf_trace": {
+    "complete": true,
+    "question": "Which static components distinguish the actual early/mid/late loss roots? Classical terms diagnostic only, not a coefficient-fitting target.",
+    "scope": "Trace classical decomposition printed by both builds; patched exchange final evaluation differs from the printed human classical term table. Values in pawn units, not probabilities/WDL; full history retained.",
+    "rows": [
+      {
+        "index": 4,
+        "mode": "exchange",
+        "final_white_pawn_units": -0.52,
+        "stdout": "Fairy-Stockfish 220926 by Fabian Fichter\nid name Fairy-Stockfish 220926\nid author Fabian Fichter\n\noption name Debug Log File type string default \noption name Threads type spin default 1 min 1 max 512\noption name Hash type spin default 16 min 1 max 33554432\noption name Clear Hash type button\noption name Ponder type check default false\noption name MultiPV type spin default 1 min 1 max 500\noption name Skill Level type spin default 20 min -20 max 20\noption name Move Overhead type spin default 10 min 0 max 5000\noption name Slow Mover type spin default 100 min 10 max 1000\noption name nodestime type spin default 0 min 0 max 10000\noption name UCI_Chess960 type check default false\noption name UCI_Variant type combo default chess var 3check var 5check var ai-wok var almost var amazon var antichess var armageddon var asean var ataxx var atomar var atomic var berolina var breakthrough var bughouse var cambodian var chaturanga var chess var chessgi var chigorin var clobber var codrus var coregal var crazyhouse var dobutsu var dragon var euroshogi var extinction var fairy var fischerandom var flipello var flipersi var fox-and-hounds var gardner var gc_geometric_half var gc_linear_mixture var gc_unit var georgian var giveaway var gorogoro var grasshopper var hoppelpoppel var horde var isolation var isolation7x7 var joust var judkins var karouk var kinglet var kingofthehill var knightmate var koedem var kyotoshogi var legan var loop var losalamos var losers var makpong var makruk var micro var mini var minishogi var minixiangqi var misere var newzealand var nightrider var nocastle var nocheckatomic var normal var paradigm var pawnback var pawnsideways var perfect var petrified var placement var pocketknight var raazuvaa var racingkings var seirawan var shatar var shatranj var shouse var sittuyin var snailtrail var sortofalmost var spartan var suicide var threekings var torishogi var torpedo\noption name UCI_AnalyseMode type check default false\noption name UCI_LimitStrength type check default false\noption name UCI_Elo type spin default 1350 min 500 max 2850\noption name UCI_ShowWDL type check default false\noption name SyzygyPath type string default <empty>\noption name SyzygyProbeDepth type spin default 1 min 1 max 100\noption name Syzygy50MoveRule type check default true\noption name SyzygyProbeLimit type spin default 7 min 0 max 7\noption name Use NNUE type check default true\noption name EvalFile type string default <empty>\noption name TsumeMode type check default false\noption name VariantPath type string default <empty>\noption name usemillisec type check default true\nuciok\ninfo string variant gc_geometric_half files 8 ranks 8 pocket 0 template fairy startpos rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\nreadyok\ninfo string classical evaluation enabled\n\n Contributing terms for the classical eval:\n+------------+-------------+-------------+-------------+\n|    Term    |    White    |    Black    |    Total    |\n|            |   MG    EG  |   MG    EG  |   MG    EG  |\n+------------+-------------+-------------+-------------+\n|   Material |  ----  ---- |  ----  ---- | -0.47 -0.37 |\n|  Imbalance |  ----  ---- |  ----  ---- |  0.00  0.00 |\n|      Pawns |  0.49 -0.05 |  0.34 -0.07 |  0.15  0.02 |\n|    Knights | -0.11 -0.20 | -0.15 -0.17 |  0.05 -0.03 |\n|    Bishops | -0.47 -1.47 | -0.38 -1.46 | -0.09 -0.01 |\n|      Rooks | -0.26 -0.06 | -0.26 -0.06 |  0.00  0.00 |\n|     Queens |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |\n|   Mobility | -0.18  0.05 | -0.01  0.11 | -0.17 -0.06 |\n|King safety |  0.54 -0.17 |  0.58 -0.15 | -0.04 -0.02 |\n|    Threats |  0.48  0.70 |  0.55  0.65 | -0.07  0.05 |\n|     Passed |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |\n|      Space |  0.54  0.00 |  0.47  0.00 |  0.07  0.00 |\n|    Variant |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |\n|   Winnable |  ----  ---- |  ----  ---- |  0.00 -0.19 |\n+------------+-------------+-------------+-------------+\n|      Total |  ----  ---- |  ----  ---- | -0.57 -0.62 |\n+------------+-------------+-------------+-------------+\n\nClassical evaluation   -0.54 (white side)\nFinal evaluation       -0.52 (white side)\n\n",
+        "stderr": ""
+      },
+      {
+        "index": 4,
+        "mode": "classical",
+        "final_white_pawn_units": -0.53,
+        "stdout": "Fairy-Stockfish 220926 by Fabian Fichter\nid name Fairy-Stockfish 220926\nid author Fabian Fichter\n\noption name Debug Log File type string default \noption name Threads type spin default 1 min 1 max 512\noption name Hash type spin default 16 min 1 max 33554432\noption name Clear Hash type button\noption name Ponder type check default false\noption name MultiPV type spin default 1 min 1 max 500\noption name Skill Level type spin default 20 min -20 max 20\noption name Move Overhead type spin default 10 min 0 max 5000\noption name Slow Mover type spin default 100 min 10 max 1000\noption name nodestime type spin default 0 min 0 max 10000\noption name UCI_Chess960 type check default false\noption name UCI_Variant type combo default chess var 3check var 5check var ai-wok var almost var amazon var antichess var armageddon var asean var ataxx var atomar var atomic var berolina var breakthrough var bughouse var cambodian var chaturanga var chess var chessgi var chigorin var clobber var codrus var coregal var crazyhouse var dobutsu var dragon var euroshogi var extinction var fairy var fischerandom var flipello var flipersi var fox-and-hounds var gardner var gc_geometric_half var gc_linear_mixture var gc_unit var georgian var giveaway var gorogoro var grasshopper var hoppelpoppel var horde var isolation var isolation7x7 var joust var judkins var karouk var kinglet var kingofthehill var knightmate var koedem var kyotoshogi var legan var loop var losalamos var losers var makpong var makruk var micro var mini var minishogi var minixiangqi var misere var newzealand var nightrider var nocastle var nocheckatomic var normal var paradigm var pawnback var pawnsideways var perfect var petrified var placement var pocketknight var raazuvaa var racingkings var seirawan var shatar var shatranj var shouse var sittuyin var snailtrail var sortofalmost var spartan var suicide var threekings var torishogi var torpedo\noption name UCI_AnalyseMode type check default false\noption name UCI_LimitStrength type check default false\noption name UCI_Elo type spin default 1350 min 500 max 2850\noption name UCI_ShowWDL type check default false\noption name SyzygyPath type string default <empty>\noption name SyzygyProbeDepth type spin default 1 min 1 max 100\noption name Syzygy50MoveRule type check default true\noption name SyzygyProbeLimit type spin default 7 min 0 max 7\noption name Use NNUE type check default true\noption name EvalFile type string default <empty>\noption name TsumeMode type check default false\noption name VariantPath type string default <empty>\noption name usemillisec type check default true\nuciok\ninfo string variant gc_geometric_half files 8 ranks 8 pocket 0 template fairy startpos rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\nreadyok\ninfo string classical evaluation enabled\n\n Contributing terms for the classical eval:\n+------------+-------------+-------------+-------------+\n|    Term    |    White    |    Black    |    Total    |\n|            |   MG    EG  |   MG    EG  |   MG    EG  |\n+------------+-------------+-------------+-------------+\n|   Material |  ----  ---- |  ----  ---- | -0.47 -0.37 |\n|  Imbalance |  ----  ---- |  ----  ---- |  0.00  0.00 |\n|      Pawns |  0.49 -0.05 |  0.34 -0.07 |  0.15  0.02 |\n|    Knights | -0.11 -0.20 | -0.15 -0.17 |  0.05 -0.03 |\n|    Bishops | -0.47 -1.47 | -0.38 -1.46 | -0.09 -0.01 |\n|      Rooks | -0.26 -0.06 | -0.26 -0.06 |  0.00  0.00 |\n|     Queens |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |\n|   Mobility | -0.18  0.05 | -0.01  0.11 | -0.17 -0.06 |\n|King safety |  0.54 -0.17 |  0.58 -0.15 | -0.04 -0.02 |\n|    Threats |  0.48  0.70 |  0.55  0.65 | -0.07  0.05 |\n|     Passed |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |\n|      Space |  0.54  0.00 |  0.47  0.00 |  0.07  0.00 |\n|    Variant |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |\n|   Winnable |  ----  ---- |  ----  ---- |  0.00 -0.19 |\n+------------+-------------+-------------+-------------+\n|      Total |  ----  ---- |  ----  ---- | -0.57 -0.62 |\n+------------+-------------+-------------+-------------+\n\nClassical evaluation   -0.54 (white side)\nFinal evaluation       -0.53 (white side)\n\n",
+        "stderr": ""
+      },
+      {
+        "index": 28,
+        "mode": "exchange",
+        "final_white_pawn_units": 1.37,
+        "stdout": "Fairy-Stockfish 220926 by Fabian Fichter\nid name Fairy-Stockfish 220926\nid author Fabian Fichter\n\noption name Debug Log File type string default \noption name Threads type spin default 1 min 1 max 512\noption name Hash type spin default 16 min 1 max 33554432\noption name Clear Hash type button\noption name Ponder type check default false\noption name MultiPV type spin default 1 min 1 max 500\noption name Skill Level type spin default 20 min -20 max 20\noption name Move Overhead type spin default 10 min 0 max 5000\noption name Slow Mover type spin default 100 min 10 max 1000\noption name nodestime type spin default 0 min 0 max 10000\noption name UCI_Chess960 type check default false\noption name UCI_Variant type combo default chess var 3check var 5check var ai-wok var almost var amazon var antichess var armageddon var asean var ataxx var atomar var atomic var berolina var breakthrough var bughouse var cambodian var chaturanga var chess var chessgi var chigorin var clobber var codrus var coregal var crazyhouse var dobutsu var dragon var euroshogi var extinction var fairy var fischerandom var flipello var flipersi var fox-and-hounds var gardner var gc_geometric_half var gc_linear_mixture var gc_unit var georgian var giveaway var gorogoro var grasshopper var hoppelpoppel var horde var isolation var isolation7x7 var joust var judkins var karouk var kinglet var kingofthehill var knightmate var koedem var kyotoshogi var legan var loop var losalamos var losers var makpong var makruk var micro var mini var minishogi var minixiangqi var misere var newzealand var nightrider var nocastle var nocheckatomic var normal var paradigm var pawnback var pawnsideways var perfect var petrified var placement var pocketknight var raazuvaa var racingkings var seirawan var shatar var shatranj var shouse var sittuyin var snailtrail var sortofalmost var spartan var suicide var threekings var torishogi var torpedo\noption name UCI_AnalyseMode type check default false\noption name UCI_LimitStrength type check default false\noption name UCI_Elo type spin default 1350 min 500 max 2850\noption name UCI_ShowWDL type check default false\noption name SyzygyPath type string default <empty>\noption name SyzygyProbeDepth type spin default 1 min 1 max 100\noption name Syzygy50MoveRule type check default true\noption name SyzygyProbeLimit type spin default 7 min 0 max 7\noption name Use NNUE type check default true\noption name EvalFile type string default <empty>\noption name TsumeMode type check default false\noption name VariantPath type string default <empty>\noption name usemillisec type check default true\nuciok\ninfo string variant gc_geometric_half files 8 ranks 8 pocket 0 template fairy startpos rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\nreadyok\ninfo string classical evaluation enabled\n\n Contributing terms for the classical eval:\n+------------+-------------+-------------+-------------+\n|    Term    |    White    |    Black    |    Total    |\n|            |   MG    EG  |   MG    EG  |   MG    EG  |\n+------------+-------------+-------------+-------------+\n|   Material |  ----  ---- |  ----  ---- |  0.39  0.97 |\n|  Imbalance |  ----  ---- |  ----  ---- |  0.24  0.18 |\n|      Pawns |  0.10 -0.02 |  0.32 -0.23 | -0.22  0.21 |\n|    Knights |  0.04 -0.16 |  0.12  0.01 | -0.08 -0.17 |\n|    Bishops | -0.12 -0.23 | -0.14 -0.62 |  0.02  0.39 |\n|      Rooks | -0.45 -0.12 |  0.32  0.15 | -0.77 -0.28 |\n|     Queens | -0.27 -0.07 |  0.00  0.00 | -0.27 -0.07 |\n|   Mobility |  0.52  1.09 |  0.85  1.80 | -0.32 -0.71 |\n|King safety | -0.07 -0.20 |  0.57 -0.13 | -0.64 -0.07 |\n|    Threats |  0.80  0.75 |  1.89  1.86 | -1.09 -1.11 |\n|     Passed |  0.03  0.13 | -0.08  0.09 |  0.11  0.04 |\n|      Space |  0.19  0.00 |  0.19  0.00 |  0.00  0.00 |\n|    Variant |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |\n|   Winnable |  ----  ---- |  ----  ---- |  0.00  0.12 |\n+------------+-------------+-------------+-------------+\n|      Total |  ----  ---- |  ----  ---- | -2.64 -0.50 |\n+------------+-------------+-------------+-------------+\n\nClassical evaluation   -2.38 (white side)\nFinal evaluation       +1.37 (white side)\n\n",
+        "stderr": ""
+      },
+      {
+        "index": 28,
+        "mode": "classical",
+        "final_white_pawn_units": -2.26,
+        "stdout": "Fairy-Stockfish 220926 by Fabian Fichter\nid name Fairy-Stockfish 220926\nid author Fabian Fichter\n\noption name Debug Log File type string default \noption name Threads type spin default 1 min 1 max 512\noption name Hash type spin default 16 min 1 max 33554432\noption name Clear Hash type button\noption name Ponder type check default false\noption name MultiPV type spin default 1 min 1 max 500\noption name Skill Level type spin default 20 min -20 max 20\noption name Move Overhead type spin default 10 min 0 max 5000\noption name Slow Mover type spin default 100 min 10 max 1000\noption name nodestime type spin default 0 min 0 max 10000\noption name UCI_Chess960 type check default false\noption name UCI_Variant type combo default chess var 3check var 5check var ai-wok var almost var amazon var antichess var armageddon var asean var ataxx var atomar var atomic var berolina var breakthrough var bughouse var cambodian var chaturanga var chess var chessgi var chigorin var clobber var codrus var coregal var crazyhouse var dobutsu var dragon var euroshogi var extinction var fairy var fischerandom var flipello var flipersi var fox-and-hounds var gardner var gc_geometric_half var gc_linear_mixture var gc_unit var georgian var giveaway var gorogoro var grasshopper var hoppelpoppel var horde var isolation var isolation7x7 var joust var judkins var karouk var kinglet var kingofthehill var knightmate var koedem var kyotoshogi var legan var loop var losalamos var losers var makpong var makruk var micro var mini var minishogi var minixiangqi var misere var newzealand var nightrider var nocastle var nocheckatomic var normal var paradigm var pawnback var pawnsideways var perfect var petrified var placement var pocketknight var raazuvaa var racingkings var seirawan var shatar var shatranj var shouse var sittuyin var snailtrail var sortofalmost var spartan var suicide var threekings var torishogi var torpedo\noption name UCI_AnalyseMode type check default false\noption name UCI_LimitStrength type check default false\noption name UCI_Elo type spin default 1350 min 500 max 2850\noption name UCI_ShowWDL type check default false\noption name SyzygyPath type string default <empty>\noption name SyzygyProbeDepth type spin default 1 min 1 max 100\noption name Syzygy50MoveRule type check default true\noption name SyzygyProbeLimit type spin default 7 min 0 max 7\noption name Use NNUE type check default true\noption name EvalFile type string default <empty>\noption name TsumeMode type check default false\noption name VariantPath type string default <empty>\noption name usemillisec type check default true\nuciok\ninfo string variant gc_geometric_half files 8 ranks 8 pocket 0 template fairy startpos rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\nreadyok\ninfo string classical evaluation enabled\n\n Contributing terms for the classical eval:\n+------------+-------------+-------------+-------------+\n|    Term    |    White    |    Black    |    Total    |\n|            |   MG    EG  |   MG    EG  |   MG    EG  |\n+------------+-------------+-------------+-------------+\n|   Material |  ----  ---- |  ----  ---- |  0.39  0.97 |\n|  Imbalance |  ----  ---- |  ----  ---- |  0.24  0.18 |\n|      Pawns |  0.10 -0.02 |  0.32 -0.23 | -0.22  0.21 |\n|    Knights |  0.04 -0.16 |  0.12  0.01 | -0.08 -0.17 |\n|    Bishops | -0.12 -0.23 | -0.14 -0.62 |  0.02  0.39 |\n|      Rooks | -0.45 -0.12 |  0.32  0.15 | -0.77 -0.28 |\n|     Queens | -0.27 -0.07 |  0.00  0.00 | -0.27 -0.07 |\n|   Mobility |  0.52  1.09 |  0.85  1.80 | -0.32 -0.71 |\n|King safety | -0.07 -0.20 |  0.57 -0.13 | -0.64 -0.07 |\n|    Threats |  0.80  0.75 |  1.89  1.86 | -1.09 -1.11 |\n|     Passed |  0.03  0.13 | -0.08  0.09 |  0.11  0.04 |\n|      Space |  0.19  0.00 |  0.19  0.00 |  0.00  0.00 |\n|    Variant |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |\n|   Winnable |  ----  ---- |  ----  ---- |  0.00  0.12 |\n+------------+-------------+-------------+-------------+\n|      Total |  ----  ---- |  ----  ---- | -2.64 -0.50 |\n+------------+-------------+-------------+-------------+\n\nClassical evaluation   -2.38 (white side)\nFinal evaluation       -2.26 (white side)\n\n",
+        "stderr": ""
+      },
+      {
+        "index": 60,
+        "mode": "exchange",
+        "final_white_pawn_units": 0.79,
+        "stdout": "Fairy-Stockfish 220926 by Fabian Fichter\nid name Fairy-Stockfish 220926\nid author Fabian Fichter\n\noption name Debug Log File type string default \noption name Threads type spin default 1 min 1 max 512\noption name Hash type spin default 16 min 1 max 33554432\noption name Clear Hash type button\noption name Ponder type check default false\noption name MultiPV type spin default 1 min 1 max 500\noption name Skill Level type spin default 20 min -20 max 20\noption name Move Overhead type spin default 10 min 0 max 5000\noption name Slow Mover type spin default 100 min 10 max 1000\noption name nodestime type spin default 0 min 0 max 10000\noption name UCI_Chess960 type check default false\noption name UCI_Variant type combo default chess var 3check var 5check var ai-wok var almost var amazon var antichess var armageddon var asean var ataxx var atomar var atomic var berolina var breakthrough var bughouse var cambodian var chaturanga var chess var chessgi var chigorin var clobber var codrus var coregal var crazyhouse var dobutsu var dragon var euroshogi var extinction var fairy var fischerandom var flipello var flipersi var fox-and-hounds var gardner var gc_geometric_half var gc_linear_mixture var gc_unit var georgian var giveaway var gorogoro var grasshopper var hoppelpoppel var horde var isolation var isolation7x7 var joust var judkins var karouk var kinglet var kingofthehill var knightmate var koedem var kyotoshogi var legan var loop var losalamos var losers var makpong var makruk var micro var mini var minishogi var minixiangqi var misere var newzealand var nightrider var nocastle var nocheckatomic var normal var paradigm var pawnback var pawnsideways var perfect var petrified var placement var pocketknight var raazuvaa var racingkings var seirawan var shatar var shatranj var shouse var sittuyin var snailtrail var sortofalmost var spartan var suicide var threekings var torishogi var torpedo\noption name UCI_AnalyseMode type check default false\noption name UCI_LimitStrength type check default false\noption name UCI_Elo type spin default 1350 min 500 max 2850\noption name UCI_ShowWDL type check default false\noption name SyzygyPath type string default <empty>\noption name SyzygyProbeDepth type spin default 1 min 1 max 100\noption name Syzygy50MoveRule type check default true\noption name SyzygyProbeLimit type spin default 7 min 0 max 7\noption name Use NNUE type check default true\noption name EvalFile type string default <empty>\noption name TsumeMode type check default false\noption name VariantPath type string default <empty>\noption name usemillisec type check default true\nuciok\ninfo string variant gc_geometric_half files 8 ranks 8 pocket 0 template fairy startpos rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\nreadyok\ninfo string classical evaluation enabled\n\n Contributing terms for the classical eval:\n+------------+-------------+-------------+-------------+\n|    Term    |    White    |    Black    |    Total    |\n|            |   MG    EG  |   MG    EG  |   MG    EG  |\n+------------+-------------+-------------+-------------+\n|   Material |  ----  ---- |  ----  ---- |  0.32  0.24 |\n|  Imbalance |  ----  ---- |  ----  ---- |  0.07 -0.01 |\n|      Pawns |  0.08 -0.15 |  0.31  0.00 | -0.23 -0.15 |\n|    Knights | -0.22 -0.33 | -0.15 -0.17 | -0.07 -0.16 |\n|    Bishops | -0.11 -0.15 |  0.16 -0.30 | -0.26  0.15 |\n|      Rooks |  0.03 -0.02 |  0.32  0.15 | -0.29 -0.18 |\n|     Queens |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |\n|   Mobility |  0.40  0.85 |  0.75  1.65 | -0.35 -0.80 |\n|King safety | -0.07 -0.18 |  0.36 -0.18 | -0.42  0.00 |\n|    Threats |  0.38  0.64 |  0.70  0.61 | -0.31  0.03 |\n|     Passed |  0.03  0.13 |  1.04  1.24 | -1.00 -1.11 |\n|      Space |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |\n|    Variant |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |\n|   Winnable |  ----  ---- |  ----  ---- |  0.00  0.49 |\n+------------+-------------+-------------+-------------+\n|      Total |  ----  ---- |  ----  ---- | -2.55 -1.50 |\n+------------+-------------+-------------+-------------+\n\nClassical evaluation   -1.92 (white side)\nFinal evaluation       +0.79 (white side)\n\n",
+        "stderr": ""
+      },
+      {
+        "index": 60,
+        "mode": "classical",
+        "final_white_pawn_units": -1.92,
+        "stdout": "Fairy-Stockfish 220926 by Fabian Fichter\nid name Fairy-Stockfish 220926\nid author Fabian Fichter\n\noption name Debug Log File type string default \noption name Threads type spin default 1 min 1 max 512\noption name Hash type spin default 16 min 1 max 33554432\noption name Clear Hash type button\noption name Ponder type check default false\noption name MultiPV type spin default 1 min 1 max 500\noption name Skill Level type spin default 20 min -20 max 20\noption name Move Overhead type spin default 10 min 0 max 5000\noption name Slow Mover type spin default 100 min 10 max 1000\noption name nodestime type spin default 0 min 0 max 10000\noption name UCI_Chess960 type check default false\noption name UCI_Variant type combo default chess var 3check var 5check var ai-wok var almost var amazon var antichess var armageddon var asean var ataxx var atomar var atomic var berolina var breakthrough var bughouse var cambodian var chaturanga var chess var chessgi var chigorin var clobber var codrus var coregal var crazyhouse var dobutsu var dragon var euroshogi var extinction var fairy var fischerandom var flipello var flipersi var fox-and-hounds var gardner var gc_geometric_half var gc_linear_mixture var gc_unit var georgian var giveaway var gorogoro var grasshopper var hoppelpoppel var horde var isolation var isolation7x7 var joust var judkins var karouk var kinglet var kingofthehill var knightmate var koedem var kyotoshogi var legan var loop var losalamos var losers var makpong var makruk var micro var mini var minishogi var minixiangqi var misere var newzealand var nightrider var nocastle var nocheckatomic var normal var paradigm var pawnback var pawnsideways var perfect var petrified var placement var pocketknight var raazuvaa var racingkings var seirawan var shatar var shatranj var shouse var sittuyin var snailtrail var sortofalmost var spartan var suicide var threekings var torishogi var torpedo\noption name UCI_AnalyseMode type check default false\noption name UCI_LimitStrength type check default false\noption name UCI_Elo type spin default 1350 min 500 max 2850\noption name UCI_ShowWDL type check default false\noption name SyzygyPath type string default <empty>\noption name SyzygyProbeDepth type spin default 1 min 1 max 100\noption name Syzygy50MoveRule type check default true\noption name SyzygyProbeLimit type spin default 7 min 0 max 7\noption name Use NNUE type check default true\noption name EvalFile type string default <empty>\noption name TsumeMode type check default false\noption name VariantPath type string default <empty>\noption name usemillisec type check default true\nuciok\ninfo string variant gc_geometric_half files 8 ranks 8 pocket 0 template fairy startpos rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\nreadyok\ninfo string classical evaluation enabled\n\n Contributing terms for the classical eval:\n+------------+-------------+-------------+-------------+\n|    Term    |    White    |    Black    |    Total    |\n|            |   MG    EG  |   MG    EG  |   MG    EG  |\n+------------+-------------+-------------+-------------+\n|   Material |  ----  ---- |  ----  ---- |  0.32  0.24 |\n|  Imbalance |  ----  ---- |  ----  ---- |  0.07 -0.01 |\n|      Pawns |  0.08 -0.15 |  0.31  0.00 | -0.23 -0.15 |\n|    Knights | -0.22 -0.33 | -0.15 -0.17 | -0.07 -0.16 |\n|    Bishops | -0.11 -0.15 |  0.16 -0.30 | -0.26  0.15 |\n|      Rooks |  0.03 -0.02 |  0.32  0.15 | -0.29 -0.18 |\n|     Queens |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |\n|   Mobility |  0.40  0.85 |  0.75  1.65 | -0.35 -0.80 |\n|King safety | -0.07 -0.18 |  0.36 -0.18 | -0.42  0.00 |\n|    Threats |  0.38  0.64 |  0.70  0.61 | -0.31  0.03 |\n|     Passed |  0.03  0.13 |  1.04  1.24 | -1.00 -1.11 |\n|      Space |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |\n|    Variant |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |\n|   Winnable |  ----  ---- |  ----  ---- |  0.00  0.49 |\n+------------+-------------+-------------+-------------+\n|      Total |  ----  ---- |  ----  ---- | -2.55 -1.50 |\n+------------+-------------+-------------+-------------+\n\nClassical evaluation   -1.92 (white side)\nFinal evaluation       -1.92 (white side)\n\n",
+        "stderr": ""
+      }
+    ]
+  },
+  "threat_geometry": {
+    "complete": true,
+    "question": "Does cheaper-attacker danger hidden by pseudo defense actually occur on root28 or its three declared children?",
+    "falsifier": "No such target means this root does not justify adding that leaf penalty; do not fit classical threats or widen the hypothesis after a negative result.",
+    "scope": "Current pseudo attackers/defenders only; King has no material price. Children retain full real history and actor; legal Black captures are enumerated without changing actor/history. Not SEE, forced loss, calibrated probability or a new evaluator.",
+    "rows": [
+      {
+        "chosen": null,
+        "fen": "2b1r1k1/2p1qppp/2p5/3pN3/rP1QnB2/1N6/P5PP/R5KR w - - 5 17",
+        "history_plies": 32,
+        "targets": [],
+        "legal_black_captures": []
+      },
+      {
+        "chosen": "h2h4",
+        "fen": "2b1r1k1/2p1qppp/2p5/3pN3/rP1QnB1P/1N6/P5P1/R5KR b - h3 0 17",
+        "history_plies": 33,
+        "targets": [],
+        "legal_black_captures": [
+          {
+            "move": "e7e5",
+            "attacker": "q",
+            "victim": "N",
+            "off_target_ep": false,
+            "defenders": [
+              "d4",
+              "f4"
+            ]
+          },
+          {
+            "move": "e7h4",
+            "attacker": "q",
+            "victim": "P",
+            "off_target_ep": false,
+            "defenders": [
+              "h1"
+            ]
+          },
+          {
+            "move": "e7b4",
+            "attacker": "q",
+            "victim": "P",
+            "off_target_ep": false,
+            "defenders": [
+              "d4"
+            ]
+          },
+          {
+            "move": "a4b4",
+            "attacker": "r",
+            "victim": "P",
+            "off_target_ep": false,
+            "defenders": [
+              "d4"
+            ]
+          },
+          {
+            "move": "a4a2",
+            "attacker": "r",
+            "victim": "P",
+            "off_target_ep": false,
+            "defenders": [
+              "a1"
+            ]
+          }
+        ]
+      },
+      {
+        "chosen": "e5c6",
+        "fen": "2b1r1k1/2p1qppp/2N5/3p4/rP1QnB2/1N6/P5PP/R5KR b - - 0 17",
+        "history_plies": 33,
+        "targets": [],
+        "legal_black_captures": [
+          {
+            "move": "e7b4",
+            "attacker": "q",
+            "victim": "P",
+            "off_target_ep": false,
+            "defenders": [
+              "d4",
+              "c6"
+            ]
+          },
+          {
+            "move": "a4b4",
+            "attacker": "r",
+            "victim": "P",
+            "off_target_ep": false,
+            "defenders": [
+              "d4",
+              "c6"
+            ]
+          },
+          {
+            "move": "a4a2",
+            "attacker": "r",
+            "victim": "P",
+            "off_target_ep": false,
+            "defenders": [
+              "a1"
+            ]
+          }
+        ]
+      },
+      {
+        "chosen": "e5d3",
+        "fen": "2b1r1k1/2p1qppp/2p5/3p4/rP1QnB2/1N1N4/P5PP/R5KR b - - 6 17",
+        "history_plies": 33,
+        "targets": [],
+        "legal_black_captures": [
+          {
+            "move": "e7b4",
+            "attacker": "q",
+            "victim": "P",
+            "off_target_ep": false,
+            "defenders": [
+              "d3",
+              "d4"
+            ]
+          },
+          {
+            "move": "a4b4",
+            "attacker": "r",
+            "victim": "P",
+            "off_target_ep": false,
+            "defenders": [
+              "d3",
+              "d4"
+            ]
+          },
+          {
+            "move": "a4a2",
+            "attacker": "r",
+            "victim": "P",
+            "off_target_ep": false,
+            "defenders": [
+              "a1"
+            ]
+          }
+        ]
+      }
+    ],
+    "root_input_sha256": "ee51aef8e62974037ae179e04923a7b3a63145c5e575d251aeebb0d5dea7c965",
+    "prices": {
+      "P": 208,
+      "N": 605,
+      "B": 549,
+      "R": 1071,
+      "Q": 1194
+    }
+  },
+  "continuations": {
+    "declaration": {
+      "question": "Does the favorable root28 choice translate into useful continuation when early divergence is removed?",
+      "design": "Four streams:forced e5c6/e5d3 from same full root history, candidate White geometric_half SinglePV1 throughout, versus classical SinglePV1 or fullstrength reference. Fresh engines/hash/branch, fixed160subsequentplies and immediate Chess claim policy. All branches retained; no outcome-driven extension.",
+      "resources": "Both native players2sec Threads1 Hash16 NNUEfalse; reference500000nodes/2sec fuse Threads1 Hash16 fullstrength. Compare first-choice branches within opponent only; different opponents not equal-resource contrast.",
+      "decision": "Exposed causal intervention on first move only within this small continuation; stochastic/timed downstream can diverge. Finite cp and whole-game feedback not proof/price fitting/Elo. Negative branches argue against blind breadth/default promotion.",
+      "cost": "<=1280native requested seconds across2classical streams;<=640local+640reference fuse seconds across2reference streams plus replay. Increment justified by concrete choice/outcome question, interruptible each step; no other timed jobs.",
+      "root_input_sha256": "ee51aef8e62974037ae179e04923a7b3a63145c5e575d251aeebb0d5dea7c965",
+      "history_prefix": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "b8c6",
+        "f1c4",
+        "f8c5",
+        "c2c3",
+        "g8f6",
+        "b2b4",
+        "c5f2",
+        "e1f2",
+        "f6e4",
+        "f2g1",
+        "d7d5",
+        "c4b5",
+        "d8e7",
+        "d2d4",
+        "e5d4",
+        "d1d4",
+        "e8g8",
+        "b5c6",
+        "b7c6",
+        "c1f4",
+        "a7a5",
+        "b1d2",
+        "a5b4",
+        "c3b4",
+        "f8d8",
+        "d2b3",
+        "a8a4",
+        "f3e5",
+        "d8e8"
+      ],
+      "forced_choices": [
+        "e5c6",
+        "e5d3"
+      ],
+      "binary_sha256": {
+        "exchange": "40d5689fe0da14762b1f30dd1fe7cb0df722dfa7bb6598dd8a30010b45d47f5b",
+        "classical": "2f67539e3b58295901e365edb722fba1e43220185e97eaafb18f38df9d7a8232",
+        "reference": "55aa40c857de30b79dbe4f8e4c335ee2b23815cf2f100a6630d54761fcad3b85"
+      },
+      "config_sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0",
+      "adapter_sha256": "cb64679d05e93b0f4f6924d20d9fe767441e38a075ea039078d7a89b6cf5add8",
+      "producer_sha256": "0af51db5057f6eea229624523694b4e882736526a85e5a4699c8a7a8d027450d"
+    },
+    "replay": {
+      "complete": true,
+      "input_sha256": "82ced32e6bf75e57872869cb90d0becd360bee236e63c3fc721235aef205c0e5",
+      "games": [
+        {
+          "index": 0,
+          "opponent": "classical",
+          "forced": "e5c6",
+          "outcome": "loss",
+          "plies": 71,
+          "prefix_plies": 33,
+          "end": "checkmate",
+          "adjudication": {
+            "ply": 104,
+            "kind": "automatic",
+            "reason": "CHECKMATE",
+            "winner": 1,
+            "witness_uci": null
+          },
+          "cost": {
+            "classical": {
+              "calls": 36,
+              "wall_seconds": 63.37197020021267,
+              "engine_reported_nodes": 128140863
+            },
+            "candidate": {
+              "calls": 35,
+              "wall_seconds": 61.304060799535364,
+              "engine_reported_nodes": 199287828
+            }
+          }
+        },
+        {
+          "index": 1,
+          "opponent": "classical",
+          "forced": "e5d3",
+          "outcome": "draw",
+          "plies": 88,
+          "prefix_plies": 33,
+          "end": "chess_insufficient_material",
+          "adjudication": {
+            "ply": 121,
+            "kind": "automatic",
+            "reason": "INSUFFICIENT_MATERIAL",
+            "winner": null,
+            "witness_uci": null
+          },
+          "cost": {
+            "classical": {
+              "calls": 44,
+              "wall_seconds": 88.12949190032668,
+              "engine_reported_nodes": 189620664
+            },
+            "candidate": {
+              "calls": 44,
+              "wall_seconds": 88.11526190023869,
+              "engine_reported_nodes": 281955372
+            }
+          }
+        },
+        {
+          "index": 2,
+          "opponent": "reference",
+          "forced": "e5c6",
+          "outcome": "loss",
+          "plies": 37,
+          "prefix_plies": 33,
+          "end": "checkmate",
+          "adjudication": {
+            "ply": 70,
+            "kind": "automatic",
+            "reason": "CHECKMATE",
+            "winner": 1,
+            "witness_uci": null
+          },
+          "cost": {
+            "reference": {
+              "calls": 19,
+              "wall_seconds": 7.394640900427476,
+              "engine_reported_nodes": 8068966
+            },
+            "candidate": {
+              "calls": 18,
+              "wall_seconds": 28.12956429948099,
+              "engine_reported_nodes": 78938273
+            }
+          }
+        },
+        {
+          "index": 3,
+          "opponent": "reference",
+          "forced": "e5d3",
+          "outcome": "loss",
+          "plies": 91,
+          "prefix_plies": 33,
+          "end": "checkmate",
+          "adjudication": {
+            "ply": 124,
+            "kind": "automatic",
+            "reason": "CHECKMATE",
+            "winner": 1,
+            "witness_uci": null
+          },
+          "cost": {
+            "reference": {
+              "calls": 46,
+              "wall_seconds": 15.088707799091935,
+              "engine_reported_nodes": 21660236
+            },
+            "candidate": {
+              "calls": 45,
+              "wall_seconds": 82.48889919999056,
+              "engine_reported_nodes": 254659805
+            }
+          }
+        }
+      ],
+      "errors": [],
+      "played_plies": 287,
+      "prefix_plies": 132,
+      "wall_seconds": 2.0962704999838024
+    },
+    "wall_seconds": 438.47711779992096
+  },
+  "cost": {
+    "complete": true,
+    "input_sha256": "3b75da8f47f0e4a7efffbaca796df7c11ebe94803e0b2233bf4ad666d6a86e22",
+    "scope": "Time-limited native calls at equal1sec;reported depth/nodes are not production counters or complete fixed-depth search. Total calls/cost differ because actual trajectories/terminal policy differ; not a leaf-speed/strength causal comparison.",
+    "groups": {
+      "1": {
+        "candidate": {
+          "calls": 576,
+          "wall_seconds": 545.2964099026285,
+          "controller_cpu_seconds": 10.171875,
+          "engine_reported_nodes": 1636838995,
+          "engine_reported_seconds": 544.218,
+          "median_reported_depth": 23.0,
+          "median_reported_seldepth": 27.0,
+          "native_cpu_seconds": null,
+          "cache_hits": null,
+          "scored_leaves": null
+        },
+        "classical": {
+          "calls": 580,
+          "wall_seconds": 549.3381627011113,
+          "controller_cpu_seconds": 9.40625,
+          "engine_reported_nodes": 1045866008,
+          "engine_reported_seconds": 548.4849999999999,
+          "median_reported_depth": 20.0,
+          "median_reported_seldepth": 26.0,
+          "native_cpu_seconds": null,
+          "cache_hits": null,
+          "scored_leaves": null
+        }
+      },
+      "3": {
+        "candidate": {
+          "calls": 513,
+          "wall_seconds": 488.25410260190256,
+          "controller_cpu_seconds": 13.375,
+          "engine_reported_nodes": 1429079405,
+          "engine_reported_seconds": 486.69699999999995,
+          "median_reported_depth": 19,
+          "median_reported_seldepth": 24,
+          "native_cpu_seconds": null,
+          "cache_hits": null,
+          "scored_leaves": null
+        },
+        "classical": {
+          "calls": 515,
+          "wall_seconds": 484.43995279772207,
+          "controller_cpu_seconds": 7.921875,
+          "engine_reported_nodes": 917314358,
+          "engine_reported_seconds": 483.67099999999994,
+          "median_reported_depth": 19,
+          "median_reported_seldepth": 26,
+          "native_cpu_seconds": null,
+          "cache_hits": null,
+          "scored_leaves": null
+        }
+      }
+    },
+    "stream_wall_seconds": 2097.8093993999064,
+    "source_bytes": 2405250,
+    "recording_cost_before_final_cohort_save": {
+      "writes": 2209,
+      "bytes": 103152517,
+      "seconds": 10.60500650247559
+    }
+  },
+  "root_collector_failure": "TypeError duplicate multipv keyword after2searches; no diagnostic was completed. Empty failed report preserved; repaired original declared diagnostic rerun, not outcome-driven retry.",
+  "replay": {
+    "complete": true,
+    "input_sha256": "3b75da8f47f0e4a7efffbaca796df7c11ebe94803e0b2233bf4ad666d6a86e22",
+    "games": [
+      {
+        "index": 0,
+        "id": "open-file-e-bishop",
+        "table": "geometric_half",
+        "candidate_color": 0,
+        "candidate_multipv": 1,
+        "outcome": "loss",
+        "plies": 86,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 92,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 1,
+          "witness_uci": null
+        },
+        "cost": {
+          "candidate": {
+            "calls": 43,
+            "wall_seconds": 40.18839320051484,
+            "engine_reported_nodes": 96714728
+          },
+          "classical": {
+            "calls": 43,
+            "wall_seconds": 40.177803500788286,
+            "engine_reported_nodes": 62488621
+          }
+        }
+      },
+      {
+        "index": 1,
+        "id": "open-file-e-bishop",
+        "table": "geometric_half",
+        "candidate_color": 0,
+        "candidate_multipv": 3,
+        "outcome": "loss",
+        "plies": 70,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 76,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 1,
+          "witness_uci": null
+        },
+        "cost": {
+          "candidate": {
+            "calls": 35,
+            "wall_seconds": 32.32840730063617,
+            "engine_reported_nodes": 80053285
+          },
+          "classical": {
+            "calls": 35,
+            "wall_seconds": 32.15269840043038,
+            "engine_reported_nodes": 53958980
+          }
+        }
+      },
+      {
+        "index": 2,
+        "id": "open-file-e-bishop",
+        "table": "geometric_half",
+        "candidate_color": 1,
+        "candidate_multipv": 1,
+        "outcome": "loss",
+        "plies": 89,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 95,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 0,
+          "witness_uci": null
+        },
+        "cost": {
+          "classical": {
+            "calls": 45,
+            "wall_seconds": 41.2684350006748,
+            "engine_reported_nodes": 72157810
+          },
+          "candidate": {
+            "calls": 44,
+            "wall_seconds": 40.26700800051913,
+            "engine_reported_nodes": 120692168
+          }
+        }
+      },
+      {
+        "index": 3,
+        "id": "open-file-e-bishop",
+        "table": "geometric_half",
+        "candidate_color": 1,
+        "candidate_multipv": 3,
+        "outcome": "loss",
+        "plies": 83,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 89,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 0,
+          "witness_uci": null
+        },
+        "cost": {
+          "classical": {
+            "calls": 42,
+            "wall_seconds": 39.170844699954614,
+            "engine_reported_nodes": 72042685
+          },
+          "candidate": {
+            "calls": 41,
+            "wall_seconds": 38.268836200470105,
+            "engine_reported_nodes": 109702558
+          }
+        }
+      },
+      {
+        "index": 4,
+        "id": "open-file-e-bishop",
+        "table": "linear_mixture",
+        "candidate_color": 0,
+        "candidate_multipv": 1,
+        "outcome": "loss",
+        "plies": 102,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 108,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 1,
+          "witness_uci": null
+        },
+        "cost": {
+          "candidate": {
+            "calls": 51,
+            "wall_seconds": 47.68160599959083,
+            "engine_reported_nodes": 149484377
+          },
+          "classical": {
+            "calls": 51,
+            "wall_seconds": 47.78847030038014,
+            "engine_reported_nodes": 104341135
+          }
+        }
+      },
+      {
+        "index": 5,
+        "id": "open-file-e-bishop",
+        "table": "linear_mixture",
+        "candidate_color": 0,
+        "candidate_multipv": 3,
+        "outcome": "loss",
+        "plies": 102,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 108,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 1,
+          "witness_uci": null
+        },
+        "cost": {
+          "candidate": {
+            "calls": 51,
+            "wall_seconds": 48.318987800506875,
+            "engine_reported_nodes": 137546676
+          },
+          "classical": {
+            "calls": 51,
+            "wall_seconds": 48.14344609901309,
+            "engine_reported_nodes": 85544956
+          }
+        }
+      },
+      {
+        "index": 6,
+        "id": "open-file-e-bishop",
+        "table": "linear_mixture",
+        "candidate_color": 1,
+        "candidate_multipv": 1,
+        "outcome": "loss",
+        "plies": 115,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 121,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 0,
+          "witness_uci": null
+        },
+        "cost": {
+          "classical": {
+            "calls": 58,
+            "wall_seconds": 54.384533300297335,
+            "engine_reported_nodes": 97331825
+          },
+          "candidate": {
+            "calls": 57,
+            "wall_seconds": 53.37806440005079,
+            "engine_reported_nodes": 154572113
+          }
+        }
+      },
+      {
+        "index": 7,
+        "id": "open-file-e-bishop",
+        "table": "linear_mixture",
+        "candidate_color": 1,
+        "candidate_multipv": 3,
+        "outcome": "draw",
+        "plies": 62,
+        "prefix_plies": 6,
+        "end": "chess_threefold_repetition",
+        "adjudication": {
+          "ply": 68,
+          "kind": "claim",
+          "reason": "THREEFOLD_REPETITION",
+          "winner": null,
+          "witness_uci": "g1h1"
+        },
+        "cost": {
+          "classical": {
+            "calls": 31,
+            "wall_seconds": 31.079830300295725,
+            "engine_reported_nodes": 49521849
+          },
+          "candidate": {
+            "calls": 31,
+            "wall_seconds": 31.113593800459057,
+            "engine_reported_nodes": 78374888
+          }
+        }
+      },
+      {
+        "index": 8,
+        "id": "open-file-e-bishop",
+        "table": "unit",
+        "candidate_color": 0,
+        "candidate_multipv": 1,
+        "outcome": "loss",
+        "plies": 122,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 128,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 1,
+          "witness_uci": null
+        },
+        "cost": {
+          "candidate": {
+            "calls": 61,
+            "wall_seconds": 58.27169349999167,
+            "engine_reported_nodes": 194605158
+          },
+          "classical": {
+            "calls": 61,
+            "wall_seconds": 58.245072700316086,
+            "engine_reported_nodes": 116978586
+          }
+        }
+      },
+      {
+        "index": 9,
+        "id": "open-file-e-bishop",
+        "table": "unit",
+        "candidate_color": 0,
+        "candidate_multipv": 3,
+        "outcome": "loss",
+        "plies": 52,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 58,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 1,
+          "witness_uci": null
+        },
+        "cost": {
+          "candidate": {
+            "calls": 26,
+            "wall_seconds": 23.26212879945524,
+            "engine_reported_nodes": 68538689
+          },
+          "classical": {
+            "calls": 26,
+            "wall_seconds": 23.166876799892634,
+            "engine_reported_nodes": 48506382
+          }
+        }
+      },
+      {
+        "index": 10,
+        "id": "open-file-e-bishop",
+        "table": "unit",
+        "candidate_color": 1,
+        "candidate_multipv": 1,
+        "outcome": "loss",
+        "plies": 143,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 149,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 0,
+          "witness_uci": null
+        },
+        "cost": {
+          "classical": {
+            "calls": 72,
+            "wall_seconds": 69.05205029901117,
+            "engine_reported_nodes": 128100845
+          },
+          "candidate": {
+            "calls": 71,
+            "wall_seconds": 67.97759810066782,
+            "engine_reported_nodes": 200880126
+          }
+        }
+      },
+      {
+        "index": 11,
+        "id": "open-file-e-bishop",
+        "table": "unit",
+        "candidate_color": 1,
+        "candidate_multipv": 3,
+        "outcome": "win",
+        "plies": 98,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 104,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 1,
+          "witness_uci": null
+        },
+        "cost": {
+          "classical": {
+            "calls": 49,
+            "wall_seconds": 45.379780299728736,
+            "engine_reported_nodes": 101563302
+          },
+          "candidate": {
+            "calls": 49,
+            "wall_seconds": 46.63753360020928,
+            "engine_reported_nodes": 159205113
+          }
+        }
+      },
+      {
+        "index": 12,
+        "id": "central-d-knight",
+        "table": "geometric_half",
+        "candidate_color": 0,
+        "candidate_multipv": 1,
+        "outcome": "loss",
+        "plies": 102,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 108,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 1,
+          "witness_uci": null
+        },
+        "cost": {
+          "candidate": {
+            "calls": 51,
+            "wall_seconds": 48.20142070110887,
+            "engine_reported_nodes": 148077708
+          },
+          "classical": {
+            "calls": 51,
+            "wall_seconds": 48.19455449981615,
+            "engine_reported_nodes": 91233139
+          }
+        }
+      },
+      {
+        "index": 13,
+        "id": "central-d-knight",
+        "table": "geometric_half",
+        "candidate_color": 0,
+        "candidate_multipv": 3,
+        "outcome": "loss",
+        "plies": 68,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 74,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 1,
+          "witness_uci": null
+        },
+        "cost": {
+          "candidate": {
+            "calls": 34,
+            "wall_seconds": 30.929108400363475,
+            "engine_reported_nodes": 86344138
+          },
+          "classical": {
+            "calls": 34,
+            "wall_seconds": 30.827374699525535,
+            "engine_reported_nodes": 55498430
+          }
+        }
+      },
+      {
+        "index": 14,
+        "id": "central-d-knight",
+        "table": "geometric_half",
+        "candidate_color": 1,
+        "candidate_multipv": 1,
+        "outcome": "loss",
+        "plies": 69,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 75,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 0,
+          "witness_uci": null
+        },
+        "cost": {
+          "classical": {
+            "calls": 35,
+            "wall_seconds": 32.10728109953925,
+            "engine_reported_nodes": 61267518
+          },
+          "candidate": {
+            "calls": 34,
+            "wall_seconds": 31.110431399662048,
+            "engine_reported_nodes": 90562299
+          }
+        }
+      },
+      {
+        "index": 15,
+        "id": "central-d-knight",
+        "table": "geometric_half",
+        "candidate_color": 1,
+        "candidate_multipv": 3,
+        "outcome": "loss",
+        "plies": 109,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 115,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 0,
+          "witness_uci": null
+        },
+        "cost": {
+          "classical": {
+            "calls": 55,
+            "wall_seconds": 51.74973799963482,
+            "engine_reported_nodes": 106904582
+          },
+          "candidate": {
+            "calls": 54,
+            "wall_seconds": 51.23324549989775,
+            "engine_reported_nodes": 157024190
+          }
+        }
+      },
+      {
+        "index": 16,
+        "id": "central-d-knight",
+        "table": "linear_mixture",
+        "candidate_color": 0,
+        "candidate_multipv": 1,
+        "outcome": "draw",
+        "plies": 63,
+        "prefix_plies": 6,
+        "end": "chess_threefold_repetition",
+        "adjudication": {
+          "ply": 69,
+          "kind": "claim",
+          "reason": "THREEFOLD_REPETITION",
+          "winner": null,
+          "witness_uci": "g3f3"
+        },
+        "cost": {
+          "candidate": {
+            "calls": 32,
+            "wall_seconds": 32.07697040098719,
+            "engine_reported_nodes": 83143652
+          },
+          "classical": {
+            "calls": 31,
+            "wall_seconds": 31.061400999315083,
+            "engine_reported_nodes": 49340517
+          }
+        }
+      },
+      {
+        "index": 17,
+        "id": "central-d-knight",
+        "table": "linear_mixture",
+        "candidate_color": 0,
+        "candidate_multipv": 3,
+        "outcome": "win",
+        "plies": 153,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 159,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 0,
+          "witness_uci": null
+        },
+        "cost": {
+          "candidate": {
+            "calls": 77,
+            "wall_seconds": 75.32374290050939,
+            "engine_reported_nodes": 224570197
+          },
+          "classical": {
+            "calls": 76,
+            "wall_seconds": 72.35758050018921,
+            "engine_reported_nodes": 141080624
+          }
+        }
+      },
+      {
+        "index": 18,
+        "id": "central-d-knight",
+        "table": "linear_mixture",
+        "candidate_color": 1,
+        "candidate_multipv": 1,
+        "outcome": "loss",
+        "plies": 53,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 59,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 0,
+          "witness_uci": null
+        },
+        "cost": {
+          "classical": {
+            "calls": 27,
+            "wall_seconds": 24.077648699982092,
+            "engine_reported_nodes": 43421445
+          },
+          "candidate": {
+            "calls": 26,
+            "wall_seconds": 23.085321800317615,
+            "engine_reported_nodes": 62708852
+          }
+        }
+      },
+      {
+        "index": 19,
+        "id": "central-d-knight",
+        "table": "linear_mixture",
+        "candidate_color": 1,
+        "candidate_multipv": 3,
+        "outcome": "loss",
+        "plies": 89,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 95,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 0,
+          "witness_uci": null
+        },
+        "cost": {
+          "classical": {
+            "calls": 45,
+            "wall_seconds": 42.156961099477485,
+            "engine_reported_nodes": 74598973
+          },
+          "candidate": {
+            "calls": 44,
+            "wall_seconds": 41.45451959990896,
+            "engine_reported_nodes": 114899952
+          }
+        }
+      },
+      {
+        "index": 20,
+        "id": "central-d-knight",
+        "table": "unit",
+        "candidate_color": 0,
+        "candidate_multipv": 1,
+        "outcome": "draw",
+        "plies": 94,
+        "prefix_plies": 6,
+        "end": "chess_threefold_repetition",
+        "adjudication": {
+          "ply": 100,
+          "kind": "claim",
+          "reason": "THREEFOLD_REPETITION",
+          "winner": null,
+          "witness_uci": "g5e5"
+        },
+        "cost": {
+          "candidate": {
+            "calls": 47,
+            "wall_seconds": 47.163785899290815,
+            "engine_reported_nodes": 133378403
+          },
+          "classical": {
+            "calls": 47,
+            "wall_seconds": 47.152784099802375,
+            "engine_reported_nodes": 82763254
+          }
+        }
+      },
+      {
+        "index": 21,
+        "id": "central-d-knight",
+        "table": "unit",
+        "candidate_color": 0,
+        "candidate_multipv": 3,
+        "outcome": "win",
+        "plies": 63,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 69,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 0,
+          "witness_uci": null
+        },
+        "cost": {
+          "candidate": {
+            "calls": 32,
+            "wall_seconds": 30.212759799323976,
+            "engine_reported_nodes": 95388097
+          },
+          "classical": {
+            "calls": 31,
+            "wall_seconds": 28.124872599029914,
+            "engine_reported_nodes": 55089063
+          }
+        }
+      },
+      {
+        "index": 22,
+        "id": "central-d-knight",
+        "table": "unit",
+        "candidate_color": 1,
+        "candidate_multipv": 1,
+        "outcome": "win",
+        "plies": 118,
+        "prefix_plies": 6,
+        "end": "checkmate",
+        "adjudication": {
+          "ply": 124,
+          "kind": "automatic",
+          "reason": "CHECKMATE",
+          "winner": 1,
+          "witness_uci": null
+        },
+        "cost": {
+          "classical": {
+            "calls": 59,
+            "wall_seconds": 55.82812820118852,
+            "engine_reported_nodes": 136441313
+          },
+          "candidate": {
+            "calls": 59,
+            "wall_seconds": 55.894116499926895,
+            "engine_reported_nodes": 202019411
+          }
+        }
+      },
+      {
+        "index": 23,
+        "id": "central-d-knight",
+        "table": "unit",
+        "candidate_color": 1,
+        "candidate_multipv": 3,
+        "outcome": "draw",
+        "plies": 79,
+        "prefix_plies": 6,
+        "end": "chess_threefold_repetition",
+        "adjudication": {
+          "ply": 85,
+          "kind": "claim",
+          "reason": "THREEFOLD_REPETITION",
+          "winner": null,
+          "witness_uci": "f1d3"
+        },
+        "cost": {
+          "classical": {
+            "calls": 40,
+            "wall_seconds": 40.129949300549924,
+            "engine_reported_nodes": 73004532
+          },
+          "candidate": {
+            "calls": 39,
+            "wall_seconds": 39.17123890016228,
+            "engine_reported_nodes": 117431622
+          }
+        }
+      }
+    ],
+    "errors": [],
+    "played_plies": 2184,
+    "prefix_plies": 144,
+    "wall_seconds": 12.145456199999899
+  },
+  "wall_seconds": 2097.8093993999064,
+  "recording_cost_before_final_cohort_save": {
+    "writes": 2209,
+    "bytes": 103152517,
+    "seconds": 10.60500650247559
+  },
+  "archives": {
+    "raw.zip": {
+      "entries": {
+        "declaration.json": {
+          "bytes": 1387,
+          "sha256": "8266921984cdf26793d0f986f9174eab4a761336775e30bf614e37ead46dffe9"
+        },
+        "roots.json": {
+          "bytes": 21371,
+          "sha256": "ee51aef8e62974037ae179e04923a7b3a63145c5e575d251aeebb0d5dea7c965"
+        },
+        "roots-collector-failed.json": {
+          "bytes": 4050,
+          "sha256": "7fb41bfbc3c79ff09049c8532c6ced78764f897a46cd2198c1bd0e952efcb89d"
+        },
+        "games-declaration.json": {
+          "bytes": 1670,
+          "sha256": "716f28b6f36844cb107a0928c375f55c5053387972ac9312f48a52c5d7f1b9f4"
+        },
+        "games.json": {
+          "bytes": 2405250,
+          "sha256": "3b75da8f47f0e4a7efffbaca796df7c11ebe94803e0b2233bf4ad666d6a86e22"
+        },
+        "replay.json": {
+          "bytes": 17761,
+          "sha256": "435f334d8fcb30e9ec2688ff139d8f76673a889cdaeef142f652e813429934fa"
+        },
+        "leaf-trace.json": {
+          "bytes": 26321,
+          "sha256": "0836609a85237889755127e640e7116fab8074a3a2bfdbbe07b57025f7b03413"
+        },
+        "continuations-declaration.json": {
+          "bytes": 2277,
+          "sha256": "4b2293984bc02680ad9dd7584b9510b3328774e67c9468b55041130fb9e62773"
+        },
+        "continuations.json": {
+          "bytes": 523990,
+          "sha256": "82ced32e6bf75e57872869cb90d0becd360bee236e63c3fc721235aef205c0e5"
+        },
+        "continuations-replay.json": {
+          "bytes": 2900,
+          "sha256": "4048d0cc64acfe1676d21d26b1fae3dfe89b2845fd6f1f0e10f9ebb603f499da"
+        },
+        "threat-geometry.json": {
+          "bytes": 3712,
+          "sha256": "dbc957577f0a01d9af848d21539477f2d8563081e22448a50885bc77657399ef"
+        },
+        "cost.json": {
+          "bytes": 2252,
+          "sha256": "a13d4d62feae2756f0887b2fec93f4a03caa1f3dc130bbd2c3fcc8c3fae23996"
+        }
+      },
+      "sha256": "db891158ffa143448fd7738c5a5f157bacf4c57ad488ce9e3b174fd581a4b89d",
+      "physically_extracted_rehashed": true
+    },
+    "sources.zip": {
+      "entries": {
+        "roots.py": {
+          "bytes": 4879,
+          "sha256": "f04168c320ae8ff8decb6007308934eeb9d523e435cc8c92e1ce60e4e05eb493"
+        },
+        "games.py": {
+          "bytes": 4082,
+          "sha256": "9eaf4f56ea6f28e52243388df058110c4d484ab3da3a6e6ffdec29d4039e51cd"
+        },
+        "replay.py": {
+          "bytes": 3089,
+          "sha256": "bc22207ccf248727c0a846b0a26135e881cb2af439b7fe70a67ecacfd7c95c7f"
+        },
+        "collect.py": {
+          "bytes": 4698,
+          "sha256": "be1015c062678d3a1aac70fcf7da5c05208c3d78ae498f363f1a5beacd131029"
+        },
+        "leaf-trace.py": {
+          "bytes": 1887,
+          "sha256": "070d5309008173541822b189d96e017c945da7e4d47442d9632521a4c4524586"
+        },
+        "continuations.py": {
+          "bytes": 4383,
+          "sha256": "0af51db5057f6eea229624523694b4e882736526a85e5a4699c8a7a8d027450d"
+        },
+        "threat-geometry.py": {
+          "bytes": 2763,
+          "sha256": "49b12dbab6e1857931691c29b81262c62aebc6ee9e7c79caba5f7b0379f94cb1"
+        },
+        "cost.py": {
+          "bytes": 1653,
+          "sha256": "b47255fccd167c16f20fc437b6ffcbd836f5fe9c6737fd73adb2ba6ed30ec9c0"
+        },
+        "shared-chess_development.py": {
+          "bytes": 46168,
+          "sha256": "cb64679d05e93b0f4f6924d20d9fe767441e38a075ea039078d7a89b6cf5add8"
+        },
+        "shared-research_record.py": {
+          "bytes": 1869,
+          "sha256": "4d026c4c30859ff4c7b9ad02e66378eb15a1f771a6b1fd67deab54e3e54d597b"
+        },
+        "suite.json": {
+          "bytes": 858,
+          "sha256": "2b9a6f2a8d2844fb9bef9fa03c689d1d50d40e8ab99d89cc82c8658cd0b47925"
+        },
+        "material-variants.ini": {
+          "bytes": 355,
+          "sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0"
+        },
+        "evaluate-exchange.cpp": {
+          "bytes": 75285,
+          "sha256": "5f7eb02cffa1e804ce04fe48c773f721339611ffeeae9c4a6dcf10365eac4e9b"
+        }
+      },
+      "sha256": "d8c79a183f4eab2d2433da46b110cf7dcd4c0488355fde958f506407e94e9c3a",
+      "physically_extracted_rehashed": true
+    }
+  },
+  "build_recovery": "Pinned native source/build packages in chess_exchange_20261007.json and chess_classical_20261007.json; this report verifies28identical actual shared link objects excluding evaluation.",
+  "production_changes": "None; opt-in existing MultiPV and Chess draw policy only",
+  "public_push": "Standing user authorization; exact published SHA verified separately"
+}

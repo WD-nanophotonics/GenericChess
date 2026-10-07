@@ -1,0 +1,43 @@
+"""Single actual-root contrast with existing no-risk activity leaf, not a new weight."""
+import sys,json,time,hashlib,ast
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT),str(ROOT/'.local_agent/certificate_source/python-chess')]
+import chess,chess.engine
+import scripts.chess_development as d
+p=Path(__file__).parent;v=json.loads((p/'roots.json').read_bytes());root=next(x for x in v['rows'] if x['index']==28)
+assert json.loads((p/'continuations.json').read_bytes())['complete'];out=p/'risk-ablation.json';assert not out.exists()
+source=ROOT/'.local_agent/exchange-20261007/features.py';tree=ast.parse(source.read_bytes());fn=next(x for x in tree.body if isinstance(x,ast.FunctionDef) and x.name=='features')
+from types import SimpleNamespace
+tables=d.material_tables();scope={'chess':chess,'d':SimpleNamespace(material_tables=lambda:tables)}
+exec(compile(ast.Module(body=[fn],type_ignores=[]),str(source),'exec'),scope);features=scope['features']
+sha=lambda f:hashlib.sha256(f.read_bytes()).hexdigest();config=ROOT/'.local_agent/mature-search/material-variants.ini'
+bins={'exchange':ROOT/'.local_agent/exchange-20261007/fairy-exchange.exe','activity':ROOT/'.local_agent/activity-20261007/fairy-activity.exe'}
+plan=dict(question='Does removing only the existing half hanging-risk term change the actual root28 bad preference?',conditions='Two existing leaf builds, same full-history root/Pawn208 geometric table, fresh1sec SinglePV1 Threads1 Hash16 NNUEfalse. Companion exchange call is for the new matched ablation, not an unchanged outcome rerun.',decision='If choices remain equal do not attribute this choice to the half term or remove it as a proven repair. Changed choice warrants scoped further feedback, not fitting a replacement weight or a causal loss certificate.',cost='2local seconds plus <=2new-child500000node/1sec reference calls and replay; interruptible, no concurrent timed job.',root_input_sha256=sha(p/'roots.json'),geometry_source_sha256=sha(source),binary_sha256={k:sha(f) for k,f in bins.items()},config_sha256=sha(config),producer_sha256=sha(Path(__file__)))
+d.write_record(p/'risk-ablation-declaration.json',plan)
+board=chess.Board(chess.STARTING_FEN)
+for m in root['history_prefix']:board.push_uci(m)
+c=d.compile_ruleset_for_execution(d.build_western_chess_ruleset());state,_=d.replay_prefix(chess.STARTING_FEN,c,root['history_prefix']);legal={d.uci(a) for a in d.iter_legal_actions(state,c)};assert legal=={m.uci() for m in board.legal_moves}
+r=dict(complete=False,declaration=plan,geometry=[],choices=[],references={})
+for chosen in (None,'h2h4','e5c6','e5d3'):
+ b=board.copy(stack=True)
+ if chosen:b.push_uci(chosen)
+ f=features(b,'geometric_half');inventory=sum((1 if piece.color else -1)*tables['geometric_half'][piece.symbol().upper()] for piece in b.piece_map().values() if piece.piece_type!=chess.KING)
+ r['geometry'].append(dict(chosen=chosen,inventory_white_native=inventory,**f))
+for mode,binary in bins.items():
+ for name in ('rollout','advisor','slack'):
+  x=json.loads((ROOT/'.local_agent'/f'{name}.json').read_bytes());assert not x.get('stopped') and not x.get('user_paused')
+ with chess.engine.SimpleEngine.popen_uci([str(binary),'load',str(config)],timeout=15) as e:
+  e.configure({'Threads':1,'Hash':16,'Use NNUE':False});player=d.UciMaterial(e,chess.STARTING_FEN,'geometric_half',1);d.replay_prefix(chess.STARTING_FEN,c,root['history_prefix'],(player,));m,row=player.choose();assert m in legal
+  b=board.copy(stack=True)
+  for pv in row['pv']:assert chess.Move.from_uci(pv) in b.legal_moves;b.push_uci(pv)
+  row['mode']=mode;r['choices'].append(row);d.write_record(out,r)
+ref=ROOT/'.local_agent/stockfish-reference/stockfish/stockfish-windows-x86-64.exe'
+with chess.engine.SimpleEngine.popen_uci(str(ref),timeout=15) as e:
+ e.configure({'Threads':1,'Hash':16,'UCI_LimitStrength':False})
+ for m in sorted({x['move'] for x in r['choices']}):
+  if m in root['children']:
+   r['references'][m]=dict(reused_declared_root_reference=True,**root['children'][m]);continue
+  child=board.copy(stack=True);child.push_uci(m);e.configure({'Clear Hash':None});t=time.perf_counter();z=e.analyse(child,chess.engine.Limit(nodes=500000,time=1),game=object());s=z['score'].pov(board.turn);pv=[m.uci() for m in z.get('pv',())];b=child.copy(stack=True)
+  for move in pv:assert chess.Move.from_uci(move) in b.legal_moves;b.push_uci(move)
+  r['references'][m]=dict(cp=s.score(),mate=s.mate(),nodes=z.get('nodes'),depth=z.get('depth'),wall_seconds=time.perf_counter()-t,pv=pv)
+r.update(complete=True,legal_history_selected_pv_mismatches=0);d.write_record(out,r);print([(x['mode'],x['move']) for x in r['choices']]);print(r['geometry'])

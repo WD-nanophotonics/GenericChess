@@ -35,6 +35,7 @@ conditions stay visible. Development budget is justified by information per cost
 | One fixed supported reference option2400, SinglePV1 |exchange4W1L7U;activity6W1L5U;24streams, no established candidate advantage | data/chess_feedback_20261007.json |
 | Same half-risk leaf; only8fast SEE arithmetic price reads changed |12direct:2W2L8U;geometric2W2U,linear4U,unit2L2U; no established improvement | data/chess_see_price_20261007.json |
 | Arithmetic-only repair vs fresh original at fixed2400 |first24:7W0L5U vs5W2L5U; new6ply-prefix24:8W2L2U vs10W1L1U; signal reverses | data/chess_see_feedback_20261007.json; data/chess_see_opening_20261007.json |
+| Half-risk candidate vs classical, equal1sec SinglePV1/MultiPV3, explicit Chess draw policy |24cells:1W9L2D vs3W7L2D; both geometric groups0W4L | data/chess_candidate_allocation_20261007.json |
 
 Classical is a diagnostic benchmark, not the rule-derived candidate. Native human
 SEE/pruning thresholds remain a disclosed coupling in material/coverage pilots.
@@ -82,6 +83,31 @@ See [FIDE9.2/9.3/9.6](https://handbook.fide.com/chapter/E012023).
 Do not retrospectively rescore old datasets. The latest48streams had no supported
 automatic/claim draw, but the fixture's repetition100000/max1000 is not full
 FIDE WDL. Price/search defaults remain unchanged; no stable SEE repair advantage.
+
+## Current candidate diagnosis
+
+Latest actual-loss diagnosis retains three full-history geometric roots and
+28identical shared native link objects. At root28 MultiPV changes e5c6 to e5d3;
+separate finite child references are cp-136/+145 from White, not WDL. Four
+same-root forced-choice continuations use declared2sec native calls: e5c6 loses
+and e5d3 draws by insufficient material against classical; both lose against
+full reference500000nodes/2sec fuse. This does not isolate the loss cause or
+establish broad allocation benefit. Root/static/game contexts and budgets differ.
+
+All28newstreams replay2471played+276prefix plies with zero differences, including
+four opening claim draws and one continuation automatic draw. Cost preserves
+the lower MultiPV reported depth, actual node/wall/controller CPU counts and
+unknown native CPU/cache/scored-leaf counts. No defaults change. Root28 and three
+real children contain no protected nonroyal target attacked by a strictly cheaper
+priced enemy. Therefore the proposed penalty is not justified by this root;
+do not expand or fit it to classical threats after the negative predicate.
+Static classical threats/rook/king/passed terms remain diagnostic clues, not new
+coefficient targets. Exact records/source recovery are in the portable report
+and [verified pack](../archive/development_candidate_allocation_20261007/README.md).
+The matched activity/exchange root ablation selects h2h4 for both; preserve the
+earlier e5c6 exchange call as timed-choice variability, not a cherry-picked
+failure certificate. The104native hanging correction is a static contribution,
+not a proven cause. data/chess_candidate_risk_ablation_20261007.json binds source.
 
 ## Historical detail
 

@@ -111,6 +111,27 @@ no further bare SEE expansion based on the first favorable batch. Advisor's
 prospective-claim timing objection was adopted, without an approval gate.
 Science remains OPEN; no broad framework expansion before practical evidence.
 
+New equal1sec allocation/classical24cells with explicit Chess draw policy give
+SinglePV1W9L2D versus MultiPV3W7L2D. Geometric is0W4L in both; linear0W3L1D
+versus1W2L1D; unit1W2L1D versus2W1L1D. No price/default selection. Three declared
+full-history roots share28native link objects; root28 changes e5c6 to e5d3,
+finite White child cp-136/+145. The four separate2sec native same-root continuations
+give loss/draw against classical and loss/loss against full reference; finite
+scores and longer survival are not WDL or a unique-cause certificate.
+2471played+276prefix plies replayzero, including4claim and1automatic draws;
+25archive entries physically extracted/rehashed. Evidence:
+data/chess_candidate_allocation_20261007.json. Static trace disagreement is
+positional, not simply more nodes/depth: keep human classical terms diagnostic.
+Root28 and h2h4/e5c6/e5d3 children have zero protected nonroyal victims attacked
+by strictly cheaper priced enemies. Adopt advisor's no-weight diagnostic/falsifier
+and reject this root-specific penalty direction, without adding coefficients or
+expanding the failed predicate. Resume one concrete positional failure question
+from the executable memo; no further unchanged breadth or bare SEE expansion.
+The subsequent matched activity/exchange ablation at that same root gives h2h4
+for both, with28shared objects equal. Preserve earlier exchangee5c6 as timed-choice
+variation. Root hanging correction104native is not decision/loss causality;
+data/chess_candidate_risk_ablation_20261007.json binds the separate exact source.
+
 ## Recover detailed evidence only as needed
 
 Exact previous941line mainline is in repository-root

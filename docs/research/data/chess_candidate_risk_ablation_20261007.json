@@ -1,0 +1,189 @@
+{
+  "complete": true,
+  "declaration": {
+    "question": "Does removing only the existing half hanging-risk term change the actual root28 bad preference?",
+    "conditions": "Two existing leaf builds, same full-history root/Pawn208 geometric table, fresh1sec SinglePV1 Threads1 Hash16 NNUEfalse. Companion exchange call is for the new matched ablation, not an unchanged outcome rerun.",
+    "decision": "If choices remain equal do not attribute this choice to the half term or remove it as a proven repair. Changed choice warrants scoped further feedback, not fitting a replacement weight or a causal loss certificate.",
+    "cost": "2local seconds plus <=2new-child500000node/1sec reference calls and replay; interruptible, no concurrent timed job.",
+    "root_input_sha256": "ee51aef8e62974037ae179e04923a7b3a63145c5e575d251aeebb0d5dea7c965",
+    "geometry_source_sha256": "281cef61ee010da1afc87dfc2a4ca7b4759d520b48ffb2bbe06ff0673d4ef040",
+    "binary_sha256": {
+      "exchange": "40d5689fe0da14762b1f30dd1fe7cb0df722dfa7bb6598dd8a30010b45d47f5b",
+      "activity": "8f9dab0fc47ef7a29014d55a349502344509d5a65d6a8a19a7f5a9bfb8dad099"
+    },
+    "config_sha256": "3c7c48656c22a161db0eeaa1b8244d5619820fecea41a2cb1f33329576ab61d0",
+    "producer_sha256": "d3cb6d0633f9e024a3354aa564b64e3cb13bb21b9375231a1e31cbd44f46d275"
+  },
+  "geometry": [
+    {
+      "chosen": null,
+      "inventory_white_native": 189,
+      "coverage_white": 36,
+      "coverage_black": 38,
+      "loss_white": 0,
+      "loss_black": 208,
+      "exposed": [
+        [
+          42,
+          1,
+          "P"
+        ]
+      ],
+      "correction_white_native": 104,
+      "evaluation_white_native": 285
+    },
+    {
+      "chosen": "h2h4",
+      "inventory_white_native": 189,
+      "coverage_white": 37,
+      "coverage_black": 38,
+      "loss_white": 0,
+      "loss_black": 208,
+      "exposed": [
+        [
+          42,
+          1,
+          "P"
+        ]
+      ],
+      "correction_white_native": 104,
+      "evaluation_white_native": 289
+    },
+    {
+      "chosen": "e5c6",
+      "inventory_white_native": 397,
+      "coverage_white": 38,
+      "coverage_black": 36,
+      "loss_white": 0,
+      "loss_black": 208,
+      "exposed": [
+        [
+          35,
+          1,
+          "P"
+        ]
+      ],
+      "correction_white_native": 104,
+      "evaluation_white_native": 509
+    },
+    {
+      "chosen": "e5d3",
+      "inventory_white_native": 189,
+      "coverage_white": 36,
+      "coverage_black": 38,
+      "loss_white": 0,
+      "loss_black": 0,
+      "exposed": [],
+      "correction_white_native": 0,
+      "evaluation_white_native": 181
+    }
+  ],
+  "choices": [
+    {
+      "policy": "geometric_half",
+      "move": "h2h4",
+      "reason": "uci_bestmove",
+      "score": null,
+      "score_cp": 96,
+      "score_mate": null,
+      "wall_seconds": 1.0052430999930948,
+      "controller_cpu_seconds": 0.0,
+      "engine_nodes": 2169006,
+      "engine_depth": 17,
+      "engine_seldepth": 21,
+      "engine_seconds": 1.001,
+      "pv": [
+        "h2h4"
+      ],
+      "statistics": {},
+      "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+      "mode": "exchange"
+    },
+    {
+      "policy": "geometric_half",
+      "move": "h2h4",
+      "reason": "uci_bestmove",
+      "score": null,
+      "score_cp": 54,
+      "score_mate": null,
+      "wall_seconds": 1.0046250999439508,
+      "controller_cpu_seconds": 0.0,
+      "engine_nodes": 2326609,
+      "engine_depth": 19,
+      "engine_seldepth": 27,
+      "engine_seconds": 1.001,
+      "pv": [
+        "h2h4",
+        "c8b7",
+        "e5d3",
+        "b7a6",
+        "b3c1",
+        "a6d3",
+        "c1d3",
+        "e8a8",
+        "d4e5",
+        "e7e5",
+        "f4e5",
+        "a4a3",
+        "d3c1",
+        "a3a4",
+        "a1b1",
+        "a8b8",
+        "e5c7",
+        "a4b4",
+        "b1b4",
+        "b8b4"
+      ],
+      "statistics": {},
+      "search_completion_scope": "UCI bestmove within time limit; not complete fixed-depth search",
+      "mode": "activity"
+    }
+  ],
+  "references": {
+    "h2h4": {
+      "reused_declared_root_reference": true,
+      "cp": 32,
+      "mate": null,
+      "nodes": 500535,
+      "depth": 22,
+      "wall_seconds": 0.7072286999318749,
+      "pv": [
+        "c6c5",
+        "d4d5"
+      ]
+    }
+  },
+  "legal_history_selected_pv_mismatches": 0,
+  "shared_link_object_sha256": {
+    "benchmark.cpp.o": "0c51f9748a29d6caa34342b8a77015b9d1872a65a89155cf5e29d9db9054c29a",
+    "bitbase.cpp.o": "a53b312e704268afd93c2eb6d75c4c48e4989c2d8f4bdeb87a681f380307517d",
+    "bitboard.cpp.o": "d08a7b206b8bcbfae6070b68b975b596ddd96d61fd1bbc7596f7bebf02eee884",
+    "endgame.cpp.o": "5bda2bb9aabb2e1ed8ad9a5fb7f24d618d6a7f0552b4e16765df5760fbe5c21d",
+    "main.cpp.o": "315d6b3b9465e8930a9b8a7453353f982d02f9886539b79adcc958666ce1438c",
+    "material.cpp.o": "f4d3a760b881e217f9691e86794a5adabc5bd8e0ee50226bc680862be2e5efb8",
+    "misc.cpp.o": "b844d9b3a32f19306195ddbba3225cd9ecc4daea2b2dff85bffffeca405621ea",
+    "movegen.cpp.o": "1978d3a78e2dc2278d24d190648ec5858c8c43f8031cb62f552adddf002277c2",
+    "movepick.cpp.o": "6e7a77628d389786afe99c8862ba080bb01319815cf0c69548cbc4bce3a3aada",
+    "pawns.cpp.o": "643bfba3ef80cddb1c39c9b7b67870cf1ae46ff72c5807ffb8fffadfb8eba0b9",
+    "position.cpp.o": "129e66b930ac21ccfc018ca55e6882baba3a79743a2db0557d74c0ff218e0bd3",
+    "psqt.cpp.o": "8e644790bbd1c5c8e3cd61140f6ca55d73ec4393759abd067de56484b3e7c6b8",
+    "search.cpp.o": "94e67fcd134bbe680d6ecd4ef753aa81d908595701918092f522a7ce1a994e02",
+    "thread.cpp.o": "86bd378d5bfe9e5cf40e24bc19ccf4c65a2a6ba892e6dd33ca3b0df623533e77",
+    "timeman.cpp.o": "298801b756aa3aee4286c87d5cd38f9dccf0f4e79a32134f909542494687e2e0",
+    "tt.cpp.o": "e91763147e830b485fba6fb55a1e52238ca3b144f3b02f56a5cad542b3dc3b15",
+    "uci.cpp.o": "aeeb106ae7d67e069d1a32bee683bdc75b2661c1fb1eb8ab61d2ad46ab5f4d8e",
+    "ucioption.cpp.o": "553e996024cb7f713000c4e4e5d2c251cb0ea96c2534e0d24709ce865d09b7a3",
+    "tune.cpp.o": "9592ec801fa5145edaf194e9be018a51f5840fc2506ec2f1f5fc496d2f9e3bee",
+    "syzygy_tbprobe.cpp.o": "1947ef6bf304cdb602366fcd4de9543d9acca13fcac3d0a22ce878442052e2b5",
+    "nnue_evaluate_nnue.cpp.o": "49955cefc952cc88540706c3471d718e14569df7ef6359a8aa4257647969ccaf",
+    "nnue_features_half_ka_v2.cpp.o": "d5a48b7900e08012d4ef9bbebfcf9f44807ff65254bda13f1e1ee207ad76415e",
+    "partner.cpp.o": "05ec0c68c7733b6603037fc1fcb6d766db64321149ec7364513ebe197cf18217",
+    "parser.cpp.o": "d6d9d295bdfe068fe4d3f062d9ac2c57d674381305e5f63d4383d3e2e4bf40a0",
+    "piece.cpp.o": "6db2b4128899199c5dccc6f7500970b2a2b0b51e6b7b2c172d851bac78c9e861",
+    "variant.cpp.o": "215f2cf2237c231da98abb0fe6fd5f63123b9ec13f025f88a23414fe4a684102",
+    "xboard.cpp.o": "c1954b614bf1d19f1266e4fe5f5f119cc733c539042c03c876366cafe023b38a",
+    "nnue_features_half_ka_v2_variants.cpp.o": "98564ec47293b3b62d93a14dd60c72392a6073387ab461d180bd65d21b289443"
+  },
+  "interpretation": "Matched companion exchange/activity both choose h2h4. Prior declared exchange call chose e5c6: retain timed-choice variability, do not select only a favorable call or attribute this loss to the half term. Root optimism includes104native hanging correction but an observed static contribution is not decision/strength causality.",
+  "reference_binary_sha256": "55aa40c857de30b79dbe4f8e4c335ee2b23815cf2f100a6630d54761fcad3b85"
+}
