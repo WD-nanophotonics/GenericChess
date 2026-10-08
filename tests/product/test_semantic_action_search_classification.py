@@ -299,6 +299,7 @@ def test_standard_shogi_semantic_capture_promotion_and_drop_cases():
         compiled=compiled,
         stats=SearchStatistics(),
         checkpoint=lambda: None,
+        tuning=SearchTuning(),
     )
     runtime_noisy = _runtime_noisy_actions(ctx, [capture])
     assert runtime_noisy == [capture]

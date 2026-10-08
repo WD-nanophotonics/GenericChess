@@ -80,3 +80,5 @@ class PlayerDecision:
     native_legality_calls: int = 0
     native_legality_fallbacks: int = 0
     native_legality_operational_failures: int = 0
+    # Appended to preserve existing optional positional argument order.
+    material_change_qactions: int = 0

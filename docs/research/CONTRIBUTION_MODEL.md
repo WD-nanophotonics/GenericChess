@@ -146,3 +146,45 @@ construction evidence; see SEMANTIC_CAPABILITY.md and UNFAMILIAR_RULE_SEARCH.md.
 Compact observations: data/contribution_model_20261008.json. Exact sources,
 raw/failed versions and dependency hashes: ../archive/contribution_model_20261008/.
 These historical producers are on-demand evidence, not live product imports.
+
+## Local hand increments are not automatically compensating prices
+
+A new fixed4x4 K/R/N family uses the existing opposing-rook layout, phase0,
+normal capture-to-hand/drop and four actual halfmoves. Both sides give equal mass
+to nonempty ordinary-capture/drop/other-board categories, then uniform actions.
+U is final ordinary board+hand net control minus that cell's initial control;
+early terminals remain separately, without a WDL payoff. Only own hand changes.
+The128 paired trajectories share random uniforms, not necessarily actions.
+
+| Initial own hand in s | DeltaR | DeltaN | Interaction I |
+|---|---:|---:|---:|
+| Empty | -297931/926640 | -1087815187/4843238400 | 286603699/1556755200 |
+| R1/N1 | 1147/266112 | -1021/253440 | 0 |
+
+Each row compares s,s+R,s+N,s+R+N with fixed layout/policy/horizon. The first
+exact census has38364 Core transitions; Native independently matches every cell,
+leaf count and early-terminal mass and all512 sampled paths. Interaction about
+.184 is large relative to DeltaN about-.225; after R, the N marginal is about
+-.041. A numerical ratio of two negative increments does not price material.
+
+The changed-premise second row already has both drop types; all initial public
+legal actions agree exactly across its four cells.97620 transitions per kernel
+again match exactly. I=0 here still gives opposite-signed marginals, hence no
+positive material ratio. Only two own turns limit joint use of second copies;
+this is not evidence for global stock additivity. The root-conditional followup
+below explains the finite result without a horizon sweep for nicer ratios.
+Counterfactual roots have no claimed opening provenance. Native uses supported
+legacy-to-IR lowering and explicit root sentinel/witnesses; failed DSL/Core-
+wrapper/history/property setup attempts remain isolated with their source.
+
+Adopt the advisor's discrete-marginal/compensation objection and four-cell
+falsifier. The advisor read the published prior note, but did not execute this
+new census. No new formula, price/default or holdout qualification follows.
+Exact declarations/source/results: data/qeffects_20261008.json and
+../archive/qeffects_20261008/index.json.
+
+Root-conditional followup holds all31 initial actions common: Native exact
+remaining-three-halfmove expectations give I=0 for each first action. Nonzero
+R increments occur only after first R drops (12 actions), N only after N drops
+(12). Only one further own action remains, explaining this finite disjoint-use
+result; neither a global additivity law nor a positive-price result follows.

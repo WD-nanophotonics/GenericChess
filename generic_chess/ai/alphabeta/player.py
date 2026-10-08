@@ -154,6 +154,7 @@ class AlphaBetaPlayer:
             in_check_qnodes=stats.in_check_qnodes,
             stand_pat_cutoffs=stats.stand_pat_cutoffs,
             capture_qactions=stats.capture_qactions,
+            material_change_qactions=stats.material_change_qactions,
             promotion_qactions=stats.promotion_qactions,
             checking_move_qactions=stats.checking_move_qactions,
             checking_drop_qactions=stats.checking_drop_qactions,

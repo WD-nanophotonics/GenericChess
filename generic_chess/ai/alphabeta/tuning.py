@@ -42,7 +42,8 @@ class SearchTuning:
     use_ordered_qsearch: bool = False
 
     # Development hypothesis: outside check, omit quiet checking actions from
-    # ordinary qsearch. Captures/promotions/terminal actions and all evasions stay.
+    # ordinary qsearch. Actual captures/material changes/terminals and all
+    # evasions stay; legacy promotion metadata retains its historical shortcut.
     use_capture_only_qsearch: bool = False
 
     # Opt-in output contract: validate a complete cached principal line or

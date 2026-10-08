@@ -1,0 +1,389 @@
+{
+  "schema": "qeffects-development-20261008",
+  "base_commit": "f760bd406d84f3bc01485237394d73a72125f767",
+  "science_complete": false,
+  "policy": "Semantic q inclusion uses actual enemy-board decrease, owner/current-board+owner/base-hand inventory change, terminal and check. Shared immutable/eager/ordered helper; ordered runtime classifies and recurses in one push. Legacy shortcuts preserved. Promotion diagnostic overlaps actual-change counter. Tuning flags/prices unchanged; default semantic support corrected. Not complete tactical classification or strength evidence.",
+  "validation": {
+    "frontiers": 56,
+    "legal_children": 3580,
+    "both_capture_modes": true,
+    "branch_core_native_calls": 6,
+    "fullwidth_roots": 3,
+    "fresh_authority_calls": 12,
+    "fresh_early_terminal_retained": 1,
+    "fresh_material_change_count": 0,
+    "legacy_exact_calls": 16,
+    "default_final_replay_calls": 4,
+    "full_tests": 1648,
+    "test_seconds": 165.65
+  },
+  "cost": {
+    "original_to_actual_q2": "16 calls preserve choices/scores/depth; extra qwork and roughly1-7% wall cost. Not speedup. Caps preserved.",
+    "same_actual_contract_ordered_q4": [
+      {
+        "seed": 202610082300,
+        "old_median_seconds": 13.130140700028278,
+        "new_median_seconds": 10.108892699936405,
+        "old_work": {
+          "runtime_pushes": 30798,
+          "runtime_pops": 30798,
+          "runtime_depth_balanced": true,
+          "native_legality_calls": 2865,
+          "capture_qactions": 2219,
+          "material_change_qactions": 396,
+          "promotion_qactions": 225,
+          "checking_move_qactions": 414,
+          "checking_drop_qactions": 1697,
+          "nonchecking_drop_excluded": 12886
+        },
+        "new_work": {
+          "runtime_pushes": 26038,
+          "runtime_pops": 26038,
+          "runtime_depth_balanced": true,
+          "native_legality_calls": 2865,
+          "capture_qactions": 2219,
+          "material_change_qactions": 396,
+          "promotion_qactions": 225,
+          "checking_move_qactions": 414,
+          "checking_drop_qactions": 1697,
+          "nonchecking_drop_excluded": 12886
+        },
+        "completed_depth": 1,
+        "termination_reason": "node_limit",
+        "score": 3022
+      },
+      {
+        "seed": 202610082301,
+        "old_median_seconds": 18.857421300024725,
+        "new_median_seconds": 14.946313950116746,
+        "old_work": {
+          "runtime_pushes": 39535,
+          "runtime_pops": 39535,
+          "runtime_depth_balanced": true,
+          "native_legality_calls": 3558,
+          "capture_qactions": 487,
+          "material_change_qactions": 46,
+          "promotion_qactions": 30,
+          "checking_move_qactions": 173,
+          "checking_drop_qactions": 2731,
+          "nonchecking_drop_excluded": 19961
+        },
+        "new_work": {
+          "runtime_pushes": 35939,
+          "runtime_pops": 35939,
+          "runtime_depth_balanced": true,
+          "native_legality_calls": 3558,
+          "capture_qactions": 487,
+          "material_change_qactions": 46,
+          "promotion_qactions": 30,
+          "checking_move_qactions": 173,
+          "checking_drop_qactions": 2731,
+          "nonchecking_drop_excluded": 19961
+        },
+        "completed_depth": 1,
+        "termination_reason": "node_limit",
+        "score": 999999999
+      },
+      {
+        "seed": 202610082302,
+        "old_median_seconds": 11.226582850096747,
+        "new_median_seconds": 9.408576400019228,
+        "old_work": {
+          "runtime_pushes": 33681,
+          "runtime_pops": 33681,
+          "runtime_depth_balanced": true,
+          "native_legality_calls": 3368,
+          "capture_qactions": 1487,
+          "material_change_qactions": 450,
+          "promotion_qactions": 427,
+          "checking_move_qactions": 35,
+          "checking_drop_qactions": 2421,
+          "nonchecking_drop_excluded": 16408
+        },
+        "new_work": {
+          "runtime_pushes": 29288,
+          "runtime_pops": 29288,
+          "runtime_depth_balanced": true,
+          "native_legality_calls": 3368,
+          "capture_qactions": 1487,
+          "material_change_qactions": 450,
+          "promotion_qactions": 427,
+          "checking_move_qactions": 35,
+          "checking_drop_qactions": 2421,
+          "nonchecking_drop_excluded": 16408
+        },
+        "completed_depth": 1,
+        "termination_reason": "node_limit",
+        "score": 3621
+      },
+      {
+        "seed": 202610082303,
+        "old_median_seconds": 11.578920300118625,
+        "new_median_seconds": 11.041032450040802,
+        "old_work": {
+          "runtime_pushes": 46646,
+          "runtime_pops": 46646,
+          "runtime_depth_balanced": true,
+          "native_legality_calls": 1956,
+          "capture_qactions": 383,
+          "material_change_qactions": 305,
+          "promotion_qactions": 226,
+          "checking_move_qactions": 370,
+          "checking_drop_qactions": 867,
+          "nonchecking_drop_excluded": 28515
+        },
+        "new_work": {
+          "runtime_pushes": 44721,
+          "runtime_pops": 44721,
+          "runtime_depth_balanced": true,
+          "native_legality_calls": 1956,
+          "capture_qactions": 383,
+          "material_change_qactions": 305,
+          "promotion_qactions": 226,
+          "checking_move_qactions": 370,
+          "checking_drop_qactions": 867,
+          "nonchecking_drop_excluded": 28515
+        },
+        "completed_depth": 2,
+        "termination_reason": "completed_depth",
+        "score": -6105
+      }
+    ],
+    "ordered_calls": 16,
+    "scope": "Serial two rotated cold repeats, same actual-effects semantics/budget/ordering; local times, not universal speed or strength. Three roots retain D1 caps, one completes D2."
+  },
+  "utility": {
+    "law": "Fixed4x4 K/R/N layout, four actual halfmoves; equal mass over nonempty capture/drop/other categories then uniform actions. U=final ordinary board+hand net control minus cell initial control. Early terminals retained without WDL payoff; no opening-reachability claim.",
+    "empty_hand": {
+      "exact_contrasts": {
+        "DeltaA": "-297931/926640",
+        "DeltaB": "-1087815187/4843238400",
+        "I": "286603699/1556755200",
+        "B_after_A": "-135802547/3353011200",
+        "ratio_defined": true,
+        "ratio": "4671558080/3263445561"
+      },
+      "exact_cells": [
+        {
+          "name": "s",
+          "initial_control": 0,
+          "U": "-43517/123480",
+          "complete": true,
+          "core_transitions": 1594,
+          "leaves": 1322,
+          "early_terminal_mass": "6121/171990",
+          "seconds": 0.23913289979100227
+        },
+        {
+          "name": "s+A",
+          "initial_control": 1,
+          "U": "-214203091/317837520",
+          "complete": true,
+          "core_transitions": 6756,
+          "leaves": 5653,
+          "early_terminal_mass": "61061227/1614412800",
+          "seconds": 1.3224526999983937
+        },
+        {
+          "name": "s+B",
+          "initial_control": 1,
+          "U": "-19562733829/33902668800",
+          "complete": true,
+          "core_transitions": 9078,
+          "leaves": 7722,
+          "early_terminal_mass": "121417/3991680",
+          "seconds": 1.5649596001021564
+        },
+        {
+          "name": "s+A+B",
+          "initial_control": 2,
+          "U": "-217992999137/305124019200",
+          "complete": true,
+          "core_transitions": 20936,
+          "leaves": 17739,
+          "early_terminal_mass": "63156019/1816214400",
+          "seconds": 4.258953100070357
+        }
+      ],
+      "mc_paths": 512,
+      "mc_transitions": 2034,
+      "mc_summary": [
+        {
+          "name": "DeltaA",
+          "mean": -0.3125,
+          "SE": 0.11188590047190687,
+          "negative": 26,
+          "zero": 91,
+          "positive": 11
+        },
+        {
+          "name": "DeltaB",
+          "mean": -0.265625,
+          "SE": 0.1117397623197209,
+          "negative": 24,
+          "zero": 92,
+          "positive": 12
+        },
+        {
+          "name": "I",
+          "mean": 0.15625,
+          "SE": 0.1669099888855181,
+          "negative": 22,
+          "zero": 80,
+          "positive": 26
+        }
+      ],
+      "native": {
+        "complete": true,
+        "producer_sha256": "8ece8011d781bd5a4aaf830e05a96462ab970688fb3cd3a74652df156f686745",
+        "input_sha256": "de79669140173920af0a2d1e6fa0e248c6d1451224ae413d27bfe31128618dc6",
+        "declaration": "Independently lower same frozen legacy RuleSet into semantic IR for Native execution; public actions mapped to legacy physical fields only between oracle kernels, never product identity merging. Replay all512MC paths, independently recover categorical RNG choice and final board/hands/control/terminal. Independently enumerate all4fixed4ply categorical cells using Native guards/make_checked/history, same per-cell40000transition/45sec checks. Compare exact Fraction U/early terminal mass to Core. No material-price/default/strength or speedup claim.",
+        "replay_paths": 512,
+        "replay_transitions": 2034,
+        "exact_cells": [
+          {
+            "name": "s",
+            "U": "-43517/123480",
+            "native_transitions": 1594,
+            "leaves": 1322,
+            "early_terminal_mass": "6121/171990",
+            "seconds": 0.04626319999806583
+          },
+          {
+            "name": "s+A",
+            "U": "-214203091/317837520",
+            "native_transitions": 6756,
+            "leaves": 5653,
+            "early_terminal_mass": "61061227/1614412800",
+            "seconds": 0.2010977000463754
+          },
+          {
+            "name": "s+B",
+            "U": "-19562733829/33902668800",
+            "native_transitions": 9078,
+            "leaves": 7722,
+            "early_terminal_mass": "121417/3991680",
+            "seconds": 0.265477699926123
+          },
+          {
+            "name": "s+A+B",
+            "U": "-217992999137/305124019200",
+            "native_transitions": 20936,
+            "leaves": 17739,
+            "early_terminal_mass": "63156019/1816214400",
+            "seconds": 0.6236302999313921
+          }
+        ],
+        "seconds": 1.4387431000359356
+      }
+    },
+    "common_stock": {
+      "common_initial_actions": 31,
+      "exact_contrasts": {
+        "DeltaA": "1147/266112",
+        "DeltaB": "-1021/253440",
+        "I": "0",
+        "B_after_A": "-1021/253440",
+        "ratio_defined": true,
+        "ratio": "-22940/21441"
+      },
+      "exact_cells": [
+        {
+          "name": "s",
+          "initial_control": 2,
+          "U": "-217992999137/305124019200",
+          "complete": true,
+          "core_transitions": 20936,
+          "leaves": 17739,
+          "early_terminal_mass": "63156019/1816214400",
+          "seconds": 4.206684800097719
+        },
+        {
+          "name": "s+A",
+          "initial_control": 3,
+          "U": "-19697986267/27738547200",
+          "complete": true,
+          "core_transitions": 23148,
+          "leaves": 19589,
+          "early_terminal_mass": "26659391/660441600",
+          "seconds": 4.920191900106147
+        },
+        {
+          "name": "s+B",
+          "initial_control": 3,
+          "U": "-219222211667/305124019200",
+          "complete": true,
+          "core_transitions": 25662,
+          "leaves": 21811,
+          "early_terminal_mass": "451479437/14529715200",
+          "seconds": 5.314364799996838
+        },
+        {
+          "name": "s+A+B",
+          "initial_control": 4,
+          "U": "-217907061467/305124019200",
+          "complete": true,
+          "core_transitions": 27874,
+          "leaves": 23661,
+          "early_terminal_mass": "266717701/7264857600",
+          "seconds": 5.9462548000738025
+        }
+      ],
+      "native": {
+        "complete": true,
+        "producer_sha256": "756c8467e9b248240af19c82c0c6c0686b3749d65d22f3c096ece4e21abd5c2c",
+        "input_sha256": "db9f2f086c55187a1075e5352edbfac01fd0ce897fcd8d2e95042d60aff9c589",
+        "declaration": "Independently lower same frozen legacy RuleSet into semantic IR for Native execution; public actions mapped to legacy physical fields only between oracle kernels, never product identity merging. This stock followup has zero MC paths; independently enumerate all4fixed4ply categorical cells. Original empty-hand512MC replay remains inventory-native-v5.json. Independently enumerate all4fixed4ply categorical cells using Native guards/make_checked/history, same per-cell40000transition/45sec checks. Compare exact Fraction U/early terminal mass to Core. No material-price/default/strength or speedup claim.",
+        "replay_paths": 0,
+        "replay_transitions": 0,
+        "exact_cells": [
+          {
+            "name": "s",
+            "U": "-217992999137/305124019200",
+            "native_transitions": 20936,
+            "leaves": 17739,
+            "early_terminal_mass": "63156019/1816214400",
+            "seconds": 0.6250497000291944
+          },
+          {
+            "name": "s+A",
+            "U": "-19697986267/27738547200",
+            "native_transitions": 23148,
+            "leaves": 19589,
+            "early_terminal_mass": "26659391/660441600",
+            "seconds": 0.6675937999971211
+          },
+          {
+            "name": "s+B",
+            "U": "-219222211667/305124019200",
+            "native_transitions": 25662,
+            "leaves": 21811,
+            "early_terminal_mass": "451479437/14529715200",
+            "seconds": 0.7662094999104738
+          },
+          {
+            "name": "s+A+B",
+            "U": "-217907061467/305124019200",
+            "native_transitions": 27874,
+            "leaves": 23661,
+            "early_terminal_mass": "266717701/7264857600",
+            "seconds": 0.8257544999942183
+          }
+        ],
+        "seconds": 2.9080769000574946
+      },
+      "root_conditionals": {
+        "actions": 31,
+        "all_I_zero": true,
+        "R_nonzero_only_after_Rdrop": true,
+        "N_nonzero_only_after_Ndrop": true,
+        "R_nonzero_count": 12,
+        "N_nonzero_count": 12
+      }
+    },
+    "conclusion": "Empty-hand interaction substantial; common-support stock gives opposite-sign increments despite I=0. Root conditionals show finite two-own-turn separation, not global additivity or positive material prices. No horizon sweep/fit.",
+    "advisor": "Adopted discrete marginal vs compensating exchange objection and one four-cell check; advisor read old published note, did not independently execute these new numerical results."
+  },
+  "corrections": "Earlier prose said61frontiers; raw recount56nonterminal roots/3580children. Initial audit only persisted Native q rows due one-line-if; final-v2 reruns and persists all6CoreNative calls. Previous outputs/failures retained.",
+  "recovery": "docs/archive/qeffects_20261008/index.json"
+}

@@ -12,9 +12,11 @@ consultation, tests, publication and segment endings are not scientific completi
    familiar-piece mixtures, recombined mechanics and generated playable rules.
    Generic NNUE/self-evolution is later work.
 
-Next: repair semantic qsupport representation dependence using actual effects,
-starting with transformation and redundant no-change controls; separately retain
-conditional transformation features without inventing a scalar bonus.
+Next: identify one deployment-relevant utility assumption without turning task
+marginals into global prices. The finite semantic qsupport inconsistency is
+repaired using actual effects; sorted qsearch shares classification with the
+immutable/eager paths and reuses its classification push for recursion.
+Conditional transformation features still do not identify a scalar bonus.
 Exact current-child check reuse preserves actual caller decisions while reducing
 local cost; wider generated rules still expose node and hard-check limits.
 Existing PVS/qsearch approximations remain caller options, not default or price
@@ -155,18 +157,44 @@ regresses~50% and is rejected; a local single-push prototype is not deployed.
 Conditional feature/task sources, failures and exact recovery are isolated in
 qsemantics_20261008.json and its archive, not active product imports.
 
-A new4x4 semantic witness produces the exact same physical transformed child
-with effect-only versus redundant explicit-promotion encodings, but q1 returns
-274 versus1726. An already-promoted no-change control also splits support
-(false/true), although both scores stay1726 (5vs6 qnodes). Thus simply adding
-an inventory fallback after unconditional promotion metadata is insufficient.
-Dot independently read both published classifiers; local witness runs remain
-Agent evidence. Adopt the finite no-change objection, preserve public histories,
-and the local18-call actual-inventory prototype now makes the tested encoding
-support agree. Drop/pass/terminal controls and cost remain pending; not deployed. Counts
-can cancel simultaneous type swaps; this is not a complete tactical classifier.
+The previous4x4 equal-child witness returned274vs1726 because public promotion
+metadata controlled qsupport. The correction removes both promotion and enemy-
+target-occupancy authority for semantic actions: actual enemy-board decrease,
+owner/current-board+owner/base-hand inventory change, terminal and check decide.
+Legacy shortcuts remain. No-change, balanced-type and enemy-target no-op
+encodings now agree; public identities/history are never merged. Ordinary drops
+and pass conserve inventory, terminals/checks remain. Counts can cancel balanced
+swaps; spatial/auxiliary/base-only changes are not completely classified.
+56 fresh frontiers/3580 legal children match an independent Core predicate in
+both modes. Three actual-transform qroots agree with full-width references and
+Core/Native.16 original/actual q2 caller comparisons retain choices/scores/depth
+with roughly1-7% extra wall/work; this is correctness, not speed or strength.
+Shared-policy ordered-q fusion separately retains16 exact caller signatures and
+all qclasses, with roughly4-23% lower local wall and fewer pushes. Default
+lexical replay remains exact; no tuning/default/price flag is promoted.1648 full
+regressions pass. Source/failure/cost recovery: qeffects_20261008.json and archive.
 Existing q2 PVS curve yields2/4vs2/4 D2 completions at4096nodes and3/4vs3/4
 at8192; individual node/time regressions remain. No default change.
+
+## Current conditional utility check
+
+A fixed4x4 R/N hand-intervention square uses four actual halfmoves, equal mass
+over nonempty capture/drop/other categories, then uniform actions. U is final
+ordinary net board+hand control minus each cell's initial control; early
+terminals remain with no WDL payoff. Empty-hand increments give negative
+DeltaR/DeltaN and interaction about+.184, large relative to DeltaN about-.225:
+discrete marginal ratios are not compensating stock prices. Native independently
+replays all512 sampled paths and exactly matches the38364-transition census.
+A changed-premise baseline already holding R1/N1 makes all root actions common.
+Its97620-transition census agrees across Core/Native: DeltaR=1147/266112,
+DeltaN=-1021/253440,I=0. Opposite signs still forbid a positive-price reading;
+only two own turns also limit when extra copies can jointly be used. Do not
+infer global additivity or extend horizons to get preferred ratios. All31 common
+first actions were then conditioned independently with Native:
+I=0 in each; nonzero extra-R effects occur only after R drops, extra-N only
+after N drops (12 each). This explains finite two-own-turn separation, not
+global additivity. Next choose a deployment-relevant utility or supported
+search-interface question, not another unchanged broad census.
 
 ## Evidence routing and delivery
 

@@ -33,6 +33,9 @@ class SearchStatistics:
     in_check_qnodes: int = 0
     stand_pat_cutoffs: int = 0
     capture_qactions: int = 0
+    material_change_qactions: int = 0
+    # For semantic inventory changes, promotion metadata is a diagnostic subset
+    # only. Do not sum it with material_change_qactions as disjoint classes.
     promotion_qactions: int = 0
     checking_move_qactions: int = 0
     checking_drop_qactions: int = 0

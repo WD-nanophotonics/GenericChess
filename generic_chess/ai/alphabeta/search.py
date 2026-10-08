@@ -6,13 +6,7 @@ import time
 from dataclasses import dataclass
 from itertools import chain
 
-from ...core.actions import (
-    Action,
-    action_is_board,
-    action_is_drop,
-    action_promotion_target_id,
-    action_target_square,
-)
+from ...core.actions import Action
 from ...core.attacks import is_in_check
 from ...core.identity import (
     ExternalStableKey,
@@ -40,7 +34,10 @@ from ..evaluation.evaluator import Evaluator
 from ..limits import SearchLimits
 from ..audit_instrumentation import AuditMetric, AuditRecorder, NullAuditRecorder
 from .ordering import MoveOrderer, StagedMovePicker
-from .quiescence import classify_noisy, enemy_board_count
+from .quiescence import (
+    classify_noisy, enemy_board_count, legacy_noisy_kind, material_inventory,
+    noisy_child,
+)
 from .statistics import SearchStatistics
 from .transposition import BoundType, TranspositionTable, score_from_tt, score_to_tt
 from .tuning import SearchTuning
@@ -599,41 +596,24 @@ def _runtime_noisy_actions(ctx: _Context, actions):
     state = runtime.state
     side = state.position.side_to_move
     parent_enemies = enemy_board_count(state.position, side)
+    semantic = semantic_engine_for(ctx.compiled) is not None
+    parent_inventory = material_inventory(state.position) if semantic else None
     noisy = []
     for action in actions:
-        from ...core.coordinates import square_to_index
-
-        if action_is_board(action):
-            index = square_to_index(action_target_square(action), state.position.board_size())
-            occupant = state.position.board[index]
-            if action_promotion_target_id(action) is not None:
-                noisy.append(action)
+        kind = legacy_noisy_kind(state.position, action) if not semantic else None
+        if kind is not None:
+            noisy.append(action)
+            if kind == "promotion":
                 ctx.stats.promotion_qactions += 1
-                continue
-            if occupant is not None and occupant.owner != side:
-                noisy.append(action)
+            else:
                 ctx.stats.capture_qactions += 1
-                continue
+            continue
         with runtime.pushed(action, checkpoint=ctx.checkpoint):
-            child = runtime.state
-            if enemy_board_count(child.position, side) < parent_enemies:
+            if noisy_child(action, runtime.state, side, parent_enemies,
+                    parent_inventory,
+                    lambda: runtime.in_check(1 - side, checkpoint=ctx.checkpoint),
+                    ctx.stats, capture_only=ctx.tuning.use_capture_only_qsearch):
                 noisy.append(action)
-                ctx.stats.capture_qactions += 1
-                continue
-            if child.terminal_status.is_terminal:
-                noisy.append(action)
-                continue
-            if ctx.tuning.use_capture_only_qsearch:
-                continue
-            child_in_check = runtime.in_check(1 - side, checkpoint=ctx.checkpoint)
-            if child_in_check:
-                noisy.append(action)
-                if action_is_drop(action):
-                    ctx.stats.checking_drop_qactions += 1
-                else:
-                    ctx.stats.checking_move_qactions += 1
-            elif action_is_drop(action):
-                ctx.stats.nonchecking_drop_excluded += 1
     return noisy
 
 
@@ -695,12 +675,23 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
     if ctx.tuning.use_ordered_qsearch:
         # Classify on demand so a cutoff avoids probing remaining quiet moves.
         ordered = _order_qactions(state, actions, ply, ctx)
+        semantic = semantic_engine_for(ctx.compiled) is not None
+        parent_enemies = enemy_board_count(state.position, side)
+        parent_inventory = material_inventory(state.position) if semantic else None
     else:
         ordered = sorted(_runtime_noisy_actions(ctx, actions), key=str)
     for action in ordered:
-        if ctx.tuning.use_ordered_qsearch and not _runtime_noisy_actions(ctx, (action,)):
-            continue
+        kind = (
+            legacy_noisy_kind(state.position, action)
+            if ctx.tuning.use_ordered_qsearch and not semantic else None
+        )
         with runtime.pushed(action, checkpoint=ctx.checkpoint):
+            if ctx.tuning.use_ordered_qsearch and not noisy_child(
+                    action, runtime.state, side, parent_enemies, parent_inventory,
+                    lambda: runtime.in_check(1 - side, checkpoint=ctx.checkpoint),
+                    ctx.stats, capture_only=ctx.tuning.use_capture_only_qsearch,
+                    legacy_kind=kind):
+                continue
             score = -_quiescence_runtime(-beta, -alpha, ply + 1, qdepth + 1, ctx)
         if score >= beta:
             return score

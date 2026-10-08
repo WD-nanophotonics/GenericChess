@@ -1012,3 +1012,50 @@ Additional inventory-only controls cover ordinary Rdrop and both legacy/semantic
 pass through immutable successors and mutable push/pop: counts stay unchanged.
 They check only the proposed signal, not full qsupport or terminal precedence.
 An initial missing fixture import path is retained alongside the corrected run.
+
+## Actual-effect qsupport correction and shared ordered-q push,2026-10-08
+
+The above pending prototype is superseded by a finite product correction.
+Semantic public promotion labels and enemy target occupancy are not authoritative
+effects. A real enemy-target no-op and an empty-target no-op can produce identical
+physical children; target occupancy alone falsely called one a capture. Current
+classification uses actual enemy-board decrease, then actual owner/current-board
+plus owner/base-hand inventory change, then terminal/check inclusion. Normal
+drops/pass conserve counts. Legacy execution retains metadata shortcuts.
+Material changes are a limited signal: balanced type swaps, spatial/auxiliary and
+base-only changes may conserve counts. No tactical completeness is claimed.
+Promotion metadata is only a diagnostic subset after semantic material change;
+do not sum promotion_qactions and material_change_qactions as disjoint classes.
+
+One noisy_child policy is shared by immutable, eager-runtime and ordered-runtime
+entries. Parent counts are copied before pushing the mutable view. Ordered q
+now classifies and recurses within one push; eager lexical traversal keeps its
+previous ordering/work contract. Check remains lazy. No new flag/cache or
+default tuning is added; the semantic default classification itself is corrected.
+
+The transform q1 witness now gives1726 for either encoding. No-change/balanced
+controls, off-target friendly type change, no-op target, normal drop/pass,
+terminal/check precedence and public counter propagation have product tests.
+A focused one-push test checks both score/qclasses and exact push reduction.
+Independent Counter/actual-effect predicates cover56 fresh route roots and3580
+legal successors in both capture-only modes. Three branch-observable qroots
+agree with independent full-width Core references and operational Native legality
+(positive calls,zero fallback). The earlier D1 transfer's zero material counters
+alone did not exercise the corrected branch; that limitation is retained.
+
+Original-to-corrected default q2: all16 rotated calls keep choice/score/completed
+depth, but actual qwork and local wall increase about1-7%; do not call it speedup.
+Pre-fusion-to-shared ordered q4:16 rotated calls keep exact signatures/qclasses,
+reduce actual pushes and local wall about4-23%. This separate cost result does
+not attribute gains to changed qsupport. Four final default replays keep all
+pre-fusion actual-effect decisions/work.16 legacy controls retain exact results
+and work; wall noise is not a legacy gain. Full suite1648 passes, including the
+old Shogi test after supplying its missing mandatory SearchTuning fixture field.
+
+Exact declarations, every cap/source/failure and isolated recovery are in
+data/qeffects_20261008.json and ../archive/qeffects_20261008/index.json.
+
+Record audit correction: earlier prose61roots was wrong; recount56nonterminal
+roots/3580children. The first audit executed both kernels but saved only Native
+qrows due a one-line-if. final-v2 repeats and persists all6Core/Native calls,
+with the same independent full-width scores. Old outputs remain recoverable.
