@@ -1,0 +1,43 @@
+{
+  "scope": "Existing-cell weighting and separately declared initial Chess one-reply unit task/localization; no samples added to frozen law; negative results preserved.",
+  "members": [
+    {
+      "member": ".local_agent/tasklaw-20261009/weight_sensitivity.py",
+      "bytes": 2021,
+      "sha256": "b2fbda1f4afcce1b025d6d414aa63855c315a648691b6876ac55b04508353811"
+    },
+    {
+      "member": ".local_agent/tasklaw-20261009/weight-sensitivity.json",
+      "bytes": 9054,
+      "sha256": "0a9b8f30226f1863dd388e957463e258039c180cb1473fce2e3dd76396d830ab"
+    },
+    {
+      "member": ".local_agent/tasklaw-20261009/chess_one_reply.py",
+      "bytes": 3169,
+      "sha256": "5f863537b9d824fc67cd4eeedd70ed73beb83040260b13c270da8ccbc6f6776b"
+    },
+    {
+      "member": ".local_agent/tasklaw-20261009/chess-one-reply.json",
+      "bytes": 95846,
+      "sha256": "84598ef13e4910d21d703b1f119b0af818d73bf634dee88cae71f9cff15a8b31"
+    },
+    {
+      "member": ".local_agent/tasklaw-20261009/chess_reply_localization.py",
+      "bytes": 2631,
+      "sha256": "5a5f08077f825cd4147ea64c9b436adf05f47e5afb4bd3c3fb7eb084dc00fe51"
+    },
+    {
+      "member": ".local_agent/tasklaw-20261009/chess-reply-localization.json",
+      "bytes": 24083,
+      "sha256": "c20b713aaec17786eb48a79715c88f3fb3f5ddccf33236cbe83b752d2d2ec677"
+    },
+    {
+      "member": ".local_agent/tasklaw-20261009/final-focused-tests.txt",
+      "bytes": 81,
+      "sha256": "18395083f2cb1e70edeb9bfc9b39da059cb217359d0fe9eaea01cc89e8d751d4"
+    }
+  ],
+  "zip_sha256": "fa34ba39d5ec85458f71cf1e302dd5a616a60b51b4e80babdcf633e6200ef174",
+  "verified_members": 7,
+  "recovery": "Recover evidence.zip and its older dependencies first into fresh staging root; supplement sources use existing local tasklaw files. Core only. No restore/deploy of deferred Native candidate."
+}

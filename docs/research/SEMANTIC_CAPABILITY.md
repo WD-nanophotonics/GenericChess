@@ -991,3 +991,94 @@ reference and its negative cells, not a new material profile or fitted mixture.
 Source substitution is not a legal position or conserved-stock law. Exact
 initial/template/drift counts share the same1256 exposed observations; recovery
 is the initial-template supplement in data/finite_law_20261009.json.
+
+
+## Common-slot task averages: exposed development, not material calibration
+
+The actual-side legal census covers68 frozen backgrounds/614 ordinary actors.
+Core and Native agree on2860 children. Presence is a confound: seed2003 B/P
+means35/102<3/7 reverse to1/2>3/7 on shared contexts. Replacing every ordinary
+actual-side slot with every standalone type gives2456 common cells;6602 focal
+Core/Native transitions agree. Counterfactual replacement preserves other fields
+but need not be reachable or a legal transformation. Instant legality ignores
+history adjudication. Zero task values remain; absent slots are unsupported,
+not fabricated task zeros. The primary law averages slots within each context,
+then contexts; cells are not independent background samples.
+
+Coverage trajectories also matter. Reversing movement declaration order alone
+preserves complete physical successors but changes the old lexical selector at
+ply16, shifting task means A−1/85,B−2/85,P+2/85,X0. Existing default/semantic
+profiles themselves are unchanged. A research-only semantic-effect priority and
+physical-child tie break preserves16-step trajectories under tested movement,
+semantic and A/B label aliases; all716 task cells/raw/rounded values correspond
+under A/B renaming. This finite qualification is neither arbitrary rule/history
+canonicalization nor permission to merge search/repetition states. The failed
+first label-alias diagnostic forgot to re-sort inverse-renamed hand tuples;
+qualified v2 preserves both attempts.
+
+On the fixed dual-transform rule,17 selected backgrounds give raw task means
+A20947/33660,B13489/33660,P1153/3366,X17489/33660. Median1000 normalization and
+bankers rounding yield A1352,B871,P744,X1129, with residuals saved separately.
+An existing evaluator override changes board leaves only; hand and ordering
+prices stay at the reference. Eight cold Core D2 witness calls complete with
+legal PVs and restored roots. This is a runnable board ablation, not a full
+material/hand model, independent gain, or default recommendation.
+
+The same declared approximation on Chess completes1105 cells/3980 focal
+transitions in1.44sec across17 backgrounds. Raw Q14324/23205,R34183/60060,
+B8779/23205,N3977/78540,P1171/36465 describe immediate capture opportunity.
+Initial N/P tasks are zero. Geometry-any matches B/N/Q/R tasks exactly; the two
+P extras are actual en-passant removals off destination, not endpoint counting
+bugs. Source-role strata retain substantial spatial/context allocation bias.
+Derived median1000 rounded values B1000,N134,P85,Q1632,R1504 are diagnostic only:
+the producer emitted no normalized profile/caller. Its unused inherited input
+hash and unreachable normalization tail are explicitly qualified in the index.
+
+Advisor's useful objection distinguishes equal-context from equal-slot weighting.
+Reaggregating the same cells changes means but preserves ordering in all six
+cases (four old rules, fixed dual rule, Chess); primary context-first choice
+stays unchanged. All17 contexts per case have ordinary slots; no empty-context
+convention was silently introduced. No trajectory or sample was added for this
+sensitivity check.
+
+A separately declared initial-Chess one-reply unit-exchange task uses the same
+15 slots/five types: maximize immediate ordinary enemy removal minus maximum
+legal opponent ordinary removal, with virtual stop0. All75 cells complete,
+4714 Core transitions. Immediate B2/5,Q/R8/15 become zero after one reply;
+N/P remain zero. All28 positive-gain actions permit immediate recapture of the moved focal actor;
+434 localized opponent transitions show this is not merely an unrelated-board
+loss artifact. Raw negative action nets are retained. Thus capture opportunity
+and short-horizon unit exchange genuinely differ, but neither gives positive
+material calibration here. Do not silently add horizon, fit human prices or
+promote zeros into a universal table. Keep the runnable ablation and explicit
+task/context assumptions; choose the next concrete utility question from an
+observed deployment need. Sources, failures, exact counts and verified recovery:
+data/tasklaw_20261009.json and ../archive/tasklaw_20261009/index.json.
+
+
+The actual fixed-rule pre-transformation root adds four cold D2 calls: both
+profiles keep the same balanced-capture choice and score0. All four earlier
+post-choice pairs also keep first actions. The controls prove execution, not
+a discriminating gain. A separately declared comparison covers all22 existing
+event roots,44 Core calls under the same D2/8192/5sec/q2-hard8 conditions, hand
+and ordering frozen.21 pairs both finish D2; seed2001/ply16 remains D1/time_limit
+under both. Exactly one completed pair changes choice: seed2002/ply4, default
+A(2,4)->(2,3) quiet versus ablation A(2,4)->(0,4) capturing P. Existing unit
+one-reply proxy gives gains/losses0/1 versus1/1. This is visible price sensitivity
+and a short diagnostic, not WDL, strength, or permission to select success
+criteria afterward. Saved PV-prefix cross-scores are not actual q-frontier
+scores; different evaluations need not keep qnode counts.
+
+A dormant B2 declaration copies B's movement/no-promotion and receives its drop
+mask; the first incomplete-mask attempt is preserved as rejected. Along17
+existing backgrounds649 complete physical child comparisons agree, and179
+counterfactual B2 tasks equal B. But median over every declared ordinary type
+moves from1721/3740 to13489/33660, rescaling existing rounded A/B/P/X from
+1352/871/744/1129 to1553/1000/855/1297. Raw old-type values and pre-rounding
+ratios do not change. This is normalization-population sensitivity in the
+proposed task table, not a proved existing product defect. A common board
+scale is not automatically neutral while hand/dynamic coefficients stay fixed.
+The finite dormant-route control does not establish arbitrary reachable-state
+equivalence. Keep this qualification before treating the recipe as a portable
+material generator; do not add a general alias framework or silently change
+the primary normalization to obtain a preferred result.

@@ -23,10 +23,27 @@ Supplied evaluators now bypass unused default profiles; both orderers use shape.
 Rectangular Core searches pass bounded cannon, temporal and compound controls.
 Native and default price generation remain separate unsupported boundaries.
 Lexical q classification now shares recursion pushes without changing ordering;
-next distinguish genuinely needed legal-generation work from eager child probing
-before adding any backend/profile.
+first-legal Native candidate is isolated/deferred after final DLL App Control
+block; product remains e16451b/Core fallback. No security bypass. Use Core for
+independent price/task questions; do not claim pre-final timings as deployment.
 
 ## Current evidence and decisions
+
+- Common-slot interventions remove type-presence mismatch but retain a declared
+  context/task law.2456 cells/6602 Core-Native transitions agree. A finite
+  physical-selector alias qualification and716-cell type-alias check pass.
+  Fixed-rule rounded board-only ablation runs8 Core D2 calls; not a new default.
+- Chess common-slot capture opportunity is Q>R>B>N>P on17 backgrounds. Two
+  en-passant events explain P geometry/task differences. Initial short exchange
+  task collapses all75 cells to0 after one opponent reply. These scoped averages
+  are runnable diagnostics, not material truth; do not fit human ratios.
+  Equal-context versus equal-slot reaggregation preserves all six orderings.
+  Board-only caller comparison changes1/21 completed event choices; one pair
+  stays capped. Dormant duplicate type rescales the proposed normalization,
+  although raw old-type ratios stay fixed. Neither finding is a strength gain.
+- Final Native first-legal correction cannot load under App Control. Product
+  source is restored; exact candidate is archived/deferred, Core research works.
+  Earlier31.64% timing belongs to earlier builds, not accepted deployment.
 
 - The simple target-directed iterator is delivered.16 actual q2 calls retain exact
   choices/PV/nodes/work, with local wall reductions5-13%;1654 regressions pass.
@@ -94,7 +111,7 @@ branch backlog or publication gate. Exact operating rules remain in AGENTS.md.
 
 |Purpose|Document and latest records|
 |---|---|
-|Semantic opportunity, equivalence, context/task boundaries|SEMANTIC_CAPABILITY.md; data/task_compression_20261009.json; finite_law_20261009.json; preparation_transfer_20261008.json; retention_20261008.json|
+|Semantic opportunity, equivalence, context/task boundaries|SEMANTIC_CAPABILITY.md; data/tasklaw_20261009.json; task_compression_20261009.json; finite_law_20261009.json; preparation_transfer_20261008.json; retention_20261008.json|
 |Descriptive price ratios and preparation/promotion bias|CROSS_GAME_PRICE_DIAGNOSTIC.md; data/pawn_bias_20261009.json|
 |Search interface, actual-effect qsupport, costs and caps|UNFAMILIAR_RULE_SEARCH.md; data/event_qsearch_20261009.json; rect_search_20261009.json; query_transfer_20261009.json; qfactorial_20261009.json; qeffects_20261008.json; generated6_20261008.json; generated8_20261008.json|
 |Retained utility alternatives|TEMPORAL_HAND_SERVICE.md; GOAL_INTERACTION.md; CONTRIBUTION_MODEL.md; JOINT_SERVICE_DIAGNOSTIC.md; CUSTODY_CONTINUATION.md|

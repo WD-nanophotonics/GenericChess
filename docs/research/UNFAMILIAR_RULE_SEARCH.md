@@ -1232,3 +1232,27 @@ retain Core first-legal streaming and ordinary Native generation at actual nodes
 These capped calls do not support an equal-work timing ratio or a new kernel.
 Exact sources, incomplete attempts, controls and recovery:
 data/event_qsearch_20261009.json and ../archive/event_qsearch_20261009/index.json.
+
+
+## First-legal Native candidate: deferred, not deployed
+
+A different candidate reuses transient generation but stops after its first
+legal action, retaining Core history adjudication. On68 existing contexts it
+uses158 S3 trials versus3270 full-generation trials. Earlier connected builds
+retain decisions/PV/depth/main/qnodes on22 frozen event roots/44 cold matched
+calls; local median wall reduction31.64% is descriptive and pre-final-fix only.
+This differs from the rejected eager full-set probe above.
+
+Audit/checkpoint callbacks can reenter Native code, so the final candidate
+pauses/restores transient history/audit mode around each callback. That final
+DLL is blocked by Windows Application Control. Nine final Native cases skip:
+they are not passing acceptance. Earlier8 Native cases/117 focused passes and
+timings precede this correction and cannot certify the final candidate.
+All product source changes were restored to e16451b; the candidate patch/full
+source/tests are isolated in the tasklaw archive, marked DEFERRED_NOT_DEPLOYED.
+No security policy was changed or bypassed. Core remains operational:71 focused
+cases pass; eight actual fallback callers preserve valid roots/PVs, but two
+frontiers still hit their original5sec caps. Do not claim equal-work timing from
+those capped calls. Native unavailability is a real local execution limitation,
+not scientific completion or a reason to stop Core research.
+Recovery, candidate hash and exact scoped evidence: data/tasklaw_20261009.json.

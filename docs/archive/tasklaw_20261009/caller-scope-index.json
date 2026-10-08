@@ -1,0 +1,54 @@
+{
+  "scope": "Existing-root price-choice diagnostics and dormant-clone normalization qualification, no new default/strength claim.",
+  "members": [
+    {
+      "member": ".local_agent/tasklaw-20261009/full_parent_caller.py",
+      "bytes": 3224,
+      "sha256": "b0dade5e464e63ecfd51f518fe0116e17b63200fe41cc7801fd34212d43d1778"
+    },
+    {
+      "member": ".local_agent/tasklaw-20261009/full-parent-caller.json",
+      "bytes": 36657,
+      "sha256": "d9c1f1b91c95688dfb3847d8451334e877d8beb98ac1cec3b8542ca952dde99f"
+    },
+    {
+      "member": ".local_agent/tasklaw-20261009/board_event_callers.py",
+      "bytes": 4538,
+      "sha256": "aa6cc4ee51efd3fcf06f1e552de9eb2e49afe602777c515c2623920b92e95154"
+    },
+    {
+      "member": ".local_agent/tasklaw-20261009/board-event-callers.json",
+      "bytes": 195917,
+      "sha256": "39aca8c79a8773ff697f97492fb00053a10b431ac52ec4281f17aeb8c2920d7a"
+    },
+    {
+      "member": ".local_agent/tasklaw-20261009/changed_choice_localization.py",
+      "bytes": 3639,
+      "sha256": "6faf15157432acf924b67781705ca71ba1db021f2725c38f72ed0a3a7042f6c7"
+    },
+    {
+      "member": ".local_agent/tasklaw-20261009/changed-choice-localization.json",
+      "bytes": 37234,
+      "sha256": "32d17c9c48d1ff6dce3506afe1be2d81a01ba736e5b4bcc4b044779939354038"
+    },
+    {
+      "member": ".local_agent/tasklaw-20261009/dormant_clone.py",
+      "bytes": 3930,
+      "sha256": "bbf054ac06802becb194052359b24739846ca4b1c0bd24133222741596190935"
+    },
+    {
+      "member": ".local_agent/tasklaw-20261009/dormant_clone_v2.py",
+      "bytes": 3987,
+      "sha256": "50b2929588d347666fa16c2482d67b65e6fe7385c1a57daf3ecbe26dbe74ede4"
+    },
+    {
+      "member": ".local_agent/tasklaw-20261009/dormant-clone-v2.json",
+      "bytes": 50926,
+      "sha256": "1fd95187a96a795f21ff6443f5761217b69294cbfa5e22a474f7a2dc55eb48a1"
+    }
+  ],
+  "zip_sha256": "68d6af8570d691f7a8edf3507c4cd55d047bedeb62511ce3cd2743fe20b33c0d",
+  "verified_members": 9,
+  "failed_attempt": "dormant_clone.py rejected before output: DROP_MASK_INVALID_SET missingB2. v2 supplies cloneB drop mask; no old evidence overwritten.",
+  "recovery": "Recover first evidence.zip and dependencies into fresh staging root. Core only. Candidate.Native remains deferred."
+}
