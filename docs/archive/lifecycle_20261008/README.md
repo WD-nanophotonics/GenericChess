@@ -14,6 +14,11 @@ deployment.zip adds five separately indexed/rehashed members without changing
 the original packages. Its344 actual enemy-reply frontiers test a declared
 positive deployment proxy. deployment-index.json qualifies action-count versus
 distinct-endpoint measurements and keeps terminal outcome separate.
+release-policy.zip and release-horizon.zip add separately indexed/rehashed
+actual-policy and finite-horizon supplements; original package bytes stay intact.
+The two-cycle Core census coincides with its declared geometric approximation;
+conditional nonstationarity is not interpreted as automatic rejection. Full
+Native parity is qualified by batch, not asserted for all7864 expanded cells.
 
 Recover in an isolated checkout of base4c7410521de167b09d7cee9c903e5f00da64353e.
 Extract members at their recorded repository-relative paths. For after-version

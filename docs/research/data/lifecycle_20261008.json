@@ -247,5 +247,72 @@
     ],
     "archive": "../../archive/lifecycle_20261008/deployment-index.json",
     "scope": "Initial U counts BoardMove alternatives inclpromotion, revised U counts distinct target endpoints; original raw preserved. Terminal branches U0 by definition, never zero outcome utility."
+  },
+  "release_policy": {
+    "reply_frontiers": 199,
+    "policies": [
+      {
+        "name": "uniform",
+        "own_actions": 14,
+        "next_turn_release_probability": "1/14",
+        "mean_next_turn_drops": "1/2"
+      },
+      {
+        "name": "promotion-if-available",
+        "own_actions": 3,
+        "next_turn_release_probability": "1/3",
+        "mean_next_turn_drops": "7/3"
+      }
+    ],
+    "conditional": [
+      {
+        "mechanism": "king",
+        "own_actions": 15,
+        "complete": true,
+        "uniform_next_release_probability": "1/15",
+        "reply_frontiers": 45
+      },
+      {
+        "mechanism": "knight-promotion",
+        "own_actions": 15,
+        "complete": true,
+        "uniform_next_release_probability": "1/15",
+        "reply_frontiers": 45
+      }
+    ],
+    "archive": "../../archive/lifecycle_20261008/release-policy-index.json",
+    "scope": "Actual-history conditional policy diagnostics, not eventual release or a whole two-turn population. First experiment checks intermediate snapshots/legal sets and final terminal parity; second also checks every intermediate terminal. Uniform promotion subset includes Knight promotions, not only Pawn file release."
+  },
+  "validation": {
+    "default_suite_exit_code": 0,
+    "default_tests_collected": 1534,
+    "focused_tests": 43,
+    "focused_targets": [
+      "tests/product/test_legal_successors.py",
+      "tests/product/test_lazy_successors.py",
+      "tests/product/test_semantic_executor.py",
+      "tests/product/test_native_semantic_stress_differential.py"
+    ],
+    "basis": "Observed tool exit0 for full pytest and43 focused passed; no timing invented. Exact collection count from pytest."
+  },
+  "release_horizon": {
+    "two_cycle": {
+      "complete": true,
+      "second_frontiers": 7864,
+      "observed_probability_mass": "1",
+      "stationary_prediction": "27/196",
+      "release_probability_lower": "27/196",
+      "release_probability_upper": "27/196",
+      "absolute_stationary_error": "0",
+      "seconds": 11.485899900086224
+    },
+    "blocker": {
+      "complete": true,
+      "reply_frontiers": 55,
+      "own_actions": 11,
+      "any_next_turn_release": false
+    },
+    "scope": "Two-cycle uniform full-history Core probability, not Native parity for expanded population; blocker conditional55 Native/Core frontiers, not whole third cycle.",
+    "archive": "../../archive/lifecycle_20261008/release-horizon-index.json"
   }
 }

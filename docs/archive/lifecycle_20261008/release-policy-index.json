@@ -1,0 +1,58 @@
+{
+  "file": "release-policy.zip",
+  "sha256": "1dd4c3b69e9c270283f048dd81f782d33c0cec4476aa1cd1bbc87b3891900f01",
+  "members": [
+    {
+      "path": ".local_agent/lifecycle-20261008/release-policy.py",
+      "bytes": 4235,
+      "sha256": "92ffe7cd879009a7345b2607a7033390f46d15096070aa5d154c99a2b2c7e83f"
+    },
+    {
+      "path": ".local_agent/lifecycle-20261008/release-policy.json",
+      "bytes": 63018,
+      "sha256": "ce5e3500882fdd4132af9d2400d0a480b3e828b065c8f6ff34ce1778e57875fc"
+    },
+    {
+      "path": ".local_agent/lifecycle-20261008/release-conditional.py",
+      "bytes": 4399,
+      "sha256": "0c659f7f2592b5391d807ccb4a4a8376bd4860aee79c9ab786b4152b50b50127"
+    },
+    {
+      "path": ".local_agent/lifecycle-20261008/release-conditional.json",
+      "bytes": 19355,
+      "sha256": "99db1e37664dc842c85ddc0d3317ae0959e8cb96af10dfb37169285c73d65e58"
+    }
+  ],
+  "verified_extracted": true,
+  "scope": "Actual-history conditional policy diagnostics, not eventual release or a whole two-turn population. First experiment checks intermediate snapshots/legal sets and final terminal parity; second also checks every intermediate terminal. Uniform promotion subset includes Knight promotions, not only Pawn file release.",
+  "policies": [
+    {
+      "name": "uniform",
+      "own_actions": 14,
+      "next_turn_release_probability": "1/14",
+      "mean_next_turn_drops": "1/2"
+    },
+    {
+      "name": "promotion-if-available",
+      "own_actions": 3,
+      "next_turn_release_probability": "1/3",
+      "mean_next_turn_drops": "7/3"
+    }
+  ],
+  "conditional": [
+    {
+      "mechanism": "king",
+      "own_actions": 15,
+      "complete": true,
+      "uniform_next_release_probability": "1/15",
+      "reply_frontiers": 45
+    },
+    {
+      "mechanism": "knight-promotion",
+      "own_actions": 15,
+      "complete": true,
+      "uniform_next_release_probability": "1/15",
+      "reply_frontiers": 45
+    }
+  ]
+}

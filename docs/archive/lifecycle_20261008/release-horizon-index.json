@@ -1,0 +1,44 @@
+{
+  "file": "release-horizon.zip",
+  "sha256": "8c63fad46afd34bab4768187318d84aee8d3467e54716dc012fb8c7033c84740",
+  "members": [
+    {
+      "path": ".local_agent/lifecycle-20261008/release-two-cycle.py",
+      "bytes": 3800,
+      "sha256": "d19f296d891eed25bc8fe4402afaf88c0f2d6c1f87db3e66797f53276d1b0b65"
+    },
+    {
+      "path": ".local_agent/lifecycle-20261008/release-two-cycle.json",
+      "bytes": 7168,
+      "sha256": "66de16995c8912585aa2b531214aa65def70a8f91f6f2a5a14a55162834d03a8"
+    },
+    {
+      "path": ".local_agent/lifecycle-20261008/release-blocker.py",
+      "bytes": 3860,
+      "sha256": "477f9bcbafccd49118aaa962f79f560b46b03c6631bb81832d60869edcfc524f"
+    },
+    {
+      "path": ".local_agent/lifecycle-20261008/release-blocker.json",
+      "bytes": 6890,
+      "sha256": "97be35c02a05dee00177dddb52f9ffe8f4ef5af0b7a589508046b7b6fc5a3369"
+    }
+  ],
+  "verified_extracted": true,
+  "scope": "Two-cycle uniform full-history Core probability, not Native parity for expanded population; blocker conditional55 Native/Core frontiers, not whole third cycle.",
+  "two_cycle": {
+    "complete": true,
+    "second_frontiers": 7864,
+    "observed_probability_mass": "1",
+    "stationary_prediction": "27/196",
+    "release_probability_lower": "27/196",
+    "release_probability_upper": "27/196",
+    "absolute_stationary_error": "0",
+    "seconds": 11.485899900086224
+  },
+  "blocker": {
+    "complete": true,
+    "reply_frontiers": 55,
+    "own_actions": 11,
+    "any_next_turn_release": false
+  }
+}

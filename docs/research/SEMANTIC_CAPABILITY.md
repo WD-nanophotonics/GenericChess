@@ -253,6 +253,27 @@ different assumptions. Neither p nor H is identified by this algebra; positivity
 must be checked under the same units/context, not repaired by fitting or silent
 clamping. This remains a falsifiable development direction, not installed code.
 
+At the same captured-hand blocked root, all109 real enemy-reply frontiers also
+expose behavior dependence. Uniform own actions give next-turn release1/14;
+uniform promotion-if-available actions give1/3 because two Knight promotions
+do not open the Pawn file. The selected Pawn promotion does open it. After
+two declared non-release continuations (King move or Knight promotion, each
+with a canonical enemy reply),90 further Core/Native frontiers give1/15 under
+the next uniform cycle. A stationary geometric waiting law is therefore an
+extra approximation, not inferred from that initial1/14. These are conditional
+one-cycle results, not the full two-cycle population or eventual release time.
+
+A separate predeclared30sec/20000-frontier Core batch then completes7864
+second-cycle frontiers and all probability mass. Under uniform actual policies,
+first availability within two cycles is exactly27/196, coinciding with
+`1-(13/14)^2`. Thus conditional nonstationarity alone is no reason to reject
+this approximation at a measured horizon. This expanded population has Core
+full histories, not a claim of complete independent Native replay. Another
+actual route takes N(4,4)->N(3,6)->TN(4,8), blocking P(4,7)'s promotion target.
+All55 Core/Native enemy-reply frontiers show no release in its next cycle.
+That conditional obstruction limits extrapolation; it does not estimate the
+whole third-cycle population or invalidate the two-cycle coincidence.
+
 Four frozen generated-rule roots were selected by legal capture structure before
 scoring. Fixed baseline ordering, hand0 and equal search conditions yield32
 complete repeatable depth2/3 calls,14/16 complete Core references; two6x6seed7
