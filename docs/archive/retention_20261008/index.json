@@ -1,0 +1,48 @@
+{
+  "base_commit": "ea934db19a9e39218e9a690f150a1d33286d31c7",
+  "archive_sha256": "605f28197abf905e5bf6a77bae0c5299a787c7f525131e85b585e5702e4979ea",
+  "members": [
+    {
+      "path": ".local_agent/retention-20261008/analysis.json",
+      "bytes": 9583,
+      "sha256": "2a1c3d78394f62914046271614d4de265b5e3bb3b9720c99b4505256f9be6f81"
+    },
+    {
+      "path": ".local_agent/retention-20261008/analyze.py",
+      "bytes": 3198,
+      "sha256": "3b758f7fe331b7a9ec5c627d5e1490a9b5a5401aeb69e02965fac5fd081a78a1"
+    },
+    {
+      "path": ".local_agent/retention-20261008/package.py",
+      "bytes": 2960,
+      "sha256": "583fbbdd0c81a508c144046a2081127b2515d5e841a85ce3214b089e0ea7a788"
+    },
+    {
+      "path": ".local_agent/retention-20261008/replay.json",
+      "bytes": 1921318,
+      "sha256": "c2ed1dc3777a7be4a2944cca547eb3ee361a089f177a90dbdf2d5bf16b1152c8"
+    },
+    {
+      "path": ".local_agent/retention-20261008/replay.py",
+      "bytes": 6380,
+      "sha256": "b8cafa0da3abb3256686827702155b8ed2c1ecb7e30826a18a3261e5157048cd"
+    },
+    {
+      "path": ".local_agent/retention-20261008/retention.json",
+      "bytes": 14020617,
+      "sha256": "c2985a361e03ed441f1e94291ad6c817ff50eccb99b4c6da6fda359a2d8e914b"
+    },
+    {
+      "path": ".local_agent/retention-20261008/run.py",
+      "bytes": 6779,
+      "sha256": "ab5384a623564bd4cb055b1c334608c262b218562cbf2b32b981c7497db056e2"
+    },
+    {
+      "path": ".local_agent/target-context-20261008/frozen-role-candidate.json",
+      "bytes": 175246,
+      "sha256": "f25eb6b77c520bb8714e72af19e34ad0dd5d2be4c1ca9b1a5c9562bbce13492f"
+    }
+  ],
+  "extracted_rehashed": true,
+  "excluded": "User/private inputs, raw Slack/accounts, credentials, active workflow state."
+}

@@ -1,0 +1,1684 @@
+{
+  "complete": true,
+  "scope": "Fixed synthetic development comparisons; existing options unchanged. Fresh PVS transfer, q4 cost qualification, telemetry repair and existing lazy-qsearch intervention. Not material-price or playing-strength validation.",
+  "archive": "../../archive/pvs_transfer_20261008/index.json",
+  "archive_sha256": "1092f50deb0265aa30b56154d1d8e43cfc228fe154005e31366f3e520443bc2f",
+  "analysis": {
+    "complete": true,
+    "producer_sha256": "aa3a534f16450d7588de693e34eea57bf4e0fdf98dbfe3fa945d41495de4b77b",
+    "inputs": {
+      "analysis": "7fb52c784019d27dca71f37fd64e572d822bde4583a12816f5221d8a3feed544",
+      "qtransfer": "072eda40adea5e968101fa080df95fbb66461fd49bf9ce83995b19b753d1b108",
+      "accounting-before": "25b592845c69ad6e3fe87db3a1934b2a7d2a613d8755b61f7da0d782892367bb",
+      "accounting-after": "9271898cc15136fa9336227f04906e1819b17665eaf9b34434efff566d96d5ba",
+      "qintervention": "fc8adca7bec20b102330e1d25a3627ad419da00ed2fb666c32c4abc890864171"
+    },
+    "q0": {
+      "complete": true,
+      "producer_sha256": "b5aa0c1e3599b059ca967db8fe0bf79d29ae7b7897ee739175ff28671f69f95f",
+      "inputs": {
+        "transfer": "8d2d657afb4056bcb856cc9b152656e6b8393bda5dcc44151cb0c9a99f84af1a",
+        "extension": "5f223deb14abe29bde8ada2f32c0b94c4ed575a6b4e223377234c2e759d830fd"
+      },
+      "seconds": 337.3991961001884,
+      "rows": [
+        {
+          "seed": 202610082200,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "legal_actions": 5,
+          "reference": {
+            "complete": true,
+            "score": -1599,
+            "action": {
+              "pattern_id": "legacy_005",
+              "geometry_id": "g10",
+              "actor_type_id": "C",
+              "from_square": {
+                "file": 2,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "seconds": 0.1842014999128878,
+            "leaf_evaluations": 556
+          },
+          "methods": [
+            {
+              "pvs": false,
+              "completed_depth": 3,
+              "nodes": 805,
+              "score": 2442,
+              "termination": "completed_depth",
+              "evaluation_calls": 569,
+              "pvs_researches": 0,
+              "wall_seconds": [
+                0.5586894999723881,
+                0.5796145000495017
+              ]
+            },
+            {
+              "pvs": true,
+              "completed_depth": 3,
+              "nodes": 938,
+              "score": 2442,
+              "termination": "completed_depth",
+              "evaluation_calls": 586,
+              "pvs_researches": 10,
+              "wall_seconds": [
+                0.7999489998910576,
+                0.805968000087887
+              ]
+            }
+          ],
+          "common_depth_score_equal": true,
+          "same_action_at_common_depth": true,
+          "pvs_node_ratio_if_both_complete": 1.1652173913043478,
+          "pvs_wall_ratio_if_both_complete": 1.4107979941633013
+        },
+        {
+          "seed": 202610082201,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "legal_actions": 116,
+          "reference": {
+            "complete": true,
+            "score": 999999999,
+            "action": {
+              "pattern_id": "legacy_006",
+              "geometry_id": "g11",
+              "actor_type_id": "B",
+              "from_square": {
+                "file": 6,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 4
+              },
+              "promotion_target_id": null
+            },
+            "seconds": 5.615271599963307,
+            "leaf_evaluations": 17829
+          },
+          "methods": [
+            {
+              "pvs": false,
+              "completed_depth": 3,
+              "nodes": 13232,
+              "score": 999999999,
+              "termination": "completed_depth",
+              "evaluation_calls": 12578,
+              "pvs_researches": 0,
+              "wall_seconds": [
+                7.932989600114524,
+                7.869093100074679
+              ]
+            },
+            {
+              "pvs": true,
+              "completed_depth": 3,
+              "nodes": 13251,
+              "score": 999999999,
+              "termination": "completed_depth",
+              "evaluation_calls": 12589,
+              "pvs_researches": 14,
+              "wall_seconds": [
+                7.918772100005299,
+                7.900130599969998
+              ]
+            }
+          ],
+          "common_depth_score_equal": true,
+          "same_action_at_common_depth": true,
+          "pvs_node_ratio_if_both_complete": 1.0014359129383312,
+          "pvs_wall_ratio_if_both_complete": 1.0010644166408453
+        },
+        {
+          "seed": 202610082202,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "legal_actions": 103,
+          "reference": {
+            "complete": true,
+            "score": 999999999,
+            "action": {
+              "pattern_id": "legacy_082",
+              "geometry_id": "g39",
+              "base_type_id": "X",
+              "to_square": {
+                "file": 1,
+                "rank": 6
+              }
+            },
+            "seconds": 2.845410499954596,
+            "leaf_evaluations": 6244
+          },
+          "methods": [
+            {
+              "pvs": false,
+              "completed_depth": 3,
+              "nodes": 9778,
+              "score": 999999999,
+              "termination": "completed_depth",
+              "evaluation_calls": 9371,
+              "pvs_researches": 0,
+              "wall_seconds": [
+                5.135941000189632,
+                5.185379300033674
+              ]
+            },
+            {
+              "pvs": true,
+              "completed_depth": 3,
+              "nodes": 9784,
+              "score": 999999999,
+              "termination": "completed_depth",
+              "evaluation_calls": 9374,
+              "pvs_researches": 6,
+              "wall_seconds": [
+                5.166237100027502,
+                5.095618800027296
+              ]
+            }
+          ],
+          "common_depth_score_equal": true,
+          "same_action_at_common_depth": true,
+          "pvs_node_ratio_if_both_complete": 1.0006136224176723,
+          "pvs_wall_ratio_if_both_complete": 0.9942386828003756
+        },
+        {
+          "seed": 202610082203,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "legal_actions": 217,
+          "reference": {
+            "complete": false,
+            "failure": "reference cost fuse",
+            "seconds": 6.89005499985069,
+            "leaf_evaluations": 20001
+          },
+          "methods": [
+            {
+              "pvs": false,
+              "completed_depth": 2,
+              "nodes": 32768,
+              "score": 999999999,
+              "termination": "node_limit",
+              "evaluation_calls": 31608,
+              "pvs_researches": 0,
+              "wall_seconds": [
+                17.794418799923733,
+                17.94467099988833
+              ]
+            },
+            {
+              "pvs": true,
+              "completed_depth": 2,
+              "nodes": 32768,
+              "score": 999999999,
+              "termination": "node_limit",
+              "evaluation_calls": 31431,
+              "pvs_researches": 10,
+              "wall_seconds": [
+                18.1476567001082,
+                18.161936399992555
+              ]
+            }
+          ],
+          "common_depth_score_equal": true,
+          "same_action_at_common_depth": true,
+          "pvs_node_ratio_if_both_complete": null,
+          "pvs_wall_ratio_if_both_complete": null
+        },
+        {
+          "seed": 202610082204,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "legal_actions": 120,
+          "reference": {
+            "complete": true,
+            "score": 2162,
+            "action": {
+              "pattern_id": "legacy_009",
+              "geometry_id": "g12",
+              "actor_type_id": "C",
+              "from_square": {
+                "file": 4,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 2,
+                "rank": 0
+              },
+              "promotion_target_id": null
+            },
+            "seconds": 3.324745199875906,
+            "leaf_evaluations": 11568
+          },
+          "methods": [
+            {
+              "pvs": false,
+              "completed_depth": 3,
+              "nodes": 20534,
+              "score": 2571,
+              "termination": "completed_depth",
+              "evaluation_calls": 19738,
+              "pvs_researches": 0,
+              "wall_seconds": [
+                9.208552000112832,
+                9.18947650003247
+              ]
+            },
+            {
+              "pvs": true,
+              "completed_depth": 3,
+              "nodes": 10919,
+              "score": 2571,
+              "termination": "completed_depth",
+              "evaluation_calls": 9936,
+              "pvs_researches": 29,
+              "wall_seconds": [
+                5.511269400129095,
+                5.5719862000551075
+              ]
+            }
+          ],
+          "common_depth_score_equal": true,
+          "same_action_at_common_depth": true,
+          "pvs_node_ratio_if_both_complete": 0.5317522158371482,
+          "pvs_wall_ratio_if_both_complete": 0.6024153946764823
+        },
+        {
+          "seed": 202610082205,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "legal_actions": 164,
+          "reference": {
+            "complete": false,
+            "failure": "reference cost fuse",
+            "seconds": 6.279342900030315,
+            "leaf_evaluations": 20001
+          },
+          "methods": [
+            {
+              "pvs": false,
+              "completed_depth": 2,
+              "nodes": 32768,
+              "score": -535,
+              "termination": "node_limit",
+              "evaluation_calls": 31752,
+              "pvs_researches": 0,
+              "wall_seconds": [
+                15.644583499990404,
+                15.548493099864572
+              ]
+            },
+            {
+              "pvs": true,
+              "completed_depth": 3,
+              "nodes": 25011,
+              "score": 1794,
+              "termination": "completed_depth",
+              "evaluation_calls": 23809,
+              "pvs_researches": 21,
+              "wall_seconds": [
+                12.77843919978477,
+                13.015164300100878
+              ]
+            }
+          ],
+          "common_depth_score_equal": null,
+          "same_action_at_common_depth": null,
+          "pvs_node_ratio_if_both_complete": null,
+          "pvs_wall_ratio_if_both_complete": null
+        },
+        {
+          "seed": 202610082206,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "legal_actions": 117,
+          "reference": {
+            "complete": true,
+            "score": 9900,
+            "action": {
+              "pattern_id": "legacy_005",
+              "geometry_id": "g10",
+              "actor_type_id": "C",
+              "from_square": {
+                "file": 4,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 3
+              },
+              "promotion_target_id": null
+            },
+            "seconds": 4.003204799955711,
+            "leaf_evaluations": 12039
+          },
+          "methods": [
+            {
+              "pvs": false,
+              "completed_depth": 3,
+              "nodes": 5397,
+              "score": 13128,
+              "termination": "completed_depth",
+              "evaluation_calls": 4897,
+              "pvs_researches": 0,
+              "wall_seconds": [
+                2.866207299986854,
+                2.9221189999952912
+              ]
+            },
+            {
+              "pvs": true,
+              "completed_depth": 3,
+              "nodes": 4809,
+              "score": 13128,
+              "termination": "completed_depth",
+              "evaluation_calls": 4295,
+              "pvs_researches": 4,
+              "wall_seconds": [
+                2.6945779998786747,
+                2.7239105999469757
+              ]
+            }
+          ],
+          "common_depth_score_equal": true,
+          "same_action_at_common_depth": true,
+          "pvs_node_ratio_if_both_complete": 0.8910505836575876,
+          "pvs_wall_ratio_if_both_complete": 0.9361062799521797
+        },
+        {
+          "seed": 202610082207,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "legal_actions": 179,
+          "reference": {
+            "complete": false,
+            "failure": "reference cost fuse",
+            "seconds": 7.001308900071308,
+            "leaf_evaluations": 20001
+          },
+          "methods": [
+            {
+              "pvs": false,
+              "completed_depth": 2,
+              "nodes": 32768,
+              "score": 1468,
+              "termination": "node_limit",
+              "evaluation_calls": 32077,
+              "pvs_researches": 0,
+              "wall_seconds": [
+                17.17368710017763,
+                17.29009689996019
+              ]
+            },
+            {
+              "pvs": true,
+              "completed_depth": 3,
+              "nodes": 31205,
+              "score": 3529,
+              "termination": "completed_depth",
+              "evaluation_calls": 30500,
+              "pvs_researches": 6,
+              "wall_seconds": [
+                16.561788900056854,
+                16.466192199848592
+              ]
+            }
+          ],
+          "common_depth_score_equal": null,
+          "same_action_at_common_depth": null,
+          "pvs_node_ratio_if_both_complete": null,
+          "pvs_wall_ratio_if_both_complete": null
+        }
+      ],
+      "extensions": [
+        {
+          "seed": 202610082205,
+          "prior_action_terminal": null,
+          "methods": [
+            {
+              "pvs": false,
+              "root_tactical": false,
+              "nodes": 38829,
+              "completed_depth": 3,
+              "score": 1794,
+              "termination": "completed_depth",
+              "wall_seconds": [
+                18.425722500076517,
+                18.422655900008976
+              ]
+            },
+            {
+              "pvs": true,
+              "root_tactical": false,
+              "nodes": 25011,
+              "completed_depth": 3,
+              "score": 1794,
+              "termination": "completed_depth",
+              "wall_seconds": [
+                12.790384999942034,
+                12.73484589997679
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 202610082203,
+          "prior_action_terminal": {
+            "status": "checkmate",
+            "winner": 0
+          },
+          "methods": [
+            {
+              "pvs": false,
+              "root_tactical": true,
+              "nodes": 81,
+              "completed_depth": 0,
+              "score": 999999999,
+              "termination": "root_immediate_win",
+              "wall_seconds": [
+                0.08796979999169707,
+                0.08722169999964535
+              ]
+            }
+          ]
+        }
+      ],
+      "limits": [
+        "All eight predeclared fresh synthetic8x8rules retained, not independent real playing-strength games.",
+        "Root tactical scan deliberately off in PVS isolation, q0, Native attack and legality, TT/order. Existing options/defaults unchanged.",
+        "Five baseline and seven PVS depth3 completions at32768nodes/20sec; missing scores remain unknown.",
+        "PVS node/wall regressions on easy roots prohibit a universal speedup claim.",
+        "Seed2203 immediate win is independently replayed; existing default root scan solves it, no cache/flag/product patch added.",
+        "Separate fair65536-node40sec extension only seed2205; seed2207 baseline requested-depth score still unknown at originalcap.",
+        "Core depth2 references that fail their original20k-leaf10sec checkpoint remain unknown."
+      ]
+    },
+    "q4": [
+      {
+        "seed": 202610082200,
+        "methods": [
+          {
+            "pvs": false,
+            "depths": [
+              2,
+              2
+            ],
+            "scores": [
+              -1537,
+              -1537
+            ],
+            "main_nodes": [
+              157,
+              157
+            ],
+            "qnodes": [
+              5380,
+              5509
+            ],
+            "seconds": [
+              20.02368319989182,
+              20.026217699982226
+            ],
+            "termination": [
+              "time_limit",
+              "time_limit"
+            ]
+          },
+          {
+            "pvs": true,
+            "depths": [
+              2,
+              2
+            ],
+            "scores": [
+              -1537,
+              -1537
+            ],
+            "main_nodes": [
+              134,
+              134
+            ],
+            "qnodes": [
+              4542,
+              4580
+            ],
+            "seconds": [
+              20.014429499860853,
+              20.031537299975753
+            ],
+            "termination": [
+              "time_limit",
+              "time_limit"
+            ]
+          }
+        ]
+      },
+      {
+        "seed": 202610082205,
+        "methods": [
+          {
+            "pvs": false,
+            "depths": [
+              1,
+              1
+            ],
+            "scores": [
+              -370,
+              -370
+            ],
+            "main_nodes": [
+              328,
+              328
+            ],
+            "qnodes": [
+              4017,
+              4017
+            ],
+            "seconds": [
+              20.02328909980133,
+              20.027005500160158
+            ],
+            "termination": [
+              "time_limit",
+              "time_limit"
+            ]
+          },
+          {
+            "pvs": true,
+            "depths": [
+              1,
+              1
+            ],
+            "scores": [
+              -370,
+              -370
+            ],
+            "main_nodes": [
+              482,
+              482
+            ],
+            "qnodes": [
+              3531,
+              3531
+            ],
+            "seconds": [
+              20.024427300086245,
+              20.033946000039577
+            ],
+            "termination": [
+              "time_limit",
+              "time_limit"
+            ]
+          }
+        ]
+      }
+    ],
+    "accounting": [
+      {
+        "seed": 202610082200,
+        "pvs": false,
+        "decision_and_runtime_work_exact": true,
+        "main_nodes": 126,
+        "qnodes": 2850,
+        "before_reported_seconds": 0.0,
+        "after_reported_seconds": 0.34495099913328886,
+        "actual_runtime_calls_including_cached_validation": 27011,
+        "actual_runtime_seconds_including_cached_validation": 0.3532438010443002,
+        "reported_explicit_search_generation_requests": 1158,
+        "runtime_work": {
+          "runtime_pushes": 25853,
+          "runtime_pops": 25853,
+          "runtime_depth_balanced": true,
+          "runtime_peak_depth": 9,
+          "native_legality_calls": 1156
+        }
+      },
+      {
+        "seed": 202610082200,
+        "pvs": true,
+        "decision_and_runtime_work_exact": true,
+        "main_nodes": 127,
+        "qnodes": 2052,
+        "before_reported_seconds": 0.0,
+        "after_reported_seconds": 0.29527849913574755,
+        "actual_runtime_calls_including_cached_validation": 24696,
+        "actual_runtime_seconds_including_cached_validation": 0.30319642066024244,
+        "reported_explicit_search_generation_requests": 827,
+        "runtime_work": {
+          "runtime_pushes": 23869,
+          "runtime_pops": 23869,
+          "runtime_depth_balanced": true,
+          "runtime_peak_depth": 9,
+          "native_legality_calls": 825
+        }
+      },
+      {
+        "seed": 202610082205,
+        "pvs": false,
+        "decision_and_runtime_work_exact": true,
+        "main_nodes": 328,
+        "qnodes": 3768,
+        "before_reported_seconds": 0.0,
+        "after_reported_seconds": 0.6523817002307624,
+        "actual_runtime_calls_including_cached_validation": 44899,
+        "actual_runtime_seconds_including_cached_validation": 0.6671733693219721,
+        "reported_explicit_search_generation_requests": 1221,
+        "runtime_work": {
+          "runtime_pushes": 43678,
+          "runtime_pops": 43678,
+          "runtime_depth_balanced": true,
+          "runtime_peak_depth": 7,
+          "native_legality_calls": 1219
+        }
+      },
+      {
+        "seed": 202610082205,
+        "pvs": true,
+        "decision_and_runtime_work_exact": true,
+        "main_nodes": 503,
+        "qnodes": 3593,
+        "before_reported_seconds": 0.0,
+        "after_reported_seconds": 0.7027101004496217,
+        "actual_runtime_calls_including_cached_validation": 48227,
+        "actual_runtime_seconds_including_cached_validation": 0.7191906764637679,
+        "reported_explicit_search_generation_requests": 1296,
+        "runtime_work": {
+          "runtime_pushes": 46931,
+          "runtime_pops": 46931,
+          "runtime_depth_balanced": true,
+          "runtime_peak_depth": 7,
+          "native_legality_calls": 1294
+        }
+      }
+    ],
+    "ordered_qsearch": [
+      {
+        "seed": 202610082200,
+        "methods": [
+          {
+            "ordered": false,
+            "cold_signature_repeat_equal": true,
+            "completed_depth": 2,
+            "score": -1537,
+            "nodes": 126,
+            "qnodes": 2850,
+            "runtime_pushes": [
+              25853,
+              25853
+            ],
+            "wall_seconds": [
+              9.710340399993584,
+              9.722953099990264
+            ],
+            "termination": [
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "ordered": true,
+            "cold_signature_repeat_equal": true,
+            "completed_depth": 2,
+            "score": -1537,
+            "nodes": 126,
+            "qnodes": 1227,
+            "runtime_pushes": [
+              6106,
+              6106
+            ],
+            "wall_seconds": [
+              2.4517441000789404,
+              2.4510534000582993
+            ],
+            "termination": [
+              "completed_depth",
+              "completed_depth"
+            ]
+          }
+        ],
+        "completed_same_depth_score_equal": true
+      },
+      {
+        "seed": 202610082205,
+        "methods": [
+          {
+            "ordered": false,
+            "cold_signature_repeat_equal": true,
+            "completed_depth": 1,
+            "score": -370,
+            "nodes": 328,
+            "qnodes": 3768,
+            "runtime_pushes": [
+              43678,
+              43678
+            ],
+            "wall_seconds": [
+              19.44049539999105,
+              19.256239299895242
+            ],
+            "termination": [
+              "node_limit",
+              "node_limit"
+            ]
+          },
+          {
+            "ordered": true,
+            "cold_signature_repeat_equal": true,
+            "completed_depth": 1,
+            "score": -370,
+            "nodes": 331,
+            "qnodes": 3765,
+            "runtime_pushes": [
+              27975,
+              27975
+            ],
+            "wall_seconds": [
+              13.2067754000891,
+              13.004941799910739
+            ],
+            "termination": [
+              "node_limit",
+              "node_limit"
+            ]
+          }
+        ],
+        "completed_same_depth_score_equal": true
+      }
+    ],
+    "profile": {
+      "decision": {
+        "ordered_qsearch": false,
+        "wall_seconds": 24.69653129996732,
+        "decision": {
+          "action": {
+            "pattern_id": "legacy_005",
+            "geometry_id": "g10",
+            "actor_type_id": "C",
+            "from_square": {
+              "file": 2,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 4,
+              "rank": 2
+            },
+            "promotion_target_id": null
+          },
+          "score": -1537,
+          "principal_variation": [
+            {
+              "pattern_id": "legacy_005",
+              "geometry_id": "g10",
+              "actor_type_id": "C",
+              "from_square": {
+                "file": 2,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_027",
+              "geometry_id": "g20",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 2,
+                "rank": 5
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            }
+          ],
+          "completed_depth": 2,
+          "selective_depth": 2,
+          "nodes": 126,
+          "qnodes": 2850,
+          "elapsed_seconds": 24.688000000081956,
+          "tt_probes": 7,
+          "tt_hits": 1,
+          "tt_cutoffs": 0,
+          "beta_cutoffs": 4,
+          "evaluation_profile_cache_hit": false,
+          "termination_reason": "completed_depth",
+          "choice_kind": "ACTION",
+          "declaration": null,
+          "time_to_first_legal_action": 0.01600000006146729,
+          "time_to_first_completed_iteration": 24.688000000081956,
+          "qdepth_cutoffs": 1010,
+          "qsearch_budget_aborts": 0,
+          "qsearch_check_hard_limit_aborts": 0,
+          "in_check_qnodes": 929,
+          "stand_pat_cutoffs": 682,
+          "capture_qactions": 794,
+          "promotion_qactions": 389,
+          "checking_move_qactions": 471,
+          "checking_drop_qactions": 666,
+          "nonchecking_drop_excluded": 13094,
+          "pvs_null_window_searches": 0,
+          "pvs_researches": 0,
+          "aspiration_fail_low": 0,
+          "aspiration_fail_high": 0,
+          "aspiration_researches": 0,
+          "root_scan_nodes": 0,
+          "root_scan_used_fallback": false,
+          "move_picker_generated": 0,
+          "move_picker_yielded": 0,
+          "move_picker_yielded_by_stage": {},
+          "ordering_calls": 7,
+          "ordered_moves": 566,
+          "ordering_seconds": 0.0,
+          "legal_generation_calls": 1158,
+          "legal_generation_seconds": 0.6268604972865433,
+          "evaluation_calls": 1913,
+          "evaluation_seconds": 0.7488995019812137,
+          "countermove_hits": 0,
+          "mate_pruning_cutoffs": 0,
+          "legal_actions_generated": 29498,
+          "successor_handles_created": 566,
+          "successors_materialized": 124,
+          "successors_searched": 124,
+          "terminal_results_computed": 124,
+          "terminal_cache_hits": 0,
+          "position_keys_computed": 131,
+          "position_key_cache_hits": 124,
+          "declaration_checks": 0,
+          "declaration_win_options": 0,
+          "declaration_restart_options": 0,
+          "declaration_root_selected": false,
+          "native_legality_calls": 1156,
+          "native_legality_fallbacks": 0,
+          "native_legality_operational_failures": 0
+        },
+        "runtime_work": {
+          "runtime_pushes": 25853,
+          "runtime_pops": 25853,
+          "runtime_depth_balanced": true,
+          "native_legality_calls": 1156
+        }
+      },
+      "functions_by_exclusive": [
+        {
+          "file": "semantic_executor.py",
+          "line": 602,
+          "function": "is_square_attacked",
+          "primitive_calls": 95604,
+          "calls": 95604,
+          "exclusive_seconds": 4.7106315,
+          "nested_cumulative_seconds": 15.9506008
+        },
+        {
+          "file": "semantic_executor.py",
+          "line": 42,
+          "function": "_checkpoint",
+          "primitive_calls": 24434024,
+          "calls": 24434024,
+          "exclusive_seconds": 2.9446008000000004,
+          "nested_cumulative_seconds": 4.9435212
+        },
+        {
+          "file": "ir.py",
+          "line": 92,
+          "function": "geometry_candidates",
+          "primitive_calls": 5026037,
+          "calls": 5026037,
+          "exclusive_seconds": 2.8713001,
+          "nested_cumulative_seconds": 4.8060923
+        },
+        {
+          "file": "search.py",
+          "line": 164,
+          "function": "checkpoint",
+          "primitive_calls": 24314793,
+          "calls": 24314793,
+          "exclusive_seconds": 2.0000374,
+          "nested_cumulative_seconds": 2.0000374
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'get' of 'dict' objects>",
+          "primitive_calls": 21574699,
+          "calls": 21574699,
+          "exclusive_seconds": 1.7824091000000002,
+          "nested_cumulative_seconds": 1.7830807000000002
+        },
+        {
+          "file": "semantic_executor.py",
+          "line": 95,
+          "function": "_sources_by_owner_type",
+          "primitive_calls": 121466,
+          "calls": 121466,
+          "exclusive_seconds": 0.8628347000000001,
+          "nested_cumulative_seconds": 1.359318
+        },
+        {
+          "file": "ir.py",
+          "line": 100,
+          "function": "<genexpr>",
+          "primitive_calls": 7267184,
+          "calls": 7267184,
+          "exclusive_seconds": 0.7834195,
+          "nested_cumulative_seconds": 0.7834195
+        },
+        {
+          "file": "search_runtime.py",
+          "line": 447,
+          "function": "_semantic_component_diff_hash",
+          "primitive_calls": 25853,
+          "calls": 25853,
+          "exclusive_seconds": 0.46501420000000004,
+          "nested_cumulative_seconds": 2.0615428000000002
+        },
+        {
+          "file": "search_runtime.py",
+          "line": 1117,
+          "function": "_push_impl",
+          "primitive_calls": 25853,
+          "calls": 25853,
+          "exclusive_seconds": 0.4210723,
+          "nested_cumulative_seconds": 17.596828000000002
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'setdefault' of 'dict' objects>",
+          "primitive_calls": 3137627,
+          "calls": 3137627,
+          "exclusive_seconds": 0.3002616,
+          "nested_cumulative_seconds": 0.3276277
+        },
+        {
+          "file": "search_runtime.py",
+          "line": 369,
+          "function": "_component_map",
+          "primitive_calls": 51739,
+          "calls": 51739,
+          "exclusive_seconds": 0.2820614,
+          "nested_cumulative_seconds": 0.3894885
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'append' of 'list' objects>",
+          "primitive_calls": 3356699,
+          "calls": 3356699,
+          "exclusive_seconds": 0.24042590000000003,
+          "nested_cumulative_seconds": 0.24042590000000003
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method builtins.max>",
+          "primitive_calls": 2284200,
+          "calls": 2284200,
+          "exclusive_seconds": 0.231495,
+          "nested_cumulative_seconds": 0.2315016
+        },
+        {
+          "file": "semantic_executor.py",
+          "line": 1123,
+          "function": "_iter_board_candidates",
+          "primitive_calls": 94563,
+          "calls": 94563,
+          "exclusive_seconds": 0.22883440000000002,
+          "nested_cumulative_seconds": 0.9296571
+        },
+        {
+          "file": "encoder.py",
+          "line": 205,
+          "function": "iterencode",
+          "primitive_calls": 185617,
+          "calls": 185617,
+          "exclusive_seconds": 0.22751570000000002,
+          "nested_cumulative_seconds": 0.22751570000000002
+        },
+        {
+          "file": "search_runtime.py",
+          "line": 359,
+          "function": "_token",
+          "primitive_calls": 159739,
+          "calls": 159739,
+          "exclusive_seconds": 0.2228033,
+          "nested_cumulative_seconds": 0.8086880000000001
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method builtins.isinstance>",
+          "primitive_calls": 2915285,
+          "calls": 2915285,
+          "exclusive_seconds": 0.19531120000000002,
+          "nested_cumulative_seconds": 0.1953457
+        },
+        {
+          "file": "semantic_executor.py",
+          "line": 1542,
+          "function": "_transition",
+          "primitive_calls": 69756,
+          "calls": 69756,
+          "exclusive_seconds": 0.1924554,
+          "nested_cumulative_seconds": 0.8774401000000001
+        },
+        {
+          "file": "coordinates.py",
+          "line": 89,
+          "function": "index_to_square",
+          "primitive_calls": 342859,
+          "calls": 342859,
+          "exclusive_seconds": 0.1912182,
+          "nested_cumulative_seconds": 0.4187438
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method builtins.len>",
+          "primitive_calls": 2673305,
+          "calls": 2673327,
+          "exclusive_seconds": 0.1671038,
+          "nested_cumulative_seconds": 0.1671067
+        }
+      ],
+      "functions_by_nested": [
+        {
+          "file": "qintervention.py",
+          "line": 26,
+          "function": "run",
+          "primitive_calls": 1,
+          "calls": 1,
+          "exclusive_seconds": 3.5600000000000005e-05,
+          "nested_cumulative_seconds": 25.0832392
+        },
+        {
+          "file": "player.py",
+          "line": 95,
+          "function": "choose_action",
+          "primitive_calls": 1,
+          "calls": 1,
+          "exclusive_seconds": 3.03e-05,
+          "nested_cumulative_seconds": 24.6960112
+        },
+        {
+          "file": "search.py",
+          "line": 1037,
+          "function": "run_root_search",
+          "primitive_calls": 1,
+          "calls": 1,
+          "exclusive_seconds": 3.68e-05,
+          "nested_cumulative_seconds": 24.6959504
+        },
+        {
+          "file": "search.py",
+          "line": 295,
+          "function": "negamax",
+          "primitive_calls": 2,
+          "calls": 126,
+          "exclusive_seconds": 0.0007945000000000001,
+          "nested_cumulative_seconds": 24.680829600000003
+        },
+        {
+          "file": "search.py",
+          "line": 519,
+          "function": "child_search",
+          "primitive_calls": 10,
+          "calls": 124,
+          "exclusive_seconds": 0.0002966,
+          "nested_cumulative_seconds": 24.6805525
+        },
+        {
+          "file": "search.py",
+          "line": 720,
+          "function": "quiescence",
+          "primitive_calls": 119,
+          "calls": 119,
+          "exclusive_seconds": 6.43e-05,
+          "nested_cumulative_seconds": 24.5772525
+        },
+        {
+          "file": "search.py",
+          "line": 644,
+          "function": "_quiescence_runtime",
+          "primitive_calls": 119,
+          "calls": 2850,
+          "exclusive_seconds": 0.016348500000000002,
+          "nested_cumulative_seconds": 24.577188200000002
+        },
+        {
+          "file": "search.py",
+          "line": 596,
+          "function": "_runtime_noisy_actions",
+          "primitive_calls": 221,
+          "calls": 221,
+          "exclusive_seconds": 0.11291490000000001,
+          "nested_cumulative_seconds": 20.0494181
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method builtins.next>",
+          "primitive_calls": 57680,
+          "calls": 57792,
+          "exclusive_seconds": 0.0168157,
+          "nested_cumulative_seconds": 17.8960946
+        },
+        {
+          "file": "search_runtime.py",
+          "line": 1223,
+          "function": "pushed",
+          "primitive_calls": 51706,
+          "calls": 51706,
+          "exclusive_seconds": 0.038274600000000006,
+          "nested_cumulative_seconds": 17.8788547
+        },
+        {
+          "file": "contextlib.py",
+          "line": 132,
+          "function": "__enter__",
+          "primitive_calls": 25853,
+          "calls": 25853,
+          "exclusive_seconds": 0.0096471,
+          "nested_cumulative_seconds": 17.6452047
+        },
+        {
+          "file": "search_runtime.py",
+          "line": 1070,
+          "function": "push",
+          "primitive_calls": 25853,
+          "calls": 25853,
+          "exclusive_seconds": 0.0189009,
+          "nested_cumulative_seconds": 17.6198145
+        },
+        {
+          "file": "search_runtime.py",
+          "line": 1117,
+          "function": "_push_impl",
+          "primitive_calls": 25853,
+          "calls": 25853,
+          "exclusive_seconds": 0.4210723,
+          "nested_cumulative_seconds": 17.596828000000002
+        },
+        {
+          "file": "semantic_executor.py",
+          "line": 701,
+          "function": "in_check",
+          "primitive_calls": 95604,
+          "calls": 95604,
+          "exclusive_seconds": 0.0886721,
+          "nested_cumulative_seconds": 16.1895464
+        },
+        {
+          "file": "semantic_executor.py",
+          "line": 602,
+          "function": "is_square_attacked",
+          "primitive_calls": 95604,
+          "calls": 95604,
+          "exclusive_seconds": 4.7106315,
+          "nested_cumulative_seconds": 15.9506008
+        },
+        {
+          "file": "terminal.py",
+          "line": 419,
+          "function": "terminal_from_search_runtime",
+          "primitive_calls": 25853,
+          "calls": 25853,
+          "exclusive_seconds": 0.1242212,
+          "nested_cumulative_seconds": 8.931552100000001
+        },
+        {
+          "file": "semantic_executor.py",
+          "line": 1527,
+          "function": "iter_legal_actions",
+          "primitive_calls": 52045,
+          "calls": 52045,
+          "exclusive_seconds": 0.046480900000000006,
+          "nested_cumulative_seconds": 8.6362061
+        },
+        {
+          "file": "semantic_executor.py",
+          "line": 1451,
+          "function": "iter_legal_action_bindings",
+          "primitive_calls": 52045,
+          "calls": 52045,
+          "exclusive_seconds": 0.1340909,
+          "nested_cumulative_seconds": 8.5897252
+        },
+        {
+          "file": "semantic_executor.py",
+          "line": 1649,
+          "function": "has_legal_action",
+          "primitive_calls": 25855,
+          "calls": 25855,
+          "exclusive_seconds": 0.020226400000000002,
+          "nested_cumulative_seconds": 8.578916600000001
+        },
+        {
+          "file": "semantic_executor.py",
+          "line": 1285,
+          "function": "_trial_child_if_s3_legal",
+          "primitive_calls": 43901,
+          "calls": 43901,
+          "exclusive_seconds": 0.0507883,
+          "nested_cumulative_seconds": 7.044202100000001
+        }
+      ],
+      "scope": "Nested times overlap, not additive; fixed nodes/profile overhead not a speed measurement."
+    },
+    "limits": [
+      "q4 uses the same heuristic/explicit qdepth4hard8 policy, not exact full-game WDL. q0 cost conclusions do not transfer automatically.",
+      "Time-capped unfinished iterations have variable partial node counts; only retained completed-depth scores are interpreted.",
+      "Product generation timing now counts explicit search root/main/q/TT-PV requests, not all cached runtime validation calls. Main-only successor counters remain explicitly qualified.",
+      "Profile is instrumented and nested times overlap, not a speed comparator.",
+      "Accounting repair changes telemetry only; four actual fixed-node replay signatures and runtime work agree.",
+      "Ordered-qsearch experiment changes only an existing opt-in ordering/classification option, not price/default/policy. Costs and failed caps all retained.",
+      "Ordered-qsearch transfer is four previously exposed roots, not fresh independent generalization. Compare only common completed depths; capped partial counts can vary."
+    ],
+    "ordered_qsearch_transfer": [
+      {
+        "seed": 202610082100,
+        "methods": [
+          {
+            "ordered": false,
+            "completed_depths": [
+              1,
+              1
+            ],
+            "scores": [
+              2440,
+              2440
+            ],
+            "nodes": [
+              266,
+              264
+            ],
+            "qnodes": [
+              5133,
+              4869
+            ],
+            "runtime_pushes": [
+              41444,
+              39769
+            ],
+            "seconds": [
+              19.999700399814174,
+              19.997788300039247
+            ],
+            "termination": [
+              "time_limit",
+              "time_limit"
+            ],
+            "cold_signature_equal": false
+          },
+          {
+            "ordered": true,
+            "completed_depths": [
+              1,
+              1
+            ],
+            "scores": [
+              2440,
+              2440
+            ],
+            "nodes": [
+              258,
+              258
+            ],
+            "qnodes": [
+              2898,
+              2898
+            ],
+            "runtime_pushes": [
+              14970,
+              14970
+            ],
+            "seconds": [
+              7.821922699920833,
+              7.822242799913511
+            ],
+            "termination": [
+              "qsearch_check_hard_limit",
+              "qsearch_check_hard_limit"
+            ],
+            "cold_signature_equal": true
+          }
+        ],
+        "retained_same_depth_score_equal": true
+      },
+      {
+        "seed": 202610082101,
+        "methods": [
+          {
+            "ordered": false,
+            "completed_depths": [
+              1,
+              1
+            ],
+            "scores": [
+              523,
+              523
+            ],
+            "nodes": [
+              133,
+              133
+            ],
+            "qnodes": [
+              4758,
+              4572
+            ],
+            "runtime_pushes": [
+              44695,
+              43432
+            ],
+            "seconds": [
+              19.989923200104386,
+              19.983516700100154
+            ],
+            "termination": [
+              "time_limit",
+              "time_limit"
+            ],
+            "cold_signature_equal": false
+          },
+          {
+            "ordered": true,
+            "completed_depths": [
+              1,
+              1
+            ],
+            "scores": [
+              523,
+              523
+            ],
+            "nodes": [
+              139,
+              139
+            ],
+            "qnodes": [
+              8053,
+              8053
+            ],
+            "runtime_pushes": [
+              42803,
+              42803
+            ],
+            "seconds": [
+              19.905568999936804,
+              19.71901939995587
+            ],
+            "termination": [
+              "node_limit",
+              "node_limit"
+            ],
+            "cold_signature_equal": true
+          }
+        ],
+        "retained_same_depth_score_equal": true
+      },
+      {
+        "seed": 202610082102,
+        "methods": [
+          {
+            "ordered": false,
+            "completed_depths": [
+              1,
+              1
+            ],
+            "scores": [
+              6286,
+              6286
+            ],
+            "nodes": [
+              274,
+              274
+            ],
+            "qnodes": [
+              6112,
+              6163
+            ],
+            "runtime_pushes": [
+              45878,
+              46277
+            ],
+            "seconds": [
+              20.01471129991114,
+              19.996237999992445
+            ],
+            "termination": [
+              "time_limit",
+              "time_limit"
+            ],
+            "cold_signature_equal": false
+          },
+          {
+            "ordered": true,
+            "completed_depths": [
+              1,
+              1
+            ],
+            "scores": [
+              6286,
+              6286
+            ],
+            "nodes": [
+              321,
+              321
+            ],
+            "qnodes": [
+              7871,
+              7871
+            ],
+            "runtime_pushes": [
+              40216,
+              40216
+            ],
+            "seconds": [
+              18.734801499871537,
+              19.171723700128496
+            ],
+            "termination": [
+              "node_limit",
+              "node_limit"
+            ],
+            "cold_signature_equal": true
+          }
+        ],
+        "retained_same_depth_score_equal": true
+      },
+      {
+        "seed": 202610082103,
+        "methods": [
+          {
+            "ordered": false,
+            "completed_depths": [
+              1,
+              1
+            ],
+            "scores": [
+              -691,
+              -691
+            ],
+            "nodes": [
+              207,
+              207
+            ],
+            "qnodes": [
+              3497,
+              3470
+            ],
+            "runtime_pushes": [
+              38120,
+              36546
+            ],
+            "seconds": [
+              19.989052899880335,
+              20.00030649988912
+            ],
+            "termination": [
+              "time_limit",
+              "time_limit"
+            ],
+            "cold_signature_equal": false
+          },
+          {
+            "ordered": true,
+            "completed_depths": [
+              1,
+              1
+            ],
+            "scores": [
+              -691,
+              -691
+            ],
+            "nodes": [
+              213,
+              212
+            ],
+            "qnodes": [
+              7160,
+              6833
+            ],
+            "runtime_pushes": [
+              35370,
+              33669
+            ],
+            "seconds": [
+              19.99187280004844,
+              19.98921260004863
+            ],
+            "termination": [
+              "time_limit",
+              "time_limit"
+            ],
+            "cold_signature_equal": false
+          }
+        ],
+        "retained_same_depth_score_equal": true
+      }
+    ],
+    "finalizer_sha256": "6bedfa01604095f86594931b3b8d588307a6fa98bb641224186ebb090f1cd677",
+    "qordered_transfer_input_sha256": "808ad89bcb58777f7a7a648cd66131c7320db589318e782a1bbccaac2944c6be"
+  },
+  "hard_trace": {
+    "seed": 202610082100,
+    "termination": "qsearch_check_hard_limit",
+    "retained_depth": 1,
+    "score": 2440,
+    "path_deepest_first": [
+      {
+        "ply": 10,
+        "qdepth": 8,
+        "in_check": true,
+        "terminal": {
+          "status": "ongoing",
+          "winner": null
+        }
+      },
+      {
+        "ply": 9,
+        "qdepth": 7,
+        "in_check": true,
+        "terminal": {
+          "status": "ongoing",
+          "winner": null
+        }
+      },
+      {
+        "ply": 8,
+        "qdepth": 6,
+        "in_check": true,
+        "terminal": {
+          "status": "ongoing",
+          "winner": null
+        }
+      },
+      {
+        "ply": 7,
+        "qdepth": 5,
+        "in_check": true,
+        "terminal": {
+          "status": "ongoing",
+          "winner": null
+        }
+      },
+      {
+        "ply": 6,
+        "qdepth": 4,
+        "in_check": true,
+        "terminal": {
+          "status": "ongoing",
+          "winner": null
+        }
+      },
+      {
+        "ply": 5,
+        "qdepth": 3,
+        "in_check": false,
+        "terminal": {
+          "status": "ongoing",
+          "winner": null
+        }
+      },
+      {
+        "ply": 4,
+        "qdepth": 2,
+        "in_check": false,
+        "terminal": {
+          "status": "ongoing",
+          "winner": null
+        }
+      },
+      {
+        "ply": 3,
+        "qdepth": 1,
+        "in_check": true,
+        "terminal": {
+          "status": "ongoing",
+          "winner": null
+        }
+      },
+      {
+        "ply": 2,
+        "qdepth": 0,
+        "in_check": false,
+        "terminal": {
+          "status": "ongoing",
+          "winner": null
+        }
+      }
+    ],
+    "repeated_position_pairs": [],
+    "scope": "Exception-unwind diagnostic, not timing comparison. Position equality alone is not complete repetition semantics. Actual depth8 in-check ongoing state; no limit/default change.",
+    "supplement_index": "../../archive/pvs_transfer_20261008/hard-trace-index.json",
+    "archive_sha256": "48b8467c7d3986f1a278a4e11e2b9e049efbd77a76947c57a2daf97b086239a2"
+  }
+}

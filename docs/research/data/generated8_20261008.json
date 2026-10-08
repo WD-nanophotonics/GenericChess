@@ -1,0 +1,678 @@
+{
+  "complete": true,
+  "scope": "Four fresh8x8hybrid rules; separately declared existing-PVS pilot and fair paired development curve. Fixed Native attack evaluator/TT/order/q0; baseline Core/Native legality varied alone. PVS is opt-in and no default changes. Original caps and partial depths retained. Same-depth score parity is not strength or material utility.",
+  "archive": "../../archive/generated8_20261008/index.json",
+  "archive_sha256": "5eff59b637f132e59777679ba87475ae241adf84e6a6ddd7fdd1b56d42270b0f",
+  "analysis": {
+    "complete": true,
+    "producer_sha256": "b5d3f196020e2cdf47a1fa9de1c57bbb041e4ce4d6604379b1aa6f44cf7f3776",
+    "inputs": {
+      "transfer": "a0950e8665a2374f17c323a96f40090c922c31262c4861a2eb7a489655a3ee2d",
+      "pvs": "8ef29455cfffa311cd9bfe649be0f6373c7f24130ffae2b34d05095d1e3ce884",
+      "curve": "e9c85ea25087ed97291860ac0738834764b0d3280c4bcc3a2f3170c756294ffa"
+    },
+    "rows": [
+      {
+        "seed": 202610082100,
+        "legal_actions": 126,
+        "reference": {
+          "complete": true,
+          "score": 1225,
+          "action": {
+            "pattern_id": "legacy_018",
+            "geometry_id": "g17",
+            "actor_type_id": "C",
+            "from_square": {
+              "file": 7,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 7
+            },
+            "promotion_target_id": "A"
+          },
+          "seconds": 5.201512899948284,
+          "leaf_evaluations": 15054
+        },
+        "original": [
+          {
+            "native": false,
+            "depths": [
+              2,
+              2
+            ],
+            "nodes": [
+              8192,
+              8192
+            ],
+            "scores": [
+              1225,
+              1225
+            ],
+            "seconds": [
+              9.586369500029832,
+              9.605632399907336
+            ],
+            "termination": [
+              "node_limit",
+              "node_limit"
+            ]
+          },
+          {
+            "native": true,
+            "depths": [
+              2,
+              2
+            ],
+            "nodes": [
+              8192,
+              8192
+            ],
+            "scores": [
+              1225,
+              1225
+            ],
+            "seconds": [
+              5.091342800064012,
+              5.058803000021726
+            ],
+            "termination": [
+              "node_limit",
+              "node_limit"
+            ]
+          }
+        ],
+        "pvs_pilot": [
+          {
+            "requested_depth": 2,
+            "completed_depth": 2,
+            "score": 1225,
+            "nodes": 508,
+            "seconds": [
+              0.4488379000686109,
+              0.4398220998700708
+            ]
+          },
+          {
+            "requested_depth": 3,
+            "completed_depth": 2,
+            "score": 1225,
+            "nodes": 8192,
+            "seconds": [
+              5.124320300063118,
+              5.106634699972346
+            ]
+          }
+        ],
+        "curve": [
+          {
+            "cap": 16384,
+            "same_depth_score_equal": true,
+            "same_action": true,
+            "methods": [
+              {
+                "pvs": false,
+                "depth": 2,
+                "score": 1225,
+                "nodes": 16384,
+                "evaluation_calls": 15839,
+                "pvs_researches": 0,
+                "seconds": [
+                  9.726372299948707,
+                  9.68381160008721
+                ],
+                "termination": "node_limit"
+              },
+              {
+                "pvs": true,
+                "depth": 2,
+                "score": 1225,
+                "nodes": 16384,
+                "evaluation_calls": 15815,
+                "pvs_researches": 4,
+                "seconds": [
+                  9.749004599871114,
+                  9.791314099915326
+                ],
+                "termination": "node_limit"
+              }
+            ]
+          },
+          {
+            "cap": 32768,
+            "same_depth_score_equal": true,
+            "same_action": true,
+            "methods": [
+              {
+                "pvs": false,
+                "depth": 3,
+                "score": 3131,
+                "nodes": 17884,
+                "evaluation_calls": 17308,
+                "pvs_researches": 0,
+                "seconds": [
+                  10.56808130000718,
+                  10.664610600098968
+                ],
+                "termination": "completed_depth"
+              },
+              {
+                "pvs": true,
+                "depth": 3,
+                "score": 3131,
+                "nodes": 16716,
+                "evaluation_calls": 16144,
+                "pvs_researches": 4,
+                "seconds": [
+                  10.036182699957862,
+                  9.986536799930036
+                ],
+                "termination": "completed_depth"
+              }
+            ]
+          }
+        ],
+        "completed_node_reduction_fraction": 0.06530977409975403,
+        "completed_wall_ratio_pvs_over_baseline": 0.9430137070744101
+      },
+      {
+        "seed": 202610082101,
+        "legal_actions": 123,
+        "reference": {
+          "complete": true,
+          "score": 288,
+          "action": {
+            "pattern_id": "legacy_011",
+            "geometry_id": "g13",
+            "actor_type_id": "C",
+            "from_square": {
+              "file": 1,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 2,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "seconds": 4.204439099878073,
+          "leaf_evaluations": 14217
+        },
+        "original": [
+          {
+            "native": false,
+            "depths": [
+              2,
+              2
+            ],
+            "nodes": [
+              8192,
+              8192
+            ],
+            "scores": [
+              288,
+              288
+            ],
+            "seconds": [
+              9.689940200187266,
+              9.700623599812388
+            ],
+            "termination": [
+              "node_limit",
+              "node_limit"
+            ]
+          },
+          {
+            "native": true,
+            "depths": [
+              2,
+              2
+            ],
+            "nodes": [
+              8192,
+              8192
+            ],
+            "scores": [
+              288,
+              288
+            ],
+            "seconds": [
+              3.8853876998182386,
+              3.878691100049764
+            ],
+            "termination": [
+              "node_limit",
+              "node_limit"
+            ]
+          }
+        ],
+        "pvs_pilot": [
+          {
+            "requested_depth": 2,
+            "completed_depth": 2,
+            "score": 288,
+            "nodes": 551,
+            "seconds": [
+              0.4247812000103295,
+              0.3702675998210907
+            ]
+          },
+          {
+            "requested_depth": 3,
+            "completed_depth": 2,
+            "score": 288,
+            "nodes": 8192,
+            "seconds": [
+              4.5757681000977755,
+              4.530817500082776
+            ]
+          }
+        ],
+        "curve": [
+          {
+            "cap": 16384,
+            "same_depth_score_equal": null,
+            "same_action": null,
+            "methods": [
+              {
+                "pvs": false,
+                "depth": 2,
+                "score": 288,
+                "nodes": 16384,
+                "evaluation_calls": 15466,
+                "pvs_researches": 0,
+                "seconds": [
+                  7.81260950001888,
+                  7.8187380998861045
+                ],
+                "termination": "node_limit"
+              },
+              {
+                "pvs": true,
+                "depth": 3,
+                "score": 701,
+                "nodes": 10275,
+                "evaluation_calls": 9193,
+                "pvs_researches": 21,
+                "seconds": [
+                  5.53504899982363,
+                  5.58579619997181
+                ],
+                "termination": "completed_depth"
+              }
+            ]
+          },
+          {
+            "cap": 32768,
+            "same_depth_score_equal": true,
+            "same_action": true,
+            "methods": [
+              {
+                "pvs": false,
+                "depth": 3,
+                "score": 701,
+                "nodes": 19999,
+                "evaluation_calls": 18980,
+                "pvs_researches": 0,
+                "seconds": [
+                  9.539394299965352,
+                  9.307926200097427
+                ],
+                "termination": "completed_depth"
+              },
+              {
+                "pvs": true,
+                "depth": 3,
+                "score": 701,
+                "nodes": 10275,
+                "evaluation_calls": 9193,
+                "pvs_researches": 21,
+                "seconds": [
+                  5.516690899850801,
+                  5.583134999964386
+                ],
+                "termination": "completed_depth"
+              }
+            ]
+          }
+        ],
+        "completed_node_reduction_fraction": 0.48622431121556076,
+        "completed_wall_ratio_pvs_over_baseline": 0.5889338964537805
+      },
+      {
+        "seed": 202610082102,
+        "legal_actions": 61,
+        "reference": {
+          "complete": true,
+          "score": 5943,
+          "action": {
+            "pattern_id": "legacy_030",
+            "geometry_id": "g22",
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 2,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 3,
+              "rank": 4
+            },
+            "promotion_target_id": null
+          },
+          "seconds": 0.9983222000300884,
+          "leaf_evaluations": 3384
+        },
+        "original": [
+          {
+            "native": false,
+            "depths": [
+              3,
+              3
+            ],
+            "nodes": [
+              5115,
+              5115
+            ],
+            "scores": [
+              9432,
+              9432
+            ],
+            "seconds": [
+              3.4377613998949528,
+              3.4135688000824302
+            ],
+            "termination": [
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "native": true,
+            "depths": [
+              3,
+              3
+            ],
+            "nodes": [
+              5115,
+              5115
+            ],
+            "scores": [
+              9432,
+              9432
+            ],
+            "seconds": [
+              2.4138833999168128,
+              2.4462206000462174
+            ],
+            "termination": [
+              "completed_depth",
+              "completed_depth"
+            ]
+          }
+        ],
+        "pvs_pilot": [
+          {
+            "requested_depth": 2,
+            "completed_depth": 2,
+            "score": 5943,
+            "nodes": 449,
+            "seconds": [
+              0.23740119999274611,
+              0.23628620011731982
+            ]
+          },
+          {
+            "requested_depth": 3,
+            "completed_depth": 3,
+            "score": 9432,
+            "nodes": 4657,
+            "seconds": [
+              2.2388289000373334,
+              2.2333776999730617
+            ]
+          }
+        ],
+        "curve": [
+          {
+            "cap": 16384,
+            "same_depth_score_equal": true,
+            "same_action": true,
+            "methods": [
+              {
+                "pvs": false,
+                "depth": 3,
+                "score": 9432,
+                "nodes": 5115,
+                "evaluation_calls": 4899,
+                "pvs_researches": 0,
+                "seconds": [
+                  2.4187503999564797,
+                  2.3984267998021096
+                ],
+                "termination": "completed_depth"
+              },
+              {
+                "pvs": true,
+                "depth": 3,
+                "score": 9432,
+                "nodes": 4657,
+                "evaluation_calls": 4435,
+                "pvs_researches": 16,
+                "seconds": [
+                  2.2370553999207914,
+                  2.2164837999735028
+                ],
+                "termination": "completed_depth"
+              }
+            ]
+          },
+          {
+            "cap": 32768,
+            "same_depth_score_equal": true,
+            "same_action": true,
+            "methods": [
+              {
+                "pvs": false,
+                "depth": 3,
+                "score": 9432,
+                "nodes": 5115,
+                "evaluation_calls": 4899,
+                "pvs_researches": 0,
+                "seconds": [
+                  2.423964099958539,
+                  2.49130029999651
+                ],
+                "termination": "completed_depth"
+              },
+              {
+                "pvs": true,
+                "depth": 3,
+                "score": 9432,
+                "nodes": 4657,
+                "evaluation_calls": 4435,
+                "pvs_researches": 16,
+                "seconds": [
+                  2.2297350000590086,
+                  2.244201899971813
+                ],
+                "termination": "completed_depth"
+              }
+            ]
+          }
+        ],
+        "completed_node_reduction_fraction": 0.08954056695992185,
+        "completed_wall_ratio_pvs_over_baseline": 0.9102128666917157
+      },
+      {
+        "seed": 202610082103,
+        "legal_actions": 90,
+        "reference": {
+          "complete": true,
+          "score": -4217,
+          "action": {
+            "pattern_id": "legacy_045",
+            "geometry_id": "g29",
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 7,
+              "rank": 6
+            },
+            "to_square": {
+              "file": 6,
+              "rank": 7
+            },
+            "promotion_target_id": null
+          },
+          "seconds": 3.693251600023359,
+          "leaf_evaluations": 10135
+        },
+        "original": [
+          {
+            "native": false,
+            "depths": [
+              2,
+              2
+            ],
+            "nodes": [
+              5455,
+              5429
+            ],
+            "scores": [
+              -4217,
+              -4217
+            ],
+            "seconds": [
+              10.042041799984872,
+              10.042027200106531
+            ],
+            "termination": [
+              "time_limit",
+              "time_limit"
+            ]
+          },
+          {
+            "native": true,
+            "depths": [
+              2,
+              2
+            ],
+            "nodes": [
+              8192,
+              8192
+            ],
+            "scores": [
+              -4217,
+              -4217
+            ],
+            "seconds": [
+              4.873946700012311,
+              4.9106408001389354
+            ],
+            "termination": [
+              "node_limit",
+              "node_limit"
+            ]
+          }
+        ],
+        "pvs_pilot": [
+          {
+            "requested_depth": 2,
+            "completed_depth": 2,
+            "score": -4217,
+            "nodes": 631,
+            "seconds": [
+              0.47155550005845726,
+              0.4681779998354614
+            ]
+          },
+          {
+            "requested_depth": 3,
+            "completed_depth": 3,
+            "score": -1042,
+            "nodes": 8150,
+            "seconds": [
+              4.989191900007427,
+              5.016510900110006
+            ]
+          }
+        ],
+        "curve": [
+          {
+            "cap": 16384,
+            "same_depth_score_equal": true,
+            "same_action": true,
+            "methods": [
+              {
+                "pvs": false,
+                "depth": 3,
+                "score": -1042,
+                "nodes": 9027,
+                "evaluation_calls": 8392,
+                "pvs_researches": 0,
+                "seconds": [
+                  5.334971599979326,
+                  5.349668300012127
+                ],
+                "termination": "completed_depth"
+              },
+              {
+                "pvs": true,
+                "depth": 3,
+                "score": -1042,
+                "nodes": 8150,
+                "evaluation_calls": 7498,
+                "pvs_researches": 8,
+                "seconds": [
+                  4.945444900076836,
+                  4.958455200074241
+                ],
+                "termination": "completed_depth"
+              }
+            ]
+          },
+          {
+            "cap": 32768,
+            "same_depth_score_equal": true,
+            "same_action": true,
+            "methods": [
+              {
+                "pvs": false,
+                "depth": 3,
+                "score": -1042,
+                "nodes": 9027,
+                "evaluation_calls": 8392,
+                "pvs_researches": 0,
+                "seconds": [
+                  5.337218399858102,
+                  5.343425800092518
+                ],
+                "termination": "completed_depth"
+              },
+              {
+                "pvs": true,
+                "depth": 3,
+                "score": -1042,
+                "nodes": 8150,
+                "evaluation_calls": 7498,
+                "pvs_researches": 8,
+                "seconds": [
+                  4.930400300072506,
+                  4.943026500055566
+                ],
+                "termination": "completed_depth"
+              }
+            ]
+          }
+        ],
+        "completed_node_reduction_fraction": 0.09715298548798046,
+        "completed_wall_ratio_pvs_over_baseline": 0.9244224051741861
+      }
+    ],
+    "total_seconds": {
+      "transfer": 116.69221180002205,
+      "pvs": 40.90960770007223,
+      "curve": 203.48991520004347
+    }
+  }
+}

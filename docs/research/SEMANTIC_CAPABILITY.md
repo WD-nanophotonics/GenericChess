@@ -687,3 +687,78 @@ GameSession corrects the caller. It is not a product regression or a new utility
 blend. Cross-game vectors/limitations are in CROSS_GAME_PRICE_DIAGNOSTIC.md.
 Exact declarations, producers, partials and outputs: data/preparation_transfer_20261008.json
 and ../archive/preparation_transfer_20261008/index.json (45 rehashed members).
+
+## Construction boundary and primary-source check
+
+Pell's1994 Metagamer uses static/eventual mobility and other rule-derived
+advisors with unit weights; weights remain an open problem. Its static promotion
+advisor was not used in those experiments. Dynamic promotion distance is a
+separate advisor. This supports a rule-feature engineering baseline, not unique
+material utility or an implemented repair for our transformation exclusions.
+Source: [Pell1994, pp3-4](https://cdn.aaai.org/AAAI/1994/AAAI94-212.pdf).
+
+Clune's2007 scheme uses stable features, rule/pseudostate screening and stability
+weighting for payoff, with regression for control/termination. Its Chess result
+finds no stable payoff correlate and falls back to control; reported Q/P weights
+are about24.25, despite a familiar ordering. Its game definition and sampling
+are not our execution semantics, and we have not reproduced its analysis.
+It supplies no ready-made exchange-price calibration. Source:
+[Clune2007, pp3-5](https://cdn.aaai.org/AAAI/2007/AAAI07-180.pdf).
+
+Consequently, fixed direct/preparation coordinates remain task observations.
+A new price-free local retention check may challenge a scalar ordering without
+turning signed utility into positive prices. Its changed premise is four actual
+plies under a fixed physical-successor policy, versus the older short minimax
+joint-service task; no horizon/weight tuning of frozen capture coordinates.
+
+An additional goal-directed alternative, Fluxplayer2007, constructs fuzzy
+goal/terminal formula evaluations and detects board/order structures. This is a
+state evaluator, not a derivation of static piece prices. Its paper explicitly
+notes that the thresholded conjunction is non-associative and can assign
+different values to semantically equivalent formulas. Therefore importing that
+formula aggregator would not satisfy our equivalent-rule construction contract
+without a separate canonical semantic treatment. Its board-distance component
+uses normalized city-block distance, which also cannot simply substitute for
+the actual irregular movement/guard semantics here. No new aggregator or
+positional patch is adopted. Source:
+[Schiffel and Thielscher2007, pp3-4](https://cdn.aaai.org/AAAI/2007/AAAI07-189.pdf).
+
+## Price-free four-ply retention, inconclusive ranking
+
+The new paired C-R/R-N/N-C observation uses the existing32 general-displacement
+layouts and fixed0R/0R/1C/1R background. All three pairs, both entity roles and
+both first players share one common-acceptance filter;27 layouts survive, five
+initial-anchor failures remain recorded. No alignment/capture filtering or price
+weights enter action selection or reward. Both players sample uniformly among
+distinct physical legal successor Positions for four actual plies. Each of324
+root variants has16 shared-quantile trajectories. Public histories are retained;
+this is not a general repetition-history quotient.
+
+Utility is original-control(A)-original-control(B), with moving entity tags.
+The template has no drops or transformations, so a captured tag cannot return
+to original control; no conclusion extends this identity scheme to hand drops.
+Both-live and both-lost are separate zero states, and early game terminals are
+separate from retention utility. The fixed generic baseline is C1000/R1000/N530.
+
+|Pair|Sampled mean|Exact last-turn mean|Layout bootstrap95% interval after last-turn averaging|
+|---|---:|---:|---|
+|C-R|-0.005787|-0.002970|[-0.017642,0.011409]|
+|R-N|-0.005787|-0.004423|[-0.016632,0.008265]|
+|N-C|0.005787|0.006688|[-0.005943,0.018772]|
+
+The5,184 paths have4,845 both-live outcomes and one both-lost outcome;26 games
+terminate early. All20,694 actual steps independently replay with a tag-board
+implementation. Exact final-turn expectations reuse the same sampled three-ply
+prefixes and utility, costing195,052 additional eager successors. Original
+sampling constructed789,559 successors, including161,469 physical aliases, in
+194.02sec; replay/conditional averaging took86.54sec. These counts do not imply
+public search may merge action/history identities.
+
+Every interval still crosses zero. Bootstrap resamples layouts, not individual
+plies;27 exposed layouts and16 paths per variant do not establish a population
+ordering, a reliable scalar cycle or material ratios. Removing final-turn noise
+does not remove prefix/context uncertainty. Do not extend unchanged trajectories,
+fit human prices or tune horizon/reward to manufacture ordering. A later utility
+check needs a different decision-changing premise. Exact sources and all zeros:
+data/retention_20261008.json and ../archive/retention_20261008/index.json
+(8 extracted/rehashed members). Existing feature-table defaults stay unchanged.

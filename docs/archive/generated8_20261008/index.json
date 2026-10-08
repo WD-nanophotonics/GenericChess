@@ -1,0 +1,58 @@
+{
+  "base_commit": "ea934db19a9e39218e9a690f150a1d33286d31c7",
+  "archive_sha256": "5eff59b637f132e59777679ba87475ae241adf84e6a6ddd7fdd1b56d42270b0f",
+  "members": [
+    {
+      "path": ".local_agent/generated8-20261008/analysis.json",
+      "bytes": 16215,
+      "sha256": "4aa4eb4041abb30cdfcfd18f0ea7c12f952fd4c1196df4ae314dc2a891575cec"
+    },
+    {
+      "path": ".local_agent/generated8-20261008/analyze.py",
+      "bytes": 3376,
+      "sha256": "b5d3f196020e2cdf47a1fa9de1c57bbb041e4ce4d6604379b1aa6f44cf7f3776"
+    },
+    {
+      "path": ".local_agent/generated8-20261008/curve.json",
+      "bytes": 129923,
+      "sha256": "e9c85ea25087ed97291860ac0738834764b0d3280c4bcc3a2f3170c756294ffa"
+    },
+    {
+      "path": ".local_agent/generated8-20261008/curve.py",
+      "bytes": 4532,
+      "sha256": "6bf8567faf0891084a0782f121e5f582b22abc5e168c18feaa111791e2f4e35e"
+    },
+    {
+      "path": ".local_agent/generated8-20261008/package.py",
+      "bytes": 2197,
+      "sha256": "050bac774e2d2eedda1bd38fd6017f72a38af2aa9a7974f23c79360bf08ba2a1"
+    },
+    {
+      "path": ".local_agent/generated8-20261008/pvs.json",
+      "bytes": 62853,
+      "sha256": "8ef29455cfffa311cd9bfe649be0f6373c7f24130ffae2b34d05095d1e3ce884"
+    },
+    {
+      "path": ".local_agent/generated8-20261008/pvs.py",
+      "bytes": 4640,
+      "sha256": "9e8a326fa477f375308b1d9e20232ed64b129dd2681bc45a255e2231fa934c81"
+    },
+    {
+      "path": ".local_agent/generated8-20261008/transfer.json",
+      "bytes": 387358,
+      "sha256": "a0950e8665a2374f17c323a96f40090c922c31262c4861a2eb7a489655a3ee2d"
+    },
+    {
+      "path": ".local_agent/generated8-20261008/transfer.py",
+      "bytes": 6691,
+      "sha256": "d0e3ab223616e66c6749be44503d79ab586f09182b4b23b36c098405ee476ee7"
+    },
+    {
+      "path": "tests/rule_semantics_ir_fixtures.py",
+      "bytes": 17212,
+      "sha256": "209b3bd9388d5ac228329d64eeda7d70a9209f0409ac74217be2879b4d6038c7"
+    }
+  ],
+  "extracted_rehashed": true,
+  "excluded": "User/private inputs, raw Slack/accounts, credentials and active workflow state."
+}

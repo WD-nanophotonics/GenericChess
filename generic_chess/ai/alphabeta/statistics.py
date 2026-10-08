@@ -57,6 +57,9 @@ class SearchStatistics:
     ordered_moves: int = 0
     ordering_seconds: float = 0.0
     legal_generation_calls: int = 0
+    # Explicit search requests (root/main/qsearch/TT-PV), including cached
+    # boundaries and aborted attempts. perf_counter duration; runtime-internal
+    # cached push validation is not another generation request.
     legal_generation_seconds: float = 0.0
     # Actual evaluator attempts, including static leaves, qsearch and root scan.
     # Terminal/TT scores do not call the evaluator. Failed attempts retain cost.
@@ -66,8 +69,10 @@ class SearchStatistics:
     countermove_hits: int = 0
     # Mate-distance pruning.
     mate_pruning_cutoffs: int = 0
-    # Lazy successor experiment.
+    # Action-list lengths returned by explicit search generation requests.
     legal_actions_generated: int = 0
+    # Main-search lazy successor experiment, not total transition work:
+    # qsearch classification probes, root scanning and TT-PV replay are excluded.
     successor_handles_created: int = 0
     successors_materialized: int = 0
     successors_searched: int = 0

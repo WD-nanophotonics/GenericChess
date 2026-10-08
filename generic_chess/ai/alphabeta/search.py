@@ -244,6 +244,22 @@ def _tt_key(state: GameState, compiled) -> SearchStateIdentity:
     return search_state_identity(state, compiled)
 
 
+def _runtime_legal_actions(ctx: _Context, checkpoint):
+    """Account explicit search requests, including root/qsearch and abort cost.
+
+    Runtime-internal cached legality checks during push are not separate search
+    generation requests. Budgets continue to use monotonic time.
+    """
+    ctx.stats.legal_generation_calls += 1
+    started = time.perf_counter()
+    try:
+        actions = list(ctx.runtime.legal_actions(checkpoint))
+        ctx.stats.legal_actions_generated += len(actions)
+        return actions
+    finally:
+        ctx.stats.legal_generation_seconds += time.perf_counter() - started
+
+
 def _tt_principal_line(ctx: _Context, depth: int, ply: int, score: int, entry=None):
     """Validate a sufficient-depth line in the existing path-aware table.
 
@@ -268,11 +284,7 @@ def _tt_principal_line(ctx: _Context, depth: int, ply: int, score: int, entry=No
     if (entry is None or entry.depth < depth or entry.bound is not BoundType.EXACT
             or score_from_tt(entry.score, ply) != score):
         return None
-    started = time.monotonic()
-    actions = ctx.runtime.legal_actions(ctx.checkpoint)
-    ctx.stats.legal_generation_calls += 1
-    ctx.stats.legal_actions_generated += len(actions)
-    ctx.stats.legal_generation_seconds += time.monotonic() - started
+    actions = _runtime_legal_actions(ctx, ctx.checkpoint)
     if entry.best_action not in actions:
         return None
     with ctx.runtime.pushed(entry.best_action, checkpoint=ctx.checkpoint):
@@ -409,11 +421,10 @@ def negamax(
     lazy = False
     child_by_action = {}
     handle_by_action = {}
-    started = time.monotonic()
+    started = time.perf_counter()
     with ctx.recorder.time_block(AuditMetric.MOVE_GEN):
         if ctx.runtime is not None:
-            actions = list(ctx.runtime.legal_actions(ctx.checkpoint))
-            ctx.stats.legal_actions_generated += len(actions)
+            actions = _runtime_legal_actions(ctx, ctx.checkpoint)
             if ctx.tuning.use_lazy_successors or semantic_engine_for(ctx.compiled) is not None:
                 ctx.stats.successor_handles_created += len(actions)
         else:
@@ -438,8 +449,9 @@ def negamax(
                 successors = legal_successors(state, ctx.compiled)
                 actions = [action for action, _ in successors]
                 child_by_action = dict(successors)
-    ctx.stats.legal_generation_calls += 1
-    ctx.stats.legal_generation_seconds += time.monotonic() - started
+    if ctx.runtime is None:
+        ctx.stats.legal_generation_calls += 1
+        ctx.stats.legal_generation_seconds += time.perf_counter() - started
     ctx.budget.check(ctx.stats, force=True)
     if not actions:
         # Core should have flagged the position terminal; fall back to eval.
@@ -651,9 +663,7 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
         if engine is not None else is_in_check(state.position, side, ctx.compiled)
     )
     if in_check:
-        actions = list(runtime.legal_actions(ctx.checkpoint))
-        ctx.stats.legal_generation_calls += 1
-        ctx.stats.legal_actions_generated += len(actions)
+        actions = _runtime_legal_actions(ctx, ctx.checkpoint)
         ctx.budget.check(ctx.stats, force=True)
         ctx.stats.in_check_qnodes += 1
         if qdepth >= ctx.qhard_depth_limit:
@@ -688,9 +698,7 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
         raise SearchAborted("qsearch_budget")
     # Terminal status is already authoritative. Noncheck stand-pat/depth
     # exits need no legal list; keep full evasion generation above.
-    actions = list(runtime.legal_actions(ctx.checkpoint))
-    ctx.stats.legal_generation_calls += 1
-    ctx.stats.legal_actions_generated += len(actions)
+    actions = _runtime_legal_actions(ctx, ctx.checkpoint)
     ctx.budget.check(ctx.stats, force=True)
     if ctx.tuning.use_ordered_qsearch:
         # Classify on demand so a cutoff avoids probing remaining quiet moves.
@@ -751,7 +759,7 @@ def quiescence(
         if ctx.qnode_limit is not None and ctx.stats.qnodes >= ctx.qnode_limit:
             ctx.stats.qsearch_budget_aborts += 1
             raise SearchAborted("qsearch_budget")
-        started = time.monotonic()
+        started = time.perf_counter()
         if semantic_engine is not None:
             handle_by_action = {}
             for handle in iter_legal_successor_handles(
@@ -765,7 +773,7 @@ def quiescence(
             successors = legal_successors(state, ctx.compiled)
             ordered_actions = None
         ctx.stats.legal_generation_calls += 1
-        ctx.stats.legal_generation_seconds += time.monotonic() - started
+        ctx.stats.legal_generation_seconds += time.perf_counter() - started
         ctx.budget.check(ctx.stats, force=True)
         if semantic_engine is not None and not handle_by_action:
             # A non-terminal, in-check state with no evasions is a Core
@@ -812,7 +820,7 @@ def quiescence(
         ctx.stats.qsearch_budget_aborts += 1
         raise SearchAborted("qsearch_budget")
 
-    started = time.monotonic()
+    started = time.perf_counter()
     if semantic_engine is not None:
         handle_by_action = {}
         for handle in iter_legal_successor_handles(
@@ -824,7 +832,7 @@ def quiescence(
     else:
         successors = legal_successors(state, ctx.compiled)
     ctx.stats.legal_generation_calls += 1
-    ctx.stats.legal_generation_seconds += time.monotonic() - started
+    ctx.stats.legal_generation_seconds += time.perf_counter() - started
     ctx.budget.check(ctx.stats, force=True)
     if semantic_engine is not None:
         ordered = (
@@ -915,7 +923,7 @@ def root_tactical_scan(
     best_score = -INF
     started = time.monotonic()
     if ctx.runtime is not None:
-        stream = ctx.runtime.legal_actions(ctx.checkpoint)
+        stream = _runtime_legal_actions(ctx, ctx.checkpoint)
         for action in stream:
             ctx.budget.check(ctx.stats, force=True)
             with ctx.runtime.pushed(action, checkpoint=ctx.checkpoint):
@@ -1095,12 +1103,12 @@ def run_root_search(
     actions: list[Action] | None = None
     if runtime is not None:
         try:
-            actions = list(runtime.legal_actions(ctx.checkpoint))
+            actions = _runtime_legal_actions(ctx, ctx.checkpoint)
         except SearchAborted as exc:
             # A cancelled search still owes the caller one legal fallback,
             # matching the historical root contract.  The fallback generation
             # is outside search and does not recurse or mutate the runtime.
-            actions = list(runtime.legal_actions(None))
+            actions = _runtime_legal_actions(ctx, None)
             if not actions:
                 stats.termination_reason = str(exc)
                 return None, 0, (), stats.termination_reason

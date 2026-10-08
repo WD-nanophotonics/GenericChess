@@ -1,0 +1,33 @@
+{
+  "base_archive": "index.json",
+  "archive_sha256": "48b8467c7d3986f1a278a4e11e2b9e049efbd77a76947c57a2daf97b086239a2",
+  "members": [
+    {
+      "path": ".local_agent/pvs-transfer-20261008/hard-trace.json",
+      "bytes": 75946,
+      "sha256": "ce065c18642e72a37057a77ca8b9ad71a9d57c75bfc51bf411bfd48dd5bdf098"
+    },
+    {
+      "path": ".local_agent/pvs-transfer-20261008/hard_trace.py",
+      "bytes": 3703,
+      "sha256": "9614ea131e4d02aa1e879cee2576e31e698ab68ab888a2a6e486159c043a3709"
+    },
+    {
+      "path": ".local_agent/pvs-transfer-20261008/supplement.py",
+      "bytes": 2215,
+      "sha256": "2a28baa925f593ed4424a02ad82095aff65597d976fadae757a4244613497f85"
+    },
+    {
+      "path": "generic_chess/ai/alphabeta/statistics.py",
+      "bytes": 5102,
+      "sha256": "d0c68ed1f4c0043e2dda6c7427a2056c02b75870c769ea08174fe0b19f40f977"
+    },
+    {
+      "path": "tests/product/test_lazy_successors.py",
+      "bytes": 9805,
+      "sha256": "eac13f642a9714538c565bdc974b936f5b363d5410f5c5516a9a1e509ef91486"
+    }
+  ],
+  "extracted_rehashed": true,
+  "scope": "Actual hard-check path; final statistics comment and root-accounting assertion. No further production behavior changes."
+}

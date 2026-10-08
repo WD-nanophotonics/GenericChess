@@ -1,0 +1,471 @@
+{
+  "complete": true,
+  "scope": "Price-free four-ply original-control retention,27 common layouts/three pairs/role+turn balance/16 trajectories. No-drop no-transform template only. Independent tag-board replay and exact last-turn conditional expectation on same prefixes. Signed observations, not positive prices/ratios/WDL or reliable ordering.",
+  "archive": "../../archive/retention_20261008/index.json",
+  "archive_sha256": "605f28197abf905e5bf6a77bae0c5299a787c7f525131e85b585e5702e4979ea",
+  "analysis": {
+    "complete": true,
+    "producer_sha256": "3b758f7fe331b7a9ec5c627d5e1490a9b5a5401aeb69e02965fac5fd081a78a1",
+    "input_sha256": "c2985a361e03ed441f1e94291ad6c817ff50eccb99b4c6da6fda359a2d8e914b",
+    "attempted_layouts": 32,
+    "common_accepted_layouts": 27,
+    "rejected_layouts": [
+      {
+        "seed": 202610089004,
+        "cells": [
+          46,
+          41,
+          53,
+          12,
+          52,
+          25
+        ],
+        "rejections": [
+          {
+            "pair": [
+              "R",
+              "N"
+            ],
+            "owner": 1,
+            "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position"
+          },
+          {
+            "pair": [
+              "N",
+              "C"
+            ],
+            "owner": 0,
+            "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position"
+          }
+        ],
+        "common_accepted": false
+      },
+      {
+        "seed": 202610089009,
+        "cells": [
+          46,
+          35,
+          37,
+          52,
+          27,
+          42
+        ],
+        "rejections": [
+          {
+            "pair": [
+              "R",
+              "N"
+            ],
+            "owner": 1,
+            "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position"
+          },
+          {
+            "pair": [
+              "N",
+              "C"
+            ],
+            "owner": 0,
+            "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position"
+          }
+        ],
+        "common_accepted": false
+      },
+      {
+        "seed": 202610089012,
+        "cells": [
+          46,
+          42,
+          44,
+          14,
+          49,
+          43
+        ],
+        "rejections": [
+          {
+            "pair": [
+              "R",
+              "N"
+            ],
+            "owner": 1,
+            "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position"
+          },
+          {
+            "pair": [
+              "N",
+              "C"
+            ],
+            "owner": 0,
+            "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position"
+          }
+        ],
+        "common_accepted": false
+      },
+      {
+        "seed": 202610089018,
+        "cells": [
+          46,
+          30,
+          27,
+          13,
+          41,
+          21
+        ],
+        "rejections": [
+          {
+            "pair": [
+              "R",
+              "N"
+            ],
+            "owner": 1,
+            "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position"
+          },
+          {
+            "pair": [
+              "N",
+              "C"
+            ],
+            "owner": 0,
+            "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position"
+          }
+        ],
+        "common_accepted": false
+      },
+      {
+        "seed": 202610089025,
+        "cells": [
+          53,
+          34,
+          17,
+          21,
+          26,
+          18
+        ],
+        "rejections": [
+          {
+            "pair": [
+              "R",
+              "N"
+            ],
+            "owner": 1,
+            "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position"
+          },
+          {
+            "pair": [
+              "N",
+              "C"
+            ],
+            "owner": 0,
+            "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position"
+          }
+        ],
+        "common_accepted": false
+      }
+    ],
+    "trajectories": 5184,
+    "actual_eager_successors": 789559,
+    "turn_calls": 20694,
+    "semantic_aliases": 161469,
+    "seconds": 194.01792520005256,
+    "pairs": {
+      "C-R": {
+        "layout_means": {
+          "202610089000": 0,
+          "202610089001": -0.015625,
+          "202610089002": -0.015625,
+          "202610089003": 0.03125,
+          "202610089005": 0,
+          "202610089006": 0.03125,
+          "202610089007": 0,
+          "202610089008": 0.03125,
+          "202610089010": 0,
+          "202610089011": -0.015625,
+          "202610089013": 0.03125,
+          "202610089014": -0.078125,
+          "202610089015": 0.03125,
+          "202610089016": -0.0625,
+          "202610089017": 0.015625,
+          "202610089019": -0.0625,
+          "202610089020": 0,
+          "202610089021": 0.078125,
+          "202610089022": -0.046875,
+          "202610089023": -0.0625,
+          "202610089024": -0.015625,
+          "202610089026": 0,
+          "202610089027": -0.03125,
+          "202610089028": 0.03125,
+          "202610089029": -0.03125,
+          "202610089030": 0,
+          "202610089031": 0
+        },
+        "mean": -0.005787037037037037,
+        "layout_bootstrap95_interval": [
+          -0.019097222222222224,
+          0.007523148148148148
+        ],
+        "uncertainty_scope": "Descriptive paired layout bootstrap over27 exposed accepted layouts;16 trajectories per role/turn. Conditional on fixed template, not universal ranking or population confidence guarantee.",
+        "counts": {
+          "both_live": 1620,
+          "B_only": 59,
+          "A_only": 49
+        },
+        "early_terminals": 7,
+        "terminal_status_counts": {
+          "ongoing": 1721,
+          "checkmate": 7
+        },
+        "first_player_means": {
+          "0": -0.009259259259259259,
+          "1": -0.0023148148148148147
+        },
+        "owner_means": {
+          "0": 0.006944444444444444,
+          "1": -0.018518518518518517
+        }
+      },
+      "R-N": {
+        "layout_means": {
+          "202610089000": 0,
+          "202610089001": 0.03125,
+          "202610089002": -0.015625,
+          "202610089003": 0.015625,
+          "202610089005": -0.0625,
+          "202610089006": -0.046875,
+          "202610089007": -0.03125,
+          "202610089008": -0.046875,
+          "202610089010": -0.03125,
+          "202610089011": 0.015625,
+          "202610089013": 0,
+          "202610089014": 0.015625,
+          "202610089015": -0.015625,
+          "202610089016": 0.015625,
+          "202610089017": -0.03125,
+          "202610089019": 0.078125,
+          "202610089020": -0.046875,
+          "202610089021": 0,
+          "202610089022": 0.015625,
+          "202610089023": 0.046875,
+          "202610089024": -0.03125,
+          "202610089026": -0.015625,
+          "202610089027": 0.046875,
+          "202610089028": -0.0625,
+          "202610089029": -0.015625,
+          "202610089030": 0.015625,
+          "202610089031": 0
+        },
+        "mean": -0.005787037037037037,
+        "layout_bootstrap95_interval": [
+          -0.018518518518518517,
+          0.006944444444444444
+        ],
+        "uncertainty_scope": "Descriptive paired layout bootstrap over27 exposed accepted layouts;16 trajectories per role/turn. Conditional on fixed template, not universal ranking or population confidence guarantee.",
+        "counts": {
+          "both_live": 1596,
+          "A_only": 61,
+          "B_only": 71
+        },
+        "early_terminals": 11,
+        "terminal_status_counts": {
+          "ongoing": 1717,
+          "checkmate": 11
+        },
+        "first_player_means": {
+          "0": -0.003472222222222222,
+          "1": -0.008101851851851851
+        },
+        "owner_means": {
+          "0": 0.009259259259259259,
+          "1": -0.020833333333333332
+        }
+      },
+      "N-C": {
+        "layout_means": {
+          "202610089000": -0.015625,
+          "202610089001": 0.046875,
+          "202610089002": 0.03125,
+          "202610089003": -0.046875,
+          "202610089005": 0.0625,
+          "202610089006": 0.03125,
+          "202610089007": 0.015625,
+          "202610089008": -0.03125,
+          "202610089010": 0.015625,
+          "202610089011": 0,
+          "202610089013": 0.046875,
+          "202610089014": -0.015625,
+          "202610089015": -0.046875,
+          "202610089016": 0.015625,
+          "202610089017": 0,
+          "202610089019": 0.015625,
+          "202610089020": 0.03125,
+          "202610089021": -0.109375,
+          "202610089022": 0.046875,
+          "202610089023": 0.015625,
+          "202610089024": 0.015625,
+          "202610089026": 0,
+          "202610089027": 0,
+          "202610089028": 0,
+          "202610089029": 0.046875,
+          "202610089030": -0.015625,
+          "202610089031": 0
+        },
+        "mean": 0.005787037037037037,
+        "layout_bootstrap95_interval": [
+          -0.008101851851851851,
+          0.018518518518518517
+        ],
+        "uncertainty_scope": "Descriptive paired layout bootstrap over27 exposed accepted layouts;16 trajectories per role/turn. Conditional on fixed template, not universal ranking or population confidence guarantee.",
+        "counts": {
+          "both_live": 1629,
+          "B_only": 44,
+          "A_only": 54,
+          "both_lost": 1
+        },
+        "early_terminals": 8,
+        "terminal_status_counts": {
+          "ongoing": 1720,
+          "checkmate": 8
+        },
+        "first_player_means": {
+          "0": 0.013888888888888888,
+          "1": -0.0023148148148148147
+        },
+        "owner_means": {
+          "0": 0.015046296296296295,
+          "1": -0.003472222222222222
+        }
+      }
+    },
+    "limits": [
+      "No price-weighted action selection or reward; no utility-to-positive-price normalization.",
+      "A nonzero signed mean may describe initiative/context effects; not material value or game WDL.",
+      "Bootstrap uses layout as unit, not thousands of plies as independent observations.",
+      "No reliable cyclic ordering claim unless all directed paired uncertainties exclude zero; this is not a three-mean ratio estimator.",
+      "Captured marks cannot return in this no-drop/no-transform template. No inference for drop/transform identity.",
+      "Physical successor selection retains actual representative history, not global repetition-history merging."
+    ]
+  },
+  "independent_replay": {
+    "input_sha256": "c2985a361e03ed441f1e94291ad6c817ff50eccb99b4c6da6fda359a2d8e914b",
+    "replayed_steps": 20694,
+    "actual_eager_successors": 195052,
+    "seconds": 87.03157759993337,
+    "pairs": {
+      "C-R": {
+        "mean": -0.0029703776083334064,
+        "layout_means": {
+          "202610089000": 0.015417374258558453,
+          "202610089001": -0.019660946532439695,
+          "202610089002": -0.00909098257939391,
+          "202610089003": 0.04422973373285133,
+          "202610089005": -0.01352139365749085,
+          "202610089006": 0.02678118494436342,
+          "202610089007": 0.008632119025025205,
+          "202610089008": 0.05416036000078656,
+          "202610089010": -0.004417749568455903,
+          "202610089011": -0.03672073047706008,
+          "202610089013": 0.039134212363926855,
+          "202610089014": -0.04921936875107652,
+          "202610089015": 0.04717556751934421,
+          "202610089016": -0.07110144138384211,
+          "202610089017": 0.01906331905688116,
+          "202610089019": -0.06836155255435881,
+          "202610089020": 0.02781509171830835,
+          "202610089021": 0.059244712598513806,
+          "202610089022": -0.053654233730265344,
+          "202610089023": -0.06950354194150109,
+          "202610089024": -0.011574452395579244,
+          "202610089026": 0.0008119888689308607,
+          "202610089027": -0.038742360745053175,
+          "202610089028": 0.04359588827556795,
+          "202610089029": -0.03280827392379634,
+          "202610089030": 0.014410703421805395,
+          "202610089031": -0.0022954229695524605
+        },
+        "layout_bootstrap95_interval": [
+          -0.017642351829232777,
+          0.011408524034467621
+        ],
+        "mean_conditional_last_turn_variance": 0.013058965987198879
+      },
+      "R-N": {
+        "mean": -0.004423082962402246,
+        "layout_means": {
+          "202610089000": -0.01119970247617706,
+          "202610089001": 0.03752778950002116,
+          "202610089002": -0.015295236395473586,
+          "202610089003": 0.0057396580730679995,
+          "202610089005": -0.0515904488990449,
+          "202610089006": -0.024545119675578916,
+          "202610089007": -0.027478063613157293,
+          "202610089008": -0.057680231879794805,
+          "202610089010": -0.018695869042850193,
+          "202610089011": 0.02050257750259816,
+          "202610089013": -0.011804230355723509,
+          "202610089014": 0.028407032435270374,
+          "202610089015": -0.0011417717474947542,
+          "202610089016": 0.022799829963273288,
+          "202610089017": -0.03297990973838713,
+          "202610089019": 0.06984391080661997,
+          "202610089020": -0.060054676590768574,
+          "202610089021": 0.004833448948082149,
+          "202610089022": 0.0022726190801915266,
+          "202610089023": 0.03470808851620268,
+          "202610089024": -0.04799797879116633,
+          "202610089026": -0.018353138153202758,
+          "202610089027": 0.06166846391585676,
+          "202610089028": -0.02449074088348783,
+          "202610089029": -0.019868141451751108,
+          "202610089030": 0.012223782849228,
+          "202610089031": 0.0032248181187860387
+        },
+        "layout_bootstrap95_interval": [
+          -0.016632334361562022,
+          0.008265407397154652
+        ],
+        "mean_conditional_last_turn_variance": 0.01644269905678646
+      },
+      "N-C": {
+        "mean": 0.006687589552886092,
+        "layout_means": {
+          "202610089000": -0.001867179875130216,
+          "202610089001": 0.015162575418865685,
+          "202610089002": 0.03076692501839313,
+          "202610089003": -0.04813465854853457,
+          "202610089005": 0.05520980233232814,
+          "202610089006": 0.041256991630477156,
+          "202610089007": 0.001529063042220937,
+          "202610089008": -0.03126724659379923,
+          "202610089010": 0.003995729047885901,
+          "202610089011": 0.00039514644480141475,
+          "202610089013": 0.04277837884198306,
+          "202610089014": -0.010390734434147333,
+          "202610089015": -0.05004581406087573,
+          "202610089016": 0.04999652504527713,
+          "202610089017": 0.0008614633660589542,
+          "202610089019": 0.001848658612976574,
+          "202610089020": 0.045709715102278205,
+          "202610089021": -0.08324655513298793,
+          "202610089022": 0.05011238002557288,
+          "202610089023": 0.003948672498520258,
+          "202610089024": 0.021469805574396924,
+          "202610089026": 0.0022761423530150648,
+          "202610089027": 0.0017423225373937516,
+          "202610089028": -0.008781597117873241,
+          "202610089029": 0.03584498791005433,
+          "202610089030": 0.009655219398385324,
+          "202610089031": -0.0002618005096121099
+        },
+        "layout_bootstrap95_interval": [
+          -0.005942726382485775,
+          0.018772442623746242
+        ],
+        "mean_conditional_last_turn_variance": 0.01249127825214976
+      }
+    }
+  },
+  "baseline_fixed_prices": {
+    "C": 1000,
+    "R": 1000,
+    "N": 530
+  },
+  "decision": "All layout uncertainty intervals cross zero, including exact last-turn reanalysis. No scalar cycle, ranking or ratio conclusion. Do not extend unchanged random trajectories or tune weights/horizon to force ordering; a further experiment needs a changed informative decision question."
+}

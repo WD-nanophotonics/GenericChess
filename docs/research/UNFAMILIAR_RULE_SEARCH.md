@@ -750,3 +750,102 @@ and25 capture-endpoint sets differ. Raw binding counts are retained separately;
 endpoint equality is not a physical-successor quotient. This exposes a qualified
 missing future-capability input, not executor failure, a material-value relation
 or permission to mix preparation utility into static prices.
+
+## Generated8 width and existing PVS
+
+New seeds202610082100..2103 use8x8 bilateral_random/hybrid rules with the same
+consumed-slot/expiry transformation and guarded P-drop. The semantic-first
+16-ply route leaves four ongoing roots with126/123/61/90 legal actions. These
+are coverage routes, not independent playing-strength samples. All four
+Core depth2 references finish within20000leaves/10sec (15054/14217/3384/10135
+leaves), matching completed public depth2 scores1225/288/5943/-4217.
+
+At depth3,8192nodes/10sec, fixed Native attack evaluator, TT/order on and q0,
+two cold Core/Native legality calls per root retain original partial results.
+Native completes only seed2102:5115nodes/score9432. Seeds2100/2101/2103 remain
+node-capped under Native;2103 Core also hits its cooperative wall checkpoint.
+Native addresses observed legality wall costs, not tree width.
+
+The existing opt-in PVS flag, changed alone, completes seed2103 at8150nodes
+with score-1042; seed2102 uses4657nodes.2100/2101 still cap at8192. A separately
+declared paired16384/32768-node20sec curve tests all four roots, rotating
+baseline/PVS order and repeating each cold. Every32768 cell completes depth3:
+
+| Seed suffix | Baseline nodes | PVS nodes | Score | PVS/baseline wall ratio |
+|---|---:|---:|---:|---:|
+|2100|17884|16716|3131|0.943|
+|2101|19999|10275|701|0.589|
+|2102|5115|4657|9432|0.910|
+|2103|9027|8150|-1042|0.924|
+
+Completed same-depth scores agree; cold repeated action/score/nodes/PV match
+within each configuration. At16384, seed2101 completes only with PVS; seed2100
+still caps with both methods. Partial scores are not depth3 certificates.
+Local wall ratios include validation overhead and are not hardware-independent.
+This selects fresh transfer validation of an existing option, not a new cache,
+default, price or strength claim.32 curve calls took203.49sec; baseline16calls
+and references took116.69sec. Recovery: data/generated8_20261008.json and
+../archive/generated8_20261008/index.json (10 extracted/rehashed members).
+
+## Fresh PVS transfer, qsearch and honest cost accounting
+
+Eight predeclared fresh seeds202610082200..2207 use the same8x8 mechanism
+mixture,16-ply coverage route, Native attack/legality, TT/order and q0.
+Root tactical scan is off solely to isolate PVS. Two rotated cold repeats at
+depth3/32768nodes/20sec complete five baseline roots and seven PVS roots.
+Every common completed-depth score agrees; completed repeated signatures match.
+Seed2200 regresses805->938nodes and about0.57->0.80sec;2201/2202 gain essentially
+nothing.2204 improves20534->10919nodes,2206 improves5397->4809. Seeds2205/2207
+complete only with PVS at this budget; seed2203 caps with both. Thus this is
+heterogeneous transfer, not a universal speedup or default promotion.
+
+A separately declared fair65536node/40sec extension of2205 completes both:
+baseline38829/PVS25011nodes, same score1794.2207 baseline depth3 stays unknown.
+Seed2203's retained action independently replays to immediate mate; restoring
+the existing default root scan finds it in81nodes/~0.088sec. That deliberately
+disabled-scan diagnostic does not justify a new cache or termination patch.
+Original failed Core references and search caps remain in the records.
+
+With q4/hard8 instead of q0, fixed32768node/20sec calls on2200/2205 all wall-cap
+at retained depth2/depth1 respectively. q0 PVS gains do not establish q4 gains.
+An actual generation-cost audit exposed missing qsearch timing and Windows
+coarse-clock zeros. One helper now times explicit root/main/q/TT-PV runtime
+generation requests with perf_counter, including aborted attempts. Budget
+deadlines still use monotonic time; internal cached push-validation calls are
+not counted again. Existing main-only successor counters remain qualified.
+Four fixed4096-node caller signatures, public PVs and runtime pushes are exactly
+unchanged before/after the repair; measured generation costs become0.295..0.703sec
+instead of zero. Nine focused tests independently charge real generation/cache
+misses under a deliberately frozen coarse budget clock and cover cancellation.
+
+Profiling2200 identifies repeated attack/probe work, not static leaf evaluation,
+as the next mechanism. The default qsearch classifies all legal quiet actions
+before a cutoff; existing opt-in ordered qsearch classifies lazily. Changing
+only that flag at depth2/4096nodes/q4hard8 reduces2200 runtime pushes25853->6106,
+qnodes2850->1227 and local wall9.72->2.45sec with the same completed score-1537.
+2205 reduces pushes43678->27975 and wall19.35->13.11sec but both still hit the
+node limit at depth1; requested depth2 remains unknown. Cold signatures repeat.
+Instrumented nested profiling times overlap and are not speed comparisons.
+
+The follow-up fixes all four previously exposed2100..2103 roots before observing
+outcomes, rotates two cold repeats, changes only ordered-qsearch, and gives both
+methods depth2/8192totalnodes/20sec with q4hard8. Every failure is retained in
+data/pvs_transfer_20261008.json and its extracted/rehashed source archive.
+These are finite development controls, not exact WDL, material utility or Elo.
+
+The four-root follow-up completes no requested depth2 cell: all retained depth1
+scores agree (2440/523/6286/-691). Ordered2100 stops at7.82sec on the qsearch
+in-check hard-depth safeguard rather than finishing sooner; its14970 pushes
+versus baseline~40k do not establish a completion speedup. Ordered2101/2102
+reach the8192 total-node cap, while baseline wall-caps;2103 wall-caps both.
+Thus lazy classification can expose a new safeguard/node bottleneck without
+improving completed depth. Preserve those failure kinds rather than counting
+every reduction in elapsed time as a gain. The next useful check is the first
+actual hard-check path, not an unchanged larger-budget rerun or default flip.
+
+One diagnostic replay captures that exception path without changing conditions:
+qdepth4..8 are all in check, and the depth8 position remains ongoing. None of
+the nine recorded qpath positions repeat; this does not prove full history
+repetition semantics, but supplies no evidence for a repetition-loop fix. Keep
+the hard safeguard. Separate hard-trace-index.json archives the actual positions,
+action/check history, producer and final accounting assertion/comment updates.

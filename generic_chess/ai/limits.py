@@ -10,9 +10,11 @@ class SearchLimits:
     """Search budgets; ``None`` means unlimited for that dimension.
 
     ``max_nodes`` is a **total-node budget**: it counts main nodes plus
-    quiescence nodes (``stats.nodes + stats.qnodes``).  Time/cancel checks are
-    performed at coarse intervals (every 128 total nodes), so the effective
-    budget may overshoot by at most one check interval.
+    quiescence nodes (``stats.nodes + stats.qnodes``). Node limits are checked
+    at search boundaries and cooperative semantic checkpoints. A supplied
+    deadline or cancellation token enables prompt polling; fixed-node work
+    avoids clock polling. An indivisible work unit can delay a wall-clock stop,
+    so the time limit is cooperative rather than a strict execution deadline.
     """
 
     max_depth: int | None = None

@@ -245,7 +245,10 @@ def test_in_check_search_equality():
 def test_lazy_stats_sane():
     compiled = build_4x4_rooks()
     _action, _score, _pv, stats = _search_both(compiled, "use_lazy_successors")[True]
-    assert stats.successor_handles_created == stats.legal_actions_generated
+    # Generation accounting includes the root fallback request. This q0
+    # fixture has no root scan; only main-search requests create lazy handles.
+    root_actions = len(GameSession(compiled).legal_actions())
+    assert stats.successor_handles_created + root_actions == stats.legal_actions_generated
     assert stats.successors_materialized <= stats.successor_handles_created
     assert stats.successors_searched == stats.successors_materialized
     assert stats.terminal_results_computed == stats.successors_materialized

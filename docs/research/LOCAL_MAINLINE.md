@@ -12,12 +12,21 @@ consultation, tests, publication and segment endings are not scientific completi
    familiar-piece mixtures, recombined mechanics and generated playable rules.
    Generic NNUE/self-evolution is later work.
 
-Next: use the generated6 scaling evidence to select one finite search or static
-transformation-capability question. Core/Native completed decisions agree; an
-existing Native boundary solves the observed Core wall bottleneck. Do not add a
-cache/flag merely to optimize solved callers. Transformation effects remain an
-explicit static-projection exclusion; any approximation needs a declared task
-and utility, not tuning against the exposed continuation counts.
+Next: examine the existing ordered-qsearch transfer's completed-depth evidence
+and select one price-free utility question that has a chance to distinguish
+pieces. Fresh PVS transfer is heterogeneous; q4 exposes quiet-action probe cost.
+Neither changes defaults or makes a material-price claim. Core/Native completed
+decisions agree; wider generated rules expose node as well as wall limits.
+Transformation effects remain an explicit static-projection exclusion; no bonus
+is fitted against exposed continuation counts. Retention preserves signed scores,
+both kinds of zero and terminals; it is not a positive-price normalization.
+
+The fixed four-ply C/R/N retention pilot has27 common layouts,5184 paths and
+20694 independently replayed legal steps. All paired layout-bootstrap intervals
+cross zero, including exact final-turn averaging.4845 both-live outcomes dominate;
+one both-lost and26 early terminals stay separate. This supplies neither a reliable
+ranking/cycle nor positive ratios. Do not rerun unchanged sampling/horizon sweeps
+or fit its small means. See retention_20261008.json and SEMANTIC_CAPABILITY.md.
 
 Piece-value work keeps the separate direct/preparation coordinates frozen until
 an explicit utility question justifies a change. Do not extend horizons, mix quiet
@@ -106,6 +115,26 @@ no default/cache change. Two actual P/X transformation controls keep both static
 profiles unchanged but differ on51 movement and25 capture endpoint sets across
 the same62 opponent replies. Effects are explicitly excluded, not silently
 claimed modeled. Data/recovery: generated6_20261008.json and its archive.
+
+Four fresh8x8 roots have126/123/61/90 legal actions; all Core depth2 references
+complete and agree. Native removes Core wall cost, but three roots hit8192nodes.
+Existing PVS alone completes one additional depth3 root at that budget. A fair
+two-repeat16384/32768-node20sec curve completes depth3 for every root; all paired
+scores agree, with PVS node reductions6.5/48.6/9.0/9.7% and local wall reductions.
+This is a four-root development observation, not a default/strength decision.
+Data/recovery: generated8_20261008.json and its archive; original caps retained.
+
+Eight further fixed fresh roots complete depth3 in5 baseline/7 PVS cases at
+32768nodes/20sec/q0.2200 regresses805->938nodes;2204 improves20534->10919.
+All common completed-depth scores agree. A separate fair extension completes
+2205 at38829/25011nodes with score1794;2207 baseline depth3 remains unknown.
+Existing default root scan already solves2203's immediate-win diagnostic.
+q4 calls expose a different bottleneck: eagerly probing quiet actions. Existing
+ordered-qsearch alone cuts2200 runtime pushes25853->6106 at the same completed
+depth2 score, while2205 still caps. Explicit generation timing was missing in q
+and coarse elsewhere; repaired telemetry preserves four fixed caller signatures
+and runtime work. No default/price/new-cache change. Exact populations, all caps,
+ordered-qsearch transfer and recovery: pvs_transfer_20261008.json/search document.
 
 ## Evidence routing and delivery
 
