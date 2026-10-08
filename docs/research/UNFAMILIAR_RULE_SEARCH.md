@@ -705,3 +705,48 @@ generated cohort, keeping mechanical coverage separate from useful play.
 Exact inputs, declarations, zero coverage and recovery:
 data/generated_recombination_20261008.json, data/expiry_guard_20261008.json and
 their purpose-specific archives.
+
+## Generated6 scaling with consumed expiry
+
+Four predeclared seeds202610082000..2003 use6x6 bilateral-random hybrid rules,
+the same supported X-to-P quiet transformation/expiring slot and zone-limited
+P drops consuming slot==0. Existing generator filters are unchanged. The original
+capture-first12ply route gives one checkmate at ply10 and three nonterminal roots
+with89/3/101 legal actions. No original route exercises the transformation or
+expiry: the zero coverage is retained rather than described as full transfer.
+
+A separately declared16ply semantic-first route exercises transformations in
+two rules and guarded drops in two. One route ends in mate; every one of the22
+observed active/expiry/guarded-drop frontiers has exact public Core/Native
+action/score/depth/node/PV parity (44calls,9.739seconds), with no Native fallback.
+These selected policies are mechanism coverage, not useful-play populations.
+
+Both original and extended routes have24 cold searches under one fixed Native
+attack evaluator, TT/order on,q0,8192nodes/5seconds, varying legality alone.
+Completed same-depth results agree exactly. Seed2003 is a useful scaling failure:
+Core legality completes only depth2 before5seconds, while Native completes depth3
+at7858nodes on the original root and7736 on the coverage root. A separately
+declared fair10second increment for BOTH modes (eight calls) completes all cells
+with exact signatures. Representative original Core/Native costs are5.485/3.174s;
+coverage costs5.326/3.096s. This is wall-limited depth completion, not price or
+semantic improvement. No defaults or original caps change.
+
+The original4000-leaf Core reference fuse aborts on seed2001/2003. A separate
+20000-leaf/10second increment finishes at5565/9413 leaves, matching depth2 public
+scores3413/-9. A node-bounded Core profile of seed2003 completes the same7858-node
+signature as Native. Core is_square_attacked consumes8.206 nested instrumented
+seconds of14.193 total; checkpoint callbacks and geometry contribute overhead.
+These profiling times are not fair speed measurements or additive cost buckets.
+The existing Native boundary already addresses this cost; no new cache/flag is
+justified by these callers. Full declarations, zeros/caps and recovery:
+data/generated6_20261008.json and ../archive/generated6_20261008/.
+
+The first actual transformations of seeds2000/2003 also supply a finite price
+scope check. Changing only the effect destination P versus X leaves generic-v1
+and semantic-opportunity-v1 raw scores/tables unchanged; the latter explicitly
+excludes compound/state effects. Both variants have the same39/23 legal opponent
+reply actions. Across that common support,51 continuation movement-endpoint sets
+and25 capture-endpoint sets differ. Raw binding counts are retained separately;
+endpoint equality is not a physical-successor quotient. This exposes a qualified
+missing future-capability input, not executor failure, a material-value relation
+or permission to mix preparation utility into static prices.

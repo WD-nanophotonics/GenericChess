@@ -12,11 +12,12 @@ consultation, tests, publication and segment endings are not scientific completi
    familiar-piece mixtures, recombined mechanics and generated playable rules.
    Generic NNUE/self-evolution is later work.
 
-Next: predeclare a small larger-board generated recombination cohort, preserving
-simple generator filters, actual public history and fixed attack/evaluation/search
-conditions. Measure completed depth, cost and Core/Native agreement before adding
-an interface or optimization. The solved4x4/recombined callers are development
-observations, not tuning targets or new holdouts. Keep a concrete decision question.
+Next: use the generated6 scaling evidence to select one finite search or static
+transformation-capability question. Core/Native completed decisions agree; an
+existing Native boundary solves the observed Core wall bottleneck. Do not add a
+cache/flag merely to optimize solved callers. Transformation effects remain an
+explicit static-projection exclusion; any approximation needs a declared task
+and utility, not tuning against the exposed continuation counts.
 
 Piece-value work keeps the separate direct/preparation coordinates frozen until
 an explicit utility question justifies a change. Do not extend horizons, mix quiet
@@ -94,6 +95,17 @@ makes expiry behaviorally relevant: matching active slots enable4/7 drops, a
 matching expired slot enables5; opposite guards enable0, empty-hand zero stays.
 All16 additional calls agree exactly. These small coverage-policy populations
 are not strength, universal support or static-value completeness evidence.
+
+Four fresh6x6 rules compile; original capture-first history has one mate and
+zero expiry events. A separately declared semantic-first route covers22 actual
+event frontiers/44 exactly agreeing Core/Native calls. Original and new routes
+each have24 cold searches. Seed2003 Core caps at5sec/depth2 while Native completes
+depth3; a fair10sec extension completes both at identical7858/7736nodes. Expanded
+independent Core references finish5565/9413leaves and agree. Old caps remain;
+no default/cache change. Two actual P/X transformation controls keep both static
+profiles unchanged but differ on51 movement and25 capture endpoint sets across
+the same62 opponent replies. Effects are explicitly excluded, not silently
+claimed modeled. Data/recovery: generated6_20261008.json and its archive.
 
 ## Evidence routing and delivery
 
