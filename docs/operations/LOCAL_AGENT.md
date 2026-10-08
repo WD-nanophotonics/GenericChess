@@ -246,6 +246,16 @@ qualifies these three observations; keep observing future normal continuations.
 One native90-minute heartbeat, same chat, preserving notification intent.
 User changed cadence on2026-10-07 from four hours to90minutes; the existing
 automation was updated through the native tool, not duplicated.
+The2026-10-08 prompt revision aligns the saved continuation with the two current
+research lines and standing end-of-segment publication authorization. It routes
+detailed policy to the current AGENTS/manual/mainline instead of freezing older
+research tasks in the schedule. Same-chat target, ACTIVE status,90-minute cadence
+and the absent/default notification override were read back unchanged after the
+native update. Prompt equality was checked against the actual update arguments.
+This verifies configuration, not future dispatch, sustained research or dot
+agreement. A concrete revision question was sent to the existing Slack thread;
+no advisor reply had arrived at the initial complete-thread readback. Follow-up
+advice is reconciled under the ordinary workflow, never an approval gate.
 Daily10:00 Tokyo consultation remains the main window; if no turn is active,
 the first continuation after10:00 handles the current day once. No missed-day
 catchup, extra task or concurrent writer. Historical two/four-hour receipts

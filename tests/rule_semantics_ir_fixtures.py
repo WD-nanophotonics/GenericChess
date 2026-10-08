@@ -433,13 +433,15 @@ def weird_rulesets():
             ),
         ),
         effects=(
+            # Effects execute in declaration order: the actor must reach the
+            # empty target before its current type can be changed there.
+            RuleActionEffect("move", from_ref=_ref("source"), to_ref=_ref("target")),
             RuleActionEffect(
                 "set_current_type",
                 square_ref=_ref("target"),
                 type_ref=RuleTypeRef(kind="explicit", type_id="TP"),
             ),
             RuleActionEffect("set_bool", slot_name="temp_right", value=1),
-            RuleActionEffect("move", from_ref=_ref("source"), to_ref=_ref("target")),
         ),
         invariants=_own_anchor(),
     )
