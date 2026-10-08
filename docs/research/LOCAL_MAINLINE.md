@@ -48,10 +48,13 @@ discrimination evidence; prefer a changed semantic mechanism over old reruns.
 
 An actual56148-frontier capture/drop/reply census constructs positive conditional
 endpoint-service families under explicit discount/context assumptions. The
-fixed-first-ply two-context approximation is close, but independent ten-step
-paths expose P bias from fixed short service. An independently sampled
-remaining-time kernel reduces it without fitting prices; G corrections are
-mixed. TEMPORAL_HAND_SERVICE.md owns policies, uncertainty and remaining context
+fixed-first-ply two-context approximation is close, but separately sampled ten-step
+paths expose P bias from fixed short service. An initial kernel reused part of
+the outer seed interval, invalidating its independent-source error calculation;
+both original observations and the correction are retained. A fresh disjoint
+remaining-time kernel tests the omission without fitting prices. Six/ten-step
+seed overlap also prevents claiming independent horizon replication.
+TEMPORAL_HAND_SERVICE.md owns corrected policies, uncertainty and remaining context
 qualification. Do not repeat unchanged horizons or infer material utility.
 
 GOAL_INTERACTION.md separates terminal wins from zero-mobility stalemates and
@@ -65,6 +68,9 @@ a declared board-normalized scalar convention is constructive but uncalibrated.
 G/P ordering is robust across nonnegative terminal weights on this cohort,
 ratios are not. Next test ONE changed behavioral/context law for that finite
 construction, not another unchanged horizon sweep or a human-fitted scale.
+Per-drop controls expose proxy decision errors, while twelve actual public-player
+calls already prioritize the legal wins. This is a construction problem, not
+evidence for another terminal-priority player patch.
 
 Retained restrictions: frozen first-contact common moments give Q/R<=261/160
 in that census; changing only that law cannot fix its descriptive reference gap.

@@ -1,6 +1,7 @@
 {
   "archive": "../archive/temporal_hand_service_20261008",
   "base_sha": "e56702c2ed11f001ea8748d7d02c65a2aee3a131",
+  "historical_overlapping_kernel": "Original kernel/analysis retained in raw.zip; original independent-source SE claim superseded",
   "horizons": {
     "batches": [
       {
@@ -632,37 +633,432 @@
     "producer_sha256": "78ba447450ff83b73866f3a82a00f00d2bee4a044ac8c74388f9639ac46a9da1",
     "scope": "Diagnostic normal intervals are not bounded coverage guarantees; all samples exposed development. Old exact H3 is fixed. Impact screens are practical, not scientific accuracy limits. Final custody/type strata are postdeclared exploratory localization, not new validation or causal attribution."
   },
-  "remaining_time_kernel": {
+  "old_kernel_strata_posthoc": {
     "complete": true,
-    "contrasts": [
-      {
-        "combined_first_order_SE": 0.031342823957593635,
-        "context": 0,
-        "kernel_SE": 0.013093864898843377,
-        "normal_approx_95": [
-          -0.09639179320943111,
-          0.026472076704335927
-        ],
-        "outer_SE": 0.02847671532405981,
-        "time_prediction_minus_actual_G_P": -0.0349598582525476
-      },
-      {
-        "combined_first_order_SE": 0.029624183294728677,
-        "context": 1,
-        "kernel_SE": 0.010877288546816629,
-        "normal_approx_95": [
-          -0.038419544795214,
-          0.07770725372012241
-        ],
-        "outer_SE": 0.027554978311531537,
-        "time_prediction_minus_actual_G_P": 0.01964385446245421
-      }
-    ],
     "dependencies": {
       "horizon10.json": "6ab5fd47850be2aaf6e220ceaa6539370ce086f685152498d60f6e85d0b96400",
       "kernel.json": "84198a6ea11ecbbf2a7467ee5a93d1e0e0117c78dc109e437bc74235ec39e48f"
     },
-    "producer_sha256": "0a789664937b05aafd14cf73c69da095984f3f7734afba317d4e55683d7aa414",
+    "producer_sha256": "638998f59277c8ee9018eb028deb55dbe1d5864dd644924a8f47c1e45d832e1c",
+    "rows": [
+      {
+        "T": 1,
+        "actual_conditional_U": 3.967136150234742,
+        "combined_mean_SE": 0.1226692480042001,
+        "context": 0,
+        "contribution_to_total_residual": -0.00291442871093754,
+        "kernel_U": 3.953125,
+        "n": 426,
+        "normal_approx_95": [
+          -0.25444287632297413,
+          0.2264205758534902
+        ],
+        "outer_probability": 0.2080078125,
+        "residual": -0.014011150234741976,
+        "target": "G"
+      },
+      {
+        "T": 3,
+        "actual_conditional_U": 4.336283185840708,
+        "combined_mean_SE": 0.21254482475227623,
+        "context": 0,
+        "contribution_to_total_residual": -0.017207622528076175,
+        "kernel_U": 4.0244140625,
+        "n": 113,
+        "normal_approx_95": [
+          -0.7284569798551694,
+          0.10471873317375335
+        ],
+        "outer_probability": 0.05517578125,
+        "residual": -0.31186912334070804,
+        "target": "G"
+      },
+      {
+        "T": 5,
+        "actual_conditional_U": 4.541666666666667,
+        "combined_mean_SE": 0.23641651900154115,
+        "context": 0,
+        "contribution_to_total_residual": -0.016588211059570323,
+        "kernel_U": 4.06982421875,
+        "n": 72,
+        "normal_approx_95": [
+          -0.9352188251596876,
+          -0.008466070673646298
+        ],
+        "outer_probability": 0.03515625,
+        "residual": -0.47184244791666696,
+        "target": "G"
+      },
+      {
+        "T": 7,
+        "actual_conditional_U": 3.978723404255319,
+        "combined_mean_SE": 0.34071449345738436,
+        "context": 0,
+        "contribution_to_total_residual": 0.003059978635152773,
+        "kernel_U": 4.112060345633891,
+        "n": 47,
+        "normal_approx_95": [
+          -0.5344634657979015,
+          0.8011373485550453
+        ],
+        "outer_probability": 0.02294921875,
+        "residual": 0.13333694137857188,
+        "target": "G"
+      },
+      {
+        "T": 9,
+        "actual_conditional_U": 0,
+        "combined_mean_SE": 0.0,
+        "context": 0,
+        "contribution_to_total_residual": 0.0,
+        "kernel_U": 0,
+        "n": 28,
+        "normal_approx_95": [
+          0.0,
+          0.0
+        ],
+        "outer_probability": 0.013671875,
+        "residual": 0,
+        "target": "G"
+      },
+      {
+        "T": null,
+        "actual_conditional_U": 0,
+        "combined_mean_SE": 0.0,
+        "context": 0,
+        "contribution_to_total_residual": 0.0,
+        "kernel_U": 0,
+        "n": 1362,
+        "normal_approx_95": [
+          0.0,
+          0.0
+        ],
+        "outer_probability": 0.6650390625,
+        "residual": 0,
+        "target": "G"
+      },
+      {
+        "T": 1,
+        "actual_conditional_U": 0.9953051643192489,
+        "combined_mean_SE": 0.05622574047131201,
+        "context": 0,
+        "contribution_to_total_residual": 0.0029063224792480378,
+        "kernel_U": 1.00927734375,
+        "n": 426,
+        "normal_approx_95": [
+          -0.09623027189302041,
+          0.12417463075452267
+        ],
+        "outer_probability": 0.2080078125,
+        "residual": 0.01397217943075113,
+        "target": "TP"
+      },
+      {
+        "T": 3,
+        "actual_conditional_U": 1.008849557522124,
+        "combined_mean_SE": 0.09910643875995552,
+        "context": 0,
+        "contribution_to_total_residual": -0.0015120506286621102,
+        "kernel_U": 0.9814453125,
+        "n": 113,
+        "normal_approx_95": [
+          -0.22165286499163672,
+          0.1668443749473889
+        ],
+        "outer_probability": 0.05517578125,
+        "residual": -0.027404245022123908,
+        "target": "TP"
+      },
+      {
+        "T": 5,
+        "actual_conditional_U": 0.8552631578947368,
+        "combined_mean_SE": 0.0434984371977751,
+        "context": 0,
+        "contribution_to_total_residual": 0.0016021728515625002,
+        "kernel_U": 0.8984375,
+        "n": 76,
+        "normal_approx_95": [
+          -0.04208259480237604,
+          0.12843127901290236
+        ],
+        "outer_probability": 0.037109375,
+        "residual": 0.043174342105263164,
+        "target": "TP"
+      },
+      {
+        "T": 7,
+        "actual_conditional_U": 0.8936170212765957,
+        "combined_mean_SE": 0.04546036031565445,
+        "context": 0,
+        "contribution_to_total_residual": -0.0016868701130320577,
+        "kernel_U": 0.8201125533725605,
+        "n": 47,
+        "normal_approx_95": [
+          -0.16260677412271793,
+          0.015597838314647533
+        ],
+        "outer_probability": 0.02294921875,
+        "residual": -0.0735044679040352,
+        "target": "TP"
+      },
+      {
+        "T": 9,
+        "actual_conditional_U": 0,
+        "combined_mean_SE": 0.0,
+        "context": 0,
+        "contribution_to_total_residual": 0.0,
+        "kernel_U": 0,
+        "n": 33,
+        "normal_approx_95": [
+          0.0,
+          0.0
+        ],
+        "outer_probability": 0.01611328125,
+        "residual": 0,
+        "target": "TP"
+      },
+      {
+        "T": null,
+        "actual_conditional_U": 0,
+        "combined_mean_SE": 0.0,
+        "context": 0,
+        "contribution_to_total_residual": 0.0,
+        "kernel_U": 0,
+        "n": 1353,
+        "normal_approx_95": [
+          0.0,
+          0.0
+        ],
+        "outer_probability": 0.66064453125,
+        "residual": 0,
+        "target": "TP"
+      },
+      {
+        "T": 1,
+        "actual_conditional_U": 3.9425675675675675,
+        "combined_mean_SE": 0.14593403327887097,
+        "context": 1,
+        "contribution_to_total_residual": 0.014299392700195316,
+        "kernel_U": 4.04150390625,
+        "n": 296,
+        "normal_approx_95": [
+          -0.18709436654415462,
+          0.38496704390901954
+        ],
+        "outer_probability": 0.14453125,
+        "residual": 0.09893633868243246,
+        "target": "G"
+      },
+      {
+        "T": 3,
+        "actual_conditional_U": 4.076433121019108,
+        "combined_mean_SE": 0.17753307405816368,
+        "context": 1,
+        "contribution_to_total_residual": -0.0034263134002685534,
+        "kernel_U": 4.03173828125,
+        "n": 157,
+        "normal_approx_95": [
+          -0.39265966492310905,
+          0.3032699853848925
+        ],
+        "outer_probability": 0.07666015625,
+        "residual": -0.04469483976910826,
+        "target": "G"
+      },
+      {
+        "T": 5,
+        "actual_conditional_U": 4.222222222222222,
+        "combined_mean_SE": 0.2557596895279489,
+        "context": 1,
+        "contribution_to_total_residual": -0.004714250564575199,
+        "kernel_U": 4.10302734375,
+        "n": 81,
+        "normal_approx_95": [
+          -0.6204838699470022,
+          0.3820941130025576
+        ],
+        "outer_probability": 0.03955078125,
+        "residual": -0.11919487847222232,
+        "target": "G"
+      },
+      {
+        "T": 7,
+        "actual_conditional_U": 3.9523809523809526,
+        "combined_mean_SE": 0.34410985495795976,
+        "context": 1,
+        "contribution_to_total_residual": 0.0033645384222721663,
+        "kernel_U": 4.116442254495557,
+        "n": 42,
+        "normal_approx_95": [
+          -0.5103940136029964,
+          0.8385166178322058
+        ],
+        "outer_probability": 0.0205078125,
+        "residual": 0.16406130211460468,
+        "target": "G"
+      },
+      {
+        "T": 9,
+        "actual_conditional_U": 0,
+        "combined_mean_SE": 0.0,
+        "context": 1,
+        "contribution_to_total_residual": 0.0,
+        "kernel_U": 0,
+        "n": 36,
+        "normal_approx_95": [
+          0.0,
+          0.0
+        ],
+        "outer_probability": 0.017578125,
+        "residual": 0,
+        "target": "G"
+      },
+      {
+        "T": null,
+        "actual_conditional_U": 0,
+        "combined_mean_SE": 0.0,
+        "context": 1,
+        "contribution_to_total_residual": 0.0,
+        "kernel_U": 0,
+        "n": 1436,
+        "normal_approx_95": [
+          0.0,
+          0.0
+        ],
+        "outer_probability": 0.701171875,
+        "residual": 0,
+        "target": "G"
+      },
+      {
+        "T": 1,
+        "actual_conditional_U": 1.0168918918918919,
+        "combined_mean_SE": 0.06464964691568444,
+        "context": 1,
+        "contribution_to_total_residual": -0.006252288818359374,
+        "kernel_U": 0.9736328125,
+        "n": 296,
+        "normal_approx_95": [
+          -0.1699723873466334,
+          0.08345422856284962
+        ],
+        "outer_probability": 0.14453125,
+        "residual": -0.043259079391891886,
+        "target": "TP"
+      },
+      {
+        "T": 3,
+        "actual_conditional_U": 1.0063694267515924,
+        "combined_mean_SE": 0.08314087805462082,
+        "context": 1,
+        "contribution_to_total_residual": -0.006926536560058594,
+        "kernel_U": 0.916015625,
+        "n": 157,
+        "normal_approx_95": [
+          -0.25330992273864916,
+          0.07260231923546445
+        ],
+        "outer_probability": 0.07666015625,
+        "residual": -0.09035380175159236,
+        "target": "TP"
+      },
+      {
+        "T": 5,
+        "actual_conditional_U": 0.8354430379746836,
+        "combined_mean_SE": 0.054397431087479874,
+        "context": 1,
+        "contribution_to_total_residual": 0.000640630722045898,
+        "kernel_U": 0.85205078125,
+        "n": 79,
+        "normal_approx_95": [
+          -0.0900112216561441,
+          0.12322670820677699
+        ],
+        "outer_probability": 0.03857421875,
+        "residual": 0.016607743275316444,
+        "target": "TP"
+      },
+      {
+        "T": 7,
+        "actual_conditional_U": 0.6904761904761905,
+        "combined_mean_SE": 0.07219871305887661,
+        "context": 1,
+        "contribution_to_total_residual": 0.002417707351541594,
+        "kernel_U": 0.8083682060942187,
+        "n": 42,
+        "normal_approx_95": [
+          -0.02361746197736994,
+          0.2594014932134263
+        ],
+        "outer_probability": 0.0205078125,
+        "residual": 0.1178920156180282,
+        "target": "TP"
+      },
+      {
+        "T": 9,
+        "actual_conditional_U": 0,
+        "combined_mean_SE": 0.0,
+        "context": 1,
+        "contribution_to_total_residual": 0.0,
+        "kernel_U": 0,
+        "n": 31,
+        "normal_approx_95": [
+          0.0,
+          0.0
+        ],
+        "outer_probability": 0.01513671875,
+        "residual": 0,
+        "target": "TP"
+      },
+      {
+        "T": null,
+        "actual_conditional_U": 0,
+        "combined_mean_SE": 0.0,
+        "context": 1,
+        "contribution_to_total_residual": 0.0,
+        "kernel_U": 0,
+        "n": 1443,
+        "normal_approx_95": [
+          0.0,
+          0.0
+        ],
+        "outer_probability": 0.70458984375,
+        "residual": 0,
+        "target": "TP"
+      }
+    ],
+    "scope": "Postdeclared localization only, no new simulation or kernel fitted against conditional outcomes. AtT1 forced postcapture context is identical to the outer initial capture, while delayed captures may change context. Conditional subgroup and independent kernel mean SE combined diagnostically; small/multiple groups do not give certified coverage or causal attribution. ExactH3 has zero samplingSE, not zero context error. Keep terminal counts, all strata and old residuals."
+  },
+  "remaining_time_kernel": {
+    "complete": true,
+    "contrasts": [
+      {
+        "combined_first_order_SE": 0.03149650110074541,
+        "context": 0,
+        "kernel_SE": 0.013439523548364226,
+        "normal_approx_95": [
+          -0.08880253753464239,
+          0.034663746780279614
+        ],
+        "outer_SE": 0.02848523807838404,
+        "time_prediction_minus_actual_G_P": -0.027069395377181383
+      },
+      {
+        "combined_first_order_SE": 0.029642115257763682,
+        "context": 1,
+        "kernel_SE": 0.010966062381056652,
+        "normal_approx_95": [
+          -0.0648070969908583,
+          0.05138999481957532
+        ],
+        "outer_SE": 0.0275390717492315,
+        "time_prediction_minus_actual_G_P": -0.006708551085641496
+      }
+    ],
+    "dependencies": {
+      "horizon10.json": "6ab5fd47850be2aaf6e220ceaa6539370ce086f685152498d60f6e85d0b96400",
+      "kernel-disjoint.json": "4cda632ee053b9c34b3de0ceec683446db9a273727a9ab8d5d827eee1129bb54"
+    },
+    "producer_sha256": "45106354262d71d512e919dea9b1835872f0419427aae2616b99c082f50a7929",
     "rows": [
       {
         "actual_mean_U": 1.3154296875,
@@ -685,39 +1081,39 @@
         },
         "kernel": {
           "3": 4.112060345633891,
-          "5": 4.06982421875,
-          "7": 4.0244140625,
-          "9": 3.953125
+          "5": 4.10791015625,
+          "7": 4.021484375,
+          "9": 4.03125
         },
         "paired_H9_minus_H3": {
-          "mean": -0.169921875,
+          "mean": -0.064453125,
           "n": 2048,
           "normal_approx_95": [
-            -0.2866252652059643,
-            -0.05321848479403567
+            -0.18108828091651075,
+            0.05218203091651076
           ],
-          "standard_error": 0.059542546023451194
+          "standard_error": 0.05950773261046467
         },
         "sampled_H3_sanity": {
-          "mean": 4.123046875,
+          "mean": 4.095703125,
           "n": 2048,
           "normal_approx_95": [
-            4.032187388292648,
-            4.213906361707352
+            4.004099106860845,
+            4.187307143139155
           ],
-          "standard_error": 0.046356880973138816
+          "standard_error": 0.04673674394854845
         },
         "target": "G",
-        "time_prediction": 1.2817794038365689,
+        "time_prediction": 1.2992073251317349,
         "time_residual": {
-          "combined_first_order_SE": 0.031013768413551135,
-          "kernel_SE": 0.012727515124689394,
-          "mean": -0.033650283663431216,
+          "combined_first_order_SE": 0.030938938973448748,
+          "kernel_SE": 0.01253292722916704,
+          "mean": -0.0162223623682652,
           "normal_approx_95": [
-            -0.09443726975399144,
-            0.027136702427129004
+            -0.07686268275622474,
+            0.044417958019694344
           ],
-          "outer_SE": 0.028281870340558894
+          "outer_SE": 0.028286811058710545
         }
       },
       {
@@ -741,39 +1137,39 @@
         },
         "kernel": {
           "3": 0.8201125533725605,
-          "5": 0.8984375,
-          "7": 0.9814453125,
-          "9": 1.00927734375
+          "5": 0.9375,
+          "7": 0.99365234375,
+          "9": 1.044921875
         },
         "paired_H9_minus_H3": {
-          "mean": 0.1806640625,
+          "mean": 0.22265625,
           "n": 2048,
           "normal_approx_95": [
-            0.13522518015200202,
-            0.22610294484799798
+            0.17263543320509964,
+            0.2726770667949004
           ],
-          "standard_error": 0.023183103238774476
+          "standard_error": 0.02552082489535733
         },
         "sampled_H3_sanity": {
-          "mean": 0.82861328125,
+          "mean": 0.822265625,
           "n": 2048,
           "normal_approx_95": [
-            0.8122879622168424,
-            0.8449386002831576
+            0.8057045343970605,
+            0.8388267156029395
           ],
-          "standard_error": 0.008329244404672266
+          "standard_error": 0.008449536021907946
         },
         "target": "TP",
-        "time_prediction": 0.3162509808391164,
+        "time_prediction": 0.3257884392589162,
         "time_residual": {
-          "combined_first_order_SE": 0.013409085774288662,
-          "kernel_SE": 0.005786356471934892,
-          "mean": 0.0013095745891163787,
+          "combined_first_order_SE": 0.013649757407956466,
+          "kernel_SE": 0.006304422473753541,
+          "mean": 0.010847033008916183,
           "normal_approx_95": [
-            -0.024972233528489398,
-            0.027591382706722154
+            -0.01590649151067849,
+            0.03760055752851085
           ],
-          "outer_SE": 0.012096349039355955
+          "outer_SE": 0.012106615322562029
         }
       },
       {
@@ -797,39 +1193,39 @@
         },
         "kernel": {
           "3": 4.116442254495557,
-          "5": 4.10302734375,
-          "7": 4.03173828125,
-          "9": 4.04150390625
+          "5": 4.07470703125,
+          "7": 3.97900390625,
+          "9": 3.94140625
         },
         "paired_H9_minus_H3": {
-          "mean": -0.06787109375,
+          "mean": -0.189453125,
           "n": 2048,
           "normal_approx_95": [
-            -0.1813203870779104,
-            0.0455781995779104
+            -0.3082099090318303,
+            -0.07069634096816965
           ],
-          "standard_error": 0.05788229251424
+          "standard_error": 0.06059019593460732
         },
         "sampled_H3_sanity": {
-          "mean": 4.109375,
+          "mean": 4.130859375,
           "n": 2048,
           "normal_approx_95": [
-            4.016824256753847,
-            4.201925743246153
+            4.0387879501946,
+            4.2229307998054
           ],
-          "standard_error": 0.0472197669623227
+          "standard_error": 0.046975216737449345
         },
         "target": "G",
-        "time_prediction": 1.1398944609076238,
+        "time_prediction": 1.1202645056158758,
         "time_residual": {
-          "combined_first_order_SE": 0.02869030099453431,
-          "kernel_SE": 0.010794292778102437,
-          "mean": 0.009523367157623731,
+          "combined_first_order_SE": 0.028654686529555044,
+          "kernel_SE": 0.01071188336801973,
+          "mean": -0.010106588134124316,
           "normal_approx_95": [
-            -0.04670962279166352,
-            0.06575635710691098
+            -0.0662697737320522,
+            0.04605659746380357
           ],
-          "outer_SE": 0.0265822612766029
+          "outer_SE": 0.02657718222116494
         }
       },
       {
@@ -853,43 +1249,54 @@
         },
         "kernel": {
           "3": 0.8083682060942187,
-          "5": 0.85205078125,
-          "7": 0.916015625,
-          "9": 0.9736328125
+          "5": 0.88427734375,
+          "7": 0.9423828125,
+          "9": 0.99755859375
         },
         "paired_H9_minus_H3": {
-          "mean": 0.1767578125,
+          "mean": 0.18505859375,
           "n": 2048,
           "normal_approx_95": [
-            0.1335214934552805,
-            0.2199941315447195
+            0.13892216730275933,
+            0.23119502019724067
           ],
-          "standard_error": 0.0220593464513875
+          "standard_error": 0.023538993085326868
         },
         "sampled_H3_sanity": {
-          "mean": 0.796875,
+          "mean": 0.8125,
           "n": 2048,
           "normal_approx_95": [
-            0.7794459409924932,
-            0.8143040590075068
+            0.7955913291192769,
+            0.8294086708807231
           ],
-          "standard_error": 0.008892377044646297
+          "standard_error": 0.008626872898328116
         },
         "target": "TP",
-        "time_prediction": 0.26038732519516955,
+        "time_prediction": 0.2671097754515172,
         "time_residual": {
-          "combined_first_order_SE": 0.01188817214555268,
-          "kernel_SE": 0.004327468385966833,
-          "mean": -0.010120487304830476,
+          "combined_first_order_SE": 0.011994166621172503,
+          "kernel_SE": 0.00462951215462869,
+          "mean": -0.00339803704848282,
           "normal_approx_95": [
-            -0.03342130471011373,
-            0.013180330100452777
+            -0.026906603625980928,
+            0.020110529529015285
           ],
-          "outer_SE": 0.011072563132841114
+          "outer_SE": 0.011064702894637245
         }
       }
     ],
     "scope": "Independent outer first-transfer/actual-U batch and forced-initial-capture service kernel. Kernel3 uses prior exactH3; kernel5/7/9 independent sample means. First-order delta normal diagnostics combine outer residual and kernel influence variances; not finite-sample bounded coverage or material-price accuracy. Common seed pairing across types is retained for contrast uncertainty. No coefficients chosen against outcomes; delayed-capture contexts are still approximated by initial postcapture contexts."
   },
-  "scope": "Qualified fixed-policy endpoint service; no material calibration/default change."
+  "scope": "Qualified fixed-policy endpoint service; no material calibration/default change.",
+  "seed_qualification": {
+    "N": 2048,
+    "correction": "Old independent-source uncertainty claim invalid; exact policy/means and old evidence preserved. Later six/ten-step batches also overlap seeds; do not claim independent horizon replication. Fresh disjoint kernel is a correction, not result-driven precision extension.",
+    "new_kernel_bases": [
+      202610090000,
+      202610190000
+    ],
+    "old_kernel_base": 202610083000,
+    "old_outer_base": 202610082000,
+    "same_context_overlapping_seeds": 1048
+  }
 }

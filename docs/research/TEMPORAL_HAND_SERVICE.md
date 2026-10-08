@@ -29,13 +29,13 @@ context. Unlike sum P(T=t)*E[U|T=t], this is not an identity or same-sample fit.
 
 ## Prospective batches and decision
 
-Pilot512 episodes/cell led to an independent2048/cell six-step batch, followed
+Pilot512 episodes/cell led to a separate2048/cell six-step batch, followed
 by a separately declared2048/cell ten-step batch. All four cells share fixed
 policies and paired G/P random quantiles. Practical impact screens were0.1G and
 0.025P with a diagnostic normal interval excluding0, declared before the later
 batch. They are development decisions, not universal accuracy tolerances.
 
-The independent six-step batch triggers neither practical screen. Its paired
+The six-step batch triggers neither practical screen. Its paired
 G-P opportunity differences are0.81494/0.74365. One P residual interval excludes0
 but its magnitude0.01902 is below the declared0.025 screen. Ten steps exposes
 larger P underestimation in both contexts; unchanged horizon expansion would
@@ -43,15 +43,26 @@ therefore be less informative than testing the specific remaining-time omission.
 
 | Context/target | Actual ten-step U | Constant H3 prediction | Time-aware prediction |
 |---|---:|---:|---:|
-|0/G|1.315430|1.321160|1.281779|
-|0/P|0.314941|0.265095|0.316251|
-|1/G|1.130371|1.157749|1.139895|
-|1/P|0.270508|0.226564|0.260387|
+|0/G|1.315430|1.321160|1.299207|
+|0/P|0.314941|0.265095|0.325788|
+|1/G|1.130371|1.157749|1.120265|
+|1/P|0.270508|0.226564|0.267110|
 
-The independent kernel uses2048 paths/cell, keeping H3/5/7/9 on each path.
-P's service grows with remaining time; G changes less and its correction is
-mixed. Combined outer/kernel first-order delta standard errors give P residual
-intervals[-0.02497,0.02759] and[-0.03342,0.01318]. These approximate development
+Seed audit found1048 shared seeds per context between the original kernel and
+outer ten-step sample. Its means remain observations, but its independent-source
+standard errors were unqualified and are superseded. Six/ten-step samples also
+overlap seeds: they are separate batches, not independent horizon replication.
+Original sources, results and posthoc strata remain isolated with this warning.
+The strata's combined-error interpretation inherits the overlap qualification.
+
+The corrected kernel uses2048 paths/cell with proved-disjoint intervals
+202610090000..202610092047 and202610190000..202610192047, keeping H3/5/7/9 on
+each path. G/P common seeds within a context intentionally preserve pairing.
+The same estimator, policies, N and300sec resource checkpoint were declared
+before correction execution; this is not result-driven precision extension.
+P's service grows with remaining time; G changes less. Combined outer/kernel
+first-order delta standard errors now give P residual intervals
+[-0.01591,0.03760] and[-0.02691,0.02011]. These approximate development
 intervals are not bounded finite-sample coverage or proof of model accuracy.
 Final promoted-P opportunity contributions0.07715/0.06055 localize a possible
 mechanism but are postdeclared strata, not a causal attribution of the bias.
@@ -61,7 +72,7 @@ service construction or sweep unchanged horizons. Next useful work must address
 one actual omitted service/context mechanism, not select a discount or horizon
 against human prices. Current material construction remains OPEN.
 
-The six-step independent, ten-step and independent kernel batches take about
+The six-step, ten-step and original kernel batches take about
 128.27,202.13 and224.37 seconds respectively, including full cross-executor
 checks and record writing. Raw counters distinguish actual transitions from
 declared maxima. Initial loop/else pilot failure and its partial record remain.

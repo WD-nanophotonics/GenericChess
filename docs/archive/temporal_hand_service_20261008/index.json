@@ -1,7 +1,7 @@
 {
   "archives": [
     {
-      "bytes": 19118,
+      "bytes": 24414,
       "extracted_and_rehashed": true,
       "file": "sources.zip",
       "members": [
@@ -49,12 +49,27 @@
           "bytes": 3245,
           "path": ".local_agent/transfer-time-20261008/kernel-analysis.py",
           "sha256": "0a789664937b05aafd14cf73c69da095984f3f7734afba317d4e55683d7aa414"
+        },
+        {
+          "bytes": 5292,
+          "path": ".local_agent/transfer-time-20261008/kernel-disjoint.py",
+          "sha256": "ef8c89bcc958d3703a044b913de79f6bbe4b6335096a21de8233e9288fc31b21"
+        },
+        {
+          "bytes": 3272,
+          "path": ".local_agent/transfer-time-20261008/kernel-analysis-disjoint.py",
+          "sha256": "45106354262d71d512e919dea9b1835872f0419427aae2616b99c082f50a7929"
+        },
+        {
+          "bytes": 2370,
+          "path": ".local_agent/transfer-time-20261008/time-strata.py",
+          "sha256": "638998f59277c8ee9018eb028deb55dbe1d5864dd644924a8f47c1e45d832e1c"
         }
       ],
-      "sha256": "7ad1d9c40193a60d94c99b84f6a268b29aea588010b505beafce1a2f03871b9a"
+      "sha256": "81eadf10e79b7305a9b41a20c28fc3a5c5492f1d4f592dd9f3513a3cf77f4322"
     },
     {
-      "bytes": 1594108,
+      "bytes": 2142758,
       "extracted_and_rehashed": true,
       "file": "raw.zip",
       "members": [
@@ -112,9 +127,29 @@
           "bytes": 7547,
           "path": ".local_agent/transfer-time-20261008/kernel-analysis.json",
           "sha256": "5d3bafe8183ec3204cd1f293b52dd4d924bb837d8ebbd99674db1f2d6590c154"
+        },
+        {
+          "bytes": 29420136,
+          "path": ".local_agent/transfer-time-20261008/kernel-disjoint.json",
+          "sha256": "4cda632ee053b9c34b3de0ceec683446db9a273727a9ab8d5d827eee1129bb54"
+        },
+        {
+          "bytes": 7544,
+          "path": ".local_agent/transfer-time-20261008/kernel-analysis-disjoint.json",
+          "sha256": "05f14d6042ecee4362020637f71ac4371e3a609c23090042cc1aba9c035ba4ac"
+        },
+        {
+          "bytes": 10740,
+          "path": ".local_agent/transfer-time-20261008/time-strata.json",
+          "sha256": "92f3a12f87b7aab9cec59edbd9a8efd787d7c66cdbe5ae7afdfac19a39ea71e7"
+        },
+        {
+          "bytes": 478,
+          "path": ".local_agent/transfer-time-20261008/seed-audit.json",
+          "sha256": "bdbe7885e23c0e67d70de3669425be52580063716cb3b0c28485bbbc370ec32a"
         }
       ],
-      "sha256": "9e6e21340dc7b7aa822e75df53a6e0e3d19f9d83aaa406ede4cdb34804fd543a"
+      "sha256": "1576cf05be25ee49711f808c255fbc54b5bbdeb7c5765cafe4a76f4140179d0f"
     }
   ],
   "base_sha": "e56702c2ed11f001ea8748d7d02c65a2aee3a131",
@@ -176,6 +211,24 @@
       "producer": ".local_agent/transfer-time-20261008/kernel-analysis.py",
       "raw": ".local_agent/transfer-time-20261008/kernel-analysis.json",
       "sha256": "0a789664937b05aafd14cf73c69da095984f3f7734afba317d4e55683d7aa414"
+    },
+    {
+      "complete": true,
+      "producer": ".local_agent/transfer-time-20261008/kernel-disjoint.py",
+      "raw": ".local_agent/transfer-time-20261008/kernel-disjoint.json",
+      "sha256": "ef8c89bcc958d3703a044b913de79f6bbe4b6335096a21de8233e9288fc31b21"
+    },
+    {
+      "complete": true,
+      "producer": ".local_agent/transfer-time-20261008/kernel-analysis-disjoint.py",
+      "raw": ".local_agent/transfer-time-20261008/kernel-analysis-disjoint.json",
+      "sha256": "45106354262d71d512e919dea9b1835872f0419427aae2616b99c082f50a7929"
+    },
+    {
+      "complete": true,
+      "producer": ".local_agent/transfer-time-20261008/time-strata.py",
+      "raw": ".local_agent/transfer-time-20261008/time-strata.json",
+      "sha256": "638998f59277c8ee9018eb028deb55dbe1d5864dd644924a8f47c1e45d832e1c"
     }
   ],
   "qualification": "validation-decomposition.json was an unbound inline diagnostic, retained locally but excluded from reproducibility claims; bound horizon-summary covers the retained decomposition.",

@@ -1,7 +1,7 @@
 {
   "archives": [
     {
-      "bytes": 27279,
+      "bytes": 29134,
       "extracted_and_rehashed": true,
       "file": "sources.zip",
       "members": [
@@ -46,6 +46,11 @@
           "sha256": "0f3ec3369d136158c6e84c31ca7372936c9484d3cd25a16bb1320ce4ccdf2d71"
         },
         {
+          "bytes": 3953,
+          "path": ".local_agent/transfer-time-20261008/evaluation-semantic.py",
+          "sha256": "74f155c6e111ff5b3462f0f0c5f664e9daf85532fa342aaf2e0347a1a21ea9d1"
+        },
+        {
           "bytes": 13249,
           "path": "scripts/unfamiliar_search.py",
           "sha256": "4bd44e83311b3ac196339c8f0092dcb7fd221222e5ff55bc9421193c902d445a"
@@ -71,10 +76,10 @@
           "sha256": "62b28071f7e7b46228669924ad90306682f6f2f0d66b4112a2b63115e2e5b905"
         }
       ],
-      "sha256": "42f861b457b0aba723e4405ef61a0c7be20cfdc493b5f030e909e28be926c57f"
+      "sha256": "3907bce2dae286064dbb87d9abb506b0a7706124552fc8182ce0808c4f9666e8"
     },
     {
-      "bytes": 86658,
+      "bytes": 88721,
       "extracted_and_rehashed": true,
       "file": "raw.zip",
       "members": [
@@ -114,6 +119,11 @@
           "sha256": "4e5a7607a54e6866d9ea72f3ac9f171d652374509233e764493c486b942a8653"
         },
         {
+          "bytes": 23797,
+          "path": ".local_agent/transfer-time-20261008/evaluation-semantic.json",
+          "sha256": "d038d8fff725fc5b66c16520f674a0f2a49f01cd0eabefaf62ac15ab6741c3f4"
+        },
+        {
           "bytes": 27881,
           "path": ".local_agent/transfer-time-20261008/search-4-2.json",
           "sha256": "34a9c88de40d1db17c43a359315677673dadd8b14c1a6eadee544ad48ab5a95f"
@@ -144,7 +154,7 @@
           "sha256": "10840ddfb2a87b458493d2dafcac4757259e7da294d122b00c6560dd391403c8"
         }
       ],
-      "sha256": "ba50547274d57a211f6d5408145458ba7c5c63b62c3bbeb90d3d34f5a9e64777"
+      "sha256": "fc222956385ecd17b3dbe4fc804388b5e4a0cab50f067285ab011e02837bf126"
     }
   ],
   "base_sha": "e56702c2ed11f001ea8748d7d02c65a2aee3a131",
@@ -193,6 +203,12 @@
       "producer": ".local_agent/transfer-time-20261008/evaluation-search.py",
       "raw": ".local_agent/transfer-time-20261008/evaluation-search.json",
       "sha256": "0f3ec3369d136158c6e84c31ca7372936c9484d3cd25a16bb1320ce4ccdf2d71"
+    },
+    {
+      "complete": true,
+      "producer": ".local_agent/transfer-time-20261008/evaluation-semantic.py",
+      "raw": ".local_agent/transfer-time-20261008/evaluation-semantic.json",
+      "sha256": "74f155c6e111ff5b3462f0f0c5f664e9daf85532fa342aaf2e0347a1a21ea9d1"
     },
     {
       "complete": true,

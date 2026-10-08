@@ -379,6 +379,12 @@ not a universal speed ratio. Earlier capped depths remain capped and unknown.
 Regression checks cover fixed blocked-ray/check scores, orientation, per-call
 map counts and disabled features. Source snapshots and measurements remain separate.
 
+A further27 actual-history roots cover combined mechanisms, three Shogi
+variants and Western capture histories. All108 old/new evaluations across four
+feature configurations match exactly, including hands and auxiliary state.
+This qualifies the reuse change on these semantic roots; it does not repair
+the existing pseudo-attack versus semantic-movement valuation gap.
+
 [Compact controls](data/generated_search_controls_20261008.json) and
 [isolated archive](../archive/generated_search_controls_20261008/README.md)
 retain definitions, actual routes, source snapshots, parity and cost records.

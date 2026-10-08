@@ -778,6 +778,128 @@
     ],
     "scope": "Interaction is paired mAH-mIH-mAI+mII for existence of a legal immediate win. Conditional population and virtual immobile interventions; descriptive goal mechanism, not material prices or causal decomposition of long games. Approximate normal intervals are development diagnostics only, especially sparse counts. No population/weights chosen from results."
   },
+  "goal_decision": [
+    {
+      "endpoint_maximizer_count": 62,
+      "endpoint_maximizer_wins": 0,
+      "endpoint_witness": {
+        "U": "1",
+        "action": {
+          "base_type_id": "P",
+          "geometry_id": "g72",
+          "pattern_id": "sem_00_standard_drop_contract",
+          "to_square": {
+            "file": 1,
+            "rank": 0
+          }
+        },
+        "immediate_win": false,
+        "normalized": "1/81",
+        "qwin": "0"
+      },
+      "max_U": "1",
+      "max_normalized": "1/81",
+      "normalized_maximizer_count": 62,
+      "normalized_maximizer_wins": 0,
+      "normalized_witness": {
+        "U": "1",
+        "action": {
+          "base_type_id": "P",
+          "geometry_id": "g72",
+          "pattern_id": "sem_00_standard_drop_contract",
+          "to_square": {
+            "file": 1,
+            "rank": 0
+          }
+        },
+        "immediate_win": false,
+        "normalized": "1/81",
+        "qwin": "0"
+      },
+      "pawn_drop_mate_filter": true,
+      "target": "P"
+    },
+    {
+      "endpoint_maximizer_count": 62,
+      "endpoint_maximizer_wins": 0,
+      "endpoint_witness": {
+        "U": "1",
+        "action": {
+          "base_type_id": "P",
+          "geometry_id": "g72",
+          "pattern_id": "sem_00_standard_drop_contract",
+          "to_square": {
+            "file": 1,
+            "rank": 0
+          }
+        },
+        "immediate_win": false,
+        "normalized": "1/81",
+        "qwin": "0"
+      },
+      "max_U": "1",
+      "max_normalized": "1",
+      "normalized_maximizer_count": 1,
+      "normalized_maximizer_wins": 1,
+      "normalized_witness": {
+        "U": "0",
+        "action": {
+          "base_type_id": "P",
+          "geometry_id": "g72",
+          "pattern_id": "sem_00_standard_drop_contract",
+          "to_square": {
+            "file": 8,
+            "rank": 7
+          }
+        },
+        "immediate_win": true,
+        "normalized": "1",
+        "qwin": "1"
+      },
+      "pawn_drop_mate_filter": false,
+      "target": "P"
+    },
+    {
+      "endpoint_maximizer_count": 30,
+      "endpoint_maximizer_wins": 0,
+      "endpoint_witness": {
+        "U": "6",
+        "action": {
+          "base_type_id": "G",
+          "geometry_id": "g71",
+          "pattern_id": "legacy_143",
+          "to_square": {
+            "file": 1,
+            "rank": 1
+          }
+        },
+        "immediate_win": false,
+        "normalized": "2/27",
+        "qwin": "0"
+      },
+      "max_U": "6",
+      "max_normalized": "1",
+      "normalized_maximizer_count": 3,
+      "normalized_maximizer_wins": 3,
+      "normalized_witness": {
+        "U": "0",
+        "action": {
+          "base_type_id": "G",
+          "geometry_id": "g71",
+          "pattern_id": "legacy_143",
+          "to_square": {
+            "file": 7,
+            "rank": 7
+          }
+        },
+        "immediate_win": true,
+        "normalized": "1",
+        "qwin": "1"
+      },
+      "pawn_drop_mate_filter": true,
+      "target": "G"
+    }
+  ],
   "near_anchor": {
     "complete": true,
     "dependency_sha256": "03a2f61f942b6706a1b240b14596d8033d35d042cccb15e1908e2e8933a70ec5",
@@ -1897,6 +2019,163 @@
       ],
       "original_index": 117,
       "reason": "I+I has no legal King step; compiler forbids no-action initial setups; exclude from ALL cells without replacement"
+    }
+  ],
+  "public_goal_search": [
+    {
+      "known_winning_actions": [],
+      "pawn_drop_mate_filter": true,
+      "searches": [
+        {
+          "complete": true,
+          "native_provider": false,
+          "native_requested": false,
+          "repeat": 0,
+          "seconds": 0.06889019999653101,
+          "selected_known_win": false
+        },
+        {
+          "complete": true,
+          "native_provider": false,
+          "native_requested": false,
+          "repeat": 1,
+          "seconds": 0.06571760005317628,
+          "selected_known_win": false
+        },
+        {
+          "complete": true,
+          "native_provider": true,
+          "native_requested": true,
+          "repeat": 0,
+          "seconds": 0.06388160004280508,
+          "selected_known_win": false
+        },
+        {
+          "complete": true,
+          "native_provider": true,
+          "native_requested": true,
+          "repeat": 1,
+          "seconds": 0.05756330001167953,
+          "selected_known_win": false
+        }
+      ],
+      "target": "P"
+    },
+    {
+      "known_winning_actions": [
+        {
+          "base_type_id": "P",
+          "geometry_id": "g72",
+          "pattern_id": "sem_00_standard_drop_contract",
+          "to_square": {
+            "file": 8,
+            "rank": 7
+          }
+        }
+      ],
+      "pawn_drop_mate_filter": false,
+      "searches": [
+        {
+          "complete": true,
+          "native_provider": false,
+          "native_requested": false,
+          "repeat": 0,
+          "seconds": 0.06616460019722581,
+          "selected_known_win": true
+        },
+        {
+          "complete": true,
+          "native_provider": false,
+          "native_requested": false,
+          "repeat": 1,
+          "seconds": 0.06165209994651377,
+          "selected_known_win": true
+        },
+        {
+          "complete": true,
+          "native_provider": true,
+          "native_requested": true,
+          "repeat": 0,
+          "seconds": 0.05579489981755614,
+          "selected_known_win": true
+        },
+        {
+          "complete": true,
+          "native_provider": true,
+          "native_requested": true,
+          "repeat": 1,
+          "seconds": 0.06205319985747337,
+          "selected_known_win": true
+        }
+      ],
+      "target": "P"
+    },
+    {
+      "known_winning_actions": [
+        {
+          "base_type_id": "G",
+          "geometry_id": "g71",
+          "pattern_id": "legacy_143",
+          "to_square": {
+            "file": 7,
+            "rank": 7
+          }
+        },
+        {
+          "base_type_id": "G",
+          "geometry_id": "g71",
+          "pattern_id": "legacy_143",
+          "to_square": {
+            "file": 8,
+            "rank": 7
+          }
+        },
+        {
+          "base_type_id": "G",
+          "geometry_id": "g71",
+          "pattern_id": "legacy_143",
+          "to_square": {
+            "file": 7,
+            "rank": 8
+          }
+        }
+      ],
+      "pawn_drop_mate_filter": true,
+      "searches": [
+        {
+          "complete": true,
+          "native_provider": false,
+          "native_requested": false,
+          "repeat": 0,
+          "seconds": 0.06557040009647608,
+          "selected_known_win": true
+        },
+        {
+          "complete": true,
+          "native_provider": false,
+          "native_requested": false,
+          "repeat": 1,
+          "seconds": 0.07065410003997386,
+          "selected_known_win": true
+        },
+        {
+          "complete": true,
+          "native_provider": true,
+          "native_requested": true,
+          "repeat": 0,
+          "seconds": 0.06040159985423088,
+          "selected_known_win": true
+        },
+        {
+          "complete": true,
+          "native_provider": true,
+          "native_requested": true,
+          "repeat": 1,
+          "seconds": 0.060794999822974205,
+          "selected_known_win": true
+        }
+      ],
+      "target": "G"
     }
   ],
   "scope": "One-ply terminal-goal interactions and explicit equal-order finite allocation. Conditional synthetic laws and virtual occupancy controls; no material/strength/default claim.",

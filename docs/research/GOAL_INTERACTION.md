@@ -138,6 +138,15 @@ moves G/originalP from4.982 to8.431 and G/noS4P from5.057 to3.711. Retain the
 conditional ordering and an explicit utility family, not an outcome-chosen ratio.
 
 
+Per-drop decision checks sharpen the distinction: endpoint-only maximization
+has62 nonwinning ties in each P cell and30 nonwinning maxima for G. The
+declared terminal-normalized convention instead selects the sole permitted P
+win or the three G wins. This is a finite-policy proxy failure, not a diagnosed
+player regression. Twelve repeated public depth1 calls on these actual-history
+roots (Python and available Native routes, equal512node/5sec ceilings) already
+select a known winning action whenever legal; original P has no legal mate.
+All calls complete and repeat. No terminal-priority player patch is needed.
+
 The first continuation producer incorrectly identified the tagged G by unique
 base type although another friendly G was already present. Its partial P rows
 and source remain. The corrected producer identifies the actor at its actual

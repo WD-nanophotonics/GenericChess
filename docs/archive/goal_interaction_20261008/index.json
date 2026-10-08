@@ -1,7 +1,7 @@
 {
   "archives": [
     {
-      "bytes": 28776,
+      "bytes": 31550,
       "extracted_and_rehashed": true,
       "file": "sources.zip",
       "members": [
@@ -69,12 +69,22 @@
           "bytes": 2100,
           "path": ".local_agent/transfer-time-20261008/terminal-weight.py",
           "sha256": "2c1c85b7644927250ff4b0376111e15c62df9e9415306fe518031579d9774870"
+        },
+        {
+          "bytes": 2246,
+          "path": ".local_agent/transfer-time-20261008/goal-decision.py",
+          "sha256": "c7b9c8ab2d9b1386cef916d0700e3708367d39ba0e928e390008829b878bc0b1"
+        },
+        {
+          "bytes": 3306,
+          "path": ".local_agent/transfer-time-20261008/shogi-goal-search.py",
+          "sha256": "7129b507dd688bb609e122f3e1c71662521205b238b09d2dbf36c9a500aa2c50"
         }
       ],
-      "sha256": "fb4fedc67e6e744434a0c8e32eec299ff319f8aa08182044b1ac6c44f6a01d6c"
+      "sha256": "96468d19a81432c3a28ff057ae181ec302535a9338879b282fbc8040628db0f9"
     },
     {
-      "bytes": 1328813,
+      "bytes": 1333287,
       "extracted_and_rehashed": true,
       "file": "raw.zip",
       "members": [
@@ -142,9 +152,19 @@
           "bytes": 2576,
           "path": ".local_agent/transfer-time-20261008/terminal-weight.json",
           "sha256": "f813650bc063a424b8410f5d95324e77b4ac00fa5efb16c801143afad5b78a4c"
+        },
+        {
+          "bytes": 81271,
+          "path": ".local_agent/transfer-time-20261008/goal-decision.json",
+          "sha256": "941e61393ba0e3b2d74669c0c2127068d4ad990a6a6a37207d0bd16bfb0ae96f"
+        },
+        {
+          "bytes": 40336,
+          "path": ".local_agent/transfer-time-20261008/shogi-goal-search.json",
+          "sha256": "9bc76f077d9cdf74b00b07e944d5be166fae7e25ed3b12329638caed081f0ea4"
         }
       ],
-      "sha256": "f5ab9ca540dd445dd204d701a0822628825d8ba71abb75b0e0f7d816d1e658b0"
+      "sha256": "384133173ad764c2976241c3ea58a4f30fb92e435844456de3c89ac8f13e33fd"
     }
   ],
   "base_sha": "e56702c2ed11f001ea8748d7d02c65a2aee3a131",
@@ -227,6 +247,18 @@
       "producer": ".local_agent/transfer-time-20261008/terminal-weight.py",
       "raw": ".local_agent/transfer-time-20261008/terminal-weight.json",
       "sha256": "2c1c85b7644927250ff4b0376111e15c62df9e9415306fe518031579d9774870"
+    },
+    {
+      "complete": true,
+      "producer": ".local_agent/transfer-time-20261008/goal-decision.py",
+      "raw": ".local_agent/transfer-time-20261008/goal-decision.json",
+      "sha256": "c7b9c8ab2d9b1386cef916d0700e3708367d39ba0e928e390008829b878bc0b1"
+    },
+    {
+      "complete": true,
+      "producer": ".local_agent/transfer-time-20261008/shogi-goal-search.py",
+      "raw": ".local_agent/transfer-time-20261008/shogi-goal-search.json",
+      "sha256": "7129b507dd688bb609e122f3e1c71662521205b238b09d2dbf36c9a500aa2c50"
     }
   ],
   "qualification": "No standard-opening reachability, exact population probabilities, universal material prices or human reference fit. Failed common-inventory and no-action initial setups retained.",
