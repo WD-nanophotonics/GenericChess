@@ -305,3 +305,54 @@ not established. No further sampling is justified merely to recover a global
 price claim. Preserve this conditional diagnostic and move to the concrete
 search-cost/interface question. The advisor independently read only the prior
 published contribution note; new census/curve execution is local Agent work.
+
+
+## Source-support sensitivity, not a replacement price law (2026-10-09)
+
+The same semantic-opportunity-v3 producer and equal density masses at
+0,.125,.5,.875,1 supply both columns. Initial-source forward closure is uniform
+within each owner, then equally averaged over owners; all-board values remain
+unchanged. The graph includes supported simple move/capture opportunities with
+positive probability, and omits drops, transformations, safety and history.
+This conditional input uses the full RuleSet including initial placement.
+
+|Rule/type|All-board raw|Initial-source closure raw|Sources per owner|
+|---|---:|---:|---:|
+|Chess P|.8203125|.8035714|56|
+|Shogi P|.6666667|.6428571|63|
+|Shogi N|1.0370370|1.0263158|19|
+|Shogi B|5.0289570|5.0346217|41|
+|Xiangqi A|.1333333|1.2|5|
+|Xiangqi E|.4229167|1.0357143|7|
+|Xiangqi S|1.3416667|1.7181818|55|
+
+Chess/Shogi pawn closures retain8/9 terminal zero sources. Shogi promoted types
+have no initial on-board seed in this restricted model: their conditional values
+are null, not zero prices or proof they cannot appear. A source-support change
+can lower or raise these averages. No normalization, human-reference fit or
+Xiangqi human-holdout read is performed. Full27-type outputs and exclusions are
+in the zone archive. A rare-bridge witness shows a sharp support-weighting jump
+when eligibility is only1/65536; GEOMETRY_OCCUPANCY.md explains why this law stays
+a diagnostic. No component mixture or replacement material table is selected.
+
+### Primary-source comparison
+
+[Pell's AAAI1994 paper](https://cdn.aaai.org/AAAI/1994/AAAI94-212.pdf),
+Sections2–4, combines maximum/average direct and distance-discounted reach,
+capture-type and goal features; its reported material combination uses equal
+feature weights. Static promotion contribution was unfinished. Its evaluation
+comparison also includes dynamic advisors, so it does not isolate a universal
+piece-price formula. Our inference: retain this as a practical rule-analysis
+baseline, but do not mistake successful composite evaluation for identification
+of intrinsic prices. A literal capture-type count also needs our existing
+physical-alias consistency check before adoption; no such baseline is added now.
+
+[Clune's AAAI2007 paper](https://cdn.aaai.org/AAAI/2007/AAAI07-180.pdf),
+Sections Identifying Stable Features/Abstract Model, separates payoff, control
+and termination. Stability uses total feature variance divided by adjacent-state
+squared variation; dependency analysis and payoff association also filter
+features. Control/termination are estimated on random-play states. Our inference:
+feature stability alone is not utility validation, and exactness of a simplified
+model is not exactness of the real game. This motivates keeping semantics,
+context-law assumptions and deployment evidence separate, rather than adding a
+new task or learned model to this work segment.

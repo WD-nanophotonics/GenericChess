@@ -2,7 +2,7 @@
 
 Independent occupancy is empty=1-d, friendly=enemy=d/2. Only simple actor
 moves and target captures are projected. Pure exact source-offset emptiness
-guards are supported; other state guards and complex effects are excluded
+guards and finite source/target zone tests are supported; other guards/effects are excluded
 explicitly. Anchor safety, promotion and custody utility are ignored.
 No default evaluator or cache invokes this development candidate.
 """
@@ -58,12 +58,35 @@ def _guard_empty_cells(pattern, shape, owner, source, target):
     return frozenset(cells)
 
 
+
+def _finite_zone_guard(guard, ir):
+    """Only action source/target membership in a compiled finite zone."""
+    return (guard.square_ref.kind in ('source', 'target')
+            and guard.spatial.kind == 'zone' and guard.spatial.zone_id in ir.zones
+            and guard.relation in ('inside', 'outside'))
+
+
+def _zone_guards_hold(pattern, ir, shape, owner, source, target):
+    for guard in pattern.square_zone_guards:
+        square = source if guard.square_ref.kind == 'source' else target
+        # Rotation is an involution: testing the inverse-rotated square in the
+        # original zone equals Core's membership in the rotated zone.
+        if guard.owner_relative and owner == 1:
+            square = shape.area - 1 - square
+        inside = square in ir.zones[guard.spatial.zone_id].squares
+        if inside != (guard.relation == 'inside'):
+            return False
+    return True
+
+
 def _excluded(pattern, ir):
     reasons = []
     if pattern.target.kind not in ('target_empty', 'target_enemy'):
         reasons.append('target relation')
     if (any(not _pure_empty_guard(g) for g in pattern.guards)
-            or pattern.slot_guards or pattern.square_zone_guards or pattern.postconditions):
+            or pattern.slot_guards
+            or any(not _finite_zone_guard(g, ir) for g in pattern.square_zone_guards)
+            or pattern.postconditions):
         reasons.append('state/zone/postcondition')
     if any(p.kind not in ('path_clear', 'path_count_eq') or
            (p.kind == 'path_count_eq' and p.owner_filter != 'any') for p in pattern.path):
@@ -159,6 +182,8 @@ def _semantic_opportunity(compiled, ir, type_id, config):
                 for source in range(total):
                     bucket = edges[pattern.target.kind][int(owner) * total + source]
                     for target, path in geometry_candidates(geometry, owner, source):
+                        if not _zone_guards_hold(pattern, ir, shape, int(owner), source, target):
+                            continue
                         clear = _guard_empty_cells(pattern, shape, int(owner), source, target)
                         if clear is None:
                             continue
@@ -235,10 +260,10 @@ def build_semantic_opportunity_profile(compiled, config: EvaluationConfig):
             is_anchor=pt.is_anchor, is_promotable=pt.is_promotable)
     profile = RuleSetEvaluationProfile(
         ruleset_fingerprint=compiled.ruleset_fingerprint, schema_version=1,
-        evaluator_version='semantic-opportunity-v2', config_hash=config_hash(config), piece_profiles=pieces,
+        evaluator_version='semantic-opportunity-v3', config_hash=config_hash(config), piece_profiles=pieces,
         board_value_by_type=board, hand_value_by_base_type=hand, promotion_gain_by_type=gains,
         median_non_anchor_value=_median([board[p.type_id] for p in compiled.piece_types if not p.is_anchor]))
-    scope = dict(candidate='semantic-opportunity-v2', complete_legal_mobility=False,
+    scope = dict(candidate='semantic-opportunity-v3', complete_legal_mobility=False,
                  ir_source='compiled_semantic' if semantic_input else 'existing_legacy_lowering',
                  law='Independent square occupancy: empty1-d, friend/enemy d/2; equal owner/source weighting.',
                  ignored='Anchor safety, future promotion/custody utility; excluded patterns listed per type. Hand scaling, promotion differences, drop diagnostics and dynamic terms retain legacy conventions, not validated semantic utility.',

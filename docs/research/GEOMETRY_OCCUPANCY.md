@@ -250,3 +250,90 @@ are narrow execution controls, not rectangle default pricing or Native support.
 Recovery: [guard data index](data/semantic_guards_20261009.json) and
 [guard archive](../archive/semantic_guards_20261009/index.json). Raw Slack/user
 records stay private; original failed/undiscriminating outputs are preserved.
+
+
+## Finite zone inputs and source-law diagnosis (2026-10-09)
+
+Opt-in `semantic-opportunity-v3` adds source/target membership in compiled finite
+zones, inside or outside, independently of occupancy. Other square-reference
+kinds, slots, state identities, postconditions and compound effects remain
+excluded. The inverse owner-frame square test agrees with Core's rotated zone;
+complement/outside and duplicate zone encodings preserve signatures and curves.
+Default generic-v2 generation/cache and square-only candidate-profile metadata
+are unchanged. Raw projection works on rectangles; a full rectangle profile does
+not follow. Flying-general target-identity conditions remain unsupported.
+
+Before integration, a private v2 adaptation matches16740 actual Core pseudo-
+attack positions against independent palace, river, elephant-eye and coordinate
+oracles. Under the declared equal mass at densities0,.125,.5,.875,1, G/A/E/S raw
+opportunities become.2/.133333/.422917/1.341667. These are projected counts, not
+material values; G remains an anchor with zero profile lookup. Product tests add
+720 actual5x3 source/target/owner/occupant contexts, both owner-relative and
+absolute zones, inside/outside, plus independent transition and encoding checks.
+
+This exposes a separate approximation: all-board source averaging includes
+squares outside a restricted actor's movement component. A diagnostic retains
+that original law and reports uniform forward closure from initial on-board
+sources, not initial SCCs or a chosen mixture of components. Complete RuleSet
+input can include initial placement; dependence on that input must remain
+separate from dependence on single-actor movement alone. Initial support unions
+sources without duplicate weighting. Thirty actual Core source positions and
+four transitions verify a three-layer forward chain; its terminal zero remains
+in the closure mean2/3, rather than being filtered into mean1.
+
+Xiangqi G has9 reachable sources, A5, E7 and S55 under the restricted graph.
+A's palace graph has two SCCs of sizes5/4; E's45-source own-half graph has eight
+components, so conditioning merely on nonzero movement differs from initial
+forward closure. Soldiers cross multiple SCCs: their initial SCC alone would
+lose genuine forward capability. The cross-game conditional table is in
+CROSS_GAME_PRICE_DIAGNOSTIC.md. None proves full-game reachability: transformations,
+drops, own-anchor safety and history are outside this graph.
+
+A declared5x5 rare-bridge counterexample prevents silently adopting uniform
+forward-support weighting as the new default. An actor starts in a three-node
+chain; an optional bridge opens a20-node orthogonal region. At density.5, sixteen
+independent empty prerequisites make bridge eligibility1/65536. All-board raw
+changes1.92->1.920000457764, while uniform-closure raw jumps.5->2.086957019308,
+because every positive bridge probability changes the closure from3 to23sources.
+All138 actual Core blocker/target controls agree. Positive geometric support
+loses transition likelihood; this finite diagnostic does not refute all lifetime
+models or prove which source law is materially relevant. Keep support and
+conditional means descriptive, with no new default/material claim.
+
+Core execution also avoids allocating an owner-1 rotated zone tuple for every
+candidate: inverse-transform the one resolved square and test the original zone.
+No zone cache, new index, altered checkpoint or legality boundary is introduced.
+Six actual lexical-route Xiangqi positions retain all legal actions, both attack
+sets,518 child transitions and identical checkpoint counts in48 alternating
+legal-list pairs. Local median old/new ratios range.9681Ã¢â‚¬â€œ1.0005; these short
+calls support only a modest descriptive cost observation.
+
+Sixteen actual cold public Core D2 calls (initial/one legal action, q0/q2,
+2alternating repetitions, old/inverse) all complete within8192nodes/5seconds,
+retain every non-time decision/work field, restore roots/history/witnesses and
+replay PVs. Unit leaf and ordering prices, disabled dynamics and root tactical
+policy stay fixed. Per-cell paired wall ratios range.9639Ã¢â‚¬â€œ1.0070, including one
+small regression; no general speed, strength, Native or default-price claim.
+
+Recovery: `data/semantic_zones_20261009.json` and
+`../archive/semantic_zones_20261009/index.json`. Frozen v2 guard evidence remains
+in its original archive. Producer preflight errors are retained; no raw account
+records, private inputs or absolute traceback paths enter this package.
+
+A separate finite-horizon diagnostic preserves bridge probability under an
+explicit kernel: propose uniformly among24other cells, accept the projected
+quiet/enemy event, otherwise stay. Six25-state chains through256steps match
+1536independent four-state aggregate recurrences. With16guards the mean
+opportunity over256steps is.187309338, versus.187216054 for the impossible
+bridge; region mass at the last sampled state is9.11e-5. A coupling bound
+scales with horizon times bridge probability, so finite-horizon continuity
+avoids the existential-support jump. This is a feasibility control: proposal,
+stay, density, initial source and horizon are assumptions, with no opponent,
+transformation or natural occupation model. It selects no source law or price.
+The first aggregate oracle omitted enemy-target acceptance; its failed producer
+is retained and corrected validation supersedes the premature local checkpoint.
+
+Exact sources, failed preflights and outputs for this zone/source/cost supplement
+are routed by `data/semantic_zones_20261009.json` to the separately recoverable
+`docs/archive/semantic_zones_20261009/index.json`; the earlier v2 archive stays
+immutable.

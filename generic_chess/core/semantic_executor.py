@@ -1267,11 +1267,9 @@ class SemanticEngine:
             zone_squares = zone.squares
             if guard.owner_relative and binding.actor_owner == 1:
                 shape = self.support.board_shape
-                zone_squares = tuple(
-                    (shape.height - 1 - index // shape.width) * shape.width
-                    + (shape.width - 1 - index % shape.width)
-                    for index in zone.squares
-                )
+                # Rotation is an involution; inverse-transform one square
+                # instead of allocating a rotated zone for every candidate.
+                square_idx = shape.area - 1 - square_idx
             is_inside = square_idx in zone_squares
             if (guard.relation == "inside") != is_inside:
                 return False
