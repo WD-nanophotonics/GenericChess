@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from ...core.coordinates import BoardShape, _shape
 from ...core.movement import LeapAtom, RayAtom, MovementAtom
 from ...rules.schema import canonical_json
 from .config import EvaluationConfig
@@ -13,7 +14,7 @@ from .movement_graph import MovementGraphMetrics, graph_metrics
 
 @dataclass(frozen=True, slots=True)
 class MovementCapabilityProfile:
-    """Geometry-only capability of a piece type (owner-relative, board-size aware)."""
+    """Geometry-only capability of a piece type (owner-relative, board-shape aware)."""
 
     movement_signature: str
     density_points: tuple[float, ...]
@@ -40,15 +41,16 @@ def movement_signature(atoms: tuple[MovementAtom, ...]) -> str:
     return canonical_json(sorted(entries))
 
 
-def _directional_asymmetry(n: int, atoms: tuple[MovementAtom, ...]) -> float:
+def _directional_asymmetry(n: int | BoardShape, atoms: tuple[MovementAtom, ...]) -> float:
+    shape = _shape(n)
     forward = backward = sideways = 0
-    for idx in range(n * n):
+    for idx in range(shape.area):
         from ...core.coordinates import index_to_square
         from ...core.movement import atom_targets
 
-        square = index_to_square(idx, n)
+        square = index_to_square(idx, shape)
         for atom in atoms:
-            for target in atom_targets(n, 0, square, atom):
+            for target in atom_targets(shape, 0, square, atom):
                 if target.rank > square.rank:
                     forward += 1
                 elif target.rank < square.rank:
@@ -62,7 +64,7 @@ def _directional_asymmetry(n: int, atoms: tuple[MovementAtom, ...]) -> float:
 
 
 def build_movement_capability(
-    n: int,
+    n: int | BoardShape,
     atoms: tuple[MovementAtom, ...],
     config: EvaluationConfig,
 ) -> MovementCapabilityProfile:
@@ -90,14 +92,15 @@ def build_movement_capability(
     )
 
 
-def _coverage_ratio(n: int, atoms: tuple[MovementAtom, ...]) -> float:
+def _coverage_ratio(n: int | BoardShape, atoms: tuple[MovementAtom, ...]) -> float:
     from ...core.coordinates import index_to_square
     from ...core.movement import atom_targets
 
+    shape = _shape(n)
     covered: set[int] = set()
-    for idx in range(n * n):
-        square = index_to_square(idx, n)
+    for idx in range(shape.area):
+        square = index_to_square(idx, shape)
         for atom in atoms:
-            for target in atom_targets(n, 0, square, atom):
-                covered.add(target.rank * n + target.file)
-    return len(covered) / (n * n) if n * n else 0.0
+            for target in atom_targets(shape, 0, square, atom):
+                covered.add(target.rank * shape.width + target.file)
+    return len(covered) / shape.area

@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections import deque
 from dataclasses import dataclass
 
-from ...core.coordinates import index_to_square
+from ...core.coordinates import BoardShape, _shape, index_to_square
 from ...core.movement import MovementAtom, atom_targets
 
 
@@ -22,19 +22,20 @@ _EXACT_THRESHOLD = 1024
 _SAMPLE_SOURCES = 64
 
 
-def build_movement_graph(n: int, atoms: tuple[MovementAtom, ...]) -> tuple[list[list[int]], int]:
+def build_movement_graph(n: int | BoardShape, atoms: tuple[MovementAtom, ...]) -> tuple[list[list[int]], int]:
     """Adjacency list (owner-relative orientation, player 0)."""
-    adj: list[list[int]] = [[] for _ in range(n * n)]
-    for idx in range(n * n):
-        square = index_to_square(idx, n)
+    shape = _shape(n)
+    adj: list[list[int]] = [[] for _ in range(shape.area)]
+    for idx in range(shape.area):
+        square = index_to_square(idx, shape)
         seen: set[int] = set()
         for atom in atoms:
-            for target in atom_targets(n, 0, square, atom):
-                tidx = target.rank * n + target.file
+            for target in atom_targets(shape, 0, square, atom):
+                tidx = target.rank * shape.width + target.file
                 if tidx not in seen:
                     seen.add(tidx)
                     adj[idx].append(tidx)
-    return adj, n * n
+    return adj, shape.area
 
 
 def _bfs(adj: list[list[int]], source: int, node_count: int) -> tuple[int, int, int]:
@@ -53,7 +54,7 @@ def _bfs(adj: list[list[int]], source: int, node_count: int) -> tuple[int, int, 
     return reachable, path_sum, max_dist
 
 
-def graph_metrics(n: int, atoms: tuple[MovementAtom, ...]) -> MovementGraphMetrics:
+def graph_metrics(n: int | BoardShape, atoms: tuple[MovementAtom, ...]) -> MovementGraphMetrics:
     adj, node_count = build_movement_graph(n, atoms)
     total_edges = sum(len(neighbors) for neighbors in adj)
     average_out_degree = total_edges / node_count if node_count else 0.0

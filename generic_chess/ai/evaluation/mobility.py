@@ -1,13 +1,14 @@
-"""Analytic expected mobility and deterministic Monte-Carlo fallback."""
+"""Exact independent-occupancy mobility and explicit sampling diagnostics."""
 
 from __future__ import annotations
 
 import hashlib
 import math
 import random
+from collections import Counter
 
-from ...core.coordinates import Square, index_to_square
-from ...core.movement import LeapAtom, RayAtom, MovementAtom
+from ...core.coordinates import BoardShape, Square, _shape, index_to_square
+from ...core.movement import LeapAtom, RayAtom, MovementAtom, atom_targets
 
 
 def expected_leap_mobility(
@@ -52,44 +53,42 @@ def atoms_overlap(atoms: tuple[MovementAtom, ...]) -> bool:
     return False
 
 
-def _leap_target_count(n: int, square: Square, offset: tuple[int, int]) -> int:
-    nf, nr = square.file + offset[0], square.rank + offset[1]
-    return 1 if (0 <= nf < n and 0 <= nr < n) else 0
+def _empty_prefix_histogram(
+    shape: BoardShape, atoms: tuple[MovementAtom, ...],
+) -> tuple[tuple[int, int], ...]:
+    counts: Counter[int] = Counter()
+    for idx in range(shape.area):
+        square = index_to_square(idx, shape)
+        prefixes: dict[Square, int] = {}
+        for atom in atoms:
+            for step, target in enumerate(atom_targets(shape, 0, square, atom)):
+                required = 0 if isinstance(atom, LeapAtom) else step
+                prefixes[target] = min(required, prefixes.get(target, required))
+        counts.update(prefixes.values())
+    return tuple(sorted(counts.items()))
 
 
-def _ray_path_length(n: int, square: Square, direction: tuple[int, int], max_steps: int | None) -> int:
-    df, dr = direction
-    cur = square
-    steps = 0
-    while max_steps is None or steps < max_steps:
-        nf, nr = cur.file + df, cur.rank + dr
-        if not (0 <= nf < n and 0 <= nr < n):
-            break
-        steps += 1
-        cur = Square(nf, nr)
-    return steps
+def _prefix_expectation(histogram, area: int, density: float) -> float:
+    return ((1.0 - density / 2.0)
+            * math.fsum(count * (1.0 - density) ** k for k, count in histogram)
+            / area)
 
 
 def analytic_mobility_at_density(
-    n: int,
+    n: int | BoardShape,
     atoms: tuple[MovementAtom, ...],
     density: float,
 ) -> float:
-    """Exact expected per-square pseudo-targets under the independent model."""
-    friendly = density / 2.0
-    total = 0.0
-    for idx in range(n * n):
-        square = index_to_square(idx, n)
-        per_square = 0.0
-        for atom in atoms:
-            if isinstance(atom, LeapAtom):
-                k = _leap_target_count(n, square, atom.offset)
-                per_square += expected_leap_mobility(k, friendly)
-            else:
-                k = _ray_path_length(n, square, atom.direction, atom.max_steps)
-                per_square += expected_ray_direction_mobility(k, density, friendly)
-        total += per_square
-    return total / (n * n)
+    """Exact per-square pseudo-target expectation for supported leap/ray atoms.
+
+    Primitive rays to one endpoint share its unique straight prefix; a direct
+    leap needs no empty prefix and dominates that condition. Endpoint events
+    can be dependent: linearity still permits summing their probabilities.
+    This is geometry, not cannon/blocked-leg semantics or material calibration.
+    Integer counts and sorted prefix lengths remove atom-order roundoff.
+    """
+    shape = _shape(n)
+    return _prefix_expectation(_empty_prefix_histogram(shape, atoms), shape.area, density)
 
 
 def _seed_for(signature: str, density: float, version: str) -> int:
@@ -98,7 +97,7 @@ def _seed_for(signature: str, density: float, version: str) -> int:
 
 
 def monte_carlo_mobility_at_density(
-    n: int,
+    n: int | BoardShape,
     atoms: tuple[MovementAtom, ...],
     density: float,
     signature: str,
@@ -110,24 +109,25 @@ def monte_carlo_mobility_at_density(
     Targets are de-duplicated per starting square so overlapping atoms never
     double count the same destination.
     """
+    shape = _shape(n)
     rng = random.Random(_seed_for(signature, density, version))
     total = 0.0
     for _ in range(samples):
         occupied: list[int] = []
         owner: dict[int, int] = {}
-        for idx in range(n * n):
+        for idx in range(shape.area):
             if rng.random() < density:
                 occupied.append(idx)
                 owner[idx] = 0 if rng.random() < 0.5 else 1
         occ_set = set(occupied)
-        for idx in range(n * n):
-            square = index_to_square(idx, n)
+        for idx in range(shape.area):
+            square = index_to_square(idx, shape)
             targets: set[int] = set()
             for atom in atoms:
                 if isinstance(atom, LeapAtom):
                     nf, nr = square.file + atom.offset[0], square.rank + atom.offset[1]
-                    if 0 <= nf < n and 0 <= nr < n:
-                        tidx = nr * n + nf
+                    if 0 <= nf < shape.width and 0 <= nr < shape.height:
+                        tidx = nr * shape.width + nf
                         if tidx not in occ_set or owner[tidx] == 1:
                             targets.add(tidx)
                 else:
@@ -136,10 +136,10 @@ def monte_carlo_mobility_at_density(
                     steps = 0
                     while atom.max_steps is None or steps < atom.max_steps:
                         nf, nr = cur.file + df, cur.rank + dr
-                        if not (0 <= nf < n and 0 <= nr < n):
+                        if not (0 <= nf < shape.width and 0 <= nr < shape.height):
                             break
                         steps += 1
-                        tidx = nr * n + nf
+                        tidx = nr * shape.width + nf
                         if tidx not in occ_set:
                             targets.add(tidx)
                             cur = Square(nf, nr)
@@ -149,11 +149,11 @@ def monte_carlo_mobility_at_density(
                         else:
                             break
             total += len(targets)
-    return total / (samples * n * n)
+    return total / (samples * shape.area)
 
 
 def mobility_density_curve(
-    n: int,
+    n: int | BoardShape,
     atoms: tuple[MovementAtom, ...],
     density_points: tuple[float, ...],
     *,
@@ -161,15 +161,13 @@ def mobility_density_curve(
     version: str,
     mc_samples: int,
 ) -> tuple[float, ...]:
-    use_mc = atoms_overlap(atoms)
-    curve = []
-    for density in density_points:
-        if use_mc:
-            curve.append(
-                monte_carlo_mobility_at_density(
-                    n, atoms, density, signature, version, mc_samples
-                )
-            )
-        else:
-            curve.append(analytic_mobility_at_density(n, atoms, density))
-    return tuple(curve)
+    """Exact independent-occupancy curve for supported movement primitives.
+
+    Legacy sampling keywords remain accepted for caller compatibility; they
+    do not affect this exact quantity. The explicit Monte-Carlo helper remains
+    available for diagnostics and recovery of the previous approximation.
+    """
+    shape = _shape(n)
+    histogram = _empty_prefix_histogram(shape, atoms)
+    return tuple(_prefix_expectation(histogram, shape.area, density)
+                 for density in density_points)

@@ -116,7 +116,7 @@ def test_ray_leap_dominance():
     assert leap_curve[1] > ray_curve[1]  # strictly better under occupancy
 
 
-def test_monte_carlo_dedup_overlapping_atoms():
+def test_density_curve_dedup_overlapping_atoms():
     config = _config()
     leap = LeapAtom((0, 1))
     dup_atoms = (leap, LeapAtom((0, 1)))

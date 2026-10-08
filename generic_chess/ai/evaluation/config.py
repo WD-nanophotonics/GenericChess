@@ -31,8 +31,9 @@ class EvaluationConfig:
     anchor_escape_weight: int = 5
     promotion_potential_weight: int = 3
     normal_piece_median_value: int = 1000
+    # Retained for explicit legacy sampling; exact profile curves ignore it.
     mc_samples: int = 64
-    evaluator_version: str = "generic-v1"
+    evaluator_version: str = "generic-v2"
 
 
 def config_hash(config: EvaluationConfig) -> str:

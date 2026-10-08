@@ -9,6 +9,7 @@ from generic_chess.ai.alphabeta.tuning import SearchTuning
 from generic_chess.ai.evaluation.cache import EvaluationProfileCache
 from generic_chess.ai.limits import SearchLimits
 from generic_chess.core.pieces import Piece
+from generic_chess.native import native_available
 from generic_chess.native.compiler import NativeUnsupportedRuleError, compile_native_semantic_rules
 from generic_chess.rules.compiler import compile_ruleset_for_execution
 from generic_chess.rules.western_chess import build_western_chess_ruleset
@@ -90,6 +91,14 @@ def test_default_evaluator_still_builds_and_reuses_default_profile():
     assert second.evaluation_profile_cache_hit
 
 
+def test_rectangular_default_profile_reports_its_unsupported_scope():
+    compiled = compile_ruleset_for_execution(rectangular_cannon(7, 5))
+    with pytest.raises(ValueError, match='supply an evaluator for rectangular search'):
+        AlphaBetaPlayer(compiled, use_disk_cache=False,
+                        use_native_semantic_legality=False)
+
+
+@pytest.mark.skipif(not native_available(), reason='Native unavailable; rectangular Native boundary unqualified')
 def test_rectangular_native_boundary_reports_unsupported_size():
     compiled = compile_ruleset_for_execution(rectangular_cannon(7, 5))
     with pytest.raises(NativeUnsupportedRuleError, match='semantic board size'):

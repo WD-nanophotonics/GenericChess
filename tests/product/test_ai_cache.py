@@ -62,7 +62,7 @@ def test_disk_cache_invalidations(ai_tmp_dir):
 
     versioned = EvaluationProfileCache(disk_dir=ai_tmp_dir)
     _, hit = versioned.get_or_build(
-        compiled, EvaluationConfig(evaluator_version="generic-v2")
+        compiled, EvaluationConfig(evaluator_version=config.evaluator_version + "-next")
     )
     assert not hit  # evaluator version changed -> miss
 

@@ -12,6 +12,7 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Any
 
+from ...core.coordinates import BoardShape, _shape
 from ...rules.compiled import CompiledRuleSet
 from .analyzer import MovementCapabilityProfile, build_movement_capability, movement_signature
 from .config import EvaluationConfig, config_hash
@@ -61,12 +62,15 @@ class MovementCapabilityCache:
     def __init__(self, max_entries: int = 512) -> None:
         self._memory = _MemoryCache(max_entries)
 
-    def key(self, n: int, signature: str, config: EvaluationConfig) -> tuple:
-        return (n, signature, config.evaluator_version, config_hash(config))
+    def key(self, n: int | BoardShape, signature: str, config: EvaluationConfig) -> tuple:
+        shape = _shape(n)
+        # Keep square integer/shape calls in the existing cache namespace.
+        extent = shape.width if shape.width == shape.height else (shape.width, shape.height)
+        return (extent, signature, config.evaluator_version, config_hash(config))
 
     def get_or_build(
         self,
-        n: int,
+        n: int | BoardShape,
         atoms,
         config: EvaluationConfig,
     ) -> tuple[MovementCapabilityProfile, bool]:

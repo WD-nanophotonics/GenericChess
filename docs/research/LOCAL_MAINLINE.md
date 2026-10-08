@@ -29,6 +29,12 @@ independent price/task questions; do not claim pre-final timings as deployment.
 
 ## Current evidence and decisions
 
+- Generic-v2 replaces signature-seeded hybrid sampling with exact independent-
+  occupancy endpoint-prefix counts for supported Leap/primitive Ray atoms.
+  This fixes finite representation noise, not material utility. Standalone
+  rectangle capability/cache work; default rectangle evaluation stays explicitly
+  unsupported. Four matched old/exact board-only caller pairs keep first choices;
+  one pair remains capped. See GEOMETRY_OCCUPANCY.md and its data/archive index.
 - Common-slot interventions remove type-presence mismatch but retain a declared
   context/task law.2456 cells/6602 Core-Native transitions agree. A finite
   physical-selector alias qualification and716-cell type-alias check pass.
@@ -113,6 +119,7 @@ branch backlog or publication gate. Exact operating rules remain in AGENTS.md.
 |---|---|
 |Semantic opportunity, equivalence, context/task boundaries|SEMANTIC_CAPABILITY.md; data/tasklaw_20261009.json; task_compression_20261009.json; finite_law_20261009.json; preparation_transfer_20261008.json; retention_20261008.json|
 |Descriptive price ratios and preparation/promotion bias|CROSS_GAME_PRICE_DIAGNOSTIC.md; data/pawn_bias_20261009.json|
+|Exact primitive occupancy, representation and rectangle capability|GEOMETRY_OCCUPANCY.md; data/geometry_occupancy_20261009.json|
 |Search interface, actual-effect qsupport, costs and caps|UNFAMILIAR_RULE_SEARCH.md; data/event_qsearch_20261009.json; rect_search_20261009.json; query_transfer_20261009.json; qfactorial_20261009.json; qeffects_20261008.json; generated6_20261008.json; generated8_20261008.json|
 |Retained utility alternatives|TEMPORAL_HAND_SERVICE.md; GOAL_INTERACTION.md; CONTRIBUTION_MODEL.md; JOINT_SERVICE_DIAGNOSTIC.md; CUSTODY_CONTINUATION.md|
 

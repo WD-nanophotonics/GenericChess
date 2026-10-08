@@ -80,6 +80,11 @@ def build_ruleset_profile(
     capability_cache: "MovementCapabilityCache | None" = None,
 ) -> RuleSetEvaluationProfile:
     n = compiled.board_size
+    if n is None:
+        raise ValueError(
+            "default evaluation requires square-board legacy metadata; "
+            "supply an evaluator for rectangular search"
+        )
     raw: dict[str, float] = {}
     capabilities: dict[str, MovementCapabilityProfile] = {}
     drop: dict[str, tuple[float, float]] = {}
