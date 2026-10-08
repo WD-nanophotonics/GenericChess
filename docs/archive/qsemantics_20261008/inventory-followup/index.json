@@ -1,0 +1,59 @@
+{
+  "base_commit": "5c1c80d6176dc2981de8452077f245b716f86ccc",
+  "members": [
+    {
+      "archive_path": "inventory_pilot.py",
+      "restore_path": ".local_agent/qsemantics-20261008/inventory_pilot.py",
+      "sha256": "4c7fcd89807614298b3f78f60d389d774ecc273887c287ef03c991d8fef5386f",
+      "bytes": 5563
+    },
+    {
+      "archive_path": "inventory-pilot.json",
+      "restore_path": ".local_agent/qsemantics-20261008/inventory-pilot.json",
+      "sha256": "b187a02342cdf4c7b633a3d4e63efab6b3b8d757704d66e8fbe530a1a7e346b7",
+      "bytes": 3861
+    },
+    {
+      "archive_path": "inventory_pilot_v2.py",
+      "restore_path": ".local_agent/qsemantics-20261008/inventory_pilot_v2.py",
+      "sha256": "11a530c98219ddf2c1cdeba7d6f19a5aab06aa3292882e548b915df88c58647e",
+      "bytes": 5641
+    },
+    {
+      "archive_path": "inventory-pilot-v2.json",
+      "restore_path": ".local_agent/qsemantics-20261008/inventory-pilot-v2.json",
+      "sha256": "9827c96216e540b51507beddd156798825f7269da6ab6459c7c6e6c4407d9e56",
+      "bytes": 3856
+    },
+    {
+      "archive_path": "inventory_controls.py",
+      "restore_path": ".local_agent/qsemantics-20261008/inventory_controls.py",
+      "sha256": "6193ba8e7ae335a030922c3fccdb771b4409dd750a1e4ae52a127fe5f0b34a13",
+      "bytes": 6971
+    },
+    {
+      "archive_path": "inventory-controls.json",
+      "restore_path": ".local_agent/qsemantics-20261008/inventory-controls.json",
+      "sha256": "775b109d7e5b6688b31bafdcd7903f0b010c5ff7f9c25127a46adda986cffd87",
+      "bytes": 3861
+    },
+    {
+      "archive_path": "inventory_controls_v2.py",
+      "restore_path": ".local_agent/qsemantics-20261008/inventory_controls_v2.py",
+      "sha256": "9ee71e88aa6701d17cfd5ee1d666d6c80b73b69654650b46871ce85a03f2cf0f",
+      "bytes": 7020
+    },
+    {
+      "archive_path": "inventory-controls-v2.json",
+      "restore_path": ".local_agent/qsemantics-20261008/inventory-controls-v2.json",
+      "sha256": "b308c31e5765bdd082262719cd2a01ee1b23597d702acca7a020a53ba9e81899",
+      "bytes": 5172
+    }
+  ],
+  "scope": "Local finite actual-inventory signal, not deployed. Restore original zip inputs then these paths. First assertion incorrectly demanded identical qnode counts for combined duplicate public actions; first failed record retained. Corrected v2 compares separate effect/explicit encodings and preserves duplicate traversal. Parent snapshots taken before push. No timing/strength or complete-classifier claim.",
+  "additional_failure": "First controls producer omitted tests/product import path; corrected v2 retains failed source/output.",
+  "additional_controls": {
+    "count": 16,
+    "scope": "Ordinary Rdrop and legacy/semantic pass preserve inventory in immutable and pushed mutable states. Full qsupport/terminal/cost acceptance still pending."
+  }
+}

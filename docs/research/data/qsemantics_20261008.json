@@ -3091,5 +3091,16 @@
       "Conditional unit reward and endpoint vectors are not stock prices; worst replies, loss zeros and terminal branches retained.",
       "Local single-push source clone is not deployed product code."
     ]
+  },
+  "inventory_followup": {
+    "index": "../../archive/qsemantics_20261008/inventory-followup/index.json",
+    "index_sha256": "eaa8276d0d4fc8077c66d53922db6de8372a4b95e96b2069c86e9f9473591c50",
+    "complete": true,
+    "calls": 18,
+    "findings": "Simple effect/explicit both1726/2qnodes; combined1726/3nodes because public duplicates remain. No-change all1726/5nodes, balanced all2000/5nodes; mutable/immutable agree. Limited signal resolves tested encoding support while count-conserving capability changes stay undetected; additional controls and cost remain pending. First assertion failure retained.",
+    "controls": {
+      "count": 16,
+      "scope": "Ordinary Rdrop and legacy/semantic pass preserve inventory in immutable and pushed mutable states. Full qsupport/terminal/cost acceptance still pending."
+    }
   }
 }

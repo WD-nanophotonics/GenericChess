@@ -1,0 +1,225 @@
+{
+  "complete": true,
+  "producer_sha256": "9ee71e88aa6701d17cfd5ee1d666d6c80b73b69654650b46871ce85a03f2cf0f",
+  "declaration": "Fixed three recorded4x4 witnesses, all variants/mutable modes, q1/hard8. Local actual owner/current board+owner/base hand count signal replaces unconditional semantic promotion shortcut; legacy shortcut retained. Parent inventory snapshotted before push. Expected transform both1726; no-change both1726 with equal support; balanced count-conserving transform deliberately not detected, both2000. No deployed change, full classifier, timing claim, or capture-only option claim. Subsequent cost/normaldrop/pass/terminal controls required before any product proposal. <=30sec/4096nodes per call.",
+  "inputs": {
+    ".local_agent/qsemantics-20261008/promotion-encoding.json": "3b81d563d8072e3ac4f04833af44b02377d66b5d88f2b1b69d7c3573638d55bd",
+    ".local_agent/qsemantics-20261008/promotion-nochange-v4.json": "2e13e3fb21bd1817cff5aa8611223aadb7d1f97d20a80f0d61d16091de1df39d",
+    ".local_agent/qsemantics-20261008/promotion-balanced.json": "320db1c286c2651e144d65b0b13c1ce79ed6d580c1f5a7dea613ed3052da7f72"
+  },
+  "cases": [
+    {
+      "witness": "promotion-encoding",
+      "variant": "effect",
+      "calls": [
+        {
+          "mutable": false,
+          "value": 1726,
+          "qnodes": 2
+        },
+        {
+          "mutable": true,
+          "value": 1726,
+          "qnodes": 2
+        }
+      ]
+    },
+    {
+      "witness": "promotion-encoding",
+      "variant": "explicit",
+      "calls": [
+        {
+          "mutable": false,
+          "value": 1726,
+          "qnodes": 2
+        },
+        {
+          "mutable": true,
+          "value": 1726,
+          "qnodes": 2
+        }
+      ]
+    },
+    {
+      "witness": "promotion-encoding",
+      "variant": "combined",
+      "calls": [
+        {
+          "mutable": false,
+          "value": 1726,
+          "qnodes": 3
+        },
+        {
+          "mutable": true,
+          "value": 1726,
+          "qnodes": 3
+        }
+      ]
+    },
+    {
+      "witness": "promotion-nochange-v4",
+      "variant": "effect",
+      "calls": [
+        {
+          "mutable": false,
+          "value": 1726,
+          "qnodes": 5
+        },
+        {
+          "mutable": true,
+          "value": 1726,
+          "qnodes": 5
+        }
+      ]
+    },
+    {
+      "witness": "promotion-nochange-v4",
+      "variant": "explicit",
+      "calls": [
+        {
+          "mutable": false,
+          "value": 1726,
+          "qnodes": 5
+        },
+        {
+          "mutable": true,
+          "value": 1726,
+          "qnodes": 5
+        }
+      ]
+    },
+    {
+      "witness": "promotion-nochange-v4",
+      "variant": "combined",
+      "calls": [
+        {
+          "mutable": false,
+          "value": 1726,
+          "qnodes": 5
+        },
+        {
+          "mutable": true,
+          "value": 1726,
+          "qnodes": 5
+        }
+      ]
+    },
+    {
+      "witness": "promotion-balanced",
+      "variant": "effect",
+      "calls": [
+        {
+          "mutable": false,
+          "value": 2000,
+          "qnodes": 5
+        },
+        {
+          "mutable": true,
+          "value": 2000,
+          "qnodes": 5
+        }
+      ]
+    },
+    {
+      "witness": "promotion-balanced",
+      "variant": "explicit",
+      "calls": [
+        {
+          "mutable": false,
+          "value": 2000,
+          "qnodes": 5
+        },
+        {
+          "mutable": true,
+          "value": 2000,
+          "qnodes": 5
+        }
+      ]
+    },
+    {
+      "witness": "promotion-balanced",
+      "variant": "combined",
+      "calls": [
+        {
+          "mutable": false,
+          "value": 2000,
+          "qnodes": 5
+        },
+        {
+          "mutable": true,
+          "value": 2000,
+          "qnodes": 5
+        }
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "kind": "ordinary_Rdrop",
+      "inventory_unchanged": true
+    },
+    {
+      "kind": "ordinary_Rdrop",
+      "inventory_unchanged": true
+    },
+    {
+      "kind": "ordinary_Rdrop",
+      "inventory_unchanged": true
+    },
+    {
+      "kind": "ordinary_Rdrop",
+      "inventory_unchanged": true
+    },
+    {
+      "kind": "ordinary_Rdrop",
+      "inventory_unchanged": true
+    },
+    {
+      "kind": "ordinary_Rdrop",
+      "inventory_unchanged": true
+    },
+    {
+      "kind": "ordinary_Rdrop",
+      "inventory_unchanged": true
+    },
+    {
+      "kind": "ordinary_Rdrop",
+      "inventory_unchanged": true
+    },
+    {
+      "kind": "ordinary_Rdrop",
+      "inventory_unchanged": true
+    },
+    {
+      "kind": "ordinary_Rdrop",
+      "inventory_unchanged": true
+    },
+    {
+      "kind": "ordinary_Rdrop",
+      "inventory_unchanged": true
+    },
+    {
+      "kind": "ordinary_Rdrop",
+      "inventory_unchanged": true
+    },
+    {
+      "kind": "ordinary_Rdrop",
+      "inventory_unchanged": true
+    },
+    {
+      "kind": "ordinary_Rdrop",
+      "inventory_unchanged": true
+    },
+    {
+      "kind": "pass",
+      "semantic": false,
+      "inventory_unchanged": true
+    },
+    {
+      "kind": "pass",
+      "semantic": true,
+      "inventory_unchanged": true
+    }
+  ],
+  "seconds": 0.1968370999675244
+}

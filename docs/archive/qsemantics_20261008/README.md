@@ -34,3 +34,8 @@ change is a limited proposed signal, not a complete tactical classifier. Full
 physical successor equality in one fingerprint does not license merging public
 actions or history-dependent states. The advisor objection was adopted locally;
 the advisor read published classifiers but did not execute these local pilots.
+
+The separate inventory-followup directory preserves a subsequent18-call local
+prototype, its first failed assertion and corrected source/output. Its index
+pins each restore path/hash against published base5c1c80d. Restore original zip
+inputs first; no product source is changed by this prototype.

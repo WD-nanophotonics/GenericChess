@@ -162,7 +162,8 @@ with effect-only versus redundant explicit-promotion encodings, but q1 returns
 an inventory fallback after unconditional promotion metadata is insufficient.
 Dot independently read both published classifiers; local witness runs remain
 Agent evidence. Adopt the finite no-change objection, preserve public histories,
-and test a limited price-free actual-inventory signal before deployment. Counts
+and the local18-call actual-inventory prototype now makes the tested encoding
+support agree. Drop/pass/terminal controls and cost remain pending; not deployed. Counts
 can cancel simultaneous type swaps; this is not a complete tactical classifier.
 Existing q2 PVS curve yields2/4vs2/4 D2 completions at4096nodes and3/4vs3/4
 at8192; individual node/time regressions remain. No default change.

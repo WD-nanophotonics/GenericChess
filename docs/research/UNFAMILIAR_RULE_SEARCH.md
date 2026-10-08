@@ -996,3 +996,19 @@ encodings still split support(false/true) and qnodes5/6; scores both2000.
 Thus inventory alone cannot detect all actual transformations. The next finite
 contract must state this limitation and resolve encoding equality, rather than
 claiming a complete detector or keeping unconditional semantic metadata authority.
+
+A separate local inventory prototype removes unconditional semantic promotion
+authority (legacy shortcut retained), snapshots parent counts before push and
+compares actual board-current plus hand-base owner/type counts.18 finite calls
+give effect/explicit1726/2qnodes, no-change1726/5 and balanced2000/5, matching
+mutable/immutable. Combined transform retains both public actions:3qnodes,
+not2. The first assertion wrongly demanded identical combined traversal and is
+retained; corrected comparison preserves duplicate identities. This limited
+signal resolves the tested support split, still misses count-conserving type
+swaps, and has no drop/pass/terminal/cost acceptance. Not deployed. Supplement
+recovery: archive/qsemantics_20261008/inventory-followup/index.json.
+
+Additional inventory-only controls cover ordinary Rdrop and both legacy/semantic
+pass through immutable successors and mutable push/pop: counts stay unchanged.
+They check only the proposed signal, not full qsupport or terminal precedence.
+An initial missing fixture import path is retained alongside the corrected run.
