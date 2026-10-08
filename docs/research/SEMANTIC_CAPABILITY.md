@@ -1082,3 +1082,12 @@ The finite dormant-route control does not establish arbitrary reachable-state
 equivalence. Keep this qualification before treating the recipe as a portable
 material generator; do not add a general alias framework or silently change
 the primary normalization to obtain a preferred result.
+
+
+A same-rule scale-only continuation at the changed seed2002/ply4 root compares
+the primary median to a duplicate-B population median, without changing raw
+ratios or hand/order/dynamic terms. All four rotated cold calls complete D2
+and preserve the candidate's capture choice and score−4. This reduces the
+immediate practical concern for that caller, not the normalization support
+qualification or a general scale-invariance claim. No new rule context,
+preferred normalization or successful-strength criterion was selected.

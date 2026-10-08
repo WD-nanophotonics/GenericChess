@@ -152,5 +152,42 @@
   },
   "caller_scope_archive": "../../archive/tasklaw_20261009/caller-scope.zip",
   "caller_scope_index": "../../archive/tasklaw_20261009/caller-scope-index.json",
-  "verified_caller_scope_members": 9
+  "verified_caller_scope_members": 9,
+  "scale_control": {
+    "same_rule": true,
+    "seed": 202610082002,
+    "ply": 4,
+    "raw": {
+      "A": "1231/1870",
+      "B": "93/187",
+      "P": "135/187",
+      "X": "181/935"
+    },
+    "medians": {
+      "primary": "2161/3740",
+      "duplicate_B_scale": "93/187"
+    },
+    "boards": {
+      "primary": {
+        "K": 0,
+        "P": 1249,
+        "X": 335,
+        "A": 1139,
+        "B": 861
+      },
+      "duplicate_B_scale": {
+        "K": 0,
+        "P": 1452,
+        "X": 389,
+        "A": 1324,
+        "B": 1000
+      }
+    },
+    "calls": 4,
+    "all_d2": true,
+    "choice_and_score_preserved": true,
+    "scope": "Same candidate raw ratios; old vs duplicate-B median, hand/order/dynamic fixed. No general normalization neutrality claim; no new default."
+  },
+  "scale_archive": "../../archive/tasklaw_20261009/scale-control.zip",
+  "scale_index": "../../archive/tasklaw_20261009/scale-control-index.json"
 }
