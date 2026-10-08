@@ -1,0 +1,39 @@
+{
+  "base_commit": "6120b63f4fcb2a564fbfd36770a5c01b72eeca85",
+  "members": [
+    {
+      "path": ".local_agent/drop-budget-20261008/curve.json",
+      "bytes": 152582,
+      "sha256": "dc2f0344a9bd7f71cfb08a33b466b74404e2a8762dc8ca4f7440b78f98f41905"
+    },
+    {
+      "path": ".local_agent/drop-budget-20261008/curve.py",
+      "bytes": 3454,
+      "sha256": "af4a924aa5f66f9667647d1da60c147cba20b7da09fc37b461ba07a36f532a8d"
+    },
+    {
+      "path": ".local_agent/drop-budget-20261008/mate-replay.json",
+      "bytes": 2347,
+      "sha256": "27e244fa248ed710b8f218a4e2fe30769f3e3b6078a2d6b7ef87089b9c1ec595"
+    },
+    {
+      "path": ".local_agent/drop-budget-20261008/mate_replay.py",
+      "bytes": 2815,
+      "sha256": "7987ca825c97ea4c24840b12259ecfdf0ac8ce5f99e9e15a56b94b42fbfc4387"
+    },
+    {
+      "path": ".local_agent/drop-budget-20261008/package.py",
+      "bytes": 3553,
+      "sha256": "0a373076d2c696404bf8cdb6c6a1d95b1e94618cec63da6a7fecab97d4a81d61"
+    },
+    {
+      "path": ".local_agent/preparation-transfer-20261008/recombined.json",
+      "bytes": 102468,
+      "sha256": "4d0b1c9dd445a42b3dfb85f788a7dfacb411b62258c827a3ea52c1195f00a74e"
+    }
+  ],
+  "archive_sha256": "a39e409bdd527bad48786ec542f0d1549aaffdc22569cad06869b48f3b88cd90",
+  "extracted_rehashed": true,
+  "excluded": "User/private data, Slack/accounts, credentials, workflow state.",
+  "caller_correction": "Initial mate replay tried to decode dataclass record without kind; selected exact actual legal action by full record identity instead, before producing result. Not a product defect."
+}

@@ -1,0 +1,1525 @@
+{
+  "complete": true,
+  "producer_sha256": "22a7d053905b8dd6c071e5d0510b37d894e7c0a65fdab1fb88902eefc05ca508",
+  "input_sha256": {
+    "transfer.json": "582a36a8fa46b0dbe0fdd81723706db32e0215610da43b102918503673a6cd4f",
+    "target.json": "d8c0356ca57938f18c2de848e94d8c69e028377688508e1b2fd70c8b79343be5",
+    "cross-game.json": "efb7cf9c0c12b17cad6dc5223126bfcaf799d347abd257f665daf51bd0d9b001",
+    "cannon.json": "37321fc5e48c1921db827a8d73718f040ce9453623ce2480f236fccdfa58e66f",
+    "cannon-complete.json": "6eae1700d2e015c1b5471eb27085aede8b75b6efb444f324bc91f88acb09a8fa",
+    "additive-control.json": "149d72f284ebb798bbceddbc2d6c4bfc13c060456913338c2e7a0818a5a8d69a",
+    "search-summary.json": "a1ac16b4dd85a67cf0aa96b089b61da726907d32ca1780a62b3630f1ff862807",
+    "choice-boundary.json": "d06f6a1008565b5490e49f9b2f0bb20d4eb80f8dce96cd8e2df0e548426374ab",
+    "recombined.json": "4d0b1c9dd445a42b3dfb85f788a7dfacb411b62258c827a3ea52c1195f00a74e",
+    "drop-order.json": "f14c05f14f58ac6f735a48d3af22d0caee0d3ae327564f4c7a03315e23d29800"
+  },
+  "owner_orientation_transfer": {
+    "roots": 10,
+    "preparations": 88,
+    "witnesses": 10,
+    "core_transitions": 1941,
+    "seconds": 0.5806662000250071,
+    "scope": "180degree rotation+owner swap on ten existing Chess roots with empty auxiliary state. Geometry IDs resolved by actual legal-action bijection, not assumed rotation-invariant. No castling/right-slot generalization."
+  },
+  "target_role_matrix": {
+    "roots": 50,
+    "accepted": 50,
+    "common_mass": 1.0,
+    "scores": {
+      "P": {
+        "preparation": 0.007727272727272728,
+        "direct": 0.0
+      },
+      "N": {
+        "preparation": 0.038826192964124,
+        "direct": 0.004658197217180883
+      },
+      "B": {
+        "preparation": 0.30226518054104257,
+        "direct": 0.029898989898989897
+      },
+      "R": {
+        "preparation": 0.4240014176856282,
+        "direct": 0.02247276688453159
+      },
+      "Q": {
+        "preparation": 0.7070482603815936,
+        "direct": 0.05237175678352149
+      }
+    },
+    "core_transitions": 7168,
+    "seconds": 2.9344001000281423
+  },
+  "cross_game": {
+    "chess": {
+      "roots": 580,
+      "common_strata": 58,
+      "common_mass": 0.5047619047619047,
+      "core_transitions": 102510,
+      "seconds": 29.678783599985763,
+      "scores": {
+        "P": {
+          "preparation": 0.02775987310306856,
+          "direct": 0.02532825342173911,
+          "preparation_pawn_relative": 1.0
+        },
+        "N": {
+          "preparation": 0.2482184807356491,
+          "direct": 0.11870976747349679,
+          "preparation_pawn_relative": 8.94162879686259
+        },
+        "B": {
+          "preparation": 0.3189804894130569,
+          "direct": 0.09768047621533645,
+          "preparation_pawn_relative": 11.49070416239752
+        },
+        "R": {
+          "preparation": 0.7459856065249586,
+          "direct": 0.29593626762487796,
+          "preparation_pawn_relative": 26.8728031916867
+        },
+        "Q": {
+          "preparation": 0.9101058699933445,
+          "direct": 0.39470997956372117,
+          "preparation_pawn_relative": 32.78494345468538
+        }
+      },
+      "per_owner": {
+        "0": {
+          "P": {
+            "preparation": 0.023692306031691205,
+            "direct": 0.013502050884126357
+          },
+          "N": {
+            "preparation": 0.25313914388260816,
+            "direct": 0.11845733710182568
+          },
+          "B": {
+            "preparation": 0.32828821543339165,
+            "direct": 0.09891409152076434
+          },
+          "R": {
+            "preparation": 0.7350963213532427,
+            "direct": 0.28735058167255767
+          },
+          "Q": {
+            "preparation": 0.9079493245452376,
+            "direct": 0.3870082823283526
+          }
+        },
+        "1": {
+          "P": {
+            "preparation": 0.031827440174445915,
+            "direct": 0.03715445595935186
+          },
+          "N": {
+            "preparation": 0.24329781758869007,
+            "direct": 0.11896219784516791
+          },
+          "B": {
+            "preparation": 0.30967276339272215,
+            "direct": 0.09644686090990855
+          },
+          "R": {
+            "preparation": 0.7568748916966744,
+            "direct": 0.3045219535771983
+          },
+          "Q": {
+            "preparation": 0.9122624154414517,
+            "direct": 0.40241167679908973
+          }
+        }
+      },
+      "zero_roots": 162,
+      "terminal_preparations": 19,
+      "terminal_replies": 44
+    },
+    "shogi": {
+      "roots": 3276,
+      "common_strata": 126,
+      "common_mass": 0.7678571428571428,
+      "core_transitions": 426235,
+      "seconds": 186.05677370005287,
+      "scores": {
+        "P": {
+          "preparation": 0.02161565216418604,
+          "direct": 0.018784653568925294,
+          "preparation_pawn_relative": 1.0
+        },
+        "L": {
+          "preparation": 0.04521359199966741,
+          "direct": 0.06290171222086767,
+          "preparation_pawn_relative": 2.091706123703253
+        },
+        "N": {
+          "preparation": 0.017765605087470798,
+          "direct": 0.010042192560989554,
+          "preparation_pawn_relative": 0.8218861477103984
+        },
+        "S": {
+          "preparation": 0.12035611564731558,
+          "direct": 0.07815486542227877,
+          "preparation_pawn_relative": 5.5680076054669305
+        },
+        "G": {
+          "preparation": 0.1989978552759181,
+          "direct": 0.10213185554755323,
+          "preparation_pawn_relative": 9.206192520326928
+        },
+        "B": {
+          "preparation": 0.4316593442550525,
+          "direct": 0.13369505356506917,
+          "preparation_pawn_relative": 19.969758070508213
+        },
+        "R": {
+          "preparation": 0.7162004204998894,
+          "direct": 0.2312607988790823,
+          "preparation_pawn_relative": 33.13341716733064
+        },
+        "TP": {
+          "preparation": 0.1989978552759181,
+          "direct": 0.10213185554755323,
+          "preparation_pawn_relative": 9.206192520326928
+        },
+        "TL": {
+          "preparation": 0.1989978552759181,
+          "direct": 0.10213185554755323,
+          "preparation_pawn_relative": 9.206192520326928
+        },
+        "TN": {
+          "preparation": 0.1989978552759181,
+          "direct": 0.10213185554755323,
+          "preparation_pawn_relative": 9.206192520326928
+        },
+        "TS": {
+          "preparation": 0.1989978552759181,
+          "direct": 0.10213185554755323,
+          "preparation_pawn_relative": 9.206192520326928
+        },
+        "TB": {
+          "preparation": 0.6642930906091662,
+          "direct": 0.20380406146331437,
+          "preparation_pawn_relative": 30.732040169937704
+        },
+        "TR": {
+          "preparation": 0.8082609842517752,
+          "direct": 0.29015082981084694,
+          "preparation_pawn_relative": 37.39239409074804
+        }
+      },
+      "per_owner": {
+        "0": {
+          "P": {
+            "preparation": 0.022496268477057154,
+            "direct": 0.015342377260981914
+          },
+          "L": {
+            "preparation": 0.052378143707769595,
+            "direct": 0.06801204978115277
+          },
+          "N": {
+            "preparation": 0.016837010625260322,
+            "direct": 0.013716903251786974
+          },
+          "S": {
+            "preparation": 0.1294070925684073,
+            "direct": 0.07591078924572543
+          },
+          "G": {
+            "preparation": 0.18191947666740155,
+            "direct": 0.0945427978890997
+          },
+          "B": {
+            "preparation": 0.4313246992470268,
+            "direct": 0.1361800893659856
+          },
+          "R": {
+            "preparation": 0.7181725575933063,
+            "direct": 0.23251663194573083
+          },
+          "TP": {
+            "preparation": 0.18191947666740155,
+            "direct": 0.0945427978890997
+          },
+          "TL": {
+            "preparation": 0.18191947666740155,
+            "direct": 0.0945427978890997
+          },
+          "TN": {
+            "preparation": 0.18191947666740155,
+            "direct": 0.0945427978890997
+          },
+          "TS": {
+            "preparation": 0.18191947666740155,
+            "direct": 0.0945427978890997
+          },
+          "TB": {
+            "preparation": 0.6541658385146535,
+            "direct": 0.2022848597900507
+          },
+          "TR": {
+            "preparation": 0.8068364918123024,
+            "direct": 0.2921246820872967
+          }
+        },
+        "1": {
+          "P": {
+            "preparation": 0.02073503585131492,
+            "direct": 0.022226929876868678
+          },
+          "L": {
+            "preparation": 0.03804904029156521,
+            "direct": 0.05779137466058256
+          },
+          "N": {
+            "preparation": 0.018694199549681278,
+            "direct": 0.006367481870192135
+          },
+          "S": {
+            "preparation": 0.1113051387262239,
+            "direct": 0.08039894159883212
+          },
+          "G": {
+            "preparation": 0.21607623388443467,
+            "direct": 0.10972091320600676
+          },
+          "B": {
+            "preparation": 0.43199398926307814,
+            "direct": 0.13121001776415273
+          },
+          "R": {
+            "preparation": 0.7142282834064723,
+            "direct": 0.23000496581243376
+          },
+          "TP": {
+            "preparation": 0.21607623388443467,
+            "direct": 0.10972091320600676
+          },
+          "TL": {
+            "preparation": 0.21607623388443467,
+            "direct": 0.10972091320600676
+          },
+          "TN": {
+            "preparation": 0.21607623388443467,
+            "direct": 0.10972091320600676
+          },
+          "TS": {
+            "preparation": 0.21607623388443467,
+            "direct": 0.10972091320600676
+          },
+          "TB": {
+            "preparation": 0.6744203427036791,
+            "direct": 0.205323263136578
+          },
+          "TR": {
+            "preparation": 0.8096854766912477,
+            "direct": 0.2881769775343972
+          }
+        }
+      },
+      "zero_roots": 1954,
+      "terminal_preparations": 31,
+      "terminal_replies": 874
+    }
+  },
+  "cannon_coordinate": {
+    "roots": 243,
+    "scores": {
+      "C": {
+        "preparation": 0.12410701877302734,
+        "direct": 0.05382023687107893
+      },
+      "R": {
+        "preparation": 0.678838646024409,
+        "direct": 0.23263681041071246
+      },
+      "N": {
+        "preparation": 0.2999118212524672,
+        "direct": 0.13665520698609857
+      }
+    },
+    "partial_completed_roots": 191,
+    "partial_rows": 192,
+    "original_cost_checkpoint_transitions": 120027,
+    "original_cost_checkpoint_seconds": 28.94329520012252,
+    "incremental_transitions": 26542,
+    "incremental_seconds": 7.835808099946007,
+    "prior_partial_sha256": "37321fc5e48c1921db827a8d73718f040ce9453623ce2480f236fccdfa58e66f"
+  },
+  "additive_boundary": {
+    "seed": 202610089000,
+    "qualifying_public_preparations": 22,
+    "distinct_visible_destinations": 11,
+    "table": {
+      "K": 0,
+      "C": 414,
+      "R": 2263,
+      "N": 1000
+    },
+    "owner0_material": [
+      1849
+    ],
+    "task_success_range": [
+      0.0,
+      0.6774193548387096
+    ]
+  },
+  "price_search": {
+    "complete": true,
+    "producer_sha256": "e896aa9a200975fd7d7fcaaca2ecf64091189389519d8fec7279a17ce356afe7",
+    "input_sha256": "2839894c8d4696575348bab7cf53be933499f36e7aa3bc63d64277c885dfb7d4",
+    "declared_roots": 24,
+    "accepted_roots": 24,
+    "seconds": 180.67457149992697,
+    "comparisons": {
+      "3:generic/direct": {
+        "paired_complete": 24,
+        "changed_actions": 4,
+        "changed_scores": 18,
+        "median_node_ratio_b_over_a": 1.0,
+        "total_search_seconds_a": 9.975095600122586,
+        "total_search_seconds_b": 10.214665100211278
+      },
+      "3:generic/preparation": {
+        "paired_complete": 24,
+        "changed_actions": 4,
+        "changed_scores": 18,
+        "median_node_ratio_b_over_a": 1.0,
+        "total_search_seconds_a": 9.975095600122586,
+        "total_search_seconds_b": 10.427005699835718
+      },
+      "3:direct/preparation": {
+        "paired_complete": 24,
+        "changed_actions": 0,
+        "changed_scores": 12,
+        "median_node_ratio_b_over_a": 1.0,
+        "total_search_seconds_a": 10.214665100211278,
+        "total_search_seconds_b": 10.427005699835718
+      },
+      "4:generic/direct": {
+        "paired_complete": 23,
+        "changed_actions": 3,
+        "changed_scores": 15,
+        "median_node_ratio_b_over_a": 1.0134148747287433,
+        "total_search_seconds_a": 31.237572299549356,
+        "total_search_seconds_b": 33.83045270014554
+      },
+      "4:generic/preparation": {
+        "paired_complete": 23,
+        "changed_actions": 4,
+        "changed_scores": 15,
+        "median_node_ratio_b_over_a": 1.0220088972137673,
+        "total_search_seconds_a": 31.237572299549356,
+        "total_search_seconds_b": 33.842690699733794
+      },
+      "4:direct/preparation": {
+        "paired_complete": 23,
+        "changed_actions": 1,
+        "changed_scores": 12,
+        "median_node_ratio_b_over_a": 1.0,
+        "total_search_seconds_a": 33.83045270014554,
+        "total_search_seconds_b": 33.842690699733794
+      }
+    },
+    "repeat_calls": 72,
+    "search_calls": 216,
+    "fallbacks": 0,
+    "limits": [
+      "Fixed material sum is an additional deployment assumption, not the original preparation policy.",
+      "Changes in actions/scores/node use are sensitivity, not strength gains.",
+      "Ordering weights and attack authority fixed; leaf prices vary and may affect internal TT/killers naturally.",
+      "Node-capped depth4 cells remain unknown at depth4; no result-driven extension.",
+      "Cold repeated depth3 decisions must match action, score, nodes, completed depth and PV exactly.",
+      "Wall times are local observations, no hardware-independent performance claims."
+    ]
+  },
+  "strict_choice_control": {
+    "seed": 202610104008,
+    "reference_cells": [
+      {
+        "evaluator": "direct",
+        "root_choice": "direct",
+        "complete": true,
+        "root_perspective_value": 995,
+        "reply": {
+          "pattern_id": "legacy_028",
+          "geometry_id": "g21",
+          "actor_type_id": "R",
+          "from_square": {
+            "file": 1,
+            "rank": 1
+          },
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          },
+          "promotion_target_id": null
+        },
+        "leaf_evaluations": 29429,
+        "seconds": 8.062402199953794
+      },
+      {
+        "evaluator": "direct",
+        "root_choice": "preparation",
+        "complete": true,
+        "root_perspective_value": 749,
+        "reply": {
+          "pattern_id": "legacy_019",
+          "geometry_id": "g17",
+          "actor_type_id": "N",
+          "from_square": {
+            "file": 5,
+            "rank": 5
+          },
+          "to_square": {
+            "file": 3,
+            "rank": 6
+          },
+          "promotion_target_id": null
+        },
+        "leaf_evaluations": 30118,
+        "seconds": 8.254887899849564
+      },
+      {
+        "evaluator": "preparation",
+        "root_choice": "direct",
+        "complete": true,
+        "root_perspective_value": 995,
+        "reply": {
+          "pattern_id": "legacy_028",
+          "geometry_id": "g21",
+          "actor_type_id": "R",
+          "from_square": {
+            "file": 1,
+            "rank": 1
+          },
+          "to_square": {
+            "file": 2,
+            "rank": 1
+          },
+          "promotion_target_id": null
+        },
+        "leaf_evaluations": 29429,
+        "seconds": 8.113625299884006
+      },
+      {
+        "evaluator": "preparation",
+        "root_choice": "preparation",
+        "complete": true,
+        "root_perspective_value": 1310,
+        "reply": {
+          "pattern_id": "legacy_019",
+          "geometry_id": "g17",
+          "actor_type_id": "N",
+          "from_square": {
+            "file": 5,
+            "rank": 5
+          },
+          "to_square": {
+            "file": 3,
+            "rank": 6
+          },
+          "promotion_target_id": null
+        },
+        "leaf_evaluations": 30118,
+        "seconds": 8.206774099962786
+      }
+    ],
+    "pv_rows": [
+      {
+        "table": "direct",
+        "root_score": 995,
+        "steps": [
+          {
+            "action": {
+              "pattern_id": "legacy_031",
+              "geometry_id": "g22",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 5,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 5
+              },
+              "promotion_target_id": null
+            },
+            "captured": {
+              "owner": 1,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "action": {
+              "pattern_id": "legacy_028",
+              "geometry_id": "g21",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            "captured": null,
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "action": {
+              "pattern_id": "legacy_026",
+              "geometry_id": "g20",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 5,
+                "rank": 5
+              },
+              "to_square": {
+                "file": 7,
+                "rank": 5
+              },
+              "promotion_target_id": null
+            },
+            "captured": null,
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "action": {
+              "pattern_id": "legacy_006",
+              "geometry_id": "g11",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 7,
+                "rank": 7
+              },
+              "to_square": {
+                "file": 6,
+                "rank": 6
+              },
+              "promotion_target_id": null
+            },
+            "captured": null,
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          }
+        ],
+        "fixed_owner0_leaf_scores": {
+          "generic": 525,
+          "direct": 995,
+          "preparation": 995
+        },
+        "material": {
+          "generic": 530,
+          "direct": 1000,
+          "preparation": 1000
+        },
+        "dynamic": {
+          "generic": -5,
+          "direct": -5,
+          "preparation": -5
+        },
+        "history_length": 5
+      },
+      {
+        "table": "preparation",
+        "root_score": 1310,
+        "steps": [
+          {
+            "action": {
+              "pattern_id": "legacy_007",
+              "geometry_id": "g11",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            "captured": {
+              "owner": 1,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            },
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "action": {
+              "pattern_id": "legacy_019",
+              "geometry_id": "g17",
+              "actor_type_id": "N",
+              "from_square": {
+                "file": 5,
+                "rank": 5
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 6
+              },
+              "promotion_target_id": null
+            },
+            "captured": {
+              "owner": 0,
+              "base_type_id": "N",
+              "current_type_id": "N",
+              "promoted": false
+            },
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "action": {
+              "pattern_id": "legacy_033",
+              "geometry_id": "g23",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 5,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            "captured": {
+              "owner": 1,
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "promoted": false
+            },
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "action": {
+              "pattern_id": "legacy_011",
+              "geometry_id": "g13",
+              "actor_type_id": "N",
+              "from_square": {
+                "file": 3,
+                "rank": 6
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 5
+              },
+              "promotion_target_id": null
+            },
+            "captured": {
+              "owner": 0,
+              "base_type_id": "C",
+              "current_type_id": "C",
+              "promoted": false
+            },
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          }
+        ],
+        "fixed_owner0_leaf_scores": {
+          "generic": 517,
+          "direct": 749,
+          "preparation": 1310
+        },
+        "material": {
+          "generic": 470,
+          "direct": 702,
+          "preparation": 1263
+        },
+        "dynamic": {
+          "generic": 47,
+          "direct": 47,
+          "preparation": 47
+        },
+        "history_length": 5
+      }
+    ],
+    "seconds": 32.6872497999575
+  },
+  "recombined_lifecycle": {
+    "seconds": 13.724322099937126,
+    "cases": [
+      {
+        "ply": 4,
+        "history_length": 5,
+        "aux": [
+          [
+            [
+              0,
+              -1
+            ],
+            0
+          ]
+        ],
+        "hands": [
+          {
+            "counts": [
+              [
+                "R",
+                2
+              ]
+            ]
+          },
+          {
+            "counts": []
+          }
+        ],
+        "legal_actions": 45,
+        "legal_drops": 0,
+        "references": {
+          "2": {
+            "complete": true,
+            "score": 10659,
+            "action": {
+              "pattern_id": "legacy_004",
+              "geometry_id": "g10",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 0,
+                "rank": 2
+              },
+              "to_square": {
+                "file": 0,
+                "rank": 6
+              },
+              "promotion_target_id": null
+            },
+            "seconds": 0.04660910018719733,
+            "leaf_evaluations": 200
+          },
+          "3": {
+            "complete": false,
+            "failure": "reference cost fuse",
+            "seconds": 0.8154833998996764,
+            "leaf_evaluations": 4097
+          }
+        },
+        "searches": [
+          {
+            "depth": 2,
+            "repeat": 0,
+            "wall_seconds": 0.0373301999643445,
+            "score": 10659,
+            "completed_depth": 2,
+            "nodes": 144,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          },
+          {
+            "depth": 2,
+            "repeat": 1,
+            "wall_seconds": 0.03606580011546612,
+            "score": 10659,
+            "completed_depth": 2,
+            "nodes": 144,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          },
+          {
+            "depth": 3,
+            "repeat": 0,
+            "wall_seconds": 1.0963383000344038,
+            "score": 999999997,
+            "completed_depth": 3,
+            "nodes": 3762,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          },
+          {
+            "depth": 3,
+            "repeat": 1,
+            "wall_seconds": 1.0941103999502957,
+            "score": 999999997,
+            "completed_depth": 3,
+            "nodes": 3762,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          }
+        ]
+      },
+      {
+        "ply": 5,
+        "history_length": 6,
+        "aux": [
+          [
+            [
+              0,
+              -1
+            ],
+            1
+          ]
+        ],
+        "hands": [
+          {
+            "counts": [
+              [
+                "R",
+                2
+              ]
+            ]
+          },
+          {
+            "counts": []
+          }
+        ],
+        "legal_actions": 5,
+        "legal_drops": 0,
+        "references": {
+          "2": {
+            "complete": true,
+            "score": -9226,
+            "action": {
+              "pattern_id": "legacy_014",
+              "geometry_id": "g4",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 5,
+                "rank": 7
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 6
+              },
+              "promotion_target_id": null
+            },
+            "seconds": 0.08934110007248819,
+            "leaf_evaluations": 460
+          },
+          "3": {
+            "complete": true,
+            "score": -9195,
+            "action": {
+              "pattern_id": "legacy_010",
+              "geometry_id": "g2",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 5,
+                "rank": 7
+              },
+              "to_square": {
+                "file": 6,
+                "rank": 6
+              },
+              "promotion_target_id": null
+            },
+            "seconds": 0.503886700142175,
+            "leaf_evaluations": 2539
+          }
+        },
+        "searches": [
+          {
+            "depth": 2,
+            "repeat": 0,
+            "wall_seconds": 0.08312610001303256,
+            "score": -9226,
+            "completed_depth": 2,
+            "nodes": 298,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          },
+          {
+            "depth": 2,
+            "repeat": 1,
+            "wall_seconds": 0.08202360011637211,
+            "score": -9226,
+            "completed_depth": 2,
+            "nodes": 298,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          },
+          {
+            "depth": 3,
+            "repeat": 0,
+            "wall_seconds": 0.248046999797225,
+            "score": -9195,
+            "completed_depth": 3,
+            "nodes": 963,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          },
+          {
+            "depth": 3,
+            "repeat": 1,
+            "wall_seconds": 0.23935899999924004,
+            "score": -9195,
+            "completed_depth": 3,
+            "nodes": 963,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          }
+        ]
+      },
+      {
+        "ply": 6,
+        "history_length": 7,
+        "aux": [
+          [
+            [
+              0,
+              -1
+            ],
+            0
+          ]
+        ],
+        "hands": [
+          {
+            "counts": [
+              [
+                "R",
+                2
+              ]
+            ]
+          },
+          {
+            "counts": []
+          }
+        ],
+        "legal_actions": 92,
+        "legal_drops": 58,
+        "references": {
+          "2": {
+            "complete": true,
+            "score": 9203,
+            "action": {
+              "pattern_id": "sem_00_drop_zone_capacity_guard",
+              "geometry_id": "g14",
+              "base_type_id": "R",
+              "to_square": {
+                "file": 6,
+                "rank": 6
+              }
+            },
+            "seconds": 0.07750879996456206,
+            "leaf_evaluations": 374
+          },
+          "3": {
+            "complete": false,
+            "failure": "reference cost fuse",
+            "seconds": 0.796414699871093,
+            "leaf_evaluations": 4097
+          }
+        },
+        "searches": [
+          {
+            "depth": 2,
+            "repeat": 0,
+            "wall_seconds": 0.07839490007609129,
+            "score": 9203,
+            "completed_depth": 2,
+            "nodes": 311,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          },
+          {
+            "depth": 2,
+            "repeat": 1,
+            "wall_seconds": 0.08028499991632998,
+            "score": 9203,
+            "completed_depth": 2,
+            "nodes": 311,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          },
+          {
+            "depth": 3,
+            "repeat": 0,
+            "wall_seconds": 2.4338811999186873,
+            "score": 9203,
+            "completed_depth": 2,
+            "nodes": 8192,
+            "termination_reason": "node_limit",
+            "native_fallbacks": 0
+          },
+          {
+            "depth": 3,
+            "repeat": 1,
+            "wall_seconds": 2.4666718000080436,
+            "score": 9203,
+            "completed_depth": 2,
+            "nodes": 8192,
+            "termination_reason": "node_limit",
+            "native_fallbacks": 0
+          }
+        ]
+      },
+      {
+        "ply": 7,
+        "history_length": 8,
+        "aux": [
+          [
+            [
+              0,
+              -1
+            ],
+            0
+          ]
+        ],
+        "hands": [
+          {
+            "counts": [
+              [
+                "R",
+                1
+              ]
+            ]
+          },
+          {
+            "counts": []
+          }
+        ],
+        "legal_actions": 5,
+        "legal_drops": 0,
+        "references": {
+          "2": {
+            "complete": true,
+            "score": -9212,
+            "action": {
+              "pattern_id": "legacy_010",
+              "geometry_id": "g2",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 4,
+                "rank": 7
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 6
+              },
+              "promotion_target_id": null
+            },
+            "seconds": 0.03642580006271601,
+            "leaf_evaluations": 180
+          },
+          "3": {
+            "complete": true,
+            "score": -9183,
+            "action": {
+              "pattern_id": "legacy_010",
+              "geometry_id": "g2",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 4,
+                "rank": 7
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 6
+              },
+              "promotion_target_id": null
+            },
+            "seconds": 0.2051136998925358,
+            "leaf_evaluations": 1075
+          }
+        },
+        "searches": [
+          {
+            "depth": 2,
+            "repeat": 0,
+            "wall_seconds": 0.029198599979281425,
+            "score": -9212,
+            "completed_depth": 2,
+            "nodes": 101,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          },
+          {
+            "depth": 2,
+            "repeat": 1,
+            "wall_seconds": 0.029447600012645125,
+            "score": -9212,
+            "completed_depth": 2,
+            "nodes": 101,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          },
+          {
+            "depth": 3,
+            "repeat": 0,
+            "wall_seconds": 0.06667890003882349,
+            "score": -9183,
+            "completed_depth": 3,
+            "nodes": 248,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          },
+          {
+            "depth": 3,
+            "repeat": 1,
+            "wall_seconds": 0.06650790013372898,
+            "score": -9183,
+            "completed_depth": 3,
+            "nodes": 248,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          }
+        ]
+      },
+      {
+        "ply": 8,
+        "history_length": 9,
+        "aux": [
+          [
+            [
+              0,
+              -1
+            ],
+            0
+          ]
+        ],
+        "hands": [
+          {
+            "counts": [
+              [
+                "R",
+                1
+              ]
+            ]
+          },
+          {
+            "counts": []
+          }
+        ],
+        "legal_actions": 36,
+        "legal_drops": 0,
+        "references": {
+          "2": {
+            "complete": true,
+            "score": 9189,
+            "action": {
+              "pattern_id": "legacy_004",
+              "geometry_id": "g10",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 0,
+                "rank": 2
+              },
+              "to_square": {
+                "file": 0,
+                "rank": 6
+              },
+              "promotion_target_id": null
+            },
+            "seconds": 0.03314889990724623,
+            "leaf_evaluations": 157
+          },
+          "3": {
+            "complete": false,
+            "failure": "reference cost fuse",
+            "seconds": 0.8394299999345094,
+            "leaf_evaluations": 4097
+          }
+        },
+        "searches": [
+          {
+            "depth": 2,
+            "repeat": 0,
+            "wall_seconds": 0.03706530015915632,
+            "score": 9189,
+            "completed_depth": 2,
+            "nodes": 117,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          },
+          {
+            "depth": 2,
+            "repeat": 1,
+            "wall_seconds": 0.032296800054609776,
+            "score": 9189,
+            "completed_depth": 2,
+            "nodes": 117,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          },
+          {
+            "depth": 3,
+            "repeat": 0,
+            "wall_seconds": 0.7517260001040995,
+            "score": 999999997,
+            "completed_depth": 3,
+            "nodes": 2561,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          },
+          {
+            "depth": 3,
+            "repeat": 1,
+            "wall_seconds": 0.7457059998996556,
+            "score": 999999997,
+            "completed_depth": 3,
+            "nodes": 2561,
+            "termination_reason": "completed_depth",
+            "native_fallbacks": 0
+          }
+        ]
+      }
+    ]
+  },
+  "staged_ordering": {
+    "seconds": 20.48516399995424,
+    "search_calls": 40,
+    "paired_cells": [
+      {
+        "ply": 4,
+        "depth": 2,
+        "baseline_complete": true,
+        "staged_complete": true,
+        "baseline_nodes": 144,
+        "staged_nodes": 144,
+        "baseline_score": 10659,
+        "staged_score": 10659,
+        "baseline_actions_generated": 290,
+        "staged_actions_generated": 290,
+        "baseline_materialized": 142,
+        "staged_materialized": 142,
+        "baseline_wall": 0.03656239993870258,
+        "staged_wall": 0.043268200010061264
+      },
+      {
+        "ply": 4,
+        "depth": 3,
+        "baseline_complete": true,
+        "staged_complete": true,
+        "baseline_nodes": 3762,
+        "staged_nodes": 3761,
+        "baseline_score": 999999997,
+        "staged_score": 999999997,
+        "baseline_actions_generated": 4159,
+        "staged_actions_generated": 4159,
+        "baseline_materialized": 3759,
+        "staged_materialized": 3758,
+        "baseline_wall": 1.072798099834472,
+        "staged_wall": 1.0746511002071202
+      },
+      {
+        "ply": 5,
+        "depth": 2,
+        "baseline_complete": true,
+        "staged_complete": true,
+        "baseline_nodes": 298,
+        "staged_nodes": 345,
+        "baseline_score": -9226,
+        "staged_score": -9226,
+        "baseline_actions_generated": 470,
+        "staged_actions_generated": 470,
+        "baseline_materialized": 296,
+        "staged_materialized": 343,
+        "baseline_wall": 0.0859716001432389,
+        "staged_wall": 0.10291399993002415
+      },
+      {
+        "ply": 5,
+        "depth": 3,
+        "baseline_complete": true,
+        "staged_complete": true,
+        "baseline_nodes": 963,
+        "staged_nodes": 1213,
+        "baseline_score": -9195,
+        "staged_score": -9195,
+        "baseline_actions_generated": 2674,
+        "staged_actions_generated": 2974,
+        "baseline_materialized": 960,
+        "staged_materialized": 1210,
+        "baseline_wall": 0.2530247999820858,
+        "staged_wall": 0.3102102999109775
+      },
+      {
+        "ply": 6,
+        "depth": 2,
+        "baseline_complete": true,
+        "staged_complete": true,
+        "baseline_nodes": 311,
+        "staged_nodes": 329,
+        "baseline_score": 9203,
+        "staged_score": 9203,
+        "baseline_actions_generated": 558,
+        "staged_actions_generated": 558,
+        "baseline_materialized": 309,
+        "staged_materialized": 327,
+        "baseline_wall": 0.07942719990387559,
+        "staged_wall": 0.08282700018025935
+      },
+      {
+        "ply": 6,
+        "depth": 3,
+        "baseline_complete": false,
+        "staged_complete": false,
+        "baseline_nodes": 8192,
+        "staged_nodes": 8192,
+        "baseline_score": 9203,
+        "staged_score": 9203,
+        "baseline_actions_generated": 8737,
+        "staged_actions_generated": 8709,
+        "baseline_materialized": 8189,
+        "staged_materialized": 8189,
+        "baseline_wall": 2.4464484998025,
+        "staged_wall": 2.3426057000178844
+      },
+      {
+        "ply": 7,
+        "depth": 2,
+        "baseline_complete": true,
+        "staged_complete": true,
+        "baseline_nodes": 101,
+        "staged_nodes": 101,
+        "baseline_score": -9212,
+        "staged_score": -9212,
+        "baseline_actions_generated": 190,
+        "staged_actions_generated": 190,
+        "baseline_materialized": 99,
+        "staged_materialized": 99,
+        "baseline_wall": 0.028732300037518144,
+        "staged_wall": 0.028357199858874083
+      },
+      {
+        "ply": 7,
+        "depth": 3,
+        "baseline_complete": true,
+        "staged_complete": true,
+        "baseline_nodes": 248,
+        "staged_nodes": 247,
+        "baseline_score": -9183,
+        "staged_score": -9183,
+        "baseline_actions_generated": 693,
+        "staged_actions_generated": 685,
+        "baseline_materialized": 245,
+        "staged_materialized": 244,
+        "baseline_wall": 0.07188929989933968,
+        "staged_wall": 0.06979590002447367
+      },
+      {
+        "ply": 8,
+        "depth": 2,
+        "baseline_complete": true,
+        "staged_complete": true,
+        "baseline_nodes": 117,
+        "staged_nodes": 117,
+        "baseline_score": 9189,
+        "staged_score": 9189,
+        "baseline_actions_generated": 229,
+        "staged_actions_generated": 229,
+        "baseline_materialized": 115,
+        "staged_materialized": 115,
+        "baseline_wall": 0.03453390020877123,
+        "staged_wall": 0.03008559998124838
+      },
+      {
+        "ply": 8,
+        "depth": 3,
+        "baseline_complete": true,
+        "staged_complete": true,
+        "baseline_nodes": 2561,
+        "staged_nodes": 2607,
+        "baseline_score": 999999997,
+        "staged_score": 999999997,
+        "baseline_actions_generated": 2847,
+        "staged_actions_generated": 2847,
+        "baseline_materialized": 2558,
+        "staged_materialized": 2604,
+        "baseline_wall": 0.7719089000020176,
+        "staged_wall": 0.768845200072974
+      }
+    ]
+  },
+  "archive": "../../archive/preparation_transfer_20261008/index.json",
+  "limits": [
+    "All samples are exposed development; human labels and Xiangqi holdout not read.",
+    "Preparation/direct are different explicit tasks with different reply support, not a paired causal gain or WDL/material truth.",
+    "Cross-game cohort is the old initial-safe common law; checked-turn mass is not substituted.",
+    "Zero preparation successes and actual terminal branches retained; terminal0 is task-unavailable, not a draw/loss.",
+    "Static additivity/median normalization is an extra deployment assumption; action changes are sensitivity only.",
+    "Original partial and later incremental completion are both retained; no frozen comparison condition or holdout status rewritten.",
+    "No default prices, search settings, public action/history identity or active workflow interfaces changed."
+  ],
+  "terminal_task_boundary": {
+    "producer_sha256": "bb981c573340b11c431c6472ebff928fc2d98fc00097481bf493028606a16bf9",
+    "input_sha256": "2194f6e2998949517d0149bcc5e340a88c8000aee4659360dd135133162a18af",
+    "prior_failed_sha256": "fda4180b0a67eda7dc105c41dcaee2147e05cb2d0e4a17e2e440d6da5ff67bfe",
+    "rows": [
+      {
+        "actor": "G",
+        "seed": 202610093052,
+        "owner": 0,
+        "task_success": 0,
+        "winning_quiet_action": {
+          "kind": "semantic_board",
+          "pattern_id": "legacy_138",
+          "geometry_id": "g8",
+          "actor_type_id": "G",
+          "from": [
+            6,
+            7
+          ],
+          "to": [
+            7,
+            7
+          ],
+          "promotion_target_id": null
+        },
+        "actual_terminal": {
+          "status": "checkmate",
+          "winner": 0
+        },
+        "table_value": 1000,
+        "one_ply_score": 999999999
+      },
+      {
+        "actor": "TP",
+        "seed": 202610093052,
+        "owner": 0,
+        "task_success": 0,
+        "winning_quiet_action": {
+          "kind": "semantic_board",
+          "pattern_id": "legacy_102",
+          "geometry_id": "g55",
+          "actor_type_id": "TP",
+          "from": [
+            6,
+            7
+          ],
+          "to": [
+            7,
+            7
+          ],
+          "promotion_target_id": null
+        },
+        "actual_terminal": {
+          "status": "checkmate",
+          "winner": 0
+        },
+        "table_value": 1000,
+        "one_ply_score": 999999999
+      }
+    ],
+    "interpretation": "Task0 includes unavailable continuation after winning preparation; it is not a WDL score. Existing terminal-first search recognizes both mates with equal G/TP weights. Failed synthetic View is an experimental caller error, not a product failure."
+  }
+}

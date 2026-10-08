@@ -1,0 +1,331 @@
+{
+  "complete": true,
+  "producer_sha256": "059f5f5e36148ed9b9f99adf256eaf9615820ca1951faba28dd49fc8098a9813",
+  "input_sha256": {
+    "replay.json": "6143581d27d4ae5fc909d691dea9d0dcd5ef3412095995e380b31cbcc20ce135",
+    "replay-v2.json": "1e7679c2c90cb3a095961417fed721e4b910506d05c9e9132197b00063504fe1",
+    "profile.json": "33184cfe8a600b28237c215f8a2e6b30b6af5b472b8fbc00b9d7fa69ef35dde8",
+    "geometry-cache.json": "651a86a4b7c755cb6a5b70f57952a34aaabc9904162881cf4efdfd5be815724c",
+    "native-check.json": "8357d6bbfc91c1ea62ff357a322af969efee1f7783e50bc78c36153b2d567f47"
+  },
+  "accounting": {
+    "cells": 10,
+    "all_actual_calls_match": true,
+    "all_decisions_unchanged": true,
+    "cells_summary": [
+      {
+        "ply": 4,
+        "depth": 2,
+        "wall_seconds": 0.04521180014126003,
+        "independent_evaluation_calls": 97,
+        "independent_evaluation_seconds": 0.008216400630772114,
+        "map_calls": 97,
+        "map_seconds": 0.0063162995502352715
+      },
+      {
+        "ply": 4,
+        "depth": 3,
+        "wall_seconds": 1.103867599973455,
+        "independent_evaluation_calls": 3615,
+        "independent_evaluation_seconds": 0.29935970203951,
+        "map_calls": 3615,
+        "map_seconds": 0.23033680231310427
+      },
+      {
+        "ply": 5,
+        "depth": 2,
+        "wall_seconds": 0.0822397000156343,
+        "independent_evaluation_calls": 291,
+        "independent_evaluation_seconds": 0.02362990193068981,
+        "map_calls": 291,
+        "map_seconds": 0.01801030244678259
+      },
+      {
+        "ply": 5,
+        "depth": 3,
+        "wall_seconds": 0.2516920999623835,
+        "independent_evaluation_calls": 670,
+        "independent_evaluation_seconds": 0.055440195836126804,
+        "map_calls": 670,
+        "map_seconds": 0.04236670327372849
+      },
+      {
+        "ply": 6,
+        "depth": 2,
+        "wall_seconds": 0.07905409997329116,
+        "independent_evaluation_calls": 217,
+        "independent_evaluation_seconds": 0.017714000772684813,
+        "map_calls": 217,
+        "map_seconds": 0.013502299087122083
+      },
+      {
+        "ply": 6,
+        "depth": 3,
+        "wall_seconds": 2.462933699833229,
+        "independent_evaluation_calls": 7897,
+        "independent_evaluation_seconds": 0.6606383931357414,
+        "map_calls": 7897,
+        "map_seconds": 0.5077127078548074
+      },
+      {
+        "ply": 7,
+        "depth": 2,
+        "wall_seconds": 0.030065800063312054,
+        "independent_evaluation_calls": 94,
+        "independent_evaluation_seconds": 0.007777899969369173,
+        "map_calls": 94,
+        "map_seconds": 0.005867300322279334
+      },
+      {
+        "ply": 7,
+        "depth": 3,
+        "wall_seconds": 0.09154630010016263,
+        "independent_evaluation_calls": 185,
+        "independent_evaluation_seconds": 0.020484999986365438,
+        "map_calls": 185,
+        "map_seconds": 0.01543619972653687
+      },
+      {
+        "ply": 8,
+        "depth": 2,
+        "wall_seconds": 0.04134320002049208,
+        "independent_evaluation_calls": 79,
+        "independent_evaluation_seconds": 0.008213998982682824,
+        "map_calls": 79,
+        "map_seconds": 0.0061491020023822784
+      },
+      {
+        "ply": 8,
+        "depth": 3,
+        "wall_seconds": 0.7920903000049293,
+        "independent_evaluation_calls": 2440,
+        "independent_evaluation_seconds": 0.20681040734052658,
+        "map_calls": 2440,
+        "map_seconds": 0.15807439922355115
+      }
+    ]
+  },
+  "profile": {
+    "scope": "Existing ply6,8192nodes, profiling omits5sec wall cap solely to avoid instrumentation changing node work. No fair wall speed or strength claim. Cumulative nested times must not be added.",
+    "wall_seconds": 6.602751300204545,
+    "top_exclusive": [
+      {
+        "file": "REPO/generic_chess/core/semantic_executor.py",
+        "line": 602,
+        "name": "is_square_attacked",
+        "primitive_calls": 23538,
+        "calls": 23538,
+        "exclusive_seconds": 0.5583169,
+        "cumulative_seconds": 1.9821357000000002
+      },
+      {
+        "file": "REPO/generic_chess/core/semantic_executor.py",
+        "line": 42,
+        "name": "_checkpoint",
+        "primitive_calls": 3147241,
+        "calls": 3147241,
+        "exclusive_seconds": 0.3962083,
+        "cumulative_seconds": 0.6630001000000001
+      },
+      {
+        "file": "REPO/generic_chess/rules/ir.py",
+        "line": 92,
+        "name": "geometry_candidates",
+        "primitive_calls": 482053,
+        "calls": 482053,
+        "exclusive_seconds": 0.37683550000000005,
+        "cumulative_seconds": 0.6577627
+      },
+      {
+        "file": "REPO/generic_chess/ai/alphabeta/search.py",
+        "line": 164,
+        "name": "checkpoint",
+        "primitive_calls": 3149165,
+        "calls": 3149165,
+        "exclusive_seconds": 0.2670538,
+        "cumulative_seconds": 0.2670538
+      },
+      {
+        "file": "REPO/generic_chess/core/coordinates.py",
+        "line": 89,
+        "name": "index_to_square",
+        "primitive_calls": 424686,
+        "calls": 424686,
+        "exclusive_seconds": 0.22216880000000003,
+        "cumulative_seconds": 0.45773280000000005
+      },
+      {
+        "file": "REPO/generic_chess/core/coordinates.py",
+        "line": 42,
+        "name": "__post_init__",
+        "primitive_calls": 483679,
+        "calls": 483679,
+        "exclusive_seconds": 0.1608882,
+        "cumulative_seconds": 0.262597
+      },
+      {
+        "file": "REPO/generic_chess/rules/ir.py",
+        "line": 100,
+        "name": "<genexpr>",
+        "primitive_calls": 1335827,
+        "calls": 1335827,
+        "exclusive_seconds": 0.1513882,
+        "cumulative_seconds": 0.1513882
+      },
+      {
+        "file": "REPO/generic_chess/ai/evaluation/evaluator.py",
+        "line": 101,
+        "name": "_anchor_escape",
+        "primitive_calls": 15794,
+        "calls": 15794,
+        "exclusive_seconds": 0.1437498,
+        "cumulative_seconds": 0.3811256
+      },
+      {
+        "file": "REPO/generic_chess/core/search_runtime.py",
+        "line": 447,
+        "name": "_semantic_component_diff_hash",
+        "primitive_calls": 8189,
+        "calls": 8189,
+        "exclusive_seconds": 0.13993170000000002,
+        "cumulative_seconds": 0.6315999
+      },
+      {
+        "file": "REPO/generic_chess/core/search_runtime.py",
+        "line": 1117,
+        "name": "_push_impl",
+        "primitive_calls": 8189,
+        "calls": 8189,
+        "exclusive_seconds": 0.1298063,
+        "cumulative_seconds": 4.0039119
+      },
+      {
+        "file": "REPO/generic_chess/core/position.py",
+        "line": 101,
+        "name": "board_shape",
+        "primitive_calls": 365765,
+        "calls": 365765,
+        "exclusive_seconds": 0.11178740000000001,
+        "cumulative_seconds": 0.5238595
+      },
+      {
+        "file": "REPO/generic_chess/core/semantic_executor.py",
+        "line": 95,
+        "name": "_sources_by_owner_type",
+        "primitive_calls": 31727,
+        "calls": 31727,
+        "exclusive_seconds": 0.1055819,
+        "cumulative_seconds": 0.1499346
+      },
+      {
+        "file": "REPO/generic_chess/core/coordinates.py",
+        "line": 58,
+        "name": "_shape",
+        "primitive_calls": 526806,
+        "calls": 526806,
+        "exclusive_seconds": 0.0860018,
+        "cumulative_seconds": 0.2120334
+      },
+      {
+        "file": "REPO/generic_chess/ai/evaluation/semantic_attacks.py",
+        "line": 45,
+        "name": "<genexpr>",
+        "primitive_calls": 23691,
+        "calls": 23691,
+        "exclusive_seconds": 0.0826496,
+        "cumulative_seconds": 1.2298279
+      },
+      {
+        "file": "REPO/generic_chess/core/search_runtime.py",
+        "line": 369,
+        "name": "_component_map",
+        "primitive_calls": 16391,
+        "calls": 16391,
+        "exclusive_seconds": 0.08101090000000001,
+        "cumulative_seconds": 0.11455560000000001
+      }
+    ]
+  },
+  "geometry_memo": {
+    "calls": 20,
+    "paired": [
+      {
+        "ply": 4,
+        "baseline_seconds": 2.1672264002263546,
+        "candidate_seconds": 2.0434330001007766,
+        "candidate_over_baseline": 0.9428793410265542
+      },
+      {
+        "ply": 5,
+        "baseline_seconds": 0.49882370000705123,
+        "candidate_seconds": 0.48728490015491843,
+        "candidate_over_baseline": 0.9768679799055865
+      },
+      {
+        "ply": 6,
+        "baseline_seconds": 4.9042408999521285,
+        "candidate_seconds": 4.645058499881998,
+        "candidate_over_baseline": 0.9471513725859876
+      },
+      {
+        "ply": 7,
+        "baseline_seconds": 0.1343789000529796,
+        "candidate_seconds": 0.1354573001153767,
+        "candidate_over_baseline": 1.0080250698731121
+      },
+      {
+        "ply": 8,
+        "baseline_seconds": 1.4913442998658866,
+        "candidate_seconds": 1.4159917002543807,
+        "candidate_over_baseline": 0.9494733713614742
+      }
+    ],
+    "all_decisions_unchanged": true
+  },
+  "native_gave_check": {
+    "calls": 25,
+    "paired": [
+      {
+        "ply": 4,
+        "baseline_seconds": 2.280159799847752,
+        "candidate_seconds": 2.1053388002328575,
+        "candidate_over_baseline": 0.9233294966315223
+      },
+      {
+        "ply": 5,
+        "baseline_seconds": 0.49564919993281364,
+        "candidate_seconds": 0.483578700106591,
+        "candidate_over_baseline": 0.975647091071954
+      },
+      {
+        "ply": 6,
+        "baseline_seconds": 4.919381800107658,
+        "candidate_seconds": 4.6463395999744534,
+        "candidate_over_baseline": 0.9444966438410556
+      },
+      {
+        "ply": 7,
+        "baseline_seconds": 0.13290229998528957,
+        "candidate_seconds": 0.13030250021256506,
+        "candidate_over_baseline": 0.9804382634987335
+      },
+      {
+        "ply": 8,
+        "baseline_seconds": 1.4927880000323057,
+        "candidate_seconds": 1.3950255999807268,
+        "candidate_over_baseline": 0.9345101916350727
+      }
+    ],
+    "verified_core_checks": 15711,
+    "all_decisions_unchanged": true
+  },
+  "interpretation": [
+    "Old quiescence-off search records missing leaf counters are not zero-work evidence; raw records unchanged.",
+    "Counter repair centralizes evaluator attempts and uses high-resolution perf_counter; no score/order/default or budget changes.",
+    "Initial independent replay exposed coarse monotonic elapsed measurements on Windows; failed record preserved.",
+    "Geometry memo and Native gave_check are isolated caller interventions on one exposed recombined fixture, not product adoption or universal speed claims.",
+    "Both interventions retain the8192-node depth3 cap; lowering per-node cost cannot alone resolve a node-budget failure.",
+    "Whole-wall repeats, nested profiling times and completed node/score evidence are distinct; do not sum nested cumulative costs."
+  ],
+  "archive": "../../archive/evaluation_cost_20261008/index.json"
+}

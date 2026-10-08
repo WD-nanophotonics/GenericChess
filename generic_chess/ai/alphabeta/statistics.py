@@ -58,6 +58,8 @@ class SearchStatistics:
     ordering_seconds: float = 0.0
     legal_generation_calls: int = 0
     legal_generation_seconds: float = 0.0
+    # Actual evaluator attempts, including static leaves, qsearch and root scan.
+    # Terminal/TT scores do not call the evaluator. Failed attempts retain cost.
     evaluation_calls: int = 0
     evaluation_seconds: float = 0.0
     # Countermove heuristic.

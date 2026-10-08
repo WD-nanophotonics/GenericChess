@@ -1,0 +1,95 @@
+{
+  "base_commit": "6120b63f4fcb2a564fbfd36770a5c01b72eeca85",
+  "members": [
+    {
+      "path": ".local_agent/evaluation-cost-20261008/cost_profile.py",
+      "bytes": 2969,
+      "sha256": "7803b9e3a02326585918a24ffcea9c25caca490edaa3cc9555136a4fb423b211"
+    },
+    {
+      "path": ".local_agent/evaluation-cost-20261008/geometry-cache.json",
+      "bytes": 78758,
+      "sha256": "651a86a4b7c755cb6a5b70f57952a34aaabc9904162881cf4efdfd5be815724c"
+    },
+    {
+      "path": ".local_agent/evaluation-cost-20261008/geometry_cache.py",
+      "bytes": 3834,
+      "sha256": "f95213dad887916ec3bfab732659873bf658c666c7358d63e7387705d5b4e05a"
+    },
+    {
+      "path": ".local_agent/evaluation-cost-20261008/native-check.json",
+      "bytes": 97629,
+      "sha256": "8357d6bbfc91c1ea62ff357a322af969efee1f7783e50bc78c36153b2d567f47"
+    },
+    {
+      "path": ".local_agent/evaluation-cost-20261008/native_check.py",
+      "bytes": 4256,
+      "sha256": "a5169e9c09d4b1b2732bc23f0395ed290cc7e02c11290e9bb766b702ef37f1ec"
+    },
+    {
+      "path": ".local_agent/evaluation-cost-20261008/package.py",
+      "bytes": 4949,
+      "sha256": "059f5f5e36148ed9b9f99adf256eaf9615820ca1951faba28dd49fc8098a9813"
+    },
+    {
+      "path": ".local_agent/evaluation-cost-20261008/profile.json",
+      "bytes": 54295,
+      "sha256": "33184cfe8a600b28237c215f8a2e6b30b6af5b472b8fbc00b9d7fa69ef35dde8"
+    },
+    {
+      "path": ".local_agent/evaluation-cost-20261008/replay-v2.json",
+      "bytes": 38948,
+      "sha256": "1e7679c2c90cb3a095961417fed721e4b910506d05c9e9132197b00063504fe1"
+    },
+    {
+      "path": ".local_agent/evaluation-cost-20261008/replay-v2.py",
+      "bytes": 3713,
+      "sha256": "93cee072f61d409e10d74525a9f5966eeaaaa1cc173bd8a1a5e5b64d5dedd234"
+    },
+    {
+      "path": ".local_agent/evaluation-cost-20261008/replay.json",
+      "bytes": 8561,
+      "sha256": "6143581d27d4ae5fc909d691dea9d0dcd5ef3412095995e380b31cbcc20ce135"
+    },
+    {
+      "path": ".local_agent/evaluation-cost-20261008/replay.py",
+      "bytes": 3708,
+      "sha256": "53d67291f58decf688eecae068f0dd286d378c3ffe4171a9cc4028986ec53fb8"
+    },
+    {
+      "path": ".local_agent/preparation-transfer-20261008/recombined.json",
+      "bytes": 102468,
+      "sha256": "4d0b1c9dd445a42b3dfb85f788a7dfacb411b62258c827a3ea52c1195f00a74e"
+    },
+    {
+      "path": "generic_chess/ai/alphabeta/search.py",
+      "bytes": 49095,
+      "sha256": "f6ae6b7bec6aaa44758e19d43f14b4f0bd9f4dc0f10674aa6395ade4ed19ea85"
+    },
+    {
+      "path": "generic_chess/ai/alphabeta/statistics.py",
+      "bytes": 4688,
+      "sha256": "7dfa0408f2cbca1290e9b64a25a6f8e78f5e8bfc66ffac7f3be3918406edfa75"
+    },
+    {
+      "path": "tests/product/test_search_evaluation_accounting.py",
+      "bytes": 2266,
+      "sha256": "018ac3e27f33a8216db66442b700c214ab77090bf3799d8bace695570057eb68"
+    }
+  ],
+  "archive_sha256": "04eb303b3a0019ffbde18abacc65aa14bf4f44bbb04ef020f01a0189c268b919",
+  "extracted_rehashed": true,
+  "producer_pins": {
+    "replay.json": "replay.py",
+    "replay-v2.json": "replay-v2.py",
+    "profile.json": "cost_profile.py",
+    "geometry-cache.json": "geometry_cache.py",
+    "native-check.json": "native_check.py"
+  },
+  "excluded": "User/private data, Slack/account records, credentials and workflow state.",
+  "retained_failures": [
+    "replay.json: coarse Windows monotonic precision cannot bound independent perf_counter durations; fix uses perf_counter.",
+    "Initial cProfile script name profile.py shadowed stdlib profile; renamed cost_profile.py before successful run.",
+    "Original8192-node and4096-reference caps not rewritten."
+  ]
+}

@@ -92,10 +92,27 @@ The separate, predeclared one-preparation task now has10 full-Core Chess roots
 and two replayed Q orthogonal/diagonal paths. It exposes capability omitted by
 direct opportunity, without fitting a quiet blend or preferred Q ratio. Q=R+B
 in additive geometric counting is not itself a defect; task-specific Q exceeds
-R+B in one layout and falls below it in the other. The next useful question is
-whether the task survives a finite owner/orientation transfer with unchanged
-response semantics, before adding another horizon or applying it as prices.
-Exact declaration and replay: data/preparation_task_20261008.json.
+R+B in one layout and falls below it in the other. Finite owner/orientation
+transfer now preserves all88 preparations and10 replayed paths, scoped to empty
+auxiliary state. A50-root target matrix and580/3276-root Chess/Shogi transfer
+freeze a separate preparation coordinate: pawn-relative Chess N8.94/B11.49/
+R26.87/Q32.78 and Shogi N.82/G9.21/R33.13 expose task bias, not corrected material.
+Do not expand horizons or blend quiet terms merely to improve these ratios.
+
+Fixed piece-count addition loses preparation preferences:22 public quiet actions
+(11 destinations) share material1849 while task success ranges0..21/31. On24
+fresh C/R/N layouts,216 fixed-ordering calls give72 exact depth3 repeats. Direct
+and preparation tables choose identically atdepth3 and differ on1/23 complete
+depth4 roots. Plain Core conditional values confirm a strict exchange-weight
+preference, not a tie; no strength gain follows. Defaults stay unchanged.
+Five real-history promotion/expiry/drop frontiers retain legal, repeatable
+search; the58-drop frontier caps atdepth3. Existing staged ordering does not
+resolve it and sometimes regresses. Next localize that observed cost before
+another switch/cohort. Rule-price bias work needs a decision-changing mechanism;
+original-horizon custody evidence already limits unchanged continuation reruns.
+Exact data/recovery: data/preparation_transfer_20261008.json and
+../archive/preparation_transfer_20261008/index.json. Earlier declaration/replay:
+data/preparation_task_20261008.json.
 Position/source-target identity alone is insufficient for arbitrary history/effects.
 Exact findings and corrections: data/joint_context_search_20261008.json.
 
@@ -130,9 +147,34 @@ only a history-correct reuse interface; do not globally deduplicate public actio
 The existing full Core/Runtime keys already agree for physical duplicate groups;
 leaf evaluation occurs before internal TT probes. A36-call cold cache pilot
 preserves paired depth4 score/nodes/PV but saves only about4.8% whole search time
-for the fixed evaluator. Defer a product cache/flag. The only product change is
+for the fixed evaluator. Defer a product cache/flag. That earlier product change is
 source/target filtering on the existing S0-S4 binding iterator; full actions,
 postconditions, cancellation and defaults are retained.
+
+The real drop caller exposed missing cost telemetry: static leaves did not
+increment evaluation calls/time, and root scans omitted evaluation time. One
+accounted evaluator entry now covers all production paths. An independent replay
+also exposed coarse Windows monotonic elapsed measurements; evaluator timing
+uses perf_counter. Ten existing real-history cells retain exact action/score/
+nodes/depth/PV and agree with independently counted calls. Earlier zero counters
+remain archived as missing instrumentation, not free evaluation.
+
+On the58-drop depth3 caller,7897 evaluations take about27% of observed wall time,
+with semantic attack maps about21% nested inside that. Profiling identifies
+repeated Core check/geometry work. Local geometry memoization and a current-state
+Native gave_check bridge each save only about5% on that caller;15711 bridge answers
+agree with Core across five real-history frontiers. Neither changes nodes or
+resolves the8192-node cap. Defer product caches/bridges. A separately declared
+40-call paired16384/32768-node curve completes every depth3 cell. Ply6 needs only
+9544 baseline/9569 staged nodes and recognizes mate999999997 with the same root
+R-drop(6,6). Actual Core replay covers both defenses and mating replies. Only
+16.5% additional used baseline nodes resolve the unknown iteration; the configured
+headroom is not consumed work. Defaults/old cap records stay unchanged.
+Next test the generic-interface transfer of this observed drop/expiry mechanism
+on one predeclared generated recombination, rather than optimize a solved fixture.
+Exact telemetry, retained precision failure and isolated interventions:
+data/evaluation_cost_20261008.json and ../archive/evaluation_cost_20261008/;
+finite budget/mate evidence: data/drop_budget_20261008.json.
 
 
 ## Evidence routing and delivery

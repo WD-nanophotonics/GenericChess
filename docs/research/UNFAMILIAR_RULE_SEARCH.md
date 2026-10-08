@@ -572,3 +572,99 @@ local gain does not warrant another product cache/flag now. Keep search defaults
 and action identity. Full evidence is in data/target_context_20261008.json and
 ../archive/target_context_20261008/; only source/target legal binding queries are
 added to the product this segment.
+
+## Frozen task-table deployment and a recombined drop-cost caller
+
+24 fresh C/R/N inner-board placements compare old generic-v1, direct-task and
+preparation-task leaf tables under the same Native semantic attacks, old generic
+ordering weights, TT/order and8192nodes/4seconds. Quiescence and root tactical
+scan are off. All72 depth3 cells complete and72 cold repeats match action/score/
+nodes/depth/PV exactly. Depth4 completes69/72; all three caps belong to seed4016.
+Every PV replays through Core; Native legality fallback is0. Direct/preparation
+tables change0/24 depth3 actions and1/23 complete depth4 actions. The changed
+pair has independently completed plain Core conditional values995/749 versus
+995/1310. This is an exchange-weight preference, not strength or preparation-policy
+learning. Fixed additive weights cannot distinguish equal-inventory quiet states.
+Summed search times and node curves are recorded; no default is changed.
+
+The next caller is the existing supported recombined lifecycle fixture, not a
+new framework: real captures create hands, a diagonal move promotes R to TP and
+sets an expiring slot, and a zone-capacity guard enables/disables R drops. Actual
+public GameSession history reaches ply4..8.20 cold depth2/3 calls retain legal
+PVs and repeat exactly. Seven of ten independently bounded Core reference cells
+complete and agree; three4096-leaf references stay unknown. Public depth3 completes
+on four frontiers; ply6 has92 legal actions/58 drops and both repeats hit8192nodes.
+The post-expiry state is not replaced by a history-free board snapshot.
+
+An observed-cost followup pairs the existing staged move picker with baseline
+on ALL five frontiers, two depths/two cold repeats (40 calls), with every other
+condition fixed. Completed scores agree and repeats are exact. It does not
+resolve ply6's cap. At ply5 depth3 it regresses963 to1213 nodes; ply4/7 save just
+one node each, and ply8 regresses2561 to2607. Thus this switch is not adopted or
+expanded into a blind tuning sweep. Instrument the actual caller cost before
+another optimization; preserve action legality, state/history and price conditions.
+Exact sources, failures, profiles and per-call curves:
+data/preparation_transfer_20261008.json and ../archive/preparation_transfer_20261008/.
+
+## Actual evaluator cost and the node-cap distinction
+
+Those quiescence-off callers revealed a product telemetry defect: negamax static
+leaves and the no-action fallback omitted evaluation counters; root tactical
+scans counted calls but omitted elapsed time. A single accounted evaluator entry
+now covers these paths plus both quiescence paths. Terminal/TT results remain
+unevaluated. Eight deterministic public-path tests independently count calls and
+elapsed work across legacy/semantic rules, qsearch off/on and root scan off/on.
+The accounting is attempts, including failure cost, rather than completed leaves.
+
+Independent timing on actual callers exposed a second issue: Windows monotonic
+clock increments are too coarse for these short evaluations, and an initial
+aggregate measurement fell below the independently measured evaluator duration.
+That failed replay is retained. The helper now uses high-resolution perf_counter;
+budget/deadline semantics remain unchanged. Ten existing depth2/3 real-history
+cells preserve every action/score/depth/PV/node signature and exactly match actual
+evaluation counts. Old archived zero counts are missing telemetry, not zero work.
+
+The ply6 depth3 cap uses7897 evaluations; independent evaluator time is about27%
+of whole wall time and its nested semantic attack maps about21%. A separate
+8192-node cProfile run retains the same decision with its wall cap omitted solely
+to avoid instrumentation aborting the node work. It sees482053 geometry-candidate
+derivations and23538 Core attacked-square calls. Nested cumulative profile times
+must not be added or treated as an uninstrumented speed comparison.
+
+Two motivated local interventions use all five frontiers, depth3, two cold
+rotated repeats each under the unchanged8192nodes/5sec conditions. Fixed compiled
+geometry memoization saves about5.3% on ply6, with one small-frontier regression.
+A Native current-position gave_check bridge saves about5.6% on ply6; a separate
+dual pass verifies15711 bridge answers against Core. The bridge leaves runtime
+history, terminal adjudication and before/after cooperative checkpoints intact;
+it does not import history into Native. All decisions/nodes/PVs remain exact.
+Neither intervention resolves the node cap, and neither is added to the product.
+This cost curve motivates a bounded node-budget diagnostic before another cache
+or bridge interface. No strength, cross-rule speed guarantee or default change.
+Data/recovery: data/evaluation_cost_20261008.json and
+../archive/evaluation_cost_20261008/index.json.
+
+## Bounded budget increment completes the drop mate
+
+A separate predeclared development curve gives BOTH baseline and staged ordering
+16384/32768nodes and10seconds on all five existing real-history frontiers, depth3,
+two cold rotated repeats (40 calls,41.122seconds total). Old8192-node failures
+remain unchanged. All40 cells now complete, agree on scores and repeat exactly.
+The two larger caps produce identical completed work at the fixed requested depth.
+
+The58-drop ply6 frontier finishes at9544 baseline/9569 staged nodes, score
+999999997 rather than the earlier completed-depth2 score9203. The actual root
+choice stays R-drop(6,6); the new iteration recognizes its forced mate. Actual
+used baseline nodes rise only16.5% above8192; the configured doubled ceiling is
+headroom, not consumed work. One representative baseline call takes2.826seconds.
+Staged ordering still has no clear benefit and is not adopted.
+
+An independent full-history Core replay after that root drop enumerates both
+legal opponent defenses. Each has a legal reply ending in mate for owner0;
+110 yielded Core transitions take.051seconds. This local check confirms the
+observed new terminal conclusion; it is not a new WDL gate for development.
+Per-node5% speedups alone cannot fix a hard node-cap failure. Here a small bounded
+increment yields more useful information than adding cache/bridge interfaces.
+No default budgets, evaluator, action/history identity or active workflow changes.
+Exact raw curve/declaration, mate branches and recovery:
+data/drop_budget_20261008.json and ../archive/drop_budget_20261008/.

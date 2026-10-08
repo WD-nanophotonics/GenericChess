@@ -153,3 +153,46 @@ initial-safe vector diagnose population/response assumptions, not price gains.
 On the original common Chess rows, Q forecast equals R+B to8.4e-17; Q/R is1.3234
 versus legal-reference1.3338. This finite additive-opportunity mechanism explains
 remaining compression without asserting a universal material identity.
+
+### Independent one-preparation coordinate, same initial-safe cohort
+
+Freeze the distinct task described in SEMANTIC_CAPABILITY.md; do not choose
+another horizon or combine quiet weights to repair a human-reference ratio.
+All580 Chess and3276 Shogi source/owner rows on the old common displacement law
+now complete with full Core history/terminal transitions. Direct baselines recover
+every prior legal reference exactly. Common mass remains.504762/.767857; this
+does not silently substitute the checked-turn population above. Generation costs
+are102510 transitions/29.679seconds and426235/186.057seconds respectively.
+
+| Source | Chess preparation/pawn | Shogi preparation/pawn |
+|---|---:|---:|
+|P|1|1|
+|N|8.942|.822|
+|B|11.491|19.970|
+|R|26.873|33.133|
+|Q|32.785|not present|
+|L|not present|2.092|
+|S|not present|5.568|
+|G/TP/TL/TN/TS|not present|9.206|
+|TB|not present|30.732|
+|TR|not present|37.392|
+
+Raw P preparation is.0277599/.0216157; independent direct values are
+.0253283/.0187847. These conditional task ratios still have substantial
+short-range/pawn and target/background-law bias. Shogi promoted-small equality
+is expected where nontransforming quiet movement and capture geometry agree;
+the task does not reward base-dependent custody continuation. Earlier original-
+horizon custody evidence is not replaced or made worth rerunning unchanged.
+
+Zero roots162/1954 stay included. There are19/31 terminal preparations and44/874
+terminal reply branches, counted across preparations rather than disjoint games.
+All observed terminal preparations are mates for the preparing owner. They get
+task0 because capture continuation is unavailable, not because a win has zero
+game value. Existing G/TP task0 examples are independently replayed mates that
+public one-ply search recognizes. Keep goal utility separate from capture activity.
+
+Target support and reply counts depend on source/preparation; preparation-minus-
+direct is not a same-support causal improvement. Per-owner values, exact masses,
+original partials/corrections and raw outcomes are in
+data/preparation_transfer_20261008.json and ../archive/preparation_transfer_20261008/.
+No material default, human-fitted parameter or independent holdout claim follows.

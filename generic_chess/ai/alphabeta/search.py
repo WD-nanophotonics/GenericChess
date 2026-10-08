@@ -179,6 +179,17 @@ class _Context:
             raise SearchAborted("node_limit")
 
 
+def _evaluate(state, evaluator, ctx: _Context) -> int:
+    """Account for actual evaluator calls on every production search path."""
+    started = time.perf_counter()
+    try:
+        with ctx.recorder.time_block(AuditMetric.EVALUATION):
+            return evaluator.evaluate(state)
+    finally:
+        ctx.stats.evaluation_calls += 1
+        ctx.stats.evaluation_seconds += time.perf_counter() - started
+
+
 def terminal_score(result, side_to_move: int, ply: int) -> int:
     if result.winner is not None:
         if result.winner == side_to_move:
@@ -304,8 +315,7 @@ def negamax(
             with ctx.recorder.time_block(AuditMetric.QUIESCENCE):
                 score = quiescence(state, alpha, beta, ply, 0, ctx)
         else:
-            with ctx.recorder.time_block(AuditMetric.EVALUATION):
-                score = ctx.evaluator.evaluate(state)
+            score = _evaluate(state, ctx.evaluator, ctx)
         ctx.budget.check(ctx.stats, force=True)
         return SearchResult(max(score, 0) if restart is not None else score, None, ())
 
@@ -433,8 +443,7 @@ def negamax(
     ctx.budget.check(ctx.stats, force=True)
     if not actions:
         # Core should have flagged the position terminal; fall back to eval.
-        with ctx.recorder.time_block(AuditMetric.EVALUATION):
-            return SearchResult(ctx.evaluator.evaluate(state), None, ())
+        return SearchResult(_evaluate(state, ctx.evaluator, ctx), None, ())
     if ctx.use_ordering:
         started = time.monotonic()
         with ctx.recorder.time_block(AuditMetric.ORDERING):
@@ -664,10 +673,7 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
                 alpha = score
         return alpha
 
-    started = time.monotonic()
-    stand_pat = ctx.evaluator.evaluate(state)
-    ctx.stats.evaluation_calls += 1
-    ctx.stats.evaluation_seconds += time.monotonic() - started
+    stand_pat = _evaluate(state, ctx.evaluator, ctx)
     ctx.budget.check(ctx.stats, force=True)
     if stand_pat >= beta:
         ctx.stats.stand_pat_cutoffs += 1
@@ -792,10 +798,7 @@ def quiescence(
                 alpha = score
         return alpha
 
-    started = time.monotonic()
-    stand_pat = ctx.evaluator.evaluate(state)
-    ctx.stats.evaluation_calls += 1
-    ctx.stats.evaluation_seconds += time.monotonic() - started
+    stand_pat = _evaluate(state, ctx.evaluator, ctx)
     ctx.budget.check(ctx.stats, force=True)
     if stand_pat >= beta:
         ctx.stats.stand_pat_cutoffs += 1
@@ -935,9 +938,7 @@ def root_tactical_scan(
                         best_score = score
                         best_action = action
                     continue
-                ctx.stats.evaluation_calls += 1
-                with ctx.recorder.time_block(AuditMetric.EVALUATION):
-                    score = -evaluator.evaluate(child)
+                score = -_evaluate(child, evaluator, ctx)
                 ctx.budget.check(ctx.stats, force=True)
             if score > best_score:
                 best_score = score
@@ -978,9 +979,7 @@ def root_tactical_scan(
                 best_score = score
                 best_action = action
             continue
-        ctx.stats.evaluation_calls += 1
-        with ctx.recorder.time_block(AuditMetric.EVALUATION):
-            score = -evaluator.evaluate(child)
+        score = -_evaluate(child, evaluator, ctx)
         ctx.budget.check(ctx.stats, force=True)
         if score > best_score:
             best_score = score

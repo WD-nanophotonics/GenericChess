@@ -637,3 +637,53 @@ effect or an adversarial guarantee. The retained rows include source loss and
 zero-valued preparations; a maximum alone must not hide those failure branches.
 Data: data/preparation_task_20261008.json; exact declaration/inputs/producers and
 full outputs: ../archive/preparation_task_20261008/index.json (7 rehashed members).
+
+## Frozen preparation coordinate: transfer and additive deployment boundary
+
+The same10 Chess roots survive180-degree rotation plus owner swap: all88
+preparation success/reply/source-loss/terminal records agree, and10 retained
+paths replay with full histories. Actual legal actions supply the transformation
+bijection; geometry IDs are not assumed invariant. Auxiliary state is empty,
+so this is not a castling/right-slot symmetry theorem.1941 Core transitions
+take.581seconds. A50-root source/target P/N/B/R/Q cross preserves the original
+cells, accepts all roots and fixes target mass to initial inventory. The resulting
+preparation P/N/B/R/Q vector is.007727/.038826/.302265/.424001/.707048. Target
+mechanics change ordering; choosing target mass remains a modeling assumption.
+
+The unchanged27-common-layout C/R/N law now yields independent preparation
+scores.124107/.678839/.299912 versus direct.053820/.232637/.136655. Original
+120000-transition development checkpoint leaves191 complete cells plus a partial;
+it is retained. A separate declaration completes only missing cells with26542
+additional transitions/7.836seconds, without changing weights, horizon, population
+or any frozen search budget. Both records survive; this is not restored holdout
+status. The scalar is an explicit task coordinate, not a validated material price.
+
+Advisor's key deployment objection is adopted: averaging the coordinate into
+per-type weights and adding over piece counts is another assumption. The first
+existing C/C root has22 public quiet preparations (11 visible destinations).
+All have pure owner0 material1849 with table C414/R2263/N1000, while their task
+probabilities range0..21/31. Dynamic terms, hands, promotion and terminal effects
+are absent from that equality control. A fixed table cannot retain the original
+position-dependent preparation policy. No positional patch or NNUE is added.
+
+A new24-layout C/R/N search pilot fixes semantic attack authority and old ordering
+prices while varying generic/direct/preparation leaf tables.216 calls include72
+exact cold depth3 repeats; every PV replays through Core with zero Native fallback.
+Both task tables change4/24 depth3 actions against generic, but choose identically
+to each other. Atdepth4,23 roots complete under all tables; seed4016 caps8192 nodes
+under all three and stays unknown. Direct/preparation differ only on seed4008.
+Independent plain Core conditional values for its two selected root actions are
+995/749 under direct and995/1310 under preparation, all four cells complete.
+The second line exchanges a rook against a knight; its material changes702 to1263
+and the same dynamic remainder47 applies. The first line wins a knight and scores
+1000-5 under both. This is strict exchange-weight sensitivity, not learning to
+prepare, better prices or stronger play. Defaults/public action identity stay fixed.
+
+Terminal0 is task-unavailable, not WDL: existing Shogi G/TP roots each have capture
+task0 and a winning quiet preparation. Public one-ply search finds both mates at
+999999999 with equal static G/TP1000. The original experimental lightweight View
+omitted search-history witnesses; its failed record is retained and a real public
+GameSession corrects the caller. It is not a product regression or a new utility
+blend. Cross-game vectors/limitations are in CROSS_GAME_PRICE_DIAGNOSTIC.md.
+Exact declarations, producers, partials and outputs: data/preparation_transfer_20261008.json
+and ../archive/preparation_transfer_20261008/index.json (45 rehashed members).
