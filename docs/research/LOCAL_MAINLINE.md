@@ -46,16 +46,25 @@ SEMANTIC_CAPABILITY.md. No new hand price/default has been selected. Four
 generated exchange roots and two action spectra remain negative ranking
 discrimination evidence; prefer a changed semantic mechanism over old reruns.
 
-An actual56148-frontier capture/drop/reply census now yields positive conditional
-endpoint-service families under fixed discount assumptions. Uniform versus
-adversarial policies and a surviving-but-checked Gold expose the proxy's missing
-defensive/delayed service; this is not a universal price. Next test one joint
-capture-time/use approximation rather than silently assume independent averages.
-A fixed-first-ply two-context control already gives only +0.008876%/-0.120053%
-factorization error and preserves G/P ordering; retain the cheap approximation
-as scoped, then vary transfer time rather than repeat this successful control.
-Exact current scope and failures:
-SEMANTIC_CAPABILITY.md and data/paired_context_20261008.json.
+An actual56148-frontier capture/drop/reply census constructs positive conditional
+endpoint-service families under explicit discount/context assumptions. The
+fixed-first-ply two-context approximation is close, but independent ten-step
+paths expose P bias from fixed short service. An independently sampled
+remaining-time kernel reduces it without fitting prices; G corrections are
+mixed. TEMPORAL_HAND_SERVICE.md owns policies, uncertainty and remaining context
+qualification. Do not repeat unchanged horizons or infer material utility.
+
+GOAL_INTERACTION.md separates terminal wins from zero-mobility stalemates and
+constructs matched actor/helper/immobile four-cell interactions. A B/N mate
+witness and a changed predeclared near-anchor law reveal coalition effects
+missed by broad sparse samples. Equal-order allocation conserves finite goal
+increment, but its coefficients depend on helper/context/task. Defaults remain
+unchanged. An actual Shogi capture/drop intervention now shows that permitting a winning
+pawn drop lowers terminal-zero endpoint mean. Retain a terminal/activity vector;
+a declared board-normalized scalar convention is constructive but uncalibrated.
+G/P ordering is robust across nonnegative terminal weights on this cohort,
+ratios are not. Next test ONE changed behavioral/context law for that finite
+construction, not another unchanged horizon sweep or a human-fitted scale.
 
 Retained restrictions: frozen first-contact common moments give Q/R<=261/160
 in that census; changing only that law cannot fix its descriptive reference gap.
@@ -107,6 +116,15 @@ regenerating legal sets per child. One equal6126-leaf reference moves from
 about10.5sec to0.65sec with identical action/score. Event/history parity is
 qualified in UNFAMILIAR_RULE_SEARCH.md; old capped results remain unknown.
 This is Core reference cost, not universal/public-player acceleration.
+
+A pre-valuation24seed population excludes6 immediate-win openings; six frozen
+accepted roots retain complete depth2 parity. Fixed four-ply histories atdepth4
+complete2/6 plain versus4/6 bundled roots. Equal-budget ablation attributes this
+to ordering, not Native (provider absent) or TT-only node savings. Known capped
+references remain unknown. Opaque combined-history aliases retain legal/optimal
+scores with ID-dependent ties. Same-evaluation attack maps now share work across
+unchanged features:1524old/new scores and24search action/score/node/depth results
+match, with local timing savings. UNFAMILIAR_RULE_SEARCH.md owns scope and costs.
 
 ## Evidence and delivery
 

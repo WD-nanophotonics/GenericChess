@@ -1,4 +1,4 @@
-# Unfamiliar-rule search: first interface/cost observations
+# Unfamiliar-rule search: interface, controls and cost
 
 2026-10-08. Primary search work measures efficiency, stability and rule support,
 not Elo, learned prices or an increasingly strong Chess player. The first
@@ -316,3 +316,69 @@ failed route and old fixture recovery are isolated under
 ../archive/paired_context_20261008/; compact results are
 data/paired_context_20261008.json. Compile capability and executed event coverage
 are distinct; future fixture checks should follow actual histories.
+
+## Filtered generated roots and deeper mechanism controls
+
+A pre-valuation population declares seeds0..11 for each4/6board. Existing
+generator filters remain, with a simple additional exclusion for initial
+terminal/no-action or any immediate winning first action. Six of24 openings
+are excluded,18 accepted. First3 accepted per size select4x4 seeds2/3/4 and6x6
+seeds0/1/2, before evaluation. This purpose-biased exposed population does not
+establish balanced rules, good games or representative all-rule performance.
+All24 initial-root depth2 calls complete, repeat and equal six Core references.
+
+Before deeper evaluation, advance each selected rule through four actual plies
+using a fixed lexical-index rollout, preserving full history. Both controls
+retain4096nodes/5sec/q0, targetdepth4 and two fresh-TT repeats. Plain completes
+two of six roots, public TT/ordering four; no time fuse fires. One exhaustive
+Core reference completes and agrees; five capped references remain unknown.
+Different completed depths can have different scores and are not parity failures.
+All generated roots use the legacy fallback: no Native legality provider exists
+here. Completed-depth benefit must not be attributed to Native acceleration.
+
+An additional equal-budget TT-only/order-only ablation reuses the frozen plain/
+combined endpoints. Every repeat is stable; completed depth4 scores agree.
+
+| Four-ply history root | Plain nodes/depth | TT-only nodes/depth | Order-only nodes/depth | Both nodes/depth |
+|---|---:|---:|---:|---:|
+|4x4/2|1616/4|1616/4|556/4|801/4|
+|4x4/3|4096/3|4096/3|1580/4|1599/4|
+|4x4/4|1734/4|1734/4|607/4|562/4|
+|6x6/0|4096/3|4096/3|4096/3|4096/3|
+|6x6/1|4096/3|4096/3|2237/4|2294/4|
+|6x6/2|4096/3|4096/3|4096/3|4096/3|
+
+Ordering supplies the observed completion benefit. TT-only does not reduce
+nodes here; TT-best-move ordering can change the combined traversal, with mixed
+node costs. Keep existing defaults; this small set does not select a globally
+superior configuration or justify dropping full-history/repetition identity.
+
+The actual nine-root capture/promotion/right/drop history also survives an
+opaque lexical type rename. Complete mapped legal sets and18 exhaustive depth2
+root-action spectra agree;108 fresh/reused/warm calls across default/full-PV
+contracts are legal and optimal. Compiler IDs change structurally. Equal-score
+ties can select different actions/PVs because lexical tie-breaking contains IDs;
+score/optimality invariance is the supported observation, not exact tie identity.
+
+## Reuse within one evaluation
+
+The existing evaluator separately recomputed current-position pseudo-attacks
+for mobility, each candidate anchor escape and check status. It now builds each
+owner's map once per evaluation and shares it across those unchanged features.
+Nothing is retained across calls/positions. Both zero-weight features still skip
+the maps entirely. This preserves legacy pseudo-attack semantics, including its
+known semantic-movement limitations; it adds no position feature or cache policy.
+
+Six fixed history roots plus all immediate children, four configurations and
+three passes give1524 exactly equal old/new evaluations. The381 full-feature
+evaluations reduce actual map calls2577 to762; anchor-only1815 to762, mobility-only
+762 unchanged and zero0 unchanged. All24 matched searches preserve exact chosen
+action, score, completed depth and nodes. Summed local plain timing13.747 to
+10.704sec and combined12.505 to9.889sec suggest useful savings on this cohort,
+not a universal speed ratio. Earlier capped depths remain capped and unknown.
+Regression checks cover fixed blocked-ray/check scores, orientation, per-call
+map counts and disabled features. Source snapshots and measurements remain separate.
+
+[Compact controls](data/generated_search_controls_20261008.json) and
+[isolated archive](../archive/generated_search_controls_20261008/README.md)
+retain definitions, actual routes, source snapshots, parity and cost records.

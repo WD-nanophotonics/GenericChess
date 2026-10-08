@@ -168,7 +168,7 @@ def test_material_only_evaluator_does_not_probe_zero_contribution_dynamics(monke
     def forbidden(*args):
         raise AssertionError('disabled dynamic feature performed a probe')
     monkeypatch.setattr(module, 'pseudo_attacks', forbidden)
-    monkeypatch.setattr(module, 'is_in_check', forbidden)
+    monkeypatch.setattr(module, 'anchor_square', forbidden)
     monkeypatch.setattr(Evaluator, '_anchor_escape', forbidden)
     monkeypatch.setattr(Evaluator, '_promotion_bonus', forbidden)
     state = GameSession(compiled).state

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from ...core.attacks import is_in_check, is_square_attacked, pseudo_attacks
+from ...core.attacks import anchor_square, pseudo_attacks
 from ...core.coordinates import Square, square_to_index
 from ...core.movement import LeapAtom, RayAtom
 from ...core.position import Position
@@ -52,17 +52,22 @@ class Evaluator:
                 value = self._profile.hand_value_by_base_type[type_id]
                 score += count * value if owner == 0 else -count * value
 
+        attacks = None
+        if self._config.dynamic_mobility_weight or self._config.anchor_escape_weight:
+            # All three features inspect the same unmodified position.
+            attacks = tuple(pseudo_attacks(position, owner, self._compiled)
+                            for owner in (0, 1))
         if self._config.dynamic_mobility_weight:
-            mob0 = len(pseudo_attacks(position, 0, self._compiled))
-            mob1 = len(pseudo_attacks(position, 1, self._compiled))
+            mob0 = len(attacks[0])
+            mob1 = len(attacks[1])
             score += self._config.dynamic_mobility_weight * (mob0 - mob1)
         if self._config.anchor_escape_weight:
-            esc0 = self._anchor_escape(position, 0)
-            esc1 = self._anchor_escape(position, 1)
+            esc0 = self._anchor_escape(position, 0, attacks[1])
+            esc1 = self._anchor_escape(position, 1, attacks[0])
             score += self._config.anchor_escape_weight * (esc0 - esc1)
-            if is_in_check(position, 0, self._compiled):
+            if anchor_square(position, 0, self._compiled) in attacks[1]:
                 score -= self._config.anchor_escape_weight * 10
-            if is_in_check(position, 1, self._compiled):
+            if anchor_square(position, 1, self._compiled) in attacks[0]:
                 score += self._config.anchor_escape_weight * 10
 
         return score if position.side_to_move == 0 else -score
@@ -90,7 +95,7 @@ class Evaluator:
                 bonus = 0
         return bonus if owner == 0 else -bonus
 
-    def _anchor_escape(self, position: Position, owner: int) -> int:
+    def _anchor_escape(self, position: Position, owner: int, opponent_attacks) -> int:
         n = self._compiled.board_size
         anchor_idx = None
         for idx, piece in enumerate(position.board):
@@ -115,7 +120,7 @@ class Evaluator:
                     tidx = square_to_index(target, n)
                     if (
                         position.board[tidx] is None
-                        and not is_square_attacked(position, target, 1 - owner, self._compiled)
+                        and target not in opponent_attacks
                     ):
                         escapes += 1
             elif isinstance(atom, RayAtom) and atom.max_steps == 1:
@@ -124,7 +129,7 @@ class Evaluator:
                     tidx = square_to_index(target, n)
                     if (
                         position.board[tidx] is None
-                        and not is_square_attacked(position, target, 1 - owner, self._compiled)
+                        and target not in opponent_attacks
                     ):
                         escapes += 1
         return escapes

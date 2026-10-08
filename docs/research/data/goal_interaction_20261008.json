@@ -1,0 +1,2794 @@
+{
+  "allocation": {
+    "complete": true,
+    "declaration": "Constructive analysis of frozen four-cell observations, no new simulation. Equal probability for adding actor first versus second: phiA=(mAI-mII+mAH-mIH)/2; phiH=(mIH-mII+mAH-mAI)/2. Per-context identity phiA+phiH=mAH-mII checked exactly. Symmetric order weighting is an explicit allocation convention, NOT uniquely selected by rules or evidence of stable material prices. Immobile occupancy baseline, conditional law and one-ply terminal task remain essential inputs. Fractions are exact averages of finite observed cohorts, not exact population probabilities. No human labels/normalization/defaults. Preserve sparse zeros; zero empirical variance is not zero uncertainty.",
+    "dependencies": {
+      "coalition-near-qualified.json": "03a2f61f942b6706a1b240b14596d8033d35d042cccb15e1908e2e8933a70ec5",
+      "coalition-qualified.json": "f40ea7cea40a0a429146d6e1dfc852b0e457dba033d50f744c5b1bbf977e8f15"
+    },
+    "producer_sha256": "6c9fc32e00c1c51d8616a1658b2b166f77be87ac04aeba2daffd41797e174355",
+    "rows": [
+      {
+        "actor": "Q",
+        "helper": "B",
+        "interaction": "17/512",
+        "law": "broad-common-safe",
+        "n": 512,
+        "negative_actor_roots": 0,
+        "negative_helper_roots": 0,
+        "phi_actor": "37/1024",
+        "phi_helper": "17/1024",
+        "total_goal_increment": "27/512"
+      },
+      {
+        "actor": "R",
+        "helper": "B",
+        "interaction": "0",
+        "law": "broad-common-safe",
+        "n": 512,
+        "negative_actor_roots": 0,
+        "negative_helper_roots": 0,
+        "phi_actor": "3/512",
+        "phi_helper": "0",
+        "total_goal_increment": "3/512"
+      },
+      {
+        "actor": "B",
+        "helper": "B",
+        "interaction": "0",
+        "law": "broad-common-safe",
+        "n": 512,
+        "negative_actor_roots": 0,
+        "negative_helper_roots": 0,
+        "phi_actor": "0",
+        "phi_helper": "0",
+        "total_goal_increment": "0"
+      },
+      {
+        "actor": "N",
+        "helper": "B",
+        "interaction": "0",
+        "law": "broad-common-safe",
+        "n": 512,
+        "negative_actor_roots": 0,
+        "negative_helper_roots": 0,
+        "phi_actor": "0",
+        "phi_helper": "0",
+        "total_goal_increment": "0"
+      },
+      {
+        "actor": "Q",
+        "helper": "N",
+        "interaction": "13/512",
+        "law": "broad-common-safe",
+        "n": 512,
+        "negative_actor_roots": 0,
+        "negative_helper_roots": 0,
+        "phi_actor": "19/1024",
+        "phi_helper": "13/1024",
+        "total_goal_increment": "1/32"
+      },
+      {
+        "actor": "R",
+        "helper": "N",
+        "interaction": "0",
+        "law": "broad-common-safe",
+        "n": 512,
+        "negative_actor_roots": 0,
+        "negative_helper_roots": 0,
+        "phi_actor": "3/512",
+        "phi_helper": "0",
+        "total_goal_increment": "3/512"
+      },
+      {
+        "actor": "B",
+        "helper": "N",
+        "interaction": "0",
+        "law": "broad-common-safe",
+        "n": 512,
+        "negative_actor_roots": 0,
+        "negative_helper_roots": 0,
+        "phi_actor": "0",
+        "phi_helper": "0",
+        "total_goal_increment": "0"
+      },
+      {
+        "actor": "N",
+        "helper": "N",
+        "interaction": "0",
+        "law": "broad-common-safe",
+        "n": 512,
+        "negative_actor_roots": 0,
+        "negative_helper_roots": 0,
+        "phi_actor": "0",
+        "phi_helper": "0",
+        "total_goal_increment": "0"
+      },
+      {
+        "actor": "Q",
+        "helper": "B",
+        "interaction": "8/73",
+        "law": "edge-distance2-common-safe",
+        "n": 511,
+        "negative_actor_roots": 0,
+        "negative_helper_roots": 0,
+        "phi_actor": "143/511",
+        "phi_helper": "4/73",
+        "total_goal_increment": "171/511"
+      },
+      {
+        "actor": "R",
+        "helper": "B",
+        "interaction": "17/511",
+        "law": "edge-distance2-common-safe",
+        "n": 511,
+        "negative_actor_roots": 0,
+        "negative_helper_roots": 0,
+        "phi_actor": "139/1022",
+        "phi_helper": "17/1022",
+        "total_goal_increment": "78/511"
+      },
+      {
+        "actor": "B",
+        "helper": "B",
+        "interaction": "8/511",
+        "law": "edge-distance2-common-safe",
+        "n": 511,
+        "negative_actor_roots": 0,
+        "negative_helper_roots": 0,
+        "phi_actor": "4/511",
+        "phi_helper": "4/511",
+        "total_goal_increment": "8/511"
+      },
+      {
+        "actor": "N",
+        "helper": "B",
+        "interaction": "1/511",
+        "law": "edge-distance2-common-safe",
+        "n": 511,
+        "negative_actor_roots": 0,
+        "negative_helper_roots": 0,
+        "phi_actor": "1/1022",
+        "phi_helper": "1/1022",
+        "total_goal_increment": "1/511"
+      },
+      {
+        "actor": "Q",
+        "helper": "N",
+        "interaction": "29/512",
+        "law": "edge-distance2-common-safe",
+        "n": 512,
+        "negative_actor_roots": 0,
+        "negative_helper_roots": 0,
+        "phi_actor": "287/1024",
+        "phi_helper": "29/1024",
+        "total_goal_increment": "79/256"
+      },
+      {
+        "actor": "R",
+        "helper": "N",
+        "interaction": "13/512",
+        "law": "edge-distance2-common-safe",
+        "n": 512,
+        "negative_actor_roots": 0,
+        "negative_helper_roots": 0,
+        "phi_actor": "171/1024",
+        "phi_helper": "13/1024",
+        "total_goal_increment": "23/128"
+      },
+      {
+        "actor": "B",
+        "helper": "N",
+        "interaction": "1/256",
+        "law": "edge-distance2-common-safe",
+        "n": 512,
+        "negative_actor_roots": 0,
+        "negative_helper_roots": 0,
+        "phi_actor": "1/512",
+        "phi_helper": "1/512",
+        "total_goal_increment": "1/256"
+      },
+      {
+        "actor": "N",
+        "helper": "N",
+        "interaction": "0",
+        "law": "edge-distance2-common-safe",
+        "n": 512,
+        "negative_actor_roots": 0,
+        "negative_helper_roots": 0,
+        "phi_actor": "0",
+        "phi_helper": "0",
+        "total_goal_increment": "0"
+      }
+    ]
+  },
+  "archive": "../archive/goal_interaction_20261008",
+  "base_sha": "e56702c2ed11f001ea8748d7d02c65a2aee3a131",
+  "broad": {
+    "complete": true,
+    "dependency_sha256": "f40ea7cea40a0a429146d6e1dfc852b0e457dba033d50f744c5b1bbf977e8f15",
+    "producer_sha256": "9793ceb2efcbd98a27633abf571f75f128fa1d801c3f3f65a80d6b7159051b70",
+    "rows": [
+      {
+        "actor": "Q",
+        "cell_mate_counts": {
+          "AH": 27,
+          "AI": 10,
+          "IH": 0,
+          "II": 0
+        },
+        "helper": "B",
+        "interaction": {
+          "mean": 0.033203125,
+          "n": 512,
+          "normal_approx_95": [
+            0.01766843037547426,
+            0.04873781962452574
+          ],
+          "standard_error": 0.007925864604349867
+        },
+        "interaction_counts": {
+          "0": 495,
+          "1": 17
+        },
+        "marginal_with_helper": {
+          "mean": 0.052734375,
+          "n": 512,
+          "normal_approx_95": [
+            0.033355506679663895,
+            0.07211324332033611
+          ],
+          "standard_error": 0.009887177714457197
+        },
+        "marginal_with_immobile": {
+          "mean": 0.01953125,
+          "n": 512,
+          "normal_approx_95": [
+            0.0075327344445197,
+            0.0315297655554803
+          ],
+          "standard_error": 0.006121691609938929
+        },
+        "witnesses": [
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "B",
+              60,
+              14,
+              16,
+              1
+            ],
+            "index": 5,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "Q",
+                  "from_square": {
+                    "file": 6,
+                    "rank": 1
+                  },
+                  "geometry_id": "g21",
+                  "pattern_id": "sem_08_q_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 1,
+                    "rank": 1
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          },
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "B",
+              54,
+              12,
+              1,
+              0
+            ],
+            "index": 29,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "Q",
+                  "from_square": {
+                    "file": 4,
+                    "rank": 1
+                  },
+                  "geometry_id": "g21",
+                  "pattern_id": "sem_08_q_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 0,
+                    "rank": 1
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          },
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "B",
+              10,
+              30,
+              0,
+              55
+            ],
+            "index": 43,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "Q",
+                  "from_square": {
+                    "file": 6,
+                    "rank": 3
+                  },
+                  "geometry_id": "g22",
+                  "pattern_id": "sem_08_q_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 6,
+                    "rank": 6
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          }
+        ]
+      },
+      {
+        "actor": "R",
+        "cell_mate_counts": {
+          "AH": 3,
+          "AI": 3,
+          "IH": 0,
+          "II": 0
+        },
+        "helper": "B",
+        "interaction": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "interaction_counts": {
+          "0": 512
+        },
+        "marginal_with_helper": {
+          "mean": 0.005859375,
+          "n": 512,
+          "normal_approx_95": [
+            -0.0007581437247284641,
+            0.012476893724728464
+          ],
+          "standard_error": 0.0033762850636369717
+        },
+        "marginal_with_immobile": {
+          "mean": 0.005859375,
+          "n": 512,
+          "normal_approx_95": [
+            -0.0007581437247284641,
+            0.012476893724728464
+          ],
+          "standard_error": 0.0033762850636369717
+        },
+        "witnesses": []
+      },
+      {
+        "actor": "B",
+        "cell_mate_counts": {
+          "AH": 0,
+          "AI": 0,
+          "IH": 0,
+          "II": 0
+        },
+        "helper": "B",
+        "interaction": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "interaction_counts": {
+          "0": 512
+        },
+        "marginal_with_helper": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "marginal_with_immobile": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "witnesses": []
+      },
+      {
+        "actor": "N",
+        "cell_mate_counts": {
+          "AH": 0,
+          "AI": 0,
+          "IH": 0,
+          "II": 0
+        },
+        "helper": "B",
+        "interaction": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "interaction_counts": {
+          "0": 512
+        },
+        "marginal_with_helper": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "marginal_with_immobile": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "witnesses": []
+      },
+      {
+        "actor": "Q",
+        "cell_mate_counts": {
+          "AH": 16,
+          "AI": 3,
+          "IH": 0,
+          "II": 0
+        },
+        "helper": "N",
+        "interaction": {
+          "mean": 0.025390625,
+          "n": 512,
+          "normal_approx_95": [
+            0.011751151408258893,
+            0.03903009859174111
+          ],
+          "standard_error": 0.006958915097827096
+        },
+        "interaction_counts": {
+          "0": 499,
+          "1": 13
+        },
+        "marginal_with_helper": {
+          "mean": 0.03125,
+          "n": 512,
+          "normal_approx_95": [
+            0.01616391710017892,
+            0.04633608289982108
+          ],
+          "standard_error": 0.0076969810713372845
+        },
+        "marginal_with_immobile": {
+          "mean": 0.005859375,
+          "n": 512,
+          "normal_approx_95": [
+            -0.0007581437247284641,
+            0.012476893724728464
+          ],
+          "standard_error": 0.0033762850636369717
+        },
+        "witnesses": [
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "N",
+              10,
+              36,
+              40,
+              56
+            ],
+            "index": 521,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "Q",
+                  "from_square": {
+                    "file": 4,
+                    "rank": 4
+                  },
+                  "geometry_id": "g25",
+                  "pattern_id": "sem_08_q_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 1,
+                    "rank": 7
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          },
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "N",
+              15,
+              6,
+              29,
+              47
+            ],
+            "index": 572,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "Q",
+                  "from_square": {
+                    "file": 6,
+                    "rank": 0
+                  },
+                  "geometry_id": "g22",
+                  "pattern_id": "sem_08_q_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 6,
+                    "rank": 5
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          },
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "N",
+              2,
+              48,
+              45,
+              59
+            ],
+            "index": 696,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "Q",
+                  "from_square": {
+                    "file": 0,
+                    "rank": 6
+                  },
+                  "geometry_id": "g20",
+                  "pattern_id": "sem_08_q_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 3,
+                    "rank": 6
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          }
+        ]
+      },
+      {
+        "actor": "R",
+        "cell_mate_counts": {
+          "AH": 3,
+          "AI": 3,
+          "IH": 0,
+          "II": 0
+        },
+        "helper": "N",
+        "interaction": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "interaction_counts": {
+          "0": 512
+        },
+        "marginal_with_helper": {
+          "mean": 0.005859375,
+          "n": 512,
+          "normal_approx_95": [
+            -0.0007581437247284641,
+            0.012476893724728464
+          ],
+          "standard_error": 0.0033762850636369717
+        },
+        "marginal_with_immobile": {
+          "mean": 0.005859375,
+          "n": 512,
+          "normal_approx_95": [
+            -0.0007581437247284641,
+            0.012476893724728464
+          ],
+          "standard_error": 0.0033762850636369717
+        },
+        "witnesses": []
+      },
+      {
+        "actor": "B",
+        "cell_mate_counts": {
+          "AH": 0,
+          "AI": 0,
+          "IH": 0,
+          "II": 0
+        },
+        "helper": "N",
+        "interaction": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "interaction_counts": {
+          "0": 512
+        },
+        "marginal_with_helper": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "marginal_with_immobile": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "witnesses": []
+      },
+      {
+        "actor": "N",
+        "cell_mate_counts": {
+          "AH": 0,
+          "AI": 0,
+          "IH": 0,
+          "II": 0
+        },
+        "helper": "N",
+        "interaction": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "interaction_counts": {
+          "0": 512
+        },
+        "marginal_with_helper": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "marginal_with_immobile": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "witnesses": []
+      }
+    ],
+    "scope": "Interaction is paired mAH-mIH-mAI+mII for existence of a legal immediate win. Conditional population and virtual immobile interventions; descriptive goal mechanism, not material prices or causal decomposition of long games. Approximate normal intervals are development diagnostics only, especially sparse counts. No population/weights chosen from results."
+  },
+  "near_anchor": {
+    "complete": true,
+    "dependency_sha256": "03a2f61f942b6706a1b240b14596d8033d35d042cccb15e1908e2e8933a70ec5",
+    "producer_sha256": "7e8bd66c9a12467013537ba4e7bc467d00b38bbee4ff0ba71f4bfaf4f3e50b54",
+    "rows": [
+      {
+        "actor": "Q",
+        "cell_mate_counts": {
+          "AH": 171,
+          "AI": 115,
+          "IH": 0,
+          "II": 0
+        },
+        "helper": "B",
+        "interaction": {
+          "mean": 0.1095890410958904,
+          "n": 511,
+          "normal_approx_95": [
+            0.08247777528704364,
+            0.13670030690473717
+          ],
+          "standard_error": 0.013832278473901408
+        },
+        "interaction_counts": {
+          "0": 455,
+          "1": 56
+        },
+        "marginal_with_helper": {
+          "mean": 0.33463796477495106,
+          "n": 511,
+          "normal_approx_95": [
+            0.29368478791784464,
+            0.3755911416320575
+          ],
+          "standard_error": 0.020894477988319594
+        },
+        "marginal_with_immobile": {
+          "mean": 0.22504892367906065,
+          "n": 511,
+          "normal_approx_95": [
+            0.18880404951359178,
+            0.2612937978445295
+          ],
+          "standard_error": 0.018492282737484114
+        },
+        "witnesses": [
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "B",
+              62,
+              13,
+              44,
+              60
+            ],
+            "index": 4,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "Q",
+                  "from_square": {
+                    "file": 5,
+                    "rank": 1
+                  },
+                  "geometry_id": "g22",
+                  "pattern_id": "sem_08_q_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 5,
+                    "rank": 7
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          },
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "B",
+              43,
+              39,
+              44,
+              61
+            ],
+            "index": 10,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "Q",
+                  "from_square": {
+                    "file": 7,
+                    "rank": 4
+                  },
+                  "geometry_id": "g22",
+                  "pattern_id": "sem_08_q_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 7,
+                    "rank": 7
+                  }
+                },
+                {
+                  "actor_type_id": "Q",
+                  "from_square": {
+                    "file": 7,
+                    "rank": 4
+                  },
+                  "geometry_id": "g25",
+                  "pattern_id": "sem_08_q_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 5,
+                    "rank": 6
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          },
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "B",
+              18,
+              55,
+              19,
+              3
+            ],
+            "index": 25,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "Q",
+                  "from_square": {
+                    "file": 7,
+                    "rank": 6
+                  },
+                  "geometry_id": "g23",
+                  "pattern_id": "sem_08_q_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 7,
+                    "rank": 0
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          }
+        ]
+      },
+      {
+        "actor": "R",
+        "cell_mate_counts": {
+          "AH": 78,
+          "AI": 61,
+          "IH": 0,
+          "II": 0
+        },
+        "helper": "B",
+        "interaction": {
+          "mean": 0.033268101761252444,
+          "n": 511,
+          "normal_approx_95": [
+            0.01770349981718195,
+            0.04883270370532294
+          ],
+          "standard_error": 0.007941123440852292
+        },
+        "interaction_counts": {
+          "0": 494,
+          "1": 17
+        },
+        "marginal_with_helper": {
+          "mean": 0.15264187866927592,
+          "n": 511,
+          "normal_approx_95": [
+            0.12142846035586906,
+            0.18385529698268277
+          ],
+          "standard_error": 0.01592521342520758
+        },
+        "marginal_with_immobile": {
+          "mean": 0.11937377690802348,
+          "n": 511,
+          "normal_approx_95": [
+            0.09123396063505199,
+            0.14751359318099497
+          ],
+          "standard_error": 0.014357049118863003
+        },
+        "witnesses": [
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "B",
+              18,
+              55,
+              19,
+              3
+            ],
+            "index": 25,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 7,
+                    "rank": 6
+                  },
+                  "geometry_id": "g31",
+                  "pattern_id": "sem_06_r_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 7,
+                    "rank": 0
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          },
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "B",
+              42,
+              62,
+              61,
+              56
+            ],
+            "index": 33,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "B",
+                  "from_square": {
+                    "file": 5,
+                    "rank": 7
+                  },
+                  "geometry_id": "g3",
+                  "pattern_id": "sem_04_b_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 2,
+                    "rank": 4
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          },
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "B",
+              42,
+              33,
+              15,
+              56
+            ],
+            "index": 42,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 1,
+                    "rank": 4
+                  },
+                  "geometry_id": "g29",
+                  "pattern_id": "sem_06_r_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 0,
+                    "rank": 4
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          }
+        ]
+      },
+      {
+        "actor": "B",
+        "cell_mate_counts": {
+          "AH": 8,
+          "AI": 0,
+          "IH": 0,
+          "II": 0
+        },
+        "helper": "B",
+        "interaction": {
+          "mean": 0.015655577299412915,
+          "n": 511,
+          "normal_approx_95": [
+            0.0048815252523221435,
+            0.026429629346503686
+          ],
+          "standard_error": 0.005496965330148353
+        },
+        "interaction_counts": {
+          "0": 503,
+          "1": 8
+        },
+        "marginal_with_helper": {
+          "mean": 0.015655577299412915,
+          "n": 511,
+          "normal_approx_95": [
+            0.0048815252523221435,
+            0.026429629346503686
+          ],
+          "standard_error": 0.005496965330148353
+        },
+        "marginal_with_immobile": {
+          "mean": 0,
+          "n": 511,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "witnesses": [
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "B",
+              47,
+              51,
+              11,
+              31
+            ],
+            "index": 62,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "B",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 1
+                  },
+                  "geometry_id": "g2",
+                  "pattern_id": "sem_04_b_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 4,
+                    "rank": 0
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          },
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "B",
+              23,
+              12,
+              13,
+              7
+            ],
+            "index": 166,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "B",
+                  "from_square": {
+                    "file": 4,
+                    "rank": 1
+                  },
+                  "geometry_id": "g0",
+                  "pattern_id": "sem_04_b_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 5,
+                    "rank": 2
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          },
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "B",
+              9,
+              11,
+              21,
+              24
+            ],
+            "index": 190,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "B",
+                  "from_square": {
+                    "file": 5,
+                    "rank": 2
+                  },
+                  "geometry_id": "g1",
+                  "pattern_id": "sem_04_b_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 2,
+                    "rank": 5
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          }
+        ]
+      },
+      {
+        "actor": "N",
+        "cell_mate_counts": {
+          "AH": 1,
+          "AI": 0,
+          "IH": 0,
+          "II": 0
+        },
+        "helper": "B",
+        "interaction": {
+          "mean": 0.0019569471624266144,
+          "n": 511,
+          "normal_approx_95": [
+            -0.0018786692759295504,
+            0.005792563600782779
+          ],
+          "standard_error": 0.001956947162426615
+        },
+        "interaction_counts": {
+          "0": 510,
+          "1": 1
+        },
+        "marginal_with_helper": {
+          "mean": 0.0019569471624266144,
+          "n": 511,
+          "normal_approx_95": [
+            -0.0018786692759295504,
+            0.005792563600782779
+          ],
+          "standard_error": 0.001956947162426615
+        },
+        "marginal_with_immobile": {
+          "mean": 0,
+          "n": 511,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "witnesses": [
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "B",
+              23,
+              12,
+              13,
+              7
+            ],
+            "index": 166,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "N",
+                  "from_square": {
+                    "file": 4,
+                    "rank": 1
+                  },
+                  "geometry_id": "g13",
+                  "pattern_id": "sem_02_n_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 6,
+                    "rank": 2
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          }
+        ]
+      },
+      {
+        "actor": "Q",
+        "cell_mate_counts": {
+          "AH": 158,
+          "AI": 129,
+          "IH": 0,
+          "II": 0
+        },
+        "helper": "N",
+        "interaction": {
+          "mean": 0.056640625,
+          "n": 512,
+          "normal_approx_95": [
+            0.03659829425884404,
+            0.07668295574115597
+          ],
+          "standard_error": 0.010225678949569368
+        },
+        "interaction_counts": {
+          "0": 483,
+          "1": 29
+        },
+        "marginal_with_helper": {
+          "mean": 0.30859375,
+          "n": 512,
+          "normal_approx_95": [
+            0.268543444351283,
+            0.348644055648717
+          ],
+          "standard_error": 0.0204338294126107
+        },
+        "marginal_with_immobile": {
+          "mean": 0.251953125,
+          "n": 512,
+          "normal_approx_95": [
+            0.2143113666388066,
+            0.28959488336119343
+          ],
+          "standard_error": 0.019204978755710925
+        },
+        "witnesses": [
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "N",
+              6,
+              45,
+              21,
+              23
+            ],
+            "index": 516,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "Q",
+                  "from_square": {
+                    "file": 5,
+                    "rank": 5
+                  },
+                  "geometry_id": "g26",
+                  "pattern_id": "sem_08_q_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 7,
+                    "rank": 3
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          },
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "N",
+              46,
+              27,
+              53,
+              60
+            ],
+            "index": 547,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "Q",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 3
+                  },
+                  "geometry_id": "g22",
+                  "pattern_id": "sem_08_q_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 3,
+                    "rank": 7
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          },
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "N",
+              14,
+              2,
+              36,
+              31
+            ],
+            "index": 550,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "Q",
+                  "from_square": {
+                    "file": 2,
+                    "rank": 0
+                  },
+                  "geometry_id": "g24",
+                  "pattern_id": "sem_08_q_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 7,
+                    "rank": 5
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          }
+        ]
+      },
+      {
+        "actor": "R",
+        "cell_mate_counts": {
+          "AH": 92,
+          "AI": 79,
+          "IH": 0,
+          "II": 0
+        },
+        "helper": "N",
+        "interaction": {
+          "mean": 0.025390625,
+          "n": 512,
+          "normal_approx_95": [
+            0.011751151408258893,
+            0.03903009859174111
+          ],
+          "standard_error": 0.006958915097827096
+        },
+        "interaction_counts": {
+          "0": 499,
+          "1": 13
+        },
+        "marginal_with_helper": {
+          "mean": 0.1796875,
+          "n": 512,
+          "normal_approx_95": [
+            0.1463990005242668,
+            0.2129759994757332
+          ],
+          "standard_error": 0.016983928303945517
+        },
+        "marginal_with_immobile": {
+          "mean": 0.154296875,
+          "n": 512,
+          "normal_approx_95": [
+            0.12297605280176965,
+            0.18561769719823035
+          ],
+          "standard_error": 0.015980011325627732
+        },
+        "witnesses": [
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "N",
+              21,
+              15,
+              20,
+              4
+            ],
+            "index": 526,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 7,
+                    "rank": 1
+                  },
+                  "geometry_id": "g29",
+                  "pattern_id": "sem_06_r_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 4,
+                    "rank": 1
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          },
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "N",
+              45,
+              22,
+              52,
+              63
+            ],
+            "index": 556,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "R",
+                  "from_square": {
+                    "file": 6,
+                    "rank": 2
+                  },
+                  "geometry_id": "g28",
+                  "pattern_id": "sem_06_r_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 7,
+                    "rank": 2
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          },
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "N",
+              13,
+              63,
+              31,
+              15
+            ],
+            "index": 565,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "N",
+                  "from_square": {
+                    "file": 7,
+                    "rank": 3
+                  },
+                  "geometry_id": "g14",
+                  "pattern_id": "sem_02_n_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 6,
+                    "rank": 5
+                  }
+                },
+                {
+                  "actor_type_id": "N",
+                  "from_square": {
+                    "file": 7,
+                    "rank": 3
+                  },
+                  "geometry_id": "g15",
+                  "pattern_id": "sem_02_n_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 5,
+                    "rank": 4
+                  }
+                },
+                {
+                  "actor_type_id": "N",
+                  "from_square": {
+                    "file": 7,
+                    "rank": 3
+                  },
+                  "geometry_id": "g18",
+                  "pattern_id": "sem_02_n_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 6,
+                    "rank": 1
+                  }
+                },
+                {
+                  "actor_type_id": "N",
+                  "from_square": {
+                    "file": 7,
+                    "rank": 3
+                  },
+                  "geometry_id": "g19",
+                  "pattern_id": "sem_02_n_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 5,
+                    "rank": 2
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          }
+        ]
+      },
+      {
+        "actor": "B",
+        "cell_mate_counts": {
+          "AH": 2,
+          "AI": 0,
+          "IH": 0,
+          "II": 0
+        },
+        "helper": "N",
+        "interaction": {
+          "mean": 0.00390625,
+          "n": 512,
+          "normal_approx_95": [
+            -0.001502236452450039,
+            0.00931473645245004
+          ],
+          "standard_error": 0.002759431863494918
+        },
+        "interaction_counts": {
+          "0": 510,
+          "1": 2
+        },
+        "marginal_with_helper": {
+          "mean": 0.00390625,
+          "n": 512,
+          "normal_approx_95": [
+            -0.001502236452450039,
+            0.00931473645245004
+          ],
+          "standard_error": 0.002759431863494918
+        },
+        "marginal_with_immobile": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "witnesses": [
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "N",
+              50,
+              39,
+              33,
+              56
+            ],
+            "index": 896,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "B",
+                  "from_square": {
+                    "file": 7,
+                    "rank": 4
+                  },
+                  "geometry_id": "g3",
+                  "pattern_id": "sem_04_b_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 5,
+                    "rank": 2
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          },
+          {
+            "cells": {
+              "AH": 1,
+              "AI": 0,
+              "IH": 0,
+              "II": 0
+            },
+            "context": [
+              "N",
+              21,
+              28,
+              12,
+              7
+            ],
+            "index": 909,
+            "interaction": 1,
+            "kind": "positive",
+            "winning_actions": {
+              "AH": [
+                {
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 5,
+                    "rank": 2
+                  },
+                  "geometry_id": "g10",
+                  "pattern_id": "sem_00_k_quiet",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 6,
+                    "rank": 2
+                  }
+                }
+              ],
+              "AI": [],
+              "IH": [],
+              "II": []
+            }
+          }
+        ]
+      },
+      {
+        "actor": "N",
+        "cell_mate_counts": {
+          "AH": 0,
+          "AI": 0,
+          "IH": 0,
+          "II": 0
+        },
+        "helper": "N",
+        "interaction": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "interaction_counts": {
+          "0": 512
+        },
+        "marginal_with_helper": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "marginal_with_immobile": {
+          "mean": 0,
+          "n": 512,
+          "normal_approx_95": [
+            0.0,
+            0.0
+          ],
+          "standard_error": 0.0
+        },
+        "witnesses": []
+      }
+    ],
+    "scope": "Interaction is paired mAH-mIH-mAI+mII for existence of a legal immediate win. Conditional population and virtual immobile interventions; descriptive goal mechanism, not material prices or causal decomposition of long games. Approximate normal intervals are development diagnostics only, especially sparse counts. No population/weights chosen from results."
+  },
+  "near_common_exclusions": [
+    {
+      "context": [
+        "B",
+        0,
+        28,
+        8,
+        2
+      ],
+      "original_index": 117,
+      "reason": "I+I has no legal King step; compiler forbids no-action initial setups; exclude from ALL cells without replacement"
+    }
+  ],
+  "scope": "One-ply terminal-goal interactions and explicit equal-order finite allocation. Conditional synthetic laws and virtual occupancy controls; no material/strength/default claim.",
+  "shogi_goal": {
+    "complete": true,
+    "declaration": "Changed semantic mechanism, not another random mate sweep: fixed sparse StandardShogi starts ownK0,0 N3,2 G6,7 B6,5, enemyK8,8 N1,8 and targetP/G4,4. Actual Ncapture3,2to4,4 then enemyN1,8to0,6 yields a real hand and full history. Three predeclared cells:P original rule,P removing ONLY pawn-drop S4 postconditions,G original rule. Enumerate every legal current action/terminal; all route roots and child full Native/Core parity. Test whether pawn-drop-mate prohibition changes terminal-goal opportunity despite genuine hand acquisition; expected P drop8,7 forbidden, allowed and mating withoutS4, G mating drop allowed. Preserve every outcome and competing wins, not just expected witness. Synthetic sparse initial inventory, no opening reachability or material-price/strength claim. One30sec checkpoint, no enlargement.",
+    "producer_sha256": "ea964803863e0821b29b6a0ac56fc5d6774cdd8dc844ffaa9527c0aad57d825b",
+    "seconds": 0.4500998000148684
+  },
+  "shogi_goal_cells": [
+    {
+      "complete": true,
+      "drop87_legal": false,
+      "pawn_drop_mate_filter": true,
+      "roots": [
+        {
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "legal": 25,
+          "ply": 0,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        },
+        {
+          "hands": [
+            {
+              "counts": [
+                [
+                  "P",
+                  1
+                ]
+              ]
+            },
+            {
+              "counts": []
+            }
+          ],
+          "legal": 2,
+          "ply": 1,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        },
+        {
+          "hands": [
+            {
+              "counts": [
+                [
+                  "P",
+                  1
+                ]
+              ]
+            },
+            {
+              "counts": []
+            }
+          ],
+          "legal": 96,
+          "ply": 2,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        }
+      ],
+      "route": [
+        {
+          "actor_type_id": "N",
+          "from_square": {
+            "file": 3,
+            "rank": 2
+          },
+          "geometry_id": "g20",
+          "pattern_id": "legacy_027",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 4,
+            "rank": 4
+          }
+        },
+        {
+          "actor_type_id": "N",
+          "from_square": {
+            "file": 1,
+            "rank": 8
+          },
+          "geometry_id": "g20",
+          "pattern_id": "legacy_026",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 6
+          }
+        }
+      ],
+      "target": "P",
+      "transitions": 123,
+      "winning_actions": []
+    },
+    {
+      "complete": true,
+      "drop87_legal": true,
+      "pawn_drop_mate_filter": false,
+      "roots": [
+        {
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "legal": 25,
+          "ply": 0,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        },
+        {
+          "hands": [
+            {
+              "counts": [
+                [
+                  "P",
+                  1
+                ]
+              ]
+            },
+            {
+              "counts": []
+            }
+          ],
+          "legal": 2,
+          "ply": 1,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        },
+        {
+          "hands": [
+            {
+              "counts": [
+                [
+                  "P",
+                  1
+                ]
+              ]
+            },
+            {
+              "counts": []
+            }
+          ],
+          "legal": 97,
+          "ply": 2,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        }
+      ],
+      "route": [
+        {
+          "actor_type_id": "N",
+          "from_square": {
+            "file": 3,
+            "rank": 2
+          },
+          "geometry_id": "g20",
+          "pattern_id": "legacy_027",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 4,
+            "rank": 4
+          }
+        },
+        {
+          "actor_type_id": "N",
+          "from_square": {
+            "file": 1,
+            "rank": 8
+          },
+          "geometry_id": "g20",
+          "pattern_id": "legacy_026",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 6
+          }
+        }
+      ],
+      "target": "P",
+      "transitions": 124,
+      "winning_actions": [
+        {
+          "base_type_id": "P",
+          "geometry_id": "g72",
+          "pattern_id": "sem_00_standard_drop_contract",
+          "to_square": {
+            "file": 8,
+            "rank": 7
+          }
+        }
+      ]
+    },
+    {
+      "complete": true,
+      "drop87_legal": true,
+      "pawn_drop_mate_filter": true,
+      "roots": [
+        {
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "legal": 25,
+          "ply": 0,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        },
+        {
+          "hands": [
+            {
+              "counts": [
+                [
+                  "G",
+                  1
+                ]
+              ]
+            },
+            {
+              "counts": []
+            }
+          ],
+          "legal": 2,
+          "ply": 1,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        },
+        {
+          "hands": [
+            {
+              "counts": [
+                [
+                  "G",
+                  1
+                ]
+              ]
+            },
+            {
+              "counts": []
+            }
+          ],
+          "legal": 105,
+          "ply": 2,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          }
+        }
+      ],
+      "route": [
+        {
+          "actor_type_id": "N",
+          "from_square": {
+            "file": 3,
+            "rank": 2
+          },
+          "geometry_id": "g20",
+          "pattern_id": "legacy_027",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 4,
+            "rank": 4
+          }
+        },
+        {
+          "actor_type_id": "N",
+          "from_square": {
+            "file": 1,
+            "rank": 8
+          },
+          "geometry_id": "g20",
+          "pattern_id": "legacy_026",
+          "promotion_target_id": null,
+          "to_square": {
+            "file": 0,
+            "rank": 6
+          }
+        }
+      ],
+      "target": "G",
+      "transitions": 132,
+      "winning_actions": [
+        {
+          "base_type_id": "G",
+          "geometry_id": "g71",
+          "pattern_id": "legacy_143",
+          "to_square": {
+            "file": 7,
+            "rank": 7
+          }
+        },
+        {
+          "base_type_id": "G",
+          "geometry_id": "g71",
+          "pattern_id": "legacy_143",
+          "to_square": {
+            "file": 8,
+            "rank": 7
+          }
+        },
+        {
+          "base_type_id": "G",
+          "geometry_id": "g71",
+          "pattern_id": "legacy_143",
+          "to_square": {
+            "file": 7,
+            "rank": 8
+          }
+        }
+      ]
+    }
+  ],
+  "shogi_terminal_service": [
+    {
+      "complete": true,
+      "legal_drops": 66,
+      "mean_U": "31/33",
+      "pawn_drop_mate_filter": true,
+      "target": "P",
+      "terminal_probabilities": {
+        "draw": "0",
+        "loss": "0",
+        "ongoing": "1",
+        "win": "0"
+      },
+      "transitions": 2206
+    },
+    {
+      "complete": true,
+      "legal_drops": 67,
+      "mean_U": "62/67",
+      "pawn_drop_mate_filter": false,
+      "target": "P",
+      "terminal_probabilities": {
+        "draw": "0",
+        "loss": "0",
+        "ongoing": "66/67",
+        "win": "1/67"
+      },
+      "transitions": 2207
+    },
+    {
+      "complete": true,
+      "legal_drops": 75,
+      "mean_U": "117/25",
+      "pawn_drop_mate_filter": true,
+      "target": "G",
+      "terminal_probabilities": {
+        "draw": "0",
+        "loss": "0",
+        "ongoing": "24/25",
+        "win": "1/25"
+      },
+      "transitions": 2643
+    }
+  ],
+  "single_actor": {
+    "n": 2048,
+    "rows": [
+      {
+        "drawn_stalemate_roots": 161,
+        "mate_roots": 36,
+        "type": "Q",
+        "zero_mobility_without_win": 142
+      },
+      {
+        "drawn_stalemate_roots": 12,
+        "mate_roots": 19,
+        "type": "R",
+        "zero_mobility_without_win": 6
+      },
+      {
+        "drawn_stalemate_roots": 6,
+        "mate_roots": 0,
+        "type": "B",
+        "zero_mobility_without_win": 6
+      },
+      {
+        "drawn_stalemate_roots": 1,
+        "mate_roots": 0,
+        "type": "N",
+        "zero_mobility_without_win": 1
+      }
+    ],
+    "seconds": 44.30130430008285,
+    "transitions": 147373
+  },
+  "terminal_weight": {
+    "complete": true,
+    "contrasts": [
+      {
+        "a": "G",
+        "b": "P-original",
+        "constant": "3086/825",
+        "lambda_coefficient": "1/25",
+        "positive_for_all_lambda_ge0": true,
+        "zero_at_lambda": "-3086/33"
+      },
+      {
+        "a": "G",
+        "b": "P-noS4",
+        "constant": "6289/1675",
+        "lambda_coefficient": "42/1675",
+        "positive_for_all_lambda_ge0": true,
+        "zero_at_lambda": "-6289/42"
+      },
+      {
+        "a": "P-noS4",
+        "b": "P-original",
+        "constant": "-31/2211",
+        "lambda_coefficient": "1/67",
+        "positive_for_all_lambda_ge0": false,
+        "zero_at_lambda": "31/33"
+      }
+    ],
+    "dependency_sha256": "87129fcb8f95713d75d519e2adeae6556e004d67ad96bd1ce9e51d0d0cf88869",
+    "illustrative_ratios": [
+      {
+        "G_ratio": "3861/775",
+        "denominator": "P-original",
+        "lambda_": "0"
+      },
+      {
+        "G_ratio": "7839/1550",
+        "denominator": "P-noS4",
+        "lambda_": "0"
+      },
+      {
+        "G_ratio": "3894/775",
+        "denominator": "P-original",
+        "lambda_": "1"
+      },
+      {
+        "G_ratio": "7906/1575",
+        "denominator": "P-noS4",
+        "lambda_": "1"
+      },
+      {
+        "G_ratio": "6534/775",
+        "denominator": "P-original",
+        "lambda_": "81"
+      },
+      {
+        "G_ratio": "1206/325",
+        "denominator": "P-noS4",
+        "lambda_": "81"
+      }
+    ],
+    "producer_sha256": "2c1c85b7644927250ff4b0376111e15c62df9e9415306fe518031579d9774870",
+    "rows": [
+      {
+        "C_at_lambda0": "31/33",
+        "C_at_lambda1": "31/33",
+        "C_at_lambda81": "31/33",
+        "U": "31/33",
+        "cell": "P-original",
+        "normalized_terminal_activity": "31/2673",
+        "win": "0"
+      },
+      {
+        "C_at_lambda0": "62/67",
+        "C_at_lambda1": "63/67",
+        "C_at_lambda81": "143/67",
+        "U": "62/67",
+        "cell": "P-noS4",
+        "normalized_terminal_activity": "143/5427",
+        "win": "1/67"
+      },
+      {
+        "C_at_lambda0": "117/25",
+        "C_at_lambda1": "118/25",
+        "C_at_lambda81": "198/25",
+        "U": "117/25",
+        "cell": "G",
+        "normalized_terminal_activity": "22/225",
+        "win": "1/25"
+      }
+    ],
+    "scope": "Algebra on the already exposed exact finite-policy vector, no new simulation, selected weight or human labels. C(lambda)=U+lambda*win applies only to these all-no-loss/no-draw cells. Rule-only illustrative normalization win+U/81 makes terminalwin1 and ongoing endpoint<=80/81 at a leaf; this is an explicit utility convention, not calibrated WDL or uniquely implied price. Independent expected-value comparisons still depend on behavioral/context laws."
+  },
+  "witness": {
+    "cases": [
+      {
+        "cell": "AH",
+        "helper": "N",
+        "roots": [
+          {
+            "drawn_stalemates": [
+              {
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 6,
+                  "rank": 5
+                },
+                "geometry_id": "g10",
+                "pattern_id": "sem_00_k_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 7,
+                  "rank": 5
+                }
+              },
+              {
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "geometry_id": "g0",
+                "pattern_id": "sem_04_b_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 7,
+                  "rank": 5
+                }
+              },
+              {
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "geometry_id": "g2",
+                "pattern_id": "sem_04_b_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 7,
+                  "rank": 3
+                }
+              },
+              {
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "geometry_id": "g3",
+                "pattern_id": "sem_04_b_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 5,
+                  "rank": 3
+                }
+              },
+              {
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "geometry_id": "g3",
+                "pattern_id": "sem_04_b_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 4,
+                  "rank": 2
+                }
+              },
+              {
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "geometry_id": "g3",
+                "pattern_id": "sem_04_b_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 3,
+                  "rank": 1
+                }
+              },
+              {
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "geometry_id": "g3",
+                "pattern_id": "sem_04_b_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 2,
+                  "rank": 0
+                }
+              }
+            ],
+            "index": 0,
+            "legal": 17,
+            "wins": [
+              {
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "geometry_id": "g1",
+                "pattern_id": "sem_04_b_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 5,
+                  "rank": 5
+                }
+              }
+            ]
+          }
+        ],
+        "type": "B"
+      },
+      {
+        "cell": "IH",
+        "helper": "N",
+        "roots": [
+          {
+            "drawn_stalemates": [
+              {
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 6,
+                  "rank": 5
+                },
+                "geometry_id": "g10",
+                "pattern_id": "sem_00_k_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 7,
+                  "rank": 5
+                }
+              }
+            ],
+            "index": 0,
+            "legal": 10,
+            "wins": []
+          }
+        ],
+        "type": "B"
+      },
+      {
+        "cell": "AI",
+        "helper": "N",
+        "roots": [
+          {
+            "drawn_stalemates": [],
+            "index": 0,
+            "legal": 12,
+            "wins": []
+          }
+        ],
+        "type": "B"
+      },
+      {
+        "cell": "II",
+        "helper": "N",
+        "roots": [
+          {
+            "drawn_stalemates": [],
+            "index": 0,
+            "legal": 5,
+            "wins": []
+          }
+        ],
+        "type": "B"
+      },
+      {
+        "cell": "AH",
+        "helper": "B",
+        "roots": [
+          {
+            "drawn_stalemates": [
+              {
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 6,
+                  "rank": 5
+                },
+                "geometry_id": "g10",
+                "pattern_id": "sem_00_k_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 7,
+                  "rank": 5
+                }
+              },
+              {
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "geometry_id": "g0",
+                "pattern_id": "sem_04_b_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 7,
+                  "rank": 5
+                }
+              },
+              {
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "geometry_id": "g2",
+                "pattern_id": "sem_04_b_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 7,
+                  "rank": 3
+                }
+              },
+              {
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "geometry_id": "g3",
+                "pattern_id": "sem_04_b_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 5,
+                  "rank": 3
+                }
+              },
+              {
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "geometry_id": "g3",
+                "pattern_id": "sem_04_b_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 4,
+                  "rank": 2
+                }
+              },
+              {
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "geometry_id": "g3",
+                "pattern_id": "sem_04_b_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 3,
+                  "rank": 1
+                }
+              },
+              {
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "geometry_id": "g3",
+                "pattern_id": "sem_04_b_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 2,
+                  "rank": 0
+                }
+              }
+            ],
+            "index": 1,
+            "legal": 17,
+            "wins": [
+              {
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "geometry_id": "g1",
+                "pattern_id": "sem_04_b_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 5,
+                  "rank": 5
+                }
+              }
+            ]
+          }
+        ],
+        "type": "N"
+      },
+      {
+        "cell": "IH",
+        "helper": "B",
+        "roots": [
+          {
+            "drawn_stalemates": [],
+            "index": 1,
+            "legal": 12,
+            "wins": []
+          }
+        ],
+        "type": "N"
+      },
+      {
+        "cell": "AI",
+        "helper": "B",
+        "roots": [
+          {
+            "drawn_stalemates": [
+              {
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 6,
+                  "rank": 5
+                },
+                "geometry_id": "g10",
+                "pattern_id": "sem_00_k_quiet",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 7,
+                  "rank": 5
+                }
+              }
+            ],
+            "index": 1,
+            "legal": 10,
+            "wins": []
+          }
+        ],
+        "type": "N"
+      },
+      {
+        "cell": "II",
+        "helper": "B",
+        "roots": [
+          {
+            "drawn_stalemates": [],
+            "index": 1,
+            "legal": 5,
+            "wins": []
+          }
+        ],
+        "type": "N"
+      }
+    ],
+    "contexts": [
+      [
+        "N",
+        46,
+        38,
+        52,
+        63
+      ],
+      [
+        "B",
+        46,
+        52,
+        38,
+        63
+      ]
+    ],
+    "seconds": 0.30279770004563034
+  }
+}

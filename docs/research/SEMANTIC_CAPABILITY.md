@@ -361,6 +361,23 @@ a probability or service measurement and has no independent Native claim.
 It supplies concrete support/cost for the next fixed-total-horizon experiment;
 exact source and a witness per cell are in late-transfer-index.json.
 
+## Current temporal and goal construction
+
+The fixed-total-horizon joint check is now complete. Independent six-step paths
+retain a cheap qualified H3 approximation; ten-step P paths expose underestimation.
+An independently sampled remaining-time kernel substantially reduces that bias,
+while G changes are mixed. No coefficient/default is fitted. Exact scope,
+conditional-context assumptions and uncertainty: [temporal service](TEMPORAL_HAND_SERVICE.md).
+
+One-ply terminal-goal tests separate checkmate from stalemate focus. Matched
+actor/helper/immobile four-cell controls expose conditional interaction; a
+constructed B/N mate and a predeclared near-anchor law explain why broad sparse
+zeros cannot establish absence. Equal-order marginal allocation constructs
+finite goal contributions but depends on the declared context/goal law. It is
+not a selected universal material table. See [goal interaction](GOAL_INTERACTION.md).
+These current constructions supersede the earlier suggested next experiments,
+without altering their frozen records or turning every old limitation into a task.
+
 ## Remaining approximation boundary
 
 The observed double-step source guard admits eight sources per owner;64 blocker

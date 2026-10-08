@@ -22,6 +22,41 @@ def _config():
     return EvaluationConfig()
 
 
+@pytest.mark.parametrize('rows,mobility,escape,expected', [
+    (['...k', 'r...', 'R...', 'K...'], 1, 1, 0),
+    (['...k', 'r...', 'R...', 'K...'], 1, 0, 1),
+    (['...k', 'r...', 'R...', 'K...'], 0, 1, -1),
+    (['...k', 'r...', 'R...', 'K...'], 0, 0, 0),
+    (['...k', '....', 'R.r.', 'K...'], 1, 1, -2),
+])
+def test_dynamic_features_share_current_position_attack_maps(
+        monkeypatch, rows, mobility, escape, expected):
+    import generic_chess.ai.evaluation.evaluator as module
+    from dataclasses import replace
+
+    compiled = build_4x4_rooks()
+    config = EvaluationConfig(dynamic_mobility_weight=mobility,
+                              anchor_escape_weight=escape,
+                              promotion_potential_weight=0)
+    evaluator = Evaluator(compiled, build_ruleset_profile(compiled, config), config)
+    state = make_state(compiled, rows)
+    original = module.pseudo_attacks
+    calls = []
+
+    def counted(position, owner, rules):
+        calls.append((position, owner))
+        return original(position, owner, rules)
+
+    monkeypatch.setattr(module, 'pseudo_attacks', counted)
+    assert evaluator.evaluate(state) == expected
+    assert [owner for _, owner in calls] == ([0, 1] if mobility or escape else [])
+    # A new call uses its own maps, including after the side-to-move changes.
+    calls.clear()
+    flipped = replace(state, position=replace(state.position, side_to_move=1))
+    assert evaluator.evaluate(flipped) == -expected
+    assert [owner for _, owner in calls] == ([0, 1] if mobility or escape else [])
+
+
 def test_anchor_not_in_material():
     compiled = build_4x4_rooks()
     profile = build_ruleset_profile(compiled, _config())

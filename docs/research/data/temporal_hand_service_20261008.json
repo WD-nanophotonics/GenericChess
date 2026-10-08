@@ -1,0 +1,895 @@
+{
+  "archive": "../archive/temporal_hand_service_20261008",
+  "base_sha": "e56702c2ed11f001ea8748d7d02c65a2aee3a131",
+  "horizons": {
+    "batches": [
+      {
+        "file": "pilot-qualified.json",
+        "horizon": 6,
+        "paired": [
+          {
+            "G_minus_P": {
+              "mean": 0.771484375,
+              "n": 512,
+              "normal_approx_95": [
+                0.6256585442230258,
+                0.9173102057769742
+              ],
+              "standard_error": 0.07440093406988482
+            },
+            "context": 0,
+            "prediction_minus_contrast": {
+              "mean": -0.0063636967205111215,
+              "n": 512,
+              "normal_approx_95": [
+                -0.08691811374087328,
+                0.07419072029985103
+              ],
+              "standard_error": 0.04109919235732763
+            }
+          },
+          {
+            "G_minus_P": {
+              "mean": 0.646484375,
+              "n": 512,
+              "normal_approx_95": [
+                0.5133571940973669,
+                0.7796115559026331
+              ],
+              "standard_error": 0.06792203107277199
+            },
+            "context": 1,
+            "prediction_minus_contrast": {
+              "mean": -0.013298326673181312,
+              "n": 512,
+              "normal_approx_95": [
+                -0.08004472220352177,
+                0.05344806885715914
+              ],
+              "standard_error": 0.03405428343384717
+            }
+          }
+        ],
+        "rows": [
+          {
+            "N": 512,
+            "conditional_U": {
+              "1": 4.242424242424242,
+              "3": 3.95,
+              "5": 0.0,
+              "None": 0.0
+            },
+            "context": 0,
+            "mean_U": 0.974609375,
+            "practical_screen": 0.1,
+            "residual": {
+              "mean": -0.018876599354623016,
+              "n": 512,
+              "normal_approx_95": [
+                -0.10275489907139136,
+                0.06500170036214532
+              ],
+              "standard_error": 0.04279505087590221
+            },
+            "screen_triggered": false,
+            "stationary_prediction": 0.955732775645377,
+            "target": "G",
+            "terminal_counts": {
+              "ongoing": 512
+            },
+            "transfer_times": {
+              "1": 99,
+              "3": 20,
+              "5": 18,
+              "None": 375
+            }
+          },
+          {
+            "N": 512,
+            "conditional_U": {
+              "1": 0.8888888888888888,
+              "3": 0.8,
+              "5": 0.0,
+              "None": 0.0
+            },
+            "context": 0,
+            "mean_U": 0.203125,
+            "practical_screen": 0.025,
+            "residual": {
+              "mean": -0.012512902634111913,
+              "n": 512,
+              "normal_approx_95": [
+                -0.029379216915240626,
+                0.0043534116470167975
+              ],
+              "standard_error": 0.008605262388330976
+            },
+            "screen_triggered": false,
+            "stationary_prediction": 0.19061209736588808,
+            "target": "TP",
+            "terminal_counts": {
+              "ongoing": 512
+            },
+            "transfer_times": {
+              "1": 99,
+              "3": 20,
+              "5": 19,
+              "None": 374
+            }
+          },
+          {
+            "N": 512,
+            "conditional_U": {
+              "1": 4.4,
+              "3": 3.7857142857142856,
+              "5": 0.0,
+              "None": 0.0
+            },
+            "context": 1,
+            "mean_U": 0.80859375,
+            "practical_screen": 0.1,
+            "residual": {
+              "mean": -0.02068097472545975,
+              "n": 512,
+              "normal_approx_95": [
+                -0.09615870762763788,
+                0.05479675817671838
+              ],
+              "standard_error": 0.038509047399070476
+            },
+            "screen_triggered": false,
+            "stationary_prediction": 0.7879127752745403,
+            "target": "G",
+            "terminal_counts": {
+              "ongoing": 512
+            },
+            "transfer_times": {
+              "1": 70,
+              "3": 28,
+              "5": 20,
+              "None": 394
+            }
+          },
+          {
+            "N": 512,
+            "conditional_U": {
+              "1": 0.8857142857142857,
+              "3": 0.75,
+              "5": 0.0,
+              "None": 0.0
+            },
+            "context": 1,
+            "mean_U": 0.162109375,
+            "practical_screen": 0.025,
+            "residual": {
+              "mean": -0.007382648052278458,
+              "n": 512,
+              "normal_approx_95": [
+                -0.03245782226095352,
+                0.0176925261563966
+              ],
+              "standard_error": 0.012793456228915846
+            },
+            "screen_triggered": false,
+            "stationary_prediction": 0.15472672694772155,
+            "target": "TP",
+            "terminal_counts": {
+              "ongoing": 512
+            },
+            "transfer_times": {
+              "1": 70,
+              "3": 28,
+              "5": 24,
+              "None": 390
+            }
+          }
+        ],
+        "seconds": 31.587467199889943,
+        "sha256": "28d22718cd383a040176a3f7448e1f4b70da3f95ae4064359af944d23b618900",
+        "transitions": 12288
+      },
+      {
+        "file": "validation.json",
+        "horizon": 6,
+        "paired": [
+          {
+            "G_minus_P": {
+              "mean": 0.81494140625,
+              "n": 2048,
+              "normal_approx_95": [
+                0.7398045634593955,
+                0.8900782490406045
+              ],
+              "standard_error": 0.0383351238727574
+            },
+            "context": 0,
+            "prediction_minus_contrast": {
+              "mean": 0.051445244154715346,
+              "n": 2048,
+              "normal_approx_95": [
+                0.0048611651292682564,
+                0.09802932318016244
+              ],
+              "standard_error": 0.02376738725788117
+            }
+          },
+          {
+            "G_minus_P": {
+              "mean": 0.74365234375,
+              "n": 2048,
+              "normal_approx_95": [
+                0.6718739527433507,
+                0.8154307347566493
+              ],
+              "standard_error": 0.03662162806461698
+            },
+            "context": 1,
+            "prediction_minus_contrast": {
+              "mean": 0.005833182840928243,
+              "n": 2048,
+              "normal_approx_95": [
+                -0.03428356425758,
+                0.04594992993943649
+              ],
+              "standard_error": 0.0204677281114838
+            }
+          }
+        ],
+        "rows": [
+          {
+            "N": 2048,
+            "conditional_U": {
+              "1": 3.9976958525345623,
+              "3": 3.9523809523809526,
+              "5": 0.0,
+              "None": 0.0
+            },
+            "context": 0,
+            "mean_U": 1.0498046875,
+            "practical_screen": 0.1,
+            "residual": {
+              "mean": 0.03242213198079453,
+              "n": 2048,
+              "normal_approx_95": [
+                -0.016762664484013826,
+                0.08160692844560288
+              ],
+              "standard_error": 0.025094283910616508
+            },
+            "screen_triggered": false,
+            "stationary_prediction": 1.0822268194807945,
+            "target": "G",
+            "terminal_counts": {
+              "ongoing": 2048
+            },
+            "transfer_times": {
+              "1": 434,
+              "3": 105,
+              "5": 69,
+              "None": 1440
+            }
+          },
+          {
+            "N": 2048,
+            "conditional_U": {
+              "1": 0.9193548387096774,
+              "3": 0.780952380952381,
+              "5": 0.0,
+              "None": 0.0
+            },
+            "context": 0,
+            "mean_U": 0.23486328125,
+            "practical_screen": 0.025,
+            "residual": {
+              "mean": -0.019023112173920845,
+              "n": 2048,
+              "normal_approx_95": [
+                -0.03624945919577642,
+                -0.0017967651520652723
+              ],
+              "standard_error": 0.00878895256217121
+            },
+            "screen_triggered": false,
+            "stationary_prediction": 0.21584016907607917,
+            "target": "TP",
+            "terminal_counts": {
+              "ongoing": 2048
+            },
+            "transfer_times": {
+              "1": 434,
+              "3": 105,
+              "5": 67,
+              "None": 1442
+            }
+          },
+          {
+            "N": 2048,
+            "conditional_U": {
+              "1": 4.225589225589226,
+              "3": 3.946107784431138,
+              "5": 0.0,
+              "None": 0.0
+            },
+            "context": 1,
+            "mean_U": 0.9345703125,
+            "practical_screen": 0.1,
+            "residual": {
+              "mean": -0.0019388642158503153,
+              "n": 2048,
+              "normal_approx_95": [
+                -0.046230101866140266,
+                0.042352373434439636
+              ],
+              "standard_error": 0.02259757022973977
+            },
+            "screen_triggered": false,
+            "stationary_prediction": 0.9326314482841497,
+            "target": "G",
+            "terminal_counts": {
+              "ongoing": 2048
+            },
+            "transfer_times": {
+              "1": 297,
+              "3": 167,
+              "5": 91,
+              "None": 1493
+            }
+          },
+          {
+            "N": 2048,
+            "conditional_U": {
+              "1": 0.8787878787878788,
+              "3": 0.7784431137724551,
+              "5": 0.0,
+              "None": 0.0
+            },
+            "context": 1,
+            "mean_U": 0.19091796875,
+            "practical_screen": 0.025,
+            "residual": {
+              "mean": -0.007772047056778583,
+              "n": 2048,
+              "normal_approx_95": [
+                -0.01885060185587538,
+                0.0033065077423182114
+              ],
+              "standard_error": 0.005652323877090202
+            },
+            "screen_triggered": false,
+            "stationary_prediction": 0.18314592169322141,
+            "target": "TP",
+            "terminal_counts": {
+              "ongoing": 2048
+            },
+            "transfer_times": {
+              "1": 297,
+              "3": 167,
+              "5": 86,
+              "None": 1498
+            }
+          }
+        ],
+        "seconds": 128.26972739980556,
+        "sha256": "3394fcca4cd26b013260db0960b964083d1cdc4c0e8bbc84bb70efbecc602150",
+        "transitions": 49152
+      },
+      {
+        "file": "horizon10.json",
+        "horizon": 10,
+        "paired": [
+          {
+            "G_minus_P": {
+              "mean": 1.00048828125,
+              "n": 2048,
+              "normal_approx_95": [
+                0.9158745060259535,
+                1.0851020564740463
+              ],
+              "standard_error": 0.043170293481656345
+            },
+            "context": 0,
+            "prediction_minus_contrast": {
+              "mean": 0.05557675639378179,
+              "n": 2048,
+              "normal_approx_95": [
+                -0.0004240592682338562,
+                0.11157757205579744
+              ],
+              "standard_error": 0.028571844725518186
+            }
+          },
+          {
+            "G_minus_P": {
+              "mean": 0.85986328125,
+              "n": 2048,
+              "normal_approx_95": [
+                0.7789940431079778,
+                0.9407325193920222
+              ],
+              "standard_error": 0.04125981537858277
+            },
+            "context": 1,
+            "prediction_minus_contrast": {
+              "mean": 0.07132196693914032,
+              "n": 2048,
+              "normal_approx_95": [
+                0.01701654407559787,
+                0.1256273898026828
+              ],
+              "standard_error": 0.027706848399766556
+            }
+          }
+        ],
+        "rows": [
+          {
+            "N": 2048,
+            "conditional_U": {
+              "1": 3.967136150234742,
+              "3": 4.336283185840708,
+              "5": 4.541666666666667,
+              "7": 3.978723404255319,
+              "9": 0.0,
+              "None": 0.0
+            },
+            "context": 0,
+            "final_custody": {
+              "(0, 'board', 'G')": 595,
+              "(0, 'hand', None)": 30,
+              "(1, 'board', 'G')": 1409,
+              "(1, 'hand', None)": 14
+            },
+            "mean_U": 1.3154296875,
+            "multiple_transfer_episodes": 63,
+            "opportunity_by_final_type": {
+              "G": 1.3154296875,
+              "None": 0.0
+            },
+            "practical_screen": 0.1,
+            "residual": {
+              "mean": 0.005730325892138772,
+              "n": 2048,
+              "normal_approx_95": [
+                -0.04972746525522944,
+                0.06118811703950699
+              ],
+              "standard_error": 0.028294791401718478
+            },
+            "screen_triggered": false,
+            "stationary_prediction": 1.3211600133921388,
+            "target": "G",
+            "terminal_counts": {
+              "ongoing": 2048
+            },
+            "transfer_times": {
+              "1": 426,
+              "3": 113,
+              "5": 72,
+              "7": 47,
+              "9": 28,
+              "None": 1362
+            }
+          },
+          {
+            "N": 2048,
+            "conditional_U": {
+              "1": 0.9953051643192489,
+              "3": 1.008849557522124,
+              "5": 0.8552631578947368,
+              "7": 0.8936170212765957,
+              "9": 0.0,
+              "None": 0.0
+            },
+            "context": 0,
+            "final_custody": {
+              "(0, 'board', 'P')": 571,
+              "(0, 'board', 'TP')": 42,
+              "(0, 'hand', None)": 34,
+              "(1, 'board', 'P')": 35,
+              "(1, 'board', 'TP')": 1354,
+              "(1, 'hand', None)": 12
+            },
+            "mean_U": 0.31494140625,
+            "multiple_transfer_episodes": 49,
+            "opportunity_by_final_type": {
+              "None": 0.0,
+              "P": 0.23779296875,
+              "TP": 0.0771484375
+            },
+            "practical_screen": 0.025,
+            "residual": {
+              "mean": -0.049846430501643044,
+              "n": 2048,
+              "normal_approx_95": [
+                -0.0737822134168266,
+                -0.025910647586459487
+              ],
+              "standard_error": 0.012212134140399775
+            },
+            "screen_triggered": true,
+            "stationary_prediction": 0.26509497574835694,
+            "target": "TP",
+            "terminal_counts": {
+              "ongoing": 2046,
+              "stalemate": 2
+            },
+            "transfer_times": {
+              "1": 426,
+              "3": 113,
+              "5": 76,
+              "7": 47,
+              "9": 33,
+              "None": 1353
+            }
+          },
+          {
+            "N": 2048,
+            "conditional_U": {
+              "1": 3.9425675675675675,
+              "3": 4.076433121019108,
+              "5": 4.222222222222222,
+              "7": 3.9523809523809526,
+              "9": 0.0,
+              "None": 0.0
+            },
+            "context": 1,
+            "final_custody": {
+              "(0, 'board', 'G')": 529,
+              "(0, 'hand', None)": 37,
+              "(1, 'board', 'G')": 1470,
+              "(1, 'hand', None)": 12
+            },
+            "mean_U": 1.13037109375,
+            "multiple_transfer_episodes": 46,
+            "opportunity_by_final_type": {
+              "G": 1.13037109375,
+              "None": 0.0
+            },
+            "practical_screen": 0.1,
+            "residual": {
+              "mean": 0.02737829032687547,
+              "n": 2048,
+              "normal_approx_95": [
+                -0.02476157949035463,
+                0.07951816014410557
+              ],
+              "standard_error": 0.02660197439654597
+            },
+            "screen_triggered": false,
+            "stationary_prediction": 1.1577493840768756,
+            "target": "G",
+            "terminal_counts": {
+              "checkmate": 1,
+              "ongoing": 2047
+            },
+            "transfer_times": {
+              "1": 296,
+              "3": 157,
+              "5": 81,
+              "7": 42,
+              "9": 36,
+              "None": 1436
+            }
+          },
+          {
+            "N": 2048,
+            "conditional_U": {
+              "1": 1.0168918918918919,
+              "3": 1.0063694267515924,
+              "5": 0.8354430379746836,
+              "7": 0.6904761904761905,
+              "9": 0.0,
+              "None": 0.0
+            },
+            "context": 1,
+            "final_custody": {
+              "(0, 'board', 'P')": 507,
+              "(0, 'board', 'TP')": 28,
+              "(0, 'hand', None)": 32,
+              "(1, 'board', 'P')": 29,
+              "(1, 'board', 'TP')": 1444,
+              "(1, 'hand', None)": 8
+            },
+            "mean_U": 0.2705078125,
+            "multiple_transfer_episodes": 38,
+            "opportunity_by_final_type": {
+              "None": 0.0,
+              "P": 0.2099609375,
+              "TP": 0.060546875
+            },
+            "practical_screen": 0.025,
+            "residual": {
+              "mean": -0.043943676612264886,
+              "n": 2048,
+              "normal_approx_95": [
+                -0.06592867534997604,
+                -0.021958677874553727
+              ],
+              "standard_error": 0.01121683609066896
+            },
+            "screen_triggered": true,
+            "stationary_prediction": 0.2265641358877351,
+            "target": "TP",
+            "terminal_counts": {
+              "checkmate": 2,
+              "ongoing": 2046
+            },
+            "transfer_times": {
+              "1": 296,
+              "3": 157,
+              "5": 79,
+              "7": 42,
+              "9": 31,
+              "None": 1443
+            }
+          }
+        ],
+        "seconds": 202.13258719979785,
+        "sha256": "6ab5fd47850be2aaf6e220ceaa6539370ce086f685152498d60f6e85d0b96400",
+        "transitions": 81914
+      }
+    ],
+    "complete": true,
+    "producer_sha256": "78ba447450ff83b73866f3a82a00f00d2bee4a044ac8c74388f9639ac46a9da1",
+    "scope": "Diagnostic normal intervals are not bounded coverage guarantees; all samples exposed development. Old exact H3 is fixed. Impact screens are practical, not scientific accuracy limits. Final custody/type strata are postdeclared exploratory localization, not new validation or causal attribution."
+  },
+  "remaining_time_kernel": {
+    "complete": true,
+    "contrasts": [
+      {
+        "combined_first_order_SE": 0.031342823957593635,
+        "context": 0,
+        "kernel_SE": 0.013093864898843377,
+        "normal_approx_95": [
+          -0.09639179320943111,
+          0.026472076704335927
+        ],
+        "outer_SE": 0.02847671532405981,
+        "time_prediction_minus_actual_G_P": -0.0349598582525476
+      },
+      {
+        "combined_first_order_SE": 0.029624183294728677,
+        "context": 1,
+        "kernel_SE": 0.010877288546816629,
+        "normal_approx_95": [
+          -0.038419544795214,
+          0.07770725372012241
+        ],
+        "outer_SE": 0.027554978311531537,
+        "time_prediction_minus_actual_G_P": 0.01964385446245421
+      }
+    ],
+    "dependencies": {
+      "horizon10.json": "6ab5fd47850be2aaf6e220ceaa6539370ce086f685152498d60f6e85d0b96400",
+      "kernel.json": "84198a6ea11ecbbf2a7467ee5a93d1e0e0117c78dc109e437bc74235ec39e48f"
+    },
+    "producer_sha256": "0a789664937b05aafd14cf73c69da095984f3f7734afba317d4e55683d7aa414",
+    "rows": [
+      {
+        "actual_mean_U": 1.3154296875,
+        "constant_prediction": 1.3211600133921388,
+        "constant_residual": {
+          "mean": 0.005730325892138772,
+          "n": 2048,
+          "normal_approx_95": [
+            -0.04972746525522944,
+            0.06118811703950699
+          ],
+          "standard_error": 0.028294791401718478
+        },
+        "context": 0,
+        "first_transfer_probability": {
+          "1": 0.2080078125,
+          "3": 0.05517578125,
+          "5": 0.03515625,
+          "7": 0.02294921875
+        },
+        "kernel": {
+          "3": 4.112060345633891,
+          "5": 4.06982421875,
+          "7": 4.0244140625,
+          "9": 3.953125
+        },
+        "paired_H9_minus_H3": {
+          "mean": -0.169921875,
+          "n": 2048,
+          "normal_approx_95": [
+            -0.2866252652059643,
+            -0.05321848479403567
+          ],
+          "standard_error": 0.059542546023451194
+        },
+        "sampled_H3_sanity": {
+          "mean": 4.123046875,
+          "n": 2048,
+          "normal_approx_95": [
+            4.032187388292648,
+            4.213906361707352
+          ],
+          "standard_error": 0.046356880973138816
+        },
+        "target": "G",
+        "time_prediction": 1.2817794038365689,
+        "time_residual": {
+          "combined_first_order_SE": 0.031013768413551135,
+          "kernel_SE": 0.012727515124689394,
+          "mean": -0.033650283663431216,
+          "normal_approx_95": [
+            -0.09443726975399144,
+            0.027136702427129004
+          ],
+          "outer_SE": 0.028281870340558894
+        }
+      },
+      {
+        "actual_mean_U": 0.31494140625,
+        "constant_prediction": 0.26509497574835694,
+        "constant_residual": {
+          "mean": -0.049846430501643044,
+          "n": 2048,
+          "normal_approx_95": [
+            -0.0737822134168266,
+            -0.025910647586459487
+          ],
+          "standard_error": 0.012212134140399775
+        },
+        "context": 0,
+        "first_transfer_probability": {
+          "1": 0.2080078125,
+          "3": 0.05517578125,
+          "5": 0.037109375,
+          "7": 0.02294921875
+        },
+        "kernel": {
+          "3": 0.8201125533725605,
+          "5": 0.8984375,
+          "7": 0.9814453125,
+          "9": 1.00927734375
+        },
+        "paired_H9_minus_H3": {
+          "mean": 0.1806640625,
+          "n": 2048,
+          "normal_approx_95": [
+            0.13522518015200202,
+            0.22610294484799798
+          ],
+          "standard_error": 0.023183103238774476
+        },
+        "sampled_H3_sanity": {
+          "mean": 0.82861328125,
+          "n": 2048,
+          "normal_approx_95": [
+            0.8122879622168424,
+            0.8449386002831576
+          ],
+          "standard_error": 0.008329244404672266
+        },
+        "target": "TP",
+        "time_prediction": 0.3162509808391164,
+        "time_residual": {
+          "combined_first_order_SE": 0.013409085774288662,
+          "kernel_SE": 0.005786356471934892,
+          "mean": 0.0013095745891163787,
+          "normal_approx_95": [
+            -0.024972233528489398,
+            0.027591382706722154
+          ],
+          "outer_SE": 0.012096349039355955
+        }
+      },
+      {
+        "actual_mean_U": 1.13037109375,
+        "constant_prediction": 1.1577493840768756,
+        "constant_residual": {
+          "mean": 0.02737829032687547,
+          "n": 2048,
+          "normal_approx_95": [
+            -0.02476157949035463,
+            0.07951816014410557
+          ],
+          "standard_error": 0.02660197439654597
+        },
+        "context": 1,
+        "first_transfer_probability": {
+          "1": 0.14453125,
+          "3": 0.07666015625,
+          "5": 0.03955078125,
+          "7": 0.0205078125
+        },
+        "kernel": {
+          "3": 4.116442254495557,
+          "5": 4.10302734375,
+          "7": 4.03173828125,
+          "9": 4.04150390625
+        },
+        "paired_H9_minus_H3": {
+          "mean": -0.06787109375,
+          "n": 2048,
+          "normal_approx_95": [
+            -0.1813203870779104,
+            0.0455781995779104
+          ],
+          "standard_error": 0.05788229251424
+        },
+        "sampled_H3_sanity": {
+          "mean": 4.109375,
+          "n": 2048,
+          "normal_approx_95": [
+            4.016824256753847,
+            4.201925743246153
+          ],
+          "standard_error": 0.0472197669623227
+        },
+        "target": "G",
+        "time_prediction": 1.1398944609076238,
+        "time_residual": {
+          "combined_first_order_SE": 0.02869030099453431,
+          "kernel_SE": 0.010794292778102437,
+          "mean": 0.009523367157623731,
+          "normal_approx_95": [
+            -0.04670962279166352,
+            0.06575635710691098
+          ],
+          "outer_SE": 0.0265822612766029
+        }
+      },
+      {
+        "actual_mean_U": 0.2705078125,
+        "constant_prediction": 0.2265641358877351,
+        "constant_residual": {
+          "mean": -0.043943676612264886,
+          "n": 2048,
+          "normal_approx_95": [
+            -0.06592867534997604,
+            -0.021958677874553727
+          ],
+          "standard_error": 0.01121683609066896
+        },
+        "context": 1,
+        "first_transfer_probability": {
+          "1": 0.14453125,
+          "3": 0.07666015625,
+          "5": 0.03857421875,
+          "7": 0.0205078125
+        },
+        "kernel": {
+          "3": 0.8083682060942187,
+          "5": 0.85205078125,
+          "7": 0.916015625,
+          "9": 0.9736328125
+        },
+        "paired_H9_minus_H3": {
+          "mean": 0.1767578125,
+          "n": 2048,
+          "normal_approx_95": [
+            0.1335214934552805,
+            0.2199941315447195
+          ],
+          "standard_error": 0.0220593464513875
+        },
+        "sampled_H3_sanity": {
+          "mean": 0.796875,
+          "n": 2048,
+          "normal_approx_95": [
+            0.7794459409924932,
+            0.8143040590075068
+          ],
+          "standard_error": 0.008892377044646297
+        },
+        "target": "TP",
+        "time_prediction": 0.26038732519516955,
+        "time_residual": {
+          "combined_first_order_SE": 0.01188817214555268,
+          "kernel_SE": 0.004327468385966833,
+          "mean": -0.010120487304830476,
+          "normal_approx_95": [
+            -0.03342130471011373,
+            0.013180330100452777
+          ],
+          "outer_SE": 0.011072563132841114
+        }
+      }
+    ],
+    "scope": "Independent outer first-transfer/actual-U batch and forced-initial-capture service kernel. Kernel3 uses prior exactH3; kernel5/7/9 independent sample means. First-order delta normal diagnostics combine outer residual and kernel influence variances; not finite-sample bounded coverage or material-price accuracy. Common seed pairing across types is retained for contrast uncertainty. No coefficients chosen against outcomes; delayed-capture contexts are still approximated by initial postcapture contexts."
+  },
+  "scope": "Qualified fixed-policy endpoint service; no material calibration/default change."
+}
