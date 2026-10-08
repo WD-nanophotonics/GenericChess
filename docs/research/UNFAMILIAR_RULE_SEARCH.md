@@ -849,3 +849,150 @@ the nine recorded qpath positions repeat; this does not prove full history
 repetition semantics, but supplies no evidence for a repetition-loop fix. Keep
 the hard safeguard. Separate hard-trace-index.json archives the actual positions,
 action/check history, producer and final accounting assertion/comment updates.
+
+## Quiet-check support versus repeated execution cost
+
+The existing capture-only option is a different qsearch approximation, not a
+cost-only repair. Two rotated cold repeats on the exposed2200/2100 roots fix
+depth2/8192totalnodes/20sec, ordered qsearch, q4/hard8, Native attack/legality,
+TT/order and root-scan-off. On2200 it keeps depth2/score-1537 while reducing
+pushes6106->2940 and local wall2.49->0.97sec. On2100 it avoids the hard-check
+abort and completes depth2/score1234, but needs45269pushes/~19.7sec instead of
+14970pushes/~8sec retaining only depth1/score2440. Different completed depths
+and qsupport cannot be called equivalent decisions or a universal saving.
+
+A concrete4x4 diagnostic establishes the omitted consequence. Owner0 has one
+R in hand; high-rank-first board is `..../R.../..../K.k.`. The quiet move
+R(0,2)->(2,2) checks. Both legal defenses, K(2,0)->(3,1) and ->(3,0), are
+answered by R-drop(3,2) checkmate. Core enumerates all defenses and both final
+terminals. Full q4/hard8 scores999999997 in83qnodes, with both immutable and
+mutable paths; capture-only returns stand-pat1896 in one node. This selected
+witness is not a population or strength estimate. Keep quiet-check support
+and the hard safeguard; a cheap approximation can discard a real tactic.
+The first diagnostic producer failed on a reversed runtime constructor after
+finding the witness. Its incomplete output remains beside the corrected version.
+
+A separate cost-only change reuses the exact child-side check already computed
+by a nonpass runtime push. The answer belongs to the current DFS frame/identity,
+not arbitrary imported history; roots, passes and the other owner use fresh Core
+queries. A pass deliberately records no checking responsibility, which need not
+equal the actual child check. Pop/exception undo restores the frame, and cached
+queries still execute the cancellation checkpoint. Public action/history support,
+attack authority, prices, order and depth limits stay unchanged; no new option.
+
+The local prototype first repeats2200/2100 without a wall timer, then transfers
+to the seven remaining fixed exposed2201..2207 roots at20sec. Completed-depth
+evidence and all failure causes are retained.2202 improves from a wall-capped
+depth1 to completed depth2;2205 still wall-caps. These observations motivated
+the narrow product method, not a claim that every cap or search cost is solved.
+
+Actual product replay separately fixes three preselected mechanism roots
+2200/2100/2202 at depth2/8192nodes/40sec/q4hard8 and rotates two cold repeats.
+Compare the new method with the same product patched to fresh authoritative
+queries. All12 action/score/main+qnodes/depth/PV/stop signatures and runtime
+push/pop/legality counts agree exactly. Local baseline versus reuse seconds:
+2200 2.465/2.520 vs2.118/2.063;2100 8.015/7.832 vs6.980/6.670;
+2202 22.837/22.813 vs18.658/18.737. Both2202 methods now finish depth2 under
+the separately declared fair40sec continuation; the old20sec failure remains.
+2100 still stops at the hard-check safeguard. This is execution savings on
+exposed development roots, not new prices, strength or an independent holdout.
+
+Default lexical qsearch is checked separately:2200/2100, depth2/4096nodes/40sec,
+q4/hard8 and two rotated cold repeats per method. All eight exact signatures
+and runtime work agree.2200 completes depth2/score-1537 at baseline9.675/9.771sec
+versus reuse8.030/7.915;2100 retains depth1/score2440 at the node limit, with
+15.568/15.572 versus12.863/12.883sec. An unchanged incomplete result is still
+incomplete, even though executing the same fixed-node work costs less.
+
+The existing caller hard-check-depth control gets its own finite curve on2100:
+q4, hard8/12/16, depth2/8192totalnodes/30sec, ordered qsearch and two rotated
+cold repeats. Hard8 stops at the original safeguard (~6.75sec);12 and16 both
+reach the node limit (~19.5sec). All retain depth1/score2440; none completes
+depth2. Longer check horizons expose a tree-work bottleneck, not a demonstrated
+solution. Keep every old failure and default; do not extend this curve unchanged.
+
+A local source-clone experiment also classifies each ordered quiet action and
+recurses inside the same push, preserving the same action support and q counters.
+2200 pushes6106->5866,2100 14970->14357; completed signatures agree. This later
+prototype is retained as development evidence, separate from the deployed
+current-child check method. It does not yet justify a second product refactor.
+
+Four separately predeclared fresh8x8 callers2300..2303 then test actual product
+reuse at depth2/4096nodes/20sec/q2hard8, default lexical qsearch, Native attack/
+legality, TT/order and root-scan-off. Each executes the fixed16-ply mechanical
+coverage route and four rotated cold calls. All16 exact signatures and completed
+scores agree with fresh Core queries.2301/2303 finish depth2;2300/2302 retain
+depth1 at the node limit. Local baseline/reuse seconds are12.71/10.76,
+8.41/7.99,7.52/6.72,5.99/4.87 in the first rotation, with the second retained
+in the raw record. This extends execution evidence to a declared fresh cohort,
+not independent material validation or a reason to hide the two failed depths.
+
+Another local cost hypothesis is rejected. Runtime terminal probing asks Core
+whether any legal action exists; substituting the existing Native FULL transient
+legal list and taking its nonemptiness regresses2200 ~1.97->2.97sec and2100
+~6.61->9.89sec under the same fixed-node ordered-qsearch calls. All signatures/
+runtime work agree. Independent dual-query calls verify6680 predicates, including
+36 false cases, but correctness alone does not make full-list construction a
+good replacement for Core early exit. No Native terminal/history authority, new
+provider contract or cache is added. The first bridge matched engine-instance
+identity despite per-query engine creation; its zero-call interrupted record
+is retained as a failed local harness, not included as speed evidence.
+
+With q2, the existing PVS option does not repeat its old q0 completion advantage.
+All four now-exposed2300..2303 roots get a separately declared fair4096/8192node,
+20sec, two-rotation curve. Both methods complete two depth2 roots at4096 and
+three at8192;2300 wall-caps with both at the larger budget. At2301 total nodes
+rise3044->3071;2303 rises2343->2744. At2302,8192 permits both to complete:
+baseline6481/PVS6114nodes, but local PVS wall is higher (11.44/12.04 versus
+10.05/11.09sec). All common completed depth2 scores agree. More configured
+headroom is not equal to actual work; fewer nodes are not necessarily less time.
+These results support retaining the current defaults and checking the actual
+caller/q configuration rather than extrapolating from the old q0 cohort.
+
+## Open: equivalent transformation encodings change q support
+
+A new4x4 witness fixes K(0,0), enemy K(3,3), own A(1,0), with A one forward
+leap and B four orthogonal rays. A semantic forward empty-target move sets the
+actor's current type to B. Compare promotion_mode none against explicit B;
+the latter redundantly sets exactly the same final type/promoted state.
+In a combined definition both public bindings produce the EXACT same child
+Position/terminal under one fingerprint, while promotion_target_id is null/B.
+There are no hands or history/aux triggers in this finite control.
+
+Frozen generic prices are A274/B1726 in both definitions, with dynamic terms0.
+Existing classification excludes the effect-only quiet action but includes its
+explicit-promotion equivalent. q1/hard8 therefore returns274 versus1726 on both
+immutable and mutable paths. The combined definition returns1726. This is a
+concrete representation-dependent approximation, not a Core execution error,
+price-fit result or playing-strength estimate. Current-child check reuse preserves
+it; that execution optimization does not claim to repair all qsearch semantics.
+
+The next action is a narrowly validated classification fix, separating actual
+type/inventory change from public promotion labels. Actor-local detection and a
+price-free owner/current-type inventory comparison including hands have different
+scope/cost; normal drops and pure aux changes need explicit controls. Do not
+silently broaden all quiet actions or add a price-specific rule. The witness and
+source are retained before any fix. One concrete advisor question was sent;
+independent work continues, without an approval gate.
+
+Exact declarations, producers, failed versions, all caps and recovery for this
+section: data/qsemantics_20261008.json and ../archive/qsemantics_20261008/index.json.
+
+No-change followup (promotion-nochange-v4): initial baseA/currentB promoted actor
+with valid legacy targets and empty promotion-pair masks. Effect setB and
+redundant explicitB produce identical physical child/terminal in the combined
+fingerprint, but classify false/true. Frozen q1 scores both1726, qnodes5/6 in
+both mutable/immutable paths. Three fixture-validation failures are retained.
+This confirms the advisor objection: an inventory fallback after unconditional
+semantic promotion metadata does not establish representation-invariant support.
+Adopt actual-effect controls before a limited classification correction; inventory
+count cancellation and unrelated auxiliary changes remain explicitly outside any
+complete-tactics claim. Public action/history identities are never quotiented.
+
+Balanced-type followup: ownA(1,0) moves to(1,1) asB, while ownB(2,0)
+becomesA. Actual per-owner current-type counts and total material2000 stay
+constant despite spatial capability changes. Effect/explicit same-child
+encodings still split support(false/true) and qnodes5/6; scores both2000.
+Thus inventory alone cannot detect all actual transformations. The next finite
+contract must state this limitation and resolve encoding equality, rather than
+claiming a complete detector or keeping unconditional semantic metadata authority.

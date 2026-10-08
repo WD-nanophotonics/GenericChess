@@ -21,10 +21,33 @@ from generic_chess.core.actions import BoardMove, DropMove
 from generic_chess.core.movement import RayAtom
 from generic_chess.core.movegen import legal_actions
 from generic_chess.core.transition import legal_successors
+from generic_chess.core.search_runtime import SearchPathRuntime
 from generic_chess.session.session import GameSession
 
 from ai_fixtures import build_4x4_rooks
 from conftest import T, king_type, make_compiled, make_state
+
+
+@pytest.mark.parametrize("mutable", [False, True])
+def test_quiet_check_can_force_mate_after_either_defense(mutable):
+    """Capture-only support deliberately misses this noncapture consequence."""
+    compiled = build_4x4_rooks()
+    state = make_state(compiled, ["....", "R...", "....", "K.k."],
+                       hands=([("R", 1)], ()))
+    evaluator = _evaluator(compiled)
+    limits = SearchLimits(quiescence_max_depth=4, quiescence_hard_max_depth=8)
+    results = []
+    for capture_only in (False, True):
+        ctx = _ctx(compiled, evaluator, limits)
+        ctx.tuning = SearchTuning(use_ordered_qsearch=True,
+                                 use_capture_only_qsearch=capture_only)
+        if mutable:
+            ctx.runtime = SearchPathRuntime(state, compiled)
+        results.append(quiescence(state, -INF, INF, 0, 0, ctx))
+        if mutable:
+            ctx.runtime.assert_balanced()
+    assert results[0] == 999999997
+    assert results[1] == evaluator.evaluate(state)
 
 
 def _evaluator(compiled):

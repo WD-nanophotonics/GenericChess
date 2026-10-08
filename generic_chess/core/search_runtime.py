@@ -344,6 +344,7 @@ class _Frame:
     child_runtime_hash: RuntimeHash | None = None
     child_occurrence_added: bool = False
     history_context: RuntimeHistoryContext | None = None
+    child_in_check: bool | None = None
 
 
 @dataclass(slots=True)
@@ -935,6 +936,24 @@ class SearchPathRuntime:
         engine = semantic_engine_for(self.compiled)
         return engine.in_check(position, position.side_to_move, checkpoint=checkpoint) if engine is not None else is_in_check(position, position.side_to_move, self.compiled)
 
+    def in_check(self, owner: int, checkpoint=None) -> bool:
+        """Query current check, reusing an already computed nonpass push result.
+
+        Imported/root history is not a check oracle. A pass records no checking
+        responsibility, so it also needs a fresh query. Frame identity ties the
+        reusable answer to the exact current child and naturally restores it
+        after pop; the other owner's check is always queried independently.
+        """
+        if self._frames and owner == self.position.side_to_move:
+            frame = self._frames[-1]
+            if frame.child_identity is self._identity and frame.child_in_check is not None:
+                if checkpoint is not None:
+                    checkpoint()
+                return frame.child_in_check
+        engine = semantic_engine_for(self.compiled)
+        return (engine.in_check(self.position, owner, checkpoint=checkpoint)
+                if engine is not None else is_in_check(self.position, owner, self.compiled))
+
     def _find_occurrence(self, identity: object, runtime_hash: RuntimeHash, *, instrument: bool = True):
         bucket = self._occurrences.setdefault(runtime_hash, [])
         if instrument:
@@ -1142,6 +1161,9 @@ class SearchPathRuntime:
             child = _apply_action_unchecked(parent, action, self.compiled)
         gave_check = (
             False if isinstance(action, PassAction) else self._gave_check(child, checkpoint)
+        )
+        self._frames[-1].child_in_check = (
+            None if isinstance(action, PassAction) else gave_check
         )
         child_external_key = self._opaque_history_key_for_child(child)
         child_identity = RuntimePositionIdentity(child)

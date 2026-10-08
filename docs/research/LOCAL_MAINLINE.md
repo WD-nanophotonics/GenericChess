@@ -12,14 +12,23 @@ consultation, tests, publication and segment endings are not scientific completi
    familiar-piece mixtures, recombined mechanics and generated playable rules.
    Generic NNUE/self-evolution is later work.
 
-Next: examine the existing ordered-qsearch transfer's completed-depth evidence
-and select one price-free utility question that has a chance to distinguish
-pieces. Fresh PVS transfer is heterogeneous; q4 exposes quiet-action probe cost.
-Neither changes defaults or makes a material-price claim. Core/Native completed
-decisions agree; wider generated rules expose node as well as wall limits.
+Next: repair semantic qsupport representation dependence using actual effects,
+starting with transformation and redundant no-change controls; separately retain
+conditional transformation features without inventing a scalar bonus.
+Exact current-child check reuse preserves actual caller decisions while reducing
+local cost; wider generated rules still expose node and hard-check limits.
+Existing PVS/qsearch approximations remain caller options, not default or price
+promotions. Core/Native completed decisions agree within the declared controls.
 Transformation effects remain an explicit static-projection exclusion; no bonus
 is fitted against exposed continuation counts. Retention preserves signed scores,
 both kinds of zero and terminals; it is not a positive-price normalization.
+
+The two actual6x6 transform contexts now have effect-sensitive conditional
+endpoint features and a separate exact next-focal unit-removal task. Equivalent
+duplicate quiet bindings preserve physical-reply means. P/X task values are
+31/39vs31/39 and3/7vs6/7 under the declared uniform law, while every worst-reply
+value is0. Context/response assumptions remain explicit; neither count magnitude
+nor a chosen task policy identifies rule-only material prices.
 
 The fixed four-ply C/R/N retention pilot has27 common layouts,5184 paths and
 20694 independently replayed legal steps. All paired layout-bootstrap intervals
@@ -135,6 +144,28 @@ depth2 score, while2205 still caps. Explicit generation timing was missing in q
 and coarse elsewhere; repaired telemetry preserves four fixed caller signatures
 and runtime work. No default/price/new-cache change. Exact populations, all caps,
 ordered-qsearch transfer and recovery: pvs_transfer_20261008.json/search document.
+
+Current-child check reuse is a narrow product execution change: use the already
+computed nonpass DFS child's check, with root/pass/other-owner Core fallback.
+All20 exposed product replays and16 fresh2300..2303 calls retain exact signatures;
+fresh2300/2302 still node-cap,2301/2303 complete depth2. Quiet-check omission has
+an actual forced-mate counterexample, so support/defaults stay. Hard12/16 merely
+turns2100's hard8 failure into a node cap. A Native full-list existence bridge
+regresses~50% and is rejected; a local single-push prototype is not deployed.
+Conditional feature/task sources, failures and exact recovery are isolated in
+qsemantics_20261008.json and its archive, not active product imports.
+
+A new4x4 semantic witness produces the exact same physical transformed child
+with effect-only versus redundant explicit-promotion encodings, but q1 returns
+274 versus1726. An already-promoted no-change control also splits support
+(false/true), although both scores stay1726 (5vs6 qnodes). Thus simply adding
+an inventory fallback after unconditional promotion metadata is insufficient.
+Dot independently read both published classifiers; local witness runs remain
+Agent evidence. Adopt the finite no-change objection, preserve public histories,
+and test a limited price-free actual-inventory signal before deployment. Counts
+can cancel simultaneous type swaps; this is not a complete tactical classifier.
+Existing q2 PVS curve yields2/4vs2/4 D2 completions at4096nodes and3/4vs3/4
+at8192; individual node/time regressions remain. No default change.
 
 ## Evidence routing and delivery
 

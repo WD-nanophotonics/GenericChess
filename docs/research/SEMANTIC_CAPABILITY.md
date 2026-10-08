@@ -762,3 +762,53 @@ fit human prices or tune horizon/reward to manufacture ordering. A later utility
 check needs a different decision-changing premise. Exact sources and all zeros:
 data/retention_20261008.json and ../archive/retention_20261008/index.json
 (8 extracted/rehashed members). Existing feature-table defaults stay unchanged.
+
+## Conditional transformation capability, with an encoding control
+
+The existing6x6 first actual X transformations at seeds2000/2003 supply a
+finite effect-sensitive feature question. After the quiet action, compare its
+declared X->P and X->X effects under all legal opponent replies. Give each
+distinct physical successor Position equal mass; count the surviving focal
+actor's distinct next-turn movement/capture endpoints, with lost/terminal
+branches zero. This is a conditional feature under an explicit response law,
+not a rule-only constant, material utility or a preparation-price blend.
+
+|Seed|Effect target|Reply actions/physical successors|Mean movement endpoints|Mean capture endpoints|
+|---|---|---|---|---|
+|2000|P|39/39|49/13|59/39|
+|2000|X|39/39|178/39|64/39|
+|2003|P|23/21|104/21|3/7|
+|2003|X|23/21|68/21|16/7|
+
+Duplicate the same quiet semantic action with a new binding name and identical
+effects. Public replies become41/25 but physical populations and both feature
+means stay identical. Action-weighted movement means change instead (for example
+2003 P116/23->128/25). Within each variant the complete physical Position is
+grouped, while the representative retains its actual public history; this is
+not permission to merge search/repetition histories or different rulesets.
+
+The feature sees the known transformation exclusion while passing this finite
+equivalent-encoding check. P/X movement direction reverses between the two
+contexts; capture counts alone do not determine a scalar bonus. Existing static
+raw/profile values remain unchanged and explicitly qualified. Do not infer a
+generic material correction from these exposed conditional observations.
+
+A separate exact task uses these same reply populations, not a new favorable
+filter. On the focal actor's next actual turn it may choose a legal from-focal
+action or virtual task-stop0. Reward is the decrease of ordinary opponent-owned
+board-plus-hand entity count over that action. Anchors are excluded; drops and
+type changes do not earn a removal merely by changing representation. Lost
+actors/early terminal replies remain0. This is a conditional unit-removal task,
+not the whole player's choice set, a pass legality claim or a terminal-win reward.
+
+|Seed|P uniform physical-reply value|X value|P/X worst-reply value|Lost-actor replies|
+|---|---|---|---|---|
+|2000|31/39|31/39|0/0|3/39|
+|2003|3/7|6/7|0/0|2/21|
+
+Actual Core successors verify the unit rewards; no early terminal replies occur
+in these two contexts. Duplicate quiet bindings preserve every paired reply
+value. More capture endpoints at2000 do not increase this unit-task value;
+2003 does separate P/X. Worst replies make both targets0, so neither endpoint
+magnitude nor the uniform-law distinction supplies an intrinsic scalar price.
+Retain the context/policy/feature components and the explicit static exclusion.

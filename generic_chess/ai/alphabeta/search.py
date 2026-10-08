@@ -625,11 +625,7 @@ def _runtime_noisy_actions(ctx: _Context, actions):
                 continue
             if ctx.tuning.use_capture_only_qsearch:
                 continue
-            engine = semantic_engine_for(ctx.compiled)
-            child_in_check = (
-                engine.in_check(child.position, 1 - side, checkpoint=ctx.checkpoint)
-                if engine is not None else is_in_check(child.position, 1 - side, ctx.compiled)
-            )
+            child_in_check = runtime.in_check(1 - side, checkpoint=ctx.checkpoint)
             if child_in_check:
                 noisy.append(action)
                 if action_is_drop(action):
@@ -657,11 +653,7 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
     if restart is not None:
         alpha = max(alpha, 0)
     side = state.position.side_to_move
-    engine = semantic_engine_for(ctx.compiled)
-    in_check = (
-        engine.in_check(state.position, side, checkpoint=ctx.checkpoint)
-        if engine is not None else is_in_check(state.position, side, ctx.compiled)
-    )
+    in_check = runtime.in_check(side, checkpoint=ctx.checkpoint)
     if in_check:
         actions = _runtime_legal_actions(ctx, ctx.checkpoint)
         ctx.budget.check(ctx.stats, force=True)
