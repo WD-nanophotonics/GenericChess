@@ -813,6 +813,83 @@ value. More capture endpoints at2000 do not increase this unit-task value;
 magnitude nor the uniform-law distinction supplies an intrinsic scalar price.
 Retain the context/policy/feature components and the explicit static exclusion.
 
+### Conditional compression requires common coefficients (2026-10-09)
+
+The advisor suggested checking equal material-count differences before inventing
+another task. Adopt that check, but reject its initial cross-rule residual claim:
+seed2000 and2003 are different RuleSets, so their rule-generated coefficients
+need not agree. Reconstructing all eight original variants finds the same
+owner0 board-current delta P:-1/X:+1, unchanged base/hand stock, but default
+material score differences -629/-612 (semantic profiles -636/-634). Within each
+seed P/X variants share a table; across seeds they do not. Consequently the
+task contrasts0 and3/7 alone do not establish a3/14 residual bound for a
+rule-specific table. Equal type labels are not common coefficient authority.
+
+One explicit construction then holds the RuleSet fixed: append X->X to the
+seed2003 P-transform rule, retaining both quiet choices at the same destination.
+This is a new rule-control, not the original roots' direct evidence or a random
+sample. All25 common opponent public replies are retained.23 surviving actor
+pairs share the same P:-1/X:+1 count delta, but unit-task contrasts are+1 in12,
+0 in10 and-1 in1; two lost-actor pairs have both differences0. The richer
+owner/base/current/promoted count delta is also fixed and hands/aux agree.
+The negative witness moves enemy X(2,4)->(2,2): only focal P(3,2) can capture
+it. In the positive witness enemy A(0,4)->(1,3), focal X has three ordinary
+capture choices while P has none. These are conditional opportunity tasks,
+not whole-game material values or a placement patch.
+
+Native independently matches50 reply-child legal sets and1618 checked
+transitions, complete position identity/history, terminals and unit rewards.
+The first replay failed because a saved dataclass Action is not action_to_dict
+transport; source/partial remain intact and a separately qualified decoder
+continuation succeeds. No product protocol or history authority was changed.
+
+Opposite task contrasts with the same feature delta imply any single additive
+count prediction has maximum absolute error at least1 task unit on these
+conditional rows, even if each background has its own intercept. This does
+not forbid useful average material approximations or bound search regret.
+Grouping the25 public replies into23 paired physical states gives means
+P10/23,X20/23, contrast10/23, versus public-action contrast11/25. Both marginal
+physical partitions agree; this descriptive grouping never merges search or
+repetition histories. No table, loss, mixture or human-label fit is selected.
+The next issue is which declared approximation to retain, not another task
+merely distinct from mobility. Exact sources, the rejected cross-rule premise,
+failures and recovery: data/task_compression_20261009.json.
+
+This is a conditional value-compression diagnosis, not an abstraction of the
+search transition system. Li, Walsh and Littman distinguish model, value and
+policy preservation and require an aggregation weighting law
+([primary paper](https://thomasjwalsh.net/pub/aima06Towards.pdf)). Abel et al.'s
+approximate Q-abstraction bound assumes a finite discounted MDP, bounded rewards
+and uniform action-value closeness
+([primary paper](https://arxiv.org/html/1701.04113), Definition12/Lemma1).
+Those assumptions do not follow from the present short capture task or an
+adversarial game. In particular, the material lookup leaves actual board,
+history and legal transitions available to search; count-only leaf values do
+not mean count-only state identity. Do not turn this residual into another
+exactness prerequisite for development or import an MDP regret guarantee.
+
+The constructed rule also enters the existing public search interface: four
+full-history roots,16 cold old/fused lexical-q calls with Core/Native legality,
+fixed evaluator and D3/8192nodes/30seconds/q2-hard8. Within each root all four
+calls agree on action, score, PV, depth, main/qnodes and stop cause. Negative
+contrast roots complete D3; positive roots retain D2/node_limit. Fusion reduces
+pushes in every pair (12532->5420,12205->4283,34286->16644,31429->14592).
+Do not compare D2 and D3 roots as a common horizon or infer price usefulness
+from execution parity. Physical aliases additionally preserve each cell's task
+value, not merely its P/X difference. All failed/complete producers are retained.
+
+An explicit two-choice decision diagnostic on the same matrix keeps objectives
+separate. At the actual transform roots, default static material scores P612/X0;
+semantic static scores P634/X0. Both prefer P. The uniform-public task instead
+prefers X (22/25 versus11/25); uniform-physical prefers X (20/23 versus10/23).
+Thus using that static proxy to choose just these two focal actions loses
+11/25 or10/23 expected task units under those declared laws. Under adversarial
+minimum both actions earn0 and tie: the average-law failure is not a minimax
+failure. This is not the full legal root-action problem, conversion of material
+points to task units, or evidence to retune P/X. The useful next approximation
+must say which objective it predicts; neither averaging nor worst-case treatment
+is selected merely because it makes current prices look better.
+
 
 ## Preparation-task transformation scope and layout dependence
 

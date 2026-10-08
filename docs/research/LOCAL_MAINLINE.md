@@ -12,9 +12,11 @@ Milestones, tests, consultation and publication are research checkpoints.
    familiar-piece mixtures, recombined mechanics and generated playable rules.
    Generic NNUE/self-evolution remains later work.
 
-Current price question: which explicit opportunity/task assumption changes a useful
-prediction? A law being computable from rule stock does not identify material
-utility. Keep raw quiet/capture components and normalization separate.
+Current price question: which declared task/context average can be usefully
+compressed, with what lost conditional information? Existing tasks already
+distinguish utility from mobility; inventing another is not the missing bridge.
+Rule-specific coefficients cannot be treated as shared merely by type label.
+Keep raw quiet/capture components, normalization and approximation scope separate.
 Current search question: which supported semantic mechanism still leaks a
 square-only evaluation or execution assumption through the public interface?
 Supplied evaluators now bypass unused default profiles; both orderers use shape.
@@ -60,6 +62,11 @@ before adding any backend/profile.
   Canonical B/N changes mostly reflect selected density, not finite correlations.
   On68 frozen6x6 contexts, finite-stock quiet-count prediction improves3/4 rules,
   capture-count error worsensall4. This does not justify a new default/profile.
+- Initial-template aggregate capture accuracy improves4rules, but619/1256 local
+  fact sets are unchanged; changed-nonzero errors worsen2/4. One fixed dual-
+  transform rule gives identical material deltas with opposite conditional task
+  contrasts; static averaging loses information, not necessarily usefulness.
+  Cross-rule3/14 residual inference rejected; Native1618 transitions agree.
 - Promotion-aware preparation tasks retain20640 exact Core/Native roots overall.
   Quiet same-entity promotion changes task scope/ratios; target law, near-layer
   mass and representative backgrounds remain influential. Keep the conditional
@@ -87,7 +94,7 @@ branch backlog or publication gate. Exact operating rules remain in AGENTS.md.
 
 |Purpose|Document and latest records|
 |---|---|
-|Semantic opportunity, equivalence, context/task boundaries|SEMANTIC_CAPABILITY.md; data/finite_law_20261009.json; preparation_transfer_20261008.json; retention_20261008.json|
+|Semantic opportunity, equivalence, context/task boundaries|SEMANTIC_CAPABILITY.md; data/task_compression_20261009.json; finite_law_20261009.json; preparation_transfer_20261008.json; retention_20261008.json|
 |Descriptive price ratios and preparation/promotion bias|CROSS_GAME_PRICE_DIAGNOSTIC.md; data/pawn_bias_20261009.json|
 |Search interface, actual-effect qsupport, costs and caps|UNFAMILIAR_RULE_SEARCH.md; data/event_qsearch_20261009.json; rect_search_20261009.json; query_transfer_20261009.json; qfactorial_20261009.json; qeffects_20261008.json; generated6_20261008.json; generated8_20261008.json|
 |Retained utility alternatives|TEMPORAL_HAND_SERVICE.md; GOAL_INTERACTION.md; CONTRIBUTION_MODEL.md; JOINT_SERVICE_DIAGNOSTIC.md; CUSTODY_CONTINUATION.md|

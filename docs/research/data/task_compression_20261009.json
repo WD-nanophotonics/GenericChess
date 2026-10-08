@@ -1,0 +1,302 @@
+{
+  "scope": "One constructed fixed rule, exposed development control; no fitted table, distribution, material default or strength claim.",
+  "base_product_sha": "f8b185d68fc33637d3b1ff27d4aab177bceed8c9",
+  "cross_rule_premise": "Rejected unconditional3/14: labels/count deltas equal but coefficients rule-specific.",
+  "fixed_rule": {
+    "scope": "Descriptive compression qualification on one constructed fixed rule; no fitting table/loss/weights or search-history merging.",
+    "fingerprint": "a1d05d0f655e021a4bf96cbc1da5515aaf0ca2003df0169fb529fa9dc217c38d",
+    "public_replies": 25,
+    "paired_physical_replies": 23,
+    "identical_marginal_partitions": true,
+    "physical_means": {
+      "P": "10/23",
+      "X": "20/23"
+    },
+    "physical_mean_contrast": "10/23",
+    "public_means": {
+      "P": "11/25",
+      "X": "22/25"
+    },
+    "public_mean_contrast": "11/25",
+    "physical_delta_histogram": {
+      "0": 11,
+      "1": 11,
+      "-1": 1
+    },
+    "public_delta_histogram": {
+      "0": 12,
+      "1": 12,
+      "-1": 1
+    },
+    "aliases": [
+      {
+        "indices": [
+          2,
+          3
+        ],
+        "delta": 1
+      },
+      {
+        "indices": [
+          8,
+          9
+        ],
+        "delta": 0
+      }
+    ],
+    "rich_board_count_delta": {
+      "0/X/P/True": -1,
+      "0/X/X/False": 1
+    },
+    "conditional_extreme_witness_indices": {
+      "-1": 17,
+      "0": 0,
+      "1": 2
+    },
+    "residual_statement": "Surviving pairs share full owner/base/current/promoted count difference and equal hand/aux states, but task contrasts -1 and+1 occur. Any fixed additive count prediction has maximum absolute error at least1 on these conditional contrasts, even with background intercepts. Not material calibration/global impossibility/mean-error guarantee.",
+    "input_sha256": "81c3cad75fa195d06b847c2b0a0d9b9b265fe36bedab20b09518e2d529554d14",
+    "producer_sha256": "923193deb4f0b81696421a4ca918aeb4dda9a77ac92372faeebb9692fdf2d88e"
+  },
+  "native": {
+    "complete": true,
+    "legal_sets": 50,
+    "checked_transitions": 1618,
+    "failed_v1_preserved": true
+  },
+  "search": {
+    "scope": "New constructed caller, no frozen-cohort enlargement or material/strength claim. Exact per-root signatures across old/fused and Core/Native; do not compare different-root D2 and D3 as a shared horizon.",
+    "rows": [
+      {
+        "delta": -1,
+        "target": "P",
+        "native": false,
+        "exact_signature": true,
+        "depth": 3,
+        "reason": "completed_depth",
+        "old_pushes": 12532,
+        "new_pushes": 5420,
+        "old_seconds": 6.20894749998115,
+        "new_seconds": 4.316100599942729
+      },
+      {
+        "delta": -1,
+        "target": "P",
+        "native": true,
+        "exact_signature": true,
+        "depth": 3,
+        "reason": "completed_depth",
+        "old_pushes": 12532,
+        "new_pushes": 5420,
+        "old_seconds": 3.5757882001344115,
+        "new_seconds": 1.7266075999941677
+      },
+      {
+        "delta": -1,
+        "target": "X",
+        "native": false,
+        "exact_signature": true,
+        "depth": 3,
+        "reason": "completed_depth",
+        "old_pushes": 12205,
+        "new_pushes": 4283,
+        "old_seconds": 5.575285200029612,
+        "new_seconds": 3.5072212000377476
+      },
+      {
+        "delta": -1,
+        "target": "X",
+        "native": true,
+        "exact_signature": true,
+        "depth": 3,
+        "reason": "completed_depth",
+        "old_pushes": 12205,
+        "new_pushes": 4283,
+        "old_seconds": 3.4861842000391334,
+        "new_seconds": 1.360499900067225
+      },
+      {
+        "delta": 1,
+        "target": "P",
+        "native": false,
+        "exact_signature": true,
+        "depth": 2,
+        "reason": "node_limit",
+        "old_pushes": 34286,
+        "new_pushes": 16644,
+        "old_seconds": 15.895382599905133,
+        "new_seconds": 11.412126299925148
+      },
+      {
+        "delta": 1,
+        "target": "P",
+        "native": true,
+        "exact_signature": true,
+        "depth": 2,
+        "reason": "node_limit",
+        "old_pushes": 34286,
+        "new_pushes": 16644,
+        "old_seconds": 9.452647400088608,
+        "new_seconds": 5.041720999870449
+      },
+      {
+        "delta": 1,
+        "target": "X",
+        "native": false,
+        "exact_signature": true,
+        "depth": 2,
+        "reason": "node_limit",
+        "old_pushes": 31429,
+        "new_pushes": 14592,
+        "old_seconds": 13.999893400119618,
+        "new_seconds": 9.805871400050819
+      },
+      {
+        "delta": 1,
+        "target": "X",
+        "native": true,
+        "exact_signature": true,
+        "depth": 2,
+        "reason": "node_limit",
+        "old_pushes": 31429,
+        "new_pushes": 14592,
+        "old_seconds": 8.44412750005722,
+        "new_seconds": 4.4445320998784155
+      }
+    ],
+    "calls": 16,
+    "all_physical_alias_cell_values_equal": true,
+    "input_sha256": "642bc481e264873988f995be3f1f52ca4b5da9fcf3b7906b6c03fe8b09510950",
+    "producer_sha256": "b84a1695c2c7b6e71e344a7bc9d66c732f3de514ef8c397756ea765a6b6e5c3d"
+  },
+  "archive": "../../archive/task_compression_20261009/evidence.zip",
+  "archive_index": "../../archive/task_compression_20261009/index.json",
+  "recovery_verified_members": 18,
+  "decision_diagnostic": {
+    "scope": "Existing task decisions under declared reply laws, no fitted coefficients.\nOnly two focal transformation choices; not the full game root action set.\nUniform public/physical reply averages and adversarial minimum are separate\ndeclared functionals on the already complete same-rule task matrix. Verify\nwhether the existing static material proxy agrees with these local decisions.\nNo new task, samples, game-value interpretation or default modification.\n",
+    "material_scores": {
+      "default": {
+        "P": 612,
+        "X": 0
+      },
+      "semantic": {
+        "P": 634,
+        "X": 0
+      }
+    },
+    "rows": [
+      {
+        "law": "uniform_public",
+        "values": {
+          "P": "11/25",
+          "X": "22/25"
+        },
+        "task_optimal": [
+          "X"
+        ],
+        "static_proxy_choices": {
+          "default": [
+            "P"
+          ],
+          "semantic": [
+            "P"
+          ]
+        },
+        "regret": {
+          "default": {
+            "P": "11/25"
+          },
+          "semantic": {
+            "P": "11/25"
+          }
+        }
+      },
+      {
+        "law": "uniform_physical",
+        "values": {
+          "P": "10/23",
+          "X": "20/23"
+        },
+        "task_optimal": [
+          "X"
+        ],
+        "static_proxy_choices": {
+          "default": [
+            "P"
+          ],
+          "semantic": [
+            "P"
+          ]
+        },
+        "regret": {
+          "default": {
+            "P": "10/23"
+          },
+          "semantic": {
+            "P": "10/23"
+          }
+        }
+      },
+      {
+        "law": "adversarial_minimum",
+        "values": {
+          "P": "0",
+          "X": "0"
+        },
+        "task_optimal": [
+          "P",
+          "X"
+        ],
+        "static_proxy_choices": {
+          "default": [
+            "P"
+          ],
+          "semantic": [
+            "P"
+          ]
+        },
+        "regret": {
+          "default": {
+            "P": "0"
+          },
+          "semantic": {
+            "P": "0"
+          }
+        }
+      }
+    ],
+    "qualification": "Task-stop0 makes worst-case both0; uniform laws prefer X but this is a fixed focal two-choice task, not the full game action set or a new default. No conversion from price points to task units.",
+    "producer_sha256": "f5ea6922e495a3927623ad4ab149301dab6ed5fe4a2267933183e153a7a084ce",
+    "input_sha256": "81c3cad75fa195d06b847c2b0a0d9b9b265fe36bedab20b09518e2d529554d14"
+  },
+  "recovery_verification": {
+    "source_hash_pairs": 7,
+    "dependencies": [
+      {
+        "member": ".local_agent/qsemantics-20261008/effect-feature.json",
+        "sha256": "65dbffc8c877edca53d3bb22ea5dad30c3241cb9ba13a6f77ec7b1eaaacd717a",
+        "archives": [
+          "docs/archive/qsemantics_20261008/sources-raw.zip"
+        ]
+      },
+      {
+        "member": ".local_agent/qsemantics-20261008/effect-unit-task.json",
+        "sha256": "7b34a7485cdce403b8a424709c6c4de27cf750fa1ee656afde8a13eebdd2fff3",
+        "archives": [
+          "docs/archive/qsemantics_20261008/sources-raw.zip"
+        ]
+      },
+      {
+        "member": ".local_agent/generated6-20261008/coverage.json",
+        "sha256": "8b2d54188b9ded320c4591883e9520a30752bd5b20cba5920e0b5e76e862e7fc",
+        "archives": [
+          "docs/archive/generated6_20261008/sources-raw.zip"
+        ]
+      }
+    ],
+    "restored_native_replay": "All fields except measured seconds match;50legalsets1618transitions.",
+    "source_sha256": "0e2287859230e937f5c6a8c076f6f52099bff86c967d9abaf27bdba874de155b",
+    "scope": "Archive recovery and same product f8 code, not new samples or independent holdout. Earlier archive scanner falsely detected its own literal sentinel and left an ignored partial ZIP; no raw observations lost."
+  },
+  "followup_archive": "../../archive/task_compression_20261009/followup.zip",
+  "followup_index": "../../archive/task_compression_20261009/followup-index.json"
+}
