@@ -1,0 +1,68 @@
+{
+  "complete": true,
+  "original_probe_complete": false,
+  "correction": "Original cross-rule Position equality includes different ruleset fingerprints. Failed assertion is retained. Reconstructed successors differ only in fingerprint; no TT identity merge across rules is permitted. All eight saved searches/fullwidth controls completed before that assertion.",
+  "different_position_fields": [
+    "ruleset_fingerprint"
+  ],
+  "decision": "Semantic move ranks fourth implicit versus first explicit, but all eight D3 searches use51nodes and score1726. No observed cost/result reason for another ordering patch. Negative narrow control, not general representation invariance.",
+  "rows": [
+    {
+      "encoding": "effect",
+      "reference_score": 1726,
+      "nodes": {
+        "False": [
+          51,
+          51
+        ],
+        "True": [
+          51,
+          51
+        ]
+      },
+      "semantic_root_order": [
+        {
+          "staged": false,
+          "indices": [
+            3
+          ]
+        },
+        {
+          "staged": true,
+          "indices": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "encoding": "explicit",
+      "reference_score": 1726,
+      "nodes": {
+        "False": [
+          51,
+          51
+        ],
+        "True": [
+          51,
+          51
+        ]
+      },
+      "semantic_root_order": [
+        {
+          "staged": false,
+          "indices": [
+            0
+          ]
+        },
+        {
+          "staged": true,
+          "indices": [
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "recovery": "docs/archive/encoding_order_20261009/index.json"
+}

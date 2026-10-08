@@ -1,0 +1,1980 @@
+{
+  "complete": false,
+  "declaration": "Does equivalent transformation spelling alter public ordering cost?\n\nExisting effect/explicit fixture, unchanged physical transitions and one fixed\nlegacy-profile evaluator. D3/4096nodes/5sec/q0, TT on/root scan off, sorted and\nstaged, two rotated repeats. Two full-width D3 Core references. Changed premise\nis ordering representation, not another qsupport test. Caps stay unknown; exact\nscores must agree on completed depth. No price/default/strength conclusion.\n",
+  "cases": [
+    {
+      "encoding": "effect",
+      "rules": {
+        "schema_version": 1,
+        "piece_types": [
+          {
+            "type_id": "K",
+            "name": "K",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": true,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "A",
+            "name": "A",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "B",
+            "name": "B",
+            "movement_atoms": [
+              {
+                "kind": "ray",
+                "direction": [
+                  1,
+                  0
+                ],
+                "max_steps": null
+              },
+              {
+                "kind": "ray",
+                "direction": [
+                  -1,
+                  0
+                ],
+                "max_steps": null
+              },
+              {
+                "kind": "ray",
+                "direction": [
+                  0,
+                  1
+                ],
+                "max_steps": null
+              },
+              {
+                "kind": "ray",
+                "direction": [
+                  0,
+                  -1
+                ],
+                "max_steps": null
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          }
+        ],
+        "initial_position": [
+          [
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            }
+          ]
+        ],
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "max_ply": 512,
+        "stalemate_result": "draw",
+        "board_size": 4,
+        "semantic_dsl_version": 2,
+        "semantic_actions": [
+          {
+            "name": "effect",
+            "type_ids": [
+              "A"
+            ],
+            "geometry": {
+              "kind": "leap",
+              "atom_kind": null,
+              "offset": [
+                0,
+                1
+              ],
+              "direction": null,
+              "min_steps": null,
+              "max_steps": null,
+              "owner_relative": true
+            },
+            "target_relation": "empty",
+            "composition": "augment",
+            "replace_selector": null,
+            "path_constraints": [],
+            "state_guards": [],
+            "slot_guards": [],
+            "aux_state": [],
+            "effects": [
+              {
+                "kind": "move",
+                "from_ref": {
+                  "kind": "source",
+                  "square": null,
+                  "offset": null,
+                  "owner_relative": true,
+                  "step": null,
+                  "slot_name": null
+                },
+                "to_ref": {
+                  "kind": "target",
+                  "square": null,
+                  "offset": null,
+                  "owner_relative": true,
+                  "step": null,
+                  "slot_name": null
+                },
+                "square_ref": null,
+                "piece_owner": "self",
+                "piece_type_ref": null,
+                "disposition": null,
+                "slot_name": null,
+                "type_ref": null,
+                "count": 1,
+                "value": null
+              },
+              {
+                "kind": "set_current_type",
+                "from_ref": null,
+                "to_ref": null,
+                "square_ref": {
+                  "kind": "target",
+                  "square": null,
+                  "offset": null,
+                  "owner_relative": true,
+                  "step": null,
+                  "slot_name": null
+                },
+                "piece_owner": "self",
+                "piece_type_ref": null,
+                "disposition": null,
+                "slot_name": null,
+                "type_ref": {
+                  "kind": "explicit",
+                  "type_id": "B"
+                },
+                "count": 1,
+                "value": null
+              }
+            ],
+            "invariants": [
+              {
+                "kind": "own_anchor_safe",
+                "square_refs": []
+              }
+            ],
+            "postconditions": [],
+            "promotion_mode": "none",
+            "explicit_promotion_type": null,
+            "triggers": []
+          }
+        ],
+        "metadata": {}
+      },
+      "reference_score": 1726,
+      "reference_leaves": 61,
+      "searches": [
+        {
+          "staged": false,
+          "repeat": 0,
+          "seconds": 0.010538599919527769,
+          "decision": {
+            "action": {
+              "pattern_id": "sem_00_effect",
+              "geometry_id": "g14",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            "score": 1726,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_00_effect",
+                "geometry_id": "g14",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 1,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_006",
+                "geometry_id": "g11",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 3,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 3
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_002",
+                "geometry_id": "g1",
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 3,
+            "selective_depth": 3,
+            "nodes": 51,
+            "qnodes": 0,
+            "elapsed_seconds": 0.014999999897554517,
+            "tt_probes": 17,
+            "tt_hits": 6,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 8,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.014999999897554517,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 17,
+            "ordered_moves": 72,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 18,
+            "legal_generation_seconds": 0.0024433995131403208,
+            "evaluation_calls": 34,
+            "evaluation_seconds": 7.259869016706944e-05,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 76,
+            "successor_handles_created": 72,
+            "successors_materialized": 48,
+            "successors_searched": 48,
+            "terminal_results_computed": 48,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 65,
+            "position_key_cache_hits": 48,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        },
+        {
+          "staged": true,
+          "repeat": 0,
+          "seconds": 0.010726500069722533,
+          "decision": {
+            "action": {
+              "pattern_id": "sem_00_effect",
+              "geometry_id": "g14",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            "score": 1726,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_00_effect",
+                "geometry_id": "g14",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 1,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_006",
+                "geometry_id": "g11",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 3,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 3
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_002",
+                "geometry_id": "g1",
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 3,
+            "selective_depth": 3,
+            "nodes": 51,
+            "qnodes": 0,
+            "elapsed_seconds": 0.01600000006146729,
+            "tt_probes": 17,
+            "tt_hits": 6,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 8,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.01600000006146729,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 72,
+            "move_picker_yielded": 48,
+            "move_picker_yielded_by_stage": {
+              "quiet": 39,
+              "tt": 6,
+              "killer_counter": 3
+            },
+            "ordering_calls": 17,
+            "ordered_moves": 72,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 18,
+            "legal_generation_seconds": 0.0025053005665540695,
+            "evaluation_calls": 34,
+            "evaluation_seconds": 7.140054367482662e-05,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 76,
+            "successor_handles_created": 72,
+            "successors_materialized": 48,
+            "successors_searched": 48,
+            "terminal_results_computed": 48,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 65,
+            "position_key_cache_hits": 48,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        },
+        {
+          "staged": true,
+          "repeat": 1,
+          "seconds": 0.012852699961513281,
+          "decision": {
+            "action": {
+              "pattern_id": "sem_00_effect",
+              "geometry_id": "g14",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            "score": 1726,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_00_effect",
+                "geometry_id": "g14",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 1,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_006",
+                "geometry_id": "g11",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 3,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 3
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_002",
+                "geometry_id": "g1",
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 3,
+            "selective_depth": 3,
+            "nodes": 51,
+            "qnodes": 0,
+            "elapsed_seconds": 0.01500000013038516,
+            "tt_probes": 17,
+            "tt_hits": 6,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 8,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.01500000013038516,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 72,
+            "move_picker_yielded": 48,
+            "move_picker_yielded_by_stage": {
+              "quiet": 39,
+              "tt": 6,
+              "killer_counter": 3
+            },
+            "ordering_calls": 17,
+            "ordered_moves": 72,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 18,
+            "legal_generation_seconds": 0.002948699751868844,
+            "evaluation_calls": 34,
+            "evaluation_seconds": 9.449990466237068e-05,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 76,
+            "successor_handles_created": 72,
+            "successors_materialized": 48,
+            "successors_searched": 48,
+            "terminal_results_computed": 48,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 65,
+            "position_key_cache_hits": 48,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        },
+        {
+          "staged": false,
+          "repeat": 1,
+          "seconds": 0.011842800071462989,
+          "decision": {
+            "action": {
+              "pattern_id": "sem_00_effect",
+              "geometry_id": "g14",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            "score": 1726,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_00_effect",
+                "geometry_id": "g14",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 1,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_006",
+                "geometry_id": "g11",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 3,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 3
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_002",
+                "geometry_id": "g1",
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 3,
+            "selective_depth": 3,
+            "nodes": 51,
+            "qnodes": 0,
+            "elapsed_seconds": 0.015999999828636646,
+            "tt_probes": 17,
+            "tt_hits": 6,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 8,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.015999999828636646,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 17,
+            "ordered_moves": 72,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 18,
+            "legal_generation_seconds": 0.0025609005242586136,
+            "evaluation_calls": 34,
+            "evaluation_seconds": 8.279969915747643e-05,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 76,
+            "successor_handles_created": 72,
+            "successors_materialized": 48,
+            "successors_searched": 48,
+            "terminal_results_computed": 48,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 65,
+            "position_key_cache_hits": 48,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        }
+      ],
+      "ordering": [
+        {
+          "staged": false,
+          "actions": [
+            {
+              "pattern_id": "legacy_000",
+              "geometry_id": "g0",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_008",
+              "geometry_id": "g12",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_024",
+              "geometry_id": "g9",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 0,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "sem_00_effect",
+              "geometry_id": "g14",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            }
+          ]
+        },
+        {
+          "staged": true,
+          "actions": [
+            {
+              "pattern_id": "legacy_000",
+              "geometry_id": "g0",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_008",
+              "geometry_id": "g12",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_024",
+              "geometry_id": "g9",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 0,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "sem_00_effect",
+              "geometry_id": "g14",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "encoding": "explicit",
+      "rules": {
+        "schema_version": 1,
+        "piece_types": [
+          {
+            "type_id": "K",
+            "name": "K",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  -1
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  0
+                ]
+              },
+              {
+                "kind": "leap",
+                "offset": [
+                  1,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": true,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "A",
+            "name": "A",
+            "movement_atoms": [
+              {
+                "kind": "leap",
+                "offset": [
+                  0,
+                  1
+                ]
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          },
+          {
+            "type_id": "B",
+            "name": "B",
+            "movement_atoms": [
+              {
+                "kind": "ray",
+                "direction": [
+                  1,
+                  0
+                ],
+                "max_steps": null
+              },
+              {
+                "kind": "ray",
+                "direction": [
+                  -1,
+                  0
+                ],
+                "max_steps": null
+              },
+              {
+                "kind": "ray",
+                "direction": [
+                  0,
+                  1
+                ],
+                "max_steps": null
+              },
+              {
+                "kind": "ray",
+                "direction": [
+                  0,
+                  -1
+                ],
+                "max_steps": null
+              }
+            ],
+            "is_anchor": false,
+            "is_promotable": false,
+            "promotion_target_ids": []
+          }
+        ],
+        "initial_position": [
+          [
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            {
+              "owner": 0,
+              "base_type_id": "A",
+              "current_type_id": "A",
+              "promoted": false
+            },
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            }
+          ]
+        ],
+        "drop_allowed": {
+          "A": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "B": [
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          ]
+        },
+        "promotion_allowed": {},
+        "promotion_forced": {},
+        "repetition_limit": 4,
+        "max_ply": 512,
+        "stalemate_result": "draw",
+        "board_size": 4,
+        "semantic_dsl_version": 2,
+        "semantic_actions": [
+          {
+            "name": "explicit",
+            "type_ids": [
+              "A"
+            ],
+            "geometry": {
+              "kind": "leap",
+              "atom_kind": null,
+              "offset": [
+                0,
+                1
+              ],
+              "direction": null,
+              "min_steps": null,
+              "max_steps": null,
+              "owner_relative": true
+            },
+            "target_relation": "empty",
+            "composition": "augment",
+            "replace_selector": null,
+            "path_constraints": [],
+            "state_guards": [],
+            "slot_guards": [],
+            "aux_state": [],
+            "effects": [
+              {
+                "kind": "move",
+                "from_ref": {
+                  "kind": "source",
+                  "square": null,
+                  "offset": null,
+                  "owner_relative": true,
+                  "step": null,
+                  "slot_name": null
+                },
+                "to_ref": {
+                  "kind": "target",
+                  "square": null,
+                  "offset": null,
+                  "owner_relative": true,
+                  "step": null,
+                  "slot_name": null
+                },
+                "square_ref": null,
+                "piece_owner": "self",
+                "piece_type_ref": null,
+                "disposition": null,
+                "slot_name": null,
+                "type_ref": null,
+                "count": 1,
+                "value": null
+              },
+              {
+                "kind": "set_current_type",
+                "from_ref": null,
+                "to_ref": null,
+                "square_ref": {
+                  "kind": "target",
+                  "square": null,
+                  "offset": null,
+                  "owner_relative": true,
+                  "step": null,
+                  "slot_name": null
+                },
+                "piece_owner": "self",
+                "piece_type_ref": null,
+                "disposition": null,
+                "slot_name": null,
+                "type_ref": {
+                  "kind": "explicit",
+                  "type_id": "B"
+                },
+                "count": 1,
+                "value": null
+              }
+            ],
+            "invariants": [
+              {
+                "kind": "own_anchor_safe",
+                "square_refs": []
+              }
+            ],
+            "postconditions": [],
+            "promotion_mode": "explicit",
+            "explicit_promotion_type": "B",
+            "triggers": []
+          }
+        ],
+        "metadata": {}
+      },
+      "reference_score": 1726,
+      "reference_leaves": 61,
+      "searches": [
+        {
+          "staged": false,
+          "repeat": 0,
+          "seconds": 0.010221700184047222,
+          "decision": {
+            "action": {
+              "pattern_id": "sem_00_explicit",
+              "geometry_id": "g14",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": "B"
+            },
+            "score": 1726,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_00_explicit",
+                "geometry_id": "g14",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 1,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "promotion_target_id": "B"
+              },
+              {
+                "pattern_id": "legacy_006",
+                "geometry_id": "g11",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 3,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 3
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_002",
+                "geometry_id": "g1",
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 3,
+            "selective_depth": 3,
+            "nodes": 51,
+            "qnodes": 0,
+            "elapsed_seconds": 0.0,
+            "tt_probes": 17,
+            "tt_hits": 6,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 8,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.0,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 17,
+            "ordered_moves": 72,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 18,
+            "legal_generation_seconds": 0.0024218002799898386,
+            "evaluation_calls": 34,
+            "evaluation_seconds": 6.870017386972904e-05,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 76,
+            "successor_handles_created": 72,
+            "successors_materialized": 48,
+            "successors_searched": 48,
+            "terminal_results_computed": 48,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 65,
+            "position_key_cache_hits": 48,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        },
+        {
+          "staged": true,
+          "repeat": 0,
+          "seconds": 0.011241399915888906,
+          "decision": {
+            "action": {
+              "pattern_id": "sem_00_explicit",
+              "geometry_id": "g14",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": "B"
+            },
+            "score": 1726,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_00_explicit",
+                "geometry_id": "g14",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 1,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "promotion_target_id": "B"
+              },
+              {
+                "pattern_id": "legacy_006",
+                "geometry_id": "g11",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 3,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 3
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_002",
+                "geometry_id": "g1",
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 3,
+            "selective_depth": 3,
+            "nodes": 51,
+            "qnodes": 0,
+            "elapsed_seconds": 0.0,
+            "tt_probes": 17,
+            "tt_hits": 6,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 8,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.0,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 72,
+            "move_picker_yielded": 48,
+            "move_picker_yielded_by_stage": {
+              "promotion": 3,
+              "quiet": 36,
+              "tt": 6,
+              "killer_counter": 3
+            },
+            "ordering_calls": 17,
+            "ordered_moves": 72,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 18,
+            "legal_generation_seconds": 0.0025408000219613314,
+            "evaluation_calls": 34,
+            "evaluation_seconds": 8.780020289123058e-05,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 76,
+            "successor_handles_created": 72,
+            "successors_materialized": 48,
+            "successors_searched": 48,
+            "terminal_results_computed": 48,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 65,
+            "position_key_cache_hits": 48,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        },
+        {
+          "staged": true,
+          "repeat": 1,
+          "seconds": 0.010364199988543987,
+          "decision": {
+            "action": {
+              "pattern_id": "sem_00_explicit",
+              "geometry_id": "g14",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": "B"
+            },
+            "score": 1726,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_00_explicit",
+                "geometry_id": "g14",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 1,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "promotion_target_id": "B"
+              },
+              {
+                "pattern_id": "legacy_006",
+                "geometry_id": "g11",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 3,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 3
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_002",
+                "geometry_id": "g1",
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 3,
+            "selective_depth": 3,
+            "nodes": 51,
+            "qnodes": 0,
+            "elapsed_seconds": 0.0,
+            "tt_probes": 17,
+            "tt_hits": 6,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 8,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.0,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 72,
+            "move_picker_yielded": 48,
+            "move_picker_yielded_by_stage": {
+              "promotion": 3,
+              "quiet": 36,
+              "tt": 6,
+              "killer_counter": 3
+            },
+            "ordering_calls": 17,
+            "ordered_moves": 72,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 18,
+            "legal_generation_seconds": 0.0024413999635726213,
+            "evaluation_calls": 34,
+            "evaluation_seconds": 6.830086931586266e-05,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 76,
+            "successor_handles_created": 72,
+            "successors_materialized": 48,
+            "successors_searched": 48,
+            "terminal_results_computed": 48,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 65,
+            "position_key_cache_hits": 48,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        },
+        {
+          "staged": false,
+          "repeat": 1,
+          "seconds": 0.010551200015470386,
+          "decision": {
+            "action": {
+              "pattern_id": "sem_00_explicit",
+              "geometry_id": "g14",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": "B"
+            },
+            "score": 1726,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_00_explicit",
+                "geometry_id": "g14",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 1,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "promotion_target_id": "B"
+              },
+              {
+                "pattern_id": "legacy_006",
+                "geometry_id": "g11",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 3,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 3
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_002",
+                "geometry_id": "g1",
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 3,
+            "selective_depth": 3,
+            "nodes": 51,
+            "qnodes": 0,
+            "elapsed_seconds": 0.0,
+            "tt_probes": 17,
+            "tt_hits": 6,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 8,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.0,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 17,
+            "ordered_moves": 72,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 18,
+            "legal_generation_seconds": 0.002495500259101391,
+            "evaluation_calls": 34,
+            "evaluation_seconds": 7.030065171420574e-05,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 76,
+            "successor_handles_created": 72,
+            "successors_materialized": 48,
+            "successors_searched": 48,
+            "terminal_results_computed": 48,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 65,
+            "position_key_cache_hits": 48,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        }
+      ],
+      "ordering": [
+        {
+          "staged": false,
+          "actions": [
+            {
+              "pattern_id": "sem_00_explicit",
+              "geometry_id": "g14",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": "B"
+            },
+            {
+              "pattern_id": "legacy_000",
+              "geometry_id": "g0",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_008",
+              "geometry_id": "g12",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_024",
+              "geometry_id": "g9",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 0,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            }
+          ]
+        },
+        {
+          "staged": true,
+          "actions": [
+            {
+              "pattern_id": "sem_00_explicit",
+              "geometry_id": "g14",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": "B"
+            },
+            {
+              "pattern_id": "legacy_000",
+              "geometry_id": "g0",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_008",
+              "geometry_id": "g12",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_024",
+              "geometry_id": "g9",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 0,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

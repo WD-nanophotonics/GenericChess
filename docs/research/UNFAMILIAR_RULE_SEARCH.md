@@ -1183,3 +1183,12 @@ makes the state change observable; root controls are0/-100/0, D2 references
 calls matching six full-width checks with legal PVs/unchanged roots. Real TT
 hits occur and work can differ. This checks stateful interface reuse, not useful
 prices or generalized TT correctness; it does not extend the frozen q2 cohort.
+
+An existing equivalent-transform fixture changes semantic action rank from
+fourth (implicit effect) to first (explicit promotion) in both orderers, but
+all eight D3 public calls still use51 nodes and score1726, matching full-width
+Core. No cost/result reason for another ordering patch was observed. The first
+probe's final cross-rule Position equality assertion failed on fingerprints;
+that incomplete output remains intact. A separate no-search qualification
+confirms every other physical field agrees; it never merges rules/TT identity.
+Sources/failures and scope: data/encoding_order_20261009.json.

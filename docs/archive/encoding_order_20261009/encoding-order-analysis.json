@@ -1,0 +1,287 @@
+{
+  "complete": true,
+  "original_probe_complete": false,
+  "correction": "Original cross-rule Position equality includes different ruleset fingerprints. Failed assertion is retained. Reconstructed successors differ only in fingerprint; no TT identity merge across rules is permitted. All eight saved searches/fullwidth controls completed before that assertion.",
+  "different_position_fields": [
+    "ruleset_fingerprint"
+  ],
+  "rows": [
+    {
+      "encoding": "effect",
+      "reference_score": 1726,
+      "nodes": {
+        "False": [
+          51,
+          51
+        ],
+        "True": [
+          51,
+          51
+        ]
+      },
+      "root_order": [
+        {
+          "staged": false,
+          "actions": [
+            {
+              "pattern_id": "legacy_000",
+              "geometry_id": "g0",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_008",
+              "geometry_id": "g12",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_024",
+              "geometry_id": "g9",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 0,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "sem_00_effect",
+              "geometry_id": "g14",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            }
+          ]
+        },
+        {
+          "staged": true,
+          "actions": [
+            {
+              "pattern_id": "legacy_000",
+              "geometry_id": "g0",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_008",
+              "geometry_id": "g12",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_024",
+              "geometry_id": "g9",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 0,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "sem_00_effect",
+              "geometry_id": "g14",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "encoding": "explicit",
+      "reference_score": 1726,
+      "nodes": {
+        "False": [
+          51,
+          51
+        ],
+        "True": [
+          51,
+          51
+        ]
+      },
+      "root_order": [
+        {
+          "staged": false,
+          "actions": [
+            {
+              "pattern_id": "sem_00_explicit",
+              "geometry_id": "g14",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": "B"
+            },
+            {
+              "pattern_id": "legacy_000",
+              "geometry_id": "g0",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_008",
+              "geometry_id": "g12",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_024",
+              "geometry_id": "g9",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 0,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            }
+          ]
+        },
+        {
+          "staged": true,
+          "actions": [
+            {
+              "pattern_id": "sem_00_explicit",
+              "geometry_id": "g14",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": "B"
+            },
+            {
+              "pattern_id": "legacy_000",
+              "geometry_id": "g0",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_008",
+              "geometry_id": "g12",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_024",
+              "geometry_id": "g9",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 0,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "decision": "Ordering costs may depend on metadata; compare saved sorted/staged traces before considering any actual-effect scoring change. No speed/strength/default conclusion, no new budget or search rerun."
+}

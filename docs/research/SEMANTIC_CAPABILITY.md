@@ -862,3 +862,12 @@ Neither geometric count predicts material utility or legal mobility. Keep this
 conditional diagnostic; no new default/profile, fitted stock ratios, additional
 law sweep or extension of exposed validation follows. Exact sources, costs,
 failures and recovery: data/finite_law_20261009.json and its separate archive.
+
+A changed-question localization holds those same1256 actual/finite counts exact
+and supplies either actual target relation or actual path-event information.
+Actual-target oracle capture MAE becomes.207/.243/.368/.132 (four route order);
+actual-path oracle only slightly improves two routes and worsens two. This
+locates useful missing endpoint-population information in these contexts, not
+a causal fix. Both oracles inspect the actual board and cannot become rule-only
+material tables. No fitted law, new sample, default or budget extension follows.
+The supplementary archive preserves the exact producer and every observation.

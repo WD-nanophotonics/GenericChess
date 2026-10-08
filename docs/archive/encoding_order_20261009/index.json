@@ -1,0 +1,31 @@
+{
+  "base_product_sha": "7c315e7daa86d3434c6414356f1d1aafa749d1a9",
+  "members": [
+    {
+      "name": "encoding_order_probe.py",
+      "original": ".local_agent/rect-search-20261009/encoding_order_probe.py",
+      "sha256": "7e387329aa2c84de2eb6ba36e728cfc3d2a7df79bcf60103956a0e1a5b79a1cf",
+      "bytes": 3359
+    },
+    {
+      "name": "encoding-order-probe.json",
+      "original": ".local_agent/rect-search-20261009/encoding-order-probe.json",
+      "sha256": "33f2ab6de50ae24c64471eebc0824adcdcf5141d0dbff1beefa56837d933f719",
+      "bytes": 58510
+    },
+    {
+      "name": "encoding_order_analysis.py",
+      "original": ".local_agent/rect-search-20261009/encoding_order_analysis.py",
+      "sha256": "fb38e296a97d55c4de4b054bd23c42cae33cf96d767f0e4dbaea5278329c84c2",
+      "bytes": 2302
+    },
+    {
+      "name": "encoding-order-analysis.json",
+      "original": ".local_agent/rect-search-20261009/encoding-order-analysis.json",
+      "sha256": "6f3b25d198333a34f868a086098c6a4a7721778e1e19f49ea57b332cd85ca3d7",
+      "bytes": 7630
+    }
+  ],
+  "recovery": "Restore into isolated checkout at base SHA; restore rect_probe.py beside producers from rect_search_20261009/evidence.zip, plus existing tests/rule_semantics_ir_fixtures.py and tests/product/test_qsearch_semantic_effects.py. Never overlay active state. Original probe complete=false is retained; qualification reruns no searches.",
+  "scope": "Exposed development ordering test, not price/strength/default or universal invariance. No private inputs/raw Slack/accounts."
+}
