@@ -1117,3 +1117,10 @@ Subsequent calls share the index; memory bytes and per-caller cold allocation
 were not measured. This modest inconsistent observation does not justify a
 product cache/index or more framework. Keep the simple iterator; retain the
 local pilot separately in index-pilot.zip/index-pilot-index.json.
+
+Transfer followup uses all four existing6x6 semantic-first routes (68positions,
+including active/expired auxiliary states). Actual product matches original
+committed target predicate and unchanged full maps on4896attack queries;
+306432compiled target/path queries agree. Cancellation propagates in all four
+rules. This is recombined-mechanism semantic transfer, not another timing or
+strength sample. Source/result/dependency: transfer6.zip/transfer6-index.json.

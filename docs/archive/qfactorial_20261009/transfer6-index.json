@@ -1,0 +1,26 @@
+{
+  "members": [
+    {
+      "member": "producer.py",
+      "original": ".local_agent/pawn-bias-20261008/target_query_transfer6.py",
+      "bytes": 3870,
+      "sha256": "ad6bdbe145a2050ff11d9547293ea047a6fd0614912238cf859dc884b4368f67"
+    },
+    {
+      "member": "result.json",
+      "original": ".local_agent/pawn-bias-20261008/target-query-transfer6.json",
+      "bytes": 1155,
+      "sha256": "ac86f3119577d2aa7da6c622a507ffb8935243fa519a5c6b0993390fa7dc1978"
+    },
+    {
+      "member": "coverage.json",
+      "original": ".local_agent/generated6-20261008/coverage.json",
+      "bytes": 383389,
+      "sha256": "8b2d54188b9ded320c4591883e9520a30752bd5b20cba5920e0b5e76e862e7fc"
+    }
+  ],
+  "archive_sha256": "0b4f5d0dbd89d496b5b02c9dc582de6d1724491a0b2651187e4ce620e8a9b5c5",
+  "extracted_hashes_verified": true,
+  "dependency": "Original semantic-executor-before.py in evidence.zip/source; restore original paths from indexes.",
+  "scope": "Four existing6x6 routes, no new sample, no strength/cost claim."
+}
