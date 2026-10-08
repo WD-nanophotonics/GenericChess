@@ -3,8 +3,8 @@
 from __future__ import annotations
 
 from ...core.attacks import anchor_square, pseudo_attacks
-from ...core.coordinates import Square, square_to_index
-from ...core.movement import LeapAtom, RayAtom
+from ...core.coordinates import index_to_square, square_to_index
+from ...core.movement import LeapAtom, RayAtom, empty_mobility
 from ...core.position import Position
 from ...core.position import GameState
 from ...rules.compiled import CompiledRuleSet
@@ -24,21 +24,38 @@ class Evaluator:
         self._compiled = compiled
         self._profile = profile
         self._config = config
+        self._anchor_steps = {}
+        if config.anchor_escape_weight:
+            for pt in compiled.piece_types:
+                if not pt.is_anchor:
+                    continue
+                short_atoms = tuple(atom for atom in pt.movement_atoms if (
+                    isinstance(atom, LeapAtom) and max(map(abs, atom.offset)) <= 1
+                    or isinstance(atom, RayAtom) and atom.max_steps == 1))
+                # Common anchors already have exactly this owner-relative,
+                # deduplicated geometry. Mixed anchors need only the subset.
+                self._anchor_steps[pt.type_id] = (
+                    compiled.empty_mobility[pt.type_id]
+                    if short_atoms == pt.movement_atoms else tuple(
+                        tuple(empty_mobility(compiled.board_size, owner,
+                              index_to_square(idx, compiled.board_size), short_atoms)
+                              for idx in range(compiled.board_size ** 2))
+                        for owner in (0, 1)))
         self._zones: dict[tuple[str, int], frozenset[int]] = {}
-        for pt in compiled.piece_types:
-            if not pt.is_promotable:
-                continue
-            for owner in (0, 1):
-                zone = frozenset(
-                    idx
-                    for idx in range(compiled.board_size * compiled.board_size)
-                    if not compiled.empty_forward_mobility[pt.type_id][owner][idx]
-                )
-                self._zones[(pt.type_id, owner)] = zone
+        if config.promotion_potential_weight:
+            for pt in compiled.piece_types:
+                if not pt.is_promotable:
+                    continue
+                for owner in (0, 1):
+                    zone = frozenset(
+                        idx
+                        for idx in range(compiled.board_size * compiled.board_size)
+                        if not compiled.empty_forward_mobility[pt.type_id][owner][idx]
+                    )
+                    self._zones[(pt.type_id, owner)] = zone
 
     def evaluate(self, state: GameState) -> int:
         position = state.position
-        n = self._compiled.board_size
         score = 0
         for idx, piece in enumerate(position.board):
             if piece is None:
@@ -111,31 +128,12 @@ class Evaluator:
                 break
         if anchor_idx is None:
             return 0
-        anchor_type = self._compiled.types_by_id[
-            position.board[anchor_idx].current_type_id
-        ]
-        square = Square(anchor_idx % n, anchor_idx // n)
-        escapes = 0
-        for atom in anchor_type.movement_atoms:
-            if isinstance(atom, LeapAtom) and max(abs(atom.offset[0]), abs(atom.offset[1])) <= 1:
-                target = Square(square.file + atom.offset[0], square.rank + atom.offset[1])
-                if 0 <= target.file < n and 0 <= target.rank < n:
-                    tidx = square_to_index(target, n)
-                    if (
-                        position.board[tidx] is None
-                        and target not in opponent_attacks
-                    ):
-                        escapes += 1
-            elif isinstance(atom, RayAtom) and atom.max_steps == 1:
-                target = Square(square.file + atom.direction[0], square.rank + atom.direction[1])
-                if 0 <= target.file < n and 0 <= target.rank < n:
-                    tidx = square_to_index(target, n)
-                    if (
-                        position.board[tidx] is None
-                        and target not in opponent_attacks
-                    ):
-                        escapes += 1
-        return escapes
+        # Preserve this heuristic's empty short-step scope, but use the owner's
+        # frame and count each behavioral destination once, not once per atom.
+        targets = self._anchor_steps[position.board[anchor_idx].current_type_id][owner][anchor_idx]
+        return sum(position.board[square_to_index(target, n)] is None
+                   and target not in opponent_attacks
+                   for target in targets)
 
     def capture_order_value(self, moving_piece, captured_piece) -> int:
         moving = self._profile.board_value_by_type[moving_piece.current_type_id]

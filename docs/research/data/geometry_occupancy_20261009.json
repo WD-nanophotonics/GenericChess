@@ -5927,5 +5927,31 @@
     "passed": 98,
     "skipped": 7,
     "scope": "8focused product files; Native-dependent checks skipped due unavailable extension, not accepted"
+  },
+  "consistency_supplement": {
+    "recovery": "docs/archive/geometry_occupancy_20261009/consistency-index.json",
+    "archive_sha256": "651978157c8f7b543c990f17b3a280aa0a78ddf0065bd45ba7932f410e6db1e7",
+    "square_bridge_density_cells": 120,
+    "rectangular_bridge_density_cells": 75,
+    "primitive_actual_attack_positions": 2600,
+    "full_migration_factorial_calls": 16,
+    "final_full_v2_replay_calls": 4,
+    "tasklaw_resource_calls": 2,
+    "cannon_rook_density_cells": 21,
+    "screen_order_density_cells": 45,
+    "screen_pseudo_attack_positions": 486,
+    "screen_actual_legal_positions": 486,
+    "capture_distance_ir_cells": 36,
+    "validation": {
+      "passed": 116,
+      "skipped_native": 7,
+      "targets": "8focused evaluator/cache/semantic/rectangular-search files; no full-suite claim"
+    },
+    "decisions": [
+      "Unique destination diagnostics and owner-frame short escapes corrected",
+      "Explicit material/semantic-mobility-only rectangle evaluators work with square-dependent terms disabled",
+      "Default rectangle prices and Native remain unsupported",
+      "Screen-count prerequisites converge in aggregate opportunity but remain distinct in conditional distance; no fitted replacement price"
+    ]
   }
 }

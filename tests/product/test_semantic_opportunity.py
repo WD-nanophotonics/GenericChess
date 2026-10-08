@@ -211,7 +211,7 @@ def test_candidate_rejects_invalid_declared_context_law(config):
 def test_generated_legacy_rules_use_existing_lowering_without_executor_change(seed):
     from generic_chess.generation.config import GeneratorConfig
     from generic_chess.generation.generator import generate_game
-    from generic_chess.ai.evaluation.mobility import atoms_overlap, analytic_mobility_at_density
+    from generic_chess.ai.evaluation.mobility import analytic_mobility_at_density
     from generic_chess.rules.compiled import CompiledRuleSet
     generated = generate_game(GeneratorConfig(seed=seed, board_size=4,
         setup_preset='bilateral_random', allow_hybrid=True))
@@ -226,9 +226,9 @@ def test_generated_legacy_rules_use_existing_lowering_without_executor_change(se
     for piece in compiled.piece_types:
         row = scope['types'][piece.type_id]
         assert semantic_opportunity(compiled, piece.type_id, EvaluationConfig()) == row
-        if not atoms_overlap(piece.movement_atoms):
-            checked += 1
-            for curve in row['curves']:
-                assert curve['total'] == pytest.approx(analytic_mobility_at_density(
-                    4, piece.movement_atoms, curve['density']))
+        # The exact primitive union now includes hybrid/overlapping atoms.
+        checked += 1
+        for curve in row['curves']:
+            assert curve['total'] == pytest.approx(analytic_mobility_at_density(
+                4, piece.movement_atoms, curve['density']))
     assert checked

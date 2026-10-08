@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from ...core.coordinates import BoardShape, _shape
-from ...core.movement import LeapAtom, RayAtom, MovementAtom
+from ...core.movement import LeapAtom, RayAtom, MovementAtom, empty_mobility
 from ...rules.schema import canonical_json
 from .config import EvaluationConfig
 from .mobility import mobility_density_curve
@@ -43,20 +43,17 @@ def movement_signature(atoms: tuple[MovementAtom, ...]) -> str:
 
 def _directional_asymmetry(n: int | BoardShape, atoms: tuple[MovementAtom, ...]) -> float:
     shape = _shape(n)
-    forward = backward = sideways = 0
+    forward = backward = 0
     for idx in range(shape.area):
         from ...core.coordinates import index_to_square
-        from ...core.movement import atom_targets
-
         square = index_to_square(idx, shape)
-        for atom in atoms:
-            for target in atom_targets(shape, 0, square, atom):
-                if target.rank > square.rank:
-                    forward += 1
-                elif target.rank < square.rank:
-                    backward += 1
-                else:
-                    sideways += 1
+        # Count behavioral destinations, like the graph and occupancy curve.
+        # Atom multiplicity is encoding, not extra directional opportunity.
+        for target in empty_mobility(shape, 0, square, atoms):
+            if target.rank > square.rank:
+                forward += 1
+            elif target.rank < square.rank:
+                backward += 1
     denom = forward + backward
     if denom == 0:
         return 0.0

@@ -35,6 +35,13 @@ independent price/task questions; do not claim pre-final timings as deployment.
   rectangle capability/cache work; default rectangle evaluation stays explicitly
   unsupported. Four matched old/exact board-only caller pairs keep first choices;
   one pair remains capped. See GEOMETRY_OCCUPANCY.md and its data/archive index.
+- Explicit material-only and semantic-mobility-only supplied evaluators now
+  cross the rectangle carrier boundary with disabled square-dependent terms;
+  default rectangle generation remains unsupported. Duplicate diagnostic/cache
+  and short-anchor owner-frame defects are corrected. Screen-count studies show
+  that distinct prerequisites can disappear in large-board total opportunity;
+  retain conditional structure, not another uncalibrated material claim. See
+  the geometry consistency supplement; full-v2 leaf/order callers stay scoped.
 - Common-slot interventions remove type-presence mismatch but retain a declared
   context/task law.2456 cells/6602 Core-Native transitions agree. A finite
   physical-selector alias qualification and716-cell type-alias check pass.

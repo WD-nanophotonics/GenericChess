@@ -98,6 +98,64 @@ def test_rectangular_default_profile_reports_its_unsupported_scope():
                         use_native_semantic_legality=False)
 
 
+@pytest.mark.parametrize('shape', [(7, 5), (9, 10)])
+def test_existing_material_only_evaluator_needs_no_square_metadata(shape):
+    from generic_chess.ai.evaluation.config import EvaluationConfig
+    from generic_chess.ai.evaluation.evaluator import Evaluator
+    from generic_chess.ai.evaluation.profile import RuleSetEvaluationProfile
+
+    compiled = compile_ruleset_for_execution(rectangular_cannon(*shape))
+    assert not hasattr(compiled, 'piece_types')
+    cfg = EvaluationConfig(dynamic_mobility_weight=0, anchor_escape_weight=0,
+                           promotion_potential_weight=0)
+    # Supplied control prices, not a rectangle profile generator/material claim.
+    profile = RuleSetEvaluationProfile(
+        ruleset_fingerprint=compiled.ruleset_fingerprint, schema_version=1,
+        evaluator_version='unit-control', config_hash='', piece_profiles={},
+        board_value_by_type={'K': 0, 'C': 100},
+        hand_value_by_base_type={'K': 0, 'C': 100},
+        promotion_gain_by_type={}, median_non_anchor_value=100)
+    evaluator = Evaluator(compiled, profile, cfg)
+    session = GameSession(compiled)
+    before = session.state
+    assert evaluator.evaluate(before) == UnitEvaluator().evaluate(before)
+    expected, _ = reference_minimax(before, 2, UnitEvaluator(), compiled)
+    player = AlphaBetaPlayer(compiled, evaluator_override=evaluator,
+        profile_cache=UnusedProfileCache(), use_native_semantic_legality=False,
+        tuning=SearchTuning(use_root_tactical=False))
+    decision = player.choose_action(session, SearchLimits(max_depth=2,
+        max_nodes=4096, max_time_seconds=5,
+        quiescence_max_depth=0, quiescence_hard_max_depth=0))
+    assert decision.completed_depth == 2
+    assert decision.score == expected
+    validate_pv(session, decision)
+    assert session.state == before
+
+    # Semantic attack maps are already shape-aware; with the other dynamic
+    # terms disabled this existing evaluator can use them on the same carrier.
+    from generic_chess.ai.evaluation.semantic_attacks import SemanticAttackEvaluator
+    from generic_chess.core.semantic_executor import semantic_engine_for
+    semantic_cfg = replace(cfg, dynamic_mobility_weight=2)
+    semantic_eval = SemanticAttackEvaluator(compiled, profile, semantic_cfg, backend='core')
+    engine = semantic_engine_for(compiled)
+    attacks = [engine.attacked_squares(before.position, owner) for owner in (0, 1)]
+    predicted = UnitEvaluator().evaluate(before) + 2 * (len(attacks[0]) - len(attacks[1]))
+    assert semantic_eval.evaluate(before) == predicted
+    flipped = replace(before, position=replace(before.position, side_to_move=1))
+    assert semantic_eval.evaluate(flipped) == -predicted
+    reference, _ = reference_minimax(before, 2, semantic_eval, compiled)
+    semantic_player = AlphaBetaPlayer(compiled, evaluator_override=semantic_eval,
+        profile_cache=UnusedProfileCache(), use_native_semantic_legality=False,
+        tuning=SearchTuning(use_root_tactical=False))
+    semantic_decision = semantic_player.choose_action(session, SearchLimits(
+        max_depth=2, max_nodes=4096, max_time_seconds=5,
+        quiescence_max_depth=0, quiescence_hard_max_depth=0))
+    assert semantic_decision.completed_depth == 2
+    assert semantic_decision.score == reference
+    validate_pv(session, semantic_decision)
+    assert session.state == before
+
+
 @pytest.mark.skipif(not native_available(), reason='Native unavailable; rectangular Native boundary unqualified')
 def test_rectangular_native_boundary_reports_unsupported_size():
     compiled = compile_ruleset_for_execution(rectangular_cannon(7, 5))

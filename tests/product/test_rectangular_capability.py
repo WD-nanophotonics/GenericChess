@@ -139,3 +139,29 @@ def test_default_curve_does_not_sample_equivalent_encodings(monkeypatch):
 
 def test_default_profile_version_is_exact_generation():
     assert EvaluationConfig().evaluator_version == 'generic-v2'
+
+
+@pytest.mark.parametrize('shape', [5, BoardShape(5, 3)])
+def test_duplicate_atoms_cannot_make_same_key_cache_order_dependent(shape):
+    cfg = EvaluationConfig()
+    balanced = (LeapAtom((0, 1)), LeapAtom((0, -1)))
+    duplicated = (*balanced, balanced[0])
+    direct = [build_movement_capability(shape, atoms, cfg)
+              for atoms in (balanced, duplicated)]
+    assert direct[0] == direct[1]
+    assert direct[0].directional_asymmetry == 0
+    for order in ((balanced, duplicated), (duplicated, balanced)):
+        cache = MovementCapabilityCache()
+        first, hit = cache.get_or_build(shape, order[0], cfg)
+        assert not hit
+        second, hit = cache.get_or_build(shape, order[1], cfg)
+        assert hit and first == second == direct[0]
+
+
+def test_redundant_ray_leap_preserves_behavioral_asymmetry():
+    cfg = EvaluationConfig()
+    atoms = (RayAtom((0, 1)), LeapAtom((0, -1)))
+    base = build_movement_capability(BoardShape(5, 3), atoms, cfg)
+    redundant = build_movement_capability(BoardShape(5, 3), (*atoms, LeapAtom((0, 1))), cfg)
+    assert base.directional_asymmetry == redundant.directional_asymmetry
+    assert base.directional_asymmetry == pytest.approx(0.2)

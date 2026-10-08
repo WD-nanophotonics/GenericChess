@@ -95,3 +95,83 @@ no actor-incompatible visits. It does not support another actor-prefilter index.
 The advisor independently reviewed the old published movement/mobility source
 and supplied the non-axis control. It did not execute the new local measurements.
 The reply was read completely and adopted; no publication approval was required.
+
+## Consistency and explicit-evaluator followup
+
+The [consistency supplement](../archive/geometry_occupancy_20261009/consistency-index.json)
+retains subsequent producers, failures, raw results and final caller replay.
+Twenty-four square primitive families/120 density cells match the independent
+semantic path projection within2.3e-16, including hybrids previously omitted
+from that regression. Fifteen rectangular families/75 density cells also match;
+2600 actual Core attack positions agree with an independent primitive oracle.
+This does not equate pseudo-attacks, legal captures and material utility.
+
+A second representation defect was demonstrated: balanced forward/backward
+leaps have asymmetry0, but duplicating the forward atom gave1/3. Their canonical
+cache key is identical, so the first insertion determined later diagnostics.
+Asymmetry now counts unique destinations. This field does not enter current raw
+price weights, so its correction alone changes no static prices.
+
+The active short anchor-escape heuristic also counted duplicate atoms and used
+owner0 offsets for owner1. Mirrored forward-only anchors scored1 instead of0;
+duplicating the atom raised that to2. It now reuses owner-relative unique target
+tables, constructing only the short subset for mixed anchors. Its existing
+empty-destination/short-step/current-attack scope remains a heuristic, not legal
+escape or complete semantic anchor movement. No positional term/weight is added.
+The first helper implementation increased local escape-call cost; the final
+table implementation retains136 existing route counts with lower microbatch
+time. This is not a whole-search speed claim.
+
+Disabled promotion setup no longer reads square-only metadata. With supplied
+price tables, material-only Evaluator works on7x5/9x10 carriers. The existing
+Core SemanticAttackEvaluator also works with semantic mobility enabled and
+anchor/promotion terms disabled. Four D2 controls match full-width references,
+preserving roots/PVs. Default rectangle profile generation and the remaining
+square-dependent dynamic configurations remain unsupported; Native stays
+unqualified. These are explicit evaluator configurations, not new defaults.
+
+A16-call leaf-table x ordering-table factorial includes changed hand prices,
+unlike the earlier board-only ablation. All four roots retain their first choices;
+three complete D2 and one remains D1/time-limited. Final table-based replay of
+all four full-v2 callers retains those choices/scores/PVs and completed-root work.
+Changed leaf scores are sensitivity, not strength. A separate declared15sec/
+8192-node D3 resource point for both old task-law tables reaches node_limit after
+D2. The old5sec records remain intact, D3 stays unknown and no further extension
+was triggered. This negative result does not gate independent development.
+
+## A concrete opportunity-compression limitation
+
+On the supported independent occupancy law, an ordinary rook and one-screen
+cannon have identical quiet counts. For a directed ray with L available targets,
+L>=1, write q=1-rho. Rook capture expectation is `(1-q^L)/2`; cannon capture is
+`[1-L*q^(L-1)+(L-1)*q^L]/2`. Their difference is `L*rho*q^(L-1)/2`.
+The L=0 case contributes0. This is a finite ray-boundary term, not a material
+value formula. Three rectangular semantic rules agree with21 density controls.
+At rho=.5, C/R total opportunity ratios are about.787 on5x3, .851 on7x5 and
+.912 on9x10. Formula-only100x100 analysis gives.993; no large board was compiled.
+
+Requiring s screens contributes `choose(k,s)*rho^(s+1)*q^(k-s)/2` at an endpoint
+with k intermediate cells. For any fixed s and positive rho, an infinite ray's
+capture sum tends to1/2: eventually the required occupied screen(s) and next
+occupied endpoint occur, whose owner is enemy with probability1/2. Thus zero,
+one and two-screen mechanisms retain different actual prerequisites while their
+source-averaged total opportunity converges. Nine finite mechanism cells/45
+density controls agree, with486 Core pseudo-attack and486 separate actual legal
+quiet/capture controls; accepted actions were applied and parents preserved.
+The first scalar-attack oracle used reversed arguments and an incorrect target
+occupant condition; that failed producer assertion and its correction are kept.
+
+This exposes a specific loss when compressing prerequisite structure into one
+opportunity count. It does not prove that static prices are useless, that these
+mechanisms have equal utility, or which material ratio is correct. Retain quiet,
+capture and prerequisite/context components before proposing another utility
+compression; do not fit a replacement to human prices or require WDL first.
+
+A retained component supplies one next direction: the capture endpoint-distance
+moment, using ray landings rather than Manhattan distance. Conditional on an
+available enemy endpoint, the infinite-ray mean is `(s+1)/rho`, so the mechanisms
+remain distinguishable even when capture counts coincide. Thirty-six finite IR
+controls agree; formula-only100x100 at rho=.5 gives about1.980/3.958/5.936 for
+zero/one/two screens, tending to2/4/6. Zero capture mass has undefined conditional
+distance, recorded as null. Distance is neither travel time nor utility; this
+component is retained for task compression, not multiplied into a new default.

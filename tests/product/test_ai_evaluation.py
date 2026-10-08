@@ -65,6 +65,44 @@ def test_anchor_not_in_material():
     assert profile.piece_profiles["K"].normalized_hand_value == 0
 
 
+@pytest.mark.parametrize('atoms', [
+    (LeapAtom((0, 1)),),
+    (LeapAtom((0, 1)),) * 2,
+    (RayAtom((0, 1), 1),),
+    (LeapAtom((0, 1)), RayAtom((0, 1), 1)),
+    (LeapAtom((0, 1)), LeapAtom((0, 2)), RayAtom((1, 0))),
+])
+def test_short_escape_uses_owner_frame_and_unique_targets(atoms):
+    from generic_chess.rules.compiler import compile_ruleset
+    from generic_chess.core.coordinates import Square
+
+    compiled = compile_ruleset(make_ruleset(4, [
+        T('K', *atoms, is_anchor=True), T('R', RayAtom((1, 0)))],
+        ['...k', '....', '....', 'K...']))
+    cfg = EvaluationConfig(dynamic_mobility_weight=0, anchor_escape_weight=1,
+                           promotion_potential_weight=0)
+    evaluator = Evaluator(compiled, build_ruleset_profile(compiled, cfg), cfg)
+    state = make_state(compiled, ['...k', '....', '....', 'K...'])
+    assert [evaluator._anchor_escape(state.position, owner, set())
+            for owner in (0, 1)] == [1, 1]
+    assert evaluator.evaluate(state) == 0
+    assert evaluator._anchor_escape(state.position, 1, {Square(3, 2)}) == 0
+    blocked = make_state(compiled, ['...k', '...R', '....', 'K...'])
+    assert evaluator._anchor_escape(blocked.position, 1, set()) == 0
+
+
+def test_short_escape_does_not_expand_to_long_leaps_or_unbounded_rays():
+    from generic_chess.rules.compiler import compile_ruleset
+
+    compiled = compile_ruleset(make_ruleset(4, [
+        T('K', LeapAtom((0, 2)), RayAtom((1, 0)), is_anchor=True),
+        T('R', RayAtom((1, 0)))], ['...k', '....', '....', 'K...']))
+    cfg = EvaluationConfig()
+    evaluator = Evaluator(compiled, build_ruleset_profile(compiled, cfg), cfg)
+    state = make_state(compiled, ['...k', '....', '....', 'K...'])
+    assert evaluator._anchor_escape(state.position, 0, set()) == 0
+
+
 def test_type_name_invariance():
     config = _config()
     a = build_ruleset_profile(build_4x4_rooks(), config)
