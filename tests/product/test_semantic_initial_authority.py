@@ -52,3 +52,14 @@ def test_semantically_attacked_initial_layout_remains_rejected(alternate):
 def test_public_legacy_validation_is_unchanged():
     with pytest.raises(RuleValidationError, match="INITIAL_ANCHOR_ATTACKED"):
         compile_ruleset(definition(), allow_semantic_actions=True)
+
+
+def test_semantic_start_without_any_legal_action_remains_rejected():
+    rules = cannon_ruleset()
+    # The unused cannon patterns leave two immobile anchors. Deferring the
+    # legacy position check must still run the semantic no-legal-action check.
+    rules = replace(rules, piece_types=tuple(
+        replace(piece, movement_atoms=()) if piece.is_anchor else piece
+        for piece in rules.piece_types))
+    with pytest.raises(RuleValidationError, match="INITIAL_NO_LEGAL_MOVE"):
+        compile_ruleset_for_execution(rules)
