@@ -77,7 +77,7 @@ class MoveOrderer:
         prev_action: Action | None,
         tuning: SearchTuning,
     ) -> list[Action]:
-        n = state.position.board_size()
+        n = state.position.board_shape
         side = state.position.side_to_move
         killers = self._killers.get(depth, [])
         counter = self.countermove_for(prev_action) if tuning.use_countermove else None
@@ -125,7 +125,7 @@ class StagedMovePicker:
     ) -> None:
         self._stats = stats
         stats.move_picker_generated += len(actions)
-        n = state.position.board_size()
+        n = state.position.board_shape
         side = state.position.side_to_move
         killers = orderer._killers.get(depth, [])
         counter = orderer.countermove_for(prev_action) if tuning.use_countermove else None

@@ -1,0 +1,667 @@
+{
+  "scope": "Public Core rectangular search with caller-owned unit evaluator; no generated default price/Native rectangle/strength claim. Custom override profile property nowNone, cache-hitFalse.",
+  "recovery": "docs/archive/rect_search_20261009/index.json",
+  "archive_sha256": "e00c9aef82fe2998a52db861dab7688947d556499ed6f80d632a72f8ae091e1e",
+  "before": {
+    "complete": true,
+    "redaction": "Raw absolute-path tracebacks retained privately; this derived summary preserves exception types/messages and full caller decisions. No failed result is reclassified as success.",
+    "cases": [
+      {
+        "shape": [
+          7,
+          5
+        ],
+        "public_constructor_failure": {
+          "type": "AttributeError",
+          "message": "piece_types"
+        },
+        "reference_score": 300,
+        "reference_leaves": 415,
+        "searches": [
+          {
+            "native_requested": false,
+            "ordering": false,
+            "staged": false,
+            "failure": null,
+            "reference_equal": true
+          },
+          {
+            "native_requested": false,
+            "ordering": true,
+            "staged": false,
+            "failure": {
+              "type": "ValueError",
+              "message": "board_size is undefined for a rectangular position"
+            },
+            "reference_equal": null
+          },
+          {
+            "native_requested": false,
+            "ordering": true,
+            "staged": true,
+            "failure": {
+              "type": "ValueError",
+              "message": "board_size is undefined for a rectangular position"
+            },
+            "reference_equal": null
+          },
+          {
+            "native_requested": true,
+            "ordering": false,
+            "staged": false,
+            "failure": null,
+            "reference_equal": true
+          },
+          {
+            "native_requested": true,
+            "ordering": true,
+            "staged": false,
+            "failure": {
+              "type": "ValueError",
+              "message": "board_size is undefined for a rectangular position"
+            },
+            "reference_equal": null
+          },
+          {
+            "native_requested": true,
+            "ordering": true,
+            "staged": true,
+            "failure": {
+              "type": "ValueError",
+              "message": "board_size is undefined for a rectangular position"
+            },
+            "reference_equal": null
+          }
+        ]
+      },
+      {
+        "shape": [
+          9,
+          10
+        ],
+        "public_constructor_failure": {
+          "type": "AttributeError",
+          "message": "piece_types"
+        },
+        "reference_score": 300,
+        "reference_leaves": 1491,
+        "searches": [
+          {
+            "native_requested": false,
+            "ordering": false,
+            "staged": false,
+            "failure": null,
+            "reference_equal": true
+          },
+          {
+            "native_requested": false,
+            "ordering": true,
+            "staged": false,
+            "failure": {
+              "type": "ValueError",
+              "message": "board_size is undefined for a rectangular position"
+            },
+            "reference_equal": null
+          },
+          {
+            "native_requested": false,
+            "ordering": true,
+            "staged": true,
+            "failure": {
+              "type": "ValueError",
+              "message": "board_size is undefined for a rectangular position"
+            },
+            "reference_equal": null
+          },
+          {
+            "native_requested": true,
+            "ordering": false,
+            "staged": false,
+            "failure": null,
+            "reference_equal": true
+          },
+          {
+            "native_requested": true,
+            "ordering": true,
+            "staged": false,
+            "failure": {
+              "type": "ValueError",
+              "message": "board_size is undefined for a rectangular position"
+            },
+            "reference_equal": null
+          },
+          {
+            "native_requested": true,
+            "ordering": true,
+            "staged": true,
+            "failure": {
+              "type": "ValueError",
+              "message": "board_size is undefined for a rectangular position"
+            },
+            "reference_equal": null
+          }
+        ]
+      }
+    ]
+  },
+  "after": {
+    "complete": true,
+    "cases": [
+      {
+        "shape": [
+          7,
+          5
+        ],
+        "reference_score": 300,
+        "searches": [
+          {
+            "native_requested": false,
+            "ordering": false,
+            "staged": false,
+            "native_provider_present": false,
+            "reference_equal": true,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 178,
+              "qnodes": 0,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "native_requested": false,
+            "ordering": true,
+            "staged": false,
+            "native_provider_present": false,
+            "reference_equal": true,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 75,
+              "qnodes": 0,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "native_requested": false,
+            "ordering": true,
+            "staged": true,
+            "native_provider_present": false,
+            "reference_equal": true,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 75,
+              "qnodes": 0,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "native_requested": true,
+            "ordering": false,
+            "staged": false,
+            "native_provider_present": false,
+            "reference_equal": true,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 178,
+              "qnodes": 0,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "native_requested": true,
+            "ordering": true,
+            "staged": false,
+            "native_provider_present": false,
+            "reference_equal": true,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 75,
+              "qnodes": 0,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "native_requested": true,
+            "ordering": true,
+            "staged": true,
+            "native_provider_present": false,
+            "reference_equal": true,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 75,
+              "qnodes": 0,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          }
+        ]
+      },
+      {
+        "shape": [
+          9,
+          10
+        ],
+        "reference_score": 300,
+        "searches": [
+          {
+            "native_requested": false,
+            "ordering": false,
+            "staged": false,
+            "native_provider_present": false,
+            "reference_equal": true,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 414,
+              "qnodes": 0,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "native_requested": false,
+            "ordering": true,
+            "staged": false,
+            "native_provider_present": false,
+            "reference_equal": true,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 140,
+              "qnodes": 0,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "native_requested": false,
+            "ordering": true,
+            "staged": true,
+            "native_provider_present": false,
+            "reference_equal": true,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 140,
+              "qnodes": 0,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "native_requested": true,
+            "ordering": false,
+            "staged": false,
+            "native_provider_present": false,
+            "reference_equal": true,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 414,
+              "qnodes": 0,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "native_requested": true,
+            "ordering": true,
+            "staged": false,
+            "native_provider_present": false,
+            "reference_equal": true,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 140,
+              "qnodes": 0,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "native_requested": true,
+            "ordering": true,
+            "staged": true,
+            "native_provider_present": false,
+            "reference_equal": true,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 140,
+              "qnodes": 0,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "qfollowup": {
+    "complete": true,
+    "seconds": 6.402193400077522,
+    "cases": [
+      {
+        "shape": [
+          7,
+          5
+        ],
+        "pre_cancelled_reason": "cancelled",
+        "searches": [
+          {
+            "label": "plain",
+            "repeat": 0,
+            "seconds": 0.44258440006524324,
+            "runtime_pushes": 2890,
+            "runtime_pops": 2890,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 157,
+              "qnodes": 212,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "label": "plain",
+            "repeat": 1,
+            "seconds": 0.44413070008158684,
+            "runtime_pushes": 2890,
+            "runtime_pops": 2890,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 157,
+              "qnodes": 212,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "label": "tt_order",
+            "repeat": 0,
+            "seconds": 0.08980700001120567,
+            "runtime_pushes": 491,
+            "runtime_pops": 491,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 75,
+              "qnodes": 59,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "label": "tt_order",
+            "repeat": 1,
+            "seconds": 0.08626659982837737,
+            "runtime_pushes": 491,
+            "runtime_pops": 491,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 75,
+              "qnodes": 59,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "label": "tt_staged",
+            "repeat": 0,
+            "seconds": 0.08597110002301633,
+            "runtime_pushes": 505,
+            "runtime_pops": 505,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 75,
+              "qnodes": 59,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "label": "tt_staged",
+            "repeat": 1,
+            "seconds": 0.08872270002029836,
+            "runtime_pushes": 505,
+            "runtime_pops": 505,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 75,
+              "qnodes": 59,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "label": "tt_root",
+            "repeat": 0,
+            "seconds": 0.09002349991351366,
+            "runtime_pushes": 519,
+            "runtime_pops": 519,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 103,
+              "qnodes": 59,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "label": "tt_root",
+            "repeat": 1,
+            "seconds": 0.09068140015006065,
+            "runtime_pushes": 519,
+            "runtime_pops": 519,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 103,
+              "qnodes": 59,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          }
+        ]
+      },
+      {
+        "shape": [
+          9,
+          10
+        ],
+        "pre_cancelled_reason": "cancelled",
+        "searches": [
+          {
+            "label": "plain",
+            "repeat": 0,
+            "seconds": 1.6065070000477135,
+            "runtime_pushes": 9569,
+            "runtime_pops": 9569,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 299,
+              "qnodes": 381,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "label": "plain",
+            "repeat": 1,
+            "seconds": 1.5990057000890374,
+            "runtime_pushes": 9569,
+            "runtime_pops": 9569,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 299,
+              "qnodes": 381,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "label": "tt_order",
+            "repeat": 0,
+            "seconds": 0.27873399993404746,
+            "runtime_pushes": 1558,
+            "runtime_pops": 1558,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 140,
+              "qnodes": 100,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "label": "tt_order",
+            "repeat": 1,
+            "seconds": 0.2758130000438541,
+            "runtime_pushes": 1558,
+            "runtime_pops": 1558,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 140,
+              "qnodes": 100,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "label": "tt_staged",
+            "repeat": 0,
+            "seconds": 0.28408669983036816,
+            "runtime_pushes": 1626,
+            "runtime_pops": 1626,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 140,
+              "qnodes": 100,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "label": "tt_staged",
+            "repeat": 1,
+            "seconds": 0.28662710008211434,
+            "runtime_pushes": 1626,
+            "runtime_pops": 1626,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 140,
+              "qnodes": 100,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "label": "tt_root",
+            "repeat": 0,
+            "seconds": 0.28534349985420704,
+            "runtime_pushes": 1612,
+            "runtime_pops": 1612,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 194,
+              "qnodes": 100,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          },
+          {
+            "label": "tt_root",
+            "repeat": 1,
+            "seconds": 0.2853094001766294,
+            "runtime_pushes": 1612,
+            "runtime_pops": 1612,
+            "decision": {
+              "score": 300,
+              "completed_depth": 2,
+              "nodes": 194,
+              "qnodes": 100,
+              "termination_reason": "completed_depth",
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "validation": "1667full active regressions pass; final Native size guard/new test additionally covered by final-focused-tests.txt.14rectangle tests pass; relevant publication tests will rerun against final commit.",
+  "effect_transfer": {
+    "index": "../archive/rect_search_20261009/effect-transfer-index.json",
+    "cases": 2,
+    "contexts": 4,
+    "fullwidth_references": 4,
+    "public_calls": 20,
+    "q0_reference_equal": 12,
+    "q2_completed": 8,
+    "temporal_ordinary_expiry_witnesses": 12,
+    "temporal_replies": 13,
+    "compound_replies": 11,
+    "scope": "Fixed unit evaluator, Core; complete public-state/history restoration; no Native/price/strength claim"
+  },
+  "raw_boundary": {
+    "producer": "../archive/rect_search_20261009/rect_raw_boundary.py",
+    "output": "../archive/rect_search_20261009/rect-raw-boundary.json",
+    "scope": "Ten independent analytic cannon curve controls at existing densities; raw rectangular endpoint projection works, legacy profile assembly explicitly unsupported; no normalization/default/price claim."
+  },
+  "warm_right": {
+    "producer": "../archive/rect_search_20261009/rect_warm_right.py",
+    "output": "../archive/rect_search_20261009/rect-warm-right.json",
+    "scope": "Two reused players sorted/staged across actual initial/set/expired route;12warm/cold public calls and6fullwidth checks, aux-sensitive artificial evaluator. Exact completed scores and state/PV; bounded execution validation, not price quality."
+  },
+  "summary_omission": "Complete rules, PVs, actions and detailed decision counters remain unchanged in evidence.zip outputs rect-before-summary.json/rect-after.json/rect-qpilot.json. This index routes results rather than duplicating raw state."
+}

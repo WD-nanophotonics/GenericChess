@@ -1,0 +1,79 @@
+{
+  "format": 1,
+  "scope": "Agent-generated sources/results only; no private/user input/raw Slack/account/credentials. Explicit derived failure summary omits personal absolute-path tracebacks; original retained locally.",
+  "base_product_sha": "af8ed2c62f4c87a17e7fe33d2e2df3a65fd3af2e",
+  "members": [
+    {
+      "member": ".local_agent/finite-law-20261009/finite_law.py",
+      "original": ".local_agent/finite-law-20261009/finite_law.py",
+      "bytes": 6310,
+      "sha256": "8eba1727832456303eaa36a60a5c8af09af5d0e9d6e9cc3534f7b9d780defb93"
+    },
+    {
+      "member": ".local_agent/finite-law-20261009/finite-law.json",
+      "original": ".local_agent/finite-law-20261009/finite-law.json",
+      "bytes": 36037,
+      "sha256": "29216a01843f49f8345219b8d9c23782f1045aa9aaff72d2ab22f05468822c00"
+    },
+    {
+      "member": ".local_agent/finite-law-20261009/law_controls.py",
+      "original": ".local_agent/finite-law-20261009/law_controls.py",
+      "bytes": 6605,
+      "sha256": "2f8042cf8d28dbc4fd07ce7c5592ee460c8ee68a9821aff9b76dc8a14fc6bbec"
+    },
+    {
+      "member": ".local_agent/finite-law-20261009/law_controls.json",
+      "original": ".local_agent/finite-law-20261009/law_controls.json",
+      "bytes": 40316,
+      "sha256": "863fd20aa76b85474f27caf64fad97c04e75ba7cfda4d87a59ca16ebb1959613"
+    },
+    {
+      "member": ".local_agent/finite-law-20261009/context_prediction.py",
+      "original": ".local_agent/finite-law-20261009/context_prediction.py",
+      "bytes": 3847,
+      "sha256": "ef47e3dd7cb56ebdaa3487c491efa4bc98576265dc8167051211749e640caaac"
+    },
+    {
+      "member": ".local_agent/finite-law-20261009/context-prediction.json",
+      "original": ".local_agent/finite-law-20261009/context-prediction.json",
+      "bytes": 860006,
+      "sha256": "6929b31231e871255167bc5ce5afc7c119e624e045387e58d5b1bbcc56abdf3e"
+    },
+    {
+      "member": ".local_agent/finite-law-20261009/qualification.md",
+      "original": ".local_agent/finite-law-20261009/qualification.md",
+      "bytes": 3531,
+      "sha256": "898411636213fa71e21d819594c583efe28e91e66e93b6214eb7127382f8f152"
+    },
+    {
+      "member": ".local_agent/finite-law-20261009/package_evidence.py",
+      "original": ".local_agent/finite-law-20261009/package_evidence.py",
+      "bytes": 6336,
+      "sha256": "a52e3e7b93a5b190b9fe4aa826609ed48629155888477d56fb7c0378823e1591"
+    },
+    {
+      "member": ".local_agent/generated6-20261008/coverage.json",
+      "original": ".local_agent/generated6-20261008/coverage.json",
+      "bytes": 383389,
+      "sha256": "8b2d54188b9ded320c4591883e9520a30752bd5b20cba5920e0b5e76e862e7fc"
+    },
+    {
+      "member": "tests/product/test_semantic_ray_equivalence.py",
+      "original": "tests/product/test_semantic_ray_equivalence.py",
+      "bytes": 6202,
+      "sha256": "9276e5954cade9fda94d59e0fc8d2dd22d9cae32bff8758b904f58fdf16651fc"
+    },
+    {
+      "member": "tests/rule_semantics_ir_fixtures.py",
+      "original": "tests/rule_semantics_ir_fixtures.py",
+      "bytes": 17212,
+      "sha256": "209b3bd9388d5ac228329d64eeda7d70a9209f0409ac74217be2879b4d6038c7"
+    }
+  ],
+  "member_count": 11,
+  "archive_sha256": "32e042bc06928c899a8106bdb172e59b2e1b703ad92dfdc2ddd939f12e0e91e5",
+  "archive_bytes": 73062,
+  "total_uncompressed_bytes": 1369791,
+  "extracted_hashes_verified": true,
+  "recovery": "Extract into an isolated checkout; verify member hashes. Restore only selected original relative input/producer paths, never overlay the live checkout wholesale. Product patch is in Git delivery; producer/product hashes identify exact version. Deferred unexecuted pilot is historical, not a runnable claim."
+}

@@ -1,0 +1,187 @@
+{
+  "complete": true,
+  "declaration": "Locate the rectangle boundary: raw projection or legacy profile assembly?\n\nExisting two cannon definitions, five preexisting densities. Independently sum\northogonal endpoint probabilities from width/height, without compiled geometry\nor projection helpers. quiet=(1-d)^distance; capture=d/2*k*d*(1-d)^(k-1),\nk=distance-1, zero at k=0. Equal sources/owners. No price fit/new law/default.\n",
+  "cases": [
+    {
+      "shape": [
+        7,
+        5
+      ],
+      "raw": {
+        "included": [
+          "legacy_000",
+          "legacy_002",
+          "legacy_008",
+          "legacy_010",
+          "sem_00_cannon_quiet",
+          "sem_01_cannon_capture"
+        ],
+        "excluded": [
+          {
+            "pattern": "legacy_024",
+            "reasons": [
+              "compound/state effect",
+              "drop",
+              "not simple actor move"
+            ]
+          }
+        ],
+        "signature": "8cf5bb6ced1e2bec1e71bf3541ed2044ded7181907e57d3fd0d83574e5ca3194",
+        "quiet_endpoints": 350.0,
+        "capture_endpoints": 350.0,
+        "curves": [
+          {
+            "density": 0.0,
+            "quiet": 10.0,
+            "capture": 0.0,
+            "total": 10.0
+          },
+          {
+            "density": 0.125,
+            "quiet": 7.372294616699219,
+            "capture": 0.08816190447126115,
+            "total": 7.46045652117048
+          },
+          {
+            "density": 0.25,
+            "quiet": 5.368150111607143,
+            "capture": 0.2837681361607143,
+            "total": 5.651918247767857
+          },
+          {
+            "density": 0.375,
+            "quiet": 3.835894993373326,
+            "capture": 0.5137295314243862,
+            "total": 4.349624524797712
+          },
+          {
+            "density": 0.5,
+            "quiet": 2.6580357142857145,
+            "capture": 0.7361607142857143,
+            "total": 3.394196428571429
+          }
+        ],
+        "raw": 6.482420761108399
+      },
+      "independent_controls": [
+        {
+          "density": 0.0,
+          "independent_quiet": 10.0,
+          "independent_capture": 0.0
+        },
+        {
+          "density": 0.125,
+          "independent_quiet": 7.372294616699219,
+          "independent_capture": 0.08816190447126115
+        },
+        {
+          "density": 0.25,
+          "independent_quiet": 5.368150111607143,
+          "independent_capture": 0.2837681361607143
+        },
+        {
+          "density": 0.375,
+          "independent_quiet": 3.835894993373326,
+          "independent_capture": 0.5137295314243862
+        },
+        {
+          "density": 0.5,
+          "independent_quiet": 2.6580357142857145,
+          "independent_capture": 0.7361607142857143
+        }
+      ],
+      "profile_boundary": "candidate profile currently requires square-board legacy evaluation metadata"
+    },
+    {
+      "shape": [
+        9,
+        10
+      ],
+      "raw": {
+        "included": [
+          "legacy_000",
+          "legacy_002",
+          "legacy_008",
+          "legacy_010",
+          "sem_00_cannon_quiet",
+          "sem_01_cannon_capture"
+        ],
+        "excluded": [
+          {
+            "pattern": "legacy_024",
+            "reasons": [
+              "compound/state effect",
+              "drop",
+              "not simple actor move"
+            ]
+          }
+        ],
+        "signature": "c4220fd1b5df67303caa1e4b3e9334355d0749da031162ab0ef0cda7f8e9053d",
+        "quiet_endpoints": 1530.0,
+        "capture_endpoints": 1530.0,
+        "curves": [
+          {
+            "density": 0.0,
+            "quiet": 17.0,
+            "capture": 0.0,
+            "total": 17.0
+          },
+          {
+            "density": 0.125,
+            "quiet": 11.043521314031548,
+            "capture": 0.22191261914041308,
+            "total": 11.26543393317196
+          },
+          {
+            "density": 0.25,
+            "quiet": 7.268711598714193,
+            "capture": 0.5981014675564236,
+            "total": 7.866813066270616
+          },
+          {
+            "density": 0.375,
+            "quiet": 4.812580116093159,
+            "capture": 0.9253830492496491,
+            "total": 5.737963165342808
+          },
+          {
+            "density": 0.5,
+            "quiet": 3.156814236111111,
+            "capture": 1.1626736111111111,
+            "total": 4.319487847222222
+          }
+        ],
+        "raw": 9.843595703677998
+      },
+      "independent_controls": [
+        {
+          "density": 0.0,
+          "independent_quiet": 17.0,
+          "independent_capture": 0.0
+        },
+        {
+          "density": 0.125,
+          "independent_quiet": 11.043521314031548,
+          "independent_capture": 0.22191261914041308
+        },
+        {
+          "density": 0.25,
+          "independent_quiet": 7.268711598714193,
+          "independent_capture": 0.5981014675564236
+        },
+        {
+          "density": 0.375,
+          "independent_quiet": 4.812580116093159,
+          "independent_capture": 0.9253830492496491
+        },
+        {
+          "density": 0.5,
+          "independent_quiet": 3.156814236111111,
+          "independent_capture": 1.1626736111111111
+        }
+      ],
+      "profile_boundary": "candidate profile currently requires square-board legacy evaluation metadata"
+    }
+  ],
+  "producer_sha256": "2f21a9cfd7b9177c9ba5dd275f195a570e9f994ba254fab4b8c907cb069129e9"
+}

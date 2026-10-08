@@ -852,7 +852,7 @@ def build_semantic_compile_payload(semantic):
     )
 
     _validate(
-        1 <= n <= 16 and n * n <= 256,
+        isinstance(n, int) and 1 <= n <= 16 and n * n <= 256,
         "semantic board size out of native range",
         fingerprint,
     )

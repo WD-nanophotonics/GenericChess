@@ -1,0 +1,2115 @@
+{
+  "complete": true,
+  "declaration": "Changed premise: warm TT/order history across an actual temporary right.\n\nReuse one public player across initial -> transform/right -> ordinary expiry\nin the frozen7x5 rule. An explicit aux-sensitive control evaluator assigns100\nper set global bool to owner0, plus unit material; deliberately not useful\nprices. Sorted/staged, same D2/4096/5sec/q0; compare each call with a cold player\nand full-width Core score. No extension of prior frozen q2 cohort.\n",
+  "routes": [
+    [
+      "initial",
+      []
+    ],
+    [
+      "right_set",
+      [
+        {
+          "pattern_id": "sem_00_promotion_grants_one_turn_right",
+          "geometry_id": "g14",
+          "actor_type_id": "R",
+          "from_square": {
+            "file": 1,
+            "rank": 1
+          },
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          },
+          "promotion_target_id": null
+        }
+      ]
+    ],
+    [
+      "right_expired",
+      [
+        {
+          "pattern_id": "sem_00_promotion_grants_one_turn_right",
+          "geometry_id": "g14",
+          "actor_type_id": "R",
+          "from_square": {
+            "file": 1,
+            "rank": 1
+          },
+          "to_square": {
+            "file": 2,
+            "rank": 2
+          },
+          "promotion_target_id": null
+        },
+        {
+          "pattern_id": "legacy_004",
+          "geometry_id": "g10",
+          "actor_type_id": "R",
+          "from_square": {
+            "file": 5,
+            "rank": 3
+          },
+          "to_square": {
+            "file": 5,
+            "rank": 2
+          },
+          "promotion_target_id": null
+        }
+      ]
+    ]
+  ],
+  "cases": [
+    {
+      "staged": false,
+      "context": "initial",
+      "root": {
+        "position": {
+          "board": [
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "131de0dc8ccdc9f193ffaffdcc951c8e67cbf3ab5238e7b124eabe8d7426603f",
+          "aux_state": [],
+          "board_width": 7,
+          "board_height": 5
+        },
+        "ply_count": 0,
+        "repetition_counts": [
+          [
+            "89edc954df1a453b8c922447649cf68cda92a6a067ae9ecda59f3fa51a377f64",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "89edc954df1a453b8c922447649cf68cda92a6a067ae9ecda59f3fa51a377f64",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          }
+        ]
+      },
+      "control_eval": 0,
+      "reference": 0,
+      "leaves": 145,
+      "results": [
+        {
+          "kind": "warm",
+          "decision": {
+            "action": {
+              "pattern_id": "sem_00_promotion_grants_one_turn_right",
+              "geometry_id": "g14",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 2,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": 0,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_00_promotion_grants_one_turn_right",
+                "geometry_id": "g14",
+                "actor_type_id": "R",
+                "from_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_004",
+                "geometry_id": "g10",
+                "actor_type_id": "R",
+                "from_square": {
+                  "file": 5,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 5,
+                  "rank": 0
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 2,
+            "selective_depth": 2,
+            "nodes": 53,
+            "qnodes": 0,
+            "elapsed_seconds": 0.01500000013038516,
+            "tt_probes": 15,
+            "tt_hits": 1,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 12,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.01500000013038516,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 15,
+            "ordered_moves": 171,
+            "ordering_seconds": 0.01500000013038516,
+            "legal_generation_calls": 16,
+            "legal_generation_seconds": 0.005842500366270542,
+            "evaluation_calls": 38,
+            "evaluation_seconds": 0.00012060068547725677,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 184,
+            "successor_handles_created": 171,
+            "successors_materialized": 51,
+            "successors_searched": 51,
+            "terminal_results_computed": 51,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 66,
+            "position_key_cache_hits": 51,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        },
+        {
+          "kind": "cold",
+          "decision": {
+            "action": {
+              "pattern_id": "sem_00_promotion_grants_one_turn_right",
+              "geometry_id": "g14",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 2,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": 0,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_00_promotion_grants_one_turn_right",
+                "geometry_id": "g14",
+                "actor_type_id": "R",
+                "from_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_004",
+                "geometry_id": "g10",
+                "actor_type_id": "R",
+                "from_square": {
+                  "file": 5,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 5,
+                  "rank": 0
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 2,
+            "selective_depth": 2,
+            "nodes": 53,
+            "qnodes": 0,
+            "elapsed_seconds": 0.015999999828636646,
+            "tt_probes": 15,
+            "tt_hits": 1,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 12,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.015999999828636646,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 15,
+            "ordered_moves": 171,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 16,
+            "legal_generation_seconds": 0.005559599958360195,
+            "evaluation_calls": 38,
+            "evaluation_seconds": 0.00011350004933774471,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 184,
+            "successor_handles_created": 171,
+            "successors_materialized": 51,
+            "successors_searched": 51,
+            "terminal_results_computed": 51,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 66,
+            "position_key_cache_hits": 51,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        }
+      ]
+    },
+    {
+      "staged": false,
+      "context": "right_set",
+      "root": {
+        "position": {
+          "board": [
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "TP",
+              "promoted": true
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 1,
+          "ruleset_fingerprint": "131de0dc8ccdc9f193ffaffdcc951c8e67cbf3ab5238e7b124eabe8d7426603f",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              1
+            ]
+          ],
+          "board_width": 7,
+          "board_height": 5
+        },
+        "ply_count": 1,
+        "repetition_counts": [
+          [
+            "216d272b7625df9607e4c4e00e8da9914c435ddf33c584fb4c5246f37d4b9a79",
+            1
+          ],
+          [
+            "89edc954df1a453b8c922447649cf68cda92a6a067ae9ecda59f3fa51a377f64",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "89edc954df1a453b8c922447649cf68cda92a6a067ae9ecda59f3fa51a377f64",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "216d272b7625df9607e4c4e00e8da9914c435ddf33c584fb4c5246f37d4b9a79",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"R\",\"from\":[1,1],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_promotion_grants_one_turn_right\",\"promotion_target_id\":null,\"to\":[2,2]}",
+            "gave_check": false
+          }
+        ]
+      },
+      "control_eval": -100,
+      "reference": 0,
+      "leaves": 44,
+      "results": [
+        {
+          "kind": "warm",
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_004",
+              "geometry_id": "g10",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 5,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 0
+              },
+              "promotion_target_id": null
+            },
+            "score": 0,
+            "principal_variation": [
+              {
+                "pattern_id": "legacy_004",
+                "geometry_id": "g10",
+                "actor_type_id": "R",
+                "from_square": {
+                  "file": 5,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 5,
+                  "rank": 0
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_014",
+                "geometry_id": "g4",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 0,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 0,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 2,
+            "selective_depth": 2,
+            "nodes": 29,
+            "qnodes": 0,
+            "elapsed_seconds": 0.014999999897554517,
+            "tt_probes": 15,
+            "tt_hits": 2,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 12,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.014999999897554517,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 14,
+            "ordered_moves": 57,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 15,
+            "legal_generation_seconds": 0.0024549001827836037,
+            "evaluation_calls": 14,
+            "evaluation_seconds": 5.009956657886505e-05,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 70,
+            "successor_handles_created": 57,
+            "successors_materialized": 27,
+            "successors_searched": 27,
+            "terminal_results_computed": 27,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 42,
+            "position_key_cache_hits": 27,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        },
+        {
+          "kind": "cold",
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_004",
+              "geometry_id": "g10",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 5,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 0
+              },
+              "promotion_target_id": null
+            },
+            "score": 0,
+            "principal_variation": [
+              {
+                "pattern_id": "legacy_004",
+                "geometry_id": "g10",
+                "actor_type_id": "R",
+                "from_square": {
+                  "file": 5,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 5,
+                  "rank": 0
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_014",
+                "geometry_id": "g4",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 0,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 0,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 2,
+            "selective_depth": 2,
+            "nodes": 42,
+            "qnodes": 0,
+            "elapsed_seconds": 0.0,
+            "tt_probes": 15,
+            "tt_hits": 1,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 12,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.0,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 15,
+            "ordered_moves": 70,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 16,
+            "legal_generation_seconds": 0.002445099875330925,
+            "evaluation_calls": 27,
+            "evaluation_seconds": 8.410005830228329e-05,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 83,
+            "successor_handles_created": 70,
+            "successors_materialized": 40,
+            "successors_searched": 40,
+            "terminal_results_computed": 40,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 55,
+            "position_key_cache_hits": 40,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        }
+      ]
+    },
+    {
+      "staged": false,
+      "context": "right_expired",
+      "root": {
+        "position": {
+          "board": [
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "TP",
+              "promoted": true
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "131de0dc8ccdc9f193ffaffdcc951c8e67cbf3ab5238e7b124eabe8d7426603f",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              0
+            ]
+          ],
+          "board_width": 7,
+          "board_height": 5
+        },
+        "ply_count": 2,
+        "repetition_counts": [
+          [
+            "216d272b7625df9607e4c4e00e8da9914c435ddf33c584fb4c5246f37d4b9a79",
+            1
+          ],
+          [
+            "2c2f2bd5a5bac5bf39d59874391aea8fe23ba8985896c77faf491104576382f5",
+            1
+          ],
+          [
+            "89edc954df1a453b8c922447649cf68cda92a6a067ae9ecda59f3fa51a377f64",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "89edc954df1a453b8c922447649cf68cda92a6a067ae9ecda59f3fa51a377f64",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "216d272b7625df9607e4c4e00e8da9914c435ddf33c584fb4c5246f37d4b9a79",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"R\",\"from\":[1,1],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_promotion_grants_one_turn_right\",\"promotion_target_id\":null,\"to\":[2,2]}",
+            "gave_check": false
+          },
+          {
+            "position_key": "2c2f2bd5a5bac5bf39d59874391aea8fe23ba8985896c77faf491104576382f5",
+            "actor": 1,
+            "action_signature": "{\"actor_type_id\":\"R\",\"from\":[5,3],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_004\",\"promotion_target_id\":null,\"to\":[5,2]}",
+            "gave_check": false
+          }
+        ]
+      },
+      "control_eval": 0,
+      "reference": -200,
+      "leaves": 47,
+      "results": [
+        {
+          "kind": "warm",
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_008",
+              "geometry_id": "g12",
+              "actor_type_id": "TP",
+              "from_square": {
+                "file": 2,
+                "rank": 2
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": -200,
+            "principal_variation": [
+              {
+                "pattern_id": "legacy_008",
+                "geometry_id": "g12",
+                "actor_type_id": "TP",
+                "from_square": {
+                  "file": 2,
+                  "rank": 2
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_023",
+                "geometry_id": "g8",
+                "actor_type_id": "R",
+                "from_square": {
+                  "file": 5,
+                  "rank": 2
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 2,
+            "selective_depth": 2,
+            "nodes": 24,
+            "qnodes": 0,
+            "elapsed_seconds": 0.0,
+            "tt_probes": 6,
+            "tt_hits": 2,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 3,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.0,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 6,
+            "ordered_moves": 55,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 7,
+            "legal_generation_seconds": 0.0017148000188171864,
+            "evaluation_calls": 18,
+            "evaluation_seconds": 5.869939923286438e-05,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 59,
+            "successor_handles_created": 55,
+            "successors_materialized": 22,
+            "successors_searched": 22,
+            "terminal_results_computed": 22,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 28,
+            "position_key_cache_hits": 22,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        },
+        {
+          "kind": "cold",
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_008",
+              "geometry_id": "g12",
+              "actor_type_id": "TP",
+              "from_square": {
+                "file": 2,
+                "rank": 2
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": -200,
+            "principal_variation": [
+              {
+                "pattern_id": "legacy_008",
+                "geometry_id": "g12",
+                "actor_type_id": "TP",
+                "from_square": {
+                  "file": 2,
+                  "rank": 2
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_023",
+                "geometry_id": "g8",
+                "actor_type_id": "R",
+                "from_square": {
+                  "file": 5,
+                  "rank": 2
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 2,
+            "selective_depth": 2,
+            "nodes": 24,
+            "qnodes": 0,
+            "elapsed_seconds": 0.01500000013038516,
+            "tt_probes": 6,
+            "tt_hits": 1,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 3,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.01500000013038516,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 6,
+            "ordered_moves": 55,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 7,
+            "legal_generation_seconds": 0.0016967998817563057,
+            "evaluation_calls": 18,
+            "evaluation_seconds": 5.7399971410632133e-05,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 59,
+            "successor_handles_created": 55,
+            "successors_materialized": 22,
+            "successors_searched": 22,
+            "terminal_results_computed": 22,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 28,
+            "position_key_cache_hits": 22,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        }
+      ]
+    },
+    {
+      "staged": true,
+      "context": "initial",
+      "root": {
+        "position": {
+          "board": [
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "131de0dc8ccdc9f193ffaffdcc951c8e67cbf3ab5238e7b124eabe8d7426603f",
+          "aux_state": [],
+          "board_width": 7,
+          "board_height": 5
+        },
+        "ply_count": 0,
+        "repetition_counts": [
+          [
+            "89edc954df1a453b8c922447649cf68cda92a6a067ae9ecda59f3fa51a377f64",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "89edc954df1a453b8c922447649cf68cda92a6a067ae9ecda59f3fa51a377f64",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          }
+        ]
+      },
+      "control_eval": 0,
+      "reference": 0,
+      "leaves": 145,
+      "results": [
+        {
+          "kind": "warm",
+          "decision": {
+            "action": {
+              "pattern_id": "sem_00_promotion_grants_one_turn_right",
+              "geometry_id": "g14",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 2,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": 0,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_00_promotion_grants_one_turn_right",
+                "geometry_id": "g14",
+                "actor_type_id": "R",
+                "from_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_004",
+                "geometry_id": "g10",
+                "actor_type_id": "R",
+                "from_square": {
+                  "file": 5,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 5,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 2,
+            "selective_depth": 2,
+            "nodes": 53,
+            "qnodes": 0,
+            "elapsed_seconds": 0.01600000006146729,
+            "tt_probes": 15,
+            "tt_hits": 1,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 12,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.01600000006146729,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 171,
+            "move_picker_yielded": 51,
+            "move_picker_yielded_by_stage": {
+              "quiet": 41,
+              "tt": 1,
+              "good_capture": 2,
+              "killer_counter": 7
+            },
+            "ordering_calls": 15,
+            "ordered_moves": 171,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 16,
+            "legal_generation_seconds": 0.005636000772938132,
+            "evaluation_calls": 38,
+            "evaluation_seconds": 0.00011729937978088856,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 184,
+            "successor_handles_created": 171,
+            "successors_materialized": 51,
+            "successors_searched": 51,
+            "terminal_results_computed": 51,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 66,
+            "position_key_cache_hits": 51,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        },
+        {
+          "kind": "cold",
+          "decision": {
+            "action": {
+              "pattern_id": "sem_00_promotion_grants_one_turn_right",
+              "geometry_id": "g14",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 2,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": 0,
+            "principal_variation": [
+              {
+                "pattern_id": "sem_00_promotion_grants_one_turn_right",
+                "geometry_id": "g14",
+                "actor_type_id": "R",
+                "from_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_004",
+                "geometry_id": "g10",
+                "actor_type_id": "R",
+                "from_square": {
+                  "file": 5,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 5,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 2,
+            "selective_depth": 2,
+            "nodes": 53,
+            "qnodes": 0,
+            "elapsed_seconds": 0.01500000013038516,
+            "tt_probes": 15,
+            "tt_hits": 1,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 12,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.01500000013038516,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 171,
+            "move_picker_yielded": 51,
+            "move_picker_yielded_by_stage": {
+              "quiet": 41,
+              "tt": 1,
+              "good_capture": 2,
+              "killer_counter": 7
+            },
+            "ordering_calls": 15,
+            "ordered_moves": 171,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 16,
+            "legal_generation_seconds": 0.005631899693980813,
+            "evaluation_calls": 38,
+            "evaluation_seconds": 0.00010850047692656517,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 184,
+            "successor_handles_created": 171,
+            "successors_materialized": 51,
+            "successors_searched": 51,
+            "terminal_results_computed": 51,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 66,
+            "position_key_cache_hits": 51,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        }
+      ]
+    },
+    {
+      "staged": true,
+      "context": "right_set",
+      "root": {
+        "position": {
+          "board": [
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "TP",
+              "promoted": true
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 1,
+          "ruleset_fingerprint": "131de0dc8ccdc9f193ffaffdcc951c8e67cbf3ab5238e7b124eabe8d7426603f",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              1
+            ]
+          ],
+          "board_width": 7,
+          "board_height": 5
+        },
+        "ply_count": 1,
+        "repetition_counts": [
+          [
+            "216d272b7625df9607e4c4e00e8da9914c435ddf33c584fb4c5246f37d4b9a79",
+            1
+          ],
+          [
+            "89edc954df1a453b8c922447649cf68cda92a6a067ae9ecda59f3fa51a377f64",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "89edc954df1a453b8c922447649cf68cda92a6a067ae9ecda59f3fa51a377f64",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "216d272b7625df9607e4c4e00e8da9914c435ddf33c584fb4c5246f37d4b9a79",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"R\",\"from\":[1,1],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_promotion_grants_one_turn_right\",\"promotion_target_id\":null,\"to\":[2,2]}",
+            "gave_check": false
+          }
+        ]
+      },
+      "control_eval": -100,
+      "reference": 0,
+      "leaves": 44,
+      "results": [
+        {
+          "kind": "warm",
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_004",
+              "geometry_id": "g10",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 5,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": 0,
+            "principal_variation": [
+              {
+                "pattern_id": "legacy_004",
+                "geometry_id": "g10",
+                "actor_type_id": "R",
+                "from_square": {
+                  "file": 5,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 5,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_008",
+                "geometry_id": "g12",
+                "actor_type_id": "TP",
+                "from_square": {
+                  "file": 2,
+                  "rank": 2
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 2,
+            "selective_depth": 2,
+            "nodes": 31,
+            "qnodes": 0,
+            "elapsed_seconds": 0.015999999828636646,
+            "tt_probes": 15,
+            "tt_hits": 2,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 12,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.015999999828636646,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 57,
+            "move_picker_yielded": 29,
+            "move_picker_yielded_by_stage": {
+              "tt": 1,
+              "quiet": 19,
+              "killer_counter": 9
+            },
+            "ordering_calls": 14,
+            "ordered_moves": 57,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 15,
+            "legal_generation_seconds": 0.002404799684882164,
+            "evaluation_calls": 16,
+            "evaluation_seconds": 5.249958485364914e-05,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 70,
+            "successor_handles_created": 57,
+            "successors_materialized": 29,
+            "successors_searched": 29,
+            "terminal_results_computed": 29,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 44,
+            "position_key_cache_hits": 29,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        },
+        {
+          "kind": "cold",
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_004",
+              "geometry_id": "g10",
+              "actor_type_id": "R",
+              "from_square": {
+                "file": 5,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": 0,
+            "principal_variation": [
+              {
+                "pattern_id": "legacy_004",
+                "geometry_id": "g10",
+                "actor_type_id": "R",
+                "from_square": {
+                  "file": 5,
+                  "rank": 3
+                },
+                "to_square": {
+                  "file": 5,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_008",
+                "geometry_id": "g12",
+                "actor_type_id": "TP",
+                "from_square": {
+                  "file": 2,
+                  "rank": 2
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 2,
+            "selective_depth": 2,
+            "nodes": 44,
+            "qnodes": 0,
+            "elapsed_seconds": 0.01600000006146729,
+            "tt_probes": 15,
+            "tt_hits": 1,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 12,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.01600000006146729,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 70,
+            "move_picker_yielded": 42,
+            "move_picker_yielded_by_stage": {
+              "quiet": 32,
+              "tt": 1,
+              "killer_counter": 9
+            },
+            "ordering_calls": 15,
+            "ordered_moves": 70,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 16,
+            "legal_generation_seconds": 0.0024251004215329885,
+            "evaluation_calls": 29,
+            "evaluation_seconds": 8.710031397640705e-05,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 83,
+            "successor_handles_created": 70,
+            "successors_materialized": 42,
+            "successors_searched": 42,
+            "terminal_results_computed": 42,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 57,
+            "position_key_cache_hits": 42,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        }
+      ]
+    },
+    {
+      "staged": true,
+      "context": "right_expired",
+      "root": {
+        "position": {
+          "board": [
+            {
+              "owner": 0,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 0,
+              "base_type_id": "R",
+              "current_type_id": "TP",
+              "promoted": true
+            },
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "R",
+              "current_type_id": "R",
+              "promoted": false
+            },
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "owner": 1,
+              "base_type_id": "K",
+              "current_type_id": "K",
+              "promoted": false
+            }
+          ],
+          "hands": [
+            {
+              "counts": []
+            },
+            {
+              "counts": []
+            }
+          ],
+          "side_to_move": 0,
+          "ruleset_fingerprint": "131de0dc8ccdc9f193ffaffdcc951c8e67cbf3ab5238e7b124eabe8d7426603f",
+          "aux_state": [
+            [
+              [
+                0,
+                -1
+              ],
+              0
+            ]
+          ],
+          "board_width": 7,
+          "board_height": 5
+        },
+        "ply_count": 2,
+        "repetition_counts": [
+          [
+            "216d272b7625df9607e4c4e00e8da9914c435ddf33c584fb4c5246f37d4b9a79",
+            1
+          ],
+          [
+            "2c2f2bd5a5bac5bf39d59874391aea8fe23ba8985896c77faf491104576382f5",
+            1
+          ],
+          [
+            "89edc954df1a453b8c922447649cf68cda92a6a067ae9ecda59f3fa51a377f64",
+            1
+          ]
+        ],
+        "terminal_status": {
+          "status": "ongoing",
+          "winner": null
+        },
+        "history": [
+          {
+            "position_key": "89edc954df1a453b8c922447649cf68cda92a6a067ae9ecda59f3fa51a377f64",
+            "actor": -1,
+            "action_signature": "",
+            "gave_check": false
+          },
+          {
+            "position_key": "216d272b7625df9607e4c4e00e8da9914c435ddf33c584fb4c5246f37d4b9a79",
+            "actor": 0,
+            "action_signature": "{\"actor_type_id\":\"R\",\"from\":[1,1],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_promotion_grants_one_turn_right\",\"promotion_target_id\":null,\"to\":[2,2]}",
+            "gave_check": false
+          },
+          {
+            "position_key": "2c2f2bd5a5bac5bf39d59874391aea8fe23ba8985896c77faf491104576382f5",
+            "actor": 1,
+            "action_signature": "{\"actor_type_id\":\"R\",\"from\":[5,3],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_004\",\"promotion_target_id\":null,\"to\":[5,2]}",
+            "gave_check": false
+          }
+        ]
+      },
+      "control_eval": 0,
+      "reference": -200,
+      "leaves": 47,
+      "results": [
+        {
+          "kind": "warm",
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_008",
+              "geometry_id": "g12",
+              "actor_type_id": "TP",
+              "from_square": {
+                "file": 2,
+                "rank": 2
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": -200,
+            "principal_variation": [
+              {
+                "pattern_id": "legacy_008",
+                "geometry_id": "g12",
+                "actor_type_id": "TP",
+                "from_square": {
+                  "file": 2,
+                  "rank": 2
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_023",
+                "geometry_id": "g8",
+                "actor_type_id": "R",
+                "from_square": {
+                  "file": 5,
+                  "rank": 2
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 2,
+            "selective_depth": 2,
+            "nodes": 20,
+            "qnodes": 0,
+            "elapsed_seconds": 0.014999999897554517,
+            "tt_probes": 6,
+            "tt_hits": 2,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 3,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.014999999897554517,
+            "time_to_first_completed_iteration": 0.014999999897554517,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 51,
+            "move_picker_yielded": 18,
+            "move_picker_yielded_by_stage": {
+              "tt": 1,
+              "good_capture": 4,
+              "quiet": 13
+            },
+            "ordering_calls": 5,
+            "ordered_moves": 51,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 6,
+            "legal_generation_seconds": 0.0020337002351880074,
+            "evaluation_calls": 14,
+            "evaluation_seconds": 5.139992572367191e-05,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 55,
+            "successor_handles_created": 51,
+            "successors_materialized": 18,
+            "successors_searched": 18,
+            "terminal_results_computed": 18,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 24,
+            "position_key_cache_hits": 18,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        },
+        {
+          "kind": "cold",
+          "decision": {
+            "action": {
+              "pattern_id": "legacy_008",
+              "geometry_id": "g12",
+              "actor_type_id": "TP",
+              "from_square": {
+                "file": 2,
+                "rank": 2
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            },
+            "score": -200,
+            "principal_variation": [
+              {
+                "pattern_id": "legacy_008",
+                "geometry_id": "g12",
+                "actor_type_id": "TP",
+                "from_square": {
+                  "file": 2,
+                  "rank": 2
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              },
+              {
+                "pattern_id": "legacy_023",
+                "geometry_id": "g8",
+                "actor_type_id": "R",
+                "from_square": {
+                  "file": 5,
+                  "rank": 2
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 2,
+            "selective_depth": 2,
+            "nodes": 24,
+            "qnodes": 0,
+            "elapsed_seconds": 0.0,
+            "tt_probes": 6,
+            "tt_hits": 1,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 3,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.0,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 55,
+            "move_picker_yielded": 22,
+            "move_picker_yielded_by_stage": {
+              "quiet": 17,
+              "tt": 1,
+              "good_capture": 4
+            },
+            "ordering_calls": 6,
+            "ordered_moves": 55,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 7,
+            "legal_generation_seconds": 0.0017930001486092806,
+            "evaluation_calls": 18,
+            "evaluation_seconds": 6.169965490698814e-05,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 59,
+            "successor_handles_created": 55,
+            "successors_materialized": 22,
+            "successors_searched": 22,
+            "terminal_results_computed": 22,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 28,
+            "position_key_cache_hits": 22,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          }
+        }
+      ]
+    }
+  ],
+  "producer_sha256": "616cce14e456692add5b9e063b446896784b33096a6bff44edf6ddd9906306bf"
+}

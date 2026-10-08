@@ -1,0 +1,321 @@
+{
+  "scope": "Existing exposed6x6 event-query transfer and small membership-miss fast path. Exact semantics/work; local timing only, no strength/default/price/cache claim.",
+  "recovery": "docs/archive/query_transfer_20261009/index.json",
+  "archive_sha256": "2ed434d31dc6a2ebf7edb3a67695925a635828f33b6afd892eba4a1ebf327b8f",
+  "event_transfer": {
+    "complete": true,
+    "rows": [
+      {
+        "seed": 202610082000,
+        "ply": 1,
+        "event": "active",
+        "old_seconds": 0.08212030003778636,
+        "product_seconds": 0.07461979996878654,
+        "reduction": 0.09133551710781118,
+        "nodes": 154,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082000,
+        "ply": 2,
+        "event": "active",
+        "old_seconds": 0.0557183000491932,
+        "product_seconds": 0.051386300008744,
+        "reduction": 0.07774824495048338,
+        "nodes": 102,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082000,
+        "ply": 3,
+        "event": "active",
+        "old_seconds": 0.09619514993391931,
+        "product_seconds": 0.08321489999070764,
+        "reduction": 0.13493663612072315,
+        "nodes": 122,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082000,
+        "ply": 4,
+        "event": "active",
+        "old_seconds": 0.08206050004810095,
+        "product_seconds": 0.07350609998684376,
+        "reduction": 0.10424503940681451,
+        "nodes": 172,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082000,
+        "ply": 5,
+        "event": "expired",
+        "old_seconds": 0.10003329999744892,
+        "product_seconds": 0.09118034993298352,
+        "reduction": 0.08850003013687613,
+        "nodes": 210,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082001,
+        "ply": 4,
+        "event": "guarded_drop",
+        "old_seconds": 0.09166775003541261,
+        "product_seconds": 0.08745124994311482,
+        "reduction": 0.04599763919883382,
+        "nodes": 228,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082001,
+        "ply": 5,
+        "event": "guarded_drop",
+        "old_seconds": 0.05700610007625073,
+        "product_seconds": 0.05196225002873689,
+        "reduction": 0.08847912838743999,
+        "nodes": 148,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082001,
+        "ply": 9,
+        "event": "guarded_drop",
+        "old_seconds": 0.07657729997299612,
+        "product_seconds": 0.07206784992013127,
+        "reduction": 0.05888755616161767,
+        "nodes": 199,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082001,
+        "ply": 16,
+        "event": "guarded_drop",
+        "old_seconds": 0.10243249998893589,
+        "product_seconds": 0.09516054997220635,
+        "reduction": 0.07099260505713523,
+        "nodes": 269,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082002,
+        "ply": 3,
+        "event": "guarded_drop",
+        "old_seconds": 0.08967434987425804,
+        "product_seconds": 0.08081730001140386,
+        "reduction": 0.09876904460722158,
+        "nodes": 195,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082002,
+        "ply": 4,
+        "event": "guarded_drop",
+        "old_seconds": 0.1160383999813348,
+        "product_seconds": 0.10529570002108812,
+        "reduction": 0.0925788356438445,
+        "nodes": 258,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082002,
+        "ply": 7,
+        "event": "guarded_drop",
+        "old_seconds": 0.10384644998703152,
+        "product_seconds": 0.09641514997929335,
+        "reduction": 0.07156046267028104,
+        "nodes": 165,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082002,
+        "ply": 8,
+        "event": "guarded_drop",
+        "old_seconds": 0.05816935014445335,
+        "product_seconds": 0.055078100063838065,
+        "reduction": 0.053142248846492324,
+        "nodes": 111,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082002,
+        "ply": 11,
+        "event": "guarded_drop",
+        "old_seconds": 0.07847085001412779,
+        "product_seconds": 0.07334540004376322,
+        "reduction": 0.06531661081078888,
+        "nodes": 180,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082002,
+        "ply": 12,
+        "event": "guarded_drop",
+        "old_seconds": 0.09377904993016273,
+        "product_seconds": 0.08413229999132454,
+        "reduction": 0.10286679110123342,
+        "nodes": 190,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082002,
+        "ply": 15,
+        "event": "guarded_drop",
+        "old_seconds": 0.07710490003228188,
+        "product_seconds": 0.07132844999432564,
+        "reduction": 0.07491676969346672,
+        "nodes": 148,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082002,
+        "ply": 16,
+        "event": "guarded_drop",
+        "old_seconds": 0.0533021999290213,
+        "product_seconds": 0.05243874993175268,
+        "reduction": 0.016199143720492026,
+        "nodes": 114,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082003,
+        "ply": 1,
+        "event": "active",
+        "old_seconds": 0.04721829993650317,
+        "product_seconds": 0.043506050016731024,
+        "reduction": 0.07861888133973904,
+        "nodes": 102,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082003,
+        "ply": 2,
+        "event": "active",
+        "old_seconds": 0.07269910001195967,
+        "product_seconds": 0.06575855007395148,
+        "reduction": 0.09546954414657682,
+        "nodes": 162,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082003,
+        "ply": 3,
+        "event": "active",
+        "old_seconds": 0.10435129993129522,
+        "product_seconds": 0.09232905006501824,
+        "reduction": 0.1152093924483204,
+        "nodes": 247,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082003,
+        "ply": 4,
+        "event": "active",
+        "old_seconds": 0.09495235001668334,
+        "product_seconds": 0.08241474989335984,
+        "reduction": 0.13204096708633983,
+        "nodes": 208,
+        "qnodes": 0
+      },
+      {
+        "seed": 202610082003,
+        "ply": 5,
+        "event": "expired",
+        "old_seconds": 0.08300289988983423,
+        "product_seconds": 0.0784611499402672,
+        "reduction": 0.054717967150485936,
+        "nodes": 181,
+        "qnodes": 0
+      }
+    ],
+    "old_sum_medians": 1.8164206998189911,
+    "product_sum_medians": 1.661870049778372,
+    "median_reduction": 0.08354900486358952,
+    "range_reduction": [
+      0.016199143720492026,
+      0.13493663612072315
+    ],
+    "scope": "22existing exposed6x6 semantic event frontiers,88cold calls,D2q0,all exact work. Sub.12sec calls: local timing descriptive, not universal speed, strength or independent fresh validation."
+  },
+  "membership": {
+    "complete": true,
+    "rows": [
+      {
+        "seed": 202610082300,
+        "before_seconds": 10.818880300037563,
+        "prototype_seconds": 10.533097449922934,
+        "reduction": 0.02641519659974756,
+        "exact_all_work": true
+      },
+      {
+        "seed": 202610082301,
+        "before_seconds": 5.413657100056298,
+        "prototype_seconds": 5.221495999954641,
+        "reduction": 0.0354956172048021,
+        "exact_all_work": true
+      },
+      {
+        "seed": 202610082302,
+        "before_seconds": 6.1598115001106635,
+        "prototype_seconds": 6.002644250052981,
+        "reduction": 0.025514944743821877,
+        "exact_all_work": true
+      },
+      {
+        "seed": 202610082303,
+        "before_seconds": 3.288181049982086,
+        "prototype_seconds": 3.2809442499419674,
+        "reduction": 0.002200852060794456,
+        "exact_all_work": true
+      }
+    ],
+    "scope": "16serial rotated coldq2calls; local small timing differences, no universal speed/strength/default claim; no table allocation/cache"
+  },
+  "product": {
+    "complete": true,
+    "actual_product_calls": 4,
+    "all_decision_work_qclass_signatures_exact": true,
+    "scope": "Actual deployed helper plus supplied-evaluator constructor cleanup; product replay verifies semantics/work, timing not fair speed evidence because a regression process briefly overlapped. Fair16call pilot remains separate."
+  },
+  "authority6": {
+    "complete": true,
+    "producer_sha256": "3db73dad605ed0241c53c203404d56bda57547397523f219999a7608a22ac250",
+    "input_sha256": "8b2d54188b9ded320c4591883e9520a30752bd5b20cba5920e0b5e76e862e7fc",
+    "declaration": "Declared followup: actual product versus original committed source and unchanged full-map authority, all four existing generated6x6 semantic-first routes; allboard targets/owners/sources. At every recorded route frontier and canonical initial state, compare original single-square predicate and prototype against independent unchanged full attacked_squares enumeration; retain guards/paths/aux. No human/holdout. First checkpoint cancellation must propagate. Serial <=120sec.",
+    "geometry_queries": 306432,
+    "attack_queries": 4896,
+    "positions": 68,
+    "cases": [
+      {
+        "label": "202610082000",
+        "positions": 17,
+        "area": 36
+      },
+      {
+        "label": "202610082001",
+        "positions": 17,
+        "area": 36
+      },
+      {
+        "label": "202610082002",
+        "positions": 17,
+        "area": 36
+      },
+      {
+        "label": "202610082003",
+        "positions": 17,
+        "area": 36
+      }
+    ],
+    "seconds": 0.5315215000882745
+  },
+  "pattern_filter": {
+    "state": "DEFERRED_BEFORE_EXECUTION",
+    "reason": "semantic_engine_for constructs SemanticEngine per call (profile143793 engine_for vs119978 point queries). Constructor-only filtering would rebuild tuple for most queries; pilot premise of amortized filtering unsupported. Do not run16caller replays merely to rediscover metadata scan cost. A compiled-IR index would expand product scope for a weak ceiling; deferred.",
+    "evidence": [
+      "generic_chess/core/semantic_executor.py:119",
+      "generic_chess/core/semantic_executor.py:SemanticEngine.__init__",
+      ".local_agent/pawn-bias-20261008/profile-product.json"
+    ],
+    "unexecuted_producer": "pattern_filter_pilot.py",
+    "no_product_change": true
+  }
+}

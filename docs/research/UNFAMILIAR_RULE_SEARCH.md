@@ -1124,3 +1124,62 @@ committed target predicate and unchanged full maps on4896attack queries;
 306432compiled target/path queries agree. Cancellation propagates in all four
 rules. This is recombined-mechanism semantic transfer, not another timing or
 strength sample. Source/result/dependency: transfer6.zip/transfer6-index.json.
+
+## Event-cost transfer and rectangular public interface (2026-10-09)
+
+All22 existing6x6 event frontiers receive88 rotated cold original/product q0
+calls under identical limits. Choices/PV/nodes and all recorded work agree;
+local median wall reduction8.35% is descriptive on sub.12sec calls. A separate
+tuple-membership miss guard avoids Python scanning without a cache:16 cold q2
+calls keep exact signatures/work, median local reductions2.64/3.55/2.55/0.22%.
+Four actual product replays are exact; their timing is not a fair new comparison
+because regression execution briefly overlapped.306432 geometry and4896 attack
+controls agree. Constructor-only pattern filtering was not executed: engine
+creation per call invalidated its proposed amortization. No compiled index or
+deadline/cancellation relaxation follows. data/query_transfer_20261009.json
+routes declarations, failed premises, sources and complete outputs.
+
+Two fresh7x5/9x10 cannon recombinations exposed a concrete interface defect.
+AlphaBetaPlayer built an unused square-only default profile even with a supplied
+evaluator; both orderers then called square-only board_size(). The constructor
+now builds a default profile only when needed, and orderers index board_shape.
+evaluation_profile is None and cache_hit false with an override; the ordinary
+square default still builds/reuses its cache. Native's unsupported size is a
+typed NativeUnsupportedRuleError; requesting Native on these rectangles uses
+Core. This does not implement Native rectangle kernels or default rectangle
+prices, nor prove every compiled rule is searchable by every evaluator.
+
+12 public q0 calls match two full-width Core D2 references.16 further cold q2
+calls (plain, TT/sorted, TT/staged, TT/root scan; two repeats) all complete D2,
+retain legal PVs/roots and balanced pushes/pops. Captures create real hand/drop
+branches. Separate7x5 temporal-transform and compound-friendly-shift roots and
+their actual effect successors give20 public calls; all12 q0 scores agree with
+four full-width references, all8 q2 calls complete.12 ordinary temporal replies
+actually expire the global right; one opponent transformation sets it anew.
+Compound movement changes four board cells. Complete state/history witnesses
+are retained, rather than installing a Position while inventing session history.
+
+The supplied unit evaluator is an execution control, not useful material prices;
+changed search work or tied choices are not strength gains. Full active suite
+1667 cases passed before the final typed-Native test was added; final49 relevant
+cases pass after that addition. An early provider-present assertion failed on
+six rectangle cases because it confused a Native request with actual capability;
+the test and claim were corrected. Recovery, scopes and all capped conditions:
+data/rect_search_20261009.json and ../archive/rect_search_20261009/index.json.
+
+A boundary check separates raw opportunity from profile assembly. On the same
+two cannon rectangles, ten existing-density quiet/capture curves match an
+independent width/height endpoint sum: quiet=(1-d)^distance and capture=
+(d/2)*k*d*(1-d)^(k-1), k=distance-1 (zero at k=0). Raw semantic opportunity
+already uses board area correctly; candidate profile assembly explicitly rejects
+square-only legacy metadata. This is not a reason to bolt an approximate price
+table or Native kernel onto a validated Core search fix. Preserve the raw/table
+boundary and choose the next actual interface need, not another density sweep.
+
+One changed-premise followup reuses TT/ordering across actual initial, right-set
+and ordinary-expired states. An explicitly artificial aux-sensitive evaluator
+makes the state change observable; root controls are0/-100/0, D2 references
+0/0/-200. Sorted/staged warm players and their cold controls give12 complete
+calls matching six full-width checks with legal PVs/unchanged roots. Real TT
+hits occur and work can differ. This checks stateful interface reuse, not useful
+prices or generalized TT correctness; it does not extend the frozen q2 cohort.

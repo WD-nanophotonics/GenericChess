@@ -46,17 +46,21 @@ class AlphaBetaPlayer:
     ) -> None:
         self._compiled = compiled
         self._config = evaluation_config if evaluation_config is not None else EvaluationConfig()
-        self._profile_cache = profile_cache or EvaluationProfileCache(
-            use_disk=use_disk_cache, disk_dir=disk_cache_dir
-        )
-        self._profile, self._profile_cache_hit = self._profile_cache.get_or_build(
-            compiled, self._config
-        )
-        self._evaluator = (
-            evaluator_override
-            if evaluator_override is not None
-            else Evaluator(compiled, self._profile, self._config)
-        )
+        self._profile = None
+        self._profile_cache_hit = False
+        self._profile_cache = profile_cache
+        if evaluator_override is None:
+            self._profile_cache = profile_cache or EvaluationProfileCache(
+                use_disk=use_disk_cache, disk_dir=disk_cache_dir
+            )
+            self._profile, self._profile_cache_hit = self._profile_cache.get_or_build(
+                compiled, self._config
+            )
+            self._evaluator = Evaluator(compiled, self._profile, self._config)
+        else:
+            # A supplied evaluator owns its inputs. Building an unused default
+            # profile can reject rules that the evaluator/search can execute.
+            self._evaluator = evaluator_override
         self._tt = TranspositionTable(max_entries=tt_max_entries)
         self._use_tt = use_tt
         self._use_ordering = use_ordering
@@ -74,6 +78,7 @@ class AlphaBetaPlayer:
 
     @property
     def evaluation_profile(self):
+        """Generated default profile, or None when an evaluator was supplied."""
         return self._profile
 
     @property

@@ -836,3 +836,29 @@ support retaining explicit context/task components rather than silently using
 a conditional capture ratio as a universal stock table. Exact decomposition,
 counts, costs and recovery: CROSS_GAME_PRICE_DIAGNOSTIC.md and
  data/pawn_bias_20261009.json. Old task outputs remain historical evidence.
+
+## Fixed-stock anonymous occupancy is conditional (2026-10-09)
+
+A finite-inventory diagnostic substitutes one hypothetical owner actor for an
+own initial-stock unit, distributes remaining fixed friendly/enemy counts
+uniformly without replacement, and conditions empty/enemy targets explicitly.
+For the supported endpoint union, exact shared path constraints use assignment
+weight C(N-u,M-r)/C(N,M). Existing transformation/state/zone/hand exclusions and
+the12-event boundary remain. This is a chosen layout law, not material utility.
+
+378 exact subset controls,40 independently colored controls over582 layouts,
+and15 ray-encoding/saturation controls agree. Same fixed stock and each square's
+marginal occupancy still permit opposing ray/cannon endpoint orderings: uniform
+two blockers among four cells gives1/6 versus2/3; correlated both-on/both-off
+gives1/2 versus0.12 Core capture-eligibility states reproduce this. The six
+abstract active cells are embedded in4x4 with ten fixed-empty cells; anchor-free
+analysis states are not legal games or a full16-square uniform law.
+
+Canonical Chess initial-stock B/N changes mostly reflect density: raw B/N is
+3.6239/4 finite,3.6469/4 matched-independent,6.0746/4.6528 old density mixture.
+On68 existing6x6 contexts (1256 actor observations), finite-law quiet endpoint
+MAE improves3/4 rules while capture MAE worsens all4 versus the old mixture.
+Neither geometric count predicts material utility or legal mobility. Keep this
+conditional diagnostic; no new default/profile, fitted stock ratios, additional
+law sweep or extension of exposed validation follows. Exact sources, costs,
+failures and recovery: data/finite_law_20261009.json and its separate archive.

@@ -118,6 +118,8 @@ def geometry_paths_to(
         if path and path[0] == target:
             yield ()
         return
+    if target not in path:
+        return
     start = max(0, (geometry.min_steps or 1) - 1)
     for index in range(start, len(path)):
         if path[index] == target:

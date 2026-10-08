@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "scope": "Agent-generated sources/results only; no private/user input/raw Slack/account/credentials. Explicit derived failure summary omits personal absolute-path tracebacks; original retained locally.",
+  "base_product_sha": "af8ed2c62f4c87a17e7fe33d2e2df3a65fd3af2e",
+  "members": [
+    {
+      "member": ".local_agent/rect-search-20261009/rect_probe.py",
+      "original": ".local_agent/rect-search-20261009/rect_probe.py",
+      "bytes": 4104,
+      "sha256": "eed5c2d5a91e46fb9cfe07fb5dd406f602273b73cff3da12e58c97ac3ba1a157"
+    },
+    {
+      "member": ".local_agent/rect-search-20261009/rect-before-summary.json",
+      "original": ".local_agent/rect-search-20261009/rect-before-summary.json",
+      "bytes": 20258,
+      "sha256": "4edc74652e5d87e868ea1b97f79a14a4efc54d48e2e1f667698c12dfd3e7a842"
+    },
+    {
+      "member": ".local_agent/rect-search-20261009/rect_after.py",
+      "original": ".local_agent/rect-search-20261009/rect_after.py",
+      "bytes": 4071,
+      "sha256": "0c4a65493fbc7bac4753f61d3f0adc9ae3e70961ea492166f797c27adc731883"
+    },
+    {
+      "member": ".local_agent/rect-search-20261009/rect-after.json",
+      "original": ".local_agent/rect-search-20261009/rect-after.json",
+      "bytes": 75618,
+      "sha256": "8e11adea46c3742cc437324e7fa69b4212b15e56e5990e83342195f999445f92"
+    },
+    {
+      "member": ".local_agent/rect-search-20261009/rect_qpilot.py",
+      "original": ".local_agent/rect-search-20261009/rect_qpilot.py",
+      "bytes": 2928,
+      "sha256": "4a060b91e072b7a1fa6192f1d34830cb3f4a482d42bb185c8efa4e346810e959"
+    },
+    {
+      "member": ".local_agent/rect-search-20261009/rect-qpilot.json",
+      "original": ".local_agent/rect-search-20261009/rect-qpilot.json",
+      "bytes": 65324,
+      "sha256": "7603b897f778d36e927c8b9c749337dc9110d8ab7cfb5d94c90738688aef449d"
+    },
+    {
+      "member": ".local_agent/rect-search-20261009/full-tests.txt",
+      "original": ".local_agent/rect-search-20261009/full-tests.txt",
+      "bytes": 1944,
+      "sha256": "8403defb767e9a67c5bf3a712d7b41dcd4bd3e0249411b8211e595775060d23f"
+    },
+    {
+      "member": ".local_agent/rect-search-20261009/final-focused-tests.txt",
+      "original": ".local_agent/rect-search-20261009/final-focused-tests.txt",
+      "bytes": 81,
+      "sha256": "9187488ef3d10e92ecd44590a9aa03a2aa6f37c1f96cb5754652e91f499d5a8d"
+    },
+    {
+      "member": "tests/product/test_rectangular_search_override.py",
+      "original": "tests/product/test_rectangular_search_override.py",
+      "bytes": 4537,
+      "sha256": "a601871b7733344bd21554f4910440a1f568adea3a99db2b27e1ce0f8ff940dd"
+    },
+    {
+      "member": "tests/rule_semantics_ir_fixtures.py",
+      "original": "tests/rule_semantics_ir_fixtures.py",
+      "bytes": 17212,
+      "sha256": "209b3bd9388d5ac228329d64eeda7d70a9209f0409ac74217be2879b4d6038c7"
+    }
+  ],
+  "member_count": 10,
+  "archive_sha256": "e00c9aef82fe2998a52db861dab7688947d556499ed6f80d632a72f8ae091e1e",
+  "archive_bytes": 20560,
+  "total_uncompressed_bytes": 196077,
+  "extracted_hashes_verified": true,
+  "recovery": "Extract into an isolated checkout; verify member hashes. Restore only selected original relative input/producer paths, never overlay the live checkout wholesale. Product patch is in Git delivery; producer/product hashes identify exact version. Deferred unexecuted pilot is historical, not a runnable claim."
+}
