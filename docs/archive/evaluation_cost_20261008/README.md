@@ -18,6 +18,12 @@ instrumented wall time cannot be compared with ordinary searches. An initial
 script name profile.py shadowed Python's profile module and was corrected before
 the successful run; it did not change product or evidence state.
 
+To reconstruct the initial timer source exactly, replace the two perf_counter
+calls only inside `_evaluate` with monotonic. SHA256 must equal
+b0373cca4b1539987c598cdf96b0f7d56b9d4a18346ca3674d4279eebf4d37b2,
+the product pin retained in replay.json. The reconstruction was independently
+hashed; do not substitute that historical timer into the live checkout.
+
 `geometry_cache.py` and `native_check.py` are local scoped interventions, restored
 after each call and on failure. They are not active imports or product options.
 The Native bridge dual pass checks every gave_check answer against Core before

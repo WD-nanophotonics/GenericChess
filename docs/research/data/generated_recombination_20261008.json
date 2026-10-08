@@ -1,0 +1,1379 @@
+{
+  "complete": true,
+  "producer_sha256": "b55b8c1cebdba7bf01148bb8cca78be0a5973548082b2eeabd34881ca2b3c426",
+  "input_sha256": {
+    "transfer.json": "6f21ad15ea858b7e968c2d23d96c43a23e0a826351fe95fd12c16840338bc44a",
+    "event-frontiers.json": "854cc843612502e1db9b5ef82e75e447d4b22826169270a2bef5bb88406443a5"
+  },
+  "seeds": [
+    202610081100,
+    202610081101,
+    202610081102,
+    202610081103
+  ],
+  "rows": [
+    {
+      "seed": 202610081100,
+      "compile_failure": null,
+      "frontier_ply": 12,
+      "legal_actions": 17,
+      "route_actions": 12,
+      "active_aux_events": 0,
+      "guarded_drops": 0,
+      "reference": {
+        "complete": true,
+        "score": 1692,
+        "action": {
+          "pattern_id": "legacy_035",
+          "geometry_id": "g6",
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "to_square": {
+            "file": 0,
+            "rank": 0
+          },
+          "promotion_target_id": null
+        },
+        "seconds": 0.041832299903035164,
+        "leaf_evaluations": 192
+      },
+      "searches": [
+        {
+          "depth": 2,
+          "repeat": 0,
+          "wall_seconds": 0.019765099976211786,
+          "score": 1692,
+          "nodes": 65,
+          "completed_depth": 2,
+          "native_legality_fallbacks": 0
+        },
+        {
+          "depth": 2,
+          "repeat": 1,
+          "wall_seconds": 0.019754299893975258,
+          "score": 1692,
+          "nodes": 65,
+          "completed_depth": 2,
+          "native_legality_fallbacks": 0
+        },
+        {
+          "depth": 3,
+          "repeat": 0,
+          "wall_seconds": 0.11368720000609756,
+          "score": 2398,
+          "nodes": 401,
+          "completed_depth": 3,
+          "native_legality_fallbacks": 0
+        },
+        {
+          "depth": 3,
+          "repeat": 1,
+          "wall_seconds": 0.11699350015260279,
+          "score": 2398,
+          "nodes": 401,
+          "completed_depth": 3,
+          "native_legality_fallbacks": 0
+        }
+      ]
+    },
+    {
+      "seed": 202610081101,
+      "compile_failure": null,
+      "frontier_ply": 12,
+      "legal_actions": 14,
+      "route_actions": 12,
+      "active_aux_events": 1,
+      "guarded_drops": 1,
+      "reference": {
+        "complete": true,
+        "score": 97,
+        "action": {
+          "pattern_id": "sem_00_drop_zone_capacity_guard",
+          "geometry_id": "g22",
+          "base_type_id": "X",
+          "to_square": {
+            "file": 2,
+            "rank": 3
+          }
+        },
+        "seconds": 0.023751400178298354,
+        "leaf_evaluations": 106
+      },
+      "searches": [
+        {
+          "depth": 2,
+          "repeat": 0,
+          "wall_seconds": 0.018052299972623587,
+          "score": 97,
+          "nodes": 54,
+          "completed_depth": 2,
+          "native_legality_fallbacks": 0
+        },
+        {
+          "depth": 2,
+          "repeat": 1,
+          "wall_seconds": 0.018086900003254414,
+          "score": 97,
+          "nodes": 54,
+          "completed_depth": 2,
+          "native_legality_fallbacks": 0
+        },
+        {
+          "depth": 3,
+          "repeat": 0,
+          "wall_seconds": 0.0818996001034975,
+          "score": 1053,
+          "nodes": 276,
+          "completed_depth": 3,
+          "native_legality_fallbacks": 0
+        },
+        {
+          "depth": 3,
+          "repeat": 1,
+          "wall_seconds": 0.07895369990728796,
+          "score": 1053,
+          "nodes": 276,
+          "completed_depth": 3,
+          "native_legality_fallbacks": 0
+        }
+      ]
+    },
+    {
+      "seed": 202610081102,
+      "compile_failure": null,
+      "frontier_ply": 12,
+      "legal_actions": 3,
+      "route_actions": 12,
+      "active_aux_events": 0,
+      "guarded_drops": 0,
+      "reference": {
+        "complete": true,
+        "score": -913,
+        "action": {
+          "pattern_id": "legacy_043",
+          "geometry_id": "g8",
+          "actor_type_id": "K",
+          "from_square": {
+            "file": 1,
+            "rank": 0
+          },
+          "to_square": {
+            "file": 0,
+            "rank": 1
+          },
+          "promotion_target_id": null
+        },
+        "seconds": 0.019046500092372298,
+        "leaf_evaluations": 107
+      },
+      "searches": [
+        {
+          "depth": 2,
+          "repeat": 0,
+          "wall_seconds": 0.015378700103610754,
+          "score": -913,
+          "nodes": 46,
+          "completed_depth": 2,
+          "native_legality_fallbacks": 0
+        },
+        {
+          "depth": 2,
+          "repeat": 1,
+          "wall_seconds": 0.015257099876180291,
+          "score": -913,
+          "nodes": 46,
+          "completed_depth": 2,
+          "native_legality_fallbacks": 0
+        },
+        {
+          "depth": 3,
+          "repeat": 0,
+          "wall_seconds": 0.06511850003153086,
+          "score": -852,
+          "nodes": 229,
+          "completed_depth": 3,
+          "native_legality_fallbacks": 0
+        },
+        {
+          "depth": 3,
+          "repeat": 1,
+          "wall_seconds": 0.06477310019545257,
+          "score": -852,
+          "nodes": 229,
+          "completed_depth": 3,
+          "native_legality_fallbacks": 0
+        }
+      ]
+    },
+    {
+      "seed": 202610081103,
+      "compile_failure": null,
+      "frontier_ply": 12,
+      "legal_actions": 10,
+      "route_actions": 12,
+      "active_aux_events": 1,
+      "guarded_drops": 0,
+      "reference": {
+        "complete": true,
+        "score": -3693,
+        "action": {
+          "pattern_id": "sem_00_drop_zone_capacity_guard",
+          "geometry_id": "g24",
+          "base_type_id": "X",
+          "to_square": {
+            "file": 0,
+            "rank": 3
+          }
+        },
+        "seconds": 0.04038130003027618,
+        "leaf_evaluations": 187
+      },
+      "searches": [
+        {
+          "depth": 2,
+          "repeat": 0,
+          "wall_seconds": 0.02926640002988279,
+          "score": -3693,
+          "nodes": 92,
+          "completed_depth": 2,
+          "native_legality_fallbacks": 0
+        },
+        {
+          "depth": 2,
+          "repeat": 1,
+          "wall_seconds": 0.029425699962303042,
+          "score": -3693,
+          "nodes": 92,
+          "completed_depth": 2,
+          "native_legality_fallbacks": 0
+        },
+        {
+          "depth": 3,
+          "repeat": 0,
+          "wall_seconds": 0.05940250004641712,
+          "score": -1434,
+          "nodes": 170,
+          "completed_depth": 3,
+          "native_legality_fallbacks": 0
+        },
+        {
+          "depth": 3,
+          "repeat": 1,
+          "wall_seconds": 0.05778250005096197,
+          "score": -1434,
+          "nodes": 170,
+          "completed_depth": 3,
+          "native_legality_fallbacks": 0
+        }
+      ]
+    }
+  ],
+  "event_frontiers": {
+    "complete": true,
+    "producer_sha256": "a15bce5280a01a37db43f4d8704e1142681f976029debaa2305d3d9f23c7c8e4",
+    "input_sha256": "6f21ad15ea858b7e968c2d23d96c43a23e0a826351fe95fd12c16840338bc44a",
+    "declaration": "Final12ply searches have expired aux. Cover ALL observed set1, first reset0 after set1, and guarded-drop events in the existing four-seed route, not select by score. Compare public Core vsNative legality with fixedNative evaluation,TT/order on,depth2,8192nodes/5sec. Preserve fullhistory/PV and fallback counts. No timing superiority claim. <=16calls/60sec.",
+    "cases": [
+      {
+        "seed": 202610081101,
+        "ply": 5,
+        "event": "active",
+        "history_length": 6,
+        "aux": [
+          [
+            [
+              0,
+              -1
+            ],
+            1
+          ]
+        ],
+        "searches": [
+          {
+            "native": false,
+            "wall_seconds": 0.02447460009716451,
+            "decision": {
+              "action": {
+                "pattern_id": "legacy_043",
+                "geometry_id": "g21",
+                "base_type_id": "P",
+                "to_square": {
+                  "file": 3,
+                  "rank": 1
+                }
+              },
+              "score": 999999999,
+              "principal_variation": [
+                {
+                  "pattern_id": "legacy_043",
+                  "geometry_id": "g21",
+                  "base_type_id": "P",
+                  "to_square": {
+                    "file": 3,
+                    "rank": 1
+                  }
+                }
+              ],
+              "completed_depth": 2,
+              "selective_depth": 2,
+              "nodes": 49,
+              "qnodes": 0,
+              "elapsed_seconds": 0.015999999828636646,
+              "tt_probes": 10,
+              "tt_hits": 1,
+              "tt_cutoffs": 0,
+              "beta_cutoffs": 5,
+              "evaluation_profile_cache_hit": false,
+              "termination_reason": "completed_depth",
+              "choice_kind": "ACTION",
+              "declaration": null,
+              "time_to_first_legal_action": 0.0,
+              "time_to_first_completed_iteration": 0.015999999828636646,
+              "qdepth_cutoffs": 0,
+              "qsearch_budget_aborts": 0,
+              "qsearch_check_hard_limit_aborts": 0,
+              "in_check_qnodes": 0,
+              "stand_pat_cutoffs": 0,
+              "capture_qactions": 0,
+              "promotion_qactions": 0,
+              "checking_move_qactions": 0,
+              "checking_drop_qactions": 0,
+              "nonchecking_drop_excluded": 0,
+              "pvs_null_window_searches": 0,
+              "pvs_researches": 0,
+              "aspiration_fail_low": 0,
+              "aspiration_fail_high": 0,
+              "aspiration_researches": 0,
+              "root_scan_nodes": 0,
+              "root_scan_used_fallback": false,
+              "move_picker_generated": 0,
+              "move_picker_yielded": 0,
+              "move_picker_yielded_by_stage": {},
+              "ordering_calls": 10,
+              "ordered_moves": 76,
+              "ordering_seconds": 0.0,
+              "legal_generation_calls": 10,
+              "legal_generation_seconds": 0.0,
+              "evaluation_calls": 37,
+              "evaluation_seconds": 0.00781459966674447,
+              "countermove_hits": 0,
+              "mate_pruning_cutoffs": 0,
+              "legal_actions_generated": 76,
+              "successor_handles_created": 76,
+              "successors_materialized": 47,
+              "successors_searched": 47,
+              "terminal_results_computed": 47,
+              "terminal_cache_hits": 0,
+              "position_keys_computed": 57,
+              "position_key_cache_hits": 47,
+              "declaration_checks": 0,
+              "declaration_win_options": 0,
+              "declaration_restart_options": 0,
+              "declaration_root_selected": false,
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0,
+              "native_legality_operational_failures": 0
+            }
+          },
+          {
+            "native": true,
+            "wall_seconds": 0.015215500025078654,
+            "decision": {
+              "action": {
+                "pattern_id": "legacy_043",
+                "geometry_id": "g21",
+                "base_type_id": "P",
+                "to_square": {
+                  "file": 3,
+                  "rank": 1
+                }
+              },
+              "score": 999999999,
+              "principal_variation": [
+                {
+                  "pattern_id": "legacy_043",
+                  "geometry_id": "g21",
+                  "base_type_id": "P",
+                  "to_square": {
+                    "file": 3,
+                    "rank": 1
+                  }
+                }
+              ],
+              "completed_depth": 2,
+              "selective_depth": 2,
+              "nodes": 49,
+              "qnodes": 0,
+              "elapsed_seconds": 0.01500000013038516,
+              "tt_probes": 10,
+              "tt_hits": 1,
+              "tt_cutoffs": 0,
+              "beta_cutoffs": 5,
+              "evaluation_profile_cache_hit": false,
+              "termination_reason": "completed_depth",
+              "choice_kind": "ACTION",
+              "declaration": null,
+              "time_to_first_legal_action": 0.01500000013038516,
+              "time_to_first_completed_iteration": 0.01500000013038516,
+              "qdepth_cutoffs": 0,
+              "qsearch_budget_aborts": 0,
+              "qsearch_check_hard_limit_aborts": 0,
+              "in_check_qnodes": 0,
+              "stand_pat_cutoffs": 0,
+              "capture_qactions": 0,
+              "promotion_qactions": 0,
+              "checking_move_qactions": 0,
+              "checking_drop_qactions": 0,
+              "nonchecking_drop_excluded": 0,
+              "pvs_null_window_searches": 0,
+              "pvs_researches": 0,
+              "aspiration_fail_low": 0,
+              "aspiration_fail_high": 0,
+              "aspiration_researches": 0,
+              "root_scan_nodes": 0,
+              "root_scan_used_fallback": false,
+              "move_picker_generated": 0,
+              "move_picker_yielded": 0,
+              "move_picker_yielded_by_stage": {},
+              "ordering_calls": 10,
+              "ordered_moves": 76,
+              "ordering_seconds": 0.0,
+              "legal_generation_calls": 10,
+              "legal_generation_seconds": 0.0,
+              "evaluation_calls": 37,
+              "evaluation_seconds": 0.0022857999429106712,
+              "countermove_hits": 0,
+              "mate_pruning_cutoffs": 0,
+              "legal_actions_generated": 76,
+              "successor_handles_created": 76,
+              "successors_materialized": 47,
+              "successors_searched": 47,
+              "terminal_results_computed": 47,
+              "terminal_cache_hits": 0,
+              "position_keys_computed": 57,
+              "position_key_cache_hits": 47,
+              "declaration_checks": 0,
+              "declaration_win_options": 0,
+              "declaration_restart_options": 0,
+              "declaration_root_selected": false,
+              "native_legality_calls": 9,
+              "native_legality_fallbacks": 0,
+              "native_legality_operational_failures": 0
+            }
+          }
+        ],
+        "equal": {
+          "action": true,
+          "score": true,
+          "completed_depth": true,
+          "principal_variation": true,
+          "nodes": true
+        }
+      },
+      {
+        "seed": 202610081101,
+        "ply": 6,
+        "event": "expired",
+        "history_length": 7,
+        "aux": [
+          [
+            [
+              0,
+              -1
+            ],
+            0
+          ]
+        ],
+        "searches": [
+          {
+            "native": false,
+            "wall_seconds": 0.01522469986230135,
+            "decision": {
+              "action": {
+                "pattern_id": "legacy_016",
+                "geometry_id": "g16",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 2,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 0,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              },
+              "score": -12,
+              "principal_variation": [
+                {
+                  "pattern_id": "legacy_016",
+                  "geometry_id": "g16",
+                  "actor_type_id": "P",
+                  "from_square": {
+                    "file": 2,
+                    "rank": 0
+                  },
+                  "to_square": {
+                    "file": 0,
+                    "rank": 1
+                  },
+                  "promotion_target_id": null
+                },
+                {
+                  "pattern_id": "legacy_012",
+                  "geometry_id": "g14",
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 2,
+                    "rank": 2
+                  },
+                  "to_square": {
+                    "file": 1,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                }
+              ],
+              "completed_depth": 2,
+              "selective_depth": 2,
+              "nodes": 30,
+              "qnodes": 0,
+              "elapsed_seconds": 0.0,
+              "tt_probes": 10,
+              "tt_hits": 1,
+              "tt_cutoffs": 0,
+              "beta_cutoffs": 6,
+              "evaluation_profile_cache_hit": false,
+              "termination_reason": "completed_depth",
+              "choice_kind": "ACTION",
+              "declaration": null,
+              "time_to_first_legal_action": 0.0,
+              "time_to_first_completed_iteration": 0.0,
+              "qdepth_cutoffs": 0,
+              "qsearch_budget_aborts": 0,
+              "qsearch_check_hard_limit_aborts": 0,
+              "in_check_qnodes": 0,
+              "stand_pat_cutoffs": 0,
+              "capture_qactions": 0,
+              "promotion_qactions": 0,
+              "checking_move_qactions": 0,
+              "checking_drop_qactions": 0,
+              "nonchecking_drop_excluded": 0,
+              "pvs_null_window_searches": 0,
+              "pvs_researches": 0,
+              "aspiration_fail_low": 0,
+              "aspiration_fail_high": 0,
+              "aspiration_researches": 0,
+              "root_scan_nodes": 0,
+              "root_scan_used_fallback": false,
+              "move_picker_generated": 0,
+              "move_picker_yielded": 0,
+              "move_picker_yielded_by_stage": {},
+              "ordering_calls": 10,
+              "ordered_moves": 107,
+              "ordering_seconds": 0.0,
+              "legal_generation_calls": 10,
+              "legal_generation_seconds": 0.0,
+              "evaluation_calls": 20,
+              "evaluation_seconds": 0.0012481999583542347,
+              "countermove_hits": 0,
+              "mate_pruning_cutoffs": 0,
+              "legal_actions_generated": 107,
+              "successor_handles_created": 107,
+              "successors_materialized": 28,
+              "successors_searched": 28,
+              "terminal_results_computed": 28,
+              "terminal_cache_hits": 0,
+              "position_keys_computed": 38,
+              "position_key_cache_hits": 28,
+              "declaration_checks": 0,
+              "declaration_win_options": 0,
+              "declaration_restart_options": 0,
+              "declaration_root_selected": false,
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0,
+              "native_legality_operational_failures": 0
+            }
+          },
+          {
+            "native": true,
+            "wall_seconds": 0.01011779997497797,
+            "decision": {
+              "action": {
+                "pattern_id": "legacy_016",
+                "geometry_id": "g16",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 2,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 0,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              },
+              "score": -12,
+              "principal_variation": [
+                {
+                  "pattern_id": "legacy_016",
+                  "geometry_id": "g16",
+                  "actor_type_id": "P",
+                  "from_square": {
+                    "file": 2,
+                    "rank": 0
+                  },
+                  "to_square": {
+                    "file": 0,
+                    "rank": 1
+                  },
+                  "promotion_target_id": null
+                },
+                {
+                  "pattern_id": "legacy_012",
+                  "geometry_id": "g14",
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 2,
+                    "rank": 2
+                  },
+                  "to_square": {
+                    "file": 1,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                }
+              ],
+              "completed_depth": 2,
+              "selective_depth": 2,
+              "nodes": 30,
+              "qnodes": 0,
+              "elapsed_seconds": 0.0,
+              "tt_probes": 10,
+              "tt_hits": 1,
+              "tt_cutoffs": 0,
+              "beta_cutoffs": 6,
+              "evaluation_profile_cache_hit": false,
+              "termination_reason": "completed_depth",
+              "choice_kind": "ACTION",
+              "declaration": null,
+              "time_to_first_legal_action": 0.0,
+              "time_to_first_completed_iteration": 0.0,
+              "qdepth_cutoffs": 0,
+              "qsearch_budget_aborts": 0,
+              "qsearch_check_hard_limit_aborts": 0,
+              "in_check_qnodes": 0,
+              "stand_pat_cutoffs": 0,
+              "capture_qactions": 0,
+              "promotion_qactions": 0,
+              "checking_move_qactions": 0,
+              "checking_drop_qactions": 0,
+              "nonchecking_drop_excluded": 0,
+              "pvs_null_window_searches": 0,
+              "pvs_researches": 0,
+              "aspiration_fail_low": 0,
+              "aspiration_fail_high": 0,
+              "aspiration_researches": 0,
+              "root_scan_nodes": 0,
+              "root_scan_used_fallback": false,
+              "move_picker_generated": 0,
+              "move_picker_yielded": 0,
+              "move_picker_yielded_by_stage": {},
+              "ordering_calls": 10,
+              "ordered_moves": 107,
+              "ordering_seconds": 0.0,
+              "legal_generation_calls": 10,
+              "legal_generation_seconds": 0.0,
+              "evaluation_calls": 20,
+              "evaluation_seconds": 0.001177400117740035,
+              "countermove_hits": 0,
+              "mate_pruning_cutoffs": 0,
+              "legal_actions_generated": 107,
+              "successor_handles_created": 107,
+              "successors_materialized": 28,
+              "successors_searched": 28,
+              "terminal_results_computed": 28,
+              "terminal_cache_hits": 0,
+              "position_keys_computed": 38,
+              "position_key_cache_hits": 28,
+              "declaration_checks": 0,
+              "declaration_win_options": 0,
+              "declaration_restart_options": 0,
+              "declaration_root_selected": false,
+              "native_legality_calls": 9,
+              "native_legality_fallbacks": 0,
+              "native_legality_operational_failures": 0
+            }
+          }
+        ],
+        "equal": {
+          "action": true,
+          "score": true,
+          "completed_depth": true,
+          "principal_variation": true,
+          "nodes": true
+        }
+      },
+      {
+        "seed": 202610081101,
+        "ply": 7,
+        "event": "guarded_drop",
+        "history_length": 8,
+        "aux": [
+          [
+            [
+              0,
+              -1
+            ],
+            0
+          ]
+        ],
+        "searches": [
+          {
+            "native": false,
+            "wall_seconds": 0.019411300076171756,
+            "decision": {
+              "action": {
+                "pattern_id": "legacy_043",
+                "geometry_id": "g21",
+                "base_type_id": "P",
+                "to_square": {
+                  "file": 3,
+                  "rank": 1
+                }
+              },
+              "score": 999999999,
+              "principal_variation": [
+                {
+                  "pattern_id": "legacy_043",
+                  "geometry_id": "g21",
+                  "base_type_id": "P",
+                  "to_square": {
+                    "file": 3,
+                    "rank": 1
+                  }
+                }
+              ],
+              "completed_depth": 2,
+              "selective_depth": 2,
+              "nodes": 50,
+              "qnodes": 0,
+              "elapsed_seconds": 0.01600000006146729,
+              "tt_probes": 15,
+              "tt_hits": 1,
+              "tt_cutoffs": 0,
+              "beta_cutoffs": 12,
+              "evaluation_profile_cache_hit": false,
+              "termination_reason": "completed_depth",
+              "choice_kind": "ACTION",
+              "declaration": null,
+              "time_to_first_legal_action": 0.0,
+              "time_to_first_completed_iteration": 0.01600000006146729,
+              "qdepth_cutoffs": 0,
+              "qsearch_budget_aborts": 0,
+              "qsearch_check_hard_limit_aborts": 0,
+              "in_check_qnodes": 0,
+              "stand_pat_cutoffs": 0,
+              "capture_qactions": 0,
+              "promotion_qactions": 0,
+              "checking_move_qactions": 0,
+              "checking_drop_qactions": 0,
+              "nonchecking_drop_excluded": 0,
+              "pvs_null_window_searches": 0,
+              "pvs_researches": 0,
+              "aspiration_fail_low": 0,
+              "aspiration_fail_high": 0,
+              "aspiration_researches": 0,
+              "root_scan_nodes": 0,
+              "root_scan_used_fallback": false,
+              "move_picker_generated": 0,
+              "move_picker_yielded": 0,
+              "move_picker_yielded_by_stage": {},
+              "ordering_calls": 15,
+              "ordered_moves": 98,
+              "ordering_seconds": 0.0,
+              "legal_generation_calls": 15,
+              "legal_generation_seconds": 0.01600000006146729,
+              "evaluation_calls": 33,
+              "evaluation_seconds": 0.0019764003809541464,
+              "countermove_hits": 0,
+              "mate_pruning_cutoffs": 0,
+              "legal_actions_generated": 98,
+              "successor_handles_created": 98,
+              "successors_materialized": 48,
+              "successors_searched": 48,
+              "terminal_results_computed": 48,
+              "terminal_cache_hits": 0,
+              "position_keys_computed": 63,
+              "position_key_cache_hits": 48,
+              "declaration_checks": 0,
+              "declaration_win_options": 0,
+              "declaration_restart_options": 0,
+              "declaration_root_selected": false,
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0,
+              "native_legality_operational_failures": 0
+            }
+          },
+          {
+            "native": true,
+            "wall_seconds": 0.015126299811527133,
+            "decision": {
+              "action": {
+                "pattern_id": "legacy_043",
+                "geometry_id": "g21",
+                "base_type_id": "P",
+                "to_square": {
+                  "file": 3,
+                  "rank": 1
+                }
+              },
+              "score": 999999999,
+              "principal_variation": [
+                {
+                  "pattern_id": "legacy_043",
+                  "geometry_id": "g21",
+                  "base_type_id": "P",
+                  "to_square": {
+                    "file": 3,
+                    "rank": 1
+                  }
+                }
+              ],
+              "completed_depth": 2,
+              "selective_depth": 2,
+              "nodes": 50,
+              "qnodes": 0,
+              "elapsed_seconds": 0.015999999828636646,
+              "tt_probes": 15,
+              "tt_hits": 1,
+              "tt_cutoffs": 0,
+              "beta_cutoffs": 12,
+              "evaluation_profile_cache_hit": false,
+              "termination_reason": "completed_depth",
+              "choice_kind": "ACTION",
+              "declaration": null,
+              "time_to_first_legal_action": 0.0,
+              "time_to_first_completed_iteration": 0.015999999828636646,
+              "qdepth_cutoffs": 0,
+              "qsearch_budget_aborts": 0,
+              "qsearch_check_hard_limit_aborts": 0,
+              "in_check_qnodes": 0,
+              "stand_pat_cutoffs": 0,
+              "capture_qactions": 0,
+              "promotion_qactions": 0,
+              "checking_move_qactions": 0,
+              "checking_drop_qactions": 0,
+              "nonchecking_drop_excluded": 0,
+              "pvs_null_window_searches": 0,
+              "pvs_researches": 0,
+              "aspiration_fail_low": 0,
+              "aspiration_fail_high": 0,
+              "aspiration_researches": 0,
+              "root_scan_nodes": 0,
+              "root_scan_used_fallback": false,
+              "move_picker_generated": 0,
+              "move_picker_yielded": 0,
+              "move_picker_yielded_by_stage": {},
+              "ordering_calls": 15,
+              "ordered_moves": 98,
+              "ordering_seconds": 0.0,
+              "legal_generation_calls": 15,
+              "legal_generation_seconds": 0.0,
+              "evaluation_calls": 33,
+              "evaluation_seconds": 0.0019258996471762657,
+              "countermove_hits": 0,
+              "mate_pruning_cutoffs": 0,
+              "legal_actions_generated": 98,
+              "successor_handles_created": 98,
+              "successors_materialized": 48,
+              "successors_searched": 48,
+              "terminal_results_computed": 48,
+              "terminal_cache_hits": 0,
+              "position_keys_computed": 63,
+              "position_key_cache_hits": 48,
+              "declaration_checks": 0,
+              "declaration_win_options": 0,
+              "declaration_restart_options": 0,
+              "declaration_root_selected": false,
+              "native_legality_calls": 14,
+              "native_legality_fallbacks": 0,
+              "native_legality_operational_failures": 0
+            }
+          }
+        ],
+        "equal": {
+          "action": true,
+          "score": true,
+          "completed_depth": true,
+          "principal_variation": true,
+          "nodes": true
+        }
+      },
+      {
+        "seed": 202610081103,
+        "ply": 9,
+        "event": "active",
+        "history_length": 10,
+        "aux": [
+          [
+            [
+              0,
+              -1
+            ],
+            1
+          ]
+        ],
+        "searches": [
+          {
+            "native": false,
+            "wall_seconds": 0.02827190002426505,
+            "decision": {
+              "action": {
+                "pattern_id": "legacy_043",
+                "geometry_id": "g8",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 3,
+                  "rank": 2
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              },
+              "score": 2206,
+              "principal_variation": [
+                {
+                  "pattern_id": "legacy_043",
+                  "geometry_id": "g8",
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 1
+                  },
+                  "promotion_target_id": null
+                },
+                {
+                  "pattern_id": "legacy_047",
+                  "geometry_id": "g23",
+                  "base_type_id": "P",
+                  "to_square": {
+                    "file": 2,
+                    "rank": 2
+                  }
+                }
+              ],
+              "completed_depth": 2,
+              "selective_depth": 2,
+              "nodes": 61,
+              "qnodes": 0,
+              "elapsed_seconds": 0.01500000013038516,
+              "tt_probes": 15,
+              "tt_hits": 1,
+              "tt_cutoffs": 0,
+              "beta_cutoffs": 12,
+              "evaluation_profile_cache_hit": false,
+              "termination_reason": "completed_depth",
+              "choice_kind": "ACTION",
+              "declaration": null,
+              "time_to_first_legal_action": 0.0,
+              "time_to_first_completed_iteration": 0.01500000013038516,
+              "qdepth_cutoffs": 0,
+              "qsearch_budget_aborts": 0,
+              "qsearch_check_hard_limit_aborts": 0,
+              "in_check_qnodes": 0,
+              "stand_pat_cutoffs": 0,
+              "capture_qactions": 0,
+              "promotion_qactions": 0,
+              "checking_move_qactions": 0,
+              "checking_drop_qactions": 0,
+              "nonchecking_drop_excluded": 0,
+              "pvs_null_window_searches": 0,
+              "pvs_researches": 0,
+              "aspiration_fail_low": 0,
+              "aspiration_fail_high": 0,
+              "aspiration_researches": 0,
+              "root_scan_nodes": 0,
+              "root_scan_used_fallback": false,
+              "move_picker_generated": 0,
+              "move_picker_yielded": 0,
+              "move_picker_yielded_by_stage": {},
+              "ordering_calls": 15,
+              "ordered_moves": 245,
+              "ordering_seconds": 0.0,
+              "legal_generation_calls": 15,
+              "legal_generation_seconds": 0.01500000013038516,
+              "evaluation_calls": 46,
+              "evaluation_seconds": 0.0025985990650951862,
+              "countermove_hits": 0,
+              "mate_pruning_cutoffs": 0,
+              "legal_actions_generated": 245,
+              "successor_handles_created": 245,
+              "successors_materialized": 59,
+              "successors_searched": 59,
+              "terminal_results_computed": 59,
+              "terminal_cache_hits": 0,
+              "position_keys_computed": 74,
+              "position_key_cache_hits": 59,
+              "declaration_checks": 0,
+              "declaration_win_options": 0,
+              "declaration_restart_options": 0,
+              "declaration_root_selected": false,
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0,
+              "native_legality_operational_failures": 0
+            }
+          },
+          {
+            "native": true,
+            "wall_seconds": 0.018691499950364232,
+            "decision": {
+              "action": {
+                "pattern_id": "legacy_043",
+                "geometry_id": "g8",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 3,
+                  "rank": 2
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              },
+              "score": 2206,
+              "principal_variation": [
+                {
+                  "pattern_id": "legacy_043",
+                  "geometry_id": "g8",
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 1
+                  },
+                  "promotion_target_id": null
+                },
+                {
+                  "pattern_id": "legacy_047",
+                  "geometry_id": "g23",
+                  "base_type_id": "P",
+                  "to_square": {
+                    "file": 2,
+                    "rank": 2
+                  }
+                }
+              ],
+              "completed_depth": 2,
+              "selective_depth": 2,
+              "nodes": 61,
+              "qnodes": 0,
+              "elapsed_seconds": 0.01600000006146729,
+              "tt_probes": 15,
+              "tt_hits": 1,
+              "tt_cutoffs": 0,
+              "beta_cutoffs": 12,
+              "evaluation_profile_cache_hit": false,
+              "termination_reason": "completed_depth",
+              "choice_kind": "ACTION",
+              "declaration": null,
+              "time_to_first_legal_action": 0.0,
+              "time_to_first_completed_iteration": 0.01600000006146729,
+              "qdepth_cutoffs": 0,
+              "qsearch_budget_aborts": 0,
+              "qsearch_check_hard_limit_aborts": 0,
+              "in_check_qnodes": 0,
+              "stand_pat_cutoffs": 0,
+              "capture_qactions": 0,
+              "promotion_qactions": 0,
+              "checking_move_qactions": 0,
+              "checking_drop_qactions": 0,
+              "nonchecking_drop_excluded": 0,
+              "pvs_null_window_searches": 0,
+              "pvs_researches": 0,
+              "aspiration_fail_low": 0,
+              "aspiration_fail_high": 0,
+              "aspiration_researches": 0,
+              "root_scan_nodes": 0,
+              "root_scan_used_fallback": false,
+              "move_picker_generated": 0,
+              "move_picker_yielded": 0,
+              "move_picker_yielded_by_stage": {},
+              "ordering_calls": 15,
+              "ordered_moves": 245,
+              "ordering_seconds": 0.0,
+              "legal_generation_calls": 15,
+              "legal_generation_seconds": 0.0,
+              "evaluation_calls": 46,
+              "evaluation_seconds": 0.0025610006414353848,
+              "countermove_hits": 0,
+              "mate_pruning_cutoffs": 0,
+              "legal_actions_generated": 245,
+              "successor_handles_created": 245,
+              "successors_materialized": 59,
+              "successors_searched": 59,
+              "terminal_results_computed": 59,
+              "terminal_cache_hits": 0,
+              "position_keys_computed": 74,
+              "position_key_cache_hits": 59,
+              "declaration_checks": 0,
+              "declaration_win_options": 0,
+              "declaration_restart_options": 0,
+              "declaration_root_selected": false,
+              "native_legality_calls": 14,
+              "native_legality_fallbacks": 0,
+              "native_legality_operational_failures": 0
+            }
+          }
+        ],
+        "equal": {
+          "action": true,
+          "score": true,
+          "completed_depth": true,
+          "principal_variation": true,
+          "nodes": true
+        }
+      },
+      {
+        "seed": 202610081103,
+        "ply": 10,
+        "event": "expired",
+        "history_length": 11,
+        "aux": [
+          [
+            [
+              0,
+              -1
+            ],
+            0
+          ]
+        ],
+        "searches": [
+          {
+            "native": false,
+            "wall_seconds": 0.06330720009282231,
+            "decision": {
+              "action": {
+                "pattern_id": "sem_00_drop_zone_capacity_guard",
+                "geometry_id": "g24",
+                "base_type_id": "X",
+                "to_square": {
+                  "file": 0,
+                  "rank": 3
+                }
+              },
+              "score": -2285,
+              "principal_variation": [
+                {
+                  "pattern_id": "sem_00_drop_zone_capacity_guard",
+                  "geometry_id": "g24",
+                  "base_type_id": "X",
+                  "to_square": {
+                    "file": 0,
+                    "rank": 3
+                  }
+                },
+                {
+                  "pattern_id": "legacy_044",
+                  "geometry_id": "g9",
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 1
+                  },
+                  "to_square": {
+                    "file": 2,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                }
+              ],
+              "completed_depth": 2,
+              "selective_depth": 2,
+              "nodes": 158,
+              "qnodes": 0,
+              "elapsed_seconds": 0.06200000015087426,
+              "tt_probes": 23,
+              "tt_hits": 1,
+              "tt_cutoffs": 0,
+              "beta_cutoffs": 15,
+              "evaluation_profile_cache_hit": false,
+              "termination_reason": "completed_depth",
+              "choice_kind": "ACTION",
+              "declaration": null,
+              "time_to_first_legal_action": 0.0,
+              "time_to_first_completed_iteration": 0.06200000015087426,
+              "qdepth_cutoffs": 0,
+              "qsearch_budget_aborts": 0,
+              "qsearch_check_hard_limit_aborts": 0,
+              "in_check_qnodes": 0,
+              "stand_pat_cutoffs": 0,
+              "capture_qactions": 0,
+              "promotion_qactions": 0,
+              "checking_move_qactions": 0,
+              "checking_drop_qactions": 0,
+              "nonchecking_drop_excluded": 0,
+              "pvs_null_window_searches": 0,
+              "pvs_researches": 0,
+              "aspiration_fail_low": 0,
+              "aspiration_fail_high": 0,
+              "aspiration_researches": 0,
+              "root_scan_nodes": 0,
+              "root_scan_used_fallback": false,
+              "move_picker_generated": 0,
+              "move_picker_yielded": 0,
+              "move_picker_yielded_by_stage": {},
+              "ordering_calls": 23,
+              "ordered_moves": 375,
+              "ordering_seconds": 0.0,
+              "legal_generation_calls": 23,
+              "legal_generation_seconds": 0.01600000006146729,
+              "evaluation_calls": 134,
+              "evaluation_seconds": 0.008068901253864169,
+              "countermove_hits": 0,
+              "mate_pruning_cutoffs": 0,
+              "legal_actions_generated": 375,
+              "successor_handles_created": 375,
+              "successors_materialized": 156,
+              "successors_searched": 156,
+              "terminal_results_computed": 156,
+              "terminal_cache_hits": 0,
+              "position_keys_computed": 179,
+              "position_key_cache_hits": 156,
+              "declaration_checks": 0,
+              "declaration_win_options": 0,
+              "declaration_restart_options": 0,
+              "declaration_root_selected": false,
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0,
+              "native_legality_operational_failures": 0
+            }
+          },
+          {
+            "native": true,
+            "wall_seconds": 0.044655300211161375,
+            "decision": {
+              "action": {
+                "pattern_id": "sem_00_drop_zone_capacity_guard",
+                "geometry_id": "g24",
+                "base_type_id": "X",
+                "to_square": {
+                  "file": 0,
+                  "rank": 3
+                }
+              },
+              "score": -2285,
+              "principal_variation": [
+                {
+                  "pattern_id": "sem_00_drop_zone_capacity_guard",
+                  "geometry_id": "g24",
+                  "base_type_id": "X",
+                  "to_square": {
+                    "file": 0,
+                    "rank": 3
+                  }
+                },
+                {
+                  "pattern_id": "legacy_044",
+                  "geometry_id": "g9",
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 1
+                  },
+                  "to_square": {
+                    "file": 2,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                }
+              ],
+              "completed_depth": 2,
+              "selective_depth": 2,
+              "nodes": 158,
+              "qnodes": 0,
+              "elapsed_seconds": 0.0470000000204891,
+              "tt_probes": 23,
+              "tt_hits": 1,
+              "tt_cutoffs": 0,
+              "beta_cutoffs": 15,
+              "evaluation_profile_cache_hit": false,
+              "termination_reason": "completed_depth",
+              "choice_kind": "ACTION",
+              "declaration": null,
+              "time_to_first_legal_action": 0.0,
+              "time_to_first_completed_iteration": 0.0470000000204891,
+              "qdepth_cutoffs": 0,
+              "qsearch_budget_aborts": 0,
+              "qsearch_check_hard_limit_aborts": 0,
+              "in_check_qnodes": 0,
+              "stand_pat_cutoffs": 0,
+              "capture_qactions": 0,
+              "promotion_qactions": 0,
+              "checking_move_qactions": 0,
+              "checking_drop_qactions": 0,
+              "nonchecking_drop_excluded": 0,
+              "pvs_null_window_searches": 0,
+              "pvs_researches": 0,
+              "aspiration_fail_low": 0,
+              "aspiration_fail_high": 0,
+              "aspiration_researches": 0,
+              "root_scan_nodes": 0,
+              "root_scan_used_fallback": false,
+              "move_picker_generated": 0,
+              "move_picker_yielded": 0,
+              "move_picker_yielded_by_stage": {},
+              "ordering_calls": 23,
+              "ordered_moves": 375,
+              "ordering_seconds": 0.0,
+              "legal_generation_calls": 23,
+              "legal_generation_seconds": 0.0,
+              "evaluation_calls": 134,
+              "evaluation_seconds": 0.00737599958665669,
+              "countermove_hits": 0,
+              "mate_pruning_cutoffs": 0,
+              "legal_actions_generated": 375,
+              "successor_handles_created": 375,
+              "successors_materialized": 156,
+              "successors_searched": 156,
+              "terminal_results_computed": 156,
+              "terminal_cache_hits": 0,
+              "position_keys_computed": 179,
+              "position_key_cache_hits": 156,
+              "declaration_checks": 0,
+              "declaration_win_options": 0,
+              "declaration_restart_options": 0,
+              "declaration_root_selected": false,
+              "native_legality_calls": 22,
+              "native_legality_fallbacks": 0,
+              "native_legality_operational_failures": 0
+            }
+          }
+        ],
+        "equal": {
+          "action": true,
+          "score": true,
+          "completed_depth": true,
+          "principal_variation": true,
+          "nodes": true
+        }
+      }
+    ],
+    "seconds": 0.5793575001880527
+  },
+  "scope": "Four fresh generated4x4hybrid games with explicitly recombined supported X-drop guard and X-to-P quiet expiry. Deterministic capture/semantic/drop coverage route is not a play-strength population. All labels are synthetic, exposed development.",
+  "archive": "../../archive/generated_recombination_20261008/index.json"
+}

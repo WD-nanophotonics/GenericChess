@@ -668,3 +668,36 @@ increment yields more useful information than adding cache/bridge interfaces.
 No default budgets, evaluator, action/history identity or active workflow changes.
 Exact raw curve/declaration, mate branches and recovery:
 data/drop_budget_20261008.json and ../archive/drop_budget_20261008/.
+
+## Fresh generated movement with recombined mechanics
+
+Four predeclared fresh seeds202610081100..1103 use the existing4x4 bilateral-
+random hybrid generator and simple filters. X gains the supported quiet X-to-P
+current-type change with expiring slot; X drops use the existing zone-capacity
+guard. A declared twelve-ply capture/semantic/drop coverage policy retains full
+public history, hands and aux; it is not a strength policy or population.
+All four rules compile and reach twelve nonterminal plies. Four bounded plain
+Core depth2 references complete and agree with public search. All16 cold depth2/3
+calls complete and repeat exactly, every PV replays, Native fallback is zero.
+
+Two routes exercise slot1 then expiry0, and one exercises the guarded X drop.
+Final12ply checks alone have expired slots. A separate ALL-observed-event check
+covers both active states, both immediate expiry states and the guarded drop:
+ten public Core/Native-legality calls under one fixed evaluator agree exactly
+on action/score/nodes/depth/PV, with no fallback. This is finite interface transfer,
+not universal support, speed or static-price completeness.
+
+The slot in that original fixture is not consumed by any guard. Its successful
+state replay tests representation/expiry but would be weak evidence of behavioral
+relevance. A further explicit mechanism check reuses those four active/expired
+frontiers, fixes the zone rule on P drops, and varies only temp_right==0 versus1.
+With slot1, matching guard enables4/7 P drops while the opposite enables0; after
+expiry0, matching guard enables5 on the nonempty-hand frontier, opposite0. The
+other expired frontier has no P hand and retains its zero. All16 Core/Native
+depth2 public calls agree exactly, PVs replay and fallback is0. History and the
+actual slot value determine legality; no board-only reconstruction is substituted.
+No product/default changes follow. Next inspect scaling on a predeclared larger
+generated cohort, keeping mechanical coverage separate from useful play.
+Exact inputs, declarations, zero coverage and recovery:
+data/generated_recombination_20261008.json, data/expiry_guard_20261008.json and
+their purpose-specific archives.

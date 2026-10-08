@@ -170,11 +170,20 @@ resolves the8192-node cap. Defer product caches/bridges. A separately declared
 R-drop(6,6). Actual Core replay covers both defenses and mating replies. Only
 16.5% additional used baseline nodes resolve the unknown iteration; the configured
 headroom is not consumed work. Defaults/old cap records stay unchanged.
-Next test the generic-interface transfer of this observed drop/expiry mechanism
-on one predeclared generated recombination, rather than optimize a solved fixture.
+Four fresh generated4x4 hybrid rules now retain actual capture/hand/current-type
+change/expiry/drop routes:16 cold calls repeat, four Core references agree.
+All five observed active/expired/guarded-drop event frontiers retain exact
+Core/Native public-search parity. Because the original temporary slot was unused
+by guards, a separate P-drop slot0/1 intervention confirms behavioral relevance:
+matching slots enable4/7 active drops or5 after expiry, opposite slots enable0;
+one empty-hand zero stays. All16 additional public calls retain exact parity.
+Next predeclare a larger generated cohort to measure interface scaling, without
+further tuning this solved fixture or claiming the static atoms model new effects.
 Exact telemetry, retained precision failure and isolated interventions:
 data/evaluation_cost_20261008.json and ../archive/evaluation_cost_20261008/;
 finite budget/mate evidence: data/drop_budget_20261008.json.
+Generated transfer/consumed expiry: data/generated_recombination_20261008.json
+and data/expiry_guard_20261008.json.
 
 
 ## Evidence routing and delivery
