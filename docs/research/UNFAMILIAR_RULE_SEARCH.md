@@ -661,7 +661,11 @@ Staged ordering still has no clear benefit and is not adopted.
 
 An independent full-history Core replay after that root drop enumerates both
 legal opponent defenses. Each has a legal reply ending in mate for owner0;
-110 yielded Core transitions take.051seconds. This local check confirms the
+110 visited successors take.051seconds. The API constructs successor tuples
+eagerly; a separate counted replay measures215 actually constructed successors
+including the root, with the same mate result (~.052seconds). Both original and
+corrected cost records remain; visited count must not be used as total work.
+This local check confirms the
 observed new terminal conclusion; it is not a new WDL gate for development.
 Per-node5% speedups alone cannot fix a hard node-cap failure. Here a small bounded
 increment yields more useful information than adding cache/bridge interfaces.

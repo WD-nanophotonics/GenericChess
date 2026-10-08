@@ -1,0 +1,27 @@
+{
+  "archive_sha256": "11692cc88f479493597d4b43dce22b6d8534da5a0ac07b26763361fa920ee036",
+  "members": [
+    {
+      "path": ".local_agent/drop-budget-20261008/mate_replay_cost.py",
+      "bytes": 3065,
+      "sha256": "5e5a122f39025624d67cd0c2b50f6e2a92b23637a09efe5939a830dfe17c7f46"
+    },
+    {
+      "path": ".local_agent/drop-budget-20261008/mate-replay-cost.json",
+      "bytes": 2385,
+      "sha256": "f9b1f491b3dfd8a59b9443d5b7c52555946bc5c60573ce1c212328f128f4d1b2"
+    },
+    {
+      "path": ".local_agent/drop-budget-20261008/correct_cost.py",
+      "bytes": 678,
+      "sha256": "fb3562fa67e528ca7732c5277299c60e7f5144dc1fea4b75184abb7f9f4474b9"
+    },
+    {
+      "path": ".local_agent/drop-budget-20261008/package_cost.py",
+      "bytes": 1802,
+      "sha256": "16a2b15489a856cb2af16ef35b597a8a7265ff9869ec9a9f127710988668057b"
+    }
+  ],
+  "extracted_rehashed": true,
+  "correction": "legal_successors eagerly constructs tuples. Original110 counts consumed/visited successors, not all constructed. Replayed actual construction215 including root, same both-defense mate result. Original archive untouched."
+}

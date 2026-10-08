@@ -18,3 +18,9 @@ Original8192-node and4096-reference failures remain in the earlier archive.
 This explicitly additional development curve does not change frozen conditions,
 restore holdout status or promote a default budget/ordering setting. Node counts,
 configured headroom and actual wall costs are separate. No strength claim.
+
+`mate-cost-index.json` and `mate-cost-correction.zip` preserve the later cost
+correction separately: legal_successors returns eager tuples, so110 originally
+visited successors are215 actually constructed including the root. The mate
+conclusion is unchanged. Original archive/index stay intact; supplement members
+were independently extracted/rehashed. Producer and result hashes are pinned.

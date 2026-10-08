@@ -628,5 +628,13 @@
     "About16.5% more actually used nodes than8192 finishes the iteration; the configured doubled cap is headroom, not consumed work. Local5% per-node interventions cannot overcome a fixed node cap.",
     "No default budget, staged ordering, price or bridge changes; all exposed development, not strength/holdout claims."
   ],
-  "archive": "../../archive/drop_budget_20261008/index.json"
+  "archive": "../../archive/drop_budget_20261008/index.json",
+  "mate_cost_correction": {
+    "original_measure": "110consumed/visited successors, not all eager constructions",
+    "actual_constructed": 215,
+    "seconds": 0.05205060006119311,
+    "producer_sha256": "5e5a122f39025624d67cd0c2b50f6e2a92b23637a09efe5939a830dfe17c7f46",
+    "result_sha256": "f9b1f491b3dfd8a59b9443d5b7c52555946bc5c60573ce1c212328f128f4d1b2",
+    "archive": "../../archive/drop_budget_20261008/mate-cost-index.json"
+  }
 }
