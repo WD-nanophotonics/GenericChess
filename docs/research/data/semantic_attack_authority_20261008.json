@@ -789,5 +789,39 @@
     "generic_chess/_native/native_state.h": "b7b3c3342c4cb81ccc3057d834803a6cd27b693d04506ee5391983c1446243b8",
     "generic_chess/_native/native_tt.h": "d2a002573add4f811f6ed379819da9004e0ddb80136d82ed8bcb4737bc101680",
     "generic_chess/_native/native_types.h": "2c256bf170349f0c1d2f866c2f40b285711eb312927ae959b4ef85f9867866aa"
+  },
+  "screen_context_counterexample": {
+    "archive_index": "../../archive/semantic_attack_authority_20261008/screen-context-index.json",
+    "premise": "Two screen cells each marginal occupancy.5, same owner/type marginals, fixed source/target and anchors.",
+    "fixed_target_probability": {
+      "correlated": {
+        "C": 0.0,
+        "R": 0.5
+      },
+      "anti_correlated": {
+        "C": 1.0,
+        "R": 0.0
+      },
+      "independent": {
+        "C": 0.5,
+        "R": 0.25
+      }
+    },
+    "uniform_legal_reply_probability": {
+      "correlated": {
+        "C": 0.03333333333333333,
+        "R": 0.2647058823529412
+      },
+      "anti_correlated": {
+        "C": 0.48333333333333334,
+        "R": 0.06458333333333333
+      },
+      "independent": {
+        "C": 0.25833333333333336,
+        "R": 0.16464460784313725
+      }
+    },
+    "actual_reply_transitions": 126,
+    "scope": "Eight initial Core source-specific legal capture checks; Native full maps separately match, not source attribution. Uniform legal reply within each cell then equal initial-cell weights; source loss retained as zero, enemy target tracked after movement. No selected material/behavior law, WDL or human fitting. Correlation can reverse relative conditional opportunity even after this declared response."
   }
 }

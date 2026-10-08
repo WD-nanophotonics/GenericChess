@@ -57,6 +57,14 @@ depth3 calls with0/12 table or ordering action changes and8 score changes.
 Earlier static changes only break an old tie; a legacy-dynamic7/41 tradeoff
 disappears under semantic attacks. Changed choices are not improvement evidence.
 
+The next context issue is now concrete: two screen cells with the same.5
+occupancy marginals yield reversed C/R capture opportunities under correlated
+versus anti-correlated joint laws.126 actual uniform legal replies retain the
+reversal, tracking target movement and source loss. Thus density marginals do
+not identify the joint context/response law. This witness does not choose a
+material table or require a new general framework; SEMANTIC_CAPABILITY.md owns
+its finite scope. Next test one behaviorally motivated joint approximation.
+
 ## Current search interface and limitations
 
 Use compile_ruleset_for_execution and scripts/unfamiliar_search.py --rules.

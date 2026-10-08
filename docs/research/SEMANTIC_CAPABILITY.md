@@ -46,6 +46,24 @@ Exact rows and source recovery:
 data/semantic_attack_authority_20261008.json;
 ../archive/semantic_attack_authority_20261008/README.md.
 
+An actual source-capture witness makes the missing context assumption concrete.
+Fix actor(0,3), enemy R(3,3), two intervening friendly-screen cells and anchors.
+Each screen has marginal occupancy.5 under all three laws. Equal00/11 gives
+C/R legal-capture probabilities0/.5; equal01/10 gives1/0; independent four
+states gives.5/.25. Eight Core source-specific checks pass; Native full attack
+maps separately agree but are not source attribution (screens can attack too).
+Next let the opponent make one uniformly sampled legal action within each of
+the same eight cells.126 exact reply transitions, tracking the enemy R's actual
+new square and retaining captured-source outcomes as zero, give correlated
+C/R.03333/.26471 versus anti-correlated.48333/.06458; independent.25833/.16464.
+Initial cells retain equal weights despite different legal-action counts.
+The reversal survives this declared response, but no context/behavior law is
+uniquely implied by rules or selected for deployment. This is a changed-premise
+screen mechanism witness, not a material-price or WDL result. The addendum's
+five members were extracted/rehashed and two producer pins verified; original
+packages/failed records stay unchanged. See the same archive's
+screen-context-index.json and compact data screen_context_counterexample.
+
 ## Observed interface gap
 
 `build_ruleset_profile` derives generic-v1 static capability from movement atoms.

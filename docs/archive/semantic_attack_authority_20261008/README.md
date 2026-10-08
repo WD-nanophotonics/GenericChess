@@ -25,3 +25,11 @@ The finite ray family checks equivalent exact-distance paths, blockers, raw
 growth and board saturation. It does not prove universal price consistency or
 win-rate monotonicity. Map semantics, proxy sensitivity and execution cost are
 separate. No defaults, price weights or exposed-validation status were changed.
+
+The immutable screen-context addendum has five separately verified members and
+two producer pins, indexed in screen-context-index.json. It retains eight fixed-
+target source-capture checks and126 actual uniform legal reply transitions.
+Same screen-cell marginals do not identify their joint law; response results
+track target movement and retain actor losses. Restore only these extra files
+with the original synthetic dependency in an isolated db838cd checkout. This
+is conditional opportunity evidence, not a selected material/behavior law.
