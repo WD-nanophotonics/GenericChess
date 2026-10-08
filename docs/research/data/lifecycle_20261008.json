@@ -11,102 +11,33 @@
     "rook_control": "both mate"
   },
   "core_eager": {
-    "calls": [
-      {
-        "complete": true,
-        "score": -98,
-        "action": {
-          "pattern_id": "legacy_009",
-          "geometry_id": "g12",
-          "actor_type_id": "R",
-          "from_square": {
-            "file": 4,
-            "rank": 5
-          },
-          "to_square": {
-            "file": 3,
-            "rank": 5
-          },
-          "promotion_target_id": null
-        },
-        "public_equal": true,
-        "method": "old",
-        "repeat": 0,
-        "seconds": 10.49217199999839,
-        "leaf_evaluations": 6126
-      },
-      {
-        "complete": true,
-        "score": -98,
-        "action": {
-          "pattern_id": "legacy_009",
-          "geometry_id": "g12",
-          "actor_type_id": "R",
-          "from_square": {
-            "file": 4,
-            "rank": 5
-          },
-          "to_square": {
-            "file": 3,
-            "rank": 5
-          },
-          "promotion_target_id": null
-        },
-        "public_equal": true,
-        "method": "new",
-        "repeat": 0,
-        "seconds": 0.6438249999191612,
-        "leaf_evaluations": 6126
-      },
-      {
-        "complete": true,
-        "score": -98,
-        "action": {
-          "pattern_id": "legacy_009",
-          "geometry_id": "g12",
-          "actor_type_id": "R",
-          "from_square": {
-            "file": 4,
-            "rank": 5
-          },
-          "to_square": {
-            "file": 3,
-            "rank": 5
-          },
-          "promotion_target_id": null
-        },
-        "public_equal": true,
-        "method": "new",
-        "repeat": 1,
-        "seconds": 0.6577729000709951,
-        "leaf_evaluations": 6126
-      },
-      {
-        "complete": true,
-        "score": -98,
-        "action": {
-          "pattern_id": "legacy_009",
-          "geometry_id": "g12",
-          "actor_type_id": "R",
-          "from_square": {
-            "file": 4,
-            "rank": 5
-          },
-          "to_square": {
-            "file": 3,
-            "rank": 5
-          },
-          "promotion_target_id": null
-        },
-        "public_equal": true,
-        "method": "old",
-        "repeat": 1,
-        "seconds": 10.525096900062636,
-        "leaf_evaluations": 6126
-      }
-    ],
     "immediate_full_state_parity": 73,
-    "scope": "Equal6126-leaf Core reference only; prior unknowns unchanged"
+    "scope": "Equal6126-leaf Core reference only; prior unknowns unchanged",
+    "score": -98,
+    "selected_action": {
+      "pattern_id": "legacy_009",
+      "geometry_id": "g12",
+      "actor_type_id": "R",
+      "from_square": {
+        "file": 4,
+        "rank": 5
+      },
+      "to_square": {
+        "file": 3,
+        "rank": 5
+      },
+      "promotion_target_id": null
+    },
+    "leaf_evaluations": 6126,
+    "old_seconds": [
+      10.49217199999839,
+      10.525096900062636
+    ],
+    "new_seconds": [
+      0.6438249999191612,
+      0.6577729000709951
+    ],
+    "complete_equal_calls": 4
   },
   "generated": {
     "public_calls": 32,
@@ -121,92 +52,14 @@
           "baseline": {
             "complete": true,
             "leaves": 458,
-            "seconds": 0.04410549998283386,
             "best": 1002,
-            "optimal_actions": [
-              {
-                "from_square": {
-                  "file": 1,
-                  "rank": 1
-                },
-                "to_square": {
-                  "file": 3,
-                  "rank": 2
-                },
-                "promotion_target_id": null
-              },
-              {
-                "from_square": {
-                  "file": 3,
-                  "rank": 1
-                },
-                "to_square": {
-                  "file": 1,
-                  "rank": 2
-                },
-                "promotion_target_id": null
-              },
-              {
-                "base_type_id": "P",
-                "to_square": {
-                  "file": 0,
-                  "rank": 1
-                }
-              },
-              {
-                "base_type_id": "P",
-                "to_square": {
-                  "file": 0,
-                  "rank": 2
-                }
-              }
-            ],
             "next_gap": 488,
             "ties": 4
           },
           "candidate": {
             "complete": true,
             "leaves": 458,
-            "seconds": 0.04531459999270737,
             "best": 1000,
-            "optimal_actions": [
-              {
-                "from_square": {
-                  "file": 1,
-                  "rank": 1
-                },
-                "to_square": {
-                  "file": 3,
-                  "rank": 2
-                },
-                "promotion_target_id": null
-              },
-              {
-                "from_square": {
-                  "file": 3,
-                  "rank": 1
-                },
-                "to_square": {
-                  "file": 1,
-                  "rank": 2
-                },
-                "promotion_target_id": null
-              },
-              {
-                "base_type_id": "P",
-                "to_square": {
-                  "file": 0,
-                  "rank": 1
-                }
-              },
-              {
-                "base_type_id": "P",
-                "to_square": {
-                  "file": 0,
-                  "rank": 2
-                }
-              }
-            ],
             "next_gap": 500,
             "ties": 4
           }
@@ -221,34 +74,14 @@
           "baseline": {
             "complete": true,
             "leaves": 4418,
-            "seconds": 0.4279118000995368,
             "best": 2562,
-            "optimal_actions": [
-              {
-                "base_type_id": "X",
-                "to_square": {
-                  "file": 3,
-                  "rank": 0
-                }
-              }
-            ],
             "next_gap": 781,
             "ties": 1
           },
           "candidate": {
             "complete": true,
             "leaves": 4418,
-            "seconds": 0.4329866000916809,
             "best": 2626,
-            "optimal_actions": [
-              {
-                "base_type_id": "X",
-                "to_square": {
-                  "file": 3,
-                  "rank": 0
-                }
-              }
-            ],
             "next_gap": 813,
             "ties": 1
           }
@@ -265,512 +98,35 @@
     "fixtures": [
       {
         "fixture": "cannon",
-        "route": [
-          {
-            "pattern_id": "sem_01_cannon_capture",
-            "geometry_id": "g2",
-            "actor_type_id": "C",
-            "from_square": {
-              "file": 2,
-              "rank": 1
-            },
-            "to_square": {
-              "file": 2,
-              "rank": 4
-            },
-            "promotion_target_id": null
-          },
-          {
-            "pattern_id": "sem_00_cannon_quiet",
-            "geometry_id": "g0",
-            "actor_type_id": "C",
-            "from_square": {
-              "file": 2,
-              "rank": 2
-            },
-            "to_square": {
-              "file": 0,
-              "rank": 2
-            },
-            "promotion_target_id": null
-          },
-          {
-            "pattern_id": "sem_00_cannon_quiet",
-            "geometry_id": "g0",
-            "actor_type_id": "C",
-            "from_square": {
-              "file": 2,
-              "rank": 4
-            },
-            "to_square": {
-              "file": 3,
-              "rank": 4
-            },
-            "promotion_target_id": null
-          },
-          {
-            "pattern_id": "sem_00_cannon_quiet",
-            "geometry_id": "g1",
-            "actor_type_id": "C",
-            "from_square": {
-              "file": 0,
-              "rank": 2
-            },
-            "to_square": {
-              "file": 1,
-              "rank": 2
-            },
-            "promotion_target_id": null
-          }
-        ],
-        "hands": [
-          [
-            {
-              "counts": []
-            },
-            {
-              "counts": []
-            }
-          ],
-          [
-            {
-              "counts": [
-                [
-                  "C",
-                  1
-                ]
-              ]
-            },
-            {
-              "counts": []
-            }
-          ],
-          [
-            {
-              "counts": [
-                [
-                  "C",
-                  1
-                ]
-              ]
-            },
-            {
-              "counts": []
-            }
-          ],
-          [
-            {
-              "counts": [
-                [
-                  "C",
-                  1
-                ]
-              ]
-            },
-            {
-              "counts": []
-            }
-          ]
+        "actual_drops": 0,
+        "observed_hand_types": [
+          "C"
         ]
       },
       {
         "fixture": "castling",
-        "route": [
-          {
-            "pattern_id": "sem_00_king_side_shift",
-            "geometry_id": "g13",
-            "actor_type_id": "K",
-            "from_square": {
-              "file": 4,
-              "rank": 0
-            },
-            "to_square": {
-              "file": 6,
-              "rank": 0
-            },
-            "promotion_target_id": null
-          },
-          {
-            "pattern_id": "sem_00_king_side_shift",
-            "geometry_id": "g13",
-            "actor_type_id": "K",
-            "from_square": {
-              "file": 3,
-              "rank": 7
-            },
-            "to_square": {
-              "file": 1,
-              "rank": 7
-            },
-            "promotion_target_id": null
-          },
-          {
-            "pattern_id": "legacy_008",
-            "geometry_id": "g2",
-            "actor_type_id": "K",
-            "from_square": {
-              "file": 6,
-              "rank": 0
-            },
-            "to_square": {
-              "file": 5,
-              "rank": 1
-            },
-            "promotion_target_id": null
-          },
-          {
-            "pattern_id": "legacy_008",
-            "geometry_id": "g2",
-            "actor_type_id": "K",
-            "from_square": {
-              "file": 1,
-              "rank": 7
-            },
-            "to_square": {
-              "file": 2,
-              "rank": 6
-            },
-            "promotion_target_id": null
-          }
-        ],
-        "hands": [
-          [
-            {
-              "counts": []
-            },
-            {
-              "counts": []
-            }
-          ],
-          [
-            {
-              "counts": []
-            },
-            {
-              "counts": []
-            }
-          ],
-          [
-            {
-              "counts": []
-            },
-            {
-              "counts": []
-            }
-          ],
-          [
-            {
-              "counts": []
-            },
-            {
-              "counts": []
-            }
-          ]
-        ]
+        "actual_drops": 0,
+        "observed_hand_types": []
       },
       {
         "fixture": "en_passant",
-        "route": [
-          {
-            "pattern_id": "sem_00_double_step_creates_token",
-            "geometry_id": "g10",
-            "actor_type_id": "P",
-            "from_square": {
-              "file": 4,
-              "rank": 1
-            },
-            "to_square": {
-              "file": 4,
-              "rank": 3
-            },
-            "promotion_target_id": null
-          },
-          {
-            "pattern_id": "sem_01_token_adjacent_capture_removes_off_target",
-            "geometry_id": "g11",
-            "actor_type_id": "P",
-            "from_square": {
-              "file": 5,
-              "rank": 3
-            },
-            "to_square": {
-              "file": 4,
-              "rank": 2
-            },
-            "promotion_target_id": null
-          },
-          {
-            "pattern_id": "legacy_008",
-            "geometry_id": "g4",
-            "actor_type_id": "K",
-            "from_square": {
-              "file": 0,
-              "rank": 0
-            },
-            "to_square": {
-              "file": 0,
-              "rank": 1
-            },
-            "promotion_target_id": null
-          },
-          {
-            "pattern_id": "sem_00_double_step_creates_token",
-            "geometry_id": "g10",
-            "actor_type_id": "P",
-            "from_square": {
-              "file": 4,
-              "rank": 2
-            },
-            "to_square": {
-              "file": 4,
-              "rank": 0
-            },
-            "promotion_target_id": null
-          }
-        ],
-        "hands": [
-          [
-            {
-              "counts": []
-            },
-            {
-              "counts": []
-            }
-          ],
-          [
-            {
-              "counts": []
-            },
-            {
-              "counts": []
-            }
-          ],
-          [
-            {
-              "counts": []
-            },
-            {
-              "counts": [
-                [
-                  "P",
-                  1
-                ]
-              ]
-            }
-          ],
-          [
-            {
-              "counts": []
-            },
-            {
-              "counts": [
-                [
-                  "P",
-                  1
-                ]
-              ]
-            }
-          ]
+        "actual_drops": 0,
+        "observed_hand_types": [
+          "P"
         ]
       },
       {
         "fixture": "nifu",
-        "route": [
-          {
-            "pattern_id": "legacy_017",
-            "geometry_id": "g8",
-            "actor_type_id": "P",
-            "from_square": {
-              "file": 4,
-              "rank": 1
-            },
-            "to_square": {
-              "file": 4,
-              "rank": 2
-            },
-            "promotion_target_id": null
-          },
-          {
-            "pattern_id": "legacy_008",
-            "geometry_id": "g4",
-            "actor_type_id": "K",
-            "from_square": {
-              "file": 7,
-              "rank": 7
-            },
-            "to_square": {
-              "file": 7,
-              "rank": 6
-            },
-            "promotion_target_id": null
-          },
-          {
-            "pattern_id": "sem_00_drop_file_occupancy_guard",
-            "geometry_id": "g10",
-            "base_type_id": "P",
-            "to_square": {
-              "file": 0,
-              "rank": 1
-            }
-          },
-          {
-            "pattern_id": "legacy_006",
-            "geometry_id": "g3",
-            "actor_type_id": "K",
-            "from_square": {
-              "file": 7,
-              "rank": 6
-            },
-            "to_square": {
-              "file": 7,
-              "rank": 7
-            },
-            "promotion_target_id": null
-          }
-        ],
-        "hands": [
-          [
-            {
-              "counts": []
-            },
-            {
-              "counts": []
-            }
-          ],
-          [
-            {
-              "counts": [
-                [
-                  "P",
-                  1
-                ]
-              ]
-            },
-            {
-              "counts": []
-            }
-          ],
-          [
-            {
-              "counts": [
-                [
-                  "P",
-                  1
-                ]
-              ]
-            },
-            {
-              "counts": []
-            }
-          ],
-          [
-            {
-              "counts": []
-            },
-            {
-              "counts": []
-            }
-          ]
+        "actual_drops": 1,
+        "observed_hand_types": [
+          "P"
         ]
       },
       {
         "fixture": "uchifuzume",
-        "route": [
-          {
-            "pattern_id": "legacy_017",
-            "geometry_id": "g8",
-            "actor_type_id": "P",
-            "from_square": {
-              "file": 4,
-              "rank": 1
-            },
-            "to_square": {
-              "file": 4,
-              "rank": 2
-            },
-            "promotion_target_id": null
-          },
-          {
-            "pattern_id": "legacy_008",
-            "geometry_id": "g4",
-            "actor_type_id": "K",
-            "from_square": {
-              "file": 7,
-              "rank": 7
-            },
-            "to_square": {
-              "file": 7,
-              "rank": 6
-            },
-            "promotion_target_id": null
-          },
-          {
-            "pattern_id": "sem_00_drop_no_legal_reply_forbidden",
-            "geometry_id": "g10",
-            "base_type_id": "P",
-            "to_square": {
-              "file": 0,
-              "rank": 1
-            }
-          },
-          {
-            "pattern_id": "legacy_006",
-            "geometry_id": "g3",
-            "actor_type_id": "K",
-            "from_square": {
-              "file": 7,
-              "rank": 6
-            },
-            "to_square": {
-              "file": 7,
-              "rank": 7
-            },
-            "promotion_target_id": null
-          }
-        ],
-        "hands": [
-          [
-            {
-              "counts": []
-            },
-            {
-              "counts": []
-            }
-          ],
-          [
-            {
-              "counts": [
-                [
-                  "P",
-                  1
-                ]
-              ]
-            },
-            {
-              "counts": []
-            }
-          ],
-          [
-            {
-              "counts": [
-                [
-                  "P",
-                  1
-                ]
-              ]
-            },
-            {
-              "counts": []
-            }
-          ],
-          [
-            {
-              "counts": []
-            },
-            {
-              "counts": []
-            }
-          ]
+        "actual_drops": 1,
+        "observed_hand_types": [
+          "P"
         ]
       }
     ]
@@ -851,50 +207,42 @@
       {
         "name": "G",
         "history_length": 3,
-        "root_history_sha256": "305584c5e30e59b68437883827264e8273938b13b853ba22fad5d88676104909",
         "complete": true,
         "reply_frontiers": 150,
         "drop_count": 78,
         "immediate_winning_drops": 1,
         "uniform_drop_mean_U": "763/156",
-        "max_nonterminal_drop_U": "6",
-        "seconds": 0.5338575001806021
+        "max_nonterminal_drop_U": "6"
       },
       {
         "name": "TP",
         "history_length": 3,
-        "root_history_sha256": "12bdf2151777f9513d97098365211d2706a7d22ae8b7f9dc85bb46bb2f52d283",
         "complete": true,
         "reply_frontiers": 138,
         "drop_count": 70,
         "immediate_winning_drops": 0,
         "uniform_drop_mean_U": "34/35",
-        "max_nonterminal_drop_U": "1",
-        "seconds": 0.5246421000920236
+        "max_nonterminal_drop_U": "1"
       },
       {
         "name": "release-ply2",
         "history_length": 3,
-        "root_history_sha256": "476437ec287faf51c00c2a9a09ff7b36db500af7c2e7908aae211e65433c6049",
         "complete": true,
         "reply_frontiers": 0,
         "drop_count": 0,
         "immediate_winning_drops": 0,
         "uniform_drop_mean_U": "0",
-        "max_nonterminal_drop_U": "0",
-        "seconds": 8.500181138515472e-06
+        "max_nonterminal_drop_U": "0"
       },
       {
         "name": "release-ply4",
         "history_length": 5,
-        "root_history_sha256": "8fbc669134b61fd6a41e017407ca2be4ddf5096137cf9b88fa4bf3f68c919c27",
         "complete": true,
         "reply_frontiers": 56,
         "drop_count": 7,
         "immediate_winning_drops": 0,
         "uniform_drop_mean_U": "5/7",
-        "max_nonterminal_drop_U": "1",
-        "seconds": 0.11300399992614985
+        "max_nonterminal_drop_U": "1"
       }
     ],
     "archive": "../../archive/lifecycle_20261008/deployment-index.json",
