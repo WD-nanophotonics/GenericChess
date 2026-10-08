@@ -67,7 +67,7 @@ def profile_input_scope(compiled):
         static_capability_source='legacy_movement_atoms',
         semantic_patterns_used_for_static_capability=False,
         semantic_moving_types_without_atoms=sorted(
-            pt.type_id for pt in compiled.piece_types
+            pt.type_id for pt in compiled.types_by_id.values()
             if pt.type_id in semantic_movers and not pt.movement_atoms),
         limitation='This describes default-profile inputs only. Semantic legality is executed, but default static capability does not analyze semantic movement/guards/effects. Even nonempty atoms can differ from replaced or augmented semantics; an empty list here is not completeness evidence.',
     )
@@ -136,6 +136,8 @@ def run_rule(output: Path, definition, *, depth=2, semantic_candidate=False,
     report['fingerprint'] = compiled.ruleset_fingerprint
     report['profile_input_scope'] = profile_input_scope(compiled)
     config = evaluation_config or EvaluationConfig()
+    if compiled.board_size is None and (config.anchor_escape_weight or config.promotion_potential_weight):
+        raise ValueError('rectangular supplied evaluation requires disabled anchor escape and promotion dynamics')
     cache = EvaluationProfileCache(use_disk=False)
     start = time.perf_counter()
     if semantic_candidate:

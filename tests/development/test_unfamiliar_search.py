@@ -108,3 +108,20 @@ def test_explicit_candidate_does_not_build_unused_default_profile(tmp_path, monk
     assert report['complete'] and report['reference']['complete']
     assert report['evaluator_version'] == 'semantic-opportunity-v3'
     assert report['evaluator_version'] in report['declaration']['evaluator']
+
+
+def test_rectangular_opt_in_candidate_crosses_supported_core_boundary(tmp_path):
+    from generic_chess.ai.evaluation.config import EvaluationConfig
+    from tests.product.test_rectangular_search_override import rectangular_cannon
+    config = EvaluationConfig(dynamic_mobility_weight=2, anchor_escape_weight=0,
+                              promotion_potential_weight=0)
+    report = run_rule(tmp_path / 'rectangle-candidate.json',
+        ruleset_to_dict(rectangular_cannon(7, 5)), semantic_candidate=True,
+        evaluation_config=config, attack_authority='core')
+    assert report['complete'] and report['reference']['complete']
+    assert report['evaluator_version'] == 'semantic-opportunity-v3'
+    assert all(cell['complete'] and cell['reference_score_equal'] for cell in report['searches'])
+    with pytest.raises(ValueError, match='disabled anchor escape and promotion'):
+        run_rule(tmp_path / 'unsupported-dynamics.json',
+            ruleset_to_dict(rectangular_cannon(7, 5)), semantic_candidate=True,
+            attack_authority='core')

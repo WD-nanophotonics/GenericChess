@@ -223,8 +223,6 @@ def build_semantic_opportunity_profile(compiled, config: EvaluationConfig):
     conventions, not evidence for transfer/promotion utility. Dynamic terms
     remain owned by Evaluator and are not repaired by this static candidate.
     """
-    if compiled.board_size is None:
-        raise ValueError('candidate profile currently requires square-board legacy evaluation metadata')
     if (len(config.density_points) != len(config.density_weights)
             or not config.density_points or any(not 0 <= d <= 1 for d in config.density_points)
             or any(w < 0 for w in config.density_weights) or sum(config.density_weights) <= 0):
@@ -233,12 +231,15 @@ def build_semantic_opportunity_profile(compiled, config: EvaluationConfig):
     # generated legacy rules. It is analysis only: search keeps its original
     # executable, with no artificial semantic action or executor conversion.
     semantic_input = hasattr(compiled, 'ir')
+    metadata = compiled.support if semantic_input else compiled
+    piece_types = tuple(metadata.type_metadata.values()) if semantic_input else compiled.piece_types
+    shape = compiled.board_shape if semantic_input else BoardShape(compiled.board_size, compiled.board_size)
     ir = compiled.ir if semantic_input else compile_semantic_ir(compiled)
     rows = {pt.type_id: _semantic_opportunity(compiled, ir, pt.type_id, config)
-            for pt in compiled.piece_types}
-    median = _median([rows[pt.type_id]['raw'] for pt in compiled.piece_types if not pt.is_anchor])
+            for pt in piece_types}
+    median = _median([rows[pt.type_id]['raw'] for pt in piece_types if not pt.is_anchor])
     board = {}
-    for pt in compiled.piece_types:
+    for pt in piece_types:
         if pt.is_anchor:
             board[pt.type_id] = 0
         elif median <= 0:
@@ -248,11 +249,11 @@ def build_semantic_opportunity_profile(compiled, config: EvaluationConfig):
                 config.normal_piece_median_value * rows[pt.type_id]['raw'] / median)))
     hand = {tid: min(MAX_STATIC_EVAL, round(value * config.hand_weight)) for tid, value in board.items()}
     gains = {pt.type_id: max(0, max((board[t] for t in pt.promotion_target_ids), default=0) - board[pt.type_id])
-             if pt.is_promotable else 0 for pt in compiled.piece_types}
+             if pt.is_promotable else 0 for pt in piece_types}
     pieces = {}
-    for pt in compiled.piece_types:
+    for pt in piece_types:
         tid = pt.type_id
-        freedom, drop_mobility = _drop_profile(compiled, tid, compiled.board_size)
+        freedom, drop_mobility = _drop_profile(metadata, tid, shape)
         pieces[tid] = PieceValueProfile(
             type_id=tid, movement_signature=rows[tid]['signature'], raw_capability_score=rows[tid]['raw'],
             normalized_board_value=board[tid], normalized_hand_value=hand[tid],
@@ -262,7 +263,7 @@ def build_semantic_opportunity_profile(compiled, config: EvaluationConfig):
         ruleset_fingerprint=compiled.ruleset_fingerprint, schema_version=1,
         evaluator_version='semantic-opportunity-v3', config_hash=config_hash(config), piece_profiles=pieces,
         board_value_by_type=board, hand_value_by_base_type=hand, promotion_gain_by_type=gains,
-        median_non_anchor_value=_median([board[p.type_id] for p in compiled.piece_types if not p.is_anchor]))
+        median_non_anchor_value=_median([board[p.type_id] for p in piece_types if not p.is_anchor]))
     scope = dict(candidate='semantic-opportunity-v3', complete_legal_mobility=False,
                  ir_source='compiled_semantic' if semantic_input else 'existing_legacy_lowering',
                  law='Independent square occupancy: empty1-d, friend/enemy d/2; equal owner/source weighting.',

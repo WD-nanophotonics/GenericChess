@@ -305,14 +305,14 @@ candidate: inverse-transform the one resolved square and test the original zone.
 No zone cache, new index, altered checkpoint or legality boundary is introduced.
 Six actual lexical-route Xiangqi positions retain all legal actions, both attack
 sets,518 child transitions and identical checkpoint counts in48 alternating
-legal-list pairs. Local median old/new ratios range.9681Ã¢â‚¬â€œ1.0005; these short
+legal-list pairs. Local median old/new ratios range.9681ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“1.0005; these short
 calls support only a modest descriptive cost observation.
 
 Sixteen actual cold public Core D2 calls (initial/one legal action, q0/q2,
 2alternating repetitions, old/inverse) all complete within8192nodes/5seconds,
 retain every non-time decision/work field, restore roots/history/witnesses and
 replay PVs. Unit leaf and ordering prices, disabled dynamics and root tactical
-policy stay fixed. Per-cell paired wall ratios range.9639Ã¢â‚¬â€œ1.0070, including one
+policy stay fixed. Per-cell paired wall ratios range.9639ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“1.0070, including one
 small regression; no general speed, strength, Native or default-price claim.
 
 Recovery: `data/semantic_zones_20261009.json` and
@@ -337,3 +337,34 @@ Exact sources, failed preflights and outputs for this zone/source/cost supplemen
 are routed by `data/semantic_zones_20261009.json` to the separately recoverable
 `docs/archive/semantic_zones_20261009/index.json`; the earlier v2 archive stays
 immutable.
+
+
+## Explicit rectangle candidate profile bridge (2026-10-09)
+
+The next interface check removes the square-only opt-in profile restriction.
+The candidate reads typed semantic support metadata and uses BoardShape.area
+for existing drop-freedom diagnostics. It no longer needs the legacy inspection
+handle for type IDs, anchor flags or promotion-target IDs. Raw opportunity,
+normalization, rounding, hand scaling and promotion-gain conventions stay the
+same; no new price or source law is selected. Drop diagnostics still summarize
+legacy geometry, not the utility of semantic drop effects.
+
+Four whole-profile/scope comparisons on Chess/Shogi with two configurations
+exactly match187b58f. The first preflight incorrectly counted internal9x10
+Xiangqi as square; the old builder correctly declined it. Final16cold Core D2
+calls cover7x5/9x10 cannon,5x3 zone and internal9x10 Xiangqi roots, q0/q2,
+two repetitions each,8192nodes/5seconds and q2hard8. All complete, repeat,
+restore roots and replay legal PVs; q0 scores match same-evaluator full-width
+references. Leaf/ordering candidate prices and Core attack authority are shared.
+These are interface controls, not a candidate strength comparison.
+
+The supplied-rule diagnostic also reports default-input scope via the existing
+type map, rather than missing rectangular piece_types. Rectangle callers must
+explicitly disable anchor-escape/promotion dynamics; Core attack mobility can
+remain enabled. Unsupported dynamics fail with a scope-specific error, not a
+silent weight change. Default generic generation and Native rectangle support
+remain separate unsupported boundaries. Candidate version remains v3 because
+its opportunity formula and square outputs did not change.
+
+Recovery: [rectangle profile index](data/semantic_rectangle_profile_20261009.json)
+and [archive](../archive/semantic_rectangle_profile_20261009/index.json).

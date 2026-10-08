@@ -21,6 +21,8 @@ Current search question: which supported semantic mechanism still leaks a
 square-only evaluation or execution assumption through the public interface?
 Supplied evaluators now bypass unused default profiles; both orderers use shape.
 Rectangular Core searches pass bounded cannon, temporal and compound controls.
+Opt-in semantic v3 profiles now use stripped type metadata and shape area;
+16fixed-evaluator rectangle calls pass. Anchor/promotion dynamics stay disabled.
 Native and default price generation remain separate unsupported boundaries.
 Lexical q classification now shares recursion pushes without changing ordering;
 first-legal Native candidate is isolated/deferred after final DLL App Control

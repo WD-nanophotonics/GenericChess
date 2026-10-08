@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Mapping
 
 from ...core.pieces import PieceType
+from ...core.coordinates import BoardShape
 from ...rules.compiled import CompiledRuleSet
 from .analyzer import MovementCapabilityProfile, build_movement_capability
 from .config import EvaluationConfig, MAX_STATIC_EVAL, config_hash
@@ -61,12 +62,12 @@ def _raw_capability_score(capability: MovementCapabilityProfile, config: Evaluat
 def _drop_profile(
     compiled: CompiledRuleSet,
     type_id: str,
-    n: int,
+    n: int | BoardShape,
 ) -> tuple[float, float]:
     if type_id not in compiled.drop_allowed:
         return 0.0, 0.0
     mask = compiled.drop_allowed[type_id][0]
-    total = n * n
+    total = n.area if isinstance(n, BoardShape) else n * n
     allowed = [idx for idx, ok in enumerate(mask) if ok]
     freedom = len(allowed) / total if total else 0.0
     mobility = sum(len(compiled.empty_mobility[type_id][0][idx]) for idx in allowed)
