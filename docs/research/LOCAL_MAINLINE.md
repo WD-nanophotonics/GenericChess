@@ -64,10 +64,19 @@ reversal, tracking target movement and source loss. Thus density marginals do
 not identify the joint context/response law. This witness does not choose a
 material table or require a new general framework; SEMANTIC_CAPABILITY.md owns
 its finite scope. Next test one behaviorally motivated joint approximation.
-One cheap candidate is the declared pre-filter fixed-count placement law:
-four remaining occupants among34 cells yield exact two-screen hypergeometric
-probabilities. Check the effect of playability filtering/actual replies before
-treating that law as deployment context; do not fit a correlation parameter.
+The192-root fixed-count response check finds no demonstrated MSE advantage over
+IID;127 geometry/legal gaps are own-anchor failures. A positive S0/S1 one-step
+response approximation reduces error against a no-response control, but its
+binding-uniform law changes under equivalent quiet-action duplication. Physical
+successor sets and static profiles remain identical. A matched physical-law
+check and64 fresh randomized-source/target roots retain
+lower error than the no-response control, with rare C cases explicitly limited.
+The generic S0/S1 source-capture interface also retains lower error on48 fresh
+C/R/L-leap-N roots. All targets remain R: next vary target type under one fixed
+context/response law before scalar-price interpretation. Do not fit a correlation
+parameter or require a universal quotient proof.
+Position/source-target identity alone is insufficient for arbitrary history/effects.
+Exact findings and corrections: data/joint_context_search_20261008.json.
 
 ## Current search interface and limitations
 
@@ -93,6 +102,11 @@ The later36-call price comparison overlaps regression load: no fair wall-cost
 claim. Root/PV/history/Native-fallback distinctions and earlier Core successor
 optimizations remain qualified in UNFAMILIAR_RULE_SEARCH.md. Optional full-PV
 replay changes the output/cost contract; defaults and old caps remain intact.
+The apparent root-only TT hint benefit on three exposed roots fails a fresh
+12-layout check (5 savings/7 regressions); keep the default. Equivalent quiet
+binding duplication adds median19.5% nodes at equal completed scores. Investigate
+only a history-correct reuse interface; do not globally deduplicate public actions.
+
 
 ## Evidence routing and delivery
 

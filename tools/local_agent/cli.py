@@ -18,7 +18,7 @@ PATROLS = STATE / "patrol.json"
 def consultation_summary(result: dict) -> dict:
     return {key: result[key] for key in ('request_id', 'state', 'channel_id',
             'thread_ts', 'response_sha256', 'unreviewed_response_sha256',
-            'evaluation', 'held_events', 'resend_permitted', 'request_readback') if key in result} | {
+            'evaluation', 'held_events', 'automatic_retry_available', 'request_readback') if key in result} | {
             'matched_reply_posts': len({v['message_ts'] for v in result.get('revisions', [])}),
             'reply_revision_count': len(result.get('revisions', []))}
 

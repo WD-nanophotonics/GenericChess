@@ -289,7 +289,9 @@ remain evidence of previous configurations, not proof of new dispatch timing.
 Daily10:00 Tokyo substantive dot window, no mandatory external response or
 routine acknowledgement. Standing Slack authorization and complete-reply/
 uncertain-send handling: SLACK_WORKFLOW.md. Standing authorization includes
-Agent judgment on deliberate resend/recontact, reaffirmed2026-10-05. Reconcile
+Agent judgment on deliberate resend/recontact, reaffirmed2026-10-05 and
+2026-10-08, including repeated content. Local adapter retry availability is
+mechanical capability, never a user-permission denial. Reconcile
 delivery first, record evidence and duplicate risk, keep known-root followups
 in that thread; no per-attempt user approval, automatic loop or ledger reset.
 Explicit stop persists flags;

@@ -136,13 +136,13 @@ def begin_send(rid):
         if digest(r['message']) != r['payload_sha256']:
             raise LocalFlowError('immutable payload changed')
         if r['state'] != 'PREPARED':
-            return {**r, 'action': 'slack-reconcile', 'resend_permitted': False}
+            return {**r, 'action': 'slack-reconcile', 'automatic_retry_available': False}
         if (c.get('stopped') or not c.get('dispatch_enabled') or not c.get('accepted')
                 or c.get('quota_status') != 'verified_no_extra_worker'):
-            return {**r, 'action': 'CAPABILITY_PENDING', 'resend_permitted': False}
+            return {**r, 'action': 'CAPABILITY_PENDING', 'automatic_retry_available': False}
         r.update(state='SEND_UNCERTAIN', send_started_at=stamp())
         put(db, r)
-        return {**r, 'action': 'slack_send_message', 'resend_permitted': False}
+        return {**r, 'action': 'slack_send_message', 'automatic_retry_available': False}
 
 
 def _canonical(text):
@@ -413,7 +413,7 @@ def reconcile(rid):
                 if r.get('evaluation') and digest(response) != r['evaluation']['response_sha256'] else None)
         r['reconciled_at'] = stamp()
         put(db, r)
-        return {**r, 'resend_permitted': False}
+        return {**r, 'automatic_retry_available': False}
 
 
 def decision(rid, action, reason):

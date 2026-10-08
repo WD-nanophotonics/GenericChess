@@ -483,3 +483,75 @@ vector. The scientific price question remains OPEN.
 Current compact evidence: data/semantic_candidate_20261008.json. Exact sources,
 version snapshots, immutable raw records and corrections are isolated in
 ../archive/semantic_candidate_20261008/. They are evidence, not active imports.
+
+
+## Fixed-count response check and representation scope
+
+A predeclared96-seed/192 paired-root batch fixes source25/target28, four other
+identity slots uniformly among34 inner cells, and the same corner anchors.
+All roots pass compile safety; this is not a reachable-position/playability
+population. Uniform legal **bindings** within each root produce8102 replies.
+Source losses remain zero, the target identity follows its actual move, and
+initial roots retain equal weight. C/R mean legal capture is0.166388/0.623076,
+compared with initial0.239583/0.75. The geometry/survival-conditioned fixed-count
+versus IID pseudo-MSE differences are +0.00000699/+0.00003844, below across-root
+SE0.000408/0.000217. Those predictors already use actual response geometry:
+there is no demonstrated correction gain or cheap-forward deployment claim.
+All127 pseudo-eligible but illegal captures have exact pre-S3 candidates whose
+trial leaves the own anchor checked; all were already checked before capture.
+
+Uniform legal actor then its moves gives0.169613/0.628157 without new transitions.
+The eight-screen witness still reverses C/R ordering under either declared law;
+anti-correlated C changes0.483333 to0.679487 and correlated R0.264706 to0.357143.
+Rules alone do not select either law. These old binding-law records stay intact.
+
+A forward one-step construction enumerates S0/S1 replies and their compiled
+trial effects, then checks this fixture's source-specific count/clear geometry.
+Actual reply outcomes are not predictor inputs. The192-root construction takes
+2.502sec including compilation, with8288 explicit candidate transitions. Under
+the original binding law, root-mean prediction MSE C/R0.000449/0.001228 is below
+the no-response control0.039899/0.050200. It omits S3 reply/capture safety and is
+neither exact WDL nor a material table. Timings of its separately measured
+prediction/reference blocks are descriptive, not a controlled end-to-end speedup.
+
+The original fixture has equivalent quiet bindings because cannon_quiet augments
+legacy quiet movement. On24 fixed exposed roots, copying that action with a fresh
+name preserves every physical successor and its capture legality, plus static
+raw/profile results. Yet binding-uniform C/R means change0.135178/0.665449 to
+0.148224/0.687545. Uniform distinct physical successors stays0.113012/0.631913.
+Thus a response law must declare its sampling unit. The demonstrated quotient
+includes board/hands/side/aux/shape and applies only to this fixture; source/target
+alone does not identify general effects, and Position alone need not cover
+history-dependent adjudication. No Core identity/default or generic quotient
+framework was changed. A matched physical-law reanalysis gives C/R forward MSE0.000700/0.002033
+versus no-response0.042276/0.065332. No root worsens on this exposed sample.
+A predeclared32-new-seed/64-root extension randomizes source and target too:
+forward MSE0.000000752/0.000994 versus0.000293/0.023976, again no worsened root.
+Only7/32 C roots have a positive reference, so rare cannon cases remain a limit.
+The extension uses5284 explicit candidate/reference transitions in3.683sec;
+compiler/internal legality trials are additional and not included in that count.
+This supports a finite positive response approximation, not generic deployment
+or scalar material utility. A second predeclared16-seed/48-root batch adds an eight-offset L-leap N and
+replaces the hand-written geometry with the generic source-specific S0/S1
+candidate iterator. Matched-law C/R/N MSE is0.000320/0.000749/0.000727 versus
+no-response0.004290/0.019451/0.021234; no root worsens. It takes3.094sec and4249
+explicit frontier transitions; positive-reference roots are8/15/10 out of16.
+These observations transfer the approximation interface to one extra mechanic.
+All targets are still R, so the opportunity vector is target-specific, not a
+universal price ratio. Next separate target-type/context bias before scalar use.
+
+The first kernel failed on an unjustified unique-coordinate assertion and stays
+complete=false. V2 incorrectly called legal anchor movement away from its corner
+anchor loss; V3 scans owner/type anywhere and finds zero losses. Exact originals,
+correction index and16 verified producer pins are retained in
+../archive/joint_context_search_20261008/; compact results:
+data/joint_context_search_20261008.json. No exposed-validation status is restored.
+
+Advisor-motivated duplicate-predictor control uses the same24 exposed roots,
+independently constructs S0/S1 physical-successor predictions before legal
+reference enumeration, and copies quiet actions normally. Predictor successor
+sets/values and legal reference sets/values are exactly invariant. Matched-law
+C/R prediction MSE is0.000073646/0.002820093 versus initial-capture baseline
+0.034260856/0.072878763.4364 explicit frontier transitions take7.285seconds.
+No new population, fitted weight or universal history quotient is claimed.
+This closes the predictor-side duplication check; all targets remain R.

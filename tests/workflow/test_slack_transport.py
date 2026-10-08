@@ -64,7 +64,7 @@ def test_duplicate_request_event_reconnect_and_revision_preserve_decision(env):
 def test_wrong_channel_identity_thread_conflict_and_self_reply(env, changes):
     r = sent(env); s.ingest(event(r, **changes))
     assert s.reconcile(r['request_id'])['state'] == 'PENDING'
-    assert s.begin_send(r['request_id'])['resend_permitted'] is False
+    assert s.begin_send(r['request_id'])['automatic_retry_available'] is False
 
 def test_wrong_workspace_and_missing_event_id(env):
     r = sent(env); e = event(r); e['team_id'] = 'Twrong'
@@ -234,7 +234,7 @@ def test_partial_error_wrong_target_and_forged_delimiter_never_resend(env):
     data = json.loads(path.read_text()); data['tool_result']['isError'] = True; write_json(path, data)
     with pytest.raises(LocalFlowError, match='failed'):
         s.import_snapshot(rid, path)
-    assert s.begin_send(rid)['resend_permitted'] is False
+    assert s.begin_send(rid)['automatic_retry_available'] is False
 
 
 def test_empty_generating_read_can_resume_after_interruption_without_resend(env):
@@ -292,7 +292,7 @@ def test_observed_single_prose_space_rendering_preserves_code_and_identity(env):
     block['text'] = block['text'].replace(' changed premise:', 'changed premise:')
     write_json(path, raw)
     assert s.import_snapshot(r['request_id'], path)['state'] == 'PENDING'
-    assert s.begin_send(r['request_id'])['resend_permitted'] is False
+    assert s.begin_send(r['request_id'])['automatic_retry_available'] is False
     block['text'] = block['text'].replace('concrete evidence', 'different evidence')
     write_json(path, raw)
     with pytest.raises(LocalFlowError, match='exact payload'):
@@ -309,7 +309,7 @@ def test_observed_inline_emphasis_projection_accepts_original_and_rejects_body_c
     block['text'] = block['text'].replace('d*l+d*u', 'd_l+d_u')
     write_json(path, raw)
     assert s.import_snapshot(r['request_id'], path)['state'] == 'PENDING'
-    assert s.begin_send(r['request_id'])['resend_permitted'] is False
+    assert s.begin_send(r['request_id'])['automatic_retry_available'] is False
     block['text'] = block['text'].replace('d_l+d_u', 'd_l+d_v')
     write_json(path, raw)
     with pytest.raises(LocalFlowError, match='exact payload'):
@@ -340,4 +340,4 @@ def test_uncertain_emphasis_rendered_send_recovers_without_resending(env):
     e['event'].pop('thread_ts'); s.ingest(e)
     result = s.reconcile(r['request_id'])
     assert result['thread_ts'] == '100.100000' and result['state'] == 'PENDING'
-    assert s.begin_send(r['request_id'])['resend_permitted'] is False
+    assert s.begin_send(r['request_id'])['automatic_retry_available'] is False

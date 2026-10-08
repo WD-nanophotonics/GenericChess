@@ -98,7 +98,9 @@ the current account. Paths do not give dot local access; attach bounded evidence
 Read all posts/pages and preserve raw output before reconcile/adoption; completed
 requests can get supplements. Standing authorization also covers Agent judgment
 about resend/recontact, reaffirmed2026-10-05; no per-attempt user approval is
-needed. Reconcile first and record the delivery evidence, purpose and duplicate
+needed. User2026-10-08 explicitly authorizes sends and repeated content to this
+channel at Agent discretion; local retry flags are not permission denials.
+Reconcile first and record the delivery evidence, purpose and duplicate
 risk before any deliberate retry. Missing search matches alone are not proof
 of nondelivery. For a known root use its thread, never another channel; a mere
 silent dot is not a reason for routine repeats. Preserve IDs/hashes/receipts,

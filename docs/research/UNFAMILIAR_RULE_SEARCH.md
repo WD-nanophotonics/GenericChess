@@ -513,3 +513,35 @@ choice sensitivity does not identify bad/good prices or justify dynamic patches.
 Compact results, source pins, exact failures and recovery:
 data/semantic_attack_authority_20261008.json and
 ../archive/semantic_attack_authority_20261008/README.md.
+
+
+## TT hint mechanism and equivalent-encoding cost
+
+A48-call repeated mechanism study separates TT score reuse from ordering hints
+on exposed roots1004/1007/1008. At the original4096-node budget, seed1008 completes
+with noTT3308 or bounds-only3677, while fullTT and hint-only cap. A new paired
+8192-node/4sec trace completes all modes with the same score8: full4815 versus
+hints-only5716. Old capped records remain unknown. The root hint is also the
+depth4 best action, so the regression is not simply a wrong shallow root choice.
+
+Keeping bounds, root-only versus internal-only hint interventions give seed1008
+3471 versus4985 nodes, compared with full4815/no-hints3677. Traversal changes
+history and future ordering; these are not additive causal costs. Root-only is
+better on all three exposed roots, but a predeclared12-new-layout paired cohort
+completes all24 depth4 calls and saves nodes on only5 while regressing7. Its median
+ratio is1.010767, mean0.998660. An immediate-win root is retained/labeled. This
+fails to justify a product switch/default change or a global superiority claim.
+
+A separate equivalent quiet-action copy on those12 now-exposed layouts preserves
+completed scores under the same evaluator/budget, but increases nodes on every
+root, median ratio1.194846 (range1.038410–1.219925). Public binding identities and
+lexical traversal can incur representation cost even when physical effects agree.
+This is an observed efficiency issue, not permission to merge arbitrary moves
+by coordinates/Position: action-dependent history and triggers must remain valid.
+No search/player setting, Core identity or production code changed in this study.
+Local interventions and all earlier records are isolated, not active imports.
+
+Exact producers, original caps/failures and new synthetic inputs:
+../archive/joint_context_search_20261008/README.md;
+compact data/joint_context_search_20261008.json. Native wall-cost claims exclude
+instrumented runs; node counts and completed scores are the comparison here.
