@@ -95,6 +95,10 @@ when execution is correct. Explicit Core/Native SemanticAttackEvaluator maps use
 capture eligibility, not legal mobility; current-state Native packing does not
 import repetition history. Keep leaf prices separate from ordering prices and
 attack authority. Changed choices alone are not gains.
+The history-free current-position import here belongs only to attack-map
+evaluation. It is not the search mirror contract: NativeSemanticPositionMirror
+imports certified full history, and SearchRuntime retains repetition/check
+context. Existing native semantic repack/history tests cover these separately.
 
 Existing TT/order ablations show large depth-completion benefits but individual
 regressions; a proposed root-only TT hint fails fresh transfer. Equivalent quiet
