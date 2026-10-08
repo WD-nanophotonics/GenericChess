@@ -198,3 +198,9 @@ control objective is non-discriminating here; do not sweep horizons for ratios.
 Raw producers inherited categorical labels: archived qualification explicitly
 identifies zero MC and early-terminal mass as categorical full-tree support,
 not probability under an optimal policy. Recovery: qeffects_20261008/response-followup.
+
+Native-only root-control diagnostic: each common first action also has exactly
+the same minimax value across all four stock cells:20actions score0,11score-2.
+Extra-stock effects vanish for every first action here, not only the optimal
+plateau. Full-census Core agreement above does not independently verify these
+conditionals. Exact source/results: response-followup/root-control-index.json.
