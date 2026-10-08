@@ -317,5 +317,13 @@
     ],
     "unexecuted_producer": "pattern_filter_pilot.py",
     "no_product_change": true
+  },
+  "event_qprofile": {
+    "producer": "docs/archive/query_transfer_20261009/event_qprofile.py",
+    "output": "docs/archive/query_transfer_20261009/event-qprofile.json",
+    "selection": "Max prior q0 pushes across22existing frontiers; seed202610082001 ply16",
+    "limits": "One profiled D2/8192nodes/5sec/q2-hard8; default unordered q, Native authority, TT/main ordering on",
+    "result": "time_limit after completedD1;1667qnodes;8268balancedpushes. Runtime noisy classification3.475cum/0.013own seconds, attack predicate2.332cum/.583own. Cumulative times overlap; no D2/timing/strength claim. Binary profile stays private; derived paths sanitized.",
+    "next": "Compare existing ordered-q shared-classification caller fairly on this same event, not add another global query index."
   }
 }

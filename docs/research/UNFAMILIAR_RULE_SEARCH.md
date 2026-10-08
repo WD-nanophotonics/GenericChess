@@ -1192,3 +1192,12 @@ probe's final cross-rule Position equality assertion failed on fingerprints;
 that incomplete output remains intact. A separate no-search qualification
 confirms every other physical field agrees; it never merges rules/TT identity.
 Sources/failures and scope: data/encoding_order_20261009.json.
+
+Next-cost localization selects the largest saved q0-push event among the22
+existing frontiers: seed2001, ply16. One Native-authority profiled q2 call keeps
+the5sec cap, completing D1 before time_limit,1667 qnodes/8268 balanced pushes.
+Runtime noisy-action classification costs3.475sec cumulative (.013own), attack
+predicate2.332cum (.583own). These overlap; do not sum independent percentages.
+This motivates a fair existing ordered-q shared-push comparison on the event,
+not a new cache/index or relaxed cancellation. Personal-path binary profiling
+stays local; derived function paths/results are in query_transfer_20261009.
