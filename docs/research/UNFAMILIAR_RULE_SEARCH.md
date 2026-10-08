@@ -545,3 +545,30 @@ Exact producers, original caps/failures and new synthetic inputs:
 ../archive/joint_context_search_20261008/README.md;
 compact data/joint_context_search_20261008.json. Native wall-cost claims exclude
 instrumented runs; node counts and completed scores are the comparison here.
+
+
+## Duplicate-binding cost: existing identity and evaluator work (2026-10-08)
+
+On the first frozen exposed root,42 public actions give32 physical successors
+with10 duplicate groups. Full Core and Runtime search keys and terminals agree
+within each group; full history records differ by action signature, while the
+current rule's required runtime history context agrees. No public action or
+history is merged. Negamax evaluates depth-zero leaves before its internal-node
+TT probe, so existing state identity does not eliminate repeated leaf work.
+
+A3-root trace observes repeated evaluator calls with no score conflicts; one
+instrumented duplicate call hits the4-second cap at depth3, so it is not a fair
+completed-depth speed comparison. Its first failure incorrectly requested full
+GameState history from RuntimeSearchState; the correction uses its authoritative
+runtime search_key. That lightweight view is intentional, not missing history.
+
+A separate cold rotated36-call pilot compares no cache,256-entry attack-map cache
+and256-entry whole-evaluation cache on6 exposed original/duplicate roots. All
+complete depth4 with exactly equal paired score/nodes/action/PV. Summed search
+time is21.689/21.326/20.639 seconds; both caches hit15068 times. The fixed evaluator
+reads Position/ply with fixed rules/profile/config; this is not a generic claim
+that arbitrary evaluators or terminal values are history-independent. Modest
+local gain does not warrant another product cache/flag now. Keep search defaults
+and action identity. Full evidence is in data/target_context_20261008.json and
+../archive/target_context_20261008/; only source/target legal binding queries are
+added to the product this segment.

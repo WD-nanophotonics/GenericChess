@@ -1449,11 +1449,33 @@ class SemanticEngine:
         return False
 
     def iter_legal_action_bindings(
-        self, position: Position, checkpoint: Checkpoint | None = None
+        self,
+        position: Position,
+        checkpoint: Checkpoint | None = None,
+        *,
+        source: int | None = None,
+        target: int | None = None,
     ) -> Iterator[tuple[SemanticAction, _ActionBinding]]:
-        """Stream legal runtime actions with their verified S3 binding."""
+        """Stream S0-S4 legal bindings, optionally for one source/target.
+
+        Filters narrow candidate generation; they do not replace S3 trials or
+        S4 postconditions. Unfiltered calls retain the full public action set.
+        A source filter selects a board actor, so it excludes drops.
+        """
         self._ensure_match(position)
+        for square in (source, target):
+            if square is not None and (
+                type(square) is not int or not 0 <= square < len(position.board)
+            ):
+                raise ValueError("binding filter square is outside the board")
         sources_by_owner_type = None
+        if source is not None:
+            piece = position.board[source]
+            sources_by_owner_type = (
+                {(piece.owner, piece.current_type_id): ((source, piece),)}
+                if piece is not None and piece.owner == position.side_to_move
+                else {}
+            )
         for pattern in self._patterns:
             _checkpoint(checkpoint)
             is_drop = any(
@@ -1470,6 +1492,10 @@ class SemanticEngine:
                 sources_by_owner_type=sources_by_owner_type if not is_drop else None,
             ):
                 _checkpoint(checkpoint)
+                if source is not None and action.source != source:
+                    continue
+                if target is not None and action.target != target:
+                    continue
                 if checkpoint is None:
                     child = self._trial_child_if_s3_legal(
                         pattern, position, action, binding

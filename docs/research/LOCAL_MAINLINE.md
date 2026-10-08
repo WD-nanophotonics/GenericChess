@@ -71,9 +71,22 @@ binding-uniform law changes under equivalent quiet-action duplication. Physical
 successor sets and static profiles remain identical. A matched physical-law
 check and64 fresh randomized-source/target roots retain
 lower error than the no-response control, with rare C cases explicitly limited.
-The generic S0/S1 source-capture interface also retains lower error on48 fresh
-C/R/L-leap-N roots. All targets remain R: next vary target type under one fixed
-context/response law before scalar-price interpretation. Do not fit a correlation
+The generic source-capture interface now covers C/R/N source and target roles;
+69/72 random roots and432 explicit horizontal screen diagnostics separate target
+mass, source capture S3 and execution cost. A frozen32-layout role score gives
+C/R/N .05468/.23428/.13520 on27 common layouts; it is standalone response capture
+opportunity, not material value or a quiet-blended default. Target alias splits
+share existing probability mass rather than receive new ID-uniform weight.
+Weighted displacement pilots now produce qualified Chess/Shogi raw vectors.
+Initial-position compiler validation had excluded legitimate checked turns:
+canonical compilation plus semantic turn safety raises common accepted mass
+from.505/.768 to.733/.967. Check-only replyS3 gating lowers prediction MSE;
+old common rows remain exactly unchanged. Forecast calibration alone does not
+validate utility: Chess Q remains near R+B and Shogi gold/promoted-small remain
+equal under this short task. Next choose one concrete utility/support issue,
+not another undirected law sweep or human-price fit. Capture query/turn safety
+must use semantic authority, never the legacy pawn/geometry shortcut.
+Exact current findings: data/target_context_20261008.json. Do not fit a correlation
 parameter or require a universal quotient proof.
 Position/source-target identity alone is insufficient for arbitrary history/effects.
 Exact findings and corrections: data/joint_context_search_20261008.json.
@@ -106,6 +119,12 @@ The apparent root-only TT hint benefit on three exposed roots fails a fresh
 12-layout check (5 savings/7 regressions); keep the default. Equivalent quiet
 binding duplication adds median19.5% nodes at equal completed scores. Investigate
 only a history-correct reuse interface; do not globally deduplicate public actions.
+The existing full Core/Runtime keys already agree for physical duplicate groups;
+leaf evaluation occurs before internal TT probes. A36-call cold cache pilot
+preserves paired depth4 score/nodes/PV but saves only about4.8% whole search time
+for the fixed evaluator. Defer a product cache/flag. The only product change is
+source/target filtering on the existing S0-S4 binding iterator; full actions,
+postconditions, cancellation and defaults are retained.
 
 
 ## Evidence routing and delivery

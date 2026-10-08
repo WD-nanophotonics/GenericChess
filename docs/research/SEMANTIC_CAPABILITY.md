@@ -555,3 +555,45 @@ C/R prediction MSE is0.000073646/0.002820093 versus initial-capture baseline
 0.034260856/0.072878763.4364 explicit frontier transitions take7.285seconds.
 No new population, fitted weight or universal history quotient is claimed.
 This closes the predictor-side duplication check; all targets remain R.
+
+
+## Target roles, capture legality and a standalone response score (2026-10-08)
+
+The fixed physical-response law now varies source and target C/R/N:72 declared
+roots,69 accepted,3 attacked-anchor rejections retained. Seven common layouts
+separate source comparison from unequal acceptance. Target mechanics change the
+capture probabilities; an equal average over target IDs is therefore a chosen
+measure, not an encoding-invariant natural distribution. Splitting the C role's
+one-third mass between C/C-prime leaves scores unchanged; assigning four IDs
+one-quarter each changes them. The alias check is algebraic, not an extra actor
+or a general behavioral-equivalence algorithm.
+
+Exact signed error separates reply-support conditioning from post-reply capture
+legality. In69 roots the R post-reply safety gap averages.01761; C/N gaps are0.
+The rotated2x2 query experiment separates legality from indexing: full/source-
+indexed scans give identical values; adding capture S3 reduces overall MSE from
+.00041237 to.00002930. Prediction-stage time is about.52/.18 seconds for full/
+indexed queries; this is not an end-to-end search or price-generation speedup.
+The public iter_legal_action_bindings(source=...,target=...) retains S0-S4,
+lossless bindings/order and cancellation. Source selects a board actor; target
+alone also permits drops. It narrows candidates, never substitutes for safety
+or postconditions. Product regressions include an actual S3-valid pawn drop
+rejected by S4. No default price/search configuration changes.
+
+A separate432-root horizontal0/1/2-screen family gives C opportunity about
+.012/.55/.27 and R about.72/.12/.004. N is always0 in that geometry: it is a
+C/R mechanism diagnostic, not a general population or evidence of low N value.
+The subsequent32-layout frozen role law samples general displacements and keeps
+zero captures. It conditions on27 common-accepted layouts and fixed C/R/N target
+mass, giving raw forecast .05468/.23428/.13520 versus independent legal reference
+.05382/.23264/.13666. This is a standalone response-opportunity candidate, not a
+material table; do not mix quiet weights or fit against human references.
+
+Chess/Shogi transfer now uses initial-inventory target/background probability
+mass and weighted displacement strata; details and bias remain in
+CROSS_GAME_PRICE_DIAGNOSTIC.md. Initial-position validation is distinct from
+turn legality; checked-turn support is a separate declared comparison, not a
+retroactive replacement of the frozen initial-safe population. Exact producers,
+errors and recovery: data/target_context_20261008.json and
+../archive/target_context_20261008/index.json. Advisor's fixed-role-mass objection
+was adopted; no new universal-equivalence/WDL prerequisite was added.

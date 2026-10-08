@@ -70,3 +70,86 @@ Exact rational outputs, recovered qualified Shogi census hashes, declarations,
 producers and auxiliary Chess records: data/direction_reset_20261008.json and
 docs/archive/development_direction_reset_20261008/. No historical workflow is
 restored, no formula/default promoted, and no scientific completion claimed.
+
+
+## Standalone response-opportunity development vector (2026-10-08)
+
+This is a new explicit convention, not a fitted repair of the first-contact
+family. Compile the existing rules, sample source/target and4 background actors
+on inner-board cells with corner anchors, and assign target/background mass by
+original initial-inventory instances. Every supported non-anchor source uses
+the same contexts and both owners. Response is uniform over distinct compiled
+S0/S1 physical successors; queried capture retains S0-S4 legality. Full legal
+response support is independently computed after forecasting, not used to fit
+or select prediction support. This is one-step capture opportunity, without
+quiet blending, production normalization, WDL or later custody utility.
+
+The8-random-layout feasibility pilot is too sparse for Shogi pawn/knight ratios.
+A separately declared displacement quadrature weights each offset by its exact
+frequency among uniform ordered inner-board pairs, including zeros; it samples
+one source/background/target representative per offset, not an exact census.
+Initial-safe common acceptance retains58/120 Chess strata (mass.504762) and
+126/168 Shogi strata (mass.767857). These vectors condition on those populations;
+rejected/missing mass is not silently assigned zero or restored validation status.
+
+| Source | Chess forecast/pawn | Shogi forecast/pawn |
+|---|---:|---:|
+| P |1|1|
+| N |4.717|.535|
+| B |3.868|7.105|
+| R |11.960|12.376|
+| Q |15.828|not present|
+| L |not present|3.349|
+| S |not present|4.159|
+| G/TP/TL/TN/TS |not present|5.435|
+| TB |not present|10.854|
+| TR |not present|15.535|
+
+Raw pawn forecast/reference is.025212/.025328 in Chess and.018785/.018785 in
+Shogi. Their positive-reference samples are only13/116 and9/252 respectively;
+ratios remain sensitive to sparse short-range coverage. Forecast/reference
+agreement tests the approximation under this law, not the law's material
+adequacy. Large R/pawn and low Shogi N/pawn expose immediate-contact bias; equal
+G/promoted-small values still omit later capture-reset liability. No human table
+selected weights, density, offsets or success criteria. These are descriptive
+limitations, not permission to tune a better-looking vector.
+
+Promotion input errors are retained: initial versions used wrong base identity
+or omitted promoted=True. They are invalid inputs, not scientific negative
+results. Only cross-game-role-pilot-v4 and displacement-role-pilot-v2 construct
+original/current/promoted consistently; actual Core captures of all6 promoted
+Shogi types verify return to their original hand type. Initial-safe filtering
+also excludes checked active turns; a separate frozen same-layout comparison
+examines that support bias with semantic attack authority.
+
+Exact raw scores, per-owner summaries, zero counts, declared masses, corrections
+and sources: data/target_context_20261008.json and
+../archive/target_context_20261008/. No default candidate or material claim is
+promoted from this development diagnostic.
+
+
+### Turn support is distinct from initial declaration validation
+
+Same frozen displacement draws under canonical rules permit the active opponent
+to be checked and reject an already-checked inactive source-owner anchor.
+This is an explicit turn-context convention, not a reachability proof. Common
+mass becomes.732540 Chess (86/120 strata) and.967262 Shogi (160/168). All580/3276
+prior common rows keep prediction/reference exactly. The first turn pilot used
+legacy check detection, missed semantic pawn attacks and failed on rejected
+anchor capture; its record is preserved, and v2 uses SemanticEngine.in_check.
+
+Independent check-gated response trials apply reply S3 only when the active
+anchor is checked. Weighted MSE changes.0043715 to.0014506 in Chess and.00088843
+to.00010674 in Shogi; initial no-response MSE is.0292666/.0124280. All57/198 common
+checked roots match the independent legal reference exactly after gating. The
+remaining error is on initially quiet roots. This changes support handling,
+not a fit to actual legal reply lists or human values; current reply hands are
+empty, so broader S4 reply scope is unsupported.
+
+Check-gated pawn ratios are Chess N2.834/B3.439/R9.099/Q12.058 and Shogi
+L3.492/N1.270/S4.172/G5.877/B7.823/R12.807/TB11.944/TR15.732. Gold/promoted-small
+remain equal, so later custody utility is still absent. Differences from the
+initial-safe vector diagnose population/response assumptions, not price gains.
+On the original common Chess rows, Q forecast equals R+B to8.4e-17; Q/R is1.3234
+versus legal-reference1.3338. This finite additive-opportunity mechanism explains
+remaining compression without asserting a universal material identity.
