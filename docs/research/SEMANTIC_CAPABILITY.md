@@ -285,6 +285,82 @@ discrimination evidence, not improved strength or universal interchangeability.
 Exact declarations, failed API calls/predictions and corrected sources:
 data/lifecycle_20261008.json and ../archive/lifecycle_20261008/.
 
+## Paired capture risk and actual hand use
+
+One explicit five-entity Shogi pressure context replaces the earlier chosen
+reply/renewal assumption with actual N capture, all21 enemy replies, all legal
+recipient drops and all later enemy replies. Both resetG and resetP populations
+complete:42 first replies and56148 later reply frontiers, with independent
+Core/Native full-history transition, terminal and action-set checks. Uniform
+conditional action policies give H_G4.11206035 and H_P0.82011255 distinct deployed
+endpoints at its next actual turn. No-drop/terminal branches contribute activity0;
+terminal outcomes remain separate. Completion took75.853sec including repeated
+serialization of the growing record, an engineering cost to avoid next time.
+
+Current G/TP endpoint activity A=6 uses an explicit position-only own-turn probe,
+while actual initial-opponent uniform actions give capture probability p=1/5.
+The illustrative family V_i=A_i-p*delta*H_base(i) is positive for the declared
+delta1/2,3/4,1. At3/4, V_G5.38319<V_TP5.87698, whereas transfer coefficients
+V_i+delta*H_base(i) give8.46724>6.49207. Shared endpoint units do not remove
+different contexts/timing or identify utility/discount. This qualifies a
+conditional approximation, not a selected generic table or a new default.
+
+The same complete census changes under policy: maximizing recipient endpoints
+with uniform enemies gives G5.13346/P0.89251. Allowing worst first/last enemy
+responses reduces both finite activity values to0, also with terminal-first
+lexicographic comparison. That is not material worthlessness: an independently
+replayed seven-root actual history leaves a deployed Gold alive but unable to
+move while its King is checked; after an actual evasion/enemy reply it again
+has five legal endpoints. Endpoint activity omits defensive and delayed service.
+
+The earlier66-source renewal check also finds E[pH] unequal to E[p]E[H]
+(Gold0.053394 versus0.061958). It is not the complete pre-capture joint process.
+In the single initial context of the actual census, p times the conditional
+postcapture mean is simply a conditional-expectation identity; it does not test
+factorization across contexts or capture times. The next useful construction
+check is a predeclared multi-context, fixed-policy/fixed-total-horizon joint
+measurement including noncapture zero paths, rather than another horizon proof
+or choosing parameters by human agreement.
+
+Opaque renaming of all14 supported Shogi type/base/current/guard/drop/promotion
+references preserves the full candidate profiles. Eight preselected deployment
+cells and178 actual reply frontiers also preserve continuation outcomes. Compiler
+numeric IDs change under lexical ordering; structural pattern/geometry mapping,
+including removed legacy references, matches156 patterns per case. This corrects
+an earlier local checkpoint's155 count. It is observed semantic invariance, not
+a universal naming theorem or complete alias replay of the56148-frontier census.
+
+Compact exact fractions, assumptions, policy comparisons and corrections:
+data/paired_context_20261008.json. Exact producers, failures and recovery inputs:
+../archive/paired_context_20261008/. Scientific price construction remains OPEN.
+
+A changed-context control now fixes an equal mixture of ownKing(0,0) and(0,1),
+all other entities/rules unchanged, before computing values. Uniform initial
+actions make first-ply transfer probability1/5 versus1/7. After that event the
+same uniform enemy/drop/enemy policy measures service through ply4; other initial
+actions contribute0 to this **first-ply-transfer** observable, even if they might
+capture later. The new context completes55944 further actual reply frontiers;
+Core/Native also independently agree on its seven initial actions and capture.
+
+Here joint E[p_c H_c] is G0.7052376242/P0.1397518415; separately averaged factors
+give G0.7053002229/P0.1395840651. Relative prediction errors are +0.008876% and
+-0.120053%. Their exact difference is the two-context covariance
+`(p_a-p_b)*(H_a-H_b)/4`. Thus independence is not exact, but this deliberately
+small context change gives a close approximation and preserves G/P ordering;
+it is not evidence to discard the cheap model. Completion took75.440sec, with
+no fitted parameters or added framework. This fixes transfer time, not the
+joint distribution of all possible first-transfer times; that remains a useful
+next discrimination test. Exact raw supplement: joint-context-index.json in
+the same archive, whose original package bytes were kept unchanged.
+
+A Core-only structural preflight confirms that fixing first transfer at ply1
+omits real support: after noncapture first moves, exhaustive enemy replies and
+3836 third-ply actions contain54 late-capture paths per target in the original
+context and90 per target in the changed context. This0.923sec enumeration is not
+a probability or service measurement and has no independent Native claim.
+It supplies concrete support/cost for the next fixed-total-horizon experiment;
+exact source and a witness per cell are in late-transfer-index.json.
+
 ## Remaining approximation boundary
 
 The observed double-step source guard admits eight sources per owner;64 blocker

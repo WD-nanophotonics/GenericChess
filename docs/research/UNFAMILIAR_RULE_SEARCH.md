@@ -298,3 +298,21 @@ and off-target en-passant. Small enumeration timings are exploratory; the
 controlled6126-leaf batch owns the performance claim. Product regressions also
 compare every child against validated public `apply_action` and verify one parent
 enumeration. See data/lifecycle_20261008.json and its isolated archive.
+
+A new explicit recombination adds a current-type zone-capacity drop guard to
+promotion with a transient right. Nine actual-history roots preserve complete
+old/new child GameState and independent Native route/action/terminal parity.
+Two captures create hand2; promotion of a zone R to TP opens capacity, the enemy
+turn expires the right,58 drops become legal, and filling the zone blocks the
+remaining hand. Nine fresh/reused/repeat public depth2 calls agree with three
+complete Core references under fixed generic-v1/static conditions. Warm PV may
+remain empty under the existing contract; no new public speed/price claim follows.
+
+This execution uncovered a compile-only test fixture error: it changed the
+current type at an empty target before moving there. Declaration-order effects
+require moving first. The fixture and one real-history regression are corrected;
+the semantic executor was not changed. Exact original/qualified definitions,
+failed route and old fixture recovery are isolated under
+../archive/paired_context_20261008/; compact results are
+data/paired_context_20261008.json. Compile capability and executed event coverage
+are distinct; future fixture checks should follow actual histories.

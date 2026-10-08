@@ -256,6 +256,14 @@ This verifies configuration, not future dispatch, sustained research or dot
 agreement. A concrete revision question was sent to the existing Slack thread;
 no advisor reply had arrived at the initial complete-thread readback. Follow-up
 advice is reconciled under the ordinary workflow, never an approval gate.
+Two later advisor posts were read in full and reconciled on2026-10-08. The
+prompt reviewer agreed with the two-line scope but warned that a duration target
+can induce low-information filler. That warning is adopted; its optional
+single-question early-finish rule is deferred because the user's explicit
+minimum-duration instruction still governs. No timing policy was silently
+changed. The reviewer saw the supplied outline, not the saved prompt/config.
+The separate research reply's joint capture/use criticism is adopted as one
+scoped modeling check, not a new backlog or independently executed validation.
 Daily10:00 Tokyo consultation remains the main window; if no turn is active,
 the first continuation after10:00 handles the current day once. No missed-day
 catchup, extra task or concurrent writer. Historical two/four-hour receipts

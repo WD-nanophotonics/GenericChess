@@ -46,6 +46,17 @@ SEMANTIC_CAPABILITY.md. No new hand price/default has been selected. Four
 generated exchange roots and two action spectra remain negative ranking
 discrimination evidence; prefer a changed semantic mechanism over old reruns.
 
+An actual56148-frontier capture/drop/reply census now yields positive conditional
+endpoint-service families under fixed discount assumptions. Uniform versus
+adversarial policies and a surviving-but-checked Gold expose the proxy's missing
+defensive/delayed service; this is not a universal price. Next test one joint
+capture-time/use approximation rather than silently assume independent averages.
+A fixed-first-ply two-context control already gives only +0.008876%/-0.120053%
+factorization error and preserves G/P ordering; retain the cheap approximation
+as scoped, then vary transfer time rather than repeat this successful control.
+Exact current scope and failures:
+SEMANTIC_CAPABILITY.md and data/paired_context_20261008.json.
+
 Retained restrictions: frozen first-contact common moments give Q/R<=261/160
 in that census; changing only that law cannot fix its descriptive reference gap.
 Active-opponent/custody finite signed service does not identify stable positive
