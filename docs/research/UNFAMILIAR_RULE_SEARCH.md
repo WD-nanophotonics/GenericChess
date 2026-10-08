@@ -271,3 +271,30 @@ are independently explained in SEMANTIC_CAPABILITY.md.
 Exact declarations, incomplete/failed versions and measured costs:
 data/promotion_rule_probe_20261008.json and
 ../archive/promotion_rule_probe_20261008/. These are on-demand research evidence.
+
+## Core eager successor cost
+
+The previously unknown C-drop-history reference was profiled. Its eager semantic
+path generated the complete legal set once, then `engine.apply` generated that
+set again for every child. `legal_successors` now reuses the canonical iterator's
+verified binding and the existing full-history transition constructor, as lazy
+successors do. Public single-action validation, S0-S4 filtering, repetition,
+auxiliary state, terminal adjudication and action order remain intact. No Native
+dependency or search/evaluation policy is added.
+
+A separately declared development batch gives both versions16384 leaves/20sec
+at depth2 on the same root/history/evaluator. All four calls complete with6126
+leaves, score-98 and the same action: old10.492/10.525sec, new0.644/0.658sec.
+Immediate73 full child states also agree. Earlier capped records remain unknown;
+new completion does not rewrite them. This is local Core eager cost, not default
+public-player acceleration.
+
+Two sets of20 history roots compare complete old/new successor GameState and
+independently replay Native actions/positions/terminal semantics. The original
+canonical routes did not exercise nifu/uchifuzume hands; its optimistic declaration
+is retained with a correction. A changed capture-then-drop-priority route obtains
+actual P hands and drops in both fixtures, alongside cannon capture, castling
+and off-target en-passant. Small enumeration timings are exploratory; the
+controlled6126-leaf batch owns the performance claim. Product regressions also
+compare every child against validated public `apply_action` and verify one parent
+enumeration. See data/lifecycle_20261008.json and its isolated archive.

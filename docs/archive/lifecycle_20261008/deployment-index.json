@@ -1,0 +1,85 @@
+{
+  "base_sha": "4c7410521de167b09d7cee9c903e5f00da64353e",
+  "file": "deployment.zip",
+  "sha256": "7183c3e0ded703e4392c2fda70b79f5af08f19bc7024d0e9f75a098763388922",
+  "members": [
+    {
+      "path": ".local_agent/lifecycle-20261008/deployment-proxy.py",
+      "bytes": 5378,
+      "sha256": "0cdfff06e4736562ed124ff0f75ea8e165cc202549b2c9c5e549fced90c5efde"
+    },
+    {
+      "path": ".local_agent/lifecycle-20261008/deployment-proxy.json",
+      "bytes": 282672,
+      "sha256": "f309d8f3fea574af00599fc705dc786b64d591aefcf9bc501008d30f6da79193"
+    },
+    {
+      "path": ".local_agent/lifecycle-20261008/deployment-endpoints.py",
+      "bytes": 5693,
+      "sha256": "e914b114eb0fa4abd0326051fd7fa9ea08859ee2e8708865b25f27e4e852050a"
+    },
+    {
+      "path": ".local_agent/lifecycle-20261008/deployment-endpoints.json",
+      "bytes": 740103,
+      "sha256": "2c24288c41223b49038828849b8ef46d77c269f24337c07bbef544c2c11c7568"
+    },
+    {
+      "path": ".local_agent/lifecycle-20261008/collect-deployment-supplement.py",
+      "bytes": 2100,
+      "sha256": "c4f49190c96462685cde96c65ecb070b0f54038a231081e1114bffbfe8256948"
+    }
+  ],
+  "verified_extracted": true,
+  "correction": "Initial U counts BoardMove alternatives inclpromotion, revised U counts distinct target endpoints; original raw preserved. Terminal branches U0 by definition, never zero outcome utility.",
+  "reply_frontiers": 344,
+  "rows": [
+    {
+      "name": "G",
+      "history_length": 3,
+      "root_history_sha256": "305584c5e30e59b68437883827264e8273938b13b853ba22fad5d88676104909",
+      "complete": true,
+      "reply_frontiers": 150,
+      "drop_count": 78,
+      "immediate_winning_drops": 1,
+      "uniform_drop_mean_U": "763/156",
+      "max_nonterminal_drop_U": "6",
+      "seconds": 0.5338575001806021
+    },
+    {
+      "name": "TP",
+      "history_length": 3,
+      "root_history_sha256": "12bdf2151777f9513d97098365211d2706a7d22ae8b7f9dc85bb46bb2f52d283",
+      "complete": true,
+      "reply_frontiers": 138,
+      "drop_count": 70,
+      "immediate_winning_drops": 0,
+      "uniform_drop_mean_U": "34/35",
+      "max_nonterminal_drop_U": "1",
+      "seconds": 0.5246421000920236
+    },
+    {
+      "name": "release-ply2",
+      "history_length": 3,
+      "root_history_sha256": "476437ec287faf51c00c2a9a09ff7b36db500af7c2e7908aae211e65433c6049",
+      "complete": true,
+      "reply_frontiers": 0,
+      "drop_count": 0,
+      "immediate_winning_drops": 0,
+      "uniform_drop_mean_U": "0",
+      "max_nonterminal_drop_U": "0",
+      "seconds": 8.500181138515472e-06
+    },
+    {
+      "name": "release-ply4",
+      "history_length": 5,
+      "root_history_sha256": "8fbc669134b61fd6a41e017407ca2be4ddf5096137cf9b88fa4bf3f68c919c27",
+      "complete": true,
+      "reply_frontiers": 56,
+      "drop_count": 7,
+      "immediate_winning_drops": 0,
+      "uniform_drop_mean_U": "5/7",
+      "max_nonterminal_drop_U": "1",
+      "seconds": 0.11300399992614985
+    }
+  ]
+}

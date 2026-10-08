@@ -1,0 +1,283 @@
+{
+  "base_sha": "4c7410521de167b09d7cee9c903e5f00da64353e",
+  "scope": "Exact Agent evidence only; excluded private/account/Slack/workflow data.",
+  "packages": [
+    {
+      "file": "sources.zip",
+      "sha256": "ebc1f071e9ef75d29115c9d53f48010fa7826c3fea3cd78765b2bd16d4167f80",
+      "members": [
+        {
+          "path": ".local_agent/lifecycle-20261008/action-margins.py",
+          "bytes": 3886,
+          "sha256": "9bb9174a0cf984b16f063cee272782295006219505e10e303a777974f6b40bde"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/capture-swing-rook.py",
+          "bytes": 4670,
+          "sha256": "c5c6fdc003738288db1a0e3d6d0044a0694f5bb8d4941b26789cbfdca8ff40b4"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/capture-swing.py",
+          "bytes": 4677,
+          "sha256": "02740f0b8e220e6565b2436cf832b24e40b1a7b50f8df6ddd281d8f32a272cc6"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/collect-evidence.py",
+          "bytes": 3835,
+          "sha256": "25c8f6ae4471d2bb226e9ab96b3c2c12b5cba81f237f22de0f95bfba3116836a"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/drop-context-initial.py",
+          "bytes": 3471,
+          "sha256": "d57319fe1df98dc99214c54a1877eea7d20ddcc7988a5cdc04e59513d16e2102"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/drop-context-legacy-api.py",
+          "bytes": 3546,
+          "sha256": "d7089c01156050f31fe08c58444f4243aa056a8fc794c562a25b5264e21ab1a5"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/drop-context-signature.py",
+          "bytes": 3574,
+          "sha256": "7b5ff03f33b9ffa5ee3582c4b3ae45161342abda91321c1fd94d6b126939a9b6"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/drop-context.py",
+          "bytes": 3588,
+          "sha256": "2b92c222b83896d7d1f708d30ca949f0f93e3e91c13019698d15a1b1d6f9d3d2"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/drop-cost-comparison.py",
+          "bytes": 3857,
+          "sha256": "f5a19cd7c031729b94df68ca9fd8e154ae2bacb2b0871d08042f110519c9b563"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/drop-cost.py",
+          "bytes": 3261,
+          "sha256": "1d42be769bf3316e482b180087852a9edf288e42c46e5be5115afbcb42391c77"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/eager-event-scope.py",
+          "bytes": 4955,
+          "sha256": "ee47a9958e5469304f1e46019fc623550000e48a6630d14e1c1a79ffd32b7742"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/eager-scope.py",
+          "bytes": 4545,
+          "sha256": "c1dec9c26b83d41334bc9d167d9672f71ed5114d1465f6541fdd7d2419dbbece"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/generated-discrimination-initial.py",
+          "bytes": 3358,
+          "sha256": "b0986f51ee6a979b74f9f806812130c99f321bcf72a021a7b67e0263344ca439"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/generated-discrimination.py",
+          "bytes": 3401,
+          "sha256": "e3d61a18779d69a8350bbc10880376d83b6d020b87980412c28f4e1000e49356"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/generated-exchange.py",
+          "bytes": 4745,
+          "sha256": "5163414427ef1c8f169240ce0f3f96ff1489e0f44f233ccbbfbb2e0d7931815f"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/native-frontier.py",
+          "bytes": 3586,
+          "sha256": "a7398c260a87ca1d424c85fa9bf24a5519612527174d7a7d1c068ce923cdd583"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/public-continuation.py",
+          "bytes": 3624,
+          "sha256": "e8046c37567c1c764b25d7bd8e3723bd3027b61fd02bfbe3426b2113a35668ec"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/release-delay-initial.py",
+          "bytes": 3504,
+          "sha256": "b63d4e53bc7399077d4be44cbec9f1ee3faa9b1164297dd7a033cd69605ed219"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/release-delay.py",
+          "bytes": 3708,
+          "sha256": "19a2bc623fce585bf66895b2d899e48d6f9677d5ed5ef0e572ecd2ad5da8404e"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/release-law.py",
+          "bytes": 1851,
+          "sha256": "a123e9e45df8bd74cf080117c7eac199dd6d97ee716dff83323099ab624303a9"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/transition-before.py",
+          "bytes": 9887,
+          "sha256": "0437cba33051366584591e5330904087e4bd12427e1e8d2ad510744fc8e02177"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/typed-file-law.py",
+          "bytes": 3088,
+          "sha256": "86e1cc316524c9004d96cd89502087a22b09902c5bd6478e3bbab2e1c96fbcf5"
+        },
+        {
+          "path": "generic_chess/core/transition.py",
+          "bytes": 9538,
+          "sha256": "1f21e56630057a13102b83c9fe0616301a7a4699bbd345158d4c67c45a3e8682"
+        },
+        {
+          "path": "tests/product/test_legal_successors.py",
+          "bytes": 6389,
+          "sha256": "5d0d8f4ed35c35493bd9866caf45565311ef94b25583ac7ed048fca15ff982e9"
+        }
+      ],
+      "verified_extracted": true
+    },
+    {
+      "file": "raw.zip",
+      "sha256": "cfc58591c893e93e2ed049311c07b5a7baec511f0d049f6951e726265edb560d",
+      "members": [
+        {
+          "path": ".local_agent/lifecycle-20261008/action-margins.json",
+          "bytes": 13124,
+          "sha256": "3183b2126fa2ee589326f5283c955841bab45020af06a596d63e09014dfce745"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/capture-swing-knight.json",
+          "bytes": 792111,
+          "sha256": "8aff656a3cbb593e38e7f9321a9b5aeb437d21422afce3bb3ae52bbedf5c967c"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/capture-swing.json",
+          "bytes": 793671,
+          "sha256": "ec4a12288764be80562df0449c112c00365e9b638dc087496acaf8acd087a121"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/drop-context-completed.json",
+          "bytes": 2171881,
+          "sha256": "8a41d55081c7946e2ddfe16b5f6c02eb177569fd31a7a574e3bc076fe4234f02"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/drop-context-qualified.json",
+          "bytes": 714,
+          "sha256": "e930a7eeab97ad4ee9d27d0829acc46549dcbb0ed159d9bf03be5f48a057899d"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/drop-context.json",
+          "bytes": 714,
+          "sha256": "4d3ea344583bad141407a2a9c7c3787ae83c57ee46d5b2cff55dc4691593c3bf"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/drop-cost-comparison.json",
+          "bytes": 2900,
+          "sha256": "0eb362697369f0ef0db84a54bdfb4f8909d9099eeecff5665c92ab9e90b91ab8"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/drop-cost.json",
+          "bytes": 10844,
+          "sha256": "7c05da5fb86962c7053803355939191b042ee506f4a3726c3c4c08fc9ccfe4c7"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/eager-event-scope.json",
+          "bytes": 92458,
+          "sha256": "e65428e617606d12a6bffe3552bb60e8c032475f6fb5715f726ce95e70b370a1"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/eager-scope.json",
+          "bytes": 91912,
+          "sha256": "5d69b72d4fab8b5ad61480d73aeaeb6569ca7388f1995791d6bf6f88cb661f84"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/final-qualification.json",
+          "bytes": 2086,
+          "sha256": "c3ba3e6c3ab834906cd6dcae927647a10d87a315e8654fe86bf44aa6c2a1cd60"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/generated-discrimination-qualified.json",
+          "bytes": 109336,
+          "sha256": "b04831eecda829904b26d7cf1c9e7857918fa1878d4250c450ffd8766500697f"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/generated-discrimination.json",
+          "bytes": 673,
+          "sha256": "00473705e69247f6b899ce436c296a3d55950b019f2c9756fb1c3ae6c07883b0"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/generated-exchange.json",
+          "bytes": 132092,
+          "sha256": "7776344a8e09aba351a76cb274b0774c8acab57138aa95e1bdcd0cf99714bef4"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/native-frontier.json",
+          "bytes": 17188,
+          "sha256": "73287ab0b84f29c33a40120e16c31f45be046ca75693f7e6d78fe738e7b617c7"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/public-continuation.json",
+          "bytes": 90643,
+          "sha256": "af6a6b8748a17ca2b5105a87ec88bc0be14e7236dd327a7991df0df4dfa334f7"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/qualification.json",
+          "bytes": 1407,
+          "sha256": "5b6066abfc165d20b8436481d0acf8ca7cc15e3e329bce2376fce3fb8d62729f"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/release-delay-completed.json",
+          "bytes": 315816,
+          "sha256": "f6b981dcd55ab46f8c13a733be2c81de4cb55b6c3b3873dd042a75aa49fba063"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/release-delay.json",
+          "bytes": 315588,
+          "sha256": "c328361e614992e603c8f77368a1ac971ed16c1b81c282fe2d18f4d62be303a2"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/release-law.json",
+          "bytes": 1654,
+          "sha256": "4a085d24689d772242c65741e4300ebff7ff3184c7e178c77d6f3e5b4bc86881"
+        },
+        {
+          "path": ".local_agent/lifecycle-20261008/typed-file-law.json",
+          "bytes": 69682,
+          "sha256": "d975319b765199c6b75b5043d3bfd45ab02831cb9f1bbf80e0c0fa4ddd318713"
+        }
+      ],
+      "verified_extracted": true
+    },
+    {
+      "file": "dependencies.zip",
+      "sha256": "66699c8215e8865e9f150714af6ce3a83e83dc50694880e89a29171109c1668e",
+      "members": [
+        {
+          "path": ".local_agent/semantic-candidate-20261008/drop-event-definition.json",
+          "bytes": 14518,
+          "sha256": "4d8eeca2019831370c481cf5e7b80c462122e2511ddd1c1c819462dd68fd4f32"
+        },
+        {
+          "path": ".local_agent/semantic-candidate-20261008/event-history-qualified.json",
+          "bytes": 151397,
+          "sha256": "463c46a863a1c2377257f3c0f29d3db2860b55454c10e84bcfa86325e6454025"
+        },
+        {
+          "path": ".local_agent/semantic-candidate-20261008/generated-4-21-candidate.json",
+          "bytes": 33038,
+          "sha256": "1d466b0aa2f87c2b9522eb7c29db6bdf635baaaf66e3bc1b376e4144b97a6a15"
+        },
+        {
+          "path": ".local_agent/semantic-candidate-20261008/generated-4-7-candidate.json",
+          "bytes": 29355,
+          "sha256": "f13b3de7029fbe997fe1cec31879c172215b460f388d6cde2ed7bc1859de71ea"
+        },
+        {
+          "path": ".local_agent/semantic-candidate-20261008/generated-6-21-candidate.json",
+          "bytes": 43552,
+          "sha256": "385025576c4e62d06af3e29c84eb743c441d2afb4c5479d11073523a0d016448"
+        },
+        {
+          "path": ".local_agent/semantic-candidate-20261008/generated-6-7-candidate.json",
+          "bytes": 52722,
+          "sha256": "898c87f3e5ff65f9f973a641e5ad51f724a3fa90cf0ebc03bf4138c698b262ee"
+        }
+      ],
+      "verified_extracted": true
+    }
+  ],
+  "dependencies": "Restore recorded .local_agent paths in isolated checkout of base SHA; install snapshot transition for after comparisons. Prior sources/results otherwise already committed at base. Preserve existing raw outputs; fresh output directories for reruns."
+}

@@ -186,6 +186,84 @@ ceiling at the same completed depth; that pair is a resource/result observation,
 not an equal-work speed certificate. This does not change weights, defaults,
 search algorithms or scores and is not a universal acceleration claim.
 
+## Capture reset and hand-use boundary
+
+The decomposition `V_i=A_i-beta*A_base(i)`, `H_base=beta*A_base` makes
+`V_i+H_base=A_i`. It erases base identity from a local capture coefficient
+when current geometry agrees. Beta is a free assumption, not identified by
+rules. A real four-entity Shogi conditional continuation exposes the omission:
+own K(7,6), enemy K(8,8), own N(3,2), enemy G or baseP/currentTP(4,4).
+After unpromoted N capture, the enemy has one legal reply K(7,8). Captured G
+permits one winning gold drop; reset P has no same-horizon win. Complete
+terminal-only Core2ply differs mate versus0;0 is finite no-mate, not game draw.
+Replacing N with R(4,1) is a negative control: both have rook mates. Native
+verifies362 frontier transitions;24 cold public calls repeat. Static profile
+comparisons vary scoring and ordering together and do not establish prices.
+
+A position-only census retains full Shogi legality, opposite-corner kings,
+rank1 fillers and one/two hand pieces. All160 owner/filler/type/count cells
+agree with Native. Nine files filled with own unpromoted P give hand P zero
+drops; TP fillers instead give62. Hand G has70 in both. Multiplicity1/2 gives
+the same immediate action set, not equal stock utility. An actual four-ply
+capture/reply/mandatory-promotion/reply line opens a captured P from zero to
+seven drops: conditional delay, not standard-opening reachability, minimum
+release time or an optimal policy.
+
+Let each file in this declared rank1 context have own current P probability
+`a`, own TP probability `b`, otherwise empty. Then
+`E[L_P]=71*(1-a)-9*b`, `E[L_G]=79-9*(a+b)`.
+Linearity needs those marginals, not independent files. An exhaustive512-mask
+Core/Native census at fixed nine-file occupancy checks the P/TP composition
+formula. Equal P marginals1/2 give mean31 drops under three different laws:
+
+| Explicit context law | Probability P is immediately usable | Mean drops when usable |
+|---|---:|---:|
+| Independent file types |511/512|15872/511|
+| All files share one type |1/2|62|
+| Uniform four/five P files |1|31|
+
+Mean opportunity, release probability and conditional opportunity are separate
+inputs. Sampling only usable hands hides blocked contexts; equal density/type
+marginals do not identify immediate release probability. A possible development
+proxy, not a selected material formula, is
+`H_b(C)=E_C[discount^T * 1(T<=h) * U_b(drop_context)]`, with declared
+context/behavior law, first available own-turn T, horizon h and deployment
+potential U. Blocked observations remain in the expectation. Availability does
+not specify U, enemy responses, later recapture or shared deployment tempo.
+The observed line supplies one conditional T, not a population model. Next
+work should test one assumption against an independent deployment observation
+rather than fit human prices or normalize old signed tag rewards.
+
+That proxy has a small executable diagnostic: uniform legal drop followed by
+uniform **real** enemy reply, then distinct legal target endpoints of the deployed
+piece on its next actual turn. Four actual-history roots and344 Core/Native
+reply frontiers complete. Conditional mean endpoints are G763/156, resetP34/35,
+blockedP0 and releasedP5/7. The initial action-count version gave P6/5 and1
+because it counted promotion alternatives separately; both versions remain.
+The winning G drop has no later endpoints, so activity alone cannot replace
+terminal utility. This does **not** reject an approximate static table used with
+normal terminal-aware search. Nor are these few conditional averages a chosen
+population law or deployable hand-price estimate.
+
+A next approximation family should distinguish hand use from capture hazard:
+given an explicitly modeled H, write `V_i=A_i-p_i*H_base(i)`. Its local capture
+coefficient is `A_i+(1-p_i)*H_base(i)`, rather than cancellation forced by p=1.
+Capture probability/hazard p, deployment scale/discount and context law are
+different assumptions. Neither p nor H is identified by this algebra; positivity
+must be checked under the same units/context, not repaired by fitting or silent
+clamping. This remains a falsifiable development direction, not installed code.
+
+Four frozen generated-rule roots were selected by legal capture structure before
+scoring. Fixed baseline ordering, hand0 and equal search conditions yield32
+complete repeatable depth2/3 calls,14/16 complete Core references; two6x6seed7
+depth3 references stay unknown. All eight paired chosen actions agree. Complete
+action spectra on the two4x4 roots also preserve optimum sets: four ties with
+next gaps488/500, and one optimum with gaps781/813. This is negative ranking
+discrimination evidence, not improved strength or universal interchangeability.
+
+Exact declarations, failed API calls/predictions and corrected sources:
+data/lifecycle_20261008.json and ../archive/lifecycle_20261008/.
+
 ## Remaining approximation boundary
 
 The observed double-step source guard admits eight sources per owner;64 blocker

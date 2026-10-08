@@ -217,28 +217,16 @@ def legal_successors(
         ensure_ruleset_match(state.position, compiled)
         if state.terminal_status.status is not TerminalStatus.ONGOING:
             return ()
-        actions = engine.legal_actions(state.position)
         out = []
-        for binding in actions:
-            new_pos = engine.apply(state.position, binding)
-            ply = state.ply_count + 1
-            key = repetition_identity_key(new_pos, compiled)
-            counts = update_repetition_counts(state.repetition_counts, key)
-            public_action = _semantic_public_action(engine, binding)
-            history = _history_record(state, new_pos, public_action, compiled, key)
-            status = engine.terminal_result(new_pos, ply, counts, history)
-            out.append(
-                (
-                    public_action,
-                    GameState(
-                        position=new_pos,
-                        ply_count=ply,
-                        repetition_counts=counts,
-                        terminal_status=status,
-                        history=history,
-                    ),
-                )
+        for semantic_action, binding in engine.iter_legal_action_bindings(state.position):
+            public_action = _semantic_public_action(engine, semantic_action)
+            # The canonical iterator has already checked S0-S4 for this parent.
+            # Reuse its binding, as lazy successors do, instead of enumerating
+            # the complete legal set again for every child through engine.apply.
+            child = _semantic_transition(
+                state, semantic_action, binding, public_action, compiled
             )
+            out.append((public_action, child))
         if _pass_action_is_legal(state.position, compiled):
             action = PassAction()
             out.append((action, _transition(state, action, compiled)))

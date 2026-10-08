@@ -38,6 +38,14 @@ bias. That virtual task is not legal play or material utility. Next construction
 should address one decision-changing approximation with an explicit law and
 counterexample, without fitting human references or changing defaults by outcome.
 
+Actual capture/reset continuation distinguishes G from TP/P despite equal
+current geometry. Fixed-density typed-file contexts separate mean drop options
+from release probability; equal marginals do not identify the latter. The scoped
+hand-use proxy and missing context/behavior assumptions are in
+SEMANTIC_CAPABILITY.md. No new hand price/default has been selected. Four
+generated exchange roots and two action spectra remain negative ranking
+discrimination evidence; prefer a changed semantic mechanism over old reruns.
+
 Retained restrictions: frozen first-contact common moments give Q/R<=261/160
 in that census; changing only that law cannot fix its descriptive reference gap.
 Active-opponent/custody finite signed service does not identify stable positive
@@ -82,6 +90,12 @@ search fixtures retain scores/nodes and show local cost reductions. This is an
 execution optimization, not a changed evaluation/search policy or universal gain.
 Scoring/ordering effects of candidate tables are explicitly separated in
 SEMANTIC_CAPABILITY.md and data/semantic_candidate_20261008.json.
+
+Core eager semantic successors reuse canonical verified bindings instead of
+regenerating legal sets per child. One equal6126-leaf reference moves from
+about10.5sec to0.65sec with identical action/score. Event/history parity is
+qualified in UNFAMILIAR_RULE_SEARCH.md; old capped results remain unknown.
+This is Core reference cost, not universal/public-player acceleration.
 
 ## Evidence and delivery
 
