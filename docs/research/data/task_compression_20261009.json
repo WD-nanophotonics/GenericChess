@@ -170,7 +170,7 @@
   },
   "archive": "../../archive/task_compression_20261009/evidence.zip",
   "archive_index": "../../archive/task_compression_20261009/index.json",
-  "recovery_verified_members": 18,
+  "recovery_verified_members": 22,
   "decision_diagnostic": {
     "scope": "Existing task decisions under declared reply laws, no fitted coefficients.\nOnly two focal transformation choices; not the full game root action set.\nUniform public/physical reply averages and adversarial minimum are separate\ndeclared functionals on the already complete same-rule task matrix. Verify\nwhether the existing static material proxy agrees with these local decisions.\nNo new task, samples, game-value interpretation or default modification.\n",
     "material_scores": {
@@ -298,5 +298,68 @@
     "scope": "Archive recovery and same product f8 code, not new samples or independent holdout. Earlier archive scanner falsely detected its own literal sentinel and left an ignored partial ZIP; no raw observations lost."
   },
   "followup_archive": "../../archive/task_compression_20261009/followup.zip",
-  "followup_index": "../../archive/task_compression_20261009/followup-index.json"
+  "followup_index": "../../archive/task_compression_20261009/followup-index.json",
+  "count_statistic_feasibility": {
+    "complete": true,
+    "stock": [
+      12,
+      12
+    ],
+    "owner": 0,
+    "source": 15,
+    "samples": 4096,
+    "seed": 202610090401,
+    "rows": {
+      "P": {
+        "exact_expected_count": "300/119",
+        "sample_mean_count": 2.4970703125,
+        "mean_count_se": 0.017484998223184074,
+        "probability_any": 0.9755859375,
+        "probability_any_se": 0.0024114197737547466,
+        "count_histogram": {
+          "2": 1348,
+          "3": 1229,
+          "5": 127,
+          "1": 663,
+          "4": 614,
+          "0": 100,
+          "6": 14,
+          "7": 1
+        }
+      },
+      "X": {
+        "exact_expected_count": "888/595",
+        "sample_mean_count": 1.483154296875,
+        "mean_count_se": 0.014339349436271099,
+        "probability_any": 0.854248046875,
+        "probability_any_se": 0.005513396355812015,
+        "count_histogram": {
+          "3": 472,
+          "2": 1488,
+          "1": 1491,
+          "0": 597,
+          "4": 48
+        }
+      }
+    },
+    "seconds": 0.024166599847376347,
+    "input_sha256": "81c3cad75fa195d06b847c2b0a0d9b9b265fe36bedab20b09518e2d529554d14",
+    "producer_sha256": "7bcd957d45998252aa0e6f71c9a12d5ed4565a6b20eb366d6bc8874e970c8cd6"
+  },
+  "actual_conditioning": {
+    "P": {
+      "geometric_ordinary_any_mean": "11/25",
+      "task_mean": "11/25",
+      "mismatch_indices": []
+    },
+    "X": {
+      "geometric_ordinary_any_mean": "23/25",
+      "task_mean": "22/25",
+      "mismatch_indices": [
+        17
+      ]
+    }
+  },
+  "conditioning_archive": "../../archive/task_compression_20261009/conditioning.zip",
+  "conditioning_index": "../../archive/task_compression_20261009/conditioning-index.json"
 }

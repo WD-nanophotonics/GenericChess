@@ -890,6 +890,25 @@ points to task units, or evidence to retune P/X. The useful next approximation
 must say which objective it predicts; neither averaging nor worst-case treatment
 is selected merely because it makes current prices look better.
 
+One predeclared feasibility check separates the raw count statistic from any-
+capture saturation: same fixed rule/source(3,2), anonymous initial stock and
+4096 shared colored layouts, seed202610090401. Supported geometric endpoints
+only, without legality, anchors or an opponent response. Exact finite expected
+counts are P300/119 and X888/595; sampled means2.4971/1.4832 (SE .0175/.0143).
+Sampled any-endpoint probabilities are .9756/.8542 (SE .0024/.0055).
+Both statistics prefer P under this anonymous law. Thus replacing expected
+count by a bounded any-capture statistic alone does not reproduce the fixed-
+reply task's X preference. This is not a failed prediction of that different
+task: the context/response law and legality differ. Retain the scope boundary
+before spending on another occupancy sweep or fitting a scalar to the task.
+On the actual25 reply boards, supported ordinary geometric any-capture instead
+averages P11/25 and X23/25. The legal task is P11/25 and X22/25: only X's
+negative-witness row17 differs (three geometric endpoints, no legal focal
+action). This localizes the ranking reversal primarily to the conditioning
+change; that single legality mismatch does not reverse it. It does not make
+the geometric prior an approximation of every legal task, nor establish the
+cause of the row17 legality loss without a separate replay.
+
 
 ## Preparation-task transformation scope and layout dependence
 
