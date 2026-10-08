@@ -75,3 +75,8 @@ class PlayerDecision:
     declaration_win_options: int = 0
     declaration_restart_options: int = 0
     declaration_root_selected: bool = False
+    # Successful Native legality calls and operational fallback evidence.
+    # Provider availability alone does not establish the route actually used.
+    native_legality_calls: int = 0
+    native_legality_fallbacks: int = 0
+    native_legality_operational_failures: int = 0

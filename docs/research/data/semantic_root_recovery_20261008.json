@@ -1,0 +1,1035 @@
+{
+  "archive": "../archive/semantic_root_recovery_20261008",
+  "attack": {
+    "exact_core_native": true,
+    "legacy_different_rows": 22,
+    "owner_maps": 64,
+    "roots": 32,
+    "seconds_by_method": {
+      "bulk": 0.003714300226420164,
+      "core_scalar": 0.06734740058891475,
+      "legacy": 0.0017706004437059164,
+      "native_scalar": 0.008499999530613422
+    }
+  },
+  "base_sha": "7d289d1c3dae39863227deda081e942fb3e99e4d",
+  "build": {
+    "baseline_binary_sha256": "69ebf5e3d9d242755941133d1c8d0f2a23a029fb452a6949824e87be00b29b8f",
+    "build_scope": "O2 installed Zig build, currentCPython312 ABI, Windowsx86_64; binary excluded from Git. Source/ABI/compiler pin does not promise byte-identical builds across environments.",
+    "builder_sha256": "49971852587404019031c545a30647172b6dda9205253b7222220b697b629f02",
+    "final_binary_sha256": "399d04eb135acba07d1b0138e226fca8b0952141d12559dc70a1100bee3b4104",
+    "identity_stage_binary_sha256": "35b8a1870c0279b4ecca0e930f091123f8b535a3ce04913515144d9aae8c4ef3",
+    "producer_sha256": "9fe6d0a90b9e4386e4b8d346d9748884789b3459f26acaaa8198194830a6263a",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "qualifications": [
+      "First event-guard live build was blocked because the bounded context process held the DLL; one attempted after record and its failing test still used the old identity-stage binary. Preserved as check-history-after-unbuilt.json, not evidence of event fix.",
+      "Alternate output built and tested in an isolated process, then copied to live path only after census exited. final record and1550default regressions use the new module.",
+      "Routing before/after timings use baseline and identity-stage binaries; final history guard is separately tested and does not imply those timing samples used the final binary."
+    ],
+    "sources": {
+      "generic_chess/_native/native_attack.c": "4c821d0e73ced9def6840d9c5a3c64f18bf2b861ee7fe983a7e7d6f3b4c48bf8",
+      "generic_chess/_native/native_attack.h": "dd364d759990a936f1ca66a32aead8b271d49b5e91a17114294b3f6fa69af33f",
+      "generic_chess/_native/native_cancel.c": "e3c46eb8fa1b694f004bf40c2e39a83b4113eaaf0e6edffdad34e46d0cee1c04",
+      "generic_chess/_native/native_cancel.h": "91a86c481454e9e134cc93dc5613032defc6cfd7cc63db1a036bf97432037202",
+      "generic_chess/_native/native_clock.c": "ca7636e24ce4fcc81a476f80c4447207f7ad6cc48ab33c29c37c3ba12906bd93",
+      "generic_chess/_native/native_clock.h": "0a61e36e2ce869caae357bb11b21106ab12a25fd3828702ec402d056498dbf8a",
+      "generic_chess/_native/native_eval.c": "dd2bccac44da3ec647b91666e2cc00e85b3c3284fd32ceb385f49bd398b91c30",
+      "generic_chess/_native/native_eval.h": "5a7becb7c71c365a0b4f480c117606143bd4da750d7b4747167b0bc336a07097",
+      "generic_chess/_native/native_hash.c": "bd5c4e31b1502c2ddffac3b4adc528efd164d80f2a9830e613955b597827411c",
+      "generic_chess/_native/native_hash.h": "162854bc2c6b996098eb971881a43d21549996199a4bba1f7e5e717411332078",
+      "generic_chess/_native/native_module.c": "f52ac81b62749da2f5b9302ba9b5eba58d39e888695a6a45bc53c47346ac1ec8",
+      "generic_chess/_native/native_movegen.c": "23f6ed09523e6882e7b672e52947db4d701662cac19ef312cbafaadd8f7513df",
+      "generic_chess/_native/native_movegen.h": "c94015ccffec5beba214ab6e789664825b2cfd757dc83aca8551c1bd47617ecd",
+      "generic_chess/_native/native_perft.c": "7e4323a29a762ba60218e28ef7f8bb0ab5a20f88648b346a6c57728fe67d1482",
+      "generic_chess/_native/native_perft.h": "fb3779960c0d701196e60b7e560b6bf3a61276994d389a6e7e484aefd4b27bb0",
+      "generic_chess/_native/native_rules.c": "c191bdca1ad0a03e061933c18208b3190eca3a79b8b90f670d277b4106ed5ad6",
+      "generic_chess/_native/native_rules.h": "1ba70ff3d9b56b01e74e9ea8246b98a2ae0a8868c7c8f8033f5b456ef613bd64",
+      "generic_chess/_native/native_search.c": "588298552762c0bab66556ad488cea2861524e4c17c9e254247860dde9a9addb",
+      "generic_chess/_native/native_search.h": "694d5d1b541e3650a6d838b2c787689d6837a0fa9166c69ec1ea5a89ad9335f4",
+      "generic_chess/_native/native_semantic_key.c": "fcc9d1a26db21ccb9b72bd879cc37fb19a949cb6a9bd98678320bf7e15b68da1",
+      "generic_chess/_native/native_semantic_key.h": "8cea82d16d1c6b9e8add1887c1b0a9f21fed8430204e1f3850b2f7d5d261528c",
+      "generic_chess/_native/native_semantic_rules.c": "18463306c5ab29c20cd1e69d3c52e9eafdc7888a59029755de51a9e31c5e6ef4",
+      "generic_chess/_native/native_semantic_rules.h": "c1b6256fb0b1b92b2634c8571fece4bf9e2d02b1688dc9df3c0122482fe722f1",
+      "generic_chess/_native/native_semantic_runtime.c": "a62bd17b64421a6139aee0bd06437b28be6d12549c0772900c3c99cf99a4cca3",
+      "generic_chess/_native/native_semantic_runtime.h": "136a7a8a894e875a514ab62602d3d1332389a2dee19c789007e1b9c9410bc228",
+      "generic_chess/_native/native_semantic_state.c": "6d8828d3413d19a788c037e7ecb12604b797e038c65bee1eb64bcb5118cc3dbd",
+      "generic_chess/_native/native_semantic_state.h": "86cea58e408ba05c3cc783cc79537c93540271fcd518944921c075ef9ff1fabc",
+      "generic_chess/_native/native_sha256.c": "d12cec8d44785c26a619115e7e627d329daf26fcc8fbc3dbda3c2c2ff85bdb23",
+      "generic_chess/_native/native_sha256.h": "581f1f234132d4a14275149e08fb5bfba4cdedbf1168f07397248484ab3c3d1b",
+      "generic_chess/_native/native_state.c": "a6bce524c1d67340eac7a26c3a9dbfd22e9db0670dca0559fbc8f94de8e2a7f4",
+      "generic_chess/_native/native_state.h": "b7b3c3342c4cb81ccc3057d834803a6cd27b693d04506ee5391983c1446243b8",
+      "generic_chess/_native/native_tt.c": "57c97b019620cfedfa6de6e2b6cc3422d8292f26bd5fedb34a7f065f3629ceb0",
+      "generic_chess/_native/native_tt.h": "d2a002573add4f811f6ed379819da9004e0ddb80136d82ed8bcb4737bc101680",
+      "generic_chess/_native/native_types.h": "2c256bf170349f0c1d2f866c2f40b285711eb312927ae959b4ef85f9867866aa"
+    },
+    "zig_version": "0.16.0"
+  },
+  "check_feature": {
+    "cases": [
+      {
+        "core_check": false,
+        "difference": 55,
+        "legacy_check": true,
+        "native_check": false,
+        "old_anchor_term": -45,
+        "screen": false,
+        "semantic_map_anchor_term": 10
+      },
+      {
+        "core_check": true,
+        "difference": -55,
+        "legacy_check": false,
+        "native_check": true,
+        "old_anchor_term": 10,
+        "screen": true,
+        "semantic_map_anchor_term": -45
+      }
+    ],
+    "complete": true,
+    "declaration": "Prospective two declared initial cannon layouts: ownK0,0/C2,3/enemyK3,7, optionally own immobileZscreen3,5; actual legal Cquiet2,3-to3,3 reaches each comparison root. First direct-root prototype was rejected by legacy initial-anchor check; retained unchanged. Compare legacy versus exact compiled-semantic attack maps with Core/Native check authority. Isolate existing anchor term with all material/hand/promotion/mobility weights0 and anchor weight5; only map provider changes in a local monkeypatch restored in finally. Anchor-escape movement remains the legacy approximation, not legal escape validation. No product change/new feature or strength claim. Decision: can full dynamic semantic-price comparisons be interpreted without a static/no-dynamic control?",
+    "producer_sha256": "c7f5e8f3a8a107a1669e59965d3c861ba8e34ed226b8127d66683f31fd90dff4"
+  },
+  "history_before": {
+    "carried": {
+      "status": "perpetual_check",
+      "winner": 1
+    },
+    "core": {
+      "status": "perpetual_check",
+      "winner": 1
+    },
+    "fresh": {
+      "status": "perpetual_check",
+      "winner": 1
+    },
+    "key_only_events_exact": false,
+    "key_only_terminal": {
+      "status": "repetition",
+      "winner": null
+    },
+    "producer_sha256": "4ad2516b0fb3a840fcac1c775483edb22f81283d5d231042abe764bf74b036ad",
+    "snapshots_equal": true
+  },
+  "history_final": {
+    "carried": {
+      "status": "perpetual_check",
+      "winner": 1
+    },
+    "core": {
+      "status": "perpetual_check",
+      "winner": 1
+    },
+    "fresh": {
+      "status": "perpetual_check",
+      "winner": 1
+    },
+    "key_only_events_exact": false,
+    "key_only_rejected": "semantic terminal requires exact full history",
+    "producer_sha256": "4ad2516b0fb3a840fcac1c775483edb22f81283d5d231042abe764bf74b036ad",
+    "snapshots_equal": true
+  },
+  "initial_validation": {
+    "after": {
+      "cases": [
+        {
+          "actual_core_checks": [
+            false,
+            false
+          ],
+          "native_enemy_check": false,
+          "public_compile": [
+            {
+              "accepted": true,
+              "mode": "default"
+            },
+            {
+              "accepted": true,
+              "mode": "alternate"
+            }
+          ],
+          "screen": false
+        },
+        {
+          "actual_core_checks": [
+            false,
+            true
+          ],
+          "native_enemy_check": true,
+          "public_compile": [
+            {
+              "accepted": false,
+              "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position",
+              "mode": "default"
+            },
+            {
+              "accepted": false,
+              "error": "[INITIAL_ANCHOR_ATTACKED] initial_setup_options[reached]: player 1's anchor is attacked at the initial position",
+              "mode": "alternate"
+            }
+          ],
+          "screen": true
+        }
+      ],
+      "complete": true,
+      "declaration": "Two predeclared cannon layouts, optional immobile screen. Reach C3,3 from a validated C2,3 root; compare Core/Native check against public compilation of exactly the reached board, as default or alternate setup. No compiler bypass, validation relaxation or product change. Distinguish safe-layout false rejection from legitimate attacked-layout rejection.",
+      "producer_sha256": "51f66bfe38de07e870510e7364433dfb9a4383239e0eb779da22b8f283794525"
+    },
+    "before": {
+      "cases": [
+        {
+          "actual_core_checks": [
+            false,
+            false
+          ],
+          "native_enemy_check": false,
+          "public_compile": [
+            {
+              "accepted": false,
+              "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position",
+              "mode": "default"
+            },
+            {
+              "accepted": false,
+              "error": "[INITIAL_ANCHOR_ATTACKED] initial_setup_options[reached]: player 1's anchor is attacked at the initial position",
+              "mode": "alternate"
+            }
+          ],
+          "screen": false
+        },
+        {
+          "actual_core_checks": [
+            false,
+            true
+          ],
+          "native_enemy_check": true,
+          "public_compile": [
+            {
+              "accepted": false,
+              "error": "[INITIAL_ANCHOR_ATTACKED] initial_position: player 1's anchor is attacked at the initial position",
+              "mode": "default"
+            },
+            {
+              "accepted": false,
+              "error": "[INITIAL_ANCHOR_ATTACKED] initial_setup_options[reached]: player 1's anchor is attacked at the initial position",
+              "mode": "alternate"
+            }
+          ],
+          "screen": true
+        }
+      ],
+      "complete": true,
+      "declaration": "Two predeclared cannon layouts, optional immobile screen. Reach C3,3 from a validated C2,3 root; compare Core/Native check against public compilation of exactly the reached board, as default or alternate setup. No compiler bypass, validation relaxation or product change. Distinguish safe-layout false rejection from legitimate attacked-layout rejection.",
+      "producer_sha256": "320b92e0afa372041d25534cf56355c3cd0e8306511cc6adc43cef81bd93970a"
+    },
+    "search": {
+      "cases": [
+        {
+          "alternate": false,
+          "decisions": [
+            {
+              "action": {
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 0,
+                  "rank": 0
+                },
+                "geometry_id": "g11",
+                "pattern_id": "legacy_006",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 1,
+                  "rank": 1
+                }
+              },
+              "aspiration_fail_high": 0,
+              "aspiration_fail_low": 0,
+              "aspiration_researches": 0,
+              "beta_cutoffs": 15,
+              "capture_qactions": 0,
+              "checking_drop_qactions": 0,
+              "checking_move_qactions": 0,
+              "choice_kind": "ACTION",
+              "completed_depth": 2,
+              "countermove_hits": 0,
+              "declaration": null,
+              "declaration_checks": 0,
+              "declaration_restart_options": 0,
+              "declaration_root_selected": false,
+              "declaration_win_options": 0,
+              "elapsed_seconds": 0.01600000006146729,
+              "evaluation_calls": 0,
+              "evaluation_profile_cache_hit": false,
+              "evaluation_seconds": 0.0,
+              "in_check_qnodes": 0,
+              "legal_actions_generated": 138,
+              "legal_generation_calls": 18,
+              "legal_generation_seconds": 0.0,
+              "mate_pruning_cutoffs": 0,
+              "move_picker_generated": 0,
+              "move_picker_yielded": 0,
+              "move_picker_yielded_by_stage": {},
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0,
+              "native_legality_operational_failures": 0,
+              "nodes": 82,
+              "nonchecking_drop_excluded": 0,
+              "ordered_moves": 138,
+              "ordering_calls": 18,
+              "ordering_seconds": 0.0,
+              "position_key_cache_hits": 80,
+              "position_keys_computed": 111,
+              "principal_variation": [
+                {
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 0,
+                    "rank": 0
+                  },
+                  "geometry_id": "g11",
+                  "pattern_id": "legacy_006",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 1,
+                    "rank": 1
+                  }
+                },
+                {
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 7
+                  },
+                  "geometry_id": "g11",
+                  "pattern_id": "legacy_006",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 2,
+                    "rank": 6
+                  }
+                }
+              ],
+              "promotion_qactions": 0,
+              "pvs_null_window_searches": 0,
+              "pvs_researches": 0,
+              "qdepth_cutoffs": 0,
+              "qnodes": 0,
+              "qsearch_budget_aborts": 0,
+              "qsearch_check_hard_limit_aborts": 0,
+              "root_scan_nodes": 0,
+              "root_scan_used_fallback": false,
+              "score": 2043,
+              "selective_depth": 2,
+              "stand_pat_cutoffs": 0,
+              "successor_handles_created": 138,
+              "successors_materialized": 80,
+              "successors_searched": 80,
+              "terminal_cache_hits": 0,
+              "terminal_results_computed": 80,
+              "termination_reason": "completed_depth",
+              "time_to_first_completed_iteration": 0.01600000006146729,
+              "time_to_first_legal_action": 0.0,
+              "tt_cutoffs": 13,
+              "tt_hits": 14,
+              "tt_probes": 31
+            },
+            {
+              "action": {
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 0,
+                  "rank": 0
+                },
+                "geometry_id": "g11",
+                "pattern_id": "legacy_006",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 1,
+                  "rank": 1
+                }
+              },
+              "aspiration_fail_high": 0,
+              "aspiration_fail_low": 0,
+              "aspiration_researches": 0,
+              "beta_cutoffs": 15,
+              "capture_qactions": 0,
+              "checking_drop_qactions": 0,
+              "checking_move_qactions": 0,
+              "choice_kind": "ACTION",
+              "completed_depth": 2,
+              "countermove_hits": 0,
+              "declaration": null,
+              "declaration_checks": 0,
+              "declaration_restart_options": 0,
+              "declaration_root_selected": false,
+              "declaration_win_options": 0,
+              "elapsed_seconds": 0.01600000006146729,
+              "evaluation_calls": 0,
+              "evaluation_profile_cache_hit": false,
+              "evaluation_seconds": 0.0,
+              "in_check_qnodes": 0,
+              "legal_actions_generated": 138,
+              "legal_generation_calls": 18,
+              "legal_generation_seconds": 0.0,
+              "mate_pruning_cutoffs": 0,
+              "move_picker_generated": 0,
+              "move_picker_yielded": 0,
+              "move_picker_yielded_by_stage": {},
+              "native_legality_calls": 17,
+              "native_legality_fallbacks": 0,
+              "native_legality_operational_failures": 0,
+              "nodes": 82,
+              "nonchecking_drop_excluded": 0,
+              "ordered_moves": 138,
+              "ordering_calls": 18,
+              "ordering_seconds": 0.0,
+              "position_key_cache_hits": 80,
+              "position_keys_computed": 111,
+              "principal_variation": [
+                {
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 0,
+                    "rank": 0
+                  },
+                  "geometry_id": "g11",
+                  "pattern_id": "legacy_006",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 1,
+                    "rank": 1
+                  }
+                },
+                {
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 7
+                  },
+                  "geometry_id": "g11",
+                  "pattern_id": "legacy_006",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 2,
+                    "rank": 6
+                  }
+                }
+              ],
+              "promotion_qactions": 0,
+              "pvs_null_window_searches": 0,
+              "pvs_researches": 0,
+              "qdepth_cutoffs": 0,
+              "qnodes": 0,
+              "qsearch_budget_aborts": 0,
+              "qsearch_check_hard_limit_aborts": 0,
+              "root_scan_nodes": 0,
+              "root_scan_used_fallback": false,
+              "score": 2043,
+              "selective_depth": 2,
+              "stand_pat_cutoffs": 0,
+              "successor_handles_created": 138,
+              "successors_materialized": 80,
+              "successors_searched": 80,
+              "terminal_cache_hits": 0,
+              "terminal_results_computed": 80,
+              "termination_reason": "completed_depth",
+              "time_to_first_completed_iteration": 0.01600000006146729,
+              "time_to_first_legal_action": 0.0,
+              "tt_cutoffs": 13,
+              "tt_hits": 14,
+              "tt_probes": 31
+            }
+          ],
+          "equal_signature": true
+        },
+        {
+          "alternate": true,
+          "decisions": [
+            {
+              "action": {
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 0,
+                  "rank": 0
+                },
+                "geometry_id": "g11",
+                "pattern_id": "legacy_006",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 1,
+                  "rank": 1
+                }
+              },
+              "aspiration_fail_high": 0,
+              "aspiration_fail_low": 0,
+              "aspiration_researches": 0,
+              "beta_cutoffs": 15,
+              "capture_qactions": 0,
+              "checking_drop_qactions": 0,
+              "checking_move_qactions": 0,
+              "choice_kind": "ACTION",
+              "completed_depth": 2,
+              "countermove_hits": 0,
+              "declaration": null,
+              "declaration_checks": 0,
+              "declaration_restart_options": 0,
+              "declaration_root_selected": false,
+              "declaration_win_options": 0,
+              "elapsed_seconds": 0.015999999828636646,
+              "evaluation_calls": 0,
+              "evaluation_profile_cache_hit": false,
+              "evaluation_seconds": 0.0,
+              "in_check_qnodes": 0,
+              "legal_actions_generated": 138,
+              "legal_generation_calls": 18,
+              "legal_generation_seconds": 0.0,
+              "mate_pruning_cutoffs": 0,
+              "move_picker_generated": 0,
+              "move_picker_yielded": 0,
+              "move_picker_yielded_by_stage": {},
+              "native_legality_calls": 0,
+              "native_legality_fallbacks": 0,
+              "native_legality_operational_failures": 0,
+              "nodes": 82,
+              "nonchecking_drop_excluded": 0,
+              "ordered_moves": 138,
+              "ordering_calls": 18,
+              "ordering_seconds": 0.0,
+              "position_key_cache_hits": 80,
+              "position_keys_computed": 111,
+              "principal_variation": [
+                {
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 0,
+                    "rank": 0
+                  },
+                  "geometry_id": "g11",
+                  "pattern_id": "legacy_006",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 1,
+                    "rank": 1
+                  }
+                },
+                {
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 7
+                  },
+                  "geometry_id": "g11",
+                  "pattern_id": "legacy_006",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 2,
+                    "rank": 6
+                  }
+                }
+              ],
+              "promotion_qactions": 0,
+              "pvs_null_window_searches": 0,
+              "pvs_researches": 0,
+              "qdepth_cutoffs": 0,
+              "qnodes": 0,
+              "qsearch_budget_aborts": 0,
+              "qsearch_check_hard_limit_aborts": 0,
+              "root_scan_nodes": 0,
+              "root_scan_used_fallback": false,
+              "score": 2043,
+              "selective_depth": 2,
+              "stand_pat_cutoffs": 0,
+              "successor_handles_created": 138,
+              "successors_materialized": 80,
+              "successors_searched": 80,
+              "terminal_cache_hits": 0,
+              "terminal_results_computed": 80,
+              "termination_reason": "completed_depth",
+              "time_to_first_completed_iteration": 0.015999999828636646,
+              "time_to_first_legal_action": 0.0,
+              "tt_cutoffs": 13,
+              "tt_hits": 14,
+              "tt_probes": 31
+            },
+            {
+              "action": {
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 0,
+                  "rank": 0
+                },
+                "geometry_id": "g11",
+                "pattern_id": "legacy_006",
+                "promotion_target_id": null,
+                "to_square": {
+                  "file": 1,
+                  "rank": 1
+                }
+              },
+              "aspiration_fail_high": 0,
+              "aspiration_fail_low": 0,
+              "aspiration_researches": 0,
+              "beta_cutoffs": 15,
+              "capture_qactions": 0,
+              "checking_drop_qactions": 0,
+              "checking_move_qactions": 0,
+              "choice_kind": "ACTION",
+              "completed_depth": 2,
+              "countermove_hits": 0,
+              "declaration": null,
+              "declaration_checks": 0,
+              "declaration_restart_options": 0,
+              "declaration_root_selected": false,
+              "declaration_win_options": 0,
+              "elapsed_seconds": 0.01500000013038516,
+              "evaluation_calls": 0,
+              "evaluation_profile_cache_hit": false,
+              "evaluation_seconds": 0.0,
+              "in_check_qnodes": 0,
+              "legal_actions_generated": 138,
+              "legal_generation_calls": 18,
+              "legal_generation_seconds": 0.0,
+              "mate_pruning_cutoffs": 0,
+              "move_picker_generated": 0,
+              "move_picker_yielded": 0,
+              "move_picker_yielded_by_stage": {},
+              "native_legality_calls": 17,
+              "native_legality_fallbacks": 0,
+              "native_legality_operational_failures": 0,
+              "nodes": 82,
+              "nonchecking_drop_excluded": 0,
+              "ordered_moves": 138,
+              "ordering_calls": 18,
+              "ordering_seconds": 0.0,
+              "position_key_cache_hits": 80,
+              "position_keys_computed": 111,
+              "principal_variation": [
+                {
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 0,
+                    "rank": 0
+                  },
+                  "geometry_id": "g11",
+                  "pattern_id": "legacy_006",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 1,
+                    "rank": 1
+                  }
+                },
+                {
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 7
+                  },
+                  "geometry_id": "g11",
+                  "pattern_id": "legacy_006",
+                  "promotion_target_id": null,
+                  "to_square": {
+                    "file": 2,
+                    "rank": 6
+                  }
+                }
+              ],
+              "promotion_qactions": 0,
+              "pvs_null_window_searches": 0,
+              "pvs_researches": 0,
+              "qdepth_cutoffs": 0,
+              "qnodes": 0,
+              "qsearch_budget_aborts": 0,
+              "qsearch_check_hard_limit_aborts": 0,
+              "root_scan_nodes": 0,
+              "root_scan_used_fallback": false,
+              "score": 2043,
+              "selective_depth": 2,
+              "stand_pat_cutoffs": 0,
+              "successor_handles_created": 138,
+              "successors_materialized": 80,
+              "successors_searched": 80,
+              "terminal_cache_hits": 0,
+              "terminal_results_computed": 80,
+              "termination_reason": "completed_depth",
+              "time_to_first_completed_iteration": 0.01500000013038516,
+              "time_to_first_legal_action": 0.0,
+              "tt_cutoffs": 13,
+              "tt_hits": 14,
+              "tt_probes": 31
+            }
+          ],
+          "equal_signature": true
+        }
+      ],
+      "complete": true,
+      "declaration": "Publicly compiled newly admitted no-screen cannon start, both default and alternate setup. Fixed depth2/2048nodes/5sec/q0, root tactical off, no persistent cache. Compare Core versus Native actual decision signatures; dynamic evaluation unchanged, no price/strength evidence.",
+      "producer_sha256": "8f9c96d0b31ae8cb762db7e99b3558ed93dc291f97816879d5a27531b7dc3495"
+    }
+  },
+  "regression": {
+    "exit_code": 0,
+    "final_with_compiler_tests": 1555,
+    "native_repair_default_tests": 1550
+  },
+  "routing": {
+    "complete": true,
+    "new_direct_rejections": [],
+    "old_direct_rejections": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "producer_sha256": "2889203c47530b329650591a931cd1be34e2906600a3810508caa1e1a13aaabd",
+    "rows": [
+      {
+        "before_after_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "core_new_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "depth": 2,
+        "native": false,
+        "new_route": null,
+        "new_seconds": 0.06299999984912574,
+        "old_route": null,
+        "old_seconds": 0.06200000015087426,
+        "ply": 0
+      },
+      {
+        "before_after_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "core_new_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "depth": 2,
+        "native": true,
+        "new_route": {
+          "attempts": 32,
+          "failures": 0,
+          "returned": 32
+        },
+        "new_seconds": 0.030999999959021807,
+        "old_route": {
+          "attempts": 31,
+          "failures": 1,
+          "returned": 30
+        },
+        "old_seconds": 0.03100000019185245,
+        "ply": 0
+      },
+      {
+        "before_after_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "core_new_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "depth": 3,
+        "native": false,
+        "new_route": null,
+        "new_seconds": 0.39099999982863665,
+        "old_route": null,
+        "old_seconds": 0.4059999999590218,
+        "ply": 0
+      },
+      {
+        "before_after_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "core_new_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "depth": 3,
+        "native": true,
+        "new_route": {
+          "attempts": 122,
+          "failures": 0,
+          "returned": 122
+        },
+        "new_seconds": 0.2339999999385327,
+        "old_route": {
+          "attempts": 31,
+          "failures": 1,
+          "returned": 30
+        },
+        "old_seconds": 0.375,
+        "ply": 0
+      },
+      {
+        "before_after_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "core_new_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "depth": 2,
+        "native": false,
+        "new_route": null,
+        "new_seconds": 0.06200000015087426,
+        "old_route": null,
+        "old_seconds": 0.06199999991804361,
+        "ply": 5
+      },
+      {
+        "before_after_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "core_new_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "depth": 2,
+        "native": true,
+        "new_route": {
+          "attempts": 6,
+          "failures": 0,
+          "returned": 6
+        },
+        "new_seconds": 0.0470000000204891,
+        "old_route": {
+          "attempts": 1,
+          "failures": 1,
+          "returned": 0
+        },
+        "old_seconds": 0.0470000000204891,
+        "ply": 5
+      },
+      {
+        "before_after_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "core_new_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "depth": 3,
+        "native": false,
+        "new_route": null,
+        "new_seconds": 0.25,
+        "old_route": null,
+        "old_seconds": 0.21899999980814755,
+        "ply": 5
+      },
+      {
+        "before_after_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "core_new_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "depth": 3,
+        "native": true,
+        "new_route": {
+          "attempts": 231,
+          "failures": 0,
+          "returned": 231
+        },
+        "new_seconds": 0.1559999999590218,
+        "old_route": {
+          "attempts": 1,
+          "failures": 1,
+          "returned": 0
+        },
+        "old_seconds": 0.21800000010989606,
+        "ply": 5
+      },
+      {
+        "before_after_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "core_new_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "depth": 2,
+        "native": false,
+        "new_route": null,
+        "new_seconds": 0.031999999890103936,
+        "old_route": null,
+        "old_seconds": 0.030999999959021807,
+        "ply": 8
+      },
+      {
+        "before_after_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "core_new_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "depth": 2,
+        "native": true,
+        "new_route": {
+          "attempts": 37,
+          "failures": 0,
+          "returned": 37
+        },
+        "new_seconds": 0.031999999890103936,
+        "old_route": {
+          "attempts": 1,
+          "failures": 1,
+          "returned": 0
+        },
+        "old_seconds": 0.030999999959021807,
+        "ply": 8
+      },
+      {
+        "before_after_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "core_new_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "depth": 3,
+        "native": false,
+        "new_route": null,
+        "new_seconds": 0.6869999999180436,
+        "old_route": null,
+        "old_seconds": 0.6879999998491257,
+        "ply": 8
+      },
+      {
+        "before_after_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "core_new_equal": {
+          "action": true,
+          "completed_depth": true,
+          "nodes": true,
+          "principal_variation": true,
+          "qnodes": true,
+          "score": true
+        },
+        "depth": 3,
+        "native": true,
+        "new_route": {
+          "attempts": 118,
+          "failures": 0,
+          "returned": 118
+        },
+        "new_seconds": 0.5630000000819564,
+        "old_route": {
+          "attempts": 1,
+          "failures": 1,
+          "returned": 0
+        },
+        "old_seconds": 0.671000000089407,
+        "ply": 8
+      }
+    ]
+  },
+  "scope": "Structural Native import and complete history repair; no evaluation/default change."
+}

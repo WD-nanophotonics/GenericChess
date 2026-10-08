@@ -55,7 +55,12 @@ both original observations and the correction are retained. A fresh disjoint
 remaining-time kernel tests the omission without fitting prices. Six/ten-step
 seed overlap also prevents claiming independent horizon replication.
 TEMPORAL_HAND_SERVICE.md owns corrected policies, uncertainty and remaining context
-qualification. Do not repeat unchanged horizons or infer material utility.
+qualification. A fixed-three-transition census on selected delayed captures
+now gives explicit context-dependent witnesses. A matched P layout isolates
+enemy R/TR status: H3 changes0.68764 to0.65107, both below initial-context0.82011.
+Remaining time and this single opponent-state factor cannot justify context
+collapse. Keep the cost-limited partial and finite scope; do not repeat unchanged
+horizons or infer material utility.
 
 GOAL_INTERACTION.md separates terminal wins from zero-mobility stalemates and
 constructs matched actor/helper/immobile four-cell interactions. A B/N mate
@@ -66,8 +71,11 @@ unchanged. An actual Shogi capture/drop intervention now shows that permitting a
 pawn drop lowers terminal-zero endpoint mean. Retain a terminal/activity vector;
 a declared board-normalized scalar convention is constructive but uncalibrated.
 G/P ordering is robust across nonnegative terminal weights on this cohort,
-ratios are not. Next test ONE changed behavioral/context law for that finite
-construction, not another unchanged horizon sweep or a human-fitted scale.
+ratios are not. A terminal-first drop law now saturates G and permitted P at
+win1/activity0; minimum-reply selection changes none of these cells. This task
+does not identify policy-independent material ratios. The next approximation
+needs a discriminating context/response question, not this saturated task or
+a scale selected against human references.
 Per-drop controls expose proxy decision errors, while twelve actual public-player
 calls already prioritize the legal wins. This is a construction problem, not
 evidence for another terminal-priority player patch.
@@ -131,6 +139,15 @@ references remain unknown. Opaque combined-history aliases retain legal/optimal
 scores with ID-dependent ties. Same-evaluation attack maps now share work across
 unchanged features:1524old/new scores and24search action/score/node/depth results
 match, with local timing savings. UNFAMILIAR_RULE_SEARCH.md owns scope and costs.
+
+Fresh Native imports now preserve actual explicit type transformations and
+actor/check history. Nine frozen combined roots import exactly; twelve matched
+searches preserve outputs and expose previously hidden fallback. Public decisions
+report actual Native successes/failures. Bulk semantic attacks remain a scoped
+prototype; existing evaluator limitations/defaults are unchanged.
+Initial semantic layouts now use final-executor attack/legal-action validation
+instead of prior legacy attack checks. Paired safe/attacked cannon starts retain
+the safety boundary and four newly admitted public search controls agree.
 
 ## Evidence and delivery
 

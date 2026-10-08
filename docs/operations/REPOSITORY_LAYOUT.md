@@ -33,3 +33,10 @@ and hashes in [cleanup archive](../archive/repository_cleanup_20261007/README.md
 Restore only needed files into a separate temporary investigation directory;
 never overlay the live checkout wholesale. Current binary/source pins and active
 pilot paths remain stable while their declared comparison is unfinished.
+
+The installed-Zig Native builder scripts/build_native_zig.py was restored alone
+when a demonstrated semantic import fix required rebuilding. Original source,
+binary/source/compiler pins and recovery controls are isolated in
+../archive/semantic_root_recovery_20261008/. No retired audit/flow entry is active.
+Service/context sensitivity sources and partials have a separate purpose archive,
+../archive/service_context_sensitivity_20261008/; neither archive is a live import.

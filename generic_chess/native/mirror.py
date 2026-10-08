@@ -86,7 +86,11 @@ def _position_payload(compiled, native_rules, state) -> dict:
             counts[type_map[type_id]] = int(count)
         hands.append(counts)
 
-    history = tuple(_history_words(record.position_key) for record in state.history)
+    # Preserve actors/check events as well as digests. Four-word-only imports
+    # retain repetition keys but lose continuous-check adjudication authority.
+    history = tuple(_history_words(record.position_key) + (
+        255 if record.actor < 0 else int(record.actor), int(bool(record.gave_check)))
+        for record in state.history)
     if not history:
         raise MirrorUnavailable("opaque or absent root history")
     expected_current = str(position_identity_key(state.position, compiled))

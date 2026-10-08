@@ -537,6 +537,17 @@ def compile_ruleset(
     (fail-closed) unless ``allow_semantic_actions=True`` is passed by the
     semantic-IR compiler for table/geometry inspection.
     """
+    return _compile_ruleset_baseline(
+        rule_definition, allow_semantic_actions=allow_semantic_actions,
+        validate_position=True,
+    )
+
+
+def _compile_ruleset_baseline(
+    rule_definition: RuleSet | Mapping[str, Any], *,
+    allow_semantic_actions: bool, validate_position: bool,
+) -> CompiledRuleSet:
+    """Build legacy metadata; semantic compilation owns its position checks."""
     ruleset = rule_definition if isinstance(rule_definition, RuleSet) else ruleset_from_dict(rule_definition)
     if (
         ruleset.board_width is not None
@@ -611,11 +622,12 @@ def compile_ruleset(
         ),
     )
 
-    issues = _position_validation(compiled)
-    for setup_key in compiled.initial_setup_positions:
-        issues.extend(_position_validation(compiled, setup_key))
-    if issues:
-        raise RuleValidationError(issues)
+    if validate_position:
+        issues = _position_validation(compiled)
+        for setup_key in compiled.initial_setup_positions:
+            issues.extend(_position_validation(compiled, setup_key))
+        if issues:
+            raise RuleValidationError(issues)
 
     # Round-trip rule equivalence: the fingerprint must survive serialization.
     round_tripped = deserialize_ruleset(serialize_ruleset(ruleset))
@@ -2109,7 +2121,11 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
                 ]
             )
         return compiled
-    baseline = compile_ruleset(ruleset, allow_semantic_actions=True)
+    # Legacy attacks may disagree with replaced semantic capture patterns.
+    # Keep schema/metadata validation, then validate every start with the
+    # final semantic executor below. The public legacy entry stays unchanged.
+    baseline = _compile_ruleset_baseline(
+        ruleset, allow_semantic_actions=True, validate_position=False)
     compiled = _compile_semantic_ruleset_from_baseline(baseline, ruleset)
     _validate_semantic_initial_position(compiled)
     return compiled

@@ -3285,6 +3285,11 @@ static int gc_semantic_terminal_status(const GCSemanticRules *rules,
     unsigned long repetitions = 0;
     if (gc_semantic_repetition_count(rules, position, &repetitions) < 0) return -1;
     if (rules->repetition_policy == 1) {
+        /* At the repetition threshold, digests alone cannot distinguish a
+         * draw from continuous-check loss. Do not silently adjudicate a draw
+         * when an imported history has omitted actors/check events. */
+        if (repetitions >= rules->repetition_limit &&
+            !position->history_events_exact) return -1;
         int perpetual_winner = -1;
         int perpetual = gc_semantic_continuous_check_winner(rules, position, &perpetual_winner);
         if (perpetual < 0) return -1;

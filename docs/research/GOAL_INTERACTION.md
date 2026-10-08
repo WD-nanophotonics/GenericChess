@@ -163,3 +163,14 @@ sparse zeros and cross-game legality differences intact. Science remains OPEN.
 both cohorts, exclusions and witnesses. [Archive](../archive/goal_interaction_20261008/README.md)
 retains executed definitions, producers and failures, separate from temporal and
 search evidence. No live product dependency imports this experiment.
+
+## Behavior-law sensitivity
+
+Exact frozen-census reweighting selects uniformly among immediate winning drops
+when available. G and P without S4 both saturate at win1/activity0; original P
+stays win0/activity31/33. Terminal-normalized values are1,1 and31/2673. Thus
+the uniform-law G/P distinction is not an intrinsic material ratio. Selecting
+minimum-scalar enemy replies changes none of these three cells: their existing
+reply outcomes lack discrimination. No new player patch, sample or fit follows.
+[All policy combinations](data/service_context_sensitivity_20261008.json) and
+[isolated sources](../archive/service_context_sensitivity_20261008/README.md).

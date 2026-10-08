@@ -1,0 +1,826 @@
+{
+  "archive": "../archive/service_context_sensitivity_20261008",
+  "base_sha": "7d289d1c3dae39863227deda081e942fb3e99e4d",
+  "delayed_context": {
+    "cases": [
+      {
+        "H3": "20949451402123/6184134356400",
+        "T": 3,
+        "baseline_H3": "2197181537522771/534326189997600",
+        "baseline_difference": "-169158945856090693/233500545028951200",
+        "context": 0,
+        "seconds": 61.62756750010885,
+        "seed": 14,
+        "target": "G",
+        "transitions": 24451
+      },
+      {
+        "H3": "58159994451457/13742520792000",
+        "T": 5,
+        "baseline_H3": "2197181537522771/534326189997600",
+        "baseline_difference": "280339498267001057/2335005450289512000",
+        "context": 0,
+        "seconds": 73.20845489995554,
+        "seed": 28,
+        "target": "G",
+        "transitions": 28988
+      },
+      {
+        "H3": "545210931430699/837401396832000",
+        "T": 3,
+        "baseline_H3": "13613676495500523527/16599766019330894400",
+        "baseline_difference": "-56119749245926975699/331995320386617888000",
+        "context": 0,
+        "seconds": 52.786852800054476,
+        "seed": 14,
+        "target": "TP",
+        "transitions": 22523
+      },
+      {
+        "H3": "181901020326997/279133798944000",
+        "T": 5,
+        "baseline_H3": "13613676495500523527/16599766019330894400",
+        "baseline_difference": "-55924640056547759671/331995320386617888000",
+        "context": 0,
+        "seconds": 52.8003782001324,
+        "seed": 28,
+        "target": "TP",
+        "transitions": 22337
+      }
+    ],
+    "complete": false,
+    "complete_roots": 4,
+    "declaration": "Prospective finite context counterexample: for each frozen context0/1 and G/TP outer cell choose FIRST stored episode with T3 and FIRST with T5, before reading any continuation payoff. Reconstruct only its authentic prefix through capture. Enumerate exactly3 further actual transitions using the existing uniform ordinary / priority unique-tag legal-drop policy. Compare to initial-capture exactH3 with SAME remaining horizon, not to delayed fixed-node10 U or a fitted kernel. Full Core/Native action/state/terminal parity at every visited node; exact rational branch weights, terminal U0.8preselected delayed roots; one300sec interruptible development checkpoint, no automatic extension. Outcomes decide whether postcapture context can be collapsed solely by remaining time; selected exposed witnesses are not population means, causal attribution or material utility. Save partials and all outcomes.",
+    "dependencies": {
+      ".local_agent/paired-context-20261008/joint-context.json": "69aaf933684f077b1f98d5f8bc2cf88e3199795ee2dbeb2da3c76f025268f880",
+      ".local_agent/paired-context-20261008/rook-pressure.json": "2e5b8a1fb86c47d23787ec46b900d2500d4e7f23832090ef48a0bc01fa3a630d",
+      ".local_agent/transfer-time-20261008/horizon10.json": "6ab5fd47850be2aaf6e220ceaa6539370ce086f685152498d60f6e85d0b96400"
+    },
+    "legal_queries": 119903,
+    "nodes": 119884,
+    "producer_sha256": "ca5db7a015747bbbb358e17698f30aeb0b56a4034deaccfcdc95b82f354e972b",
+    "seconds": 300.0018782000989,
+    "terminal_queries": 119903,
+    "transitions": 119899
+  },
+  "deployment_strata": {
+    "cases": [
+      {
+        "N": 2048,
+        "context": 0,
+        "deployment_times": {
+          "3": 426,
+          "5": 107,
+          "7": 77,
+          "9": 46,
+          "None": 1392
+        },
+        "later_than_two": 7,
+        "no_transfer": 1362,
+        "strata": [
+          {
+            "W": null,
+            "mean_U": 0.0,
+            "n": 1392,
+            "positive_U": 0,
+            "total_U": 0
+          },
+          {
+            "W": 2,
+            "mean_U": 4.098613251155624,
+            "n": 649,
+            "positive_U": 531,
+            "total_U": 2660
+          },
+          {
+            "W": 4,
+            "mean_U": 4.857142857142857,
+            "n": 7,
+            "positive_U": 7,
+            "total_U": 34
+          }
+        ],
+        "target": "G",
+        "transfer_no_deploy": 30
+      },
+      {
+        "N": 2048,
+        "context": 0,
+        "deployment_times": {
+          "3": 426,
+          "5": 107,
+          "7": 81,
+          "9": 48,
+          "None": 1386
+        },
+        "later_than_two": 7,
+        "no_transfer": 1353,
+        "strata": [
+          {
+            "W": null,
+            "mean_U": 0.0,
+            "n": 1386,
+            "positive_U": 0,
+            "total_U": 0
+          },
+          {
+            "W": 2,
+            "mean_U": 0.9755725190839695,
+            "n": 655,
+            "positive_U": 518,
+            "total_U": 639
+          },
+          {
+            "W": 4,
+            "mean_U": 0.8571428571428571,
+            "n": 7,
+            "positive_U": 6,
+            "total_U": 6
+          }
+        ],
+        "target": "TP",
+        "transfer_no_deploy": 33
+      },
+      {
+        "N": 2048,
+        "context": 1,
+        "deployment_times": {
+          "3": 296,
+          "5": 150,
+          "7": 87,
+          "9": 42,
+          "None": 1473
+        },
+        "later_than_two": 8,
+        "no_transfer": 1436,
+        "strata": [
+          {
+            "W": null,
+            "mean_U": 0.0,
+            "n": 1473,
+            "positive_U": 0,
+            "total_U": 0
+          },
+          {
+            "W": 2,
+            "mean_U": 4.021164021164021,
+            "n": 567,
+            "positive_U": 460,
+            "total_U": 2280
+          },
+          {
+            "W": 4,
+            "mean_U": 4.375,
+            "n": 8,
+            "positive_U": 7,
+            "total_U": 35
+          }
+        ],
+        "target": "G",
+        "transfer_no_deploy": 37
+      },
+      {
+        "N": 2048,
+        "context": 1,
+        "deployment_times": {
+          "3": 296,
+          "5": 150,
+          "7": 84,
+          "9": 43,
+          "None": 1475
+        },
+        "later_than_two": 9,
+        "no_transfer": 1443,
+        "strata": [
+          {
+            "W": null,
+            "mean_U": 0.0,
+            "n": 1475,
+            "positive_U": 0,
+            "total_U": 0
+          },
+          {
+            "W": 2,
+            "mean_U": 0.9698581560283688,
+            "n": 564,
+            "positive_U": 450,
+            "total_U": 547
+          },
+          {
+            "W": 4,
+            "mean_U": 0.7777777777777778,
+            "n": 9,
+            "positive_U": 7,
+            "total_U": 7
+          }
+        ],
+        "target": "TP",
+        "transfer_no_deploy": 32
+      }
+    ],
+    "complete": true,
+    "declaration": "Declared before parsing this decomposition: first owner0 tagged-base dropD is the first recorded baseG/P drop on an even-index actor0 turn, after first transferT. Unique tag and action histories were verified by original producer. Count W=D-T, no deployment and final U contributions; do not regress/fit a same-sample kernel or call an identity predictive validation. Exposed postdeclared localization only, no causal or holdout claim. Tests whether delayed deployment is frequent enough to motivate a cheap context state instead of unlimited geometry kernels.",
+    "dependency_sha256": "6ab5fd47850be2aaf6e220ceaa6539370ce086f685152498d60f6e85d0b96400",
+    "producer_sha256": "9e075c0abe2a6e4c9627d1527750035a09b4f53e5f53f38c455d4f23628a86fb"
+  },
+  "evasion_witness": {
+    "cases": [
+      {
+        "enemy_promoted": false,
+        "nodes": [
+          {
+            "U": 0,
+            "legal_P_drops": 0,
+            "side": 0,
+            "step_from_initial": 0,
+            "steps_after_capture": -1,
+            "tag_location": "board",
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "U": null,
+            "legal_P_drops": 0,
+            "side": 1,
+            "step_from_initial": 1,
+            "steps_after_capture": 0,
+            "tag_location": "hand",
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "U": 0,
+            "legal_P_drops": 0,
+            "side": 0,
+            "step_from_initial": 2,
+            "steps_after_capture": 1,
+            "tag_location": "hand",
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "U": null,
+            "legal_P_drops": 0,
+            "side": 1,
+            "step_from_initial": 3,
+            "steps_after_capture": 2,
+            "tag_location": "hand",
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "U": 0,
+            "legal_P_drops": 69,
+            "side": 0,
+            "step_from_initial": 4,
+            "steps_after_capture": 3,
+            "tag_location": "hand",
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "U": null,
+            "legal_P_drops": 0,
+            "side": 1,
+            "step_from_initial": 5,
+            "steps_after_capture": 4,
+            "tag_location": "board",
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "U": 1,
+            "legal_P_drops": 0,
+            "side": 0,
+            "step_from_initial": 6,
+            "steps_after_capture": 5,
+            "tag_location": "board",
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          }
+        ],
+        "route": [
+          {
+            "actor_type_id": "N",
+            "from_square": {
+              "file": 3,
+              "rank": 2
+            },
+            "geometry_id": "g20",
+            "pattern_id": "legacy_027",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 4,
+              "rank": 4
+            }
+          },
+          {
+            "actor_type_id": "R",
+            "from_square": {
+              "file": 8,
+              "rank": 2
+            },
+            "geometry_id": "g24",
+            "pattern_id": "legacy_034",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_013",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 8,
+              "rank": 8
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 8,
+              "rank": 7
+            }
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g72",
+            "pattern_id": "sem_00_standard_drop_contract",
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 8,
+              "rank": 7
+            },
+            "geometry_id": "g13",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 8,
+              "rank": 8
+            }
+          }
+        ]
+      },
+      {
+        "enemy_promoted": true,
+        "nodes": [
+          {
+            "U": 0,
+            "legal_P_drops": 0,
+            "side": 0,
+            "step_from_initial": 0,
+            "steps_after_capture": -1,
+            "tag_location": "board",
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "U": null,
+            "legal_P_drops": 0,
+            "side": 1,
+            "step_from_initial": 1,
+            "steps_after_capture": 0,
+            "tag_location": "hand",
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "U": 0,
+            "legal_P_drops": 0,
+            "side": 0,
+            "step_from_initial": 2,
+            "steps_after_capture": 1,
+            "tag_location": "hand",
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "U": null,
+            "legal_P_drops": 0,
+            "side": 1,
+            "step_from_initial": 3,
+            "steps_after_capture": 2,
+            "tag_location": "hand",
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "U": 0,
+            "legal_P_drops": 69,
+            "side": 0,
+            "step_from_initial": 4,
+            "steps_after_capture": 3,
+            "tag_location": "hand",
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "U": null,
+            "legal_P_drops": 0,
+            "side": 1,
+            "step_from_initial": 5,
+            "steps_after_capture": 4,
+            "tag_location": "board",
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "U": 1,
+            "legal_P_drops": 0,
+            "side": 0,
+            "step_from_initial": 6,
+            "steps_after_capture": 5,
+            "tag_location": "board",
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          }
+        ],
+        "route": [
+          {
+            "actor_type_id": "N",
+            "from_square": {
+              "file": 3,
+              "rank": 2
+            },
+            "geometry_id": "g20",
+            "pattern_id": "legacy_027",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 4,
+              "rank": 4
+            }
+          },
+          {
+            "actor_type_id": "TR",
+            "from_square": {
+              "file": 8,
+              "rank": 2
+            },
+            "geometry_id": "g59",
+            "pattern_id": "legacy_110",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_013",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 1,
+              "rank": 2
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 8,
+              "rank": 8
+            },
+            "geometry_id": "g14",
+            "pattern_id": "legacy_012",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 8,
+              "rank": 7
+            }
+          },
+          {
+            "base_type_id": "P",
+            "geometry_id": "g72",
+            "pattern_id": "sem_00_standard_drop_contract",
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            }
+          },
+          {
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 8,
+              "rank": 7
+            },
+            "geometry_id": "g13",
+            "pattern_id": "legacy_010",
+            "promotion_target_id": null,
+            "to_square": {
+              "file": 8,
+              "rank": 8
+            }
+          }
+        ]
+      }
+    ],
+    "complete": true,
+    "declaration": "Decision-changing mechanism check, not a new horizon sample: both fixed R/TR layouts, actual forced Ncapture, enemy rook8,2-to1,2 (nonpromoting variant where available), own King captures it, lexical enemy King reply, own Pdrop3,3, lexical enemy King reply. Check whether zero H3 is delayed deployment after forced evasion rather than permanent P unavailability. Full legal/state/terminal Core/Native parity. Report a witness only, not expectedH5, optimal play, material value or mean correction. No search/fit/new population.",
+    "dependency_sha256": "343ab0d8a19688ef0522c5f81c919426b3698b6bac793b51f58569d32ded2f53",
+    "producer_sha256": "30fca58de46dad608d6c7c5e43a89a2fa68de31ce9ff6f7b8e47136b1ef7f427"
+  },
+  "reply_policy": {
+    "cases": [
+      {
+        "H3": "142217087724490006309/206819533771459408800",
+        "complete": true,
+        "destination_uniform": "157427004801331788073/225621309568864809600",
+        "enemy_promoted": false,
+        "first_replies": 33,
+        "first_reply_destinations": 18,
+        "minimum_reply_H2": "0",
+        "minimum_ties": 4,
+        "old_exact_H3_equal": true,
+        "promoting_replies": 15,
+        "seconds": 130.15400730003603
+      },
+      {
+        "H3": "545210931430699/837401396832000",
+        "complete": true,
+        "destination_uniform": "545210931430699/837401396832000",
+        "enemy_promoted": true,
+        "first_replies": 20,
+        "first_reply_destinations": 20,
+        "minimum_reply_H2": "0",
+        "minimum_ties": 3,
+        "old_exact_H3_equal": true,
+        "promoting_replies": 0,
+        "seconds": 52.00389280007221
+      }
+    ],
+    "complete": true,
+    "declaration": "Changed premise, not an extension of the cost-limited8root census: two matched declared initial rules, ownK1,1/N3,2/enemyTP(baseP)4,4/R8,2/K8,8. Only enemyR currentR/false versusTR/true differs; same actual Ncapture then exact3transition service, uniform ordinary actions/priority uniqueP legaldrop. Layout taken from FIRST observed T3P prefix; exposed synthetic intervention, not representative sampling or historical causality. New decision question: does uniform public-action counting versus uniform first-reply source/target destinations (uniform promotion variant within each destination), or first reply minimizing exact subsequentH2, change this service kernel? Re-enumerate the two fixed trees to retain conditional first-reply values missing from the prior aggregate; assert original action-uniformH3 reproduces exactly. These are declared response laws for endpoint service, not WDL/rational optimal play. All first-reply conditional values retained, no outcome-selected law or fitted price. Every node legal/state/terminal Core/Native parity. One240sec interruptible checkpoint; retain partial and no automatic extension.",
+    "dependency_sha256": "2e5b8a1fb86c47d23787ec46b900d2500d4e7f23832090ef48a0bc01fa3a630d",
+    "nodes": 71556,
+    "producer_sha256": "7febf22bcb9fe6b5b1b56e305f3065f2a99b067cd58cb6ab3e5f57398762f303",
+    "seconds": 182.34226730000228,
+    "transitions": 71554
+  },
+  "rook_context": {
+    "cases": [
+      {
+        "H3": "142217087724490006309/206819533771459408800",
+        "complete": true,
+        "enemy_promoted": false,
+        "first_replies": 33,
+        "first_reply_destinations": 18,
+        "promoting_replies": 15,
+        "seconds": 128.3946054999251
+      },
+      {
+        "H3": "545210931430699/837401396832000",
+        "complete": true,
+        "enemy_promoted": true,
+        "first_replies": 20,
+        "first_reply_destinations": 20,
+        "promoting_replies": 0,
+        "seconds": 52.41987720015459
+      }
+    ],
+    "complete": true,
+    "declaration": "Changed premise, not an extension of the cost-limited8root census: two matched declared initial rules, ownK1,1/N3,2/enemyTP(baseP)4,4/R8,2/K8,8. Only enemyR currentR/false versusTR/true differs; same actual Ncapture then exact3transition service, uniform ordinary actions/priority uniqueP legaldrop. Layout taken from FIRST observed T3P prefix; exposed synthetic intervention, not representative sampling or historical causality. Unknown: does opponent promotion state change a fixed-time service kernel enough to require conditioning? Exact H3 plus first-reply promotion multiplicity/drop counts; no fitting or new default. Every node legal/state/terminal Core/Native parity. One240sec interruptible checkpoint; retain partial and no automatic extension.",
+    "dependency_sha256": "2e5b8a1fb86c47d23787ec46b900d2500d4e7f23832090ef48a0bc01fa3a630d",
+    "nodes": 71558,
+    "producer_sha256": "158e188e73fc1e94c1b837997b49c31557b8a4157c050a321b6e26abea3aea72",
+    "seconds": 181.01232789992355,
+    "transitions": 71554
+  },
+  "scope": "Conditional endpoint/terminal service, not selected material prices, WDL or population causality.",
+  "terminal_policy": {
+    "cases": [
+      {
+        "immediate_wins": 0,
+        "legal_drops": 66,
+        "pawn_drop_mate_filter": true,
+        "policies": [
+          {
+            "C": "31/2673",
+            "drop_policy": "uniform",
+            "reply_policy": "uniform",
+            "selected_drops": 66,
+            "vector": {
+              "U": "31/33",
+              "draw": "0",
+              "loss": "0",
+              "ongoing": "1",
+              "win": "0"
+            }
+          },
+          {
+            "C": "31/2673",
+            "drop_policy": "uniform",
+            "reply_policy": "min_reply",
+            "selected_drops": 66,
+            "vector": {
+              "U": "31/33",
+              "draw": "0",
+              "loss": "0",
+              "ongoing": "1",
+              "win": "0"
+            }
+          },
+          {
+            "C": "31/2673",
+            "drop_policy": "terminal_first",
+            "reply_policy": "uniform",
+            "selected_drops": 66,
+            "vector": {
+              "U": "31/33",
+              "draw": "0",
+              "loss": "0",
+              "ongoing": "1",
+              "win": "0"
+            }
+          },
+          {
+            "C": "31/2673",
+            "drop_policy": "terminal_first",
+            "reply_policy": "min_reply",
+            "selected_drops": 66,
+            "vector": {
+              "U": "31/33",
+              "draw": "0",
+              "loss": "0",
+              "ongoing": "1",
+              "win": "0"
+            }
+          }
+        ],
+        "target": "P"
+      },
+      {
+        "immediate_wins": 1,
+        "legal_drops": 67,
+        "pawn_drop_mate_filter": false,
+        "policies": [
+          {
+            "C": "143/5427",
+            "drop_policy": "uniform",
+            "reply_policy": "uniform",
+            "selected_drops": 67,
+            "vector": {
+              "U": "62/67",
+              "draw": "0",
+              "loss": "0",
+              "ongoing": "66/67",
+              "win": "1/67"
+            }
+          },
+          {
+            "C": "143/5427",
+            "drop_policy": "uniform",
+            "reply_policy": "min_reply",
+            "selected_drops": 67,
+            "vector": {
+              "U": "62/67",
+              "draw": "0",
+              "loss": "0",
+              "ongoing": "66/67",
+              "win": "1/67"
+            }
+          },
+          {
+            "C": "1",
+            "drop_policy": "terminal_first",
+            "reply_policy": "uniform",
+            "selected_drops": 1,
+            "vector": {
+              "U": "0",
+              "draw": "0",
+              "loss": "0",
+              "ongoing": "0",
+              "win": "1"
+            }
+          },
+          {
+            "C": "1",
+            "drop_policy": "terminal_first",
+            "reply_policy": "min_reply",
+            "selected_drops": 1,
+            "vector": {
+              "U": "0",
+              "draw": "0",
+              "loss": "0",
+              "ongoing": "0",
+              "win": "1"
+            }
+          }
+        ],
+        "target": "P"
+      },
+      {
+        "immediate_wins": 3,
+        "legal_drops": 75,
+        "pawn_drop_mate_filter": true,
+        "policies": [
+          {
+            "C": "22/225",
+            "drop_policy": "uniform",
+            "reply_policy": "uniform",
+            "selected_drops": 75,
+            "vector": {
+              "U": "117/25",
+              "draw": "0",
+              "loss": "0",
+              "ongoing": "24/25",
+              "win": "1/25"
+            }
+          },
+          {
+            "C": "22/225",
+            "drop_policy": "uniform",
+            "reply_policy": "min_reply",
+            "selected_drops": 75,
+            "vector": {
+              "U": "117/25",
+              "draw": "0",
+              "loss": "0",
+              "ongoing": "24/25",
+              "win": "1/25"
+            }
+          },
+          {
+            "C": "1",
+            "drop_policy": "terminal_first",
+            "reply_policy": "uniform",
+            "selected_drops": 3,
+            "vector": {
+              "U": "0",
+              "draw": "0",
+              "loss": "0",
+              "ongoing": "0",
+              "win": "1"
+            }
+          },
+          {
+            "C": "1",
+            "drop_policy": "terminal_first",
+            "reply_policy": "min_reply",
+            "selected_drops": 3,
+            "vector": {
+              "U": "0",
+              "draw": "0",
+              "loss": "0",
+              "ongoing": "0",
+              "win": "1"
+            }
+          }
+        ],
+        "target": "G"
+      }
+    ],
+    "declaration": "Declared before execution: same three frozen actual-history Shogi cells, same legal drop/reply census, no new population or simulation. Compare uniform legal tag drops to rule-terminal-first (uniform among immediate owner0 wins if any, otherwise uniform drops); opponent chooses uniformly among replies minimizing terminal-normalized C=win-loss+U/81, versus old uniform replies. Retain separate win/loss/draw/ongoing and activity components, all tied replies, exact rational weights. Scalar is an explicit uncalibrated convention, not material utility or full-game WDL. Unknown: does the previous G/P order survive an elementary behavior change, or does terminal saturation remove price discrimination? This changes one joint behavior law, not default player settings; no human-label fit. One10sec checkpoint, cheap reuse of verified finite outcomes."
+  }
+}

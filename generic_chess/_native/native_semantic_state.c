@@ -48,16 +48,12 @@ int gc_semantic_position_pack(GCSemanticPosition *pos,
             piece->current_type >= rules->type_count || piece->promoted > 1) {
             return 0;
         }
-        const GCSemType *base_meta = &rules->types[piece->base_type];
-        if (!piece->promoted) {
-            if (piece->current_type != piece->base_type) return 0;
-        } else {
-            if (base_meta->is_anchor || !base_meta->is_promotable) return 0;
-            int allowed = 0;
-            for (uint8_t i = 0; i < base_meta->promo_target_count; i++)
-                if (base_meta->promo_targets[i] == piece->current_type) { allowed = 1; break; }
-            if (!allowed) return 0;
-        }
+        /* Semantic effects can change types outside legacy promotion targets.
+         * Packing checks representation, not legal reachability. An unpromoted
+         * piece retains its base type; explicit promotion to that SAME type can
+         * legally set promoted=1, so the converse implication does not hold.
+         * Core and Native execution/history checks own transition validity. */
+        if (!piece->promoted && piece->current_type != piece->base_type) return 0;
     }
     for (uint8_t slot_i = 0; slot_i < rules->aux_slot_count; slot_i++) {
         const GCSemAuxSlot *slot = &rules->aux_slots[slot_i];

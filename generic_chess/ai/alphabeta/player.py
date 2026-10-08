@@ -189,4 +189,7 @@ class AlphaBetaPlayer:
             declaration_win_options=stats.declaration_win_options,
             declaration_restart_options=stats.declaration_restart_options,
             declaration_root_selected=stats.declaration_root_selected,
+            native_legality_calls=stats.native_legality_calls,
+            native_legality_fallbacks=stats.native_legality_fallbacks,
+            native_legality_operational_failures=stats.native_legality_operational_failures,
         )

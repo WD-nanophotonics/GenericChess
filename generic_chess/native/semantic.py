@@ -26,6 +26,13 @@ def pack_position(native_rules, payload):
     ``history`` entries with four 64-bit words are the exact SHA-256
     repetition authority. Two-word entries remain accepted only as an
     explicit legacy transport projection and are not terminal-eligible.
+
+    An unpromoted piece must have equal base/current types. Explicit promotion
+    to the same type can legally set promoted=True; the converse is not required.
+    Explicit semantic type changes need not appear in legacy promotion metadata.
+    Packing checks representation, not legal reachability or history authenticity.
+    Continuous-check adjudication at repetition also requires actor/check events
+    (six-word history records); digest-only imports cannot decide that result.
     """
     if not native_available():
         raise RuntimeError("native extension is not built")

@@ -388,3 +388,52 @@ the existing pseudo-attack versus semantic-movement valuation gap.
 [Compact controls](data/generated_search_controls_20261008.json) and
 [isolated archive](../archive/generated_search_controls_20261008/README.md)
 retain definitions, actual routes, source snapshots, parity and cost records.
+
+## Semantic root recovery
+
+Actual R-to-TP effects exposed a Native import error: continuously advanced
+states agreed, but fresh roots at combined plies5..8 failed a legacy promotion
+whitelist. Pack now validates structural identity, preserving the false-flag
+implies equal-types check. Actual self-promotion R/R/true and anchor-preserving
+K-to-K2 effects show why stronger legacy restrictions are incorrect. It does
+not certify external reachability or rewrite base identity. Capture/reply/drop
+tests retain baseR acquisition and unpromoted R redeployment.
+
+Fresh mirrors also omitted actor/check history. Six-word imports now preserve
+it: an actual eight-ply continuous-check loss agrees with Core/carried Native.
+Digest-only imports previously misreported draw; at the continuous-check
+repetition threshold, missing events now reject adjudication instead.
+
+Old/new extension processes give5/9 versus9/9 direct root acceptance. Twelve
+matched public calls preserve action/score/depth/nodes/qnodes/PV. Each of six
+old Native-on calls falls back once; new calls return546 provider results with
+no failure. Earlier scores remain valid, but provider presence never proved
+exclusive Native execution. Public decisions now expose the existing successful
+call/fallback/failure counters. Fixed static generic-v1 controls qualify timings.
+
+A separate bulk attack prototype matches scalar Core and Native on64 owner
+maps;22 differ from legacy maps (cannon/Western pawn). Local0.0037sec versus
+0.0673sec scalar cost is feasibility evidence, not a new evaluator/default,
+legal mobility or universal speed claim. All failed prototypes remain isolated.
+Only the needed installed-Zig build entry was restored from cleanup history.
+[Compact controls](data/semantic_root_recovery_20261008.json) and
+[sources/failures](../archive/semantic_root_recovery_20261008/README.md).
+
+Two actual quiet-move cannon roots isolate a concrete dynamic-term confound.
+Without a screen, Core/Native report no enemy check while legacy ray attacks
+report check; with an immobile screen they report check while legacy reports
+none. With only the existing anchor term enabled and identical zero material
+controls, replacing the map changes scores by+55/-55 in side-to-move units.
+The local monkeypatch is restored after the probe; legacy anchor-escape geometry
+is still approximate. Semantic price comparisons should retain a static/no-dynamic
+control, rather than attributing these map errors to the price table. The first
+direct initial-root attempt was rejected by the legacy initial-anchor validator;
+the qualified probe reaches each root through a real legal quiet move. That
+separate compile-time semantic-authority issue is now repaired: internal baseline
+metadata construction defers position checks to the final semantic executor.
+Public legacy compilation, schema/inventory and round-trip validation stay intact.
+Paired default/alternate starts admit the semantically safe no-screen layout and
+still reject the screened attacked layout. Four public depth2 Core/Native calls
+on admitted starts agree in action/score/depth/nodes/qnodes/PV; each Native call
+returns17 successful legality results without fallback. This is entry/routing
+evidence, not validation of the unchanged legacy dynamic evaluation terms.

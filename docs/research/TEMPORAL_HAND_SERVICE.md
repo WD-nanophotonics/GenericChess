@@ -80,3 +80,43 @@ declared maxima. Initial loop/else pilot failure and its partial record remain.
 Compact diagnostics: [temporal data](data/temporal_hand_service_20261008.json).
 Exact producers, plans, partials and restore dependencies:
 [isolated archive](../archive/temporal_hand_service_20261008/README.md).
+
+## Delayed context and response-law diagnostics
+
+The first stored T3/T5 episodes per context/target were selected before reading
+their continuation payoffs. Exact three-transition continuations reached the
+300sec checkpoint after four complete context0 roots and119899 transitions;
+the other four roots remain unknown. G gives3.38761/4.23212 versus initial
+H3=4.11206, P0.65107/0.65166 versus0.82011. These finite witnesses show context
+dependence at the SAME remaining horizon. They do not refute the qualified
+aggregate approximation, estimate a population bias or identify a causal factor.
+The partial is retained; completing the other roots was unnecessary for that
+decision and was not used as an automatic budget extension.
+
+A separate matched synthetic initial layout (King1,1, enemyR8,2, same actual
+Ncapture) changes only enemy R/TR status. Exact P H3 is0.6876386/0.6510748,
+71554 checked transitions in181.01sec. This one factor changes the kernel but
+does not explain the whole difference from initial-context0.8201126. Enemy R
+has33 actions at18 destinations including15 promotion choices; TR has20/20/0.
+
+A separately declared response-law probe retains every conditional first-reply
+H2, reproduces both original exact H3 values and uses71554 further transitions
+in182.34sec. Uniform destinations with uniform promotion choice within each
+destination gives0.6977488/0.6510748; choosing the first reply minimizing H2
+gives0 in both cells (four/three ties). This minimizes endpoint service under
+the fixed later policy, not full-game WDL or material value. Two actual routes
+explain one zero: an adjacent rook check forces King capture/evasion, leaving
+P in hand at three transitions; legal deployment restores activity1 at five.
+This is a short-window witness, not an expected-H5 measurement or horizon fit.
+
+Postdeclared decomposition of all frozen outer routes finds only7/7/8/9 paths
+per2048 with deployment later than two plies after transfer. Their observed U
+contributions are34/6/35/7 divided by2048 for context0G/P,context1G/P. Such
+delays exist but this cohort does not support making them the dominant global
+bias explanation or building a new waiting-state framework. No causal error
+allocation follows from these strata. Keep the cheap time-aware approximation
+qualified; future context/response corrections need a concrete decision and
+cost advantage, rather than complete invariance proofs before useful development.
+
+[Compact sensitivity results](data/service_context_sensitivity_20261008.json)
+and [isolated sources/partials](../archive/service_context_sensitivity_20261008/README.md).

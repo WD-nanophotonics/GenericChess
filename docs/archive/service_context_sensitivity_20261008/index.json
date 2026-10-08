@@ -1,0 +1,132 @@
+{
+  "archives": [
+    {
+      "bytes": 13644,
+      "extracted_and_rehashed": true,
+      "file": "sources.zip",
+      "members": [
+        {
+          "bytes": 3329,
+          "path": ".local_agent/behavior-law-20261008/policy.py",
+          "sha256": "c826c5ba73bef815102212d8a81f693423882f7e13a3db5e3037be604b8384b2"
+        },
+        {
+          "bytes": 5691,
+          "path": ".local_agent/behavior-law-20261008/delayed-context.py",
+          "sha256": "ca5db7a015747bbbb358e17698f30aeb0b56a4034deaccfcdc95b82f354e972b"
+        },
+        {
+          "bytes": 5270,
+          "path": ".local_agent/behavior-law-20261008/rook-context.py",
+          "sha256": "158e188e73fc1e94c1b837997b49c31557b8a4157c050a321b6e26abea3aea72"
+        },
+        {
+          "bytes": 6655,
+          "path": ".local_agent/behavior-law-20261008/rook-reply-policy.py",
+          "sha256": "7febf22bcb9fe6b5b1b56e305f3065f2a99b067cd58cb6ab3e5f57398762f303"
+        },
+        {
+          "bytes": 2554,
+          "path": ".local_agent/behavior-law-20261008/make-reply-probe.py",
+          "sha256": "e60ac419443053fc54c23bcfe748d37a056afac29f80b2d9be5f4ae7caaba69a"
+        },
+        {
+          "bytes": 4177,
+          "path": ".local_agent/behavior-law-20261008/evasion-witness.py",
+          "sha256": "30fca58de46dad608d6c7c5e43a89a2fa68de31ce9ff6f7b8e47136b1ef7f427"
+        },
+        {
+          "bytes": 2408,
+          "path": ".local_agent/behavior-law-20261008/deployment-strata.py",
+          "sha256": "9e075c0abe2a6e4c9627d1527750035a09b4f53e5f53f38c455d4f23628a86fb"
+        }
+      ],
+      "sha256": "7d5b90bfae8ea40edd4096d0b7568f0279466aa841a352ce3881043516e17073"
+    },
+    {
+      "bytes": 61390,
+      "extracted_and_rehashed": true,
+      "file": "raw.zip",
+      "members": [
+        {
+          "bytes": 70616,
+          "path": ".local_agent/behavior-law-20261008/policy.json",
+          "sha256": "3dbc6c7780b0eb756f87ddd8c53454bf9cfba085ceca0d764bd95c34c5ce7115"
+        },
+        {
+          "bytes": 27679,
+          "path": ".local_agent/behavior-law-20261008/delayed-context.json",
+          "sha256": "4a8a07d8bfbea3542e4936fbd36297a2be1e19ffa27f02002d0c030c613fe76c"
+        },
+        {
+          "bytes": 789083,
+          "path": ".local_agent/behavior-law-20261008/rook-context.json",
+          "sha256": "343ab0d8a19688ef0522c5f81c919426b3698b6bac793b51f58569d32ded2f53"
+        },
+        {
+          "bytes": 812250,
+          "path": ".local_agent/behavior-law-20261008/rook-reply-policy.json",
+          "sha256": "3d84f84927d0863597768cf6ceca42174f45238de40e5eabe13a2f8fa59b9caf"
+        },
+        {
+          "bytes": 8777,
+          "path": ".local_agent/behavior-law-20261008/evasion-witness.json",
+          "sha256": "a07d930ed5d1cfef614f36031a5a9d8834ca6cd097f45695ac355e66d3c9fb84"
+        },
+        {
+          "bytes": 3783,
+          "path": ".local_agent/behavior-law-20261008/deployment-strata.json",
+          "sha256": "83437753a9c4c7676d933a2d3ea63bf3bf256f6690378ce00d798a5f35053f0b"
+        }
+      ],
+      "sha256": "fcf1d02361450e8b5d703c35f6914ad4ac6c2756d14683d916c751d5872bf633"
+    }
+  ],
+  "base_sha": "7d289d1c3dae39863227deda081e942fb3e99e4d",
+  "dependencies": [
+    "../goal_interaction_20261008/raw.zip: shogi-goal-service-qualified.json",
+    "../temporal_hand_service_20261008/raw.zip: horizon10.json",
+    "../paired_context_20261008/raw.zip: rook-pressure.json",
+    "../paired_context_20261008/joint-context.zip: joint-context.json"
+  ],
+  "producer_pins": [
+    {
+      "complete": true,
+      "producer": ".local_agent/behavior-law-20261008/policy.py",
+      "raw": ".local_agent/behavior-law-20261008/policy.json",
+      "sha256": "c826c5ba73bef815102212d8a81f693423882f7e13a3db5e3037be604b8384b2"
+    },
+    {
+      "complete": false,
+      "producer": ".local_agent/behavior-law-20261008/delayed-context.py",
+      "raw": ".local_agent/behavior-law-20261008/delayed-context.json",
+      "sha256": "ca5db7a015747bbbb358e17698f30aeb0b56a4034deaccfcdc95b82f354e972b"
+    },
+    {
+      "complete": true,
+      "producer": ".local_agent/behavior-law-20261008/rook-context.py",
+      "raw": ".local_agent/behavior-law-20261008/rook-context.json",
+      "sha256": "158e188e73fc1e94c1b837997b49c31557b8a4157c050a321b6e26abea3aea72"
+    },
+    {
+      "complete": true,
+      "producer": ".local_agent/behavior-law-20261008/rook-reply-policy.py",
+      "raw": ".local_agent/behavior-law-20261008/rook-reply-policy.json",
+      "sha256": "7febf22bcb9fe6b5b1b56e305f3065f2a99b067cd58cb6ab3e5f57398762f303"
+    },
+    {
+      "complete": true,
+      "producer": ".local_agent/behavior-law-20261008/evasion-witness.py",
+      "raw": ".local_agent/behavior-law-20261008/evasion-witness.json",
+      "sha256": "30fca58de46dad608d6c7c5e43a89a2fa68de31ce9ff6f7b8e47136b1ef7f427"
+    },
+    {
+      "complete": true,
+      "producer": ".local_agent/behavior-law-20261008/deployment-strata.py",
+      "raw": ".local_agent/behavior-law-20261008/deployment-strata.json",
+      "sha256": "9e075c0abe2a6e4c9627d1527750035a09b4f53e5f53f38c455d4f23628a86fb"
+    }
+  ],
+  "qualification": "Exposed finite context/policy evidence, not material utility/WDL/human fitting. delayed-context planned8roots but hit300sec at4complete roots; other roots unknown, partial preserved without extension. Matched R/TR and first-reply-policy trees complete separately, with old exactH3 replication. Reply-policy stdout prints last conditionalH2, not H3; authoritative JSON labels the values explicitly. Deployment decomposition is postdeclared localization, not predictive or causal validation.",
+  "scope": "Explicit Agent-generated synthetic sources/results only; no user/private inputs, raw Slack/account/ledger/memo/session records or credentials."
+}

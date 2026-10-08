@@ -27,12 +27,16 @@ class PieceType:
 class Piece:
     """A concrete piece occupying a square (or implied by a hand entry).
 
-    Invariants enforced by the compiler/validator:
+    Initial-position invariants enforced by the compiler/validator:
     * ``promoted == False`` => ``current_type_id == base_type_id``
     * ``promoted == True`` => ``current_type_id`` is in
       ``promotion_targets(base_type_id)``
     * anchors always have ``current_type_id == base_type_id`` and
       ``promoted == False``.
+
+    Executed semantic effects may change current type outside those legacy
+    promotion targets. Explicit promotion to the same type may set promoted
+    true. Base identity survives transformation and determines capture-to-hand.
     """
 
     owner: int
