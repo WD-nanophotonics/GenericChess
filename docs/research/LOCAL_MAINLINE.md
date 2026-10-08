@@ -64,6 +64,10 @@ reversal, tracking target movement and source loss. Thus density marginals do
 not identify the joint context/response law. This witness does not choose a
 material table or require a new general framework; SEMANTIC_CAPABILITY.md owns
 its finite scope. Next test one behaviorally motivated joint approximation.
+One cheap candidate is the declared pre-filter fixed-count placement law:
+four remaining occupants among34 cells yield exact two-screen hypergeometric
+probabilities. Check the effect of playability filtering/actual replies before
+treating that law as deployment context; do not fit a correlation parameter.
 
 ## Current search interface and limitations
 

@@ -64,6 +64,21 @@ five members were extracted/rehashed and two producer pins verified; original
 packages/failed records stay unchanged. See the same archive's
 screen-context-index.json and compact data screen_context_counterexample.
 
+A cheap next approximation has a concrete declared law. Before playability/
+immediate-win filtering, the existing six-piece inner6x6 placement procedure,
+conditioned on two distinct actor/target locations, leaves four occupants among
+34 cells. For two distinct inner screen cells, p=2/17 and P(both)=2/187.
+Hypergeometric P(clear)=145/187 and P(exactly one)=40/187, versus independent
+225/289 and60/289. These follow directly from30*29/(34*33) and
+2*4*30/(34*33), without enumerating all46376 placements or fitting prices.
+They describe the pre-filter context law, not the accepted cohort's distribution
+or a response law. A check after filtering/actual replies can decide whether
+this low-cost joint correction earns its cost. For the earlier fixed-marginal
+.5 witness, writing P(11)=P(00)=t gives fixed-target C-R=1-3t; after the declared
+uniform reply C-R=67/160-(5305/4080)t, crossing at3417/10610 rather than1/3.
+The response law therefore matters even when one joint scalar suffices for
+this finite family. No deployment context parameter is selected by this algebra.
+
 ## Observed interface gap
 
 `build_ruleset_profile` derives generic-v1 static capability from movement atoms.
