@@ -53,6 +53,19 @@
   "qualifications": [
     "First product preflight incorrectly grouped internal Xiangqi9x10 with square fixtures; prior builder correctly declined it before output. Retained failure, final square parity is four comparisons of Chess/Shogi only.",
     "Final16calls onfour rectangle roots use fixed candidate leaf/ordering, Core attacks, dynamics2/0/0, D2/8192nodes/5seconds, q0 or q2hard8; cold TT, two repetitions. q0 agrees with full-width same-evaluator reference; q2 is repeat/legal/restoration control, not independent q completeness.",
-    "Default generation remains unsupported on rectangles. Promotion/anchor dynamics are not enabled; Native unaccepted; no material, utility or strength gain claim."
+    "Default generation remains unsupported on rectangles. Promotion/anchor dynamics are not enabled; Native unaccepted; no material, utility or strength gain claim.",
+    "Later actual internal-Xiangqi opening witness checks126transitions and two legal cannon/horse capture-recapture lines. Unit leaf0->1000->0 versus v3 leaf0->1428->-2126; actual hands stay empty. Sensitivity only; no search-policy or price-quality conclusion. Original evidence.zip unchanged."
+  ],
+  "supplement_files": [
+    {
+      "member": "rectangle_price_witness.py",
+      "bytes": 3105,
+      "sha256": "9c1e1a9bdaf2a6ad974fd63c982bd7c8eae20665244a688832aa59e061c95091"
+    },
+    {
+      "member": "rectangle-price-witness.json",
+      "bytes": 2938,
+      "sha256": "e1ab1d33c61de418b40b6af938582d39285e718402a7cb0d9bdd80ff8df63f43"
+    }
   ]
 }

@@ -1,0 +1,153 @@
+{
+  "scope": "Actual internal-Xiangqi capture/recapture sensitivity; not price quality.\nHold the root, transitions, hand semantics and normalization fixed; no search.\n",
+  "producer_sha256": "9c1e1a9bdaf2a6ad974fd63c982bd7c8eae20665244a688832aa59e061c95091",
+  "product_sha256": "7a31b7f17140fab941a7a06200397c0989e81ce9962b1470213fdb1b0315de9a",
+  "transitions": 126,
+  "rows": [
+    {
+      "capture": {
+        "pattern_id": "sem_32_cannon_capture_one_screen",
+        "geometry_id": "g6",
+        "actor_type_id": "C",
+        "from_square": {
+          "file": 1,
+          "rank": 2
+        },
+        "to_square": {
+          "file": 1,
+          "rank": 9
+        },
+        "promotion_target_id": null
+      },
+      "reply": {
+        "pattern_id": "sem_30_r_enemy",
+        "geometry_id": "g25",
+        "actor_type_id": "R",
+        "from_square": {
+          "file": 0,
+          "rank": 9
+        },
+        "to_square": {
+          "file": 1,
+          "rank": 9
+        },
+        "promotion_target_id": null
+      },
+      "hands": [
+        [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ]
+      ],
+      "material": {
+        "unit": [
+          0,
+          1000,
+          0
+        ],
+        "v3": [
+          0,
+          1428,
+          -2126
+        ]
+      }
+    },
+    {
+      "capture": {
+        "pattern_id": "sem_32_cannon_capture_one_screen",
+        "geometry_id": "g6",
+        "actor_type_id": "C",
+        "from_square": {
+          "file": 7,
+          "rank": 2
+        },
+        "to_square": {
+          "file": 7,
+          "rank": 9
+        },
+        "promotion_target_id": null
+      },
+      "reply": {
+        "pattern_id": "sem_30_r_enemy",
+        "geometry_id": "g24",
+        "actor_type_id": "R",
+        "from_square": {
+          "file": 8,
+          "rank": 9
+        },
+        "to_square": {
+          "file": 7,
+          "rank": 9
+        },
+        "promotion_target_id": null
+      },
+      "hands": [
+        [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ]
+      ],
+      "material": {
+        "unit": [
+          0,
+          1000,
+          0
+        ],
+        "v3": [
+          0,
+          1428,
+          -2126
+        ]
+      }
+    }
+  ],
+  "board_values": {
+    "G": 0,
+    "A": 57,
+    "E": 236,
+    "H": 1428,
+    "R": 3699,
+    "C": 3554,
+    "S": 572
+  }
+}

@@ -305,14 +305,14 @@ candidate: inverse-transform the one resolved square and test the original zone.
 No zone cache, new index, altered checkpoint or legality boundary is introduced.
 Six actual lexical-route Xiangqi positions retain all legal actions, both attack
 sets,518 child transitions and identical checkpoint counts in48 alternating
-legal-list pairs. Local median old/new ratios range.9681ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“1.0005; these short
+legal-list pairs. Local median old/new ratios range.9681ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ1.0005; these short
 calls support only a modest descriptive cost observation.
 
 Sixteen actual cold public Core D2 calls (initial/one legal action, q0/q2,
 2alternating repetitions, old/inverse) all complete within8192nodes/5seconds,
 retain every non-time decision/work field, restore roots/history/witnesses and
 replay PVs. Unit leaf and ordering prices, disabled dynamics and root tactical
-policy stay fixed. Per-cell paired wall ratios range.9639ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“1.0070, including one
+policy stay fixed. Per-cell paired wall ratios range.9639ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ1.0070, including one
 small regression; no general speed, strength, Native or default-price claim.
 
 Recovery: `data/semantic_zones_20261009.json` and
@@ -368,3 +368,11 @@ its opportunity formula and square outputs did not change.
 
 Recovery: [rectangle profile index](data/semantic_rectangle_profile_20261009.json)
 and [archive](../archive/semantic_rectangle_profile_20261009/index.json).
+
+A separate preflight checks126actual transitions at the internal-Xiangqi root
+and finds two legal cannon-captures-horse/recapture lines. With all dynamics
+disabled, unit material is0->1000->0; v3 is0->1428->-2126. Actual hands stay empty,
+unlike the earlier mixed-semantics guarded-H witness. This establishes that the
+rectangle candidate table reaches a real exchange. It is sensitivity, not a
+claim that the selected prices or resulting search policy improve. Sources and
+outputs are supplemental files in the same rectangle archive; its zip is unchanged.
