@@ -42,6 +42,12 @@ independent price/task questions; do not claim pre-final timings as deployment.
   that distinct prerequisites can disappear in large-board total opportunity;
   retain conditional structure, not another uncalibrated material claim. See
   the geometry consistency supplement; full-v2 leaf/order callers stay scoped.
+- Opt-in semantic-opportunity-v2 projects qualified exact emptiness guards;
+  other state/zone mechanics remain excluded. Blocked-horse input reaches actual
+  callers, with a fixed-leaf exchange sensitivity and negative ordinary cohort.
+  Equal mean opportunity can hide different shared-prerequisite option
+  distributions under independent and finite-stock laws. Retain that conditional
+  diagnostic, not another fitted price; GEOMETRY_OCCUPANCY.md routes the evidence.
 - Common-slot interventions remove type-presence mismatch but retain a declared
   context/task law.2456 cells/6602 Core-Native transitions agree. A finite
   physical-selector alias qualification and716-cell type-alias check pass.

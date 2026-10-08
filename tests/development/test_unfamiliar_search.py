@@ -91,7 +91,20 @@ def test_supplied_semantic_rule_can_fix_attack_authority_separately(tmp_path, au
     report = run_rule(tmp_path / 'semantic-attacks.json', ruleset_to_dict(cannon_ruleset()),
                       semantic_candidate=True, attack_authority=authority)
     assert report['declaration']['attack_authority'] == authority
-    assert report['candidate_scope']['candidate'] == 'semantic-opportunity-v1'
+    assert report['candidate_scope']['candidate'] == 'semantic-opportunity-v2'
+    assert report['evaluator_version'] == report['candidate_scope']['candidate']
     assert report['reference']['complete']
     assert all(report['repeat_equal'].values())
     assert all(s['complete'] and s['reference_score_equal'] for s in report['searches'])
+
+
+def test_explicit_candidate_does_not_build_unused_default_profile(tmp_path, monkeypatch):
+    from generic_chess.ai.evaluation.cache import EvaluationProfileCache
+    def unused(*args):
+        raise AssertionError('explicit candidate built an unused default profile')
+    monkeypatch.setattr(EvaluationProfileCache, 'get_or_build', unused)
+    report = run_rule(tmp_path / 'candidate-only.json', ruleset_to_dict(cannon_ruleset()),
+                      depth=1, semantic_candidate=True, attack_authority='core')
+    assert report['complete'] and report['reference']['complete']
+    assert report['evaluator_version'] == 'semantic-opportunity-v2'
+    assert report['evaluator_version'] in report['declaration']['evaluator']

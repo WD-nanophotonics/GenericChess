@@ -69,7 +69,7 @@ def profile_input_scope(compiled):
         semantic_moving_types_without_atoms=sorted(
             pt.type_id for pt in compiled.piece_types
             if pt.type_id in semantic_movers and not pt.movement_atoms),
-        limitation='Semantic legality is executed, but generic-v1 static capability does not analyze semantic movement/guards/effects. Even nonempty atoms can differ from replaced or augmented semantics; an empty list here is not completeness evidence.',
+        limitation='This describes default-profile inputs only. Semantic legality is executed, but default static capability does not analyze semantic movement/guards/effects. Even nonempty atoms can differ from replaced or augmented semantics; an empty list here is not completeness evidence.',
     )
 
 
@@ -123,7 +123,7 @@ def run_rule(output: Path, definition, *, depth=2, semantic_candidate=False,
     report = dict(complete=False, declaration=dict(
         question='Does the supported product boundary search this rule legally and consistently?',
         search=dict(depth=depth, nodes=4096, seconds=5, qdepth=0, repeats=2),
-        evaluator='Existing fixed generic-v1; this control does not use a contact prior.',
+        evaluator='Existing default generic profile; actual version recorded below. This control does not use a contact prior.',
         reference='Plain Core minimax;4096 leaf evaluations/5sec cost fuse. Incomplete reference is unknown.',
         limitations='One supplied initial root, exposed development, no strength or universal coverage claim.'),
         source_definition=definition, searches=[],
@@ -138,13 +138,15 @@ def run_rule(output: Path, definition, *, depth=2, semantic_candidate=False,
     config = evaluation_config or EvaluationConfig()
     cache = EvaluationProfileCache(use_disk=False)
     start = time.perf_counter()
-    profile = cache.get_or_build(compiled, config)[0]
     if semantic_candidate:
         from generic_chess.ai.evaluation.semantic import build_semantic_opportunity_profile
         profile, scope = build_semantic_opportunity_profile(compiled, config)
         report['candidate_scope'] = scope
-        report['declaration']['evaluator'] = 'Opt-in semantic-opportunity-v1; projected opportunity, not selected material prices.'
+        report['declaration']['evaluator'] = f'Opt-in {profile.evaluator_version}; projected opportunity, not selected material prices.'
         report['declaration']['ordering'] = 'Public capture/promotion ordering reads the active evaluator table; plain control disables ordering. Candidate/public cost changes therefore combine score and ordering effects.'
+    else:
+        profile = cache.get_or_build(compiled, config)[0]
+    report['evaluator_version'] = profile.evaluator_version
     report['evaluation_config'] = record_value(config)
     report['board_values'] = dict(profile.board_value_by_type)
     report['profile_seconds'] = time.perf_counter()-start
@@ -192,7 +194,7 @@ def run(output: Path, *, depth=2, shared_profile=False):
         controls='Python legality/plain alpha-beta without TT or ordering versus public default native-legality/TT/ordering bundle; fresh TT per repeat, same profile/evaluator/root/depth/budgets.',
         reference='Existing plain minimax at declared depth, <=4096 leaf evaluations and5sec checked at evaluation; aborted result is unknown. Reference is not a resource-matched speed comparator.',
         decision='Any legality, repeat or completed-score discrepancy requires localization before expansion. Complete parity permits deeper cost profiling; speed claims require completed equal-depth cells.',
-        limitations='Four seeds/configs at initial roots, exposed development; no game-strength/general coverage proof. Generic-v1 heuristic evaluator is held fixed, not the contact prior or learned model.',
+        limitations='Four seeds/configs at initial roots, exposed development; no game-strength/general coverage proof. The default generic heuristic evaluator is held fixed across controls, not the contact prior or learned model; actual version recorded per case.',
         producer_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
     )
     report = dict(complete=False, declaration=declaration, cases=[])
@@ -217,6 +219,7 @@ def run(output: Path, *, depth=2, shared_profile=False):
             reference = dict(complete=False, score=None, action=None)
         reference.update(wall_seconds=time.perf_counter()-start, leaf_evaluations=counted.calls)
         case = dict(config=config, fingerprint=compiled.ruleset_fingerprint,
+                    evaluator_version=profile.evaluator_version,
                     profile_input_scope=profile_input_scope(compiled),
                     ruleset=ruleset_to_dict(game.ruleset), filters=record_value(game.generation_report),
                     generation_seconds=generation_seconds, profile_seconds=profile_seconds,

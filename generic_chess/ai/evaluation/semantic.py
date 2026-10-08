@@ -1,8 +1,9 @@
 """Opt-in semantic opportunity projection; not full legal mobility or prices.
 
 Independent occupancy is empty=1-d, friendly=enemy=d/2. Only simple actor
-moves and target captures are projected. State guards and complex effects are
-excluded explicitly. Anchor safety, promotion and custody utility are ignored.
+moves and target captures are projected. Pure exact source-offset emptiness
+guards are supported; other state guards and complex effects are excluded
+explicitly. Anchor safety, promotion and custody utility are ignored.
 No default evaluator or cache invokes this development candidate.
 """
 from __future__ import annotations
@@ -13,15 +14,56 @@ from itertools import combinations
 from ...rules.compiler import compile_semantic_ir
 from ...rules.ir import geometry_candidates
 from ...rules.schema import canonical_json
+from ...core.coordinates import BoardShape
 from .config import EvaluationConfig, MAX_STATIC_EVAL, config_hash
 from .profile import PieceValueProfile, RuleSetEvaluationProfile, _drop_profile, _median
+
+
+def _pure_empty_guard(guard):
+    """A count of all occupants at one source-relative square must be zero."""
+    return (guard.aggregation == 'count' and guard.comparison == 'eq'
+            and guard.value == 0 and guard.owner == 'any'
+            and guard.type_ref.kind == 'any' and guard.promoted == 'any'
+            and guard.location == 'board'
+            and guard.spatial.kind == 'exact' and len(guard.spatial.refs) == 1
+            and guard.spatial.refs[0].kind == 'offset_from_source'
+            and (guard.subject_ref is None or guard.subject_ref == guard.spatial.refs[0]))
+
+
+def _guard_empty_cells(pattern, shape, owner, source, target):
+    """Condition emptiness on occupied source and the declared target relation.
+
+    None means contradiction. Unresolved exact refs count zero in Core, so an
+    off-board offset is vacuous rather than a failed guard. Shared cells are one
+    occupancy event, including overlaps with clear or counted path predicates.
+    Called only after _excluded has qualified the guard subset.
+    """
+    cells = set()
+    for guard in pattern.guards:
+        ref = guard.spatial.refs[0]
+        df, dr = ref.offset
+        if ref.owner_relative and owner == 1:
+            df, dr = -df, -dr
+        f, r = source % shape.width + df, source // shape.width + dr
+        if not (0 <= f < shape.width and 0 <= r < shape.height):
+            continue
+        cell = r * shape.width + f
+        if cell == source:
+            return None
+        if cell == target:
+            if pattern.target.kind == 'target_enemy':
+                return None
+            continue
+        cells.add(cell)
+    return frozenset(cells)
 
 
 def _excluded(pattern, ir):
     reasons = []
     if pattern.target.kind not in ('target_empty', 'target_enemy'):
         reasons.append('target relation')
-    if pattern.guards or pattern.slot_guards or pattern.square_zone_guards or pattern.postconditions:
+    if (any(not _pure_empty_guard(g) for g in pattern.guards)
+            or pattern.slot_guards or pattern.square_zone_guards or pattern.postconditions):
         reasons.append('state/zone/postcondition')
     if any(p.kind not in ('path_clear', 'path_count_eq') or
            (p.kind == 'path_count_eq' and p.owner_filter != 'any') for p in pattern.path):
@@ -96,7 +138,8 @@ def semantic_opportunity(compiled, type_id, config: EvaluationConfig):
 
 
 def _semantic_opportunity(compiled, ir, type_id, config):
-    total = compiled.board_shape.area if hasattr(compiled, 'ir') else compiled.board_size ** 2
+    shape = compiled.board_shape if hasattr(compiled, 'ir') else BoardShape(compiled.board_size, compiled.board_size)
+    total = shape.area
     edges = {kind: [{} for _ in range(2 * total)]
              for kind in ('target_empty', 'target_enemy')}
     included, excluded = [], []
@@ -116,7 +159,11 @@ def _semantic_opportunity(compiled, ir, type_id, config):
                 for source in range(total):
                     bucket = edges[pattern.target.kind][int(owner) * total + source]
                     for target, path in geometry_candidates(geometry, owner, source):
-                        clear = frozenset(path) if any(p.kind == 'path_clear' for p in pattern.path) else frozenset()
+                        clear = _guard_empty_cells(pattern, shape, int(owner), source, target)
+                        if clear is None:
+                            continue
+                        if any(p.kind == 'path_clear' for p in pattern.path):
+                            clear |= frozenset(path)
                         count_guards = {p.count for p in pattern.path if p.kind == 'path_count_eq'}
                         # Two different exact counts on the same path are
                         # contradictory; no realization contributes opportunity.
@@ -188,10 +235,10 @@ def build_semantic_opportunity_profile(compiled, config: EvaluationConfig):
             is_anchor=pt.is_anchor, is_promotable=pt.is_promotable)
     profile = RuleSetEvaluationProfile(
         ruleset_fingerprint=compiled.ruleset_fingerprint, schema_version=1,
-        evaluator_version='semantic-opportunity-v1', config_hash=config_hash(config), piece_profiles=pieces,
+        evaluator_version='semantic-opportunity-v2', config_hash=config_hash(config), piece_profiles=pieces,
         board_value_by_type=board, hand_value_by_base_type=hand, promotion_gain_by_type=gains,
         median_non_anchor_value=_median([board[p.type_id] for p in compiled.piece_types if not p.is_anchor]))
-    scope = dict(candidate='semantic-opportunity-v1', complete_legal_mobility=False,
+    scope = dict(candidate='semantic-opportunity-v2', complete_legal_mobility=False,
                  ir_source='compiled_semantic' if semantic_input else 'existing_legacy_lowering',
                  law='Independent square occupancy: empty1-d, friend/enemy d/2; equal owner/source weighting.',
                  ignored='Anchor safety, future promotion/custody utility; excluded patterns listed per type. Hand scaling, promotion differences, drop diagnostics and dynamic terms retain legacy conventions, not validated semantic utility.',

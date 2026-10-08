@@ -175,3 +175,78 @@ controls agree; formula-only100x100 at rho=.5 gives about1.980/3.958/5.936 for
 zero/one/two screens, tending to2/4/6. Zero capture mass has undefined conditional
 distance, recorded as null. Distance is neither travel time nor utility; this
 component is retained for task compression, not multiplied into a new default.
+
+## Pure empty-cell guards and joint options (2026-10-09)
+
+The opt-in semantic candidate is now `semantic-opportunity-v2`. It accepts one
+finite state-predicate subset: `count==0`, any owner/type/promotion, board
+location, one exact source-offset ref, with no subject or that same subject.
+The latter two encodings count the same occupied square. Other state guards,
+slot/zone guards, postconditions and compound effects stay explicitly excluded.
+This changes the opt-in input projection, not the default `generic-v2` builder.
+The supplied-rule comparison records its actual version and no longer builds an
+unused default profile before constructing the requested candidate. Old reports
+retain their original versions and outcomes.
+
+The occupied source is a contradiction; a quiet target is already empty; an
+enemy target contradicts emptiness. Off-board exact refs match no occupants in
+Core and therefore count zero. Duplicate guards and overlaps with path-clear or
+counted-path cells are joint occupancy events, not independent multipliers.
+The research prototype matches1620 finite event/density controls and444 actual
+Core endpoint/transition controls across nine cases. Product/Core regressions
+also cover equivalent global and same-subject encodings. No own-anchor safety,
+complete legal mobility or full Xiangqi valuation follows from this projection.
+
+On the internal9x10 horse definition,16200 Core pseudo-attack positions match an
+independent eight-offset/leg oracle. All16 H quiet/capture patterns are included;
+the global and same-subject versions have identical signatures and curves. At
+the declared equal weights on density0/.125/.5/.875/1, guarded raw is2.557639
+versus unguarded4.233333; each density curve is `(1-rho)` times its free-leap
+curve. Palace/river guards remain excluded: G/A/E have no included board patterns,
+and S includes only forward movement. These exclusions are unsupported scope,
+not evidence of zero value. No Xiangqi human holdout was read.
+
+A first ordinary four-root lexical-history cohort was uninformative: all16
+D2/D3 calls complete, but changing only H leaf lookup1->1581 at the old scale
+changes none of its eight paired choices/scores. This remains a negative
+sensitivity result. A separately declared exchange is preflighted to contain H
+capture and actual R/N recaptures. Semantic B removal puts B into hand, while
+legacy H recapture removes it from the game; the real forced material delta is
+`boardB+handB-H`, not `boardB-H`. The two failed preflight assumptions and
+corrections are retained. At fixed other leaves/ordering/dynamics, the H-only
+intervention changes that delta+1->-1579 and D2 capture value-3671->-5251.
+Full-width D2 and public q0 agree; eight D2/D3/q0/q2 calls complete with restored
+roots/PVs. D3 q0 defers the capture to its horizon and scores-3670 for both,
+whereas q2 still distinguishes. This is executable input sensitivity, not a
+material calibration or playing-strength gain.
+
+A joint-options diagnostic exposes another compression loss without changing
+the context law. On7x7, eight blocked-leap endpoints share four cardinal empty
+prerequisites, or use eight distinct neighboring prerequisites. Every endpoint
+still needs exactly one empty square, so all five complete source-averaged
+opportunity curves agree exactly. Their signatures differ because the rules
+really differ. At the central source, quiet/capture count means at rho=.5 are
+2/1 for both, but the probability of at least one quiet move is.847412 versus
+.899887; at least one capture is.627471 versus.656391. Shared guards increase
+count variance.69632 prerequisite/target assignments per one-step diagnostic
+and1088 actual Core endpoint-set controls qualify this scoped result.
+
+For `q=1-rho` and target availability `p` (`q` for quiet, `rho/2` for capture),
+the central no-option probabilities are `[rho+q*(1-p)^2]^4` versus `(1-q*p)^8`.
+These are one-step unit-task quantities, not travel time, WDL or a replacement
+price. A declared uniform fixed-colored-stock law retains the distinction:
+seven7x7 stocks have exactly equal mean counts but different any-option
+probabilities. At12 enemies/12 friends among48 non-source squares, source-
+averaged capture means are both.625271, while any-capture probabilities are
+.456365/.475313. Exact subset unions are checked against24 tiny colored-layout
+censuses. This adds conditional information; it does not identify the right
+context/task/response law or justify another default coefficient.
+
+Sixteen separate existing7x5/9x10 caller cells qualify supplied material-only
+and semantic-mobility-only evaluators at q0/q2, initial/one-move roots. All
+complete D2 within8192 nodes/5sec and restore state/history/witnesses/PVs. These
+are narrow execution controls, not rectangle default pricing or Native support.
+
+Recovery: [guard data index](data/semantic_guards_20261009.json) and
+[guard archive](../archive/semantic_guards_20261009/index.json). Raw Slack/user
+records stay private; original failed/undiscriminating outputs are preserved.
