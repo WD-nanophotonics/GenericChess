@@ -631,5 +631,9 @@ replay verifies10 retained paths (including two mixed Q paths), all10 direct
 baselines and unchanged target ownership until capture. Two layouts/one owner
 and the explicit uniform response policy limit deployment claims. Next change
 one meaningful task/population premise, not sweep horizons to chase a ratio.
+Opponent reply counts depend on the preparation and source type. Maximizing
+these conditional probabilities is the declared task, not a same-support causal
+effect or an adversarial guarantee. The retained rows include source loss and
+zero-valued preparations; a maximum alone must not hide those failure branches.
 Data: data/preparation_task_20261008.json; exact declaration/inputs/producers and
 full outputs: ../archive/preparation_task_20261008/index.json (7 rehashed members).
