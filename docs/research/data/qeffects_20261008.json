@@ -382,7 +382,126 @@
       }
     },
     "conclusion": "Empty-hand interaction substantial; common-support stock gives opposite-sign increments despite I=0. Root conditionals show finite two-own-turn separation, not global additivity or positive material prices. No horizon sweep/fit.",
-    "advisor": "Adopted discrete marginal vs compensating exchange objection and one four-cell check; advisor read old published note, did not independently execute these new numerical results."
+    "advisor": "Adopted discrete marginal vs compensating exchange objection and one four-cell check; advisor read old published note, did not independently execute these new numerical results.",
+    "response_law_followup": {
+      "declaration": "Changed-premise response-law check only, declared before execution: fixed same eight inventory contexts/four actual halfmoves/final-minus-initial control; both players optimize this control (owner0 max, owner1 min), not categorical random response. Complete independent Core and Native trees; original percell40000transition/45sec bounds fixed. Zero MC. No pruning or fitted prices/WDL. All old categorical outcomes stay immutable.",
+      "groups": [
+        {
+          "group": "empty",
+          "core_record": "inventory-minimax-core-empty-v2",
+          "native_record": "inventory-minimax-empty",
+          "cells": [
+            {
+              "name": "s",
+              "initial_control": 0,
+              "U": "0",
+              "complete": true,
+              "core_transitions": 1594,
+              "leaves": 1322,
+              "early_terminal_mass": "6121/171990",
+              "seconds": 0.22573229996487498
+            },
+            {
+              "name": "s+A",
+              "initial_control": 1,
+              "U": "0",
+              "complete": true,
+              "core_transitions": 6756,
+              "leaves": 5653,
+              "early_terminal_mass": "61061227/1614412800",
+              "seconds": 1.2837093998678029
+            },
+            {
+              "name": "s+B",
+              "initial_control": 1,
+              "U": "0",
+              "complete": true,
+              "core_transitions": 9078,
+              "leaves": 7722,
+              "early_terminal_mass": "121417/3991680",
+              "seconds": 1.5515191000886261
+            },
+            {
+              "name": "s+A+B",
+              "initial_control": 2,
+              "U": "0",
+              "complete": true,
+              "core_transitions": 20936,
+              "leaves": 17739,
+              "early_terminal_mass": "63156019/1816214400",
+              "seconds": 4.1979863999877125
+            }
+          ],
+          "contrasts": {
+            "DeltaA": "0",
+            "DeltaB": "0",
+            "I": "0",
+            "B_after_A": "0",
+            "ratio_defined": false,
+            "ratio": null
+          }
+        },
+        {
+          "group": "stock",
+          "core_record": "inventory-minimax-core-stock",
+          "native_record": "inventory-minimax-stock",
+          "cells": [
+            {
+              "name": "s",
+              "initial_control": 2,
+              "U": "0",
+              "complete": true,
+              "core_transitions": 20936,
+              "leaves": 17739,
+              "early_terminal_mass": "63156019/1816214400",
+              "seconds": 4.272995900129899
+            },
+            {
+              "name": "s+A",
+              "initial_control": 3,
+              "U": "0",
+              "complete": true,
+              "core_transitions": 23148,
+              "leaves": 19589,
+              "early_terminal_mass": "26659391/660441600",
+              "seconds": 4.8974282999988645
+            },
+            {
+              "name": "s+B",
+              "initial_control": 3,
+              "U": "0",
+              "complete": true,
+              "core_transitions": 25662,
+              "leaves": 21811,
+              "early_terminal_mass": "451479437/14529715200",
+              "seconds": 5.378085300093517
+            },
+            {
+              "name": "s+A+B",
+              "initial_control": 4,
+              "U": "0",
+              "complete": true,
+              "core_transitions": 27874,
+              "leaves": 23661,
+              "early_terminal_mass": "266717701/7264857600",
+              "seconds": 6.062190399970859
+            }
+          ],
+          "contrasts": {
+            "DeltaA": "0",
+            "DeltaB": "0",
+            "I": "0",
+            "B_after_A": "0",
+            "ratio_defined": false,
+            "ratio": null
+          }
+        }
+      ],
+      "result": "All eight exact U and both marginal/interaction contrasts zero; denominators zero so no ratios. Negative random-policy effects disappear, showing response dependence rather than inevitable harmful inventory. Four-halfmove minimax control cannot distinguish these stock increments, not evidence of zero material worth; do not extend horizon to chase ratio.",
+      "metadata_correction": "These one-off producers inherit original categorical declaration text and early_terminal_mass labels. This response_contrast/canonical declaration supersedes inherited random-law/MC descriptions only for these new results. early_terminal_mass is the unchanged categorical full-tree support reference, NOT probability under any minimizing/maximizing policy; no optimum-policy distribution was computed. Native MC loops explicitly empty. Preserve raw records unchanged. Core empty initial generated syntax error fixed before experiment in v2; failed source and error note retained.",
+      "science_complete": false
+    },
+    "response_law_recovery": "docs/archive/qeffects_20261008/response-followup/index.json"
   },
   "corrections": "Earlier prose said61frontiers; raw recount56nonterminal roots/3580children. Initial audit only persisted Native q rows due one-line-if; final-v2 reruns and persists all6CoreNative calls. Previous outputs/failures retained.",
   "recovery": "docs/archive/qeffects_20261008/index.json"

@@ -188,3 +188,13 @@ remaining-three-halfmove expectations give I=0 for each first action. Nonzero
 R increments occur only after first R drops (12 actions), N only after N drops
 (12). Only one further own action remains, explaining this finite disjoint-use
 result; neither a global additivity law nor a positive-price result follows.
+
+Response-law followup: same eight inventory cells/four halfmoves/control utility,
+but both players optimize control (owner0 max/opponent min). Complete Core and
+Native trees independently agree: every U, marginal and interaction is exactly0.
+Thus negative categorical-policy effects are response-dependent; zero minimax
+denominators forbid ratios and do not establish zero material worth. This short
+control objective is non-discriminating here; do not sweep horizons for ratios.
+Raw producers inherited categorical labels: archived qualification explicitly
+identifies zero MC and early-terminal mass as categorical full-tree support,
+not probability under an optimal policy. Recovery: qeffects_20261008/response-followup.
