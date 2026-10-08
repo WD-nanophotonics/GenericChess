@@ -812,3 +812,27 @@ value. More capture endpoints at2000 do not increase this unit-task value;
 2003 does separate P/X. Worst replies make both targets0, so neither endpoint
 magnitude nor the uniform-law distinction supplies an intrinsic scalar price.
 Retain the context/policy/feature components and the explicit static exclusion.
+
+
+## Preparation-task transformation scope and layout dependence
+
+The old one-preparation coordinate was deliberately nontransforming. It is not
+all legal quiet capability: mandatory-promotion roots can lack an ordinary
+preparation while still having legal actor actions. A separate promotion-aware
+task retains same-base/owner actors after actual quiet transformation, tracks
+their current type through the actual opponent reply and keeps capture-task0
+on early game terminals. All old ordinary branches/direct references are exact.
+Core/Native independently agree over3856 original roots and3680 exact
+inventory-target integrated roots. This changes task support, not the current
+static projection/defaults; no fitted promotion constant follows.
+
+The Chess pawn gain is concentrated one rank from the far edge; the selected
+layout law gives that source layer77/424 mass. Target integration must separate
+the all-target safe cohort change from the target-law change. Three further fixed
+representatives per displacement exhibit substantial ratio spread on common
+safe offsets despite identical target weights and task scope. Initial anchor
+safety does not establish reachability or material utility. These diagnostics
+support retaining explicit context/task components rather than silently using
+a conditional capture ratio as a universal stock table. Exact decomposition,
+counts, costs and recovery: CROSS_GAME_PRICE_DIAGNOSTIC.md and
+ data/pawn_bias_20261009.json. Old task outputs remain historical evidence.

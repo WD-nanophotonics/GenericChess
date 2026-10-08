@@ -1,0 +1,3653 @@
+{
+  "format": 1,
+  "science": "OPEN",
+  "scope": "Conditional capture tasks, not material prices; no human fit/default/holdout change. Fixed task scope, exact target integration, representative reliability and actual pawn-mask law sensitivity separated.",
+  "recovery": "docs/archive/pawn_bias_20261009/index.json",
+  "archive_sha256": "eee04b56789c5134d3abd1ca58bec64d366f23c21e6382cc6435e8530d559420",
+  "decomposition": {
+    "chess": {
+      "common_mass": "53/105",
+      "actors": {
+        "P": {
+          "weighted": {
+            "best": "12035957/433573920",
+            "average": "17865157/867147840",
+            "direct": "224458301/8861973120",
+            "has_preparation": "147/212",
+            "positive_best": "39/424",
+            "positive_direct": "59/424",
+            "has_positive_option": "39/424",
+            "mean_positive_option_fraction": "173/2544",
+            "preparation_count": "541/636",
+            "best_selection_premium": "89953/12567360",
+            "success_conditional_positive": "12035957/39880620"
+          },
+          "counts": {
+            "rows": 116,
+            "no_preparation": 38,
+            "positive_rows": 8,
+            "preparations": 101,
+            "terminal_preparations": 0
+          },
+          "per_owner": {
+            "0": {
+              "best": "43899/1852880",
+              "average": "253297/11117280",
+              "direct": "1031507/76396320",
+              "has_preparation": "124/159",
+              "positive_best": "43/636",
+              "positive_direct": "19/106",
+              "has_positive_option": "43/636",
+              "mean_positive_option_fraction": "21/424",
+              "preparation_count": "154/159"
+            },
+            "1": {
+              "best": "181573/5704920",
+              "average": "210173/11409840",
+              "direct": "76751/2065728",
+              "has_preparation": "193/318",
+              "positive_best": "37/318",
+              "positive_direct": "21/212",
+              "has_positive_option": "37/318",
+              "mean_positive_option_fraction": "55/636",
+              "preparation_count": "233/318"
+            }
+          }
+        },
+        "N": {
+          "weighted": {
+            "best": "379942483428041/1530677660672160",
+            "average": "115436382029187601/1542923081957537280",
+            "direct": "99940263001/841887446400",
+            "has_preparation": "1",
+            "positive_best": "339/424",
+            "positive_direct": "475/1272",
+            "has_positive_option": "339/424",
+            "mean_positive_option_fraction": "66751/178080",
+            "preparation_count": "2011/318",
+            "best_selection_premium": "5048030967288259/29111756263349760",
+            "success_conditional_positive": "379942483428041/1223820110773260"
+          },
+          "counts": {
+            "rows": 116,
+            "no_preparation": 0,
+            "positive_rows": 83,
+            "preparations": 696,
+            "terminal_preparations": 1
+          },
+          "per_owner": {
+            "0": {
+              "best": "12108576018212/47833676896005",
+              "average": "47730599266427521/642884617482307200",
+              "direct": "62029/523640",
+              "has_preparation": "1",
+              "positive_best": "42/53",
+              "positive_direct": "241/636",
+              "has_positive_option": "42/53",
+              "mean_positive_option_fraction": "1807/5088",
+              "preparation_count": "2011/318"
+            },
+            "1": {
+              "best": "62068422378883/255112943445360",
+              "average": "22369101119028683/296715977299526400",
+              "direct": "202738423/1704225600",
+              "has_preparation": "1",
+              "positive_best": "171/212",
+              "positive_direct": "39/106",
+              "has_positive_option": "171/212",
+              "mean_positive_option_fraction": "23419/59360",
+              "preparation_count": "2011/318"
+            }
+          }
+        },
+        "B": {
+          "weighted": {
+            "best": "5859075712018063/18368131928065920",
+            "average": "30625147765197884581/306996313218904108800",
+            "direct": "583829546275427/5976931817862720",
+            "has_preparation": "1",
+            "positive_best": "551/636",
+            "positive_direct": "541/1272",
+            "has_positive_option": "551/636",
+            "mean_positive_option_fraction": "3878401/8814960",
+            "preparation_count": "1681/212",
+            "best_selection_premium": "1144111670047328202313/5218937324721369849600",
+            "success_conditional_positive": "5859075712018063/15913271528874720"
+          },
+          "counts": {
+            "rows": 116,
+            "no_preparation": 0,
+            "positive_rows": 97,
+            "preparations": 912,
+            "terminal_preparations": 0
+          },
+          "per_owner": {
+            "0": {
+              "best": "320883421217/977444227760",
+              "average": "244839809994939979/2325729645597758400",
+              "direct": "1483304468071/14995886281376",
+              "has_preparation": "1",
+              "positive_best": "137/159",
+              "positive_direct": "277/636",
+              "has_positive_option": "137/159",
+              "mean_positive_option_fraction": "389107/881496",
+              "preparation_count": "1681/212"
+            },
+            "1": {
+              "best": "7057208650777/22789245568320",
+              "average": "352822446476386487/3743857478279318400",
+              "direct": "3075605321599/31889117930670",
+              "has_preparation": "1",
+              "positive_best": "277/318",
+              "positive_direct": "22/53",
+              "has_positive_option": "277/318",
+              "mean_positive_option_fraction": "966433/2203740",
+              "preparation_count": "1681/212"
+            }
+          }
+        },
+        "R": {
+          "weighted": {
+            "best": "11418635030907259/15306776606721600",
+            "average": "13859543310219275758127/69585830996284931328000",
+            "direct": "54357964060331821/183681319280659200",
+            "has_preparation": "1",
+            "positive_best": "317/318",
+            "positive_direct": "823/1272",
+            "has_positive_option": "317/318",
+            "mean_positive_option_fraction": "6241561/11753280",
+            "preparation_count": "1021/106",
+            "best_selection_premium": "69057141617218867943/126290074403420928000",
+            "success_conditional_positive": "11418635030907259/15258642089090400"
+          },
+          "counts": {
+            "rows": 116,
+            "no_preparation": 0,
+            "positive_rows": 114,
+            "preparations": 1166,
+            "terminal_preparations": 4
+          },
+          "per_owner": {
+            "0": {
+              "best": "193999227161671/263909941495200",
+              "average": "840697000997818196359/4349114437267808208000",
+              "direct": "4188963010927/14577882482592",
+              "has_preparation": "1",
+              "positive_best": "317/318",
+              "positive_direct": "141/212",
+              "has_positive_option": "317/318",
+              "mean_positive_option_fraction": "660289/1259280",
+              "preparation_count": "1021/106"
+            },
+            "1": {
+              "best": "188073293611/248486633226",
+              "average": "7843101306900103/38251417402598400",
+              "direct": "31109562949379/102158687030400",
+              "has_preparation": "1",
+              "positive_best": "317/318",
+              "positive_direct": "100/159",
+              "has_positive_option": "317/318",
+              "mean_positive_option_fraction": "9480637/17629920",
+              "preparation_count": "1021/106"
+            }
+          }
+        },
+        "Q": {
+          "weighted": {
+            "best": "4648761036859/5107934351520",
+            "average": "17244977091338367497726124751/58748031664857042924544128000",
+            "direct": "2972534840959759721/7530934090507027200",
+            "has_preparation": "1",
+            "positive_best": "1",
+            "positive_direct": "167/212",
+            "has_positive_option": "1",
+            "mean_positive_option_fraction": "2130781102183/3405289567680",
+            "preparation_count": "3723/212",
+            "best_selection_premium": "36221951377402907453355752849/58748031664857042924544128000",
+            "success_conditional_positive": "4648761036859/5107934351520"
+          },
+          "counts": {
+            "rows": 116,
+            "no_preparation": 0,
+            "positive_rows": 116,
+            "preparations": 2078,
+            "terminal_preparations": 14
+          },
+          "per_owner": {
+            "0": {
+              "best": "42942088373/47295688440",
+              "average": "6099764126732542797377801/20790506655915030357523200",
+              "direct": "112443436215091/290545296701660",
+              "has_preparation": "1",
+              "positive_best": "1",
+              "positive_direct": "499/636",
+              "has_positive_option": "1",
+              "mean_positive_option_fraction": "118169856617/189182753760",
+              "preparation_count": "3723/212"
+            },
+            "1": {
+              "best": "9432746011/10339948080",
+              "average": "1206291772557154755558547/4107351248017411762368000",
+              "direct": "36957753844199521/91840659640329600",
+              "has_preparation": "1",
+              "positive_best": "1",
+              "positive_direct": "503/636",
+              "has_positive_option": "1",
+              "mean_positive_option_fraction": "106725239263/170264478384",
+              "preparation_count": "3723/212"
+            }
+          }
+        }
+      },
+      "knight_pawn_ratios": {
+        "best": "379942483428041/42491417621961",
+        "average": "115436382029187601/31787616628434744",
+        "direct": "99940263001/21323538595",
+        "positive_best": "113/13",
+        "success_conditional_positive": "4939252284564533/4801530191281593",
+        "has_preparation": "212/147",
+        "preparation_count": "4022/541"
+      }
+    },
+    "shogi": {
+      "common_mass": "43/56",
+      "actors": {
+        "P": {
+          "weighted": {
+            "best": "3555569/164490480",
+            "average": "3555569/164490480",
+            "direct": "287297/15294240",
+            "has_preparation": "909/1204",
+            "positive_best": "73/1204",
+            "positive_direct": "269/3612",
+            "has_positive_option": "73/1204",
+            "mean_positive_option_fraction": "73/1204",
+            "preparation_count": "909/1204",
+            "best_selection_premium": "0",
+            "success_conditional_positive": "3555569/9973260"
+          },
+          "counts": {
+            "rows": 252,
+            "no_preparation": 77,
+            "positive_rows": 8,
+            "preparations": 175,
+            "terminal_preparations": 0
+          },
+          "per_owner": {
+            "0": {
+              "best": "18689/830760",
+              "average": "18689/830760",
+              "direct": "95/6192",
+              "has_preparation": "235/301",
+              "positive_best": "1/14",
+              "positive_direct": "143/1806",
+              "has_positive_option": "1/14",
+              "mean_positive_option_fraction": "1/14",
+              "preparation_count": "235/301"
+            },
+            "1": {
+              "best": "37073/1787940",
+              "average": "37073/1787940",
+              "direct": "42493/1911780",
+              "has_preparation": "439/602",
+              "positive_best": "15/301",
+              "positive_direct": "3/43",
+              "has_positive_option": "15/301",
+              "mean_positive_option_fraction": "15/301",
+              "preparation_count": "439/602"
+            }
+          }
+        },
+        "L": {
+          "weighted": {
+            "best": "14099702/311846535",
+            "average": "22216139861/536376040200",
+            "direct": "24692203/392552160",
+            "has_preparation": "909/1204",
+            "positive_best": "127/1204",
+            "positive_direct": "181/1204",
+            "has_positive_option": "127/1204",
+            "mean_positive_option_fraction": "1067/14448",
+            "preparation_count": "1347/602",
+            "best_selection_premium": "9832597/2591188600",
+            "success_conditional_positive": "56398808/131576445"
+          },
+          "counts": {
+            "rows": 252,
+            "no_preparation": 77,
+            "positive_rows": 19,
+            "preparations": 566,
+            "terminal_preparations": 0
+          },
+          "per_owner": {
+            "0": {
+              "best": "130541/2492280",
+              "average": "14057/289800",
+              "direct": "103177/1517040",
+              "has_preparation": "235/301",
+              "positive_best": "29/258",
+              "positive_direct": "281/1806",
+              "has_positive_option": "29/258",
+              "mean_positive_option_fraction": "2893/36120",
+              "preparation_count": "2185/903"
+            },
+            "1": {
+              "best": "4127117/108468360",
+              "average": "88960847/2591188600",
+              "direct": "119102177/2060898840",
+              "has_preparation": "439/602",
+              "positive_best": "89/903",
+              "positive_direct": "131/903",
+              "has_positive_option": "89/903",
+              "mean_positive_option_fraction": "407/6020",
+              "preparation_count": "1856/903"
+            }
+          }
+        },
+        "N": {
+          "weighted": {
+            "best": "439357379/24730786080",
+            "average": "622244729/49461572160",
+            "direct": "481301/47927880",
+            "has_preparation": "509/903",
+            "positive_best": "23/301",
+            "positive_direct": "281/3612",
+            "has_positive_option": "23/301",
+            "mean_positive_option_fraction": "419/7224",
+            "preparation_count": "941/903",
+            "best_selection_premium": "256470029/49461572160",
+            "success_conditional_positive": "439357379/1889727840"
+          },
+          "counts": {
+            "rows": 252,
+            "no_preparation": 115,
+            "positive_rows": 23,
+            "preparations": 257,
+            "terminal_preparations": 0
+          },
+          "per_owner": {
+            "0": {
+              "best": "14871161/883242360",
+              "average": "21711731/1766484720",
+              "direct": "545/39732",
+              "has_preparation": "1007/1806",
+              "positive_best": "73/903",
+              "positive_direct": "157/1806",
+              "has_positive_option": "73/903",
+              "mean_positive_option_fraction": "8/129",
+              "preparation_count": "1835/1806"
+            },
+            "1": {
+              "best": "187175/10012464",
+              "average": "257717/20024928",
+              "direct": "149122/23419305",
+              "has_preparation": "49/86",
+              "positive_best": "65/903",
+              "positive_direct": "62/903",
+              "has_positive_option": "65/903",
+              "mean_positive_option_fraction": "65/1204",
+              "preparation_count": "643/602"
+            }
+          }
+        },
+        "S": {
+          "weighted": {
+            "best": "1565856182659/13010192080704",
+            "average": "18881697259601103313/345767809243844988000",
+            "direct": "4939457659/63200897760",
+            "has_preparation": "1",
+            "positive_best": "1517/3612",
+            "positive_direct": "209/903",
+            "has_positive_option": "1517/3612",
+            "mean_positive_option_fraction": "2831/12040",
+            "preparation_count": "2377/516",
+            "best_selection_premium": "5051905150415568611/76837290943076664000",
+            "success_conditional_positive": "1565856182659/5464136596464"
+          },
+          "counts": {
+            "rows": 252,
+            "no_preparation": 0,
+            "positive_rows": 63,
+            "preparations": 1183,
+            "terminal_preparations": 0
+          },
+          "per_owner": {
+            "0": {
+              "best": "239644441513/1851864814800",
+              "average": "637490841130672/10925423699565375",
+              "direct": "6953087/91595504",
+              "has_preparation": "1",
+              "positive_best": "773/1806",
+              "positive_direct": "5/21",
+              "has_positive_option": "773/1806",
+              "mean_positive_option_fraction": "4217/18060",
+              "preparation_count": "8405/1806"
+            },
+            "1": {
+              "best": "5381457289991/48348686786400",
+              "average": "52875821119859/1039496765907600",
+              "direct": "635160661/7900112220",
+              "has_preparation": "1",
+              "positive_best": "124/301",
+              "positive_direct": "29/129",
+              "has_positive_option": "124/301",
+              "mean_positive_option_fraction": "1069/4515",
+              "preparation_count": "4117/903"
+            }
+          }
+        },
+        "G": {
+          "weighted": {
+            "best": "137905084654577/692997843938400",
+            "average": "198802478544341743/2440713947603611680",
+            "direct": "4220219/41321280",
+            "has_preparation": "1",
+            "positive_best": "1409/3612",
+            "positive_direct": "431/1806",
+            "has_positive_option": "1409/3612",
+            "mean_positive_option_fraction": "24527/108360",
+            "preparation_count": "933/172",
+            "best_selection_premium": "554227745489038741/4715015580597886200",
+            "success_conditional_positive": "137905084654577/270330554293800"
+          },
+          "counts": {
+            "rows": 252,
+            "no_preparation": 0,
+            "positive_rows": 57,
+            "preparations": 1391,
+            "terminal_preparations": 2
+          },
+          "per_owner": {
+            "0": {
+              "best": "191207995603/1051058408400",
+              "average": "131649450373709/1792890043005600",
+              "direct": "77937257/824359536",
+              "has_preparation": "1",
+              "positive_best": "332/903",
+              "positive_direct": "76/301",
+              "has_positive_option": "332/903",
+              "mean_positive_option_fraction": "2929/13545",
+              "preparation_count": "1397/258"
+            },
+            "1": {
+              "best": "56152636578091/259874191476900",
+              "average": "558063569174311/6236980595445600",
+              "direct": "82226801/749417760",
+              "has_preparation": "1",
+              "positive_best": "745/1806",
+              "positive_direct": "29/129",
+              "has_positive_option": "745/1806",
+              "mean_positive_option_fraction": "12811/54180",
+              "preparation_count": "701/129"
+            }
+          }
+        },
+        "B": {
+          "weighted": {
+            "best": "3891516780865419047/9015249716373700800",
+            "average": "382741127793590853916537/3126164052648609984211200",
+            "direct": "167895591421/1255810046400",
+            "has_preparation": "1",
+            "positive_best": "844/903",
+            "positive_direct": "689/1806",
+            "has_positive_option": "844/903",
+            "mean_positive_option_fraction": "7026973/16687440",
+            "preparation_count": "8192/903",
+            "best_selection_premium": "966696797206425316497371/3126164052648609984211200",
+            "success_conditional_positive": "3891516780865419047/8426213466909638400"
+          },
+          "counts": {
+            "rows": 252,
+            "no_preparation": 0,
+            "positive_rows": 226,
+            "preparations": 2220,
+            "terminal_preparations": 0
+          },
+          "per_owner": {
+            "0": {
+              "best": "92032680980714/213372155921925",
+              "average": "258366734552339326349/2100892972797726307200",
+              "direct": "723530603/5313042504",
+              "has_preparation": "1",
+              "positive_best": "245/258",
+              "positive_direct": "53/129",
+              "has_positive_option": "245/258",
+              "mean_positive_option_fraction": "2169347/5006232",
+              "preparation_count": "8192/903"
+            },
+            "1": {
+              "best": "5209053714873709/12058162484528160",
+              "average": "54106459964427257/443919018874851520",
+              "direct": "1974426409/15047832800",
+              "has_preparation": "1",
+              "positive_best": "1661/1806",
+              "positive_direct": "106/301",
+              "has_positive_option": "1661/1806",
+              "mean_positive_option_fraction": "1279273/3128895",
+              "preparation_count": "8192/903"
+            }
+          }
+        },
+        "R": {
+          "weighted": {
+            "best": "44011361604744179/61451180905514400",
+            "average": "618277682782081229800989023/3430084438189554074577648000",
+            "direct": "67856009803339/293417691767200",
+            "has_preparation": "1",
+            "positive_best": "836/903",
+            "positive_direct": "621/1204",
+            "has_positive_option": "836/903",
+            "mean_positive_option_fraction": "199919653/433873440",
+            "preparation_count": "21347/1806",
+            "best_selection_premium": "1838350234199403812636547157/3430084438189554074577648000",
+            "success_conditional_positive": "44011361604744179/56891680218172800"
+          },
+          "counts": {
+            "rows": 252,
+            "no_preparation": 0,
+            "positive_rows": 228,
+            "preparations": 2988,
+            "terminal_preparations": 5
+          },
+          "per_owner": {
+            "0": {
+              "best": "67275231338479/93675580648650",
+              "average": "52196241739165785073597/289769506370027860176000",
+              "direct": "82656597825173/355486818871800",
+              "has_preparation": "1",
+              "positive_best": "239/258",
+              "positive_direct": "131/258",
+              "has_positive_option": "239/258",
+              "mean_positive_option_fraction": "589243139/1301620320",
+              "preparation_count": "21347/1806"
+            },
+            "1": {
+              "best": "16462930026799/23049955328400",
+              "average": "251720707480390648080821/1395558911207607005059200",
+              "direct": "168491485627/732555860400",
+              "has_preparation": "1",
+              "positive_best": "557/602",
+              "positive_direct": "11/21",
+              "has_positive_option": "557/602",
+              "mean_positive_option_fraction": "610274779/1301620320",
+              "preparation_count": "21347/1806"
+            }
+          }
+        },
+        "TP": {
+          "weighted": {
+            "best": "137905084654577/692997843938400",
+            "average": "198802478544341743/2440713947603611680",
+            "direct": "4220219/41321280",
+            "has_preparation": "1",
+            "positive_best": "1409/3612",
+            "positive_direct": "431/1806",
+            "has_positive_option": "1409/3612",
+            "mean_positive_option_fraction": "24527/108360",
+            "preparation_count": "933/172",
+            "best_selection_premium": "554227745489038741/4715015580597886200",
+            "success_conditional_positive": "137905084654577/270330554293800"
+          },
+          "counts": {
+            "rows": 252,
+            "no_preparation": 0,
+            "positive_rows": 57,
+            "preparations": 1391,
+            "terminal_preparations": 2
+          },
+          "per_owner": {
+            "0": {
+              "best": "191207995603/1051058408400",
+              "average": "131649450373709/1792890043005600",
+              "direct": "77937257/824359536",
+              "has_preparation": "1",
+              "positive_best": "332/903",
+              "positive_direct": "76/301",
+              "has_positive_option": "332/903",
+              "mean_positive_option_fraction": "2929/13545",
+              "preparation_count": "1397/258"
+            },
+            "1": {
+              "best": "56152636578091/259874191476900",
+              "average": "558063569174311/6236980595445600",
+              "direct": "82226801/749417760",
+              "has_preparation": "1",
+              "positive_best": "745/1806",
+              "positive_direct": "29/129",
+              "has_positive_option": "745/1806",
+              "mean_positive_option_fraction": "12811/54180",
+              "preparation_count": "701/129"
+            }
+          }
+        },
+        "TL": {
+          "weighted": {
+            "best": "137905084654577/692997843938400",
+            "average": "198802478544341743/2440713947603611680",
+            "direct": "4220219/41321280",
+            "has_preparation": "1",
+            "positive_best": "1409/3612",
+            "positive_direct": "431/1806",
+            "has_positive_option": "1409/3612",
+            "mean_positive_option_fraction": "24527/108360",
+            "preparation_count": "933/172",
+            "best_selection_premium": "554227745489038741/4715015580597886200",
+            "success_conditional_positive": "137905084654577/270330554293800"
+          },
+          "counts": {
+            "rows": 252,
+            "no_preparation": 0,
+            "positive_rows": 57,
+            "preparations": 1391,
+            "terminal_preparations": 2
+          },
+          "per_owner": {
+            "0": {
+              "best": "191207995603/1051058408400",
+              "average": "131649450373709/1792890043005600",
+              "direct": "77937257/824359536",
+              "has_preparation": "1",
+              "positive_best": "332/903",
+              "positive_direct": "76/301",
+              "has_positive_option": "332/903",
+              "mean_positive_option_fraction": "2929/13545",
+              "preparation_count": "1397/258"
+            },
+            "1": {
+              "best": "56152636578091/259874191476900",
+              "average": "558063569174311/6236980595445600",
+              "direct": "82226801/749417760",
+              "has_preparation": "1",
+              "positive_best": "745/1806",
+              "positive_direct": "29/129",
+              "has_positive_option": "745/1806",
+              "mean_positive_option_fraction": "12811/54180",
+              "preparation_count": "701/129"
+            }
+          }
+        },
+        "TN": {
+          "weighted": {
+            "best": "137905084654577/692997843938400",
+            "average": "198802478544341743/2440713947603611680",
+            "direct": "4220219/41321280",
+            "has_preparation": "1",
+            "positive_best": "1409/3612",
+            "positive_direct": "431/1806",
+            "has_positive_option": "1409/3612",
+            "mean_positive_option_fraction": "24527/108360",
+            "preparation_count": "933/172",
+            "best_selection_premium": "554227745489038741/4715015580597886200",
+            "success_conditional_positive": "137905084654577/270330554293800"
+          },
+          "counts": {
+            "rows": 252,
+            "no_preparation": 0,
+            "positive_rows": 57,
+            "preparations": 1391,
+            "terminal_preparations": 2
+          },
+          "per_owner": {
+            "0": {
+              "best": "191207995603/1051058408400",
+              "average": "131649450373709/1792890043005600",
+              "direct": "77937257/824359536",
+              "has_preparation": "1",
+              "positive_best": "332/903",
+              "positive_direct": "76/301",
+              "has_positive_option": "332/903",
+              "mean_positive_option_fraction": "2929/13545",
+              "preparation_count": "1397/258"
+            },
+            "1": {
+              "best": "56152636578091/259874191476900",
+              "average": "558063569174311/6236980595445600",
+              "direct": "82226801/749417760",
+              "has_preparation": "1",
+              "positive_best": "745/1806",
+              "positive_direct": "29/129",
+              "has_positive_option": "745/1806",
+              "mean_positive_option_fraction": "12811/54180",
+              "preparation_count": "701/129"
+            }
+          }
+        },
+        "TS": {
+          "weighted": {
+            "best": "137905084654577/692997843938400",
+            "average": "198802478544341743/2440713947603611680",
+            "direct": "4220219/41321280",
+            "has_preparation": "1",
+            "positive_best": "1409/3612",
+            "positive_direct": "431/1806",
+            "has_positive_option": "1409/3612",
+            "mean_positive_option_fraction": "24527/108360",
+            "preparation_count": "933/172",
+            "best_selection_premium": "554227745489038741/4715015580597886200",
+            "success_conditional_positive": "137905084654577/270330554293800"
+          },
+          "counts": {
+            "rows": 252,
+            "no_preparation": 0,
+            "positive_rows": 57,
+            "preparations": 1391,
+            "terminal_preparations": 2
+          },
+          "per_owner": {
+            "0": {
+              "best": "191207995603/1051058408400",
+              "average": "131649450373709/1792890043005600",
+              "direct": "77937257/824359536",
+              "has_preparation": "1",
+              "positive_best": "332/903",
+              "positive_direct": "76/301",
+              "has_positive_option": "332/903",
+              "mean_positive_option_fraction": "2929/13545",
+              "preparation_count": "1397/258"
+            },
+            "1": {
+              "best": "56152636578091/259874191476900",
+              "average": "558063569174311/6236980595445600",
+              "direct": "82226801/749417760",
+              "has_preparation": "1",
+              "positive_best": "745/1806",
+              "positive_direct": "29/129",
+              "has_positive_option": "745/1806",
+              "mean_positive_option_fraction": "12811/54180",
+              "preparation_count": "701/129"
+            }
+          }
+        },
+        "TB": {
+          "weighted": {
+            "best": "40944947095938833713/61636870343468019600",
+            "average": "22702731493576837146297704629/136380157262416670005207284480",
+            "direct": "1642276455581/8058114464400",
+            "has_preparation": "1",
+            "positive_best": "1745/1806",
+            "positive_direct": "1705/3612",
+            "has_positive_option": "1745/1806",
+            "mean_positive_option_fraction": "78110507/173549376",
+            "preparation_count": "177/14",
+            "best_selection_premium": "339468323360190317462030279527/681900786312083350026036422400",
+            "success_conditional_positive": "40944947095938833713/59555004844602267000"
+          },
+          "counts": {
+            "rows": 252,
+            "no_preparation": 0,
+            "positive_rows": 240,
+            "preparations": 3134,
+            "terminal_preparations": 6
+          },
+          "per_owner": {
+            "0": {
+              "best": "10783452376139951653/16484279277904237800",
+              "average": "43380549305733713700227/264012216914914272604800",
+              "direct": "489010366381/2417434339320",
+              "has_preparation": "1",
+              "positive_best": "1747/1806",
+              "positive_direct": "289/602",
+              "has_positive_option": "1747/1806",
+              "mean_positive_option_fraction": "197145373/433873440",
+              "preparation_count": "177/14"
+            },
+            "1": {
+              "best": "254133439849754/376817577641505",
+              "average": "13892210824734837752407/82387485611757287161200",
+              "direct": "10427636701/50786435700",
+              "has_preparation": "1",
+              "positive_best": "83/86",
+              "positive_direct": "419/903",
+              "has_positive_option": "83/86",
+              "mean_positive_option_fraction": "2479579/5562480",
+              "preparation_count": "177/14"
+            }
+          }
+        },
+        "TR": {
+          "weighted": {
+            "best": "79941598763040112069/98905675667425426800",
+            "average": "5480362082903435718741675524707/23266262744239745287860186384000",
+            "direct": "233196928916891/803709329623200",
+            "has_preparation": "1",
+            "positive_best": "3461/3612",
+            "positive_direct": "167/301",
+            "has_positive_option": "3461/3612",
+            "mean_positive_option_fraction": "82358087155/168169345344",
+            "preparation_count": "2003/129",
+            "best_selection_premium": "13324850342616185233735639885013/23266262744239745287860186384000",
+            "success_conditional_positive": "79941598763040112069/94770914586090642900"
+          },
+          "counts": {
+            "rows": 252,
+            "no_preparation": 0,
+            "positive_rows": 230,
+            "preparations": 3942,
+            "terminal_preparations": 10
+          },
+          "per_owner": {
+            "0": {
+              "best": "7372570988158807/9137627094181950",
+              "average": "224020112569779904166432767/959354393214569738077692000",
+              "direct": "11538497105461/39498535430200",
+              "has_preparation": "1",
+              "positive_best": "1727/1806",
+              "positive_direct": "1003/1806",
+              "has_positive_option": "1727/1806",
+              "mean_positive_option_fraction": "12484152721/26276460210",
+              "preparation_count": "2003/129"
+            },
+            "1": {
+              "best": "240755461474459/297344423736360",
+              "average": "2305906565396131869549031/9705477882489266898820800",
+              "direct": "2322163070977/8058114464400",
+              "has_preparation": "1",
+              "positive_best": "289/301",
+              "positive_direct": "143/258",
+              "has_positive_option": "289/301",
+              "mean_positive_option_fraction": "212043992239/420423363360",
+              "preparation_count": "2003/129"
+            }
+          }
+        }
+      },
+      "knight_pawn_ratios": {
+        "best": "10105219717/12295157602",
+        "average": "14311628767/24590315204",
+        "direct": "82783772/154853083",
+        "positive_best": "92/73",
+        "success_conditional_positive": "32073088667/49180630408",
+        "has_preparation": "2036/2727",
+        "preparation_count": "3764/2727"
+      }
+    }
+  },
+  "paired_exact": {
+    "chess": {
+      "ordinary_branches_exact": 4953,
+      "changed_options": 108,
+      "improved_rows": 18,
+      "means": {
+        "P": {
+          "old": "12035957/433573920",
+          "new": "106809531/843060400"
+        },
+        "N": {
+          "old": "379942483428041/1530677660672160",
+          "new": "379942483428041/1530677660672160"
+        },
+        "B": {
+          "old": "5859075712018063/18368131928065920",
+          "new": "5859075712018063/18368131928065920"
+        },
+        "R": {
+          "old": "11418635030907259/15306776606721600",
+          "new": "11418635030907259/15306776606721600"
+        },
+        "Q": {
+          "old": "4648761036859/5107934351520",
+          "new": "4648761036859/5107934351520"
+        }
+      },
+      "N_P": {
+        "old": "379942483428041/42491417621961",
+        "new": "1899712417140205/969627816990162"
+      },
+      "rank_contributions": {
+        "P": {
+          "6": {
+            "mass": "77/424",
+            "old": "89953/6283680",
+            "new": "89953/6283680",
+            "changed_options": 0,
+            "improved_rows": 0
+          },
+          "1": {
+            "mass": "77/424",
+            "old": "0",
+            "new": "3435499/34725600",
+            "changed_options": 108,
+            "improved_rows": 18
+          },
+          "4": {
+            "mass": "55/318",
+            "old": "1/477",
+            "new": "1/477",
+            "changed_options": 0,
+            "improved_rows": 0
+          },
+          "3": {
+            "mass": "55/318",
+            "old": "40/3657",
+            "new": "40/3657",
+            "changed_options": 0,
+            "improved_rows": 0
+          },
+          "5": {
+            "mass": "185/1272",
+            "old": "1/2438",
+            "new": "1/2438",
+            "changed_options": 0,
+            "improved_rows": 0
+          },
+          "2": {
+            "mass": "185/1272",
+            "old": "0",
+            "new": "0",
+            "changed_options": 0,
+            "improved_rows": 0
+          }
+        },
+        "N": {
+          "6": {
+            "mass": "77/424",
+            "old": "7784367343/261945351360",
+            "new": "7784367343/261945351360",
+            "changed_options": 0,
+            "improved_rows": 0
+          },
+          "1": {
+            "mass": "77/424",
+            "old": "369642197/11660173840",
+            "new": "369642197/11660173840",
+            "changed_options": 0,
+            "improved_rows": 0
+          },
+          "4": {
+            "mass": "55/318",
+            "old": "18897653/481517190",
+            "new": "18897653/481517190",
+            "changed_options": 0,
+            "improved_rows": 0
+          },
+          "3": {
+            "mass": "55/318",
+            "old": "1501667515/35925075648",
+            "new": "1501667515/35925075648",
+            "changed_options": 0,
+            "improved_rows": 0
+          },
+          "5": {
+            "mass": "185/1272",
+            "old": "42425147173/764956352160",
+            "new": "42425147173/764956352160",
+            "changed_options": 0,
+            "improved_rows": 0
+          },
+          "2": {
+            "mass": "185/1272",
+            "old": "744615139/14805606816",
+            "new": "744615139/14805606816",
+            "changed_options": 0,
+            "improved_rows": 0
+          }
+        }
+      }
+    },
+    "shogi": {
+      "ordinary_branches_exact": 21420,
+      "changed_options": 3565,
+      "improved_rows": 133,
+      "means": {
+        "P": {
+          "old": "3555569/164490480",
+          "new": "41843354939/1272333862800"
+        },
+        "L": {
+          "old": "14099702/311846535",
+          "new": "460433819/5507938800"
+        },
+        "N": {
+          "old": "439357379/24730786080",
+          "new": "4292824816103/88165252375200"
+        },
+        "S": {
+          "old": "1565856182659/13010192080704",
+          "new": "79618139923577/511114688884800"
+        },
+        "G": {
+          "old": "137905084654577/692997843938400",
+          "new": "137905084654577/692997843938400"
+        },
+        "B": {
+          "old": "3891516780865419047/9015249716373700800",
+          "new": "10024410110395800863/19827245005591111200"
+        },
+        "R": {
+          "old": "44011361604744179/61451180905514400",
+          "new": "34115431784724523/46088385679135800"
+        },
+        "TP": {
+          "old": "137905084654577/692997843938400",
+          "new": "137905084654577/692997843938400"
+        },
+        "TL": {
+          "old": "137905084654577/692997843938400",
+          "new": "137905084654577/692997843938400"
+        },
+        "TN": {
+          "old": "137905084654577/692997843938400",
+          "new": "137905084654577/692997843938400"
+        },
+        "TS": {
+          "old": "137905084654577/692997843938400",
+          "new": "137905084654577/692997843938400"
+        },
+        "TB": {
+          "old": "40944947095938833713/61636870343468019600",
+          "new": "40944947095938833713/61636870343468019600"
+        },
+        "TR": {
+          "old": "79941598763040112069/98905675667425426800",
+          "new": "79941598763040112069/98905675667425426800"
+        }
+      },
+      "N_P": {
+        "old": "10105219717/12295157602",
+        "new": "72978021873751/49291472118142"
+      },
+      "rank_contributions": {
+        "P": {
+          "5": {
+            "mass": "89/602",
+            "old": "1643/162540",
+            "new": "1643/162540",
+            "changed_options": 0,
+            "improved_rows": 0
+          },
+          "3": {
+            "mass": "89/602",
+            "old": "55/5934",
+            "new": "16733/872298",
+            "changed_options": 24,
+            "improved_rows": 2
+          },
+          "7": {
+            "mass": "87/602",
+            "old": "101/198660",
+            "new": "101/198660",
+            "changed_options": 0,
+            "improved_rows": 0
+          },
+          "1": {
+            "mass": "87/602",
+            "old": "0",
+            "new": "57587/59868900",
+            "changed_options": 54,
+            "improved_rows": 4
+          },
+          "6": {
+            "mass": "125/903",
+            "old": "25/14448",
+            "new": "25/14448",
+            "changed_options": 0,
+            "improved_rows": 0
+          },
+          "2": {
+            "mass": "125/903",
+            "old": "0",
+            "new": "5/12642",
+            "changed_options": 25,
+            "improved_rows": 1
+          },
+          "4": {
+            "mass": "125/903",
+            "old": "0",
+            "new": "0",
+            "changed_options": 0,
+            "improved_rows": 0
+          }
+        },
+        "N": {
+          "5": {
+            "mass": "89/602",
+            "old": "591/313040",
+            "new": "591/313040",
+            "changed_options": 0,
+            "improved_rows": 0
+          },
+          "3": {
+            "mass": "89/602",
+            "old": "0",
+            "new": "26972/1632925",
+            "changed_options": 56,
+            "improved_rows": 4
+          },
+          "7": {
+            "mass": "87/602",
+            "old": "139171/43235640",
+            "new": "139171/43235640",
+            "changed_options": 0,
+            "improved_rows": 0
+          },
+          "1": {
+            "mass": "87/602",
+            "old": "0",
+            "new": "0",
+            "changed_options": 0,
+            "improved_rows": 0
+          },
+          "6": {
+            "mass": "125/903",
+            "old": "12071/953568",
+            "new": "12071/953568",
+            "changed_options": 0,
+            "improved_rows": 0
+          },
+          "2": {
+            "mass": "125/903",
+            "old": "0",
+            "new": "19/21070",
+            "changed_options": 62,
+            "improved_rows": 2
+          },
+          "4": {
+            "mass": "125/903",
+            "old": "0",
+            "new": "187/13846",
+            "changed_options": 43,
+            "improved_rows": 2
+          }
+        }
+      }
+    }
+  },
+  "target_law": {
+    "chess": {
+      "seeds": 44,
+      "old_seeds": 58,
+      "accepted_mass": "463/1260",
+      "old_mass": "53/105",
+      "retained_fraction": "463/636",
+      "vectors": {
+        "sampled": {
+          "actors": {
+            "P": {
+              "value": {
+                "ordinary": "502289/24279720",
+                "promoting": "214740143/1841212100"
+              },
+              "positive_mass": {
+                "ordinary": "97/926",
+                "promoting": "113/463"
+              }
+            },
+            "N": {
+              "value": {
+                "ordinary": "142552121829241/557157041581140",
+                "promoting": "142552121829241/557157041581140"
+              },
+              "positive_mass": {
+                "ordinary": "699/926",
+                "promoting": "699/926"
+              }
+            }
+          },
+          "N_P": {
+            "ordinary": "285104243658482/23052477809361",
+            "promoting": "712760609146205/324905486941431"
+          }
+        },
+        "integrated": {
+          "actors": {
+            "P": {
+              "value": {
+                "ordinary": "1816936379883461/71634476774718000",
+                "promoting": "118844476495639589/1060190256265826400"
+              },
+              "positive_mass": {
+                "ordinary": "979/6945",
+                "promoting": "633/2315"
+              }
+            },
+            "N": {
+              "value": {
+                "ordinary": "9971870363743204679/35716549367556774000",
+                "promoting": "9971870363743204679/35716549367556774000"
+              },
+              "positive_mass": {
+                "ordinary": "5551/6945",
+                "promoting": "5551/6945"
+              }
+            }
+          },
+          "N_P": {
+            "ordinary": "1425977462015278269097/129545746949310885839",
+            "promoting": "2851954924030556538194/1145066531035487440015"
+          }
+        }
+      },
+      "scope": "Compare modes ONLY on same all-target/all-owner/P-N safe cohort. Prior-cohort versus this-cohort is separately qualified. Target integration conditional on backgrounds/one representative per displacement, not exact board census or stock utility."
+    },
+    "shogi": {
+      "seeds": 100,
+      "old_seeds": 126,
+      "accepted_mass": "473/784",
+      "old_mass": "43/56",
+      "retained_fraction": "11/14",
+      "vectors": {
+        "sampled": {
+          "actors": {
+            "P": {
+              "value": {
+                "ordinary": "408868/16155315",
+                "promoting": "290417174/7350668325"
+              },
+              "positive_mass": {
+                "ordinary": "173/2838",
+                "promoting": "119/946"
+              }
+            },
+            "N": {
+              "value": {
+                "ordinary": "248786999/19431331920",
+                "promoting": "2881171873403/69272698294800"
+              },
+              "positive_mass": {
+                "ordinary": "107/1419",
+                "promoting": "133/946"
+              }
+            }
+          },
+          "N_P": {
+            "ordinary": "5722100977/11310924352",
+            "promoting": "2881171873403/2736891447776"
+          }
+        },
+        "integrated": {
+          "actors": {
+            "P": {
+              "value": {
+                "ordinary": "40713204441268003/1870789285894557600",
+                "promoting": "4755188446675006/136411718763144825"
+              },
+              "positive_mass": {
+                "ordinary": "441/8987",
+                "promoting": "1483/17974"
+              }
+            },
+            "N": {
+              "value": {
+                "ordinary": "17654800196344465751/1117366822404968335200",
+                "promoting": "475933364561803264187/10335643107245957100600"
+              },
+              "positive_mass": {
+                "ordinary": "1685/26961",
+                "promoting": "3214/26961"
+              }
+            }
+          },
+          "N_P": {
+            "ordinary": "653227607264745232787/899721104947581598297",
+            "promoting": "475933364561803264187/360291118227671854608"
+          }
+        }
+      },
+      "scope": "Compare modes ONLY on same all-target/all-owner/P-N safe cohort. Prior-cohort versus this-cohort is separately qualified. Target integration conditional on backgrounds/one representative per displacement, not exact board census or stock utility."
+    }
+  },
+  "support": {
+    "complete": true,
+    "producer_sha256": "0586cf809658070298e3343c7d868097277ed5cdfbeed92b963229031967a1ab",
+    "input_sha256": "5cf9a181800d7b5df3151bce2034412502faa6889d3746782cab804476fcf4b3",
+    "scope": "Exact conditional diagnostics, not price or utility. Integrate fixed all-target common cohort. survival_low/high range over tied best preparations, including zero-denominator terminal preparations with survival0; no arbitrary tie policy. Survival is not independent of capture success. Conditional target tables renormalize that target mass; aggregate uses original inventory weights.",
+    "games": {
+      "chess": {
+        "actors": {
+          "P": {
+            "ordinary": {
+              "best": "1816936379883461/71634476774718000",
+              "avg": "3856731658210517/167147112474342000",
+              "positive": "979/6945",
+              "available": "324/463",
+              "count": "400/463",
+              "survival_low": "1124516949342805439/1644727586747525280",
+              "survival_high": "2819413231519924733/4111818966868813200",
+              "terminal_preparation_mass": "0",
+              "conditional_positive": "1816936379883461/10097934163059600",
+              "selection_premium": "287089921138169/125360334355756500"
+            },
+            "promoting": {
+              "best": "118844476495639589/1060190256265826400",
+              "avg": "278142320495318234143/4590809807921601264000",
+              "positive": "633/2315",
+              "available": "402/463",
+              "count": "712/463",
+              "survival_low": "6946167706522425211/8223637933737626400",
+              "survival_high": "3489286322452985111/4111818966868813200",
+              "terminal_preparation_mass": "0",
+              "conditional_positive": "118844476495639589/289892195341800480",
+              "selection_premium": "13479081420420624010829/261676159051531272048000"
+            },
+            "per_target": {
+              "R": {
+                "ordinary": {
+                  "best": "257107573/7879930344",
+                  "avg": "4040833283/133958815848",
+                  "positive": "117/463",
+                  "available": "324/463",
+                  "count": "400/463",
+                  "survival_low": "3673621139213/5446305391800",
+                  "survival_high": "9343386988363/13825236763800",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "257107573/1991256696",
+                  "selection_premium": "24741/10043396"
+                },
+                "promoting": {
+                  "best": "3914949477007/36247679582400",
+                  "avg": "4782630738077849/76410108559699200",
+                  "positive": "379/926",
+                  "available": "402/463",
+                  "count": "712/463",
+                  "survival_low": "4501537297373/5446305391800",
+                  "survival_high": "11445020312923/13825236763800",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "3914949477007/14835713349600",
+                  "selection_premium": "9886275667957/217692616979200"
+                }
+              },
+              "N": {
+                "ordinary": {
+                  "best": "26217097/1023326304",
+                  "avg": "4320467/186059328",
+                  "positive": "84/463",
+                  "available": "324/463",
+                  "count": "400/463",
+                  "survival_low": "54710507/79654520",
+                  "survival_high": "767129873/1115163280",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "26217097/185657472",
+                  "selection_premium": "4909057/2046652608"
+                },
+                "promoting": {
+                  "best": "1964504803/17396547168",
+                  "avg": "58838861/955854240",
+                  "positive": "140/463",
+                  "available": "402/463",
+                  "count": "712/463",
+                  "survival_low": "67707117/79654520",
+                  "survival_high": "4524297093/5297025580",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "1964504803/5260295040",
+                  "selection_premium": "93087243/1812140330"
+                }
+              },
+              "B": {
+                "ordinary": {
+                  "best": "83299313/3505384575",
+                  "avg": "146105713/7010769150",
+                  "positive": "72/463",
+                  "available": "324/463",
+                  "count": "400/463",
+                  "survival_low": "32998424109709/48030779446650",
+                  "survival_high": "33002064046009/48030779446650",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "83299313/545113800",
+                  "selection_premium": "975853/333846150"
+                },
+                "promoting": {
+                  "best": "135311338531/1256839705800",
+                  "avg": "42009261554539/718912311717600",
+                  "positive": "293/926",
+                  "available": "402/463",
+                  "count": "712/463",
+                  "survival_low": "1179570156063161/1392892603952850",
+                  "survival_high": "590255691462368/696446301976425",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "135311338531/397682541900",
+                  "selection_premium": "35388824085193/718912311717600"
+                }
+              },
+              "Q": {
+                "ordinary": {
+                  "best": "232253108939/8867220820920",
+                  "avg": "125647337599/5066983326240",
+                  "positive": "161/463",
+                  "available": "324/463",
+                  "count": "400/463",
+                  "survival_low": "5743797281637179/8434500444859104",
+                  "survival_high": "2872059126173683/4217250222429552",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "232253108939/3083418039240",
+                  "selection_premium": "113228999/81164492640"
+                },
+                "promoting": {
+                  "best": "163616708806007/1706053285945008",
+                  "avg": "2369432925111243899/41734634617469102400",
+                  "positive": "239/463",
+                  "available": "402/463",
+                  "count": "712/463",
+                  "survival_low": "34907205382239319/42172502224295520",
+                  "survival_high": "17454405117895127/21086251112147760",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "163616708806007/880662495336624",
+                  "selection_premium": "341311665764222014009/8722538635051042401600"
+                }
+              },
+              "P": {
+                "ordinary": {
+                  "best": "217567/9148880",
+                  "avg": "395367/18297760",
+                  "positive": "34/463",
+                  "available": "324/463",
+                  "count": "400/463",
+                  "survival_low": "25299193/36947400",
+                  "survival_high": "1058887/1539475",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "217567/671840",
+                  "selection_premium": "161/74080"
+                },
+                "promoting": {
+                  "best": "1061699/9148880",
+                  "avg": "70154449/1152758880",
+                  "positive": "177/926",
+                  "available": "402/463",
+                  "count": "712/463",
+                  "survival_low": "31383943/36947400",
+                  "survival_high": "1074416467/1256211600",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "1061699/1748760",
+                  "selection_premium": "12723925/230551776"
+                }
+              }
+            }
+          },
+          "N": {
+            "ordinary": {
+              "best": "9971870363743204679/35716549367556774000",
+              "avg": "65638398234613093295268983/860914563279537885037920000",
+              "positive": "5551/6945",
+              "available": "1",
+              "count": "2976/463",
+              "survival_low": "102655256084905328327/107364161912685678000",
+              "survival_high": "314820131284941960761/322092485738057034000",
+              "terminal_preparation_mass": "3/1852",
+              "conditional_positive": "1424552909106172097/4078217947944207600",
+              "selection_premium": "19413818084742467971524593/95657173697726431670880000"
+            },
+            "promoting": {
+              "best": "9971870363743204679/35716549367556774000",
+              "avg": "65638398234613093295268983/860914563279537885037920000",
+              "positive": "5551/6945",
+              "available": "1",
+              "count": "2976/463",
+              "survival_low": "102655256084905328327/107364161912685678000",
+              "survival_high": "314820131284941960761/322092485738057034000",
+              "terminal_preparation_mass": "3/1852",
+              "conditional_positive": "1424552909106172097/4078217947944207600",
+              "selection_premium": "19413818084742467971524593/95657173697726431670880000"
+            },
+            "per_target": {
+              "R": {
+                "ordinary": {
+                  "best": "16639697630851/63606326869800",
+                  "avg": "622339057914999531/6413496611978456000",
+                  "positive": "461/463",
+                  "available": "1",
+                  "count": "2976/463",
+                  "survival_low": "515223472935/525464937536",
+                  "survival_high": "1551939677615/1576394812608",
+                  "terminal_preparation_mass": "3/1852",
+                  "conditional_positive": "7704180003084013/29322516686977800",
+                  "selection_premium": "730703175754589977/4440113039062008000"
+                },
+                "promoting": {
+                  "best": "16639697630851/63606326869800",
+                  "avg": "622339057914999531/6413496611978456000",
+                  "positive": "461/463",
+                  "available": "1",
+                  "count": "2976/463",
+                  "survival_low": "515223472935/525464937536",
+                  "survival_high": "1551939677615/1576394812608",
+                  "terminal_preparation_mass": "3/1852",
+                  "conditional_positive": "7704180003084013/29322516686977800",
+                  "selection_premium": "730703175754589977/4440113039062008000"
+                }
+              },
+              "N": {
+                "ordinary": {
+                  "best": "5712781220281/22822613070400",
+                  "avg": "154805357761583/2191964943168000",
+                  "positive": "426/463",
+                  "available": "1",
+                  "count": "2976/463",
+                  "survival_low": "824876019080609/862694774061120",
+                  "survival_high": "63783969630917/66361136466240",
+                  "terminal_preparation_mass": "3/1852",
+                  "conditional_positive": "5712781220281/20998775740800",
+                  "selection_premium": "217022630050638287/1207772683685568000"
+                },
+                "promoting": {
+                  "best": "5712781220281/22822613070400",
+                  "avg": "154805357761583/2191964943168000",
+                  "positive": "426/463",
+                  "available": "1",
+                  "count": "2976/463",
+                  "survival_low": "824876019080609/862694774061120",
+                  "survival_high": "63783969630917/66361136466240",
+                  "terminal_preparation_mass": "3/1852",
+                  "conditional_positive": "5712781220281/20998775740800",
+                  "selection_premium": "217022630050638287/1207772683685568000"
+                }
+              },
+              "B": {
+                "ordinary": {
+                  "best": "2998173579862/14409233833995",
+                  "avg": "3984670358159083/55495483983576000",
+                  "positive": "195/463",
+                  "available": "1",
+                  "count": "2976/463",
+                  "survival_low": "31248288086189/33180568233120",
+                  "survival_high": "991946939/1001080080",
+                  "terminal_preparation_mass": "3/1852",
+                  "conditional_positive": "2998173579862/6068683796175",
+                  "selection_premium": "1913298735603284801/14040357447844728000"
+                },
+                "promoting": {
+                  "best": "2998173579862/14409233833995",
+                  "avg": "3984670358159083/55495483983576000",
+                  "positive": "195/463",
+                  "available": "1",
+                  "count": "2976/463",
+                  "survival_low": "31248288086189/33180568233120",
+                  "survival_high": "991946939/1001080080",
+                  "terminal_preparation_mass": "3/1852",
+                  "conditional_positive": "2998173579862/6068683796175",
+                  "selection_premium": "1913298735603284801/14040357447844728000"
+                }
+              },
+              "Q": {
+                "ordinary": {
+                  "best": "367325556953594741/1673207718119776800",
+                  "avg": "63617181718731755095864/672589502562138972685875",
+                  "positive": "1",
+                  "available": "1",
+                  "count": "2976/463",
+                  "survival_low": "10443954919484237353/10736416191268567800",
+                  "survival_high": "10451824530639995653/10736416191268567800",
+                  "terminal_preparation_mass": "3/1852",
+                  "conditional_positive": "367325556953594741/1673207718119776800",
+                  "selection_premium": "2689245145600557085179487/21522864081988447125948000"
+                },
+                "promoting": {
+                  "best": "367325556953594741/1673207718119776800",
+                  "avg": "63617181718731755095864/672589502562138972685875",
+                  "positive": "1",
+                  "available": "1",
+                  "count": "2976/463",
+                  "survival_low": "10443954919484237353/10736416191268567800",
+                  "survival_high": "10451824530639995653/10736416191268567800",
+                  "terminal_preparation_mass": "3/1852",
+                  "conditional_positive": "367325556953594741/1673207718119776800",
+                  "selection_premium": "2689245145600557085179487/21522864081988447125948000"
+                }
+              },
+              "P": {
+                "ordinary": {
+                  "best": "783492544403/2479007971440",
+                  "avg": "21200389847323/297480956572800",
+                  "positive": "731/926",
+                  "available": "1",
+                  "count": "2976/463",
+                  "survival_low": "2358924581801/2479007971440",
+                  "survival_high": "115446748/118183065",
+                  "terminal_preparation_mass": "3/1852",
+                  "conditional_positive": "783492544403/1956970655640",
+                  "selection_premium": "72818715481037/297480956572800"
+                },
+                "promoting": {
+                  "best": "783492544403/2479007971440",
+                  "avg": "21200389847323/297480956572800",
+                  "positive": "731/926",
+                  "available": "1",
+                  "count": "2976/463",
+                  "survival_low": "2358924581801/2479007971440",
+                  "survival_high": "115446748/118183065",
+                  "terminal_preparation_mass": "3/1852",
+                  "conditional_positive": "783492544403/1956970655640",
+                  "selection_premium": "72818715481037/297480956572800"
+                }
+              }
+            }
+          }
+        },
+        "N_P": {
+          "ordinary": {
+            "best": "1425977462015278269097/129545746949310885839",
+            "avg": "65638398234613093295268983/19864635422429819310355920",
+            "positive": "5551/979",
+            "conditional_positive": "15341010278164367312593/7902290563907964036179"
+          },
+          "promoting": {
+            "best": "2851954924030556538194/1145066531035487440015",
+            "avg": "65638398234613093295268983/52160029362487028448836790",
+            "positive": "5551/1899",
+            "conditional_positive": "59514971436637657868466/69849058393164733840915"
+          }
+        }
+      },
+      "shogi": {
+        "actors": {
+          "P": {
+            "ordinary": {
+              "best": "40713204441268003/1870789285894557600",
+              "avg": "40713204441268003/1870789285894557600",
+              "positive": "441/8987",
+              "available": "1049/1419",
+              "count": "1049/1419",
+              "survival_low": "193741509020120237201/265505350025584468800",
+              "survival_high": "193741509020120237201/265505350025584468800",
+              "terminal_preparation_mass": "0",
+              "conditional_positive": "40713204441268003/91801276853176800",
+              "selection_premium": "0"
+            },
+            "promoting": {
+              "best": "4755188446675006/136411718763144825",
+              "avg": "8194747634143313927/288101550027761870400",
+              "positive": "1483/17974",
+              "available": "2555/2838",
+              "count": "1633/1419",
+              "survival_low": "62775879223376686184/70524858600545874525",
+              "survival_high": "125551913534314193743/141049717201091749050",
+              "terminal_preparation_mass": "0",
+              "conditional_positive": "9510376893350012/22510134519388425",
+              "selection_premium": "9990326298563777/1557305675825739840"
+            },
+            "per_target": {
+              "L": {
+                "ordinary": {
+                  "best": "1269779/51697008",
+                  "avg": "1269779/51697008",
+                  "positive": "21/473",
+                  "available": "1049/1419",
+                  "count": "1049/1419",
+                  "survival_low": "692746089169/949706347590",
+                  "survival_high": "692746089169/949706347590",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "181397/327888",
+                  "selection_premium": "0"
+                },
+                "promoting": {
+                  "best": "50594887/1499213232",
+                  "avg": "43690969/1499213232",
+                  "positive": "27/473",
+                  "available": "2555/2838",
+                  "count": "1633/1419",
+                  "survival_low": "46955486363/52761463755",
+                  "survival_high": "46955486363/52761463755",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "50594887/85578768",
+                  "selection_premium": "383551/83289624"
+                }
+              },
+              "N": {
+                "ordinary": {
+                  "best": "14257/647064",
+                  "avg": "14257/647064",
+                  "positive": "53/1419",
+                  "available": "1049/1419",
+                  "count": "1049/1419",
+                  "survival_low": "3444335281/4705593200",
+                  "survival_high": "3444335281/4705593200",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "269/456",
+                  "selection_premium": "0"
+                },
+                "promoting": {
+                  "best": "500279/14882472",
+                  "avg": "827525/29764944",
+                  "positive": "71/1419",
+                  "available": "2555/2838",
+                  "count": "1633/1419",
+                  "survival_low": "37793322529/42350338800",
+                  "survival_high": "37793322529/42350338800",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "500279/744648",
+                  "selection_premium": "9107/1566576"
+                }
+              },
+              "S": {
+                "ordinary": {
+                  "best": "5727143/278918640",
+                  "avg": "5727143/278918640",
+                  "positive": "113/1419",
+                  "available": "1049/1419",
+                  "count": "1049/1419",
+                  "survival_low": "7481236884761/10263907110600",
+                  "survival_high": "7481236884761/10263907110600",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "5727143/22211280",
+                  "selection_premium": "0"
+                },
+                "promoting": {
+                  "best": "4186223/113633520",
+                  "avg": "88013297/3068105040",
+                  "positive": "11/86",
+                  "available": "2555/2838",
+                  "count": "1633/1419",
+                  "survival_low": "3549990283039/3991519431900",
+                  "survival_high": "3549990283039/3991519431900",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "4186223/14534520",
+                  "selection_premium": "893383/109575180"
+                }
+              },
+              "G": {
+                "ordinary": {
+                  "best": "102161/5349630",
+                  "avg": "102161/5349630",
+                  "positive": "89/1419",
+                  "available": "1049/1419",
+                  "count": "1049/1419",
+                  "survival_low": "471767789/647711064",
+                  "survival_high": "471767789/647711064",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "102161/335530",
+                  "selection_premium": "0"
+                },
+                "promoting": {
+                  "best": "744732143/22243761540",
+                  "avg": "1169517581/44487523080",
+                  "positive": "13/129",
+                  "available": "2555/2838",
+                  "count": "1633/1419",
+                  "survival_low": "398587169/448415352",
+                  "survival_high": "398587169/448415352",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "744732143/2241619380",
+                  "selection_premium": "169733/23600808"
+                }
+              },
+              "R": {
+                "ordinary": {
+                  "best": "640440947/35536073760",
+                  "avg": "640440947/35536073760",
+                  "positive": "163/1419",
+                  "available": "1049/1419",
+                  "count": "1049/1419",
+                  "survival_low": "237841471110107881/327665404750267584",
+                  "survival_high": "237841471110107881/327665404750267584",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "640440947/4082015520",
+                  "selection_premium": "0"
+                },
+                "promoting": {
+                  "best": "391946375100263/10830885339389544",
+                  "avg": "1361498506272139/48137268175064640",
+                  "positive": "863/2838",
+                  "available": "2555/2838",
+                  "count": "1633/1419",
+                  "survival_low": "1814334840869985919/2047908779689172400",
+                  "survival_high": "1814334840869985919/2047908779689172400",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "391946375100263/3293535605318244",
+                  "selection_premium": "245492038681/31058528466240"
+                }
+              },
+              "B": {
+                "ordinary": {
+                  "best": "4673241341/256957318800",
+                  "avg": "4673241341/256957318800",
+                  "positive": "19/129",
+                  "available": "1049/1419",
+                  "count": "1049/1419",
+                  "survival_low": "17868584954579173/24456837863137680",
+                  "survival_high": "17868584954579173/24456837863137680",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "4673241341/37846426800",
+                  "selection_premium": "0"
+                },
+                "promoting": {
+                  "best": "519914121667/14065354188600",
+                  "avg": "545827577001/18753805584800",
+                  "positive": "11/43",
+                  "available": "2555/2838",
+                  "count": "1633/1419",
+                  "survival_low": "21785350692632029/24456837863137680",
+                  "survival_high": "21785861619393829/24456837863137680",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "519914121667/3598113862200",
+                  "selection_premium": "82418221/10486750560"
+                }
+              },
+              "P": {
+                "ordinary": {
+                  "best": "6685/293733",
+                  "avg": "6685/293733",
+                  "positive": "35/1419",
+                  "available": "1049/1419",
+                  "count": "1049/1419",
+                  "survival_low": "5614232033/7689929940",
+                  "survival_high": "5614232033/7689929940",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "191/207",
+                  "selection_premium": "0"
+                },
+                "promoting": {
+                  "best": "112658/3231063",
+                  "avg": "744457/25848504",
+                  "positive": "53/1419",
+                  "available": "2555/2838",
+                  "count": "1633/1419",
+                  "survival_low": "130108321037/146108668860",
+                  "survival_high": "130108321037/146108668860",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "112658/120681",
+                  "selection_premium": "17423/2872056"
+                }
+              }
+            }
+          },
+          "N": {
+            "ordinary": {
+              "best": "17654800196344465751/1117366822404968335200",
+              "avg": "12350746240993050437/1117366822404968335200",
+              "positive": "1685/26961",
+              "available": "1583/2838",
+              "count": "967/946",
+              "survival_low": "3119278428231900473041/5679948013891922370600",
+              "survival_high": "2403694202987904569563/4329996825417244581600",
+              "terminal_preparation_mass": "0",
+              "conditional_positive": "17654800196344465751/69832836161580492000",
+              "selection_premium": "884008992558569219/186227803734161389200"
+            },
+            "promoting": {
+              "best": "475933364561803264187/10335643107245957100600",
+              "avg": "2049225688691575708339/82685144857967656804800",
+              "positive": "3214/26961",
+              "available": "2381/2838",
+              "count": "5035/2838",
+              "survival_low": "696690910518975562829/873838155983372672400",
+              "survival_high": "61472966774288490513791/73609946032093157887200",
+              "terminal_preparation_mass": "0",
+              "conditional_positive": "475933364561803264187/1232104037190330704400",
+              "selection_premium": "15840011061286940587/744911214936645556800"
+            },
+            "per_target": {
+              "L": {
+                "ordinary": {
+                  "best": "2183438321/180181441440",
+                  "avg": "2868828817/360362882880",
+                  "positive": "23/473",
+                  "available": "1583/2838",
+                  "count": "967/946",
+                  "survival_low": "15300463721/27830222640",
+                  "survival_high": "523110977/941118640",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "2183438321/8761465440",
+                  "selection_premium": "99869855/24024192192"
+                },
+                "promoting": {
+                  "best": "136633541398997/3725611664654880",
+                  "avg": "138476836010869/7451223329309760",
+                  "positive": "233/2838",
+                  "available": "2381/2838",
+                  "count": "5035/2838",
+                  "survival_low": "288170812253/361792894320",
+                  "survival_high": "54294118253/64937186160",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "136633541398997/305872980220080",
+                  "selection_premium": "8986016452475/496748221953984"
+                }
+              },
+              "N": {
+                "ordinary": {
+                  "best": "167677/11144826",
+                  "avg": "53115/4953256",
+                  "positive": "67/2838",
+                  "available": "1583/2838",
+                  "count": "967/946",
+                  "survival_low": "614179919533/1119460622280",
+                  "survival_high": "36328109/65557800",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "167677/263109",
+                  "selection_premium": "192673/44579304"
+                },
+                "promoting": {
+                  "best": "45395839/1025323992",
+                  "avg": "48707609/2050647984",
+                  "positive": "27/473",
+                  "available": "2381/2838",
+                  "count": "5035/2838",
+                  "survival_low": "222579371059/279865155570",
+                  "survival_high": "13516350923/16192776600",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "45395839/58528008",
+                  "selection_premium": "14028023/683549328"
+                }
+              },
+              "S": {
+                "ordinary": {
+                  "best": "1625021/107733318",
+                  "avg": "818636591/80153588592",
+                  "positive": "245/2838",
+                  "available": "1583/2838",
+                  "count": "967/946",
+                  "survival_low": "12093574333/22022176176",
+                  "survival_high": "1243999/2247696",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "1625021/9300445",
+                  "selection_premium": "3226273/662426352"
+                },
+                "promoting": {
+                  "best": "1443077396/31511995515",
+                  "avg": "386928963313/15629949775440",
+                  "positive": "395/2838",
+                  "available": "2381/2838",
+                  "count": "5035/2838",
+                  "survival_low": "87585660311/110110880880",
+                  "survival_high": "215608669/258485040",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "2886154792/8771838075",
+                  "selection_premium": "29894311373/1420904525040"
+                }
+              },
+              "G": {
+                "ordinary": {
+                  "best": "94421653/6533927400",
+                  "avg": "768852311/78407128800",
+                  "positive": "75/946",
+                  "available": "1583/2838",
+                  "count": "967/946",
+                  "survival_low": "15804155567/28778980230",
+                  "survival_high": "1587996327/2863835260",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "94421653/518017500",
+                  "selection_premium": "1324391/285116832"
+                },
+                "promoting": {
+                  "best": "313013653/6533927400",
+                  "avg": "8011257877/324829533600",
+                  "positive": "248/1419",
+                  "available": "2381/2838",
+                  "count": "5035/2838",
+                  "survival_low": "4026933805787/5065100520480",
+                  "survival_high": "816804436519/979431658920",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "313013653/1141940800",
+                  "selection_premium": "960908111/41341940640"
+                }
+              },
+              "R": {
+                "ordinary": {
+                  "best": "329474614683859/21805257740666400",
+                  "avg": "7486582486455349/632352474479325600",
+                  "positive": "551/2838",
+                  "available": "1583/2838",
+                  "count": "967/946",
+                  "survival_low": "313456295736277/573822572122800",
+                  "survival_high": "1963069551274001/3559207173429600",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "329474614683859/4233508461982800",
+                  "selection_premium": "1034090669688281/316176237239662800"
+                },
+                "promoting": {
+                  "best": "606015932212657/12743486686130200",
+                  "avg": "18955411979039779/678175117557537600",
+                  "positive": "103/258",
+                  "available": "2381/2838",
+                  "count": "5035/2838",
+                  "survival_low": "8849104670745463/10902628870333200",
+                  "survival_high": "38298324788704433/46269693254584800",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "1818047796637971/15262548007807100",
+                  "selection_premium": "8264568257037223/421568316319550400"
+                }
+              },
+              "B": {
+                "ordinary": {
+                  "best": "26782767115087/1961077101726600",
+                  "avg": "716146775485171/73695213191199600",
+                  "positive": "244/1419",
+                  "available": "1583/2838",
+                  "count": "967/946",
+                  "survival_low": "27178625893747/49494840955560",
+                  "survival_high": "21684017/39062232",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "26782767115087/337211284581600",
+                  "selection_premium": "5516106985953869/1400209050632792400"
+                },
+                "promoting": {
+                  "best": "5286115393322641/116684087552732700",
+                  "avg": "5182887362550883/200029864376113200",
+                  "positive": "887/2838",
+                  "available": "2381/2838",
+                  "count": "5035/2838",
+                  "survival_low": "2663142315443/3299656063704",
+                  "survival_high": "14198925061/16992070920",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "5286115393322641/36468916722788550",
+                  "selection_premium": "875908812323081/45168033891380400"
+                }
+              },
+              "P": {
+                "ordinary": {
+                  "best": "173431/9876240",
+                  "avg": "22157/1795680",
+                  "positive": "109/2838",
+                  "available": "1583/2838",
+                  "count": "967/946",
+                  "survival_low": "973595677/1771797456",
+                  "survival_high": "2951237/5307060",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "173431/379320",
+                  "selection_premium": "20627/3950496"
+                },
+                "promoting": {
+                  "best": "120145723/2498688720",
+                  "avg": "129662131/4997377440",
+                  "positive": "34/473",
+                  "available": "2381/2838",
+                  "count": "5035/2838",
+                  "survival_low": "23979130655/30120556752",
+                  "survival_high": "357254111/427218330",
+                  "terminal_preparation_mass": "0",
+                  "conditional_positive": "120145723/179609760",
+                  "selection_premium": "22125863/999475488"
+                }
+              }
+            }
+          }
+        },
+        "N_P": {
+          "ordinary": {
+            "best": "653227607264745232787/899721104947581598297",
+            "avg": "456977610916742866169/899721104947581598297",
+            "positive": "1685/1323",
+            "conditional_positive": "17637145396148121285249/30939389017074999859805"
+          },
+          "promoting": {
+            "best": "475933364561803264187/360291118227671854608",
+            "avg": "2049225688691575708339/2351892570999131097049",
+            "positive": "6428/4449",
+            "conditional_positive": "705809179645154240789321/771983769322491560473408"
+          }
+        }
+      }
+    }
+  },
+  "representatives": {
+    "complete": true,
+    "input_sha256": "08816dd41a0702fedbafd8a5c3d19ebaf4a1bd41d2b04bb24953994968162d61",
+    "producer_sha256": "2e5d372598996e6ee876091d1a7079087b66d9c20368b6f3459430ba5b5cab46",
+    "scope": "Development diagnostic under fixed3replicates/all-target safety/initial-inventory target law. Reps have different safe populations, so only common stratum intersection isolates layout/background representative change. Still not same physical cohort or material utility, no confidence/holdout claim; predeclared sampled stratum laws not human selected.",
+    "games": {
+      "chess": {
+        "strata": 120,
+        "common_strata": [
+          8,
+          17,
+          30,
+          37,
+          42,
+          43,
+          49,
+          50,
+          51,
+          78,
+          79,
+          81,
+          87,
+          90,
+          100,
+          101,
+          109,
+          110,
+          112
+        ],
+        "reps": {
+          "0": {
+            "accepted_strata": 50,
+            "accepted_mass": "193/420",
+            "own_cohort": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "381124927851124931/64964703586431448800",
+                    "positive_mass": "631/5790",
+                    "conditional_positive": "381124927851124931/7079918473754446320"
+                  },
+                  "promoting": {
+                    "mean": "116638458515041511491/2663552847043689400800",
+                    "positive_mass": "3101/17370",
+                    "conditional_positive": "116638458515041511491/475513953867730617840"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "316190363665160188588409/1281676262827451495004000",
+                    "positive_mass": "708/965",
+                    "conditional_positive": "316190363665160188588409/940338646716928143484800"
+                  },
+                  "promoting": {
+                    "mean": "316190363665160188588409/1281676262827451495004000",
+                    "positive_mass": "708/965",
+                    "conditional_positive": "316190363665160188588409/940338646716928143484800"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "6639997636968363960356589/157901963233360314537955",
+                "promoting": "6639997636968363960356589/1178631623294494473616555"
+              }
+            },
+            "common_mass": "31/180",
+            "common_offsets": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "8414889898879/1362416129474400",
+                    "positive_mass": "137/1085",
+                    "conditional_positive": "8414889898879/172028580403680"
+                  },
+                  "promoting": {
+                    "mean": "29499506855359/1362416129474400",
+                    "positive_mass": "514/3255",
+                    "conditional_positive": "29499506855359/215140365760320"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "1251965780751628024637/4787560446758765676000",
+                    "positive_mass": "2368/3255",
+                    "conditional_positive": "1251965780751628024637/3482931839608220313600"
+                  },
+                  "promoting": {
+                    "mean": "1251965780751628024637/4787560446758765676000",
+                    "positive_mass": "2368/3255",
+                    "conditional_positive": "1251965780751628024637/3482931839608220313600"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "8763760465261396172459/206990766040559968245",
+                "promoting": "8763760465261396172459/725633442051683262645"
+              }
+            }
+          },
+          "1": {
+            "accepted_strata": 57,
+            "accepted_mass": "23/45",
+            "own_cohort": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "431292401196319933961/12578474752527868984800",
+                    "positive_mass": "2707/19320",
+                    "conditional_positive": "431292401196319933961/1762418796847460731980"
+                  },
+                  "promoting": {
+                    "mean": "366229650632969927081/4192824917509289661600",
+                    "positive_mass": "809/3220",
+                    "conditional_positive": "366229650632969927081/1053414707535719048520"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "277430490762608685231856519/793324402641932696871336000",
+                    "positive_mass": "2531/3220",
+                    "conditional_positive": "277430490762608685231856519/623572690399606104279922800"
+                  },
+                  "promoting": {
+                    "mean": "277430490762608685231856519/793324402641932696871336000",
+                    "positive_mass": "2531/3220",
+                    "conditional_positive": "277430490762608685231856519/623572690399606104279922800"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "277430490762608685231856519/27201611743451898234920270",
+                "promoting": "277430490762608685231856519/69294312196264239902996010"
+              }
+            },
+            "common_mass": "31/180",
+            "common_offsets": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "74266518709945183/2018483176886233200",
+                    "positive_mass": "508/3255",
+                    "conditional_positive": "519865630969616281/2205138610447755840"
+                  },
+                  "promoting": {
+                    "mean": "316877141043509161/3190505666691142800",
+                    "positive_mass": "577/2170",
+                    "conditional_positive": "9823191372348783991/26298882424011277080"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "48068968999038179/170502371497458000",
+                    "positive_mass": "2557/3255",
+                    "conditional_positive": "48068968999038179/133939958193241200"
+                  },
+                  "promoting": {
+                    "mean": "48068968999038179/170502371497458000",
+                    "positive_mass": "2557/3255",
+                    "conditional_positive": "48068968999038179/133939958193241200"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "4322025209610519788427/564054209602033664885",
+                "promoting": "4322025209610519788427/1522594662714061518605"
+              }
+            }
+          },
+          "2": {
+            "accepted_strata": 47,
+            "accepted_mass": "193/420",
+            "own_cohort": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "22272504262367339/1498006356829983000",
+                    "positive_mass": "412/2895",
+                    "conditional_positive": "22272504262367339/213187778588584800"
+                  },
+                  "promoting": {
+                    "mean": "54867926068280719/1439642472797646000",
+                    "positive_mass": "1631/8685",
+                    "conditional_positive": "54867926068280719/270357728627859600"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "2181065190811640522989/7437193014472639236000",
+                    "positive_mass": "6836/8685",
+                    "conditional_positive": "2181065190811640522989/5853845877597577641600"
+                  },
+                  "promoting": {
+                    "mean": "2181065190811640522989/7437193014472639236000",
+                    "positive_mass": "6836/8685",
+                    "conditional_positive": "2181065190811640522989/5853845877597577641600"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "23991717098928045752879/1216346002776405117468",
+                "promoting": "2181065190811640522989/283447706068738194354"
+              }
+            },
+            "common_mass": "31/180",
+            "common_offsets": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "19243207196119/3052166004342000",
+                    "positive_mass": "25/217",
+                    "conditional_positive": "19243207196119/351632028150000"
+                  },
+                  "promoting": {
+                    "mean": "11234822080894961/235016782334334000",
+                    "positive_mass": "17/93",
+                    "conditional_positive": "11234822080894961/42960056985846000"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "165650881060239649/579708063091357200",
+                    "positive_mass": "2539/3255",
+                    "conditional_positive": "165650881060239649/452190098982782160"
+                  },
+                  "promoting": {
+                    "mean": "165650881060239649/579708063091357200",
+                    "positive_mass": "2539/3255",
+                    "conditional_positive": "165650881060239649/452190098982782160"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "2484763215903594735/54823897301743031",
+                "promoting": "2484763215903594735/415688416993113557"
+              }
+            }
+          }
+        },
+        "common_offsets_ratios": {
+          "ordinary": [
+            "8763760465261396172459/206990766040559968245",
+            "4322025209610519788427/564054209602033664885",
+            "2484763215903594735/54823897301743031"
+          ],
+          "promoting": [
+            "8763760465261396172459/725633442051683262645",
+            "4322025209610519788427/1522594662714061518605",
+            "2484763215903594735/415688416993113557"
+          ]
+        },
+        "all_four_common_strata": [
+          8,
+          30,
+          37,
+          43,
+          49,
+          51,
+          78,
+          87,
+          100,
+          109,
+          110
+        ],
+        "all_four_common_offsets": {
+          "fresh0": {
+            "mass": "11/126",
+            "vector": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "3362463947/439702263000",
+                    "positive_mass": "83/550",
+                    "conditional_positive": "3362463947/66355068780"
+                  },
+                  "promoting": {
+                    "mean": "16786456067/439702263000",
+                    "positive_mass": "16/75",
+                    "conditional_positive": "16786456067/93803149440"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "177194850364381/1489161639215250",
+                    "positive_mass": "349/550",
+                    "conditional_positive": "177194850364381/944940749247495"
+                  },
+                  "promoting": {
+                    "mean": "177194850364381/1489161639215250",
+                    "positive_mass": "349/550",
+                    "conditional_positive": "177194850364381/944940749247495"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "708779401457524/45551299090009",
+                "promoting": "708779401457524/227406120339649"
+              }
+            }
+          },
+          "fresh1": {
+            "mass": "11/126",
+            "vector": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "38773365821/583274692000",
+                    "positive_mass": "301/1650",
+                    "conditional_positive": "116320097463/319210331440"
+                  },
+                  "promoting": {
+                    "mean": "568782039373/5249472228000",
+                    "positive_mass": "29/100",
+                    "conditional_positive": "568782039373/1522346946120"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "555036043920649/5066572933422000",
+                    "positive_mass": "566/825",
+                    "conditional_positive": "555036043920649/3475976097353760"
+                  },
+                  "promoting": {
+                    "mean": "555036043920649/5066572933422000",
+                    "positive_mass": "566/825",
+                    "conditional_positive": "555036043920649/3475976097353760"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "45512955601493218/27617764420542627",
+                "promoting": "45512955601493218/45015116942097339"
+              }
+            }
+          },
+          "fresh2": {
+            "mass": "11/126",
+            "vector": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "108389099471/30290600340000",
+                    "positive_mass": "311/3300",
+                    "conditional_positive": "108389099471/2854659607800"
+                  },
+                  "promoting": {
+                    "mean": "202156448237/30290600340000",
+                    "positive_mass": "117/1100",
+                    "conditional_positive": "202156448237/3221818399800"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "584304913866457/4664463970452000",
+                    "positive_mass": "203/275",
+                    "conditional_positive": "83472130552351/491888927793120"
+                  },
+                  "promoting": {
+                    "mean": "584304913866457/4664463970452000",
+                    "positive_mass": "203/275",
+                    "conditional_positive": "83472130552351/491888927793120"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "61352015955977985/1752543349346599",
+                "promoting": "61352015955977985/3268667611544053"
+              }
+            }
+          },
+          "original": {
+            "mass": "11/126",
+            "vector": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "60264626990263/821606421636000",
+                    "positive_mass": "301/1650",
+                    "conditional_positive": "60264626990263/149880929037840"
+                  },
+                  "promoting": {
+                    "mean": "2049433617471467/23826586227444000",
+                    "positive_mass": "239/1100",
+                    "conditional_positive": "2049433617471467/5176867371235560"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "62648719099622203/488445017662602000",
+                    "positive_mass": "199/275",
+                    "conditional_positive": "62648719099622203/353456576417664720"
+                  },
+                  "promoting": {
+                    "mean": "62648719099622203/488445017662602000",
+                    "positive_mass": "199/275",
+                    "conditional_positive": "62648719099622203/353456576417664720"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "125297438199244406/71654641491422707",
+                "promoting": "125297438199244406/84026778316330147"
+              }
+            }
+          }
+        }
+      },
+      "shogi": {
+        "strata": 168,
+        "common_strata": [
+          4,
+          8,
+          10,
+          20,
+          21,
+          22,
+          23,
+          25,
+          26,
+          30,
+          32,
+          34,
+          35,
+          36,
+          37,
+          38,
+          42,
+          43,
+          44,
+          45,
+          47,
+          48,
+          50,
+          52,
+          54,
+          56,
+          57,
+          61,
+          62,
+          65,
+          67,
+          69,
+          74,
+          75,
+          76,
+          79,
+          80,
+          85,
+          90,
+          95,
+          98,
+          99,
+          102,
+          103,
+          104,
+          105,
+          107,
+          108,
+          110,
+          113,
+          116,
+          117,
+          119,
+          122,
+          123,
+          129,
+          130,
+          131,
+          132,
+          133,
+          142,
+          143,
+          144,
+          145,
+          146,
+          155,
+          157,
+          158,
+          159,
+          160,
+          161
+        ],
+        "reps": {
+          "0": {
+            "accepted_strata": 116,
+            "accepted_mass": "577/784",
+            "own_cohort": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "1454677800778661/139684954444635600",
+                    "positive_mass": "443/10963",
+                    "conditional_positive": "1454677800778661/5644480052811600"
+                  },
+                  "promoting": {
+                    "mean": "2695569735277994557/144093411606908299536",
+                    "positive_mass": "1485/21926",
+                    "conditional_positive": "2695569735277994557/9759131452898787960"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "46570123015251751/2347562913113527200",
+                    "positive_mass": "4349/65778",
+                    "conditional_positive": "46570123015251751/155212245874467600"
+                  },
+                  "promoting": {
+                    "mean": "1605078254636847959/27342203340969316800",
+                    "positive_mass": "8761/65778",
+                    "conditional_positive": "1605078254636847959/3641719776676581600"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "142923707533807623819/75029371608561777058",
+                "promoting": "845876240193618874393/269556973527799455700"
+              }
+            },
+            "common_mass": "121/294",
+            "common_offsets": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "339758030239/21816457977600",
+                    "positive_mass": "701/18392",
+                    "conditional_positive": "339758030239/831521152800"
+                  },
+                  "promoting": {
+                    "mean": "324302034061396331/18566612947882771200",
+                    "positive_mass": "2485/36784",
+                    "conditional_positive": "324302034061396331/1254296247702498000"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "3073170246241/93819509871780",
+                    "positive_mass": "2977/36784",
+                    "conditional_positive": "12292680984964/30371974868235"
+                  },
+                  "promoting": {
+                    "mean": "61509896679504269/1405040979839777280",
+                    "positive_mass": "1027/9196",
+                    "conditional_positive": "61509896679504269/156913558753311360"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "38353164673087680/18234473724896891",
+                "promoting": "11379330885708289765/4540228476859548634"
+              }
+            }
+          },
+          "1": {
+            "accepted_strata": 122,
+            "accepted_mass": "1699/2352",
+            "own_cohort": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "8157997920799751/776915181826383600",
+                    "positive_mass": "2475/64562",
+                    "conditional_positive": "8157997920799751/29783232784305000"
+                  },
+                  "promoting": {
+                    "mean": "2644228557825856039/95560567364645182800",
+                    "positive_mass": "4753/64562",
+                    "conditional_positive": "2644228557825856039/7035088390758628200"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "1505733716228985431/63543483818852637600",
+                    "positive_mass": "4555/64562",
+                    "conditional_positive": "1505733716228985431/4483141302854214000"
+                  },
+                  "promoting": {
+                    "mean": "93948545843289946787/1573182614545533482400",
+                    "positive_mass": "8715/64562",
+                    "conditional_positive": "93948545843289946787/212358453668788518000"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "28608940608350723189/12677528768922813054",
+                "promoting": "127112382525971298002811/58897546897013117412686"
+              }
+            },
+            "common_mass": "121/294",
+            "common_offsets": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "23581788835559/1480418140924800",
+                    "positive_mass": "3/76",
+                    "conditional_positive": "23581788835559/58437558194400"
+                  },
+                  "promoting": {
+                    "mean": "24281533994331769/1327935072409545600",
+                    "positive_mass": "107/1936",
+                    "conditional_positive": "24281533994331769/73393105758172200"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "3061034995768912193/98267195358306374400",
+                    "positive_mass": "733/9196",
+                    "conditional_positive": "3061034995768912193/7832737516054651200"
+                  },
+                  "promoting": {
+                    "mean": "1544407061292749279/32755731786102124800",
+                    "positive_mass": "4405/36784",
+                    "conditional_positive": "1544407061292749279/3922602178060566000"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "3061034995768912193/1565311979326735302",
+                "promoting": "4633221183878247837/1796833515580550906"
+              }
+            }
+          },
+          "2": {
+            "accepted_strata": 120,
+            "accepted_mass": "297/392",
+            "own_cohort": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "51170395426840483/6700036047157252800",
+                    "positive_mass": "1093/33858",
+                    "conditional_positive": "51170395426840483/216289780835928800"
+                  },
+                  "promoting": {
+                    "mean": "26420593108568438051/1035068177511267419520",
+                    "positive_mass": "4973/67716",
+                    "conditional_positive": "26420593108568438051/76014443362920622560"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "4548143175932208491/180900973273245825600",
+                    "positive_mass": "4715/67716",
+                    "conditional_positive": "4548143175932208491/12595960910026494000"
+                  },
+                  "promoting": {
+                    "mean": "106099680380008851191797/2232498911165126733729600",
+                    "positive_mass": "8377/67716",
+                    "conditional_positive": "106099680380008851191797/276177615022007600101200"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "4548143175932208491/1381600676524693041",
+                "promoting": "9973369955720832012028918/5356643149796707972649995"
+              }
+            },
+            "common_mass": "121/294",
+            "common_offsets": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "3164870861234963/246283697639865600",
+                    "positive_mass": "317/9196",
+                    "conditional_positive": "3164870861234963/8489770786411200"
+                  },
+                  "promoting": {
+                    "mean": "53375136928398377821/3592211919209199686400",
+                    "positive_mass": "2331/36784",
+                    "conditional_positive": "53375136928398377821/227638266193906167600"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "166869264111442987/4913359767915318720",
+                    "positive_mass": "377/4598",
+                    "conditional_positive": "166869264111442987/402857031862565280"
+                  },
+                  "promoting": {
+                    "mean": "14796447229219864963/313363167420376993920",
+                    "positive_mass": "1143/9196",
+                    "conditional_positive": "14796447229219864963/38948901735699315360"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "3337385282228859740/1262783473632750237",
+                "promoting": "6954330197733336532610/2188380614064333490661"
+              }
+            }
+          }
+        },
+        "common_offsets_ratios": {
+          "ordinary": [
+            "38353164673087680/18234473724896891",
+            "3061034995768912193/1565311979326735302",
+            "3337385282228859740/1262783473632750237"
+          ],
+          "promoting": [
+            "11379330885708289765/4540228476859548634",
+            "4633221183878247837/1796833515580550906",
+            "6954330197733336532610/2188380614064333490661"
+          ]
+        },
+        "all_four_common_strata": [
+          8,
+          10,
+          20,
+          21,
+          22,
+          23,
+          25,
+          32,
+          34,
+          35,
+          36,
+          37,
+          38,
+          43,
+          45,
+          47,
+          48,
+          50,
+          52,
+          57,
+          62,
+          65,
+          75,
+          76,
+          79,
+          80,
+          85,
+          90,
+          98,
+          103,
+          104,
+          107,
+          108,
+          113,
+          116,
+          117,
+          122,
+          123,
+          129,
+          130,
+          131,
+          132,
+          133,
+          142,
+          143,
+          144,
+          145,
+          146,
+          155,
+          157,
+          158,
+          159,
+          160,
+          161
+        ],
+        "all_four_common_offsets": {
+          "fresh0": {
+            "mass": "323/1176",
+            "vector": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "25674127/1155777600",
+                    "positive_mass": "31/722",
+                    "conditional_positive": "25674127/49624800"
+                  },
+                  "promoting": {
+                    "mean": "2073048369237754817/86733702221411044800",
+                    "positive_mass": "1743/24548",
+                    "conditional_positive": "2073048369237754817/6158417914775926800"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "77293510045933/2441827202179365",
+                    "positive_mass": "479/6137",
+                    "conditional_positive": "77293510045933/190587458015955"
+                  },
+                  "promoting": {
+                    "mean": "474608852415121/14425563779028864",
+                    "positive_mass": "1157/12274",
+                    "conditional_positive": "474608852415121/1359815650345152"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "24733923214698560/17357465782567911",
+                "promoting": "5707171450291830025/4146096738475509634"
+              }
+            }
+          },
+          "fresh1": {
+            "mass": "323/1176",
+            "vector": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "7467210895/332089075296",
+                    "positive_mass": "55/1292",
+                    "conditional_positive": "1493442179/2827383768"
+                  },
+                  "promoting": {
+                    "mean": "774445785718237/31650164432429400",
+                    "positive_mass": "1203/24548",
+                    "conditional_positive": "774445785718237/1551048876169650"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "11196983557300327/352576025290288800",
+                    "positive_mass": "1883/24548",
+                    "conditional_positive": "11196983557300327/27044999821639800"
+                  },
+                  "promoting": {
+                    "mean": "57797584752523043/1057728075870866400",
+                    "positive_mass": "1563/12274",
+                    "conditional_positive": "57797584752523043/134693578506286800"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "347106490276310137/245764018540870375",
+                "promoting": "1791725127328214333/802325834004093532"
+              }
+            }
+          },
+          "fresh2": {
+            "mass": "323/1176",
+            "vector": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "207001751003897/10957249908770880",
+                    "positive_mass": "274/6137",
+                    "conditional_positive": "207001751003897/489210766661760"
+                  },
+                  "promoting": {
+                    "mean": "443045118683678083/21859713567997905600",
+                    "positive_mass": "857/12274",
+                    "conditional_positive": "443045118683678083/1526297419567720800"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "444039836206801/14684088827584800",
+                    "positive_mass": "961/12274",
+                    "conditional_positive": "444039836206801/1149699312637200"
+                  },
+                  "promoting": {
+                    "mean": "1806666352785134453/37343677345329755400",
+                    "positive_mass": "769/6137",
+                    "conditional_positive": "1806666352785134453/4679369053048489800"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "283297415499939038/176986497108331935",
+                "promoting": "43359992466843226872/18164849866030801403"
+              }
+            }
+          },
+          "original": {
+            "mass": "323/1176",
+            "vector": {
+              "actors": {
+                "P": {
+                  "ordinary": {
+                    "mean": "5166423302113/205021308064320",
+                    "positive_mass": "533/12274",
+                    "conditional_positive": "5166423302113/8903076193440"
+                  },
+                  "promoting": {
+                    "mean": "46124780683207/1727494354986400",
+                    "positive_mass": "1339/24548",
+                    "conditional_positive": "46124780683207/94228244310200"
+                  }
+                },
+                "N": {
+                  "ordinary": {
+                    "mean": "5427023783369/173256032083680",
+                    "positive_mass": "1903/24548",
+                    "conditional_positive": "5427023783369/13431083145480"
+                  },
+                  "promoting": {
+                    "mean": "94283198614137767/1681516428307531200",
+                    "positive_mass": "2963/24548",
+                    "conditional_positive": "94283198614137767/202962896247157200"
+                  }
+                }
+              },
+              "N_P": {
+                "ordinary": "11103690660772974/8932745889353377",
+                "promoting": "1225681581983790971/583662974765301378"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "layer_sensitivity": {
+    "complete": true,
+    "input_sha256": "5cf9a181800d7b5df3151bce2034412502faa6889d3746782cab804476fcf4b3",
+    "producer_sha256": "ff3ff6793ee4c186dd4e8c5e369fe1cfc6e6d390884152f6b63fcea116ac29d9",
+    "scope": "All-target integrated original common cohort, same owner/context/target weights for P and N, all zero roots retained. Near means a geometrically possible one-step quiet P move has promotion_allowed by actual rules, ignoring blockers/check; N uses that SAME pawn-defined layer, not its own jump reach. Inside-zone Shogi P included. Mixture freezes within-group weights; t range is diagnostic, not natural-game distribution or parameter fitting. No transition or new sample. R is ratio of merged raw means, not average of ratios.",
+    "games": {
+      "chess": {
+        "width": 8,
+        "original_t": "78/463",
+        "groups": {
+          "P": {
+            "far": {
+              "mass": "385/463",
+              "numerator": "1816936379883461/71634476774718000",
+              "positive_mass": "979/6945",
+              "rows": 335,
+              "mean": "1816936379883461/59566465568610000"
+            },
+            "near": {
+              "mass": "78/463",
+              "numerator": "8066124392400383/92999145286476000",
+              "positive_mass": "184/1389",
+              "rows": 105,
+              "mean": "8066124392400383/15667242618456000"
+            }
+          },
+          "N": {
+            "far": {
+              "mass": "385/463",
+              "numerator": "36364691259858493057/144746015857993242000",
+              "positive_mass": "1593/2315",
+              "rows": 335,
+              "mean": "36364691259858493057/120361157894875590000"
+            },
+            "near": {
+              "mass": "78/463",
+              "numerator": "105747549289/3781608879510",
+              "positive_mass": "772/6945",
+              "rows": 105,
+              "mean": "105747549289/637074498060"
+            }
+          }
+        },
+        "far_edge_rank_layers": {
+          "P": {
+            "6": {
+              "mass": "78/463",
+              "numerator": "2469585032192077/501441337423026000",
+              "rows": 105,
+              "mean": "2469585032192077/84476078442756000"
+            },
+            "1": {
+              "mass": "78/463",
+              "numerator": "8066124392400383/92999145286476000",
+              "rows": 105,
+              "mean": "8066124392400383/15667242618456000"
+            },
+            "5": {
+              "mass": "73/463",
+              "numerator": "16643/10063305",
+              "rows": 55,
+              "mean": "16643/1586655"
+            },
+            "2": {
+              "mass": "73/463",
+              "numerator": "25/246316",
+              "rows": 55,
+              "mean": "25/38836"
+            },
+            "4": {
+              "mass": "161/926",
+              "numerator": "21563279/10919188280",
+              "rows": 60,
+              "mean": "21563279/1898476580"
+            },
+            "3": {
+              "mass": "161/926",
+              "numerator": "358455001/21452953599",
+              "rows": 60,
+              "mean": "716910002/7459882353"
+            }
+          },
+          "N": {
+            "6": {
+              "mass": "78/463",
+              "numerator": "72808531687261081/2418717039334596000",
+              "rows": 105,
+              "mean": "72808531687261081/407472848959176000"
+            },
+            "1": {
+              "mass": "78/463",
+              "numerator": "105747549289/3781608879510",
+              "rows": 105,
+              "mean": "105747549289/637074498060"
+            },
+            "5": {
+              "mass": "73/463",
+              "numerator": "725433049898213/14326895354943600",
+              "rows": 55,
+              "mean": "725433049898213/2258884148835600"
+            },
+            "2": {
+              "mass": "73/463",
+              "numerator": "398849408363963/8357355623717100",
+              "rows": 55,
+              "mean": "398849408363963/1317682420154100"
+            },
+            "4": {
+              "mass": "161/926",
+              "numerator": "315175597651427/5278329867610800",
+              "rows": 60,
+              "mean": "315175597651427/917722579573800"
+            },
+            "3": {
+              "mass": "161/926",
+              "numerator": "252817587570379393/4009225221970768800",
+              "rows": 60,
+              "mean": "252817587570379393/697068316130986800"
+            }
+          }
+        },
+        "R_original": "2851954924030556538194/1145066531035487440015",
+        "derivative_numerator": "-102442581525171783894034856840433036391/680747613990407717059600797943440000000",
+        "R_diagnostic_points": {
+          "0": "8982078741185047785079/906820228645176200873",
+          "1/4": "1657810246808155146446324/937364864029931812725593",
+          "1/2": "723674057724910176798108/843055560250833487834801",
+          "3/4": "1236885984091485560746108/2434857376973402138613611",
+          "1": "345879084214461200/1072794544189250939"
+        }
+      },
+      "shogi": {
+        "width": 9,
+        "original_t": "1255/2838",
+        "groups": {
+          "P": {
+            "far": {
+              "mass": "1583/2838",
+              "numerator": "1518102608658943/142342663057194600",
+              "positive_mass": "1811/53922",
+              "rows": 756,
+              "mean": "1518102608658943/79396911775736100"
+            },
+            "near": {
+              "mass": "1255/2838",
+              "numerator": "2263090363458413/93539464294727880",
+              "positive_mass": "1319/26961",
+              "rows": 644,
+              "mean": "2263090363458413/41364350842101300"
+            }
+          },
+          "N": {
+            "far": {
+              "mass": "1583/2838",
+              "numerator": "25724165168479091351/1117366822404968335200",
+              "positive_mass": "1417/17974",
+              "rows": 756,
+              "mean": "25724165168479091351/623252882264645833200"
+            },
+            "near": {
+              "mass": "1255/2838",
+              "numerator": "1105620612094641901/48016925004626978400",
+              "positive_mass": "2177/53922",
+              "rows": 644,
+              "mean": "1105620612094641901/21233700098945334000"
+            }
+          }
+        },
+        "far_edge_rank_layers": {
+          "P": {
+            "5": {
+              "mass": "233/1419",
+              "numerator": "295742803/30030240240",
+              "rows": 168,
+              "mean": "295742803/4930969680"
+            },
+            "3": {
+              "mass": "233/1419",
+              "numerator": "3410526849889/148711389975720",
+              "rows": 168,
+              "mean": "3410526849889/24418431194040"
+            },
+            "7": {
+              "mass": "457/2838",
+              "numerator": "500399766533/1311913945227600",
+              "rows": 322,
+              "mean": "500399766533/211256051081400"
+            },
+            "1": {
+              "mass": "457/2838",
+              "numerator": "123818731/434371232295",
+              "rows": 322,
+              "mean": "247637462/139892637885"
+            },
+            "6": {
+              "mass": "166/1419",
+              "numerator": "3649/10514790",
+              "rows": 154,
+              "mean": "3649/1230060"
+            },
+            "2": {
+              "mass": "166/1419",
+              "numerator": "9807214/10058205465",
+              "rows": 154,
+              "mean": "4903607/588323505"
+            },
+            "4": {
+              "mass": "164/1419",
+              "numerator": "96526/1090707255",
+              "rows": 112,
+              "mean": "48263/63028890"
+            }
+          },
+          "N": {
+            "5": {
+              "mass": "233/1419",
+              "numerator": "21764687781623/5232881975220900",
+              "rows": 168,
+              "mean": "21764687781623/859239957876300"
+            },
+            "3": {
+              "mass": "233/1419",
+              "numerator": "129927735998342/5793547901137425",
+              "rows": 168,
+              "mean": "129927735998342/951301381934475"
+            },
+            "7": {
+              "mass": "457/2838",
+              "numerator": "14555620037452051/9389637163066960800",
+              "rows": 322,
+              "mean": "14555620037452051/1512002883552361200"
+            },
+            "1": {
+              "mass": "457/2838",
+              "numerator": "0",
+              "rows": 322,
+              "mean": "0"
+            },
+            "6": {
+              "mass": "166/1419",
+              "numerator": "3485122729758529/353373441620799600",
+              "rows": 154,
+              "mean": "3485122729758529/41338964981714400"
+            },
+            "2": {
+              "mass": "166/1419",
+              "numerator": "4760882736209/7943246485463520",
+              "rows": 154,
+              "mean": "4760882736209/929231089913280"
+            },
+            "4": {
+              "mass": "164/1419",
+              "numerator": "2083763381566/279688519365255",
+              "rows": 112,
+              "mean": "1041881690783/16162409152890"
+            }
+          }
+        },
+        "R_original": "475933364561803264187/360291118227671854608",
+        "derivative_numerator": "-215059213784942818252250322246898361/170335121921033859716119633314324450000",
+        "R_diagnostic_points": {
+          "0": "951794111233726379987/440923794069338040692",
+          "1/4": "231382946141696783180169/147429958148950626734900",
+          "1/2": "675355398980169004049087/534185089040718826507720",
+          "3/4": "2857630784282687417410837/2651751172687293717977860",
+          "1": "3316861836283925703/3485159159725956020"
+        }
+      }
+    }
+  },
+  "layer_representatives": {
+    "complete": true,
+    "producer_sha256": "1bdda67fcf29d6d2895f21ce34c9fda5b2040b903e70a8981f095bf5ca887a5d",
+    "input_sha256": "08816dd41a0702fedbafd8a5c3d19ebaf4a1bd41d2b04bb24953994968162d61",
+    "scope": "Same all-four common offset intersection, promotion-aware exact target law. Report actual near mass and raw group means. Standardize only binary near mass to original-on-intersection t; within-group source/background/owner weights stay per-representative. Residual variation is descriptive, not precision/causation/natural law. Empty strata remain unsupported, never imputed.",
+    "games": {
+      "chess": {
+        "offsets": 11,
+        "original_t": "13/220",
+        "representatives": {
+          "original": {
+            "t": "13/220",
+            "groups": {
+              "P": {
+                "near": {
+                  "mass": "13/220",
+                  "numerator": "259979/20527650",
+                  "positive_mass": "23/660",
+                  "mean": "519958/2425995"
+                },
+                "far": {
+                  "mass": "207/220",
+                  "numerator": "60264626990263/821606421636000",
+                  "positive_mass": "301/1650",
+                  "mean": "60264626990263/773056951266600"
+                }
+              },
+              "N": {
+                "near": {
+                  "mass": "13/220",
+                  "numerator": "59482679/29696667000",
+                  "positive_mass": "21/1100",
+                  "mean": "59482679/1754803050"
+                },
+                "far": {
+                  "mass": "207/220",
+                  "numerator": "284195205230737/2250898698906000",
+                  "positive_mass": "31/44",
+                  "mean": "284195205230737/2117891048516100"
+                }
+              }
+            },
+            "R_actual": "125297438199244406/84026778316330147",
+            "R_fixed_original_near_mass": "125297438199244406/84026778316330147"
+          },
+          "fresh0": {
+            "t": "17/110",
+            "groups": {
+              "P": {
+                "near": {
+                  "mass": "17/110",
+                  "numerator": "16699/546975",
+                  "positive_mass": "103/1650",
+                  "mean": "33398/169065"
+                },
+                "far": {
+                  "mass": "93/110",
+                  "numerator": "3362463947/439702263000",
+                  "positive_mass": "83/550",
+                  "mean": "3362463947/371748276900"
+                }
+              },
+              "N": {
+                "near": {
+                  "mass": "17/110",
+                  "numerator": "2892939059/315517059000",
+                  "positive_mass": "14/275",
+                  "mean": "2892939059/48761727300"
+                },
+                "far": {
+                  "mass": "93/110",
+                  "numerator": "654163604962663/5956646556861000",
+                  "positive_mass": "321/550",
+                  "mean": "654163604962663/5036073907164300"
+                }
+              }
+            },
+            "R_actual": "708779401457524/227406120339649",
+            "R_fixed_original_near_mass": "263114691536210894/42239722265395159"
+          },
+          "fresh1": {
+            "t": "9/44",
+            "groups": {
+              "P": {
+                "near": {
+                  "mass": "9/44",
+                  "numerator": "95741179/2286355500",
+                  "positive_mass": "71/660",
+                  "mean": "95741179/467663625"
+                },
+                "far": {
+                  "mass": "35/44",
+                  "numerator": "38773365821/583274692000",
+                  "positive_mass": "301/1650",
+                  "mean": "38773365821/463968505000"
+                }
+              },
+              "N": {
+                "near": {
+                  "mass": "9/44",
+                  "numerator": "66199887667/2547296598000",
+                  "positive_mass": "307/3300",
+                  "mean": "66199887667/521037940500"
+                },
+                "far": {
+                  "mass": "35/44",
+                  "numerator": "43016101133/514790991000",
+                  "positive_mass": "1957/3300",
+                  "mean": "43016101133/409492833750"
+                }
+              }
+            },
+            "R_actual": "45512955601493218/45015116942097339",
+            "R_fixed_original_near_mass": "748261964958654342/638362263578261377"
+          },
+          "fresh2": {
+            "t": "2/55",
+            "groups": {
+              "P": {
+                "near": {
+                  "mass": "2/55",
+                  "numerator": "11237/3630000",
+                  "positive_mass": "2/165",
+                  "mean": "11237/132000"
+                },
+                "far": {
+                  "mass": "53/55",
+                  "numerator": "108389099471/30290600340000",
+                  "positive_mass": "311/3300",
+                  "mean": "108389099471/29189123964000"
+                }
+              },
+              "N": {
+                "near": {
+                  "mass": "2/55",
+                  "numerator": "207881/203506875",
+                  "positive_mass": "19/1650",
+                  "mean": "207881/7400250"
+                },
+                "far": {
+                  "mass": "53/55",
+                  "numerator": "60790929345529/489279437460000",
+                  "positive_mass": "109/150",
+                  "mean": "60790929345529/471487457916000"
+                }
+              }
+            },
+            "R_actual": "61352015955977985/3268667611544053",
+            "R_fixed_original_near_mass": "12768657959039168095/885081281641768896"
+          }
+        }
+      },
+      "shogi": {
+        "offsets": 54,
+        "original_t": "295/646",
+        "representatives": {
+          "original": {
+            "t": "295/646",
+            "groups": {
+              "P": {
+                "near": {
+                  "mass": "295/646",
+                  "numerator": "2193940754776/85739609530575",
+                  "positive_mass": "941/24548",
+                  "mean": "4387881509552/78307073719875"
+                },
+                "far": {
+                  "mass": "351/646",
+                  "numerator": "260845967/234578155680",
+                  "positive_mass": "199/12274",
+                  "mean": "260845967/127456552080"
+                }
+              },
+              "N": {
+                "near": {
+                  "mass": "295/646",
+                  "numerator": "365978730595067/14941704421051200",
+                  "positive_mass": "923/24548",
+                  "mean": "365978730595067/6823224155124000"
+                },
+                "far": {
+                  "mass": "351/646",
+                  "numerator": "373110648174707/11816061388106976",
+                  "positive_mass": "30/361",
+                  "mean": "373110648174707/6420181961649456"
+                }
+              }
+            },
+            "R_actual": "1225681581983790971/583662974765301378",
+            "R_fixed_original_near_mass": "1225681581983790971/583662974765301378"
+          },
+          "fresh0": {
+            "t": "33/68",
+            "groups": {
+              "P": {
+                "near": {
+                  "mass": "33/68",
+                  "numerator": "2635939009319237/1495408658989845600",
+                  "positive_mass": "365/12274",
+                  "mean": "2635939009319237/725713025686248600"
+                },
+                "far": {
+                  "mass": "35/68",
+                  "numerator": "694448667/31368209600",
+                  "positive_mass": "1013/24548",
+                  "mean": "694448667/16145402000"
+                }
+              },
+              "N": {
+                "near": {
+                  "mass": "33/68",
+                  "numerator": "47328087890003/39397548136003200",
+                  "positive_mass": "193/12274",
+                  "mean": "47328087890003/19119398360119200"
+                },
+                "far": {
+                  "mass": "35/68",
+                  "numerator": "387020402541677/12209136010896825",
+                  "positive_mass": "482/6137",
+                  "mean": "1548081610166708/25136456493022875"
+                }
+              }
+            },
+            "R_actual": "5707171450291830025/4146096738475509634",
+            "R_fixed_original_near_mass": "65844017860437825702653/47639581214009890473686"
+          },
+          "fresh1": {
+            "t": "599/1292",
+            "groups": {
+              "P": {
+                "near": {
+                  "mass": "599/1292",
+                  "numerator": "176788723153/7411782549600",
+                  "positive_mass": "47/1292",
+                  "mean": "176788723153/3436267606200"
+                },
+                "far": {
+                  "mass": "693/1292",
+                  "numerator": "3071216317/4981336129440",
+                  "positive_mass": "155/12274",
+                  "mean": "3071216317/2671877660760"
+                }
+              },
+              "N": {
+                "near": {
+                  "mass": "599/1292",
+                  "numerator": "1983344210983/88780264887600",
+                  "positive_mass": "59/1444",
+                  "mean": "1983344210983/41160509804700"
+                },
+                "far": {
+                  "mass": "693/1292",
+                  "numerator": "34168021822871581/1057728075870866400",
+                  "positive_mass": "2123/24548",
+                  "mean": "34168021822871581/567341762057670600"
+                }
+              }
+            },
+            "R_actual": "1791725127328214333/802325834004093532",
+            "R_fixed_original_near_mass": "41383285072285214855201/18237891007431595982650"
+          },
+          "fresh2": {
+            "t": "29/68",
+            "groups": {
+              "P": {
+                "near": {
+                  "mass": "29/68",
+                  "numerator": "369505901282761/248405835999976200",
+                  "positive_mass": "169/6137",
+                  "mean": "369505901282761/105937782999989850"
+                },
+                "far": {
+                  "mass": "39/68",
+                  "numerator": "2365272948871/125945401250240",
+                  "positive_mass": "519/12274",
+                  "mean": "2365272948871/72233391893520"
+                }
+              },
+              "N": {
+                "near": {
+                  "mass": "29/68",
+                  "numerator": "81064109483/53018951171472",
+                  "positive_mass": "227/12274",
+                  "mean": "81064109483/22611023293716"
+                },
+                "far": {
+                  "mass": "39/68",
+                  "numerator": "361979831387153017/7726278071447535600",
+                  "positive_mass": "69/646",
+                  "mean": "361979831387153017/4431247717447851300"
+                }
+              }
+            },
+            "R_actual": "43359992466843226872/18164849866030801403",
+            "R_fixed_original_near_mass": "11363549322727820428192/4786353842956198023575"
+          }
+        }
+      }
+    }
+  },
+  "execution": {
+    "promotion-aware.json": {
+      "chess": {
+        "rows": 580,
+        "complete": true,
+        "core_transitions": 103725,
+        "seconds": 28.466539500048384
+      },
+      "shogi": {
+        "rows": 3276,
+        "complete": true,
+        "core_transitions": 474852,
+        "seconds": 211.0753383000847
+      }
+    },
+    "native-promotion.json": {
+      "chess": {
+        "rows": 580,
+        "transitions": 84972,
+        "legal_list_queries": 83883,
+        "capture_list_queries": 78261,
+        "preparations": 5061,
+        "reply_classes": 79911,
+        "seconds": 17.090496100019664,
+        "complete": true
+      },
+      "shogi": {
+        "rows": 3276,
+        "transitions": 387123,
+        "legal_list_queries": 385109,
+        "capture_list_queries": 356890,
+        "preparations": 24985,
+        "reply_classes": 362138,
+        "seconds": 105.7288921000436,
+        "complete": true
+      }
+    },
+    "target-integrated.json": {
+      "chess": {
+        "rows": 880,
+        "transitions": 82166,
+        "complete": true,
+        "seconds": 17.243524600053206
+      },
+      "shogi": {
+        "rows": 2800,
+        "transitions": 104649,
+        "complete": true,
+        "seconds": 35.69261179980822
+      }
+    },
+    "native-target.json": {
+      "chess": {
+        "rows": 880,
+        "transitions": 71034,
+        "legal_list_queries": 70498,
+        "capture_list_queries": 66173,
+        "preparations": 3450,
+        "reply_classes": 67584,
+        "seconds": 11.564521600026637,
+        "complete": true
+      },
+      "shogi": {
+        "rows": 2800,
+        "transitions": 73563,
+        "legal_list_queries": 75543,
+        "capture_list_queries": 68935,
+        "preparations": 3808,
+        "reply_classes": 69755,
+        "seconds": 16.260729500092566,
+        "complete": true
+      }
+    },
+    "representatives.json": {
+      "chess": {
+        "rows": 3080,
+        "transitions": 285086,
+        "complete": true,
+        "seconds": 74.43074889993295
+      },
+      "shogi": {
+        "rows": 10024,
+        "transitions": 367650,
+        "complete": true,
+        "seconds": 228.8440665998496
+      }
+    },
+    "native-representatives.json": {
+      "chess": {
+        "rows": 3080,
+        "transitions": 244759,
+        "legal_list_queries": 242655,
+        "capture_list_queries": 228162,
+        "preparations": 11445,
+        "reply_classes": 233314,
+        "seconds": 40.98582349997014,
+        "complete": true
+      },
+      "shogi": {
+        "rows": 10024,
+        "transitions": 258320,
+        "legal_list_queries": 265434,
+        "capture_list_queries": 241448,
+        "preparations": 13962,
+        "reply_classes": 244358,
+        "seconds": 60.27017439994961,
+        "complete": true
+      }
+    }
+  },
+  "advisor": "Adopt law-validity versus estimator-reliability distinction and exact same-cohort promotion-layer sensitivity. New3representative collection already completed before reply read; qualified as conditional reliability, not global material validation. Advisor read prior published note, did not execute new results."
+}

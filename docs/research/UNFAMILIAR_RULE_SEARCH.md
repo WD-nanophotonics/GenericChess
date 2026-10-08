@@ -1059,3 +1059,61 @@ Record audit correction: earlier prose61roots was wrong; recount56nonterminal
 roots/3580children. The first audit executed both kernels but saved only Native
 qrows due a one-line-if. final-v2 repeats and persists all6Core/Native calls,
 with the same independent full-width scores. Old outputs remain recoverable.
+
+
+## Fixed q2 factorial and target-directed attack cost (2026-10-09)
+
+After the actual-effect correction, four exposed generated8x8 callers2300..2303
+receive the same D2/8192-node/30sec/q2-hard8 conditions, Native attack/legality,
+TT/main ordering on and root scan off. Two rotated cold repeats per PVS x
+ordered-q cell give32 calls. Plain completes D2 on3/4 roots; each other cell
+completes4/4. Common completed-depth scores agree, but PVS is not uniformly
+better than ordered q alone. For2301 its work rises3045->3072 and the combined
+cell rises3498->3525. For2302 ordered q takes6452 work versus combined5934.
+The matrix separates search-tree changes from equal-work execution speed;
+it does not select a default or establish strength.
+
+One2300 profile keeps exactly the unprofiled completed signature. Its120sec
+headroom is solely cProfile overhead, not a fair-budget extension. Attack
+queries cost22.31sec cumulatively of37.68profiled wall; their4.65sec own time,
+geometry construction and nested budget callbacks expose avoidable work.
+A square-specific query was constructing every geometry endpoint and prefix,
+then discarding every nonmatching target. The narrow change iterates matching
+compiled prefixes directly. Order, minimum distance, duplicate target prefixes,
+path/state/slot guards and S0/S1 authority remain; no atom reinterpretation,
+cache, price/default change or general callback throttling is introduced.
+
+Before deployment,2306346 compiled target queries across Chess/Shogi and four
+actual generated8x8 rules match the original all-endpoint filter exactly.
+8994 attack queries on70 initial/route positions also match the unchanged
+full-map authority. Cancellation propagates on all six rules. Six product
+cases cover minimum distance, repeated prefixes, leaps, absent owners and
+rectangular flat-index geometry. The full active regression suite exits0.
+A separate16-call cold original/prototype comparison retains choices, scores,
+PV, nodes, pushes and every qclass, with local wall reductions about5-14%.
+Actual product replay and post-change residual profile are recorded separately;
+use their exact data rather than projecting prototype timings to other rules.
+
+Recovery: data/qfactorial_20261009.json and
+../archive/qfactorial_20261009/index.json. The pawn-scope/law study is a separate
+archive and research layer, not an active search dependency. Next inspect the
+post-change hotspot and choose one interface cost with unchanged semantics;
+do not promote PVS/ordered flags solely from these four exposed roots.
+
+Actual product16-call replay is exact on all four roots. Before/product wall
+medians are12.103/10.524,6.048/5.274,6.599/5.989 and3.344/3.175sec
+(about5.1-13.1% lower locally). All actual pushes and qclasses remain identical.
+The post-product2300 profile retains that same completed signature:31.996sec
+profiled wall, attack predicate16.71sec cumulative/3.85own, matching-prefix
+iterator2.99cum/1.87own. Budget-check own costs remain substantial but nested
+callback time must not be summed into an alleged independent fraction. This
+motivates examining compiled candidate/guard dispatch, not weakening deadline
+or cancellation checks. Full1654 active regression cases pass (quiet dots,exit0).
+
+A changed-premise immutable compiled-target index pilot retains16exact calls
+and all runtime work. Lookup warm-index wall changes are+2.8/+3.4/+2.5/-0.6%
+reduction across the four roots;16148entries/105geometries cost.010sec to build.
+Subsequent calls share the index; memory bytes and per-caller cold allocation
+were not measured. This modest inconsistent observation does not justify a
+product cache/index or more framework. Keep the simple iterator; retain the
+local pilot separately in index-pilot.zip/index-pilot-index.json.

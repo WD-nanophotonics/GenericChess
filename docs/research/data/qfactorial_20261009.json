@@ -1,0 +1,2149 @@
+{
+  "format": 1,
+  "scope": "Four exposed caller roots, fixed q2 factorial and exact-signature compiled target query cost change. No strength/default/price/cache or general callback-throttling change.",
+  "recovery": "docs/archive/qfactorial_20261009/index.json",
+  "archive_sha256": "d3334c42c2bbad925ac4a7421066010c5399d2c6624920cfa0fda63e9c9039eb",
+  "factorial": {
+    "complete": true,
+    "scope": "Four exposedroots, same final product, q2/8192nodes/30sec; two cold rotated repeats per2x2cell. Same completed score at each root; different explored trees/order ties, no strength/default claim.",
+    "cases": [
+      {
+        "seed": 202610082300,
+        "cells": [
+          {
+            "pvs": false,
+            "ordered_q": false,
+            "median_seconds": 25.413049799972214,
+            "completed_depth": 1,
+            "score": 3022,
+            "work": 8192,
+            "pushes": 57385,
+            "reason": "node_limit",
+            "evaluation_fraction": 0.024489951231513138,
+            "generation_fraction": 0.04193369382925316,
+            "native_legality_fraction": 0.04127020611986785
+          },
+          {
+            "pvs": true,
+            "ordered_q": false,
+            "median_seconds": 23.2571692999918,
+            "completed_depth": 2,
+            "score": 999999997,
+            "work": 7187,
+            "pushes": 51007,
+            "reason": "completed_depth",
+            "evaluation_fraction": 0.022620121470523443,
+            "generation_fraction": 0.04325939179893155,
+            "native_legality_fraction": 0.042575019951108566
+          },
+          {
+            "pvs": false,
+            "ordered_q": true,
+            "median_seconds": 12.393096549902111,
+            "completed_depth": 2,
+            "score": 999999997,
+            "work": 7688,
+            "pushes": 28098,
+            "reason": "completed_depth",
+            "evaluation_fraction": 0.04724497605320617,
+            "generation_fraction": 0.08732051314987567,
+            "native_legality_fraction": 0.08599164043411409
+          },
+          {
+            "pvs": true,
+            "ordered_q": true,
+            "median_seconds": 11.576744350022636,
+            "completed_depth": 2,
+            "score": 999999997,
+            "work": 7292,
+            "pushes": 26646,
+            "reason": "completed_depth",
+            "evaluation_fraction": 0.0475257966959846,
+            "generation_fraction": 0.08560949608564397,
+            "native_legality_fraction": 0.084279593297492
+          }
+        ],
+        "cold_repeat_exact": true
+      },
+      {
+        "seed": 202610082301,
+        "cells": [
+          {
+            "pvs": false,
+            "ordered_q": false,
+            "median_seconds": 7.553667849977501,
+            "completed_depth": 2,
+            "score": 999999999,
+            "work": 3045,
+            "pushes": 14429,
+            "reason": "completed_depth",
+            "evaluation_fraction": 0.02456648934672661,
+            "generation_fraction": 0.08446692008411175,
+            "native_legality_fraction": 0.0834384449413506
+          },
+          {
+            "pvs": true,
+            "ordered_q": false,
+            "median_seconds": 7.524167549912818,
+            "completed_depth": 2,
+            "score": 999999999,
+            "work": 3072,
+            "pushes": 14443,
+            "reason": "completed_depth",
+            "evaluation_fraction": 0.02468929578932201,
+            "generation_fraction": 0.08513512598900312,
+            "native_legality_fraction": 0.084101357155145
+          },
+          {
+            "pvs": false,
+            "ordered_q": true,
+            "median_seconds": 6.205892199999653,
+            "completed_depth": 2,
+            "score": 999999999,
+            "work": 3498,
+            "pushes": 13709,
+            "reason": "completed_depth",
+            "evaluation_fraction": 0.037844871878996114,
+            "generation_fraction": 0.10632240750195993,
+            "native_legality_fraction": 0.10501825173495768
+          },
+          {
+            "pvs": true,
+            "ordered_q": true,
+            "median_seconds": 6.264253750094213,
+            "completed_depth": 2,
+            "score": 999999999,
+            "work": 3525,
+            "pushes": 13723,
+            "reason": "completed_depth",
+            "evaluation_fraction": 0.03777010133182044,
+            "generation_fraction": 0.10562397822480248,
+            "native_legality_fraction": 0.10432747873810126
+          }
+        ],
+        "cold_repeat_exact": true
+      },
+      {
+        "seed": 202610082302,
+        "cells": [
+          {
+            "pvs": false,
+            "ordered_q": false,
+            "median_seconds": 11.027018049964681,
+            "completed_depth": 2,
+            "score": 1065,
+            "work": 6510,
+            "pushes": 39457,
+            "reason": "completed_depth",
+            "evaluation_fraction": 0.03681342993100866,
+            "generation_fraction": 0.058724320957806414,
+            "native_legality_fraction": 0.057450985395806835
+          },
+          {
+            "pvs": true,
+            "ordered_q": false,
+            "median_seconds": 11.70879619999323,
+            "completed_depth": 2,
+            "score": 1065,
+            "work": 6141,
+            "pushes": 42359,
+            "reason": "completed_depth",
+            "evaluation_fraction": 0.03289011489105683,
+            "generation_fraction": 0.05390129254043427,
+            "native_legality_fraction": 0.05276329844644216
+          },
+          {
+            "pvs": false,
+            "ordered_q": true,
+            "median_seconds": 6.860808449913748,
+            "completed_depth": 2,
+            "score": 1065,
+            "work": 6452,
+            "pushes": 22590,
+            "reason": "completed_depth",
+            "evaluation_fraction": 0.0579095675376849,
+            "generation_fraction": 0.09591257547299097,
+            "native_legality_fraction": 0.09384953770361411
+          },
+          {
+            "pvs": true,
+            "ordered_q": true,
+            "median_seconds": 5.749100100016221,
+            "completed_depth": 2,
+            "score": 1065,
+            "work": 5934,
+            "pushes": 18372,
+            "reason": "completed_depth",
+            "evaluation_fraction": 0.06261740956355359,
+            "generation_fraction": 0.10840098257144504,
+            "native_legality_fraction": 0.10617364205985616
+          }
+        ],
+        "cold_repeat_exact": true
+      },
+      {
+        "seed": 202610082303,
+        "cells": [
+          {
+            "pvs": false,
+            "ordered_q": false,
+            "median_seconds": 5.066673200111836,
+            "completed_depth": 2,
+            "score": -6105,
+            "work": 2350,
+            "pushes": 20546,
+            "reason": "completed_depth",
+            "evaluation_fraction": 0.02868927814348619,
+            "generation_fraction": 0.04166952219679809,
+            "native_legality_fraction": 0.04084295385225811
+          },
+          {
+            "pvs": true,
+            "ordered_q": false,
+            "median_seconds": 4.949569900054485,
+            "completed_depth": 2,
+            "score": -6105,
+            "work": 2751,
+            "pushes": 19829,
+            "reason": "completed_depth",
+            "evaluation_fraction": 0.03227845097069732,
+            "generation_fraction": 0.04050637781253664,
+            "native_legality_fraction": 0.03973690739325686
+          },
+          {
+            "pvs": false,
+            "ordered_q": true,
+            "median_seconds": 3.4035045499913394,
+            "completed_depth": 2,
+            "score": -6105,
+            "work": 2175,
+            "pushes": 13471,
+            "reason": "completed_depth",
+            "evaluation_fraction": 0.036804417174072256,
+            "generation_fraction": 0.05671295431317214,
+            "native_legality_fraction": 0.0556040539697539
+          },
+          {
+            "pvs": true,
+            "ordered_q": true,
+            "median_seconds": 3.225360200041905,
+            "completed_depth": 2,
+            "score": -6105,
+            "work": 2653,
+            "pushes": 12449,
+            "reason": "completed_depth",
+            "evaluation_fraction": 0.045934328478476324,
+            "generation_fraction": 0.056091270044685296,
+            "native_legality_fraction": 0.05499776328988204
+          }
+        ],
+        "cold_repeat_exact": true
+      }
+    ]
+  },
+  "target_query_product_cost": [
+    {
+      "seed": 202610082300,
+      "before_seconds": 12.102592749986798,
+      "product_seconds": 10.523893750156276,
+      "local_wall_reduction_fraction": 0.130443040796547,
+      "exact_signature_work_qclasses": true
+    },
+    {
+      "seed": 202610082301,
+      "before_seconds": 6.048052400001325,
+      "product_seconds": 5.27427305013407,
+      "local_wall_reduction_fraction": 0.127938598856565,
+      "exact_signature_work_qclasses": true
+    },
+    {
+      "seed": 202610082302,
+      "before_seconds": 6.59924755000975,
+      "product_seconds": 5.989136999938637,
+      "local_wall_reduction_fraction": 0.09245153260998851,
+      "exact_signature_work_qclasses": true
+    },
+    {
+      "seed": 202610082303,
+      "before_seconds": 3.3444638500222936,
+      "product_seconds": 3.1749558999435976,
+      "local_wall_reduction_fraction": 0.05068314614241265,
+      "exact_signature_work_qclasses": true
+    }
+  ],
+  "target_query_authority": {
+    "complete": true,
+    "producer_sha256": "d5e926c6a89ab854620c2b1d4700214bc9a90dba444a8f480ba8bcd32a370ee1",
+    "input_sha256": "4d572f848761bd634035c6d583f21556ab2c50360a27c25a381701be5d8ad544",
+    "declaration": "Exhaustive compiled geometry target/path equivalence on4actual generated8x8 rules and2canonical rules; allboard targets/owners/sources. At every recorded route frontier and canonical initial state, compare original single-square predicate and prototype against independent unchanged full attacked_squares enumeration; retain guards/paths/aux. No human/holdout. First checkpoint cancellation must propagate. Serial <=120sec.",
+    "geometry_queries": 2306346,
+    "attack_queries": 8994,
+    "positions": 70,
+    "cases": [
+      {
+        "label": "chess",
+        "positions": 1,
+        "area": 64
+      },
+      {
+        "label": "shogi",
+        "positions": 1,
+        "area": 81
+      },
+      {
+        "label": "202610082300",
+        "positions": 17,
+        "area": 64
+      },
+      {
+        "label": "202610082301",
+        "positions": 17,
+        "area": 64
+      },
+      {
+        "label": "202610082302",
+        "positions": 17,
+        "area": 64
+      },
+      {
+        "label": "202610082303",
+        "positions": 17,
+        "area": 64
+      }
+    ],
+    "seconds": 1.7109982001129538
+  },
+  "profile": {
+    "wall_seconds": 37.67873140005395,
+    "signature_exact": true,
+    "overhead_qualified": true,
+    "top_own": [
+      {
+        "file": "semantic_executor.py",
+        "line": 602,
+        "function": "is_square_attacked",
+        "primitive_calls": 119978,
+        "calls": 119978,
+        "own_seconds": 4.6459001,
+        "cumulative_seconds": 22.3074252
+      },
+      {
+        "file": "search.py",
+        "line": 81,
+        "function": "check",
+        "primitive_calls": 24157202,
+        "calls": 24157202,
+        "own_seconds": 3.8192536,
+        "cumulative_seconds": 5.1659398
+      },
+      {
+        "file": "search.py",
+        "line": 161,
+        "function": "checkpoint",
+        "primitive_calls": 24141382,
+        "calls": 24141382,
+        "own_seconds": 3.4950076,
+        "cumulative_seconds": 8.6543805
+      },
+      {
+        "file": "ir.py",
+        "line": 92,
+        "function": "geometry_candidates",
+        "primitive_calls": 4483170,
+        "calls": 4483170,
+        "own_seconds": 3.1043067,
+        "cumulative_seconds": 5.210027200000001
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 42,
+        "function": "_checkpoint",
+        "primitive_calls": 24090697,
+        "calls": 24090697,
+        "own_seconds": 3.0547519000000003,
+        "cumulative_seconds": 11.683723800000001
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<method 'get' of 'dict' objects>",
+        "primitive_calls": 22428229,
+        "calls": 22428229,
+        "own_seconds": 1.9194395000000002,
+        "cumulative_seconds": 1.9722681000000002
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method time.monotonic>",
+        "primitive_calls": 24162685,
+        "calls": 24162685,
+        "own_seconds": 1.34725,
+        "cumulative_seconds": 1.34725
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 95,
+        "function": "_sources_by_owner_type",
+        "primitive_calls": 148076,
+        "calls": 148076,
+        "own_seconds": 1.0608424,
+        "cumulative_seconds": 1.6586897
+      },
+      {
+        "file": "ir.py",
+        "line": 100,
+        "function": "<genexpr>",
+        "primitive_calls": 8251102,
+        "calls": 8251102,
+        "own_seconds": 0.9074774000000001,
+        "cumulative_seconds": 0.9074774000000001
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method generic_chess._native_core.semantic_transient_legal_actions>",
+        "primitive_calls": 2736,
+        "calls": 2736,
+        "own_seconds": 0.5601182,
+        "cumulative_seconds": 0.5601182
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 448,
+        "function": "_semantic_component_diff_hash",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.5080109,
+        "cumulative_seconds": 2.2879592
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1123,
+        "function": "_iter_board_candidates",
+        "primitive_calls": 153486,
+        "calls": 153486,
+        "own_seconds": 0.4795865,
+        "cumulative_seconds": 2.6455811000000002
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 1136,
+        "function": "_push_impl",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.46581490000000003,
+        "cumulative_seconds": 32.5959373
+      },
+      {
+        "file": "coordinates.py",
+        "line": 89,
+        "function": "index_to_square",
+        "primitive_calls": 789125,
+        "calls": 789125,
+        "own_seconds": 0.44578330000000005,
+        "cumulative_seconds": 0.8909195000000001
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<method 'setdefault' of 'dict' objects>",
+        "primitive_calls": 3979206,
+        "calls": 3979206,
+        "own_seconds": 0.3540768,
+        "cumulative_seconds": 0.38454710000000003
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1542,
+        "function": "_transition",
+        "primitive_calls": 119887,
+        "calls": 119887,
+        "own_seconds": 0.3228977,
+        "cumulative_seconds": 1.608446
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<method 'append' of 'list' objects>",
+        "primitive_calls": 4439761,
+        "calls": 4439761,
+        "own_seconds": 0.3133666,
+        "cumulative_seconds": 0.3133666
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 370,
+        "function": "_component_map",
+        "primitive_calls": 56229,
+        "calls": 56229,
+        "own_seconds": 0.30950750000000005,
+        "cumulative_seconds": 0.43257520000000005
+      }
+    ],
+    "top_cumulative": [
+      {
+        "file": "player.py",
+        "line": 95,
+        "function": "choose_action",
+        "primitive_calls": 1,
+        "calls": 1,
+        "own_seconds": 3.7000000000000005e-05,
+        "cumulative_seconds": 37.678673
+      },
+      {
+        "file": "search.py",
+        "line": 1020,
+        "function": "run_root_search",
+        "primitive_calls": 1,
+        "calls": 1,
+        "own_seconds": 4.0900000000000005e-05,
+        "cumulative_seconds": 37.6786128
+      },
+      {
+        "file": "search.py",
+        "line": 292,
+        "function": "negamax",
+        "primitive_calls": 2,
+        "calls": 673,
+        "own_seconds": 0.006024300000000001,
+        "cumulative_seconds": 37.655455200000006
+      },
+      {
+        "file": "search.py",
+        "line": 516,
+        "function": "child_search",
+        "primitive_calls": 296,
+        "calls": 671,
+        "own_seconds": 0.0019210000000000002,
+        "cumulative_seconds": 37.6536058
+      },
+      {
+        "file": "search.py",
+        "line": 703,
+        "function": "quiescence",
+        "primitive_calls": 523,
+        "calls": 523,
+        "own_seconds": 0.0005348,
+        "cumulative_seconds": 36.4956252
+      },
+      {
+        "file": "search.py",
+        "line": 620,
+        "function": "_quiescence_runtime",
+        "primitive_calls": 523,
+        "calls": 7015,
+        "own_seconds": 0.08488710000000001,
+        "cumulative_seconds": 36.4950904
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.next>",
+        "primitive_calls": 71391,
+        "calls": 71980,
+        "own_seconds": 0.0204049,
+        "cumulative_seconds": 32.9267703
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 1245,
+        "function": "pushed",
+        "primitive_calls": 56196,
+        "calls": 56196,
+        "own_seconds": 0.0436799,
+        "cumulative_seconds": 32.9053762
+      },
+      {
+        "file": "contextlib.py",
+        "line": 132,
+        "function": "__enter__",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.0112624,
+        "cumulative_seconds": 32.6526833
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 1089,
+        "function": "push",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.0228525,
+        "cumulative_seconds": 32.6232811
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 1136,
+        "function": "_push_impl",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.46581490000000003,
+        "cumulative_seconds": 32.5959373
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 701,
+        "function": "in_check",
+        "primitive_calls": 119978,
+        "calls": 119978,
+        "own_seconds": 0.1078748,
+        "cumulative_seconds": 22.7705081
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 602,
+        "function": "is_square_attacked",
+        "primitive_calls": 119978,
+        "calls": 119978,
+        "own_seconds": 4.6459001,
+        "cumulative_seconds": 22.3074252
+      },
+      {
+        "file": "terminal.py",
+        "line": 419,
+        "function": "terminal_from_search_runtime",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.14134470000000002,
+        "cumulative_seconds": 20.9207867
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1649,
+        "function": "has_legal_action",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.0215263,
+        "cumulative_seconds": 20.5112406
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1527,
+        "function": "iter_legal_actions",
+        "primitive_calls": 56105,
+        "calls": 56105,
+        "own_seconds": 0.053359100000000007,
+        "cumulative_seconds": 20.4896454
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1451,
+        "function": "iter_legal_action_bindings",
+        "primitive_calls": 56105,
+        "calls": 56105,
+        "own_seconds": 0.1999816,
+        "cumulative_seconds": 20.436286300000003
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1285,
+        "function": "_trial_child_if_s3_legal",
+        "primitive_calls": 91789,
+        "calls": 91789,
+        "own_seconds": 0.09782890000000001,
+        "cumulative_seconds": 16.6870224
+      }
+    ]
+  },
+  "full_regression": {
+    "exit_code": 0,
+    "passed_dots": 1654,
+    "raw_log": "........................................................................ [  4%]\n........................................................................ [  8%]\n........................................................................ [ 13%]\n........................................................................ [ 17%]\n........................................................................ [ 21%]\n........................................................................ [ 26%]\n........................................................................ [ 30%]\n........................................................................ [ 34%]\n........................................................................ [ 39%]\n........................................................................ [ 43%]\n........................................................................ [ 47%]\n........................................................................ [ 52%]\n........................................................................ [ 56%]\n........................................................................ [ 60%]\n........................................................................ [ 65%]\n........................................................................ [ 69%]\n........................................................................ [ 74%]\n........................................................................ [ 78%]\n........................................................................ [ 82%]\n........................................................................ [ 87%]\n........................................................................ [ 91%]\n........................................................................ [ 95%]\n......................................................................   [100%]"
+  },
+  "post_product_profile": {
+    "complete": true,
+    "declaration": "One residual-cost profile2300, orderedq true/PVSfalse/q2/8192nodes.120sec headroom ONLY for cProfile overhead, not fair-speed evidence or extension of frozen comparison. Completed signature must equal fixed30sec unprofiled factorial. After target-query product change: quantify residual hotspot on the same2300 caller; no further product patch or default change.",
+    "input_sha256": "4d572f848761bd634035c6d583f21556ab2c50360a27c25a381701be5d8ad544",
+    "producer_sha256": "34c7222a77467ca84d81cfee7a1107fddfe9fe073f0450b381edc5d8b0d7acfb",
+    "decision": {
+      "action": {
+        "pattern_id": "legacy_056",
+        "geometry_id": "g28",
+        "base_type_id": "A",
+        "to_square": {
+          "file": 6,
+          "rank": 5
+        }
+      },
+      "score": 999999997,
+      "principal_variation": [
+        {
+          "pattern_id": "legacy_056",
+          "geometry_id": "g28",
+          "base_type_id": "A",
+          "to_square": {
+            "file": 6,
+            "rank": 5
+          }
+        },
+        {
+          "pattern_id": "legacy_056",
+          "geometry_id": "g28",
+          "base_type_id": "A",
+          "to_square": {
+            "file": 5,
+            "rank": 6
+          }
+        }
+      ],
+      "completed_depth": 2,
+      "selective_depth": 2,
+      "nodes": 673,
+      "qnodes": 7015,
+      "elapsed_seconds": 32.0,
+      "tt_probes": 150,
+      "tt_hits": 1,
+      "tt_cutoffs": 0,
+      "beta_cutoffs": 145,
+      "evaluation_profile_cache_hit": false,
+      "termination_reason": "completed_depth",
+      "choice_kind": "ACTION",
+      "declaration": null,
+      "time_to_first_legal_action": 0.014999999897554517,
+      "time_to_first_completed_iteration": 32.0,
+      "qdepth_cutoffs": 1998,
+      "qsearch_budget_aborts": 0,
+      "qsearch_check_hard_limit_aborts": 0,
+      "in_check_qnodes": 2203,
+      "stand_pat_cutoffs": 2339,
+      "capture_qactions": 1006,
+      "promotion_qactions": 615,
+      "checking_move_qactions": 675,
+      "checking_drop_qactions": 1209,
+      "nonchecking_drop_excluded": 14554,
+      "pvs_null_window_searches": 0,
+      "pvs_researches": 0,
+      "aspiration_fail_low": 0,
+      "aspiration_fail_high": 0,
+      "aspiration_researches": 0,
+      "root_scan_nodes": 0,
+      "root_scan_used_fallback": false,
+      "move_picker_generated": 0,
+      "move_picker_yielded": 0,
+      "move_picker_yielded_by_stage": {},
+      "ordering_calls": 2737,
+      "ordered_moves": 86407,
+      "ordering_seconds": 0.42000000015832484,
+      "legal_generation_calls": 2738,
+      "legal_generation_seconds": 1.8282269956544042,
+      "evaluation_calls": 4721,
+      "evaluation_seconds": 1.7841118914075196,
+      "countermove_hits": 0,
+      "mate_pruning_cutoffs": 0,
+      "legal_actions_generated": 86555,
+      "successor_handles_created": 20808,
+      "successors_materialized": 671,
+      "successors_searched": 671,
+      "terminal_results_computed": 671,
+      "terminal_cache_hits": 0,
+      "position_keys_computed": 821,
+      "position_key_cache_hits": 671,
+      "declaration_checks": 0,
+      "declaration_win_options": 0,
+      "declaration_restart_options": 0,
+      "declaration_root_selected": false,
+      "native_legality_calls": 2736,
+      "native_legality_fallbacks": 0,
+      "native_legality_operational_failures": 0,
+      "material_change_qactions": 663
+    },
+    "wall_seconds": 31.995616799918935,
+    "total_profile_seconds": 30.2922357,
+    "by_own": [
+      {
+        "file": "semantic_executor.py",
+        "line": 603,
+        "function": "is_square_attacked",
+        "primitive_calls": 119978,
+        "calls": 119978,
+        "own_seconds": 3.8453999000000003,
+        "cumulative_seconds": 16.7090414
+      },
+      {
+        "file": "search.py",
+        "line": 81,
+        "function": "check",
+        "primitive_calls": 18023561,
+        "calls": 18023561,
+        "own_seconds": 2.8866328,
+        "cumulative_seconds": 3.9159939
+      },
+      {
+        "file": "search.py",
+        "line": 161,
+        "function": "checkpoint",
+        "primitive_calls": 18007741,
+        "calls": 18007741,
+        "own_seconds": 2.6419089000000002,
+        "cumulative_seconds": 6.551298900000001
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 43,
+        "function": "_checkpoint",
+        "primitive_calls": 17957056,
+        "calls": 17957056,
+        "own_seconds": 2.288859,
+        "cumulative_seconds": 8.814912000000001
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<method 'get' of 'dict' objects>",
+        "primitive_calls": 22428229,
+        "calls": 22428229,
+        "own_seconds": 1.8854717,
+        "cumulative_seconds": 1.9384197
+      },
+      {
+        "file": "ir.py",
+        "line": 107,
+        "function": "geometry_paths_to",
+        "primitive_calls": 4400556,
+        "calls": 4400556,
+        "own_seconds": 1.865396,
+        "cumulative_seconds": 2.9920389000000003
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 96,
+        "function": "_sources_by_owner_type",
+        "primitive_calls": 148076,
+        "calls": 148076,
+        "own_seconds": 1.0572726000000001,
+        "cumulative_seconds": 1.6613242000000001
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method time.monotonic>",
+        "primitive_calls": 18029044,
+        "calls": 18029044,
+        "own_seconds": 1.0299265,
+        "cumulative_seconds": 1.0299265
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method generic_chess._native_core.semantic_transient_legal_actions>",
+        "primitive_calls": 2736,
+        "calls": 2736,
+        "own_seconds": 0.5608634,
+        "cumulative_seconds": 0.5608634
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 448,
+        "function": "_semantic_component_diff_hash",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.5019418,
+        "cumulative_seconds": 2.2721147
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1122,
+        "function": "_iter_board_candidates",
+        "primitive_calls": 153486,
+        "calls": 153486,
+        "own_seconds": 0.4795705,
+        "cumulative_seconds": 2.6562736
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 1136,
+        "function": "_push_impl",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.4648603,
+        "cumulative_seconds": 26.930196700000003
+      },
+      {
+        "file": "coordinates.py",
+        "line": 89,
+        "function": "index_to_square",
+        "primitive_calls": 789125,
+        "calls": 789125,
+        "own_seconds": 0.441508,
+        "cumulative_seconds": 0.8920778
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<method 'setdefault' of 'dict' objects>",
+        "primitive_calls": 3979206,
+        "calls": 3979206,
+        "own_seconds": 0.3614753,
+        "cumulative_seconds": 0.39242940000000004
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1541,
+        "function": "_transition",
+        "primitive_calls": 119887,
+        "calls": 119887,
+        "own_seconds": 0.3181339,
+        "cumulative_seconds": 1.5790652
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<method 'append' of 'list' objects>",
+        "primitive_calls": 4439761,
+        "calls": 4439761,
+        "own_seconds": 0.3114003,
+        "cumulative_seconds": 0.3114003
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.isinstance>",
+        "primitive_calls": 4815892,
+        "calls": 4815892,
+        "own_seconds": 0.3062055,
+        "cumulative_seconds": 0.3062055
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.max>",
+        "primitive_calls": 2747650,
+        "calls": 2747650,
+        "own_seconds": 0.306105,
+        "cumulative_seconds": 0.3061257
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 370,
+        "function": "_component_map",
+        "primitive_calls": 56229,
+        "calls": 56229,
+        "own_seconds": 0.3044624,
+        "cumulative_seconds": 0.4254348
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 87,
+        "function": "_own_anchor",
+        "primitive_calls": 119978,
+        "calls": 119978,
+        "own_seconds": 0.26766080000000003,
+        "cumulative_seconds": 0.3486361
+      },
+      {
+        "file": "encoder.py",
+        "line": 205,
+        "function": "iterencode",
+        "primitive_calls": 204356,
+        "calls": 204356,
+        "own_seconds": 0.25734090000000004,
+        "cumulative_seconds": 0.25734090000000004
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 360,
+        "function": "_token",
+        "primitive_calls": 176257,
+        "calls": 176257,
+        "own_seconds": 0.25191070000000004,
+        "cumulative_seconds": 0.9070055
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 358,
+        "function": "to_position",
+        "primitive_calls": 119887,
+        "calls": 119887,
+        "own_seconds": 0.2503357,
+        "cumulative_seconds": 0.48386100000000004
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1174,
+        "function": "_promotion_choices",
+        "primitive_calls": 162884,
+        "calls": 162884,
+        "own_seconds": 0.24780700000000003,
+        "cumulative_seconds": 0.7977188000000001
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.len>",
+        "primitive_calls": 3562333,
+        "calls": 3562437,
+        "own_seconds": 0.22583550000000002,
+        "cumulative_seconds": 0.2258503
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 742,
+        "function": "_make_binding",
+        "primitive_calls": 349414,
+        "calls": 349414,
+        "own_seconds": 0.2165071,
+        "cumulative_seconds": 0.5181786
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 377,
+        "function": "_apply_effect",
+        "primitive_calls": 161214,
+        "calls": 161214,
+        "own_seconds": 0.21348170000000002,
+        "cumulative_seconds": 0.37173910000000004
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1450,
+        "function": "iter_legal_action_bindings",
+        "primitive_calls": 56105,
+        "calls": 56105,
+        "own_seconds": 0.19673090000000001,
+        "cumulative_seconds": 16.576112600000002
+      },
+      {
+        "file": "ir.py",
+        "line": 93,
+        "function": "geometry_candidates",
+        "primitive_calls": 158950,
+        "calls": 158950,
+        "own_seconds": 0.1833844,
+        "cumulative_seconds": 0.3217335
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method generic_chess._native_core.semantic_pack_position>",
+        "primitive_calls": 7457,
+        "calls": 7457,
+        "own_seconds": 0.1553456,
+        "cumulative_seconds": 0.1553456
+      },
+      {
+        "file": "coordinates.py",
+        "line": 42,
+        "function": "__post_init__",
+        "primitive_calls": 443027,
+        "calls": 443027,
+        "own_seconds": 0.15012060000000002,
+        "cumulative_seconds": 0.24566610000000003
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.hash>",
+        "primitive_calls": 1070899,
+        "calls": 1450873,
+        "own_seconds": 0.1490938,
+        "cumulative_seconds": 0.1969027
+      },
+      {
+        "file": "__init__.py",
+        "line": 183,
+        "function": "dumps",
+        "primitive_calls": 204356,
+        "calls": 204356,
+        "own_seconds": 0.1487678,
+        "cumulative_seconds": 0.6324267
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 896,
+        "function": "_path_holds",
+        "primitive_calls": 247652,
+        "calls": 247652,
+        "own_seconds": 0.1444657,
+        "cumulative_seconds": 0.3806078
+      },
+      {
+        "file": "terminal.py",
+        "line": 419,
+        "function": "terminal_from_search_runtime",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.14060720000000002,
+        "cumulative_seconds": 17.046947900000003
+      },
+      {
+        "file": "coordinates.py",
+        "line": 58,
+        "function": "_shape",
+        "primitive_calls": 870309,
+        "calls": 870309,
+        "own_seconds": 0.1376284,
+        "cumulative_seconds": 0.26845830000000004
+      },
+      {
+        "file": "quiescence.py",
+        "line": 28,
+        "function": "material_inventory",
+        "primitive_calls": 23957,
+        "calls": 23957,
+        "own_seconds": 0.1374323,
+        "cumulative_seconds": 0.20644790000000002
+      },
+      {
+        "file": "native_legality.py",
+        "line": 106,
+        "function": "_decode_action",
+        "primitive_calls": 86259,
+        "calls": 86259,
+        "own_seconds": 0.13658050000000002,
+        "cumulative_seconds": 0.22644060000000002
+      },
+      {
+        "file": "encoder.py",
+        "line": 183,
+        "function": "encode",
+        "primitive_calls": 204356,
+        "calls": 204356,
+        "own_seconds": 0.1309612,
+        "cumulative_seconds": 0.4453939
+      },
+      {
+        "file": "ir.py",
+        "line": 682,
+        "function": "board_shape",
+        "primitive_calls": 764080,
+        "calls": 764080,
+        "own_seconds": 0.1239191,
+        "cumulative_seconds": 0.1239191
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.any>",
+        "primitive_calls": 389391,
+        "calls": 389391,
+        "own_seconds": 0.11245490000000001,
+        "cumulative_seconds": 0.18774680000000002
+      },
+      {
+        "file": "position.py",
+        "line": 101,
+        "function": "board_shape",
+        "primitive_calls": 352401,
+        "calls": 352401,
+        "own_seconds": 0.10863460000000001,
+        "cumulative_seconds": 0.5070446000000001
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.sorted>",
+        "primitive_calls": 362401,
+        "calls": 362401,
+        "own_seconds": 0.1022552,
+        "cumulative_seconds": 0.43966350000000004
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 700,
+        "function": "in_check",
+        "primitive_calls": 119978,
+        "calls": 119978,
+        "own_seconds": 0.10200630000000001,
+        "cumulative_seconds": 17.1596838
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 113,
+        "function": "is_semantic_compiled",
+        "primitive_calls": 143793,
+        "calls": 143793,
+        "own_seconds": 0.10196110000000001,
+        "cumulative_seconds": 0.17829360000000002
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 342,
+        "function": "__init__",
+        "primitive_calls": 119887,
+        "calls": 119887,
+        "own_seconds": 0.0999579,
+        "cumulative_seconds": 0.1226184
+      },
+      {
+        "file": "quiescence.py",
+        "line": 25,
+        "function": "<genexpr>",
+        "primitive_calls": 1622595,
+        "calls": 1622595,
+        "own_seconds": 0.0995515,
+        "cumulative_seconds": 0.0995515
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.getattr>",
+        "primitive_calls": 478999,
+        "calls": 535013,
+        "own_seconds": 0.09870530000000001,
+        "cumulative_seconds": 0.12812990000000002
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.sum>",
+        "primitive_calls": 40159,
+        "calls": 40159,
+        "own_seconds": 0.09817000000000001,
+        "cumulative_seconds": 0.19898870000000002
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1284,
+        "function": "_trial_child_if_s3_legal",
+        "primitive_calls": 91789,
+        "calls": 91789,
+        "own_seconds": 0.09513830000000001,
+        "cumulative_seconds": 12.8194757
+      },
+      {
+        "file": "evaluator.py",
+        "line": 101,
+        "function": "_anchor_escape",
+        "primitive_calls": 9442,
+        "calls": 9442,
+        "own_seconds": 0.0939364,
+        "cumulative_seconds": 0.2326889
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 125,
+        "function": "_semantic_public_action",
+        "primitive_calls": 86259,
+        "calls": 86259,
+        "own_seconds": 0.0890514,
+        "cumulative_seconds": 0.29134140000000003
+      },
+      {
+        "file": "native_legality.py",
+        "line": 157,
+        "function": "__call__",
+        "primitive_calls": 2736,
+        "calls": 2736,
+        "own_seconds": 0.0865728,
+        "cumulative_seconds": 1.6196485
+      },
+      {
+        "file": "search.py",
+        "line": 620,
+        "function": "_quiescence_runtime",
+        "primitive_calls": 523,
+        "calls": 7015,
+        "own_seconds": 0.084139,
+        "cumulative_seconds": 30.9293723
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 795,
+        "function": "_sync_stats",
+        "primitive_calls": 58933,
+        "calls": 58933,
+        "own_seconds": 0.08178690000000001,
+        "cumulative_seconds": 0.14649530000000002
+      },
+      {
+        "file": "ir.py",
+        "line": 101,
+        "function": "<genexpr>",
+        "primitive_calls": 561415,
+        "calls": 561415,
+        "own_seconds": 0.08177480000000001,
+        "cumulative_seconds": 0.08177480000000001
+      },
+      {
+        "file": "<frozen importlib._bootstrap>",
+        "line": 645,
+        "function": "parent",
+        "primitive_calls": 351889,
+        "calls": 351889,
+        "own_seconds": 0.08022660000000001,
+        "cumulative_seconds": 0.1285735
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1094,
+        "function": "_iter_candidates",
+        "primitive_calls": 169578,
+        "calls": 169578,
+        "own_seconds": 0.0781014,
+        "cumulative_seconds": 3.0376296000000003
+      },
+      {
+        "file": "position.py",
+        "line": 108,
+        "function": "board_size",
+        "primitive_calls": 355138,
+        "calls": 355138,
+        "own_seconds": 0.07660410000000001,
+        "cumulative_seconds": 0.0981183
+      },
+      {
+        "file": "semantic_attacks.py",
+        "line": 45,
+        "function": "<genexpr>",
+        "primitive_calls": 14163,
+        "calls": 14163,
+        "own_seconds": 0.0751907,
+        "cumulative_seconds": 1.1833222
+      }
+    ],
+    "by_cumulative": [
+      {
+        "file": "player.py",
+        "line": 95,
+        "function": "choose_action",
+        "primitive_calls": 1,
+        "calls": 1,
+        "own_seconds": 3.5900000000000005e-05,
+        "cumulative_seconds": 31.995555900000003
+      },
+      {
+        "file": "search.py",
+        "line": 1020,
+        "function": "run_root_search",
+        "primitive_calls": 1,
+        "calls": 1,
+        "own_seconds": 3.99e-05,
+        "cumulative_seconds": 31.9954956
+      },
+      {
+        "file": "search.py",
+        "line": 292,
+        "function": "negamax",
+        "primitive_calls": 2,
+        "calls": 673,
+        "own_seconds": 0.0059941000000000005,
+        "cumulative_seconds": 31.9728819
+      },
+      {
+        "file": "search.py",
+        "line": 516,
+        "function": "child_search",
+        "primitive_calls": 296,
+        "calls": 671,
+        "own_seconds": 0.0018484,
+        "cumulative_seconds": 31.9710521
+      },
+      {
+        "file": "search.py",
+        "line": 703,
+        "function": "quiescence",
+        "primitive_calls": 523,
+        "calls": 523,
+        "own_seconds": 0.0005153,
+        "cumulative_seconds": 30.9298876
+      },
+      {
+        "file": "search.py",
+        "line": 620,
+        "function": "_quiescence_runtime",
+        "primitive_calls": 523,
+        "calls": 7015,
+        "own_seconds": 0.084139,
+        "cumulative_seconds": 30.9293723
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.next>",
+        "primitive_calls": 71391,
+        "calls": 71980,
+        "own_seconds": 0.0201856,
+        "cumulative_seconds": 27.2587875
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 1245,
+        "function": "pushed",
+        "primitive_calls": 56196,
+        "calls": 56196,
+        "own_seconds": 0.042286500000000005,
+        "cumulative_seconds": 27.2376152
+      },
+      {
+        "file": "contextlib.py",
+        "line": 132,
+        "function": "__enter__",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.0108868,
+        "cumulative_seconds": 26.9850724
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 1089,
+        "function": "push",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.020840400000000002,
+        "cumulative_seconds": 26.955511700000002
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 1136,
+        "function": "_push_impl",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.4648603,
+        "cumulative_seconds": 26.930196700000003
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 700,
+        "function": "in_check",
+        "primitive_calls": 119978,
+        "calls": 119978,
+        "own_seconds": 0.10200630000000001,
+        "cumulative_seconds": 17.1596838
+      },
+      {
+        "file": "terminal.py",
+        "line": 419,
+        "function": "terminal_from_search_runtime",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.14060720000000002,
+        "cumulative_seconds": 17.046947900000003
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 603,
+        "function": "is_square_attacked",
+        "primitive_calls": 119978,
+        "calls": 119978,
+        "own_seconds": 3.8453999000000003,
+        "cumulative_seconds": 16.7090414
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1648,
+        "function": "has_legal_action",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.0222223,
+        "cumulative_seconds": 16.6449968
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1526,
+        "function": "iter_legal_actions",
+        "primitive_calls": 56105,
+        "calls": 56105,
+        "own_seconds": 0.046583400000000004,
+        "cumulative_seconds": 16.622696
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1450,
+        "function": "iter_legal_action_bindings",
+        "primitive_calls": 56105,
+        "calls": 56105,
+        "own_seconds": 0.19673090000000001,
+        "cumulative_seconds": 16.576112600000002
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1284,
+        "function": "_trial_child_if_s3_legal",
+        "primitive_calls": 91789,
+        "calls": 91789,
+        "own_seconds": 0.09513830000000001,
+        "cumulative_seconds": 12.8194757
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 43,
+        "function": "_checkpoint",
+        "primitive_calls": 17957056,
+        "calls": 17957056,
+        "own_seconds": 2.288859,
+        "cumulative_seconds": 8.814912000000001
+      },
+      {
+        "file": "search.py",
+        "line": 161,
+        "function": "checkpoint",
+        "primitive_calls": 18007741,
+        "calls": 18007741,
+        "own_seconds": 2.6419089000000002,
+        "cumulative_seconds": 6.551298900000001
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 935,
+        "function": "_gave_check",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.0142112,
+        "cumulative_seconds": 5.6742409
+      },
+      {
+        "file": "search.py",
+        "line": 81,
+        "function": "check",
+        "primitive_calls": 18023561,
+        "calls": 18023561,
+        "own_seconds": 2.8866328,
+        "cumulative_seconds": 3.9159939
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1094,
+        "function": "_iter_candidates",
+        "primitive_calls": 169578,
+        "calls": 169578,
+        "own_seconds": 0.0781014,
+        "cumulative_seconds": 3.0376296000000003
+      },
+      {
+        "file": "ir.py",
+        "line": 107,
+        "function": "geometry_paths_to",
+        "primitive_calls": 4400556,
+        "calls": 4400556,
+        "own_seconds": 1.865396,
+        "cumulative_seconds": 2.9920389000000003
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1122,
+        "function": "_iter_board_candidates",
+        "primitive_calls": 153486,
+        "calls": 153486,
+        "own_seconds": 0.4795705,
+        "cumulative_seconds": 2.6562736
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 448,
+        "function": "_semantic_component_diff_hash",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.5019418,
+        "cumulative_seconds": 2.2721147
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<method 'get' of 'dict' objects>",
+        "primitive_calls": 22428229,
+        "calls": 22428229,
+        "own_seconds": 1.8854717,
+        "cumulative_seconds": 1.9384197
+      },
+      {
+        "file": "search.py",
+        "line": 244,
+        "function": "_runtime_legal_actions",
+        "primitive_calls": 2738,
+        "calls": 2738,
+        "own_seconds": 0.0036622000000000004,
+        "cumulative_seconds": 1.8294804
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 903,
+        "function": "legal_actions",
+        "primitive_calls": 30836,
+        "calls": 30836,
+        "own_seconds": 0.0074973,
+        "cumulative_seconds": 1.8277403
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 852,
+        "function": "_legal_actions_from_provider",
+        "primitive_calls": 2736,
+        "calls": 2736,
+        "own_seconds": 0.0668113,
+        "cumulative_seconds": 1.811288
+      },
+      {
+        "file": "search.py",
+        "line": 179,
+        "function": "_evaluate",
+        "primitive_calls": 4721,
+        "calls": 4721,
+        "own_seconds": 0.0149937,
+        "cumulative_seconds": 1.7862077
+      },
+      {
+        "file": "evaluator.py",
+        "line": 39,
+        "function": "evaluate",
+        "primitive_calls": 4721,
+        "calls": 4721,
+        "own_seconds": 0.0346727,
+        "cumulative_seconds": 1.7661829
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 96,
+        "function": "_sources_by_owner_type",
+        "primitive_calls": 148076,
+        "calls": 148076,
+        "own_seconds": 1.0572726000000001,
+        "cumulative_seconds": 1.6613242000000001
+      },
+      {
+        "file": "native_legality.py",
+        "line": 157,
+        "function": "__call__",
+        "primitive_calls": 2736,
+        "calls": 2736,
+        "own_seconds": 0.0865728,
+        "cumulative_seconds": 1.6196485
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1541,
+        "function": "_transition",
+        "primitive_calls": 119887,
+        "calls": 119887,
+        "own_seconds": 0.3181339,
+        "cumulative_seconds": 1.5790652
+      },
+      {
+        "file": "semantic_attacks.py",
+        "line": 35,
+        "function": "_attack_maps",
+        "primitive_calls": 4721,
+        "calls": 4721,
+        "own_seconds": 0.019992600000000003,
+        "cumulative_seconds": 1.4455634000000002
+      },
+      {
+        "file": "semantic_attacks.py",
+        "line": 45,
+        "function": "<genexpr>",
+        "primitive_calls": 14163,
+        "calls": 14163,
+        "own_seconds": 0.0751907,
+        "cumulative_seconds": 1.1833222
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method time.monotonic>",
+        "primitive_calls": 18029044,
+        "calls": 18029044,
+        "own_seconds": 1.0299265,
+        "cumulative_seconds": 1.0299265
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 398,
+        "function": "_component_token",
+        "primitive_calls": 176257,
+        "calls": 176257,
+        "own_seconds": 0.0436951,
+        "cumulative_seconds": 0.9507006
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 360,
+        "function": "_token",
+        "primitive_calls": 176257,
+        "calls": 176257,
+        "own_seconds": 0.25191070000000004,
+        "cumulative_seconds": 0.9070055
+      },
+      {
+        "file": "coordinates.py",
+        "line": 89,
+        "function": "index_to_square",
+        "primitive_calls": 789125,
+        "calls": 789125,
+        "own_seconds": 0.441508,
+        "cumulative_seconds": 0.8920778
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1174,
+        "function": "_promotion_choices",
+        "primitive_calls": 162884,
+        "calls": 162884,
+        "own_seconds": 0.24780700000000003,
+        "cumulative_seconds": 0.7977188000000001
+      },
+      {
+        "file": "__init__.py",
+        "line": 183,
+        "function": "dumps",
+        "primitive_calls": 204356,
+        "calls": 204356,
+        "own_seconds": 0.1487678,
+        "cumulative_seconds": 0.6324267
+      },
+      {
+        "file": "semantic.py",
+        "line": 249,
+        "function": "transient_legal_actions",
+        "primitive_calls": 2736,
+        "calls": 2736,
+        "own_seconds": 0.0090586,
+        "cumulative_seconds": 0.5794224
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method generic_chess._native_core.semantic_transient_legal_actions>",
+        "primitive_calls": 2736,
+        "calls": 2736,
+        "own_seconds": 0.5608634,
+        "cumulative_seconds": 0.5608634
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 742,
+        "function": "_make_binding",
+        "primitive_calls": 349414,
+        "calls": 349414,
+        "own_seconds": 0.2165071,
+        "cumulative_seconds": 0.5181786
+      },
+      {
+        "file": "quiescence.py",
+        "line": 60,
+        "function": "noisy_child",
+        "primitive_calls": 24579,
+        "calls": 24579,
+        "own_seconds": 0.0541458,
+        "cumulative_seconds": 0.5073738
+      },
+      {
+        "file": "position.py",
+        "line": 101,
+        "function": "board_shape",
+        "primitive_calls": 352401,
+        "calls": 352401,
+        "own_seconds": 0.10863460000000001,
+        "cumulative_seconds": 0.5070446000000001
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 358,
+        "function": "to_position",
+        "primitive_calls": 119887,
+        "calls": 119887,
+        "own_seconds": 0.2503357,
+        "cumulative_seconds": 0.48386100000000004
+      },
+      {
+        "file": "encoder.py",
+        "line": 183,
+        "function": "encode",
+        "primitive_calls": 204356,
+        "calls": 204356,
+        "own_seconds": 0.1309612,
+        "cumulative_seconds": 0.4453939
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.sorted>",
+        "primitive_calls": 362401,
+        "calls": 362401,
+        "own_seconds": 0.1022552,
+        "cumulative_seconds": 0.43966350000000004
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 370,
+        "function": "_component_map",
+        "primitive_calls": 56229,
+        "calls": 56229,
+        "own_seconds": 0.3044624,
+        "cumulative_seconds": 0.4254348
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<method 'setdefault' of 'dict' objects>",
+        "primitive_calls": 3979206,
+        "calls": 3979206,
+        "own_seconds": 0.3614753,
+        "cumulative_seconds": 0.39242940000000004
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 896,
+        "function": "_path_holds",
+        "primitive_calls": 247652,
+        "calls": 247652,
+        "own_seconds": 0.1444657,
+        "cumulative_seconds": 0.3806078
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 377,
+        "function": "_apply_effect",
+        "primitive_calls": 161214,
+        "calls": 161214,
+        "own_seconds": 0.21348170000000002,
+        "cumulative_seconds": 0.37173910000000004
+      },
+      {
+        "file": "ordering.py",
+        "line": 70,
+        "function": "order",
+        "primitive_calls": 2737,
+        "calls": 2737,
+        "own_seconds": 0.0036264,
+        "cumulative_seconds": 0.3609724
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 87,
+        "function": "_own_anchor",
+        "primitive_calls": 119978,
+        "calls": 119978,
+        "own_seconds": 0.26766080000000003,
+        "cumulative_seconds": 0.3486361
+      },
+      {
+        "file": "ordering.py",
+        "line": 101,
+        "function": "<lambda>",
+        "primitive_calls": 86407,
+        "calls": 86407,
+        "own_seconds": 0.030682900000000003,
+        "cumulative_seconds": 0.3365774
+      },
+      {
+        "file": "ir.py",
+        "line": 93,
+        "function": "geometry_candidates",
+        "primitive_calls": 158950,
+        "calls": 158950,
+        "own_seconds": 0.1833844,
+        "cumulative_seconds": 0.3217335
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<method 'append' of 'list' objects>",
+        "primitive_calls": 4439761,
+        "calls": 4439761,
+        "own_seconds": 0.3114003,
+        "cumulative_seconds": 0.3114003
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.isinstance>",
+        "primitive_calls": 4815892,
+        "calls": 4815892,
+        "own_seconds": 0.3062055,
+        "cumulative_seconds": 0.3062055
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.max>",
+        "primitive_calls": 2747650,
+        "calls": 2747650,
+        "own_seconds": 0.306105,
+        "cumulative_seconds": 0.3061257
+      },
+      {
+        "file": "contextlib.py",
+        "line": 141,
+        "function": "__exit__",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.013542700000000001,
+        "cumulative_seconds": 0.2935315
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 125,
+        "function": "_semantic_public_action",
+        "primitive_calls": 86259,
+        "calls": 86259,
+        "own_seconds": 0.0890514,
+        "cumulative_seconds": 0.29134140000000003
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 775,
+        "function": "_make_binding_from_action",
+        "primitive_calls": 86259,
+        "calls": 86259,
+        "own_seconds": 0.0714853,
+        "cumulative_seconds": 0.2815326
+      },
+      {
+        "file": "search.py",
+        "line": 579,
+        "function": "_order_qactions",
+        "primitive_calls": 2587,
+        "calls": 2587,
+        "own_seconds": 0.0042392,
+        "cumulative_seconds": 0.2736487
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 119,
+        "function": "semantic_engine_for",
+        "primitive_calls": 143793,
+        "calls": 143793,
+        "own_seconds": 0.06864010000000001,
+        "cumulative_seconds": 0.27346000000000004
+      },
+      {
+        "file": "coordinates.py",
+        "line": 58,
+        "function": "_shape",
+        "primitive_calls": 870309,
+        "calls": 870309,
+        "own_seconds": 0.1376284,
+        "cumulative_seconds": 0.26845830000000004
+      },
+      {
+        "file": "encoder.py",
+        "line": 205,
+        "function": "iterencode",
+        "primitive_calls": 204356,
+        "calls": 204356,
+        "own_seconds": 0.25734090000000004,
+        "cumulative_seconds": 0.25734090000000004
+      },
+      {
+        "file": "coordinates.py",
+        "line": 42,
+        "function": "__post_init__",
+        "primitive_calls": 443027,
+        "calls": 443027,
+        "own_seconds": 0.15012060000000002,
+        "cumulative_seconds": 0.24566610000000003
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 1225,
+        "function": "pop",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.061710400000000006,
+        "cumulative_seconds": 0.239817
+      },
+      {
+        "file": "ordering.py",
+        "line": 85,
+        "function": "priority",
+        "primitive_calls": 86407,
+        "calls": 86407,
+        "own_seconds": 0.0578007,
+        "cumulative_seconds": 0.23431200000000002
+      },
+      {
+        "file": "evaluator.py",
+        "line": 101,
+        "function": "_anchor_escape",
+        "primitive_calls": 9442,
+        "calls": 9442,
+        "own_seconds": 0.0939364,
+        "cumulative_seconds": 0.2326889
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1206,
+        "function": "_iter_drop_candidates",
+        "primitive_calls": 16092,
+        "calls": 16092,
+        "own_seconds": 0.0188772,
+        "cumulative_seconds": 0.22689160000000003
+      },
+      {
+        "file": "native_legality.py",
+        "line": 106,
+        "function": "_decode_action",
+        "primitive_calls": 86259,
+        "calls": 86259,
+        "own_seconds": 0.13658050000000002,
+        "cumulative_seconds": 0.22644060000000002
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.len>",
+        "primitive_calls": 3562333,
+        "calls": 3562437,
+        "own_seconds": 0.22583550000000002,
+        "cumulative_seconds": 0.2258503
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 194,
+        "function": "updated",
+        "primitive_calls": 28098,
+        "calls": 28098,
+        "own_seconds": 0.0386653,
+        "cumulative_seconds": 0.21345050000000002
+      },
+      {
+        "file": "quiescence.py",
+        "line": 28,
+        "function": "material_inventory",
+        "primitive_calls": 23957,
+        "calls": 23957,
+        "own_seconds": 0.1374323,
+        "cumulative_seconds": 0.20644790000000002
+      },
+      {
+        "file": "quiescence.py",
+        "line": 19,
+        "function": "enemy_board_count",
+        "primitive_calls": 24963,
+        "calls": 24963,
+        "own_seconds": 0.0095867,
+        "cumulative_seconds": 0.20312470000000002
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.sum>",
+        "primitive_calls": 40159,
+        "calls": 40159,
+        "own_seconds": 0.09817000000000001,
+        "cumulative_seconds": 0.19898870000000002
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.hash>",
+        "primitive_calls": 1070899,
+        "calls": 1450873,
+        "own_seconds": 0.1490938,
+        "cumulative_seconds": 0.1969027
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method builtins.any>",
+        "primitive_calls": 389391,
+        "calls": 389391,
+        "own_seconds": 0.11245490000000001,
+        "cumulative_seconds": 0.18774680000000002
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 1244,
+        "function": "_guards_hold",
+        "primitive_calls": 157967,
+        "calls": 157967,
+        "own_seconds": 0.0237486,
+        "cumulative_seconds": 0.1845348
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 113,
+        "function": "is_semantic_compiled",
+        "primitive_calls": 143793,
+        "calls": 143793,
+        "own_seconds": 0.10196110000000001,
+        "cumulative_seconds": 0.17829360000000002
+      },
+      {
+        "file": "semantic.py",
+        "line": 23,
+        "function": "pack_position",
+        "primitive_calls": 7457,
+        "calls": 7457,
+        "own_seconds": 0.014056200000000001,
+        "cumulative_seconds": 0.1771108
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 957,
+        "function": "_find_occurrence",
+        "primitive_calls": 84203,
+        "calls": 84203,
+        "own_seconds": 0.0474836,
+        "cumulative_seconds": 0.156504
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "function": "<built-in method generic_chess._native_core.semantic_pack_position>",
+        "primitive_calls": 7457,
+        "calls": 7457,
+        "own_seconds": 0.1553456,
+        "cumulative_seconds": 0.1553456
+      },
+      {
+        "file": "semantic.py",
+        "line": 52,
+        "function": "pack_current_position",
+        "primitive_calls": 4721,
+        "calls": 4721,
+        "own_seconds": 0.0407572,
+        "cumulative_seconds": 0.15459930000000002
+      },
+      {
+        "file": "semantic_executor.py",
+        "line": 945,
+        "function": "_guard_holds",
+        "primitive_calls": 2931,
+        "calls": 2931,
+        "own_seconds": 0.0376652,
+        "cumulative_seconds": 0.1541817
+      },
+      {
+        "file": "search_runtime.py",
+        "line": 795,
+        "function": "_sync_stats",
+        "primitive_calls": 58933,
+        "calls": 58933,
+        "own_seconds": 0.08178690000000001,
+        "cumulative_seconds": 0.14649530000000002
+      }
+    ]
+  },
+  "current_product_hashes": {
+    "generic_chess/core/semantic_executor.py": "06ae262cf24be0bdf9f4c01df438aa5bfd4c72175b9f8887870f70b96744473a",
+    "generic_chess/rules/ir.py": "36a9b7047101a36a35c1576f2d737b79a2217f721d72a5be500070790777dd94",
+    "generic_chess/ai/alphabeta/search.py": "577b14638d72a8f585ed38a70138ebf8810d3357040cbbd3c78fea700664514f"
+  },
+  "immutable_index_pilot": {
+    "complete": true,
+    "scope": "Local index pilot retains16exact signatures/work/qclasses, but small and inconsistent wall benefit with warm index shared across repeats. Build time included only when geometry first touched. No memory bytes recorded and no cold-allocation evidence. Do not deploy or grow a caching framework on these observations.",
+    "cost": [
+      {
+        "seed": 202610082300,
+        "product_seconds": 10.609798450139351,
+        "indexed_seconds": 10.316325649968348,
+        "reduction": 0.02766054431195608
+      },
+      {
+        "seed": 202610082301,
+        "product_seconds": 5.329841900034808,
+        "indexed_seconds": 5.150872400030494,
+        "reduction": 0.0335787633781679
+      },
+      {
+        "seed": 202610082302,
+        "product_seconds": 6.083251600037329,
+        "indexed_seconds": 5.929205499938689,
+        "reduction": 0.02532298682133982
+      },
+      {
+        "seed": 202610082303,
+        "product_seconds": 3.2489671499934047,
+        "indexed_seconds": 3.2682479500072077,
+        "reduction": -0.0059344398153862166
+      }
+    ],
+    "index_entries": 16148,
+    "geometry_count": 105,
+    "index_build_seconds": 0.010020696790888906,
+    "memory_bytes": "not measured",
+    "next": "Keep simple product iterator; choose another supported interface or explicit deployment question instead of index promotion."
+  },
+  "immutable_index_recovery": "docs/archive/qfactorial_20261009/index-pilot-index.json"
+}

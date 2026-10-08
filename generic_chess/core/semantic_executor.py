@@ -28,6 +28,7 @@ from math import gcd
 from ..rules.ir import (
     CompiledSemanticRuleset,
     geometry_candidates,
+    geometry_paths_to,
 )
 from .coordinates import Square, index_to_square, square_to_index
 from .errors import RuleSetMismatchError
@@ -634,12 +635,10 @@ class SemanticEngine:
                             and geometry.atom_source[0] != tid
                         ):
                             continue
-                        for target, path in geometry_candidates(
-                            geometry, str(by_owner), source
+                        for path in geometry_paths_to(
+                            geometry, str(by_owner), source, square
                         ):
                             _checkpoint(checkpoint)
-                            if target != square:
-                                continue
                             binding = self._make_binding(
                                 pattern, gid, tid, piece,
                                 source, square, None, path, position,

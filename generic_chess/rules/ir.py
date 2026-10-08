@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections.abc import Iterator
 from dataclasses import asdict, dataclass, field
 from functools import lru_cache
 from typing import Any, Mapping
@@ -101,6 +102,26 @@ def geometry_candidates(
         (path[index], tuple(path[:index]))
         for index in range(start, len(path))
     )
+
+
+def geometry_paths_to(
+    geometry: "CompiledGeometry", owner: str, source: int, target: int,
+) -> Iterator[tuple[int, ...]]:
+    """Matching compiled prefixes without constructing unrelated endpoints.
+
+    This is the target-directed form of ``geometry_candidates``. Keep the
+    compiled order and minimum distance, including repeated target entries;
+    do not infer geometry from coordinates or reinterpret movement atoms.
+    """
+    path = geometry.paths.get(owner, {}).get(source, ())
+    if geometry.kind == "leap":
+        if path and path[0] == target:
+            yield ()
+        return
+    start = max(0, (geometry.min_steps or 1) - 1)
+    for index in range(start, len(path)):
+        if path[index] == target:
+            yield tuple(path[:index])
 
 
 @dataclass(frozen=True, slots=True)

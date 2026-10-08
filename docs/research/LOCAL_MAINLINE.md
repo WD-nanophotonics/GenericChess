@@ -12,18 +12,21 @@ consultation, tests, publication and segment endings are not scientific completi
    familiar-piece mixtures, recombined mechanics and generated playable rules.
    Generic NNUE/self-evolution is later work.
 
-Next: identify one deployment-relevant utility assumption without turning task
-marginals into global prices. The finite semantic qsupport inconsistency is
-repaired using actual effects; sorted qsearch shares classification with the
-immutable/eager paths and reuses its classification push for recursion.
-Conditional transformation features still do not identify a scalar bonus.
-Exact current-child check reuse preserves actual caller decisions while reducing
-local cost; wider generated rules still expose node and hard-check limits.
-Existing PVS/qsearch approximations remain caller options, not default or price
-promotions. Core/Native completed decisions agree within the declared controls.
-Transformation effects remain an explicit static-projection exclusion; no bonus
-is fitted against exposed continuation counts. Retention preserves signed scores,
-both kinds of zero and terminals; it is not a positive-price normalization.
+Next: the fixed q2 PVS/ordered-q factorial is complete; no cell uniformly wins.
+Target-directed attack queries retain16exact caller signatures and reduce local
+wall5-13%;1654full regressions pass. The post-change profile exposes4.4million
+matching-prefix iterator calls. The local immutable-target index pilot gives only modest/inconsistent warm
+lookup gains and is not adopted. Next choose one concrete unfamiliar-rule
+interface correctness/cost uncertainty or explicit task-utility deployment;
+do not extend conditional pawn sampling or build a cache on weak benefit.
+The pawn/preparation component is now explicitly conditional: allowing same-
+entity quiet promotion changes task ratios, but target-law, near-layer mass and
+representative backgrounds remain influential. Do not turn its ratios into a
+stock-price default or expand sampling merely to get preferred ratios. The
+advisor's law-validity versus estimator-reliability distinction is adopted.
+Existing semantic qsupport uses actual effects; sorted qsearch reuses its
+classification push. Caller flags/prices stay unchanged; completion/cost and
+semantic correctness are separate from strength or universal utility.
 
 The two actual6x6 transform contexts now have effect-sensitive conditional
 endpoint features and a separate exact next-focal unit-removal task. Equivalent
@@ -61,12 +64,19 @@ response approximation preserve the tested semantics/alias mass. These are
 conditional components, not a rule-determined unique distribution or material truth.
 Exact construction evidence: SEMANTIC_CAPABILITY.md and linked data/archives.
 
-Direct and one-preparation tasks have different reply support. Full-Core transfer
-covers580 Chess/3276 Shogi initial-safe common roots and recovers every old direct
-reference. Preparation/pawn ratios remain strongly biased: Chess N8.94/B11.49/
-R26.87/Q32.78; Shogi N.82/G9.21/R33.13. Original checked-turn and initial-safe
-populations are distinct. All zeros and terminal branches remain. Task0 can mean
-capture unavailable after a winning preparation, not draw/loss.
+Direct and one-preparation tasks have different reply support. Original580
+Chess/3276 Shogi nontransforming rows remain frozen. Exact support decomposition
+and3856 Core/Native promotion-aware roots show task-scope dependence; N/P changes
+8.942/.822 to1.959/1.481 without identifying better prices. All old ordinary
+branches/direct references remain exact.3680 exact inventory-target integrated
+roots independently agree; cohort changes are separated from target-law changes.
+Three fixed fresh representatives yield13104 further exact Core/Native roots.
+Substantial same-common-offset spread and residual spread after near-mass
+standardization prevent a universal table reading. Actual pawn promotion-mask
+layer curves separate law sensitivity from estimator precision. Zeros and
+winning-but-capture-unavailable task0 remain. Full scope/cost/recovery:
+CROSS_GAME_PRICE_DIAGNOSTIC.md and data/pawn_bias_20261009.json. Keep the
+conditional task component; return to the concrete search-interface question.
 
 Owner/rotation preserves88 preparations and10 paths on ten empty-aux roots;
 this is not a castling/general-history symmetry theorem. Target-role swaps change

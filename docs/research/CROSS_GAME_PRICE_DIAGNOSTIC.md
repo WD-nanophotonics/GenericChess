@@ -196,3 +196,112 @@ direct is not a same-support causal improvement. Per-owner values, exact masses,
 original partials/corrections and raw outcomes are in
 data/preparation_transfer_20261008.json and ../archive/preparation_transfer_20261008/.
 No material default, human-fitted parameter or independent holdout claim follows.
+
+
+### Pawn-task scope and representative dependence (2026-10-09)
+
+The old580 Chess/3276 Shogi rows remain fixed. Exact rational decomposition
+of the original N/P task mean separates positive-root mass from success given
+positive support: Chess8.941629=8.692308 times1.028683; Shogi.821886=1.260274
+times.652149. Replacing best preparation with a uniform average over canonical
+physical preparations gives3.631489/.582003. This is a different task policy,
+not an improved price; full Native replay confirms no duplicate physical
+preparations in these canonical contexts. Source/preparation changes reply
+support, so preparation-minus-direct is not a same-support causal gain.
+
+The original task intentionally excludes quiet transformation, including forced
+promotion. All frozen P/N root actions recover its support exactly, but27 Chess
+pawn roots and54 Shogi pawn/60 Shogi knight roots have only transforming quiet
+preparations. A separately declared task permits those same-base/owner changes
+and tracks the actual post-preparation actor. Every4953/21420 old ordinary branch
+and every direct baseline remains exact;108/3565 changed preparations are added.
+All3856 roots independently agree across Core/Native on public actions, physical
+reply denominators, success numerators, source losses and terminals.
+
+|Same original context law|Chess N/P|Shogi N/P|
+|---|---:|---:|
+|Nontransforming task|8.941629|.821886|
+|Promotion-aware task|1.959218|1.480541|
+
+These are task ratios, not a corrected material table. Chess's entire added pawn
+mean3435499/34725600 comes from source pawns one rank from the far edge, carrying
+77/424 of this law's mass. This concentrated contribution exposes the context law,
+not lifetime promotion utility. Shogi also changes knight support. All zeros and
+winning-but-capture-unavailable terminal preparations retain task0.
+
+Next freeze geometry/background and integrate target type exactly under the
+rules' initial non-anchor inventory counts. Require both P/N actors and owners
+to have safe anchors for every target type. This retains44/58 original Chess
+seeds (mass463/1260),100/126 Shogi seeds (473/784). Compare target laws only
+within this new common cohort; its change from the old population is separate.
+
+|Common all-target safe cohort|Chess ordinary / promoting N/P|Shogi ordinary / promoting N/P|
+|---|---:|---:|
+|Original sampled target|12.367618 /2.193748|.505892 /1.052717|
+|Inventory-integrated target|11.007520 /2.490646|.726033 /1.320969|
+
+All3680 integrated roots independently replay exactly with Native. Positive-mass
+ratios under the integrated ordinary/promoting laws are Chess5.670072/2.923117
+and Shogi1.273621/1.444819; conditional-positive success supplies the remaining
+factor. Promotion inclusion does not remove sparse/support/selection dependence.
+
+A fixed changed-premise collection then uses3 new representatives for every
+original displacement stratum, exact target integration and promotion-aware
+support. Source/background draws and all-target P/N/both-owner safety are fixed
+before execution. It does not reuse the original all-piece-safe population or
+select favorable ratios. The154 Chess/358 Shogi accepted representative layouts
+produce3080/10024 actor-owner-target roots; all rejections remain. Compare on the
+intersection of safe offsets across all3 fresh representatives:19 Chess offsets
+(mass31/180),71 Shogi offsets (121/294).
+
+|Same fresh common offsets, reps0/1/2|Chess N/P|Shogi N/P|
+|---|---:|---:|
+|Ordinary task|42.338896 /7.662429 /45.322630|2.103333 /1.955543 /2.642880|
+|Promotion-aware task|12.077393 /2.838592 /5.977466|2.506334 /2.578548 /3.177843|
+
+This descriptive spread is not a confidence interval or independent material
+validation. Geometry/background representatives remain influential even when
+offset mass, target integration and task scope match. Intersecting also with
+the original accepted offsets leaves only11 Chess/54 Shogi offsets; the full
+four-way values remain in the exact data. Neither this small intersection nor a
+preferred-looking ratio identifies global prices. Keep explicit task/context
+components and inspect a deployment-changing interface question next; do not
+extend the same law merely to obtain a preferred pawn normalization.
+
+Core transition/time costs: promotion103725/28.47sec Chess,474852/211.08sec Shogi;
+target integration82166/17.24sec and104649/35.69sec; fresh representatives285086/
+74.43sec and367650/228.84sec. Native transition and legal-list query accounting
+is separate; these timings are not a matched-work speed claim. Full producer
+sources, exact fractions, failed enum serialization, cohort membership, all
+zero/terminal outcomes and scope qualifications are routed through
+ data/pawn_bias_20261009.json and ../archive/pawn_bias_20261009/index.json.
+No product/default/price or human-holdout status changes.
+
+
+The advisor's law-validity objection is adopted: estimator reliability and the
+material relevance of that law are separate. A no-new-transition check uses the
+original all-target common cohort and actual rules' pawn promotion masks. Near
+means a possible one-step quiet pawn move can promote, ignoring blockers/check;
+Shogi includes already-inside-zone pawns. Both N/P use that same pawn-defined
+layer, even when a knight can jump into its promotion zone from farther away.
+Zeros, owner and inventory-target weights stay. Freeze within-group distributions
+and vary only near mass t:
+
+R(t)=[t Nnear+(1-t)Nfar]/[t Pnear+(1-t)Pfar].
+
+|Original integrated cohort|Original near mass|R(0), far only|R(original t)|R(1), near only|
+|---|---:|---:|---:|---:|
+|Chess|78/463=.168467|9.905027|2.490646|.322409|
+|Shogi|1255/2838=.442213|2.158636|1.320969|.951710|
+
+The exact derivative numerator Nnear Pfar-Nfar Pnear is negative in both games;
+these diagnostic endpoints are not natural-game laws or fitted parameters.
+Do not average per-layer ratios. A separate reanalysis of the11/54 all-four
+common offsets fixes each fresh representative's near mass to the original-on-
+intersection mass. Chess fresh N/P values remain6.229082/1.172159/14.426537;
+Shogi remains1.382128/2.269083/2.374156. Thus binary near-mass adjustment alone
+does not explain representative spread, and stable within-layer estimation was
+not established. No further sampling is justified merely to recover a global
+price claim. Preserve this conditional diagnostic and move to the concrete
+search-cost/interface question. The advisor independently read only the prior
+published contribution note; new census/curve execution is local Agent work.
