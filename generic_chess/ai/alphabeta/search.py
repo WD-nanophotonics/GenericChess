@@ -591,7 +591,10 @@ def _order_qactions(state, actions, ply, ctx: _Context):
 
 
 def _runtime_noisy_actions(ctx: _Context, actions):
-    """Classify qsearch actions without materializing immutable child states."""
+    """Eager classification reference for parity checks and historical replay.
+
+    The live runtime qsearch classifies on demand in its recursion push.
+    """
     runtime = ctx.runtime
     state = runtime.state
     side = state.position.side_to_move
@@ -672,21 +675,19 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
     # exits need no legal list; keep full evasion generation above.
     actions = _runtime_legal_actions(ctx, ctx.checkpoint)
     ctx.budget.check(ctx.stats, force=True)
-    if ctx.tuning.use_ordered_qsearch:
-        # Classify on demand so a cutoff avoids probing remaining quiet moves.
-        ordered = _order_qactions(state, actions, ply, ctx)
-        semantic = semantic_engine_for(ctx.compiled) is not None
-        parent_enemies = enemy_board_count(state.position, side)
-        parent_inventory = material_inventory(state.position) if semantic else None
-    else:
-        ordered = sorted(_runtime_noisy_actions(ctx, actions), key=str)
+    # Classify on demand in the chosen order; reuse the child for recursion.
+    # The default stays lexical. A cutoff need not classify unvisited actions.
+    ordered = _order_qactions(state, actions, ply, ctx)
+    semantic = semantic_engine_for(ctx.compiled) is not None
+    parent_enemies = enemy_board_count(state.position, side)
+    parent_inventory = material_inventory(state.position) if semantic else None
     for action in ordered:
         kind = (
             legacy_noisy_kind(state.position, action)
-            if ctx.tuning.use_ordered_qsearch and not semantic else None
+            if not semantic else None
         )
         with runtime.pushed(action, checkpoint=ctx.checkpoint):
-            if ctx.tuning.use_ordered_qsearch and not noisy_child(
+            if not noisy_child(
                     action, runtime.state, side, parent_enemies, parent_inventory,
                     lambda: runtime.in_check(1 - side, checkpoint=ctx.checkpoint),
                     ctx.stats, capture_only=ctx.tuning.use_capture_only_qsearch,
@@ -1187,7 +1188,8 @@ def run_root_search(
         stats.completed_depth = depth
         stats.selective_depth = depth
         ctx.first_main_iteration_complete = True
-        stats.time_to_first_completed_iteration = time.monotonic() - started
+        if stats.time_to_first_completed_iteration is None:
+            stats.time_to_first_completed_iteration = time.monotonic() - started
         if progress_callback is not None:
             progress_callback(depth, stats.nodes, stats.qnodes)
 
@@ -1200,20 +1202,12 @@ def run_root_search(
         return best.best_action, best.score, best.pv, stats.termination_reason
 
     # No full iteration completed: prefer the root scan's best action.
+    # Fallback describes the selected action, not why search stopped.
+    stats.root_scan_used_fallback = True
+    stats.termination_reason = abort_reason or "fallback"
     if tuning.use_root_tactical and scan_best is not None:
-        stats.root_scan_used_fallback = True
-        stats.termination_reason = "fallback"
         return scan_best, 0, (), stats.termination_reason
     fallback = root_first_action
     if fallback is None:
         fallback = sorted(actions, key=str)[0]
-    stats.root_scan_used_fallback = True
-    # Preserve an abort observed before the first complete iteration.  The
-    # legal fallback remains the same, but callers must be able to distinguish
-    # a time/node/cancellation stop from a search that naturally had no result.
-    stats.termination_reason = (
-        abort_reason
-        if abort_reason in ("time_limit", "cancelled")
-        else "fallback"
-    )
     return fallback, 0, (), stats.termination_reason

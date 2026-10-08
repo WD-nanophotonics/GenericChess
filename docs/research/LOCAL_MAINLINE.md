@@ -20,7 +20,9 @@ square-only evaluation or execution assumption through the public interface?
 Supplied evaluators now bypass unused default profiles; both orderers use shape.
 Rectangular Core searches pass bounded cannon, temporal and compound controls.
 Native and default price generation remain separate unsupported boundaries.
-Next inspect one actual remaining boundary before adding any backend/profile.
+Lexical q classification now shares recursion pushes without changing ordering;
+next distinguish genuinely needed legal-generation work from eager child probing
+before adding any backend/profile.
 
 ## Current evidence and decisions
 
@@ -32,6 +34,11 @@ Next inspect one actual remaining boundary before adding any backend/profile.
 - PVS/ordered-q factorial: no cell uniformly wins. Keep defaults and separate
   leaf prices, ordering prices, attack authority, completion and execution cost.
   The modest inconsistent warm compiled-target index remains deferred.
+- On22 frozen event roots, lexical q fusion retains exact decisions/main/qnodes,
+  reducing pushes133480->63829.16 wide-root calls retain signatures and old caps;
+  four cold product controls plus qualified warm/cancel recovery pass.1673 active
+  regressions pass. First-latency/abort-cause reports corrected, old raw data kept.
+  Eager Native full legal-set terminal probing regresses to time_limit; rejected.
 - A tuple-membership miss guard preserves all16 cold q2 signatures/work and
  306432 transfer geometry queries. Local median reductions0.22-3.55% are modest;
  no cache/index or cancellation weakening follows. Constructor pattern filtering
@@ -82,7 +89,7 @@ branch backlog or publication gate. Exact operating rules remain in AGENTS.md.
 |---|---|
 |Semantic opportunity, equivalence, context/task boundaries|SEMANTIC_CAPABILITY.md; data/finite_law_20261009.json; preparation_transfer_20261008.json; retention_20261008.json|
 |Descriptive price ratios and preparation/promotion bias|CROSS_GAME_PRICE_DIAGNOSTIC.md; data/pawn_bias_20261009.json|
-|Search interface, actual-effect qsupport, costs and caps|UNFAMILIAR_RULE_SEARCH.md; data/rect_search_20261009.json; data/query_transfer_20261009.json; qfactorial_20261009.json; qeffects_20261008.json; generated6_20261008.json; generated8_20261008.json|
+|Search interface, actual-effect qsupport, costs and caps|UNFAMILIAR_RULE_SEARCH.md; data/event_qsearch_20261009.json; rect_search_20261009.json; query_transfer_20261009.json; qfactorial_20261009.json; qeffects_20261008.json; generated6_20261008.json; generated8_20261008.json|
 |Retained utility alternatives|TEMPORAL_HAND_SERVICE.md; GOAL_INTERACTION.md; CONTRIBUTION_MODEL.md; JOINT_SERVICE_DIAGNOSTIC.md; CUSTODY_CONTINUATION.md|
 
 Each data index routes exact sources/failures/outputs to its purpose-specific

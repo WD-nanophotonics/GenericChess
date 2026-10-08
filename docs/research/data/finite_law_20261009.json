@@ -2015,5 +2015,671 @@
     "same_1256_original_actual_finite_counts": true,
     "scope": "Localize fixed-stock capture error, without changing laws or adding samples.\n\nSame68 frozen contexts/1256 actors. Two diagnostic ORACLES: supply actual target\nrelation but keep finite path law; supply actual path event but keep finite target\nmarginal. Neither is a rule-only estimator/material utility/legal mobility. No\nfitting, thresholds, new games, profile/default or extension of earlier tests.\nThe decision is whether a next diagnostic should address endpoint population or\njoint path structure; oracle error alone cannot identify a causal repair.\n",
     "decision": "Actual-target oracle reduces capture MAE on all4 routes; actual-path oracle only slightly improves2 and worsens2. Endpoint population matters here; oracle inputs prohibit promoting this into a rule-only table or claiming a causal repair. No new law/default/sample extension."
+  },
+  "type_localization": {
+    "groups": [
+      {
+        "seed": 202610082000,
+        "type": "A",
+        "n": 184,
+        "actual_zero": 118,
+        "actual_mean": 0.5434782608695652,
+        "mae": {
+          "finite": 0.9111344537815126,
+          "target_oracle": 0.026694373401534528,
+          "path_oracle": 0.952639751552795
+        },
+        "signed_bias": 0.570843989769821
+      },
+      {
+        "seed": 202610082000,
+        "type": "P",
+        "n": 102,
+        "actual_zero": 29,
+        "actual_mean": 0.7843137254901961,
+        "mae": {
+          "finite": 0.4525890703875133,
+          "target_oracle": 0.46846219548425433,
+          "path_oracle": 0.5621848739495798
+        },
+        "signed_bias": 0.2517765706995811
+      },
+      {
+        "seed": 202610082000,
+        "type": "X",
+        "n": 10,
+        "actual_zero": 0,
+        "actual_mean": 1,
+        "mae": {
+          "finite": 0.6537815126050419,
+          "target_oracle": 0.8470588235294118,
+          "path_oracle": 1.3657142857142857
+        },
+        "signed_bias": 0.6537815126050419
+      },
+      {
+        "seed": 202610082001,
+        "type": "A",
+        "n": 182,
+        "actual_zero": 66,
+        "actual_mean": 0.7252747252747253,
+        "mae": {
+          "finite": 0.5040137383624779,
+          "target_oracle": 0.3251169786096257,
+          "path_oracle": 0.49858712715855574
+        },
+        "signed_bias": 0.061169013059769343
+      },
+      {
+        "seed": 202610082001,
+        "type": "B",
+        "n": 66,
+        "actual_zero": 38,
+        "actual_mean": 0.42424242424242425,
+        "mae": {
+          "finite": 0.6131473934992997,
+          "target_oracle": 0.22788982850760495,
+          "path_oracle": 0.5831168831168831
+        },
+        "signed_bias": 0.609064261979563
+      },
+      {
+        "seed": 202610082001,
+        "type": "P",
+        "n": 58,
+        "actual_zero": 38,
+        "actual_mean": 0.3448275862068966,
+        "mae": {
+          "finite": 0.7733990147783251,
+          "target_oracle": 0.0,
+          "path_oracle": 0.7733990147783251
+        },
+        "signed_bias": 0.5507389162561576
+      },
+      {
+        "seed": 202610082002,
+        "type": "A",
+        "n": 68,
+        "actual_zero": 22,
+        "actual_mean": 1.088235294117647,
+        "mae": {
+          "finite": 0.7315651260504201,
+          "target_oracle": 0.42691622103386806,
+          "path_oracle": 0.6302521008403361
+        },
+        "signed_bias": -0.18544522086909632
+      },
+      {
+        "seed": 202610082002,
+        "type": "B",
+        "n": 68,
+        "actual_zero": 68,
+        "actual_mean": 0,
+        "mae": {
+          "finite": 1.503760541649815,
+          "target_oracle": 0.0,
+          "path_oracle": 1.3176470588235294
+        },
+        "signed_bias": 1.503760541649815
+      },
+      {
+        "seed": 202610082002,
+        "type": "P",
+        "n": 188,
+        "actual_zero": 51,
+        "actual_mean": 0.8031914893617021,
+        "mae": {
+          "finite": 0.44735171327219353,
+          "target_oracle": 0.5463468242010725,
+          "path_oracle": 0.49468085106382975
+        },
+        "signed_bias": -0.1256299992231247
+      },
+      {
+        "seed": 202610082002,
+        "type": "X",
+        "n": 34,
+        "actual_zero": 21,
+        "actual_mean": 0.38235294117647056,
+        "mae": {
+          "finite": 0.4647058823529412,
+          "target_oracle": 0.0,
+          "path_oracle": 0.4647058823529412
+        },
+        "signed_bias": -0.052941176470588235
+      },
+      {
+        "seed": 202610082003,
+        "type": "A",
+        "n": 140,
+        "actual_zero": 79,
+        "actual_mean": 0.5571428571428572,
+        "mae": {
+          "finite": 1.469027790001631,
+          "target_oracle": 0.2788236885663356,
+          "path_oracle": 1.5259183673469388
+        },
+        "signed_bias": 1.3458756200427384
+      },
+      {
+        "seed": 202610082003,
+        "type": "B",
+        "n": 122,
+        "actual_zero": 68,
+        "actual_mean": 0.4918032786885246,
+        "mae": {
+          "finite": 0.5395784543325527,
+          "target_oracle": 0.0,
+          "path_oracle": 0.5395784543325527
+        },
+        "signed_bias": 0.07868852459016393
+      },
+      {
+        "seed": 202610082003,
+        "type": "P",
+        "n": 24,
+        "actual_zero": 18,
+        "actual_mean": 0.25,
+        "mae": {
+          "finite": 1.87906162464986,
+          "target_oracle": 0.0,
+          "path_oracle": 1.857142857142857
+        },
+        "signed_bias": 1.87906162464986
+      },
+      {
+        "seed": 202610082003,
+        "type": "X",
+        "n": 10,
+        "actual_zero": 0,
+        "actual_mean": 2.3,
+        "mae": {
+          "finite": 0.9285714285714286,
+          "target_oracle": 0.0,
+          "path_oracle": 0.9285714285714286
+        },
+        "signed_bias": -0.9285714285714286
+      }
+    ],
+    "witness": {
+      "original": {
+        "seed": 202610082000,
+        "ply": 5,
+        "source": 20,
+        "type": "A",
+        "actual": 5,
+        "finite": 1.5714285714285714,
+        "target_oracle": 5.0,
+        "path_oracle": 1.5714285714285714
+      },
+      "owner": 0,
+      "stock": [
+        12,
+        11
+      ],
+      "targets": [
+        {
+          "target": 24,
+          "occupant": {
+            "owner": 1,
+            "type": "A"
+          },
+          "enemy": true,
+          "path_open": true,
+          "finite_path": "1",
+          "finite_capture": 0.3142857142857143,
+          "events": [
+            {
+              "clear": [],
+              "count_cells": [],
+              "count_eq": null
+            }
+          ]
+        },
+        {
+          "target": 28,
+          "occupant": {
+            "owner": 1,
+            "type": "A"
+          },
+          "enemy": true,
+          "path_open": true,
+          "finite_path": "1",
+          "finite_capture": 0.3142857142857143,
+          "events": [
+            {
+              "clear": [],
+              "count_cells": [],
+              "count_eq": null
+            }
+          ]
+        },
+        {
+          "target": 30,
+          "occupant": {
+            "owner": 1,
+            "type": "A"
+          },
+          "enemy": true,
+          "path_open": true,
+          "finite_path": "1",
+          "finite_capture": 0.3142857142857143,
+          "events": [
+            {
+              "clear": [],
+              "count_cells": [],
+              "count_eq": null
+            }
+          ]
+        },
+        {
+          "target": 34,
+          "occupant": {
+            "owner": 1,
+            "type": "P"
+          },
+          "enemy": true,
+          "path_open": true,
+          "finite_path": "1",
+          "finite_capture": 0.3142857142857143,
+          "events": [
+            {
+              "clear": [],
+              "count_cells": [],
+              "count_eq": null
+            }
+          ]
+        },
+        {
+          "target": 35,
+          "occupant": {
+            "owner": 1,
+            "type": "A"
+          },
+          "enemy": true,
+          "path_open": true,
+          "finite_path": "1",
+          "finite_capture": 0.3142857142857143,
+          "events": [
+            {
+              "clear": [],
+              "count_cells": [],
+              "count_eq": null
+            }
+          ]
+        }
+      ]
+    },
+    "decision": "Mixed signed type biases do not justify type constants. Largest error is five path-free enemy endpoints: target spatial population mismatch, not path correlation counting bug. Both stateful oracles remain diagnostic.",
+    "recovery": "docs/archive/finite_law_20261009/type-localization-index.json"
+  },
+  "initial_template": {
+    "summary": [
+      {
+        "seed": 202610082000,
+        "group": "all",
+        "n": 296,
+        "mae": {
+          "finite": 0.7444278371668077,
+          "initial_template": 0.44256756756756754
+        },
+        "exact_template": 190
+      },
+      {
+        "seed": 202610082000,
+        "group": "initial",
+        "n": 22,
+        "mae": {
+          "finite": 1.058059587471352,
+          "initial_template": 0
+        },
+        "exact_template": 22
+      },
+      {
+        "seed": 202610082000,
+        "group": "successors",
+        "n": 274,
+        "mae": {
+          "finite": 0.7192457258284867,
+          "initial_template": 0.4781021897810219
+        },
+        "exact_template": 168
+      },
+      {
+        "seed": 202610082000,
+        "group": "source_initially_own",
+        "n": 241,
+        "mae": {
+          "finite": 0.761331963943631,
+          "initial_template": 0.4066390041493776
+        },
+        "exact_template": 154
+      },
+      {
+        "seed": 202610082000,
+        "group": "source_not_initially_own",
+        "n": 55,
+        "mae": {
+          "finite": 0.670357027108364,
+          "initial_template": 0.6
+        },
+        "exact_template": 36
+      },
+      {
+        "seed": 202610082001,
+        "group": "all",
+        "n": 306,
+        "mae": {
+          "finite": 0.5786123242159072,
+          "initial_template": 0.3235294117647059
+        },
+        "exact_template": 210
+      },
+      {
+        "seed": 202610082001,
+        "group": "initial",
+        "n": 22,
+        "mae": {
+          "finite": 0.7962887207668992,
+          "initial_template": 0
+        },
+        "exact_template": 22
+      },
+      {
+        "seed": 202610082001,
+        "group": "successors",
+        "n": 284,
+        "mae": {
+          "finite": 0.5617500681450557,
+          "initial_template": 0.3485915492957746
+        },
+        "exact_template": 188
+      },
+      {
+        "seed": 202610082001,
+        "group": "source_initially_own",
+        "n": 255,
+        "mae": {
+          "finite": 0.5696289067061475,
+          "initial_template": 0.29411764705882354
+        },
+        "exact_template": 180
+      },
+      {
+        "seed": 202610082001,
+        "group": "source_not_initially_own",
+        "n": 51,
+        "mae": {
+          "finite": 0.6235294117647059,
+          "initial_template": 0.47058823529411764
+        },
+        "exact_template": 30
+      },
+      {
+        "seed": 202610082002,
+        "group": "all",
+        "n": 358,
+        "mae": {
+          "finite": 0.7036432053038781,
+          "initial_template": 0.2681564245810056
+        },
+        "exact_template": 262
+      },
+      {
+        "seed": 202610082002,
+        "group": "initial",
+        "n": 22,
+        "mae": {
+          "finite": 0.46646294881588996,
+          "initial_template": 0
+        },
+        "exact_template": 22
+      },
+      {
+        "seed": 202610082002,
+        "group": "successors",
+        "n": 336,
+        "mae": {
+          "finite": 0.7191728649548773,
+          "initial_template": 0.2857142857142857
+        },
+        "exact_template": 240
+      },
+      {
+        "seed": 202610082002,
+        "group": "source_initially_own",
+        "n": 277,
+        "mae": {
+          "finite": 0.6799598387795149,
+          "initial_template": 0.19133574007220217
+        },
+        "exact_template": 224
+      },
+      {
+        "seed": 202610082002,
+        "group": "source_not_initially_own",
+        "n": 81,
+        "mae": {
+          "finite": 0.7846344710723796,
+          "initial_template": 0.5308641975308642
+        },
+        "exact_template": 38
+      },
+      {
+        "seed": 202610082003,
+        "group": "all",
+        "n": 296,
+        "mae": {
+          "finite": 1.1009312679260497,
+          "initial_template": 0.23310810810810811
+        },
+        "exact_template": 231
+      },
+      {
+        "seed": 202610082003,
+        "group": "initial",
+        "n": 22,
+        "mae": {
+          "finite": 1.0225141082826092,
+          "initial_template": 0
+        },
+        "exact_template": 22
+      },
+      {
+        "seed": 202610082003,
+        "group": "successors",
+        "n": 274,
+        "mae": {
+          "finite": 1.1072275362185888,
+          "initial_template": 0.2518248175182482
+        },
+        "exact_template": 209
+      },
+      {
+        "seed": 202610082003,
+        "group": "source_initially_own",
+        "n": 252,
+        "mae": {
+          "finite": 1.025841433429025,
+          "initial_template": 0.19047619047619047
+        },
+        "exact_template": 204
+      },
+      {
+        "seed": 202610082003,
+        "group": "source_not_initially_own",
+        "n": 44,
+        "mae": {
+          "finite": 1.5309912291362826,
+          "initial_template": 0.4772727272727273
+        },
+        "exact_template": 27
+      }
+    ],
+    "fact_drift": [
+      {
+        "seed": 202610082000,
+        "group": "unchanged_facts",
+        "n": 85,
+        "mae": {
+          "finite": 1.1542857142857141,
+          "initial_template": 0
+        },
+        "exact_template": 85
+      },
+      {
+        "seed": 202610082000,
+        "group": "changed_facts",
+        "n": 211,
+        "mae": {
+          "finite": 0.5793192136828881,
+          "initial_template": 0.6208530805687204
+        },
+        "exact_template": 105
+      },
+      {
+        "seed": 202610082000,
+        "group": "changed_nonzero",
+        "n": 139,
+        "mae": {
+          "finite": 0.3948329037304915,
+          "initial_template": 0.8776978417266187
+        },
+        "exact_template": 36
+      },
+      {
+        "seed": 202610082000,
+        "group": "changed_zero",
+        "n": 72,
+        "mae": {
+          "finite": 0.9354802842854313,
+          "initial_template": 0.125
+        },
+        "exact_template": 69
+      },
+      {
+        "seed": 202610082001,
+        "group": "unchanged_facts",
+        "n": 175,
+        "mae": {
+          "finite": 0.6773714201223011,
+          "initial_template": 0
+        },
+        "exact_template": 175
+      },
+      {
+        "seed": 202610082001,
+        "group": "changed_facts",
+        "n": 131,
+        "mae": {
+          "finite": 0.4466822342646176,
+          "initial_template": 0.7557251908396947
+        },
+        "exact_template": 35
+      },
+      {
+        "seed": 202610082001,
+        "group": "changed_nonzero",
+        "n": 70,
+        "mae": {
+          "finite": 0.1469120764141434,
+          "initial_template": 0.8714285714285714
+        },
+        "exact_template": 9
+      },
+      {
+        "seed": 202610082001,
+        "group": "changed_zero",
+        "n": 61,
+        "mae": {
+          "finite": 0.7906807760602438,
+          "initial_template": 0.6229508196721312
+        },
+        "exact_template": 26
+      },
+      {
+        "seed": 202610082002,
+        "group": "unchanged_facts",
+        "n": 203,
+        "mae": {
+          "finite": 0.7062944072360464,
+          "initial_template": 0
+        },
+        "exact_template": 203
+      },
+      {
+        "seed": 202610082002,
+        "group": "changed_facts",
+        "n": 155,
+        "mae": {
+          "finite": 0.7001709859991674,
+          "initial_template": 0.6193548387096774
+        },
+        "exact_template": 59
+      },
+      {
+        "seed": 202610082002,
+        "group": "changed_nonzero",
+        "n": 89,
+        "mae": {
+          "finite": 0.7109007601854541,
+          "initial_template": 0.47191011235955055
+        },
+        "exact_template": 47
+      },
+      {
+        "seed": 202610082002,
+        "group": "changed_zero",
+        "n": 66,
+        "mae": {
+          "finite": 0.685702048081296,
+          "initial_template": 0.8181818181818182
+        },
+        "exact_template": 12
+      },
+      {
+        "seed": 202610082003,
+        "group": "unchanged_facts",
+        "n": 156,
+        "mae": {
+          "finite": 0.7711745244003309,
+          "initial_template": 0
+        },
+        "exact_template": 156
+      },
+      {
+        "seed": 202610082003,
+        "group": "changed_facts",
+        "n": 140,
+        "mae": {
+          "finite": 1.4683744964261365,
+          "initial_template": 0.4928571428571429
+        },
+        "exact_template": 75
+      },
+      {
+        "seed": 202610082003,
+        "group": "changed_nonzero",
+        "n": 68,
+        "mae": {
+          "finite": 0.9901556842764706,
+          "initial_template": 0.6323529411764706
+        },
+        "exact_template": 25
+      },
+      {
+        "seed": 202610082003,
+        "group": "changed_zero",
+        "n": 72,
+        "mae": {
+          "finite": 1.9200255967897097,
+          "initial_template": 0.3611111111111111
+        },
+        "exact_template": 50
+      }
+    ],
+    "scope": "Frozen initial-layout reference versus uniform-stock count diagnostic.\nDecision: does retaining declared initial spatial structure offer useful raw\ncapture prediction, or is its utility lost after actual actions? Reuse same\n68contexts/1256actors; no new sample, law sweep, parameter fitting or material\nprice claim. Chosen reference is the unmodified initial board from each RuleSet;\nfor every actual source/type, exclude that source from initial occupied cells,\nplace a hypothetical actor, and count enemy endpoints with actual event paths\non that fixed template. This substitution is an opportunity task, not a legal\nposition or conserved-stock distribution. Targets/types belong to the actual\nactor; no actual enemy layout is read by the predictor. Descriptive comparison\non exposed routes grouped by initial vs successor and source initially own vs\nother; exact counts/rule identities kept, no holdout restoration/default change.\nIncremental cost <=60sec plus records; one writer, no search, seeds or worker.\n",
+    "decision": "Aggregate/earlier successor advantage is misleading alone.619/1256 unchanged-fact observations exact by construction; changed-fact MAE worsens2/4rules and changed-nonzero worsens2/4. Keep spatial task dependence explicit; do not promote reference into material prices or claim independent validation.",
+    "recovery": "docs/archive/finite_law_20261009/initial-template-index.json"
   }
 }

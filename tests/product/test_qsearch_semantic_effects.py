@@ -122,7 +122,7 @@ def test_transformation_qresult_does_not_depend_on_encoding(mutable, ordered):
     assert results == [(1726, 2), (1726, 2)]
 
 
-def test_ordered_semantic_qsearch_classifies_and_recurses_in_one_push():
+def test_runtime_qsearch_classifies_and_recurses_in_one_push_in_either_order():
     c = compile_ruleset_for_execution(transform_rules())
     state = GameSession(c).state
     legal_count = len(legal_successors(state, c))
@@ -142,8 +142,39 @@ def test_ordered_semantic_qsearch_classifies_and_recurses_in_one_push():
         runtime.assert_balanced()
         observed.append((score, stats.qnodes, stats.material_change_qactions,
                          stats.runtime_pushes, stats.runtime_pops))
-    assert observed == [(1726, 3, 2, legal_count + 2, legal_count + 2),
+    assert observed == [(1726, 3, 2, legal_count, legal_count),
                         (1726, 3, 2, legal_count, legal_count)]
+
+
+@pytest.mark.parametrize("ordered", [False, True])
+def test_runtime_q_cutoff_skips_unused_classification_and_matches_immutable(ordered):
+    c = compile_ruleset_for_execution(transform_rules())
+    state = GameSession(c).state
+    cfg = EvaluationConfig(dynamic_mobility_weight=0, anchor_escape_weight=0,
+                           promotion_potential_weight=0)
+    ev = Evaluator(c, build_ruleset_profile(c, cfg), cfg)
+    assert ev.evaluate(state) < 300
+    observations = []
+    for mutable in (False, True):
+        stats = SearchStatistics()
+        runtime = SearchPathRuntime(state, c) if mutable else None
+        if runtime is not None:
+            runtime.attach_stats(stats)
+        ctx = _Context(c, ev, TranspositionTable(), stats,
+            _Budget(SearchLimits(max_nodes=4096, max_time_seconds=5), None),
+            SearchTuning(use_ordered_qsearch=ordered), False, False, 1, 8, None,
+            runtime=runtime)
+        score = quiescence(state, -INF, 300, 0, 0, ctx)
+        observations.append((score, stats.qnodes, stats.material_change_qactions))
+        if runtime is not None:
+            runtime.assert_balanced()
+            assert runtime.position == state.position
+            assert 0 < stats.runtime_pushes < len(legal_successors(state, c))
+    # Both complete the same first transformation; the unused equivalent
+    # transformation is neither classified nor searched after the cutoff.
+    # At this narrow window the child returns the bound, not the full-window
+    # value1726. Neither implementation promises an exact cutoff score.
+    assert observations == [(300, 2, 1), (300, 2, 1)]
 
 
 def test_terminal_nochange_action_stays_noisy_in_capture_only_mode():

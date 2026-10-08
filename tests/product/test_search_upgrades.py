@@ -154,7 +154,7 @@ def test_root_scan_fallback_is_eval_best_not_canonical_first():
         use_ordering=True,
         tuning=SearchTuning(use_root_tactical=True),
     )
-    assert reason == "fallback"
+    assert reason == "node_limit"
     assert stats.root_scan_used_fallback
     expected = None
     best_score = -INF
@@ -184,7 +184,8 @@ def test_root_scan_off_falls_back_to_canonical_first():
         use_ordering=True,
         tuning=SearchTuning(use_root_tactical=False),
     )
-    assert reason == "fallback"
+    assert reason == "node_limit"
+    assert stats.root_scan_used_fallback and stats.completed_depth == 0
     assert action == sorted(legal_actions(state, compiled), key=str)[0]
 
 

@@ -871,3 +871,27 @@ locates useful missing endpoint-population information in these contexts, not
 a causal fix. Both oracles inspect the actual board and cannot become rule-only
 material tables. No fitted law, new sample, default or budget extension follows.
 The supplementary archive preserves the exact producer and every observation.
+
+Grouping those same observations into14 rule/type cells leaves mixed signed
+biases, not a defensible type-wide price correction. The largest finite capture
+error (fixed lexical tie break) is seed2000/ply5/source20/typeA: five actual enemy
+endpoints all have empty path constraints. Finite prediction is5*11/35=1.5714;
+the actual-target oracle is exactly5, while the path oracle stays1.5714. This
+specific miss is spatial endpoint population, not a ray/counting implementation
+defect. The descriptive witness is exposed and stateful, not new validation or
+permission to fit actor constants. data/finite_law_20261009.json routes its exact
+producer/output to the separate type-localization supplement.
+
+One explicit alternative retains only the RuleSet's initial board as a fixed
+spatial reference, with the observed source/type substituted hypothetically.
+It improves raw capture MAE on all four frozen routes, including successors.
+That aggregate is insufficient:619/1256 actor observations retain every relevant
+target/path truth and are exact by construction. On changed facts, MAE worsens
+two rules (.621/.756 versus uniform .579/.447); on changed nonzero captures it
+also worsens those two (.878/.871 versus .395/.147). The other two improve.
+Initial layout contains real spatial structure, but its apparent general gain
+partly reflects unchanged local geometry/zero counts. Keep this declared task
+reference and its negative cells, not a new material profile or fitted mixture.
+Source substitution is not a legal position or conserved-stock law. Exact
+initial/template/drift counts share the same1256 exposed observations; recovery
+is the initial-template supplement in data/finite_law_20261009.json.

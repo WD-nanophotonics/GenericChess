@@ -1198,6 +1198,37 @@ existing frontiers: seed2001, ply16. One Native-authority profiled q2 call keeps
 the5sec cap, completing D1 before time_limit,1667 qnodes/8268 balanced pushes.
 Runtime noisy-action classification costs3.475sec cumulative (.013own), attack
 predicate2.332cum (.583own). These overlap; do not sum independent percentages.
-This motivates a fair existing ordered-q shared-push comparison on the event,
-not a new cache/index or relaxed cancellation. Personal-path binary profiling
-stays local; derived function paths/results are in query_transfer_20261009.
+The subsequent frozen22-event comparison completes all44 calls at D2 with the
+same decisions/PVs. Ordered q reduces pushes133480 to50224, but increases qnodes
+in four mate cells; this is scoped execution evidence, not a default or strength
+recommendation. Personal-path binary profiling stays local.
+
+Isolating push sharing from ordering gives a simpler product improvement. Both
+sides retain lexical q order; all22 pairs agree on decisions, main nodes and
+qnodes, while pushes fall133480 to63829. Local median wall reduction44.19% is
+descriptive. Runtime q now classifies each child in its recursion push and stops
+classification after cutoff, matching immutable q's demand-driven structure.
+No heuristic, tactical definition, deadline or callback is relaxed. Existing
+eager classification remains a parity/historical reference, not a live caller.
+
+Four actual product cold callers retain frozen results/work. Cancellation at
+positive runtime depth unwinds state/history/witnesses and balances pushes/pops.
+The first warm-resume attempt wrongly demanded cold node equality; its incomplete
+six-record output remains intact. A separate three-call continuation confirms
+the same warm decision/PV/depth, with legitimately changed work from partial TT.
+Four existing8x8 rules give16 rotated cold original/product calls: all semantic
+and node/qnode signatures match, including one rule remaining D1/node_limit.
+No cap was extended to force completion.128/512-node and hard-q2 controls retain
+legal fallbacks or completed results; before-D1 stop reporting now preserves
+node_limit instead of calling the cause fallback. First-completion latency now
+stays at the first completed depth; historical overwritten metrics are qualified,
+not rewritten. Final active regression passes1673 cases.
+
+A further push-only prototype prefilled complete Native legal sets for terminal
+probing. It regressed the selected event from D2 in2.924/2.954sec to D1/time_limit
+in both5sec-capped calls: roughly547k provider actions instead of27k. Many quiet
+children never recurse, so eager full-set work is wasted. Reject this prototype;
+retain Core first-legal streaming and ordinary Native generation at actual nodes.
+These capped calls do not support an equal-work timing ratio or a new kernel.
+Exact sources, incomplete attempts, controls and recovery:
+data/event_qsearch_20261009.json and ../archive/event_qsearch_20261009/index.json.

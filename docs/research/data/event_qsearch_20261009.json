@@ -1,0 +1,992 @@
+{
+  "scope": "Exposed development execution comparison, not strength/material validation; one serial writer; frozen inputs/caps retained.",
+  "base_product_sha": "3ae7e5f5ed1bc6b16309e1c9ec6185c5d960241f",
+  "ordered_q": {
+    "cold_calls": 44,
+    "exact_decisions": 22,
+    "exact_work": 1,
+    "old_pushes": 133480,
+    "new_pushes": 50224,
+    "qnodes_increased": [
+      {
+        "seed": 202610082000,
+        "ply": 3
+      },
+      {
+        "seed": 202610082002,
+        "ply": 3
+      },
+      {
+        "seed": 202610082002,
+        "ply": 8
+      },
+      {
+        "seed": 202610082002,
+        "ply": 12
+      }
+    ],
+    "median_wall_reduction": 0.5464610458175511,
+    "rows": [
+      {
+        "seed": 202610082000,
+        "ply": 1,
+        "same_work": false,
+        "old_pushes": 4253,
+        "new_pushes": 2089,
+        "old_qnodes": 985,
+        "new_qnodes": 855,
+        "wall_reduction": 0.5399656620726256
+      },
+      {
+        "seed": 202610082000,
+        "ply": 2,
+        "same_work": false,
+        "old_pushes": 2707,
+        "new_pushes": 1344,
+        "old_qnodes": 637,
+        "new_qnodes": 561,
+        "wall_reduction": 0.48341297498077396
+      },
+      {
+        "seed": 202610082000,
+        "ply": 3,
+        "same_work": false,
+        "old_pushes": 1072,
+        "new_pushes": 895,
+        "old_qnodes": 390,
+        "new_qnodes": 400,
+        "wall_reduction": 0.1552714088644851
+      },
+      {
+        "seed": 202610082000,
+        "ply": 4,
+        "same_work": false,
+        "old_pushes": 8006,
+        "new_pushes": 2374,
+        "old_qnodes": 1582,
+        "new_qnodes": 1186,
+        "wall_reduction": 0.6457459029010286
+      },
+      {
+        "seed": 202610082000,
+        "ply": 5,
+        "same_work": false,
+        "old_pushes": 10712,
+        "new_pushes": 3415,
+        "old_qnodes": 2213,
+        "new_qnodes": 1749,
+        "wall_reduction": 0.6300772767943155
+      },
+      {
+        "seed": 202610082001,
+        "ply": 4,
+        "same_work": false,
+        "old_pushes": 11711,
+        "new_pushes": 3640,
+        "old_qnodes": 1712,
+        "new_qnodes": 1491,
+        "wall_reduction": 0.6360823524764259
+      },
+      {
+        "seed": 202610082001,
+        "ply": 5,
+        "same_work": false,
+        "old_pushes": 7668,
+        "new_pushes": 1911,
+        "old_qnodes": 1196,
+        "new_qnodes": 1056,
+        "wall_reduction": 0.6572294462867778
+      },
+      {
+        "seed": 202610082001,
+        "ply": 9,
+        "same_work": false,
+        "old_pushes": 6086,
+        "new_pushes": 2506,
+        "old_qnodes": 1119,
+        "new_qnodes": 929,
+        "wall_reduction": 0.5030676962808804
+      },
+      {
+        "seed": 202610082001,
+        "ply": 16,
+        "same_work": false,
+        "old_pushes": 22245,
+        "new_pushes": 9235,
+        "old_qnodes": 5085,
+        "new_qnodes": 3929,
+        "wall_reduction": 0.5107798261221004
+      },
+      {
+        "seed": 202610082002,
+        "ply": 3,
+        "same_work": false,
+        "old_pushes": 5626,
+        "new_pushes": 2975,
+        "old_qnodes": 1370,
+        "new_qnodes": 1385,
+        "wall_reduction": 0.44031013958667065
+      },
+      {
+        "seed": 202610082002,
+        "ply": 4,
+        "same_work": false,
+        "old_pushes": 6784,
+        "new_pushes": 2142,
+        "old_qnodes": 1457,
+        "new_qnodes": 1257,
+        "wall_reduction": 0.6321764732716532
+      },
+      {
+        "seed": 202610082002,
+        "ply": 7,
+        "same_work": false,
+        "old_pushes": 1477,
+        "new_pushes": 728,
+        "old_qnodes": 390,
+        "new_qnodes": 341,
+        "wall_reduction": 0.5141094474484149
+      },
+      {
+        "seed": 202610082002,
+        "ply": 8,
+        "same_work": false,
+        "old_pushes": 1729,
+        "new_pushes": 1053,
+        "old_qnodes": 574,
+        "new_qnodes": 586,
+        "wall_reduction": 0.3694867047386937
+      },
+      {
+        "seed": 202610082002,
+        "ply": 11,
+        "same_work": false,
+        "old_pushes": 6309,
+        "new_pushes": 2447,
+        "old_qnodes": 1466,
+        "new_qnodes": 1340,
+        "wall_reduction": 0.5698357028049956
+      },
+      {
+        "seed": 202610082002,
+        "ply": 12,
+        "same_work": false,
+        "old_pushes": 4339,
+        "new_pushes": 1971,
+        "old_qnodes": 1036,
+        "new_qnodes": 1113,
+        "wall_reduction": 0.4951136933787894
+      },
+      {
+        "seed": 202610082002,
+        "ply": 15,
+        "same_work": false,
+        "old_pushes": 3389,
+        "new_pushes": 1830,
+        "old_qnodes": 997,
+        "new_qnodes": 960,
+        "wall_reduction": 0.450074193947021
+      },
+      {
+        "seed": 202610082002,
+        "ply": 16,
+        "same_work": true,
+        "old_pushes": 2793,
+        "new_pushes": 1003,
+        "old_qnodes": 598,
+        "new_qnodes": 598,
+        "wall_reduction": 0.5922411861997274
+      },
+      {
+        "seed": 202610082003,
+        "ply": 1,
+        "same_work": false,
+        "old_pushes": 5519,
+        "new_pushes": 1339,
+        "old_qnodes": 969,
+        "new_qnodes": 759,
+        "wall_reduction": 0.6963832716229494
+      },
+      {
+        "seed": 202610082003,
+        "ply": 2,
+        "same_work": false,
+        "old_pushes": 3878,
+        "new_pushes": 1750,
+        "old_qnodes": 857,
+        "new_qnodes": 732,
+        "wall_reduction": 0.4887469500350189
+      },
+      {
+        "seed": 202610082003,
+        "ply": 3,
+        "same_work": false,
+        "old_pushes": 4619,
+        "new_pushes": 1848,
+        "old_qnodes": 1025,
+        "new_qnodes": 878,
+        "wall_reduction": 0.5529564295624765
+      },
+      {
+        "seed": 202610082003,
+        "ply": 4,
+        "same_work": false,
+        "old_pushes": 7560,
+        "new_pushes": 1755,
+        "old_qnodes": 1332,
+        "new_qnodes": 795,
+        "wall_reduction": 0.7255462201320214
+      },
+      {
+        "seed": 202610082003,
+        "ply": 5,
+        "same_work": false,
+        "old_pushes": 4998,
+        "new_pushes": 1974,
+        "old_qnodes": 866,
+        "new_qnodes": 715,
+        "wall_reduction": 0.5615869029192035
+      }
+    ]
+  },
+  "lexical_fusion": {
+    "cold_calls": 44,
+    "exact_decisions": 22,
+    "exact_work": 22,
+    "old_pushes": 133480,
+    "new_pushes": 63829,
+    "qnodes_increased": [],
+    "median_wall_reduction": 0.4418577234003586,
+    "rows": [
+      {
+        "seed": 202610082000,
+        "ply": 1,
+        "same_work": true,
+        "old_pushes": 4253,
+        "new_pushes": 2378,
+        "old_qnodes": 985,
+        "new_qnodes": 985,
+        "wall_reduction": 0.4363718309758783
+      },
+      {
+        "seed": 202610082000,
+        "ply": 2,
+        "same_work": true,
+        "old_pushes": 2707,
+        "new_pushes": 1569,
+        "old_qnodes": 637,
+        "new_qnodes": 637,
+        "wall_reduction": 0.3982839488681268
+      },
+      {
+        "seed": 202610082000,
+        "ply": 3,
+        "same_work": true,
+        "old_pushes": 1072,
+        "new_pushes": 855,
+        "old_qnodes": 390,
+        "new_qnodes": 390,
+        "wall_reduction": 0.2135657215369725
+      },
+      {
+        "seed": 202610082000,
+        "ply": 4,
+        "same_work": true,
+        "old_pushes": 8006,
+        "new_pushes": 3421,
+        "old_qnodes": 1582,
+        "new_qnodes": 1582,
+        "wall_reduction": 0.5064218397053564
+      },
+      {
+        "seed": 202610082000,
+        "ply": 5,
+        "same_work": true,
+        "old_pushes": 10712,
+        "new_pushes": 4731,
+        "old_qnodes": 2213,
+        "new_qnodes": 2213,
+        "wall_reduction": 0.5048810650919848
+      },
+      {
+        "seed": 202610082001,
+        "ply": 4,
+        "same_work": true,
+        "old_pushes": 11711,
+        "new_pushes": 4084,
+        "old_qnodes": 1712,
+        "new_qnodes": 1712,
+        "wall_reduction": 0.5944424707496565
+      },
+      {
+        "seed": 202610082001,
+        "ply": 5,
+        "same_work": true,
+        "old_pushes": 7668,
+        "new_pushes": 2644,
+        "old_qnodes": 1196,
+        "new_qnodes": 1196,
+        "wall_reduction": 0.5776173385201798
+      },
+      {
+        "seed": 202610082001,
+        "ply": 9,
+        "same_work": true,
+        "old_pushes": 6086,
+        "new_pushes": 3047,
+        "old_qnodes": 1119,
+        "new_qnodes": 1119,
+        "wall_reduction": 0.4290578258510991
+      },
+      {
+        "seed": 202610082001,
+        "ply": 16,
+        "same_work": true,
+        "old_pushes": 22245,
+        "new_pushes": 12912,
+        "old_qnodes": 5085,
+        "new_qnodes": 5085,
+        "wall_reduction": 0.35682620447280766
+      },
+      {
+        "seed": 202610082002,
+        "ply": 3,
+        "same_work": true,
+        "old_pushes": 5626,
+        "new_pushes": 3109,
+        "old_qnodes": 1370,
+        "new_qnodes": 1370,
+        "wall_reduction": 0.4387295323039565
+      },
+      {
+        "seed": 202610082002,
+        "ply": 4,
+        "same_work": true,
+        "old_pushes": 6784,
+        "new_pushes": 2688,
+        "old_qnodes": 1457,
+        "new_qnodes": 1457,
+        "wall_reduction": 0.5658671235055488
+      },
+      {
+        "seed": 202610082002,
+        "ply": 7,
+        "same_work": true,
+        "old_pushes": 1477,
+        "new_pushes": 800,
+        "old_qnodes": 390,
+        "new_qnodes": 390,
+        "wall_reduction": 0.42594578003803363
+      },
+      {
+        "seed": 202610082002,
+        "ply": 8,
+        "same_work": true,
+        "old_pushes": 1729,
+        "new_pushes": 1058,
+        "old_qnodes": 574,
+        "new_qnodes": 574,
+        "wall_reduction": 0.39356424158192416
+      },
+      {
+        "seed": 202610082002,
+        "ply": 11,
+        "same_work": true,
+        "old_pushes": 6309,
+        "new_pushes": 2722,
+        "old_qnodes": 1466,
+        "new_qnodes": 1466,
+        "wall_reduction": 0.5554354585731947
+      },
+      {
+        "seed": 202610082002,
+        "ply": 12,
+        "same_work": true,
+        "old_pushes": 4339,
+        "new_pushes": 1885,
+        "old_qnodes": 1036,
+        "new_qnodes": 1036,
+        "wall_reduction": 0.5242567661208408
+      },
+      {
+        "seed": 202610082002,
+        "ply": 15,
+        "same_work": true,
+        "old_pushes": 3389,
+        "new_pushes": 1982,
+        "old_qnodes": 997,
+        "new_qnodes": 997,
+        "wall_reduction": 0.4265213478756892
+      },
+      {
+        "seed": 202610082002,
+        "ply": 16,
+        "same_work": true,
+        "old_pushes": 2793,
+        "new_pushes": 1103,
+        "old_qnodes": 598,
+        "new_qnodes": 598,
+        "wall_reduction": 0.5681658570200365
+      },
+      {
+        "seed": 202610082003,
+        "ply": 1,
+        "same_work": true,
+        "old_pushes": 5519,
+        "new_pushes": 2099,
+        "old_qnodes": 969,
+        "new_qnodes": 969,
+        "wall_reduction": 0.5587639055517206
+      },
+      {
+        "seed": 202610082003,
+        "ply": 2,
+        "same_work": true,
+        "old_pushes": 3878,
+        "new_pushes": 2148,
+        "old_qnodes": 857,
+        "new_qnodes": 857,
+        "wall_reduction": 0.40200053377788525
+      },
+      {
+        "seed": 202610082003,
+        "ply": 3,
+        "same_work": true,
+        "old_pushes": 4619,
+        "new_pushes": 2621,
+        "old_qnodes": 1025,
+        "new_qnodes": 1025,
+        "wall_reduction": 0.39628417850891673
+      },
+      {
+        "seed": 202610082003,
+        "ply": 4,
+        "same_work": true,
+        "old_pushes": 7560,
+        "new_pushes": 3425,
+        "old_qnodes": 1332,
+        "new_qnodes": 1332,
+        "wall_reduction": 0.5090319749119853
+      },
+      {
+        "seed": 202610082003,
+        "ply": 5,
+        "same_work": true,
+        "old_pushes": 4998,
+        "new_pushes": 2548,
+        "old_qnodes": 866,
+        "new_qnodes": 866,
+        "wall_reduction": 0.4449859144967607
+      }
+    ]
+  },
+  "wide_transfer": {
+    "calls": 16,
+    "rows": [
+      {
+        "seed": 202610082300,
+        "decision": {
+          "action": {
+            "pattern_id": "legacy_033",
+            "geometry_id": "g23",
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 6,
+              "rank": 2
+            },
+            "to_square": {
+              "file": 4,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 3022,
+          "principal_variation": [
+            {
+              "pattern_id": "legacy_033",
+              "geometry_id": "g23",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 6,
+                "rank": 2
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 6
+              },
+              "promotion_target_id": null
+            }
+          ],
+          "completed_depth": 1,
+          "termination_reason": "node_limit",
+          "nodes": 635,
+          "qnodes": 7557
+        },
+        "calls": [
+          {
+            "product": false,
+            "repeat": 0,
+            "seconds": 20.460435800021514,
+            "pushes": 57385
+          },
+          {
+            "product": true,
+            "repeat": 0,
+            "seconds": 10.086673700017855,
+            "pushes": 28460
+          },
+          {
+            "product": true,
+            "repeat": 1,
+            "seconds": 10.214546999894083,
+            "pushes": 28460
+          },
+          {
+            "product": false,
+            "repeat": 1,
+            "seconds": 20.406811099965125,
+            "pushes": 57385
+          }
+        ]
+      },
+      {
+        "seed": 202610082301,
+        "decision": {
+          "action": {
+            "pattern_id": "legacy_062",
+            "geometry_id": "g30",
+            "base_type_id": "C",
+            "to_square": {
+              "file": 6,
+              "rank": 6
+            }
+          },
+          "score": 999999999,
+          "principal_variation": [
+            {
+              "pattern_id": "legacy_062",
+              "geometry_id": "g30",
+              "base_type_id": "C",
+              "to_square": {
+                "file": 6,
+                "rank": 6
+              }
+            }
+          ],
+          "completed_depth": 2,
+          "termination_reason": "completed_depth",
+          "nodes": 429,
+          "qnodes": 2616
+        },
+        "calls": [
+          {
+            "product": false,
+            "repeat": 0,
+            "seconds": 6.002070400165394,
+            "pushes": 14429
+          },
+          {
+            "product": true,
+            "repeat": 0,
+            "seconds": 4.837503399932757,
+            "pushes": 13256
+          },
+          {
+            "product": true,
+            "repeat": 1,
+            "seconds": 4.8740109000355005,
+            "pushes": 13256
+          },
+          {
+            "product": false,
+            "repeat": 1,
+            "seconds": 6.092010700143874,
+            "pushes": 14429
+          }
+        ]
+      },
+      {
+        "seed": 202610082302,
+        "decision": {
+          "action": {
+            "pattern_id": "legacy_033",
+            "geometry_id": "g23",
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 0,
+              "rank": 2
+            },
+            "to_square": {
+              "file": 0,
+              "rank": 5
+            },
+            "promotion_target_id": "C"
+          },
+          "score": 1065,
+          "principal_variation": [
+            {
+              "pattern_id": "legacy_033",
+              "geometry_id": "g23",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 0,
+                "rank": 2
+              },
+              "to_square": {
+                "file": 0,
+                "rank": 5
+              },
+              "promotion_target_id": "C"
+            },
+            {
+              "pattern_id": "legacy_058",
+              "geometry_id": "g29",
+              "base_type_id": "A",
+              "to_square": {
+                "file": 2,
+                "rank": 6
+              }
+            }
+          ],
+          "completed_depth": 2,
+          "termination_reason": "completed_depth",
+          "nodes": 535,
+          "qnodes": 5975
+        },
+        "calls": [
+          {
+            "product": false,
+            "repeat": 0,
+            "seconds": 9.290325599955395,
+            "pushes": 39457
+          },
+          {
+            "product": true,
+            "repeat": 0,
+            "seconds": 6.167100300081074,
+            "pushes": 24553
+          },
+          {
+            "product": true,
+            "repeat": 1,
+            "seconds": 6.183614199981093,
+            "pushes": 24553
+          },
+          {
+            "product": false,
+            "repeat": 1,
+            "seconds": 9.425051500089467,
+            "pushes": 39457
+          }
+        ]
+      },
+      {
+        "seed": 202610082303,
+        "decision": {
+          "action": {
+            "pattern_id": "legacy_030",
+            "geometry_id": "g22",
+            "actor_type_id": "X",
+            "from_square": {
+              "file": 7,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 7,
+              "rank": 3
+            },
+            "promotion_target_id": null
+          },
+          "score": -6105,
+          "principal_variation": [
+            {
+              "pattern_id": "legacy_030",
+              "geometry_id": "g22",
+              "actor_type_id": "X",
+              "from_square": {
+                "file": 7,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 7,
+                "rank": 3
+              },
+              "promotion_target_id": null
+            },
+            {
+              "pattern_id": "legacy_058",
+              "geometry_id": "g27",
+              "base_type_id": "X",
+              "to_square": {
+                "file": 1,
+                "rank": 3
+              }
+            }
+          ],
+          "completed_depth": 2,
+          "termination_reason": "completed_depth",
+          "nodes": 628,
+          "qnodes": 1722
+        },
+        "calls": [
+          {
+            "product": false,
+            "repeat": 0,
+            "seconds": 4.70221360004507,
+            "pushes": 20546
+          },
+          {
+            "product": true,
+            "repeat": 0,
+            "seconds": 3.5800111000426114,
+            "pushes": 15270
+          },
+          {
+            "product": true,
+            "repeat": 1,
+            "seconds": 3.6202774001285434,
+            "pushes": 15270
+          },
+          {
+            "product": false,
+            "repeat": 1,
+            "seconds": 4.784573100041598,
+            "pushes": 20546
+          }
+        ]
+      }
+    ]
+  },
+  "deployment": {
+    "cold_exact_matches": 4,
+    "original_attempt_complete": false,
+    "original_persisted_calls": 6,
+    "qualified_continuation_calls": 3,
+    "warm_resume": "Same decision/PV/depth/reason; partial TT legitimately changes main259/q5010/push12837 versus cold320/5085/12912. Original seventh attempted warm assertion expected cold work and failed; its full metrics were not persisted. Do not impute.",
+    "cancellation": "q20/q200 at positive depths2/4, token and original checkpoint; preserved session/history/witness, balanced pushes. Original/prototype four earlier cancellations also balanced."
+  },
+  "cost_reporting": {
+    "first_latency": "Historically overwritten at every completed depth. Product now preserves first; historical raw files unchanged; outer wall times unaffected.",
+    "termination": "Before-D1 node abort was mislabeled fallback. Legal fallback unchanged; product preserves abort cause. Original6 cap calls retained; two same128node calls now node_limit, main59/q69/push70."
+  },
+  "terminal_share": {
+    "decision": "Reject prototype. Full Native generation per child regresses selected event to D1/time_limit; current stream completesD2 in2.924/2.954sec. Do not claim equal-work speed ratio.",
+    "rows": [
+      {
+        "prototype": false,
+        "seconds": 2.924376300070435,
+        "decision": {
+          "action": {
+            "pattern_id": "legacy_021",
+            "geometry_id": "g18",
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 0,
+              "rank": 3
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 5
+            },
+            "promotion_target_id": "A"
+          },
+          "score": 3130,
+          "principal_variation": [
+            {
+              "pattern_id": "legacy_021",
+              "geometry_id": "g18",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 0,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 5
+              },
+              "promotion_target_id": "A"
+            },
+            {
+              "pattern_id": "legacy_018",
+              "geometry_id": "g17",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 0,
+                "rank": 4
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            }
+          ],
+          "completed_depth": 2,
+          "termination_reason": "completed_depth",
+          "nodes": 320,
+          "qnodes": 5085
+        },
+        "provider_calls": 2003,
+        "provider_actions": 27362
+      },
+      {
+        "prototype": true,
+        "seconds": 4.991561600007117,
+        "decision": {
+          "action": {
+            "pattern_id": "legacy_021",
+            "geometry_id": "g18",
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 0,
+              "rank": 3
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 5
+            },
+            "promotion_target_id": "A"
+          },
+          "score": 3658,
+          "principal_variation": [
+            {
+              "pattern_id": "legacy_021",
+              "geometry_id": "g18",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 0,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 5
+              },
+              "promotion_target_id": "A"
+            }
+          ],
+          "completed_depth": 1,
+          "termination_reason": "time_limit",
+          "nodes": 248,
+          "qnodes": 4107
+        },
+        "provider_calls": 10477,
+        "provider_actions": 547110
+      },
+      {
+        "prototype": true,
+        "seconds": 4.988958699861541,
+        "decision": {
+          "action": {
+            "pattern_id": "legacy_021",
+            "geometry_id": "g18",
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 0,
+              "rank": 3
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 5
+            },
+            "promotion_target_id": "A"
+          },
+          "score": 3658,
+          "principal_variation": [
+            {
+              "pattern_id": "legacy_021",
+              "geometry_id": "g18",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 0,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 5
+              },
+              "promotion_target_id": "A"
+            }
+          ],
+          "completed_depth": 1,
+          "termination_reason": "time_limit",
+          "nodes": 248,
+          "qnodes": 4101
+        },
+        "provider_calls": 10463,
+        "provider_actions": 546559
+      },
+      {
+        "prototype": false,
+        "seconds": 2.954147200100124,
+        "decision": {
+          "action": {
+            "pattern_id": "legacy_021",
+            "geometry_id": "g18",
+            "actor_type_id": "P",
+            "from_square": {
+              "file": 0,
+              "rank": 3
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 5
+            },
+            "promotion_target_id": "A"
+          },
+          "score": 3130,
+          "principal_variation": [
+            {
+              "pattern_id": "legacy_021",
+              "geometry_id": "g18",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 0,
+                "rank": 3
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 5
+              },
+              "promotion_target_id": "A"
+            },
+            {
+              "pattern_id": "legacy_018",
+              "geometry_id": "g17",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 0,
+                "rank": 4
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            }
+          ],
+          "completed_depth": 2,
+          "termination_reason": "completed_depth",
+          "nodes": 320,
+          "qnodes": 5085
+        },
+        "provider_calls": 2003,
+        "provider_actions": 27362
+      }
+    ],
+    "cause": "Current2003calls/27362actions versus prototype10463-10477calls/546559-547110actions before cap. Avoid full child action generation for many quiet unrecursed pushes. No Core/kernel/default change."
+  },
+  "validation": {
+    "full_active": 1673,
+    "focused": "65q/runtime;66including latency;48final abortcause targets",
+    "qualifications": [
+      "Initial full-suite attempt stopped at external temp ACL, no product failure; unique workspace basetemp with cache disabled passed. External temp unchanged.",
+      "New narrow-window test initially expected full-window1726; immutable/runtime both correctly returned bound300. Expectation corrected, no fixture/window changed.",
+      "Checkpoint aggregate typo61859 corrected to actual63829 in later checkpoint; raw pilot unchanged."
+    ]
+  },
+  "recovery": "docs/archive/event_qsearch_20261009/index.json",
+  "inputs": [
+    "docs/archive/query_transfer_20261009/index.json",
+    "docs/archive/qfactorial_20261009/index.json"
+  ]
+}
