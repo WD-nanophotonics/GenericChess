@@ -88,6 +88,14 @@ not another undirected law sweep or human-price fit. Capture query/turn safety
 must use semantic authority, never the legacy pawn/geometry shortcut.
 Exact current findings: data/target_context_20261008.json. Do not fit a correlation
 parameter or require a universal quotient proof.
+The separate, predeclared one-preparation task now has10 full-Core Chess roots
+and two replayed Q orthogonal/diagonal paths. It exposes capability omitted by
+direct opportunity, without fitting a quiet blend or preferred Q ratio. Q=R+B
+in additive geometric counting is not itself a defect; task-specific Q exceeds
+R+B in one layout and falls below it in the other. The next useful question is
+whether the task survives a finite owner/orientation transfer with unchanged
+response semantics, before adding another horizon or applying it as prices.
+Exact declaration and replay: data/preparation_task_20261008.json.
 Position/source-target identity alone is insufficient for arbitrary history/effects.
 Exact findings and corrections: data/joint_context_search_20261008.json.
 

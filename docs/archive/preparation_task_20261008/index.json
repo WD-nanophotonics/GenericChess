@@ -1,0 +1,43 @@
+{
+  "base_commit": "f67719f9061ad04fd48135ed4224369eb9634f38",
+  "archive_sha256": "98b3c422920550d6096ce4630c9684291317150f22c12965e7421844e2a048e0",
+  "extracted_rehashed": true,
+  "members": [
+    {
+      "path": ".local_agent/preparation-20261008/declaration.json",
+      "bytes": 2047,
+      "sha256": "850cde1dc350e96c3bfbcc0befcd614f8dd42b375c1ed48d0ecca9d844a84c26"
+    },
+    {
+      "path": ".local_agent/preparation-20261008/pilot.py",
+      "bytes": 5794,
+      "sha256": "6af6bf2c72f30491a80241bd4cb39b86a3e3aae41225026e86540e739b5e9c87"
+    },
+    {
+      "path": ".local_agent/preparation-20261008/pilot.json",
+      "bytes": 74736,
+      "sha256": "ca7189a8bc8b6304f371de1ca5281dbf4b0d9c0f2ffb591e235cd600ec2a98c1"
+    },
+    {
+      "path": ".local_agent/preparation-20261008/replay.py",
+      "bytes": 4063,
+      "sha256": "9a2350f6e63c80e893a749923c8df8bf08af0c805ebe824bf87263089974a129"
+    },
+    {
+      "path": ".local_agent/preparation-20261008/replay.json",
+      "bytes": 8440,
+      "sha256": "fe268f8c3062418e5964c779c50d9930ae3a98b3991d27eb8e0a7554dc533c31"
+    },
+    {
+      "path": ".local_agent/preparation-20261008/package.py",
+      "bytes": 3892,
+      "sha256": "32136fccba9b2e2c07d63470418ae4b4de62a0ae4be46f6c3d8cae2b8f791981"
+    },
+    {
+      "path": ".local_agent/target-context-20261008/displacement-role-pilot-v2.json",
+      "bytes": 4751961,
+      "sha256": "ae31f2145e16d4ac539fb1293a47d385cc918085aca72c145864fcd0c05ec9d9"
+    }
+  ],
+  "excluded": "Private input, Slack/accounts, workflow/memo, credentials; all members Agent synthetic research."
+}

@@ -597,3 +597,39 @@ retroactive replacement of the frozen initial-safe population. Exact producers,
 errors and recovery: data/target_context_20261008.json and
 ../archive/target_context_20261008/index.json. Advisor's fixed-role-mass objection
 was adopted; no new universal-equivalence/WDL prerequisite was added.
+
+## A separate preparation task, not a material blend (2026-10-08)
+
+Advisor's utility objection is adopted as one finite next action. Q=R+B under
+an additive endpoint count is a geometric identity, not intrinsically a defect.
+Changing a metric merely to force a preferred Q ratio would be fitting. Instead
+declare a different task before outcomes: one actual legal quiet, nontransforming
+source preparation, one uniform distinct physical legal opponent successor,
+then a legal capture of the tracked original target. Maximize over preparations.
+This conditional task probability is separate from direct capture opportunity;
+no quiet weight, material table, default or search change follows.
+
+The first two initial-safe common Chess displacement seeds in ascending order,
+202610092008/202610092009, use all P/N/B/R/Q sources, owner0 only (10 exposed
+roots). Full Core histories and terminal status survive every transition.
+Original target movement/promotion is tracked; duplicate physical replies must
+have identical task/terminal/source-survival observables before quotienting.
+Preparations preserve source identity and all other board actors. Standard
+Chess scope excludes auxiliary target relocation; unsupported cases assert.
+
+Preparation probabilities P/N/B/R/Q are .05/.2/.3/.2/(2/3) on the first layout,
+and 0/0/(1/11)/(10/11)/.9 on the second. Original opponent-first direct values
+are 0/0/.2/.05/.25 and all0, independently reproduced with complete Core state.
+Both Q roots have replayed orthogonal-preparation/diagonal-capture paths with
+history lengths1/2/3/4; these example paths need not be maximizers. First-root
+Q exceeds R+B; second-root Q does not. Neither universal superadditivity nor
+material improvement is established. No early terminal branches occurred;
+zero roots and actual terminal checks are retained, not silently discarded.
+
+The pilot used1369 full Core successor transitions in.618seconds. Independent
+replay verifies10 retained paths (including two mixed Q paths), all10 direct
+baselines and unchanged target ownership until capture. Two layouts/one owner
+and the explicit uniform response policy limit deployment claims. Next change
+one meaningful task/population premise, not sweep horizons to chase a ratio.
+Data: data/preparation_task_20261008.json; exact declaration/inputs/producers and
+full outputs: ../archive/preparation_task_20261008/index.json (7 rehashed members).
