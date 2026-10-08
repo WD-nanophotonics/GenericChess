@@ -61,6 +61,18 @@ Preserve legality/semantic checks and fair conditions. Broader proofs address
 observed failures or concrete uses. Advisor suggestions are not a branch backlog:
 choose the decision-changing objection and one next action, not every risk.
 
+Static generation must preserve supported semantic equivalence. Check stability
+under behaviorally small capability changes and consistency as rules approach
+the same finite-board behavior; textual edit size is not behavioral size.
+Report raw opportunity, normalization, rounding/clipping and unsupported scope
+separately. Missing NNUE/position modeling cannot explain representation defects.
+Quantity changes and genuinely splitting one actor into two are empirical
+relations, not assumed linearity/conservation. Limited coalition modeling does
+not cancel equivalent-rule consistency. Keep these checks finite and motivated.
+Separate semantic correctness, price sensitivity and search execution cost.
+Price comparisons fix attack authority/search conditions and distinguish leaf
+prices from ordering prices. Changed choices or broken ties alone are not gains.
+
 Before60 minutes, a normal/no-next-action finish is forbidden. Early finish
 requires explicit user stop, actual tool/quota/runtime limit, a genuinely
 necessary user decision, or evidence-supported scientific completion. A missing

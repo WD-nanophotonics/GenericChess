@@ -49,6 +49,30 @@ def pack_position(native_rules, payload):
     return _module().semantic_pack_position(native_rules.capsule, normalized)
 
 
+def pack_current_position(native_rules, position, *, ply_count: int):
+    """Pack current board/hand/aux state, without importing historical claims.
+
+    Suitable for attacks and transient legality, not repetition adjudication.
+    """
+    if position.ruleset_fingerprint != native_rules.fingerprint:
+        raise ValueError("Native/Python position ruleset fingerprint mismatch")
+    type_map = {tid: i for i, tid in enumerate(native_rules.type_ids)}
+    board = [None if piece is None else [
+        type_map[piece.base_type_id], type_map[piece.current_type_id],
+        int(piece.owner), int(bool(piece.promoted)),
+    ] for piece in position.board]
+    hands = []
+    for hand in position.hands:
+        counts = [0] * len(type_map)
+        for tid, count in hand.counts:
+            counts[type_map[tid]] = count
+        hands.append(counts)
+    return pack_position(native_rules, {
+        "board": board, "hands": hands, "side": position.side_to_move,
+        "ply": ply_count, "aux_state": position.aux_state,
+    })
+
+
 def is_square_attacked(native_rules, position, square: int, by_owner: int) -> bool:
     """Query semantic pseudo-attack on an already-packed Native position."""
     if not native_available():
@@ -60,6 +84,18 @@ def is_square_attacked(native_rules, position, square: int, by_owner: int) -> bo
         raise ValueError("by_owner must be 0 or 1")
     return bool(_module().semantic_is_square_attacked(
         native_rules.capsule, position, int(square), int(by_owner)
+    ))
+
+
+def attacked_squares(native_rules, position, by_owner: int) -> frozenset[int]:
+    """Collect scalar-authority pseudo-attacks, not legal-action counts."""
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    _require_executable(native_rules)
+    if not isinstance(by_owner, int) or isinstance(by_owner, bool) or by_owner not in (0, 1):
+        raise ValueError("by_owner must be 0 or 1")
+    return frozenset(_module().semantic_attacked_squares(
+        native_rules.capsule, position, by_owner
     ))
 
 

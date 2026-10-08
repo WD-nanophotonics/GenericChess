@@ -42,6 +42,12 @@ int gc_semantic_runtime_is_square_attacked(const GCSemanticRules *rules,
                                            uint16_t square,
                                            uint8_t by_owner);
 
+/* Scalar-equivalent S0/S1 attack map, not legal mobility. */
+void gc_semantic_runtime_attacked_squares(const GCSemanticRules *rules,
+                                         const GCSemanticPosition *position,
+                                         uint8_t by_owner,
+                                         uint8_t out[GC_MAX_SQUARES]);
+
 typedef struct {
     uint8_t outcome;
     uint8_t has_weighted_score;

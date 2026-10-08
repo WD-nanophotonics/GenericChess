@@ -3,6 +3,49 @@
 2026-10-08. This is an exposed development check of rule-only valuation inputs,
 not a selected price formula or player-strength result.
 
+## Finite generator consistency,2026-10-08
+
+The direction review prioritizes supported semantic equivalence, behavioral
+stability and finite-board saturation before more search or dynamic features.
+tests/product/test_semantic_ray_equivalence.py checks one5x5 orthogonal-ray
+family at L1..5: capped rays versus one exact-distance ray per endpoint, retaining
+all intermediate path_clear cells. These are not leaps. Every owner/source
+endpoint/path set agrees;1250 actual Core single-blocker positions additionally
+match an independent straight-line/first-blocker census for attacks and actions.
+Compiled all-false drop masks still emit excluded drop patterns; the result is
+explicitly about the supported board projection, not full legal/material value.
+
+At density0/.125/.5/.875/1 with equal weights, raw rises
+2.4,3.4875,4.1,4.3756640625,4.3756640625. Same-L encodings agree; quiet/capture
+curves never decrease and L4/L5 agree exactly. Predeclared floating tolerance is
+1e-12 absolute. Fixed N raw=.72 gives a separate fixed-reference scale; the
+production median normalization/rounding is also retained. Unchanged N's
+integer value falls as C grows because the median scale changes, not because
+N's capability changes. No generator correction was indicated by this family.
+
+For these nested endpoints, extending L leaves old path events unchanged.
+An added endpoint contributes P(clear)*(1-d+d/2), between0 and1. Thus raw
+increment lies between0 and the mean number of added endpoints under this
+unit-sum nonnegative density law. Observed increments1.0875/.6125/.275664/0
+respect bounds2.4/1.6/.8/0. This is a scoped proxy stability bound, not universal
+material/win-rate monotonicity, actor-splitting conservation or arbitrary-rule
+continuity. Passing this family does not start a universal proof campaign.
+
+For the existing cannon/rook mixture under unchanged default density law,
+weighted quiet opportunity is identical8.0643227148; capture is0.4377235079
+versus0.8555921483. Raw8.5020462227 versus8.9199148631 becomes976 versus1024.
+The common quiet baseline dilutes the differing capture mechanism. This
+explains weak proxy separation, not material-price validity. For an endpoint
+with k intermediate squares, cannon/rook capture-event probability ratio is
+k*d/(1-d) for0<d<1; whether the screen mechanism helps depends on context.
+Do not select a new density law or weight against human references or exposed
+search choices. Next construction needs one explicit decision-changing context
+or response assumption, with a counterexample and retained finite scope.
+
+Exact rows and source recovery:
+data/semantic_attack_authority_20261008.json;
+../archive/semantic_attack_authority_20261008/README.md.
+
 ## Observed interface gap
 
 `build_ruleset_profile` derives generic-v1 static capability from movement atoms.

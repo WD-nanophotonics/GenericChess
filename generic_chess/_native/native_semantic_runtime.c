@@ -587,6 +587,42 @@ int gc_semantic_runtime_is_square_attacked(const GCSemanticRules *r,
     return semantic_attacked_by(r, position, square, by_owner);
 }
 
+void gc_semantic_runtime_attacked_squares(const GCSemanticRules *r,
+                                         const GCSemanticPosition *pos,
+                                         uint8_t attacker,
+                                         uint8_t out[GC_MAX_SQUARES]) {
+    memset(out, 0, GC_MAX_SQUARES);
+    if (!r || !pos || attacker > 1) return;
+    for (uint16_t pi = 0; pi < r->pattern_count; ++pi) {
+        const GCSemPattern *pattern = &r->patterns[pi];
+        if (pattern->target != 1) continue;
+        for (uint8_t gi = 0; gi < pattern->geometry_count; ++gi) {
+            uint16_t gid = pattern->geometry_indices[gi];
+            if (gid >= r->geometry_count) continue;
+            const GCSemGeometry *geo = &r->geometries[gid];
+            if (geo->kind == 2) continue;
+            for (uint16_t source = 0; source < r->board_size * r->board_size; ++source) {
+                const GCPiece *actor = &pos->board[source];
+                if (!actor->occupied || actor->owner != attacker ||
+                    !pattern_has_type(pattern, actor->current_type)) continue;
+                if (geo->has_atom_source && geo->atom_source_type != actor->current_type) continue;
+                const GCSemPathEntry *entry = NULL;
+                if (!path_entry(geo, attacker, source, &entry)) continue;
+                uint16_t start = geo->min_steps > 0 ? (uint16_t)(geo->min_steps - 1) : 0;
+                for (uint16_t ti = start; ti < entry->count; ++ti) {
+                    uint16_t target = entry->squares[ti];
+                    if (out[target]) continue;
+                    if (!path_ok(pattern, entry, ti, pos, attacker)) continue;
+                    if (!state_guards_hold(r, pos, pattern, attacker, source, target,
+                                           actor->base_type, actor->current_type)) continue;
+                    if (!slot_guards_hold(r, pos, pattern, attacker, source, target)) continue;
+                    out[target] = 1;
+                }
+            }
+        }
+    }
+}
+
 int gc_semantic_runtime_make_trusted(GCSemanticPosition *position, const GCSemanticRules *rules, uint64_t action, GCSemanticUndo *undo) {
     if (!position || !rules || !undo) return 0;
     GCSemanticPosition child;

@@ -437,3 +437,79 @@ still reject the screened attacked layout. Four public depth2 Core/Native calls
 on admitted starts agree in action/score/depth/nodes/qnodes/PV; each Native call
 returns17 successful legality results without fallback. This is entry/routing
 evidence, not validation of the unchanged legacy dynamic evaluation terms.
+
+## Explicit semantic attack authority
+
+Core `SemanticEngine.attacked_squares` and Native `attacked_squares` collect the
+same S0/S1 capture-eligible targets as their existing scalar queries. They do
+not apply S3 anchor safety or S4 postconditions and are not legal-action counts.
+Every square matches through four actual plies of twelve supported fixtures,
+including cannon screens, Western/Shogi, temporary rights and postconditions.
+Native collects paths once, rather than repeating a whole traversal per target.
+
+`SemanticAttackEvaluator(compiled, profile, config, backend='core'|'native')`
+is explicitly passed through the existing `evaluator_override`. It changes only
+the attack-map source of existing dynamic terms. Static tables/weights,
+promotion potential and approximate anchor-escape geometry remain separate.
+There is no hidden backend fallback or persistent position cache. Native packs
+current board/hand/aux state at each evaluation, not historical adjudication
+claims. The first full-history implementation failed on actual runtime search
+views; the failed producer/partial is retained. A real-search regression covers
+that boundary. Default Evaluator and player configuration are unchanged.
+
+The existing `scripts.unfamiliar_search.run_rule` accepts `attack_authority`
+independently of `semantic_candidate` and records the choice. Its Core minimax
+and both public controls share the selected leaf evaluator: they test search
+consistency, not independent leaf authority. `python_plain` describes search
+legality/TT/ordering, not the evaluator backend. No new command entry is needed.
+
+A fixed three-root/two-table/four-feature/depth2,3 factorial completes96 calls;
+all48 depth2 Core references agree and12 static map pairs are identical.
+Among36 dynamic pairs,21 scores and6 actions change when only attack authority
+changes. Twenty-four calls with the product opt-in evaluators reproduce those
+frozen semantic actions/scores/nodes/depths/PVs. Local Native/Core full-search
+ratios are about0.75–0.83; no universal acceleration follows.
+
+Production leaf measurements on27 actual-history states use five rotated-order
+paired batches. Native/Core evaluation ratios are approximately0.35,0.42,0.42
+for Western, Shogi and the cannon mixture; Native/legacy ratios are1.40,1.26,1.48.
+Semantic correctness has a measurable cost relative to the simpler legacy map.
+The first Native target-scan batch was slower than Core on Shogi and is retained.
+The production-cost record contains all three completed measurement cohorts,
+but final replacement failed with Windows error5: its completion flag stays
+false. The shared atomic writer now retries only Windows5/32/33, at most three
+attempts on the same closed record with30ms total delay. Permanent failure
+preserves the prior frontier; this does not rerun experiments or hide failure.
+
+A prospectively fixed12-seed inner-board placement cohort keeps six original
+C/R identities and two fixed anchors. All12 compile and have no immediate win.
+The192 equal-budget calls complete114 target depths, with zero Native fallback;
+78 depth3 cells remain unknown. All24 depth2 static map pairs match exactly.
+Dynamic maps change9/24 chosen actions and24/24 scores; changing the two frozen
+tables changes only1/24 dynamic actions. Both static table changes are the same
+layout under two maps. Cross-scoring every changed table-choice pair shows an
+old static tie versus48-point candidate preference; legacy dynamics produce a
+7/41-point reciprocal tradeoff. That dynamic change disappears with semantic
+attacks. These are heuristic sensitivity/localization results, not better prices,
+independent deployment validation or strength. No weights or defaults were fitted.
+
+With evaluation fixed, an existing TT/ordering2x2 ablation on all12 roots uses
+depth3/4, cold players,4096nodes/2sec and no quiescence/root tactical scan.
+Atdepth3, neither nor TT-only completes a root; both ordered configurations
+complete12/12. TT plus ordering has median paired node ratio0.83147 against
+ordering alone, but seed202610081004 regresses2016 to2433 nodes. Atdepth4 both
+ordered configurations complete2/12, with different roots: seed1008 completes
+with ordering alone but caps with TT; seed1007 does the reverse. This local
+completion benefit is attributed to ordering, not a universal TT/Native gain.
+
+The subsequent depth3 table comparison fixes semantic attacks and TT/ordering,
+and separately supplies old static ordering prices with candidate leaf prices.
+All36 calls complete. Old-table outputs reproduce the prior ablation; candidate
+ordering controls agree on score. Neither table nor ordering changes any of
+the12 chosen actions, although eight root scores change. Wall clocks overlap
+full regression testing, so they are excluded from fair timing claims. Low
+choice sensitivity does not identify bad/good prices or justify dynamic patches.
+
+Compact results, source pins, exact failures and recovery:
+data/semantic_attack_authority_20261008.json and
+../archive/semantic_attack_authority_20261008/README.md.

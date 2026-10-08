@@ -80,3 +80,18 @@ def test_generated_candidate_uses_legacy_execution_and_core_reference(tmp_path):
     assert report['candidate_scope']['ir_source'] == 'existing_legacy_lowering'
     assert report['reference']['complete'] and all(report['repeat_equal'].values())
     assert all(s['complete'] and s['reference_score_equal'] for s in report['searches'])
+
+
+@pytest.mark.parametrize('authority', ['core', 'native'])
+def test_supplied_semantic_rule_can_fix_attack_authority_separately(tmp_path, authority):
+    if authority == 'native':
+        from generic_chess.native import native_available
+        if not native_available():
+            pytest.skip('Native extension unavailable')
+    report = run_rule(tmp_path / 'semantic-attacks.json', ruleset_to_dict(cannon_ruleset()),
+                      semantic_candidate=True, attack_authority=authority)
+    assert report['declaration']['attack_authority'] == authority
+    assert report['candidate_scope']['candidate'] == 'semantic-opportunity-v1'
+    assert report['reference']['complete']
+    assert all(report['repeat_equal'].values())
+    assert all(s['complete'] and s['reference_score_equal'] for s in report['searches'])

@@ -654,6 +654,50 @@ class SemanticEngine:
                                 return True
         return False
 
+    def attacked_squares(
+        self,
+        position: Position,
+        by_owner: int,
+        checkpoint: Checkpoint | None = None,
+    ) -> frozenset[int]:
+        """All S0/S1 capture-eligible targets in one geometry traversal.
+
+        Matches ``is_square_attacked`` on every square, including its deliberate
+        omission of S3 own-anchor safety and S4 postconditions. This is neither
+        a legal-mobility map nor a set of executable captures.
+        """
+        self._ensure_match(position)
+        sources_by_owner_type = _sources_by_owner_type(position)
+        attacked: set[int] = set()
+        for pattern in self._patterns:
+            _checkpoint(checkpoint)
+            if pattern.target.kind != "target_enemy":
+                continue
+            for tid in pattern.type_ids:
+                _checkpoint(checkpoint)
+                for source, piece in sources_by_owner_type.get((by_owner, tid), ()):
+                    _checkpoint(checkpoint)
+                    for gid in pattern.geometry_ids:
+                        _checkpoint(checkpoint)
+                        geometry = self.ir.geometry.get(gid)
+                        if geometry is None or geometry.kind == "drop":
+                            continue
+                        if geometry.atom_source is not None and geometry.atom_source[0] != tid:
+                            continue
+                        for target, path in geometry_candidates(geometry, str(by_owner), source):
+                            _checkpoint(checkpoint)
+                            if target in attacked:
+                                continue
+                            binding = self._make_binding(
+                                pattern, gid, tid, piece, source, target, None, path, position)
+                            if self._path_holds(
+                                pattern.path, position, binding, by_owner, checkpoint=checkpoint,
+                            ) and self._guards_hold(
+                                pattern, position, binding, by_owner, checkpoint=checkpoint,
+                            ):
+                                attacked.add(target)
+        return frozenset(attacked)
+
     def in_check(
         self, position: Position, side: int, checkpoint: Checkpoint | None = None
     ) -> bool:

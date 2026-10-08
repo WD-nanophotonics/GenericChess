@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import tempfile
+import time
 
 def record_value(value):
     if is_dataclass(value) and not isinstance(value,type):return record_value(asdict(value))
@@ -35,7 +36,17 @@ def write_record(path,value,*,indent=2):
             f.write(body)
             f.flush()
             os.fsync(f.fileno())
-        os.replace(temporary,path)
+        for attempt in range(3):
+            try:
+                os.replace(temporary,path)
+                break
+            except PermissionError as exc:
+                # Observed Windows scanner/sharing races can briefly block
+                # replacement after fsync. Retry only that same closed file;
+                # permanent/other errors still preserve the prior frontier.
+                if getattr(exc, 'winerror', None) not in (5, 32, 33) or attempt == 2:
+                    raise
+                time.sleep(0.01 * (attempt + 1))
     finally:
         if temporary is not None:
             temporary.unlink(missing_ok=True)

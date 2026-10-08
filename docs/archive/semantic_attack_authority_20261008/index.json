@@ -1,0 +1,659 @@
+{
+  "base_sha": "fcdacafe9d1fbacdfbad12b292e6d948d182a39a",
+  "scope": "Only Agent-generated synthetic experiments and required source snapshots. No binaries/private input/raw Slack/account/workflow state.",
+  "members": [
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/analyze-ablation.py",
+      "package": "sources.zip",
+      "bytes": 2087,
+      "sha256": "3f9e649a627c6ea0964b5e75b1cb2937903405ea82cb8c0079180eaa30701c4d"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/analyze-factorial.py",
+      "package": "sources.zip",
+      "bytes": 2025,
+      "sha256": "43848c7aa5b8e16413fd592a2713fd49e7475ffff2bf21b8eb408a11d0d7ce7b"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/analyze-layouts.py",
+      "package": "sources.zip",
+      "bytes": 3487,
+      "sha256": "d7d296cda0bc23b26dd636b6e9f587ddfc1f0db8b0b652f81ce05bae85de4fb5"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/archive-evidence.py",
+      "package": "sources.zip",
+      "bytes": 6113,
+      "sha256": "dbfc0f3e13435b0c25283dd9316f1ad3304e7c7985370fae4b97c5ecad076b6c"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/choice-cross-score.py",
+      "package": "sources.zip",
+      "bytes": 3519,
+      "sha256": "ecb27ccac7d2a0303ee98a95a5431e8d1c145db6733de0acdd6d41d570300e1a"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/consistency-and-decomposition.py",
+      "package": "sources.zip",
+      "bytes": 3200,
+      "sha256": "28e730d56521639eacf80430aa5f1d01949076cf85dd676526f548602e478111"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/evaluator-cost.py",
+      "package": "sources.zip",
+      "bytes": 3322,
+      "sha256": "8547f5e30941527a4adab470033d8d03649373ec82ea7baae15206249dc04855"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/evaluator-full-history-failed.py",
+      "package": "sources.zip",
+      "bytes": 2247,
+      "sha256": "394ba2e9a12cd76cec959faee23e500e4ca5fe2cbb1597c15624e83cbd26c351"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/evaluator-integration-current.py",
+      "package": "sources.zip",
+      "bytes": 3948,
+      "sha256": "f886c72c7cdf01d2a5d2aaf5c19678c4e90b97002af754350b6d60c43b0e5411"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/evaluator-integration-first.py",
+      "package": "sources.zip",
+      "bytes": 3912,
+      "sha256": "a5bf5a42938a0168651b93ce6a2669f363513cb9032f2d1a904f642207951997"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/evaluator-integration.py",
+      "package": "sources.zip",
+      "bytes": 3912,
+      "sha256": "a5bf5a42938a0168651b93ce6a2669f363513cb9032f2d1a904f642207951997"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/factorial.py",
+      "package": "sources.zip",
+      "bytes": 5249,
+      "sha256": "9ac2b976ea439e3bfacd1d4106d553d526bef0ac2a9feb94438787a2bcc6cac9"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/layout-cohort.py",
+      "package": "sources.zip",
+      "bytes": 4923,
+      "sha256": "80cca4e7743851b78880891c7c1fadef9c8ba741ad3e651b224d425fee594d95"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/leaf-cost.py",
+      "package": "sources.zip",
+      "bytes": 3330,
+      "sha256": "09b32158aea4969e1237be91df95e0d8eacc51aab50161574bac9d7f07b2558b"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/native-cost-traversal.py",
+      "package": "sources.zip",
+      "bytes": 3741,
+      "sha256": "a9d6f635df53e9f56dd5c32b57907867e1979da45e261efeb5426c116728df93"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/native-cost.py",
+      "package": "sources.zip",
+      "bytes": 3731,
+      "sha256": "25af8829e3ff04c7b9670125e98376783399e731db492fbcee9203aae8806174"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/native-module-target-scan.c",
+      "package": "sources.zip",
+      "bytes": 320740,
+      "sha256": "baa29061ba88aff76dac7a05efac428ad26f3b6cf3a3ce539ddbf784fc5de33f"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/native-runtime-before-bulk.c",
+      "package": "sources.zip",
+      "bytes": 42183,
+      "sha256": "a62bd17b64421a6139aee0bd06437b28be6d12549c0772900c3c99cf99a4cca3"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/ordered-price-comparison.py",
+      "package": "sources.zip",
+      "bytes": 4560,
+      "sha256": "7d46049231e48f2e926ef7060fc8516ac2086e4a7431065ff23cf9d8eb858014"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/search-ablation.py",
+      "package": "sources.zip",
+      "bytes": 3921,
+      "sha256": "0e372bf17e34ea6bc1aa3144caa44f65362cd021523c4e49ea3c73de19f27609"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/stability-analysis.py",
+      "package": "sources.zip",
+      "bytes": 1732,
+      "sha256": "146062fdba7082cae023e9bf88d6219a414fb514665c69087739f8357be1a523"
+    },
+    {
+      "original_path": ".local_agent/semantic-candidate-20261008/cannon-mixture.py",
+      "package": "sources.zip",
+      "bytes": 4818,
+      "sha256": "a35a573d8641478179cd63138f4185526233934db3e89089da353fb455d0e379"
+    },
+    {
+      "original_path": "tests/rule_semantics_ir_fixtures.py",
+      "package": "sources.zip",
+      "bytes": 17212,
+      "sha256": "209b3bd9388d5ac228329d64eeda7d70a9209f0409ac74217be2879b4d6038c7"
+    },
+    {
+      "original_path": "tests/product/test_semantic_ray_equivalence.py",
+      "package": "sources.zip",
+      "bytes": 6202,
+      "sha256": "9276e5954cade9fda94d59e0fc8d2dd22d9cae32bff8758b904f58fdf16651fc"
+    },
+    {
+      "original_path": "tests/product/test_semantic_attack_map.py",
+      "package": "sources.zip",
+      "bytes": 7101,
+      "sha256": "1b751be82d9f5855282389784ddd07a6612d737dac9060301156e1ac7b367cb0"
+    },
+    {
+      "original_path": "generic_chess/core/semantic_executor.py",
+      "package": "sources.zip",
+      "bytes": 70345,
+      "sha256": "5ae0f6158be4b56ac34e1030a92f0141878b2d64909328ee0fbd64c4b4524cb6"
+    },
+    {
+      "original_path": "generic_chess/native/semantic.py",
+      "package": "sources.zip",
+      "bytes": 27439,
+      "sha256": "f4c467f871b4a042549bbfc73bd1730f07f0d87867c859fd7486dc89d8ff2f91"
+    },
+    {
+      "original_path": "generic_chess/native/compiler.py",
+      "package": "sources.zip",
+      "bytes": 43355,
+      "sha256": "ac048aad30568d08cc653fed1ae0c8a2c9c1b5f59323233f67f113660d8d754d"
+    },
+    {
+      "original_path": "generic_chess/native/mirror.py",
+      "package": "sources.zip",
+      "bytes": 12972,
+      "sha256": "0d292395e7bf7d83e8044eaa3632db87b16a94317b9e56b656bd71c9be27e0a4"
+    },
+    {
+      "original_path": "generic_chess/ai/evaluation/evaluator.py",
+      "package": "sources.zip",
+      "bytes": 6291,
+      "sha256": "07c7c1a2b0ac2b659250391fd23397ff171fda92fe9cbc197747af68b45f7571"
+    },
+    {
+      "original_path": "generic_chess/ai/evaluation/semantic_attacks.py",
+      "package": "sources.zip",
+      "bytes": 2254,
+      "sha256": "d87f851037af3cf46d8a9daaf9356037ae5a22955050120bdbe8a8edbd545258"
+    },
+    {
+      "original_path": "generic_chess/ai/evaluation/semantic.py",
+      "package": "sources.zip",
+      "bytes": 11501,
+      "sha256": "885c855317409bd81919d47e4aa3112ff343f612446a1d93d13cb2d1fb90ca6b"
+    },
+    {
+      "original_path": "scripts/research_record.py",
+      "package": "sources.zip",
+      "bytes": 2393,
+      "sha256": "c88164fc0ba05753569ca0d65d6ef86a278e0e72bf6429fb36304cd207ee54cf"
+    },
+    {
+      "original_path": "scripts/unfamiliar_search.py",
+      "package": "sources.zip",
+      "bytes": 14112,
+      "sha256": "347584019a9a5895c7455a0e8ecf6c7d7a1e6d5e804051411330476f6ee6f52f"
+    },
+    {
+      "original_path": "scripts/build_native_zig.py",
+      "package": "sources.zip",
+      "bytes": 1935,
+      "sha256": "49971852587404019031c545a30647172b6dda9205253b7222220b697b629f02"
+    },
+    {
+      "original_path": "generic_chess/_native/native_attack.c",
+      "package": "sources.zip",
+      "bytes": 2859,
+      "sha256": "4c821d0e73ced9def6840d9c5a3c64f18bf2b861ee7fe983a7e7d6f3b4c48bf8"
+    },
+    {
+      "original_path": "generic_chess/_native/native_cancel.c",
+      "package": "sources.zip",
+      "bytes": 673,
+      "sha256": "e3c46eb8fa1b694f004bf40c2e39a83b4113eaaf0e6edffdad34e46d0cee1c04"
+    },
+    {
+      "original_path": "generic_chess/_native/native_clock.c",
+      "package": "sources.zip",
+      "bytes": 1187,
+      "sha256": "ca7636e24ce4fcc81a476f80c4447207f7ad6cc48ab33c29c37c3ba12906bd93"
+    },
+    {
+      "original_path": "generic_chess/_native/native_eval.c",
+      "package": "sources.zip",
+      "bytes": 2148,
+      "sha256": "dd2bccac44da3ec647b91666e2cc00e85b3c3284fd32ceb385f49bd398b91c30"
+    },
+    {
+      "original_path": "generic_chess/_native/native_hash.c",
+      "package": "sources.zip",
+      "bytes": 6494,
+      "sha256": "bd5c4e31b1502c2ddffac3b4adc528efd164d80f2a9830e613955b597827411c"
+    },
+    {
+      "original_path": "generic_chess/_native/native_module.c",
+      "package": "sources.zip",
+      "bytes": 320800,
+      "sha256": "41062ee5e5c19f8add786b31d2944361ae06058b75f558f62c0898ec4879c0f2"
+    },
+    {
+      "original_path": "generic_chess/_native/native_movegen.c",
+      "package": "sources.zip",
+      "bytes": 9346,
+      "sha256": "23f6ed09523e6882e7b672e52947db4d701662cac19ef312cbafaadd8f7513df"
+    },
+    {
+      "original_path": "generic_chess/_native/native_perft.c",
+      "package": "sources.zip",
+      "bytes": 5510,
+      "sha256": "7e4323a29a762ba60218e28ef7f8bb0ab5a20f88648b346a6c57728fe67d1482"
+    },
+    {
+      "original_path": "generic_chess/_native/native_rules.c",
+      "package": "sources.zip",
+      "bytes": 4646,
+      "sha256": "c191bdca1ad0a03e061933c18208b3190eca3a79b8b90f670d277b4106ed5ad6"
+    },
+    {
+      "original_path": "generic_chess/_native/native_search.c",
+      "package": "sources.zip",
+      "bytes": 20734,
+      "sha256": "588298552762c0bab66556ad488cea2861524e4c17c9e254247860dde9a9addb"
+    },
+    {
+      "original_path": "generic_chess/_native/native_semantic_key.c",
+      "package": "sources.zip",
+      "bytes": 6153,
+      "sha256": "fcc9d1a26db21ccb9b72bd879cc37fb19a949cb6a9bd98678320bf7e15b68da1"
+    },
+    {
+      "original_path": "generic_chess/_native/native_semantic_rules.c",
+      "package": "sources.zip",
+      "bytes": 116519,
+      "sha256": "18463306c5ab29c20cd1e69d3c52e9eafdc7888a59029755de51a9e31c5e6ef4"
+    },
+    {
+      "original_path": "generic_chess/_native/native_semantic_runtime.c",
+      "package": "sources.zip",
+      "bytes": 44199,
+      "sha256": "26c56b208cb720c92eb95a0102d20342ff0f24024cb83b0b60949947f117dc1d"
+    },
+    {
+      "original_path": "generic_chess/_native/native_semantic_state.c",
+      "package": "sources.zip",
+      "bytes": 3824,
+      "sha256": "6d8828d3413d19a788c037e7ecb12604b797e038c65bee1eb64bcb5118cc3dbd"
+    },
+    {
+      "original_path": "generic_chess/_native/native_sha256.c",
+      "package": "sources.zip",
+      "bytes": 3514,
+      "sha256": "d12cec8d44785c26a619115e7e627d329daf26fcc8fbc3dbda3c2c2ff85bdb23"
+    },
+    {
+      "original_path": "generic_chess/_native/native_state.c",
+      "package": "sources.zip",
+      "bytes": 9648,
+      "sha256": "a6bce524c1d67340eac7a26c3a9dbfd22e9db0670dca0559fbc8f94de8e2a7f4"
+    },
+    {
+      "original_path": "generic_chess/_native/native_tt.c",
+      "package": "sources.zip",
+      "bytes": 13109,
+      "sha256": "57c97b019620cfedfa6de6e2b6cc3422d8292f26bd5fedb34a7f065f3629ceb0"
+    },
+    {
+      "original_path": "generic_chess/_native/native_attack.h",
+      "package": "sources.zip",
+      "bytes": 611,
+      "sha256": "dd364d759990a936f1ca66a32aead8b271d49b5e91a17114294b3f6fa69af33f"
+    },
+    {
+      "original_path": "generic_chess/_native/native_cancel.h",
+      "package": "sources.zip",
+      "bytes": 442,
+      "sha256": "91a86c481454e9e134cc93dc5613032defc6cfd7cc63db1a036bf97432037202"
+    },
+    {
+      "original_path": "generic_chess/_native/native_clock.h",
+      "package": "sources.zip",
+      "bytes": 402,
+      "sha256": "0a61e36e2ce869caae357bb11b21106ab12a25fd3828702ec402d056498dbf8a"
+    },
+    {
+      "original_path": "generic_chess/_native/native_eval.h",
+      "package": "sources.zip",
+      "bytes": 1637,
+      "sha256": "5a7becb7c71c365a0b4f480c117606143bd4da750d7b4747167b0bc336a07097"
+    },
+    {
+      "original_path": "generic_chess/_native/native_hash.h",
+      "package": "sources.zip",
+      "bytes": 1963,
+      "sha256": "162854bc2c6b996098eb971881a43d21549996199a4bba1f7e5e717411332078"
+    },
+    {
+      "original_path": "generic_chess/_native/native_movegen.h",
+      "package": "sources.zip",
+      "bytes": 1392,
+      "sha256": "c94015ccffec5beba214ab6e789664825b2cfd757dc83aca8551c1bd47617ecd"
+    },
+    {
+      "original_path": "generic_chess/_native/native_perft.h",
+      "package": "sources.zip",
+      "bytes": 2019,
+      "sha256": "fb3779960c0d701196e60b7e560b6bf3a61276994d389a6e7e484aefd4b27bb0"
+    },
+    {
+      "original_path": "generic_chess/_native/native_rules.h",
+      "package": "sources.zip",
+      "bytes": 1375,
+      "sha256": "1ba70ff3d9b56b01e74e9ea8246b98a2ae0a8868c7c8f8033f5b456ef613bd64"
+    },
+    {
+      "original_path": "generic_chess/_native/native_search.h",
+      "package": "sources.zip",
+      "bytes": 3903,
+      "sha256": "694d5d1b541e3650a6d838b2c787689d6837a0fa9166c69ec1ea5a89ad9335f4"
+    },
+    {
+      "original_path": "generic_chess/_native/native_semantic_key.h",
+      "package": "sources.zip",
+      "bytes": 512,
+      "sha256": "8cea82d16d1c6b9e8add1887c1b0a9f21fed8430204e1f3850b2f7d5d261528c"
+    },
+    {
+      "original_path": "generic_chess/_native/native_semantic_rules.h",
+      "package": "sources.zip",
+      "bytes": 7681,
+      "sha256": "c1b6256fb0b1b92b2634c8571fece4bf9e2d02b1688dc9df3c0122482fe722f1"
+    },
+    {
+      "original_path": "generic_chess/_native/native_semantic_runtime.h",
+      "package": "sources.zip",
+      "bytes": 3222,
+      "sha256": "d212e2a23e63d52597d8ac473f574c628ccf06ea8e32daa88c3ce704d6b18e2e"
+    },
+    {
+      "original_path": "generic_chess/_native/native_semantic_state.h",
+      "package": "sources.zip",
+      "bytes": 2157,
+      "sha256": "86cea58e408ba05c3cc783cc79537c93540271fcd518944921c075ef9ff1fabc"
+    },
+    {
+      "original_path": "generic_chess/_native/native_sha256.h",
+      "package": "sources.zip",
+      "bytes": 491,
+      "sha256": "581f1f234132d4a14275149e08fb5bfba4cdedbf1168f07397248484ab3c3d1b"
+    },
+    {
+      "original_path": "generic_chess/_native/native_state.h",
+      "package": "sources.zip",
+      "bytes": 1745,
+      "sha256": "b7b3c3342c4cb81ccc3057d834803a6cd27b693d04506ee5391983c1446243b8"
+    },
+    {
+      "original_path": "generic_chess/_native/native_tt.h",
+      "package": "sources.zip",
+      "bytes": 4329,
+      "sha256": "d2a002573add4f811f6ed379819da9004e0ddb80136d82ed8bcb4737bc101680"
+    },
+    {
+      "original_path": "generic_chess/_native/native_types.h",
+      "package": "sources.zip",
+      "bytes": 9335,
+      "sha256": "2c256bf170349f0c1d2f866c2f40b285711eb312927ae959b4ef85f9867866aa"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/choice-cross-score.json",
+      "package": "raw.zip",
+      "bytes": 4214,
+      "sha256": "3ba651f49109048d2b601686f9d95d8a1a632861681c02df4b5d920cc6dbb02b"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/consistency-and-decomposition.json",
+      "package": "raw.zip",
+      "bytes": 12142,
+      "sha256": "8d13e9e5dcd27e1d3270914b41f320a548001fa37184aaf6f0b028afef814442"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/evaluator-cost.json",
+      "package": "raw.zip",
+      "bytes": 8971,
+      "sha256": "62364edfdf3df576905ba6c1fbe8ed8724a5c3dda7f079f7f7c4252cee9b33fb"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/evaluator-integration-current.json",
+      "package": "raw.zip",
+      "bytes": 91507,
+      "sha256": "03f372afe1cfabe5683372b13d691af960b70889c8a2faa8da54d114fce6d66b"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/evaluator-integration.json",
+      "package": "raw.zip",
+      "bytes": 8313,
+      "sha256": "65d0e4176c02398dac066fe9f7fb9a86b6dba1e1fe9d6c8b1e69d8b2535f29d7"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/factorial-analysis.json",
+      "package": "raw.zip",
+      "bytes": 17244,
+      "sha256": "bdd3e85d9e02a0f125e354f91215c0dcf27ff3f5fb32010ca8780d16128fec60"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/factorial.json",
+      "package": "raw.zip",
+      "bytes": 374623,
+      "sha256": "c179c342937259244be653c03ce2bbea8a94b54ceb91e601591f002906fee8b3"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/layout-analysis.json",
+      "package": "raw.zip",
+      "bytes": 43822,
+      "sha256": "e25a7ce840118ad33d2e3c1340963c29a3901b35093a3f2f4a0ce2bef2565f32"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/layout-cohort.json",
+      "package": "raw.zip",
+      "bytes": 959603,
+      "sha256": "c2947c7078251d45e829077d8b6daae9f688681b78fde10be87b954be2e3a3ff"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/leaf-cost.json",
+      "package": "raw.zip",
+      "bytes": 4622,
+      "sha256": "a588c5dedc89c2f8b675c958e57166647cfd8f5fe9782f277fa36c2912a5a65c"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/native-cost-traversal.json",
+      "package": "raw.zip",
+      "bytes": 6589,
+      "sha256": "766f78afa528cdca050de5af0f8cea04497a715f8daf63ae4f9369d3728bdb25"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/native-cost.json",
+      "package": "raw.zip",
+      "bytes": 6579,
+      "sha256": "c445effe384c580374fc3365249b3d9e1ef5a1457ce123f7cae889032ee08dfc"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/ordered-price-comparison.json",
+      "package": "raw.zip",
+      "bytes": 154517,
+      "sha256": "ccde3462d554348dad5c71026e89a0cf328c9a93be0e823352f2a7407068249c"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/regression.txt",
+      "package": "raw.zip",
+      "bytes": 1816,
+      "sha256": "a72314de9a9dc37f541353db785d0abc0014ec25c4f298719aafc7949ebb5285"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/search-ablation-analysis.json",
+      "package": "raw.zip",
+      "bytes": 4018,
+      "sha256": "5c3c2294b0e7ce30cdcb02ab2c240a697bb1350b9f93071c09bb38255ae14f0f"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/search-ablation.json",
+      "package": "raw.zip",
+      "bytes": 393333,
+      "sha256": "154ca9b7c7e3a7069287719e702051fca662f040c109ec8152334a140c1377fd"
+    },
+    {
+      "original_path": ".local_agent/semantic-attacks-20261008/stability-analysis.json",
+      "package": "raw.zip",
+      "bytes": 1589,
+      "sha256": "930654ab8f5410650099af717b4c9adb96bc1de7dc76b1a82b51184f2de89ecd"
+    },
+    {
+      "original_path": ".local_agent/semantic-candidate-20261008/cannon-mixture.json",
+      "package": "raw.zip",
+      "bytes": 47958,
+      "sha256": "33e691319dbe36a6d05cd5467bbfb1e2c7e856c0a67c37e06a68600d4703ac50"
+    }
+  ],
+  "extracted_verified_members": 87,
+  "producer_pins": [
+    {
+      "record": ".local_agent/semantic-attacks-20261008/choice-cross-score.json",
+      "producer_sha256": "ecb27ccac7d2a0303ee98a95a5431e8d1c145db6733de0acdd6d41d570300e1a",
+      "matching_sources": [
+        ".local_agent/semantic-attacks-20261008/choice-cross-score.py"
+      ]
+    },
+    {
+      "record": ".local_agent/semantic-attacks-20261008/consistency-and-decomposition.json",
+      "producer_sha256": "28e730d56521639eacf80430aa5f1d01949076cf85dd676526f548602e478111",
+      "matching_sources": [
+        ".local_agent/semantic-attacks-20261008/consistency-and-decomposition.py"
+      ]
+    },
+    {
+      "record": ".local_agent/semantic-attacks-20261008/evaluator-cost.json",
+      "producer_sha256": "8547f5e30941527a4adab470033d8d03649373ec82ea7baae15206249dc04855",
+      "matching_sources": [
+        ".local_agent/semantic-attacks-20261008/evaluator-cost.py"
+      ]
+    },
+    {
+      "record": ".local_agent/semantic-attacks-20261008/evaluator-integration-current.json",
+      "producer_sha256": "f886c72c7cdf01d2a5d2aaf5c19678c4e90b97002af754350b6d60c43b0e5411",
+      "matching_sources": [
+        ".local_agent/semantic-attacks-20261008/evaluator-integration-current.py"
+      ]
+    },
+    {
+      "record": ".local_agent/semantic-attacks-20261008/evaluator-integration.json",
+      "producer_sha256": "a5bf5a42938a0168651b93ce6a2669f363513cb9032f2d1a904f642207951997",
+      "matching_sources": [
+        ".local_agent/semantic-attacks-20261008/evaluator-integration-first.py",
+        ".local_agent/semantic-attacks-20261008/evaluator-integration.py"
+      ]
+    },
+    {
+      "record": ".local_agent/semantic-attacks-20261008/factorial-analysis.json",
+      "producer_sha256": "43848c7aa5b8e16413fd592a2713fd49e7475ffff2bf21b8eb408a11d0d7ce7b",
+      "matching_sources": [
+        ".local_agent/semantic-attacks-20261008/analyze-factorial.py"
+      ]
+    },
+    {
+      "record": ".local_agent/semantic-attacks-20261008/factorial.json",
+      "producer_sha256": "9ac2b976ea439e3bfacd1d4106d553d526bef0ac2a9feb94438787a2bcc6cac9",
+      "matching_sources": [
+        ".local_agent/semantic-attacks-20261008/factorial.py"
+      ]
+    },
+    {
+      "record": ".local_agent/semantic-attacks-20261008/layout-analysis.json",
+      "producer_sha256": "d7d296cda0bc23b26dd636b6e9f587ddfc1f0db8b0b652f81ce05bae85de4fb5",
+      "matching_sources": [
+        ".local_agent/semantic-attacks-20261008/analyze-layouts.py"
+      ]
+    },
+    {
+      "record": ".local_agent/semantic-attacks-20261008/layout-cohort.json",
+      "producer_sha256": "80cca4e7743851b78880891c7c1fadef9c8ba741ad3e651b224d425fee594d95",
+      "matching_sources": [
+        ".local_agent/semantic-attacks-20261008/layout-cohort.py"
+      ]
+    },
+    {
+      "record": ".local_agent/semantic-attacks-20261008/leaf-cost.json",
+      "producer_sha256": "09b32158aea4969e1237be91df95e0d8eacc51aab50161574bac9d7f07b2558b",
+      "matching_sources": [
+        ".local_agent/semantic-attacks-20261008/leaf-cost.py"
+      ]
+    },
+    {
+      "record": ".local_agent/semantic-attacks-20261008/native-cost-traversal.json",
+      "producer_sha256": "a9d6f635df53e9f56dd5c32b57907867e1979da45e261efeb5426c116728df93",
+      "matching_sources": [
+        ".local_agent/semantic-attacks-20261008/native-cost-traversal.py"
+      ]
+    },
+    {
+      "record": ".local_agent/semantic-attacks-20261008/native-cost.json",
+      "producer_sha256": "25af8829e3ff04c7b9670125e98376783399e731db492fbcee9203aae8806174",
+      "matching_sources": [
+        ".local_agent/semantic-attacks-20261008/native-cost.py"
+      ]
+    },
+    {
+      "record": ".local_agent/semantic-attacks-20261008/ordered-price-comparison.json",
+      "producer_sha256": "7d46049231e48f2e926ef7060fc8516ac2086e4a7431065ff23cf9d8eb858014",
+      "matching_sources": [
+        ".local_agent/semantic-attacks-20261008/ordered-price-comparison.py"
+      ]
+    },
+    {
+      "record": ".local_agent/semantic-attacks-20261008/search-ablation-analysis.json",
+      "producer_sha256": "3f9e649a627c6ea0964b5e75b1cb2937903405ea82cb8c0079180eaa30701c4d",
+      "matching_sources": [
+        ".local_agent/semantic-attacks-20261008/analyze-ablation.py"
+      ]
+    },
+    {
+      "record": ".local_agent/semantic-attacks-20261008/search-ablation.json",
+      "producer_sha256": "0e372bf17e34ea6bc1aa3144caa44f65362cd021523c4e49ea3c73de19f27609",
+      "matching_sources": [
+        ".local_agent/semantic-attacks-20261008/search-ablation.py"
+      ]
+    },
+    {
+      "record": ".local_agent/semantic-attacks-20261008/stability-analysis.json",
+      "producer_sha256": "146062fdba7082cae023e9bf88d6219a414fb514665c69087739f8357be1a523",
+      "matching_sources": [
+        ".local_agent/semantic-attacks-20261008/stability-analysis.py"
+      ]
+    }
+  ],
+  "native_build": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "extension_suffix": ".cp312-win_amd64.pyd",
+    "binary_sha256": "c934f687fe1c0ac3c7f46b228fe422ef86dc7053218a7a13af9696be68faea81",
+    "binary_bytes": 430080,
+    "binary_included": false,
+    "zig_version": "0.16.0",
+    "build": "scripts/build_native_zig.py; Zig cc x86_64-windows-gnu -shared -O2; CPython312",
+    "pin_scope": "Current delivery snapshot/build; historical target-scan and failed evaluator sources separately preserved. Not a retroactive claim that every earlier experiment ran final sources."
+  },
+  "packages": {
+    "sources.zip": "9da287508feadc4d298203931e9278886e90d3e7c61c1e3b0bf503459a32b7c8",
+    "raw.zip": "8359bf7bb660f4d378e8ad9e595c437f7973605ae0af7d0d0bc486460e61090b"
+  }
+}

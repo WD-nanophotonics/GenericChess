@@ -1,0 +1,793 @@
+{
+  "archive": "../../archive/semantic_attack_authority_20261008/index.json",
+  "semantics": "Explicit S0/S1 Core/Native bulk attack authority, not legal mobility; defaults unchanged. Current-position Native packing does not import repetition history.",
+  "factorial": {
+    "calls": 96,
+    "core_references": 48,
+    "static_controls": 12,
+    "dynamic_score_changes": 21,
+    "dynamic_action_changes": 6
+  },
+  "prospective_layouts": {
+    "seeds": [
+      202610081000,
+      202610081001,
+      202610081002,
+      202610081003,
+      202610081004,
+      202610081005,
+      202610081006,
+      202610081007,
+      202610081008,
+      202610081009,
+      202610081010,
+      202610081011
+    ],
+    "calls": 192,
+    "complete": 114,
+    "capped_unknown": 78,
+    "depth2_dynamic_map_action_changes": "9/24",
+    "depth2_dynamic_table_action_changes": "1/24; only legacy maps",
+    "static_table_change": "One existing tie, duplicated under two map authorities; no strength evidence"
+  },
+  "ordering_ablation": {
+    "producer_sha256": "3f9e649a627c6ea0964b5e75b1cb2937903405ea82cb8c0079180eaa30701c4d",
+    "source_sha256": "154ca9b7c7e3a7069287719e702051fca662f040c109ec8152334a140c1377fd",
+    "calls": 96,
+    "settings": [
+      {
+        "tt": false,
+        "order": false,
+        "depth": 3,
+        "calls": 12,
+        "complete": 0,
+        "total_seconds": 13.753470400115475,
+        "nodes_completed_median": null,
+        "native_fallbacks": 0
+      },
+      {
+        "tt": false,
+        "order": false,
+        "depth": 4,
+        "calls": 12,
+        "complete": 0,
+        "total_seconds": 13.678915800293908,
+        "nodes_completed_median": null,
+        "native_fallbacks": 0
+      },
+      {
+        "tt": true,
+        "order": false,
+        "depth": 3,
+        "calls": 12,
+        "complete": 0,
+        "total_seconds": 13.595585600240156,
+        "nodes_completed_median": null,
+        "native_fallbacks": 0
+      },
+      {
+        "tt": true,
+        "order": false,
+        "depth": 4,
+        "calls": 12,
+        "complete": 0,
+        "total_seconds": 13.573014000197873,
+        "nodes_completed_median": null,
+        "native_fallbacks": 0
+      },
+      {
+        "tt": false,
+        "order": true,
+        "depth": 3,
+        "calls": 12,
+        "complete": 12,
+        "total_seconds": 6.551921499893069,
+        "nodes_completed_median": 1956.5,
+        "native_fallbacks": 0
+      },
+      {
+        "tt": false,
+        "order": true,
+        "depth": 4,
+        "calls": 12,
+        "complete": 2,
+        "total_seconds": 15.21895799972117,
+        "nodes_completed_median": 3615.0,
+        "native_fallbacks": 0
+      },
+      {
+        "tt": true,
+        "order": true,
+        "depth": 3,
+        "calls": 12,
+        "complete": 12,
+        "total_seconds": 5.452507900074124,
+        "nodes_completed_median": 1545.0,
+        "native_fallbacks": 0
+      },
+      {
+        "tt": true,
+        "order": true,
+        "depth": 4,
+        "calls": 12,
+        "complete": 2,
+        "total_seconds": 15.778550800401717,
+        "nodes_completed_median": 3193.0,
+        "native_fallbacks": 0
+      }
+    ],
+    "paired_ordering_nodes": [
+      {
+        "seed": 202610081000,
+        "ordering_only": 1256,
+        "tt_and_ordering": 1060,
+        "ratio": 0.8439490445859873
+      },
+      {
+        "seed": 202610081001,
+        "ordering_only": 1897,
+        "tt_and_ordering": 1667,
+        "ratio": 0.8787559304164471
+      },
+      {
+        "seed": 202610081002,
+        "ordering_only": 2110,
+        "tt_and_ordering": 1474,
+        "ratio": 0.6985781990521327
+      },
+      {
+        "seed": 202610081003,
+        "ordering_only": 2105,
+        "tt_and_ordering": 1786,
+        "ratio": 0.8484560570071259
+      },
+      {
+        "seed": 202610081004,
+        "ordering_only": 2016,
+        "tt_and_ordering": 2433,
+        "ratio": 1.2068452380952381
+      },
+      {
+        "seed": 202610081005,
+        "ordering_only": 2484,
+        "tt_and_ordering": 2343,
+        "ratio": 0.9432367149758454
+      },
+      {
+        "seed": 202610081006,
+        "ordering_only": 2137,
+        "tt_and_ordering": 1741,
+        "ratio": 0.8146934955545156
+      },
+      {
+        "seed": 202610081007,
+        "ordering_only": 1811,
+        "tt_and_ordering": 1070,
+        "ratio": 0.5908337934842628
+      },
+      {
+        "seed": 202610081008,
+        "ordering_only": 1723,
+        "tt_and_ordering": 1450,
+        "ratio": 0.8415554265815438
+      },
+      {
+        "seed": 202610081009,
+        "ordering_only": 1506,
+        "tt_and_ordering": 1237,
+        "ratio": 0.8213811420982736
+      },
+      {
+        "seed": 202610081010,
+        "ordering_only": 1753,
+        "tt_and_ordering": 1414,
+        "ratio": 0.8066172276098118
+      },
+      {
+        "seed": 202610081011,
+        "ordering_only": 2028,
+        "tt_and_ordering": 1616,
+        "ratio": 0.796844181459566
+      }
+    ],
+    "qualification": "One postdeclared cohort at same4096nodes/2sec; cold players, fixed old static table and Native semantic dynamic maps. Completed-depth scores agree wherever comparable; selected tie actions may differ. The capped records stay unknown, not WDL/strength evidence or a universal speed/TT-dominance claim.",
+    "tt_ordering_depth3_node_ratio_median": 0.8314682843399087
+  },
+  "ordered_price_comparison": [
+    {
+      "seed": 202610081000,
+      "old_score": 1005,
+      "candidate_score": 981,
+      "price_action_changed": false,
+      "order_action_changed": false,
+      "old_nodes": 1060,
+      "candidate_fixed_order_nodes": 1060,
+      "candidate_own_order_nodes": 1083
+    },
+    {
+      "seed": 202610081001,
+      "old_score": 1029,
+      "candidate_score": 1053,
+      "price_action_changed": false,
+      "order_action_changed": false,
+      "old_nodes": 1667,
+      "candidate_fixed_order_nodes": 1719,
+      "candidate_own_order_nodes": 1496
+    },
+    {
+      "seed": 202610081002,
+      "old_score": 1078,
+      "candidate_score": 1102,
+      "price_action_changed": false,
+      "order_action_changed": false,
+      "old_nodes": 1474,
+      "candidate_fixed_order_nodes": 1474,
+      "candidate_own_order_nodes": 1484
+    },
+    {
+      "seed": 202610081003,
+      "old_score": 64,
+      "candidate_score": 64,
+      "price_action_changed": false,
+      "order_action_changed": false,
+      "old_nodes": 1786,
+      "candidate_fixed_order_nodes": 1786,
+      "candidate_own_order_nodes": 1693
+    },
+    {
+      "seed": 202610081004,
+      "old_score": 77,
+      "candidate_score": 77,
+      "price_action_changed": false,
+      "order_action_changed": false,
+      "old_nodes": 2433,
+      "candidate_fixed_order_nodes": 2479,
+      "candidate_own_order_nodes": 2479
+    },
+    {
+      "seed": 202610081005,
+      "old_score": 991,
+      "candidate_score": 967,
+      "price_action_changed": false,
+      "order_action_changed": false,
+      "old_nodes": 2343,
+      "candidate_fixed_order_nodes": 2343,
+      "candidate_own_order_nodes": 2281
+    },
+    {
+      "seed": 202610081006,
+      "old_score": 999999997,
+      "candidate_score": 999999997,
+      "price_action_changed": false,
+      "order_action_changed": false,
+      "old_nodes": 1741,
+      "candidate_fixed_order_nodes": 1741,
+      "candidate_own_order_nodes": 1727
+    },
+    {
+      "seed": 202610081007,
+      "old_score": 1065,
+      "candidate_score": 1041,
+      "price_action_changed": false,
+      "order_action_changed": false,
+      "old_nodes": 1070,
+      "candidate_fixed_order_nodes": 1120,
+      "candidate_own_order_nodes": 1120
+    },
+    {
+      "seed": 202610081008,
+      "old_score": 1085,
+      "candidate_score": 1109,
+      "price_action_changed": false,
+      "order_action_changed": false,
+      "old_nodes": 1450,
+      "candidate_fixed_order_nodes": 1450,
+      "candidate_own_order_nodes": 1450
+    },
+    {
+      "seed": 202610081009,
+      "old_score": 5,
+      "candidate_score": 5,
+      "price_action_changed": false,
+      "order_action_changed": false,
+      "old_nodes": 1237,
+      "candidate_fixed_order_nodes": 1217,
+      "candidate_own_order_nodes": 1237
+    },
+    {
+      "seed": 202610081010,
+      "old_score": 1032,
+      "candidate_score": 1056,
+      "price_action_changed": false,
+      "order_action_changed": false,
+      "old_nodes": 1414,
+      "candidate_fixed_order_nodes": 1414,
+      "candidate_own_order_nodes": 1414
+    },
+    {
+      "seed": 202610081011,
+      "old_score": 1011,
+      "candidate_score": 1035,
+      "price_action_changed": false,
+      "order_action_changed": false,
+      "old_nodes": 1616,
+      "candidate_fixed_order_nodes": 1616,
+      "candidate_own_order_nodes": 1595
+    }
+  ],
+  "finite_equivalence_family": [
+    {
+      "length": 1,
+      "raw": 2.4000000000000004,
+      "curves": [
+        {
+          "density": 0.0,
+          "quiet": 3.2,
+          "capture": 0.0,
+          "total": 3.2
+        },
+        {
+          "density": 0.125,
+          "quiet": 2.8,
+          "capture": 0.2,
+          "total": 3.0
+        },
+        {
+          "density": 0.5,
+          "quiet": 1.6,
+          "capture": 0.8,
+          "total": 2.4000000000000004
+        },
+        {
+          "density": 0.875,
+          "quiet": 0.4,
+          "capture": 1.4,
+          "total": 1.7999999999999998
+        },
+        {
+          "density": 1.0,
+          "quiet": 0.0,
+          "capture": 1.6,
+          "total": 1.6
+        }
+      ],
+      "reference_raw": 0.72,
+      "fixed_reference_value": 3333.333333333334,
+      "excluded": [
+        {
+          "pattern": "legacy_020",
+          "reasons": [
+            "compound/state effect",
+            "drop",
+            "not simple actor move"
+          ]
+        }
+      ],
+      "board_values": {
+        "K": 0,
+        "C": 1538,
+        "N": 462
+      },
+      "executor_positions": 250,
+      "endpoint_path_events": 320
+    },
+    {
+      "length": 2,
+      "raw": 3.4875000000000003,
+      "curves": [
+        {
+          "density": 0.0,
+          "quiet": 5.6,
+          "capture": 0.0,
+          "total": 5.6
+        },
+        {
+          "density": 0.125,
+          "quiet": 4.6375,
+          "capture": 0.33125,
+          "total": 4.96875
+        },
+        {
+          "density": 0.5,
+          "quiet": 2.2,
+          "capture": 1.1,
+          "total": 3.3000000000000003
+        },
+        {
+          "density": 0.875,
+          "quiet": 0.4375,
+          "capture": 1.53125,
+          "total": 1.96875
+        },
+        {
+          "density": 1.0,
+          "quiet": 0.0,
+          "capture": 1.6,
+          "total": 1.6
+        }
+      ],
+      "reference_raw": 0.72,
+      "fixed_reference_value": 4843.750000000001,
+      "excluded": [
+        {
+          "pattern": "legacy_020",
+          "reasons": [
+            "compound/state effect",
+            "drop",
+            "not simple actor move"
+          ]
+        }
+      ],
+      "board_values": {
+        "K": 0,
+        "C": 1658,
+        "N": 342
+      },
+      "executor_positions": 250,
+      "endpoint_path_events": 560
+    },
+    {
+      "length": 3,
+      "raw": 4.1000000000000005,
+      "curves": [
+        {
+          "density": 0.0,
+          "quiet": 7.2,
+          "capture": 0.0,
+          "total": 7.2
+        },
+        {
+          "density": 0.125,
+          "quiet": 5.709375,
+          "capture": 0.4078125,
+          "total": 6.1171875
+        },
+        {
+          "density": 0.5,
+          "quiet": 2.4,
+          "capture": 1.2,
+          "total": 3.5999999999999996
+        },
+        {
+          "density": 0.875,
+          "quiet": 0.440625,
+          "capture": 1.5421875,
+          "total": 1.9828125
+        },
+        {
+          "density": 1.0,
+          "quiet": 0.0,
+          "capture": 1.6,
+          "total": 1.6
+        }
+      ],
+      "reference_raw": 0.72,
+      "fixed_reference_value": 5694.444444444446,
+      "excluded": [
+        {
+          "pattern": "legacy_020",
+          "reasons": [
+            "compound/state effect",
+            "drop",
+            "not simple actor move"
+          ]
+        }
+      ],
+      "board_values": {
+        "K": 0,
+        "C": 1701,
+        "N": 299
+      },
+      "executor_positions": 250,
+      "endpoint_path_events": 720
+    },
+    {
+      "length": 4,
+      "raw": 4.3756640625,
+      "curves": [
+        {
+          "density": 0.0,
+          "quiet": 8.0,
+          "capture": 0.0,
+          "total": 8.0
+        },
+        {
+          "density": 0.125,
+          "quiet": 6.1783203125,
+          "capture": 0.44130859375,
+          "total": 6.61962890625
+        },
+        {
+          "density": 0.5,
+          "quiet": 2.45,
+          "capture": 1.225,
+          "total": 3.6750000000000003
+        },
+        {
+          "density": 0.875,
+          "quiet": 0.4408203125,
+          "capture": 1.54287109375,
+          "total": 1.9836914062500002
+        },
+        {
+          "density": 1.0,
+          "quiet": 0.0,
+          "capture": 1.6,
+          "total": 1.6
+        }
+      ],
+      "reference_raw": 0.72,
+      "fixed_reference_value": 6077.311197916667,
+      "excluded": [
+        {
+          "pattern": "legacy_020",
+          "reasons": [
+            "compound/state effect",
+            "drop",
+            "not simple actor move"
+          ]
+        }
+      ],
+      "board_values": {
+        "K": 0,
+        "C": 1717,
+        "N": 283
+      },
+      "executor_positions": 250,
+      "endpoint_path_events": 800
+    },
+    {
+      "length": 5,
+      "raw": 4.3756640625,
+      "curves": [
+        {
+          "density": 0.0,
+          "quiet": 8.0,
+          "capture": 0.0,
+          "total": 8.0
+        },
+        {
+          "density": 0.125,
+          "quiet": 6.1783203125,
+          "capture": 0.44130859375,
+          "total": 6.61962890625
+        },
+        {
+          "density": 0.5,
+          "quiet": 2.45,
+          "capture": 1.225,
+          "total": 3.6750000000000003
+        },
+        {
+          "density": 0.875,
+          "quiet": 0.4408203125,
+          "capture": 1.54287109375,
+          "total": 1.9836914062500002
+        },
+        {
+          "density": 1.0,
+          "quiet": 0.0,
+          "capture": 1.6,
+          "total": 1.6
+        }
+      ],
+      "reference_raw": 0.72,
+      "fixed_reference_value": 6077.311197916667,
+      "excluded": [
+        {
+          "pattern": "legacy_020",
+          "reasons": [
+            "compound/state effect",
+            "drop",
+            "not simple actor move"
+          ]
+        }
+      ],
+      "board_values": {
+        "K": 0,
+        "C": 1717,
+        "N": 283
+      },
+      "executor_positions": 250,
+      "endpoint_path_events": 800
+    }
+  ],
+  "behavioral_stability": {
+    "producer_sha256": "146062fdba7082cae023e9bf88d6219a414fb514665c69087739f8357be1a523",
+    "source_sha256": "8d13e9e5dcd27e1d3270914b41f320a548001fa37184aaf6f0b028afef814442",
+    "argument": "For this nested family, extending L leaves every old endpoint/path event unchanged and adds D endpoints per owner/source. At density d, an added endpoint contributes P(path-clear)*(1-d+d/2), in[0,1]. Therefore raw increment is in[0,D] under these nonnegative unit-sum density weights. This is a finite opportunity bound, not general material or win-rate continuity. Fixed-reference scaling multiplies the bound by1000/.72. Production median uses both C and N and therefore reprices unchanged N; integer changes alone must not be called N capability changes.",
+    "increments": [
+      {
+        "from": 1,
+        "to": 2,
+        "added_endpoints_per_source": 2.4,
+        "raw_delta": 1.0875,
+        "C_production_integer_delta": 120,
+        "N_production_integer_delta": -120
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "added_endpoints_per_source": 1.6,
+        "raw_delta": 0.6125000000000003,
+        "C_production_integer_delta": 43,
+        "N_production_integer_delta": -43
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "added_endpoints_per_source": 0.8,
+        "raw_delta": 0.27566406249999975,
+        "C_production_integer_delta": 16,
+        "N_production_integer_delta": -16
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "added_endpoints_per_source": 0.0,
+        "raw_delta": 0.0,
+        "C_production_integer_delta": 0,
+        "N_production_integer_delta": 0
+      }
+    ],
+    "no_refit": true
+  },
+  "cannon_rook_decomposition": {
+    "C": {
+      "quiet": 8.064322714805604,
+      "capture": 0.43772350788116454,
+      "raw": 8.502046222686769,
+      "curves": [
+        {
+          "density": 0.0,
+          "quiet": 14.0,
+          "capture": 0.0,
+          "total": 14.0
+        },
+        {
+          "density": 0.125,
+          "quiet": 9.621049642562866,
+          "capture": 0.15982747077941895,
+          "total": 9.780877113342285
+        },
+        {
+          "density": 0.25,
+          "quiet": 6.600677490234375,
+          "capture": 0.467193603515625,
+          "total": 7.06787109375
+        },
+        {
+          "density": 0.375,
+          "quiet": 4.496184587478638,
+          "capture": 0.7722165584564209,
+          "total": 5.268401145935059
+        },
+        {
+          "density": 0.5,
+          "quiet": 3.00390625,
+          "capture": 1.01953125,
+          "total": 4.0234375
+        }
+      ],
+      "board_value": 976
+    },
+    "R": {
+      "quiet": 8.064322714805604,
+      "capture": 0.8555921483039857,
+      "raw": 8.91991486310959,
+      "curves": [
+        {
+          "density": 0.0,
+          "quiet": 14.0,
+          "capture": 0.0,
+          "total": 14.0
+        },
+        {
+          "density": 0.125,
+          "quiet": 9.621049642562866,
+          "capture": 0.6872178316116333,
+          "total": 10.3082674741745
+        },
+        {
+          "density": 0.25,
+          "quiet": 6.600677490234375,
+          "capture": 1.1001129150390625,
+          "total": 7.7007904052734375
+        },
+        {
+          "density": 0.375,
+          "quiet": 4.496184587478638,
+          "capture": 1.3488553762435913,
+          "total": 5.845039963722229
+        },
+        {
+          "density": 0.5,
+          "quiet": 3.00390625,
+          "capture": 1.501953125,
+          "total": 4.505859375
+        }
+      ],
+      "board_value": 1024
+    }
+  },
+  "native_full_eval_cost_scope": "Paired27states/three rules/five batches:Native/Core about0.347/0.425/0.416; Native/legacy about1.395/1.258/1.479. All cohorts persisted, final atomic replacement failed:complete flag remains false. No universal acceleration.",
+  "failures": [
+    "Initial target-scan Native bulk is slow; preserved sources.",
+    "First evaluator full-history mirror fails on actual RuntimeSearchState; partial preserved.",
+    "evaluator-cost final WinError5, complete=false; no retroactive repair.",
+    "78 original depth3 caps remain unknown.",
+    "Ordered36-call wall clocks overlap full regression; excluded from fair timing claims."
+  ],
+  "validation": "1580full suite before new finite-family test;57focused final including family. No independent material-price/strength claim.",
+  "source_hashes": {
+    ".local_agent/semantic-attacks-20261008/analyze-ablation.py": "3f9e649a627c6ea0964b5e75b1cb2937903405ea82cb8c0079180eaa30701c4d",
+    ".local_agent/semantic-attacks-20261008/analyze-factorial.py": "43848c7aa5b8e16413fd592a2713fd49e7475ffff2bf21b8eb408a11d0d7ce7b",
+    ".local_agent/semantic-attacks-20261008/analyze-layouts.py": "d7d296cda0bc23b26dd636b6e9f587ddfc1f0db8b0b652f81ce05bae85de4fb5",
+    ".local_agent/semantic-attacks-20261008/archive-evidence.py": "dbfc0f3e13435b0c25283dd9316f1ad3304e7c7985370fae4b97c5ecad076b6c",
+    ".local_agent/semantic-attacks-20261008/choice-cross-score.py": "ecb27ccac7d2a0303ee98a95a5431e8d1c145db6733de0acdd6d41d570300e1a",
+    ".local_agent/semantic-attacks-20261008/consistency-and-decomposition.py": "28e730d56521639eacf80430aa5f1d01949076cf85dd676526f548602e478111",
+    ".local_agent/semantic-attacks-20261008/evaluator-cost.py": "8547f5e30941527a4adab470033d8d03649373ec82ea7baae15206249dc04855",
+    ".local_agent/semantic-attacks-20261008/evaluator-full-history-failed.py": "394ba2e9a12cd76cec959faee23e500e4ca5fe2cbb1597c15624e83cbd26c351",
+    ".local_agent/semantic-attacks-20261008/evaluator-integration-current.py": "f886c72c7cdf01d2a5d2aaf5c19678c4e90b97002af754350b6d60c43b0e5411",
+    ".local_agent/semantic-attacks-20261008/evaluator-integration-first.py": "a5bf5a42938a0168651b93ce6a2669f363513cb9032f2d1a904f642207951997",
+    ".local_agent/semantic-attacks-20261008/evaluator-integration.py": "a5bf5a42938a0168651b93ce6a2669f363513cb9032f2d1a904f642207951997",
+    ".local_agent/semantic-attacks-20261008/factorial.py": "9ac2b976ea439e3bfacd1d4106d553d526bef0ac2a9feb94438787a2bcc6cac9",
+    ".local_agent/semantic-attacks-20261008/layout-cohort.py": "80cca4e7743851b78880891c7c1fadef9c8ba741ad3e651b224d425fee594d95",
+    ".local_agent/semantic-attacks-20261008/leaf-cost.py": "09b32158aea4969e1237be91df95e0d8eacc51aab50161574bac9d7f07b2558b",
+    ".local_agent/semantic-attacks-20261008/native-cost-traversal.py": "a9d6f635df53e9f56dd5c32b57907867e1979da45e261efeb5426c116728df93",
+    ".local_agent/semantic-attacks-20261008/native-cost.py": "25af8829e3ff04c7b9670125e98376783399e731db492fbcee9203aae8806174",
+    ".local_agent/semantic-attacks-20261008/native-module-target-scan.c": "baa29061ba88aff76dac7a05efac428ad26f3b6cf3a3ce539ddbf784fc5de33f",
+    ".local_agent/semantic-attacks-20261008/native-runtime-before-bulk.c": "a62bd17b64421a6139aee0bd06437b28be6d12549c0772900c3c99cf99a4cca3",
+    ".local_agent/semantic-attacks-20261008/ordered-price-comparison.py": "7d46049231e48f2e926ef7060fc8516ac2086e4a7431065ff23cf9d8eb858014",
+    ".local_agent/semantic-attacks-20261008/search-ablation.py": "0e372bf17e34ea6bc1aa3144caa44f65362cd021523c4e49ea3c73de19f27609",
+    ".local_agent/semantic-attacks-20261008/stability-analysis.py": "146062fdba7082cae023e9bf88d6219a414fb514665c69087739f8357be1a523",
+    ".local_agent/semantic-candidate-20261008/cannon-mixture.py": "a35a573d8641478179cd63138f4185526233934db3e89089da353fb455d0e379",
+    "tests/rule_semantics_ir_fixtures.py": "209b3bd9388d5ac228329d64eeda7d70a9209f0409ac74217be2879b4d6038c7",
+    "tests/product/test_semantic_ray_equivalence.py": "9276e5954cade9fda94d59e0fc8d2dd22d9cae32bff8758b904f58fdf16651fc",
+    "tests/product/test_semantic_attack_map.py": "1b751be82d9f5855282389784ddd07a6612d737dac9060301156e1ac7b367cb0",
+    "generic_chess/core/semantic_executor.py": "5ae0f6158be4b56ac34e1030a92f0141878b2d64909328ee0fbd64c4b4524cb6",
+    "generic_chess/native/semantic.py": "f4c467f871b4a042549bbfc73bd1730f07f0d87867c859fd7486dc89d8ff2f91",
+    "generic_chess/native/compiler.py": "ac048aad30568d08cc653fed1ae0c8a2c9c1b5f59323233f67f113660d8d754d",
+    "generic_chess/native/mirror.py": "0d292395e7bf7d83e8044eaa3632db87b16a94317b9e56b656bd71c9be27e0a4",
+    "generic_chess/ai/evaluation/evaluator.py": "07c7c1a2b0ac2b659250391fd23397ff171fda92fe9cbc197747af68b45f7571",
+    "generic_chess/ai/evaluation/semantic_attacks.py": "d87f851037af3cf46d8a9daaf9356037ae5a22955050120bdbe8a8edbd545258",
+    "generic_chess/ai/evaluation/semantic.py": "885c855317409bd81919d47e4aa3112ff343f612446a1d93d13cb2d1fb90ca6b",
+    "scripts/research_record.py": "c88164fc0ba05753569ca0d65d6ef86a278e0e72bf6429fb36304cd207ee54cf",
+    "scripts/unfamiliar_search.py": "347584019a9a5895c7455a0e8ecf6c7d7a1e6d5e804051411330476f6ee6f52f",
+    "scripts/build_native_zig.py": "49971852587404019031c545a30647172b6dda9205253b7222220b697b629f02",
+    "generic_chess/_native/native_attack.c": "4c821d0e73ced9def6840d9c5a3c64f18bf2b861ee7fe983a7e7d6f3b4c48bf8",
+    "generic_chess/_native/native_cancel.c": "e3c46eb8fa1b694f004bf40c2e39a83b4113eaaf0e6edffdad34e46d0cee1c04",
+    "generic_chess/_native/native_clock.c": "ca7636e24ce4fcc81a476f80c4447207f7ad6cc48ab33c29c37c3ba12906bd93",
+    "generic_chess/_native/native_eval.c": "dd2bccac44da3ec647b91666e2cc00e85b3c3284fd32ceb385f49bd398b91c30",
+    "generic_chess/_native/native_hash.c": "bd5c4e31b1502c2ddffac3b4adc528efd164d80f2a9830e613955b597827411c",
+    "generic_chess/_native/native_module.c": "41062ee5e5c19f8add786b31d2944361ae06058b75f558f62c0898ec4879c0f2",
+    "generic_chess/_native/native_movegen.c": "23f6ed09523e6882e7b672e52947db4d701662cac19ef312cbafaadd8f7513df",
+    "generic_chess/_native/native_perft.c": "7e4323a29a762ba60218e28ef7f8bb0ab5a20f88648b346a6c57728fe67d1482",
+    "generic_chess/_native/native_rules.c": "c191bdca1ad0a03e061933c18208b3190eca3a79b8b90f670d277b4106ed5ad6",
+    "generic_chess/_native/native_search.c": "588298552762c0bab66556ad488cea2861524e4c17c9e254247860dde9a9addb",
+    "generic_chess/_native/native_semantic_key.c": "fcc9d1a26db21ccb9b72bd879cc37fb19a949cb6a9bd98678320bf7e15b68da1",
+    "generic_chess/_native/native_semantic_rules.c": "18463306c5ab29c20cd1e69d3c52e9eafdc7888a59029755de51a9e31c5e6ef4",
+    "generic_chess/_native/native_semantic_runtime.c": "26c56b208cb720c92eb95a0102d20342ff0f24024cb83b0b60949947f117dc1d",
+    "generic_chess/_native/native_semantic_state.c": "6d8828d3413d19a788c037e7ecb12604b797e038c65bee1eb64bcb5118cc3dbd",
+    "generic_chess/_native/native_sha256.c": "d12cec8d44785c26a619115e7e627d329daf26fcc8fbc3dbda3c2c2ff85bdb23",
+    "generic_chess/_native/native_state.c": "a6bce524c1d67340eac7a26c3a9dbfd22e9db0670dca0559fbc8f94de8e2a7f4",
+    "generic_chess/_native/native_tt.c": "57c97b019620cfedfa6de6e2b6cc3422d8292f26bd5fedb34a7f065f3629ceb0",
+    "generic_chess/_native/native_attack.h": "dd364d759990a936f1ca66a32aead8b271d49b5e91a17114294b3f6fa69af33f",
+    "generic_chess/_native/native_cancel.h": "91a86c481454e9e134cc93dc5613032defc6cfd7cc63db1a036bf97432037202",
+    "generic_chess/_native/native_clock.h": "0a61e36e2ce869caae357bb11b21106ab12a25fd3828702ec402d056498dbf8a",
+    "generic_chess/_native/native_eval.h": "5a7becb7c71c365a0b4f480c117606143bd4da750d7b4747167b0bc336a07097",
+    "generic_chess/_native/native_hash.h": "162854bc2c6b996098eb971881a43d21549996199a4bba1f7e5e717411332078",
+    "generic_chess/_native/native_movegen.h": "c94015ccffec5beba214ab6e789664825b2cfd757dc83aca8551c1bd47617ecd",
+    "generic_chess/_native/native_perft.h": "fb3779960c0d701196e60b7e560b6bf3a61276994d389a6e7e484aefd4b27bb0",
+    "generic_chess/_native/native_rules.h": "1ba70ff3d9b56b01e74e9ea8246b98a2ae0a8868c7c8f8033f5b456ef613bd64",
+    "generic_chess/_native/native_search.h": "694d5d1b541e3650a6d838b2c787689d6837a0fa9166c69ec1ea5a89ad9335f4",
+    "generic_chess/_native/native_semantic_key.h": "8cea82d16d1c6b9e8add1887c1b0a9f21fed8430204e1f3850b2f7d5d261528c",
+    "generic_chess/_native/native_semantic_rules.h": "c1b6256fb0b1b92b2634c8571fece4bf9e2d02b1688dc9df3c0122482fe722f1",
+    "generic_chess/_native/native_semantic_runtime.h": "d212e2a23e63d52597d8ac473f574c628ccf06ea8e32daa88c3ce704d6b18e2e",
+    "generic_chess/_native/native_semantic_state.h": "86cea58e408ba05c3cc783cc79537c93540271fcd518944921c075ef9ff1fabc",
+    "generic_chess/_native/native_sha256.h": "581f1f234132d4a14275149e08fb5bfba4cdedbf1168f07397248484ab3c3d1b",
+    "generic_chess/_native/native_state.h": "b7b3c3342c4cb81ccc3057d834803a6cd27b693d04506ee5391983c1446243b8",
+    "generic_chess/_native/native_tt.h": "d2a002573add4f811f6ed379819da9004e0ddb80136d82ed8bcb4737bc101680",
+    "generic_chess/_native/native_types.h": "2c256bf170349f0c1d2f866c2f40b285711eb312927ae959b4ef85f9867866aa"
+  }
+}

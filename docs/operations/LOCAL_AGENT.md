@@ -36,6 +36,24 @@ recombined mechanics and generated rules; generic NNUE/learning remains later.
 Earlier practical-player efficiency advice below describes historical context;
 it does not override this current priority. Keep semantic and fair-resource checks.
 
+The2026-10-08 direction review adds a finite generator-consistency priority:
+supported equivalent rule encodings should agree; behaviorally small capability
+changes and finite-board saturation should have explained raw/scale behavior.
+Record raw opportunity, density curves, fixed-reference scale and production
+median normalization/rounding/clipping separately. Explicit unsupported patterns
+remain exclusions, not full-price evidence. Limited positional/coalition modeling
+cannot excuse representation defects; actor splitting/quantity effects are
+empirical, with no assumed linear conservation. Do one decision-changing family,
+then return to a concrete failure; do not build a universal proof prerequisite.
+Separate input semantics, price sensitivity and search cost. Fix attack authority
+and search policy for price comparisons, distinguish ordering from leaf prices,
+and retain static controls when they distinguish the hypothesis. A changed move
+or tie break is sensitivity, not evidence of improvement. These rules adopt the
+advisor's reasoning, not its attributed account of another user conversation.
+Review: https://nanomelon.slack.com/archives/C0C6L21UU20/p1791444831460819
+Dot reviewed the published base; this segment's new measurements were local
+reports, not independently executed by dot. Duration/stop/publication rules stay.
+
 Execute Main immediately. Validate each milestone, assess mainline impact,
 record checkpoint and actually begin the next task. CLI:
 `session checkpoint --question Q --observation NEW --evidence REF --next-action ACTION`

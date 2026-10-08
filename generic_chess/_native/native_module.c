@@ -2835,6 +2835,38 @@ static PyObject *gc_semantic_is_square_attacked(PyObject *self, PyObject *args) 
         rules, position, (uint16_t)square, (uint8_t)by_owner));
 }
 
+static PyObject *gc_semantic_attacked_squares(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    int by_owner;
+    if (!PyArg_ParseTuple(args, "OOi", &rules_capsule, &pos_capsule, &by_owner)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    if (by_owner < 0 || by_owner > 1) {
+        PyErr_SetString(PyExc_ValueError, "semantic attacker owner must be 0 or 1");
+        return NULL;
+    }
+    PyObject *indices = PyList_New(0);
+    if (!indices) return NULL;
+    uint8_t attacked[GC_MAX_SQUARES];
+    gc_semantic_runtime_attacked_squares(rules, position, (uint8_t)by_owner, attacked);
+    for (uint16_t square = 0; square < rules->board_size * rules->board_size; ++square) {
+        if (!attacked[square]) continue;
+        PyObject *index = PyLong_FromUnsignedLong(square);
+        if (!index || PyList_Append(indices, index) < 0) {
+            Py_XDECREF(index);
+            Py_DECREF(indices);
+            return NULL;
+        }
+        Py_DECREF(index);
+    }
+    PyObject *result = PyList_AsTuple(indices);
+    Py_DECREF(indices);
+    return result;
+}
+
 static PyObject *gc_semantic_in_check(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *rules_capsule, *pos_capsule;
@@ -6878,6 +6910,8 @@ static PyMethodDef gc_methods[] = {
      "semantic_make_checked(rules, position, action) -> child position capsule"},
     {"semantic_is_square_attacked", gc_semantic_is_square_attacked, METH_VARARGS,
      "semantic_is_square_attacked(rules, position, square, by_owner) -> bool"},
+    {"semantic_attacked_squares", gc_semantic_attacked_squares, METH_VARARGS,
+     "semantic_attacked_squares(rules, position, by_owner) -> tuple[int, ...]"},
     {"semantic_in_check", gc_semantic_in_check, METH_VARARGS,
      "semantic_in_check(rules, position, side) -> bool"},
     {"semantic_dynamic_features", gc_semantic_dynamic_features, METH_VARARGS,

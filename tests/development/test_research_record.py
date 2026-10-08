@@ -58,3 +58,46 @@ def test_compact_frontier_preserves_values_and_default_format(tmp_path):
     assert pretty.read_bytes()==(json.dumps(record_value(value),indent=2)+'\n').encode()
     assert len(compact.read_bytes())<len(pretty.read_bytes())
     assert not list(tmp_path.glob('*.tmp'))
+
+
+def test_windows_transient_replacement_reuses_exact_closed_record(tmp_path, monkeypatch):
+    import scripts.research_record as records
+    p = tmp_path / 'evidence.json'
+    p.write_text('{"previous":true}\n')
+    original = records.os.replace
+    calls, delays = [], []
+    def replace(temporary, destination):
+        calls.append((temporary, temporary.read_bytes()))
+        if len(calls) < 3:
+            assert json.loads(destination.read_bytes()) == {'previous': True}
+            error = PermissionError('transient Windows file sharing')
+            error.winerror = 5
+            raise error
+        original(temporary, destination)
+    monkeypatch.setattr(records.os, 'replace', replace)
+    monkeypatch.setattr(records.time, 'sleep', delays.append)
+    write_record(p, {'next': True})
+    assert len(set(calls)) == 1
+    assert delays == [0.01, 0.02]
+    assert json.loads(p.read_bytes()) == {'next': True}
+    assert not list(tmp_path.glob('*.tmp'))
+
+
+def test_windows_permanent_replacement_is_bounded(tmp_path, monkeypatch):
+    import scripts.research_record as records
+    p = tmp_path / 'evidence.json'
+    old = b'{"previous":true}\n'
+    p.write_bytes(old)
+    calls = []
+    def replace(*args):
+        calls.append(args)
+        error = PermissionError('persistent Windows file sharing')
+        error.winerror = 32
+        raise error
+    monkeypatch.setattr(records.os, 'replace', replace)
+    monkeypatch.setattr(records.time, 'sleep', lambda _: None)
+    with pytest.raises(PermissionError, match='persistent'):
+        write_record(p, {'next': True})
+    assert len(calls) == 3
+    assert p.read_bytes() == old
+    assert not list(tmp_path.glob('*.tmp'))

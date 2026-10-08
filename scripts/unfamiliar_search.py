@@ -109,12 +109,14 @@ def _compare_searches(session, evaluator, cache, reference, depth, case, save):
 
 
 def run_rule(output: Path, definition, *, depth=2, semantic_candidate=False,
-             evaluation_config=None):
+             evaluation_config=None, attack_authority='legacy'):
     """Inspect a supplied rule through the existing product execution boundary.
 
     Semantic DSL inputs keep semantic legality; plain inputs keep their legacy
     route. This does not create actions, adapt raw IR or select piece prices.
     """
+    if attack_authority not in ('legacy', 'core', 'native'):
+        raise ValueError('attack_authority must be legacy, core or native')
     if output.exists():
         raise FileExistsError(output)
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -146,7 +148,17 @@ def run_rule(output: Path, definition, *, depth=2, semantic_candidate=False,
     report['evaluation_config'] = record_value(config)
     report['board_values'] = dict(profile.board_value_by_type)
     report['profile_seconds'] = time.perf_counter()-start
-    evaluator = Evaluator(compiled, profile, config)
+    if attack_authority == 'legacy':
+        evaluator = Evaluator(compiled, profile, config)
+    else:
+        from generic_chess.ai.evaluation.semantic_attacks import SemanticAttackEvaluator
+        evaluator = SemanticAttackEvaluator(compiled, profile, config, backend=attack_authority)
+    report['declaration']['attack_authority'] = attack_authority
+    report['declaration']['attack_scope'] = (
+        'Existing legacy attack approximation' if attack_authority == 'legacy' else
+        'S0/S1 capture eligibility only; anchor escapes and promotion still use legacy metadata. '
+        'Core minimax and both public controls share this selected leaf evaluator; '
+        'python_plain describes legality/TT/ordering, not the evaluator backend.')
     session = GameSession(compiled)
     report['opening_legal_actions'] = len(session.legal_actions())
     counted = CountedEvaluator(evaluator)

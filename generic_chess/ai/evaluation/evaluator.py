@@ -55,8 +55,7 @@ class Evaluator:
         attacks = None
         if self._config.dynamic_mobility_weight or self._config.anchor_escape_weight:
             # All three features inspect the same unmodified position.
-            attacks = tuple(pseudo_attacks(position, owner, self._compiled)
-                            for owner in (0, 1))
+            attacks = self._attack_maps(state)
         if self._config.dynamic_mobility_weight:
             mob0 = len(attacks[0])
             mob1 = len(attacks[1])
@@ -71,6 +70,10 @@ class Evaluator:
                 score += self._config.anchor_escape_weight * 10
 
         return score if position.side_to_move == 0 else -score
+
+    def _attack_maps(self, state: GameState):
+        return tuple(pseudo_attacks(state.position, owner, self._compiled)
+                     for owner in (0, 1))
 
     def _promotion_bonus(self, piece, idx: int) -> int:
         base = piece.base_type_id
