@@ -588,3 +588,107 @@ separate physical price-usefulness from this finite Unit-search teacher. The
 new source-prior selectors improve three immediate top losses but worsen a
 full pair ordering; no model refit/default promotion or further automatic
 Unit-compression expansion follows. Original teachers and tables remain fixed.
+
+## Finite-policy event prediction, 2026-10-10
+
+This changes the supervised question, not the generic project's task domain.
+At an external96ply observation point, predict owner0win/loss, a real rule draw,
+or no terminal event yet. The last class gives no eventual WDL or zero utility.
+Actual promotion, drops, auxiliary state, full history and repetition remain in
+the executor. Technical interruption before96 is unknown, not the fourth class.
+The prototype input still omits auxiliary/spatial/history interactions and any
+teacher TT memory; a complete executor does not make that projection complete.
+The earlier12game pilot and all its failures remain unchanged.
+
+Four predeclared generated8x8 hybrid rules2122-2125 plus existing guardedPdrop/
+X-to-P mechanics, openings0/4, three policy pairs produce24cheap games. Unit/Unit,
+old frozen full/Unit and Unit/full stay separate policies. Fixed Core maximumD2,
+512nodes,.25sec,q0/hard8, Unit ordering, warm per-player TT and96additionalplies
+give1242plies in319.85sec. At24/48/96, terminal coverage is9/12/15of24, with
+6/9/12distinct finished trajectories. The96point has8mates,7real repetitions,
+9external cuts. No policy or observation threshold is selected afterward.
+The same24cells at maximumD4/8192nodes/1sec cost1542.26sec,1476plies, and finish
+6/10/13rows at those points:9mates,4repetitions,11cuts at96. Nine matched event
+classes change. Actual resource calls stop by time1475times; only one finishesD4.
+Cheap calls finishD2 on182plies andD1 on1060. These bounded algorithms with
+fallbacks must not be called complete fixed-depth teachers. More time does not
+monotonically create more terminal labels or establish playing improvement.
+
+Before new labels, the first fit freezes2126-2133 with train4/dev2/report2rules,
+two openings, Unit/Unit only, the original cheap caller and96cap. Preterminal
+snapshots0/4/8/12 receive their remaining horizon. Every game is weighted equally
+and its sampled states equally within that game. All16games complete observation:
+795plies,198.17sec,58states. Existing268count axes plus remaining horizon feed
+one affine4head softmax; train-variable columns alone are normalized. Zero
+initialization,300Adamsteps,.01learning rate,.0001weight regularization and the
+training game-balanced prior are fixed. No model selection or utility leaf.
+
+|Game-balanced Brier/logloss|Small signed model|Training constant prior|
+|---|---:|---:|
+|Train|.16140/.27402|.65625/1.21301|
+|Dev|.68228/3.11939|.34375/.69315|
+|Report|1.54350/16.35817|.34375/.69315|
+
+Train's win/loss/draw/no-event mix is.125/.125/.5/.25; dev/report happen to be
+all genuine repetitions. Keep this restricted coverage and poor transfer.
+Four affine heads fold into existing mechanical inventory ledgers plus horizon/
+bias. Replay of all795actual full-history pre-move states matches every recorded
+successor and numerical logits within2.14e-13, probabilities within2.62e-14.
+This verifies folding, not prediction quality. On16roots,48cold rotated Unit,
+encoder-discard and folded-discard calls preserve all32paired actions/PVs and
+nonlatency decision/work fields. D4/2048nodes/10sec allows only oneD4completion
+per arm;15node cuts remain. Each arm has32238nodes/27865scoring calls. Unit,
+encoder and folded wall totals26.96/30.39/27.73sec and scoring.105/3.177/.767sec;
+median paired wall ratios1.132/1.030 are descriptive local overhead. Construction
+is excluded from that comparison; probabilities are discarded, never utility.
+
+One exact signed-input group contains five different-rule initial states: one
+no-event and four draws. Its all-sample unconstrained Brier floor is.025; existing
+spatial moments distinguish all58inputs. Untrained unsigned current/base actor
+stock totals add132axes and also distinguish those five and all58inputs. Actual
+early trajectories replay after all type names change, with zero unsigned-feature
+error. Equal-vector grouping is descriptive and may miss numerical near-aliases;
+removing an alias does not prove learnability or resolve auxiliary/history scope.
+
+A second prospective declaration freezes2134-2141, same4/2/2split and limits,
+16games/49states/134.63sec, to compare signed269 and context401 under identical
+300step fits. Context's train/dev/report Brier.00106/1.44007/1.61956 compares
+with signed.17459/1.01153/.77781 and prior.56250/.93750/.68750. The new report
+is half owner0wins, half real draws. All report context argmax predictions are
+wrong; game-weighted.75are also confidence>.9. It separates the earlier alias
+but worsens generalization. Training designs have224columns/rank16 for signed,
+334/rank22 for context; held context states lie outside the training affine hull.
+These coexistence measurements do not identify a causal cure. No extra fit,
+calibration, model/default adoption or automatic architecture expansion follows.
+
+Finally, clear TT before every move on all eight original Unit cells. Actions
+and96event labels stay unchanged,90.76sec; this does not prove cache independence
+elsewhere. A separate declaration repeats all four opening4cells twice under
+cold TT, maximumD2/512nodes/10sec safety wall and unchanged96cap. All four repeat
+pairs match actions, every full-state successor and nonlatency decisions/work.
+The382plies take197.01sec:148D2completions,234node cuts, no wall cuts. Two of the
+four event classes change versus the old.25sec policy: draw becomes win on2124,
+win becomes draw on2125. This qualifies only these observed repeats. Future
+price diagnostics can use this explicit bounded-node premise without calling it
+optimal play, stationary full-state value or universal deterministic search.
+
+Observed repairs are retained: the caller initially missed the test-fixture
+import path; an analysis used nonexistent pv instead of principal_variation;
+type-rename matching erased pattern identity and conflated a legacy move with
+an effectful semantic move on the same squares. The paired declaration contained
+duplicate report keys: its originally written2140/2141split was restored by
+renaming the descriptive field before any fit score. Original failed source/
+analysis/declaration bytes remain in recovery; no target, split or success metric
+was chosen from adverse results. The corrected caller compares all available
+nonlatency fields, including actual PV and semantic action identities.
+
+Decision: retain the four-event target and cheap prior as scoped options, stop
+automatic small-affine-event fits or context expansion, and use the qualified
+node premise for a concrete rule-price diagnostic. A substantive same-thread
+advisor followup reports all adverse fits and asks for one decision-changing
+objection/next action; it is neither an approval gate nor independent execution.
+Recovery: ../archive/search_compression_20261009/policy-events-20261010-index.json;
+data/search_compression_20261009.json key policy_events_20261010 contains summaries.
+The isolated archive has only generated sources/results and previously published
+dependencies, no raw Slack/account data or operational state. Hash/metric replay
+checks are distinct from reproducing hardware timings or regaining holdout status.

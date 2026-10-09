@@ -45,8 +45,15 @@ independent price/task questions; do not claim pre-final timings as deployment.
   q1improves completion without removing errors. Selected D3targets keep one
   gap and turn another into a tie.12fresh terminal-signal games yield3duplicate
   one-ply mates,4real repetition draws,5unknown external cuts with policy-
-  dependent censoring. Next choose a declared signal/sampling premise before
-  small training; no scale/model/default selected. TASK_PREDICTION_DIAGNOSTIC.md
+  dependent censoring. A broader prospective24game pilot yields15terminals;
+  matched higher resource changes9event classes and yields13terminals. Two
+  further prospective16game four-event studies retain ongoing as its own class.
+  All three frozen small affine fits lose to constant priors on their report
+  rules; unsigned context removes a balanced-inventory alias but worsens transfer.
+  No model/default adopted. Next distinguish reproducible bounded-node teachers
+  from wall/cache effects and select a new cross-rule support premise, rather
+  than automatic feature/fit expansion. FINITE_SEARCH_COMPRESSION.md owns the
+  new finite-policy evidence/recovery. TASK_PREDICTION_DIAGNOSTIC.md
   owns targets/recovery; EVALUATION_ROUTES.md owns the return-signal decision.
 
 - Frozen full predictor versus board proxy: original hand terms restore all34

@@ -318,3 +318,80 @@ bounded callers and declared24/48/96ply observation checkpoints can measure
 return availability versus cost, without choosing the best threshold afterward.
 Only use that evidence to decide between terminal supervision and a separately
 declared alternative signal; no fixed sample-size gate or automatic training.
+
+## Prospective finite-policy events, 2026-10-10
+
+Four new predeclared2122-2125 rules, two openings and three Unit/full policy
+pairs supply24games at common Core D2/512nodes/.25sec/q0. All full state and
+actual rule-defined terminals remain. Declared24/48/96ply observations have
+9/12/15finished rows and6/9/12distinct finished trajectories;96plies contains
+8mates,7repetition draws,9external cuts.1242played plies cost319.85sec. No old
+game is extended or resampled. These are diagnostic trajectories, not Elo/WDL.
+A separately declared same24cell D4/8192nodes/1sec curve costs1542.26sec for
+1476plies. Its24/48/96points have6/10/13finished rows and4/8/11distinct finished
+trajectories;96plies has9mates,4repetitions,11external cuts. Nine matched cells
+change event class. One cheap14ply mate becomes ongoing at96. More resource
+does not monotonically increase terminal coverage or establish stronger play.
+The first action differs in21/24cells. Actual completed depths matter: cheap
+calls complete D2 on182/1242plies and D1 on1060; resource calls finish D1/D2/D3/
+D4 on772/560/143/1plies, with1475time limits. These are bounded algorithms with
+fallbacks, not full fixed-depth policies or budget-independent values. Local
+timing and overlapping cost categories do not isolate depth/time/cache effects.
+
+A new small training declaration fixes eight further rule seeds2126-2133,
+train4/dev2/report2, all Unit/Unit teacher games, openings0/4 and96ply external
+caps before outcomes. Four labels explicitly mean owner0 win/loss, real draw,
+or no terminal event before the cap. The fourth is a known finite-event label
+while eventual WDL remains unknown. Sample preterminal states0/4/8/12, equal
+weight per game and within its snapshots; include remaining external horizon.
+Use existing268count axes and a single small affine softmax fit versus training
+class priors, fixed300steps/.01/.0001; report Brier/logloss and per-rule coverage.
+No model selection or live leaf. This measures a scoped finite-policy prediction
+option, not rule-only price usefulness. Count inputs omit auxiliary/spatial/history
+interactions and teacher warm-TT memory despite full executor semantics. The
+teacher is a bounded algorithm, not an exact stationary policy. Preserve failures
+and zero/unseen classes; no exposed fitting, bootstrap or censorship-to-draw.
+
+Advisor review agrees with the four-event target and remaining horizon, and
+objects to completed-only return regression despite rule-level splitting.
+Adopt that distinction and policy stratification; a technical interruption before
+the observation point cannot count as no-event-at96. The new fit admits only
+completed generation records, including genuinely observed ongoing96games.
+Defer numeric leaf use. The resource diagnostic already has a distinct question:
+how labels depend on the bounded teacher budget, not how to accumulate more
+finished games or pass a training gate. No model/default or extra worker follows
+from this consultation. Its published-document review did not execute local data.
+
+The declared16games finish in198.17sec with795plies and58sampled states.
+The fixed model's train/dev/report Brier is.16140/.68228/1.54350 versus prior
+.65625/.34375/.34375; corresponding report logloss is16.35817 versus.69315.
+Dev/report happen to contain only true repetition draws. Keep that narrow
+coverage and the overconfident failure; no calibration, refit or leaf adoption.
+Five different-rule initial states have identical signed counts/remaining input
+but ongoing-versus-draw labels. Existing spatial moments separate this observed
+alias; untrained132unsigned current/base actor totals also separate it and all58
+sampled inputs. Type-renamed actual early trajectories give zero context error.
+Neither exact separation nor a zero empirical oracle floor proves learnability.
+
+A second declaration fixes2134-2141 before outcomes, same4/2/2rule split,
+16Unit games,49states,134.63sec. Two affine arms share300steps and game weights:
+
+|Brier, lower is better|Signed269|Context401|Constant prior|
+|---|---:|---:|---:|
+|Train|.17459|.00106|.56250|
+|Dev|1.01153|1.44007|.93750|
+|Report|.77781|1.61956|.68750|
+
+The new report contains wins and draws; extra context still worsens transfer.
+Context401's report argmax is wrong at all game-balanced sampled states, with
+.75weighted wrong-and-confidence-over.9. Its training design has334columns but
+rank22, versus224/rank16 for signed269. Held inputs and confident errors coexist;
+these descriptive support measures do not identify a sufficient causal repair.
+Stop automatic context expansion or same small-affine-event fits. Keep the
+finite-event target as a scoped option and the prior as the cheaper comparator;
+the next useful premise must address teacher reproducibility or cross-rule
+support, rather than treat more features as an established cure.
+Exact folding agrees on795full-history states within2.14e-13logit error.
+Forty-eight scoring-discard calls preserve all32paired decisions/PVs/work;
+encoder/folded median wall ratios1.132/1.030 are local overhead, not useful leaves.
+FINITE_SEARCH_COMPRESSION.md owns detailed outputs, caps, failures and recovery.

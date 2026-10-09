@@ -1632,5 +1632,3490 @@
         }
       }
     ]
+  },
+  "policy_events_20261010": {
+    "recovery": "docs/archive/search_compression_20261009/policy-events-20261010-index.json",
+    "archive_sha256": "d088b2ac79d88a3b627a3673f8df0e9d9427fe1a99747fabd7b68023f511476a",
+    "summary": {
+      "cheap_signal": {
+        "scope": "Preserve prospective denominators, actual terminals and external-censor curves.",
+        "games": 24,
+        "seconds": 319.8518389998935,
+        "curves": [
+          {
+            "plies": 24,
+            "status": {
+              "ongoing": 15,
+              "checkmate": 7,
+              "repetition": 2
+            },
+            "distinct_terminal_trajectories": 6,
+            "costs": {
+              "nodes": 110864,
+              "qnodes": 0,
+              "evaluation_calls": 99283,
+              "evaluation_seconds": 0.45331378281116486,
+              "legal_generation_calls": 11895,
+              "legal_generation_seconds": 57.91998689668253,
+              "played_plies": 443
+            }
+          },
+          {
+            "plies": 48,
+            "status": {
+              "repetition": 4,
+              "checkmate": 8,
+              "ongoing": 12
+            },
+            "distinct_terminal_trajectories": 9,
+            "costs": {
+              "nodes": 232325,
+              "qnodes": 0,
+              "evaluation_calls": 214642,
+              "evaluation_seconds": 0.9327009893022478,
+              "legal_generation_calls": 18254,
+              "legal_generation_seconds": 99.32508846884593,
+              "played_plies": 762
+            }
+          },
+          {
+            "plies": 96,
+            "status": {
+              "repetition": 7,
+              "checkmate": 8,
+              "ongoing": 9
+            },
+            "distinct_terminal_trajectories": 12,
+            "costs": {
+              "nodes": 439120,
+              "qnodes": 0,
+              "evaluation_calls": 412266,
+              "evaluation_seconds": 1.7337219072505832,
+              "legal_generation_calls": 27397,
+              "legal_generation_seconds": 156.08901627361774,
+              "played_plies": 1242
+            }
+          }
+        ],
+        "rows": [
+          {
+            "seed": 202610082122,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "terminal": {
+              "status": "repetition",
+              "winner": null
+            },
+            "owner0_reward": 0,
+            "classification": "TERMINAL",
+            "seconds": 6.76988109992817,
+            "plies": 30
+          },
+          {
+            "seed": 202610082122,
+            "opening": 0,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "terminal": {
+              "status": "checkmate",
+              "winner": 1
+            },
+            "owner0_reward": -1,
+            "classification": "TERMINAL",
+            "seconds": 2.5786093999631703,
+            "plies": 14
+          },
+          {
+            "seed": 202610082122,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "terminal": {
+              "status": "repetition",
+              "winner": null
+            },
+            "owner0_reward": 0,
+            "classification": "TERMINAL",
+            "seconds": 13.49852170003578,
+            "plies": 52
+          },
+          {
+            "seed": 202610082122,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "terminal": {
+              "status": "repetition",
+              "winner": null
+            },
+            "owner0_reward": 0,
+            "classification": "TERMINAL",
+            "seconds": 1.4540565996430814,
+            "plies": 14
+          },
+          {
+            "seed": 202610082122,
+            "opening": 4,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "terminal": {
+              "status": "repetition",
+              "winner": null
+            },
+            "owner0_reward": 0,
+            "classification": "TERMINAL",
+            "seconds": 1.453562400303781,
+            "plies": 14
+          },
+          {
+            "seed": 202610082122,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "owner0_reward": null,
+            "classification": "CENSORED",
+            "seconds": 21.19881959958002,
+            "plies": 96
+          },
+          {
+            "seed": 202610082123,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "owner0_reward": null,
+            "classification": "CENSORED",
+            "seconds": 26.48800789983943,
+            "plies": 96
+          },
+          {
+            "seed": 202610082123,
+            "opening": 0,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "owner0_reward": null,
+            "classification": "CENSORED",
+            "seconds": 25.73126560030505,
+            "plies": 96
+          },
+          {
+            "seed": 202610082123,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "owner0_reward": 1,
+            "classification": "TERMINAL",
+            "seconds": 6.127860800363123,
+            "plies": 29
+          },
+          {
+            "seed": 202610082123,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "owner0_reward": null,
+            "classification": "CENSORED",
+            "seconds": 27.193502600304782,
+            "plies": 96
+          },
+          {
+            "seed": 202610082123,
+            "opening": 4,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "owner0_reward": null,
+            "classification": "CENSORED",
+            "seconds": 24.743145999964327,
+            "plies": 96
+          },
+          {
+            "seed": 202610082123,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "terminal": {
+              "status": "checkmate",
+              "winner": 1
+            },
+            "owner0_reward": -1,
+            "classification": "TERMINAL",
+            "seconds": 4.492056800052524,
+            "plies": 18
+          },
+          {
+            "seed": 202610082124,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "owner0_reward": 1,
+            "classification": "TERMINAL",
+            "seconds": 0.1845470000989735,
+            "plies": 1
+          },
+          {
+            "seed": 202610082124,
+            "opening": 0,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "owner0_reward": 1,
+            "classification": "TERMINAL",
+            "seconds": 0.18653420032933354,
+            "plies": 1
+          },
+          {
+            "seed": 202610082124,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "owner0_reward": 1,
+            "classification": "TERMINAL",
+            "seconds": 0.18454660009592772,
+            "plies": 1
+          },
+          {
+            "seed": 202610082124,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "terminal": {
+              "status": "repetition",
+              "winner": null
+            },
+            "owner0_reward": 0,
+            "classification": "TERMINAL",
+            "seconds": 11.542505200020969,
+            "plies": 44
+          },
+          {
+            "seed": 202610082124,
+            "opening": 4,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "owner0_reward": null,
+            "classification": "CENSORED",
+            "seconds": 25.640658299904317,
+            "plies": 96
+          },
+          {
+            "seed": 202610082124,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "owner0_reward": null,
+            "classification": "CENSORED",
+            "seconds": 25.43100839992985,
+            "plies": 96
+          },
+          {
+            "seed": 202610082125,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "terminal": {
+              "status": "repetition",
+              "winner": null
+            },
+            "owner0_reward": 0,
+            "classification": "TERMINAL",
+            "seconds": 13.646259900182486,
+            "plies": 52
+          },
+          {
+            "seed": 202610082125,
+            "opening": 0,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "owner0_reward": null,
+            "classification": "CENSORED",
+            "seconds": 22.84259660029784,
+            "plies": 96
+          },
+          {
+            "seed": 202610082125,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "terminal": {
+              "status": "repetition",
+              "winner": null
+            },
+            "owner0_reward": 0,
+            "classification": "TERMINAL",
+            "seconds": 20.817241800017655,
+            "plies": 88
+          },
+          {
+            "seed": 202610082125,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "owner0_reward": 1,
+            "classification": "TERMINAL",
+            "seconds": 2.087311000097543,
+            "plies": 9
+          },
+          {
+            "seed": 202610082125,
+            "opening": 4,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "owner0_reward": null,
+            "classification": "CENSORED",
+            "seconds": 21.627581200096756,
+            "plies": 96
+          },
+          {
+            "seed": 202610082125,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "owner0_reward": 1,
+            "classification": "TERMINAL",
+            "seconds": 2.4181669000536203,
+            "plies": 11
+          }
+        ],
+        "producer_sha256": "9cb3f5bbb3e1c59118a530960ee05411c4db54b2d7283788541f4dead2f15b0c"
+      },
+      "resource_sensitivity": {
+        "scope": "Matched bounded-policy event sensitivity; retain every declared cell and cap.",
+        "games": 24,
+        "seconds": 1542.2569018998183,
+        "curves": [
+          {
+            "plies": 24,
+            "status": {
+              "ongoing": 18,
+              "repetition": 1,
+              "checkmate": 5
+            },
+            "distinct_terminal_trajectories": 4,
+            "costs": {
+              "nodes": 449093,
+              "qnodes": 0,
+              "evaluation_calls": 380545,
+              "evaluation_seconds": 1.793392336461693,
+              "legal_generation_calls": 67665,
+              "legal_generation_seconds": 333.7141971439123,
+              "played_plies": 482
+            }
+          },
+          {
+            "plies": 48,
+            "status": {
+              "repetition": 3,
+              "ongoing": 14,
+              "checkmate": 7
+            },
+            "distinct_terminal_trajectories": 8,
+            "costs": {
+              "nodes": 678988,
+              "qnodes": 0,
+              "evaluation_calls": 567837,
+              "evaluation_seconds": 2.6334318965673447,
+              "legal_generation_calls": 110316,
+              "legal_generation_seconds": 621.4516688049771,
+              "played_plies": 841
+            }
+          },
+          {
+            "plies": 96,
+            "status": {
+              "repetition": 4,
+              "ongoing": 11,
+              "checkmate": 9
+            },
+            "distinct_terminal_trajectories": 11,
+            "costs": {
+              "nodes": 1109346,
+              "qnodes": 0,
+              "evaluation_calls": 926715,
+              "evaluation_seconds": 4.125305126886815,
+              "legal_generation_calls": 181903,
+              "legal_generation_seconds": 1135.3611166882329,
+              "played_plies": 1476
+            }
+          }
+        ],
+        "matched_event_transitions": {
+          "draw -> draw": 4,
+          "owner0_loss -> no_event_yet": 2,
+          "draw -> no_event_yet": 2,
+          "no_event_yet -> no_event_yet": 6,
+          "no_event_yet -> owner0_win": 2,
+          "owner0_win -> owner0_win": 5,
+          "no_event_yet -> owner0_loss": 1,
+          "draw -> owner0_loss": 1,
+          "owner0_win -> no_event_yet": 1
+        },
+        "changed_cells": 9,
+        "pairs": [
+          {
+            "seed": 202610082122,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "cheap": "draw",
+            "resource": "draw",
+            "changed": false,
+            "cheap_plies": 30,
+            "resource_plies": 35,
+            "resource_terminal": {
+              "status": "repetition",
+              "winner": null
+            }
+          },
+          {
+            "seed": 202610082122,
+            "opening": 0,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "cheap": "owner0_loss",
+            "resource": "no_event_yet",
+            "changed": true,
+            "cheap_plies": 14,
+            "resource_plies": 96,
+            "resource_terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "seed": 202610082122,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "cheap": "draw",
+            "resource": "no_event_yet",
+            "changed": true,
+            "cheap_plies": 52,
+            "resource_plies": 96,
+            "resource_terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "seed": 202610082122,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "cheap": "draw",
+            "resource": "draw",
+            "changed": false,
+            "cheap_plies": 14,
+            "resource_plies": 28,
+            "resource_terminal": {
+              "status": "repetition",
+              "winner": null
+            }
+          },
+          {
+            "seed": 202610082122,
+            "opening": 4,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "cheap": "draw",
+            "resource": "draw",
+            "changed": false,
+            "cheap_plies": 14,
+            "resource_plies": 15,
+            "resource_terminal": {
+              "status": "repetition",
+              "winner": null
+            }
+          },
+          {
+            "seed": 202610082122,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "cheap": "no_event_yet",
+            "resource": "no_event_yet",
+            "changed": false,
+            "cheap_plies": 96,
+            "resource_plies": 96,
+            "resource_terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "seed": 202610082123,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "cheap": "no_event_yet",
+            "resource": "owner0_win",
+            "changed": true,
+            "cheap_plies": 96,
+            "resource_plies": 85,
+            "resource_terminal": {
+              "status": "checkmate",
+              "winner": 0
+            }
+          },
+          {
+            "seed": 202610082123,
+            "opening": 0,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "cheap": "no_event_yet",
+            "resource": "no_event_yet",
+            "changed": false,
+            "cheap_plies": 96,
+            "resource_plies": 96,
+            "resource_terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "seed": 202610082123,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "cheap": "owner0_win",
+            "resource": "owner0_win",
+            "changed": false,
+            "cheap_plies": 29,
+            "resource_plies": 31,
+            "resource_terminal": {
+              "status": "checkmate",
+              "winner": 0
+            }
+          },
+          {
+            "seed": 202610082123,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "cheap": "no_event_yet",
+            "resource": "no_event_yet",
+            "changed": false,
+            "cheap_plies": 96,
+            "resource_plies": 96,
+            "resource_terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "seed": 202610082123,
+            "opening": 4,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "cheap": "no_event_yet",
+            "resource": "owner0_win",
+            "changed": true,
+            "cheap_plies": 96,
+            "resource_plies": 25,
+            "resource_terminal": {
+              "status": "checkmate",
+              "winner": 0
+            }
+          },
+          {
+            "seed": 202610082123,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "cheap": "owner0_loss",
+            "resource": "no_event_yet",
+            "changed": true,
+            "cheap_plies": 18,
+            "resource_plies": 96,
+            "resource_terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "seed": 202610082124,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "cheap": "owner0_win",
+            "resource": "owner0_win",
+            "changed": false,
+            "cheap_plies": 1,
+            "resource_plies": 1,
+            "resource_terminal": {
+              "status": "checkmate",
+              "winner": 0
+            }
+          },
+          {
+            "seed": 202610082124,
+            "opening": 0,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "cheap": "owner0_win",
+            "resource": "owner0_win",
+            "changed": false,
+            "cheap_plies": 1,
+            "resource_plies": 1,
+            "resource_terminal": {
+              "status": "checkmate",
+              "winner": 0
+            }
+          },
+          {
+            "seed": 202610082124,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "cheap": "owner0_win",
+            "resource": "owner0_win",
+            "changed": false,
+            "cheap_plies": 1,
+            "resource_plies": 1,
+            "resource_terminal": {
+              "status": "checkmate",
+              "winner": 0
+            }
+          },
+          {
+            "seed": 202610082124,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "cheap": "draw",
+            "resource": "no_event_yet",
+            "changed": true,
+            "cheap_plies": 44,
+            "resource_plies": 96,
+            "resource_terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "seed": 202610082124,
+            "opening": 4,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "cheap": "no_event_yet",
+            "resource": "no_event_yet",
+            "changed": false,
+            "cheap_plies": 96,
+            "resource_plies": 96,
+            "resource_terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "seed": 202610082124,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "cheap": "no_event_yet",
+            "resource": "owner0_loss",
+            "changed": true,
+            "cheap_plies": 96,
+            "resource_plies": 18,
+            "resource_terminal": {
+              "status": "checkmate",
+              "winner": 1
+            }
+          },
+          {
+            "seed": 202610082125,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "cheap": "draw",
+            "resource": "draw",
+            "changed": false,
+            "cheap_plies": 52,
+            "resource_plies": 89,
+            "resource_terminal": {
+              "status": "repetition",
+              "winner": null
+            }
+          },
+          {
+            "seed": 202610082125,
+            "opening": 0,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "cheap": "no_event_yet",
+            "resource": "no_event_yet",
+            "changed": false,
+            "cheap_plies": 96,
+            "resource_plies": 96,
+            "resource_terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "seed": 202610082125,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "cheap": "draw",
+            "resource": "owner0_loss",
+            "changed": true,
+            "cheap_plies": 88,
+            "resource_plies": 14,
+            "resource_terminal": {
+              "status": "checkmate",
+              "winner": 1
+            }
+          },
+          {
+            "seed": 202610082125,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "cheap": "owner0_win",
+            "resource": "no_event_yet",
+            "changed": true,
+            "cheap_plies": 9,
+            "resource_plies": 96,
+            "resource_terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "seed": 202610082125,
+            "opening": 4,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "cheap": "no_event_yet",
+            "resource": "no_event_yet",
+            "changed": false,
+            "cheap_plies": 96,
+            "resource_plies": 96,
+            "resource_terminal": {
+              "status": "ongoing",
+              "winner": null
+            }
+          },
+          {
+            "seed": 202610082125,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "cheap": "owner0_win",
+            "resource": "owner0_win",
+            "changed": false,
+            "cheap_plies": 11,
+            "resource_plies": 77,
+            "resource_terminal": {
+              "status": "checkmate",
+              "winner": 0
+            }
+          }
+        ],
+        "limits": "Exposed matched diagnostic, no policy selection, WDL or strength inference. Terminal time and bounded teacher caches/time change with resource. Costs are descriptive local measurements, categories not disjoint."
+      },
+      "policy_divergence": {
+        "scope": "Locate first action divergences and actual bounded-search completeness.\nThese are resource-sensitive teacher trajectories, not causal strength tests.\n",
+        "search_observations": {
+          "cheap": {
+            "plies": 1242,
+            "completed_depth": {
+              "2": 182,
+              "1": 1060
+            },
+            "termination_reason": {
+              "completed_depth": 182,
+              "time_limit": 887,
+              "node_limit": 173
+            }
+          },
+          "resource": {
+            "plies": 1476,
+            "completed_depth": {
+              "3": 143,
+              "2": 560,
+              "1": 772,
+              "4": 1
+            },
+            "termination_reason": {
+              "time_limit": 1475,
+              "completed_depth": 1
+            }
+          }
+        },
+        "pairs": [
+          {
+            "seed": 202610082122,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "same_terminal": true,
+            "common_prefix_plies": 1,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_030",
+                "geometry_id": "g22",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 3,
+                  "rank": 7
+                },
+                "to_square": {
+                  "file": 0,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": -200,
+              "completed_depth": 2,
+              "termination_reason": "completed_depth",
+              "nodes": 91,
+              "evaluation_calls": 69
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_032",
+                "geometry_id": "g23",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 3,
+                  "rank": 7
+                },
+                "to_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": 0,
+              "completed_depth": 3,
+              "termination_reason": "time_limit",
+              "nodes": 1489,
+              "evaluation_calls": 1288
+            }
+          },
+          {
+            "seed": 202610082122,
+            "opening": 0,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "same_terminal": false,
+            "common_prefix_plies": 1,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_030",
+                "geometry_id": "g22",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 3,
+                  "rank": 7
+                },
+                "to_square": {
+                  "file": 0,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": -200,
+              "completed_depth": 2,
+              "termination_reason": "completed_depth",
+              "nodes": 91,
+              "evaluation_calls": 69
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_032",
+                "geometry_id": "g23",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 3,
+                  "rank": 7
+                },
+                "to_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": 0,
+              "completed_depth": 3,
+              "termination_reason": "time_limit",
+              "nodes": 1434,
+              "evaluation_calls": 1237
+            }
+          },
+          {
+            "seed": 202610082122,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "same_terminal": false,
+            "common_prefix_plies": 3,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_012",
+                "geometry_id": "g14",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 4,
+                  "rank": 7
+                },
+                "to_square": {
+                  "file": 5,
+                  "rank": 6
+                },
+                "promotion_target_id": null
+              },
+              "score": -136,
+              "completed_depth": 2,
+              "termination_reason": "completed_depth",
+              "nodes": 122,
+              "evaluation_calls": 98
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_030",
+                "geometry_id": "g22",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 3,
+                  "rank": 7
+                },
+                "to_square": {
+                  "file": 0,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": 139,
+              "completed_depth": 3,
+              "termination_reason": "time_limit",
+              "nodes": 1336,
+              "evaluation_calls": 1139
+            }
+          },
+          {
+            "seed": 202610082122,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "same_terminal": true,
+            "common_prefix_plies": 0,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_012",
+                "geometry_id": "g14",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 3,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              },
+              "score": 0,
+              "completed_depth": 2,
+              "termination_reason": "completed_depth",
+              "nodes": 97,
+              "evaluation_calls": 71
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_030",
+                "geometry_id": "g22",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 0,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": 200,
+              "completed_depth": 3,
+              "termination_reason": "time_limit",
+              "nodes": 1581,
+              "evaluation_calls": 1363
+            }
+          },
+          {
+            "seed": 202610082122,
+            "opening": 4,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "same_terminal": true,
+            "common_prefix_plies": 0,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_012",
+                "geometry_id": "g14",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 3,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              },
+              "score": -98,
+              "completed_depth": 2,
+              "termination_reason": "completed_depth",
+              "nodes": 105,
+              "evaluation_calls": 79
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_030",
+                "geometry_id": "g22",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 0,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": 69,
+              "completed_depth": 3,
+              "termination_reason": "time_limit",
+              "nodes": 1540,
+              "evaluation_calls": 1306
+            }
+          },
+          {
+            "seed": 202610082122,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "same_terminal": true,
+            "common_prefix_plies": 0,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_012",
+                "geometry_id": "g14",
+                "actor_type_id": "K",
+                "from_square": {
+                  "file": 3,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              },
+              "score": 0,
+              "completed_depth": 2,
+              "termination_reason": "completed_depth",
+              "nodes": 97,
+              "evaluation_calls": 71
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_030",
+                "geometry_id": "g22",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 0,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": 200,
+              "completed_depth": 3,
+              "termination_reason": "time_limit",
+              "nodes": 1575,
+              "evaluation_calls": 1360
+            }
+          },
+          {
+            "seed": 202610082123,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "same_terminal": false,
+            "common_prefix_plies": 2,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_059",
+                "geometry_id": "g35",
+                "actor_type_id": "X",
+                "from_square": {
+                  "file": 1,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 1,
+                  "rank": 6
+                },
+                "promotion_target_id": null
+              },
+              "score": 0,
+              "completed_depth": 2,
+              "termination_reason": "completed_depth",
+              "nodes": 95,
+              "evaluation_calls": 69
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_000",
+                "geometry_id": "g0",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 2,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 4,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              },
+              "score": 200,
+              "completed_depth": 3,
+              "termination_reason": "time_limit",
+              "nodes": 1491,
+              "evaluation_calls": 1290
+            }
+          },
+          {
+            "seed": 202610082123,
+            "opening": 0,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "same_terminal": true,
+            "common_prefix_plies": 0,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_000",
+                "geometry_id": "g0",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              },
+              "score": -126,
+              "completed_depth": 2,
+              "termination_reason": "completed_depth",
+              "nodes": 83,
+              "evaluation_calls": 61
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_000",
+                "geometry_id": "g0",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 7,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": -34,
+              "completed_depth": 3,
+              "termination_reason": "time_limit",
+              "nodes": 1779,
+              "evaluation_calls": 1547
+            }
+          },
+          {
+            "seed": 202610082123,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "same_terminal": true,
+            "common_prefix_plies": 1,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_000",
+                "geometry_id": "g0",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 2,
+                  "rank": 6
+                },
+                "to_square": {
+                  "file": 0,
+                  "rank": 5
+                },
+                "promotion_target_id": null
+              },
+              "score": 56,
+              "completed_depth": 2,
+              "termination_reason": "completed_depth",
+              "nodes": 85,
+              "evaluation_calls": 63
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_002",
+                "geometry_id": "g1",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 2,
+                  "rank": 6
+                },
+                "to_square": {
+                  "file": 6,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": 126,
+              "completed_depth": 3,
+              "termination_reason": "time_limit",
+              "nodes": 1602,
+              "evaluation_calls": 1368
+            }
+          },
+          {
+            "seed": 202610082123,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "same_terminal": true,
+            "common_prefix_plies": 7,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_000",
+                "geometry_id": "g0",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 5,
+                  "rank": 6
+                },
+                "to_square": {
+                  "file": 1,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": 0,
+              "completed_depth": 1,
+              "termination_reason": "time_limit",
+              "nodes": 333,
+              "evaluation_calls": 310
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_036",
+                "geometry_id": "g25",
+                "actor_type_id": "P",
+                "from_square": {
+                  "file": 0,
+                  "rank": 6
+                },
+                "to_square": {
+                  "file": 1,
+                  "rank": 6
+                },
+                "promotion_target_id": null
+              },
+              "score": 0,
+              "completed_depth": 2,
+              "termination_reason": "time_limit",
+              "nodes": 515,
+              "evaluation_calls": 399
+            }
+          },
+          {
+            "seed": 202610082123,
+            "opening": 4,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "same_terminal": false,
+            "common_prefix_plies": 4,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_000",
+                "geometry_id": "g0",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 4,
+                  "rank": 2
+                },
+                "to_square": {
+                  "file": 6,
+                  "rank": 3
+                },
+                "promotion_target_id": null
+              },
+              "score": 108,
+              "completed_depth": 1,
+              "termination_reason": "time_limit",
+              "nodes": 258,
+              "evaluation_calls": 214
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_076",
+                "geometry_id": "g36",
+                "base_type_id": "X",
+                "to_square": {
+                  "file": 3,
+                  "rank": 3
+                }
+              },
+              "score": -126,
+              "completed_depth": 2,
+              "termination_reason": "time_limit",
+              "nodes": 903,
+              "evaluation_calls": 713
+            }
+          },
+          {
+            "seed": 202610082123,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "same_terminal": false,
+            "common_prefix_plies": 3,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_000",
+                "geometry_id": "g0",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 2,
+                  "rank": 6
+                },
+                "to_square": {
+                  "file": 0,
+                  "rank": 5
+                },
+                "promotion_target_id": null
+              },
+              "score": 4,
+              "completed_depth": 2,
+              "termination_reason": "completed_depth",
+              "nodes": 193,
+              "evaluation_calls": 163
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_000",
+                "geometry_id": "g0",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 3,
+                  "rank": 5
+                },
+                "to_square": {
+                  "file": 1,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": 246,
+              "completed_depth": 3,
+              "termination_reason": "time_limit",
+              "nodes": 1395,
+              "evaluation_calls": 1188
+            }
+          },
+          {
+            "seed": 202610082124,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "same_terminal": true,
+            "common_prefix_plies": 1
+          },
+          {
+            "seed": 202610082124,
+            "opening": 0,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "same_terminal": true,
+            "common_prefix_plies": 1
+          },
+          {
+            "seed": 202610082124,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "same_terminal": true,
+            "common_prefix_plies": 1
+          },
+          {
+            "seed": 202610082124,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "same_terminal": false,
+            "common_prefix_plies": 0,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_011",
+                "geometry_id": "g13",
+                "actor_type_id": "C",
+                "from_square": {
+                  "file": 4,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 7,
+                  "rank": 6
+                },
+                "promotion_target_id": null
+              },
+              "score": 200,
+              "completed_depth": 1,
+              "termination_reason": "time_limit",
+              "nodes": 277,
+              "evaluation_calls": 247
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_011",
+                "geometry_id": "g13",
+                "actor_type_id": "C",
+                "from_square": {
+                  "file": 4,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 7,
+                  "rank": 7
+                },
+                "promotion_target_id": null
+              },
+              "score": 200,
+              "completed_depth": 2,
+              "termination_reason": "time_limit",
+              "nodes": 1048,
+              "evaluation_calls": 924
+            }
+          },
+          {
+            "seed": 202610082124,
+            "opening": 4,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "same_terminal": true,
+            "common_prefix_plies": 0,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_013",
+                "geometry_id": "g14",
+                "actor_type_id": "C",
+                "from_square": {
+                  "file": 4,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 1,
+                  "rank": 6
+                },
+                "promotion_target_id": null
+              },
+              "score": 386,
+              "completed_depth": 1,
+              "termination_reason": "time_limit",
+              "nodes": 434,
+              "evaluation_calls": 412
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_013",
+                "geometry_id": "g14",
+                "actor_type_id": "C",
+                "from_square": {
+                  "file": 4,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 1,
+                  "rank": 7
+                },
+                "promotion_target_id": null
+              },
+              "score": -7,
+              "completed_depth": 2,
+              "termination_reason": "time_limit",
+              "nodes": 1019,
+              "evaluation_calls": 901
+            }
+          },
+          {
+            "seed": 202610082124,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "same_terminal": false,
+            "common_prefix_plies": 0,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_011",
+                "geometry_id": "g13",
+                "actor_type_id": "C",
+                "from_square": {
+                  "file": 4,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 7,
+                  "rank": 6
+                },
+                "promotion_target_id": null
+              },
+              "score": 200,
+              "completed_depth": 1,
+              "termination_reason": "time_limit",
+              "nodes": 275,
+              "evaluation_calls": 246
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_011",
+                "geometry_id": "g13",
+                "actor_type_id": "C",
+                "from_square": {
+                  "file": 4,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 7,
+                  "rank": 7
+                },
+                "promotion_target_id": null
+              },
+              "score": 200,
+              "completed_depth": 2,
+              "termination_reason": "time_limit",
+              "nodes": 958,
+              "evaluation_calls": 836
+            }
+          },
+          {
+            "seed": 202610082125,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "same_terminal": true,
+            "common_prefix_plies": 8,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_004",
+                "geometry_id": "g10",
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 3,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 5,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              },
+              "score": 0,
+              "completed_depth": 1,
+              "termination_reason": "time_limit",
+              "nodes": 288,
+              "evaluation_calls": 249
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_004",
+                "geometry_id": "g10",
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 4,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 6,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              },
+              "score": 0,
+              "completed_depth": 2,
+              "termination_reason": "time_limit",
+              "nodes": 872,
+              "evaluation_calls": 714
+            }
+          },
+          {
+            "seed": 202610082125,
+            "opening": 0,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "same_terminal": true,
+            "common_prefix_plies": 8,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_004",
+                "geometry_id": "g10",
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 3,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 5,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              },
+              "score": 381,
+              "completed_depth": 1,
+              "termination_reason": "time_limit",
+              "nodes": 331,
+              "evaluation_calls": 295
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_004",
+                "geometry_id": "g10",
+                "actor_type_id": "B",
+                "from_square": {
+                  "file": 4,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 6,
+                  "rank": 2
+                },
+                "promotion_target_id": null
+              },
+              "score": 257,
+              "completed_depth": 2,
+              "termination_reason": "time_limit",
+              "nodes": 819,
+              "evaluation_calls": 657
+            }
+          },
+          {
+            "seed": 202610082125,
+            "opening": 0,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "same_terminal": false,
+            "common_prefix_plies": 5,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_058",
+                "geometry_id": "g29",
+                "base_type_id": "A",
+                "to_square": {
+                  "file": 0,
+                  "rank": 2
+                }
+              },
+              "score": 166,
+              "completed_depth": 1,
+              "termination_reason": "time_limit",
+              "nodes": 397,
+              "evaluation_calls": 376
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_001",
+                "geometry_id": "g0",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 0,
+                  "rank": 7
+                },
+                "to_square": {
+                  "file": 0,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": -9,
+              "completed_depth": 2,
+              "termination_reason": "time_limit",
+              "nodes": 616,
+              "evaluation_calls": 502
+            }
+          },
+          {
+            "seed": 202610082125,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "same_terminal": false,
+            "common_prefix_plies": 3,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_002",
+                "geometry_id": "g1",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 0,
+                  "rank": 7
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": 0,
+              "completed_depth": 1,
+              "termination_reason": "time_limit",
+              "nodes": 209,
+              "evaluation_calls": 173
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_062",
+                "geometry_id": "g29",
+                "base_type_id": "X",
+                "to_square": {
+                  "file": 0,
+                  "rank": 2
+                }
+              },
+              "score": 0,
+              "completed_depth": 2,
+              "termination_reason": "time_limit",
+              "nodes": 1311,
+              "evaluation_calls": 1202
+            }
+          },
+          {
+            "seed": 202610082125,
+            "opening": 4,
+            "policies": [
+              "full",
+              "unit"
+            ],
+            "same_terminal": true,
+            "common_prefix_plies": 3,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_002",
+                "geometry_id": "g1",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 0,
+                  "rank": 7
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": 0,
+              "completed_depth": 1,
+              "termination_reason": "time_limit",
+              "nodes": 206,
+              "evaluation_calls": 170
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_062",
+                "geometry_id": "g29",
+                "base_type_id": "X",
+                "to_square": {
+                  "file": 0,
+                  "rank": 2
+                }
+              },
+              "score": 0,
+              "completed_depth": 2,
+              "termination_reason": "time_limit",
+              "nodes": 1435,
+              "evaluation_calls": 1328
+            }
+          },
+          {
+            "seed": 202610082125,
+            "opening": 4,
+            "policies": [
+              "unit",
+              "full"
+            ],
+            "same_terminal": true,
+            "common_prefix_plies": 5,
+            "cheap": {
+              "action": {
+                "pattern_id": "legacy_002",
+                "geometry_id": "g1",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 0,
+                  "rank": 7
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": 270,
+              "completed_depth": 1,
+              "termination_reason": "time_limit",
+              "nodes": 311,
+              "evaluation_calls": 282
+            },
+            "resource": {
+              "action": {
+                "pattern_id": "legacy_002",
+                "geometry_id": "g1",
+                "actor_type_id": "A",
+                "from_square": {
+                  "file": 3,
+                  "rank": 7
+                },
+                "to_square": {
+                  "file": 5,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              "score": -80,
+              "completed_depth": 2,
+              "termination_reason": "time_limit",
+              "nodes": 853,
+              "evaluation_calls": 667
+            }
+          }
+        ],
+        "first_action_divergences": 21,
+        "limits": "Changed resource changes permitted depth, nodes, wall time and warm-TT trajectory. No separate identification of depth versus time/caching, no action goodness claim."
+      },
+      "teacher_controls": {
+        "scope": "Warm/cold label control and bounded-node repeatability, scoped actual evidence.",
+        "warm_cold": {
+          "games": 8,
+          "seconds": 90.76197359990329,
+          "changed_labels": 0,
+          "first_action_divergences": 0,
+          "pairs": [
+            {
+              "seed": 202610082122,
+              "opening": 0,
+              "warm": "draw",
+              "cold": "draw",
+              "first_action_divergence": null
+            },
+            {
+              "seed": 202610082122,
+              "opening": 4,
+              "warm": "draw",
+              "cold": "draw",
+              "first_action_divergence": null
+            },
+            {
+              "seed": 202610082123,
+              "opening": 0,
+              "warm": "no_event_yet",
+              "cold": "no_event_yet",
+              "first_action_divergence": null
+            },
+            {
+              "seed": 202610082123,
+              "opening": 4,
+              "warm": "no_event_yet",
+              "cold": "no_event_yet",
+              "first_action_divergence": null
+            },
+            {
+              "seed": 202610082124,
+              "opening": 0,
+              "warm": "owner0_win",
+              "cold": "owner0_win",
+              "first_action_divergence": null
+            },
+            {
+              "seed": 202610082124,
+              "opening": 4,
+              "warm": "draw",
+              "cold": "draw",
+              "first_action_divergence": null
+            },
+            {
+              "seed": 202610082125,
+              "opening": 0,
+              "warm": "draw",
+              "cold": "draw",
+              "first_action_divergence": null
+            },
+            {
+              "seed": 202610082125,
+              "opening": 4,
+              "warm": "owner0_win",
+              "cold": "owner0_win",
+              "first_action_divergence": null
+            }
+          ]
+        },
+        "node_repeats": {
+          "games": 8,
+          "seconds": 197.00589470006526,
+          "plies": 382,
+          "termination_reasons": {
+            "completed_depth": 148,
+            "node_limit": 234
+          },
+          "completed_depths": {
+            "2": 148,
+            "1": 234
+          },
+          "matched_repeats": 4,
+          "changed_finite_events": 2,
+          "pairs": [
+            {
+              "seed": 202610082122,
+              "opening": 4,
+              "first_repeat": "draw",
+              "second_repeat": "draw",
+              "equal_actions": true,
+              "equal_full_states": true,
+              "equal_nonlatency_decisions_work": true,
+              "original_time_cold": "draw",
+              "changed_vs_original_cold": false,
+              "first_action_divergence_vs_original_cold": null,
+              "plies": 14
+            },
+            {
+              "seed": 202610082123,
+              "opening": 4,
+              "first_repeat": "no_event_yet",
+              "second_repeat": "no_event_yet",
+              "equal_actions": true,
+              "equal_full_states": true,
+              "equal_nonlatency_decisions_work": true,
+              "original_time_cold": "no_event_yet",
+              "changed_vs_original_cold": false,
+              "first_action_divergence_vs_original_cold": 7,
+              "plies": 96
+            },
+            {
+              "seed": 202610082124,
+              "opening": 4,
+              "first_repeat": "owner0_win",
+              "second_repeat": "owner0_win",
+              "equal_actions": true,
+              "equal_full_states": true,
+              "equal_nonlatency_decisions_work": true,
+              "original_time_cold": "draw",
+              "changed_vs_original_cold": true,
+              "first_action_divergence_vs_original_cold": 0,
+              "plies": 21
+            },
+            {
+              "seed": 202610082125,
+              "opening": 4,
+              "first_repeat": "draw",
+              "second_repeat": "draw",
+              "equal_actions": true,
+              "equal_full_states": true,
+              "equal_nonlatency_decisions_work": true,
+              "original_time_cold": "owner0_win",
+              "changed_vs_original_cold": true,
+              "first_action_divergence_vs_original_cold": 3,
+              "plies": 60
+            }
+          ]
+        },
+        "limits": "Four exposed opening4cells, two planned repeats each, no independent sample multiplication. Equal repeats establish only observed reproducibility. No eventual WDL or strength; wall headroom changes teacher despite unchanged node ceiling. The eight-cell no-label-change TT control does not prove cache independence elsewhere."
+      },
+      "fit": {
+        "scope": "Small predeclared four-class finite-policy event fit; not WDL or leaf utility.",
+        "complete": true,
+        "producer_sha256": "3b921e0c1cbc4d8741355474c8f57a6672a976b9733f0737eea9d53ff790e8e4",
+        "seconds": 0.036722999997437,
+        "metrics": {
+          "train": {
+            "games": 8,
+            "samples": 26,
+            "labels": [
+              0.125,
+              0.125,
+              0.5,
+              0.25
+            ],
+            "model": {
+              "brier": 0.16140167497535948,
+              "log_loss": 0.2740209355637869
+            },
+            "prior": {
+              "brier": 0.65625,
+              "log_loss": 1.2130075659799042
+            }
+          },
+          "dev": {
+            "games": 4,
+            "samples": 16,
+            "labels": [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "model": {
+              "brier": 0.6822785295415997,
+              "log_loss": 3.119386949823682
+            },
+            "prior": {
+              "brier": 0.34375,
+              "log_loss": 0.6931471805599453
+            }
+          },
+          "report": {
+            "games": 4,
+            "samples": 16,
+            "labels": [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "model": {
+              "brier": 1.543504400557005,
+              "log_loss": 16.35817373777025
+            },
+            "prior": {
+              "brier": 0.34375,
+              "log_loss": 0.6931471805599453
+            }
+          },
+          "202610082126": {
+            "games": 2,
+            "samples": 2,
+            "labels": [
+              0.5,
+              0.5,
+              0.0,
+              0.0
+            ],
+            "model": {
+              "brier": 0.1704923991766296,
+              "log_loss": 0.32035394951813106
+            },
+            "prior": {
+              "brier": 1.09375,
+              "log_loss": 2.0794415416798357
+            }
+          },
+          "202610082127": {
+            "games": 2,
+            "samples": 8,
+            "labels": [
+              0.0,
+              0.0,
+              0.5,
+              0.5
+            ],
+            "model": {
+              "brier": 0.21756805636907656,
+              "log_loss": 0.3266667709271112
+            },
+            "prior": {
+              "brier": 0.59375,
+              "log_loss": 1.0397207708399179
+            }
+          },
+          "202610082128": {
+            "games": 2,
+            "samples": 8,
+            "labels": [
+              0.0,
+              0.0,
+              0.5,
+              0.5
+            ],
+            "model": {
+              "brier": 0.13050087404528238,
+              "log_loss": 0.22301458189024184
+            },
+            "prior": {
+              "brier": 0.59375,
+              "log_loss": 1.0397207708399179
+            }
+          },
+          "202610082129": {
+            "games": 2,
+            "samples": 8,
+            "labels": [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "model": {
+              "brier": 0.12704537031044943,
+              "log_loss": 0.2260484399196635
+            },
+            "prior": {
+              "brier": 0.34375,
+              "log_loss": 0.6931471805599453
+            }
+          },
+          "202610082130": {
+            "games": 2,
+            "samples": 8,
+            "labels": [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "model": {
+              "brier": 1.2635923815036785,
+              "log_loss": 6.084159370279092
+            },
+            "prior": {
+              "brier": 0.34375,
+              "log_loss": 0.6931471805599453
+            }
+          },
+          "202610082131": {
+            "games": 2,
+            "samples": 8,
+            "labels": [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "model": {
+              "brier": 0.10096467757952089,
+              "log_loss": 0.15461452936827158
+            },
+            "prior": {
+              "brier": 0.34375,
+              "log_loss": 0.6931471805599453
+            }
+          },
+          "202610082132": {
+            "games": 2,
+            "samples": 8,
+            "labels": [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "model": {
+              "brier": 1.508024581317391,
+              "log_loss": 15.483655489269658
+            },
+            "prior": {
+              "brier": 0.34375,
+              "log_loss": 0.6931471805599453
+            }
+          },
+          "202610082133": {
+            "games": 2,
+            "samples": 8,
+            "labels": [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "model": {
+              "brier": 1.578984219796619,
+              "log_loss": 17.232691986270847
+            },
+            "prior": {
+              "brier": 0.34375,
+              "log_loss": 0.6931471805599453
+            }
+          }
+        },
+        "probability_log_floor": 1e-12,
+        "initialization": "deterministic zeros; no stochastic seed used",
+        "limitations": "Rule-disjoint exploratory split; finite96ply teacher event only. No terminal event yet is not draw or eventual WDL. Count/remaining inputs omit aux/spatial/history/teacher TT memory, all retained in executor. Labels belong to bounded time-limited teacher algorithm with warm per-player TT, not exact stationary policy. No model selection, refit or search deployment."
+      },
+      "paired_fit": {
+        "scope": "Predeclared paired small affine event fits, fresh rules and fixed budget.\nSigned269 versus signed+unsigned401. Neither model is selected or deployed.\n",
+        "complete": true,
+        "producer_sha256": "f39d56874a60edd75e0b6af8ec3e399c114761d8116550765c85a452f4e9f69d",
+        "declaration_sha256": "6b5d7bbcb740c040435006c0ef3e8ba32ede84aed0355b8624e8bb7fe725ec11",
+        "seconds": 3.244240399915725,
+        "fit_seconds": {
+          "signed269": 0.03179589984938502,
+          "context401": 0.03429370000958443
+        },
+        "metrics": {
+          "train": {
+            "games": 8,
+            "samples": 29,
+            "labels": [
+              0.125,
+              0.125,
+              0.625,
+              0.125
+            ],
+            "signed269": {
+              "brier": 0.17458642448430847,
+              "log_loss": 0.30560313945071854
+            },
+            "context401": {
+              "brier": 0.0010582515293611802,
+              "log_loss": 0.013890620367521927
+            },
+            "prior": {
+              "brier": 0.5625,
+              "log_loss": 1.073542846408523
+            }
+          },
+          "dev": {
+            "games": 4,
+            "samples": 11,
+            "labels": [
+              0.0,
+              0.75,
+              0.25,
+              0.0
+            ],
+            "signed269": {
+              "brier": 1.0115336827057848,
+              "log_loss": 3.907852149598632
+            },
+            "context401": {
+              "brier": 1.440069955734519,
+              "log_loss": 7.888767447845073
+            },
+            "prior": {
+              "brier": 0.9375,
+              "log_loss": 1.6770820635713106
+            }
+          },
+          "report": {
+            "games": 4,
+            "samples": 10,
+            "labels": [
+              0.5,
+              0.0,
+              0.5,
+              0.0
+            ],
+            "signed269": {
+              "brier": 0.7778096770564603,
+              "log_loss": 1.9315612867042324
+            },
+            "context401": {
+              "brier": 1.6195642100962817,
+              "log_loss": 2.7250746885686237
+            },
+            "prior": {
+              "brier": 0.6875,
+              "log_loss": 1.2747225854627855
+            }
+          },
+          "202610082134": {
+            "games": 2,
+            "samples": 8,
+            "labels": [
+              0.0,
+              0.0,
+              0.5,
+              0.5
+            ],
+            "signed269": {
+              "brier": 0.1747539208333188,
+              "log_loss": 0.34177010026251065
+            },
+            "context401": {
+              "brier": 0.003392490347826162,
+              "log_loss": 0.028530142104062847
+            },
+            "prior": {
+              "brier": 0.6875,
+              "log_loss": 1.2747225854627857
+            }
+          },
+          "202610082135": {
+            "games": 2,
+            "samples": 5,
+            "labels": [
+              0.5,
+              0.5,
+              0.0,
+              0.0
+            ],
+            "signed269": {
+              "brier": 0.2879459980389375,
+              "log_loss": 0.4599734166505236
+            },
+            "context401": {
+              "brier": 9.688399594967242e-05,
+              "log_loss": 0.005376291346861824
+            },
+            "prior": {
+              "brier": 1.1875,
+              "log_loss": 2.0794415416798357
+            }
+          },
+          "202610082136": {
+            "games": 2,
+            "samples": 8,
+            "labels": [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "signed269": {
+              "brier": 0.11426919030737318,
+              "log_loss": 0.2149682850208509
+            },
+            "context401": {
+              "brier": 0.00015730483776484302,
+              "log_loss": 0.007659407938389408
+            },
+            "prior": {
+              "brier": 0.1875,
+              "log_loss": 0.4700036292457356
+            }
+          },
+          "202610082137": {
+            "games": 2,
+            "samples": 8,
+            "labels": [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "signed269": {
+              "brier": 0.12137658875760429,
+              "log_loss": 0.2057007558689889
+            },
+            "context401": {
+              "brier": 0.0005863269359040434,
+              "log_loss": 0.013996640080773635
+            },
+            "prior": {
+              "brier": 0.1875,
+              "log_loss": 0.4700036292457356
+            }
+          },
+          "202610082138": {
+            "games": 2,
+            "samples": 5,
+            "labels": [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "signed269": {
+              "brier": 1.023075513732197,
+              "log_loss": 3.0173943841920154
+            },
+            "context401": {
+              "brier": 1.9140605686566028,
+              "log_loss": 6.650705253396168
+            },
+            "prior": {
+              "brier": 1.1875,
+              "log_loss": 2.0794415416798357
+            }
+          },
+          "202610082139": {
+            "games": 2,
+            "samples": 6,
+            "labels": [
+              0.0,
+              0.5,
+              0.5,
+              0.0
+            ],
+            "signed269": {
+              "brier": 0.9999918516793727,
+              "log_loss": 4.798309915005249
+            },
+            "context401": {
+              "brier": 0.966079342812435,
+              "log_loss": 9.126829642293977
+            },
+            "prior": {
+              "brier": 0.6875,
+              "log_loss": 1.2747225854627857
+            }
+          },
+          "202610082140": {
+            "games": 2,
+            "samples": 2,
+            "labels": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "signed269": {
+              "brier": 1.3374816308968167,
+              "log_loss": 3.491336827943964
+            },
+            "context401": {
+              "brier": 1.4387614775191184,
+              "log_loss": 2.394813070223458
+            },
+            "prior": {
+              "brier": 1.1875,
+              "log_loss": 2.0794415416798357
+            }
+          },
+          "202610082141": {
+            "games": 2,
+            "samples": 8,
+            "labels": [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "signed269": {
+              "brier": 0.21813772321610383,
+              "log_loss": 0.3717857454645003
+            },
+            "context401": {
+              "brier": 1.8003669426734452,
+              "log_loss": 3.05533630691379
+            },
+            "prior": {
+              "brier": 0.1875,
+              "log_loss": 0.4700036292457356
+            }
+          }
+        },
+        "log_floor": 1e-12,
+        "limits": "Two-class absence may limit discrimination. No outcome-based extension to balance classes; preserve all caps. New input axes can remove known alias without improving useful generalization. Full generated rule target remains broader than this scoped family."
+      },
+      "forward": {
+        "scope": "Replay every actual game state and verify four-head folding, no search fit.",
+        "states_checked": 795,
+        "max_logit_error": 2.1316282072803006e-13,
+        "max_probability_error": 2.6145752229922437e-14,
+        "seconds": 10.39927940024063,
+        "model_sha256": "4d26d09b8c431fdf87db31fb1e64b0bf042db4af88845f8b4028cd32a960fed3",
+        "all_full_state_history_replays_match": true,
+        "limits": "Numerical equivalence only; unknown eventual WDL remains unknown; no utility or performance claim."
+      },
+      "input_ceiling": {
+        "scope": "Post-result exact numerical alias floor for the declared four-event task.\nDescriptive unconstrained class oracle, not a fitted deployed predictor, linear\ncapacity bound, new validation score or invitation to fit exposed report labels.\nExact float bytes only; near-equal ungrouped inputs can hide further aliases.\nSpatial moments are existing features, not full aux/history/rule representation.\n",
+        "rows": [
+          {
+            "scope": "all",
+            "input": "count_remaining",
+            "rows": 58,
+            "distinct_exact_vectors": 53,
+            "empirical_brier_floor": 0.025000000000000005,
+            "conflicting_groups": [
+              {
+                "rows": [
+                  10,
+                  26,
+                  34,
+                  42,
+                  50
+                ],
+                "labels": [
+                  3,
+                  2,
+                  2,
+                  2,
+                  2
+                ],
+                "weight": 0.078125
+              }
+            ]
+          },
+          {
+            "scope": "all",
+            "input": "moments_remaining",
+            "rows": 58,
+            "distinct_exact_vectors": 58,
+            "empirical_brier_floor": 0.0,
+            "conflicting_groups": []
+          },
+          {
+            "scope": "train",
+            "input": "count_remaining",
+            "rows": 26,
+            "distinct_exact_vectors": 26,
+            "empirical_brier_floor": 0.0,
+            "conflicting_groups": []
+          },
+          {
+            "scope": "train",
+            "input": "moments_remaining",
+            "rows": 26,
+            "distinct_exact_vectors": 26,
+            "empirical_brier_floor": 0.0,
+            "conflicting_groups": []
+          },
+          {
+            "scope": "dev",
+            "input": "count_remaining",
+            "rows": 16,
+            "distinct_exact_vectors": 15,
+            "empirical_brier_floor": 0.0,
+            "conflicting_groups": []
+          },
+          {
+            "scope": "dev",
+            "input": "moments_remaining",
+            "rows": 16,
+            "distinct_exact_vectors": 16,
+            "empirical_brier_floor": 0.0,
+            "conflicting_groups": []
+          },
+          {
+            "scope": "report",
+            "input": "count_remaining",
+            "rows": 16,
+            "distinct_exact_vectors": 14,
+            "empirical_brier_floor": 0.0,
+            "conflicting_groups": []
+          },
+          {
+            "scope": "report",
+            "input": "moments_remaining",
+            "rows": 16,
+            "distinct_exact_vectors": 16,
+            "empirical_brier_floor": 0.0,
+            "conflicting_groups": []
+          }
+        ]
+      },
+      "context_alias": {
+        "scope": "Diagnose balanced signed-count context loss without fitting exposed labels.\nAppend untrained unsigned current/base mechanical actor totals (132 axes).\nThis asks whether the observed cross-rule exact alias loses rule/stock context,\nnot whether these axes improve prediction. All auxiliary/history exclusions\nremain. Verify type-name renaming on actual recorded early trajectories.\n",
+        "rows": 58,
+        "augmented_axes": 401,
+        "distinct_exact_vectors": 58,
+        "empirical_brier_floor": 0.0,
+        "conflicting_groups": [],
+        "old_aliases": [
+          {
+            "records": [
+              {
+                "game": 4,
+                "seed": 202610082128,
+                "opening": 0,
+                "snapshot": 0,
+                "group": "train",
+                "label": 3
+              },
+              {
+                "game": 8,
+                "seed": 202610082130,
+                "opening": 0,
+                "snapshot": 0,
+                "group": "dev",
+                "label": 2
+              },
+              {
+                "game": 10,
+                "seed": 202610082131,
+                "opening": 0,
+                "snapshot": 0,
+                "group": "dev",
+                "label": 2
+              },
+              {
+                "game": 12,
+                "seed": 202610082132,
+                "opening": 0,
+                "snapshot": 0,
+                "group": "report",
+                "label": 2
+              },
+              {
+                "game": 14,
+                "seed": 202610082133,
+                "opening": 0,
+                "snapshot": 0,
+                "group": "report",
+                "label": 2
+              }
+            ],
+            "signed_input_equal": true,
+            "unsigned_distinct": 5,
+            "unsigned_l2": [
+              [
+                0.0,
+                17.642260336751352,
+                18.039413592025678,
+                4.010300322831455,
+                16.659692118729005
+              ],
+              [
+                17.642260336751352,
+                0.0,
+                3.003704086890634,
+                16.904241444553758,
+                33.35088407205009
+              ],
+              [
+                18.039413592025678,
+                3.003704086890634,
+                0.0,
+                16.910305784893815,
+                33.60555921038869
+              ],
+              [
+                4.010300322831455,
+                16.904241444553758,
+                16.910305784893815,
+                0.0,
+                16.817832461237884
+              ],
+              [
+                16.659692118729005,
+                33.35088407205009,
+                33.60555921038869,
+                16.817832461237884,
+                0.0
+              ]
+            ]
+          }
+        ],
+        "type_rename_max_error": 0,
+        "actual_early_trajectory_renames_checked": true,
+        "seconds": 5.484245500061661,
+        "decision": "Untrained rule/stock context probe only; no new model, refit or utility deployment. Lack of exact aliases does not imply learnability or complete semantics."
+      },
+      "support": {
+        "scope": "Descriptive support/overconfidence audit of fixed fits; no retuning or causality.",
+        "rows": [
+          {
+            "study": "policy-event-20261010",
+            "arm": "signed269",
+            "group": "train",
+            "samples": 26,
+            "train_design_columns": 224,
+            "train_design_rank": 10,
+            "wrong_argmax_weight": 0.125,
+            "wrong_confidence_over_90_weight": 0.0,
+            "true_class_probability": 0.8254954868990164,
+            "rows_outside_coordinate_range": 0,
+            "rows_outside_affine_hull": 0,
+            "max_affine_residual": 4.1542234654137006e-14,
+            "rows_with_changed_ignored_train_constant": 0
+          },
+          {
+            "study": "policy-event-20261010",
+            "arm": "signed269",
+            "group": "dev",
+            "samples": 16,
+            "train_design_columns": 224,
+            "train_design_rank": 10,
+            "wrong_argmax_weight": 0.4375,
+            "wrong_confidence_over_90_weight": 0.25,
+            "true_class_probability": 0.5999572631828904,
+            "rows_outside_coordinate_range": 10,
+            "rows_outside_affine_hull": 14,
+            "max_affine_residual": 29.1882176606545,
+            "rows_with_changed_ignored_train_constant": 0
+          },
+          {
+            "study": "policy-event-20261010",
+            "arm": "signed269",
+            "group": "report",
+            "samples": 16,
+            "train_design_columns": 224,
+            "train_design_rank": 10,
+            "wrong_argmax_weight": 0.875,
+            "wrong_confidence_over_90_weight": 0.5625,
+            "true_class_probability": 0.12581795060561335,
+            "rows_outside_coordinate_range": 10,
+            "rows_outside_affine_hull": 12,
+            "max_affine_residual": 29.877188749401128,
+            "rows_with_changed_ignored_train_constant": 0
+          },
+          {
+            "study": "policy-context-20261010",
+            "arm": "signed269",
+            "group": "train",
+            "samples": 29,
+            "train_design_columns": 224,
+            "train_design_rank": 16,
+            "wrong_argmax_weight": 0.125,
+            "wrong_confidence_over_90_weight": 0.0,
+            "true_class_probability": 0.7997866842668913,
+            "rows_outside_coordinate_range": 0,
+            "rows_outside_affine_hull": 0,
+            "max_affine_residual": 5.0225407956557964e-14,
+            "rows_with_changed_ignored_train_constant": 0
+          },
+          {
+            "study": "policy-context-20261010",
+            "arm": "signed269",
+            "group": "dev",
+            "samples": 11,
+            "train_design_columns": 224,
+            "train_design_rank": 16,
+            "wrong_argmax_weight": 0.5625,
+            "wrong_confidence_over_90_weight": 0.1875,
+            "true_class_probability": 0.32533220589171896,
+            "rows_outside_coordinate_range": 3,
+            "rows_outside_affine_hull": 4,
+            "max_affine_residual": 5.961661002784206,
+            "rows_with_changed_ignored_train_constant": 1
+          },
+          {
+            "study": "policy-context-20261010",
+            "arm": "signed269",
+            "group": "report",
+            "samples": 10,
+            "train_design_columns": 224,
+            "train_design_rank": 16,
+            "wrong_argmax_weight": 0.625,
+            "wrong_confidence_over_90_weight": 0.0,
+            "true_class_probability": 0.4235421874378947,
+            "rows_outside_coordinate_range": 0,
+            "rows_outside_affine_hull": 1,
+            "max_affine_residual": 0.5245373077915958,
+            "rows_with_changed_ignored_train_constant": 0
+          },
+          {
+            "study": "policy-context-20261010",
+            "arm": "context401",
+            "group": "train",
+            "samples": 29,
+            "train_design_columns": 334,
+            "train_design_rank": 22,
+            "wrong_argmax_weight": 0.0,
+            "wrong_confidence_over_90_weight": 0.0,
+            "true_class_probability": 0.9864336291269385,
+            "rows_outside_coordinate_range": 0,
+            "rows_outside_affine_hull": 0,
+            "max_affine_residual": 5.4917934466494216e-14,
+            "rows_with_changed_ignored_train_constant": 0
+          },
+          {
+            "study": "policy-context-20261010",
+            "arm": "context401",
+            "group": "dev",
+            "samples": 11,
+            "train_design_columns": 334,
+            "train_design_rank": 22,
+            "wrong_argmax_weight": 0.75,
+            "wrong_confidence_over_90_weight": 0.625,
+            "true_class_probability": 0.25148473819885997,
+            "rows_outside_coordinate_range": 11,
+            "rows_outside_affine_hull": 11,
+            "max_affine_residual": 9.91327145731474,
+            "rows_with_changed_ignored_train_constant": 6
+          },
+          {
+            "study": "policy-context-20261010",
+            "arm": "context401",
+            "group": "report",
+            "samples": 10,
+            "train_design_columns": 334,
+            "train_design_rank": 22,
+            "wrong_argmax_weight": 1.0,
+            "wrong_confidence_over_90_weight": 0.75,
+            "true_class_probability": 0.10518716789170723,
+            "rows_outside_coordinate_range": 2,
+            "rows_outside_affine_hull": 10,
+            "max_affine_residual": 7.618630267858638,
+            "rows_with_changed_ignored_train_constant": 0
+          }
+        ],
+        "decision": "Observed alias removal and tiny training loss do not establish transfer. Retain prior and frozen adverse fits; no calibration/hyperparameter change on dev/report. More complete input or data are hypotheses, not inferred cures.",
+        "limits": "Coordinate/hull novelty and errors coexist; this audit does not identify a causal source of loss or a sufficient model/domain. Projection uses actual selected training-normalized features; ignored constants separately counted."
+      },
+      "caller": {
+        "scope": "Descriptive scoring-discard cost; exact work controls, no utility inference.",
+        "compared_fields": [
+          "action",
+          "aspiration_fail_high",
+          "aspiration_fail_low",
+          "aspiration_researches",
+          "beta_cutoffs",
+          "capture_qactions",
+          "checking_drop_qactions",
+          "checking_move_qactions",
+          "choice_kind",
+          "completed_depth",
+          "countermove_hits",
+          "declaration",
+          "declaration_checks",
+          "declaration_restart_options",
+          "declaration_root_selected",
+          "declaration_win_options",
+          "evaluation_calls",
+          "evaluation_profile_cache_hit",
+          "in_check_qnodes",
+          "legal_actions_generated",
+          "legal_generation_calls",
+          "mate_pruning_cutoffs",
+          "material_change_qactions",
+          "move_picker_generated",
+          "move_picker_yielded",
+          "move_picker_yielded_by_stage",
+          "native_legality_calls",
+          "native_legality_fallbacks",
+          "native_legality_operational_failures",
+          "nodes",
+          "nonchecking_drop_excluded",
+          "ordered_moves",
+          "ordering_calls",
+          "position_key_cache_hits",
+          "position_keys_computed",
+          "principal_variation",
+          "promotion_qactions",
+          "pvs_null_window_searches",
+          "pvs_researches",
+          "qdepth_cutoffs",
+          "qnodes",
+          "qsearch_budget_aborts",
+          "qsearch_check_hard_limit_aborts",
+          "root_scan_nodes",
+          "root_scan_used_fallback",
+          "score",
+          "selective_depth",
+          "stand_pat_cutoffs",
+          "successor_handles_created",
+          "successors_materialized",
+          "successors_searched",
+          "terminal_cache_hits",
+          "terminal_results_computed",
+          "termination_reason",
+          "tt_cutoffs",
+          "tt_hits",
+          "tt_probes"
+        ],
+        "arms": {
+          "unit": {
+            "calls": 16,
+            "seconds": 26.96258020028472,
+            "evaluation_seconds": 0.104988525621593,
+            "nodes": 32238,
+            "evaluation_calls": 27865,
+            "stops": {
+              "node_limit": 15,
+              "completed_depth": 1
+            }
+          },
+          "encoder_discard": {
+            "calls": 16,
+            "seconds": 30.390727199614048,
+            "evaluation_seconds": 3.176785117480904,
+            "nodes": 32238,
+            "evaluation_calls": 27865,
+            "stops": {
+              "node_limit": 15,
+              "completed_depth": 1
+            }
+          },
+          "folded_discard": {
+            "calls": 16,
+            "seconds": 27.732956699095666,
+            "evaluation_seconds": 0.7666096221655607,
+            "nodes": 32238,
+            "evaluation_calls": 27865,
+            "stops": {
+              "node_limit": 15,
+              "completed_depth": 1
+            }
+          }
+        },
+        "matched_work_pairs": 32,
+        "median_wall_ratios": {
+          "encoder_discard": 1.131995615295452,
+          "folded_discard": 1.0302602459674297
+        },
+        "limits": "Cold rotated-arm local timings; categories overlap, constructor not benchmarked, probabilities discarded. Hypothetical96remaining fixed for cost, no live target/leaf semantics or playing gain."
+      },
+      "capability_trace": {
+        "scope": "Trace one supported pooled-input alias to existing compiled dependencies.\nThis is a resolved provenance table, not a feature encoder, legality replacement\nor utility improvement. Keep region and precondition linked instead of pooling\neach independently. It does not cover all rule effects/history semantics.\n",
+        "rows": [
+          {
+            "pattern_id": "sem_00_drop_left",
+            "actor_descriptors": [
+              [
+                1.0,
+                0.0546875,
+                0.0,
+                0.037582225166261196,
+                0.0026844446547329426,
+                0.025783896446228027,
+                0.004297316074371338,
+                0.01756322104483843,
+                0.0052689663134515285,
+                0.0117340087890625,
+                0.00586700439453125,
+                0.0546875,
+                0.0546875,
+                1.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.004,
+                0.512,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "guards": [
+              {
+                "comparison": "eq",
+                "value": 0,
+                "slot": {
+                  "slot_id": 0,
+                  "value_kind": "bool",
+                  "scope": "global",
+                  "lifetime": "persistent",
+                  "initial": 0
+                }
+              }
+            ],
+            "regions": [
+              {
+                "square_ref": {
+                  "kind": "target",
+                  "square": null,
+                  "offset": null,
+                  "owner_relative": true,
+                  "step": null,
+                  "slot_id": null
+                },
+                "relation": "inside",
+                "owner_relative": false,
+                "squares": [
+                  17,
+                  25,
+                  33,
+                  41
+                ]
+              }
+            ],
+            "effects": [
+              {
+                "kind": "remove_from_hand",
+                "from_ref": null,
+                "to_ref": null,
+                "square_ref": null,
+                "piece_owner": "self",
+                "piece_type_ref": {
+                  "kind": "action_base",
+                  "type_id": null
+                },
+                "disposition": null,
+                "slot_id": null,
+                "type_ref": null,
+                "count": 1,
+                "value": null
+              },
+              {
+                "kind": "place",
+                "from_ref": null,
+                "to_ref": {
+                  "kind": "target",
+                  "square": null,
+                  "offset": null,
+                  "owner_relative": true,
+                  "step": null,
+                  "slot_id": null
+                },
+                "square_ref": null,
+                "piece_owner": "self",
+                "piece_type_ref": {
+                  "kind": "action_base",
+                  "type_id": null
+                },
+                "disposition": null,
+                "slot_id": null,
+                "type_ref": null,
+                "count": 1,
+                "value": null
+              }
+            ],
+            "other_state_guards": [
+              {
+                "aggregation": "count",
+                "owner": "self",
+                "type_ref": {
+                  "kind": "action_base",
+                  "type_id": null
+                },
+                "compare_field": "base",
+                "promoted": "no",
+                "location": "board",
+                "spatial": {
+                  "kind": "same_file",
+                  "refs": [
+                    {
+                      "kind": "target",
+                      "square": null,
+                      "offset": null,
+                      "owner_relative": true,
+                      "step": null,
+                      "slot_id": null
+                    }
+                  ],
+                  "zone_id": null
+                },
+                "comparison": "eq",
+                "value": 0,
+                "subject_ref": null
+              }
+            ],
+            "target": {
+              "kind": "target_empty"
+            }
+          },
+          {
+            "pattern_id": "sem_01_drop_right",
+            "actor_descriptors": [
+              [
+                1.0,
+                0.0546875,
+                0.0,
+                0.037582225166261196,
+                0.0026844446547329426,
+                0.025783896446228027,
+                0.004297316074371338,
+                0.01756322104483843,
+                0.0052689663134515285,
+                0.0117340087890625,
+                0.00586700439453125,
+                0.0546875,
+                0.0546875,
+                1.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.004,
+                0.512,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "guards": [
+              {
+                "comparison": "eq",
+                "value": 1,
+                "slot": {
+                  "slot_id": 0,
+                  "value_kind": "bool",
+                  "scope": "global",
+                  "lifetime": "persistent",
+                  "initial": 0
+                }
+              }
+            ],
+            "regions": [
+              {
+                "square_ref": {
+                  "kind": "target",
+                  "square": null,
+                  "offset": null,
+                  "owner_relative": true,
+                  "step": null,
+                  "slot_id": null
+                },
+                "relation": "inside",
+                "owner_relative": false,
+                "squares": [
+                  22,
+                  30,
+                  38,
+                  46
+                ]
+              }
+            ],
+            "effects": [
+              {
+                "kind": "remove_from_hand",
+                "from_ref": null,
+                "to_ref": null,
+                "square_ref": null,
+                "piece_owner": "self",
+                "piece_type_ref": {
+                  "kind": "action_base",
+                  "type_id": null
+                },
+                "disposition": null,
+                "slot_id": null,
+                "type_ref": null,
+                "count": 1,
+                "value": null
+              },
+              {
+                "kind": "place",
+                "from_ref": null,
+                "to_ref": {
+                  "kind": "target",
+                  "square": null,
+                  "offset": null,
+                  "owner_relative": true,
+                  "step": null,
+                  "slot_id": null
+                },
+                "square_ref": null,
+                "piece_owner": "self",
+                "piece_type_ref": {
+                  "kind": "action_base",
+                  "type_id": null
+                },
+                "disposition": null,
+                "slot_id": null,
+                "type_ref": null,
+                "count": 1,
+                "value": null
+              }
+            ],
+            "other_state_guards": [
+              {
+                "aggregation": "count",
+                "owner": "self",
+                "type_ref": {
+                  "kind": "action_base",
+                  "type_id": null
+                },
+                "compare_field": "base",
+                "promoted": "no",
+                "location": "board",
+                "spatial": {
+                  "kind": "same_file",
+                  "refs": [
+                    {
+                      "kind": "target",
+                      "square": null,
+                      "offset": null,
+                      "owner_relative": true,
+                      "step": null,
+                      "slot_id": null
+                    }
+                  ],
+                  "zone_id": null
+                },
+                "comparison": "eq",
+                "value": 0,
+                "subject_ref": null
+              }
+            ],
+            "target": {
+              "kind": "target_empty"
+            }
+          }
+        ],
+        "original_264_alias": true,
+        "active_linked_regions_distinguish": true,
+        "actual_four_drop_destinations_verified_per_gate": true,
+        "decision": "Retain pattern-to-precondition-to-region/effect linkage in any future scoped adapter; no extra model or task backlog."
+      }
+    }
   }
 }
