@@ -403,7 +403,7 @@ retain their exposed status; they do not extend or overwrite the frozen cohort.
 Stop automatic source-kernel/horizon expansion. Next compare a finite decision
 target preserving actual promotion/auxiliary effects, or a scoped state-feature
 ablation, rather than infer deployment benefit from same-source substitution.
-No training/refit/default or strong general claim follows. The35relative-member
+No training/refit/default or strong general claim follows. The38relative-member
 finite-source supplement under data/qfrontier_20261009.json preserves exact
 rules/routes/tables, producers, raw failures and pins. A fresh isolated restore
 checks every member/hash/containment and independently recomputes56exact physical
@@ -432,7 +432,7 @@ optimal sets. Two preselected D3 target checks preserve the originalD2 evidence:
 score is200; v3's same selected action has loss0, both source candidates and
 the frozen learned constant action loss200. This one completed root does not
 identify true value or eliminate all farther effects. No automatic deeper front
-or refit follows. Final isolated recovery verifies35raw members,56exact physical
+or refit follows. Final isolated recovery verifies38raw members,56exact physical
 fractions,408selected-arm arithmetic records and48reference loss/hit records;
 actual timings remain measured locally, not reproduced by restoration.
 
@@ -445,3 +445,10 @@ common old hand prices are further deployment approximations. Thus its6/12hits
 do not establish failure of the full predictor, all learned constants or generic
 state interactions. The audit makes no fit and does not put that predictor in
 live search. Retain this distinction when selecting the next comparison.
+
+A next predeclared same-input audit ranks all744legal children of those12roots
+with unchanged original predictor versus its raw current-board proxy, in the
+same direct-ranking protocol. Four root chosen sets differ; all child terminal
+statuses are retained and ongoing in this cohort. This isolates projection
+sensitivity, not a comparison of direct ranking against D2leaf search or a
+gain. No fit or automatic predictor deployment follows.
