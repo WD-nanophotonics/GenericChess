@@ -472,3 +472,112 @@ bound-teacher-index.json (three separately verified supplement members), under
 docs/archive/search_compression_20261009. Detailed costs, failures, all roots and
 UNKNOWNs are routed by data/search_compression_20261009.json. Live defaults are
 unchanged; no human labels or Xiangqi holdout were read.
+
+## Fresh partial-preference coverage and fixed same-input fits
+
+A separately frozen cohort uses32fresh whole trajectories1600..1631 on the
+same four full8x8rules, two roots per trajectory:64roots/3155children. All routes
+and legal children precede teacher queries. Full childD2 lexical/noTT references
+complete3133children;22caps stay UNKNOWN. There are57complete frontiers, six
+incomplete frontiers and one empty terminal root, which receives no artificial
+zero-regret credit. Full-history GameSession semantics remain in every search.
+The complete-root D3value is audited against the normalized child frontier.
+
+|Partial Core D3 budget|Search plus probe seconds|Completed roots|Usable optimal/inferior pair roots|Optimal / inferior / UNKNOWN|
+|---|---:|---:|---:|---|
+|2048nodes,5seconds|120.41|21|17|21 /447 /2687|
+|8192nodes,5seconds|160.45|60|56|61 /2323 /771|
+
+The full child references cost1371.55seconds; the whole producer finishes in
+1696.86seconds. Qualified depth2 TT bounds are reversed into root perspective
+and mate-distance normalized. A noncompleted root supplies only UNKNOWNs;
+one-sided/cooptimal uncertainty is not a negative label. One/ six certified
+labels respectively lack a complete independent child reference; retain these
+unchecked denominators. The8192usable-root count is56, correcting the initial
+57summary. These are finite-search preferences, not WDL certificates.
+
+An exposed eight-root cost attribution reuses the same child depth, evaluator,
+2048nodes/1second and histories with TT+ordering. Lexical child calls total184.46
+seconds versus165.15ordered, but one root loses coverage:72/79versus64/79children
+complete. All411children completed by both have identical scores. Configuration
+helps cost modestly here and can worsen caps; it does not explain the whole
+partial-label saving or prove a universal cost ratio. Original conditions and
+failures stay intact; no reference or training target is replaced.
+
+Three predeclared tiny fits differ only in full versus certified partial
+supervision. All use268count axes,224train-variable columns, common normalization
+from all legal training inputs, root-balanced margin1,300Adam steps and the
+same seed. Full/partial2048/partial8192have28/5/28usable training roots and take
+0.351/0.031/0.056seconds. UNKNOWNs never become negatives; complete full labels
+accept all cooptimal actions. All three have identical development/report root
+choices:3/16known development roots and4/13known report roots retain positive
+finite-reference regret, including large mate-scale errors. Three report roots
+remain unknown. This is no reason to expand capacity or promote a model.
+
+All504actual root-rank calls retain the frozen choices, with two balanced
+repetitions per method and every nonempty root. Median end-to-end times are
+0.245/0.241/0.247/0.246seconds for Unit/full/partial2048/partial8192; successor
+construction dominates, so small fit time is not deployment cost. The63cold
+Unit-search controls use each root's median full-rank time, keeping caps:
+positive-regret counts are3/16development and2/13report, versus3/16and4/13for
+all learned ranks and5/16and6/13for Unit greedy. These counts and resource curves
+are scoped diagnostics, not equivalence of error severity, calibration or strength.
+
+A post-result exact inventory-class oracle exposes an input limit. Any truly
+count-only rank with uniform class ties has irreducible regret on two development
+and two report roots. For1617/16the ceiling is2000and the model also2000; for
+1616/7the ceiling is1500while the model is2000. Large mate errors elsewhere have
+ceiling0, so missing position information does not excuse all failures. The
+oracle uses observed references only descriptively, never as a fitted predictor
+or new admission gate. All model outputs remain unchanged.
+
+Decision: retain the8192partial teacher as a cheaper scoped data option, defer
+further Unit-compression fits without a decision-changing premise, and compare
+the already frozen learned constants with existing independent physical-task
+rewards before claiming rule-price usefulness. This exposed diagnostic must not
+fit those task labels or turn them into held-out evidence. Sources, caps,
+preparation failures, three models and read-only restoration are routed through
+partial-preference-index.json under docs/archive/search_compression_20261009.
+Teachers keep the original numeric TT ordering; a separately documented ordering
+contract repair does not retroactively change these data.
+
+That target distinction now has a read-only check on all886existing8x8common
+slots, with original17background/equal-slot weights, every type and both
+immediate/one-reply ordinary-removal rewards. The frozen count models factor
+into signed current-plus-base constants for the unpromoted focal replacement;
+hand/promotion/side offsets are kept separate. No task label is fitted. Exact
+static top/pair/immediate/reply summaries match24original metrics. Full and
+partial8192keep all four static highest-type choices; partial2048switches one
+rule from A to B and worsens both tasks. Full changes one pair order beneficially;
+partial8192improves immediate pair losses in two rules but worsens a one-reply
+pair loss in one. This mixed exposed diagnostic supports neither universal
+prices nor further automatic compression fits. Use a prospectively frozen new
+rule sample for the next fixed-predictor task check, not these labels for tuning.
+
+Two preselected new generator seeds2104/2105 now supply that check. Rules,16ply
+routes and all five existing predictor tables were frozen before task queries;
+no seed replacement, fitting or model selection. Both complete all17backgrounds:
+442slots/2210type cells,5855focal transitions, with297all-zero slots retained.
+Every cell is independently replayed through Core/Native legal-action sets and
+full child-state identity; both rule fingerprints differ from the training rules.
+The primary task takes3.57/1.47seconds; parity replay6.27seconds. It remains a
+counterfactual immediate-removal task excluding anchor/history/future service,
+not a whole-rule value or strength measure.
+
+|New rule|Static top / loss|Full top / loss|Partial2048top / loss|Partial8192top / loss|
+|---|---|---|---|---|
+|2104|C /799/5148|C /799/5148|B /21/1870|C /799/5148|
+|2105|X /977/46410|X /977/46410|X /977/46410|X /977/46410|
+
+The previously adverse low-budget constants improve2104top loss substantially;
+this does not justify selecting that model after inspecting the new outcomes.
+Its B-over-C reward contrast is positive in13backgrounds, negative in one,
+positive in all four early/late-owner strata, and remains positive after removing
+any one background. These dependent influence ranges are not confidence intervals.
+Complete pair ordering differs again: full improves2104, partial8192worsens it;
+2105is mostly sparse with237/246all-zero slots. The result distinguishes price
+usefulness from Unit-regret without converting one task into universal calibration.
+Next explain the observed2104C/B mismatch using existing opportunity/source/
+legal-removal components, retaining whole weights and all frozen candidates;
+do not refit those labels. New immutable evidence is separately routed by
+physical-price-transfer-index.json; previous archives stay unchanged.

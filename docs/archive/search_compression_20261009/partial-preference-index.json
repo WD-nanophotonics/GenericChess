@@ -1,0 +1,207 @@
+{
+  "scope": "Immutable evidence and isolated score restore, without jobs or training.",
+  "archive": "partial-preference.zip",
+  "archive_sha256": "5f1336828f2ece3337c216c31fb11f2dab026a2df22c139c2c5018087aaa1c80",
+  "base_commit": "5d5bd84f3192c83972c84106395f47eae7c36300",
+  "members": [
+    {
+      "path": ".local_agent/preference-20261009/audit.json",
+      "bytes": 49352,
+      "sha256": "4b47adad2e097bd570d4ec6b87364d44025c93219a598b0cffe3e580b06cf99e"
+    },
+    {
+      "path": ".local_agent/preference-20261009/audit.py",
+      "bytes": 3027,
+      "sha256": "2fd38d13675e2b0ae54b2597c41412215024bdaa42fad9391538875694492423"
+    },
+    {
+      "path": ".local_agent/preference-20261009/caller-declaration.json",
+      "bytes": 1067,
+      "sha256": "c8d97549d2c8e4f84a19f1361ca37563791fe1a3089b3ade60637d1159c831a9"
+    },
+    {
+      "path": ".local_agent/preference-20261009/callers.json",
+      "bytes": 356452,
+      "sha256": "2ae3091a7fb916a4cfcfb3b26ad2fccb68d17d52af115c41b3f3824468e673b1"
+    },
+    {
+      "path": ".local_agent/preference-20261009/callers.py",
+      "bytes": 5472,
+      "sha256": "ae9b270a5bd4a2235e4b2d47f31574a0e517c35b76dba3cbe18df643aaf27b7b"
+    },
+    {
+      "path": ".local_agent/preference-20261009/candidate-order-method.py",
+      "bytes": 1262,
+      "sha256": "ce3ac108431a7b427e04dbe6c2166a23e87e84cc03b74127cc913db918e3dabf"
+    },
+    {
+      "path": ".local_agent/preference-20261009/declaration.json",
+      "bytes": 2164306,
+      "sha256": "6c491ed12b91fe3c4b6e27926e96c7c0f6851223b849c0d7f0577c6c0d1b3941"
+    },
+    {
+      "path": ".local_agent/preference-20261009/fit-declaration.json",
+      "bytes": 913,
+      "sha256": "f67b23c5ee86d09441cc420ede9b5830e6f3ed5fea746782f40345769c24fa1d"
+    },
+    {
+      "path": ".local_agent/preference-20261009/fit-result.json",
+      "bytes": 51522,
+      "sha256": "7fb304b7f671c17d466addefa6bb20208d995a5eb68374ea23c84a439131fb26"
+    },
+    {
+      "path": ".local_agent/preference-20261009/fit.py",
+      "bytes": 5871,
+      "sha256": "63e3a70eae619cff83fae39a86675dbc8e60aea7f3b13617ddb9a61d01d3484e"
+    },
+    {
+      "path": ".local_agent/preference-20261009/full-model.json",
+      "bytes": 21435,
+      "sha256": "c2d43c022d1cf377f89cfd47d95782c2a4ce08eccb9ebe91d2ba46e7692ce053"
+    },
+    {
+      "path": ".local_agent/preference-20261009/inputs.npz",
+      "bytes": 94316,
+      "sha256": "e4710649cd496da5cff978aa95709a6a71c1891375eaa1d5f75851a481e4efb4"
+    },
+    {
+      "path": ".local_agent/preference-20261009/inventory-ceiling.json",
+      "bytes": 112747,
+      "sha256": "74fd1eb052e42a0a4006bc58699ee3e1f248f08d905ac642e8ccdd637af1755d"
+    },
+    {
+      "path": ".local_agent/preference-20261009/inventory_ceiling.py",
+      "bytes": 4093,
+      "sha256": "55072e202d6fbd006581b9de5c82c2ee0da83e7f5952a7f4b39fc8e269e2d652"
+    },
+    {
+      "path": ".local_agent/preference-20261009/old-order-method.py",
+      "bytes": 1248,
+      "sha256": "2f30a42401ab59e710dddfc82d5e1c49559843de8ac478f980e2475b66ecdc41"
+    },
+    {
+      "path": ".local_agent/preference-20261009/ordered-reference-declaration.json",
+      "bytes": 640,
+      "sha256": "e30bc4fe95d4636d637a7a6e29d70562cf786e9f19c49a39e9407826df1f55da"
+    },
+    {
+      "path": ".local_agent/preference-20261009/ordered-reference.json",
+      "bytes": 1674724,
+      "sha256": "f96ac2b6e75718907e1fd620351f4561765ce10b90de496db7e4b8c7931d9610"
+    },
+    {
+      "path": ".local_agent/preference-20261009/ordered_reference.py",
+      "bytes": 3587,
+      "sha256": "42089faf10d654abe6ea6b77f839e95c6e9522ac2bae0d450cbc1c51442d899a"
+    },
+    {
+      "path": ".local_agent/preference-20261009/partial2048-model.json",
+      "bytes": 21432,
+      "sha256": "b6b27555fb72bc45e91c1e1924aa7625a777e041227cef683593273ee8e3b7c2"
+    },
+    {
+      "path": ".local_agent/preference-20261009/partial8192-model.json",
+      "bytes": 21447,
+      "sha256": "f3f511c46c715f45dbf304bca9b5e7e3762c721e7fec30eabe4f4d3643fc20b5"
+    },
+    {
+      "path": ".local_agent/preference-20261009/physical-task-declaration.json",
+      "bytes": 1225,
+      "sha256": "04989998a45e922383e5aafb9ae706e27b721451657f55dc700379db24933791"
+    },
+    {
+      "path": ".local_agent/preference-20261009/physical-tasks.json",
+      "bytes": 12573,
+      "sha256": "de4b336c56984a342880ce838938049f997c187cc6380560e1edd2755651b7d6"
+    },
+    {
+      "path": ".local_agent/preference-20261009/physical_tasks.py",
+      "bytes": 3800,
+      "sha256": "8a8a0fa5b219ee938c79db90f1754b59485255a4aa7b6685ad2bae9edb20e188"
+    },
+    {
+      "path": ".local_agent/preference-20261009/result.json",
+      "bytes": 14911734,
+      "sha256": "f9f9538de89275eb0b723a2bb8ce84ef932e163b86be20090437b4edf2281ff7"
+    },
+    {
+      "path": ".local_agent/preference-20261009/run.py",
+      "bytes": 8023,
+      "sha256": "c5db454475a6678a5d8c7d4ce104870cb4ff1ce3e7464945931e23eaa964d806"
+    },
+    {
+      "path": ".local_agent/preference-20261009/source-failures.json",
+      "bytes": 897,
+      "sha256": "32bb44d269df6a69651438fd769084ab9083e70f3ef4d5b1a76d106f30059830"
+    },
+    {
+      "path": ".local_agent/preference-20261009/summarize.py",
+      "bytes": 3347,
+      "sha256": "dad22143d47a1cb191bb75d6ce578d8ff82e395cf01f51cac67dd576ec0277b5"
+    },
+    {
+      "path": ".local_agent/preference-20261009/summary.json",
+      "bytes": 12469,
+      "sha256": "b0f93e4a0cf6ec298918004b3118275c7d8e7d11275b6dbb0840b5461e803100"
+    },
+    {
+      "path": ".local_agent/preference-20261009/tt-priority-declaration.json",
+      "bytes": 846,
+      "sha256": "22bece3807a843c5171ed4aeb85892e738ddea0575b4e9927eec9649f49d1fb8"
+    },
+    {
+      "path": ".local_agent/preference-20261009/tt-priority.json",
+      "bytes": 974704,
+      "sha256": "a41047eac0a169865e1910e4f0f26d17ac89ddd10bdc7aac5b6446fc2a1d3223"
+    },
+    {
+      "path": ".local_agent/preference-20261009/tt_priority.py",
+      "bytes": 4621,
+      "sha256": "b0730099accb49288599f80f2f97c9b3c90b6075d7c49a012080b658434719bf"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/prototype.py",
+      "bytes": 4164,
+      "sha256": "0fba16769836ee610ccd4c663fc40cb82f7e0777734b4961a6111d109fc9942b"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule_counts.py",
+      "bytes": 3436,
+      "sha256": "9d72ea83a57b0f7b889b138678dde108928a40ac7ee966da73b399a38961e23a"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/transfer-declaration.json",
+      "bytes": 8841,
+      "sha256": "72614503adc0f65a76a3e644f721344c198364ff821f628ca6b8aed9bcd2e096"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/reply8-task.json",
+      "bytes": 7755645,
+      "sha256": "79510ecd7b1f9ef992f20c69a010ccdf38936674e0ccd19f7d5a424436f1dd6c"
+    }
+  ],
+  "exclusions": "No user/private inputs, operational memo/session/flags, raw Slack/account records or credentials.",
+  "recovery": "Use isolated base-commit checkout. Verify all member hashes before read-only JSON/NPZ score replay; do not overlay operational files or rerun producers. Teacher and caller data keep original numeric TT ordering, captured explicitly in old-order-method.py. Product structural TT fix is separately tested.",
+  "verification": {
+    "isolated_members": 35,
+    "restored": [
+      {
+        "model": "full",
+        "predictions": 3155,
+        "root_metrics": 64
+      },
+      {
+        "model": "partial2048",
+        "predictions": 3155,
+        "root_metrics": 64
+      },
+      {
+        "model": "partial8192",
+        "predictions": 3155,
+        "root_metrics": 64
+      }
+    ],
+    "no_training_or_search": true,
+    "numpy_version": "1.26.4"
+  }
+}

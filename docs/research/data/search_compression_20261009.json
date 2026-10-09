@@ -141,7 +141,7 @@
       ]
     }
   },
-  "decision": "Retain fixed model as scoped diagnostic, no default promotion. Next compare reusable state interaction/support across independent trajectories; no exposed-group tuning.",
+  "decision": "Retain cheaper partial teacher as scoped option; defer further automatic Unit-compression fits. Explain new-rule2104C/B physical-task mismatch; keep frozen candidates, no label refit/default.",
   "continuation_ranking_archive_index": "../../archive/search_compression_20261009/continuation-ranking-index.json",
   "sharing_probe_archive_index": "../../archive/search_compression_20261009/sharing-probe-index.json",
   "current_comparison": {
@@ -1331,5 +1331,306 @@
       "CERTIFIED_OPTIMAL": 8,
       "UNKNOWN": 145
     }
+  },
+  "fresh_partial_preferences": {
+    "archive_index": "../../archive/search_compression_20261009/partial-preference-index.json",
+    "roots": 64,
+    "children": 3155,
+    "known_children": 3133,
+    "unknown_children": 22,
+    "complete_frontiers": 57,
+    "full_reference_seconds": 1371.5533754972275,
+    "partial": {
+      "2048": {
+        "seconds": 120.40543310018256,
+        "completed_D3": 21,
+        "usable_pair_roots": 17,
+        "certified_without_complete_child_reference": 1,
+        "classes": {
+          "UNKNOWN": 2687,
+          "CERTIFIED_INFERIOR": 447,
+          "CERTIFIED_OPTIMAL": 21
+        }
+      },
+      "8192": {
+        "seconds": 160.44906069873832,
+        "completed_D3": 60,
+        "usable_pair_roots": 56,
+        "certified_without_complete_child_reference": 6,
+        "classes": {
+          "CERTIFIED_INFERIOR": 2323,
+          "CERTIFIED_OPTIMAL": 61,
+          "UNKNOWN": 771
+        }
+      }
+    },
+    "caller_summary": {
+      "unit": {
+        "calls": 126,
+        "seconds": 37.242067200364545,
+        "median_seconds": 0.24528089992236346
+      },
+      "full": {
+        "calls": 126,
+        "seconds": 37.40753160067834,
+        "median_seconds": 0.24136909993831068
+      },
+      "partial2048": {
+        "calls": 126,
+        "seconds": 37.39420829899609,
+        "median_seconds": 0.2471928501036018
+      },
+      "partial8192": {
+        "calls": 126,
+        "seconds": 37.436556899920106,
+        "median_seconds": 0.24556279997341335
+      }
+    },
+    "matched_search": {
+      "calls": 63,
+      "seconds": 19.748069401597604,
+      "groups": {
+        "train": {
+          "known": 28,
+          "positive": 3
+        },
+        "dev": {
+          "known": 16,
+          "positive": 3
+        },
+        "report": {
+          "known": 13,
+          "positive": 2
+        }
+      }
+    },
+    "decision": "Cheaper scoped supervision retained; no further automatic Unit-compression fit/default. Compare frozen constants against independent physical tasks. Original teacher ordering preserved.",
+    "physical_task_scope": "886existing8x8slots, no fitting; full/8192top unchanged,2048one regression",
+    "tt_priority": [
+      {
+        "scale": 500,
+        "nodes": 2048,
+        "methods": {
+          "old": {
+            "calls": 32,
+            "seconds": 49.393966999836266,
+            "completed_D3": 12,
+            "known": 30,
+            "positive": 2,
+            "nodes": 60228
+          },
+          "structural": {
+            "calls": 32,
+            "seconds": 49.41188780008815,
+            "completed_D3": 12,
+            "known": 30,
+            "positive": 2,
+            "nodes": 60228
+          }
+        }
+      },
+      {
+        "scale": 500,
+        "nodes": 8192,
+        "methods": {
+          "old": {
+            "calls": 32,
+            "seconds": 65.90285279997624,
+            "completed_D3": 32,
+            "known": 30,
+            "positive": 0,
+            "nodes": 91772
+          },
+          "structural": {
+            "calls": 32,
+            "seconds": 65.9823975993786,
+            "completed_D3": 32,
+            "known": 30,
+            "positive": 0,
+            "nodes": 91772
+          }
+        }
+      },
+      {
+        "scale": 10000,
+        "nodes": 2048,
+        "methods": {
+          "old": {
+            "calls": 32,
+            "seconds": 48.49050049902871,
+            "completed_D3": 10,
+            "known": 30,
+            "positive": 2,
+            "nodes": 59346
+          },
+          "structural": {
+            "calls": 32,
+            "seconds": 49.13525329972617,
+            "completed_D3": 12,
+            "known": 30,
+            "positive": 2,
+            "nodes": 60228
+          }
+        }
+      },
+      {
+        "scale": 10000,
+        "nodes": 8192,
+        "methods": {
+          "old": {
+            "calls": 32,
+            "seconds": 66.64694720134139,
+            "completed_D3": 32,
+            "known": 30,
+            "positive": 0,
+            "nodes": 93590
+          },
+          "structural": {
+            "calls": 32,
+            "seconds": 65.8912039003335,
+            "completed_D3": 32,
+            "known": 30,
+            "positive": 0,
+            "nodes": 91772
+          }
+        }
+      }
+    ]
+  },
+  "prospective_physical_prices": {
+    "archive_index": "../../archive/search_compression_20261009/physical-price-transfer-index.json",
+    "seeds": [
+      202610082104,
+      202610082105
+    ],
+    "slots": 442,
+    "cells": 2210,
+    "all_zero_slots": 297,
+    "transition_parity": 5855,
+    "task_seconds": [
+      3.5719662001356483,
+      1.4696086999028921
+    ],
+    "audit_seconds": 6.270590400090441,
+    "rules": [
+      {
+        "seed": 202610082104,
+        "transitions": 3844,
+        "complete": true,
+        "seconds": 3.5719662001356483,
+        "summary": {
+          "generic_v2": {
+            "top": "799/5148",
+            "pair": "23083/450450"
+          },
+          "semantic_v3": {
+            "top": "799/5148",
+            "pair": "23083/450450"
+          },
+          "full": {
+            "top": "799/5148",
+            "pair": "1126999/30630600"
+          },
+          "partial2048": {
+            "top": "21/1870",
+            "pair": "28583/1276275"
+          },
+          "partial8192": {
+            "top": "799/5148",
+            "pair": "2241457/30630600"
+          },
+          "blind": {
+            "top": "1242077/5105100",
+            "pair": "14041/87516"
+          }
+        },
+        "slots": 196,
+        "all_zero_slots": 60,
+        "empty_backgrounds": [],
+        "chosen": {
+          "generic_v2": [
+            "C"
+          ],
+          "semantic_v3": [
+            "C"
+          ],
+          "full": [
+            "C"
+          ],
+          "partial2048": [
+            "B"
+          ],
+          "partial8192": [
+            "C"
+          ],
+          "blind": [
+            "A",
+            "B",
+            "C",
+            "P",
+            "X"
+          ]
+        }
+      },
+      {
+        "seed": 202610082105,
+        "transitions": 2011,
+        "complete": true,
+        "seconds": 1.4696086999028921,
+        "summary": {
+          "generic_v2": {
+            "top": "977/46410",
+            "pair": "149/16575"
+          },
+          "semantic_v3": {
+            "top": "977/46410",
+            "pair": "149/16575"
+          },
+          "full": {
+            "top": "977/46410",
+            "pair": "149/16575"
+          },
+          "partial2048": {
+            "top": "977/46410",
+            "pair": "3949/464100"
+          },
+          "partial8192": {
+            "top": "977/46410",
+            "pair": "149/16575"
+          },
+          "blind": {
+            "top": "3004/116025",
+            "pair": "1051/116025"
+          }
+        },
+        "slots": 246,
+        "all_zero_slots": 237,
+        "empty_backgrounds": [],
+        "chosen": {
+          "generic_v2": [
+            "X"
+          ],
+          "semantic_v3": [
+            "X"
+          ],
+          "full": [
+            "X"
+          ],
+          "partial2048": [
+            "X"
+          ],
+          "partial8192": [
+            "X"
+          ],
+          "blind": [
+            "A",
+            "B",
+            "C",
+            "P",
+            "X"
+          ]
+        }
+      }
+    ]
   }
 }

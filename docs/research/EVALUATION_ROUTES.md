@@ -184,3 +184,30 @@ or whether the target should move away from compression of Unit search toward
 rule-price diagnostics. One new decision question precedes another fit; this
 does not ban learning, demand exact WDL or require advisor approval for short
 independent work. Full evidence: FINITE_SEARCH_COMPRESSION.md and its data index.
+
+The next prospective64root/3155child comparison qualifies a cheaper supervision
+option rather than a larger evaluator. At8192nodes partial bounds supply56usable
+pair roots in160.45seconds, versus1371.55seconds for full child references;
+2048nodes leave only five usable training roots. Three fixed common-input fits
+have identical development/report choices with substantial errors. Actual
+root-rank callers cost about0.24seconds per root; matched-time existing search
+has fewer positive report errors, with caps/severity retained separately.
+Counts have some irreducible inventory-class losses but also avoidable errors.
+Do not expand architectures, refit reports or mistake finite Unit compression
+for useful generic prices. Next use the frozen models only as exposed predictors
+on an existing independent task reward, alongside static and blind baselines;
+this tests the target distinction without new fitting or a new task framework.
+
+The read-only check on all886existing8x8slots now gives no top-choice gain for
+full or partial8192constants; partial2048worsens one rule. Complete pair ordering
+has mixed immediate/reply differences. Retain those exposed results. The next
+test needs fixed predictions on predeclared new rules and the same physical
+reward/weights, without refitting old labels or expanding models.
+
+That two-rule prospective check is complete:442slots/2210cells, all zeros and
+Core/Native parity retained. Static/full/partial8192chooseC on2104; the frozen
+partial2048choosesB and has lower immediate-task loss21/1870versus799/5148.
+All chooseX on the mostly zero2105. Complete pair ordering has mixed differences.
+Do not select a model or fit these new report outcomes. This motivates explaining
+one static C/B source/opportunity-versus-legal-task mismatch, rather than further
+Unit-regret training or broadening the task into whole-game utility.

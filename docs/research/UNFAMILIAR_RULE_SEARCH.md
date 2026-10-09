@@ -1344,3 +1344,27 @@ density (about2.31-2.38). These are two views of a common occupancy/geometry
 count, not independent support for capture utility. A useful follow-up needs
 conditional task information beyond recounting the same marginals; no formula
 or default is changed. Arithmetic rows: opportunity-components.json supplement.
+
+## Evaluator scale and TT ordering contract
+
+The full-sort Core orderer represented TT-first by numeric priority-1000.
+A capture value10000produces-10100and silently outranks that TT action;
+default rule prices can also trigger this. TT priority is now the leading
+structural sort key. The legal action set and exact nonTT relative ordering
+remain unchanged, including negative capture values and an absent TT action.
+This is an interface contract repair, not rescaling prices or a new search mode.
+
+A frozen isolated256call control uses16preselected generated roots, capture
+scales500/10000,2048/8192nodes, D3q0/5seconds, two balanced repeats and identical
+Unit leaves/full history. All84jointly completed D3pairs agree in score and all
+PVs replay. Scale500negative-control action/score/depth/nodes are identical.
+At scale10000/2048, completed calls change10to12out of32, but known positive
+regret stays2/30. At8192both complete32calls with0/30known positive regret;
+old/structural nodes93590/91772 and seconds66.65/65.89. Other arms retain
+cost regressions:10000/2048seconds48.49to49.14; a selected root's8192cost grows
+about1.54to1.87seconds. Changed choices, extra depth or node savings are not
+price/strength gains. Original teacher/caller data keep the old source snapshot.
+Three regression failures precede the repair;34related regressions pass after it.
+The complete active suite also passes all1774collected tests after the repair.
+Evidence and frozen method snapshots: partial-preference-index.json under
+docs/archive/search_compression_20261009. Staged and Native ordering are unchanged.

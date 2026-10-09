@@ -38,6 +38,29 @@ independent price/task questions; do not claim pre-final timings as deployment.
 
 ## Current evidence and decisions
 
+- Fresh partial-preference coverage now retains64roots/3155children,3133complete
+  child references and22UNKNOWNs. At8192nodes,56roots supply usable certified
+  pairs in160.45seconds, versus1371.55seconds for full children. Three frozen
+  same-input count fits share dev/report choices and substantial errors;
+  504actual ranks plus63matched-time search calls keep all zeros/caps. Retain
+  cheaper partial supervision as a scoped option, defer more Unit-compression
+  fits, and test the frozen constants on existing independent physical-task
+  rewards before claiming useful rule prices. Exact inventory-class ceilings
+  explain only some errors. FINITE_SEARCH_COMPRESSION.md owns the full cohort,
+  cost attribution, limitations and partial-preference recovery index.
+  The existing886slot physical check shows no full/8192top gain and one2048
+  regression. A separate two-new-rule fixed-predictor check keeps442slots/
+  2210cells/5855Core-Native transitions: on2104static C loses799/5148while the
+  unchanged2048model's B loses21/1870; all methods match on mostly-zero2105.
+  This is scoped physical-task signal, not model selection or strength. Next
+  explain the2104C/B mismatch from existing opportunity/source/legal-removal
+  components, retaining full task weights and not fitting these report labels.
+
+- Full-sort Core TT priority is now structural; large evaluator capture values
+  previously outranked its numeric-1000sentinel. All84jointly complete D3pairs
+  agree; cost regressions and original teacher records remain.1774active tests
+  pass. UNFAMILIAR_RULE_SEARCH.md owns this interface repair, not a price claim.
+
 - Shared-state comparison now retains64fresh roots/3445children across two
   prospective cohorts,3375complete children and70UNKNOWNs. A concrete zero-anchor
   input alias is repaired before the second cohort. Spatial/anchored linear and

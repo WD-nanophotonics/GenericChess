@@ -98,7 +98,8 @@ class MoveOrderer:
                 return -30
             return -min(self.history_value(side, action), 20)
 
-        return sorted(actions, key=lambda a: (priority(a), str(a)))
+        # TT priority is structural: evaluator capture values have no fixed scale.
+        return sorted(actions, key=lambda a: (a != tt_move, priority(a), str(a)))
 
 
 class StagedMovePicker:

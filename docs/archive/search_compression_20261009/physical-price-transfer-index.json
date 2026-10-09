@@ -1,0 +1,82 @@
+{
+  "scope": "Immutable prospective new-rule physical-task evidence; no fitting/search rerun.",
+  "archive": "physical-price-transfer.zip",
+  "archive_sha256": "047ac87726918396b0c45b408ea9a33a2ed680dd2da9388c007f10c38f0257e7",
+  "base_commit": "5d5bd84f3192c83972c84106395f47eae7c36300",
+  "members": [
+    {
+      "path": ".local_agent/price-transfer-20261009/audit.json",
+      "bytes": 584,
+      "sha256": "d0dd26e52b33451a2475a1c57aef6948ed28dc926b69d3e8b28b7dfdab06f5d2"
+    },
+    {
+      "path": ".local_agent/price-transfer-20261009/audit.py",
+      "bytes": 3540,
+      "sha256": "0ad1883ae1d4dc8f433ffb275f5740efa8becd0f44ae92c5468d5518fa3f75ac"
+    },
+    {
+      "path": ".local_agent/price-transfer-20261009/declaration.json",
+      "bytes": 120880,
+      "sha256": "d1052c2a0bc666a3a2c30d5ef1dc11cf6ee123f58c6ed9b1533f4c23505494fc"
+    },
+    {
+      "path": ".local_agent/price-transfer-20261009/result.json",
+      "bytes": 246292,
+      "sha256": "de5465b93d5c86a049561d58b04b49e121fcd25f7c3a2d21b6850226bcb2992a"
+    },
+    {
+      "path": ".local_agent/price-transfer-20261009/run.py",
+      "bytes": 8082,
+      "sha256": "4888c1b49fe843f29a887e3cdd85eea6a29df08f6fab02c138bfbb486546b123"
+    },
+    {
+      "path": ".local_agent/price-transfer-20261009/support.json",
+      "bytes": 3148,
+      "sha256": "2b955d4d2fec1a94557d7cbac7557b911a7f7bcaff6df71314659c0835452b64"
+    },
+    {
+      "path": ".local_agent/price-transfer-20261009/support.py",
+      "bytes": 2057,
+      "sha256": "bca953129a833872108f5908497422030072cc6226c1f4556d1cdb0049798d80"
+    },
+    {
+      "path": ".local_agent/preference-20261009/full-model.json",
+      "bytes": 21435,
+      "sha256": "c2d43c022d1cf377f89cfd47d95782c2a4ce08eccb9ebe91d2ba46e7692ce053"
+    },
+    {
+      "path": ".local_agent/preference-20261009/partial2048-model.json",
+      "bytes": 21432,
+      "sha256": "b6b27555fb72bc45e91c1e1924aa7625a777e041227cef683593273ee8e3b7c2"
+    },
+    {
+      "path": ".local_agent/preference-20261009/partial8192-model.json",
+      "bytes": 21447,
+      "sha256": "f3f511c46c715f45dbf304bca9b5e7e3762c721e7fec30eabe4f4d3643fc20b5"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/prototype.py",
+      "bytes": 4164,
+      "sha256": "0fba16769836ee610ccd4c663fc40cb82f7e0777734b4961a6111d109fc9942b"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule_counts.py",
+      "bytes": 3436,
+      "sha256": "9d72ea83a57b0f7b889b138678dde108928a40ac7ee966da73b399a38961e23a"
+    },
+    {
+      "path": "tests/rule_semantics_ir_fixtures.py",
+      "bytes": 17212,
+      "sha256": "209b3bd9388d5ac228329d64eeda7d70a9209f0409ac74217be2879b4d6038c7"
+    }
+  ],
+  "verification": {
+    "all_member_hashes": 13,
+    "all_cells_replayed_core_native": 2210,
+    "full_state_transition_parity": 5855,
+    "new_rule_fingerprints_not_in_training": true,
+    "isolated_members": 13
+  },
+  "exclusions": "Agent-generated only; no operational state, user/private input, raw Slack/account records or credentials.",
+  "recovery": "Use isolated base-commit checkout and verify every member. Read stored rules/routes/tables/cells directly; do not overlay live state or rerun producers. Three fixed models are identical to partial-preference archive; new task labels never fitted."
+}
