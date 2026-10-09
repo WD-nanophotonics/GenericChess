@@ -1,0 +1,132 @@
+{
+  "scope": "Check whether direct anchor-check booleans distinguish the five audited ties.\nExposed diagnostic, no score change/model/fit; reuse all safe/adverse top children.\nBoth owner check flags use the existing semantic authority. Cost is descriptive,\nnot a caller speed comparison; failure to separate selects a different cheap\nrelation, not an all-defense proof gate. Exact parent/action provenance retained.\n",
+  "source": "\"\"\"Check whether direct anchor-check booleans distinguish the five audited ties.\nExposed diagnostic, no score change/model/fit; reuse all safe/adverse top children.\nBoth owner check flags use the existing semantic authority. Cost is descriptive,\nnot a caller speed comparison; failure to separate selects a different cheap\nrelation, not an all-defense proof gate. Exact parent/action provenance retained.\n\"\"\"\nfrom pathlib import Path\nimport sys,json,time,hashlib\nsys.path.insert(0,str(Path.cwd()))\nfrom generic_chess.rules.schema import ruleset_from_dict\nfrom generic_chess.rules.compiler import compile_ruleset_for_execution\nfrom generic_chess.session.session import GameSession\nfrom generic_chess.core.actions import action_from_dict\nfrom generic_chess.core.transition import apply_action\nfrom generic_chess.core.semantic_executor import semantic_engine_for\nfrom scripts.research_record import record_value,write_record\np=Path('.local_agent/hand-discount-20261010');g=next(r for r in json.loads((p/'games.json').read_bytes())['rows']if r['seed']==202610082151 and r['policies']==['unit','v3']);case=next(r for r in json.loads((p/'prospective-rules.json').read_bytes())['rules']if r['seed']==g['seed']);c=compile_ruleset_for_execution(ruleset_from_dict(case['rules']));s=GameSession(c)\nfor a in case['route'][:4]:s.submit(action_from_dict(a))\nfor step in g['steps'][:3]:s.submit(action_from_dict(step['action']))\nties=json.loads((p/'d1-ties.json').read_bytes());engine=semantic_engine_for(c);rows=[];start=time.perf_counter()\nfor r in ties['rows']:\n child=apply_action(s.state,action_from_dict(r['action']),c);flags=[engine.in_check(child.position,owner)for owner in (0,1)];rows.append(dict(index=r['index'],action=r['action'],owner_check_flags=flags,immediate_loss_witnesses=len(r['witnesses'])))\nout=dict(scope=__doc__,source=Path(__file__).read_text(),parent_sha256=hashlib.sha256(json.dumps(record_value(s.state),sort_keys=True,separators=(',',':')).encode()).hexdigest(),seed=g['seed'],policies=g['policies'],ply=3,prerequisite_archive='docs/archive/search_compression_20261009/hand-discount-20261010.zip',rows=rows,seconds=time.perf_counter()-start,transitions=5,no_training=True)\nwrite_record(Path('docs/research/data/hand_check_probe_20261010.json'),out);print(rows)\n",
+  "parent_sha256": "26e2818ede8c4b531164b7868d598e7efa4afa94a8c1157c1c3c963289102461",
+  "seed": 202610082151,
+  "policies": [
+    "unit",
+    "v3"
+  ],
+  "ply": 3,
+  "prerequisite_archive": "docs/archive/search_compression_20261009/hand-discount-20261010.zip",
+  "rows": [
+    {
+      "index": 20,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_037",
+        "geometry_id": "g25",
+        "actor_type_id": "P",
+        "from": [
+          7,
+          7
+        ],
+        "to": [
+          6,
+          6
+        ],
+        "promotion_target_id": null
+      },
+      "owner_check_flags": [
+        false,
+        false
+      ],
+      "immediate_loss_witnesses": 0
+    },
+    {
+      "index": 33,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_041",
+        "geometry_id": "g27",
+        "actor_type_id": "X",
+        "from": [
+          0,
+          6
+        ],
+        "to": [
+          5,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "owner_check_flags": [
+        false,
+        false
+      ],
+      "immediate_loss_witnesses": 1
+    },
+    {
+      "index": 38,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_045",
+        "geometry_id": "g3",
+        "actor_type_id": "A",
+        "from": [
+          1,
+          6
+        ],
+        "to": [
+          6,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "owner_check_flags": [
+        false,
+        false
+      ],
+      "immediate_loss_witnesses": 1
+    },
+    {
+      "index": 47,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_051",
+        "geometry_id": "g6",
+        "actor_type_id": "B",
+        "from": [
+          2,
+          6
+        ],
+        "to": [
+          2,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "owner_check_flags": [
+        false,
+        false
+      ],
+      "immediate_loss_witnesses": 1
+    },
+    {
+      "index": 48,
+      "action": {
+        "kind": "semantic_board",
+        "pattern_id": "legacy_051",
+        "geometry_id": "g6",
+        "actor_type_id": "B",
+        "from": [
+          5,
+          6
+        ],
+        "to": [
+          5,
+          1
+        ],
+        "promotion_target_id": null
+      },
+      "owner_check_flags": [
+        false,
+        false
+      ],
+      "immediate_loss_witnesses": 1
+    }
+  ],
+  "seconds": 0.04392960015684366,
+  "transitions": 5,
+  "no_training": true
+}

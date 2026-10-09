@@ -859,6 +859,11 @@ the selected-Unit flag without changing scores, ties or witness counts.
 Next compare a concrete conditional service/safety input with existing search
 coverage at unchanged prices and fair budgets. Neither an enlarged event model
 nor a1.0hand coefficient follows automatically. Science remains OPEN.
+A first cheap check uses existing semantic authority on all five2151top children:
+both owner in-check flags are false for the safe move and all four losing moves.
+Current check status therefore cannot supply this immediate-threat distinction.
+The scoped probe retains its exact producer/provenance at
+data/hand_check_probe_20261010.json; no evaluation feature is installed.
 Recovery: root-scan-20261010-index.json and hand-discount-20261010-index.json
 under ../archive/search_compression_20261009; both retain generated sources,
 declarations, failures and adverse outputs, excluding private transport records.
