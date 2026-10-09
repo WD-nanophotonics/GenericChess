@@ -397,3 +397,14 @@ an actual cost advantage; no report refitting or new qualification framework.
 Producer metadata/carrier/PV-reading failures are retained; corrections did not
 repeat fits or searches. The sharing archive/index preserves models, NPZ arrays,
 full denominators, failures and exact restoration instructions. Science remains OPEN.
+
+A subsequent small audit changes Xquiet's explicit current-type target fromPtoC.
+One common initial legal action now creates a different actor, yet all old type
+descriptors remain identical. An untrained66axis actor relation resolves declared
+promotion/explicit effect targets into the same22behavior axes, deduplicating
+targets and appending their mean/max descriptors. It distinguishes changedXand
+keeps the duplicate-rule vectors equal. This is a prepared approximation, not a
+fit or complete rule encoder; implicit references, conditional selection, auxiliary
+and history relations remain omissions. The effect-target supplement preserves
+the exact rules/action/state witness and source. Next: one cost-effective shared
+state interaction using typed rule relations, without refitting these report groups.

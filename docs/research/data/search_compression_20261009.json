@@ -261,5 +261,17 @@
     },
     "decision": "Defer coarse expansion and raw syntactic counts; preserve baselines, full domain and incomplete refs. Scoped untrained behavior-input repair; next interaction needs actual decision/cost benefit without repeating existing search.",
     "exposure": "Four existing generated rules, prospective whole-trajectory split; subsequent probes explicitly exposed. No human data or report refitting."
+  },
+  "effect_target_audit": {
+    "archive_index": "../../archive/search_compression_20261009/effect-target-index.json",
+    "effect": "Xquiet explicit current-type targetPtoC",
+    "same_old_descriptors": true,
+    "common_initial_action_different_outcome": true,
+    "untrained_actor_relation_axes": 66,
+    "duplicate_rule_vectors_equal": true,
+    "changed_target_distinguished": [
+      "X"
+    ],
+    "decision": "Preserve typed target relations in next shared state/rule input; no retraining/report fitting/default change. Mean/max target pooling and implicit reference omissions remain approximations."
   }
 }

@@ -1,0 +1,37 @@
+{
+  "scope": "Agent-generated typed effect target audit and untrained relation prototype",
+  "archive": "effect-target-supplement.zip",
+  "archive_sha256": "993ba39ae5e947bd7e59604a34d99606515a860b00edf4691982bd4bc1ff9a1d",
+  "base_commit": "bda0b4623311657fe950bac384bdd3549e9cdf08",
+  "members": [
+    {
+      "path": ".local_agent/effect_target_20261009.py",
+      "bytes": 3065,
+      "sha256": "3e97fd9c7379b51769afd0118c8c78ff0330679c5cf03d76e13db26496448af4"
+    },
+    {
+      "path": ".local_agent/effect-target-20261009.json",
+      "bytes": 98395,
+      "sha256": "473da27bf5f2cf11eeb1a79c3c0236997226453f9134f2dd1cf62f50586aed7c"
+    },
+    {
+      "path": ".local_agent/effect_relation_20261009.py",
+      "bytes": 3173,
+      "sha256": "db88d6a9c5d589f73e6b532e34cb621051936afefbef66a87133e0fce8336695"
+    },
+    {
+      "path": ".local_agent/effect-relation-20261009.json",
+      "bytes": 25732,
+      "sha256": "c79f5a4d047dc0a92abcffb2a2f2d79b4cc1e99bc5e18b8611eb20cacc4b4a40"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule_counts.py",
+      "bytes": 3436,
+      "sha256": "9d72ea83a57b0f7b889b138678dde108928a40ac7ee966da73b399a38961e23a"
+    }
+  ],
+  "recovery": "Separate base checkout and extracted shared-rule-comparison.zip for original declarations/duplicate controls; extract supplement separately, verify member hashes, inspect JSON vectors/witnesses. Never overlay live state. No training/model/search required.",
+  "verified_isolated_members": 5,
+  "trained": false,
+  "exclusions": "No user/private inputs, Slack/account records, operational state or credentials."
+}
