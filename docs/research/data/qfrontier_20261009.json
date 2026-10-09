@@ -99,6 +99,18 @@
       "transformation": "none",
       "bytes": 7405,
       "purpose": "Post-publication source/saturation factorial and analytical controls; no fitted prices"
+    },
+    {
+      "path": "template_phase_audit.py",
+      "sha256": "0410a908685464a1f7c24111297a862af3736ad7f7deaff50a8f236b938775d9",
+      "bytes": 2337,
+      "purpose": "Original early/late/owner partitions on both frozen template-any replicate orders; exposed finite transfer"
+    },
+    {
+      "path": "template-phase-audit.json",
+      "sha256": "8b14648e400b8031c33c2e6bece1e0d2e7400898335b7c012e0f6ac1f8fde809",
+      "bytes": 28182,
+      "purpose": "Original early/late/owner partitions on both frozen template-any replicate orders; exposed finite transfer"
     }
   ],
   "rules": [
@@ -234,7 +246,7 @@
   ],
   "verification": {
     "relevant_regressions_passed": 45,
-    "independent_task_arithmetic_and_hash_assertions": 27670,
+    "independent_task_arithmetic_and_hash_assertions": 27672,
     "exact_saturation_controls": 18,
     "product_changes": false,
     "scope": "Existing product execution regressions plus independent retained evidence arithmetic and recovery; no strength validation"
@@ -290,6 +302,7 @@
         ]
       }
     ],
-    "scope": "Adaptive/exposed diagnostic; old source-law failures remain; no adopted price/default"
+    "scope": "Adaptive/exposed diagnostic; old source-law failures remain; no adopted price/default",
+    "original_phase_owner_strata_harmful_means": 0
   }
 }

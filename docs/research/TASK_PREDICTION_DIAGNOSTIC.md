@@ -125,6 +125,14 @@ and no new source distribution, price or default is adopted. Verify any-capture
 probabilities before considering a candidate, then examine temporal transfer
 rather than treating exposed whole-route improvement as deployment evidence.
 
+The original early/late and owner partitions were then applied without changing
+these frozen template-any orders. All eight rules/two replicates retain
+nonpositive mean full-pair loss changes in every such stratum; the5improved/
+3unchanged whole-route means reproduce exactly. This rules out one simple
+phase-aggregation explanation for this adaptive signal, not unseen-rule
+generalization, exact probability or universal context choice. Individual
+background changes remain in the full audit rather than being filtered away.
+
 ## Sparse and counterfactual support
 
 Reply rewards leave557/614 and866/886slots allzero. Seed2103's apparent reply
