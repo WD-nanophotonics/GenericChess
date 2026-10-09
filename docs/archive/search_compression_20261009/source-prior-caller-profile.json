@@ -1,0 +1,316 @@
+{
+  "scope": "Single cold generated-root profile to choose a Core execution hotspot.\nNo teacher/price/strength comparison. Profiling adds overhead; old caller caps\nunchanged. Source cohort recovered from source-prior-diagnosis-relative.zip, or live\nignored declaration. D3/2048nodes/2seconds, fixed Unit ordering/v3 leaf, q0.\nKeep only normalized project function paths, no raw private-path profiler dump.\n",
+  "seed": 202610082107,
+  "declaration_sha256": "bfbf632dc59e49e8e2ba0b9eed8cf3b8d3c22faf5593c12ef73f6782d5aa5396",
+  "seconds": 1.9931514000054449,
+  "decision": {
+    "action": {
+      "pattern_id": "legacy_039",
+      "geometry_id": "g26",
+      "actor_type_id": "P",
+      "from_square": {
+        "file": 6,
+        "rank": 1
+      },
+      "to_square": {
+        "file": 1,
+        "rank": 6
+      },
+      "promotion_target_id": null
+    },
+    "score": 0,
+    "principal_variation": [
+      {
+        "pattern_id": "legacy_039",
+        "geometry_id": "g26",
+        "actor_type_id": "P",
+        "from_square": {
+          "file": 6,
+          "rank": 1
+        },
+        "to_square": {
+          "file": 1,
+          "rank": 6
+        },
+        "promotion_target_id": null
+      },
+      {
+        "pattern_id": "legacy_041",
+        "geometry_id": "g27",
+        "actor_type_id": "P",
+        "from_square": {
+          "file": 6,
+          "rank": 6
+        },
+        "to_square": {
+          "file": 1,
+          "rank": 1
+        },
+        "promotion_target_id": null
+      }
+    ],
+    "completed_depth": 2,
+    "selective_depth": 2,
+    "nodes": 363,
+    "qnodes": 0,
+    "elapsed_seconds": 2.0,
+    "tt_probes": 82,
+    "tt_hits": 3,
+    "tt_cutoffs": 0,
+    "beta_cutoffs": 75,
+    "evaluation_profile_cache_hit": false,
+    "termination_reason": "time_limit",
+    "choice_kind": "ACTION",
+    "declaration": null,
+    "time_to_first_legal_action": 0.01600000006146729,
+    "time_to_first_completed_iteration": 0.06200000015087426,
+    "qdepth_cutoffs": 0,
+    "qsearch_budget_aborts": 0,
+    "qsearch_check_hard_limit_aborts": 0,
+    "in_check_qnodes": 0,
+    "stand_pat_cutoffs": 0,
+    "capture_qactions": 0,
+    "promotion_qactions": 0,
+    "checking_move_qactions": 0,
+    "checking_drop_qactions": 0,
+    "nonchecking_drop_excluded": 0,
+    "pvs_null_window_searches": 0,
+    "pvs_researches": 0,
+    "aspiration_fail_low": 0,
+    "aspiration_fail_high": 0,
+    "aspiration_researches": 0,
+    "root_scan_nodes": 0,
+    "root_scan_used_fallback": false,
+    "move_picker_generated": 0,
+    "move_picker_yielded": 0,
+    "move_picker_yielded_by_stage": {},
+    "ordering_calls": 81,
+    "ordered_moves": 5268,
+    "ordering_seconds": 0.030000000027939677,
+    "legal_generation_calls": 83,
+    "legal_generation_seconds": 1.6477887979708612,
+    "evaluation_calls": 281,
+    "evaluation_seconds": 0.0020304028876125813,
+    "countermove_hits": 0,
+    "mate_pruning_cutoffs": 0,
+    "legal_actions_generated": 5327,
+    "successor_handles_created": 5268,
+    "successors_materialized": 360,
+    "successors_searched": 360,
+    "terminal_results_computed": 360,
+    "terminal_cache_hits": 0,
+    "position_keys_computed": 442,
+    "position_key_cache_hits": 360,
+    "declaration_checks": 0,
+    "declaration_win_options": 0,
+    "declaration_restart_options": 0,
+    "declaration_root_selected": false,
+    "native_legality_calls": 0,
+    "native_legality_fallbacks": 0,
+    "native_legality_operational_failures": 0,
+    "material_change_qactions": 0
+  },
+  "top_project_functions": [
+    {
+      "file": "generic_chess/ai/alphabeta/player.py",
+      "line": 102,
+      "function": "choose_action",
+      "calls": 1,
+      "self_seconds": 3.83e-05,
+      "cumulative_seconds": 1.9930873000000002
+    },
+    {
+      "file": "generic_chess/ai/alphabeta/search.py",
+      "line": 1021,
+      "function": "run_root_search",
+      "calls": 1,
+      "self_seconds": 5.8e-05,
+      "cumulative_seconds": 1.9930215000000002
+    },
+    {
+      "file": "generic_chess/ai/alphabeta/search.py",
+      "line": 292,
+      "function": "negamax",
+      "calls": 363,
+      "self_seconds": 0.0026505,
+      "cumulative_seconds": 1.9735284000000002
+    },
+    {
+      "file": "generic_chess/ai/alphabeta/search.py",
+      "line": 516,
+      "function": "child_search",
+      "calls": 360,
+      "self_seconds": 0.0008779,
+      "cumulative_seconds": 1.9720582000000002
+    },
+    {
+      "file": "generic_chess/core/semantic_executor.py",
+      "line": 1448,
+      "function": "iter_legal_action_bindings",
+      "calls": 6040,
+      "self_seconds": 0.013763000000000001,
+      "cumulative_seconds": 1.7477256
+    },
+    {
+      "file": "generic_chess/ai/alphabeta/search.py",
+      "line": 244,
+      "function": "_runtime_legal_actions",
+      "calls": 83,
+      "self_seconds": 0.0001594,
+      "cumulative_seconds": 1.6478335000000002
+    },
+    {
+      "file": "generic_chess/core/search_runtime.py",
+      "line": 903,
+      "function": "legal_actions",
+      "calls": 443,
+      "self_seconds": 0.0042142,
+      "cumulative_seconds": 1.6476806000000002
+    },
+    {
+      "file": "generic_chess/core/semantic_executor.py",
+      "line": 700,
+      "function": "in_check",
+      "calls": 6100,
+      "self_seconds": 0.0054656,
+      "cumulative_seconds": 1.502118
+    },
+    {
+      "file": "generic_chess/core/semantic_executor.py",
+      "line": 1282,
+      "function": "_trial_child_if_s3_legal",
+      "calls": 5740,
+      "self_seconds": 0.0057667000000000005,
+      "cumulative_seconds": 1.4943329
+    },
+    {
+      "file": "generic_chess/core/semantic_executor.py",
+      "line": 603,
+      "function": "is_square_attacked",
+      "calls": 6100,
+      "self_seconds": 0.3841685,
+      "cumulative_seconds": 1.4794091
+    },
+    {
+      "file": "generic_chess/core/semantic_executor.py",
+      "line": 43,
+      "function": "_checkpoint",
+      "calls": 1779925,
+      "self_seconds": 0.22555740000000002,
+      "cumulative_seconds": 0.8605083
+    },
+    {
+      "file": "generic_chess/ai/alphabeta/search.py",
+      "line": 161,
+      "function": "checkpoint",
+      "calls": 1779925,
+      "self_seconds": 0.2549708,
+      "cumulative_seconds": 0.6349509
+    },
+    {
+      "file": "generic_chess/ai/alphabeta/search.py",
+      "line": 81,
+      "function": "check",
+      "calls": 1780732,
+      "self_seconds": 0.2801097,
+      "cumulative_seconds": 0.3803052
+    },
+    {
+      "file": "generic_chess/core/search_runtime.py",
+      "line": 1245,
+      "function": "pushed",
+      "calls": 720,
+      "self_seconds": 0.00047930000000000005,
+      "cumulative_seconds": 0.2977657
+    },
+    {
+      "file": "generic_chess/core/search_runtime.py",
+      "line": 1089,
+      "function": "push",
+      "calls": 360,
+      "self_seconds": 0.000292,
+      "cumulative_seconds": 0.29381640000000003
+    },
+    {
+      "file": "generic_chess/core/search_runtime.py",
+      "line": 1136,
+      "function": "_push_impl",
+      "calls": 360,
+      "self_seconds": 0.0050109,
+      "cumulative_seconds": 0.2934644
+    },
+    {
+      "file": "generic_chess/core/semantic_executor.py",
+      "line": 1094,
+      "function": "_iter_candidates",
+      "calls": 14351,
+      "self_seconds": 0.0070981,
+      "cumulative_seconds": 0.2166144
+    },
+    {
+      "file": "generic_chess/rules/ir.py",
+      "line": 107,
+      "function": "geometry_paths_to",
+      "calls": 468470,
+      "self_seconds": 0.11157600000000001,
+      "cumulative_seconds": 0.18154610000000002
+    },
+    {
+      "file": "generic_chess/core/semantic_executor.py",
+      "line": 1122,
+      "function": "_iter_board_candidates",
+      "calls": 13332,
+      "self_seconds": 0.0338959,
+      "cumulative_seconds": 0.16096770000000002
+    },
+    {
+      "file": "generic_chess/core/terminal.py",
+      "line": 419,
+      "function": "terminal_from_search_runtime",
+      "calls": 360,
+      "self_seconds": 0.00215,
+      "cumulative_seconds": 0.14715930000000002
+    },
+    {
+      "file": "generic_chess/core/semantic_executor.py",
+      "line": 1646,
+      "function": "has_legal_action",
+      "calls": 360,
+      "self_seconds": 0.00031120000000000003,
+      "cumulative_seconds": 0.1415954
+    },
+    {
+      "file": "generic_chess/core/semantic_executor.py",
+      "line": 1524,
+      "function": "iter_legal_actions",
+      "calls": 720,
+      "self_seconds": 0.0006157000000000001,
+      "cumulative_seconds": 0.1412842
+    },
+    {
+      "file": "generic_chess/core/search_runtime.py",
+      "line": 935,
+      "function": "_gave_check",
+      "calls": 360,
+      "self_seconds": 0.0001944,
+      "cumulative_seconds": 0.0918124
+    },
+    {
+      "file": "generic_chess/core/semantic_executor.py",
+      "line": 96,
+      "function": "_sources_by_owner_type",
+      "calls": 6540,
+      "self_seconds": 0.054208200000000005,
+      "cumulative_seconds": 0.08713810000000001
+    },
+    {
+      "file": "generic_chess/core/semantic_executor.py",
+      "line": 1539,
+      "function": "_transition",
+      "calls": 6100,
+      "self_seconds": 0.0162412,
+      "cumulative_seconds": 0.079615
+    }
+  ],
+  "limitations": "Inclusive cumulative times overlap; profiled deadline changes effective node count, no additive decomposition or unprofiled speed estimate. Never bypass Native App Control."
+}

@@ -67,6 +67,12 @@ independent price/task questions; do not claim pre-final timings as deployment.
   q0 choice; total ties throughout. Choose a new utility/support premise rather
   than refit or expanding costly whole fronts. TASK_PREDICTION_DIAGNOSTIC.md
   owns this attribution, prospective task evidence and actual caller limits.
+  The first common-capped q2root's128node audit finds354/372legal cache hits,
+  352first-action-only terminal probes,17subsequent expansions and no repeated
+  full generation per visit episode. Retain lazy generation; advisor duplication
+  hypothesis is not a demonstrated full-set defect. Profile hotspots do not
+  justify weakening semantic/cancel checks. Recovery correction and exact scoped
+  records are in TASK_PREDICTION_DIAGNOSTIC.md; numerical bytes stay unchanged.
 
 - Full-sort Core TT priority is now structural; large evaluator capture values
   previously outranked its numeric-1000sentinel. All84jointly complete D3pairs

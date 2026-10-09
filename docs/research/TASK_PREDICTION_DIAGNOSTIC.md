@@ -313,6 +313,42 @@ or refit the report cohort merely to obtain stronger-looking results.
 Recovery for these new producers/raw outputs is the source-prior supplement
 in data/qfrontier_20261009.json; old archives and frozen teachers stay unchanged.
 
+## Core generation locality and recovery correction
+
+The408caller timers locate legal generation as a large inclusive component,
+but overlap other work. A single cold2107initial q0 cProfile query likewise
+locates semantic legality/check and cooperative checkpoints; profiling changes
+deadline work and cannot quantify a speedup. Preserve cancellation/deadline
+polling. Public normalized function records and the producer are routed below.
+
+Following the advisor's specific duplication hypothesis, the first original-order
+root capped in all three q2 arms (2106ply0) receives a NEW128total-node/no-deadline
+q2hard8 audit, not an extension of the old2048node/2second comparison. Instrumented
+and cold controls have identical action, score, PV, depth, main/qnodes and stop
+cause.372legal requests include354cache hits and18full generations.352terminal
+existence probes yield exactly one action each;17visit episodes subsequently
+expand and335do not. No episode generates a full legal set twice. Disjoint
+iterator-next observations cost20.04ms existence and28.76ms expansion; wrapper
+times contain these and must not be added. Tag recovery/instrumentation overhead
+precludes a speed claim. Episodes retain full identity/history/snapshot scope,
+not Position-only equivalence or cross-history merging. This small control
+supports current lazy full generation; do not turn first-action duplication into
+an eager full-child cache. Further optimization requires a changed concrete
+cost hypothesis and fixed-work evidence, not removing semantic checks/polling.
+
+Correction: the source-prior archive first published at
+a553098049dc4896f8327c84522ea2fd295944f2 mixed absolute and relative member names.
+Hash equality alone did not establish isolated recovery: absolute members escaped
+the earlier restore prefix. Its isolated-recovery claim is withdrawn. Numerical
+member bytes are unchanged. The replacement source-prior-diagnosis-relative.zip
+normalizes all80members, checks every target stays inside a fresh restore root,
+verifies all hashes and independently restores32exact reply top-loss fractions.
+The flawed package remains in Git history, removed from the current tree;
+source-prior-diagnosis-relative-index.json records both hashes and correction.
+Profiler and generation-audit sidecars are subsequent scoped diagnostics, not
+immutable archive members. Product1778test validation is unaffected by renaming
+the recovery package. No scientific default/strength claim follows.
+
 ## Recovery and next decision
 
 [data/qfrontier_20261009.json](data/qfrontier_20261009.json) routes producers,

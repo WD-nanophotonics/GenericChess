@@ -326,8 +326,8 @@
     "full_table_validation": false
   },
   "source_prior_diagnosis": {
-    "recovery": "docs/archive/search_compression_20261009/source-prior-diagnosis-index.json",
-    "archive_sha256": "6ecc283bc687b64bbe3857cd232e050fdfb74ef59285654447071a27c4ab6956",
+    "recovery": "docs/archive/search_compression_20261009/source-prior-diagnosis-relative-index.json",
+    "archive_sha256": "91125fdb0630582c4a8be6d2fe33c6f4da52def2a64003e81b8a9dc9cb1f0b25",
     "base_commit": "5f13d1a7c7e6964adf77c096e2f4d38f68ef2b89",
     "scope": "Crossed existing2104/2105 attribution; four prospectively frozen2106..2109 source-prior task/caller diagnostics, no refit/default/strength.",
     "verification": {
@@ -392,7 +392,16 @@
       ],
       "caller_calls": 408,
       "decision_roots": 68,
-      "no_training_or_search": true
+      "no_training_or_search": true,
+      "product_tests": {
+        "tests": 1778,
+        "failures": 0,
+        "errors": 0,
+        "seconds": 134.1,
+        "scope": "Full four active layers, after fresh local temp rerun; first system-temp failures and one transient atomic rename retained locally. Four new public q-cache regression cases."
+      },
+      "relative_target_containment": true,
+      "fresh_isolated_arithmetic_checks": 32
     },
     "caller_arms": [
       {
@@ -508,6 +517,70 @@
       "completed_mismatches_after": 0,
       "hard_depth_control": "q-hard-repaired.json",
       "product_change": "Clear persistent public-player TT when q soft/hard depths change; retain unchanged-q reuse."
+    },
+    "superseded_recovery": {
+      "commit": "a553098049dc4896f8327c84522ea2fd295944f2",
+      "archive_sha256": "6ecc283bc687b64bbe3857cd232e050fdfb74ef59285654447071a27c4ab6956",
+      "failure": "Mixed absolute member names invalidated the earlier isolation claim. Numerical member bytes unchanged; prior delivered artifact remains historical in Git, removed from current tree."
+    },
+    "subsequent_diagnostics": [
+      {
+        "path": "docs/archive/search_compression_20261009/source-prior-caller-profile.py",
+        "sha256": "0eb2fce6df34066e236470e336fa382ae7bf3a981c7f6e41a5c9b3fb1a34375a",
+        "bytes": 3447,
+        "scope": "Subsequent scoped Core cost/visit diagnostic, no immutable member changes or performance gain claim."
+      },
+      {
+        "path": "docs/archive/search_compression_20261009/source-prior-caller-profile.json",
+        "sha256": "90c54b2276b4debf6ca330219604dd07e120c570d230b55482a185fd1e3638fd",
+        "bytes": 9296,
+        "scope": "Subsequent scoped Core cost/visit diagnostic, no immutable member changes or performance gain claim."
+      },
+      {
+        "path": "docs/archive/search_compression_20261009/source-prior-generation-audit.py",
+        "sha256": "b15646ac3ee25e3bfd8dabf8b81bdd6782212cd7274a7530e6b56c72d9b7d326",
+        "bytes": 7025,
+        "scope": "Subsequent scoped Core cost/visit diagnostic, no immutable member changes or performance gain claim."
+      },
+      {
+        "path": "docs/archive/search_compression_20261009/source-prior-generation-audit.json",
+        "sha256": "db27de186f84fce237095925c6a8db3f21430b0f2437a7f5a63d7c4d25855105",
+        "bytes": 7155,
+        "scope": "Subsequent scoped Core cost/visit diagnostic, no immutable member changes or performance gain claim."
+      }
+    ],
+    "generation_visit_audit": {
+      "seed": 202610082106,
+      "ply": 0,
+      "limits": {
+        "max_depth": 3,
+        "max_nodes": 128,
+        "max_time_seconds": null,
+        "quiescence_max_depth": 2,
+        "quiescence_hard_max_depth": 8,
+        "quiescence_max_nodes": null,
+        "deterministic": true
+      },
+      "signatures_equal": true,
+      "totals": {
+        "legal_requests": 372,
+        "cache_hits": 354,
+        "expansion_generations": 18,
+        "expansion_iterator_seconds": 0.02876180224120617,
+        "expansion_yielded": 457,
+        "legal_request_seconds": 0.030195998726412654,
+        "existence_generations": 352,
+        "existence_iterator_seconds": 0.020038398215547204,
+        "existence_yielded": 352,
+        "terminal_calls": 352,
+        "terminal_seconds": 0.023174604400992393
+      },
+      "visit_episodes": 353,
+      "existence_then_expansion_episodes": 17,
+      "existence_only_episodes": 335,
+      "max_existence_yields": 1,
+      "multiple_full_generation_episodes": 0,
+      "limitations": "Episode scope only; no equivalent-state merging. Iterator next timings are disjoint by phase, wrapper times contain iterator time; never add them. Extra telemetry/path-tag recovery overhead prevents performance comparisons. No eager child full-set proposal or product change."
     }
   }
 }
