@@ -223,3 +223,19 @@ now recorded in TASK_PREDICTION_DIAGNOSTIC.md. Counterfactual top-choice gains
 transfer weakly to actual fixed-search selected actions: capture has limited
 improvements and one adverse q0 result; total ties throughout. Keep these scoped
 candidates, not automatic Unit-regret training or a default joint price system.
+
+Latest2026-10-09 checkpoint: four further finite16source rules give no selected
+net improvement, with five q0 and one q2 regressions. On twelve exposed roots,
+all36matched D2 calls complete; five finite16 losses remain. An independently
+fixed Unit-D2 full child reference and an existing frozen partial2048 constant
+comparator require no label fitting: v3 hits12/12, initialcapture6/12,
+finite16capture7/12 and the frozen learned constants6/12. This narrow teacher
+diagnostic does not establish generic price utility or rank evaluator families.
+It also does not show every constant system fails or require state interactions.
+Current choice is to stop automatic source-law/horizon expansion and exposed
+refits; select a concrete future target by decision and cost. Preserve real
+promotion/drop/auxiliary/history semantics, while stating that full state is
+not full value. Detailed controls and raw recovery remain in
+TASK_PREDICTION_DIAGNOSTIC.md. Advisor advice to refit these exposed roots is
+deferred under the no-exposed-label-fitting boundary; small authorized training
+on a separately declared prospective development split remains available.

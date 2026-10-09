@@ -1395,3 +1395,45 @@ All1778active tests pass after the repair. Initial full-suite attempts hit the
 system temporary-directory permissions and one transient atomic rename in a
 workflow test; its isolated recheck and final fresh-local-temp full suite pass.
 No retry framework or operating-policy change follows from that transient error.
+
+## Scalar attack owner-key cost (2026-10-09)
+
+The prior visit audit retained lazy generation rather than building child caches.
+Its next128node q2 profile keeps cold action/score/PV/depth/main/qnodes and stop
+cause identical.1340scalar attacks lead project self time62.97ms;80706target
+geometry calls cost18.38ms self, while cooperative checkpoints remain substantial.
+Self times are disjoint but profiling amplifies Python overhead; do not treat
+the inclusive legal-generation total as removable cost or weaken polling.
+
+An owner-only source-index proposal receives all68frozen route roots/8704scalar
+square-owner controls and544cold calls (q0/q2,256total nodes,no deadline,two
+balanced timing rounds). It preserves signatures/work but paired median wall
+ratios.98645/.98702 are modest; defer the optional-owner helper. Independently,
+the same frozen experiment hoists `str(by_owner)` once per scalar attack instead
+of once per eligible geometry. Signatures/work agree throughout; local paired
+median ratios are.94988q0/.96022q2, and all eight rule/q cell medians are favorable.
+This is local timing on short fixed-work calls, not universal speed or strength.
+
+The product change is one query-local immutable string and its use in the
+existing target traversal. Pattern/source/geometry ordering, guard checks and
+every cooperative checkpoint stay in place. No cache, new dispatch index,
+constructor filtering, history merging or rule restriction follows. Full1778
+active tests pass in135.65seconds after this change;41target/attack/executor/cache
+tests also pass. The unrelated pytest cache-write warning is retained locally.
+Exact snapshots, failed preflights, paired controls and product validation are
+recorded in the owner-key supplement under data/query_transfer_20261009.json.
+
+The baseline/product direct control also preserves9344scalar query answers and
+the exact cooperative callback counts, with438paired cancellation positions.
+An independent non-generator empty-target proposal preserves8704queries and
+544fixed-work calls but local ratios1.00359q0/1.00179q2 show no useful reduction.
+Reject that iterator-form change; keep the existing public lazy geometry helper.
+The relative18-member supplement preserves baseline/product source snapshots,
+all three cost proposals and raw results. Fresh isolated restoration verifies
+all bytes/hashes and containment. It does not reproduce machine timings; replay
+uses the declared baseline or owner-key snapshot, not an unspecified newer build.
+
+Additional actual rectangle transfer on7x5/9x10 cannon histories retains2000
+scalar queries with exact callback counts and128cold fixed256node q0/q2 calls
+with equal signatures/work. Local paired wall ratios.98592/.98419 are smaller
+than the square cohort. Keep this measured scope, not a promised global gain.

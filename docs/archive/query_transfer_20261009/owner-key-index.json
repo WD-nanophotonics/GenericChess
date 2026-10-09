@@ -1,0 +1,118 @@
+{
+  "scope": "Agent-produced explicit-law physical/caller evidence or scalar-query cost; exposed development, not strength/universal law. Original bytes preserved. Raw Slack, accounts, credentials and private logs excluded.",
+  "archive": "owner-key.zip",
+  "archive_sha256": "fcd9063308c70d8fed257db88a1d38cf451f949d117732da7ad23e2ce14f0301",
+  "base_product_commit": "2267d7a5e803c2bd0a1cd3f09188a5449b74ab2b",
+  "members": [
+    {
+      "path": ".local_agent/legality-profile-20261009/primitive_profile.py",
+      "bytes": 1863,
+      "sha256": "5de9a185b732761b5f73598c61000904dc0e077e1ea19e0375a704abb22cc81c"
+    },
+    {
+      "path": ".local_agent/legality-profile-20261009/profile.json",
+      "bytes": 50121,
+      "sha256": "611c55ebbc2fbf423874ea507150aa640a32d36a61a036f5dc29e94daea340dc"
+    },
+    {
+      "path": ".local_agent/legality-profile-20261009/owner_probe.py",
+      "bytes": 4736,
+      "sha256": "6f3bedc4fc1d405bc821ba0d2d9bb23bf8ae89a3fc2362cf4eb3bbdf8a4027a6"
+    },
+    {
+      "path": ".local_agent/legality-profile-20261009/owner-probe.json",
+      "bytes": 2231060,
+      "sha256": "66b4d28c00ab15730144c7ae5c45bef9effa1bb37668cd67e206877f2285a3f7"
+    },
+    {
+      "path": ".local_agent/legality-profile-20261009/owner_key_probe.py",
+      "bytes": 4813,
+      "sha256": "22d24a28c0d00103ed75563fe6f8440df5db4fd73389a0448e881bc9e34f416e"
+    },
+    {
+      "path": ".local_agent/legality-profile-20261009/owner-key-probe.json",
+      "bytes": 2231308,
+      "sha256": "ebc3825c772d2f17d232e1e3a7fc0f515474eb3313cd453f8dbae0b347f1760c"
+    },
+    {
+      "path": ".local_agent/legality-profile-20261009/baseline-semantic_executor.py",
+      "bytes": 71329,
+      "sha256": "a1180ccedb043b34d1432a8e73cfbc6fc9fc852239502890a4341920b32e0ba2"
+    },
+    {
+      "path": ".local_agent/legality-profile-20261009/product-semantic_executor.py",
+      "bytes": 71359,
+      "sha256": "aa35db47799c1d1a075793fb5c690324885b22d2f4bdb485f9839332d624d725"
+    },
+    {
+      "path": ".local_agent/legality-profile-20261009/target_iterator_probe.py",
+      "bytes": 4879,
+      "sha256": "254ba695d617e3d216207748297da45fa83175cee00b86590c982c45588b4a5e"
+    },
+    {
+      "path": ".local_agent/legality-profile-20261009/target-iterator-probe.json",
+      "bytes": 2231079,
+      "sha256": "8749fe912e58e978856c8d27a87e6c2c1ac5605d7c743e1fc84ef1a2792633dc"
+    },
+    {
+      "path": ".local_agent/legality-profile-20261009/checkpoint_control.py",
+      "bytes": 2844,
+      "sha256": "ff6deb49074372ec0954b23f7acc0557e638e3e5af34a6735c468ed0aa3ffbe8"
+    },
+    {
+      "path": ".local_agent/legality-profile-20261009/checkpoint-control.json",
+      "bytes": 1232,
+      "sha256": "5799a2b81c2a29ba6563e9b7c307c81c1c480e13cd4e02fb50e824fa21bc6418"
+    },
+    {
+      "path": ".local_agent/legality-profile-20261009/validation-summary.json",
+      "bytes": 210,
+      "sha256": "903d48e6eb9887c4584617de4265c1997c3fa0b41a3609892c29b19fb2d98f78"
+    },
+    {
+      "path": ".local_agent/legality-profile-20261009/rectangle_transfer.py",
+      "bytes": 3717,
+      "sha256": "3dbef161e92cbfbbfbe90cd970be9ee99b7fefa47767ce3eff1082da1e351146"
+    },
+    {
+      "path": ".local_agent/legality-profile-20261009/rectangle-transfer.json",
+      "bytes": 536816,
+      "sha256": "f7828c4ac28c2d9a41ccb76039a5c8da91ca7798be4606914a19dd545f42f4df"
+    },
+    {
+      "path": "docs/archive/search_compression_20261009/source-prior-generation-audit.py",
+      "bytes": 7025,
+      "sha256": "b15646ac3ee25e3bfd8dabf8b81bdd6782212cd7274a7530e6b56c72d9b7d326"
+    },
+    {
+      "path": "tests/product/test_rectangular_search_override.py",
+      "bytes": 8410,
+      "sha256": "1dc4341d58648e3fc626ffbb57c99d4ce6181e85de237baeb7a6d0d313dad7f9"
+    },
+    {
+      "path": "tests/rule_semantics_ir_fixtures.py",
+      "bytes": 17212,
+      "sha256": "209b3bd9388d5ac228329d64eeda7d70a9209f0409ac74217be2879b4d6038c7"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "docs/archive/search_compression_20261009/source-prior-diagnosis-relative.zip",
+      "sha256": "91125fdb0630582c4a8be6d2fe33c6f4da52def2a64003e81b8a9dc9cb1f0b25",
+      "purpose": "Immutable original cost-control rules/routes; use existing repository archive."
+    }
+  ],
+  "replay": "Restore relative members into fresh checkout pinned at base_product_commit. Cost owner_probe/owner_key_probe/primitive_profile use baseline product; target_iterator and finite source callers use archived owner-key product snapshot. Preserve original JSONs; producers assert no overwrite. Fresh replay outputs are new measurements. Timings cannot be reproduced by hash checks.",
+  "verifier": ".local_agent/finite-source-transfer-20261009/recover_verify.py",
+  "isolated_verification": {
+    "relative_members": 18,
+    "fresh_destination": true,
+    "all_hashes_verified": true,
+    "all_targets_contained": true,
+    "exact_fractions": 0,
+    "selected_arm_records": 0,
+    "reference_arm_arithmetic": 0,
+    "timing_reproduced": false
+  },
+  "verifier_dependency": "recover_verify.py in finite-source-transfer.zip, routed by qfrontier_20261009.json"
+}

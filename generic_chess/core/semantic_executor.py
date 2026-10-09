@@ -617,6 +617,7 @@ class SemanticEngine:
         consulted here."""
         self._ensure_match(position)
         sources_by_owner_type = _sources_by_owner_type(position)
+        owner_key = str(by_owner)
         for pattern in self._patterns:
             _checkpoint(checkpoint)
             if pattern.target.kind != "target_enemy":
@@ -636,7 +637,7 @@ class SemanticEngine:
                         ):
                             continue
                         for path in geometry_paths_to(
-                            geometry, str(by_owner), source, square
+                            geometry, owner_key, source, square
                         ):
                             _checkpoint(checkpoint)
                             binding = self._make_binding(

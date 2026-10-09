@@ -38,6 +38,18 @@ independent price/task questions; do not claim pre-final timings as deployment.
 
 ## Current evidence and decisions
 
+- Four new finite16 source-prior rules retain mixed physical signal, then no
+  actual selected-net improvement: capture worsens5q0/1q2 choices versusv3.
+  Separate36matched D2 calls all complete; five losses remain. Stop automatic
+  source-law/horizon expansion or refits, keep the candidate conditional, and
+  examine promotion/auxiliary decision targets or small state-feature ablation.
+  TASK_PREDICTION_DIAGNOSTIC.md owns all caps, raw results and isolated recovery.
+  Scalar owner-string conversion hoisting is the only product change;544cold
+  calls preserve work/signatures,9344queries/438cancel pairs preserve callbacks,
+  and1778active tests pass. Two larger helper proposals stay deferred/rejected.
+  Local short-call ratios are descriptive, not universal speed or strength;
+  UNFAMILIAR_RULE_SEARCH.md owns these cost controls and exact source pins.
+
 - Fresh partial-preference coverage now retains64roots/3155children,3133complete
   child references and22UNKNOWNs. At8192nodes,56roots supply usable certified
   pairs in160.45seconds, versus1371.55seconds for full children. Three frozen

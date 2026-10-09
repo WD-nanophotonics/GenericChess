@@ -184,7 +184,7 @@ without importing human prices, datasets or fitted coefficients. Our task
 rewards are independent of the score, but exposed route selection remains a
 limitation; reward independence is not validation independence.
 
-[Feys, *The Arithmetic of Chess Piece Strength on the nÃ—n Board*](https://arxiv.org/html/2605.20229)
+[Feys, *The Arithmetic of Chess Piece Strength on the n-by-n Board*](https://arxiv.org/html/2605.20229)
 explicitly studies geometry rather than practical material value and uses a
 single-color Bishop convention. Local actual-target enumeration for n=4..12
 matches ordinary B total2n(n-1)(2n-1)/3. Halving that is not the ordinary B mean:
@@ -364,3 +364,84 @@ headroom is genuinely decision-changing, or one observed generic interface
 failure, rather than add more uninformative horizons or infer new prices from
 these sparse exposed checks. No new framework, NNUE, Elo target or deployment
 gate is established.
+
+## Finite source occupation and actual use (2026-10-09)
+
+Four new frozen seeds2110..2113 reuse the generator/mechanism family, not a
+new unknown-rule universe. Before physical labels, freeze initial-source and
+finite16source capture/total tables. The explicit128state source law proposes
+uniformly among63other cells and accepts projected IID quiet/capture events,
+otherwise stays; average pre-step opportunity over16steps and the old density
+law. H1 matches initial weighting; stochastic mass and80anonymous raw-value
+controls pass. This law/horizon is a declared approximation, not rule-identified.
+The projection omits drop/transformation/safety/history and opponent control;
+the actual execution carriers preserve all generated state/rule semantics.
+
+The physical task keeps68backgrounds/4390cells/14942transitions, including zeros.
+Finite16capture top loss ties initial capture on all four rules; pair loss
+improves2110 only. Finite16total worsens top loss2111/2112. Do not select a
+natural source law, refit the horizon or promote a default from those results.
+
+Actual use freezes old v3, initial capture and finite16capture leaves, common
+old hand values and unit ordering:408cold Core D3/2048node/2second q0/q2 calls,
+all PV/root checks and caps retained. Each arm completes q0D3 on7/68roots; q2
+completes none. The cheaper union-of-selected-actions ordinary-removal minus
+maximum one-reply loss covers all68roots/408arm records,8146transitions/70.53sec.
+Against v3, initial capture worsens6q0/1q2 choices; finite16 worsens5q0/1q2,
+with no improved net choices. Choices, count net and capped search are not Elo,
+full WDL or a comprehensive price objective.
+
+A separate exposed failure diagnosis freezes six q0-adverse roots plus six
+earliest tie controls before36matched D2 calls (same leaves/order/hand/q0,
+10second checkpoint each). All36complete in35.69sec; five finite16 losses
+remain, so D3 incompletion alone does not explain them. On2111ply0 v3 chooses
+A capture with promotion to X, gain1/worst ordinary loss1/net0; both source
+variants choose an A quiet move, gain0/worst loss1/net-1.1562additional transitions
+recheck the original seven root/q adverse examples. These revealed diagnostics
+retain their exposed status; they do not extend or overwrite the frozen cohort.
+
+Stop automatic source-kernel/horizon expansion. Next compare a finite decision
+target preserving actual promotion/auxiliary effects, or a scoped state-feature
+ablation, rather than infer deployment benefit from same-source substitution.
+No training/refit/default or strong general claim follows. The35relative-member
+finite-source supplement under data/qfrontier_20261009.json preserves exact
+rules/routes/tables, producers, raw failures and pins. A fresh isolated restore
+checks every member/hash/containment and independently recomputes56exact physical
+fractions plus408selected-arm arithmetic records. Hash recovery is not rerunning
+timings or independent utility validation. Personal logs/raw Slack stay local.
+
+Subsequent advisor review distinguishes fixed-constant expressivity from this
+source-law failure, and D2 completion from effects beyond D2. Adopt those limits;
+defer the suggestion to refit these12exposed labels. Instead use the unchanged
+partial2048model (hash recorded), mechanically derive its frozen constant table
+with the existing actor descriptors, and preserve common hand/order conditions.
+An unrelated fixed Unit-D2 full child reference completes all12roots with57961
+transitions in16.78sec. Optimal-set hits are v3:12/12, initialcapture:6/12,
+finite16capture:7/12, frozenpartial2048:6/12; adverse selected losses are200in
+that teacher's units. The teacher has multiple score levels on11roots and only
+one legal action on the twelfth. These are exposed diagnostics, not a new model
+selection set, generic value or proof that all constants are insufficient.
+Reference tables, frozen model/feature sources and producer pins are included
+in the same finite-source supplement. Full GameState retains promotion/drop/
+auxiliary/history for execution; its retention does not make Unit utility whole.
+
+All12cold Unit-D2 callers independently match the full reference maxima and
+optimal sets. Two preselected D3 target checks preserve the originalD2 evidence:
+2110ply0 stops at40.01sec/223702transitions with a partial52action front, UNKNOWN;
+2111ply0 completes all49actions in27.31sec/132038transitions. Its best Unit-D3
+score is200; v3's same selected action has loss0, both source candidates and
+the frozen learned constant action loss200. This one completed root does not
+identify true value or eliminate all farther effects. No automatic deeper front
+or refit follows. Final isolated recovery verifies35raw members,56exact physical
+fractions,408selected-arm arithmetic records and48reference loss/hit records;
+actual timings remain measured locally, not reproduced by restoration.
+
+The learned constant arm is specifically a derived current-board proxy, not
+execution of the original frozen state predictor. An18selected-child audit
+exactly reconstructs its affine score and isolates the current=base substitution:
+nine children have nonzero base correction. Hand/promoted/side terms and the
+intercept are recorded separately; median normalization/rounding/clipping and
+common old hand prices are further deployment approximations. Thus its6/12hits
+do not establish failure of the full predictor, all learned constants or generic
+state interactions. The audit makes no fit and does not put that predictor in
+live search. Retain this distinction when selecting the next comparison.
