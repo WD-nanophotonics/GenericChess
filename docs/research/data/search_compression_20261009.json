@@ -164,5 +164,102 @@
     "checkmates": 1,
     "censored_games": 11,
     "decision": "Defer pair expansion/default promotion. Fresh shared-input premise only; retained report cohorts cannot be refitted."
+  },
+  "shared_rule_comparison": {
+    "archive_index": "../../archive/search_compression_20261009/shared-rule-index.json",
+    "coarse_screen": {
+      "roots": 24,
+      "children": 1037,
+      "selected": 7,
+      "zero": 17,
+      "seconds": 314.91854139999487,
+      "train_children": 176,
+      "position_dev_report": [
+        2000,
+        2000,
+        4000,
+        4000
+      ],
+      "coarse_dev_report": [
+        2000,
+        2000,
+        2000,
+        4000
+      ],
+      "matched_unit_dev_report": [
+        2000,
+        2000,
+        0,
+        2000
+      ]
+    },
+    "rule_screen": {
+      "roots": 24,
+      "children": 1143,
+      "known_children": 1132,
+      "unknown_children": 11,
+      "complete_roots": 22,
+      "selected": 7,
+      "zero": 15,
+      "seconds": 554.2298218999058,
+      "report_incomplete_roots": [
+        "2026101109/7",
+        "2026101110/16"
+      ]
+    },
+    "shared_fit": {
+      "input_dimensions": 74,
+      "train_variable_columns": 64,
+      "train_roots": 5,
+      "train_children": 242,
+      "seconds": 0.02360059996135533,
+      "dev_regrets": [
+        2000,
+        2000
+      ],
+      "material_dev_regrets": [
+        2000,
+        1750
+      ],
+      "report": "4complete zero-headroom roots,2incomplete; no validation/gain claim",
+      "rank_not_numeric_leaf": true
+    },
+    "representation": {
+      "auxiliary_symbol_snapshots": 8,
+      "duplicate_physical_successor_snapshots": 17,
+      "duplicate_extra_actions": 34,
+      "duplicate_input_changes": 17,
+      "guard_disabled_removed_drop_options": 34,
+      "old_guard_descriptors_identical": true,
+      "untrained_behavior_proposal_axes": 22
+    },
+    "calls": {
+      "root_rank_calls": 288,
+      "unit_resource_calls": 48,
+      "static_search_calls": 144,
+      "ordered_tt_calls": 48,
+      "lexical_nodes": 54493,
+      "ordered_nodes": 36591,
+      "lexical_seconds": 47.02689830027521,
+      "ordered_seconds": 46.628611400024965,
+      "lexical_D3_calls": 2,
+      "ordered_D3_calls": 6,
+      "regret_changes_with_ordered_tt": 0
+    },
+    "drop_context": {
+      "full_successor_scan_seconds": [
+        0.5321906001772732,
+        0.5994828999973834
+      ],
+      "CoreD1_seconds": [
+        0.03841680008918047,
+        0.03956350008957088,
+        0.03929349989630282,
+        0.03717610007151961
+      ],
+      "context": "Two post-result witnesses only; one Bdrop checkmate, no state-feature deployment"
+    },
+    "decision": "Defer coarse expansion and raw syntactic counts; preserve baselines, full domain and incomplete refs. Scoped untrained behavior-input repair; next interaction needs actual decision/cost benefit without repeating existing search.",
+    "exposure": "Four existing generated rules, prospective whole-trajectory split; subsequent probes explicitly exposed. No human data or report refitting."
   }
 }

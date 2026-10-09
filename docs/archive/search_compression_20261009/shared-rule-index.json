@@ -1,0 +1,393 @@
+{
+  "scope": "Agent-only sharing evidence; immutable supplement, isolated restore/no refit.",
+  "archive": "shared-rule-comparison.zip",
+  "archive_sha256": "19c8e69d2caef7c72b2118a1f8e015bf56bfdf04c331b838a85d346951587296",
+  "base_commit": "4e5540577b9610ff1f1aa9b83464ea5ae6b93ee2",
+  "members": [
+    {
+      "path": ".local_agent/sharing-20261009/aux-symbol-declaration.json",
+      "bytes": 206588,
+      "sha256": "7f80ceeefd97c236c65fbe5c42bb956a82e6c6a47b91c872a439230b898cc0ab"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/aux-symbol-map.json",
+      "bytes": 5634,
+      "sha256": "2dabdf246c36cbd35d7a53458c8d5b3b38966bd1c2c107170c2fb2f05a11c00e"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/aux_symbol_map.py",
+      "bytes": 4554,
+      "sha256": "bc7b89a475c7fc85dfaa1fa6df1b4bcb0d25a5363ad4b210fad3a9da1ccd2a88"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/behavior-input-proposal.json",
+      "bytes": 15237,
+      "sha256": "3973d1c2463d4f7a77423452c9ce34b93baf98fe798f733028b4c8102ab0b9e0"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/behavior_input_proposal.py",
+      "bytes": 3138,
+      "sha256": "6735cf7888a343a8ee412c87cd8b772f91481737cdb2caf47b6388c593de0380"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/constant-declaration.json",
+      "bytes": 1036,
+      "sha256": "da268a06fe63d484648915699eec02d271b07c077eea0d467ea82bac8f65ce5e"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/constant-model.json",
+      "bytes": 848,
+      "sha256": "651b773f6028d7cb87b657011ffbaa4b351e23f0618f9414d3c6989501c2887c"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/constant-result.json",
+      "bytes": 4066,
+      "sha256": "d56253acb8f571d0a810cfd9f93e6474e55f29c8e76a2add1192135ec279f225"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/constant_rank.py",
+      "bytes": 5125,
+      "sha256": "b940eb3f780cd8cd4c8ffe1015fb81faba6cdc44c7613748c3efecf0bc03b7bd"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/drop-context-probe.json",
+      "bytes": 68715,
+      "sha256": "2dc848e624845cef2ab26aae4f404a315102e9c3519d7af58ae7dd85e91e5ca1"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/drop-search-control.json",
+      "bytes": 12280,
+      "sha256": "95e07cc130498842120b6975c6c05594d8979f26f85a9b3cb0838d950ba16e7a"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/drop_context_probe.py",
+      "bytes": 2434,
+      "sha256": "72c5884ffdb77819a078f0bff2b4ca9ac225d92ee77d72797b5f73e11d9774b1"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/drop_search_control.py",
+      "bytes": 2826,
+      "sha256": "ba4e8bb9704b511d9d9f5b6f3ed0ff5b8b6df2fa2167a6ab574f48b945321372"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/guard-operand-probe.json",
+      "bytes": 88745,
+      "sha256": "050b260e0422a34ed04846121e62d05cd2ddcf1a8e461bf0dc72ca4122a90cf9"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/guard_operand_probe.py",
+      "bytes": 2893,
+      "sha256": "98f33af178342319bef27da47a1a5f1a7f432db13840e8fdc5b7aa2f85b3b3ec"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/prepare_rule_static.py",
+      "bytes": 2258,
+      "sha256": "a365472d886fe223407c77c0f1c13761479dffab753dafce95142de69fbcb316"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/prepared-protocol.json",
+      "bytes": 1697,
+      "sha256": "5215d073ccc70f01737e38d4c760440242222932a91cafbee5650750df1804b0"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/ranking-declaration.json",
+      "bytes": 750700,
+      "sha256": "b92687e2fa014d1d942edaf0bdbd4c9f2a1f53be49a3c5a56e7dbd4204286540"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/ranking-fit-declaration.json",
+      "bytes": 1055,
+      "sha256": "12fc5c77d1c7b69c8649eae2e6ba30521f9b14b822442e6072d8cc753b9daa51"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/ranking-model-position.json",
+      "bytes": 29985,
+      "sha256": "8b94207f699f060f49c2dda4c403bf01c4566c26ff7b588064807fcec1bb0540"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/ranking-model-position_pairs.json",
+      "bytes": 167078,
+      "sha256": "76bc01b7da429139acd68edcf28fc4294df2f45290c42d8cae44b6d399dd97da"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/ranking-result.json",
+      "bytes": 5602,
+      "sha256": "60c5eee86ea618d6b64a79145f9325791bb71378989b53dc1a72ec94ba4f8ea0"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/ranking-root-callers.json",
+      "bytes": 29161,
+      "sha256": "89fc7914d66a0f21279cc59c1659da76389e5560ea742e45bae889ffad1c43ba"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/ranking-screen-inputs.npz",
+      "bytes": 102805,
+      "sha256": "650103eb8011fea79664bd6ca9e4b16d02f0d8ea897459001d6b9fe4620ebfc5"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/ranking-screen.json",
+      "bytes": 4465237,
+      "sha256": "c7cee92b3ad67bfe3f1457a637ca27efe95f2863c741612f1831560e9fe1164c"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/ranking-selected-inputs.npz",
+      "bytes": 324317,
+      "sha256": "4338355f9d990b3d8da6f89ba0b953eba0abb70f01fa46fe5a4b2d8be116863c"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/ranking-selection.json",
+      "bytes": 4876,
+      "sha256": "8ae0aa9d4e2df3c0a5361182c86bc11da19b5a23b7bfb51bd0f4e571e07689a6"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/ranking-unit-curve-declaration.json",
+      "bytes": 1283,
+      "sha256": "cb312ac5e920da21ca097142e5dc35ba5401b8212763961b1abc69d3bd87a242"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/ranking-unit-curve.json",
+      "bytes": 72291,
+      "sha256": "3634dae43331d03075a744e932f9b3a56b0302340dbd8150c83e7b6c4bcd928d"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/ranking_fit.py",
+      "bytes": 8662,
+      "sha256": "011994f5d744f0d4885990b750c7a06a8fb5d6d0335c02837662e946bcecdb5f"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/ranking_root_callers.py",
+      "bytes": 4848,
+      "sha256": "762a1143351d183101f10cf24e60e3b0e0ffac747effabc436a68329f535be34"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/ranking_screen.py",
+      "bytes": 7290,
+      "sha256": "9350ec6a92cd44c32165c311ef96333afa073a63a5a027f13a1bf1d78a3a92e5"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/ranking_unit_curve.py",
+      "bytes": 3842,
+      "sha256": "4078c9a69f28b1af4d6b67451a2de2a66c1c2a2684cbfcc416ada59b4032e2d3"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-aliases.json",
+      "bytes": 28140,
+      "sha256": "866c3d79151c751c0084f3e14ae4b464d61ec87923533582c0ada9d96005e45a"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-caller-declaration.json",
+      "bytes": 47573,
+      "sha256": "7a8d21deb5a374acc77892e16bb65f180b6aad21a8283f7678e66800c3c6ca2e"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-callers.json",
+      "bytes": 268874,
+      "sha256": "ee3491d37c1092fe91192af0e7ba724e0e10f17dcc3c4685dc9b20b189924df9"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-declaration.json",
+      "bytes": 968630,
+      "sha256": "09cc623b46373575e3b37c50b8f749307c1755de84739bcb7b780ec63ef928d3"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-duplicate-control.json",
+      "bytes": 105407,
+      "sha256": "7964f3bca2affbd6d8e130f3710b013b9d81747e9ff257f31f64c9508c33bb0c"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-fit-declaration.json",
+      "bytes": 2223,
+      "sha256": "704805dfa196dbebab3b534adbcafc25d78b0d8c39ea413532653de9482a2d0e"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-model.json",
+      "bytes": 6239,
+      "sha256": "4f63fa2812eb0995c8ef6d810904e48fac3b6fde5fd020d5609a9192f23d2da5"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-redundancy-prediction.json",
+      "bytes": 1470,
+      "sha256": "c15e30d6c96a172ce16e76ae37a54ead923aaccdf5123178c5313baf4c9a6445"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-result.json",
+      "bytes": 5524,
+      "sha256": "bd9913370ff9e6f288cece7151973ce7ce4c11921b822f76d4c5d6a50b1d61eb"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-screen-inputs.npz",
+      "bytes": 20629,
+      "sha256": "23f2b3ddd694e5a638297ab36571daf42ad8d1f22f87e96c4dfda0d9d3fd93ca"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-screen-metadata-failure.json",
+      "bytes": 213,
+      "sha256": "cf63e17f89ecc5dd54505b5901d959b2005419fc88edfd7cc51ee8b669213f75"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-screen.json",
+      "bytes": 4905465,
+      "sha256": "c7a948f469aa6021e877ad085fe6dffe751f8fc1a69bdfea74c7eb905bc922e5"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-selection.json",
+      "bytes": 5430,
+      "sha256": "c3079d828e26e66da3b1ba2c84d1e299761a0bfb769d949a22f874e121c2e1a4"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-static-callers.json",
+      "bytes": 506123,
+      "sha256": "d797135bb038a1e6a8d2fe681a5acdf823959accd5ad574b63cc3367e14344c1"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-static-declaration.json",
+      "bytes": 53661,
+      "sha256": "9597c3bbbddd091b11ef9aa653b67c4a30570b23ecdb55175f871879497fd5a2"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-symbol-carrier-failure.json",
+      "bytes": 250,
+      "sha256": "e2e1804d0b843398babdfe5d977fc087f175b3b3e862bc0dadba7d25ac3d2a8f"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-symbol-control.json",
+      "bytes": 1113,
+      "sha256": "bf57b882a0ebab41329f067074efbfe5064fee65a8b58813c92247b980df4a2b"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule_aliases.py",
+      "bytes": 2907,
+      "sha256": "7759f7a384c1b274e846374f4c8a5d60d31e7c7f9a1d4fe184039cf44f393fd4"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule_callers.py",
+      "bytes": 6816,
+      "sha256": "6214f30b0b4e4373d4f00c9f10db630e312823451bfd683b3980179ef0fe9898"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule_counts.py",
+      "bytes": 3436,
+      "sha256": "9d72ea83a57b0f7b889b138678dde108928a40ac7ee966da73b399a38961e23a"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule_duplicate_control.py",
+      "bytes": 3294,
+      "sha256": "adc4b27bd8029ceb4ece3d7d73a34423223c5ffaf40169a3f9c83dabf22105ea"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule_fit.py",
+      "bytes": 4965,
+      "sha256": "a491cd80c542dabbb37e6e2f7becfd2c239906237727ae4109b3bdda2078fa7a"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule_screen.py",
+      "bytes": 7855,
+      "sha256": "5b38d1d0ffc6b2f079434460a9a17dd099e03d6068ea4901a57fdf5ac6cef67f"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule_screen_array_metadata_failure.py",
+      "bytes": 7823,
+      "sha256": "57622023012713e0364b6ca43e5a45b4f92c9cb47f3e99411ef8f4b3d52eba7c"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule_static_callers.py",
+      "bytes": 4838,
+      "sha256": "3a81583b0c6b3a7a03df4eac7f10b5622624403a9635cabbb879ec30a921d0a3"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule_symbol_carrier_failure.py",
+      "bytes": 1984,
+      "sha256": "815a2cd1ffd1280bc56f006dba1a52b17de6502867221b1e556ac95bc87ccf53"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule_symbol_control.py",
+      "bytes": 1999,
+      "sha256": "915dc003cb171c2529c8391a793b85cbea9d1ce8fd141b6bb67e03bdea69f89f"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/search-reuse-control.json",
+      "bytes": 172068,
+      "sha256": "8b0263596aa23f49e33b4e5ccdd781b2a42a49246f4fa43fcf0c05ec0786413a"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/search-reuse-declaration.json",
+      "bytes": 886,
+      "sha256": "ebb6001e6c868652530a509889f34bbb40b2c03aa1cbfcb0c92a705ade4462dc"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/search_reuse_control.py",
+      "bytes": 3839,
+      "sha256": "e7a5df0424d58e7ec6e8295733e9e902c6f7c573b1f5bd7ad7eb57d794c14a33"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/static-callers.json",
+      "bytes": 147314,
+      "sha256": "f8007fbcb894684552ffb03d849633d9e82b1c0e71dcd3680178378cb381dbb9"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/static-choice-analysis.json",
+      "bytes": 70534,
+      "sha256": "8f12d5ae4f0ad5d8a3e12d332207b8011ba47d5fe687a0014ca8545868d1d6da"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/static-declaration.json",
+      "bytes": 11751,
+      "sha256": "21c9933769586e410fca6ae4b9b31d84f9178f84280e1fbe63acfa7aa84778fe"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/static_callers.py",
+      "bytes": 4569,
+      "sha256": "4c7b016cf75696ea42212ea2fcef43587319d71c2fe8ad8282155754fd94e2c8"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/static_choice_analysis.py",
+      "bytes": 3033,
+      "sha256": "c40d079fda9a3586ba6cb98b7be7710ad8c6180a547f37ac20f6e38b7190c90e"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/static_choice_field_failure.py",
+      "bytes": 2921,
+      "sha256": "f925528b73efd3ecc966dc60489c13f82a732fd02794c58a3e403404f54bbfb3"
+    },
+    {
+      "path": "scripts/position_features.py",
+      "bytes": 4812,
+      "sha256": "2ca7b603ca8befbc862a8d70b2e23985827cbcc11db1281c8005545e55d525e0"
+    },
+    {
+      "path": "scripts/research_record.py",
+      "bytes": 2767,
+      "sha256": "3f1237e0c1d728995f169902aaaad8fb53ac149287aa46875db298b63221612a"
+    }
+  ],
+  "exclusions": "No memo/session/stop flags, user/private inputs, Slack/account records or credentials; all source rules are existing Agent-generated fixtures.",
+  "recovery": "Separate base-commit checkout, install existing project environment and extract into isolated directory; verify all member hashes. Read frozen JSON/NPZ models and restore scores/metrics only; producers refuse completed artifacts. Never import operational state or overlay live checkout. No need to rerun training/search.",
+  "failures": "Metadata ndarray before labels; raw semantic carrier control before result; PV field/action record reader recovered by legal-action matching. Failed sources retained, fixed training/search not repeated.",
+  "verification": {
+    "isolated_members": 71,
+    "restored": [
+      {
+        "method": "position",
+        "rows": 7,
+        "predictions": 306
+      },
+      {
+        "method": "position_pairs",
+        "rows": 7,
+        "predictions": 306
+      },
+      {
+        "method": "count_diagnostic",
+        "rows": 7,
+        "predictions": 306
+      },
+      {
+        "method": "shared_rule",
+        "rows": 7,
+        "predictions": 1132
+      }
+    ],
+    "no_training_or_search": true,
+    "numpy_version": "1.26.4"
+  }
+}

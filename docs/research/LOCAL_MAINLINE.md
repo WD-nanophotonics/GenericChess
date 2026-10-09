@@ -70,6 +70,16 @@ independent price/task questions; do not claim pre-final timings as deployment.
   matched-cost Unit search has0on all3selected dev/report roots. Defer expanding
   pairs/default promotion; a fresh sharing/support premise must precede another
   fit, rather than report tuning. Keep all17zero roots and scope/unknown records.
+  Fresh coarse sharing now has1037complete children: one development improvement,
+  adverse report unchanged; defer expansion. A four-rule74axis constant-input
+  prototype keeps22complete/2capped roots and has no development choice benefit.
+  Redundant identical drop declarations change raw count inputs despite17matched
+  physical successor sets; defer syntactic mechanism counts. A concrete Bdrop-mate
+  alias is detected by existing CoreD1in39ms, far below a full successor feature
+  scan. Static v2/v3search has both a train improvement and a report regression.
+  Keep state/rule semantics, existing search and static baselines; next work must
+  test a behavior-based shared input or one cost-effective state interaction,
+  not repeat these report fits. FINITE_SEARCH_COMPRESSION.md owns exact evidence.
 
 - Full existing common-slot task populations now test fixed price selection:
   immediate top choices help against blind8/8rules, but average pair ordering

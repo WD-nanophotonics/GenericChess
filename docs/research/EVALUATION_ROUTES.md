@@ -149,3 +149,17 @@ but did not execute our measurements. Raw account/Slack evidence stays local.
 Large training, extra workers and product/default changes are not authorized by
 this review. Behavioral interventions can study interpretability progressively;
 complete explanation is not a prerequisite for a scoped useful experiment.
+
+The fresh sharing comparison narrows the immediate choice. Coarse spatial ranks
+improve one development root but leave adverse report regret unchanged; matched
+Unit search remains competitive. Four-rule constant-input training has no clear
+held-rule choice benefit, two report references stay incomplete, and raw IR
+declaration counts fail a concrete redundant-drop representation control. Predicate
+operands also matter: disabling Pdrop leaves the old descriptor unchanged.
+Retain an untrained22axis behavior-based proposal as a scoped repair, not a new
+price table. Any small state interaction must beat a useful existing alternative
+per cost: CoreD1detects the observed drop mate in39ms, whereas complete successor
+feature scans cost over500ms. Static v2/v3leaves have both a helpful and an adverse
+searched choice at identical conditions. Do not conflate root-rank failure with
+static-leaf failure, or finite Unit agreement with true utility. Exact evidence:
+FINITE_SEARCH_COMPRESSION.md and the shared-rule archive/index. No default changes.

@@ -310,3 +310,90 @@ choose a changed data/parameter-sharing premise with a fresh declaration rather
 than tune these report groups. This narrows this prototype, not all interaction
 models or generic learning. The ordinary zero-headroom roots, forced-mate values,
 legacy caps and all censored continuations remain available in the same index.
+
+## Fresh coarse sharing and rule-conditioned constants
+
+The next fixed12trajectories1000–1011 retain24roots/1037completeD2children:
+7material-disagreement roots and17zero roots,314.92seconds. Three selected
+training roots supply176children. The same300step/root-weighted margin fit
+compares Position with Position plus3888coarse ordered-pair channels (sign of
+displacement and Chebyshev distance1/2/3plus). All training regrets are0.
+Position development/report regrets are2000/2000/4000/4000; coarse sharing gives
+2000/2000/2000/4000. One development improvement and unchanged adverse report do
+not justify expanding this ranker. Fits take.029/.091seconds.63actual root
+calls take4.469/4.493/4.574seconds total for material/Position/coarse; scoring
+alone takes.006/.030/.119seconds. Matched-cost Unit search gives development
+2000/2000/0and report2000. No rank output becomes a numeric search leaf.
+
+A separate exposed count-only diagnostic fits once on these same training roots,
+not report labels. It worsens report regret to2285.71versus2080material and has
+15.70%training pair weight at identical count inputs. Existing Unit/v2/v3 leaf
+tables under identical1second/lexical search have identical choices on this
+single-rule batch. This limits the current input/target, not all static prices.
+
+A fresh four-rule declaration keeps the original generated2100–2103rules, three
+whole trajectories per rule and7/16ply roots. The first two rules train; the third
+is development and fourth report.24roots contain1143children;1132references
+complete and11are cappedD1, leaving22complete roots,7selected and15zero.
+The554.23second batch stays below its600second checkpoint. The two incomplete
+report roots remain UNKNOWN; no rerun, resampling or restored holdout status.
+These are exposed development rules, not unseen-rule validation.
+
+One shared linear model uses37mechanical descriptor axes per type, summed into
+signed board-current and hand-base channels, with no type/game IDs. Opportunity
+curves/masks and approximate mechanism counts provide74inputs/64training-variable
+columns. One300step fit on5roots/242children takes.024seconds. Training regrets
+are799996400/0/0/2000/0; development2000/2000versus material2000/1750. Four
+complete report roots have zero baseline headroom and no model improvement;
+two report references are incomplete. All288actual root scorers and48Unit search
+resource calls retain that full denominator. Do not summarize mate-scale errors
+as an ordinary mean. This is an uncalibrated rank prototype, not generated prices
+ready for search. Precise guard/effect operands, on-board base/promotion fields
+and history are absent from its input; full rule/state/history remain in execution.
+
+The representation has a concrete defect. Pure auxiliary/action-name relabeling
+preserves its eight tested inputs; the earlier Position layout requires typed
+slot permutation after castling. However, duplicating an identical guarded Pdrop
+as an augment action changes raw pattern/guard/effect counts. Seventeen observed
+states keep exactly the same projected physical successor sets, with34additional
+action identities, yet all17inputs change. The fitted P board/hand rank changes
+by-1.392/+2.650. This finite probe acknowledges distinct public action identities;
+it is not a global equivalence certificate. Defer this syntactic-count input;
+mere symbol invariance is insufficient for semantic consistency.
+Conversely, changing the typed count guard from<3to impossible<0removes34Pdrop
+options along17common reachable states, while all37old descriptor axes remain
+identical. A scoped, untrained22axis proposal keeps opportunity/masks/horizon,
+removes raw syntactic counts/target cardinality and appends a conservative
+drop-not-statically-disabled Boolean. It matches the duplicate-rule vectors
+exactly and distinguishes disabledP. Other predicates remain unknown; passing
+these two controls does not establish complete rule encoding or price usefulness.
+
+Static inputs also alias genuinely different contexts. At1100/7a quiet Cmove and
+a quiet Pmove leave identical descriptor sums and hand/aux values, but finite
+targets are2000and999999999. Only the latter allows Bdrop at(3,6)to checkmate.
+Complete public successor scans take.532/.599seconds for79/78actions. Existing
+CoreD1finds the mate in.039seconds, with two unchanged-rule repetitions; its
+other-state score4000differs fromD2's2000, so this is not complete teacher recovery.
+Do not build an expensive threat feature that repeats cheaper existing search.
+
+Actual static leaves remain a separate comparison:144balanced Unit/v2/v3 calls
+on all24roots useD3/20knodes/1second/q0and fixed lexical order. At1101/16v2/v3
+improve finite-teacher regret2000to0; at report1110/7they worsen0to2000, with
+both outcomes repeated. PVs and board/hand terms are reconstructed from saved
+legal actions without rerunning search. Opposite effects and finite Unit target
+bias preclude default promotion or claims of independently better prices.
+
+An additional48existing Core ordering+TT calls keep the same Unit leaves and
+D3/20knodes/1second/q0conditions. Lexical/ordered controls use54493/36591nodes,
+47.027/46.629seconds, and completeD3on2/6calls. No known teacher regret changes.
+Ordering and TT are changed together; sequential developmental timing, deeper
+completion and fewer nodes do not establish price quality or strength. All PVs
+and root states pass legality/immutability checks; no product default changes.
+
+Decision: stop coarse-ranker expansion and defer raw syntactic rule counts.
+Retain static tables and Core as operational baselines. The next input experiment
+needs behavior-based shared rule fields and a concrete state interaction with
+an actual cost advantage; no report refitting or new qualification framework.
+Producer metadata/carrier/PV-reading failures are retained; corrections did not
+repeat fits or searches. The sharing archive/index preserves models, NPZ arrays,
+full denominators, failures and exact restoration instructions. Science remains OPEN.
