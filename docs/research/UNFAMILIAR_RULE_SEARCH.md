@@ -1458,3 +1458,37 @@ no comparative constructor advantage is claimed. Exact numeric projection does
 not prove a rule transform is valid. No new live leaf/default/strength claim.
 Recovery and full cost records: frozen-ledger-transfer-index.json under
 ../archive/search_compression_20261009; data/qfrontier_20261009.json.
+
+## Actual affine leaves and finite-budget coverage, 2026-10-10
+
+This is an offline real-leaf adapter comparison, distinct from scoring-discard
+and ordering-only controls. Original34full-history2118/2119 roots, fixed Unit
+ordering and cold public Core players share D4/8192nodes/5sec/q0-or-q2/hard8.
+Full affine values use declared mechanical normalization, integer rounding and
+mate-band clipping; all original terms remain. No fit/default/strength claim.
+
+All three q0arms complete D3 on25/34 and D4 on3/34, with nine stopped atD2.
+q2completes D2 on23full/23v3/24Unit roots, D3 on5/5/6; all102q2calls time out.
+Full q0totals:193948main nodes,176957evaluations,1.14sec scoring versus95.40sec
+legal generation; full q2:21207main/48546qnodes,0.29sec scoring/91.28sec legal
+generation. These measured categories are not a disjoint total-work accounting
+or evidence that semantic generation/checkpoint time may be removed. Zero hard
+check-chain and qnode-budget aborts distinguish time exhaustion from those caps.
+
+Another204scale/role calls preserve the same completion pattern except Unit's
+separately recorded original extra q2D3root. Positive0.25/4scales do not remove
+the frozen full arm's finite errors. Projection reduces one q0and one q2error,
+without generalized utility or completion gain. Actual selected-action reply
+replay confirms mate holes in partially completed q2searches; terminal/legality
+authority remains intact. Intermediate q1uses the same in-check evasions/hard
+abort rules, not capture-only filtering or a cheaper legality substitute.
+All102q1calls time out; D3completion full/Unit/v3 is9/12/10, improved versus
+q2's5/6/5 but with remaining finite errors4/3/3. Keep both coverage and adverse
+results, no qdefault adoption. Selected D3action checks separate a persisting
+200unit gap from another shallow loss that becomes a tie, without whole fronts.
+
+Some original callers overlap the small capability audit; scale and q1batches
+run separately from other CPU experiments. Accordingly, elapsed times remain
+local descriptive resource records, not causal comparative speed promises.
+TASK_PREDICTION_DIAGNOSTIC.md owns target losses, replay and exposure boundaries;
+capability-transfer-20261010-index.json routes exact producers/results/dependencies.

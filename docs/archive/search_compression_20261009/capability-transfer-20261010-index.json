@@ -1,0 +1,307 @@
+{
+  "scope": "Frozen rule/state capability and actual-leaf diagnostics; no refit/default/strength claim. Raw private/operational data excluded.",
+  "base_commit": "05892276ae0ca69bb44c1a6c2b20bcf7706db644",
+  "archive": "docs/archive/search_compression_20261009/capability-transfer-20261010.zip",
+  "archive_sha256": "2dd6f3c761e661ac8428d4cb7f6ba193d527037f4cdf965ce12ec05793e66efe",
+  "members": [
+    {
+      "path": ".local_agent/capability-transfer-20261010/analyse-action-shape-failure.py",
+      "bytes": 2881,
+      "sha256": "e20a17d03f2de3da251e8fddedd2d4c7fa48b225361c6e468e9b5ba9afb716c7"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/analyse-import-failure.py",
+      "bytes": 2841,
+      "sha256": "b691674dfb51d78ebe6c86d84d09b5690d45fd1f4a12c7b2ae56e19ba8ca6af9"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/analyse.py",
+      "bytes": 3332,
+      "sha256": "4d4ac310c1b3d3bcd46c8cbe991baaafa378f8355be81588d25854879d59315d"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/analysis.json",
+      "bytes": 5624,
+      "sha256": "6b3aaca1ca9dedcc216ca2b9ff4dd966a224b4dec8c08e003fedccda92c25dad"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/caller-analysis.json",
+      "bytes": 2208172,
+      "sha256": "29c4371d0514a07177a75f64ff296c6c2773f0689b53bfdfb53776762e3fe29a"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/caller-declaration.json",
+      "bytes": 4251,
+      "sha256": "abf182f3f84e07f170752834d1e08a2e08ab4961249d61ce5036766188a22c5d"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/callers.json",
+      "bytes": 709265,
+      "sha256": "a3054cebeaeb74724691c404e2f205dfc6c57cebdc048bd1186f183875d9e079"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/callers.py",
+      "bytes": 4649,
+      "sha256": "ce4d0c18f587e13727211bed35584cbd9381e260547f5610a1574efedb657110"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/capability-audit-import-failure.py",
+      "bytes": 6740,
+      "sha256": "2a2b3c42c4109f0f4ce59512ffa8dafc0b124fca7211800b2be2e7ed4bc29084"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/capability-audit.json",
+      "bytes": 32332,
+      "sha256": "73b5d2b1a63d1d8e8eda06e43a8562f3c08490f0061a53d540e910f9b8e8baaa"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/capability-declaration.json",
+      "bytes": 737,
+      "sha256": "ae1b33e86a335d443ac8a10916922d736a0733d177898f4d046c44f08b5e12bc"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/capability.py",
+      "bytes": 2567,
+      "sha256": "3bcc44a603eb438448e821458ba35cf45e1dc54a93d19d590808d597ad434e9f"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/capability_audit.py",
+      "bytes": 6682,
+      "sha256": "c73bff9fe976e43928fd617d6b1d36e2a3067139b6d46ba080207332357f54b9"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/declaration.json",
+      "bytes": 98527,
+      "sha256": "99c061d1517ecede72f7673fd8235f33bb979cb98a39bf1a3fe540519f78851c"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/direct-rank.json",
+      "bytes": 1781593,
+      "sha256": "0d472e71cdbcba4388b5c73e2442e76cb3752064a8bfc723d8cb8a37573cc169"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/direct_rank.py",
+      "bytes": 3715,
+      "sha256": "be0dc643c1cf2ed5f5ab9c1421d2f7a9d4783eeff2b19169761be2d9cc9c365b"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/freeze.py",
+      "bytes": 4357,
+      "sha256": "5bb62fd4a1fdc38d7d4c0c3b2b3b83a65ee2a3123d4c1358fe2a6da5426350e2"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/geometry-pooling.json",
+      "bytes": 23571,
+      "sha256": "84a8b0b222d83766fdb830b9870f1299bcdca274bc9826d30efe2b6863eee781"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/geometry_pooling.py",
+      "bytes": 2943,
+      "sha256": "75958a3dd12339d3e9a2d4646787f19b86f640b0daf306a21aeaa1243a804e3a"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/leaf-controls-declaration.json",
+      "bytes": 4350,
+      "sha256": "b8e38d38b636a7d92ea973c88fabfc77ae1568f16fc05e6d0807d138c45ff7ca"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/leaf-controls.json",
+      "bytes": 711637,
+      "sha256": "10ee49cc4a38e50080da94439121070d621fa2ddbb04bbf750fdba7db5da5ce8"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/leaf_controls.py",
+      "bytes": 4953,
+      "sha256": "18549e85930d41168b3ca6b13ee3b00511d445d09218680ae7d18569c1ba92f0"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/mate-replay.json",
+      "bytes": 12420,
+      "sha256": "8d3f3c9fc83e1588f93440b7c4db3f1f624985a4e3ee1954c675a7f468dfa8bd"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/mate_replay.py",
+      "bytes": 2663,
+      "sha256": "3743e15a9481f14cd0fb62a40b3692db775af552edb251acb17dd080b2522448"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/original-reference-declaration.json",
+      "bytes": 692,
+      "sha256": "8a1215a97e18a485dff7f6fa67ed03df3e0d7387cb0ca59c68675b09b053d382"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/original-reference.json",
+      "bytes": 1195318,
+      "sha256": "4130f5e148a7510fd09222fd46032fb8fa4c78b2ace89ebdfcc29e25f02b3d1a"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/original_reference.py",
+      "bytes": 2935,
+      "sha256": "ed41a0bc62714b027265c1d7b1723de2516c7c0cebe0a36f98a89e48265ed784"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/q1-callers.json",
+      "bytes": 345265,
+      "sha256": "1584cc3c12d073afe224b27d625262ef8ae8c8e4eeb40357eefd366c2d5992f1"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/q1-declaration.json",
+      "bytes": 4217,
+      "sha256": "4e5bf7fa8437f7d5b8c4677de08db86517f0fb410e653f693e4ada897d0f4059"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/q1_callers.py",
+      "bytes": 4624,
+      "sha256": "00253b489372fd2093e2836159b088af718e30605e6dc68ac5ebb78ead18b756"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/result.json",
+      "bytes": 48643755,
+      "sha256": "84f7527612bb184a4ba426599625baf357b12313f915784499c72cbced1ac577"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/selected-depth3-declaration.json",
+      "bytes": 2456,
+      "sha256": "d9b2e18c84d3390acc40b1182274c799dee595af5e3fa9ebb8c845a149c03dff"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/selected-depth3-first-declaration.json",
+      "bytes": 2456,
+      "sha256": "1f33913ed80cd0219643bc439579e4e2a9e98171b51213a4803e36dea7d1c047"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/selected-depth3-return-shape-failure.py",
+      "bytes": 3266,
+      "sha256": "18843781bf69da24faf190545e9da8e4c8702cf85593f60e5fe111fd6a79af57"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/selected-depth3.json",
+      "bytes": 4476,
+      "sha256": "c115c9e6791396900e41106d3a8510d8839b3645e7a827402336a4f215201682"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/selected_depth3.py",
+      "bytes": 3283,
+      "sha256": "a1f3d9b78cf777bb98ebfe712af54edbef437f716f34e76aab17873693835552"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/signal-declaration.json",
+      "bytes": 135092,
+      "sha256": "f878a75f242d8996baac9cf2498d1e030931dbe36c1371f09f837ff2ae6ff716"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/signal-game-declaration.json",
+      "bytes": 1202,
+      "sha256": "707b9292fe93ced3bb096a9aab8955ff3f6ad4c7cf9c5e15fbb21964a18313b6"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/signal-games.json",
+      "bytes": 3806660,
+      "sha256": "98d7afa606b80de73a1d6e619bec6e20f5d16410962cfb1a25ec1ba4967fd8b8"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/signal-summary.json",
+      "bytes": 7422,
+      "sha256": "3b607e93c5ae53258aba6eaa4f66fefaa9283e991834d86b77dc3a9c0d1f02f1"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/signal_analysis.py",
+      "bytes": 2225,
+      "sha256": "8800d59daba267b8398ac0c84d76e0c6280dda920893dc552c4a6de70a610424"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/signal_freeze.py",
+      "bytes": 3951,
+      "sha256": "168ced3ce9418db3c3beb5ee1a415b52acf651464067a9da965e3b7c59181994"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/signal_games.py",
+      "bytes": 4634,
+      "sha256": "9f416c3e3baef684d97f8cc0057a4805c6b0316e7db4e11c33aac974b91a48f1"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/target-declaration.json",
+      "bytes": 206965,
+      "sha256": "a671473be018716666d3858b8f9fdb3d06bc0a77c440bab4138b4967dfbbacd7"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/target.py",
+      "bytes": 5272,
+      "sha256": "8027f6171b4c90889db31a68d48e97760f94b8ba581fe6252513a4bfb68a8c45"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/transfer-recomputed.json",
+      "bytes": 5624,
+      "sha256": "6b3aaca1ca9dedcc216ca2b9ff4dd966a224b4dec8c08e003fedccda92c25dad"
+    },
+    {
+      "path": ".local_agent/capability-transfer-20261010/transfer_analysis.py",
+      "bytes": 1768,
+      "sha256": "e0aae8b3a53c0e7adfff2bb895078f4eb47ad41f26cfa048fb9af1b0dc04517f"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/prototype.py",
+      "bytes": 4164,
+      "sha256": "0fba16769836ee610ccd4c663fc40cb82f7e0777734b4961a6111d109fc9942b"
+    },
+    {
+      "path": ".local_agent/predictor-transfer-20261009/declaration.json",
+      "bytes": 107757,
+      "sha256": "5984b78649a62d38b8dd8709f150261144fa5aa9cca57654fd632b9f0d316d4e"
+    },
+    {
+      "path": ".local_agent/predictor-transfer-20261009/ledger.py",
+      "bytes": 2308,
+      "sha256": "290138bc3ff28be426a39aecc28d431d5b0a9d0458d417500d98bad6bce0001a"
+    },
+    {
+      "path": ".local_agent/predictor-transfer-20261009/lifetime.json",
+      "bytes": 9918939,
+      "sha256": "e187a6716628b42ebac93ec8d9771e70834d67bdc18626ff1c269cbb020d419e"
+    },
+    {
+      "path": ".local_agent/preference-20261009/partial2048-model.json",
+      "bytes": 21432,
+      "sha256": "b6b27555fb72bc45e91c1e1924aa7625a777e041227cef683593273ee8e3b7c2"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule_counts.py",
+      "bytes": 3436,
+      "sha256": "9d72ea83a57b0f7b889b138678dde108928a40ac7ee966da73b399a38961e23a"
+    },
+    {
+      "path": "scripts/position_features.py",
+      "bytes": 4812,
+      "sha256": "2ca7b603ca8befbc862a8d70b2e23985827cbcc11db1281c8005545e55d525e0"
+    },
+    {
+      "path": "scripts/research_record.py",
+      "bytes": 2767,
+      "sha256": "3f1237e0c1d728995f169902aaaad8fb53ac149287aa46875db298b63221612a"
+    },
+    {
+      "path": "scripts/unfamiliar_search.py",
+      "bytes": 14625,
+      "sha256": "cfe759a3567eac5a6a2026d762840da038dd47dcf5c8ac3255ec1db831c45614"
+    },
+    {
+      "path": "tests/product/test_rectangular_search_override.py",
+      "bytes": 8410,
+      "sha256": "1dc4341d58648e3fc626ffbb57c99d4ce6181e85de237baeb7a6d0d313dad7f9"
+    },
+    {
+      "path": "tests/rule_semantics_ir_fixtures.py",
+      "bytes": 17212,
+      "sha256": "209b3bd9388d5ac228329d64eeda7d70a9209f0409ac74217be2879b4d6038c7"
+    }
+  ],
+  "recovery": {
+    "all_hashes_verified": true,
+    "relative_paths_contained": true,
+    "action_linked_losses_checked": 510,
+    "transfer_arithmetic_verified": true,
+    "old_conflicts_separated": 61,
+    "timings_reproduced": false
+  },
+  "execution": "Restore in a fresh isolated directory at base_commit; retain no-overwrite guards. Replay of failed sources is not necessary; no authorization to refit exposed labels or restore operational state."
+}

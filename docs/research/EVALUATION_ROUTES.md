@@ -251,3 +251,58 @@ Scoring-discard algebraic folding reduces forward overhead without changing
 search utility. TASK_PREDICTION_DIAGNOSTIC.md and UNFAMILIAR_RULE_SEARCH.md own
 raw denominators, scope, costs and isolated recovery. The two research lines
 and small-training authorization remain unchanged.
+
+## Latent capability and actual leaf binding, 2026-10-10
+
+The predeclared2118/2119 continuation does not reproduce the earlier61
+common-action target conflicts: eight eligible opponent-P-stock roots in2118,
+none in2119,32complete gate/lifetime fronts and no changed common-action
+UnitD2labels. Empty eligibility is retained. Availability still changes some
+optimal sets. This limits transfer of the old fixture; it does not establish
+that auxiliary rights are irrelevant or that count inputs suffice generally.
+
+An untrained264axis probe resolves actual bool-drop guard operands and lifetime
+against mechanical actor descriptors and hand stock. It separates the61old
+aliases and preserves eight renamed-slot/inert-slot/type controls, including
+public legal children and terminal checks. A supported disjoint-drop-zone pair
+still aliases: equal pooled actors/permission, different four-square drop sets.
+Keep this as a limited probe; do not enlarge/train it as a complete-domain
+repair. Full execution continues to preserve spatial/auxiliary/history semantics.
+
+Primary sources inform the representation choice, not its utility. The existing
+[Ludii study](https://arxiv.org/html/2101.09562) trains a separate model per game;
+its tensor/action approximations and resource setup are not a local shared-model
+efficiency guarantee. [Gunawan et al.](https://proceedings.kr.org/2022/46/kr2022-0046-gunawan-et-al.pdf)
+use rule-linked graphs with anonymous label relations; sections5.1-5.2 evaluate
+legal-action and next-fluent inference, including mixed and sometimes successful
+zero-step transfer. These are not learned utility or playing-strength results.
+Our inference: preserve the connection between a precondition and the capability
+it enables, while evaluating a scoped adapter before choosing a larger model.
+[Stockfish's NNUE documentation](https://official-stockfish.github.io/docs/nnue-pytorch-wiki/docs/nnue.html)
+distinguishes accumulator refresh from feature-delta updates. A generic compound
+action needs correct dependency invalidation; chess update cost is not our bound.
+
+The full frozen rank predictor has been examined as an actual leaf, keeping
+its complete affine terms, fixed Unit ordering, original histories and explicit
+mechanical scale. Pairwise ranking does not identify a utility offset or calibrated
+draw value: adding an intercept leaves every within-root margin unchanged.
+Fixed scaling/role controls are diagnostic, without exposed-label fitting or
+selection. Separate finite teacher errors, immediate legal mating replies,
+completion and cost; an enlarged state model cannot be inferred from changed
+searched choices. Exact outcomes are owned by TASK_PREDICTION_DIAGNOSTIC.md and
+UNFAMILIAR_RULE_SEARCH.md rather than another framework or admission gate.
+
+The completed510matched caller controls do not select a new scale/model/qdefault.
+Selected D3targets retain one adverse gap and turn another into a tie. A new
+12game terminal-signal pilot gives3one-ply mates from one opening,4actual
+repetition draws and5censored trajectories; censoring changes with policy.
+This is insufficiently varied return information for the next fit. Keep unknown
+outcomes explicit and declare signal/sampling before spending on training.
+
+[Pardo et al., Time Limits in Reinforcement Learning](https://proceedings.mlr.press/v80/pardo18a.html)
+distinguish task termination from external interaction cuts. Their partial-episode
+bootstrap requires reliable value predictions and sufficient exploration. Our
+inference: an external24ply cap does not create a draw, and our uncalibrated rank
+predictor does not supply a justified bootstrap. Rule-defined repetition remains
+a genuine terminal. This source motivates label semantics, not a chess utility
+guarantee or automatic training implementation.

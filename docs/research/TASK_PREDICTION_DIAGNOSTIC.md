@@ -504,3 +504,110 @@ expire-next-turn has0 changed common-child labels at both roots; persistent has
 Thus a rule-lifetime descriptor alone cannot resolve this input boundary;
 current latent capability also matters. This is a finite target conflict, not
 proof of every evaluator family failing. within_rule.py preserves the arithmetic.
+
+## Prospective capability transfer, 2026-10-10
+
+Source05892276ae0ca69bb44c1a6c2b20bcf7706db644; frozen partial2048 model
+b6b27555fb72bc45e91c1e1924aa7625a777e041227cef683593273ee8e3b7c2.
+New2118/2119 rules and lexical16-action routes precede new numerical labels.
+Eligibility requires opponent P hand stock:2118has eight roots at plies
+1,2,6,7,11,13,14,15;2119has none. Preserve that empty population. Two lifetime
+variants and two current gates yield32complete finite UnitD2fronts,
+180888transitions/69.23sec. No common-action labels differ between gates under
+either lifetime. Legal availability changes optimal sets at plies2/15; at15
+gate0best0 versus gate1best-200. Counterfactuals explicitly rebuild fresh
+histories and bind the changed rule fingerprint. They are not original-route
+labels or reachability claims. Old61conflicts remain intact, not generalized.
+
+A264axis untrained bool-drop probe combines two owners, current/passive-reset
+permission and66mechanical actor axes, weighted by actual hand stock. Resolved
+scope/initial values/comparison operands control permissions; passive expiry
+is a no-further-aux-effect counterfactual, not every next state's prediction.
+Eight old root carriers survive joint slot renaming, an inert slot shifting the
+active ordinal, and P-to-Z type relabeling: root/child vectors, legal action sets
+and terminal checks agree. All61old changed child labels are separated, without
+new coefficients or fits. This is input distinction, not improved utility.
+
+A supported disjoint-zone control stops the complete-input interpretation.
+Two same-actor drop patterns use opposite bool gates and files1/6,ranks2..5.
+Either state has seven legal actions, including four drops, and exactly equal
+264vectors; drop destinations differ. No teacher-value conflict is claimed for
+this pair. Geometry/effects, square-token and other auxiliary/history meanings
+remain in the executor; the probe pools them away. Do not call it a generic
+input repair, start a larger model, or add position-specific patches from it.
+
+The executed freeze/target scripts retain inherited old seed/fixture prose in
+their docstrings; actual declarations and producer hashes identify2118/2119
+and the full eligibility population. Keep those original bytes as provenance,
+not silently corrected old execution. One Hands import failure is preserved
+with its source before the corrected capability audit. No numerical label was
+created by that failed import. Complete records and declarations are routed by
+the capability-transfer supplement under data/qfrontier_20261009.json.
+
+## Actual frozen leaf and scope of its errors
+
+All34original2118/2119 route roots retain full GameState/history. Independent
+UnitD2fronts complete199783transitions/38.12sec, rather than borrowing the
+fresh-history gate labels. Three leaf arms, Unit/original full affine/staticv3,
+use new cold public players with common Unit capture ordering, Core authority,
+no root tactical scan and D4/8192nodes/5sec/q0-or-q2/hard8. The full arm keeps
+current/base/owner-hand/promoted/side/intercept terms through exact folding;
+its mechanical scale is100 divided by median ordinary current+base magnitude,
+rounded/clipped below the mate band. No coefficients or scale fit to outcomes.
+
+In204calls, q0finite-reference errors are full2/v3 1/Unit0 of34; losses400/200/0.
+q2errors are4/3/3, with all34calls per arm time-limited and only one completed
+main ply on11/11/10roots. Mate-scale losses remain separately in raw records.
+This is a shallow task, not true utility, model ranking or strength. In particular,
+deeper selected decisions can disagree with D2 for legitimate horizon reasons.
+
+A second204cold-call exploratory control freezes positive full scale factors
+0.25/4 and the existing no-fit conditional role projection before the original
+reference/completed caller analysis. Both scales retain full2q0/4q2errors;
+projection has1q0/3q2, without completion improvement. No clipping occurs.
+All34direct-rank wrappers, including those rounded scales and projection, have
+29all-tie/30any-tie optimal roots. Raw ranking is not numeric leaf deployment,
+and positive scale checks do not calibrate an unidentified intercept/draw value.
+No best factor, model/default or new training is selected from these records.
+
+Independent public Core replay of q2parents2118plies11/13/15 enumerates every
+actual opponent response after each original Unit/full/v3 selection. Eight of
+nine choices allow two immediate checkmating replies, C[4,1]->[3,4] and a Cdrop
+to[3,4], winner0; Unit at ply11 avoids both. These are actual legal terminals,
+not merely a finite evaluation difference or a new all-games WDL certificate.
+The102intermediate q1calls all time out. D3completion full/Unit/v3 rises to
+9/12/10 from q2's5/6/5, but finite errors remain4/3/3; mate-scale errors are
+2/1/2. This is an exposed coverage diagnosis, not a new default. Five selected
+action D3targets complete25778transitions/4.21sec: at2118ply11 the full/v3
+Adrop remains200 below Unit's Pmove; at2119ply16 all three selected actions
+tie0. Thus one D2adverse choice persists and the other becomes a selected D3tie.
+No full-root D3front or strength conclusion follows. A producer return-shape
+failure is retained: reference_minimax returns best action, not an iterable PV;
+the corrected record calls it best_reply. Old labels remain unchanged.
+
+Two arithmetic-entry failures are preserved: a missing repository import path,
+then mismatching action_to_dict versus dataclass-record shapes. Corrected analysis
+uses existing action_from_dict/record_value and matches action identity, never
+assumes frontier and caller array indices agree. The independent replay and
+direct ranking briefly overlap each other, so their wall times are descriptive;
+neither overlaps the actual leaf/scale player batches. Some earlier capability
+qualification overlaps the original caller batch; no causal speed ratio is claimed.
+
+## Actual terminal signal pilot
+
+New2120/2121 rules/routes are frozen before12games: openings0/4 crossed with
+Unit/Unit, full/Unit and Unit/full. Full histories, promotion/drop/auxiliary
+execution and real repetition semantics remain. Common Core D2/512nodes/.25sec,
+q0/hard8 and Unit ordering, at most24additional plies, no training/default.
+The205played plies cost47.19sec,52062main nodes and45887evaluations. Three
+games end in one-ply checkmate at the same2120opening; four end in actual
+repetition; five external caps retain unknown reward, never draw labels.
+For2121 the owner1full policy first diverges from Unit after21/17shared plies
+at openings0/4, and both games become censored where Unit repeats. Finished-only
+sampling would omit these policy strata. Decisive labels duplicate one opening;
+this pilot does not calibrate utility or compare strength. Next declare a useful
+signal/sampling premise before a small fit, rather than fit unchanged Unit ranks.
+
+Recovery: capability-transfer-20261010-index.json under
+../archive/search_compression_20261009. It contains original declarations,
+failed/corrected producers, all510action-linked caller records and12game traces.

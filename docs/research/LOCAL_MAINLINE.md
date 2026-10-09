@@ -38,12 +38,23 @@ independent price/task questions; do not claim pre-final timings as deployment.
 
 ## Current evidence and decisions
 
+- Prospective2118/2119 capability transfer has32complete fronts and no common-
+  action label conflict; the old61conflicts remain scoped. An untrained264axis
+  probe separates those old aliases but pools distinct drop zones. No expanded
+  model or refit follows.510actual leaf/scale/q calls retain caps/adverse results;
+  q1improves completion without removing errors. Selected D3targets keep one
+  gap and turn another into a tie.12fresh terminal-signal games yield3duplicate
+  one-ply mates,4real repetition draws,5unknown external cuts with policy-
+  dependent censoring. Next choose a declared signal/sampling premise before
+  small training; no scale/model/default selected. TASK_PREDICTION_DIAGNOSTIC.md
+  owns targets/recovery; EVALUATION_ROUTES.md owns the return-signal decision.
+
 - Frozen full predictor versus board proxy: original hand terms restore all34
   choices; fixed Unit-D2 all-tie optimal29 versus18. Conditional role projection
   improves55 to58 of68 paired targets but adds no gain on34 further roots.
   Persistent auxiliary rights expose61 equal-input child labels with changed
   continuation values, including an independently replayed mating drop. Next
-  isolate latent capability representation, no automatic architecture expansion
+  retain the scoped latent-capability result above, no automatic architecture expansion
   or exposed fitting. Full-state execution stays intact. TASK_PREDICTION_DIAGNOSTIC.md
   owns scoped evidence; UNFAMILIAR_RULE_SEARCH.md owns forward/caller costs.
   Ordering control and scoring-discard folding do not establish playing gain.
