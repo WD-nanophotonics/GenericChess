@@ -52,14 +52,32 @@ independent price/task questions; do not claim pre-final timings as deployment.
   regression. A separate two-new-rule fixed-predictor check keeps442slots/
   2210cells/5855Core-Native transitions: on2104static C loses799/5148while the
   unchanged2048model's B loses21/1870; all methods match on mostly-zero2105.
-  This is scoped physical-task signal, not model selection or strength. Next
-  explain the2104C/B mismatch from existing opportunity/source/legal-removal
-  components, retaining full task weights and not fitting these report labels.
+  This is scoped physical-task signal, not model selection or strength.
+  Crossed count/any and source/occupancy controls now explain2104's sign reversal:
+  source weighting alone OR occupancy alone reverses B/C; neither statistic
+  alone identifies the cause. Initial-source capture/total candidates frozen
+  before four new rules improve immediate top loss3/4,tie1/4 and one-reply2/4,
+  tie2/4, but worsen2109 B/C pair loss despite an unchanged top choice.
+  Full state carriers keep drop/transformation effects that this removal proxy
+  omits. The408 fixed-order cold caller controls retain every cap; q2 reaches
+  D3 on only1/68roots per arm. Changed choices are not gains. Keep source priors
+  as scoped candidates, no fit/default. Original actual-action oracles complete
+  22/68roots,46UNKNOWN; a cheaper selected-action net task covers all68roots for
+  5997extra transitions/59.97sec. Capture improves only2108 and worsens one2109
+  q0 choice; total ties throughout. Choose a new utility/support premise rather
+  than refit or expanding costly whole fronts. TASK_PREDICTION_DIAGNOSTIC.md
+  owns this attribution, prospective task evidence and actual caller limits.
 
 - Full-sort Core TT priority is now structural; large evaluator capture values
   previously outranked its numeric-1000sentinel. All84jointly complete D3pairs
   agree; cost regressions and original teacher records remain.1774active tests
   pass. UNFAMILIAR_RULE_SEARCH.md owns this interface repair, not a price claim.
+  A further public-player q0/q2 switch exposed incompatible old TT bounds in
+  all six completed small controls, including a missed mate value. Changed
+  soft/hard q depths now invalidate those bounds; unchanged-q reuse stays.
+  Hard-depth-only switches preserve the cold abort boundary. Cold source-prior
+  caller records are unaffected and retain the old source pin. Next test a
+  concrete generic search/state mechanism, not more numeric ordering patches.
 
 - Shared-state comparison now retains64fresh roots/3445children across two
   prospective cohorts,3375complete children and70UNKNOWNs. A concrete zero-anchor

@@ -324,5 +324,190 @@
     "maximum_events": 7,
     "declared_event_boundary": 12,
     "full_table_validation": false
+  },
+  "source_prior_diagnosis": {
+    "recovery": "docs/archive/search_compression_20261009/source-prior-diagnosis-index.json",
+    "archive_sha256": "6ecc283bc687b64bbe3857cd232e050fdfb74ef59285654447071a27c4ab6956",
+    "base_commit": "5f13d1a7c7e6964adf77c096e2f4d38f68ef2b89",
+    "scope": "Crossed existing2104/2105 attribution; four prospectively frozen2106..2109 source-prior task/caller diagnostics, no refit/default/strength.",
+    "verification": {
+      "isolated_members": 80,
+      "reply_top_losses": [
+        {
+          "seed": 202610082106,
+          "cells": 1145,
+          "restored_top_losses": {
+            "generic_v2": "105257/1021020",
+            "semantic_v3": "105257/1021020",
+            "full": "9587/204204",
+            "partial2048": "9587/204204",
+            "partial8192": "105257/1021020",
+            "initial_source_capture": "9587/204204",
+            "initial_source_total": "9587/204204",
+            "blind": "144863/1276275"
+          }
+        },
+        {
+          "seed": 202610082107,
+          "cells": 995,
+          "restored_top_losses": {
+            "generic_v2": "0",
+            "semantic_v3": "0",
+            "full": "0",
+            "partial2048": "0",
+            "partial8192": "0",
+            "initial_source_capture": "0",
+            "initial_source_total": "0",
+            "blind": "0"
+          }
+        },
+        {
+          "seed": 202610082108,
+          "cells": 1215,
+          "restored_top_losses": {
+            "generic_v2": "2/255",
+            "semantic_v3": "2/255",
+            "full": "2/255",
+            "partial2048": "2/255",
+            "partial8192": "2/255",
+            "initial_source_capture": "0",
+            "initial_source_total": "0",
+            "blind": "8/1275"
+          }
+        },
+        {
+          "seed": 202610082109,
+          "cells": 1140,
+          "restored_top_losses": {
+            "generic_v2": "0",
+            "semantic_v3": "0",
+            "full": "0",
+            "partial2048": "58/3315",
+            "partial8192": "0",
+            "initial_source_capture": "0",
+            "initial_source_total": "0",
+            "blind": "63/5525"
+          }
+        }
+      ],
+      "caller_calls": 408,
+      "decision_roots": 68,
+      "no_training_or_search": true
+    },
+    "caller_arms": [
+      {
+        "leaf": "v3",
+        "q": 0,
+        "calls": 68,
+        "complete": 22,
+        "seconds": 104.95224149897695,
+        "median_seconds": 1.9835636499337852,
+        "nodes": 81465,
+        "qnodes": 0,
+        "reasons": {
+          "completed_depth": 22,
+          "node_limit": 11,
+          "time_limit": 35
+        }
+      },
+      {
+        "leaf": "v3",
+        "q": 2,
+        "calls": 68,
+        "complete": 1,
+        "seconds": 134.65959110064432,
+        "median_seconds": 1.99390785000287,
+        "nodes": 20557,
+        "qnodes": 43647,
+        "reasons": {
+          "time_limit": 64,
+          "completed_depth": 1,
+          "node_limit": 3
+        }
+      },
+      {
+        "leaf": "initial_source_capture",
+        "q": 0,
+        "calls": 68,
+        "complete": 23,
+        "seconds": 104.15264209941961,
+        "median_seconds": 1.980287850019522,
+        "nodes": 81982,
+        "qnodes": 0,
+        "reasons": {
+          "completed_depth": 23,
+          "node_limit": 10,
+          "time_limit": 35
+        }
+      },
+      {
+        "leaf": "initial_source_capture",
+        "q": 2,
+        "calls": 68,
+        "complete": 1,
+        "seconds": 134.23825680022128,
+        "median_seconds": 1.9914407499600202,
+        "nodes": 21265,
+        "qnodes": 43733,
+        "reasons": {
+          "time_limit": 62,
+          "completed_depth": 1,
+          "node_limit": 5
+        }
+      },
+      {
+        "leaf": "initial_source_total",
+        "q": 0,
+        "calls": 68,
+        "complete": 22,
+        "seconds": 104.03767219977453,
+        "median_seconds": 1.9825008499901742,
+        "nodes": 81209,
+        "qnodes": 0,
+        "reasons": {
+          "completed_depth": 22,
+          "node_limit": 10,
+          "time_limit": 36
+        }
+      },
+      {
+        "leaf": "initial_source_total",
+        "q": 2,
+        "calls": 68,
+        "complete": 1,
+        "seconds": 134.56660490017384,
+        "median_seconds": 1.9938255501911044,
+        "nodes": 20400,
+        "qnodes": 43114,
+        "reasons": {
+          "time_limit": 63,
+          "completed_depth": 1,
+          "node_limit": 4
+        }
+      }
+    ],
+    "whole_root_task": {
+      "reference": "decision-analysis.json",
+      "complete_roots": 22,
+      "unknown_roots": 46,
+      "seconds": 528.3307867005933,
+      "scope": "All68roots kept; capped references UNKNOWN; sums scoped per rule, no pooled selector/default/strength claim. Short removal proxy excludes terminal wins and future drop/promotion service."
+    },
+    "selected_action_task": {
+      "reference": "selected-analysis.json",
+      "roots": 68,
+      "known_pairs_per_arm": 68,
+      "incremental_transitions": 5997,
+      "seconds": 59.967048899969086,
+      "scope": "Selected-action net only, policy-dependent support, no full-oracle regret, terminal/history/future-service reward or model selection. Original all-action oracle UNKNOWNs remain."
+    },
+    "public_q_cache": {
+      "pre_probe": "q-cache-probe.json",
+      "post_probe": "q-cache-repaired.json",
+      "completed_mismatches_before": 6,
+      "completed_mismatches_after": 0,
+      "hard_depth_control": "q-hard-repaired.json",
+      "product_change": "Clear persistent public-player TT when q soft/hard depths change; retain unchanged-q reuse."
+    }
   }
 }

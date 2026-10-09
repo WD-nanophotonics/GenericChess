@@ -93,6 +93,15 @@ not true utility or the benefit of learned-leaf search. Existing TT/ordering and
 rule-generated table controls retain adverse finite-budget/tie/cap outcomes.
 Current actionable evidence and exact recovery: FINITE_SEARCH_COMPRESSION.md.
 
+The later physical-target comparison motivates a changed static *source prior*,
+not more Unit-teacher fitting: on four prospectively frozen new rules, equal
+initial ordinary-source capture-count/total selectors improve immediate top loss
+in three and tie one, but full ordering worsens in one. One-reply support stays
+sparse and context-dependent. TASK_PREDICTION_DIAGNOSTIC.md owns the crossed
+population/statistic attribution, costs, exclusions and adverse evidence. Keep
+this as a scoped comparator; actual leaf-interface sensitivity is separate from
+price usefulness. No universal source law, replacement default or strength claim.
+
 The first executed matched input comparison is now conditional root ranking,
 not a new numerical leaf model. Twelve fresh whole trajectories yield24complete
 frontiers/1055references;7teacher/material-disagreement roots are selected before
@@ -208,6 +217,9 @@ That two-rule prospective check is complete:442slots/2210cells, all zeros and
 Core/Native parity retained. Static/full/partial8192chooseC on2104; the frozen
 partial2048choosesB and has lower immediate-task loss21/1870versus799/5148.
 All chooseX on the mostly zero2105. Complete pair ordering has mixed differences.
-Do not select a model or fit these new report outcomes. This motivates explaining
-one static C/B source/opportunity-versus-legal-task mismatch, rather than further
-Unit-regret training or broadening the task into whole-game utility.
+Do not select a model or fit these new report outcomes. The subsequent crossed
+source/occupancy/statistic checks and four new-rule source-prior candidates are
+now recorded in TASK_PREDICTION_DIAGNOSTIC.md. Counterfactual top-choice gains
+transfer weakly to actual fixed-search selected actions: capture has limited
+improvements and one adverse q0 result; total ties throughout. Keep these scoped
+candidates, not automatic Unit-regret training or a default joint price system.

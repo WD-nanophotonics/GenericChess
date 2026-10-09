@@ -24,7 +24,7 @@ class AlphaBetaPlayer:
 
     The evaluation profile is built once per RuleSet (cached); the
     transposition table is kept across moves for the same RuleSet and cleared
-    when a different RuleSet is loaded.
+    when a different RuleSet is loaded or the caller changes q depth semantics.
     """
 
     def __init__(
@@ -62,6 +62,7 @@ class AlphaBetaPlayer:
             # profile can reject rules that the evaluator/search can execute.
             self._evaluator = evaluator_override
         self._tt = TranspositionTable(max_entries=tt_max_entries)
+        self._tt_q_depths: tuple[int, int] | None = None
         self._use_tt = use_tt
         self._use_ordering = use_ordering
         self._use_native_semantic_legality = bool(use_native_semantic_legality)
@@ -96,6 +97,7 @@ class AlphaBetaPlayer:
     def reset(self) -> None:
         """Clear search state (e.g., after loading a different RuleSet)."""
         self._tt.clear()
+        self._tt_q_depths = None
 
     def choose_action(
         self,
@@ -109,6 +111,12 @@ class AlphaBetaPlayer:
         state = session.state
         started = time.monotonic()
         stats = SearchStatistics()
+        q_depths = (limits.quiescence_max_depth, limits.quiescence_hard_max_depth)
+        if self._tt_q_depths != q_depths:
+            # Main-search bounds include the q leaf value. A new generation
+            # alone still permits probing bounds from the previous q policy.
+            self._tt.clear()
+            self._tt_q_depths = q_depths
         action, score, pv, reason = run_root_search(
             state,
             self._compiled,

@@ -204,6 +204,115 @@ single2002inversion into a new task family. Dot read the published base and our
 reported new evidence; it did not execute these local experiments. Raw Slack
 records remain local and excluded from Git.
 
+## Crossed population diagnosis and prospective source-prior check
+
+The2104B/C discrepancy is now examined with crossed factors, rather than a
+single count-to-legality conversion chain. Use the original independent-density
+law and uniform owner/source positions versus all frozen actual ordinary slots;
+compare supported projected ordinary capture-endpoint count and capture-any
+under each. Both128-layout replicates favor C for uniform count/any and B for
+actual-slot count/any. Actual ordinary B-minus-C contrasts are298013/510510
+for count,66961/437580for any and63001/437580for legal maximum removal. The
+first diagnostic included actual anchor endpoints; its output is retained as
+superseded support evidence, not the comparable ordinary-unit result.
+
+Separating source weights from occupancy preserves an interaction: on identical
+IID layouts, route-slot source weights alone reverse both signs; actual occupancy
+alone also reverses them. Analytical capture-count B-minus-C is-0.296870under
+uniform sources,+0.313037under frozen route-source weights and+0.372240under
+initial ordinary-source weights. Quiet/total components also reverse. This
+does not identify a unique cause or a uniquely rule-given background law.
+2105retains the opposite source effects. No statistic or label is fitted.
+
+All5855legal focal transitions have ordinary-removal gain0or1, so legal-any
+equals legal-max on these2210cells. The projected any differs in49cells of2104,
+including26B/Ccells, and zero cells of2105. B/Craw S0-S2 candidate endpoint
+counts exactly match projection; complete legality changes support without
+causing the aggregate sign reversal. This equivalence is measured here, not
+assumed for compound effects in the full rule domain.
+
+The unchanged one-reply task completes all2210cells in56859Core transitions,
+with23complete reply-set/child-state Native controls totaling1709transitions.
+2104static C loss is20408/255255, worse than blind by995/68068; the frozen2048
+B selector has zero loss. However179/196slots are zero and all20positive actions
+give check, four with no legal reply, none already checking before the move.
+This is check/evasion support, not broad safe-retention evidence.2105has241/246
+zero slots and nine nonchecking positive actions; all selectors keep X.
+
+Two existing2104successors give a concrete omitted-utility witness: the legal
+quiet X-to-P transformation at ply7 and semantic drop at ply11 both have zero
+enemy ordinary-removal reward while changing full state/current identity,
+hands or auxiliary state. Session and Core child identities agree. A zero proxy
+reward does not establish zero utility for either mechanism.
+
+A changed initial-source prior is then frozen on four *new* rules2106..2109
+before any task labels: shared equal initial ordinary slots/both owners,
+unchanged IID densities, analytical capture-count or total quiet+capture.
+Both candidates and all previous static/learned tables are frozen on all four
+rules before the first query. No seed replacement, refit or model selection.
+All68backgrounds/899slots/4495type cells complete, with14554full Core/Native
+transition matches. Whole task weights, all zeros and excluded semantic effects
+remain explicit. Prior rare-bridge/source-law failures are not revoked.
+
+|Rule|Static immediate top loss|Both source-prior top losses|Immediate pair change|One-reply top change|
+|---|---|---|---|---|
+|2106|474599/1021020|643/18564|both improve|both improve|
+|2107|1355821/1531530|17227/48620|both improve, different orders|all zero/tie|
+|2108|3581/7140|23/364|both improve|both improve|
+|2109|1741/18564|1741/18564|both worsen|both tie|
+
+All four one-reply populations complete in166929Core transitions. Pair loss
+improves2106/2108, ties all-zero2107, but worsens2109despite its top-choice tie.
+Positive support is44/0/2/7cells;2106has21checking and29nonchecking positive
+actions, three already checking before the counterfactual move; the other new
+rules' positive actions are nonchecking. No favorable support filter is used.
+Top-choice gains therefore do not establish a better full ordering or ratios.
+
+Offline candidate-pair preparation is0.039-0.074seconds in four local calls,
+versus0.056-0.080for the old v3 profile, excluding compilation. All frozen
+tables reproduce. The same mechanism keeps Chess Q>R>B>N>P but changes its
+raw opportunity ratios; Shogi initial-source total puts R above TB and L above
+S while capture does not. These are declared opportunity-law differences,
+not material truth or human-price fitting; Xiangqi holdout remains closed.
+
+Retain the changed-prior candidate as a scoped comparator, not a default or
+universal price. A fixed-ordering leaf caller comparison separately tests whether
+its normalized board table crosses the full generic search-state interface;
+hand prices and ordering authority stay fixed. Changed choices are sensitivity.
+Exact one-reply pair decomposition places the2106 improvement entirely in C/P,
+the2108 improvement in A/P, and2109's worsening entirely in B/C:43/3315 on
+that pair,43/33150 averaged over ten pairs. The unchanged2109 top choice hides
+this adverse middle ordering.2107's one-reply cells are all zero.
+
+Actual leaf-only callers use all68 frozen route roots, three tables and q0/q2,
+408 cold Core calls with fixed unit ordering and shared old hand prices.
+D3/2048nodes/2seconds completes22/68,23/68,22/68 for q0 static/capture/total;
+q2 completes1/68 in each arm. Total query times are104.95/104.15/104.04seconds
+for q0 and134.66/134.24/134.57 for q2. Every PV replays legally and roots stay
+unchanged. These caps and choice changes are execution/sensitivity, not gains.
+All eight source tables preserve their ten raw ordinary pair orderings after
+normalization, with no clipping. Keeping hand prices fixed intentionally changes
+board/hand ratios: this isolates board leaf prices, not a consistent joint
+material proposal. A separate whole-root short-task diagnostic retains unknown
+references rather than interpreting cap failures as zero:22/68root references
+complete in528.33seconds, with46UNKNOWNs and zero optimal net in all22completed
+roots. This proxy's virtual-stop oracle need not be a legal forced move.
+
+A separate cheaper question evaluates only the union of actual selected actions
+from all six arms, reusing already complete action references and keeping the
+original oracle caps intact.5997extra transitions/59.97seconds cover all68roots.
+The capture candidate improves two q0 and three q2 choices on2108 but worsens
+one q0 choice on2109; other paired net outcomes tie. The total candidate ties
+everywhere. q2 improvements still have incomplete D3 searches. These are
+ordinary-removal net diagnostics on policy-dependent selected actions, not
+full-oracle regret, terminal-win/future-service utility or strength. The much
+larger counterfactual top-choice gains do not transfer directly to actual use.
+Keep this cheaper decision target available; do not expand whole-front oracles
+or refit the report cohort merely to obtain stronger-looking results.
+
+Recovery for these new producers/raw outputs is the source-prior supplement
+in data/qfrontier_20261009.json; old archives and frozen teachers stay unchanged.
+
 ## Recovery and next decision
 
 [data/qfrontier_20261009.json](data/qfrontier_20261009.json) routes producers,

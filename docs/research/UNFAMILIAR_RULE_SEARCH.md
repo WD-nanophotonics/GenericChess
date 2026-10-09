@@ -1368,3 +1368,30 @@ Three regression failures precede the repair;34related regressions pass after it
 The complete active suite also passes all1774collected tests after the repair.
 Evidence and frozen method snapshots: partial-preference-index.json under
 docs/archive/search_compression_20261009. Staged and Native ordering are unchanged.
+
+## Public player cache scope when q depths change
+
+A same-player public q0/q2 switch reused completed main-search TT bounds whose
+leaf values belonged to the old q policy. Three existing small rook fixtures
+reproduce the mismatch in both directions, all cold/warm calls completing D2.
+One checking-drop fixture has cold q0 score2024 and cold q2 mate999999997;
+warm q0-to-q2 returns2024 and selects a different action. The reverse retains
+the old mate value. A TT generation change does not invalidate those entries.
+
+AlphaBetaPlayer now clears its existing TT when soft/hard q depth changes,
+preserving reuse for unchanged q configuration. Reset also forgets that scope.
+Budget-only fields are not used to erase compatible completed bounds. The
+same six repaired controls match cold scores; an unchanged-q repeated call
+keeps lower node cost. A separate hard-depth-only check preserves the cold
+qsearch_check_hard_limit abort instead of reusing an earlier completed mate.
+This is a public search contract repair, not a price or strength gain, new
+search mode or evaluator-mutation protocol. The408 source-prior caller data
+use cold players and retain the pinned pre-repair product base.
+
+Raw pre/post probes and original player snapshot are recoverable through the
+source-prior-diagnosis index in docs/archive/search_compression_20261009;
+tests/product/test_player_q_cache.py owns the public regression.
+All1778active tests pass after the repair. Initial full-suite attempts hit the
+system temporary-directory permissions and one transient atomic rename in a
+workflow test; its isolated recheck and final fresh-local-temp full suite pass.
+No retry framework or operating-policy change follows from that transient error.

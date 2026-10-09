@@ -577,7 +577,14 @@ any one background. These dependent influence ranges are not confidence interval
 Complete pair ordering differs again: full improves2104, partial8192worsens it;
 2105is mostly sparse with237/246all-zero slots. The result distinguishes price
 usefulness from Unit-regret without converting one task into universal calibration.
-Next explain the observed2104C/B mismatch using existing opportunity/source/
-legal-removal components, retaining whole weights and all frozen candidates;
-do not refit those labels. New immutable evidence is separately routed by
+The original follow-up was to explain2104C/B using opportunity/source/legal-
+removal components without refitting labels; the crossed check below now
+addresses that question. New immutable evidence is separately routed by
 physical-price-transfer-index.json; previous archives stay unchanged.
+
+The subsequent crossed population/statistic diagnosis and four prospective
+initial-source-prior rules are owned by TASK_PREDICTION_DIAGNOSTIC.md. They
+separate physical price-usefulness from this finite Unit-search teacher. The
+new source-prior selectors improve three immediate top losses but worsen a
+full pair ordering; no model refit/default promotion or further automatic
+Unit-compression expansion follows. Original teachers and tables remain fixed.
