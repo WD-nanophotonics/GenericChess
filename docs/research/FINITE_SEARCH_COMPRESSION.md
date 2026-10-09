@@ -692,3 +692,101 @@ data/search_compression_20261009.json key policy_events_20261010 contains summar
 The isolated archive has only generated sources/results and previously published
 dependencies, no raw Slack/account data or operational state. Hash/metric replay
 checks are distinct from reproducing hardware timings or regaining holdout status.
+
+## Fixed-node static prices and local failure attribution,2026-10-10
+
+The qualified node teacher now compares existing semantic-v3 against Unit with
+full generated state/history execution: cold TT, maximumD2/512nodes/q0/hard8,
+10second safety, fixed Unit ordering, disabled dynamic terms and root tactical
+scan. Each game observes96additional plies after the same four-action opening.
+No time-limit cuts occurred; incomplete iterations still fall back. This is a
+declared diagnostic configuration, not a product-default change or WDL target.
+
+Old exposed2122-2125 crosses produce449plies in235.957seconds; five of eight
+event classes change, with301D1/148D2 decisions. Four prospective seeds2142-2145
+are declared before outcomes; all three policy strata produce12games/587plies
+in370.338seconds,312D1/275D2. Unit/Unit has three ongoing96games and one real
+repetition draw. Seven of eight crossed event classes change. From v3's side,
+the crosses give4wins/3losses/1ongoing, with substantial owner/rule imbalance and
+dependent paths. This is useful adverse/mixed development feedback, not Elo,
+universal utility, a model-selection threshold or permission to tune these labels.
+
+Enumerating every opponent reply to every recorded selected child gives640old
+children/79070replies in745.660seconds and587fresh children/79119replies in
+703.135seconds. Old trajectories expose three Unit immediate-loss holes; v3
+trajectories expose none. Same-parent controls show v3 retains two of those
+three holes and avoids one. Fresh trajectories expose seven holes, Unit4/v3 3;
+one v3 hole follows a completedD2. All saved fresh winning witnesses independently
+replay. A zero witness count establishes only absence of an immediate winning
+reply; dependent trajectory differences cannot establish causal price benefits.
+
+Every fresh mating loser parent is then enumerated:936root actions and123667
+enemy replies. Six roots have13/12/32/51/50/203alternatives without immediate
+loss, respectively; the completedD2 v3-loss root has only one legal action and
+no such alternative. Its local failure is already forced, so leaf changes at
+that parent cannot cure it. At another v3 parent31actions tie for the highest
+static score,27with immediate losing replies. The decisive distinction is local
+exposure versus available one-reply alternatives, not eventual-WDL certification.
+All seven parents and all tie sets, zeroes and actual selected actions are kept.
+
+Existing q1 is then compared with q0 at all seven parents, both Unit/v3 leaves,
+the same512total node condition and fixed ordering:28actual calls. Every q pair
+keeps the same action; Unit exposes immediate loss7/7 and v3 5/7 under both.
+Six roots retainD1/node-limit fallback; the locally forced root completesD2.
+q1 consumes main/q work without improving this selected local decision set.
+Keep this finite negative result, not a universal q limitation. The declared
+root-tactical-off condition differs from the product default; a next useful
+search diagnostic can compare that existing mechanism without adding leaf patches.
+
+Thirty-two controls at all eight fresh first departures separate positive scale
+and custody convention: Unit100 and Unit1000 preserve every choice/node count;
+uniform1000board/900hand matches v3 at two roots, not six, and changes Unit at
+four. Full-history parents and equal512node limits are retained. Several arms
+finish onlyD1; timings overlap another producer and support no isolated speed
+claim. Different actions alone remain attribution evidence, not gains.
+
+Full action replay finds11old and7fresh executed Pdrop/Xtransform actions outside
+v3's projected price support. All seven fresh ones are played by v3; special
+opening legal sets were empty. Debug names are not semantic authority: the
+global temporary flag set by Xtransform inhibits Pdrop through an equality-to0
+guard. At all three actual transformed children the opponent has no P stock;
+changing the flag changes no current semantic legal action. Adding one synthetic
+P to that hand yields37/42/37guarded drops at flag0 versus zero at flag1. These
+six fixed pairs are position-only controls, not reachable-state or utility
+counterfactuals. An initial legacy-only API measurement was invalid for semantic
+actions; its source/output are kept separately, and the identical pairs are
+corrected through the existing semantic public iterator. No extra training follows.
+
+The same three synthetic-stock positions crossed with eq0 versus eq1 guards
+reverse those eligibility counts at both flag values. Existing sparse Position
+numeric tensors agree across the variants, while rule fingerprints differ.
+The encoder already binds weights to one compiled rule, so this is not its bug:
+any proposed shared input must preserve the guard/effect relation as well as the
+flag and stock. This falsifies raw tensor equality as a sufficient shared-rule
+eligibility premise; it supplies no cross-rule utility labels or architecture win.
+
+Adding a dormant nonpromotable X movement clone to old2122 preserves17physical
+legal-successor multisets/terminal statuses and all active raw opportunity
+curves, but declaration-conditioned median normalization rescales13state scores.
+All837matched children/29290pair preferences and ties agree;51coldD2calls retain
+physical choices/nodes. Fixed original maps restore returned scores. Compiled
+IDs/fingerprints legitimately differ, so comparison uses physical successors.
+This is a scoped scale inconsistency, not actor splitting, demonstrated choice
+damage or general clipping/terminal-scale invariance. Measurement failures and
+corrections remain recoverable; product execution was not changed.
+
+Primary literature informs the next premise without creating a gate:
+[Soemers et al.](https://arxiv.org/abs/2101.09562) compile generic state/action
+tensors but report large per-game training, not a tiny shared cross-rule predictor.
+[Le Lan et al.](https://proceedings.mlr.press/v151/le-lan22a.html) distinguish
+representation approximation and sample-support costs; their least-squares
+theorem does not bound our dependent softmax event predictions or rule shifts.
+No automatic expanded input, fit or default is adopted. A2048node rerun was
+rejected before execution as a result-driven frozen-budget extension and was
+not run or bypassed. Existing cheap search/static baselines remain available.
+
+Recovery: ../archive/search_compression_20261009/node-prices-20261010-index.json;
+data/search_compression_20261009.json key node_prices_20261010. Restore the pinned
+predecessor package first. Only generated sources, declarations, adverse outputs
+and summaries are archived; raw Slack/account records and operations stay local.
+Hash/denominator/witness checks do not reproduce timings or restore holdout status.

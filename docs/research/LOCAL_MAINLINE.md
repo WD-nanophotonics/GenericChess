@@ -50,9 +50,14 @@ independent price/task questions; do not claim pre-final timings as deployment.
   further prospective16game four-event studies retain ongoing as its own class.
   All three frozen small affine fits lose to constant priors on their report
   rules; unsigned context removes a balanced-inventory alias but worsens transfer.
-  No model/default adopted. Next distinguish reproducible bounded-node teachers
-  from wall/cache effects and select a new cross-rule support premise, rather
-  than automatic feature/fit expansion. FINITE_SEARCH_COMPRESSION.md owns the
+  No model/default adopted. Fixed512node static-v3 crosses now retain449old
+  and587prospective plies; v3 has4wins/3losses/1ongoing against Unit in the
+  fresh owner-imbalanced cohort, not a strength estimate. Full selected-child
+  reply audits separate immediate loss from zero immediate witnesses. Dormant
+  declarations rescale prices but preserve837child orders and51call choices.
+  Next distinguish local forced exposure, price/hand attribution and conditional
+  rule-state support, rather than automatic feature/fit expansion.
+  FINITE_SEARCH_COMPRESSION.md owns the
   new finite-policy evidence/recovery. TASK_PREDICTION_DIAGNOSTIC.md
   owns targets/recovery; EVALUATION_ROUTES.md owns the return-signal decision.
 

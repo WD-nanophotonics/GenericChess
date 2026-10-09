@@ -5117,5 +5117,2598 @@
         "decision": "Retain pattern-to-precondition-to-region/effect linkage in any future scoped adapter; no extra model or task backlog."
       }
     }
+  },
+  "node_prices_20261010": {
+    "recovery": "docs/archive/search_compression_20261009/node-prices-20261010-index.json",
+    "archive_sha256": "04d8a8a1c040f4f419dcd362c705ed2861a30100fce3faeb1f3a6a50b0d5ce95",
+    "summary": {
+      "exposed": {
+        "scope": "All eight crossed cells against first published Unit repeat, no strength claim.",
+        "rows": [
+          {
+            "seed": 202610082122,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "v3_owner": 1,
+            "baseline_event": "draw",
+            "event": "draw",
+            "winner": null,
+            "plies": 14,
+            "baseline_plies": 14,
+            "first_divergence": null,
+            "seconds": 1.4657809999771416,
+            "nodes": 1382,
+            "evaluation_calls": 1004,
+            "depths": {
+              "2": 14
+            },
+            "stops": {
+              "completed_depth": 14
+            }
+          },
+          {
+            "seed": 202610082122,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "v3_owner": 0,
+            "baseline_event": "draw",
+            "event": "draw",
+            "winner": null,
+            "plies": 14,
+            "baseline_plies": 14,
+            "first_divergence": null,
+            "seconds": 1.4626232995651662,
+            "nodes": 1382,
+            "evaluation_calls": 1004,
+            "depths": {
+              "2": 14
+            },
+            "stops": {
+              "completed_depth": 14
+            }
+          },
+          {
+            "seed": 202610082123,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "v3_owner": 1,
+            "baseline_event": "ongoing96",
+            "event": "draw",
+            "winner": null,
+            "plies": 92,
+            "baseline_plies": 96,
+            "first_divergence": 1,
+            "seconds": 51.14776889979839,
+            "nodes": 40109,
+            "evaluation_calls": 33929,
+            "depths": {
+              "2": 34,
+              "1": 58
+            },
+            "stops": {
+              "completed_depth": 34,
+              "node_limit": 58
+            }
+          },
+          {
+            "seed": 202610082123,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "v3_owner": 0,
+            "baseline_event": "ongoing96",
+            "event": "draw",
+            "winner": null,
+            "plies": 95,
+            "baseline_plies": 96,
+            "first_divergence": 0,
+            "seconds": 44.771322099957615,
+            "nodes": 40609,
+            "evaluation_calls": 34330,
+            "depths": {
+              "2": 32,
+              "1": 63
+            },
+            "stops": {
+              "completed_depth": 32,
+              "node_limit": 63
+            }
+          },
+          {
+            "seed": 202610082124,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "v3_owner": 1,
+            "baseline_event": "owner0_win",
+            "event": "ongoing96",
+            "winner": null,
+            "plies": 96,
+            "baseline_plies": 21,
+            "first_divergence": 1,
+            "seconds": 56.86534469993785,
+            "nodes": 39193,
+            "evaluation_calls": 32471,
+            "depths": {
+              "2": 44,
+              "1": 52
+            },
+            "stops": {
+              "completed_depth": 44,
+              "node_limit": 52
+            }
+          },
+          {
+            "seed": 202610082124,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "v3_owner": 0,
+            "baseline_event": "owner0_win",
+            "event": "owner0_win",
+            "winner": 0,
+            "plies": 5,
+            "baseline_plies": 21,
+            "first_divergence": 0,
+            "seconds": 2.991322100162506,
+            "nodes": 1839,
+            "evaluation_calls": 1418,
+            "depths": {
+              "2": 4,
+              "1": 1
+            },
+            "stops": {
+              "completed_depth": 4,
+              "node_limit": 1
+            }
+          },
+          {
+            "seed": 202610082125,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "v3_owner": 1,
+            "baseline_event": "draw",
+            "event": "ongoing96",
+            "winner": null,
+            "plies": 96,
+            "baseline_plies": 60,
+            "first_divergence": 7,
+            "seconds": 48.35878719994798,
+            "nodes": 38560,
+            "evaluation_calls": 33603,
+            "depths": {
+              "2": 44,
+              "1": 52
+            },
+            "stops": {
+              "completed_depth": 44,
+              "node_limit": 52
+            }
+          },
+          {
+            "seed": 202610082125,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "v3_owner": 0,
+            "baseline_event": "draw",
+            "event": "owner0_win",
+            "winner": 0,
+            "plies": 37,
+            "baseline_plies": 60,
+            "first_divergence": 2,
+            "seconds": 27.074594399891794,
+            "nodes": 13710,
+            "evaluation_calls": 11149,
+            "depths": {
+              "2": 21,
+              "1": 16
+            },
+            "stops": {
+              "completed_depth": 21,
+              "node_limit": 16
+            }
+          }
+        ],
+        "seconds": 235.95742689957842,
+        "plies": 449,
+        "event_changes": 5,
+        "action_divergences": 6,
+        "limits": "Four exposed rules/two intervention sides; dependent baselines, capped depths, no Elo or causal price gain from event changes. TT cold; Unit ordering; wall headroom checked by actual stop reasons."
+      },
+      "prospective": {
+        "scope": "Complete prospective4rule/12cell comparison; no post-outcome selection.",
+        "rows": [
+          {
+            "seed": 202610082142,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "baseline_event": "ongoing96",
+            "event": "ongoing96",
+            "winner": null,
+            "plies": 96,
+            "first_divergence": null,
+            "seconds": 60.606371299829334,
+            "nodes": 31199,
+            "evaluations": 23423,
+            "depths": {
+              "2": 96
+            },
+            "stops": {
+              "completed_depth": 96
+            }
+          },
+          {
+            "seed": 202610082142,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "baseline_event": "ongoing96",
+            "event": "owner0_loss",
+            "winner": 1,
+            "plies": 62,
+            "first_divergence": 1,
+            "seconds": 37.427246700040996,
+            "nodes": 22450,
+            "evaluations": 18289,
+            "depths": {
+              "2": 41,
+              "1": 21
+            },
+            "stops": {
+              "completed_depth": 41,
+              "node_limit": 21
+            }
+          },
+          {
+            "seed": 202610082142,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "baseline_event": "ongoing96",
+            "event": "owner0_loss",
+            "winner": 1,
+            "plies": 36,
+            "first_divergence": 10,
+            "seconds": 13.633094899822026,
+            "nodes": 9176,
+            "evaluations": 7289,
+            "depths": {
+              "2": 34,
+              "1": 2
+            },
+            "stops": {
+              "completed_depth": 34,
+              "node_limit": 2
+            }
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "baseline_event": "ongoing96",
+            "event": "ongoing96",
+            "winner": null,
+            "plies": 96,
+            "first_divergence": null,
+            "seconds": 57.13038320001215,
+            "nodes": 46997,
+            "evaluations": 42253,
+            "depths": {
+              "2": 11,
+              "1": 85
+            },
+            "stops": {
+              "completed_depth": 11,
+              "node_limit": 85
+            }
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "baseline_event": "ongoing96",
+            "event": "owner0_loss",
+            "winner": 1,
+            "plies": 26,
+            "first_divergence": 5,
+            "seconds": 18.246302699670196,
+            "nodes": 10808,
+            "evaluations": 8749,
+            "depths": {
+              "2": 14,
+              "1": 12
+            },
+            "stops": {
+              "completed_depth": 14,
+              "node_limit": 12
+            }
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "baseline_event": "ongoing96",
+            "event": "owner0_loss",
+            "winner": 1,
+            "plies": 8,
+            "first_divergence": 2,
+            "seconds": 3.612982500344515,
+            "nodes": 2423,
+            "evaluations": 1825,
+            "depths": {
+              "2": 8
+            },
+            "stops": {
+              "completed_depth": 8
+            }
+          },
+          {
+            "seed": 202610082144,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "baseline_event": "draw",
+            "event": "draw",
+            "winner": null,
+            "plies": 33,
+            "first_divergence": null,
+            "seconds": 30.73694339999929,
+            "nodes": 13757,
+            "evaluations": 10454,
+            "depths": {
+              "2": 27,
+              "1": 6
+            },
+            "stops": {
+              "completed_depth": 27,
+              "node_limit": 6
+            }
+          },
+          {
+            "seed": 202610082144,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "baseline_event": "draw",
+            "event": "owner0_win",
+            "winner": 0,
+            "plies": 5,
+            "first_divergence": 1,
+            "seconds": 4.355742100160569,
+            "nodes": 2111,
+            "evaluations": 1651,
+            "depths": {
+              "2": 4,
+              "1": 1
+            },
+            "stops": {
+              "completed_depth": 4,
+              "node_limit": 1
+            }
+          },
+          {
+            "seed": 202610082144,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "baseline_event": "draw",
+            "event": "owner0_win",
+            "winner": 0,
+            "plies": 5,
+            "first_divergence": 0,
+            "seconds": 3.8079499998129904,
+            "nodes": 1750,
+            "evaluations": 1444,
+            "depths": {
+              "2": 4,
+              "1": 1
+            },
+            "stops": {
+              "completed_depth": 4,
+              "node_limit": 1
+            }
+          },
+          {
+            "seed": 202610082145,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "baseline_event": "ongoing96",
+            "event": "ongoing96",
+            "winner": null,
+            "plies": 96,
+            "first_divergence": null,
+            "seconds": 51.07970589958131,
+            "nodes": 48781,
+            "evaluations": 45056,
+            "depths": {
+              "2": 2,
+              "1": 94
+            },
+            "stops": {
+              "completed_depth": 2,
+              "node_limit": 94
+            }
+          },
+          {
+            "seed": 202610082145,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "baseline_event": "ongoing96",
+            "event": "owner0_loss",
+            "winner": 1,
+            "plies": 28,
+            "first_divergence": 3,
+            "seconds": 24.99241130007431,
+            "nodes": 12361,
+            "evaluations": 10265,
+            "depths": {
+              "2": 10,
+              "1": 18
+            },
+            "stops": {
+              "completed_depth": 10,
+              "node_limit": 18
+            }
+          },
+          {
+            "seed": 202610082145,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "baseline_event": "ongoing96",
+            "event": "ongoing96",
+            "winner": null,
+            "plies": 96,
+            "first_divergence": 0,
+            "seconds": 61.16958019975573,
+            "nodes": 46933,
+            "evaluations": 39094,
+            "depths": {
+              "1": 72,
+              "2": 24
+            },
+            "stops": {
+              "node_limit": 72,
+              "completed_depth": 24
+            }
+          }
+        ],
+        "plies": 587,
+        "seconds": 370.3383372002281,
+        "event_changes": 7,
+        "events_by_policy": {
+          "('unit', 'unit')": {
+            "ongoing96": 3,
+            "draw": 1
+          },
+          "('unit', 'v3')": {
+            "owner0_loss": 3,
+            "owner0_win": 1
+          },
+          "('v3', 'unit')": {
+            "owner0_loss": 2,
+            "owner0_win": 1,
+            "ongoing96": 1
+          }
+        },
+        "limits": "Four prospective rules, deterministic chosen openings, dependent intervention trajectories and capped-depth policies; no default, strength or universal utility inference. No model trained or outcome-selected extension."
+      },
+      "dormant": {
+        "raw_active_identical": true,
+        "rows": [
+          {
+            "type": "K",
+            "raw": 5.816015625,
+            "board_before": 0,
+            "board_after": 0,
+            "hand_before": 0,
+            "hand_after": 0
+          },
+          {
+            "type": "P",
+            "raw": 6.315543369054795,
+            "board_before": 1344,
+            "board_after": 1147,
+            "hand_before": 1210,
+            "hand_after": 1032
+          },
+          {
+            "type": "X",
+            "raw": 6.458364189118147,
+            "board_before": 1374,
+            "board_after": 1173,
+            "hand_before": 1237,
+            "hand_after": 1056
+          },
+          {
+            "type": "A",
+            "raw": 1.870115966796875,
+            "board_before": 398,
+            "board_after": 340,
+            "hand_before": 358,
+            "hand_after": 306
+          },
+          {
+            "type": "B",
+            "raw": 4.699029472321272,
+            "board_before": 1000,
+            "board_after": 853,
+            "hand_before": 900,
+            "hand_after": 768
+          },
+          {
+            "type": "C",
+            "raw": 1.5232421875,
+            "board_before": 324,
+            "board_after": 277,
+            "hand_before": 292,
+            "hand_after": 249
+          }
+        ],
+        "changed_prefix_scores": 13,
+        "scope": "Declaration-conditioned median scale, not an actor quantity effect. Equal route successor multisets are scoped equivalence evidence only; fingerprint/pattern IDs excluded for mapping, original terminal/state semantics retained."
+      },
+      "dormant_callers": {
+        "calls": 51,
+        "rows": [
+          {
+            "prefix": 0,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              81,
+              81,
+              81
+            ],
+            "scores": [
+              0,
+              0,
+              0
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "prefix": 1,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              85,
+              85,
+              85
+            ],
+            "scores": [
+              30,
+              26,
+              30
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "prefix": 2,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              97,
+              97,
+              97
+            ],
+            "scores": [
+              0,
+              0,
+              0
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "prefix": 3,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              97,
+              97,
+              97
+            ],
+            "scores": [
+              30,
+              26,
+              30
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "prefix": 4,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              97,
+              97,
+              97
+            ],
+            "scores": [
+              0,
+              0,
+              0
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "prefix": 5,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              96,
+              96,
+              96
+            ],
+            "scores": [
+              616,
+              526,
+              616
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "prefix": 6,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              198,
+              198,
+              198
+            ],
+            "scores": [
+              -648,
+              -554,
+              -648
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "prefix": 7,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              222,
+              222,
+              222
+            ],
+            "scores": [
+              559,
+              476,
+              559
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "prefix": 8,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              145,
+              145,
+              145
+            ],
+            "scores": [
+              -1202,
+              -1026,
+              -1202
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "prefix": 9,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              256,
+              256,
+              256
+            ],
+            "scores": [
+              1768,
+              1507,
+              1768
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "prefix": 10,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              282,
+              282,
+              282
+            ],
+            "scores": [
+              -2344,
+              -1999,
+              -2344
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "prefix": 11,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              397,
+              397,
+              397
+            ],
+            "scores": [
+              2344,
+              1999,
+              2344
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "prefix": 12,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              350,
+              350,
+              350
+            ],
+            "scores": [
+              -1862,
+              -1588,
+              -1862
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "prefix": 13,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              298,
+              298,
+              298
+            ],
+            "scores": [
+              1934,
+              1650,
+              1934
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "prefix": 14,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              492,
+              492,
+              492
+            ],
+            "scores": [
+              -144,
+              -123,
+              -144
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "prefix": 15,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              317,
+              317,
+              317
+            ],
+            "scores": [
+              1959,
+              1672,
+              1959
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "prefix": 16,
+            "choice_equal": true,
+            "depths": [
+              2,
+              2,
+              2
+            ],
+            "nodes": [
+              155,
+              155,
+              155
+            ],
+            "scores": [
+              -2096,
+              -1789,
+              -2096
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          }
+        ],
+        "normalization_choice_changes": 0,
+        "no_time_cuts": true,
+        "timing_scope": "Caller run overlapped one-reply audit; do not use wall times for isolated performance conclusions. Node/action/depth observations retained; actual time-limit stops checked."
+      },
+      "dormant_preferences": {
+        "scope": "All-child preference control on17fixed prefixes, no search-budget extension.\nQuestion: does dormant-type normalization merely rescale, or change ties/orders?\nEnumerate physical successor multiset including terminal status, all pairs;\ncompare original/dormant/fixed-map static scores in the same parent frame.\nNo utility gain, universal equivalence or independent validation claim.\n",
+        "seconds": 14.47084579989314,
+        "complete": true,
+        "totals": {
+          "legal_children": 837,
+          "pairs": 29290,
+          "inversions": 0,
+          "tie_created": 0,
+          "tie_broken": 0
+        }
+      },
+      "exposed_mates": {
+        "rows": [
+          {
+            "seed": 202610082122,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "selected_children": 14,
+            "terminal_children": 1,
+            "replies": 324,
+            "loss_holes": []
+          },
+          {
+            "seed": 202610082122,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "selected_children": 14,
+            "terminal_children": 1,
+            "replies": 324,
+            "loss_holes": []
+          },
+          {
+            "seed": 202610082122,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "selected_children": 14,
+            "terminal_children": 1,
+            "replies": 324,
+            "loss_holes": []
+          },
+          {
+            "seed": 202610082123,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "selected_children": 96,
+            "terminal_children": 0,
+            "replies": 18599,
+            "loss_holes": []
+          },
+          {
+            "seed": 202610082123,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "selected_children": 92,
+            "terminal_children": 1,
+            "replies": 10401,
+            "loss_holes": []
+          },
+          {
+            "seed": 202610082123,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "selected_children": 95,
+            "terminal_children": 1,
+            "replies": 10896,
+            "loss_holes": []
+          },
+          {
+            "seed": 202610082124,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "selected_children": 21,
+            "terminal_children": 1,
+            "replies": 1670,
+            "loss_holes": [
+              {
+                "ply": 19,
+                "mover": 1,
+                "policy": "unit",
+                "depth": 1,
+                "stop": "node_limit",
+                "witnesses": 1
+              }
+            ]
+          },
+          {
+            "seed": 202610082124,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "selected_children": 96,
+            "terminal_children": 0,
+            "replies": 10756,
+            "loss_holes": []
+          },
+          {
+            "seed": 202610082124,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "selected_children": 5,
+            "terminal_children": 1,
+            "replies": 303,
+            "loss_holes": [
+              {
+                "ply": 3,
+                "mover": 1,
+                "policy": "unit",
+                "depth": 1,
+                "stop": "node_limit",
+                "witnesses": 2
+              }
+            ]
+          },
+          {
+            "seed": 202610082125,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "selected_children": 60,
+            "terminal_children": 1,
+            "replies": 9105,
+            "loss_holes": []
+          },
+          {
+            "seed": 202610082125,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "selected_children": 96,
+            "terminal_children": 0,
+            "replies": 12705,
+            "loss_holes": []
+          },
+          {
+            "seed": 202610082125,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "selected_children": 37,
+            "terminal_children": 1,
+            "replies": 3663,
+            "loss_holes": [
+              {
+                "ply": 35,
+                "mover": 1,
+                "policy": "unit",
+                "depth": 1,
+                "stop": "node_limit",
+                "witnesses": 3
+              }
+            ]
+          }
+        ],
+        "complete": true,
+        "selected_children": 640,
+        "reply_transitions": 79070,
+        "seconds": 745.6602143002674,
+        "witness_roots": 3,
+        "scope": "All selected children of12dependent exposed trajectories; one-reply exact terminal witnesses, not game value or all-root defense analysis. Zero witnesses only means no immediate winning reply."
+      },
+      "prospective_mates": {
+        "scope": "Frozen actual one-reply terminal audit of all12prospective2142-2145 Unit/Unit and crossed trajectories. All selected-action child states enter,\nnot only finished games; terminal children are distinguished. No search/budget\nextension or WDL inference. Record every legal opponent reply count and concrete\nimmediate losing witnesses, including zero-witness states. No invented censor draws.\nQuestion: do event changes include observable immediate-mate holes rather than\nonly changed choices? Expected<30min from existing Core transition timings;\n1800sec cost checkpoint saves partial UNKNOWN frontier if reached.\n",
+        "rows": [
+          {
+            "seed": 202610082142,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "selected_children": 96,
+            "terminal_children": 0,
+            "replies": 7628,
+            "loss_holes": []
+          },
+          {
+            "seed": 202610082142,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "selected_children": 62,
+            "terminal_children": 1,
+            "replies": 5149,
+            "loss_holes": [
+              {
+                "ply": 60,
+                "mover": 0,
+                "policy": "unit",
+                "depth": 1,
+                "stop": "node_limit",
+                "witnesses": 6
+              }
+            ]
+          },
+          {
+            "seed": 202610082142,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "selected_children": 36,
+            "terminal_children": 1,
+            "replies": 1809,
+            "loss_holes": [
+              {
+                "ply": 34,
+                "mover": 0,
+                "policy": "v3",
+                "depth": 1,
+                "stop": "node_limit",
+                "witnesses": 1
+              }
+            ]
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "selected_children": 96,
+            "terminal_children": 0,
+            "replies": 18758,
+            "loss_holes": []
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "selected_children": 26,
+            "terminal_children": 1,
+            "replies": 2592,
+            "loss_holes": [
+              {
+                "ply": 24,
+                "mover": 0,
+                "policy": "unit",
+                "depth": 1,
+                "stop": "node_limit",
+                "witnesses": 2
+              }
+            ]
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "selected_children": 8,
+            "terminal_children": 1,
+            "replies": 517,
+            "loss_holes": [
+              {
+                "ply": 6,
+                "mover": 0,
+                "policy": "v3",
+                "depth": 2,
+                "stop": "completed_depth",
+                "witnesses": 2
+              }
+            ]
+          },
+          {
+            "seed": 202610082144,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "selected_children": 33,
+            "terminal_children": 1,
+            "replies": 3308,
+            "loss_holes": []
+          },
+          {
+            "seed": 202610082144,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "selected_children": 5,
+            "terminal_children": 1,
+            "replies": 454,
+            "loss_holes": [
+              {
+                "ply": 3,
+                "mover": 1,
+                "policy": "v3",
+                "depth": 1,
+                "stop": "node_limit",
+                "witnesses": 1
+              }
+            ]
+          },
+          {
+            "seed": 202610082144,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "selected_children": 5,
+            "terminal_children": 1,
+            "replies": 363,
+            "loss_holes": [
+              {
+                "ply": 3,
+                "mover": 1,
+                "policy": "unit",
+                "depth": 1,
+                "stop": "node_limit",
+                "witnesses": 1
+              }
+            ]
+          },
+          {
+            "seed": 202610082145,
+            "policies": [
+              "unit",
+              "unit"
+            ],
+            "selected_children": 96,
+            "terminal_children": 0,
+            "replies": 20912,
+            "loss_holes": []
+          },
+          {
+            "seed": 202610082145,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "selected_children": 28,
+            "terminal_children": 1,
+            "replies": 3735,
+            "loss_holes": [
+              {
+                "ply": 26,
+                "mover": 0,
+                "policy": "unit",
+                "depth": 1,
+                "stop": "node_limit",
+                "witnesses": 2
+              }
+            ]
+          },
+          {
+            "seed": 202610082145,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "selected_children": 96,
+            "terminal_children": 0,
+            "replies": 13894,
+            "loss_holes": []
+          }
+        ],
+        "complete": true,
+        "selected_children": 587,
+        "reply_transitions": 79119,
+        "seconds": 703.1351264999248,
+        "witness_roots": 7,
+        "holes_by_policy": {
+          "unit": 4,
+          "v3": 3
+        },
+        "limits": "Full denominator; dependent selected trajectories; zero means no immediate winning reply, not eventual safety."
+      },
+      "fronts": {
+        "scope": "Posthoc all-action immediate-exposure fronts at every prospective mating game.\nEach root is the loser-to-move parent2plies before its recorded checkmate.\nQuestion: are observed losses already locally forced, or did bounded leaf\nselection leave an available action with no immediate winning enemy reply?\nAll root actions and all replies, including zero witnesses and terminal children.\nOne-reply safety is not long-term safety/WDL; dependence/selection is explicit.\nNo fitted scores, budget extension, success threshold or product change.\nExpected<30min;1800sec cost checkpoint retains unfinished action/front UNKNOWN.\n",
+        "rows": [
+          {
+            "seed": 202610082142,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 60,
+            "mover_policy": "unit",
+            "complete": true,
+            "legal_actions": 190,
+            "audited_actions": 190,
+            "immediate_loss_actions": 177,
+            "no_immediate_loss_actions": 13,
+            "selected_witnesses": 6,
+            "selected_price_exclusions": [],
+            "selected_depth": 1,
+            "selected_stop": "node_limit",
+            "static_top_ties": 1,
+            "static_top_immediate_losses": 1,
+            "selected_static_score": -5896,
+            "best_no_immediate_loss_score": -5740,
+            "replies": 25011
+          },
+          {
+            "seed": 202610082142,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 34,
+            "mover_policy": "v3",
+            "complete": true,
+            "legal_actions": 67,
+            "audited_actions": 67,
+            "immediate_loss_actions": 55,
+            "no_immediate_loss_actions": 12,
+            "selected_witnesses": 1,
+            "selected_price_exclusions": [
+              "compound/state effect",
+              "drop",
+              "not simple actor move"
+            ],
+            "selected_depth": 1,
+            "selected_stop": "node_limit",
+            "static_top_ties": 31,
+            "static_top_immediate_losses": 27,
+            "selected_static_score": 1837,
+            "best_no_immediate_loss_score": 1837,
+            "replies": 6970
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 24,
+            "mover_policy": "unit",
+            "complete": true,
+            "legal_actions": 208,
+            "audited_actions": 208,
+            "immediate_loss_actions": 176,
+            "no_immediate_loss_actions": 32,
+            "selected_witnesses": 2,
+            "selected_price_exclusions": [],
+            "selected_depth": 1,
+            "selected_stop": "node_limit",
+            "static_top_ties": 1,
+            "static_top_immediate_losses": 1,
+            "selected_static_score": -2208,
+            "best_no_immediate_loss_score": -2320,
+            "replies": 24739
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 6,
+            "mover_policy": "v3",
+            "complete": true,
+            "legal_actions": 1,
+            "audited_actions": 1,
+            "immediate_loss_actions": 1,
+            "no_immediate_loss_actions": 0,
+            "selected_witnesses": 2,
+            "selected_price_exclusions": [],
+            "selected_depth": 2,
+            "selected_stop": "completed_depth",
+            "static_top_ties": 1,
+            "static_top_immediate_losses": 1,
+            "selected_static_score": -3206,
+            "best_no_immediate_loss_score": null,
+            "replies": 146
+          },
+          {
+            "seed": 202610082144,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 3,
+            "mover_policy": "v3",
+            "complete": true,
+            "legal_actions": 112,
+            "audited_actions": 112,
+            "immediate_loss_actions": 61,
+            "no_immediate_loss_actions": 51,
+            "selected_witnesses": 1,
+            "selected_price_exclusions": [],
+            "selected_depth": 1,
+            "selected_stop": "node_limit",
+            "static_top_ties": 1,
+            "static_top_immediate_losses": 1,
+            "selected_static_score": 43,
+            "best_no_immediate_loss_score": 0,
+            "replies": 12099
+          },
+          {
+            "seed": 202610082144,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 3,
+            "mover_policy": "unit",
+            "complete": true,
+            "legal_actions": 154,
+            "audited_actions": 154,
+            "immediate_loss_actions": 104,
+            "no_immediate_loss_actions": 50,
+            "selected_witnesses": 1,
+            "selected_price_exclusions": [],
+            "selected_depth": 1,
+            "selected_stop": "node_limit",
+            "static_top_ties": 1,
+            "static_top_immediate_losses": 0,
+            "selected_static_score": -2353,
+            "best_no_immediate_loss_score": -1196,
+            "replies": 17964
+          },
+          {
+            "seed": 202610082145,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 26,
+            "mover_policy": "unit",
+            "complete": true,
+            "legal_actions": 204,
+            "audited_actions": 204,
+            "immediate_loss_actions": 1,
+            "no_immediate_loss_actions": 203,
+            "selected_witnesses": 2,
+            "selected_price_exclusions": [],
+            "selected_depth": 1,
+            "selected_stop": "node_limit",
+            "static_top_ties": 49,
+            "static_top_immediate_losses": 0,
+            "selected_static_score": -12401,
+            "best_no_immediate_loss_score": -12201,
+            "replies": 36738
+          }
+        ],
+        "complete": true,
+        "transitions": 124603,
+        "seconds": 953.7248786999844,
+        "limits": "Posthoc selected mating parents, not independent validation. Zero surviving one-reply action proves only local immediate exposure; nonzero does not prove eventual survival. Static tie sets and actual bounded search choices differ. Unfinished actions are UNKNOWN, not safe/loss."
+      },
+      "hole_controls": {
+        "scope": "Fixed-root control of all3observed immediate mate holes, selected posthoc.\nSame actual parent/history and cold D2/512/10sec/q0 Unit ordering for Unit/v3.\nEnumerate actual opponent replies of each chosen child, including no witnesses.\nQuestion: would v3 at the same state avoid a documented Unit immediate loss,\nor do different trajectories explain the absence of v3 holes? This is a\ndependent exposed diagnostic, not a prospective gain estimate or WDL claim.\n",
+        "rows": [
+          {
+            "seed": 202610082124,
+            "ply": 19,
+            "source_policies": [
+              "unit",
+              "unit"
+            ],
+            "arms": [
+              {
+                "policy": "unit",
+                "replies": 64,
+                "witnesses": 1,
+                "completed_depth": 1,
+                "stop": "node_limit",
+                "action": {
+                  "pattern_id": "legacy_009",
+                  "geometry_id": "g12",
+                  "actor_type_id": "C",
+                  "from_square": {
+                    "file": 6,
+                    "rank": 0
+                  },
+                  "to_square": {
+                    "file": 7,
+                    "rank": 0
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              {
+                "policy": "v3",
+                "replies": 63,
+                "witnesses": 1,
+                "completed_depth": 1,
+                "stop": "node_limit",
+                "action": {
+                  "pattern_id": "legacy_009",
+                  "geometry_id": "g12",
+                  "actor_type_id": "C",
+                  "from_square": {
+                    "file": 6,
+                    "rank": 0
+                  },
+                  "to_square": {
+                    "file": 7,
+                    "rank": 0
+                  },
+                  "promotion_target_id": "A"
+                }
+              }
+            ],
+            "same_action": false
+          },
+          {
+            "seed": 202610082124,
+            "ply": 3,
+            "source_policies": [
+              "v3",
+              "unit"
+            ],
+            "arms": [
+              {
+                "policy": "unit",
+                "replies": 130,
+                "witnesses": 2,
+                "completed_depth": 1,
+                "stop": "node_limit",
+                "action": {
+                  "pattern_id": "legacy_011",
+                  "geometry_id": "g13",
+                  "actor_type_id": "C",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 7
+                  },
+                  "to_square": {
+                    "file": 0,
+                    "rank": 1
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              {
+                "policy": "v3",
+                "replies": 128,
+                "witnesses": 2,
+                "completed_depth": 1,
+                "stop": "node_limit",
+                "action": {
+                  "pattern_id": "legacy_013",
+                  "geometry_id": "g14",
+                  "actor_type_id": "C",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 7
+                  },
+                  "to_square": {
+                    "file": 6,
+                    "rank": 1
+                  },
+                  "promotion_target_id": "A"
+                }
+              }
+            ],
+            "same_action": false
+          },
+          {
+            "seed": 202610082125,
+            "ply": 35,
+            "source_policies": [
+              "v3",
+              "unit"
+            ],
+            "arms": [
+              {
+                "policy": "unit",
+                "replies": 99,
+                "witnesses": 3,
+                "completed_depth": 1,
+                "stop": "node_limit",
+                "action": {
+                  "pattern_id": "legacy_004",
+                  "geometry_id": "g10",
+                  "actor_type_id": "B",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 4
+                  },
+                  "to_square": {
+                    "file": 1,
+                    "rank": 3
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              {
+                "policy": "v3",
+                "replies": 5,
+                "witnesses": 0,
+                "completed_depth": 1,
+                "stop": "node_limit",
+                "action": {
+                  "pattern_id": "legacy_058",
+                  "geometry_id": "g29",
+                  "base_type_id": "A",
+                  "to_square": {
+                    "file": 0,
+                    "rank": 4
+                  }
+                }
+              }
+            ],
+            "same_action": false
+          }
+        ],
+        "seconds": 7.141046499833465,
+        "v3_immediate_holes": 2,
+        "limits": "Same parent and equal budget; selected exposed roots, not prospective performance; no eventual safety inference."
+      },
+      "executed_scope": {
+        "scope": "Post-hoc trace of all executed actions in the fixed eight-game cohort.\nRetain actual promotion/current/base/hand/aux effects and v3 pattern exclusion\nprovenance. This tests coverage, not an alternative utility label or WDL.\n"
+      },
+      "first_departures": {
+        "scope": "Posthoc4arm control at all8first prospective crossed-policy departures.\nSame full parent reached by the shared Unit prefix; no game extended or label fit.\nUnit100/Unit1000 isolate positive scale; uniform1000board/900hand isolates hand\ndiscount from v3 relative type prices. Cold D2/512/10sec/q0, fixed Unit ordering.\nQuestion: is the first changed action evidence of relative type prices or a\nuniform custody convention? Choice agreement is attribution, not utility gain.\n",
+        "rows": [
+          {
+            "seed": 202610082142,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 1,
+            "scale_choice_equal": true,
+            "scale_nodes_equal": true,
+            "hand_discount_matches_v3": true,
+            "hand_discount_changes_unit": true,
+            "depths": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "seed": 202610082142,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 10,
+            "scale_choice_equal": true,
+            "scale_nodes_equal": true,
+            "hand_discount_matches_v3": true,
+            "hand_discount_changes_unit": true,
+            "depths": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 5,
+            "scale_choice_equal": true,
+            "scale_nodes_equal": true,
+            "hand_discount_matches_v3": false,
+            "hand_discount_changes_unit": false,
+            "depths": [
+              2,
+              2,
+              2,
+              1
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth",
+              "node_limit"
+            ]
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 2,
+            "scale_choice_equal": true,
+            "scale_nodes_equal": true,
+            "hand_discount_matches_v3": false,
+            "hand_discount_changes_unit": true,
+            "depths": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "seed": 202610082144,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 1,
+            "scale_choice_equal": true,
+            "scale_nodes_equal": true,
+            "hand_discount_matches_v3": false,
+            "hand_discount_changes_unit": true,
+            "depths": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "seed": 202610082144,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 0,
+            "scale_choice_equal": true,
+            "scale_nodes_equal": true,
+            "hand_discount_matches_v3": false,
+            "hand_discount_changes_unit": false,
+            "depths": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth",
+              "completed_depth"
+            ]
+          },
+          {
+            "seed": 202610082145,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 3,
+            "scale_choice_equal": true,
+            "scale_nodes_equal": true,
+            "hand_discount_matches_v3": false,
+            "hand_discount_changes_unit": false,
+            "depths": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "stops": [
+              "node_limit",
+              "node_limit",
+              "node_limit",
+              "node_limit"
+            ]
+          },
+          {
+            "seed": 202610082145,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 0,
+            "scale_choice_equal": true,
+            "scale_nodes_equal": true,
+            "hand_discount_matches_v3": false,
+            "hand_discount_changes_unit": false,
+            "depths": [
+              2,
+              2,
+              2,
+              1
+            ],
+            "stops": [
+              "completed_depth",
+              "completed_depth",
+              "completed_depth",
+              "node_limit"
+            ]
+          }
+        ],
+        "calls": 32,
+        "scale_choices_equal": 8,
+        "hand_matches_v3": 2,
+        "seconds": 22.27364629972726,
+        "limits": "All first departures are exposed/local counterfactuals. No choice agreement proves identical scores or usefulness. Timings overlap chosen-child audit; no isolated speed comparison."
+      },
+      "prospective_executed_scope": {
+        "all_plies": 587,
+        "events": 39,
+        "special_actions": 7,
+        "special_classes": {
+          "Xtransform": 3,
+          "Pdrop": 4
+        },
+        "special_exclusions": {
+          "compound/state effect": 7,
+          "drop": 4,
+          "not simple actor move": 4,
+          "state/zone/postcondition": 4
+        },
+        "mover_policies": {
+          "v3": 7
+        },
+        "scope": "All587actual actions replayed; trace finite executed support, not price usefulness or full generic representation."
+      },
+      "slot_eligibility": {
+        "rows": [
+          {
+            "seed": 202610082142,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 32,
+            "variant": "actual_hand_stock",
+            "all_actions_equal": true,
+            "Pdrop_counts": [
+              0,
+              0
+            ]
+          },
+          {
+            "seed": 202610082142,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 32,
+            "variant": "add_one_P_to_side_to_move_hand",
+            "all_actions_equal": false,
+            "Pdrop_counts": [
+              37,
+              0
+            ]
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 9,
+            "variant": "actual_hand_stock",
+            "all_actions_equal": true,
+            "Pdrop_counts": [
+              0,
+              0
+            ]
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 9,
+            "variant": "add_one_P_to_side_to_move_hand",
+            "all_actions_equal": false,
+            "Pdrop_counts": [
+              42,
+              0
+            ]
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 2,
+            "variant": "actual_hand_stock",
+            "all_actions_equal": true,
+            "Pdrop_counts": [
+              0,
+              0
+            ]
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 2,
+            "variant": "add_one_P_to_side_to_move_hand",
+            "all_actions_equal": false,
+            "Pdrop_counts": [
+              37,
+              0
+            ]
+          }
+        ],
+        "limits": "Position-only actual/synthetic stock controls; initial legacy-only API result invalid and preserved separately."
+      },
+      "local_q": {
+        "scope": "Matched localq0/q1 calls at all7prospective mating loser parents.\nAll2leaf policies under the same512node/10sec/Unit-order/root-tactical-off limit.\nQuestion: can the existing q mechanism avoid a locally avoidable immediate loss,\nor does extra qwork only lose completed iterations? Label chosen actions by the\nalready completed all-action immediate-reply fronts; no game/budget extension.\nPosthoc exposed diagnosis, not default selection or playing gain.\n",
+        "rows": [
+          {
+            "seed": 202610082142,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 60,
+            "arms": [
+              {
+                "policy": "unit",
+                "q": 0,
+                "depth": 1,
+                "nodes": 512,
+                "qnodes": 0,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 6,
+                "seconds": 1.365827600006014
+              },
+              {
+                "policy": "v3",
+                "q": 0,
+                "depth": 1,
+                "nodes": 512,
+                "qnodes": 0,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 4,
+                "seconds": 1.7216353002004325
+              },
+              {
+                "policy": "unit",
+                "q": 1,
+                "depth": 1,
+                "nodes": 238,
+                "qnodes": 274,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 6,
+                "seconds": 0.3995391000062227
+              },
+              {
+                "policy": "v3",
+                "q": 1,
+                "depth": 1,
+                "nodes": 242,
+                "qnodes": 270,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 4,
+                "seconds": 0.4434919999912381
+              }
+            ],
+            "unit_q_choice_changed": false,
+            "v3_q_choice_changed": false
+          },
+          {
+            "seed": 202610082142,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 34,
+            "arms": [
+              {
+                "policy": "unit",
+                "q": 0,
+                "depth": 1,
+                "nodes": 512,
+                "qnodes": 0,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 1,
+                "seconds": 0.661512800026685
+              },
+              {
+                "policy": "v3",
+                "q": 0,
+                "depth": 1,
+                "nodes": 512,
+                "qnodes": 0,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 1,
+                "seconds": 0.6097809998318553
+              },
+              {
+                "policy": "unit",
+                "q": 1,
+                "depth": 1,
+                "nodes": 249,
+                "qnodes": 263,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 1,
+                "seconds": 0.1846644002944231
+              },
+              {
+                "policy": "v3",
+                "q": 1,
+                "depth": 1,
+                "nodes": 239,
+                "qnodes": 273,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 1,
+                "seconds": 0.2558734999038279
+              }
+            ],
+            "unit_q_choice_changed": false,
+            "v3_q_choice_changed": false
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 24,
+            "arms": [
+              {
+                "policy": "unit",
+                "q": 0,
+                "depth": 1,
+                "nodes": 512,
+                "qnodes": 0,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 2,
+                "seconds": 0.7197020999155939
+              },
+              {
+                "policy": "v3",
+                "q": 0,
+                "depth": 1,
+                "nodes": 512,
+                "qnodes": 0,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 2,
+                "seconds": 0.7198800998739898
+              },
+              {
+                "policy": "unit",
+                "q": 1,
+                "depth": 1,
+                "nodes": 222,
+                "qnodes": 290,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 2,
+                "seconds": 0.34644020022824407
+              },
+              {
+                "policy": "v3",
+                "q": 1,
+                "depth": 1,
+                "nodes": 216,
+                "qnodes": 296,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 2,
+                "seconds": 0.38499380042776465
+              }
+            ],
+            "unit_q_choice_changed": false,
+            "v3_q_choice_changed": false
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 6,
+            "arms": [
+              {
+                "policy": "unit",
+                "q": 0,
+                "depth": 2,
+                "nodes": 150,
+                "qnodes": 0,
+                "stop": "completed_depth",
+                "immediate_loss": true,
+                "witnesses": 2,
+                "seconds": 0.07904059998691082
+              },
+              {
+                "policy": "v3",
+                "q": 0,
+                "depth": 2,
+                "nodes": 150,
+                "qnodes": 0,
+                "stop": "completed_depth",
+                "immediate_loss": true,
+                "witnesses": 2,
+                "seconds": 0.07862409995868802
+              },
+              {
+                "policy": "unit",
+                "q": 1,
+                "depth": 2,
+                "nodes": 150,
+                "qnodes": 161,
+                "stop": "completed_depth",
+                "immediate_loss": true,
+                "witnesses": 2,
+                "seconds": 0.17259539989754558
+              },
+              {
+                "policy": "v3",
+                "q": 1,
+                "depth": 2,
+                "nodes": 150,
+                "qnodes": 161,
+                "stop": "completed_depth",
+                "immediate_loss": true,
+                "witnesses": 2,
+                "seconds": 0.17242929991334677
+              }
+            ],
+            "unit_q_choice_changed": false,
+            "v3_q_choice_changed": false
+          },
+          {
+            "seed": 202610082144,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 3,
+            "arms": [
+              {
+                "policy": "unit",
+                "q": 0,
+                "depth": 1,
+                "nodes": 512,
+                "qnodes": 0,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 1,
+                "seconds": 0.7984560998156667
+              },
+              {
+                "policy": "v3",
+                "q": 0,
+                "depth": 1,
+                "nodes": 512,
+                "qnodes": 0,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 1,
+                "seconds": 0.3610175000503659
+              },
+              {
+                "policy": "unit",
+                "q": 1,
+                "depth": 1,
+                "nodes": 183,
+                "qnodes": 329,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 1,
+                "seconds": 0.558810300193727
+              },
+              {
+                "policy": "v3",
+                "q": 1,
+                "depth": 1,
+                "nodes": 219,
+                "qnodes": 293,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 1,
+                "seconds": 0.42636620020493865
+              }
+            ],
+            "unit_q_choice_changed": false,
+            "v3_q_choice_changed": false
+          },
+          {
+            "seed": 202610082144,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 3,
+            "arms": [
+              {
+                "policy": "unit",
+                "q": 0,
+                "depth": 1,
+                "nodes": 512,
+                "qnodes": 0,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 1,
+                "seconds": 0.24563030013814569
+              },
+              {
+                "policy": "v3",
+                "q": 0,
+                "depth": 1,
+                "nodes": 512,
+                "qnodes": 0,
+                "stop": "node_limit",
+                "immediate_loss": false,
+                "witnesses": 0,
+                "seconds": 1.1006147000007331
+              },
+              {
+                "policy": "unit",
+                "q": 1,
+                "depth": 1,
+                "nodes": 231,
+                "qnodes": 281,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 1,
+                "seconds": 0.4186684996820986
+              },
+              {
+                "policy": "v3",
+                "q": 1,
+                "depth": 1,
+                "nodes": 209,
+                "qnodes": 303,
+                "stop": "node_limit",
+                "immediate_loss": false,
+                "witnesses": 0,
+                "seconds": 0.5368563998490572
+              }
+            ],
+            "unit_q_choice_changed": false,
+            "v3_q_choice_changed": false
+          },
+          {
+            "seed": 202610082145,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 26,
+            "arms": [
+              {
+                "policy": "unit",
+                "q": 0,
+                "depth": 1,
+                "nodes": 512,
+                "qnodes": 0,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 2,
+                "seconds": 0.2111227000132203
+              },
+              {
+                "policy": "v3",
+                "q": 0,
+                "depth": 1,
+                "nodes": 512,
+                "qnodes": 0,
+                "stop": "node_limit",
+                "immediate_loss": false,
+                "witnesses": 0,
+                "seconds": 0.17945679975673556
+              },
+              {
+                "policy": "unit",
+                "q": 1,
+                "depth": 1,
+                "nodes": 236,
+                "qnodes": 276,
+                "stop": "node_limit",
+                "immediate_loss": true,
+                "witnesses": 2,
+                "seconds": 0.3388016000390053
+              },
+              {
+                "policy": "v3",
+                "q": 1,
+                "depth": 1,
+                "nodes": 248,
+                "qnodes": 264,
+                "stop": "node_limit",
+                "immediate_loss": false,
+                "witnesses": 0,
+                "seconds": 0.21350929979234934
+              }
+            ],
+            "unit_q_choice_changed": false,
+            "v3_q_choice_changed": false
+          }
+        ],
+        "calls": 28,
+        "seconds": 15.473598800133914,
+        "loss_counts": {
+          "('unit', 0)": 7,
+          "('unit', 1)": 7,
+          "('v3', 0)": 5,
+          "('v3', 1)": 5
+        },
+        "limits": "Selected exposed mating parents; immediate labels only, no long-term survival/default/strength inference."
+      },
+      "witness_recovery": {
+        "rows": [
+          {
+            "seed": 202610082142,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 60,
+            "witnesses": 6
+          },
+          {
+            "seed": 202610082142,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 34,
+            "witnesses": 1
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 24,
+            "witnesses": 2
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 6,
+            "witnesses": 2
+          },
+          {
+            "seed": 202610082144,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 3,
+            "witnesses": 1
+          },
+          {
+            "seed": 202610082144,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 3,
+            "witnesses": 1
+          },
+          {
+            "seed": 202610082145,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 26,
+            "witnesses": 2
+          }
+        ],
+        "verified": true,
+        "limits": "All saved fresh chosen-child winning witnesses replayed; not all frontier transitions or timings reproduced."
+      },
+      "slot_rule_conditioning": {
+        "scope": "Three fixed synthetic-stock positions crossed with eq0/eq1 rule guards.\nQuestion: does raw sparse Position equality determine action eligibility across\nrules? Both fingerprints remain distinct; existing encoder already prohibits\ncross-rule weight reuse. This is one premise for a shared behavioral input,\nnot a defect in that scoped encoder, training target, reachable-state utility,\nor permission to strip generated semantics. No outcome-selected states.\n",
+        "rows": [
+          {
+            "seed": 202610082142,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 32,
+            "arms": [
+              {
+                "guard": 0,
+                "fingerprint": "7efdd8878c3d7283b5f4f82056e952d23617834756354f53dc20c3792d023780",
+                "Pdrop_counts": [
+                  37,
+                  0
+                ]
+              },
+              {
+                "guard": 1,
+                "fingerprint": "6eeb4cc5c706d3bd3984731cbb2dea41c00d11cd3f9acb33cf1815a36efe9d3c",
+                "Pdrop_counts": [
+                  0,
+                  37
+                ]
+              }
+            ],
+            "numeric_sparse_equal_by_flag": [
+              true,
+              true
+            ],
+            "fingerprints_distinct": true
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "unit",
+              "v3"
+            ],
+            "ply": 9,
+            "arms": [
+              {
+                "guard": 0,
+                "fingerprint": "074a28e47923db5901984544b90fb9c0f1842fc3a28ae06f43da6bd0aeb42295",
+                "Pdrop_counts": [
+                  42,
+                  0
+                ]
+              },
+              {
+                "guard": 1,
+                "fingerprint": "130064b75cd0c658d7c413fe6ba01d75b8454e3d902ab7fc31f40398d41c20b6",
+                "Pdrop_counts": [
+                  0,
+                  42
+                ]
+              }
+            ],
+            "numeric_sparse_equal_by_flag": [
+              true,
+              true
+            ],
+            "fingerprints_distinct": true
+          },
+          {
+            "seed": 202610082143,
+            "policies": [
+              "v3",
+              "unit"
+            ],
+            "ply": 2,
+            "arms": [
+              {
+                "guard": 0,
+                "fingerprint": "074a28e47923db5901984544b90fb9c0f1842fc3a28ae06f43da6bd0aeb42295",
+                "Pdrop_counts": [
+                  37,
+                  0
+                ]
+              },
+              {
+                "guard": 1,
+                "fingerprint": "130064b75cd0c658d7c413fe6ba01d75b8454e3d902ab7fc31f40398d41c20b6",
+                "Pdrop_counts": [
+                  0,
+                  37
+                ]
+              }
+            ],
+            "numeric_sparse_equal_by_flag": [
+              true,
+              true
+            ],
+            "fingerprints_distinct": true
+          }
+        ],
+        "complete": true
+      }
+    }
   }
 }

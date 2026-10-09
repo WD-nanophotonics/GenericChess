@@ -395,3 +395,19 @@ Exact folding agrees on795full-history states within2.14e-13logit error.
 Forty-eight scoring-discard calls preserve all32paired decisions/PVs/work;
 encoder/folded median wall ratios1.132/1.030 are local overhead, not useful leaves.
 FINITE_SEARCH_COMPRESSION.md owns detailed outputs, caps, failures and recovery.
+
+The subsequent fixed512node price diagnostic keeps full generated mechanics and
+compares Unit with the existing static v3, without a new fit or product default.
+Fresh four-rule crosses give v3-side4wins/3losses/1ongoing, with owner imbalance
+and dependent paths. At all eight first departures, multiplying Unit prices by10
+preserves choices/work; a uniform hand discount alone matches v3 at only two.
+Executed guarded drops/transforms remain outside v3's projected price support.
+The global temporary flag inhibits Pdrop; at three actual transform children
+there is no P stock, so changing the flag changes no current semantic action.
+Adding one synthetic P makes37/42/37drops eligible at flag0 and none at flag1.
+This is a scoped, position-only interaction control, not reachable-state utility
+or proof that the flag caused any game outcome. Preserve rule-conditioned effects
+and inventory prerequisites before another shared-input experiment. Existing
+search, Unit and static tables remain cheap comparators; local mate/front/q
+diagnostics do not authorize a refit or establish long-term survival.
+FINITE_SEARCH_COMPRESSION.md and node_prices_20261010 own the exact evidence.
