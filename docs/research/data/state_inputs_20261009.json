@@ -1,0 +1,221 @@
+{
+  "status": "OFFLINE_FEASIBILITY_NOT_TRAINING",
+  "report": "../STATE_INPUT_FEASIBILITY.md",
+  "base_commit": "3e152d6017c4ad0c793650379c3c2488ed37686d",
+  "archive_index": "../../archive/state_inputs_20261009/index.json",
+  "archive_sha256": "007edc7ca7a64fcaff5df7929b9882874b6b5753c8f0d7d4053d969a3f7e38c1",
+  "supplement_index": "../../archive/state_inputs_20261009/supplement-index.json",
+  "supplement_sha256": "2199f87dc0be60d6a0f2435b02b5def922f4731921d1dd5dfbb40127380ec350",
+  "recovery_members": {
+    "main": 45,
+    "supplement": 7,
+    "interaction": 8
+  },
+  "semantic_witness": {
+    "old_dimension": 525,
+    "fixed_dynamic_inputs": [
+      0,
+      0,
+      0
+    ],
+    "old_features_equal": true,
+    "same_root_legal_actions": 12,
+    "after_capture_reply_legal_drop_counts": [
+      0,
+      1
+    ],
+    "scope": "Counterfactual promoted R base-identity swap; actual continuation, not full evaluator equality or reachability proof"
+  },
+  "sparse_forward": {
+    "dimension": 1165,
+    "unique_actual_leaves": 78,
+    "active_features": [
+      10,
+      13
+    ],
+    "max_absolute_error": 2.498001805406602e-16,
+    "incremental_updates": false,
+    "score_used_in_search": false
+  },
+  "transfer_cost": {
+    "q0": {
+      "calls": 48,
+      "complete": 48,
+      "capped": 0,
+      "median_root_wall_ratios": {
+        "dense": 1.1467027317121432,
+        "sparse": 1.0136440993728915
+      }
+    },
+    "q2": {
+      "calls": 48,
+      "complete": 30,
+      "capped": 18,
+      "complete_root_median_wall_ratios": {
+        "dense": 1.228224822217564,
+        "sparse": 1.0163541821974744
+      }
+    },
+    "ratio_scope": "Mean of two repetitions within root, then median across fully completed roots; capped searched work differs"
+  },
+  "prospective_signal": {
+    "rule_seed": 202610082102,
+    "exposure": "Already exposed generated rule; new declaration before labels, not holdout or fitted result",
+    "route_seed": 2026100901,
+    "root_plies": [
+      0,
+      4,
+      8,
+      12
+    ],
+    "children_by_root": [
+      26,
+      33,
+      36,
+      40
+    ],
+    "all_children": 135,
+    "complete_d2_children": 135,
+    "same_material_pairs": 1710,
+    "finite_teacher_differences": 229,
+    "ties": 1481,
+    "unknown": 0,
+    "terminal_derived_differences": 0,
+    "input_collisions_among_differences": {
+      "coarse3x3": 4,
+      "relations": 0,
+      "old_position": 0,
+      "new_position": 0,
+      "coarse_relations": 0
+    },
+    "independent_full_width_d2_reference_matches": 6,
+    "pair_dependence": "Siblings are dependent;229pairs are not229independent samples",
+    "target": "Compression of fixed unit-material finite search; not true value, nonlinearity requirement, learning gain or cross-rule transfer"
+  },
+  "representation_caller": {
+    "calls": 80,
+    "conditions": "Four frozen roots, two order-balanced repetitions; D2/2048nodes/3sec, q0 or q2/hard8. Outputs discarded; all return same unit material.",
+    "q0_wall_ratios": {
+      "sparse": 1.0210585139260302,
+      "coarse": 1.0168347923534071,
+      "relations": 2.9029422426645937,
+      "coarse_relations": 2.9735826946899264
+    },
+    "q2_completed_of8": {
+      "baseline": 6,
+      "sparse": 5,
+      "coarse": 6,
+      "relations": 4,
+      "coarse_relations": 4
+    },
+    "q2_ratios_on_matched_complete_pairs": {
+      "sparse": 1.035869894540633,
+      "coarse": 1.0266206707939731,
+      "relations": 1.6255335211880717,
+      "coarse_relations": 1.6639775104681764
+    },
+    "q2_ratio_pair_denominators": {
+      "sparse": 5,
+      "coarse": 6,
+      "relations": 4,
+      "coarse_relations": 4
+    }
+  },
+  "cross_rule_common_board": {
+    "roots": 4,
+    "equal_correctly_bound_position_vectors": true,
+    "legal_counts": [
+      62,
+      48,
+      26,
+      24
+    ],
+    "complete_d2": 4,
+    "replay_verified_mate_in1": 2,
+    "scope": "Declared common-board intervention, not playable-rule validation or proof every search leaf predictor needs full rule descriptors"
+  },
+  "adoption": "Retain scoped sparse Position/material/coarse controls; defer per-leaf attack extraction; specify decision/target/evaluation-independent split before any fitting proposal.",
+  "limits": [
+    "History omitted and consequential",
+    "No training or learned score deployed",
+    "No default/model schema change",
+    "No human-label fitting",
+    "No zero-shot or strength claim",
+    "Capped/partial/setup failures retained",
+    "No shared weights by dimension/type-label equality"
+  ],
+  "interaction_index": "../../archive/state_inputs_20261009/interaction-index.json",
+  "interaction_sha256": "7875382a6cc263402d20506deade798ee828f3e2cf84304772a476f6d323afeb",
+  "additive_capacity": {
+    "pair_sums_checked": 9180,
+    "new_position_contradictory_revisits": 122,
+    "independent_four_state_reference_matches": 4,
+    "maximum_absolute_error_lower_bound_on_selected_four": 500,
+    "scope": "Post-label exposed finite teacher; not ranking/generalization or exact-fit gate"
+  },
+  "relative_pair_control": {
+    "scope": "Summarize the frozen relative-pair caller diagnostic, without new execution.",
+    "producer_sha256": "66d5fa93aedebdf8d0e5b2d16b661e0214199f35f24bacdbf40fa57f4ab5c3d0",
+    "source_sha256": "3c6d52343bb95433f08f3e0cd12b1334c28b0b664a5de44c65a5927dd5189fe3",
+    "dimension": 32400,
+    "witness_changed_channels": 24,
+    "rows": [
+      {
+        "kind": "pairs",
+        "qdepth": 0,
+        "complete": 8,
+        "capped": 0,
+        "depth_loss_vs_baseline": 0,
+        "matched_complete_pairs": 8,
+        "median_matched_wall_ratio": 1.1132115033889458,
+        "active_range": [
+          814,
+          950
+        ],
+        "total_feature_seconds": 0.11917140008881688
+      },
+      {
+        "kind": "pairs",
+        "qdepth": 2,
+        "complete": 6,
+        "capped": 2,
+        "depth_loss_vs_baseline": 0,
+        "matched_complete_pairs": 6,
+        "median_matched_wall_ratio": 1.0367314725831895,
+        "active_range": [
+          730,
+          950
+        ],
+        "total_feature_seconds": 0.4094843042548746
+      },
+      {
+        "kind": "sparse",
+        "qdepth": 0,
+        "complete": 8,
+        "capped": 0,
+        "depth_loss_vs_baseline": 0,
+        "matched_complete_pairs": 8,
+        "median_matched_wall_ratio": 1.056025063781453,
+        "active_range": [
+          64,
+          68
+        ],
+        "total_feature_seconds": 0.04456990142352879
+      },
+      {
+        "kind": "sparse",
+        "qdepth": 2,
+        "complete": 6,
+        "capped": 2,
+        "depth_loss_vs_baseline": 0,
+        "matched_complete_pairs": 6,
+        "median_matched_wall_ratio": 1.0171755891469054,
+        "active_range": [
+          61,
+          69
+        ],
+        "total_feature_seconds": 0.16855538985691965
+      }
+    ]
+  }
+}

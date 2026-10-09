@@ -23,6 +23,11 @@ Real semantic/stop/delivery/atomicity guards remain. Unused legacy cleanup appro
 resource-limit and old flow entry tools were retired, rather than rewritten into a
 new defensive framework. External-checkout learning tests are no longer collected.
 
+`scripts/position_features.py` is a tested offline sparse Position research input,
+not a replacement live compact-model schema. Retained experiment runners and
+raw results stay in the purpose-specific state_inputs_20261009 archive; do not
+import that archive into normal product execution.
+
 ```powershell
 .venv/Scripts/python.exe -m pytest -p no:cacheprovider
 .venv/Scripts/python.exe -m scripts.chess_development --help

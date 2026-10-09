@@ -43,8 +43,10 @@ raises for rectangular carriers, and receives no GameState history. Board-piece
 base identity is not explicitly encoded; supplied dynamic values might resolve
 some distinctions, so collision claims need an actual controlled pair. The
 existing residual is therefore retained as a scoped prototype, not plugged in
-as a complete-domain evaluator. This is a source audit, not a reproduced failure
-or measured search slowdown.
+as a complete-domain evaluator. The subsequent actual custody/history controls,
+rectangular sparse prototype and caller measurements are recorded in
+STATE_INPUT_FEASIBILITY.md; the original source audit alone was not a failure
+or slowdown measurement.
 
 Select the small-interaction route for the next *feasibility check*, keeping
 static constants as control and learned constants as a deferred comparator.
@@ -55,6 +57,29 @@ rules: check actual continuation difference and whether the proposed features
 distinguish it. A collision selects a narrow adapter repair; no collision selects
 one existing-caller feature-cost measurement. Neither outcome starts training.
 No need to prove full price utility or finish template exactness first.
+
+The first feasibility study is now complete: a consequential base-identity
+collision is reproduced with fixed dynamic inputs; a separate offline sparse
+Position layout preserves current/base/promoted/hand/aux fields across tested
+shapes, while explicitly omitting history. All135prospectively frozen children
+of one exposed generated rule completeD2. Within1710same-material pairs there
+are229finite teacher differences and1481ties; siblings are dependent. Full
+Position and semantic relations separate those differences; coarse3x3 aliases4.
+This does not establish learning gains or a need for nonlinearity. Eighty actual
+caller controls show repeated semantic relations cost far more than their36
+dimensions suggest, while sparse recomputation is modest locally and can still
+lose a near-boundary completed depth. Retain sparse Position/material/coarse
+controls; defer per-leaf attack extraction and any automatic training. The next
+question is a declared compact-predictor decision/target/split, not another
+encoding theorem or a strength claim. Exact caps/failures/denominators:
+STATE_INPUT_FEASIBILITY.md and data/state_inputs_20261009.json.
+
+A same-batch no-fit sum constraint also excludes exact affine reproduction of
+four independently checked teacher values, while not proving ranking failure
+or neural-network necessity. A mechanically generated relative-pair histogram
+breaks this constraint at modest local caller cost, so retain it as an optional
+interaction comparator. Its semantic exclusions and42/48D2completion count
+remain explicit. No exact-fit requirement or automatic training follows.
 
 ## Evidence and adoption limits
 

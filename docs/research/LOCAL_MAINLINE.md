@@ -38,6 +38,17 @@ independent price/task questions; do not claim pre-final timings as deployment.
 
 ## Current evidence and decisions
 
+- State-input feasibility now separates semantics, signal and cost: a real
+  base-identity continuation aliases the old compact input; a separate offline
+  sparse Position encoder repairs that scope and supports tested rectangles,
+  without changing live models. History remains a consequential omission.
+  One frozen exposed-rule batch retains135completeD2children and229different
+  finite teacher scores among1710dependent same-material pairs. This motivates
+  a compact-predictor target/split decision, not automatic training or true-value
+  claims.80actual caller controls defer expensive per-leaf attack relations;
+  sparse/material/coarse controls remain candidates. STATE_INPUT_FEASIBILITY.md
+  owns the full denominator, adverse costs, caps and recovery package.
+
 - Full existing common-slot task populations now test fixed price selection:
   immediate top choices help against blind8/8rules, but average pair ordering
   fails3/8; v2/v3rank identically. One-reply support is sparse/check-dependent,
@@ -163,6 +174,7 @@ branch backlog or publication gate. Exact operating rules remain in AGENTS.md.
 
 |Purpose|Document and latest records|
 |---|---|
+|Evaluation families, state-input signal and actual caller cost|EVALUATION_ROUTES.md; STATE_INPUT_FEASIBILITY.md; data/state_inputs_20261009.json|
 |Fixed price predictions, conditional information ceilings and reply support|TASK_PREDICTION_DIAGNOSTIC.md; data/qfrontier_20261009.json|
 |Semantic opportunity, equivalence, context/task boundaries|SEMANTIC_CAPABILITY.md; data/tasklaw_20261009.json; task_compression_20261009.json; finite_law_20261009.json; preparation_transfer_20261008.json; retention_20261008.json|
 |Descriptive price ratios and preparation/promotion bias|CROSS_GAME_PRICE_DIAGNOSTIC.md; data/pawn_bias_20261009.json|
