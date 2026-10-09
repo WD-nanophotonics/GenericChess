@@ -452,3 +452,55 @@ same direct-ranking protocol. Four root chosen sets differ; all child terminal
 statuses are retained and ongoing in this cohort. This isolates projection
 sensitivity, not a comparison of direct ranking against D2leaf search or a
 gain. No fit or automatic predictor deployment follows.
+
+## Frozen predictor transfer and latent rights, 2026-10-09
+
+Source724e2e72abc734bb93cefbecfca704dbd05d3bf2; unchanged partial2048 model
+b6b27555fb72bc45e91c1e1924aa7625a777e041227cef683593273ee8e3b7c2.
+Seeds2114/2115:34 full-history roots/3128 children; direct full/proxy chosen
+sets differ13 times, full/v3 agree. Fixed Unit-D2 fronts complete327906
+transitions/56.99sec. All-tie optimal: full29, proxy18, v3 29 of34;
+any-tie30/28/30. Cold public Unit-D2 callers independently match. Some full/v3
+ties still allow a mating reply. This is finite teacher diagnosis, not strength.
+Affine ablation reconstructs scores within3.56e-15; proxy plus original hand
+terms restores all34 full chosen sets. Base/promoted corrections alone do not.
+Exact and fixed1e-8 qualified ties remain. No refitting of exposed labels.
+The repetition4 control has equal raw scores but its full-history wrapper removes
+one repeated draw from22 ties at ply11. Numerical omission is not state loss.
+
+Adopted dot's finite-target caveat: rotation/owner exchange matches34 legal sets
+and one-child carriers, then68 independently fresh Unit-D2 fronts match entire
+mapped score tables (655812 transitions/113.70sec). Side-to-move scores preserve
+sign; owner0-fixed scores reverse. Fixed (F(P)-F(TP))/2 improves all-tie optimal
+55 to58 of68; any-tie60 both, no new all-tie errors. Not full-game symmetry.
+Prospective seeds2116/2117:34 roots/2325 children,186779 transitions/31.51sec;
+full, projection, v3 each34/34 all-tie optimal; proxy23/34 all-tie,34/34 any.
+Projection changes five sets without increment. No default or numeric leaf use.
+
+All12 original roots with current-owner P stock receive fresh gate0/1 carriers:
+24 fronts/226153 transitions/39.14sec. Numerical inputs alias but legal masks
+and terminal handling respond; two enabled P drops to[1,2] mate. Common-action
+scores agree because expire-next-turn rights converge after the action.
+Changing only lifetime to persistent at preceding plies4/10 gives eight complete
+fronts/51663 transitions/11.02sec. Current actions and numerical vectors remain
+equal; gate1 gives2 and59 changed child labels with equal child features/scores.
+At ply10 teacher optimal sets differ (2 versus8). Independent ply4 replay verifies
+A[7,0]->[5,1], then expiry-enabled P[1,2] checkmates; persistent rights forbid
+that reply. Current masks miss this latent capability. This limits the frozen
+input on a finite target, without proving all constants fail or requiring a fit.
+
+Raw populations, declarations, setup failures and dependencies:
+docs/archive/search_compression_20261009/frozen-ledger-transfer-index.json.
+All60 relative members restore with matching hashes;238 reference-arm losses
+recalculated by action identity and61 equal-feature changed labels checked.
+Recovery does not reproduce timings. Summary: data/qfrontier_20261009.json,
+frozen_ledger_transfer. Local delivery-checker errors (scanning its own private
+markers; assuming teacher/action ordering) were corrected without changing raw
+experiments. Raw Slack/account records remain local.
+
+Read-only within-rule control holds lifetime/rule fixed and pairs current gates:
+expire-next-turn has0 changed common-child labels at both roots; persistent has
+2/59 changed labels at plies4/10, all with identical numerical child features.
+Thus a rule-lifetime descriptor alone cannot resolve this input boundary;
+current latent capability also matters. This is a finite target conflict, not
+proof of every evaluator family failing. within_rule.py preserves the arithmetic.

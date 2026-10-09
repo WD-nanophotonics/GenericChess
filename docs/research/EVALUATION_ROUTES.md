@@ -239,3 +239,15 @@ not full value. Detailed controls and raw recovery remain in
 TASK_PREDICTION_DIAGNOSTIC.md. Advisor advice to refit these exposed roots is
 deferred under the no-exposed-label-fitting boundary; small authorized training
 on a separately declared prospective development split remains available.
+
+Latest frozen-transfer decision: the current-board proxy is not the original
+predictor. Original hand terms restore its choices on34 roots; conditional
+no-fit role projection has a small finite paired gain but none on34 further
+roots. Keep both as scoped comparators, no refit/default. Current terminal/mask
+handling resolves the observed expiring-right case; persistent rights expose
+latent continuation differences with identical count inputs. Next investigate
+that concrete support boundary, rather than enlarging a network automatically.
+Scoring-discard algebraic folding reduces forward overhead without changing
+search utility. TASK_PREDICTION_DIAGNOSTIC.md and UNFAMILIAR_RULE_SEARCH.md own
+raw denominators, scope, costs and isolated recovery. The two research lines
+and small-training authorization remain unchanged.

@@ -38,6 +38,16 @@ independent price/task questions; do not claim pre-final timings as deployment.
 
 ## Current evidence and decisions
 
+- Frozen full predictor versus board proxy: original hand terms restore all34
+  choices; fixed Unit-D2 all-tie optimal29 versus18. Conditional role projection
+  improves55 to58 of68 paired targets but adds no gain on34 further roots.
+  Persistent auxiliary rights expose61 equal-input child labels with changed
+  continuation values, including an independently replayed mating drop. Next
+  isolate latent capability representation, no automatic architecture expansion
+  or exposed fitting. Full-state execution stays intact. TASK_PREDICTION_DIAGNOSTIC.md
+  owns scoped evidence; UNFAMILIAR_RULE_SEARCH.md owns forward/caller costs.
+  Ordering control and scoring-discard folding do not establish playing gain.
+
 - Four new finite16 source-prior rules retain mixed physical signal, then no
   actual selected-net improvement: capture worsens5q0/1q2 choices versusv3.
   Separate36matched D2 calls all complete; five losses remain. Stop automatic

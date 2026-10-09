@@ -591,5 +591,2530 @@
     "exact_record_fractions_verified": 56,
     "scope": "Agent-produced explicit-law physical/caller evidence or scalar-query cost; exposed development, not strength/universal law. Original bytes preserved. Raw Slack, accounts, credentials and private logs excluded.",
     "reference_arm_arithmetic": 48
+  },
+  "frozen_ledger_transfer": {
+    "base_commit": "724e2e72abc734bb93cefbecfca704dbd05d3bf2",
+    "model_sha256": "b6b27555fb72bc45e91c1e1924aa7625a777e041227cef683593273ee8e3b7c2",
+    "recovery": "docs/archive/search_compression_20261009/frozen-ledger-transfer-index.json",
+    "archive_sha256": "c4d7bea82bb77ab6a35233ab38fbe782b5159fc6621b5beef5cf02b3653552be",
+    "summary": {
+      "scope": "Whole denominators/ties, actual cost and counterfactual scope; no new runs.",
+      "initial": {
+        "roots": 34,
+        "children": 3128,
+        "reference_transitions": 327906,
+        "reference_seconds": 56.9901389000006,
+        "scores": {
+          "full": {
+            "alloptimal": 29,
+            "anyoptimal": 30
+          },
+          "proxy": {
+            "alloptimal": 18,
+            "anyoptimal": 28
+          },
+          "v3": {
+            "alloptimal": 29,
+            "anyoptimal": 30
+          }
+        },
+        "ablation": {
+          "full": {
+            "exact_alloptimal": 29,
+            "tolerant_alloptimal": 29,
+            "tolerant_anyoptimal": 30,
+            "tolerant_matches_full": 34
+          },
+          "proxy": {
+            "exact_alloptimal": 18,
+            "tolerant_alloptimal": 18,
+            "tolerant_anyoptimal": 28,
+            "tolerant_matches_full": 21
+          },
+          "proxy_base": {
+            "exact_alloptimal": 18,
+            "tolerant_alloptimal": 18,
+            "tolerant_anyoptimal": 28,
+            "tolerant_matches_full": 21
+          },
+          "proxy_hand": {
+            "exact_alloptimal": 29,
+            "tolerant_alloptimal": 29,
+            "tolerant_anyoptimal": 30,
+            "tolerant_matches_full": 34
+          },
+          "proxy_promoted": {
+            "exact_alloptimal": 18,
+            "tolerant_alloptimal": 18,
+            "tolerant_anyoptimal": 28,
+            "tolerant_matches_full": 21
+          },
+          "no_base": {
+            "exact_alloptimal": 29,
+            "tolerant_alloptimal": 29,
+            "tolerant_anyoptimal": 30,
+            "tolerant_matches_full": 34
+          },
+          "no_hand": {
+            "exact_alloptimal": 19,
+            "tolerant_alloptimal": 18,
+            "tolerant_anyoptimal": 28,
+            "tolerant_matches_full": 21
+          },
+          "no_promoted": {
+            "exact_alloptimal": 29,
+            "tolerant_alloptimal": 29,
+            "tolerant_anyoptimal": 30,
+            "tolerant_matches_full": 34
+          }
+        }
+      },
+      "paired": {
+        "pairs": 34,
+        "fronts": 68,
+        "transitions": 655812,
+        "D2equivalent": 34,
+        "scores": {
+          "full": {
+            "alloptimal": 55,
+            "anyoptimal": 60
+          },
+          "symmetric": {
+            "alloptimal": 58,
+            "anyoptimal": 60
+          }
+        },
+        "new_alltie_errors": []
+      },
+      "fresh": {
+        "roots": 34,
+        "children": 2325,
+        "transitions": 186779,
+        "scores": {
+          "full": {
+            "alloptimal": 34,
+            "anyoptimal": 34
+          },
+          "symmetric": {
+            "alloptimal": 34,
+            "anyoptimal": 34
+          },
+          "proxy": {
+            "alloptimal": 23,
+            "anyoptimal": 34
+          },
+          "v3": {
+            "alloptimal": 34,
+            "anyoptimal": 34
+          }
+        },
+        "changed_sets": 5
+      },
+      "forward": {
+        "children": 3128,
+        "max_full_error": 3.552713678800501e-15,
+        "max_sym_error": 5.329070518200751e-15,
+        "calls": [
+          {
+            "qdepth": 0,
+            "kind": "unit",
+            "calls": 16,
+            "same_work": true,
+            "median_root_wall_ratio": 1.0,
+            "root_ratios": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "extraction_seconds": 0.0013834047131240368,
+            "extraction_count": 6500,
+            "actual_transitions": 8082,
+            "wall_seconds": 12.903509000083432
+          },
+          {
+            "qdepth": 0,
+            "kind": "encode",
+            "calls": 16,
+            "same_work": true,
+            "median_root_wall_ratio": 1.038323586656721,
+            "root_ratios": [
+              1.0448952635464364,
+              1.0317519097670058,
+              1.0706821186879687,
+              1.031256042967776,
+              1.102780781000712,
+              1.0513731831007906,
+              1.022983764686451,
+              1.009405684406513
+            ],
+            "extraction_seconds": 0.43288160115480423,
+            "extraction_count": 6500,
+            "actual_transitions": 8082,
+            "wall_seconds": 13.382905999664217
+          },
+          {
+            "qdepth": 0,
+            "kind": "ledger",
+            "calls": 16,
+            "same_work": true,
+            "median_root_wall_ratio": 0.997980852054688,
+            "root_ratios": [
+              1.011420262946365,
+              0.9988016723886178,
+              0.9971600317207583,
+              0.9954250196006474,
+              1.0244468762172014,
+              1.0109051729876757,
+              0.992949444934954,
+              0.9881709814780696
+            ],
+            "extraction_seconds": 0.03370650066062808,
+            "extraction_count": 6500,
+            "actual_transitions": 8082,
+            "wall_seconds": 12.88973779999651
+          },
+          {
+            "qdepth": 0,
+            "kind": "symencode",
+            "calls": 16,
+            "same_work": true,
+            "median_root_wall_ratio": 1.0931252842917862,
+            "root_ratios": [
+              1.1126706560495132,
+              1.0592448350294859,
+              1.1065625487611763,
+              1.081973743271102,
+              1.2142272347636178,
+              1.1042768253124706,
+              1.0732782912187748,
+              1.0395180635618761
+            ],
+            "extraction_seconds": 1.0005464870482683,
+            "extraction_count": 6500,
+            "actual_transitions": 8082,
+            "wall_seconds": 13.980345799820498
+          },
+          {
+            "qdepth": 0,
+            "kind": "symledger",
+            "calls": 16,
+            "same_work": true,
+            "median_root_wall_ratio": 1.0058748590248798,
+            "root_ratios": [
+              0.9907270074862686,
+              1.0039600398863275,
+              1.009491284719259,
+              1.0010591865564837,
+              1.017731734664648,
+              1.0077896781634321,
+              1.0115164989659329,
+              0.9875625681055727
+            ],
+            "extraction_seconds": 0.040930893970653415,
+            "extraction_count": 6500,
+            "actual_transitions": 8082,
+            "wall_seconds": 12.923825500067323
+          },
+          {
+            "qdepth": 2,
+            "kind": "unit",
+            "calls": 16,
+            "same_work": true,
+            "median_root_wall_ratio": 1.0,
+            "root_ratios": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "extraction_seconds": 0.0009882035665214062,
+            "extraction_count": 4450,
+            "actual_transitions": 2744,
+            "wall_seconds": 11.952454200480133
+          },
+          {
+            "qdepth": 2,
+            "kind": "encode",
+            "calls": 16,
+            "same_work": true,
+            "median_root_wall_ratio": 1.0337858786700158,
+            "root_ratios": [
+              1.019086445394752,
+              1.034394008622121,
+              1.05333186444454,
+              1.0422158072385204,
+              1.0331777487179106,
+              1.0351289446656997,
+              1.0229847011428077,
+              1.032265416377687
+            ],
+            "extraction_seconds": 0.3050165958702564,
+            "extraction_count": 4450,
+            "actual_transitions": 2744,
+            "wall_seconds": 12.330439299577847
+          },
+          {
+            "qdepth": 2,
+            "kind": "ledger",
+            "calls": 16,
+            "same_work": true,
+            "median_root_wall_ratio": 0.9953005544785467,
+            "root_ratios": [
+              0.9941910021650047,
+              1.002469372250525,
+              0.9889804251122616,
+              0.9979756187489008,
+              0.9912867530803209,
+              0.9964101067920887,
+              0.9906940353327257,
+              1.002081504030014
+            ],
+            "extraction_seconds": 0.024288596818223596,
+            "extraction_count": 4450,
+            "actual_transitions": 2744,
+            "wall_seconds": 11.900648700306192
+          },
+          {
+            "qdepth": 2,
+            "kind": "symencode",
+            "calls": 16,
+            "same_work": true,
+            "median_root_wall_ratio": 1.0681059291248922,
+            "root_ratios": [
+              1.0412820141694614,
+              1.0740501674931044,
+              1.1092399568210267,
+              1.104761067371053,
+              1.0493994734877372,
+              1.0790452483783337,
+              1.0410595273876961,
+              1.0621616907566798
+            ],
+            "extraction_seconds": 0.6999771993141621,
+            "extraction_count": 4450,
+            "actual_transitions": 2744,
+            "wall_seconds": 12.708413100102916
+          },
+          {
+            "qdepth": 2,
+            "kind": "symledger",
+            "calls": 16,
+            "same_work": true,
+            "median_root_wall_ratio": 1.003496508433658,
+            "root_ratios": [
+              0.9972190178702249,
+              1.0115899036095963,
+              0.9975983340335848,
+              1.0086000768925245,
+              0.9984438399227807,
+              1.0140072209152777,
+              0.9879786812925039,
+              1.0085491769445352
+            ],
+            "extraction_seconds": 0.029237709008157253,
+            "extraction_count": 4450,
+            "actual_transitions": 2744,
+            "wall_seconds": 11.983515300555155
+          }
+        ],
+        "setup": [
+          {
+            "seed": 202610082114,
+            "encode_seconds": 0.060063299955800176,
+            "ledger_seconds": 0.06488680001348257
+          },
+          {
+            "seed": 202610082115,
+            "encode_seconds": 0.05097450013272464,
+            "ledger_seconds": 0.047445999924093485
+          }
+        ],
+        "setup_scope": "Encoder built first, ledger second with opportunity cache warm; no comparative constructor speed claim."
+      },
+      "ordering": [
+        {
+          "qdepth": 0,
+          "ordering": "unit",
+          "calls": 34,
+          "D3complete": 5,
+          "D2complete": 34,
+          "wall_seconds": 56.9081680001691,
+          "nodes": 43140,
+          "cost_scope": "Different ordering/work, small reference runs overlapped some cells. No causal speed or strength claim."
+        },
+        {
+          "qdepth": 0,
+          "ordering": "proxy",
+          "calls": 34,
+          "D3complete": 5,
+          "D2complete": 34,
+          "wall_seconds": 57.8475370996166,
+          "nodes": 43448,
+          "cost_scope": "Different ordering/work, small reference runs overlapped some cells. No causal speed or strength claim."
+        },
+        {
+          "qdepth": 0,
+          "ordering": "ledger",
+          "calls": 34,
+          "D3complete": 5,
+          "D2complete": 34,
+          "wall_seconds": 57.852883300278336,
+          "nodes": 43522,
+          "cost_scope": "Different ordering/work, small reference runs overlapped some cells. No causal speed or strength claim."
+        },
+        {
+          "qdepth": 2,
+          "ordering": "unit",
+          "calls": 34,
+          "D3complete": 0,
+          "D2complete": 5,
+          "wall_seconds": 67.87366769998334,
+          "nodes": 29381,
+          "cost_scope": "Different ordering/work, small reference runs overlapped some cells. No causal speed or strength claim."
+        },
+        {
+          "qdepth": 2,
+          "ordering": "proxy",
+          "calls": 34,
+          "D3complete": 0,
+          "D2complete": 5,
+          "wall_seconds": 67.82545399968512,
+          "nodes": 29926,
+          "cost_scope": "Different ordering/work, small reference runs overlapped some cells. No causal speed or strength claim."
+        },
+        {
+          "qdepth": 2,
+          "ordering": "ledger",
+          "calls": 34,
+          "D3complete": 0,
+          "D2complete": 5,
+          "wall_seconds": 67.82050939975306,
+          "nodes": 29990,
+          "cost_scope": "Different ordering/work, small reference runs overlapped some cells. No causal speed or strength claim."
+        }
+      ],
+      "auxiliary": {
+        "pairs": 12,
+        "transitions": 226153,
+        "seconds": 39.13651499990374,
+        "rows": [
+          {
+            "seed": 202610082114,
+            "ply": 2,
+            "features_alias": true,
+            "legal_counts": [
+              89,
+              55
+            ],
+            "drop_counts": [
+              34,
+              0
+            ],
+            "complete": [
+              true,
+              true
+            ],
+            "root_teachers": [
+              0,
+              0
+            ],
+            "common_actions": 55,
+            "common_teacher_differences": 0,
+            "full_chosen_changed": false,
+            "arms": [
+              {
+                "full": {
+                  "chosen": [
+                    46
+                  ],
+                  "losses": [
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    46
+                  ],
+                  "losses": [
+                    0
+                  ]
+                }
+              },
+              {
+                "full": {
+                  "chosen": [
+                    46
+                  ],
+                  "losses": [
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    46
+                  ],
+                  "losses": [
+                    0
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "seed": 202610082114,
+            "ply": 5,
+            "features_alias": true,
+            "legal_counts": [
+              125,
+              90
+            ],
+            "drop_counts": [
+              70,
+              35
+            ],
+            "complete": [
+              true,
+              true
+            ],
+            "root_teachers": [
+              999999999,
+              0
+            ],
+            "common_actions": 90,
+            "common_teacher_differences": 0,
+            "full_chosen_changed": true,
+            "arms": [
+              {
+                "full": {
+                  "chosen": [
+                    92
+                  ],
+                  "losses": [
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    92
+                  ],
+                  "losses": [
+                    0
+                  ]
+                }
+              },
+              {
+                "full": {
+                  "chosen": [
+                    16,
+                    46
+                  ],
+                  "losses": [
+                    0,
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    16,
+                    46
+                  ],
+                  "losses": [
+                    0,
+                    0
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "seed": 202610082114,
+            "ply": 8,
+            "features_alias": true,
+            "legal_counts": [
+              126,
+              90
+            ],
+            "drop_counts": [
+              72,
+              36
+            ],
+            "complete": [
+              true,
+              true
+            ],
+            "root_teachers": [
+              0,
+              0
+            ],
+            "common_actions": 90,
+            "common_teacher_differences": 0,
+            "full_chosen_changed": false,
+            "arms": [
+              {
+                "full": {
+                  "chosen": [
+                    16,
+                    18,
+                    43,
+                    44,
+                    47
+                  ],
+                  "losses": [
+                    999999998,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    16,
+                    18,
+                    43,
+                    44,
+                    47
+                  ],
+                  "losses": [
+                    999999998,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "full": {
+                  "chosen": [
+                    16,
+                    18,
+                    43,
+                    44,
+                    47
+                  ],
+                  "losses": [
+                    999999998,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    16,
+                    18,
+                    43,
+                    44,
+                    47
+                  ],
+                  "losses": [
+                    999999998,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "seed": 202610082114,
+            "ply": 11,
+            "features_alias": true,
+            "legal_counts": [
+              157,
+              120
+            ],
+            "drop_counts": [
+              110,
+              73
+            ],
+            "complete": [
+              true,
+              true
+            ],
+            "root_teachers": [
+              999999999,
+              0
+            ],
+            "common_actions": 120,
+            "common_teacher_differences": 0,
+            "full_chosen_changed": true,
+            "arms": [
+              {
+                "full": {
+                  "chosen": [
+                    122
+                  ],
+                  "losses": [
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    122
+                  ],
+                  "losses": [
+                    0
+                  ]
+                }
+              },
+              {
+                "full": {
+                  "chosen": [
+                    31
+                  ],
+                  "losses": [
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    31
+                  ],
+                  "losses": [
+                    0
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "seed": 202610082114,
+            "ply": 16,
+            "features_alias": true,
+            "legal_counts": [
+              160,
+              120
+            ],
+            "drop_counts": [
+              116,
+              76
+            ],
+            "complete": [
+              true,
+              true
+            ],
+            "root_teachers": [
+              0,
+              0
+            ],
+            "common_actions": 120,
+            "common_teacher_differences": 0,
+            "full_chosen_changed": false,
+            "arms": [
+              {
+                "full": {
+                  "chosen": [
+                    22
+                  ],
+                  "losses": [
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    22
+                  ],
+                  "losses": [
+                    0
+                  ]
+                }
+              },
+              {
+                "full": {
+                  "chosen": [
+                    22
+                  ],
+                  "losses": [
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    22
+                  ],
+                  "losses": [
+                    0
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "seed": 202610082115,
+            "ply": 3,
+            "features_alias": true,
+            "legal_counts": [
+              2,
+              2
+            ],
+            "drop_counts": [
+              0,
+              0
+            ],
+            "complete": [
+              true,
+              true
+            ],
+            "root_teachers": [
+              -200,
+              -200
+            ],
+            "common_actions": 2,
+            "common_teacher_differences": 0,
+            "full_chosen_changed": false,
+            "arms": [
+              {
+                "full": {
+                  "chosen": [
+                    0,
+                    1
+                  ],
+                  "losses": [
+                    0,
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    0,
+                    1
+                  ],
+                  "losses": [
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "full": {
+                  "chosen": [
+                    0,
+                    1
+                  ],
+                  "losses": [
+                    0,
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    0,
+                    1
+                  ],
+                  "losses": [
+                    0,
+                    0
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "seed": 202610082115,
+            "ply": 5,
+            "features_alias": true,
+            "legal_counts": [
+              2,
+              2
+            ],
+            "drop_counts": [
+              0,
+              0
+            ],
+            "complete": [
+              true,
+              true
+            ],
+            "root_teachers": [
+              -200,
+              -200
+            ],
+            "common_actions": 2,
+            "common_teacher_differences": 0,
+            "full_chosen_changed": false,
+            "arms": [
+              {
+                "full": {
+                  "chosen": [
+                    0,
+                    1
+                  ],
+                  "losses": [
+                    0,
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    0,
+                    1
+                  ],
+                  "losses": [
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "full": {
+                  "chosen": [
+                    0,
+                    1
+                  ],
+                  "losses": [
+                    0,
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    0,
+                    1
+                  ],
+                  "losses": [
+                    0,
+                    0
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "seed": 202610082115,
+            "ply": 7,
+            "features_alias": true,
+            "legal_counts": [
+              84,
+              45
+            ],
+            "drop_counts": [
+              39,
+              0
+            ],
+            "complete": [
+              true,
+              true
+            ],
+            "root_teachers": [
+              0,
+              0
+            ],
+            "common_actions": 45,
+            "common_teacher_differences": 0,
+            "full_chosen_changed": false,
+            "arms": [
+              {
+                "full": {
+                  "chosen": [
+                    9
+                  ],
+                  "losses": [
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    9
+                  ],
+                  "losses": [
+                    0
+                  ]
+                }
+              },
+              {
+                "full": {
+                  "chosen": [
+                    9
+                  ],
+                  "losses": [
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    9
+                  ],
+                  "losses": [
+                    0
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "seed": 202610082115,
+            "ply": 9,
+            "features_alias": true,
+            "legal_counts": [
+              93,
+              55
+            ],
+            "drop_counts": [
+              38,
+              0
+            ],
+            "complete": [
+              true,
+              true
+            ],
+            "root_teachers": [
+              0,
+              0
+            ],
+            "common_actions": 55,
+            "common_teacher_differences": 0,
+            "full_chosen_changed": false,
+            "arms": [
+              {
+                "full": {
+                  "chosen": [
+                    19
+                  ],
+                  "losses": [
+                    200
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    19
+                  ],
+                  "losses": [
+                    200
+                  ]
+                }
+              },
+              {
+                "full": {
+                  "chosen": [
+                    19
+                  ],
+                  "losses": [
+                    200
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    19
+                  ],
+                  "losses": [
+                    200
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "seed": 202610082115,
+            "ply": 11,
+            "features_alias": true,
+            "legal_counts": [
+              128,
+              88
+            ],
+            "drop_counts": [
+              80,
+              40
+            ],
+            "complete": [
+              true,
+              true
+            ],
+            "root_teachers": [
+              0,
+              0
+            ],
+            "common_actions": 88,
+            "common_teacher_differences": 0,
+            "full_chosen_changed": false,
+            "arms": [
+              {
+                "full": {
+                  "chosen": [
+                    13
+                  ],
+                  "losses": [
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    13
+                  ],
+                  "losses": [
+                    0
+                  ]
+                }
+              },
+              {
+                "full": {
+                  "chosen": [
+                    13
+                  ],
+                  "losses": [
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    13
+                  ],
+                  "losses": [
+                    0
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "seed": 202610082115,
+            "ply": 13,
+            "features_alias": true,
+            "legal_counts": [
+              137,
+              97
+            ],
+            "drop_counts": [
+              80,
+              40
+            ],
+            "complete": [
+              true,
+              true
+            ],
+            "root_teachers": [
+              -200,
+              -200
+            ],
+            "common_actions": 97,
+            "common_teacher_differences": 0,
+            "full_chosen_changed": false,
+            "arms": [
+              {
+                "full": {
+                  "chosen": [
+                    23
+                  ],
+                  "losses": [
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    23
+                  ],
+                  "losses": [
+                    0
+                  ]
+                }
+              },
+              {
+                "full": {
+                  "chosen": [
+                    23
+                  ],
+                  "losses": [
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    23
+                  ],
+                  "losses": [
+                    0
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "seed": 202610082115,
+            "ply": 16,
+            "features_alias": true,
+            "legal_counts": [
+              153,
+              112
+            ],
+            "drop_counts": [
+              117,
+              76
+            ],
+            "complete": [
+              true,
+              true
+            ],
+            "root_teachers": [
+              400,
+              400
+            ],
+            "common_actions": 112,
+            "common_teacher_differences": 0,
+            "full_chosen_changed": false,
+            "arms": [
+              {
+                "full": {
+                  "chosen": [
+                    15
+                  ],
+                  "losses": [
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    15
+                  ],
+                  "losses": [
+                    0
+                  ]
+                }
+              },
+              {
+                "full": {
+                  "chosen": [
+                    15
+                  ],
+                  "losses": [
+                    0
+                  ]
+                },
+                "symmetric": {
+                  "chosen": [
+                    15
+                  ],
+                  "losses": [
+                    0
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "failure_scope": "Setup import/compiled carrier/internal-action mismatches retained separately; corrected producers ran declared full numeric populations. No raw Slack/account records in this report.",
+      "within_rule_alias": {
+        "scope": "Read-only additional within-rule counterfactual control: same lifetime/rule, different current gate. Exposed finite target, no fit/search/default. Distinguishes missing state capability from missing rule-lifetime descriptor.",
+        "rows": [
+          {
+            "lifetime": "expire_next_turn",
+            "ply": 4,
+            "common_actions": 2,
+            "conflicts": []
+          },
+          {
+            "lifetime": "expire_next_turn",
+            "ply": 10,
+            "common_actions": 90,
+            "conflicts": []
+          },
+          {
+            "lifetime": "persistent",
+            "ply": 4,
+            "common_actions": 2,
+            "conflicts": [
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_061",
+                  "geometry_id": "g6",
+                  "actor_type_id": "A",
+                  "from": [
+                    7,
+                    0
+                  ],
+                  "to": [
+                    5,
+                    1
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -200
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_029",
+                  "geometry_id": "g21",
+                  "actor_type_id": "P",
+                  "from": [
+                    5,
+                    0
+                  ],
+                  "to": [
+                    5,
+                    1
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -200
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              }
+            ]
+          },
+          {
+            "lifetime": "persistent",
+            "ply": 10,
+            "common_actions": 90,
+            "conflicts": [
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_002",
+                  "geometry_id": "g1",
+                  "actor_type_id": "A",
+                  "from": [
+                    5,
+                    7
+                  ],
+                  "to": [
+                    3,
+                    5
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_024",
+                  "geometry_id": "g2",
+                  "actor_type_id": "A",
+                  "from": [
+                    5,
+                    7
+                  ],
+                  "to": [
+                    7,
+                    5
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_047",
+                  "geometry_id": "g3",
+                  "actor_type_id": "A",
+                  "from": [
+                    5,
+                    7
+                  ],
+                  "to": [
+                    3,
+                    7
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -200
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_056",
+                  "geometry_id": "g4",
+                  "actor_type_id": "A",
+                  "from": [
+                    5,
+                    7
+                  ],
+                  "to": [
+                    7,
+                    7
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_008",
+                  "geometry_id": "g12",
+                  "actor_type_id": "C",
+                  "from": [
+                    1,
+                    1
+                  ],
+                  "to": [
+                    3,
+                    3
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_006",
+                  "geometry_id": "g11",
+                  "actor_type_id": "C",
+                  "from": [
+                    4,
+                    1
+                  ],
+                  "to": [
+                    2,
+                    3
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_008",
+                  "geometry_id": "g12",
+                  "actor_type_id": "C",
+                  "from": [
+                    4,
+                    1
+                  ],
+                  "to": [
+                    6,
+                    3
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_006",
+                  "geometry_id": "g11",
+                  "actor_type_id": "C",
+                  "from": [
+                    6,
+                    1
+                  ],
+                  "to": [
+                    2,
+                    5
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_006",
+                  "geometry_id": "g11",
+                  "actor_type_id": "C",
+                  "from": [
+                    6,
+                    1
+                  ],
+                  "to": [
+                    4,
+                    3
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_006",
+                  "geometry_id": "g11",
+                  "actor_type_id": "C",
+                  "from": [
+                    6,
+                    1
+                  ],
+                  "to": [
+                    5,
+                    2
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_007",
+                  "geometry_id": "g11",
+                  "actor_type_id": "C",
+                  "from": [
+                    6,
+                    1
+                  ],
+                  "to": [
+                    1,
+                    6
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -200
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_008",
+                  "geometry_id": "g12",
+                  "actor_type_id": "C",
+                  "from": [
+                    6,
+                    1
+                  ],
+                  "to": [
+                    7,
+                    2
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_006",
+                  "geometry_id": "g11",
+                  "actor_type_id": "C",
+                  "from": [
+                    7,
+                    1
+                  ],
+                  "to": [
+                    3,
+                    5
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_006",
+                  "geometry_id": "g11",
+                  "actor_type_id": "C",
+                  "from": [
+                    7,
+                    1
+                  ],
+                  "to": [
+                    4,
+                    4
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_006",
+                  "geometry_id": "g11",
+                  "actor_type_id": "C",
+                  "from": [
+                    7,
+                    1
+                  ],
+                  "to": [
+                    5,
+                    3
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_006",
+                  "geometry_id": "g11",
+                  "actor_type_id": "C",
+                  "from": [
+                    7,
+                    1
+                  ],
+                  "to": [
+                    6,
+                    2
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_007",
+                  "geometry_id": "g11",
+                  "actor_type_id": "C",
+                  "from": [
+                    7,
+                    1
+                  ],
+                  "to": [
+                    2,
+                    6
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -200
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_029",
+                  "geometry_id": "g21",
+                  "actor_type_id": "P",
+                  "from": [
+                    0,
+                    1
+                  ],
+                  "to": [
+                    0,
+                    2
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -200
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_032",
+                  "geometry_id": "g23",
+                  "actor_type_id": "P",
+                  "from": [
+                    0,
+                    1
+                  ],
+                  "to": [
+                    2,
+                    3
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_032",
+                  "geometry_id": "g23",
+                  "actor_type_id": "P",
+                  "from": [
+                    2,
+                    0
+                  ],
+                  "to": [
+                    4,
+                    2
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_028",
+                  "geometry_id": "g21",
+                  "actor_type_id": "P",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    2,
+                    2
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_028",
+                  "geometry_id": "g21",
+                  "actor_type_id": "P",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    2,
+                    3
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_029",
+                  "geometry_id": "g21",
+                  "actor_type_id": "P",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    2,
+                    6
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -200
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_031",
+                  "geometry_id": "g22",
+                  "actor_type_id": "P",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    0,
+                    3
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -200
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_032",
+                  "geometry_id": "g23",
+                  "actor_type_id": "P",
+                  "from": [
+                    2,
+                    1
+                  ],
+                  "to": [
+                    4,
+                    3
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_board",
+                  "pattern_id": "legacy_028",
+                  "geometry_id": "g21",
+                  "actor_type_id": "P",
+                  "from": [
+                    5,
+                    0
+                  ],
+                  "to": [
+                    5,
+                    1
+                  ],
+                  "promotion_target_id": null
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    0,
+                    4
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    0,
+                    5
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    0,
+                    6
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    0,
+                    7
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    1,
+                    3
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    1,
+                    4
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    1,
+                    5
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    2,
+                    2
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    2,
+                    3
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    2,
+                    4
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    2,
+                    5
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    3,
+                    3
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    3,
+                    5
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    4,
+                    2
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    4,
+                    3
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    4,
+                    4
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    4,
+                    5
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    5,
+                    1
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    5,
+                    2
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    5,
+                    3
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    5,
+                    4
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    5,
+                    5
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    5,
+                    6
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    6,
+                    2
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    6,
+                    3
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    6,
+                    4
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    6,
+                    5
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    7,
+                    0
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    7,
+                    2
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    7,
+                    3
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    7,
+                    4
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    7,
+                    5
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              },
+              {
+                "action": {
+                  "kind": "semantic_drop",
+                  "pattern_id": "legacy_068",
+                  "geometry_id": "g34",
+                  "base_type_id": "A",
+                  "to": [
+                    7,
+                    7
+                  ]
+                },
+                "targets": [
+                  -999999998,
+                  -400
+                ],
+                "same_feature": true,
+                "same_prediction": true
+              }
+            ]
+          }
+        ]
+      },
+      "lifetime": {
+        "scope": "Changed-premise finite auxiliary target: expiry versus persistent right.\nPredeclared2114parents4/10 of the two observed gate-enabled immediate Pdrops;\ntwo lifetimes xcurrent gate0/1 =8fresh canonical full-history roots.\nSame full board/base/hands/side, correctly rebound to each compiled fingerprint.\nCompare all legal children and UnitD2 target;20sec/100000transition checkpoint.\nThis is exposed mechanistic diagnosis, not prospective utility gain or fitting.\nQuestion: can equal current legal masks hide different next-reply capabilities,\nwhich the original count predictor/folded equivalent cannot represent?\nOnly slot lifetime changes, no material reward/target/geometry modifications.\n",
+        "rows": [
+          {
+            "ply": 4,
+            "gate": 0,
+            "same_current_actions": true,
+            "same_root_features": true,
+            "changed_child_labels": 0,
+            "changed_child_features": 0
+          },
+          {
+            "ply": 4,
+            "gate": 1,
+            "same_current_actions": true,
+            "same_root_features": true,
+            "changed_child_labels": 2,
+            "changed_child_features": 0
+          },
+          {
+            "ply": 10,
+            "gate": 0,
+            "same_current_actions": true,
+            "same_root_features": true,
+            "changed_child_labels": 0,
+            "changed_child_features": 0
+          },
+          {
+            "ply": 10,
+            "gate": 1,
+            "same_current_actions": true,
+            "same_root_features": true,
+            "changed_child_labels": 59,
+            "changed_child_features": 0
+          }
+        ],
+        "transitions": 51663,
+        "seconds": 11.020968100056052,
+        "independent_replay": "aux-qualification.json"
+      }
+    }
   }
 }

@@ -1437,3 +1437,24 @@ Additional actual rectangle transfer on7x5/9x10 cannon histories retains2000
 scalar queries with exact callback counts and128cold fixed256node q0/q2 calls
 with equal signatures/work. Local paired wall ratios.98592/.98419 are smaller
 than the square cohort. Keep this measured scope, not a promised global gain.
+
+## Frozen affine forward and ordering cost, 2026-10-09
+
+Fixed Unit leaves,204 cold callers: Unit/proxy/hand-aware ordering each completes
+D3 on5/34 q0 roots and0/34 q2 roots; D2 on34/34 q0 and5/34 q2. No completion
+increment. Some cells overlap independent qualification; timings are descriptive,
+not causal speed measurements. Retain every cap and adverse result; no adoption.
+
+Exact algebraic folding retains original current/base/owner-hand/promoted/side/
+bias terms, unlike the board-only proxy. On3128 children maximum full error is
+3.56e-15, projected error5.33e-15.160 predeclared cold scoring-discard callers
+retain Unit leaves/order and identical action/score/PV/nodes/depth/stop/generation
+signatures in all arms. No CPU experiment overlaps these calls. Median matched
+root wall ratios q0/q2: original encoder1.0383/1.0338, folded0.9980/0.9953,
+double-encoder projection1.0931/1.0681, folded projection1.0059/1.0035.
+Only representation overhead is measured: extracted scores are discarded.
+Setup builds encoder first and ledger second with a warm opportunity cache;
+no comparative constructor advantage is claimed. Exact numeric projection does
+not prove a rule transform is valid. No new live leaf/default/strength claim.
+Recovery and full cost records: frozen-ledger-transfer-index.json under
+../archive/search_compression_20261009; data/qfrontier_20261009.json.
