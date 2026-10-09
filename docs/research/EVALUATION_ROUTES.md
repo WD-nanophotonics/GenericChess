@@ -9,6 +9,28 @@ is no longer Main: either outcome alone would not select an evaluation family.
 
 ## Shared target and comparison
 
+Latest decision2026-10-10: retain static-v3 and Unit as cheap scoped baselines;
+do not adopt hand=board from one exposed drop hole. Two new rules/10games plus
+same-parent fixed-order checks retain adverse price and incomplete-search
+effects. Compiled guard/reset truth is a cheap supported input premise, not a
+learned utility. Next select one conditional service/safety versus finite-root
+coverage question, rather than automatically expand event fits or custody-law
+constants. FINITE_SEARCH_COMPRESSION.md owns the qualified whole-cohort evidence;
+UNFAMILIAR_RULE_SEARCH.md owns the separate completed-root-fallback correction.
+
+One relevant alternative is rule-conditioned selection among cheap evaluators.
+[Stephenson et al.](https://arxiv.org/html/2105.12846) estimate heuristic win-rates
+on695 Ludii games using depth2 search and at least100 games per heuristic,
+then regress those rates from ludeme-presence descriptions with leave-one-game-
+out checks. Their descriptors omit string, numeric and boolean values. This is
+heuristic selection, not generation of universal piece prices or a shared state
+value function. The reported label-generation scale also differs sharply from
+our two-rule pilot. Inference for this project: such a selector is a retained
+alternative, but token presence alone may omit the guard/effect direction our
+actual eligibility controls require. No new selector, training batch or proof
+gate is introduced; first retain typed behavioral meaning and a discriminating
+same-budget diagnostic.
+
 Generic means the complete project-generated rule domain, with rule semantics,
 board shape, current/base actor identity, promotion, hands/drops, auxiliary rights
 and history affecting legality or returns. Search/adjudication must retain this

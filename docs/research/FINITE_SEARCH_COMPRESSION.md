@@ -790,3 +790,75 @@ data/search_compression_20261009.json key node_prices_20261010. Restore the pinn
 predecessor package first. Only generated sources, declarations, adverse outputs
 and summaries are archived; raw Slack/account records and operations stay local.
 Hash/denominator/witness checks do not reproduce timings or restore holdout status.
+
+## Guard meaning, partial-root exposure and hand convention, 2026-10-10
+
+Root-fallback delivery belongs to UNFAMILIAR_RULE_SEARCH.md; its adverse games
+are price diagnostics, not a strength claim. In the introduced2147 v3/Unit
+ply14 hole,141legal actions supply64 already-scored prefix children. All their
+immediate replies cost8292transitions/64.320seconds. Unit100/100 and v3 with
+hand=board select a move without an immediate winning reply; uniform1000/900
+and unchanged v3 select losing B/Cdrops. The same enabled auxiliary truth and
+zero enemy Pstock cannot distinguish this ordinary unguarded drop failure.
+This exposed intervention does not select a new hand-price default.
+
+For three previously observed Xtransform children, actual/synthetic Pstock and
+flag0/1 yield12positions. Inverting a boolean guard, initial/reset value,
+set_bool effect and state flag together preserves all legal sets and1124matched
+one-step Position transitions. Raw sparse numeric inputs differ on all12;
+compiled predicate/reset truths agree. Scope is the no-trigger global
+expire_next_turn boolean family, not full history equivalence.96 scoring-discard
+cold caller controls retain decisions/PV/nodes/generation/evaluation signatures;
+11336predicate probes cost0.028890seconds. Local paired wall ratios near1 do
+not establish utility or universal speed. Keep this scoped input primitive,
+without automatically expanding a model or fitting exposed labels.
+
+Two further rules2150/2151 are frozen before results. Opening4, five policy
+strata Unit/Unit, Unit/v3, v3/Unit, Unit/v3_hand_board and v3_hand_board/Unit
+share cold Core D2max512nodes/10sec safety/q0/hard8, Unit ordering and root-scan
+off. Only the hand lookup changes; dynamic terms remain disabled. Ten games
+produce275plies in183.151seconds,214D2/61D1, no time cuts. All275selected-child
+rows are audited in173.908seconds:210distinct full-history states,65exact cache
+hits,20044physical reply transitions.2150has no immediate-loss witnesses in
+any trajectory; equal-hand changes two paths, including ongoing96 to a real
+repetition draw.2151retains one immediate-loss child in all five policy strata.
+Ongoing is not draw, and dependent paths are not independent efficacy samples.
+
+Five distinct full-history first-divergence/loss parents supply15matched calls
+and2323selected-child transitions. At2151ply3, Unit completesD2 at509nodes
+and avoids the v3 loss; both v3 arms stop atD1/512 and retain it. At the other
+two loss parents all arms retainD1 and the same immediate loss. Removing hand
+discount therefore fails as a transferable cure. Whole275action custody
+decomposition retains18drops: all have a positive v3 material delta and zero
+hand=board delta. This identifies the convention's local drop bonus, not a
+universal conservation law for promotion, transformation or capture.
+
+The initial parent-control adapter accidentally let direct v3 Evaluator capture
+prices affect ordering. Its source/results remain explicitly mixed-order
+evidence. Corrected15calls inherit Unit capture ordering for every leaf arm;
+all qualitative loss conclusions persist, with2323reply transitions. A separate
+three-call observer preserves their decisions/work: Unit completes all126D2
+child calls; each v3 arm completes only8 and aborts the next. Fixed capture
+prices do not make alpha-beta windows or TT-guided root preferences identical.
+Returned window-bound scores are not exact full-child values, so this observation
+does not justify retaining a partialD2result as if its whole root were complete.
+
+A bounded2151ply3 tie audit scores all126children, then enumerates replies only
+to the union of highest-D1 ties and the UnitD2 selection: five children,
+774transitions. Unit has five top ties, four immediately losing; v3 and equal-
+hand each uniquely prefer the losing A move. Thus this local problem is not
+only a tie among v3-best moves or a hand-discount artifact. The safe Unit action
+is available, but static material weights and incompleteD2 provide different
+information. Preserve both price and finite-search explanations; do not patch
+the exposed position, expand its frozen search budget or fit these labels.
+The first tie producer selected the wrong game's route before label execution;
+the corrected run also had a mismatched raw/canonical action-format flag.
+All original outputs are retained, and action-schema reconciliation qualifies
+the selected-Unit flag without changing scores, ties or witness counts.
+
+Next compare a concrete conditional service/safety input with existing search
+coverage at unchanged prices and fair budgets. Neither an enlarged event model
+nor a1.0hand coefficient follows automatically. Science remains OPEN.
+Recovery: root-scan-20261010-index.json and hand-discount-20261010-index.json
+under ../archive/search_compression_20261009; both retain generated sources,
+declarations, failures and adverse outputs, excluding private transport records.

@@ -38,6 +38,20 @@ independent price/task questions; do not claim pre-final timings as deployment.
 
 ## Current evidence and decisions
 
+- Interrupted root scans now retain their best completed child without more
+  work or weakened cancellation. This is a fallback-contract repair, not a
+  tactical gain:24fixed64node games include one introduced/one avoided local
+  immediate-loss hole. Guard/effect reencoding preserves1124one-step Position
+  pairs; the cheap compiled predicate probe is retained as a scoped input
+  premise, not a learned utility. Two new hand-law rules/10games/275plies plus
+  full selected-reply audits do not support adopting hand=board. At a common
+  loss parent Unit completesD2 and avoids loss while both v3 arms stopD1;
+  a five-child top-tie audit shows v3 uniquely favors the losing move.
+  Next test one conditional service/safety input versus finite-root coverage
+  at unchanged prices/budgets, rather than refit exposed event labels or
+  universally remove custody discount. FINITE_SEARCH_COMPRESSION.md owns
+  price/input evidence; UNFAMILIAR_RULE_SEARCH.md owns product behavior.
+
 - Prospective2118/2119 capability transfer has32complete fronts and no common-
   action label conflict; the old61conflicts remain scoped. An untrained264axis
   probe separates those old aliases but pools distinct drop zones. No expanded

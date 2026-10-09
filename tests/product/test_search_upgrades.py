@@ -189,6 +189,62 @@ def test_root_scan_off_falls_back_to_canonical_first():
     assert action == sorted(legal_actions(state, compiled), key=str)[0]
 
 
+@pytest.mark.parametrize("semantic", [False, True])
+@pytest.mark.parametrize("interruption", ["node_limit", "cancelled", "time_limit", "evaluation_cancel"])
+def test_partial_root_scan_retains_best_completed_child(semantic, interruption, monkeypatch):
+    from generic_chess.ai.cancellation import CancellationToken
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from rule_semantics_ir_fixtures import cannon_ruleset
+
+    compiled = (compile_ruleset_for_execution(cannon_ruleset())
+                if semantic else build_4x4_rooks())
+    state = GameSession(compiled).state
+    children = list(legal_successors(state, compiled))
+    assert len(children) > 2
+    # Deliberately separate the completed second child from the canonical fallback.
+    values = {child.position.board: -100 * i for i, (_, child) in enumerate(children)}
+    seen = []
+    token = CancellationToken() if interruption == "cancelled" else None
+    clock = [0.0]
+    monkeypatch.setattr("generic_chess.ai.alphabeta.search.time.monotonic", lambda: clock[0])
+
+    class ChildEvaluator:
+        def evaluate(self, child):
+            if interruption == "evaluation_cancel" and len(seen) == 2:
+                # An evaluator that polls cooperatively has not produced a score
+                # for this third child. Its incomplete result must not replace
+                # the previous two completed evaluations.
+                raise SearchAborted("cancelled")
+            seen.append(child.position.board)
+            if len(seen) == 2:
+                if token is not None:
+                    token.cancel()
+                if interruption == "time_limit":
+                    clock[0] = 2.0
+            return values[child.position.board]
+
+    stats = SearchStatistics()
+    action, score, pv, reason = run_root_search(
+        state, compiled, ChildEvaluator(), TranspositionTable(),
+        SearchLimits(max_depth=2, max_nodes=2 if interruption == "node_limit" else None,
+                     max_time_seconds=1.0 if interruption == "time_limit" else None,
+                     quiescence_max_depth=0),
+        token, stats, use_tt=True, use_ordering=False,
+        tuning=SearchTuning(use_root_tactical=True),
+    )
+    expected_board = min(seen, key=values.__getitem__)
+    expected = next(a for a, child in children if child.position.board == expected_board)
+    assert len(seen) == 2
+    assert expected != sorted(legal_actions(state, compiled), key=str)[0]
+    assert action == expected
+    assert reason == ("cancelled" if interruption == "evaluation_cancel" else interruption)
+    assert score == 0 and pv == ()
+    assert stats.completed_depth == 0 and stats.root_scan_used_fallback
+    attempted = 3 if interruption == "evaluation_cancel" else 2
+    assert stats.root_scan_nodes == stats.nodes == stats.evaluation_calls == attempted
+    assert state == GameSession(compiled).state
+
+
 def test_staged_picker_yields_every_action_once():
     compiled = build_4x4_rooks()
     evaluator = _evaluator(compiled)

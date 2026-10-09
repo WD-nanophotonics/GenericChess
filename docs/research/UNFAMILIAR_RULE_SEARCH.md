@@ -1492,3 +1492,32 @@ run separately from other CPU experiments. Accordingly, elapsed times remain
 local descriptive resource records, not causal comparative speed promises.
 TASK_PREDICTION_DIAGNOSTIC.md owns target losses, replay and exposure boundaries;
 capability-transfer-20261010-index.json routes exact producers/results/dependencies.
+
+## Interrupted root-scan fallback, 2026-10-10
+
+The cheap root scan previously discarded completed child evaluations when its
+node/deadline/cancellation check interrupted the scan. The product now retains
+the best completed legal child; an evaluator that aborts before returning a
+score cannot replace it. Legacy and semantic paths share this behavior. No
+additional nodes/evaluations, cancellation relaxation or tactical extension is
+introduced. An interrupted scan still returns score0, empty PV and depth0;
+it is a fallback, not a completed-search certificate.
+
+Eight interruption regressions fail against pinned9734226 and pass with the
+change. The candidate passes1784 active tests; the subsequently added two
+evaluator-internal interruption cases pass with all22 final upgrade tests.
+An initial full-test run failed at Windows temporary-directory setup; a fresh
+project-local basetemp passes without weakening product assertions.
+
+Matched exposed64/512node controls retain identical work. At64 eight choices
+change and two exposed v3 immediate-loss holes disappear; at512 choices stay
+unchanged. Four prospectively declared2146-2149 rules supply96 cold calls at
+opening0/4/8, Unit/v3 and64/128nodes: six choices change, immediate-loss pairs
+stay4to4. Actual24 fixed64node games then retain696plies and five changed
+terminal categories. Same-parent selected-reply checks find one introduced
+and one avoided immediate-loss hole. Adoption is based on preserving completed
+computation under the existing fast-evaluation criterion, with these adverse
+outcomes retained; no safety, playing-strength or price improvement is claimed.
+
+Recovery: ../archive/search_compression_20261009/root-scan-20261010-index.json.
+FINITE_SEARCH_COMPRESSION.md owns the separate guard/hand-price interpretation.

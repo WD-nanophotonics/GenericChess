@@ -120,6 +120,7 @@ class _Context:
         "qnode_limit",
         "runtime",
         "first_main_iteration_complete",
+        "root_scan_best_action",
     )
 
     def __init__(
@@ -157,6 +158,7 @@ class _Context:
         # reserve scheduling.  ``run_root_search`` supplies False and flips
         # it only after a complete main iteration succeeds.
         self.first_main_iteration_complete = first_main_iteration_complete
+        self.root_scan_best_action: Action | None = None
 
     def checkpoint(self) -> None:
         """Cooperative callback passed into Core semantic work units."""
@@ -900,8 +902,8 @@ def root_tactical_scan(
     """Cheap root scan: immediate mate first, else best fast-eval root action.
 
     Returns ``(immediate_win_action, best_action_by_eval)``.  Every root
-    successor is examined at least once so a very short budget still produces
-    a sensible fallback instead of the first canonical action.
+    successor is examined until the budget ends. Completed child evaluations
+    retain their best action for the fallback even when the scan is interrupted.
     """
     best_action: Action | None = None
     best_score = -INF
@@ -929,12 +931,14 @@ def root_tactical_scan(
                     if score > best_score:
                         best_score = score
                         best_action = action
+                        ctx.root_scan_best_action = action
                     continue
                 score = -_evaluate(child, evaluator, ctx)
+                if score > best_score:
+                    best_score = score
+                    best_action = action
+                    ctx.root_scan_best_action = action
                 ctx.budget.check(ctx.stats, force=True)
-            if score > best_score:
-                best_score = score
-                best_action = action
         ctx.stats.root_scan_seconds += time.monotonic() - started
         return None, best_action
     if handles is None:
@@ -970,12 +974,14 @@ def root_tactical_scan(
             if score > best_score:
                 best_score = score
                 best_action = action
+                ctx.root_scan_best_action = action
             continue
         score = -_evaluate(child, evaluator, ctx)
-        ctx.budget.check(ctx.stats, force=True)
         if score > best_score:
             best_score = score
             best_action = action
+            ctx.root_scan_best_action = action
+        ctx.budget.check(ctx.stats, force=True)
         ctx.budget.check(ctx.stats)
     ctx.stats.root_scan_seconds += time.monotonic() - started
     return None, best_action
@@ -1154,7 +1160,7 @@ def run_root_search(
         except SearchAborted as exc:
             stats.root_scan_used_fallback = True
             stats.termination_reason = str(exc)
-            fallback = root_first_action
+            fallback = ctx.root_scan_best_action or root_first_action
             if fallback is None:
                 fallback = sorted(actions, key=str)[0]
             return fallback, 0, (), stats.termination_reason
