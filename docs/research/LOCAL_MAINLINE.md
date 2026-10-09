@@ -31,6 +31,14 @@ independent price/task questions; do not claim pre-final timings as deployment.
 
 ## Current evidence and decisions
 
+- Full existing common-slot task populations now test fixed price selection:
+  immediate top choices help against blind8/8rules, but average pair ordering
+  fails3/8; v2/v3rank identically. One-reply support is sparse/check-dependent,
+  with one allzero rule and phase/influence failures. Descriptive best-fixed
+  ceilings separate generator headroom from conditional information loss;
+  neither implies new prices or strength. TASK_PREDICTION_DIAGNOSTIC.md owns
+  the complete136background/1500slot evidence and next-decision boundary.
+
 - Fixed-order internal-Xiangqi leaf pilots separate sensitivity from ordering;
   finite-source kernels retain different stationary laws and rare-bridge limits.
   Do not replace the source law or infer calibrated prices from q-horizon choices.
@@ -148,6 +156,7 @@ branch backlog or publication gate. Exact operating rules remain in AGENTS.md.
 
 |Purpose|Document and latest records|
 |---|---|
+|Fixed price predictions, conditional information ceilings and reply support|TASK_PREDICTION_DIAGNOSTIC.md; data/qfrontier_20261009.json|
 |Semantic opportunity, equivalence, context/task boundaries|SEMANTIC_CAPABILITY.md; data/tasklaw_20261009.json; task_compression_20261009.json; finite_law_20261009.json; preparation_transfer_20261008.json; retention_20261008.json|
 |Descriptive price ratios and preparation/promotion bias|CROSS_GAME_PRICE_DIAGNOSTIC.md; data/pawn_bias_20261009.json|
 |Exact primitive occupancy, representation and rectangle capability|GEOMETRY_OCCUPANCY.md; data/geometry_occupancy_20261009.json; leaf_order_20261009.json|

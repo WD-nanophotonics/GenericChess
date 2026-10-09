@@ -1,0 +1,482 @@
+{
+  "scope": "Descriptive best-fixed and context/slot ceilings, not trained prices.\nReuse complete original populations and equal-slot then equal-background law.\nAlways choosing each type is scored on ALL rows, including no-reply/zero rows.\nObserved labels define ceilings only; no predictor deployment or holdout claim.\n",
+  "inputs": {
+    "reply-task.json": "df20768528f0b9925601862870838ff3155b58f223c14551665ab3bf493b7e94",
+    "reply-declaration.json": "1f6a01fd4ee8edd80c767848844a90ec5986ae70b276e2a4147c1732db92dde3",
+    "reply-analysis.json": "be7e0e1ebc57309910d237056c74f4e4884d0b91a552b394730d86657c838b03",
+    "reply8-task.json": "79510ecd7b1f9ef992f20c69a010ccdf38936674e0ccd19f7d5a424436f1dd6c",
+    "reply8-declaration.json": "08a012fce14157f43c2ab7b692a3e53c2a51ed07816f647a5f5aa791ce22ea6e",
+    "reply8-analysis.json": "8cbdb240965a6186f2f6ee0741d6999e18a4e9c8900e058c73140d2ecf9f15ff"
+  },
+  "rules": [
+    {
+      "seed": 202610082000,
+      "tasks": {
+        "immediate": {
+          "oracle_mean": "183761/235620",
+          "constant_losses": {
+            "A": "180419/471240",
+            "B": "16039/52360",
+            "P": "60283/235620",
+            "X": "58897/235620"
+          },
+          "best_fixed_types": [
+            "X"
+          ],
+          "fixed_losses": {
+            "generic_v2": "60283/235620",
+            "semantic_v3": "60283/235620"
+          },
+          "best_fixed_loss": "58897/235620",
+          "context_oracle_loss": "619/4620",
+          "fixed_choice_headroom": {
+            "generic_v2": "1/170",
+            "semantic_v3": "1/170"
+          },
+          "unavoidable_fixed_loss": "58897/235620",
+          "context_only_reduction": "976/8415",
+          "remaining_slot_loss": "619/4620",
+          "blind_loss": "6257/20944"
+        },
+        "task": {
+          "oracle_mean": "5129/58905",
+          "constant_losses": {
+            "A": "886/19635",
+            "B": "5129/58905",
+            "P": "398/8415",
+            "X": "19/765"
+          },
+          "best_fixed_types": [
+            "X"
+          ],
+          "fixed_losses": {
+            "generic_v2": "398/8415",
+            "semantic_v3": "398/8415"
+          },
+          "best_fixed_loss": "19/765",
+          "context_oracle_loss": "0",
+          "fixed_choice_headroom": {
+            "generic_v2": "21/935",
+            "semantic_v3": "21/935"
+          },
+          "unavoidable_fixed_loss": "19/765",
+          "context_only_reduction": "19/765",
+          "remaining_slot_loss": "0",
+          "blind_loss": "59/1155"
+        }
+      }
+    },
+    {
+      "seed": 202610082001,
+      "tasks": {
+        "immediate": {
+          "oracle_mean": "321/385",
+          "constant_losses": {
+            "A": "727/2380",
+            "B": "541/2142",
+            "P": "66799/117810",
+            "X": "301879/471240"
+          },
+          "best_fixed_types": [
+            "B"
+          ],
+          "fixed_losses": {
+            "generic_v2": "541/2142",
+            "semantic_v3": "541/2142"
+          },
+          "best_fixed_loss": "541/2142",
+          "context_oracle_loss": "2243/10710",
+          "fixed_choice_headroom": {
+            "generic_v2": "0",
+            "semantic_v3": "0"
+          },
+          "unavoidable_fixed_loss": "541/2142",
+          "context_only_reduction": "11/255",
+          "remaining_slot_loss": "2243/10710",
+          "blind_loss": "13207/29920"
+        },
+        "task": {
+          "oracle_mean": "123/2380",
+          "constant_losses": {
+            "A": "103/2380",
+            "B": "1/85",
+            "P": "19/476",
+            "X": "123/2380"
+          },
+          "best_fixed_types": [
+            "B"
+          ],
+          "fixed_losses": {
+            "generic_v2": "1/85",
+            "semantic_v3": "1/85"
+          },
+          "best_fixed_loss": "1/85",
+          "context_oracle_loss": "0",
+          "fixed_choice_headroom": {
+            "generic_v2": "0",
+            "semantic_v3": "0"
+          },
+          "unavoidable_fixed_loss": "1/85",
+          "context_only_reduction": "1/85",
+          "remaining_slot_loss": "0",
+          "blind_loss": "349/9520"
+        }
+      }
+    },
+    {
+      "seed": 202610082002,
+      "tasks": {
+        "immediate": {
+          "oracle_mean": "871/935",
+          "constant_losses": {
+            "A": "511/1870",
+            "B": "406/935",
+            "P": "196/935",
+            "X": "138/187"
+          },
+          "best_fixed_types": [
+            "P"
+          ],
+          "fixed_losses": {
+            "generic_v2": "511/1870",
+            "semantic_v3": "511/1870"
+          },
+          "best_fixed_loss": "196/935",
+          "context_oracle_loss": "263/1870",
+          "fixed_choice_headroom": {
+            "generic_v2": "7/110",
+            "semantic_v3": "7/110"
+          },
+          "unavoidable_fixed_loss": "196/935",
+          "context_only_reduction": "129/1870",
+          "remaining_slot_loss": "263/1870",
+          "blind_loss": "619/1496"
+        },
+        "task": {
+          "oracle_mean": "164/935",
+          "constant_losses": {
+            "A": "112/935",
+            "B": "164/935",
+            "P": "52/935",
+            "X": "164/935"
+          },
+          "best_fixed_types": [
+            "P"
+          ],
+          "fixed_losses": {
+            "generic_v2": "112/935",
+            "semantic_v3": "112/935"
+          },
+          "best_fixed_loss": "52/935",
+          "context_oracle_loss": "52/935",
+          "fixed_choice_headroom": {
+            "generic_v2": "12/187",
+            "semantic_v3": "12/187"
+          },
+          "unavoidable_fixed_loss": "52/935",
+          "context_only_reduction": "0",
+          "remaining_slot_loss": "52/935",
+          "blind_loss": "123/935"
+        }
+      }
+    },
+    {
+      "seed": 202610082003,
+      "tasks": {
+        "immediate": {
+          "oracle_mean": "364043/471240",
+          "constant_losses": {
+            "A": "120991/471240",
+            "B": "21829/67320",
+            "P": "97723/157080",
+            "X": "2729/6930"
+          },
+          "best_fixed_types": [
+            "A"
+          ],
+          "fixed_losses": {
+            "generic_v2": "120991/471240",
+            "semantic_v3": "120991/471240"
+          },
+          "best_fixed_loss": "120991/471240",
+          "context_oracle_loss": "3019/14280",
+          "fixed_choice_headroom": {
+            "generic_v2": "0",
+            "semantic_v3": "0"
+          },
+          "unavoidable_fixed_loss": "120991/471240",
+          "context_only_reduction": "763/16830",
+          "remaining_slot_loss": "3019/14280",
+          "blind_loss": "2389/5984"
+        },
+        "task": {
+          "oracle_mean": "3391/42840",
+          "constant_losses": {
+            "A": "0",
+            "B": "269/5355",
+            "P": "2383/42840",
+            "X": "3391/42840"
+          },
+          "best_fixed_types": [
+            "A"
+          ],
+          "fixed_losses": {
+            "generic_v2": "0",
+            "semantic_v3": "0"
+          },
+          "best_fixed_loss": "0",
+          "context_oracle_loss": "0",
+          "fixed_choice_headroom": {
+            "generic_v2": "0",
+            "semantic_v3": "0"
+          },
+          "unavoidable_fixed_loss": "0",
+          "context_only_reduction": "0",
+          "remaining_slot_loss": "0",
+          "blind_loss": "1321/28560"
+        }
+      }
+    },
+    {
+      "seed": 202610082100,
+      "tasks": {
+        "immediate": {
+          "oracle_mean": "359/374",
+          "constant_losses": {
+            "A": "14039/29172",
+            "B": "2089/6545",
+            "C": "16933/29172",
+            "P": "14597/18564",
+            "X": "20963/60060"
+          },
+          "best_fixed_types": [
+            "B"
+          ],
+          "fixed_losses": {
+            "generic_v2": "14039/29172",
+            "semantic_v3": "14039/29172"
+          },
+          "best_fixed_loss": "2089/6545",
+          "context_oracle_loss": "1726/6545",
+          "fixed_choice_headroom": {
+            "generic_v2": "165481/1021020",
+            "semantic_v3": "165481/1021020"
+          },
+          "unavoidable_fixed_loss": "2089/6545",
+          "context_only_reduction": "33/595",
+          "remaining_slot_loss": "1726/6545",
+          "blind_loss": "85637/170170"
+        },
+        "task": {
+          "oracle_mean": "0",
+          "constant_losses": {
+            "A": "0",
+            "B": "0",
+            "C": "0",
+            "P": "0",
+            "X": "0"
+          },
+          "best_fixed_types": [
+            "A",
+            "B",
+            "C",
+            "P",
+            "X"
+          ],
+          "fixed_losses": {
+            "generic_v2": "0",
+            "semantic_v3": "0"
+          },
+          "best_fixed_loss": "0",
+          "context_oracle_loss": "0",
+          "fixed_choice_headroom": {
+            "generic_v2": "0",
+            "semantic_v3": "0"
+          },
+          "unavoidable_fixed_loss": "0",
+          "context_only_reduction": "0",
+          "remaining_slot_loss": "0",
+          "blind_loss": "0"
+        }
+      }
+    },
+    {
+      "seed": 202610082101,
+      "tasks": {
+        "immediate": {
+          "oracle_mean": "657029/1225224",
+          "constant_losses": {
+            "A": "42089/471240",
+            "B": "1161157/3063060",
+            "C": "640943/6126120",
+            "P": "2742239/6126120",
+            "X": "2895427/6126120"
+          },
+          "best_fixed_types": [
+            "A"
+          ],
+          "fixed_losses": {
+            "generic_v2": "42089/471240",
+            "semantic_v3": "42089/471240"
+          },
+          "best_fixed_loss": "42089/471240",
+          "context_oracle_loss": "39317/471240",
+          "fixed_choice_headroom": {
+            "generic_v2": "0",
+            "semantic_v3": "0"
+          },
+          "unavoidable_fixed_loss": "42089/471240",
+          "context_only_reduction": "1/170",
+          "remaining_slot_loss": "39317/471240",
+          "blind_loss": "76234/255255"
+        },
+        "task": {
+          "oracle_mean": "437/7956",
+          "constant_losses": {
+            "A": "365/15912",
+            "B": "437/15912",
+            "C": "437/15912",
+            "P": "385/7956",
+            "X": "401/7956"
+          },
+          "best_fixed_types": [
+            "A"
+          ],
+          "fixed_losses": {
+            "generic_v2": "365/15912",
+            "semantic_v3": "365/15912"
+          },
+          "best_fixed_loss": "365/15912",
+          "context_oracle_loss": "365/15912",
+          "fixed_choice_headroom": {
+            "generic_v2": "0",
+            "semantic_v3": "0"
+          },
+          "unavoidable_fixed_loss": "365/15912",
+          "context_only_reduction": "0",
+          "remaining_slot_loss": "365/15912",
+          "blind_loss": "937/26520"
+        }
+      }
+    },
+    {
+      "seed": 202610082102,
+      "tasks": {
+        "immediate": {
+          "oracle_mean": "2935/18564",
+          "constant_losses": {
+            "A": "103/884",
+            "B": "107/884",
+            "C": "161/1326",
+            "P": "1369/18564",
+            "X": "437/4641"
+          },
+          "best_fixed_types": [
+            "P"
+          ],
+          "fixed_losses": {
+            "generic_v2": "437/4641",
+            "semantic_v3": "437/4641"
+          },
+          "best_fixed_loss": "1369/18564",
+          "context_oracle_loss": "125/4641",
+          "fixed_choice_headroom": {
+            "generic_v2": "379/18564",
+            "semantic_v3": "379/18564"
+          },
+          "unavoidable_fixed_loss": "1369/18564",
+          "context_only_reduction": "869/18564",
+          "remaining_slot_loss": "125/4641",
+          "blind_loss": "9781/92820"
+        },
+        "task": {
+          "oracle_mean": "115/2652",
+          "constant_losses": {
+            "A": "1/52",
+            "B": "1/52",
+            "C": "16/663",
+            "P": "115/2652",
+            "X": "1/102"
+          },
+          "best_fixed_types": [
+            "X"
+          ],
+          "fixed_losses": {
+            "generic_v2": "1/102",
+            "semantic_v3": "1/102"
+          },
+          "best_fixed_loss": "1/102",
+          "context_oracle_loss": "1/102",
+          "fixed_choice_headroom": {
+            "generic_v2": "0",
+            "semantic_v3": "0"
+          },
+          "unavoidable_fixed_loss": "1/102",
+          "context_only_reduction": "0",
+          "remaining_slot_loss": "1/102",
+          "blind_loss": "307/13260"
+        }
+      }
+    },
+    {
+      "seed": 202610082103,
+      "tasks": {
+        "immediate": {
+          "oracle_mean": "57179/92820",
+          "constant_losses": {
+            "A": "40259/92820",
+            "B": "4482/7735",
+            "C": "17377/46410",
+            "P": "62/357",
+            "X": "15823/30940"
+          },
+          "best_fixed_types": [
+            "P"
+          ],
+          "fixed_losses": {
+            "generic_v2": "62/357",
+            "semantic_v3": "62/357"
+          },
+          "best_fixed_loss": "62/357",
+          "context_oracle_loss": "764/4641",
+          "fixed_choice_headroom": {
+            "generic_v2": "0",
+            "semantic_v3": "0"
+          },
+          "unavoidable_fixed_loss": "62/357",
+          "context_only_reduction": "2/221",
+          "remaining_slot_loss": "764/4641",
+          "blind_loss": "96193/232050"
+        },
+        "task": {
+          "oracle_mean": "1/221",
+          "constant_losses": {
+            "A": "1/221",
+            "B": "1/221",
+            "C": "1/221",
+            "P": "0",
+            "X": "1/221"
+          },
+          "best_fixed_types": [
+            "P"
+          ],
+          "fixed_losses": {
+            "generic_v2": "0",
+            "semantic_v3": "0"
+          },
+          "best_fixed_loss": "0",
+          "context_oracle_loss": "0",
+          "fixed_choice_headroom": {
+            "generic_v2": "0",
+            "semantic_v3": "0"
+          },
+          "unavoidable_fixed_loss": "0",
+          "context_only_reduction": "0",
+          "remaining_slot_loss": "0",
+          "blind_loss": "4/1105"
+        }
+      }
+    }
+  ],
+  "producer_sha256": "046c3f56163abe13f7c06f852c92d71afbcb924a3705c5471230b660a787e7c9"
+}

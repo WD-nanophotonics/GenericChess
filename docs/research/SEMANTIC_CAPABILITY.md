@@ -3,6 +3,11 @@
 2026-10-08. This is an exposed development check of rule-only valuation inputs,
 not a selected price formula or player-strength result.
 
+Latest complete-population utility check: TASK_PREDICTION_DIAGNOSTIC.md and
+data/qfrontier_20261009.json separate frozen top-choice usefulness, all-pair
+failures, best-fixed information ceilings and sparse/check-dependent replies.
+This updates the task bridge, not the static formula or default profile.
+
 ## Finite generator consistency,2026-10-08
 
 The direction review prioritizes supported semantic equivalence, behavioral

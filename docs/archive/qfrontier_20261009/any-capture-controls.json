@@ -1,0 +1,230 @@
+{
+  "scope": "Exact finite controls and empirical count-curve sanity audit, not a MC CI.",
+  "exact_controls": [
+    {
+      "density": "0",
+      "kind": "ray",
+      "states": 27,
+      "count": "0",
+      "any": "0"
+    },
+    {
+      "density": "0",
+      "kind": "leaps",
+      "states": 27,
+      "count": "0",
+      "any": "0"
+    },
+    {
+      "density": "0",
+      "kind": "cannon",
+      "states": 27,
+      "count": "0",
+      "any": "0"
+    },
+    {
+      "density": "1/8",
+      "kind": "ray",
+      "states": 27,
+      "count": "169/1024",
+      "any": "169/1024"
+    },
+    {
+      "density": "1/8",
+      "kind": "leaps",
+      "states": 27,
+      "count": "3/16",
+      "any": "721/4096"
+    },
+    {
+      "density": "1/8",
+      "kind": "cannon",
+      "states": 27,
+      "count": "11/512",
+      "any": "11/512"
+    },
+    {
+      "density": "1/4",
+      "kind": "ray",
+      "states": 27,
+      "count": "37/128",
+      "any": "37/128"
+    },
+    {
+      "density": "1/4",
+      "kind": "leaps",
+      "states": 27,
+      "count": "3/8",
+      "any": "169/512"
+    },
+    {
+      "density": "1/4",
+      "kind": "cannon",
+      "states": 27,
+      "count": "5/64",
+      "any": "5/64"
+    },
+    {
+      "density": "3/8",
+      "kind": "ray",
+      "states": 27,
+      "count": "387/1024",
+      "any": "387/1024"
+    },
+    {
+      "density": "3/8",
+      "kind": "leaps",
+      "states": 27,
+      "count": "9/16",
+      "any": "1899/4096"
+    },
+    {
+      "density": "3/8",
+      "kind": "cannon",
+      "states": 27,
+      "count": "81/512",
+      "any": "81/512"
+    },
+    {
+      "density": "1/2",
+      "kind": "ray",
+      "states": 27,
+      "count": "7/16",
+      "any": "7/16"
+    },
+    {
+      "density": "1/2",
+      "kind": "leaps",
+      "states": 27,
+      "count": "3/4",
+      "any": "37/64"
+    },
+    {
+      "density": "1/2",
+      "kind": "cannon",
+      "states": 27,
+      "count": "1/4",
+      "any": "1/4"
+    },
+    {
+      "density": "1",
+      "kind": "ray",
+      "states": 27,
+      "count": "1/2",
+      "any": "1/2"
+    },
+    {
+      "density": "1",
+      "kind": "leaps",
+      "states": 27,
+      "count": "3/2",
+      "any": "7/8"
+    },
+    {
+      "density": "1",
+      "kind": "cannon",
+      "states": 27,
+      "count": "1/2",
+      "any": "1/2"
+    }
+  ],
+  "empirical_count_errors": [
+    {
+      "seed": 202610082000,
+      "replicate": 20261009,
+      "max_absolute_count_error": 0.02143012152777779,
+      "scope": "finite128layout approximation error, no acceptance threshold or confidence interval"
+    },
+    {
+      "seed": 202610082000,
+      "replicate": 20261010,
+      "max_absolute_count_error": 0.029407077365451395,
+      "scope": "finite128layout approximation error, no acceptance threshold or confidence interval"
+    },
+    {
+      "seed": 202610082001,
+      "replicate": 20261009,
+      "max_absolute_count_error": 0.02374182807074654,
+      "scope": "finite128layout approximation error, no acceptance threshold or confidence interval"
+    },
+    {
+      "seed": 202610082001,
+      "replicate": 20261010,
+      "max_absolute_count_error": 0.014561123318142355,
+      "scope": "finite128layout approximation error, no acceptance threshold or confidence interval"
+    },
+    {
+      "seed": 202610082002,
+      "replicate": 20261009,
+      "max_absolute_count_error": 0.02294921875,
+      "scope": "finite128layout approximation error, no acceptance threshold or confidence interval"
+    },
+    {
+      "seed": 202610082002,
+      "replicate": 20261010,
+      "max_absolute_count_error": 0.02636803521050346,
+      "scope": "finite128layout approximation error, no acceptance threshold or confidence interval"
+    },
+    {
+      "seed": 202610082003,
+      "replicate": 20261009,
+      "max_absolute_count_error": 0.03751627604166674,
+      "scope": "finite128layout approximation error, no acceptance threshold or confidence interval"
+    },
+    {
+      "seed": 202610082003,
+      "replicate": 20261010,
+      "max_absolute_count_error": 0.03422292073567712,
+      "scope": "finite128layout approximation error, no acceptance threshold or confidence interval"
+    },
+    {
+      "seed": 202610082100,
+      "replicate": 20261009,
+      "max_absolute_count_error": 0.026255905628204346,
+      "scope": "finite128layout approximation error, no acceptance threshold or confidence interval"
+    },
+    {
+      "seed": 202610082100,
+      "replicate": 20261010,
+      "max_absolute_count_error": 0.01717853546142578,
+      "scope": "finite128layout approximation error, no acceptance threshold or confidence interval"
+    },
+    {
+      "seed": 202610082101,
+      "replicate": 20261009,
+      "max_absolute_count_error": 0.0205078125,
+      "scope": "finite128layout approximation error, no acceptance threshold or confidence interval"
+    },
+    {
+      "seed": 202610082101,
+      "replicate": 20261010,
+      "max_absolute_count_error": 0.013682805001735687,
+      "scope": "finite128layout approximation error, no acceptance threshold or confidence interval"
+    },
+    {
+      "seed": 202610082102,
+      "replicate": 20261009,
+      "max_absolute_count_error": 0.034007370471954346,
+      "scope": "finite128layout approximation error, no acceptance threshold or confidence interval"
+    },
+    {
+      "seed": 202610082102,
+      "replicate": 20261010,
+      "max_absolute_count_error": 0.01361846923828125,
+      "scope": "finite128layout approximation error, no acceptance threshold or confidence interval"
+    },
+    {
+      "seed": 202610082103,
+      "replicate": 20261009,
+      "max_absolute_count_error": 0.024988360702991486,
+      "scope": "finite128layout approximation error, no acceptance threshold or confidence interval"
+    },
+    {
+      "seed": 202610082103,
+      "replicate": 20261010,
+      "max_absolute_count_error": 0.015106342732906342,
+      "scope": "finite128layout approximation error, no acceptance threshold or confidence interval"
+    }
+  ],
+  "producer_sha256": "0f51acbd9992b299625187a0a3fd5da3da3675106fd33ea411f7e55a14d1d10c"
+}

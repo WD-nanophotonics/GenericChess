@@ -1,0 +1,578 @@
+{
+  "scope": "Descriptive complete-ranking ceiling, not fitted/deployed prices.\nQuestion declared before arithmetic: can top-choice saturation hide remaining\nfixed-ranking headroom? Use ALL64pairs and original context-first weighting for\nboth immediate/reply tasks. Enumerate every strict type order (24 or120/rule),\nverify the order of weighted task means attains minimum total pair loss. No\ntrajectory, action execution, coefficient selection or generalization claim.\n",
+  "rules": [
+    {
+      "task": "immediate",
+      "seed": 202610082000,
+      "types": [
+        "A",
+        "B",
+        "P",
+        "X"
+      ],
+      "permutations": 24,
+      "fixed_losses": {
+        "generic_v2": "381751/2827440",
+        "semantic_v3": "381751/2827440"
+      },
+      "best_ranking_loss": "342911/2827440",
+      "fixed_ranking_headroom": {
+        "generic_v2": "971/70686",
+        "semantic_v3": "971/70686"
+      },
+      "diagnostic_best_order": [
+        "X",
+        "P",
+        "B",
+        "A"
+      ],
+      "task_means": {
+        "A": "26729/67320",
+        "B": "223171/471240",
+        "P": "61739/117810",
+        "X": "31216/58905"
+      },
+      "best_orders": 1,
+      "label_scope": "Observed task means are information ceilings only, not a proposed price order."
+    },
+    {
+      "task": "immediate",
+      "seed": 202610082001,
+      "types": [
+        "A",
+        "B",
+        "P",
+        "X"
+      ],
+      "permutations": 24,
+      "fixed_losses": {
+        "generic_v2": "2321/21420",
+        "semantic_v3": "2321/21420"
+      },
+      "best_ranking_loss": "2321/21420",
+      "fixed_ranking_headroom": {
+        "generic_v2": "0",
+        "semantic_v3": "0"
+      },
+      "diagnostic_best_order": [
+        "B",
+        "A",
+        "P",
+        "X"
+      ],
+      "task_means": {
+        "A": "13831/26180",
+        "B": "68471/117810",
+        "P": "2857/10710",
+        "X": "1655/8568"
+      },
+      "best_orders": 1,
+      "label_scope": "Observed task means are information ceilings only, not a proposed price order."
+    },
+    {
+      "task": "immediate",
+      "seed": 202610082002,
+      "types": [
+        "A",
+        "B",
+        "P",
+        "X"
+      ],
+      "permutations": 24,
+      "fixed_losses": {
+        "generic_v2": "2621/11220",
+        "semantic_v3": "2621/11220"
+      },
+      "best_ranking_loss": "547/5610",
+      "fixed_ranking_headroom": {
+        "generic_v2": "509/3740",
+        "semantic_v3": "509/3740"
+      },
+      "diagnostic_best_order": [
+        "P",
+        "A",
+        "B",
+        "X"
+      ],
+      "task_means": {
+        "A": "1231/1870",
+        "B": "93/187",
+        "P": "135/187",
+        "X": "181/935"
+      },
+      "best_orders": 1,
+      "label_scope": "Observed task means are information ceilings only, not a proposed price order."
+    },
+    {
+      "task": "immediate",
+      "seed": 202610082003,
+      "types": [
+        "A",
+        "B",
+        "P",
+        "X"
+      ],
+      "permutations": 24,
+      "fixed_losses": {
+        "generic_v2": "49451/235620",
+        "semantic_v3": "49451/235620"
+      },
+      "best_ranking_loss": "7817/70686",
+      "fixed_ranking_headroom": {
+        "generic_v2": "70183/706860",
+        "semantic_v3": "70183/706860"
+      },
+      "diagnostic_best_order": [
+        "A",
+        "B",
+        "X",
+        "P"
+      ],
+      "task_means": {
+        "A": "60763/117810",
+        "B": "5281/11781",
+        "P": "35437/235620",
+        "X": "178471/471240"
+      },
+      "best_orders": 1,
+      "label_scope": "Observed task means are information ceilings only, not a proposed price order."
+    },
+    {
+      "task": "immediate",
+      "seed": 202610082100,
+      "types": [
+        "A",
+        "B",
+        "C",
+        "P",
+        "X"
+      ],
+      "permutations": 120,
+      "fixed_losses": {
+        "generic_v2": "1123433/5105100",
+        "semantic_v3": "1123433/5105100"
+      },
+      "best_ranking_loss": "1053463/10210200",
+      "fixed_ranking_headroom": {
+        "generic_v2": "397801/3403400",
+        "semantic_v3": "397801/3403400"
+      },
+      "diagnostic_best_order": [
+        "B",
+        "X",
+        "A",
+        "C",
+        "P"
+      ],
+      "task_means": {
+        "A": "13963/29172",
+        "B": "8387/13090",
+        "C": "11069/29172",
+        "P": "35447/204204",
+        "X": "623699/1021020"
+      },
+      "best_orders": 1,
+      "label_scope": "Observed task means are information ceilings only, not a proposed price order."
+    },
+    {
+      "task": "immediate",
+      "seed": 202610082101,
+      "types": [
+        "A",
+        "B",
+        "C",
+        "P",
+        "X"
+      ],
+      "permutations": 120,
+      "fixed_losses": {
+        "generic_v2": "148553/2450448",
+        "semantic_v3": "148553/2450448"
+      },
+      "best_ranking_loss": "313211/10210200",
+      "fixed_ranking_headroom": {
+        "generic_v2": "1834559/61261200",
+        "semantic_v3": "1834559/61261200"
+      },
+      "diagnostic_best_order": [
+        "A",
+        "C",
+        "B",
+        "P",
+        "X"
+      ],
+      "task_means": {
+        "A": "62227/139230",
+        "B": "962831/6126120",
+        "C": "120191/278460",
+        "P": "2983/33660",
+        "X": "3093/48620"
+      },
+      "best_orders": 1,
+      "label_scope": "Observed task means are information ceilings only, not a proposed price order."
+    },
+    {
+      "task": "immediate",
+      "seed": 202610082102,
+      "types": [
+        "A",
+        "B",
+        "C",
+        "P",
+        "X"
+      ],
+      "permutations": 120,
+      "fixed_losses": {
+        "generic_v2": "7309/185640",
+        "semantic_v3": "7309/185640"
+      },
+      "best_ranking_loss": "1397/61880",
+      "fixed_ranking_headroom": {
+        "generic_v2": "1559/92820",
+        "semantic_v3": "1559/92820"
+      },
+      "diagnostic_best_order": [
+        "P",
+        "X",
+        "A",
+        "B",
+        "C"
+      ],
+      "task_means": {
+        "A": "193/4641",
+        "B": "172/4641",
+        "C": "227/6188",
+        "P": "261/3094",
+        "X": "1187/18564"
+      },
+      "best_orders": 1,
+      "label_scope": "Observed task means are information ceilings only, not a proposed price order."
+    },
+    {
+      "task": "immediate",
+      "seed": 202610082103,
+      "types": [
+        "A",
+        "B",
+        "C",
+        "P",
+        "X"
+      ],
+      "permutations": 120,
+      "fixed_losses": {
+        "generic_v2": "424/7735",
+        "semantic_v3": "424/7735"
+      },
+      "best_ranking_loss": "605/12376",
+      "fixed_ranking_headroom": {
+        "generic_v2": "367/61880",
+        "semantic_v3": "367/61880"
+      },
+      "diagnostic_best_order": [
+        "P",
+        "C",
+        "A",
+        "X",
+        "B"
+      ],
+      "task_means": {
+        "A": "282/1547",
+        "B": "97/2652",
+        "C": "115/476",
+        "P": "41059/92820",
+        "X": "971/9282"
+      },
+      "best_orders": 1,
+      "label_scope": "Observed task means are information ceilings only, not a proposed price order."
+    },
+    {
+      "task": "one_reply",
+      "seed": 202610082000,
+      "types": [
+        "A",
+        "B",
+        "P",
+        "X"
+      ],
+      "permutations": 24,
+      "fixed_losses": {
+        "generic_v2": "751/50490",
+        "semantic_v3": "751/50490"
+      },
+      "best_ranking_loss": "173/16065",
+      "fixed_ranking_headroom": {
+        "generic_v2": "1451/353430",
+        "semantic_v3": "1451/353430"
+      },
+      "diagnostic_best_order": [
+        "X",
+        "A",
+        "P",
+        "B"
+      ],
+      "task_means": {
+        "A": "353/8415",
+        "B": "0",
+        "P": "71/1785",
+        "X": "1222/19635"
+      },
+      "best_orders": 1,
+      "label_scope": "Observed task means are information ceilings only, not a proposed price order."
+    },
+    {
+      "task": "one_reply",
+      "seed": 202610082001,
+      "types": [
+        "A",
+        "B",
+        "P",
+        "X"
+      ],
+      "permutations": 24,
+      "fixed_losses": {
+        "generic_v2": "1/255",
+        "semantic_v3": "1/255"
+      },
+      "best_ranking_loss": "2/595",
+      "fixed_ranking_headroom": {
+        "generic_v2": "1/1785",
+        "semantic_v3": "1/1785"
+      },
+      "diagnostic_best_order": [
+        "B",
+        "P",
+        "A",
+        "X"
+      ],
+      "task_means": {
+        "A": "1/119",
+        "B": "19/476",
+        "P": "1/85",
+        "X": "0"
+      },
+      "best_orders": 1,
+      "label_scope": "Observed task means are information ceilings only, not a proposed price order."
+    },
+    {
+      "task": "one_reply",
+      "seed": 202610082002,
+      "types": [
+        "A",
+        "B",
+        "P",
+        "X"
+      ],
+      "permutations": 24,
+      "fixed_losses": {
+        "generic_v2": "56/935",
+        "semantic_v3": "56/935"
+      },
+      "best_ranking_loss": "26/2805",
+      "fixed_ranking_headroom": {
+        "generic_v2": "142/2805",
+        "semantic_v3": "142/2805"
+      },
+      "diagnostic_best_order": [
+        "P",
+        "A",
+        "B",
+        "X"
+      ],
+      "task_means": {
+        "A": "52/935",
+        "B": "0",
+        "P": "112/935",
+        "X": "0"
+      },
+      "best_orders": 2,
+      "label_scope": "Observed task means are information ceilings only, not a proposed price order."
+    },
+    {
+      "task": "one_reply",
+      "seed": 202610082003,
+      "types": [
+        "A",
+        "B",
+        "P",
+        "X"
+      ],
+      "permutations": 24,
+      "fixed_losses": {
+        "generic_v2": "59/6120",
+        "semantic_v3": "59/6120"
+      },
+      "best_ranking_loss": "1/255",
+      "fixed_ranking_headroom": {
+        "generic_v2": "7/1224",
+        "semantic_v3": "7/1224"
+      },
+      "diagnostic_best_order": [
+        "A",
+        "B",
+        "P",
+        "X"
+      ],
+      "task_means": {
+        "A": "3391/42840",
+        "B": "59/2040",
+        "P": "2/85",
+        "X": "0"
+      },
+      "best_orders": 1,
+      "label_scope": "Observed task means are information ceilings only, not a proposed price order."
+    },
+    {
+      "task": "one_reply",
+      "seed": 202610082100,
+      "types": [
+        "A",
+        "B",
+        "C",
+        "P",
+        "X"
+      ],
+      "permutations": 120,
+      "fixed_losses": {
+        "generic_v2": "0",
+        "semantic_v3": "0"
+      },
+      "best_ranking_loss": "0",
+      "fixed_ranking_headroom": {
+        "generic_v2": "0",
+        "semantic_v3": "0"
+      },
+      "diagnostic_best_order": [
+        "A",
+        "B",
+        "C",
+        "P",
+        "X"
+      ],
+      "task_means": {
+        "A": "0",
+        "B": "0",
+        "C": "0",
+        "P": "0",
+        "X": "0"
+      },
+      "best_orders": 120,
+      "label_scope": "Observed task means are information ceilings only, not a proposed price order."
+    },
+    {
+      "task": "one_reply",
+      "seed": 202610082101,
+      "types": [
+        "A",
+        "B",
+        "C",
+        "P",
+        "X"
+      ],
+      "permutations": 120,
+      "fixed_losses": {
+        "generic_v2": "541/79560",
+        "semantic_v3": "541/79560"
+      },
+      "best_ranking_loss": "35/5304",
+      "fixed_ranking_headroom": {
+        "generic_v2": "2/9945",
+        "semantic_v3": "2/9945"
+      },
+      "diagnostic_best_order": [
+        "A",
+        "B",
+        "C",
+        "P",
+        "X"
+      ],
+      "task_means": {
+        "A": "509/15912",
+        "B": "437/15912",
+        "C": "437/15912",
+        "P": "1/153",
+        "X": "1/221"
+      },
+      "best_orders": 2,
+      "label_scope": "Observed task means are information ceilings only, not a proposed price order."
+    },
+    {
+      "task": "one_reply",
+      "seed": 202610082102,
+      "types": [
+        "A",
+        "B",
+        "C",
+        "P",
+        "X"
+      ],
+      "permutations": 120,
+      "fixed_losses": {
+        "generic_v2": "7/2040",
+        "semantic_v3": "7/2040"
+      },
+      "best_ranking_loss": "1/408",
+      "fixed_ranking_headroom": {
+        "generic_v2": "1/1020",
+        "semantic_v3": "1/1020"
+      },
+      "diagnostic_best_order": [
+        "X",
+        "A",
+        "B",
+        "C",
+        "P"
+      ],
+      "task_means": {
+        "A": "16/663",
+        "B": "16/663",
+        "C": "1/52",
+        "P": "0",
+        "X": "89/2652"
+      },
+      "best_orders": 2,
+      "label_scope": "Observed task means are information ceilings only, not a proposed price order."
+    },
+    {
+      "task": "one_reply",
+      "seed": 202610082103,
+      "types": [
+        "A",
+        "B",
+        "C",
+        "P",
+        "X"
+      ],
+      "permutations": 120,
+      "fixed_losses": {
+        "generic_v2": "0",
+        "semantic_v3": "0"
+      },
+      "best_ranking_loss": "0",
+      "fixed_ranking_headroom": {
+        "generic_v2": "0",
+        "semantic_v3": "0"
+      },
+      "diagnostic_best_order": [
+        "P",
+        "A",
+        "B",
+        "C",
+        "X"
+      ],
+      "task_means": {
+        "A": "0",
+        "B": "0",
+        "C": "0",
+        "P": "1/221",
+        "X": "0"
+      },
+      "best_orders": 24,
+      "label_scope": "Observed task means are information ceilings only, not a proposed price order."
+    }
+  ],
+  "inputs": {
+    "pair-audit.json": "71c73e21ca77da5d2bb89cfb2647cb784aa0d1da0f8bb1e5987d67d70770e28d",
+    "reply-pair-audit.json": "afd783132f84e54f173bfdfaaaec5490e131294a8e1def922f739ea7c5d64498"
+  },
+  "producer_sha256": "e8f631b27936087f7008c5901d82513235079a42c4301897873b10afcebcf0ce"
+}

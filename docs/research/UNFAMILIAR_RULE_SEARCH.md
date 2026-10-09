@@ -1,5 +1,9 @@
 # Unfamiliar-rule search: interface, controls and cost
 
+The2026-10-09local seed102q-frontier replay and changed mixed-hand custody
+controls are routed through TASK_PREDICTION_DIAGNOSTIC.md/data/qfrontier_20261009.json.
+They explain scoped horizon/stock effects, not strength or a widened classifier.
+
 2026-10-08. Primary search work measures efficiency, stability and rule support,
 not Elo, learned prices or an increasingly strong Chess player. The first
 declared tier3 set uses existing generator seeds7/21, board4/6, bilateral_random,

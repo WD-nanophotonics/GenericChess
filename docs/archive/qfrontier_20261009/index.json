@@ -1,0 +1,402 @@
+{
+  "scope": "Publish only Agent-generated experiment sources, inputs and outputs.\nNo local memo/config/Slack/account logs. Redact only absolute checkout prefixes;\nrecord original and public byte hashes separately, retaining hash-chain meaning.\n",
+  "base_commit": "b89f9aa56a749709375c0801504d02c75dbebcf3",
+  "archive": "evidence.zip",
+  "archive_sha256": "07ad81b969b168aa1ea3f0ec7c71cfa88bece9fe8584c1848b7449afe0859188",
+  "members": [
+    {
+      "path": ".local_agent/qfrontier-20261009/alltype-predictor.json",
+      "original_sha256": "af14b484ab5feadc76593fe341a31faf8a513f76c876a821d199fbcdba32ee91",
+      "public_sha256": "af14b484ab5feadc76593fe341a31faf8a513f76c876a821d199fbcdba32ee91",
+      "bytes": 220454,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/alltype_predictor.py",
+      "original_sha256": "bd58a516b660a157a79741c7c64b1f6555d4c5e29641775ebb62029d98c32c1f",
+      "public_sha256": "bd58a516b660a157a79741c7c64b1f6555d4c5e29641775ebb62029d98c32c1f",
+      "bytes": 4138,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/component-audit.json",
+      "original_sha256": "4955ea94c280a63c380ca223e026502d9af2dbe5b29134963eaf4072d7989adb",
+      "public_sha256": "cd74f5c7a4fe55775ff42239f4162046846477a35db8116fc439bff0c46789f0",
+      "bytes": 1500069,
+      "transformation": "checkout prefix -> ."
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/component_audit.py",
+      "original_sha256": "662c9e2b80ec4744661756dad439b8d2748f9d7dcb775d6cf552852a55c4449b",
+      "public_sha256": "662c9e2b80ec4744661756dad439b8d2748f9d7dcb775d6cf552852a55c4449b",
+      "bytes": 4841,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/decomposition-verification.json",
+      "original_sha256": "7bd7526e22010ae57f563f1372e04ed3224f8a2cb772485da7785f16c28b9c56",
+      "public_sha256": "7bd7526e22010ae57f563f1372e04ed3224f8a2cb772485da7785f16c28b9c56",
+      "bytes": 508,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/frozen-predictor.json",
+      "original_sha256": "8ef24ba9573e404df7d8bd715420c8e3707afd4ff44eed63736f9d54ec51553b",
+      "public_sha256": "8ef24ba9573e404df7d8bd715420c8e3707afd4ff44eed63736f9d54ec51553b",
+      "bytes": 177856,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/frozen_predictor.py",
+      "original_sha256": "283f1a34b8bade2ef1d255958137749c6e3247da899b6ad429f021049656fb4b",
+      "public_sha256": "283f1a34b8bade2ef1d255958137749c6e3247da899b6ad429f021049656fb4b",
+      "bytes": 4304,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/literature-geometry.json",
+      "original_sha256": "8bb2ecfdaa7f81f6c59303e2b88cf871c33eb7cadb7b0c7b065a9c7fee60a21d",
+      "public_sha256": "8bb2ecfdaa7f81f6c59303e2b88cf871c33eb7cadb7b0c7b065a9c7fee60a21d",
+      "bytes": 7419,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/literature_geometry.py",
+      "original_sha256": "363b3dadd8c2161906c59e7a51b4cd10d4afe914809d181175a17654b12ce502",
+      "public_sha256": "363b3dadd8c2161906c59e7a51b4cd10d4afe914809d181175a17654b12ce502",
+      "bytes": 2409,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/mixed-choice.json",
+      "original_sha256": "be8594a2b0272c47dc1a836a47c4ace145025d48b3c69959ea8240b7609a3cea",
+      "public_sha256": "be8594a2b0272c47dc1a836a47c4ace145025d48b3c69959ea8240b7609a3cea",
+      "bytes": 60237,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/mixed_choice.py",
+      "original_sha256": "51f62e01501b4966c74090790ac69465bb1001f5a443b5c3e1931e8985698ebd",
+      "public_sha256": "51f62e01501b4966c74090790ac69465bb1001f5a443b5c3e1931e8985698ebd",
+      "bytes": 5139,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/pair-audit.json",
+      "original_sha256": "71c73e21ca77da5d2bb89cfb2647cb784aa0d1da0f8bb1e5987d67d70770e28d",
+      "public_sha256": "71c73e21ca77da5d2bb89cfb2647cb784aa0d1da0f8bb1e5987d67d70770e28d",
+      "bytes": 474435,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/pair_audit.py",
+      "original_sha256": "1c97e63cb6af56565bff9091587a1a0e68df36c0825a8515f03ee09997f0997b",
+      "public_sha256": "1c97e63cb6af56565bff9091587a1a0e68df36c0825a8515f03ee09997f0997b",
+      "bytes": 2500,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/phase-audit.json",
+      "original_sha256": "5b3bb0e9b9c19bea335729b1713bee359ca2e7fdf960cc64037a20f50f002463",
+      "public_sha256": "5b3bb0e9b9c19bea335729b1713bee359ca2e7fdf960cc64037a20f50f002463",
+      "bytes": 123935,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/phase_audit.py",
+      "original_sha256": "b42698b9d27832504fcc4f8a13a2765ae5ae2ec82bf89204f4ff1de0135c7bae",
+      "public_sha256": "b42698b9d27832504fcc4f8a13a2765ae5ae2ec82bf89204f4ff1de0135c7bae",
+      "bytes": 2952,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/preflight.json",
+      "original_sha256": "f1231c4b8e62bdda617d233484f36cf87ecf368f45f9a08a9fe495cf2ecab4c7",
+      "public_sha256": "f1231c4b8e62bdda617d233484f36cf87ecf368f45f9a08a9fe495cf2ecab4c7",
+      "bytes": 280,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/pv-frontier.json",
+      "original_sha256": "ec36b6c63596167d62f470dec7e2db93c4f1ca84aa85e0e0a833a72d9b0745d7",
+      "public_sha256": "ec36b6c63596167d62f470dec7e2db93c4f1ca84aa85e0e0a833a72d9b0745d7",
+      "bytes": 17007,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/pv_frontier.py",
+      "original_sha256": "4d27da30890d879c542aa8c4a30c7b2b46b23b2ffa0308b7a3859f44080494f3",
+      "public_sha256": "4d27da30890d879c542aa8c4a30c7b2b46b23b2ffa0308b7a3859f44080494f3",
+      "bytes": 5700,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/pv_frontier_final.py",
+      "original_sha256": "1a78954dc0dae7b8b95964c8cafff0d1d0b28ac586f2047bd1f44c670f7a9f93",
+      "public_sha256": "1a78954dc0dae7b8b95964c8cafff0d1d0b28ac586f2047bd1f44c670f7a9f93",
+      "bytes": 5791,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/regret-decomposition.json",
+      "original_sha256": "f2ca926511906e3b5a491c24b21e6be7073aefdc309aed6086c0f3b16fe5afed",
+      "public_sha256": "f2ca926511906e3b5a491c24b21e6be7073aefdc309aed6086c0f3b16fe5afed",
+      "bytes": 3767,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/reply-analysis.json",
+      "original_sha256": "be7e0e1ebc57309910d237056c74f4e4884d0b91a552b394730d86657c838b03",
+      "public_sha256": "be7e0e1ebc57309910d237056c74f4e4884d0b91a552b394730d86657c838b03",
+      "bytes": 4247835,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/reply-declaration.json",
+      "original_sha256": "1f6a01fd4ee8edd80c767848844a90ec5986ae70b276e2a4147c1732db92dde3",
+      "public_sha256": "fe57495e577e8aec1dba4d3ae087928d80367e8b554d3e552a522d4aa4827ea8",
+      "bytes": 2410,
+      "transformation": "checkout prefix -> ."
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/reply-pair-audit.json",
+      "original_sha256": "afd783132f84e54f173bfdfaaaec5490e131294a8e1def922f739ea7c5d64498",
+      "public_sha256": "afd783132f84e54f173bfdfaaaec5490e131294a8e1def922f739ea7c5d64498",
+      "bytes": 461153,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/reply-support-audit.json",
+      "original_sha256": "9bd222bfbb4b718e0fb67ea1253693c6e4014756b8b39c34b88b0a0bd7e7da39",
+      "public_sha256": "9bd222bfbb4b718e0fb67ea1253693c6e4014756b8b39c34b88b0a0bd7e7da39",
+      "bytes": 77729,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/reply-task.json",
+      "original_sha256": "df20768528f0b9925601862870838ff3155b58f223c14551665ab3bf493b7e94",
+      "public_sha256": "df20768528f0b9925601862870838ff3155b58f223c14551665ab3bf493b7e94",
+      "bytes": 4184867,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/reply8-analysis.json",
+      "original_sha256": "8cbdb240965a6186f2f6ee0741d6999e18a4e9c8900e058c73140d2ecf9f15ff",
+      "public_sha256": "8cbdb240965a6186f2f6ee0741d6999e18a4e9c8900e058c73140d2ecf9f15ff",
+      "bytes": 7822180,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/reply8-declaration.json",
+      "original_sha256": "08a012fce14157f43c2ab7b692a3e53c2a51ed07816f647a5f5aa791ce22ea6e",
+      "public_sha256": "08a012fce14157f43c2ab7b692a3e53c2a51ed07816f647a5f5aa791ce22ea6e",
+      "bytes": 2562,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/reply8-task.json",
+      "original_sha256": "79510ecd7b1f9ef992f20c69a010ccdf38936674e0ccd19f7d5a424436f1dd6c",
+      "public_sha256": "79510ecd7b1f9ef992f20c69a010ccdf38936674e0ccd19f7d5a424436f1dd6c",
+      "bytes": 7755645,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/reply8_analysis.py",
+      "original_sha256": "b797736df7753fb663bfbacc50c0b1261bb16cb31b3a03d56500c701c884ae46",
+      "public_sha256": "b797736df7753fb663bfbacc50c0b1261bb16cb31b3a03d56500c701c884ae46",
+      "bytes": 2915,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/reply8_task.py",
+      "original_sha256": "fe9f1172f5d351f82e4cf83c1b3df39d18946a0d43f14c13d6728b7258a03013",
+      "public_sha256": "fe9f1172f5d351f82e4cf83c1b3df39d18946a0d43f14c13d6728b7258a03013",
+      "bytes": 5818,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/reply_analysis.py",
+      "original_sha256": "206aab4ddfcd0c5ab106bd3d258d6442d7f9b8c5560ab07604a32b5680c6a042",
+      "public_sha256": "206aab4ddfcd0c5ab106bd3d258d6442d7f9b8c5560ab07604a32b5680c6a042",
+      "bytes": 2878,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/reply_pair_audit.py",
+      "original_sha256": "5060dcec48d36108dcde7e671ef0e7b681bc436457df6793ffdb21c939ad6fe6",
+      "public_sha256": "5060dcec48d36108dcde7e671ef0e7b681bc436457df6793ffdb21c939ad6fe6",
+      "bytes": 2816,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/reply_support_audit.py",
+      "original_sha256": "a068d593acb47c9d3677ec0d57876de092734c0ad04a03f92e8e1a85cf78835e",
+      "public_sha256": "a068d593acb47c9d3677ec0d57876de092734c0ad04a03f92e8e1a85cf78835e",
+      "bytes": 4015,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/reply_task.py",
+      "original_sha256": "29d60b9c5d4bfacae8b5957308d8bfe402d35ff172c9c5c4ce837d5ff1f9cc39",
+      "public_sha256": "29d60b9c5d4bfacae8b5957308d8bfe402d35ff172c9c5c4ce837d5ff1f9cc39",
+      "bytes": 5794,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/reproduce_decomposition.py",
+      "original_sha256": "869cc76d9c411aa729262a57b8b952ebeaaafa43186daea1898788cdadbc3d4a",
+      "public_sha256": "869cc76d9c411aa729262a57b8b952ebeaaafa43186daea1898788cdadbc3d4a",
+      "bytes": 1693,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/third-actions.json",
+      "original_sha256": "0f08890482cbd5193090d301df70abd7de34b8dc1820f8cec319c0e1745a3c73",
+      "public_sha256": "0f08890482cbd5193090d301df70abd7de34b8dc1820f8cec319c0e1745a3c73",
+      "bytes": 268619,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/third_actions.py",
+      "original_sha256": "07abd8773e2a0e8fc3016be5023327987409510ea66dae89a4033ad27a466946",
+      "public_sha256": "07abd8773e2a0e8fc3016be5023327987409510ea66dae89a4033ad27a466946",
+      "bytes": 4021,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/transfer-analysis.json",
+      "original_sha256": "2a26dcb0281351193c75fd8922b7f672caa727fefb24fcbc04ca4bb6481face0",
+      "public_sha256": "2a26dcb0281351193c75fd8922b7f672caa727fefb24fcbc04ca4bb6481face0",
+      "bytes": 439737,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/transfer-declaration.json",
+      "original_sha256": "72614503adc0f65a76a3e644f721344c198364ff821f628ca6b8aed9bcd2e096",
+      "public_sha256": "72614503adc0f65a76a3e644f721344c198364ff821f628ca6b8aed9bcd2e096",
+      "bytes": 8841,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/transfer-task.json",
+      "original_sha256": "7c9029ae5811ed23438ac466c7772a73c1be81a441eadfd1d2cf4f999de3e188",
+      "public_sha256": "7c9029ae5811ed23438ac466c7772a73c1be81a441eadfd1d2cf4f999de3e188",
+      "bytes": 896049,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/transfer_analysis.py",
+      "original_sha256": "b6f71dc82a302a2da83b88f2680dca82092a8325942d9a2b77748c169d52f9fc",
+      "public_sha256": "b6f71dc82a302a2da83b88f2680dca82092a8325942d9a2b77748c169d52f9fc",
+      "bytes": 3338,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/qfrontier-20261009/transfer_task.py",
+      "original_sha256": "e2f4087eb359dce2f32dd92c88415f8eaf18a81665a934075ae1b2f63222e2f3",
+      "public_sha256": "e2f4087eb359dce2f32dd92c88415f8eaf18a81665a934075ae1b2f63222e2f3",
+      "bytes": 5922,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/generated6-20261008/coverage.json",
+      "original_sha256": "8b2d54188b9ded320c4591883e9520a30752bd5b20cba5920e0b5e76e862e7fc",
+      "public_sha256": "8b2d54188b9ded320c4591883e9520a30752bd5b20cba5920e0b5e76e862e7fc",
+      "bytes": 383389,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/generated8-20261008/transfer.json",
+      "original_sha256": "a0950e8665a2374f17c323a96f40090c922c31262c4861a2eb7a489655a3ee2d",
+      "public_sha256": "a0950e8665a2374f17c323a96f40090c922c31262c4861a2eb7a489655a3ee2d",
+      "bytes": 387358,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/tasklaw-20261009/common-slot-law.json",
+      "original_sha256": "982152d248d1c7b91cc53dd693f8cdbb9999f5544bb32ecd1d322ca42359e768",
+      "public_sha256": "982152d248d1c7b91cc53dd693f8cdbb9999f5544bb32ecd1d322ca42359e768",
+      "bytes": 3525963,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/leaf-order-20261009/opening-preflight.json",
+      "original_sha256": "78899b1d95425c41965988b1a0dfb6fd97c3a01612e3f255eb5486fc3840fd1e",
+      "public_sha256": "78899b1d95425c41965988b1a0dfb6fd97c3a01612e3f255eb5486fc3840fd1e",
+      "bytes": 438778,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/leaf-order-20261009/exchange-depth3.json",
+      "original_sha256": "3b1018e2ead20127e752aeb3dab4f7aee7d5e51dae13d31496bba7003814d620",
+      "public_sha256": "3b1018e2ead20127e752aeb3dab4f7aee7d5e51dae13d31496bba7003814d620",
+      "bytes": 16917,
+      "transformation": "none"
+    },
+    {
+      "path": ".local_agent/finite-law-20261009/finite_law.py",
+      "original_sha256": "8eba1727832456303eaa36a60a5c8af09af5d0e9d6e9cc3534f7b9d780defb93",
+      "public_sha256": "8eba1727832456303eaa36a60a5c8af09af5d0e9d6e9cc3534f7b9d780defb93",
+      "bytes": 6310,
+      "transformation": "none"
+    }
+  ],
+  "hash_scope": "Embedded experiment hash references name original bytes. Use original/public map for the explicitly redacted declarations; never treat a redacted file as original bytes.",
+  "recovery": "Extract under a separate checkout of base_commit, restoring .local_agent paths. Existing output assertions intentionally refuse overwrite; move retained outputs aside before deliberate reproduction. Do not import operational config. Use current stop flags; for isolated experiments set a local user_paused=false only with user authorization. No schedule/workers included.",
+  "supplements": [
+    {
+      "path": "top_choice_ceiling.py",
+      "sha256": "046c3f56163abe13f7c06f852c92d71afbcb924a3705c5471230b660a787e7c9",
+      "bytes": 3126,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    },
+    {
+      "path": "top-choice-ceiling.json",
+      "sha256": "2a105ba3a5a9f618983f0e0fda4258bd83d33b81c1da85b4ebb8a72461f60508",
+      "bytes": 14248,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    },
+    {
+      "path": "ranking_ceiling.py",
+      "sha256": "e8f631b27936087f7008c5901d82513235079a42c4301897873b10afcebcf0ce",
+      "bytes": 2702,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    },
+    {
+      "path": "ranking-ceiling.json",
+      "sha256": "f4a11bdd5bc2711a89d0104a15e7b6d5e11396fbffcb4539ca6986fe0709169b",
+      "bytes": 13506,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    },
+    {
+      "path": "any_capture_probe.py",
+      "sha256": "70edeb6edb586a702e8124feaa4542dcc0c804212350af17ae2b8b39ca7cb23e",
+      "bytes": 4680,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    },
+    {
+      "path": "any-capture-declaration.json",
+      "sha256": "bcd5099b10fd68e7538bc7a8f59b10fb3fd9db996098fe246a34c6a222d3fa14",
+      "bytes": 1038,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    },
+    {
+      "path": "any-capture-probe.json",
+      "sha256": "2449d3bde2423f11ca2712424abb18c2804c03b203b280ad104629c07e36d305",
+      "bytes": 58943,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    },
+    {
+      "path": "any_capture_controls.py",
+      "sha256": "0f51acbd9992b299625187a0a3fd5da3da3675106fd33ea411f7e55a14d1d10c",
+      "bytes": 3055,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    },
+    {
+      "path": "any-capture-controls.json",
+      "sha256": "4b6b975222b2ccbb1b1ab5bb74e87715222d09358cbf42e840e981955e1844d4",
+      "bytes": 6060,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    }
+  ]
+}

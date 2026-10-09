@@ -1,0 +1,216 @@
+{
+  "scope": "Exposed fixed rule-only task prediction, full populations, reply/check support and local q/custody controls. No new prices, v3 superiority or strength.",
+  "base_commit": "b89f9aa56a749709375c0801504d02c75dbebcf3",
+  "recovery": "docs/archive/qfrontier_20261009/index.json",
+  "archive_sha256": "07ad81b969b168aa1ea3f0ec7c71cfa88bece9fe8584c1848b7449afe0859188",
+  "archive_members": 48,
+  "isolated_recovery_all_hashes_verified": true,
+  "supplements": [
+    {
+      "path": "top_choice_ceiling.py",
+      "sha256": "046c3f56163abe13f7c06f852c92d71afbcb924a3705c5471230b660a787e7c9",
+      "bytes": 3126,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    },
+    {
+      "path": "top-choice-ceiling.json",
+      "sha256": "2a105ba3a5a9f618983f0e0fda4258bd83d33b81c1da85b4ebb8a72461f60508",
+      "bytes": 14248,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    },
+    {
+      "path": "ranking_ceiling.py",
+      "sha256": "e8f631b27936087f7008c5901d82513235079a42c4301897873b10afcebcf0ce",
+      "bytes": 2702,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    },
+    {
+      "path": "ranking-ceiling.json",
+      "sha256": "f4a11bdd5bc2711a89d0104a15e7b6d5e11396fbffcb4539ca6986fe0709169b",
+      "bytes": 13506,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    },
+    {
+      "path": "any_capture_probe.py",
+      "sha256": "70edeb6edb586a702e8124feaa4542dcc0c804212350af17ae2b8b39ca7cb23e",
+      "bytes": 4680,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    },
+    {
+      "path": "any-capture-declaration.json",
+      "sha256": "bcd5099b10fd68e7538bc7a8f59b10fb3fd9db996098fe246a34c6a222d3fa14",
+      "bytes": 1038,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    },
+    {
+      "path": "any-capture-probe.json",
+      "sha256": "2449d3bde2423f11ca2712424abb18c2804c03b203b280ad104629c07e36d305",
+      "bytes": 58943,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    },
+    {
+      "path": "any_capture_controls.py",
+      "sha256": "0f51acbd9992b299625187a0a3fd5da3da3675106fd33ea411f7e55a14d1d10c",
+      "bytes": 3055,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    },
+    {
+      "path": "any-capture-controls.json",
+      "sha256": "4b6b975222b2ccbb1b1ab5bb74e87715222d09358cbf42e840e981955e1844d4",
+      "bytes": 6060,
+      "purpose": "Post-archive descriptive ceiling or non-fitted saturation probe/control; exposed development"
+    }
+  ],
+  "rules": [
+    {
+      "seed": 202610082000,
+      "slots": 145,
+      "immediate": {
+        "generic_v2": "-40433/942480",
+        "semantic_v3": "-40433/942480"
+      },
+      "one_reply": {
+        "generic_v2": "-223/58905",
+        "semantic_v3": "-223/58905"
+      },
+      "reply_zero_slots": 134
+    },
+    {
+      "seed": 202610082001,
+      "slots": 149,
+      "immediate": {
+        "generic_v2": "-355961/1884960",
+        "semantic_v3": "-355961/1884960"
+      },
+      "one_reply": {
+        "generic_v2": "-237/9520",
+        "semantic_v3": "-237/9520"
+      },
+      "reply_zero_slots": 142
+    },
+    {
+      "seed": 202610082002,
+      "slots": 175,
+      "immediate": {
+        "generic_v2": "-1051/7480",
+        "semantic_v3": "-1051/7480"
+      },
+      "one_reply": {
+        "generic_v2": "-1/85",
+        "semantic_v3": "-1/85"
+      },
+      "reply_zero_slots": 144
+    },
+    {
+      "seed": 202610082003,
+      "slots": 145,
+      "immediate": {
+        "generic_v2": "-268571/1884960",
+        "semantic_v3": "-268571/1884960"
+      },
+      "one_reply": {
+        "generic_v2": "-1321/28560",
+        "semantic_v3": "-1321/28560"
+      },
+      "reply_zero_slots": 137
+    },
+    {
+      "seed": 202610082100,
+      "slots": 224,
+      "immediate": {
+        "generic_v2": "-1321/60060",
+        "semantic_v3": "-1321/60060"
+      },
+      "one_reply": {
+        "generic_v2": "0",
+        "semantic_v3": "0"
+      },
+      "reply_zero_slots": 224
+    },
+    {
+      "seed": 202610082101,
+      "slots": 195,
+      "immediate": {
+        "generic_v2": "-1282459/6126120",
+        "semantic_v3": "-1282459/6126120"
+      },
+      "one_reply": {
+        "generic_v2": "-29/2340",
+        "semantic_v3": "-29/2340"
+      },
+      "reply_zero_slots": 185
+    },
+    {
+      "seed": 202610082102,
+      "slots": 245,
+      "immediate": {
+        "generic_v2": "-347/30940",
+        "semantic_v3": "-347/30940"
+      },
+      "one_reply": {
+        "generic_v2": "-59/4420",
+        "semantic_v3": "-59/4420"
+      },
+      "reply_zero_slots": 236
+    },
+    {
+      "seed": 202610082103,
+      "slots": 222,
+      "immediate": {
+        "generic_v2": "-18631/77350",
+        "semantic_v3": "-18631/77350"
+      },
+      "one_reply": {
+        "generic_v2": "-4/1105",
+        "semantic_v3": "-4/1105"
+      },
+      "reply_zero_slots": 221
+    }
+  ],
+  "default_or_product_changes": false,
+  "coverage": {
+    "backgrounds": 136,
+    "slots": 1500,
+    "immediate_cells": 6886,
+    "reply_core_transitions": 199384,
+    "reply_native_controls": 132,
+    "reply_native_control_transitions": 7205
+  },
+  "record_scope": "Exact common-slot counterfactual intervention; equal slots then backgrounds, all zero/missing retained, no route/PV selection or untouched validation claim.",
+  "advisor": "Two complete replies adopted: sample-selection warning and descriptive best-fixed ceiling. Local results reported, not independently run by advisor.",
+  "literature": [
+    {
+      "url": "https://arxiv.org/html/2509.04691",
+      "use": "Evaluator/policy/sample confounding, no fitted prices"
+    },
+    {
+      "url": "https://arxiv.org/html/2605.20229",
+      "use": "Explicit single-color convention versus actual ordinary Bishop enumeration"
+    },
+    {
+      "url": "https://www.chess.com/forum/view/chess-variants/help-why-dont-fairy-chess-pieces-have-values?page=4",
+      "use": "Firsthand empirical context/policy warning, no coefficient import"
+    }
+  ],
+  "verification": {
+    "relevant_regressions_passed": 45,
+    "independent_task_arithmetic_and_hash_assertions": 27665,
+    "exact_saturation_controls": 18,
+    "product_changes": false,
+    "scope": "Existing product execution regressions plus independent retained evidence arithmetic and recovery; no strength validation"
+  },
+  "fixed_ranking_headroom_rules": {
+    "immediate": 7,
+    "one_reply": 6,
+    "total": 8
+  },
+  "saturation_probe": {
+    "replicates": 2,
+    "layouts_per_density": 128,
+    "improved": 1,
+    "worsened": 1,
+    "unchanged": 6,
+    "max_observed_count_error": 0.03751627604166674,
+    "scope": "Default law unchanged; two replicate rankings identical; not confidence/holdout validation"
+  }
+}
