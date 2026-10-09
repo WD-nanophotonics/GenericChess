@@ -85,11 +85,16 @@ Therefore a saturated top-choice metric cannot close the ordering research line.
 These observed-label best orders remain descriptive ceilings, never fitted
 prices or generalization evidence; allzero2100reply remains uninformative.
 
-Raw total and raw capture opportunity have the same64pair signs here. Moving
+Correction after analytical cross-check: raw total and raw capture opportunity
+agree on62/64pair signs. The exceptions are2100C/X and2101P/X; the earlier
+published64/64summary was incorrect, while its original component data were
+intact. Capture-only changes those two choices in the favorable direction on
+this exposed task; it is not equivalent to the unchanged total-opportunity
+predictor. Moving
 from those default-law values to actual projected counts changes some signs;
 count-to-any changes further signs. Any-to-legal-task changes none of the64
 aggregate signs, although numerical means differ. Merely listing quiet/capture
-components will not fix these observed inversions. These stages change multiple
+components does not remove all observed inversions. These stages change multiple
 conditions and are not isolated causal effects.
 
 One non-fitted changed-premise probe tests saturation alone under the SAME
@@ -105,6 +110,20 @@ approximation, not a confidence interval or semantic-equivalence guarantee.
 Default-law saturation alone is therefore not a useful general replacement on
 this cohort. Context/source bias remains a specific unresolved mechanism, not
 permission to tune exposed labels or replace product prices.
+
+A matched2x2continuation separates uniform versus initial ordinary-slot source
+weights and count versus any-capture on identical layouts. Template-source any
+improves5/8immediate pair losses and leaves3unchanged in both replicates. The
+analytical endpoint-count control finds one sampled ordering discrepancy: the
+second2101template-count replicate reverses B/C. Uniform-count orders agree
+with the analytical control; their differences from current prices in2100/2101
+are the real raw-total/capture exceptions above, not sampling errors. The
+earlier local checkpoint's uniform-error attribution was corrected explicitly.
+Both replicates agreeing is still no exact-any probability guarantee. This is an
+adaptive source-law diagnostic; old template/rare-bridge counterexamples stand,
+and no new source distribution, price or default is adopted. Verify any-capture
+probabilities before considering a candidate, then examine temporal transfer
+rather than treating exposed whole-route improvement as deployment evidence.
 
 ## Sparse and counterfactual support
 

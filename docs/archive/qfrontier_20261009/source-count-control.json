@@ -1,0 +1,337 @@
+{
+  "scope": "Analytical endpoint-count controls for the shared-layout source factorial.\nUses existing finite Bernoulli path-union evaluator, numeric floats (not a new\nrational certificate). Source policy changes only the averaging weights. No\nformula fitting; report Monte Carlo order discrepancies rather than hide them.\n",
+  "rules": [
+    {
+      "seed": 202610082000,
+      "analytical_values": {
+        "A": {
+          "uniform": 0.33534722222222224,
+          "template": 0.4556818181818182
+        },
+        "B": {
+          "uniform": 0.31680555555555556,
+          "template": 0.2778125
+        },
+        "P": {
+          "uniform": 0.5842954169379341,
+          "template": 0.45646956010298295
+        },
+        "X": {
+          "uniform": 0.3806199306911892,
+          "template": 0.49783319646661933
+        }
+      },
+      "analytical_orders": {
+        "uniform": [
+          "P",
+          "X",
+          "A",
+          "B"
+        ],
+        "template": [
+          "X",
+          "P",
+          "A",
+          "B"
+        ]
+      },
+      "mc_order_discrepancies": []
+    },
+    {
+      "seed": 202610082001,
+      "analytical_values": {
+        "A": {
+          "uniform": 0.3806199306911892,
+          "template": 0.35306046919389206
+        },
+        "B": {
+          "uniform": 0.5435945129394532,
+          "template": 0.6334203269264915
+        },
+        "P": {
+          "uniform": 0.3159722222222222,
+          "template": 0.37227272727272726
+        },
+        "X": {
+          "uniform": 0.15840277777777778,
+          "template": 0.19715909090909092
+        }
+      },
+      "analytical_orders": {
+        "uniform": [
+          "B",
+          "A",
+          "P",
+          "X"
+        ],
+        "template": [
+          "B",
+          "P",
+          "A",
+          "X"
+        ]
+      },
+      "mc_order_discrepancies": []
+    },
+    {
+      "seed": 202610082002,
+      "analytical_values": {
+        "A": {
+          "uniform": 0.49126761542426217,
+          "template": 0.4846306818181818
+        },
+        "B": {
+          "uniform": 0.4571880086263021,
+          "template": 0.5433865633877841
+        },
+        "P": {
+          "uniform": 0.25423104180230033,
+          "template": 0.35306046919389206
+        },
+        "X": {
+          "uniform": 0.4564532640245226,
+          "template": 0.2998863636363637
+        }
+      },
+      "analytical_orders": {
+        "uniform": [
+          "A",
+          "B",
+          "X",
+          "P"
+        ],
+        "template": [
+          "B",
+          "A",
+          "P",
+          "X"
+        ]
+      },
+      "mc_order_discrepancies": []
+    },
+    {
+      "seed": 202610082003,
+      "analytical_values": {
+        "A": {
+          "uniform": 0.7750301615397136,
+          "template": 0.9074697598544035
+        },
+        "B": {
+          "uniform": 0.2717361111111111,
+          "template": 0.2275
+        },
+        "P": {
+          "uniform": 0.6804342820909288,
+          "template": 0.5790909090909091
+        },
+        "X": {
+          "uniform": 0.3328648376464844,
+          "template": 0.3205681818181818
+        }
+      },
+      "analytical_orders": {
+        "uniform": [
+          "A",
+          "P",
+          "X",
+          "B"
+        ],
+        "template": [
+          "A",
+          "P",
+          "X",
+          "B"
+        ]
+      },
+      "mc_order_discrepancies": []
+    },
+    {
+      "seed": 202610082100,
+      "analytical_values": {
+        "A": {
+          "uniform": 0.9337760730087757,
+          "template": 0.6488565654754639
+        },
+        "B": {
+          "uniform": 0.7873408581316471,
+          "template": 0.8239296967188517
+        },
+        "C": {
+          "uniform": 0.3175053210556507,
+          "template": 0.4213565654754639
+        },
+        "P": {
+          "uniform": 0.7654913866519928,
+          "template": 0.6278045819600424
+        },
+        "X": {
+          "uniform": 0.342559814453125,
+          "template": 0.35974218750000003
+        }
+      },
+      "analytical_orders": {
+        "uniform": [
+          "A",
+          "B",
+          "P",
+          "X",
+          "C"
+        ],
+        "template": [
+          "B",
+          "A",
+          "P",
+          "C",
+          "X"
+        ]
+      },
+      "mc_order_discrepancies": []
+    },
+    {
+      "seed": 202610082101,
+      "analytical_values": {
+        "A": {
+          "uniform": 0.8093620105087758,
+          "template": 0.7765232321421306
+        },
+        "B": {
+          "uniform": 0.5770929491519928,
+          "template": 0.5898879152933757
+        },
+        "C": {
+          "uniform": 0.5186057849228383,
+          "template": 0.5919268779754638
+        },
+        "P": {
+          "uniform": 0.44564575195312506,
+          "template": 0.3185
+        },
+        "X": {
+          "uniform": 0.43204378902912144,
+          "template": 0.32483333333333336
+        }
+      },
+      "analytical_orders": {
+        "uniform": [
+          "A",
+          "B",
+          "C",
+          "P",
+          "X"
+        ],
+        "template": [
+          "A",
+          "C",
+          "B",
+          "X",
+          "P"
+        ]
+      },
+      "mc_order_discrepancies": [
+        {
+          "seed": 20261010,
+          "method": "template_count",
+          "sample_order": [
+            "A",
+            "B",
+            "C",
+            "X",
+            "P"
+          ],
+          "analytical_order": [
+            "A",
+            "C",
+            "B",
+            "X",
+            "P"
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 202610082102,
+      "analytical_values": {
+        "A": {
+          "uniform": 0.307012939453125,
+          "template": 0.26416666666666666
+        },
+        "B": {
+          "uniform": 0.342559814453125,
+          "template": 0.2275
+        },
+        "C": {
+          "uniform": 0.38390625,
+          "template": 0.25783333333333336
+        },
+        "P": {
+          "uniform": 0.1244140625,
+          "template": 0.19716666666666666
+        },
+        "X": {
+          "uniform": 0.9885016405582429,
+          "template": 0.687221248626709
+        }
+      },
+      "analytical_orders": {
+        "uniform": [
+          "X",
+          "C",
+          "B",
+          "A",
+          "P"
+        ],
+        "template": [
+          "X",
+          "A",
+          "C",
+          "B",
+          "P"
+        ]
+      },
+      "mc_order_discrepancies": []
+    },
+    {
+      "seed": 202610082103,
+      "analytical_values": {
+        "A": {
+          "uniform": 0.6778682018816471,
+          "template": 0.28058333333333335
+        },
+        "B": {
+          "uniform": 0.1244140625,
+          "template": 0.19716666666666666
+        },
+        "C": {
+          "uniform": 0.566505126953125,
+          "template": 0.5523333333333333
+        },
+        "P": {
+          "uniform": 0.8945982702076435,
+          "template": 0.9354111474355062
+        },
+        "X": {
+          "uniform": 0.367442626953125,
+          "template": 0.25783333333333336
+        }
+      },
+      "analytical_orders": {
+        "uniform": [
+          "P",
+          "A",
+          "C",
+          "X",
+          "B"
+        ],
+        "template": [
+          "P",
+          "C",
+          "A",
+          "X",
+          "B"
+        ]
+      },
+      "mc_order_discrepancies": []
+    }
+  ],
+  "producer_sha256": "6639ecbfc254eba4595a0abb83572a431cae99080e4e52a4b96386ed3399eeb4"
+}
