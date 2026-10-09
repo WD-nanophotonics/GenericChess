@@ -306,3 +306,15 @@ inference: an external24ply cap does not create a draw, and our uncalibrated ran
 predictor does not supply a justified bootstrap. Rule-defined repetition remains
 a genuine terminal. This source motivates label semantics, not a chess utility
 guarantee or automatic training implementation.
+
+Post-publication trajectory audit: the seven completed game rows contain only
+three distinct seed/opening/action trajectories, with multiplicities3/2/2.
+Thus repeated policy arms are not seven independent return examples. The next
+cheap question is whether a prospectively declared broader rule/opening sample
+supplies varied actual returns at fixed cost. Keep all censored rows and policy
+strata in the denominator; a new pilot must not retroactively extend these12
+games or turn their unknowns into draws. An initial four-rule sample with common
+bounded callers and declared24/48/96ply observation checkpoints can measure
+return availability versus cost, without choosing the best threshold afterward.
+Only use that evidence to decide between terminal supervision and a separately
+declared alternative signal; no fixed sample-size gate or automatic training.
