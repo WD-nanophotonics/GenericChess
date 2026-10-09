@@ -1,0 +1,317 @@
+{
+  "scope": "Archive the predeclared handle-time pilot, preserving all generated outcomes.\nFull-state replay is recovery verification, not independent playing validation.\nAgent-generated sources/rules/results only; no transport or account records.\n",
+  "archive_index": "docs/archive/search_compression_20261009/handle-time-20261010-index.json",
+  "analysis": {
+    "scope": "Describe all predeclared16 handle-time games; unlike-work counters and time overruns remain separate. Ongoing64 is not draw; aborts are unknown. New rules differ from the earlier public-apply batch, so its win count is not a paired implementation-speed ablation.",
+    "summary": {
+      "seconds": 984.741538300179,
+      "plies": 881,
+      "outcomes": {
+        "ongoing64": 10,
+        "frontier_win": 5,
+        "rule_draw": 1
+      },
+      "events": {
+        "ongoing": 10,
+        "checkmate": 5,
+        "repetition": 1
+      },
+      "methods": {
+        "ab": {
+          "calls": 439,
+          "call_seconds": 449.08287590090185,
+          "median_seconds": 1.0222000000067055,
+          "max_seconds": 1.058051100000739,
+          "above1p05": 4,
+          "work_units": "visited alpha-beta nodes",
+          "work": 360273,
+          "completed_depth_counts": {
+            "3": 38,
+            "2": 230,
+            "1": 171
+          },
+          "root_resolution_counts": null
+        },
+        "frontier": {
+          "calls": 442,
+          "call_seconds": 441.05276579828933,
+          "median_seconds": 1.008592349709943,
+          "max_seconds": 1.079993300139904,
+          "above1p05": 8,
+          "work_units": "materialized Core successors",
+          "work": 2277556,
+          "completed_depth_counts": null,
+          "root_resolution_counts": {
+            "None": 436,
+            "1": 4,
+            "-1": 2
+          }
+        }
+      },
+      "cells": [
+        {
+          "seed": 202610082168,
+          "leaf": "unit",
+          "methods": [
+            "ab",
+            "frontier"
+          ],
+          "plies": 64,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "label": "ongoing64",
+          "seconds": 66.25068240007386
+        },
+        {
+          "seed": 202610082168,
+          "leaf": "unit",
+          "methods": [
+            "frontier",
+            "ab"
+          ],
+          "plies": 33,
+          "terminal": {
+            "status": "checkmate",
+            "winner": 0
+          },
+          "label": "frontier_win",
+          "seconds": 33.2912579998374
+        },
+        {
+          "seed": 202610082168,
+          "leaf": "v3",
+          "methods": [
+            "ab",
+            "frontier"
+          ],
+          "plies": 44,
+          "terminal": {
+            "status": "checkmate",
+            "winner": 1
+          },
+          "label": "frontier_win",
+          "seconds": 44.90009870007634
+        },
+        {
+          "seed": 202610082168,
+          "leaf": "v3",
+          "methods": [
+            "frontier",
+            "ab"
+          ],
+          "plies": 30,
+          "terminal": {
+            "status": "repetition",
+            "winner": null
+          },
+          "label": "rule_draw",
+          "seconds": 31.203100299928337
+        },
+        {
+          "seed": 202610082169,
+          "leaf": "unit",
+          "methods": [
+            "ab",
+            "frontier"
+          ],
+          "plies": 62,
+          "terminal": {
+            "status": "checkmate",
+            "winner": 1
+          },
+          "label": "frontier_win",
+          "seconds": 65.00246759969741
+        },
+        {
+          "seed": 202610082169,
+          "leaf": "unit",
+          "methods": [
+            "frontier",
+            "ab"
+          ],
+          "plies": 47,
+          "terminal": {
+            "status": "checkmate",
+            "winner": 0
+          },
+          "label": "frontier_win",
+          "seconds": 49.787259799893945
+        },
+        {
+          "seed": 202610082169,
+          "leaf": "v3",
+          "methods": [
+            "ab",
+            "frontier"
+          ],
+          "plies": 64,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "label": "ongoing64",
+          "seconds": 68.98328209994361
+        },
+        {
+          "seed": 202610082169,
+          "leaf": "v3",
+          "methods": [
+            "frontier",
+            "ab"
+          ],
+          "plies": 25,
+          "terminal": {
+            "status": "checkmate",
+            "winner": 0
+          },
+          "label": "frontier_win",
+          "seconds": 25.84392710030079
+        },
+        {
+          "seed": 202610082170,
+          "leaf": "unit",
+          "methods": [
+            "ab",
+            "frontier"
+          ],
+          "plies": 64,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "label": "ongoing64",
+          "seconds": 70.09774019988254
+        },
+        {
+          "seed": 202610082170,
+          "leaf": "unit",
+          "methods": [
+            "frontier",
+            "ab"
+          ],
+          "plies": 64,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "label": "ongoing64",
+          "seconds": 71.11064410023391
+        },
+        {
+          "seed": 202610082170,
+          "leaf": "v3",
+          "methods": [
+            "ab",
+            "frontier"
+          ],
+          "plies": 64,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "label": "ongoing64",
+          "seconds": 71.93997550010681
+        },
+        {
+          "seed": 202610082170,
+          "leaf": "v3",
+          "methods": [
+            "frontier",
+            "ab"
+          ],
+          "plies": 64,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "label": "ongoing64",
+          "seconds": 72.87604410015047
+        },
+        {
+          "seed": 202610082171,
+          "leaf": "unit",
+          "methods": [
+            "ab",
+            "frontier"
+          ],
+          "plies": 64,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "label": "ongoing64",
+          "seconds": 74.10392110003158
+        },
+        {
+          "seed": 202610082171,
+          "leaf": "unit",
+          "methods": [
+            "frontier",
+            "ab"
+          ],
+          "plies": 64,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "label": "ongoing64",
+          "seconds": 75.61241079960018
+        },
+        {
+          "seed": 202610082171,
+          "leaf": "v3",
+          "methods": [
+            "ab",
+            "frontier"
+          ],
+          "plies": 64,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "label": "ongoing64",
+          "seconds": 75.89824880007654
+        },
+        {
+          "seed": 202610082171,
+          "leaf": "v3",
+          "methods": [
+            "frontier",
+            "ab"
+          ],
+          "plies": 64,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "label": "ongoing64",
+          "seconds": 76.62681990023702
+        }
+      ],
+      "distinct_action_trajectories": 16,
+      "duplicate_multiplicities": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "no_default": true,
+    "no_exposed_fitting": true
+  },
+  "full_state_replay": 881
+}

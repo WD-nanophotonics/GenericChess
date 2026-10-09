@@ -433,3 +433,14 @@ and inventory prerequisites before another shared-input experiment. Existing
 search, Unit and static tables remain cheap comparators; local mate/front/q
 diagnostics do not authorize a refit or establish long-term survival.
 FINITE_SEARCH_COMPRESSION.md and node_prices_20261010 own the exact evidence.
+
+The semantic relation follow-up separates input identifiability from usefulness:
+current hanging counts distinguish five exposed top children but miss silent
+ordinary mating drops in the complete cohort. No fit or feature penalty follows.
+An alternative completion-aware search prototype retains resolved outcomes apart
+from heuristics and preserves full state/history; its512successors are not the
+old512alpha-beta nodes. Initial one-second fresh-rule crosses do not establish
+an affordable advantage. COMPLETION_SEARCH_FEASIBILITY.md owns algorithm/source
+limits, actual costs and the fixed scheduling-sensitivity repeat. Continue with
+one decision-changing attribution/cost question; keep static and installed search
+as cheap comparators, not a mandatory gate before every evaluation candidate.

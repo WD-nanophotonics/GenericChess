@@ -867,3 +867,85 @@ data/hand_check_probe_20261010.json; no evaluation feature is installed.
 Recovery: root-scan-20261010-index.json and hand-discount-20261010-index.json
 under ../archive/search_compression_20261009; both retain generated sources,
 declarations, failures and adverse outputs, excluding private transport records.
+
+
+## Semantic relation and root-order scope (2026-10-10)
+
+On the five previously audited2151ply3 top children, existing semantic
+attacked/defended/hanging counts separate the safe child from four immediate
+loss children, while both current-check booleans remain false. This is input
+separation on exposed labels, not utility or a new evaluator. The legacy
+anchor-escape helper refuses semantic compiled rules and is not substituted.
+The relation authority deliberately means pseudo-capture eligibility, excluding
+own-anchor legality and postconditions; defended is not executable recapture.
+
+The complete275ply hand-law cohort contradicts treating ANY prior-mover hanging
+piece as a mate alarm:49 nonterminal rows with no immediate-loss witness flag,
+three of five loss rows do not flag, and two do. There are204 unique nonterminal
+full-history states and three unique positive states; trajectory duplicates are
+not independent successes. Full relation vectors have no cross-label alias in
+this tiny exposed cohort, which does not establish learnability/generalization.
+Bulk maps agree with point authority on all occupied-square probes. Extraction
+costs over210 distinct full states total0.193687sec for the existing feature
+function versus0.040661sec for two bulk maps alone; these are different outputs,
+not an accepted end-to-end optimization or free learned-input cost.
+Exact producers/results: data/hand_relation_probe_20261010.json and
+hand_relation_cohort_20261010.json; their full-state inputs recover from the
+existing hand-discount archive. All five saved trajectory mate witnesses are
+ordinary A drops; the zero-hanging failures concern future drop service rather
+than a currently attacked actor. Test existing q support, not fitted penalties.
+
+A research-only intervention removes TT best-move priority ONLY from root
+ordering, retaining child ordering, TT lookup/storage, prices and512node budget.
+At the exposed2151ply3 parent v3/flat complete40 rather than8 D2children, but
+still return the same losing D1 action; Unit remains safe fullD2/509nodes.
+Partial child window values remain bounds, not exact whole-root evidence.
+On four new frozen rules2160-2163, openings0/4/8, Unit/v3 crossed with original/
+neutral root order,48calls all completeD2 and24paired choices stay identical.
+Neutral totalnodes3424 versus2873;12pairs change work, none supplies a local
+choice gain. These opening roots are limited diagnostics, not sufficient to
+judge later trajectories. A separately declared16game opening4 factorial of
+Unit/Unit and Unit/v3 under both root-order policies completes397plies,96ply
+external horizon, cold512/q0. Preserve unknown/ongoing and all adverse outcomes;
+no policy default follows. data/root_tt_neutral_probe_20261010.json owns the
+exposed intervention; root-order-transfer-20261010-index.json in
+../archive/search_compression_20261009 routes exact sources/declarations/outputs.
+
+Only two of eight paired trajectories change:2160Unit/v3 first departs atply33
+and goes from ongoing96 to black mate56;2161Unit/v3 departs atply5 and changes
+black mate8 to white mate9. Other paths, including duplicate one-ply wins, stay
+identical. Games cost280.765sec. Auditing all397selected children costs160.700sec,
+with235 distinct full-history states,162 cache hits and23708actual reply
+transitions. Five positive rows contain four unique parents and one duplicate.
+An immediate mating reply alone is not proof of an avoidable root mistake.
+
+|Parent, zero-based game ply|Legal root actions|Actions with next-reply mate|Scope|
+|---|---:|---:|---|
+|2160 neutral Unit/v3,54|1|1|Already locally forced|
+|2161 Unit/Unit,12, both orders|1|1|Duplicate forced parent|
+|2161 original Unit/v3,6|3|3|Already locally forced|
+|2161 neutral Unit/v3,7|126|75|51 alternatives without immediate mating replies|
+|2160 first common departure,33|110|0|No immediate-threat distinction|
+|2161 first common departure,5|132|9|Partial threat support, not whole-game proof|
+
+The six-parent finite diagnostic uses29079public transitions in197.323sec.
+It stops a child at the first mating witness, otherwise exhausts replies; it
+does not claim complete WDL. Twelve matched common-parent calls fix the same
+512/q0/Unit ordering. At2161ply7 all four Unit/v3 original/neutral arms stopD1
+and choose an immediate loss. At both common departures Unit remainsD2;
+v3 original completesD2 while neutral stopsD1, with no immediate loss in the
+selected choices. More partial coverage on one old root does not imply stable
+coverage across roots. Keep the installed orderer and all adverse evidence.
+
+The old-parent ordinary-q1 control also completes: all15 actions and immediate
+loss counts equal savedq0; six previouslyD2 becomeD1. A session checkpoint's
+phrase suggesting changed choices was overbroad; the exact data show none.
+data/hand_drop_q1_probe_20261010.json retains source and comparison qualification.
+The reply-audit producer's docstring promises prior-root audit reuse, but its
+code only caches within the397selected children; reported235/162 counts reflect
+that executed implementation. No earlier results were silently rewritten.
+
+COMPLETION_SEARCH_FEASIBILITY.md records a distinct literature-motivated search
+alternative and real cost comparison, with full-history transitions and separate
+resolved outcomes. It is a scoped research prototype, not an installed evaluator
+or a remedy justified by fitting these exposed immediate-loss labels.

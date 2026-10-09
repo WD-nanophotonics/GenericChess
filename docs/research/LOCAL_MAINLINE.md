@@ -47,9 +47,23 @@ independent price/task questions; do not claim pre-final timings as deployment.
   full selected-reply audits do not support adopting hand=board. At a common
   loss parent Unit completesD2 and avoids loss while both v3 arms stopD1;
   a five-child top-tie audit shows v3 uniquely favors the losing move.
-  Next test one conditional service/safety input versus finite-root coverage
-  at unchanged prices/budgets, rather than refit exposed event labels or
-  universally remove custody discount. FINITE_SEARCH_COMPRESSION.md owns
+  Existing hanging counts miss silent mating drops; q1 keeps all15old choices
+  and losses, with six D2-to-D1 regressions. Root TT-priority omission has no
+  opening choice gain and mixed later completion; retain the installed orderer.
+  A completion-aware full-state research prototype avoids some exposed holes,
+  but32one-second games including a fixed repeat do not establish an economical
+  advantage. Three repeated trajectories change and one draw becomes mate.
+  Existing Core successor handles retain24fixed-work signatures and503complete
+  child states; they remove substantial redundant semantic transitions.48paired
+  inverse-bool signatures also preserve full history on the scoped controls.
+  Fresh2168-2171 common-time handle games give5frontier wins/1true repetition/
+  10ongoing64, with wins confined to2168/2169 and no default adoption.232rectangle
+  child pairs/six fixed-work signatures retain this interface's scoped transfer.
+  Next choose one common-parent completion attribution beyond cheap immediate
+  terminal signal, or conditional drop-service input; preserve adverse old
+  outcomes, full history/terminal semantics and cost conditions. No new fit.
+  COMPLETION_SEARCH_FEASIBILITY.md owns that scoped alternative and cost limits.
+  FINITE_SEARCH_COMPRESSION.md owns
   price/input evidence; UNFAMILIAR_RULE_SEARCH.md owns product behavior.
 
 - Prospective2118/2119 capability transfer has32complete fronts and no common-
@@ -332,6 +346,7 @@ branch backlog or publication gate. Exact operating rules remain in AGENTS.md.
 |Descriptive price ratios and preparation/promotion bias|CROSS_GAME_PRICE_DIAGNOSTIC.md; data/pawn_bias_20261009.json|
 |Exact primitive occupancy, representation and rectangle capability|GEOMETRY_OCCUPANCY.md; data/geometry_occupancy_20261009.json; leaf_order_20261009.json|
 |Search interface, actual-effect qsupport, costs and caps|UNFAMILIAR_RULE_SEARCH.md; data/event_qsearch_20261009.json; rect_search_20261009.json; query_transfer_20261009.json; qfactorial_20261009.json; qeffects_20261008.json; generated6_20261008.json; generated8_20261008.json|
+|Completion-aware search alternative, full-state scope and actual caller costs|COMPLETION_SEARCH_FEASIBILITY.md; data/completion_search_20261010.json; data/handle_time_20261010.json|
 |Retained utility alternatives|TEMPORAL_HAND_SERVICE.md; GOAL_INTERACTION.md; CONTRIBUTION_MODEL.md; JOINT_SERVICE_DIAGNOSTIC.md; CUSTODY_CONTINUATION.md|
 
 Each data index routes exact sources/failures/outputs to its purpose-specific

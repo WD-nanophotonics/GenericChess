@@ -1,0 +1,95 @@
+{
+  "scope": "Archive the predeclared handle-time pilot, preserving all generated outcomes.\nFull-state replay is recovery verification, not independent playing validation.\nAgent-generated sources/rules/results only; no transport or account records.\n",
+  "base_commit": "f95674cee40e1554c7d438e928475c71869925a1",
+  "archive": "docs/archive/search_compression_20261009/handle-time-20261010.zip",
+  "archive_bytes": 2296115,
+  "archive_sha256": "1f2196b72519216a58b915a5d033cdba461995a3fdb27cdc280de5651d5e3388",
+  "members": [
+    {
+      "path": ".local_agent/handle-time-20261010/analysis.json",
+      "bytes": 6771,
+      "sha256": "6a571e5604f2fdebb6246a2973e28c7f9a1e5215b24629ecf5eed8e9cd5fb669"
+    },
+    {
+      "path": ".local_agent/handle-time-20261010/analyze.py",
+      "bytes": 2416,
+      "sha256": "20585446e4dde95ab7b18ca48e99e8f81ff3275f90270873c01c39680fa92716"
+    },
+    {
+      "path": ".local_agent/handle-time-20261010/declaration.json",
+      "bytes": 11638,
+      "sha256": "809d9fbe9638b43d7fae59018cd0d6d9af70fa0beb2609504e5effddecdce6aa"
+    },
+    {
+      "path": ".local_agent/handle-time-20261010/freeze.py",
+      "bytes": 3607,
+      "sha256": "bf5fcabf3b00711da383ca9fa14f595a152f4f7ab9914b88eb818452ba53b5f3"
+    },
+    {
+      "path": ".local_agent/handle-time-20261010/frontier_time.py",
+      "bytes": 5003,
+      "sha256": "93c9fba8109a8e374fffdabbb70847ca8c5429eae6d37e30880371a313e333b0"
+    },
+    {
+      "path": ".local_agent/handle-time-20261010/games.json",
+      "bytes": 47179218,
+      "sha256": "d1002ebbc2ec73b77d6680a724d99ff3f163f7af9c17044e20024da14b670688"
+    },
+    {
+      "path": ".local_agent/handle-time-20261010/games.py",
+      "bytes": 5080,
+      "sha256": "13559105aca187612db602a63b4f67be167da63623577f94fa7393a404013d3f"
+    },
+    {
+      "path": ".local_agent/handle-time-20261010/package-failed-absolute.py",
+      "bytes": 3082,
+      "sha256": "561e32b5ba7506fffb191fd6d9dcae35e7dbe16cd8f385c9358595d281561d38"
+    },
+    {
+      "path": ".local_agent/handle-time-20261010/package-repair.json",
+      "bytes": 440,
+      "sha256": "3767100f9ed0bc66d9108d3f3d315371b24e1e75dd45f322d6daab7ffeb1b44c"
+    },
+    {
+      "path": ".local_agent/handle-time-20261010/package.py",
+      "bytes": 3126,
+      "sha256": "002e30cd2acbf1f948a8707d165e412e3dceb5d1380d76903959869ba5d50388"
+    },
+    {
+      "path": ".local_agent/handle-time-20261010/prospective-rules.json",
+      "bytes": 222772,
+      "sha256": "84e48b101f3a7cf0dfaab54ce432ecc4b65be94fb5371da3d091631e55861e81"
+    },
+    {
+      "path": ".local_agent/handle-time-20261010/rectangle-transfer-declaration.json",
+      "bytes": 3658,
+      "sha256": "8cb4bca9e9db73b76ff381d1f66c58f401270379bbea9cd2d6d9ddec7af6e4c2"
+    },
+    {
+      "path": ".local_agent/handle-time-20261010/rectangle-transfer.json",
+      "bytes": 357987,
+      "sha256": "99fd164e586589bfe9500882a07d926d9cc4b57b342fe9112b6067131d82da1b"
+    },
+    {
+      "path": ".local_agent/handle-time-20261010/rectangle_transfer.py",
+      "bytes": 2885,
+      "sha256": "cb8a0789ed67d4b8b3e8bc099b538819c303c2e3a29fd3a56be8851647e4ce8f"
+    }
+  ],
+  "prerequisites": [
+    {
+      "path": "docs/archive/search_compression_20261009/completion-search-20261010.zip",
+      "sha256": "5bb46f7788042cfe719cea869cd04d7ffb10324dfba93cc8015520aa0b6b07de"
+    }
+  ],
+  "verification": {
+    "member_hashes": 14,
+    "full_game_states": 881
+  },
+  "qualifications": [
+    "No independent selected-reply audit for this batch; terminal events alone do not identify avoidable errors",
+    "New rule seeds mean previous public-apply games are not paired implementation controls",
+    "Common target is not strict latency; report measured overruns and unlike work units",
+    "No product/default/training change"
+  ]
+}
