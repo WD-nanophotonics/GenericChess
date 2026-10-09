@@ -18,6 +18,24 @@ def test_encoding_failure_never_truncates_existing_evidence(tmp_path):
     with pytest.raises(ValueError,match='collision'):record_value({1:'a','1':'b'})
 
 
+def test_numpy_scalar_metadata_preserves_types_and_large_integer(tmp_path):
+    import numpy as np
+    p = tmp_path / 'evidence.json'
+    value = {'root': np.str_('trajectory/16'), 'count': np.int64(2**60 + 7),
+             'known': np.bool_(True), 'score': np.float32(1.25)}
+    write_record(p, value)
+    assert json.loads(p.read_bytes()) == {
+        'root': 'trajectory/16', 'count': 2**60 + 7,
+        'known': True, 'score': 1.25,
+    }
+    old = p.read_bytes()
+    with pytest.raises(TypeError):
+        write_record(p, {'array': np.asarray([1, 2])})
+    with pytest.raises(ValueError):
+        write_record(p, {'score': np.float32(np.nan)})
+    assert p.read_bytes() == old
+
+
 def test_reader_keeps_complete_old_record_until_new_record_is_ready(tmp_path,monkeypatch):
     import scripts.research_record as records
     p=tmp_path/'evidence.json';p.write_text('{"previous":true}\n')

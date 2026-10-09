@@ -1,0 +1,308 @@
+{
+  "scope": "Reviewed Agent-only evidence supplement; no operational/private/user data.",
+  "archive": "continuation-ranking.zip",
+  "archive_sha256": "4e02154374c2cdea9e60ded090d73fac93f893c4b9016f948f4bc9dd3674d244",
+  "base_commit": "e2fbbe490bbbc64cbb1b166496e24177093b00e3",
+  "members": [
+    {
+      "path": ".local_agent/relabel-20261009/relabel_control.py",
+      "bytes": 5185,
+      "sha256": "d4b6f45d8c428691e28857c2410c3ec949dd07f5d2093c8f0d392c2281ceeb96"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/relabel-control.json",
+      "bytes": 3730,
+      "sha256": "96663e15d515f849aca2c2b4c0ccb89d526a802d450771f41ae88046cc77f003"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/relabel_search.py",
+      "bytes": 3695,
+      "sha256": "9193f71935d22aea0ee2e0b49b203dc2961faf2cacef4766ab1c9c087d3d6cc2"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/relabel-search.json",
+      "bytes": 52352,
+      "sha256": "bdfec33bd43838f309ad94d78c5cf77dddbe36f17ba7a64aac9f38272dc337a3"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/cache_cost.py",
+      "bytes": 2312,
+      "sha256": "2963ac3573e7503fd5eee9ea6ae5c8557b2ff712200263ca3ee41fbd7809b16b"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/cache-cost.json",
+      "bytes": 1747,
+      "sha256": "30f20e12d4ce208d7b3e8de965c7fc7a3b5958357cdc5f60fd6e6d4e49ccdd73"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/cached_callers.py",
+      "bytes": 4074,
+      "sha256": "6b83558ac0304908643dd3502678fa952487b93ef0bd0841cc31052db9288569"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/cached-callers-declaration.json",
+      "bytes": 3183664,
+      "sha256": "1145d1d17e845019ea97deee217a24116b0b7471ee10e0ceca50be9868a3f8d7"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/cached-callers.json",
+      "bytes": 92668,
+      "sha256": "7a066a90157fafdc68b3efb6b82848014c2144243c60ba16411fa9a3868bd8df"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/paired_continuations.py",
+      "bytes": 5232,
+      "sha256": "aeb2eb272385fd22bdd4a0d7e720f42abe78748311227dbeb6e3830e345bbf96"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/paired_continuations_metadata_failure.py",
+      "bytes": 5159,
+      "sha256": "ecda4d40e6bfe298386879bbcefabb9bcaaa61a3560edb1a25fcede660ac8767"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/continuation-metadata-failure.json",
+      "bytes": 318,
+      "sha256": "3ee1d40dd7c016b99b1ae46d78b4e890714d2915778834c30da91dd6bc0fc015"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/continuation-declaration.json",
+      "bytes": 32644,
+      "sha256": "15fe9dc3486fb7a308184942a265a434acc02194c716833374a3137d55629c16"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/paired-continuations.json",
+      "bytes": 953861,
+      "sha256": "2e77a75ce359c3c892483af4369e5714a0788a418601d09ce7cfda279768f5ac"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/replay_continuations.py",
+      "bytes": 4571,
+      "sha256": "85a9a70509b999f7090210047c59e010d0f40168e7d829d683b8a9345d7b554a"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/continuation-replay.json",
+      "bytes": 34196,
+      "sha256": "2d8057cc46faf8b7be4c8ce28ba963c10f4b6d5c756e0a7b488e1389533b3806"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/side_support.py",
+      "bytes": 4890,
+      "sha256": "2c4f726af322ce9919210f40fbe3b913fb22142a620aa90b0a254f9f6292576e"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/side-declaration.json",
+      "bytes": 757,
+      "sha256": "bce0ff3f50003fad88d12ebfdbf0710a759e5b9c63f3c5dac52645139511640f"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/side-support.json",
+      "bytes": 93183,
+      "sha256": "b2e87f66095e9a1b1c031835a570b590415b56c1616e6e349331289e2e307e37"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/balanced_pilot.py",
+      "bytes": 8473,
+      "sha256": "a37a1bc27e00a9d2036b77c015cef54fe31b4d261f591ba72d4776f5ce80f946"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/balanced-pilot-declaration.json",
+      "bytes": 242707,
+      "sha256": "71419ff009c084915655657989d44e651f63ca3b17901044a71b926f71c2629b"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/balanced-pilot-targets.json",
+      "bytes": 1333455,
+      "sha256": "05e8408c742c1daa0e7307da4e9819b90fd3106f8a4cefe1a44eefa838e4913e"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/balanced-pilot-inputs.npz",
+      "bytes": 33100,
+      "sha256": "4ff09c6300f9425ddf1ce6709ef36e5fb9d080811dbb1aa83e4fc606a78d5678"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/balanced-model-aware.json",
+      "bytes": 896451,
+      "sha256": "64ffda79d17cfcf59c297ff727c70bbea4e30b67120d9c4ee121eef5b4265273"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/balanced-model-blind.json",
+      "bytes": 896520,
+      "sha256": "3ff745367ce5503740a675e81b99086350040f2bd22a6bc089a5600f1e73340c"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/balanced-pilot-result.json",
+      "bytes": 6850,
+      "sha256": "54e9ebba864e6adb0b43b93b767eed5d02adb1ae3b597c97cc11fcedc9f2135d"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/balanced_callers.py",
+      "bytes": 4408,
+      "sha256": "11e75cd9aeac9260e4a4534dacba231b4b54c289c2891583b0ba88543b609be8"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/balanced-callers.json",
+      "bytes": 115398,
+      "sha256": "ab819d5d9b410d937260229ad2c1ec8be0928c57452555f76c8f93305e659fab"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/summarize_support.py",
+      "bytes": 3648,
+      "sha256": "2daa81dbbe1e2f862e763f17b4034f61c72505732a7d00d21c8d8feafbc225cf"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/support-summary.json",
+      "bytes": 10450,
+      "sha256": "392caeb724637eb42ebe52cff239d04cb6d88b81aaf9b3cc8812b62371a83800"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking_screen.py",
+      "bytes": 7290,
+      "sha256": "527c1ea75ef14ff5895a61315b359655cc80688214876b2ea1fc3129c493d84f"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking-declaration.json",
+      "bytes": 753621,
+      "sha256": "2ac5a6b5abc98ca5838e55de9e78393f6e7e2c1aaf949a19ce1763ead86da3e5"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking-screen.json",
+      "bytes": 4533245,
+      "sha256": "456f5ac9e4fbb93d8e4a2aefd52489e678292d0822528de9e17fca39653b3196"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking-screen-inputs.npz",
+      "bytes": 106899,
+      "sha256": "47758b93d209fb022b23b3b1e577049d79f3503e9bf0a026e1698c45f837cda5"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking-selection.json",
+      "bytes": 4893,
+      "sha256": "d8af5b29643e3e7f7b75f5f31847bd0e68711e669cb7201117609338b9cd0df7"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking_fit.py",
+      "bytes": 8460,
+      "sha256": "4da69faace1d00be890e362761531368e37b24ad463cb2a623232c6d9a447df3"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking_fit_serialization_failure.py",
+      "bytes": 8349,
+      "sha256": "ea053d449fd641d780a9d44a4ef3e6ce17da796a0c3e286905fc2a22c97d876b"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking-serialization-failure.json",
+      "bytes": 593,
+      "sha256": "945ec53c7a3d8a79ad33bd31a34cc7dbd88dfbec5294809cb649138fc5b848c0"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/recover_ranking_summary.py",
+      "bytes": 3216,
+      "sha256": "b02850d09724b137a3a1398fb216e251a4fc65bdc9aea1ab851ae86dc8d1f350"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking-fit-declaration.json",
+      "bytes": 1051,
+      "sha256": "6ff9a9f93b7672b76e7e1f77bbc5cc88071cd9ff85ad8900e4968853a60cbd24"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking-selected-inputs.npz",
+      "bytes": 825933,
+      "sha256": "8c478e7e376dc730f5f01831c34a4c93a9022f44388eaea8660e74e88eacd047"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking-model-position.json",
+      "bytes": 26885,
+      "sha256": "ef077fea7a9120183342876e8c9b2dbe0652ed41ae945cb47610127efd3d347c"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking-model-position_pairs.json",
+      "bytes": 511330,
+      "sha256": "c97be69500c86a14ac94b3b1c364b249400d2178e00a681c806859425693c30b"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking-result.json",
+      "bytes": 5584,
+      "sha256": "3e01979fe418ea6e08113e70fbcff11ea626274dee06272889a7d0088c5579b0"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking_root_callers.py",
+      "bytes": 4748,
+      "sha256": "2fab09530526df69363cd5e2a535879447267a78910c4a473aa868ff0be8fd94"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking-root-callers.json",
+      "bytes": 30376,
+      "sha256": "4035587f13dde27771dd26e60942954c028d59f8c0004bd1b52415913fd482a9"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking_unit_curve.py",
+      "bytes": 3842,
+      "sha256": "4078c9a69f28b1af4d6b67451a2de2a66c1c2a2684cbfcc416ada59b4032e2d3"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking-unit-curve-declaration.json",
+      "bytes": 1286,
+      "sha256": "1a8840d880c78f9ba8a8eb2c14471b738e1cc97358a7db6316db836629ff0c1b"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking-unit-curve.json",
+      "bytes": 70563,
+      "sha256": "ded22deec992bde349b925c123758d6b653ff810eb276bba5265d2aff205d477"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/analyze_ranking_errors.py",
+      "bytes": 3247,
+      "sha256": "bad238b405e006820fd85a994c9ba80fc49221de569861a23bea627b81de652a"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking-error-analysis.json",
+      "bytes": 5347,
+      "sha256": "2c57d2b10fd0b86260dca31e2ee9938376bc202343577ff415f0b5c07354ddda"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/ranking-summary.json",
+      "bytes": 76422,
+      "sha256": "5a8cfe9596d416dcd2a800a9fd226d816b6898dd445b602e688a5e47dcb79986"
+    },
+    {
+      "path": "generic_chess/learning/nonlinear.py",
+      "bytes": 10015,
+      "sha256": "bf33824fa411d90cb3c8ecfae42045a84eb37abf23b2a9dbb2f60951f85810a1"
+    },
+    {
+      "path": "scripts/position_features.py",
+      "bytes": 4812,
+      "sha256": "2ca7b603ca8befbc862a8d70b2e23985827cbcc11db1281c8005545e55d525e0"
+    },
+    {
+      "path": "scripts/research_record.py",
+      "bytes": 2767,
+      "sha256": "3f1237e0c1d728995f169902aaaad8fb53ac149287aa46875db298b63221612a"
+    },
+    {
+      "path": "tests/product/test_f58_compact_nonlinear.py",
+      "bytes": 14719,
+      "sha256": "674a017c4ba80e6e6f59b948af7c7fb053d7e672b323b967d5f94f120f308857"
+    },
+    {
+      "path": "tests/development/test_research_record.py",
+      "bytes": 5255,
+      "sha256": "9fd5467e8f6fd6ffd93f855704d71d60682a596c98573de20e08c290641a1b9d"
+    }
+  ],
+  "original_archives_unchanged": true,
+  "exclusions": "Memo/session/stop flags, private Slack/account evidence and all user-authored/private inputs/credentials; no existing failures overwritten",
+  "training": "Two fixed side-balanced fits and two fixed conditional linear ranking fits. Rank summary failed after checkpoints; recovered without refit. Executed rank producer is ranking_fit_serialization_failure.py; corrected ranking_fit.py guards existing models.",
+  "recovery": "Separate checkout at base_commit plus exact product/helper snapshots from supplement; extract original evidence.zip and training-supplement.zip for old model dependencies. Never overlay live checkout or import operational state. Recompute saved predictions/metrics without training/search. Saved pure rank models are not numeric search leaves.",
+  "verification": {
+    "isolated_member_hashes": 57,
+    "prior_archive_hashes": 2,
+    "old_model_predictions": 228,
+    "rank_methods_recovered": [
+      "position",
+      "position_pairs"
+    ],
+    "rank_roots_recovered": 14,
+    "no_training_or_search": true
+  }
+}

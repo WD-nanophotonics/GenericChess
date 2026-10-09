@@ -4,11 +4,18 @@ from enum import Enum
 from fractions import Fraction
 import json
 import os
+import sys
 from pathlib import Path
 import tempfile
 import time
 
 def record_value(value):
+    # Research producers already load numpy. Convert scalar metadata without
+    # making numpy a dependency for stdlib-only record consumers; arrays stay
+    # explicit NPZ data rather than silently expanding into JSON.
+    numpy = sys.modules.get('numpy')
+    if numpy is not None and isinstance(value, numpy.generic):
+        return record_value(value.item())
     if is_dataclass(value) and not isinstance(value,type):return record_value(asdict(value))
     if isinstance(value,Enum):return record_value(value.value)
     if isinstance(value,Fraction):return str(value)

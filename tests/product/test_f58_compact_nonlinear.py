@@ -36,6 +36,23 @@ def test_f58_tanh_residual_learns_nonlinear_xor_and_roundtrips():
     assert np.allclose(CompactNonlinearResidual.from_dict(model.to_dict()).predict(features), prediction)
 
 
+def test_f58_repeated_leaf_predictions_preserve_checkpoint_and_rebinding():
+    rng = np.random.default_rng(58019)
+    features = rng.normal(size=(12, 5))
+    model = fit_compact_residual(features, features[:, 0], width=16,
+                                 regularization=1e-4, seed=58019, epochs=12)
+    payload = model.to_dict()
+    expected = model.predict(features)
+    for _ in range(3):
+        individual = np.asarray([model.predict(row[None, :])[0] for row in features])
+        np.testing.assert_allclose(individual, expected, rtol=0, atol=1e-12)
+    assert model.to_dict() == payload
+    rebound = replace(model, output_bias=model.output_bias + 2.0)
+    np.testing.assert_allclose(rebound.predict(features), expected + 2 * model.target_scale)
+    restored = CompactNonlinearResidual.from_dict(payload)
+    np.testing.assert_array_equal(restored.predict(features), expected)
+
+
 def test_f58_rejects_noncompact_width():
     with pytest.raises(ValueError, match="width must be 16 or 32"):
         fit_compact_residual(np.zeros((4, 2)), np.zeros(4), width=64, regularization=0.0, seed=1)

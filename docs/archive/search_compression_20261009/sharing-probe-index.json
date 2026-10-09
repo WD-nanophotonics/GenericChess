@@ -1,0 +1,20 @@
+{
+  "scope": "Agent-generated train-only sharing support probe, no fit or label query; not accuracy evidence.",
+  "archive": "sharing-probe.zip",
+  "archive_sha256": "83a939b1ba437856afef734ea4272ddb9cd7b5319ec3d73d72fe6e8989707ccf",
+  "members": [
+    {
+      "path": ".local_agent/relabel-20261009/sharing_probe.py",
+      "bytes": 3250,
+      "sha256": "156e0b06068d6d5cdbdfbfb5d11c005ad5e4069337b8495472940beb77f7f8c9"
+    },
+    {
+      "path": ".local_agent/relabel-20261009/sharing-probe.json",
+      "bytes": 1303,
+      "sha256": "d718b7f46e76665a827f0a8c8effe1ce50598d51a890b11ec3be0e974100b261"
+    }
+  ],
+  "dependency": "continuation-ranking-index.json",
+  "recovery": "Restore continuation-ranking.zip at checkout root, then this supplement; inspect retained train-only results. No training needed to recover evidence.",
+  "unpack_verified": true
+}

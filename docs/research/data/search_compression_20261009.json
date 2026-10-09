@@ -141,5 +141,28 @@
       ]
     }
   },
-  "decision": "Retain fixed model as scoped diagnostic, no default promotion. Next compare reusable state interaction/support across independent trajectories; no exposed-group tuning."
+  "decision": "Retain fixed model as scoped diagnostic, no default promotion. Next compare reusable state interaction/support across independent trajectories; no exposed-group tuning.",
+  "continuation_ranking_archive_index": "../../archive/search_compression_20261009/continuation-ranking-index.json",
+  "sharing_probe_archive_index": "../../archive/search_compression_20261009/sharing-probe-index.json",
+  "current_comparison": {
+    "frontiers": 24,
+    "complete_children": 1055,
+    "selected_roots": 7,
+    "zero_disagreement_roots": 17,
+    "training_children": 202,
+    "position_and_pairs_dev_report_regrets": [
+      2000,
+      4000,
+      0
+    ],
+    "matched_cost_unit_dev_report_regrets": [
+      0,
+      0,
+      0
+    ],
+    "paired_continuation_moves": 565,
+    "checkmates": 1,
+    "censored_games": 11,
+    "decision": "Defer pair expansion/default promotion. Fresh shared-input premise only; retained report cohorts cannot be refitted."
+  }
 }

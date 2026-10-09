@@ -93,7 +93,40 @@ not true utility or the benefit of learned-leaf search. Existing TT/ordering and
 rule-generated table controls retain adverse finite-budget/tie/cap outcomes.
 Current actionable evidence and exact recovery: FINITE_SEARCH_COMPRESSION.md.
 
+The first executed matched input comparison is now conditional root ranking,
+not a new numerical leaf model. Twelve fresh whole trajectories yield24complete
+frontiers/1055references;7teacher/material-disagreement roots are selected before
+candidate prediction, while17zero roots remain in the denominator. Position and
+Position+relative-pair models share202trainchildren, fixed root-weighted margin
+loss and fit budget. They have identical development/report regrets2000/4000/0;
+relative pairs cost more without a choice benefit. Matched-budget Unit search
+has0regret on those three roots. Keep Core baseline and defer pair expansion or
+rank-score leaf binding. The one mate-scale improvement over greedy and the two
+adverse roots are separate results, not a deployment success. Fresh data and a
+specific sharing/support premise are needed before another candidate fit;
+no retuning or resampling of these report groups. Full conditions/recovery remain
+in FINITE_SEARCH_COMPRESSION.md and its existing data index.
+
 ## Evidence and adoption limits
+
+Next sharing premise: train-only pooling reduces ordered-pair channels from
+32400to3888 and variable columns from5566to1592, retaining the full Position
+input. Four independent actor-loop checks preserve pair totals. This is a
+support/size observation, not an accuracy or live-cost result; pooled geometry
+aliases remain explicit. Compare it only on newly declared whole trajectories,
+with the existing Position and search controls, rather than refit these reports.
+
+Primary-literature scope check: [Ludii/Polygames](https://arxiv.org/abs/2101.09562)
+automatically constructs state/action tensors across games, but its stated
+encoding covers common rather than all state variables and omits some move
+properties. [Fully convolutional transfer](https://arxiv.org/abs/2102.12375)
+studies mapped state/action representations and reports both positive and
+negative transfer. Our inference: spatial sharing or variable board size alone
+does not establish full generated-rule semantics or useful unseen-rule transfer.
+Keep mechanical semantic mapping and explicit history/auxiliary exclusions;
+these papers motivate a scoped fresh comparison, not a new framework or large
+training run. Any proposed single run above one hour still needs dot's necessity
+assessment under the user's current policy.
 
 Historical local documents: `docs/learning_phase1_tdleaf_material.md` and
 `docs/learning_phase1_7_evaluation_leverage.md`. Their protocols/results remain

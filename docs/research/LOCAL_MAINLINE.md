@@ -61,6 +61,15 @@ independent price/task questions; do not claim pre-final timings as deployment.
   Small training is authorized; single runs expected above one hour first need
   dot's necessity assessment, as defined in LOCAL_AGENT.md Budget.
   FINITE_SEARCH_COMPRESSION.md owns the current target, splits and controls.
+  Pure symbolic relabel is now verified; cached public prediction removes repeated
+  parameter conversion with identical outputs/schema. A fixed12game continuation
+  batch has1mate/11censored; longer Unit search avoids the observed threat, so no
+  learned strength claim. The subsequent24root/1055child conditional comparison
+  selects7disagreement roots before prediction. Position and Position+pairs
+  rankers share202trainchildren and have identical adverse dev/report regrets;
+  matched-cost Unit search has0on all3selected dev/report roots. Defer expanding
+  pairs/default promotion; a fresh sharing/support premise must precede another
+  fit, rather than report tuning. Keep all17zero roots and scope/unknown records.
 
 - Full existing common-slot task populations now test fixed price selection:
   immediate top choices help against blind8/8rules, but average pair ordering

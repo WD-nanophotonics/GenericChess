@@ -150,7 +150,8 @@ retain the same zero learned regret and allD2completion, with0.554seconds for
 instrumented costs, not a universal speed ratio. A separate three-repeat228row
 microcontrol finds cached dense multiplication faster than sparse multiplication
 on already-dense inputs; both eliminate repeated tuple-to-array conversion.
-It excludes real Position encoding, legality and search. No product changed.
+It excludes real Position encoding, legality and search. At that checkpoint no
+product changed; the cached public implementation below is a later change.
 
 Six additional lexical legal trajectories2026100910–0915 were frozen after
 training, before new scores, using the same exposed RuleSet and unchanged model.
@@ -162,7 +163,7 @@ target is incomplete, leaving two choices per method UNKNOWN; no extension or
 shallower substitution. All six declared roots remain in the record. This is
 same-rule development evidence, not independent task utility or generic transfer.
 
-The next pure-type-rename control is incomplete. Reusing old public action IDs
+At the preceding checkpoint the pure-type-rename control was incomplete. Reusing old public action IDs
 fails because legacy geometry/pattern IDs depend on sorted type labels. Full
 structural geometry matching can disambiguate identical drop shapes by their
 type-associated patterns, but an explicit replacement pattern still references
@@ -184,3 +185,128 @@ the finite teacher establishes playing benefit.
 Exact scripts, declarations, all caps/partials and reproducible summaries:
 [compression data index](data/search_compression_20261009.json). Private Slack,
 account records, process command lines and live operational state stay local.
+
+
+## Relabel completion, immutable prediction cache and observed continuations
+
+The subsequent control closes the mechanical rename issue without weakening
+semantic action identity. Mapping all lowered legacy patterns first resolves
+replacement IDs absent from the active pattern list; full geometry/actor/pattern
+mapping retains all228inputs bit-for-bit. Six foreign-layout fingerprint guards
+reject accidental rebinding. Twelve actualD2/20000node/5second calls complete;
+all six mapped root actions and scores agree. This is pure symbolic equivalence,
+not transfer to a new capability, rule distribution or arbitrary tie policy.
+The prior failed producers and incomplete-status record remain recoverable.
+
+The public CompactNonlinearResidual now lazily caches five read-only parameter
+arrays from immutable tuples. Arithmetic order, checkpoint payload, fitted
+weights and numerical output are unchanged: all228batch/individual predictions
+are bit-identical. It retains242464additional array bytes for this model.
+Twenty-four balanced one-second Core calls preserve every completedD2 action
+and score. Legacy8250leaves cost6.136seconds, cached19491cost.682seconds,
+743.75 versus35.01microseconds per instrumented leaf including Position input.
+The changed node totals include incomplete next-depth work, not stronger choices.
+Stored-vector conversion-only timing is separate; no universal speed ratio,
+Native change or default evaluator promotion follows.31related regressions pass.
+
+Twelve fixed-model paired continuations from0910–0915 preserve full rules,
+auxiliary state and relevant history, with identicalD3/20000node/1second/q0
+search conditions and48new-ply censoring. They take584.06seconds: one learned-
+owner0 checkmate and eleven ongoing censored games. All565submitted moves and
+final states replay exactly; censored outcomes are not draws. At the losing
+Unit policy's last move onlyD1had completed. Separate five-secondD2diagnostics
+complete for both policies; Unit's new choice avoids the observed drop mate,
+and the learned choice makes that specific reply illegal. This checks one
+observed threat, not all defenses, and does not attribute the win to learning.
+The initial metadata failure after one unrecorded move is retained separately.
+
+## Both-side support and the next conditional input comparison
+
+The original72training children all have side-to-move1. Four declared same-board
+fresh-history counterfactual pairs show two2000-point UnitD2differences while
+the original predictor is effectively unchanged. These are artificial support
+diagnostics, not played states. A new predeclared eight-trajectory7/8ply batch
+has308complete child references in80.15seconds. Two fixed width16fits share
+154training rows,78/76sides, with identical budgets and train-only normalization;
+one uses side channels and one masks them to the train mean. Fits take.437/.536
+seconds. Both have zero regret at all eight roots; the four development/report
+roots already have zero Unit-greedy regret, so they establish no improvement.
+There is no overlap with the original228Position hashes or between new groups;
+this does not establish statistical independence or new-rule generalization.
+
+Thirty-two actual one-second callers all completeD2. Unit, new aware and new
+blind callers have zero finite-teacher regret; the old72model has2000regret at
+0920and zero elsewhere. This does not isolate a causal benefit of side features:
+new sample support changed and both new ablations agree. Zero top-choice regret
+also hides substantial pair-ranking errors. Five children at0925have forced-mate
+teacher scores, making squared-error diagnostics enormous; retain those failures
+alongside separately labeled ordinary-score error, rather than changing the
+primary metric or silently turning extreme values into draws.
+
+The next comparison follows a focused advisor objection: changing input, data
+and loss together cannot identify input usefulness. Freeze whole new trajectories,
+complete their legal frontiers, then screen solely by Unit-greedy/teacher choice
+disagreement before any candidate prediction. Preserve all zero-disagreement and
+UNKNOWN roots. Compare aware Position against that same input plus the retained
+mechanical relative-pair histogram under the same fixed, root-weighted bounded-
+margin ranking objective. The comparison is conditional on this screening domain;
+it cannot establish natural-position improvement. Pure rank scores stay outside
+numeric search leaf evaluation. No deeper-teacher certificate, new workflow gate,
+report-driven resampling or automatic model promotion is required.
+
+
+## Frozen conditional ranking result
+
+Twelve new whole trajectories0940–0951, roots at7and16plies, were fixed before
+teacher scores. All24legal frontiers/1055childD2references complete in332.66
+seconds under the same per-child2048node/1second/q0conditions. Seven roots have
+positive uniform material-greedy teacher regret; seventeen have zero. Conditional
+selection occurs before any candidate prediction and preserves the full screen.
+The whole-trajectory split is6train/3development/3report; selected roots are4/1/2.
+This deliberately screened domain is not natural-position or unseen-rule evidence.
+
+Two fixed small linear rank models use the same202training children, all
+teacher-optimal versus strictly lower pairs, margin1hinge loss, equal root total
+weight,300Adam steps and train-only normalization. Owner0rank is maximized or
+minimized by the root actor. Position has310training-variable columns; Position
+plus the existing ordered relative-pair histogram has5876. Fits take.036/.525
+seconds. A finite-difference check verifies the actual hinge gradient, and four
+pair histograms match a separate ordered-pair loop. Pair counts augment the
+base/promoted/hand/side/auxiliary input, not replace it; history is still omitted.
+All fitted outputs are pure within-root rankings, not calibrated search leaves.
+
+Both inputs achieve zero training-root regret. On the one selected development
+root0946/7both have2000regret, worse than material-greedy1000. On report0949/16
+both have4000regret versus3561.64material-greedy; on0951/16both achieve0versus
+999998000material-greedy. Report those roots separately: a mean dominated by one
+mate-scale root would obscure the adverse ordinary-score case. Different actions
+can still have identical regret; no extra relative-pair choice benefit is observed.
+No restart, sweep, test-driven sampling or default promotion followed.
+
+Sixty-three actual root-only controls regenerate all legal actions/children,
+validate complete action identities and preserve the root state. Across three
+balanced repetitions on seven roots, material/Position/Position+pairs take
+6.952/7.010/7.135seconds total; feature/scoring costs are.008/.037/.158seconds.
+Legal generation and full child transitions dominate these simple callers.
+A separate, explicitly exposed21call Unit search resource curve uses.2seconds,
+the per-root median Position caller budget and1second. At rank-matched budgets,
+Unit has zero regret on all three selected development/report roots, where both
+rank models have2000/4000/0. Training-root advantages do not establish deployment
+benefit. Keep Core as the operational baseline; defer expanding relative pairs.
+
+Post-result algebra decomposes the two retained rank errors into actual current/
+base board and pair contributions, preserving promotion action identity. It does
+not establish that novel or ignored training-constant channels caused the errors.
+The shared record writer now handles already-loaded NumPy scalar metadata without
+adding NumPy to stdlib-only consumers; arrays remain explicit NPZ data. Nine
+atomicity/type/nonfinite regressions pass. The rank summary failed on a NumPy
+string after both models were saved and verified; it was recovered from those
+checkpoints without refitting. The original failed producer and exact fit times
+remain archived, and the corrected producer refuses an existing-model rerun.
+
+Decision: no relative-pair expansion or rank-model leaf binding is justified by
+this batch. Retain the conditional comparison and its adverse outcomes, then
+choose a changed data/parameter-sharing premise with a fresh declaration rather
+than tune these report groups. This narrows this prototype, not all interaction
+models or generic learning. The ordinary zero-headroom roots, forced-mate values,
+legacy caps and all censored continuations remain available in the same index.

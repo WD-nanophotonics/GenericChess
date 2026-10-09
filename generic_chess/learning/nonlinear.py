@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from functools import cached_property
 
 import numpy as np
 
@@ -101,11 +102,24 @@ class CompactNonlinearResidual:
     # who made the action and needs a fixed negative sign at every leaf.
     perspective: str = "owner0"
 
+    @cached_property
+    def _prediction_arrays(self) -> tuple[np.ndarray, ...]:
+        # Model parameters are immutable tuples. Reuse their array views for
+        # individual search leaves; keep the public checkpoint schema unchanged.
+        arrays = tuple(np.asarray(value) for value in (
+            self.input_mean, self.input_scale, self.hidden_weights,
+            self.hidden_bias, self.output_weights,
+        ))
+        for array in arrays:
+            array.setflags(write=False)
+        return arrays
+
     def predict(self, features: np.ndarray) -> np.ndarray:
         x = np.asarray(features, dtype=np.float64)
-        normalized = (x - np.asarray(self.input_mean)) / np.asarray(self.input_scale)
-        hidden = np.tanh(normalized @ np.asarray(self.hidden_weights).T + np.asarray(self.hidden_bias))
-        output = hidden @ np.asarray(self.output_weights) + self.output_bias
+        mean, scale, weights, bias, output_weights = self._prediction_arrays
+        normalized = (x - mean) / scale
+        hidden = np.tanh(normalized @ weights.T + bias)
+        output = hidden @ output_weights + self.output_bias
         return output * self.target_scale
 
     def to_dict(self) -> dict:
