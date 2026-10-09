@@ -195,7 +195,7 @@ def _apply_action_unchecked(
         else:
             new_piece = piece
 
-        if captured is not None:
+        if captured is not None and compiled.capture_disposition == "capture_to_hand":
             hands_side = hands[side].add(captured.base_type_id)
             hands = (hands_side, hands[1]) if side == 0 else (hands[0], hands_side)
 

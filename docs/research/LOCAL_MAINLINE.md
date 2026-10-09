@@ -31,6 +31,20 @@ independent price/task questions; do not claim pre-final timings as deployment.
 
 ## Current evidence and decisions
 
+- Fixed-order internal-Xiangqi leaf pilots separate sensitivity from ordering;
+  finite-source kernels retain different stationary laws and rare-bridge limits.
+  Do not replace the source law or infer calibrated prices from q-horizon choices.
+- The inert-custody pilot repairs legacy remove_from_game execution and removes
+  ghost hand credit in a proved simple no-drop/no-declaration IR subset only.
+  Optional hand-weighted declaration controls exclude broader zero-hand claims;
+  keys/history and default evaluation stay intact. Next: find a discriminating
+  supported price diagnostic beyond trivial openings, not a generic utility proof.
+- Legacy target queries preserve actual callers/work with local43.63% median
+  q2wall reduction;189prospective contexts pass attack equivalence. Frozen
+  paired games are trivial/censored and opening strict-inversion selection is
+  empty. The deferred Native candidate remains unaccepted; the restored baseline
+  module is available. Route exact evidence via leaf_order_20261009.
+
 - Generic-v2 replaces signature-seeded hybrid sampling with exact independent-
   occupancy endpoint-prefix counts for supported Leap/primitive Ray atoms.
   This fixes finite representation noise, not material utility. Standalone
@@ -136,7 +150,7 @@ branch backlog or publication gate. Exact operating rules remain in AGENTS.md.
 |---|---|
 |Semantic opportunity, equivalence, context/task boundaries|SEMANTIC_CAPABILITY.md; data/tasklaw_20261009.json; task_compression_20261009.json; finite_law_20261009.json; preparation_transfer_20261008.json; retention_20261008.json|
 |Descriptive price ratios and preparation/promotion bias|CROSS_GAME_PRICE_DIAGNOSTIC.md; data/pawn_bias_20261009.json|
-|Exact primitive occupancy, representation and rectangle capability|GEOMETRY_OCCUPANCY.md; data/geometry_occupancy_20261009.json|
+|Exact primitive occupancy, representation and rectangle capability|GEOMETRY_OCCUPANCY.md; data/geometry_occupancy_20261009.json; leaf_order_20261009.json|
 |Search interface, actual-effect qsupport, costs and caps|UNFAMILIAR_RULE_SEARCH.md; data/event_qsearch_20261009.json; rect_search_20261009.json; query_transfer_20261009.json; qfactorial_20261009.json; qeffects_20261008.json; generated6_20261008.json; generated8_20261008.json|
 |Retained utility alternatives|TEMPORAL_HAND_SERVICE.md; GOAL_INTERACTION.md; CONTRIBUTION_MODEL.md; JOINT_SERVICE_DIAGNOSTIC.md; CUSTODY_CONTINUATION.md|
 

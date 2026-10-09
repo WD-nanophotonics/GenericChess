@@ -91,7 +91,8 @@ def test_supplied_semantic_rule_can_fix_attack_authority_separately(tmp_path, au
     report = run_rule(tmp_path / 'semantic-attacks.json', ruleset_to_dict(cannon_ruleset()),
                       semantic_candidate=True, attack_authority=authority)
     assert report['declaration']['attack_authority'] == authority
-    assert report['candidate_scope']['candidate'] == 'semantic-opportunity-v3'
+    assert report['candidate_scope']['candidate'] == 'semantic-opportunity-v3-inert-hand'
+    assert report['candidate_scope']['hand_policy'] == 'zero_proved_inert'
     assert report['evaluator_version'] == report['candidate_scope']['candidate']
     assert report['reference']['complete']
     assert all(report['repeat_equal'].values())
@@ -106,7 +107,7 @@ def test_explicit_candidate_does_not_build_unused_default_profile(tmp_path, monk
     report = run_rule(tmp_path / 'candidate-only.json', ruleset_to_dict(cannon_ruleset()),
                       depth=1, semantic_candidate=True, attack_authority='core')
     assert report['complete'] and report['reference']['complete']
-    assert report['evaluator_version'] == 'semantic-opportunity-v3'
+    assert report['evaluator_version'] == 'semantic-opportunity-v3-inert-hand'
     assert report['evaluator_version'] in report['declaration']['evaluator']
 
 
@@ -119,7 +120,7 @@ def test_rectangular_opt_in_candidate_crosses_supported_core_boundary(tmp_path):
         ruleset_to_dict(rectangular_cannon(7, 5)), semantic_candidate=True,
         evaluation_config=config, attack_authority='core')
     assert report['complete'] and report['reference']['complete']
-    assert report['evaluator_version'] == 'semantic-opportunity-v3'
+    assert report['evaluator_version'] == 'semantic-opportunity-v3-inert-hand'
     assert all(cell['complete'] and cell['reference_score_equal'] for cell in report['searches'])
     with pytest.raises(ValueError, match='disabled anchor escape and promotion'):
         run_rule(tmp_path / 'unsupported-dynamics.json',

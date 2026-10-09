@@ -215,12 +215,36 @@ def _semantic_opportunity(compiled, ir, type_id, config):
                 curves=curves, raw=sum(w * c['total'] for w, c in zip(config.density_weights, curves)))
 
 
+def _inert_custody(ir, metadata):
+    """Prove a small known no-reader subset; unknown mechanisms stay unclassified.
+
+    All drop masks must be empty. Remaining patterns must be fully within the
+    simple board projection, so they cannot consume/read hand stock. Optional
+    declarations and auxiliary mechanisms are conservatively excluded. This
+    uses typed IR/support, independent of the legacy inspection handle.
+    """
+    if (ir.declarations or ir.aux_slots or ir.triggers
+            or any(allowed for masks in metadata.drop_allowed.values()
+                   for mask in masks for allowed in mask)):
+        return False
+    for pattern in ir.patterns:
+        geometries = [ir.geometry[g] for g in pattern.geometry_ids]
+        if geometries and all(g.kind == 'drop' for g in geometries):
+            continue  # All masks are false: these patterns cannot execute.
+        if _excluded(pattern, ir):
+            return False
+    return True
+
+
 def build_semantic_opportunity_profile(compiled, config: EvaluationConfig):
     """Return (candidate profile, scope). Explicit use with Evaluator only.
 
     All types use the same projected opportunity law, normalized by the median
     non-anchor type. Hand scale and promotion differences reuse existing table
-    conventions, not evidence for transfer/promotion utility. Dynamic terms
+    conventions, not evidence for transfer/promotion utility. A known simple
+    board-only sublanguage with no drops or declarations has inert custody: its hand
+    coefficient is zero without changing state, history or repetition keys.
+    Dynamic terms
     remain owned by Evaluator and are not repaired by this static candidate.
     """
     if (len(config.density_points) != len(config.density_weights)
@@ -247,7 +271,9 @@ def build_semantic_opportunity_profile(compiled, config: EvaluationConfig):
         else:
             board[pt.type_id] = max(1, min(MAX_STATIC_EVAL, round(
                 config.normal_piece_median_value * rows[pt.type_id]['raw'] / median)))
-    hand = {tid: min(MAX_STATIC_EVAL, round(value * config.hand_weight)) for tid, value in board.items()}
+    inert_hand = _inert_custody(ir, metadata)
+    hand = {tid: 0 if inert_hand else min(MAX_STATIC_EVAL, round(value * config.hand_weight))
+            for tid, value in board.items()}
     gains = {pt.type_id: max(0, max((board[t] for t in pt.promotion_target_ids), default=0) - board[pt.type_id])
              if pt.is_promotable else 0 for pt in piece_types}
     pieces = {}
@@ -261,12 +287,14 @@ def build_semantic_opportunity_profile(compiled, config: EvaluationConfig):
             is_anchor=pt.is_anchor, is_promotable=pt.is_promotable)
     profile = RuleSetEvaluationProfile(
         ruleset_fingerprint=compiled.ruleset_fingerprint, schema_version=1,
-        evaluator_version='semantic-opportunity-v3', config_hash=config_hash(config), piece_profiles=pieces,
+        evaluator_version='semantic-opportunity-v3-inert-hand' if inert_hand else 'semantic-opportunity-v3',
+        config_hash=config_hash(config), piece_profiles=pieces,
         board_value_by_type=board, hand_value_by_base_type=hand, promotion_gain_by_type=gains,
         median_non_anchor_value=_median([board[p.type_id] for p in piece_types if not p.is_anchor]))
-    scope = dict(candidate='semantic-opportunity-v3', complete_legal_mobility=False,
+    scope = dict(candidate=profile.evaluator_version, complete_legal_mobility=False,
+                 hand_policy='zero_proved_inert' if inert_hand else 'legacy_scale_unvalidated',
                  ir_source='compiled_semantic' if semantic_input else 'existing_legacy_lowering',
                  law='Independent square occupancy: empty1-d, friend/enemy d/2; equal owner/source weighting.',
-                 ignored='Anchor safety, future promotion/custody utility; excluded patterns listed per type. Hand scaling, promotion differences, drop diagnostics and dynamic terms retain legacy conventions, not validated semantic utility.',
+                 ignored='Anchor safety, future promotion/custody utility; excluded patterns listed per type. Hand scaling outside the proved-inert subset, promotion differences, drop diagnostics and dynamic terms retain legacy conventions, not validated semantic utility.',
                  types=rows)
     return profile, scope

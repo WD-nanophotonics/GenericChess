@@ -402,6 +402,11 @@ def _validate(condition: bool, message: str, fingerprint: str) -> None:
 
 def build_compile_payload(compiled: CompiledRuleSet) -> dict[str, Any]:
     """Convert a CompiledRuleSet into the plain native payload dict."""
+    _validate(
+        compiled.capture_disposition == "capture_to_hand",
+        "legacy native execution does not support remove_from_game captures",
+        compiled.ruleset_fingerprint,
+    )
     if getattr(compiled, "pass_enabled", False):
         raise NativeUnsupportedRuleError(
             "coordinate-free pass actions are unsupported by native execution"
@@ -544,6 +549,11 @@ def build_compile_payload(compiled: CompiledRuleSet) -> dict[str, Any]:
 
 def compile_native_rules(compiled: CompiledRuleSet) -> NativeCompiledRules:
     """Compile a CompiledRuleSet into the native kernel (one-time cost)."""
+    _validate(
+        compiled.capture_disposition == "capture_to_hand",
+        "legacy native execution does not support remove_from_game captures",
+        compiled.ruleset_fingerprint,
+    )
     if getattr(compiled, "pass_enabled", False):
         raise NativeUnsupportedRuleError(
             "coordinate-free pass actions are unsupported by native execution"

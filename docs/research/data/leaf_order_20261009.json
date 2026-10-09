@@ -1,0 +1,89 @@
+{
+  "scope": "Fixed-order leaf sensitivity, finite source-law bias, Core target-query cost, capture disposition and narrowly inert custody. Exposed development only; no strength/universal utility/Native candidate acceptance.",
+  "recovery": "docs/archive/leaf_order_20261009/index.json",
+  "archive_sha256": "293379396f9818c2561d802b79337303021ced8c046c009bc52615db5eab07da",
+  "validated_product_sources": {
+    "generic_chess/core/attacks.py": "aa4d4916fa1cbf8e369e18d2c5533cace64ad9242d98a41380a5e685d10b8d41",
+    "generic_chess/core/movegen.py": "dd843c7671f6defdde044fdc25c0ba15602820b3aee30d39e128aebf2c1af8b3",
+    "generic_chess/native/compiler.py": "de975ab03038c497bfd1516415d2b4eec596c019574c8ee54ef8e5854758e2d3",
+    "generic_chess/ai/evaluation/semantic.py": "abf5237529873fef30e5e4d9d7120efcc98507e2a979d3647c3f1c89518dba7a",
+    "tests/product/test_legacy_attack_target.py": "72cfc2371efeec93cd7169aa31e513ea5d4306db1d6ef850652d0f2f7925f5b2",
+    "tests/product/test_legacy_capture_disposition.py": "730051629d5792de0de961ea8b124a58473927569a1189a57cdf24fd99251116",
+    "tests/product/test_inert_hand_profile.py": "967bb25ee2c2c564bc65bece761acfd52bdbaf0694b72c097410f1f71aff711f",
+    "tests/development/test_unfamiliar_search.py": "827515b084676ca2ab7f5af31b401233bb42ae98f05228a2daa2f98605777dfb"
+  },
+  "full_active_regression": {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--basetemp",
+      ".local_agent/pytest-leaf-verified"
+    ],
+    "returncode": 0,
+    "elapsed_seconds": 131.6607331999112,
+    "scope": "Final shared IR coefficient and consistent report-version contract; all active test layers. Existing restored Native module available; deferred first-legal Native candidate remains unaccepted.",
+    "tests_collected_and_passed": 1758
+  },
+  "observations": {
+    "xi_fixed_order_calls": 8,
+    "source_aggregate_checks": 3072,
+    "exact_stationarity_checks": 40,
+    "exact_balance_checks": 800,
+    "query_original_positions": 34,
+    "query_original_targets": 1808,
+    "query_matched_q2_calls": 32,
+    "local_median_new_old_wall_ratio": 0.5636772,
+    "final_query_callers": 16,
+    "query_transfer_positions": 189,
+    "query_transfer_targets": 13608,
+    "query_transfer_callers": 16,
+    "equivalent_pattern_order_pairs": 8,
+    "frozen_paired_games": 8,
+    "old_time_caps_unchanged": true,
+    "opening_preflight_seeds": [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107
+    ],
+    "opening_strict_inversion_selection": [],
+    "custody_final_fixed_order_calls": 8,
+    "exchange_frontier_transitions": 433,
+    "exchange_root_captures": 22,
+    "equal_unit_nonzero_v3_exchanges": 23,
+    "exchange_selected_seeds": [
+      102,
+      104
+    ],
+    "exchange_calls": 8
+  },
+  "failure_records": [
+    "source-limit-preflight.json",
+    "scope-preflight.json",
+    "inert-custody-preflight.json",
+    "custody-declaration-preflight.json",
+    "inert-hand-encoding-preflight.json",
+    "regression-preflight-summary.json"
+  ],
+  "current_decisions": [
+    "Keep default evaluation/source law and frozen caps.",
+    "Deploy same-semantics Core target query; local timing only.",
+    "Honor legacy capture_disposition; unsupported legacy Native removal rejects.",
+    "Opt-in zero hand only within known typed IR no-reader subset; preserve keys/history and exclude declarations/unknown mechanisms.",
+    "Further price usefulness needs a discriminating task; changed/tied choices are not gain."
+  ],
+  "source_normalization": {
+    "path": "docs/archive/leaf_order_20261009/test_legacy_attack_target_lf.py",
+    "sha256": "72cfc2371efeec93cd7169aa31e513ea5d4306db1d6ef850652d0f2f7925f5b2",
+    "bytes": 1493,
+    "reason": "LF-only normalization of published test after original CRLF source was tested/archived; behavior unchanged. Original byte pin stays in immutable zip."
+  }
+}

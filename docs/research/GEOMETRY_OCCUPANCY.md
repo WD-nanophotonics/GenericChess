@@ -305,14 +305,14 @@ candidate: inverse-transform the one resolved square and test the original zone.
 No zone cache, new index, altered checkpoint or legality boundary is introduced.
 Six actual lexical-route Xiangqi positions retain all legal actions, both attack
 sets,518 child transitions and identical checkpoint counts in48 alternating
-legal-list pairs. Local median old/new ratios range.9681ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ1.0005; these short
+legal-list pairs. Local median old/new ratios range.9681 to1.0005; these short
 calls support only a modest descriptive cost observation.
 
 Sixteen actual cold public Core D2 calls (initial/one legal action, q0/q2,
 2alternating repetitions, old/inverse) all complete within8192nodes/5seconds,
 retain every non-time decision/work field, restore roots/history/witnesses and
 replay PVs. Unit leaf and ordering prices, disabled dynamics and root tactical
-policy stay fixed. Per-cell paired wall ratios range.9639ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ1.0070, including one
+policy stay fixed. Per-cell paired wall ratios range.9639 to1.0070, including one
 small regression; no general speed, strength, Native or default-price claim.
 
 Recovery: `data/semantic_zones_20261009.json` and
@@ -376,3 +376,64 @@ unlike the earlier mixed-semantics guarded-H witness. This establishes that the
 rectangle candidate table reaches a real exchange. It is sensitivity, not a
 claim that the selected prices or resulting search policy improve. Sources and
 outputs are supplemental files in the same rectangle archive; its zip is unchanged.
+
+## Fixed-order leaves, finite source laws and inert custody
+
+The fixed-order internal-Xiangqi exchange separates leaf prices from ordering:
+unit ordering is fixed for both unit/v3 leaves, Core D2, q0/q2hard8,
+8192nodes/5seconds, two cold repeats per cell. All8calls complete and restore
+roots/PVs. Full-width q0 scores are unit0 versusv3-1428; q2 scores both0.
+The v3 capture/recapture contrast is1428 then-2126. A changed choice or horizon
+response demonstrates sensitivity, not an improvement or a calibrated price.
+
+A declared finite-source model uses the same reward but two proposal kernels:
+uniform24other cells versus uniform local geometry, with blocked proposals
+retaining their probability.3072 finite-horizon aggregate controls pass.
+For the connected20-cell region, exact stationary means differ:93/40=2.325
+versus303/124=2.4435483871;40stationarity and800detailed-balance checks pass.
+A16-empty-guard bridge has expected first entry2097216 versus87384proposals.
+Positive bridges eventually enter; an impossible bridge never does. Longer
+horizons do not identify a natural source law and can restore a rare-bridge
+discontinuity. No new default law or longer compute campaign follows.
+
+Partial-profile controls remain explicit: a temporal transform changes material
+0 to-1604 while auxiliary state changes; a four-cell compound shift keeps1000.
+Their effects are excluded. Nifu/no-mate drops can retain identical candidate
+tables because drop legality/utility is not projected. Reversing compiled
+patterns on Chess/Shogi/internal-Xiangqi/cannon under default and non-dyadic
+density laws gives8exact profile/curve/signature matches; no rounding rewrite.
+
+An actual no-drop/no-declaration8x8 rule exposes inert custody credit: two
+captured victims both have current typeR but promoted basesP/Q; old v3 hands
+give257/900 while the board opportunity values areP286/Q1000/R3286. Under
+matched fixed ordering,8D1/D2 old-scale/zero-hand calls agree with same-evaluator
+full-width minimax. D1 credit disappears with zero-hand; D2 remains-3286.
+This is a known useless-stock coefficient, not a tactical-strength claim.
+
+The opt-in builder now labels a narrowly proved subset
+`semantic-opportunity-v3-inert-hand`: zero hand coefficient only if all drop
+masks are false, declarations/auxiliary mechanisms are absent, and every
+remaining executable pattern is within the known simple board projection.
+Dead all-drop patterns may be ignored only under those false masks. Unknown
+guards/effects retain the legacy, explicitly unvalidated hand scale. A proposed
+legacy-only predicate was rejected locally: the same public lowering gave0
+versus900. The final typed IR/support predicate agrees without the inspection
+handle. Raw board curves/normalization do not change; default evaluation/cache
+does not invoke this opt-in candidate. Real hands, keys and history stay intact.
+
+No-drop alone is insufficient. An actual optional include_hands declaration
+crosses LOSS(score0) to WIN(score1) after the same capture and reply, while
+remove_from_game stays LOSS on the identical physical board. Dot independently
+located this published-baseline dependency; the local Agent executed the
+counterexample and new product controls. Any declaration conservatively excludes
+zero-hand classification. General hand utility remains unresolved.
+
+Exact producers, failed preflights, partial outputs and final controls:
+[leaf/source/custody index](data/leaf_order_20261009.json) and
+[recovery manifest](../archive/leaf_order_20261009/index.json).
+
+Final1758active regressions pass after the shared-IR/version-report correction;
+17affected report/boundary tests also pass separately. The72archive members
+were extracted into an isolated project-local recovery tree and every hash
+matched. Raw private-path failure logs stay local; redacted failures/partial
+outputs are retained publicly, not recast as successful runs.

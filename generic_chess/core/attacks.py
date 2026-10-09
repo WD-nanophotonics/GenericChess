@@ -58,8 +58,35 @@ def pseudo_attacks(position: Position, player: int, compiled: "CompiledRuleSet")
 def is_square_attacked(
     position: Position, square: Square, by_player: int, compiled: "CompiledRuleSet"
 ) -> bool:
+    """Query one target without constructing the complete pseudo-attack map.
+
+    Use the same compiled owner-relative geometry as ``pseudo_attacks``.
+    A ray protects its first occupied square (including a friendly piece),
+    then stops; pinned pieces still attack. This changes query cost only.
+    """
     ensure_ruleset_match(position, compiled)
-    return square in pseudo_attacks(position, by_player, compiled)
+    n = compiled.board_size
+    for idx, piece in enumerate(position.board):
+        if piece is None or piece.owner != by_player:
+            continue
+        tid = piece.current_type_id
+        atoms = compiled.types_by_id[tid].movement_atoms
+        leap_row = compiled.leap_targets[tid][by_player][idx]
+        ray_row = compiled.ray_paths[tid][by_player][idx]
+        for atom_index, atom in enumerate(atoms):
+            if isinstance(atom, LeapAtom):
+                if square in leap_row[atom_index]:
+                    return True
+            else:
+                path = ray_row[atom_index]
+                if square not in path:
+                    continue
+                for target in path:
+                    if target == square:
+                        return True
+                    if position.board[square_to_index(target, n)] is not None:
+                        break
+    return False
 
 
 def is_in_check(position: Position, player: int, compiled: "CompiledRuleSet") -> bool:

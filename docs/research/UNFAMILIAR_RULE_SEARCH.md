@@ -468,7 +468,7 @@ all48 depth2 Core references agree and12 static map pairs are identical.
 Among36 dynamic pairs,21 scores and6 actions change when only attack authority
 changes. Twenty-four calls with the product opt-in evaluators reproduce those
 frozen semantic actions/scores/nodes/depths/PVs. Local Native/Core full-search
-ratios are about0.75–0.83; no universal acceleration follows.
+ratios are about0.75Ã¢â‚¬â€œ0.83; no universal acceleration follows.
 
 Production leaf measurements on27 actual-history states use five rotated-order
 paired batches. Native/Core evaluation ratios are approximately0.35,0.42,0.42
@@ -534,7 +534,7 @@ fails to justify a product switch/default change or a global superiority claim.
 
 A separate equivalent quiet-action copy on those12 now-exposed layouts preserves
 completed scores under the same evaluator/budget, but increases nodes on every
-root, median ratio1.194846 (range1.038410–1.219925). Public binding identities and
+root, median ratio1.194846 (range1.038410Ã¢â‚¬â€œ1.219925). Public binding identities and
 lexical traversal can incur representation cost even when physical effects agree.
 This is an observed efficiency issue, not permission to merge arbitrary moves
 by coordinates/Position: action-dependent history and triggers must remain valid.
@@ -1256,3 +1256,64 @@ frontiers still hit their original5sec caps. Do not claim equal-work timing from
 those capped calls. Native unavailability is a real local execution limitation,
 not scientific completion or a reason to stop Core research.
 Recovery, candidate hash and exact scoped evidence: data/tasklaw_20261009.json.
+
+## Legacy target queries and capture-disposition repair
+
+A frozen8-game development pilot uses4rules (4x4/6x6,seeds7/21), paired colors,
+fixed unit ordering, D2q2hard8,4096nodes/2seconds per move, cold Core. Four small
+games end in1/5plies with opener wins; four6x6 games censor after3/4playedplies.
+Incomplete D2 is never scored as a draw/win. Existing playability filters do
+not ensure informative game length. No population-strength inference follows.
+
+At the four exact capped roots,16new matched4096node/10second q0/q2 calls
+complete;8q0 scores equal full-width references. q0 costs.031-.119seconds,
+q2.663-3.034seconds with568-2588qnodes. The original2second cells stay censored.
+Leaf-dependent tree size differs; this is not price quality. Profiling locates
+legacy legal/attack-query work rather than leaf scoring as the main cost.
+
+Core is_square_attacked now queries the requested compiled target directly
+instead of constructing a full pseudo-attack map. Leap tables and ordered ray
+paths preserve owner frames, current types, pinned pseudo-attacks and protection
+of the first occupied square. The unchanged pseudo_attacks remains the oracle;
+no qsupport/pruning, ordering, terminal, cancellation or budget policy changes.
+On34actual positions,1808all-square/owner queries agree.32cold AB/BA q2caller
+controls retain every nontiming decision/work field and query count; median
+new/old wall ratio.5637 is a local43.63% reduction, not universal performance.
+16final-product callers agree. Constructed8/16board ray cases also agree, with
+speed ratios varying greatly; the blocked16case is only modestly faster.
+
+Prospective fixed seeds100..107 at6x6 yield181actual root successors, no strict
+unit/v3 leaf-delta ordering inversion, so the declared selection remains empty.
+No replacement seeds or tie-split-as-gain interpretation.189actual root/child
+positions pass13608full-map attack queries. On the first4no-immediate-win roots,
+16old/product D3q0/D2q2 calls retain all nontiming fields. Short timings are
+descriptive only. The deferred Native first-legal candidate remains unaccepted; these timings are Core work. The restored baseline Native module is available in the current environment.
+
+The custody pilot also caught a real execution defect: legacy Core always added
+captured base type to hand even when compiled capture_disposition was
+remove_from_game. The shared immutable/search-path transition now honors that
+field. Promoted-base captures for both owners, child hash/reply push-pop and
+root restoration are tested under both dispositions. Legacy Native cannot
+represent removal: its compiler/payload boundary explicitly rejects the rule
+before loading, rather than silently applying capture-to-hand. Semantic Native
+is a separate existing route; no DLL was rebuilt or security control bypassed.
+
+Recovery, frozen caps, failures, actual callers and product source pins:
+[leaf/order/search index](data/leaf_order_20261009.json) and
+[archive manifest](../archive/leaf_order_20261009/index.json).
+
+The separate exchange frontier keeps the same frozen seeds and existing no-root-
+win filter:433actual transitions,22root captures and23equal-unit/nonzero-v3
+capture/recapture witnesses. A declared first-two-rule selection (102/104)
+then runs8fixed-order Core D2q0/q2 calls, all complete; q0 equals full-width
+references. Seed102 retains unit0 versusv3+1273 through q2 with different
+choices. Seed104 retains score0 despite a choice change. This repairs the
+unhelpful demand that an equal-unit baseline first show a strict opening
+inversion; these intended tie splits expose price sensitivity, never gains.
+No seed replacement, budget extension or independent-validation claim.
+
+Final1758active regressions pass after the shared-IR/version-report correction;
+17affected report/boundary tests also pass separately. The72archive members
+were extracted into an isolated project-local recovery tree and every hash
+matched. Raw private-path failure logs stay local; redacted failures/partial
+outputs are retained publicly, not recast as successful runs.
