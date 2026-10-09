@@ -51,7 +51,19 @@ generic interface on unfamiliar rules (familiar-piece mixtures, recombined
 mechanics, existing-generator random rules with simple playability filtering).
 Games are secondary price-hole diagnostics, not a player-strength optimization
 goal. Do not keep adding positional patches or chasing classical/engine Elo.
-Generic NNUE/self-evolution is later work, not a prerequisite or current task.
+Static rule-derived tables remain candidates and cheap baselines, not a required
+predecessor to every evaluation route. Learning/frozen constants and small state
+interaction evaluators may receive literature and low-cost feasibility review;
+this does not authorize large training, extra workers or revive old phase gates.
+Generic means the project's complete generated rule domain across search, state,
+evaluation and learning: preserve promotion, drops, auxiliary and relevant
+history semantics. Scoped prototypes are allowed with explicit exclusions, not
+substitutes for that target. Mechanical rule compilation is allowed; manually
+separate game-specific solutions do not establish generality.
+Choose evaluation routes by useful decisions per cost, with behavioral ablation
+and stated limits; complete explanation or exact probabilities are not admission
+requirements. Finish optional precision work only if its possible outcomes
+change a specific next choice. Current route comparison: EVALUATION_ROUTES.md.
 Use existing frozen outputs and search entries; expose one decision-changing
 mechanism or interface issue at a time. Human-reference agreement is descriptive
 validation, never proof of a universal optimum or permission to fit the formula.

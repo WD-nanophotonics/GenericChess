@@ -121,9 +121,10 @@ are the real raw-total/capture exceptions above, not sampling errors. The
 earlier local checkpoint's uniform-error attribution was corrected explicitly.
 Both replicates agreeing is still no exact-any probability guarantee. This is an
 adaptive source-law diagnostic; old template/rare-bridge counterexamples stand,
-and no new source distribution, price or default is adopted. Verify any-capture
-probabilities before considering a candidate, then examine temporal transfer
-rather than treating exposed whole-route improvement as deployment evidence.
+and no new source distribution, price or default is adopted. Probability checks
+can diagnose a candidate; exactness is not a prerequisite for scoped development.
+Temporal transfer matters to deployment claims, and exposed whole-route
+improvement alone does not establish them.
 
 The original early/late and owner partitions were then applied without changing
 these frozen template-any orders. All eight rules/two replicates retain
@@ -210,7 +211,10 @@ original failures, complete records, exact arithmetic and source/input pins to
 the purpose-specific archive. Original/private and redacted/public hashes are
 separate; a redacted declaration is not byte-identical original evidence.
 
-Keep current defaults. Next research should select one task whose fixed-choice
+Keep current defaults. The2026-10-09direction review prioritizes the comparative
+evaluation-route assessment in EVALUATION_ROUTES.md; full-template precision is
+optional when its alternatives change a concrete choice. Next research may select
+one task whose fixed-choice
 headroom is genuinely decision-changing, or one observed generic interface
 failure, rather than add more uninformative horizons or infer new prices from
 these sparse exposed checks. No new framework, NNUE, Elo target or deployment

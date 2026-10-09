@@ -32,7 +32,18 @@ rule-derived generic prices with cross-game bias explanation, and unfamiliar-rul
 search efficiency/stability/interfaces. Games only diagnose price holes. Frozen
 human references are comparisons, never fitting targets or universal optima.
 Do not expand player patches/reference tiers to chase strength. Explore mixtures,
-recombined mechanics and generated rules; generic NNUE/learning remains later.
+recombined mechanics and generated rules. Static tables are cheap baselines;
+learning/frozen constants and small interaction evaluators are eligible for
+literature and low-cost feasibility comparison, without automatic training.
+Generic targets the complete generated rule domain in search/state/evaluation/
+learning, including promotion, drops, auxiliary state and relevant history.
+Smaller models/samples and declared scoped prototypes are permitted; deleting
+task semantics or hand-writing one solution per game cannot establish completion.
+Use EVALUATION_ROUTES.md for the current candidate comparison. Old learning
+failures restrict their actual premises; do not revive historical phase gates.
+Exact probabilities and complete interpretability are not development admission
+requirements. Optional precision diagnostics must distinguish next choices;
+if either outcome merely invites more subdivisions, reprioritize useful work.
 Earlier practical-player efficiency advice below describes historical context;
 it does not override this current priority. Keep semantic and fair-resource checks.
 

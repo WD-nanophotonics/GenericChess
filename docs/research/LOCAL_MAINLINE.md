@@ -10,11 +10,18 @@ Milestones, tests, consultation and publication are research checkpoints.
    Games diagnose price holes; no human-price fitting, Elo or positional patches.
 2. Efficient, stable search through the generic interface on unfamiliar rules:
    familiar-piece mixtures, recombined mechanics and generated playable rules.
-   Generic NNUE/self-evolution remains later work.
+   Learning-based evaluation candidates may receive low-cost feasibility review;
+   no large training or extra worker follows from that choice.
 
-Current price question: which declared task/context average can be usefully
-compressed, with what lost conditional information? Existing tasks already
-distinguish utility from mobility; inventing another is not the missing bridge.
+Near-term priority: compare rule-generated constants, learned/frozen constants
+and small state-interaction evaluators by supported state domain, useful signal
+and end-to-end cost. EVALUATION_ROUTES.md records the first evidence-based choice.
+Static tables remain a candidate/baseline, not a mandatory predecessor. Generic
+targets the complete generated rule domain; scoped approximations must declare
+missing promotion/drop/auxiliary/history semantics rather than shrink the target.
+Existing conditional tasks distinguish utility from mobility; further template
+precision is optional only when opposite outcomes change a concrete decision.
+Exactness, full explanation and a new task family are not development gates.
 Rule-specific coefficients cannot be treated as shared merely by type label.
 Keep raw quiet/capture components, normalization and approximation scope separate.
 Current search question: which supported semantic mechanism still leaks a
