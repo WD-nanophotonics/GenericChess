@@ -1,0 +1,212 @@
+{
+  "scope": "Final coefficient repair leaves raw geometry/board scale intact on frozen rules.\nCompare actual53e41df builder source against final product, two density laws,\nChess/Shogi/internal-Xiangqi/cannon. This is scope/representation qualification,\nnot evidence for the remaining legacy hand scale or material usefulness.\n",
+  "producer_sha256": "9c82554e5c4089ad67a3fa1c3fa5de9278f901f9dd2b6b0c3734096f58f437d1",
+  "baseline_source_sha256": "7a31b7f17140fab941a7a06200397c0989e81ce9962b1470213fdb1b0315de9a",
+  "rows": [
+    {
+      "rule": "Chess",
+      "law": 0,
+      "board_equal": true,
+      "raw_scope_equal": true,
+      "policy": "legacy_scale_unvalidated",
+      "old_hands": {
+        "K": 0,
+        "P": 126,
+        "N": 689,
+        "B": 900,
+        "R": 1321,
+        "Q": 2221
+      },
+      "new_hands": {
+        "K": 0,
+        "P": 126,
+        "N": 689,
+        "B": 900,
+        "R": 1321,
+        "Q": 2221
+      }
+    },
+    {
+      "rule": "Chess",
+      "law": 1,
+      "board_equal": true,
+      "raw_scope_equal": true,
+      "policy": "legacy_scale_unvalidated",
+      "old_hands": {
+        "K": 0,
+        "P": 176,
+        "N": 860,
+        "B": 900,
+        "R": 1228,
+        "Q": 2128
+      },
+      "new_hands": {
+        "K": 0,
+        "P": 176,
+        "N": 860,
+        "B": 900,
+        "R": 1228,
+        "Q": 2128
+      }
+    },
+    {
+      "rule": "Shogi",
+      "law": 0,
+      "board_equal": true,
+      "raw_scope_equal": true,
+      "policy": "legacy_scale_unvalidated",
+      "old_hands": {
+        "K": 0,
+        "P": 156,
+        "L": 485,
+        "N": 242,
+        "S": 709,
+        "G": 900,
+        "B": 1339,
+        "R": 1941,
+        "TP": 900,
+        "TL": 900,
+        "TN": 900,
+        "TS": 900,
+        "TB": 1962,
+        "TR": 2495
+      },
+      "new_hands": {
+        "K": 0,
+        "P": 156,
+        "L": 485,
+        "N": 242,
+        "S": 709,
+        "G": 900,
+        "B": 1339,
+        "R": 1941,
+        "TP": 900,
+        "TL": 900,
+        "TN": 900,
+        "TS": 900,
+        "TB": 1962,
+        "TR": 2495
+      }
+    },
+    {
+      "rule": "Shogi",
+      "law": 1,
+      "board_equal": true,
+      "raw_scope_equal": true,
+      "policy": "legacy_scale_unvalidated",
+      "old_hands": {
+        "K": 0,
+        "P": 156,
+        "L": 352,
+        "N": 242,
+        "S": 709,
+        "G": 900,
+        "B": 1048,
+        "R": 1407,
+        "TP": 900,
+        "TL": 900,
+        "TN": 900,
+        "TS": 900,
+        "TB": 1670,
+        "TR": 1960
+      },
+      "new_hands": {
+        "K": 0,
+        "P": 156,
+        "L": 352,
+        "N": 242,
+        "S": 709,
+        "G": 900,
+        "B": 1048,
+        "R": 1407,
+        "TP": 900,
+        "TL": 900,
+        "TN": 900,
+        "TS": 900,
+        "TB": 1670,
+        "TR": 1960
+      }
+    },
+    {
+      "rule": "internal_Xiangqi",
+      "law": 0,
+      "board_equal": true,
+      "raw_scope_equal": true,
+      "policy": "legacy_scale_unvalidated",
+      "old_hands": {
+        "G": 0,
+        "A": 51,
+        "E": 212,
+        "H": 1285,
+        "R": 3329,
+        "C": 3199,
+        "S": 515
+      },
+      "new_hands": {
+        "G": 0,
+        "A": 51,
+        "E": 212,
+        "H": 1285,
+        "R": 3329,
+        "C": 3199,
+        "S": 515
+      }
+    },
+    {
+      "rule": "internal_Xiangqi",
+      "law": 1,
+      "board_equal": true,
+      "raw_scope_equal": true,
+      "policy": "legacy_scale_unvalidated",
+      "old_hands": {
+        "G": 0,
+        "A": 63,
+        "E": 193,
+        "H": 1165,
+        "R": 2935,
+        "C": 2738,
+        "S": 635
+      },
+      "new_hands": {
+        "G": 0,
+        "A": 63,
+        "E": 193,
+        "H": 1165,
+        "R": 2935,
+        "C": 2738,
+        "S": 635
+      }
+    },
+    {
+      "rule": "cannon",
+      "law": 0,
+      "board_equal": true,
+      "raw_scope_equal": true,
+      "policy": "zero_proved_inert",
+      "old_hands": {
+        "K": 0,
+        "C": 900
+      },
+      "new_hands": {
+        "K": 0,
+        "C": 0
+      }
+    },
+    {
+      "rule": "cannon",
+      "law": 1,
+      "board_equal": true,
+      "raw_scope_equal": true,
+      "policy": "zero_proved_inert",
+      "old_hands": {
+        "K": 0,
+        "C": 900
+      },
+      "new_hands": {
+        "K": 0,
+        "C": 0
+      }
+    }
+  ],
+  "complete": true
+}

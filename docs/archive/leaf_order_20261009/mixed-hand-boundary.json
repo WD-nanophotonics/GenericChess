@@ -1,0 +1,66 @@
+{
+  "scope": "Conservative hand-scope diagnostic, not another production classifier.\nOne real four-ply sequence captures P and Q into owner0stock. Both rules agree\non this prefix, but only Q can drop in the mixed rule. Compare a counterfactual\nP-stock removal at the reached mixed-rule root, preserving Q stock. Report\none-ply actions/boards only: identity/repetition/history are not quotiented.\nQuestion: does the current all-or-nothing safe subset leave an observable\nper-type scope limitation worth a later narrow study? Do not zero P globally.\n",
+  "producer_sha256": "b32cc06394de446f56c3742dd4f559167bdbb6ab5dd2c1c59cebc5eac3baa137",
+  "cases": [
+    {
+      "mixed": false,
+      "policy": "zero_proved_inert",
+      "hands": [
+        {
+          "counts": [
+            [
+              "P",
+              1
+            ],
+            [
+              "Q",
+              1
+            ]
+          ]
+        },
+        {
+          "counts": []
+        }
+      ],
+      "hand_values": {
+        "K": 0,
+        "R": 0,
+        "P": 0,
+        "Q": 0
+      },
+      "ply": 4
+    },
+    {
+      "mixed": true,
+      "policy": "legacy_scale_unvalidated",
+      "hands": [
+        {
+          "counts": [
+            [
+              "P",
+              1
+            ],
+            [
+              "Q",
+              1
+            ]
+          ]
+        },
+        {
+          "counts": []
+        }
+      ],
+      "hand_values": {
+        "K": 0,
+        "R": 10353,
+        "P": 900,
+        "Q": 788
+      },
+      "ply": 4,
+      "counterfactual_one_ply_action_checks": 18,
+      "same_boards": true,
+      "identity_distinct": true
+    }
+  ],
+  "complete": true
+}

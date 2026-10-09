@@ -1,0 +1,99 @@
+{
+  "scope": "Exact material decomposition at one frozen actual B-captures-X/recapture witness. No independent utility or reference-score validation.",
+  "values": {
+    "B": {
+      "board": 506,
+      "hand": 455,
+      "raw": 2.280144771999783,
+      "curves": [
+        {
+          "density": 0.0,
+          "quiet": 3.0555555555555554,
+          "capture": 0.0,
+          "total": 3.0555555555555554
+        },
+        {
+          "density": 0.125,
+          "quiet": 2.389551798502604,
+          "capture": 0.1706822713216146,
+          "total": 2.5602340698242188
+        },
+        {
+          "density": 0.25,
+          "quiet": 1.8361002604166667,
+          "capture": 0.3060167100694444,
+          "total": 2.142116970486111
+        },
+        {
+          "density": 0.375,
+          "quiet": 1.376554701063368,
+          "capture": 0.41296641031901044,
+          "total": 1.7895211113823786
+        },
+        {
+          "density": 0.5,
+          "quiet": 0.9947916666666666,
+          "capture": 0.4973958333333333,
+          "total": 1.4921875
+        }
+      ]
+    },
+    "X": {
+      "board": 1176,
+      "hand": 1058,
+      "raw": 5.296349860297309,
+      "curves": [
+        {
+          "density": 0.0,
+          "quiet": 7.055555555555555,
+          "capture": 0.0,
+          "total": 7.055555555555555
+        },
+        {
+          "density": 0.125,
+          "quiet": 5.509457058376736,
+          "capture": 0.3935326470269097,
+          "total": 5.9029897054036455
+        },
+        {
+          "density": 0.25,
+          "quiet": 4.253580729166667,
+          "capture": 0.7089301215277778,
+          "total": 4.962510850694445
+        },
+        {
+          "density": 0.375,
+          "quiet": 3.2248772515190973,
+          "capture": 0.9674631754557291,
+          "total": 4.192340426974827
+        },
+        {
+          "density": 0.5,
+          "quiet": 2.3715277777777777,
+          "capture": 1.1857638888888888,
+          "total": 3.5572916666666665
+        }
+      ]
+    }
+  },
+  "actual_prefix": [
+    {
+      "board": 0,
+      "hand": 0,
+      "total": 0
+    },
+    {
+      "board": 1176,
+      "hand": 1058,
+      "total": 2234
+    },
+    {
+      "board": 670,
+      "hand": 603,
+      "total": 1273
+    }
+  ],
+  "delta_board": 670,
+  "delta_hand": 603,
+  "reported_net": 1273
+}

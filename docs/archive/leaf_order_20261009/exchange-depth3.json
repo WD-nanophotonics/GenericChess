@@ -1,0 +1,506 @@
+{
+  "scope": "D3 decision-changing horizon check at first qualifying frozen root102.\nNo D4 extension from this run; independent reference keeps4096/5sec fuse.\nFirst frozen no-win root with actual equal-unit/nonzero-v3 exchange.\nExposed development selection, never population performance. Fix unit ordering,\nCore, cold state/TT,4096nodes/10seconds. D2q0 fullwidth oracle and D2q2hard8;\ndo not extend a capped cell. Report chosen action and actual legal replies.\n",
+  "producer_sha256": "caf82fb525c1ded1967cbc114814ffc4f39f71c19f2317d557d9a0fc3dc2dc4f",
+  "selected_seeds": [
+    102
+  ],
+  "cases": [
+    {
+      "seed": 102,
+      "board_values": {
+        "K": 0,
+        "P": 1191,
+        "X": 1176,
+        "A": 824,
+        "B": 506
+      },
+      "calls": [
+        {
+          "model": "unit",
+          "q": 0,
+          "complete": true,
+          "seconds": 0.09489369997754693,
+          "decision": {
+            "action": {
+              "from_square": {
+                "file": 0,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 4
+              },
+              "promotion_target_id": null
+            },
+            "score": 2000,
+            "principal_variation": [
+              {
+                "from_square": {
+                  "file": 0,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              {
+                "from_square": {
+                  "file": 0,
+                  "rank": 4
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              },
+              {
+                "from_square": {
+                  "file": 2,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 3,
+            "selective_depth": 3,
+            "nodes": 531,
+            "qnodes": 0,
+            "elapsed_seconds": 0.0940000000409782,
+            "tt_probes": 80,
+            "tt_hits": 21,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 56,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.0,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 80,
+            "ordered_moves": 1738,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 81,
+            "legal_generation_seconds": 0.024593600537627935,
+            "evaluation_calls": 451,
+            "evaluation_seconds": 0.0015175980515778065,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 1757,
+            "successor_handles_created": 0,
+            "successors_materialized": 528,
+            "successors_searched": 528,
+            "terminal_results_computed": 528,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 608,
+            "position_key_cache_hits": 528,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          },
+          "reference_q0": {
+            "score": null,
+            "action": null,
+            "scorings": 4097,
+            "cap_failure": "reference cost fuse"
+          }
+        },
+        {
+          "model": "unit",
+          "q": 2,
+          "complete": true,
+          "seconds": 0.8706020000390708,
+          "decision": {
+            "action": {
+              "from_square": {
+                "file": 0,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 4
+              },
+              "promotion_target_id": null
+            },
+            "score": 2000,
+            "principal_variation": [
+              {
+                "from_square": {
+                  "file": 0,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              {
+                "from_square": {
+                  "file": 0,
+                  "rank": 4
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              },
+              {
+                "from_square": {
+                  "file": 2,
+                  "rank": 0
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 1
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 3,
+            "selective_depth": 3,
+            "nodes": 612,
+            "qnodes": 2031,
+            "elapsed_seconds": 0.875,
+            "tt_probes": 82,
+            "tt_hits": 21,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 56,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.0,
+            "qdepth_cutoffs": 476,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 533,
+            "stand_pat_cutoffs": 885,
+            "capture_qactions": 420,
+            "promotion_qactions": 64,
+            "checking_move_qactions": 66,
+            "checking_drop_qactions": 234,
+            "nonchecking_drop_excluded": 1916,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 82,
+            "ordered_moves": 1816,
+            "ordering_seconds": 0.01600000006146729,
+            "legal_generation_calls": 741,
+            "legal_generation_seconds": 0.31263720127753913,
+            "evaluation_calls": 1486,
+            "evaluation_seconds": 0.004994002636522055,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 8313,
+            "successor_handles_created": 0,
+            "successors_materialized": 609,
+            "successors_searched": 609,
+            "terminal_results_computed": 609,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 691,
+            "position_key_cache_hits": 609,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          },
+          "reference_q0": {
+            "score": null,
+            "action": null,
+            "scorings": 4097,
+            "cap_failure": "reference cost fuse"
+          }
+        },
+        {
+          "model": "v3",
+          "q": 0,
+          "complete": true,
+          "seconds": 0.10615150001831353,
+          "decision": {
+            "action": {
+              "from_square": {
+                "file": 5,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 2,
+                "rank": 4
+              },
+              "promotion_target_id": null
+            },
+            "score": 3507,
+            "principal_variation": [
+              {
+                "from_square": {
+                  "file": 5,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              {
+                "from_square": {
+                  "file": 1,
+                  "rank": 5
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              {
+                "from_square": {
+                  "file": 0,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 3,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 3,
+            "selective_depth": 3,
+            "nodes": 550,
+            "qnodes": 0,
+            "elapsed_seconds": 0.10899999993853271,
+            "tt_probes": 83,
+            "tt_hits": 21,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 56,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.0,
+            "qdepth_cutoffs": 0,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 0,
+            "stand_pat_cutoffs": 0,
+            "capture_qactions": 0,
+            "promotion_qactions": 0,
+            "checking_move_qactions": 0,
+            "checking_drop_qactions": 0,
+            "nonchecking_drop_excluded": 0,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 83,
+            "ordered_moves": 1833,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 84,
+            "legal_generation_seconds": 0.02924609906040132,
+            "evaluation_calls": 466,
+            "evaluation_seconds": 0.0015830015763640404,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 1852,
+            "successor_handles_created": 0,
+            "successors_materialized": 547,
+            "successors_searched": 547,
+            "terminal_results_computed": 547,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 630,
+            "position_key_cache_hits": 547,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          },
+          "reference_q0": {
+            "score": null,
+            "action": null,
+            "scorings": 4097,
+            "cap_failure": "reference cost fuse"
+          }
+        },
+        {
+          "model": "v3",
+          "q": 2,
+          "complete": true,
+          "seconds": 1.3449369999580085,
+          "decision": {
+            "action": {
+              "from_square": {
+                "file": 5,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 2,
+                "rank": 4
+              },
+              "promotion_target_id": null
+            },
+            "score": 2552,
+            "principal_variation": [
+              {
+                "from_square": {
+                  "file": 5,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              {
+                "from_square": {
+                  "file": 1,
+                  "rank": 5
+                },
+                "to_square": {
+                  "file": 2,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              },
+              {
+                "from_square": {
+                  "file": 1,
+                  "rank": 1
+                },
+                "to_square": {
+                  "file": 4,
+                  "rank": 4
+                },
+                "promotion_target_id": null
+              }
+            ],
+            "completed_depth": 3,
+            "selective_depth": 3,
+            "nodes": 774,
+            "qnodes": 3193,
+            "elapsed_seconds": 1.3440000000409782,
+            "tt_probes": 87,
+            "tt_hits": 21,
+            "tt_cutoffs": 0,
+            "beta_cutoffs": 52,
+            "evaluation_profile_cache_hit": false,
+            "termination_reason": "completed_depth",
+            "choice_kind": "ACTION",
+            "declaration": null,
+            "time_to_first_legal_action": 0.0,
+            "time_to_first_completed_iteration": 0.01600000006146729,
+            "qdepth_cutoffs": 835,
+            "qsearch_budget_aborts": 0,
+            "qsearch_check_hard_limit_aborts": 0,
+            "in_check_qnodes": 835,
+            "stand_pat_cutoffs": 1304,
+            "capture_qactions": 691,
+            "promotion_qactions": 100,
+            "checking_move_qactions": 109,
+            "checking_drop_qactions": 384,
+            "nonchecking_drop_excluded": 2974,
+            "pvs_null_window_searches": 0,
+            "pvs_researches": 0,
+            "aspiration_fail_low": 0,
+            "aspiration_fail_high": 0,
+            "aspiration_researches": 0,
+            "root_scan_nodes": 0,
+            "root_scan_used_fallback": false,
+            "move_picker_generated": 0,
+            "move_picker_yielded": 0,
+            "move_picker_yielded_by_stage": {},
+            "ordering_calls": 87,
+            "ordered_moves": 1952,
+            "ordering_seconds": 0.0,
+            "legal_generation_calls": 1125,
+            "legal_generation_seconds": 0.48470390285365283,
+            "evaluation_calls": 2341,
+            "evaluation_seconds": 0.007675701752305031,
+            "countermove_hits": 0,
+            "mate_pruning_cutoffs": 0,
+            "legal_actions_generated": 12456,
+            "successor_handles_created": 0,
+            "successors_materialized": 771,
+            "successors_searched": 771,
+            "terminal_results_computed": 771,
+            "terminal_cache_hits": 0,
+            "position_keys_computed": 858,
+            "position_key_cache_hits": 771,
+            "declaration_checks": 0,
+            "declaration_win_options": 0,
+            "declaration_restart_options": 0,
+            "declaration_root_selected": false,
+            "native_legality_calls": 0,
+            "native_legality_fallbacks": 0,
+            "native_legality_operational_failures": 0,
+            "material_change_qactions": 0
+          },
+          "reference_q0": {
+            "score": null,
+            "action": null,
+            "scorings": 4097,
+            "cap_failure": "reference cost fuse"
+          }
+        }
+      ]
+    }
+  ],
+  "complete": true
+}

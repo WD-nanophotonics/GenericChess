@@ -437,3 +437,25 @@ Final1758active regressions pass after the shared-IR/version-report correction;
 were extracted into an isolated project-local recovery tree and every hash
 matched. Raw private-path failure logs stay local; redacted failures/partial
 outputs are retained publicly, not recast as successful runs.
+
+A final8-pair transfer against actual53e41df source preserves all raw curves,
+board tables and promotion gains on Chess/Shogi/internal-Xiangqi/cannon under
+both density laws. Canonical Chess/Shogi/internal-Xiangqi hand scales stay
+unchanged/unvalidated; only the proved-inert cannon coefficients change.
+This is retained as a manifest supplement without altering the72-member zip.
+
+The safe subset is deliberately conservative at whole-rule scope. In a mixed
+legacy rule, a real four-ply prefix captures P/Q into stock while only Q has a
+legal drop mask. The classifier retains the old P coefficient900. A hypothetical
+P-stock removal at that reached root preserves18one-ply actions/physical boards
+and Qstock, but changes identity; that counterfactual is not certified reachable
+or equivalent in repetition/history. This exposes a possible per-type extension,
+not a deployed fix or permission to remove stock from state. A focused follow-up
+must decide whether that extension pays for its extra dependency reasoning.
+
+Four fixed-order D1/D2 old-scale versus supplied P-zero searches at that mixed
+root match their full-width references. Scores13278 versus12378 differ by900,
+but every nontiming/non-score decision/work field stays equal: Qdrop atb2,
+nodes19/58. Pstock is constant on these shallow nonterminal frontiers. This
+witness does not justify a new per-type production classifier merely to remove
+a score offset; seek a decision-changing failure first. No identity merging.

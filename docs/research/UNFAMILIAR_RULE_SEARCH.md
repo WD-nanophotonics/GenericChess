@@ -468,7 +468,7 @@ all48 depth2 Core references agree and12 static map pairs are identical.
 Among36 dynamic pairs,21 scores and6 actions change when only attack authority
 changes. Twenty-four calls with the product opt-in evaluators reproduce those
 frozen semantic actions/scores/nodes/depths/PVs. Local Native/Core full-search
-ratios are about0.75Ã¢â‚¬â€œ0.83; no universal acceleration follows.
+ratios are about0.75 to0.83; no universal acceleration follows.
 
 Production leaf measurements on27 actual-history states use five rotated-order
 paired batches. Native/Core evaluation ratios are approximately0.35,0.42,0.42
@@ -534,7 +534,7 @@ fails to justify a product switch/default change or a global superiority claim.
 
 A separate equivalent quiet-action copy on those12 now-exposed layouts preserves
 completed scores under the same evaluator/budget, but increases nodes on every
-root, median ratio1.194846 (range1.038410Ã¢â‚¬â€œ1.219925). Public binding identities and
+root, median ratio1.194846 (range1.038410 to1.219925). Public binding identities and
 lexical traversal can incur representation cost even when physical effects agree.
 This is an observed efficiency issue, not permission to merge arbitrary moves
 by coordinates/Position: action-dependent history and triggers must remain valid.
@@ -1317,3 +1317,26 @@ Final1758active regressions pass after the shared-IR/version-report correction;
 were extracted into an isolated project-local recovery tree and every hash
 matched. Raw private-path failure logs stay local; redacted failures/partial
 outputs are retained publicly, not recast as successful runs.
+
+A separate first-root102D3 development curve completes all4matched4096node/
+10second calls: unit q0/q2 score2000 (choicea2-d5), v3q0 score3507 andq2score2552
+(choicef2-c5). Thus D2 scores are horizon-dependent even when the v3 choice
+persists. Both independent q0 full-width references hit their unchanged4096
+actual-evaluation fuse (4097attempted counter), so this curve does not claim
+reference equality. No D4 or reference-cap extension follows. The adapted
+producer retains a stale D2 template phrase in its docstring; code/output and
+this correction identify D3. Exact sources/results are manifest supplements.
+
+The actual frozen seed102 B-captures-X/recapture witness decomposes the D2
+material contrast1273 into board670 and hand603. B has board506/hand455; X has
+board1176/hand1058. This is an explicit inventory/table contrast, not an
+independent task utility or strength gain. Raw quiet/capture density curves
+remain in exchange-decomposition.json; the reconstructed producer records the
+executed interactive calculation without claiming another independent run.
+
+For these B/X curves, at each retained density rho, capture equals quiet times
+rho/[2(1-rho)]. X/B quiet and capture ratios are identical at each positive
+density (about2.31-2.38). These are two views of a common occupancy/geometry
+count, not independent support for capture utility. A useful follow-up needs
+conditional task information beyond recounting the same marginals; no formula
+or default is changed. Arithmetic rows: opportunity-components.json supplement.

@@ -1,0 +1,36 @@
+{
+  "scope": "Arithmetic on retained B/X curves at frozen seed102, not another experiment.",
+  "rows": [
+    {
+      "density": 0.0,
+      "quiet_X_B": 2.309090909090909,
+      "capture_X_B": null,
+      "endpoint_scaling": 0.0
+    },
+    {
+      "density": 0.125,
+      "quiet_X_B": 2.3056445404653703,
+      "capture_X_B": 2.3056445404653703,
+      "endpoint_scaling": 0.07142857142857142
+    },
+    {
+      "density": 0.25,
+      "quiet_X_B": 2.3166385958691604,
+      "capture_X_B": 2.316638595869161,
+      "endpoint_scaling": 0.16666666666666666
+    },
+    {
+      "density": 0.375,
+      "quiet_X_B": 2.342716383902454,
+      "capture_X_B": 2.342716383902454,
+      "endpoint_scaling": 0.3
+    },
+    {
+      "density": 0.5,
+      "quiet_X_B": 2.3839441535776613,
+      "capture_X_B": 2.3839441535776613,
+      "endpoint_scaling": 0.5
+    }
+  ],
+  "decision": "These paired quiet/capture curves do not independently support relative capture utility: at each retained density capture is quiet times the same occupancy scalar. Geometry/context weighting creates the ratio. A capture-specific task must supply new conditional information, not recount these marginals."
+}
