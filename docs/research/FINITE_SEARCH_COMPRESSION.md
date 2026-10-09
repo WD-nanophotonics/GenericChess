@@ -162,6 +162,17 @@ target is incomplete, leaving two choices per method UNKNOWN; no extension or
 shallower substitution. All six declared roots remain in the record. This is
 same-rule development evidence, not independent task utility or generic transfer.
 
+The next pure-type-rename control is incomplete. Reusing old public action IDs
+fails because legacy geometry/pattern IDs depend on sorted type labels. Full
+structural geometry matching can disambiguate identical drop shapes by their
+type-associated patterns, but an explicit replacement pattern still references
+a legacy ID absent from the active pattern list. The prototype stops there.
+No renamed feature/prediction/action invariance has been established, and this
+is not evidence of a compiler or learned-model defect: the mechanical mapping
+is unfinished. Preserve the failed producers rather than weaken semantic action
+identity to coordinate equality. This is a scoped next question, not a new gate
+for unrelated small training or useful deployment diagnostics.
+
 The primary [TDLeaf paper, sections4–5](https://arxiv.org/pdf/cs/9901001) updates
 evaluation parameters through minimax PV leaves and temporal differences between
 searched game states. It reports dependence on initialization and opponent/data

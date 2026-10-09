@@ -13,6 +13,10 @@ a rebuilt Python environment. Never restore active operational state. Recovery
 checked all supplement hashes and all228model-choice calculations without
 refitting; search reruns are new measurements, not replacements for originals.
 
+`relabel-failure-index.json` and `relabel-failure.zip` retain the unfinished
+pure-type-rename control and its original action-ID failure. They are historical
+failure evidence, not a passed invariance test or deployed adapter.
+
 Use `docs/research/FINITE_SEARCH_COMPRESSION.md` for claims and limitations.
 Raw Slack/account records, user inputs, credentials and live memo/session state
 are excluded. Historical scripts include intentionally retained failures and

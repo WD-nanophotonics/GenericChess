@@ -1,0 +1,20 @@
+{
+  "status": "INCOMPLETE; no semantic relabel invariance claim",
+  "archive": "relabel-failure.zip",
+  "archive_sha256": "591fc6c9d654805e20a5a41b521f0c763af0bda614c6e2d24caab6963de46bff",
+  "members": [
+    {
+      "path": ".local_agent/eval-features-20261009/compression_relabel_id_failure.py",
+      "bytes": 3468,
+      "sha256": "794eaf3344cb10428df4921a88746f4eefdb0f3778b036195a51d0b08661f8ad"
+    },
+    {
+      "path": ".local_agent/eval-features-20261009/compression_relabel.py",
+      "bytes": 4700,
+      "sha256": "c615d791840eabcd83c70105046bd60698dc16545aac49f9f0911b5c36bc6bdf"
+    }
+  ],
+  "initial_failure": "IllegalActionError: legacy_024:g2:g2-c4 after type rename; sorted lowering IDs changed.",
+  "structural_mapping_failure": "sem_00_drop_zone_capacity_guard includes replaced_pattern_ids legacy_065 absent from active pattern list; mapping incomplete. No compiler-defect claim.",
+  "recovery": "Restore prior packages/base in isolated checkout. Producers intentionally fail; do not bulk run or infer validation. Next trace pre-lowering legacy replacement identity, without coordinate-only matching."
+}
