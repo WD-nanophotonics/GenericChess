@@ -111,6 +111,18 @@
       "sha256": "8b14648e400b8031c33c2e6bece1e0d2e7400898335b7c012e0f6ac1f8fde809",
       "bytes": 28182,
       "purpose": "Original early/late/owner partitions on both frozen template-any replicate orders; exposed finite transfer"
+    },
+    {
+      "path": "exact_any_source.py",
+      "sha256": "0d29bf3988c8762e29129807ad3f1569cee7ecec084a5c16778c5fdbc9c54f2f",
+      "bytes": 4010,
+      "purpose": "Eight bounded exact source-local colored-event union controls; not full-table validation"
+    },
+    {
+      "path": "exact-any-source.json",
+      "sha256": "6b5796530e3d6678d69092237e23c266376b7f15f280fdb7f4226c6e71ca44aa",
+      "bytes": 5102,
+      "purpose": "Eight bounded exact source-local colored-event union controls; not full-table validation"
     }
   ],
   "rules": [
@@ -246,7 +258,7 @@
   ],
   "verification": {
     "relevant_regressions_passed": 45,
-    "independent_task_arithmetic_and_hash_assertions": 27672,
+    "independent_task_arithmetic_and_hash_assertions": 27674,
     "exact_saturation_controls": 18,
     "product_changes": false,
     "scope": "Existing product execution regressions plus independent retained evidence arithmetic and recovery; no strength validation"
@@ -304,5 +316,13 @@
     ],
     "scope": "Adaptive/exposed diagnostic; old source-law failures remain; no adopted price/default",
     "original_phase_owner_strata_harmful_means": 0
+  },
+  "exact_any_source": {
+    "cases": 8,
+    "completed": 8,
+    "closed_form_controls": 18,
+    "maximum_events": 7,
+    "declared_event_boundary": 12,
+    "full_table_validation": false
   }
 }

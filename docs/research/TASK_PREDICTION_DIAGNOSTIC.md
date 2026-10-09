@@ -133,6 +133,13 @@ phase-aggregation explanation for this adaptive signal, not unseen-rule
 generalization, exact probability or universal context choice. Individual
 background changes remain in the full audit rather than being filtered away.
 
+A final source-local exact feasibility check takes the first ordinary template
+source of each owner for2100C/X and2101P/X. All8cases have1..7distinct projected
+endpoint events. Rational colored-event inclusion/exclusion completes within
+the12event boundary and passes18closed-form elementary controls. This does not
+yet average all sources or confirm the Monte Carlo ranking. It makes one
+bounded exact next check executable without a new framework or product change.
+
 ## Sparse and counterfactual support
 
 Reply rewards leave557/614 and866/886slots allzero. Seed2103's apparent reply
