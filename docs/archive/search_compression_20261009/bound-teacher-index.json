@@ -1,0 +1,37 @@
+{
+  "archive": "bound-teacher-supplement.zip",
+  "archive_sha256": "1e4a71400f7096c5214ffd578f43286e0ab26231ea0adb96bab3cd096f199a07",
+  "members": [
+    {
+      "path": ".local_agent/interaction-20261009/bound_teacher.py",
+      "bytes": 5457,
+      "sha256": "353e0aac84db960d34862d607136451d49312e8291f428c802a79967a181716b"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/bound-teacher-declaration.json",
+      "bytes": 686,
+      "sha256": "1031d8efdff91594910121cd95e49e736f0b03246076524b49b61447e3bb678c"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/bound-teacher.json",
+      "bytes": 164967,
+      "sha256": "a5fc66802f42b617e1024edf3d6cd69897cbb030e5970c0ca3bddf9a1233b32e"
+    }
+  ],
+  "summary": {
+    "roots": 8,
+    "search_seconds": 20.765913399402052,
+    "probe_seconds": 3.4982375998515636,
+    "classifications": {
+      "CERTIFIED_INFERIOR": 325,
+      "CERTIFIED_OPTIMAL": 8,
+      "UNKNOWN": 145
+    }
+  },
+  "scope": "Exposed eight-root partial finite-search preference pilot; no training, WDL or product API change.",
+  "references": [
+    "shared-state-index.json",
+    "shared-rule-index.json"
+  ],
+  "recovery": "Isolated unpack and hash verification only; no operational state or producer execution. Full runtime identity, depth2-only TT and mate-distance assertions in source retained."
+}

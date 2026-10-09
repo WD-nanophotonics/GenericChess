@@ -1,0 +1,382 @@
+{
+  "scope": "Immutable Agent-generated evidence, isolated score/metric restore; no jobs.",
+  "archive": "shared-state-interaction.zip",
+  "archive_sha256": "fa146235c5195d76023589f29701813482a2bcde68b6c7ad284233a386548b31",
+  "base_commit": "c85422ce0869b335a86454222828aa12e3682585",
+  "members": [
+    {
+      "path": ".local_agent/interaction-20261009/anchor-probe.json",
+      "bytes": 12562,
+      "sha256": "6dbb64a5325365d9c3e524a93bc300a7e9ddcf1d165023811ee42ab10b224cb0"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchor-repair.json",
+      "bytes": 503,
+      "sha256": "9205e23be525e302bfe3632b4c363fa1919a31c074a7056f5b0f4604c96ca1bf"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchor_probe.py",
+      "bytes": 2553,
+      "sha256": "686fbf14e9fe777cf70ef48d8eb028f4625b3b24d23a640ef8eb94a63e75684c"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchor_repair.py",
+      "bytes": 2689,
+      "sha256": "f1fcbd77a92a5272cac505fcd52339a0059025f64956167e5c67e8a29ac6e5eb"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchored/anchored_linear-model.json",
+      "bytes": 68291,
+      "sha256": "f1a6a1e3abea67862eed5a3af2af43f17b0fbd4cba412dc7b872d347024988f9"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchored/anchored_relu-model.json",
+      "bytes": 412395,
+      "sha256": "eded83e96456d7b206442aac922daddfde3ba3582e27a87233bbeaa71f5df92a"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchored/caller-declaration.json",
+      "bytes": 972,
+      "sha256": "42e12f62b29f305032ac1a6b46f1561306d7c6ff0bd4b79a2dca5b7d7bfdaa95"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchored/callers.json",
+      "bytes": 334803,
+      "sha256": "af1399db157c93337cb450b2e3119f8bab7a37cd2e71ea01bc09464abc619d49"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchored/callers.py",
+      "bytes": 5904,
+      "sha256": "63b71883400cc801d31a432f76652459408bbf49a4d67f27acc45d04b633a6ba"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchored/count-model.json",
+      "bytes": 19272,
+      "sha256": "05aab13fd48b48a5782885d5500fe1332d826cb22443b6fb178ca72a367e40fd"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchored/fit-declaration.json",
+      "bytes": 3439,
+      "sha256": "13f101336e6ef337f104b2b2a81c8011ac3526ecb565378c75cce9de76fb18d4"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchored/fit-result.json",
+      "bytes": 16842,
+      "sha256": "c19608184788cc93be186a07999b5cda15ed983a39d4d1ce2f2bf78f250066d1"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchored/fit.py",
+      "bytes": 5611,
+      "sha256": "dc5e65636a3b21bd36bab43e60e7f4e8f7a3f5734884808c9cff2931b19c1fec"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchored/input-range.json",
+      "bytes": 2130,
+      "sha256": "df9c3e0601501de1074e453f96e21c3f79c61e212c4c2c6060942aea942516d7"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchored/input_range.py",
+      "bytes": 1613,
+      "sha256": "7df7b7e12e8f248b123e99f8eab2f55bb779f30339d33f8e024d781dbd3cb50f"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchored/rule-declaration.json",
+      "bytes": 1263724,
+      "sha256": "e5b5cf4569f10d91a354676b391939c35bb644a260a7ed5b9b75aced273d363a"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchored/rule-screen-inputs.npz",
+      "bytes": 1223511,
+      "sha256": "4481cdce94280653386bd2f41dd54f80cacbea206df9a35e8a68d33eda4d9553"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchored/rule-screen.json",
+      "bytes": 7257838,
+      "sha256": "94aa0c0377e09e9efdb91c903a9e840ec36050ce9adf180ec6c45f5283597803"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchored/rule-selection.json",
+      "bytes": 7198,
+      "sha256": "dab13bea39c85029fa0df923f3beb2222031d31559746c0f7e0cee4ecd39e2e7"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/anchored/screen.py",
+      "bytes": 8387,
+      "sha256": "268e77825f69009e9901897a6cc5cc75566d262562fae33481a1773dcd9af57a"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/caller-declaration.json",
+      "bytes": 936,
+      "sha256": "e2a5879af7b81d01042ef0623bec45df4c95a340893ea8d961d932ba0ea3ee68"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/callers.json",
+      "bytes": 306318,
+      "sha256": "85604857960883a3e4bd0b2fd89934aa7b023fc409262fde1bf715ebad8c236f"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/callers.py",
+      "bytes": 5537,
+      "sha256": "e9af5a125ac5f6739429613a379ac2b9d07b3babacdae86823824cc8dda95eb5"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/control.json",
+      "bytes": 6049,
+      "sha256": "2305f1c72815357ee344788b0caf7467af38aa036f498366d1ba227e7e7fb8bd"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/control.py",
+      "bytes": 2930,
+      "sha256": "9ccd6a4bfad0c14011fb5204e1dbd067565564a7a744902ff0b182a73a1a7a80"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/count-model.json",
+      "bytes": 19192,
+      "sha256": "6b46ade26c23f5f929c3b880473d691fe0af31256d160d14e308a43edd7b1e30"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/count-tables.json",
+      "bytes": 16755,
+      "sha256": "29a8be81b4a4ec94caf4ae0fa848b1def4005e02d4c5af9699bce7e46f0ca839"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/count_tables.py",
+      "bytes": 3592,
+      "sha256": "176531d3ecda9aa99097038fb35fe8aa67c5e86100d217289374f8456870c6dd"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/curve-failures.json",
+      "bytes": 146445,
+      "sha256": "808f731231c3e813a7e91012977c1faa669d4cc7631e6dfa5bb128581038729f"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/curve_failures.py",
+      "bytes": 2702,
+      "sha256": "d9c7f1a5fa95b9c5ab270f3f069eb38d70db9722b619efdcc88f43134cbb33ca"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/descriptor-collisions.json",
+      "bytes": 477,
+      "sha256": "2d4bffcd63bd6830e198711614678d4daf501d1b515359f2d81c65168b50e6d3"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/descriptor_collisions.py",
+      "bytes": 2127,
+      "sha256": "6605b22ea05a8d77bafe8e0a6797ae945c82768dbe1f983b62ccf923f61a11f6"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/failures.json",
+      "bytes": 1055,
+      "sha256": "3669d9d7401ab049fc1a195ace524dd3b2a98ebd5e6d7dff37cb985c2f4ffe9b"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/fit-declaration.json",
+      "bytes": 3264,
+      "sha256": "8a05132f5139891637e25a088f4cd82169e4ed9d3d9ce9605279e1f48edc5787"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/fit-result.json",
+      "bytes": 12216,
+      "sha256": "052bf91d38e01a5b44e0554114f15f57c1a7100f58250480627f774800a9ea96"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/fit.py",
+      "bytes": 4175,
+      "sha256": "d4919fd74ac043d815b17135654ffd680a31575fcfdfc53e1a14919270530b83"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/guard-operands.json",
+      "bytes": 2839,
+      "sha256": "23dc53bc97aaff6df7b04300dafa63689a584970e80aa9e764b66803fccb4e8c"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/guard_inspect.py",
+      "bytes": 843,
+      "sha256": "beb0fd12288e76d8163fa1ae4e8dfd4c91858a97e139e8b3e2bf39198df81d1f"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/inventory-ties.json",
+      "bytes": 50155,
+      "sha256": "9f2ee9fe23c1ec2df301de329f0675b3a3e9e02fb979f81397fb3ec2b23238a1"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/inventory_ties.py",
+      "bytes": 3624,
+      "sha256": "89659aefaf029702e865be59ff6c577f18c82384cdced8ea1128f88b28699cf2"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/moments-model.json",
+      "bytes": 66973,
+      "sha256": "fb9eb13d099524a4867b5ff1dcf6b96791961691a4a3c33ef1f06a086af68027"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/prepare_anchored.py",
+      "bytes": 2178,
+      "sha256": "5e8ca73933b8da5f36571b4be3afdea1df8e95404d1f3ba5d4fe2f1a06b9a392"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/prepare_anchored_callers.py",
+      "bytes": 1953,
+      "sha256": "81c1b17ae5fd07f1fe1983832548bc26b01a28174448a917990215ee13c7d32b"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/prepare_screen.py",
+      "bytes": 2449,
+      "sha256": "559499a222565711613821f3d8cc5250242b16799a3a6276383b1e27245f986f"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/prototype.py",
+      "bytes": 4164,
+      "sha256": "0fba16769836ee610ccd4c663fc40cb82f7e0777734b4961a6111d109fc9942b"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/reference-audit.json",
+      "bytes": 3026,
+      "sha256": "4bb1a619f93460a731626ce14ab8d73200e51755330e4987c6c59be97d05a25a"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/reference_audit.py",
+      "bytes": 1576,
+      "sha256": "b98f8fa4fdb2dde1869f610d044df5140ebc2783fa93b486c69ca05da884ae11"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/rule-declaration.json",
+      "bytes": 1271263,
+      "sha256": "f46495a9715e0854e0e75b5c98328c5772d764644aa840ddde536f6f02ffd849"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/rule-screen-inputs.npz",
+      "bytes": 1336408,
+      "sha256": "696651edba01740b88e022cdc47d84ddbe442d4f97826b4b133ff5c086ff4c47"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/rule-screen.json",
+      "bytes": 7477064,
+      "sha256": "8f7f6acf8f066b43444fa5024b8253b96b844205859b3d1a6cfbcc4845bab3bc"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/rule-selection.json",
+      "bytes": 7151,
+      "sha256": "0c0879caee7f8f347ce6d0046148b86437c67b58d5825530c19cdf3151ff4377"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/screen.py",
+      "bytes": 8109,
+      "sha256": "b358dbac1c860545e875994d36989cbf095e37a2cadbe8d71c8ae25ac5720bff"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/search-curve-declaration.json",
+      "bytes": 954,
+      "sha256": "80d1eb624dca498fa3470f6c7e5cc7a285a3677f4e6279c22139af75f695f09a"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/search-curve.json",
+      "bytes": 1378696,
+      "sha256": "9e03141a5512a53e684b3918108f0a0c2b913380c117dc24de1495df16e816c0"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/search_curve.py",
+      "bytes": 4297,
+      "sha256": "c99c2baa582e2abe70af95c2477107830daa36b43ed5aa6577d23312779bcad2"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/stable-counts.json",
+      "bytes": 11632,
+      "sha256": "e52c9bf74ab31fec9a391d1661f3062581326f4ba0f8e1970e1d6edf901cb969"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/stable_counts.py",
+      "bytes": 3188,
+      "sha256": "ee401b52c70b262631e96b7b2da24986cc6b79790f2d653c836ea5e24fe5ae7d"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/summarize.py",
+      "bytes": 2942,
+      "sha256": "e7ce42b40bcaa45a7e2d3fea7b1c3408ae867d4f1d936db430664f4c0943ca8b"
+    },
+    {
+      "path": ".local_agent/interaction-20261009/summary.json",
+      "bytes": 14534,
+      "sha256": "914386389ed3afcd075e86ab0cc8d66f65e6f498af4029f8a859641cffc2ff32"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule_counts.py",
+      "bytes": 3436,
+      "sha256": "9d72ea83a57b0f7b889b138678dde108928a40ac7ee966da73b399a38961e23a"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-declaration.json",
+      "bytes": 968630,
+      "sha256": "09cc623b46373575e3b37c50b8f749307c1755de84739bcb7b780ec63ef928d3"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-screen.json",
+      "bytes": 4905465,
+      "sha256": "c7a948f469aa6021e877ad085fe6dffe751f8fc1a69bdfea74c7eb905bc922e5"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-duplicate-control.json",
+      "bytes": 105407,
+      "sha256": "7964f3bca2affbd6d8e130f3710b013b9d81747e9ff257f31f64c9508c33bb0c"
+    },
+    {
+      "path": ".local_agent/sharing-20261009/rule-aliases.json",
+      "bytes": 28140,
+      "sha256": "866c3d79151c751c0084f3e14ae4b464d61ec87923533582c0ada9d96005e45a"
+    },
+    {
+      "path": ".local_agent/effect-target-20261009.json",
+      "bytes": 98395,
+      "sha256": "473da27bf5f2cf11eeb1a79c3c0236997226453f9134f2dd1cf62f50586aed7c"
+    },
+    {
+      "path": "scripts/position_features.py",
+      "bytes": 4812,
+      "sha256": "2ca7b603ca8befbc862a8d70b2e23985827cbcc11db1281c8005545e55d525e0"
+    },
+    {
+      "path": "scripts/research_record.py",
+      "bytes": 2767,
+      "sha256": "3f1237e0c1d728995f169902aaaad8fb53ac149287aa46875db298b63221612a"
+    }
+  ],
+  "exclusions": "No user/private inputs, raw Slack/account data, memo/session/stop flags or credentials. Original rules/records are Agent-generated.",
+  "recovery": "Use separate base-commit checkout and existing dependencies; unpack into isolated folder and verify every member hash. Restore only JSON/NPZ selected-row predictions and frozen metrics as verified. Do not import operational state, overlay live checkout or rerun producers/training/search. Original finite reference artifacts included for read-only replay.",
+  "verification": {
+    "isolated_members": 67,
+    "restored": [
+      {
+        "cohort": "original_moments",
+        "model": "count",
+        "predictions": 595,
+        "metrics": 11
+      },
+      {
+        "cohort": "original_moments",
+        "model": "moments",
+        "predictions": 595,
+        "metrics": 11
+      },
+      {
+        "cohort": "anchored",
+        "model": "count",
+        "predictions": 675,
+        "metrics": 14
+      },
+      {
+        "cohort": "anchored",
+        "model": "anchored_linear",
+        "predictions": 675,
+        "metrics": 14
+      },
+      {
+        "cohort": "anchored",
+        "model": "anchored_relu",
+        "predictions": 675,
+        "metrics": 14
+      }
+    ],
+    "no_training_or_search": true,
+    "numpy_version": "1.26.4"
+  }
+}

@@ -273,5 +273,1063 @@
       "X"
     ],
     "decision": "Preserve typed target relations in next shared state/rule input; no retraining/report fitting/default change. Mean/max target pooling and implicit reference omissions remain approximations."
+  },
+  "shared_state_interaction": {
+    "archive_index": "../../archive/search_compression_20261009/shared-state-index.json",
+    "original_moments": {
+      "roots": 32,
+      "children": 1745,
+      "complete_children": 1724,
+      "unknown_children": 21,
+      "complete_roots": 28,
+      "selected_roots": 11,
+      "zero_roots": 17,
+      "teacher_seconds": 836.3916595000774,
+      "rank_calls": 288,
+      "search_calls": 64,
+      "whole_denominator": [
+        {
+          "method": "unit",
+          "group": "train",
+          "roots": 16,
+          "known": 14,
+          "regrets": [
+            {
+              "root": "2026101200/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101201/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101201/16",
+              "regret": 923073075.0769231,
+              "selected": true
+            },
+            {
+              "root": "2026101202/7",
+              "regret": 181.8181818181818,
+              "selected": true
+            },
+            {
+              "root": "2026101202/16",
+              "regret": 913041217.4782609,
+              "selected": true
+            },
+            {
+              "root": "2026101203/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101203/16",
+              "regret": 959995920.0,
+              "selected": true
+            },
+            {
+              "root": "2026101204/7",
+              "regret": 200.0,
+              "selected": true
+            },
+            {
+              "root": "2026101204/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101205/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101205/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101206/16",
+              "regret": 90909090.81818181,
+              "selected": true
+            },
+            {
+              "root": "2026101207/7",
+              "regret": 333.3333333333333,
+              "selected": true
+            },
+            {
+              "root": "2026101207/16",
+              "regret": 181.8181818181818,
+              "selected": true
+            }
+          ],
+          "seconds": 6.2991725995671,
+          "score_seconds": 0.003274599788710475
+        },
+        {
+          "method": "unit",
+          "group": "dev",
+          "roots": 8,
+          "known": 8,
+          "regrets": [
+            {
+              "root": "2026101208/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101208/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101209/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101209/16",
+              "regret": 2000.0,
+              "selected": true
+            },
+            {
+              "root": "2026101210/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101210/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101211/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101211/16",
+              "regret": 0.0,
+              "selected": false
+            }
+          ],
+          "seconds": 1.201195599976927,
+          "score_seconds": 0.0010675000958144665
+        },
+        {
+          "method": "unit",
+          "group": "report",
+          "roots": 8,
+          "known": 6,
+          "regrets": [
+            {
+              "root": "2026101212/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101212/16",
+              "regret": 210.52631578947367,
+              "selected": true
+            },
+            {
+              "root": "2026101213/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101214/7",
+              "regret": 250.0,
+              "selected": true
+            },
+            {
+              "root": "2026101215/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101215/16",
+              "regret": 0.0,
+              "selected": false
+            }
+          ],
+          "seconds": 2.643009700346738,
+          "score_seconds": 0.001550999702885747
+        },
+        {
+          "method": "count",
+          "group": "train",
+          "roots": 16,
+          "known": 14,
+          "regrets": [
+            {
+              "root": "2026101200/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101201/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101201/16",
+              "regret": 666663332.0,
+              "selected": true
+            },
+            {
+              "root": "2026101202/7",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101202/16",
+              "regret": 999996000.0,
+              "selected": true
+            },
+            {
+              "root": "2026101203/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101203/16",
+              "regret": 999996000.0,
+              "selected": true
+            },
+            {
+              "root": "2026101204/7",
+              "regret": 285.7142857142857,
+              "selected": true
+            },
+            {
+              "root": "2026101204/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101205/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101205/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101206/16",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101207/7",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101207/16",
+              "regret": 0.0,
+              "selected": true
+            }
+          ],
+          "seconds": 6.3131830003112555,
+          "score_seconds": 0.028600900201126933
+        },
+        {
+          "method": "count",
+          "group": "dev",
+          "roots": 8,
+          "known": 8,
+          "regrets": [
+            {
+              "root": "2026101208/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101208/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101209/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101209/16",
+              "regret": 2000.0,
+              "selected": true
+            },
+            {
+              "root": "2026101210/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101210/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101211/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101211/16",
+              "regret": 0.0,
+              "selected": false
+            }
+          ],
+          "seconds": 1.1784417000599205,
+          "score_seconds": 0.009146400028839707
+        },
+        {
+          "method": "count",
+          "group": "report",
+          "roots": 8,
+          "known": 6,
+          "regrets": [
+            {
+              "root": "2026101212/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101212/16",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101213/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101214/7",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101215/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101215/16",
+              "regret": 0.0,
+              "selected": false
+            }
+          ],
+          "seconds": 2.6565525999758393,
+          "score_seconds": 0.013334500137716532
+        },
+        {
+          "method": "moments",
+          "group": "train",
+          "roots": 16,
+          "known": 14,
+          "regrets": [
+            {
+              "root": "2026101200/16",
+              "regret": 2000.0,
+              "selected": false
+            },
+            {
+              "root": "2026101201/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101201/16",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101202/7",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101202/16",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101203/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101203/16",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101204/7",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101204/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101205/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101205/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101206/16",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101207/7",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101207/16",
+              "regret": 0.0,
+              "selected": true
+            }
+          ],
+          "seconds": 6.307936700060964,
+          "score_seconds": 0.02852880023419857
+        },
+        {
+          "method": "moments",
+          "group": "dev",
+          "roots": 8,
+          "known": 8,
+          "regrets": [
+            {
+              "root": "2026101208/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101208/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101209/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101209/16",
+              "regret": 2000.0,
+              "selected": true
+            },
+            {
+              "root": "2026101210/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101210/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101211/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101211/16",
+              "regret": 0.0,
+              "selected": false
+            }
+          ],
+          "seconds": 1.1769562000408769,
+          "score_seconds": 0.00912460032850504
+        },
+        {
+          "method": "moments",
+          "group": "report",
+          "roots": 8,
+          "known": 6,
+          "regrets": [
+            {
+              "root": "2026101212/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101212/16",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101213/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101214/7",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101215/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101215/16",
+              "regret": 2000.0,
+              "selected": false
+            }
+          ],
+          "seconds": 2.6613906999118626,
+          "score_seconds": 0.01328889955766499
+        }
+      ],
+      "resource_curve": [
+        {
+          "node_budget": 128,
+          "reuse": false,
+          "calls": 48,
+          "known_teacher_calls": 44,
+          "zero_regret": 38,
+          "positive_regret": 6,
+          "mate_scale_regret": 0,
+          "D2plus": 2,
+          "D3": 0,
+          "nodes": 6144,
+          "seconds": 3.430638900026679,
+          "actual_pushes": 6046,
+          "evaluations": 5818
+        },
+        {
+          "node_budget": 128,
+          "reuse": true,
+          "calls": 48,
+          "known_teacher_calls": 44,
+          "zero_regret": 38,
+          "positive_regret": 6,
+          "mate_scale_regret": 0,
+          "D2plus": 4,
+          "D3": 0,
+          "nodes": 6144,
+          "seconds": 5.131677399622276,
+          "actual_pushes": 6044,
+          "evaluations": 5426
+        },
+        {
+          "node_budget": 512,
+          "reuse": false,
+          "calls": 48,
+          "known_teacher_calls": 44,
+          "zero_regret": 40,
+          "positive_regret": 4,
+          "mate_scale_regret": 0,
+          "D2plus": 42,
+          "D3": 0,
+          "nodes": 24576,
+          "seconds": 25.973061999538913,
+          "actual_pushes": 24438,
+          "evaluations": 21320
+        },
+        {
+          "node_budget": 512,
+          "reuse": true,
+          "calls": 48,
+          "known_teacher_calls": 44,
+          "zero_regret": 38,
+          "positive_regret": 6,
+          "mate_scale_regret": 0,
+          "D2plus": 48,
+          "D3": 2,
+          "nodes": 24348,
+          "seconds": 43.84070549928583,
+          "actual_pushes": 24204,
+          "evaluations": 18848
+        },
+        {
+          "node_budget": 2048,
+          "reuse": false,
+          "calls": 48,
+          "known_teacher_calls": 44,
+          "zero_regret": 40,
+          "positive_regret": 4,
+          "mate_scale_regret": 0,
+          "D2plus": 48,
+          "D3": 4,
+          "nodes": 93988,
+          "seconds": 84.42478810041212,
+          "actual_pushes": 93844,
+          "evaluations": 84186
+        },
+        {
+          "node_budget": 2048,
+          "reuse": true,
+          "calls": 48,
+          "known_teacher_calls": 44,
+          "zero_regret": 44,
+          "positive_regret": 0,
+          "mate_scale_regret": 0,
+          "D2plus": 48,
+          "D3": 22,
+          "nodes": 80648,
+          "seconds": 78.9855087005999,
+          "actual_pushes": 80504,
+          "evaluations": 72200
+        },
+        {
+          "node_budget": 8192,
+          "reuse": false,
+          "calls": 48,
+          "known_teacher_calls": 44,
+          "zero_regret": 42,
+          "positive_regret": 2,
+          "mate_scale_regret": 0,
+          "D2plus": 48,
+          "D3": 27,
+          "nodes": 265145,
+          "seconds": 179.34154210053384,
+          "actual_pushes": 265008,
+          "evaluations": 247409
+        },
+        {
+          "node_budget": 8192,
+          "reuse": true,
+          "calls": 48,
+          "known_teacher_calls": 44,
+          "zero_regret": 44,
+          "positive_regret": 0,
+          "mate_scale_regret": 0,
+          "D2plus": 48,
+          "D3": 46,
+          "nodes": 116982,
+          "seconds": 100.98138950043358,
+          "actual_pushes": 116838,
+          "evaluations": 107036
+        }
+      ],
+      "resource_seconds": 542.8579149001744,
+      "limits": "Development/exposed four rules; whole trajectories split. Separate mate-scale from ordinary regret, all unknowns kept. No defaults or strength claims. Search TT/order together, per-call player cold, compiler process cache warm. Count factoring and inventory closure are post-result arithmetic diagnostics only."
+    },
+    "anchored": {
+      "roots": 32,
+      "children": 1700,
+      "known_children": 1651,
+      "complete_roots": 28,
+      "teacher_seconds": 765.5613061999902,
+      "rank_calls": 384,
+      "search_calls": 64,
+      "groups": [
+        {
+          "group": "dev",
+          "method": "unit",
+          "roots": 8,
+          "known": 8,
+          "regrets": [
+            {
+              "root": "2026101408/7",
+              "regret": 1333.3333333333333,
+              "selected": true
+            },
+            {
+              "root": "2026101408/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101409/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101409/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101410/7",
+              "regret": 2000.0,
+              "selected": true
+            },
+            {
+              "root": "2026101410/16",
+              "regret": 666.6666666666666,
+              "selected": true
+            },
+            {
+              "root": "2026101411/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101411/16",
+              "regret": 1894.7368421052631,
+              "selected": true
+            }
+          ]
+        },
+        {
+          "group": "dev",
+          "method": "count",
+          "roots": 8,
+          "known": 8,
+          "regrets": [
+            {
+              "root": "2026101408/7",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101408/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101409/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101409/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101410/7",
+              "regret": 2000.0,
+              "selected": true
+            },
+            {
+              "root": "2026101410/16",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101411/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101411/16",
+              "regret": 2000.0,
+              "selected": true
+            }
+          ]
+        },
+        {
+          "group": "dev",
+          "method": "anchored_linear",
+          "roots": 8,
+          "known": 8,
+          "regrets": [
+            {
+              "root": "2026101408/7",
+              "regret": 2000.0,
+              "selected": true
+            },
+            {
+              "root": "2026101408/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101409/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101409/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101410/7",
+              "regret": 2000.0,
+              "selected": true
+            },
+            {
+              "root": "2026101410/16",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101411/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101411/16",
+              "regret": 2000.0,
+              "selected": true
+            }
+          ]
+        },
+        {
+          "group": "dev",
+          "method": "anchored_relu",
+          "roots": 8,
+          "known": 8,
+          "regrets": [
+            {
+              "root": "2026101408/7",
+              "regret": 2000.0,
+              "selected": true
+            },
+            {
+              "root": "2026101408/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101409/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101409/16",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101410/7",
+              "regret": 2000.0,
+              "selected": true
+            },
+            {
+              "root": "2026101410/16",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101411/7",
+              "regret": 2000.0,
+              "selected": false
+            },
+            {
+              "root": "2026101411/16",
+              "regret": 2000.0,
+              "selected": true
+            }
+          ]
+        },
+        {
+          "group": "report",
+          "method": "unit",
+          "roots": 8,
+          "known": 6,
+          "regrets": [
+            {
+              "root": "2026101412/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101412/16",
+              "regret": null,
+              "selected": false
+            },
+            {
+              "root": "2026101413/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101413/16",
+              "regret": 846148613.6923077,
+              "selected": true
+            },
+            {
+              "root": "2026101414/7",
+              "regret": 125000499.875,
+              "selected": true
+            },
+            {
+              "root": "2026101414/16",
+              "regret": null,
+              "selected": false
+            },
+            {
+              "root": "2026101415/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101415/16",
+              "regret": 0.0,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "group": "report",
+          "method": "count",
+          "roots": 8,
+          "known": 6,
+          "regrets": [
+            {
+              "root": "2026101412/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101412/16",
+              "regret": null,
+              "selected": false
+            },
+            {
+              "root": "2026101413/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101413/16",
+              "regret": 599995998.8,
+              "selected": true
+            },
+            {
+              "root": "2026101414/7",
+              "regret": 142857714.14285713,
+              "selected": true
+            },
+            {
+              "root": "2026101414/16",
+              "regret": null,
+              "selected": false
+            },
+            {
+              "root": "2026101415/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101415/16",
+              "regret": 0.0,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "group": "report",
+          "method": "anchored_linear",
+          "roots": 8,
+          "known": 6,
+          "regrets": [
+            {
+              "root": "2026101412/7",
+              "regret": 4000.0,
+              "selected": false
+            },
+            {
+              "root": "2026101412/16",
+              "regret": null,
+              "selected": false
+            },
+            {
+              "root": "2026101413/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101413/16",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101414/7",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101414/16",
+              "regret": null,
+              "selected": false
+            },
+            {
+              "root": "2026101415/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101415/16",
+              "regret": 0.0,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "group": "report",
+          "method": "anchored_relu",
+          "roots": 8,
+          "known": 6,
+          "regrets": [
+            {
+              "root": "2026101412/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101412/16",
+              "regret": null,
+              "selected": false
+            },
+            {
+              "root": "2026101413/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101413/16",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101414/7",
+              "regret": 0.0,
+              "selected": true
+            },
+            {
+              "root": "2026101414/16",
+              "regret": null,
+              "selected": false
+            },
+            {
+              "root": "2026101415/7",
+              "regret": 0.0,
+              "selected": false
+            },
+            {
+              "root": "2026101415/16",
+              "regret": 0.0,
+              "selected": false
+            }
+          ]
+        }
+      ]
+    },
+    "decision": "No development increment justifying expansion/default promotion; preserve models and all zero/incomplete roots. Anchor occupancy repairs a concrete input alias, not full state completeness."
+  },
+  "partial_bound_teacher": {
+    "archive_index": "../../archive/search_compression_20261009/bound-teacher-index.json",
+    "roots": 8,
+    "search_seconds": 20.765913399402052,
+    "probe_seconds": 3.4982375998515636,
+    "classifications": {
+      "CERTIFIED_INFERIOR": 325,
+      "CERTIFIED_OPTIMAL": 8,
+      "UNKNOWN": 145
+    }
   }
 }

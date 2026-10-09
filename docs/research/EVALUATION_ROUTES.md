@@ -163,3 +163,24 @@ feature scans cost over500ms. Static v2/v3leaves have both a helpful and an adve
 searched choice at identical conditions. Do not conflate root-rank failure with
 static-leaf failure, or finite Unit agreement with true utility. Exact evidence:
 FINITE_SEARCH_COMPRESSION.md and the shared-rule archive/index. No default changes.
+
+## Latest decision: shared state versus cheaper finite preferences
+
+The2026-10-09 shared-state comparison retains64fresh roots across two independent
+trajectory cohorts, with70capped child references left UNKNOWN. Anchored ReLU16
+fits its training choices and removes two selected report errors, but increases
+development errors including a zero-root regression. Anchored linear also adds
+a report zero-root error. This is no clear development increment justifying
+architecture expansion or default promotion. The numerical inputs still omit
+precise guard operands/auxiliary/history; full-state teachers are not restricted.
+The concrete zero-anchor input alias is repaired separately, not excused by
+missing position modeling. No report refits or price/strength claims follow.
+
+Keep count and Core search baselines. A partial-bound teacher pilot supplies
+325inferior/8optimal/145unknown child preferences in24.26seconds on eight exposed
+roots without labeling all unchosen actions negative. The next cost-sensitive
+choice is whether fresh preference coverage supports useful shared decisions,
+or whether the target should move away from compression of Unit search toward
+rule-price diagnostics. One new decision question precedes another fit; this
+does not ban learning, demand exact WDL or require advisor approval for short
+independent work. Full evidence: FINITE_SEARCH_COMPRESSION.md and its data index.

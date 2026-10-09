@@ -38,6 +38,19 @@ independent price/task questions; do not claim pre-final timings as deployment.
 
 ## Current evidence and decisions
 
+- Shared-state comparison now retains64fresh roots/3445children across two
+  prospective cohorts,3375complete children and70UNKNOWNs. A concrete zero-anchor
+  input alias is repaired before the second cohort. Spatial/anchored linear and
+  ReLU16 have mixed report successes but no clear development increment; whole
+  denominators expose additional zero-root errors. Keep counts/search baselines,
+  no report refits/default promotion. A384call search-cost curve favors2048TT+
+  ordering as a scoped comparator. An eight-root24.26second bound pilot retains
+  325inferior/8optimal/145unknown preferences, avoiding false-negative unchosen
+  labels. Next choose fresh partial-preference coverage or a rule-price-usefulness
+  target by decision/cost, not another automatic architecture expansion.
+  FINITE_SEARCH_COMPRESSION.md owns sources, limits, five recovered models and
+  the immutable shared-state/bound-teacher archives.
+
 - State-input feasibility now separates semantics, signal and cost: a real
   base-identity continuation aliases the old compact input; a separate offline
   sparse Position encoder repairs that scope and supports tested rectangles,

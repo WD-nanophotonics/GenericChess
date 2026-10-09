@@ -408,3 +408,67 @@ fit or complete rule encoder; implicit references, conditional selection, auxili
 and history relations remain omissions. The effect-target supplement preserves
 the exact rules/action/state witness and source. Next: one cost-effective shared
 state interaction using typed rule relations, without refitting these report groups.
+
+## Shared state and partial preference teachers (2026-10-09)
+
+Two prospective whole-trajectory cohorts use the four existing full generated
+rules, with two rules for training, one development and one reporting. Neither
+cohort reuses earlier report labels for fitting. Cohort A has32roots/1745children,
+1724complete children and21UNKNOWNs; cohort B has32roots/1700children,
+1651complete and49UNKNOWNs. Each retains28complete roots. Teacher production
+took836.39/765.56seconds; capped children remain unknown, never negative labels.
+
+The shared66-axis actor descriptors are pooled into count268 or spatial938
+inputs. Spatial linear terms describe individual actors and locations, not
+genuine state interactions. A concrete king-location alias exposed the material
+convention of a zero anchor descriptor. Exact owner/square anchor occupancy
+repairs that witness in a separate1066-axis input before cohort B. Precise guard
+operands, auxiliary state and relevant history remain numerical-input omissions;
+full GameSession/Position semantics remain in the teacher. These are8x8 scoped
+prototypes, not a replacement for the full generated-domain target.
+
+Five fixed small fits were recovered without retraining. Cohort A's count and
+spatial models both have2000regret on the selected development root. Counting
+all known report roots reveals a spatial2000regression on a previously zero
+root. Cohort B compares counts, anchored linear and anchored ReLU16. Across all
+eight development roots, positive-regret counts are2/3/4 respectively; ReLU adds
+a2000error on an unselected zero root. Across six known report roots, counts
+retain two mate-scale errors, anchored linear adds one4000zero-root error, and
+ReLU has zero finite-reference regret. This mixed result does not establish a
+development increment or strength. Preserve all zero roots and two unknown report
+roots, rather than report only the two selected report successes. Actual rank
+callers total288/384 plus64matched-cost Unit controls per cohort. Rank scores
+are not calibrated material prices or numeric search leaves.
+
+A post-result count factorization agrees to about1e-14 but changes eight strict
+tie choices. Integer inventory closure and stable summation diagnostics preserve
+original outputs; neither numerical tolerance nor exposed-label refitting is
+used to manufacture agreement. Input-range departures and absent descriptor
+collisions in these four rules do not explain or prove away generalization error.
+
+A384-call Unit resource curve on24retained roots separates search configuration
+from evaluation. At2048nodes, TT+ordering has44/44known zero-regret calls versus
+40/44lexical, with78.99versus84.42seconds total. At512nodes it is slower and
+worse on one tie: both methods complete D2 with score0, but select children with
+different D2 continuation values. At8192nodes TT+ordering retains44/44 while
+lexical has42/44. Use2048TT+ordering as a scoped comparison point, not a product
+default, an isolated TT attribution or a price-quality claim.
+
+An eight-exposed-root pilot obtains partial preferences from existing Core D3
+search and full-history TT identity: only depth2 entries qualify, bound direction
+is reversed to the parent perspective, and mate distance is normalized. All
+qualified bounds are checked against retained finite references. In24.26seconds
+(20.77search+3.50probe),478children yield325certified inferior,8certified optimal
+and145UNKNOWN. An incomplete root contributes only UNKNOWNs. This does not find
+all cooptimal actions, prove WDL or export a stable product API. It does show a
+cheaper candidate target that avoids treating every unchosen action as inferior.
+
+Decision: retain cheap counts and existing search baselines; defer another
+architecture expansion without a changed premise. Next compare fresh partial
+preference coverage/cost with the decisions it could support, and distinguish
+finite Unit-search compression from the project's rule-price usefulness target.
+Evidence: shared-state-index.json (67verified members, five restored models) and
+bound-teacher-index.json (three separately verified supplement members), under
+docs/archive/search_compression_20261009. Detailed costs, failures, all roots and
+UNKNOWNs are routed by data/search_compression_20261009.json. Live defaults are
+unchanged; no human labels or Xiangqi holdout were read.
