@@ -53,8 +53,16 @@ Games are secondary price-hole diagnostics, not a player-strength optimization
 goal. Do not keep adding positional patches or chasing classical/engine Elo.
 Static rule-derived tables remain candidates and cheap baselines, not a required
 predecessor to every evaluation route. Learning/frozen constants and small state
-interaction evaluators may receive literature and low-cost feasibility review;
-this does not authorize large training, extra workers or revive old phase gates.
+interaction evaluators may receive literature and low-cost feasibility review.
+User2026-10-09 authorizes appropriate small local training without per-run user
+approval. Before any single project run expected to exceed one hour, consult dot
+and obtain its assessment that the run is genuinely necessary; record the
+decision question, estimated cost and cheaper alternatives. This applies to
+training and other project runs, not the60-90minute Agent research segment.
+If confirmation is pending, continue independent shorter work. Do not split a
+long run artificially to evade consultation. Preserve stop flags, fair comparisons,
+data boundaries and machine safety; no extra workers, fees or uncontrolled jobs.
+This permission does not revive old phase gates or authorize large training.
 Generic means the project's complete generated rule domain across search, state,
 evaluation and learning: preserve promotion, drops, auxiliary and relevant
 history semantics. Scoped prototypes are allowed with explicit exclusions, not

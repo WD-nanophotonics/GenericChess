@@ -34,7 +34,8 @@ human references are comparisons, never fitting targets or universal optima.
 Do not expand player patches/reference tiers to chase strength. Explore mixtures,
 recombined mechanics and generated rules. Static tables are cheap baselines;
 learning/frozen constants and small interaction evaluators are eligible for
-literature and low-cost feasibility comparison, without automatic training.
+literature, low-cost feasibility comparison and appropriate small local training
+under the user's2026-10-09 standing authorization. See Budget for long runs.
 Generic targets the complete generated rule domain in search/state/evaluation/
 learning, including promotion, drops, auxiliary state and relevant history.
 Smaller models/samples and declared scoped prototypes are permitted; deleting
@@ -84,6 +85,18 @@ experiment conditions, repeat unchanged failed batches or substitute framework
 work for science. Development continuation follows the Budget section below.
 
 ## Budget
+
+User2026-10-09 permits the Agent to initiate appropriate small local training
+without asking for approval each time. For any single project run estimated to
+take more than one hour, first consult dot on whether it is genuinely necessary
+and obtain that assessment before launching. Briefly record the decision question,
+expected information, runtime estimate and cheaper alternatives. This covers
+training and other project runs; the60-90minute research segment is a different
+unit. Do not artificially split one long run to bypass consultation. If dot has
+not confirmed necessity, continue independent shorter work. Record actual runtime
+and unfavorable results; preserve stop flags, data boundaries, fair conditions
+and machine safety. No additional workers, fees or uncontrolled heavy jobs follow.
+This is a targeted cost consultation, not a new approval queue for small fits.
 
 User2026-10-06 requests value per cost rather than universal time/count gates.
 Dot's complete reply was read, reconciled and adopted in the same Slack thread:

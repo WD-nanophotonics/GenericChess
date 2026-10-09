@@ -49,6 +49,19 @@ independent price/task questions; do not claim pre-final timings as deployment.
   sparse/material/coarse controls remain candidates. STATE_INPUT_FEASIBILITY.md
   owns the full denominator, adverse costs, caps and recovery package.
 
+- Finite-search compression now has six new frozen trajectories/all228complete
+  D2children and one fixed72sample small predictor, authorized2026-10-09.
+  Stop the D4 arm after55caps and retain173unattempted UNKNOWNs. Existing
+  ordering reduces complete-search cost but worsens one finite-budget tie
+  choice; static table callers keep4caps where unit completes. These are
+  compression/cost diagnostics, not price quality or strength. Greedy prediction
+  fails to improve development/report regret; identical-budget learned-leaf search
+  helps this finite teacher. Preserve that distinction and all incomplete references.
+  Parameter preconversion removes major per-leaf overhead without changing weights.
+  Small training is authorized; single runs expected above one hour first need
+  dot's necessity assessment, as defined in LOCAL_AGENT.md Budget.
+  FINITE_SEARCH_COMPRESSION.md owns the current target, splits and controls.
+
 - Full existing common-slot task populations now test fixed price selection:
   immediate top choices help against blind8/8rules, but average pair ordering
   fails3/8; v2/v3rank identically. One-reply support is sparse/check-dependent,
@@ -175,6 +188,7 @@ branch backlog or publication gate. Exact operating rules remain in AGENTS.md.
 |Purpose|Document and latest records|
 |---|---|
 |Evaluation families, state-input signal and actual caller cost|EVALUATION_ROUTES.md; STATE_INPUT_FEASIBILITY.md; data/state_inputs_20261009.json|
+|Finite search compression, prospective splits and existing search/table controls|FINITE_SEARCH_COMPRESSION.md; data/search_compression_20261009.json|
 |Fixed price predictions, conditional information ceilings and reply support|TASK_PREDICTION_DIAGNOSTIC.md; data/qfrontier_20261009.json|
 |Semantic opportunity, equivalence, context/task boundaries|SEMANTIC_CAPABILITY.md; data/tasklaw_20261009.json; task_compression_20261009.json; finite_law_20261009.json; preparation_transfer_20261008.json; retention_20261008.json|
 |Descriptive price ratios and preparation/promotion bias|CROSS_GAME_PRICE_DIAGNOSTIC.md; data/pawn_bias_20261009.json|

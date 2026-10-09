@@ -1,0 +1,145 @@
+{
+  "scope": "Finite teacher development, one fixed small model and actual caller cost; not strength/zero-shot.",
+  "original_archive_index": "../../archive/search_compression_20261009/index.json",
+  "training_archive_index": "../../archive/search_compression_20261009/training-index.json",
+  "model_sha256": "70e4db6cc28e76ca9ba68128b16ed71bb520c7fd7b478e7f15e8359eb0e232af",
+  "fit_seconds": 0.5139733001124114,
+  "greedy_groups": {
+    "train": {
+      "roots": 2,
+      "equal_root_mean_teacher_regret": 0.0,
+      "equal_root_mean_material_regret": 833.3333333333334
+    },
+    "dev": {
+      "roots": 2,
+      "equal_root_mean_teacher_regret": 1000.0,
+      "equal_root_mean_material_regret": 1000.0
+    },
+    "test": {
+      "roots": 2,
+      "equal_root_mean_teacher_regret": 1000.0,
+      "equal_root_mean_material_regret": 1000.0
+    }
+  },
+  "dense_caller": {
+    "unit": {
+      "calls": 12,
+      "mean_teacher_regret": 666.6666666666666,
+      "leaf_seconds": 0.09507631580345333,
+      "leaf_calls": 17791,
+      "depths": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "learned": {
+      "calls": 12,
+      "mean_teacher_regret": 0.0,
+      "leaf_seconds": 6.106442799558863,
+      "leaf_calls": 7915,
+      "depths": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  },
+  "sparse_caller": {
+    "unit": {
+      "calls": 12,
+      "mean_teacher_regret": 666.6666666666666,
+      "leaf_seconds": 0.09190589562058449,
+      "leaf_calls": 17696,
+      "depths": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "learned": {
+      "calls": 12,
+      "mean_teacher_regret": 0.0,
+      "leaf_seconds": 0.5542671952862293,
+      "leaf_calls": 19154,
+      "depths": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  },
+  "fresh_trajectory_calls": {
+    "unit": {
+      "known": 10,
+      "regrets": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2000.0,
+        2000.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        null,
+        null
+      ]
+    },
+    "learned": {
+      "known": 10,
+      "regrets": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        null,
+        null
+      ]
+    }
+  },
+  "decision": "Retain fixed model as scoped diagnostic, no default promotion. Next compare reusable state interaction/support across independent trajectories; no exposed-group tuning."
+}

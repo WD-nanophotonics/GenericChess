@@ -81,6 +81,18 @@ breaks this constraint at modest local caller cost, so retain it as an optional
 interaction comparator. Its semantic exclusions and42/48D2completion count
 remain explicit. No exact-fit requirement or automatic training follows.
 
+The next target/split decision is now concrete: retain finite unit-D2 search
+compression on six new whole trajectories, with all228children and three
+zero-regret unit-greedy roots. Stop the uninformative D4 arm after55caps; do
+not require deeper certification. A single width16,72training-child protocol
+and default-no-training runner were prepared before authorization. User2026-10-09
+now permits appropriate small local training; runs expected to exceed one hour
+first require dot's necessity assessment (LOCAL_AGENT.md Budget).
+Matching this teacher measures compression,
+not true utility or the benefit of learned-leaf search. Existing TT/ordering and
+rule-generated table controls retain adverse finite-budget/tie/cap outcomes.
+Current actionable evidence and exact recovery: FINITE_SEARCH_COMPRESSION.md.
+
 ## Evidence and adoption limits
 
 Historical local documents: `docs/learning_phase1_tdleaf_material.md` and
@@ -90,9 +102,12 @@ Current conditional evidence: TASK_PREDICTION_DIAGNOSTIC.md and its archive inde
 retain62/64correction, allzero support, adverse backgrounds and exposure status.
 
 [Baxter, Tridgell and Weaver, TDLeaf(lambda)](https://arxiv.org/abs/cs/9901001)
-supports combining temporal-difference learning with minimax. Its KnightCap
-experiment used online FICS games; that is not an unknown-rule pure-self-play
-sample-efficiency guarantee. Only the primary abstract was checked here.
+supports combining temporal-difference learning with minimax. Sections4–5
+were subsequently checked: updates use minimax PV leaves and temporal
+differences of searched states; the experiments distinguish initialization
+and opponent/data conditions. A fixed finite-teacher regression pilot is
+different from that procedure. The FICS experiment is not an unknown-rule
+pure-self-play sample-efficiency guarantee.
 
 Dot's complete direction reply was read and explicitly assessed. Adopt the
 candidate comparison and full-domain target; do not adopt attributed statements

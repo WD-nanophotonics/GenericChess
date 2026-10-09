@@ -1,0 +1,75 @@
+{
+  "scope": "Allowlisted Agent-generated training supplement; no operational/user records.",
+  "archive": "training-supplement.zip",
+  "archive_sha256": "63cb1b1bb8484e2567143365551d0fab63cb0e7b7076cadb2cec568975eddd43",
+  "members": [
+    {
+      "path": ".local_agent/eval-features-20261009/compression-model.json",
+      "sha256": "70e4db6cc28e76ca9ba68128b16ed71bb520c7fd7b478e7f15e8359eb0e232af",
+      "bytes": 895871
+    },
+    {
+      "path": ".local_agent/eval-features-20261009/compression-pilot-result.json",
+      "sha256": "aaa7f06c431190097558529af0c73eb321b5dd80b46f14535dbddc735bc80403",
+      "bytes": 4540
+    },
+    {
+      "path": ".local_agent/eval-features-20261009/compression_failure.py",
+      "sha256": "0edc1735ace0c1098aebbbcccb37c4a228c16a5addea3974c1722074c66d8951",
+      "bytes": 2734
+    },
+    {
+      "path": ".local_agent/eval-features-20261009/compression-failure.json",
+      "sha256": "5377b4e249cbfd92b89dc285e470e9742d2416a89079782070968346455bb68e",
+      "bytes": 4884
+    },
+    {
+      "path": ".local_agent/eval-features-20261009/compression_caller_dense.py",
+      "sha256": "1123ab73c37112a4c13294a2ce02b8469a7d4b382f7677f46d883049fc6a9ef3",
+      "bytes": 4456
+    },
+    {
+      "path": ".local_agent/eval-features-20261009/compression-caller.json",
+      "sha256": "3a4295d05f94df0e59b7299b5d363cf65db41d028d7dcc3610c36a77ecd46d9f",
+      "bytes": 87426
+    },
+    {
+      "path": ".local_agent/eval-features-20261009/compression_caller.py",
+      "sha256": "0cdc1760856a3386d0b5eb6e6c327b034cf42378065ae292896d5ed8cccc2c24",
+      "bytes": 5184
+    },
+    {
+      "path": ".local_agent/eval-features-20261009/compression-caller-sparse.json",
+      "sha256": "e4c9242a57425b70c26c724fd5edc02ea44ba58c1c3075e8806ffdf891b23715",
+      "bytes": 87640
+    },
+    {
+      "path": ".local_agent/eval-features-20261009/compression_fresh.py",
+      "sha256": "a84f9b4a9aef2193c67424cbba9ffd177e3e261bee3c1d7bff56f97361608704",
+      "bytes": 6117
+    },
+    {
+      "path": ".local_agent/eval-features-20261009/compression-fresh-declaration.json",
+      "sha256": "edb1ad8f794f15b5ea3b0f6c2a63fe5f247b9e69c80852eb1a84f8d026b69985",
+      "bytes": 118436
+    },
+    {
+      "path": ".local_agent/eval-features-20261009/compression-fresh.json",
+      "sha256": "fb7571dcb4d367dfccbdfac5e230cd19809cbfa630a5abe3b0050b70ed5f7c76",
+      "bytes": 218220
+    },
+    {
+      "path": ".local_agent/eval-features-20261009/compression_inference_cost.py",
+      "sha256": "cd079e307ace2692bac427c6d1cba467a25847c453b1610113c3109ea0726c68",
+      "bytes": 1687
+    },
+    {
+      "path": ".local_agent/eval-features-20261009/compression-inference-cost.json",
+      "sha256": "2647a3f38ceae463d90674250c234f6198389eb283650e3e4a5b21895121cc50",
+      "bytes": 1684
+    }
+  ],
+  "model_status": "ONE_FIT_COMPLETE; no product/default binding; offline same-rule search calls only",
+  "recovery": "Restore base bffa740 and original evidence.zip into an isolated checkout, then supplement. Verify member hashes. Model roundtrip and all228root-choice calculations verified without refitting or rerunning searches.",
+  "excludes": "User/private data, raw Slack/account/credentials, process commands and active operational configuration"
+}
