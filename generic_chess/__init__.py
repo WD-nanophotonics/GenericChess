@@ -27,7 +27,10 @@ from .core.position import GameState, Hands, Position
 from .core.terminal import TerminalResult, TerminalStatus
 from .generation.generator import generate_game
 from .generation.config import GeneratorConfig
-from .rules.compiler import compile_ruleset, compile_ruleset_for_execution
+from .rules.compiler import (
+    compile_ruleset, compile_ruleset_for_execution,
+    compile_legacy_ruleset_for_semantic_execution,
+)
 from .rules.catalog import build_builtin_ruleset, builtin_ruleset_names
 from .rules.western_chess import build_western_chess_ruleset
 from .rules.standard_shogi import build_standard_shogi_ruleset
@@ -53,6 +56,7 @@ __all__ = [
     "__version__",
     "compile_ruleset",
     "compile_ruleset_for_execution",
+    "compile_legacy_ruleset_for_semantic_execution",
     "build_builtin_ruleset",
     "builtin_ruleset_names",
     "build_western_chess_ruleset",

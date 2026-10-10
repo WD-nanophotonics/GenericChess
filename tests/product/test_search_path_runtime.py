@@ -831,3 +831,60 @@ def test_runtime_hash_oracle_covers_capture_promotion_and_drop():
         with runtime.pushed(action):
             assert runtime.runtime_hash == _full_runtime_hash(runtime.position, compiled)
         runtime.assert_balanced()
+
+
+@pytest.mark.parametrize("semantic", [False, True])
+def test_declared_alternate_history_is_reconstructed_and_tampering_stays_opaque(semantic):
+    from dataclasses import replace
+    from generic_chess import compile_legacy_ruleset_for_semantic_execution
+    from generic_chess.core.history_provenance import reconstruct_history_provenance
+    from generic_chess.rules.schema import RuleInitialSetupOption
+    from conftest import T, king_type, make_ruleset
+    from generic_chess.core.movement import LeapAtom
+    from generic_chess.rules.compiler import compile_ruleset
+    from generic_chess.core.transition import initial_state, apply_action
+    from generic_chess.core.movegen import legal_actions
+    types = [king_type(), T("P", LeapAtom((1, 0)))]
+    base = make_ruleset(4, types, lines=["...k", "....", ".P..", "K..."])
+    alternate = make_ruleset(4, types, lines=["...k", "....", "P...", "K..."])
+    rules = replace(base, initial_setup_options=(RuleInitialSetupOption("p-file-a", alternate.initial_position),))
+    c = compile_legacy_ruleset_for_semantic_execution(rules) if semantic else compile_ruleset(rules)
+    state = initial_state(c, "p-file-a")
+    witnesses = [state.position]
+    for _ in range(2):
+        state = apply_action(state, legal_actions(state, c)[0], c)
+        witnesses.append(state.position)
+    assert reconstruct_history_provenance(state, c).status == "verified"
+    reconstructed = SearchPathRuntime.from_state(state, c)
+    supplied = SearchPathRuntime.from_state(state, c, history_witnesses=witnesses)
+    assert reconstructed.history_witness_misses == 0
+    assert reconstructed.tt_eligible
+    assert reconstructed.search_key() == supplied.search_key()
+    assert reconstructed.history_reconstruction_key_computations == len(state.history) + 1
+    before = reconstructed.search_key()
+    action = reconstructed.legal_actions()[0]
+    reconstructed.push(action)
+    supplied.push(action)
+    assert reconstructed.search_key() == supplied.search_key()
+    assert reconstructed.position == supplied.position
+    assert reconstructed.terminal_status == supplied.terminal_status
+    reconstructed.pop()
+    supplied.pop()
+    assert reconstructed.search_key() == before == supplied.search_key()
+    for field, value in (("position_key", "unknown"), ("actor", 0),
+                         ("action_signature", '{"kind":"pass"}'), ("gave_check", True)):
+        bad_first = replace(state.history[0], **{field: value})
+        tampered = replace(state, history=(bad_first, *state.history[1:]))
+        if field == "position_key":
+            # Contradictory public counts are rejected before replay selection.
+            with pytest.raises(ValueError, match="history/repetition counts"):
+                SearchPathRuntime.from_state(tampered, c)
+        else:
+            opaque = SearchPathRuntime.from_state(tampered, c)
+            assert opaque.history_witness_misses > 0
+            assert not opaque.tt_eligible
+    bad_last = replace(state.history[-1], gave_check=not state.history[-1].gave_check)
+    tampered = replace(state, history=(*state.history[:-1], bad_last))
+    opaque = SearchPathRuntime.from_state(tampered, c)
+    assert opaque.history_witness_misses > 0
+    assert not opaque.tt_eligible

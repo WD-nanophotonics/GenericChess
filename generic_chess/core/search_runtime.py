@@ -643,13 +643,26 @@ class SearchPathRuntime:
             if not state.history:
                 raise ValueError("empty history")
             first = state.history[0]
-            if (
-                first.position_key != replayed.history[0].position_key
-                or first.actor != -1
-                or first.action_signature != ""
-                or first.gave_check
-            ):
+            if first.actor != -1 or first.action_signature != "" or first.gave_check:
                 raise ValueError("invalid initial history record")
+            if first.position_key != replayed.history[0].position_key:
+                # Public GameState has no setup key. A declared alternate start
+                # is still recoverable from its exact initial history record;
+                # custom/imported roots retain the opaque-history fallback.
+                engine = semantic_engine_for(self.compiled)
+                setups = (
+                    engine.support.initial_setup_options
+                    if engine is not None
+                    else self.compiled.initial_setup_positions
+                )
+                for setup_key in sorted(setups):
+                    candidate = initial_state(self.compiled, setup_key)
+                    self.history_reconstruction_key_computations += 1
+                    if candidate.history[0] == first:
+                        replayed = candidate
+                        break
+                else:
+                    raise ValueError("unknown initial history record")
             witnesses = [replayed.position]
             for record in state.history[1:]:
                 action = action_from_dict(json.loads(record.action_signature))

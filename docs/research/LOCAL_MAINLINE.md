@@ -24,32 +24,31 @@ actual Core/Native/fallback, configured/effective limits and returned/committed
 action. Small declared games locate candidate losses; fixed-state/history
 replay attributes them. Keep the UI branch frozen during sandbox research.
 
-Latest choice: retain finite incoming source/current-type dispatch and the
-explicit skip_warm_root diagnostic, with no UI/default routing change.30 cache
-eligibility cells and54 advancing-prefix calls complete the previous contract
-question; no advancing root had an eligible deep EXACT entry. Source grouping
-preserves finite semantics and cuts Shogi-drop fixed work time about26–27%,
-but48 time calls show no reliable new completed layer. Gross extra metadata
-1.81/3.29MB is not RSS; cancellation selection gaps are explicitly bounded only
-by the tested synthetic rows. Mixed count/exists shortcircuit remains deferred.
+Latest choice: retain the explicit validated legacy-to-semantic compilation entry
+for generated-rule research and repair declared alternate-start history recovery.
+Normal compilation/provider/UI remain unchanged. Four generated seeds retain
+finite visible semantics; typed aliases and heuristic identities explain residual
+q1 work. Eight fully aligned diagnostic roots match selected work/action/PV,
+without authorizing arbitrary DSL dedup.96normal q1 time calls expose two extra
+hybrid completed layers at one second; six same-budget D4 controls explain the
+one changed move by horizon. This is completion evidence, not strength.
 
-The refreshed80-cell backend bridge retains within-algorithm action/score/PV/
-work and zero Native fallback. Core+Native legality saves fixed-D2 wall time;
-eight one-second pairs retain completed depths/actions. Native conversion does
-not eliminate Core terminal one-action probes, transitions or history. Next
-attribute those retained costs versus payload/decode work with a finite semantic
-check; do not repeat reserve roots or mixed predicate branches. Preserve the
-old terminal-prefix failure and full Shogi-history/blocked-DLL boundaries.
-Dot's complete review supports this selection but did not execute these tests.
-No workflow/manual rule changes. Evidence:INCOMING_SOURCE_DISPATCH.md and its
-purpose index; warm contracts are separately routed in the phase diagnostic.
+24continuous-check-loss controls restore actual guarded TT probes/stores on
+alternate starts, retaining noTT return parity and default-start behavior. The
+previous draw-policy zero guarded-node counter was conditional instrumentation,
+not absence of TT. Supplied Session witnesses stay the cheap path; tiny/mixed
+setup prefilter, eager descriptor, streaming hash and token-cache gains are
+insufficient to justify production complexity. Retain original failures and caps.
+Dot's complete review supports finite full-history checks and a declared sampling
+law; it did not execute these sources.91final focused product tests pass.
+Evidence:GENERATED_SEMANTIC_BRIDGE.md; data/generated_semantic_bridge_20261011.json.
+Next choose one history-bearing generated backend/evaluator capability comparison,
+with no automatic horizon increase, alias merging, price/learning or UI change.
 
-Early-validated deferred binding preserves425 root bindings,2550 mutation
-comparisons and22 malformed packed-output error controls, but four Runtime
-allocator-fault controls expose changed automatic fallback. Retain ordinary
-eager allocation; next check same-type eager representation or retained state/
-history costs. Eight fixed-D2 cells agree, with no equal-time/strength claim.
-Evidence: VALIDATED_BINDING_FEASIBILITY.md; data/validated_binding_20261011.json.
+Prior incoming source dispatch retains its finite semantics and drop fixed-work
+savings; warm-root and deferred-binding limits remain in their purpose documents.
+Full Shogi-history/blocked-DLL boundaries are unchanged. Ordinary eager binding
+remains selected after allocator-fault fallback differences in the deferred trial.
 
 ## Latest reserve and mechanical evidence —2026-10-10
 
@@ -171,6 +170,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Generated semantic bridge, typed alias attribution and alternate history|GENERATED_SEMANTIC_BRIDGE.md; data/generated_semantic_bridge_20261011.json|
 |Incoming source dispatch and hybrid replacement ledger|INCOMING_SOURCE_DISPATCH.md; data/incoming_source_20261011.json|
 |Latest warm-root eligibility/caller/cancellation contract|PHASE_BYPASS_DIAGNOSTIC.md; data/warm_root_contract_20261011.json|
 |Earlier phase/caller/warm controls and actor dispatch|PHASE_BYPASS_DIAGNOSTIC.md; data/phase_bypass_20261010.json|
