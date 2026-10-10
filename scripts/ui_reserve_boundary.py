@@ -1,13 +1,13 @@
 """First-completion reserve boundary: two preselected roots, no default change.
 Highest legal frontier among eight existing search attribution cases, plus
 existing generated4x4seed21. Two reversed1second pairs and one deterministic
-pre-completion cancellation per arm/root. Same unit material within each root.
+pre-completion cancellation per arm/root. Same fixed material within each root.
 Selection occurs before any performance result; no population extension.
 """
 from pathlib import Path
 import sys,json,time,hashlib,argparse
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
-from scripts.search_backend_comparison import CASES,CoreBoard,Material
+from scripts.search_backend_comparison import CASES,CoreBoard
 from scripts.research_record import record_value,write_record
 from generic_chess import build_builtin_ruleset,compile_ruleset_for_execution
 from generic_chess.generation.config import GeneratorConfig
@@ -17,7 +17,6 @@ from generic_chess.ai.alphabeta.player import AlphaBetaPlayer
 from generic_chess.ai.alphabeta import search
 from generic_chess.ai.cancellation import CancellationToken
 from generic_chess.ai.limits import SearchLimits
-from generic_chess.core.movegen import legal_actions
 p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,required=True);args=p.parse_args()
 oldordinary=search._ordinary_qdepth_limit;oldq=search._quiescence_runtime
 report=dict(declaration=__doc__,source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),complete=False,selection=[],roots=[])
