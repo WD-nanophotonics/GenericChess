@@ -74,6 +74,17 @@ are diagnostic setup outside search limits for both arms. Next consider a
 skippable/budget-aware refresh in this caller context, rather than automatically
 expanding tactical coverage or changing defaults.
 
+A subsequent scoped skippable prototype probes the compatible runtime root key
+inside the existing budget. Caller TT, runtime eligibility and an EXACT entry
+with depth>=2 select ordinary configured iterations; otherwise it retains
+phase-bypass reserve. It never returns the probe directly or names a position.
+36 matched retries recover baseline action/score/D2 signatures, with18 actual
+skips;6 cold maxD1 controls match bypass and never skip. The measured cohort
+is adaptive/exposed, not strategic or general eligibility evidence. This begins
+the budget-aware direction; next distinguish shallow/nonexact/ineligible or
+q-changed tables and advancing-parent cost. Prototype remains archived, with
+no product/default/UI change or new timing threshold.
+
 ## Small mechanical integration and deferred alternative
 
 CompiledSemanticRuleset owns an ordered mapping from current actor type to

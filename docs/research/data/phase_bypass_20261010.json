@@ -1,6 +1,6 @@
 {
   "archive": "docs/archive/phase_bypass_20261010/evidence.zip",
-  "archive_sha256": "6173dcddb97c6cddc69977c950d0ac933974fd0e4baa660d866fbaae6efab56d",
+  "archive_sha256": "575a70ec7e138d36b731b2214c130a4e7bd0ef2ac08bd742d91e21e7df2c12ed",
   "members": [
     {
       "member": "abort-plan.md",
@@ -416,14 +416,52 @@
       "member": "source-closure-note.md",
       "bytes": 335,
       "sha256": "a97efe7a747591a577f9e8afa4c6075a3aebc721f69b3b15c35a2abf7e6c0488"
+    },
+    {
+      "member": "skippable-plan.md",
+      "bytes": 934,
+      "sha256": "3a476fc3c3e50afdf8877e62179bb5235e10f556d7f4e0fa42018923b3c3fb6c"
+    },
+    {
+      "member": "skippable.py",
+      "bytes": 5281,
+      "sha256": "d660db861c0d40335d22b4ee944ee28f91beb91001a12f6a1cadd8c4bbb18a7f"
+    },
+    {
+      "member": "skippable-function.py",
+      "bytes": 9556,
+      "sha256": "bf837b7ddb7884198491d2d178fc328d59dd333409c46a871aba7d03467dd3d0"
+    },
+    {
+      "member": "skippable.json",
+      "bytes": 153291,
+      "sha256": "dd5793f82135865b4f9d56e352920ffa6464a25c9744ba43aa1ee93f2cc230b9"
+    },
+    {
+      "member": "skippable-summary.json",
+      "bytes": 645,
+      "sha256": "42cbb7e0be576650e09732b67be76617aee500429ca797921b6ae6d2d74a0986"
     }
   ],
   "base_sha": "396b773b3afe6ff5a0545a0e8ffbf9534d64eb8a",
   "scope": "Agent-generated code/producers/results/failures only; no raw Slack/account/credentials, user UI export/deps/save folders.",
   "inputs": "Existing Agent games-final.json and population-baseline.json in ui_product_20261010 archive; frozen UI revision99c97bb87474c44af94c76571f326ef8a41eb898 reconstructed privately.",
   "producer_closure": "actor-plan.py requires original base source; stored old/candidate functions pin it. Installed actors/publicaux/CLI require delivery source here. Frozen persistent/warm producers bind99c97 root/phase source hashes and do not embed its UI source. Construction historical inline producer is a qualified replay, not an exact producer-file-hash claim. Failed/partial versions remain separately named.",
-  "validation": "Full active suite passed with actor/aux changes, two additional TT tests pass;116final relevant regressions pass.83archive hashes verified. Publisher repeats these required targets before push. No strength/default/UI claim.",
+  "validation": "Full active suite passed with actor/aux changes, two additional TT tests pass;116final relevant regressions pass.88archive hashes verified. Publisher repeats these required targets before push. No strength/default/UI claim.",
   "prior_mainline_sha": "396b773b3afe6ff5a0545a0e8ffbf9534d64eb8a",
   "compaction_cost": "Current-only mainline177lines before retry addition; prior647line mainline preserved by prior Git. No operating-rule change.",
-  "focused_passed": 116
+  "focused_passed": 116,
+  "skippable_scope": {
+    "complete": true,
+    "warm_calls": 36,
+    "cold_calls": 6,
+    "warm_signatures_equal": true,
+    "cold_signatures_equal": true,
+    "warm_skips": 18,
+    "cold_skips": 0,
+    "wall": 23.650810100138187,
+    "producer_sha256": "d660db861c0d40335d22b4ee944ee28f91beb91001a12f6a1cadd8c4bbb18a7f",
+    "contract": "Selective TT, ordinary search still revalidates bounds and performs legal root prep; not finite horizon certificate or UI deployment. Adaptive exposed roots; no label fitting.",
+    "next": "Check shallow/nonexact and ineligible/q-changed cache provenance plus advancing-parent caller cost before deciding explicit diagnostic API."
+  }
 }
