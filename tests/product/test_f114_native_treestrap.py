@@ -1,14 +1,18 @@
+from dataclasses import replace
 from generic_chess.ai.limits import SearchLimits
 from generic_chess.learning.material import LearnableMaterialCheckpoint
 from generic_chess.native.compiler import compile_native_semantic_rules
 from generic_chess.native.semantic_engine import SemanticSearchEngine
 from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
+
+# Native execution here exercises the explicit legacy draw-policy variant.
+# Standard Shogi loss-policy support is checked in test_native_terminal_policy_support.
 from generic_chess.session.session import GameSession
 
 
 def _context():
-    rules = build_standard_shogi_ruleset()
+    rules = replace(build_standard_shogi_ruleset(), stalemate_result="draw")
     compiled = compile_semantic_ruleset(rules)
     # Trace behavior is independent of an old trained experiment checkpoint.
     weights = {pt.type_id: 1.0 for pt in rules.piece_types if not pt.is_anchor}

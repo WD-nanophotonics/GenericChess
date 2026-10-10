@@ -21,6 +21,9 @@ from generic_chess.native.semantic import (
 )
 from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
+
+# Native execution here exercises the explicit legacy draw-policy variant.
+# Standard Shogi loss-policy support is checked in test_native_terminal_policy_support.
 from generic_chess.rules.western_chess import build_western_chess_ruleset
 
 
@@ -54,7 +57,7 @@ def _pack_initial(semantic, native, *, side=0, ply=0, history=None):
 
 def _declaration_free_shogi():
     semantic = compile_semantic_ruleset(
-        replace(build_standard_shogi_ruleset(), declarations=())
+        replace(replace(build_standard_shogi_ruleset(), stalemate_result="draw"), declarations=())
     )
     native = compile_native_semantic_rules(semantic)
     return semantic, native
@@ -228,7 +231,7 @@ def test_repetition_and_no_contest_terminal_scores_are_neutral():
 
 @pytest.mark.skipif(not native_available(), reason="native extension unavailable")
 def test_declaration_bearing_rulesets_execute_generically_and_shogi_without_them_executes():
-    semantic = compile_semantic_ruleset(build_standard_shogi_ruleset())
+    semantic = compile_semantic_ruleset(replace(build_standard_shogi_ruleset(), stalemate_result="draw"))
     native = compile_native_semantic_rules(semantic)
     result = semantic_iterative_search(native, _pack_initial(semantic, native), 1)
     assert result["best_action"] is not None

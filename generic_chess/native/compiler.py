@@ -760,6 +760,15 @@ class NativeSemanticCompiledRules:
         """The exact public semantic IR paired with this Native capsule."""
         return self._semantic
 
+    def require_terminal_policy_support(self) -> None:
+        """Legality support does not imply Native terminal/search support."""
+        support = getattr(self._semantic, "support", None)
+        if support is not None and support.stalemate_result != "draw":
+            raise NativeUnsupportedRuleError(
+                "Native semantic terminal/search does not support stalemate "
+                "loss policy; use Core terminal/search"
+            )
+
     @property
     def automatic_adjudications(self):
         return tuple(self._semantic.automatic_adjudications) if self._semantic else ()

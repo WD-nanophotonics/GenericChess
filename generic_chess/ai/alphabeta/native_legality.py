@@ -171,6 +171,10 @@ class NativeSemanticLegalityProvider:
             checkpoint()
 
         decoded_started = time.perf_counter()
+        public_cache = getattr(self._metrics_local, "public_cache", None)
+        if public_cache is None:
+            public_cache = {}
+            self._metrics_local.public_cache = public_cache
         pairs = []
         for index, packed in enumerate(raw_actions):
             if index and index % 64 == 0 and checkpoint is not None:
@@ -182,7 +186,15 @@ class NativeSemanticLegalityProvider:
             binding = self.engine._make_binding_from_action(
                 position, semantic_action, pattern
             )
-            public = _semantic_public_action(self.engine, semantic_action)
+            # Only immutable public syntax is reused. Decoding, source/type
+            # validation and the complete position-dependent binding above
+            # still execute for every action, including cache hits.
+            public = public_cache.get(packed)
+            if public is None:
+                public = _semantic_public_action(self.engine, semantic_action)
+                if len(public_cache) >= 2048:
+                    public_cache.clear()
+                public_cache[packed] = public
             pairs.append((public, (semantic_action, binding)))
         if checkpoint is not None:
             checkpoint()

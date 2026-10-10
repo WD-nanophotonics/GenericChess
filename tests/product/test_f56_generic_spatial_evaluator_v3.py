@@ -25,6 +25,9 @@ from generic_chess.native.semantic_engine import SemanticSearchEngine
 from generic_chess.native.compiler import compile_native_semantic_rules
 from generic_chess.rules.compiler import compile_ruleset_for_execution, compile_semantic_ruleset
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
+
+# Native execution here exercises the explicit legacy draw-policy variant.
+# Standard Shogi loss-policy support is checked in test_native_terminal_policy_support.
 from generic_chess.rules.western_chess import build_western_chess_ruleset
 from generic_chess.session.session import GameSession
 
@@ -72,7 +75,7 @@ def _v3_checkpoint(parent, type_ids):
 
 
 def test_f56_spatial_features_match_native_on_western_and_shogi():
-    for ruleset in (build_western_chess_ruleset(), build_standard_shogi_ruleset()):
+    for ruleset in (build_western_chess_ruleset(), replace(build_standard_shogi_ruleset(), stalemate_result="draw")):
         compiled, native = _compiled(ruleset)
         session = GameSession(compiled)
         packed = pack_semantic_search_position(compiled, native, session)
@@ -153,7 +156,7 @@ def test_f56_native_leaf_score_matches_python_fixed_point_owner0_convention():
 
 
 def test_f56_v3_rebind_clears_tt_without_ruleset_recompile():
-    ruleset = build_standard_shogi_ruleset()
+    ruleset = replace(build_standard_shogi_ruleset(), stalemate_result="draw")
     compiled, native = _compiled(ruleset)
     parent = _v2_parent(compiled, ruleset)
     first = _v3_checkpoint(parent, tuple(native.type_ids))

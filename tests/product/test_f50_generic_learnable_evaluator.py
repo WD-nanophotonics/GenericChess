@@ -21,6 +21,9 @@ from generic_chess.native.semantic import (
 from generic_chess.rules.compiler import compile_ruleset_for_execution, compile_semantic_ruleset
 from generic_chess.rules.western_chess import build_western_chess_ruleset
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
+
+# Native execution here exercises the explicit legacy draw-policy variant.
+# Standard Shogi loss-policy support is checked in test_native_terminal_policy_support.
 from generic_chess.session.session import GameSession
 
 
@@ -178,7 +181,7 @@ def test_native_leaf_dynamic_definition_is_generic_across_generated_semantic_rul
 
 
 def test_native_leaf_dynamic_definition_is_generic_on_standard_shogi():
-    compiled = compile_semantic_ruleset(build_standard_shogi_ruleset())
+    compiled = compile_semantic_ruleset(replace(build_standard_shogi_ruleset(), stalemate_result="draw"))
     native = compile_native_semantic_rules(compiled)
     result = SemanticSearchEngine(
         compiled,

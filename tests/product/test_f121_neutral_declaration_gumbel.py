@@ -1,3 +1,4 @@
+from dataclasses import replace
 from generic_chess.core.identity import repetition_identity_key
 from generic_chess.core.pieces import Piece
 from generic_chess.core.position import GameState, Hands, HistoryRecord, Position
@@ -12,11 +13,14 @@ from generic_chess.native.compiler import compile_native_semantic_rules
 from generic_chess.native.semantic import available_declarations
 from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
+
+# Native execution here exercises the explicit legacy draw-policy variant.
+# Standard Shogi loss-policy support is checked in test_native_terminal_policy_support.
 from generic_chess.session.session import GameSession
 
 
 def _context():
-    compiled = compile_semantic_ruleset(build_standard_shogi_ruleset())
+    compiled = compile_semantic_ruleset(replace(build_standard_shogi_ruleset(), stalemate_result="draw"))
     return compiled, compile_native_semantic_rules(compiled)
 
 

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from dataclasses import replace
+
 from generic_chess.native.compiler import compile_native_semantic_rules
 from generic_chess.native.semantic import (
     assess_declaration,
@@ -13,6 +15,9 @@ from generic_chess.native.semantic import (
 )
 from generic_chess.rules.compiler import compile_semantic_ruleset
 from generic_chess.rules.standard_shogi import build_standard_shogi_ruleset
+
+# Native execution here exercises the explicit legacy draw-policy variant.
+# Standard Shogi loss-policy support is checked in test_native_terminal_policy_support.
 from generic_chess.rules.western_chess import build_western_chess_ruleset
 
 
@@ -61,7 +66,7 @@ def test_h50b1_western_exact_initial_action_identity_and_max_ply():
 
 
 def test_h50b1_shogi_declarations_continuous_check_and_adjudication():
-    semantic = compile_semantic_ruleset(build_standard_shogi_ruleset())
+    semantic = compile_semantic_ruleset(replace(build_standard_shogi_ruleset(), stalemate_result="draw"))
     native = compile_native_semantic_rules(semantic)
     position = _initial(semantic, native)
     assert native.repetition_policy == "continuous_check_loss"

@@ -314,6 +314,7 @@ def terminal_status(native_rules, position) -> dict:
     """Return the exact Native semantic terminal status and winner."""
     if not native_available():
         raise RuntimeError("native extension is not built")
+    native_rules.require_terminal_policy_support()
     raw = dict(_module().semantic_terminal(native_rules.capsule, position))
     raw["status"] = str(raw["status"])
     raw["winner"] = None if raw.get("winner") is None else int(raw["winner"])
@@ -379,6 +380,7 @@ def search_runtime_sizes() -> dict:
 
 
 def _run_search(native_rules, position, depth: int, *, board_values=None, hand_values=None, entrypoint: str) -> dict:
+    native_rules.require_terminal_policy_support()
     args = (native_rules.capsule, position, int(depth))
     if (board_values is None) != (hand_values is None):
         raise ValueError("board_values and hand_values must be supplied together")
@@ -450,6 +452,7 @@ def semantic_iterative_search(
     """
     if not native_available():
         raise RuntimeError("native extension is not built")
+    native_rules.require_terminal_policy_support()
     if _root_ply_offset not in (0, 1):
         raise ValueError("_root_ply_offset must be 0 or 1")
     if isinstance(tt_megabytes, bool) or not isinstance(tt_megabytes, int) or not 0 <= tt_megabytes <= 1024:
@@ -560,6 +563,7 @@ def root_parallel_search(native_rules, position, max_depth: int, *, workers: int
     mutable state.  This mode is for latency experiments; budgets remain owned
     by the single-thread entrypoint.
     """
+    native_rules.require_terminal_policy_support()
     if max_depth < 1:
         return semantic_iterative_search(
             native_rules, position, max_depth, board_values=board_values,

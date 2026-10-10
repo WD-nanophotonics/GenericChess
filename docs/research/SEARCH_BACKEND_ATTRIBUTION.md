@@ -232,3 +232,109 @@ all work counters. Relative target-directed wall changes are+1.669/-3.631% on
 Chess middle and+0.436/-1.183% on Shogi drop. The direction is unstable at this
 scale. Preserve the candidate as an isolated diagnostic; no production path
 change or larger repeat budget is justified by this result.
+
+## Conversion attribution and bounded public syntax reuse
+
+A new4096-entry decomposition keeps cProfile instrumentation separate from
+clean timings. A sixteen-call stage assay then compares4096 with25000 entries
+on the same middle/drop roots. Its nonoverlapping provider intervals distinguish
+payload, Native legality/return, decode, binding and public projection. On the
+drop root provider share rises from about33% to61% as the search prefix grows;
+public projection alone reaches about9% of total instrumented wall. Shallow
+frontier measurements therefore understate this conversion cost. Additional
+instrumentation raises large-drop wall by about3–4%; profile cumulative times
+still overlap and are not additive causal shares.
+
+The installed change retains one dictionary of at most2048 packed-action keys
+per existing provider thread. Each hit only reuses a frozen public semantic
+action. Complete decoding, source/base/current-type validation, pattern lookup
+and position-dependent binding reconstruction still run on every action. The
+key includes kind, source/target, promotion, base/actor type and exact pattern/
+geometry indices within one compiled provider. Public projection depends only
+on these fields and that provider's fixed shape/mappings. Aux/history and current
+binding are never cached as legality facts. Existing callback scheduling and
+strict failure semantics remain, including warm hits and cache eviction.
+
+Sixteen actual-product calls against the frozen uncached method have identical
+fixed-work traces. Reversed local wall reductions are2.56/3.07% on Chess middle,
+8.38/7.95% on Shogi drop,4.01/6.06% and4.27/2.59% on two generated full-history
+roots. Retained shallow object estimates are96–363kB on those controls, including
+dictionary/keys/public actions/squares; shared strings, allocator and transient
+memory are outside that estimate. The dictionary is bounded, but wider-rule
+churn and a total process-memory bound are not established by these timings.
+
+Same-time0.25/1/4second diagnostics retain all192 legal choices at eight roots,
+two reversed repeats and minimal/supported algorithms. All96 old/new pairs keep
+the same action and finite-D4 regret. Positive regret is12/48 in each minimal
+arm and16/48 in each supported arm. Completed depth increases in4/48 minimal
+pairs and2/48 supported pairs, never decreases here, but this does not change a
+choice or establish better playing strength. Preserve that absence of decision
+gain alongside the finite-work throughput improvement.
+
+Transfer audits compare all803 public children at22 existing6x6 event roots:
+full position, terminal, runtime hash oracle and history/search keys agree with
+Core and the old provider. A separate176-call q0/q2 caller check completes D2
+throughout and keeps every action/score/PV, with balanced restoration and zero
+Native fallback. Among44 reversed pairs per q setting, faster rows are33(q0)
+and29(q2); median reductions are2.01% and1.11%, with regressions as large as
+15.96% on tiny q0 calls and5.48% on q2. These exposed repeated roots test scoped
+semantic transfer, not the entire generated domain or independent generalization.
+
+Two alternatives remain deferred. Full-cell sparse identity differencing,
+first using metadata carriers and then a direct ancillary map, has mixed small
+effects across familiar/generated/Core/Native controls. Its512 compound identity
+and12 auxiliary/resize oracle cases concern synthetic carriers, not observed
+legal production defects. Live hashing is unchanged. Existing semantic-engine
+construction is about2% of Native instrumented cost, which does not justify a
+global engine cache. Repacking every child for the already installed Native
+anchor-check export regresses all eight reversed4096-entry pairs by2.67–11.26%.
+Its callback granularity also differs. Retain Python check/history authority;
+neither faster primitives alone nor reuse rhetoric warrants a new route.
+
+Exact outputs, original projection method, product source and negative prototype
+limits are routed by [the conversion index](data/native_conversion_20261010.json)
+to a purpose archive. The first sparse pilot and unpinned intermediate-source
+limitation remain explicit. No default algorithm, evaluator, rule definition,
+training, game population or frozen `ui-test` revision changes in this step.
+
+## Full Native search has a separate terminal-policy gap
+
+Full C search is distinct from Native legality with Core search. A twenty-call
+support pilot uses eight familiar and two generated full-history roots, D2,
+one second,100000 entries, explicit material, zero dynamic terms and TT0.
+Full Native iterates D1+D2 and orders packed actions; bare Core uses lexical
+order without iteration. Their work counts are not aligned. Three Native calls
+stop at D1 while Core completes D2. Legal choices/PVs and restored roots alone
+certify neither identical semantics nor faster complete search.
+
+On Shogi's tactical root, Native reports1400 versus Core's one-step win.
+Two children,3c2c+ and3c3b+, have zero legal moves without check. Current Core
+awards the opponent the win; installed raw C reports stalemate without a winner.
+Its semantic payload omits `stalemate_result`. Native's10^8 and Core's10^9 mate
+scales explain two other differences, but cannot explain this adjudication error.
+Old results and installed binary hash stay archived; affected roots cannot
+establish correct Native search cost.
+
+Public Native terminal, fixed/probe, iterative, persistent and experimental
+parallel search now reject the unsupported loss policy explicitly. Native legal
+actions remain usable with Core terminal/history authority. This is a capability
+boundary, not a C repair or full-support claim. Existing Native execution tests
+use explicit legacy draw-policy variants for their unrelated capabilities;
+historical hash fixtures keep that policy and old hashes. Current Standard Shogi
+fingerprint checks use its corrected loss definition. Historical numerical
+evidence and the frozen UI remain unchanged.
+
+Advisor review supports retaining this boundary and prioritizing a separately
+versioned kernel repair before affected full-Native cost attribution. It reviewed
+supplied evidence, not an independent rerun. Source inspection finds another
+required change: fixed/probe search scores checkmate as loss and other terminals
+as zero, ignoring winner; iterative/persistent already score terminal winners.
+A payload-only patch is insufficient. Existing Zig builder/compiler are present;
+new build execution permission is not established. No rebuild or App Control
+change was attempted in this segment.
+
+A typed board-token memo prototype retains all32 fixed-work traces with96–98%
+hits. Most gains are0.4–2.6%, with one reversed Chess/Native pair regressing1.58%.
+Defer this extra live cache. The first broad regression exposed inaccessible
+system temp paths and obsolete Shogi fixtures; retain that failure and validate
+the corrections with a project-local temporary directory.

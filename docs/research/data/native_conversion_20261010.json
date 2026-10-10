@@ -1,0 +1,225 @@
+{
+  "schema": 1,
+  "base_commit": "c62ffec7f89ed80dbd4950b4788372ba1cf4bbd0",
+  "scope": "Agent-only exposed search execution attribution; no user/private input, raw Slack/account or credentials. ui-test unchanged. Timing is local, not playing strength.",
+  "archive": "docs/archive/native_conversion_20261010/evidence.zip",
+  "members": {
+    "scripts/native_conversion_diagnostic.py": {
+      "bytes": 4565,
+      "sha256": "64240d38bb86ac4b979a76bbd7273b0ddc7010c9cdc9903d6c9d238ff0c362cd"
+    },
+    "scripts/sparse_hash_diagnostic.py": {
+      "bytes": 3152,
+      "sha256": "649ea99cbe45f84e8fac0c6b097d379b5db4a77a5ea1e71e4c2f6a3d5210cf8b"
+    },
+    "scripts/sparse_hash_assay.py": {
+      "bytes": 5394,
+      "sha256": "e0beb8289e186a87abd326fc148d956622d5018a01e0a09a242f5cc93cca57cf"
+    },
+    "scripts/provider_stage_diagnostic.py": {
+      "bytes": 4940,
+      "sha256": "7e7fff848d058c2b60948ca9cdcfc849162f70cf2dbf32623634c186a547af52"
+    },
+    "scripts/public_projection_assay.py": {
+      "bytes": 4387,
+      "sha256": "db75ea8914db1313119a90041ae3984a0a9999c1f68f97fb94169e8d84abb12d"
+    },
+    "scripts/public_projection_product_check.py": {
+      "bytes": 3910,
+      "sha256": "371cbd8a6c16e9f66e96cb0f1df67946cfa87e418fcc0d8c21b70a2eda299c4d"
+    },
+    "scripts/public_projection_time_check.py": {
+      "bytes": 4431,
+      "sha256": "04630805adc904665e390da8f49ffb639b4449c2cf10f7fe105d8b558565c926"
+    },
+    "scripts/public_projection_transfer.py": {
+      "bytes": 4859,
+      "sha256": "8e4b0ad6790b256d890748d1bae54126153f8cd92524d6044b2bdb777302a165"
+    },
+    "scripts/public_projection_qtransfer.py": {
+      "bytes": 5736,
+      "sha256": "5f60f972a5a45e0c19c5e4cfc1861db3e123bba7955bf0d2e1971ead59b4a362"
+    },
+    "tests/development/test_sparse_hash_diagnostic.py": {
+      "bytes": 2926,
+      "sha256": "b3b63ad2a30f3a42bdbbe5c13d7e3fa5da010ab51db8474ef058beee845f4941"
+    },
+    "tests/product/test_native_public_projection.py": {
+      "bytes": 3655,
+      "sha256": "569bdc97843b3f3a66aac1d39b3adc6ce3bba4d213de7e2d251bb5679ce1ca00"
+    },
+    ".local_agent/native-conversion-20261010/decomposition.json": {
+      "bytes": 174751,
+      "sha256": "79971c75ca2216ac68f8ef3ae75733a804855b3fdf71439681258825574d7f0b"
+    },
+    ".local_agent/native-conversion-20261010/sparse-assay.json": {
+      "bytes": 19040,
+      "sha256": "d6e0793e1437a7db34ef4f2e17abc8dc69e8e83569560576a6de280fdf6540d9"
+    },
+    ".local_agent/native-conversion-20261010/sparse-generated.json": {
+      "bytes": 19315,
+      "sha256": "b010326a5c30a4866119bee1b30507e34ff5afd7d16033652c9fa54e52db837c"
+    },
+    ".local_agent/native-conversion-20261010/sparse-direct.json": {
+      "bytes": 37736,
+      "sha256": "72ebe26d0480a4bb7d845b8ae3b92126b7c91ae734a5312add263712c1725036"
+    },
+    ".local_agent/native-conversion-20261010/provider-stages.json": {
+      "bytes": 22362,
+      "sha256": "57cfe6c85cd7c80105df2914993bacb12e02fdb9bf42621de877274134317d9e"
+    },
+    ".local_agent/native-conversion-20261010/public-projection.json": {
+      "bytes": 23975,
+      "sha256": "37c01ff08292e27469c30ad5350312177d60230b54e6356baa6839e6f4c59d4f"
+    },
+    ".local_agent/native-conversion-20261010/product-check.json": {
+      "bytes": 25043,
+      "sha256": "56aab48cf6254155c1b161032879b32d2de178489772de45481bc7183d6baf03"
+    },
+    ".local_agent/native-conversion-20261010/time-check.json": {
+      "bytes": 467207,
+      "sha256": "297e982e17b4e0d43354061955bb72e271b06b035cb6b5e8027639f59a7a9798"
+    },
+    ".local_agent/native-conversion-20261010/transfer.json": {
+      "bytes": 5149,
+      "sha256": "dc813e6ea4a0c7d8500de1d19cf6b2cf22ad432201cb021558920e15725a5679"
+    },
+    ".local_agent/native-conversion-20261010/qtransfer.json": {
+      "bytes": 1261805,
+      "sha256": "6203255d54610bd8f1e1a6ec877227f1cdb381981613aa602d86cc56e47fb296"
+    },
+    ".local_agent/native-conversion-20261010/failures.json": {
+      "bytes": 2164,
+      "sha256": "362be4dbc79d29cddce49384fc16c6323c34c7f75321cc975d9aa1b5cde87ecd"
+    },
+    ".local_agent/native-conversion-20261010/baseline-native.py": {
+      "bytes": 8761,
+      "sha256": "9e601565dd739816bdd4eb460f6c762487fafe167f975e0c59a86e4b42bc168d"
+    },
+    ".local_agent/native-conversion-20261010/product-native.py": {
+      "bytes": 9391,
+      "sha256": "4dd45d72853cac0845848bb333da3e7829652d33897e5d6e5cc2d4929fd1226f"
+    },
+    ".local_agent/native-conversion-20261010/package.py": {
+      "bytes": 8039,
+      "sha256": "ddd61cedb11f75c2b7133b8779b2b5a9ffd80d05cf01f6b2ad759c014ecd6bfe"
+    },
+    ".local_agent/generated6-20261008/coverage.json": {
+      "bytes": 383389,
+      "sha256": "8b2d54188b9ded320c4591883e9520a30752bd5b20cba5920e0b5e76e862e7fc"
+    },
+    ".local_agent/generated6-20261008/event-frontiers.json": {
+      "bytes": 173360,
+      "sha256": "f17ec013e8cde1300efdc03cbf8d195c89a36969cce8ee10b244bffd25570fcd"
+    },
+    ".local_agent/search-attribution-20261010/utility.json": {
+      "bytes": 646778,
+      "sha256": "777f62add4f58102be9985169bea2bf57ef09f0604994d79d8a50ab830322c2c"
+    },
+    ".local_agent/native-conversion-20261010/native_check_probe.py": {
+      "bytes": 3671,
+      "sha256": "3ab23539a95be654ff15d064e4cb242235c1f63142c52b4bae60d885de125449"
+    },
+    ".local_agent/native-conversion-20261010/native-check.json": {
+      "bytes": 19952,
+      "sha256": "a19f461c0a9dd9d37ab411155819e86d72bb20d520b3c77eb27c184b914b69a2"
+    },
+    ".local_agent/native-conversion-20261010/board_token_probe.py": {
+      "bytes": 4018,
+      "sha256": "a71f21e6cd954cee8a78e886393e6727467e1e661e23175dd34a014bde1eb776"
+    },
+    ".local_agent/native-conversion-20261010/board-token.json": {
+      "bytes": 42130,
+      "sha256": "2dde831fc825f96760f088583d8df092d0c778ac96ab311b3193302fba77ae2f"
+    },
+    ".local_agent/native-conversion-20261010/recover.py": {
+      "bytes": 3479,
+      "sha256": "24a3b13ea4a277f27405af77e0654a73b9c83900f6f1b9ade2a8a9dd89d4f2ca"
+    },
+    ".local_agent/native-conversion-20261010/recovery.json": {
+      "bytes": 767,
+      "sha256": "e6101d7000e95f011cd7821508e6cac6de5c01380434ee92db4abdf5f4ca32bd"
+    },
+    ".local_agent/native-conversion-20261010/full_native_probe.py": {
+      "bytes": 4346,
+      "sha256": "98823ef7d50363dd91b11ea17969041dbd117b5e9bf2f8fc54027860e8152212"
+    },
+    ".local_agent/native-conversion-20261010/full-native.json": {
+      "bytes": 1661309,
+      "sha256": "1a25dccb51076663ee200f863dd76294927c5899736eaaa03b4b6d6c12ac4878"
+    },
+    ".local_agent/native-conversion-20261010/terminal_discrepancy.py": {
+      "bytes": 2169,
+      "sha256": "32745dcc5ee595c15cbfa5ba0b092b61f64547bb973ef9148c143912388e4319"
+    },
+    ".local_agent/native-conversion-20261010/terminal-discrepancy.json": {
+      "bytes": 996,
+      "sha256": "cd13f02cff49ee0372f610cfe80de79e0569b379c960bc3c828bec73ec3ef895"
+    },
+    ".local_agent/native-conversion-20261010/kernel-contract.json": {
+      "bytes": 980,
+      "sha256": "b53fd96c60484debae65c4540d9294344a3ae4c603892d3ebf9aaf8081cdd294"
+    },
+    "generic_chess/native/compiler.py": {
+      "bytes": 44228,
+      "sha256": "390c68d563139aabff17ed9d66d4dd39f3f572202253cae6a612ca2a70214d85"
+    },
+    "generic_chess/native/semantic.py": {
+      "bytes": 27643,
+      "sha256": "3f4997309055e295693398ca33092ccd3221ec6fb23ddf9eb9dd4c18c59af5ff"
+    },
+    "generic_chess/native/semantic_engine.py": {
+      "bytes": 28473,
+      "sha256": "697dc58abefd6301501115207953ba8b68404751476d8f11272a4015dfe9db67"
+    },
+    "tests/product/test_native_terminal_policy_support.py": {
+      "bytes": 2091,
+      "sha256": "40d0be289aa3fa9a27ae24a7a05675603e5712b4ab2319119b24efe425f1e58b"
+    }
+  },
+  "counts": {
+    "decomposition_calls": 12,
+    "sparse_partial_familiar_calls": 16,
+    "sparse_generated_calls": 16,
+    "sparse_direct_calls": 32,
+    "provider_stage_calls": 16,
+    "projection_prototype_calls": 16,
+    "actual_product_calls": 16,
+    "common_time_calls": 192,
+    "generated_q_calls": 176,
+    "public_children": 803,
+    "native_check_probe_calls": 16,
+    "related_tests": 63,
+    "board_token_calls": 32,
+    "full_native_pilot_calls": 20
+  },
+  "source_boundaries": {
+    "decomposition_sparse_stages": "Use baseline-native.py at base; final sparse source differs from initial pilot as disclosed in failures.json.",
+    "projection_prototype": "Frozen original_source in public-projection.json is the actual pre-cache method. Do not rerun its adaptive inspect.getsource against the candidate and call that an old baseline.",
+    "product_time_transfer": "Use product-native.py plus baseline_class restoring the original_source receipt; product-check.json pins full candidate hash. Supporting tracked sources use base checkout; no other backend change.",
+    "full_native": "Pilot uses pre-guard base c62ffec7; archived compiler/semantic/semantic_engine snapshots are post-pilot explicit loss-policy rejection. No C repair/build claimed. terminal-discrepancy is an explicitly raw installed-kernel fault witness.",
+    "inputs": "Exact generated rules/full routes/event roots and original finite-D4 teacher included. Already exposed; never restore holdout status."
+  },
+  "decisions": {
+    "full_native": "adopt explicit terminal/search rejection of unsupported loss; repair versioned kernel semantics before affected profiling",
+    "board_token": "defer mixed effects despite96-98percent hits",
+    "sparse_hash": "defer mixed effects; live hash unchanged",
+    "native_anchor_query": "defer all8paired wall regressions and changed callback granularity; Python authority retained",
+    "engine_cache": "defer construction onlyabout2percent of instrumented Native cost",
+    "public_projection": "adopt bounded immutable public syntax reuse; full position bindings still rebuilt",
+    "decision_utility": "192same-time choices unchanged; no finite-D4 improvement; q0/q2 generated decisions unchanged"
+  },
+  "archive_sha256": "4c64c4d26e5e1ce3b9e10b8b46fb8cdc8a5dd00039ca3295b5a822d9bf75a12d",
+  "validation": {
+    "full_suite": {
+      "passed_items": 1833,
+      "exit_code": 0,
+      "temp_scope": "project-local",
+      "scope": "full collection before final parallel-guard parameter; final targeted11tests include that parameter"
+    },
+    "final_targeted_tests": 11,
+    "archive_exact_hashes": 43,
+    "privacy_scan": "No raw Slack, account IDs, user private input or credential material in selected members",
+    "recovery": "Independent base Python/input recovery7tests and22roots/803actions, using existing installed Native extension; not fresh binary build"
+  }
+}

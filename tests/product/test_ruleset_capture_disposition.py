@@ -40,7 +40,7 @@ from test_xiangqi_static_setup_fixture import _build_incomplete_static_xiangqi_s
             "9c56a182d005eb01149b3c6d8211cec5db22350c0f8c87d7a510a1943bbcbf00",
         ),
         (
-            build_standard_shogi_ruleset,
+            lambda: replace(build_standard_shogi_ruleset(), stalemate_result="draw"),
             "e00bdd7078e353babe0346b9292543e127b5f4230bf1b703a23b56d679663d13",
             "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635",
             "dba7039afb4c33a7f49028de14e23ec3e9fb3b2c04136ff6c15f2ab76bb179a4",

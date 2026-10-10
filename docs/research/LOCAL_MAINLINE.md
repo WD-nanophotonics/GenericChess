@@ -42,7 +42,7 @@ Dot relayed direction and proposed the bridge/metrics; it did not independently
 run the benchmarks or inspect every manual line. No change to single writer,
 duration, heartbeat, stops, publication or the >1hour-run necessity consultation.
 
-## Search attribution checkpoint �2026-10-10
+## Search attribution checkpoint —2026-10-10
 
 Thin identical lexical alpha-beta now drives Core, python-chess and cshogi;
 Native legality and cold supported search are separate controls. Eight exposed
@@ -65,6 +65,25 @@ replacement, price fitting, bigger game cohort or training from these controls.
 Evidence and limits: SEARCH_BACKEND_ATTRIBUTION.md;
 data/search_attribution_20261010.json. Older Native App-Control failures remain
 historical; current constructor/call observations certify only this measured build.
+
+## Native conversion and terminal checkpoint — 2026-10-10
+
+Bounded immutable public-action reuse is installed; position bindings and legality
+checks still rebuild.16 fixed-work calls improve local wall by about2.6–8.4%;
+192 same-time choices remain unchanged, so no decision/strength gain.803 generated
+children and176 q0/q2 calls preserve tested semantics. Sparse identity, typed
+board-token memo and child Native-check substitution stay archived prototypes.
+
+The separate full Native pilot exposes a no-move-loss gap: current Standard
+Shogi terminal policy never reaches C. Public full-Native terminal/search now
+reject it explicitly; Native legality plus Core remains usable. Affected roots
+cannot support correct-search cost attribution. Next prioritize versioned payload/
+kernel terminal repair, including fixed/probe winner scoring, then re-establish
+affected correctness/cost controls. Dot supports this order without an independent
+rerun. Establish approved build execution first; otherwise retain this boundary
+and profile supported rules. UI stays frozen. Evidence/source boundaries:
+SEARCH_BACKEND_ATTRIBUTION.md; data/native_conversion_20261010.json.
+No timing or workflow policy change.
 
 ## Retained lines and prior evidence
 

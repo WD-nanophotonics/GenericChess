@@ -153,8 +153,8 @@ def test_checkmate_precedes_automatic(monkeypatch):
 def test_semantic_compile_carries_the_same_immutable_primitive_without_live_drift():
     live = build_standard_shogi_ruleset()
     assert live.automatic_adjudications[0].adjudication_id == "standard_shogi_500_move_no_contest"
-    assert compute_fingerprint(replace(live, automatic_adjudications=())) == "1bf2a46fe8e9e8636dcdde032ad8d9ccdd42d56cba901a8385043103952bd1f4"
-    assert compute_fingerprint(live) == "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635"
+    assert compute_fingerprint(replace(live, automatic_adjudications=())) == "abfc2ccad88f0ce865c86fe42445376670deb7f521ccd6bf31d41d00acccc3f2"
+    assert compute_fingerprint(live) == "ba3518b989fe3965a08ead19a1ff1607102911734b9849948f4b1584b5c801a8"
     audit_definition = replace(live, repetition_limit=10_000)
     semantic = compile_semantic_ruleset(audit_definition)
     assert semantic.ir.automatic_adjudications == semantic.support.automatic_adjudications

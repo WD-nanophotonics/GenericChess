@@ -261,7 +261,7 @@ def test_standard_shogi_certification_copy_uses_generic_declaration_semantics():
         ruleset_fingerprint=compiled.ruleset_fingerprint,
     )
     assert assess_declaration(_state(compiled, owner1), compiled, "claim_owner_1").outcome == "WIN"
-    assert compute_fingerprint(product) == "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635"
+    assert compute_fingerprint(product) == "ba3518b989fe3965a08ead19a1ff1607102911734b9849948f4b1584b5c801a8"
     assert product.metadata["nyugyoku_supported"] is True
 
 

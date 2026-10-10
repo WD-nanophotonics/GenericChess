@@ -188,6 +188,7 @@ class SemanticSearchEngine:
         policy=None,
         policy_deferred_legality: bool = False,
     ) -> None:
+        native_rules.require_terminal_policy_support()
         if getattr(compiled, "no_progress_draw", None) is not None:
             raise NativeUnsupportedRuleError(
                 "native search does not support no-progress draw rules"

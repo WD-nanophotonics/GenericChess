@@ -106,7 +106,7 @@ def test_compile_only_carrier_requires_matching_ruleset():
             "9c56a182d005eb01149b3c6d8211cec5db22350c0f8c87d7a510a1943bbcbf00",
         ),
         (
-            build_standard_shogi_ruleset,
+            lambda: replace(build_standard_shogi_ruleset(), stalemate_result="draw"),
             "dba7039afb4c33a7f49028de14e23ec3e9fb3b2c04136ff6c15f2ab76bb179a4",
         ),
         (
