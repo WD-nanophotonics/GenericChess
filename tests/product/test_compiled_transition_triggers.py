@@ -5,6 +5,7 @@ import pytest
 from generic_chess.core.pieces import Piece
 from generic_chess.core.semantic_executor import SemanticEngine, _WorkingPosition
 from generic_chess.rules.compiler import compile_semantic_ruleset
+from generic_chess.rules.schema import RuleAuxState, RuleSquareRef, RuleTransitionTrigger
 from rule_semantics_ir_fixtures import castling_ruleset
 
 @pytest.mark.parametrize('scope', ['per_owner', 'global'])
@@ -108,3 +109,29 @@ def test_dynamic_aux_square_reads_pretransition_state_with_fixed_clears(scope,ow
                         if hit:expected[(right.slot_id,owner if right.scope=='per_owner' else -1)]=0
                     assert outputs[0]==expected
                     assert position.aux_state==tuple((key,square_value) for key in keys)
+
+
+@pytest.mark.parametrize('scope',['per_owner','global'])
+@pytest.mark.parametrize('owner',['self','opponent','any'])
+@pytest.mark.parametrize('token',[(4,0),None,(7,0),(3,7)])
+@pytest.mark.parametrize('side',[0,1])
+def test_public_dynamic_aux_rules_preserve_full_legal_children(scope,owner,token,side):
+    rule=castling_ruleset();a=rule.semantic_actions[0]
+    mark=RuleAuxState('mark','square_or_none',scope,'persistent',token)
+    trigger=RuleTransitionTrigger('king_right','piece_leaves_square',
+        RuleSquareRef('aux_slot_square',slot_name='mark',owner_relative=False),owner)
+    a=replace(a,aux_state=a.aux_state+(mark,),triggers=(trigger,)+a.triggers[1:])
+    c=compile_semantic_ruleset(replace(rule,semantic_actions=(a,)))
+    fallback=replace(c);object.__setattr__(fallback,'_fixed_transition_triggers',None)
+    on=SemanticEngine(c);off=SemanticEngine(fallback)
+    p=replace(on._initial_position(),side_to_move=side)
+    right=next(s for s in c.ir.aux_slots if s.value_kind=='bool')
+    actions=sorted(on.legal_actions(p),key=str)
+    assert actions==sorted(off.legal_actions(p),key=str)
+    for action in actions:
+        x=on.apply(p,action);y=off.apply(p,action);assert x==y
+        if action.actor_type=='K' and action.source is not None and action.pattern_id!='sem_00_king_side_shift':
+            source=(action.source%c.support.board_shape.width,action.source//c.support.board_shape.width)
+            hit=token==source and owner in ('self','any')
+            assert dict(x.aux_state).get((right.slot_id,side),right.initial)==(0 if hit else 1)
+        assert sorted(on.legal_actions(x),key=str)==sorted(off.legal_actions(y),key=str)

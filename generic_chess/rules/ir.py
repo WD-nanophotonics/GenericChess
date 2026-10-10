@@ -639,6 +639,16 @@ def _fixed_transition_triggers(ir, support):
     return tuple(plans)
 
 
+def _actor_capture_patterns(ir):
+    """Ordered type dispatch for the actor-only pseudo-attack witness."""
+    by_type = {}
+    for pattern in ir.patterns:
+        if pattern.target.kind == "target_enemy":
+            for tid in dict.fromkeys(pattern.type_ids):
+                by_type.setdefault(tid, []).append(pattern)
+    return {tid: tuple(patterns) for tid, patterns in by_type.items()}
+
+
 @dataclass(frozen=True, slots=True)
 class CompiledSemanticRuleset:
     """Compiled product for semantic-DSL rulesets.
@@ -653,11 +663,14 @@ class CompiledSemanticRuleset:
     support: "CompiledSemanticSupport | None" = None
     _incoming_attack_paths: Any = field(init=False, repr=False, compare=False, default=None)
     _fixed_transition_triggers: Any = field(init=False, repr=False, compare=False, default=None)
+    _actor_capture_patterns: Any = field(init=False, repr=False, compare=False, default=None)
 
     def __post_init__(self):
         # Derived execution data is not part of the IR/fingerprint/payload.
         # init=False also rebuilds it when dataclasses.replace changes IR.
         if self.support is not None and self.ir.capabilities.new_ir_core_executable:
+            object.__setattr__(self, "_actor_capture_patterns",
+                _actor_capture_patterns(self.ir))
             object.__setattr__(self, "_incoming_attack_paths",
                 _incoming_attack_paths(self.ir, self.support.board_shape.area))
             if self.ir.triggers:

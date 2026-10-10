@@ -1353,7 +1353,12 @@ class SemanticEngine:
         piece = child.board[source]
         if piece is None or piece.owner != position.side_to_move:
             return False
-        for pattern in self._patterns:
+        # Only scheduling is compiled; the original geometry/path/state guards
+        # still determine the actor witness. Missing metadata keeps full dispatch.
+        _checkpoint(checkpoint)
+        indexed = self.semantic._actor_capture_patterns
+        patterns = self._patterns if indexed is None else indexed.get(piece.current_type_id, ())
+        for pattern in patterns:
             _checkpoint(checkpoint)
             if pattern.target.kind != "target_enemy" or piece.current_type_id not in pattern.type_ids:
                 continue

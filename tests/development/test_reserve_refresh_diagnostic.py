@@ -97,3 +97,34 @@ def test_cancel_from_progress_keeps_original_completed_reserve(monkeypatch):
     from scripts.research_record import record_value
     assert record_value(d.action)==events[0]['action'] and d.score==events[0]['score']
     assert events[-1]['phase']=='aborted' and all(x['runtime_restored'] for x in events)
+
+
+@pytest.mark.parametrize('use_tt',[False,True])
+def test_phase_bypass_never_uses_tt_in_cheap_or_refresh(monkeypatch,use_tt):
+    from generic_chess.ai.alphabeta import search
+    from generic_chess.ai.alphabeta.transposition import TranspositionTable
+    s,e,b=fixture();active=[];calls=[];old=search.negamax
+    def traced(state,depth,alpha,beta,ply,ctx,*args,**kwargs):
+        active.append(ctx)
+        try:return old(state,depth,alpha,beta,ply,ctx,*args,**kwargs)
+        finally:active.pop()
+    monkeypatch.setattr(search,'negamax',traced)
+    class TracedTT(TranspositionTable):
+        def probe(self,key):
+            assert active
+            ctx=active[-1];calls.append(('probe',search._ordinary_qdepth_limit(ctx)))
+            assert use_tt and ctx.first_main_iteration_complete and ctx.qdepth_limit==4
+            return super().probe(key)
+        def store(self,*args):
+            assert active
+            ctx=active[-1];calls.append(('store',search._ordinary_qdepth_limit(ctx)))
+            assert use_tt and ctx.first_main_iteration_complete and ctx.qdepth_limit==4
+            return super().store(*args)
+    events=[];monkeypatch.setattr(pm,'run_root_search',make_refresh(events,expected_state=s.state,tt_policy='phase_bypass'))
+    p=AlphaBetaPlayer(s.compiled,evaluator_override=e,use_native_semantic_legality=False,use_tt=use_tt);p._tt=TracedTT()
+    d=p.choose_action(s,SearchLimits(max_depth=2,max_nodes=10000,max_time_seconds=5))
+    assert not active and s.state==b.initial
+    assert all(x['runtime_restored'] and x['runtime_balanced'] for x in events)
+    assert d.completed_depth>=1 and events[-1]['phase']=='complete'
+    assert bool(calls)==use_tt
+    assert all(q==4 for _,q in calls)

@@ -1,8 +1,9 @@
 """Protected tactical refresh diagnostic; no production policy changes.
 Uses one original run_root_search budget and a completed cheap D1 reserve.
 An isolated q1 D1 recomputation follows; partial refresh never replaces reserve.
-TT is cleared at scope switch and disabled during q1; subsequent configured q
-search gets a clean TT. This is an explicit cost, not a cache-compatible claim.
+The default clear policy empties TT around q1. Opt-in phase_bypass disables
+TT in cheap-q0/q1 and retains configured-q entries for deeper iterations.
+Retained warm bounds have a selective contract, not finite-horizon equality.
 """
 from __future__ import annotations
 import argparse,hashlib,inspect,json,sys,time
@@ -57,6 +58,16 @@ REFRESH="""        if depth == 1 and ctx.qdepth_limit > 0 and best.declaration i
 """
 assert SOURCE.count(ANCHOR)==1
 MODIFIED=SOURCE.replace(ANCHOR,ANCHOR+REFRESH)
+PHASE_REFRESH=REFRESH.replace('''            if not _naive_tt:
+                ctx.tt.clear()
+                ctx.use_tt = False''','''            ctx.use_tt = False''').replace(
+    'ctx.use_tt = original_tt','ctx.use_tt = use_tt').replace('''                if not _naive_tt:
+                    ctx.tt.clear()''','')
+PHASE_MODIFIED=SOURCE.replace(ANCHOR,ANCHOR+PHASE_REFRESH)
+ITERATION='    for depth in range(1, max_depth + 1):'
+assert PHASE_MODIFIED.count(ITERATION)==1
+PHASE_MODIFIED=PHASE_MODIFIED.replace(ITERATION,ITERATION+
+    '\n        ctx.use_tt = use_tt if depth > 1 or ctx.qdepth_limit == 0 else False')
 
 
 def stopped():
@@ -65,7 +76,7 @@ def stopped():
         if f.get('stopped') or f.get('user_paused'):raise RuntimeError('project stopped')
 
 
-def make_refresh(events,naive=False,token=None,cancel_phase=None,expected_state=None):
+def make_refresh(events,naive=False,token=None,cancel_phase=None,expected_state=None,*,tt_policy='clear'):
     namespace=dict(search.__dict__)
     def event(phase,ctx,result,reason=None):
         events.append(dict(phase=phase,at=time.perf_counter(),deadline=ctx.budget._deadline,
@@ -78,7 +89,10 @@ def make_refresh(events,naive=False,token=None,cancel_phase=None,expected_state=
         if expected_state is not None:assert events[-1]['runtime_restored']
         if phase==cancel_phase:token.cancel()
     namespace.update(_refresh_log=event,_naive_tt=naive)
-    exec(compile(MODIFIED,'<protected-reserve-diagnostic>','exec'),namespace)
+    if tt_policy not in ('clear','phase_bypass'):
+        raise ValueError('unknown diagnostic TT policy')
+    code=MODIFIED if tt_policy=='clear' else PHASE_MODIFIED
+    exec(compile(code,'<protected-reserve-diagnostic>','exec'),namespace)
     return namespace['run_root_search']
 
 
@@ -119,11 +133,12 @@ def main():
     p.add_argument('--games',type=Path,default=ROOT/'.local_agent/ui-product-20261010/games-final.json')
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--batch',choices=['scope','time','transfer','cancel','qzero','population'],required=True)
+    p.add_argument('--tt-policy',choices=['clear','phase_bypass'],default='clear')
     args=p.parse_args()
     report=dict(declaration=__doc__,batch=args.batch,complete=False,
-        source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        tt_policy=args.tt_policy,source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         search_source_sha256=hashlib.sha256(SOURCE.encode()).hexdigest(),
-        generated_function_sha256=hashlib.sha256(MODIFIED.encode()).hexdigest(),rows=[])
+        generated_function_sha256=hashlib.sha256((MODIFIED if args.tt_policy=='clear' else PHASE_MODIFIED).encode()).hexdigest(),rows=[])
     args.output.parent.mkdir(parents=True,exist_ok=True)
     def save():write_record(args.output,report)
     save();global_start=time.perf_counter()
@@ -139,7 +154,8 @@ def main():
         for arm,seconds,depth,cancel,phase in cases:
             stopped();assert time.perf_counter()-global_start<300
             events=[];token=CancellationToken() if cancel else None
-            fn=ORIGINAL if arm=='baseline' else make_refresh(events,arm=='naive',token,phase,s.state)
+            fn=ORIGINAL if arm=='baseline' else make_refresh(events,arm=='naive',token,phase,s.state,
+                tt_policy='clear' if arm=='naive' else args.tt_policy)
             player_module.run_root_search=fn
             player=AlphaBetaPlayer(s.compiled,evaluator_override=e,use_native_semantic_legality=False)
             q=0 if args.batch=='qzero' else 4

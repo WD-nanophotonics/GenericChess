@@ -5,7 +5,10 @@ live budget. This addresses the earlier first-q1 D0 starvation, but does not
 make replacement monotonically better. The implementation is a research-only
 source clone in `scripts/reserve_refresh_diagnostic.py`; product search and the
 frozen UI branch are unchanged. Exact producers, failures and raw observations
-are routed through `data/reserve_refresh_20261010.json`.
+are routed through `data/reserve_refresh_20261010.json`. Later cold/actual-caller/
+matched-prefix warm controls and the separate actor dispatch repair are in
+PHASE_BYPASS_DIAGNOSTIC.md and `data/phase_bypass_20261010.json`; earlier results
+below keep their original scope and budgets.
 
 ## Completed reserve versus tactical coverage
 
