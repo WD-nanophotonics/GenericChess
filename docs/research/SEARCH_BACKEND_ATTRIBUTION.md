@@ -338,3 +338,27 @@ hits. Most gains are0.4–2.6%, with one reversed Chess/Native pair regressing1.
 Defer this extra live cache. The first broad regression exposed inaccessible
 system temp paths and obsolete Shogi fixtures; retain that failure and validate
 the corrections with a project-local temporary directory.
+
+## Post-publication zero-feature scheduling control
+
+The terminal scan generates candidates before probing availability; a nonleaf
+then generates them again. Before redesigning this,1800 warmed primitive calls
+on three supported Chess roots show that evaluation with explicit zero dynamics
+costs more than terminal queries. Source inspection explains why: any supplied
+dynamic tuple sets `dynamic_supplied`, so even `(0,0,0)` computes unused features.
+An absent profile disables them. Existing product defaults already use absence.
+
+A separate2400-call primitive control preserves scalar material and root state.
+Twelve full-Native searches, D8 with512nodes and a two-second fuse, compare zero
+versus absent dynamics in reversed order. All six pairs preserve actual action,
+decision line, score, PV, completed depth, nodes and termination reason; absent
+features take about6–18times less wall on these three roots. This is a bounded
+scheduling diagnostic, not a universal speed factor or stronger-player result.
+Dynamic feature telemetry/config identity can differ and is not declared equal.
+No production default or C binary changes.
+
+The earlier full-Native pilot remains the explicit-zero scheduling version.
+Its caps cannot establish inherent Native slowness; its Shogi no-move defect
+remains a separate correctness failure. Future material-only comparisons should
+omit unused feature profiles and record that version boundary. On affected loss
+rules, kernel semantic repair still comes before correct-search cost attribution.

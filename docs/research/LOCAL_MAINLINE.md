@@ -83,7 +83,12 @@ affected correctness/cost controls. Dot supports this order without an independe
 rerun. Establish approved build execution first; otherwise retain this boundary
 and profile supported rules. UI stays frozen. Evidence/source boundaries:
 SEARCH_BACKEND_ATTRIBUTION.md; data/native_conversion_20261010.json.
-No timing or workflow policy change.
+Post-publication controls identify unused zero-weight dynamic-feature work in
+full Native:12 reversed512node Chess calls preserve action/score/PV/work with
+absent features but take6–18times less wall than explicit zero tuples. Default
+already uses absence; future material-only attribution must use that control.
+Keep the old zero-profile pilot and semantic defect distinct. This scoped result
+does not establish strength or a universal factor. No timing/workflow policy change.
 
 ## Retained lines and prior evidence
 

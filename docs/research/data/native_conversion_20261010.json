@@ -175,6 +175,26 @@
     "tests/product/test_native_terminal_policy_support.py": {
       "bytes": 2091,
       "sha256": "40d0be289aa3fa9a27ae24a7a05675603e5712b4ab2319119b24efe425f1e58b"
+    },
+    ".local_agent/native-conversion-20261010/leaf_terminal_probe.py": {
+      "bytes": 2848,
+      "sha256": "f7716074a8996aa2e0e6fadbf170a5718ff96619d8dac4909159812c1409195f"
+    },
+    ".local_agent/native-conversion-20261010/leaf-terminal.json": {
+      "bytes": 4771,
+      "sha256": "c5908104df7605f146b07016434e704347bb3fae485ce4f176ed0211fba4f58d"
+    },
+    ".local_agent/native-conversion-20261010/zero_feature_control.py": {
+      "bytes": 3758,
+      "sha256": "b612df057ea0666a5daa892bc69ff5fdd8d3e31fc440a8ded038c8c1c7db699b"
+    },
+    ".local_agent/native-conversion-20261010/zero-feature-control.json": {
+      "bytes": 1992916,
+      "sha256": "e58547f8b27bc41eaec7610bf9c2399461e8d856ba9e614d4fc00066ba8cd160"
+    },
+    ".local_agent/native-conversion-20261010/supplement_package.py": {
+      "bytes": 3098,
+      "sha256": "ae3e6e30b3f6287c4e2e19c85c5171c023914ad2d2b3767ebd58bc1969837a70"
     }
   },
   "counts": {
@@ -191,7 +211,10 @@
     "native_check_probe_calls": 16,
     "related_tests": 63,
     "board_token_calls": 32,
-    "full_native_pilot_calls": 20
+    "full_native_pilot_calls": 20,
+    "initial_leaf_primitive_calls": 1800,
+    "zero_control_primitive_calls": 2400,
+    "zero_control_search_calls": 12
   },
   "source_boundaries": {
     "decomposition_sparse_stages": "Use baseline-native.py at base; final sparse source differs from initial pilot as disclosed in failures.json.",
@@ -207,9 +230,10 @@
     "native_anchor_query": "defer all8paired wall regressions and changed callback granularity; Python authority retained",
     "engine_cache": "defer construction onlyabout2percent of instrumented Native cost",
     "public_projection": "adopt bounded immutable public syntax reuse; full position bindings still rebuilt",
-    "decision_utility": "192same-time choices unchanged; no finite-D4 improvement; q0/q2 generated decisions unchanged"
+    "decision_utility": "192same-time choices unchanged; no finite-D4 improvement; q0/q2 generated decisions unchanged",
+    "zero_dynamic": "Use absent unused features for material-only full-Native attribution; no product default change. Existing default already None.6paired512node Chess controls identical decisions/work, old zero-profile pilot unchanged."
   },
-  "archive_sha256": "4c64c4d26e5e1ce3b9e10b8b46fb8cdc8a5dd00039ca3295b5a822d9bf75a12d",
+  "archive_sha256": "4d1a097409d6ab2ee79b8412e3dfcd579e976a7ec01f761e6846cc3488976fc9",
   "validation": {
     "full_suite": {
       "passed_items": 1833,
@@ -218,8 +242,10 @@
       "scope": "full collection before final parallel-guard parameter; final targeted11tests include that parameter"
     },
     "final_targeted_tests": 11,
-    "archive_exact_hashes": 43,
+    "archive_exact_hashes": 48,
     "privacy_scan": "No raw Slack, account IDs, user private input or credential material in selected members",
     "recovery": "Independent base Python/input recovery7tests and22roots/803actions, using existing installed Native extension; not fresh binary build"
-  }
+  },
+  "delivery_failure": "First publish validation used a nonexistent provider test filename; stopped before push. Corrected verified target published105tests at19ec7b9. No hook bypass.",
+  "supplement_failure": "Privacy scan matched its own denylist source literals; restored exact published archive, split literals and preflighted all bytes before rewrite. No partial archive published."
 }

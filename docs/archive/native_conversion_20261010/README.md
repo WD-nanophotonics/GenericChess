@@ -44,3 +44,8 @@ explicitly records raw installed-kernel fault witnesses. `kernel-contract.json`
 is a next-repair contract, not an implemented or certified build. The recovered
 Python/input check used an existing installed extension, not a clean-machine
 build or an absent-extension skip.43 exact archive member hashes pass.
+Supplemental leaf/zero-feature producer versions and their bounded output are
+included separately. The supplement builder preserves all original43member
+bytes; the final48member archive is verified by the updated index. Initial
+privacy validation matched its own denylist source literals; the exact published
+archive was restored before corrected preflight/rewrite. No partial was published.
