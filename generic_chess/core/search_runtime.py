@@ -12,7 +12,7 @@ from __future__ import annotations
 import hashlib
 import json
 from contextlib import contextmanager
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from typing import Any, Callable, Iterable, Mapping
 
 from .actions import Action, BoardMove, DropMove, PassAction, action_from_dict, action_to_dict
@@ -37,6 +37,34 @@ class RuntimePositionIdentity:
     """Exact in-process position identity used after the root import."""
 
     position: Position
+
+
+def _runtime_position_identity(position: Position, compiled) -> RuntimePositionIdentity:
+    """Keep semantic default omission equal in the exact collision guard.
+
+    F1 already treats an absent compiled aux slot as its declared default.
+    Transitions can materialize that default without changing the logical
+    position. Normalize only the private identity; actual state/witnesses and
+    external record keys remain unchanged. Foreign aux entries stay present.
+    """
+    engine = semantic_engine_for(compiled)
+    if engine is None or not position.aux_state:
+        return RuntimePositionIdentity(position)
+    defaults = {
+        (slot.slot_id, owner): slot.initial
+        for slot in engine.ir.aux_slots
+        for owner in ((-1,) if slot.scope == "global" else (0, 1))
+    }
+    aux = tuple(sorted(
+        (item for item in position.aux_state
+         if item[0] not in defaults
+         or type(item[1]) is not type(defaults[item[0]])
+         or item[1] != defaults[item[0]]),
+        key=lambda item: item[0],
+    ))
+    if aux != position.aux_state:
+        position = replace(position, aux_state=aux)
+    return RuntimePositionIdentity(position)
 
 
 @dataclass(frozen=True, slots=True)
@@ -486,7 +514,7 @@ class SearchPathRuntime:
         self.ply_count = state.ply_count
         self.terminal_status = state.terminal_status
         self._external_root_key = ExternalStableKey(position_identity_key(self.position, compiled))
-        self._identity = RuntimePositionIdentity(self.position)
+        self._identity = _runtime_position_identity(self.position, compiled)
         self._counts_external = dict(state.repetition_counts)
         if self._counts_external and any(int(count) <= 0 for count in self._counts_external.values()):
             raise ValueError("malformed imported repetition counts")
@@ -528,6 +556,10 @@ class SearchPathRuntime:
             self._history_complete = True
 
         self._history: list[RuntimeHistoryRecord] = []
+        # Core-produced history keys already bind each witness to its logical
+        # position. Reuse their hashes only within this import, including the
+        # occurrence seed; discard the map when construction returns.
+        imported_hashes = {str(self._external_root_key): self.runtime_hash}
         if state.history:
             for record, witness in zip(state.history, witnesses):
                 identity = self._identity_for_imported_key(record.position_key)
@@ -535,9 +567,12 @@ class SearchPathRuntime:
                     identity = (
                         self._identity
                         if witness == self.position
-                        else RuntimePositionIdentity(witness)
+                        else _runtime_position_identity(witness, compiled)
                     )
-                runtime_hash = self._runtime_hash_for_identity(identity)
+                runtime_hash = imported_hashes.get(record.position_key)
+                if runtime_hash is None:
+                    runtime_hash = self._runtime_hash_for_identity(identity)
+                    imported_hashes[record.position_key] = runtime_hash
                 self._history.append(
                     RuntimeHistoryRecord(
                         identity,
@@ -576,7 +611,7 @@ class SearchPathRuntime:
         self._history_context_updates = 0
         self._history_context_exact_comparisons = 0
         self._occurrences: dict[RuntimeHash, list[_Occurrence]] = {}
-        self._seed_occurrences()
+        self._seed_occurrences(imported_hashes)
         self._snapshot = self._snapshot_from_occurrences()
         self._frames: list[_Frame] = []
         self._legal_cache: tuple[Action, ...] | None = None
@@ -674,7 +709,8 @@ class SearchPathRuntime:
                 witnesses.append(replayed.position)
 
             if (
-                replayed.position != state.position
+                _runtime_position_identity(replayed.position, self.compiled)
+                != _runtime_position_identity(state.position, self.compiled)
                 or replayed.ply_count != state.ply_count
                 or replayed.repetition_counts != tuple(state.repetition_counts)
                 or replayed.terminal_status != state.terminal_status
@@ -684,7 +720,10 @@ class SearchPathRuntime:
             by_key: dict[str, Position] = {}
             for record, witness in zip(state.history, witnesses):
                 previous = by_key.get(record.position_key)
-                if previous is not None and previous != witness:
+                if previous is not None and previous != witness and (
+                    _runtime_position_identity(previous, self.compiled)
+                    != _runtime_position_identity(witness, self.compiled)
+                ):
                     raise ValueError("one external key maps to distinct positions")
                 by_key[record.position_key] = witness
             return tuple(witnesses)
@@ -700,22 +739,24 @@ class SearchPathRuntime:
             return self._identity
         witness = self._history_witness_by_key.get(key)
         if witness is not None:
-            return RuntimePositionIdentity(witness)
+            return _runtime_position_identity(witness, self.compiled)
         return _ImportedIdentity(key)
 
     def _runtime_hash_for_identity(self, identity: object) -> RuntimeHash:
         if self._forced_hash is not None:
             return self.runtime_hash
         if isinstance(identity, RuntimePositionIdentity):
-            if identity.position == self.position:
+            if identity == self._identity:
                 return self.runtime_hash
             return _full_runtime_hash(identity.position, self.compiled)
         return _token(("imported", _identity_sort_key(identity)))
 
-    def _seed_occurrences(self):
+    def _seed_occurrences(self, imported_hashes):
         for key, count in self._counts_external.items():
             identity = self._identity_for_imported_key(key)
-            runtime_hash = self._runtime_hash_for_identity(identity)
+            runtime_hash = imported_hashes.get(key)
+            if runtime_hash is None:
+                runtime_hash = self._runtime_hash_for_identity(identity)
             self._occurrence_add(identity, runtime_hash, int(count), count_collision=False)
         if not self._counts_external:
             self._occurrence_add(self._identity, self.runtime_hash, 1, count_collision=False)
@@ -1179,7 +1220,7 @@ class SearchPathRuntime:
             None if isinstance(action, PassAction) else gave_check
         )
         child_external_key = self._opaque_history_key_for_child(child)
-        child_identity = RuntimePositionIdentity(child)
+        child_identity = _runtime_position_identity(child, self.compiled)
         if self._forced_hash is not None:
             child_hash = self.runtime_hash
         elif engine is None:

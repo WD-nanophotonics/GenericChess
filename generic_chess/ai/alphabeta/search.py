@@ -1043,6 +1043,9 @@ def run_root_search(
 ) -> tuple[Action | None, int, tuple[Action, ...], str]:
     """Iterative deepening; returns (action, score, pv, termination_reason)."""
     started = time.monotonic()
+    # Importing complete history consumes this search call's time allowance.
+    # Legality/terminal authority and the mandatory fallback still run below.
+    budget = _Budget(limits, cancel_token)
     runtime = SearchPathRuntime.from_state(
         state,
         compiled,
@@ -1058,7 +1061,6 @@ def run_root_search(
             (),
             stats.termination_reason,
         )
-    budget = _Budget(limits, cancel_token)
     tt.new_generation()
     ctx = _Context(
         compiled,

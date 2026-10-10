@@ -888,3 +888,240 @@ def test_declared_alternate_history_is_reconstructed_and_tampering_stays_opaque(
     opaque = SearchPathRuntime.from_state(tampered, c)
     assert opaque.history_witness_misses > 0
     assert not opaque.tt_eligible
+
+
+@pytest.mark.parametrize("semantic", [False, True])
+def test_declared_start_checking_cycle_restores_terminal_authority(semantic):
+    from generic_chess import compile_legacy_ruleset_for_semantic_execution
+    from generic_chess.core.terminal import TerminalStatus
+    from generic_chess.rules.schema import RuleInitialSetupOption
+    from conftest import make_ruleset
+
+    types = [king_type(), T("R", *(RayAtom(direction) for direction in
+                                     ((1, 0), (-1, 0), (0, 1), (0, -1))))]
+    base = make_ruleset(4, types, lines=["...k", "....", ".R..", "K..."],
+                        repetition_limit=3)
+    alternate = make_ruleset(4, types, lines=["...k", "..R.", "....", "K..."],
+                             repetition_limit=3)
+    rules = replace(base, repetition_policy="continuous_check_loss",
+                    initial_setup_options=(RuleInitialSetupOption(
+                        "checking-cycle", alternate.initial_position),))
+    compiled = (compile_legacy_ruleset_for_semantic_execution(rules) if semantic
+                else compile_ruleset_for_execution(rules))
+    session = GameSession(compiled, "checking-cycle")
+    cycle = ((sq(2, 2), sq(3, 2)), (sq(3, 3), sq(2, 3)),
+             (sq(3, 2), sq(2, 2)), (sq(2, 3), sq(3, 3))) * 2
+
+    def selected_action(source, target):
+        return next(action for action in session.legal_actions()
+                    if getattr(action, "from_square", None) == source
+                    and action.to_square == target)
+
+    for source, target in cycle[:3]:
+        session.submit(selected_action(source, target))
+    root = session.state
+    runtime = SearchPathRuntime.from_state(root, compiled)
+    supplied = SearchPathRuntime.from_state(
+        root, compiled, history_witnesses=session._search_witnesses)
+    root_key = runtime.search_key()
+    assert runtime.tt_eligible
+    assert root_key == supplied.search_key()
+    assert runtime.history_witness_misses == 0
+    for source, target in cycle[3:]:
+        action = selected_action(source, target)
+        runtime.push(action)
+        supplied.push(action)
+        session.submit(action)
+        assert runtime.position == supplied.position == session.state.position
+        assert runtime.terminal_status == session.state.terminal_status
+        assert runtime.search_key() == supplied.search_key()
+        assert runtime.history[-1].gave_check == session.state.history[-1].gave_check
+    assert runtime.occurrence_count() == 3
+    assert runtime.terminal_status.status is TerminalStatus.PERPETUAL_CHECK
+    assert runtime.terminal_status.winner == 1
+    replayed = GameSession.replay(compiled, session.to_record())
+    assert replayed.state == session.state
+    for _ in cycle[3:]:
+        runtime.pop()
+        supplied.pop()
+    assert runtime.position == root.position
+    assert runtime.terminal_status == root.terminal_status
+    assert runtime.search_key() == root_key == supplied.search_key()
+    runtime.assert_balanced()
+
+
+@pytest.mark.parametrize("supplied", [False, True])
+@pytest.mark.parametrize("forced_hash", [None, RuntimeHash(7, 11)])
+def test_sparse_aux_defaults_preserve_repetition_and_history_recovery(supplied, forced_hash):
+    from generic_chess import build_builtin_ruleset
+    from scripts.audit_lichess_complete_children import uci
+
+    compiled = compile_ruleset_for_execution(replace(
+        build_builtin_ruleset("western_chess"), repetition_limit=3
+    ))
+    session = GameSession(compiled)
+    start = session.state
+    runtime = SearchPathRuntime.from_state(
+        start, compiled, hash_override=forced_hash,
+        history_witnesses=session._search_witnesses if supplied else None,
+    )
+    cycle = ("g1f3", "g8f6", "f3g1", "f6g8")
+    for ply in range(8):
+        action = next(a for a in session.legal_actions() if uci(a) == cycle[ply % 4])
+        session.submit(action)
+        runtime.push(action)
+        assert runtime.terminal_status == session.state.terminal_status
+        if ply == 3:
+            recovered = SearchPathRuntime.from_state(
+                session.state, compiled, hash_override=forced_hash
+            )
+            provided = SearchPathRuntime.from_state(
+                session.state, compiled, hash_override=forced_hash,
+                history_witnesses=session._search_witnesses,
+            )
+            assert recovered.tt_eligible and recovered.history_witness_misses == 0
+            assert recovered.search_key() == provided.search_key()
+    assert session.state.terminal_status.status.value == "repetition"
+    assert start.position != session.state.position  # physical sparse/default change
+    assert position_identity_key(start.position, compiled) == session.state.history[-1].position_key
+    for _ in range(8):
+        runtime.pop()
+    assert runtime.position == start.position
+    assert runtime.terminal_status == start.terminal_status
+    runtime.assert_balanced()
+
+
+def test_semantic_foreign_aux_still_distinguishes_forced_runtime_hash_collision():
+    from generic_chess import build_builtin_ruleset
+    compiled = compile_ruleset_for_execution(build_builtin_ruleset("western_chess"))
+    initial = GameSession(compiled).state
+    runtimes = []
+    for value in (None, 1):
+        position = replace(initial.position, aux_state=(((999, -1), value),))
+        key = position_identity_key(position, compiled)
+        state = replace(initial, position=position, repetition_counts=((key, 1),),
+                        history=(HistoryRecord(key, -1, "", False),))
+        runtimes.append(SearchPathRuntime.from_state(
+            state, compiled, hash_override=RuntimeHash(7, 11), history_witnesses=(position,)
+        ))
+    assert runtimes[0].runtime_hash == runtimes[1].runtime_hash
+    assert runtimes[0].search_key() != runtimes[1].search_key()
+
+
+@pytest.mark.parametrize("supplied", [False, True])
+@pytest.mark.parametrize("kind", ["castling", "castling_zero", "en_passant"])
+def test_semantic_default_materialization_keeps_runtime_search_and_child_identity(kind, supplied):
+    from generic_chess.rules.compiler import compile_semantic_ruleset
+    from rule_semantics_ir_fixtures import castling_ruleset, en_passant_ruleset
+    rules = en_passant_ruleset() if kind == "en_passant" else castling_ruleset()
+    if kind == "castling_zero":
+        rules = replace(rules, semantic_actions=tuple(
+            replace(action, aux_state=tuple(replace(slot, initial=0) for slot in action.aux_state))
+            for action in rules.semantic_actions
+        ))
+    compiled = compile_semantic_ruleset(rules)
+    sparse = GameSession(compiled).state
+    entries = tuple(sorted(
+        ((slot.slot_id, owner), slot.initial)
+        for slot in compiled.ir.aux_slots
+        for owner in ((-1,) if slot.scope == "global" else (0, 1))
+    ))
+    explicit = replace(sparse, position=replace(sparse.position, aux_state=entries))
+    assert sparse.position != explicit.position
+    assert position_identity_key(sparse.position, compiled) == position_identity_key(explicit.position, compiled)
+    left = SearchPathRuntime.from_state(sparse, compiled, history_witnesses=(sparse.position,) if supplied else None)
+    right = SearchPathRuntime.from_state(explicit, compiled, history_witnesses=(explicit.position,) if supplied else None)
+    assert left.tt_eligible and right.tt_eligible
+    assert left.history_witness_hits == right.history_witness_hits == len(sparse.history)
+    assert left.history_witness_misses == right.history_witness_misses == 0
+    assert left.search_key() == right.search_key()
+    actions = left.legal_actions()
+    assert actions == right.legal_actions()
+    for action in actions:
+        left.push(action)
+        right.push(action)
+        try:
+            assert left.search_key() == right.search_key()
+            assert left.terminal_status == right.terminal_status
+        finally:
+            right.pop()
+            left.pop()
+    assert left.position == sparse.position and right.position == explicit.position
+    left.assert_balanced()
+    right.assert_balanced()
+
+
+@pytest.mark.parametrize("owner", [0, 1])
+def test_declared_nondefault_rights_remain_distinct_under_forced_runtime_hash(owner):
+    from generic_chess.rules.compiler import compile_semantic_ruleset
+    from rule_semantics_ir_fixtures import castling_ruleset
+    compiled = compile_semantic_ruleset(castling_ruleset())
+    initial = GameSession(compiled).state
+    slot = compiled.ir.aux_slots[0]
+    changed = replace(initial.position, aux_state=(((slot.slot_id, owner), 0),))
+    key = position_identity_key(changed, compiled)
+    state = replace(initial, position=changed, history=(HistoryRecord(key, -1, "", False),),
+                    repetition_counts=((key, 1),))
+    left = SearchPathRuntime.from_state(initial, compiled, hash_override=RuntimeHash(7, 11),
+                                        history_witnesses=(initial.position,))
+    right = SearchPathRuntime.from_state(state, compiled, hash_override=RuntimeHash(7, 11),
+                                         history_witnesses=(changed,))
+    assert left.runtime_hash == right.runtime_hash
+    assert left.search_key() != right.search_key()
+    if owner == 0:
+        assert set(right.legal_actions()) < set(left.legal_actions())
+    else:
+        assert right.legal_actions() == left.legal_actions()  # right belongs to future opponent turn
+
+
+@pytest.mark.parametrize("default,physical", [(0, False), (1, True)])
+def test_default_normalization_preserves_public_scalar_type_identity(default, physical):
+    from generic_chess.rules.compiler import compile_semantic_ruleset
+    from rule_semantics_ir_fixtures import castling_ruleset
+    rules = castling_ruleset()
+    rules = replace(rules, semantic_actions=tuple(
+        replace(action, aux_state=tuple(replace(slot, initial=default) for slot in action.aux_state))
+        for action in rules.semantic_actions
+    ))
+    compiled = compile_semantic_ruleset(rules)
+    initial = GameSession(compiled).state
+    slot = compiled.ir.aux_slots[0]
+    position = replace(initial.position, aux_state=(((slot.slot_id, 0), physical),))
+    key = position_identity_key(position, compiled)
+    assert key != position_identity_key(initial.position, compiled)  # JSON bool versus int
+    state = replace(initial, position=position, history=(HistoryRecord(key, -1, "", False),),
+                    repetition_counts=((key, 1),))
+    left = SearchPathRuntime.from_state(initial, compiled, hash_override=RuntimeHash(7, 11),
+                                        history_witnesses=(initial.position,))
+    right = SearchPathRuntime.from_state(state, compiled, hash_override=RuntimeHash(7, 11),
+                                         history_witnesses=(position,))
+    assert left.search_key() != right.search_key()
+
+
+@pytest.mark.parametrize("supplied", [False, True])
+def test_complete_repeated_history_hashes_each_distinct_position_once(monkeypatch, supplied):
+    from generic_chess import build_builtin_ruleset
+    from generic_chess.core import search_runtime as module
+    from scripts.audit_lichess_complete_children import uci
+    compiled = compile_ruleset_for_execution(build_builtin_ruleset("western_chess"))
+    session = GameSession(compiled)
+    cycle = ("g1f3", "g8f6", "f3g1", "f6g8")
+    for ply in range(100):
+        session.submit(next(a for a in session.legal_actions() if uci(a) == cycle[ply % 4]))
+    original = module._full_runtime_hash
+    calls = []
+
+    def counted(position, rules):
+        calls.append(position_identity_key(position, rules))
+        return original(position, rules)
+
+    monkeypatch.setattr(module, "_full_runtime_hash", counted)
+    runtime = SearchPathRuntime.from_state(
+        session.state, compiled,
+        history_witnesses=session._search_witnesses if supplied else None,
+    )
+    keys = {record.position_key for record in session.state.history}
+    assert len(calls) == len(set(calls)) == len(keys) == 4
+    assert runtime.tt_eligible and runtime.history_witness_misses == 0
+    assert runtime.position == session.state.position
+    runtime.assert_balanced()

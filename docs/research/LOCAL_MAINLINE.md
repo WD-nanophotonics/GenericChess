@@ -24,34 +24,34 @@ actual Core/Native/fallback, configured/effective limits and returned/committed
 action. Small declared games locate candidate losses; fixed-state/history
 replay attributes them. Keep the UI branch frozen during sandbox research.
 
-Latest choice: retain the explicit validated legacy-to-semantic compilation entry
-for generated-rule research and repair declared alternate-start history recovery.
-Normal compilation/provider/UI remain unchanged. Four generated seeds retain
-finite visible semantics; typed aliases and heuristic identities explain residual
-q1 work. Eight fully aligned diagnostic roots match selected work/action/PV,
-without authorizing arbitrary DSL dedup.96normal q1 time calls expose two extra
-hybrid completed layers at one second; six same-budget D4 controls explain the
-one changed move by horizon. This is completion evidence, not strength.
+Latest choice: repair logical-default history identity and charge history import
+against the existing search deadline. The actual eight-ply declared repetition
+counterexample was Session DRAW but Runtime ONGOING. Private default omission
+now follows public logical identity, preserving nondefaults, foreign slots and
+scalar types; full-history reconstruction and exact collision checks recover.
+An import-local public-key hash map removes duplicate history/occurrence hashing
+and is discarded on return. Supplied400ply import48ms becomes3.3–3.7ms;
+101unique-history import33ms becomes18.5ms. Short-root adverse cost and expensive
+synchronous reconstruction remain. No instant-cancellation or hard deadline claim.
 
-24continuous-check-loss controls restore actual guarded TT probes/stores on
-alternate starts, retaining noTT return parity and default-start behavior. The
-previous draw-policy zero guarded-node counter was conditional instrumentation,
-not absence of TT. Supplied Session witnesses stay the cheap path; tiny/mixed
-setup prefilter, eager descriptor, streaming hash and token-cache gains are
-insufficient to justify production complexity. Retain original failures and caps.
-Dot's complete review supports finite full-history checks and a declared sampling
-law; it did not execute these sources.91final focused product tests pass.
-Evidence:GENERATED_SEMANTIC_BRIDGE.md; data/generated_semantic_bridge_20261011.json.
-24subsequent product-evaluator D2 calls retain eight profile/root pairs and107
-visible child evaluations plus actions/values/PV.24same-evaluator time calls on
-two advancing roots show no consistent new layer/move at one second; evaluation
-consumes about0.096–0.145seconds with unlike counts. Material/resource results
-therefore cannot be transferred to this evaluation condition.18exclusive product
-profile/control calls retain within-arm work/returns. Hybrid terminal and hash
-buckets each exceed attack-map evaluation on the measured roots; Core still probes
-one legal action separately. Next isolate that predicate/transition boundary,
-preserving adjudication and cancellation rather than adding a terminal cache;
-no automatic horizon increase, alias merging, price/learning or UI change.
+The actual one-second three-arm caller bridge on one exposed old queen parent
+uses matched teaching material and existing finiteD2 labels. Public q4 retains
+D1/g4g7/-8000finiteD2 (ordinary-q0 reserve, checked extensions retained)
+while unchanged minimal Core/specialized AB choose
+D2/D4 a2a3/-1000. Productq0 and completedq1 experimental reserve refresh choose
+e1d1/-1000; configuredq4D2 never completes in that refresh control. This selects
+completion scheduling as a concrete next issue, not microgeometry, default
+promotion or strength. Work definitions and evaluator/source stages stay distinct.
+Twelve final generated03 public callers retainD3/same return and commit with
+actual hybrid Native calls/no fallback; prior tuned direct-search extra layers
+cannot be transferred to this ordinary caller condition. Keep UI99c97 frozen.
+Evidence:CALLER_HISTORY_CONTRACT.md; data/caller_history_20261011.json.
+
+The explicit validated generated legacy-to-semantic compilation entry and
+alternate-start checking history repair remain selected. Generated/profile,
+typed alias, warm/PV and small traversal negatives retain their original caps,
+conditions and failures in GENERATED_SEMANTIC_BRIDGE.md and the new caller
+archive; no arbitrary DSL dedup or full Native history-policy acceptance follows.
 
 Prior incoming source dispatch retains its finite semantics and drop fixed-work
 savings; warm-root and deferred-binding limits remain in their purpose documents.
