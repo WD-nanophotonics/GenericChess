@@ -117,6 +117,16 @@ full-set legality. Select the terminal predicate/transition boundary for the nex
 finite attribution; these overhead-bearing timings do not justify a production
 cache or replacement. Keep attack coverage semantically distinct from legal moves.
 
+Nine subsequent first-predicate profile/control calls on advancing seed03 retain
+each arm's own work/returns and exact exclusive sums. The hybrid records 532
+has-legal calls, 596 guard calls and 564 candidate-trial calls. Exclusive
+predicate overhead is 9.3ms, guard checks 0.27ms, trial wrapper 3.1ms and remaining
+terminal adjudication 2.5ms; the separate semantic trial-transition bucket is
+2.9ms across instrumented legality/terminal contexts. These are nested tags,
+not summed inclusive timers or matched cross-representation work. Tiny guard
+cost does not justify a new guard shortcut. Next inspect first binding/candidate
+construction and its cancellation/legality contract, keeping full-state authority.
+
 ## Residual cost and deferred prototypes
 
 Eighteen matched-work profile/control calls separate nested exclusive wall buckets;
