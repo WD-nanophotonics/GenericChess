@@ -13,6 +13,7 @@ from fastapi.staticfiles import StaticFiles
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 from ...rules.serialization import serialize_ruleset
 from ...visual.textures import generate_piece_texture
+from .identity import APPLICATION, instance_id
 from .models import CreateGame, Operation
 from .service import GameService, GameError
 
@@ -28,7 +29,8 @@ def allowed_origin(origin, host):
 
 
 def create_app(state_dir=None, dist_dir=None):
-    service = GameService(Path(state_dir) if state_dir is not None else ROOT / ".web_state")
+    state_dir = Path(state_dir) if state_dir is not None else ROOT / ".web_state"
+    service = GameService(state_dir)
     textures = {}
 
     @asynccontextmanager
@@ -64,7 +66,8 @@ def create_app(state_dir=None, dist_dir=None):
 
     @app.get("/api/health")
     async def health():
-        return {"ok": True, "mode": "local", "backend": "python-core"}
+        return {"ok": True, "mode": "local", "backend": "python-core",
+                "application": APPLICATION, "instance_id": instance_id(state_dir)}
 
     @app.get("/api/games")
     async def games():

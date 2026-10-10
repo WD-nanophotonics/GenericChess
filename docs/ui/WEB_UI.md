@@ -15,6 +15,8 @@ is needed for the Web service. The existing desktop UI is retained.
 服务仅监听 `http://127.0.0.1:8765`，就绪后打开浏览器；Ctrl+C 停止并取消 AI。
 `--no-browser` 不自动打开网页，`--port 8766` 改用其他端口。
 默认从 `.web_state/` 原子保存/恢复；`--state-dir <directory>` 可使用独立存档。
+重复启动会识别同一工作区和存档目录的已有游戏服务，直接打开页面。
+其他服务、不同工作区或不同存档占用端口时，仍提示改用其他端口。
 启动器检查端口和前端构建。新目录应先完成下方安装，不能只复制启动器。
 
 ## 从干净克隆安装
