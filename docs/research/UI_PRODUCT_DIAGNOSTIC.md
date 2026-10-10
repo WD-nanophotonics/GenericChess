@@ -54,8 +54,11 @@ one existing generated4x4seed21 root adds unfamiliar coverage. Two reversed
 one-second pairs each retain a completed iteration; the generated root endsD2
 at the unchanged qsearch_check_hard_limit. Four deterministic cancellations
 beforeD1 return legal incompleteD0 fallback and restore root/history. Selection
-by legal-frontier count is a workload proxy, not the suggested exact tactical/
-evasion burden. These finite passes do not guarantee arbitrary-rule safety.
+by legal-frontier count was initially only a proxy. A later exact generic noisy
+selector instead chooses Shogi-tactic21noisy versusdrop18. The corrected four
+one-second calls also finishD1 and both cancellations restore state/returnD0;
+original proxy results and the initial archived-path error remain. These finite
+passes do not guarantee arbitrary-rule safety.
 
 A changed-budget check is decisive: on the two same saved parents, at50/100ms
 baseline completesD1 but first-q1 completesD0 in both; at25ms one baseline still

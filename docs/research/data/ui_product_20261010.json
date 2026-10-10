@@ -1,6 +1,6 @@
 {
   "archive": "docs/archive/ui_product_diagnostic_20261010/evidence.zip",
-  "archive_sha256": "eb939341e883e8429f8786982e953fce11b62bd09108ba3bbdfc5ad0f79c57b8",
+  "archive_sha256": "41b315769ba17ee1508a8353c21edfef111447475f239abcf5a769a97b0d8ef1",
   "members": [
     {
       "member": "delivery-ui_failure_replay.py",
@@ -491,6 +491,55 @@
       "sha256": "579abb25d39287f052e1d998b8f8c770ce20c7b1a9cd0684cfc9f58fbb37c9ef",
       "original_local_sha256": "579abb25d39287f052e1d998b8f8c770ce20c7b1a9cd0684cfc9f58fbb37c9ef",
       "device_path_normalized": false
+    },
+    {
+      "member": "tactical-selector.py",
+      "bytes": 1831,
+      "sha256": "a5c4f23ff073b9da8b5bace245037b05071a2d4cd50f4e467280092c23c3f683",
+      "original_local_sha256": "a5c4f23ff073b9da8b5bace245037b05071a2d4cd50f4e467280092c23c3f683",
+      "device_path_normalized": false
+    },
+    {
+      "member": "tactical-selector.json",
+      "bytes": 30243,
+      "sha256": "12d4f44b1c7505c7d2226273a334f09dda05af92c24f28a98f7c3e850c0546d1",
+      "original_local_sha256": "12d4f44b1c7505c7d2226273a334f09dda05af92c24f28a98f7c3e850c0546d1",
+      "device_path_normalized": false
+    },
+    {
+      "member": "tactical-correction-plan.md",
+      "bytes": 489,
+      "sha256": "4023f31414f082db292cf83486a4d39fcea9d163150236e5299ca827a5df1d0a",
+      "original_local_sha256": "4023f31414f082db292cf83486a4d39fcea9d163150236e5299ca827a5df1d0a",
+      "device_path_normalized": false
+    },
+    {
+      "member": "reserve-tactical-source.py",
+      "bytes": 5655,
+      "sha256": "71064358478d9f84f018b55bc634124f1fedab419d62df3b2b29766955d7ff9e",
+      "original_local_sha256": "71064358478d9f84f018b55bc634124f1fedab419d62df3b2b29766955d7ff9e",
+      "device_path_normalized": false
+    },
+    {
+      "member": "reserve-tactical.json",
+      "bytes": 23016,
+      "sha256": "5159eb853cba7092765d6f6654344d113e60fe5c856c48df96b82bd208715f92",
+      "original_local_sha256": "5159eb853cba7092765d6f6654344d113e60fe5c856c48df96b82bd208715f92",
+      "device_path_normalized": false
+    },
+    {
+      "member": "reserve-tactical-path-failed-source.py",
+      "bytes": 5680,
+      "sha256": "3b8d68b500e2b9450c920997fb1d620d0e3f3beffe050d2a7e704bd7c63061ab",
+      "original_local_sha256": "3b8d68b500e2b9450c920997fb1d620d0e3f3beffe050d2a7e704bd7c63061ab",
+      "device_path_normalized": false
+    },
+    {
+      "member": "reserve-tactical-path-failure.txt",
+      "bytes": 297,
+      "sha256": "018826622d0f6909875554d998a80f01072cb53bb8e4f30c878a6b1ffcc0a373",
+      "original_local_sha256": "018826622d0f6909875554d998a80f01072cb53bb8e4f30c878a6b1ffcc0a373",
+      "device_path_normalized": false
     }
   ],
   "baseline_sandbox": "ec78e95e4500f5a997edd46247d6bf63a017a36a",
@@ -505,5 +554,6 @@
   "final_product_source_hashes": {
     "generic_chess/rules/ir.py": "7f78bb1c1301db31b018c4f57ad22ed3f313d4d56c10b963ea3cf0f75246982b",
     "generic_chess/core/semantic_executor.py": "5f44eed37dc0b969dcbffd309342790d84b640e05d965f8b1116eb1357a615d9"
-  }
+  },
+  "tactical_selection_correction": "Existing generic noisy selector picks Shogi-tactic21noisy versusdrop18; corrected4one-second/2cancel calls pass, original legal-frontier proxy and path failure retained."
 }
