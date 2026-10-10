@@ -15,6 +15,9 @@ do
         exit 1
       }
       ;;
+    refs/heads/ui-test)
+      # User-authorized isolated UI branch; retain fast-forward protection below.
+      ;;
     *)
       echo "Unsupported project push target: $remote_ref" >&2
       exit 1

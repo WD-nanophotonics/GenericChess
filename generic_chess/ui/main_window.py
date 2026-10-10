@@ -21,6 +21,7 @@ from PySide6.QtWidgets import (
 
 from .. import __version__
 from ..ai.alphabeta.player import AlphaBetaPlayer
+from .ai_backend import create_ui_player
 from ..ai.cancellation import CancellationToken
 from .board.scene import BoardRenderConfig, BoardScene
 from .board.texture_cache import TextureCache
@@ -743,7 +744,7 @@ class MainWindow(QMainWindow):
                 ai_config=request.ai_config,
             )
         )
-        self._ai_player = AlphaBetaPlayer(self._controller.compiled, use_disk_cache=True)
+        self._ai_player = create_ui_player(self._controller.compiled, use_disk_cache=True)
         self._board_view.fit_board()
         self._refresh()
         self._maybe_start_ai()
@@ -817,7 +818,7 @@ class MainWindow(QMainWindow):
         if match is not None and any(
             p is ParticipantKind.AI for p in match.participants
         ):
-            self._ai_player = AlphaBetaPlayer(
+            self._ai_player = create_ui_player(
                 self._controller.compiled, use_disk_cache=True
             )
         self._board_view.fit_board()

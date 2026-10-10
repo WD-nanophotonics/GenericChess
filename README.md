@@ -1,30 +1,29 @@
-# GenericChess
+# GenericChess UI Test
 
-Deterministic rules, immutable game core, generic search, CLI and desktop UI for
-chess- and shogi-like games. Native C runtime/search is optional. Research remains
-open; development measurements do not establish general amateur strength.
+UI-only development branch with a complete frozen AI backend for PVE.
+See [UI Test handoff](docs/ui/UI_TEST.md) for scope, interfaces and merge guidance.
 
-## Run
+## Start on another computer (Windows, Python 3.11 or newer)
 
 ```powershell
+git clone --branch ui-test --single-branch https://github.com/WD-nanophotonics/GenericChess.git
+cd GenericChess
 py -3 -m venv .venv
-.venv\Scripts\python.exe -m pip install -e ".[dev,gui]"
-.venv\Scripts\python.exe -m pytest -p no:cacheprovider
-.venv\Scripts\python.exe -m generic_chess.ui
+.venv\Scripts\python.exe -m pip install -e ".[gui]" pytest
+.venv\Scripts\python.exe run_ui.py
 ```
 
-The default tests cover product, current development, workflow and specification;
-old experiment receipts are archived rather than collected as product tests.
+In New Match choose built-in Chess or Shogi, or a generated ruleset, then choose
+Human/AI sides. For responsive UI work choose fixed-time thinking around1second.
+The startup board alone is not a PVE match until New Match participants are set.
+Use run_ui.bat after installation. No cshogi, Zig, native DLL, research dataset,
+local-agent state or Slack account is needed. The C extension is optional;
+this branch's UI player explicitly uses Python Core even if one is installed.
 
-## Entry points
+```powershell
+.venv\Scripts\python.exe -m pytest -p no:cacheprovider tests/product/test_ui_test_pve.py tests/product/test_ui_controller.py tests/product/test_ui_lifecycle.py tests/product/test_ui_app.py
+```
 
-- [Repository layout](docs/operations/REPOSITORY_LAYOUT.md): code, tests, evidence and recovery.
-- [Research mainline](docs/research/LOCAL_MAINLINE.md): current objective and evidence.
-- [Chess comparison](docs/research/CHESS_DEVELOPMENT.md): executable development route.
-- [Agent policy](AGENTS.md) and [manual](docs/operations/LOCAL_AGENT.md): canonical workflow.
-- [Slack workflow](docs/operations/SLACK_WORKFLOW.md): dot consultation and delivery records.
-- [Archive index](docs/archive/HISTORY.md): historical material, not a task queue.
-
-One local Agent works on sandbox. A single native90-minute heartbeat resumes the
-same chat. Git is version control and final delivery; current public push is held.
-No Goal, legacy Courier/worker flow or other project access is part of this route.
+Develop UI here; sandbox continues independent engine research. Do not merge
+sandbox repeatedly into this branch or repair/retrain its AI for UI development.
+The AI's strength is not an acceptance condition; legal PVE operation is.
