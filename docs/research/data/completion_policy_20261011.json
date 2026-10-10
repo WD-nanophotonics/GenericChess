@@ -6,9 +6,9 @@
   "ui_branch_frozen_sha": "99c97bb87474c44af94c76571f326ef8a41eb898",
   "archive": {
     "path": "docs/archive/completion_policy_20261011/evidence.zip",
-    "bytes": 465302,
-    "uncompressed_bytes": 6081491,
-    "sha256": "7552802005b58cef49892e1e7944f06ba0718f58ccddc8b23e22b5dbfe9570ca",
+    "bytes": 465291,
+    "uncompressed_bytes": 6081366,
+    "sha256": "b1a62999d11d13df8e3ccb5847e944d08b323416c2664b7824cc1c9110df9c4a",
     "members": 129
   },
   "members": [
@@ -569,8 +569,8 @@
     },
     {
       "member": "final-source/tests/product/test_search_result_provenance.py",
-      "bytes": 6389,
-      "sha256": "d1f80b3c0fd30e26deb1420357af6b5730141d22096192037a561e0c8dcbd003"
+      "bytes": 6264,
+      "sha256": "49f8a36acffbaf415f0435fdff12b8c678f02b36b7bc7d02640e7969c9503a12"
     },
     {
       "member": "completion-provenance-20261011/recovery-installed.json",
@@ -1722,6 +1722,10 @@
     "scripts/unfamiliar_search.py": {
       "bytes": 14625,
       "sha256": "cfe759a3567eac5a6a2026d762840da038dd47dcf5c8ac3255ec1db831c45614"
+    },
+    "tests/product/test_search_result_provenance.py": {
+      "bytes": 6264,
+      "sha256": "49f8a36acffbaf415f0435fdff12b8c678f02b36b7bc7d02640e7969c9503a12"
     }
   },
   "environment": {
@@ -1747,7 +1751,8 @@
     "Installed Native module bytes are pinned, not distributed/rebuilt by this archive; exact historical DLL execution/policy acceptance is not promised.",
     "Rejected source shadows/imports/partial instrumentation preserved; failures are not treated as completed batches.",
     "Old population labels remain exposed; no independent holdout or user-game data.",
-    "Private projected hash matches baseline on foreign int0-to-boolFalse but not full recomputation; imported-state adversary has not established reachable supported rule-transition/TT failure. No product hash change."
+    "Private projected hash matches baseline on foreign int0-to-boolFalse but not full recomputation; imported-state adversary has not established reachable supported rule-transition/TT failure. No product hash change.",
+    "Final new product-test source normalized to LF and research prose to ASCII ranges after delivery encoding review; recovery subject test uses identical Python tokens."
   ],
   "validation": {
     "full_tests": 2026,

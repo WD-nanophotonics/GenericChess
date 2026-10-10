@@ -71,9 +71,9 @@ including full Position, ply/terminal, supplied runtime history/repetition and
 configuration. Six baseline/capture calls retain exact work/results; trace
 capture overhead is separate. Own hash-bound fixture pickles are trusted inputs,
 never an automatic reader for arbitrary user files. Offline replay preserves
-order/multiplicity and exact scores/features. Weighted replay takes22Ã¢â‚¬“25ms
-against original344Ã¢â‚¬“422ms searches; material-only replay about0.8ms. Maps take
-17Ã¢â‚¬“19ms, other scalar/remainder parts are separately nonoverlapping. The maps
+order/multiplicity and exact scores/features. Weighted replay takes22-25ms
+against original344-422ms searches; material-only replay about0.8ms. Maps take
+17-19ms, other scalar/remainder parts are separately nonoverlapping. The maps
 are already shared within each evaluation. Repeated Position queries74/48/51
 are not full search-state identities; geometric pseudo_attacks are not semantic
 check/capture authority. No bitmap, position cache or predictor was implemented.
@@ -136,15 +136,15 @@ proposal or a substitute for generic tactical support.
 
 Twelve paired512node phase controls preserve results/work. q0 completesD2;
 q4's abortedD2 enters only4/5root children and uses303/313qvisits. Eight separate
-classifier controls show1483Ã¢â‚¬“2057excluded candidates versus97Ã¢â‚¬“123included,
-1884Ã¢â‚¬“2429runtime pushes. The predicate itself is only10Ã¢â‚¬“14ms; quiet-child
+classifier controls show1483-2057excluded candidates versus97-123included,
+1884-2429runtime pushes. The predicate itself is only10-14ms; quiet-child
 execution dominates. Existing frame-owned check reuse is already present.
 Top-level phase/outer-q times overlap intentionally and are never added; all
 these runtime controls use outer qcalls, with separate trace-overhead evidence.
 
 Sixteen uninstrumented Core/hybrid512node calls preserve returned/nontiming
-work, with121Ã¢â‚¬“146positive Native provider calls and zero fallback. Roughly
-14Ã¢â‚¬“19% scoped savings still yieldD1 in the eight paired one-second q1/q4 calls.
+work, with121-146positive Native provider calls and zero fallback. Roughly
+14-19% scoped savings still yieldD1 in the eight paired one-second q1/q4 calls.
 Native legality does not offload the full quiet-child execution. Sixteen
 existing ordered-q controls under the repaired on-demand baseline increase
 fixed pushes2061->2343 and1884->2357, with no one-second depth/label gain.
@@ -160,11 +160,11 @@ control, not a reachable full-history proof. The view-serialization failure is
 retained; explicit immutable Position/ply/Terminal snapshots repair the report.
 
 Four separately traced512node controls preserve return/work. Exclusive interval
-accounting locates hash66–75ms and terminal70–73ms, with wrapper overhead
+accounting locates hash66-75ms and terminal70-73ms, with wrapper overhead
 reported and no overlapping totals. Transition/check/pop/remainder remain
 separate. A private exact full-cell/tail hash projection avoids constructing
 unchanged board components without assuming action footprints. Eight reversed
-fixed controls save roughly3–6% with identical work/results;425actual legal
+fixed controls save roughly3-6% with identical work/results;425actual legal
 backend children agree with full recomputation. It remains a private pilot.
 An adversarial foreign imported int0->boolFalse mutation agrees with the old
 delta but disagrees with full recomputation, exposing an inherited equality
