@@ -1,0 +1,532 @@
+{
+  "schema": 1,
+  "base_commit": "5ddb9d990fae68bfeb5d296da6fe285a87c585e2",
+  "scope": "Agent-authored exposed development; exact executed models/failures and final source closure. No raw Slack/account/outgoing/user-private records or binaries. See failures.md for staged diagnostic source limitation.",
+  "archive": "docs/archive/cooperative_budget_20261010/evidence.zip",
+  "archive_bytes": 799747,
+  "archive_sha256": "306b587d9d8d785d7a8c37ea28d306747bbf2c1aeb2d1ba61090726dca750ebe",
+  "members": {
+    ".local_agent/cooperative-budget-20261010/archive_evidence.py": {
+      "bytes": 3094,
+      "sha256": "5f0d0ed5488cbef961f08596fbdebc63be2260624c6c4b61972db2a2f5c43686"
+    },
+    ".local_agent/cooperative-budget-20261010/assay-first-executed.py": {
+      "bytes": 3211,
+      "sha256": "d0dc06700539d4ab86460a98cdb0affec29adb7e3137348d04261724151db1e6"
+    },
+    ".local_agent/cooperative-budget-20261010/assay-partial.json": {
+      "bytes": 1700028,
+      "sha256": "88eee9432cde104af449b387ffa75277312d68dd442508c50cafdded0240ecc3"
+    },
+    ".local_agent/cooperative-budget-20261010/assay.json": {
+      "bytes": 3574859,
+      "sha256": "edd650effa24b72ebf0bfab3a37f360ea7e71964cff655087dddf8f66efe3914"
+    },
+    ".local_agent/cooperative-budget-20261010/assay.py": {
+      "bytes": 3998,
+      "sha256": "ef797ae1e53faf983f9ae581ca3784455afcf6652b17e4a9798f1ce5dd803e55"
+    },
+    ".local_agent/cooperative-budget-20261010/cancel-assay.json": {
+      "bytes": 1301304,
+      "sha256": "8fe211e2f230adb6890e67ac14c26a921ee594484d726fa91bbe0ad32e7f84bb"
+    },
+    ".local_agent/cooperative-budget-20261010/cancel-attribution.json": {
+      "bytes": 19246,
+      "sha256": "dd888c3d09337003bd286d6f3d68d7f1579f0b760b0822d6257b7322aaeff965"
+    },
+    ".local_agent/cooperative-budget-20261010/cancel_assay.py": {
+      "bytes": 3594,
+      "sha256": "be4995db8d68ecf1baa7f8d6d47dbc1c67256b5ed5dbc61cae2f1a59b4b920b9"
+    },
+    ".local_agent/cooperative-budget-20261010/cancel_attribution.py": {
+      "bytes": 1571,
+      "sha256": "b3bb6fd29cd0e2a299577f328440eb60f8438afbf301d60054e27bfe208af0ca"
+    },
+    ".local_agent/cooperative-budget-20261010/consolidate.py": {
+      "bytes": 2842,
+      "sha256": "b11ff0a757d7bc9e8cc728ea9a042449493d21622e7967de305999c126c3b832"
+    },
+    ".local_agent/cooperative-budget-20261010/core-fixed-d3.json": {
+      "bytes": 22009,
+      "sha256": "6044707ab029793fad152307c9670c62f1991026e97ef797a052e4f76f5f8892"
+    },
+    ".local_agent/cooperative-budget-20261010/core-window-cancel.json": {
+      "bytes": 33611,
+      "sha256": "eb4fe0f8020acbc330ff9907ea07b53ed50b56a6235d8ab469d2ad2e479b775c"
+    },
+    ".local_agent/cooperative-budget-20261010/core-window.json": {
+      "bytes": 98771,
+      "sha256": "b9c0188b8ddec94d299ad1b1d1b41a18211525b6a36b680e24841a0f486713e9"
+    },
+    ".local_agent/cooperative-budget-20261010/core_fixed_d3-first.py": {
+      "bytes": 2377,
+      "sha256": "27618e6067788d5112aec1e8ca8740bc956b51a1ff686d0a09aba475a7ede42d"
+    },
+    ".local_agent/cooperative-budget-20261010/core_fixed_d3.py": {
+      "bytes": 2336,
+      "sha256": "64b7cc50e7ab3fccead1c46b29748cca954ec22f3d5febd0c6c3114972171b57"
+    },
+    ".local_agent/cooperative-budget-20261010/core_phase_model.py": {
+      "bytes": 4615,
+      "sha256": "e623bccb5c842f1bfd8dfc101770fe3dad77ae806933cc722629b54f0f54f365"
+    },
+    ".local_agent/cooperative-budget-20261010/core_window-first-executed.py": {
+      "bytes": 5650,
+      "sha256": "7f9ac8ed64e119ca9afbff7c4be17fd202fcee1d622ab41fea1771bda95d9652"
+    },
+    ".local_agent/cooperative-budget-20261010/core_window.py": {
+      "bytes": 5736,
+      "sha256": "36ae204a9e5477610f4252df108e14afce57cefec2547912a1cd2b039e88247a"
+    },
+    ".local_agent/cooperative-budget-20261010/core_window_cancel.py": {
+      "bytes": 2323,
+      "sha256": "bd83c12cd98b2e8c1d5a489e2b17d8194048684cf10442feb3b9ae3b3f7ca482"
+    },
+    ".local_agent/cooperative-budget-20261010/derive_replay.py": {
+      "bytes": 1532,
+      "sha256": "4e47bed0cfff128a5a980932a44fd10c776dfe5693dabeb8efce2b199a9a7161"
+    },
+    ".local_agent/cooperative-budget-20261010/failures.md": {
+      "bytes": 2441,
+      "sha256": "35d931567d4106898d4efcd4497302a04267f80a1757ecbff7fa3f2e8214844b"
+    },
+    ".local_agent/cooperative-budget-20261010/final-summary.json": {
+      "bytes": 4622,
+      "sha256": "67dffb76497795f5561535af797163837f910e02257f8ff084436b6e3396fabe"
+    },
+    ".local_agent/cooperative-budget-20261010/label-cancellation.json": {
+      "bytes": 1100316,
+      "sha256": "0f1b4da1faa01a293b94b60f02577ac6f79034e76d96cfd15be2016957538f98"
+    },
+    ".local_agent/cooperative-budget-20261010/label-fixed.json": {
+      "bytes": 1111563,
+      "sha256": "b842070ff873c487444014b07755e6dac4ea74664ba5687f58630f67209d3fc4"
+    },
+    ".local_agent/cooperative-budget-20261010/label_cancellation.py": {
+      "bytes": 2401,
+      "sha256": "f7ba218a3a0db2f254a20c47ec9009646d3f98d1b01f6ed5f10eeec9c0eafc2c"
+    },
+    ".local_agent/cooperative-budget-20261010/label_fixed.py": {
+      "bytes": 1836,
+      "sha256": "a9f8b57a5210e395b84fd6f72d26954da199a79d0b3887b23bbc7e24cab0dddc"
+    },
+    ".local_agent/cooperative-budget-20261010/native-cancel-accounting.json": {
+      "bytes": 3964536,
+      "sha256": "0eeebd48846cc2fd896ce2456be35acb7a1c4f5ac2e31d7fa6156b3dc54eef63"
+    },
+    ".local_agent/cooperative-budget-20261010/native-cancel-tail.json": {
+      "bytes": 5926,
+      "sha256": "94cada4e2b539db06acacf63cc192635d7f58c0178dcee6d4b5d5b3f366e4ccc"
+    },
+    ".local_agent/cooperative-budget-20261010/native-pv-audit.json": {
+      "bytes": 11128,
+      "sha256": "4f17fbfcc43edd3a4ab299f52083202d9018eca755467fa3af0b194f333c1e54"
+    },
+    ".local_agent/cooperative-budget-20261010/native-schedule.json": {
+      "bytes": 504396,
+      "sha256": "22852816d92be651d118e40614cb00c2be072e7ccf3fab7b1f86d0aeb04843ce"
+    },
+    ".local_agent/cooperative-budget-20261010/native-time.json": {
+      "bytes": 83001,
+      "sha256": "7d5ef75e8697687cb1d404df6c78b4dcbee29b18d16d7e7d1da26b7e5e7cd98f"
+    },
+    ".local_agent/cooperative-budget-20261010/native_cancel_accounting.py": {
+      "bytes": 3074,
+      "sha256": "1675045daa7a71a2646e7681f7150e46128223e6cd56007c60cb4b5c25f3006d"
+    },
+    ".local_agent/cooperative-budget-20261010/native_cancel_tail.py": {
+      "bytes": 2882,
+      "sha256": "d46ee2a7054198d96f969ac0c973828625b368bc3d084181044bbe36e6816532"
+    },
+    ".local_agent/cooperative-budget-20261010/native_pv_audit-first.py": {
+      "bytes": 2037,
+      "sha256": "4f020048a297165e57caa2ae019d72bdf395198961492b7d184c31348e2382e1"
+    },
+    ".local_agent/cooperative-budget-20261010/native_pv_audit.py": {
+      "bytes": 2081,
+      "sha256": "b667c7803e0c5e60b1b0b16885b73eb11eb6ba60e160676213746d5bd215a94b"
+    },
+    ".local_agent/cooperative-budget-20261010/native_replay_model.py": {
+      "bytes": 3570,
+      "sha256": "e7d32cf38a89d51ffb9ae48f242f1b7d4b8d98135cc6639acb8584910bbcdebd"
+    },
+    ".local_agent/cooperative-budget-20261010/native_schedule.py": {
+      "bytes": 4972,
+      "sha256": "c34b4cc1681208860324b59261b29dee9edc663e34253661853e94294c59459a"
+    },
+    ".local_agent/cooperative-budget-20261010/native_strict_model.py": {
+      "bytes": 3253,
+      "sha256": "4191bd4b982f916fb46c205dc8bc746ac5b98412cb5c04fc4e52d5a843d349a1"
+    },
+    ".local_agent/cooperative-budget-20261010/native_time.py": {
+      "bytes": 2846,
+      "sha256": "22cd9fd21027d15b5cca2dbf007abfde3fbabb067e1516925a9858bd0d5884ee"
+    },
+    ".local_agent/cooperative-budget-20261010/native_time_model.py": {
+      "bytes": 3471,
+      "sha256": "c9f65697acc1a087836595901b7a5cdf234248cbed0f8812265138fb3dd40233"
+    },
+    ".local_agent/cooperative-budget-20261010/owner-assay.json": {
+      "bytes": 203048,
+      "sha256": "9c22697ae1cd756a21d6513df0396b92546fcfadba8782c09b4deb34cbcf04ee"
+    },
+    ".local_agent/cooperative-budget-20261010/owner_assay.py": {
+      "bytes": 4589,
+      "sha256": "fe0646197630089667792303bfb9ac97bdcde1f56ce2b776ca554b74e57dd3ad"
+    },
+    ".local_agent/cooperative-budget-20261010/owner_sources.py": {
+      "bytes": 1534,
+      "sha256": "a7249807844f222665202150a1498a8a68513e6606ae2645dc5bfc3ffbd5e530"
+    },
+    ".local_agent/cooperative-budget-20261010/phase_contract.md": {
+      "bytes": 5322,
+      "sha256": "2d59efc8d8b6e15a345e0c89a1d77244a18b8389c30eeac166aea7d8a7753da3"
+    },
+    ".local_agent/cooperative-budget-20261010/product-d3.json": {
+      "bytes": 18363,
+      "sha256": "89c70a4d34f5172d3602698b5d3e704f82d31a9b86272725c2d798dd6866680b"
+    },
+    ".local_agent/cooperative-budget-20261010/product-factorial.json": {
+      "bytes": 71840,
+      "sha256": "00d7823657abab0835daa9bf6ac74a4903c096be2eeb7fb394e55b3f6a7e5ddc"
+    },
+    ".local_agent/cooperative-budget-20261010/product_d3.py": {
+      "bytes": 2424,
+      "sha256": "c09d6fbdcc38044c73cc23d798eda05e62856016f5f7995a78fa25daaf4d2fb2"
+    },
+    ".local_agent/cooperative-budget-20261010/product_factorial.py": {
+      "bytes": 2234,
+      "sha256": "213e6e6a3be7f45b466c04f39111241289fc0f59989dc2f895610a2367edd3f8"
+    },
+    ".local_agent/cooperative-budget-20261010/pv-bound-probe.json": {
+      "bytes": 8119,
+      "sha256": "9f89aba303afd81686a93af73f971535ecbcf735886a15312c35eca7d67316ec"
+    },
+    ".local_agent/cooperative-budget-20261010/pv-strict-probe.json": {
+      "bytes": 14624,
+      "sha256": "ff191e1945c3ae08bc9b894d2da82fcf2af10e9129d306662f3e6b25e764cb5c"
+    },
+    ".local_agent/cooperative-budget-20261010/pv_bound_probe-leaf-only.py": {
+      "bytes": 2446,
+      "sha256": "63e37b1448c18761de76b8dd8919062ca0b7850a1712d71d1bb5fc3057b3a838"
+    },
+    ".local_agent/cooperative-budget-20261010/pv_bound_probe.py": {
+      "bytes": 2909,
+      "sha256": "40f8f952b465be2c5e172e346c5eaed570224b14507158415476ac87b72d8751"
+    },
+    ".local_agent/cooperative-budget-20261010/pv_strict_probe.py": {
+      "bytes": 2139,
+      "sha256": "c8b635a68c278e803edb01931a9bb35807fc8f2fba79e9d52318a5ae5ad53391"
+    },
+    ".local_agent/cooperative-budget-20261010/replay-accounting.json": {
+      "bytes": 3984167,
+      "sha256": "90bcaf8f36baaaec85aa3be8d0d2bea518de824f6d162e4b9ccd6766f9bb7584"
+    },
+    ".local_agent/cooperative-budget-20261010/replay-derived.json": {
+      "bytes": 9413,
+      "sha256": "68fc9323c599ee4d585c1ee21757634827a256c6404f3271743bac8728dbe079"
+    },
+    ".local_agent/cooperative-budget-20261010/replay-model-verification.json": {
+      "bytes": 1864,
+      "sha256": "9a5836f2809571b0f61636adc83ecc92f137d24e22e6a95f55b1bc6e8a89b0b3"
+    },
+    ".local_agent/cooperative-budget-20261010/replay-model.json": {
+      "bytes": 8951,
+      "sha256": "c1deb24c83809ba47b8ee96bc79d5b3ffda91c01ab658421b7ecd56580681e27"
+    },
+    ".local_agent/cooperative-budget-20261010/replay_accounting.py": {
+      "bytes": 3091,
+      "sha256": "6ff5ed9829a1495026ed4b969057b5286cfb5a79e8b0839d3fca12c63e2ba391"
+    },
+    ".local_agent/cooperative-budget-20261010/replay_model.py": {
+      "bytes": 2697,
+      "sha256": "54bb7adafee28984776b69935fe06c5290d71f19d6dbbf412b66cff56088fc92"
+    },
+    ".local_agent/cooperative-budget-20261010/report.md": {
+      "bytes": 5284,
+      "sha256": "dcb157e280745fda019fe651ac5f12a662d8d074a3153c869588ea12a9ca527a"
+    },
+    ".local_agent/cooperative-budget-20261010/runtime-cancel-probe.json": {
+      "bytes": 6142,
+      "sha256": "f89eee98afa87fe48698e73f8b0ed5e40e63426b125cce9ff9c51fdfc971d6c9"
+    },
+    ".local_agent/cooperative-budget-20261010/runtime-pv-probe.json": {
+      "bytes": 3984523,
+      "sha256": "7bfb1c089fd5668cd33b667abcbde7c48564bdfc93511a49cb236b60d654c9af"
+    },
+    ".local_agent/cooperative-budget-20261010/runtime_cancel_probe.py": {
+      "bytes": 2840,
+      "sha256": "9ea9fd3bcc39f02bc3775f8014184a952b3804f83a92901ecbdae7f05851ff6b"
+    },
+    ".local_agent/cooperative-budget-20261010/runtime_pv_probe.py": {
+      "bytes": 4625,
+      "sha256": "0fb160a5ba479f068470e8567334ab91c6b200974ce0a0e42e64eea596271e51"
+    },
+    ".local_agent/cooperative-budget-20261010/runtime_validation_method.py": {
+      "bytes": 10338,
+      "sha256": "b07ba789a6f232510927705676cec505e406c77320bf0481297b5f152d3d48cf"
+    },
+    ".local_agent/cooperative-budget-20261010/segment_review.md": {
+      "bytes": 2415,
+      "sha256": "0d6217a4ba759989da251e773ec1a75005e7d3a6e7b6b6c9f0915a7bc0e0ecd8"
+    },
+    ".local_agent/cooperative-budget-20261010/summarize.py": {
+      "bytes": 1812,
+      "sha256": "3a6f07288f97daf260ccf56e1b4ced60789ed09093cdb0e621aea06c6c9348de"
+    },
+    ".local_agent/cooperative-budget-20261010/summary.json": {
+      "bytes": 31161,
+      "sha256": "cc119f9f64f2551c098e240c1ce8a125f3433837e94d92387885516e9e831563"
+    },
+    ".local_agent/cooperative-budget-20261010/validation-rejection.json": {
+      "bytes": 313,
+      "sha256": "a1ffd4941e3d3989762ea4e81de3bad52c03c35001d92dd0bb0c97b32bad2191"
+    },
+    ".local_agent/cooperative-budget-20261010/validation_rejection.py": {
+      "bytes": 1076,
+      "sha256": "0e89e44c46df713889b679dcdb753f979adaa261f7117a4094ee796e5c8d3dad"
+    },
+    ".local_agent/cooperative-budget-20261010/verified-root-bridge.json": {
+      "bytes": 304561,
+      "sha256": "ad590581c72db591afb63e243f63c422cf7b32f9d29efbc08806c54bd00de390"
+    },
+    ".local_agent/cooperative-budget-20261010/verified_root_bridge.py": {
+      "bytes": 1691,
+      "sha256": "8ae369ceb221def79944870cead54ff2371e1da42fdec91f6a05311f51064512"
+    },
+    ".local_agent/cooperative-budget-20261010/verify_replay_model-first.py": {
+      "bytes": 1767,
+      "sha256": "a2a8bb2d604346660d90a659ba62832e424288ef334949924d5eaea52749966a"
+    },
+    ".local_agent/cooperative-budget-20261010/verify_replay_model.py": {
+      "bytes": 1773,
+      "sha256": "65f0518a62846eda8421fbc694cb9a680b053638f0fc0cbac290db2225eee63f"
+    },
+    ".local_agent/cooperative-budget-20261010/warm-pv-contract.json": {
+      "bytes": 11514,
+      "sha256": "de783f61224fb53e20764b59c6134c17fecb1ac03ed8a5c48b06ff3552418671"
+    },
+    ".local_agent/cooperative-budget-20261010/warm_pv_contract.py": {
+      "bytes": 3768,
+      "sha256": "82dae76dbd6371d177dffba4fa87ef5cef02113069422be800e149b8d54cdb53"
+    },
+    ".local_agent/generated6-20261008/coverage.json": {
+      "bytes": 383389,
+      "sha256": "8b2d54188b9ded320c4591883e9520a30752bd5b20cba5920e0b5e76e862e7fc"
+    },
+    ".local_agent/native-terminal-20261010/bridge_assay.py": {
+      "bytes": 5745,
+      "sha256": "e230fdcfcee5943deb030f17b986afeaf3fab53301f63d8b8ff868fb3dbc4bd4"
+    },
+    ".local_agent/native-terminal-20261010/syntax_ablation.py": {
+      "bytes": 4353,
+      "sha256": "771f8f91a270fd8c6d63c8853ea3eb8b8635bc6b2cc32cdbf90560b3c72fedec"
+    },
+    "generic_chess/_native/native_module.c": {
+      "bytes": 320800,
+      "sha256": "41062ee5e5c19f8add786b31d2944361ae06058b75f558f62c0898ec4879c0f2"
+    },
+    "generic_chess/ai/alphabeta/native_legality.py": {
+      "bytes": 9391,
+      "sha256": "4dd45d72853cac0845848bb333da3e7829652d33897e5d6e5cc2d4929fd1226f"
+    },
+    "generic_chess/ai/alphabeta/search.py": {
+      "bytes": 48942,
+      "sha256": "01a00b970cd5346ac6f1f332603721b83676525a8c290e1b69aefc086a843e48"
+    },
+    "generic_chess/ai/alphabeta/statistics.py": {
+      "bytes": 5297,
+      "sha256": "d6d5d84ce486dad08cbc2054e223d8ac15b60f641e5d8abe769637450f6cfff1"
+    },
+    "generic_chess/core/identity.py": {
+      "bytes": 7377,
+      "sha256": "ed3f23bd8d2282660ec7645522456d847f17df79cb99448dc6fd0324df43790b"
+    },
+    "generic_chess/core/search_runtime.py": {
+      "bytes": 51644,
+      "sha256": "c5d8296549db2d4d6f7356927f9a8c43233ab50c0bd2a8439eb9713b9ccd1814"
+    },
+    "generic_chess/core/semantic_executor.py": {
+      "bytes": 71359,
+      "sha256": "aa35db47799c1d1a075793fb5c690324885b22d2f4bdb485f9839332d624d725"
+    },
+    "generic_chess/core/transition.py": {
+      "bytes": 9538,
+      "sha256": "1f21e56630057a13102b83c9fe0616301a7a4699bbd345158d4c67c45a3e8682"
+    },
+    "generic_chess/native/compiler.py": {
+      "bytes": 44228,
+      "sha256": "390c68d563139aabff17ed9d66d4dd39f3f572202253cae6a612ca2a70214d85"
+    },
+    "generic_chess/native/semantic.py": {
+      "bytes": 28407,
+      "sha256": "78e6830e9e303a151c73617386c8fd069e942290326deeaaf4420d9844f70b2f"
+    },
+    "generic_chess/native/semantic_engine.py": {
+      "bytes": 29694,
+      "sha256": "69ef74e504419e397dba9aaa7e28ff0b64b7a79dbe8d4b2c8138609da3e4b40f"
+    },
+    "scripts/bounded_root_scheduler.py": {
+      "bytes": 4098,
+      "sha256": "328648f127a73787c0ae40adc979edc0147c64e2b31bfc26ee4e35de252809a5"
+    },
+    "scripts/native_backend_bridge.py": {
+      "bytes": 4354,
+      "sha256": "5bd4be82548273388dc44dc9c30ccd0851a6ce743a960e25b12f5c4b1f2e1306"
+    },
+    "scripts/research_record.py": {
+      "bytes": 2767,
+      "sha256": "3f1237e0c1d728995f169902aaaad8fb53ac149287aa46875db298b63221612a"
+    },
+    "scripts/root_bound_diagnostic.py": {
+      "bytes": 6797,
+      "sha256": "950d9fb550d0bac2704303214c50c5b55e19c9faa721fcb42e4f169309d68086"
+    },
+    "scripts/search_backend_comparison.py": {
+      "bytes": 23931,
+      "sha256": "6bcff770357d8d4f5f48330d14283a5feb5206bd4141526a04e28a7d0c3abaf7"
+    },
+    "tests/development/test_bounded_root_scheduler.py": {
+      "bytes": 3161,
+      "sha256": "90cfcbbbaffe58b08246aaf5b0a6900892e6a10229ac00072b8b73e2951d78a7"
+    },
+    "tests/development/test_diagnostic_semantic_budget.py": {
+      "bytes": 2022,
+      "sha256": "fb18d611210eb251d8b0f216b96b890449d710a1d32b1cfb740cd1b72517ffbc"
+    },
+    "tests/development/test_native_backend_bridge.py": {
+      "bytes": 7849,
+      "sha256": "612e9475ceaa847104b020fb82faaf1aeceb65cdd4a2abaff0d093adb13349e7"
+    },
+    "tests/development/test_root_bound_diagnostic.py": {
+      "bytes": 3657,
+      "sha256": "f37b18a92557984bacfac0984223216d92615981debe38cd0d5e533773eb3118"
+    },
+    "tests/product/test_search_semantic_checkpoint.py": {
+      "bytes": 1966,
+      "sha256": "819da9ee4fafef1fa31cec2e4a663d8d3ef7c77625655b8aa0c9ca3824384bef"
+    }
+  },
+  "summary": {
+    "scope": "Exposed development, serial existing roots. Kernel/model/Core work units distinct; no strength/default/C deployment claim.",
+    "datasets": {
+      "assay": {
+        "rows": 72,
+        "complete": true,
+        "sha256": "edd650effa24b72ebf0bfab3a37f360ea7e71964cff655087dddf8f66efe3914"
+      },
+      "cancel-assay": {
+        "rows": 48,
+        "complete": true,
+        "sha256": "8fe211e2f230adb6890e67ac14c26a921ee594484d726fa91bbe0ad32e7f84bb"
+      },
+      "owner-assay": {
+        "rows": 48,
+        "complete": true,
+        "sha256": "9c22697ae1cd756a21d6513df0396b92546fcfadba8782c09b4deb34cbcf04ee"
+      },
+      "native-schedule": {
+        "rows": 9,
+        "complete": true,
+        "sha256": "22852816d92be651d118e40614cb00c2be072e7ccf3fab7b1f86d0aeb04843ce"
+      },
+      "native-time": {
+        "rows": 36,
+        "complete": true,
+        "sha256": "7d5ef75e8697687cb1d404df6c78b4dcbee29b18d16d7e7d1da26b7e5e7cd98f"
+      },
+      "core-window": {
+        "rows": 32,
+        "complete": true,
+        "sha256": "b9c0188b8ddec94d299ad1b1d1b41a18211525b6a36b680e24841a0f486713e9"
+      },
+      "core-fixed-d3": {
+        "rows": 4,
+        "complete": true,
+        "sha256": "6044707ab029793fad152307c9670c62f1991026e97ef797a052e4f76f5f8892"
+      },
+      "product-d3": {
+        "rows": 4,
+        "complete": true,
+        "sha256": "89c70a4d34f5172d3602698b5d3e704f82d31a9b86272725c2d798dd6866680b"
+      },
+      "core-window-cancel": {
+        "rows": 16,
+        "complete": true,
+        "sha256": "eb4fe0f8020acbc330ff9907ea07b53ed50b56a6235d8ab469d2ad2e479b775c"
+      },
+      "replay-accounting": {
+        "rows": 24,
+        "complete": true,
+        "sha256": "90bcaf8f36baaaec85aa3be8d0d2bea518de824f6d162e4b9ccd6766f9bb7584"
+      },
+      "replay-model-verification": {
+        "rows": 6,
+        "complete": true,
+        "sha256": "9a5836f2809571b0f61636adc83ecc92f137d24e22e6a95f55b1bc6e8a89b0b3"
+      },
+      "warm-pv-contract": {
+        "rows": 12,
+        "complete": true,
+        "sha256": "de783f61224fb53e20764b59c6134c17fecb1ac03ed8a5c48b06ff3552418671"
+      },
+      "native-cancel-accounting": {
+        "rows": 24,
+        "complete": true,
+        "sha256": "0eeebd48846cc2fd896ce2456be35acb7a1c4f5ac2e31d7fa6156b3dc54eef63"
+      },
+      "native-cancel-tail": {
+        "rows": 12,
+        "complete": true,
+        "sha256": "94cada4e2b539db06acacf63cc192635d7f58c0178dcee6d4b5d5b3f366e4ccc"
+      },
+      "label-fixed": {
+        "rows": 32,
+        "complete": true,
+        "sha256": "b842070ff873c487444014b07755e6dac4ea74664ba5687f58630f67209d3fc4"
+      },
+      "label-cancellation": {
+        "rows": 32,
+        "complete": true,
+        "sha256": "0f1b4da1faa01a293b94b60f02577ac6f79034e76d96cfd15be2016957538f98"
+      },
+      "runtime-pv-probe": {
+        "rows": 24,
+        "complete": true,
+        "sha256": "7bfb1c089fd5668cd33b667abcbde7c48564bdfc93511a49cb236b60d654c9af"
+      },
+      "runtime-cancel-probe": {
+        "rows": 24,
+        "complete": true,
+        "sha256": "f89eee98afa87fe48698e73f8b0ed5e40e63426b125cce9ff9c51fdfc971d6c9"
+      },
+      "verified-root-bridge": {
+        "rows": 4,
+        "complete": true,
+        "sha256": "ad590581c72db591afb63e243f63c422cf7b32f9d29efbc08806c54bd00de390"
+      }
+    },
+    "runtime_validation_cancel": {
+      "baseline": {
+        "max_post_kernel_ms": 14.53780010342598,
+        "mean_post_kernel_ms": 7.868941718091567,
+        "max_request_to_public_ms": 15.137500129640102
+      },
+      "runtime": {
+        "max_post_kernel_ms": 8.929200004786253,
+        "mean_post_kernel_ms": 6.477441677513222,
+        "max_request_to_public_ms": 9.245600085705519
+      }
+    },
+    "decisions": {
+      "adopt": "Native optional work counters; explicit Core semantic-budget diagnostic and searched-frontier label provenance. Product validation remains unchanged.",
+      "defer": "owner-only source index1.38-3.13% no timed depth gain; Core-runtime validation modest scoped tail reduction, lacks broad generated semantic controls; no product search replacement.",
+      "main": "NativeTT0/OFF canonical replay inactive; fullwindow dispatch source-model reproduced. Core product q0 TT/order D3~0.7sec outperforms plain AB6-7sec on generated roots.",
+      "phase": "Completed q0 only: replay entry calls=nodes-transition_count-root_iterations_attempted; cold64 subtree shares6.83/3.47/1.00%. Interrupted residuals include -1, unavailable not zero.",
+      "route": "4096 synthetic D4 tree internal tie errors59/213; strict interior improvement removes errors on scoped TT0/q0/complete controls, not all TT/interrupt contexts.",
+      "shared_root": "Four live-budget verified-root D3calls2027/2112entries0.94-0.97/1.16-1.17sec retain scores; residual not yet isolated, retainproduct."
+    }
+  },
+  "validation": "37 focused tests passed, publisher repeats relevant targets; counter fields verified against installed kernel.",
+  "dependencies": "Other imports recoverable from base commit; scoped local evidence dependencies bundled. Final C blocked/restored and no build retry."
+}

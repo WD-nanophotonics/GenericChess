@@ -113,6 +113,41 @@ formal curves are serial. Evidence: SEARCH_BACKEND_ATTRIBUTION.md and
 data/terminal_frontier_20261010.json. Next quantify one supported scheduling or
 attack-dispatch mechanism by useful completion and actual cost, not hotspot alone.
 
+## Cooperative budget and window attribution — 2026-10-10
+
+Internal live semantic polling matters: 72 serial resource controls remove some
+of the thin diagnostic's apparent completion advantage. Preparation and caller
+PV replay remain separately measured, with observed cancellation rather than
+a response guarantee. Native results now expose optional kernel generation and
+ordinary-transition counts; missing observations are None, not zero.
+
+The installed TT0/rootOFF kernel does not execute canonical selected-PV replay.
+An exact source model reproduces its D1-D3 counts, values and packed routes;
+changing internal full-window dispatch cuts work while keeping root children
+full-window. Cold TT64 replay subtrees are only about 1-7% of measured entries.
+Completed q0 replay-entry accounting fails on interrupted calls, including a
+negative residual. Warm TT cutoffs require separate attribution.
+
+Core controls with matched live polling retain fixed-D3 window savings but no
+1/4second completion gain. Existing configured Core takes about0.7seconds,
+versus6-7seconds for the plain alternative on the two generated D3 roots:
+retain current search, not automatic replacement. Synthetic equal-bound PV ties
+can return suboptimal interior replies despite a correct root/leaf value;
+strict interior improvement repairs these scoped complete noTT controls, not
+all TT/interruption contracts. Independent selected-response audits are recorded.
+
+Owner-only attack enumeration and Core-runtime caller validation stay deferred:
+modest measured gains, no broad deployment evidence. Captured legal-frontier
+labels are an explicit diagnostic option; independent replay stays default and
+product validation is unchanged.16 product-only TT/order factorial calls preserve
+D3 scores; both OFF still take about0.9-1.0seconds on these roots. The large gap
+therefore remains after removing those features. Next isolate root shared-window
+and contender-verification scheduling on the same finite generated roots.
+Dot's complete fresh-thread review guided the matched-budget check; it did not
+rerun experiments. No workflow/default/UI/C deployment change follows.
+SEARCH_BACKEND_ATTRIBUTION.md and data/cooperative_budget_20261010.json own
+exact sources, negative controls, failures and measured cancellation costs.
+
 ## Retained lines and prior evidence
 
 Latest search-first continuation: narrowed-root bound equality is reproduced by

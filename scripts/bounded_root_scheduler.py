@@ -11,7 +11,14 @@ from time import perf_counter
 from scripts.root_bound_diagnostic import root_search
 
 
-def iterative_root_search(board, *, seconds, node_limit, max_depth=12):
+def iterative_root_search(board, *, seconds, node_limit, max_depth=12,
+                          cooperative=False, cancellation=None, validate_pv=True):
+    """Keep replay validation by default; expose its caller cost separately.
+
+    ``validate_pv=False`` returns labels captured from searched legal frontiers.
+    It omits independent post-search replay, not search legality/budget checks.
+    This diagnostic mode does not establish an independent PV witness.
+    """
     start = perf_counter()
     terminal = board.terminal(0)
     if terminal is not None:
@@ -31,7 +38,8 @@ def iterative_root_search(board, *, seconds, node_limit, max_depth=12):
     for depth in range(1, max_depth+1):
         result = root_search(board, depth, mode='verified',
             canonical_key=keys.__getitem__, node_limit=node_limit-total.get('nodes',0),
-            seconds=seconds-(perf_counter()-start))
+            seconds=seconds-(perf_counter()-start), cooperative=cooperative,
+            cancellation=cancellation)
         for key, value in result['work'].items():
             total[key] = total.get(key,0)+value
         iterations.append(result)
@@ -44,7 +52,7 @@ def iterative_root_search(board, *, seconds, node_limit, max_depth=12):
     labels = []
     pushed = 0
     try:
-        for move in pv:
+        for move in pv if validate_pv else ():
             frontier = {m: label for label, m in board.actions()}
             if move not in frontier:
                 raise AssertionError('diagnostic PV contains illegal action')
@@ -55,12 +63,15 @@ def iterative_root_search(board, *, seconds, node_limit, max_depth=12):
         for _ in range(pushed):
             board.pop()
     end = perf_counter()
+    if not validate_pv:
+        labels = list(completed['pv_labels']) if completed else [first[0]]
     if not board.restored() or total.get('nodes',0)>node_limit:
         raise AssertionError('diagnostic root/cap invariant')
     return dict(move=completed['move'] if completed else first[0], action=action,
                 score=completed['score'] if completed else None, pv_labels=labels,
                 completed_depth=completed['completed_depth'] if completed else 0,
                 used_fallback=completed is None,
+                pv_validation='independent_replay' if validate_pv else 'searched_frontiers',
                 exit_cause=iterations[-1]['exit_cause'] if iterations else 'depth_limit',
                 work=total, iterations=iterations, preparation_seconds=preparation,
                 search_seconds=search_finished-start-preparation,

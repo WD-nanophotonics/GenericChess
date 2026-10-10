@@ -16,14 +16,15 @@ class Estimate:
     score: int
     bound: str
     pv: tuple
+    labels: tuple = ()
 
 class Exhausted(Exception):
     pass
 
 
-def root_search(board, depth, *, mode='verified', reverse=False, reverse_interior=False,
+def _root_search(board, depth, *, mode='verified', reverse=False, reverse_interior=False,
                 canonical_key=lambda action: action, node_limit=100000,
-                seconds=30):
+                seconds=30, cooperative=False, cancellation=None):
     if mode not in ('full', 'unsafe', 'verified'):
         raise ValueError(mode)
     if depth < 1:
@@ -36,11 +37,26 @@ def root_search(board, depth, *, mode='verified', reverse=False, reverse_interio
     label=None
     action=None
 
-    def visit(left, alpha, beta, ply):
+    def budget_check():
         if work['nodes'] >= node_limit:
             raise Exhausted('node_budget')
+        if cancellation is not None and cancellation.is_cancelled():
+            raise Exhausted('cancelled')
         if perf_counter()-start >= seconds:
             raise Exhausted('time_limit')
+
+    def checkpoint():
+        work['semantic_polls'] += 1
+        budget_check()
+
+    if cooperative:
+        if not getattr(board, 'semantic_checkpoint_supported', False):
+            raise ValueError('adapter does not support internal semantic checkpoints')
+        work['semantic_polls'] = 0
+        board.checkpoint = checkpoint
+
+    def visit(left, alpha, beta, ply):
+        budget_check()
         work['nodes']+=1;work['terminal_queries']+=1
         terminal=board.terminal(ply)
         if terminal is not None or left==0:
@@ -52,8 +68,8 @@ def root_search(board, depth, *, mode='verified', reverse=False, reverse_interio
         if not frontier:
             raise ValueError('nonterminal node has no diagnostic actions')
         alpha_initial=alpha;beta_initial=beta
-        best=-INF;pv=()
-        for _,move in frontier:
+        best=-INF;pv=();labels=()
+        for candidate_label,move in frontier:
             board.push(move);work['pushes']+=1
             try:
                 child=visit(left-1,-beta,-alpha,ply+1)
@@ -61,27 +77,24 @@ def root_search(board, depth, *, mode='verified', reverse=False, reverse_interio
                 board.pop()
             score=-child.score
             if score>best:
-                best=score;pv=(move,*child.pv)
+                best=score;pv=(move,*child.pv);labels=(candidate_label,*child.labels)
             alpha=max(alpha,best)
             if alpha>=beta:
                 work['cutoffs']+=1
                 break
         bound='UPPER' if best<=alpha_initial else 'LOWER' if best>=beta_initial else 'EXACT'
-        return Estimate(best,bound,pv)
+        return Estimate(best,bound,pv,labels)
 
-    def child_search(move, alpha, beta):
+    def child_search(move, candidate_label, alpha, beta):
         board.push(move);work['pushes']+=1
         try:
             child=visit(depth-1,alpha,beta,1)
         finally:
             board.pop()
-        return Estimate(-child.score,{'EXACT':'EXACT','UPPER':'LOWER','LOWER':'UPPER'}[child.bound],(move,*child.pv))
+        return Estimate(-child.score,{'EXACT':'EXACT','UPPER':'LOWER','LOWER':'UPPER'}[child.bound],(move,*child.pv),(candidate_label,*child.labels))
 
     try:
-        if node_limit<1:
-            raise Exhausted('node_budget')
-        if seconds<=0:
-            raise Exhausted('time_limit')
+        budget_check()
         work['nodes']+=1;work['terminal_queries']+=1
         terminal=board.terminal(0)
         if terminal is not None:
@@ -91,7 +104,7 @@ def root_search(board, depth, *, mode='verified', reverse=False, reverse_interio
             frontier=board.actions()
             if reverse:frontier=list(reversed(frontier))
             for candidate_label,move in frontier:
-                estimate=child_search(move,-INF,INF if incumbent is None or mode=='full' else -incumbent.score)
+                estimate=child_search(move,candidate_label,-INF,INF if incumbent is None or mode=='full' else -incumbent.score)
                 entry=dict(label=candidate_label,key=canonical_key(move),score=estimate.score,bound=estimate.bound,
                            nodes=work['nodes'],verified=False,installed=False)
                 candidates.append(entry)
@@ -100,7 +113,7 @@ def root_search(board, depth, *, mode='verified', reverse=False, reverse_interio
                 if possible and mode=='verified' and estimate.bound!='EXACT':
                     work['verifications']+=1
                     entry['verification_start_nodes']=work['nodes']
-                    estimate=child_search(move,-INF,INF)
+                    estimate=child_search(move,candidate_label,-INF,INF)
                     if estimate.bound!='EXACT':
                         raise AssertionError('full window did not establish exact candidate')
                     entry.update(verified=True,exact_score=estimate.score)
@@ -118,6 +131,23 @@ def root_search(board, depth, *, mode='verified', reverse=False, reverse_interio
         raise AssertionError('root not restored')
     return dict(move=label,action=action,score=None if incumbent is None else incumbent.score,
                 pv=() if incumbent is None else incumbent.pv,
+                pv_labels=() if incumbent is None else incumbent.labels,
                 bound=None if incumbent is None else incumbent.bound,
                 completed_depth=depth if complete else 0,reason='completed_depth' if complete else 'budget',
                 exit_cause=exit_cause,work=work,candidates=candidates,root_restored=True,wall_seconds=perf_counter()-start)
+
+
+def root_search(board, depth, **kwargs):
+    """Finite diagnostic with optional adapter-internal live budget checks.
+
+    Only Core adapters currently propagate ``checkpoint`` inside semantic work.
+    A checkpoint attribute alone does not establish Native/library cooperation.
+    Node/cancel/time precedence matches the product; node units remain different.
+    Restore callback ownership after successful, exhausted or exceptional work.
+    """
+    previous = getattr(board, 'checkpoint', None)
+    try:
+        return _root_search(board, depth, **kwargs)
+    finally:
+        if hasattr(board, 'checkpoint'):
+            board.checkpoint = previous

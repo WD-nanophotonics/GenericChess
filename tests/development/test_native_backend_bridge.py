@@ -46,6 +46,55 @@ def test_native_bridge_does_not_hide_v4_stalemate_loss_gap():
         NativeBoard(core,VALUES['shogi'])
 
 
+@pytest.mark.parametrize('nodes', [32, 4096])
+def test_high_level_native_preserves_kernel_work_counts(nodes):
+    from generic_chess.native.semantic_engine import SemanticSearchEngine
+    from generic_chess.native.semantic import semantic_iterative_search
+    from generic_chess.session.session import GameSession
+    from generic_chess.ai.limits import SearchLimits
+    compiled = compile_ruleset_for_execution(build_builtin_ruleset('western_chess'))
+    core = CoreBoard(CASES[3], compiled)
+    board = NativeBoard(core, VALUES['chess'])
+    engine = SemanticSearchEngine(compiled, board.native,
+        board_values=VALUES['chess'], hand_values=VALUES['chess'], tt_megabytes=0)
+    session = GameSession(compiled)
+    session._state = core.initial
+    session._search_history_witnesses = core.witnesses
+    result = engine.search(session, SearchLimits(max_depth=2, max_nodes=nodes,
+        max_time_seconds=10, quiescence_max_depth=0))
+    raw = semantic_iterative_search(board.native, board.position, 2,
+        max_nodes=nodes, max_time_seconds=10, board_values=VALUES['chess'],
+        hand_values=VALUES['chess'], tt_megabytes=0)
+    for key in ('nodes', 'beta_cutoffs', 'legal_generation_count', 'transition_count'):
+        assert getattr(result, key) == raw[key]
+    assert result.legal_generation_count > 0 and result.transition_count > 0
+    assert board.restored() and session.state == core.initial
+
+
+def test_unavailable_native_work_count_is_not_reported_as_zero(monkeypatch):
+    from generic_chess.native import _module
+    from generic_chess.native.semantic_engine import SemanticSearchEngine
+    from generic_chess.session.session import GameSession
+    from generic_chess.ai.limits import SearchLimits
+    compiled = compile_ruleset_for_execution(build_builtin_ruleset('western_chess'))
+    module = _module()
+    original = module.semantic_engine_search
+    def without_optional_counts(*args, **kwargs):
+        raw = dict(original(*args, **kwargs))
+        raw.pop('legal_generation_count')
+        raw.pop('transition_count')
+        return raw
+    monkeypatch.setattr(module, 'semantic_engine_search', without_optional_counts)
+    core = CoreBoard(CASES[3], compiled)
+    board = NativeBoard(core, VALUES['chess'])
+    result = SemanticSearchEngine(compiled, board.native, board_values=VALUES['chess'],
+        hand_values=VALUES['chess'], tt_megabytes=0).search(GameSession(compiled),
+        SearchLimits(max_depth=1, max_nodes=4096, max_time_seconds=10,
+                     quiescence_max_depth=0))
+    assert result.nodes > 0 and result.completed_depth == 1
+    assert result.legal_generation_count is None and result.transition_count is None
+
+
 @pytest.mark.parametrize('checker',[0,1])
 def test_native_bridge_propagates_perpetual_winner_from_child_before_leaf(checker):
     rules=replace(build_builtin_ruleset('standard_shogi'),stalemate_result='draw')

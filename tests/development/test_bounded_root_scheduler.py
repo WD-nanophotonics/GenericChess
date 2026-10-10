@@ -32,6 +32,19 @@ def test_preparation_overrun_uses_legal_fallback_without_search_or_fake_depth():
     assert result['exit_cause']=='time_limit' and result['pv_labels']==['b']
     assert result['caller_seconds']>=result['budgeted_seconds']
 
+
+def test_searched_frontier_labels_skip_only_independent_replay():
+    for nodes in (4, 100):
+        replay = iterative_root_search(ChangingHorizon(), seconds=30,
+            node_limit=nodes, max_depth=2)
+        captured = iterative_root_search(ChangingHorizon(), seconds=30,
+            node_limit=nodes, max_depth=2, validate_pv=False)
+        for key in ('move', 'score', 'pv_labels', 'completed_depth', 'work'):
+            assert captured[key] == replay[key]
+        assert replay['pv_validation'] == 'independent_replay'
+        assert captured['pv_validation'] == 'searched_frontiers'
+        assert captured['root_restored'] and captured['validation_seconds'] >= 0
+
 def test_deadline_during_child_unwinds_board_and_reports_actual_cause(monkeypatch):
     from scripts import root_bound_diagnostic as diagnostic
     board=ChangingHorizon();clock={'now':0.}

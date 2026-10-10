@@ -767,3 +767,34 @@ disjoint-time and cancellation-latency limits; no independent rerun or operating
 policy change. Next align cooperative budgeting in the diagnostic or measure one
 bounded attack-dispatch mechanism. Phase-specific C counters require supported
 execution first; no retry of the blocked binary or security workaround.
+
+
+## Cooperative budgets and phase attribution, 2026-10-10
+
+72 serial controls show that adding genuine internal semantic node/cancel/time
+checks removes some thin-caller completion advantages. Current Native optional
+generation/ordinary-transition counters are now available at the high-level
+result; missing fields are None. Their definitions exclude caller validation and
+nested terminal probes. They do not equal unique positions or another engine's
+node unit. Completed q0 entry accounting distinguishes selected-PV replay from
+full-window dispatch, and actual interrupted negative residuals forbid applying
+the simple residual formula to cancellations. Cold64 exact models put replay
+subtree shares at about1-7%; TT0/rootOFF never enters that replay branch.
+
+Matched Core window controls retain fixed-work savings, but no1/4second depth
+gain. Product TT/order-off D3 still costs about0.9-1.0sec on the two generated
+roots. A shared-root verified-contender bridge with live semantic budgets and
+caller replay takes0.94-0.97/1.16-1.17sec, retaining scores, versus6-7sec for the
+all-root-full-window model. Retain product; node reductions alone do not justify
+replacement. Synthetic equal-bound ties demonstrate that root/leaf agreement
+does not certify optimal PV responses. Scoped strict-tie and selected-response
+checks are retained without a blanket TT/interruption guarantee.
+
+Captured legal-frontier labels are an explicit diagnostic alternative to replay;
+default replay and product validation stay. Owner-only source indexing and Core
+Runtime caller validation are deferred after modest scoped measurements. No UI,
+C build or workflow change. The complete detailed report, failed harnesses,
+source pins, adverse/capped cells and measured cancellation tails are in
+data/cooperative_budget_20261010.json -> its evidence.zip/report.md and
+phase_contract.md. Dot's complete fresh-root review was assessed and applied;
+no independent advisor execution is claimed.

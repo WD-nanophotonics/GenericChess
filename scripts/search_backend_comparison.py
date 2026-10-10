@@ -71,6 +71,8 @@ class Material:
 
 
 class CoreBoard:
+    semantic_checkpoint_supported = True
+
     def __init__(self, case, compiled, provider=None):
         self.game, self.compiled = case['game'], compiled
         setup = case['setup']

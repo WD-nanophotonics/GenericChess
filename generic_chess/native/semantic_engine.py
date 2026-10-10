@@ -110,6 +110,11 @@ class SemanticIterativeSearchResult:
     training_trace_enabled: bool = False
     training_trace_count: int = 0
     training_trace_raw_count: int = 0
+    # Kernel search-loop work, excluding caller packing/PV validation and
+    # terminal routines' nested generation. These are not unique position counts
+    # or all checked attempts: canonical selected-PV replays are separate work.
+    legal_generation_count: int | None = None
+    transition_count: int | None = None
 
 
 def _profile_tuple(native_rules, values):
@@ -538,6 +543,10 @@ class SemanticSearchEngine:
             root_iteration_first_actions=tuple(root_first_actions),
             root_window_pruning=bool(raw.get("root_window_pruning", False)),
             beta_cutoffs=int(raw.get("beta_cutoffs", 0)),
+            legal_generation_count=(int(raw["legal_generation_count"])
+                                    if "legal_generation_count" in raw else None),
+            transition_count=(int(raw["transition_count"])
+                              if "transition_count" in raw else None),
             learned_move_ordering=bool(raw.get("learned_move_ordering", False)),
             ordering_checkpoint_id=self._ordering_checkpoint_id,
             ordering_evaluations=int(raw.get("ordering_evaluations", 0)),
