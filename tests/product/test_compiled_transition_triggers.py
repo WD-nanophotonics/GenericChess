@@ -70,3 +70,41 @@ def test_explicit_auxiliary_effect_runs_after_matching_trigger_clear():
     child=engine.apply(position,action)
     assert dict(child.aux_state)[(compiled.ir.aux_slots[0].slot_id,0)] == 1
     assert child != position
+
+
+@pytest.mark.parametrize('scope',['per_owner','global'])
+@pytest.mark.parametrize('owner_filter',['self','opponent','any'])
+def test_dynamic_aux_square_reads_pretransition_state_with_fixed_clears(scope,owner_filter):
+    original=compile_semantic_ruleset(castling_ruleset())
+    right=original.ir.aux_slots[0]
+    square_slot=replace(right,slot_id=right.slot_id+1,value_kind='square_or_none',scope=scope,initial=None)
+    fixed=replace(original.ir.triggers[0],owner=owner_filter)
+    dynamic=replace(fixed,square_ref=replace(fixed.square_ref,kind='aux_slot_square',square=None,slot_id=square_slot.slot_id))
+    # Direct typed dispatch fixture: no claim that the old castling patterns
+    # execute with the deliberately replaced slot schema.
+    compiled=replace(original,ir=replace(original.ir,aux_slots=(right,square_slot),triggers=(dynamic,fixed)))
+    fallback=replace(compiled);object.__setattr__(fallback,'_fixed_transition_triggers',None)
+    for side in (0,1):
+        for square_value in ((2,2),None,(20,20)):
+            keys=((square_slot.slot_id,-1),) if scope=='global' else ((square_slot.slot_id,0),(square_slot.slot_id,1))
+            position=replace(SemanticEngine(compiled)._initial_position(),side_to_move=side,
+                             aux_state=tuple((key,square_value) for key in keys))
+            for event_owner in (0,1):
+                for event_squares in ((18,),(4,),(18,4)):
+                    outputs=[]
+                    for c in (compiled,fallback):
+                        engine=SemanticEngine(c);work=_WorkingPosition(position,c.support)
+                        work.events=[('piece_leaves_square',Piece(event_owner,'K','K'),square) for square in event_squares]
+                        # A changed working map must not become reference authority.
+                        aux={key:(3,3) for key in keys}
+                        engine._apply_transition_triggers(position,work,SimpleNamespace(source=4,target=18,path=(18,)),aux,None)
+                        outputs.append(aux)
+                    assert outputs[0]==outputs[1]
+                    expected={key:(3,3) for key in keys}
+                    for owner in ((0,1) if right.scope=='per_owner' else (side,)):
+                        fixed_square=59 if fixed.square_ref.owner_relative and owner==1 else 4
+                        hit=(18 in event_squares and square_value==(2,2)) or fixed_square in event_squares
+                        hit &= owner_filter=='any' or (event_owner==owner)==(owner_filter=='self')
+                        if hit:expected[(right.slot_id,owner if right.scope=='per_owner' else -1)]=0
+                    assert outputs[0]==expected
+                    assert position.aux_state==tuple((key,square_value) for key in keys)

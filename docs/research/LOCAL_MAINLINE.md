@@ -85,6 +85,24 @@ Next compare one budget-aware tactical reserve against a completed cheap result,
 or use the indexed thin Core/specialized bridge to attribute remaining work.
 Sources/failures/limits: UI_PRODUCT_DIAGNOSTIC.md; data/ui_product_20261010.json.
 
+## Protected reserve checkpoint —2026-10-10
+
+Shared-budget cheapD1 then isolatedq1 refresh preserves short-budget completion.
+On30exposed cold parents, finiteD2 material regret improves7/worsens1/ties22;
+mean900→166.7 with no observed depth loss. The1000 contrary row remains: its
+q1 check-evasion horizon differs from finiteD2, independently reproduced with
+specialized material search. This is diagnostic only, not strength/default/UI.
+Warm entry-clear controls show cheap-q0 can absorb oldq4/deeper entries. A
+smaller phase-local TT bypass preserves genuine cheap/q1 work, then reuses
+configuredq4 warm entries: two same-prime roots recoverD2 instead ofD1. Retain
+as a scoped selective contract; next check cold/generated/cancel behavior
+before choosing a supported reserve change. No universal cache framework.
+Residual guard/path prototypes have modest fixed savings but no observed timed
+completion gains and remain deferred. Dynamic aux dispatch has216additional
+typed independent-output controls; generated hard8 trace passes full public
+history replay. Failures and original caps remain intact. Evidence:
+RESERVE_REFRESH_DIAGNOSTIC.md; data/reserve_refresh_20261010.json.
+
 ## Search attribution checkpoint —2026-10-10
 
 Thin identical lexical alpha-beta now drives Core, python-chess and cshogi;
@@ -608,6 +626,7 @@ branch backlog or publication gate. Exact operating rules remain in AGENTS.md.
 
 |Purpose|Document and latest records|
 |---|---|
+|Protected reserve, warm contract and residual-cost alternatives|RESERVE_REFRESH_DIAGNOSTIC.md; data/reserve_refresh_20261010.json|
 |Actual frozen UI path, first-completion boundary and compiled trigger cost|UI_PRODUCT_DIAGNOSTIC.md; data/ui_product_20261010.json|
 |Evaluation families, state-input signal and actual caller cost|EVALUATION_ROUTES.md; STATE_INPUT_FEASIBILITY.md; data/state_inputs_20261009.json|
 |Finite search compression, prospective splits and existing search/table controls|FINITE_SEARCH_COMPRESSION.md; data/search_compression_20261009.json|

@@ -121,3 +121,7 @@ is incomplete. No claim of byte-exact old recovery. Paths in JSON are normalized
 original local hashes and transformed member hashes distinguish this operation.
 Use the current three CLI diagnostics in scripts/ for new declared checks;
 failed and amortization prototype code belongs in the archive, not product imports.
+
+Protected-reserve continuation and remaining cost alternatives are isolated in
+RESERVE_REFRESH_DIAGNOSTIC.md and data/reserve_refresh_20261010.json. The frozen
+UI branch remains unchanged; diagnostic refresh is not adopted into that service.
