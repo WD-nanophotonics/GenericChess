@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "scope": "Agent-only exposed development attribution; no user/Slack/account/credential data; no strength or independent holdout claim",
+  "archive": "docs/archive/search_backend_attribution_20261010/evidence.zip",
+  "members": {
+    "aligned-d2.json": {
+      "bytes": 92866,
+      "sha256": "f5230401ea4227504e2508fd4564097899d3fab9f65d2c05c3db72ac422604ad"
+    },
+    "d6-45s.json": {
+      "bytes": 96316,
+      "sha256": "47e4b6d0972c7205fb892e8ada2d355fa0dffbb5be1da2b0679c48a1cd386a65"
+    },
+    "d6-source.py": {
+      "bytes": 18072,
+      "sha256": "36f8f94e7fb6194e24e1d49f61f9813301b4240f9128a5f9035dbcea0b2c9d77"
+    },
+    "environment.json": {
+      "bytes": 659,
+      "sha256": "7f70a894d23a72aa43cd25f6d096c7c34d90e5ad76f48f4ee4768ad0711a0d47"
+    },
+    "failures.json": {
+      "bytes": 566,
+      "sha256": "fd54d0274548cc11a3c1ccd2819ca936542b245e38254b9b6b66ef33f3331797"
+    },
+    "fixed-work-profile.json": {
+      "bytes": 131470,
+      "sha256": "2530438ea6613a192cf23fcf8b9771f599773936a5f1f5d0e87d0bbcccafcadc"
+    },
+    "frozen-rules.json": {
+      "bytes": 493426,
+      "sha256": "92ec71a0c22018553ab854f0c33c2660937f4294ecdaa9522d870c674bc2c006"
+    },
+    "mature-overall.json": {
+      "bytes": 6921,
+      "sha256": "8048df27980311747f385aa37d57f2a66bd218e08654e02389021df33fcd92e7"
+    },
+    "mature_controls.py": {
+      "bytes": 5899,
+      "sha256": "2a2677f697f37191f2977bfd8c70450af93f73b2ea45739da744bf66aba602bd"
+    },
+    "pilot.json": {
+      "bytes": 6796,
+      "sha256": "0681585cc327d06598faa4c263eb278ea45cdda1c6fdfb50e02f3f36a5ebab9c"
+    },
+    "primitive-cost.json": {
+      "bytes": 10089,
+      "sha256": "12a4b8c1f39a122dbf5f190d84cd31d5a9418a6770765b9f8686da20180621eb"
+    },
+    "primitive_cost.py": {
+      "bytes": 2584,
+      "sha256": "6276ff55657be59d16c10d933ee46bebe7e2257a0d84549e832e2716191fcc4b"
+    },
+    "profile_cost.py": {
+      "bytes": 3704,
+      "sha256": "bdb41c14e0aa9b80998666f558174e3074b038b4a7785f2994cd3312c3024575"
+    },
+    "recover_old.py": {
+      "bytes": 1413,
+      "sha256": "7c19702de012268471c17adce64dd49515e7e856364bf44437110ce91f8661dd"
+    },
+    "repaired-rules.json": {
+      "bytes": 493426,
+      "sha256": "d965854baf1f6b4128ead50282b2efd71a29048a2be6c5ab699ba8109ab89b50"
+    },
+    "timing-notes.json": {
+      "bytes": 606,
+      "sha256": "5176b4f098cb98705fce57c5bf8e1c39a00ba274b6099a5816f07ba8e9d0b9b2"
+    },
+    "utility-runtime-source.py": {
+      "bytes": 51620,
+      "sha256": "efd1530b7ff1027396a5030be6e53a933785b020c34820d44cf2b4151bea0956"
+    },
+    "utility-used-source.py": {
+      "bytes": 24305,
+      "sha256": "b20ad6ad8bbae45be220d8208022021cf8d5c4a4384590d2b9648a7b687eaa96"
+    },
+    "utility.json": {
+      "bytes": 646778,
+      "sha256": "777f62add4f58102be9985169bea2bf57ef09f0604994d79d8a50ab830322c2c"
+    },
+    "binding_path_ablation.py": {
+      "bytes": 2543,
+      "sha256": "0b7fe097c0fdcf2945245d33df2d7eb3248e678e87c999e011d1fe553a01e137"
+    },
+    "binding-path-ablation.json": {
+      "bytes": 9418,
+      "sha256": "4abf88ca16c247552c1d133504baea827dea73e3136d49917174ac0a8634967b"
+    }
+  },
+  "counts": {
+    "old_d2": 64,
+    "old_d6": 64,
+    "common_time": 240,
+    "fixed_work": 16,
+    "primitive": 24,
+    "regression_tests": 85,
+    "binding_path_calls": 8,
+    "binding_geometry_queries": 1310162
+  },
+  "source_recovery": "README.md and recover_old.py --verify-only; exact utility source pins; old/repaired rule manifests",
+  "next": "Isolate one evidenced generic generator/reuse/bridge cost; preserve cancellation and complete state semantics; transfer to unfamiliar-rule controls",
+  "archive_sha256": "b6bf4b2b038d73ea2ab415b1515e39ac1d03d83f3cfcd6b3903dedea353b8588",
+  "active_sources": {
+    "docs/research/LOCAL_MAINLINE.md": "5d03329e2eb389054ec34ffb6a47247b1bacfe87371321521e2458e15b8af060",
+    "docs/research/SEARCH_BACKEND_ATTRIBUTION.md": "179f27db81fceba2c1071c09f627adb0b24e190cfb33c7791e808ac97a513ee6",
+    "scripts/search_backend_comparison.py": "a7f7818e3123835573046abe97ffa4e2c04d895ccab24fff19c4895e2fe8c66e",
+    "scripts/search_attribution_utility.py": "b40679456bf508b60463fbd06d94ba1adea39bb122e744603d050c856e8d2a13",
+    "tests/development/test_search_backend_comparison.py": "cc82af593ab541ff12a80817c0490b343e073d04f932f40197f112c75430bc1a",
+    "tests/product/test_standard_shogi_no_move_loss.py": "f0b747c7714607e68c78e56bb153566a768df0530d9f70adf24bc8b9db35b109",
+    "tests/product/test_search_runtime_provider_metadata.py": "0b76ca13bc2eb29d08bdb5a99041ec2074b35f1b21fe1a847e05f93d8ffe8fa4"
+  }
+}

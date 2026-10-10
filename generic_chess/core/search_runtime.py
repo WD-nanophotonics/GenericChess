@@ -879,7 +879,7 @@ class SearchPathRuntime:
         except BaseException as exc:
             if was_aborted() or not isinstance(exc, Exception):
                 raise
-            provider_owner = getattr(provider, "__self__", None)
+            provider_owner = getattr(provider, "__self__", None) or provider
             if bool(getattr(provider_owner, "strict", False)):
                 raise
             self.legal_provider_fallbacks += 1
@@ -891,7 +891,7 @@ class SearchPathRuntime:
         self.legal_provider_calls += 1
         self.legal_provider_actions += len(actions)
         self.legal_provider_seconds += time.perf_counter() - started
-        provider_owner = getattr(provider, "__self__", None)
+        provider_owner = getattr(provider, "__self__", None) or provider
         metrics = getattr(provider_owner, "last_call_metrics", {}) or {}
         self.legal_provider_payload_seconds += float(metrics.get("payload_seconds", 0.0))
         self.legal_provider_decode_binding_seconds += float(

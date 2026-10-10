@@ -42,6 +42,30 @@ Dot relayed direction and proposed the bridge/metrics; it did not independently
 run the benchmarks or inspect every manual line. No change to single writer,
 duration, heartbeat, stops, publication or the >1hour-run necessity consultation.
 
+## Search attribution checkpoint —2026-10-10
+
+Thin identical lexical alpha-beta now drives Core, python-chess and cshogi;
+Native legality and cold supported search are separate controls. Eight exposed
+roots yielded64old D2 and64old D6 calls, followed by240repaired-rule common-time
+choices. Do not equate their node definitions or convert them to strength.
+D6 exposed cshogi search repetition ending before four occurrences; strict exact
+history in the adapter restores the deeper promotion trace. Independently,
+Standard Shogi no-legal-move adjudication is corrected from draw to loss under
+CSA Article27; old rule manifests/results remain recoverable, UI stays frozen.
+
+Every common-time choice is legal; finite D4 material regret is lower for the
+specialized backend on ep/middle/drop controls, with many tied controls and
+retained contrary/deeper-reference rows. Native only removes part of the backend
+cost. Profile/primitive evidence distinguishes attack/generation, trial transition,
+state/history and provider conversion from leaf evaluation. Callable-object
+provider strict/metric ownership was repaired without weakening cancellation.
+Next choose one measured generic execution bottleneck and test finite-work plus
+common-time impact, including generated-rule transfer; no automatic algorithm
+replacement, price fitting, bigger game cohort or training from these controls.
+Evidence and limits: SEARCH_BACKEND_ATTRIBUTION.md;
+data/search_attribution_20261010.json. Older Native App-Control failures remain
+historical; current constructor/call observations certify only this measured build.
+
 ## Retained lines and prior evidence
 
 1. Rule-only generic piece-value generation: cross-game ordering/ratios and bias.

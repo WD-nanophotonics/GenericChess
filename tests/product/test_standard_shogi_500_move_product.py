@@ -28,7 +28,7 @@ from generic_chess.session.serialization import deserialize_game_record, seriali
 from generic_chess.cli.play import main
 
 
-NEW_PRODUCT_FINGERPRINT = "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635"
+NEW_PRODUCT_FINGERPRINT = "ba3518b989fe3965a08ead19a1ff1607102911734b9849948f4b1584b5c801a8"
 OLD_PRODUCT_FINGERPRINT = "1bf2a46fe8e9e8636dcdde032ad8d9ccdd42d56cba901a8385043103952bd1f4"
 
 
@@ -59,7 +59,7 @@ def _product_state(compiled, ply, checks):
 def test_live_product_adopts_rule_roundtrip_and_preserves_ordinary_start():
     ruleset = build_standard_shogi_ruleset()
     assert compute_fingerprint(ruleset) == NEW_PRODUCT_FINGERPRINT
-    assert compute_fingerprint(replace(ruleset, automatic_adjudications=())) == OLD_PRODUCT_FINGERPRINT
+    assert compute_fingerprint(replace(ruleset, automatic_adjudications=(), stalemate_result="draw")) == OLD_PRODUCT_FINGERPRINT
     restored = deserialize_ruleset(serialize_ruleset(ruleset))
     assert restored.automatic_adjudications == ruleset.automatic_adjudications
     assert compute_fingerprint(restored) == NEW_PRODUCT_FINGERPRINT

@@ -14,6 +14,7 @@ dependencies = []
 dev = [
   "pytest>=8",
   "cshogi>=1.0,<2",
+  "chess>=1.11,<2",
   "ziglang>=0.16,<0.17",
 ]
 gui = ["PySide6>=6.6,<7"]
