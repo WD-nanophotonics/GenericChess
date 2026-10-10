@@ -48,6 +48,7 @@ REFRESH="""        if depth == 1 and ctx.qdepth_limit > 0 and best.declaration i
                 refreshed = negamax(state, 1, -INF, INF, 0, ctx)
                 _refresh_log('complete', ctx, refreshed)
                 best = refreshed
+                _set_result_provenance(stats, 'refresh_iteration', ctx)
             except SearchAborted as exc:
                 _refresh_log('aborted', ctx, best, str(exc))
                 abort_reason = str(exc)

@@ -24,7 +24,27 @@ actual Core/Native/fallback, configured/effective limits and returned/committed
 action. Small declared games locate candidate losses; fixed-state/history
 replay attributes them. Keep the UI branch frozen during sandbox research.
 
-Latest choice: repair logical-default history identity and charge history import
+Latest choice: retain additive completed-result source/ordinary-q/hard-check-q
+metadata, separate from stop reason or a cached uniform-horizon certificate.
+The private D1q0-D2q1 ladder gives4better/5worse on30old weighted parents and
+displaces usable warm q4 completions: defer it. Frozen1046evaluation-input replay
+shows feature compute is a small fraction of observed caller cost; numerical
+feedback changes the tree. Weighted minimalCore/hybrid/specialized alignment
+retains finite backend gaps1.98-11.96x, while actual public q4 keepsD1 at1sec.
+Static-q0 D2 agrees on eight aligned roots; it is a cheap control, not a generic
+tactical deployment proposal. Quiet qclassification rejects1483-2057candidates
+per512node control; predicate time is small, child execution dominates. Native
+legality saves about14-19percent here without another layer; ordered-q and
+root-scan removal do not improve the old queen labels. Next choose one scoped
+semantics-safe candidate-support or completion-allocation mechanism, keeping
+checked/history semantics and warm opportunity cost. No default/UI change.
+A private full-cell/tail hash projection gives3-6percent fixed savings and425
+actual child-oracle agreements. Imported foreign int0->boolFalse exposes an
+inherited delta/full-hash mismatch; next check supported transition reachability
+and collision/TT consequences before integration. No new generic safety claim.
+Evidence:COMPLETION_POLICY_ATTRIBUTION.md; data/completion_policy_20261011.json.
+
+Retained preceding repair: logical-default history identity and charge history import
 against the existing search deadline. The actual eight-ply declared repetition
 counterexample was Session DRAW but Runtime ONGOING. Private default omission
 now follows public logical identity, preserving nondefaults, foreign slots and
@@ -178,6 +198,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Retained-result metadata, weighted completion/backend and negative allocation controls|COMPLETION_POLICY_ATTRIBUTION.md; data/completion_policy_20261011.json|
 |Generated semantic bridge, typed alias attribution and alternate history|GENERATED_SEMANTIC_BRIDGE.md; data/generated_semantic_bridge_20261011.json|
 |Incoming source dispatch and hybrid replacement ledger|INCOMING_SOURCE_DISPATCH.md; data/incoming_source_20261011.json|
 |Latest warm-root eligibility/caller/cancellation contract|PHASE_BYPASS_DIAGNOSTIC.md; data/warm_root_contract_20261011.json|

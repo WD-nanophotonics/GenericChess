@@ -86,6 +86,8 @@ def test_alphabeta_returns_product_shogi_declaration_without_action():
     assert decision.declaration.outcome == "WIN"
     assert decision.declaration.actor == 0
     assert decision.declaration_root_selected is True
+    assert decision.result_source == "root_declaration"
+    assert decision.result_ordinary_qdepth is decision.result_check_hard_qdepth is None
 
 
 class _ConstantEvaluator:

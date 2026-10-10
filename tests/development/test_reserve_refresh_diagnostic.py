@@ -48,6 +48,9 @@ def test_cancel_keeps_completed_result_and_internal_root(monkeypatch,phase):
     kept=next(x for x in events if x['phase']==('reserve' if phase=='begin' else 'complete'))
     from scripts.research_record import record_value
     assert record_value(d.action)==kept['action'] and d.score==kept['score']
+    assert d.result_source == ('main_iteration' if phase == 'begin' else 'refresh_iteration')
+    assert d.result_ordinary_qdepth == (0 if phase == 'begin' else 1)
+    assert d.result_check_hard_qdepth == 8
     assert all(x['runtime_restored'] and x['runtime_balanced'] and x['runtime_depth']==0 for x in events)
     assert len({x['deadline'] for x in events})==1
     assert s.state==b.initial
@@ -61,6 +64,7 @@ def test_node_budget_is_shared_with_refresh(monkeypatch):
     d=choose(monkeypatch,s,e,events,limits=SearchLimits(max_depth=2,max_nodes=base.nodes+base.qnodes+2,max_time_seconds=5))
     assert d.completed_depth==1 and d.termination_reason=='node_limit'
     assert d.action==base.action and d.score==base.score
+    assert d.result_source == 'main_iteration' and d.result_ordinary_qdepth == 0
     assert events[-1]['phase']=='aborted' and events[-1]['runtime_restored']
     assert d.nodes+d.qnodes>=base.nodes+base.qnodes+2
     assert len({x['budget_identity'] for x in events})==1

@@ -206,4 +206,7 @@ class AlphaBetaPlayer:
             native_legality_calls=stats.native_legality_calls,
             native_legality_fallbacks=stats.native_legality_fallbacks,
             native_legality_operational_failures=stats.native_legality_operational_failures,
+            result_source=stats.result_source,
+            result_ordinary_qdepth=stats.result_ordinary_qdepth,
+            result_check_hard_qdepth=stats.result_check_hard_qdepth,
         )
