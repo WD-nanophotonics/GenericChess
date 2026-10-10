@@ -526,3 +526,15 @@ invalid concurrent timing remain distinguishable in the terminal/bridge index.
 Next implementation investment is exact bound/tie handling, followed by matched
 supported completion/decision controls, with no automatic kernel installation,
 training, UI propagation or policy change.
+
+A final24-call control uses the current protected product default (full-root,
+cold64MiB TT, absent features, q0), versus bare lexical AB over the same Native
+state, on six existing roots at one second with two reversed pairs. Product
+completesD2 middle/D4 tactic/D5 promotion/D3 EP/D2 both generated; bare completes
+D3/D4-5/D6/D3/D4/D3. All choices/PVs are legal and roots/history restored. Three
+roots change moves (middle, EP, generated2000); depth or changed choices alone
+are not utility. Reaggregation uses existing exposed finiteD4 rows only: tactic
+and promotion remain regret0, bare EP100; product middle/EP and generated choices
+lack matching labels and remain UNKNOWN. No new teacher call fills that gap.
+This establishes a remaining supported scheduling/algorithm completion question,
+not a reason to restore unsafe ON, replace the default algorithm or claim strength.

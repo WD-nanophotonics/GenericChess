@@ -3,7 +3,7 @@
   "base_commit": "2d04736dfcfdd64c07ba0bd977ae21651bf8d811",
   "scope": "Agent-produced exposed development; full state backend and algorithm attribution, selected-root correctness; no user/private inputs, raw Slack/accounts/credentials or binaries.",
   "archive": "docs/archive/native_terminal_20261010/evidence.zip",
-  "archive_sha256": "5576b6a3fb7884c3dcf0504b8f33e084d449c78f1fe8abcb939268e4b7a3c2c8",
+  "archive_sha256": "34fa04ccf76f183b6399a4223ce0228045920fc98df6849958806a4e0713f515",
   "members": {
     ".local_agent/generated6-20261008/coverage.json": {
       "bytes": 383389,
@@ -86,8 +86,8 @@
       "sha256": "eb5fdfbe57e52ca0d7f088204c6f03a5ef2782316b4abe8a188cdd9bbca778f8"
     },
     ".local_agent/native-terminal-20261010/package.py": {
-      "bytes": 4249,
-      "sha256": "e454dff8645a169c7fba39b41e44009b76e2c9525ea710fc5bd5797ef741be50"
+      "bytes": 4276,
+      "sha256": "38ee5dc3f3b2e453847c225a65c7e09e91ea1194c82d6e22209567f2c847ffa0"
     },
     ".local_agent/native-terminal-20261010/packaging_failure.json": {
       "bytes": 411,
@@ -116,6 +116,18 @@
     ".local_agent/native-terminal-20261010/profile_bridge.py": {
       "bytes": 3454,
       "sha256": "aa8f6e8821c8987d9f3beb1d12f6711efe6ae257c133ea00be3095f9b6422abf"
+    },
+    ".local_agent/native-terminal-20261010/protected-default.json": {
+      "bytes": 1708776,
+      "sha256": "3c2c2585909d248ef3b6fec2345d170fc769e64394f7a41e1efe486990b7e3f7"
+    },
+    ".local_agent/native-terminal-20261010/protected_default.py": {
+      "bytes": 3177,
+      "sha256": "4ef086f1bbfa944f64f9052950a411fb89e7d0b43d446f75bb6e7064bf2c583a"
+    },
+    ".local_agent/native-terminal-20261010/protected_utility.py": {
+      "bytes": 757,
+      "sha256": "436e2b9a141029da34ca028639bcb7f3f99396f5a7166de019cace5d9271c59a"
     },
     ".local_agent/native-terminal-20261010/pytest-final.log": {
       "bytes": 2106,
@@ -302,6 +314,7 @@
     "tt_window_timed_calls": 24,
     "replay_calls": 8,
     "selected_child_rows": 8,
-    "archive_members": 63
+    "protected_default_calls": 24,
+    "archive_members": 66
   }
 }
