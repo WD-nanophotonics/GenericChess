@@ -65,9 +65,29 @@ independent price/task questions; do not claim pre-final timings as deployment.
   with frontier caller cost about twice Core on unlike trajectories. Defer the
   unmodified frontier default. Three nonterminal winning resolutions remain
   absent from CoreD2/D3-completed-only-D2; fixed-work completion finds two cheaply.
-  Next predeclare a fixed-total-budget small completion prepass plus Core on
-  fresh rules, retaining full history, actual depths and adverse costs. No fit
-  or extra budget from exposed labels. Checking-drop counts alias safe/unsafe
+  Fresh2180-2183 fixed small prepass+residual Core gives16games645plies:
+  combined5/Core4 wins,3true draws/4ongoing64, only11distinct trajectories.
+  Its8resolutions are5direct winning terminals and3nonterminal current-side
+  losses, with zero nonterminal winning resolution;4saved identical-history
+  Core roots already have the same mate-range sign. No default adoption.
+  Separate source-derived maxD6/q0 sensitivity on2184-2187 finishes16games/
+  753plies:5combined/4Core wins,7ongoing64,10distinct paths; its8resolutions
+  again contain no nonterminal winning result,6saved Core matches already
+  have the same mate sign. All745Core calls stop on time, actualD1-D4 only.
+  Common-parent diagnostics keep both directions/opportunity costs visible;
+  different cohorts/unlike paths do not establish depth causality or strength.
+  All47predeclaredD2common-parent actions/exposures agree, oneD2-to-D1
+  residual retreat, caller50.330/52.461sec; defer fixed allocation adoption.
+  All56D6common-parent actions/exposures also agree;54unknown deferrals
+  cost109.542/110.003sec, saving comes from two already-known mate shortcuts.
+  Both whole-cohort reply audits retain all adverse rows (D2 9/7unique;
+  D6 9/6unique), not avoidable-error rates. All four solved paired shortcuts
+  keep Core actions/mate signs with shipped root scanningON; the two instant
+  wins already early-return. Next response-support placement/reuse, not
+  per-leaf rescanning/cap growth.
+  Full-root prepass coverage still leaves tied reply-unexpanded branches in
+  214/315unknown calls; this motivates a new premise, not automatic cap growth.
+  No fit or extra budget from exposed labels. Checking-drop counts alias safe/unsafe
   children; conditional response utility remains a scoped alternative.
   COMPLETION_SEARCH_FEASIBILITY.md owns that scoped alternative and cost limits.
   FINITE_SEARCH_COMPRESSION.md owns
@@ -353,7 +373,7 @@ branch backlog or publication gate. Exact operating rules remain in AGENTS.md.
 |Descriptive price ratios and preparation/promotion bias|CROSS_GAME_PRICE_DIAGNOSTIC.md; data/pawn_bias_20261009.json|
 |Exact primitive occupancy, representation and rectangle capability|GEOMETRY_OCCUPANCY.md; data/geometry_occupancy_20261009.json; leaf_order_20261009.json|
 |Search interface, actual-effect qsupport, costs and caps|UNFAMILIAR_RULE_SEARCH.md; data/event_qsearch_20261009.json; rect_search_20261009.json; query_transfer_20261009.json; qfactorial_20261009.json; qeffects_20261008.json; generated6_20261008.json; generated8_20261008.json|
-|Completion-aware search alternative, full-state scope and actual caller costs|COMPLETION_SEARCH_FEASIBILITY.md; data/completion_search_20261010.json; data/handle_time_20261010.json; data/completion_ablation_20261010.json|
+|Completion-aware search alternative, full-state scope and actual caller costs|COMPLETION_SEARCH_FEASIBILITY.md; data/completion_search_20261010.json; data/handle_time_20261010.json; data/completion_ablation_20261010.json; data/bounded_completion_20261010.json|
 |Retained utility alternatives|TEMPORAL_HAND_SERVICE.md; GOAL_INTERACTION.md; CONTRIBUTION_MODEL.md; JOINT_SERVICE_DIAGNOSTIC.md; CUSTODY_CONTINUATION.md|
 
 Each data index routes exact sources/failures/outputs to its purpose-specific

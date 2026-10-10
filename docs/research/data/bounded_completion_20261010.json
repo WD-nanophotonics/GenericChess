@@ -1,0 +1,3425 @@
+{
+  "scope": "Recovery of fixed allocation/depth-scope experiments, only Agent sources/data.\nNo raw Slack/account/private inputs. Replay saved full histories and actual\nreply witnesses from the final ZIP, not a working file. Recovery is not an\nindependent WDL/scientific certificate or renewed unexposed qualification.\n",
+  "archive_index": "docs/archive/search_compression_20261009/bounded-completion-20261010-index.json",
+  "cohorts": {
+    "bounded-completion-20261010": {
+      "games": {
+        "scope": "Describe all fixed cells and caller costs; no default/strength claim.\nOngoing64, technical unknown and real draws are kept distinct. Mixed trajectories\ndo not support paired-speed estimates. Completed Core depth and resolved prepass\noutcomes stay separate, as do successor work units and alpha-beta nodes.\n",
+        "summary": {
+          "seconds": 781.4737182999961,
+          "plies": 645,
+          "outcomes": {
+            "rule_draw": 3,
+            "combined_win": 5,
+            "ab_win": 4,
+            "ongoing64": 4
+          },
+          "events": {
+            "repetition": 3,
+            "checkmate": 9,
+            "ongoing": 4
+          },
+          "methods": {
+            "ab": {
+              "calls": 322,
+              "call_seconds": 355.7485882961191,
+              "median_seconds": 0.9097194999922067,
+              "max_seconds": 2.0477664000354707,
+              "above2p05": 0,
+              "core_calls": 322,
+              "core_depth_counts": {
+                "2": 237,
+                "1": 85
+              },
+              "core_nodes": 158136,
+              "core_successors": 157495,
+              "core_evaluations": 124996,
+              "prepass_calls": 0,
+              "prepass_transitions": 0,
+              "prepass_generations": 0,
+              "prepass_evaluations": 0,
+              "prepass_caller_seconds": 0,
+              "route_counts": {},
+              "prepass_resolutions": {}
+            },
+            "combined": {
+              "calls": 323,
+              "call_seconds": 362.5871960935183,
+              "median_seconds": 0.9388399999588728,
+              "max_seconds": 2.055204899981618,
+              "above2p05": 3,
+              "core_calls": 315,
+              "core_depth_counts": {
+                "2": 228,
+                "1": 87
+              },
+              "core_nodes": 149864,
+              "core_successors": 149235,
+              "core_evaluations": 119511,
+              "prepass_calls": 323,
+              "prepass_transitions": 161741,
+              "prepass_generations": 2054,
+              "prepass_evaluations": 161802,
+              "prepass_caller_seconds": 33.90715891076252,
+              "route_counts": {
+                "residual_core": 315,
+                "resolved_prepass": 8
+              },
+              "prepass_resolutions": {
+                "None": 315,
+                "1": 6,
+                "-1": 2
+              }
+            }
+          },
+          "cells": [
+            {
+              "seed": 202610102180,
+              "leaf": "unit",
+              "methods": [
+                "ab",
+                "combined"
+              ],
+              "plies": 30,
+              "terminal": {
+                "status": "repetition",
+                "winner": null
+              },
+              "label": "rule_draw",
+              "seconds": 49.21360100014135
+            },
+            {
+              "seed": 202610102180,
+              "leaf": "unit",
+              "methods": [
+                "combined",
+                "ab"
+              ],
+              "plies": 21,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 0
+              },
+              "label": "combined_win",
+              "seconds": 34.94371009990573
+            },
+            {
+              "seed": 202610102180,
+              "leaf": "v3",
+              "methods": [
+                "ab",
+                "combined"
+              ],
+              "plies": 9,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 0
+              },
+              "label": "ab_win",
+              "seconds": 11.48681340040639
+            },
+            {
+              "seed": 202610102180,
+              "leaf": "v3",
+              "methods": [
+                "combined",
+                "ab"
+              ],
+              "plies": 9,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 0
+              },
+              "label": "combined_win",
+              "seconds": 10.250384599901736
+            },
+            {
+              "seed": 202610102181,
+              "leaf": "unit",
+              "methods": [
+                "ab",
+                "combined"
+              ],
+              "plies": 64,
+              "terminal": {
+                "status": "ongoing",
+                "winner": null
+              },
+              "label": "ongoing64",
+              "seconds": 45.48933809995651
+            },
+            {
+              "seed": 202610102181,
+              "leaf": "unit",
+              "methods": [
+                "combined",
+                "ab"
+              ],
+              "plies": 64,
+              "terminal": {
+                "status": "ongoing",
+                "winner": null
+              },
+              "label": "ongoing64",
+              "seconds": 46.036307499744
+            },
+            {
+              "seed": 202610102181,
+              "leaf": "v3",
+              "methods": [
+                "ab",
+                "combined"
+              ],
+              "plies": 64,
+              "terminal": {
+                "status": "ongoing",
+                "winner": null
+              },
+              "label": "ongoing64",
+              "seconds": 36.32776270015165
+            },
+            {
+              "seed": 202610102181,
+              "leaf": "v3",
+              "methods": [
+                "combined",
+                "ab"
+              ],
+              "plies": 64,
+              "terminal": {
+                "status": "ongoing",
+                "winner": null
+              },
+              "label": "ongoing64",
+              "seconds": 37.21242620004341
+            },
+            {
+              "seed": 202610102182,
+              "leaf": "unit",
+              "methods": [
+                "ab",
+                "combined"
+              ],
+              "plies": 21,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 0
+              },
+              "label": "ab_win",
+              "seconds": 35.64560989988968
+            },
+            {
+              "seed": 202610102182,
+              "leaf": "unit",
+              "methods": [
+                "combined",
+                "ab"
+              ],
+              "plies": 23,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 0
+              },
+              "label": "combined_win",
+              "seconds": 36.65113639971241
+            },
+            {
+              "seed": 202610102182,
+              "leaf": "v3",
+              "methods": [
+                "ab",
+                "combined"
+              ],
+              "plies": 50,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 1
+              },
+              "label": "combined_win",
+              "seconds": 70.38208839995787
+            },
+            {
+              "seed": 202610102182,
+              "leaf": "v3",
+              "methods": [
+                "combined",
+                "ab"
+              ],
+              "plies": 52,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 1
+              },
+              "label": "ab_win",
+              "seconds": 77.44776189979166
+            },
+            {
+              "seed": 202610102183,
+              "leaf": "unit",
+              "methods": [
+                "ab",
+                "combined"
+              ],
+              "plies": 64,
+              "terminal": {
+                "status": "repetition",
+                "winner": null
+              },
+              "label": "rule_draw",
+              "seconds": 123.36308309994638
+            },
+            {
+              "seed": 202610102183,
+              "leaf": "unit",
+              "methods": [
+                "combined",
+                "ab"
+              ],
+              "plies": 64,
+              "terminal": {
+                "status": "repetition",
+                "winner": null
+              },
+              "label": "rule_draw",
+              "seconds": 124.31819679960608
+            },
+            {
+              "seed": 202610102183,
+              "leaf": "v3",
+              "methods": [
+                "ab",
+                "combined"
+              ],
+              "plies": 23,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 0
+              },
+              "label": "ab_win",
+              "seconds": 16.828066299669445
+            },
+            {
+              "seed": 202610102183,
+              "leaf": "v3",
+              "methods": [
+                "combined",
+                "ab"
+              ],
+              "plies": 23,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 0
+              },
+              "label": "combined_win",
+              "seconds": 16.71755539998412
+            }
+          ],
+          "distinct_action_trajectories": 11,
+          "duplicate_multiplicities": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "no_default": true,
+        "no_exposed_fitting": true
+      },
+      "paired": {
+        "scope": "Common-parent allocation diagnostic, no whole-root WDL or Elo.\nCount each identical full-history/leaf parent once, retain all sampled paths.\nOpposing next-reply witnesses concern selected children only. Absence is a\none-step local observation, not overall safety or proof of optimality.\n",
+        "unique_parents": 47,
+        "path_rows": 85,
+        "summary": {
+          "same_action": 47,
+          "immediate_exposure_ab0_combined0": 46,
+          "immediate_exposure_ab1_combined1": 1
+        },
+        "depth_pairs": {
+          "(2, 2)": 33,
+          "(1, 1)": 11,
+          "(2, None)": 2,
+          "(2, 1)": 1
+        },
+        "routes": {
+          "residual_core": 45,
+          "resolved_prepass": 2
+        },
+        "caller_seconds": {
+          "ab": 50.32981599867344,
+          "combined": 52.46131980093196,
+          "prepass": 5.370816100854427
+        },
+        "reply_transitions": {
+          "ab": 5184,
+          "combined": 5184
+        },
+        "seconds": 228.01898030005395,
+        "rows": [
+          {
+            "key": "0a15b306e9f35d241d1ecf99263d197e855eafd990aef48fb9cef5a36d100aea",
+            "seed": 202610102180,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 1.0135536999441683,
+            "combined_seconds": 1.1302201002836227
+          },
+          {
+            "key": "28cffa2c889bf412740e1c583bc7ebba184cc3caf48b134b4cc0090162fefe92",
+            "seed": 202610102180,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.18060050019994378,
+            "combined_seconds": 0.2856290997005999
+          },
+          {
+            "key": "ab62cb5ea0976e15436e3e703775040445a68ed38d0e11d7d9e3300fad498849",
+            "seed": 202610102180,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 1.8563840999267995,
+            "combined_seconds": 1.99531410029158
+          },
+          {
+            "key": "c3e0ef50f781b620c13da3b03f0215a4fafc895e706a9e717e5c1330996d0088",
+            "seed": 202610102180,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 1.9425156996585429,
+            "combined_seconds": 2.027593200094998
+          },
+          {
+            "key": "ed0f431903ee2c0c00f054675c6fe9c902ec55e606a90319765916c99c635884",
+            "seed": 202610102180,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.015343100298196,
+            "combined_seconds": 2.0306918998248875
+          },
+          {
+            "key": "533a364ec68cfeb8a90412056f5101755387601c60b6d77a03dc89dfb113d952",
+            "seed": 202610102180,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0289215999655426,
+            "combined_seconds": 2.0435669999569654
+          },
+          {
+            "key": "a4ec599e9fd38dfdd6826ec2272ab855733b28028c3ffba343c99a3c428106d4",
+            "seed": 202610102180,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 1.028261600062251,
+            "combined_seconds": 1.1896027000620961
+          },
+          {
+            "key": "da262d2ab79fd4b026269ecda1fe2b56116fb15f12e075f3135b2523b55e2cd2",
+            "seed": 202610102180,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": null,
+            "route": "resolved_prepass",
+            "root_outcome": 1,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 1.5393892996944487,
+            "combined_seconds": 0.01312160026282072
+          },
+          {
+            "key": "dc31b1f7d6bbc1084113fabce323cd71e8cecb326cc8eb2463d1aee9c96cdc30",
+            "seed": 202610102181,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.1911065001040697,
+            "combined_seconds": 0.29562339978292584
+          },
+          {
+            "key": "130ec04e588f37a5dac0245817c8f17e11ff99bf8aa150a7135d6c8c31b3d7c7",
+            "seed": 202610102181,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.529464399907738,
+            "combined_seconds": 0.6369087998755276
+          },
+          {
+            "key": "201fa7ad6aa8e427ff721ac971eeffef829f1d7bd6236aa19170e51741b88030",
+            "seed": 202610102181,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.4823471000418067,
+            "combined_seconds": 0.5828146999701858
+          },
+          {
+            "key": "0ba900a7ec1079d94f6238fdb39f14f34520a9f19740755ecdec2f6de452fc29",
+            "seed": 202610102181,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.5187304997816682,
+            "combined_seconds": 0.612364400178194
+          },
+          {
+            "key": "1532119b451b58a23d3aae96d8b5c9aa680fc7031aa87216e2d9df589a4713a5",
+            "seed": 202610102181,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.5451382002793252,
+            "combined_seconds": 0.6865949002094567
+          },
+          {
+            "key": "4447f391ddc419e2965b468eb1dc22304db257044f31258838f0b33af7e7434b",
+            "seed": 202610102181,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.9852021997794509,
+            "combined_seconds": 1.0660991999320686
+          },
+          {
+            "key": "6d38ef8f13e28f6da9dab14ca684c56f625f461ca53e92ba0f565c7837b3a91d",
+            "seed": 202610102181,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.9225241001695395,
+            "combined_seconds": 1.0086741000413895
+          },
+          {
+            "key": "6331596ac40915b798bdeb3cc148b299ff65aeff6ef54faafb33bbaf1f457711",
+            "seed": 202610102181,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.9417119999416173,
+            "combined_seconds": 1.0164658003486693
+          },
+          {
+            "key": "47ae474dc28cb3768b2624e7848e34f44f44d00f2f57222401c7f18c5e7f382f",
+            "seed": 202610102181,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.21197080006822944,
+            "combined_seconds": 0.31344390008598566
+          },
+          {
+            "key": "2eb37c834a18374bbf4a012d69691985518f35059a38daa3efeb5d92e5963d17",
+            "seed": 202610102181,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.9647321999073029,
+            "combined_seconds": 1.0844413000158966
+          },
+          {
+            "key": "129bb1755c6fa348b0e3fb8f0fd99d7abedf8d81aa614354c484da64ed310aa5",
+            "seed": 202610102181,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.3681303998455405,
+            "combined_seconds": 0.46984839998185635
+          },
+          {
+            "key": "8a64385e4f6b11c98f31b8d7f179d6b126daeacf532bda754523b6c5dcb5ec2c",
+            "seed": 202610102181,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.7465286003425717,
+            "combined_seconds": 0.9194940999150276
+          },
+          {
+            "key": "c145a08c9858c0da2d4926e36e3197e953a51ff38340133a16045eae2f6e3ce4",
+            "seed": 202610102181,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.4194714999757707,
+            "combined_seconds": 0.5510296002030373
+          },
+          {
+            "key": "7277ca8b62fb8cb1b5bd99100259215f983f1be44de22e1d4c74a1eb13256f9e",
+            "seed": 202610102181,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.30755560006946325,
+            "combined_seconds": 0.40703440038487315
+          },
+          {
+            "key": "b5db01bcb9cc4973829aee4614fa041123544db885f6b279a7b026ccd45656f0",
+            "seed": 202610102181,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.28991400031372905,
+            "combined_seconds": 0.42367540020495653
+          },
+          {
+            "key": "cd41d3aeb4ae650ef667f7a9fbc32b7fb63fd8c523de8712e5685d1b415db937",
+            "seed": 202610102181,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.6220288998447359,
+            "combined_seconds": 0.7364385998807847
+          },
+          {
+            "key": "c27a5ebd8224612d7f2da7c06c794131c3e86d4eaa9e5ee8ebb2fc382f7dca83",
+            "seed": 202610102182,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.48528769984841347,
+            "combined_seconds": 0.6349808997474611
+          },
+          {
+            "key": "cd2a20432b62e046a1a1c7ef34343596a46455ab7a8e12de862f244ca443a63f",
+            "seed": 202610102182,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 1.98339799977839,
+            "combined_seconds": 2.027615800034255
+          },
+          {
+            "key": "be047a1f765e35fac03703c1504c5cc6e1a5b372cd895461b19afca4bab63091",
+            "seed": 202610102182,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.016228400170803,
+            "combined_seconds": 2.035726099740714
+          },
+          {
+            "key": "c1567be9d2f21cb2d1c1322fede02015b3e284a8736b69b517934ca4f85b4c38",
+            "seed": 202610102182,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.4869707999750972,
+            "combined_seconds": 0.6723277000710368
+          },
+          {
+            "key": "48248fb6b0bfe50fb0b5658f2c23229b39e9abc2d7ce6f8bfb8dfe0b57e536c0",
+            "seed": 202610102182,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 1.5835400000214577,
+            "combined_seconds": 1.6898900996893644
+          },
+          {
+            "key": "0d20f7ee8b0179d94ebbd64c1aba74a0e11771a1246fe7e402f0de609653efbc",
+            "seed": 202610102182,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 1.9108786000870168,
+            "combined_seconds": 1.9795671002939343
+          },
+          {
+            "key": "71d84b1ed8ff33505133c0f2fa0153035ad912321545c14190445aa193c6c608",
+            "seed": 202610102182,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0320206000469625,
+            "combined_seconds": 2.048682800028473
+          },
+          {
+            "key": "8edd47c4b896351564404eb578c8e6348f5b5ca808fceb8f236f76554e8c0ce6",
+            "seed": 202610102182,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0322732999920845,
+            "combined_seconds": 2.0451845000497997
+          },
+          {
+            "key": "ecb0df1ce0a3c8210fe502a0d36d539428a3e1f018b556833775a5120227bb6d",
+            "seed": 202610102182,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.27629279997199774,
+            "combined_seconds": 0.4457371002063155
+          },
+          {
+            "key": "25610c00950acfa17867d58d29062c2538fdbabb209794ca0e7e10abab45bffd",
+            "seed": 202610102182,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": null,
+            "route": "resolved_prepass",
+            "root_outcome": -1,
+            "ab_exposure": true,
+            "combined_exposure": true,
+            "ab_seconds": 0.3691534996032715,
+            "combined_seconds": 0.12708690017461777
+          },
+          {
+            "key": "a5931828c847ba8c51360b59fe4bc589bf55e9cc37db9ebbb12e69f04550789f",
+            "seed": 202610102182,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.12904589995741844,
+            "combined_seconds": 0.23618189990520477
+          },
+          {
+            "key": "0f569a6b2ff5546aad416f5a877c105bb1496b9f987420d385f483ba9b067d5c",
+            "seed": 202610102182,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.13385510025545955,
+            "combined_seconds": 0.23863620031625032
+          },
+          {
+            "key": "02f2e73f36d8fde34abfd03d94a1099e135da018d61c9294ba4716b240153d41",
+            "seed": 202610102183,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.39143319986760616,
+            "combined_seconds": 0.45151189994066954
+          },
+          {
+            "key": "0201ab6cc6f94d846672da5ee4ffa11451b6799e59a6344b7d827a6d1b72e53a",
+            "seed": 202610102183,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 1.9392180000431836,
+            "combined_seconds": 2.033320799935609
+          },
+          {
+            "key": "dd703ec980c93cc8c29934563b91ff67eacac8f1a16ecfd7732cce8640b9e055",
+            "seed": 202610102183,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0193977998569608,
+            "combined_seconds": 2.0408647996373475
+          },
+          {
+            "key": "7751c00d5f38ae3e9183e033741345193fe5c9cd68403ca736332b6ed8769a4b",
+            "seed": 202610102183,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.033479900099337,
+            "combined_seconds": 2.02831540023908
+          },
+          {
+            "key": "8b5b274275d1747e3bc98f39e5a326d88804641c18eac0e7a71ddd449b22e6aa",
+            "seed": 202610102183,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0319953998550773,
+            "combined_seconds": 2.0319104995578527
+          },
+          {
+            "key": "60de0ee9cf9b0045230187e8fed2d1dd489424b97b02c265ed607a48c2741148",
+            "seed": 202610102183,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.029792500194162,
+            "combined_seconds": 2.021409799810499
+          },
+          {
+            "key": "757ac80302ce14ba1867699d9473d32b0dc5a7126e48b538da2599fae67a5be9",
+            "seed": 202610102183,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.023114999756217,
+            "combined_seconds": 2.0405985000543296
+          },
+          {
+            "key": "b77370886418cbf16f8c22f04245bd3a4f1d1bc46286875a42aced10eb4922ba",
+            "seed": 202610102183,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.018707999959588,
+            "combined_seconds": 2.0442038998007774
+          },
+          {
+            "key": "1810484d0a44a21487c160f5b31e4fb42a8844f4df87333afabc2577290c8133",
+            "seed": 202610102183,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.36861469969153404,
+            "combined_seconds": 0.4792810999788344
+          },
+          {
+            "key": "3085f559a25b94297b87fc365cfb93fe5a60c2575beed2ebdd3290e8511ba025",
+            "seed": 202610102183,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 0.07893349975347519,
+            "combined_seconds": 0.18775760009884834
+          },
+          {
+            "key": "1a477b14e62b9621bfe5dc3c97cf5841a527ecd08f575138bc7e0e59f873ad38",
+            "seed": 202610102183,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 1.3046566997654736,
+            "combined_seconds": 1.3938377001322806
+          }
+        ],
+        "complete": true
+      },
+      "reply": {
+        "scope": "Describe every selected-child reply diagnostic. Positive rows and unique\ncomplete states are separate; no forced/avoidable error rate or independent\nholdout claim. Preserve method/leaf/resource/actual completed-depth context.\n",
+        "path_rows": 645,
+        "unique_full_states": 354,
+        "cache_hits": 291,
+        "transitions": 39718,
+        "seconds": 416.850276700221,
+        "positive_path_rows": 9,
+        "unique_positive_states": 7,
+        "positive_by_method": {
+          "ab": 5,
+          "combined": 4
+        },
+        "positive_by_leaf": {
+          "unit": 3,
+          "v3": 6
+        }
+      },
+      "coverage": {
+        "scope": "Whole frozen prospective cohort's saved prepass coverage, no reruns/refits.\nRoot/reply/deeper materialized successors are disjoint accounting levels.\nTie records describe heuristic concentration, never independent move utility.\nThis asks whether a new coverage premise is motivated before any new policy.\n",
+        "input_sha256": "1138e0df321fffd70c817dc346f679efeab98e4b2521f446108eabd95bd3f214",
+        "groups": {
+          "unit:residual_core": {
+            "calls": 174,
+            "root_complete": 174,
+            "root_successors": 23935,
+            "reply_successors": 48390,
+            "deeper_successors": 16763,
+            "no_reply_branch": 0,
+            "one_reply_branch": 71,
+            "multiple_reply_branches": 103,
+            "ties_multiple": 153,
+            "tied_top_with_unexpanded_branch": 152
+          },
+          "unit:resolved_prepass": {
+            "calls": 2,
+            "root_complete": 0,
+            "root_successors": 122,
+            "reply_successors": 0,
+            "deeper_successors": 0,
+            "no_reply_branch": 2,
+            "one_reply_branch": 0,
+            "multiple_reply_branches": 0,
+            "ties_multiple": 0,
+            "tied_top_with_unexpanded_branch": 0
+          },
+          "v3:residual_core": {
+            "calls": 141,
+            "root_complete": 141,
+            "root_successors": 10516,
+            "reply_successors": 47850,
+            "deeper_successors": 13826,
+            "no_reply_branch": 0,
+            "one_reply_branch": 13,
+            "multiple_reply_branches": 128,
+            "ties_multiple": 70,
+            "tied_top_with_unexpanded_branch": 62
+          },
+          "v3:resolved_prepass": {
+            "calls": 6,
+            "root_complete": 3,
+            "root_successors": 114,
+            "reply_successors": 225,
+            "deeper_successors": 0,
+            "no_reply_branch": 3,
+            "one_reply_branch": 2,
+            "multiple_reply_branches": 1,
+            "ties_multiple": 1,
+            "tied_top_with_unexpanded_branch": 0
+          }
+        }
+      },
+      "dependency": {
+        "scope": "Keep action-sequence repetition separate from full-state repetition.\nLeaf/method crossover rows share four rule samples; unique paths are not\nindependent trials or training samples. No outcomes or conditions changed.\n",
+        "rule_samples": 4,
+        "cells": 16,
+        "unique_full_history_paths": 11,
+        "multiplicities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "within_rule_leaf_distinct_paths": [
+          {
+            "seed": 202610102180,
+            "leaf": "unit",
+            "paths": 2
+          },
+          {
+            "seed": 202610102180,
+            "leaf": "v3",
+            "paths": 1
+          },
+          {
+            "seed": 202610102181,
+            "leaf": "unit",
+            "paths": 1
+          },
+          {
+            "seed": 202610102181,
+            "leaf": "v3",
+            "paths": 1
+          },
+          {
+            "seed": 202610102182,
+            "leaf": "unit",
+            "paths": 2
+          },
+          {
+            "seed": 202610102182,
+            "leaf": "v3",
+            "paths": 2
+          },
+          {
+            "seed": 202610102183,
+            "leaf": "unit",
+            "paths": 1
+          },
+          {
+            "seed": 202610102183,
+            "leaf": "v3",
+            "paths": 1
+          }
+        ]
+      },
+      "work": {
+        "scope": "Actual recorded public/runtime work, not nodes mislabeled as transition cost.\nNative/terminal internal semantic pushes were not instrumented in these games;\nthe saved materialization/generation/cache/scoring counters retain their names.\nCaller time includes the wrapper and PV validation, game-record bytes separate.\n",
+        "core": {
+          "ab": {
+            "core_calls": 322,
+            "sums": {
+              "nodes": 158136,
+              "qnodes": 0,
+              "evaluation_calls": 124996,
+              "evaluation_seconds": 0.5019778208807111,
+              "legal_actions_generated": 4507706,
+              "legal_generation_calls": 33204,
+              "legal_generation_seconds": 297.46763892797753,
+              "ordering_calls": 32801,
+              "ordering_seconds": 4.472999999765307,
+              "successor_handles_created": 4470923,
+              "successors_materialized": 157495,
+              "successors_searched": 157495,
+              "position_key_cache_hits": 157495,
+              "position_keys_computed": 190471,
+              "terminal_cache_hits": 0,
+              "terminal_results_computed": 157495,
+              "tt_probes": 32976,
+              "tt_hits": 416,
+              "tt_cutoffs": 69
+            },
+            "termination_reasons": {
+              "completed_depth": 237,
+              "time_limit": 85
+            }
+          },
+          "combined": {
+            "core_calls": 315,
+            "sums": {
+              "nodes": 149864,
+              "qnodes": 0,
+              "evaluation_calls": 119511,
+              "evaluation_seconds": 0.4772990648634732,
+              "legal_actions_generated": 4187055,
+              "legal_generation_calls": 30454,
+              "legal_generation_seconds": 273.6777726318687,
+              "ordering_calls": 30053,
+              "ordering_seconds": 4.102000004611909,
+              "successor_handles_created": 4152604,
+              "successors_materialized": 149235,
+              "successors_searched": 149235,
+              "position_key_cache_hits": 149235,
+              "position_keys_computed": 179468,
+              "terminal_cache_hits": 0,
+              "terminal_results_computed": 149235,
+              "tt_probes": 30233,
+              "tt_hits": 409,
+              "tt_cutoffs": 69
+            },
+            "termination_reasons": {
+              "completed_depth": 228,
+              "time_limit": 87
+            }
+          }
+        },
+        "game_json_bytes": 36985161,
+        "prepass_scope": "Materialized full-state successors/evaluations/generations retained in analysis.json; terminal internal transition count unmeasured, no inferred count.",
+        "complete": true
+      },
+      "resolutions": {
+        "scope": "Describe ALL eight actual resolutions against already saved cold Core calls\nat identical full-state/leaf roots across swapped owners. No additional search,\noutcome selection, label refit or missing-match inference. Terminal versus\nnonterminal selected child and current-mover outcome remain distinct.\n",
+        "resolutions": 8,
+        "selected_terminal": 5,
+        "nonterminal_mover_win": 0,
+        "nonterminal_mover_loss": 3,
+        "matched_resolution_roots": 4,
+        "complete": true
+      },
+      "paired_cost_routes": {
+        "scope": "Separate resolved shortcuts from unknown-call opportunity cost on ALL paired\nparents. Existing Core mate signs versus prepass outcomes are recorded, not\ninferred from missing calls. No searches, selective extensions or new labels.\n",
+        "groups": {
+          "residual_core": {
+            "parents": 45,
+            "ab_seconds": 48.42127319937572,
+            "combined_seconds": 52.32111130049452,
+            "prepass_seconds": 5.230616800952703
+          },
+          "resolved_prepass": {
+            "parents": 2,
+            "ab_seconds": 1.9085427992977202,
+            "combined_seconds": 0.1402085004374385,
+            "prepass_seconds": 0.14019929990172386
+          }
+        },
+        "resolved": [
+          {
+            "key": "da262d2ab79fd4b026269ecda1fe2b56116fb15f12e075f3135b2523b55e2cd2",
+            "seed": 202610102180,
+            "leaf": "v3",
+            "mover_outcome": 1,
+            "selected_child_terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "ab_score": 999999999,
+            "ab_depth": 2,
+            "same_mate_sign": true,
+            "actions_equal": true,
+            "successors": 27
+          },
+          {
+            "key": "25610c00950acfa17867d58d29062c2538fdbabb209794ca0e7e10abab45bffd",
+            "seed": 202610102182,
+            "leaf": "v3",
+            "mover_outcome": -1,
+            "selected_child_terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "ab_score": -999999998,
+            "ab_depth": 2,
+            "same_mate_sign": true,
+            "actions_equal": true,
+            "successors": 352
+          }
+        ],
+        "complete": true
+      }
+    },
+    "deeper-completion-20261010": {
+      "games": {
+        "scope": "Describe all fixed cells and caller costs; no default/strength claim.\nOngoing64, technical unknown and real draws are kept distinct. Mixed trajectories\ndo not support paired-speed estimates. Completed Core depth and resolved prepass\noutcomes stay separate, as do successor work units and alpha-beta nodes.\n",
+        "summary": {
+          "seconds": 1596.3821451002732,
+          "plies": 753,
+          "outcomes": {
+            "ongoing64": 7,
+            "combined_win": 5,
+            "ab_win": 4
+          },
+          "events": {
+            "ongoing": 7,
+            "checkmate": 9
+          },
+          "methods": {
+            "ab": {
+              "calls": 376,
+              "call_seconds": 762.7379966019653,
+              "median_seconds": 2.0282514502760023,
+              "max_seconds": 2.0692539997398853,
+              "above2p05": 19,
+              "core_calls": 376,
+              "core_depth_counts": {
+                "3": 61,
+                "2": 179,
+                "4": 11,
+                "1": 125
+              },
+              "core_nodes": 564506,
+              "core_successors": 563510,
+              "core_evaluations": 491211,
+              "prepass_calls": 0,
+              "prepass_transitions": 0,
+              "prepass_generations": 0,
+              "prepass_evaluations": 0,
+              "prepass_caller_seconds": 0,
+              "route_counts": {},
+              "prepass_resolutions": {}
+            },
+            "combined": {
+              "calls": 377,
+              "call_seconds": 751.6118924003094,
+              "median_seconds": 2.0357575002126396,
+              "max_seconds": 2.082420399878174,
+              "above2p05": 40,
+              "core_calls": 369,
+              "core_depth_counts": {
+                "4": 3,
+                "3": 55,
+                "2": 184,
+                "1": 127
+              },
+              "core_nodes": 520662,
+              "core_successors": 519724,
+              "core_evaluations": 451577,
+              "prepass_calls": 377,
+              "prepass_transitions": 189141,
+              "prepass_generations": 2485,
+              "prepass_evaluations": 189179,
+              "prepass_caller_seconds": 40.62257349630818,
+              "route_counts": {
+                "residual_core": 369,
+                "resolved_prepass": 8
+              },
+              "prepass_resolutions": {
+                "None": 369,
+                "-1": 1,
+                "1": 7
+              }
+            }
+          },
+          "cells": [
+            {
+              "seed": 202610102184,
+              "leaf": "unit",
+              "methods": [
+                "ab",
+                "combined"
+              ],
+              "plies": 64,
+              "terminal": {
+                "status": "ongoing",
+                "winner": null
+              },
+              "label": "ongoing64",
+              "seconds": 130.66020879987627
+            },
+            {
+              "seed": 202610102184,
+              "leaf": "unit",
+              "methods": [
+                "combined",
+                "ab"
+              ],
+              "plies": 64,
+              "terminal": {
+                "status": "ongoing",
+                "winner": null
+              },
+              "label": "ongoing64",
+              "seconds": 131.54497400019318
+            },
+            {
+              "seed": 202610102184,
+              "leaf": "v3",
+              "methods": [
+                "ab",
+                "combined"
+              ],
+              "plies": 42,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 1
+              },
+              "label": "combined_win",
+              "seconds": 84.70044700009748
+            },
+            {
+              "seed": 202610102184,
+              "leaf": "v3",
+              "methods": [
+                "combined",
+                "ab"
+              ],
+              "plies": 33,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 0
+              },
+              "label": "combined_win",
+              "seconds": 66.43960169982165
+            },
+            {
+              "seed": 202610102185,
+              "leaf": "unit",
+              "methods": [
+                "ab",
+                "combined"
+              ],
+              "plies": 64,
+              "terminal": {
+                "status": "ongoing",
+                "winner": null
+              },
+              "label": "ongoing64",
+              "seconds": 133.306411200203
+            },
+            {
+              "seed": 202610102185,
+              "leaf": "unit",
+              "methods": [
+                "combined",
+                "ab"
+              ],
+              "plies": 64,
+              "terminal": {
+                "status": "ongoing",
+                "winner": null
+              },
+              "label": "ongoing64",
+              "seconds": 134.31096090003848
+            },
+            {
+              "seed": 202610102185,
+              "leaf": "v3",
+              "methods": [
+                "ab",
+                "combined"
+              ],
+              "plies": 43,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 0
+              },
+              "label": "ab_win",
+              "seconds": 88.68486010003835
+            },
+            {
+              "seed": 202610102185,
+              "leaf": "v3",
+              "methods": [
+                "combined",
+                "ab"
+              ],
+              "plies": 43,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 0
+              },
+              "label": "combined_win",
+              "seconds": 89.00158160040155
+            },
+            {
+              "seed": 202610102186,
+              "leaf": "unit",
+              "methods": [
+                "ab",
+                "combined"
+              ],
+              "plies": 64,
+              "terminal": {
+                "status": "ongoing",
+                "winner": null
+              },
+              "label": "ongoing64",
+              "seconds": 136.72520639980212
+            },
+            {
+              "seed": 202610102186,
+              "leaf": "unit",
+              "methods": [
+                "combined",
+                "ab"
+              ],
+              "plies": 64,
+              "terminal": {
+                "status": "ongoing",
+                "winner": null
+              },
+              "label": "ongoing64",
+              "seconds": 137.54624229995534
+            },
+            {
+              "seed": 202610102186,
+              "leaf": "v3",
+              "methods": [
+                "ab",
+                "combined"
+              ],
+              "plies": 64,
+              "terminal": {
+                "status": "ongoing",
+                "winner": null
+              },
+              "label": "ongoing64",
+              "seconds": 139.20987469982356
+            },
+            {
+              "seed": 202610102186,
+              "leaf": "v3",
+              "methods": [
+                "combined",
+                "ab"
+              ],
+              "plies": 52,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 1
+              },
+              "label": "ab_win",
+              "seconds": 115.01259829988703
+            },
+            {
+              "seed": 202610102187,
+              "leaf": "unit",
+              "methods": [
+                "ab",
+                "combined"
+              ],
+              "plies": 35,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 0
+              },
+              "label": "ab_win",
+              "seconds": 75.7531925002113
+            },
+            {
+              "seed": 202610102187,
+              "leaf": "unit",
+              "methods": [
+                "combined",
+                "ab"
+              ],
+              "plies": 35,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 0
+              },
+              "label": "combined_win",
+              "seconds": 75.67160460026935
+            },
+            {
+              "seed": 202610102187,
+              "leaf": "v3",
+              "methods": [
+                "ab",
+                "combined"
+              ],
+              "plies": 11,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 0
+              },
+              "label": "ab_win",
+              "seconds": 22.742281099781394
+            },
+            {
+              "seed": 202610102187,
+              "leaf": "v3",
+              "methods": [
+                "combined",
+                "ab"
+              ],
+              "plies": 11,
+              "terminal": {
+                "status": "checkmate",
+                "winner": 0
+              },
+              "label": "combined_win",
+              "seconds": 22.99862780002877
+            }
+          ],
+          "distinct_action_trajectories": 10,
+          "duplicate_multiplicities": [
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "no_default": true,
+        "no_exposed_fitting": true
+      },
+      "paired": {
+        "scope": "Common-parent allocation diagnostic, no whole-root WDL or Elo.\nCount each identical full-history/leaf parent once, retain all sampled paths.\nOpposing next-reply witnesses concern selected children only. Absence is a\none-step local observation, not overall safety or proof of optimality.\n",
+        "unique_parents": 56,
+        "path_rows": 100,
+        "summary": {
+          "same_action": 56,
+          "immediate_exposure_ab0_combined0": 55,
+          "immediate_exposure_ab1_combined1": 1
+        },
+        "depth_pairs": {
+          "(3, 3)": 15,
+          "(2, 2)": 23,
+          "(3, None)": 2,
+          "(1, 1)": 16
+        },
+        "routes": {
+          "residual_core": 54,
+          "resolved_prepass": 2
+        },
+        "caller_seconds": {
+          "ab": 113.58870729943737,
+          "combined": 110.029067103751,
+          "prepass": 6.535161502659321
+        },
+        "reply_transitions": {
+          "ab": 5387,
+          "combined": 5387
+        },
+        "seconds": 361.24896229989827,
+        "rows": [
+          {
+            "key": "88fb30be096a58477baf74d8efd2479ba93c573e4bf018127dfe5d30e259e00a",
+            "seed": 202610102184,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": 3,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0049697002395988,
+            "combined_seconds": 2.0028082001954317
+          },
+          {
+            "key": "3f755e0c43e79fe236dcc09184f15ac6ab1ba9b39688d47eab68e36f50a02119",
+            "seed": 202610102184,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.012790599837899,
+            "combined_seconds": 2.01673290040344
+          },
+          {
+            "key": "bcf2641676471a684c0b9db5f0173bbfe74a7ca446638185d7df764a28d65ff8",
+            "seed": 202610102184,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.01628760015592,
+            "combined_seconds": 2.025595400016755
+          },
+          {
+            "key": "2df57299547cd21b7e8a7ad5736d9e1a72f04491d0c3d49a8cd84caca0184161",
+            "seed": 202610102184,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0249169999733567,
+            "combined_seconds": 2.0334605001844466
+          },
+          {
+            "key": "b08fd92b9db8bf3aafdfa4c77283a386eafcf18aaed85906e4a73d820ff61d4e",
+            "seed": 202610102184,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0177540997974575,
+            "combined_seconds": 2.043013900052756
+          },
+          {
+            "key": "6065942bdfecfe9974e56ccb067646dbe61a1318cab78c5ca61d644923f6f25f",
+            "seed": 202610102184,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0260594999417663,
+            "combined_seconds": 2.0386814000084996
+          },
+          {
+            "key": "91be2f67954e9a5fd35caa24456f74bc1cd50fb26a3a8ac2590061ecbc7d3e46",
+            "seed": 202610102184,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0304026999510825,
+            "combined_seconds": 2.0381519002839923
+          },
+          {
+            "key": "afaa0de4d933b064854349e8280893fa266d136feadbd1f5e9009d4cb4662ccb",
+            "seed": 202610102184,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0260941004380584,
+            "combined_seconds": 2.040828099939972
+          },
+          {
+            "key": "f66c67d1aa5a04d77adaba221899cf76c010dced9291d343af9bdc05bc5ee44a",
+            "seed": 202610102184,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": 3,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.001210399903357,
+            "combined_seconds": 2.0230000000447035
+          },
+          {
+            "key": "7b746119826a2805483711db114f0695ca3d24f527fc786fa252b96a02e27169",
+            "seed": 202610102184,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": 3,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0188700002618134,
+            "combined_seconds": 2.031435700133443
+          },
+          {
+            "key": "11ab66aab5fb62c0367fa35e64b53629b6954533ee7f53646f785e40a99db698",
+            "seed": 202610102184,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0315748997963965,
+            "combined_seconds": 2.030198600143194
+          },
+          {
+            "key": "1fdf4b45dad1df36e6e6429acb8a139a962dec7a76957aece7e42b069053c6b0",
+            "seed": 202610102184,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": 3,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.037921099923551,
+            "combined_seconds": 2.0493868002668023
+          },
+          {
+            "key": "c4b108c6ca01837fcc370b62fb2d71b281f72a6b638d75d84b727428f76cff93",
+            "seed": 202610102184,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0330023001879454,
+            "combined_seconds": 2.04511129995808
+          },
+          {
+            "key": "55e39da2d3412cfd08497f13dd36824ffbe5ee912e5d684c15ef69f3eadd8b8e",
+            "seed": 202610102184,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": null,
+            "route": "resolved_prepass",
+            "root_outcome": -1,
+            "ab_exposure": true,
+            "combined_exposure": true,
+            "ab_seconds": 2.030637300107628,
+            "combined_seconds": 0.019165399949997663
+          },
+          {
+            "key": "ee231b9539cc4ec8abff78e9d75ceff4706b3396726d140edc893538957549a6",
+            "seed": 202610102184,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0158194000832736,
+            "combined_seconds": 2.041911999695003
+          },
+          {
+            "key": "0445080e7edbfecaf2360c6d43e5d8c207c1a67c13c7163c013edfb9ca86286f",
+            "seed": 202610102184,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": 3,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0235963999293745,
+            "combined_seconds": 2.0277622998692095
+          },
+          {
+            "key": "7150642d2323a402a7e27379921437c2b09f13048081c9815ec32dff98adb242",
+            "seed": 202610102184,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": null,
+            "route": "resolved_prepass",
+            "root_outcome": 1,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0163211999461055,
+            "combined_seconds": 0.00735470000654459
+          },
+          {
+            "key": "8e9822f8806bb669ef08ea61abdef74ef39b10730600bf3adda4f85b94c57655",
+            "seed": 202610102185,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": 3,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.009808999951929,
+            "combined_seconds": 2.0345471003092825
+          },
+          {
+            "key": "ccf7e1e0430b501964aee8e990b05fc42e5687bd69ec5ae0ee819a3f1ea60bcf",
+            "seed": 202610102185,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.024164699949324,
+            "combined_seconds": 2.0244067003950477
+          },
+          {
+            "key": "3123d2005d4ef9c44163edef9e84846ecd61c822ce275c1897ad836e0796abed",
+            "seed": 202610102185,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.024078699760139,
+            "combined_seconds": 2.024205300025642
+          },
+          {
+            "key": "6e54812620e96e9ff9c13e00684523d54cf41b4a2e8e83d7a80713c076bae266",
+            "seed": 202610102185,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.017211999744177,
+            "combined_seconds": 2.0494009000249207
+          },
+          {
+            "key": "16f5ca58fd23e997443133c69457b662e4cf4d8ba09cb04558cd9d526636417a",
+            "seed": 202610102185,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.025514999870211,
+            "combined_seconds": 2.0441574002616107
+          },
+          {
+            "key": "d02cc4be09e71c4584f49fc72892cc510832648754589990d0bee2da936a9b05",
+            "seed": 202610102185,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0423028003424406,
+            "combined_seconds": 2.0157266999594867
+          },
+          {
+            "key": "ada1497137d88a01dceed81a11719bb6dd38fbd5359c6a0e4b1060e891e9dea3",
+            "seed": 202610102185,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0329301999881864,
+            "combined_seconds": 2.0290176002308726
+          },
+          {
+            "key": "24c82fa9f2cbb6881f2260d999e98aac2026f500e8b16608fb13e07b82d9537b",
+            "seed": 202610102185,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0210037999786437,
+            "combined_seconds": 2.03696609986946
+          },
+          {
+            "key": "05abe3fd74aa559c43fe9e529cbdeeaa472bfc842c804d8740b9d60ef2b5b483",
+            "seed": 202610102185,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": 3,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.023956200107932,
+            "combined_seconds": 2.0258810999803245
+          },
+          {
+            "key": "2900a4ffb2d7c87bdb9fada1b7ed6f432f15c7f674cc7a174576c0882f0078a2",
+            "seed": 202610102185,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0120669999159873,
+            "combined_seconds": 2.02338910009712
+          },
+          {
+            "key": "8afb9ed96b7d8ab9c66543820c0e1886cecc37e2ad681d32e5db7b012f7fb3e8",
+            "seed": 202610102185,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0209376998245716,
+            "combined_seconds": 2.0277769002132118
+          },
+          {
+            "key": "eceec20abc3ec693af8c312f3e20ffd95fa9b2418d2a59ae12ada8313b3fb005",
+            "seed": 202610102185,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0252563999965787,
+            "combined_seconds": 2.0261971997097135
+          },
+          {
+            "key": "96c1f8a23385c335b116ee1af4ec7849c89a36c0025db401d470bdda8ed8f4ce",
+            "seed": 202610102185,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": 3,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0317560001276433,
+            "combined_seconds": 2.0355696002952754
+          },
+          {
+            "key": "5d642beee6a443c4a80fdfac791c19df4df1bb3efc57a6aa115ba6940438afc0",
+            "seed": 202610102185,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0272050998173654,
+            "combined_seconds": 2.0463494998402894
+          },
+          {
+            "key": "c10d60a4ff896f3d0df43cc694c4992b8cf7a52bf2f229f4a42285592d2bc7aa",
+            "seed": 202610102186,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": 3,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.03848240012303,
+            "combined_seconds": 2.0242150998674333
+          },
+          {
+            "key": "0d396d9efa0ec54921e10a0f55363b3327ef17d173206d8ec2cac8cdd323e589",
+            "seed": 202610102186,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": 3,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.035435199737549,
+            "combined_seconds": 2.0381419002078474
+          },
+          {
+            "key": "210a670e42c7eb01f1912f9f91dc219ef7113b84079532ee0fe341da7d8a2087",
+            "seed": 202610102186,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": 3,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.050907500088215,
+            "combined_seconds": 2.0547407995909452
+          },
+          {
+            "key": "efd61a510f90393ab74d267f3befa754b9cd25998e0acf190212e734287d7257",
+            "seed": 202610102186,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0247418000362813,
+            "combined_seconds": 2.030631999950856
+          },
+          {
+            "key": "df0b10006508c46d379373f25b044c358ee0350ea10e93052ab6681f1e591288",
+            "seed": 202610102186,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0234147999435663,
+            "combined_seconds": 2.0495588001795113
+          },
+          {
+            "key": "893e58d0f46a1a1d4f1340a39439b25c11872414f227a589596a39d0593824f5",
+            "seed": 202610102186,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.020166900008917,
+            "combined_seconds": 2.0287592001259327
+          },
+          {
+            "key": "d816dbf132eb1f33ab476700ea166467667c24509a54c897de03121e89a7289f",
+            "seed": 202610102186,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0212948000989854,
+            "combined_seconds": 2.032229899894446
+          },
+          {
+            "key": "0bafce261267b68b011bab708dba25cbda02415b26faaddae1601d56d7245cdd",
+            "seed": 202610102186,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.030542700085789,
+            "combined_seconds": 2.0325247002765536
+          },
+          {
+            "key": "51ddce91154cc0ec4c5a96184d584b50e6855769349be217c588cacaba10f0d6",
+            "seed": 202610102186,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": 3,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.02588879968971,
+            "combined_seconds": 2.02297389972955
+          },
+          {
+            "key": "ba1b42a6ac729d3d4ac5b63198c8bd1794f50ba50c226c136501eb74f0fcbd57",
+            "seed": 202610102186,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0409236000850797,
+            "combined_seconds": 2.0367378001101315
+          },
+          {
+            "key": "7b89b39551efa95f493f57cf38c5dfed700f669562198a6553b28ca037a001c3",
+            "seed": 202610102186,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.038755000103265,
+            "combined_seconds": 2.0344024999067187
+          },
+          {
+            "key": "24ac54aad8db39b94bae8e99a191144d066fffd48fcc81efd7e8167b87b2096e",
+            "seed": 202610102186,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0253139999695122,
+            "combined_seconds": 2.045209700241685
+          },
+          {
+            "key": "78d36d79f170a5ff03b964369ba4c20f74df0716e0136e1c012350b8454d3318",
+            "seed": 202610102186,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": 3,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0499150999821723,
+            "combined_seconds": 2.0658173002302647
+          },
+          {
+            "key": "71f003eab4b17d7529e5d8ebab80102c5d9ed188247a5ed149d3be41462af3d6",
+            "seed": 202610102186,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0435035000555217,
+            "combined_seconds": 2.07151270005852
+          },
+          {
+            "key": "f562c9c955250af8b8937261febb4d00fae9b951f3e901254f56256ea3d44695",
+            "seed": 202610102186,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": 3,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0515956999734044,
+            "combined_seconds": 2.0639634002000093
+          },
+          {
+            "key": "118633dde15975b74cb10226165bfb1de9ae63d9d34a24f28af9a9dd569c3e1e",
+            "seed": 202610102186,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.073737799655646,
+            "combined_seconds": 2.0701038003899157
+          },
+          {
+            "key": "5ea02c0a62872df6fa6069b6d12b5949e05779a616377095a2b596dae42c0204",
+            "seed": 202610102186,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0609552999958396,
+            "combined_seconds": 2.059732200112194
+          },
+          {
+            "key": "deeabd600e4343c09b4ccfd62e7a498664eb6c426dc1cfbf1c60c4ab69f726c5",
+            "seed": 202610102186,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0328879998996854,
+            "combined_seconds": 2.047179799992591
+          },
+          {
+            "key": "cd02ab23a3290c1ec0a1112af570b566c94b81dbfd9b0a58da4d0c1fea943faa",
+            "seed": 202610102187,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0091650998219848,
+            "combined_seconds": 2.020489700138569
+          },
+          {
+            "key": "edab010996f280a61ddfc5d34859d9b8b6edfbd4fb805dcfeef261c2a8da074b",
+            "seed": 202610102187,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0179071999154985,
+            "combined_seconds": 2.0465110996738076
+          },
+          {
+            "key": "bb476b6c4d1a2709c7e8837301064c0356071b664bf33410864489553d2b90b5",
+            "seed": 202610102187,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0422151000238955,
+            "combined_seconds": 2.059689400251955
+          },
+          {
+            "key": "25cbef00c3b6acd1ec88d49ad40c39ca8032a2693aacc3750e2fadcb9a193888",
+            "seed": 202610102187,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.050604899879545,
+            "combined_seconds": 2.034429300110787
+          },
+          {
+            "key": "bfcfdf0537a2bdead22033101cebab0057dd492c9bc0605cc2d7337fd9ce1645",
+            "seed": 202610102187,
+            "leaf": "unit",
+            "actions_equal": true,
+            "ab_depth": 1,
+            "combined_depth": 1,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.0349543001502752,
+            "combined_seconds": 2.046336699742824
+          },
+          {
+            "key": "483047d02678d8b1d566f7c656bc0ae7a0e722ee06f74870baf3bdb418bc96a1",
+            "seed": 202610102187,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 3,
+            "combined_depth": 3,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.022421699948609,
+            "combined_seconds": 2.0274033001624048
+          },
+          {
+            "key": "d70228d7da0ca59a5eb7f0b488fc2efe81a9bc895895f16c93f6c51a1e547271",
+            "seed": 202610102187,
+            "leaf": "v3",
+            "actions_equal": true,
+            "ab_depth": 2,
+            "combined_depth": 2,
+            "route": "residual_core",
+            "root_outcome": null,
+            "ab_exposure": false,
+            "combined_exposure": false,
+            "ab_seconds": 2.016553200315684,
+            "combined_seconds": 2.0275818002410233
+          }
+        ],
+        "complete": true
+      },
+      "reply": {
+        "scope": "Describe every selected-child reply diagnostic. Positive rows and unique\ncomplete states are separate; no forced/avoidable error rate or independent\nholdout claim. Preserve method/leaf/resource/actual completed-depth context.\n",
+        "path_rows": 753,
+        "unique_full_states": 421,
+        "cache_hits": 332,
+        "transitions": 45094,
+        "seconds": 484.0106402002275,
+        "positive_path_rows": 9,
+        "unique_positive_states": 6,
+        "positive_by_method": {
+          "ab": 5,
+          "combined": 4
+        },
+        "positive_by_leaf": {
+          "v3": 7,
+          "unit": 2
+        }
+      },
+      "coverage": {
+        "scope": "Whole frozen prospective cohort's saved prepass coverage, no reruns/refits.\nRoot/reply/deeper materialized successors are disjoint accounting levels.\nTie records describe heuristic concentration, never independent move utility.\nThis asks whether a new coverage premise is motivated before any new policy.\n",
+        "input_sha256": "9fb2912cb95c9f061f96506cfb4e628c47f983281faae59ea7edf146551d2448",
+        "groups": {
+          "unit:residual_core": {
+            "calls": 225,
+            "root_complete": 225,
+            "root_successors": 32731,
+            "reply_successors": 52683,
+            "deeper_successors": 29786,
+            "no_reply_branch": 0,
+            "one_reply_branch": 125,
+            "multiple_reply_branches": 100,
+            "ties_multiple": 202,
+            "tied_top_with_unexpanded_branch": 202
+          },
+          "v3:residual_core": {
+            "calls": 144,
+            "root_complete": 144,
+            "root_successors": 10095,
+            "reply_successors": 48034,
+            "deeper_successors": 15215,
+            "no_reply_branch": 0,
+            "one_reply_branch": 8,
+            "multiple_reply_branches": 136,
+            "ties_multiple": 84,
+            "tied_top_with_unexpanded_branch": 81
+          },
+          "v3:resolved_prepass": {
+            "calls": 6,
+            "root_complete": 2,
+            "root_successors": 63,
+            "reply_successors": 37,
+            "deeper_successors": 0,
+            "no_reply_branch": 4,
+            "one_reply_branch": 2,
+            "multiple_reply_branches": 0,
+            "ties_multiple": 0,
+            "tied_top_with_unexpanded_branch": 0
+          },
+          "unit:resolved_prepass": {
+            "calls": 2,
+            "root_complete": 1,
+            "root_successors": 170,
+            "reply_successors": 327,
+            "deeper_successors": 0,
+            "no_reply_branch": 1,
+            "one_reply_branch": 0,
+            "multiple_reply_branches": 1,
+            "ties_multiple": 1,
+            "tied_top_with_unexpanded_branch": 0
+          }
+        }
+      },
+      "dependency": {
+        "scope": "Keep action-sequence repetition separate from full-state repetition.\nLeaf/method crossover rows share four rule samples; unique paths are not\nindependent trials or training samples. No outcomes or conditions changed.\n",
+        "rule_samples": 4,
+        "cells": 16,
+        "unique_full_history_paths": 10,
+        "multiplicities": [
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "within_rule_leaf_distinct_paths": [
+          {
+            "seed": 202610102184,
+            "leaf": "unit",
+            "paths": 1
+          },
+          {
+            "seed": 202610102184,
+            "leaf": "v3",
+            "paths": 2
+          },
+          {
+            "seed": 202610102185,
+            "leaf": "unit",
+            "paths": 1
+          },
+          {
+            "seed": 202610102185,
+            "leaf": "v3",
+            "paths": 1
+          },
+          {
+            "seed": 202610102186,
+            "leaf": "unit",
+            "paths": 1
+          },
+          {
+            "seed": 202610102186,
+            "leaf": "v3",
+            "paths": 2
+          },
+          {
+            "seed": 202610102187,
+            "leaf": "unit",
+            "paths": 1
+          },
+          {
+            "seed": 202610102187,
+            "leaf": "v3",
+            "paths": 1
+          }
+        ]
+      },
+      "work": {
+        "scope": "Actual recorded public/runtime work, not nodes mislabeled as transition cost.\nNative/terminal internal semantic pushes were not instrumented in these games;\nthe saved materialization/generation/cache/scoring counters retain their names.\nCaller time includes the wrapper and PV validation, game-record bytes separate.\n",
+        "core": {
+          "ab": {
+            "core_calls": 376,
+            "sums": {
+              "nodes": 564506,
+              "qnodes": 0,
+              "evaluation_calls": 491211,
+              "evaluation_seconds": 2.0635424344800413,
+              "legal_actions_generated": 7785605,
+              "legal_generation_calls": 72532,
+              "legal_generation_seconds": 572.9428659724072,
+              "ordering_calls": 71879,
+              "ordering_seconds": 8.77900000102818,
+              "successor_handles_created": 7744832,
+              "successors_materialized": 563510,
+              "successors_searched": 563510,
+              "position_key_cache_hits": 563510,
+              "position_keys_computed": 635675,
+              "terminal_cache_hits": 0,
+              "terminal_results_computed": 563510,
+              "tt_probes": 72165,
+              "tt_hits": 5989,
+              "tt_cutoffs": 9
+            },
+            "termination_reasons": {
+              "time_limit": 376
+            }
+          },
+          "combined": {
+            "core_calls": 369,
+            "sums": {
+              "nodes": 520662,
+              "qnodes": 0,
+              "evaluation_calls": 451577,
+              "evaluation_seconds": 1.8965071295388043,
+              "legal_actions_generated": 7344534,
+              "legal_generation_calls": 68482,
+              "legal_generation_seconds": 536.9456137563102,
+              "ordering_calls": 67852,
+              "ordering_seconds": 8.77199999941513,
+              "successor_handles_created": 7301708,
+              "successors_materialized": 519724,
+              "successors_searched": 519724,
+              "position_key_cache_hits": 519724,
+              "position_keys_computed": 587844,
+              "terminal_cache_hits": 0,
+              "terminal_results_computed": 519724,
+              "tt_probes": 68120,
+              "tt_hits": 5446,
+              "tt_cutoffs": 7
+            },
+            "termination_reasons": {
+              "time_limit": 369
+            }
+          }
+        },
+        "game_json_bytes": 44930512,
+        "prepass_scope": "Materialized full-state successors/evaluations/generations retained in analysis.json; terminal internal transition count unmeasured, no inferred count.",
+        "complete": true
+      },
+      "resolutions": {
+        "scope": "Describe ALL actual resolutions against already saved cold Core calls\nat identical full-state/leaf roots across swapped owners. No additional search,\noutcome selection, label refit or missing-match inference. Terminal versus\nnonterminal selected child and current-mover outcome remain distinct.\n",
+        "resolutions": 8,
+        "selected_terminal": 5,
+        "nonterminal_mover_win": 0,
+        "nonterminal_mover_loss": 3,
+        "matched_resolution_roots": 6,
+        "complete": true
+      },
+      "paired_cost_routes": {
+        "scope": "Separate resolved shortcuts from unknown-call opportunity cost on ALL paired\nparents. Existing Core mate signs versus prepass outcomes are recorded, not\ninferred from missing calls. No searches, selective extensions or new labels.\n",
+        "groups": {
+          "residual_core": {
+            "parents": 54,
+            "ab_seconds": 109.54174879938364,
+            "combined_seconds": 110.00254700379446,
+            "prepass_seconds": 6.508649202529341
+          },
+          "resolved_prepass": {
+            "parents": 2,
+            "ab_seconds": 4.046958500053734,
+            "combined_seconds": 0.026520099956542253,
+            "prepass_seconds": 0.02651230012997985
+          }
+        },
+        "resolved": [
+          {
+            "key": "55e39da2d3412cfd08497f13dd36824ffbe5ee912e5d684c15ef69f3eadd8b8e",
+            "seed": 202610102184,
+            "leaf": "v3",
+            "mover_outcome": -1,
+            "selected_child_terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "ab_score": -999999998,
+            "ab_depth": 3,
+            "same_mate_sign": true,
+            "actions_equal": true,
+            "successors": 26
+          },
+          {
+            "key": "7150642d2323a402a7e27379921437c2b09f13048081c9815ec32dff98adb242",
+            "seed": 202610102184,
+            "leaf": "v3",
+            "mover_outcome": 1,
+            "selected_child_terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "ab_score": 999999999,
+            "ab_depth": 3,
+            "same_mate_sign": true,
+            "actions_equal": true,
+            "successors": 12
+          }
+        ],
+        "complete": true
+      }
+    }
+  },
+  "saved_branch_analysis": {
+    "scope": "Changed question on exposed saved trials: where was root-relative work spent?\nNo search rerun, cap extension, source intervention or exposed policy fitting.\nRoot child counts reveal only first reply layer, not full tree depth/work.\n",
+    "source": ".local_agent/completion-ablation-20261010/resolution-cost-scale.json",
+    "source_sha256": "99ca0948ff14cdc399ac538f4045e1ec1006bef1f28837dc3fce2e7ebedcff77",
+    "rows": [
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "ply": 27,
+        "side": 1,
+        "cap": 128,
+        "root_children": 128,
+        "root_complete": false,
+        "root_outcome": null,
+        "transitions": 128,
+        "generations": 1,
+        "iterations": 1,
+        "expanded_root_branches": [],
+        "first_reply_child_total": 0,
+        "deeper_or_other_transitions": 0,
+        "selected_root_index": 20,
+        "selected_reply_children": 0,
+        "selected_value": 200,
+        "best_priority_ties": 2,
+        "seconds": 0.02416309993714094
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "ply": 27,
+        "side": 1,
+        "cap": 512,
+        "root_children": 156,
+        "root_complete": true,
+        "root_outcome": null,
+        "transitions": 512,
+        "generations": 11,
+        "iterations": 11,
+        "expanded_root_branches": [
+          {
+            "index": 20,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_033",
+              "geometry_id": "g23",
+              "actor_type_id": "X",
+              "from": [
+                6,
+                7
+              ],
+              "to": [
+                1,
+                2
+              ],
+              "promotion_target_id": null
+            },
+            "reply_children": 155,
+            "fully_expanded": true,
+            "outcome": null,
+            "value": 200
+          }
+        ],
+        "first_reply_child_total": 155,
+        "deeper_or_other_transitions": 201,
+        "selected_root_index": 20,
+        "selected_reply_children": 155,
+        "selected_value": 200,
+        "best_priority_ties": 2,
+        "seconds": 0.16031449986621737
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "ply": 27,
+        "side": 1,
+        "cap": 2048,
+        "root_children": 156,
+        "root_complete": true,
+        "root_outcome": null,
+        "transitions": 2048,
+        "generations": 49,
+        "iterations": 49,
+        "expanded_root_branches": [
+          {
+            "index": 20,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_033",
+              "geometry_id": "g23",
+              "actor_type_id": "X",
+              "from": [
+                6,
+                7
+              ],
+              "to": [
+                1,
+                2
+              ],
+              "promotion_target_id": null
+            },
+            "reply_children": 155,
+            "fully_expanded": true,
+            "outcome": null,
+            "value": 200
+          }
+        ],
+        "first_reply_child_total": 155,
+        "deeper_or_other_transitions": 1737,
+        "selected_root_index": 20,
+        "selected_reply_children": 155,
+        "selected_value": 200,
+        "best_priority_ties": 2,
+        "seconds": 0.8060734001919627
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "ply": 29,
+        "side": 1,
+        "cap": 128,
+        "root_children": 128,
+        "root_complete": false,
+        "root_outcome": null,
+        "transitions": 128,
+        "generations": 1,
+        "iterations": 1,
+        "expanded_root_branches": [],
+        "first_reply_child_total": 0,
+        "deeper_or_other_transitions": 0,
+        "selected_root_index": 32,
+        "selected_reply_children": 0,
+        "selected_value": 0,
+        "best_priority_ties": 1,
+        "seconds": 0.02809199970215559
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "ply": 29,
+        "side": 1,
+        "cap": 512,
+        "root_children": 157,
+        "root_complete": true,
+        "root_outcome": -1,
+        "transitions": 184,
+        "generations": 3,
+        "iterations": 3,
+        "expanded_root_branches": [
+          {
+            "index": 32,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_049",
+              "geometry_id": "g4",
+              "actor_type_id": "A",
+              "from": [
+                1,
+                2
+              ],
+              "to": [
+                3,
+                1
+              ],
+              "promotion_target_id": null
+            },
+            "reply_children": 1,
+            "fully_expanded": true,
+            "outcome": -1,
+            "value": -100000000
+          }
+        ],
+        "first_reply_child_total": 1,
+        "deeper_or_other_transitions": 26,
+        "selected_root_index": 32,
+        "selected_reply_children": 1,
+        "selected_value": -100000000,
+        "best_priority_ties": 1,
+        "seconds": 0.05071270000189543
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "ply": 29,
+        "side": 1,
+        "cap": 2048,
+        "root_children": 157,
+        "root_complete": true,
+        "root_outcome": -1,
+        "transitions": 184,
+        "generations": 3,
+        "iterations": 3,
+        "expanded_root_branches": [
+          {
+            "index": 32,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_049",
+              "geometry_id": "g4",
+              "actor_type_id": "A",
+              "from": [
+                1,
+                2
+              ],
+              "to": [
+                3,
+                1
+              ],
+              "promotion_target_id": null
+            },
+            "reply_children": 1,
+            "fully_expanded": true,
+            "outcome": -1,
+            "value": -100000000
+          }
+        ],
+        "first_reply_child_total": 1,
+        "deeper_or_other_transitions": 26,
+        "selected_root_index": 32,
+        "selected_reply_children": 1,
+        "selected_value": -100000000,
+        "best_priority_ties": 1,
+        "seconds": 0.05907970014959574
+      },
+      {
+        "seed": 202610082174,
+        "leaf": "v3",
+        "ply": 3,
+        "side": 1,
+        "cap": 128,
+        "root_children": 81,
+        "root_complete": true,
+        "root_outcome": null,
+        "transitions": 128,
+        "generations": 2,
+        "iterations": 2,
+        "expanded_root_branches": [
+          {
+            "index": 17,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_007",
+              "geometry_id": "g11",
+              "actor_type_id": "C",
+              "from": [
+                5,
+                6
+              ],
+              "to": [
+                2,
+                0
+              ],
+              "promotion_target_id": "A"
+            },
+            "reply_children": 47,
+            "fully_expanded": false,
+            "outcome": null,
+            "value": 3496
+          }
+        ],
+        "first_reply_child_total": 47,
+        "deeper_or_other_transitions": 0,
+        "selected_root_index": 25,
+        "selected_reply_children": 0,
+        "selected_value": 498,
+        "best_priority_ties": 1,
+        "seconds": 0.030346099752932787
+      },
+      {
+        "seed": 202610082174,
+        "leaf": "v3",
+        "ply": 3,
+        "side": 1,
+        "cap": 512,
+        "root_children": 81,
+        "root_complete": true,
+        "root_outcome": null,
+        "transitions": 512,
+        "generations": 7,
+        "iterations": 7,
+        "expanded_root_branches": [
+          {
+            "index": 17,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_007",
+              "geometry_id": "g11",
+              "actor_type_id": "C",
+              "from": [
+                5,
+                6
+              ],
+              "to": [
+                2,
+                0
+              ],
+              "promotion_target_id": "A"
+            },
+            "reply_children": 101,
+            "fully_expanded": true,
+            "outcome": null,
+            "value": 3496
+          },
+          {
+            "index": 19,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_007",
+              "geometry_id": "g11",
+              "actor_type_id": "C",
+              "from": [
+                5,
+                6
+              ],
+              "to": [
+                2,
+                0
+              ],
+              "promotion_target_id": "P"
+            },
+            "reply_children": 101,
+            "fully_expanded": true,
+            "outcome": null,
+            "value": 3674
+          },
+          {
+            "index": 20,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_007",
+              "geometry_id": "g11",
+              "actor_type_id": "C",
+              "from": [
+                5,
+                6
+              ],
+              "to": [
+                2,
+                0
+              ],
+              "promotion_target_id": "X"
+            },
+            "reply_children": 101,
+            "fully_expanded": true,
+            "outcome": null,
+            "value": 3594
+          },
+          {
+            "index": 25,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_009",
+              "geometry_id": "g12",
+              "actor_type_id": "C",
+              "from": [
+                2,
+                6
+              ],
+              "to": [
+                5,
+                0
+              ],
+              "promotion_target_id": "A"
+            },
+            "reply_children": 1,
+            "fully_expanded": true,
+            "outcome": null,
+            "value": 2052
+          },
+          {
+            "index": 27,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_009",
+              "geometry_id": "g12",
+              "actor_type_id": "C",
+              "from": [
+                2,
+                6
+              ],
+              "to": [
+                5,
+                0
+              ],
+              "promotion_target_id": "P"
+            },
+            "reply_children": 49,
+            "fully_expanded": false,
+            "outcome": null,
+            "value": 3674
+          },
+          {
+            "index": 28,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_009",
+              "geometry_id": "g12",
+              "actor_type_id": "C",
+              "from": [
+                2,
+                6
+              ],
+              "to": [
+                5,
+                0
+              ],
+              "promotion_target_id": "X"
+            },
+            "reply_children": 78,
+            "fully_expanded": false,
+            "outcome": 1,
+            "value": 100000000
+          }
+        ],
+        "first_reply_child_total": 431,
+        "deeper_or_other_transitions": 0,
+        "selected_root_index": 18,
+        "selected_reply_children": 0,
+        "selected_value": 759,
+        "best_priority_ties": 2,
+        "seconds": 0.12189149996265769
+      },
+      {
+        "seed": 202610082174,
+        "leaf": "v3",
+        "ply": 3,
+        "side": 1,
+        "cap": 2048,
+        "root_children": 81,
+        "root_complete": true,
+        "root_outcome": -1,
+        "transitions": 1152,
+        "generations": 15,
+        "iterations": 15,
+        "expanded_root_branches": [
+          {
+            "index": 11,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_005",
+              "geometry_id": "g10",
+              "actor_type_id": "B",
+              "from": [
+                1,
+                7
+              ],
+              "to": [
+                1,
+                2
+              ],
+              "promotion_target_id": null
+            },
+            "reply_children": 102,
+            "fully_expanded": true,
+            "outcome": null,
+            "value": 4522
+          },
+          {
+            "index": 12,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_005",
+              "geometry_id": "g10",
+              "actor_type_id": "B",
+              "from": [
+                3,
+                7
+              ],
+              "to": [
+                3,
+                1
+              ],
+              "promotion_target_id": null
+            },
+            "reply_children": 1,
+            "fully_expanded": true,
+            "outcome": null,
+            "value": 3186
+          },
+          {
+            "index": 17,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_007",
+              "geometry_id": "g11",
+              "actor_type_id": "C",
+              "from": [
+                5,
+                6
+              ],
+              "to": [
+                2,
+                0
+              ],
+              "promotion_target_id": "A"
+            },
+            "reply_children": 101,
+            "fully_expanded": true,
+            "outcome": null,
+            "value": 3496
+          },
+          {
+            "index": 18,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_007",
+              "geometry_id": "g11",
+              "actor_type_id": "C",
+              "from": [
+                5,
+                6
+              ],
+              "to": [
+                2,
+                0
+              ],
+              "promotion_target_id": "B"
+            },
+            "reply_children": 101,
+            "fully_expanded": true,
+            "outcome": null,
+            "value": 3757
+          },
+          {
+            "index": 19,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_007",
+              "geometry_id": "g11",
+              "actor_type_id": "C",
+              "from": [
+                5,
+                6
+              ],
+              "to": [
+                2,
+                0
+              ],
+              "promotion_target_id": "P"
+            },
+            "reply_children": 101,
+            "fully_expanded": true,
+            "outcome": null,
+            "value": 3674
+          },
+          {
+            "index": 20,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_007",
+              "geometry_id": "g11",
+              "actor_type_id": "C",
+              "from": [
+                5,
+                6
+              ],
+              "to": [
+                2,
+                0
+              ],
+              "promotion_target_id": "X"
+            },
+            "reply_children": 101,
+            "fully_expanded": true,
+            "outcome": null,
+            "value": 3594
+          },
+          {
+            "index": 25,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_009",
+              "geometry_id": "g12",
+              "actor_type_id": "C",
+              "from": [
+                2,
+                6
+              ],
+              "to": [
+                5,
+                0
+              ],
+              "promotion_target_id": "A"
+            },
+            "reply_children": 1,
+            "fully_expanded": true,
+            "outcome": -1,
+            "value": -100000000
+          },
+          {
+            "index": 26,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_009",
+              "geometry_id": "g12",
+              "actor_type_id": "C",
+              "from": [
+                2,
+                6
+              ],
+              "to": [
+                5,
+                0
+              ],
+              "promotion_target_id": "B"
+            },
+            "reply_children": 78,
+            "fully_expanded": false,
+            "outcome": 1,
+            "value": 100000000
+          },
+          {
+            "index": 27,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_009",
+              "geometry_id": "g12",
+              "actor_type_id": "C",
+              "from": [
+                2,
+                6
+              ],
+              "to": [
+                5,
+                0
+              ],
+              "promotion_target_id": "P"
+            },
+            "reply_children": 78,
+            "fully_expanded": false,
+            "outcome": 1,
+            "value": 100000000
+          },
+          {
+            "index": 28,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_009",
+              "geometry_id": "g12",
+              "actor_type_id": "C",
+              "from": [
+                2,
+                6
+              ],
+              "to": [
+                5,
+                0
+              ],
+              "promotion_target_id": "X"
+            },
+            "reply_children": 78,
+            "fully_expanded": false,
+            "outcome": 1,
+            "value": 100000000
+          },
+          {
+            "index": 34,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_039",
+              "geometry_id": "g26",
+              "actor_type_id": "P",
+              "from": [
+                7,
+                7
+              ],
+              "to": [
+                4,
+                1
+              ],
+              "promotion_target_id": null
+            },
+            "reply_children": 62,
+            "fully_expanded": false,
+            "outcome": 1,
+            "value": 100000000
+          },
+          {
+            "index": 42,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_041",
+              "geometry_id": "g27",
+              "actor_type_id": "P",
+              "from": [
+                0,
+                7
+              ],
+              "to": [
+                3,
+                1
+              ],
+              "promotion_target_id": null
+            },
+            "reply_children": 104,
+            "fully_expanded": true,
+            "outcome": null,
+            "value": 4442
+          },
+          {
+            "index": 46,
+            "action": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_063",
+              "geometry_id": "g5",
+              "actor_type_id": "A",
+              "from": [
+                5,
+                7
+              ],
+              "to": [
+                4,
+                6
+              ],
+              "promotion_target_id": null
+            },
+            "reply_children": 99,
+            "fully_expanded": true,
+            "outcome": null,
+            "value": 3762
+          }
+        ],
+        "first_reply_child_total": 1007,
+        "deeper_or_other_transitions": 64,
+        "selected_root_index": 25,
+        "selected_reply_children": 1,
+        "selected_value": -100000000,
+        "best_priority_ties": 1,
+        "seconds": 0.27142270002514124
+      }
+    ],
+    "complete": true
+  },
+  "drop_responses": {
+    "scope": "Exposed response-support diagnostic, no score/fit/default. Ask which actual\nlegal response distinguishes the same checking drop on safe/adverse children.\nUse all five saved children and same common A[5,7] drop, all full histories.\nMeasure streamed first response and full actual responses separately; absence of\nresponses relies on Core terminal authority, never check counts alone.\nExpected<1min; run after timed jobs so extraction cannot contaminate timings.\n",
+    "source_sha256": "0b11086a949b749dc93dbd997b3133380790774b96d46618b2cbac9f9662d928",
+    "seconds": 0.11030949978157878,
+    "complete": true
+  },
+  "full_state_replay": 1398
+}

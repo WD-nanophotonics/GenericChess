@@ -6,6 +6,164 @@ costs are retained separately from this decision record. Generic coverage still
 requires promotion, drops, auxiliary state and relevant adjudication history;
 the prototype excludes declarations/restarts and does not establish that target.
 
+## Fixed allocation decision, 2026-10-10
+
+The fixed small completion prepass remains research-only. On fresh2180-2183,
+all16declared cells finish:645plies, combined5/Core4 wins,3actual repetition
+draws,4ongoing64 and11distinct action trajectories. These unlike trajectories
+do not measure a paired speed gain, a general strength advantage or price quality.
+
+Both sides use the same Unit or static-v3 leaf, cold Core TT, q0, maxD2 and a
+two-second caller target. The combined route first uses512materialized
+successors or a.2second soft target, whichever ends first. Only a resolved
+root overrides Core. For unknowns, actual prepass caller time, including its
+statistics serialization, is deducted before cold Core; no prepass value,
+ordering or TT transfers. Core PV validation and indivisible public operations
+can overrun the target; all actual caller costs stay visible. This is a fixed
+engineering allocation, not an optimized policy fitted to old winning roots.
+
+All323prepasses cost33.907seconds and161741materialized successors.315return
+to Core; eight resolve the root. These eight are five selected immediate
+winning terminals and three nonterminal current-side losses, with zero
+nonterminal winning resolution. Four already-saved identical full-history
+Core roots have the same mate-range sign. Four unmatched roots remain unmatched;
+missing records cannot establish an increment. Baseline322calls cost355.749sec;
+combined323cost362.587sec on different paths, so that difference is not a
+paired implementation-speed estimate. Residual Core depth is228D2/87D1 versus
+baseline237D2/85D1, also on unlike roots. Actual caller maxima2.0478/2.0552sec
+and three combined calls above2.05sec are retained rather than rounded away.
+
+Core work counters retain their actual meanings: baseline reports4507706
+generated legal actions,4470923successor handles,157495materializations,
+124996evaluations and416TT hits in32976probes. Generation timing is297.468sec,
+evaluation timing.502sec; counters/timers can overlap and are not an additive
+wall-time decomposition. Different trajectories do not establish a comparative
+cache/speed gain. FinalD2game JSON is36985161bytes; output/state-validation
+cost is outside the caller target. Internal terminal/legality semantic pushes
+were not instrumented here, so materializations are not relabeled as total
+semantic transitions. Raw per-call counters and failures remain recoverable.
+
+SearchLimits normally has no main-depth ceiling; the deliberately shallowD2
+route comparison can finish before its wall allowance. The separate fresh
+2184-2187 maxD6/q0 sensitivity was frozen from that source condition before
+seeing the completeD2 outcome, with the same16cells and total allocation.
+It does not revise2180-2183, compare identical rules across depth, or reproduce
+the product's q4 configuration. Results and diagnostics remain separate.
+
+The separateD6cohort completes16games753plies in1596.382seconds: combined5/
+Core4wins and7ongoing64, with10distinct full-history paths from four rules.
+Its377prepasses cost40.623sec and189141materialized successors;369defer to
+Core. Eight resolved roots again contain five immediate winning terminals and
+three nonterminal current-side losses, zero nonterminal wins. Six saved identical-
+history Core matches already have the same mate-range sign; two remain unmatched.
+All745actual Core calls hit their time limit, completingD1-D4, noneD6. Unlike
+paths give baseline depths125D1/179D2/61D3/11D4 and residual Core127/184/55/3;
+this motivates the same-parent measurement rather than a depth-causality claim.
+Actual outer maxima2.0693/2.0824sec and19/40calls above2.05sec are retained.
+
+Both cohorts disable the same root-tactical shortcut and use q0; direct terminal
+resolutions are not a new information source relative to an existing terminal
+probe. The scoped comparison does not establish a product-default improvement.
+Neither cohort supplies evidence for expanding the fixed prepass automatically.
+The cost of early resolved calls and the cost of unknown deferrals must be kept
+separate; unlike game trajectories cannot identify a net paired saving.
+
+The completeD2 selected-child reply diagnostic covers645path rows,
+354unique full-history states and291cache hits, with39718actual reply
+applications in416.850sec. Nine positive path rows represent seven unique
+states: Core5/combined4, Unit3/v3 6. This is a local next-reply exposure count,
+not an avoidable-error rate, full-root WDL or independent sample count.
+The three combined prepass-resolved losses remain positive rows rather than
+being excluded to improve its apparent count. Zero witnesses remain only
+the absence of an immediate winning reply, not broader safety or optimality.
+
+The prospectively declared every-eighth-parentD2comparison completes85path
+rows/47unique full-history and leaf parents in228.019sec. All47paired choices
+are identical. Immediate reply exposure is absent in46parents and present in
+both methods at one; there is no one-sided improvement or regression on this
+sample. Depth pairs are33(2,2),11(1,1),2(2,resolved prepass),1(2,1).
+Two resolved shortcuts are not missing/incomplete Core depths. Actual paired
+caller totals are50.330sec Core/52.461sec combined, including5.371sec of
+prepasses; each selected-child arm inspects5184actual replies. The one depth
+retreat leaves the same chosen action here, not a demonstrated playing loss.
+This is one fixed local sample/order, not a general time guarantee or all-root
+certificate. It supplies no current reason to adopt the fixed allocation.
+
+The separateD6paired diagnostic completes100sampled path rows/56unique
+parents in361.249sec. All56choices agree;55have no immediate exposure,
+one has it under both methods. Depth pairs are15(3,3),23(2,2),16(1,1),
+2(3,resolved prepass). Caller113.589sec Core/110.029sec combined includes
+6.535sec prepass work; each arm applies5387actual replies. The modest saving
+must be separated by route:54unknown deferrals cost109.542/110.003sec,
+while two resolved shortcuts cost4.047/.0265sec. Both shortcuts already have
+the same chosen action and mate sign under Core; one is a nonterminal loss,
+the other an immediate terminal win. There is no newly discovered nonterminal
+winning signal. OnD2,45unknown calls cost48.421/52.321sec and two shortcuts
+1.909/.1402sec. Early termination can save time in selected solved cases;
+that does not establish the value of an unconditional prepass on unknowns,
+or a gain relative to the product's existing root-tactical configuration.
+The fixed allocation remains deferred; retain conditional response support
+as the next cost/placement question, not another automatic cap increase.
+
+The completeD6 selected-child diagnostic retains753path rows/421unique
+full-history states/332cache hits and45094actual replies in484.011sec.
+Nine positive rows represent six unique states: Core5/combined4, v3 7/Unit2.
+Three combined resolved losses stay in that denominator. LikeD2 this is
+local exposure, not avoidability, independent trials or broader safety.
+
+Source inspection establishes SearchTuning.use_root_tactical defaultsTrue;
+root_tactical_scan already early-returns an actual winning CHECKMATE child.
+A separately declared exposed mechanism control covers ALL four paired solved
+shortcut roots with that scanON, preserving q0, cold TT, leaf and maxD2/D6.
+All four retain the OFF Core action and mate sign. The two immediate wins
+return root_immediate_win in.0525/.0342sec; the two ongoing losses cost.3544/
+2.0357sec (completed_depth/time_limit). This is not a full default-q4 benchmark,
+new independent validation or a prepass gain over the shipped shortcut.
+
+Recovery: data/bounded_completion_20261010.json and
+archive/search_compression_20261009/bounded-completion-20261010-index.json
+route both immutable cohorts, all diagnostics and Agent sources. Extract the
+archived .local_agent/bounded-completion-20261010/package.py from the ZIP
+into that ignored path, then run from repository root:
+`.venv\Scripts\python.exe .local_agent/bounded-completion-20261010/package.py --verify-only`.
+This verifies member/prerequisite hashes and replays full histories, chosen
+children and actual reply witnesses without overwriting data or rerunning games.
+The faulty bootstrap and superseded draft are excluded; preparation failures
+remain recorded. Research archives are on-demand recovery, not product imports.
+
+Old evidence explains why automatic cap expansion is premature: at2173Unit
+ply27, both512/2048work caps expand replies under only one of156root children.
+The additional work goes deeper under that branch, not into the second tied
+capture by a different actor. This is a saved-tree concentration diagnosis,
+not a result-selected rerun or permission to merge those actors.
+
+The complete freshD2 cohort shows this is not confined to the old selected
+root: all315unknown prepasses finish their root layer, using34451root,
+96240first-reply and30589deeper successors. Unit152/174 and v3 62/141
+unknown calls leave at least one reply-unexpanded branch among tied top
+estimates;71Unit and13v3 calls expand replies under only one root branch.
+This is current-tree coverage, not evidence that a particular unseen tied
+child is good or that round-robin exploration would improve actual choices.
+
+On the five exposed old drop children, the same ordinary A[5,7] drop has one
+actual legal K capture response at safe20, versus zero responses and actual
+checkmate at33/38/47/48. All have A2/X1 hand stock and temp_right0; the custom
+guard restricts P, so stock/right eligibility cannot distinguish this utility.
+The safe response moves K[4,7] to[5,7], captures A and credits its base type
+to hand. Streamed first-response cost alone is not a generally cheap terminal
+feature: applying the drop already includes Core terminal authority/probing.
+This motivates conditional response support, not a fitted five-label penalty,
+hand=board, a position patch or another automatic feature/model expansion.
+
+Preparation and serialization mistakes are retained separately. A premature
+checkpoint claimed controls had passed; the correction records the failed
+fixture serializer and newline syntax error before any game ran, then the
+actual five passing bookkeeping controls. They check branch accounting, not
+WDL or generality. Full promotion/drop/auxiliary/history remains in the scoped
+prototype; declarations/restarts and NO_CONTEST projection require further
+work before any deployment. No installed search/evaluator or ui-test change.
+
+
 ## Why test this route
 
 Existing semantic attack/defense relations separate five exposed top children,

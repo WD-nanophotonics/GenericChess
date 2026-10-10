@@ -9,7 +9,28 @@ is no longer Main: either outcome alone would not select an evaluation family.
 
 ## Shared target and comparison
 
-Latest decision2026-10-10: retain static-v3 and Unit as cheap scoped baselines;
+Latest allocation checkpoint2026-10-10: retain installed Core/static baselines.
+The fresh2180-2183 fixed small completion prepass+residual Core cohort finishes
+16games645plies, but its eight resolved roots contain no nonterminal winning
+resolution. Four saved identical-history Core matches already have the same
+mate-range sign; unmatched roots do not establish a gap. Separate freshD6/q0
+16games753plies also resolve only5immediate wins/3ongoing losses, with6same-sign
+saved Core matches; all actual Core calls hit time limits, completingD1-D4.
+No automatic cap, feature or model expansion follows. Predeclared common-parent/
+selected-child diagnostics qualify the final choice. On47predeclaredD2common
+parents all chosen actions/exposures agree, with one residualD2-to-D1 retreat
+and caller50.330sec Core/52.461sec combined. This fixed local sample supports
+deferring the allocation, not forbidding all completion-aware methods.
+The56D6common-parent choices/exposures also agree. Its caller saving belongs
+to two already-known resolved shortcuts;54unknown deferrals cost109.542sec
+Core/110.003sec combined. Next examine response-support placement/reuse, not
+an unconditional per-leaf scan or a larger prepass. No model/default changes.
+COMPLETION_SEARCH_FEASIBILITY.md owns the costs and recovery.
+Conditional response support remains a candidate premise: identical checking-
+drop counts/stock/right eligibility still alias a unique legal capture response
+with actual checkmate. This is not a five-label fit or hand-value correction.
+
+Earlier decision2026-10-10: retain static-v3 and Unit as cheap scoped baselines;
 do not adopt hand=board from one exposed drop hole. Two new rules/10games plus
 same-parent fixed-order checks retain adverse price and incomplete-search
 effects. Compiled guard/reset truth is a cheap supported input premise, not a
