@@ -44,6 +44,13 @@ Dot's complete review supports this selection but did not execute these tests.
 No workflow/manual rule changes. Evidence:INCOMING_SOURCE_DISPATCH.md and its
 purpose index; warm contracts are separately routed in the phase diagnostic.
 
+Early-validated deferred binding preserves425 root bindings,2550 mutation
+comparisons and22 malformed packed-output error controls, but four Runtime
+allocator-fault controls expose changed automatic fallback. Retain ordinary
+eager allocation; next check same-type eager representation or retained state/
+history costs. Eight fixed-D2 cells agree, with no equal-time/strength claim.
+Evidence: VALIDATED_BINDING_FEASIBILITY.md; data/validated_binding_20261011.json.
+
 ## Latest reserve and mechanical evidence —2026-10-10
 
 The initial UI diagnostic records30 returned=committed moves,24D1 completions

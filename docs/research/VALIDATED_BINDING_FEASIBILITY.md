@@ -1,0 +1,19 @@
+# Early validation and deferred binding allocation
+
+Decision: retain the ordinary eager provider. The new prototype separates all existing binding predicates from object allocation; it repairs malformed-output timing in the tested controls but still changes allocation-error fallback. It is isolated evidence, not a production provider or UI change.
+
+Changed premise relative to INCOMING_SOURCE_DISPATCH.md: an AST-derived copy of `_make_binding_from_action` preserves every predicate and its order, replaces only its two `_make_binding` calls with resolved argument tuples, and later calls the original allocator. Validation occurs for every output, including unsearched rows. This does not add new validation requirements to existing valid/drop inputs.
+
+Eight existing root frontiers contain425 bindings. Forced bindings and425 played root transitions agree and restore.2550 mutated semantic-action comparisons give identical type/message or acceptance:2078 paired errors and472 accepted drop mutations (actor-mismatch/target-unreachable are not rejected by the existing drop binding constructor). No claim that all mutations are invalid or that the constructor is a complete legality validator.
+
+22 synthetic packed-output controls on existing Chess-middle/Shogi-drop fail at provider call with the same error, including geometry/pattern membership and impossible path as well as packed index/kind/type controls. Each injected bad output follows a valid row, so unsearched malformed output still fails early. These are injected controls, not observations of bad installed Native output.
+
+Eight reversed fixed-q0D2 calls retain action, score, PV, termination, all non-time search/provider counts and zero Native fallback. Chess138nodes/136pushes still validates1354 bindings, constructs101; Shogi-drop still validates20000, constructs463 for626pushes. Local four-call means: Chess eager0.036229s/deferred0.035577s; Shogi-drop0.255894s/0.238413s. This small development comparison is not a robust speed/strength claim, and has no equal-time completion evidence. A first signature checker incorrectly included variable timing fields; its failed producer is preserved. Work equality excludes `_seconds` and `time_to_` fields; raw timings are unchanged.
+
+Two injected allocator faults have equal MemoryError text but different phases. Four actual non-strict Runtime controls establish the consequence: ordinary eager provider falls back once to Core and plays; deferred provider returns proxies, then fails during push with no provider fallback. Both restore and retry. An explicit future interface could declare this changed responsibility; it cannot be called a transparent replacement under the current contract.
+
+Gross owned root containers: Chess8160bytes eager,8720 unforced,14600 all-forced; Shogi-drop37856/40464/67848. Borrowed action/pattern/path/engine/position/checkpoint/int objects excluded. Resolved args retain the entire immutable parent, and forced proxies retain both args and binding. These are not RSS or measured retained parent bytes. Parent lifetime and cancellation remain requirements of any explicit future interface; this short assay does not repeat prior live-budget cancellation evidence.
+
+Next selected action: inspect same-type eager binding allocation to preserve current error/fallback stage, or return to retained Core state/history bridge costs. Do not extend deferred batches merely to rescue this prototype. Generated legacy/semantic adapter coverage remains a separate infrastructure question; the full generated-rule domain and UI freeze are unchanged.
+
+Evidence: data/validated_binding_20261011.json binds nine files in docs/archive/validated_binding_20261011/evidence.zip. Production source remains b9642c1da47d59d427ff50e346f326e6b2565f04. No raw Slack/account/private user records are included.
