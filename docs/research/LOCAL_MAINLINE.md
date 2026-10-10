@@ -42,8 +42,16 @@ insufficient to justify production complexity. Retain original failures and caps
 Dot's complete review supports finite full-history checks and a declared sampling
 law; it did not execute these sources.91final focused product tests pass.
 Evidence:GENERATED_SEMANTIC_BRIDGE.md; data/generated_semantic_bridge_20261011.json.
-Next choose one history-bearing generated backend/evaluator capability comparison,
-with no automatic horizon increase, alias merging, price/learning or UI change.
+24subsequent product-evaluator D2 calls retain eight profile/root pairs and107
+visible child evaluations plus actions/values/PV.24same-evaluator time calls on
+two advancing roots show no consistent new layer/move at one second; evaluation
+consumes about0.096–0.145seconds with unlike counts. Material/resource results
+therefore cannot be transferred to this evaluation condition.18exclusive product
+profile/control calls retain within-arm work/returns. Hybrid terminal and hash
+buckets each exceed attack-map evaluation on the measured roots; Core still probes
+one legal action separately. Next isolate that predicate/transition boundary,
+preserving adjudication and cancellation rather than adding a terminal cache;
+no automatic horizon increase, alias merging, price/learning or UI change.
 
 Prior incoming source dispatch retains its finite semantics and drop fixed-work
 savings; warm-root and deferred-binding limits remain in their purpose documents.

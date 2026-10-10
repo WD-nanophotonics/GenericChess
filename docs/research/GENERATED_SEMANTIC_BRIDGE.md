@@ -88,6 +88,35 @@ The original plan mentioned noTT but its declared/executed 16-call schedule cont
 cold/transfer only; no noTT alias result is claimed. This local PV recovery does
 not certify all defenses or arbitrary action-class history equivalence.
 
+## Existing product evaluator as a separate axis
+
+A subsequent 24-call D2/q1 control uses the existing EvaluationConfig/profile,
+without disk caches or material substitution. Eight profile/root pairs and 107
+visible child evaluations agree; all three arms return identical action/value/PV
+at each root. Its dynamic mobility term counts pseudo-attack coverage, not typed
+legal-action multiplicity. This separates supported input compatibility from any
+claim about the quality of rule-derived values.
+
+Twenty-four additional ordinary 100ms/one-second calls on advancing seeds03/04
+use the same product evaluation in every arm. One-second completion is D3/D4
+respectively in all arms, unlike the material-controlled search fronts.100ms
+crossings vary between repetitions; returned moves agree within these cells.
+Recorded evaluation time is about 0.096–0.145 seconds per one-second call,
+with unlike evaluation counts. No consistent extra layer or new move is observed
+here. Continue bottleneck attribution on this explicit caller/evaluator condition;
+do not transfer material-control speed/score conclusions to the product evaluator.
+
+Eighteen subsequent nested-exclusive product-evaluator profile/control calls
+preserve each arm's own action/value/PV and selected work; cross-arm work remains
+unaligned. In instrumented hybrid rows, attack-map evaluation costs about
+7.9/3.5ms, residual whole evaluation 4.5/2.2ms, Core terminal 13.7/9.3ms and
+component hash 16.5/8.5ms on the two roots. All exclusive sums equal measured
+elapsed time. Source inspection confirms terminal probes still call Core's
+one-legal-action predicate before history adjudication, independently of Native
+full-set legality. Select the terminal predicate/transition boundary for the next
+finite attribution; these overhead-bearing timings do not justify a production
+cache or replacement. Keep attack coverage semantically distinct from legal moves.
+
 ## Residual cost and deferred prototypes
 
 Eighteen matched-work profile/control calls separate nested exclusive wall buckets;

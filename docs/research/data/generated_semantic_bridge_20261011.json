@@ -349,6 +349,61 @@
       "sha256": "82fe9ca5ab1192719f56241094bd254a15183bbe4aabbf07589872d65195f010"
     },
     {
+      "path": "product-evaluator-curves-plan.md",
+      "bytes": 741,
+      "sha256": "4afcc9269ea7c3cf4f44840c75ac3a95a5d199d5190849eb33061510451204b0"
+    },
+    {
+      "path": "product-evaluator-curves.json",
+      "bytes": 99302,
+      "sha256": "ae9fd5f0a937dba86b0388a7ee7a494338a19f0a53dff11f1552b997e271f3f5"
+    },
+    {
+      "path": "product-evaluator-curves.py",
+      "bytes": 4420,
+      "sha256": "6d4dc4f2b86a88107b1ad47a407e88dc94bdae6e3746b6061017e2032dd27154"
+    },
+    {
+      "path": "product-evaluator-plan.md",
+      "bytes": 661,
+      "sha256": "dc7edc429bd2e8d2dc26224fac8b041567ff951a5efdf1bfe39232f27cef5cbd"
+    },
+    {
+      "path": "product-evaluator-verification.json",
+      "bytes": 485,
+      "sha256": "3e7520d71796ded2473cf02128025b6f833cc1b99fb7bf9cdf1af2c198e5d7c2"
+    },
+    {
+      "path": "product-evaluator.json",
+      "bytes": 99767,
+      "sha256": "67749b01a682191887e14681238b606973cc77206baf8f302535d5d174bb0940"
+    },
+    {
+      "path": "product-evaluator.py",
+      "bytes": 4364,
+      "sha256": "73b97f90bb25f5578b0f9f7a630f4eaad5d4956e0756bb38743bdb06623c215d"
+    },
+    {
+      "path": "product-profile-plan.md",
+      "bytes": 621,
+      "sha256": "2e47ef8c639e7bd9e5c7cd1af934d4284acde1483ff3d2082df4a183005d56bf"
+    },
+    {
+      "path": "product-profile-verification.json",
+      "bytes": 284,
+      "sha256": "f4b0bd27ca51d036edc44a20d545439224ed6c947f8fad5e5bc9b0eeb063986e"
+    },
+    {
+      "path": "product-profile.json",
+      "bytes": 81321,
+      "sha256": "055d6250fcfe337a5142668fc052db087059d6064eb098fce6887c6f5af0c272"
+    },
+    {
+      "path": "product-profile.py",
+      "bytes": 5487,
+      "sha256": "0697f1cb141db12b5c3715178c250bfc9ae9fdefc481e8bc5c5693458955f296"
+    },
+    {
       "path": "q-attribution-plan.md",
       "bytes": 777,
       "sha256": "0de837a7326991178d7de9fe44f0301c6d0a0a64c925d8b0ed04f334ca0c0691"
@@ -485,8 +540,8 @@
     }
   ],
   "archive_path": "docs/archive/generated_semantic_bridge_20261011/evidence.zip",
-  "archive_bytes": 350916,
-  "archive_sha256": "5e3d27dd36e1481ca04c0b2be6cc84bc6f1152250bf76cb2d8d0f230caef8859",
+  "archive_bytes": 377491,
+  "archive_sha256": "1079d628f8686177d2fd22f9fe827209fcbb004986076482fdb301d06b309782",
   "verification": {
     "complete": true,
     "counts": {
@@ -544,5 +599,26 @@
     "tests/product/test_search_path_runtime.py": "8492afe2ea32470b085a4e08b6bc5bf6eddc04250a463288aca15841707ffa7a",
     "generic_chess/ai/alphabeta/ordering.py": "1cd2b9f515b2aa2cfe83f32edc3c04ef98cafd79ab370452fe89fdcc312f281e"
   },
-  "source_hash_note": "Raw source bytes and canonical LF bytes both pinned; archived original evidence bytes unchanged."
+  "source_hash_note": "Raw source bytes and canonical LF bytes both pinned; archived original evidence bytes unchanged.",
+  "product_evaluator_verification": {
+    "complete": true,
+    "fixed_calls": 24,
+    "curve_calls": 24,
+    "profile_pairs": 8,
+    "root_evaluations": 8,
+    "unique_child_evaluation_pairs": 107,
+    "hashes": {
+      "product-evaluator": "67749b01a682191887e14681238b606973cc77206baf8f302535d5d174bb0940",
+      "product-evaluator-curves": "ae9fd5f0a937dba86b0388a7ee7a494338a19f0a53dff11f1552b997e271f3f5"
+    },
+    "scope": "product profile/evaluator at finite exposed advancing roots; no strength or material-score cross comparison"
+  },
+  "product_profile_verification": {
+    "complete": true,
+    "calls": 18,
+    "within_arm_work_return_equal": true,
+    "exclusive_sums_exact": true,
+    "source_sha256": "0697f1cb141db12b5c3715178c250bfc9ae9fdefc481e8bc5c5693458955f296",
+    "result_sha256": "055d6250fcfe337a5142668fc052db087059d6064eb098fce6887c6f5af0c272"
+  }
 }
