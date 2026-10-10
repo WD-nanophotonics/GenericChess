@@ -1,0 +1,169 @@
+{
+  "setup_review": {
+    "question": "Does one-shot setup erase the indexed warm-execution gain on these existing roots?",
+    "scope": "Recorded 48 calls only; both arms paid index construction; no estimate of unbuilt-index counterfactual. Factory includes compilation/root setup and may build derived metadata twice. Search deadline excludes factory. No strength or setup SLA claim. Source preflight: Chess and Shogi factories reuse a precompiled object created before call timing; generated factories reconstruct. Therefore factory fractions exclude familiar cold compilation and are not cold startup evidence.",
+    "result": {
+      "chess-ep": {
+        "factory_min_seconds": 0.009658999741077423,
+        "factory_median_seconds": 0.00982105010189116,
+        "factory_max_seconds": 0.01367649994790554,
+        "one_second_factory_fraction": [
+          0.010895394202544442,
+          0.009824553772485145
+        ]
+      },
+      "generated-202610082000-ply3": {
+        "factory_min_seconds": 0.012321500107645988,
+        "factory_median_seconds": 0.012905000010505319,
+        "factory_max_seconds": 0.02815339993685484,
+        "one_second_factory_fraction": [
+          0.012788744330499348,
+          0.013162032717698963
+        ]
+      },
+      "generated-202610082001-ply3": {
+        "factory_min_seconds": 0.011753099970519543,
+        "factory_median_seconds": 0.015114350244402885,
+        "factory_max_seconds": 0.03818590007722378,
+        "one_second_factory_fraction": [
+          0.03712592521399794,
+          0.014162368470024191
+        ]
+      },
+      "shogi-drop": {
+        "factory_min_seconds": 0.0004544002003967762,
+        "factory_median_seconds": 0.00046889972873032093,
+        "factory_max_seconds": 0.0004952000454068184,
+        "one_second_factory_fraction": [
+          0.00047392602746963285,
+          0.000488498636438259
+        ]
+      }
+    },
+    "decision": "Retain warm traversal repair; comparator must report one-shot factory separately. Next specialized/Core bridge needs common setup/deadline definition, not speed multiplication."
+  },
+  "bridge_preflight": {
+    "question": "Is the indexed Core/specialized identical-AB entry ready for the next residual-cost comparison?",
+    "scope": "Two existing roots D1 preflight, cooperative live polling, same lexical order/material/mate/history; not repeated timing evidence, no utility labels or frozen-budget extension",
+    "rows": [
+      {
+        "case": "chess-ep",
+        "root_audit_states": 1,
+        "compile_seconds": 0.030445399694144726,
+        "core_setup_seconds": 0.025770599953830242,
+        "specialized_setup_seconds": 0.00014779996126890182,
+        "core": {
+          "move": "e5d6",
+          "score": 100,
+          "reason": "completed_depth",
+          "wall_seconds": 0.004600999876856804,
+          "completed_depth": 1,
+          "work": {
+            "nodes": 32,
+            "leaves": 31,
+            "terminal_queries": 32,
+            "legal_queries": 1,
+            "pushes": 31,
+            "cutoffs": 0,
+            "root_completed": 31
+          },
+          "trace_sha256": null,
+          "runtime_counters": {
+            "pushes": 31,
+            "pops": 31,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0,
+            "child_external_key_computations": 0,
+            "history_reconstruction_attempts": 0,
+            "opaque_history_child_external_key_computations": 0
+          },
+          "native_provider_active": false
+        },
+        "specialized": {
+          "move": "e5d6",
+          "score": 100,
+          "reason": "completed_depth",
+          "wall_seconds": 0.0007397998124361038,
+          "completed_depth": 1,
+          "work": {
+            "nodes": 32,
+            "leaves": 31,
+            "terminal_queries": 32,
+            "legal_queries": 1,
+            "pushes": 31,
+            "cutoffs": 0,
+            "root_completed": 31
+          },
+          "trace_sha256": null,
+          "runtime_counters": {},
+          "native_provider_active": null
+        }
+      },
+      {
+        "case": "shogi-drop",
+        "root_audit_states": 1,
+        "compile_seconds": 0.09443419985473156,
+        "core_setup_seconds": 0.006780399940907955,
+        "specialized_setup_seconds": 9.740004315972328e-05,
+        "core": {
+          "move": "5i4h",
+          "score": 700,
+          "reason": "completed_depth",
+          "wall_seconds": 0.019911000039428473,
+          "completed_depth": 1,
+          "work": {
+            "nodes": 164,
+            "leaves": 163,
+            "terminal_queries": 164,
+            "legal_queries": 1,
+            "pushes": 163,
+            "cutoffs": 0,
+            "root_completed": 163
+          },
+          "trace_sha256": null,
+          "runtime_counters": {
+            "pushes": 163,
+            "pops": 163,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0,
+            "child_external_key_computations": 0,
+            "history_reconstruction_attempts": 0,
+            "opaque_history_child_external_key_computations": 0
+          },
+          "native_provider_active": false
+        },
+        "specialized": {
+          "move": "5i4h",
+          "score": 700,
+          "reason": "completed_depth",
+          "wall_seconds": 0.0010187998414039612,
+          "completed_depth": 1,
+          "work": {
+            "nodes": 164,
+            "leaves": 163,
+            "terminal_queries": 164,
+            "legal_queries": 1,
+            "pushes": 163,
+            "cutoffs": 0,
+            "root_completed": 163
+          },
+          "trace_sha256": null,
+          "runtime_counters": {},
+          "native_provider_active": null
+        }
+      }
+    ],
+    "decision": "Entry aligned for declared paired deeper/time comparison; compilation and root setup measured separately; D1 is readiness only",
+    "first_invocation_failure": "Direct script path lacked repository sys.path; executed unchanged source from repository root via exec compile."
+  }
+}
