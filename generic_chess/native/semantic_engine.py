@@ -30,6 +30,16 @@ DECLARATION_ACTION_TAG = 1 << 63
 
 @dataclass(frozen=True, slots=True)
 class SemanticIterativeSearchResult:
+    """Search estimate and a legally replayable continuation.
+
+    ``score`` belongs to this search configuration and its cache policy; neither
+    it nor ``completed_depth`` certifies the value of the literal PV leaf or a
+    terminal outcome. In particular, cached/selective continuations need not be
+    a full-width finite-depth witness. Adjudicate outcomes from the game state.
+    ``elapsed_seconds`` measures kernel search; callers also pay for packing,
+    public-action validation and returned leaf features.
+    """
+
     score: int
     action: Action | None
     declaration_id: str | None

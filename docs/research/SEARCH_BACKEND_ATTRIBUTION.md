@@ -701,3 +701,69 @@ of the supported gap, while specialized rule execution remains independently
 material. Next isolate the remaining terminal/state cost or verify deployment on
 an approved runtime; do not substitute another chess-specific solution for the
 generated-rule target or restart price/learning work merely at this milestone.
+
+## Terminal/frontier, dispatch and scheduling — 2026-10-10
+
+Evidence: `data/terminal_frontier_20261010.json` indexes the source-pinned purpose
+archive. Scoped exposed development, same installed v4 binary; final C candidate
+remains blocked/restored. No teacher extension, UI change or strength claim.
+Initial algorithm/factor timers accidentally overlapped: entire first sets stay
+archived/ineligible;120 formal algorithm cells and24 factor calls/12 profiles
+were rerun serially with the same declared caps/orders. Negative prototypes and
+earlier packed-action/source-prefix failures remain, rather than favorable subsets.
+
+Native terminal C calls account for38–43% of three instrumented4096-entry totals,
+while only331–413 nodes request full frontiers. Availability is insufficient to
+reconstruct history/repetition/perpetual/automatic/max-ply adjudication. Core
+terminal-prefix reuse preserves3974 full states and24 decisions but slows fixed
+calls5–11%; reject. Six coldD3 Native caller profiles show tiny returned feature
+cost; replay/packing matter relatively on the very short promotion root. Clarify
+kernel versus caller time and estimated score/PV contract, without an unused API.
+
+The simplest inline Core budget dispatch removes a second function call while
+retaining every semantic poll, current node cap/live deadline/cancellation and
+abort precedence.40 installed q2 fixed1024 controls cover8Chess/Shogi and2generated
+roots: exact action/score/PV/non-time statistics agree; mean local reductions
+4.49–12.60%.18 interactive variants/9 actual count-triggered cancellations and
+24 externally requested timed cancellations retain restoration. Post-repair
+maximum observed request-to-return1.108ms; instrumentation/timer scheduling and
+small cohort preclude an SLA.101 focused regressions pass.96 common-time calls
+(48 matched pairs,1/4sec,q0/q2,1million fuse) mainly retain decisions/completion;
+EPq0 at4sec reachesD4/c2c3 versusD3/b1c3 in both reversed pairs. This is scoped
+completion evidence; do not interpret depth or changed choices as playing gain.
+
+Compiled-lifetime compatibility atlas is a changed premise from earlier rejected
+per-constructor filtering.3974 full-state audits/9928 all-square pseudoattack
+queries agree;36 calls preserve fixed signatures. Only1.27–1.97% fixed savings
+and no timed completion gain: defer integration. Post-repair two disjoint profiles
+put geometry query bodies at6.375%/2.213% of instrumented total, giving only
+1.068x/1.023x perfect-removal ceilings for those bodies. Not all attack cost,
+not deployment throughput, no inclusive-span summation or cache expansion.
+
+Thirty-two Shogi paired resource cells expose100k premature stop;500k consumes
+the1second but leavesD4/choice unchanged on tactic/drop. Original52 cells stay.
+The120 crossed algorithm curves distinguish minimal Core/Native/specialized,
+product Core/Native legality and full Native. Initialization, caller/kernel and
+external PV validation remain separate; numeric node units differ. Thin AB polls
+at visits, product inside semantic units. TT/order factors retain finiteD3 scores
+but ordering and cancellation differ; no single isolated algorithm-speed claim.
+
+Existing Native trace is unsuitable for cheap PV phase attribution:8 coldD3
+OFF/ON calls keep outputs/work but trace costs3.29–4.09x caller time, retaining
+4096 rows versus25824/41620 raw events.188719802bytes of JSON are preserved in
+the compressed archive; feature materialization/recording cost is reported, not
+free instrumentation. No phase/re-search tag or unique-state guarantee. Keep OFF.
+Twelve fixedD3 full/minimal calls and six cumulative minimalD1–D3 calls motivate
+further scheduling diagnosis: cumulative minimal1944/2027/2112 entries versus
+full25824/41620/68505, caller about0.14/0.12/0.18 versus0.90/1.03/1.50sec.
+Counts, tie/order and PV contracts differ. The single-depth runner also uses a
+different canonical key; it does not isolate iteration overhead. Native mate
+scale1e8 versus diagnostic1e9 requires distance-aware interpretation. These are
+same-backend scoped scheduling observations, not proof that PV replay alone
+explains the gap. Source-only full-window explanation stays a hypothesis.
+
+Dot's complete fresh request reply was read/reconciled: adopt removable-cost,
+disjoint-time and cancellation-latency limits; no independent rerun or operating
+policy change. Next align cooperative budgeting in the diagnostic or measure one
+bounded attack-dispatch mechanism. Phase-specific C counters require supported
+execution first; no retry of the blocked binary or security workaround.

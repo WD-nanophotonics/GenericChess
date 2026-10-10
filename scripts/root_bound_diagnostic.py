@@ -37,8 +37,10 @@ def root_search(board, depth, *, mode='verified', reverse=False, reverse_interio
     action=None
 
     def visit(left, alpha, beta, ply):
-        if work['nodes'] >= node_limit or perf_counter()-start >= seconds:
-            raise Exhausted
+        if work['nodes'] >= node_limit:
+            raise Exhausted('node_budget')
+        if perf_counter()-start >= seconds:
+            raise Exhausted('time_limit')
         work['nodes']+=1;work['terminal_queries']+=1
         terminal=board.terminal(ply)
         if terminal is not None or left==0:
@@ -76,8 +78,10 @@ def root_search(board, depth, *, mode='verified', reverse=False, reverse_interio
         return Estimate(-child.score,{'EXACT':'EXACT','UPPER':'LOWER','LOWER':'UPPER'}[child.bound],(move,*child.pv))
 
     try:
-        if node_limit<1 or seconds<=0:
-            raise Exhausted
+        if node_limit<1:
+            raise Exhausted('node_budget')
+        if seconds<=0:
+            raise Exhausted('time_limit')
         work['nodes']+=1;work['terminal_queries']+=1
         terminal=board.terminal(0)
         if terminal is not None:
@@ -106,12 +110,14 @@ def root_search(board, depth, *, mode='verified', reverse=False, reverse_interio
                     incumbent=estimate;action=move;label=candidate_label;entry['installed']=True
                 work['root_completed']+=1
         complete=True
-    except Exhausted:
+        exit_cause='completed_depth'
+    except Exhausted as exc:
         complete=False
+        exit_cause=str(exc)
     if not board.restored():
         raise AssertionError('root not restored')
     return dict(move=label,action=action,score=None if incumbent is None else incumbent.score,
                 pv=() if incumbent is None else incumbent.pv,
                 bound=None if incumbent is None else incumbent.bound,
                 completed_depth=depth if complete else 0,reason='completed_depth' if complete else 'budget',
-                work=work,candidates=candidates,root_restored=True,wall_seconds=perf_counter()-start)
+                exit_cause=exit_cause,work=work,candidates=candidates,root_restored=True,wall_seconds=perf_counter()-start)

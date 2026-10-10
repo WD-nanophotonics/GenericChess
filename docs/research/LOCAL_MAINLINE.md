@@ -90,6 +90,29 @@ already uses absence; future material-only attribution must use that control.
 Keep the old zero-profile pilot and semantic defect distinct. This scoped result
 does not establish strength or a universal factor. No timing/workflow policy change.
 
+## Semantic dispatch and scheduling checkpoint — 2026-10-10
+
+The simplest Core semantic checkpoint now inlines budget dispatch, retaining
+every poll, live deadline and node/cancel/time precedence.40 fixed-work q2
+calls retain exact decisions/PVs/non-time counters, with local mean reductions
+4.49–12.60%;96 common-time calls mostly keep completion/choices, with EPq0
+at4seconds reachingD4 versusD3 twice.24 real external cancellations unwind;
+observed latency is descriptive, not a responsiveness guarantee or strength gain.
+
+Terminal-prefix reuse regresses5–11% and is rejected. Compile-owned compatibility
+atlas preserves3974 states/9928 pseudoattack queries but saves only1.27–1.97%,
+without timed completion gain; defer integration. Post-repair direct geometry
+bodies are only6.38%/2.21% of two instrumented totals, not all attack cost.
+Native training trace costs3.29–4.09x and lacks re-search phase labels; keep OFF.
+Same-backend fixedD3 work comparisons motivate scheduling attribution but cannot
+isolate PV/iteration causes: counts, order/ties and mate scales differ. Final C
+deployment remains blocked/restored; no retry, default change or UI propagation.
+Dot's complete fresh-thread review is adopted without an independent rerun or
+workflow change. Initial overlapping timing sets are retained as ineligible;
+formal curves are serial. Evidence: SEARCH_BACKEND_ATTRIBUTION.md and
+data/terminal_frontier_20261010.json. Next quantify one supported scheduling or
+attack-dispatch mechanism by useful completion and actual cost, not hotspot alone.
+
 ## Retained lines and prior evidence
 
 Latest search-first continuation: narrowed-root bound equality is reproduced by
