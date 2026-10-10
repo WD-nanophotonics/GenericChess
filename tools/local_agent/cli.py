@@ -20,7 +20,8 @@ def consultation_summary(result: dict) -> dict:
             'thread_ts', 'response_sha256', 'unreviewed_response_sha256',
             'evaluation', 'held_events', 'automatic_retry_available', 'request_readback') if key in result} | {
             'matched_reply_posts': len({v['message_ts'] for v in result.get('revisions', [])}),
-            'reply_revision_count': len(result.get('revisions', []))}
+            'reply_revision_count': len(result.get('revisions', [])),
+            'supplement_thread_count': len(result.get('supplement_threads', {}))}
 
 
 def status() -> dict:
@@ -117,6 +118,7 @@ def parser() -> argparse.ArgumentParser:
     rec = sub.add_parser("reconcile")
     rec.add_argument("--request-id", required=True)
     rec.add_argument("--snapshot-file", type=Path)
+    rec.add_argument("--supplement-thread", action="store_true", help="explicitly associate a complete advisor-origin thread; never rebind the original request")
     rec.add_argument("--sent-receipt-file", type=Path, help="known successful root only; rendered payload remains unverified")
     rec.add_argument("--decision", choices=["adopt", "defer", "reject"])
     rec.add_argument("--reason")
@@ -170,10 +172,16 @@ def main(argv: list[str] | None = None) -> int:
         elif args.command == "consult-status":
             result = consult_status(request_id=args.request_id)
         elif args.command == "reconcile":
+            if bool(args.decision) != bool(args.reason):
+                raise LocalFlowError('decision and evidence-based reason must be supplied together')
+            if args.supplement_thread and not args.snapshot_file:
+                raise LocalFlowError('supplement thread requires a complete snapshot')
             if args.sent_receipt_file and not args.snapshot_file:
                 raise LocalFlowError('send receipt requires a complete thread snapshot')
             if args.snapshot_file:
-                result = reconcile_snapshot(args.request_id, args.snapshot_file, args.sent_receipt_file)
+                result = reconcile_snapshot(args.request_id, args.snapshot_file, args.sent_receipt_file, args.supplement_thread)
+                if args.decision:
+                    result = record_decision(args.request_id, args.decision, args.reason)
             elif args.decision and args.reason:
                 result = record_decision(args.request_id, args.decision, args.reason)
             else:

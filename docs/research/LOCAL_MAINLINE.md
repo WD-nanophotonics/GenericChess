@@ -4,7 +4,45 @@ AGENTS.md and user directions govern. Science is OPEN. This file contains curren
 questions and decision boundaries; detailed history is routed below, not a backlog.
 Milestones, tests, consultation and publication are research checkpoints.
 
-## Two lines and immediate work
+## Current priority — 2026-10-10 user-requested handoff review
+
+Search diagnosis comes first; rule-derived/statistically averaged prices and
+small learned evaluators remain subsequent goals, not equally scheduled tracks.
+Compare (1) generated-rule backend with the current supported generic search,
+(2) minimal alpha-beta with Chess/Shogi specialized rule libraries, and (3)
+mature engines. Add a thin same-minimal-AB/generic-backend bridge to separate
+backend costs from algorithm effects. Minimal AB fixes move order, terminal and
+material evaluation; no implicit TT/PVS/qsearch/reductions. Retain legality,
+promotion, drops, auxiliary state and relevant history. Familiar games are
+necessary special cases, not substitutes for generated-rule transfer.
+
+Report fixed primitive cost, actual search work/completion, and equal-time
+decision utility separately. Record actual Core/Native/fallback, node definitions,
+initialization versus warm execution, instrumentation overhead, root coverage,
+exit cause and proven terminal versus heuristic result. Mature engines whose
+evaluation cannot be aligned are overall references, not material-only controls
+or isolated evidence about search. First inventory runnable entries and aligned
+small Chess/Shogi positions; fix material as a control rather than fit it.
+
+Infrastructure repair is research work when a demonstrated semantic, execution,
+scheduling or comparability gap blocks judgment. State the gap and verify cost
+and decision/completion effects; avoid an unbounded redesign. Older anti-engineering
+or narrow-track guidance must not keep an evidenced bottleneck in place.
+
+Later price work may estimate fixed relative vectors from dynamic contributions
+under an explicit meaningful play distribution. Context dependence does not by
+itself refute averaging. Separate sampling error, conditional variation and
+distribution shift; examine multiple extreme starting prices without human-table
+fitting, exposed-label reuse or treating forced normalization as convergence.
+Generic methods may yield different vectors for different rules. Small networks
+are eligible candidates; search evidence determines the next investment.
+
+Basis: current user instruction to absorb dot's complete three-part handoff.
+Dot relayed direction and proposed the bridge/metrics; it did not independently
+run the benchmarks or inspect every manual line. No change to single writer,
+duration, heartbeat, stops, publication or the >1hour-run necessity consultation.
+
+## Retained lines and prior evidence
 
 1. Rule-only generic piece-value generation: cross-game ordering/ratios and bias.
    Games diagnose price holes; no human-price fitting, Elo or positional patches.
@@ -13,7 +51,7 @@ Milestones, tests, consultation and publication are research checkpoints.
    Learning-based evaluation candidates may receive low-cost feasibility review;
    no large training or extra worker follows from that choice.
 
-Near-term priority: compare rule-generated constants, learned/frozen constants
+Subsequent evaluation priority after search attribution: compare rule-generated constants, learned/frozen constants
 and small state-interaction evaluators by supported state domain, useful signal
 and end-to-end cost. EVALUATION_ROUTES.md records the first evidence-based choice.
 Static tables remain a candidate/baseline, not a mandatory predecessor. Generic

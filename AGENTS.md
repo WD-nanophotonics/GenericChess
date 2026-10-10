@@ -44,7 +44,22 @@ unexposed validation status. Compare methods under the same resource condition
 or report resource/result curves. No result-driven extension of frozen tests,
 runaway jobs, extra fees/workers or access bypass. See LOCAL_AGENT.md Budget.
 
-Current primary research, clarified by user2026-10-07 and verified2026-10-08,
+Current priority, updated by the user-requested2026-10-10 handoff review:
+search capability comparison and bottleneck attribution first. Compare supported
+generic search/backend, minimal alpha-beta with Chess/Shogi specialized rules,
+and mature engines; use the same minimal AB on generic rules as a thin attribution
+bridge. Separate rule execution, repeated scheduling, representation costs,
+algorithm optimizations and budget completion. Fixed primitive cost, defined
+work counts and equal-time decision usefulness are distinct evidence. Record
+actual backend/fallback and evaluation differences; unaligned mature engines are
+overall references, not material-only search controls. Small predeclared positions
+precede large games/Elo. Infrastructure gaps that impede these judgments should
+be repaired and their effects measured, not deferred merely as engineering.
+Price/statistical averaging and small learning routes remain later goals;
+context dependence alone does not refute a fixed vector averaged under an
+explicit play distribution. No timing, stop, publication or long-run rule changes.
+
+Retained long-term research, clarified by user2026-10-07 and verified2026-10-08,
 has two lines: rule-only generic piece-value generation, cross-game ordering/
 ratio comparisons and explanation of bias; and efficient/stable search with a
 generic interface on unfamiliar rules (familiar-piece mixtures, recombined
@@ -115,6 +130,21 @@ sending. Send only concrete useful questions/evidence, not routine acknowledgeme
 Use consult/consult-status/reconcile; immutable IDs/hashes/root ts bind requests.
 Verified account identity, not TYPE/ID, authenticates the sender. Dot shares
 the current account. Paths do not give dot local access; attach bounded evidence.
+At every recovery and useful consultation checkpoint read channel new roots
+as well as relevant threads, with pagination/coverage recorded; do not inspect
+only pending requests. User2026-10-10 explicitly requires: whenever the user
+asks to ask Slack, obtain new requirements or inquire about direction, open a
+NEW THREAD with TYPE=AGENT_REQUEST and a fresh REQUEST_ID. Never send that
+inquiry as a follow-up, reuse an old thread, or use AGENT_FOLLOWUP. This overrides
+the earlier compatible same-thread renewal convention for these user requests.
+Agent-initiated evidence-based review of an existing technical question may
+use AGENT_REQUEST plus original ID/unique FOLLOWUP_ID in its existing thread;
+it is not a template for explicit user-directed Slack inquiries.
+EVIDENCE/RESULT are informational. Advisor-origin new threads
+are explicitly associated as supplements, never rebound as the original root.
+Keep per-followup pending/received/evaluated/applied/deferred records and exact
+message versions. Delivery is not response or adoption; missed events and
+latency are observable limitations, not guaranteed wake/reply promises.
 Read all posts/pages and preserve raw output before reconcile/adoption; completed
 requests can get supplements. Standing authorization also covers Agent judgment
 about resend/recontact, reaffirmed2026-10-05; no per-attempt user approval is

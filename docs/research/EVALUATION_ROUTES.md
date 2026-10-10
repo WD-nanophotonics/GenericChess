@@ -9,6 +9,13 @@ is no longer Main: either outcome alone would not select an evaluation family.
 
 ## Shared target and comparison
 
+Current scheduling update2026-10-10: search-first layer attribution now precedes
+further evaluation training/price averaging. LOCAL_MAINLINE.md owns the adopted
+three-level comparison, same-minimal-AB bridge, actual backend/evaluation controls
+and cost/work/equal-time decision metrics. Retain the candidates and negative
+records here; the response-placement experiment below is paused after one pilot
+under the user's explicit workflow-review instruction. It is not the next task.
+
 Latest allocation checkpoint2026-10-10: retain installed Core/static baselines.
 The fresh2180-2183 fixed small completion prepass+residual Core cohort finishes
 16games645plies, but its eight resolved roots contain no nonterminal winning
@@ -23,7 +30,7 @@ and caller50.330sec Core/52.461sec combined. This fixed local sample supports
 deferring the allocation, not forbidding all completion-aware methods.
 The56D6common-parent choices/exposures also agree. Its caller saving belongs
 to two already-known resolved shortcuts;54unknown deferrals cost109.542sec
-Core/110.003sec combined. Next examine response-support placement/reuse, not
+Core/110.003sec combined. The earlier next question was response-support placement/reuse, not
 an unconditional per-leaf scan or a larger prepass. No model/default changes.
 COMPLETION_SEARCH_FEASIBILITY.md owns the costs and recovery.
 Conditional response support remains a candidate premise: identical checking-

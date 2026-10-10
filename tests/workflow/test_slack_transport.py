@@ -341,3 +341,65 @@ def test_uncertain_emphasis_rendered_send_recovers_without_resending(env):
     result = s.reconcile(r['request_id'])
     assert result['thread_ts'] == '100.100000' and result['state'] == 'PENDING'
     assert s.begin_send(r['request_id'])['automatic_retry_available'] is False
+
+
+def supplement_snapshot(env, r, *, user='U2', project='GenericChess', complete=True):
+    body = f'TYPE=DOT_REPLY\nPROJECT={project}\nREQUEST_ID={r["request_id"]}\nPART=1/2\nNew direction'
+    text = ('=== THREAD PARENT MESSAGE ===\nFrom: Advisor ('+user+')\nTime: JST\n'
+            'Message TS: 200.100000\n'+body+'\n\n=== THREAD REPLIES (1 total) ===\n'
+            '\n--- Reply 1 of 1 ---\nFrom: Advisor (U2)\nTime: JST\n'
+            'Message TS: 201.100000\nTYPE=DOT_REPLY\nPROJECT=GenericChess\n'
+            f'REQUEST_ID={r["request_id"]}\nPART=2/2\nREPLY_COMPLETE=true\nUseful supplement\n')
+    path = env.parent/'supplement.json'
+    write_json(path, dict(source='Slack plugin read_thread', team_id='T1', channel_id='C1',
+                         thread_ts='200.100000', tool_result={'content':[{'type':'text',
+                         'text':json.dumps(dict(messages=text, pagination_info=
+                         'There are no more messages in this thread.' if complete else 'next cursor'))}]}))
+    return path
+
+
+def test_explicit_supplement_keeps_original_binding_and_reopens_completed_review(env):
+    c=s.config();c.update(advisor_bot_id=None,advisor_app_id=None);write_json(s.CONFIG,c)
+    r=sent(env);rid=r['request_id']
+    s.ingest(event(r));s.reconcile(rid);s.decision(rid,'defer','old advice assessed')
+    before=s.status(rid);path=supplement_snapshot(env,r)
+    with pytest.raises(LocalFlowError):s.import_snapshot(rid,path)
+    result=s.import_snapshot(rid,path,supplement=True)
+    assert result['thread_ts']==before['thread_ts']=='100.100000'
+    assert result['payload_sha256']==before['payload_sha256']
+    assert len(result['revisions'])==3 and result['unreviewed_response_sha256']
+    assert result['evaluation']==before['evaluation']
+    assert len(s.import_snapshot(rid,path,supplement=True)['revisions'])==3
+    reviewed=s.decision(rid,'adopt','explicit review of both supplement parts')
+    assert not reviewed['unreviewed_response_sha256']
+    assert 'Useful supplement' in reviewed['response']
+
+
+@pytest.mark.parametrize('changes',[dict(user='Uwrong'),dict(project='Other'),dict(complete=False)])
+def test_supplement_rejects_wrong_identity_project_and_incomplete_read(env,changes):
+    c=s.config();c.update(advisor_bot_id=None,advisor_app_id=None);write_json(s.CONFIG,c)
+    r=sent(env);path=supplement_snapshot(env,r,**changes)
+    with pytest.raises(LocalFlowError):s.import_snapshot(r['request_id'],path,supplement=True)
+    assert not s.status(r['request_id']).get('supplement_threads')
+
+
+def test_supplement_cannot_recover_an_uncertain_send_or_certify_missing_bot_identity(env):
+    r=s.consult(env);s.begin_send(r['request_id']);path=supplement_snapshot(env,r)
+    with pytest.raises(LocalFlowError,match='bound original'):s.import_snapshot(r['request_id'],path,supplement=True)
+    s.bind_sent(r['request_id'],'C1','100.100000')
+    with pytest.raises(LocalFlowError,match='bot/app'):s.import_snapshot(r['request_id'],path,supplement=True)
+
+
+def test_cli_snapshot_and_explicit_decision_are_both_executed(env, monkeypatch):
+    from tools.local_agent import cli
+    calls=[]
+    monkeypatch.setattr(cli,'reconcile_snapshot',lambda *args: calls.append(('read',args)) or {})
+    monkeypatch.setattr(cli,'record_decision',lambda *args: calls.append(('decision',args)) or {})
+    args=['reconcile','--request-id','R1','--snapshot-file','raw.json',
+          '--supplement-thread','--decision','adopt','--reason','reviewed evidence']
+    assert cli.main(args)==0
+    assert [c[0] for c in calls]==['read','decision']
+    assert calls[0][1][-1] is True
+    assert calls[1][1]==('R1','adopt','reviewed evidence')
+    calls.clear()
+    assert cli.main(args[:-2])==2 and not calls

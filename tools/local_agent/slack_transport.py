@@ -289,7 +289,7 @@ def _known_receipt_readback(r, root, receipt_path):
                 limitation='Rendered parent payload/code not byte-verified; historical send-argument binding not established by this importer. Advice concerns the then-visible Slack text, not verified local code bytes or execution.',at=stamp())
 
 
-def import_snapshot(rid, path, sent_receipt_path=None):
+def import_snapshot(rid, path, sent_receipt_path=None, supplement=False):
     snapshot = json.loads(path.read_text(encoding='utf-8-sig'))
     r = status(rid)
     if r.get('state') not in {'SEND_UNCERTAIN', 'PENDING', 'COMPLETED'}:
@@ -300,6 +300,28 @@ def import_snapshot(rid, path, sent_receipt_path=None):
         raise LocalFlowError('snapshot belongs to another Slack target')
     messages = parse_plugin_thread(snapshot['tool_result'])
     root = messages[0]
+    if supplement:
+        if not r.get('thread_ts') or sent_receipt_path is not None:
+            raise LocalFlowError('supplement requires a bound original request, not send recovery')
+        markers = {key: re.findall(r'(?m)^'+key+r'=([^\s]+)\s*$', root['text'])
+                   for key in ('TYPE', 'PROJECT', 'REQUEST_ID')}
+        if (root['user'] != r['advisor_user_id'] or snapshot.get('thread_ts') != root['ts']
+                or markers != dict(TYPE=['DOT_REPLY'], PROJECT=['GenericChess'], REQUEST_ID=[rid])):
+            raise LocalFlowError('supplement root identity, project or request does not match')
+        if r.get('advisor_bot_id') or r.get('advisor_app_id'):
+            raise LocalFlowError('rendered supplement cannot verify required bot/app identity')
+        with database() as db:
+            current = get(db, rid)
+            bindings = current.setdefault('supplement_threads', {})
+            bindings[root['ts']] = dict(root_sha256=digest(root['text']),
+                                       snapshot=str(path), reviewed_at=stamp())
+            put(db, current)
+        for msg in messages:
+            ingest({'team_id': r['team_id'], 'event_id': 'plugin-observation-' + digest(
+                    json.dumps([r['channel_id'], msg['ts'], msg['text']], ensure_ascii=False)),
+                    'source': 'Slack plugin supplement',
+                    'event': dict(type='message', channel=r['channel_id'], **msg)})
+        return reconcile(rid)
     if (root['user'] != r['sender_id'] or snapshot.get('thread_ts') != root['ts']
             or (r.get('thread_ts') and r['thread_ts'] != root['ts'])):
         raise LocalFlowError('Slack root account or thread does not match')
@@ -375,7 +397,7 @@ def reconcile(rid):
                 clean = re.sub(r'<@([^>|]+)\|[^>]+>', r'<@\1>', text)
                 if msg.get('user') == r['sender_id'] and _payload_matches(clean.split('\n*Sent using*')[0], r['message']):
                     r['thread_ts'] = msg['ts']; r['state'] = 'PENDING'
-            if row['thread'] != r.get('thread_ts'):
+            if row['thread'] not in {r.get('thread_ts'), *r.get('supplement_threads', {})}:
                 continue
             if typ != ['DOT_REPLY']:
                 continue

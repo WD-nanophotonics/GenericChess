@@ -114,9 +114,13 @@ sending, account-wide zero usage or arbitrary delegation by dot.
    This explicit active reading cadence replaces the earlier five-minute
    automatic-inbox acceptance gate at the user's request.
 
-New questions use roots. Evidence and decisions stay in their original thread,
-TYPE=AGENT_EVIDENCE/AGENT_RESULT. Only explicit new AGENT_REQUEST requests a
-review. No self-reply loop, automatic resend or extra delegation. Daily 10:00
+New questions use roots and TYPE=AGENT_REQUEST. A renewed question in an
+existing thread, initiated by the Agent on an existing technical issue, ALSO
+uses TYPE=AGENT_REQUEST, original REQUEST_ID plus a new
+FOLLOWUP_ID and an explicit question/new premise. AGENT_FOLLOWUP does not enter
+the observed dot reply filter, even when its prose asks for an answer.
+TYPE=AGENT_EVIDENCE/AGENT_RESULT only synchronize evidence; no reply is expected.
+Request-level COMPLETED never closes later distinct followup questions. No self-reply loop, automatic resend or extra delegation. Daily 10:00
 Tokyo inspection is the main consultation window for major problems or new
 theory. Skip empty/duplicate questions and missed-day catchup. The90-minute local
 inspections never require dot discussion/reply. Default to independent project
@@ -196,3 +200,75 @@ dot monitoring. Restart never resumes a stop. Rollback preserves ledger, raw
 reads, code and Git history; it does not restore older transport/Goal queues.
 SQLite ledger is ignored .local_agent/slack/inbox.sqlite3; credentials are
 managed by the installed Slack plugin, never extracted into this project.
+
+## Bidirectional discovery and handoff — 2026-10-10
+
+Explicit user override2026-10-10: whenever the user instructs the Agent to ask
+Slack, obtain new requirements or inquire about research direction, CREATE A
+NEW CHANNEL ROOT with TYPE=AGENT_REQUEST and a NEW REQUEST_ID. Omit thread_ts
+and FOLLOWUP_ID. State the current question and explicitly request an answer.
+Do not use AGENT_FOLLOWUP, reuse a completed request, or put this inquiry in an
+old thread, even if the earlier same-thread request syntax could be processed.
+Existing evidence/results may be linked as context, not substituted for the
+new request. Check exact actual send arguments before execution and retain the
+receipt/root binding. This is the required template for user-directed inquiries.
+The same-thread technical renewal below only applies to Agent-initiated review
+of an existing question; it cannot override this explicit user rule.
+
+Observed failures: repeated substantive AGENT_FOLLOWUP posts did not trigger
+dot's AGENT_REQUEST filter; channel-origin three-part advice was absent from
+the old bound request thread. Both are discovery/routing defects, not evidence
+of advisor silence. Keep original ledger, sends, raw reads and adverse records.
+
+On recovery and every useful consultation checkpoint:
+1. Read #generic-chess channel roots newest-first, paging through the last
+   completely covered boundary (first recovery: current relevant-day scope).
+   Persist exact output and oldest/newest covered timestamps plus any gaps.
+2. Read all pages of new relevant advisor threads AND previously relevant
+   threads, including completed requests. Channel history does not expose every
+   new thread reply: root coverage never substitutes for thread coverage.
+3. Verify channel/account/project and correlation against actual outbound
+   arguments/receipts. Shared-account TYPE is classification, not identity proof.
+   Unknown or conflicting material is retained for explicit association.
+4. Save complete raw read before evaluation. For a new advisor-origin DOT_REPLY
+   root linked to a known request, use `reconcile --request-id ID
+   --snapshot-file WRAPPER --supplement-thread`. This verifies advisor identity,
+   project/ID and complete pagination, imports parent plus replies, preserves the
+   original bound root/payload, and exposes supplements for renewed evaluation.
+   It does not claim the new root was the Agent's original send. Independent
+   notes without a request are retained in the ignored handoff record and reviewed
+   explicitly; do not manufacture a dispatched request to fit the importer.
+5. Track each meaningful request as (REQUEST_ID,FOLLOWUP_ID), exact arguments,
+   receipt, response post/version, multipart coverage, decision/reason and applied
+   file/version. Received, evaluated and applied are different states. A newer
+   revision reopens review; old aggregate COMPLETED is not a per-followup reply.
+   Record these compact fields in ignored `.local_agent/slack/handoff.json`;
+   raw output remains under reads. NEXT_WORK points to unresolved concrete work.
+
+For a reply-needed renewal send AGENT_REQUEST with unique FOLLOWUP_ID and
+RESPONSE_REQUIRED=true, state what changed and exactly what needs review.
+Ask dot to echo IN_REPLY_TO=FOLLOWUP_ID, with PART and REPLY_COMPLETE where useful.
+These are coordination markers, not a claim of a deployed filter change.
+Ordinary evidence/results do not request answers; identical completed requests
+are not repeated reviews. Advisor-origin replies/notes never trigger Agent
+self-replies. Useful explicit recontact remains authorized after evidence/risk
+assessment, without automatic retry loops or another channel.
+
+Acceptance requires an actual delivered renewed request and observed correlated
+dot answer, plus successful local discovery/evaluation of channel-origin advice.
+Do not infer event delivery, guaranteed response or configuration changes from
+the agreed message syntax. Failures remain pending and are surfaced when they
+block a required decision. No daemon, extra worker or per-step approval queue.
+
+Observed acceptance: the new three-part advisor root was discovered, a renewed
+AGENT_REQUEST was delivered there, and dot returned a complete IN_REPLY_TO-matched
+answer. The complete read was explicitly associated and adopted locally. Dot
+reported no subscription change; channel/thread events reached it in this sample.
+DOT_NOTE remains an untested compatibility idea, not a required deployed standard.
+Normal replies use DOT_REPLY with association. The next normal recovery must
+verify persisted read coverage and pending keys; offline/exactly-once/future
+delivery guarantees are not established by this sample.
+
+The CLI now applies `--decision/--reason` after successful snapshot import.
+Previously that combination silently imported without recording adoption.
+Missing paired decision/reason is an error. Import alone still does not adopt.

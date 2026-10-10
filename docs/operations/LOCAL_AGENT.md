@@ -27,9 +27,21 @@ revisable reserves, not work quotas or an approval queue.
 
 ## Research loop
 
+Current priority is search-first attribution, described in LOCAL_MAINLINE.md
+(Current priority2026-10-10). Backend, minimal AB/optimized algorithms and
+completion prototypes are separate axes. Repair evidenced infrastructure gaps
+that block comparability; measure cost and equal-time decision/completion effects.
+Retained price/learning routes below are subsequent goals, not equal scheduling.
+
+User-directed Slack questions/new requirements/direction inquiries always use
+a fresh channel-root AGENT_REQUEST and new REQUEST_ID, never an old-thread
+follow-up. Follow SLACK_WORKFLOW.md actual argument/receipt checks. Active reads
+still include new channel roots and relevant existing threads; no read-only
+completion status closes future advice.
+
 Current science has two primary lines (user clarification verified2026-10-08):
 rule-derived generic prices with cross-game bias explanation, and unfamiliar-rule
-search efficiency/stability/interfaces. Games only diagnose price holes. Frozen
+search efficiency/stability/interfaces. Games and bounded decisions diagnose evaluation/search failures; throughput alone is not playing evidence. Frozen
 human references are comparisons, never fitting targets or universal optima.
 Do not expand player patches/reference tiers to chase strength. Explore mixtures,
 recombined mechanics and generated rules. Static tables are cheap baselines;
