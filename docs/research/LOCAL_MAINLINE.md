@@ -92,25 +92,44 @@ does not establish strength or a universal factor. No timing/workflow policy cha
 
 ## Retained lines and prior evidence
 
-Latest search-first continuation: isolated v5 builds but fresh import is blocked
-by Windows Application Control; candidate sources/tests are preserved unexecuted,
-installed v4 unchanged. Legal owner-reversed continuous-check trajectories reveal
-another fixed/probe winner-score defect; those v4 entries now explicitly reject
-that policy. The supported full-state Native/Python-AB bridge preserves24576 deep
-state/history visits and parent restorations on six existing4096-entry controls.
-Core/Native-state wall=3.37–4.43 means Native is faster; specialized Chess is still
-faster. Immutable syntax reuse remains a scoped prototype, with a finiteD4 EP
-choice gain but no strength claim. Configuration controls describe the pre-guard
-root-windowON/64MiB defaults. A subsequent completeD3 EP counterexample shows
-ON selecting f1e2/report100 although independent complete childD2 gives0;
-OFF selects f1d3/100. TT0 and cold64 both reproduce. Public ON is now rejected
-and the persistent default is full-rootOFF; cold/reused TT controls preserve
-selected-value100. Reduced work from unsafe ON is not correct-search gain.
-Next establish exact-bound canonical tie selection and interruption handling
-before reconsidering that optimization; terminal-v5 does not repair this defect.
-No automatic C repair adoption, training,
-budget expansion or UI propagation. SEARCH_BACKEND_ATTRIBUTION.md and
-data/native_terminal_20261010.json own exact source/failure/algorithm boundaries.
+Latest search-first continuation: narrowed-root bound equality is reproduced by
+an explicit Python diagnostic; verifying a contender in the original shared
+budget restores exact canonical selection on the scoped controls. Three isolated
+C builds executed successfully; root-only repair exposed warm-TT horizon mixing,
+and exact-depth eligibility removed the72-cell discrepancy. The final
+capability-tagged product build was blocked by Windows Application Control.
+Active product source and installedv4 were restored; public ON remains rejected,
+full-rootOFF remains default. Executed variants are not final deployment evidence;
+terminal-v5 remains separately unexecuted. UI stays frozen.
+
+Current warm64 full-root completed depth is cache/path dependent, not uniform
+finite-horizon VD:48 deep-to-shallow calls have6 D2 disagreements; their
+2-move PV leaf values also disagree with the report, including a nonterminal
+mate-in3 estimate. TT0 controls match. Returned PVs are illustrative, not finite
+value/mate witnesses; this alone does not prove the chosen move strategically bad. Keep same-horizon/noTT controls for attribution, distinguish selective
+mature-engine references, and retain rule/evaluator/history/q/mate/bound conditions.
+Dot's complete review supports this distinction without independent execution.
+No workflow, duration, budget or publication rule changes follow.
+
+Python exact-candidate scheduling completes deeper on4of6 fixed4096 controls,
+with scoped1second improvements and jitter. No new utility oracle or strength
+claim: existing finiteD4 labels cover only16of48 choices. Immutable syntax reuse
+helps fixed cost but adds no completion in the crossed1second cells. Existing
+transient legality avoids unused trial-history work while retaining authoritative
+terminal and real full-history pushes:3974 D2 Core/Native state audits pass,
+fixed signatures agree, generated2001 gainsD4 versusD3 in both timed pairs.
+A128-entry exact-parent successor cache is rejected at its tested capacity:
+small transition savings do not repay overhead. Keep both as isolated diagnostics.
+
+Corrected identical lexical scheduling across Core/Native/specialized backends
+retains26 identical fixed signatures and distinct26 resource-capped completions.
+All52 choices match old finiteD4 labels: EP regret100-to0 and Shogi drop400-to0
+are scoped useful differences, not strength. Specialized Shogi hits100000entries
+before1second. Next choose remaining terminal/frontier cost or approved C
+deployment verification by measurable decision benefit. Do not reconstruct
+terminal authority from mere legal availability, increase frozen teacher budgets,
+retune failed caches or automatically install a kernel. SEARCH_BACKEND_ATTRIBUTION.md
+and data/root_bound_20261010.json own exact controls, failures and source closure.
 
 1. Rule-only generic piece-value generation: cross-game ordering/ratios and bias.
    Games diagnose price holes; no human-price fitting, Elo or positional patches.

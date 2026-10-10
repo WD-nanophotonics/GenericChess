@@ -538,3 +538,166 @@ and promotion remain regret0, bare EP100; product middle/EP and generated choice
 lack matching labels and remain UNKNOWN. No new teacher call fills that gap.
 This establishes a remaining supported scheduling/algorithm completion question,
 not a reason to restore unsafe ON, replace the default algorithm or claim strength.
+
+
+## Exact contender verification and finite-horizon cache contract —2026-10-10
+
+The scoped `scripts/root_bound_diagnostic.py` is a Python root-selection
+algorithm over complete state adapters, not a complete generic player. It tags
+fail-soft child estimates relative to their input window. A narrowed contender
+can replace the incumbent only after full-window exact verification in the
+original shared time/node budget; interrupted verification leaves the incumbent
+unchanged and the root iteration incomplete. Root canonical order is independent
+of traversal. There is no TT, qsearch, reduction or new evaluator in this diagnostic.
+
+Thirty-six completeD3 feasibility calls initially found no unsafe difference under
+lexical interiors. The changed premise is reverse interior traversal:12 EP
+root/interior-order cells then reproduce unsafe f1e2/report100/independent child0;
+full and verified choose f1d3/100 throughout. Every PV is legal and parent restored.
+The unchanged first result is retained, not reported as another defect. Toy true
+and inferior ties, shared-cap interrupts and actual Native EP controls have17 tests.
+
+### Executed C candidates versus blocked final product
+
+These are distinct source/binary identities in the new purpose archive. First
+candidate verifies every potential root replacement, skips TT probes in that
+rescan, and refuses a root score contradicted by full PV replay. Its actual72
+predeclaredD3 cells include5 warm64 internal errors; cold/TT0 controls agree.
+The first fail-fast6 rows remain separately preserved; continuation completes the
+original cells rather than extending a frozen comparison to obtain success.
+Second candidate changes only score/bound cutoff eligibility from deeper-or-equal
+to equal remaining depth, retaining different-depth move ordering: all72 cells
+agree in complete root value and canonical action. A third metrics-only variant
+adds actual contender work counters. Shared-cap interrupts inside EP/generated
+rescans at2961/1550 nodes retain the previous completeD2 score/action/PV, with
+true-tie and pre-cancel recovery controls (6 rows). Build and fresh imports succeed
+for those three candidates; collection times are not matched-work speed ratios.
+
+The final capability-tagged integration is a different build. Windows Application
+Control blocks its fresh import. Its source/wrappers and failed deployment boundary
+are archived; active C/Python product files and installedv4 were restored to the
+reviewed base. Public root-windowON remains rejected and defaultOFF. No policy edit,
+retrying alternate blocked binary, security bypass or final-build test claim.
+The terminal-v5 candidate is separately unexecuted and not repaired by this work.
+Archive build hashes identify actual observations; they do not attest that the
+previously installed binary was compiled from a particular tracked source.
+
+### Uniform finite depth is a control, not a universal engine requirement
+
+Installed full-rootOFF warm-TT sequences D3,D1,D2,D3,D3,D1,D2,D3 on middle/EP/
+generated2000 produce48 calls. TT0 matches finite references; warm64 has6 D2
+mismatches. Middle finite V1=200,V2=-100,V3=100 demonstrates no monotone depth bound.
+A deeper ordinary heuristic EXACT entry therefore is not automatically an exact
+value or bound for the shallower horizon. Equal remaining depth is an isolated
+control, not a sufficient all-rule proof: history, evaluation, q/extensions,
+mate-distance and completed-bound semantics also matter. Dot's complete reply
+adopts that distinction; detailed new TT-cutoff instrumentation remains deferred
+at the final-build deployment boundary, rather than becoming a research blockade.
+
+Pinned [Stockfish17.1 primary source](https://raw.githubusercontent.com/official-stockfish/Stockfish/sf_17.1/src/search.cpp)
+uses non-PV depth/bound-based TT cutoffs alongside extensions/reductions. Inference:
+its selective reported depth and our uniform noTT/q0 control have different
+contracts. This is not a claim that deeper cache reuse is illegitimate or useless
+in playing engines. Current warm64 results must be labelled cache/path dependent,
+not uniform VD; relabelling alone does not fix a score/action inconsistency.
+
+Replaying all48 saved warm-depth PVs, without a new search, also finds6 literal
+leaf/report mismatches on the same warmD2 cells. Returned legal PVs have exactly
+2 moves: middle report0/leaf-100, EP100/0, generated2000 mate-in3/nonterminal-200.
+All42 remaining rows match. This is an observable distinction between a cached
+estimate and its truncated illustrative line, not a proof that the selected
+move is strategically bad. A warm report/PV must not be called a finite-horizon
+or mate witness; cached selective semantics require a separate stated contract.
+The first replay mistook public dataclass records for packed integers and failed
+before output; source/failure retained, corrected matching uses the actual legal
+public Action records. No oracle expansion or product TT prohibition follows.
+
+A12-cell installedOFF PV-leaf replay check matches the reported selected-line
+values on TT0/cold64. Four difficult roots cap atD3 despite requestedD4; tactic/
+promotion completeD4. Legal selected-line agreement is neither all-defense
+exactness nor broader candidate correctness.
+
+### Completion, conversion and frontier costs
+
+Forty-eight Python full/verified calls use the same4096 recursive-entry cap or
+1second with100000-entry/D12 fuse, two reversed orders and unchanged material.
+Fixed4096 verified is deeper on tactic,EP and both generated roots; EP changes
+f1e2 to f1d3 and generated2000 changes nonmate to mate at that finite horizon.
+Timed promotion/generated2000 are consistently deeper; tactic/middle vary across
+repeats. Depth and changed choices are not strength. Reusing existing finiteD4
+labels only yields16 matched choices (tactic/promotion); all32 unmatched choices
+remain UNKNOWN. No teacher, holdout or reference budget is expanded.
+
+A48-cell2x2 on EP/two generated roots crosses full/verified with bare/2048-entry
+immutable syntax reuse. Within each algorithm all fixed signatures, candidate
+records, work and PVs agree. Mean fixed wall reductions are10.7–34.4%; none of24
+timed cells adds completion within its paired algorithm. Four fixed4096 profiles
+show direct C terminal, guarded frontier and checked transitions dominate once
+conversion disappears. Inclusive profile times are not added; instrumented time
+is not production throughput.
+
+The existing transient-frontier API changes only unused trial child-key/history
+construction. Real `make_checked` pushes and exact full-history terminal queries
+remain. Three every-childD2 audits check813/1173/1988 complete states, with
+parent restoration and matching authority/frontiers/material. Twenty-four fixed/
+timed cells preserve every fixed signature; fixed wall drops28.5–42.0% relative
+to cached guarded frontiers. Generated2001 completesD4 instead ofD3 in both1second
+pairs; EP/generated2000 are unchanged. Choices remain unchanged and generated
+utility remains UNKNOWN. This supports a scoped execution improvement, not a
+full-domain product adoption. No merged terminal/frontier API exists: replacing
+terminal authority with legal availability would omit history/adjudication rules.
+
+A further128-entry successor cache retains exact parent capsule/action keys and
+complete children, preserving the same3974 audited states and fixed signatures.
+It saves only27/50/95 actual checked pushes out of4093 and worsens wall on all
+three roots. Both timed pairs retain completed depth. Reject that capacity for
+this use; no outcome-driven larger-cache tuning. Native position53920-byte size,
+retained capsule count and Python shallow bytes are recorded; memory/resource
+tradeoff is explicit rather than called an equal-memory improvement.
+
+All exact sources, original failures, outputs, compatibility notes and validation
+are routed by [the root-bound index](data/root_bound_20261010.json). It excludes
+binaries and raw Slack/account/user-private records. Active safe product and
+frozen UI branch are separate from these isolated prototypes.
+
+
+### Corrected identical scheduling still separates backend costs
+
+Fifty-two controls cross the same verified root algorithm, lexical interior and
+lexical canonical root labels with existing Chess middle/promotion/EP and Shogi
+tactic/drop. Core and specialized libraries receive identical material/terminal
+scope; Chess also receives Native transient+immutable syntax. Native Shogi
+no-move-loss remains unsupported, so no altered rule is substituted to obtain a
+Native timing.26 fixed4096 calls have identical per-case selected action/value,
+PV labels, work and contender records. Mean Chess Core/Native wall ratios are
+about5.57–5.95; Native/specialized about2.34–2.41. Shogi Core/specialized is about
+27.4 on tactic and59.3 on drop. These are scoped backend comparisons with an
+identical algorithm, not universal speed factors or mature-engine strength.
+
+|Case|Core completed depths|Native transient completed depths|Specialized completed depths|
+|---|---|---|---|
+|Chess middle|2,3|3,3|4,4|
+|Chess promotion|5,5|6,6|7,7|
+|Chess EP|3,3|4,4|4,4|
+|Shogi tactic|2,2|unsupported|4,4|
+|Shogi drop|2,2|unsupported|4,4|
+
+These26 resource-capped calls use1second AND100000 entries/D12, not pure equal-time
+runs: specialized Shogi hits the100000-entry cap at roughly0.51/0.80seconds.
+Reported wall includes legal PV replay outside the search cap, recorded separately
+by the runner's scope; small Core deadline overshoots remain visible. EP changes
+b1c3 to c2c3 atD4 on Native/specialized; other moves/depths are not automatically
+useful decisions. All52 choices match existing finiteD4 labels: timed EP regret100
+for Core
+versus0 for Native/specialized, and Shogi drop400 versus0. These finite-reference
+differences do not establish game value or strength; no references are enlarged.
+The initial runner used the unsupported catalog
+name `shogi` after36 completed Chess rows; source/failure/output are preserved.
+Continuation fixes only the builtin name and runs the original16 Shogi cells,
+retaining all36 previous rows. It is not a rerun or added sample cohort.
+
+Decision: corrected scheduling and tested cheaper Native frontiers reduce part
+of the supported gap, while specialized rule execution remains independently
+material. Next isolate the remaining terminal/state cost or verify deployment on
+an approved runtime; do not substitute another chess-specific solution for the
+generated-rule target or restart price/learning work merely at this milestone.
