@@ -33,6 +33,18 @@ completion prototypes are separate axes. Repair evidenced infrastructure gaps
 that block comparability; measure cost and equal-time decision/completion effects.
 Retained price/learning routes below are subsequent goals, not equal scheduling.
 
+Latest direction-review addition2026-10-10: a bounded one-second actual UI
+path/basic-error comparison precedes the next backend bridge. Verify the remote
+UI revision and its actual material, budget, completion and final action without
+editing the frozen UI lane. Generic usefulness on newly supplied rules does not
+require matching specialist engine speed/strength. Start mechanical specialization
+with board/basic moves, retain all subsequent state semantics, and inspect already
+compiled information before rebuilding it. Representation/search joint cost is
+an eligible research question, not an established optimum or automatic redesign.
+Dot relayed private user context; preserve that attribution and the lack of an
+independently reproduced game. Existing stop, duration, long-run, publication
+and single-writer rules are unchanged.
+
 User-directed Slack questions/new requirements/direction inquiries always use
 a fresh channel-root AGENT_REQUEST and new REQUEST_ID, never an old-thread
 follow-up. Follow SLACK_WORKFLOW.md actual argument/receipt checks. Active reads

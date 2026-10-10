@@ -7,7 +7,30 @@ The two scientific lines remain generic evaluation and unfamiliar-rule search.
 Recent conditional tasks remain useful evidence, but further template precision
 is no longer Main: either outcome alone would not select an evaluation family.
 
+## Actual UI diagnostic decision2026-10-10
+
+UI_PRODUCT_DIAGNOSTIC.md separates frozen product configuration/commit from
+completed search. First-q1 is a diagnostic candidate, not an installed default:
+exposed30-root finite material benefit coexists with short-budget starvation.
+Compiled-owned trigger dispatch gives a scoped cost/completion improvement but
+retains the queen-loss mechanism. No price fit/training/Elo extension follows.
+Keep a completed-result reserve question and the thin backend attribution bridge
+as executable alternatives. Old capped references and adverse rows stay intact.
+
 ## Shared target and comparison
+
+Latest scheduling review2026-10-10: prioritize a small one-second actual UI
+product-path diagnostic before the next residual-backend bridge. Freeze game
+count and stop conditions before running; record revision, rules, actual
+material/dynamic evaluator and search switches, initialization, request/effective
+limits, completed depth, timeout/fallback and returned versus committed action.
+The minimal alpha-beta comparator should use the same material where possible;
+remaining dynamic-evaluation/backend differences are explicit confounds.
+Replay suspicious states with complete bounded D2 and direct capture responses,
+checking terminals/compensation and better legal alternatives. No reproduction
+does not establish absence of defects; user game records remain unavailable.
+This is product diagnosis, not Elo/WDL estimation, price fitting or a larger
+teacher run. Throughput, completion and decision mistakes are distinct evidence.
 
 Current scheduling update2026-10-10: search-first layer attribution now precedes
 further evaluation training/price averaging. LOCAL_MAINLINE.md owns the adopted

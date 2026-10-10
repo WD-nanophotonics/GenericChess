@@ -6,6 +6,28 @@ Milestones, tests, consultation and publication are research checkpoints.
 
 ## Current priority — 2026-10-10 user-requested handoff review
 
+Latest direction review (2026-10-10): first diagnose the actual remote UI
+one-second Chess path against a clearly configured minimal alpha-beta control.
+Pin the UI revision, actual backend/material, requested/effective budget,
+completed depth, fallback and final committed action. A small predeclared pair
+of short games can locate an explainable direct loss; fixed-state replay then
+separates insufficient completion from evaluation/selection/commit defects.
+There is no supplied user game record yet; a reported UI loss is not a reproduced
+bug. Diagnose the frozen UI version without modifying its branch. The existing
+indexed Core/specialized bridge remains the subsequent attribution tool.
+
+Retain generality while removing measured shortcomings. Specialized engines
+are diagnostic references, without a speed/strength parity threshold. Prioritize
+small mechanical board/basic-move compilation improvements, retain dynamic
+guards, promotion, drops, auxiliary state and history, and extend mechanism
+coverage from evidence. Representation/search joint optimization is a research
+question, not a claim of a universally best pairing or a new search-family task.
+Cold compilation, cache hits, search and return validation have separate costs.
+Basis: complete Dot reply to the user's new direction inquiry; private-user
+discussion is advisor-relayed context, not independently verified observations
+or new permissions. Agent adopted this bounded diagnostic within the current
+user request. No operational-rule change follows.
+
 Search diagnosis comes first; rule-derived/statistically averaged prices and
 small learned evaluators remain subsequent goals, not equally scheduled tracks.
 Compare (1) generated-rule backend with the current supported generic search,
@@ -41,6 +63,27 @@ Basis: current user instruction to absorb dot's complete three-part handoff.
 Dot relayed direction and proposed the bridge/metrics; it did not independently
 run the benchmarks or inspect every manual line. No change to single writer,
 duration, heartbeat, stops, publication or the >1hour-run necessity consultation.
+
+## Actual UI completion and mechanical cost checkpoint —2026-10-10
+
+The pinned remote UI99c97 service/controller path yields30 returned=committed
+moves in two predeclared short games;24D1 completions include two direct queen
+losses. Full-history finiteD2 exposes better choices. First ordinary q is
+reserved as0 beforeD1; deeper timeouts can leave that approximate greedy result.
+Diagnostic first-q1 improves8/worsens1/ties21 on30cold parents, but short50/100ms
+controls lose all completed iterations where baseline completesD1. Retain it
+as diagnostic only; no default/q/evaluation/UI change. Four q4D2 caps stay UNKNOWN.
+
+Compiled-owned fixed event-trigger dispatch preserves dynamic references,
+owner filters, explicit aux order and missing-metadata fallback. Engine-owned
+plans regressed and remain archived. Current fixedD2 local cost falls11-13%;
+1424child/45legal-frontier controls and1897active regressions pass. On30cold
+one-second parents, indexOFF/ON completesD1/2/3=21/7/2->18/10/2 with one finite
+material-loss improvement; both queen failures persist. This is scoped useful
+execution savings, not a first-reserve fix or strength estimate. UI stays frozen.
+Next compare one budget-aware tactical reserve against a completed cheap result,
+or use the indexed thin Core/specialized bridge to attribute remaining work.
+Sources/failures/limits: UI_PRODUCT_DIAGNOSTIC.md; data/ui_product_20261010.json.
 
 ## Search attribution checkpoint —2026-10-10
 
@@ -541,9 +584,9 @@ Finite static-sequence/replace/state/rectangle/q2/cancel controls pass; completi
 is not strength. Owned metadata, construction and a24ms poll-gap outlier remain
 explicit costs. Native Runtime PV migration is deferred after separate neutral/
 adverse mean tail controls; existing immutable validator, C/terminal boundaries
-and UI isolation remain. Next select one residual generation/representation
-cost or current indexed Core/specialized bridge comparison, not extra algorithms
-or price fitting.36 post-index legal-generation prefix reuse controls show no
+and UI isolation remain. The newer actual-UI checkpoint above owns the next choice; this incoming-index
+result is retained context, not a competing task. No extra algorithm or price
+fitting follows.36 post-index legal-generation prefix reuse controls show no
 timed depth gain and a slightly adverse root: defer that extra cache. Evidence:
 SEARCH_BACKEND_ATTRIBUTION.md;
 data/frontier_contract_20261010.json. This technical review changes no manual,
@@ -565,6 +608,7 @@ branch backlog or publication gate. Exact operating rules remain in AGENTS.md.
 
 |Purpose|Document and latest records|
 |---|---|
+|Actual frozen UI path, first-completion boundary and compiled trigger cost|UI_PRODUCT_DIAGNOSTIC.md; data/ui_product_20261010.json|
 |Evaluation families, state-input signal and actual caller cost|EVALUATION_ROUTES.md; STATE_INPUT_FEASIBILITY.md; data/state_inputs_20261009.json|
 |Finite search compression, prospective splits and existing search/table controls|FINITE_SEARCH_COMPRESSION.md; data/search_compression_20261009.json|
 |Fixed price predictions, conditional information ceilings and reply support|TASK_PREDICTION_DIAGNOSTIC.md; data/qfrontier_20261009.json|

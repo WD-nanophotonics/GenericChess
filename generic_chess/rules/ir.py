@@ -605,6 +605,40 @@ def _incoming_attack_paths(ir, squares: int, *, max_paths: int = 65536):
     return {key: tuple(rows) for key, rows in incoming.items()}
 
 
+def _fixed_transition_triggers(ir, support):
+    """Index static event squares once per compiled ruleset.
+
+    Dynamic square operands stay on the original runtime path. All trigger
+    writes clear a slot, so matching static clears commute with dynamic clears;
+    explicit auxiliary effects still run afterwards in their declared order.
+    """
+    slots = {slot.slot_id: slot for slot in ir.aux_slots}
+    plans = []
+    shape = support.board_shape
+    for side in (0, 1):
+        entries = {}
+        dynamic = []
+        for trigger in ir.triggers:
+            slot = slots.get(trigger.slot_id)
+            if slot is None:
+                continue
+            ref = trigger.square_ref
+            if ref.kind != "fixed":
+                dynamic.append(trigger)
+                continue
+            for owner in ((0, 1) if slot.scope == "per_owner" else (side,)):
+                file, rank = ref.square
+                if ref.owner_relative and owner == 1:
+                    file, rank = shape.width - 1 - file, shape.height - 1 - rank
+                if 0 <= file < shape.width and 0 <= rank < shape.height:
+                    key = trigger.event, rank * shape.width + file
+                    logical = owner if slot.scope == "per_owner" else -1
+                    entries.setdefault(key, []).append(
+                        (trigger.slot_id, logical, owner, trigger.owner))
+        plans.append(({key: tuple(rows) for key, rows in entries.items()}, tuple(dynamic)))
+    return tuple(plans)
+
+
 @dataclass(frozen=True, slots=True)
 class CompiledSemanticRuleset:
     """Compiled product for semantic-DSL rulesets.
@@ -618,6 +652,7 @@ class CompiledSemanticRuleset:
     _legacy_compiled: Any = None
     support: "CompiledSemanticSupport | None" = None
     _incoming_attack_paths: Any = field(init=False, repr=False, compare=False, default=None)
+    _fixed_transition_triggers: Any = field(init=False, repr=False, compare=False, default=None)
 
     def __post_init__(self):
         # Derived execution data is not part of the IR/fingerprint/payload.
@@ -625,6 +660,9 @@ class CompiledSemanticRuleset:
         if self.support is not None and self.ir.capabilities.new_ir_core_executable:
             object.__setattr__(self, "_incoming_attack_paths",
                 _incoming_attack_paths(self.ir, self.support.board_shape.area))
+            if self.ir.triggers:
+                object.__setattr__(self, "_fixed_transition_triggers",
+                    _fixed_transition_triggers(self.ir, self.support))
 
     @property
     def ruleset_fingerprint(self) -> str:

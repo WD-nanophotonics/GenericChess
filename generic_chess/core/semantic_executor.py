@@ -1594,7 +1594,39 @@ class SemanticEngine:
                     ),
                 )
         # 5) transition triggers against the pre-bound event trace.
-        for trigger in self.ir.triggers:
+        if self.ir.triggers:
+            self._apply_transition_triggers(position, work, binding, aux, checkpoint)
+        # 6) explicit aux effects in declared order.
+        for effect in aux_effects:
+            _checkpoint(checkpoint)
+            _apply_aux_effect(effect, aux, self.support, self.ir.aux_slots, position, binding)
+        # 7) switch side.
+        work.side = 1 - side
+        return work.to_position(
+            tuple(sorted(aux.items())),
+            self.support.ruleset_fingerprint,
+        )
+
+    def _apply_transition_triggers(self, position, work, binding, aux, checkpoint):
+        side = position.side_to_move
+        plans = self.semantic._fixed_transition_triggers
+        if plans is None:
+            # Compile-only carriers retain the complete original execution seam.
+            dynamic_triggers = self.ir.triggers
+        else:
+            entries, dynamic_triggers = plans[side]
+            for event, piece, square in work.events:
+                _checkpoint(checkpoint)
+                if piece is None:
+                    continue
+                for slot, logical, owner, owner_filter in entries.get((event, square), ()):
+                    _checkpoint(checkpoint)
+                    if owner_filter == "self" and piece.owner != owner:
+                        continue
+                    if owner_filter == "opponent" and piece.owner == owner:
+                        continue
+                    aux[(slot, logical)] = 0
+        for trigger in dynamic_triggers:
             _checkpoint(checkpoint)
             slot = _aux_slot_by_id(self.ir.aux_slots, trigger.slot_id)
             if slot is None:
@@ -1613,16 +1645,6 @@ class SemanticEngine:
                     checkpoint=checkpoint,
                 ):
                     aux[(trigger.slot_id, GLOBAL_OWNER_TAG)] = 0
-        # 6) explicit aux effects in declared order.
-        for effect in aux_effects:
-            _checkpoint(checkpoint)
-            _apply_aux_effect(effect, aux, self.support, self.ir.aux_slots, position, binding)
-        # 7) switch side.
-        work.side = 1 - side
-        return work.to_position(
-            tuple(sorted(aux.items())),
-            self.support.ruleset_fingerprint,
-        )
 
     def _trigger_fires(
         self, trigger, owner, position, work, binding,
