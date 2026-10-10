@@ -1,0 +1,1465 @@
+{
+  "schema": 1,
+  "base_commit": "78dc9925c277f4a27af45973bfee5fed90c832d7",
+  "scope": "Agent-authored exposed development; exact earlier/final source and contrary/failed results. Excludes raw Slack/account/outgoing/user-private inputs and binaries. Existing rule/test fixtures only, no human holdouts.",
+  "archive": "docs/archive/frontier_contract_20261010/evidence.zip",
+  "archive_bytes": 1006920,
+  "archive_sha256": "45a47894ab39e0913d7f307ded440ff978ff6321892c5838cb702fd43f6fdbfa",
+  "members": {
+    ".local_agent/cooperative-budget-20261010/assay.py": {
+      "bytes": 3998,
+      "sha256": "ef797ae1e53faf983f9ae581ca3784455afcf6652b17e4a9798f1ce5dd803e55"
+    },
+    ".local_agent/cooperative-budget-20261010/runtime-cancel-probe.json": {
+      "bytes": 6142,
+      "sha256": "f89eee98afa87fe48698e73f8b0ed5e40e63426b125cce9ff9c51fdfc971d6c9"
+    },
+    ".local_agent/cooperative-budget-20261010/runtime-pv-probe.json": {
+      "bytes": 3984523,
+      "sha256": "7bfb1c089fd5668cd33b667abcbde7c48564bdfc93511a49cb236b60d654c9af"
+    },
+    ".local_agent/cooperative-budget-20261010/runtime_pv_probe.py": {
+      "bytes": 4625,
+      "sha256": "0fb160a5ba479f068470e8567334ab91c6b200974ce0a0e42e64eea596271e51"
+    },
+    ".local_agent/cooperative-budget-20261010/runtime_validation_method.py": {
+      "bytes": 10338,
+      "sha256": "b07ba789a6f232510927705676cec505e406c77320bf0481297b5f152d3d48cf"
+    },
+    ".local_agent/frontier-contract-20261010/action-string-probe.json": {
+      "bytes": 1498279,
+      "sha256": "57c89fa25c2ac879ad38b8e8247fcd2326cd306ff4b5fd6e411d899892ca2ff5"
+    },
+    ".local_agent/frontier-contract-20261010/action_string_probe.py": {
+      "bytes": 1964,
+      "sha256": "7c1de6e5f8671dcecf8d9d46f0047cf7276387daafaa8666dd490fa8809d171f"
+    },
+    ".local_agent/frontier-contract-20261010/archive_evidence.py": {
+      "bytes": 4420,
+      "sha256": "ca4dca794a90a947617a3031a67d2c91c990ce6be106c97ae2fb338f077e97b9"
+    },
+    ".local_agent/frontier-contract-20261010/assay.json": {
+      "bytes": 4870127,
+      "sha256": "81a169949487bf35cf2ae9eca04772bc4a1cbc073c3e26d4f2ad27b2318fcd3b"
+    },
+    ".local_agent/frontier-contract-20261010/assay.py": {
+      "bytes": 3459,
+      "sha256": "a8f746d0b4eaadcba6229963cecd17a31d49ba6c36a4b537825c22afd80fb96c"
+    },
+    ".local_agent/frontier-contract-20261010/cancel-delivery.json": {
+      "bytes": 203207,
+      "sha256": "dcd7f5c1737f52147e2823b2d9cd10291b2ff03bfc50f5b59f7be39e768135d7"
+    },
+    ".local_agent/frontier-contract-20261010/cancel_delivery.py": {
+      "bytes": 3700,
+      "sha256": "09a3b27da5eb1706335f0671a246e352aba2412359f14a71002a3ac341a46c2f"
+    },
+    ".local_agent/frontier-contract-20261010/consolidate.py": {
+      "bytes": 5707,
+      "sha256": "7bdeb3efa29586f5c4ec69fe0b13344cddc24d336dd424f05fed5b3c7383ec73"
+    },
+    ".local_agent/frontier-contract-20261010/delivered-index-probe.json": {
+      "bytes": 224227,
+      "sha256": "8df8956d7318731d7f87640c50d26dc8560bea7e43a486deb10d2546f2e3c3d4"
+    },
+    ".local_agent/frontier-contract-20261010/delivered-profile.json": {
+      "bytes": 469613,
+      "sha256": "6dad3dee2358ef7a7718b733809a4df86c7b94b55fb5e126efd19351c73f13bf"
+    },
+    ".local_agent/frontier-contract-20261010/delivered_index_probe.py": {
+      "bytes": 3267,
+      "sha256": "ddcbdf424066f556dd8a81e268e43c31b4ffa395a6a945ba45ee0992e09e9531"
+    },
+    ".local_agent/frontier-contract-20261010/environment.json": {
+      "bytes": 438,
+      "sha256": "4696506d30f59d1aa79c89a702374538d28be38200da29947e47a33cbd03f621"
+    },
+    ".local_agent/frontier-contract-20261010/executor-index-first.py": {
+      "bytes": 72233,
+      "sha256": "34084a81844a3c7dbd2a11cbdf5543150a90b5855f933418e4ad8f129bc52b8f"
+    },
+    ".local_agent/frontier-contract-20261010/failures.md": {
+      "bytes": 3162,
+      "sha256": "6d1c7d7e879aeb66465f7c7b6436eeba82592267fdd9f2bcedc75489aa79eb23"
+    },
+    ".local_agent/frontier-contract-20261010/final-summary.json": {
+      "bytes": 31342,
+      "sha256": "4d4335f2b2a2cdbca8bc2bd7e42b75e97a1e983d2b44d691b9abb6a0b3545741"
+    },
+    ".local_agent/frontier-contract-20261010/first_tie_caller.py": {
+      "bytes": 3477,
+      "sha256": "ec9f51f5665b53d9eac141a3cf178d8087a5a110dcc04ad9d6738ec2af7ca5aa"
+    },
+    ".local_agent/frontier-contract-20261010/generation-prefix-probe.json": {
+      "bytes": 173081,
+      "sha256": "23efc2262e94a1d72ddea613da742b825766f5776fbc5e64b76c4ba41ccf2d82"
+    },
+    ".local_agent/frontier-contract-20261010/generation_prefix_probe.py": {
+      "bytes": 3305,
+      "sha256": "d1e291bbd74cee76cfb85e39fd50b23680c797e07c90c2a7e8c789e5cdcc372e"
+    },
+    ".local_agent/frontier-contract-20261010/inline_root_candidate.py": {
+      "bytes": 5708,
+      "sha256": "ed7e82729ac9366d786bc8397cc0186ccf31e1a91a03406165f67fe10cb02a95"
+    },
+    ".local_agent/frontier-contract-20261010/ir-mappingproxy-first.py": {
+      "bytes": 44938,
+      "sha256": "088bde75094dfaea3e40206dfeb5d8298f972878699655597f0393ab0f87f31f"
+    },
+    ".local_agent/frontier-contract-20261010/lifecycle-events.json": {
+      "bytes": 4242,
+      "sha256": "62a41bc66df8172f8e1e092c14082599498f6af8263bfe18f454652783b4a17b"
+    },
+    ".local_agent/frontier-contract-20261010/lifecycle-index-audit.json": {
+      "bytes": 4014,
+      "sha256": "446648874d18bc33bdc19de3b6cd355c659981a3c83737739fac91fb3d57ec4b"
+    },
+    ".local_agent/frontier-contract-20261010/lifecycle_events.py": {
+      "bytes": 3243,
+      "sha256": "775b0dd06bde3d940bce52d6853b7820f3321cc5308ed6b5edae284bd34a19f4"
+    },
+    ".local_agent/frontier-contract-20261010/lifecycle_index_audit.py": {
+      "bytes": 5610,
+      "sha256": "e94dc377a8238f32d7a4bbe045f6097b5416e96328ff21c327bb9723ff98adab"
+    },
+    ".local_agent/frontier-contract-20261010/matched-profile.json": {
+      "bytes": 492257,
+      "sha256": "fba54db4d997c05ed99284ac29e7fa03374c498366d156fa95348ee0317d8c03"
+    },
+    ".local_agent/frontier-contract-20261010/metadata-cost.json": {
+      "bytes": 1684,
+      "sha256": "c734ffdf55a3ea8ba1846d1bdb78602159624bb45cc0566adc94548614b066cb"
+    },
+    ".local_agent/frontier-contract-20261010/metadata_cost.py": {
+      "bytes": 1783,
+      "sha256": "55308dd6c1cd822212a492b64d8f6701252092c5dc47454a36ce55d594ec3b5a"
+    },
+    ".local_agent/frontier-contract-20261010/native-caller-candidate.py": {
+      "bytes": 30103,
+      "sha256": "a50016feb4e001793b16d4d027cb7172b8859a5525189f2d3edb9ee5dca4891a"
+    },
+    ".local_agent/frontier-contract-20261010/native-caller-delivery.json": {
+      "bytes": 8558167,
+      "sha256": "cfd3b95f26cf85221d30a5bc5158defc8436ee98c722ca00098acd23ab03bac7"
+    },
+    ".local_agent/frontier-contract-20261010/native_caller_delivery-first.py": {
+      "bytes": 4370,
+      "sha256": "e83daf0209749ea106842296b71e86ee52e4a03a9fc8c1ea5c41a31a2da5f8c2"
+    },
+    ".local_agent/frontier-contract-20261010/native_caller_delivery.py": {
+      "bytes": 4329,
+      "sha256": "c03b889a3a833b2b5ecb290971e32a19102931181929b7e989670c601d1032fa"
+    },
+    ".local_agent/frontier-contract-20261010/plan.md": {
+      "bytes": 1438,
+      "sha256": "79def4ea56b08ec6ebd8a5e8582885fc6a11f2a7d327f1ffd0be097e3c546ea6"
+    },
+    ".local_agent/frontier-contract-20261010/poll-dispatch-probe.json": {
+      "bytes": 3005037,
+      "sha256": "091f80cfec486e1a706c0a8ff6d1e5f1b501725cc922e573b147754d83991f64"
+    },
+    ".local_agent/frontier-contract-20261010/poll_dispatch_probe.py": {
+      "bytes": 2959,
+      "sha256": "ef2e3544e360a1b785cf313482a839db3d8024ab7453c9aed2870d6cb4b92248"
+    },
+    ".local_agent/frontier-contract-20261010/profile_delivered.py": {
+      "bytes": 2786,
+      "sha256": "8046ada55b7772162583daff6c996e660373ed04482c76ba8167367101c0e1c6"
+    },
+    ".local_agent/frontier-contract-20261010/profile_matched.py": {
+      "bytes": 2621,
+      "sha256": "3d31f3a4da27377d8ee868b6b46045e45dbe526608b98bc1484f6b451441725b"
+    },
+    ".local_agent/frontier-contract-20261010/replay-scope-prefix.json": {
+      "bytes": 2356,
+      "sha256": "8ea13ef1527625dc6339b0008f3f0e0c7af73bece5ba95a02a371613d88a62cd"
+    },
+    ".local_agent/frontier-contract-20261010/replay-scope.json": {
+      "bytes": 7447,
+      "sha256": "27bfba1a16d85d4d8edb773eb8bc9c810c72469dd0607dccabc774a7ee885f96"
+    },
+    ".local_agent/frontier-contract-20261010/replay_scope-first.py": {
+      "bytes": 6517,
+      "sha256": "c7c3c64e733e6300d5b95dc92ff36f7db52c582a8a58e6f9d01e8a19fc73b589"
+    },
+    ".local_agent/frontier-contract-20261010/replay_scope.py": {
+      "bytes": 6924,
+      "sha256": "8ebf43b06bde287d39a36759725e16d27318eece3b90c51d0fe2084bb32bf786"
+    },
+    ".local_agent/frontier-contract-20261010/report.md": {
+      "bytes": 6727,
+      "sha256": "913285c3a15df97084e7531131e18d9c2cb741bc057762581a09830a4c8bc958"
+    },
+    ".local_agent/frontier-contract-20261010/source_before/generic_chess/core/semantic_executor.py": {
+      "bytes": 71359,
+      "sha256": "aa35db47799c1d1a075793fb5c690324885b22d2f4bdb485f9839332d624d725"
+    },
+    ".local_agent/frontier-contract-20261010/source_before/generic_chess/native/semantic_engine.py": {
+      "bytes": 29694,
+      "sha256": "69ef74e504419e397dba9aaa7e28ff0b64b7a79dbe8d4b2c8138609da3e4b40f"
+    },
+    ".local_agent/frontier-contract-20261010/source_before/generic_chess/rules/ir.py": {
+      "bytes": 42856,
+      "sha256": "fdde2701131d27cfa1a79c1b34fbc8007d811b1f8ffc94a2ea33e6c034d0f203"
+    },
+    ".local_agent/frontier-contract-20261010/source_before/scripts/root_bound_diagnostic.py": {
+      "bytes": 6797,
+      "sha256": "950d9fb550d0bac2704303214c50c5b55e19c9faa721fcb42e4f169309d68086"
+    },
+    ".local_agent/frontier-contract-20261010/target-index-assay.json": {
+      "bytes": 231661,
+      "sha256": "449b4a45b4c5f39d8cbd359f44d8831c37e238580bd71cb7b6e0ab8c5388075e"
+    },
+    ".local_agent/frontier-contract-20261010/target_attack_index.py": {
+      "bytes": 2833,
+      "sha256": "3b35b4c9348e80a890eb54dc9807e4a775d8ac87c9acc8fbd19aa0a0492216fd"
+    },
+    ".local_agent/frontier-contract-20261010/target_index_assay.py": {
+      "bytes": 4600,
+      "sha256": "7be5aced5885be00d8b3f4385ce96b8cbce9bcdcd73748ad47662bd2ebc52a50"
+    },
+    ".local_agent/frontier-contract-20261010/test_compiled_attack_index-first.py": {
+      "bytes": 3523,
+      "sha256": "f3e54f704b07176eed9d752c13efa05353850e1b2c54db15a65b319b0f297de9"
+    },
+    ".local_agent/frontier-contract-20261010/thin-index-transfer.json": {
+      "bytes": 3791414,
+      "sha256": "59417418edbb9e067910c8fcb75adc21adadfbfb24ebed7f7923f15249e01d5e"
+    },
+    ".local_agent/frontier-contract-20261010/thin_index_transfer.py": {
+      "bytes": 2535,
+      "sha256": "397fd81b302f82b3a0f828ef526174f59e97fe7a3df00cf30ff8921a3f2a0f77"
+    },
+    ".local_agent/generated6-20261008/coverage.json": {
+      "bytes": 383389,
+      "sha256": "8b2d54188b9ded320c4591883e9520a30752bd5b20cba5920e0b5e76e862e7fc"
+    },
+    ".local_agent/native-terminal-20261010/bridge_assay.py": {
+      "bytes": 5745,
+      "sha256": "e230fdcfcee5943deb030f17b986afeaf3fab53301f63d8b8ff868fb3dbc4bd4"
+    },
+    ".local_agent/native-terminal-20261010/syntax_ablation.py": {
+      "bytes": 4353,
+      "sha256": "771f8f91a270fd8c6d63c8853ea3eb8b8635bc6b2cc32cdbf90560b3c72fedec"
+    },
+    "generic_chess/ai/alphabeta/search.py": {
+      "bytes": 48942,
+      "sha256": "01a00b970cd5346ac6f1f332603721b83676525a8c290e1b69aefc086a843e48"
+    },
+    "generic_chess/ai/alphabeta/statistics.py": {
+      "bytes": 5297,
+      "sha256": "d6d5d84ce486dad08cbc2054e223d8ac15b60f641e5d8abe769637450f6cfff1"
+    },
+    "generic_chess/core/search_runtime.py": {
+      "bytes": 51644,
+      "sha256": "c5d8296549db2d4d6f7356927f9a8c43233ab50c0bd2a8439eb9713b9ccd1814"
+    },
+    "generic_chess/core/semantic_executor.py": {
+      "bytes": 72238,
+      "sha256": "d6166b115954b2b88ba46119d2e486af859ba361753f8fa30b128eeb439e5307"
+    },
+    "generic_chess/native/semantic_engine.py": {
+      "bytes": 29694,
+      "sha256": "69ef74e504419e397dba9aaa7e28ff0b64b7a79dbe8d4b2c8138609da3e4b40f"
+    },
+    "generic_chess/rules/ir.py": {
+      "bytes": 45518,
+      "sha256": "285c5c920d5f80900f63e53ed84b902d53a2ad01b864c38bff3990499fc08b40"
+    },
+    "scripts/bounded_root_scheduler.py": {
+      "bytes": 4098,
+      "sha256": "328648f127a73787c0ae40adc979edc0147c64e2b31bfc26ee4e35de252809a5"
+    },
+    "scripts/native_backend_bridge.py": {
+      "bytes": 4354,
+      "sha256": "5bd4be82548273388dc44dc9c30ccd0851a6ce743a960e25b12f5c4b1f2e1306"
+    },
+    "scripts/research_record.py": {
+      "bytes": 2767,
+      "sha256": "3f1237e0c1d728995f169902aaaad8fb53ac149287aa46875db298b63221612a"
+    },
+    "scripts/root_bound_diagnostic.py": {
+      "bytes": 7202,
+      "sha256": "2dd0c355e48205229c9c385cda0b3c418d9c6da25da60ee32809a20c4fa158a9"
+    },
+    "scripts/search_backend_comparison.py": {
+      "bytes": 23931,
+      "sha256": "6bcff770357d8d4f5f48330d14283a5feb5206bd4141526a04e28a7d0c3abaf7"
+    },
+    "tests/conftest.py": {
+      "bytes": 7230,
+      "sha256": "e6640a3c11449ebd8f66c1739ec10f85a40873daf160691eb80161b3c3ed0b21"
+    },
+    "tests/development/test_diagnostic_semantic_budget.py": {
+      "bytes": 3206,
+      "sha256": "c53dc5b1a18b4de86a5ad913fb618898257a4e8721d13fda496df52a5a9ac6b5"
+    },
+    "tests/product/test_compiled_attack_index.py": {
+      "bytes": 6478,
+      "sha256": "317a3b5137e9a71523d8a56157c25f66f3422fcfd7f84a0ef8dc1f5f22b1ea9b"
+    },
+    "tests/product/test_h50b2e_semantic_search_engine.py": {
+      "bytes": 12079,
+      "sha256": "d9211aab8272a8a19b37ddc2b243188f1f7ba7073037867ca0d972fbcdffbccd"
+    },
+    "tests/product/test_native_history.py": {
+      "bytes": 6164,
+      "sha256": "52ed9d162b0f7b17f36754af0da2ef8923987a54c857f7e77acb8b3158f11e3b"
+    },
+    "tests/product/test_recombined_semantic_lifecycle.py": {
+      "bytes": 3099,
+      "sha256": "40c88ab3881ab1be53bf4416f0c6b7a01aa8228bb37a62d4c46dceff0dee0ad5"
+    },
+    "tests/product/test_rectangular_public_semantic_execution.py": {
+      "bytes": 40272,
+      "sha256": "5659f04757ace3a924ac8f40c29c6103abc2a6135e325b65544a8413b9009dcf"
+    },
+    "tests/product/test_search_path_runtime.py": {
+      "bytes": 31541,
+      "sha256": "03e5591711311a8b4324fe92ad5f279628ffc599fd806ccfe089591bd72d6f8c"
+    },
+    "tests/rule_semantics_ir_fixtures.py": {
+      "bytes": 17212,
+      "sha256": "209b3bd9388d5ac228329d64eeda7d70a9209f0409ac74217be2879b4d6038c7"
+    }
+  },
+  "summary": {
+    "scope": "Exposed finite local development, same four roots. Rule execution/completion/caller validation distinct; no strength, all-rule proof, Native terminal repair or UI propagation.",
+    "datasets": {
+      "assay": {
+        "sha256": "81a169949487bf35cf2ae9eca04772bc4a1cbc073c3e26d4f2ad27b2318fcd3b",
+        "complete": true,
+        "rows": 96,
+        "cancel": 0,
+        "q2": 0,
+        "fixed": 0
+      },
+      "action-string-probe": {
+        "sha256": "57c89fa25c2ac879ad38b8e8247fcd2326cd306ff4b5fd6e411d899892ca2ff5",
+        "complete": true,
+        "rows": 24,
+        "cancel": 0,
+        "q2": 0,
+        "fixed": 0
+      },
+      "matched-profile": {
+        "sha256": "fba54db4d997c05ed99284ac29e7fa03374c498366d156fa95348ee0317d8c03",
+        "complete": true,
+        "rows": 6,
+        "cancel": 0,
+        "q2": 0,
+        "fixed": 0
+      },
+      "poll-dispatch-probe": {
+        "sha256": "091f80cfec486e1a706c0a8ff6d1e5f1b501725cc922e573b147754d83991f64",
+        "complete": true,
+        "rows": 48,
+        "cancel": 0,
+        "q2": 0,
+        "fixed": 0
+      },
+      "replay-scope": {
+        "sha256": "27bfba1a16d85d4d8edb773eb8bc9c810c72469dd0607dccabc774a7ee885f96",
+        "complete": true,
+        "rows": 18,
+        "cancel": 0,
+        "q2": 0,
+        "fixed": 0
+      },
+      "target-index-assay": {
+        "sha256": "449b4a45b4c5f39d8cbd359f44d8831c37e238580bd71cb7b6e0ab8c5388075e",
+        "complete": true,
+        "rows": 48,
+        "cancel": 0,
+        "q2": 0,
+        "fixed": 0
+      },
+      "delivered-index-probe": {
+        "sha256": "8df8956d7318731d7f87640c50d26dc8560bea7e43a486deb10d2546f2e3c3d4",
+        "complete": true,
+        "rows": 48,
+        "cancel": 0,
+        "q2": 0,
+        "fixed": 0
+      },
+      "cancel-delivery": {
+        "sha256": "dcd7f5c1737f52147e2823b2d9cd10291b2ff03bfc50f5b59f7be39e768135d7",
+        "complete": true,
+        "rows": 0,
+        "cancel": 32,
+        "q2": 16,
+        "fixed": 0
+      },
+      "lifecycle-index-audit": {
+        "sha256": "446648874d18bc33bdc19de3b6cd355c659981a3c83737739fac91fb3d57ec4b",
+        "complete": true,
+        "rows": 12,
+        "cancel": 0,
+        "q2": 0,
+        "fixed": 0
+      },
+      "lifecycle-events": {
+        "sha256": "62a41bc66df8172f8e1e092c14082599498f6af8263bfe18f454652783b4a17b",
+        "complete": true,
+        "rows": 0,
+        "cancel": 0,
+        "q2": 0,
+        "fixed": 0
+      },
+      "metadata-cost": {
+        "sha256": "c734ffdf55a3ea8ba1846d1bdb78602159624bb45cc0566adc94548614b066cb",
+        "complete": true,
+        "rows": 4,
+        "cancel": 0,
+        "q2": 0,
+        "fixed": 0
+      },
+      "delivered-profile": {
+        "sha256": "6dad3dee2358ef7a7718b733809a4df86c7b94b55fb5e126efd19351c73f13bf",
+        "complete": true,
+        "rows": 6,
+        "cancel": 0,
+        "q2": 0,
+        "fixed": 0
+      },
+      "thin-index-transfer": {
+        "sha256": "59417418edbb9e067910c8fcb75adc21adadfbfb24ebed7f7923f15249e01d5e",
+        "complete": true,
+        "rows": 48,
+        "cancel": 0,
+        "q2": 0,
+        "fixed": 0
+      },
+      "native-caller-delivery": {
+        "sha256": "cfd3b95f26cf85221d30a5bc5158defc8436ee98c722ca00098acd23ab03bac7",
+        "complete": true,
+        "rows": 0,
+        "cancel": 24,
+        "q2": 0,
+        "fixed": 24
+      },
+      "generation-prefix-probe": {
+        "sha256": "23efc2262e94a1d72ddea613da742b825766f5776fbc5e64b76c4ba41ccf2d82",
+        "complete": true,
+        "rows": 36,
+        "cancel": 0,
+        "q2": 0,
+        "fixed": 0
+      }
+    },
+    "decisions": {
+      "adopt": "Compile-owned incoming-path index with full old fallback; one-dispatch diagnostic live checks. Product search scheduling retained.",
+      "defer": "Native Runtime PV validator passes new full-state/illegal-route controls but delivered mean fixed/cancel tail is unchanged or slightly worse after the shared Core index. Candidate archived; final Native caller stays immutable. Further generation/history changes need a concrete decision-changing residual; no polling throttle/C retry.",
+      "peer": "Key static-sequence/compile-lifecycle objection adopted and tested. Supplied-snippet review only; no independently executed evidence or workflow change.",
+      "generation_prefix": "Defer bounded per-call immutable geometry-prefix reuse:36 calls keep fixed work/routes; modest/adverse fixed cost and no timed completed-depth gain across all3 roots. No product cache added."
+    },
+    "delivered_product": [
+      {
+        "case": "chess-ep",
+        "fallback_mean_seconds": 0.5262130999471992,
+        "index_mean_seconds": 0.3720028998795897,
+        "saved_percent": 29.305655842297195,
+        "timed_completion": [
+          {
+            "cap_seconds": 1,
+            "mode": "fallback",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "index",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "index",
+            "repeat": 1,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "fallback",
+            "repeat": 1,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "fallback",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "index",
+            "repeat": 0,
+            "completed_depth": 4
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "index",
+            "repeat": 1,
+            "completed_depth": 4
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "fallback",
+            "repeat": 1,
+            "completed_depth": 3
+          }
+        ]
+      },
+      {
+        "case": "shogi-drop",
+        "fallback_mean_seconds": 9.290440000128001,
+        "index_mean_seconds": 5.756963650230318,
+        "saved_percent": 38.03346612053896,
+        "timed_completion": [
+          {
+            "cap_seconds": 1,
+            "mode": "fallback",
+            "repeat": 0,
+            "completed_depth": 1
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "index",
+            "repeat": 0,
+            "completed_depth": 2
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "index",
+            "repeat": 1,
+            "completed_depth": 2
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "fallback",
+            "repeat": 1,
+            "completed_depth": 1
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "fallback",
+            "repeat": 0,
+            "completed_depth": 2
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "index",
+            "repeat": 0,
+            "completed_depth": 2
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "index",
+            "repeat": 1,
+            "completed_depth": 2
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "fallback",
+            "repeat": 1,
+            "completed_depth": 2
+          }
+        ]
+      },
+      {
+        "case": "generated-202610082000-ply3",
+        "fallback_mean_seconds": 0.6919762000907212,
+        "index_mean_seconds": 0.3232668498530984,
+        "saved_percent": 53.28353058808719,
+        "timed_completion": [
+          {
+            "cap_seconds": 1,
+            "mode": "fallback",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "index",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "index",
+            "repeat": 1,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "fallback",
+            "repeat": 1,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "fallback",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "index",
+            "repeat": 0,
+            "completed_depth": 4
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "index",
+            "repeat": 1,
+            "completed_depth": 4
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "fallback",
+            "repeat": 1,
+            "completed_depth": 3
+          }
+        ]
+      },
+      {
+        "case": "generated-202610082001-ply3",
+        "fallback_mean_seconds": 0.6966207001823932,
+        "index_mean_seconds": 0.37899704999290407,
+        "saved_percent": 45.59491989059858,
+        "timed_completion": [
+          {
+            "cap_seconds": 1,
+            "mode": "fallback",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "index",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "index",
+            "repeat": 1,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "fallback",
+            "repeat": 1,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "fallback",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "index",
+            "repeat": 0,
+            "completed_depth": 4
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "index",
+            "repeat": 1,
+            "completed_depth": 4
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "fallback",
+            "repeat": 1,
+            "completed_depth": 3
+          }
+        ]
+      }
+    ],
+    "thin_bridge": [
+      {
+        "case": "chess-ep",
+        "fallback_mean_seconds": 0.7038866498041898,
+        "index_mean_seconds": 0.47536524990573525,
+        "saved_percent": 32.4656533778593,
+        "timed_completion": [
+          {
+            "cap_seconds": 1,
+            "mode": "fallback",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "index",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "index",
+            "repeat": 1,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "fallback",
+            "repeat": 1,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "fallback",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "index",
+            "repeat": 0,
+            "completed_depth": 4
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "index",
+            "repeat": 1,
+            "completed_depth": 4
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "fallback",
+            "repeat": 1,
+            "completed_depth": 3
+          }
+        ]
+      },
+      {
+        "case": "shogi-drop",
+        "fallback_mean_seconds": 8.232869950123131,
+        "index_mean_seconds": 5.106893749907613,
+        "saved_percent": 37.969459242688096,
+        "timed_completion": [
+          {
+            "cap_seconds": 1,
+            "mode": "fallback",
+            "repeat": 0,
+            "completed_depth": 1
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "index",
+            "repeat": 0,
+            "completed_depth": 2
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "index",
+            "repeat": 1,
+            "completed_depth": 2
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "fallback",
+            "repeat": 1,
+            "completed_depth": 1
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "fallback",
+            "repeat": 0,
+            "completed_depth": 2
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "index",
+            "repeat": 0,
+            "completed_depth": 2
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "index",
+            "repeat": 1,
+            "completed_depth": 2
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "fallback",
+            "repeat": 1,
+            "completed_depth": 2
+          }
+        ]
+      },
+      {
+        "case": "generated-202610082000-ply3",
+        "fallback_mean_seconds": 0.8937414500396699,
+        "index_mean_seconds": 0.3771174498833716,
+        "saved_percent": 57.804636915225004,
+        "timed_completion": [
+          {
+            "cap_seconds": 1,
+            "mode": "fallback",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "index",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "index",
+            "repeat": 1,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "fallback",
+            "repeat": 1,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "fallback",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "index",
+            "repeat": 0,
+            "completed_depth": 4
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "index",
+            "repeat": 1,
+            "completed_depth": 4
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "fallback",
+            "repeat": 1,
+            "completed_depth": 3
+          }
+        ]
+      },
+      {
+        "case": "generated-202610082001-ply3",
+        "fallback_mean_seconds": 1.114226250210777,
+        "index_mean_seconds": 0.5646190501283854,
+        "saved_percent": 49.326355394914,
+        "timed_completion": [
+          {
+            "cap_seconds": 1,
+            "mode": "fallback",
+            "repeat": 0,
+            "completed_depth": 2
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "index",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "index",
+            "repeat": 1,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 1,
+            "mode": "fallback",
+            "repeat": 1,
+            "completed_depth": 2
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "fallback",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "index",
+            "repeat": 0,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "index",
+            "repeat": 1,
+            "completed_depth": 3
+          },
+          {
+            "cap_seconds": 4,
+            "mode": "fallback",
+            "repeat": 1,
+            "completed_depth": 3
+          }
+        ]
+      }
+    ],
+    "cancel": {
+      "fallback": {
+        "max_request_to_return_ms": 0.4306999035179615,
+        "max_observed_poll_gap_ms": 0.5850000306963921,
+        "mean_polls": 200268.875
+      },
+      "index": {
+        "max_request_to_return_ms": 0.34449994564056396,
+        "max_observed_poll_gap_ms": 24.09829990938306,
+        "mean_polls": 160588
+      }
+    },
+    "lifecycle": {
+      "roots": 12,
+      "states": 58,
+      "attack_queries": 7242,
+      "static_rows": 46302,
+      "default_overflow": {
+        "cap": 65536,
+        "wall": 0.2769079999998212,
+        "resident": 620624,
+        "peak": 7577192,
+        "rows": null
+      },
+      "original_pseudoattack_positions": 134,
+      "original_pseudoattack_queries": 16138,
+      "real_events": 8
+    },
+    "metadata": [
+      {
+        "case": "chess-ep",
+        "paths": 7532,
+        "unique_owned_container_bytes": 933360,
+        "tracked_new_resident_bytes": 938032,
+        "tracked_new_peak_bytes": 1009448,
+        "instrumented_construction_seconds": 0.032820799853652716
+      },
+      {
+        "case": "shogi-drop",
+        "paths": 16456,
+        "unique_owned_container_bytes": 1898084,
+        "tracked_new_resident_bytes": 1902708,
+        "tracked_new_peak_bytes": 2056140,
+        "instrumented_construction_seconds": 0.07537360023707151
+      },
+      {
+        "case": "generated-202610082000-ply3",
+        "paths": 1676,
+        "unique_owned_container_bytes": 183496,
+        "tracked_new_resident_bytes": 187672,
+        "tracked_new_peak_bytes": 205384,
+        "instrumented_construction_seconds": 0.010447900276631117
+      },
+      {
+        "case": "generated-202610082001-ply3",
+        "paths": 1672,
+        "unique_owned_container_bytes": 187432,
+        "tracked_new_resident_bytes": 191608,
+        "tracked_new_peak_bytes": 208808,
+        "instrumented_construction_seconds": 0.008778200019150972
+      }
+    ],
+    "native_caller": {
+      "fixed": {
+        "immutable": {
+          "max_post_kernel_ms": 5.930299870669842,
+          "mean_post_kernel_ms": 4.563925011704366,
+          "mean_caller_ms": 1182.6849499096472
+        },
+        "runtime": {
+          "max_post_kernel_ms": 5.965500138700008,
+          "mean_post_kernel_ms": 4.537116697368522,
+          "mean_caller_ms": 1176.6119248932227
+        }
+      },
+      "cancel": {
+        "immutable": {
+          "max_post_kernel_ms": 7.395099848508835,
+          "mean_post_kernel_ms": 3.974958322942257,
+          "mean_caller_ms": 62.56854999810457
+        },
+        "runtime": {
+          "max_post_kernel_ms": 5.018000025302172,
+          "mean_post_kernel_ms": 4.086858321291705,
+          "mean_caller_ms": 62.689300083244845
+        }
+      }
+    },
+    "profile": [
+      {
+        "case": "chess-ep",
+        "mode": "fallback",
+        "instrumented_wall": 1.7443069000728428,
+        "semantic_polls": 1146904,
+        "top_self": [
+          {
+            "file": "WORKSPACE\\generic_chess\\core\\semantic_executor.py",
+            "line": 603,
+            "function": "is_square_attacked",
+            "primitive_calls": 6720,
+            "calls": 6720,
+            "self_seconds": 0.2158035,
+            "cumulative_seconds": 0.7793675000000001
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\ai\\alphabeta\\search.py",
+            "line": 163,
+            "function": "checkpoint",
+            "primitive_calls": 1146904,
+            "calls": 1146904,
+            "self_seconds": 0.194802,
+            "cumulative_seconds": 0.26084480000000004
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\core\\semantic_executor.py",
+            "line": 43,
+            "function": "_checkpoint",
+            "primitive_calls": 1146904,
+            "calls": 1146904,
+            "self_seconds": 0.1493728,
+            "cumulative_seconds": 0.4102176
+          },
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<method 'get' of 'dict' objects>",
+            "primitive_calls": 1664948,
+            "calls": 1664948,
+            "self_seconds": 0.1257125,
+            "cumulative_seconds": 0.20677250000000003
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\rules\\ir.py",
+            "line": 107,
+            "function": "geometry_paths_to",
+            "primitive_calls": 422195,
+            "calls": 422195,
+            "self_seconds": 0.09625990000000001,
+            "cumulative_seconds": 0.1549576
+          }
+        ]
+      },
+      {
+        "case": "chess-ep",
+        "mode": "index",
+        "instrumented_wall": 1.1361666000448167,
+        "semantic_polls": 742350,
+        "top_self": [
+          {
+            "file": "WORKSPACE\\generic_chess\\ai\\alphabeta\\search.py",
+            "line": 163,
+            "function": "checkpoint",
+            "primitive_calls": 742350,
+            "calls": 742350,
+            "self_seconds": 0.12559330000000002,
+            "cumulative_seconds": 0.16776400000000002
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\core\\semantic_executor.py",
+            "line": 43,
+            "function": "_checkpoint",
+            "primitive_calls": 742350,
+            "calls": 742350,
+            "self_seconds": 0.0956811,
+            "cumulative_seconds": 0.26344510000000004
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\core\\semantic_executor.py",
+            "line": 603,
+            "function": "is_square_attacked",
+            "primitive_calls": 6720,
+            "calls": 6720,
+            "self_seconds": 0.055090200000000006,
+            "cumulative_seconds": 0.190592
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\core\\semantic_executor.py",
+            "line": 1557,
+            "function": "_transition",
+            "primitive_calls": 6720,
+            "calls": 6720,
+            "self_seconds": 0.053307200000000006,
+            "cumulative_seconds": 0.2612669
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\core\\semantic_executor.py",
+            "line": 1140,
+            "function": "_iter_board_candidates",
+            "primitive_calls": 9722,
+            "calls": 9722,
+            "self_seconds": 0.042527600000000006,
+            "cumulative_seconds": 0.1637922
+          }
+        ]
+      },
+      {
+        "case": "generated-202610082000-ply3",
+        "mode": "fallback",
+        "instrumented_wall": 2.4330650996416807,
+        "semantic_polls": 2201859,
+        "top_self": [
+          {
+            "file": "WORKSPACE\\generic_chess\\core\\semantic_executor.py",
+            "line": 603,
+            "function": "is_square_attacked",
+            "primitive_calls": 10065,
+            "calls": 10065,
+            "self_seconds": 0.4456645,
+            "cumulative_seconds": 1.5478104000000001
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\ai\\alphabeta\\search.py",
+            "line": 163,
+            "function": "checkpoint",
+            "primitive_calls": 2201859,
+            "calls": 2201859,
+            "self_seconds": 0.3688921,
+            "cumulative_seconds": 0.4915784
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\core\\semantic_executor.py",
+            "line": 43,
+            "function": "_checkpoint",
+            "primitive_calls": 2201859,
+            "calls": 2201859,
+            "self_seconds": 0.2747809,
+            "cumulative_seconds": 0.7663593000000001
+          },
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<method 'get' of 'dict' objects>",
+            "primitive_calls": 2397640,
+            "calls": 2397640,
+            "self_seconds": 0.19030260000000002,
+            "cumulative_seconds": 0.259463
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\rules\\ir.py",
+            "line": 107,
+            "function": "geometry_paths_to",
+            "primitive_calls": 613516,
+            "calls": 613516,
+            "self_seconds": 0.1423086,
+            "cumulative_seconds": 0.22816850000000002
+          }
+        ]
+      },
+      {
+        "case": "generated-202610082000-ply3",
+        "mode": "index",
+        "instrumented_wall": 0.9767038002610207,
+        "semantic_polls": 431690,
+        "top_self": [
+          {
+            "file": "WORKSPACE\\generic_chess\\ai\\alphabeta\\search.py",
+            "line": 163,
+            "function": "checkpoint",
+            "primitive_calls": 431690,
+            "calls": 431690,
+            "self_seconds": 0.0754209,
+            "cumulative_seconds": 0.10130520000000001
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\core\\semantic_executor.py",
+            "line": 43,
+            "function": "_checkpoint",
+            "primitive_calls": 431690,
+            "calls": 431690,
+            "self_seconds": 0.0582683,
+            "cumulative_seconds": 0.1595735
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\core\\semantic_executor.py",
+            "line": 1140,
+            "function": "_iter_board_candidates",
+            "primitive_calls": 19357,
+            "calls": 19357,
+            "self_seconds": 0.050026900000000006,
+            "cumulative_seconds": 0.20687960000000002
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\core\\semantic_executor.py",
+            "line": 603,
+            "function": "is_square_attacked",
+            "primitive_calls": 10065,
+            "calls": 10065,
+            "self_seconds": 0.0403907,
+            "cumulative_seconds": 0.1348841
+          },
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<method 'get' of 'dict' objects>",
+            "primitive_calls": 327875,
+            "calls": 327875,
+            "self_seconds": 0.0312701,
+            "cumulative_seconds": 0.09762670000000001
+          }
+        ]
+      },
+      {
+        "case": "generated-202610082001-ply3",
+        "mode": "fallback",
+        "instrumented_wall": 2.2775373002514243,
+        "semantic_polls": 1998482,
+        "top_self": [
+          {
+            "file": "WORKSPACE\\generic_chess\\core\\semantic_executor.py",
+            "line": 603,
+            "function": "is_square_attacked",
+            "primitive_calls": 12968,
+            "calls": 12968,
+            "self_seconds": 0.35924700000000004,
+            "cumulative_seconds": 1.2874808
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\ai\\alphabeta\\search.py",
+            "line": 163,
+            "function": "checkpoint",
+            "primitive_calls": 1998482,
+            "calls": 1998482,
+            "self_seconds": 0.33183840000000003,
+            "cumulative_seconds": 0.44360400000000005
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\core\\semantic_executor.py",
+            "line": 43,
+            "function": "_checkpoint",
+            "primitive_calls": 1998482,
+            "calls": 1998482,
+            "self_seconds": 0.2521237,
+            "cumulative_seconds": 0.6957277000000001
+          },
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<method 'get' of 'dict' objects>",
+            "primitive_calls": 1926929,
+            "calls": 1926929,
+            "self_seconds": 0.1539057,
+            "cumulative_seconds": 0.2136114
+          },
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<built-in method time.monotonic>",
+            "primitive_calls": 2001970,
+            "calls": 2001970,
+            "self_seconds": 0.112059,
+            "cumulative_seconds": 0.112059
+          }
+        ]
+      },
+      {
+        "case": "generated-202610082001-ply3",
+        "mode": "index",
+        "instrumented_wall": 1.1553746997378767,
+        "semantic_polls": 613680,
+        "top_self": [
+          {
+            "file": "WORKSPACE\\generic_chess\\ai\\alphabeta\\search.py",
+            "line": 163,
+            "function": "checkpoint",
+            "primitive_calls": 613680,
+            "calls": 613680,
+            "self_seconds": 0.10781310000000001,
+            "cumulative_seconds": 0.1441973
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\core\\semantic_executor.py",
+            "line": 43,
+            "function": "_checkpoint",
+            "primitive_calls": 613680,
+            "calls": 613680,
+            "self_seconds": 0.0822248,
+            "cumulative_seconds": 0.22642210000000002
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\core\\semantic_executor.py",
+            "line": 1140,
+            "function": "_iter_board_candidates",
+            "primitive_calls": 21396,
+            "calls": 21396,
+            "self_seconds": 0.0527786,
+            "cumulative_seconds": 0.23062960000000002
+          },
+          {
+            "file": "WORKSPACE\\generic_chess\\core\\semantic_executor.py",
+            "line": 603,
+            "function": "is_square_attacked",
+            "primitive_calls": 12968,
+            "calls": 12968,
+            "self_seconds": 0.047816700000000004,
+            "cumulative_seconds": 0.1597213
+          },
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<built-in method time.monotonic>",
+            "primitive_calls": 617168,
+            "calls": 617168,
+            "self_seconds": 0.0367091,
+            "cumulative_seconds": 0.0367091
+          }
+        ]
+      }
+    ],
+    "generation_prefix": [
+      {
+        "case": "chess-ep",
+        "saved_percent": 1.995501843056846,
+        "baseline_seconds": 0.38969644997268915,
+        "cache_seconds": 0.38192005013115704,
+        "timed_completion": [
+          {
+            "seconds": 1,
+            "mode": "baseline",
+            "depth": 3
+          },
+          {
+            "seconds": 1,
+            "mode": "cache",
+            "depth": 3
+          },
+          {
+            "seconds": 1,
+            "mode": "cache",
+            "depth": 3
+          },
+          {
+            "seconds": 1,
+            "mode": "baseline",
+            "depth": 3
+          },
+          {
+            "seconds": 4,
+            "mode": "baseline",
+            "depth": 4
+          },
+          {
+            "seconds": 4,
+            "mode": "cache",
+            "depth": 4
+          },
+          {
+            "seconds": 4,
+            "mode": "cache",
+            "depth": 4
+          },
+          {
+            "seconds": 4,
+            "mode": "baseline",
+            "depth": 4
+          }
+        ]
+      },
+      {
+        "case": "generated-202610082000-ply3",
+        "saved_percent": 4.468048485434828,
+        "baseline_seconds": 0.3330514500848949,
+        "cache_seconds": 0.318170549813658,
+        "timed_completion": [
+          {
+            "seconds": 1,
+            "mode": "baseline",
+            "depth": 3
+          },
+          {
+            "seconds": 1,
+            "mode": "cache",
+            "depth": 3
+          },
+          {
+            "seconds": 1,
+            "mode": "cache",
+            "depth": 3
+          },
+          {
+            "seconds": 1,
+            "mode": "baseline",
+            "depth": 3
+          },
+          {
+            "seconds": 4,
+            "mode": "baseline",
+            "depth": 4
+          },
+          {
+            "seconds": 4,
+            "mode": "cache",
+            "depth": 4
+          },
+          {
+            "seconds": 4,
+            "mode": "cache",
+            "depth": 4
+          },
+          {
+            "seconds": 4,
+            "mode": "baseline",
+            "depth": 4
+          }
+        ]
+      },
+      {
+        "case": "generated-202610082001-ply3",
+        "saved_percent": -1.6525933383603197,
+        "baseline_seconds": 0.37074455013498664,
+        "cache_seconds": 0.37687144987285137,
+        "timed_completion": [
+          {
+            "seconds": 1,
+            "mode": "baseline",
+            "depth": 3
+          },
+          {
+            "seconds": 1,
+            "mode": "cache",
+            "depth": 3
+          },
+          {
+            "seconds": 1,
+            "mode": "cache",
+            "depth": 3
+          },
+          {
+            "seconds": 1,
+            "mode": "baseline",
+            "depth": 3
+          },
+          {
+            "seconds": 4,
+            "mode": "baseline",
+            "depth": 4
+          },
+          {
+            "seconds": 4,
+            "mode": "cache",
+            "depth": 4
+          },
+          {
+            "seconds": 4,
+            "mode": "cache",
+            "depth": 4
+          },
+          {
+            "seconds": 4,
+            "mode": "baseline",
+            "depth": 4
+          }
+        ]
+      }
+    ]
+  },
+  "validation": "120 relevant tests passed; publish repeats relevant targets after final review.",
+  "dependencies": "Base commit supplies other module imports; exact scoped pilot source closure bundled. Early prototypes require their source_before context; final delivered controls explicitly select old traversal. Native caller pilot requires saved candidate search method, final immutable caller retained."
+}

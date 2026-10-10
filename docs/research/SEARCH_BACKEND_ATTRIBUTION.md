@@ -798,3 +798,36 @@ source pins, adverse/capped cells and measured cancellation tails are in
 data/cooperative_budget_20261010.json -> its evidence.zip/report.md and
 phase_contract.md. Dot's complete fresh-root review was assessed and applied;
 no independent advisor execution is claimed.
+
+## Incoming geometry and traversal contract, 2026-10-10
+
+Product orderingOFF sorts str(action), rather than natural/public-label order.
+Eight corrected D3 controls align scores, nodes and full routes; the earlier
+contrary traversal rows remain. A diagnostic dispatch repair keeps real semantic
+polls and stop precedence while saving about2-7% on48 local controls.
+
+A compile-owned owner/endpoint index now skips incompatible endpoints before
+runtime occupancy/path/guard evaluation. Replaced IR rebuilds it;65536-row
+overflow uses the original full traversal.48 paired product calls retain all16
+fixed D3 scores/PVs/non-time work and save about29-53% locally. At4seconds EP
+and both generated roots reachD4 rather thanD3; Shogi one-secondD1 becomesD2.
+48 thin-bridge controls transfer the execution savings, with different tie/node
+contracts and a retained generated2001 four-second no-depth-gain result.
+
+134 positions/16138 attacks and an independent12-root full static sequence/
+replace/push-pop audit agree.32 real cancellations and16 q2 controls retain
+stops/restoration/work. A24ms indexed inter-poll outlier remains, not an SLA.
+Owned metadata is about0.18-1.90MB on these roots; construction/peak/free-list
+effects are separately reported. No strength or full-domain proof follows.
+
+The separate Native Runtime PV candidate passes566 full state/568 illegal-route
+checks,24 fixed and24 cancel controls, but mean post-kernel time is neutral or
+slightly worse after indexing. Defer it and keep immutable product validation;
+do not attribute its costs to Core index gains. Full-Native Shogi and blocked
+C boundaries remain.120 related tests pass. Exact source/failure/raw evidence:
+data/frontier_contract_20261010.json -> report.md and evidence.zip. Dot's key
+lifecycle objection was read, assessed and tested; no workflow/UI change.
+
+The next36 post-index static generation-prefix reuse calls keep fixed work/routes
+but yield modest or adverse fixed timing and no1/4second depth improvement.
+Retain this alternative as a negative result; no additional product cache.

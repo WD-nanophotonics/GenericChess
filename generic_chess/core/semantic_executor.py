@@ -616,6 +616,23 @@ class SemanticEngine:
         capture eligibility to pseudo-attack; S4 postconditions are never
         consulted here."""
         self._ensure_match(position)
+        incoming = self.semantic._incoming_attack_paths
+        if incoming is not None:
+            _checkpoint(checkpoint)
+            for pattern, tid, source, gid, path in incoming.get((str(by_owner), square), ()):
+                _checkpoint(checkpoint)
+                piece = position.board[source]
+                if piece is None or piece.owner != by_owner or piece.current_type_id != tid:
+                    continue
+                binding = self._make_binding(
+                    pattern, gid, tid, piece, source, square, None, path, position)
+                if self._path_holds(
+                    pattern.path, position, binding, by_owner, checkpoint=checkpoint,
+                ) and self._guards_hold(
+                    pattern, position, binding, by_owner, checkpoint=checkpoint,
+                ):
+                    return True
+            return False
         sources_by_owner_type = _sources_by_owner_type(position)
         owner_key = str(by_owner)
         for pattern in self._patterns:

@@ -47,7 +47,14 @@ def _root_search(board, depth, *, mode='verified', reverse=False, reverse_interi
 
     def checkpoint():
         work['semantic_polls'] += 1
-        budget_check()
+        # Same live checks as budget_check(), without a second dispatch for
+        # every semantic work unit. Keep the count and abort precedence.
+        if work['nodes'] >= node_limit:
+            raise Exhausted('node_budget')
+        if cancellation is not None and cancellation.is_cancelled():
+            raise Exhausted('cancelled')
+        if perf_counter()-start >= seconds:
+            raise Exhausted('time_limit')
 
     if cooperative:
         if not getattr(board, 'semantic_checkpoint_supported', False):

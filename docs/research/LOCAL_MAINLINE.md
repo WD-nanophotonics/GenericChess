@@ -533,6 +533,22 @@ independent price/task questions; do not claim pre-final timings as deployment.
 
 ## Working boundaries
 
+Latest search-first checkpoint (2026-10-10): compile-owned incoming geometry is
+installed with full old fallback.48 product/48 thin paired controls retain fixed
+work/routes; product local fixed cost falls29-53% and three4second roots gain
+one completed layer. Correct unordered traversal is str(action), not natural.
+Finite static-sequence/replace/state/rectangle/q2/cancel controls pass; completion
+is not strength. Owned metadata, construction and a24ms poll-gap outlier remain
+explicit costs. Native Runtime PV migration is deferred after separate neutral/
+adverse mean tail controls; existing immutable validator, C/terminal boundaries
+and UI isolation remain. Next select one residual generation/representation
+cost or current indexed Core/specialized bridge comparison, not extra algorithms
+or price fitting.36 post-index legal-generation prefix reuse controls show no
+timed depth gain and a slightly adverse root: defer that extra cache. Evidence:
+SEARCH_BACKEND_ATTRIBUTION.md;
+data/frontier_contract_20261010.json. This technical review changes no manual,
+heartbeat, publication, stop or long-run rules.
+
 Use existing frozen outputs/search entries; select one discriminating mechanism
 or interface uncertainty. Development approximations may state limitations rather
 than first prove exact WDL/all defenses/holdout status. Human agreement remains

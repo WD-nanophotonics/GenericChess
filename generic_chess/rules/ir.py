@@ -566,6 +566,45 @@ def _declaration_dict(value: CompiledDeclaration) -> dict:
     }
 
 
+def _incoming_attack_paths(ir, squares: int, *, max_paths: int = 65536):
+    """Bounded, compile-owned reverse geometry; no position or attack cache.
+
+    Preserve pattern/type/source/geometry/path order, including duplicate
+    endpoints and S4-bearing capture patterns. The executor still checks
+    occupancy, path and state/slot predicates. Large metadata falls back to
+    the original traversal without excluding any rule or changing semantics.
+    """
+    incoming = {(str(owner), target): [] for owner in (0, 1) for target in range(squares)}
+    count = 0
+    for owner in (0, 1):
+        for pattern in ir.patterns:
+            if pattern.target.kind != "target_enemy":
+                continue
+            for tid in pattern.type_ids:
+                for source in range(squares):
+                    for gid in pattern.geometry_ids:
+                        geometry = ir.geometry.get(gid)
+                        if geometry is None or geometry.kind == "drop":
+                            continue
+                        if geometry.atom_source is not None and geometry.atom_source[0] != tid:
+                            continue
+                        compiled_path = geometry.paths.get(str(owner), {}).get(source, ())
+                        if geometry.kind == "leap":
+                            endpoints = range(min(1, len(compiled_path)))
+                        else:
+                            endpoints = range(max(0, (geometry.min_steps or 1) - 1), len(compiled_path))
+                        for endpoint in endpoints:
+                            count += 1
+                            if count > max_paths:
+                                return None
+                            target = compiled_path[endpoint]
+                            path = () if geometry.kind == "leap" else tuple(compiled_path[:endpoint])
+                            incoming[(str(owner), target)].append((pattern, tid, source, gid, path))
+    # Tuples retain path order; the private mapping follows the IR's existing
+    # pickleable mapping convention rather than introducing mappingproxy.
+    return {key: tuple(rows) for key, rows in incoming.items()}
+
+
 @dataclass(frozen=True, slots=True)
 class CompiledSemanticRuleset:
     """Compiled product for semantic-DSL rulesets.
@@ -578,6 +617,14 @@ class CompiledSemanticRuleset:
     ir: CompiledSemanticIR
     _legacy_compiled: Any = None
     support: "CompiledSemanticSupport | None" = None
+    _incoming_attack_paths: Any = field(init=False, repr=False, compare=False, default=None)
+
+    def __post_init__(self):
+        # Derived execution data is not part of the IR/fingerprint/payload.
+        # init=False also rebuilds it when dataclasses.replace changes IR.
+        if self.support is not None and self.ir.capabilities.new_ir_core_executable:
+            object.__setattr__(self, "_incoming_attack_paths",
+                _incoming_attack_paths(self.ir, self.support.board_shape.area))
 
     @property
     def ruleset_fingerprint(self) -> str:

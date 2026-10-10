@@ -36,6 +36,32 @@ def _search_limits(**kwargs):
     return SearchLimits(quiescence_max_depth=0, **kwargs)
 
 
+def test_core_validation_rejects_counterfeit_native_pv_without_mutating_session(monkeypatch):
+    from generic_chess.core.errors import IllegalActionError
+    from generic_chess.native import _module
+
+    compiled, native = _western()
+    session = GameSession(compiled)
+    before = session.state
+    witnesses = session._search_witnesses
+    engine = SemanticSearchEngine(compiled, native, tt_megabytes=0)
+    module = _module()
+    real_search = module.semantic_engine_search
+
+    def counterfeit(*args):
+        raw = dict(real_search(*args))
+        first = raw['principal_variation'][0]
+        # A mover cannot make the same move again after the side changes.
+        raw['principal_variation'] = (first, first)
+        return raw
+
+    monkeypatch.setattr(module, 'semantic_engine_search', counterfeit)
+    with pytest.raises(IllegalActionError):
+        engine.search(session, _search_limits(max_depth=1, max_nodes=200))
+    assert session.state == before
+    assert session._search_witnesses == witnesses
+
+
 def test_persistent_engine_reuses_tt_and_next_root_history():
     compiled, native = _western()
     session = GameSession(compiled)

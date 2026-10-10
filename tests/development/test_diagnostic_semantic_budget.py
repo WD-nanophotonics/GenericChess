@@ -52,3 +52,31 @@ def test_live_cancel_and_node_precedence():
     assert r['exit_cause']=='node_budget'
     r=root_search(board,2,node_limit=100,seconds=0,cooperative=True,cancellation=Token())
     assert r['exit_cause']=='cancelled' and board.checkpoint is None
+
+
+@pytest.mark.parametrize('cause', ['node_budget', 'cancelled', 'time_limit'])
+def test_internal_poll_keeps_abort_precedence_and_restores_callback(monkeypatch, cause):
+    from scripts import root_bound_diagnostic as diagnostic
+    board = PollingBoard()
+    previous = lambda: None
+    board.checkpoint = previous
+    clock = [0.]
+    stopped = [False]
+    class Token:
+        def is_cancelled(self):
+            return stopped[0]
+    actions = board.actions
+    def stop_inside_actions():
+        # The entry check passed. These limits become active at the semantic
+        # callback, so the optimized callback itself must enforce precedence.
+        clock[0] = 2.
+        stopped[0] = cause != 'time_limit'
+        return actions()
+    board.actions = stop_inside_actions
+    monkeypatch.setattr(diagnostic, 'perf_counter', lambda: clock[0])
+    result = root_search(board, 2, node_limit=1 if cause == 'node_budget' else 100,
+        seconds=1, cooperative=True, cancellation=Token())
+    assert result['exit_cause'] == cause
+    assert result['work']['semantic_polls'] == 1
+    assert result['completed_depth'] == 0 and board.restored()
+    assert board.checkpoint is previous
