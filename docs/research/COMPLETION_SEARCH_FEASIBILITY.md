@@ -186,3 +186,128 @@ and handle-time-20261010-index.json in ../archive/search_compression_20261009.
 Initial packaging incorrectly used absolute member paths; corrected packages use
 workspace-relative paths, retain failed producers and repair records, and replay
 full histories from the final archive. Recovery replay is not independent science.
+
+## Terminal-preserving completion ablation
+
+The next controlled research variant keeps the same full-state handles, canonical
+ties, Unit/v3 leaf on both sides and actual-terminal scores. ON propagates valid
+completion, skips resolved subtrees and stops at an existential win. OFF keeps
+ordinary partial heuristic minimax and uses structural exhaustion only to prevent
+re-expanding finished terminal trees. It deliberately does not expose internal
+resolved outcomes. This is a combined propagation/skip/early-stop ablation, not
+isolated causality of the priority field. Six finite bookkeeping controls pass;
+eight actual512-successor calls include exact ON parity with saved2165 signatures
+and the newer2169 parent. No product/default or learned table changes.
+
+All32 predeclared2172-2175 games complete in1311.959seconds/830plies. Both time
+conditions use the same four rules, Unit/v3 leaves and swapped ON/OFF owners;
+the second condition is an exposed resource curve, not independent validation.
+
+|Target per call|ON wins|OFF wins|True rule draws|Ongoing64|Plies|
+|---|---:|---:|---:|---:|---:|
+|1second|4|7|0|5|455|
+|2seconds|7|4|2|3|375|
+
+Eight matched cells change terminal event class with time. Twelve/eleven distinct
+action trajectories exist at1/2seconds; all four2175 cells share an immediate
+one-ply mate in each condition. These dependent counts do not establish stable
+completion utility. The28 common-parent opening/earliest-time-divergence probes
+use5201 transitions. All selected children have zero opposing next-reply win
+witnesses; only2175 has an immediate root win. This narrow absence is not WDL
+or an explanation of subsequent outcomes. The sole ON/OFF opening difference,
+2172v3 at2seconds, disappears at each common512/4096/16384-successor budget:
+all six calls retain identical choices/values and unresolved roots. A timed
+choice difference alone therefore does not identify semantic causality.
+
+ON resolves6/13 roots at1/2seconds. OFF retains91/358 root-child occurrences of
+an extreme backed score with no resolved outcome; occurrences are dependent,
+not independent errors. Actual terminal scores can reach a partial frontier
+without proving its internal result. OFF completes no structurally exhausted
+root in these games. ON/OFF summed caller seconds are224.007/229.935 and
+355.509/377.960, on different trajectories rather than paired speed controls.
+Maximum caller costs are1.066/1.051 and2.130/2.124seconds. The earlier apparent
+2.19second one-second overrun was whole-game legal-submission/save overhead;
+it was corrected and supplies no cancellation-interface defect. At2175 ON
+stops at the shared winning move in about4milliseconds while OFF spends its
+time budget. Cheap shallow terminal handling might provide the same saving.
+
+That concrete uncertainty selects a fresh2176-2179 sixteen-game route comparison:
+installed cold Core maxD2/q0 versus completion ON, common2second upper target,
+Unit/v3 and swapped owners. Actual completed depths and unlike executor/ordering
+costs must be reported; maxD2 does not guarantee completingD2. No Elo, default,
+outcome-selected extension, longer single-job permission or all-WDL gate follows.
+
+All16 shallow-route cells finish in1075.431seconds/681plies: Core5wins,
+completion3wins, three true repetition draws and five ongoing64. Fifteen distinct
+action trajectories remain. All three completion wins are owner0 on2178/2179;
+five Core wins use v3, while2177 stays ongoing in all four cells. These dependent,
+leaf/owner-sensitive outcomes do not support adopting a more expensive search.
+Core completesD2 at269 of341calls andD1 at72; its common upper target is not a
+fixed completed-depth promise. Core/frontier caller totals are340.949/670.164sec;
+internal search totals334.344/665.189sec. Core's caller includes PV validation,
+whereas the frontier returns only a root action. Different ordering/executor
+conditions remain part of this route comparison. Maximum calls2.040/2.108sec
+and median.973/2.016sec are local measurements, not universal latency guarantees.
+Core materializes163646 successors and visits164326nodes; frontier materializes
+3652849 successors. Generation/evaluation calls are35042/129389 and51805/3651089.
+These work counters do not count every internal semantic transition.
+
+The ablation's19 resolved calls are not all immediate terminal selection:
+eleven selected children are terminal, eight remain ongoing despite a resolved
+root. The latter include three current-side winning and five losing resolutions.
+This is evidence of a deeper mechanism, not an independent WDL certificate or
+economical advantage. All eight, including losses, are retained for a common-
+parent installed-D2 control using their original1/2second upper target. Whole
+selected-child next-reply diagnostics remain scoped observations, not a new
+admission or all-defense proof requirement. No automatic fit, search/default
+adoption or further longer-game experiment follows from this comparison.
+
+The complete shallow-route reply diagnostic covers681 selected children,
+574 unique full-history states and107 cache hits, with66618 public reply
+transitions in635.592sec. Eight distinct selected-child states expose an opposing
+immediate win: frontier5/Core3. All three Core cases had completed onlyD1.
+These are path witnesses, not an avoidable-error rate; unchosen alternatives
+were not fully tested and resolved losses may already be forced.
+
+All eight nonterminal completion roots receive the installed coldD2 control.
+Five losing resolutions have corresponding Core mate-range loss scores; three
+winning resolutions have no Core mate score despite completingD2. Seven of
+eight actions agree. On the three winning roots, maxD3 requests still complete
+onlyD2 at2.016-2.033sec, retaining scores-200,0,-2052. Cached frontier/new Core
+timings are unpaired and scores use different terminal scales; neither is an
+independent WDL certificate. The concrete winning-resolution gap survives this
+cheap baseline and is worth keeping, rather than banning the whole route.
+
+A declared128/512/2048-successor cost scale retains all three winning roots and
+all nine calls. The2173Unit ply29 win resolves at184 successors in.051-.059sec;
+the2174v3 ply3 win resolves at1152 successors in.271sec. The2173Unit ply27 root
+stays unresolved through2048 successors (.806sec). This exposed diagnostic
+motivates one prospective question: can a fixed small completion prepass add
+useful signal while leaving enough of the SAME total deadline for installed
+Core? It does not select a policy from exposed labels or authorize extra budget,
+default adoption, longer games or renewed qualification of old data.
+
+The alternative drop-service probe materializes only semantic drops at five
+saved2151ply3 top children, retaining full state and auxiliary prerequisites.
+Checking-drop counts for typesA/X are1/0 at both safe index20 and unsafe33/38;
+the unsafe47/48 counts are3/0 and4/3. Full drop counts differ slightly, but the
+checking-count subvector aliases the safe and two unsafe children. Availability
+or check incidence is not mating utility. Feature extraction costs.017-.024sec
+and290-518 internal semantic transitions per child; generation costs are
+reported separately. No count penalty, model expansion or fit follows.
+
+Decision: defer the unmodified expensive frontier as a default. Retain the
+three finite winning gaps as a narrower combined-budget search hypothesis.
+Conditional drop service remains an alternative requiring more useful response
+information than check counts. These observations change the next experiment,
+not the two research mainlines. Products, search defaults and prices stay fixed.
+
+Recovery: data/completion_ablation_20261010.json and the purpose-specific
+completion-ablation-20261010-index.json route all declarations, sources, work
+caps, adverse observations and full states. The first package producer fails
+when it reads a dataclass action as action_to_dict. Keep its archive/source;
+a separate verify_existing.py matches the recorded action against public legal
+actions without modifying experimental bytes. The repair source is isolated in
+completion-ablation-20261010-repair.zip. Verification replays1511 saved game
+states, sixteen winning reply-action occurrences across eight positive states, eleven Core control children, five
+drop-service children and374 drop options. Recovery is not independent science.

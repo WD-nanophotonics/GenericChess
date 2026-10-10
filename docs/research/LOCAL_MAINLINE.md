@@ -59,9 +59,16 @@ independent price/task questions; do not claim pre-final timings as deployment.
   Fresh2168-2171 common-time handle games give5frontier wins/1true repetition/
   10ongoing64, with wins confined to2168/2169 and no default adoption.232rectangle
   child pairs/six fixed-work signatures retain this interface's scoped transfer.
-  Next choose one common-parent completion attribution beyond cheap immediate
-  terminal signal, or conditional drop-service input; preserve adverse old
-  outcomes, full history/terminal semantics and cost conditions. No new fit.
+  Terminal-preserving32game ON/OFF ablation reverses win counts with1/2sec;
+  fixed-work choices agree at the sole timed opening difference. Fresh16game
+  coldD2 route comparison gives Core5/frontier3 wins,3rule draws/5ongoing,
+  with frontier caller cost about twice Core on unlike trajectories. Defer the
+  unmodified frontier default. Three nonterminal winning resolutions remain
+  absent from CoreD2/D3-completed-only-D2; fixed-work completion finds two cheaply.
+  Next predeclare a fixed-total-budget small completion prepass plus Core on
+  fresh rules, retaining full history, actual depths and adverse costs. No fit
+  or extra budget from exposed labels. Checking-drop counts alias safe/unsafe
+  children; conditional response utility remains a scoped alternative.
   COMPLETION_SEARCH_FEASIBILITY.md owns that scoped alternative and cost limits.
   FINITE_SEARCH_COMPRESSION.md owns
   price/input evidence; UNFAMILIAR_RULE_SEARCH.md owns product behavior.
@@ -346,7 +353,7 @@ branch backlog or publication gate. Exact operating rules remain in AGENTS.md.
 |Descriptive price ratios and preparation/promotion bias|CROSS_GAME_PRICE_DIAGNOSTIC.md; data/pawn_bias_20261009.json|
 |Exact primitive occupancy, representation and rectangle capability|GEOMETRY_OCCUPANCY.md; data/geometry_occupancy_20261009.json; leaf_order_20261009.json|
 |Search interface, actual-effect qsupport, costs and caps|UNFAMILIAR_RULE_SEARCH.md; data/event_qsearch_20261009.json; rect_search_20261009.json; query_transfer_20261009.json; qfactorial_20261009.json; qeffects_20261008.json; generated6_20261008.json; generated8_20261008.json|
-|Completion-aware search alternative, full-state scope and actual caller costs|COMPLETION_SEARCH_FEASIBILITY.md; data/completion_search_20261010.json; data/handle_time_20261010.json|
+|Completion-aware search alternative, full-state scope and actual caller costs|COMPLETION_SEARCH_FEASIBILITY.md; data/completion_search_20261010.json; data/handle_time_20261010.json; data/completion_ablation_20261010.json|
 |Retained utility alternatives|TEMPORAL_HAND_SERVICE.md; GOAL_INTERACTION.md; CONTRIBUTION_MODEL.md; JOINT_SERVICE_DIAGNOSTIC.md; CUSTODY_CONTINUATION.md|
 
 Each data index routes exact sources/failures/outputs to its purpose-specific

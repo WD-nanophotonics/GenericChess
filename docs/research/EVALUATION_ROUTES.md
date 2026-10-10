@@ -444,3 +444,13 @@ an affordable advantage. COMPLETION_SEARCH_FEASIBILITY.md owns algorithm/source
 limits, actual costs and the fixed scheduling-sensitivity repeat. Continue with
 one decision-changing attribution/cost question; keep static and installed search
 as cheap comparators, not a mandatory gate before every evaluation candidate.
+
+The controlled completion follow-up does not support the unmodified expensive
+frontier default: ON/OFF win counts reverse with budget and a fresh coldD2
+route wins5 versus3 with about half the summed caller cost on unlike paths.
+Three finite winning resolutions remain beyond the completedD2 baseline;
+two resolve in a small fixed-work frontier. Retain one prospective combined-
+total-budget hypothesis, not an exposed fitted policy or proof gate. Checking-
+drop incidence aliases one safe/two unsafe children and is insufficient alone.
+COMPLETION_SEARCH_FEASIBILITY.md and completion_ablation_20261010 own the full
+scope, counts, caps, timing correction and isolated recovery.

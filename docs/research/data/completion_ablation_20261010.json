@@ -1,0 +1,1716 @@
+{
+  "scope": "Purpose-specific completion ablation and shallow route recovery.\nOnly Agent-generated sources/rules/observations; no transport/user/account data.\nVerify exact member hashes, replay every saved full state including history,\nand replay positive selected-child reply witnesses. Recovery is not independent\nscientific validation or restoration of unexposed qualification.\n",
+  "archive_index": "docs/archive/search_compression_20261009/completion-ablation-20261010-index.json",
+  "ablation": {
+    "scope": "Describe fixed completion and cost conditions without pooling them into Elo.\nWhole trajectories/rules remain dependent; ongoing64 differs from true draws and\ntechnical unknown. Backed heuristic mate scores need not be resolved outcomes.\n",
+    "source": "\"\"\"Describe fixed completion and cost conditions without pooling them into Elo.\nWhole trajectories/rules remain dependent; ongoing64 differs from true draws and\ntechnical unknown. Backed heuristic mate scores need not be resolved outcomes.\n\"\"\"\nfrom pathlib import Path\nimport sys,json,collections,statistics\nsys.path.insert(0,str(Path.cwd()))\nfrom scripts.research_record import write_record\np=Path(__file__).parent;d=json.loads((p/'games.json').read_bytes());assert d['complete']and len(d['rows'])==32\ndef summary(rows):\n events=collections.Counter();by_leaf={};methods={};cells=[]\n for r in rows:\n  t=r['terminal']\n  if r['abort']is not None:label='technical_unknown'\n  elif t['status']=='ongoing':assert len(r['steps'])==64;label='ongoing64'\n  elif t['status']=='no_contest':label='unsupported_restart'\n  elif t['winner']is None:label='rule_draw'\n  else:label='completion_on_win'if r['completion_by_owner'][t['winner']]else'completion_off_win'\n  events[label]+=1;by_leaf.setdefault(r['leaf'],collections.Counter())[label]+=1\n  cells.append(dict(seed=r['seed'],leaf=r['leaf'],owners=r['completion_by_owner'],target=r['seconds_target'],plies=len(r['steps']),terminal=t,label=label,seconds=r['seconds']))\n for enabled in(True,False):\n  ss=[s for r in rows for s in r['steps']if s['completion']==enabled]\n  methods[str(enabled)]=dict(calls=len(ss),transitions=sum(s['stats']['transitions']for s in ss),generations=sum(s['stats']['generations']for s in ss),evaluations=sum(s['stats']['evaluations']for s in ss),terminals=sum(s['stats']['terminals']for s in ss),call_seconds=sum(s['seconds']for s in ss),median_seconds=statistics.median(s['seconds']for s in ss),max_seconds=max(s['seconds']for s in ss),resolved_roots=sum(s['stats']['root_outcome']is not None for s in ss),structural_exhaustions=sum(s['stats']['structural_exhaustion']for s in ss),unresolved_extreme_child_occurrences=sum(abs(c['value'])==10**8 and c['outcome']is None for s in ss for c in s['stats']['root_child_records']))\n paths=collections.Counter(json.dumps([s['action']for s in r['steps']],sort_keys=True)for r in rows)\n return dict(cells=cells,outcomes=dict(events),by_leaf={k:dict(v)for k,v in by_leaf.items()},methods=methods,plies=sum(len(r['steps'])for r in rows),distinct_action_trajectories=len(paths),path_multiplicities=sorted(paths.values()))\none={(r['seed'],r['leaf'],tuple(r['completion_by_owner'])):r for r in d['rows']if r['seconds_target']==1.0};two={(r['seed'],r['leaf'],tuple(r['completion_by_owner'])):r for r in d['rows']if r['seconds_target']==2.0};pairs=[]\nfor key,a in one.items():\n b=two[key];assert a['initial']==b['initial'];first=next((i for i,(x,y)in enumerate(zip(a['steps'],b['steps']))if x['action']!=y['action']),None)\n pairs.append(dict(seed=key[0],leaf=key[1],owners=key[2],first_action_divergence=first,event_changed=a['terminal']!=b['terminal'],plies=[len(a['steps']),len(b['steps'])],terminals=[a['terminal'],b['terminal']]))\nwrite_record(p/'analysis.json',dict(scope=__doc__,source=Path(__file__).read_text(),seconds=d['seconds'],conditions={str(t):summary([r for r in d['rows']if r['seconds_target']==t])for t in(1.0,2.0)},cost_pairs=pairs,no_default=True,no_training=True,no_independent_time_repeat=True))\nprint('seconds',d['seconds'],'time-change cells',sum(r['event_changed']for r in pairs))\nfor t in(1.0,2.0):print(t,summary([r for r in d['rows']if r['seconds_target']==t])['outcomes'])\n",
+    "seconds": 1311.9585573999211,
+    "conditions": {
+      "1.0": {
+        "cells": [
+          {
+            "seed": 202610082172,
+            "leaf": "unit",
+            "owners": [
+              true,
+              false
+            ],
+            "target": 1.0,
+            "plies": 64,
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "label": "ongoing64",
+            "seconds": 65.82363610016182
+          },
+          {
+            "seed": 202610082172,
+            "leaf": "unit",
+            "owners": [
+              false,
+              true
+            ],
+            "target": 1.0,
+            "plies": 64,
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "label": "ongoing64",
+            "seconds": 66.1131414999254
+          },
+          {
+            "seed": 202610082172,
+            "leaf": "v3",
+            "owners": [
+              true,
+              false
+            ],
+            "target": 1.0,
+            "plies": 13,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "label": "completion_on_win",
+            "seconds": 12.523019699845463
+          },
+          {
+            "seed": 202610082172,
+            "leaf": "v3",
+            "owners": [
+              false,
+              true
+            ],
+            "target": 1.0,
+            "plies": 51,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "label": "completion_off_win",
+            "seconds": 53.20753150014207
+          },
+          {
+            "seed": 202610082173,
+            "leaf": "unit",
+            "owners": [
+              true,
+              false
+            ],
+            "target": 1.0,
+            "plies": 18,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 1
+            },
+            "label": "completion_off_win",
+            "seconds": 19.2136762002483
+          },
+          {
+            "seed": 202610082173,
+            "leaf": "unit",
+            "owners": [
+              false,
+              true
+            ],
+            "target": 1.0,
+            "plies": 64,
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "label": "ongoing64",
+            "seconds": 67.4414386996068
+          },
+          {
+            "seed": 202610082173,
+            "leaf": "v3",
+            "owners": [
+              true,
+              false
+            ],
+            "target": 1.0,
+            "plies": 8,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 1
+            },
+            "label": "completion_off_win",
+            "seconds": 8.698997600004077
+          },
+          {
+            "seed": 202610082173,
+            "leaf": "v3",
+            "owners": [
+              false,
+              true
+            ],
+            "target": 1.0,
+            "plies": 12,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 1
+            },
+            "label": "completion_on_win",
+            "seconds": 11.777846300043166
+          },
+          {
+            "seed": 202610082174,
+            "leaf": "unit",
+            "owners": [
+              true,
+              false
+            ],
+            "target": 1.0,
+            "plies": 64,
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "label": "ongoing64",
+            "seconds": 68.52593930019066
+          },
+          {
+            "seed": 202610082174,
+            "leaf": "unit",
+            "owners": [
+              false,
+              true
+            ],
+            "target": 1.0,
+            "plies": 64,
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "label": "ongoing64",
+            "seconds": 69.35536399995908
+          },
+          {
+            "seed": 202610082174,
+            "leaf": "v3",
+            "owners": [
+              true,
+              false
+            ],
+            "target": 1.0,
+            "plies": 6,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 1
+            },
+            "label": "completion_off_win",
+            "seconds": 6.219767899718136
+          },
+          {
+            "seed": 202610082174,
+            "leaf": "v3",
+            "owners": [
+              false,
+              true
+            ],
+            "target": 1.0,
+            "plies": 23,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "label": "completion_off_win",
+            "seconds": 25.643807200249285
+          },
+          {
+            "seed": 202610082175,
+            "leaf": "unit",
+            "owners": [
+              true,
+              false
+            ],
+            "target": 1.0,
+            "plies": 1,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "label": "completion_on_win",
+            "seconds": 1.1357220998033881
+          },
+          {
+            "seed": 202610082175,
+            "leaf": "unit",
+            "owners": [
+              false,
+              true
+            ],
+            "target": 1.0,
+            "plies": 1,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "label": "completion_off_win",
+            "seconds": 2.125120900105685
+          },
+          {
+            "seed": 202610082175,
+            "leaf": "v3",
+            "owners": [
+              true,
+              false
+            ],
+            "target": 1.0,
+            "plies": 1,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "label": "completion_on_win",
+            "seconds": 1.1250696000643075
+          },
+          {
+            "seed": 202610082175,
+            "leaf": "v3",
+            "owners": [
+              false,
+              true
+            ],
+            "target": 1.0,
+            "plies": 1,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "label": "completion_off_win",
+            "seconds": 2.1885393001139164
+          }
+        ],
+        "outcomes": {
+          "ongoing64": 5,
+          "completion_on_win": 4,
+          "completion_off_win": 7
+        },
+        "by_leaf": {
+          "unit": {
+            "ongoing64": 5,
+            "completion_off_win": 2,
+            "completion_on_win": 1
+          },
+          "v3": {
+            "completion_on_win": 3,
+            "completion_off_win": 5
+          }
+        },
+        "methods": {
+          "True": {
+            "calls": 227,
+            "transitions": 1086218,
+            "generations": 9175,
+            "evaluations": 1085348,
+            "terminals": 1097,
+            "call_seconds": 224.0068154009059,
+            "median_seconds": 1.0080968998372555,
+            "max_seconds": 1.0655407002195716,
+            "resolved_roots": 6,
+            "structural_exhaustions": 0,
+            "unresolved_extreme_child_occurrences": 0
+          },
+          "False": {
+            "calls": 228,
+            "transitions": 1133364,
+            "generations": 9934,
+            "evaluations": 1132474,
+            "terminals": 1118,
+            "call_seconds": 229.93467350304127,
+            "median_seconds": 1.0081534497439861,
+            "max_seconds": 1.0510738999582827,
+            "resolved_roots": 0,
+            "structural_exhaustions": 0,
+            "unresolved_extreme_child_occurrences": 91
+          }
+        },
+        "plies": 455,
+        "distinct_action_trajectories": 12,
+        "path_multiplicities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          4
+        ]
+      },
+      "2.0": {
+        "cells": [
+          {
+            "seed": 202610082172,
+            "leaf": "unit",
+            "owners": [
+              true,
+              false
+            ],
+            "target": 2.0,
+            "plies": 27,
+            "terminal": {
+              "status": "repetition",
+              "winner": null
+            },
+            "label": "rule_draw",
+            "seconds": 57.24727539997548
+          },
+          {
+            "seed": 202610082172,
+            "leaf": "unit",
+            "owners": [
+              false,
+              true
+            ],
+            "target": 2.0,
+            "plies": 27,
+            "terminal": {
+              "status": "repetition",
+              "winner": null
+            },
+            "label": "rule_draw",
+            "seconds": 57.51227579964325
+          },
+          {
+            "seed": 202610082172,
+            "leaf": "v3",
+            "owners": [
+              true,
+              false
+            ],
+            "target": 2.0,
+            "plies": 31,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "label": "completion_on_win",
+            "seconds": 63.5752652999945
+          },
+          {
+            "seed": 202610082172,
+            "leaf": "v3",
+            "owners": [
+              false,
+              true
+            ],
+            "target": 2.0,
+            "plies": 10,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 1
+            },
+            "label": "completion_on_win",
+            "seconds": 19.60626929998398
+          },
+          {
+            "seed": 202610082173,
+            "leaf": "unit",
+            "owners": [
+              true,
+              false
+            ],
+            "target": 2.0,
+            "plies": 64,
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "label": "ongoing64",
+            "seconds": 136.12634979980066
+          },
+          {
+            "seed": 202610082173,
+            "leaf": "unit",
+            "owners": [
+              false,
+              true
+            ],
+            "target": 2.0,
+            "plies": 32,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 1
+            },
+            "label": "completion_on_win",
+            "seconds": 63.25954669993371
+          },
+          {
+            "seed": 202610082173,
+            "leaf": "v3",
+            "owners": [
+              true,
+              false
+            ],
+            "target": 2.0,
+            "plies": 19,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "label": "completion_on_win",
+            "seconds": 39.56981939962134
+          },
+          {
+            "seed": 202610082173,
+            "leaf": "v3",
+            "owners": [
+              false,
+              true
+            ],
+            "target": 2.0,
+            "plies": 19,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "label": "completion_off_win",
+            "seconds": 39.80119589995593
+          },
+          {
+            "seed": 202610082174,
+            "leaf": "unit",
+            "owners": [
+              true,
+              false
+            ],
+            "target": 2.0,
+            "plies": 64,
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "label": "ongoing64",
+            "seconds": 137.47178379958495
+          },
+          {
+            "seed": 202610082174,
+            "leaf": "unit",
+            "owners": [
+              false,
+              true
+            ],
+            "target": 2.0,
+            "plies": 64,
+            "terminal": {
+              "status": "ongoing",
+              "winner": null
+            },
+            "label": "ongoing64",
+            "seconds": 138.08243250008672
+          },
+          {
+            "seed": 202610082174,
+            "leaf": "v3",
+            "owners": [
+              true,
+              false
+            ],
+            "target": 2.0,
+            "plies": 8,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 1
+            },
+            "label": "completion_off_win",
+            "seconds": 14.373152799904346
+          },
+          {
+            "seed": 202610082174,
+            "leaf": "v3",
+            "owners": [
+              false,
+              true
+            ],
+            "target": 2.0,
+            "plies": 6,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 1
+            },
+            "label": "completion_on_win",
+            "seconds": 10.431363599840552
+          },
+          {
+            "seed": 202610082175,
+            "leaf": "unit",
+            "owners": [
+              true,
+              false
+            ],
+            "target": 2.0,
+            "plies": 1,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "label": "completion_on_win",
+            "seconds": 2.1793140000663698
+          },
+          {
+            "seed": 202610082175,
+            "leaf": "unit",
+            "owners": [
+              false,
+              true
+            ],
+            "target": 2.0,
+            "plies": 1,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "label": "completion_off_win",
+            "seconds": 4.158169299829751
+          },
+          {
+            "seed": 202610082175,
+            "leaf": "v3",
+            "owners": [
+              true,
+              false
+            ],
+            "target": 2.0,
+            "plies": 1,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "label": "completion_on_win",
+            "seconds": 2.1567314001731575
+          },
+          {
+            "seed": 202610082175,
+            "leaf": "v3",
+            "owners": [
+              false,
+              true
+            ],
+            "target": 2.0,
+            "plies": 1,
+            "terminal": {
+              "status": "checkmate",
+              "winner": 0
+            },
+            "label": "completion_off_win",
+            "seconds": 4.1440114001743495
+          }
+        ],
+        "outcomes": {
+          "rule_draw": 2,
+          "completion_on_win": 7,
+          "ongoing64": 3,
+          "completion_off_win": 4
+        },
+        "by_leaf": {
+          "unit": {
+            "rule_draw": 2,
+            "ongoing64": 3,
+            "completion_on_win": 2,
+            "completion_off_win": 1
+          },
+          "v3": {
+            "completion_on_win": 5,
+            "completion_off_win": 3
+          }
+        },
+        "methods": {
+          "True": {
+            "calls": 188,
+            "transitions": 1657994,
+            "generations": 14804,
+            "evaluations": 1656373,
+            "terminals": 1809,
+            "call_seconds": 355.5087722004391,
+            "median_seconds": 2.014287899946794,
+            "max_seconds": 2.1296618999913335,
+            "resolved_roots": 13,
+            "structural_exhaustions": 0,
+            "unresolved_extreme_child_occurrences": 0
+          },
+          "False": {
+            "calls": 187,
+            "transitions": 1774037,
+            "generations": 15238,
+            "evaluations": 1771873,
+            "terminals": 2351,
+            "call_seconds": 377.95979099860415,
+            "median_seconds": 2.0139775001443923,
+            "max_seconds": 2.1244319998659194,
+            "resolved_roots": 0,
+            "structural_exhaustions": 0,
+            "unresolved_extreme_child_occurrences": 358
+          }
+        },
+        "plies": 375,
+        "distinct_action_trajectories": 11,
+        "path_multiplicities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          4
+        ]
+      }
+    },
+    "cost_pairs": [
+      {
+        "seed": 202610082172,
+        "leaf": "unit",
+        "owners": [
+          true,
+          false
+        ],
+        "first_action_divergence": 4,
+        "event_changed": true,
+        "plies": [
+          64,
+          27
+        ],
+        "terminals": [
+          {
+            "status": "ongoing",
+            "winner": null
+          },
+          {
+            "status": "repetition",
+            "winner": null
+          }
+        ]
+      },
+      {
+        "seed": 202610082172,
+        "leaf": "unit",
+        "owners": [
+          false,
+          true
+        ],
+        "first_action_divergence": 4,
+        "event_changed": true,
+        "plies": [
+          64,
+          27
+        ],
+        "terminals": [
+          {
+            "status": "ongoing",
+            "winner": null
+          },
+          {
+            "status": "repetition",
+            "winner": null
+          }
+        ]
+      },
+      {
+        "seed": 202610082172,
+        "leaf": "v3",
+        "owners": [
+          true,
+          false
+        ],
+        "first_action_divergence": 0,
+        "event_changed": false,
+        "plies": [
+          13,
+          31
+        ],
+        "terminals": [
+          {
+            "status": "checkmate",
+            "winner": 0
+          },
+          {
+            "status": "checkmate",
+            "winner": 0
+          }
+        ]
+      },
+      {
+        "seed": 202610082172,
+        "leaf": "v3",
+        "owners": [
+          false,
+          true
+        ],
+        "first_action_divergence": 0,
+        "event_changed": true,
+        "plies": [
+          51,
+          10
+        ],
+        "terminals": [
+          {
+            "status": "checkmate",
+            "winner": 0
+          },
+          {
+            "status": "checkmate",
+            "winner": 1
+          }
+        ]
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "owners": [
+          true,
+          false
+        ],
+        "first_action_divergence": 11,
+        "event_changed": true,
+        "plies": [
+          18,
+          64
+        ],
+        "terminals": [
+          {
+            "status": "checkmate",
+            "winner": 1
+          },
+          {
+            "status": "ongoing",
+            "winner": null
+          }
+        ]
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "owners": [
+          false,
+          true
+        ],
+        "first_action_divergence": 11,
+        "event_changed": true,
+        "plies": [
+          64,
+          32
+        ],
+        "terminals": [
+          {
+            "status": "ongoing",
+            "winner": null
+          },
+          {
+            "status": "checkmate",
+            "winner": 1
+          }
+        ]
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "v3",
+        "owners": [
+          true,
+          false
+        ],
+        "first_action_divergence": 1,
+        "event_changed": true,
+        "plies": [
+          8,
+          19
+        ],
+        "terminals": [
+          {
+            "status": "checkmate",
+            "winner": 1
+          },
+          {
+            "status": "checkmate",
+            "winner": 0
+          }
+        ]
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "v3",
+        "owners": [
+          false,
+          true
+        ],
+        "first_action_divergence": 1,
+        "event_changed": true,
+        "plies": [
+          12,
+          19
+        ],
+        "terminals": [
+          {
+            "status": "checkmate",
+            "winner": 1
+          },
+          {
+            "status": "checkmate",
+            "winner": 0
+          }
+        ]
+      },
+      {
+        "seed": 202610082174,
+        "leaf": "unit",
+        "owners": [
+          true,
+          false
+        ],
+        "first_action_divergence": 9,
+        "event_changed": false,
+        "plies": [
+          64,
+          64
+        ],
+        "terminals": [
+          {
+            "status": "ongoing",
+            "winner": null
+          },
+          {
+            "status": "ongoing",
+            "winner": null
+          }
+        ]
+      },
+      {
+        "seed": 202610082174,
+        "leaf": "unit",
+        "owners": [
+          false,
+          true
+        ],
+        "first_action_divergence": 9,
+        "event_changed": false,
+        "plies": [
+          64,
+          64
+        ],
+        "terminals": [
+          {
+            "status": "ongoing",
+            "winner": null
+          },
+          {
+            "status": "ongoing",
+            "winner": null
+          }
+        ]
+      },
+      {
+        "seed": 202610082174,
+        "leaf": "v3",
+        "owners": [
+          true,
+          false
+        ],
+        "first_action_divergence": 2,
+        "event_changed": false,
+        "plies": [
+          6,
+          8
+        ],
+        "terminals": [
+          {
+            "status": "checkmate",
+            "winner": 1
+          },
+          {
+            "status": "checkmate",
+            "winner": 1
+          }
+        ]
+      },
+      {
+        "seed": 202610082174,
+        "leaf": "v3",
+        "owners": [
+          false,
+          true
+        ],
+        "first_action_divergence": 2,
+        "event_changed": true,
+        "plies": [
+          23,
+          6
+        ],
+        "terminals": [
+          {
+            "status": "checkmate",
+            "winner": 0
+          },
+          {
+            "status": "checkmate",
+            "winner": 1
+          }
+        ]
+      },
+      {
+        "seed": 202610082175,
+        "leaf": "unit",
+        "owners": [
+          true,
+          false
+        ],
+        "first_action_divergence": null,
+        "event_changed": false,
+        "plies": [
+          1,
+          1
+        ],
+        "terminals": [
+          {
+            "status": "checkmate",
+            "winner": 0
+          },
+          {
+            "status": "checkmate",
+            "winner": 0
+          }
+        ]
+      },
+      {
+        "seed": 202610082175,
+        "leaf": "unit",
+        "owners": [
+          false,
+          true
+        ],
+        "first_action_divergence": null,
+        "event_changed": false,
+        "plies": [
+          1,
+          1
+        ],
+        "terminals": [
+          {
+            "status": "checkmate",
+            "winner": 0
+          },
+          {
+            "status": "checkmate",
+            "winner": 0
+          }
+        ]
+      },
+      {
+        "seed": 202610082175,
+        "leaf": "v3",
+        "owners": [
+          true,
+          false
+        ],
+        "first_action_divergence": null,
+        "event_changed": false,
+        "plies": [
+          1,
+          1
+        ],
+        "terminals": [
+          {
+            "status": "checkmate",
+            "winner": 0
+          },
+          {
+            "status": "checkmate",
+            "winner": 0
+          }
+        ]
+      },
+      {
+        "seed": 202610082175,
+        "leaf": "v3",
+        "owners": [
+          false,
+          true
+        ],
+        "first_action_divergence": null,
+        "event_changed": false,
+        "plies": [
+          1,
+          1
+        ],
+        "terminals": [
+          {
+            "status": "checkmate",
+            "winner": 0
+          },
+          {
+            "status": "checkmate",
+            "winner": 0
+          }
+        ]
+      }
+    ],
+    "no_default": true,
+    "no_training": true,
+    "no_independent_time_repeat": true
+  },
+  "shallow": {
+    "scope": "Describe all16 declared shallow-D2 versus completion-ON route games; unlike work, actual completed depths and cost stay separate. Ongoing64 is not a draw; no strength/default claim or outcome-selected extension.",
+    "summary": {
+      "seconds": 1075.4309382000938,
+      "plies": 681,
+      "outcomes": {
+        "rule_draw": 3,
+        "ongoing64": 5,
+        "ab_win": 5,
+        "frontier_win": 3
+      },
+      "events": {
+        "repetition": 3,
+        "ongoing": 5,
+        "checkmate": 8
+      },
+      "methods": {
+        "ab": {
+          "calls": 341,
+          "call_seconds": 340.9494894994423,
+          "median_seconds": 0.9725717999972403,
+          "max_seconds": 2.0402520997449756,
+          "above2p05": 0,
+          "internal_search_seconds": 334.34400000749156,
+          "core_successors_materialized": 163646,
+          "generation_calls": 35042,
+          "evaluation_calls": 129389,
+          "work_units": "visited alpha-beta nodes",
+          "work": 164326,
+          "completed_depth_counts": {
+            "2": 269,
+            "1": 72
+          },
+          "root_resolution_counts": null
+        },
+        "frontier": {
+          "calls": 340,
+          "call_seconds": 670.1640996993519,
+          "median_seconds": 2.015771250007674,
+          "max_seconds": 2.1080024000257254,
+          "above2p05": 29,
+          "internal_search_seconds": 665.18909720378,
+          "core_successors_materialized": 3652849,
+          "generation_calls": 51805,
+          "evaluation_calls": 3651089,
+          "work_units": "materialized Core successors",
+          "work": 3652849,
+          "completed_depth_counts": null,
+          "root_resolution_counts": {
+            "None": 331,
+            "1": 7,
+            "-1": 2
+          }
+        }
+      },
+      "cells": [
+        {
+          "seed": 202610082176,
+          "leaf": "unit",
+          "methods": [
+            "ab",
+            "frontier"
+          ],
+          "plies": 62,
+          "terminal": {
+            "status": "repetition",
+            "winner": null
+          },
+          "label": "rule_draw",
+          "seconds": 122.39161649998277
+        },
+        {
+          "seed": 202610082176,
+          "leaf": "unit",
+          "methods": [
+            "frontier",
+            "ab"
+          ],
+          "plies": 64,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "label": "ongoing64",
+          "seconds": 94.30380159989
+        },
+        {
+          "seed": 202610082176,
+          "leaf": "v3",
+          "methods": [
+            "ab",
+            "frontier"
+          ],
+          "plies": 47,
+          "terminal": {
+            "status": "checkmate",
+            "winner": 0
+          },
+          "label": "ab_win",
+          "seconds": 72.29605900030583
+        },
+        {
+          "seed": 202610082176,
+          "leaf": "v3",
+          "methods": [
+            "frontier",
+            "ab"
+          ],
+          "plies": 48,
+          "terminal": {
+            "status": "checkmate",
+            "winner": 1
+          },
+          "label": "ab_win",
+          "seconds": 62.73795869993046
+        },
+        {
+          "seed": 202610082177,
+          "leaf": "unit",
+          "methods": [
+            "ab",
+            "frontier"
+          ],
+          "plies": 64,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "label": "ongoing64",
+          "seconds": 97.18701530015096
+        },
+        {
+          "seed": 202610082177,
+          "leaf": "unit",
+          "methods": [
+            "frontier",
+            "ab"
+          ],
+          "plies": 64,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "label": "ongoing64",
+          "seconds": 96.98938059993088
+        },
+        {
+          "seed": 202610082177,
+          "leaf": "v3",
+          "methods": [
+            "ab",
+            "frontier"
+          ],
+          "plies": 64,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "label": "ongoing64",
+          "seconds": 72.98352260002866
+        },
+        {
+          "seed": 202610082177,
+          "leaf": "v3",
+          "methods": [
+            "frontier",
+            "ab"
+          ],
+          "plies": 64,
+          "terminal": {
+            "status": "ongoing",
+            "winner": null
+          },
+          "label": "ongoing64",
+          "seconds": 72.08780530001968
+        },
+        {
+          "seed": 202610082178,
+          "leaf": "unit",
+          "methods": [
+            "ab",
+            "frontier"
+          ],
+          "plies": 46,
+          "terminal": {
+            "status": "repetition",
+            "winner": null
+          },
+          "label": "rule_draw",
+          "seconds": 92.79535619961098
+        },
+        {
+          "seed": 202610082178,
+          "leaf": "unit",
+          "methods": [
+            "frontier",
+            "ab"
+          ],
+          "plies": 21,
+          "terminal": {
+            "status": "checkmate",
+            "winner": 0
+          },
+          "label": "frontier_win",
+          "seconds": 36.4772616000846
+        },
+        {
+          "seed": 202610082178,
+          "leaf": "v3",
+          "methods": [
+            "ab",
+            "frontier"
+          ],
+          "plies": 13,
+          "terminal": {
+            "status": "checkmate",
+            "winner": 0
+          },
+          "label": "ab_win",
+          "seconds": 18.444347499869764
+        },
+        {
+          "seed": 202610082178,
+          "leaf": "v3",
+          "methods": [
+            "frontier",
+            "ab"
+          ],
+          "plies": 30,
+          "terminal": {
+            "status": "checkmate",
+            "winner": 1
+          },
+          "label": "ab_win",
+          "seconds": 48.83394389972091
+        },
+        {
+          "seed": 202610082179,
+          "leaf": "unit",
+          "methods": [
+            "ab",
+            "frontier"
+          ],
+          "plies": 47,
+          "terminal": {
+            "status": "repetition",
+            "winner": null
+          },
+          "label": "rule_draw",
+          "seconds": 96.66069270018488
+        },
+        {
+          "seed": 202610082179,
+          "leaf": "unit",
+          "methods": [
+            "frontier",
+            "ab"
+          ],
+          "plies": 23,
+          "terminal": {
+            "status": "checkmate",
+            "winner": 0
+          },
+          "label": "frontier_win",
+          "seconds": 43.739548600278795
+        },
+        {
+          "seed": 202610082179,
+          "leaf": "v3",
+          "methods": [
+            "ab",
+            "frontier"
+          ],
+          "plies": 13,
+          "terminal": {
+            "status": "checkmate",
+            "winner": 0
+          },
+          "label": "ab_win",
+          "seconds": 18.970092700328678
+        },
+        {
+          "seed": 202610082179,
+          "leaf": "v3",
+          "methods": [
+            "frontier",
+            "ab"
+          ],
+          "plies": 11,
+          "terminal": {
+            "status": "checkmate",
+            "winner": 0
+          },
+          "label": "frontier_win",
+          "seconds": 17.309012700337917
+        }
+      ],
+      "distinct_action_trajectories": 15,
+      "duplicate_multiplicities": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    "no_default": true,
+    "no_exposed_fitting": true
+  },
+  "shallow_reply_summary": {
+    "scope": "Describe every selected-child reply diagnostic. Positive rows and unique\ncomplete states are separate; no forced/avoidable error rate or independent\nholdout claim. Preserve method/leaf/resource/actual completed-depth context.\n",
+    "path_rows": 681,
+    "unique_full_states": 574,
+    "cache_hits": 107,
+    "transitions": 66618,
+    "seconds": 635.5920627000742,
+    "positive_path_rows": 8,
+    "unique_positive_states": 8,
+    "positive_by_method": {
+      "frontier": 5,
+      "ab": 3
+    },
+    "positive_by_leaf": {
+      "v3": 6,
+      "unit": 2
+    }
+  },
+  "winning_depth3": {
+    "rows": [
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "target": 2.0,
+        "ply": 27,
+        "completed_depth": 2,
+        "score": -200,
+        "caller_seconds": 2.033093699719757,
+        "actions_equal": false
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "target": 2.0,
+        "ply": 29,
+        "completed_depth": 2,
+        "score": 0,
+        "caller_seconds": 2.027542000170797,
+        "actions_equal": true
+      },
+      {
+        "seed": 202610082174,
+        "leaf": "v3",
+        "target": 2.0,
+        "ply": 3,
+        "completed_depth": 2,
+        "score": -2052,
+        "caller_seconds": 2.016026800032705,
+        "actions_equal": true
+      }
+    ]
+  },
+  "resolution_cost_scale": {
+    "rows": [
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "ply": 27,
+        "limit": 128,
+        "transitions": 128,
+        "outcome": null,
+        "caller_seconds": 0.02416309993714094,
+        "actions_equal": false
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "ply": 27,
+        "limit": 512,
+        "transitions": 512,
+        "outcome": null,
+        "caller_seconds": 0.16031449986621737,
+        "actions_equal": false
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "ply": 27,
+        "limit": 2048,
+        "transitions": 2048,
+        "outcome": null,
+        "caller_seconds": 0.8060734001919627,
+        "actions_equal": false
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "ply": 29,
+        "limit": 128,
+        "transitions": 128,
+        "outcome": null,
+        "caller_seconds": 0.02809199970215559,
+        "actions_equal": true
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "ply": 29,
+        "limit": 512,
+        "transitions": 184,
+        "outcome": -1,
+        "caller_seconds": 0.05071270000189543,
+        "actions_equal": true
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "ply": 29,
+        "limit": 2048,
+        "transitions": 184,
+        "outcome": -1,
+        "caller_seconds": 0.05907970014959574,
+        "actions_equal": true
+      },
+      {
+        "seed": 202610082174,
+        "leaf": "v3",
+        "ply": 3,
+        "limit": 128,
+        "transitions": 128,
+        "outcome": null,
+        "caller_seconds": 0.030346099752932787,
+        "actions_equal": true
+      },
+      {
+        "seed": 202610082174,
+        "leaf": "v3",
+        "ply": 3,
+        "limit": 512,
+        "transitions": 512,
+        "outcome": null,
+        "caller_seconds": 0.12189149996265769,
+        "actions_equal": false
+      },
+      {
+        "seed": 202610082174,
+        "leaf": "v3",
+        "ply": 3,
+        "limit": 2048,
+        "transitions": 1152,
+        "outcome": -1,
+        "caller_seconds": 0.27142270002514124,
+        "actions_equal": true
+      }
+    ]
+  },
+  "resolved_parent_core": {
+    "rows": [
+      {
+        "seed": 202610082172,
+        "leaf": "v3",
+        "target": 1.0,
+        "ply": 49,
+        "side": 1,
+        "frontier_outcome": 1,
+        "frontier_seconds": 0.7777648000046611,
+        "core_score": -999999998,
+        "core_depth": 2,
+        "core_selective_depth": 2,
+        "core_caller_seconds": 0.5820651999674737,
+        "actions_equal": true
+      },
+      {
+        "seed": 202610082174,
+        "leaf": "v3",
+        "target": 1.0,
+        "ply": 4,
+        "side": 0,
+        "frontier_outcome": -1,
+        "frontier_seconds": 0.01917859958484769,
+        "core_score": -999999998,
+        "core_depth": 2,
+        "core_selective_depth": 2,
+        "core_caller_seconds": 0.0722456001676619,
+        "actions_equal": true
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "target": 2.0,
+        "ply": 27,
+        "side": 1,
+        "frontier_outcome": -1,
+        "frontier_seconds": 1.1240416001528502,
+        "core_score": -200,
+        "core_depth": 2,
+        "core_selective_depth": 2,
+        "core_caller_seconds": 1.5250601000152528,
+        "actions_equal": false
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "unit",
+        "target": 2.0,
+        "ply": 29,
+        "side": 1,
+        "frontier_outcome": -1,
+        "frontier_seconds": 0.04871750017628074,
+        "core_score": 0,
+        "core_depth": 2,
+        "core_selective_depth": 2,
+        "core_caller_seconds": 1.642885200213641,
+        "actions_equal": true
+      },
+      {
+        "seed": 202610082173,
+        "leaf": "v3",
+        "target": 2.0,
+        "ply": 17,
+        "side": 1,
+        "frontier_outcome": 1,
+        "frontier_seconds": 0.015561100095510483,
+        "core_score": -999999998,
+        "core_depth": 2,
+        "core_selective_depth": 2,
+        "core_caller_seconds": 0.0844462001696229,
+        "actions_equal": true
+      },
+      {
+        "seed": 202610082174,
+        "leaf": "v3",
+        "target": 2.0,
+        "ply": 4,
+        "side": 0,
+        "frontier_outcome": -1,
+        "frontier_seconds": 0.01993479998782277,
+        "core_score": -999999998,
+        "core_depth": 2,
+        "core_selective_depth": 2,
+        "core_caller_seconds": 0.07999779982492328,
+        "actions_equal": true
+      },
+      {
+        "seed": 202610082174,
+        "leaf": "v3",
+        "target": 2.0,
+        "ply": 6,
+        "side": 0,
+        "frontier_outcome": -1,
+        "frontier_seconds": 0.05013740016147494,
+        "core_score": -999999998,
+        "core_depth": 2,
+        "core_selective_depth": 2,
+        "core_caller_seconds": 0.11953029967844486,
+        "actions_equal": true
+      },
+      {
+        "seed": 202610082174,
+        "leaf": "v3",
+        "target": 2.0,
+        "ply": 3,
+        "side": 1,
+        "frontier_outcome": -1,
+        "frontier_seconds": 0.27478850027546287,
+        "core_score": -2052,
+        "core_depth": 2,
+        "core_selective_depth": 2,
+        "core_caller_seconds": 0.7224173001013696,
+        "actions_equal": true
+      }
+    ]
+  },
+  "drop_service": {
+    "rows": [
+      {
+        "index": 20,
+        "legal_actions": 130,
+        "drop_counts": {
+          "legacy_058|A": 38,
+          "legacy_062|X": 36
+        },
+        "checking_drop_counts": {
+          "legacy_058|A": 1,
+          "legacy_062|X": 0
+        },
+        "saved_win_witnesses": 0,
+        "generation_seconds": 0.004513199906796217,
+        "generation_transitions": 130,
+        "feature_seconds": 0.01742519997060299,
+        "semantic_transitions": 290
+      },
+      {
+        "index": 33,
+        "legal_actions": 128,
+        "drop_counts": {
+          "legacy_058|A": 38,
+          "legacy_062|X": 37
+        },
+        "checking_drop_counts": {
+          "legacy_058|A": 1,
+          "legacy_062|X": 0
+        },
+        "saved_win_witnesses": 1,
+        "generation_seconds": 0.004561500158160925,
+        "generation_transitions": 128,
+        "feature_seconds": 0.02022189972922206,
+        "semantic_transitions": 405
+      },
+      {
+        "index": 38,
+        "legal_actions": 128,
+        "drop_counts": {
+          "legacy_058|A": 38,
+          "legacy_062|X": 37
+        },
+        "checking_drop_counts": {
+          "legacy_058|A": 1,
+          "legacy_062|X": 0
+        },
+        "saved_win_witnesses": 1,
+        "generation_seconds": 0.004463599994778633,
+        "generation_transitions": 128,
+        "feature_seconds": 0.01994549995288253,
+        "semantic_transitions": 413
+      },
+      {
+        "index": 47,
+        "legal_actions": 133,
+        "drop_counts": {
+          "legacy_058|A": 38,
+          "legacy_062|X": 37
+        },
+        "checking_drop_counts": {
+          "legacy_058|A": 3,
+          "legacy_062|X": 0
+        },
+        "saved_win_witnesses": 1,
+        "generation_seconds": 0.004773200023919344,
+        "generation_transitions": 133,
+        "feature_seconds": 0.023183200042694807,
+        "semantic_transitions": 482
+      },
+      {
+        "index": 48,
+        "legal_actions": 129,
+        "drop_counts": {
+          "legacy_058|A": 38,
+          "legacy_062|X": 37
+        },
+        "checking_drop_counts": {
+          "legacy_058|A": 4,
+          "legacy_062|X": 3
+        },
+        "saved_win_witnesses": 1,
+        "generation_seconds": 0.004638200160115957,
+        "generation_transitions": 129,
+        "feature_seconds": 0.023693200200796127,
+        "semantic_transitions": 518
+      }
+    ]
+  },
+  "attribution_summary": {
+    "parents": 28,
+    "positive_reply_occurrences": 0
+  },
+  "full_state_replay": 1511
+}
