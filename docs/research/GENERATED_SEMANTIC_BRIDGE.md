@@ -127,6 +127,13 @@ not summed inclusive timers or matched cross-representation work. Tiny guard
 cost does not justify a new guard shortcut. Next inspect first binding/candidate
 construction and its cancellation/legality contract, keeping full-state authority.
 
+Nine changed-premise constructor detail/control calls retain own-arm work/returns.
+The semantic and hybrid terminal predicates create 601 bindings, but exclusive
+constructor cost is only about 0.89ms versus 8.9/9.1ms remaining predicate cost.
+Defer eager descriptor work at this boundary too; candidate enumeration remains
+the useful next attribution, not another allocator-only benchmark. No generator
+factory timer is used as a proxy for lazy enumeration execution.
+
 ## Residual cost and deferred prototypes
 
 Eighteen matched-work profile/control calls separate nested exclusive wall buckets;

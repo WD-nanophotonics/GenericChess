@@ -514,6 +514,21 @@
       "sha256": "da0efd2542c1d14e3564ef9faab63360fb679ccd1ea4bfb430d69fd583a16c73"
     },
     {
+      "path": "terminal-binding-plan.md",
+      "bytes": 591,
+      "sha256": "176c2f8d3ad2208d7213ecbcc0d63f012e9727c0d1adb79ce7dee44abdeb8766"
+    },
+    {
+      "path": "terminal-binding.json",
+      "bytes": 41689,
+      "sha256": "b6c429ccd7c4999fa2127eb9d530744894f04882cd8577eeaef6270e119b3067"
+    },
+    {
+      "path": "terminal-binding.py",
+      "bytes": 5935,
+      "sha256": "9731ca35b0d113525df5f3b6aa4448e1191b2db1385e2a592f659889d26d6b63"
+    },
+    {
       "path": "terminal-detail-plan.md",
       "bytes": 652,
       "sha256": "0ba00e2f47b79b9cd7117e1f6947d817e76c45d29c0dba7b2204abd74b4cd870"
@@ -555,8 +570,8 @@
     }
   ],
   "archive_path": "docs/archive/generated_semantic_bridge_20261011/evidence.zip",
-  "archive_bytes": 384009,
-  "archive_sha256": "df3a74fd740e25cc821a6a26a83ce004acba54cabb10f9609073af74a077ec86",
+  "archive_bytes": 390476,
+  "archive_sha256": "9242b577fc608db9b4ff82046f9ec31ea44065b64a77bbd9a26752eb03e379e6",
   "verification": {
     "complete": true,
     "counts": {
@@ -641,5 +656,11 @@
     "within_arm_work_return_equal": true,
     "exclusive_sums_equal": true,
     "raw_sha256": "4d4eeadd7ac861ac534093a1982dac74172ac4ce60baffa4cf590008638524ee"
+  },
+  "terminal_binding": {
+    "calls": 9,
+    "within_arm_work_return_equal": true,
+    "exclusive_sums_equal": true,
+    "raw_sha256": "b6c429ccd7c4999fa2127eb9d530744894f04882cd8577eeaef6270e119b3067"
   }
 }
