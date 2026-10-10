@@ -61,6 +61,19 @@ available. Dot's complete reply supports explicit experimental use and this
 matched-snapshot opportunity-cost check, without independent execution or a
 new default/UI/workflow rule. The one-hour-run necessity rule is unchanged.
 
+A changed caller premise supplies an actual opportunity-cost counterexample:
+ordinary Core search is cancelled from progress after configured-q4 D2, leaving
+its persistent TT at the same uncommitted root. Three declared material roots
+and36 independent-copy retries retain the prime/root state. Chess-middle50/100ms
+baseline repeatedly returns cachedD2, while bypass retains cheapD1; Shogi50ms
+has one such loss and one tie. At1second every arm completesD2 with matching
+returns. This is a scheduling/completion loss, not demonstrated strategic harm.
+The prime is a real ordinary search cancellation, not synthetic q4 prewarming;
+provided material Core is distinct from the frozen UI service. Snapshot copies
+are diagnostic setup outside search limits for both arms. Next consider a
+skippable/budget-aware refresh in this caller context, rather than automatically
+expanding tactical coverage or changing defaults.
+
 ## Small mechanical integration and deferred alternative
 
 CompiledSemanticRuleset owns an ordered mapping from current actor type to

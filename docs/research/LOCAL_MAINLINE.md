@@ -26,10 +26,12 @@ replay attributes them. Keep the UI branch frozen during sandbox research.
 
 Latest choice: retain protected cheapD1→q1 refresh as a repeatable explicit
 research candidate, not the product/UI default. Phase-local TT bypass preserves
-actual cheap/q1 work and configured-q4 warm entries. Next compare a genuinely
-useful configured-q4 warm return against refresh opportunity cost in a new
-caller context, or return to a measured generic scheduling/representation
-shortcoming. Do not repeat the known queen roots without a changed premise.
+actual cheap/q1 work and configured-q4 warm entries. A new same-root retry after ordinary configured-q4 D2 cancellation
+reproduces a cost counterexample: Chess-middle50/100ms baseline returns cached
+D2 but bypass only cheapD1. At1second all paired returns match. Next examine a
+skippable/budget-aware refresh in that caller context, or return to a measured
+generic scheduling/representation shortcoming. Completion loss alone is not
+strategic loss. Do not repeat the known queen roots without a changed premise.
 A local execution saving can merit a small exact repair without a mandatory
 same-time layer gain; report the missing decision/strength benefit explicitly.
 

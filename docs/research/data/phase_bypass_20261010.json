@@ -1,6 +1,6 @@
 {
   "archive": "docs/archive/phase_bypass_20261010/evidence.zip",
-  "archive_sha256": "f12e38d17d8d5dbe4b42abb41e81ddec8ab3e6843b45c6c6f45f809f4a536b7a",
+  "archive_sha256": "6173dcddb97c6cddc69977c950d0ac933974fd0e4baa660d866fbaae6efab56d",
   "members": [
     {
       "member": "abort-plan.md",
@@ -386,14 +386,44 @@
       "member": "final-validation.json",
       "bytes": 260,
       "sha256": "6904784ef41113d52dfda9720bd275cb8cc08fbd783455088243571766799e00"
+    },
+    {
+      "member": "retry-plan.md",
+      "bytes": 749,
+      "sha256": "cc2d2e27a4b1ca922c1a7c681d1f456aa6230958b4abd4c6e4894adda257c391"
+    },
+    {
+      "member": "retry.py",
+      "bytes": 2947,
+      "sha256": "855e3d05c2807803913ea5c3b298ac242088a552c2388772530816026e68d6a8"
+    },
+    {
+      "member": "retry.json",
+      "bytes": 179097,
+      "sha256": "35a14b2c99fad8f8aa5678297382ee127461874b7baba84f65b6cedcf938f89f"
+    },
+    {
+      "member": "retry-summary.json",
+      "bytes": 20573,
+      "sha256": "8fcb965d7fe232bf177da0d7a9c7416321564034f74288cc48867d7f06e74d9d"
+    },
+    {
+      "member": "source-closure.json",
+      "bytes": 3239,
+      "sha256": "326d9e18c4ee0b781162caed87a3c13e215709d0ea94bcc3ac858860a69172af"
+    },
+    {
+      "member": "source-closure-note.md",
+      "bytes": 335,
+      "sha256": "a97efe7a747591a577f9e8afa4c6075a3aebc721f69b3b15c35a2abf7e6c0488"
     }
   ],
   "base_sha": "396b773b3afe6ff5a0545a0e8ffbf9534d64eb8a",
   "scope": "Agent-generated code/producers/results/failures only; no raw Slack/account/credentials, user UI export/deps/save folders.",
   "inputs": "Existing Agent games-final.json and population-baseline.json in ui_product_20261010 archive; frozen UI revision99c97bb87474c44af94c76571f326ef8a41eb898 reconstructed privately.",
   "producer_closure": "actor-plan.py requires original base source; stored old/candidate functions pin it. Installed actors/publicaux/CLI require delivery source here. Frozen persistent/warm producers bind99c97 root/phase source hashes and do not embed its UI source. Construction historical inline producer is a qualified replay, not an exact producer-file-hash claim. Failed/partial versions remain separately named.",
-  "validation": "Full active suite passed with actor/aux changes, two additional TT tests pass;116final relevant regressions pass.77archive hashes verified. Publisher repeats these required targets before push. No strength/default/UI claim.",
+  "validation": "Full active suite passed with actor/aux changes, two additional TT tests pass;116final relevant regressions pass.83archive hashes verified. Publisher repeats these required targets before push. No strength/default/UI claim.",
   "prior_mainline_sha": "396b773b3afe6ff5a0545a0e8ffbf9534d64eb8a",
-  "compaction_cost": "Current-only mainline177lines/12598bytes instead of647lines; historical results remain in purpose documents and prior Git.",
+  "compaction_cost": "Current-only mainline177lines before retry addition; prior647line mainline preserved by prior Git. No operating-rule change.",
   "focused_passed": 116
 }
