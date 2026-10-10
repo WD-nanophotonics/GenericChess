@@ -605,6 +605,26 @@ def _incoming_attack_paths(ir, squares: int, *, max_paths: int = 65536):
     return {key: tuple(rows) for key, rows in incoming.items()}
 
 
+def _incoming_attack_sources(incoming):
+    """Partition bounded endpoint rows by source/current type, retaining rank.
+
+    The rows and path tuples are borrowed from the existing incoming index.
+    Runtime occupancy and guards are never compiled into this dispatch data.
+    """
+    if incoming is None:
+        return None
+    result = {}
+    for key, rows in incoming.items():
+        groups = {}
+        for rank, row in enumerate(rows):
+            groups.setdefault(row[2], {}).setdefault(row[1], []).append((rank, row))
+        result[key] = {
+            source: {tid: tuple(entries) for tid, entries in typed.items()}
+            for source, typed in groups.items()
+        }
+    return result
+
+
 def _fixed_transition_triggers(ir, support):
     """Index static event squares once per compiled ruleset.
 
@@ -662,6 +682,7 @@ class CompiledSemanticRuleset:
     _legacy_compiled: Any = None
     support: "CompiledSemanticSupport | None" = None
     _incoming_attack_paths: Any = field(init=False, repr=False, compare=False, default=None)
+    _incoming_attack_sources: Any = field(init=False, repr=False, compare=False, default=None)
     _fixed_transition_triggers: Any = field(init=False, repr=False, compare=False, default=None)
     _actor_capture_patterns: Any = field(init=False, repr=False, compare=False, default=None)
 
@@ -673,6 +694,8 @@ class CompiledSemanticRuleset:
                 _actor_capture_patterns(self.ir))
             object.__setattr__(self, "_incoming_attack_paths",
                 _incoming_attack_paths(self.ir, self.support.board_shape.area))
+            object.__setattr__(self, "_incoming_attack_sources",
+                _incoming_attack_sources(self._incoming_attack_paths))
             if self.ir.triggers:
                 object.__setattr__(self, "_fixed_transition_triggers",
                     _fixed_transition_triggers(self.ir, self.support))

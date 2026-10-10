@@ -24,17 +24,25 @@ actual Core/Native/fallback, configured/effective limits and returned/committed
 action. Small declared games locate candidate losses; fixed-state/history
 replay attributes them. Keep the UI branch frozen during sandbox research.
 
-Latest choice: retain protected cheapD1→q1 refresh as a repeatable explicit
-research candidate, not the product/UI default. Phase-local TT bypass preserves
-actual cheap/q1 work and configured-q4 warm entries. A new same-root retry after ordinary configured-q4 D2 cancellation
-reproduces a cost counterexample: Chess-middle50/100ms baseline returns cached
-D2 but bypass only cheapD1. At1second all paired returns match. A generic EXACT-depth>=2 compatible-root
-skip prototype recovers36 retry signatures and preserves6cold controls. Next
-check shallow/nonexact/ineligible/q-changed cache provenance and advancing-parent
-cost before extending the explicit diagnostic; no product/default change. Completion loss alone is not
-strategic loss. Do not repeat the known queen roots without a changed premise.
-A local execution saving can merit a small exact repair without a mandatory
-same-time layer gain; report the missing decision/strength benefit explicitly.
+Latest choice: retain finite incoming source/current-type dispatch and the
+explicit skip_warm_root diagnostic, with no UI/default routing change.30 cache
+eligibility cells and54 advancing-prefix calls complete the previous contract
+question; no advancing root had an eligible deep EXACT entry. Source grouping
+preserves finite semantics and cuts Shogi-drop fixed work time about26–27%,
+but48 time calls show no reliable new completed layer. Gross extra metadata
+1.81/3.29MB is not RSS; cancellation selection gaps are explicitly bounded only
+by the tested synthetic rows. Mixed count/exists shortcircuit remains deferred.
+
+The refreshed80-cell backend bridge retains within-algorithm action/score/PV/
+work and zero Native fallback. Core+Native legality saves fixed-D2 wall time;
+eight one-second pairs retain completed depths/actions. Native conversion does
+not eliminate Core terminal one-action probes, transitions or history. Next
+attribute those retained costs versus payload/decode work with a finite semantic
+check; do not repeat reserve roots or mixed predicate branches. Preserve the
+old terminal-prefix failure and full Shogi-history/blocked-DLL boundaries.
+Dot's complete review supports this selection but did not execute these tests.
+No workflow/manual rule changes. Evidence:INCOMING_SOURCE_DISPATCH.md and its
+purpose index; warm contracts are separately routed in the phase diagnostic.
 
 ## Latest reserve and mechanical evidence —2026-10-10
 
@@ -156,7 +164,9 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
-|Latest phase/caller/warm controls and actor dispatch|PHASE_BYPASS_DIAGNOSTIC.md; data/phase_bypass_20261010.json|
+|Incoming source dispatch and hybrid replacement ledger|INCOMING_SOURCE_DISPATCH.md; data/incoming_source_20261011.json|
+|Latest warm-root eligibility/caller/cancellation contract|PHASE_BYPASS_DIAGNOSTIC.md; data/warm_root_contract_20261011.json|
+|Earlier phase/caller/warm controls and actor dispatch|PHASE_BYPASS_DIAGNOSTIC.md; data/phase_bypass_20261010.json|
 |Protected reserve, inverse horizon and residual alternatives|RESERVE_REFRESH_DIAGNOSTIC.md; data/reserve_refresh_20261010.json|
 |Frozen UI path and trigger execution cost|UI_PRODUCT_DIAGNOSTIC.md; data/ui_product_20261010.json|
 |Layered search/backend/window/budget attribution and deployment limits|SEARCH_BACKEND_ATTRIBUTION.md; data/search_attribution_20261010.json; native_conversion_20261010.json; terminal_frontier_20261010.json; cooperative_budget_20261010.json; root_bound_20261010.json; frontier_contract_20261010.json|

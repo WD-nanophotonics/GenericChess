@@ -7,7 +7,7 @@ import pytest
 from generic_chess.core.semantic_executor import SemanticEngine
 from generic_chess.core.errors import RuleSetMismatchError
 from generic_chess.rules.compiler import compile_ruleset_for_execution
-from generic_chess.rules.ir import _incoming_attack_paths, geometry_paths_to
+from generic_chess.rules.ir import _incoming_attack_paths, _incoming_attack_sources, geometry_paths_to
 from generic_chess.rules.western_chess import build_western_chess_ruleset
 from generic_chess.session.session import GameSession
 
@@ -121,3 +121,55 @@ def test_metadata_cap_stops_before_constructing_remaining_ray_prefixes():
     # A long precompiled path may be supplied to this helper. Do not materialize
     # geometry_candidates' whole endpoint/prefix tuple before honoring the cap.
     assert _incoming_attack_paths(ir, compiled.board_shape.area, max_paths=4) is None
+
+
+def test_source_partition_retains_global_rank_and_duplicate_rows():
+    compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
+    key, rows = next((key, rows) for key, rows in compiled._incoming_attack_paths.items()
+                     if len(rows) > 2)
+    duplicate = rows + (rows[0],)
+    partition = _incoming_attack_sources({key: duplicate})[key]
+    reconstructed = sorted(entry for typed in partition.values()
+                           for entries in typed.values() for entry in entries)
+    assert tuple(row for rank, row in reconstructed) == duplicate
+    assert tuple(rank for rank, row in reconstructed) == tuple(range(len(duplicate)))
+    assert _incoming_attack_sources(None) is None
+
+
+def test_source_metadata_rebuild_and_pickle_keep_original_index_fallback():
+    compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
+    groups = compiled._incoming_attack_sources
+    assert groups is not None
+    restored = replace(compiled)
+    object.__setattr__(restored, '_incoming_attack_sources', pickle.loads(pickle.dumps(groups)))
+    indexed = replace(compiled)
+    object.__setattr__(indexed, '_incoming_attack_sources', None)
+    changed = replace(compiled, ir=replace(compiled.ir, patterns=()))
+    assert changed._incoming_attack_sources is not groups
+    assert not any(changed._incoming_attack_sources.values())
+    session = GameSession(compiled)
+    for _ in range(3):
+        position = session.state.position
+        for owner in (0, 1):
+            for square in range(len(position.board)):
+                expected = SemanticEngine(indexed).is_square_attacked(position, square, owner)
+                assert SemanticEngine(restored).is_square_attacked(position, square, owner) == expected
+        session.submit(sorted(session.legal_actions(), key=str)[0])
+
+
+def test_grouped_source_poll_can_cancel_before_path_or_guard_evaluation():
+    compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
+    engine = SemanticEngine(compiled)
+    position = GameSession(compiled).state.position
+    owner, target = next((int(owner), target)
+                         for (owner, target), groups in compiled._incoming_attack_sources.items()
+                         if groups)
+    calls = 0
+    def stop_on_first_source():
+        nonlocal calls
+        calls += 1
+        if calls == 2:
+            raise InterruptedError('first source')
+    with pytest.raises(InterruptedError, match='first source'):
+        engine.is_square_attacked(position, target, owner, stop_on_first_source)
+    assert calls == 2

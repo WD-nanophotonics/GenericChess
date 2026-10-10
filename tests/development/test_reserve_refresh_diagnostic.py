@@ -128,3 +128,80 @@ def test_phase_bypass_never_uses_tt_in_cheap_or_refresh(monkeypatch,use_tt):
     assert d.completed_depth>=1 and events[-1]['phase']=='complete'
     assert bool(calls)==use_tt
     assert all(q==4 for _,q in calls)
+
+
+def test_skippable_explicit_qzero_retains_original_work(monkeypatch):
+    import copy
+    from generic_chess.core.search_runtime import SearchPathRuntime
+    from generic_chess.ai.alphabeta.transposition import BoundType
+    s,e,b=fixture();p=AlphaBetaPlayer(s.compiled,evaluator_override=e,use_native_semantic_legality=False)
+    p._tt_q_depths=(0,0)
+    key=SearchPathRuntime.from_state(s.state,s.compiled,history_witnesses=s._search_witnesses).search_key()
+    legal=s.legal_actions()[0]
+    p._tt.store(key,2,123,BoundType.EXACT,legal)
+    snapshot=copy.deepcopy(p._tt)
+    limits=SearchLimits(max_depth=1,max_time_seconds=5,quiescence_max_depth=0,quiescence_hard_max_depth=0)
+    monkeypatch.setattr(pm,'run_root_search',ORIGINAL);a=p.choose_action(s,limits)
+    p._tt=snapshot;events=[];selection=[]
+    monkeypatch.setattr(pm,'run_root_search',make_refresh(events,expected_state=s.state,
+        tt_policy='skip_warm_root',selection_log=selection))
+    d=p.choose_action(s,limits)
+    assert not selection and not events
+    assert (d.action,d.score,d.nodes,d.qnodes,d.tt_probes,d.tt_hits)==(a.action,a.score,a.nodes,a.qnodes,a.tt_probes,a.tt_hits)
+    assert s.state==b.initial
+
+
+def test_skippable_real_cancelled_root_uses_ordinary_retry(monkeypatch):
+    import copy
+    from scripts.search_backend_comparison import CASES
+    b=CoreBoard(next(x for x in CASES if x['id']=='chess-middle'),
+        compile_ruleset_for_execution(build_builtin_ruleset('western_chess')))
+    s=GameSession(b.compiled);s._state=b.initial;s._search_history_witnesses=b.witnesses
+    p=AlphaBetaPlayer(s.compiled,evaluator_override=b.material,use_native_semantic_legality=False)
+    monkeypatch.setattr(pm,'run_root_search',ORIGINAL);token=CancellationToken()
+    d=p.choose_action(s,SearchLimits(max_depth=3,max_time_seconds=5),cancel_token=token,
+        progress_callback=lambda depth,*_:token.cancel() if depth>=2 else None)
+    assert d.completed_depth==2 and d.termination_reason=='cancelled'
+    snapshot=copy.deepcopy(p._tt);limits=SearchLimits(max_depth=2,max_time_seconds=5)
+    a=p.choose_action(s,limits);p._tt=snapshot;events=[];selection=[]
+    monkeypatch.setattr(pm,'run_root_search',make_refresh(events,expected_state=s.state,
+        tt_policy='skip_warm_root',selection_log=selection))
+    d=p.choose_action(s,limits)
+    assert selection[0]['skip_refresh'] and not events
+    assert (d.action,d.score,d.completed_depth,d.nodes,d.qnodes)==(a.action,a.score,a.completed_depth,a.nodes,a.qnodes)
+    assert d.tt_probes==a.tt_probes+1 and s.state==b.initial
+
+
+def test_skippable_cancelled_caller_never_routes_cached_root(monkeypatch):
+    from generic_chess.ai.alphabeta.transposition import TranspositionTable
+    class NoProbe(TranspositionTable):
+        def probe(self,*_):raise AssertionError('cancelled caller probed TT')
+    s,e,b=fixture();p=AlphaBetaPlayer(s.compiled,evaluator_override=e,use_native_semantic_legality=False)
+    p._tt=NoProbe();events=[];selection=[];token=CancellationToken();token.cancel()
+    monkeypatch.setattr(pm,'run_root_search',make_refresh(events,expected_state=s.state,
+        tt_policy='skip_warm_root',selection_log=selection))
+    d=p.choose_action(s,SearchLimits(max_depth=2,max_time_seconds=5),cancel_token=token)
+    assert d.termination_reason=='cancelled' and not events and not selection
+    assert s.state==b.initial
+
+
+def test_skippable_cancellation_at_routing_boundary_returns_decision(monkeypatch):
+    import inspect
+    from generic_chess.ai.alphabeta import search
+    from generic_chess.ai.alphabeta.transposition import TranspositionTable
+    class NoProbe(TranspositionTable):
+        def probe(self,*_):raise AssertionError('routing cancellation reached cache')
+    s,e,b=fixture();token=CancellationToken();old=search._Budget.check;hits=[]
+    def cancel_at_boundary(budget,stats,**kwargs):
+        frame=inspect.currentframe().f_back
+        if frame.f_code.co_name=='run_root_search' and 'skip_refresh' in frame.f_locals:
+            token.cancel();hits.append(frame.f_lineno)
+        return old(budget,stats,**kwargs)
+    monkeypatch.setattr(search._Budget,'check',cancel_at_boundary)
+    events=[];selection=[]
+    monkeypatch.setattr(pm,'run_root_search',make_refresh(events,expected_state=s.state,
+        tt_policy='skip_warm_root',selection_log=selection))
+    p=AlphaBetaPlayer(s.compiled,evaluator_override=e,use_native_semantic_legality=False);p._tt=NoProbe()
+    d=p.choose_action(s,SearchLimits(max_depth=2,max_time_seconds=5),cancel_token=token)
+    assert hits and d.termination_reason=='cancelled' and d.completed_depth==0
+    assert not events and not selection and s.state==b.initial

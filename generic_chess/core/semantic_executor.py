@@ -619,7 +619,21 @@ class SemanticEngine:
         incoming = self.semantic._incoming_attack_paths
         if incoming is not None:
             _checkpoint(checkpoint)
-            for pattern, tid, source, gid, path in incoming.get((str(by_owner), square), ()):
+            key = (str(by_owner), square)
+            source_groups = self.semantic._incoming_attack_sources
+            rows = incoming.get(key, ())
+            if source_groups is not None:
+                selected = []
+                for source, typed in source_groups.get(key, {}).items():
+                    _checkpoint(checkpoint)
+                    piece = position.board[source]
+                    if piece is not None and piece.owner == by_owner:
+                        selected.extend(typed.get(piece.current_type_id, ()))
+                # Preserve the original pattern/type/source/path short-circuit
+                # order, including repeated rows from shared geometry.
+                selected.sort(key=lambda entry: entry[0])
+                rows = (row for rank, row in selected)
+            for pattern, tid, source, gid, path in rows:
                 _checkpoint(checkpoint)
                 piece = position.board[source]
                 if piece is None or piece.owner != by_owner or piece.current_type_id != tid:

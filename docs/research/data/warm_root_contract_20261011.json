@@ -1,0 +1,124 @@
+{
+  "archive": "docs/archive/warm_root_contract_20261011/evidence.zip",
+  "archive_sha256": "f281e5e7d8631343617ede4ecd30527bae1b46099ecc5adcfdd2e6b41026133f",
+  "base_sha": "e2f91edded4c3c18843674d3651c49ce36890b77",
+  "members": [
+    {
+      "member": "advancing-clean-last.json",
+      "bytes": 41511,
+      "sha256": "dbbe845bc6d95871428a80a15ad06596c3302157264d65c6348db3ef7dc60826"
+    },
+    {
+      "member": "advancing-clean-last.py",
+      "bytes": 9614,
+      "sha256": "7fc2a246ea51cce42d28ec78c47b365298351b0047681485b9c24e44382fd1d5"
+    },
+    {
+      "member": "advancing-plan.md",
+      "bytes": 822,
+      "sha256": "76ffc24b3323d3789dade0d5b58ba33e099203cf5a690fd208bfaaa6753f568c"
+    },
+    {
+      "member": "advancing-prefix.json",
+      "bytes": 268928,
+      "sha256": "83fc2080e3c1174d5223a10a51449d36b19891ff22796aaa48efe9dfb45510f2"
+    },
+    {
+      "member": "advancing-prefix.py",
+      "bytes": 9600,
+      "sha256": "484a8995715c7fef991047ea8f4393b311b38184cea353f489ce381bd2a3c9f1"
+    },
+    {
+      "member": "advancing-summary.json",
+      "bytes": 10988,
+      "sha256": "913c20b2eea756ff4ae6adce24464cd0437bb458a69e696d4dbd1ee69eefa10e"
+    },
+    {
+      "member": "advancing-timing-limitation.md",
+      "bytes": 610,
+      "sha256": "06d15afade0b3690c5d85e48121dc64a625f005e373a2b49058611e9a1a35ad3"
+    },
+    {
+      "member": "contract-import-failed.py",
+      "bytes": 5640,
+      "sha256": "2dbbbe0b0550eb798bb842187ab26192f2d6084c16177e69538cca0471bce681"
+    },
+    {
+      "member": "contract-partial.json",
+      "bytes": 1369368,
+      "sha256": "6788fdc3ef4c7fd1fa124ed6add357fb0658d7437f278b305d2d34b2878702a0"
+    },
+    {
+      "member": "contract-summary.json",
+      "bytes": 737,
+      "sha256": "108c29a02abebad5e7e408769c5ca724d6e743c93dc0ad52be08ed0162514ade"
+    },
+    {
+      "member": "contract.json",
+      "bytes": 1369368,
+      "sha256": "6788fdc3ef4c7fd1fa124ed6add357fb0658d7437f278b305d2d34b2878702a0"
+    },
+    {
+      "member": "contract.py",
+      "bytes": 5640,
+      "sha256": "2dbbbe0b0550eb798bb842187ab26192f2d6084c16177e69538cca0471bce681"
+    },
+    {
+      "member": "diagnostic-pre-boundary-repair.py",
+      "bytes": 13129,
+      "sha256": "7ab2532db13dd5a409d09126482ad91c97e86b2d7bd385e60617e0c8fe83e70b"
+    },
+    {
+      "member": "ineligible.json",
+      "bytes": 13956,
+      "sha256": "6a2e7a62d30f3ff3c7a6b9637a147ff3452e6c239669a3536c9913728998c7a9"
+    },
+    {
+      "member": "ineligible.py",
+      "bytes": 3256,
+      "sha256": "24df06c984d846f0e8d69eebb1cbc06e0f107928648e8740552486c6e2a18ab9"
+    },
+    {
+      "member": "plan.md",
+      "bytes": 873,
+      "sha256": "43ccd87edc773fa5daa07d69b41b08d672d89b0847e57bbcc9151f20f087d3a4"
+    },
+    {
+      "member": "routing-boundary-plan.md",
+      "bytes": 708,
+      "sha256": "2ff8f5c601b07a3591e87f96cd259ecb623b9977fe710108b25ae2c5998117aa"
+    },
+    {
+      "member": "routing-boundary.json",
+      "bytes": 177,
+      "sha256": "103bfe49a7415751a174e5db4a4e2efb08010fa6ec0b5391abb5a79ec0e1b568"
+    },
+    {
+      "member": "source-closure-note.md",
+      "bytes": 1331,
+      "sha256": "b31a69642e49b5f09ca2346c29d754a792e5e54a79e02f7daf8640cfdd8aa2a0"
+    },
+    {
+      "member": "delivery/scripts/reserve_refresh_diagnostic.py",
+      "bytes": 13422,
+      "sha256": "365583ae3c23a4c786687ec61376ee48a57dd35bdfb87964cd61a6fe5b1afca7"
+    },
+    {
+      "member": "base/scripts/reserve_refresh_diagnostic.py",
+      "bytes": 11485,
+      "sha256": "fb01a6459d8e23e8e2ab29c987a4c2a6c025a0a4fe4ebe8ddcb245493c0a1123"
+    },
+    {
+      "member": "delivery/tests/development/test_reserve_refresh_diagnostic.py",
+      "bytes": 11985,
+      "sha256": "4a48986eb0e165953291199e2dca8c6410b6d172c9f167cce945be0ea0601b1f"
+    },
+    {
+      "member": "base/tests/development/test_reserve_refresh_diagnostic.py",
+      "bytes": 7319,
+      "sha256": "9b1ed94d6522b3782ee60de219c8707c9ce73331c83f567bb8aff2b9cfee248d"
+    }
+  ],
+  "scope": "Agent-only evidence. Restore warm files under .local_agent/skippable-contract-20261011. Prior phase_bypass_20261010 archive supplies skippable-function.py under .local_agent/phase-bypass-20261010; ui_product_20261010 supplies Agent games-final/population-baseline. Frozen UI99c97 is reconstructed separately, never embedded here. Initial prototype/contract producers ran against base e2f91; installed producers use delivered source. Candidate function text/hash pins substitutions; current checkout cannot silently replay historical baseline. Construction/routing-boundary/backend-summary and several compact summaries were inline producers, so outputs retain exact data but no exact original producer-file claim. Backend-summary signatures exclude time/provider counters while checking separate counters; authoritative raw data remain. Failed/partial/import/indent/coarse-clock/loaded-time versions are separately retained. Baseline code in base/ and delivery files pin the relevant source; remaining package comes from the named base plus current diff. No raw Slack/account/credentials/user UI export or dependencies. Full-suite XML contains local test paths/hostname; these are machine provenance, not user game input. No generated/random rule search expansion was executed in this segment beyond public finite mechanism audits.",
+  "validation": "1977 active tests pass;23 focused dispatch/diagnostic checks; publisher repeats relevant regression targets. Finite scope, no strength/UI claim."
+}

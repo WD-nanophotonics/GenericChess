@@ -126,3 +126,29 @@ TT-boundary tests also pass. Outgoing publication runs the relevant targets
 through the repository's tested publisher and records the exact remote SHA.
 This evidence justifies the small compiled dispatch repair and reusable
 experimental TT choice; it does not establish a universal reserve or engine gain.
+# Warm-root diagnostic contract extension —2026-10-11
+
+`skip_warm_root` is now an explicit diagnostic policy; default `clear` and the
+ordinary product/UI entry are unchanged. Routing probes only a TT-eligible,
+positive configured-q root with caller TT enabled. EXACT depth>=2 selects
+ordinary iterations; it never directly returns the probe or claims finite-horizon
+certification. Public callers clear incompatible q-policy tables.
+
+30 eligibility cells cover shallow/nonexact/q-changed/TT-disabled/history-
+ineligible cases. Some entry-bound/depth edits are synthetic controls; warm
+primers include actual ordinary configured-q4 D2 cancellation. The q0 extra
+probe counterexample was repaired by positive-q eligibility. Routing cancellation
+now occurs inside the existing SearchAborted handler; meaningful regression tests
+cover pre-cancel, exact routing-boundary cancel and root/history restoration.
+
+54 frozen actual-prefix calls across three old roots/budgets include18 routing
+selections, all without eligible deep EXACT entries. These advancing roots use
+the bypass path and preserve its signatures, including the1000 inverse result.
+This does not refute same-root retry reuse. An affected six-call4second timing
+group was rerun clean after possible regression-job overlap; the raw run remains.
+Those producers bind the earlier positive-q prototype, before the later routing
+boundary repair, and are not evidence that the final cancellation handler was
+executed in all54 calls. No further repetitive prefix cohort is selected.
+
+Evidence:data/warm_root_contract_20261011.json. Earlier records below remain
+unchanged evidence of their exact producer versions.

@@ -3,6 +3,8 @@ Uses one original run_root_search budget and a completed cheap D1 reserve.
 An isolated q1 D1 recomputation follows; partial refresh never replaces reserve.
 The default clear policy empties TT around q1. Opt-in phase_bypass disables
 TT in cheap-q0/q1 and retains configured-q entries for deeper iterations.
+Opt-in skip_warm_root selects ordinary iterations when an eligible configured-q
+root has an EXACT entry of depth>=2; it does not return the probe directly.
 Retained warm bounds have a selective contract, not finite-horizon equality.
 """
 from __future__ import annotations
@@ -69,6 +71,35 @@ assert PHASE_MODIFIED.count(ITERATION)==1
 PHASE_MODIFIED=PHASE_MODIFIED.replace(ITERATION,ITERATION+
     '\n        ctx.use_tt = use_tt if depth > 1 or ctx.qdepth_limit == 0 else False')
 
+# Routing only: ordinary search still verifies cached bounds and legal actions.
+# The public player clears incompatible q-policy tables before calling us.
+SKIPPABLE_MODIFIED=PHASE_MODIFIED.replace(ITERATION,
+    '    skip_refresh = False\n'+ITERATION).replace(
+    '        try:\n            budget.check_iteration(stats)',
+    '''        try:
+            budget.check_iteration(stats)
+            if depth == 1 and use_tt and ctx.qdepth_limit > 0 and runtime.tt_eligible:
+                budget.check(stats, force=True)
+                stats.position_keys_computed += 1
+                stats.tt_probes += 1
+                warm_entry = tt.probe(runtime.search_key())
+                if warm_entry is not None:
+                    stats.tt_hits += 1
+                    skip_refresh = warm_entry.bound is BoundType.EXACT and warm_entry.depth >= 2
+                if skip_refresh:
+                    ctx.use_tt = use_tt
+                _selection_log.append(dict(skip_refresh=skip_refresh,
+                    entry_depth=None if warm_entry is None else warm_entry.depth,
+                    entry_bound=None if warm_entry is None else warm_entry.bound.name,
+                    at=time.perf_counter(),deadline=budget._deadline))''').replace(
+    'use_tt if depth > 1 or ctx.qdepth_limit == 0 else False',
+    'use_tt if skip_refresh or depth > 1 or ctx.qdepth_limit == 0 else False').replace(
+    'if depth == 1 and ctx.qdepth_limit > 0 and best.declaration is None:',
+    'if not skip_refresh and depth == 1 and ctx.qdepth_limit > 0 and best.declaration is None:')
+
+POLICY_SOURCES={'clear':MODIFIED,'phase_bypass':PHASE_MODIFIED,
+                'skip_warm_root':SKIPPABLE_MODIFIED}
+
 
 def stopped():
     for name in ('rollout','advisor','slack'):
@@ -76,7 +107,7 @@ def stopped():
         if f.get('stopped') or f.get('user_paused'):raise RuntimeError('project stopped')
 
 
-def make_refresh(events,naive=False,token=None,cancel_phase=None,expected_state=None,*,tt_policy='clear'):
+def make_refresh(events,naive=False,token=None,cancel_phase=None,expected_state=None,*,tt_policy='clear',selection_log=None):
     namespace=dict(search.__dict__)
     def event(phase,ctx,result,reason=None):
         events.append(dict(phase=phase,at=time.perf_counter(),deadline=ctx.budget._deadline,
@@ -88,10 +119,11 @@ def make_refresh(events,naive=False,token=None,cancel_phase=None,expected_state=
         ctx.runtime.assert_balanced()
         if expected_state is not None:assert events[-1]['runtime_restored']
         if phase==cancel_phase:token.cancel()
-    namespace.update(_refresh_log=event,_naive_tt=naive)
-    if tt_policy not in ('clear','phase_bypass'):
+    namespace.update(_refresh_log=event,_naive_tt=naive,
+                     _selection_log=[] if selection_log is None else selection_log)
+    if tt_policy not in POLICY_SOURCES:
         raise ValueError('unknown diagnostic TT policy')
-    code=MODIFIED if tt_policy=='clear' else PHASE_MODIFIED
+    code=POLICY_SOURCES[tt_policy]
     exec(compile(code,'<protected-reserve-diagnostic>','exec'),namespace)
     return namespace['run_root_search']
 
@@ -133,12 +165,12 @@ def main():
     p.add_argument('--games',type=Path,default=ROOT/'.local_agent/ui-product-20261010/games-final.json')
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--batch',choices=['scope','time','transfer','cancel','qzero','population'],required=True)
-    p.add_argument('--tt-policy',choices=['clear','phase_bypass'],default='clear')
+    p.add_argument('--tt-policy',choices=tuple(POLICY_SOURCES),default='clear')
     args=p.parse_args()
     report=dict(declaration=__doc__,batch=args.batch,complete=False,
         tt_policy=args.tt_policy,source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         search_source_sha256=hashlib.sha256(SOURCE.encode()).hexdigest(),
-        generated_function_sha256=hashlib.sha256((MODIFIED if args.tt_policy=='clear' else PHASE_MODIFIED).encode()).hexdigest(),rows=[])
+        generated_function_sha256=hashlib.sha256(POLICY_SOURCES[args.tt_policy].encode()).hexdigest(),rows=[])
     args.output.parent.mkdir(parents=True,exist_ok=True)
     def save():write_record(args.output,report)
     save();global_start=time.perf_counter()
@@ -153,9 +185,9 @@ def main():
         else:cases=[(a,1,2,False,None) for a in ('baseline','refresh')]
         for arm,seconds,depth,cancel,phase in cases:
             stopped();assert time.perf_counter()-global_start<300
-            events=[];token=CancellationToken() if cancel else None
+            events=[];selection=[];token=CancellationToken() if cancel else None
             fn=ORIGINAL if arm=='baseline' else make_refresh(events,arm=='naive',token,phase,s.state,
-                tt_policy='clear' if arm=='naive' else args.tt_policy)
+                tt_policy='clear' if arm=='naive' else args.tt_policy,selection_log=selection)
             player_module.run_root_search=fn
             player=AlphaBetaPlayer(s.compiled,evaluator_override=e,use_native_semantic_legality=False)
             q=0 if args.batch=='qzero' else 4
@@ -171,7 +203,7 @@ def main():
             source='incomplete_root_fallback' if not d.completed_depth else 'completed_main'
             if events and d.completed_depth==1:source='completed_refresh' if any(v['phase']=='complete' for v in events) else 'protected_cheap_reserve'
             row=dict(root=name,arm=arm,seconds=seconds,max_depth=depth,q=q,cancel_phase=phase,wall=end-start,
-                decision=record_value(d),events=events,root_restored=restored,returned_source=source)
+                decision=record_value(d),events=events,selection=selection,root_restored=restored,returned_source=source)
             report['rows'].append(row);save()
             print(name,arm,seconds,depth,d.completed_depth,source,d.termination_reason,flush=True)
     report.update(complete=True,wall=time.perf_counter()-global_start);save()
