@@ -3,6 +3,14 @@
 UI-only development branch with a complete frozen AI backend for PVE.
 See [UI Test handoff](docs/ui/UI_TEST.md) for scope, interfaces and merge guidance.
 
+## Browser game / 网页小游戏
+
+The local browser game supports generated/hybrid rules, Chess and Shogi with
+real AI or same-screen two-player play, records and automatic resume.
+See [Web setup and controls](docs/ui/WEB_UI.md). After installation/build,
+run `run_web.bat` or `python run_web.py` and open `http://127.0.0.1:8765`.
+The Web service needs the `web` extra and no PySide6; the desktop UI remains available.
+
 ## Start on another computer (Windows, Python 3.11 or newer)
 
 ```powershell

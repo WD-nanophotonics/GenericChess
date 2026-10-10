@@ -27,3 +27,12 @@ htmlcov/
 *.pyd
 .local_agent/
 .rebuild/
+
+# Browser UI runtime/build/test state
+.web_state/
+.web-venv/
+web/node_modules/
+web/dist/
+web/test-results/
+web/playwright-report/
+web/*.tsbuildinfo

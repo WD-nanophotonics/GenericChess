@@ -1,0 +1,123 @@
+{
+  "board_size": 4,
+  "drop_allowed": {
+    "R": [
+      [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    ]
+  },
+  "initial_position": [
+    [
+      {
+        "base_type_id": "R",
+        "current_type_id": "R",
+        "owner": 0,
+        "promoted": false
+      },
+      null,
+      null,
+      {
+        "base_type_id": "K",
+        "current_type_id": "K",
+        "owner": 0,
+        "promoted": false
+      }
+    ],
+    [
+      {
+        "base_type_id": "R",
+        "current_type_id": "R",
+        "owner": 1,
+        "promoted": false
+      },
+      null,
+      null,
+      null
+    ],
+    [null, null, null, null],
+    [
+      null,
+      null,
+      null,
+      {
+        "base_type_id": "K",
+        "current_type_id": "K",
+        "owner": 1,
+        "promoted": false
+      }
+    ]
+  ],
+  "max_ply": 512,
+  "metadata": {},
+  "piece_types": [
+    {
+      "is_anchor": true,
+      "is_promotable": false,
+      "movement_atoms": [
+        { "kind": "leap", "offset": [-1, -1] },
+        { "kind": "leap", "offset": [-1, 0] },
+        { "kind": "leap", "offset": [-1, 1] },
+        { "kind": "leap", "offset": [0, -1] },
+        { "kind": "leap", "offset": [0, 1] },
+        { "kind": "leap", "offset": [1, -1] },
+        { "kind": "leap", "offset": [1, 0] },
+        { "kind": "leap", "offset": [1, 1] }
+      ],
+      "name": "King",
+      "promotion_target_ids": [],
+      "type_id": "K"
+    },
+    {
+      "is_anchor": false,
+      "is_promotable": false,
+      "movement_atoms": [
+        { "direction": [0, 1], "kind": "ray", "max_steps": null },
+        { "direction": [0, -1], "kind": "ray", "max_steps": null },
+        { "direction": [1, 0], "kind": "ray", "max_steps": null },
+        { "direction": [-1, 0], "kind": "ray", "max_steps": null }
+      ],
+      "name": "R",
+      "promotion_target_ids": [],
+      "type_id": "R"
+    }
+  ],
+  "promotion_allowed": {},
+  "promotion_forced": {},
+  "repetition_limit": 4,
+  "schema_version": 1,
+  "stalemate_result": "draw"
+}

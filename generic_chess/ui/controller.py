@@ -39,7 +39,7 @@ from . import view_models as vm
 from .adapters import movement_summary, reachable_squares
 from .interaction_state import BoardInteractionState
 from .match import MatchConfig, ParticipantKind
-from .settings import (
+from .settings_keys import (
     KEY_AUTO_PROMOTE_UNIQUE,
     KEY_BOARD_ORIENTATION,
     KEY_ENABLE_PREVIEW,
@@ -417,6 +417,20 @@ class UIController:
         try:
             with open(path, "r", encoding="utf-8") as fh:
                 text = fh.read()
+        except OSError as exc:
+            self._last_error = f"cannot open record ({path}): {exc}"
+            return False
+        return self.load_record_text(text, path=path)
+
+    def record_text(self) -> str:
+        """Export the existing record format without filesystem coupling."""
+        if self._session is None:
+            raise ValueError("no game in progress")
+        return serialize_game_record(self._session.to_record())
+
+    def load_record_text(self, text: str, *, path: str | None = None) -> bool:
+        """Load/replay a record atomically through the same desktop semantics."""
+        try:
             record = deserialize_game_record(text)
             compiled = self._compiled
             ruleset = self._ruleset
