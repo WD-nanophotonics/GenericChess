@@ -1,5 +1,6 @@
 """A legal-action kernel must not silently override no-move adjudication."""
 import pytest
+from dataclasses import replace
 from generic_chess import build_builtin_ruleset,compile_ruleset_for_execution
 from generic_chess.ai.alphabeta.native_legality import NativeSemanticLegalityProvider
 from generic_chess.native.compiler import compile_native_semantic_rules,NativeUnsupportedRuleError
@@ -35,3 +36,12 @@ def test_draw_policy_keeps_existing_native_search_entry():
     native=compile_native_semantic_rules(compiled)
     engine=SemanticSearchEngine(compiled,native,tt_megabytes=0)
     assert engine.ruleset_fingerprint==compiled.ruleset_fingerprint
+
+
+@pytest.mark.parametrize('entry',[fixed_depth_search,probe_search])
+def test_legacy_fixed_probe_reject_continuous_check_winner_policy(entry):
+    rules=replace(build_builtin_ruleset('standard_shogi'),stalemate_result='draw')
+    compiled=compile_ruleset_for_execution(rules)
+    native=compile_native_semantic_rules(compiled)
+    with pytest.raises(NativeUnsupportedRuleError,match='continuous-check winners'):
+        entry(native,None,1)

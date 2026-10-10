@@ -19,7 +19,7 @@ from . import _module, native_available
 from .adapter import pack_semantic_search_position
 from .compiler import GC_SEM_MAX_PLY, NativeUnsupportedRuleError
 from .mirror import pack_semantic_action
-from .semantic import public_action
+from .semantic import public_action, _require_root_window_support
 
 DYNAMIC_FEATURE_NAMES = ("mobility", "promotion_potential", "anchor_safety")
 SPATIAL_CELL_COUNT = 9
@@ -395,7 +395,7 @@ class SemanticSearchEngine:
         cancel_token: CancellationToken | None = None,
         *,
         root_order_hint: Action | None = None,
-        root_window_pruning: bool = True,
+        root_window_pruning: bool = False,
         trace_enabled: bool = False,
     ) -> SemanticIterativeSearchResult:
         if root_order_hint is not None and (
@@ -420,6 +420,7 @@ class SemanticSearchEngine:
             raise ValueError("SemanticSearchEngine does not implement qsearch")
         if not isinstance(root_window_pruning, bool):
             raise TypeError("root_window_pruning must be a bool")
+        _require_root_window_support(root_window_pruning)
         if not isinstance(trace_enabled, bool):
             raise TypeError("trace_enabled must be a bool")
         if session.result.status.value != "ongoing":

@@ -92,6 +92,26 @@ does not establish strength or a universal factor. No timing/workflow policy cha
 
 ## Retained lines and prior evidence
 
+Latest search-first continuation: isolated v5 builds but fresh import is blocked
+by Windows Application Control; candidate sources/tests are preserved unexecuted,
+installed v4 unchanged. Legal owner-reversed continuous-check trajectories reveal
+another fixed/probe winner-score defect; those v4 entries now explicitly reject
+that policy. The supported full-state Native/Python-AB bridge preserves24576 deep
+state/history visits and parent restorations on six existing4096-entry controls.
+Core/Native-state wall=3.37–4.43 means Native is faster; specialized Chess is still
+faster. Immutable syntax reuse remains a scoped prototype, with a finiteD4 EP
+choice gain but no strength claim. Configuration controls describe the pre-guard
+root-windowON/64MiB defaults. A subsequent completeD3 EP counterexample shows
+ON selecting f1e2/report100 although independent complete childD2 gives0;
+OFF selects f1d3/100. TT0 and cold64 both reproduce. Public ON is now rejected
+and the persistent default is full-rootOFF; cold/reused TT controls preserve
+selected-value100. Reduced work from unsafe ON is not correct-search gain.
+Next establish exact-bound canonical tie selection and interruption handling
+before reconsidering that optimization; terminal-v5 does not repair this defect.
+No automatic C repair adoption, training,
+budget expansion or UI propagation. SEARCH_BACKEND_ATTRIBUTION.md and
+data/native_terminal_20261010.json own exact source/failure/algorithm boundaries.
+
 1. Rule-only generic piece-value generation: cross-game ordering/ratios and bias.
    Games diagnose price holes; no human-price fitting, Elo or positional patches.
 2. Efficient, stable search through the generic interface on unfamiliar rules:

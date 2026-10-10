@@ -362,3 +362,167 @@ Its caps cannot establish inherent Native slowness; its Shogi no-move defect
 remains a separate correctness failure. Future material-only comparisons should
 omit unused feature profiles and record that version boundary. On affected loss
 rules, kernel semantic repair still comes before correct-search cost attribution.
+
+## Supported full-state Native attribution — 2026-10-10
+
+The next segment built an unchanged isolated v4 control and imported it in a
+fresh process. A versioned v5 candidate then built successfully, but its fresh
+import failed with Windows Application Control. Code Integrity events3033/3077
+identify signing/code-integrity enforcement; the policy's owner/name was not
+established. No candidate test executed, no replacement was installed and no
+system policy changed. Exact candidate sources, tests, build outcome and binary
+hashes are retained separately from active code. This supersedes the previous
+segment's unestablished-build status, not its historical measurements.
+
+An independent installed-v4 defect is now demonstrated on two fully legal,
+owner-reversed12-ply continuous-check cycles, each with13 position witnesses.
+Raw terminal reason/winner agrees with Core, but raw fixed/probe returns zero;
+iterative returns the correct winner sign. These controls use an explicit legacy
+draw-stalemate Shogi variant to isolate repetition scoring. Public fixed/probe
+now rejects v4 continuous-check-loss rules before execution; iterative and
+Native legality with Core remain available in their existing scope. The v5
+candidate would address both no-move policy and winner consumption, but remains
+unexecuted. Guarding an unsupported entry is not repairing its C implementation.
+
+`scripts/native_backend_bridge.py` is a diagnostic adapter over immutable C
+positions, exact history/events, guarded actions and checked transitions. The
+same existing Python lexical alpha-beta drives it and Core. Terminal reason and
+winner are consumed by the common Python mate-score contract; the bridge never
+calls faulty fixed/probe search. C's10^8 and Python's10^9 mate conventions are
+kept separate in algorithm comparisons. Loss-stalemate policies remain rejected,
+and declaration actions are outside this adapter's search scope. This is a thin
+attribution bridge, not a complete-domain player or a replacement algorithm.
+
+Four existing Chess roots and two existing generated6x6 roots at ply3 yield44
+fixedD8/4096-entry calls with two reversed passes, using Core, Native legality
+with Core state, full Native state, and specialized Chess where applicable.
+Every call reaches the same node cutoff before its30-second safety fuse; return
+trace, work counters, action and score match.187 D1 states are checked separately.
+Six deeper paired audits compare all24576 visited states and24576 parent
+restorations through relativeD8: board/base/current/owner identity, hands, side,
+auxiliary fields, exact history/check events, terminal reason/winner, leaf value
+and ordered frontier all agree. Instrumentation timing is excluded; its600-second
+audit fuse leaves the original4096-entry scientific cutoff unchanged.
+
+The ratio is **Core warm wall / Native-state warm wall =3.37–4.43** on these
+reversed calls, so Native state is faster. An earlier ambiguous Slack phrase
+caused the opposite interpretation; the numeric evidence and denominator govern.
+Specialized Chess remains faster on its four roots.44 separate one-second bare
+iterative controls retain incomplete-depth/fallback semantics and legal choices;
+completion gains occur on promotion/generated2000, without a strength inference.
+
+Two-root4096-entry profiler controls preserve signatures but add44–62% wall.
+Guarded frontier execution has the largest C self-time; terminal scanning and
+public-action/label conversion also matter. C's position and undo objects are
+53920bytes each. Copy cost is a hypothesis, not a measured dominant component;
+inclusive profiler intervals must not be added or read as uninstrumented shares.
+The generated zero/absent-feature transfer independently keeps all eight512-node
+action/score/PV/work/root signatures, with locally11/14times lower wall for
+absent profiles. Product defaults already omit them; no new default follows.
+
+### Syntax reuse and configuration are different causes
+
+A separate per-call2048-entry immutable action/label cache prototype retains
+live C guarded frontier and transition checks.24 fixed4096-entry calls preserve
+all signatures; repeated-pair mean wall reductions are12.8–32.5%. Six further
+paired audits retain another24576 full-state visits and parent restorations,
+not independent new samples. Retained shallow cache estimates are64–141kB on
+these fixed controls; shared referents, allocator overhead and total process
+memory are excluded. No fixed-work control reaches eviction here. The first
+prototype incorrectly treated packed integer actions as tuples; that failed
+source/output is retained alongside the corrected integer-key version.
+
+Twenty-four one-second calls gain one completed depth on tactic, EP and
+generated2001 in both reversed pairs. Only EP changes its action: b1c3 to c2c3.
+Reusing the already exposed finiteD4 material reference gives regret100 versus0
+on EP; the other three Chess choices remain at0. This is finite-reference utility,
+not true game value or playing strength. Generated choices remain unchanged and
+have no new utility oracle. The cache stays an archived diagnostic prototype;
+the active bridge retains its uncached baseline for attribution.
+
+Fifty-four0.25/1/2-second three-root algorithm controls deliberately disable C
+root pruning and TT. Their greater C node throughput does not establish better
+completion or decision quality: node definitions, packed versus lexical order,
+full-PV replay and partial-root handling differ. Crucially, product
+`SemanticSearchEngine` already defaults to root-window pruningON. An OFF control
+must not be described as product-default performance or as a missing optimization.
+Source inspection finds full windows for every root child when OFF, narrower
+subsequent children when ON, and canonical PV re-search cost when ON.
+
+A clean supported ON/OFF ablation has12 completedD2 calls with equal scores,
+but node counts845→166(EP),1214→225(generated2000),2028→189(generated2001).
+Thirty-six separate common-time calls show completion improvements. The first
+attempt overlapped pytest accidentally; its timing is explicitly invalid and
+preserved, and the clean repeat starts after pytest exits. Cold64MiB TT is also
+an existing product default and receives a separate matched-window control.
+Neither attribution control changes the installed default or restores old
+unexposed validation status.
+
+Advisor review was read completely and its deeper-contract/score-consumption
+objection adopted; it did not independently rerun the evidence. No workflow or
+research-direction policy changes follow. Full active regression and focused
+preterminal winner-propagation tests pass; exact counts, sources, failures and
+completed controls are routed by
+[the terminal/bridge index](data/native_terminal_20261010.json). The frozen UI
+branch and old conversion archive are untouched.
+
+### Completed score is insufficient: exact selected-child counterexample
+
+The ON/OFF controls above describe the pre-guard implementation, not the final
+safe product default. On the existing Chess EP history e2e4 a7a6 e4e5 d7d5,
+material K0/P100/N200/B300/R400/Q500, q0, completeD3, TT0 or cold64MiB:
+
+|Root windows|Selected action|Reported root score|Independent complete childD2 root value|
+|---|---|---|---|
+|Full/OFF|f1d3|100|100|
+|Narrowed/ON|f1e2|100|0|
+
+Core and raw installed-Native full-window child searches independently agree.
+All calls complete and retain legal PVs/restored roots. This is a selected-value
+correctness defect, not merely a different optimal tie. TT0 reproduces it, so
+shared TT contamination is not required. Generated2000's apparent discrepancy
+normalizes after converting Python10^9/Native10^8 mate scores and child-relative
+mate distance; it is explicitly not counted as a defect. The first child audit
+used parent-root restoration on a child-root view and failed; that source is
+retained separately from the corrected child-root contract.
+
+Source inspection suggests later narrowed children return a root-perspective
+UPPER bound equal to the incumbent. Canonical packed-action comparison treats
+that as an exact tie; selected-PV full re-search then discards its returned value.
+This is a causal hypothesis consistent with the counterexample, not proof that
+all defects have this cause or that the installed binary matches these sources.
+The source-derived completed-call difference nodes-transitions-iterations counts
+replay entry events only: EP/generated2000 TT0/OFF0, ON6; TT64/OFF93/117, ON6.
+It does not measure all replay subtree work or time. Training trace computes
+extra dynamic features and deduplicates without complete history, so it is not
+an inexpensive authoritative state-trace substitute.
+
+The Python product protection rejects explicit ON before C in both low-level
+and persistent iterative entries; persistent default changes to full-rootOFF.
+Existing persistent instances also use this per-call guard. The parallel wrapper
+has no ON option and delegates to the guarded low-level default; no parallel job
+was launched. Cold and reused persistent TT0/64 on EP both select a child with
+exact root value100. Raw C remains a diagnostic boundary, not public safe ON.
+Other supported Native features remain available. Full-root cost increases
+relative to the unsafe optimization; the previous work/completion gains cannot
+justify accepting incorrect selected moves. This finite regression does not
+prove full-root correctness on every rule, extension or evaluator.
+
+Dot's complete reply supports protection and exact candidate verification. Adopt
+its single next contract: only EXACT-valued ties can replace an exact incumbent;
+verify in the same depth/history/evaluator/q/mate convention, preserve TT bound
+semantics, and never install an unverified replacement after a budget interrupt.
+Score/action/PV must be committed consistently. The proposed contract is archived,
+not an implemented C repair. Terminal-v5 only repairs terminal policy/winner
+consumption and does not fix this new root-window defect. Dot reviewed supplied
+reports, not an independent implementation or benchmark execution.
+
+Final active suite:1842passing items, exit0; subsequent22focused tests include
+cold/reused persistent-TT selected-child checks and both-owner terminal propagation.
+Pre-guard wrappers/C sources accompany exact ON experiment outputs; they are
+historical reproduction inputs, not production instructions. The current guard,
+terminal-v5 unexecuted sources, syntax prototype, failed tuple/child audits and
+invalid concurrent timing remain distinguishable in the terminal/bridge index.
+Next implementation investment is exact bound/tie handling, followed by matched
+supported completion/decision controls, with no automatic kernel installation,
+training, UI propagation or policy change.

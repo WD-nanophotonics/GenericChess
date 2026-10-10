@@ -1,0 +1,307 @@
+{
+  "schema": 1,
+  "base_commit": "2d04736dfcfdd64c07ba0bd977ae21651bf8d811",
+  "scope": "Agent-produced exposed development; full state backend and algorithm attribution, selected-root correctness; no user/private inputs, raw Slack/accounts/credentials or binaries.",
+  "archive": "docs/archive/native_terminal_20261010/evidence.zip",
+  "archive_sha256": "5576b6a3fb7884c3dcf0504b8f33e084d449c78f1fe8abcb939268e4b7a3c2c8",
+  "members": {
+    ".local_agent/generated6-20261008/coverage.json": {
+      "bytes": 383389,
+      "sha256": "8b2d54188b9ded320c4591883e9520a30752bd5b20cba5920e0b5e76e862e7fc"
+    },
+    ".local_agent/native-terminal-20261010/algorithm-curve.json": {
+      "bytes": 2791417,
+      "sha256": "7a87c0322d0fc4f84aff470b7aa78918f9c252f51cad144eed386a461e855726"
+    },
+    ".local_agent/native-terminal-20261010/algorithm_curve.py": {
+      "bytes": 4255,
+      "sha256": "9ffa5b80de5e0251d02ade9ee7abf02ef5d974c6d9c9462059c31e4b8c115401"
+    },
+    ".local_agent/native-terminal-20261010/bridge-assay.json": {
+      "bytes": 70756,
+      "sha256": "43fd40e7f70f25cab06987261bb0d49f4dee39046af0c2fa45da7c8e7d33eb05"
+    },
+    ".local_agent/native-terminal-20261010/bridge_assay.py": {
+      "bytes": 5745,
+      "sha256": "e230fdcfcee5943deb030f17b986afeaf3fab53301f63d8b8ff868fb3dbc4bd4"
+    },
+    ".local_agent/native-terminal-20261010/build-failure.json": {
+      "bytes": 2522,
+      "sha256": "93437611a31e1266d88dd8788a6282d1432b999d9254b683217c095519dfe952"
+    },
+    ".local_agent/native-terminal-20261010/candidate/generic_chess/_native/native_module.c": {
+      "bytes": 320946,
+      "sha256": "ce41740cc0f940574ea813949925674badc368f616f4292578da65835d3ebccc"
+    },
+    ".local_agent/native-terminal-20261010/candidate/generic_chess/_native/native_semantic_rules.c": {
+      "bytes": 117641,
+      "sha256": "6426ede473be9738a208399f8ee5e1f5550e6dd48a55711b47513192cbf70877"
+    },
+    ".local_agent/native-terminal-20261010/candidate/generic_chess/_native/native_semantic_rules.h": {
+      "bytes": 7749,
+      "sha256": "52a44f41d0e372b6f08684a01551780edfc3fd3306ff5c0b9260b7cd254fa747"
+    },
+    ".local_agent/native-terminal-20261010/candidate/generic_chess/native/compiler.py": {
+      "bytes": 44891,
+      "sha256": "26194da80c5e395ffbe58c93ee825a7df0e55b3c6459adbc1d254c85608b3e0c"
+    },
+    ".local_agent/native-terminal-20261010/candidate/tests/product/test_h50b1_r2_payload_version.py": {
+      "bytes": 4241,
+      "sha256": "84668c1736ae1be3cc69efa478a9a93293cad12ea6672c1d4b50b04b0cef8905"
+    },
+    ".local_agent/native-terminal-20261010/candidate/tests/product/test_native_terminal_policy_support.py": {
+      "bytes": 2440,
+      "sha256": "674eca95edd5822b3df464df9c6797810a4fa8e0271d99aa4b3f8a854511ce9a"
+    },
+    ".local_agent/native-terminal-20261010/candidate/tests/product/test_native_terminal_v5.py": {
+      "bytes": 5956,
+      "sha256": "1ee3f73f90658beba86d74f3d1dbb2f422a6cb8900fe5f2b669b91f0617c8513"
+    },
+    ".local_agent/native-terminal-20261010/candidate/tests/product/test_phase19c1_native_semantic_payload.py": {
+      "bytes": 22811,
+      "sha256": "bf47dcfd6bd0072955663ebff21825268cdb5e75862403aa446dea7229596fca"
+    },
+    ".local_agent/native-terminal-20261010/candidate/tests/specification/test_phase19c1_native_semantic_payload_contract.py": {
+      "bytes": 5746,
+      "sha256": "89eaa9ee982fa6fed2be0953084e7e62de4ee536971d66b778af8f838012a6d9"
+    },
+    ".local_agent/native-terminal-20261010/exact_tie_repair_contract.md": {
+      "bytes": 1972,
+      "sha256": "fcb3589cf34804c8a646b79c3c8a8af944ab1a101853084ee4378d4ae9c2d9c8"
+    },
+    ".local_agent/native-terminal-20261010/generated-zero-features.json": {
+      "bytes": 1421486,
+      "sha256": "176a217cb1563f9aa55836f5fe2c922821b79f9657e6a2a0a41a25f6f3f7417c"
+    },
+    ".local_agent/native-terminal-20261010/generated_zero_features.py": {
+      "bytes": 4656,
+      "sha256": "e43016b19ec452ac364cae2b31bc9681d9c5bfec50f14e717c526dc5dac8cb8b"
+    },
+    ".local_agent/native-terminal-20261010/legal-perpetual.json": {
+      "bytes": 355027,
+      "sha256": "0ffdd2648f9462b94b1499292c5c00a461e0e0754e809f15a05f8d1e91d74ed2"
+    },
+    ".local_agent/native-terminal-20261010/legal_perpetual.py": {
+      "bytes": 3406,
+      "sha256": "eb5fdfbe57e52ca0d7f088204c6f03a5ef2782316b4abe8a188cdd9bbca778f8"
+    },
+    ".local_agent/native-terminal-20261010/package.py": {
+      "bytes": 4249,
+      "sha256": "e454dff8645a169c7fba39b41e44009b76e2c9525ea710fc5bd5797ef741be50"
+    },
+    ".local_agent/native-terminal-20261010/packaging_failure.json": {
+      "bytes": 411,
+      "sha256": "41f8aef0ae8b5a58459f642c13e0263743688cd625382f64bf70e5b8d0e7d155"
+    },
+    ".local_agent/native-terminal-20261010/pre_guard/generic_chess/_native/native_module.c": {
+      "bytes": 320800,
+      "sha256": "41062ee5e5c19f8add786b31d2944361ae06058b75f558f62c0898ec4879c0f2"
+    },
+    ".local_agent/native-terminal-20261010/pre_guard/generic_chess/native/semantic.py": {
+      "bytes": 27643,
+      "sha256": "3f4997309055e295693398ca33092ccd3221ec6fb23ddf9eb9dd4c18c59af5ff"
+    },
+    ".local_agent/native-terminal-20261010/pre_guard/generic_chess/native/semantic_engine.py": {
+      "bytes": 28473,
+      "sha256": "697dc58abefd6301501115207953ba8b68404751476d8f11272a4015dfe9db67"
+    },
+    ".local_agent/native-terminal-20261010/preserve_candidate.py": {
+      "bytes": 1908,
+      "sha256": "b0ebee6c15c4ac02efbeb3dcc65d15998ca8bc86c4adbc752662aadcac8f862b"
+    },
+    ".local_agent/native-terminal-20261010/profile-bridge.json": {
+      "bytes": 59802,
+      "sha256": "117dbfddf26583810439aef90458ffca731e6c92f5d48bc387d5e51ce88c13d4"
+    },
+    ".local_agent/native-terminal-20261010/profile_bridge.py": {
+      "bytes": 3454,
+      "sha256": "aa8f6e8821c8987d9f3beb1d12f6711efe6ae257c133ea00be3095f9b6422abf"
+    },
+    ".local_agent/native-terminal-20261010/pytest-final.log": {
+      "bytes": 2106,
+      "sha256": "778c9e3c54adf53b703d963ab0ed824db0000fa42ddb868c08738296fde0c991"
+    },
+    ".local_agent/native-terminal-20261010/pytest-full.log": {
+      "bytes": 2106,
+      "sha256": "2e64b2060e771b878589a0b22404413a4f0ceb3f6aaabcc24aa9b10e2ff95178"
+    },
+    ".local_agent/native-terminal-20261010/replay-counter.json": {
+      "bytes": 5733,
+      "sha256": "5c2864cce0151c436dc3482b15652e04df796d7b3d90b9650b7907c044e5d4e6"
+    },
+    ".local_agent/native-terminal-20261010/replay_counter.py": {
+      "bytes": 2819,
+      "sha256": "54b8b573ef5111acc977e1c0664444e628aecb90c9cb455c01fbb4605f0fd5c0"
+    },
+    ".local_agent/native-terminal-20261010/root-window-ablation.json": {
+      "bytes": 7371327,
+      "sha256": "2d8ab669169954785f8cdb2062763308249658b6ddcbd40c4f869d017ae39e62"
+    },
+    ".local_agent/native-terminal-20261010/root-window-overlap.json": {
+      "bytes": 7371535,
+      "sha256": "df25320ae98405d94c71f41b8bf0e6c90c03409b9784d63c4d80227cc6281728"
+    },
+    ".local_agent/native-terminal-20261010/root_window_ablation.py": {
+      "bytes": 3278,
+      "sha256": "222c0fe690b85fefda328e57ee95d94869900954090e5d4deccdc5789f915e1a"
+    },
+    ".local_agent/native-terminal-20261010/run_isolated.py": {
+      "bytes": 632,
+      "sha256": "e2e8be38e9d0a7710c17fc7f5282c54403f2f2bd0f98023443e7a973f971dd68"
+    },
+    ".local_agent/native-terminal-20261010/selected-child-contract.json": {
+      "bytes": 17008,
+      "sha256": "5b12ffda579c1469f0df5ca12755603b28261c09b4450692f8ec3672c74e4c78"
+    },
+    ".local_agent/native-terminal-20261010/selected_child_contract.py": {
+      "bytes": 4406,
+      "sha256": "d16010899001413769f6c2bdfc94dfb84d74d60488d9a67f4ccff753afb8c22f"
+    },
+    ".local_agent/native-terminal-20261010/selected_child_failed_parent_root.py": {
+      "bytes": 3296,
+      "sha256": "612861a61e3f85a06f4ecab672f28977477470ca25e86efcb2027033f542dad5"
+    },
+    ".local_agent/native-terminal-20261010/syntax-ablation-failed-tuple.json": {
+      "bytes": 950,
+      "sha256": "ba9abccc171c92fce7e4275311e33a7e5250583621d1cec0bb96a344db7764aa"
+    },
+    ".local_agent/native-terminal-20261010/syntax-ablation.json": {
+      "bytes": 36734,
+      "sha256": "691b0e071e6e269e5ff1aa0c6cd6f52019697b236f278a51d837aed2a927b480"
+    },
+    ".local_agent/native-terminal-20261010/syntax-utility.json": {
+      "bytes": 4299,
+      "sha256": "bb35b64230af74d7cc7beaf288b339a026572b420745dd434f57d7520a7a4c4c"
+    },
+    ".local_agent/native-terminal-20261010/syntax-visited-contract.json": {
+      "bytes": 6474,
+      "sha256": "f8708161542825affb0f41f78f24dcdaea995be80583df5c2f65155a23003334"
+    },
+    ".local_agent/native-terminal-20261010/syntax_ablation.py": {
+      "bytes": 4353,
+      "sha256": "771f8f91a270fd8c6d63c8853ea3eb8b8635bc6b2cc32cdbf90560b3c72fedec"
+    },
+    ".local_agent/native-terminal-20261010/syntax_ablation_failed_tuple.py": {
+      "bytes": 4358,
+      "sha256": "a8135a129b17c985c2d65c9be12f89f22743947949221c7e7dea21cbc6d04fd8"
+    },
+    ".local_agent/native-terminal-20261010/syntax_visited_contract.py": {
+      "bytes": 6905,
+      "sha256": "40a5a8fc14549bff75d1fad2b1149ce49a66a9bba09a9d701adb26cf6045e823"
+    },
+    ".local_agent/native-terminal-20261010/tt-window-ablation.json": {
+      "bytes": 5539366,
+      "sha256": "1af01e6e348ff11936ae7d6536aa75afe2cc82eb0dde9acbc8d0022bd4d89130"
+    },
+    ".local_agent/native-terminal-20261010/tt_window_ablation.py": {
+      "bytes": 3230,
+      "sha256": "0fa3a5a203b5ab004bce51189983046818f84736aaf17bfd96c812fa37e40104"
+    },
+    ".local_agent/native-terminal-20261010/unexecuted_test_native_terminal_v5.py": {
+      "bytes": 5956,
+      "sha256": "1ee3f73f90658beba86d74f3d1dbb2f422a6cb8900fe5f2b669b91f0617c8513"
+    },
+    ".local_agent/native-terminal-20261010/validation.json": {
+      "bytes": 803,
+      "sha256": "acc60d0c094fec98f80a4a2bae30691d7663b2d8efa97c44d8bd0cb88dd6dc94"
+    },
+    ".local_agent/native-terminal-20261010/visited-contract.json": {
+      "bytes": 6471,
+      "sha256": "cee3ea1f18ff897d92163ae7d40af182d2c1993f3db9c791e2b986471757eee5"
+    },
+    ".local_agent/native-terminal-20261010/visited_contract.py": {
+      "bytes": 6540,
+      "sha256": "e39b49e85c5227448b7cefcf99f3b210ee7f28f0259e4a5d7a5cf7cc85a58288"
+    },
+    ".local_agent/native-terminal-20261010/winner-probe.json": {
+      "bytes": 803750,
+      "sha256": "2b18826a9758a503e56614a5ba264937759d29c0ed066e5a61aea83a4c33bd62"
+    },
+    ".local_agent/native-terminal-20261010/winner_probe.py": {
+      "bytes": 2222,
+      "sha256": "d5df3b2ef13fdb3b443e60a3fe714944093143bc477665ea35e31a7e574f155a"
+    },
+    ".local_agent/search-attribution-20261010/utility.json": {
+      "bytes": 646778,
+      "sha256": "777f62add4f58102be9985169bea2bf57ef09f0604994d79d8a50ab830322c2c"
+    },
+    "generic_chess/native/semantic.py": {
+      "bytes": 28407,
+      "sha256": "78e6830e9e303a151c73617386c8fd069e942290326deeaaf4420d9844f70b2f"
+    },
+    "generic_chess/native/semantic_engine.py": {
+      "bytes": 28562,
+      "sha256": "ce9b7d88e3a5d725d6ca17aa4d911f6f703e19755dcb685766af122988f6cfb8"
+    },
+    "scripts/native_backend_bridge.py": {
+      "bytes": 4354,
+      "sha256": "5bd4be82548273388dc44dc9c30ccd0851a6ce743a960e25b12f5c4b1f2e1306"
+    },
+    "scripts/search_backend_comparison.py": {
+      "bytes": 23889,
+      "sha256": "a7f7818e3123835573046abe97ffa4e2c04d895ccab24fff19c4895e2fe8c66e"
+    },
+    "tests/development/test_native_backend_bridge.py": {
+      "bytes": 5176,
+      "sha256": "80ffecad94bbbc91ae605a7e66fbf5b5d1b426ed85b44771c87bb785725450a4"
+    },
+    "tests/product/test_f114_native_treestrap.py": {
+      "bytes": 3236,
+      "sha256": "70b8cdb2f75e9a2e82b93aeb7f4cc60c42f559eb8a691f62107f0db30ba986c1"
+    },
+    "tests/product/test_f73_root_pruning_product_integration.py": {
+      "bytes": 2715,
+      "sha256": "dcfcc76497e424d7cde47504cda3e2486e8e2fb1549a1dab503210b9fa018806"
+    },
+    "tests/product/test_native_terminal_policy_support.py": {
+      "bytes": 2565,
+      "sha256": "8b92b79d0c30dfd01e7e3696d3d0e43d32291c3e0e1d8d4b5ae08a1e0ae65aa9"
+    }
+  },
+  "source_boundaries": {
+    "active": "Tracked uncached NativeBoard attribution bridge; Python public guard/defaultOFF and continuous-check fixed/probe rejection. C installed unchanged.",
+    "pre_guard": "pre_guard preserves base wrappers and C source for unsafe ON experiment reconstruction in an isolated historical checkout only; do not replace active protection. Other dependencies pinned to base. Binary hash is observation identity, not source attestation.",
+    "terminal_v5": "candidate retains exact unexecuted terminal-policy/winner repair plus its tests. Build succeeds but fresh import App Control blocked. It does not repair root-window ties and was never installed.",
+    "prototypes": "syntax_ablation only scoped immutable label cache; not product. Failed tuple and failed parent-root child-view sources preserved. root-window-overlap invalid timing; clean repeat still unsafe selection.",
+    "inputs": "Existing generated coverage and finite-D4 utility included; already exposed; no teacher/budget expansion or holdout restoration."
+  },
+  "validation": {
+    "schema": 1,
+    "full_pytest_exit": 0,
+    "full_passed": 1842,
+    "local_basetemp": true,
+    "native_kernel_version": 4,
+    "v5_tests_executed": false,
+    "validation": "15 focused bridge/policy tests; complete active suite captured",
+    "ratio_definition": "Core warm wall / Native-state warm wall",
+    "ratio_min": 3.3685810143318387,
+    "ratio_max": 4.432167473138311,
+    "root_window_first_pass": "Invalid overlapped timing retained; clean repeat superseded as safe decision evidence by selected-value counterexample.",
+    "final_focused_passed": 22,
+    "final_focused_scope": "Includes cold and reused persistent TT0/64 selected-child contract after full suite; no production changes after full suite.",
+    "root_window_product_default": false,
+    "root_window_on_publicly_rejected": true
+  },
+  "decisions": {
+    "root_window": "Public ON rejected; persistent defaultOFF after exactselected-child mismatch. Cold/reused TT0/64 regression passes.",
+    "fixed_probe": "Reject continuous-check-loss on payloadv4; iterative reason/winner bridge retained supported scope.",
+    "syntax": "Defer product adoption; fixed4096 trace preserved, local costs improve12.8-32.5percent, onlyEP finiteD4 choice gain; not strength.",
+    "next": "Implement exact candidate evidence/canonical tie/shared-budget interruption contract only after executable validation; terminal repair separate."
+  },
+  "counts": {
+    "fixed_bridge_calls": 44,
+    "d1_states": 187,
+    "deep_state_visits_per_audit": 24576,
+    "deep_audits": 2,
+    "syntax_fixed_calls": 24,
+    "syntax_timed_calls": 24,
+    "algorithm_curve_calls": 54,
+    "clean_root_window_fixed_calls": 12,
+    "clean_root_window_timed_calls": 36,
+    "tt_window_fixed_calls": 12,
+    "tt_window_timed_calls": 24,
+    "replay_calls": 8,
+    "selected_child_rows": 8,
+    "archive_members": 63
+  }
+}

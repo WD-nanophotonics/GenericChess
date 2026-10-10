@@ -30,7 +30,7 @@ def _search(compiled, native_rules, checkpoint, trace_enabled):
     return engine.search(
         GameSession(compiled),
         SearchLimits(max_depth=4, max_nodes=128, quiescence_max_depth=0),
-        root_window_pruning=True,
+        root_window_pruning=False,
         trace_enabled=trace_enabled,
     )
 

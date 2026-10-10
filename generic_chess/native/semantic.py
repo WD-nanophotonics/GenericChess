@@ -381,6 +381,13 @@ def search_runtime_sizes() -> dict:
 
 def _run_search(native_rules, position, depth: int, *, board_values=None, hand_values=None, entrypoint: str) -> dict:
     native_rules.require_terminal_policy_support()
+    if (native_rules.report.semantic_payload_version < 5
+            and native_rules.repetition_policy == "continuous_check_loss"):
+        from .compiler import NativeUnsupportedRuleError
+        raise NativeUnsupportedRuleError(
+            "Native fixed/probe search does not score continuous-check winners; "
+            "use semantic iterative search or Core"
+        )
     args = (native_rules.capsule, position, int(depth))
     if (board_values is None) != (hand_values is None):
         raise ValueError("board_values and hand_values must be supplied together")
@@ -425,6 +432,15 @@ def probe_search(native_rules, position, depth: int, *, board_values=None, hand_
     return _run_search(native_rules, position, depth, board_values=board_values, hand_values=hand_values, entrypoint="semantic_probe_search")
 
 
+def _require_root_window_support(enabled: bool) -> None:
+    if enabled:
+        from .compiler import NativeUnsupportedRuleError
+        raise NativeUnsupportedRuleError(
+            "Native root-window pruning can select an inexact tied bound; "
+            "use full-root windows until exact tie selection is verified"
+        )
+
+
 def semantic_iterative_search(
     native_rules,
     position,
@@ -459,6 +475,7 @@ def semantic_iterative_search(
         raise ValueError("tt_megabytes must be an integer in [0, 1024]")
     if not isinstance(root_window_pruning, bool):
         raise TypeError("root_window_pruning must be a bool")
+    _require_root_window_support(root_window_pruning)
     if (board_values is None) != (hand_values is None):
         raise ValueError("board_values and hand_values must be supplied together")
     expected = tuple(native_rules.type_ids)
