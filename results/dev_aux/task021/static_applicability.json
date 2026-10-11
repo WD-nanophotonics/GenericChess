@@ -1,0 +1,71 @@
+{
+  "complete": true,
+  "source_sha256": "119ac83dcd1578245b784d3d5fddd56f2947b7566e291d84fe88fdfab2acb896",
+  "primary_working_source_sha256": "669fc8644d2e94b9b61d4634791af0b1cb558f9a653443aa1a96703c84ecd55a",
+  "primary_ast_same": true,
+  "own_baseline_ast_same": true,
+  "ir_source_sha256": "92c0fbcfa39d746861e1ea5dfd420c11042d33bb580d34cd19132c19244a0b2c",
+  "effect_loop_body": [
+    "_checkpoint(checkpoint)",
+    "if effect.kind in ('set_bool', 'clear_right', 'set_token', 'clear_token'):\n    aux_effects.append(effect)\n    continue",
+    "_apply_effect(effect, work, self.support, self.ir.aux_slots, position, binding)"
+  ],
+  "folded_literal_conditions": [
+    {
+      "function": "_transition",
+      "condition": "effect.kind in ('set_bool', 'clear_right', 'set_token', 'clear_token')",
+      "literal": [
+        "set_bool",
+        "clear_right",
+        "set_token",
+        "clear_token"
+      ]
+    },
+    {
+      "function": "_apply_effect",
+      "condition": "kind in ('move', 'shift')",
+      "literal": [
+        "move",
+        "shift"
+      ]
+    },
+    {
+      "function": "_apply_effect",
+      "condition": "kind == 'remove'",
+      "literal": "remove"
+    },
+    {
+      "function": "_apply_effect",
+      "condition": "kind == 'remove_from_hand'",
+      "literal": "remove_from_hand"
+    },
+    {
+      "function": "_apply_effect",
+      "condition": "kind == 'place'",
+      "literal": "place"
+    },
+    {
+      "function": "_apply_effect",
+      "condition": "kind == 'set_current_type'",
+      "literal": "set_current_type"
+    },
+    {
+      "function": "_apply_effect",
+      "condition": "kind in ('set_bool', 'clear_right', 'set_token', 'clear_token')",
+      "literal": [
+        "set_bool",
+        "clear_right",
+        "set_token",
+        "clear_token"
+      ]
+    }
+  ],
+  "frozen_effect_and_pattern": true,
+  "scope": "static shape prerequisites only; no engine execution, full compiler proof or live-hook compatibility",
+  "limitations": [
+    "A future original-loop for-else, dynamic kind expression or nested continue is outside the verified shape; the private transformer has no automatic shape admission guard.",
+    "Captured module globals bypass a later live _apply_effect hook; primary independently reports this negative.",
+    "One module-global prepared carrier preserves foreign fallback but offers no measured reuse or thread-safety evidence.",
+    "No rule-specific coordinate shortcuts or merging same kind sequences into equivalent rules follows."
+  ]
+}
