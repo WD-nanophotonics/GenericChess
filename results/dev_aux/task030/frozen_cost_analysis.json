@@ -1,0 +1,370 @@
+{
+  "rows": [
+    {
+      "condition": "fixed",
+      "root": "chess-ep",
+      "pairs": [
+        {
+          "repeat": 0,
+          "baseline": 0.35953420028090477,
+          "candidate": 0.35050499998033047,
+          "warm_ratio": 0.9748863938576087,
+          "candidate_one_call_cold": 0.3700020001269877,
+          "one_call_cold_ratio": 1.0291148932087808
+        },
+        {
+          "repeat": 1,
+          "baseline": 0.35407569957897067,
+          "candidate": 0.3620716999284923,
+          "warm_ratio": 1.0225827425011929,
+          "candidate_one_call_cold": 0.38156870007514954,
+          "one_call_cold_ratio": 1.0776472390759113
+        },
+        {
+          "repeat": 2,
+          "baseline": 0.3728125002235174,
+          "candidate": 0.35257699992507696,
+          "warm_ratio": 0.9457220444960713,
+          "candidate_one_call_cold": 0.3720740000717342,
+          "one_call_cold_ratio": 0.9980191110777121
+        },
+        {
+          "repeat": 3,
+          "baseline": 0.3507946999743581,
+          "candidate": 0.3478246000595391,
+          "warm_ratio": 0.991533224660931,
+          "candidate_one_call_cold": 0.3673216002061963,
+          "one_call_cold_ratio": 1.0471127421054147
+        }
+      ],
+      "setup_seconds": 0.01949700014665723,
+      "warm_aggregate_ratio": 0.9831349069230124,
+      "candidate_reuse_batch_with_one_setup_ratio": 0.9967007072087687,
+      "estimated_calls_to_amortize": 4
+    },
+    {
+      "condition": "fixed",
+      "root": "chess-middle",
+      "pairs": [
+        {
+          "repeat": 0,
+          "baseline": 0.32093350030481815,
+          "candidate": 0.3039087001234293,
+          "warm_ratio": 0.9469522497177174,
+          "candidate_one_call_cold": 0.32420899998396635,
+          "one_call_cold_ratio": 1.010206163195918
+        },
+        {
+          "repeat": 1,
+          "baseline": 0.3030309001915157,
+          "candidate": 0.31909599993377924,
+          "warm_ratio": 1.0530147246769568,
+          "candidate_one_call_cold": 0.3393962997943163,
+          "one_call_cold_ratio": 1.1200055822024013
+        },
+        {
+          "repeat": 2,
+          "baseline": 0.3066062000580132,
+          "candidate": 0.31382230017334223,
+          "warm_ratio": 1.0235354018084555,
+          "candidate_one_call_cold": 0.3341226000338793,
+          "one_call_cold_ratio": 1.0897450865985738
+        },
+        {
+          "repeat": 3,
+          "baseline": 0.3131688996218145,
+          "candidate": 0.31699660001322627,
+          "warm_ratio": 1.0122224792948282,
+          "candidate_one_call_cold": 0.3372968998737633,
+          "one_call_cold_ratio": 1.0770446882850948
+        }
+      ],
+      "setup_seconds": 0.020300299860537052,
+      "warm_aggregate_ratio": 1.0081078875971916,
+      "candidate_reuse_batch_with_one_setup_ratio": 1.0244298745226383,
+      "estimated_calls_to_amortize": null
+    },
+    {
+      "condition": "fixed",
+      "root": "chess-promotion",
+      "pairs": [
+        {
+          "repeat": 0,
+          "baseline": 0.13442920008674264,
+          "candidate": 0.13477519992738962,
+          "warm_ratio": 1.0025738443762495,
+          "candidate_one_call_cold": 0.1627595997415483,
+          "one_call_cold_ratio": 1.210745876911601
+        },
+        {
+          "repeat": 1,
+          "baseline": 0.13518610037863255,
+          "candidate": 0.1436731000430882,
+          "warm_ratio": 1.0627801204464442,
+          "candidate_one_call_cold": 0.17165749985724688,
+          "one_call_cold_ratio": 1.2697866080644706
+        },
+        {
+          "repeat": 2,
+          "baseline": 0.13495239987969398,
+          "candidate": 0.13905869983136654,
+          "warm_ratio": 1.0304277653108296,
+          "candidate_one_call_cold": 0.16704309964552522,
+          "one_call_cold_ratio": 1.2377927313218522
+        },
+        {
+          "repeat": 3,
+          "baseline": 0.13470009993761778,
+          "candidate": 0.14955150010064244,
+          "warm_ratio": 1.1102553017399588,
+          "candidate_one_call_cold": 0.17753589991480112,
+          "one_call_cold_ratio": 1.3180086725772395
+        }
+      ],
+      "setup_seconds": 0.027984399814158678,
+      "warm_aggregate_ratio": 1.051534134997921,
+      "candidate_reuse_batch_with_one_setup_ratio": 1.1034274610958061,
+      "estimated_calls_to_amortize": null
+    },
+    {
+      "condition": "fixed",
+      "root": "chess-tactic",
+      "pairs": [
+        {
+          "repeat": 0,
+          "baseline": 0.005935599561780691,
+          "candidate": 0.005501899868249893,
+          "warm_ratio": 0.9269324540820798,
+          "candidate_one_call_cold": 0.03318219957873225,
+          "one_call_cold_ratio": 5.590370312780589
+        },
+        {
+          "repeat": 1,
+          "baseline": 0.00535999983549118,
+          "candidate": 0.005515300203114748,
+          "warm_ratio": 1.0289739500727684,
+          "candidate_one_call_cold": 0.03319559991359711,
+          "one_call_cold_ratio": 6.193209129185566
+        },
+        {
+          "repeat": 2,
+          "baseline": 0.005420600064098835,
+          "candidate": 0.005601999815553427,
+          "warm_ratio": 1.0334648838338065,
+          "candidate_one_call_cold": 0.033282299526035786,
+          "one_call_cold_ratio": 6.1399658953752585
+        },
+        {
+          "repeat": 3,
+          "baseline": 0.0055113001726567745,
+          "candidate": 0.005652299616485834,
+          "warm_ratio": 1.0255836988390872,
+          "candidate_one_call_cold": 0.03333259932696819,
+          "one_call_cold_ratio": 6.048046428743128
+        }
+      ],
+      "setup_seconds": 0.02768029971048236,
+      "warm_aggregate_ratio": 1.001979524017585,
+      "candidate_reuse_batch_with_one_setup_ratio": 2.2472972685338117,
+      "estimated_calls_to_amortize": null
+    },
+    {
+      "condition": "fixed",
+      "root": "shogi-drop",
+      "pairs": [
+        {
+          "repeat": 0,
+          "baseline": 0.06173040019348264,
+          "candidate": 0.09018409997224808,
+          "warm_ratio": 1.4609349638036127,
+          "candidate_one_call_cold": 0.10140069993212819,
+          "one_call_cold_ratio": 1.6426379808701428
+        },
+        {
+          "repeat": 1,
+          "baseline": 0.06874779984354973,
+          "candidate": 0.06324490020051599,
+          "warm_ratio": 0.919955261760278,
+          "candidate_one_call_cold": 0.0744615001603961,
+          "one_call_cold_ratio": 1.0831110279870646
+        },
+        {
+          "repeat": 2,
+          "baseline": 0.06479209987446666,
+          "candidate": 0.07365060038864613,
+          "warm_ratio": 1.1367219233724888,
+          "candidate_one_call_cold": 0.08486720034852624,
+          "one_call_cold_ratio": 1.3098387073880098
+        },
+        {
+          "repeat": 3,
+          "baseline": 0.062098999973386526,
+          "candidate": 0.06206679996103048,
+          "warm_ratio": 0.999481472932417,
+          "candidate_one_call_cold": 0.0732833999209106,
+          "one_call_cold_ratio": 1.1801059590704732
+        }
+      ],
+      "setup_seconds": 0.011216599959880114,
+      "warm_aggregate_ratio": 1.1234688855732529,
+      "candidate_reuse_batch_with_one_setup_ratio": 1.1670506179900446,
+      "estimated_calls_to_amortize": null
+    },
+    {
+      "condition": "fixed",
+      "root": "shogi-middle",
+      "pairs": [
+        {
+          "repeat": 0,
+          "baseline": 0.3705861000344157,
+          "candidate": 0.39532720018178225,
+          "warm_ratio": 1.0667620834809208,
+          "candidate_one_call_cold": 0.4068758999928832,
+          "one_call_cold_ratio": 1.0979254212586422
+        },
+        {
+          "repeat": 1,
+          "baseline": 0.3649290995672345,
+          "candidate": 0.3594533000141382,
+          "warm_ratio": 0.9849948947354705,
+          "candidate_one_call_cold": 0.3710019998252392,
+          "one_call_cold_ratio": 1.0166413154369067
+        },
+        {
+          "repeat": 2,
+          "baseline": 0.36090000020340085,
+          "candidate": 0.3731877999380231,
+          "warm_ratio": 1.0340476578766886,
+          "candidate_one_call_cold": 0.38473649974912405,
+          "one_call_cold_ratio": 1.0660473802501775
+        },
+        {
+          "repeat": 3,
+          "baseline": 0.35891810012981296,
+          "candidate": 0.36809869995340705,
+          "warm_ratio": 1.0255785367755865,
+          "candidate_one_call_cold": 0.379647399764508,
+          "one_call_cold_ratio": 1.05775495754379
+        }
+      ],
+      "setup_seconds": 0.01154869981110096,
+      "warm_aggregate_ratio": 1.0279892586490735,
+      "candidate_reuse_batch_with_one_setup_ratio": 1.0359246915919038,
+      "estimated_calls_to_amortize": null
+    },
+    {
+      "condition": "fixed",
+      "root": "shogi-promotion",
+      "pairs": [
+        {
+          "repeat": 0,
+          "baseline": 0.13175470009446144,
+          "candidate": 0.15148109989240766,
+          "warm_ratio": 1.149720653485632,
+          "candidate_one_call_cold": 0.1626005000434816,
+          "one_call_cold_ratio": 1.234115366866649
+        },
+        {
+          "repeat": 1,
+          "baseline": 0.13231620006263256,
+          "candidate": 0.138504299800843,
+          "warm_ratio": 1.0467675139951214,
+          "candidate_one_call_cold": 0.14962369995191693,
+          "one_call_cold_ratio": 1.130804088094215
+        },
+        {
+          "repeat": 2,
+          "baseline": 0.13005440030246973,
+          "candidate": 0.14230929967015982,
+          "warm_ratio": 1.094229025232431,
+          "candidate_one_call_cold": 0.15342869982123375,
+          "one_call_cold_ratio": 1.1797270946957736
+        },
+        {
+          "repeat": 3,
+          "baseline": 0.1289610001258552,
+          "candidate": 0.13007850013673306,
+          "warm_ratio": 1.0086654105488269,
+          "candidate_one_call_cold": 0.141197900287807,
+          "one_call_cold_ratio": 1.0948883782694736
+        }
+      ],
+      "setup_seconds": 0.011119400151073933,
+      "warm_aggregate_ratio": 1.075105960279893,
+      "candidate_reuse_batch_with_one_setup_ratio": 1.0963632559472225,
+      "estimated_calls_to_amortize": null
+    },
+    {
+      "condition": "fixed",
+      "root": "shogi-tactic",
+      "pairs": [
+        {
+          "repeat": 0,
+          "baseline": 0.11421849997714162,
+          "candidate": 0.13454240001738071,
+          "warm_ratio": 1.1779387756300992,
+          "candidate_one_call_cold": 0.14564689993858337,
+          "one_call_cold_ratio": 1.2751603283857822
+        },
+        {
+          "repeat": 1,
+          "baseline": 0.11440630024299026,
+          "candidate": 0.12983200000599027,
+          "warm_ratio": 1.134832607384707,
+          "candidate_one_call_cold": 0.14093649992719293,
+          "one_call_cold_ratio": 1.2318945689866252
+        },
+        {
+          "repeat": 2,
+          "baseline": 0.11269420012831688,
+          "candidate": 0.1218735002912581,
+          "warm_ratio": 1.0814531728561843,
+          "candidate_one_call_cold": 0.13297800021246076,
+          "one_call_cold_ratio": 1.179989742693485
+        },
+        {
+          "repeat": 3,
+          "baseline": 0.11383499996736646,
+          "candidate": 0.11038740025833249,
+          "warm_ratio": 0.9697140623707796,
+          "candidate_one_call_cold": 0.12149190017953515,
+          "one_call_cold_ratio": 1.0672631459073547
+        }
+      ],
+      "setup_seconds": 0.01110449992120266,
+      "warm_aggregate_ratio": 1.0911368464923168,
+      "candidate_reuse_batch_with_one_setup_ratio": 1.1155340832813985,
+      "estimated_calls_to_amortize": null
+    },
+    {
+      "condition": "completed",
+      "root": "chess-middle",
+      "pairs": [
+        {
+          "repeat": 0,
+          "baseline": 6.593132799956948,
+          "candidate": 6.751612300053239,
+          "warm_ratio": 1.02403705566151,
+          "candidate_one_call_cold": 6.771912599913776,
+          "one_call_cold_ratio": 1.0271160623304896
+        },
+        {
+          "repeat": 1,
+          "baseline": 6.720415300223976,
+          "candidate": 6.672216299921274,
+          "warm_ratio": 0.9928279729526395,
+          "candidate_one_call_cold": 6.692516599781811,
+          "one_call_cold_ratio": 0.995848664227457
+        }
+      ],
+      "setup_seconds": 0.020300299860537052,
+      "warm_aggregate_ratio": 1.0082833290542654,
+      "candidate_reuse_batch_with_one_setup_ratio": 1.009808114160969,
+      "estimated_calls_to_amortize": null
+    }
+  ],
+  "slot_seconds": 40.06734469998628,
+  "setup_scope": "Separate original rules compilation outside both caller timers; prototype prepare timed separately. Cold hypothetical one-call adds prototype setup. Reuse batch charges it once, not zero. Break-even is descriptive arithmetic from this finite mean, not independent guarantee or forecast.",
+  "decision": "DEFER shared private variant and equal-time expansion:7of8 fixed warm roots adverse, completed quietD2 1.008; lower code/setup ownership does not establish caller utility. No unchanged effect-dispatch rerun.",
+  "unchanged": "Product semantic executor/backend/q/evaluation/UI defaults; totalcost includes engineering/token overhead without an exported exact token count."
+}

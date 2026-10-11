@@ -1,0 +1,4 @@
+# Task032: visible Python Native transport
+Pure scientific profile review plus two exact unbound payload method calls with a declared type mapping stub. No new Native route/caller/kernel run. Builtin Chess/Shogi encode64/81board slots,32/40occupied piece lists and two hand vectors, with zero WorkingPosition clocks and stable full parents.
+The supplied cProfile separately records3179_state_only_payload/pack_position/transient_legal_actions calls. Python transport is visible and outside ordinary Core publication clocks; pack_position includes C work, and cumulative fields overlap. No time sum or speed forecast.
+The source/profile input is frozen locally with SHA25649259740...; its non-time caller metadata equals Task027's primary baseline. Initial-state setup invokes ordinary semantic checks; the two direct payload calls do not prove provider selection or new C execution.

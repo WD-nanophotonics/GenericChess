@@ -1,0 +1,297 @@
+{
+  "complete": true,
+  "scope": "8normal+4direct missing-token pairs under2scope/2carrier public fixtures",
+  "shared_source_sha256": "bceefeec2483a0b43e6a04cc42072cfbe1a62c0049c9b88314732dd210b632a7",
+  "rows": [
+    {
+      "scope": "global",
+      "carrier": "compat",
+      "action": "source_square",
+      "case": "normal",
+      "result": {
+        "status": "child",
+        "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='A', promoted=False), None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='f50933e357b55824701927f90e7c74284bae8a6de990e9f13fd9485ad41a5943', aux_state=(((0, -1), (1, 1)), ((1, -1), None)), board_width=None, board_height=None)",
+        "aux": "(((0, -1), (1, 1)), ((1, -1), None))"
+      },
+      "callbacks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "shared_function_identity": true,
+      "actual_compiled_hit": "sem_00_source_square",
+      "full_parent_unchanged": true
+    },
+    {
+      "scope": "global",
+      "carrier": "compat",
+      "action": "pre_expiry_token",
+      "case": "normal",
+      "result": {
+        "status": "child",
+        "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='A', promoted=False), None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='f50933e357b55824701927f90e7c74284bae8a6de990e9f13fd9485ad41a5943', aux_state=(((0, -1), (2, 2)), ((1, -1), None)), board_width=None, board_height=None)",
+        "aux": "(((0, -1), (2, 2)), ((1, -1), None))"
+      },
+      "callbacks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "shared_function_identity": true,
+      "actual_compiled_hit": "sem_01_pre_expiry_token",
+      "full_parent_unchanged": true
+    },
+    {
+      "scope": "global",
+      "carrier": "compat",
+      "action": "pre_expiry_token",
+      "case": "missing_pre_token",
+      "result": {
+        "status": "rejection",
+        "exception_type": "RuntimeError",
+        "message": "set_token ref unresolved"
+      },
+      "callbacks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "shared_function_identity": true,
+      "actual_compiled_hit": "sem_01_pre_expiry_token",
+      "full_parent_unchanged": true
+    },
+    {
+      "scope": "global",
+      "carrier": "pure",
+      "action": "source_square",
+      "case": "normal",
+      "result": {
+        "status": "child",
+        "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='A', promoted=False), None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='f50933e357b55824701927f90e7c74284bae8a6de990e9f13fd9485ad41a5943', aux_state=(((0, -1), (1, 1)), ((1, -1), None)), board_width=None, board_height=None)",
+        "aux": "(((0, -1), (1, 1)), ((1, -1), None))"
+      },
+      "callbacks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "shared_function_identity": true,
+      "actual_compiled_hit": "sem_00_source_square",
+      "full_parent_unchanged": true
+    },
+    {
+      "scope": "global",
+      "carrier": "pure",
+      "action": "pre_expiry_token",
+      "case": "normal",
+      "result": {
+        "status": "child",
+        "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='A', promoted=False), None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='f50933e357b55824701927f90e7c74284bae8a6de990e9f13fd9485ad41a5943', aux_state=(((0, -1), (2, 2)), ((1, -1), None)), board_width=None, board_height=None)",
+        "aux": "(((0, -1), (2, 2)), ((1, -1), None))"
+      },
+      "callbacks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "shared_function_identity": true,
+      "actual_compiled_hit": "sem_01_pre_expiry_token",
+      "full_parent_unchanged": true
+    },
+    {
+      "scope": "global",
+      "carrier": "pure",
+      "action": "pre_expiry_token",
+      "case": "missing_pre_token",
+      "result": {
+        "status": "rejection",
+        "exception_type": "RuntimeError",
+        "message": "set_token ref unresolved"
+      },
+      "callbacks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "shared_function_identity": true,
+      "actual_compiled_hit": "sem_01_pre_expiry_token",
+      "full_parent_unchanged": true
+    },
+    {
+      "scope": "per_owner",
+      "carrier": "compat",
+      "action": "source_square",
+      "case": "normal",
+      "result": {
+        "status": "child",
+        "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='A', promoted=False), None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='96f01886852efb53f23890d16d8245546e3f106ff410d71a30b54625534d8f35', aux_state=(((0, 0), (1, 1)), ((0, 1), None), ((1, 0), None), ((1, 1), None)), board_width=None, board_height=None)",
+        "aux": "(((0, 0), (1, 1)), ((0, 1), None), ((1, 0), None), ((1, 1), None))"
+      },
+      "callbacks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shared_function_identity": true,
+      "actual_compiled_hit": "sem_00_source_square",
+      "full_parent_unchanged": true
+    },
+    {
+      "scope": "per_owner",
+      "carrier": "compat",
+      "action": "pre_expiry_token",
+      "case": "normal",
+      "result": {
+        "status": "child",
+        "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='A', promoted=False), None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='96f01886852efb53f23890d16d8245546e3f106ff410d71a30b54625534d8f35', aux_state=(((0, 0), (2, 2)), ((0, 1), None), ((1, 0), None), ((1, 1), None)), board_width=None, board_height=None)",
+        "aux": "(((0, 0), (2, 2)), ((0, 1), None), ((1, 0), None), ((1, 1), None))"
+      },
+      "callbacks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shared_function_identity": true,
+      "actual_compiled_hit": "sem_01_pre_expiry_token",
+      "full_parent_unchanged": true
+    },
+    {
+      "scope": "per_owner",
+      "carrier": "compat",
+      "action": "pre_expiry_token",
+      "case": "missing_pre_token",
+      "result": {
+        "status": "rejection",
+        "exception_type": "RuntimeError",
+        "message": "set_token ref unresolved"
+      },
+      "callbacks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shared_function_identity": true,
+      "actual_compiled_hit": "sem_01_pre_expiry_token",
+      "full_parent_unchanged": true
+    },
+    {
+      "scope": "per_owner",
+      "carrier": "pure",
+      "action": "source_square",
+      "case": "normal",
+      "result": {
+        "status": "child",
+        "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='A', promoted=False), None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='96f01886852efb53f23890d16d8245546e3f106ff410d71a30b54625534d8f35', aux_state=(((0, 0), (1, 1)), ((0, 1), None), ((1, 0), None), ((1, 1), None)), board_width=None, board_height=None)",
+        "aux": "(((0, 0), (1, 1)), ((0, 1), None), ((1, 0), None), ((1, 1), None))"
+      },
+      "callbacks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shared_function_identity": true,
+      "actual_compiled_hit": "sem_00_source_square",
+      "full_parent_unchanged": true
+    },
+    {
+      "scope": "per_owner",
+      "carrier": "pure",
+      "action": "pre_expiry_token",
+      "case": "normal",
+      "result": {
+        "status": "child",
+        "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='A', promoted=False), None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='96f01886852efb53f23890d16d8245546e3f106ff410d71a30b54625534d8f35', aux_state=(((0, 0), (2, 2)), ((0, 1), None), ((1, 0), None), ((1, 1), None)), board_width=None, board_height=None)",
+        "aux": "(((0, 0), (2, 2)), ((0, 1), None), ((1, 0), None), ((1, 1), None))"
+      },
+      "callbacks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shared_function_identity": true,
+      "actual_compiled_hit": "sem_01_pre_expiry_token",
+      "full_parent_unchanged": true
+    },
+    {
+      "scope": "per_owner",
+      "carrier": "pure",
+      "action": "pre_expiry_token",
+      "case": "missing_pre_token",
+      "result": {
+        "status": "rejection",
+        "exception_type": "RuntimeError",
+        "message": "set_token ref unresolved"
+      },
+      "callbacks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shared_function_identity": true,
+      "actual_compiled_hit": "sem_01_pre_expiry_token",
+      "full_parent_unchanged": true
+    }
+  ],
+  "decision": "Finite shared-template operands retain pre-action square lookup and global/per-owner expiry. Private prototype remains DEFER for cost; no full-domain or legal-membership claim for negative direct calls.",
+  "limits": "Public initial-state/legality setup invokes semantic checks. No search,C-provider,timing,allocation-failure or all callback-prefix sweep."
+}

@@ -1,2 +1,20 @@
 .githooks/* text eol=lf
 *.cmd text eol=crlf
+
+# Preserve new DEV_AUX scientific records exactly; their hashes bind raw bytes.
+results/dev_aux/task027/** -text
+results/dev_aux/task028/** -text
+results/dev_aux/task029/** -text
+results/dev_aux/task030/** -text
+results/dev_aux/task031/** -text
+results/dev_aux/task032/** -text
+results/dev_aux/task033/** -text
+results/dev_aux/task034/** -text
+results/dev_aux/task035/** -text
+results/dev_aux/task036/** -text
+results/dev_aux/task037/** -text
+results/dev_aux/task038/** -text
+results/dev_aux/delivery_20261011_3/** -text
+results/dev_aux/task039/** -text
+results/dev_aux/task040/** -text
+results/dev_aux/task041/** -text

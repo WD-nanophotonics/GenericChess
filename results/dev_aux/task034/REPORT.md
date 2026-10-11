@@ -1,0 +1,3 @@
+# Task034: selected versus consumed rows
+Reuse Task033580exact result/trace records; no repeat of that paired attack-query batch. Reconstructing the fixtures does invoke semantic initialization/legality checks. Original zero-new-attack-query wording and output are retained with scope_correction.json; corrected data explicitly distinguishes paired queries from setup.
+Original materialization selects664rows; observed guard consumption452leaves212unconsumed rows. All source scans/checkpoints remain. Every selected group in these builtin states has one row. This is a work-shape observation, not212saved operations or a time prediction; Task036 observes heap priming.

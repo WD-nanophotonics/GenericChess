@@ -1,0 +1,6 @@
+DIAGNOSTIC compat 0 0 5 True 7 2 1
+Traceback (most recent call last):
+  File "C:\Users\wdai\Documents\ChatGPT\GenericChess-DEV_AUX\results\dev_aux\task037\multirow_contract.py", line 65, in <module>
+    print("DIAGNOSTIC",carrier,permit,owner,target,old[0],n,k,consumed,flush=True); assert old[0] and n==6 and k==1 and consumed==(1 if permit==0 else 4)
+                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

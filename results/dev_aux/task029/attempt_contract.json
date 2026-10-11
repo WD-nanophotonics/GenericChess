@@ -1,0 +1,57 @@
+{
+  "complete": true,
+  "scope": "three actual one-trial controls, frozen primary observer functions; targeted callback fault in saved init/freeze seam, no caller cost run",
+  "rows": [
+    {
+      "case": "normal",
+      "actual_fault_hits": 0,
+      "returned_child": true,
+      "original_exception_preserved": null,
+      "attempt_counts": {
+        "copies": 1,
+        "freezes": 1,
+        "transitions": 1
+      },
+      "trial_outcome_rows": {
+        "finite-control|frontier_or_other:<module>|s3_accepted": {
+          "trials": 1
+        }
+      },
+      "parent_full_repr_unchanged": true
+    },
+    {
+      "case": "init_fails_before_copy",
+      "actual_fault_hits": 1,
+      "returned_child": false,
+      "original_exception_preserved": true,
+      "attempt_counts": {
+        "copies": 1,
+        "transitions": 1
+      },
+      "trial_outcome_rows": {
+        "finite-control|frontier_or_other:<module>|exception": {
+          "trials": 1
+        }
+      },
+      "parent_full_repr_unchanged": true
+    },
+    {
+      "case": "freeze_fails_before_publication",
+      "actual_fault_hits": 1,
+      "returned_child": false,
+      "original_exception_preserved": true,
+      "attempt_counts": {
+        "copies": 1,
+        "freezes": 1,
+        "transitions": 1
+      },
+      "trial_outcome_rows": {
+        "finite-control|frontier_or_other:<module>|exception": {
+          "trials": 1
+        }
+      },
+      "parent_full_repr_unchanged": true
+    }
+  ],
+  "decision": "finally counters measure entered method attempts: normal and failed freeze both count1copy/1freeze/1transition despite no returned child on failure. In primary completed record this does not prove a failed attempt occurred; preserve per-outcome success distinction."
+}

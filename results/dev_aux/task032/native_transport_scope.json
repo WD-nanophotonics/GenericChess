@@ -1,0 +1,51 @@
+{
+  "complete": true,
+  "profile_input_sha256": "492597400ca3d72e842de5b616962cc47634c61a889e63e9a5ec1e1686695f4a",
+  "supplied_profile_calls": [
+    {
+      "name": "_state_only_payload",
+      "file_suffix": "native_legality.py",
+      "calls": 3179,
+      "self_seconds": 0.0454234,
+      "cumulative_seconds": 0.0614564
+    },
+    {
+      "name": "pack_position",
+      "file_suffix": "native/semantic.py",
+      "calls": 3179,
+      "self_seconds": 0.008961100000000001,
+      "cumulative_seconds": 0.090295
+    },
+    {
+      "name": "transient_legal_actions",
+      "file_suffix": "native/semantic.py",
+      "calls": 3179,
+      "self_seconds": 0.009328900000000001,
+      "cumulative_seconds": 0.33944280000000004
+    }
+  ],
+  "finite_payload_cells": [
+    {
+      "game": "western_chess",
+      "board_slots_encoded": 64,
+      "occupied_lists_encoded": 32,
+      "hand_vectors": 2,
+      "hand_vector_length": 6,
+      "core_method_counts": {},
+      "full_parent_unchanged": true,
+      "scope": "exact unbound Python method with declared type mapping stub; no provider selection or C kernel invoked"
+    },
+    {
+      "game": "standard_shogi",
+      "board_slots_encoded": 81,
+      "occupied_lists_encoded": 40,
+      "hand_vectors": 2,
+      "hand_vector_length": 14,
+      "core_method_counts": {},
+      "full_parent_unchanged": true,
+      "scope": "exact unbound Python method with declared type mapping stub; no provider selection or C kernel invoked"
+    }
+  ],
+  "decision": "Python board/hand/aux transport allocation is outside WorkingPosition clocks, and is visible without enumerating opaque C internals. Supplied residual profile already measures its3179calls, so no evidence here overturns DEFER; keep transport distinct from Core immutable publication.",
+  "limits": "Profile cumulative times overlap and are instrumented; pack_position includes C pack cost. Direct payload calls are not new actual Native route callers. No speedup or pure Python total from cumulative sum."
+}

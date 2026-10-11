@@ -1,0 +1,5 @@
+# Task037: public multirow premise, finite only
+Six ordered guard-bearing public capture programs, one replaces legacy A capture and five augment. Persistent bool0/1 admits the first or fourth guarded row. Corrected4x4anchored fixture isolates two A sources and target pairs at5→9(owner0),10→6(owner1).
+128compat/pure slot0/1 owner-square pairs preserve exact guard/checkpoint traces and full parents;8fixed source-target cases add224exact callback-fault arms. Their selected6rows/onegroup consume1or4guards. No C/caller/timing/default changes.
+The original fixture5target was also attacked by its own anchor: actual whole-square query selected7rows/two groups, immediately succeeded through the anchor and consumed1guard. Initial source and diagnostic failure remain. Moving sources/targets away from the anchor isolates the declared actor mechanism; no test count/cap increase or overwrite of failed evidence.
+This establishes a supported multirow structural premise, not an actual beneficial caller workload or full generated-domain coverage. Keep private, DEFER performance/deployment and do not transfer singleton failure universally.

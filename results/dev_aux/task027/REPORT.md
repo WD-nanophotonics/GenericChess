@@ -1,0 +1,6 @@
+# Task027: physical observer coverage
+Pure source and supplied-record review; zero new engine calls or primary caller runs. Fixed executor c87ed1f36497276eb966bb186c81baabaa897114 equals own executor AST.
+All93824 method attempts reconcile:1session initial trial+50946runtime-terminal trials+42877formal pushes. Decisions and non-time stats agree between primary's arms. The JSON/root restoration is supplied primary execution, not an independent rerun.
+Narrow copy clock covers board/two hands and working setup; narrow freeze clock covers board/hands/Position publication. Aux dict copy in transition and tuple/sort of its argument happen outside those clocks, inside the broader transition clock. Thus4.14% is not complete copy/freeze accounting. Source/record audit did not find a gap overturning DEFER for this frozen weighted caller.
+Component totals also include session initial, while wall only times choose. Split stage before ratios. Counts increment finally; distinguish entered attempts and returned publications (Task029).
+No causal speedup, all generated-domain coverage, C internal enumeration or whole-machine-idle claim. Frozen scientific inputs and SHA256 are in coverage_audit.json.

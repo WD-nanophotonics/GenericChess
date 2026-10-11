@@ -1,0 +1,4 @@
+# Task031: distinct pass publication seam
+Changed public rules enable pass; two enabled/disabled x compat/pure controls. Exact original physical observers report zero ordinary transition/copy/freeze counts, while exact transition_pass witnesses return one direct child and (enabled only) one legality trial child.
+Child is a distinct immutable Position, reuses board/hands, expires auxiliary1→0 and switches side; full parent remains stable. Normal/observed child and legality agree. Direct unchecked transition_pass is intentionally callable in disabled control, whose public pass_is_legal is false.
+This shows WorkingPosition clocks cannot mean all generated-domain publications. Frozen primary western_chess is pass-disabled, so this scope change does not overturn its finite DEFER. No caller/Runtime history/timing claim.

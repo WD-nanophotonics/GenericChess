@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\wdai\Documents\ChatGPT\GenericChess-DEV_AUX\results\dev_aux\task040\deferred_square.py", line 30, in <module>
+    ids={slot.name:slot.slot_id for slot in compiled.ir.aux_slots};owner=-1 if scope=='global' else 0
+         ^^^^^^^^^
+AttributeError: 'CompiledAuxSlot' object has no attribute 'name'

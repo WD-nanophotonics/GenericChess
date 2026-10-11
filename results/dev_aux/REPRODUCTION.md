@@ -52,3 +52,25 @@ original failures; private candidate methods do not enter tracked product.
 Task015 candidate_constructor.py and Task018 index_candidate.py capture the specifically named read-only primary working file at run time; their frozen resolve excerpts preserve the tested candidate. A future primary working file is not a replay pin. Task016 uses its recorded frozen target-first excerpt and immutable558b497. Task017 uses only immutable support method and own Material helper. Task019 imports its own frozen scientific prototype; Task020 reuses only the Task019 fixture AST prefix, never its executed results. All execute from this checkout; no primary module/cache is imported or written. These short non-time controls supply scoped evidence, not primary full-regression or timing claims.
 
 Tasks021/022 are stdlib source/record audits. Task022 freezes PRIMARY executed scientific records only; source boundaries include report-conversion overhead inside its wall timer. Task023 reuses only Task019 fixture construction. Task024 reuses only Task017 setup, adding a new physical transition measurement. Task025 requires immutable80a6bd06 in own Git and extracts only the two verified scientific prototype files from its immutable archive. Task026 imports that extracted shared source and only Task023 fixture construction; the new candidate has its own4+56 finite acceptance evidence. Task025 explicitly records narrow fetch-ref behavior: use a full refspec or verified FETCH_HEAD/ls-remote when binding publication. No scientific runner writes a primary path.
+
+Tasks027/030 freeze PRIMARY scientific records, review their arithmetic/source
+without caller reruns, and prefer own frozen inputs on replay. c87ed1f3 must be
+present in this clone for immutable executor AST binding. Included frozen primary
+producer files are source evidence, not runnable standalone commands; their
+original local dependency paths remain as provenance.
+Task028/029/031 use only own frozen public fixtures and scientific prototypes.
+Task032 uses own frozen_residual_profile.json and direct Python payload stub
+cells; it does not execute a new Native route. Supplied primary cProfile rows
+are separate from independent finite checks and carry their source hash.
+Task033 private rank-merge method and Task035 eager-scan sentinel preserve source
+polling and exact callback-count traces. 580query pairs/930fault arms are finite,
+not wall-time or allocation-failure equivalence. Task034 reuses those records,
+but its fixture reconstruction invokes semantic setup; original inaccurate
+zero-query claim/source/data and explicit scope correction remain.
+Task036 is standard-library structural iterator priming only, with no engine
+imports; singleton shape saves no row retrieval. Task037 declares a different
+public multirow capture/guard program. Its initial anchor interference source
+and diagnostic are retained; corrected actor-isolated128pairs/224fault arms
+do not establish caller benefit. Product defaults/UI/backend files are unchanged.
+All commands use own .venv from this sidemission clone. No runner writes a primary
+path; do not run an old failed producer as a passing acceptance check.
