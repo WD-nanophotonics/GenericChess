@@ -235,3 +235,11 @@ fingerprint and fresh initial history identity. Oracle is recomputed row.core;
 imported GameState cached terminal is not a validated search entry. Future
 mechanical-extension search must refresh that field. Frozen failures/results
 remain in separate archive members. This concrete pair prepares the next check.
+
+The same frontier then receives a separate crafted exact-identity history of four
+occurrences atply3. Recomputed Core keeps stalemate ahead of repetition for both
+policies; supported Native draw agrees, loss still refuses. Actor/check/digest
+records and witnesses are preserved. This is a constructed precedence control,
+not a legally reachable game. Its cached GameState terminal is refreshed from
+Core before packing. These two finite controls are ready for the next mechanical
+policy/winner candidate; no Native implementation or rebuild happened here.

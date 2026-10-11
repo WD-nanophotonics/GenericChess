@@ -321,3 +321,10 @@ drop controls; no new performance batch or full-domain claim. A frozen Core orac
 is already prepared, but no policy implementation/binary rebuild is claimed.
 The earlier pending read remains historical evidence; full reply was saved before
 adoption. No routine acknowledgment or request to DEV_AUX is needed.
+
+Primary also prepares the same frontier with crafted exact repeated history,
+confirming Core stalemate precedence and supported Native draw while preserving
+loss refusal. This starts the specific control requested by Dot without another
+performance batch; reachability is not claimed. Candidate implementation is the
+next segment's task. Raw transport/account data stays excluded from the expanded
+Agent-only evidence archive and the final fixed revision.

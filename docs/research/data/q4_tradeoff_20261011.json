@@ -5,10 +5,10 @@
   "scope": "Agent-only frozen synthetic inputs, producers/results/profiles/analyses/current source and failure disposition. RawSlack/account/private/user inputs/session/memo excluded; no default/UI changes. Instrumented profiles are diagnosis, not speed controls.",
   "archive": {
     "path": "docs/archive/q4_tradeoff_20261011/evidence.zip",
-    "bytes": 531347,
-    "uncompressed_bytes": 9611654,
-    "members": 92,
-    "sha256": "7ea348a20126caa8986e570b59e6c14585b1689dad2088177b72bfa82d9ffb89"
+    "bytes": 534711,
+    "uncompressed_bytes": 9629746,
+    "members": 95,
+    "sha256": "ae4216f8070db29f91726e314e7d607c4ccb1a7873f7d29b256b754e248031af"
   },
   "provenance_limits": [
     "Prospective first serializer failure declaration preserved; original failed producer bytes missing.",
@@ -413,6 +413,21 @@
       "path": ".local_agent/q4-ui-offline-20261011/roots.json",
       "bytes": 3335245,
       "sha256": "f9889a4760dac510e792a93fbf3c4fd9931dfd71655c34b3befb07e6773f8fb6"
+    },
+    {
+      "path": ".local_agent/stalemate-history-oracle-20261011/declaration.json",
+      "bytes": 797,
+      "sha256": "ca3cde976d26ee58ea730f4c3a387c46156e22f0803a6d93cbe8e6656c4ad9f5"
+    },
+    {
+      "path": ".local_agent/stalemate-history-oracle-20261011/producer.py",
+      "bytes": 2895,
+      "sha256": "7c4126214edf3189b9f460c838dece7c20adef9dbe0495982e520ea9846de07b"
+    },
+    {
+      "path": ".local_agent/stalemate-history-oracle-20261011/result.json",
+      "bytes": 14400,
+      "sha256": "216ef512bdd913eaf43b32cfec98fe2c92f0d48596b383f4d4cd11718ccac92c"
     },
     {
       "path": ".local_agent/stalemate-policy-oracle-20261011-repaired/analysis.json",
