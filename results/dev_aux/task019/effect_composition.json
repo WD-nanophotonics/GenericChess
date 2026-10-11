@@ -1,0 +1,64 @@
+{
+  "complete": true,
+  "baseline": "b4108a68a7ee06327be39cb3a222939644085a52",
+  "prototype_sha256": "313bc559233cf7352b18770e129b608f430234dd33e47ef09c2d6307ab9e7309",
+  "scope": "one new compound public DSL; two carriers; compiled execution witnessed; no timing or full-domain claim",
+  "rows": [
+    {
+      "carrier": "compat",
+      "effects": [
+        "move",
+        "shift",
+        "set_current_type",
+        "set_bool"
+      ],
+      "valid_callbacks": [
+        7,
+        7
+      ],
+      "missing_actor_callbacks": [
+        4,
+        4
+      ],
+      "missing_actor_exception": [
+        "RuntimeError",
+        "shift with no piece at source for sem_00_independent_compound"
+      ],
+      "callback_fault_cells": 14,
+      "compiled_function_calls": 10,
+      "compound_child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='B', promoted=True), Piece(owner=0, base_type_id='B', current_type_id='B', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='dda674a7870497b90dfdee2a0f567f28a58560b0321b590d79eae1efb04e7e9e', aux_state=(((0, -1), 1),), board_width=None, board_height=None)",
+      "reply_child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='B', promoted=True), Piece(owner=0, base_type_id='B', current_type_id='B', promoted=False), None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None), hands=(Hands(counts=()), Hands(counts=())), side_to_move=0, ruleset_fingerprint='dda674a7870497b90dfdee2a0f567f28a58560b0321b590d79eae1efb04e7e9e', aux_state=(((0, -1), 0),), board_width=None, board_height=None)",
+      "parent_unchanged": true,
+      "compiled_path_witnessed": true,
+      "temporary_slot_expired": true
+    },
+    {
+      "carrier": "pure",
+      "effects": [
+        "move",
+        "shift",
+        "set_current_type",
+        "set_bool"
+      ],
+      "valid_callbacks": [
+        7,
+        7
+      ],
+      "missing_actor_callbacks": [
+        4,
+        4
+      ],
+      "missing_actor_exception": [
+        "RuntimeError",
+        "shift with no piece at source for sem_00_independent_compound"
+      ],
+      "callback_fault_cells": 14,
+      "compiled_function_calls": 10,
+      "compound_child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='B', promoted=True), Piece(owner=0, base_type_id='B', current_type_id='B', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='dda674a7870497b90dfdee2a0f567f28a58560b0321b590d79eae1efb04e7e9e', aux_state=(((0, -1), 1),), board_width=None, board_height=None)",
+      "reply_child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='B', promoted=True), Piece(owner=0, base_type_id='B', current_type_id='B', promoted=False), None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None), hands=(Hands(counts=()), Hands(counts=())), side_to_move=0, ruleset_fingerprint='dda674a7870497b90dfdee2a0f567f28a58560b0321b590d79eae1efb04e7e9e', aux_state=(((0, -1), 0),), board_width=None, board_height=None)",
+      "parent_unchanged": true,
+      "compiled_path_witnessed": true,
+      "temporary_slot_expired": true
+    }
+  ]
+}

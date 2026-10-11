@@ -48,3 +48,5 @@ Task014 bridge_constructor.py privately loads published push, with the rest of
 Runtime already AST-equal. Both need the immutable published commit in own Git.
 No command writes the primary checkout. Fixed declarations/raw JSON retain
 original failures; private candidate methods do not enter tracked product.
+
+Task015 candidate_constructor.py and Task018 index_candidate.py capture the specifically named read-only primary working file at run time; their frozen resolve excerpts preserve the tested candidate. A future primary working file is not a replay pin. Task016 uses its recorded frozen target-first excerpt and immutable558b497. Task017 uses only immutable support method and own Material helper. Task019 imports its own frozen scientific prototype; Task020 reuses only the Task019 fixture AST prefix, never its executed results. All execute from this checkout; no primary module/cache is imported or written. These short non-time controls supply scoped evidence, not primary full-regression or timing claims.

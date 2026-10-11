@@ -1,0 +1,136 @@
+{
+  "complete": true,
+  "scope": "ten finite actual route witnesses; two same-ID public effect programs; no timing or concurrent execution",
+  "rows": [
+    {
+      "carrier": "compat",
+      "case": "prepared-original",
+      "actual_routes": [
+        "compiled"
+      ],
+      "callbacks": [
+        7,
+        7
+      ],
+      "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='B', promoted=True), Piece(owner=0, base_type_id='B', current_type_id='B', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='dda674a7870497b90dfdee2a0f567f28a58560b0321b590d79eae1efb04e7e9e', aux_state=(((0, -1), 1),), board_width=None, board_height=None)",
+      "parent_unchanged": true
+    },
+    {
+      "carrier": "compat",
+      "case": "equivalent-foreign-carrier",
+      "actual_routes": [
+        "fallback"
+      ],
+      "callbacks": [
+        7,
+        7
+      ],
+      "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='B', promoted=True), Piece(owner=0, base_type_id='B', current_type_id='B', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='dda674a7870497b90dfdee2a0f567f28a58560b0321b590d79eae1efb04e7e9e', aux_state=(((0, -1), 1),), board_width=None, board_height=None)",
+      "parent_unchanged": true
+    },
+    {
+      "carrier": "compat",
+      "case": "equivalent-foreign-pattern",
+      "actual_routes": [
+        "fallback"
+      ],
+      "callbacks": [
+        7,
+        7
+      ],
+      "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='B', promoted=True), Piece(owner=0, base_type_id='B', current_type_id='B', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='dda674a7870497b90dfdee2a0f567f28a58560b0321b590d79eae1efb04e7e9e', aux_state=(((0, -1), 1),), board_width=None, board_height=None)",
+      "parent_unchanged": true
+    },
+    {
+      "carrier": "compat",
+      "case": "original-after-other-prepare",
+      "actual_routes": [
+        "fallback"
+      ],
+      "callbacks": [
+        7,
+        7
+      ],
+      "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='B', promoted=True), Piece(owner=0, base_type_id='B', current_type_id='B', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='dda674a7870497b90dfdee2a0f567f28a58560b0321b590d79eae1efb04e7e9e', aux_state=(((0, -1), 1),), board_width=None, board_height=None)",
+      "parent_unchanged": true
+    },
+    {
+      "carrier": "compat",
+      "case": "prepared-different-program",
+      "actual_routes": [
+        "compiled"
+      ],
+      "callbacks": [
+        1,
+        1
+      ],
+      "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, Piece(owner=0, base_type_id='B', current_type_id='B', promoted=False), None, None, Piece(owner=0, base_type_id='A', current_type_id='A', promoted=False), None, None, None, None, None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='0428bee25d58d34e5573b86744c4f8662f6e5e8173302784e9818c8af0639c77', aux_state=(), board_width=None, board_height=None)",
+      "parent_unchanged": true
+    },
+    {
+      "carrier": "pure",
+      "case": "prepared-original",
+      "actual_routes": [
+        "compiled"
+      ],
+      "callbacks": [
+        7,
+        7
+      ],
+      "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='B', promoted=True), Piece(owner=0, base_type_id='B', current_type_id='B', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='dda674a7870497b90dfdee2a0f567f28a58560b0321b590d79eae1efb04e7e9e', aux_state=(((0, -1), 1),), board_width=None, board_height=None)",
+      "parent_unchanged": true
+    },
+    {
+      "carrier": "pure",
+      "case": "equivalent-foreign-carrier",
+      "actual_routes": [
+        "fallback"
+      ],
+      "callbacks": [
+        7,
+        7
+      ],
+      "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='B', promoted=True), Piece(owner=0, base_type_id='B', current_type_id='B', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='dda674a7870497b90dfdee2a0f567f28a58560b0321b590d79eae1efb04e7e9e', aux_state=(((0, -1), 1),), board_width=None, board_height=None)",
+      "parent_unchanged": true
+    },
+    {
+      "carrier": "pure",
+      "case": "equivalent-foreign-pattern",
+      "actual_routes": [
+        "fallback"
+      ],
+      "callbacks": [
+        7,
+        7
+      ],
+      "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='B', promoted=True), Piece(owner=0, base_type_id='B', current_type_id='B', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='dda674a7870497b90dfdee2a0f567f28a58560b0321b590d79eae1efb04e7e9e', aux_state=(((0, -1), 1),), board_width=None, board_height=None)",
+      "parent_unchanged": true
+    },
+    {
+      "carrier": "pure",
+      "case": "original-after-other-prepare",
+      "actual_routes": [
+        "fallback"
+      ],
+      "callbacks": [
+        7,
+        7
+      ],
+      "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='B', promoted=True), Piece(owner=0, base_type_id='B', current_type_id='B', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='dda674a7870497b90dfdee2a0f567f28a58560b0321b590d79eae1efb04e7e9e', aux_state=(((0, -1), 1),), board_width=None, board_height=None)",
+      "parent_unchanged": true
+    },
+    {
+      "carrier": "pure",
+      "case": "prepared-different-program",
+      "actual_routes": [
+        "compiled"
+      ],
+      "callbacks": [
+        1,
+        1
+      ],
+      "child": "Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, Piece(owner=0, base_type_id='B', current_type_id='B', promoted=False), None, None, Piece(owner=0, base_type_id='A', current_type_id='A', promoted=False), None, None, None, None, None, None, None, None, None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='0428bee25d58d34e5573b86744c4f8662f6e5e8173302784e9818c8af0639c77', aux_state=(), board_width=None, board_height=None)",
+      "parent_unchanged": true
+    }
+  ]
+}
