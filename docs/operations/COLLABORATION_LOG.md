@@ -160,3 +160,9 @@ Latest supplement read in full: auxiliary reused the supplied16-call archive
 rather than rerunning it. Adopt Dot's leaf-input/call-count and adapter-cost
 distinction; auxiliary's unpublished static Native/Core values remain reported
 evidence, not primary independent verification. No repeated batch or new task.
+
+Primary subsequently tested the selected writer-delta whole caller:4cost calls
+are slightly slower with equal decisions/work, so no product adoption. Four
+initial calls had a retained whole-board audit and are separately preserved;
+a new declaration removes it, no favorable subset. Current q work composition
+redirects attention to unfinished iterations. Auxiliary did not duplicate this.

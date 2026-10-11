@@ -132,3 +132,16 @@ semantics, so matching coefficients are not matching leaf functions. Retain the
 weighted minimal bridge; auxiliary static numerical examples are self-reported
 and not independently executed here. Do not port the entire evaluator or
 subtract a single-arm profile from another batch to manufacture backend cost.
+
+A separate4-call opposite-order whole-caller delta prototype is slower by
+4.06%, 1.48% despite matchingD4 action/value/main+q work and exact roots.
+DEFER product implementation; dictionary/set/writer interception costs count.
+The initial4 audit calls incorrectly retained the full-board coverage scan;
+keep them as semantic audit evidence, not removed-scan cost. This concrete
+producer error was corrected under a new declaration, not hidden.
+
+New analysis of the32-call cohort: at64seconds q visits are89-99% of all
+attempted visits, with4.79-6.09physical pushes per visit. Shogi-drop is98.7-99.0%
+q visits yet retainsD1/q0. These are work fractions, not timing fractions.
+Next locate its uncompleted iteration budget before choosing a phase intervention;
+do not keep decomposing the deferred writer prototype or change q defaults.

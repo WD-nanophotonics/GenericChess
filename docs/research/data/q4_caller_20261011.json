@@ -5,10 +5,10 @@
   "scope": "Only new Agent scientific producers/declarations/results/failures; no raw Slack/account/session/memo/private inputs/credentials/source exports. Originalmixed curves remain semantically confounded.",
   "archive": {
     "path": "docs/archive/q4_caller_20261011/evidence.zip",
-    "bytes": 85550,
-    "uncompressed_bytes": 915956,
-    "members": 39,
-    "sha256": "b81d83b8bb77fa7f5a2564250df41971b0fb57dde0d3ac5afae9771e8cbbc961"
+    "bytes": 97818,
+    "uncompressed_bytes": 1002865,
+    "members": 47,
+    "sha256": "77bb963621e1bac253e068c8c423359e5f69b1a22173d1238fee3f9f5a793a1d"
   },
   "members": [
     {
@@ -205,6 +205,46 @@
       "path": ".local_agent/q4-caller-attribution-20261011/analyze.py",
       "bytes": 5420,
       "sha256": "1959bfb11adb31464d159fd66255c1e6ddbd081c84b33645396bbaafc82b2495"
+    },
+    {
+      "path": ".local_agent/q4-caller-attribution-20261011/dirty-caller-declaration.json",
+      "bytes": 646,
+      "sha256": "b4b15511e663b05622e130d963dc81215d6808d187f4e5be83956ed8fd99822c"
+    },
+    {
+      "path": ".local_agent/q4-caller-attribution-20261011/dirty_caller.py",
+      "bytes": 4050,
+      "sha256": "9c1ab2bb1b697994a72bff37dafac01643ea90529bd61801cb69f6e68dc734e3"
+    },
+    {
+      "path": ".local_agent/q4-caller-attribution-20261011/dirty-caller-audited-result.json",
+      "bytes": 35065,
+      "sha256": "63cea03cc590155432b9348cf254ba08504a2fb30d1cec23d1158acf77d0af5c"
+    },
+    {
+      "path": ".local_agent/q4-caller-attribution-20261011/dirty-caller-cost-declaration.json",
+      "bytes": 457,
+      "sha256": "d8858ac53f9cddfae0e0091f24914735b8b1a35b741d662d0d7128dc519cf257"
+    },
+    {
+      "path": ".local_agent/q4-caller-attribution-20261011/dirty_caller_cost.py",
+      "bytes": 4058,
+      "sha256": "2f5e4bf30dcf76a4a6a337bd76895775369b401370c0109980f9e04e2959eeaa"
+    },
+    {
+      "path": ".local_agent/q4-caller-attribution-20261011/dirty-caller-cost-result.json",
+      "bytes": 34932,
+      "sha256": "ce40b88f1cac770f360f92f737eb6aff034c170b87d197f1ccf19a5dbc87b5d3"
+    },
+    {
+      "path": ".local_agent/q4-caller-attribution-20261011/dirty-caller-analysis.json",
+      "bytes": 693,
+      "sha256": "4efef262e57d72ddada454a426e026e899bccd2d36e039f25610b7d91057ba09"
+    },
+    {
+      "path": ".local_agent/q4-caller-attribution-20261011/caller-work-mix.json",
+      "bytes": 7008,
+      "sha256": "36e51e37ecb48dc0e9c9731957ef9e83974dc79b54283906a302be7266cddb3e"
     }
   ],
   "producer_dependencies": {

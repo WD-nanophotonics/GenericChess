@@ -58,8 +58,10 @@ Original mixed curves remain semantically confounded. Fresh opposite-order
 4/16s mixed controls both completeD4/D5; no speed/strength claim. Details and
 original failures: Q4_BACKEND_CAPABILITY.md and data/q4_caller_20261011.json.
 
-Next choose a changed-premise reduction of Core child/runtime representation
-work preserving terminal/check/history semantics. Do not repeat negative Native
+Actual writer-delta wholecaller prototype is slightly slower with equal work;
+defer it. Current64s q visits are89-99% of attemptedwork and drop retainsD1/q0.
+Next locate the failed iteration budget before choosing a phase intervention,
+preserving terminal/check/history semantics. Do not repeat negative Native
 terminal-availability substitution or add a microtest backlog. Metadata-only
 quiet filtering cannot drop terminal/check inclusion. Evidence precedes prototype.
 
