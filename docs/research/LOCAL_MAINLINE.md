@@ -42,13 +42,14 @@ End this availability microdispatch round. A new one-root completedD2 curve uses
 and its qdepth3 alone rejects22946formal children. Exact action-signature encoding
 about0.24seconds does not motivate a lazy-history-only solution; defer it. Four
 finite controls show terminal-only quiet inclusion and mandatory checked evasions.
-Next measure representation cost by included/excluded child before a two-phase
-nonretained-child execution boundary,
+35187excluded children have about1.06s component diff/hash and0.22s count/history
+context work. Defer lazy TT snapshots pending physical trial/transition/attack
+cost attribution by child outcome before a two-phase execution boundary,
 with fixed evaluation/q/history and actual backend. Keep physical rule execution,
 representation and interrupted work separate. Do not
 change q/evaluator/UI defaults or rebuild the Windows-blocked DLL.
 Evidence:AVAILABILITY_AND_Q_EXECUTION.md; data/availability_core_20261011.json;
-data/early_exclusion_contract_20261011.json.
+data/early_exclusion_contract_20261011.json; representation_outcome_20261011.json.
 Evidence:RUNTIME_AUX_IDENTITY.md; data/runtime_aux_identity_20261011.json.
 Evidence:COMPLETION_POLICY_ATTRIBUTION.md; data/completion_policy_20261011.json.
 

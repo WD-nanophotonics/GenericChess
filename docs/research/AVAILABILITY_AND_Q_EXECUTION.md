@@ -150,7 +150,7 @@ q1 with324main+726q nodes (about0.62seconds), and q4 with390main+7620q nodes
 -100/111/-2: lower-q support is a changed decision contract, not an equivalent
 cheaper implementation or a demonstrated improvement.
 
-Eight additional completedD2 plain/count pairs at the declared32768cap and
+Eight additional completedD2 calls (four plain/count pairs) at the declared32768cap and
 30second safety ceiling preserve exact non-time decisions/work. At iteration2,
 q4's ordinary-qdepth3 alone formally executes25882children, excludes22946quiet
 candidates and includes2449; q1's qdepth0 formally executes3369children before
@@ -158,7 +158,8 @@ its lower ordinary support ends. Checked extensions remain. This distinguishes
 deeper required recursion plus discarded-child execution from tiny classifier
 cost and from interrupted work; it does not establish which policy plays better.
 
-Before implementing lazy internal history signatures, four completed q4 pairs
+Before implementing lazy internal history signatures, four completed q4 calls
+(two opposite-order plain/count pairs)
 separate actual action-dictionary/signature serialization from hash-token JSON.
 Each instrumentedD2 has42807signatures; dictionary+encoding costs about0.24seconds
 versus0.75seconds for287944token encodings. Ordinary whole times are7.62/8.06seconds
@@ -217,3 +218,18 @@ The follow-on source/result/failure archive is bound separately by
 data/early_exclusion_contract_20261011.json; the original310member archive stays
 immutable. Next measure representation cost by included/excluded child before
 designing any two-phase receipt; exact terminal/history/check facts stay required.
+
+Four completedD2 calls (two opposite-order plain/count pairs) now group selected
+representation stages by actual child outcome. Each instrumented iteration2 has
+35187excluded,3811included and3491unclassified q children; pending attribution
+records peak at five and are consumed on pop. Excluded-child component diff/hash
+costs1.06–1.07seconds, count snapshots0.128–0.130 and history contexts0.089–0.091.
+These distinct stage times include instrumentation overhead and do not constitute
+a predicted speedup. Source consumer review finds snapshot/history-context keys
+are used by TT identity, while exact occurrence/history still adjudicate terminal
+facts. Their roughly0.22second excluded-child portion does not yet justify a
+lazy-TT representation implementation. First attribute physical trial/transition/
+attack costs by the same outcome before choosing an implementation.
+Evidence:data/representation_outcome_20261011.json. The prior archived document's
+"eight pairs"/"four pairs" wording is corrected to eight/four calls above; raw
+experiment counts and immutable archive are unchanged.
