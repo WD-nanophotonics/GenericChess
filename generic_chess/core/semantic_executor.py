@@ -1319,14 +1319,25 @@ class SemanticEngine:
         Position or ``None`` when S3-illegal.  The same child is handed to
         the S4 postconditions in normal mode, so a candidate never gets a
         second, theoretically-equivalent transition (ADR-016 section 9)."""
+        checkpoint_failed = False
         try:
             if checkpoint is None:
                 child = self._transition(position, action, binding)
             else:
+                def trial_checkpoint():
+                    nonlocal checkpoint_failed
+                    try:
+                        checkpoint()
+                    except BaseException:
+                        checkpoint_failed = True
+                        raise
+
                 child = self._transition(
-                    position, action, binding, checkpoint=checkpoint
+                    position, action, binding, checkpoint=trial_checkpoint
                 )
         except RuntimeError:
+            if checkpoint_failed:
+                raise
             return None
         for invariant in pattern.invariants:
             _checkpoint(checkpoint)

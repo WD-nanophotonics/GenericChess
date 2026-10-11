@@ -27,7 +27,15 @@ _MAX_U64 = (1 << 64) - 1
 
 
 class NativeSemanticLegalityProvider:
-    """Callable, compile-once Native semantic legality route."""
+    """Callable, compile-once route for Core-adjudicated ongoing states.
+
+    Native trial transitions also enforce state-local cutoffs such as max_ply.
+    An empty result at that boundary is not Core's pre-adjudication no-action
+    predicate: using it there can turn a max-ply draw into mate or stalemate.
+    Core owns terminal precedence and history adjudication before this frontier.
+    Ongoing checking-continuation states can exceed max_ply; supports_position
+    excludes them so the caller uses Core instead of accepting an empty set.
+    """
 
     def __init__(self, compiled, engine, native_rules, *, strict: bool = False):
         self.compiled = compiled
@@ -39,12 +47,22 @@ class NativeSemanticLegalityProvider:
         self.pattern_ids = tuple(native_rules.pattern_ids)
         self.geometry_ids = tuple(native_rules.geometry_ids)
         self.pattern_by_id = {pattern.pattern_id: pattern for pattern in engine._patterns}
+        self._requires_reply_probe = any(
+            condition.kind == "no_legal_reply"
+            for pattern in engine._patterns for condition in pattern.postconditions
+        )
         self._metrics_local = threading.local()
         self.compile_seconds = 0.0
 
     @property
     def last_call_metrics(self):
         return getattr(self._metrics_local, "last", {})
+
+    def supports_position(self, position, ply_count):
+        """Native's state-local cutoff cannot implement Core continuation."""
+        # S4 no-reply conditions test a child through S3. Native also filters
+        # that reply parent at max_ply, one ply before the outer cutoff.
+        return ply_count < self.compiled.max_ply - int(self._requires_reply_probe)
 
     @classmethod
     def try_create(cls, compiled, *, strict: bool = False):

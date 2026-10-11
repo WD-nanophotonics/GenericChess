@@ -38,10 +38,38 @@ legality saves about14-19percent here without another layer; ordered-q and
 root-scan removal do not improve the old queen labels. Next choose one scoped
 semantics-safe candidate-support or completion-allocation mechanism, keeping
 checked/history semantics and warm opportunity cost. No default/UI change.
-A private full-cell/tail hash projection gives3-6percent fixed savings and425
-actual child-oracle agreements. Imported foreign int0->boolFalse exposes an
-inherited delta/full-hash mismatch; next check supported transition reachability
-and collision/TT consequences before integration. No new generic safety claim.
+A typed auxiliary identity repair now separates imported bool/int values in
+delta hashes, exact TT/occurrence/history guards and nested logical defaults.
+Declared bool effect operands are rejected: this is an imported-state contract,
+not an observed generated-rule or natural-hash-collision playing defect.
+Whole-board projection retains15122independent old-map hash/public-state
+children and275actual recombined lifecycle children; matched weighted/hybrid
+controls save modest fixed work cost but retain budgeted choices/completions.
+Caller RuntimeError checkpoint exceptions now propagate through S3 trials;
+actual transition failures still reject candidates. Production SearchAborted
+already propagated in733injected controls. No q/evaluator/UI default change.
+Native complete-frontier proxy is2-29xslower on ongoing means and cannot supply
+pre-adjudication availability: max-ply checked/quiet and actual checked repetition
+reject the private eager-frontier route. Current product terminal authority stays.
+Dot review selects stage/cost attribution first:9431actual availability calls are
+pre-adjudication with zero same-frame repeats; prerecorded fixed-work replay has
+optimistic cost opportunity but no implementable cache/kernel or equal-time gain.
+Next bound a pure-availability interface's supported semantics and cost opportunity;
+do not rebuild the blocked DLL or revive old prefix/full-frontier cache negatives.
+Actual automatic checking continuation can remainONGOING at max_ply; current
+Native frontier was empty despite two legal Core replies. A selected optional
+per-state provider capability now makes this a normal Core fallback in strict
+and ordinary modes, preserving history, actions and undo without disabling
+support below the boundary. A separate imported Shogi pawn-drop control finds
+the S4 reply cutoff one ply earlier (75Native vs76Core actions at max_ply1,
+76both at2). Capability also excludes the last pre-limit ply for mechanically
+detected no_legal_reply patterns; full-set/child/undo adjacent-limit tests pass.
+Existing Native S0 plus individual checked-make early exit agrees on118states
+but costs1.03-2.15xCore on ongoing root/child aggregates (quiet terminals0.39x).
+Reject that wrapper too. Next attribute Core first-action trial/guard/attack/
+allocation costs before any narrower proposal; preserve boundary fallback and
+distinguish imported/played controls. Final2049active tests pass.
+Evidence:RUNTIME_AUX_IDENTITY.md; data/runtime_aux_identity_20261011.json.
 Evidence:COMPLETION_POLICY_ATTRIBUTION.md; data/completion_policy_20261011.json.
 
 Retained preceding repair: logical-default history identity and charge history import
@@ -198,6 +226,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Typed auxiliary collision/history/hash identity, whole-board projection and S3 callback origin|RUNTIME_AUX_IDENTITY.md; data/runtime_aux_identity_20261011.json|
 |Retained-result metadata, weighted completion/backend and negative allocation controls|COMPLETION_POLICY_ATTRIBUTION.md; data/completion_policy_20261011.json|
 |Generated semantic bridge, typed alias attribution and alternate history|GENERATED_SEMANTIC_BRIDGE.md; data/generated_semantic_bridge_20261011.json|
 |Incoming source dispatch and hybrid replacement ledger|INCOMING_SOURCE_DISPATCH.md; data/incoming_source_20261011.json|

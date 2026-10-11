@@ -50,3 +50,23 @@ The reproducible F21 `-O2` extension is 338,432 bytes. F20 recorded 3,384,432
 bytes for its final build without an optimization/section manifest; F21 records
 this as a historical provenance discrepancy, not a correctness blocker.
 
+## Per-state capability and terminal stage — 2026-10-11
+
+The callback supplies complete frontiers after Core adjudicates the state as
+ongoing. Empty Native frontiers are not pre-adjudication availability proofs:
+Native checked transitions enforce max_ply before Core history/terminal rules.
+An ongoing automatic checking continuation can exceed that cutoff, and S4
+no_legal_reply probes can encounter it one ply earlier.
+
+A provider may optionally expose supports_position(position, ply_count).
+False selects normal Core generation for that state, increments fallback count,
+does not increment operational failures, and does not disable the provider.
+Strict mode also honors this capability miss. Callables without the optional
+method retain their contract; callable objects and bound methods use the same
+owner metadata. Native support excludes ply>=max_ply and also the preceding
+ply when compiled patterns require no_legal_reply. This is conservative semantic
+scope detection; no game name, native ply rewriting or new DLL is involved.
+
+Evidence: RUNTIME_AUX_IDENTITY.md and the current boundary regression tests.
+The earlier profile thresholds/build figures above remain historical results,
+not current admission gates or new gains attributed to this repair.

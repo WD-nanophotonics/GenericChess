@@ -32,11 +32,33 @@ from .terminal import TerminalResult, TerminalStatus, terminal_from_search_runti
 MASK64 = (1 << 64) - 1
 
 
-@dataclass(frozen=True, slots=True)
+def _aux_value_equal(left: object, right: object) -> bool:
+    """Match the scalar types retained by the public semantic identity."""
+    if left is right:
+        return True
+    if type(left) is not type(right) or left != right:
+        return False
+    if isinstance(left, tuple):
+        return all(_aux_value_equal(a, b) for a, b in zip(left, right))
+    return True
+
+
+@dataclass(frozen=True, slots=True, eq=False)
 class RuntimePositionIdentity:
     """Exact in-process position identity used after the root import."""
 
     position: Position
+
+    def __hash__(self):
+        return hash(self.position)
+
+    def __eq__(self, other):
+        if not isinstance(other, RuntimePositionIdentity):
+            return NotImplemented
+        return (
+            self.position == other.position
+            and _aux_value_equal(self.position.aux_state, other.position.aux_state)
+        )
 
 
 def _runtime_position_identity(position: Position, compiled) -> RuntimePositionIdentity:
@@ -58,8 +80,7 @@ def _runtime_position_identity(position: Position, compiled) -> RuntimePositionI
     aux = tuple(sorted(
         (item for item in position.aux_state
          if item[0] not in defaults
-         or type(item[1]) is not type(defaults[item[0]])
-         or item[1] != defaults[item[0]]),
+         or not _aux_value_equal(item[1], defaults[item[0]])),
         key=lambda item: item[0],
     ))
     if aux != position.aux_state:
@@ -118,7 +139,7 @@ def _identity_sort_key(identity: object) -> str:
 
 def _identity_equal(left: object, right: object) -> bool:
     if isinstance(left, RuntimePositionIdentity) and isinstance(right, RuntimePositionIdentity):
-        return left.position == right.position
+        return left == right
     if isinstance(left, _ImportedIdentity) and isinstance(right, _ImportedIdentity):
         return left.external_key == right.external_key
     return left == right
@@ -397,14 +418,20 @@ def _xor(left: RuntimeHash, right: RuntimeHash) -> RuntimeHash:
 
 def _component_map(position: Position, compiled) -> dict[tuple, object]:
     """Build the exact F1 identity component map for root/oracle/fallback use."""
-    values: dict[tuple, object] = {
-        ("ruleset",): compiled.ruleset_fingerprint,
-        ("side",): position.side_to_move,
-    }
+    values = _nonboard_component_map(position, compiled)
     for index, piece in enumerate(position.board):
         values[("board", index)] = None if piece is None else (
             piece.owner, piece.base_type_id, piece.current_type_id, piece.promoted
         )
+    return values
+
+
+def _nonboard_component_map(position: Position, compiled) -> dict[tuple, object]:
+    """Project every hand/auxiliary component, including logical defaults."""
+    values: dict[tuple, object] = {
+        ("ruleset",): compiled.ruleset_fingerprint,
+        ("side",): position.side_to_move,
+    }
     for owner, hand in enumerate(position.hands):
         values[("hand", owner)] = tuple(hand.counts)
     engine = semantic_engine_for(compiled)
@@ -474,13 +501,31 @@ def _component_map_cell(position: Position, index: int):
 
 
 def _semantic_component_diff_hash(parent: Position, child: Position, compiled, current: RuntimeHash) -> RuntimeHash:
-    before = _component_map(parent, compiled)
-    after = _component_map(child, compiled)
+    """Scan the whole board, avoiding maps/tuples for unchanged cells.
+
+    Compound actions and transition triggers can affect arbitrary cells; the
+    action's source/target is deliberately not used as a footprint bound.
+    """
     value = current
+    for index, (left, right) in enumerate(zip(parent.board, child.board)):
+        if left is right:
+            continue
+        old = _component_map_cell(parent, index)
+        new = _component_map_cell(child, index)
+        if old != new:
+            value = _xor(value, _component_token(("board", index), old))
+            value = _xor(value, _component_token(("board", index), new))
+    before = _nonboard_component_map(parent, compiled)
+    after = _nonboard_component_map(child, compiled)
     for address in before.keys() | after.keys():
         old = before.get(address)
         new = after.get(address)
-        if old != new:
+        if (
+            (address in before) != (address in after)
+            or old != new
+            or (address[0] in ("aux", "aux_unknown")
+                and not _aux_value_equal(old, new))
+        ):
             if address in before:
                 value = _xor(value, _component_token(address, old))
             if address in after:
@@ -567,6 +612,7 @@ class SearchPathRuntime:
                     identity = (
                         self._identity
                         if witness == self.position
+                        and _aux_value_equal(witness.aux_state, self.position.aux_state)
                         else _runtime_position_identity(witness, compiled)
                     )
                 runtime_hash = imported_hashes.get(record.position_key)
@@ -904,7 +950,13 @@ class SearchPathRuntime:
         return checked, lambda: aborted
 
     def _legal_actions_from_provider(self, checkpoint):
-        """Validate one complete opaque-provider result before mutating caches."""
+        """Validate a complete result, honoring optional per-state capability.
+
+        A callable may expose supports_position(position, ply_count). False
+        selects Core for this state without marking an operational failure or
+        disabling the provider for other states. Omitted capability preserves
+        the existing callable contract.
+        """
         import time
 
         provider = self._legal_binding_provider
@@ -912,6 +964,14 @@ class SearchPathRuntime:
         started = time.perf_counter()
         try:
             checked()
+            provider_owner = getattr(provider, "__self__", None) or provider
+            supports_position = getattr(provider_owner, "supports_position", None)
+            if supports_position is not None and not supports_position(self.position, self.ply_count):
+                # A declared per-state capability miss is normal Core fallback,
+                # not an operational failure or a permanent provider disable.
+                self.legal_provider_fallbacks += 1
+                self._sync_stats()
+                return None
             raw = provider(self.position, self.ply_count, checked)
             checked()
             pairs = tuple(raw)
