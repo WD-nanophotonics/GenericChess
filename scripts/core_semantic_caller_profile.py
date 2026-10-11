@@ -70,4 +70,3 @@ if __name__=='__main__':
     assert {k:v for k,v in actual['stats'].items() if 'time' not in k and 'seconds' not in k}=={k:v for k,v in ref['stats'].items() if 'time' not in k and 'seconds' not in k}
     functions=[dict(file=k[0],line=k[1],function=k[2],calls=v[1],self_seconds=v[2],inclusive_seconds=v[3]) for k,v in pstats.Stats(profiler).stats.items()];functions.sort(key=lambda r:r['self_seconds'],reverse=True)
     write_record(out/'profile.json',dict(complete=True,same_decision_work=True,functions=functions,scope='Profile includes generation/setup; attribute search-specific rows separately. Overlapping inclusive costs are not additive or a paired speed measurement.'))
-
