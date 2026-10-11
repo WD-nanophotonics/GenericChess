@@ -119,3 +119,29 @@ uncovered kinds, retaining the earlier scope descriptions and original archive.
 It does not retrospectively validate the first per-pattern variant, all possible
 effect interactions or live module-hook compatibility. No new timing batch or
 product default follows. Evidence:data/compiled_effect_extra_20261011.json.
+
+
+## Shared-template actual caller cost — distinct frozen batch
+
+The new declaration uses all eight original roots,64 fixed512node calls and
+4 completed quietD2 calls with opposite arm order. It ran05:25:07–05:25:47UTC
+inside a freshly confirmed auxiliary source-only window,40.07seconds; the ACK
+is not a whole-machine atomic lock. One premature preflight was rejected before
+engine execution by the unchanged start guard. All decisions/non-time work and
+actual backend match. Seven fixed warm roots are adverse, ratios1.002–1.123;
+en-passant0.983 becomes0.997 after charging one setup to its reused batch.
+Completed quietD2 is1.008 warm and1.010 with reused setup. Every individual pair
+and cold/reuse row is retained. Defer this shared variant and equal-time
+expansion. Lower owned code and preparation do not establish useful caller gains.
+
+Independent auxiliaryTask026 verifies actual common generated function identity
+while different original operands keep four distinct public action outcomes and
+56 callback cells. Task024 separately measures1169/1139 physical Core transitions
+for Core-only/Native-requested supported Shogi callers, including120 trials
+outside its selected Runtime frontier wrapper. Thirty Core frontiers plusC1
+is not a full physical-cost ledger. These are finite non-time observations.
+The unchanged working-state seam still copies board/hands/aux and freezes/sorts
+a new immutable Position. Select a new physical trial-publication attribution
+question by actual consumers, including out-of-wrapper trials; first establish
+transparent work/state, then judge leverage. No mutable-kernel or dominant-cost
+claim follows from source inspection. Evidence:data/shared_template_cost_20261011.json.
