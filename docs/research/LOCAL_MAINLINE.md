@@ -51,11 +51,17 @@ those microinterfaces and caches. The existing C iterative entry reports qnodes0
 and a different evaluation; it cannot establish same-q4 executor parity. Next
 compare optimized Core scheduling on small familiar supported positions, retaining
 the existing minimal AB/q4 specialized-rule bridge and actual backend/work counters.
+A subsequent sixteen-call familiar played-root continuation preserves exact
+D2/q4 work and lowers observed cost35percent Chess/24percent Shogi. At exploratory
+4s Chess delivers D2/q4 versus drop-only D1/q0 in both orders; Shogi staysD2/q4.
+The4s boundary follows exposed costs, not holdout/strength evidence. Next test a
+small recombined auxiliary-rule transfer of the now demonstrably useful caller;
+retain mechanical effects/accepted Core history and old negative delivery curves.
 Separate scheduling, Core executor and algorithm/evaluation differences before
 larger games, a new recursive kernel or learning. AUX mature searches remain0;
 prepared pilots/mocks/greedy games are distinct evidence, not mature validation.
 
-Data: data/native_q_legality_20261012.json. Prior current detail is recoverable at
+Data: data/native_q_legality_20261012.json; data/native_q_familiar_20261012.json. Prior current detail is recoverable at
 c84a938763646bd0466983dc781e74a87329e62d. Existing PVS/minimal-q and earlier
 negative controls stay in the purpose-specific records; science remains OPEN.
 

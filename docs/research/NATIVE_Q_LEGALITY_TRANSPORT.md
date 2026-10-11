@@ -237,3 +237,29 @@ from that unavailable file. Source-only analysis is not mature engine execution.
 Raw records/source closure and hashes are bound by data/native_q_legality_20261012.json.
 Raw Slack/account records, binary profiles, credentials and user input stay out
 of Git. Normal concurrent load and actual work/backend counters qualify costs.
+
+## Familiar played-root continuation and delivery
+
+Eight further complete D2/q4 calls use existing Chess/Shogi middle positions
+with every played move and full witnesses. Both arms keep PVS/chunk8/Native
+leaves/legality/availability; only drop-only versus board-plus-drop exclusion
+changes. Actions, scores, PV, main/q work and Core roots match. Chess costs
+4.36/4.33 versus2.81/2.80s, ratios0.645/0.647; Shogi2.70/2.72 versus2.05/2.05s,
+ratios0.762/0.754. Actual Native fallback/error is zero. This is familiar caller
+transfer, separate from the earlier specialized material minimal-AB bridge.
+
+A separate eight-call4s delivery contrast keeps maxD12/one million nodes/q4/hard8
+and reversed orders. Chess drop-only retains D1/q0 score786 in both orders;
+board-plus-drop delivers D2/q4 score0 in both. Shogi both retain D2/q4 score4.
+All time_limit, roots restored, Native fallback/error zero. This demonstrates
+one actual depth/support boundary crossing, not stronger moves or a generic
+speed/Elo gain. The4s boundary is chosen from exposed D2 costs; it is exploratory,
+not independent holdout. Earlier32/8/24call negative delivery curves remain.
+No default/UI adoption follows from these finite results. The next useful step
+is a small semantic transfer of this proven useful caller on recombined auxiliary
+rules, not another throughput-only cache or a new recursive kernel.
+
+Sixteen additional calls and their exact producers/results are in
+`data/native_q_familiar_20261012.json`, a separate immutable supplement to the
+original173call/174member archive. Final relevant134 tests and the publisher134
+tests pass; earlier full2212 precedes the final16 additions. No full2228 claim.

@@ -672,3 +672,14 @@ independent validation. The final Slack recovery reads all ten original-thread
 replies and new roots after the AUX result; no new reply/root appears. Do not
 claim successful response or adoption merely from delivery, or wake AUX for a
 routine receipt. Both Agents' boundaries and simple routing identities remain.
+
+PRIMARY continued with sixteen familiar played-root calls: eight completeD2/q4
+controls preserve full tree/root with35percent Chess/24percent Shogi cost savings.
+An exposed exploratory4s contrast delivers ChessD2/q4 versusD1/q0 in both orders;
+Shogi staysD2/q4. Old negative delivery curves and limits remain. AUX was not
+woken and did not independently reproduce these calls. Primary alone owns code,
+experiments and publication; net team productivity gain remains unmeasured.
+Fixed primary code and coordination summary available to Dot:
+https://github.com/WD-nanophotonics/GenericChess/blob/54e1bb2ed961a344180e850b4f7e2e45822f3133/docs/operations/COLLABORATION_LOG.md
+The new familiar supplement follows this revision; final tested publication and
+Slack receipt are recorded separately, not inferred from this fixed link.
