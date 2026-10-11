@@ -15,6 +15,9 @@ do
         exit 1
       }
       ;;
+    refs/heads/sidemission)
+      # User-established DEV_AUX validation branch; same fast-forward rule below.
+      ;;
     *)
       echo "Unsupported project push target: $remote_ref" >&2
       exit 1
