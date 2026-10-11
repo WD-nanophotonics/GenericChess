@@ -1,0 +1,22 @@
+{
+  "complete": true,
+  "observed_at_utc": "2026-10-11T04:30:52.610271+00:00",
+  "baseline_pin": "b4108a68a7ee06327be39cb3a222939644085a52",
+  "published_pin": "558b497ba9ab4bd5464274571923959e628cbc03",
+  "removed_conjuncts": 1,
+  "whole_runtime_ast_matches_independently_executed_candidate": true,
+  "own_runtime_ast_matches_baseline": true,
+  "git_blob_sha256": {
+    "baseline": "105c7ef3d4c1d354fb0ee612a9f9f8e2ecd2f6a9bfb2247790c3e9cfbdb4fe0e",
+    "published": "f871fc3f3e04fc46f136440078cbc576e90f777a89d037af65bbe7da710bddb4"
+  },
+  "other_changed_product_paths": [
+    "generic_chess/ai/alphabeta/native_legality.py"
+  ],
+  "changed_test_paths": [
+    "tests/product/test_runtime_aux_identity.py",
+    "tests/product/test_runtime_snapshot_failure_rollback.py"
+  ],
+  "other_change": "NativeSemanticLegalityProvider.supports_position reads compiled.support.max_ply instead of compiled.max_ply",
+  "scope": "source correspondence only; transfers existing finite Runtime candidate results; does not execute primary tests or validate Native provider change"
+}

@@ -37,3 +37,14 @@ Do not rerun frozen experiments merely to refresh counters or grow their caps.
 Published declarations/results retain failures and exposed-data limits. Before
 new cost measurements coordinate machine resources; a separate clone cannot
 isolate CPU. Raw Slack, account data, .venv and private agent state are ignored.
+
+Task011 published_correspondence.py reads immutable558b497 Git blobs and compares
+entire Runtime AST against the independently executed one-condition candidate;
+no engine imports. Retained failed source is intentionally not a passing runner.
+Task012 search_native_ledger.py additionally needs restored Task001/002 private
+producer dependencies and actual supported Native binary. Task013
+pure_support_boundary.py privately loads only the published capability method;
+Task014 bridge_constructor.py privately loads published push, with the rest of
+Runtime already AST-equal. Both need the immutable published commit in own Git.
+No command writes the primary checkout. Fixed declarations/raw JSON retain
+original failures; private candidate methods do not enter tracked product.
