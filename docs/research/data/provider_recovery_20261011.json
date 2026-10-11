@@ -1,0 +1,31 @@
+{
+  "base_sha": "2de3fb761bcaa82aa727ffd9eb16f4d7b3c015ee",
+  "scope": "Source-only recovery:47passed/9Native skips; normal site-initialization failure preserved. No product/default or archived reference changes.",
+  "dependency_indices": [
+    "provider_route_20261011.json",
+    "tt_consumer_20261011.json"
+  ],
+  "archive": {
+    "path": "docs/archive/provider_recovery_20261011/evidence.zip",
+    "bytes": 2005,
+    "members": 3,
+    "sha256": "519f631245dfa7f079bef1c2647b0333d7cb04def4c30eb2864229248b63cf25"
+  },
+  "members": [
+    {
+      "member": ".local_agent/availability-core-20261011/clean_provider_export.py",
+      "bytes": 2092,
+      "sha256": "a0606f878e88847481d8cc23a9443c58803cddbb55835554a7de81b2a7c82faf"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/clean-provider-initial-failure.json",
+      "bytes": 207,
+      "sha256": "8616a50441f048e05c2aa4d753f7698f5cee0eae5f2b3d877d2f04149e768f04"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/clean-provider-export.json",
+      "bytes": 362,
+      "sha256": "db525c46be45b32e7e891df286bedfa6598de4212321cff712e3758a995646c6"
+    }
+  ]
+}

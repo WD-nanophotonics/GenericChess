@@ -326,3 +326,11 @@ stage fraction before bookkeeping and delayed work, not attainable speed or an
 all-q estimate. Defer product implementation and prioritize useful completion.
 Evidence:data/tt_consumer_20261011.json. No new timing comparison was attempted
 while auxiliary machine availability was unconfirmed.
+
+
+Clean tracked Python/archive recovery passes47 semantic/history/trial checks,
+with9 Native-specific skips after explicitly confirming Native absent. The first
+normal-interpreter attempt still resolved an editable Native installation and
+failed that prerequisite; it is preserved separately. Recovery uses isolated
+site initialization, not a DLL rebuild or substituted binary. Evidence:
+data/provider_recovery_20261011.json. Native skips do not validate the C provider.
