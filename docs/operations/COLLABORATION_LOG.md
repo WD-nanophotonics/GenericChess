@@ -622,3 +622,53 @@ Full2192 active tests and32 publisher tests pass; complete remote SHA matches.
 A first publisher test-path typo failed before push; corrected existing target
 passed the normal publisher. This indexed delivery does not assert Slack sending
 or Dot review; earlier automatic send-review blockage is retained.
+
+## 2026-10-12 Native candidate chunks and quiet-board attribution
+
+PRIMARY_SANDBOX measures eager q candidate/visited work and implements one
+readonly Native candidate-chunk primitive. Initial unbatched checks are slower;
+syntax/chunk controls preserve that negative. Chunk8 plus guarded quiet drop
+reduces fixed32768node caller cost about27percent; ordinary quiet-board exclusion
+adds about13percent relative to the joint arm. Generated/compound D2/q4 pairs
+retain exact decisions/work/root. Existing q-ordering under this changed premise
+costs6.6-8.4percent more on1006 but16.3-16.8percent less on1008. Candidate checks,
+recursive work and actual deadline support are separate. Core accepted-child
+history/check/terminal/TT/rollback and product/UI defaults remain authoritative.
+Final deadline judgments and archive counts are in NATIVE_Q_LEGALITY_TRANSPORT.md.
+
+DEV_AUX evidence is pinned at59441982365cb863d35a3c064c94bf0c94f9c1ab, then the
+new1cc71b9ca3aac1679c52aa1f587c4d43b1e5d387 fixed report and full new Slack thread.
+Earlier147 adapter checks/25 source witnesses and new137 mocks/96 non-mature
+games, Yane table/source and Core quantity checks remain distinct. Actual mature
+searches0; four-game16ply pilot prepared/unexecuted. Adopt parameter activation,
+behavior/reward/ratio separation and ownership across board/hands; defer mature
+training/adapters. This does not import another attributed user's direction as
+primary authority. Search-first remains. Dot reasons from supplied definitions;
+neither Dot nor AUX independently executes these new primary calls.
+
+Coordination uses fixed Git reads and complete AUX-origin Slack posts; no actual
+dependency requires waking AUX, routine receipts, source-only windows or cross-
+writes. No observed file-boundary conflict. Team time/token saving and latency
+are unmeasured. Normal concurrent load qualifies paired costs. Primary preserves
+the initial classifier binding mistake, corrected raw counts and failed movepick
+source fetch; no absence inference.27 Native subset plus9 board-boundary checks
+pass; full2212 collected cases passed before the final16 additions. Prepared-child
+transport is deferred at1.54percent optimistic profile removal, fused classifier
+at0.1-0.6percent observed difference. Engineering/profile/build/recording costs
+are not hidden by primitive timing. A documentation update initially failed UTF-8
+reading before writing; corrected encoding preserves the original log.
+
+Primary thread has10 replies/no new primary opinion. New AUX root and both posts
+are fully privately saved and associated as a supplement, not rebound to primary.
+Standing Slack authorization remains; earlier rejected sends are not retried or
+claimed delivered. Fixed sandbox summaries are remotely readable, not proof of
+Dot review. Raw Slack/account/user inputs and binary profiles remain outside Git.
+
+Candidate-first existing ordering adds twelve complete generated/compound calls
+with exact decisions, PV, recursive work and restored roots. Generated costs are
+7-12percent lower than full-legal ordering; the separate24call deadline curve
+adds no completed support at1/4/16s. These are PRIMARY results, not AUX/Dot
+independent validation. The final Slack recovery reads all ten original-thread
+replies and new roots after the AUX result; no new reply/root appears. Do not
+claim successful response or adoption merely from delivery, or wake AUX for a
+routine receipt. Both Agents' boundaries and simple routing identities remain.

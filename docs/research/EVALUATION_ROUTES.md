@@ -17,6 +17,24 @@ retains the queen-loss mechanism. No price fit/training/Elo extension follows.
 Keep a completed-result reserve question and the thin backend attribution bridge
 as executable alternatives. Old capped references and adverse rows stay intact.
 
+## Auxiliary mature-material pilot scope2026-10-12
+
+DEV_AUX1cc71b9ca3aac1679c52aa1f587c4d43b1e5d387 reports a prepared four-game
+16ply material sensitivity pilot and96 non-mature greedy/random games. Actual
+mature searches remain0 because the qualified entry is unavailable; no training
+or learned ratio follows. Its complete Dot reply distinguishes actual parameter
+activation, first selected-action divergence, paired reward sources and human
+ratio recovery. Adopt that separation for later evaluation review; a changed
+choice or quantity reward alone cannot identify a useful material vector.
+Shogi quantity must include ownership across board and hands; drops/promotions
+conserve quantity and a capture changes the ownership difference by2.
+Yane shared material tables also affect SEE/order/pruning and root/TT state;
+that is not a Fairy leaf-only control. These are pinned auxiliary/source and
+finite rule observations, not independently rerun mature parity. No new primary
+training, shared identity gate or scheduling change is adopted. Search-first
+remains current; unexecuted trials are neither learning successes nor failures.
+[Fixed auxiliary report](https://github.com/WD-nanophotonics/GenericChess/blob/1cc71b9ca3aac1679c52aa1f587c4d43b1e5d387/results/dev_aux/SEGMENT_20261012_12.md).
+
 ## Shared target and comparison
 
 Latest scheduling review2026-10-10: prioritize a small one-second actual UI

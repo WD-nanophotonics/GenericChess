@@ -3105,6 +3105,53 @@ static PyObject *gc_semantic_transient_legal_actions_impl(
     return tuple;
 }
 
+/* Readonly S3/S4 checks for a caller-ordered candidate chunk.  This is a
+ * legality transport, not a terminal verdict or a persistent search runtime. */
+static PyObject *gc_semantic_transient_legal_subset(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *position_capsule, *input;
+    if (!PyArg_ParseTuple(args, "OOO", &rules_capsule, &position_capsule, &input)) return NULL;
+    GCSemanticRules *rules = PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position || !gc_semantic_require_matching_rules(rules, position)) return NULL;
+    PyObject *sequence = PySequence_Fast(input, "candidate chunk must be a sequence");
+    if (!sequence) return NULL;
+    GCSemanticActionBuffer candidates;
+    gc_semantic_action_buffer_init(&candidates);
+    for (Py_ssize_t i = 0; i < PySequence_Fast_GET_SIZE(sequence); i++) {
+        PyObject *item = PySequence_Fast_GET_ITEM(sequence, i);
+        if (!PyLong_Check(item) || PyBool_Check(item)) {
+            PyErr_SetString(PyExc_TypeError, "candidate must be a nonboolean u64");
+            goto input_error;
+        }
+        unsigned long long value = PyLong_AsUnsignedLongLong(item);
+        if (PyErr_Occurred() || !gc_semantic_action_buffer_append(&candidates, value)) goto input_error;
+    }
+    Py_DECREF(sequence);
+    PyObject *out = PyList_New(0);
+    if (!out) { gc_semantic_action_buffer_free(&candidates); return NULL; }
+    gc_semantic_runtime_history_mode_start();
+    for (size_t i = 0; i < candidates.count; i++) {
+        GCSemanticPosition child;
+        if (!gc_semantic_runtime_make_checked(&child, rules, position, candidates.data[i])) continue;
+        PyObject *value = PyLong_FromUnsignedLongLong(candidates.data[i]);
+        if (!value || PyList_Append(out, value) != 0) {
+            Py_XDECREF(value); Py_CLEAR(out); break;
+        }
+        Py_DECREF(value);
+    }
+    gc_semantic_runtime_history_mode_stop();
+    gc_semantic_action_buffer_free(&candidates);
+    if (!out) return NULL;
+    PyObject *result = PySequence_Tuple(out);
+    Py_DECREF(out);
+    return result;
+input_error:
+    Py_DECREF(sequence);
+    gc_semantic_action_buffer_free(&candidates);
+    return NULL;
+}
+
 static PyObject *gc_semantic_transient_legal_actions(PyObject *self, PyObject *args) {
     return gc_semantic_transient_legal_actions_impl(self, args, NULL);
 }
@@ -7060,6 +7107,8 @@ static PyMethodDef gc_methods[] = {
      "test-only guarded action counters and exact action set"},
     {"semantic_transient_legal_actions", gc_semantic_transient_legal_actions, METH_VARARGS,
      "semantic_transient_legal_actions(rules, position) -> ordered legal action set without history"},
+    {"semantic_transient_legal_subset", gc_semantic_transient_legal_subset, METH_VARARGS,
+     "readonly legal subset preserving supplied candidate order and duplicates"},
     {"semantic_transient_legal_actions_audit", gc_semantic_transient_legal_actions_audit, METH_VARARGS,
      "test-only transient legality counters and exact action set"},
     {"semantic_policy_logits", gc_semantic_policy_logits, METH_VARARGS,

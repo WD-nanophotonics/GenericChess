@@ -26,48 +26,38 @@ roots, not claimed improved end-to-end or an independently reproduced user loss.
 
 ## Current measured question
 
-Current result: QUIET_DROP_AND_PVS.md separates existing PVS from guarded
-quiet-drop bookkeeping exclusion under the same Native semantic leaves. Eight
-fixed-work baseline/probe pairs and two32768node PVS/joint pairs preserve decisions and
-recursive work; joint32768node cost is about20percent lower than PVS alone.
-Generated1006/1008 completeD2/q4 transfers preserve decisions; played histories
-16/32/64 preserve six pairs, with no demonstrated saving at16ply. Full Core
-mechanical effects, accepted-child history/TT and terminal precedence remain.
-The research hook is process-local and defaults/UI are unchanged. It declines
-unsupported/history-sensitive terminal boundaries;22new finite tests and2192
-active regressions pass, not full generated-domain proof.
+NATIVE_Q_LEGALITY_TRANSPORT.md measures eager Native legal checks versus actual
+q consumption. A narrow readonly candidate-chunk API reuses exact S3/S4 and
+preserves order/duplicates. Chunk8 plus guarded quiet-drop exclusion costs about
+27percent less at32768nodes; full mechanical quiet-board exclusion adds about
+13percent. Generated1006/1008 and compound complete controls preserve decision,
+PV, recursive work and Core root. Core accepted history, TT, check, terminal and
+rollback stay authoritative. Initial unbatched checks were slower; compound
+chunk-only cost is adverse. No universal speedup or full-domain proof.
 
-Familiar64s PVS delivers ChessD5 versusD4 and ShogiD3/q4 versusD1/q0; generated
-1053 cost is mixed and1054 is immediate-win only. Keep earlier weighted-leaf
-negatives, frozen limits and exposed-label status. Completed depth/q support and
-changed choices are not stronger-move evidence. The completed four-arm64/256s
-comparison has
-PVS/jointD3/q4 at64s versus baselineD1/exclusionD2; all fourD3/q4 at256s.
-PVS/joint retained decisions match; more partial work adds no delivered support.
-Keep the exclusion seam research-only. An existing four-cell compound action
-with persistent auxiliary right yields four equalD2/q4 decisions but PVS more
-work/cost; no universal/default adoption. No unconditional full-q refresh,
-check-hook integration, history cache or second runtime follows from this work.
+Existing ordering changes recursive work and forces eager checks:1006 is slower,
+1008 faster. Ordering the complete candidate pool before exact checks preserves
+twelve complete generated/compound decisions/work; generated costs fall7-12percent
+relative to full-legal ordering. Its24call1/4/16s curve adds no completed support.
+Board/drop eight-call64/256s likewise retains D3/q4. The original32call four-arm
+curve is recorded in the purpose report with actual budget completion. Keep all
+hooks research-only and product/UI fixed; extra partial work is not decision gain.
+Native primitive and finite regression coverage are useful reusable evidence,
+not approval to integrate a private logical-cache protocol.
 
-A shared lexical minimalAB/q4 bridge has six complete Core/specialized-rule pairs
-with exact decisions/work/trace. Actual Native legality and availability reduce
-ShogiD1 execution from about6.20 to2.89 to2.43s while retaining exact work; the
-specialized-rule reference is about0.35s in its separate block. Native has no
-fallback/error in these cells. D2 prefixes stop at different resource conditions,
-so no unmatched ratio is reported. Snapshot/transition/history and callbacks
-remain residual consumers; mature engines have different q/pruning/evaluation
-and no new successful local execution. A hash portion diagnostic verifies17363
-original hashes; board-only0.093s is too
-small to prioritize a footprint seam. Next inspect actual Native legal-action
-enumeration versus accepted q actions, with complete effects/check evasions and
-Core availability preserved. Choose one avoidable eager consumer before any
-interface implementation; do not port a thin runtime or repeat old check/cache work.
+Prepared-child transport has only1.54percent optimistic profile-removal bound;
+existing fused classifier changes observed fixed work cost0.1-0.6percent. Defer
+those microinterfaces and caches. The existing C iterative entry reports qnodes0
+and a different evaluation; it cannot establish same-q4 executor parity. Next
+compare optimized Core scheduling on small familiar supported positions, retaining
+the existing minimal AB/q4 specialized-rule bridge and actual backend/work counters.
+Separate scheduling, Core executor and algorithm/evaluation differences before
+larger games, a new recursive kernel or learning. AUX mature searches remain0;
+prepared pilots/mocks/greedy games are distinct evidence, not mature validation.
 
-Data: data/quiet_drop_20261012.json. Previous current-detail text is recoverable
-at00784258da922158051b22686aa1d7e86c854902. Older semantic binding, availability,
-capsule, fullq4 completion tradeoff and negative opt-in delivery remain in the
-purpose-specific records below; consolidating resume text changes no frozen
-experiment, policy or permission. Science remains OPEN.
+Data: data/native_q_legality_20261012.json. Prior current detail is recoverable at
+c84a938763646bd0466983dc781e74a87329e62d. Existing PVS/minimal-q and earlier
+negative controls stay in the purpose-specific records; science remains OPEN.
 
 ## Retained long-term objectives and evidence discipline
 
@@ -102,6 +92,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Native candidate-chunk legality, quiet-board guards and ordered scheduling|NATIVE_Q_LEGALITY_TRANSPORT.md; data/native_q_legality_20261012.json|
 |Quiet-drop exclusion, semantic PVS transfer and actual minimal-q executor attribution|QUIET_DROP_AND_PVS.md; data/quiet_drop_20261012.json|
 |Core availability, supplied-history transport, public delivery and exact token costs|CORE_AVAILABILITY_COST.md; data/core_availability_20261012.json|
 |Corrected capsule consumers, actual Core caller and inventory/delivery costs|CAPSULE_INTERFACE_COST.md; data/capsule_interface_20261012.json|

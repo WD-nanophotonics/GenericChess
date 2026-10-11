@@ -270,6 +270,20 @@ def transient_legal_actions(native_rules, position) -> tuple[int, ...]:
     ))
 
 
+def transient_legal_subset(native_rules, position, candidates) -> tuple[int, ...]:
+    """Readonly exact legality for a caller-ordered candidate chunk.
+
+    Does not infer a complete action set or terminal result. Core retains state,
+    history and adjudication authority; consumers must preserve full coverage.
+    """
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    operation = getattr(_module(), "semantic_transient_legal_subset", None)
+    if operation is None:
+        raise RuntimeError("installed Native extension lacks candidate chunk legality")
+    return tuple(operation(native_rules.capsule, position, candidates))
+
+
 def transient_legal_actions_audit(native_rules, position) -> dict:
     """Test-only transient legality counters and ordered action set."""
     if not native_available():

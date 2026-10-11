@@ -1,0 +1,893 @@
+{
+  "base_sha": "c84a938763646bd0466983dc781e74a87329e62d",
+  "archive": "docs/archive/native_q_legality_20261012/evidence.zip",
+  "archive_sha256": "8879e92148a237fbb0b378d188fe76cd1f44d6444d51c4d6d4126db9c3115e25",
+  "compressed_bytes": 352370,
+  "raw_bytes": 2658762,
+  "actual_public_search_calls": 173,
+  "members": [
+    {
+      "path": ".local_agent/eager-legal-20261012/batch-fixed/declaration.json",
+      "bytes": 1258,
+      "sha256": "3d5befaedbcd7db587fc9dd40653ba00b69c25ba0042f5179375c5ed4b7d5794"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/batch-fixed/result.json",
+      "bytes": 20807,
+      "sha256": "62dda4b72dbca8b8dc5b94da02172516c6f188dcb09040a5ba17b37af9b1caed"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/batch-fixed/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/batch-fixed/verification.json",
+      "bytes": 851,
+      "sha256": "43346ef88090a02e5f594154db3da5da3e08c32350968b959379f801f49138d6"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/batch-producer.py",
+      "bytes": 10470,
+      "sha256": "a1895c47f3a4e57c5840d23c366992fa59a69114c359cb216a84468939339661"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/boundary-review.json",
+      "bytes": 1186,
+      "sha256": "2b01d150636bd56f007bff91ef662de809081d50128f3c7618cdd24d5f308fa9"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/counts/declaration.json",
+      "bytes": 582,
+      "sha256": "e46770ccfa914ac60f96f8c57ac28af7f3b12e292d8a5d4613cfd54add70f87e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/counts/result.json",
+      "bytes": 15635,
+      "sha256": "182f765598ad826b79dc4daedf66760b4b2b37c4fb13111596081dc5744d74cb"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/counts/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/counts/verification.json",
+      "bytes": 1634,
+      "sha256": "3841b02298ac700402a73258c049df6e52a645139b4cd774ec7914c13118159e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/counts-v2/declaration.json",
+      "bytes": 582,
+      "sha256": "acef4090b5d83d3a7ee94c543a5d87ae49906bd234933fa6a7f7295a1f407103"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/counts-v2/result.json",
+      "bytes": 15701,
+      "sha256": "059c5ca6deaba773dc10f6368e2cdf63dbb13d9e1eb7575b5646e6327bcb657e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/counts-v2/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/counts-v2/verification.json",
+      "bytes": 428,
+      "sha256": "c3d5f04e853c2ca851412319f2b133c35feb7ef436a91165ff37dceae9d293c6"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/delivery/1/declaration.json",
+      "bytes": 1391,
+      "sha256": "f82dc26bbb7ade1484cd60e9cc8f82d51e8d3c8c35ace37def8cefdf1a368483"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/delivery/1/result.json",
+      "bytes": 27780,
+      "sha256": "857714cb4e7cb74ec946d0b07d2a1b9e0fd465812acdb7a9d6a199aaf3a6be74"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/delivery/1/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/delivery/16/declaration.json",
+      "bytes": 1394,
+      "sha256": "1562828c4ce3aaa4c1549c40d5a7e9fcef89f9e4713d52b816554351227f251f"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/delivery/16/result.json",
+      "bytes": 28230,
+      "sha256": "5231d78e697625d986ae195197d82384709f0daa21e3fb58d2a5e819798c75db"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/delivery/16/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/delivery/256/declaration.json",
+      "bytes": 1396,
+      "sha256": "32481e05b6363cee0b8c85dc135deffe5b6c5ccb49022794b4e16e08eb7ed066"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/delivery/256/result.json",
+      "bytes": 33528,
+      "sha256": "4ca73104454a37f83e7b6c10195f06e8594e651a47eab58c462723d94115f4b1"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/delivery/256/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/delivery/64/declaration.json",
+      "bytes": 1394,
+      "sha256": "b6cdcf0248717214c6c4ede14c3d01bacf4a03b422cf1f52d6f08ca0c5f0a4fb"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/delivery/64/result.json",
+      "bytes": 33301,
+      "sha256": "efc666ea737f68640be524888ee4f3bc3c33116859f76f634a6b12217e42c263"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/delivery/64/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/delivery/final-verification.json",
+      "bytes": 8314,
+      "sha256": "b8d1eb85cf3178316ff5cb99a8a75b19a604480f7bb4cfc239ba87842c0ff41e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/delivery/plan.json",
+      "bytes": 859,
+      "sha256": "1fa35b599a270ce8beaa4347a98df6e5cd1963e4d948619a594944dbaf6be84e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/delivery-producer.py",
+      "bytes": 11968,
+      "sha256": "a28c684f815f852ee4b4e2b0b3cff2fd2ec9845f9ada5b3e2e480a1d00baec1c"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/fused-quiet-action/declaration.json",
+      "bytes": 1457,
+      "sha256": "8162b5ca82ddaa31d7a100358fead8db07f3b4a0e26189b5e514ba7cc2c4a9e5"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/fused-quiet-action/result.json",
+      "bytes": 15855,
+      "sha256": "0b43a321e2261d958f269ea62ae9e3fa20f5c0556efa7005f541efb8d11a1d22"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/fused-quiet-action/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/fused-quiet-action/verification.json",
+      "bytes": 667,
+      "sha256": "4da4e6ccc36f4c0bde23738b0cab1782859f9b9d356a9b976c1a07e25b8f054b"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/fused-quiet-action-probe.py",
+      "bytes": 4039,
+      "sha256": "5366e1b9232e2986e22bee3b2f9b41b52b4cd67d28a97c991866f08a7828fdac"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/fused-quiet-action-producer.py",
+      "bytes": 11610,
+      "sha256": "9cdf02df86f2840268dc255eaed6acec8b57d6b59b48f0369f8ff0c52bc45ac8"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/joint-fixed/declaration.json",
+      "bytes": 1303,
+      "sha256": "4ee30f34a8906a4a6677ca18f788ff40de303251603ce86497d40c4517da2932"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/joint-fixed/result.json",
+      "bytes": 28337,
+      "sha256": "ead7ad4829168d0989f382860090f8386f16a781bdc88fe5e3ab63139a92457e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/joint-fixed/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/joint-fixed/verification.json",
+      "bytes": 1142,
+      "sha256": "1a1667c14b5fcecf52bb8292b71bf444a4f956cb41b68ba5e04e0e2eae7f1ebb"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/joint-producer.py",
+      "bytes": 11034,
+      "sha256": "cc763a9b86cfb3498640abae59478f5a652d72b2404b8a55f911d5701dc8d11d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/lazy/declaration.json",
+      "bytes": 966,
+      "sha256": "78d81361f5e7aa07a4743877c7f9a1a20ca606409feae99388dc227b63d89633"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/lazy/result.json",
+      "bytes": 13374,
+      "sha256": "7df60500660d59bf17b7fd099bf6f7a53ac1b31ef1f699ca6a238e968b823fda"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/lazy/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/lazy/verification.json",
+      "bytes": 455,
+      "sha256": "01ecd4d3837edf33d1620d82765cfdafe878e0f806f4b13b58b6ee3b20661b9c"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/lazy-producer.py",
+      "bytes": 8422,
+      "sha256": "101631124f30ccf31a72c62114ddb13e7a6570ac3c1f73d546cdcc7c0e6cdd34"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/lazy-syntax/declaration.json",
+      "bytes": 1238,
+      "sha256": "8b18beec9e5b7130e8b2d3c99b52108e2de1718c40f94c97fdd7bb2bc3d88cb5"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/lazy-syntax/result.json",
+      "bytes": 13617,
+      "sha256": "443725bef281474c31aa99998c1eeb4f9a08e16e24f107bf75c3bd5b990c9841"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/lazy-syntax/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/lazy-syntax/verification.json",
+      "bytes": 435,
+      "sha256": "17a49010df7a30ff32b37cec50d1384d7753401d486eba44aebb8ae0af1359ef"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/lazy-syntax-producer.py",
+      "bytes": 9180,
+      "sha256": "6533ab4063b694dfb1308fc3e2983187c6fdab0c6efc13a0096b96aeecec6c8a"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/next-executor-selection.json",
+      "bytes": 1108,
+      "sha256": "ea97de17775425aafc4a53d1dedf9474703d246eeff77c6cef7921147d93d9e8"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate/1006/declaration.json",
+      "bytes": 1826,
+      "sha256": "33b00f072ff702930bc96c4ab21b6407b7f2d4cc589f98cb20ed69fc0529a48f"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate/1006/result.json",
+      "bytes": 17776,
+      "sha256": "018225f09c5ef96cee8e039c83bf6cd5a92524c0e2453a9698cf50b4316afd93"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate/1006/samples.json",
+      "bytes": 55048,
+      "sha256": "6ee998862769d55d8d557cc745847ad95096ce8e73d44631df9c4d69ba75be7e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate/1008/declaration.json",
+      "bytes": 1826,
+      "sha256": "f5e6dbfc000d9b4c96e5a454c77409b6a2b3d2f88cbc551727b7e2b4c88b0f5e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate/1008/result.json",
+      "bytes": 17738,
+      "sha256": "60381c1eba36ca2d3b99caeecfe2a1a7077f9eb7e0e54a0e2ae5d910a151e8f0"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate/1008/samples.json",
+      "bytes": 55696,
+      "sha256": "a4fbace86e8bb7fd21c670345de2e8edbffcccd7a1f7f4574cdc2e9adbac0efa"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate/compound/declaration.json",
+      "bytes": 1830,
+      "sha256": "8ff655d5c06e8dfd120300ccaaae5826f7aa5358d1cf0553c701516ad065be9c"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate/compound/final-verification.json",
+      "bytes": 2011,
+      "sha256": "b21ca5dc7ce0c68609f90321942576e7b0dc4fd0e2fa35a220db216d0739d86f"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate/compound/result.json",
+      "bytes": 17325,
+      "sha256": "9016204da23b2fa2002b83752898488a9632b91de76d85b127ac8c294ac8a3d4"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate/compound/samples.json",
+      "bytes": 4008,
+      "sha256": "248db7b2d7b6a70248ddbdf9a00d0b516e5663e3bf8e7eecc01253247c53a039"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate/verification.json",
+      "bytes": 434,
+      "sha256": "00d6ed864d9f784ac796086c2de33f3f98abc2fc8456614d3b2337b35f3121f8"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/1/1006/declaration.json",
+      "bytes": 1802,
+      "sha256": "ae41b1a5bc7eaffb31df149fc31c6a419374793436c482860d595554919c4e65"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/1/1006/result.json",
+      "bytes": 16199,
+      "sha256": "60968bfa17847eeddf3f68fb3cc7806728e156429159796c10020e426dc6bdbb"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/1/1006/samples.json",
+      "bytes": 55048,
+      "sha256": "6ee998862769d55d8d557cc745847ad95096ce8e73d44631df9c4d69ba75be7e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/1/1008/declaration.json",
+      "bytes": 1802,
+      "sha256": "311deced381ea5a281c3494cdea7242f01c3543eb530f77a213223d50aabc5bf"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/1/1008/result.json",
+      "bytes": 16169,
+      "sha256": "c7d70377b36e1b8eaaad8ab456fd0432a34779af8a16ddba794595c8dbdeedc5"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/1/1008/samples.json",
+      "bytes": 55696,
+      "sha256": "a4fbace86e8bb7fd21c670345de2e8edbffcccd7a1f7f4574cdc2e9adbac0efa"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/16/1006/declaration.json",
+      "bytes": 1804,
+      "sha256": "3527fd7758aae3f9780f4bce7a9027da35c0ab41cfc15520f97a7c8425689413"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/16/1006/result.json",
+      "bytes": 18740,
+      "sha256": "2fca152b9ac29a93a696ce63ac28a7357e0fc0a03dec81a031c4adcbe370ded7"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/16/1006/samples.json",
+      "bytes": 55048,
+      "sha256": "6ee998862769d55d8d557cc745847ad95096ce8e73d44631df9c4d69ba75be7e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/16/1008/declaration.json",
+      "bytes": 1804,
+      "sha256": "d070fcee5d3233b4d67cc709244f5b59546657bab0820ab5daa309f3737842b9"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/16/1008/result.json",
+      "bytes": 19255,
+      "sha256": "05848eb519db92753504821504631d95069459787abe76d5bf1f9e748636e7ff"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/16/1008/samples.json",
+      "bytes": 55696,
+      "sha256": "a4fbace86e8bb7fd21c670345de2e8edbffcccd7a1f7f4574cdc2e9adbac0efa"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/4/1006/declaration.json",
+      "bytes": 1803,
+      "sha256": "d3443628aaff9b8d1d0049100561e6870fc2fbe120879ad1fe31a815994f186b"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/4/1006/result.json",
+      "bytes": 17701,
+      "sha256": "c26c69554927361eba0255dbaf00e2178b89899142854f9627d318741e1bc994"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/4/1006/samples.json",
+      "bytes": 55048,
+      "sha256": "6ee998862769d55d8d557cc745847ad95096ce8e73d44631df9c4d69ba75be7e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/4/1008/declaration.json",
+      "bytes": 1803,
+      "sha256": "93384c21570d15af7cf60f89ca204fac6a716868bbfc7c33b23dff1a797a6ec2"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/4/1008/result.json",
+      "bytes": 17720,
+      "sha256": "0b221af46571155eab4a20eb9274a1378510b14e8906a16551bfe188118eedc9"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/4/1008/samples.json",
+      "bytes": 55696,
+      "sha256": "a4fbace86e8bb7fd21c670345de2e8edbffcccd7a1f7f4574cdc2e9adbac0efa"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/final-verification.json",
+      "bytes": 11446,
+      "sha256": "1bb438f9b628d3dfdea618b521026cde24cdc8a8d38fe71b98569496727a1601"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery/plan.json",
+      "bytes": 716,
+      "sha256": "0b073b09ccd6843f1263533c2e0401a55ef10908f286a0b4b66e7e0e4858e34e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-delivery-producer.py",
+      "bytes": 13239,
+      "sha256": "107f4f44304355c0cd2e7fe2d4b73199816eb1954c18759f8b120924ed0cdfed"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordered-candidate-producer.py",
+      "bytes": 12511,
+      "sha256": "5fe832f6ad8fc27d56311690c16277a473b2092b6a7b7ffdb23735cde0b8e58f"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/1/1006/declaration.json",
+      "bytes": 1748,
+      "sha256": "614ed59546248cf3ce0964c813703fc3040c0529e7793b8a5821fb99972d6276"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/1/1006/result.json",
+      "bytes": 16141,
+      "sha256": "1ca3b40b5b154e21b2b4990dfccdd1ec227a6875d1682ba60c38f8d4b6dc0492"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/1/1006/samples.json",
+      "bytes": 55048,
+      "sha256": "6ee998862769d55d8d557cc745847ad95096ce8e73d44631df9c4d69ba75be7e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/1/1008/declaration.json",
+      "bytes": 1748,
+      "sha256": "954275c9612cc4f18db553555a3c3b909f2973859b319934e5bcd34b4cd10715"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/1/1008/result.json",
+      "bytes": 16120,
+      "sha256": "d28557949dde74db0cdcd8b5c997677d4344599a856c8669e33692394a46e63f"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/1/1008/samples.json",
+      "bytes": 55696,
+      "sha256": "a4fbace86e8bb7fd21c670345de2e8edbffcccd7a1f7f4574cdc2e9adbac0efa"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/16/1006/declaration.json",
+      "bytes": 1750,
+      "sha256": "41292a2e31939045be50d962864a52c099f72306c73d5860f5f6b1b2a8155981"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/16/1006/result.json",
+      "bytes": 18725,
+      "sha256": "e2eda50327b02a2d2414392f6cc605372db495b4309725156d8fdd1bd73d46ab"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/16/1006/samples.json",
+      "bytes": 55048,
+      "sha256": "6ee998862769d55d8d557cc745847ad95096ce8e73d44631df9c4d69ba75be7e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/16/1008/declaration.json",
+      "bytes": 1750,
+      "sha256": "5855ce13992da1ce22419c2d7db3ceac53c0ea69329f1ec686fd7e9f36e34ba3"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/16/1008/result.json",
+      "bytes": 19226,
+      "sha256": "d1064d67d3cbe16f1d4313dc9e994cb4a4e479c64c164945605fd1631486928c"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/16/1008/samples.json",
+      "bytes": 55696,
+      "sha256": "a4fbace86e8bb7fd21c670345de2e8edbffcccd7a1f7f4574cdc2e9adbac0efa"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/4/1006/declaration.json",
+      "bytes": 1749,
+      "sha256": "57cf8e66210e837c7a2660d0c41362ed8860f474f3cc7a4664f4598d52a51fc8"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/4/1006/result.json",
+      "bytes": 17686,
+      "sha256": "a50cb89d09f4c9ca799bfb85492a9a804eadc725a3770df50b0b0bf2df324e07"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/4/1006/samples.json",
+      "bytes": 55048,
+      "sha256": "6ee998862769d55d8d557cc745847ad95096ce8e73d44631df9c4d69ba75be7e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/4/1008/declaration.json",
+      "bytes": 1749,
+      "sha256": "7913651ec8172a1effd66c6e3f64d933aa5c6152aaa56cc48d370aaa6ef9088f"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/4/1008/result.json",
+      "bytes": 17641,
+      "sha256": "c5838546bc3a9496fb29693988000186957d4cf23b664f1ade1c69e75aa1efd3"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/4/1008/samples.json",
+      "bytes": 55696,
+      "sha256": "a4fbace86e8bb7fd21c670345de2e8edbffcccd7a1f7f4574cdc2e9adbac0efa"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/plan.json",
+      "bytes": 700,
+      "sha256": "4a8cd5ce995f048a9f5e801837534d3b2933db2558dd06e1fc05ddd0e53f5f39"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery/verification.json",
+      "bytes": 37085,
+      "sha256": "ca97edeac210032befad11a9ae8f61d91c5b857d22230b2852b74079530b8bbd"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-delivery-producer.py",
+      "bytes": 12699,
+      "sha256": "a5a27898e9c32f98a485664b97bcc1d83c980f85ab9628c7e9e5cf315bdded81"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-transfer/1006/declaration.json",
+      "bytes": 1691,
+      "sha256": "4d4fb8399e78d0050282b706461c9622a34e35aa42c0ee3e7a20ecd94d3e98a5"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-transfer/1006/result.json",
+      "bytes": 17699,
+      "sha256": "7daf855f0509b8c3fa3e0f6fbba758d3c6fc1d4401cf2412617080b660efa1cc"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-transfer/1006/samples.json",
+      "bytes": 55048,
+      "sha256": "6ee998862769d55d8d557cc745847ad95096ce8e73d44631df9c4d69ba75be7e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-transfer/1008/declaration.json",
+      "bytes": 1691,
+      "sha256": "90d0d038c73e99b409ff7b41e43186868d84ef8fa5d119e2f76d9972189646c7"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-transfer/1008/result.json",
+      "bytes": 17700,
+      "sha256": "a7f3cf85890dc550cf9f64fcd5e62ba5e5b128a0a0adb7e8256e58037deb9a19"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-transfer/1008/samples.json",
+      "bytes": 55696,
+      "sha256": "a4fbace86e8bb7fd21c670345de2e8edbffcccd7a1f7f4574cdc2e9adbac0efa"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-transfer/verification.json",
+      "bytes": 635,
+      "sha256": "88e5951041949fc81eef0a8b492696bbe3069596bce037935f524dedf0bf3bfa"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/ordering-transfer-producer.py",
+      "bytes": 11906,
+      "sha256": "243d9cf56f98563db3236685f52e6677bedc5ec772d8dcfb864463160c353116"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/producer-v2.py",
+      "bytes": 6667,
+      "sha256": "03bbfe94bcc9c22afc399fcfd867fe352e70f08b2c65f0d5222ac9f512e2bfb0"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/producer.py",
+      "bytes": 6649,
+      "sha256": "9ca9242252dcc2f0ea77d75912d6929461fa430d56533a9074c145a1174102e5"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/profile/declaration.json",
+      "bytes": 1208,
+      "sha256": "15c0cbfc3483d26084211177ce956a69314692fffda3f0074816969addceb38a"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/profile/result.json",
+      "bytes": 3587,
+      "sha256": "bae2b4c65959f158f8dc8fba3e30e2b810e6ddff608481768c6d6ecc28d6c1d2"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/profile/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/profile/sanitized-profile.json",
+      "bytes": 9778,
+      "sha256": "927cbb76c5cca50e26e43e67fd0c15115faa1135ad3e2fabf603ca59deef7886"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/profile/selection.json",
+      "bytes": 1024,
+      "sha256": "3d6bcb7129d176c527757ef69fb7b0d178642eade3f2e94790c287625a619f3f"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/profile/string-cost.json",
+      "bytes": 1997,
+      "sha256": "0b5ba8cdd990e23a353f896ffcdf2f35007119a3fdaa391365045f7e6cf855f3"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/profile-producer.py",
+      "bytes": 11307,
+      "sha256": "9975ad6e3ebd1cef345e9b10a3b874bb110c352ed73de7f642d446137314afdd"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-delivery/256/declaration.json",
+      "bytes": 1533,
+      "sha256": "bb75ab80fbd0f468e23dc872e351c172fc0c95e48b71596fdf7d67ed966751e9"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-delivery/256/result.json",
+      "bytes": 17923,
+      "sha256": "400a260692e200d326f2c40436b2526b480a37d4437c22bee39975b2fc853e17"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-delivery/256/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-delivery/64/declaration.json",
+      "bytes": 1531,
+      "sha256": "0d17616887e0e0bd0ab9f3b02734b3e187aed3639a0626eed58c3b9c4a463f0b"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-delivery/64/result.json",
+      "bytes": 17831,
+      "sha256": "14835d4847a4ddc247459779bdbff2a2bdb3f2032f284538d91e446d22204aa9"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-delivery/64/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-delivery/final-verification.json",
+      "bytes": 3892,
+      "sha256": "15bba47e7b2c0f63c6009eb98e5f64be1f8d6d78e67613511e81ccff5442a612"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-delivery/plan.json",
+      "bytes": 682,
+      "sha256": "af93dbc5ccc704ee2ea2266e1f0895b3bb55a4f047fa8591f876e41155cb7efa"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-delivery-producer.py",
+      "bytes": 12110,
+      "sha256": "5c99a346ee0c5fa8bd207c619da1ebb5075ab75e13be3dc36dbb7f5995f957b5"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-fixed/declaration.json",
+      "bytes": 1463,
+      "sha256": "e22e36cc94324633043cb30217f3eb98f0f327ba366f5e88dbc17df216a8536f"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-fixed/result.json",
+      "bytes": 15304,
+      "sha256": "15bdc897948e3f54fdc742c99a7a9caf5aff85f70da0bf28d0d3bcb3d93d96fe"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-fixed/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-fixed/verification.json",
+      "bytes": 252,
+      "sha256": "dd44eae5c5b41b5ea0085dd7644864ff728d7f35a55222971757f7f2824e66b4"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-fixed-producer.py",
+      "bytes": 11337,
+      "sha256": "851c3e07b025f7af16474a09c468c591109b7ac1b08aa496be73ae736aa3894d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-probe.py",
+      "bytes": 3859,
+      "sha256": "687597944469ea55c2279a3624cf81835b060a4644c7f6db22eacccedb68bbea"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-profile/declaration.json",
+      "bytes": 1450,
+      "sha256": "aa15759fe46850a32c67099e03e14018c80a688807ac0e1bb0ff06b2b4d0ed20"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-profile/result.json",
+      "bytes": 3925,
+      "sha256": "65145b9a85e116acb1c95d760f04a72a4f85afa4cac11e574e60d7da1a686e8d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-profile/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-profile/sanitized-profile.json",
+      "bytes": 11430,
+      "sha256": "c48f3b1d65ff88a8b16f35cb04de8b23ed37637d7de505a151cd0f31b4a994bc"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-profile-producer.py",
+      "bytes": 11376,
+      "sha256": "95d3cda239d9f98d59ecca0b67fd7b5c3b357d06e1408ec9d90e5fafb2316583"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-shadow/declaration.json",
+      "bytes": 1423,
+      "sha256": "2e475de2096fa597d8a5225f95f7ba874bd62c3be6171dffa6014b4921bd9c2d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-shadow/result.json",
+      "bytes": 3642,
+      "sha256": "4fca9183f05f2ebbed84d6b49b44de8040a06e280cb0db43ac0448506f4a66c7"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-shadow/samples.json",
+      "bytes": 4635,
+      "sha256": "ab79d391a6a082c56bffe4b6811277aa5abdd0d4447fc4b7a27b3358181ddd9d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-shadow/verification.json",
+      "bytes": 646,
+      "sha256": "cd24c6dfd6c43dcd3a6e8801856c00a53b304445a04cba3ad4e91e3eaa3cca8d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-shadow-producer.py",
+      "bytes": 11131,
+      "sha256": "7b21ec956aba9ff1a54c0c2d409b451be87dc0c4eda0da860239031b2c673b5a"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-transfer/1006/declaration.json",
+      "bytes": 1401,
+      "sha256": "bb924da80b553f7853c25b1f1c0ba0dd74b2e47839476610643745bee976d2ce"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-transfer/1006/result.json",
+      "bytes": 17514,
+      "sha256": "8e01db86dc639d97e7a0c2a4323192b4e944b4ce35173f8541af85fa018fe7fe"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-transfer/1006/samples.json",
+      "bytes": 55048,
+      "sha256": "6ee998862769d55d8d557cc745847ad95096ce8e73d44631df9c4d69ba75be7e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-transfer/1008/declaration.json",
+      "bytes": 1401,
+      "sha256": "309cfc31ceb4c333fb8d220ceb220f8e1b8caf2aaaa29e6300551e24091c9d30"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-transfer/1008/result.json",
+      "bytes": 17474,
+      "sha256": "210fa39d5541d9492efb479b41af26622958b359bb75fd1d2d18eaa30883244f"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-transfer/1008/samples.json",
+      "bytes": 55696,
+      "sha256": "a4fbace86e8bb7fd21c670345de2e8edbffcccd7a1f7f4574cdc2e9adbac0efa"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-transfer/compound/declaration.json",
+      "bytes": 1405,
+      "sha256": "a43f7e3b6bf6147cdcadcda36905ce90d11bf97a778a22178c35eaf1a2af1866"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-transfer/compound/result.json",
+      "bytes": 16969,
+      "sha256": "e605ee9c70ebb79fbb981def85ee945b205b0d112064c087cfe329cc26179c76"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-transfer/compound/samples.json",
+      "bytes": 4008,
+      "sha256": "248db7b2d7b6a70248ddbdf9a00d0b516e5663e3bf8e7eecc01253247c53a039"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-transfer/verification.json",
+      "bytes": 396,
+      "sha256": "74b384504434396c57f4f3364bf419ef254d0de27df16620da1ad4f198386ab1"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/quiet-action-transfer-producer.py",
+      "bytes": 11587,
+      "sha256": "509bc9cfebbe9e579a84e6b13ec9097f0011b56681b2e7109ca7ea7fa20bf360"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/transfer/1006/declaration.json",
+      "bytes": 1384,
+      "sha256": "9ab0ecc88fcf3978df08d6450ced06316cdf861e0d7c2c1e8a51795c0ef3d16a"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/transfer/1006/result.json",
+      "bytes": 16028,
+      "sha256": "65c3b9003e7b0af146d194fd81efdb6985b9437e9a758a51fd007e2d2779e5ce"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/transfer/1006/samples.json",
+      "bytes": 55048,
+      "sha256": "6ee998862769d55d8d557cc745847ad95096ce8e73d44631df9c4d69ba75be7e"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/transfer/1008/declaration.json",
+      "bytes": 1384,
+      "sha256": "f763d5beb062d43698854d0937670a4efc5b7fa58c312579f07f12cc3ccdb8fe"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/transfer/1008/result.json",
+      "bytes": 16014,
+      "sha256": "5b62e1a3c0665b7c7de2affd4c4a2ca95d9ef3bffafa193e515377ce35154ff9"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/transfer/1008/samples.json",
+      "bytes": 55696,
+      "sha256": "a4fbace86e8bb7fd21c670345de2e8edbffcccd7a1f7f4574cdc2e9adbac0efa"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/transfer/compound/declaration.json",
+      "bytes": 1388,
+      "sha256": "54112a0b06abc82157b4e221737a57483adc55ee49caeee7fad3b3d37128433d"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/transfer/compound/result.json",
+      "bytes": 15871,
+      "sha256": "12b303b42c0485e93ac68136d0724f426e5bf13f45163a134a454036c61147c9"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/transfer/compound/samples.json",
+      "bytes": 4008,
+      "sha256": "248db7b2d7b6a70248ddbdf9a00d0b516e5663e3bf8e7eecc01253247c53a039"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/transfer/verification.json",
+      "bytes": 3094,
+      "sha256": "ca712bf1305b33b5a2b7685b2d2ce1c829db8a792850c84d587773fe2a947f86"
+    },
+    {
+      "path": ".local_agent/eager-legal-20261012/transfer-producer.py",
+      "bytes": 11174,
+      "sha256": "75fa0b95130f043cd93314125b224a004f26a733d06126d042f877c7be6c8e25"
+    },
+    {
+      "path": "generic_chess/_native/native_module.c",
+      "bytes": 329836,
+      "sha256": "547d92a57893dfff8ff931d0c107557d850a5f241196806b95926d991f54455f"
+    },
+    {
+      "path": "generic_chess/native/semantic.py",
+      "bytes": 30821,
+      "sha256": "8ea86d9c04925c9cc60a592b4ba1f4229c82dbd793bdc8e9c4ec106ed28c9ce3"
+    },
+    {
+      "path": "scripts/quiet_action_probe.py",
+      "bytes": 3859,
+      "sha256": "687597944469ea55c2279a3624cf81835b060a4644c7f6db22eacccedb68bbea"
+    },
+    {
+      "path": "tests/development/test_native_legal_subset.py",
+      "bytes": 6294,
+      "sha256": "a7bdb1c20e2bf5fd2ea3a49236c6d07dcac97ca0e5756992415fe80008704930"
+    },
+    {
+      "path": "tests/development/test_quiet_action_probe.py",
+      "bytes": 4205,
+      "sha256": "3e9e928e18d6a2ff8666e1a06bbd05d87451f5e687bc915e09100e2a98ed2ed6"
+    }
+  ],
+  "installed_binary": [
+    {
+      "name": "_native_core.cp312-win_amd64.pyd",
+      "bytes": 434176,
+      "sha256": "f37f666ec0170c0cf1c4c9305b5b91c8cf2a5b31b1fc660b142af67836966e52"
+    }
+  ],
+  "source_scope": "Clone pinned base, overlay archived changed source/producers, normal Native build. No binary profile or Slack/account/user inputs. Research-only process-local hooks and exposed roots; not product integration/full domain/strength.",
+  "tests": {
+    "full_active_before_final_additions": 2212,
+    "final_native_subset": 27,
+    "final_quiet_action": 9
+  }
+}
