@@ -558,3 +558,14 @@ but PVS wallcost higher29.68/29.73 vs27.97/28.03s. Preserve this adverse cost
 alongside support gains. Next1053/1054 transfer declared; primary built actual
 ply8 ongoing readiness roots with23/92legal moves, zero new searches. No
 auxiliary/Dot contribution or independent holdout status is invented.
+
+Delivery exception for new research SHA0819f5a340a9c4685f5aaef245e8952c57fb35db:
+Slack result sending was rejected twice by automatic approval review as a repeat.
+After the first rejection, primary completely reread the original root and all10
+replies; they did not contain this new SHA/results. Exact outgoing versions,
+rejections, full read and reconciliation purpose remain private. A shorter
+new-evidence result was also rejected despite that fresh check. No further
+retry, alternate channel or indirect sender is attempted; do not claim delivery
+or Dot review. Reviewed code/results and this collaboration record are already
+remotely readable on sandbox. This is a transport/review blockage, not revocation
+of the user's standing authorization or evidence that scientific work stopped.
