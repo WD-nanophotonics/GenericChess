@@ -196,3 +196,24 @@ use unfamiliar_isolated_control.py for recovery, not the old benchmark import.
 Thirty finite product/history/cancellation tests also pass from the clean archive
 export with no Native binary bundled. Native timing reproduction needs the pinned
 installed binary; passing Core export tests do not claim that binary was rebuilt.
+
+## Next-phase contract controls
+
+Four subsequent public/runtime child-and-undo controls reject a board-only early
+quiet exclusion: the same quiet pawn action is included at max_ply1 and excluded
+at512; a quiet child reaching an explicitly configured third occurrence is included
+solely by terminal status; a quiet imported checked-root king evasion is excluded
+by the quiet classifier but must be explored by the checked branch. Removing the
+terminal flag in a deliberately invalid observation proxy loses both terminal
+inclusions. That proxy is never searched and demonstrates no existing product bug.
+
+Two setup failures are preserved: builtin Western actually has repetition_limit
+100000 and auxiliary state changes, so an assumed automatic third occurrence after
+eight moves was wrong; the compiler correctly refuses a checked declared initial
+anchor. The corrected controls explicitly declare repetition_limit3 with an actual
+bounded played prefix, and label the checked layout imported after compiling a
+safe declared initial layout. No rule or old test is changed to make a product pass.
+The follow-on source/result/failure archive is bound separately by
+data/early_exclusion_contract_20261011.json; the original310member archive stays
+immutable. Next measure representation cost by included/excluded child before
+designing any two-phase receipt; exact terminal/history/check facts stay required.

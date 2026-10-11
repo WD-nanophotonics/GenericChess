@@ -40,12 +40,15 @@ Core/hybrid/specialized bridge retains a substantial residual gap even with memo
 End this availability microdispatch round. A new one-root completedD2 curve uses
 213/1050/8010nodes for ordinary-q0/1/4 with different scores; q4 costs6.8seconds
 and its qdepth3 alone rejects22946formal children. Exact action-signature encoding
-about0.24seconds does not motivate a lazy-history-only solution; defer it. Next map
-terminal/check/history facts for a two-phase nonretained-child execution boundary,
+about0.24seconds does not motivate a lazy-history-only solution; defer it. Four
+finite controls show terminal-only quiet inclusion and mandatory checked evasions.
+Next measure representation cost by included/excluded child before a two-phase
+nonretained-child execution boundary,
 with fixed evaluation/q/history and actual backend. Keep physical rule execution,
 representation and interrupted work separate. Do not
 change q/evaluator/UI defaults or rebuild the Windows-blocked DLL.
-Evidence:AVAILABILITY_AND_Q_EXECUTION.md; data/availability_core_20261011.json.
+Evidence:AVAILABILITY_AND_Q_EXECUTION.md; data/availability_core_20261011.json;
+data/early_exclusion_contract_20261011.json.
 Evidence:RUNTIME_AUX_IDENTITY.md; data/runtime_aux_identity_20261011.json.
 Evidence:COMPLETION_POLICY_ATTRIBUTION.md; data/completion_policy_20261011.json.
 
