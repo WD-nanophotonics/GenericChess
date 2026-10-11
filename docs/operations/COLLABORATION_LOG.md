@@ -615,3 +615,10 @@ Core push membership/bindings and complete check evasions make a noisy-only list
 an unsafe substitute for the existing legal cache. Quantify generated versus
 actually visited q candidates before selecting a seam. This remains source
 attribution, not a newly implemented filtered generator or another PVS batch.
+
+Primary fixed research revision: https://github.com/WD-nanophotonics/GenericChess/blob/878dccc6ad5b18001cc604f927bbce55023b5cb9/docs/research/QUIET_DROP_AND_PVS.md
+Primary fixed collaboration summary: https://github.com/WD-nanophotonics/GenericChess/blob/878dccc6ad5b18001cc604f927bbce55023b5cb9/docs/operations/COLLABORATION_LOG.md
+Full2192 active tests and32 publisher tests pass; complete remote SHA matches.
+A first publisher test-path typo failed before push; corrected existing target
+passed the normal publisher. This indexed delivery does not assert Slack sending
+or Dot review; earlier automatic send-review blockage is retained.

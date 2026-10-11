@@ -223,3 +223,10 @@ choosing any filtered/lazy interface. This is source attribution under the pinne
 base, not a changed generator.137actual search calls include four failed12node
 calls, two profiled PVS/joint calls, one additional Native bridge profile and one
 hash-portion diagnostic; their overheads are distinguished in raw records.
+
+
+Delivery: full2192 active regressions pass; required publisher32 relevant tests
+pass and full HEAD/origin/sandbox/remote SHA878dccc6ad5b18001cc604f927bbce55023b5cb9
+matches. The first publisher invocation had a nonexistent recombined test path;
+it failed before pushing. The corrected existing path passed normally, without
+hook bypass or force push. Initial and final sources/failures remain distinct.
