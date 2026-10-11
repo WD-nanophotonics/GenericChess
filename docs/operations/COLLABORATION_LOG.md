@@ -683,3 +683,12 @@ Fixed primary code and coordination summary available to Dot:
 https://github.com/WD-nanophotonics/GenericChess/blob/54e1bb2ed961a344180e850b4f7e2e45822f3133/docs/operations/COLLABORATION_LOG.md
 The new familiar supplement follows this revision; final tested publication and
 Slack receipt are recorded separately, not inferred from this fixed link.
+
+Completed segment64.294minutes/23 research stages passes the existing finish gate;
+science remains OPEN with an executable auxiliary-expiry shadow task. Both tested
+publications and full remote SHAs were verified. One distinct189call result with
+the fixed21815c10 research/collaboration links was sent to Dot and exactly read
+back in the original technical thread (eleven posts, complete pagination).
+This establishes delivery, not Dot response/review/adoption. Earlier rejected
+results remain unretried. Only this Agent-written summary is published; raw Slack
+and account records remain private. No extra Agent or job remains running.
