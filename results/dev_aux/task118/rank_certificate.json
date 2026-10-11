@@ -1,0 +1,61 @@
+{
+  "complete": true,
+  "input_sha256": "2e719030a2082e3484cdd67c71bd25fdd5c55366b425ea838edb1355f867a13b",
+  "method": "One basis minor independently verified by120-term Leibniz integer determinant",
+  "row_indices": [
+    1,
+    2,
+    3,
+    5,
+    8
+  ],
+  "matrix": [
+    [
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      -1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      1,
+      -1,
+      1,
+      0
+    ],
+    [
+      4,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      -1,
+      0,
+      1,
+      0,
+      0
+    ]
+  ],
+  "determinant": 1,
+  "count_target_rhs": [
+    1,
+    -1,
+    5,
+    8,
+    0
+  ],
+  "exact_solution_for_reward_target": "all five coefficients1/15; nonsingular minor proves uniqueness without intercept",
+  "wall_seconds": 0.0012388997711241245,
+  "not_training_or_new_game": true,
+  "retained_failed_attempt": "Initial unconstrained minor-combination enumeration exceeded expected short cost; owned exec session58415 interrupted, exit1. No completed certificate from that attempt, no engine/training. Replaced with bounded5s basis+one-minor method; no claim original passed."
+}
