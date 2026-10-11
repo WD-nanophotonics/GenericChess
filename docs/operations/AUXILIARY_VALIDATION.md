@@ -72,3 +72,17 @@ interruptible runs are allowed; a single run expected above one hour first
 gets Dot's necessity assessment. Stop flags, human-data boundaries, machine
 safety and no uncontrolled jobs remain. A result does not automatically merge
 code or change q/evaluator/UI defaults.
+
+
+## Published collaboration summaries — user2026-10-11
+
+Primary keeps docs/operations/COLLABORATION_LOG.md as concise segment summaries
+of both participants' contributions, actual coordination, disagreements/errors,
+adopt/defer/reject decisions, efficiency evidence and unresolved issues. Update
+at completed segments and publish with reviewed Agent-only work to sandbox;
+verify the full remote SHA and provide Dot a fixed-revision link for review.
+Preserve corrections and references; exclude raw messages/account/private data.
+No invented speedup or guaranteed receipt/reply/review. No auxiliary activity
+is recorded honestly; summaries do not require waking the auxiliary for routine
+acknowledgements or adding approval/identity gates. Scientific evidence remains
+in each participant's existing purpose-specific outputs.

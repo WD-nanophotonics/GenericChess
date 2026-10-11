@@ -15,6 +15,13 @@ docs/operations/AUXILIARY_VALIDATION.md. User confirmed 开发辅助=DEV_AUX on 
 PRIMARY_SANDBOX remains the primary. Use these simple fixed routing IDs without
 per-message challenges or extra identity gates. Shared-account labels are not
 cryptographic process authentication. Other isolation/safety rules stay.
+User2026-10-11 also requires a remotely readable collaboration record. At each
+completed segment update docs/operations/COLLABORATION_LOG.md with both Agents'
+contributions, coordination, disagreements/corrections, adoption reasoning,
+efficiency evidence/limits and unresolved issues; publish reviewed Agent-only
+summaries to sandbox and give Dot a fixed-revision link. Exclude raw Slack,
+account/private inputs. This is a short evidence summary, not extra approval,
+identity challenges or a requirement to wake the auxiliary for routine replies.
 
 At every start, restart, heartbeat and after compaction, FIRST read
 .local_agent/NEXT_WORK.md in full, then this file, LOCAL_MAINLINE.md and
