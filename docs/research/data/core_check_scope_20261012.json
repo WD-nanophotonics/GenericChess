@@ -1,0 +1,43 @@
+{
+  "question": "Is an existing Native check query a supported next alternative to the residual Core gave-check consumer?",
+  "rows": 1276,
+  "unsupported": 0,
+  "histories": 74,
+  "states": 638,
+  "decision": "Finite semantic feasibility positive; do not deploy or extrapolate actor-relative/unsupported scopes. Next compare actual readonly per-instance check callback cost with restored state and old decision/work.",
+  "archive": "../archive/core_check_scope_20261012/evidence.zip",
+  "archive_sha256": "62b13516e69ee8a5a9c337136941aab45856eb4e77f0292a635c326be1e776f8",
+  "entries": [
+    {
+      "path": "declaration.json",
+      "bytes": 1267,
+      "sha256": "be7818dd3e0719103488c89b966299deda5cb8430aa54a761edd651c4acf7789"
+    },
+    {
+      "path": "initial-failure.log",
+      "bytes": 144,
+      "sha256": "a5c827ad23bf6070aa3fd39859b1369101886497c9094738748b24a4bd30e10d"
+    },
+    {
+      "path": "initial-producer.py",
+      "bytes": 3972,
+      "sha256": "0b078c546e7c85162412449777bd335462366c3e50e4cfd626c9861c03930417"
+    },
+    {
+      "path": "producer.py",
+      "bytes": 3972,
+      "sha256": "21fc250a22129043e63186a5ee2e5a2719a0d0dbb47e75e98158b609bb03e553"
+    },
+    {
+      "path": "result.json",
+      "bytes": 157834,
+      "sha256": "1fcb3f213c53809b1171546ca000876744e53abf2ede12488403dddcf8b50440"
+    },
+    {
+      "path": "samples.json",
+      "bytes": 5879841,
+      "sha256": "c28da08678c6cb8f6e7a4b91b1cd79d453086e0e4fbb56e40dece8cd5d1457d5"
+    }
+  ],
+  "limits": "Adaptive exposed generated cohort, no human labels/holdout or strength. No timing benefit measured; both owner checks include natural early terminal. Initial moved-script import failure retained."
+}
