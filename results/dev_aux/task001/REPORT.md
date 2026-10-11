@@ -79,3 +79,4 @@ Next useful action: retain the decision/work replication and narrow attribution
 result; require bilateral resource coordination before any formal wall-clock
 comparison. Preserve completed-run versus interrupted-attempt cost scope.
 No result-driven cap extension or unchanged rerun is proposed.
+`r`nCorrection2026-10-11 Task006: root repetition_counts is a compatibility projection. This report did not directly prove private _occurrences restoration; withdraw the full private-count claim. Task006 observes snapshot.updated fault leakage masked by that projection. Original raw data and completed child/public-terminal equivalences are preserved. See ../task006/REPORT.md.
