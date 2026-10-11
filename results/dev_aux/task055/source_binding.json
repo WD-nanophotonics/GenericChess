@@ -9,6 +9,16 @@
     "cshogi": "absent"
   },
   "product_sources": {
+    "generic_chess/rules/compiler.py": {
+      "git_blob_sha256": "f731d4c21776f1519f8f2948b62e2a49ffb1c315a11afd56ddeba807d76a2e9f",
+      "local_bytes_sha256": "9ef2c28c78af75a8642543ef2306645295b10ea55e512d00a35a28b799cb6937",
+      "canonical_lf_sha256": "f731d4c21776f1519f8f2948b62e2a49ffb1c315a11afd56ddeba807d76a2e9f"
+    },
+    "generic_chess/rules/execution.py": {
+      "git_blob_sha256": "19c3e797578a68d30958ec13d3dc6a77765bf5c78bb2b35379a8e0a90af1859b",
+      "local_bytes_sha256": "d04ac033d3856d8e36c22435e01003dd35359903adcce3a51b155c7fdf5ea541",
+      "canonical_lf_sha256": "19c3e797578a68d30958ec13d3dc6a77765bf5c78bb2b35379a8e0a90af1859b"
+    },
     "generic_chess/ai/alphabeta/player.py": {
       "git_blob_sha256": "61130f293c8d9551d89a8a008f70fd42cd331592a6b3ac318ccf40691cbbd5fb",
       "local_bytes_sha256": "049ab5695beb189bfe348b662e574d8b446d8eca0e6dae5d37ca7e61d3f9fe0e",
@@ -324,10 +334,13 @@
     "check_evaluator.py": "AST pass",
     "observe_drop.py": "AST pass",
     "observe_paired_leaf.py": "AST pass",
+    "verify_native_precedent.py": "AST pass",
+    "backend_contract.json": "JSON parse pass",
     "clock_conditions.json": "JSON parse pass",
     "drop_observer.json": "JSON parse pass",
     "evaluator_correspondence.json": "JSON parse pass",
     "frozen_attribution.json": "JSON parse pass",
+    "full_native_precedent.json": "JSON parse pass",
     "paired_leaf_observer.json": "JSON parse pass",
     "profile_attribution.json": "JSON parse pass",
     "utility_attribution.json": "JSON parse pass",
@@ -346,17 +359,21 @@
       "bytes": 4345,
       "sha256": "0e2c423a94466423c84843569d1c645cfc60e974c40d42a1554e205675b52a6b"
     },
+    "backend_contract.json": {
+      "bytes": 4087,
+      "sha256": "3b9e0786dd8ab36900230583077620cbbd1c64369195fa2cbb322727d4be5113"
+    },
     "bind_sources.py": {
-      "bytes": 5628,
-      "sha256": "6cca00bcf75349423d8093aeb468a1f22ab47005b63386b417cdb2cee13ccae5"
+      "bytes": 5697,
+      "sha256": "a251bb4108f3d04a4b863463f64b95a73c10eb8cc9bba55ced131f9e4cba071f"
     },
     "check_evaluator.py": {
       "bytes": 3324,
       "sha256": "6909dad3efe571b13f874eaa68922bea996a90f3ea85f9499c184b3ef1c0cbb1"
     },
     "clock_conditions.json": {
-      "bytes": 4833,
-      "sha256": "11a415bf1364d5c691678acc51ae5dd70dce75d5b3a2131255e1da3935881c64"
+      "bytes": 4972,
+      "sha256": "2f983aa7a9d61549db3fbb147215e085a5fe89cd63a9233de401c6ce3b6ffafe"
     },
     "DECLARATION.md": {
       "bytes": 1261,
@@ -381,6 +398,10 @@
     "frozen_attribution.json": {
       "bytes": 27235,
       "sha256": "91068215f6a756991e43f62d84afeb099781ea08e99a1071340878f312e415e2"
+    },
+    "full_native_precedent.json": {
+      "bytes": 4083,
+      "sha256": "d65b8b39935fa3b68c15e68d1e80444a814c7aeb00e980c6f23dfa31a9e23020"
     },
     "observe_drop.py": {
       "bytes": 5543,
@@ -407,8 +428,8 @@
       "sha256": "03948e6a376813830f80649975edf3dfeea5ec0f4ab6dba8f1905fd88ee16ea9"
     },
     "REPORT.md": {
-      "bytes": 9214,
-      "sha256": "ac929d30036b632446de43f8cc3490ed866f8d80798a67d3bdebe2ce4f153d39"
+      "bytes": 12161,
+      "sha256": "36d5e3aa710e394267357975408fbca850262af54b9378a0a28cff25211263d0"
     },
     "utility_attribution.json": {
       "bytes": 127578,
@@ -417,6 +438,10 @@
     "validation.json": {
       "bytes": 1477,
       "sha256": "f1c082a1917ebb47350093fd1137de43e131ab8cdfd6b08218dbc6bd30759876"
+    },
+    "verify_native_precedent.py": {
+      "bytes": 2262,
+      "sha256": "a16790c23cefeb0c4ae2c41b0e4c332d37f030abb2690c7140e1aa8356dd22af"
     }
   },
   "limits": "Source and record integrity only, not binary build reproduction or full semantic/history proof. Binary independently pinned in each new observer. Existing1046input replay was parsed; no pickle was loaded or evaluator replayed. Archived snapshot-failure cleanup and source-stage differences preserved."

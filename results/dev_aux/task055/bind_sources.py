@@ -5,7 +5,7 @@ B=Path(__file__).parent;ROOT=B.resolve().parents[2];REV='ee48d0a55c7bda3d702f45c
 def sha(v):return hashlib.sha256(v).hexdigest()
 def git(rev,p):return subprocess.check_output(['git','show',rev+':'+p])
 def canon(v):return v.replace(b'\r\n',b'\n')
-paths=['generic_chess/ai/alphabeta/player.py','generic_chess/ai/alphabeta/search.py','scripts/search_backend_comparison.py','scripts/research_record.py','scripts/chess_development.py','generic_chess/ai/evaluation/evaluator.py','generic_chess/ai/evaluation/config.py','generic_chess/ai/alphabeta/native_legality.py','generic_chess/core/search_runtime.py','generic_chess/core/attacks.py','generic_chess/core/terminal.py','generic_chess/native/compiler.py','generic_chess/native/semantic.py','generic_chess/_native/native_module.c','generic_chess/_native/native_eval.c','generic_chess/learning/shogi_rules.py']
+paths=['generic_chess/rules/compiler.py','generic_chess/rules/execution.py','generic_chess/ai/alphabeta/player.py','generic_chess/ai/alphabeta/search.py','scripts/search_backend_comparison.py','scripts/research_record.py','scripts/chess_development.py','generic_chess/ai/evaluation/evaluator.py','generic_chess/ai/evaluation/config.py','generic_chess/ai/alphabeta/native_legality.py','generic_chess/core/search_runtime.py','generic_chess/core/attacks.py','generic_chess/core/terminal.py','generic_chess/native/compiler.py','generic_chess/native/semantic.py','generic_chess/_native/native_module.c','generic_chess/_native/native_eval.c','generic_chess/learning/shogi_rules.py']
 product={}
 for p in paths:
  local=(ROOT/p).read_bytes();fixed=git(PRODUCT,p);assert canon(local)==canon(fixed),p
