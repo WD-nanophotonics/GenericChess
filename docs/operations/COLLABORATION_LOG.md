@@ -482,3 +482,79 @@ controls. Concurrent load limits timing; raw Slack/account/private inputs stay l
 
 Pinned auxiliary report: https://github.com/WD-nanophotonics/GenericChess/blob/cb3ce96d900b6c494754c57694277e349522bccb/results/dev_aux/SEGMENT_20261012_9.md
 Primary evidence: docs/research/CORE_AVAILABILITY_COST.md and data/core_availability_20261012.json.
+
+## Child-probe closure and familiar availability — 2026-10-12
+
+PRIMARY_SANDBOX compares standalone check, duplicate Native probes, exact
+child-projection sharing, fixed-work transfer and32 public deadline calls.
+Small shared savings do not change delivered support; product check hook is
+withdrawn, source and negatives retained. Original summary incorrectly said
+all standalone timings slower: one0.8% faster, three6.5-7.3% slower. Explicit
+correction retains the original. Delivery list/scalar TypeError occurred before
+search; v2 completes original budgets. These are primary errors, not auxiliary
+findings. A documentation cp1252/UTF8 read failed before mainline mutation;
+corrected explicit UTF8 read changes no research. Actual full test count2170
+supersedes a mistaken2169 expectation in a summary assertion before writes.
+
+Primary16 familiar availability calls: ChessEP16seconds gains D4 versus D3 in
+both orders,64seconds same D4; Shogi remainsD1/q0. Public availability opt-in
+preserves four adapter decision/work pairs and unsupported/S4 fallback.
+Default/UI/evaluation/search policy stays fixed.2170 full active and61 focused
+product/fallback tests pass; groups overlap. Full-history q-bound shadow finds
+zero prior-key hits in7727calls. Existing PVS is compared under changed semantic
+leaves, distinct from old weighted-leaf controls. Exact evidence is in
+CORE_PROBE_COST.md and data/core_probe_20261012.json.
+
+DEV_AUX c41dbb38af0289fdf15397ada58fa22a07ff9fbf report and complete associated
+thread are read:60 synthetic controller checks;432training+48holdout frozen
+unexecuted, mature engine games zero,4551 launch failure retained. Queen/pawn
+one-move control has queen g6g7 immediate mate, not a two-step result. Synthetic
+controls do not establish a mature adapter, training or real per-move budget
+persistence. Primary adopts limits without independent rerun/merge, duplicate
+launch, routine receipt or cross-checkout writes. Auxiliary necessary engine-path
+user-decision early ending differs from normal60minute research acceptance;
+attributed conversations grant no new primary authority.
+
+Dot complete technical reply supports closing check integration without more
+check batches/cap extensions, and fixed compiled semantics for identity reuse.
+The existing fixed provider satisfies this boundary; no new cache protocol.
+Dot assesses supplied evidence, not unpublished source or independent execution.
+Full raw channel/thread reads remain private; latest read no new messages.
+CLI status for the directly sent technical root is NEVER_SENT because no CLI
+ledger binding exists. Actual Slack receipts and reply association are retained
+separately, never reset/fabricated. No user-directed inquiry uses a follow-up.
+
+Scoped communication changes a concrete choice; no observed conflicts or
+cross-writes, no need to wake auxiliary for routine coordination. Ordinary load
+is normal: focused product tests overlap final Shogi cells, full tests overlap
+PVS. No pause requests or exclusive-machine speed claims. Corrections, withdrawn
+interface, producer, source/tests/archive review cost engineering and tokens;
+net savings and exact token totals are unknown without a counterfactual.
+No guarantee of instant message/reply, mature execution or full-domain gains.
+Search-first mainline and later pricing/learning remain; manuals need no new
+identity/approval framework. Fixed collaboration link goes to Dot after publish;
+delivery is distinct from subsequent review/adoption.
+
+Pinned auxiliary report: https://github.com/WD-nanophotonics/GenericChess/blob/c41dbb38af0289fdf15397ada58fa22a07ff9fbf/results/dev_aux/SEGMENT_20261012_10.md
+Primary evidence: docs/research/CORE_PROBE_COST.md and data/core_probe_20261012.json.
+
+Additional primary limit: four actual opt-in ChessEP16second calls under
+PVS/profile overlap returnD3 in both arms/orders, unlike earlier research-adapter
+D4 gain. Both results remain; interface parity does not guarantee deadline gains.
+The single Shogi profile retains max_depth12 despite a planned/row-label2 due
+source substitution order;8192nodes deliversD1/partialD2, no D3. Correction
+preserves source/raw scope and does not rerun. Actual30426 quiet-drop exclusions
+still pay Core child/history/terminal work; no metadata-only generic bypass.
+
+Primary semantic-leaf PVS result:8completeD3calls preserve decisions with less
+q work;16equal-time calls deliverD3 versusD2 at16s on1006/1008bothorders,
+30s sameD3. This new evaluator premise does not erase old weighted-leaf PVS
+negatives or establish stronger moves. No default/UI adoption; equal-node
+attribution is declared separately. Dot has not independently executed these
+new measurements; its forthcoming fixed-link review remains separate.
+
+Equal-node1008 evidence:32768 PVS D3 vsbaselineD2 bothorders;49152bothD3,
+but PVS wallcost higher29.68/29.73 vs27.97/28.03s. Preserve this adverse cost
+alongside support gains. Next1053/1054 transfer declared; primary built actual
+ply8 ongoing readiness roots with23/92legal moves, zero new searches. No
+auxiliary/Dot contribution or independent holdout status is invented.

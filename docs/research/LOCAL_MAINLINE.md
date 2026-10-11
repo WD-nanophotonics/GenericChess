@@ -82,6 +82,20 @@ to repeat. Mature engine launch/variant limits stay. Full Nativeq0, material
 teachers, Native-legalityq4 and this thin driver remain distinct routes. Ordinary
 concurrent computation limits timing interpretation, not permission to continue.
 
+Current child-probe decision: CORE_PROBE_COST.md closes the optional Native
+check hook after32 public calls deliver identical support; the small shared
+projection saving remains research-only. Familiar availability transfer16calls
+shows ChessEP16s NativeD4 versusCoreD3 in both orders,64s sameD4; Shogi-drop
+remainsD1/q0 at16/64s. Actual public availability opt-in preserves four complete
+adapter decision/work pairs, defaults off and keeps unsupported/S4 Core fallback.
+A full-history q-bound shadow has zero prior-key hits in7727eligible calls;
+no new q cache. Existing PVS under current semantic leaves preserves fourD3decisions while
+reducing q work;16public calls deliverD3 versusD2 at16s on1006/1008bothorders,
+30s sameD3. Actual product availability Chess16s run under overlapping load
+returnsD3botharms, negative transfer retained. Next examine equal-node PVS
+support and a limited additional-rule transfer before any default adoption.
+Data: data/core_probe_20261012.json. No UI or evaluator/search-default changes.
+
 ## Retained long-term objectives and evidence discipline
 
 Two long-term lines remain: rule-only generic piece-value generation with

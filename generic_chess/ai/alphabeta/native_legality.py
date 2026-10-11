@@ -58,6 +58,41 @@ class NativeSemanticLegalityProvider:
     def last_call_metrics(self):
         return getattr(self._metrics_local, "last", {})
 
+    @property
+    def availability_metrics(self):
+        """Current thread's actual readonly availability calls, independent of legality."""
+        return dict(getattr(self._metrics_local, "availability", {}))
+
+    def has_legal_action(self, position, checkpoint=None):
+        """Core pre-adjudication availability: readonly bool, or None to decline.
+
+        This predicate deliberately uses ply0 and no imported history. Core
+        retains actual-ply, repetition, declarations and terminal precedence.
+        A one-ply ruleset with S4 reply guards needs Core's existing fallback;
+        Native's nested reply cutoff cannot implement that predicate.
+        """
+        from ...native.semantic import pack_position, has_legal_action
+
+        metrics = getattr(self._metrics_local, "availability", None)
+        if metrics is None:
+            metrics = dict(calls=0, imports=0, queries=0, declines=0)
+            self._metrics_local.availability = metrics
+        metrics["calls"] += 1
+        if checkpoint is not None:
+            checkpoint()
+        if position.ruleset_fingerprint != self.native_rules.fingerprint:
+            raise ValueError("Native availability compiled source mismatch")
+        if self._requires_reply_probe and self.compiled.support.max_ply <= 1:
+            metrics["declines"] += 1
+            return None
+        packed = pack_position(self.native_rules, self._state_only_payload(position, 0))
+        metrics["imports"] += 1
+        value = has_legal_action(self.native_rules, packed)
+        metrics["queries"] += 1
+        if checkpoint is not None:
+            checkpoint()
+        return value
+
     def supports_position(self, position, ply_count):
         """Native's state-local cutoff cannot implement Core continuation."""
         # S4 no-reply conditions test a child through S3. Native also filters
