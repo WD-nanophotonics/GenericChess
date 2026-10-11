@@ -238,6 +238,13 @@ def _sem_slot_guard(sg, n, fingerprint):
 
 
 def _sem_effect(e, n, type_map, fingerprint):
+    # On move/shift/remove this is a filter, not a concrete type operand.
+    # Core treats "any" as no constraint. Lower it to the equivalent absent
+    # filter so existing Native binaries need not resolve a wildcard as a type.
+    piece_type_ref = e.piece_type_ref
+    if (e.kind in ("move", "shift", "remove")
+            and piece_type_ref is not None and piece_type_ref.kind == "any"):
+        piece_type_ref = None
     return {
         "kind": _sem_enum(_SEM_EFFECT_CODES, e.kind, "effect kind", fingerprint),
         "from_ref": (
@@ -257,8 +264,8 @@ def _sem_effect(e, n, type_map, fingerprint):
         ),
         "piece_owner": _sem_enum(_SEM_OWNER_CODES, e.piece_owner, "piece_owner", fingerprint),
         "piece_type_ref": (
-            _sem_type_ref(e.piece_type_ref, type_map, fingerprint)
-            if e.piece_type_ref is not None
+            _sem_type_ref(piece_type_ref, type_map, fingerprint)
+            if piece_type_ref is not None
             else None
         ),
         "disposition": (

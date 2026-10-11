@@ -129,6 +129,14 @@ Request GC-SLACK-20261006-132838-03368ffa; raw reply remains in the ignored
 local Slack record. Dot reviewed the request/user preference and earlier public
 cost records; it did not run today's69-edge tree or change machine permissions.
 
+Keep work centered on concrete results. Extra engineering or validation must
+address an observed defect or a specific serious foreseeable error, not a growing
+hypothetical-risk checklist. Keep current entry files short; use existing Git and
+purpose reports for history rather than duplicating whole exports/index layers.
+Measure actual disk use before deleting only demonstrably redundant owned output.
+Communicate with DEV_AUX for dependencies, blockers or decision-changing results,
+not routine receipts/repeated synchronization. Report concise new conclusions.
+
 Use a short continuation record: what is unknown; which possible outcomes change
 the next decision; expected incremental resources. Include implementation and
 explanation/token costs. No numeric ROI fiction or new approval framework.

@@ -122,3 +122,41 @@ Dot此前对固定报告的三项澄清已采纳。本段当前已读新根及�
 旧窗口声明、原始48调用结果和当时评估保留为历史；并行负载未知仍限制计时归因，但并行运行本身不再定性为违规。新政策不把旧计时曲线升级成无噪声加速证明，也不触发补跑。双方继续独立工作，以固定输入、实际计数及范围清楚的比较推进主线。
 
 本轮新增8个生成规则q排序控制及2个透明路径捕获：seed15 TT词典序的11步路径公开合法，终点确实达到checked qdepth8；排序侧完成D3，但该对照不构成完整D3分值胜负。回到跨backend能力/成本归因，未改引擎或UI默认。最新用户方向询问另开Slack新根，旧待reconcile账本未重置；Dot回复尚待读取，不把投递冒称评审。
+
+## 2026-10-11: broad capability, concrete semantic repair and concise coordination
+
+PRIMARY_SANDBOX completed8 physical-consumer controls,32 builtin capacity calls,
+24 generated/mixed calls, then localized and repaired three omitted Native
+wildcard captures. Four post-fixD4 controls agree in decisions/work;2000actual
+frontiers match;8 new mixed time controls lose the old apparent NativeD6 gain.
+Original mixed results are retained as semantically confounded. Current source
+and scientific evidence are described in Q4_BACKEND_CAPABILITY.md.
+
+DEV_AUX Task054 at918ef2bf89344f02c53d860b5e5b58c22b835f0f independently parsed
+existing80 minimal q0 bridge records. Primary read its fixed report/data and
+accepted by-root cost differences, not an independent timing rerun. Existing
+q0 no-memo provider/physical/terminal profile was supplied with its already
+published archive link; this avoids duplicating the batch. Different memo/q4
+conditions remain distinct. Dot's current reply supports search-first, concise
+entries and concrete results; no new authority or identity framework is inferred.
+
+Communication used useful dependency evidence, without routine receipt requests,
+new Agents or pause windows. Primary supplied the actual wildcard defect and
+repair progress in the existing direction-request thread. Delivery is not Dot
+review or auxiliary adoption. No observed cross-checkout writes or computation
+state alteration. Ordinary parallel load is not a violation. Net time/token
+savings and cooperation efficiency lack a single-Agent counterfactual.
+
+Primary trimmed the current mainline and removed only183hash-identical owned
+export ZIP copies (78,852,514bytes); unique evidence/auxiliary boundaries remain.
+A proposed auxiliary-policy tail truncation was rejected and not performed;
+safer mainline-only consolidation succeeded. Initial analysis field errors,
+a helper-test setup error and shared-temp fixture failure were corrected and
+kept distinct from engine results. No whole-machine cleanup or guaranteed
+wake/reply claim. Dot receives the tested publication's fixed-revision report
+and this summary; any later reply requires explicit evaluation.
+
+Latest supplement read in full: auxiliary reused the supplied16-call archive
+rather than rerunning it. Adopt Dot's leaf-input/call-count and adapter-cost
+distinction; auxiliary's unpublished static Native/Core values remain reported
+evidence, not primary independent verification. No repeated batch or new task.

@@ -16,7 +16,14 @@ measure infrastructure defects when they impede these judgments. Distinguish
 rule execution, representation, repeated scheduling, algorithm optimizations,
 actual budget completion and useful decisions. No speed/Elo parity threshold.
 
-The latest concrete question is the first-completion boundary on the frozen
+Dot direction reply1791706985.929979 confirms search/backend attribution first.
+Adopt stopping the completed seed15 local trace; do not add more edge-case
+experiments automatically. Next measure actual q4 caller physical work by child
+outcome and place it beside the existing q0 bridge, with different horizons
+explicit. Reduce repeated context and low-value coordination. Disk cleanup needs
+actual occupancy evidence and preserves unique experiments/user files.
+
+The retained UI question is the first-completion boundary on the frozen
 remote UI99c97 one-second Chess path. Its persistent service/controller is now
 reproduced; no user game record has been supplied, so a reported user loss is
 not an independently reproduced bug. Pin UI revision, evaluator/material,
@@ -24,259 +31,47 @@ actual Core/Native/fallback, configured/effective limits and returned/committed
 action. Small declared games locate candidate losses; fixed-state/history
 replay attributes them. Keep the UI branch frozen during sandbox research.
 
-Latest choice: retain the small compile-owned geometry-tuple drop classification,
-with unchanged current guards, S3/S4, checkpoint order and terminal authority.
-Final2063active tests pass.59392availability queries improve locally0.825-0.965x;
-64fixed caller controls are mixed0.816-1.004x and64existing time calls keep
-choices/completed depths. Constructor setup costs and owned632/2264bytes remain.
-Generated/mixed and adjacent Native boundary actual callers preserve finite work.
-Quiet-q classification and recursion already share formal children. On the old
-weighted quiet root, interrupted iteration2 dominates work; eager legality then
-lexical traversal gives zero immediate single-child handoff matches. Defer that
-handoff, no eager/cross-state frontier cache. Private2048typed-token memo preserves
-275mixed lifecycle children and typed alias checks but has adverse cases and no
-deeper completion in64time controls; defer product memo. Same minimal-AB D2
-Core/hybrid/specialized bridge retains a substantial residual gap even with memo.
-End this availability microdispatch round. A new one-root completedD2 curve uses
-213/1050/8010nodes for ordinary-q0/1/4 with different scores; q4 costs6.8seconds
-and its qdepth3 alone rejects22946formal children. Exact action-signature encoding
-about0.24seconds does not motivate a lazy-history-only solution; defer it. Four
-finite controls show terminal-only quiet inclusion and mandatory checked evasions.
-35187excluded children have about1.06s component diff/hash and0.22s count/history
-context work. Defer lazy TT snapshots pending physical trial/transition/attack
-cost attribution by child outcome before a two-phase execution boundary,
-with fixed evaluation/q/history and actual backend. Keep physical rule execution,
-representation and interrupted work separate. Do not
-change q/evaluator/UI defaults or rebuild the Windows-blocked DLL.
-Latest exception repair: remove the bridge-only child-occurrence cleanup condition
-when snapshot construction fails before history append; actual mutable counts,
-not root projections, establish restoration.12 product boundary controls and4
-actual Core/Native player fault cells retain public semantics. Same-Runtime reuse
-can false-draw before repair, but the inspected UI/player creates a fresh Runtime;
-no observed user-game attribution. Private immutable extent and Native syntax
-controls add no completion gain in64 time calls each; executed-write tracking is
-mostly adverse. Defer these product caches. Legacy evaluator occupancy indexing
-has finite map/work agreement but hook-compatibility failures and no completion
-gain in64 controlled time calls; defer deployment. A changed formal-only write
-witness avoids tracking legality/nested work; finite mixed/hash/count validation
-passes but64 fixed+4D2 caller costs remain mostly adverse; defer this witness
-without equal-time expansion.
-Evidence:RUNTIME_ROLLBACK_AND_COST.md; data/runtime_cost_controls_20261011.json.
-Subsequent hand copy-on-access64 fixed+4D2 costs remain mostly adverse;
-quietD2 ratio1.027. Evaluator shallow metadata forwarding removal retains3517
-map/score checks and8minimalD2 traces but unconditional construction breaks
-pure-semantic material-only input. Its construction-inclusive64 fixed+4D2
-costs are mixed, quietD2 ratio0.997. Defer both private candidates without
-equal-time expansion; keep individual adverse/outlier pairs and scope failure.
-Opaque imported-key migration now prepares target storage and resolves the old
-removal index before mutation. Independent constructor and later comparison
-counterexamples are retained;71 focused and2083 full active tests pass.
-Actual counts, snapshot consistency and same-instance retry are the acceptance
-boundary, not universal OOM recovery or natural UI attribution.
-Evidence:data/hand_and_metadata_cost_20261011.json.
+## Current measured question
 
-Mechanical per-pattern effect specialization preserves finite transitions,
-callbacks/mixed state and8D2 traces, including four generated inputs via the
-existing explicit semantic adapter. But64fixed+4D2 caller costs are mixed,
-quietD2 about1.000, and all reused fixed batches worsen after preparation.
-Defer it without equal-time expansion. A distinct actually built shared-kind-
-sequence prototype reduces25/155pattern code copies to6/3templates, preserving
-the same finite contracts; new64fixed+4D2 actual caller costs are adverse on7of8 warm fixed roots;
-quietD2 is1.008, with setup charged separately. Defer shared deployment and
-equal-time expansion. Select physical immutable-child publication attribution
-across all actual transition consumers, including trials outside the frontier
-wrapper: a new four-caller stack attribution finds1 initialization and119
-formal-push terminal-existence trials in both Core/hybrid arms. Include these
-consumers and validate transparent work/state before judging leverage. No full-kernel
-or dominant-cost claim follows. A separate58transition/168callback addendum covers
-shift/type/bool finite contexts for the shared variant; copied-global hook and
-full-compiler scope limits remain. Evidence:MECHANICAL_EFFECT_EXECUTION.md;
-data/compiled_effect_20261011.json; compiled_effect_extra_20261011.json;
-shared_template_cost_20261011.json; physical_outside_consumer_20261011.json.
+Dot reply1791706985.929979 confirms search/backend attribution first. Adopt
+stopping the completed seed15 local trace and reducing low-value coordination.
+This is research advice consistent with direct user instructions, not authority
+from an attributed other-user conversation. No more micro-optimization backlog.
 
-Latest calibration: retain typed support.max_ply provider repair. Pure semantic
-IR previously raised or disabled Native; old/repaired strict actual routes on
-the original ChessD2 and mixed512 callers retain3179/145 Native calls and exact
-work, so those prior cost attributions remain valid. Direct nonboard delta and
-packed full-frontier existence controls give no completion gain and stay private.
-Mixed physical transfer has finite excluded-child evidence; capped Shogi-drop
-has none. Do not mistake configured backend, cached frontier invocations or
-nested Core terminal work for actual Native calls. Next select a caller bottleneck
-with greater measured leverage; consult independent DEV_AUX evidence when ready.
-Evidence:data/provider_route_20261011.json.
-Evidence:AVAILABILITY_AND_Q_EXECUTION.md; data/availability_core_20261011.json;
-data/early_exclusion_contract_20261011.json; representation_outcome_20261011.json.
-Evidence:RUNTIME_AUX_IDENTITY.md; data/runtime_aux_identity_20261011.json.
-Evidence:COMPLETION_POLICY_ATTRIBUTION.md; data/completion_policy_20261011.json.
+Seed15's11-action public-legal checked path reaches qdepth8; transparent capture
+preserves prior work/action and actual root. Lexical retains D2/5261; ordered
+completes D3/5269. No concrete implementation defect was established. Preserve
+capped UNKNOWN status and stop this local trace. Same-q aspiration/fail-soft/MTD
+have conditional and opposing results; keep them diagnostic, no default change.
 
-Retained preceding repair: logical-default history identity and charge history import
-against the existing search deadline. The actual eight-ply declared repetition
-counterexample was Session DRAW but Runtime ONGOING. Private default omission
-now follows public logical identity, preserving nondefaults, foreign slots and
-scalar types; full-history reconstruction and exact collision checks recover.
-An import-local public-key hash map removes duplicate history/occurrence hashing
-and is discarded on return. Supplied400ply import48ms becomes3.3–3.7ms;
-101unique-history import33ms becomes18.5ms. Short-root adverse cost and expensive
-synchronous reconstruction remain. No instant-cancellation or hard deadline claim.
+Current32-call four-root q4 curve is complete: Native gains one layer on
+Shogi-middle at16/64seconds, other roots have equal depth, and no action changes.
+Shogi-drop retainsD1/q0 even64seconds. Eight transparent physical-cost calls
+show terminal39-41% and representation27-28% of rejected-child push clocks;
+these nested clocks are not an obtainable speedup or q0/q4 horizon equivalence.
 
-The actual one-second three-arm caller bridge on one exposed old queen parent
-uses matched teaching material and existing finiteD2 labels. Public q4 retains
-D1/g4g7/-8000finiteD2 (ordinary-q0 reserve, checked extensions retained)
-while unchanged minimal Core/specialized AB choose
-D2/D4 a2a3/-1000. Productq0 and completedq1 experimental reserve refresh choose
-e1d1/-1000; configuredq4D2 never completes in that refresh control. This selects
-completion scheduling as a concrete next issue, not microgeometry, default
-promotion or strength. Work definitions and evaluator/source stages stay distinct.
-Twelve final generated03 public callers retainD3/same return and commit with
-actual hybrid Native calls/no fallback; prior tuned direct-search extra layers
-cannot be transferred to this ordinary caller condition. Keep UI99c97 frozen.
-Evidence:CALLER_HISTORY_CONTRACT.md; data/caller_history_20261011.json.
+The24-call generated/mixed transfer exposed a concrete Native legality defect:
+three wildcard victim captures were missing (root48/45), not a TT difference.
+Compiler lowering of any move/shift/remove filter to absence repairs the deployed
+path. FixedD4 four-arm decisions/work agree;2000actual frontiers/bindings match.
+Original mixed curves remain semantically confounded. Fresh opposite-order
+4/16s mixed controls both completeD4/D5; no speed/strength claim. Details and
+original failures: Q4_BACKEND_CAPABILITY.md and data/q4_caller_20261011.json.
 
-The explicit validated generated legacy-to-semantic compilation entry and
-alternate-start checking history repair remain selected. Generated/profile,
-typed alias, warm/PV and small traversal negatives retain their original caps,
-conditions and failures in GENERATED_SEMANTIC_BRIDGE.md and the new caller
-archive; no arbitrary DSL dedup or full Native history-policy acceptance follows.
+Next choose a changed-premise reduction of Core child/runtime representation
+work preserving terminal/check/history semantics. Do not repeat negative Native
+terminal-availability substitution or add a microtest backlog. Metadata-only
+quiet filtering cannot drop terminal/check inclusion. Evidence precedes prototype.
 
-Prior incoming source dispatch retains its finite semantics and drop fixed-work
-savings; warm-root and deferred-binding limits remain in their purpose documents.
-Full Shogi-history/blocked-DLL boundaries are unchanged. Ordinary eager binding
-remains selected after allocator-fault fallback differences in the deferred trial.
+The existing minimal/backend bridge and D4 material teacher use q0, so their
+depths are not aligned with q4. Full Native search kernel remains blocked/restored;
+Native legality plus Core is separate. Mature launch/variant failures remain
+recorded, not grounds for security bypass or claiming executed comparisons.
+No q/evaluator/UI default changes, old failure erasure or automatic budget growth.
 
-## Current selection: phase, ordering and bound interaction, 2026-10-11
-
-Physical immutable publication clocks remain a narrow3.53–4.64percent component;
-mutable publication/LRU, old PVS time curve and startD2 aspiration stay deferred
-under their original conditions. No DLL rebuild, evaluator/UI/qdepth/default change.
-Same-q4 predecessor with delta50/startD3 reduces finite EP/Shogi D3 work, but48
-opposite-order4/8/16second aspiration calls add no depth/score/action gain.
-Eight explicitly adapted mixed/hybrid-generated calls instead increase work in
-all four pairs. Do not treat phase eligibility as a portable window or fit seeds,
-widths or human labels. Arithmetic score-unit conversion is separate from fitting.
-
-Private memory convergence is adverse with current q. A changed fail-soft q
-premise tightens valid bounds and helps Shogi memory work, but EP stays adverse.
-Generic TT aspiration has opposite results: mixed5152to2809, generated8743to11031.
-A transparent trace shows tighter root lower bounds changing widening/recovery
-work; ordering-only TT separates retained move order from bound authority.
-Eighty narrow/full q probes plus8full references, ten lifecycle checks and four
-independent selected-child noTT calls support their stated finite value/restoration
-scope, not universal deployment. Defer product MTD and fail-soft, capacity growth
-and unchanged elapsed expansion; preserve negatives and original cap failures.
-
-Existing ordered-q reduces finite EP/Shogi D3 work with the same17/12 action/value.
-Its independent48call time curve retains the historical resource-condition
-qualification. User2026-10-11 clarifies that concurrent local work is normal,
-not a collaboration violation; no source-only windows or requests to pause
-other Agents/projects. Unknown background load limits clean timing attribution,
-not actual work/semantic observations. Preserve raw results and old declarations,
-without a clean-subset claim or automatic rerun. Five public fixture checks
-expose metadata-rank versus actual child-effect differences; semantic support
-remains correct. New generated8 seed13/15 fixed-work controls retain values,
-except seed15 TT lexical q aborts at hard8 and retains D2/5261; ordered q
-completes D3/5269. Transparent two-arm capture now matches prior work/action exactly; the11-action
-lexical path is public-legal and ends checked at qdepth8, with matching public
-position/ply/terminal and restored actual root. Stop this narrow window/bound
-round; next return to cross-backend capability and cost attribution, choosing
-a distinct fixed input where existing controls leave a concrete ambiguity.
-No q/default change or automatic horizon increase.
-
-DEV_AUX fixedcaa86ded Task038–042 report/source scope and33058184 collaboration
-supplement are explicitly read/adopted without auxiliary CPU reruns or source
-merges. Primary remains sole sandbox publisher. Full collaboration summary,
-failures, measured counters/bytes and unmeasured engineering/token costs are in
-COLLABORATION_LOG.md and the new purpose archive. Old strict Slack inbound
-persistence/reconcile remains unresolved; readable results do not erase it.
-Evidence:PHASE_AWARE_SEARCH_WINDOWS.md; data/phase_aware_transfer_20261011.json.
-Earlier physical/PVS evidence:SEARCH_SCHEDULING_DIAGNOSTIC.md;
-data/physical_publication_20261011.json.
-
-## Latest reserve and mechanical evidence —2026-10-10
-
-The initial UI diagnostic records30 returned=committed moves,24D1 completions
-and two direct queen losses. FiniteD2 material exposes better choices. First
-ordinary q is reserved as0 beforeD1; a deeper timeout can retain that greedy
-result. Unprotected first-q1 improves8/worsens1/ties21 on cold parents but
-starves50/100ms controls of every completion: keep that candidate diagnostic.
-The subsequent protected reserve completes cheapD1, refreshesq1 under the same
-budget and replaces only on completion. On30 old cold parents it improves7/
-worsens1/ties22 against unchanged finiteD2 material labels; the1000 inverse
-case is retained and independently explained by q1 check-evasion extension.
-
-The explicit `phase_bypass` diagnostic now disables TT in cheap-q0/q1 and
-restores the caller's configured TT choice afterward; default diagnostic policy
-remains `clear`.24 cold/transfer/cancel/q0 controls and224 node-cap/caller-TT
-pairs retain state/history and phase contracts.66 semantic-mechanism/rectangle
-calls extend supplied-evaluator search scope without default rectangle-price or
-Native claims. Original q4 caps remain UNKNOWN. Warm q4 reuse is selective;
-completed D2 or a returned PV is not a uniform finite-horizon certificate.
-
-Four new32ply frozen-service games produce64 returned=committed moves;32bypass
-refreshes finish and27 are final returns. Their direct-loss flags12 versus5
-are unlike-trajectory observations, not causal errors/WDL/Elo. Eight actual
-controller handoffs reject cancelled/stale results and accept a legal completed
-node-limited reserve. Internal search restoration never grants commit authority.
-
-48 same-TT-input comparisons on the two old queen roots and old whiteply17
-reconstruct warmth from13 baseline searches on actual recorded prefixes.
-50/100ms keep cheapD1;1second improves both queen material rows7000→0 and
-repeats the inverse0→1000. At4seconds the black queen root completesD2 in both
-arms with the same move. No configured-q4 completion was displaced here; the
-small set cannot prove absence of opportunity cost. Dot's complete technical
-review supports experimental use and this check, not a default change or a new
-admission gate. It did not independently execute the unpublished implementation.
-
-Compile-owned actor capture/type dispatch is the sole new ordinary-execution
-repair: original geometry, path/state predicates and current-type eligibility
-remain authoritative; missing metadata falls back and replacement rebuilds it.
-32 installed fixedD2 pairs retain actions/scores/work; Shogi-drop local mean
-wall falls about23%, with jitter and adverse Chess-middle/EP means retained.
-32 prototype same-time calls add no layer/action benefit.467 legal children/
-32 positive actor witnesses/467 cancellation probes agree; the earlier492text
-is explicitly corrected without altering raw data. Owned containers336–1592bytes
-exclude borrowed IR objects; setup timings are mixed, not a compilation gain.
-
-Public DSL aux scope/owner/token/side coverage adds48 configurations/720 legal
-children and reply frontiers to the earlier216 typed controls. A distinct scalar
-spatial-carrier prototype has mixed fixed cost and no gain in32 time controls;
-defer it along with the old eager guard-line and parent-local memo alternatives.
-Evidence: PHASE_BYPASS_DIAGNOSTIC.md and data/phase_bypass_20261010.json;
-RESERVE_REFRESH_DIAGNOSTIC.md and data/reserve_refresh_20261010.json retain the
-original cohort, warm producer/request contracts and failed prototypes.
-
-## Retained search attribution and deployment boundaries
-
-The identical lexical minimal-AB bridge separates backend from algorithm cost;
-actual node definitions, root coverage, preparation, warm execution, polling,
-return replay and aborted attempts remain distinct. Mature engines with
-unaligned evaluation are overall references, not material-only search controls.
-Fixed primitive cost and equal-time decision utility must be reported separately.
-
-Mechanical incoming attack paths, target iterators, semantic budget dispatch,
-qclassification/push sharing, compiled fixed event triggers and immutable public
-Native action reuse have scoped execution evidence. Additional parent caches,
-terminal-prefix reuse, owner-only attack enumeration and Runtime PV migration
-are deferred/rejected in their recorded forms. Negative outcomes limit the
-measured claim, not all future premises; no unchanged reruns or cap growth.
-
-Core/specialized Standard Shogi exact repetition history and no-legal-move loss
-were repaired. The full Native kernel still cannot accept that semantic terminal
-policy; public rejection remains explicit. C root/window/horizon variants have
-separate executed and unexecuted build evidence. Final product deployment was
-blocked by Windows Application Control and product source/installed baseline
-were restored; full-rootOFF remains default. Prior timings are not acceptance
-of an unexecuted DLL, and no security bypass follows. Supported Native legality
-plus Core remains a separate route.
-
-Warm TT mixing and selected-PV bound ties have observed counterexamples.
-Keep exact-depth/noTT diagnostic controls separate from selective cached search;
-returned illustrative lines are not independent finite-value/mate witnesses.
-Generated4seed21's hard8 checked path has full public history replay and remains
-capped; no stand-pat in check, repetition patch or automatic horizon increase.
-Actual semantic qsupport follows enemy removal/current-board and base-hand
-inventory, checks and terminals. It is limited tactical support, not universal
-quiet-action completeness. Preserve dynamic guards, promotion, drops, auxiliary
-state and relevant history across every optimization.
+Detailed previous selection/history is recoverable at published Git
+ ee48d0a55c7bda3d702f45ce2dc4162cc3bbc0ac and purpose reports below. It is no longer
+repeated in this current mandatory-read entry. Nothing is copied or deleted.
 
 ## Retained long-term objectives and evidence discipline
 
@@ -295,7 +90,7 @@ does not refute a fixed vector averaged under an explicit play distribution.
 Static tables remain candidates/cheap baselines, not a required predecessor.
 Small local training is authorized; any single run expected above one hour
 first obtains dot's necessity assessment, with cheaper alternatives recorded.
-This is distinct from a60–90minute Agent segment, not a general compute gate.
+This is distinct from a60â€“90minute Agent segment, not a general compute gate.
 
 Equivalent supported rule encodings and finite-board saturation must preserve
 semantics. Separate raw opportunity, normalization, rounding/clipping and
@@ -311,6 +106,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Currentq4 capability, caller costs and observed wildcard capture repair|Q4_BACKEND_CAPABILITY.md; data/q4_caller_20261011.json|
 |Same-q windows, score units, memory/q bounds, ordering and resource failure|PHASE_AWARE_SEARCH_WINDOWS.md; data/phase_aware_transfer_20261011.json|
 |Physical publication, PVS work/time and currentPython warm horizon|SEARCH_SCHEDULING_DIAGNOSTIC.md; data/physical_publication_20261011.json|
 |Availability dispatch, quiet-q execution and representation/residual costs|AVAILABILITY_AND_Q_EXECUTION.md; data/availability_core_20261011.json|

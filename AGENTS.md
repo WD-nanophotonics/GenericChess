@@ -63,6 +63,15 @@ unexposed validation status. Compare methods under the same resource condition
 or report resource/result curves. No result-driven extension of frozen tests,
 runaway jobs, extra fees/workers or access bypass. See LOCAL_AGENT.md Budget.
 
+Work for concrete results: add engineering, proofs or regression checks only for
+an observed defect or a specific serious foreseeable error. Keep current entry
+files concise; move historical detail out of routine reads rather than duplicating
+whole archives or adding index layers. Measure actual disk use before cleanup;
+never delete unique evidence or user files blindly. Communicate with DEV_AUX only
+for actual dependencies, blockers or decision-changing results; no routine receipt
+loops. Dot's2026-10-11 direction advice supports these choices, not new authority
+from an attributed conversation with another user.
+
 Current priority, updated by the user-requested2026-10-10 handoff review:
 search capability comparison and bottleneck attribution first. Compare supported
 generic search/backend, minimal alpha-beta with Chess/Shogi specialized rules,
