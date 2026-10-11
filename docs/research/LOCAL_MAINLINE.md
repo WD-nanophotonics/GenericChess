@@ -26,75 +26,48 @@ roots, not claimed improved end-to-end or an independently reproduced user loss.
 
 ## Current measured question
 
-The prospective seeds1001-1008 cohort shows51equal-depth/3lost/2gained pairs,
-with10q0->q4 support gains. Native1008-ply8 losesD2/q4 toD1/q4 in both orders.
-At6144visits the same loss repeats on both backends in both orders; its refresh
-uses3710visits. Larger equal caps do not erase the frozen4s result. OfflineUI1s
-shows28support gains,4depth-loss pairs and8exact-reserve refresh aborts. Changed
-actions/different-support scores are not gains in decision usefulness.
+Current result: QUIET_DROP_AND_PVS.md separates existing PVS from guarded
+quiet-drop bookkeeping exclusion under the same Native semantic leaves. Eight
+fixed-work baseline/probe pairs and two32768node PVS/joint pairs preserve decisions and
+recursive work; joint32768node cost is about20percent lower than PVS alone.
+Generated1006/1008 completeD2/q4 transfers preserve decisions; played histories
+16/32/64 preserve six pairs, with no demonstrated saving at16ply. Full Core
+mechanical effects, accepted-child history/TT and terminal precedence remain.
+The research hook is process-local and defaults/UI are unchanged. It declines
+unsupported/history-sensitive terminal boundaries;22new finite tests and2192
+active regressions pass, not full generated-domain proof.
 
-The fixed lexical q4 bridge and shared Native terminal draw/loss repair remain
-in Q4_COMPLETION_TRADEOFF.md and NATIVE_TERMINAL_AND_BINDING.md. Exact threshold4
-precedence controls supersede the earlier mistaken fourhistory claim; old records
-remain. Native dynamic features and legacy Western pawn attack authority are
-separate evaluation definitions, not same-leaf substitutes. Auxiliary-reported
-binding/checkpoint/compact ownership defects are narrowly repaired and tested.
+Familiar64s PVS delivers ChessD5 versusD4 and ShogiD3/q4 versusD1/q0; generated
+1053 cost is mixed and1054 is immediate-win only. Keep earlier weighted-leaf
+negatives, frozen limits and exposed-label status. Completed depth/q support and
+changed choices are not stronger-move evidence. The completed four-arm64/256s
+comparison has
+PVS/jointD3/q4 at64s versus baselineD1/exclusionD2; all fourD3/q4 at256s.
+PVS/joint retained decisions match; more partial work adds no delivered support.
+Keep the exclusion seam research-only. An existing four-cell compound action
+with persistent auxiliary right yields four equalD2/q4 decisions but PVS more
+work/cost; no universal/default adoption. No unconditional full-q refresh,
+check-hook integration, history cache or second runtime follows from this work.
 
-Current capsule interface work uses corrected immutable Position+ply projection,
-complete C history and one explicit semantic attack formula. Twelve same-formula
-D2 calls, eight validated-decode calls and eight actual-material-summary calls
-preserve complete action/score/work/trace and full root restoration. The readonly
-C inventory avoids constructing Python pieces for quiet rejected children, with
-19Ã¢â‚¬â€œ26percent lower observed paired D2 cost. Fifteen state/effect regressions and
-37 additional semantic children pass. This is developmental evidence on exposed
-roots under ordinary concurrent load, not generic-domain or strength proof.
+A shared lexical minimalAB/q4 bridge has six complete Core/specialized-rule pairs
+with exact decisions/work/trace. Actual Native legality and availability reduce
+ShogiD1 execution from about6.20 to2.89 to2.43s while retaining exact work; the
+specialized-rule reference is about0.35s in its separate block. Native has no
+fallback/error in these cells. D2 prefixes stop at different resource conditions,
+so no unmatched ratio is reported. Snapshot/transition/history and callbacks
+remain residual consumers; mature engines have different q/pruning/evaluation
+and no new successful local execution. A hash portion diagnostic verifies17363
+original hashes; board-only0.093s is too
+small to prioritize a footprint seam. Next inspect actual Native legal-action
+enumeration versus accepted q actions, with complete effects/check evasions and
+Core availability preserved. Choose one avoidable eager consumer before any
+interface implementation; do not port a thin runtime or repeat old check/cache work.
 
-Separately,32 public Core-owned AlphaBeta calls at depths2/3 preserve decisions,
-PV, q support and root/history across semantic evaluator backend Ãƒâ€” legal-provider
-cells;16 evaluator pairs match all non-time work. Actual imports/owner queries
-and accepted Native legality are counted. The real opt-in evaluator interface is
-usable; thin capsules still lack product pushed/search_key/tt_eligible contracts.
-Do not build a second history/TT framework merely from thin-driver speed.
-Thirty-two shared-deadline calls deliver D2 instead of D1 on1008 at30seconds
-in both orders; this is completed support, not better move quality. Residual
-profiling motivates a small terminal probe prefix-copy repair, validated by four
-exact source-phase controls and2119 active tests. A real-caller profile rejects
-porting thin trace/repr optimization: product ordering is small; next inspect
-19809 actual Core terminal transition consumers on the existing1008D2 root.
-That next question is now measured in CORE_AVAILABILITY_COST.md: four source
-phases preserve exact non-time decisions/work while reversing the initial
-Native availability cost deficit. Final scoped availability saves about7–15%;
-actual30s public calls complete1008D3 versusD2 in both orders, not a strength
-claim. Four new roots retain decisions; short/immediate-win timing limits stay.
-The1041/1042 thin-capsule transfer has no depth gain and is retained negative.
-Per-instance bool/None availability is optional, with Core history/TT unchanged.
-Residual exact board/side token reuse saves about6–9% in eight paired controls;
-the original hash remains the oracle, with typed complete immutable keys and
-hand/aux/ruleset fallback. Next inspect the remaining real consumer after this
-narrow implementation, rather than build shared-ply import or new history caches.
-Data: data/core_availability_20261012.json. Earlier capsule controls remain in
-CAPSULE_INTERFACE_COST.md and data/capsule_interface_20261012.json.
-
-Earlier actor-relative filter repair remains provider-only Core fallback;
-raw Native limitations/compiler-rejection failures are preserved. Earlier drop
-trace and thin builtin q4 evidence remain in Q4_BACKEND_CAPABILITY.md, not tasks
-to repeat. Mature engine launch/variant limits stay. Full Nativeq0, material
-teachers, Native-legalityq4 and this thin driver remain distinct routes. Ordinary
-concurrent computation limits timing interpretation, not permission to continue.
-
-Current child-probe decision: CORE_PROBE_COST.md closes the optional Native
-check hook after32 public calls deliver identical support; the small shared
-projection saving remains research-only. Familiar availability transfer16calls
-shows ChessEP16s NativeD4 versusCoreD3 in both orders,64s sameD4; Shogi-drop
-remainsD1/q0 at16/64s. Actual public availability opt-in preserves four complete
-adapter decision/work pairs, defaults off and keeps unsupported/S4 Core fallback.
-A full-history q-bound shadow has zero prior-key hits in7727eligible calls;
-no new q cache. Existing PVS under current semantic leaves preserves fourD3decisions while
-reducing q work;16public calls deliverD3 versusD2 at16s on1006/1008bothorders,
-30s sameD3. Actual product availability Chess16s run under overlapping load
-returnsD3botharms, negative transfer retained. Next examine equal-node PVS
-support and a limited additional-rule transfer before any default adoption.
-Data: data/core_probe_20261012.json. No UI or evaluator/search-default changes.
+Data: data/quiet_drop_20261012.json. Previous current-detail text is recoverable
+at00784258da922158051b22686aa1d7e86c854902. Older semantic binding, availability,
+capsule, fullq4 completion tradeoff and negative opt-in delivery remain in the
+purpose-specific records below; consolidating resume text changes no frozen
+experiment, policy or permission. Science remains OPEN.
 
 ## Retained long-term objectives and evidence discipline
 
@@ -129,6 +102,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Quiet-drop exclusion, semantic PVS transfer and actual minimal-q executor attribution|QUIET_DROP_AND_PVS.md; data/quiet_drop_20261012.json|
 |Core availability, supplied-history transport, public delivery and exact token costs|CORE_AVAILABILITY_COST.md; data/core_availability_20261012.json|
 |Corrected capsule consumers, actual Core caller and inventory/delivery costs|CAPSULE_INTERFACE_COST.md; data/capsule_interface_20261012.json|
 |Shared Native terminal/winner, evaluator binding and same-leaf view costs|NATIVE_TERMINAL_AND_BINDING.md; data/native_terminal_binding_20261011.json|

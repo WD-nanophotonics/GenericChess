@@ -569,3 +569,49 @@ retry, alternate channel or indirect sender is attempted; do not claim delivery
 or Dot review. Reviewed code/results and this collaboration record are already
 remotely readable on sandbox. This is a transport/review blockage, not revocation
 of the user's standing authorization or evidence that scientific work stopped.
+
+
+## 2026-10-12 quiet-drop/PVS and minimal-q attribution
+
+PRIMARY_SANDBOX completed guarded quiet-drop shadow/finite compound and terminal
+controls, equal-work and deadline PVS/probe comparisons, generated and actual
+played-history transfers, and common minimalAB/q4 executor attribution. Full
+Core mechanics remain authoritative; no product/default/UI or auxiliary checkout
+writes. Exact current results and failures are in QUIET_DROP_AND_PVS.md and its
+hashed archive/index. 137actual calls include four failed12node calls and two separate diagnostics;
+110archived members total2927005raw/279028compressed bytes. The final factorial
+adds no delivered support beyondPVS at64/256s; the new compound fixture gives
+equalD2/q4 decisions with more PVS work/cost. Both adverse limits are retained.
+
+DEV_AUX remains independently pinned at c41dbb38af0289fdf15397ada58fa22a07ff9fbf:
+60 synthetic controller checks, planned432train/48holdout unexecuted, mature
+engine games zero; launch limitations and corrected immediate-mate claim retained.
+Its prior report was read, but this segment required no new dependency/request,
+merge or duplicate launch. It did not independently validate the new primary
+results. No observed cross-write or coordination conflict; absence of new
+communication cannot establish a measured collaboration speedup.
+
+Primary corrected a12-node producer loop, incomplete compound fixtures, and two
+verification scripts that failed before evidence writes even though structural
+checkpoints were accepted. Raw measurements/failures remain; corrected source
+and scoped assertions distinguish implementation defects from research negatives.
+A host temporary-directory pytest failure was resolved with a fresh project-local
+run,2192passing cases. Ordinary concurrent computation is normal; paired work and
+actual Native/fallback/availability counters constrain timing interpretation.
+
+Three complete new-root/original-thread Slack reads had no new Dot opinion.
+Previously rejected informational sends remain undelivered; no alternate sender,
+channel or indirect retry is used. Standing user authorization is retained, and
+reviewed summaries are remotely readable on sandbox. Dot review/access to a link
+is distinct from actual independent execution or adoption. No request is treated
+as a silent approval. Manuals need no additional identity/approval framework.
+
+Engineering/source/test/failed-script/archive/token overhead accompanies the
+measured compute reductions. Exact token costs and a counterfactual net time
+saving are unknown; this is an evidence summary, not a claim of optimal team
+productivity. The source review has begun the next concrete Native enumeration question: it
+materializes all legal packed actions before lexical q ordering/classification.
+Core push membership/bindings and complete check evasions make a noisy-only list
+an unsafe substitute for the existing legal cache. Quantify generated versus
+actually visited q candidates before selecting a seam. This remains source
+attribution, not a newly implemented filtered generator or another PVS batch.
