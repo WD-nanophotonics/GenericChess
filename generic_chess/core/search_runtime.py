@@ -1224,10 +1224,11 @@ class SearchPathRuntime:
                 removed_history += 1
             if (
                 rollback_frame is not None
-                and rollback_frame.bridge_key is not None
                 and rollback_frame.child_occurrence_added
                 and removed_history == 0
             ):
+                # Snapshot construction can fail after adding the child but
+                # before appending history, even without an imported-key bridge.
                 self._occurrence_remove(
                     rollback_frame.child_identity,
                     rollback_frame.child_runtime_hash,

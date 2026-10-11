@@ -1,0 +1,659 @@
+{
+  "base_sha": "200608a6550f76da271389076da65aca04eb75a6",
+  "scope": "Agent-only current segment producers, results and preserved failures; excludes Slack/raw auxiliary/user/private data. Prototypes private, runtime cleanup sole product repair.",
+  "dependency_indices": [
+    "availability_core_20261011.json",
+    "representation_outcome_20261011.json",
+    "physical_outcome_20261011.json",
+    "provider_route_20261011.json"
+  ],
+  "additional_dependency": "installed_control.py and weighted bridge.py in availability/caller archives; original executor9146a2e5b06e3349a588a8dd1abc05cab5d0a78c",
+  "unexecuted_prepared": [
+    "write_witness_time.py"
+  ],
+  "validation": {
+    "composed_active_passes": 2077,
+    "full_workspace_passes": 2076,
+    "full_workspace_failures": 1,
+    "focused_permission_aware_delivery_passes": 1,
+    "new_product_cases": 12,
+    "related_tests": 79,
+    "actual_player_cells": 4,
+    "full_run_all_green": false
+  },
+  "source_stage": "base plus archived one-condition repair; all other active product files unchanged",
+  "members": [
+    {
+      "member": ".local_agent/availability-core-20261011/consumer-scope.json",
+      "bytes": 668,
+      "sha256": "49d5327a15c60073192501f81086d65288566a12016b291f470f64a19817e377"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/decoded-syntax-contract.json",
+      "bytes": 573,
+      "sha256": "12f9f8bfe3c59fc41139d4670bdb10d2b306e7536cc51033520ade6376da9be6"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/decoded-syntax-control.json",
+      "bytes": 229357,
+      "sha256": "7fa1ee34872542d8ea44ed148942deecfb952898bba7d6b759ca22772ced12ff"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/decoded-syntax-counts.json",
+      "bytes": 20801,
+      "sha256": "6826db93a43b583956d89bda62a9b4349fb2e8265d14869617aa3fd25e14b9f3"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/decoded-syntax-eviction.json",
+      "bytes": 622,
+      "sha256": "2c84b93f6479ea65253954ff034c6fba11844c64a9873cb6b04ba3020dcf845f"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/decoded-syntax-mixed.json",
+      "bytes": 5954,
+      "sha256": "3beb9ee982c2634689f78f1e9a27c5a5690104cafec08752d313a789ec471d96"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/decoded-syntax-slot-fixed.json",
+      "bytes": 846,
+      "sha256": "86c1aeb38001a888eb12eb9cf794ae560a3ab61f07c0bad57bcd9726cf5fb41e"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/decoded-syntax-slot-time.json",
+      "bytes": 626,
+      "sha256": "9b89ca25a383e512d88dcd1b8dd6b871169709942c995f7af5407032c1446d1e"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/decoded-syntax-time.json",
+      "bytes": 222390,
+      "sha256": "ace3172b8dff4e708ed19703071269be479e08b11687cc41536204decdea47d1"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/decoded_syntax_contract.py",
+      "bytes": 4198,
+      "sha256": "afbee1775104ea1857f45e99b1235ab3abac27ee25fea8283d8d2bdbf4b988b5"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/decoded_syntax_control.py",
+      "bytes": 3442,
+      "sha256": "fbe52a63e710666a045da0d45fe7d7d13e57ef8d0073d92eec7ae144f3c7e50e"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/decoded_syntax_counts.py",
+      "bytes": 2208,
+      "sha256": "7e4c7c7fbca913c5dfb08e8946106514508cae98744a15a3b8730592385f18aa"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/decoded_syntax_eviction.py",
+      "bytes": 2873,
+      "sha256": "24f7334cbd8ebee5b45f49b0c2c3455ccb1daccdf97b4ab7166b82a1da4f9349"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/decoded_syntax_mixed.py",
+      "bytes": 3889,
+      "sha256": "93a50f3151d9624a53db9052416ff2657d2084df7005af033dd86150c16d37e2"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/decoded_syntax_probe.py",
+      "bytes": 1669,
+      "sha256": "d28898c98a3e65ad874ab26e5208dddddfbc432b9fc9e86b364c188dd3054dc7"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/decoded_syntax_time.py",
+      "bytes": 2145,
+      "sha256": "5a6b630e63e8f97e73a234b0ed56b36e58f0cf5da1f9d39423d171378ef17302"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/formal-write-hash-hook-correction.json",
+      "bytes": 406,
+      "sha256": "14fdff781b116583b7f4071a0a241954cf2d60584ccb73eddf5e51e6263538cc"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/formal-write-tracking-only-counts.json",
+      "bytes": 21125,
+      "sha256": "e4d2557cbfec61d6e06fc9ee1e0415cddc0437f2683203b2e27eaacfc68c1dea"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/formal-write-tracking-only-mixed.json",
+      "bytes": 5955,
+      "sha256": "d30f342de389d6d7f253719d54f3684e24bb0fb06775ee05459ca3c60d2ed89c"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/formal-write-witness-before-hash-global-fix.py",
+      "bytes": 2063,
+      "sha256": "9d4b3be11cdd7948915aadd629c9363b4e5afb450ceec1ddf28ee0d59be0a748"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/formal-write-witness-control.json",
+      "bytes": 229408,
+      "sha256": "8b5ff63f0fd2e46043114d8e8fc241bc0e6e726a1c84bb5a2f2d1b95553502f9"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/formal-write-witness-counts.json",
+      "bytes": 21870,
+      "sha256": "468a9c0f7f3aab6191d965cffcb37e69134f0ec772943f97e679c9cc24a28ccc"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/formal-write-witness-declaration.json",
+      "bytes": 844,
+      "sha256": "0ad910714985ec48d9b74af1577552a8e1caae2215e083cd74701623d7c22c5d"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/formal-write-witness-mixed.json",
+      "bytes": 5956,
+      "sha256": "5bad7fd19c31b6dfc62e9c24950142eb283412e8af5cdc89e0c25167c8670b8b"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/formal-write-witness-slot-fixed.json",
+      "bytes": 788,
+      "sha256": "958927de44373ea50816fd8933bffdb9e5af51750fd3a400d4cd7ced624175b8"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/formal_write_slot.py",
+      "bytes": 959,
+      "sha256": "82a5d5ca09a42393ea49958560a77e44738187f0267db62008970755a98fe489"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/formal_write_witness_control.py",
+      "bytes": 3483,
+      "sha256": "d05a7ace007e3e7e2bf2d689641b1c498e5cccb29391e1dc27c93026f1197b0b"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/formal_write_witness_counts.py",
+      "bytes": 2360,
+      "sha256": "e973ffae3a3e7c2ecfcbd7cade434315cfff5a86f9e38702035a92ecb15d31f8"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/formal_write_witness_mixed.py",
+      "bytes": 4094,
+      "sha256": "879de0d33ef42ba1bed3ff0b4d27c6e55c4c3a932cef2149bc43c62e52d5c800"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/formal_write_witness_probe.py",
+      "bytes": 2146,
+      "sha256": "b206d7448f7b7c476684e047c4e7712b0d26aaf34315dd4f3b40a1ec30ff63de"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/full_regression_workspace.py",
+      "bytes": 791,
+      "sha256": "cd02b287fc0e9f7a13e3a0407db94188ebd3aa5a5ec3b5c906f5fbe0689dea1b"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/hand-copy-counts.json",
+      "bytes": 21221,
+      "sha256": "10f257a6500bfe6a32b42aae1ff851c0d62b232b73d1a76ec270acd07454357f"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/hand-copy-semantics.json",
+      "bytes": 22738,
+      "sha256": "fe64e2cd5d4ad04adf9ef5603efcdf4612a5ddc4cc237f156ed949ff3501b864"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/hand-cow-counts-initial.json",
+      "bytes": 21323,
+      "sha256": "972ad263184635e45d0710f59bf389f092d0f8ecbe370c04bd72816568cea839"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/hand-cow-counts.json",
+      "bytes": 21466,
+      "sha256": "901f5ef68be700612147dcdaf0b640cfe1cacd8b56e98f15ca5d983b5078c277"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/hand-cow-semantics.json",
+      "bytes": 22800,
+      "sha256": "f5e5e2a3f6e2354b2e25f5003a322a3ae8758c4247170fa4cdf09c93f2ed8184"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/hand-sharing-type-pitfall.json",
+      "bytes": 361,
+      "sha256": "949cafd1e03ef5483b957bd7b63d27770102e9e8af9094127e8b5ecb36f19a2b"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/hand_copy_counts.py",
+      "bytes": 2581,
+      "sha256": "3492742bc296b39fc4b028181b762c5e32d4ecdc026b458421bad20ed3bfbc1a"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/hand_copy_probe.py",
+      "bytes": 1799,
+      "sha256": "42004634cebacfb0dc96b7856666a24b2e1f0805424e56569ff36e7aa7a5154c"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/hand_copy_semantics.py",
+      "bytes": 5353,
+      "sha256": "25330b2994d272df87c4e5171c5f2b09b36a1ed4a03d92eb86a3d6c37014ff5b"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/hand_cow_counts.py",
+      "bytes": 2565,
+      "sha256": "7c4307f6b5ece48a920dc34985a0dc0d94d3b3915187464c397efab7f7a4fe53"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/hand_cow_probe.py",
+      "bytes": 2283,
+      "sha256": "518573ef1195d934811c0a7fae5ba3679ce03b4fe906e2635edc689334fb568b"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/hand_cow_semantics.py",
+      "bytes": 5353,
+      "sha256": "75940d6564632b753b0b331982e4ad192c84d9f431872132f0137b56c49f500a"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed-eval-cold.json",
+      "bytes": 108442,
+      "sha256": "f6b9ba7733d8ce81daeb6be04fb17367c3d775e30076eddb88de8f88eb290531"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed-eval-contract.json",
+      "bytes": 1261,
+      "sha256": "b02f98bc62fe503135690159f230533991a24b01d0c20703e558791b4ae2561c"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed-eval-control.json",
+      "bytes": 229321,
+      "sha256": "c7faa9f301b9c43c27259ff007c5af27cc3e2ce9d2cbe367fe8ba9f26ec0db79"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed-eval-counts-print-failure.json",
+      "bytes": 2791,
+      "sha256": "84a2d741dbfbfdab9d1876bebdf82b3ca3204b78b636ff7059372c208ffce535"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed-eval-counts-print-failure.py",
+      "bytes": 2224,
+      "sha256": "b7035960550da0c02a0d250ca3bcdf4303fabd831ac49df1ed9f277031a8f5a5"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed-eval-counts.json",
+      "bytes": 20670,
+      "sha256": "109a452caa3ebfad5ba3d63645a01b5aa22f13acb824b64759dfed6a47730e07"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed-eval-generated-before-failure-logging.py",
+      "bytes": 2897,
+      "sha256": "5449da9e9afea7931cd76f4dc60e71c61bc31d779c4e1f87ea97cbfa0d20b6f5"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed-eval-generated.json",
+      "bytes": 1297,
+      "sha256": "512509842471766b1457d01ab9e68b526da2e4189c9ec6a0d7cf594bc6740eba"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed-eval-hook-failure.json",
+      "bytes": 623,
+      "sha256": "e2dfce3197d2b5fb116eee1dd7fc0d6ea39e62b546a3df1e8adbfc3a96394825"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed-eval-selection.json",
+      "bytes": 775,
+      "sha256": "209a8552a9afcc28343807bf49c823decb637d8fa824eadd5537f617736556fe"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed-eval-slot-cold.json",
+      "bytes": 325,
+      "sha256": "a1177fa1223153cbcbba43a3257d57de789d5e399817855af857c3635346b7cd"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed-eval-slot-fixed.json",
+      "bytes": 786,
+      "sha256": "853e7cb8b9d134fd1cb86caeec698f90d66816e84b356479861d5c238b4b9c78"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed-eval-slot-time.json",
+      "bytes": 572,
+      "sha256": "7bf866f93eeaafdbd5ad45af8e743414dc8e3d1ab1adae52fe2336a2cf90f93e"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed-eval-time.json",
+      "bytes": 222366,
+      "sha256": "8f0d6a7d4cbaa18d21365f0cdb89be90cb6d14b91f0bdd4614b9b7004f85bb15"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed_cold_slot.py",
+      "bytes": 939,
+      "sha256": "2bfbc640e879b77f2f8f90e849b25c2a86180acff7f46ba08033d34777044980"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed_eval_cold.py",
+      "bytes": 2157,
+      "sha256": "f9f200b5a366f01cecf5290db7c0cdd26f98c4707953d740360718044999e937"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed_eval_contract.py",
+      "bytes": 2725,
+      "sha256": "b82f68491e97e4857e852d98c9db69c1837343bd8ed3a5ba4b3f50ce6bc84232"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed_eval_control.py",
+      "bytes": 3453,
+      "sha256": "9ed11f724c4902dbf7cd4b0776c6407f1ef20cc75b21120c5a242eff177cf154"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed_eval_counts.py",
+      "bytes": 2224,
+      "sha256": "73bb642f21efa29b345034d0b75f80d4cf5bb9baa3a266972ddc7eefb65b1046"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed_eval_generated.py",
+      "bytes": 2705,
+      "sha256": "11797305d5a74f488a956c11e69b6b983b082429d9b8f6f9097d0c4f83af47e0"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed_eval_probe.py",
+      "bytes": 2096,
+      "sha256": "c2b7167a6c978c9ba8ed1e560558337f265ce93128b5000bf29c9f0a620f3bb2"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed_eval_time.py",
+      "bytes": 2152,
+      "sha256": "19d285294097228b45d4b80f56f7ea491c618548e919a6921fbb04a150d9a4c2"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed_time_slot.py",
+      "bytes": 939,
+      "sha256": "7cce94f30aef710cb631f96eb1e74b96244e1cb316f25914c56963d2d9b3da11"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/indexed_timing_slot.py",
+      "bytes": 943,
+      "sha256": "3032ca688b7a8a8853fd635dc0c75e4ad25001478d136ceaea58f554f92b0365"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/residual-function-profile.json",
+      "bytes": 301447,
+      "sha256": "5576366a180fa13ec2ab65d93f4334e83f53fe4a3b2b3ec3e3d859c88a61af37"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/residual_function_profile.py",
+      "bytes": 2389,
+      "sha256": "d55060929be7a689740de48fc4e4069165423e7b074a4b5b7edacad3e3e0849f"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape-direct-contract.json",
+      "bytes": 502,
+      "sha256": "1b39a0384f448b57942c4dbba533b39337da525a4e7e939bb0c8183797d0a058"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape-direct-control.json",
+      "bytes": 229372,
+      "sha256": "5ff228bb065d5999efb3e13d6635e451eb2b5ba8850812a456f4aa2fe609c4d9"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape-direct-counts.json",
+      "bytes": 21833,
+      "sha256": "dcbd50a3adccb73e6c354539f8161893f5534d5ec4f41b5f289e224e9d34984d"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape-direct-slot-fixed.json",
+      "bytes": 865,
+      "sha256": "d97782aaf787255a24eae71f024704fad734b36164ccaea681d7d4cd3caa9839"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape-direct-slot-time.json",
+      "bytes": 632,
+      "sha256": "dddc5c4e436fa18d25eece2ff37beaa8e5cc9ecbc4f216bc51698c171c60114c"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape-direct-time.json",
+      "bytes": 222444,
+      "sha256": "13bb337d8f1309cd6eae45223471f4157e132d033caf5287b1fc0753c2c9b2f4"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape-reuse-contract.json",
+      "bytes": 502,
+      "sha256": "35c32d48e060d9582a75862d13b1016c3ddb85d4e65ed9e6da899f8fe0ae9972"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape-reuse-control.json",
+      "bytes": 229251,
+      "sha256": "2ec42b61ebcd492e69a1bfaebc5b7aa2e3ff6902cca326da74f9607f730661b5"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape-reuse-counts.json",
+      "bytes": 21808,
+      "sha256": "74d2d31b2fe5b6e1abacb67c117b3649285b3978b011dabbaa9956195fcb9ddf"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape-reuse-mixed.json",
+      "bytes": 5675,
+      "sha256": "56cfecff091736c36d07983b95c2f0444561d2ec603739af0742a422371849cf"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape-reuse-time.json",
+      "bytes": 222311,
+      "sha256": "b747b0462bd3f9e3859a469271bc09a8d2fbefd268b28bf9fe13806aa72cb68f"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape-timing-interference.json",
+      "bytes": 774,
+      "sha256": "ce126f211e3ed201782804f9f624a6c85d1b7ed56238fafddaba901d2a2b1ac2"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape-timing-slot.json",
+      "bytes": 1321,
+      "sha256": "dc20d7a61c3d57772c45ec5bbdb1dc71b0e0ee2e29d279c213497d96b5ecff9d"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape_direct_contract.py",
+      "bytes": 3336,
+      "sha256": "3079cc6ac4745c06bc174824c936d15f2833434f08abbd67dbb3514a48c72934"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape_direct_control.py",
+      "bytes": 3429,
+      "sha256": "b99aabf4bd54112d5b82d5de066d65a8e59bb961dffb32c2ba5c8d311d21e2f7"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape_direct_counts.py",
+      "bytes": 2249,
+      "sha256": "699ac392b92755af313c0a9c839cb2f8bfa5fe87bdeae7ed8233944db18cda30"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape_direct_probe.py",
+      "bytes": 656,
+      "sha256": "d0910b1ae66651b10fba38e64098ad9baab19d3b719819f6599b6cdb55023c6a"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape_direct_time.py",
+      "bytes": 2116,
+      "sha256": "2990256702e4718824a6a785915aacb4af136de6fcf4d8bbd107f0474a9ac63a"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape_reuse_contract.py",
+      "bytes": 3333,
+      "sha256": "9ea2167438f6d86f44deda20f622664039b7d0bcdf83219415d9f903b08b292f"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape_reuse_control.py",
+      "bytes": 3358,
+      "sha256": "aa017044865bc6872f04b10e1c174136675120bedf210768f8f79b9ec4706f43"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape_reuse_counts.py",
+      "bytes": 2214,
+      "sha256": "e1173bd0bc84a0aa8e82dc83f1f0c13c884bf51d777f7dbd7c6155570b29da97"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape_reuse_mixed.py",
+      "bytes": 3701,
+      "sha256": "76098aeeeaff4446059cf9565ed2e0471e0fe27b34b3ab905d783ee9bf0fdfc6"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape_reuse_probe.py",
+      "bytes": 592,
+      "sha256": "28ca713818861bd04646f62e3a4902da747c34f732c0629df51a80a4a472363a"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape_reuse_time.py",
+      "bytes": 2044,
+      "sha256": "9de337f22cdd3345350932eade84f91dc7521773f779543caa12303f97af5dbb"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/shape_timing_slot.py",
+      "bytes": 1286,
+      "sha256": "33728ed12d4c65a6299d8cd6395414e1954954fb03f60c866d7b4b3f125bbbc0"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/snapshot-collection.json",
+      "bytes": 11155,
+      "sha256": "62fd57457eb731a9b7e3958eb21fc0ae9030bb3e6c65a4cfcb85857c3743c491"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/snapshot-delivery-test.json",
+      "bytes": 258,
+      "sha256": "0b6f45a2c3e72241499dd7dc8d900b6663028301bc7157a394d2b27650e36477"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/snapshot-existing-count-after.json",
+      "bytes": 247,
+      "sha256": "8db29680d184dbbf23cb40377a264b98341b1e99cd5f9e612f4cc3af4973afd9"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/snapshot-existing-count-order-failure.json",
+      "bytes": 332,
+      "sha256": "ebb7f66807c1bd336a8f9c29739f48b45272bbd77f7f318f1d48d04cc69954a2"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/snapshot-failure-after-test-shape-error.json",
+      "bytes": 10808,
+      "sha256": "25d1640ae282b1f3e8d27924b9082e0adf464040bacf4368ad13c3ce4bf34c1a"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/snapshot-failure-after.json",
+      "bytes": 165,
+      "sha256": "73b4ce7087369782c612349c1178622d602eec96ad64e557a3136d1a8c33c947"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/snapshot-failure-before.json",
+      "bytes": 11385,
+      "sha256": "57e891ffccc4c9657c701fa1d5ceafb42e3b7f963498fd98dcc64d6e3201c90d"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/snapshot-failure-test-before-count-map.py",
+      "bytes": 2743,
+      "sha256": "aa4116827b3c85472d068eec848eddb7a564702da7db66f9da9e00c3b3b83bbd"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/snapshot-failure-test-before-order-normalization.py",
+      "bytes": 5008,
+      "sha256": "8b38433047f064f253b2e9c7d00c104b8dd57f522a405c8cb3f0e714c5448318"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/snapshot-full-temp-setup-errors.json",
+      "bytes": 701761,
+      "sha256": "1d5febd6fd379e34ad6b9799067387227fe2bb5cca3b6ed9f0e90c7ed7f270db"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/snapshot-full-timeout.json",
+      "bytes": 302,
+      "sha256": "b766869f894c6ffb8e2140c57542fe78df3ee96d1343109b38c7168bacb59498"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/snapshot-full-workspace.json",
+      "bytes": 9170,
+      "sha256": "d8d6a56c15ea60c6dfaaa895a7936c68f3928a2a6d97b488c537d0688c6f4248"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/snapshot-player-lifecycle.json",
+      "bytes": 13941,
+      "sha256": "fc0783bfb6c41793912dbd6757655a06658160d4874ffcc9b19492cfe063b21f"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/snapshot-validation-recovery.json",
+      "bytes": 448,
+      "sha256": "65dc4d97b8792499f77aaaf397d0ee5cb698ff7d84bc7b1156518733c8d8fa33"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/snapshot_player_lifecycle.py",
+      "bytes": 3836,
+      "sha256": "7e9421fc90db2438e83f43614529b45632f0aa510ad57507af9378b099f278b8"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/write-witness-contract-missing-test.json",
+      "bytes": 282,
+      "sha256": "b44d773f37eceba2646f245dd142024ebd2c15b594732915c3d13ed3adba193e"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/write-witness-contract-missing-test.py",
+      "bytes": 3021,
+      "sha256": "2941643dc5c838753c05ec0f3fdf9eeba73673d99322a83251b357086ac79378"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/write-witness-contract.json",
+      "bytes": 402,
+      "sha256": "ac20fe36604a91cf003e0b92de7fe5aeb1721859fa5858c475c0fd05777aca75"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/write-witness-control.json",
+      "bytes": 229335,
+      "sha256": "c6c1ffeb8ba0c59540c14418a73cbe332602457df7aefa5f8e73ff096d903924"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/write-witness-counts-initial.json",
+      "bytes": 21243,
+      "sha256": "401a199cc96e3a730dc3301bbe537f71a6fc52cb77945b47582789e1b853a0a9"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/write-witness-counts.json",
+      "bytes": 22062,
+      "sha256": "6b14fb3e5cd39670f2b1de710df9fa1c5dc07efae064b1d1dae87b1e4401ac40"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/write-witness-mixed.json",
+      "bytes": 5956,
+      "sha256": "c5f95828bcc0ba54978d4f9886a6bf166ef95a3680f7412dc618713ca2ff7da6"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/write-witness-slot-fixed.json",
+      "bytes": 838,
+      "sha256": "dd3de8a1b7c443ced04b425413498c62bca072c1967aa6b72dbecb0b8274dbfe"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/write_witness_contract.py",
+      "bytes": 3061,
+      "sha256": "5c61a4d107387866004c4131a5389ee16fd62e0bb7298d01e2b72f8617b856c4"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/write_witness_control.py",
+      "bytes": 3449,
+      "sha256": "8684594a7f221f592a36d1ce182d26acc815f572c72806c910514ee12eb360dc"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/write_witness_counts.py",
+      "bytes": 2303,
+      "sha256": "60727c4bac89a3a24579df9005f12d92cb2deac3f9b35dd57acdea9750617a25"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/write_witness_mixed.py",
+      "bytes": 4061,
+      "sha256": "b0d7dc1715d1e7ad07283f54ec564f5dfad9c9b9d80e5d9fe0972f5a304175a1"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/write_witness_probe.py",
+      "bytes": 2467,
+      "sha256": "3d407f8c136a6f321860a20732d341581ecf1131c4e813995a63f832ab75ebe3"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/write_witness_time.py",
+      "bytes": 2138,
+      "sha256": "429360eb917d99a2fbb7b1f75f51bed7b37eb3fe0ee10977ac3e22d0e5d7347c"
+    },
+    {
+      "member": "generic_chess/core/search_runtime.py",
+      "bytes": 57343,
+      "sha256": "f871fc3f3e04fc46f136440078cbc576e90f777a89d037af65bbe7da710bddb4"
+    },
+    {
+      "member": "tests/product/test_runtime_snapshot_failure_rollback.py",
+      "bytes": 5233,
+      "sha256": "c3c01d6edb9dae143051461232727bc5bd0421fb02e4f6e1e7a677ac69391c73"
+    }
+  ],
+  "archive": {
+    "path": "docs/archive/runtime_cost_controls_20261011/evidence.zip",
+    "bytes": 283895,
+    "uncompressed_bytes": 3973228,
+    "members": 125,
+    "sha256": "22502ad8801134f4a8a91c3b271fa1e6731da3acce8d072493a2a3db17e071ff"
+  }
+}

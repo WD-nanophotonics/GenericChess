@@ -48,6 +48,20 @@ cost attribution by child outcome before a two-phase execution boundary,
 with fixed evaluation/q/history and actual backend. Keep physical rule execution,
 representation and interrupted work separate. Do not
 change q/evaluator/UI defaults or rebuild the Windows-blocked DLL.
+Latest exception repair: remove the bridge-only child-occurrence cleanup condition
+when snapshot construction fails before history append; actual mutable counts,
+not root projections, establish restoration.12 product boundary controls and4
+actual Core/Native player fault cells retain public semantics. Same-Runtime reuse
+can false-draw before repair, but the inspected UI/player creates a fresh Runtime;
+no observed user-game attribution. Private immutable extent and Native syntax
+controls add no completion gain in64 time calls each; executed-write tracking is
+mostly adverse. Defer these product caches. Legacy evaluator occupancy indexing
+has finite map/work agreement but hook-compatibility failures and no completion
+gain in64 controlled time calls; defer deployment. A changed formal-only write
+witness avoids tracking legality/nested work; finite mixed/hash/count validation
+passes but64 fixed+4D2 caller costs remain mostly adverse; defer this witness
+without equal-time expansion.
+Evidence:RUNTIME_ROLLBACK_AND_COST.md; data/runtime_cost_controls_20261011.json.
 Latest calibration: retain typed support.max_ply provider repair. Pure semantic
 IR previously raised or disabled Native; old/repaired strict actual routes on
 the original ChessD2 and mixed512 callers retain3179/145 Native calls and exact
