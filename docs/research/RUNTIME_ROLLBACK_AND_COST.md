@@ -102,3 +102,8 @@ promotion1.070x, drop1.143x. Chess-promotion0.973x is favorable. Counts2726
 tracked formal and2818 untracked legality/nested work are from8 minimal-AB roots,
 not the q4 caller's transition totals. Defer product and equal-time expansion;
 fewer scanned cells alone did not offset witness/factory/bookkeeping cost.
+
+Remaining hand copy-on-access cost runner is prepared but unexecuted: the fixed
+resource window could not safely contain it, so its start guard stopped before
+any engine work. See hand_cost_pending_20261011.json; renew the ACK before reuse,
+without automatic window extension or a performance claim.
