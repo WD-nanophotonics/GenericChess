@@ -1,0 +1,21 @@
+{
+  "question": "Can the frozen mature short-game protocol stop within bounded per-move cost and preserve partial evidence?",
+  "base": "c41dbb38af0289fdf15397ada58fa22a07ff9fbf",
+  "inputs": [
+    "task104/short_game.py",
+    "task108/evolution.py",
+    "task091/qualification.json"
+  ],
+  "scope": "Protocol integration only; existing failed mature executable is never launched. Mock transport cannot qualify a mature runtime.",
+  "fixed": {
+    "nodes": 1024,
+    "threads": 1,
+    "hash_MiB": 16,
+    "postopening_plies": 64,
+    "pilot_games": 4,
+    "training_plus_heldout_games": 480,
+    "training_wall_fuse_seconds": 900,
+    "uci_response_seconds": 10
+  },
+  "cost": "Small Python fault-injection and legal-game controls; no extra worker, engine build or training run."
+}
