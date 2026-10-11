@@ -1,0 +1,5 @@
+# Task077 - mechanical snapshot leaf feasibility
+
+All68frozen leaves reproduce frozen Python evaluator scores exactly with current Native board/base/type/owner/promoted/hand fields and existing semantic attacksets. Formula retains promotion zone/forward opportunity, current board values, base hand values, first current-type anchor, owner-relative short steps, attack penalties and side-to-move sign. Tables derive mechanically from the same metadata/profile; no fitted weights/game branch. Nonzero missing hand price fails rather than defaulting.
+
+Finite exposed subset does not establish full generated-domain/history policy acceptance. Original driver projects Position before q check/inclusion; evaluator-only replacement cannot remove those projections. Next check changes the representation boundary jointly while retaining actual child/noisy/check/terminal decisions and Native history. Two producer setup failures retained. Report-writing attempt had a non-ASCII bytes literal syntax error before mutations; a subsequent old probe passed but was not final-source evidence. No product/DLL edits.

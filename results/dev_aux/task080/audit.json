@@ -1,0 +1,259 @@
+{
+  "complete": true,
+  "calls": 16,
+  "pairs": [
+    {
+      "root": "seed1006-ply0",
+      "cap": null,
+      "order": 0,
+      "equal": {
+        "reason": true,
+        "action": true,
+        "score": true,
+        "trace": true,
+        "work": true,
+        "provider_calls": true,
+        "provider_fallbacks": true,
+        "provider_operational_failures": true,
+        "root_restored": true
+      },
+      "baseline_seconds": 10.22945429990068,
+      "candidate_seconds": 10.248920100275427,
+      "ratio": 1.0019029167934144,
+      "queries": [
+        {
+          "snapshot_queries": 133435,
+          "terminal_queries": 133469,
+          "attackset_queries": 47812
+        },
+        {
+          "snapshot_queries": 133435,
+          "terminal_queries": 133469,
+          "attackset_queries": 47812
+        }
+      ]
+    },
+    {
+      "root": "seed1006-ply0",
+      "cap": null,
+      "order": 1,
+      "equal": {
+        "reason": true,
+        "action": true,
+        "score": true,
+        "trace": true,
+        "work": true,
+        "provider_calls": true,
+        "provider_fallbacks": true,
+        "provider_operational_failures": true,
+        "root_restored": true
+      },
+      "baseline_seconds": 10.2205451996997,
+      "candidate_seconds": 10.30484430026263,
+      "ratio": 1.0082480042811617,
+      "queries": [
+        {
+          "snapshot_queries": 133435,
+          "terminal_queries": 133469,
+          "attackset_queries": 47812
+        },
+        {
+          "snapshot_queries": 133435,
+          "terminal_queries": 133469,
+          "attackset_queries": 47812
+        }
+      ]
+    },
+    {
+      "root": "seed1006-ply8",
+      "cap": null,
+      "order": 0,
+      "equal": {
+        "reason": true,
+        "action": true,
+        "score": true,
+        "trace": true,
+        "work": true,
+        "provider_calls": true,
+        "provider_fallbacks": true,
+        "provider_operational_failures": true,
+        "root_restored": true
+      },
+      "baseline_seconds": 7.447351400274783,
+      "candidate_seconds": 7.460403899662197,
+      "ratio": 1.001752636432186,
+      "queries": [
+        {
+          "snapshot_queries": 101180,
+          "terminal_queries": 101264,
+          "attackset_queries": 21496
+        },
+        {
+          "snapshot_queries": 101180,
+          "terminal_queries": 101264,
+          "attackset_queries": 21496
+        }
+      ]
+    },
+    {
+      "root": "seed1006-ply8",
+      "cap": null,
+      "order": 1,
+      "equal": {
+        "reason": true,
+        "action": true,
+        "score": true,
+        "trace": true,
+        "work": true,
+        "provider_calls": true,
+        "provider_fallbacks": true,
+        "provider_operational_failures": true,
+        "root_restored": true
+      },
+      "baseline_seconds": 7.459868600126356,
+      "candidate_seconds": 7.452302099671215,
+      "ratio": 0.9989857059338803,
+      "queries": [
+        {
+          "snapshot_queries": 101180,
+          "terminal_queries": 101264,
+          "attackset_queries": 21496
+        },
+        {
+          "snapshot_queries": 101180,
+          "terminal_queries": 101264,
+          "attackset_queries": 21496
+        }
+      ]
+    },
+    {
+      "root": "seed1008-ply0",
+      "cap": null,
+      "order": 0,
+      "equal": {
+        "reason": true,
+        "action": true,
+        "score": true,
+        "trace": true,
+        "work": true,
+        "provider_calls": true,
+        "provider_fallbacks": true,
+        "provider_operational_failures": true,
+        "root_restored": true
+      },
+      "baseline_seconds": 2.8243791996501386,
+      "candidate_seconds": 2.831427300348878,
+      "ratio": 1.002495451283458,
+      "queries": [
+        {
+          "snapshot_queries": 40880,
+          "terminal_queries": 40898,
+          "attackset_queries": 7564
+        },
+        {
+          "snapshot_queries": 40880,
+          "terminal_queries": 40898,
+          "attackset_queries": 7564
+        }
+      ]
+    },
+    {
+      "root": "seed1008-ply0",
+      "cap": null,
+      "order": 1,
+      "equal": {
+        "reason": true,
+        "action": true,
+        "score": true,
+        "trace": true,
+        "work": true,
+        "provider_calls": true,
+        "provider_fallbacks": true,
+        "provider_operational_failures": true,
+        "root_restored": true
+      },
+      "baseline_seconds": 2.8682802002876997,
+      "candidate_seconds": 2.874770499765873,
+      "ratio": 1.0022627843254373,
+      "queries": [
+        {
+          "snapshot_queries": 40880,
+          "terminal_queries": 40898,
+          "attackset_queries": 7564
+        },
+        {
+          "snapshot_queries": 40880,
+          "terminal_queries": 40898,
+          "attackset_queries": 7564
+        }
+      ]
+    },
+    {
+      "root": "seed1008-ply8",
+      "cap": null,
+      "order": 0,
+      "equal": {
+        "reason": true,
+        "action": true,
+        "score": true,
+        "trace": true,
+        "work": true,
+        "provider_calls": true,
+        "provider_fallbacks": true,
+        "provider_operational_failures": true,
+        "root_restored": true
+      },
+      "baseline_seconds": 25.01504829991609,
+      "candidate_seconds": 24.152589000295848,
+      "ratio": 0.9655223811971159,
+      "queries": [
+        {
+          "snapshot_queries": 267755,
+          "terminal_queries": 267793,
+          "attackset_queries": 88270
+        },
+        {
+          "snapshot_queries": 267755,
+          "terminal_queries": 267793,
+          "attackset_queries": 88270
+        }
+      ]
+    },
+    {
+      "root": "seed1008-ply8",
+      "cap": null,
+      "order": 1,
+      "equal": {
+        "reason": true,
+        "action": true,
+        "score": true,
+        "trace": true,
+        "work": true,
+        "provider_calls": true,
+        "provider_fallbacks": true,
+        "provider_operational_failures": true,
+        "root_restored": true
+      },
+      "baseline_seconds": 25.115467900410295,
+      "candidate_seconds": 24.45435420004651,
+      "ratio": 0.9736770303071685,
+      "queries": [
+        {
+          "snapshot_queries": 267755,
+          "terminal_queries": 267793,
+          "attackset_queries": 88270
+        },
+        {
+          "snapshot_queries": 267755,
+          "terminal_queries": 267793,
+          "attackset_queries": 88270
+        }
+      ]
+    }
+  ],
+  "ratio_range": [
+    0.9655223811971159,
+    1.0082480042811617
+  ],
+  "total_ratio": 0.9846372271320298
+}

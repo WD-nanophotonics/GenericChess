@@ -1,0 +1,219 @@
+{
+  "complete": true,
+  "source_old_fixture_sha256": "96dbd8c2861cf60d6764d07250ed199db83536e45d6db1809915ec15383a8531",
+  "rows": [
+    {
+      "case": "any",
+      "owner": 0,
+      "Core_maps": [
+        1,
+        7,
+        8,
+        9
+      ],
+      "Native_maps": [
+        1,
+        7,
+        8,
+        9
+      ],
+      "map_equal": true,
+      "scalar_mismatches": [],
+      "scalar_checks": 49,
+      "provider_supported": true,
+      "root_unchanged": true
+    },
+    {
+      "case": "any",
+      "owner": 1,
+      "Core_maps": [
+        8,
+        40,
+        41,
+        47
+      ],
+      "Native_maps": [
+        8,
+        40,
+        41,
+        47
+      ],
+      "map_equal": true,
+      "scalar_mismatches": [],
+      "scalar_checks": 49,
+      "provider_supported": true,
+      "root_unchanged": true
+    },
+    {
+      "case": "action_base",
+      "owner": 0,
+      "Core_maps": [
+        1,
+        7,
+        8,
+        9
+      ],
+      "Native_maps": [
+        1,
+        7,
+        8,
+        9
+      ],
+      "map_equal": true,
+      "scalar_mismatches": [],
+      "scalar_checks": 49,
+      "provider_supported": false,
+      "root_unchanged": true
+    },
+    {
+      "case": "action_base",
+      "owner": 1,
+      "Core_maps": [
+        8,
+        40,
+        41,
+        47
+      ],
+      "Native_maps": [
+        8,
+        40,
+        41,
+        47
+      ],
+      "map_equal": true,
+      "scalar_mismatches": [],
+      "scalar_checks": 49,
+      "provider_supported": false,
+      "root_unchanged": true
+    },
+    {
+      "case": "action_current",
+      "owner": 0,
+      "Core_maps": [
+        1,
+        7,
+        8,
+        9
+      ],
+      "Native_maps": [
+        1,
+        7,
+        8,
+        9
+      ],
+      "map_equal": true,
+      "scalar_mismatches": [],
+      "scalar_checks": 49,
+      "provider_supported": false,
+      "root_unchanged": true
+    },
+    {
+      "case": "action_current",
+      "owner": 1,
+      "Core_maps": [
+        8,
+        40,
+        41,
+        47
+      ],
+      "Native_maps": [
+        8,
+        40,
+        41,
+        47
+      ],
+      "map_equal": true,
+      "scalar_mismatches": [],
+      "scalar_checks": 49,
+      "provider_supported": false,
+      "root_unchanged": true
+    },
+    {
+      "case": "explicit_B0",
+      "owner": 0,
+      "Core_maps": [
+        1,
+        7,
+        8,
+        9
+      ],
+      "Native_maps": [
+        1,
+        7,
+        8,
+        9
+      ],
+      "map_equal": true,
+      "scalar_mismatches": [],
+      "scalar_checks": 49,
+      "provider_supported": true,
+      "root_unchanged": true
+    },
+    {
+      "case": "explicit_B0",
+      "owner": 1,
+      "Core_maps": [
+        8,
+        40,
+        41,
+        47
+      ],
+      "Native_maps": [
+        8,
+        40,
+        41,
+        47
+      ],
+      "map_equal": true,
+      "scalar_mismatches": [],
+      "scalar_checks": 49,
+      "provider_supported": true,
+      "root_unchanged": true
+    },
+    {
+      "case": "explicit_A0",
+      "owner": 0,
+      "Core_maps": [
+        1,
+        7,
+        8,
+        9
+      ],
+      "Native_maps": [
+        1,
+        7,
+        8,
+        9
+      ],
+      "map_equal": true,
+      "scalar_mismatches": [],
+      "scalar_checks": 49,
+      "provider_supported": true,
+      "root_unchanged": true
+    },
+    {
+      "case": "explicit_A0",
+      "owner": 1,
+      "Core_maps": [
+        8,
+        40,
+        41,
+        47
+      ],
+      "Native_maps": [
+        8,
+        40,
+        41,
+        47
+      ],
+      "map_equal": true,
+      "scalar_mismatches": [],
+      "scalar_checks": 49,
+      "provider_supported": true,
+      "root_unchanged": true
+    }
+  ],
+  "scalar_checks": 490,
+  "map_mismatches": 0,
+  "scope": "Distinctsemanticpseudoattackcontract ignores transition removefilter eligibility bydefinition;no oldfrontier rerun,Nativeprovider refusal unchanged"
+}

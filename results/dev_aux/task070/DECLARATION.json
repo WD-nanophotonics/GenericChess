@@ -1,0 +1,18 @@
+{
+  "task_id": "070",
+  "declared_at": "2026-10-11T13:37:12.936328+00:00",
+  "source_pin": "bebe3d98ebb0832207e112ca0755fa9837cef3e7",
+  "current_primary_binding_byte_identical": "5d8e55f2f2cd330312364b19d4099f8c79d2fcac",
+  "question": "Can caller mutation of ordering checkpoint nested parameters change the parsed function but retain persistent ordering-cache values, even after clear_tt?",
+  "root": "Existing Western initial root, no history changes",
+  "profile": "Zero leaf material;zero ordering compact beforemutation;then hidden neuron board owner0 pawn cell24 weight1/output1000;all otherweights0;synthetic no training",
+  "cases": [
+    "old_cached",
+    "mutated_nested_warm",
+    "mutated_nested_after_clear_tt",
+    "fresh_mutated_cache_off"
+  ],
+  "limits": "D1 q0 max_nodes1000 time2s,TT0;ordering rootonly/minDepth1;at mostfour actualsearches",
+  "cost": "Expected under2seconds;new ordering cache/input path, not repeat leaf witness;no product/default/binary edit",
+  "outcomes": "Record first traversedrootaction,ordering calls/cachehits and configured ID/current content ID. Changed ordering is correctness/function-lineage evidence not strength."
+}

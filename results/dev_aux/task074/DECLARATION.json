@@ -1,0 +1,9 @@
+{
+  "task_id": "074",
+  "declared_at": "2026-10-11T13:43:08.664459+00:00",
+  "source_pin": "5d8e55f2f2cd330312364b19d4099f8c79d2fcac",
+  "question": "Does storing/restoring projected ply alongside parent capsule/cache repair the concrete Pythonstate drift without changing Native snapshot/children?",
+  "cases": "Same two exposed1008 initial legalchildren asTask073, AST-private class only",
+  "cost": "Subsecond,two push/popcontrols,no benchmark/product edits",
+  "done": "PythonPosition/ply andfullNative snapshot restore;candidate remainsdiagnostic/no product integration"
+}

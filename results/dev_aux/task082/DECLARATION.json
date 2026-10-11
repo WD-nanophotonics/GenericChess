@@ -1,0 +1,30 @@
+{
+  "task_id": "082",
+  "declared_at": "2026-10-11T14:08:26.438579+00:00",
+  "question": "Does local rawboundary fixedwork saving translate into completedD2 at shared time caps?",
+  "source_pin": "5d8e55f2f2cd330312364b19d4099f8c79d2fcac",
+  "roots": [
+    "seed1006-ply0",
+    "seed1006-ply8",
+    "seed1008-ply0",
+    "seed1008-ply8"
+  ],
+  "depth": 2,
+  "q": 4,
+  "hardq": 8,
+  "nodes": 100000,
+  "seconds": 90,
+  "orders": 2,
+  "arms": [
+    "frozen_python_leaf",
+    "raw_eager_terminal"
+  ],
+  "calls": 48,
+  "expected_cost": "~6-12minutes48calls with<=30seconds each,one fixed declared exposed resourcecurve;no perrun over1hour/noextra workers",
+  "decision": "Report completedD2 counts and actual caller/inner budget work,not strengths of incomplete bestroot or learnedcap choice. All states exposed and caps conventionalengineeringcurve after fixedwork feasibility,not unexposed validation. Preserve frozen oldcaps;no extensions or resultguided reruns. Nativehistory and exactq4 retained;candidateeagerterminal matchesoriginal scheduling.",
+  "time_caps": [
+    1,
+    10,
+    30
+  ]
+}

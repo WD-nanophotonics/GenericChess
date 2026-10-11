@@ -1,0 +1,3 @@
+# Native attack-set leaf compatibility
+
+All68existing frozenleafPositions reconstructexactpriorPythonscores. ExistingNativeattacked_squares supplies136ownerattacksets equalto Legacygeometrypseudoattacks on thissubset. Replacing onlyEvaluator attackmaps yields68exact frozenleafscores;material/promotion/anchor/profile remainoriginal. This changedpremise differsfrom Nativechecked-action dynamicfeatures,whichhad57scoremismatches. It suggests a mechanical sameleafboundary experiment,not Nativeevaluation/whole-domain acceptance orspeedgain. No fitting/newcohort/fullsearch or productedit.

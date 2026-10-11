@@ -1,0 +1,25 @@
+{
+  "task_id": "076",
+  "declared_at": "2026-10-11T13:48:36.399115+00:00",
+  "question": "Does using existing Native attacksets preserve full frozen driver action/score/work/trace and lower charged callercost beyond the68leaf feasibility check?",
+  "source_pin": "5d8e55f2f2cd330312364b19d4099f8c79d2fcac",
+  "roots": [
+    "seed1006-ply0",
+    "seed1006-ply8",
+    "seed1008-ply0",
+    "seed1008-ply8"
+  ],
+  "depth": 2,
+  "q": 4,
+  "hardq": 8,
+  "nodes": 100000,
+  "seconds": 90,
+  "orders": 2,
+  "arms": [
+    "frozen_python_leaf",
+    "Native_attackmaps_only"
+  ],
+  "calls": 16,
+  "expected_cost": "~4-10minutes fromfrozenD2capsule13/9/4/32s;single interruptible rununder1h,no necessitythreshold",
+  "decision": "Anyaction/score/work/tracemismatch or boundedfailure forbids sameleafcostclaim. Complete matchedcases supply local costobservations,not isolatedspeedup/strength. Newinterface premise not oldrunrepeat/caprescue. No fitting/deployment/default changes."
+}

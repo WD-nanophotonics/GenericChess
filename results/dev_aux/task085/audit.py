@@ -1,0 +1,11 @@
+import ast,json,hashlib
+from pathlib import Path
+R=Path.cwd();B=Path(__file__).resolve().parent
+original=json.loads((R/'.local_agent/fixed_q4_tradeoff/.local_agent/native-capsule-q4-20261011/driver.json').read_bytes())['changed_function']
+raw=json.loads((R/'results/dev_aux/task078/compiled_driver.json').read_bytes())['candidate']
+pairs=[("int(rt.raw_snapshot['side'])",'rt.position.side_to_move'),('leaf.evaluate_capsule(rt.capsule,rt.raw_snapshot)','ev.evaluate(rt.state)'),('raw_enemy_count(rt.raw_snapshot,side)','enemy_board_count(rt.position,side)'),('raw_inventory(rt.raw_snapshot)','material_inventory(rt.position)'),('raw_noisy(rt,side,enemies,inventory,poll)','noisy_child(action,rt.state,side,enemies,inventory,lambda:rt.in_check(rt.position.side_to_move,checkpoint=poll))')]
+raw=raw.replace('def raw_search(', 'def search(').replace('rt = RawRuntime(initial, c, witnesses)','rt = CapsuleRuntime(initial, c, witnesses)').replace('    leaf = SnapshotEvaluator(ev,rt.native)\n','')
+for a,z in pairs:raw=raw.replace(a,z)
+a=ast.dump(ast.parse(original),include_attributes=False);z=ast.dump(ast.parse(raw),include_attributes=False);assert a==z
+out={'complete':True,'AST_equal_after_declared_field_mapping':True,'mapping':pairs,'original_AST_sha256':hashlib.sha256(a.encode()).hexdigest(),'normalized_raw_AST_sha256':hashlib.sha256(z.encode()).hexdigest(),'original_source_sha256':hashlib.sha256(original.encode()).hexdigest(),'candidate_source_sha256':hashlib.sha256(json.loads((R/'results/dev_aux/task078/compiled_driver.json').read_bytes())['candidate'].encode()).hexdigest(),'assumptions':['Native typeid mapping injective;raw inventory current-board/base-hand canonicalzero omission','rawside correspondsNative snapshot currentcapsule','attacksets align geometryonly testedgeneratedcohort;Task086semanticcounterexamplebarsuniversal substitution','rawnoisy matches shared default statsNone/capture_onlyFalse/legacy_kindNone policy;terminalqueriedauthoritatively','frozenprofile andcompiledpromotion/anchor lookup areunchanged'],'scope':'No hidden depth/q/poll/sort/negamax/alpha-beta/terminal-ply/work changes inactualcompiledrawdriver. Formula/helperlaws remain separately bounded,not certifiedbyASTcomparison.'}
+(B/'result.json').write_bytes((json.dumps(out,indent=2)+'\n').encode());print(json.dumps(out))

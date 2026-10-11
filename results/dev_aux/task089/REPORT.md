@@ -1,0 +1,5 @@
+# Task089 - adoption interface and existing profile scope
+
+The existing semantic opportunity module is a scoped static profile candidate, not a dynamic semantic evaluator. Its documented exclusions include guards/effects and it explicitly leaves dynamic terms to Evaluator. Calling it cannot automatically close Task086 attack-family mismatch. Evaluator version/config hash identify their stated inputs; a new attack authority must be explicit in any future route record.
+
+Fixed AlphaBetaPlayer accepts evaluator_override only at construction, creating a fresh TT. The supplied evaluator owns its inputs. Public reset clears search state; no public runtime attack-family setter is provided. Do not manufacture a product TT bug from private monkeypatching. For a future common-authority experiment use a fresh player or explicit reset, preserve legality provider support/fallback and record evaluator differences. Our raw diagnostics have noTT, fixed profiles and no product adoption. This is source contract evidence only, not executed player migration or universal semantic price validation.

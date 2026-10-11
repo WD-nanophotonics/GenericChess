@@ -1,0 +1,14 @@
+{
+  "task_id": "073",
+  "declared_at": "2026-10-11T13:41:14.566691+00:00",
+  "source_pin": "5d8e55f2f2cd330312364b19d4099f8c79d2fcac",
+  "question": "Does full-capsule restoration also restore projected Python ply_count when parent Position is cached?",
+  "source": "95-member frozen archive native-capsule-q4 producer CapsuleRuntime class only",
+  "cases": "Existing Western initial runtime;one first repr-sorted legalchild,read child state, pop;compare Pythonposition/ply/native snapshot;repeat a second different child if available",
+  "cost": "Expected subsecond, no search/benchmark/product edits;source-indicated missing stackfield, independent state contract witness",
+  "done": "Record actual mismatch or preserved fullPythonstate;no change to old trace/score results",
+  "changed_premise_before_run": {
+    "at": "2026-10-11T13:41:59.095618+00:00",
+    "root": "Existing exposed generated seed1008 initial;construct with exact fixed SearchMetadataAdapter;original builtin constructor failure retained, no guard bypass"
+  }
+}

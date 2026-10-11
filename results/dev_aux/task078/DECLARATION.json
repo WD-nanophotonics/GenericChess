@@ -1,0 +1,25 @@
+{
+  "task_id": "078",
+  "declared_at": "2026-10-11T13:58:56.764677+00:00",
+  "question": "Does jointly reading cached raw snapshot for leaf, side and q inventory preserve driver work and reduce projection cost?",
+  "source_pin": "5d8e55f2f2cd330312364b19d4099f8c79d2fcac",
+  "roots": [
+    "seed1006-ply0",
+    "seed1006-ply8",
+    "seed1008-ply0",
+    "seed1008-ply8"
+  ],
+  "depth": 2,
+  "q": 4,
+  "hardq": 8,
+  "nodes": 100000,
+  "seconds": 90,
+  "orders": 2,
+  "arms": [
+    "frozen_python_leaf",
+    "raw_snapshot_boundary"
+  ],
+  "calls": 16,
+  "expected_cost": "4-10minutes;16calls unchanged D2/q4/hard8/100000nodes/90s;no extension or default",
+  "decision": "Mismatch rejects same-work claim;preserve all adverse timings/failures. Scope exposed4generatedroots;no arbitrarydomain/DLL/product/strength claim. Rawprojection cache resets/restores with Native capsule;typedaux/history remain Native. Candidate setup charged."
+}

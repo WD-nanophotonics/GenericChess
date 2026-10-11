@@ -1,0 +1,5 @@
+# Ordering checkpoint cache ownership
+
+Four actual D1 calls isolate ordering from leaf evaluation (zero leaf material,TT0,ordering rootonly). A public checkpoint nested hidden/output-weight mutation changes its content ID and the retained ordering payload, but leaves theengine bound ID/capsule unchanged. Warm ordering uses20cachehits/zero evaluations and still traverses b1c3first. clear_tt also leaves20ordering-cache hits/b1c3. Fresh mutated ordering with cacheoff reevaluates20children and traverses a2a4first. Allreturned scores remain0;this demonstrates stale ordering/function lineage, not worse leaf choice or strength.
+
+Csource retains compact Pythondata,reparses persearch,keys orderingcache by structural child plus constantcapsule profilegeneration. clear_tt clearssemantic TTonly;itsname isnot a promise to clearordering cache. The defect is nestedcheckpoint ownership allowing function changes without rebinding. ExistingTask068 staged/copy boundary directly addresses this entry;an unconditional extra clear isnot a substitute. OriginalSession/history unchanged. Installed binarySHA identifies executedruntime,not rebuilt-source attestation.
