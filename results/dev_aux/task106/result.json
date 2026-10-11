@@ -1,0 +1,591 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "fen": "7k/8/5KQ1/8/8/8/8/8 w - - 0 1",
+      "root_score": {
+        "reward": 0.06666666666666667,
+        "quantity_difference": 1,
+        "agent_quantity": 1,
+        "opponent_quantity": 0,
+        "terminal_component": 0,
+        "mate_speed_component": 0,
+        "cutoff_quantity_component": 0.06666666666666667,
+        "terminal": false,
+        "termination": "cutoff",
+        "winner": null,
+        "proxy_result": 1,
+        "played_plies": 64,
+        "cap": 64
+      },
+      "mate_in_one": [
+        "g6g7"
+      ],
+      "one_ply_actions": [
+        {
+          "action": "f6e5",
+          "score": {
+            "reward": 0.0,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0,
+            "terminal": true,
+            "termination": "STALEMATE",
+            "winner": null,
+            "proxy_result": null,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "f6e6",
+          "score": {
+            "reward": 0.0,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0,
+            "terminal": true,
+            "termination": "STALEMATE",
+            "winner": null,
+            "proxy_result": null,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "f6e7",
+          "score": {
+            "reward": 0.0,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0,
+            "terminal": true,
+            "termination": "STALEMATE",
+            "winner": null,
+            "proxy_result": null,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "f6f5",
+          "score": {
+            "reward": 0.0,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0,
+            "terminal": true,
+            "termination": "STALEMATE",
+            "winner": null,
+            "proxy_result": null,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "f6f7",
+          "score": {
+            "reward": 0.0,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0,
+            "terminal": true,
+            "termination": "STALEMATE",
+            "winner": null,
+            "proxy_result": null,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "f6g5",
+          "score": {
+            "reward": 0.0,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0,
+            "terminal": true,
+            "termination": "STALEMATE",
+            "winner": null,
+            "proxy_result": null,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6b1",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6c2",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6d3",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6e4",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6e8",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6f5",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6f7",
+          "score": {
+            "reward": 0.0,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0,
+            "terminal": true,
+            "termination": "STALEMATE",
+            "winner": null,
+            "proxy_result": null,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6g1",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6g2",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6g3",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6g4",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6g5",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6g7",
+          "score": {
+            "reward": 100.984375,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 100,
+            "mate_speed_component": 0.984375,
+            "cutoff_quantity_component": 0,
+            "terminal": true,
+            "termination": "CHECKMATE",
+            "winner": true,
+            "proxy_result": null,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6g8",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6h5",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6h6",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6h7",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        }
+      ]
+    },
+    {
+      "fen": "7k/8/5KP1/8/8/8/8/8 w - - 0 1",
+      "root_score": {
+        "reward": 0.06666666666666667,
+        "quantity_difference": 1,
+        "agent_quantity": 1,
+        "opponent_quantity": 0,
+        "terminal_component": 0,
+        "mate_speed_component": 0,
+        "cutoff_quantity_component": 0.06666666666666667,
+        "terminal": false,
+        "termination": "cutoff",
+        "winner": null,
+        "proxy_result": 1,
+        "played_plies": 64,
+        "cap": 64
+      },
+      "mate_in_one": [],
+      "one_ply_actions": [
+        {
+          "action": "f6e5",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "f6e6",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "f6e7",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "f6f5",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "f6f7",
+          "score": {
+            "reward": 0.0,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0,
+            "terminal": true,
+            "termination": "STALEMATE",
+            "winner": null,
+            "proxy_result": null,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "f6g5",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        },
+        {
+          "action": "g6g7",
+          "score": {
+            "reward": 0.06666666666666667,
+            "quantity_difference": 1,
+            "agent_quantity": 1,
+            "opponent_quantity": 0,
+            "terminal_component": 0,
+            "mate_speed_component": 0,
+            "cutoff_quantity_component": 0.06666666666666667,
+            "terminal": false,
+            "termination": "cutoff",
+            "winner": null,
+            "proxy_result": 1,
+            "played_plies": 1,
+            "cap": 64
+          }
+        }
+      ]
+    }
+  ],
+  "decision": "Retain cheap mate-speed feedback separately from quantity proxy; equal unit count can hide a one-ply mating resource. This is an objective-identification counterexample, not learned material ratios or maturity failure.",
+  "real_engine_games": 0
+}

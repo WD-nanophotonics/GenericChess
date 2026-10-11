@@ -1,0 +1,8 @@
+{
+  "question": "Can frozen multi-start material evolution preserve paired comparison, heldout isolation and budget stops without spending blocked mature games?",
+  "source_base": "cb3ce96d900b6c494754c57694277e349522bccb",
+  "training_protocol": "Task099 unchanged6generations/3starts/3arms/4seeds/2colors =432train; fourfresh seeds/2colors/initial+final =48heldout. No human ratios in reward/selection.",
+  "cost": "Scheduling/controller tests use explicitly synthetic reward callbacks, not search/learning evidence. Real run must qualify mature entry; all-tied4game pilot halts before full batch.",
+  "time": "Monotonic900second fuse before each planned game plus per-ply real search guard; no artificially split long runs.",
+  "next": "Actual engine game integration remains conditional on permitted runtime. Pure schedule implementation is not mature training."
+}
