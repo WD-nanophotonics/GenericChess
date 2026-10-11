@@ -233,3 +233,27 @@ attack costs by the same outcome before choosing an implementation.
 Evidence:data/representation_outcome_20261011.json. The prior archived document's
 "eight pairs"/"four pairs" wording is corrected to eight/four calls above; raw
 experiment counts and immutable archive are unchanged.
+
+
+## Physical execution by discarded-child outcome —2026-10-11
+
+Four completedD2 calls (two opposite-order plain/instrumented pairs) preserve
+exact decisions and non-time work on the same old weighted Chess-middle root.
+Plain walls6.90/6.95s versus instrumented8.12/8.17s quantify timer overhead.
+For35187 actually excluded quiet children in iteration2, terminal inclusive
+cost1.83s contains availability1.60s and must not be added to it. Selected
+nested exclusive stages are: availability self0.84s, transition0.60s,
+attack0.60s, trial self0.12s, terminal self0.23s, component diff/hash1.09s,
+count snapshot0.126s and history context0.082s.76937transitions/attacks include
+41750 nested availability trials, beyond one formal transition per child.
+These are exclusive only relative to the selected timed seams, not all Python
+functions or an attainable total saving. Actual frontiers outside formal push
+are separately reported, including opaque Native work; no zero-cost claim.
+
+This rejects treating discarded-child cost as hashing alone. It locates
+mandatory terminal availability and physical execution as separate candidates;
+a two-phase boundary still requires exact terminal/history/check semantics.
+No default or product change follows. The new auxiliary validator's first task
+is independent replication of this source-pinned evidence, not engine editing.
+Evidence:data/physical_outcome_20261011.json and its source/raw archive;
+source closure is the two dependency indices. Original results remain immutable.

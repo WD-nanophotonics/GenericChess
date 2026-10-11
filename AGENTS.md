@@ -4,6 +4,18 @@ This is the sole active policy; user instructions take precedence. One local
 Agent works on sandbox in this checkout. Never touch alphasho, its audits,
 tasks or other projects. No extra Agents, Work/Codex delegates or heavy jobs.
 
+User2026-10-11 explicitly authorizes a user-established auxiliary validation
+Agent. This scoped exception does not authorize automatic spawning/delegation.
+The primary Agent remains the sole writer/publisher of sandbox in this checkout;
+the auxiliary validator uses its own checkout, branch and evidence directory,
+reads pinned source and returns independent validation results. It does not edit
+primary state, stop/session/memo files, engine defaults or UI, or publish sandbox.
+Assignment boundaries and shared-account Slack identity limits are specified in
+docs/operations/AUXILIARY_VALIDATION.md. User confirmed 开发辅助=DEV_AUX on sidemission, sharing the Slack account;
+PRIMARY_SANDBOX remains the primary. Use these simple fixed routing IDs without
+per-message challenges or extra identity gates. Shared-account labels are not
+cryptographic process authentication. Other isolation/safety rules stay.
+
 At every start, restart, heartbeat and after compaction, FIRST read
 .local_agent/NEXT_WORK.md in full, then this file, LOCAL_MAINLINE.md and
 rollout/advisor/slack stop flags. Never clear a user stop. A missing/stale memo

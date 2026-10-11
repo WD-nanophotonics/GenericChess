@@ -37,6 +37,15 @@ Sender and current dot reply identity: verified user U0C6G6AU6MQ. TYPE/ID are
 role/correlation markers, not independent process authentication. The installed
 ChatGPT bot is not used as a verified reply or wake identity.
 
+User2026-10-11 authorizes 开发辅助 on sidemission as DEV_AUX, sharing this
+project/account; primary uses PRIMARY_SANDBOX. See
+[auxiliary validation handoff](AUXILIARY_VALIDATION.md). Put AGENT_ID and
+RECIPIENT on participant messages and let Dot reply to the requester. The user
+confirmed this simple mapping; no per-message challenge or complex identity gate.
+Shared-account verification authenticates the account, not a distinct process;
+labels provide practical routing, not cryptographic authentication. Read at
+useful checkpoints; do not guarantee wake/reply or introduce self-reply loops.
+
 [Manual round trip](https://nanomelon.slack.com/archives/C0C6L21UU20/p1791024782466849)
 and [event round trip](https://nanomelon.slack.com/archives/C0C6L21UU20/p1791025803999159)
 passed on 2026-10-03. The event test was sent at 20:10:03 JST and replied at
