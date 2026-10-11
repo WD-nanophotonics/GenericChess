@@ -1,0 +1,341 @@
+{
+  "complete": true,
+  "source_sha256": {
+    "generic_chess/generation/config.py": "609d9e362d5472272aa4835e8faa68b907bf683323a2aa6917ad7957e45a0e73",
+    "generic_chess/generation/piece_generator.py": "ad366d7e15426401552e8fbdf5c29d19697a10b9a5150163007929d6a8c5acaf",
+    "generic_chess/generation/generator.py": "466f86600a903b9067a0c3995bc914d8f9517e530e6d3bb1be7b494b7fe9d557",
+    "generic_chess/rules/compiler.py": "9ef2c28c78af75a8642543ef2306645295b10ea55e512d00a35a28b799cb6937",
+    "generic_chess/rules/ir.py": "92c0fbcfa39d746861e1ea5dfd420c11042d33bb580d34cd19132c19244a0b2c"
+  },
+  "model_rows": [
+    {
+      "board": 4,
+      "owner": 0,
+      "case": "unique_leaps",
+      "atoms": [
+        [
+          "leap",
+          1,
+          1
+        ],
+        [
+          "leap",
+          -1,
+          1
+        ],
+        [
+          "leap",
+          0,
+          2
+        ]
+      ],
+      "max_rows_per_source_target": 1,
+      "duplicate_endpoint_pairs": 0
+    },
+    {
+      "board": 4,
+      "owner": 0,
+      "case": "unique_primitive_rays",
+      "atoms": [
+        [
+          "ray",
+          1,
+          0
+        ],
+        [
+          "ray",
+          0,
+          1
+        ],
+        [
+          "ray",
+          1,
+          1
+        ]
+      ],
+      "max_rows_per_source_target": 1,
+      "duplicate_endpoint_pairs": 0
+    },
+    {
+      "board": 4,
+      "owner": 0,
+      "case": "duplicate_leap_dedup",
+      "atoms": [
+        [
+          "leap",
+          0,
+          1
+        ]
+      ],
+      "max_rows_per_source_target": 1,
+      "duplicate_endpoint_pairs": 0
+    },
+    {
+      "board": 4,
+      "owner": 0,
+      "case": "collinear_hybrid",
+      "atoms": [
+        [
+          "leap",
+          0,
+          1
+        ],
+        [
+          "ray",
+          0,
+          1
+        ]
+      ],
+      "max_rows_per_source_target": 2,
+      "duplicate_endpoint_pairs": 12
+    },
+    {
+      "board": 4,
+      "owner": 1,
+      "case": "unique_leaps",
+      "atoms": [
+        [
+          "leap",
+          1,
+          1
+        ],
+        [
+          "leap",
+          -1,
+          1
+        ],
+        [
+          "leap",
+          0,
+          2
+        ]
+      ],
+      "max_rows_per_source_target": 1,
+      "duplicate_endpoint_pairs": 0
+    },
+    {
+      "board": 4,
+      "owner": 1,
+      "case": "unique_primitive_rays",
+      "atoms": [
+        [
+          "ray",
+          1,
+          0
+        ],
+        [
+          "ray",
+          0,
+          1
+        ],
+        [
+          "ray",
+          1,
+          1
+        ]
+      ],
+      "max_rows_per_source_target": 1,
+      "duplicate_endpoint_pairs": 0
+    },
+    {
+      "board": 4,
+      "owner": 1,
+      "case": "duplicate_leap_dedup",
+      "atoms": [
+        [
+          "leap",
+          0,
+          1
+        ]
+      ],
+      "max_rows_per_source_target": 1,
+      "duplicate_endpoint_pairs": 0
+    },
+    {
+      "board": 4,
+      "owner": 1,
+      "case": "collinear_hybrid",
+      "atoms": [
+        [
+          "leap",
+          0,
+          1
+        ],
+        [
+          "ray",
+          0,
+          1
+        ]
+      ],
+      "max_rows_per_source_target": 2,
+      "duplicate_endpoint_pairs": 12
+    },
+    {
+      "board": 8,
+      "owner": 0,
+      "case": "unique_leaps",
+      "atoms": [
+        [
+          "leap",
+          1,
+          1
+        ],
+        [
+          "leap",
+          -1,
+          1
+        ],
+        [
+          "leap",
+          0,
+          2
+        ]
+      ],
+      "max_rows_per_source_target": 1,
+      "duplicate_endpoint_pairs": 0
+    },
+    {
+      "board": 8,
+      "owner": 0,
+      "case": "unique_primitive_rays",
+      "atoms": [
+        [
+          "ray",
+          1,
+          0
+        ],
+        [
+          "ray",
+          0,
+          1
+        ],
+        [
+          "ray",
+          1,
+          1
+        ]
+      ],
+      "max_rows_per_source_target": 1,
+      "duplicate_endpoint_pairs": 0
+    },
+    {
+      "board": 8,
+      "owner": 0,
+      "case": "duplicate_leap_dedup",
+      "atoms": [
+        [
+          "leap",
+          0,
+          1
+        ]
+      ],
+      "max_rows_per_source_target": 1,
+      "duplicate_endpoint_pairs": 0
+    },
+    {
+      "board": 8,
+      "owner": 0,
+      "case": "collinear_hybrid",
+      "atoms": [
+        [
+          "leap",
+          0,
+          1
+        ],
+        [
+          "ray",
+          0,
+          1
+        ]
+      ],
+      "max_rows_per_source_target": 2,
+      "duplicate_endpoint_pairs": 56
+    },
+    {
+      "board": 8,
+      "owner": 1,
+      "case": "unique_leaps",
+      "atoms": [
+        [
+          "leap",
+          1,
+          1
+        ],
+        [
+          "leap",
+          -1,
+          1
+        ],
+        [
+          "leap",
+          0,
+          2
+        ]
+      ],
+      "max_rows_per_source_target": 1,
+      "duplicate_endpoint_pairs": 0
+    },
+    {
+      "board": 8,
+      "owner": 1,
+      "case": "unique_primitive_rays",
+      "atoms": [
+        [
+          "ray",
+          1,
+          0
+        ],
+        [
+          "ray",
+          0,
+          1
+        ],
+        [
+          "ray",
+          1,
+          1
+        ]
+      ],
+      "max_rows_per_source_target": 1,
+      "duplicate_endpoint_pairs": 0
+    },
+    {
+      "board": 8,
+      "owner": 1,
+      "case": "duplicate_leap_dedup",
+      "atoms": [
+        [
+          "leap",
+          0,
+          1
+        ]
+      ],
+      "max_rows_per_source_target": 1,
+      "duplicate_endpoint_pairs": 0
+    },
+    {
+      "board": 8,
+      "owner": 1,
+      "case": "collinear_hybrid",
+      "atoms": [
+        [
+          "leap",
+          0,
+          1
+        ],
+        [
+          "ray",
+          0,
+          1
+        ]
+      ],
+      "max_rows_per_source_target": 2,
+      "duplicate_endpoint_pairs": 56
+    }
+  ],
+  "project_engine_generator_compiler_calls": 0,
+  "source_implication": "Default allow_hybrid=False generates each ordinary current type as unique leaps or unique unbounded primitive rays; mirroring deduplicates by atom value. Legacy lowering has one capture pattern per atom and incoming rows are atom endpoints. Thus each active source/current-type tuple has at most one row per target on this generated legacy-only branch while incoming metadata exists. Promotion inherits masks and does not duplicate pseudo-attack patterns.",
+  "changed_premises": "allow_hybrid=True can retain a collinear leap and ray as distinct atoms; custom semantic actions can also add rows, as Task037/039 already execute. Source result does not cover arbitrary hand-authored pieces, bounded-ray variants, external IR mutation or metadata fallback.",
+  "decision": "Default generated games do not supply a new row-retrieval-saving premise merely by changing seeds. DEFER default-generator caller timing for this mechanism; any renewed review must declare hybrid or semantic multirow workload and use inspected-row/rank-layout accounting.",
+  "limits": "16small pure coordinate-model cells are not production compiler execution or search. Source implication is conditional on the reviewed generator and legacy-lowering branch, not a proof of all supported generated-domain deployment or wall-time savings."
+}

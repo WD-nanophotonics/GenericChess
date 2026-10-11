@@ -1,7 +1,7 @@
 {
   "complete": true,
-  "scope": "New staged task027-task041 scientific files; exact raw bytes, not normalized text.",
-  "scientific_files": 88,
+  "scope": "New staged task027-task042 scientific files; exact raw bytes, not normalized text.",
+  "scientific_files": 94,
   "files": [
     {
       "path": "results/dev_aux/task027/CLOCK_SCOPE.md",
@@ -618,6 +618,48 @@
       "sha256": "7ea492418eccc31bae763ab82bf3a8f0ccfb054533d3aea28b01ac2e2de97b5e",
       "staged_sha256": "7ea492418eccc31bae763ab82bf3a8f0ccfb054533d3aea28b01ac2e2de97b5e",
       "exact_bytes": true
+    },
+    {
+      "path": "results/dev_aux/task042/DECLARATION.md",
+      "bytes": 983,
+      "sha256": "9f633432478fb85dd34bc40157071a13faf1cfde1e7b1367abdf0b9dcdb6cc28",
+      "staged_sha256": "9f633432478fb85dd34bc40157071a13faf1cfde1e7b1367abdf0b9dcdb6cc28",
+      "exact_bytes": true
+    },
+    {
+      "path": "results/dev_aux/task042/REPORT.md",
+      "bytes": 1520,
+      "sha256": "4eeb9664a0e27da429ce0f66aea8f1554197fedebeb02d4200d88bd455d9ef91",
+      "staged_sha256": "4eeb9664a0e27da429ce0f66aea8f1554197fedebeb02d4200d88bd455d9ef91",
+      "exact_bytes": true
+    },
+    {
+      "path": "results/dev_aux/task042/generator_scope.json",
+      "bytes": 7250,
+      "sha256": "4fb14ee653f4d70b0321094508aa17fb3f24de74b20ad15be2d2e96b80206d24",
+      "staged_sha256": "4fb14ee653f4d70b0321094508aa17fb3f24de74b20ad15be2d2e96b80206d24",
+      "exact_bytes": true
+    },
+    {
+      "path": "results/dev_aux/task042/generator_scope.py",
+      "bytes": 3184,
+      "sha256": "230c81a004d9fa54a4637354199f2a85a14a4c8b859172c7116140818a832c3f",
+      "staged_sha256": "230c81a004d9fa54a4637354199f2a85a14a4c8b859172c7116140818a832c3f",
+      "exact_bytes": true
+    },
+    {
+      "path": "results/dev_aux/task042/source_binding.json",
+      "bytes": 2064,
+      "sha256": "ac335030ca62e15e9425b6e7ffa959ee0faa50259ecdc3f27636ff9974c18821",
+      "staged_sha256": "ac335030ca62e15e9425b6e7ffa959ee0faa50259ecdc3f27636ff9974c18821",
+      "exact_bytes": true
+    },
+    {
+      "path": "results/dev_aux/task042/source_binding.py",
+      "bytes": 1197,
+      "sha256": "23111615f5a0855f9e1dab8f18dcdce0764437dff5272ae35336a951cc95ad6e",
+      "staged_sha256": "23111615f5a0855f9e1dab8f18dcdce0764437dff5272ae35336a951cc95ad6e",
+      "exact_bytes": true
     }
   ],
   "logical_source_hash": {
@@ -630,7 +672,7 @@
     "at_utc": "2026-10-11T06:29",
     "affected_paths": 23,
     "cause": "Git newline clean filtering; whitespace check alone passed; publication held",
-    "repair": "Narrow task027-task041 -text attributes and restage; no historical result fields replaced"
+    "repair": "Narrow task027-task042 -text attributes and restage; no historical result fields replaced"
   },
   "limits": "Manifest excludes itself and prose outside task directories. Private .local_agent records are not outgoing. This audit is delivery verification, not a scientific engine rerun."
 }
