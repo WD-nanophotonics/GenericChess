@@ -143,6 +143,37 @@ savings; warm-root and deferred-binding limits remain in their purpose documents
 Full Shogi-history/blocked-DLL boundaries are unchanged. Ordinary eager binding
 remains selected after allocator-fault fallback differences in the deferred trial.
 
+## Current selection: physical and scheduling evidence, 2026-10-11
+
+The full weighted quiet-q4 call has93824 transition-method attempts including
+nested terminal trials. Narrow copy/publication clocks are4.14percent of observed
+choose wall; Shogi-drop/mixed controls give3.53/4.64percent, with hand dimensions,
+aux arguments and pass paths explicitly scoped. Defer a mutable publication
+rewrite and low-hit exact-identity terminal LRU; neither bounds all generic
+costs. DEV_AUX independently corrected observer coverage and attempt semantics.
+
+Existing PVS has conditional fixed-work benefits: the ordinary quietD2 caller
+uses8010 to6686nodes; EP8192node budget reachesD3 only with PVS, but fresh noTTD3
+is adverse. A depthmasked table control retains the TT/PVS benefit through move
+ordering. Forty opposite-order equal-time calls on fixed50/100ms/1/4/8second
+points add no depth/action gain. No PVS/q/evaluator/UI default changes. Fifteen
+currentPython warm-horizon calls illustrate its known deeper-cache semantics:
+reported completed depth is not an exact fresh-horizon value certificate.
+
+Select the next measured whole-caller scheduling dependency, with exact noTT or
+explicit ordering-only comparison controls where finite value matters. Wider
+reversible rule compilation remains a distinct open premise; unsafe condition
+reordering, sibling fact persistence and blocked DLL execution are not adopted.
+Eight separate delta50/startD2 aspiration calls are adverse in all4 TT-off/on
+root pairs despite retainedD2 scores/actions; no width fitting/time expansion.
+A separate sameq4 predecessor atD3 keepsdelta50 and reducesEP work12953 to11695
+withoutTT,8588 to7851 withTT; at standard8192 only theTTcandidate retainsD3/17.
+Oneexposedroot is conditional support, not elapsedgain; next test phase-aware
+windows on another supported caller and separate equal-time utility.
+Two Native-absent promotion arms verify the new producer's limited tracked-source
+closure; failed exports/quoting and estimate corrections stay preserved.
+Evidence:SEARCH_SCHEDULING_DIAGNOSTIC.md; data/physical_publication_20261011.json.
+
 ## Latest reserve and mechanical evidence —2026-10-10
 
 The initial UI diagnostic records30 returned=committed moves,24D1 completions
@@ -263,6 +294,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Physical publication, PVS work/time and currentPython warm horizon|SEARCH_SCHEDULING_DIAGNOSTIC.md; data/physical_publication_20261011.json|
 |Availability dispatch, quiet-q execution and representation/residual costs|AVAILABILITY_AND_Q_EXECUTION.md; data/availability_core_20261011.json|
 |Typed auxiliary collision/history/hash identity, whole-board projection and S3 callback origin|RUNTIME_AUX_IDENTITY.md; data/runtime_aux_identity_20261011.json|
 |Retained-result metadata, weighted completion/backend and negative allocation controls|COMPLETION_POLICY_ATTRIBUTION.md; data/completion_policy_20261011.json|
