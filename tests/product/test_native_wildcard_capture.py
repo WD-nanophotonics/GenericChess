@@ -37,3 +37,30 @@ def test_only_filter_wildcards_are_lowered_to_absent_type_constraint():
     # Operations requiring a type operand must keep their reference.
     for kind in ("place", "remove_from_hand"):
         assert _sem_effect(replace(wildcard, kind=kind), 7, mapping, "test")["piece_type_ref"]["kind"] == 3
+
+
+def test_actor_relative_victim_filter_uses_core_fallback():
+    from generic_chess.rules.schema import RuleTypeRef
+    from generic_chess.rules.compiler import compile_semantic_ruleset
+    from generic_chess.core.movegen import legal_actions
+    from generic_chess.core.search_runtime import SearchPathRuntime
+    from test_f24c_mixed_mechanic_certification import _mixed_ruleset, _position, A0, B0, H0, Piece
+    from test_f24c_mixed_mechanic_certification_r1 import _state
+    for ref_kind in ("action_current", "action_base"):
+        rule = _mixed_ruleset()
+        actions = tuple(
+            replace(action, effects=(replace(action.effects[0], piece_type_ref=RuleTypeRef(ref_kind)),) + action.effects[1:])
+            if action.name == "capture_A0_B0_leap" else action
+            for action in rule.semantic_actions
+        )
+        compiled = compile_semantic_ruleset(replace(rule, semantic_actions=actions))
+        position = _position(compiled, [(1, 1, Piece(0, A0, A0)), (2, 1, Piece(1, B0, B0)),
+                                      (0, 0, Piece(0, H0, H0)), (6, 6, Piece(1, H0, H0))])
+        state = _state(compiled, position)
+        provider = NativeSemanticLegalityProvider.try_create(compiled, strict=True)
+        assert provider is None
+        expected = set(legal_actions(state, compiled))
+        assert len(expected) == 2
+        assert not any("capture_A0_B0" in a.pattern_id for a in expected)
+        runtime = SearchPathRuntime(state, compiled)
+        assert set(runtime.legal_actions()) == expected

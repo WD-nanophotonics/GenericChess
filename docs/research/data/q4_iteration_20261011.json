@@ -1,0 +1,317 @@
+{
+  "schema": 1,
+  "base_sha": "d4a588fe50a5f90c0ad5026f28f02905ee86ed65",
+  "science_complete": false,
+  "scope": "Agent-only producers/declarations/raw results/analysis/failure disposition. Raw Slack/account/session/memo/private inputs excluded. No default/q/UI change.",
+  "archive": {
+    "path": "docs/archive/q4_iteration_20261011/evidence.zip",
+    "bytes": 153497,
+    "uncompressed_bytes": 2287256,
+    "members": 56,
+    "sha256": "ee9da7af04cedcc1aa1e482c1fcac0bacde24b398ceec262a214782124088706"
+  },
+  "members": [
+    {
+      "path": ".local_agent/actor_filter_probe.py",
+      "bytes": 1459,
+      "sha256": "7667270face36eebddf641de68b69f79d85110022aeacc0898fdf7e08be08964"
+    },
+    {
+      "path": ".local_agent/analyze_q4_policy.py",
+      "bytes": 3202,
+      "sha256": "c47345d81d91bc291301270bd5b4fb81b4172540b56bf1903a562941c99599f1"
+    },
+    {
+      "path": ".local_agent/drop-d2-cost-20261011/action-labels.json",
+      "bytes": 413,
+      "sha256": "0becb1b0b8097076ce19246973bfb845fe57b8867aad8043a8281bb5be453801"
+    },
+    {
+      "path": ".local_agent/drop-d2-cost-20261011/analyze_and_prepare.py",
+      "bytes": 1303,
+      "sha256": "dd3ea6e286c1c626b8d31889e605b542ee543e8dbb86b7852e8d012dcc42cba6"
+    },
+    {
+      "path": ".local_agent/drop-d2-cost-20261011/candidate-reference.json",
+      "bytes": 1393,
+      "sha256": "e883d4ef492417bfbadfd09154fddeacffc198aa4e30595750158178cb79a781"
+    },
+    {
+      "path": ".local_agent/drop-d2-cost-20261011/candidate_reference.py",
+      "bytes": 1567,
+      "sha256": "172a64fca20cfabb1b5defb9fa2e6a0c79713a80f9701a5b3f7b0087cdcd1e6b"
+    },
+    {
+      "path": ".local_agent/drop-d2-cost-20261011/combined.json",
+      "bytes": 476147,
+      "sha256": "68fa318dfdbf391bbca4629fa530f675ee676a394f4c462eb05d24455b2fea6d"
+    },
+    {
+      "path": ".local_agent/drop-d2-cost-20261011/declaration.json",
+      "bytes": 795,
+      "sha256": "86a5cb3b941c3a1631bbc304847a14073356796010930c9ee6df942a3927b342"
+    },
+    {
+      "path": ".local_agent/drop-d2-cost-20261011/native-first-result.json",
+      "bytes": 236633,
+      "sha256": "daf91ddc012f66a437674cd01706b7493361b8d164b76fcd7c7769a93b85e921"
+    },
+    {
+      "path": ".local_agent/drop-d2-cost-20261011/preserve_native.py",
+      "bytes": 588,
+      "sha256": "c8c971595bb1dca0d26312b5d5b7db669d59f5bfe0d6a92493e8d66141c12ab0"
+    },
+    {
+      "path": ".local_agent/drop-d2-cost-20261011/result.json",
+      "bytes": 206766,
+      "sha256": "02f45c001410bd121ad58aa3cccf97f356202b1adc3a43a37e34c915aecf9a23"
+    },
+    {
+      "path": ".local_agent/drop-iteration-20261011/actor-filter-result.json",
+      "bytes": 503,
+      "sha256": "0f7118c2b5ea6ff735bf6cd0025666b19432938ee4ea8ec185a3226837c14127"
+    },
+    {
+      "path": ".local_agent/drop-iteration-20261011/analysis.json",
+      "bytes": 3012,
+      "sha256": "3eb2b94cc18d4fbce197d9d603904ba6881590c83a820dc0a67f15209716c7f5"
+    },
+    {
+      "path": ".local_agent/drop-iteration-20261011/analyze.py",
+      "bytes": 957,
+      "sha256": "a3721d6f4e47b7b4455767befd79fd999faec9cccd823f2e1ff4776e7504d598"
+    },
+    {
+      "path": ".local_agent/drop-iteration-20261011/declaration.json",
+      "bytes": 438,
+      "sha256": "e0c7596950c2b19b9c087be154e61227c4581842eb61c2f130df6dccf65c05b6"
+    },
+    {
+      "path": ".local_agent/drop-iteration-20261011/failure-disposition.json",
+      "bytes": 3704,
+      "sha256": "81fecbc29ded8de7e980f9b6cfaa747a7b3dc7579b788ba6ec03cb1010ccf071"
+    },
+    {
+      "path": ".local_agent/drop-iteration-20261011/fix_test_newlines.py",
+      "bytes": 330,
+      "sha256": "176730c0646890157e9c6c3a444f3f0e42c421816472d9386e0da8c5ff98c301"
+    },
+    {
+      "path": ".local_agent/drop-iteration-20261011/fix_test_newlines_b.py",
+      "bytes": 572,
+      "sha256": "7354da21aa28ced6ace5ba3e4a5049c4ece40e9a13b15b71dd34e0a8269a0bd7"
+    },
+    {
+      "path": ".local_agent/drop-iteration-20261011/fix_test_setup.py",
+      "bytes": 232,
+      "sha256": "ec725e02c090bd78276ecb89944cc1bbc730cc1837dbc700dea3d3adcfd64843"
+    },
+    {
+      "path": ".local_agent/drop-iteration-20261011/prepare_d2.py",
+      "bytes": 850,
+      "sha256": "6e40bc5d4559a2e0dd9876e7012984aad46e7f6570eb9c27101ed0ed9389604c"
+    },
+    {
+      "path": ".local_agent/drop-iteration-20261011/prepare_revisit.py",
+      "bytes": 1447,
+      "sha256": "5aa14243add10184f91086065aa577e82f51e3e02018db39984f95245bd1f656"
+    },
+    {
+      "path": ".local_agent/drop-iteration-20261011/refine_repair.py",
+      "bytes": 1004,
+      "sha256": "59c8b28f0fbbfc89f088c452f724fa5ea55603390f5bf0d04b39dcf51937f5e3"
+    },
+    {
+      "path": ".local_agent/drop-iteration-20261011/repair_actor_filter.py",
+      "bytes": 2485,
+      "sha256": "8290e19ea69bd4fe6230804a9406ca41c02a2f01d49546d6e010d2f0489d251f"
+    },
+    {
+      "path": ".local_agent/drop-iteration-20261011/repair_provider.py",
+      "bytes": 706,
+      "sha256": "254f25083db4ad545b845586a63ad9da19e8da27d517341f978b3e817130a63f"
+    },
+    {
+      "path": ".local_agent/drop-iteration-20261011/result.json",
+      "bytes": 129588,
+      "sha256": "ec576a73c201d32ad8a08575dc7b504c75ea93925f42a4e2bbe45a948fdaa9bc"
+    },
+    {
+      "path": ".local_agent/drop-iteration-20261011/verify.py",
+      "bytes": 745,
+      "sha256": "a11d085fe4438f7a78589bbc1828a66002c6664327f6c0d2d4c2714c6c6b9847"
+    },
+    {
+      "path": ".local_agent/drop-q-revisit-20261011/declaration.json",
+      "bytes": 519,
+      "sha256": "f6210ff82061d7b6f40e16831601bb914035e653b7aee613863d1bb006f160bc"
+    },
+    {
+      "path": ".local_agent/drop-q-revisit-20261011/result.json",
+      "bytes": 130168,
+      "sha256": "ce4834664386b9c0260b2cf4a5da81dd212bd8c90d410bd467009446c57d05d1"
+    },
+    {
+      "path": ".local_agent/drop_d2_cost.py",
+      "bytes": 2920,
+      "sha256": "43b7e5139f185db78c6e08383115e98413785fe0f079de7211222427f3d6e5f7"
+    },
+    {
+      "path": ".local_agent/drop_iteration_run.py",
+      "bytes": 2838,
+      "sha256": "e6b34b1fc554db12f43c5a2042b80a19460e49c138e4f3c165ac0a33b5e2ceae"
+    },
+    {
+      "path": ".local_agent/drop_q_revisit.py",
+      "bytes": 3721,
+      "sha256": "4bd43363d8a4d8af21d2b4ec5c98e360e1dc85155e78654b623321172d61c691"
+    },
+    {
+      "path": ".local_agent/q4-completion-core-20261011/action-labels.json",
+      "bytes": 6555,
+      "sha256": "6ab61d8a31b235ecd74b3ce30aa3b92f8da7a96cfa19e6fff120a821a4e6964c"
+    },
+    {
+      "path": ".local_agent/q4-completion-core-20261011/analysis.json",
+      "bytes": 12409,
+      "sha256": "f0f200f87a66cb616877fcc64e70c0658029e8cacbd5e9e73387603d616168a7"
+    },
+    {
+      "path": ".local_agent/q4-completion-core-20261011/declaration.json",
+      "bytes": 1202,
+      "sha256": "6a6afbfe920a7cf94e784aa219293eef4fdc04d60bca0e8baa71116ad747fa28"
+    },
+    {
+      "path": ".local_agent/q4-completion-core-20261011/result.json",
+      "bytes": 365461,
+      "sha256": "0e35efb3e5a11b2ec86db28719d5276c5bd7937c95e139ddc57984339879f836"
+    },
+    {
+      "path": ".local_agent/q4-completion-generated-20261011/analysis.json",
+      "bytes": 2501,
+      "sha256": "53eb4152a81e184324c89cd054678408cd5e325cd1589291a4b3c99136296d8f"
+    },
+    {
+      "path": ".local_agent/q4-completion-generated-20261011/analyze.py",
+      "bytes": 2243,
+      "sha256": "9bf51a44c3b12b5485b3ff424798187dcf0b604bbed1feb1413d298419d74e2e"
+    },
+    {
+      "path": ".local_agent/q4-completion-generated-20261011/declaration.json",
+      "bytes": 1172,
+      "sha256": "5a35b8e96aa6288dff3880843f834e468d41a1dc801f734c3311c6d28c6f5efc"
+    },
+    {
+      "path": ".local_agent/q4-completion-generated-20261011/result.json",
+      "bytes": 155061,
+      "sha256": "b385cc0d0c6fcdeb51ef306c4b55c7d225a2d4557404dc21f58fc9b02c98ed38"
+    },
+    {
+      "path": ".local_agent/q4-completion-policy-20261011/action-labels.json",
+      "bytes": 7841,
+      "sha256": "364f15720d5bcd622b1e993f0c318a699949278dfa8c59d64722bc01d52d97dc"
+    },
+    {
+      "path": ".local_agent/q4-completion-policy-20261011/analysis.json",
+      "bytes": 14837,
+      "sha256": "8425682baa8a96e8876d5d12983e3adb60425d7555cd2564b6bff7821b2fe613"
+    },
+    {
+      "path": ".local_agent/q4-completion-policy-20261011/declaration.json",
+      "bytes": 964,
+      "sha256": "6f727f5af9f9b50f8fc0d20abd5179219ceeccb6f741c6b3dde416ff92215170"
+    },
+    {
+      "path": ".local_agent/q4-completion-policy-20261011/result.json",
+      "bytes": 454982,
+      "sha256": "7ffaa36f7b117e7b915a33f24fa6a8bf23b997c83430858b28211de6191479aa"
+    },
+    {
+      "path": ".local_agent/q4-thin-bridge-20261011/declaration.json",
+      "bytes": 860,
+      "sha256": "e1f93af8447d347e49f2e0487e81b1ab212f0a3d182b7a0551522d5f3cb39de3"
+    },
+    {
+      "path": ".local_agent/q4-thin-bridge-20261011/result.json",
+      "bytes": 5100,
+      "sha256": "8d217849f91364a98d875155ca701caab2a68acae7f9e96e97f4b8ccc1956ec4"
+    },
+    {
+      "path": ".local_agent/q4-thin-bridge-20261011/verification.json",
+      "bytes": 315,
+      "sha256": "ae094d8751a722143d47d8a5f43ee36303e2d036c95750b6a10cfe77a746f08d"
+    },
+    {
+      "path": ".local_agent/q4-thin-cost-20261011/analysis.json",
+      "bytes": 2386,
+      "sha256": "35010ec310df0d29dbb45b8e71666540c3ce63c923890355f22176218706cfc8"
+    },
+    {
+      "path": ".local_agent/q4-thin-cost-20261011/analyze.py",
+      "bytes": 1262,
+      "sha256": "851ec3dc3a7b6d2c6f6636ad40747885162aef2ae5e16a6efc4a16f453fda928"
+    },
+    {
+      "path": ".local_agent/q4-thin-cost-20261011/declaration.json",
+      "bytes": 847,
+      "sha256": "fbc630f905aa14f0fdec3ef8c3c043c5d189f6506c9fc1726e6ae098358d56f7"
+    },
+    {
+      "path": ".local_agent/q4-thin-cost-20261011/result.json",
+      "bytes": 10655,
+      "sha256": "cdf0f7aa8e421b9cbffd8d62e7d9fb3c55c7aab3a40592bfadf429f5b8046c15"
+    },
+    {
+      "path": ".local_agent/q4_action_labels.py",
+      "bytes": 1900,
+      "sha256": "754af2afef693a32840f2dc2ebd023209e7abb55747dbd7f18b43825defc7b9b"
+    },
+    {
+      "path": ".local_agent/q4_completion_core.py",
+      "bytes": 3896,
+      "sha256": "e634e9dc4c1829c9725115a9dbb5cebdafb7c4b863a7204833fcd26c0d318953"
+    },
+    {
+      "path": ".local_agent/q4_completion_generated.py",
+      "bytes": 4713,
+      "sha256": "6cd0fbc995424f025ca627fcae159b543bb19a653afb302384a292fd34ea173a"
+    },
+    {
+      "path": ".local_agent/q4_completion_policy.py",
+      "bytes": 3600,
+      "sha256": "4258cac080bc7b1663d58ea0620a54b81e747c470c3dcf14a30f7916e3208df9"
+    },
+    {
+      "path": ".local_agent/q4_thin_bridge.py",
+      "bytes": 4651,
+      "sha256": "6cd068484bb0722b24faec36b8cd4daa5ec3cd6661710af8e12407e1a9200b33"
+    },
+    {
+      "path": ".local_agent/q4_thin_cost.py",
+      "bytes": 4838,
+      "sha256": "4025d9d0e700bc66fbcaa6964d85392d33a73a64e847cdc87d2b5655092ee3af"
+    }
+  ],
+  "producer_dependencies": {
+    "restore_from_existing_indices_at_base_sha": [
+      "docs/research/data/physical_publication_20261011.json: .local_agent/physical-publication-20261011/pvs_probe.py and pvs-declaration.json",
+      "docs/research/data/availability_core_20261011.json: .local_agent/weighted-backend-20261011/bridge.py and .local_agent/availability-core-20261011/semantic_profile_adapter.py",
+      "docs/research/data/runtime_cost_controls_20261011.json: .local_agent/availability-core-20261011/residual-function-profile.json"
+    ],
+    "replay": "Extract selected existing members to their recorded repository-relative paths, then new archive; pre-fix cohorts use baseSHA source, post-fix use publication source. Native binary external environment dependency, not shipped."
+  },
+  "native_binary": {
+    "basename": "_native_core.cp312-win_amd64.pyd",
+    "bytes": 431616,
+    "sha256": "2f97cfb8816bc963163207095bf40ac990169284cd0cfb2e7b545f0a6bf07bf1",
+    "rebuild": false
+  },
+  "replay": "Pre-fix actor_filter_probe requires baseSHA provider; publication provider intentionally falls back. Common search fixture/weighted dependencies from existing indices; current stop authority supplied separately, no old resource-window ACK prerequisite. Protected q4 diagnostic depends on tracked reserve_refresh_diagnostic.py at baseSHA.",
+  "verification": {
+    "focused": 32,
+    "full": 2086,
+    "initial_compiler_rejection_failed": 20,
+    "disposition": "reverted compiler restriction; provider-only Core fallback"
+  },
+  "cost_limits": "Recorded physical transitions/legal/evaluation counters and search clocks. Ordinary concurrent load, no exclusivity or playing-strength claim; engineering/token exact totals and net savings unknown."
+}

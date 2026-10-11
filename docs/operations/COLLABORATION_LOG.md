@@ -166,3 +166,47 @@ are slightly slower with equal decisions/work, so no product adoption. Four
 initial calls had a retained whole-board audit and are separately preserved;
 a new declaration removes it, no favorable subset. Current q work composition
 redirects attention to unfinished iterations. Auxiliary did not duplicate this.
+
+
+## 2026-10-11: q4 completion boundaries and auxiliary leaf-cost evidence
+
+PRIMARY_SANDBOX localized Shogi-drop's failedD2 budget with transparent controls,
+recorded an equal256s Core/Native reference, and completed9D1 plus18D2 matched
+thin-q4 backend calls. A concrete actor-relative victim filter discrepancy was
+repaired at the production provider fallback boundary. The initial compiler
+restriction failed20compile-only contracts and was reverted; final2086active
+regressions pass. Original failures, cap outcomes and producer recovery remain.
+
+DEV_AUX Task055 at d10cc2073c9b86b88fe2d850ccb0885c90a6353d reused old80/16/240
+records and supplied one595leaf-input observation pair. Primary read the fixed
+report and adopted its limited evidence:94.05ms total difference,6.67ms evaluator
+core difference and16.70ms specialized conversion. These q0/observer costs are
+not subtracted from new q4 walls. Primary did not independently rerun that pair.
+Native parameter-hash omissions and different dynamic leaf semantics remain
+scope limits, not a claim of ignored execution or hash collision. This division
+avoids repeating auxiliary validation while primary examines actual completion.
+
+Dot replied to a fresh PRIMARY request with the bounded next decision: compare
+existing reserve against protected full shallowq4, with unchanged budgets and no
+new ordering/pruning. Adopt because completed-search cost alone cannot describe
+what arrives before the user deadline. The prototype stays private, preserving
+cheap reserve on refresh abort and reporting returned q/depth rather than strength.
+No automatic product/default/UI change or additional generated-domain batch.
+
+New roots and the relevant auxiliary thread were read completely; full raw output
+and exact send/receipt/reply are retained privately. Shared-account fixed labels
+route practical communication, not cryptographic process identity. Old pending
+ledger is preserved. No routine receipt loops, new Agent or pause windows.
+No observed cross-checkout writes or direct computation-state interference.
+Normal concurrent load limits clock precision, not cooperation authorization.
+Net saved time/token and collaboration efficiency have no measured counterfactual.
+Raw Slack/account/private inputs are excluded from this remotely readable summary.
+
+Auxiliary report: https://github.com/WD-nanophotonics/GenericChess/blob/d10cc2073c9b86b88fe2d850ccb0885c90a6353d/results/dev_aux/task055/REPORT.md
+Primary scientific scope: Q4_BACKEND_CAPABILITY.md and data/q4_iteration_20261011.json.
+
+Completed policy evidence:48Native/40Core builtin calls plus16existing-generated
+policy transfer calls; all52pairs preserve completed depth in these exposed roots.
+Record actual qdelivery changes and negative short-budget drop outcomes; keep
+defaults pending prospective evidence. This extends one completion decision,
+not an auxiliary duplicate, broad interface batch or renewed microtest backlog.

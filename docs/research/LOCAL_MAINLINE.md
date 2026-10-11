@@ -16,64 +16,55 @@ measure infrastructure defects when they impede these judgments. Distinguish
 rule execution, representation, repeated scheduling, algorithm optimizations,
 actual budget completion and useful decisions. No speed/Elo parity threshold.
 
-Dot direction reply1791706985.929979 confirms search/backend attribution first.
-Adopt stopping the completed seed15 local trace; do not add more edge-case
-experiments automatically. Next measure actual q4 caller physical work by child
-outcome and place it beside the existing q0 bridge, with different horizons
-explicit. Reduce repeated context and low-value coordination. Disk cleanup needs
-actual occupancy evidence and preserves unique experiments/user files.
+Dot reply1791715500.149859 selects bounded completion-policy comparison after
+matchedq4 backend attribution. Adopt: complete-search cost does not establish
+what the user receives before a deadline. Compare current reserve with a protected
+full shallowq4 refresh at existing limits; no q/evaluation/ordering/pruning changes,
+no default or strength promotion. Declared prototypes remain diagnostic.
 
-The retained UI question is the first-completion boundary on the frozen
-remote UI99c97 one-second Chess path. Its persistent service/controller is now
-reproduced; no user game record has been supplied, so a reported user loss is
-not an independently reproduced bug. Pin UI revision, evaluator/material,
-actual Core/Native/fallback, configured/effective limits and returned/committed
-action. Small declared games locate candidate losses; fixed-state/history
-replay attributes them. Keep the UI branch frozen during sandbox research.
+The retained UI question is the first-completion boundary on frozen UI99c97's
+one-second Chess path. Persistent service/controller is reproduced, but no user
+game record is supplied; a reported loss is not an independently reproduced bug.
+Keep UI frozen and distinguish configured q from completed returned q support.
 
 ## Current measured question
 
-Dot reply1791706985.929979 confirms search/backend attribution first. Adopt
-stopping the completed seed15 local trace and reducing low-value coordination.
-This is research advice consistent with direct user instructions, not authority
-from an attributed other-user conversation. No more micro-optimization backlog.
+New8192visit Shogi-drop trace localizes an abortedD2 prefix:1335q visits in the
+first drop child,6199q in the next king child. Equal256s reference completes
+NativeD2/q4/936 at191s, but Core remainsD1/q0/748. Exact search-key/qdepth/window contexts
+do not repeat in7716calls; board/depth repetitions alone do not justify reuse.
+No old cap is erased or uncompleted result ranked as a loss.
 
-Seed15's11-action public-legal checked path reaches qdepth8; transparent capture
-preserves prior work/action and actual root. Lexical retains D2/5261; ordered
-completes D3/5269. No concrete implementation defect was established. Preserve
-capped UNKNOWN status and stop this local trace. Same-q aspiration/fail-soft/MTD
-have conditional and opposing results; keep them diagnostic, no default change.
+Matched thin lexicalq4/hard8 completes all9D1 calls on Core/Native-legality/
+specialized backends. AtD2, ChessEP and Shogi-middle all12calls match decision,
+work and trace; drop all6are UNKNOWN at100000visits/120s. Backend cost remains
+material, while the thin driver lacks production TT/order/reserve. USI R*2a
+matches Native completedD2's generic (file1,rank8) drop, not a different action.
 
-Current32-call four-root q4 curve is complete: Native gains one layer on
-Shogi-middle at16/64seconds, other roots have equal depth, and no action changes.
-Shogi-drop retainsD1/q0 even64seconds. Eight transparent physical-cost calls
-show terminal39-41% and representation27-28% of rejected-child push clocks;
-these nested clocks are not an obtainable speedup or q0/q4 horizon equivalence.
+A concrete actor-relative victim-filter defect gives Core2/Native3actions.
+Production Native legality now falls back to Core for affected move/shift/remove
+filters. Raw Native kernel remains limited. Compiler-level rejection caused
+20compile-only failures and was reverted; provider-only repair passes2086tests.
+Earlier wildcard lowering and frozen failures stay intact. This is a specific
+repair, not generated-domain certification or a new microtest backlog.
 
-The24-call generated/mixed transfer exposed a concrete Native legality defect:
-three wildcard victim captures were missing (root48/45), not a TT difference.
-Compiler lowering of any move/shift/remove filter to absence repairs the deployed
-path. FixedD4 four-arm decisions/work agree;2000actual frontiers/bindings match.
-Original mixed curves remain semantically confounded. Fresh opposite-order
-4/16s mixed controls both completeD4/D5; no speed/strength claim. Details and
-original failures: Q4_BACKEND_CAPABILITY.md and data/q4_caller_20261011.json.
+The completed104-call policy comparison (48Native,40Core,16existing-generated)
+preserves completed depth on all52paired comparisons. On builtins,16/44pairs
+replace returnedq0 withq4; Coregenerated15 adds2more support changes with the
+same action/score. Drop's16s deadline completes shallowq4 on Native but notCore;
+64s completes both. Partial refresh retains exactreserve. Keep defaults: these
+5exposed roots do not establish generality or playing strength. Next predeclare
+a bounded unfamiliar-root sample to test displaced depth/abort behavior before
+choosing implementation; freeze sampling, budgets and actual backend recording.
+No return to the closed seed15 microtrace or increased failed limits.
+Purpose evidence: Q4_BACKEND_CAPABILITY.md; data/q4_iteration_20261011.json.
+Auxiliary Task055 fixedd10cc207 supplies bounded same-leaf/caller-cost evidence;
+no primary rerun or subtraction of its q0 clocks from currentq4 results.
 
-Actual writer-delta wholecaller prototype is slightly slower with equal work;
-defer it. Current64s q visits are89-99% of attemptedwork and drop retainsD1/q0.
-Next locate the failed iteration budget before choosing a phase intervention,
-preserving terminal/check/history semantics. Do not repeat negative Native
-terminal-availability substitution or add a microtest backlog. Metadata-only
-quiet filtering cannot drop terminal/check inclusion. Evidence precedes prototype.
-
-The existing minimal/backend bridge and D4 material teacher use q0, so their
-depths are not aligned with q4. Full Native search kernel remains blocked/restored;
-Native legality plus Core is separate. Mature launch/variant failures remain
-recorded, not grounds for security bypass or claiming executed comparisons.
-No q/evaluator/UI default changes, old failure erasure or automatic budget growth.
-
-Detailed previous selection/history is recoverable at published Git
- ee48d0a55c7bda3d702f45ce2dc4162cc3bbc0ac and purpose reports below. It is no longer
-repeated in this current mandatory-read entry. Nothing is copied or deleted.
+The existing q0 bridge, material-only teachers and full Native dynamic evaluator
+remain distinct routes. Mature engine launch/variant limits are retained; no
+security bypass or unexecuted comparison claim. Ordinary concurrent load is
+allowed and limits clock interpretation, not collaboration authorization.
 
 ## Retained long-term objectives and evidence discipline
 
@@ -108,7 +99,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
-|Currentq4 capability, caller costs and observed wildcard capture repair|Q4_BACKEND_CAPABILITY.md; data/q4_caller_20261011.json|
+|Currentq4 capability, caller costs and observed wildcard capture repair|Q4_BACKEND_CAPABILITY.md; data/q4_caller_20261011.json; q4_iteration_20261011.json|
 |Same-q windows, score units, memory/q bounds, ordering and resource failure|PHASE_AWARE_SEARCH_WINDOWS.md; data/phase_aware_transfer_20261011.json|
 |Physical publication, PVS work/time and currentPython warm horizon|SEARCH_SCHEDULING_DIAGNOSTIC.md; data/physical_publication_20261011.json|
 |Availability dispatch, quiet-q execution and representation/residual costs|AVAILABILITY_AND_Q_EXECUTION.md; data/availability_core_20261011.json|

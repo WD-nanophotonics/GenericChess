@@ -74,6 +74,15 @@ class NativeSemanticLegalityProvider:
         engine = semantic_engine_for(compiled)
         if engine is None:
             return None
+        # Installed kernels bind these filters to the affected piece instead
+        # of the action actor. Preserve Core legality for these rules.
+        if any(
+            effect.kind in ("move", "shift", "remove")
+            and effect.piece_type_ref is not None
+            and effect.piece_type_ref.kind in ("action_base", "action_current")
+            for pattern in engine._patterns for effect in pattern.effects
+        ):
+            return None
         started = time.perf_counter()
         try:
             # Deferred imports avoid a package-initialization cycle when the

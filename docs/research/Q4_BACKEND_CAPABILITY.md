@@ -145,3 +145,145 @@ attempted visits, with4.79-6.09physical pushes per visit. Shogi-drop is98.7-99.0
 q visits yet retainsD1/q0. These are work fractions, not timing fractions.
 Next locate its uncompleted iteration budget before choosing a phase intervention;
 do not keep decomposing the deferred writer prototype or change q defaults.
+
+
+## Failed iteration, matched q4 bridge and actor-relative filters
+
+New evidence at base d4a588fe50a5f90c0ad5026f28f02905ee86ed65 separates
+budget completion from backend cost. The8192visit production Shogi-drop control
+and a transparent root/child observer agree in action, nonclock work and exact
+runtime restoration. D1 completes cheaply with ordinaryq0. In the abortedD2,
+the first drop child uses1335q visits; the second king child uses6199q and ends
+the budget. This describes a truncated prefix, not every completedD2 branch.
+An exact-window q memo diagnostic records7716unique keys in7716calls, while
+position-plus-qdepth repeats2129calls. Different windows/history support mean
+this neither justifies board-only reuse nor excludes bound-table reuse.
+
+Equal additional256s controls preserve the old64s failures. Native-legality
+completes productionD2/q4 in191.024s, score936 and a rook drop to generic square
+(file1,rank8), with231050q visits and83347provider calls/no fallback. Core aborts
+at255.992s retainingD1/q0/748. Native's completedD2 has several costly branches;
+it is not solely the second child. Core's uncompleted iteration is UNKNOWN.
+Scores748,946,936 have different depth/q/path conditions, not a shared utility
+ranking. The producer initially overwrote the first arm ledger during final
+serialization; its saved first-arm snapshot and combined record preserve both.
+
+A single lexical thin driver now uses ordinaryq4/hard8 on Core, Native-legality
+plus Core, and specialized Chess/Shogi backends with the same frozen Python
+weighted evaluator. All child actions are physically executed before noisy
+classification; checks, terminals, captures, material changes and checking drops
+are retained. Specialized conversion/classification snapshots count in wall
+cost. TT, production ordering and reserve are absent, so this is an attribution
+bridge, not production equivalence. Declaration/500ply terminal scope is excluded;
+three builtin roots do not certify the generated domain. Ordered legal/score
+trace hashes are bounded evidence, not complete history equivalence proofs.
+
+All9 D1 calls match completed action/value/work/trace. Drop uses11827q visits,
+39612physical pushes and27785rejected quiet children; Core16.501s,
+Native7.311s, specialized1.054s. It selects R*2a/946 in USI notation.
+AtD2,18opposite-order calls use the same100000visit/120s limits:
+
+|Root|Completed calls|Core seconds|Native seconds|Specialized seconds|Matching work|
+|---|---:|---|---|---|---|
+|Chess EP|6/6|1.836 /1.827|1.495 /1.485|0.494 /0.496|257main,1066q,8885pushes|
+|Shogi middle|6/6|30.540 /30.584|19.358 /19.378|5.278 /5.307|338main,14830q,116813pushes|
+|Shogi drop|0/6|120s time cap twice|82.612 /82.366 node cap|12.480 /12.569 node cap|aborted, no completed-root match claim|
+
+The two completed roots match action/value/work/trace in all arms. Drop's
+Native/specialized partial traversal differs by one legal/check boundary call
+under cooperative polling; partial best actions are not completed decisions.
+Normal concurrent load is allowed; no machine exclusivity/noise-free or Elo
+claim. Backend cost remains substantial under the same q algorithm, independently
+of the production reserve/completion policy question.
+
+A second concrete semantic defect affects action_base/action_current type filters
+on move/shift/remove effects. With actorA0 and victimB0, Core permits2actions but
+raw Native permits3, incorrectly including a capture. Native resolves these
+filters from the affected piece; Core resolves them from the action actor.
+The production legality provider now selects its existing Core fallback for
+this unsupported subset. Other Native support and compile-only payload contracts
+remain intact. Raw Native APIs remain limited; installed kernels were not fixed
+or rebuilt. Initial compiler-level rejection caused20compile-only regressions
+and was reverted. The final provider-only repair passes32focused and2086active
+layer tests. A test argument-order setup error and byte/newline guard failures
+were corrected, distinct from engine findings. No default search/q/UI change.
+
+Dot's complete reply1791715500.149859 recommends a bounded completion-policy
+comparison: existing reserve versus a protected full shallowq4 result before
+further deepening, within identical existing budgets. Adopt that decision because
+the thin bridge explains complete-search cost, while actual users receive only
+completed results before the deadline. Do not expand generated batches or add
+ordering/pruning, increase failed budgets, or promote policy on changed actions
+alone. The private prototype reuses the existing protected-refresh diagnostic,
+changing q1 refresh to full configuredq4. One budget/deadline is shared; an abort
+retains the completed reserve; TT is isolated during refresh. Actual results
+and this specific premise belong below, without automatically changing defaults.
+
+
+Provider capability reporting distinguishes request from execution: affected
+actor-relative rules can still compile structurally, but provider creation returns
+None and production uses Core. This is normal capability fallback, not a Native
+operational failure or successful provider call. Builtin q4 cohorts exercise
+actual provider calls without runtime fallback; raw compiled APIs remain separate.
+
+
+A no-new-run check of the saved NativeD2 child ledger maps the oldreserve to
+R*4b and shallowq4 to R*2a. Both candidate returns fall strictly within their
+recorded child windows: root-perspective -721 versus936 under this executed
+D2/q4 protocol. Shallowq4 matches its selected action. This is one finite
+selective-search reference, not WDL/global minimax or an independent strength
+measurement; D1/q0 and D1/q4 scores are not compared numerically with D2.
+
+
+## Completed same-budget return-policy comparison
+
+48Native and40Core cold calls compare baseline versus protected fullq4 refresh,
+1/4/16/64seconds, depth12/1Mvisits and opposite arm orders. Core ChessEP uses
+only1/4seconds; Shogi uses all budgets. One cumulative budget/deadline is verified;
+refresh TT is disabled/cleared, then restored. Aborted refresh preserves exact
+reserve action/score/PV and ordinaryq0 metadata. Event q describes configuration,
+not returned-result support. Actual Native calls/enable/fallback are verified.
+
+|Root/backend|1s baseline -> policy|4s|16s|64s|
+|---|---|---|---|---|
+|ChessEP Native|D1/q0 -> D1/q4|D2/q4 both|D3/q4 both|D4/q4 both|
+|ChessEP Core|D1/q0 -> D1/q4|D2/q4 both|not rerun|not rerun|
+|Shogi-middle Native|D1/q0 -> D1/q4|D2/q4 both|D3/q4 both|D4/q4 both|
+|Shogi-middle Core|D1/q0 -> D1/q4|D1/q0 -> D1/q4|D2/q4 both|D3/q4 both|
+|Shogi-drop Native|D1/q0 both|D1/q0 both|D1/q0 -> D1/q4|D1/q0 -> D1/q4|
+|Shogi-drop Core|D1/q0 both|D1/q0 both|D1/q0 both|D1/q0 -> D1/q4|
+
+Each reported pair repeats in both orders. Completed depth is preserved in all
+44pairs;16pairs replace returnedq0 withq4. Successful shallow refresh uses162
+visits for ChessEP,251for Shogi-middle and12908for drop. Drop costs Native
+7.521-7.788s versus Core15.983-16.173s, so Core's16s complete-call deadline is
+missed after reserve/setup in both observed orders. This is an observed boundary,
+not a universal exact cutoff. One/four-second drop refresh remains negative;
+limits are not enlarged. Different policies change scheduling/TT history, so this
+is deliverable-capability evidence, not identical-tree overhead or strength.
+
+Only after this comparison, a declared64s maximum batch reuses two existing
+exposed generated8 roots13/15 at4seconds, two backends/policies/orders,16calls.
+This checks policy displacement without a new rule/interface cohort. All8pairs
+preserve completed depth/action/score; Coreseed15 deliversD1/q4 insteadD1/q0.
+The same existing read-only metadata adapter and generated profile are recorded;
+actual backend calls and exact roots are checked. It is development transfer,
+not restored holdout status or full promotion/drop/history/domain certification.
+
+Decision: retain the protected-fullq4 route as a concrete completion candidate,
+but keep production and UI defaults. No losses of completed depth were observed
+on these5existing roots; this does not exclude losses on other roots or establish
+playing strength. The new support and finiteD2 candidate reference justify a
+prospective, predeclared unfamiliar-root comparison before implementation choice,
+without repeating the completed local micro-optimization chain or changing q4.
+
+Measured policy cost: Native48calls1019.610s,93396main/1132785q visits,
+6753507physical pushes,453438legal calls,896101evaluations,453216Nativecalls.
+Core40calls699.790s,31411main/496319q,2920346pushes,180054legal calls,
+391766evaluations and0Nativecalls. Generated16calls63.922s,5564main/64816q,
+352423pushes,29137legal calls,46779evaluations and17108Nativecalls.
+All physical pops balance and actual roots restore. Clock sums are call costs,
+not CPU utilization or exclusive-machine evidence. Engineering includes source
+reuse, analysis field/configured-q corrections, newline preservation, a reverted
+compiler repair and publication checks. Exact token/engineering totals, I/O bytes
+and net savings are unknown. Final archive bytes and hashes are in the index.
