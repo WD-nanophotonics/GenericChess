@@ -1,0 +1,20 @@
+{
+  "task_id": "057",
+  "question": "Does Native remove-filter action_base/current resolve against the actor or the victim?",
+  "source_pin": "d4a588fe50a5f90c0ad5026f28f02905ee86ed65",
+  "auxiliary_product_base": "b4108a68a7ee06327be39cb3a222939644085a52",
+  "changed_premise": "Concrete source discrepancy: Core resolves type filter using binding.actor_base/current, C remove passes captured piece base/current. Different from repaired any wildcard.",
+  "fixture": "Existing F24C capture_B0_A0_leap with B0 actor at1,1 and A0 victim at2,1 plus anchors, no hands. Only remove piece_type_ref varies.",
+  "cases": [
+    "any",
+    "action_base",
+    "action_current",
+    "explicit_B0",
+    "explicit_A0"
+  ],
+  "method": "Compile the same declared fixture per case, fixed current _sem_effect loaded into own process by AST only; own product files unchanged. Compare complete Core/actual strict Native frontier and attempt Core transition for the disputed capture. No search/timing/extra calls after outcomes.",
+  "frozen_conditions": "Same guards, selectors, geometry, source,target, anchor policy, effects/order, victim disposition. Fresh provider per case; installed binary hash must match primary index.",
+  "expected_evidence": "Actual executable provider, complete public frontier difference, Core apply acceptance/rejection for same public capture, raw compiled pattern/effect and code/binary hashes.",
+  "decision": "A real supported mismatch invalidates generic backend equivalence outside exposed same-type wildcard fixture; send bounded independent counterexample to Dot/PRIMARY, no C rebuild/product patch. A match rejects this hypothesis for the finite cases.",
+  "cost": "Five frontier calls, estimated under10seconds total, no timed search, no engine build or worker."
+}

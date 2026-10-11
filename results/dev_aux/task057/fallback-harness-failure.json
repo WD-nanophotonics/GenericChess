@@ -1,0 +1,5 @@
+{
+  "error": "AttributeError: CompiledSemanticRuleset has no attribute max_ply",
+  "stage": "first unaffected Runtime legal_actions call before results",
+  "correction": "First attempt stopped on unchanged auxiliary supports_position reading absent legacy compiled.max_ply. No result was written. Include the same captured primary typed-support accessor; no product files changed."
+}

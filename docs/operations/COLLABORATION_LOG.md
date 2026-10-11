@@ -131,3 +131,15 @@ Dot已复核上一份固定协作报告并提出三项澄清，均明确采纳�
 后续实际开始源码审计：请求/创建/成功调用/最终enabled/状态fallback并非同一条件；完整Native wrapper evaluator_config_hash只绑定规则及材料，动态/空间/局部控制/compact字段实际传入却未进入hash，后续须独立记录完整参数。这是源码元数据限制，不是新增运行、密码学碰撞或主产品故障认证。
 
 本段984de077-efa6-48ec-86be-a506b8b5130c记录09:04:45.714777至10:05:02.564609UTC，60.281分钟、12个研究checkpoint，safe_checkpoint通过；首次提前收尾被拒后实际继续persistent评估绑定源码检查，再由自身finish接受，没有重置时钟/绕过。时长是记录墙钟，不保证独立有效工时或App uptime；科学仍OPEN，三项可执行memo保留。d10cc207完整SHA已远端核验，报告链接已向Dot/PRIMARY发送且读回，无采用回执假定。结束日志初次读取使用系统编码失败，改显式UTF-8后补齐；未改变实验或session记录。
+
+## 2026-10-11：DEV_AUX能力曲线、动态类型过滤及完整Native范围
+
+辅助复用主固定d4a588fe50a5f90c0ad5026f28f02905ee86ed65的当前Q4与旧material档案，以及313900d3b5c0d9d79a117306ecf30cf6078dba43旧调度档案。Task056核验183个记录调用及2000个已有透明前沿；Native四个builtin配对多完成一层，但可比配对未改变动作，mixed旧增深受漏捕获语义污染。TT暖D1非新鲜有限值；q访问比例非耗时/失败D2比例。Task058复用152个material/q0记录；完整Native显式无qsearch，不能移植为当前q4证据。旧resource caller哈希与打包最终源不符，有限档案/Git检查未找到原字节，保留源阶段缺口。
+
+Task057五个预声明实际provider前沿独立复现actor相对类型被Native绑定到victim的问题：两动态引用Core2/Native3，额外capture被Core正式转移拒绝。主PRIMARY已独立报告反向A0/B0条件并拥有provider修复与q4完成策略实验；辅助不接管、不新增第二产品修复、不重复主时间批次。Dot读取固定公开源，采纳provider能力拒绝/Core回退，反对无条件静态actor常量替代；它没有执行辅助实验或读取未发布修复。
+
+只读捕获主未发布provider草稿完整SHA及两个函数AST后，辅助同五条件验证：两动态条件拒绝provider并用Core，三其他条件实际Native调用且前沿一致。创建拒绝时enabled/calls/fallback均0，因此零fallback不能认证Native执行。自身旧supports_position依赖max_ply失败被保留，再捕获同草稿typed-support访问器；无主文件写入、新DLL或产品/default/UI改动。这是有限草稿闭环，非主发布/全域回归认证。
+
+纠正并保留：辅助fetch仅追踪sidemission，最初fetch sandbox未更新origin/sandbox，随后显式ref更新固定源；记录读取器schema/root路径、CRLF字节和工具参数失败均不重跑旧实验。效率体现为复用已有335个调用和2000前沿而非新增计时批次；没有单Agent对照、完整工时/token或节约比例。普通CPU并行遵从用户最新指示，不申请安静窗口；保持文件和计算状态边界。原始Slack/账号/私人输入/凭据不发布。
+
+主日志仍由PRIMARY整合；本条只写辅助sidemission。科学OPEN，完整评价参数与persistent绑定继续独立审计，源阶段缺口及尚未发表主结果待后续固定版本；本段时间/finish在实际接受后补记，不提前称完成。

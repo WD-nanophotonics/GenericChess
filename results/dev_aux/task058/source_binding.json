@@ -1,0 +1,110 @@
+{
+  "complete": true,
+  "revision": "d4a588fe50a5f90c0ad5026f28f02905ee86ed65",
+  "targets": {
+    "caller_sha256": "adee4c8ebd6670263652fa1ea3fc501cef6ea548e5a6b53de48ba2f7f7d1ab10",
+    "algorithm_sha256": "6567d89c33892643420658c8c5fe397cc134bb6cd9bd16fa572363325d2bb960"
+  },
+  "packaged": {
+    "scripts/bounded_root_scheduler.py": {
+      "member": {
+        "bytes": 3419,
+        "sha256": "3e679848bf06337dd8e345e480561c1dc39196ccb2778e23b2d8416593a41675"
+      },
+      "recorded_source_sha256": "adee4c8ebd6670263652fa1ea3fc501cef6ea548e5a6b53de48ba2f7f7d1ab10",
+      "matches_executed_raw_hash": false
+    },
+    "scripts/root_bound_diagnostic.py": {
+      "member": {
+        "bytes": 5474,
+        "sha256": "f8ebaf59ba8ccde30015310ae40a690f50425af5e9a1da1eeefeb49f99a08eeb"
+      },
+      "recorded_source_sha256": "6567d89c33892643420658c8c5fe397cc134bb6cd9bd16fa572363325d2bb960",
+      "matches_executed_raw_hash": false
+    }
+  },
+  "matches": [
+    {
+      "target": "algorithm_sha256",
+      "index": "docs/research/data/terminal_frontier_20261010.json",
+      "member": "scripts/root_bound_diagnostic.py",
+      "variant": "crlf",
+      "member_raw_sha256": "f8ebaf59ba8ccde30015310ae40a690f50425af5e9a1da1eeefeb49f99a08eeb"
+    }
+  ],
+  "scanned_archives": [
+    {
+      "index": "docs/research/data/terminal_frontier_20261010.json",
+      "index_sha256": "92f90c62e7cd110223836ccc7b5756ca655d37dd84bd6fe3f67c42459ec0ad42",
+      "archive_sha256": "27d349559abf9967b43b98be37e376a14ab8010e13b220d6104408947a0b0838",
+      "python_members": 45
+    },
+    {
+      "index": "docs/research/data/root_bound_20261010.json",
+      "index_sha256": "f5dd6672ed88ed720eb7a5f5e98e0f1d3ed7bedbc477837e82b2defd1de5e222",
+      "archive_sha256": "76b3040854ab20d75c7e4e9649fad3e3113566fb59744cea8a97d81f10e155b9",
+      "python_members": 35
+    },
+    {
+      "index": "docs/research/data/cooperative_budget_20261010.json",
+      "index_sha256": "ff057b337c361fc900c06225a3245504e796345d9c6a2098b6845c11d9e6ed0d",
+      "archive_sha256": "306b587d9d8d785d7a8c37ea28d306747bbf2c1aeb2d1ba61090726dca750ebe",
+      "python_members": 64
+    }
+  ],
+  "current_sources": {
+    "generic_chess/native/semantic_engine.py": {
+      "revision": "d4a588fe50a5f90c0ad5026f28f02905ee86ed65",
+      "sha256": "69ef74e504419e397dba9aaa7e28ff0b64b7a79dbe8d4b2c8138609da3e4b40f",
+      "scope": "Current source only, not historical binary build provenance"
+    },
+    "generic_chess/native/semantic.py": {
+      "revision": "d4a588fe50a5f90c0ad5026f28f02905ee86ed65",
+      "sha256": "78e6830e9e303a151c73617386c8fd069e942290326deeaaf4420d9844f70b2f",
+      "scope": "Current source only, not historical binary build provenance"
+    },
+    "generic_chess/_native/native_module.c": {
+      "revision": "d4a588fe50a5f90c0ad5026f28f02905ee86ed65",
+      "sha256": "41062ee5e5c19f8add786b31d2944361ae06058b75f558f62c0898ec4879c0f2",
+      "scope": "Current source only, not historical binary build provenance"
+    },
+    "generic_chess/ai/alphabeta/search.py": {
+      "revision": "d4a588fe50a5f90c0ad5026f28f02905ee86ed65",
+      "sha256": "5640906a523b51eb3c24fe71eba3f7923be8d62f4b9d053b193ef1deed456a1c",
+      "scope": "Current source only, not historical binary build provenance"
+    }
+  },
+  "caller_byte_variants": [
+    {
+      "variant": "LF noBOM",
+      "sha256": "3e679848bf06337dd8e345e480561c1dc39196ccb2778e23b2d8416593a41675",
+      "matches": false
+    },
+    {
+      "variant": "LF BOM",
+      "sha256": "3133f0b80be5ea67ea191fa1abfcd6a44ec197fa463f79ca9fd7733b2f89899f",
+      "matches": false
+    },
+    {
+      "variant": "CRLF noBOM",
+      "sha256": "317af3b5e6838d2df79f3c728104b46d0883fd7ab89d527c755eba7cef4c1b6a",
+      "matches": false
+    },
+    {
+      "variant": "CRLF BOM",
+      "sha256": "8667ceabc91c4e5b00a64a6b1c21553e8306a5ebf9797b71e31757f4ea940b3b",
+      "matches": false
+    },
+    {
+      "variant": "CRCRLF noBOM",
+      "sha256": "66c31fd8875e6d97908a9a8f9b6d7a708c0545a72631c8d3c42b17c7f21da53c",
+      "matches": false
+    },
+    {
+      "variant": "CRCRLF BOM",
+      "sha256": "cd395620bdd931ae498228f98d2a215c2116a9d7be785e12981c1bf483655741",
+      "matches": false
+    }
+  ],
+  "limit": "Resource caller executed raw hash not found in scanned three archives or available two Git source revisions; no re-created source is treated as a byte witness. Packaged root algorithm matches recorded source after declared CRLF serialization. Historical algorithm-curve producer has no separate imported helper self-hash; package and results source stages stay explicit."
+}

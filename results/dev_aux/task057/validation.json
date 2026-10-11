@@ -1,0 +1,15 @@
+{
+  "complete": true,
+  "assertions": "Five expected finite outcomes; provider executable/root unchanged; exactly one Native-only capture/no Core-only on two dynamic filters; Core transition error; all static/wildcard complete fronts agree.",
+  "result_sha256": "96dbd8c2861cf60d6764d07250ed199db83536e45d6db1809915ec15383a8531",
+  "script_syntax": "PASS",
+  "scope": "No independent full search or fix execution.",
+  "fallback_closure": {
+    "complete": true,
+    "cases": 5,
+    "actual_native_calls": 3,
+    "capability_refusals": 2,
+    "snapshot_stage": "unpublished primary draft",
+    "result_sha256": "7bdba3517e668e98acb2f2274e6b24ea9085b648783f1db37a6472a335c3f0a5"
+  }
+}

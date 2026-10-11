@@ -1,0 +1,3500 @@
+{
+  "complete": true,
+  "revision": "d4a588fe50a5f90c0ad5026f28f02905ee86ed65",
+  "index": "docs/research/data/q4_caller_20261011.json",
+  "index_sha256": "19db3df9655ddb11e964236ab9efd6413e322abc382d627c915c885b724689dd",
+  "archive": {
+    "path": "docs/archive/q4_caller_20261011/evidence.zip",
+    "bytes": 97818,
+    "uncompressed_bytes": 1002865,
+    "members": 47,
+    "sha256": "77bb963621e1bac253e068c8c423359e5f69b1a22173d1238fee3f9f5a793a1d"
+  },
+  "base_sha": "ee48d0a55c7bda3d702f45ce2dc4162cc3bbc0ac",
+  "selected_members": {
+    ".local_agent/q4-caller-attribution-20261011/capability-result.json": {
+      "path": ".local_agent/q4-caller-attribution-20261011/capability-result.json",
+      "bytes": 256174,
+      "sha256": "d61e0b074aa0afa12bfd9fd0366c9b528b58392d4b92d344158244b39b5e9ea7"
+    },
+    ".local_agent/q4-caller-attribution-20261011/generic-capability-result.json": {
+      "path": ".local_agent/q4-caller-attribution-20261011/generic-capability-result.json",
+      "bytes": 202219,
+      "sha256": "6eabf5857fcca997279b51ccef9b322da020fde5376b5d413a5862fa2998223d"
+    },
+    ".local_agent/q4-caller-attribution-20261011/mixed-postfix-capability-result.json": {
+      "path": ".local_agent/q4-caller-attribution-20261011/mixed-postfix-capability-result.json",
+      "bytes": 71994,
+      "sha256": "837d56ff03299f55d78ae3edfb717f51d8275fe4874f220c8f14207bd1a106de"
+    },
+    ".local_agent/q4-caller-attribution-20261011/mixed-discrepancy-result.json": {
+      "path": ".local_agent/q4-caller-attribution-20261011/mixed-discrepancy-result.json",
+      "bytes": 34319,
+      "sha256": "9e0ba035b53beda65bb4396f4d4b31edfe3fb21ad5305366bb87fc3bdb34878c"
+    },
+    ".local_agent/q4-caller-attribution-20261011/mixed-postfix-result.json": {
+      "path": ".local_agent/q4-caller-attribution-20261011/mixed-postfix-result.json",
+      "bytes": 34348,
+      "sha256": "77f0867763f331bb848338fd738d2e3dc84913d9273f2794f73214caf6456b16"
+    },
+    ".local_agent/q4-caller-attribution-20261011/mixed-postfix-frontier-result.json": {
+      "path": ".local_agent/q4-caller-attribution-20261011/mixed-postfix-frontier-result.json",
+      "bytes": 7921,
+      "sha256": "93f7bae0b402f318a958190b2f081326263fd5edb2c7e6639143d088c0b6c70c"
+    },
+    ".local_agent/q4-caller-attribution-20261011/capability-declaration.json": {
+      "path": ".local_agent/q4-caller-attribution-20261011/capability-declaration.json",
+      "bytes": 973,
+      "sha256": "4115182ade2600b6310c452b851bbb63ce809a43b427f4f638f52acf19866136"
+    },
+    ".local_agent/q4-caller-attribution-20261011/capability.py": {
+      "path": ".local_agent/q4-caller-attribution-20261011/capability.py",
+      "bytes": 2391,
+      "sha256": "8b1b42e345f0008ce5cbd4af7566b669c6898c64203c698fec441d66dad9a9cb"
+    },
+    ".local_agent/q4-caller-attribution-20261011/generic-capability-declaration.json": {
+      "path": ".local_agent/q4-caller-attribution-20261011/generic-capability-declaration.json",
+      "bytes": 1231,
+      "sha256": "d056c925071e5cc222f464dd9a61077766442c19149f74ebc9a71c58ad51cc77"
+    },
+    ".local_agent/q4-caller-attribution-20261011/generic_capability.py": {
+      "path": ".local_agent/q4-caller-attribution-20261011/generic_capability.py",
+      "bytes": 3657,
+      "sha256": "d9255bd44de5d2b84f0deaa0f227167efbb841711f6ce98f9ef2c26123b0e458"
+    },
+    ".local_agent/q4-caller-attribution-20261011/mixed-postfix-capability-declaration.json": {
+      "path": ".local_agent/q4-caller-attribution-20261011/mixed-postfix-capability-declaration.json",
+      "bytes": 649,
+      "sha256": "a8604d2b5dff510ceb39fc8dfbd4533d66241a0d13d57739ddb2d99da08f883a"
+    },
+    ".local_agent/q4-caller-attribution-20261011/mixed_postfix_capability.py": {
+      "path": ".local_agent/q4-caller-attribution-20261011/mixed_postfix_capability.py",
+      "bytes": 3670,
+      "sha256": "19831a8ceabc2e4561aa93a404515c9fb97eeb46b2ba9f82db9182cb8b01b67f"
+    },
+    ".local_agent/q4-caller-attribution-20261011/mixed-discrepancy-declaration.json": {
+      "path": ".local_agent/q4-caller-attribution-20261011/mixed-discrepancy-declaration.json",
+      "bytes": 910,
+      "sha256": "fb9ed75b4e0d0d68ba5ad3b406434c2658346e391ba47ce4294a3e0400340e67"
+    },
+    ".local_agent/q4-caller-attribution-20261011/mixed_discrepancy.py": {
+      "path": ".local_agent/q4-caller-attribution-20261011/mixed_discrepancy.py",
+      "bytes": 2534,
+      "sha256": "65fc8a1a29ed254b1ef95f6fa1b10ca800e57cdbd60a724fc637ffa97652c07e"
+    },
+    ".local_agent/q4-caller-attribution-20261011/mixed-frontier-observer-declaration.json": {
+      "path": ".local_agent/q4-caller-attribution-20261011/mixed-frontier-observer-declaration.json",
+      "bytes": 793,
+      "sha256": "6f927f193d5792f0ec0768b8f2e0da3ba08064264441223147903220faa8b968"
+    },
+    ".local_agent/q4-caller-attribution-20261011/mixed_frontier_observer.py": {
+      "path": ".local_agent/q4-caller-attribution-20261011/mixed_frontier_observer.py",
+      "bytes": 3087,
+      "sha256": "a4675208cea2e76cdc162aebf3996751e7258cc4a47fa047b412ad777fab06f1"
+    },
+    ".local_agent/q4-caller-attribution-20261011/mixed-frontier-observer-result.json": {
+      "path": ".local_agent/q4-caller-attribution-20261011/mixed-frontier-observer-result.json",
+      "bytes": 26445,
+      "sha256": "090b2bf4a51bba6d98dead8f0112d043668da66c6d3039237d5d92873aea8178"
+    },
+    ".local_agent/q4-caller-attribution-20261011/mixed_postfix.py": {
+      "path": ".local_agent/q4-caller-attribution-20261011/mixed_postfix.py",
+      "bytes": 2551,
+      "sha256": "d834807c1f594064ac2d40964b3ada77d2634f02f9d21e97605dfdd9d37a60f5"
+    },
+    ".local_agent/q4-caller-attribution-20261011/mixed_postfix_frontier.py": {
+      "path": ".local_agent/q4-caller-attribution-20261011/mixed_postfix_frontier.py",
+      "bytes": 3111,
+      "sha256": "fcaf33b04ab3c6953aaa712d0c12501a3e639ecb430ce3a7ceab1c6d420a235f"
+    },
+    ".local_agent/q4-caller-attribution-20261011/caller-work-mix.json": {
+      "path": ".local_agent/q4-caller-attribution-20261011/caller-work-mix.json",
+      "bytes": 7008,
+      "sha256": "36e51e37ecb48dc0e9c9731957ef9e83974dc79b54283906a302be7266cddb3e"
+    }
+  },
+  "studies": {
+    "capability": {
+      "rows": [
+        {
+          "root": "chess-middle",
+          "seconds": 16,
+          "order": 0,
+          "native_requested": false,
+          "action": {
+            "pattern_id": "sem_02_n_quiet",
+            "geometry_id": "g12",
+            "actor_type_id": "N",
+            "from_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "to_square": {
+              "file": 6,
+              "rank": 4
+            },
+            "promotion_target_id": null
+          },
+          "score": -2,
+          "completed_depth": 2,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 558,
+          "qnodes": 13815,
+          "runtime_pushes": 78415,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 11227,
+          "legal_actions_generated": 129525,
+          "q_fraction_of_visits": 0.9611772072636193,
+          "physical_pushes_per_visit": 5.4557155778195225,
+          "wall": 15.989913000259548,
+          "setup_seconds": 1.0400079190731049e-05
+        },
+        {
+          "root": "chess-middle",
+          "seconds": 16,
+          "order": 0,
+          "native_requested": true,
+          "action": {
+            "pattern_id": "sem_02_n_quiet",
+            "geometry_id": "g12",
+            "actor_type_id": "N",
+            "from_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "to_square": {
+              "file": 6,
+              "rank": 4
+            },
+            "promotion_target_id": null
+          },
+          "score": -2,
+          "completed_depth": 2,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 621,
+          "qnodes": 17668,
+          "runtime_pushes": 103253,
+          "native_legality_calls": 7604,
+          "native_legality_actions": 168512,
+          "evaluation_calls": 14386,
+          "legal_actions_generated": 168652,
+          "q_fraction_of_visits": 0.9660451637596369,
+          "physical_pushes_per_visit": 5.645633987642846,
+          "wall": 15.995686700101942,
+          "setup_seconds": 0.0026026000268757343
+        },
+        {
+          "root": "chess-middle",
+          "seconds": 16,
+          "order": 1,
+          "native_requested": true,
+          "action": {
+            "pattern_id": "sem_02_n_quiet",
+            "geometry_id": "g12",
+            "actor_type_id": "N",
+            "from_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "to_square": {
+              "file": 6,
+              "rank": 4
+            },
+            "promotion_target_id": null
+          },
+          "score": -2,
+          "completed_depth": 2,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 621,
+          "qnodes": 17724,
+          "runtime_pushes": 103553,
+          "native_legality_calls": 7626,
+          "native_legality_actions": 169013,
+          "evaluation_calls": 14431,
+          "legal_actions_generated": 169153,
+          "q_fraction_of_visits": 0.9661488143908422,
+          "physical_pushes_per_visit": 5.64475333878441,
+          "wall": 15.997486900072545,
+          "setup_seconds": 0.001491200178861618
+        },
+        {
+          "root": "chess-middle",
+          "seconds": 16,
+          "order": 1,
+          "native_requested": false,
+          "action": {
+            "pattern_id": "sem_02_n_quiet",
+            "geometry_id": "g12",
+            "actor_type_id": "N",
+            "from_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "to_square": {
+              "file": 6,
+              "rank": 4
+            },
+            "promotion_target_id": null
+          },
+          "score": -2,
+          "completed_depth": 2,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 558,
+          "qnodes": 13801,
+          "runtime_pushes": 78302,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 11217,
+          "legal_actions_generated": 129317,
+          "q_fraction_of_visits": 0.9611393551082944,
+          "physical_pushes_per_visit": 5.453165262204889,
+          "wall": 15.998951400164515,
+          "setup_seconds": 6.739981472492218e-05
+        },
+        {
+          "root": "chess-middle",
+          "seconds": 64,
+          "order": 0,
+          "native_requested": false,
+          "action": {
+            "pattern_id": "sem_00_k_quiet",
+            "geometry_id": "g8",
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 4,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 4,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "score": 5,
+          "completed_depth": 3,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 4220,
+          "qnodes": 57943,
+          "runtime_pushes": 299665,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 46637,
+          "legal_actions_generated": 511894,
+          "q_fraction_of_visits": 0.9321139584640381,
+          "physical_pushes_per_visit": 4.820632852339816,
+          "wall": 63.998552700039,
+          "setup_seconds": 6.939982995390892e-05
+        },
+        {
+          "root": "chess-middle",
+          "seconds": 64,
+          "order": 0,
+          "native_requested": true,
+          "action": {
+            "pattern_id": "sem_00_k_quiet",
+            "geometry_id": "g8",
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 4,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 4,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "score": 5,
+          "completed_depth": 3,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 6391,
+          "qnodes": 78035,
+          "runtime_pushes": 402739,
+          "native_legality_calls": 31937,
+          "native_legality_actions": 694781,
+          "evaluation_calls": 63000,
+          "legal_actions_generated": 694956,
+          "q_fraction_of_visits": 0.9243005709141734,
+          "physical_pushes_per_visit": 4.7703195698007725,
+          "wall": 63.99000689992681,
+          "setup_seconds": 0.009515599813312292
+        },
+        {
+          "root": "chess-middle",
+          "seconds": 64,
+          "order": 1,
+          "native_requested": true,
+          "action": {
+            "pattern_id": "sem_00_k_quiet",
+            "geometry_id": "g8",
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 4,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 4,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "score": 5,
+          "completed_depth": 3,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 5796,
+          "qnodes": 76158,
+          "runtime_pushes": 394968,
+          "native_legality_calls": 31261,
+          "native_legality_actions": 680699,
+          "evaluation_calls": 61443,
+          "legal_actions_generated": 680874,
+          "q_fraction_of_visits": 0.9292773995168021,
+          "physical_pushes_per_visit": 4.819386485101399,
+          "wall": 63.994718500413,
+          "setup_seconds": 0.0020443997345864773
+        },
+        {
+          "root": "chess-middle",
+          "seconds": 64,
+          "order": 1,
+          "native_requested": false,
+          "action": {
+            "pattern_id": "sem_00_k_quiet",
+            "geometry_id": "g8",
+            "actor_type_id": "K",
+            "from_square": {
+              "file": 4,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 4,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "score": 5,
+          "completed_depth": 3,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 4220,
+          "qnodes": 57948,
+          "runtime_pushes": 299699,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 46640,
+          "legal_actions_generated": 511948,
+          "q_fraction_of_visits": 0.9321194183502767,
+          "physical_pushes_per_visit": 4.820792047355552,
+          "wall": 63.99750760011375,
+          "setup_seconds": 0.0004746001213788986
+        },
+        {
+          "root": "chess-ep",
+          "seconds": 16,
+          "order": 0,
+          "native_requested": false,
+          "action": {
+            "pattern_id": "sem_08_q_quiet",
+            "geometry_id": "g24",
+            "actor_type_id": "Q",
+            "from_square": {
+              "file": 3,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "promotion_target_id": null
+          },
+          "score": 17,
+          "completed_depth": 3,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 2601,
+          "qnodes": 14538,
+          "runtime_pushes": 78283,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 11684,
+          "legal_actions_generated": 120188,
+          "q_fraction_of_visits": 0.8482408541921932,
+          "physical_pushes_per_visit": 4.567536028939845,
+          "wall": 15.99746139999479,
+          "setup_seconds": 0.0003440999425947666
+        },
+        {
+          "root": "chess-ep",
+          "seconds": 16,
+          "order": 0,
+          "native_requested": true,
+          "action": {
+            "pattern_id": "sem_08_q_quiet",
+            "geometry_id": "g24",
+            "actor_type_id": "Q",
+            "from_square": {
+              "file": 3,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "promotion_target_id": null
+          },
+          "score": 17,
+          "completed_depth": 3,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 2987,
+          "qnodes": 17564,
+          "runtime_pushes": 99538,
+          "native_legality_calls": 7849,
+          "native_legality_actions": 153429,
+          "evaluation_calls": 14106,
+          "legal_actions_generated": 153584,
+          "q_fraction_of_visits": 0.8546542747311566,
+          "physical_pushes_per_visit": 4.843462605226023,
+          "wall": 15.996407700236887,
+          "setup_seconds": 0.001876399852335453
+        },
+        {
+          "root": "chess-ep",
+          "seconds": 16,
+          "order": 1,
+          "native_requested": true,
+          "action": {
+            "pattern_id": "sem_08_q_quiet",
+            "geometry_id": "g24",
+            "actor_type_id": "Q",
+            "from_square": {
+              "file": 3,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "promotion_target_id": null
+          },
+          "score": 17,
+          "completed_depth": 3,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 2981,
+          "qnodes": 17514,
+          "runtime_pushes": 99005,
+          "native_legality_calls": 7819,
+          "native_legality_actions": 152846,
+          "evaluation_calls": 14064,
+          "legal_actions_generated": 153001,
+          "q_fraction_of_visits": 0.8545498902171261,
+          "physical_pushes_per_visit": 4.830690412295682,
+          "wall": 15.995479800272733,
+          "setup_seconds": 0.0020791999995708466
+        },
+        {
+          "root": "chess-ep",
+          "seconds": 16,
+          "order": 1,
+          "native_requested": false,
+          "action": {
+            "pattern_id": "sem_08_q_quiet",
+            "geometry_id": "g24",
+            "actor_type_id": "Q",
+            "from_square": {
+              "file": 3,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "promotion_target_id": null
+          },
+          "score": 17,
+          "completed_depth": 3,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 2597,
+          "qnodes": 14514,
+          "runtime_pushes": 78161,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 11664,
+          "legal_actions_generated": 119877,
+          "q_fraction_of_visits": 0.848226287183683,
+          "physical_pushes_per_visit": 4.56788031091111,
+          "wall": 15.999372699763626,
+          "setup_seconds": 0.0003241999074816704
+        },
+        {
+          "root": "chess-ep",
+          "seconds": 64,
+          "order": 0,
+          "native_requested": false,
+          "action": {
+            "pattern_id": "sem_08_q_quiet",
+            "geometry_id": "g24",
+            "actor_type_id": "Q",
+            "from_square": {
+              "file": 3,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "promotion_target_id": null
+          },
+          "score": 5,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 6017,
+          "qnodes": 52303,
+          "runtime_pushes": 313001,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 41420,
+          "legal_actions_generated": 480606,
+          "q_fraction_of_visits": 0.8968278463648834,
+          "physical_pushes_per_visit": 5.366958161865569,
+          "wall": 63.995198800228536,
+          "setup_seconds": 0.00025400007143616676
+        },
+        {
+          "root": "chess-ep",
+          "seconds": 64,
+          "order": 0,
+          "native_requested": true,
+          "action": {
+            "pattern_id": "sem_08_q_quiet",
+            "geometry_id": "g24",
+            "actor_type_id": "Q",
+            "from_square": {
+              "file": 3,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "promotion_target_id": null
+          },
+          "score": 5,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 7566,
+          "qnodes": 68052,
+          "runtime_pushes": 400824,
+          "native_legality_calls": 31833,
+          "native_legality_actions": 612665,
+          "evaluation_calls": 53566,
+          "legal_actions_generated": 612851,
+          "q_fraction_of_visits": 0.899944457668809,
+          "physical_pushes_per_visit": 5.300642704118067,
+          "wall": 63.99416120024398,
+          "setup_seconds": 0.002247499767690897
+        },
+        {
+          "root": "chess-ep",
+          "seconds": 64,
+          "order": 1,
+          "native_requested": true,
+          "action": {
+            "pattern_id": "sem_08_q_quiet",
+            "geometry_id": "g24",
+            "actor_type_id": "Q",
+            "from_square": {
+              "file": 3,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "promotion_target_id": null
+          },
+          "score": 5,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 7606,
+          "qnodes": 68254,
+          "runtime_pushes": 402320,
+          "native_legality_calls": 31942,
+          "native_legality_actions": 615101,
+          "evaluation_calls": 53737,
+          "legal_actions_generated": 615287,
+          "q_fraction_of_visits": 0.8997363564460849,
+          "physical_pushes_per_visit": 5.303453730556288,
+          "wall": 63.99836770026013,
+          "setup_seconds": 0.002490399871021509
+        },
+        {
+          "root": "chess-ep",
+          "seconds": 64,
+          "order": 1,
+          "native_requested": false,
+          "action": {
+            "pattern_id": "sem_08_q_quiet",
+            "geometry_id": "g24",
+            "actor_type_id": "Q",
+            "from_square": {
+              "file": 3,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "promotion_target_id": null
+          },
+          "score": 5,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 6297,
+          "qnodes": 54413,
+          "runtime_pushes": 323914,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 43058,
+          "legal_actions_generated": 497173,
+          "q_fraction_of_visits": 0.8962773842859496,
+          "physical_pushes_per_visit": 5.335430736287267,
+          "wall": 63.99275639979169,
+          "setup_seconds": 0.0009147999808192253
+        },
+        {
+          "root": "shogi-middle",
+          "seconds": 16,
+          "order": 0,
+          "native_requested": false,
+          "action": {
+            "pattern_id": "legacy_031",
+            "geometry_id": "g22",
+            "actor_type_id": "R",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 5
+            },
+            "promotion_target_id": null
+          },
+          "score": 4,
+          "completed_depth": 2,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 411,
+          "qnodes": 8421,
+          "runtime_pushes": 59991,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 6515,
+          "legal_actions_generated": 119847,
+          "q_fraction_of_visits": 0.9534646739130435,
+          "physical_pushes_per_visit": 6.792459239130435,
+          "wall": 15.99854339985177,
+          "setup_seconds": 0.000862599816173315
+        },
+        {
+          "root": "shogi-middle",
+          "seconds": 16,
+          "order": 0,
+          "native_requested": true,
+          "action": {
+            "pattern_id": "legacy_031",
+            "geometry_id": "g22",
+            "actor_type_id": "R",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 5
+            },
+            "promotion_target_id": null
+          },
+          "score": 12,
+          "completed_depth": 3,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 2009,
+          "qnodes": 15494,
+          "runtime_pushes": 104275,
+          "native_legality_calls": 6191,
+          "native_legality_actions": 206151,
+          "evaluation_calls": 12116,
+          "legal_actions_generated": 206361,
+          "q_fraction_of_visits": 0.885219676626864,
+          "physical_pushes_per_visit": 5.957550134262698,
+          "wall": 15.992181899957359,
+          "setup_seconds": 0.019092199858278036
+        },
+        {
+          "root": "shogi-middle",
+          "seconds": 16,
+          "order": 1,
+          "native_requested": true,
+          "action": {
+            "pattern_id": "legacy_031",
+            "geometry_id": "g22",
+            "actor_type_id": "R",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 5
+            },
+            "promotion_target_id": null
+          },
+          "score": 12,
+          "completed_depth": 3,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 2009,
+          "qnodes": 15407,
+          "runtime_pushes": 103603,
+          "native_legality_calls": 6153,
+          "native_legality_actions": 204737,
+          "evaluation_calls": 12048,
+          "legal_actions_generated": 204947,
+          "q_fraction_of_visits": 0.8846463022508039,
+          "physical_pushes_per_visit": 5.948725310059715,
+          "wall": 15.992852800060064,
+          "setup_seconds": 0.004336100071668625
+        },
+        {
+          "root": "shogi-middle",
+          "seconds": 16,
+          "order": 1,
+          "native_requested": false,
+          "action": {
+            "pattern_id": "legacy_031",
+            "geometry_id": "g22",
+            "actor_type_id": "R",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 5
+            },
+            "promotion_target_id": null
+          },
+          "score": 4,
+          "completed_depth": 2,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 411,
+          "qnodes": 8486,
+          "runtime_pushes": 60489,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 6564,
+          "legal_actions_generated": 120825,
+          "q_fraction_of_visits": 0.9538046532539058,
+          "physical_pushes_per_visit": 6.7988085871642125,
+          "wall": 15.996100599877536,
+          "setup_seconds": 0.0001426003873348236
+        },
+        {
+          "root": "shogi-middle",
+          "seconds": 64,
+          "order": 0,
+          "native_requested": false,
+          "action": {
+            "pattern_id": "legacy_031",
+            "geometry_id": "g22",
+            "actor_type_id": "R",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 5
+            },
+            "promotion_target_id": null
+          },
+          "score": 12,
+          "completed_depth": 3,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 4468,
+          "qnodes": 37352,
+          "runtime_pushes": 245402,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 30060,
+          "legal_actions_generated": 499481,
+          "q_fraction_of_visits": 0.8931611669057867,
+          "physical_pushes_per_visit": 5.86805356288857,
+          "wall": 63.99585929978639,
+          "setup_seconds": 8.79000872373581e-05
+        },
+        {
+          "root": "shogi-middle",
+          "seconds": 64,
+          "order": 0,
+          "native_requested": true,
+          "action": {
+            "pattern_id": "legacy_031",
+            "geometry_id": "g22",
+            "actor_type_id": "R",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 5
+            },
+            "promotion_target_id": null
+          },
+          "score": -4,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 7345,
+          "qnodes": 59132,
+          "runtime_pushes": 404437,
+          "native_legality_calls": 24303,
+          "native_legality_actions": 889691,
+          "evaluation_calls": 47924,
+          "legal_actions_generated": 889943,
+          "q_fraction_of_visits": 0.8895106578215022,
+          "physical_pushes_per_visit": 6.08386359191901,
+          "wall": 63.996599100064486,
+          "setup_seconds": 0.01949660014361143
+        },
+        {
+          "root": "shogi-middle",
+          "seconds": 64,
+          "order": 1,
+          "native_requested": true,
+          "action": {
+            "pattern_id": "legacy_031",
+            "geometry_id": "g22",
+            "actor_type_id": "R",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 5
+            },
+            "promotion_target_id": null
+          },
+          "score": -4,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 7331,
+          "qnodes": 58986,
+          "runtime_pushes": 403583,
+          "native_legality_calls": 24259,
+          "native_legality_actions": 888452,
+          "evaluation_calls": 47803,
+          "legal_actions_generated": 888704,
+          "q_fraction_of_visits": 0.8894551924845816,
+          "physical_pushes_per_visit": 6.085664309302291,
+          "wall": 63.9998508002609,
+          "setup_seconds": 0.005002699792385101
+        },
+        {
+          "root": "shogi-middle",
+          "seconds": 64,
+          "order": 1,
+          "native_requested": false,
+          "action": {
+            "pattern_id": "legacy_031",
+            "geometry_id": "g22",
+            "actor_type_id": "R",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 5
+            },
+            "promotion_target_id": null
+          },
+          "score": 12,
+          "completed_depth": 3,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 4453,
+          "qnodes": 37085,
+          "runtime_pushes": 243762,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 29858,
+          "legal_actions_generated": 496331,
+          "q_fraction_of_visits": 0.8927969570032259,
+          "physical_pushes_per_visit": 5.8684096489961,
+          "wall": 63.999742300249636,
+          "setup_seconds": 0.0014296998269855976
+        },
+        {
+          "root": "shogi-drop",
+          "seconds": 16,
+          "order": 0,
+          "native_requested": false,
+          "action": {
+            "pattern_id": "legacy_147",
+            "geometry_id": "g71",
+            "base_type_id": "R",
+            "to_square": {
+              "file": 3,
+              "rank": 7
+            }
+          },
+          "score": 748,
+          "completed_depth": 1,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 0,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 603,
+          "qnodes": 12223,
+          "runtime_pushes": 78467,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 9455,
+          "legal_actions_generated": 144739,
+          "q_fraction_of_visits": 0.9529861219398098,
+          "physical_pushes_per_visit": 6.117807578356463,
+          "wall": 15.988863199949265,
+          "setup_seconds": 0.0004227999597787857
+        },
+        {
+          "root": "shogi-drop",
+          "seconds": 16,
+          "order": 0,
+          "native_requested": true,
+          "action": {
+            "pattern_id": "legacy_147",
+            "geometry_id": "g71",
+            "base_type_id": "R",
+            "to_square": {
+              "file": 3,
+              "rank": 7
+            }
+          },
+          "score": 748,
+          "completed_depth": 1,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 0,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 606,
+          "qnodes": 21298,
+          "runtime_pushes": 121662,
+          "native_legality_calls": 6675,
+          "native_legality_actions": 228647,
+          "evaluation_calls": 16796,
+          "legal_actions_generated": 229136,
+          "q_fraction_of_visits": 0.9723338203067933,
+          "physical_pushes_per_visit": 5.554327976625274,
+          "wall": 15.993123500142246,
+          "setup_seconds": 0.033550800289958715
+        },
+        {
+          "root": "shogi-drop",
+          "seconds": 16,
+          "order": 1,
+          "native_requested": true,
+          "action": {
+            "pattern_id": "legacy_147",
+            "geometry_id": "g71",
+            "base_type_id": "R",
+            "to_square": {
+              "file": 3,
+              "rank": 7
+            }
+          },
+          "score": 748,
+          "completed_depth": 1,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 0,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 606,
+          "qnodes": 21255,
+          "runtime_pushes": 121465,
+          "native_legality_calls": 6665,
+          "native_legality_actions": 228222,
+          "evaluation_calls": 16760,
+          "legal_actions_generated": 228711,
+          "q_fraction_of_visits": 0.9722794016742143,
+          "physical_pushes_per_visit": 5.556241708979461,
+          "wall": 15.992997200228274,
+          "setup_seconds": 0.00429840013384819
+        },
+        {
+          "root": "shogi-drop",
+          "seconds": 16,
+          "order": 1,
+          "native_requested": false,
+          "action": {
+            "pattern_id": "legacy_147",
+            "geometry_id": "g71",
+            "base_type_id": "R",
+            "to_square": {
+              "file": 3,
+              "rank": 7
+            }
+          },
+          "score": 748,
+          "completed_depth": 1,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 0,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 603,
+          "qnodes": 12377,
+          "runtime_pushes": 79454,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 9555,
+          "legal_actions_generated": 145820,
+          "q_fraction_of_visits": 0.9535439137134052,
+          "physical_pushes_per_visit": 6.1212634822804315,
+          "wall": 15.992994099855423,
+          "setup_seconds": 1.6300007700920105e-05
+        },
+        {
+          "root": "shogi-drop",
+          "seconds": 64,
+          "order": 0,
+          "native_requested": false,
+          "action": {
+            "pattern_id": "legacy_147",
+            "geometry_id": "g71",
+            "base_type_id": "R",
+            "to_square": {
+              "file": 3,
+              "rank": 7
+            }
+          },
+          "score": 748,
+          "completed_depth": 1,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 0,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 681,
+          "qnodes": 53061,
+          "runtime_pushes": 304665,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 42032,
+          "legal_actions_generated": 606614,
+          "q_fraction_of_visits": 0.987328346544602,
+          "physical_pushes_per_visit": 5.669029809087864,
+          "wall": 63.99596490012482,
+          "setup_seconds": 1.659989356994629e-05
+        },
+        {
+          "root": "shogi-drop",
+          "seconds": 64,
+          "order": 0,
+          "native_requested": true,
+          "action": {
+            "pattern_id": "legacy_147",
+            "geometry_id": "g71",
+            "base_type_id": "R",
+            "to_square": {
+              "file": 3,
+              "rank": 7
+            }
+          },
+          "score": 748,
+          "completed_depth": 1,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 0,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 888,
+          "qnodes": 85485,
+          "runtime_pushes": 477970,
+          "native_legality_calls": 30124,
+          "native_legality_actions": 1010313,
+          "evaluation_calls": 67734,
+          "legal_actions_generated": 1010802,
+          "q_fraction_of_visits": 0.9897190094126637,
+          "physical_pushes_per_visit": 5.5337894944021855,
+          "wall": 63.99121099989861,
+          "setup_seconds": 0.004262600094079971
+        },
+        {
+          "root": "shogi-drop",
+          "seconds": 64,
+          "order": 1,
+          "native_requested": true,
+          "action": {
+            "pattern_id": "legacy_147",
+            "geometry_id": "g71",
+            "base_type_id": "R",
+            "to_square": {
+              "file": 3,
+              "rank": 7
+            }
+          },
+          "score": 748,
+          "completed_depth": 1,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 0,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 888,
+          "qnodes": 85762,
+          "runtime_pushes": 478706,
+          "native_legality_calls": 30238,
+          "native_legality_actions": 1013554,
+          "evaluation_calls": 67947,
+          "legal_actions_generated": 1014043,
+          "q_fraction_of_visits": 0.9897518753606462,
+          "physical_pushes_per_visit": 5.524593190998269,
+          "wall": 63.99324109964073,
+          "setup_seconds": 0.018179900012910366
+        },
+        {
+          "root": "shogi-drop",
+          "seconds": 64,
+          "order": 1,
+          "native_requested": false,
+          "action": {
+            "pattern_id": "legacy_147",
+            "geometry_id": "g71",
+            "base_type_id": "R",
+            "to_square": {
+              "file": 3,
+              "rank": 7
+            }
+          },
+          "score": 748,
+          "completed_depth": 1,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 0,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 681,
+          "qnodes": 53049,
+          "runtime_pushes": 304626,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 42023,
+          "legal_actions_generated": 606363,
+          "q_fraction_of_visits": 0.9873255164712451,
+          "physical_pushes_per_visit": 5.669570072585148,
+          "wall": 63.99543450027704,
+          "setup_seconds": 2.5799963623285294e-05
+        }
+      ],
+      "pairs": [
+        {
+          "root": "chess-ep",
+          "seconds": 16,
+          "order": 0,
+          "core_depth": 3,
+          "native_depth": 3,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "chess-ep",
+          "seconds": 16,
+          "order": 1,
+          "core_depth": 3,
+          "native_depth": 3,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "chess-ep",
+          "seconds": 64,
+          "order": 0,
+          "core_depth": 4,
+          "native_depth": 4,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "chess-ep",
+          "seconds": 64,
+          "order": 1,
+          "core_depth": 4,
+          "native_depth": 4,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "chess-middle",
+          "seconds": 16,
+          "order": 0,
+          "core_depth": 2,
+          "native_depth": 2,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "chess-middle",
+          "seconds": 16,
+          "order": 1,
+          "core_depth": 2,
+          "native_depth": 2,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "chess-middle",
+          "seconds": 64,
+          "order": 0,
+          "core_depth": 3,
+          "native_depth": 3,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "chess-middle",
+          "seconds": 64,
+          "order": 1,
+          "core_depth": 3,
+          "native_depth": 3,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "shogi-drop",
+          "seconds": 16,
+          "order": 0,
+          "core_depth": 1,
+          "native_depth": 1,
+          "core_q": 0,
+          "native_q": 0,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "shogi-drop",
+          "seconds": 16,
+          "order": 1,
+          "core_depth": 1,
+          "native_depth": 1,
+          "core_q": 0,
+          "native_q": 0,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "shogi-drop",
+          "seconds": 64,
+          "order": 0,
+          "core_depth": 1,
+          "native_depth": 1,
+          "core_q": 0,
+          "native_q": 0,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "shogi-drop",
+          "seconds": 64,
+          "order": 1,
+          "core_depth": 1,
+          "native_depth": 1,
+          "core_q": 0,
+          "native_q": 0,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "shogi-middle",
+          "seconds": 16,
+          "order": 0,
+          "core_depth": 2,
+          "native_depth": 3,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": false,
+          "semantically_comparable": true
+        },
+        {
+          "root": "shogi-middle",
+          "seconds": 16,
+          "order": 1,
+          "core_depth": 2,
+          "native_depth": 3,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": false,
+          "semantically_comparable": true
+        },
+        {
+          "root": "shogi-middle",
+          "seconds": 64,
+          "order": 0,
+          "core_depth": 3,
+          "native_depth": 4,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": false,
+          "semantically_comparable": true
+        },
+        {
+          "root": "shogi-middle",
+          "seconds": 64,
+          "order": 1,
+          "core_depth": 3,
+          "native_depth": 4,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": false,
+          "semantically_comparable": true
+        }
+      ],
+      "totals": {
+        "nodes": 95630,
+        "qnodes": 1225117,
+        "runtime_pushes": 7148197,
+        "native_legality_calls": 292479,
+        "native_legality_actions": 7916813,
+        "evaluation_calls": 977470,
+        "legal_actions_generated": 13161553,
+        "wall": 1279.847589102108,
+        "setup_seconds": 0.13802979933097959
+      }
+    },
+    "generic-capability": {
+      "rows": [
+        {
+          "root": "generated-13-8",
+          "seconds": 4,
+          "order": 0,
+          "native_requested": false,
+          "ruleset_fingerprint": "7cde058242b2f41a7abb90b5b4fcd0ec015012ac63ab6e5a09df3a49d4cbd6de",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_047",
+            "geometry_id": "g3",
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 4,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 7,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 114,
+          "completed_depth": 2,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 409,
+          "qnodes": 3116,
+          "runtime_pushes": 21683,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 2467,
+          "legal_actions_generated": 40303,
+          "q_fraction_of_visits": 0.8839716312056738,
+          "physical_pushes_per_visit": 6.151205673758866,
+          "wall": 3.988650199957192,
+          "setup_seconds": 8.699949830770493e-06
+        },
+        {
+          "root": "generated-13-8",
+          "seconds": 4,
+          "order": 0,
+          "native_requested": true,
+          "ruleset_fingerprint": "7cde058242b2f41a7abb90b5b4fcd0ec015012ac63ab6e5a09df3a49d4cbd6de",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_047",
+            "geometry_id": "g3",
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 4,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 7,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 114,
+          "completed_depth": 2,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 765,
+          "qnodes": 4033,
+          "runtime_pushes": 29175,
+          "native_legality_calls": 1743,
+          "native_legality_actions": 57115,
+          "evaluation_calls": 3228,
+          "legal_actions_generated": 57251,
+          "q_fraction_of_visits": 0.8405585660691955,
+          "physical_pushes_per_visit": 6.0806586077532305,
+          "wall": 3.996658999938518,
+          "setup_seconds": 0.002312100026756525
+        },
+        {
+          "root": "generated-13-8",
+          "seconds": 4,
+          "order": 1,
+          "native_requested": true,
+          "ruleset_fingerprint": "7cde058242b2f41a7abb90b5b4fcd0ec015012ac63ab6e5a09df3a49d4cbd6de",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_047",
+            "geometry_id": "g3",
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 4,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 7,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 114,
+          "completed_depth": 2,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 765,
+          "qnodes": 4050,
+          "runtime_pushes": 29289,
+          "native_legality_calls": 1750,
+          "native_legality_actions": 57261,
+          "evaluation_calls": 3240,
+          "legal_actions_generated": 57397,
+          "q_fraction_of_visits": 0.8411214953271028,
+          "physical_pushes_per_visit": 6.082866043613707,
+          "wall": 3.999149899929762,
+          "setup_seconds": 0.0014595999382436275
+        },
+        {
+          "root": "generated-13-8",
+          "seconds": 4,
+          "order": 1,
+          "native_requested": false,
+          "ruleset_fingerprint": "7cde058242b2f41a7abb90b5b4fcd0ec015012ac63ab6e5a09df3a49d4cbd6de",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_047",
+            "geometry_id": "g3",
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 4,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 7,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 114,
+          "completed_depth": 2,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 437,
+          "qnodes": 3143,
+          "runtime_pushes": 21711,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 2494,
+          "legal_actions_generated": 40303,
+          "q_fraction_of_visits": 0.8779329608938548,
+          "physical_pushes_per_visit": 6.064525139664805,
+          "wall": 3.9976908997632563,
+          "setup_seconds": 8.110003545880318e-05
+        },
+        {
+          "root": "generated-13-8",
+          "seconds": 16,
+          "order": 0,
+          "native_requested": false,
+          "ruleset_fingerprint": "7cde058242b2f41a7abb90b5b4fcd0ec015012ac63ab6e5a09df3a49d4cbd6de",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_047",
+            "geometry_id": "g3",
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 4,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 7,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 114,
+          "completed_depth": 3,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 2217,
+          "qnodes": 12079,
+          "runtime_pushes": 83060,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 9275,
+          "legal_actions_generated": 152223,
+          "q_fraction_of_visits": 0.8449216564073867,
+          "physical_pushes_per_visit": 5.810016787912703,
+          "wall": 16.000242399983108,
+          "setup_seconds": 7.479963824152946e-05
+        },
+        {
+          "root": "generated-13-8",
+          "seconds": 16,
+          "order": 0,
+          "native_requested": true,
+          "ruleset_fingerprint": "7cde058242b2f41a7abb90b5b4fcd0ec015012ac63ab6e5a09df3a49d4cbd6de",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_047",
+            "geometry_id": "g3",
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 4,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 7,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 114,
+          "completed_depth": 3,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 2273,
+          "qnodes": 16826,
+          "runtime_pushes": 115619,
+          "native_legality_calls": 7230,
+          "native_legality_actions": 220726,
+          "evaluation_calls": 12703,
+          "legal_actions_generated": 220896,
+          "q_fraction_of_visits": 0.8809885334310696,
+          "physical_pushes_per_visit": 6.053667731294833,
+          "wall": 15.993599600158632,
+          "setup_seconds": 0.0014760000631213188
+        },
+        {
+          "root": "generated-13-8",
+          "seconds": 16,
+          "order": 1,
+          "native_requested": true,
+          "ruleset_fingerprint": "7cde058242b2f41a7abb90b5b4fcd0ec015012ac63ab6e5a09df3a49d4cbd6de",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_047",
+            "geometry_id": "g3",
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 4,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 7,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 114,
+          "completed_depth": 3,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 2273,
+          "qnodes": 16873,
+          "runtime_pushes": 116137,
+          "native_legality_calls": 7257,
+          "native_legality_actions": 221623,
+          "evaluation_calls": 12731,
+          "legal_actions_generated": 221793,
+          "q_fraction_of_visits": 0.8812806852606289,
+          "physical_pushes_per_visit": 6.065862321111459,
+          "wall": 15.997173900250345,
+          "setup_seconds": 0.0014748000539839268
+        },
+        {
+          "root": "generated-13-8",
+          "seconds": 16,
+          "order": 1,
+          "native_requested": false,
+          "ruleset_fingerprint": "7cde058242b2f41a7abb90b5b4fcd0ec015012ac63ab6e5a09df3a49d4cbd6de",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_047",
+            "geometry_id": "g3",
+            "actor_type_id": "A",
+            "from_square": {
+              "file": 4,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 7,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 114,
+          "completed_depth": 3,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 2217,
+          "qnodes": 12112,
+          "runtime_pushes": 83305,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 9303,
+          "legal_actions_generated": 152821,
+          "q_fraction_of_visits": 0.8452788052201828,
+          "physical_pushes_per_visit": 5.813734384814014,
+          "wall": 16.002957299817353,
+          "setup_seconds": 0.00018800003454089165
+        },
+        {
+          "root": "generated-15-8",
+          "seconds": 4,
+          "order": 0,
+          "native_requested": false,
+          "ruleset_fingerprint": "7e650f7fb1bb18b465ce2bd8a04ffa0ad4e5ffc892dee7f49038c8f772c8dad1",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_005",
+            "geometry_id": "g10",
+            "actor_type_id": "B",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 0,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 4228,
+          "completed_depth": 1,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 0,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 148,
+          "qnodes": 3651,
+          "runtime_pushes": 15997,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 2460,
+          "legal_actions_generated": 28821,
+          "q_fraction_of_visits": 0.961042379573572,
+          "physical_pushes_per_visit": 4.21084495919979,
+          "wall": 3.9889536001719534,
+          "setup_seconds": 0.00016069971024990082
+        },
+        {
+          "root": "generated-15-8",
+          "seconds": 4,
+          "order": 0,
+          "native_requested": true,
+          "ruleset_fingerprint": "7e650f7fb1bb18b465ce2bd8a04ffa0ad4e5ffc892dee7f49038c8f772c8dad1",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_005",
+            "geometry_id": "g10",
+            "actor_type_id": "B",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 0,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 5261,
+          "completed_depth": 2,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 200,
+          "qnodes": 5876,
+          "runtime_pushes": 23269,
+          "native_legality_calls": 2649,
+          "native_legality_actions": 38863,
+          "evaluation_calls": 3894,
+          "legal_actions_generated": 39007,
+          "q_fraction_of_visits": 0.9670836076366031,
+          "physical_pushes_per_visit": 3.829657669519421,
+          "wall": 3.9958091001026332,
+          "setup_seconds": 0.0012058001011610031
+        },
+        {
+          "root": "generated-15-8",
+          "seconds": 4,
+          "order": 1,
+          "native_requested": true,
+          "ruleset_fingerprint": "7e650f7fb1bb18b465ce2bd8a04ffa0ad4e5ffc892dee7f49038c8f772c8dad1",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_005",
+            "geometry_id": "g10",
+            "actor_type_id": "B",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 0,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 5261,
+          "completed_depth": 2,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 200,
+          "qnodes": 5860,
+          "runtime_pushes": 23222,
+          "native_legality_calls": 2645,
+          "native_legality_actions": 38743,
+          "evaluation_calls": 3882,
+          "legal_actions_generated": 38887,
+          "q_fraction_of_visits": 0.966996699669967,
+          "physical_pushes_per_visit": 3.832013201320132,
+          "wall": 3.995451500173658,
+          "setup_seconds": 0.0013831998221576214
+        },
+        {
+          "root": "generated-15-8",
+          "seconds": 4,
+          "order": 1,
+          "native_requested": false,
+          "ruleset_fingerprint": "7e650f7fb1bb18b465ce2bd8a04ffa0ad4e5ffc892dee7f49038c8f772c8dad1",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_005",
+            "geometry_id": "g10",
+            "actor_type_id": "B",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 0,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 4228,
+          "completed_depth": 1,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 0,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 148,
+          "qnodes": 3643,
+          "runtime_pushes": 15985,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 2455,
+          "legal_actions_generated": 28765,
+          "q_fraction_of_visits": 0.9609601688208916,
+          "physical_pushes_per_visit": 4.216565549986811,
+          "wall": 3.9986375998705626,
+          "setup_seconds": 3.8300175219774246e-05
+        },
+        {
+          "root": "generated-15-8",
+          "seconds": 16,
+          "order": 0,
+          "native_requested": false,
+          "ruleset_fingerprint": "7e650f7fb1bb18b465ce2bd8a04ffa0ad4e5ffc892dee7f49038c8f772c8dad1",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_005",
+            "geometry_id": "g10",
+            "actor_type_id": "B",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 0,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 5261,
+          "completed_depth": 2,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "qsearch_check_hard_limit",
+          "nodes": 214,
+          "qnodes": 8804,
+          "runtime_pushes": 30344,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 5999,
+          "legal_actions_generated": 47983,
+          "q_fraction_of_visits": 0.9762696828565092,
+          "physical_pushes_per_visit": 3.3648259037480592,
+          "wall": 7.7393959001637995,
+          "setup_seconds": 2.8399750590324402e-05
+        },
+        {
+          "root": "generated-15-8",
+          "seconds": 16,
+          "order": 0,
+          "native_requested": true,
+          "ruleset_fingerprint": "7e650f7fb1bb18b465ce2bd8a04ffa0ad4e5ffc892dee7f49038c8f772c8dad1",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_005",
+            "geometry_id": "g10",
+            "actor_type_id": "B",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 0,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 5261,
+          "completed_depth": 2,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "qsearch_check_hard_limit",
+          "nodes": 214,
+          "qnodes": 8804,
+          "runtime_pushes": 30344,
+          "native_legality_calls": 3539,
+          "native_legality_actions": 47839,
+          "evaluation_calls": 5999,
+          "legal_actions_generated": 47983,
+          "q_fraction_of_visits": 0.9762696828565092,
+          "physical_pushes_per_visit": 3.3648259037480592,
+          "wall": 5.212734499946237,
+          "setup_seconds": 0.0016966001130640507
+        },
+        {
+          "root": "generated-15-8",
+          "seconds": 16,
+          "order": 1,
+          "native_requested": true,
+          "ruleset_fingerprint": "7e650f7fb1bb18b465ce2bd8a04ffa0ad4e5ffc892dee7f49038c8f772c8dad1",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_005",
+            "geometry_id": "g10",
+            "actor_type_id": "B",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 0,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 5261,
+          "completed_depth": 2,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "qsearch_check_hard_limit",
+          "nodes": 214,
+          "qnodes": 8804,
+          "runtime_pushes": 30344,
+          "native_legality_calls": 3539,
+          "native_legality_actions": 47839,
+          "evaluation_calls": 5999,
+          "legal_actions_generated": 47983,
+          "q_fraction_of_visits": 0.9762696828565092,
+          "physical_pushes_per_visit": 3.3648259037480592,
+          "wall": 5.228703500237316,
+          "setup_seconds": 0.0012944997288286686
+        },
+        {
+          "root": "generated-15-8",
+          "seconds": 16,
+          "order": 1,
+          "native_requested": false,
+          "ruleset_fingerprint": "7e650f7fb1bb18b465ce2bd8a04ffa0ad4e5ffc892dee7f49038c8f772c8dad1",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_005",
+            "geometry_id": "g10",
+            "actor_type_id": "B",
+            "from_square": {
+              "file": 0,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 0,
+              "rank": 6
+            },
+            "promotion_target_id": null
+          },
+          "score": 5261,
+          "completed_depth": 2,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "qsearch_check_hard_limit",
+          "nodes": 214,
+          "qnodes": 8804,
+          "runtime_pushes": 30344,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 5999,
+          "legal_actions_generated": 47983,
+          "q_fraction_of_visits": 0.9762696828565092,
+          "physical_pushes_per_visit": 3.3648259037480592,
+          "wall": 7.797881599981338,
+          "setup_seconds": 4.350021481513977e-05
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 4,
+          "order": 0,
+          "native_requested": false,
+          "ruleset_fingerprint": "b9f2d984441f53122c688cb71b1ffc3581c1863a4e36e8ebe3d98608e9a1e92b",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "sem_00_capture_A0_A0_leap",
+            "geometry_id": "g0",
+            "actor_type_id": "A0",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 2,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "score": 4557,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 3866,
+          "qnodes": 6529,
+          "runtime_pushes": 32568,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 6577,
+          "legal_actions_generated": 43826,
+          "q_fraction_of_visits": 0.6280904280904281,
+          "physical_pushes_per_visit": 3.133044733044733,
+          "wall": 3.9978304002434015,
+          "setup_seconds": 4.4899992644786835e-05
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 4,
+          "order": 0,
+          "native_requested": true,
+          "ruleset_fingerprint": "b9f2d984441f53122c688cb71b1ffc3581c1863a4e36e8ebe3d98608e9a1e92b",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_008",
+            "geometry_id": "g12",
+            "actor_type_id": "H0",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 0
+            },
+            "promotion_target_id": null
+          },
+          "score": 3921,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 7089,
+          "qnodes": 7417,
+          "runtime_pushes": 32981,
+          "native_legality_calls": 3980,
+          "native_legality_actions": 58560,
+          "evaluation_calls": 7452,
+          "legal_actions_generated": 58830,
+          "q_fraction_of_visits": 0.5113056666207086,
+          "physical_pushes_per_visit": 2.273610919619468,
+          "wall": 3.9903405997902155,
+          "setup_seconds": 0.002598599996417761
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 4,
+          "order": 1,
+          "native_requested": true,
+          "ruleset_fingerprint": "b9f2d984441f53122c688cb71b1ffc3581c1863a4e36e8ebe3d98608e9a1e92b",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_008",
+            "geometry_id": "g12",
+            "actor_type_id": "H0",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 0
+            },
+            "promotion_target_id": null
+          },
+          "score": 3921,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 7119,
+          "qnodes": 7437,
+          "runtime_pushes": 33011,
+          "native_legality_calls": 3990,
+          "native_legality_actions": 58627,
+          "evaluation_calls": 7472,
+          "legal_actions_generated": 58897,
+          "q_fraction_of_visits": 0.5109233305853257,
+          "physical_pushes_per_visit": 2.26786205001374,
+          "wall": 3.9945782995782793,
+          "setup_seconds": 0.001302800141274929
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 4,
+          "order": 1,
+          "native_requested": false,
+          "ruleset_fingerprint": "b9f2d984441f53122c688cb71b1ffc3581c1863a4e36e8ebe3d98608e9a1e92b",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "sem_00_capture_A0_A0_leap",
+            "geometry_id": "g0",
+            "actor_type_id": "A0",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 2,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "score": 4557,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 3876,
+          "qnodes": 6586,
+          "runtime_pushes": 32862,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 6634,
+          "legal_actions_generated": 44720,
+          "q_fraction_of_visits": 0.6295163448671383,
+          "physical_pushes_per_visit": 3.141082011087746,
+          "wall": 3.992428299970925,
+          "setup_seconds": 0.0005454001948237419
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 16,
+          "order": 0,
+          "native_requested": false,
+          "ruleset_fingerprint": "b9f2d984441f53122c688cb71b1ffc3581c1863a4e36e8ebe3d98608e9a1e92b",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "sem_12_drop_A0",
+            "geometry_id": "g15",
+            "base_type_id": "A0",
+            "to_square": {
+              "file": 3,
+              "rank": 5
+            }
+          },
+          "score": 3438,
+          "completed_depth": 5,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 25686,
+          "qnodes": 30014,
+          "runtime_pushes": 122511,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 30062,
+          "legal_actions_generated": 191880,
+          "q_fraction_of_visits": 0.538850987432675,
+          "physical_pushes_per_visit": 2.199479353680431,
+          "wall": 15.995900299865752,
+          "setup_seconds": 0.0007058000192046165
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 16,
+          "order": 0,
+          "native_requested": true,
+          "ruleset_fingerprint": "b9f2d984441f53122c688cb71b1ffc3581c1863a4e36e8ebe3d98608e9a1e92b",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_008",
+            "geometry_id": "g12",
+            "actor_type_id": "H0",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 0
+            },
+            "promotion_target_id": null
+          },
+          "score": 3800,
+          "completed_depth": 6,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 25250,
+          "qnodes": 20573,
+          "runtime_pushes": 121018,
+          "native_legality_calls": 18182,
+          "native_legality_actions": 419762,
+          "evaluation_calls": 20511,
+          "legal_actions_generated": 420122,
+          "q_fraction_of_visits": 0.4489666761233442,
+          "physical_pushes_per_visit": 2.640988150055649,
+          "wall": 15.993383700028062,
+          "setup_seconds": 0.002494900021702051
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 16,
+          "order": 1,
+          "native_requested": true,
+          "ruleset_fingerprint": "b9f2d984441f53122c688cb71b1ffc3581c1863a4e36e8ebe3d98608e9a1e92b",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "legacy_008",
+            "geometry_id": "g12",
+            "actor_type_id": "H0",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 0
+            },
+            "promotion_target_id": null
+          },
+          "score": 3800,
+          "completed_depth": 6,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 25697,
+          "qnodes": 20964,
+          "runtime_pushes": 121516,
+          "native_legality_calls": 18240,
+          "native_legality_actions": 421573,
+          "evaluation_calls": 20902,
+          "legal_actions_generated": 421933,
+          "q_fraction_of_visits": 0.44928312723687874,
+          "physical_pushes_per_visit": 2.6042305137052355,
+          "wall": 15.993439100217074,
+          "setup_seconds": 0.0036661000922322273
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 16,
+          "order": 1,
+          "native_requested": false,
+          "ruleset_fingerprint": "b9f2d984441f53122c688cb71b1ffc3581c1863a4e36e8ebe3d98608e9a1e92b",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "sem_12_drop_A0",
+            "geometry_id": "g15",
+            "base_type_id": "A0",
+            "to_square": {
+              "file": 3,
+              "rank": 5
+            }
+          },
+          "score": 3438,
+          "completed_depth": 5,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 25708,
+          "qnodes": 30033,
+          "runtime_pushes": 123045,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 30081,
+          "legal_actions_generated": 192505,
+          "q_fraction_of_visits": 0.538795500618934,
+          "physical_pushes_per_visit": 2.207441560072478,
+          "wall": 15.991806200239807,
+          "setup_seconds": 0.003060199785977602
+        }
+      ],
+      "pairs": [
+        {
+          "root": "generated-13-8",
+          "seconds": 4,
+          "order": 0,
+          "core_depth": 2,
+          "native_depth": 2,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "generated-13-8",
+          "seconds": 4,
+          "order": 1,
+          "core_depth": 2,
+          "native_depth": 2,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "generated-13-8",
+          "seconds": 16,
+          "order": 0,
+          "core_depth": 3,
+          "native_depth": 3,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "generated-13-8",
+          "seconds": 16,
+          "order": 1,
+          "core_depth": 3,
+          "native_depth": 3,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "generated-15-8",
+          "seconds": 4,
+          "order": 0,
+          "core_depth": 1,
+          "native_depth": 2,
+          "core_q": 0,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": false,
+          "semantically_comparable": true
+        },
+        {
+          "root": "generated-15-8",
+          "seconds": 4,
+          "order": 1,
+          "core_depth": 1,
+          "native_depth": 2,
+          "core_q": 0,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": false,
+          "semantically_comparable": true
+        },
+        {
+          "root": "generated-15-8",
+          "seconds": 16,
+          "order": 0,
+          "core_depth": 2,
+          "native_depth": 2,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "generated-15-8",
+          "seconds": 16,
+          "order": 1,
+          "core_depth": 2,
+          "native_depth": 2,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 4,
+          "order": 0,
+          "core_depth": 4,
+          "native_depth": 4,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": false,
+          "same_score": false,
+          "semantically_comparable": false
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 4,
+          "order": 1,
+          "core_depth": 4,
+          "native_depth": 4,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": false,
+          "same_score": false,
+          "semantically_comparable": false
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 16,
+          "order": 0,
+          "core_depth": 5,
+          "native_depth": 6,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": false,
+          "same_score": false,
+          "semantically_comparable": false
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 16,
+          "order": 1,
+          "core_depth": 5,
+          "native_depth": 6,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": false,
+          "same_score": false,
+          "semantically_comparable": false
+        }
+      ],
+      "totals": {
+        "nodes": 137199,
+        "qnodes": 256031,
+        "runtime_pushes": 1319340,
+        "native_legality_calls": 74744,
+        "native_legality_actions": 1688531,
+        "evaluation_calls": 221819,
+        "legal_actions_generated": 2703112,
+        "wall": 201.88339740037918,
+        "setup_seconds": 0.02734479960054159
+      }
+    },
+    "mixed-postfix-capability": {
+      "rows": [
+        {
+          "root": "mixed-None-None",
+          "seconds": 4,
+          "order": 0,
+          "native_requested": false,
+          "ruleset_fingerprint": "b9f2d984441f53122c688cb71b1ffc3581c1863a4e36e8ebe3d98608e9a1e92b",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "sem_00_capture_A0_A0_leap",
+            "geometry_id": "g0",
+            "actor_type_id": "A0",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 2,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "score": 4557,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 3867,
+          "qnodes": 6535,
+          "runtime_pushes": 32590,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 6583,
+          "legal_actions_generated": 43953,
+          "q_fraction_of_visits": 0.62824456835224,
+          "physical_pushes_per_visit": 3.1330513362814845,
+          "wall": 3.9847579998895526,
+          "setup_seconds": 7.4999406933784485e-06
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 4,
+          "order": 0,
+          "native_requested": true,
+          "ruleset_fingerprint": "b9f2d984441f53122c688cb71b1ffc3581c1863a4e36e8ebe3d98608e9a1e92b",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "sem_00_capture_A0_A0_leap",
+            "geometry_id": "g0",
+            "actor_type_id": "A0",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 2,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "score": 4557,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 5792,
+          "qnodes": 8606,
+          "runtime_pushes": 36625,
+          "native_legality_calls": 2940,
+          "native_legality_actions": 49900,
+          "evaluation_calls": 8654,
+          "legal_actions_generated": 50188,
+          "q_fraction_of_visits": 0.5977219058202529,
+          "physical_pushes_per_visit": 2.543756077232949,
+          "wall": 3.997878300026059,
+          "setup_seconds": 0.0018688002601265907
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 4,
+          "order": 1,
+          "native_requested": true,
+          "ruleset_fingerprint": "b9f2d984441f53122c688cb71b1ffc3581c1863a4e36e8ebe3d98608e9a1e92b",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "sem_00_capture_A0_A0_leap",
+            "geometry_id": "g0",
+            "actor_type_id": "A0",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 2,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "score": 4557,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 5782,
+          "qnodes": 8575,
+          "runtime_pushes": 36034,
+          "native_legality_calls": 2919,
+          "native_legality_actions": 49245,
+          "evaluation_calls": 8623,
+          "legal_actions_generated": 49533,
+          "q_fraction_of_visits": 0.5972696245733788,
+          "physical_pushes_per_visit": 2.50985581946089,
+          "wall": 4.000170600134879,
+          "setup_seconds": 0.001139800064265728
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 4,
+          "order": 1,
+          "native_requested": false,
+          "ruleset_fingerprint": "b9f2d984441f53122c688cb71b1ffc3581c1863a4e36e8ebe3d98608e9a1e92b",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "sem_00_capture_A0_A0_leap",
+            "geometry_id": "g0",
+            "actor_type_id": "A0",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 2,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "score": 4557,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 3837,
+          "qnodes": 6372,
+          "runtime_pushes": 31493,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 6420,
+          "legal_actions_generated": 41668,
+          "q_fraction_of_visits": 0.6241551572142228,
+          "physical_pushes_per_visit": 3.0848271133313743,
+          "wall": 3.995070999953896,
+          "setup_seconds": 0.0004064999520778656
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 16,
+          "order": 0,
+          "native_requested": false,
+          "ruleset_fingerprint": "b9f2d984441f53122c688cb71b1ffc3581c1863a4e36e8ebe3d98608e9a1e92b",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "sem_12_drop_A0",
+            "geometry_id": "g15",
+            "base_type_id": "A0",
+            "to_square": {
+              "file": 3,
+              "rank": 5
+            }
+          },
+          "score": 3438,
+          "completed_depth": 5,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 25128,
+          "qnodes": 29156,
+          "runtime_pushes": 117087,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 29204,
+          "legal_actions_generated": 183898,
+          "q_fraction_of_visits": 0.5371011716159457,
+          "physical_pushes_per_visit": 2.1569339031758896,
+          "wall": 15.997373799793422,
+          "setup_seconds": 0.0004651998169720173
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 16,
+          "order": 0,
+          "native_requested": true,
+          "ruleset_fingerprint": "b9f2d984441f53122c688cb71b1ffc3581c1863a4e36e8ebe3d98608e9a1e92b",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "sem_12_drop_A0",
+            "geometry_id": "g15",
+            "base_type_id": "A0",
+            "to_square": {
+              "file": 3,
+              "rank": 5
+            }
+          },
+          "score": 3438,
+          "completed_depth": 5,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 26364,
+          "qnodes": 30883,
+          "runtime_pushes": 135002,
+          "native_legality_calls": 10674,
+          "native_legality_actions": 207633,
+          "evaluation_calls": 30931,
+          "legal_actions_generated": 207969,
+          "q_fraction_of_visits": 0.5394693171694587,
+          "physical_pushes_per_visit": 2.358237112861809,
+          "wall": 15.99682250013575,
+          "setup_seconds": 0.0024481001310050488
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 16,
+          "order": 1,
+          "native_requested": true,
+          "ruleset_fingerprint": "b9f2d984441f53122c688cb71b1ffc3581c1863a4e36e8ebe3d98608e9a1e92b",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "sem_12_drop_A0",
+            "geometry_id": "g15",
+            "base_type_id": "A0",
+            "to_square": {
+              "file": 3,
+              "rank": 5
+            }
+          },
+          "score": 3438,
+          "completed_depth": 5,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 26366,
+          "qnodes": 30886,
+          "runtime_pushes": 135070,
+          "native_legality_calls": 10676,
+          "native_legality_actions": 207690,
+          "evaluation_calls": 30934,
+          "legal_actions_generated": 208026,
+          "q_fraction_of_visits": 0.539474603507301,
+          "physical_pushes_per_visit": 2.3592188919164396,
+          "wall": 15.994859599974006,
+          "setup_seconds": 0.0024514999240636826
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 16,
+          "order": 1,
+          "native_requested": false,
+          "ruleset_fingerprint": "b9f2d984441f53122c688cb71b1ffc3581c1863a4e36e8ebe3d98608e9a1e92b",
+          "adapter": "SearchSemanticCompiled existing read-only metadata adapter; same object per paired Core/Native arms",
+          "action": {
+            "pattern_id": "sem_12_drop_A0",
+            "geometry_id": "g15",
+            "base_type_id": "A0",
+            "to_square": {
+              "file": 3,
+              "rank": 5
+            }
+          },
+          "score": 3438,
+          "completed_depth": 5,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "time_limit",
+          "nodes": 25276,
+          "qnodes": 29403,
+          "runtime_pushes": 118068,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 29451,
+          "legal_actions_generated": 185528,
+          "q_fraction_of_visits": 0.5377384370599316,
+          "physical_pushes_per_visit": 2.1592933301633166,
+          "wall": 15.996363900136203,
+          "setup_seconds": 0.0015893997624516487
+        }
+      ],
+      "pairs": [
+        {
+          "root": "mixed-None-None",
+          "seconds": 4,
+          "order": 0,
+          "core_depth": 4,
+          "native_depth": 4,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 4,
+          "order": 1,
+          "core_depth": 4,
+          "native_depth": 4,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 16,
+          "order": 0,
+          "core_depth": 5,
+          "native_depth": 5,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        },
+        {
+          "root": "mixed-None-None",
+          "seconds": 16,
+          "order": 1,
+          "core_depth": 5,
+          "native_depth": 5,
+          "core_q": 4,
+          "native_q": 4,
+          "same_action": true,
+          "same_score": true,
+          "semantically_comparable": true
+        }
+      ],
+      "totals": {
+        "nodes": 122412,
+        "qnodes": 150416,
+        "runtime_pushes": 641969,
+        "native_legality_calls": 27209,
+        "native_legality_actions": 514468,
+        "evaluation_calls": 150800,
+        "legal_actions_generated": 970763,
+        "wall": 79.96329770004377,
+        "setup_seconds": 0.01037679985165596
+      }
+    },
+    "mixed-discrepancy": {
+      "rows": [
+        {
+          "native_requested": false,
+          "tt": false,
+          "action": {
+            "pattern_id": "sem_00_capture_A0_A0_leap",
+            "geometry_id": "g0",
+            "actor_type_id": "A0",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 2,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "score": 4557,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "completed_depth",
+          "nodes": 3339,
+          "qnodes": 6733,
+          "runtime_pushes": 38602,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 6781,
+          "legal_actions_generated": 52594,
+          "q_fraction_of_visits": 0.6684868943606036,
+          "physical_pushes_per_visit": 3.8326052422557586,
+          "wall": 4.776901999954134,
+          "setup_seconds": 0
+        },
+        {
+          "native_requested": true,
+          "tt": false,
+          "action": {
+            "pattern_id": "legacy_008",
+            "geometry_id": "g12",
+            "actor_type_id": "H0",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 0
+            },
+            "promotion_target_id": null
+          },
+          "score": 3921,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "completed_depth",
+          "nodes": 2431,
+          "qnodes": 3416,
+          "runtime_pushes": 23530,
+          "native_legality_calls": 3076,
+          "native_legality_actions": 41593,
+          "evaluation_calls": 3453,
+          "legal_actions_generated": 41818,
+          "q_fraction_of_visits": 0.5842312296904395,
+          "physical_pushes_per_visit": 4.024285958611253,
+          "wall": 2.751632499974221,
+          "setup_seconds": 0
+        },
+        {
+          "native_requested": false,
+          "tt": true,
+          "action": {
+            "pattern_id": "sem_00_capture_A0_A0_leap",
+            "geometry_id": "g0",
+            "actor_type_id": "A0",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 2,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "score": 4557,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "completed_depth",
+          "nodes": 3091,
+          "qnodes": 5547,
+          "runtime_pushes": 27691,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 5595,
+          "legal_actions_generated": 37157,
+          "q_fraction_of_visits": 0.6421625376244501,
+          "physical_pushes_per_visit": 3.205718916415837,
+          "wall": 3.421498999930918,
+          "setup_seconds": 0
+        },
+        {
+          "native_requested": true,
+          "tt": true,
+          "action": {
+            "pattern_id": "legacy_008",
+            "geometry_id": "g12",
+            "actor_type_id": "H0",
+            "from_square": {
+              "file": 0,
+              "rank": 0
+            },
+            "to_square": {
+              "file": 1,
+              "rank": 0
+            },
+            "promotion_target_id": null
+          },
+          "score": 3921,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "completed_depth",
+          "nodes": 2264,
+          "qnodes": 3217,
+          "runtime_pushes": 22137,
+          "native_legality_calls": 2960,
+          "native_legality_actions": 39019,
+          "evaluation_calls": 3254,
+          "legal_actions_generated": 39244,
+          "q_fraction_of_visits": 0.5869366903849662,
+          "physical_pushes_per_visit": 4.0388615216201424,
+          "wall": 2.5453568999655545,
+          "setup_seconds": 0
+        }
+      ]
+    },
+    "mixed-postfix": {
+      "rows": [
+        {
+          "native_requested": false,
+          "tt": false,
+          "action": {
+            "pattern_id": "sem_00_capture_A0_A0_leap",
+            "geometry_id": "g0",
+            "actor_type_id": "A0",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 2,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "score": 4557,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "completed_depth",
+          "nodes": 3339,
+          "qnodes": 6733,
+          "runtime_pushes": 38602,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 6781,
+          "legal_actions_generated": 52594,
+          "q_fraction_of_visits": 0.6684868943606036,
+          "physical_pushes_per_visit": 3.8326052422557586,
+          "wall": 4.64103990001604,
+          "setup_seconds": 0
+        },
+        {
+          "native_requested": true,
+          "tt": false,
+          "action": {
+            "pattern_id": "sem_00_capture_A0_A0_leap",
+            "geometry_id": "g0",
+            "actor_type_id": "A0",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 2,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "score": 4557,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "completed_depth",
+          "nodes": 3339,
+          "qnodes": 6733,
+          "runtime_pushes": 38602,
+          "native_legality_calls": 2964,
+          "native_legality_actions": 52354,
+          "evaluation_calls": 6781,
+          "legal_actions_generated": 52594,
+          "q_fraction_of_visits": 0.6684868943606036,
+          "physical_pushes_per_visit": 3.8326052422557586,
+          "wall": 4.0582667998969555,
+          "setup_seconds": 0
+        },
+        {
+          "native_requested": false,
+          "tt": true,
+          "action": {
+            "pattern_id": "sem_00_capture_A0_A0_leap",
+            "geometry_id": "g0",
+            "actor_type_id": "A0",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 2,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "score": 4557,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "completed_depth",
+          "nodes": 3091,
+          "qnodes": 5547,
+          "runtime_pushes": 27691,
+          "native_legality_calls": 0,
+          "native_legality_actions": 0,
+          "evaluation_calls": 5595,
+          "legal_actions_generated": 37157,
+          "q_fraction_of_visits": 0.6421625376244501,
+          "physical_pushes_per_visit": 3.205718916415837,
+          "wall": 3.3898476003669202,
+          "setup_seconds": 0
+        },
+        {
+          "native_requested": true,
+          "tt": true,
+          "action": {
+            "pattern_id": "sem_00_capture_A0_A0_leap",
+            "geometry_id": "g0",
+            "actor_type_id": "A0",
+            "from_square": {
+              "file": 1,
+              "rank": 1
+            },
+            "to_square": {
+              "file": 2,
+              "rank": 1
+            },
+            "promotion_target_id": null
+          },
+          "score": 4557,
+          "completed_depth": 4,
+          "result_source": "main_iteration",
+          "result_ordinary_qdepth": 4,
+          "result_check_hard_qdepth": 8,
+          "termination_reason": "completed_depth",
+          "nodes": 3091,
+          "qnodes": 5547,
+          "runtime_pushes": 27691,
+          "native_legality_calls": 2387,
+          "native_legality_actions": 36917,
+          "evaluation_calls": 5595,
+          "legal_actions_generated": 37157,
+          "q_fraction_of_visits": 0.6421625376244501,
+          "physical_pushes_per_visit": 3.205718916415837,
+          "wall": 2.979771099984646,
+          "setup_seconds": 0
+        }
+      ]
+    },
+    "mixed-postfix-frontier": {
+      "checked_frontiers": 2000,
+      "binding_pairs": 41722,
+      "mismatches": [],
+      "scope": "Transparent paired-frontier/binding observer on current Native noTT mixed D4 q4. Core shadow enumeration changes clock overhead, not product returned provider, max2000frontiers/first4mismatches; no performance assertion."
+    }
+  },
+  "work_mix": [
+    {
+      "root": "chess-ep",
+      "seconds": 16,
+      "native": false,
+      "nodes": 2599.0,
+      "qnodes": 14526.0,
+      "runtime_pushes": 78222.0,
+      "q_fraction": 0.8482335766423358,
+      "physical_per_visit": 4.56770802919708,
+      "retained_depths": [
+        3,
+        3
+      ],
+      "retained_q": [
+        4,
+        4
+      ]
+    },
+    {
+      "root": "chess-ep",
+      "seconds": 16,
+      "native": true,
+      "nodes": 2984.0,
+      "qnodes": 17539.0,
+      "runtime_pushes": 99271.5,
+      "q_fraction": 0.8546021536812357,
+      "physical_per_visit": 4.837085221458851,
+      "retained_depths": [
+        3,
+        3
+      ],
+      "retained_q": [
+        4,
+        4
+      ]
+    },
+    {
+      "root": "chess-ep",
+      "seconds": 64,
+      "native": false,
+      "nodes": 6157.0,
+      "qnodes": 53358.0,
+      "runtime_pushes": 318457.5,
+      "q_fraction": 0.8965470889691675,
+      "physical_per_visit": 5.35087792993363,
+      "retained_depths": [
+        4,
+        4
+      ],
+      "retained_q": [
+        4,
+        4
+      ]
+    },
+    {
+      "root": "chess-ep",
+      "seconds": 64,
+      "native": true,
+      "nodes": 7586.0,
+      "qnodes": 68153.0,
+      "runtime_pushes": 401572.0,
+      "q_fraction": 0.8998402408270508,
+      "physical_per_visit": 5.302050462773472,
+      "retained_depths": [
+        4,
+        4
+      ],
+      "retained_q": [
+        4,
+        4
+      ]
+    },
+    {
+      "root": "chess-middle",
+      "seconds": 16,
+      "native": false,
+      "nodes": 558.0,
+      "qnodes": 13808.0,
+      "runtime_pushes": 78358.5,
+      "q_fraction": 0.9611582904079076,
+      "physical_per_visit": 5.454441041347627,
+      "retained_depths": [
+        2,
+        2
+      ],
+      "retained_q": [
+        4,
+        4
+      ]
+    },
+    {
+      "root": "chess-middle",
+      "seconds": 16,
+      "native": true,
+      "nodes": 621.0,
+      "qnodes": 17696.0,
+      "runtime_pushes": 103403.0,
+      "q_fraction": 0.9660970682972102,
+      "physical_per_visit": 5.645192990118469,
+      "retained_depths": [
+        2,
+        2
+      ],
+      "retained_q": [
+        4,
+        4
+      ]
+    },
+    {
+      "root": "chess-middle",
+      "seconds": 64,
+      "native": false,
+      "nodes": 4220.0,
+      "qnodes": 57945.5,
+      "runtime_pushes": 299682.0,
+      "q_fraction": 0.9321166885169426,
+      "physical_per_visit": 4.820712453048717,
+      "retained_depths": [
+        3,
+        3
+      ],
+      "retained_q": [
+        4,
+        4
+      ]
+    },
+    {
+      "root": "chess-middle",
+      "seconds": 64,
+      "native": true,
+      "nodes": 6093.5,
+      "qnodes": 77096.5,
+      "runtime_pushes": 398853.5,
+      "q_fraction": 0.9267520134631566,
+      "physical_per_visit": 4.794488520254839,
+      "retained_depths": [
+        3,
+        3
+      ],
+      "retained_q": [
+        4,
+        4
+      ]
+    },
+    {
+      "root": "shogi-drop",
+      "seconds": 16,
+      "native": false,
+      "nodes": 603.0,
+      "qnodes": 12300.0,
+      "runtime_pushes": 78960.5,
+      "q_fraction": 0.9532666821669379,
+      "physical_per_visit": 6.1195458420522355,
+      "retained_depths": [
+        1,
+        1
+      ],
+      "retained_q": [
+        0,
+        0
+      ]
+    },
+    {
+      "root": "shogi-drop",
+      "seconds": 16,
+      "native": true,
+      "nodes": 606.0,
+      "qnodes": 21276.5,
+      "runtime_pushes": 121563.5,
+      "q_fraction": 0.9723066377242089,
+      "physical_per_visit": 5.5552839026619445,
+      "retained_depths": [
+        1,
+        1
+      ],
+      "retained_q": [
+        0,
+        0
+      ]
+    },
+    {
+      "root": "shogi-drop",
+      "seconds": 64,
+      "native": false,
+      "nodes": 681.0,
+      "qnodes": 53055.0,
+      "runtime_pushes": 304645.5,
+      "q_fraction": 0.9873269316659223,
+      "physical_per_visit": 5.669299910674408,
+      "retained_depths": [
+        1,
+        1
+      ],
+      "retained_q": [
+        0,
+        0
+      ]
+    },
+    {
+      "root": "shogi-drop",
+      "seconds": 64,
+      "native": true,
+      "nodes": 888.0,
+      "qnodes": 85623.5,
+      "runtime_pushes": 478338.0,
+      "q_fraction": 0.9897354686949134,
+      "physical_per_visit": 5.5291839813204025,
+      "retained_depths": [
+        1,
+        1
+      ],
+      "retained_q": [
+        0,
+        0
+      ]
+    },
+    {
+      "root": "shogi-middle",
+      "seconds": 16,
+      "native": false,
+      "nodes": 411.0,
+      "qnodes": 8453.5,
+      "runtime_pushes": 60240.0,
+      "q_fraction": 0.9536352868182074,
+      "physical_per_visit": 6.79564555248463,
+      "retained_depths": [
+        2,
+        2
+      ],
+      "retained_q": [
+        4,
+        4
+      ]
+    },
+    {
+      "root": "shogi-middle",
+      "seconds": 16,
+      "native": true,
+      "nodes": 2009.0,
+      "qnodes": 15450.5,
+      "runtime_pushes": 103939.0,
+      "q_fraction": 0.8849337037143102,
+      "physical_per_visit": 5.9531487155989575,
+      "retained_depths": [
+        3,
+        3
+      ],
+      "retained_q": [
+        4,
+        4
+      ]
+    },
+    {
+      "root": "shogi-middle",
+      "seconds": 64,
+      "native": false,
+      "nodes": 4460.5,
+      "qnodes": 37218.5,
+      "runtime_pushes": 244582.0,
+      "q_fraction": 0.8929796780153074,
+      "physical_per_visit": 5.8682310036229275,
+      "retained_depths": [
+        3,
+        3
+      ],
+      "retained_q": [
+        4,
+        4
+      ]
+    },
+    {
+      "root": "shogi-middle",
+      "seconds": 64,
+      "native": true,
+      "nodes": 7338.0,
+      "qnodes": 59059.0,
+      "runtime_pushes": 404010.0,
+      "q_fraction": 0.8894829585674051,
+      "physical_per_visit": 6.084762865792129,
+      "retained_depths": [
+        4,
+        4
+      ],
+      "retained_q": [
+        4,
+        4
+      ]
+    }
+  ],
+  "scope": "Independent record/source audit, not independent execution. Old mixed timed records are semantic failures; fixed records do not overwrite them. Visits are attempted work including aborted iterations; fractions are not wall-time attribution. No strength, full-domain, fresh-horizon or deployment proof."
+}
