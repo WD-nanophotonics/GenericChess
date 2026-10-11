@@ -33,46 +33,35 @@ uses3710visits. Larger equal caps do not erase the frozen4s result. OfflineUI1s
 shows28support gains,4depth-loss pairs and8exact-reserve refresh aborts. Changed
 actions/different-support scores are not gains in decision usefulness.
 
-A matched lexicalq4 driver on exposed1006/1008 initial/eight-ply roots completes
-all16D1 and16D2 calls with equal Core/Native work, trace, action and score.
-Native full-state capsule substitution then completes16calls with the same work
-and lower observed costs, while retaining Python recursion/evaluation. Profiles
-locate Core transition/identity and remaining Position/leaf boundary costs;
-overlapping spans are not additive speedups.68leaf controls expose57mismatches
-if Native dynamic weights replace the frozen Python evaluator: different feature
-families, no same-leaf shortcut. The shared C stalemate policy/winner is now
-implemented and normally rebuilt: true draw/loss plus actual threshold4 history
-and recursive child controls match Core. Older binaries still fail closed for
-loss; conservative IR dispatch/legacy continuous-check guards remain. Previous
-fourhistory Western limit100000 did not establish repetition precedence; old
-records remain, the corrected explicit threshold4 control is separate.
-Purecapsule16EP/promotion/drop/history states and6actualShogi searches pass.
-Purpose records: Q4_COMPLETION_TRADEOFF.md; NATIVE_TERMINAL_AND_BINDING.md.
+The fixed lexical q4 bridge and shared Native terminal draw/loss repair remain
+in Q4_COMPLETION_TRADEOFF.md and NATIVE_TERMINAL_AND_BINDING.md. Exact threshold4
+precedence controls supersede the earlier mistaken fourhistory claim; old records
+remain. Native dynamic features and legacy Western pawn attack authority are
+separate evaluation definitions, not same-leaf substitutes. Auxiliary-reported
+binding/checkpoint/compact ownership defects are narrowly repaired and tested.
 
-Current representation follow-on keeps the frozen leaf formula: scalar attack
-sets match68existing positions,8pairedD1calls match full work/action/score/trace,
-and every10991leaf on the larger tree matches. A separate combined D2 control
-completes four same-work calls at31.59/27.61 and31.75/27.83seconds; its instrumented
-audit matches all44135scores/88270attack sets. Western legacy attack geometry
-still differs from semantic authority, so this is scoped, not a default substitute.
-Raw Position projection retains complete C history and reduces observed paired
-caller cost;64immutable coordinates further reduce conversion overhead. Only
-coordinate reuse enters the existing opt-in semantic evaluator; raw view/attack
-bridge stays a prototype. No additive profile/cross-stage speed or strength claim.
+Current capsule interface work uses corrected immutable Position+ply projection,
+complete C history and one explicit semantic attack formula. Twelve same-formula
+D2 calls, eight validated-decode calls and eight actual-material-summary calls
+preserve complete action/score/work/trace and full root restoration. The readonly
+C inventory avoids constructing Python pieces for quiet rejected children, with
+19â€“26percent lower observed paired D2 cost. Fifteen state/effect regressions and
+37 additional semantic children pass. This is developmental evidence on exposed
+roots under ordinary concurrent load, not generic-domain or strength proof.
 
-Research-only capsule Python projected ply fails pop restoration in both view
-variants; primary reproduces and verifies a five-field stack repair. Old fixed
-driver consumers preserve action/score/work conclusions, not complete Python-state
-restoration. Correct projected ply before integration/new consumers; do not
-reinterpret old timing as repaired timing. See purpose record and supplement.
-
-DEV_AUX's real rejected-bind/nested-getter/checkpoint drift is independently
-reproduced and narrowly repaired: prepare/create/commit, deep compact ownership,
-row9 validation, actual TT preservation on failure. The earlier one-shot complete
-binding hash repair stays; old source/hash limitations remain. Source and clock
-audits retain their scope. Current tests/failure provenance and archived synthetic
-results are in data/native_terminal_binding_20261011.json. Full-domain target,
-production/UI defaults, frozen comparisons and exposed-data limits remain.
+Separately,32 public Core-owned AlphaBeta calls at depths2/3 preserve decisions,
+PV, q support and root/history across semantic evaluator backend Ã— legal-provider
+cells;16 evaluator pairs match all non-time work. Actual imports/owner queries
+and accepted Native legality are counted. The real opt-in evaluator interface is
+usable; thin capsules still lack product pushed/search_key/tt_eligible contracts.
+Do not build a second history/TT framework merely from thin-driver speed.
+Thirty-two shared-deadline calls deliver D2 instead of D1 on1008 at30seconds
+in both orders; this is completed support, not better move quality. Residual
+profiling motivates a small terminal probe prefix-copy repair, validated by four
+exact source-phase controls and2119 active tests. A real-caller profile rejects
+porting thin trace/repr optimization: product ordering is small; next inspect
+19809 actual Core terminal transition consumers on the existing1008D2 root. See
+CAPSULE_INTERFACE_COST.md and data/capsule_interface_20261012.json.
 
 Earlier actor-relative filter repair remains provider-only Core fallback;
 raw Native limitations/compiler-rejection failures are preserved. Earlier drop
@@ -98,7 +87,7 @@ does not refute a fixed vector averaged under an explicit play distribution.
 Static tables remain candidates/cheap baselines, not a required predecessor.
 Small local training is authorized; any single run expected above one hour
 first obtains dot's necessity assessment, with cheaper alternatives recorded.
-This is distinct from a60â€“90minute Agent segment, not a general compute gate.
+This is distinct from a60Ã¢â‚¬â€œ90minute Agent segment, not a general compute gate.
 
 Equivalent supported rule encodings and finite-board saturation must preserve
 semantics. Separate raw opportunity, normalization, rounding/clipping and
@@ -114,6 +103,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Corrected capsule consumers, actual Core caller and inventory/delivery costs|CAPSULE_INTERFACE_COST.md; data/capsule_interface_20261012.json|
 |Shared Native terminal/winner, evaluator binding and same-leaf view costs|NATIVE_TERMINAL_AND_BINDING.md; data/native_terminal_binding_20261011.json|
 |Prospective fullq4 tradeoff, fixed-work/UI controls and evaluator entry repair|Q4_COMPLETION_TRADEOFF.md; data/q4_tradeoff_20261011.json|
 |Currentq4 capability, caller costs and observed wildcard capture repair|Q4_BACKEND_CAPABILITY.md; data/q4_caller_20261011.json; q4_iteration_20261011.json|

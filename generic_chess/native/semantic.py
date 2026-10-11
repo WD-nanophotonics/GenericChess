@@ -246,6 +246,21 @@ def guarded_actions_audit(native_rules, position) -> dict:
     return raw
 
 
+def material_summary(native_rules, position):
+    """Read actual side/ply, owner board totals and board-current/hand-base counts.
+
+    Inventory is owner-major in native_rules.type_ids order. This read-only
+    projection is neither evaluation, terminal adjudication nor TT identity.
+    Older extensions report the missing entry instead of changing semantics.
+    """
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    entry = getattr(_module(), "semantic_material_summary", None)
+    if entry is None:
+        raise RuntimeError("native extension lacks semantic material summary; rebuild required")
+    return entry(native_rules.capsule, position)
+
+
 def transient_legal_actions(native_rules, position) -> tuple[int, ...]:
     """Return ordered S0-S4 actions without child key/history authority."""
     if not native_available():

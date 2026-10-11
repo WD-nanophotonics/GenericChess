@@ -1,0 +1,581 @@
+{
+  "schema": 1,
+  "base_sha": "1961c01b4911068e495cceb09f315b824acb0e20",
+  "science_complete": false,
+  "scope": "Agent-only synthetic exposed-rule experiments, source/producers, preserved exact declared source versions and failure scope. No rawSlack/private/user inputs, sessions/memo or binaries. Research capsule is not product/PVE/default replacement.",
+  "archive": {
+    "path": "docs/archive/capsule_interface_20261012/evidence.zip",
+    "bytes": 492169,
+    "uncompressed_bytes": 3452420,
+    "members": 109,
+    "sha256": "b580d4c73f0f129d5c539dea362b2d56722248f5db58638d8d6803092e81d55a"
+  },
+  "prior_archives_unchanged": {
+    "docs/archive/q4_tradeoff_20261011/evidence.zip": "ae4216f8070db29f91726e314e7d607c4ccb1a7873f7d29b256b754e248031af",
+    "docs/archive/native_terminal_binding_20261011/evidence.zip": "50fb3f4cc5672dbce288f1cd5115bf59782543824aba767914d910ee49efe072"
+  },
+  "validation": {
+    "full_suite_exit": 0,
+    "passed": 2119,
+    "log": ".local_agent/capsule-interface-full-20261012.log",
+    "seconds": "not captured by double-quiet runner; process completed before15:54:42UTC",
+    "ordering_decision": "Product full orderer uses str(Action) as tie-break; action dataclass stringification can share representation cost. Thin driver additionally hashes repr per q/main trace and lexically sorts every frontier. The thin profile does not isolate product ordering cost. Defer product ordering or validation-trust changes until a real-caller profile attributes this separately.",
+    "next": "Profile actual Core-owned AlphaBeta with semantic Native evaluator/legal provider, keeping current ordering and no defaults changed.",
+    "cost_limits": "Experimental wall/call/work counters retained; engineering/model token overhead not independently metered, not claimed zero."
+  },
+  "limits": [
+    "Corecaller dependency hashes observed after startup except producer",
+    "Inventory-only binary hash observed after fixedD2 startup, before shared-deadline calls",
+    "Terminal prefix comparison uses sequential source phases, not counterbalanced binaries",
+    "Decoder/profile/verifier setup failures and premature checkpoint correction retained; no frozen evidence rewritten",
+    "Actual experiment wall/work/calls/bytes measured; engineering/model tokens not independently metered",
+    "Profile inclusive costs overlap; finite controls do not prove full generic domain or strength"
+  ],
+  "members": [
+    {
+      "path": ".local_agent/archive_capsule_interface.py",
+      "bytes": 4535,
+      "sha256": "dbb6df0f39d4426500a4331bf2be3dd3f80818636ffa7711e938e1faf031c8ec"
+    },
+    {
+      "path": ".local_agent/capsule-decode-d2-20261012/declaration.json",
+      "bytes": 1697,
+      "sha256": "50404f03467c5ca00b909b1274905f4f15570bd05cb956faab080c67ce5e9cd1"
+    },
+    {
+      "path": ".local_agent/capsule-decode-d2-20261012/driver.json",
+      "bytes": 4691,
+      "sha256": "b2db4098d46cbd18f07151279f3a8c0dd258fa7aef2b48688aa6e85ea9bc9b65"
+    },
+    {
+      "path": ".local_agent/capsule-decode-d2-20261012/leaf_checks.json",
+      "bytes": 12368,
+      "sha256": "c9b698e75f28c79625adab6c9f5108c9f9ef6ed257ba4e8757b6cff16f66e92a"
+    },
+    {
+      "path": ".local_agent/capsule-decode-d2-20261012/result.json",
+      "bytes": 39146,
+      "sha256": "750ed69440f16c7511f59d245a7f966d4c6505fc7011f303f6f9f478eaeaad49"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/final_validation.json",
+      "bytes": 882,
+      "sha256": "1b188459d9b510b1b995f11dc5ec7416dcb1e565d438fab26b0a80ce2eb0f8ba"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/integration_choice.json",
+      "bytes": 706,
+      "sha256": "ca8bf2da7bcc336bfe9f12ee244f04fbd945638d381677d2411e019aac8fe6a2"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/paired_summary.json",
+      "bytes": 3680,
+      "sha256": "4786e5b7d59b65c2b29407a8382a563b5fb1dd6ad545f05ca68e790502e5d60c"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/production_contract.json",
+      "bytes": 1225,
+      "sha256": "73481da9933c4046a6778578cd627709e782106e107d93e55270808cf6c89719"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/residual_decision.json",
+      "bytes": 1403,
+      "sha256": "a58c8c3f825454a60e005ab4379d2bf269607e051490ca20f46a2eb0b97c85f6"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/source_closure/04ff4e134388a58a45fde24743c3d32955eb83401b5d9aff34c1850f34517967/scripts/native_capsule_decode.py",
+      "bytes": 1851,
+      "sha256": "04ff4e134388a58a45fde24743c3d32955eb83401b5d9aff34c1850f34517967"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/source_closure/09940e820a1f72fccf12690561d2f30cafb7d33f1368581967e1d3f13fc62f24/scripts/capsule_interface_comparison.py",
+      "bytes": 5763,
+      "sha256": "09940e820a1f72fccf12690561d2f30cafb7d33f1368581967e1d3f13fc62f24"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/source_closure/11025e4c6c2da7b6c8c5a0e64acc9f5f2cb27b6a07a979f1e1cfdea8b7ba2521/scripts/capsule_inventory_comparison.py",
+      "bytes": 7694,
+      "sha256": "11025e4c6c2da7b6c8c5a0e64acc9f5f2cb27b6a07a979f1e1cfdea8b7ba2521"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/source_closure/2d47abc70ef8cc621641731c27c4f6d491cabd3eb57accc3674760f28011b857/scripts/native_capsule_runtime.py",
+      "bytes": 4472,
+      "sha256": "2d47abc70ef8cc621641731c27c4f6d491cabd3eb57accc3674760f28011b857"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/source_closure/33592acf3edb603d64f5de2c9c618ff4ab0af727231e24e52dc40aa6a046f46f/scripts/native_capsule_inventory.py",
+      "bytes": 1346,
+      "sha256": "33592acf3edb603d64f5de2c9c618ff4ab0af727231e24e52dc40aa6a046f46f"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/source_closure/5a5516be6d8cfbb6f80f2feb69e5303ca0ed4f4dc32606e30c3a86d014151bf5/scripts/native_capsule_evaluator.py",
+      "bytes": 1274,
+      "sha256": "5a5516be6d8cfbb6f80f2feb69e5303ca0ed4f4dc32606e30c3a86d014151bf5"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/source_closure/62d1e0ebb4d4be03fc1091a4c7738d266833c88db1092133e288bb1974f636af/scripts/capsule_decode_comparison.py",
+      "bytes": 6108,
+      "sha256": "62d1e0ebb4d4be03fc1091a4c7738d266833c88db1092133e288bb1974f636af"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/source_closure/901b204f7249736f23ad2f1c0edebffec8da2463945fcbf5113ca50d028cfe37/scripts/capsule_inventory_delivery.py",
+      "bytes": 8520,
+      "sha256": "901b204f7249736f23ad2f1c0edebffec8da2463945fcbf5113ca50d028cfe37"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/source_closure/927c0bbd595f77c9317db80d60bc7fe771449c71bb37c508abc54ad6c5cabfed/.local_agent/generated_thin_q4.py",
+      "bytes": 6516,
+      "sha256": "927c0bbd595f77c9317db80d60bc7fe771449c71bb37c508abc54ad6c5cabfed"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/source_closure/97a95aa596a2192939a2b66e275de51946b9544caa35e62c9da8f269f87ce99b/generic_chess/native/semantic.py",
+      "bytes": 30133,
+      "sha256": "97a95aa596a2192939a2b66e275de51946b9544caa35e62c9da8f269f87ce99b"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/source_closure/9d9fb205e9a45d32edc2ef30c81a2fda126dc888c8d7fc026e42f2014201945f/scripts/capsule_terminal_prefix_comparison.py",
+      "bytes": 7802,
+      "sha256": "9d9fb205e9a45d32edc2ef30c81a2fda126dc888c8d7fc026e42f2014201945f"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/source_closure/a0311ae1ea7b53a4139dc4c5944ec89b2a07d82723b05cda7649e8aa8832acba/generic_chess/_native/native_module.c",
+      "bytes": 323009,
+      "sha256": "a0311ae1ea7b53a4139dc4c5944ec89b2a07d82723b05cda7649e8aa8832acba"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/source_closure/cb9635f7d57c9584b9c6d783a3939dbf94de795ea03460c68bb9061bfa6e754b/generic_chess/_native/native_module.c",
+      "bytes": 329825,
+      "sha256": "cb9635f7d57c9584b9c6d783a3939dbf94de795ea03460c68bb9061bfa6e754b"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/source_closure/d6c6024820c4254ef87e7d8fc14279f1c98b7d2ca4bbfc0b65c61deb4831ff33/generic_chess/native/semantic.py",
+      "bytes": 29487,
+      "sha256": "d6c6024820c4254ef87e7d8fc14279f1c98b7d2ca4bbfc0b65c61deb4831ff33"
+    },
+    {
+      "path": ".local_agent/capsule-interface-20261012/source_verified.json",
+      "bytes": 13433,
+      "sha256": "a895d8efd225d1ceaa0603177960e01c26455df5fc3e8ad5ffc06abf244edeec"
+    },
+    {
+      "path": ".local_agent/capsule-interface-d2-20261012/declaration.json",
+      "bytes": 1504,
+      "sha256": "4fa70909615b177f915b183852e79237f2732e1fbe22a152bbe277bb56cc4b1a"
+    },
+    {
+      "path": ".local_agent/capsule-interface-d2-20261012/driver.json",
+      "bytes": 4504,
+      "sha256": "0eecc68aa393c02ce25a828076361897ab30ca724174bc7b55003d04f109adb1"
+    },
+    {
+      "path": ".local_agent/capsule-interface-d2-20261012/leaf_checks.json",
+      "bytes": 12368,
+      "sha256": "c9b698e75f28c79625adab6c9f5108c9f9ef6ed257ba4e8757b6cff16f66e92a"
+    },
+    {
+      "path": ".local_agent/capsule-interface-d2-20261012/result.json",
+      "bytes": 57066,
+      "sha256": "19975b949b620fdf5e28c19360caee35b7a51291209e6b9201e26a7a4ded254c"
+    },
+    {
+      "path": ".local_agent/capsule-interface-full-20261012.log",
+      "bytes": 2430,
+      "sha256": "fafee0e2c0789ee04e7f5ccf05553627da7c01cacbf46058271bd799532e8c79"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-20261012/declaration.json",
+      "bytes": 1216,
+      "sha256": "152789b9f1bcdc050fc8f9040beab12cd7e6c26b16492a1f656bffa649847b80"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-20261012/runtime_binding.json",
+      "bytes": 315,
+      "sha256": "e1ab5c431db447c9d5ab6d02bc284dd2527f38b6da444e8a3efc74f936e2ab6c"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-20261012/validation_failure.json",
+      "bytes": 507,
+      "sha256": "7e734e1703309a5c958cdbf02995c029e5b75230a0d0bf169f6694e5efbfdb27"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-d2-20261012/declaration.json",
+      "bytes": 2075,
+      "sha256": "488b4aa067c075805f3e384de33dadfb5719a87269c1ec52888005f45527fce3"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-d2-20261012/driver.json",
+      "bytes": 4822,
+      "sha256": "714767c0a740c8a0bba6b424d2ffaf627adbf4844f1dc8f0a907a95da85b84bf"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-d2-20261012/leaf_checks.json",
+      "bytes": 12368,
+      "sha256": "c9b698e75f28c79625adab6c9f5108c9f9ef6ed257ba4e8757b6cff16f66e92a"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-d2-20261012/result.json",
+      "bytes": 39437,
+      "sha256": "2a3221b44ae6dbba531644e2b82e932c5f7cc660c4e7f2ba5fde2aa38d58adcf"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-delivery-20261012/declaration.json",
+      "bytes": 2201,
+      "sha256": "b6e2ecf5564a8e77b730a11c231e6dc9a98cbc5feadbaa884e2aa8fba7d6ef06"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-delivery-20261012/driver.json",
+      "bytes": 4817,
+      "sha256": "49c0351b906edac4752472db74a194889a4ac7b2abcfa1c7e8e2e5527e05b3dd"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-delivery-20261012/leaf_checks.json",
+      "bytes": 12368,
+      "sha256": "c9b698e75f28c79625adab6c9f5108c9f9ef6ed257ba4e8757b6cff16f66e92a"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-delivery-20261012/result.json",
+      "bytes": 430760,
+      "sha256": "1da3139d38e5268d8080182ce99d431ceca553ef6061ace972bf3869ffbac6e6"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-delivery-20261012/verified.json",
+      "bytes": 5661,
+      "sha256": "1d8dea610a1e5a5da670f6c83f23c07ceb913650649bc3ec624abd1332ff62ec"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-delivery-20261012/verifier-import-failure.py",
+      "bytes": 2658,
+      "sha256": "6677f5e5242145337b397bb3058fac5c2402216c57a75473981ab8aa51e76464"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-effects-20261012/declaration.json",
+      "bytes": 630,
+      "sha256": "c89e39a1c872563da813f0252cf1afb9facb46e55ffa10c8711a7ba00008f1ac"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-effects-20261012/result.json",
+      "bytes": 16849,
+      "sha256": "a65890d9a4f7aa027829b69a26d3c43c7aa48d162c5e70e72efd7bc131d2c952"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-profile-20261012/declaration.json",
+      "bytes": 803,
+      "sha256": "75c0f52884d150f61402bf3b0fa0b22e8886a75ed6bea5ffecc91e39c5548e44"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-profile-20261012/failure.json",
+      "bytes": 334,
+      "sha256": "446f5ac3c481f64458a3ecc7316a891911cc504e111f9dc513e4cb60244eed1c"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-profile-20261012/initial-import-failure.py",
+      "bytes": 4557,
+      "sha256": "8c808d1303cfb1be072413fb111abe7c4c023388bbcd7e7f8985aa16de83ffa7"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-profile-fixed-20261012/declaration.json",
+      "bytes": 803,
+      "sha256": "30e7ddcdcd34dc239a507169c5cb087d61262f928dae46b790d61df36c3051f2"
+    },
+    {
+      "path": ".local_agent/capsule-inventory-profile-fixed-20261012/result.json",
+      "bytes": 57949,
+      "sha256": "e00210f8895406ec5d1beb45bc4045163d6b034669c0f7bb8b39eb2d2be8f2c8"
+    },
+    {
+      "path": ".local_agent/capsule-terminal-prefix-20261012/after_source_sha256.json",
+      "bytes": 78,
+      "sha256": "7ba45ab1a71ce47c9911f0663b2baf8ba85d64310c4085bc922260604fe0f629"
+    },
+    {
+      "path": ".local_agent/capsule-terminal-prefix-20261012/before_native_module.c",
+      "bytes": 322802,
+      "sha256": "2ff98b1ef5270bcbeaed2ed028855210fefdc1faa754911b2f0fc69e7a57e776"
+    },
+    {
+      "path": ".local_agent/capsule-terminal-prefix-20261012/declaration.json",
+      "bytes": 1673,
+      "sha256": "e040f5388d9bb290327b54f16271a74d7adacc74f3be1a1677ecefb04a16b9ca"
+    },
+    {
+      "path": ".local_agent/capsule-terminal-prefix-20261012/runtime_binding.json",
+      "bytes": 347,
+      "sha256": "2f38106e0c865c6b2f04de43c6c4d35c19d0a8c592b00291acdb5820c9d0c447"
+    },
+    {
+      "path": ".local_agent/capsule-terminal-prefix-d2-20261012/declaration.json",
+      "bytes": 2099,
+      "sha256": "e37a1f58b89a93157a997e07353f5512bff185a1186d8b8b011fbacea8c727dd"
+    },
+    {
+      "path": ".local_agent/capsule-terminal-prefix-d2-20261012/driver.json",
+      "bytes": 4822,
+      "sha256": "714767c0a740c8a0bba6b424d2ffaf627adbf4844f1dc8f0a907a95da85b84bf"
+    },
+    {
+      "path": ".local_agent/capsule-terminal-prefix-d2-20261012/leaf_checks.json",
+      "bytes": 12368,
+      "sha256": "c9b698e75f28c79625adab6c9f5108c9f9ef6ed257ba4e8757b6cff16f66e92a"
+    },
+    {
+      "path": ".local_agent/capsule-terminal-prefix-d2-20261012/result.json",
+      "bytes": 19755,
+      "sha256": "2dda21751c8ed06282fbd955c5632e36d21b4f2ad9b2f942c3b3953b42e7b9cd"
+    },
+    {
+      "path": ".local_agent/capsule-terminal-prefix-d2-20261012/verified_choice.json",
+      "bytes": 1450,
+      "sha256": "70fca6afcebadb5e2a2adff5ffdf83d88419ede91c2103d8193393f35a31fb5f"
+    },
+    {
+      "path": ".local_agent/core-semantic-caller-20261012/declaration.json",
+      "bytes": 1394,
+      "sha256": "63c1c4047554faa1086695c0c11511c6752f80c7e58cd1e6576b571d3ec3596a"
+    },
+    {
+      "path": ".local_agent/core-semantic-caller-20261012/result.json",
+      "bytes": 254628,
+      "sha256": "38a198af8ef16a47fc62dca3c50559361d0b4f94a265cb3b48b5c8aa0f19403d"
+    },
+    {
+      "path": ".local_agent/core-semantic-caller-20261012/runtime_binding.json",
+      "bytes": 1858,
+      "sha256": "e020ea91d42408f9d9d71240ab07dd3061d21c1be7710557b32232d9b0a52f6f"
+    },
+    {
+      "path": ".local_agent/core-semantic-caller-20261012/samples.json",
+      "bytes": 128998,
+      "sha256": "9a4071dcc2b2c5466a10f1da9496beef13aa64538d8b81b0cb6462a59c18e532"
+    },
+    {
+      "path": ".local_agent/core-semantic-caller-20261012/verified_pairs.json",
+      "bytes": 7045,
+      "sha256": "376659b1ad0c85e7a7415dab97b5ce218fa7b74be3959b037340c8c6e923bb00"
+    },
+    {
+      "path": ".local_agent/core-semantic-caller-profile-20261012.log",
+      "bytes": 318,
+      "sha256": "a9054be2c42b01561ec73138b8992d7719185057f82df282b965e9799b56d4b7"
+    },
+    {
+      "path": ".local_agent/core-semantic-caller-profile-20261012/declaration.json",
+      "bytes": 1149,
+      "sha256": "426d8f4cb36f1ab19e00d94cb5021ccf45275ac1768c910a8ccc1ce94d312bb3"
+    },
+    {
+      "path": ".local_agent/core-semantic-caller-profile-20261012/initial-verifier-failure.py",
+      "bytes": 7042,
+      "sha256": "bd5dd2287bcac40a9b156727e69bea840584fa947811b1c83ce742a24bfd27bc"
+    },
+    {
+      "path": ".local_agent/core-semantic-caller-profile-20261012/result.json",
+      "bytes": 7865,
+      "sha256": "1a09a7eebb6a52bcd2127692b4fc15dfc2cb56ae899687aa182f9560f2d4aeb1"
+    },
+    {
+      "path": ".local_agent/core-semantic-caller-profile-20261012/samples.json",
+      "bytes": 64861,
+      "sha256": "bbc17ed577ca5b3f1ff146067cfd6fd08692ddb0255f8b2f1f5721537b57aefc"
+    },
+    {
+      "path": ".local_agent/core-semantic-caller-profile-fixed-20261012.log",
+      "bytes": 51,
+      "sha256": "8834e704905c3b01d8611fd08a3f81ed0dc5b1460d6756dafb00bc06b1b579e9"
+    },
+    {
+      "path": ".local_agent/core-semantic-caller-profile-fixed-20261012/choice.json",
+      "bytes": 1797,
+      "sha256": "c2317efa6b74121dc3531acebf79407e895502ff7cd6ee76fb0ab63f50efa8c3"
+    },
+    {
+      "path": ".local_agent/core-semantic-caller-profile-fixed-20261012/declaration.json",
+      "bytes": 1149,
+      "sha256": "ba6fc748335504bcc9fa2c1d1533cc460907275e6b7fd1e3146e41eb470a14f1"
+    },
+    {
+      "path": ".local_agent/core-semantic-caller-profile-fixed-20261012/profile.json",
+      "bytes": 245524,
+      "sha256": "d283a8c82fef5d9cb4c15a91dd4c847b6fe0ef2322f1517bb86a3327f6b9997a"
+    },
+    {
+      "path": ".local_agent/core-semantic-caller-profile-fixed-20261012/result.json",
+      "bytes": 7930,
+      "sha256": "e343c41d7635740d4b6cbd85eb7c2c7f088ed2b5eaea909234c9b93f35a41b4c"
+    },
+    {
+      "path": ".local_agent/core-semantic-caller-profile-fixed-20261012/samples.json",
+      "bytes": 64861,
+      "sha256": "bbc17ed577ca5b3f1ff146067cfd6fd08692ddb0255f8b2f1f5721537b57aefc"
+    },
+    {
+      "path": ".local_agent/generated_thin_q4.py",
+      "bytes": 6516,
+      "sha256": "927c0bbd595f77c9317db80d60bc7fe771449c71bb37c508abc54ad6c5cabfed"
+    },
+    {
+      "path": ".local_agent/verify_capsule_delivery.py",
+      "bytes": 2701,
+      "sha256": "b79b2cc0aa48ecf316e1fa63f0d0140ebf08c7fb23c6499fccf283545e1d6ac0"
+    },
+    {
+      "path": "generic_chess/_native/native_module.c",
+      "bytes": 323009,
+      "sha256": "a0311ae1ea7b53a4139dc4c5944ec89b2a07d82723b05cda7649e8aa8832acba"
+    },
+    {
+      "path": "generic_chess/_native/native_semantic_runtime.c",
+      "bytes": 44199,
+      "sha256": "26c56b208cb720c92eb95a0102d20342ff0f24024cb83b0b60949947f117dc1d"
+    },
+    {
+      "path": "generic_chess/_native/native_semantic_state.h",
+      "bytes": 2157,
+      "sha256": "86cea58e408ba05c3cc783cc79537c93540271fcd518944921c075ef9ff1fabc"
+    },
+    {
+      "path": "generic_chess/ai/alphabeta/native_legality.py",
+      "bytes": 11048,
+      "sha256": "3409f3bc3a1ea4230bb6adf01fdacdfc569b2e7a9f1ac254f5dbc91acf5a6537"
+    },
+    {
+      "path": "generic_chess/ai/alphabeta/ordering.py",
+      "bytes": 7834,
+      "sha256": "1cd2b9f515b2aa2cfe83f32edc3c04ef98cafd79ab370452fe89fdcc312f281e"
+    },
+    {
+      "path": "generic_chess/ai/alphabeta/search.py",
+      "bytes": 50815,
+      "sha256": "5640906a523b51eb3c24fe71eba3f7923be8d62f4b9d053b193ef1deed456a1c"
+    },
+    {
+      "path": "generic_chess/ai/evaluation/semantic_attacks.py",
+      "bytes": 2359,
+      "sha256": "a9f2b952941e40a44bb22a7a1681b80ecfe1745826f1a824fe2b959172f8e9c6"
+    },
+    {
+      "path": "generic_chess/core/terminal.py",
+      "bytes": 20436,
+      "sha256": "329f7a4c1944426eb16365ce58b2fb213721d1248c8f4bc2042dff8d546af279"
+    },
+    {
+      "path": "generic_chess/native/adapter.py",
+      "bytes": 16448,
+      "sha256": "f649b9e40590720ebe8ffa4bdf6d212299b11d87d36f6f90430d12ae354383a0"
+    },
+    {
+      "path": "generic_chess/native/compiler.py",
+      "bytes": 45364,
+      "sha256": "96a3f711191c7b6c913067aa7d934d2d8894d4822053e553ccdf6f355b275614"
+    },
+    {
+      "path": "generic_chess/native/mirror.py",
+      "bytes": 12972,
+      "sha256": "0d292395e7bf7d83e8044eaa3632db87b16a94317b9e56b656bd71c9be27e0a4"
+    },
+    {
+      "path": "generic_chess/native/semantic.py",
+      "bytes": 29487,
+      "sha256": "d6c6024820c4254ef87e7d8fc14279f1c98b7d2ca4bbfc0b65c61deb4831ff33"
+    },
+    {
+      "path": "scripts/capsule_decode_comparison.py",
+      "bytes": 6108,
+      "sha256": "62d1e0ebb4d4be03fc1091a4c7738d266833c88db1092133e288bb1974f636af"
+    },
+    {
+      "path": "scripts/capsule_interface_comparison.py",
+      "bytes": 5763,
+      "sha256": "09940e820a1f72fccf12690561d2f30cafb7d33f1368581967e1d3f13fc62f24"
+    },
+    {
+      "path": "scripts/capsule_inventory_comparison.py",
+      "bytes": 7694,
+      "sha256": "11025e4c6c2da7b6c8c5a0e64acc9f5f2cb27b6a07a979f1e1cfdea8b7ba2521"
+    },
+    {
+      "path": "scripts/capsule_inventory_delivery.py",
+      "bytes": 8520,
+      "sha256": "901b204f7249736f23ad2f1c0edebffec8da2463945fcbf5113ca50d028cfe37"
+    },
+    {
+      "path": "scripts/capsule_inventory_effect_controls.py",
+      "bytes": 3528,
+      "sha256": "b603858dc4b94bd5f7222393b359bc26698bdc833674b0041d2bd7e22343e732"
+    },
+    {
+      "path": "scripts/capsule_inventory_profile.py",
+      "bytes": 4597,
+      "sha256": "edb76fc0e105e56e67822da59aafb91835a5e5226309c9f51d3f08b96e4ed98c"
+    },
+    {
+      "path": "scripts/capsule_terminal_prefix_comparison.py",
+      "bytes": 7802,
+      "sha256": "9d9fb205e9a45d32edc2ef30c81a2fda126dc888c8d7fc026e42f2014201945f"
+    },
+    {
+      "path": "scripts/chess_development.py",
+      "bytes": 46168,
+      "sha256": "cb64679d05e93b0f4f6924d20d9fe767441e38a075ea039078d7a89b6cf5add8"
+    },
+    {
+      "path": "scripts/core_semantic_caller_comparison.py",
+      "bytes": 6051,
+      "sha256": "69e464789aa7891bf268a17abc39f5163ff9c07714615ac92f21412ece9cdede"
+    },
+    {
+      "path": "scripts/core_semantic_caller_profile.py",
+      "bytes": 7176,
+      "sha256": "b13a7ba2b359ae76a70a4f8cb087e9c3f467c2da5a661d6f7e2da9188491664a"
+    },
+    {
+      "path": "scripts/full_q_refresh_comparison.py",
+      "bytes": 7639,
+      "sha256": "c3a2f29a068660ec5ef6a59b5dcf3d5524ad5a9a21208d11653cae695ed9672c"
+    },
+    {
+      "path": "scripts/native_capsule_decode.py",
+      "bytes": 1851,
+      "sha256": "04ff4e134388a58a45fde24743c3d32955eb83401b5d9aff34c1850f34517967"
+    },
+    {
+      "path": "scripts/native_capsule_evaluator.py",
+      "bytes": 1274,
+      "sha256": "5a5516be6d8cfbb6f80f2feb69e5303ca0ed4f4dc32606e30c3a86d014151bf5"
+    },
+    {
+      "path": "scripts/native_capsule_inventory.py",
+      "bytes": 1346,
+      "sha256": "33592acf3edb603d64f5de2c9c618ff4ab0af727231e24e52dc40aa6a046f46f"
+    },
+    {
+      "path": "scripts/native_capsule_runtime.py",
+      "bytes": 4472,
+      "sha256": "2d47abc70ef8cc621641731c27c4f6d491cabd3eb57accc3674760f28011b857"
+    },
+    {
+      "path": "scripts/research_record.py",
+      "bytes": 2767,
+      "sha256": "3f1237e0c1d728995f169902aaaad8fb53ac149287aa46875db298b63221612a"
+    },
+    {
+      "path": "scripts/search_backend_comparison.py",
+      "bytes": 23931,
+      "sha256": "6bcff770357d8d4f5f48330d14283a5feb5206bd4141526a04e28a7d0c3abaf7"
+    },
+    {
+      "path": "tests/development/test_capsule_path_runtime.py",
+      "bytes": 9743,
+      "sha256": "5f9f5125aae15b3936af521e5ec39b3b39a3e5f0447ef4ce46f13878a15ae0bc"
+    },
+    {
+      "path": "tests/product/test_qsearch_semantic_effects.py",
+      "bytes": 15001,
+      "sha256": "775af4b8c82fe2cce50b5990d9d569dab59aef6b6e8318a6024e4541434dfbfd"
+    },
+    {
+      "path": "tests/rule_semantics_ir_fixtures.py",
+      "bytes": 17212,
+      "sha256": "209b3bd9388d5ac228329d64eeda7d70a9209f0409ac74217be2879b4d6038c7"
+    }
+  ]
+}

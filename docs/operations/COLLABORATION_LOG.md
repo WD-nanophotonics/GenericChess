@@ -396,3 +396,55 @@ Primary post-publication scope decomposition: eight existing Western owner maps
 are explained exactly by legacy Pawn having zero movement atoms, while semantic
 pawn attacks supply the extra squares. This narrows substitution scope; no
 backend blame, frozen evaluator change or auxiliary reproduction is inferred.
+
+
+## Capsule consumer and actual caller — primary segment 2026-10-12
+
+PRIMARY implements a corrected research adapter restoring Position and ply as
+one immutable projection, then runs separate same-semantic import, validated
+syntax decoder, actual product caller and material-summary comparisons. Full C
+history/checked transitions remain; thin search is not product TT/declaration
+integration. Complete action/score/work/trace and typed parent state are checked.
+The actual Core-owned AlphaBeta experiment uses existing opt-in leaf/provider
+interfaces and retains normal ordering/fresh TT; its results are primary work.
+
+DEV_AUX independently publishes94972a53ada6db79d7231081982989d6b276acfa with
+source, pop/checkpoint witnesses, raw-view and equal-time controls. Primary reads
+that pinned report and complete Slack threads, adopts the specific ply consumer
+correction and source limits, and avoids a whole branch merge or duplicate
+auxiliary launch. Auxiliary timings and primary timings are separate experiments,
+not mutually reproduced or additive. No cross-checkout write/state interference
+or unresolved ownership conflict is observed. Ordinary concurrent load is normal.
+
+Dot's auxiliary-directed new advice selects a small random-material learning
+feasibility lane. The later reply1791731822 allows the running project Native
+material-only engine as a narrow fallback, distinguishes it from the unresolved
+mature-engine task, and emphasizes censored game outcomes and inherited search
+prices. Primary reads/preserves the complete new channel root and thread; adopts
+those interpretation limits, defers its own training while completing search
+cost attribution, and does not import an attributed other-user instruction as
+new primary policy. This is useful scoped peer direction, not a new approval gate.
+AUX reports App Control4551 for its own Fairy binary; primary does not rerun,
+bypass, or claim an independent verification of that launch.
+
+Communication carries concrete defects and distinct research boundaries; no
+routine acknowledgment, identity challenge or request to pause computation is
+needed. Earlier pending CLI consultation is reconciled from an exact complete
+payload readback; direct technical roots retain their own receipt/association,
+not a fabricated ledger binding. Efficiency benefit from avoiding duplicate
+failure discovery is plausible, but net saved engineering/token time has no
+measured counterfactual. The current scripts/reviews took additional engineering
+and model work; experiment wall times do not measure that overhead. Raw Slack,
+account metadata and private inputs remain local. Reviewed Agent-only source,
+results and limitations go to sandbox so Dot can inspect a fixed revision.
+
+Pinned auxiliary report: https://github.com/WD-nanophotonics/GenericChess/blob/94972a53ada6db79d7231081982989d6b276acfa/results/dev_aux/SEGMENT_20261011_8.md
+Primary purpose evidence: docs/research/CAPSULE_INTERFACE_COST.md and data/capsule_interface_20261012.json.
+
+Primary completion evidence:32 shared-deadline calls preserve complete-root
+selection/restoration, with D2 versus D1 on1008 at30seconds in both orders.
+Readonly inventory and narrow terminal prefix-copy retain frozen formula/policy;
+2119 active tests pass. Actual-caller profiling rejects speculative ordering
+changes and selects repeated Core terminal consumers. Local verifier/import
+failures remain distinct from corrected measurements. No auxiliary work or old
+evidence is relabeled; no routine replies or cross-checkout writes were needed.

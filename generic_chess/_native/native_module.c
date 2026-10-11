@@ -2380,6 +2380,37 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
     return PyCapsule_New(pos, GC_SEM_POSITION_CAPSULE, gc_semantic_position_capsule_free);
 }
 
+/* Read-only actual post-transition counts for the existing Python q policy.
+ * Current board types plus base hand types, not an evaluation or legality test. */
+static PyObject *gc_semantic_material_summary(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &pos_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !pos) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, pos)) return NULL;
+    uint32_t inventory[2][GC_MAX_TYPES] = {{0}};
+    unsigned board_count[2] = {0, 0};
+    for (uint16_t square = 0; square < rules->board_size * rules->board_size; ++square) {
+        const GCPiece *piece = &pos->board[square];
+        if (!piece->occupied) continue;
+        board_count[piece->owner]++;
+        inventory[piece->owner][piece->current_type]++;
+    }
+    PyObject *counts = PyTuple_New(2 * rules->type_count);
+    if (!counts) return NULL;
+    for (unsigned owner = 0; owner < 2; ++owner) {
+        for (unsigned type = 0; type < rules->type_count; ++type) {
+            PyObject *count = PyLong_FromUnsignedLong(inventory[owner][type] + pos->hand_counts[owner][type]);
+            if (!count) { Py_DECREF(counts); return NULL; }
+            PyTuple_SET_ITEM(counts, owner * rules->type_count + type, count);
+        }
+    }
+    return Py_BuildValue("(ii(ii)N)", pos->side_to_move, pos->ply,
+                         board_count[0], board_count[1], counts);
+}
+
 static PyObject *gc_semantic_position_snapshot(PyObject *self, PyObject *args) {
     (void)self;
     PyObject *rules_capsule, *pos_capsule;
@@ -3095,12 +3126,15 @@ static int gc_semantic_has_guarded_action(const GCSemanticRules *rules,
     }
     for (size_t i = 0; i < candidates.count; i++) {
         uint64_t raw = candidates.data[i];
-        GCSemanticPosition probe = *position;
-        /* Terminal authority checks legal-action availability independently of
-         * the max-ply/repetition-history cutoff, matching SemanticEngine. */
+        GCSemanticPosition probe;
+        /* Availability observes board/hands/aux and an empty history only.
+         * Do not copy the unused reserved history tail for every candidate.
+         * Terminal priority still uses the unchanged authoritative parent. */
+        memcpy(&probe, position, offsetof(GCSemanticPosition, history_lo));
         probe.ply = 0;
         probe.history_len = 0;
         probe.history_exact = 1;
+        probe.history_events_exact = position->history_events_exact;
         GCSemanticPosition child;
         if (gc_semantic_runtime_make_checked(&child, rules, &probe, (uint64_t)raw)) {
             gc_semantic_action_buffer_free(&candidates);
@@ -6897,6 +6931,8 @@ static PyMethodDef gc_methods[] = {
      "semantic_action_layout() -> exact 64-bit semantic action identity layout"},
     {"semantic_pack_position", gc_semantic_pack_position, METH_VARARGS,
      "semantic_pack_position(rules, payload) -> semantic position capsule"},
+    {"semantic_material_summary", gc_semantic_material_summary, METH_VARARGS,
+     "semantic_material_summary(rules, position) -> (side, ply, board_counts, inventory)"},
     {"semantic_position_snapshot", gc_semantic_position_snapshot, METH_VARARGS,
      "semantic_position_snapshot(rules, position) -> canonical board snapshot"},
     {"semantic_position_key", gc_semantic_position_key, METH_VARARGS,
