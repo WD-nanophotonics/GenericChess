@@ -728,3 +728,13 @@ The actual option comparison preserves D3 canonical action/PV/score while reduci
 nodes876164 to74414 and observed cost17.2 to1.50s;4/16s exploratory controls deliver
 D3 versusD2. Earlier failures, caps and q0/q4 differences remain visible in the
 new purpose report and immutable evidence, with no automatic product promotion.
+
+Segment2ea1abda ends at the accepted77.523minute safe checkpoint,13 research
+stages, scienceOPEN; all owned runs finish0. The tested publication's complete
+HEAD/origin/sandbox/ls-remote SHA is e6f80bc9efdd29edc8f143efa6b7de37fc323dd8.
+29 publisher tests pass after2245full/20focused tests. One distinct new result
+with fixed research and collaboration links is sent and exactly read back in
+the new technical thread, including all four replies and complete pagination;
+no later new root or Dot review is claimed. Actual q4 consumer rejection/no-root-
+mutation is checked; executable next memo selects Coreq4 complete legality under
+cancellation/rollback. This receipt contains no raw Slack/account/private input.
