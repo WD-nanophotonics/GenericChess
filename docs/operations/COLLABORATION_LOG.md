@@ -143,3 +143,5 @@ Task057五个预声明实际provider前沿独立复现actor相对类型被Native
 纠正并保留：辅助fetch仅追踪sidemission，最初fetch sandbox未更新origin/sandbox，随后显式ref更新固定源；记录读取器schema/root路径、CRLF字节和工具参数失败均不重跑旧实验。效率体现为复用已有335个调用和2000前沿而非新增计时批次；没有单Agent对照、完整工时/token或节约比例。普通CPU并行遵从用户最新指示，不申请安静窗口；保持文件和计算状态边界。原始Slack/账号/私人输入/凭据不发布。
 
 主日志仍由PRIMARY整合；本条只写辅助sidemission。科学OPEN，完整评价参数与persistent绑定继续独立审计，源阶段缺口及尚未发表主结果待后续固定版本；本段时间/finish在实际接受后补记，不提前称完成。
+
+辅助Task059随后实际发现一次性semantic搜索空间数组检查n*9与C/持久化2*n*9冲突；五个预声明接口条件保留三种拒绝，原固定material记录不因此失效。只在辅助AST副本修正长度后，原四条件中的完整数组/映射进入既有binary，半长仍拒绝；两个现有evaluate/persistent回归通过。这是Python-only入口候选和完整参数记录纠正，不改产品、不重建DLL、不认证主q4策略或非零评价效果。持久化21项capsule绑定及18个旧材料记录的实际无learned/policy工作已核验，结果字段不能独立证明完整leaf配置；完整参数/独立ordering与TT生命周期需记录。固定报告已向Dot/PRIMARY交付一次，投递不等于采纳。
