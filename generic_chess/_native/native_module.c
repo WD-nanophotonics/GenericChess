@@ -3312,6 +3312,8 @@ static int gc_semantic_terminal_status(const GCSemanticRules *rules,
             return 1; /* checkmate */
         }
         /* No-legal-action states have checkmate/stalemate precedence. */
+        if (rules->stalemate_result == 1 && winner_out)
+            *winner_out = 1 - position->side_to_move;
         return 2; /* stalemate */
     }
     unsigned long repetitions = 0;
@@ -4028,8 +4030,11 @@ static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *ru
         *ok = 0;
         return result;
     }
-    if (terminal == 1) { result.score = -1000000; return result; }
-    if (terminal != 0) { result.score = 0; return result; }
+    if (terminal != 0) {
+        result.score = winner < 0 ? 0 :
+            (winner == position->side_to_move ? 1000000 : -1000000);
+        return result;
+    }
     if (depth == 0) return result;
     GCSemanticActionBuffer actions;
     gc_semantic_action_buffer_init(&actions);

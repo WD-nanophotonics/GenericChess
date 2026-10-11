@@ -507,12 +507,11 @@ def semantic_iterative_search(
             }
             if set(spatial_occupancy_values) != spatial_keys:
                 raise ValueError("semantic spatial evaluator profile must cover every owner/current type")
-            spatial_occupancy_values = tuple(
-                int(value)
-                for owner in (0, 1)
-                for type_id in expected
-                for value in spatial_occupancy_values[f"{owner}:{type_id}"]
-            )
+            rows = [tuple(spatial_occupancy_values[f"{owner}:{type_id}"])
+                    for owner in (0, 1) for type_id in expected]
+            if any(len(row) != 9 for row in rows):
+                raise ValueError("each spatial owner/type mapping row must contain nine values")
+            spatial_occupancy_values = tuple(int(value) for row in rows for value in row)
         else:
             spatial_occupancy_values = tuple(int(value) for value in spatial_occupancy_values)
         if len(spatial_occupancy_values) != 2 * len(expected) * 9:

@@ -328,3 +328,66 @@ loss refusal. This starts the specific control requested by Dot without another
 performance batch; reachability is not claimed. Candidate implementation is the
 next segment's task. Raw transport/account data stays excluded from the expanded
 Agent-only evidence archive and the final fixed revision.
+
+
+## Shared terminal and binding integration — primary segment 2026-10-11
+
+PRIMARY implements the shared C stalemate policy/winner through normal build,
+real root/history/recursive controls,16EP/promotion/drop states and6Shogi searches.
+Dot's complete fixed terminal source review selects this narrow route, not a
+second Core runtime or guard removal. PRIMARY corrects its own previous claim:
+Western limit100000 means fourhistory did not hit repetition. Old raw records
+stay; a new explicit threshold4 pair establishes the actual precedence control.
+
+DEV_AUX independently supplies rejected-bind/capsule drift, nested getter warmTT
+and compensated spatial-row witnesses; Dot's source review identifies the missed
+checkpoint path. DEV_AUX then reproduces genuine public width17 C rejection and
+ID-retry failure on its own branch. PRIMARY reads complete channel/new roots and
+both threads, fetches fixedd7f78a4c3305715ffe6938eb590c910e5f42084f, independently
+reproduces current-source failures, and adopts narrow prepare/create/commit plus
+nested input/output ownership and row9 validation. Actual primary search/TT
+regressions cover failure-preserved state and valid replacement. No whole branch
+merge, primary-state writes by auxiliary, extra worker or routine receipt loop.
+Dot's suggested corrected sameID retry is clarified: public ID hashes content,
+so corrected payload has a different ID; the same rejected ID must still reject.
+
+PRIMARY alone runs the subsequent exact68leaf attack/view controls, matched8D1
+calls and10991leaf/21982set audit, profile, paired raw-view and immutable-coordinate
+controls. Existing semantic authority differs from legacy Western geometry, so
+adapter remains scoped. Only coordinate reuse enters the opt-in evaluator;
+production/UI/default leaf remain. These are not auxiliary or Dot reproductions.
+Observed communication delivered a concrete omitted entry and correction; no
+cross-checkout file/state interference or unresolved ownership disagreement was
+observed. Reusing fixed witnesses avoided inventing a broad failure framework,
+but net saved time/tokens and cooperation efficiency have no measured counterfactual.
+
+The primary's initial full test run hit global Temp permissions and one obsolete
+loss-refusal expectation; a fresh local basetemp and updated actual-policy test
+resolve them while retaining oldbinary failure checks. Initial tool output is
+truncated, not claimed complete. Scope probe import/SessionResult API mistakes
+are preserved separately. Raw Slack/account/private inputs remain excluded;
+reviewed code/results/source hashes/failure limits are published for Dot at a
+fixed revision. Remaining issue: the capsule prototype is not a full product
+runtime or all-rule-domain/search kernel. Ordinary concurrent load is a timing
+limit, not a stop or coordination gate.
+
+Auxiliary source/witness: https://github.com/WD-nanophotonics/GenericChess/blob/d7f78a4c3305715ffe6938eb590c910e5f42084f/results/dev_aux/task068/REPORT.md
+Primary purpose evidence: docs/research/NATIVE_TERMINAL_AND_BINDING.md and data/native_terminal_binding_20261011.json.
+
+Deeper primary follow-on: four original/combined D2 calls retain exact action,
+score and work, with31.59/27.61 and31.75/27.83seconds observed. A separate
+44135leaf/88270attack-set audit has zero mismatches. DEV_AUX did not execute these
+measurements; no source-only machine window or further auxiliary wake was needed.
+The concrete validation contribution shortened defect discovery, but saved
+engineering/token time has no measured counterfactual. Full current regression:
+2104passed in203.66seconds. Scoped representation evidence remains developmental.
+
+Useful new checkpoint communication: read new channel root1791726848.502599 and
+its full reply1791726959.573359 (no pagination remaining), alongside relevant
+old threads. DEV_AUX found research-only projected-ply pop drift; Dot statically
+confirmed fixed archived producer/consumer scope. Primary independently reproduced
+normalized/raw failures and five-field repairs in four local controls. Adopt scope
+correction and repair before new consumers, retain old action/score/work evidence,
+defer a full rerun because the fixed driver has no added ply consumer. This is a
+concrete correction, not conflicting file edits; old evidence remains unchanged.
+Raw Slack remains private; no routine receipt or extra auxiliary wake was needed.

@@ -709,6 +709,7 @@ class NativeSemanticCompiledRules:
         declarations=(),
         repetition_policy="draw",
         semantic=None,
+        bound_stalemate_result=None,
     ) -> None:
         self._capsule = capsule
         self._report = report
@@ -719,6 +720,7 @@ class NativeSemanticCompiledRules:
         self._declarations = tuple(declarations)
         self._repetition_policy = str(repetition_policy)
         self._semantic = semantic
+        self._bound_stalemate_result = bound_stalemate_result
 
     @property
     def capsule(self):
@@ -770,7 +772,12 @@ class NativeSemanticCompiledRules:
     def require_terminal_policy_support(self) -> None:
         """Legality support does not imply Native terminal/search support."""
         support = getattr(self._semantic, "support", None)
-        if support is not None and support.stalemate_result != "draw":
+        expected = 1 if support is not None and support.stalemate_result == "loss" else 0
+        # Check C-owned metadata: an older installed binary may ignore the
+        # new optional field. Legality remains usable, but never certify loss.
+        if (expected == 1 and self._bound_stalemate_result != 1) or (
+            expected == 0 and self._bound_stalemate_result not in (None, 0)
+        ):
             raise NativeUnsupportedRuleError(
                 "Native semantic terminal/search does not support stalemate "
                 "loss policy; use Core terminal/search"
@@ -790,7 +797,7 @@ def _native_payload_is_executable(payload, report: NativeSemanticCompilationRepo
     """
     required = {
         "semantic_payload_version", "fingerprint", "board_size",
-        "repetition_limit", "repetition_policy", "automatic_adjudication_ply",
+        "repetition_limit", "repetition_policy", "stalemate_result", "automatic_adjudication_ply",
         "automatic_adjudications",
         "max_ply", "type_ids", "types",
         "promo_allowed", "promo_forced", "alive_promo", "drop_mask",
@@ -1138,6 +1145,7 @@ def build_semantic_compile_payload(semantic):
         "fingerprint": fingerprint,
         "board_size": n,
         "repetition_limit": support.repetition_limit,
+        "stalemate_result": _sem_enum({"draw": 0, "loss": 1}, support.stalemate_result, "stalemate result", fingerprint),
         "repetition_policy": _sem_enum(
             _SEM_REPETITION_POLICY_CODES,
             support.repetition_policy,
@@ -1222,6 +1230,7 @@ def compile_native_semantic_rules(semantic) -> NativeSemanticCompiledRules:
         )
     payload, report = build_semantic_compile_payload(semantic)
     capsule = _module().compile_semantic_rules(payload)
+    bound_stalemate_result = _module().semantic_rules_info(capsule).get("stalemate_result")
     type_ids = tuple(sorted(semantic.support.type_metadata))
     pattern_ids = tuple(p.pattern_id for p in semantic.ir.patterns)
     geometry_ids = tuple(sorted(semantic.ir.geometry))
@@ -1242,4 +1251,5 @@ def compile_native_semantic_rules(semantic) -> NativeSemanticCompiledRules:
         declarations=semantic.ir.declarations,
         repetition_policy=semantic.support.repetition_policy,
         semantic=semantic,
+        bound_stalemate_result=bound_stalemate_result,
     )

@@ -9,6 +9,7 @@ every move.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from copy import deepcopy
 from collections.abc import Mapping
 
 from ..ai.cancellation import CancellationToken
@@ -152,7 +153,10 @@ def _spatial_tuple(native_rules, values):
         expected = {f"{owner}:{type_id}" for owner in (0, 1) for type_id in type_ids}
         if set(values) != expected:
             raise ValueError("semantic spatial evaluator profile must cover every owner/current type")
-        rows = [values[f"{owner}:{type_id}"] for owner in (0, 1) for type_id in type_ids]
+        rows = [tuple(values[f"{owner}:{type_id}"])
+                for owner in (0, 1) for type_id in type_ids]
+        if any(len(row) != SPATIAL_CELL_COUNT for row in rows):
+            raise ValueError("each spatial owner/type mapping row must contain nine values")
         result = tuple(int(value) for row in rows for value in row)
     else:
         result = tuple(int(value) for value in values)
@@ -233,7 +237,7 @@ class SemanticSearchEngine:
         self._dynamic_values = _dynamic_tuple(dynamic_values)
         self._spatial_values = _spatial_tuple(native_rules, spatial_occupancy_values)
         self._localized_control_values = _localized_control_tuple(localized_control_values)
-        self._compact_values = None if compact_values is None else dict(compact_values)
+        self._compact_values = None if compact_values is None else deepcopy(dict(compact_values))
         self._ordering_board_values = None
         self._ordering_hand_values = None
         self._ordering_dynamic_values = None
@@ -284,7 +288,7 @@ class SemanticSearchEngine:
         self._spatial_values = None if spatial is None else tuple(spatial)
         control = checkpoint.semantic_quantized_localized_control()
         self._localized_control_values = None if control is None else tuple(control)
-        self._compact_values = dict(checkpoint.compact_nonlinear) if checkpoint.compact_nonlinear else None
+        self._compact_values = deepcopy(dict(checkpoint.compact_nonlinear)) if checkpoint.compact_nonlinear else None
         self._evaluator_scale = checkpoint.semantic_native_scale
         self._checkpoint_id = checkpoint.checkpoint_id
 
@@ -299,7 +303,7 @@ class SemanticSearchEngine:
         self._ordering_spatial_values = None if spatial is None else tuple(spatial)
         control = checkpoint.semantic_quantized_localized_control()
         self._ordering_localized_control_values = None if control is None else tuple(control)
-        self._ordering_compact_values = dict(checkpoint.compact_nonlinear) if checkpoint.compact_nonlinear else None
+        self._ordering_compact_values = deepcopy(dict(checkpoint.compact_nonlinear)) if checkpoint.compact_nonlinear else None
         self._ordering_evaluator_scale = checkpoint.semantic_native_scale
         self._ordering_checkpoint_id = checkpoint.checkpoint_id
 
@@ -357,8 +361,11 @@ class SemanticSearchEngine:
         checkpoint.validate_ruleset(self._compiled)
         if checkpoint.checkpoint_id == self._checkpoint_id:
             return
-        self._set_checkpoint_values(checkpoint)
-        self._capsule = self._new_capsule()
+        staged = object.__new__(type(self))
+        staged.__dict__ = self.__dict__.copy()
+        staged._set_checkpoint_values(checkpoint)
+        staged._capsule = staged._new_capsule()
+        self.__dict__.update(staged.__dict__)
 
     def bind_evaluator(
         self, board_values, hand_values, dynamic_values=None,
@@ -370,16 +377,21 @@ class SemanticSearchEngine:
         hand = _profile_tuple(self._native_rules, hand_values)
         if (board is None) != (hand is None):
             raise ValueError("board_values and hand_values must be supplied together")
-        self._board_values, self._hand_values = board, hand
-        self._dynamic_values = _dynamic_tuple(dynamic_values)
-        self._spatial_values = _spatial_tuple(self._native_rules, spatial_occupancy_values)
-        self._localized_control_values = _localized_control_tuple(localized_control_values)
-        self._compact_values = None if compact_values is None else dict(compact_values)
+        # Prepare and validate an independent binding before replacing any live
+        # metadata or the capsule/TT. This engine has a single-thread contract.
+        staged = object.__new__(type(self))
+        staged.__dict__ = self.__dict__.copy()
+        staged._board_values, staged._hand_values = board, hand
+        staged._dynamic_values = _dynamic_tuple(dynamic_values)
+        staged._spatial_values = _spatial_tuple(staged._native_rules, spatial_occupancy_values)
+        staged._localized_control_values = _localized_control_tuple(localized_control_values)
+        staged._compact_values = None if compact_values is None else deepcopy(dict(compact_values))
         if isinstance(evaluator_scale, bool) or not isinstance(evaluator_scale, int) or not 1 <= evaluator_scale <= 1024:
             raise ValueError("evaluator_scale must be an integer in [1, 1024]")
-        self._evaluator_scale = evaluator_scale
-        self._checkpoint_id = None
-        self._capsule = self._new_capsule()
+        staged._evaluator_scale = evaluator_scale
+        staged._checkpoint_id = None
+        staged._capsule = staged._new_capsule()
+        self.__dict__.update(staged.__dict__)
 
     @property
     def native_evaluator_values(self) -> dict:
@@ -391,7 +403,7 @@ class SemanticSearchEngine:
             "dynamic": tuple(self._dynamic_values or ()),
             "spatial_occupancy": tuple(self._spatial_values or ()),
             "localized_control": tuple(self._localized_control_values or ()),
-            "compact_nonlinear": self._compact_values,
+            "compact_nonlinear": deepcopy(self._compact_values),
         }
 
     def clear_tt(self) -> None:

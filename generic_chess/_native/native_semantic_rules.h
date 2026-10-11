@@ -249,6 +249,7 @@ typedef struct {
     uint8_t board_size;
     uint32_t repetition_limit;
     uint8_t repetition_policy;
+    uint8_t stalemate_result; /* 0 draw, 1 side-to-move loss */
     uint16_t automatic_adjudication_ply;
     GCSemAutomaticAdjudication automatic_adjudications[
         GC_SEM_MAX_AUTOMATIC_ADJUDICATIONS];

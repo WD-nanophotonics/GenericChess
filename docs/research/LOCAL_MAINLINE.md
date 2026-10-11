@@ -40,24 +40,39 @@ and lower observed costs, while retaining Python recursion/evaluation. Profiles
 locate Core transition/identity and remaining Position/leaf boundary costs;
 overlapping spans are not additive speedups.68leaf controls expose57mismatches
 if Native dynamic weights replace the frozen Python evaluator: different feature
-families, no same-leaf shortcut. Raw Native terminal rejects stalemate loss in the declared builtin probe.
-An explicit Core-terminal shadow preserves16EP/promotion/drop/history states,
-but two matchedD1 calls cost26.15/26.39s versus capsule8.53/8.57s: duplicate
-Core execution has no demonstrated cost advantage. Dot reply1791723084.469589
-selects a minimal shared Native stalemate-policy/winner extension, with the frozen
-draw/loss oracle and one existing history precedence control. Adopt that next
-implementation check; no guard deletion, policy substitution or separateCore
-bridge. Candidate is not yet implemented/rebuilt; actual support stays scoped. Full-domain target/rawNative limits stay. Quiet rejection
-remains75-88percent, not safely skippable.
-Purpose record: Q4_COMPLETION_TRADEOFF.md; data/q4_tradeoff_20261011.json.
+families, no same-leaf shortcut. The shared C stalemate policy/winner is now
+implemented and normally rebuilt: true draw/loss plus actual threshold4 history
+and recursive child controls match Core. Older binaries still fail closed for
+loss; conservative IR dispatch/legacy continuous-check guards remain. Previous
+fourhistory Western limit100000 did not establish repetition precedence; old
+records remain, the corrected explicit threshold4 control is separate.
+Purecapsule16EP/promotion/drop/history states and6actualShogi searches pass.
+Purpose records: Q4_COMPLETION_TRADEOFF.md; NATIVE_TERMINAL_AND_BINDING.md.
 
-DEV_AUX's concrete one-shot spatial input defect is repaired in Python:2*n*9
-owner rows reach nonzero search and half profiles remain rejected. A real
-same-hash/different-score failure also repairs current full leaf-binding identity;
-old hash limitations stay.42related/2088full active tests pass. One-shot remains
-q0/scale1, not full-Nativeq4. Auxiliary record/source audits are adopted with
-independence limits; clock audit restricts cross-clock deadline slack but retains
-same-clock durations, shared budget identities and actual completion evidence.
+Current representation follow-on keeps the frozen leaf formula: scalar attack
+sets match68existing positions,8pairedD1calls match full work/action/score/trace,
+and every10991leaf on the larger tree matches. A separate combined D2 control
+completes four same-work calls at31.59/27.61 and31.75/27.83seconds; its instrumented
+audit matches all44135scores/88270attack sets. Western legacy attack geometry
+still differs from semantic authority, so this is scoped, not a default substitute.
+Raw Position projection retains complete C history and reduces observed paired
+caller cost;64immutable coordinates further reduce conversion overhead. Only
+coordinate reuse enters the existing opt-in semantic evaluator; raw view/attack
+bridge stays a prototype. No additive profile/cross-stage speed or strength claim.
+
+Research-only capsule Python projected ply fails pop restoration in both view
+variants; primary reproduces and verifies a five-field stack repair. Old fixed
+driver consumers preserve action/score/work conclusions, not complete Python-state
+restoration. Correct projected ply before integration/new consumers; do not
+reinterpret old timing as repaired timing. See purpose record and supplement.
+
+DEV_AUX's real rejected-bind/nested-getter/checkpoint drift is independently
+reproduced and narrowly repaired: prepare/create/commit, deep compact ownership,
+row9 validation, actual TT preservation on failure. The earlier one-shot complete
+binding hash repair stays; old source/hash limitations remain. Source and clock
+audits retain their scope. Current tests/failure provenance and archived synthetic
+results are in data/native_terminal_binding_20261011.json. Full-domain target,
+production/UI defaults, frozen comparisons and exposed-data limits remain.
 
 Earlier actor-relative filter repair remains provider-only Core fallback;
 raw Native limitations/compiler-rejection failures are preserved. Earlier drop
@@ -99,6 +114,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Shared Native terminal/winner, evaluator binding and same-leaf view costs|NATIVE_TERMINAL_AND_BINDING.md; data/native_terminal_binding_20261011.json|
 |Prospective fullq4 tradeoff, fixed-work/UI controls and evaluator entry repair|Q4_COMPLETION_TRADEOFF.md; data/q4_tradeoff_20261011.json|
 |Currentq4 capability, caller costs and observed wildcard capture repair|Q4_BACKEND_CAPABILITY.md; data/q4_caller_20261011.json; q4_iteration_20261011.json|
 |Same-q windows, score units, memory/q bounds, ordering and resource failure|PHASE_AWARE_SEARCH_WINDOWS.md; data/phase_aware_transfer_20261011.json|
