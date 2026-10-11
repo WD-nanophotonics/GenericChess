@@ -144,6 +144,16 @@ corrected projection. No full batch rerun, product/default/UI change or broader
 history-proof chain is justified by this defect. Dot checked fixed source/archive
 statically, not execution; primary and auxiliary reproductions remain distinct.
 
+A post-publication static decomposition of those four Western positions checks
+eight owner maps: builtin legacy Pawn has no movement atoms and its pseudoattack
+map is empty; union of the original full legacy map with semantic pawn attacks
+exactly reproduces the semantic full map in every case. This local feature
+omission explains the observed scope mismatch, rather than a Native backend
+error. It does not authorize changing the frozen legacy evaluator or fitting
+prices. Evidence: data/native_terminal_attack_scope_20261011.json. The first
+invocation failed import before declaration; process-local repository PYTHONPATH
+then ran the unchanged producer. No search cohort or old record was rerun.
+
 ## Remaining decision
 
 Keep the shared-terminal repair and binding repair; retain the bounded capsule

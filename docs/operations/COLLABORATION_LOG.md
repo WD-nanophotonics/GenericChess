@@ -391,3 +391,8 @@ correction and repair before new consumers, retain old action/score/work evidenc
 defer a full rerun because the fixed driver has no added ply consumer. This is a
 concrete correction, not conflicting file edits; old evidence remains unchanged.
 Raw Slack remains private; no routine receipt or extra auxiliary wake was needed.
+
+Primary post-publication scope decomposition: eight existing Western owner maps
+are explained exactly by legacy Pawn having zero movement atoms, while semantic
+pawn attacks supply the extra squares. This narrows substitution scope; no
+backend blame, frozen evaluator change or auxiliary reproduction is inferred.
