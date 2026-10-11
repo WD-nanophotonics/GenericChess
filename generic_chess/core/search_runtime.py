@@ -12,6 +12,7 @@ from __future__ import annotations
 import hashlib
 import json
 from contextlib import contextmanager
+from functools import lru_cache
 from dataclasses import dataclass, replace
 from typing import Any, Callable, Iterable, Mapping
 
@@ -450,8 +451,39 @@ def _nonboard_component_map(position: Position, compiled) -> dict[tuple, object]
     return values
 
 
-def _component_token(address: tuple, value: object) -> RuntimeHash:
+def _uncached_component_token(address: tuple, value: object) -> RuntimeHash:
     return _token((address, value))
+
+
+@lru_cache(maxsize=4096, typed=True)
+def _board_component_token(index, owner, base, current, promoted) -> RuntimeHash:
+    return _uncached_component_token(("board", index), (owner, base, current, promoted))
+
+
+@lru_cache(maxsize=256, typed=True)
+def _empty_board_component_token(index) -> RuntimeHash:
+    return _uncached_component_token(("board", index), None)
+
+
+@lru_cache(maxsize=4, typed=True)
+def _side_component_token(value) -> RuntimeHash:
+    return _uncached_component_token(("side",), value)
+
+
+def _component_token(address: tuple, value: object) -> RuntimeHash:
+    # Complete immutable fields, with bool/int kept distinct just as JSON does.
+    # Aux/hand/ruleset inputs retain the original serialization and identity.
+    if type(address) is tuple and len(address) == 2 and address[0] == "board" and type(address[1]) is int:
+        if value is None:
+            return _empty_board_component_token(address[1])
+        if (type(value) is tuple and len(value) == 4
+                and type(value[0]) in (int, bool)
+                and type(value[1]) is str and type(value[2]) is str
+                and type(value[3]) is bool):
+            return _board_component_token(address[1], *value)
+    if address == ("side",) and type(value) in (int, bool):
+        return _side_component_token(value)
+    return _uncached_component_token(address, value)
 
 
 def _full_runtime_hash(position: Position, compiled) -> RuntimeHash:
@@ -544,6 +576,7 @@ class SearchPathRuntime:
         hash_override=None,
         history_witnesses=None,
         legal_binding_provider: Callable | None = None,
+        availability_provider: Callable | None = None,
     ):
         if getattr(compiled, "no_progress_draw", None) is not None:
             raise NotImplementedError(
@@ -553,6 +586,7 @@ class SearchPathRuntime:
         self.compiled = compiled
         # Opaque Core-neutral callback: Core never imports Native and never
         # stores a Native capsule/rules object.
+        self.availability_provider = availability_provider
         self._legal_binding_provider = legal_binding_provider
         self._legal_provider_active = legal_binding_provider is not None
         self.position = state.position
@@ -827,6 +861,7 @@ class SearchPathRuntime:
         hash_override=None,
         history_witnesses=None,
         legal_binding_provider: Callable | None = None,
+        availability_provider: Callable | None = None,
     ):
         return cls(
             state,
@@ -834,6 +869,7 @@ class SearchPathRuntime:
             hash_override=hash_override,
             history_witnesses=history_witnesses,
             legal_binding_provider=legal_binding_provider,
+            availability_provider=availability_provider,
         )
 
     @property

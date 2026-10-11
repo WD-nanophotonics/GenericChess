@@ -448,3 +448,37 @@ Readonly inventory and narrow terminal prefix-copy retain frozen formula/policy;
 changes and selects repeated Core terminal consumers. Local verifier/import
 failures remain distinct from corrected measurements. No auxiliary work or old
 evidence is relabeled; no routine replies or cross-checkout writes were needed.
+
+## Core availability and exact token cost — primary segment 2026-10-12
+
+PRIMARY measures four source phases of read-only S0-S4 availability inside the
+real Core caller. Initial full-buffer negatives and later mixed results remain;
+live-prefix transport saves about7-15percent in paired development roots.
+Core retains terminal priority/history/TT; a per-instance bool/None callback
+avoids global research binding.30second calls complete1008D3 versusD2 in both
+orders, a delivery result, not stronger play. New roots retain decisions; the
+1041/1042 thin-capsule transfer has no completed-depth gain. Residual profiling
+motivates bounded exact board/side token memoization, separately compared with
+original hashes and identical decisions/work. No UI/search/evaluation policy changes.
+
+DEV_AUX publishes cb3ce96d900b6c494754c57694277e349522bccb; primary reads
+its pinned report and complete thread.64ply random-opponent harness:21 checks,
+126 replays; mature-engine games remain zero after reported4551 launch failure.
+Old Native114 results are not mature/random-opponent evidence;432+48 proposal
+is unexecuted. Adopt reward-decomposition/proxy limits for the later lane;
+defer primary training while completing search attribution. No duplicate launch,
+cross-checkout writes or computation interference observed.
+
+Dot reviews the residual-cost question in its original technical thread.
+Adopt complete typed immutable keys, original-hash controls and bounded eviction.
+Reject blind import sharing: availability ply0 differs from caller attack/legal
+ply. Inclusive profiler costs are not added or treated as causal speed estimates.
+Dot inspected supplied evidence, without independent code execution or approval gate.
+Communication was scoped and useful; no routine receipt loops, identity challenges
+or requests to pause other computation. Net engineering/token savings lack a
+counterfactual. AUX96.263minute wall duration includes52.4minute interruption,
+not certified effective work. Setup/encoding failures are separate from corrected
+controls. Concurrent load limits timing; raw Slack/account/private inputs stay local.
+
+Pinned auxiliary report: https://github.com/WD-nanophotonics/GenericChess/blob/cb3ce96d900b6c494754c57694277e349522bccb/results/dev_aux/SEGMENT_20261012_9.md
+Primary evidence: docs/research/CORE_AVAILABILITY_COST.md and data/core_availability_20261012.json.

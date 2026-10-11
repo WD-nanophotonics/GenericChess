@@ -2200,7 +2200,11 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
         return NULL;
     }
     GCSemanticBoardPayload bp;
-    memset(&bp, 0, sizeof(bp));
+    /* Only supplied history entries are transport authority. Avoid clearing
+     * the reserved tail on every current-position attack/availability import. */
+    memset(&bp, 0, offsetof(GCSemanticBoardPayload, history_lo));
+    memset(&bp.history_len, 0,
+           sizeof(bp) - offsetof(GCSemanticBoardPayload, history_len));
     bp.history_exact = 1;
     int ok = 1;
     bp.side_to_move = (uint8_t)gc_py_long_as_long(side_obj, &ok);
@@ -2289,6 +2293,11 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
                 PyErr_SetString(PyExc_ValueError, "semantic history entry must have two, four, or six words");
                 return NULL;
             }
+            /* Legacy two-word transport retains zero upper digest words and
+             * zero unspecified events, just as the former full memset did. */
+            memset(bp.history_digest[i], 0, sizeof(bp.history_digest[i]));
+            bp.history_actor[i] = 0;
+            bp.history_gave_check[i] = 0;
             if (word_count == 2) bp.history_exact = 0;
             if (word_count != 6) history_events_complete = 0;
             for (Py_ssize_t word = 0; word < word_count; word++) {
@@ -2622,12 +2631,18 @@ typedef struct {
     uint64_t *data;
     size_t count;
     size_t capacity;
+    int (*visit)(void *context, uint64_t action);
+    void *context;
+    int stopped;
 } GCSemanticActionBuffer;
 
 static void gc_semantic_action_buffer_init(GCSemanticActionBuffer *buffer) {
     buffer->data = NULL;
     buffer->count = 0;
     buffer->capacity = 0;
+    buffer->visit = NULL;
+    buffer->context = NULL;
+    buffer->stopped = 0;
 }
 
 static void gc_semantic_action_buffer_free(GCSemanticActionBuffer *buffer) {
@@ -2638,6 +2653,11 @@ static void gc_semantic_action_buffer_free(GCSemanticActionBuffer *buffer) {
 }
 
 static int gc_semantic_action_buffer_append(GCSemanticActionBuffer *buffer, uint64_t action) {
+    if (buffer->visit) {
+        buffer->count++;
+        if (buffer->visit(buffer->context, action)) buffer->stopped = 1;
+        return 1;
+    }
     if (buffer->count == buffer->capacity) {
         size_t next = buffer->capacity ? buffer->capacity * 2 : 64;
         if (next < buffer->capacity || next > (size_t)-1 / sizeof(*buffer->data)) return 0;
@@ -2697,6 +2717,7 @@ static int gc_semantic_append_board_actions(GCSemanticActionBuffer *out,
             ((uint64_t)pattern_index << 36) | ((uint64_t)geometry_index << 44) |
             ((uint64_t)piece->current_type << 56);
         if (!gc_semantic_action_buffer_append(out, action)) return 0;
+        if (out->stopped) return 1;
     }
     return 1;
 }
@@ -2731,6 +2752,7 @@ static int gc_semantic_generate_candidate_buffer(const GCSemanticRules *rules,
                             PyErr_NoMemory();
                             return 0;
                         }
+                        if (buffer->stopped) return 1;
                     }
                 }
                 continue;
@@ -2754,6 +2776,7 @@ static int gc_semantic_generate_candidate_buffer(const GCSemanticRules *rules,
                             PyErr_SetString(PyExc_ValueError, "semantic promotion action construction failed");
                             return 0;
                         }
+                        if (buffer->stopped) return 1;
                     }
                 }
             }
@@ -3114,35 +3137,95 @@ static PyObject *gc_semantic_transient_legal_actions_audit(PyObject *self, PyObj
     return out;
 }
 
-static int gc_semantic_has_guarded_action(const GCSemanticRules *rules,
-                                          const GCSemanticPosition *position,
-                                          int *ok) {
+typedef struct {
+    const GCSemanticRules *rules;
+    GCSemanticPosition probe;
+} GCSemanticAvailabilityProbe;
+
+static int gc_semantic_visit_available_action(void *context, uint64_t action) {
+    GCSemanticAvailabilityProbe *probe = (GCSemanticAvailabilityProbe *)context;
+    return gc_semantic_runtime_probe_action(probe->rules, &probe->probe, action);
+}
+
+static int gc_semantic_has_guarded_action_impl(const GCSemanticRules *rules,
+                                               const GCSemanticPosition *position,
+                                               int *ok,
+                                               GCSemanticRuntimeAudit *audit) {
+    GCSemanticAvailabilityProbe probe;
+    probe.rules = rules;
+    /* A boolean query needs neither a complete candidate list nor the unused
+     * reserved history tail. Keep the exact checked transition and S4 guards. */
+    memcpy(&probe.probe, position, offsetof(GCSemanticPosition, history_lo));
+    probe.probe.ply = 0;
+    probe.probe.history_len = 0;
+    probe.probe.history_exact = 1;
+    probe.probe.history_events_exact = position->history_events_exact;
     GCSemanticActionBuffer candidates;
     gc_semantic_action_buffer_init(&candidates);
-    if (!gc_semantic_generate_candidate_buffer(rules, position, &candidates)) {
-        gc_semantic_action_buffer_free(&candidates);
+    candidates.visit = gc_semantic_visit_available_action;
+    candidates.context = &probe;
+    if (audit) gc_semantic_runtime_audit_start(audit);
+    int generated = gc_semantic_generate_candidate_buffer(rules, position, &candidates);
+    if (audit) {
+        gc_semantic_runtime_audit_stop();
+        audit->candidate_count = (unsigned long long)candidates.count;
+    }
+    if (!generated) {
         *ok = 0;
         return 0;
     }
-    for (size_t i = 0; i < candidates.count; i++) {
-        uint64_t raw = candidates.data[i];
-        GCSemanticPosition probe;
-        /* Availability observes board/hands/aux and an empty history only.
-         * Do not copy the unused reserved history tail for every candidate.
-         * Terminal priority still uses the unchanged authoritative parent. */
-        memcpy(&probe, position, offsetof(GCSemanticPosition, history_lo));
-        probe.ply = 0;
-        probe.history_len = 0;
-        probe.history_exact = 1;
-        probe.history_events_exact = position->history_events_exact;
-        GCSemanticPosition child;
-        if (gc_semantic_runtime_make_checked(&child, rules, &probe, (uint64_t)raw)) {
-            gc_semantic_action_buffer_free(&candidates);
-            return 1;
-        }
+    return candidates.stopped;
+}
+
+static int gc_semantic_has_guarded_action(const GCSemanticRules *rules,
+                                          const GCSemanticPosition *position,
+                                          int *ok) {
+    return gc_semantic_has_guarded_action_impl(rules, position, ok, NULL);
+}
+
+/* Read-only S0-S4 availability primitive for Core-owned terminal callers.
+ * Adjudication/history policy remains the caller's separate authority. */
+static PyObject *gc_semantic_has_legal_action(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &pos_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    int ok = 1;
+    int available = gc_semantic_has_guarded_action(rules, position, &ok);
+    if (!ok) {
+        PyErr_SetString(PyExc_ValueError, "semantic availability candidate generation failed");
+        return NULL;
     }
-    gc_semantic_action_buffer_free(&candidates);
-    return 0;
+    return PyBool_FromLong(available);
+}
+
+static PyObject *gc_semantic_has_legal_action_audit(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &pos_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    GCSemanticRuntimeAudit audit = {0};
+    int ok = 1;
+    int available = gc_semantic_has_guarded_action_impl(rules, position, &ok, &audit);
+    if (!ok) {
+        PyErr_SetString(PyExc_ValueError, "semantic availability candidate generation failed");
+        return NULL;
+    }
+    return Py_BuildValue("{s:O,s:K,s:K,s:K,s:K,s:K,s:K,s:K}",
+        "available", available ? Py_True : Py_False,
+        "candidate_count", audit.candidate_count,
+        "s3_trial_count", audit.s3_trial_count,
+        "s4_count", audit.s4_count,
+        "nested_reply_count", audit.nested_reply_count,
+        "child_canonical_key_computations", audit.child_canonical_key_computations,
+        "history_appends", audit.history_appends,
+        "attack_check_calls", audit.attack_check_calls);
 }
 
 static int gc_semantic_repetition_count(const GCSemanticRules *rules,
@@ -6981,6 +7064,10 @@ static PyMethodDef gc_methods[] = {
      "test-only transient legality counters and exact action set"},
     {"semantic_policy_logits", gc_semantic_policy_logits, METH_VARARGS,
      "semantic_policy_logits(rules, position, SemanticPolicyV1) -> actions and logits"},
+    {"semantic_has_legal_action_audit", gc_semantic_has_legal_action_audit, METH_VARARGS,
+     "test-only boolean availability and actual candidate/transition counters"},
+    {"semantic_has_legal_action", gc_semantic_has_legal_action, METH_VARARGS,
+     "semantic_has_legal_action(rules, position) -> readonly S0-S4 availability"},
     {"semantic_terminal", gc_semantic_terminal, METH_VARARGS,
      "semantic_terminal(rules, position) -> exact terminal status"},
     {"semantic_probe_search", gc_semantic_probe_search, METH_VARARGS,

@@ -45,12 +45,12 @@ complete C history and one explicit semantic attack formula. Twelve same-formula
 D2 calls, eight validated-decode calls and eight actual-material-summary calls
 preserve complete action/score/work/trace and full root restoration. The readonly
 C inventory avoids constructing Python pieces for quiet rejected children, with
-19â€“26percent lower observed paired D2 cost. Fifteen state/effect regressions and
+19Ã¢â‚¬â€œ26percent lower observed paired D2 cost. Fifteen state/effect regressions and
 37 additional semantic children pass. This is developmental evidence on exposed
 roots under ordinary concurrent load, not generic-domain or strength proof.
 
 Separately,32 public Core-owned AlphaBeta calls at depths2/3 preserve decisions,
-PV, q support and root/history across semantic evaluator backend Ã— legal-provider
+PV, q support and root/history across semantic evaluator backend Ãƒâ€” legal-provider
 cells;16 evaluator pairs match all non-time work. Actual imports/owner queries
 and accepted Native legality are counted. The real opt-in evaluator interface is
 usable; thin capsules still lack product pushed/search_key/tt_eligible contracts.
@@ -60,7 +60,19 @@ in both orders; this is completed support, not better move quality. Residual
 profiling motivates a small terminal probe prefix-copy repair, validated by four
 exact source-phase controls and2119 active tests. A real-caller profile rejects
 porting thin trace/repr optimization: product ordering is small; next inspect
-19809 actual Core terminal transition consumers on the existing1008D2 root. See
+19809 actual Core terminal transition consumers on the existing1008D2 root.
+That next question is now measured in CORE_AVAILABILITY_COST.md: four source
+phases preserve exact non-time decisions/work while reversing the initial
+Native availability cost deficit. Final scoped availability saves about7–15%;
+actual30s public calls complete1008D3 versusD2 in both orders, not a strength
+claim. Four new roots retain decisions; short/immediate-win timing limits stay.
+The1041/1042 thin-capsule transfer has no depth gain and is retained negative.
+Per-instance bool/None availability is optional, with Core history/TT unchanged.
+Residual exact board/side token reuse saves about6–9% in eight paired controls;
+the original hash remains the oracle, with typed complete immutable keys and
+hand/aux/ruleset fallback. Next inspect the remaining real consumer after this
+narrow implementation, rather than build shared-ply import or new history caches.
+Data: data/core_availability_20261012.json. Earlier capsule controls remain in
 CAPSULE_INTERFACE_COST.md and data/capsule_interface_20261012.json.
 
 Earlier actor-relative filter repair remains provider-only Core fallback;
@@ -87,7 +99,7 @@ does not refute a fixed vector averaged under an explicit play distribution.
 Static tables remain candidates/cheap baselines, not a required predecessor.
 Small local training is authorized; any single run expected above one hour
 first obtains dot's necessity assessment, with cheaper alternatives recorded.
-This is distinct from a60Ã¢â‚¬â€œ90minute Agent segment, not a general compute gate.
+This is distinct from a60-90minute Agent segment, not a general compute gate.
 
 Equivalent supported rule encodings and finite-board saturation must preserve
 semantics. Separate raw opportunity, normalization, rounding/clipping and
@@ -103,6 +115,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Core availability, supplied-history transport, public delivery and exact token costs|CORE_AVAILABILITY_COST.md; data/core_availability_20261012.json|
 |Corrected capsule consumers, actual Core caller and inventory/delivery costs|CAPSULE_INTERFACE_COST.md; data/capsule_interface_20261012.json|
 |Shared Native terminal/winner, evaluator binding and same-leaf view costs|NATIVE_TERMINAL_AND_BINDING.md; data/native_terminal_binding_20261011.json|
 |Prospective fullq4 tradeoff, fixed-work/UI controls and evaluator entry repair|Q4_COMPLETION_TRADEOFF.md; data/q4_tradeoff_20261011.json|

@@ -43,6 +43,9 @@ class AlphaBetaPlayer:
         use_native_semantic_legality: bool = True,
         tuning: SearchTuning = SearchTuning(),
         evaluator_override=None,
+        # Readonly (position, checkpoint=...) -> bool or None to decline.
+        # Caller supplies matching rule semantics; exceptions propagate.
+        availability_provider=None,
     ) -> None:
         self._compiled = compiled
         self._config = evaluation_config if evaluation_config is not None else EvaluationConfig()
@@ -71,6 +74,8 @@ class AlphaBetaPlayer:
             if self._use_native_semantic_legality
             else None
         )
+        # Optional state-local boolean only; Core keeps adjudication/history.
+        self._availability_provider = availability_provider
         self._tuning = tuning
 
     @property
@@ -134,6 +139,7 @@ class AlphaBetaPlayer:
                 if self._use_native_semantic_legality
                 else None
             ),
+            availability_provider=self._availability_provider,
             recorder=recorder,
             progress_callback=progress_callback,
         )

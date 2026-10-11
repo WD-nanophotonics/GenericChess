@@ -325,6 +325,21 @@ def candidate_perft(native_rules, position, depth: int) -> int:
     return int(_module().semantic_candidate_perft(native_rules.capsule, position, int(depth)))
 
 
+def has_legal_action(native_rules, position) -> bool:
+    """Read S0-S4 availability independently of terminal history/adjudication.
+
+    Uses the existing terminal availability probe's zero-ply, empty-history
+    semantics. This boolean is not a full legal set or terminal verdict.
+    """
+    if not native_available():
+        raise RuntimeError("native extension is not built")
+    _require_executable(native_rules)
+    entry = getattr(_module(), "semantic_has_legal_action", None)
+    if entry is None:
+        raise RuntimeError("native extension lacks semantic availability; rebuild required")
+    return bool(entry(native_rules.capsule, position))
+
+
 def terminal_status(native_rules, position) -> dict:
     """Return the exact Native semantic terminal status and winner."""
     if not native_available():
