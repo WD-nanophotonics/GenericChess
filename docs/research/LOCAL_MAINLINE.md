@@ -48,6 +48,16 @@ cost attribution by child outcome before a two-phase execution boundary,
 with fixed evaluation/q/history and actual backend. Keep physical rule execution,
 representation and interrupted work separate. Do not
 change q/evaluator/UI defaults or rebuild the Windows-blocked DLL.
+Latest calibration: retain typed support.max_ply provider repair. Pure semantic
+IR previously raised or disabled Native; old/repaired strict actual routes on
+the original ChessD2 and mixed512 callers retain3179/145 Native calls and exact
+work, so those prior cost attributions remain valid. Direct nonboard delta and
+packed full-frontier existence controls give no completion gain and stay private.
+Mixed physical transfer has finite excluded-child evidence; capped Shogi-drop
+has none. Do not mistake configured backend, cached frontier invocations or
+nested Core terminal work for actual Native calls. Next select a caller bottleneck
+with greater measured leverage; consult independent DEV_AUX evidence when ready.
+Evidence:data/provider_route_20261011.json.
 Evidence:AVAILABILITY_AND_Q_EXECUTION.md; data/availability_core_20261011.json;
 data/early_exclusion_contract_20261011.json; representation_outcome_20261011.json.
 Evidence:RUNTIME_AUX_IDENTITY.md; data/runtime_aux_identity_20261011.json.

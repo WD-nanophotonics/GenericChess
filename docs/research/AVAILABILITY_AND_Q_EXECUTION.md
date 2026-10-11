@@ -257,3 +257,53 @@ No default or product change follows. The new auxiliary validator's first task
 is independent replication of this source-pinned evidence, not engine editing.
 Evidence:data/physical_outcome_20261011.json and its source/raw archive;
 source closure is the two dependency indices. Original results remain immutable.
+
+
+## Direct deltas and actual provider route —2026-10-11
+
+A private direct nonboard component delta preserves64 typed before/after pairs
+and275 independent public mixed-lifecycle children.64 fixed calls retain work;
+the old completedD2 root is about0.96x, with adverse rows retained, including a
+Chess-tactic outlier.24 equal-time calls on three existing roots at1/4seconds
+keep actions, scores and completed depths. The early tactical mate returns before
+the time allowance; it is not a budget-exhaustion test. Defer this product change.
+
+A private terminal-availability predicate uses the installed packed Native full
+frontier without decoding it, retaining Core terminal/history authority.36 fixed
+calls retain work but completedD2 is1.021x and Shogi-drop1.274x: defer the change.
+It does not test a nonexistent Native one-action API or justify a DLL rebuild.
+The first semantic run had four failures, retained separately from the subsequent
+56 passing checks. These exposed an actual provider support-access defect.
+
+The product provider now reads typed compiled.support.max_ply. Pure semantic IR
+has no legacy top-level max_ply. In the four actual-runtime old/repaired arms,
+old nonstrict falls back once and disables Native after AttributeError; old strict
+raises. Both repaired arms use Native without fallback and preserve public actions,
+child state/terminal and undo. Two new product regressions cover strict/nonstrict;
+all2065 active tests passed before the final route review. Normal per-state
+capability rejection remains Core fallback, not an operational failure.
+
+The source-pinned old/repaired actual-route ledger then preserves the original
+weighted Chess completedD2 decision/work and existing mixed512node result.
+Each arm creates one strict provider; actual Native calls are3179/145 respectively,
+with zero capability rejection/exception and no Core runtime-frontier invocation.
+Other Core generator calls are42877/1364, including terminal availability; they
+are not evidence of provider fallback. Chess legal-generation calls3182 include
+cache-served invocations and must not be called3179 actual Native calls. Thus this
+support fix changes the demonstrated pureIR route, not these compatibility-backed
+cost roots. Their original physical attribution remains usable. Ledger timings
+are incidental; no speed comparison is made while auxiliary work may run.
+
+Eight plain/instrumented physical-transfer calls retain fixed512node decisions.
+Mixed-rich-hand has773 excluded/97 included children in completed iteration2;
+its222 excluded iteration3 children are explicitly incomplete. Excluded iteration2
+diff costs0.0179–0.0186s and availability self0.0122–0.0128s under instrumentation.
+Shogi-drop reaches no excluded qchildren at this cap, so it supplies no transferred
+quiet-child cost evidence. Do not imply generality from that missing coverage.
+
+Adopt the actual-route calibration suggested in technical review. Retain the two
+negative prototypes and typed support repair; defer lazy TT snapshots because
+count/history cost is not wholly TT-only or removable before terminal facts.
+Next choose a concrete caller bottleneck with different leverage, after reviewing
+independent auxiliary evidence; no q/evaluation/UI default change follows.
+Evidence:data/provider_route_20261011.json and its immutable source/result archive.

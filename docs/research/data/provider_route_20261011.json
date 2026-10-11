@@ -1,0 +1,127 @@
+{
+  "base_sha": "808be9c39dffca680ed48c811dc7ce5e915eeef4",
+  "scope": "Agent-produced direct-delta negative controls, packed Native existence negative controls and original failure, pureIR provider repair/actual-route ledger, scoped physical transfer. No communication/user/private records.",
+  "dependency_indices": [
+    "availability_core_20261011.json",
+    "representation_outcome_20261011.json",
+    "physical_outcome_20261011.json"
+  ],
+  "archive": {
+    "path": "docs/archive/provider_route_20261011/evidence.zip",
+    "bytes": 48705,
+    "members": 22,
+    "sha256": "75b45893e80d40ef6e15ddcc103076fe6d685057a499d77ab7a252561fbc0a6e"
+  },
+  "members": [
+    {
+      "member": ".local_agent/availability-core-20261011/direct_nonboard_delta.py",
+      "bytes": 1919,
+      "sha256": "e962a30b5aa8258d2b9d2bf7304cd93a63fc39db21750a46bba20c492210523b"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/direct_delta_control.py",
+      "bytes": 3405,
+      "sha256": "8005596497003b20f597305d8366a603ef66b6b216f4cac109e39eeb0caa8393"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/direct-delta-control.json",
+      "bytes": 229116,
+      "sha256": "8ccdf6f8d811f9a8d72eab7b043c1ca85b202a255efcfcbd275dc6f610f827f3"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/direct_delta_semantics.py",
+      "bytes": 3869,
+      "sha256": "c2e6a228c07a16aa46abf784dcb9155629fb6be6cf1595ec73db268255601b1a"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/direct-delta-semantics.json",
+      "bytes": 5542,
+      "sha256": "9762ad1bf9b0cac06fd29f00fabf481b9111527ccc3d3a78d40844608f06d7e8"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/direct_delta_time.py",
+      "bytes": 2095,
+      "sha256": "45cb029e87c0bdc83510e051ee20a747a1479185a9d8eb6c7809fdf3eb057313"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/direct-delta-time.json",
+      "bytes": 76214,
+      "sha256": "1d79903643f4d9dfdaeec82df8054f26c94d0fe6fbdeb3d072023638f8953105"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/direct_delta_typed.py",
+      "bytes": 1337,
+      "sha256": "717c98b4bf79f0d4904bde0067bec74cb94b8637059820e994a87a47f68e2ad4"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/direct-delta-typed-reproduction.json",
+      "bytes": 4668,
+      "sha256": "3968e9c680ef1b972135ca0269dbdd291756672cab5db3cdba0d0b13b142ee3a"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/direct-delta-typed.json",
+      "bytes": 213,
+      "sha256": "f758f8cdc8531ca3f8a7cdfda1fafe4c44f18a2c5249d2f0830b611cbf1120e8"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/native_terminal_probe.py",
+      "bytes": 1865,
+      "sha256": "98e5164f60cdc61d80769d7e8c0d01cc20735f585e77b0af6b14ff69f0c4b533"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/native_terminal_control.py",
+      "bytes": 2624,
+      "sha256": "e3a2d29bfa644a04e7dffe3da5f182b517dd4c6c1255f348f002eb52eb5ef822"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/native-terminal-control.json",
+      "bytes": 124727,
+      "sha256": "7639a2fdb0ec2057e4a67c7ead73a08ccf5717a8d3248d02ab5ebcf438dc0886"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/native_terminal_semantics.py",
+      "bytes": 1614,
+      "sha256": "47ac7ba267bc78bc800ba416d905ce297fb0d961d71e0ad74c4754221c246443"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/native-terminal-semantics.json",
+      "bytes": 1635,
+      "sha256": "530bb33a834c171054623b965937b40b79d3af267b29250c0d65e3f6f746c86f"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/native-terminal-semantics-failure.json",
+      "bytes": 1525,
+      "sha256": "645e742fec58ffd42d649bfbac0ed62dd4d1263c4cf58fbecdec83dc25ced4db"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/provider_pure_ir_control.py",
+      "bytes": 2490,
+      "sha256": "b1f5f7e7d16e2fd15b722d6fcec4483c04b3d0f5c5e3813f5753752f7fba8a57"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/provider-pure-ir-control.json",
+      "bytes": 993,
+      "sha256": "0e5d5a3501125d73d8e683e0b18cbaecfbb73554f375687b53979a2ca96e000b"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/provider_route_ledger.py",
+      "bytes": 4285,
+      "sha256": "9112bfcb780a198f5c052f2011969e63e76e79e92d7be77e18501200e21cf09e"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/provider-route-ledger.json",
+      "bytes": 15310,
+      "sha256": "0224902bb4867df8049c3553a6b9e0e3926677f5ca385bd4dac65a0207670885"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/physical_transfer.py",
+      "bytes": 3349,
+      "sha256": "d263f237982a20dadd42e72d7b90b58ba4e210cb785fe94181ffd5ef3e697de0"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/physical-transfer.json",
+      "bytes": 182445,
+      "sha256": "f0bb412051f457c02f4d52b47384c6419cf4d212636a7fe7ae4cba07297e7816"
+    }
+  ]
+}

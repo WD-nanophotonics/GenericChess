@@ -62,7 +62,9 @@ class NativeSemanticLegalityProvider:
         """Native's state-local cutoff cannot implement Core continuation."""
         # S4 no-reply conditions test a child through S3. Native also filters
         # that reply parent at max_ply, one ply before the outer cutoff.
-        return ply_count < self.compiled.max_ply - int(self._requires_reply_probe)
+        # Pure semantic IR products expose this on the typed support payload;
+        # a legacy compatibility attribute is not required for execution.
+        return ply_count < self.compiled.support.max_ply - int(self._requires_reply_probe)
 
     @classmethod
     def try_create(cls, compiled, *, strict: bool = False):
