@@ -397,3 +397,18 @@ App databases, credentials, Goals or retired queues. Do not touch other projects
 REPOSITORY_LAYOUT.md owns the purpose map and isolated historical recovery.
 Default pytest uses product/development/workflow/specification directories; old
 experiment receipts and retired policies are evidence, not active requirements.
+
+## Concurrent local work — user2026-10-11
+
+Multiple projects and Agents running on this computer are normal. Do not ask
+other projects or DEV_AUX to pause, obtain source-only timing windows, or treat
+ordinary concurrent computation as a collaboration violation. The boundary is
+unauthorized writes to another Agent's files or direct alteration of its running
+computation/state. Keep separate checkouts and sole sandbox publication.
+For timing evidence, report observed concurrent load briefly when relevant;
+use paired/counterbalanced comparisons and actual work/backend counters. Do not
+claim machine exclusivity or noise-free speedups. Ordinary load variation is an
+interpretation limit, not a stop/approval gate, a reason for automatic reruns or
+extra process monitoring. Preserve frozen raw results and earlier declarations;
+this user instruction supersedes the earlier resource-window practice without
+retrospectively converting old timing evidence into a clean benchmark.

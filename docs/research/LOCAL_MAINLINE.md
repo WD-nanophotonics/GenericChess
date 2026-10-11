@@ -143,36 +143,53 @@ savings; warm-root and deferred-binding limits remain in their purpose documents
 Full Shogi-history/blocked-DLL boundaries are unchanged. Ordinary eager binding
 remains selected after allocator-fault fallback differences in the deferred trial.
 
-## Current selection: physical and scheduling evidence, 2026-10-11
+## Current selection: phase, ordering and bound interaction, 2026-10-11
 
-The full weighted quiet-q4 call has93824 transition-method attempts including
-nested terminal trials. Narrow copy/publication clocks are4.14percent of observed
-choose wall; Shogi-drop/mixed controls give3.53/4.64percent, with hand dimensions,
-aux arguments and pass paths explicitly scoped. Defer a mutable publication
-rewrite and low-hit exact-identity terminal LRU; neither bounds all generic
-costs. DEV_AUX independently corrected observer coverage and attempt semantics.
+Physical immutable publication clocks remain a narrow3.53–4.64percent component;
+mutable publication/LRU, old PVS time curve and startD2 aspiration stay deferred
+under their original conditions. No DLL rebuild, evaluator/UI/qdepth/default change.
+Same-q4 predecessor with delta50/startD3 reduces finite EP/Shogi D3 work, but48
+opposite-order4/8/16second aspiration calls add no depth/score/action gain.
+Eight explicitly adapted mixed/hybrid-generated calls instead increase work in
+all four pairs. Do not treat phase eligibility as a portable window or fit seeds,
+widths or human labels. Arithmetic score-unit conversion is separate from fitting.
 
-Existing PVS has conditional fixed-work benefits: the ordinary quietD2 caller
-uses8010 to6686nodes; EP8192node budget reachesD3 only with PVS, but fresh noTTD3
-is adverse. A depthmasked table control retains the TT/PVS benefit through move
-ordering. Forty opposite-order equal-time calls on fixed50/100ms/1/4/8second
-points add no depth/action gain. No PVS/q/evaluator/UI default changes. Fifteen
-currentPython warm-horizon calls illustrate its known deeper-cache semantics:
-reported completed depth is not an exact fresh-horizon value certificate.
+Private memory convergence is adverse with current q. A changed fail-soft q
+premise tightens valid bounds and helps Shogi memory work, but EP stays adverse.
+Generic TT aspiration has opposite results: mixed5152to2809, generated8743to11031.
+A transparent trace shows tighter root lower bounds changing widening/recovery
+work; ordering-only TT separates retained move order from bound authority.
+Eighty narrow/full q probes plus8full references, ten lifecycle checks and four
+independent selected-child noTT calls support their stated finite value/restoration
+scope, not universal deployment. Defer product MTD and fail-soft, capacity growth
+and unchanged elapsed expansion; preserve negatives and original cap failures.
 
-Select the next measured whole-caller scheduling dependency, with exact noTT or
-explicit ordering-only comparison controls where finite value matters. Wider
-reversible rule compilation remains a distinct open premise; unsafe condition
-reordering, sibling fact persistence and blocked DLL execution are not adopted.
-Eight separate delta50/startD2 aspiration calls are adverse in all4 TT-off/on
-root pairs despite retainedD2 scores/actions; no width fitting/time expansion.
-A separate sameq4 predecessor atD3 keepsdelta50 and reducesEP work12953 to11695
-withoutTT,8588 to7851 withTT; at standard8192 only theTTcandidate retainsD3/17.
-Oneexposedroot is conditional support, not elapsedgain; next test phase-aware
-windows on another supported caller and separate equal-time utility.
-Two Native-absent promotion arms verify the new producer's limited tracked-source
-closure; failed exports/quoting and estimate corrections stay preserved.
-Evidence:SEARCH_SCHEDULING_DIAGNOSTIC.md; data/physical_publication_20261011.json.
+Existing ordered-q reduces finite EP/Shogi D3 work with the same17/12 action/value.
+Its independent48call time curve retains the historical resource-condition
+qualification. User2026-10-11 clarifies that concurrent local work is normal,
+not a collaboration violation; no source-only windows or requests to pause
+other Agents/projects. Unknown background load limits clean timing attribution,
+not actual work/semantic observations. Preserve raw results and old declarations,
+without a clean-subset claim or automatic rerun. Five public fixture checks
+expose metadata-rank versus actual child-effect differences; semantic support
+remains correct. New generated8 seed13/15 fixed-work controls retain values,
+except seed15 TT lexical q aborts at hard8 and retains D2/5261; ordered q
+completes D3/5269. Transparent two-arm capture now matches prior work/action exactly; the11-action
+lexical path is public-legal and ends checked at qdepth8, with matching public
+position/ply/terminal and restored actual root. Stop this narrow window/bound
+round; next return to cross-backend capability and cost attribution, choosing
+a distinct fixed input where existing controls leave a concrete ambiguity.
+No q/default change or automatic horizon increase.
+
+DEV_AUX fixedcaa86ded Task038–042 report/source scope and33058184 collaboration
+supplement are explicitly read/adopted without auxiliary CPU reruns or source
+merges. Primary remains sole sandbox publisher. Full collaboration summary,
+failures, measured counters/bytes and unmeasured engineering/token costs are in
+COLLABORATION_LOG.md and the new purpose archive. Old strict Slack inbound
+persistence/reconcile remains unresolved; readable results do not erase it.
+Evidence:PHASE_AWARE_SEARCH_WINDOWS.md; data/phase_aware_transfer_20261011.json.
+Earlier physical/PVS evidence:SEARCH_SCHEDULING_DIAGNOSTIC.md;
+data/physical_publication_20261011.json.
 
 ## Latest reserve and mechanical evidence —2026-10-10
 
@@ -294,6 +311,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Same-q windows, score units, memory/q bounds, ordering and resource failure|PHASE_AWARE_SEARCH_WINDOWS.md; data/phase_aware_transfer_20261011.json|
 |Physical publication, PVS work/time and currentPython warm horizon|SEARCH_SCHEDULING_DIAGNOSTIC.md; data/physical_publication_20261011.json|
 |Availability dispatch, quiet-q execution and representation/residual costs|AVAILABILITY_AND_Q_EXECUTION.md; data/availability_core_20261011.json|
 |Typed auxiliary collision/history/hash identity, whole-board projection and S3 callback origin|RUNTIME_AUX_IDENTITY.md; data/runtime_aux_identity_20261011.json|

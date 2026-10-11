@@ -24,8 +24,10 @@ session, consultation-ledger or sandbox publication commands against shared
 .local_agent state. It owns its local state and only its assignment outputs.
 A separate Git branch in the same working directory is insufficient isolation.
 UI Test stays isolated. Do not touch alphasho or other projects.
-Do not run timing benchmarks concurrently on this machine: resource contention
-would spoil cost attribution. Independent short checks can still proceed.
+Concurrent projects and independent Agent computations are normal and allowed.
+Do not reserve source-only timing windows or request another Agent to pause.
+Respect separate files and running computation/state; describe relevant timing
+noise briefly without treating ordinary concurrent load as a boundary violation.
 
 The user is establishing 开发辅助; the primary does not automatically spawn
 workers. Once its chat exists, a direct message can carry the handoff. Until
@@ -86,3 +88,18 @@ No invented speedup or guaranteed receipt/reply/review. No auxiliary activity
 is recorded honestly; summaries do not require waking the auxiliary for routine
 acknowledgements or adding approval/identity gates. Scientific evidence remains
 in each participant's existing purpose-specific outputs.
+
+## Concurrent local work — user2026-10-11
+
+Multiple projects and Agents running on this computer are normal. Do not ask
+other projects or DEV_AUX to pause, obtain source-only timing windows, or treat
+ordinary concurrent computation as a collaboration violation. The boundary is
+unauthorized writes to another Agent's files or direct alteration of its running
+computation/state. Keep separate checkouts and sole sandbox publication.
+For timing evidence, report observed concurrent load briefly when relevant;
+use paired/counterbalanced comparisons and actual work/backend counters. Do not
+claim machine exclusivity or noise-free speedups. Ordinary load variation is an
+interpretation limit, not a stop/approval gate, a reason for automatic reruns or
+extra process monitoring. Preserve frozen raw results and earlier declarations;
+this user instruction supersedes the earlier resource-window practice without
+retrospectively converting old timing evidence into a clean benchmark.
