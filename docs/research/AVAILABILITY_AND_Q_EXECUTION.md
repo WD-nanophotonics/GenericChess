@@ -307,3 +307,22 @@ count/history cost is not wholly TT-only or removable before terminal facts.
 Next choose a concrete caller bottleneck with different leverage, after reviewing
 independent auxiliary evidence; no q/evaluation/UI default change follows.
 Evidence:data/provider_route_20261011.json and its immutable source/result archive.
+
+
+## Actual TT-key consumers
+
+One further count-only completedD2 replay exactly matches the fixed route ledger.
+All35187 excluded,3811 included and3491 unclassified qchildren have zero
+search_key calls;35 main iteration2 children consume keys. This narrows a future
+lazy snapshot/context premise across qchildren, rather than treating only final
+quiet rejection as permission to skip state. Terminal source reads exact occurrence
+buckets/history and runtime hash, while the derived persistent snapshot/context
+serve key construction, eligibility and restoration. Preserve those distinctions.
+A private prototype would need exact collision equality before key emission,
+unchanged eligibility, sibling/exception/cancellation rollback and opaque-history
+snapshot reconstruction. Removing occurrence/history/hash is not that prototype.
+The previously measured excluded0.22s/6.90s gives only a rough3.2percent optimistic
+stage fraction before bookkeeping and delayed work, not attainable speed or an
+all-q estimate. Defer product implementation and prioritize useful completion.
+Evidence:data/tt_consumer_20261011.json. No new timing comparison was attempted
+while auxiliary machine availability was unconfirmed.

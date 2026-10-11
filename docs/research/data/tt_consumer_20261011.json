@@ -1,0 +1,32 @@
+{
+  "base_sha": "73a683dbd2b4b51d54e01687da6c7cd500ade8d8",
+  "dependency_indices": [
+    "availability_core_20261011.json",
+    "representation_outcome_20261011.json",
+    "provider_route_20261011.json"
+  ],
+  "scope": "Count-only actual key consumers, retained decisions/non-time work and static materialization boundary. No timing control while auxiliary availability is unconfirmed.",
+  "archive": {
+    "path": "docs/archive/tt_consumer_20261011/evidence.zip",
+    "sha256": "6fdee0f7e5d6c2f0c2ee16c81480107239278a7c946537707cf448cc3975e914",
+    "bytes": 3948,
+    "members": 3
+  },
+  "members": [
+    {
+      "member": ".local_agent/availability-core-20261011/tt_consumer_counts.py",
+      "bytes": 2478,
+      "sha256": "ea650d2b5e6f07a50c873bfa75097463ce969b5242a88b9413f1723e43f1bcde"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/tt-consumer-counts.json",
+      "bytes": 4966,
+      "sha256": "7b8a9f089f982e7d3bd812eb220ea67d0c408834118b18d5537a5fe1c2d3598c"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/tt-consumer-audit.json",
+      "bytes": 1757,
+      "sha256": "05d1af59ecb7cca0c4577e68def4c51ad7196ed2af892927dc209cd611d5a518"
+    }
+  ]
+}
