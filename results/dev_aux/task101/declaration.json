@@ -1,0 +1,6 @@
+{
+  "question": "When does a64-ply capped game first end under standard Chess versus unchanged project semantics?",
+  "inputs": "Task093/096 completed games, exposed trajectories; no game replay into training or human fitting.",
+  "first_action": "Replay all legal moves and freeze first automatic standard outcome before cap; compare raw piece-count at cap separately without calling it a legally continued standard game.",
+  "limit": "Task100 snapshot outcome was measured at cap, not necessarily first terminal. Preserve that original audit; this explicitly distinguishes terminal time and counterfactual continued snapshot."
+}

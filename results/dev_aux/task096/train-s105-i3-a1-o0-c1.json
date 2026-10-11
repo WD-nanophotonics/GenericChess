@@ -1,0 +1,5891 @@
+{
+  "weights0": {
+    "P": 208,
+    "K": 0,
+    "N": 1622,
+    "B": 250,
+    "R": 1191,
+    "Q": 2103
+  },
+  "weights1": {
+    "P": 208,
+    "K": 0,
+    "N": 2420,
+    "B": 168,
+    "R": 798,
+    "Q": 1410
+  },
+  "opening": {
+    "seed": 10006,
+    "actions": [
+      {
+        "kind": "semantic_board",
+        "pattern_id": "sem_11_pawn_double_step",
+        "geometry_id": "g34",
+        "actor_type_id": "P",
+        "from": [
+          1,
+          1
+        ],
+        "to": [
+          1,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "semantic_board",
+        "pattern_id": "sem_02_n_quiet",
+        "geometry_id": "g14",
+        "actor_type_id": "N",
+        "from": [
+          1,
+          7
+        ],
+        "to": [
+          2,
+          5
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "semantic_board",
+        "pattern_id": "sem_02_n_quiet",
+        "geometry_id": "g14",
+        "actor_type_id": "N",
+        "from": [
+          6,
+          0
+        ],
+        "to": [
+          5,
+          2
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "semantic_board",
+        "pattern_id": "sem_06_r_quiet",
+        "geometry_id": "g29",
+        "actor_type_id": "R",
+        "from": [
+          0,
+          7
+        ],
+        "to": [
+          1,
+          7
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "semantic_board",
+        "pattern_id": "sem_11_pawn_double_step",
+        "geometry_id": "g34",
+        "actor_type_id": "P",
+        "from": [
+          6,
+          1
+        ],
+        "to": [
+          6,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "semantic_board",
+        "pattern_id": "sem_06_r_quiet",
+        "geometry_id": "g28",
+        "actor_type_id": "R",
+        "from": [
+          1,
+          7
+        ],
+        "to": [
+          0,
+          7
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "semantic_board",
+        "pattern_id": "sem_11_pawn_double_step",
+        "geometry_id": "g34",
+        "actor_type_id": "P",
+        "from": [
+          3,
+          1
+        ],
+        "to": [
+          3,
+          3
+        ],
+        "promotion_target_id": null
+      },
+      {
+        "kind": "semantic_board",
+        "pattern_id": "sem_02_n_quiet",
+        "geometry_id": "g12",
+        "actor_type_id": "N",
+        "from": [
+          6,
+          7
+        ],
+        "to": [
+          5,
+          5
+        ],
+        "promotion_target_id": null
+      }
+    ],
+    "root": {
+      "position": {
+        "board": [
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          {
+            "owner": 0,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "N",
+            "current_type_id": "N",
+            "promoted": false
+          },
+          null,
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "P",
+            "current_type_id": "P",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "Q",
+            "current_type_id": "Q",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "K",
+            "current_type_id": "K",
+            "promoted": false
+          },
+          {
+            "owner": 1,
+            "base_type_id": "B",
+            "current_type_id": "B",
+            "promoted": false
+          },
+          null,
+          {
+            "owner": 1,
+            "base_type_id": "R",
+            "current_type_id": "R",
+            "promoted": false
+          }
+        ],
+        "hands": [
+          {
+            "counts": []
+          },
+          {
+            "counts": []
+          }
+        ],
+        "side_to_move": 0,
+        "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+        "aux_state": [
+          [
+            [
+              1,
+              -1
+            ],
+            0
+          ],
+          [
+            [
+              2,
+              -1
+            ],
+            null
+          ]
+        ],
+        "board_width": null,
+        "board_height": null
+      },
+      "ply_count": 8,
+      "repetition_counts": [
+        [
+          "57dddd3ba072dcb670556ae575abc44240ef0fc514d1a85447650fc2734dbe36",
+          1
+        ],
+        [
+          "588cdc783ad189e075050b28d6e0b86c49decf79112d38274be6add351c0e274",
+          1
+        ],
+        [
+          "66fbab577d9ce421da71602809fe12f51c7a03c2270f29b0423f23e90fc3e88f",
+          1
+        ],
+        [
+          "857e7174486d3a1b788667b71ef0602db6b3ea8258287bff46f30c0183d0002f",
+          1
+        ],
+        [
+          "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          1
+        ],
+        [
+          "e6a1578c4280b59bd589f3c9fd2481490f7a51f7e724b7eda7dc03b1e9960147",
+          1
+        ],
+        [
+          "f1efd1e5b581a8de8f2baaf462d929c4d1249e56d321fb5330916948b3428089",
+          1
+        ],
+        [
+          "f63e64c289a58b60381712bc5c814862b48ef9d0be58a0ed884fc6955f4faee5",
+          1
+        ],
+        [
+          "fec3fcf3ec6f4b6d8cb373e518bf52f81348bdb288031301bbf5b2b0e4b79cce",
+          1
+        ]
+      ],
+      "terminal_status": {
+        "status": "ongoing",
+        "winner": null
+      },
+      "history": [
+        {
+          "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+          "actor": -1,
+          "action_signature": "",
+          "gave_check": false
+        },
+        {
+          "position_key": "f1efd1e5b581a8de8f2baaf462d929c4d1249e56d321fb5330916948b3428089",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[1,1],\"geometry_id\":\"g34\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_11_pawn_double_step\",\"promotion_target_id\":null,\"to\":[1,3]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "57dddd3ba072dcb670556ae575abc44240ef0fc514d1a85447650fc2734dbe36",
+          "actor": 1,
+          "action_signature": "{\"actor_type_id\":\"N\",\"from\":[1,7],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[2,5]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "588cdc783ad189e075050b28d6e0b86c49decf79112d38274be6add351c0e274",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"N\",\"from\":[6,0],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[5,2]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "857e7174486d3a1b788667b71ef0602db6b3ea8258287bff46f30c0183d0002f",
+          "actor": 1,
+          "action_signature": "{\"actor_type_id\":\"R\",\"from\":[0,7],\"geometry_id\":\"g29\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_06_r_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "f63e64c289a58b60381712bc5c814862b48ef9d0be58a0ed884fc6955f4faee5",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[6,1],\"geometry_id\":\"g34\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_11_pawn_double_step\",\"promotion_target_id\":null,\"to\":[6,3]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "66fbab577d9ce421da71602809fe12f51c7a03c2270f29b0423f23e90fc3e88f",
+          "actor": 1,
+          "action_signature": "{\"actor_type_id\":\"R\",\"from\":[1,7],\"geometry_id\":\"g28\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_06_r_quiet\",\"promotion_target_id\":null,\"to\":[0,7]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "e6a1578c4280b59bd589f3c9fd2481490f7a51f7e724b7eda7dc03b1e9960147",
+          "actor": 0,
+          "action_signature": "{\"actor_type_id\":\"P\",\"from\":[3,1],\"geometry_id\":\"g34\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_11_pawn_double_step\",\"promotion_target_id\":null,\"to\":[3,3]}",
+          "gave_check": false
+        },
+        {
+          "position_key": "fec3fcf3ec6f4b6d8cb373e518bf52f81348bdb288031301bbf5b2b0e4b79cce",
+          "actor": 1,
+          "action_signature": "{\"actor_type_id\":\"N\",\"from\":[6,7],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[5,5]}",
+          "gave_check": false
+        }
+      ]
+    }
+  },
+  "nodes_per_move": 512,
+  "max_plies": 160,
+  "max_depth": 8,
+  "qdepth": 0,
+  "actions": [
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_04_b_quiet",
+      "geometry_id": "g0",
+      "actor_type_id": "B",
+      "from": [
+        2,
+        0
+      ],
+      "to": [
+        3,
+        1
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_03_n_capture",
+      "geometry_id": "g12",
+      "actor_type_id": "N",
+      "from": [
+        2,
+        5
+      ],
+      "to": [
+        1,
+        3
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_05_b_capture",
+      "geometry_id": "g1",
+      "actor_type_id": "B",
+      "from": [
+        3,
+        1
+      ],
+      "to": [
+        1,
+        3
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_03_n_capture",
+      "geometry_id": "g14",
+      "actor_type_id": "N",
+      "from": [
+        5,
+        5
+      ],
+      "to": [
+        6,
+        3
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_05_b_capture",
+      "geometry_id": "g0",
+      "actor_type_id": "B",
+      "from": [
+        1,
+        3
+      ],
+      "to": [
+        4,
+        6
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_03_n_capture",
+      "geometry_id": "g12",
+      "actor_type_id": "N",
+      "from": [
+        6,
+        3
+      ],
+      "to": [
+        5,
+        1
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_05_b_capture",
+      "geometry_id": "g1",
+      "actor_type_id": "B",
+      "from": [
+        4,
+        6
+      ],
+      "to": [
+        3,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_03_n_capture",
+      "geometry_id": "g13",
+      "actor_type_id": "N",
+      "from": [
+        5,
+        1
+      ],
+      "to": [
+        3,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_01_k_capture",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        4,
+        0
+      ],
+      "to": [
+        3,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_01_k_capture",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        4,
+        7
+      ],
+      "to": [
+        3,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_04_b_quiet",
+      "geometry_id": "g0",
+      "actor_type_id": "B",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        1
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_04_b_quiet",
+      "geometry_id": "g0",
+      "actor_type_id": "B",
+      "from": [
+        5,
+        7
+      ],
+      "to": [
+        0,
+        2
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_03_n_capture",
+      "geometry_id": "g14",
+      "actor_type_id": "N",
+      "from": [
+        1,
+        0
+      ],
+      "to": [
+        0,
+        2
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        3,
+        7
+      ],
+      "to": [
+        4,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_04_b_quiet",
+      "geometry_id": "g0",
+      "actor_type_id": "B",
+      "from": [
+        6,
+        1
+      ],
+      "to": [
+        7,
+        2
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        4,
+        7
+      ],
+      "to": [
+        3,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_05_b_capture",
+      "geometry_id": "g1",
+      "actor_type_id": "B",
+      "from": [
+        7,
+        2
+      ],
+      "to": [
+        3,
+        6
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_05_b_capture",
+      "geometry_id": "g1",
+      "actor_type_id": "B",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        3,
+        6
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        3,
+        0
+      ],
+      "to": [
+        4,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_04_b_quiet",
+      "geometry_id": "g0",
+      "actor_type_id": "B",
+      "from": [
+        3,
+        6
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        4,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_05_b_capture",
+      "geometry_id": "g1",
+      "actor_type_id": "B",
+      "from": [
+        0,
+        3
+      ],
+      "to": [
+        2,
+        1
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_03_n_capture",
+      "geometry_id": "g17",
+      "actor_type_id": "N",
+      "from": [
+        0,
+        2
+      ],
+      "to": [
+        2,
+        1
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        3,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        6,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g10",
+      "actor_type_id": "K",
+      "from": [
+        2,
+        7
+      ],
+      "to": [
+        1,
+        7
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        6,
+        0
+      ],
+      "to": [
+        5,
+        0
+      ],
+      "promotion_target_id": null
+    },
+    {
+      "kind": "semantic_board",
+      "pattern_id": "sem_00_k_quiet",
+      "geometry_id": "g5",
+      "actor_type_id": "K",
+      "from": [
+        1,
+        7
+      ],
+      "to": [
+        2,
+        7
+      ],
+      "promotion_target_id": null
+    }
+  ],
+  "metrics": [
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 0,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0184045,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 208,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0182176,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 1414,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0182844,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -2004,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0177164,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 1414,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0169632,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -2004,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0171639,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 3309,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0204564,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -2004,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0172651,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0167727,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4256,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0158062,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2578,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0149439,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4256,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0149526,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0151503,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0147467,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0147781,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0146486,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 3036,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0146979,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4464,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0151109,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2786,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0142898,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4464,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0143283,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2786,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.014328,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4256,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0143229,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0138635,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.013517,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0140443,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136509,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0137585,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0134944,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.013568,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0134748,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135624,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0134761,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135947,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0134967,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135613,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135042,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136777,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135252,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135974,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.013473,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0137861,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135651,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136216,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0134886,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135533,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0134815,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136108,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0134775,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135794,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0134933,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135965,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.013433,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135825,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135672,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136746,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0134853,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136403,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.013486,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136389,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0138207,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0140481,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135447,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136484,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135414,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135699,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135462,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136187,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135457,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136115,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135073,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136718,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135282,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136433,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135998,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136092,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0134525,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0150925,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136367,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136793,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136074,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136674,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136062,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136304,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135667,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136257,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135784,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0137224,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135963,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.01355,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135876,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.013641,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135319,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136587,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135188,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136942,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136132,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135807,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136294,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136426,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135527,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136261,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.013534,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136807,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135803,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136375,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135885,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136233,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135959,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136483,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135372,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0137323,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136293,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.013661,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135866,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136787,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135818,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0137408,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135794,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0137448,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.015376,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0143309,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0138387,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136917,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136176,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136646,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136704,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0137034,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136561,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136815,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136345,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.013702,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.013687,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136625,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0137289,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0138198,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136289,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0137324,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0138295,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0138202,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136403,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0140892,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136182,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0137792,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136876,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136697,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136545,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136977,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0138413,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0137175,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136121,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0137684,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135842,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0137152,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0137012,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0137186,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0135861,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0137777,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136315,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": 2828,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.013778,
+      "used_fallback": false
+    },
+    {
+      "nodes": 512,
+      "qnodes": 0,
+      "completed_depth": 1,
+      "selective_depth": 2,
+      "score": -4424,
+      "termination_reason": "node_budget",
+      "elapsed_seconds": 0.0136385,
+      "used_fallback": false
+    }
+  ],
+  "terminal": false,
+  "status": "ongoing",
+  "winner": null,
+  "white_score": null,
+  "censored": true,
+  "error": null,
+  "final_state": {
+    "position": {
+      "board": [
+        {
+          "owner": 0,
+          "base_type_id": "R",
+          "current_type_id": "R",
+          "promoted": false
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+          "owner": 0,
+          "base_type_id": "K",
+          "current_type_id": "K",
+          "promoted": false
+        },
+        null,
+        {
+          "owner": 0,
+          "base_type_id": "R",
+          "current_type_id": "R",
+          "promoted": false
+        },
+        {
+          "owner": 0,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        null,
+        {
+          "owner": 0,
+          "base_type_id": "N",
+          "current_type_id": "N",
+          "promoted": false
+        },
+        null,
+        {
+          "owner": 0,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        null,
+        null,
+        {
+          "owner": 0,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "owner": 0,
+          "base_type_id": "N",
+          "current_type_id": "N",
+          "promoted": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "owner": 0,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "owner": 1,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        null,
+        null,
+        {
+          "owner": 1,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "P",
+          "current_type_id": "P",
+          "promoted": false
+        },
+        {
+          "owner": 1,
+          "base_type_id": "R",
+          "current_type_id": "R",
+          "promoted": false
+        },
+        null,
+        {
+          "owner": 1,
+          "base_type_id": "K",
+          "current_type_id": "K",
+          "promoted": false
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+          "owner": 1,
+          "base_type_id": "R",
+          "current_type_id": "R",
+          "promoted": false
+        }
+      ],
+      "hands": [
+        {
+          "counts": []
+        },
+        {
+          "counts": []
+        }
+      ],
+      "side_to_move": 0,
+      "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+      "aux_state": [
+        [
+          [
+            0,
+            -1
+          ],
+          0
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          0
+        ],
+        [
+          [
+            2,
+            -1
+          ],
+          null
+        ],
+        [
+          [
+            3,
+            -1
+          ],
+          0
+        ],
+        [
+          [
+            4,
+            -1
+          ],
+          0
+        ]
+      ],
+      "board_width": null,
+      "board_height": null
+    },
+    "ply_count": 168,
+    "repetition_counts": [
+      [
+        "0ea117a6545e5a46b7a0b52224e66915a01bcdf22890fcfd8ffc31d3f2738dd5",
+        1
+      ],
+      [
+        "18b444d8a14030718fc8c56159ce98ec468c34d48231536ccd04fc6f5e28be6a",
+        1
+      ],
+      [
+        "1cb623b45da4c2d09fe1ebfc75718b8c61a10c064bdf17eb5c6f3f0412f68a11",
+        1
+      ],
+      [
+        "2e83840d0b0fb94459f1392b2e753853c1c43b27ef182d8b399937d07caf63ec",
+        1
+      ],
+      [
+        "35a1e611b40d72f12304d1156304163d2651ea8a5f2478cd56f21c9523c55389",
+        1
+      ],
+      [
+        "446c40b637ea39c5a6f4ade1509051bc115f4e481b1859a408a523bef7921a77",
+        1
+      ],
+      [
+        "50e3bf4be5881b1dac8c79f66a75e3912bdf79d27a7c7e059cd9f7e9202038fd",
+        1
+      ],
+      [
+        "57dddd3ba072dcb670556ae575abc44240ef0fc514d1a85447650fc2734dbe36",
+        1
+      ],
+      [
+        "588cdc783ad189e075050b28d6e0b86c49decf79112d38274be6add351c0e274",
+        1
+      ],
+      [
+        "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        34
+      ],
+      [
+        "66fbab577d9ce421da71602809fe12f51c7a03c2270f29b0423f23e90fc3e88f",
+        1
+      ],
+      [
+        "6b6e3ebb860e66683aa9b51ab2254c71ec842823c8805d6517211b530f2d4cc0",
+        1
+      ],
+      [
+        "6f205d1aa05060fe717e7a00d2fd00bd08ec52aee854f884b7a836f947afe36a",
+        1
+      ],
+      [
+        "857e7174486d3a1b788667b71ef0602db6b3ea8258287bff46f30c0183d0002f",
+        1
+      ],
+      [
+        "862c3fa44ad07b187ce2d4669117a22288ffed7ab20986efe2cb4ac5ef186a56",
+        1
+      ],
+      [
+        "898dd4846fdb9b5c39e38bfe33ccb1c401c51341b99ecd1c4652a1db426eddea",
+        1
+      ],
+      [
+        "8ba5b8d715085fe35b6db328a438b7c8db737e1ba69dbda597859fcf4fe9f68b",
+        1
+      ],
+      [
+        "8f68b9950ef7df93affc9c78757510ca51dcd55155497f06c21da422993ffc62",
+        1
+      ],
+      [
+        "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+        1
+      ],
+      [
+        "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        34
+      ],
+      [
+        "adba55f5fdde8013fcd577d88d582c506e0e09feb56592bbd1b0328997ad0daf",
+        1
+      ],
+      [
+        "aea589046247974aa9e23b4aba2ff74110f2063d833d1ada9338f7cff03ce9d3",
+        1
+      ],
+      [
+        "b66485454ac9302bb39978b31760fcb7286e9beda4c1c88ac349a218b7b261f8",
+        1
+      ],
+      [
+        "bd80c1da51fd589bf23d6c7723341c332074d481a69f72fa64fa4dba284e860b",
+        1
+      ],
+      [
+        "be55921896c6dc2a81a14fd106d4941b5cfcafb1af0cd614020e0363aa0b9108",
+        1
+      ],
+      [
+        "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        34
+      ],
+      [
+        "e042a786098c2f3bd8021266e887d6f298fc05266172b9b527b12da13fa78bf3",
+        1
+      ],
+      [
+        "e09991e0a3264e4bcaae867a6e48d53ec50b6ae08d073ea22d8dce91dea283ed",
+        1
+      ],
+      [
+        "e6a1578c4280b59bd589f3c9fd2481490f7a51f7e724b7eda7dc03b1e9960147",
+        1
+      ],
+      [
+        "f1efd1e5b581a8de8f2baaf462d929c4d1249e56d321fb5330916948b3428089",
+        1
+      ],
+      [
+        "f3d1849bbc81896589e9ef20dc3b859fbcc3e2122f082de4f86e9cf0cac40fc4",
+        1
+      ],
+      [
+        "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        35
+      ],
+      [
+        "f63e64c289a58b60381712bc5c814862b48ef9d0be58a0ed884fc6955f4faee5",
+        1
+      ],
+      [
+        "fac28fcf3c71be1367bec9cdcca6c8b7813f62a229d0518db62f9b148d3ae927",
+        1
+      ],
+      [
+        "fd01415bebbc67c9576edee672464049eb9c39bc2f7f3214cb81a33b0fcb29fd",
+        1
+      ],
+      [
+        "fec3fcf3ec6f4b6d8cb373e518bf52f81348bdb288031301bbf5b2b0e4b79cce",
+        1
+      ]
+    ],
+    "terminal_status": {
+      "status": "ongoing",
+      "winner": null
+    },
+    "history": [
+      {
+        "position_key": "9429cdba551765e4b135f2f86d9e699020fbd513c2c129472488a326be753d2f",
+        "actor": -1,
+        "action_signature": "",
+        "gave_check": false
+      },
+      {
+        "position_key": "f1efd1e5b581a8de8f2baaf462d929c4d1249e56d321fb5330916948b3428089",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"P\",\"from\":[1,1],\"geometry_id\":\"g34\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_11_pawn_double_step\",\"promotion_target_id\":null,\"to\":[1,3]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "57dddd3ba072dcb670556ae575abc44240ef0fc514d1a85447650fc2734dbe36",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"N\",\"from\":[1,7],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[2,5]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "588cdc783ad189e075050b28d6e0b86c49decf79112d38274be6add351c0e274",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"N\",\"from\":[6,0],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[5,2]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "857e7174486d3a1b788667b71ef0602db6b3ea8258287bff46f30c0183d0002f",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"R\",\"from\":[0,7],\"geometry_id\":\"g29\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_06_r_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f63e64c289a58b60381712bc5c814862b48ef9d0be58a0ed884fc6955f4faee5",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"P\",\"from\":[6,1],\"geometry_id\":\"g34\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_11_pawn_double_step\",\"promotion_target_id\":null,\"to\":[6,3]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "66fbab577d9ce421da71602809fe12f51c7a03c2270f29b0423f23e90fc3e88f",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"R\",\"from\":[1,7],\"geometry_id\":\"g28\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_06_r_quiet\",\"promotion_target_id\":null,\"to\":[0,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "e6a1578c4280b59bd589f3c9fd2481490f7a51f7e724b7eda7dc03b1e9960147",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"P\",\"from\":[3,1],\"geometry_id\":\"g34\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_11_pawn_double_step\",\"promotion_target_id\":null,\"to\":[3,3]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "fec3fcf3ec6f4b6d8cb373e518bf52f81348bdb288031301bbf5b2b0e4b79cce",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"N\",\"from\":[6,7],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_02_n_quiet\",\"promotion_target_id\":null,\"to\":[5,5]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "8ba5b8d715085fe35b6db328a438b7c8db737e1ba69dbda597859fcf4fe9f68b",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"B\",\"from\":[2,0],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_04_b_quiet\",\"promotion_target_id\":null,\"to\":[3,1]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "b66485454ac9302bb39978b31760fcb7286e9beda4c1c88ac349a218b7b261f8",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"N\",\"from\":[2,5],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_03_n_capture\",\"promotion_target_id\":null,\"to\":[1,3]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "6b6e3ebb860e66683aa9b51ab2254c71ec842823c8805d6517211b530f2d4cc0",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"B\",\"from\":[3,1],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_05_b_capture\",\"promotion_target_id\":null,\"to\":[1,3]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "fd01415bebbc67c9576edee672464049eb9c39bc2f7f3214cb81a33b0fcb29fd",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"N\",\"from\":[5,5],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_03_n_capture\",\"promotion_target_id\":null,\"to\":[6,3]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "2e83840d0b0fb94459f1392b2e753853c1c43b27ef182d8b399937d07caf63ec",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"B\",\"from\":[1,3],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_05_b_capture\",\"promotion_target_id\":null,\"to\":[4,6]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "446c40b637ea39c5a6f4ade1509051bc115f4e481b1859a408a523bef7921a77",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"N\",\"from\":[6,3],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_03_n_capture\",\"promotion_target_id\":null,\"to\":[5,1]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "18b444d8a14030718fc8c56159ce98ec468c34d48231536ccd04fc6f5e28be6a",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"B\",\"from\":[4,6],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_05_b_capture\",\"promotion_target_id\":null,\"to\":[3,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "862c3fa44ad07b187ce2d4669117a22288ffed7ab20986efe2cb4ac5ef186a56",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"N\",\"from\":[5,1],\"geometry_id\":\"g13\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_03_n_capture\",\"promotion_target_id\":null,\"to\":[3,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "aea589046247974aa9e23b4aba2ff74110f2063d833d1ada9338f7cff03ce9d3",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_01_k_capture\",\"promotion_target_id\":null,\"to\":[3,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "898dd4846fdb9b5c39e38bfe33ccb1c401c51341b99ecd1c4652a1db426eddea",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_01_k_capture\",\"promotion_target_id\":null,\"to\":[3,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "bd80c1da51fd589bf23d6c7723341c332074d481a69f72fa64fa4dba284e860b",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"B\",\"from\":[5,0],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_04_b_quiet\",\"promotion_target_id\":null,\"to\":[6,1]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "be55921896c6dc2a81a14fd106d4941b5cfcafb1af0cd614020e0363aa0b9108",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"B\",\"from\":[5,7],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_04_b_quiet\",\"promotion_target_id\":null,\"to\":[0,2]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "6f205d1aa05060fe717e7a00d2fd00bd08ec52aee854f884b7a836f947afe36a",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"N\",\"from\":[1,0],\"geometry_id\":\"g14\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_03_n_capture\",\"promotion_target_id\":null,\"to\":[0,2]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "35a1e611b40d72f12304d1156304163d2651ea8a5f2478cd56f21c9523c55389",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[3,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[4,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "adba55f5fdde8013fcd577d88d582c506e0e09feb56592bbd1b0328997ad0daf",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"B\",\"from\":[6,1],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_04_b_quiet\",\"promotion_target_id\":null,\"to\":[7,2]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "8f68b9950ef7df93affc9c78757510ca51dcd55155497f06c21da422993ffc62",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[3,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "fac28fcf3c71be1367bec9cdcca6c8b7813f62a229d0518db62f9b148d3ae927",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"B\",\"from\":[7,2],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_05_b_capture\",\"promotion_target_id\":null,\"to\":[3,6]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "e09991e0a3264e4bcaae867a6e48d53ec50b6ae08d073ea22d8dce91dea283ed",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"B\",\"from\":[2,7],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_05_b_capture\",\"promotion_target_id\":null,\"to\":[3,6]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "50e3bf4be5881b1dac8c79f66a75e3912bdf79d27a7c7e059cd9f7e9202038fd",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[3,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[4,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "0ea117a6545e5a46b7a0b52224e66915a01bcdf22890fcfd8ffc31d3f2738dd5",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"B\",\"from\":[3,6],\"geometry_id\":\"g0\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_04_b_quiet\",\"promotion_target_id\":null,\"to\":[0,3]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "e042a786098c2f3bd8021266e887d6f298fc05266172b9b527b12da13fa78bf3",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[4,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "1cb623b45da4c2d09fe1ebfc75718b8c61a10c064bdf17eb5c6f3f0412f68a11",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"B\",\"from\":[0,3],\"geometry_id\":\"g1\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_05_b_capture\",\"promotion_target_id\":null,\"to\":[2,1]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3d1849bbc81896589e9ef20dc3b859fbcc3e2122f082de4f86e9cf0cac40fc4",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"N\",\"from\":[0,2],\"geometry_id\":\"g17\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_03_n_capture\",\"promotion_target_id\":null,\"to\":[2,1]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[3,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "def62fb0fc5ff65376a9bd3696562cdcdc70472c4c627e2d156d3e0e10156e80",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[5,0],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[6,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "5c6039dabd5627cc24d7ab94c2588fef53e9b696bae991b3463035cc6c81ee91",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[2,7],\"geometry_id\":\"g10\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[1,7]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "99b33eb1b1bab17931f4c90e73dc2780219c71680288d8e986f8605c7ddbc585",
+        "actor": 0,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[6,0],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[5,0]}",
+        "gave_check": false
+      },
+      {
+        "position_key": "f3fe8f26804c199724513412d22da358c3f9951db2f40bb8bde7678dc76da28c",
+        "actor": 1,
+        "action_signature": "{\"actor_type_id\":\"K\",\"from\":[1,7],\"geometry_id\":\"g5\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_k_quiet\",\"promotion_target_id\":null,\"to\":[2,7]}",
+        "gave_check": false
+      }
+    ]
+  },
+  "wall_seconds": 3.0542112002149224
+}
