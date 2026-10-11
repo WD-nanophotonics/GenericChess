@@ -1,0 +1,1 @@
+Initial invocation stopped before seed/search calls because the declaration omitted the inherited Native binary hash field. The already fixed binary SHA was added without changing cases, caps, arms or source. No experiment output was produced or discarded.

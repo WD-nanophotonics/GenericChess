@@ -1,0 +1,24 @@
+{
+  "task_id": "065",
+  "declared_at": "2026-10-11T12:41:14.225694+00:00",
+  "source_pin": "bebe3d98ebb0832207e112ca0755fa9837cef3e7",
+  "question": "Can mutation through the compact-profile getter change Native evaluation without invalidating a warm TT?",
+  "premise": "Python getter returns live compact dict;C engine retains that payload and reparses it each call while retaining TT. Source-only shallow-copy observation does not prove an executed stale-cache result.",
+  "calls": 4,
+  "cases": [
+    "old_compact_bias0_warm_D2",
+    "same_capsule_getter_bias100_warm_D2",
+    "same_capsule_after_clear_TT_D2",
+    "fresh_bias100_noTT_D2"
+  ],
+  "model": "Synthetic constant width16, zero hidden/output weights, output_bias0 then100, target_scale1, owner0 perspective, one declared hand axis index0. No training/sample/human labels; feature dimension from fixed compiler payload/C schema.",
+  "limits": {
+    "max_depth": 2,
+    "max_nodes": 4096,
+    "max_time_seconds": 2,
+    "quiescence_max_depth": 0,
+    "evaluator_scale": 1
+  },
+  "cost": "One short own-process boundary diagnostic;4calls bounded8seconds plus setup; no product/default/UI edits.",
+  "decision": "Preserve actual returned values whether stale or refreshed. If warm disagreement disappears only after TT clear/fresh bind, document mutable payload/cache lineage hazard; no universal compact/feature/strength claim or budget extension."
+}

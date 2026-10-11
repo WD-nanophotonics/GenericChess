@@ -1,0 +1,11 @@
+# Task064: rejected rebind can misreport active leaf values
+
+A rejected `bind_evaluator(... evaluator_scale=0)` changes Python profile fields before raising, while the Native capsule remains unchanged. With explicit zero material on the initial Western state, the active D1/q0/TT0 capsule scores0 before and after rejection; a fresh valid constructor using the newly reported spatial values scores-6. All three searches completeD1 in21nodes. The getter's claim of exact values bound to the Native engine is false in this failed-bind state.
+
+This is a metadata/capsule transaction defect, not a failed search or a corrupted binary. Actual rejection is ValueError for scale outside1..1024. The root and history remain unchanged. Source and installed binary hashes accompany full immutable before/after values. Native termination enum is `completed`, distinct from Python AB `completed_depth`; an initial auditor guess failed after score assertions, then the same three short controls were repeated to capture complete evidence. No cap/condition was extended.
+
+The auxiliary-only candidate stages the existing field validation and Native capsule construction on a shallow temporary object, committing fields only after success. Three actual D1 controls retain old values/capsule/score0 on Python invalid-scale and real C incomplete-compact-profile rejection, then an explicit valid spatial bind changes capsule and score to-6. Existing mutable ordering/policy references are retained; complete concurrency/allocator-fault behavior is not certified by this scoped candidate. `binding_reference.py` provides the fixed method invoked by `proposed_bind_evaluator.py`; Task066 combines the candidate with row validation/compact copying and runs existing relevant regressions.
+
+A deep-copied getter record alone cannot fix an already rejected bind's inaccurate metadata. Capture only after successful binds or validated transactional behavior; historical records are not retroactively repaired. Primary product and defaults remain untouched.
+
+Full JSON fields are preserved in compact formatting; raw_records.zip binds the original formatted capture bytes, with hashes and lossless parsed-equality verification in serialization.json.

@@ -1,0 +1,9 @@
+{
+  "task_id": "060",
+  "declared_at": "2026-10-11T12:04:30.319923+00:00",
+  "source_pin": "bebe3d98ebb0832207e112ca0755fa9837cef3e7",
+  "question": "Do protected-full-q4 policy records support the delivered decision/completion claims under one cumulative budget?",
+  "scope": "All48Native/40Core/16generated frozen policy records, declarations/producers and phase events. Independent record/source audit, no search rerun, default/UI change, training or label extension.",
+  "checks": "All archive/member hashes and complete arm/root/budget/order coverage; actual provider and balanced restoration; decision/stat fields; successful refresh versus abort reserve; cumulative visits/time/shared deadline and TT phase source contracts; action/score/depth/q changes per pair.",
+  "cost": "Bounded archive/AST parsing and source audit only, expected minutes; uncertainty of historical clock/source identity retained."
+}

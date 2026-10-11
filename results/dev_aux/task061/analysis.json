@@ -1,0 +1,1126 @@
+{
+  "task": "task061",
+  "source_pin": "bebe3d98ebb0832207e112ca0755fa9837cef3e7",
+  "counts": {
+    "calls": 72,
+    "visits": 488983,
+    "wall_observation": 283.5950451004319
+  },
+  "matrix": [
+    {
+      "root": "chess-ep",
+      "lineage": "cold",
+      "node_cap": 128,
+      "arms": {
+        "baseline": {
+          "depth": 1,
+          "q": 0,
+          "score": 106,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 1,
+          "tt_hits": 1
+        },
+        "fullq4_refresh": {
+          "depth": 1,
+          "q": 0,
+          "score": 106,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 1,
+          "tt_hits": 0
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "cold",
+      "node_cap": 256,
+      "arms": {
+        "fullq4_refresh": {
+          "depth": 1,
+          "q": 0,
+          "score": 106,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 1,
+          "tt_hits": 0
+        },
+        "baseline": {
+          "depth": 1,
+          "q": 0,
+          "score": 106,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 1,
+          "tt_hits": 1
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "cold",
+      "node_cap": 512,
+      "arms": {
+        "baseline": {
+          "depth": 1,
+          "q": 0,
+          "score": 106,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 1,
+          "tt_hits": 1
+        },
+        "fullq4_refresh": {
+          "depth": 1,
+          "q": 4,
+          "score": 17,
+          "depth_delta": 0,
+          "action_changed": true,
+          "score_changed": true,
+          "pv_length": 1,
+          "tt_hits": 0
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "cold",
+      "node_cap": 1024,
+      "arms": {
+        "fullq4_refresh": {
+          "depth": 1,
+          "q": 4,
+          "score": 17,
+          "depth_delta": 0,
+          "action_changed": true,
+          "score_changed": true,
+          "pv_length": 1,
+          "tt_hits": 0
+        },
+        "baseline": {
+          "depth": 1,
+          "q": 0,
+          "score": 106,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 1,
+          "tt_hits": 1
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "cold",
+      "node_cap": 2048,
+      "arms": {
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 8,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 3
+        },
+        "fullq4_refresh": {
+          "depth": 2,
+          "q": 4,
+          "score": 8,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 2
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "cold",
+      "node_cap": 4096,
+      "arms": {
+        "fullq4_refresh": {
+          "depth": 2,
+          "q": 4,
+          "score": 8,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 2
+        },
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 8,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 3
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "cold",
+      "node_cap": 8192,
+      "arms": {
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 8,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 33
+        },
+        "fullq4_refresh": {
+          "depth": 2,
+          "q": 4,
+          "score": 8,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 29
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "cold",
+      "node_cap": 16384,
+      "arms": {
+        "fullq4_refresh": {
+          "depth": 3,
+          "q": 4,
+          "score": 17,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 3,
+          "tt_hits": 62
+        },
+        "baseline": {
+          "depth": 3,
+          "q": 4,
+          "score": 17,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 3,
+          "tt_hits": 65
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "cold",
+      "node_cap": 32768,
+      "arms": {
+        "baseline": {
+          "depth": 3,
+          "q": 4,
+          "score": 17,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 3,
+          "tt_hits": 93
+        },
+        "fullq4_refresh": {
+          "depth": 3,
+          "q": 4,
+          "score": 17,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 3,
+          "tt_hits": 92
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 128,
+      "arms": {
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 8,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 4
+        },
+        "fullq4_refresh": {
+          "depth": 1,
+          "q": 0,
+          "score": 8,
+          "depth_delta": -1,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 1
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 256,
+      "arms": {
+        "fullq4_refresh": {
+          "depth": 1,
+          "q": 4,
+          "score": 17,
+          "depth_delta": -1,
+          "action_changed": false,
+          "score_changed": true,
+          "pv_length": 1,
+          "tt_hits": 1
+        },
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 8,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 4
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 512,
+      "arms": {
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 8,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 4
+        },
+        "fullq4_refresh": {
+          "depth": 1,
+          "q": 4,
+          "score": 17,
+          "depth_delta": -1,
+          "action_changed": false,
+          "score_changed": true,
+          "pv_length": 1,
+          "tt_hits": 1
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 1024,
+      "arms": {
+        "fullq4_refresh": {
+          "depth": 1,
+          "q": 4,
+          "score": 17,
+          "depth_delta": -1,
+          "action_changed": false,
+          "score_changed": true,
+          "pv_length": 1,
+          "tt_hits": 1
+        },
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 8,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 4
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 2048,
+      "arms": {
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 8,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 4
+        },
+        "fullq4_refresh": {
+          "depth": 2,
+          "q": 4,
+          "score": 8,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 3
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 4096,
+      "arms": {
+        "fullq4_refresh": {
+          "depth": 2,
+          "q": 4,
+          "score": 8,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 3
+        },
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 8,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 17
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 8192,
+      "arms": {
+        "baseline": {
+          "depth": 3,
+          "q": 4,
+          "score": 17,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 3,
+          "tt_hits": 37
+        },
+        "fullq4_refresh": {
+          "depth": 2,
+          "q": 4,
+          "score": 8,
+          "depth_delta": -1,
+          "action_changed": false,
+          "score_changed": true,
+          "pv_length": 2,
+          "tt_hits": 31
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 16384,
+      "arms": {
+        "fullq4_refresh": {
+          "depth": 3,
+          "q": 4,
+          "score": 17,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 3,
+          "tt_hits": 65
+        },
+        "baseline": {
+          "depth": 3,
+          "q": 4,
+          "score": 17,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 3,
+          "tt_hits": 70
+        }
+      }
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 32768,
+      "arms": {
+        "baseline": {
+          "depth": 3,
+          "q": 4,
+          "score": 17,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 3,
+          "tt_hits": 98
+        },
+        "fullq4_refresh": {
+          "depth": 3,
+          "q": 4,
+          "score": 17,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 3,
+          "tt_hits": 93
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "cold",
+      "node_cap": 128,
+      "arms": {
+        "baseline": {
+          "depth": 1,
+          "q": 0,
+          "score": 417,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 1,
+          "tt_hits": 1
+        },
+        "fullq4_refresh": {
+          "depth": 1,
+          "q": 0,
+          "score": 417,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 1,
+          "tt_hits": 0
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "cold",
+      "node_cap": 256,
+      "arms": {
+        "fullq4_refresh": {
+          "depth": 1,
+          "q": 0,
+          "score": 417,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 1,
+          "tt_hits": 0
+        },
+        "baseline": {
+          "depth": 1,
+          "q": 0,
+          "score": 417,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 1,
+          "tt_hits": 1
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "cold",
+      "node_cap": 512,
+      "arms": {
+        "baseline": {
+          "depth": 1,
+          "q": 0,
+          "score": 417,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 1,
+          "tt_hits": 1
+        },
+        "fullq4_refresh": {
+          "depth": 1,
+          "q": 0,
+          "score": 417,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 1,
+          "tt_hits": 0
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "cold",
+      "node_cap": 1024,
+      "arms": {
+        "fullq4_refresh": {
+          "depth": 1,
+          "q": 4,
+          "score": 439,
+          "depth_delta": -1,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 1,
+          "tt_hits": 0
+        },
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 3
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "cold",
+      "node_cap": 2048,
+      "arms": {
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 3
+        },
+        "fullq4_refresh": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 2
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "cold",
+      "node_cap": 4096,
+      "arms": {
+        "fullq4_refresh": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 2
+        },
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 3
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "cold",
+      "node_cap": 8192,
+      "arms": {
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 7
+        },
+        "fullq4_refresh": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 2
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "cold",
+      "node_cap": 16384,
+      "arms": {
+        "fullq4_refresh": {
+          "depth": 3,
+          "q": 4,
+          "score": 503,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 3,
+          "tt_hits": 12
+        },
+        "baseline": {
+          "depth": 3,
+          "q": 4,
+          "score": 503,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 3,
+          "tt_hits": 13
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "cold",
+      "node_cap": 32768,
+      "arms": {
+        "baseline": {
+          "depth": 4,
+          "q": 4,
+          "score": 508,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 4,
+          "tt_hits": 25
+        },
+        "fullq4_refresh": {
+          "depth": 4,
+          "q": 4,
+          "score": 508,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 4,
+          "tt_hits": 24
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 128,
+      "arms": {
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 4
+        },
+        "fullq4_refresh": {
+          "depth": 1,
+          "q": 0,
+          "score": 439,
+          "depth_delta": -1,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 1
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 256,
+      "arms": {
+        "fullq4_refresh": {
+          "depth": 1,
+          "q": 0,
+          "score": 439,
+          "depth_delta": -1,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 1
+        },
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 4
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 512,
+      "arms": {
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 4
+        },
+        "fullq4_refresh": {
+          "depth": 1,
+          "q": 0,
+          "score": 439,
+          "depth_delta": -1,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 1
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 1024,
+      "arms": {
+        "fullq4_refresh": {
+          "depth": 1,
+          "q": 4,
+          "score": 439,
+          "depth_delta": -1,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 1,
+          "tt_hits": 1
+        },
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 4
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 2048,
+      "arms": {
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 4
+        },
+        "fullq4_refresh": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 3
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 4096,
+      "arms": {
+        "fullq4_refresh": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 3
+        },
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 4
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 8192,
+      "arms": {
+        "baseline": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 0,
+          "tt_hits": 10
+        },
+        "fullq4_refresh": {
+          "depth": 2,
+          "q": 4,
+          "score": 439,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 2,
+          "tt_hits": 3
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 16384,
+      "arms": {
+        "fullq4_refresh": {
+          "depth": 3,
+          "q": 4,
+          "score": 503,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 3,
+          "tt_hits": 13
+        },
+        "baseline": {
+          "depth": 3,
+          "q": 4,
+          "score": 503,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 3,
+          "tt_hits": 14
+        }
+      }
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 32768,
+      "arms": {
+        "baseline": {
+          "depth": 4,
+          "q": 4,
+          "score": 508,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 4,
+          "tt_hits": 26
+        },
+        "fullq4_refresh": {
+          "depth": 4,
+          "q": 4,
+          "score": 508,
+          "depth_delta": 0,
+          "action_changed": false,
+          "score_changed": false,
+          "pv_length": 4,
+          "tt_hits": 25
+        }
+      }
+    }
+  ],
+  "losses": [
+    {
+      "root": "chess-ep",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 128,
+      "arm": "fullq4_refresh",
+      "depth": 1,
+      "q": 0,
+      "score": 8,
+      "depth_delta": -1,
+      "action_changed": false,
+      "score_changed": false,
+      "pv_length": 0,
+      "tt_hits": 1
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 256,
+      "arm": "fullq4_refresh",
+      "depth": 1,
+      "q": 4,
+      "score": 17,
+      "depth_delta": -1,
+      "action_changed": false,
+      "score_changed": true,
+      "pv_length": 1,
+      "tt_hits": 1
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 512,
+      "arm": "fullq4_refresh",
+      "depth": 1,
+      "q": 4,
+      "score": 17,
+      "depth_delta": -1,
+      "action_changed": false,
+      "score_changed": true,
+      "pv_length": 1,
+      "tt_hits": 1
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 1024,
+      "arm": "fullq4_refresh",
+      "depth": 1,
+      "q": 4,
+      "score": 17,
+      "depth_delta": -1,
+      "action_changed": false,
+      "score_changed": true,
+      "pv_length": 1,
+      "tt_hits": 1
+    },
+    {
+      "root": "chess-ep",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 8192,
+      "arm": "fullq4_refresh",
+      "depth": 2,
+      "q": 4,
+      "score": 8,
+      "depth_delta": -1,
+      "action_changed": false,
+      "score_changed": true,
+      "pv_length": 2,
+      "tt_hits": 31
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "cold",
+      "node_cap": 1024,
+      "arm": "fullq4_refresh",
+      "depth": 1,
+      "q": 4,
+      "score": 439,
+      "depth_delta": -1,
+      "action_changed": false,
+      "score_changed": false,
+      "pv_length": 1,
+      "tt_hits": 0
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 128,
+      "arm": "fullq4_refresh",
+      "depth": 1,
+      "q": 0,
+      "score": 439,
+      "depth_delta": -1,
+      "action_changed": false,
+      "score_changed": false,
+      "pv_length": 0,
+      "tt_hits": 1
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 256,
+      "arm": "fullq4_refresh",
+      "depth": 1,
+      "q": 0,
+      "score": 439,
+      "depth_delta": -1,
+      "action_changed": false,
+      "score_changed": false,
+      "pv_length": 0,
+      "tt_hits": 1
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 512,
+      "arm": "fullq4_refresh",
+      "depth": 1,
+      "q": 0,
+      "score": 439,
+      "depth_delta": -1,
+      "action_changed": false,
+      "score_changed": false,
+      "pv_length": 0,
+      "tt_hits": 1
+    },
+    {
+      "root": "chess-promotion",
+      "lineage": "same_baseline_D2_TT",
+      "node_cap": 1024,
+      "arm": "fullq4_refresh",
+      "depth": 1,
+      "q": 4,
+      "score": 439,
+      "depth_delta": -1,
+      "action_changed": false,
+      "score_changed": false,
+      "pv_length": 1,
+      "tt_hits": 1
+    }
+  ],
+  "scope": "Completed-depth bookkeeping under selective TT, not fresh uniform-horizon or strength evidence; all stops node/depth, no time-guard censoring."
+}

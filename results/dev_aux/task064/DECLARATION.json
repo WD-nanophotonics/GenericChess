@@ -1,0 +1,23 @@
+{
+  "task_id": "064",
+  "declared_at": "2026-10-11T12:36:59.858191+00:00",
+  "source_pin": "bebe3d98ebb0832207e112ca0755fa9837cef3e7",
+  "question": "After a rejected evaluator rebind, does native_evaluator_values still describe the active Native capsule?",
+  "premise": "bind_evaluator mutates profile fields before validating evaluator_scale;capsule rebuild happens last. Previous source-only immutable-record advice does not establish transactional consistency after a rejection.",
+  "cases": [
+    "old_zero_profile_D1",
+    "same_capsule_after_invalid_scale_rebind_D1",
+    "fresh_engine_from_reported_valid_profile_D1"
+  ],
+  "calls": 3,
+  "limits": {
+    "max_depth": 1,
+    "max_nodes": 1000,
+    "max_time_seconds": 1,
+    "quiescence_max_depth": 0,
+    "tt_megabytes": 0
+  },
+  "mutation": "Valid owner0:P nine-cell spatial row [-1,-1,-1,1,1,1,0,0,0], other rows0;explicit zero material;invalid scale0 must raiseValueError. Only own ephemeral engine, no product source mutation.",
+  "cost": "Seconds/minutes one-process API boundary check, no training or extra worker; no result-driven additional roots/caps.",
+  "decision": "If reported new values disagree with unchanged capsule execution and a fresh valid constructor, qualify getter evidence after failed binds;propose staging validated fields before commit only in auxiliary artifact."
+}

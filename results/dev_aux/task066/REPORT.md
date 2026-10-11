@@ -1,0 +1,5 @@
+# Task066: focused regression acceptance of auxiliary candidates
+
+Four existing binding/checkpoint regressions pass on the combined private candidate: spatial owner axes, spatial checkpoint TT reset, compact temporary parse cleanup and compact checkpoint/rebind behavior. Test bytes match primarybebe3d98. The test process uses the auxiliary's exact265-file source export and existing installed binary, then restores the original process namespaces. No product file/default/UI is edited.
+
+The combined artifact `proposed_native_binding.py` stages evaluator/capsule updates, validates individual spatial mapping rows and deep-copies compact payloads/getter values. `check_candidate.py` reproduces its construction and test run; one-shot shape candidate is loaded privately too. Tasks063-065 provide actual negative-boundary and stale-TT witnesses. These four regressions are useful compatibility evidence; they do not certify full suite, arbitrary generated rules, concurrent allocation failures, ordering/policy equivalence or deployment. Primary owns any integration.
