@@ -1,0 +1,357 @@
+{
+  "complete": true,
+  "fixture_source_sha256": "89cc22547119a48e34e2d8b4d5c04189030cd673fccf336f1bfa83ead0838d01",
+  "shared_source_sha256": "bceefeec2483a0b43e6a04cc42072cfbe1a62c0049c9b88314732dd210b632a7",
+  "rows": [
+    {
+      "carrier": "compat",
+      "result": {
+        "root": "GameState(position=Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='A', promoted=False), None, None, None, None, Piece(owner=1, base_type_id='C', current_type_id='C', promoted=False), None, None, Piece(owner=1, base_type_id='C', current_type_id='C', promoted=False), None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=0, ruleset_fingerprint='09a8b777bc900fa21d6eac1d77c34d0970549e72bb3f90107f6d739710897755', aux_state=(), board_width=None, board_height=None), ply_count=0, repetition_counts=(('87b39554216c28d4bf81aacfd2a7740b94137d7e77cd444d5c7c4184ed534b1a', 1),), terminal_status=TerminalResult(status=<TerminalStatus.ONGOING: 'ongoing'>, winner=None), history=(HistoryRecord(position_key='87b39554216c28d4bf81aacfd2a7740b94137d7e77cd444d5c7c4184ed534b1a', actor=-1, action_signature='', gave_check=False),))",
+        "trace": [
+          {
+            "step": 1,
+            "frontier": [
+              {
+                "kind": "semantic_board",
+                "pattern_id": "legacy_000",
+                "geometry_id": "g0",
+                "actor_type_id": "A",
+                "from": [
+                  1,
+                  1
+                ],
+                "to": [
+                  1,
+                  2
+                ],
+                "promotion_target_id": null
+              },
+              {
+                "kind": "semantic_board",
+                "pattern_id": "legacy_016",
+                "geometry_id": "g7",
+                "actor_type_id": "K",
+                "from": [
+                  0,
+                  0
+                ],
+                "to": [
+                  0,
+                  1
+                ],
+                "promotion_target_id": null
+              },
+              {
+                "kind": "semantic_board",
+                "pattern_id": "legacy_020",
+                "geometry_id": "g9",
+                "actor_type_id": "K",
+                "from": [
+                  0,
+                  0
+                ],
+                "to": [
+                  1,
+                  0
+                ],
+                "promotion_target_id": null
+              },
+              {
+                "kind": "semantic_board",
+                "pattern_id": "sem_00_change_type",
+                "geometry_id": "g12",
+                "actor_type_id": "A",
+                "from": [
+                  1,
+                  1
+                ],
+                "to": [
+                  1,
+                  2
+                ],
+                "promotion_target_id": null
+              }
+            ],
+            "chosen": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_change_type",
+              "geometry_id": "g12",
+              "actor_type_id": "A",
+              "from": [
+                1,
+                1
+              ],
+              "to": [
+                1,
+                2
+              ],
+              "promotion_target_id": null
+            },
+            "child": "GameState(position=Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='B', promoted=True), Piece(owner=1, base_type_id='C', current_type_id='C', promoted=False), None, None, Piece(owner=1, base_type_id='C', current_type_id='C', promoted=False), None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='09a8b777bc900fa21d6eac1d77c34d0970549e72bb3f90107f6d739710897755', aux_state=(), board_width=None, board_height=None), ply_count=1, repetition_counts=(('87b39554216c28d4bf81aacfd2a7740b94137d7e77cd444d5c7c4184ed534b1a', 1), ('8d965c7655a5ac281a3dc2a057a7aa14e61b297a8d34706048ee89dafb9bbd10', 1)), terminal_status=TerminalResult(status=<TerminalStatus.ONGOING: 'ongoing'>, winner=None), history=(HistoryRecord(position_key='87b39554216c28d4bf81aacfd2a7740b94137d7e77cd444d5c7c4184ed534b1a', actor=-1, action_signature='', gave_check=False), HistoryRecord(position_key='8d965c7655a5ac281a3dc2a057a7aa14e61b297a8d34706048ee89dafb9bbd10', actor=0, action_signature='{\"actor_type_id\":\"A\",\"from\":[1,1],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_change_type\",\"promotion_target_id\":null,\"to\":[1,2]}', gave_check=False)))"
+          },
+          {
+            "step": 2,
+            "frontier": [
+              {
+                "kind": "semantic_board",
+                "pattern_id": "legacy_006",
+                "geometry_id": "g2",
+                "actor_type_id": "C",
+                "from": [
+                  1,
+                  3
+                ],
+                "to": [
+                  0,
+                  3
+                ],
+                "promotion_target_id": null
+              },
+              {
+                "kind": "semantic_board",
+                "pattern_id": "legacy_007",
+                "geometry_id": "g2",
+                "actor_type_id": "C",
+                "from": [
+                  2,
+                  2
+                ],
+                "to": [
+                  1,
+                  2
+                ],
+                "promotion_target_id": null
+              },
+              {
+                "kind": "semantic_board",
+                "pattern_id": "legacy_016",
+                "geometry_id": "g7",
+                "actor_type_id": "K",
+                "from": [
+                  3,
+                  3
+                ],
+                "to": [
+                  3,
+                  2
+                ],
+                "promotion_target_id": null
+              },
+              {
+                "kind": "semantic_board",
+                "pattern_id": "legacy_020",
+                "geometry_id": "g9",
+                "actor_type_id": "K",
+                "from": [
+                  3,
+                  3
+                ],
+                "to": [
+                  2,
+                  3
+                ],
+                "promotion_target_id": null
+              }
+            ],
+            "chosen": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_007",
+              "geometry_id": "g2",
+              "actor_type_id": "C",
+              "from": [
+                2,
+                2
+              ],
+              "to": [
+                1,
+                2
+              ],
+              "promotion_target_id": null
+            },
+            "child": "GameState(position=Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=1, base_type_id='C', current_type_id='C', promoted=False), None, None, None, Piece(owner=1, base_type_id='C', current_type_id='C', promoted=False), None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=(('A', 1),))), side_to_move=0, ruleset_fingerprint='09a8b777bc900fa21d6eac1d77c34d0970549e72bb3f90107f6d739710897755', aux_state=(), board_width=None, board_height=None), ply_count=2, repetition_counts=(('5d61c06c41e5f7c34376a257493d08b425b08871f833663ee284f714cf415bba', 1), ('87b39554216c28d4bf81aacfd2a7740b94137d7e77cd444d5c7c4184ed534b1a', 1), ('8d965c7655a5ac281a3dc2a057a7aa14e61b297a8d34706048ee89dafb9bbd10', 1)), terminal_status=TerminalResult(status=<TerminalStatus.ONGOING: 'ongoing'>, winner=None), history=(HistoryRecord(position_key='87b39554216c28d4bf81aacfd2a7740b94137d7e77cd444d5c7c4184ed534b1a', actor=-1, action_signature='', gave_check=False), HistoryRecord(position_key='8d965c7655a5ac281a3dc2a057a7aa14e61b297a8d34706048ee89dafb9bbd10', actor=0, action_signature='{\"actor_type_id\":\"A\",\"from\":[1,1],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_change_type\",\"promotion_target_id\":null,\"to\":[1,2]}', gave_check=False), HistoryRecord(position_key='5d61c06c41e5f7c34376a257493d08b425b08871f833663ee284f714cf415bba', actor=1, action_signature='{\"actor_type_id\":\"C\",\"from\":[2,2],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_007\",\"promotion_target_id\":null,\"to\":[1,2]}', gave_check=False)))"
+          }
+        ],
+        "final": "GameState(position=Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=1, base_type_id='C', current_type_id='C', promoted=False), None, None, None, Piece(owner=1, base_type_id='C', current_type_id='C', promoted=False), None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=(('A', 1),))), side_to_move=0, ruleset_fingerprint='09a8b777bc900fa21d6eac1d77c34d0970549e72bb3f90107f6d739710897755', aux_state=(), board_width=None, board_height=None), ply_count=2, repetition_counts=(('5d61c06c41e5f7c34376a257493d08b425b08871f833663ee284f714cf415bba', 1), ('87b39554216c28d4bf81aacfd2a7740b94137d7e77cd444d5c7c4184ed534b1a', 1), ('8d965c7655a5ac281a3dc2a057a7aa14e61b297a8d34706048ee89dafb9bbd10', 1)), terminal_status=TerminalResult(status=<TerminalStatus.ONGOING: 'ongoing'>, winner=None), history=(HistoryRecord(position_key='87b39554216c28d4bf81aacfd2a7740b94137d7e77cd444d5c7c4184ed534b1a', actor=-1, action_signature='', gave_check=False), HistoryRecord(position_key='8d965c7655a5ac281a3dc2a057a7aa14e61b297a8d34706048ee89dafb9bbd10', actor=0, action_signature='{\"actor_type_id\":\"A\",\"from\":[1,1],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_change_type\",\"promotion_target_id\":null,\"to\":[1,2]}', gave_check=False), HistoryRecord(position_key='5d61c06c41e5f7c34376a257493d08b425b08871f833663ee284f714cf415bba', actor=1, action_signature='{\"actor_type_id\":\"C\",\"from\":[2,2],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_007\",\"promotion_target_id\":null,\"to\":[1,2]}', gave_check=False)))",
+        "typed_replay_same_complete_state": true,
+        "full_parents_unchanged": true
+      },
+      "candidate_generated_calls": 50
+    },
+    {
+      "carrier": "pure",
+      "result": {
+        "root": "GameState(position=Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='A', promoted=False), None, None, None, None, Piece(owner=1, base_type_id='C', current_type_id='C', promoted=False), None, None, Piece(owner=1, base_type_id='C', current_type_id='C', promoted=False), None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=0, ruleset_fingerprint='09a8b777bc900fa21d6eac1d77c34d0970549e72bb3f90107f6d739710897755', aux_state=(), board_width=None, board_height=None), ply_count=0, repetition_counts=(('87b39554216c28d4bf81aacfd2a7740b94137d7e77cd444d5c7c4184ed534b1a', 1),), terminal_status=TerminalResult(status=<TerminalStatus.ONGOING: 'ongoing'>, winner=None), history=(HistoryRecord(position_key='87b39554216c28d4bf81aacfd2a7740b94137d7e77cd444d5c7c4184ed534b1a', actor=-1, action_signature='', gave_check=False),))",
+        "trace": [
+          {
+            "step": 1,
+            "frontier": [
+              {
+                "kind": "semantic_board",
+                "pattern_id": "legacy_000",
+                "geometry_id": "g0",
+                "actor_type_id": "A",
+                "from": [
+                  1,
+                  1
+                ],
+                "to": [
+                  1,
+                  2
+                ],
+                "promotion_target_id": null
+              },
+              {
+                "kind": "semantic_board",
+                "pattern_id": "legacy_016",
+                "geometry_id": "g7",
+                "actor_type_id": "K",
+                "from": [
+                  0,
+                  0
+                ],
+                "to": [
+                  0,
+                  1
+                ],
+                "promotion_target_id": null
+              },
+              {
+                "kind": "semantic_board",
+                "pattern_id": "legacy_020",
+                "geometry_id": "g9",
+                "actor_type_id": "K",
+                "from": [
+                  0,
+                  0
+                ],
+                "to": [
+                  1,
+                  0
+                ],
+                "promotion_target_id": null
+              },
+              {
+                "kind": "semantic_board",
+                "pattern_id": "sem_00_change_type",
+                "geometry_id": "g12",
+                "actor_type_id": "A",
+                "from": [
+                  1,
+                  1
+                ],
+                "to": [
+                  1,
+                  2
+                ],
+                "promotion_target_id": null
+              }
+            ],
+            "chosen": {
+              "kind": "semantic_board",
+              "pattern_id": "sem_00_change_type",
+              "geometry_id": "g12",
+              "actor_type_id": "A",
+              "from": [
+                1,
+                1
+              ],
+              "to": [
+                1,
+                2
+              ],
+              "promotion_target_id": null
+            },
+            "child": "GameState(position=Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=0, base_type_id='A', current_type_id='B', promoted=True), Piece(owner=1, base_type_id='C', current_type_id='C', promoted=False), None, None, Piece(owner=1, base_type_id='C', current_type_id='C', promoted=False), None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=())), side_to_move=1, ruleset_fingerprint='09a8b777bc900fa21d6eac1d77c34d0970549e72bb3f90107f6d739710897755', aux_state=(), board_width=None, board_height=None), ply_count=1, repetition_counts=(('87b39554216c28d4bf81aacfd2a7740b94137d7e77cd444d5c7c4184ed534b1a', 1), ('8d965c7655a5ac281a3dc2a057a7aa14e61b297a8d34706048ee89dafb9bbd10', 1)), terminal_status=TerminalResult(status=<TerminalStatus.ONGOING: 'ongoing'>, winner=None), history=(HistoryRecord(position_key='87b39554216c28d4bf81aacfd2a7740b94137d7e77cd444d5c7c4184ed534b1a', actor=-1, action_signature='', gave_check=False), HistoryRecord(position_key='8d965c7655a5ac281a3dc2a057a7aa14e61b297a8d34706048ee89dafb9bbd10', actor=0, action_signature='{\"actor_type_id\":\"A\",\"from\":[1,1],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_change_type\",\"promotion_target_id\":null,\"to\":[1,2]}', gave_check=False)))"
+          },
+          {
+            "step": 2,
+            "frontier": [
+              {
+                "kind": "semantic_board",
+                "pattern_id": "legacy_006",
+                "geometry_id": "g2",
+                "actor_type_id": "C",
+                "from": [
+                  1,
+                  3
+                ],
+                "to": [
+                  0,
+                  3
+                ],
+                "promotion_target_id": null
+              },
+              {
+                "kind": "semantic_board",
+                "pattern_id": "legacy_007",
+                "geometry_id": "g2",
+                "actor_type_id": "C",
+                "from": [
+                  2,
+                  2
+                ],
+                "to": [
+                  1,
+                  2
+                ],
+                "promotion_target_id": null
+              },
+              {
+                "kind": "semantic_board",
+                "pattern_id": "legacy_016",
+                "geometry_id": "g7",
+                "actor_type_id": "K",
+                "from": [
+                  3,
+                  3
+                ],
+                "to": [
+                  3,
+                  2
+                ],
+                "promotion_target_id": null
+              },
+              {
+                "kind": "semantic_board",
+                "pattern_id": "legacy_020",
+                "geometry_id": "g9",
+                "actor_type_id": "K",
+                "from": [
+                  3,
+                  3
+                ],
+                "to": [
+                  2,
+                  3
+                ],
+                "promotion_target_id": null
+              }
+            ],
+            "chosen": {
+              "kind": "semantic_board",
+              "pattern_id": "legacy_007",
+              "geometry_id": "g2",
+              "actor_type_id": "C",
+              "from": [
+                2,
+                2
+              ],
+              "to": [
+                1,
+                2
+              ],
+              "promotion_target_id": null
+            },
+            "child": "GameState(position=Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=1, base_type_id='C', current_type_id='C', promoted=False), None, None, None, Piece(owner=1, base_type_id='C', current_type_id='C', promoted=False), None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=(('A', 1),))), side_to_move=0, ruleset_fingerprint='09a8b777bc900fa21d6eac1d77c34d0970549e72bb3f90107f6d739710897755', aux_state=(), board_width=None, board_height=None), ply_count=2, repetition_counts=(('5d61c06c41e5f7c34376a257493d08b425b08871f833663ee284f714cf415bba', 1), ('87b39554216c28d4bf81aacfd2a7740b94137d7e77cd444d5c7c4184ed534b1a', 1), ('8d965c7655a5ac281a3dc2a057a7aa14e61b297a8d34706048ee89dafb9bbd10', 1)), terminal_status=TerminalResult(status=<TerminalStatus.ONGOING: 'ongoing'>, winner=None), history=(HistoryRecord(position_key='87b39554216c28d4bf81aacfd2a7740b94137d7e77cd444d5c7c4184ed534b1a', actor=-1, action_signature='', gave_check=False), HistoryRecord(position_key='8d965c7655a5ac281a3dc2a057a7aa14e61b297a8d34706048ee89dafb9bbd10', actor=0, action_signature='{\"actor_type_id\":\"A\",\"from\":[1,1],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_change_type\",\"promotion_target_id\":null,\"to\":[1,2]}', gave_check=False), HistoryRecord(position_key='5d61c06c41e5f7c34376a257493d08b425b08871f833663ee284f714cf415bba', actor=1, action_signature='{\"actor_type_id\":\"C\",\"from\":[2,2],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_007\",\"promotion_target_id\":null,\"to\":[1,2]}', gave_check=False)))"
+          }
+        ],
+        "final": "GameState(position=Position(board=(Piece(owner=0, base_type_id='K', current_type_id='K', promoted=False), None, None, None, None, None, None, None, None, Piece(owner=1, base_type_id='C', current_type_id='C', promoted=False), None, None, None, Piece(owner=1, base_type_id='C', current_type_id='C', promoted=False), None, Piece(owner=1, base_type_id='K', current_type_id='K', promoted=False)), hands=(Hands(counts=()), Hands(counts=(('A', 1),))), side_to_move=0, ruleset_fingerprint='09a8b777bc900fa21d6eac1d77c34d0970549e72bb3f90107f6d739710897755', aux_state=(), board_width=None, board_height=None), ply_count=2, repetition_counts=(('5d61c06c41e5f7c34376a257493d08b425b08871f833663ee284f714cf415bba', 1), ('87b39554216c28d4bf81aacfd2a7740b94137d7e77cd444d5c7c4184ed534b1a', 1), ('8d965c7655a5ac281a3dc2a057a7aa14e61b297a8d34706048ee89dafb9bbd10', 1)), terminal_status=TerminalResult(status=<TerminalStatus.ONGOING: 'ongoing'>, winner=None), history=(HistoryRecord(position_key='87b39554216c28d4bf81aacfd2a7740b94137d7e77cd444d5c7c4184ed534b1a', actor=-1, action_signature='', gave_check=False), HistoryRecord(position_key='8d965c7655a5ac281a3dc2a057a7aa14e61b297a8d34706048ee89dafb9bbd10', actor=0, action_signature='{\"actor_type_id\":\"A\",\"from\":[1,1],\"geometry_id\":\"g12\",\"kind\":\"semantic_board\",\"pattern_id\":\"sem_00_change_type\",\"promotion_target_id\":null,\"to\":[1,2]}', gave_check=False), HistoryRecord(position_key='5d61c06c41e5f7c34376a257493d08b425b08871f833663ee284f714cf415bba', actor=1, action_signature='{\"actor_type_id\":\"C\",\"from\":[2,2],\"geometry_id\":\"g2\",\"kind\":\"semantic_board\",\"pattern_id\":\"legacy_007\",\"promotion_target_id\":null,\"to\":[1,2]}', gave_check=False)))",
+        "typed_replay_same_complete_state": true,
+        "full_parents_unchanged": true
+      },
+      "candidate_generated_calls": 50
+    }
+  ],
+  "scope": "2carrier normal2-ply Core pairs;4typed replay flows;8totalflows16public applies;private transition only, original attack dispatch",
+  "limits": "Public initialization/frontier/membership/terminal/history work included. No SearchPathRuntime, TT, search, callback exception, OOM, Native, timing or all-domain proof. Prior b410 exceptional occurrence failures are unchanged."
+}

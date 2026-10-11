@@ -1,0 +1,8 @@
+# Task046 — merge iteration termination and empty groups
+Declared before execution 2026-10-11; source-only audit during07:35–08:00UTC. Reuse Task038 success-read law and inspect Python3.12.14 heapq.merge source; no engine/search imports or old numeric cohort replay.
+
+Question: does p=0 mean no merge work for an actually exhausted empty query, and does consuming n outputs determine next-attempt cost? Fixed groups: [], [[],[],[]], [[],[0,1],[]], [[0],[1],[]], [[0,2],[1,3],[]]. Modes: construct but never start; first prefix (islice length1, including empty); exact full-length prefix (islice length n, not asking for EOF); fully exhaust with list. Twenty fixed cells. Numeric Counted records attempts before next and successful reads after return, with unique sorted ranks.
+
+Expected n=0 full scan has G empty next attempts despite zero reads; unstarted and islice(0) have none. For p>=1 truncated output, A=G+p-1 attempts; full exhaustion A=G+n, R=n. Where prefix p is less than n, R keeps Task038 formula. R describes borrowed row reference reads, not allocations/heap comparisons/wall/deadline. Empty groups are actually allowed by private candidate, which appends typed.get(current_type,()) for occupied own sources without filtering; k(nonempty) is not G(all supplied).
+
+Write an explicit correction to Task038 DERIVATION's p=0 prose, while keeping its original frozen JSON/numeric success-read evidence and hashes. Its islice(0) setup genuinely did not enter merge; a public for-loop can enter an all-empty merge. Its length-n prefix consumes all values without the final EOF query; do not generalize recorded next_attempts to a full negative attack query. This is a cost-definition correction, not evidence of useful speed or a changed semantic result.

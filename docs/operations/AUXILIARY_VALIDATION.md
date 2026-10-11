@@ -24,8 +24,8 @@ session, consultation-ledger or sandbox publication commands against shared
 .local_agent state. It owns its local state and only its assignment outputs.
 A separate Git branch in the same working directory is insufficient isolation.
 UI Test stays isolated. Do not touch alphasho or other projects.
-Do not run timing benchmarks concurrently on this machine: resource contention
-would spoil cost attribution. Independent short checks can still proceed.
+Ordinary concurrent projects are allowed. Keep file and computation-state isolation;
+relevant load conditions limit timing interpretation without requiring quiet windows.
 
 The user is establishing 开发辅助; the primary does not automatically spawn
 workers. Once its chat exists, a direct message can carry the handoff. Until
@@ -72,3 +72,4 @@ interruptible runs are allowed; a single run expected above one hour first
 gets Dot's necessity assessment. Stop flags, human-data boundaries, machine
 safety and no uncontrolled jobs remain. A result does not automatically merge
 code or change q/evaluator/UI defaults.
+

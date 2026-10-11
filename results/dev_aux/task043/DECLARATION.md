@@ -1,0 +1,10 @@
+# Task043 — actual legacy hybrid overlap
+Declared 2026-10-11 after session start, before execution. Product base b4108a68a7ee06327be39cb3a222939644085a52. Reuse frozen Task033 private candidate; reuse Task042's conditional source proof and Task038 retrieval law. No580-query or primary caller/timing repeat.
+
+Decision: is multirow source selection a supported legacy hybrid premise, and can blocking change consumed rows while retaining exact query/callback order? Do not transfer singleton default-generator evidence to all legacy atoms.
+
+Four-by-four board: anchors K at0/15, owner0 A at5, enemy B at13; own B blocker9 present/absent. B only Leap(1,0), so blocker cannot attack13. A has exactly Leap(0,2) and Ray(0,1). Two public input atom orders (Leap,Ray)/(Ray,Leap), both compatibility and pure IR carriers: eight query pairs at(owner0,target13). No semantic actions, guards or replacement tricks. Selected A rows must retain both distinct geometries, n2/k1. Target pseudo-attack remains true through Leap with blocker present; Ray alone would fail that blocked path.
+
+No presumption of catalog order from textual order: record compiled row ranks, geometry kind and actual path. Expected earliest successful row follows that order and blocker legality; every checkpoint in each new baseline query is a bounded cancellation arm in both implementations, preserving exception object, full trace and complete parent repr. Instrument binding/path/guard hooks with restoration in finally. Record successful iterator reads separately from binding and guard counts; reconstruct numeric rank work using Task038, not a caller timing. Public GameSession setup includes ordinary semantic checks and is outside paired-query count.
+
+Costs: eight very small normal queries per implementation plus finite callback-prefix sweeps, hard120s runner fuse, no search/Native/backend/completion or all-domain claim. Any fixture/setup failure stays as evidence; no result-driven cases, cap growth or chasing wall speed. Window07:35–08:00UTC allows writing/review only; execute afterward.

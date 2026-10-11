@@ -1,0 +1,5 @@
+# Task046 actual-query supplement, before execution
+
+In addition to20 stdlib cells, attach a non-mutating iterator counter to Task043 and Task045's already-declared private candidate normal queries; add no query cells or search. The candidate function body remains frozen Task033 bytes; only its heapq dependency is a counting facade returning real stdlib merge of counted original tuple iterators. Record actual supplied group lengths G/k, successful borrowed-row reads, next attempts, EOF attempts and pulled ranks. Method callback/semantic traces must still equal baseline. A normal positive query stops immediately after a yielded row; a normal false query exhausts the iterator. Fault/query setup counts remain separate.
+
+This instrumentation answers whether empty streams truly occur in the declared public hybrid/current-type witnesses. Numeric reconstruction alone can model them but does not prove actual input G. Extra instrumentation is not a performance comparison or allocation/exception guarantee; frozen candidate code itself is unchanged and no product hook is installed. Preserve original Task038 records.

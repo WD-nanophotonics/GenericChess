@@ -1,0 +1,71 @@
+{
+  "complete": true,
+  "fixture_source_sha256": "ad7419c59378e480bd75038cb2d268aea615e0f08f23758d1d5ae8957807fc83",
+  "rows": [
+    {
+      "carrier": "compat",
+      "result": {
+        "answers": [
+          {
+            "case": "transform_reset_A",
+            "value": null,
+            "expected": null,
+            "full_parent_unchanged": true
+          },
+          {
+            "case": "transform_reset_B",
+            "value": "DRAW",
+            "expected": "DRAW",
+            "full_parent_unchanged": true
+          },
+          {
+            "case": "capture_reset",
+            "value": null,
+            "expected": null,
+            "full_parent_unchanged": true
+          },
+          {
+            "case": "capture_no_reset",
+            "value": "DRAW",
+            "expected": "DRAW",
+            "full_parent_unchanged": true
+          }
+        ],
+        "truncated_history_error": "no-progress adjudication requires complete history from its initial position"
+      }
+    },
+    {
+      "carrier": "pure",
+      "result": {
+        "answers": [
+          {
+            "case": "transform_reset_A",
+            "value": null,
+            "expected": null,
+            "full_parent_unchanged": true
+          },
+          {
+            "case": "transform_reset_B",
+            "value": "DRAW",
+            "expected": "DRAW",
+            "full_parent_unchanged": true
+          },
+          {
+            "case": "capture_reset",
+            "value": null,
+            "expected": null,
+            "full_parent_unchanged": true
+          },
+          {
+            "case": "capture_no_reset",
+            "value": "DRAW",
+            "expected": "DRAW",
+            "full_parent_unchanged": true
+          }
+        ],
+        "truncated_history_error": "no-progress adjudication requires complete history from its initial position"
+      }
+    }
+  ],
+  "scope": "8 direct classifier pairs and2 truncated-history rejection pairs; public state construction, no policy-enabled terminal compilation"
+}

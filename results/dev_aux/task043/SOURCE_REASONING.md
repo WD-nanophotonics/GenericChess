@@ -1,0 +1,11 @@
+# Source reasoning before execution
+
+Legacy catalog enumerates each type's movement_atoms separately. Compiler lower_legacy_to_ir traverses catalog geometry IDs and emits quiet then capture pattern per atom; a Ray capture has path_clear, a Leap capture has an empty path. Incoming index appends capture rows in pattern/type/source/geometry/path order. Endpoint equality does not coalesce pattern identity or geometry/path; _incoming_attack_sources enumerates the per(owner,target) row tuple and partitions ranks by(source,current_type).
+
+On this board A5 to13 uses delta(0,2): Leap empty path, Ray intermediate square9. Selecting source5/current A yields both ranks in one group; own B9 has no matching geometry to13. Either ordering permits Leap's true result; an early Ray with blocker must first fail path and then reach Leap. _guards_hold is called only after _path_holds succeeds. Thus a blocked row changes inspected bindings without itself adding a guard evaluation.
+
+Unkeyed heap merge borrows one iterator per selected source/type group. One group can preserve ranks trivially; if first successful row is at prefix p, successful retrieval equals p for k1 (Task038), not the two eager selected rows in all cases. Existing580 builtin singleton groups had n=k and no avoided first-yield reads; this hybrid premise differs but does not establish lower elapsed cost or worthwhile caller deployment. Multiplicity should be retained even when both rows eventually lead to an indistinguishable board child: the public action identity includes pattern/geometry and future path/state/guard conditions can differ.
+
+Questions to resolve from execution: catalog order for two declared atom orders; selected rank counts with blocker present/absent; exact binding/path/guard/callback ledger, including early successful leap preventing a later ray from being inspected. No assertion of a caller speedup; no optimization that drops ray or deduplicates public actions.
+
+Pre-execution source correction: compile_semantic_ruleset explicitly rejects empty semantic_actions. The retained draft used that wrong entry and was never executed. Use public compile_legacy_ruleset_for_semantic_execution instead; label actual retained legacy support/carrier from its return, not an assumed compatibility executable.

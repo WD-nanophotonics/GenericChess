@@ -111,3 +111,9 @@ Dot已复核上一份固定协作报告并提出三项澄清，均明确采纳�
 未解决：有限正确性不建立实际加速；默认singleton的caller扩批仍延后，多行支持未形成有用搜索负载。三项独立续作在辅助自己的memo；不接管主研究或改产品/UI默认。本次政策同步/资源协调不更改原62.270分钟科研样本。原始Slack、账号/私人输入、凭据不进入本摘要。
 
 固定辅助材料：[科研段报告](https://github.com/WD-nanophotonics/GenericChess/blob/caa86ded9d83ea2158c9de31688a79af65fb46a8/results/dev_aux/SEGMENT_20261011_3.md)、[Task038](https://github.com/WD-nanophotonics/GenericChess/blob/caa86ded9d83ea2158c9de31688a79af65fb46a8/results/dev_aux/task038/REPORT.md)、[Task039](https://github.com/WD-nanophotonics/GenericChess/blob/caa86ded9d83ea2158c9de31688a79af65fb46a8/results/dev_aux/task039/REPORT.md)、[Task040](https://github.com/WD-nanophotonics/GenericChess/blob/caa86ded9d83ea2158c9de31688a79af65fb46a8/results/dev_aux/task040/REPORT.md)、[Task041](https://github.com/WD-nanophotonics/GenericChess/blob/caa86ded9d83ea2158c9de31688a79af65fb46a8/results/dev_aux/task041/REPORT.md)。主固定证据：[313900d3协作日志](https://github.com/WD-nanophotonics/GenericChess/blob/313900d3b5c0d9d79a117306ecf30cf6078dba43/docs/operations/COLLABORATION_LOG.md)。Dot收到固定补充链接只证明投递，读取/回复/采纳待实际证据。
+
+## 2026-10-11：辅助有限覆盖收束与当前决定
+辅助043–053补齐实际legacy hybrid、nullable/S4回调、类型变化、完整Core历史、基础类型捕获/落子及载体fallback有限证据；不改产品，不重复主时间批次。EOF尝试数口径修正保留旧记录，容器/动作字段夹具失败也保留。有限一致性不建立调用者加速。
+主最新ee48d0a55c7bda3d702f45ce2dc4162cc3bbc0ac提供generated8 seed15 checked路径公开复演与条件性排序结果；辅助只读取固定报告，不替主执行或认证实验。Dot新方向回复完整读取：采纳搜索能力/跨backend差距优先，停止低价值互聊与无决策作用的边界扩张；其引用其他对话不作为本聊天的新授权。
+用户直接纠正普通同机并行：辅助规范和90分钟巡检已更新，不再申请源码-only窗口或将CPU重叠定性为协作故障；保护各自文件/计算状态。旧声明评估作为历史保留，不自动补跑；049防护草案未执行，已取消采用。
+当前收束微验证，下一步用既有冻结证据整理backend条件/完成/决策表。材料目录占用已检查，无全盘清理或净节时断言；不复制全量历史，不删除唯一失败证据。主自主采纳，固定辅助链接在实际发布后交Dot，无例行回执。

@@ -1,0 +1,6 @@
+# Task047: actual S4 nested reply callback restores context
+One normal filtered public binding pair, three exact S4 fault pairs and six fresh retry calls pass. source_square has the sole forbidden no_legal_reply condition. The real opponent K reply makes that condition false; the filtered frontier yields three parent actions. Actual transition ledger has three outer trials plus one nested reply, not three total trials.
+
+S4 records exact non-null parent/action context and the exact child; no nested S4 is enabled. Predeclared faults occur at probe-local checkpoints1 (entry),55/59 (first/last nested reply transition). Each real caller RuntimeError('set_token ref unresolved') propagates by identity; actual _postcondition_parent/action clear through the product finally block, not instrumentation cleanup. Fresh filtered calls equal the complete original, with full immutable parents/children stable.27 actual candidate generated calls are recorded.
+
+This extends private shared-template normal/cancellation scope to an actual S4 lifecycle; existing product nested-S4 tests are read, not rerun or claimed auxiliary execution. One global compatibility fixture only. Setup/declaration extraction does not execute Task044's comparison loop. No outer Core GameState history/pass, all S4 types/scopes, Native, search, elapsed deadline, allocator safety or useful speed claim.

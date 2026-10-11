@@ -47,9 +47,9 @@ first later heartbeat handles that day once, no missed-day catchup.
 
 ## Resources and delivery
 
-Separate files cannot isolate CPU: never run timing benchmarks concurrently
-with primary. If idle timing conditions cannot be established, do source audit
-and short non-timing checks. A single run estimated above one hour first gets
+Ordinary concurrent project computation is allowed under the latest user update.
+Keep checkout and computation-state boundaries; document measurement conditions
+without requesting a quiet window. A single run estimated above one hour first gets
 Dot's necessity assessment, with cheaper alternatives and cost recorded.
 Do not split to avoid consultation; no extra workers, fees or security bypass.
 Review/test own results, commit and push only sidemission and verify full remote
@@ -89,3 +89,4 @@ provenance, not permission to overwrite its newer log. Keep raw Slack/account,
 private input and credentials excluded. No routine replies, new approval gates,
 identity challenges or extra Agents. Bounded policy/resource coordination does
 not reopen a finished research segment or count as a duration sample.
+

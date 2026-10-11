@@ -1,0 +1,1137 @@
+{
+  "complete": true,
+  "candidate_raw_sha256": "b34af78bba3bd6b6175666d878833f5054513c46889d505c7553ee1ba56957c1",
+  "records": [
+    {
+      "carrier": "compat",
+      "state": "parent",
+      "target": 10,
+      "result": false,
+      "selected_rows": [],
+      "normal_trace": [
+        [
+          "checkpoint",
+          1
+        ],
+        [
+          "checkpoint",
+          2
+        ],
+        [
+          "checkpoint",
+          3
+        ],
+        [
+          "checkpoint",
+          4
+        ],
+        [
+          "checkpoint",
+          5
+        ],
+        [
+          "checkpoint",
+          6
+        ],
+        [
+          "checkpoint",
+          7
+        ],
+        [
+          "checkpoint",
+          8
+        ],
+        [
+          "checkpoint",
+          9
+        ]
+      ],
+      "actual_merge_work": {
+        "group_lengths": [
+          0
+        ],
+        "attempts": 1,
+        "reads": 0,
+        "eof_attempts": 1,
+        "pulled_ranks": []
+      },
+      "faults": [],
+      "full_state_unchanged": true,
+      "scope": "public set_current_type effect, not inherited promotion masks"
+    },
+    {
+      "carrier": "compat",
+      "state": "parent",
+      "target": 13,
+      "result": false,
+      "selected_rows": [],
+      "normal_trace": [
+        [
+          "checkpoint",
+          1
+        ],
+        [
+          "checkpoint",
+          2
+        ],
+        [
+          "checkpoint",
+          3
+        ],
+        [
+          "checkpoint",
+          4
+        ],
+        [
+          "checkpoint",
+          5
+        ],
+        [
+          "checkpoint",
+          6
+        ]
+      ],
+      "actual_merge_work": {
+        "group_lengths": [],
+        "attempts": 0,
+        "reads": 0,
+        "eof_attempts": 0,
+        "pulled_ranks": []
+      },
+      "faults": [],
+      "full_state_unchanged": true,
+      "scope": "public set_current_type effect, not inherited promotion masks"
+    },
+    {
+      "carrier": "compat",
+      "state": "child",
+      "target": 10,
+      "result": true,
+      "selected_rows": [
+        {
+          "rank": 1,
+          "source": 9,
+          "type": "B",
+          "pattern": "legacy_003",
+          "geometry": "g1",
+          "path": []
+        }
+      ],
+      "normal_trace": [
+        [
+          "checkpoint",
+          1
+        ],
+        [
+          "checkpoint",
+          2
+        ],
+        [
+          "checkpoint",
+          3
+        ],
+        [
+          "checkpoint",
+          4
+        ],
+        [
+          "checkpoint",
+          5
+        ],
+        [
+          "checkpoint",
+          6
+        ],
+        [
+          "checkpoint",
+          7
+        ],
+        [
+          "checkpoint",
+          8
+        ],
+        [
+          "checkpoint",
+          9
+        ],
+        [
+          "checkpoint",
+          10
+        ],
+        [
+          "binding",
+          "legacy_003",
+          "g1",
+          "B",
+          9,
+          10,
+          []
+        ],
+        [
+          "path",
+          true
+        ],
+        [
+          "guard",
+          true
+        ]
+      ],
+      "actual_merge_work": {
+        "group_lengths": [
+          1
+        ],
+        "attempts": 1,
+        "reads": 1,
+        "eof_attempts": 0,
+        "pulled_ranks": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "faults": [
+        {
+          "stop": 1,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 2,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 3,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ],
+            [
+              "checkpoint",
+              3
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 4,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ],
+            [
+              "checkpoint",
+              3
+            ],
+            [
+              "checkpoint",
+              4
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 5,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ],
+            [
+              "checkpoint",
+              3
+            ],
+            [
+              "checkpoint",
+              4
+            ],
+            [
+              "checkpoint",
+              5
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 6,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ],
+            [
+              "checkpoint",
+              3
+            ],
+            [
+              "checkpoint",
+              4
+            ],
+            [
+              "checkpoint",
+              5
+            ],
+            [
+              "checkpoint",
+              6
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 7,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ],
+            [
+              "checkpoint",
+              3
+            ],
+            [
+              "checkpoint",
+              4
+            ],
+            [
+              "checkpoint",
+              5
+            ],
+            [
+              "checkpoint",
+              6
+            ],
+            [
+              "checkpoint",
+              7
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 8,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ],
+            [
+              "checkpoint",
+              3
+            ],
+            [
+              "checkpoint",
+              4
+            ],
+            [
+              "checkpoint",
+              5
+            ],
+            [
+              "checkpoint",
+              6
+            ],
+            [
+              "checkpoint",
+              7
+            ],
+            [
+              "checkpoint",
+              8
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 9,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ],
+            [
+              "checkpoint",
+              3
+            ],
+            [
+              "checkpoint",
+              4
+            ],
+            [
+              "checkpoint",
+              5
+            ],
+            [
+              "checkpoint",
+              6
+            ],
+            [
+              "checkpoint",
+              7
+            ],
+            [
+              "checkpoint",
+              8
+            ],
+            [
+              "checkpoint",
+              9
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 10,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ],
+            [
+              "checkpoint",
+              3
+            ],
+            [
+              "checkpoint",
+              4
+            ],
+            [
+              "checkpoint",
+              5
+            ],
+            [
+              "checkpoint",
+              6
+            ],
+            [
+              "checkpoint",
+              7
+            ],
+            [
+              "checkpoint",
+              8
+            ],
+            [
+              "checkpoint",
+              9
+            ],
+            [
+              "checkpoint",
+              10
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        }
+      ],
+      "full_state_unchanged": true,
+      "scope": "public set_current_type effect, not inherited promotion masks"
+    },
+    {
+      "carrier": "compat",
+      "state": "child",
+      "target": 13,
+      "result": false,
+      "selected_rows": [],
+      "normal_trace": [
+        [
+          "checkpoint",
+          1
+        ],
+        [
+          "checkpoint",
+          2
+        ],
+        [
+          "checkpoint",
+          3
+        ],
+        [
+          "checkpoint",
+          4
+        ],
+        [
+          "checkpoint",
+          5
+        ],
+        [
+          "checkpoint",
+          6
+        ]
+      ],
+      "actual_merge_work": {
+        "group_lengths": [
+          0
+        ],
+        "attempts": 1,
+        "reads": 0,
+        "eof_attempts": 1,
+        "pulled_ranks": []
+      },
+      "faults": [],
+      "full_state_unchanged": true,
+      "scope": "public set_current_type effect, not inherited promotion masks"
+    },
+    {
+      "carrier": "pure",
+      "state": "parent",
+      "target": 10,
+      "result": false,
+      "selected_rows": [],
+      "normal_trace": [
+        [
+          "checkpoint",
+          1
+        ],
+        [
+          "checkpoint",
+          2
+        ],
+        [
+          "checkpoint",
+          3
+        ],
+        [
+          "checkpoint",
+          4
+        ],
+        [
+          "checkpoint",
+          5
+        ],
+        [
+          "checkpoint",
+          6
+        ],
+        [
+          "checkpoint",
+          7
+        ],
+        [
+          "checkpoint",
+          8
+        ],
+        [
+          "checkpoint",
+          9
+        ]
+      ],
+      "actual_merge_work": {
+        "group_lengths": [
+          0
+        ],
+        "attempts": 1,
+        "reads": 0,
+        "eof_attempts": 1,
+        "pulled_ranks": []
+      },
+      "faults": [],
+      "full_state_unchanged": true,
+      "scope": "public set_current_type effect, not inherited promotion masks"
+    },
+    {
+      "carrier": "pure",
+      "state": "parent",
+      "target": 13,
+      "result": false,
+      "selected_rows": [],
+      "normal_trace": [
+        [
+          "checkpoint",
+          1
+        ],
+        [
+          "checkpoint",
+          2
+        ],
+        [
+          "checkpoint",
+          3
+        ],
+        [
+          "checkpoint",
+          4
+        ],
+        [
+          "checkpoint",
+          5
+        ],
+        [
+          "checkpoint",
+          6
+        ]
+      ],
+      "actual_merge_work": {
+        "group_lengths": [],
+        "attempts": 0,
+        "reads": 0,
+        "eof_attempts": 0,
+        "pulled_ranks": []
+      },
+      "faults": [],
+      "full_state_unchanged": true,
+      "scope": "public set_current_type effect, not inherited promotion masks"
+    },
+    {
+      "carrier": "pure",
+      "state": "child",
+      "target": 10,
+      "result": true,
+      "selected_rows": [
+        {
+          "rank": 1,
+          "source": 9,
+          "type": "B",
+          "pattern": "legacy_003",
+          "geometry": "g1",
+          "path": []
+        }
+      ],
+      "normal_trace": [
+        [
+          "checkpoint",
+          1
+        ],
+        [
+          "checkpoint",
+          2
+        ],
+        [
+          "checkpoint",
+          3
+        ],
+        [
+          "checkpoint",
+          4
+        ],
+        [
+          "checkpoint",
+          5
+        ],
+        [
+          "checkpoint",
+          6
+        ],
+        [
+          "checkpoint",
+          7
+        ],
+        [
+          "checkpoint",
+          8
+        ],
+        [
+          "checkpoint",
+          9
+        ],
+        [
+          "checkpoint",
+          10
+        ],
+        [
+          "binding",
+          "legacy_003",
+          "g1",
+          "B",
+          9,
+          10,
+          []
+        ],
+        [
+          "path",
+          true
+        ],
+        [
+          "guard",
+          true
+        ]
+      ],
+      "actual_merge_work": {
+        "group_lengths": [
+          1
+        ],
+        "attempts": 1,
+        "reads": 1,
+        "eof_attempts": 0,
+        "pulled_ranks": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "faults": [
+        {
+          "stop": 1,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 2,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 3,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ],
+            [
+              "checkpoint",
+              3
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 4,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ],
+            [
+              "checkpoint",
+              3
+            ],
+            [
+              "checkpoint",
+              4
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 5,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ],
+            [
+              "checkpoint",
+              3
+            ],
+            [
+              "checkpoint",
+              4
+            ],
+            [
+              "checkpoint",
+              5
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 6,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ],
+            [
+              "checkpoint",
+              3
+            ],
+            [
+              "checkpoint",
+              4
+            ],
+            [
+              "checkpoint",
+              5
+            ],
+            [
+              "checkpoint",
+              6
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 7,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ],
+            [
+              "checkpoint",
+              3
+            ],
+            [
+              "checkpoint",
+              4
+            ],
+            [
+              "checkpoint",
+              5
+            ],
+            [
+              "checkpoint",
+              6
+            ],
+            [
+              "checkpoint",
+              7
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 8,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ],
+            [
+              "checkpoint",
+              3
+            ],
+            [
+              "checkpoint",
+              4
+            ],
+            [
+              "checkpoint",
+              5
+            ],
+            [
+              "checkpoint",
+              6
+            ],
+            [
+              "checkpoint",
+              7
+            ],
+            [
+              "checkpoint",
+              8
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 9,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ],
+            [
+              "checkpoint",
+              3
+            ],
+            [
+              "checkpoint",
+              4
+            ],
+            [
+              "checkpoint",
+              5
+            ],
+            [
+              "checkpoint",
+              6
+            ],
+            [
+              "checkpoint",
+              7
+            ],
+            [
+              "checkpoint",
+              8
+            ],
+            [
+              "checkpoint",
+              9
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        },
+        {
+          "stop": 10,
+          "trace": [
+            [
+              "checkpoint",
+              1
+            ],
+            [
+              "checkpoint",
+              2
+            ],
+            [
+              "checkpoint",
+              3
+            ],
+            [
+              "checkpoint",
+              4
+            ],
+            [
+              "checkpoint",
+              5
+            ],
+            [
+              "checkpoint",
+              6
+            ],
+            [
+              "checkpoint",
+              7
+            ],
+            [
+              "checkpoint",
+              8
+            ],
+            [
+              "checkpoint",
+              9
+            ],
+            [
+              "checkpoint",
+              10
+            ]
+          ],
+          "same_exception_object_each_arm": true
+        }
+      ],
+      "full_state_unchanged": true,
+      "scope": "public set_current_type effect, not inherited promotion masks"
+    },
+    {
+      "carrier": "pure",
+      "state": "child",
+      "target": 13,
+      "result": false,
+      "selected_rows": [],
+      "normal_trace": [
+        [
+          "checkpoint",
+          1
+        ],
+        [
+          "checkpoint",
+          2
+        ],
+        [
+          "checkpoint",
+          3
+        ],
+        [
+          "checkpoint",
+          4
+        ],
+        [
+          "checkpoint",
+          5
+        ],
+        [
+          "checkpoint",
+          6
+        ]
+      ],
+      "actual_merge_work": {
+        "group_lengths": [
+          0
+        ],
+        "attempts": 1,
+        "reads": 0,
+        "eof_attempts": 1,
+        "pulled_ranks": []
+      },
+      "faults": [],
+      "full_state_unchanged": true,
+      "scope": "public set_current_type effect, not inherited promotion masks"
+    }
+  ],
+  "discriminators": [
+    {
+      "carrier": "compat",
+      "target": 10,
+      "correct": true,
+      "wrong_base_selector": false,
+      "wrong_trace": [
+        [
+          "checkpoint",
+          1
+        ],
+        [
+          "checkpoint",
+          2
+        ],
+        [
+          "checkpoint",
+          3
+        ],
+        [
+          "checkpoint",
+          4
+        ],
+        [
+          "checkpoint",
+          5
+        ],
+        [
+          "checkpoint",
+          6
+        ],
+        [
+          "checkpoint",
+          7
+        ],
+        [
+          "checkpoint",
+          8
+        ],
+        [
+          "checkpoint",
+          9
+        ]
+      ],
+      "full_child_unchanged": true
+    },
+    {
+      "carrier": "pure",
+      "target": 10,
+      "correct": true,
+      "wrong_base_selector": false,
+      "wrong_trace": [
+        [
+          "checkpoint",
+          1
+        ],
+        [
+          "checkpoint",
+          2
+        ],
+        [
+          "checkpoint",
+          3
+        ],
+        [
+          "checkpoint",
+          4
+        ],
+        [
+          "checkpoint",
+          5
+        ],
+        [
+          "checkpoint",
+          6
+        ],
+        [
+          "checkpoint",
+          7
+        ],
+        [
+          "checkpoint",
+          8
+        ],
+        [
+          "checkpoint",
+          9
+        ]
+      ],
+      "full_child_unchanged": true
+    }
+  ],
+  "normal_pairs": 8,
+  "fault_pairs": 20,
+  "limits": "Public initialization/legal membership/apply invokes semantic checks. No search, Native, timing, automatic promotion-mask or full-domain/OOM claim."
+}

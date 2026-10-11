@@ -1,0 +1,11 @@
+# Current-type and public-action source audit
+
+Piece documents the important semantic boundary: compiler invariants constrain initial promoted pieces to legacy promotion targets, while executed set_current_type effects may choose another defined current type. Base identity survives and controls capture-to-hand; promoted marks a current-type change. The declared fixture deliberately uses this semantic effect and must not be presented as validation of optional/forced legacy promotion.
+
+SemanticEngine.apply calls legal_actions for membership, finds the exact pattern by action.pattern_id, rebuilds the immutable pre-action binding from action.geometry_id/actor_type, then calls _transition. A coordinate-only action is insufficient to identify overlapping legacy semantic patterns; the existing adapter test already covers ambiguous coordinate rejection and two typed identities. That older test is reused, not rerun or attributed to this auxiliary.
+
+Incoming index partitions by source/current type; executor selects using position.board[source].current_type_id and verifies the row type again before binding. Base A can remain unchanged while current B alters both selected group and geometry. Position side-to-move switches to1 in the child but attack perspective by_owner0 remains explicit; these are different inputs. The declared two-target positive/negative pair detects selecting by old/base type and avoids an all-negative equivalence check.
+
+A bad selector changed only at typed.get(base_type_id) will ignore B's real target10 group; the unchanged per-row current-type check may also filter old A rows, so the decisive discriminator is the missing true B attack, not a promised false positive at13. This is a local wrong-implementation sentinel, not a product defect or a need to modify defaults.
+
+Full immutable parent/child repr checks include board, hands, aux, side and fingerprint. This fixture has no played history, so do not infer full SearchPathRuntime/history repair from these checks. Initialization/apply calls include semantic legality trials; explicit query/callback pair counts exclude that setup. Callback counts prove polling sequence and exact exception propagation on this finite child, not a hard deadline.

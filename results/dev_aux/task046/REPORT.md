@@ -1,0 +1,6 @@
+# Task046: next attempts differ from successful reads
+Twenty predeclared stdlib numeric cells pass. Three supplied empty streams perform three next/EOF attempts when fully scanned and zero reads; constructing the generator or islice(0) performs none. On [[0],[1],[]], consuming exactly two outputs takes four attempts, while requesting final exhaustion takes five; both read two rows.
+
+For G supplied streams, k nonempty, n rows and an early stop immediately after p>=1 outputs: A=G+p-1 next attempts, and Task038's R=k+sum(same-group successor for first p-1 ranks) still counts successful reads. Full exhaustion gives A=G+n,R=n, including n0. Failed attempts are A-R. Counts exclude heap comparisons, iterator construction, allocation cost and elapsed time.
+
+Correct Task038 DERIVATION's unqualified p0 sentence to its actual unstarted/islice0 controls. Preserve the original JSON, derivation and hashes: successful-read law remains valid; its length-n prefix was not an EOF-complete negative query. Task043/045's real counted candidate inputs independently show empty-group attempts and preserve semantic/callback traces; no new query batch was added. This is cost-definition correction, no product change, default migration or caller gain. Keep DEFER.

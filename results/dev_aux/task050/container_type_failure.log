@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\wdai\Documents\ChatGPT\GenericChess-DEV_AUX\results\dev_aux\task050\public_successors.py", line 23, in <module>
+    assert old==new and tuple(a for a,ch in new)==env['legal_actions'](parent,c)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,198 @@
+{
+  "complete": true,
+  "scope": "8 immutable product source pins;15 new output raw dependency bindings;new Python AST/JSON syntax, no engine or numeric witness rerun",
+  "sources": [
+    {
+      "path": "generic_chess/core/semantic_executor.py",
+      "product_base": "b4108a68a7ee06327be39cb3a222939644085a52",
+      "raw_sha256": "119ac83dcd1578245b784d3d5fddd56f2947b7566e291d84fe88fdfab2acb896",
+      "git_blob_sha256": "669fc8644d2e94b9b61d4634791af0b1cb558f9a653443aa1a96703c84ecd55a",
+      "exact_after_crlf_to_lf": true
+    },
+    {
+      "path": "generic_chess/rules/compiler.py",
+      "product_base": "b4108a68a7ee06327be39cb3a222939644085a52",
+      "raw_sha256": "9ef2c28c78af75a8642543ef2306645295b10ea55e512d00a35a28b799cb6937",
+      "git_blob_sha256": "f731d4c21776f1519f8f2948b62e2a49ffb1c315a11afd56ddeba807d76a2e9f",
+      "exact_after_crlf_to_lf": true
+    },
+    {
+      "path": "generic_chess/rules/ir.py",
+      "product_base": "b4108a68a7ee06327be39cb3a222939644085a52",
+      "raw_sha256": "92c0fbcfa39d746861e1ea5dfd420c11042d33bb580d34cd19132c19244a0b2c",
+      "git_blob_sha256": "8cdc5fd5d88ca5097e8b233afca6a509c1dfd81f0b4a2bc9e5fadcf1c001f517",
+      "exact_after_crlf_to_lf": true
+    },
+    {
+      "path": "generic_chess/core/pieces.py",
+      "product_base": "b4108a68a7ee06327be39cb3a222939644085a52",
+      "raw_sha256": "1a4e67f31364bedb6ddb73d6f33ab1c052c2b109efda8851f8d79dd4dd204256",
+      "git_blob_sha256": "d5f71951902d98df50319bdad4cece4d9f9a7455872bf07b59ce06d0c2894d23",
+      "exact_after_crlf_to_lf": true
+    },
+    {
+      "path": "generic_chess/core/transition.py",
+      "product_base": "b4108a68a7ee06327be39cb3a222939644085a52",
+      "raw_sha256": "80a01f61bac9db9907326017425da9ac4beec03efa6359a1066492d0f60dd7a8",
+      "git_blob_sha256": "1f21e56630057a13102b83c9fe0616301a7a4699bbd345158d4c67c45a3e8682",
+      "exact_after_crlf_to_lf": true
+    },
+    {
+      "path": "generic_chess/core/actions.py",
+      "product_base": "b4108a68a7ee06327be39cb3a222939644085a52",
+      "raw_sha256": "30408660df4cd53d54271b1d719b0844f5574723134c48e20831ed18fdabd8bc",
+      "git_blob_sha256": "428b49e8e8b37470f1fce1147fb4f12618d16f27ab35459f124140afea2bf285",
+      "exact_after_crlf_to_lf": true
+    },
+    {
+      "path": "generic_chess/core/adjudication.py",
+      "product_base": "b4108a68a7ee06327be39cb3a222939644085a52",
+      "raw_sha256": "365dccdb3b0069cf3b0aeb7c5abac9f0c7ef75f7833cf35e24c45fb3cb12ad88",
+      "git_blob_sha256": "d8ef273b4e776ffe565d3c0ebde0dfec4eb21bb18441ce88ef0698592fd137fa",
+      "exact_after_crlf_to_lf": true
+    },
+    {
+      "path": "generic_chess/rules/compiled.py",
+      "product_base": "b4108a68a7ee06327be39cb3a222939644085a52",
+      "raw_sha256": "919b22c97f0c0c0112c74fde7ff07b8adfb77aaa54a5b89edf66d319c1d01b94",
+      "git_blob_sha256": "139180ec703686787a4cfd25532cce262d469474eebe8ca057efdacc09803068",
+      "exact_after_crlf_to_lf": true
+    }
+  ],
+  "dependencies": [
+    {
+      "output": "results\\dev_aux\\task043\\hybrid_overlap.json",
+      "field": "candidate_raw_sha256",
+      "input": "results/dev_aux/task033/candidate_function.py",
+      "raw_sha256": "b34af78bba3bd6b6175666d878833f5054513c46889d505c7553ee1ba56957c1",
+      "exact": true
+    },
+    {
+      "output": "results\\dev_aux\\task043\\hybrid_overlap.json",
+      "field": "iterator_counter_raw_sha256",
+      "input": "results/dev_aux/task046/iterator_counter.py",
+      "raw_sha256": "ddba64e37cb9d703dc513d9ee1735a7e364b2837529b723180a8654286d19302",
+      "exact": true
+    },
+    {
+      "output": "results\\dev_aux\\task044\\frontier_recovery.json",
+      "field": "shared_source_sha256",
+      "input": "results/dev_aux/task025/compiled_effect_shared.py",
+      "raw_sha256": "bceefeec2483a0b43e6a04cc42072cfbe1a62c0049c9b88314732dd210b632a7",
+      "exact": true
+    },
+    {
+      "output": "results\\dev_aux\\task044\\frontier_recovery.json",
+      "field": "fixture_source_sha256",
+      "input": "results/dev_aux/task040/deferred_square.py",
+      "raw_sha256": "c22d1ab6239edb40012897e22fa5e76b672776262044ac7d97b7e6077b04cfc4",
+      "exact": true
+    },
+    {
+      "output": "results\\dev_aux\\task045\\current_type_child.json",
+      "field": "candidate_raw_sha256",
+      "input": "results/dev_aux/task033/candidate_function.py",
+      "raw_sha256": "b34af78bba3bd6b6175666d878833f5054513c46889d505c7553ee1ba56957c1",
+      "exact": true
+    },
+    {
+      "output": "results\\dev_aux\\task046\\termination_work.json",
+      "field": "original_derivation_sha256",
+      "input": "results/dev_aux/task038/DERIVATION.md",
+      "raw_sha256": "ea1e4749fd1bce10555bf382780d012f01ef56217b31e881258821f760ed777f",
+      "exact": true
+    },
+    {
+      "output": "results\\dev_aux\\task047\\s4_recovery.json",
+      "field": "shared_source_sha256",
+      "input": "results/dev_aux/task025/compiled_effect_shared.py",
+      "raw_sha256": "bceefeec2483a0b43e6a04cc42072cfbe1a62c0049c9b88314732dd210b632a7",
+      "exact": true
+    },
+    {
+      "output": "results\\dev_aux\\task047\\s4_recovery.json",
+      "field": "fixture_source_sha256",
+      "input": "results/dev_aux/task044/frontier_recovery.py",
+      "raw_sha256": "58393c4edb0b7fde08fe1a47f18b799466407bbd3b40b1ad267fd10701994ce9",
+      "exact": true
+    },
+    {
+      "output": "results\\dev_aux\\task048\\public_core_history.json",
+      "field": "shared_source_sha256",
+      "input": "results/dev_aux/task025/compiled_effect_shared.py",
+      "raw_sha256": "bceefeec2483a0b43e6a04cc42072cfbe1a62c0049c9b88314732dd210b632a7",
+      "exact": true
+    },
+    {
+      "output": "results\\dev_aux\\task048\\public_core_history.json",
+      "field": "fixture_source_sha256",
+      "input": "results/dev_aux/task045/current_type_child.py",
+      "raw_sha256": "89cc22547119a48e34e2d8b4d5c04189030cd673fccf336f1bfa83ead0838d01",
+      "exact": true
+    },
+    {
+      "output": "results\\dev_aux\\task050\\public_successors.json",
+      "field": "fixture_source_sha256",
+      "input": "results/dev_aux/task048/public_core_history.py",
+      "raw_sha256": "ad7419c59378e480bd75038cb2d268aea615e0f08f23758d1d5ae8957807fc83",
+      "exact": true
+    },
+    {
+      "output": "results\\dev_aux\\task051\\history_consumer.json",
+      "field": "fixture_source_sha256",
+      "input": "results/dev_aux/task048/public_core_history.py",
+      "raw_sha256": "ad7419c59378e480bd75038cb2d268aea615e0f08f23758d1d5ae8957807fc83",
+      "exact": true
+    },
+    {
+      "output": "results\\dev_aux\\task052\\drop_lifecycle.json",
+      "field": "fixture_source_sha256",
+      "input": "results/dev_aux/task048/public_core_history.py",
+      "raw_sha256": "ad7419c59378e480bd75038cb2d268aea615e0f08f23758d1d5ae8957807fc83",
+      "exact": true
+    },
+    {
+      "output": "results\\dev_aux\\task053\\carrier_fallback.json",
+      "field": "shared_source_sha256",
+      "input": "results/dev_aux/task025/compiled_effect_shared.py",
+      "raw_sha256": "bceefeec2483a0b43e6a04cc42072cfbe1a62c0049c9b88314732dd210b632a7",
+      "exact": true
+    },
+    {
+      "output": "results\\dev_aux\\task053\\carrier_fallback.json",
+      "field": "fixture_source_sha256",
+      "input": "results/dev_aux/task048/public_core_history.py",
+      "raw_sha256": "ad7419c59378e480bd75038cb2d268aea615e0f08f23758d1d5ae8957807fc83",
+      "exact": true
+    }
+  ],
+  "parsed": [
+    "results\\dev_aux\\task043\\draft_before_entry_review.py",
+    "results\\dev_aux\\task043\\hybrid_overlap.json",
+    "results\\dev_aux\\task043\\hybrid_overlap.py",
+    "results\\dev_aux\\task044\\frontier_recovery.json",
+    "results\\dev_aux\\task044\\frontier_recovery.py",
+    "results\\dev_aux\\task045\\current_type_child.json",
+    "results\\dev_aux\\task045\\current_type_child.py",
+    "results\\dev_aux\\task046\\iterator_counter.py",
+    "results\\dev_aux\\task046\\termination_work.json",
+    "results\\dev_aux\\task046\\termination_work.py",
+    "results\\dev_aux\\task047\\s4_recovery.json",
+    "results\\dev_aux\\task047\\s4_recovery.py",
+    "results\\dev_aux\\task048\\public_core_history.json",
+    "results\\dev_aux\\task048\\public_core_history.py",
+    "results\\dev_aux\\task049\\resource_launch.py",
+    "results\\dev_aux\\task050\\public_successors.json",
+    "results\\dev_aux\\task050\\public_successors.py",
+    "results\\dev_aux\\task050\\public_successors_before_container_correction.py",
+    "results\\dev_aux\\task051\\history_consumer.json",
+    "results\\dev_aux\\task051\\history_consumer.py",
+    "results\\dev_aux\\task052\\drop_lifecycle.json",
+    "results\\dev_aux\\task052\\drop_lifecycle.py",
+    "results\\dev_aux\\task052\\drop_lifecycle_before_action_field_correction.py",
+    "results\\dev_aux\\task053\\carrier_fallback.json",
+    "results\\dev_aux\\task053\\carrier_fallback.py",
+    "results\\dev_aux\\task054\\source_binding.json"
+  ],
+  "limits": "AST parsing retained unexecuted wrong-entry draft is not an execution pass. Hash binding proves bytes, not semantic completeness/performance or Dot execution."
+}

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\wdai\Documents\ChatGPT\GenericChess-DEV_AUX\results\dev_aux\task052\drop_lifecycle.py", line 27, in <module>
+    else:chosen=[a for a in frontier if env['action_to_dict'](a)['kind']=='semantic_drop' and a.type_id=='A' and a.to_square==env['Square'](1,1)]
+                                                                                              ^^^^^^^^^
+AttributeError: 'SemanticDropMove' object has no attribute 'type_id'

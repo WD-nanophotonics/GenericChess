@@ -1,0 +1,21 @@
+{
+  "complete": true,
+  "primary_revision": "ee48d0a55c7bda3d702f45ce2dc4162cc3bbc0ac",
+  "path": "docs/research/AVAILABILITY_AND_Q_EXECUTION.md",
+  "git_blob_sha256": "4d34c7515ce72eb9695f8027a692e48e539eddc71f008332d6cd84cd9ffe0cea",
+  "scope": "Fixed primary report source read only; no auxiliary experiment replay or independent numerical execution",
+  "additional_source_reads": [
+    {
+      "primary_revision": "ee48d0a55c7bda3d702f45ce2dc4162cc3bbc0ac",
+      "path": "docs/research/SEARCH_BACKEND_ATTRIBUTION.md",
+      "git_blob_sha256": "653b49def311b36f8cf393f7ba55fb55c35f61d34e56a661d2d3afcc01bd8e0b",
+      "source_read_only": true
+    },
+    {
+      "primary_revision": "ee48d0a55c7bda3d702f45ce2dc4162cc3bbc0ac",
+      "path": "scripts/search_backend_comparison.py",
+      "git_blob_sha256": "6bcff770357d8d4f5f48330d14283a5feb5206bd4141526a04e28a7d0c3abaf7",
+      "source_read_only": true
+    }
+  ]
+}

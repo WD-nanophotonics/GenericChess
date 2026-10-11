@@ -211,3 +211,12 @@ Recovery: docs/operations/REBUILD_20261003.md.
 
 Repository layers and isolated historical recovery: docs/operations/REPOSITORY_LAYOUT.md.
 Default pytest covers the four active test layers; old receipt tests are history.
+
+## User update 2026-10-11: ordinary concurrency
+
+Ordinary concurrent projects and Agents on this computer are allowed. Do not
+request CPU quiet windows, pause independent work, or classify ordinary overlap
+as a collaboration failure. Protect separate checkout files and running computation
+state; act on direct boundary violations or damage. Record relevant measurement
+conditions as interpretation limits without adding coordination gates or automatic
+reruns. This user instruction supersedes earlier CPU-solitude wording.
