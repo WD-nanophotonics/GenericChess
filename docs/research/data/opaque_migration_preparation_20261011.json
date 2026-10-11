@@ -1,0 +1,81 @@
+{
+  "purpose": "Opaque imported-history migration constructor/comparison failure preparation",
+  "base_sha": "558b497ba9ab4bd5464274571923959e628cbc03",
+  "archive": "docs/archive/opaque_migration_preparation_20261011/evidence.zip",
+  "archive_sha256": "f9e8c17faec033e1045de116f372ac87e8f599c76bb4786b9cfb0e536b41784d",
+  "compressed_bytes": 49093,
+  "members": [
+    {
+      "path": ".local_agent/availability-core-20261011/opaque-target-preparation-plan.json",
+      "bytes": 1381,
+      "sha256": "28304b8db48129e89421ab50c5d513a3627708ce1dde6449f00027c4758ce702"
+    },
+    {
+      "path": ".local_agent/availability-core-20261011/opaque-target-repair-decision.json",
+      "bytes": 1528,
+      "sha256": "cdf6f2b73bac7a291d8e20bf716d40259339163d9a03d2f637ca7e15d60891ba"
+    },
+    {
+      "path": ".local_agent/availability-core-20261011/opaque-target-boundary-review.json",
+      "bytes": 1456,
+      "sha256": "d0b94fc5d58e61db820819512acb74a1df614bc7e3722f65f0cabcd0663a5a7b"
+    },
+    {
+      "path": ".local_agent/availability-core-20261011/opaque-target-full-tests.json",
+      "bytes": 2555,
+      "sha256": "fce40fbf188f2a28ea6ffb0445f29c3900cde785f98f1b9291e1933f64248267"
+    },
+    {
+      "path": ".local_agent/availability-core-20261011/opaque-target-repair-tests-nested-oracle-failure.json",
+      "bytes": 8141,
+      "sha256": "79dc64b858c14e8c9ffc90d3ae63e0c46c90074f86accc2dc3ce1bcd01e9824c"
+    },
+    {
+      "path": ".local_agent/availability-core-20261011/target-tests-before-nested-oracle-repair.py",
+      "bytes": 8200,
+      "sha256": "d832c6a5fbdec9cfa46d50f65e1fbedc330f362f72bde28836874f466eb4d4c6"
+    },
+    {
+      "path": ".local_agent/availability-core-20261011/runtime-before-target-repair.py",
+      "bytes": 57343,
+      "sha256": "f871fc3f3e04fc46f136440078cbc576e90f777a89d037af65bbe7da710bddb4"
+    },
+    {
+      "path": ".local_agent/availability-core-20261011/runtime-target-first-before-comparison-repair.py",
+      "bytes": 57785,
+      "sha256": "39f7592ac788f449213f844dffebdcf100f5a940f20fc7473aa1c6f16f33426f"
+    },
+    {
+      "path": ".local_agent/availability-core-20261011/opaque-comparison-repair-decision.json",
+      "bytes": 1538,
+      "sha256": "366328b6064405998e3135b65ca14bc7122455f3e12c564e95d1fc1166a7a5ab"
+    },
+    {
+      "path": ".local_agent/availability-core-20261011/opaque-comparison-full-tests.json",
+      "bytes": 2610,
+      "sha256": "7e085613d692ea5e808c7a43019b68504af923b08d2c089bc943be6b8594a351"
+    },
+    {
+      "path": "generic_chess/core/search_runtime.py",
+      "bytes": 57992,
+      "sha256": "c93c126e0371b56df1effeb47a0063200383c0a306627d44f5d6feb82ed90a34"
+    },
+    {
+      "path": "tests/product/test_runtime_snapshot_failure_rollback.py",
+      "bytes": 11136,
+      "sha256": "4bc5237c8b80f4e833b9bc248aa59468f9ded66879ee85bb6a11f65138835562"
+    }
+  ],
+  "independent_sources": {
+    "Task014": "ffb0845ffdd3d72c4192b161de961081f05541b1/results/dev_aux/task014",
+    "Task015_016": "6ec3e20d72cd7c29febdffbff39e39e777a0165a/results/dev_aux"
+  },
+  "decision": "Retain target preparation+old-index preselection. First target-first candidate constructor acceptance and later comparison failure remain preserved. Finite one-point failure evidence, not universal OOM/natural UI claim.",
+  "validation": {
+    "focused": 71,
+    "full": 2083,
+    "full_seconds": 194.7372531001456
+  },
+  "slack_raw_included": false,
+  "source_note": "Exact product/testsource included; independent sources linked/pinned instead of copied. All included files primary Agent generated."
+}

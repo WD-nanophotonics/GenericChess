@@ -1115,21 +1115,34 @@ class SearchPathRuntime:
         old_bucket, old_entry = self._find_occurrence(old_identity, old_hash, instrument=False)
         if old_entry is None:
             raise AssertionError("opaque imported occurrence is missing")
+        # Resolve the removal index before target mutation: dataclass equality
+        # in list.remove/index can itself fail while allocating comparison tuples.
+        old_index = old_bucket.index(old_entry)
+        # Prepare target storage before journaling/removing the opaque entry.
+        # A single target-constructor failure leaves the original counts intact.
+        new_bucket = self._occurrences.get(runtime_hash)
+        new_entry = next(
+            (candidate for candidate in new_bucket or ()
+             if _identity_equal(candidate.identity, identity)), None)
+        if new_entry is None:
+            prepared_entry = _Occurrence(identity, old_entry.count)
+            if new_bucket is None:
+                self._occurrences[runtime_hash] = [prepared_entry]
+            else:
+                new_bucket.append(prepared_entry)
+        else:
+            new_entry.count += old_entry.count
+
         frame = self._frames[-1]
         frame.bridge_key = key
         frame.bridge_identity = identity
         frame.bridge_runtime_hash = runtime_hash
         frame.bridge_old_hash = old_hash
         frame.bridge_old_count = old_entry.count
-        old_bucket.remove(old_entry)
+        del old_bucket[old_index]
         if not old_bucket:
             self._occurrences.pop(old_hash, None)
 
-        new_bucket, new_entry = self._find_occurrence(identity, runtime_hash, instrument=False)
-        if new_entry is None:
-            new_bucket.append(_Occurrence(identity, old_entry.count))
-        else:
-            new_entry.count += old_entry.count
         self._opaque_imported_keys.remove(key)
         self._history_aliases[key] = identity
         self._snapshot = self._snapshot_from_occurrences()

@@ -62,6 +62,30 @@ witness avoids tracking legality/nested work; finite mixed/hash/count validation
 passes but64 fixed+4D2 caller costs remain mostly adverse; defer this witness
 without equal-time expansion.
 Evidence:RUNTIME_ROLLBACK_AND_COST.md; data/runtime_cost_controls_20261011.json.
+Subsequent hand copy-on-access64 fixed+4D2 costs remain mostly adverse;
+quietD2 ratio1.027. Evaluator shallow metadata forwarding removal retains3517
+map/score checks and8minimalD2 traces but unconditional construction breaks
+pure-semantic material-only input. Its construction-inclusive64 fixed+4D2
+costs are mixed, quietD2 ratio0.997. Defer both private candidates without
+equal-time expansion; keep individual adverse/outlier pairs and scope failure.
+Opaque imported-key migration now prepares target storage and resolves the old
+removal index before mutation. Independent constructor and later comparison
+counterexamples are retained;71 focused and2083 full active tests pass.
+Actual counts, snapshot consistency and same-instance retry are the acceptance
+boundary, not universal OOM recovery or natural UI attribution.
+Evidence:data/hand_and_metadata_cost_20261011.json.
+
+Mechanical per-pattern effect specialization preserves finite transitions,
+callbacks/mixed state and8D2 traces, including four generated inputs via the
+existing explicit semantic adapter. But64fixed+4D2 caller costs are mixed,
+quietD2 about1.000, and all reused fixed batches worsen after preparation.
+Defer it without equal-time expansion. A distinct actually built shared-kind-
+sequence prototype reduces25/155pattern code copies to6/3templates, preserving
+the same finite contracts; warm/cold caller utility remains unmeasured. Next
+ask one new preparation-versus-dynamic-operand caller question, not a full-kernel
+or generic-completion claim. Copied-global hook and uncovered effect-kind limits
+remain. Evidence:MECHANICAL_EFFECT_EXECUTION.md; data/compiled_effect_20261011.json.
+
 Latest calibration: retain typed support.max_ply provider repair. Pure semantic
 IR previously raised or disabled Native; old/repaired strict actual routes on
 the original ChessD2 and mixed512 callers retain3179/145 Native calls and exact

@@ -107,3 +107,89 @@ Remaining hand copy-on-access cost runner is prepared but unexecuted: the fixed
 resource window could not safely contain it, so its start guard stopped before
 any engine work. See hand_cost_pending_20261011.json; renew the ACK before reuse,
 without automatic window extension or a performance claim.
+
+## Subsequent hand and evaluator ownership controls
+
+The previously prepared hand caller experiment was unexecuted because its
+latest-start guard had expired. That record remains unchanged. A fresh declared
+04:25-04:30 UTC auxiliary source-only window allowed the same64 fixed512node
+calls plus4 completedD2 calls at04:25:01-04:25:42. Actual batch40.85seconds;
+all non-time decisions/work match. Seven of eight fixed-root aggregate costs
+are adverse; quiet ChessD2 ratio1.027. Shogi-drop ratio0.904 is a mixed
+short-call observation, not a deployed gain. Counter bookkeeping belongs to
+this private copy-on-access implementation's measured cost. Defer it without
+an equal-time expansion. Its setup field measures counter clearing only and
+cannot establish constructor savings.
+
+A distinct candidate reads the actual execution facade's six evaluator metadata
+fields into an evaluator-owned shallow view. It retains original pseudo_attacks
+and anchor_square helpers, friendly blockers, pin convention and legacy geometry;
+it does not replace them with an occupancy index or semantic attack authority.
+The actual facade fingerprint and board size are retained; referenced tables
+are borrowed.3517 finite map/score checks and24 foreign-fingerprint rejection
+checks agree; eight lexical minimalD2 full traces/work agree. Four generated
+4/6 seed7/21 roots and their first16 legal children remain development inputs.
+Nineteen original evaluation tests, including the original helper spies, pass
+under the constructor hook. Pytest reports a cache-write permission warning;
+this is distinct from a test failure. Raw stdout was observed in the tool result,
+while the saved helper-test record contains exit/status and scope only.
+
+The unchanged original evaluator can evaluate a material-only pure semantic
+compiled input with no legacy metadata. Unconditionally preparing the view
+instead raises AttributeError(types_by_id). Preserve this negative: finite
+weighted-legacy equivalence does not establish complete evaluator-interface
+support. No product integration or task-domain reduction follows.
+
+The construction-inclusive64 fixed+4D2 caller assay ran04:31:23-04:32:03 UTC
+inside a separately confirmed04:31-04:36 source-only window. An invocation
+before04:31 hit its guard before engine execution; retain that preflight failure.
+Actual batch39.45seconds, matched actions/scores/non-time counters,3179 accepted
+Native calls per completed quietD2 and no fallback. QuietD2 ratio0.997;
+fixed aggregates range0.891-1.470, five of eight adverse. Defer the unconditional
+view and equal-time expansion. No evaluator/q/UI defaults change.
+
+All four paired repeats remain. For both candidates, Chess-tactic aggregate
+adversity is dominated by the first candidate call15/16ms versus5ms. Shogi-drop
+aggregate favorability is dominated by baseline82/87ms and71/72ms calls,
+while other pairs are near unity. Cause is unknown. No outlier removal,
+after-result success-standard change or improved-outcome rerun was performed.
+Resource ACKs constrain DEV_AUX's work, not an atomic machine lock or a claim
+of all-machine idle. Fixed work, cost and completion utility stay distinct.
+
+Evidence: data/hand_and_metadata_cost_20261011.json,20 hashed archive members,
+with the installed-control/weighted-bridge/hand-probe sources in its declared
+prior archives. Agent-owned producer output only; no raw Slack/account records
+or user inputs. The next concrete correctness issue is the opaque imported-key
+bridge's target allocation before mutation; its source plan is retained pending
+the independent auxiliary allocator witness, without an asserted repair.
+
+
+## Opaque migration preparation and comparison boundary
+
+Independent DEV_AUX Task014 isolated a new target-occurrence constructor failure:
+the old opaque count was removed before target allocation; cleanup raised an
+AssertionError while retaining the original MemoryError in its context and lost
+one actual count. Complete-history controls did not reach that constructor.
+The primary target-first candidate restored the selected constructor boundary
+in four normal/colliding/nested controls and passed69 related/2081 full tests.
+Those results are retained, but are not complete transaction acceptance.
+
+Task016 then exposed a different operation. With an equivalent public imported
+repetition mapping reordered and exact identities sharing a forced hash bucket,
+list.remove compares an earlier dataclass occurrence before deleting the old one.
+One comparison allocation failure left the old entry present; target-first rollback
+added its count again,1 to2, while the root snapshot projected recovery. This
+counterexample is preserved at independent revision
+[6ec3e20d](https://github.com/WD-nanophotonics/GenericChess/tree/6ec3e20d72cd7c29febdffbff39e39e777a0165a/results/dev_aux/task016).
+
+The final repair locates the old removal index before any target/count/journal
+mutation, prepares target storage, then deletes the already located entry by
+index. The original bridge restoration remains. This retains the constructor
+repair and moves the allocation-capable comparison to the unmodified state.
+Two new comparison/no-fault controls check the original exception object,
+actual count multiplicity, snapshot items/digest and same-instance retry/pop.
+Prior snapshot, history, nested and collision controls remain unchanged.
+These are finite one-fault boundaries, not general persistent OOM immunity,
+asynchronous interruption safety or a reproduced natural UI incident.
+Final71 focused/2083 full active tests pass; own primary evidence:
+data/opaque_migration_preparation_20261011.json.
