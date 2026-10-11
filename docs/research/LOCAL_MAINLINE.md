@@ -85,12 +85,14 @@ the same finite contracts; new64fixed+4D2 actual caller costs are adverse on7of8
 quietD2 is1.008, with setup charged separately. Defer shared deployment and
 equal-time expansion. Select physical immutable-child publication attribution
 across all actual transition consumers, including trials outside the frontier
-wrapper; validate transparent work/state before judging leverage. No full-kernel
+wrapper: a new four-caller stack attribution finds1 initialization and119
+formal-push terminal-existence trials in both Core/hybrid arms. Include these
+consumers and validate transparent work/state before judging leverage. No full-kernel
 or dominant-cost claim follows. A separate58transition/168callback addendum covers
 shift/type/bool finite contexts for the shared variant; copied-global hook and
 full-compiler scope limits remain. Evidence:MECHANICAL_EFFECT_EXECUTION.md;
 data/compiled_effect_20261011.json; compiled_effect_extra_20261011.json;
-shared_template_cost_20261011.json.
+shared_template_cost_20261011.json; physical_outside_consumer_20261011.json.
 
 Latest calibration: retain typed support.max_ply provider repair. Pure semantic
 IR previously raised or disabled Native; old/repaired strict actual routes on

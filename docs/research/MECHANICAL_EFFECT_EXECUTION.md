@@ -145,3 +145,19 @@ a new immutable Position. Select a new physical trial-publication attribution
 question by actual consumers, including out-of-wrapper trials; first establish
 transparent work/state, then judge leverage. No mutable-kernel or dominant-cost
 claim follows from source inspection. Evidence:data/shared_template_cost_20261011.json.
+
+
+## Concrete outside-frontier consumer attribution
+
+A new stack-only measurement on four current-primary supported Shogi maxply2
+D2 plain/instrumented callers retains exact non-time decision/stat/request
+traces and actual root multiset restoration. Both arms expose120 outside-
+frontier physical trials: one `initial_state` terminal-existence scan and119
+`terminal_from_search_runtime` existence scans during formal push. These are
+actual successful `_transition` calls, distinct from119 formal transitions.
+The whole-state copy/freeze question therefore includes terminal existence
+consumers as well as legal frontier production. The finite changed measurement
+is not a timing comparison or evidence that freeze dominates; preserve both
+zero-cell source-path harness failures. Dependency setup is pinned to auxiliary
+28657a24; current primary modules are explicitly imported from cwd.
+Evidence:data/physical_outside_consumer_20261011.json.
