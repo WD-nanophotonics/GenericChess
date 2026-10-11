@@ -104,3 +104,18 @@ cases with no comparison. This supports the final scoped migration repair, not
 execution of the primary2083 tests or independent performance measurement.
 Own adoption/source hashes are archived; new auxiliary publication was not yet
 verified when these working records were read.
+
+
+## Dedicated kind coverage addendum
+
+After the original52-member archive was frozen/published, a separate declared
+shared-template contract uses existing transform/nochange/balanced public DSL
+fixtures, their normally compiled shift encodings, and4 existing bool fixtures.
+58 original transition pairs and168 callback-fault cells agree, including6 shift,
+16 set_current_type and4 set_bool effect occurrences. The compiler accepts these
+inputs normally; no capability flag or hand-built private state is substituted.
+This extends finite execution coverage of the shared variant's three previously
+uncovered kinds, retaining the earlier scope descriptions and original archive.
+It does not retrospectively validate the first per-pattern variant, all possible
+effect interactions or live module-hook compatibility. No new timing batch or
+product default follows. Evidence:data/compiled_effect_extra_20261011.json.

@@ -83,8 +83,10 @@ Defer it without equal-time expansion. A distinct actually built shared-kind-
 sequence prototype reduces25/155pattern code copies to6/3templates, preserving
 the same finite contracts; warm/cold caller utility remains unmeasured. Next
 ask one new preparation-versus-dynamic-operand caller question, not a full-kernel
-or generic-completion claim. Copied-global hook and uncovered effect-kind limits
-remain. Evidence:MECHANICAL_EFFECT_EXECUTION.md; data/compiled_effect_20261011.json.
+or generic-completion claim. A separate58transition/168callback addendum covers
+shift/type/bool finite contexts for the shared variant; copied-global hook and
+full-compiler scope limits remain. Evidence:MECHANICAL_EFFECT_EXECUTION.md;
+data/compiled_effect_20261011.json; compiled_effect_extra_20261011.json.
 
 Latest calibration: retain typed support.max_ply provider repair. Pure semantic
 IR previously raised or disabled Native; old/repaired strict actual routes on
