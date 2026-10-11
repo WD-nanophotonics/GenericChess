@@ -250,8 +250,8 @@
   "producer_dependencies": {
     "restore_from_existing_indices_at_base_sha": [
       "docs/research/data/physical_publication_20261011.json: .local_agent/physical-publication-20261011/pvs_probe.py and pvs-declaration.json",
-      "docs/research/data/completion_policy_20261011.json: .local_agent/weighted-backend-20261011/bridge.py",
-      "docs/research/data/availability_core_20261011.json: .local_agent/availability-core-20261011/semantic_profile_adapter.py and residual-function-profile.json"
+      "docs/research/data/availability_core_20261011.json: .local_agent/weighted-backend-20261011/bridge.py and .local_agent/availability-core-20261011/semantic_profile_adapter.py",
+      "docs/research/data/runtime_cost_controls_20261011.json: .local_agent/availability-core-20261011/residual-function-profile.json"
     ],
     "replay": "Extract selected existing members to their recorded repository-relative paths, then new archive; pre-fix cohorts use baseSHA source, post-fix use publication source. Native binary external environment dependency, not shipped."
   },
