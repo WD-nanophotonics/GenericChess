@@ -1,0 +1,19 @@
+{
+  "task_id": "067",
+  "declared_at": "2026-10-11T12:58:59.197080+00:00",
+  "source_pin": "bebe3d98ebb0832207e112ca0755fa9837cef3e7",
+  "candidate_revision": "08c47ddb65359b44d0e9a492f174dd019728ab18",
+  "question": "Does the exact published standalone candidate import and preserve combined boundaries, beyond builder-private class tests?",
+  "cases": [
+    "row18/0",
+    "row8/10",
+    "rejected_scale",
+    "rejected_C_profile",
+    "initial_zero",
+    "getter_copy_mutation",
+    "caller_nested_mutation",
+    "explicit_rebind"
+  ],
+  "limits": "Four D2 q0 calls max_nodes4096 max_time2s;two Python/C binding rejection controls andtwo malformed-row constructor controls;one exposed Western initial root",
+  "cost": "Expected under30s;changed artifact-loading premise;no rerun of node curves or cap extension;product unmodified"
+}

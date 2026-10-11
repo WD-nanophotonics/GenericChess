@@ -1,0 +1,10 @@
+{
+  "task_id": "068",
+  "declared_at": "2026-10-11T13:01:58.639434+00:00",
+  "question": "Does genuine public checkpoint binding reproduce rejected-capsule drift and same-ID retry suppression in the published candidate?",
+  "source_pin": "bebe3d98ebb0832207e112ca0755fa9837cef3e7",
+  "candidate_revision": "08c47ddb65359b44d0e9a492f174dd019728ab18",
+  "cases": "One genuine LearnableMaterialCheckpoint with valid rule fingerprint and unsupported compact width17;same object retry;one staged private subclass control;valid width16 checkpoint commit",
+  "limits": "D1 q0 max_nodes1000 time1s;at mostthree searches;no fault injection/training/product edit",
+  "cost": "Expected under5s;decision is candidate completeness at same existing binding entry"
+}

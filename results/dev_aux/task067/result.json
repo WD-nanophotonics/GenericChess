@@ -1,0 +1,58 @@
+{
+  "complete": true,
+  "candidate_sha256": "bed846e4ba25b07d65d97c9d32e958bbe85357d5cf97cdcc4b32ba7c06b34ab3",
+  "published_bytes_equal": true,
+  "controls": [
+    {
+      "case": "row(18, 0)",
+      "rejected": "each spatial owner/type mapping row must contain nine values"
+    },
+    {
+      "case": "row(8, 10)",
+      "rejected": "each spatial owner/type mapping row must contain nine values"
+    },
+    {
+      "case": "scale",
+      "rejected": "evaluator_scale must be an integer in [1, 1024]"
+    },
+    {
+      "case": "C_profile",
+      "rejected": "compact nonlinear evaluator profile is incomplete"
+    },
+    {
+      "case": "initial",
+      "score": 0,
+      "depth": 2,
+      "nodes": 484,
+      "qnodes": 0,
+      "termination": "completed"
+    },
+    {
+      "case": "getter_copy_mutation",
+      "score": 0,
+      "depth": 2,
+      "nodes": 484,
+      "qnodes": 0,
+      "termination": "completed"
+    },
+    {
+      "case": "caller_nested_mutation",
+      "score": 0,
+      "depth": 2,
+      "nodes": 484,
+      "qnodes": 0,
+      "termination": "completed"
+    },
+    {
+      "case": "valid_rebind",
+      "score": 100,
+      "depth": 2,
+      "nodes": 484,
+      "qnodes": 0,
+      "termination": "completed"
+    }
+  ],
+  "product_namespace_unchanged": true,
+  "session_history_unchanged": true,
+  "scope": "Exact standalone artifact import;four short D2 andfour input-rejection controls;not allocator/concurrent faults, ordering execution or full domain certification."
+}
