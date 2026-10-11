@@ -210,3 +210,98 @@ policy transfer calls; all52pairs preserve completed depth in these exposed root
 Record actual qdelivery changes and negative short-budget drop outcomes; keep
 defaults pending prospective evidence. This extends one completion decision,
 not an auxiliary duplicate, broad interface batch or renewed microtest backlog.
+
+## 2026-10-11: prospective completion tradeoffs and concrete Native input repair
+
+PRIMARY_SANDBOX froze eight new generator seeds, alternating4/8 boards and
+initial/eight-ply public random walks before search results.112calls on14available
+roots completed at4s/q4/hard8, both backends and reversed orders.56pairs show
+51equal depths,3depth losses and2gains;10returned-q gains and16action changes
+are capability differences, not strength gains. Native seed1008-ply8 losesD2
+toD1 in both orders, so the earlier five-root no-loss observation cannot support
+unconditional adoption. Two terminal walk roots were unavailable, not resampled;
+initial immediate-win D0 outcomes and qsearch hard-cap failures remain evidence.
+Primary began predeclared equal-node controls to distinguish clock boundaries
+from scheduling cost, preserving the frozen4s outcomes and all default policies.
+
+DEV_AUX published independent record/source audits at fixed
+f94667e1da69c8b853c60a7361680e7ed324458f. Task056 reuses183old calls plus2000
+existing frontiers and retains the mixed pre-fix invalid comparison. Task058
+reuses152material/q0 records, preserving the imported caller-source identity gap
+and full-Native q0 scope. Primary adopts those limits without rerunning cohorts
+or subtracting q0 clocks from q4. Task057 binds the previously exercised provider
+functions exactly to primary bebe3d98; it does not certify complete source bytes
+or repeat primary2086regressions. This resolves the draft/publication attribution.
+
+Task059 independently finds one-shot spatial-profile length n*9 versus the
+persistent/C2*n*9 contract. Primary independently reproduced two real nonzero
+mapping/vector search failures, repaired the Python-only length check, and
+verified actual search agrees with persistent scale1 evaluation. Half profiles
+remain rejected. The same nonzero scores exposed a second concrete result-label
+fault: material-only evaluator_config_hash stayed identical despite different
+spatial execution. Primary now hashes all actual leaf bindings and fixed scale1;
+old archived hashes and their limitations are unchanged.42related regressions
+pass. No Native rebuild, q4 full-Native claim, training or UI/default change.
+
+Coordination came through complete channel/thread reads and fixed-revision
+reports. Dot selected provider fallback over unsafe actor-type constant lowering;
+primary adopts that scoped reasoning and does not duplicate auxiliary repair.
+A new PRIMARY request presents the newly observed depth loss and asks for one
+next direction; delivery is not review/adoption. Ordinary concurrent work is
+normal. No observed cross-checkout writes or running-state interference, new
+Agent, pause window or routine receipt loop. Reuse avoids duplicate old-cohort
+calls, but net saved time/tokens and cooperation efficiency lack a measured
+single-Agent counterfactual. Raw Slack/account/private input stays excluded.
+
+Auxiliary evidence: https://github.com/WD-nanophotonics/GenericChess/blob/f94667e1da69c8b853c60a7361680e7ed324458f/results/dev_aux/task059/REPORT.md
+Provider source binding: https://github.com/WD-nanophotonics/GenericChess/blob/f94667e1da69c8b853c60a7361680e7ed324458f/results/dev_aux/task057/published_binding.json
+Primary completed48equal-node calls:4paired depth losses on1008-ply8 at6144
+visits, both backends/opposite orders, no extra returnedq support. Dot's complete
+new-root reply selected the1s offline comparison and warned against assumingq4
+superiority. Primary adopts that action:120calls/60pairs yield28support gains,
+4depth losses and8exact legal-reserve aborts. Defaults/UI stay fixed; unconditional
+refresh is closed. Same lexicalq4 driver then completes16D1calls on unfamiliar
+roots with equal Core/Native work/trace/score. DeclaredD2 and bounded function
+attribution are separate development controls, not repairs of frozen4s/1s failures.
+
+A new DEV_AUX root reports its audit of all104older policy records/56archive
+members and a clock-coordinate limitation. Primary read the entire new root and
+Dot reply, independently confirmed currentQPC/perf_counter versusGetTickCount64/
+monotonic implementations, and adopts the limitation: same-clock durations and
+budget identities remain usable; uncalibrated deadline minus event time is not
+exact slack. No old records are changed, cohorts rerun or clock framework added.
+This correction improves interpretation, not execution/strength certification.
+Full2088active regressions now pass; Dot's advice/source checks do not independently
+execute these primary results. Communication delivered concrete new corrections;
+no disagreement requires a coordination gate or duplicate writer. Net efficiency
+savings still lack a measured counterfactual. Fixed revision/evidence links are
+provided after reviewed publication, with raw transport/private input excluded.
+
+Primary then completes16D2 Core/Native calls and16Native-capsuleD1/D2 calls with
+exact matched work/action/score/trace. Separate function profiles select state
+transition/identity and remaining Python Position/leaf costs; overlapping spans
+are not additive gains. A bounded68leaf check finds57Python/Native evaluator
+mismatches, decomposed to feature-definition differences. Keep frozenPython leaf,
+no exposed-label fitting or unsupported full-Nativeq4 adoption. These are primary
+new experiments; auxiliary supplied the concrete entry defect and source/clock
+limitations, not execution of these batches. Actual paired costs and scopes are
+in Q4_COMPLETION_TRADEOFF.md and its hash-bound archive. Ordinary concurrent work
+requires no new monitoring or pause. Raw Slack remains private. Remaining issue:
+capsule adapter is not a complete product runtime; measure one concrete state/
+caller dependency next. Net cooperation savings remain unknown, while reusing
+old auxiliary audits avoids rerunning their original cohorts.
+
+Primary's state-dependency follow-on finds a concrete integration boundary:
+rawNative terminal rejects stalemate loss. Separate explicit Core-terminal shadow
+matches16EP/promotion/drop/history states after correcting a RuntimeSearchState
+history-view input failure. Failed declarations/source and missing partial output
+remain visible. Dual execution is compatibility evidence, not a deployable speed
+solution; no unsafe guard bypass or domain reduction. This new choice is suitable
+for Dot's technical review, not a routine auxiliary receipt or complete-backend
+claim. See the fixed-revision purpose report for adoption scope.
+
+Two primary same-driver cost controls measure Core-terminal shadow26.15/26.39s,
+with exact same action/score/work/trace, versus earlier capsule8.53/8.57s. Keep
+compatibility evidence and reject claiming this dual execution as a cost fix.
+Sequential/concurrent-load limits remain; Dot is asked for one concrete terminal
+contract direction after fixed-revision publication, without waking DEV_AUX.

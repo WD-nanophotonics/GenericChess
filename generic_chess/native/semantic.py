@@ -515,8 +515,8 @@ def semantic_iterative_search(
             )
         else:
             spatial_occupancy_values = tuple(int(value) for value in spatial_occupancy_values)
-        if len(spatial_occupancy_values) != len(expected) * 9:
-            raise ValueError("semantic spatial evaluator profile length must match type_count * 9")
+        if len(spatial_occupancy_values) != 2 * len(expected) * 9:
+            raise ValueError("semantic spatial evaluator profile length must match 2 * type_count * 9")
         if any(sum(spatial_occupancy_values[i:i + 9]) != 0 for i in range(0, len(spatial_occupancy_values), 9)):
             raise ValueError("semantic spatial evaluator rows must have zero sum")
     if localized_control_values is not None:
@@ -567,6 +567,11 @@ def semantic_iterative_search(
         "ruleset_fingerprint": native_rules.fingerprint,
         "board_values": board_values,
         "hand_values": hand_values,
+        "dynamic_values": dynamic_values,
+        "spatial_occupancy_values": spatial_occupancy_values,
+        "localized_control_values": localized_control_values,
+        "compact_values": compact_values,
+        "evaluator_scale": 1,
     }, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
     return raw
 

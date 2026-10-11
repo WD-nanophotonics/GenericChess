@@ -16,55 +16,53 @@ measure infrastructure defects when they impede these judgments. Distinguish
 rule execution, representation, repeated scheduling, algorithm optimizations,
 actual budget completion and useful decisions. No speed/Elo parity threshold.
 
-Dot reply1791715500.149859 selects bounded completion-policy comparison after
-matchedq4 backend attribution. Adopt: complete-search cost does not establish
-what the user receives before a deadline. Compare current reserve with a protected
-full shallowq4 refresh at existing limits; no q/evaluation/ordering/pruning changes,
-no default or strength promotion. Declared prototypes remain diagnostic.
-
-The retained UI question is the first-completion boundary on frozen UI99c97's
-one-second Chess path. Persistent service/controller is reproduced, but no user
-game record is supplied; a reported loss is not an independently reproduced bug.
-Keep UI frozen and distinguish configured q from completed returned q support.
+Dot reply1791720309.389569 selects a one-second delivery comparison after the
+prospective completion-policy depth loss. Completed112prospective calls,
+48equal-node controls and120offlineUI calls reject unconditional full-q4 refresh
+adoption: support gains compete with completed depth. Keep production/UI
+policies fixed; close cap-rescue/adaptive-refresh work and return to cost attribution.
+The frozenUI99c97 one-second profile is tested offline on30existing synthetic
+roots, not claimed improved end-to-end or an independently reproduced user loss.
 
 ## Current measured question
 
-New8192visit Shogi-drop trace localizes an abortedD2 prefix:1335q visits in the
-first drop child,6199q in the next king child. Equal256s reference completes
-NativeD2/q4/936 at191s, but Core remainsD1/q0/748. Exact search-key/qdepth/window contexts
-do not repeat in7716calls; board/depth repetitions alone do not justify reuse.
-No old cap is erased or uncompleted result ranked as a loss.
+The prospective seeds1001-1008 cohort shows51equal-depth/3lost/2gained pairs,
+with10q0->q4 support gains. Native1008-ply8 losesD2/q4 toD1/q4 in both orders.
+At6144visits the same loss repeats on both backends in both orders; its refresh
+uses3710visits. Larger equal caps do not erase the frozen4s result. OfflineUI1s
+shows28support gains,4depth-loss pairs and8exact-reserve refresh aborts. Changed
+actions/different-support scores are not gains in decision usefulness.
 
-Matched thin lexicalq4/hard8 completes all9D1 calls on Core/Native-legality/
-specialized backends. AtD2, ChessEP and Shogi-middle all12calls match decision,
-work and trace; drop all6are UNKNOWN at100000visits/120s. Backend cost remains
-material, while the thin driver lacks production TT/order/reserve. USI R*2a
-matches Native completedD2's generic (file1,rank8) drop, not a different action.
+A matched lexicalq4 driver on exposed1006/1008 initial/eight-ply roots completes
+all16D1 and16D2 calls with equal Core/Native work, trace, action and score.
+Native full-state capsule substitution then completes16calls with the same work
+and lower observed costs, while retaining Python recursion/evaluation. Profiles
+locate Core transition/identity and remaining Position/leaf boundary costs;
+overlapping spans are not additive speedups.68leaf controls expose57mismatches
+if Native dynamic weights replace the frozen Python evaluator: different feature
+families, no same-leaf shortcut. Raw Native terminal rejects stalemate loss in the declared builtin probe.
+An explicit Core-terminal shadow preserves16EP/promotion/drop/history states,
+but two matchedD1 calls cost26.15/26.39s versus capsule8.53/8.57s: duplicate
+Core execution has no demonstrated cost advantage. Next choose
+one terminal-authority contract that can preserve supported semantics without
+that duplicate work. Full-domain target/rawNative limits stay. Quiet rejection
+remains75-88percent, not safely skippable.
+Purpose record: Q4_COMPLETION_TRADEOFF.md; data/q4_tradeoff_20261011.json.
 
-A concrete actor-relative victim-filter defect gives Core2/Native3actions.
-Production Native legality now falls back to Core for affected move/shift/remove
-filters. Raw Native kernel remains limited. Compiler-level rejection caused
-20compile-only failures and was reverted; provider-only repair passes2086tests.
-Earlier wildcard lowering and frozen failures stay intact. This is a specific
-repair, not generated-domain certification or a new microtest backlog.
+DEV_AUX's concrete one-shot spatial input defect is repaired in Python:2*n*9
+owner rows reach nonzero search and half profiles remain rejected. A real
+same-hash/different-score failure also repairs current full leaf-binding identity;
+old hash limitations stay.42related/2088full active tests pass. One-shot remains
+q0/scale1, not full-Nativeq4. Auxiliary record/source audits are adopted with
+independence limits; clock audit restricts cross-clock deadline slack but retains
+same-clock durations, shared budget identities and actual completion evidence.
 
-The completed104-call policy comparison (48Native,40Core,16existing-generated)
-preserves completed depth on all52paired comparisons. On builtins,16/44pairs
-replace returnedq0 withq4; Coregenerated15 adds2more support changes with the
-same action/score. Drop's16s deadline completes shallowq4 on Native but notCore;
-64s completes both. Partial refresh retains exactreserve. Keep defaults: these
-5exposed roots do not establish generality or playing strength. Next predeclare
-a bounded unfamiliar-root sample to test displaced depth/abort behavior before
-choosing implementation; freeze sampling, budgets and actual backend recording.
-No return to the closed seed15 microtrace or increased failed limits.
-Purpose evidence: Q4_BACKEND_CAPABILITY.md; data/q4_iteration_20261011.json.
-Auxiliary Task055 fixedd10cc207 supplies bounded same-leaf/caller-cost evidence;
-no primary rerun or subtraction of its q0 clocks from currentq4 results.
-
-The existing q0 bridge, material-only teachers and full Native dynamic evaluator
-remain distinct routes. Mature engine launch/variant limits are retained; no
-security bypass or unexecuted comparison claim. Ordinary concurrent load is
-allowed and limits clock interpretation, not collaboration authorization.
+Earlier actor-relative filter repair remains provider-only Core fallback;
+raw Native limitations/compiler-rejection failures are preserved. Earlier drop
+trace and thin builtin q4 evidence remain in Q4_BACKEND_CAPABILITY.md, not tasks
+to repeat. Mature engine launch/variant limits stay. Full Nativeq0, material
+teachers, Native-legalityq4 and this thin driver remain distinct routes. Ordinary
+concurrent computation limits timing interpretation, not permission to continue.
 
 ## Retained long-term objectives and evidence discipline
 
@@ -99,6 +97,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Prospective fullq4 tradeoff, fixed-work/UI controls and evaluator entry repair|Q4_COMPLETION_TRADEOFF.md; data/q4_tradeoff_20261011.json|
 |Currentq4 capability, caller costs and observed wildcard capture repair|Q4_BACKEND_CAPABILITY.md; data/q4_caller_20261011.json; q4_iteration_20261011.json|
 |Same-q windows, score units, memory/q bounds, ordering and resource failure|PHASE_AWARE_SEARCH_WINDOWS.md; data/phase_aware_transfer_20261011.json|
 |Physical publication, PVS work/time and currentPython warm horizon|SEARCH_SCHEDULING_DIAGNOSTIC.md; data/physical_publication_20261011.json|
