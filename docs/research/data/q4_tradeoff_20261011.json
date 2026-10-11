@@ -5,10 +5,10 @@
   "scope": "Agent-only frozen synthetic inputs, producers/results/profiles/analyses/current source and failure disposition. RawSlack/account/private/user inputs/session/memo excluded; no default/UI changes. Instrumented profiles are diagnosis, not speed controls.",
   "archive": {
     "path": "docs/archive/q4_tradeoff_20261011/evidence.zip",
-    "bytes": 524931,
-    "uncompressed_bytes": 9591314,
-    "members": 85,
-    "sha256": "1151ec98c4e2df53a45de38bf25325943f555b8b9139fe6b0ba4e3f793e46cc1"
+    "bytes": 531347,
+    "uncompressed_bytes": 9611654,
+    "members": 92,
+    "sha256": "7ea348a20126caa8986e570b59e6c14585b1689dad2088177b72bfa82d9ffb89"
   },
   "provenance_limits": [
     "Prospective first serializer failure declaration preserved; original failed producer bytes missing.",
@@ -413,6 +413,41 @@
       "path": ".local_agent/q4-ui-offline-20261011/roots.json",
       "bytes": 3335245,
       "sha256": "f9889a4760dac510e792a93fbf3c4fd9931dfd71655c34b3befb07e6773f8fb6"
+    },
+    {
+      "path": ".local_agent/stalemate-policy-oracle-20261011-repaired/analysis.json",
+      "bytes": 502,
+      "sha256": "ba2c37ad6326efb4210a780592f0dca651d438452bd3ced59309361439434712"
+    },
+    {
+      "path": ".local_agent/stalemate-policy-oracle-20261011-repaired/declaration.json",
+      "bytes": 724,
+      "sha256": "e3885c86572239289a099de692db4a3fcfb96874d42137a0631a55803f407f9b"
+    },
+    {
+      "path": ".local_agent/stalemate-policy-oracle-20261011-repaired/producer.py",
+      "bytes": 3214,
+      "sha256": "d2b9f1f01bd46e7e2dcc580a43ebadb29560443451bfd02367a242c3ae65c737"
+    },
+    {
+      "path": ".local_agent/stalemate-policy-oracle-20261011-repaired/result.json",
+      "bytes": 12070,
+      "sha256": "a812a8c0575d8be4545d379e913e1bb23ef5d4a4ebfae4481a6404dd998fdea1"
+    },
+    {
+      "path": ".local_agent/stalemate-policy-oracle-20261011/declaration.json",
+      "bytes": 724,
+      "sha256": "e3885c86572239289a099de692db4a3fcfb96874d42137a0631a55803f407f9b"
+    },
+    {
+      "path": ".local_agent/stalemate-policy-oracle-20261011/failed-producer.py",
+      "bytes": 2811,
+      "sha256": "e856b8665b723a666b7c0bda364d0ad4f0595cbad686605a1186cd97c75ad991"
+    },
+    {
+      "path": ".local_agent/stalemate-policy-oracle-20261011/failure.txt",
+      "bytes": 295,
+      "sha256": "a56f8b8fb4456101e03f573857bb0f0a92b87b00863742418fe79d4d55879b7f"
     },
     {
       "path": ".local_agent/ui-product-20261010/games-final.json",

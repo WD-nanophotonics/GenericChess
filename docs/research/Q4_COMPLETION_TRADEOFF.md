@@ -190,3 +190,48 @@ advantage. Adopt that action/limit, then return to search attribution. Dot saw
 reported evidence, not independent execution of unpublished cohorts. Auxiliary
 source/record audits and their limits are summarized in COLLABORATION_LOG.md.
 Data/producers/failures/source scope: data/q4_tradeoff_20261011.json.
+## Next terminal-authority contract: source feasibility
+
+Source review at the published base identifies a finite implementation boundary.
+GCSemanticRules carries repetition/automatic policy but no stalemate result;
+its parser and info projection therefore cannot bind that missing policy.
+gc_semantic_terminal_status returns stalemate with no winner. Core instead
+returns the opposing winner when the configured result is loss. Removing the
+Python support guard would silently change semantics, so it is not an option.
+A mechanical extension must bind the rule field through Python payload, C-owned
+schema/parser/info and terminal winner, preserving the draw default and history.
+
+Search consumers also differ: iterative terminal scoring uses winner with
+100000000units, the older probe path special-cases checkmate at1000000 and
+otherwise returns0. The fixed Python q4 driver uses production terminal_score.
+A terminal-only capsule extension cannot certify the older probe/search scorer
+or same-leaf full-kernel comparison. Keep these interfaces separately scoped.
+Core also checks action-class/repeated-target/history adjudications with explicit
+precedence; a stalemate-field repair is not certification of those full-domain
+rules. This is inspected source feasibility, not an implemented/built repair.
+
+The specific next check is a predeclared same-state draw/loss policy pair with
+no legal actions and no check: Core terminal status/winner supplies the oracle,
+and eventual Native extension must preserve position/history and distinguish
+winner only by configured policy. Add one prior supported history precedence
+control if the changed entry actually reaches it. This prepares an observed
+support gap, not a new universal audit framework. Fresh technical request
+GC-CAPSULE-AUTHORITY-20261011-1249 links the published results/collaboration record;
+complete reply1791723084.469589 selects a mechanical shared Native policy/winner
+extension and rejects the duplicated Core bridge. Adopt: keep true policy and
+fingerprint; test the same nolegal frontier with an existing history adjudication
+condition for precedence, then reuse EP/promotion/drop controls. No new performance
+batch or fullq4/domain claim. Normal build/load restrictions remain, with any
+unexecuted candidate reported as such. Dot independently read fixedf667report/C/
+Python source, not rerun measurements or these later oracle outputs.
+
+The predeclared physical frontier `7k/5K2/6Q1/8/8/8/8/8 b - - 0 1`
+has no legal actions/no check under both policy variants. Recomputed Core returns
+stalemate/None for draw and stalemate/winner0 for loss; Native draw agrees and
+loss explicitly refuses. No extension/guard bypass is implemented. The existing
+FEN helper rejects an alternate Western fingerprint before loss output, so the
+separate repaired constructor reuses physical cells/aux, assigns the true new
+fingerprint and fresh initial history identity. Oracle is recomputed row.core;
+imported GameState cached terminal is not a validated search entry. Future
+mechanical-extension search must refresh that field. Frozen failures/results
+remain in separate archive members. This concrete pair prepares the next check.

@@ -43,9 +43,11 @@ if Native dynamic weights replace the frozen Python evaluator: different feature
 families, no same-leaf shortcut. Raw Native terminal rejects stalemate loss in the declared builtin probe.
 An explicit Core-terminal shadow preserves16EP/promotion/drop/history states,
 but two matchedD1 calls cost26.15/26.39s versus capsule8.53/8.57s: duplicate
-Core execution has no demonstrated cost advantage. Next choose
-one terminal-authority contract that can preserve supported semantics without
-that duplicate work. Full-domain target/rawNative limits stay. Quiet rejection
+Core execution has no demonstrated cost advantage. Dot reply1791723084.469589
+selects a minimal shared Native stalemate-policy/winner extension, with the frozen
+draw/loss oracle and one existing history precedence control. Adopt that next
+implementation check; no guard deletion, policy substitution or separateCore
+bridge. Candidate is not yet implemented/rebuilt; actual support stays scoped. Full-domain target/rawNative limits stay. Quiet rejection
 remains75-88percent, not safely skippable.
 Purpose record: Q4_COMPLETION_TRADEOFF.md; data/q4_tradeoff_20261011.json.
 

@@ -305,3 +305,19 @@ with exact same action/score/work/trace, versus earlier capsule8.53/8.57s. Keep
 compatibility evidence and reject claiming this dual execution as a cost fix.
 Sequential/concurrent-load limits remain; Dot is asked for one concrete terminal
 contract direction after fixed-revision publication, without waking DEV_AUX.
+
+The fresh primary technical request GC-CAPSULE-AUTHORITY-20261011-1249 supplies
+fixed f6675ee423c4f417ea961a242c91ae3580d37e86 result/collaboration links to Dot.
+Delivery is observed; a complete read currently has no reply, so no new advice
+is claimed adopted. Source review independently identifies the missing C-owned
+stalemate policy and distinct iterative/probe terminal score consumers. Prepare
+a finite policy pair instead of deleting a guard or duplicating whole runtimes.
+
+Dot's complete new-root reply1791723084.469589 independently reviews fixedf667
+report and terminal/guard source, selects the mechanical shared Native policy/
+winner extension, and rejects a second Core terminal system. Primary adopts one
+finite draw/loss plus existing-history-precedence check and reuse of EP/promotion/
+drop controls; no new performance batch or full-domain claim. A frozen Core oracle
+is already prepared, but no policy implementation/binary rebuild is claimed.
+The earlier pending read remains historical evidence; full reply was saved before
+adoption. No routine acknowledgment or request to DEV_AUX is needed.
