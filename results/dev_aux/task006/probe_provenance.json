@@ -1,0 +1,30 @@
+{
+  "product_base": "b4108a68a7ee06327be39cb3a222939644085a52",
+  "excerpts": [
+    {
+      "producer": "representation_outcome.py",
+      "producer_sha256": "cbfb82b88c642708154e0cc3cb063ff58f4cf0836b8403d85b004df0356b652e",
+      "function": "pushed",
+      "ast_sha256": "e35d56e5fc848946907d54bb73476a1e1e9ef1e5784820e06036b467ca42e64b"
+    },
+    {
+      "producer": "representation_outcome.py",
+      "producer_sha256": "cbfb82b88c642708154e0cc3cb063ff58f4cf0836b8403d85b004df0356b652e",
+      "function": "consume",
+      "ast_sha256": "7c37f50a18e7476285516465557367af0c094761235ea38c776599ccf37e6872"
+    },
+    {
+      "producer": "representation_outcome.py",
+      "producer_sha256": "cbfb82b88c642708154e0cc3cb063ff58f4cf0836b8403d85b004df0356b652e",
+      "function": "popped",
+      "ast_sha256": "632754877b13d7043646d9e6ddaeb3800620d0591739d4b26d387c724c48d36f"
+    },
+    {
+      "producer": "physical_outcome.py",
+      "producer_sha256": "99a317ec4d3456b2748df8738080ba86e7d78abfcbd9697a002dcee2508b1ed5",
+      "function": "stage",
+      "ast_sha256": "ad5ac32878e8cbb4f3c8f590d268f11c748c268fc69d428e63fdd0126cb4bc5a"
+    }
+  ],
+  "validation": "exact AST equality with previously verified producer functions; extraction does not execute experiments"
+}

@@ -11,7 +11,7 @@ T=r.SearchPathRuntime
 oldpath=ROOT/'results/dev_aux/task001/core_child_audit.py'
 node=next(x for x in ast.parse(oldpath.read_text()).body if isinstance(x,ast.FunctionDef) and x.name=='snapshot');oldns={}
 exec(compile(ast.Module(body=[node],type_ignores=[]),str(oldpath),'exec'),oldns);old_snapshot=oldns['snapshot']
-probe=ROOT/'.local_agent/availability-core-20261011/representation_outcome.py';timer=ROOT/'.local_agent/availability-core-20261011/physical_outcome.py'
+probe=Path(__file__).parent/'pinned_probe_functions.py';timer=probe
 c=SimpleNamespace(iteration=2,qlevel=1)
 ns={'Counter':collections.Counter,'c':c,'push':T._push_impl,'pop':T.pop,'classify':None,'stack':[],'pending':{},'totals':collections.Counter(),'peak':0}
 nodes=[x for x in ast.parse(probe.read_text()).body if isinstance(x,ast.FunctionDef) and x.name in ('pushed','consume','popped')]

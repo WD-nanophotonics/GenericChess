@@ -1,0 +1,42 @@
+{
+  "complete": true,
+  "scope": "four deliberately corrupt private-state sentinels, oracle calibration only; no natural duplicate-entry defect inferred",
+  "rows": [
+    {
+      "sentinel": "increment_existing",
+      "set_oracle_detected": true,
+      "multiset_oracle_detected": true,
+      "root_projection_changed": false,
+      "entries_before": 1,
+      "entries_after": 1,
+      "restored_after_sentinel": true
+    },
+    {
+      "sentinel": "add_fresh_child",
+      "set_oracle_detected": true,
+      "multiset_oracle_detected": true,
+      "root_projection_changed": false,
+      "entries_before": 1,
+      "entries_after": 2,
+      "restored_after_sentinel": true
+    },
+    {
+      "sentinel": "duplicate_identical",
+      "set_oracle_detected": false,
+      "multiset_oracle_detected": true,
+      "root_projection_changed": false,
+      "entries_before": 1,
+      "entries_after": 2,
+      "restored_after_sentinel": true
+    },
+    {
+      "sentinel": "move_bucket",
+      "set_oracle_detected": true,
+      "multiset_oracle_detected": true,
+      "root_projection_changed": false,
+      "entries_before": 1,
+      "entries_after": 1,
+      "restored_after_sentinel": true
+    }
+  ]
+}

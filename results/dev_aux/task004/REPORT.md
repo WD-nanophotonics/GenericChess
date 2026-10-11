@@ -27,4 +27,5 @@ claim-draw, all-rule correctness or hard-latency claim. The repetition threshold
 100000 cannot be reached by these1001-record paths. The batch was run after
 the primary's first five-minute reserved timing slot ended; its engine process
 has exited. Source product remains unchanged.
-`r`nCorrection2026-10-11 Task006: root repetition_counts is a compatibility projection. This report did not directly prove private _occurrences restoration; withdraw the full private-count claim. Task006 observes snapshot.updated fault leakage masked by that projection. Original raw data and completed child/public-terminal equivalences are preserved. See ../task006/REPORT.md.
+
+Correction2026-10-11 Task006: root repetition_counts is a compatibility projection. This report did not directly prove private _occurrences restoration; withdraw the full private-count claim. Task006 observes snapshot.updated fault leakage masked by that projection. Original raw data and completed child/public-terminal equivalences are preserved. See ../task006/REPORT.md.

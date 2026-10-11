@@ -1,0 +1,38 @@
+{
+  "complete": true,
+  "product_source_sha256": "142a79bea4f663d42baa2ceb0d3d50b0fdd933aae17434c6bf8c4000622c56eb",
+  "candidate_only_removed": [
+    "rollback_frame.bridge_key is not None"
+  ],
+  "scope": "one declared snapshot MemoryError, supported repetition_limit2; no natural failure-frequency or production deployment claim",
+  "rows": [
+    {
+      "arm": "original",
+      "action": "b1c3",
+      "private_restored_after_fault": false,
+      "retry_count": 2,
+      "runtime_terminal": "repetition",
+      "public_terminal": "ongoing",
+      "retry_board_equal": true,
+      "retry_history_length": 2,
+      "public_history_length": 2,
+      "private_restored_after_retry_pop": false,
+      "normal_terminal": "ongoing",
+      "normal_private_restored": true
+    },
+    {
+      "arm": "candidate",
+      "action": "b1c3",
+      "private_restored_after_fault": true,
+      "retry_count": 1,
+      "runtime_terminal": "ongoing",
+      "public_terminal": "ongoing",
+      "retry_board_equal": true,
+      "retry_history_length": 2,
+      "public_history_length": 2,
+      "private_restored_after_retry_pop": true,
+      "normal_terminal": "ongoing",
+      "normal_private_restored": true
+    }
+  ]
+}
