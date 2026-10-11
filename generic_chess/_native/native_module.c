@@ -432,6 +432,9 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     PyDict_SetItemString(dict, "semantic_fixed_depth_search", value);
     Py_DECREF(value);
     value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "semantic_exact_root_windows", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "semantic_material_evaluator", value);
     Py_DECREF(value);
     return dict;
@@ -4384,6 +4387,8 @@ typedef struct {
     uint64_t root_order_hint;
     int root_order_hint_present;
     int root_window_pruning;
+    uint64_t root_tie_refinements;
+    uint64_t root_tie_aborts;
     int root_hint_legal;
     uint64_t root_hint_apply_count;
     uint8_t root_iteration_attempted[GC_SEM_MAX_PLY + 1];
@@ -5397,7 +5402,10 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
                 ctx->tt_previous_iteration_hits++;
             else
                 ctx->tt_current_iteration_hits++;
-            if (!pv_node && stored_depth >= (int)depth) {
+            /* Exact-root mode preserves the current finite horizon. Deeper
+             * entries remain ordering hints, not current-depth score bounds. */
+            if (!pv_node && (ctx->root_window_pruning
+                    ? stored_depth == (int)depth : stored_depth >= (int)depth)) {
                 int score = gc_semantic_score_from_tt(
                     stored_score, ctx->root_ply_offset + ply);
                 if (stored_bound == GC_TT_BOUND_EXACT) {
@@ -5545,6 +5553,19 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
             pv_replay);
         if (ctx->control != 0) break;
         int score = -branch;
+        /* A later narrowed root child can return only an UPPER bound equal
+         * to the exact incumbent. Refine only a bound that would replace its
+         * canonical action; commit nothing if the full-window search aborts. */
+        if (ply == 0 && ctx->root_window_pruning && !root_first_child && found &&
+            score == best && !gc_semantic_is_declaration_action(best_action) &&
+            action < best_action) {
+            ctx->root_tie_refinements++;
+            branch = gc_semantic_iterative_negamax(
+                ctx, ply + 1, depth - 1, -GC_SEMANTIC_PROBE_INF,
+                GC_SEMANTIC_PROBE_INF, 1, 1);
+            if (ctx->control != 0) { ctx->root_tie_aborts++; break; }
+            score = -branch;
+        }
         int prefer_equal = score == best &&
             ((!gc_semantic_is_declaration_action(best_action) &&
               gc_semantic_is_declaration_action(action)) ||
@@ -6248,6 +6269,12 @@ static PyObject *gc_semantic_iterative_search(
     }
     memcpy(&ctx.stack[0], position, sizeof(GCSemanticPosition));
     gc_semantic_context_seed(position, ctx.history_context[0]);
+    if (ctx.root_window_pruning) {
+        /* Legacy deeper-depth score reuse and finite-depth exact-root search
+         * cannot share score entries when a persistent engine switches modes. */
+        ctx.history_context[0][0] ^= UINT64_C(0x726f6f742d657861);
+        ctx.history_context[0][1] ^= UINT64_C(0x63742d6465707468);
+    }
     uint64_t completed_pv[GC_SEM_MAX_PLY + 1];
     uint16_t completed_len = 0;
     uint64_t completed_action = 0;
@@ -6415,6 +6442,8 @@ static PyObject *gc_semantic_iterative_search(
         gc_semantic_set_u64(out, "policy_state_inferences", ctx.policy_state_inferences) != 0 ||
         gc_semantic_set_u64(out, "policy_actions_scored", ctx.policy_actions_scored) != 0 ||
         gc_semantic_set_u64(out, "policy_action_embeddings", ctx.policy_actions_scored) != 0 ||
+        gc_semantic_set_u64(out, "root_tie_refinements", ctx.root_tie_refinements) != 0 ||
+        gc_semantic_set_u64(out, "root_tie_aborts", ctx.root_tie_aborts) != 0 ||
         gc_semantic_set_u64(out, "policy_preorder_checked_transitions", ctx.policy_preorder_checked_transitions) != 0 ||
         gc_semantic_set_u64(out, "policy_traversal_checked_attempts", ctx.policy_traversal_checked_attempts) != 0 ||
         gc_semantic_set_u64(out, "policy_traversal_illegal_skips", ctx.policy_traversal_illegal_skips) != 0 ||

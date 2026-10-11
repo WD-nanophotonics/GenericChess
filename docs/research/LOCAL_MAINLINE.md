@@ -26,44 +26,33 @@ roots, not claimed improved end-to-end or an independently reproduced user loss.
 
 ## Current measured question
 
-NATIVE_Q_LEGALITY_TRANSPORT.md measures eager Native legal checks versus actual
-q consumption. A narrow readonly candidate-chunk API reuses exact S3/S4 and
-preserves order/duplicates. Chunk8 plus guarded quiet-drop exclusion costs about
-27percent less at32768nodes; full mechanical quiet-board exclusion adds about
-13percent. Generated1006/1008 and compound complete controls preserve decision,
-PV, recursive work and Core root. Core accepted history, TT, check, terminal and
-rollback stay authoritative. Initial unbatched checks were slower; compound
-chunk-only cost is adverse. No universal speedup or full-domain proof.
+AUXILIARY_Q_AND_ROOT_WINDOWS.md completes temporary auxiliary creation/expiry
+shadows and actual guarded q4 transfer. Generated1090's played slot stays0;
+1091 is the first predeclared active/no-one-ply-win root. At64s board-plus-drop
+exclusion deliversD3/q4 versus drop-onlyD2/q4 in both orders; at256s bothD3/q4.
+1090 instead stops at hardq8 with matched work, so its faster finish is cost,
+not extra support. Full Core mechanical/history/terminal authority and old caps
+remain. These are finite exposed controls, not full-domain or stronger moves.
 
-Existing ordering changes recursive work and forces eager checks:1006 is slower,
-1008 faster. Ordering the complete candidate pool before exact checks preserves
-twelve complete generated/compound decisions/work; generated costs fall7-12percent
-relative to full-legal ordering. Its24call1/4/16s curve adds no completed support.
-Board/drop eight-call64/256s likewise retains D3/q4. The original32call four-arm
-curve is recorded in the purpose report with actual budget completion. Keep all
-hooks research-only and product/UI fixed; extra partial work is not decision gain.
-Native primitive and finite regression coverage are useful reusable evidence,
-not approval to integrate a private logical-cache protocol.
+Dot selects existing material-only q0 paths before a new C q4 kernel. Final
+scores alone hid different work. A source-derived D1+D2 scheduling control
+matches accepted nodes/transitions and canonical action, but conversion/eager
+frontier/terminal costs remain distinct. The q0 system curve has minimalCoreD4
+versus C full-PVD3 at64s despite cheaper compiled execution. Algorithm matters.
 
-Prepared-child transport has only1.54percent optimistic profile-removal bound;
-existing fused classifier changes observed fixed work cost0.1-0.6percent. Defer
-those microinterfaces and caches. The existing C iterative entry reports qnodes0
-and a different evaluation; it cannot establish same-q4 executor parity. Next
-compare optimized Core scheduling on small familiar supported positions, retaining
-the existing minimal AB/q4 specialized-rule bridge and actual backend/work counters.
-A subsequent sixteen-call familiar played-root continuation preserves exact
-D2/q4 work and lowers observed cost35percent Chess/24percent Shogi. At exploratory
-4s Chess delivers D2/q4 versus drop-only D1/q0 in both orders; Shogi staysD2/q4.
-The4s boundary follows exposed costs, not holdout/strength evidence. Next test a
-small recombined auxiliary-rule transfer of the now demonstrably useful caller;
-retain mechanical effects/accepted Core history and old negative delivery curves.
-Separate scheduling, Core executor and algorithm/evaluation differences before
-larger games, a new recursive kernel or learning. AUX mature searches remain0;
-prepared pilots/mocks/greedy games are distinct evidence, not mature validation.
+A narrow repair of the existing optional C root windows refines only a tied
+UPPER bound that would replace an exact incumbent, and preserves older complete
+results on abort. Exact mode qualifies current-depth TT scores and separates
+legacy-mode entries in the existing context.17new/3compatibility and2245full
+active tests pass. Default remainsFalse, old binary guard remains, C remainsq0.
+Four completeD3 controls preserve action/PV/score with nodes876164to74414 and
+17.2to1.50s; exploratory4/16s controls deliverD3 versusD2. Do not extrapolate to
+q4 or change UI/defaults. Next inspect one actual consumer's q/evaluator/budget
+boundary before another interface or kernel. Science remains OPEN.
 
-Data: data/native_q_legality_20261012.json; data/native_q_familiar_20261012.json. Prior current detail is recoverable at
-c84a938763646bd0466983dc781e74a87329e62d. Existing PVS/minimal-q and earlier
-negative controls stay in the purpose-specific records; science remains OPEN.
+Data: data/auxiliary_q_root_20261012.json. Prior current detail is recoverable at
+6862c0bddfb359aeff391a4078927cc7dc86cc43; the separate old Native transport,
+quiet-drop/PVS, capsule and negative controls remain immutable below.
 
 ## Retained long-term objectives and evidence discipline
 
@@ -98,6 +87,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Auxiliary q transfer, actual q0 work and optional exact-root repair|AUXILIARY_Q_AND_ROOT_WINDOWS.md; data/auxiliary_q_root_20261012.json|
 |Native candidate-chunk legality, quiet-board guards and ordered scheduling|NATIVE_Q_LEGALITY_TRANSPORT.md; data/native_q_legality_20261012.json|
 |Quiet-drop exclusion, semantic PVS transfer and actual minimal-q executor attribution|QUIET_DROP_AND_PVS.md; data/quiet_drop_20261012.json|
 |Core availability, supplied-history transport, public delivery and exact token costs|CORE_AVAILABILITY_COST.md; data/core_availability_20261012.json|

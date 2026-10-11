@@ -477,7 +477,7 @@ def probe_search(native_rules, position, depth: int, *, board_values=None, hand_
 
 
 def _require_root_window_support(enabled: bool) -> None:
-    if enabled:
+    if enabled and not _module().native_capabilities().get("semantic_exact_root_windows", False):
         from .compiler import NativeUnsupportedRuleError
         raise NativeUnsupportedRuleError(
             "Native root-window pruning can select an inexact tied bound; "

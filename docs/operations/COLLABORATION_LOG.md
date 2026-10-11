@@ -692,3 +692,39 @@ back in the original technical thread (eleven posts, complete pagination).
 This establishes delivery, not Dot response/review/adoption. Earlier rejected
 results remain unretried. Only this Agent-written summary is published; raw Slack
 and account records remain private. No extra Agent or job remains running.
+
+## 2026-10-12 Auxiliary transfer and narrow exact-root repair
+
+PRIMARY validates actual one-turn auxiliary creation/expiry and guarded q4
+search;1090's supposed active state is corrected to0,1091 selected by a fixed
+playability filter supplies real1.32q4 budget calls preserve caps; active1091
+crosses64sD2 toD3/q4, while default1090 at256s stops hardq8 with the same work.
+No stronger-move/full-domain or default/UI claim. Existing q0 system paths and
+source-aligned D1+D2 work separate algorithm/evaluation/executor costs; full-PV
+C can complete less depth despite cheaper execution. The old exact selected-child
+EP failure motivates a narrow existing-option repair, not a new C search kernel.
+
+Dot's new-root request075038 and distinct AGENT_REQUEST followup2326 both get
+complete replies. Adopt existing-path comparison, real work/ownership/mate-scale
+checks, deeper-to-shallower TT and outer abort publication. Refinement bypasses
+TT; exact mode also uses current-depth eligibility and an existing-context mode
+salt to exclude legacy entries. DefaultsFalse/old-binary guard remain.20targeted
+and2245full tests pass;17new cases include EP exact child, budget aborts,
+cold/reused/deep/shallow/mode TT and promotion/aux/compound effects. Rebuilt Native
+is separate from old measured binaries; no live calculation is changed by rebuild.
+
+DEV_AUX prior fixed1cc71b9c contribution/scope stays: mature execution0,
+prepared/mocked/greedy evidence separate. No new AUX result/dependency was invented,
+no routine wake, receipt loop, cross-writes or additional worker. Dot independently
+reads the fixed old reports, not the new C patch or experiments. Communication
+is substantive request/reply plus pinned evidence; latency/whole-team net time
+saving is unmeasured. Shared-account labels are routing, not process authentication.
+
+Corrections retain the initial shadow parent-stack assertion, serializer and
+wrong assumed active phase, evaluator tuple-profile mistake, wrong abort reason
+and depth0 fallback used as leaf evaluator. No failed result is reclassified as
+independent success; raw host-path logs and Slack/account inputs remain private.
+The actual option comparison preserves D3 canonical action/PV/score while reducing
+nodes876164 to74414 and observed cost17.2 to1.50s;4/16s exploratory controls deliver
+D3 versusD2. Earlier failures, caps and q0/q4 differences remain visible in the
+new purpose report and immutable evidence, with no automatic product promotion.
