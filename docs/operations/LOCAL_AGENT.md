@@ -361,6 +361,34 @@ fetches, checks fast-forward ancestry, runs the chosen tests, pushes and verifie
 the full remote SHA. Direct git push is rejected by the existing repository
 hook; do not bypass it. A full passing regression may precede the focused checks
 required by this publication entry.
+
+### Repository visibility and private access acceptance —2026-10-11
+
+The user authorized changing WD-nanophotonics/GenericChess to PRIVATE and
+continuing through authenticated GitHub access. The visibility change and
+local authenticated reads succeeded; verify dot's connected access separately
+instead of treating a public URL or local access as proof of remote access.
+Record the actual branch SHA, source read and any access error. A pending reply
+is not a failed access test. The user permits restoration to PUBLIC if this
+attempt actually fails; retain the failure evidence and distinguish conversion,
+local transport and advisor access. Do not change credentials or add workers.
+The attempt actually failed advisor acceptance: its existing GitHub connection
+returned404 for the branch and two source reads. The local Agent restored PUBLIC
+under this specific user-authorized rollback. An initial Git403 after restoration
+was followed by successful Git/API branch reads; repository metadata reported
+disabled=false. Keep that transient failure distinct from advisor's private404.
+PUBLIC is the current verified mode; no automatic retry of visibility changes.
+Advisor's existing connector then independently read sandbox
+9146a2e5b06e3349a588a8dd1abc05cab5d0a78c and native_legality.py at that SHA;
+reported blob156d129bf450b9a4de28e8feea26be73f80c0b77 matches local Git.
+This accepts restored PUBLIC reads, not private access or an actual push.
+Future private acceptance must separately record visibility source/date, local
+read, advisor's actual branch SHA and fixed-SHA file read, and tested publication.
+Do not infer push acceptance from read-only checks. Connector scope/identity is a
+possible cause of404, not a proven diagnosis; never copy credentials to repair it.
+Private visibility does not change publication tests, full-SHA verification,
+data exclusions, stops, research duration or long-run consultation rules.
+
 Recovery/isolation evidence remains REBUILD_20261003.md; never import old
 App databases, credentials, Goals or retired queues. Do not touch other projects.
 

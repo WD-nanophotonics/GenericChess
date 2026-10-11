@@ -1123,6 +1123,20 @@ class SemanticEngine:
 
     # ------------------------------------------------------- legality
 
+    def _pattern_is_drop(self, pattern) -> bool:
+        # Classification depends only on immutable geometry IDs in this IR.
+        # Tuple keys also survive serialization; replacement rebuilds the table.
+        # Foreign/missing entries retain the original mixed-geometry meaning.
+        kinds = self.semantic._pattern_drop_kinds
+        if kinds is not None:
+            kind = kinds.get(pattern.geometry_ids)
+            if kind is not None:
+                return kind
+        return any(
+            self.ir.geometry[g].kind == "drop"
+            for g in pattern.geometry_ids if g in self.ir.geometry
+        )
+
     def _iter_candidates(
         self, pattern, position: Position, checkpoint: Checkpoint | None = None,
         sources_by_owner_type=None,
@@ -1134,11 +1148,7 @@ class SemanticEngine:
         legality and the reply probe (B-3: one S0-S3 machinery)."""
         side = position.side_to_move
         _checkpoint(checkpoint)
-        is_drop = any(
-            self.ir.geometry[g].kind == "drop"
-            for g in pattern.geometry_ids
-            if g in self.ir.geometry
-        )
+        is_drop = self._pattern_is_drop(pattern)
         if is_drop:
             yield from self._iter_drop_candidates(
                 pattern, position, side, checkpoint=checkpoint
@@ -1466,11 +1476,7 @@ class SemanticEngine:
         sources_by_owner_type = None
         for pattern in self._patterns:
             _checkpoint(checkpoint)
-            is_drop = any(
-                self.ir.geometry[g].kind == "drop"
-                for g in pattern.geometry_ids
-                if g in self.ir.geometry
-            )
+            is_drop = self._pattern_is_drop(pattern)
             if not is_drop and sources_by_owner_type is None:
                 sources_by_owner_type = _sources_by_owner_type(position)
             for action, binding in self._iter_candidates(
@@ -1523,11 +1529,7 @@ class SemanticEngine:
             )
         for pattern in self._patterns:
             _checkpoint(checkpoint)
-            is_drop = any(
-                self.ir.geometry[g].kind == "drop"
-                for g in pattern.geometry_ids
-                if g in self.ir.geometry
-            )
+            is_drop = self._pattern_is_drop(pattern)
             if not is_drop and sources_by_owner_type is None:
                 sources_by_owner_type = _sources_by_owner_type(position)
             for action, binding in self._iter_candidates(

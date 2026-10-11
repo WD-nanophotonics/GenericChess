@@ -24,51 +24,28 @@ actual Core/Native/fallback, configured/effective limits and returned/committed
 action. Small declared games locate candidate losses; fixed-state/history
 replay attributes them. Keep the UI branch frozen during sandbox research.
 
-Latest choice: retain additive completed-result source/ordinary-q/hard-check-q
-metadata, separate from stop reason or a cached uniform-horizon certificate.
-The private D1q0-D2q1 ladder gives4better/5worse on30old weighted parents and
-displaces usable warm q4 completions: defer it. Frozen1046evaluation-input replay
-shows feature compute is a small fraction of observed caller cost; numerical
-feedback changes the tree. Weighted minimalCore/hybrid/specialized alignment
-retains finite backend gaps1.98-11.96x, while actual public q4 keepsD1 at1sec.
-Static-q0 D2 agrees on eight aligned roots; it is a cheap control, not a generic
-tactical deployment proposal. Quiet qclassification rejects1483-2057candidates
-per512node control; predicate time is small, child execution dominates. Native
-legality saves about14-19percent here without another layer; ordered-q and
-root-scan removal do not improve the old queen labels. Next choose one scoped
-semantics-safe candidate-support or completion-allocation mechanism, keeping
-checked/history semantics and warm opportunity cost. No default/UI change.
-A typed auxiliary identity repair now separates imported bool/int values in
-delta hashes, exact TT/occurrence/history guards and nested logical defaults.
-Declared bool effect operands are rejected: this is an imported-state contract,
-not an observed generated-rule or natural-hash-collision playing defect.
-Whole-board projection retains15122independent old-map hash/public-state
-children and275actual recombined lifecycle children; matched weighted/hybrid
-controls save modest fixed work cost but retain budgeted choices/completions.
-Caller RuntimeError checkpoint exceptions now propagate through S3 trials;
-actual transition failures still reject candidates. Production SearchAborted
-already propagated in733injected controls. No q/evaluator/UI default change.
-Native complete-frontier proxy is2-29xslower on ongoing means and cannot supply
-pre-adjudication availability: max-ply checked/quiet and actual checked repetition
-reject the private eager-frontier route. Current product terminal authority stays.
-Dot review selects stage/cost attribution first:9431actual availability calls are
-pre-adjudication with zero same-frame repeats; prerecorded fixed-work replay has
-optimistic cost opportunity but no implementable cache/kernel or equal-time gain.
-Next bound a pure-availability interface's supported semantics and cost opportunity;
-do not rebuild the blocked DLL or revive old prefix/full-frontier cache negatives.
-Actual automatic checking continuation can remainONGOING at max_ply; current
-Native frontier was empty despite two legal Core replies. A selected optional
-per-state provider capability now makes this a normal Core fallback in strict
-and ordinary modes, preserving history, actions and undo without disabling
-support below the boundary. A separate imported Shogi pawn-drop control finds
-the S4 reply cutoff one ply earlier (75Native vs76Core actions at max_ply1,
-76both at2). Capability also excludes the last pre-limit ply for mechanically
-detected no_legal_reply patterns; full-set/child/undo adjacent-limit tests pass.
-Existing Native S0 plus individual checked-make early exit agrees on118states
-but costs1.03-2.15xCore on ongoing root/child aggregates (quiet terminals0.39x).
-Reject that wrapper too. Next attribute Core first-action trial/guard/attack/
-allocation costs before any narrower proposal; preserve boundary fallback and
-distinguish imported/played controls. Final2049active tests pass.
+Latest choice: retain the small compile-owned geometry-tuple drop classification,
+with unchanged current guards, S3/S4, checkpoint order and terminal authority.
+Final2063active tests pass.59392availability queries improve locally0.825-0.965x;
+64fixed caller controls are mixed0.816-1.004x and64existing time calls keep
+choices/completed depths. Constructor setup costs and owned632/2264bytes remain.
+Generated/mixed and adjacent Native boundary actual callers preserve finite work.
+Quiet-q classification and recursion already share formal children. On the old
+weighted quiet root, interrupted iteration2 dominates work; eager legality then
+lexical traversal gives zero immediate single-child handoff matches. Defer that
+handoff, no eager/cross-state frontier cache. Private2048typed-token memo preserves
+275mixed lifecycle children and typed alias checks but has adverse cases and no
+deeper completion in64time controls; defer product memo. Same minimal-AB D2
+Core/hybrid/specialized bridge retains a substantial residual gap even with memo.
+End this availability microdispatch round. A new one-root completedD2 curve uses
+213/1050/8010nodes for ordinary-q0/1/4 with different scores; q4 costs6.8seconds
+and its qdepth3 alone rejects22946formal children. Exact action-signature encoding
+about0.24seconds does not motivate a lazy-history-only solution; defer it. Next map
+terminal/check/history facts for a two-phase nonretained-child execution boundary,
+with fixed evaluation/q/history and actual backend. Keep physical rule execution,
+representation and interrupted work separate. Do not
+change q/evaluator/UI defaults or rebuild the Windows-blocked DLL.
+Evidence:AVAILABILITY_AND_Q_EXECUTION.md; data/availability_core_20261011.json.
 Evidence:RUNTIME_AUX_IDENTITY.md; data/runtime_aux_identity_20261011.json.
 Evidence:COMPLETION_POLICY_ATTRIBUTION.md; data/completion_policy_20261011.json.
 
@@ -226,6 +203,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Availability dispatch, quiet-q execution and representation/residual costs|AVAILABILITY_AND_Q_EXECUTION.md; data/availability_core_20261011.json|
 |Typed auxiliary collision/history/hash identity, whole-board projection and S3 callback origin|RUNTIME_AUX_IDENTITY.md; data/runtime_aux_identity_20261011.json|
 |Retained-result metadata, weighted completion/backend and negative allocation controls|COMPLETION_POLICY_ATTRIBUTION.md; data/completion_policy_20261011.json|
 |Generated semantic bridge, typed alias attribution and alternate history|GENERATED_SEMANTIC_BRIDGE.md; data/generated_semantic_bridge_20261011.json|

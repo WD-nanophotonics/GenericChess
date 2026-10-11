@@ -685,11 +685,19 @@ class CompiledSemanticRuleset:
     _incoming_attack_sources: Any = field(init=False, repr=False, compare=False, default=None)
     _fixed_transition_triggers: Any = field(init=False, repr=False, compare=False, default=None)
     _actor_capture_patterns: Any = field(init=False, repr=False, compare=False, default=None)
+    _pattern_drop_kinds: Any = field(init=False, repr=False, compare=False, default=None)
 
     def __post_init__(self):
         # Derived execution data is not part of the IR/fingerprint/payload.
         # init=False also rebuilds it when dataclasses.replace changes IR.
         if self.support is not None and self.ir.capabilities.new_ir_core_executable:
+            object.__setattr__(self, "_pattern_drop_kinds", {
+                pattern.geometry_ids: any(
+                    self.ir.geometry[g].kind == "drop"
+                    for g in pattern.geometry_ids if g in self.ir.geometry
+                )
+                for pattern in self.ir.patterns
+            })
             object.__setattr__(self, "_actor_capture_patterns",
                 _actor_capture_patterns(self.ir))
             object.__setattr__(self, "_incoming_attack_paths",
