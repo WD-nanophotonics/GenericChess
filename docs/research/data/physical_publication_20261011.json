@@ -6,10 +6,10 @@
   "scope": "Agent scientific producers/declarations/results/failures, explicit two adapters; no rawSlack, account/ACK receipts, user/private inputs, session/memo or credential files. Source reconstruction uses fullGit pin; installedNative binary not published.",
   "archive": {
     "path": "docs/archive/physical_publication_20261011/evidence.zip",
-    "bytes": 217140,
-    "uncompressed_bytes": 2174115,
-    "members": 103,
-    "sha256": "6ae0a10c4394d3ce31b49b9492168805619f072cad01f58d6f5df58b94d269d8"
+    "bytes": 221183,
+    "uncompressed_bytes": 2193115,
+    "members": 106,
+    "sha256": "d1536fa34818cc242c3abd6dfc2a375f4a56ac37556d236c1b0d107f2507177b"
   },
   "members": [
     {
@@ -26,6 +26,16 @@
       "path": ".local_agent/physical-publication-20261011/aspiration-analysis.json",
       "bytes": 1831,
       "sha256": "2986c8b04b416e66db3c11ec45808ded790628edd6a721049a59822178d50480"
+    },
+    {
+      "path": ".local_agent/physical-publication-20261011/aspiration-cancel-declaration.json",
+      "bytes": 654,
+      "sha256": "3fb0b8eb7f63e2e1ab58eb69c384a86daf1116e8ed4bc33c048ad58169bdad76"
+    },
+    {
+      "path": ".local_agent/physical-publication-20261011/aspiration-cancel-result.json",
+      "bytes": 15765,
+      "sha256": "d78d3eabec3442699409c94078ce33df3cef949035f0d420cda6a0ea939b81c1"
     },
     {
       "path": ".local_agent/physical-publication-20261011/aspiration-declaration.json",
@@ -71,6 +81,11 @@
       "path": ".local_agent/physical-publication-20261011/aspiration.py",
       "bytes": 1967,
       "sha256": "24d38fa38c02899c1a4868df642546a4847827f04ed44aed89f6e997f80b8373"
+    },
+    {
+      "path": ".local_agent/physical-publication-20261011/aspiration_cancel.py",
+      "bytes": 2581,
+      "sha256": "f0cc65130743d219d0ed141b2ccbc1a3354177243fd4588cc3b59e22f53c0205"
     },
     {
       "path": ".local_agent/physical-publication-20261011/aspiration_node.py",
@@ -545,20 +560,16 @@
   "recovery": "Nativeabsent promotion twoarms reproduced. Exact trackedJSON dependency required. Producer live stop authority must be supplied from authorized local project; private state excluded, never synthesize false stop flags. Timed producer requires a new current resourceACK and must not reuse expired06:30-40ACK.",
   "tests": [
     {
-      "stage": "focused product search/runtime/PV",
-      "passed": 85,
-      "failed": 0
-    },
-    {
-      "stage": "workflow first fixture setup",
-      "errors": 17,
-      "cause": "Defaulttemp permission at setup; raw account-bearing trace excluded."
-    },
-    {
-      "stage": "workflow project-local temp",
-      "passed": 17,
+      "stage": "required publisher focused search/runtime/PV/session",
+      "passed": 102,
       "failed": 0,
-      "warning": "Cachepath denied; cases passed."
+      "published_at": "f10102ee3f9ce9b28871404fa48de439f99c1283",
+      "note": "Cancellation addendum subsequently tested through same publisher targets."
+    },
+    {
+      "stage": "earlier workflow fixture default-temp",
+      "errors": 17,
+      "scope": "setup only; 17cases passed at fresh local temp; raw account-bearing trace excluded."
     }
   ],
   "engineering_cost": "True recorded transitions, cache/call/scoring statistics and observed phase times/final artifact bytes are provided. Cumulative I/O, exacttoken and total engineering costs unknown; no net saving percentage."

@@ -166,3 +166,9 @@ baseline retainsD2/8 and this candidate reachesD3/17. This is one conditional
 completion result, not elapsed-time, WDL or deployment evidence. Select a
 phase-aware window check on a different supported caller and an equal-time
 control with fresh resource coordination; do not tune width or redefine old tests.
+
+Two actual cancellation targets inside the firstD3 aspiration child, TT OFF/ON,
+retain the independent completedD2/8 action and restore actual Runtime buckets,
+snapshots/history/hash. Both hit ply1/runtime_depth1 under the narrow root
+window; these are cooperative targeted controls, not arbitrary allocation-fault
+or exact wall-deadline guarantees.
