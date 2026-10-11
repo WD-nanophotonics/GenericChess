@@ -1,0 +1,2881 @@
+{
+  "complete": true,
+  "declared": {
+    "root": "chess-middle",
+    "depth": 2,
+    "nodes": 32768,
+    "seconds": 30,
+    "q": 4,
+    "hard": 8,
+    "orders": 2,
+    "fuse_seconds": 180
+  },
+  "scope": "Same formal children grouped by actual noisy classifier. Timers nested within selected seams; exclusive excludes selected nested seams only, not all Python children. Frontier operations outside formal push are reported separately, not falsely attributed to discarded children. Instrumentation overhead measured against ordinary opposite-order pairs. No child reuse or semantic changes.",
+  "rows": [
+    {
+      "order": 0,
+      "measured": false,
+      "wall": 7.45621810015291,
+      "decision": {
+        "action": {
+          "pattern_id": "sem_02_n_quiet",
+          "geometry_id": "g12",
+          "actor_type_id": "N",
+          "from_square": {
+            "file": 5,
+            "rank": 2
+          },
+          "to_square": {
+            "file": 6,
+            "rank": 4
+          },
+          "promotion_target_id": null
+        },
+        "score": -2,
+        "principal_variation": [
+          {
+            "pattern_id": "sem_02_n_quiet",
+            "geometry_id": "g12",
+            "actor_type_id": "N",
+            "from_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "to_square": {
+              "file": 6,
+              "rank": 4
+            },
+            "promotion_target_id": null
+          },
+          {
+            "pattern_id": "sem_02_n_quiet",
+            "geometry_id": "g14",
+            "actor_type_id": "N",
+            "from_square": {
+              "file": 2,
+              "rank": 5
+            },
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            },
+            "promotion_target_id": null
+          }
+        ],
+        "completed_depth": 2,
+        "selective_depth": 2,
+        "nodes": 390,
+        "qnodes": 7620,
+        "elapsed_seconds": 7.453999999910593,
+        "tt_probes": 37,
+        "tt_hits": 1,
+        "tt_cutoffs": 0,
+        "beta_cutoffs": 30,
+        "evaluation_profile_cache_hit": false,
+        "termination_reason": "completed_depth",
+        "choice_kind": "ACTION",
+        "declaration": null,
+        "time_to_first_legal_action": 0.0,
+        "time_to_first_completed_iteration": 0.015999999828636646,
+        "qdepth_cutoffs": 2519,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "in_check_qnodes": 1376,
+        "stand_pat_cutoffs": 1958,
+        "capture_qactions": 2983,
+        "promotion_qactions": 0,
+        "checking_move_qactions": 828,
+        "checking_drop_qactions": 0,
+        "nonchecking_drop_excluded": 0,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_fail_high": 0,
+        "aspiration_researches": 0,
+        "root_scan_nodes": 35,
+        "root_scan_used_fallback": false,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "ordering_calls": 37,
+        "ordered_moves": 1389,
+        "ordering_seconds": 0.0,
+        "legal_generation_calls": 3182,
+        "legal_generation_seconds": 0.8634645002894104,
+        "evaluation_calls": 6279,
+        "evaluation_seconds": 0.5843172990716994,
+        "countermove_hits": 0,
+        "mate_pruning_cutoffs": 0,
+        "legal_actions_generated": 72224,
+        "successor_handles_created": 1389,
+        "successors_materialized": 353,
+        "successors_searched": 353,
+        "terminal_results_computed": 353,
+        "terminal_cache_hits": 0,
+        "position_keys_computed": 390,
+        "position_key_cache_hits": 353,
+        "declaration_checks": 0,
+        "declaration_win_options": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "native_legality_calls": 3179,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0,
+        "material_change_qactions": 0,
+        "result_source": "main_iteration",
+        "result_ordinary_qdepth": 4,
+        "result_check_hard_qdepth": 8
+      },
+      "peak_pending": 0,
+      "outside_formal_push": {},
+      "stages": []
+    },
+    {
+      "order": 0,
+      "measured": true,
+      "wall": 8.861255099996924,
+      "decision": {
+        "action": {
+          "pattern_id": "sem_02_n_quiet",
+          "geometry_id": "g12",
+          "actor_type_id": "N",
+          "from_square": {
+            "file": 5,
+            "rank": 2
+          },
+          "to_square": {
+            "file": 6,
+            "rank": 4
+          },
+          "promotion_target_id": null
+        },
+        "score": -2,
+        "principal_variation": [
+          {
+            "pattern_id": "sem_02_n_quiet",
+            "geometry_id": "g12",
+            "actor_type_id": "N",
+            "from_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "to_square": {
+              "file": 6,
+              "rank": 4
+            },
+            "promotion_target_id": null
+          },
+          {
+            "pattern_id": "sem_02_n_quiet",
+            "geometry_id": "g14",
+            "actor_type_id": "N",
+            "from_square": {
+              "file": 2,
+              "rank": 5
+            },
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            },
+            "promotion_target_id": null
+          }
+        ],
+        "completed_depth": 2,
+        "selective_depth": 2,
+        "nodes": 390,
+        "qnodes": 7620,
+        "elapsed_seconds": 8.859000000171363,
+        "tt_probes": 37,
+        "tt_hits": 1,
+        "tt_cutoffs": 0,
+        "beta_cutoffs": 30,
+        "evaluation_profile_cache_hit": false,
+        "termination_reason": "completed_depth",
+        "choice_kind": "ACTION",
+        "declaration": null,
+        "time_to_first_legal_action": 0.0,
+        "time_to_first_completed_iteration": 0.01500000013038516,
+        "qdepth_cutoffs": 2519,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "in_check_qnodes": 1376,
+        "stand_pat_cutoffs": 1958,
+        "capture_qactions": 2983,
+        "promotion_qactions": 0,
+        "checking_move_qactions": 828,
+        "checking_drop_qactions": 0,
+        "nonchecking_drop_excluded": 0,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_fail_high": 0,
+        "aspiration_researches": 0,
+        "root_scan_nodes": 35,
+        "root_scan_used_fallback": false,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "ordering_calls": 37,
+        "ordered_moves": 1389,
+        "ordering_seconds": 0.0,
+        "legal_generation_calls": 3182,
+        "legal_generation_seconds": 0.8656851127743721,
+        "evaluation_calls": 6279,
+        "evaluation_seconds": 0.5938185015693307,
+        "countermove_hits": 0,
+        "mate_pruning_cutoffs": 0,
+        "legal_actions_generated": 72224,
+        "successor_handles_created": 1389,
+        "successors_materialized": 353,
+        "successors_searched": 353,
+        "terminal_results_computed": 353,
+        "terminal_cache_hits": 0,
+        "position_keys_computed": 390,
+        "position_key_cache_hits": 353,
+        "declaration_checks": 0,
+        "declaration_win_options": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "native_legality_calls": 3179,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0,
+        "material_change_qactions": 0,
+        "result_source": "main_iteration",
+        "result_ordinary_qdepth": 4,
+        "result_check_hard_qdepth": 8
+      },
+      "peak_pending": 5,
+      "outside_formal_push": {
+        "transition_calls": 1,
+        "transition_inclusive_seconds": 1.00000761449337e-05,
+        "transition_exclusive_seconds": 1.00000761449337e-05,
+        "attack_calls": 1,
+        "attack_inclusive_seconds": 6.800051778554916e-06,
+        "attack_exclusive_seconds": 6.800051778554916e-06,
+        "trial_calls": 1,
+        "trial_inclusive_seconds": 2.490030601620674e-05,
+        "trial_exclusive_seconds": 8.100178092718124e-06,
+        "availability_calls": 1,
+        "availability_inclusive_seconds": 6.729969754815102e-05,
+        "availability_exclusive_seconds": 4.2399391531944275e-05,
+        "context_calls": 11,
+        "context_inclusive_seconds": 2.0700041204690933e-05,
+        "context_exclusive_seconds": 2.0700041204690933e-05,
+        "runtime_frontier_calls": 3182,
+        "runtime_frontier_inclusive_seconds": 0.857946109957993,
+        "runtime_frontier_exclusive_seconds": 0.857946109957993
+      },
+      "stages": [
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_calls",
+          "value": 70
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_exclusive_seconds",
+          "value": 0.0006617000326514244
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_inclusive_seconds",
+          "value": 0.0006617000326514244
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_calls",
+          "value": 35
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_exclusive_seconds",
+          "value": 0.0008848020806908607
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_inclusive_seconds",
+          "value": 0.0015856996178627014
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "children",
+          "value": 35
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_calls",
+          "value": 35
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_exclusive_seconds",
+          "value": 0.0011664018966257572
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_inclusive_seconds",
+          "value": 0.0011664018966257572
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_calls",
+          "value": 35
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_exclusive_seconds",
+          "value": 8.499901741743088e-05
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_inclusive_seconds",
+          "value": 8.499901741743088e-05
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_calls",
+          "value": 35
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_exclusive_seconds",
+          "value": 9.600073099136353e-06
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_inclusive_seconds",
+          "value": 9.600073099136353e-06
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_calls",
+          "value": 35
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_exclusive_seconds",
+          "value": 0.00013919873163104057
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_inclusive_seconds",
+          "value": 0.00013919873163104057
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_calls",
+          "value": 35
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_exclusive_seconds",
+          "value": 0.0002695005387067795
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_inclusive_seconds",
+          "value": 0.001855200156569481
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_calls",
+          "value": 70
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_exclusive_seconds",
+          "value": 0.0006348015740513802
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_inclusive_seconds",
+          "value": 0.0006348015740513802
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_calls",
+          "value": 35
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_exclusive_seconds",
+          "value": 0.0001218956895172596
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_inclusive_seconds",
+          "value": 0.0007008975371718407
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_calls",
+          "value": 70
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_exclusive_seconds",
+          "value": 0.00062519870698452
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_inclusive_seconds",
+          "value": 0.00062519870698452
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_calls",
+          "value": 35
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_exclusive_seconds",
+          "value": 0.0008262000046670437
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_inclusive_seconds",
+          "value": 0.0014729001559317112
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "children",
+          "value": 35
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_calls",
+          "value": 35
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_exclusive_seconds",
+          "value": 0.0010555009357631207
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_inclusive_seconds",
+          "value": 0.0010555009357631207
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_calls",
+          "value": 35
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_exclusive_seconds",
+          "value": 7.629860192537308e-05
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_inclusive_seconds",
+          "value": 7.629860192537308e-05
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_calls",
+          "value": 35
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_exclusive_seconds",
+          "value": 8.699018508195877e-06
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_inclusive_seconds",
+          "value": 8.699018508195877e-06
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_calls",
+          "value": 35
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_exclusive_seconds",
+          "value": 0.00012270081788301468
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_inclusive_seconds",
+          "value": 0.00012270081788301468
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_calls",
+          "value": 35
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_exclusive_seconds",
+          "value": 0.00023560039699077606
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_inclusive_seconds",
+          "value": 0.0017085005529224873
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_calls",
+          "value": 70
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_exclusive_seconds",
+          "value": 0.000577099621295929
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_inclusive_seconds",
+          "value": 0.000577099621295929
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_calls",
+          "value": 35
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_exclusive_seconds",
+          "value": 0.00010690046474337578
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_inclusive_seconds",
+          "value": 0.0006467001512646675
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_calls",
+          "value": 643
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_exclusive_seconds",
+          "value": 0.0053801992908120155
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_inclusive_seconds",
+          "value": 0.0053801992908120155
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_calls",
+          "value": 318
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_exclusive_seconds",
+          "value": 0.008918703999370337
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_inclusive_seconds",
+          "value": 0.015784004237502813
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "children",
+          "value": 318
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_calls",
+          "value": 318
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_exclusive_seconds",
+          "value": 0.011899505276232958
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_inclusive_seconds",
+          "value": 0.011899505276232958
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_calls",
+          "value": 318
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_exclusive_seconds",
+          "value": 0.0008697002194821835
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_inclusive_seconds",
+          "value": 0.0008697002194821835
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_calls",
+          "value": 318
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_exclusive_seconds",
+          "value": 8.660182356834412e-05
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_inclusive_seconds",
+          "value": 8.660182356834412e-05
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_calls",
+          "value": 318
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_exclusive_seconds",
+          "value": 0.001370700541883707
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_inclusive_seconds",
+          "value": 0.001370700541883707
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_calls",
+          "value": 318
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_exclusive_seconds",
+          "value": 0.002704693004488945
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_inclusive_seconds",
+          "value": 0.01848869724199176
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_calls",
+          "value": 643
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_exclusive_seconds",
+          "value": 0.006386997643858194
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_inclusive_seconds",
+          "value": 0.006386997643858194
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_calls",
+          "value": 325
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_exclusive_seconds",
+          "value": 0.0011561010032892227
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_inclusive_seconds",
+          "value": 0.006865300238132477
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "attack_calls",
+          "value": 76937
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "attack_exclusive_seconds",
+          "value": 0.6294869314879179
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "attack_inclusive_seconds",
+          "value": 0.6294869314879179
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "availability_calls",
+          "value": 35187
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "availability_exclusive_seconds",
+          "value": 0.9004527563229203
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "availability_inclusive_seconds",
+          "value": 1.7098276261240244
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "children",
+          "value": 35187
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "component_diff_calls",
+          "value": 35187
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "component_diff_exclusive_seconds",
+          "value": 1.1916039888747036
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "component_diff_inclusive_seconds",
+          "value": 1.1916039888747036
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "context_calls",
+          "value": 35187
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "context_exclusive_seconds",
+          "value": 0.08671871619299054
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "context_inclusive_seconds",
+          "value": 0.08671871619299054
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "runtime_frontier_calls",
+          "value": 35187
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "runtime_frontier_exclusive_seconds",
+          "value": 0.008649583440274
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "runtime_frontier_inclusive_seconds",
+          "value": 0.008649583440274
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "snapshot_calls",
+          "value": 35187
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "snapshot_exclusive_seconds",
+          "value": 0.13833188777789474
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "snapshot_inclusive_seconds",
+          "value": 0.13833188777789474
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "terminal_calls",
+          "value": 35187
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "terminal_exclusive_seconds",
+          "value": 0.25763140339404345
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "terminal_inclusive_seconds",
+          "value": 1.9674590295180678
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "transition_calls",
+          "value": 76937
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "transition_exclusive_seconds",
+          "value": 0.6505256150849164
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "transition_inclusive_seconds",
+          "value": 0.6505256150849164
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "trial_calls",
+          "value": 41750
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "trial_exclusive_seconds",
+          "value": 0.13225894002243876
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "trial_inclusive_seconds",
+          "value": 0.8093748698011041
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "attack_calls",
+          "value": 8918
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "attack_exclusive_seconds",
+          "value": 0.07738272566348314
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "attack_inclusive_seconds",
+          "value": 0.07738272566348314
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "availability_calls",
+          "value": 3811
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "availability_exclusive_seconds",
+          "value": 0.10134782968088984
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "availability_inclusive_seconds",
+          "value": 0.19997400930151343
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "children",
+          "value": 3811
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "component_diff_calls",
+          "value": 3811
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "component_diff_exclusive_seconds",
+          "value": 0.12574280193075538
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "component_diff_inclusive_seconds",
+          "value": 0.12574280193075538
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "context_calls",
+          "value": 3811
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "context_exclusive_seconds",
+          "value": 0.009577502496540546
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "context_inclusive_seconds",
+          "value": 0.009577502496540546
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "runtime_frontier_calls",
+          "value": 3811
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "runtime_frontier_exclusive_seconds",
+          "value": 0.0009230040013790131
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "runtime_frontier_inclusive_seconds",
+          "value": 0.0009230040013790131
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "snapshot_calls",
+          "value": 3811
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "snapshot_exclusive_seconds",
+          "value": 0.015262713190168142
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "snapshot_inclusive_seconds",
+          "value": 0.015262713190168142
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "terminal_calls",
+          "value": 3811
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "terminal_exclusive_seconds",
+          "value": 0.028033992741256952
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "terminal_inclusive_seconds",
+          "value": 0.22800800204277039
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "transition_calls",
+          "value": 8918
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "transition_exclusive_seconds",
+          "value": 0.07733769388869405
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "transition_inclusive_seconds",
+          "value": 0.07733769388869405
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "trial_calls",
+          "value": 5107
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "trial_exclusive_seconds",
+          "value": 0.015921283047646284
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "trial_inclusive_seconds",
+          "value": 0.09862617962062359
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "attack_calls",
+          "value": 7185
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "attack_exclusive_seconds",
+          "value": 0.07202877895906568
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "attack_inclusive_seconds",
+          "value": 0.07202877895906568
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "availability_calls",
+          "value": 3491
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "availability_exclusive_seconds",
+          "value": 0.09680350078269839
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "availability_inclusive_seconds",
+          "value": 0.17754221055656672
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "children",
+          "value": 3491
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "component_diff_calls",
+          "value": 3491
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "component_diff_exclusive_seconds",
+          "value": 0.13227599719539285
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "component_diff_inclusive_seconds",
+          "value": 0.13227599719539285
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "context_calls",
+          "value": 3491
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "context_exclusive_seconds",
+          "value": 0.009237601887434721
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "context_inclusive_seconds",
+          "value": 0.009237601887434721
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_calls",
+          "value": 3491
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_exclusive_seconds",
+          "value": 0.0009616212919354439
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_inclusive_seconds",
+          "value": 0.0009616212919354439
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "snapshot_calls",
+          "value": 3491
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "snapshot_exclusive_seconds",
+          "value": 0.015041209291666746
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "snapshot_inclusive_seconds",
+          "value": 0.015041209291666746
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "terminal_calls",
+          "value": 3491
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "terminal_exclusive_seconds",
+          "value": 0.027821483556181192
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "terminal_inclusive_seconds",
+          "value": 0.2053636941127479
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "transition_calls",
+          "value": 7185
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "transition_exclusive_seconds",
+          "value": 0.0702448314987123
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "transition_inclusive_seconds",
+          "value": 0.0702448314987123
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "trial_calls",
+          "value": 3694
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "trial_exclusive_seconds",
+          "value": 0.012946204282343388
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "trial_inclusive_seconds",
+          "value": 0.08073870977386832
+        }
+      ]
+    },
+    {
+      "order": 1,
+      "measured": true,
+      "wall": 8.700135999824852,
+      "decision": {
+        "action": {
+          "pattern_id": "sem_02_n_quiet",
+          "geometry_id": "g12",
+          "actor_type_id": "N",
+          "from_square": {
+            "file": 5,
+            "rank": 2
+          },
+          "to_square": {
+            "file": 6,
+            "rank": 4
+          },
+          "promotion_target_id": null
+        },
+        "score": -2,
+        "principal_variation": [
+          {
+            "pattern_id": "sem_02_n_quiet",
+            "geometry_id": "g12",
+            "actor_type_id": "N",
+            "from_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "to_square": {
+              "file": 6,
+              "rank": 4
+            },
+            "promotion_target_id": null
+          },
+          {
+            "pattern_id": "sem_02_n_quiet",
+            "geometry_id": "g14",
+            "actor_type_id": "N",
+            "from_square": {
+              "file": 2,
+              "rank": 5
+            },
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            },
+            "promotion_target_id": null
+          }
+        ],
+        "completed_depth": 2,
+        "selective_depth": 2,
+        "nodes": 390,
+        "qnodes": 7620,
+        "elapsed_seconds": 8.70299999974668,
+        "tt_probes": 37,
+        "tt_hits": 1,
+        "tt_cutoffs": 0,
+        "beta_cutoffs": 30,
+        "evaluation_profile_cache_hit": false,
+        "termination_reason": "completed_depth",
+        "choice_kind": "ACTION",
+        "declaration": null,
+        "time_to_first_legal_action": 0.0,
+        "time_to_first_completed_iteration": 0.015999999828636646,
+        "qdepth_cutoffs": 2519,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "in_check_qnodes": 1376,
+        "stand_pat_cutoffs": 1958,
+        "capture_qactions": 2983,
+        "promotion_qactions": 0,
+        "checking_move_qactions": 828,
+        "checking_drop_qactions": 0,
+        "nonchecking_drop_excluded": 0,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_fail_high": 0,
+        "aspiration_researches": 0,
+        "root_scan_nodes": 35,
+        "root_scan_used_fallback": false,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "ordering_calls": 37,
+        "ordered_moves": 1389,
+        "ordering_seconds": 0.0,
+        "legal_generation_calls": 3182,
+        "legal_generation_seconds": 0.8490690928883851,
+        "evaluation_calls": 6279,
+        "evaluation_seconds": 0.5807866198010743,
+        "countermove_hits": 0,
+        "mate_pruning_cutoffs": 0,
+        "legal_actions_generated": 72224,
+        "successor_handles_created": 1389,
+        "successors_materialized": 353,
+        "successors_searched": 353,
+        "terminal_results_computed": 353,
+        "terminal_cache_hits": 0,
+        "position_keys_computed": 390,
+        "position_key_cache_hits": 353,
+        "declaration_checks": 0,
+        "declaration_win_options": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "native_legality_calls": 3179,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0,
+        "material_change_qactions": 0,
+        "result_source": "main_iteration",
+        "result_ordinary_qdepth": 4,
+        "result_check_hard_qdepth": 8
+      },
+      "peak_pending": 5,
+      "outside_formal_push": {
+        "transition_calls": 1,
+        "transition_inclusive_seconds": 1.659989356994629e-05,
+        "transition_exclusive_seconds": 1.659989356994629e-05,
+        "attack_calls": 1,
+        "attack_inclusive_seconds": 1.0999850928783417e-05,
+        "attack_exclusive_seconds": 1.0999850928783417e-05,
+        "trial_calls": 1,
+        "trial_inclusive_seconds": 3.679981455206871e-05,
+        "trial_exclusive_seconds": 9.200070053339005e-06,
+        "availability_calls": 1,
+        "availability_inclusive_seconds": 0.0001105000264942646,
+        "availability_exclusive_seconds": 7.370021194219589e-05,
+        "context_calls": 11,
+        "context_inclusive_seconds": 2.3399945348501205e-05,
+        "context_exclusive_seconds": 2.3399945348501205e-05,
+        "runtime_frontier_calls": 3182,
+        "runtime_frontier_inclusive_seconds": 0.8416752074845135,
+        "runtime_frontier_exclusive_seconds": 0.8416752074845135
+      },
+      "stages": [
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_calls",
+          "value": 70
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_exclusive_seconds",
+          "value": 0.0006652013398706913
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_inclusive_seconds",
+          "value": 0.0006652013398706913
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_calls",
+          "value": 35
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_exclusive_seconds",
+          "value": 0.0008928016759455204
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_inclusive_seconds",
+          "value": 0.0015804003924131393
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "children",
+          "value": 35
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_calls",
+          "value": 35
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_exclusive_seconds",
+          "value": 0.0011534010991454124
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_inclusive_seconds",
+          "value": 0.0011534010991454124
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_calls",
+          "value": 35
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_exclusive_seconds",
+          "value": 8.339900523424149e-05
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_inclusive_seconds",
+          "value": 8.339900523424149e-05
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_calls",
+          "value": 35
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_exclusive_seconds",
+          "value": 9.200070053339005e-06
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_inclusive_seconds",
+          "value": 9.200070053339005e-06
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_calls",
+          "value": 35
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_exclusive_seconds",
+          "value": 0.00013869954273104668
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_inclusive_seconds",
+          "value": 0.00013869954273104668
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_calls",
+          "value": 35
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_exclusive_seconds",
+          "value": 0.0002558981068432331
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_inclusive_seconds",
+          "value": 0.0018362984992563725
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_calls",
+          "value": 70
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_exclusive_seconds",
+          "value": 0.0006271027959883213
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_inclusive_seconds",
+          "value": 0.0006271027959883213
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_calls",
+          "value": 35
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_exclusive_seconds",
+          "value": 0.00011439528316259384
+        },
+        {
+          "iteration": 0,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_inclusive_seconds",
+          "value": 0.0006875987164676189
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_calls",
+          "value": 70
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_exclusive_seconds",
+          "value": 0.0006096991710364819
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_inclusive_seconds",
+          "value": 0.0006096991710364819
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_calls",
+          "value": 35
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_exclusive_seconds",
+          "value": 0.0008071023039519787
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_inclusive_seconds",
+          "value": 0.001436101272702217
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "children",
+          "value": 35
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_calls",
+          "value": 35
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_exclusive_seconds",
+          "value": 0.0010583982802927494
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_inclusive_seconds",
+          "value": 0.0010583982802927494
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_calls",
+          "value": 35
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_exclusive_seconds",
+          "value": 7.659988477826118e-05
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_inclusive_seconds",
+          "value": 7.659988477826118e-05
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_calls",
+          "value": 35
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_exclusive_seconds",
+          "value": 8.502043783664703e-06
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_inclusive_seconds",
+          "value": 8.502043783664703e-06
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_calls",
+          "value": 35
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_exclusive_seconds",
+          "value": 0.00011840043589472771
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_inclusive_seconds",
+          "value": 0.00011840043589472771
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_calls",
+          "value": 35
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_exclusive_seconds",
+          "value": 0.00022139912471175194
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_inclusive_seconds",
+          "value": 0.001657500397413969
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_calls",
+          "value": 70
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_exclusive_seconds",
+          "value": 0.0005491981282830238
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_inclusive_seconds",
+          "value": 0.0005491981282830238
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_calls",
+          "value": 35
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_exclusive_seconds",
+          "value": 0.00010629836469888687
+        },
+        {
+          "iteration": 1,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_inclusive_seconds",
+          "value": 0.0006289989687502384
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_calls",
+          "value": 643
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_exclusive_seconds",
+          "value": 0.005363993812352419
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "attack_inclusive_seconds",
+          "value": 0.005363993812352419
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_calls",
+          "value": 318
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_exclusive_seconds",
+          "value": 0.008541198447346687
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "availability_inclusive_seconds",
+          "value": 0.015187997836619616
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "children",
+          "value": 318
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_calls",
+          "value": 318
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_exclusive_seconds",
+          "value": 0.011986899189651012
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "component_diff_inclusive_seconds",
+          "value": 0.011986899189651012
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_calls",
+          "value": 318
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_exclusive_seconds",
+          "value": 0.0008471999317407608
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "context_inclusive_seconds",
+          "value": 0.0008471999317407608
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_calls",
+          "value": 318
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_exclusive_seconds",
+          "value": 8.200714364647865e-05
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_inclusive_seconds",
+          "value": 8.200714364647865e-05
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_calls",
+          "value": 318
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_exclusive_seconds",
+          "value": 0.0013707014732062817
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "snapshot_inclusive_seconds",
+          "value": 0.0013707014732062817
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_calls",
+          "value": 318
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_exclusive_seconds",
+          "value": 0.002490703482180834
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "terminal_inclusive_seconds",
+          "value": 0.01767870131880045
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_calls",
+          "value": 643
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_exclusive_seconds",
+          "value": 0.00620129844173789
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "transition_inclusive_seconds",
+          "value": 0.00620129844173789
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_calls",
+          "value": 325
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_exclusive_seconds",
+          "value": 0.0011289003305137157
+        },
+        {
+          "iteration": 2,
+          "qphase": false,
+          "outcome": "unclassified",
+          "metric": "trial_inclusive_seconds",
+          "value": 0.006646799389272928
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "attack_calls",
+          "value": 76937
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "attack_exclusive_seconds",
+          "value": 0.6238117502070963
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "attack_inclusive_seconds",
+          "value": 0.6238117502070963
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "availability_calls",
+          "value": 35187
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "availability_exclusive_seconds",
+          "value": 0.8888924228958786
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "availability_inclusive_seconds",
+          "value": 1.6995004648342729
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "children",
+          "value": 35187
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "component_diff_calls",
+          "value": 35187
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "component_diff_exclusive_seconds",
+          "value": 1.1748858583159745
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "component_diff_inclusive_seconds",
+          "value": 1.1748858583159745
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "context_calls",
+          "value": 35187
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "context_exclusive_seconds",
+          "value": 0.0867870170623064
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "context_inclusive_seconds",
+          "value": 0.0867870170623064
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "runtime_frontier_calls",
+          "value": 35187
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "runtime_frontier_exclusive_seconds",
+          "value": 0.008467752952128649
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "runtime_frontier_inclusive_seconds",
+          "value": 0.008467752952128649
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "snapshot_calls",
+          "value": 35187
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "snapshot_exclusive_seconds",
+          "value": 0.13863434083759785
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "snapshot_inclusive_seconds",
+          "value": 0.13863434083759785
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "terminal_calls",
+          "value": 35187
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "terminal_exclusive_seconds",
+          "value": 0.25101865641772747
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "terminal_inclusive_seconds",
+          "value": 1.9505191212520003
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "transition_calls",
+          "value": 76937
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "transition_exclusive_seconds",
+          "value": 0.6483641006052494
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "transition_inclusive_seconds",
+          "value": 0.6483641006052494
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "trial_calls",
+          "value": 41750
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "trial_exclusive_seconds",
+          "value": 0.13172140857204795
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "excluded",
+          "metric": "trial_inclusive_seconds",
+          "value": 0.8106080419383943
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "attack_calls",
+          "value": 8918
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "attack_exclusive_seconds",
+          "value": 0.07578301755711436
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "attack_inclusive_seconds",
+          "value": 0.07578301755711436
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "availability_calls",
+          "value": 3811
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "availability_exclusive_seconds",
+          "value": 0.0997529998421669
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "availability_inclusive_seconds",
+          "value": 0.195809593424201
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "children",
+          "value": 3811
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "component_diff_calls",
+          "value": 3811
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "component_diff_exclusive_seconds",
+          "value": 0.12000778270885348
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "component_diff_inclusive_seconds",
+          "value": 0.12000778270885348
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "context_calls",
+          "value": 3811
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "context_exclusive_seconds",
+          "value": 0.009430605918169022
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "context_inclusive_seconds",
+          "value": 0.009430605918169022
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "runtime_frontier_calls",
+          "value": 3811
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "runtime_frontier_exclusive_seconds",
+          "value": 0.0009098909795284271
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "runtime_frontier_inclusive_seconds",
+          "value": 0.0009098909795284271
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "snapshot_calls",
+          "value": 3811
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "snapshot_exclusive_seconds",
+          "value": 0.01487670186907053
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "snapshot_inclusive_seconds",
+          "value": 0.01487670186907053
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "terminal_calls",
+          "value": 3811
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "terminal_exclusive_seconds",
+          "value": 0.027331111021339893
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "terminal_inclusive_seconds",
+          "value": 0.2231407044455409
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "transition_calls",
+          "value": 8918
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "transition_exclusive_seconds",
+          "value": 0.07493510562926531
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "transition_inclusive_seconds",
+          "value": 0.07493510562926531
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "trial_calls",
+          "value": 5107
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "trial_exclusive_seconds",
+          "value": 0.015518510714173317
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "included",
+          "metric": "trial_inclusive_seconds",
+          "value": 0.09605659358203411
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "attack_calls",
+          "value": 7185
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "attack_exclusive_seconds",
+          "value": 0.07000360498204827
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "attack_inclusive_seconds",
+          "value": 0.07000360498204827
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "availability_calls",
+          "value": 3491
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "availability_exclusive_seconds",
+          "value": 0.0934873940423131
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "availability_inclusive_seconds",
+          "value": 0.172229774761945
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "children",
+          "value": 3491
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "component_diff_calls",
+          "value": 3491
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "component_diff_exclusive_seconds",
+          "value": 0.12914950074627995
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "component_diff_inclusive_seconds",
+          "value": 0.12914950074627995
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "context_calls",
+          "value": 3491
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "context_exclusive_seconds",
+          "value": 0.009120926726609468
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "context_inclusive_seconds",
+          "value": 0.009120926726609468
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_calls",
+          "value": 3491
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_exclusive_seconds",
+          "value": 0.0009241998195648193
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "runtime_frontier_inclusive_seconds",
+          "value": 0.0009241998195648193
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "snapshot_calls",
+          "value": 3491
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "snapshot_exclusive_seconds",
+          "value": 0.014726107474416494
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "snapshot_inclusive_seconds",
+          "value": 0.014726107474416494
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "terminal_calls",
+          "value": 3491
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "terminal_exclusive_seconds",
+          "value": 0.02719253022223711
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "terminal_inclusive_seconds",
+          "value": 0.19942230498418212
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "transition_calls",
+          "value": 7185
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "transition_exclusive_seconds",
+          "value": 0.06759252678602934
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "transition_inclusive_seconds",
+          "value": 0.06759252678602934
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "trial_calls",
+          "value": 3694
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "trial_exclusive_seconds",
+          "value": 0.012518384493887424
+        },
+        {
+          "iteration": 2,
+          "qphase": true,
+          "outcome": "unclassified",
+          "metric": "trial_inclusive_seconds",
+          "value": 0.07874238071963191
+        }
+      ]
+    },
+    {
+      "order": 1,
+      "measured": false,
+      "wall": 7.235326999798417,
+      "decision": {
+        "action": {
+          "pattern_id": "sem_02_n_quiet",
+          "geometry_id": "g12",
+          "actor_type_id": "N",
+          "from_square": {
+            "file": 5,
+            "rank": 2
+          },
+          "to_square": {
+            "file": 6,
+            "rank": 4
+          },
+          "promotion_target_id": null
+        },
+        "score": -2,
+        "principal_variation": [
+          {
+            "pattern_id": "sem_02_n_quiet",
+            "geometry_id": "g12",
+            "actor_type_id": "N",
+            "from_square": {
+              "file": 5,
+              "rank": 2
+            },
+            "to_square": {
+              "file": 6,
+              "rank": 4
+            },
+            "promotion_target_id": null
+          },
+          {
+            "pattern_id": "sem_02_n_quiet",
+            "geometry_id": "g14",
+            "actor_type_id": "N",
+            "from_square": {
+              "file": 2,
+              "rank": 5
+            },
+            "to_square": {
+              "file": 3,
+              "rank": 3
+            },
+            "promotion_target_id": null
+          }
+        ],
+        "completed_depth": 2,
+        "selective_depth": 2,
+        "nodes": 390,
+        "qnodes": 7620,
+        "elapsed_seconds": 7.234000000171363,
+        "tt_probes": 37,
+        "tt_hits": 1,
+        "tt_cutoffs": 0,
+        "beta_cutoffs": 30,
+        "evaluation_profile_cache_hit": false,
+        "termination_reason": "completed_depth",
+        "choice_kind": "ACTION",
+        "declaration": null,
+        "time_to_first_legal_action": 0.0,
+        "time_to_first_completed_iteration": 0.016000000294297934,
+        "qdepth_cutoffs": 2519,
+        "qsearch_budget_aborts": 0,
+        "qsearch_check_hard_limit_aborts": 0,
+        "in_check_qnodes": 1376,
+        "stand_pat_cutoffs": 1958,
+        "capture_qactions": 2983,
+        "promotion_qactions": 0,
+        "checking_move_qactions": 828,
+        "checking_drop_qactions": 0,
+        "nonchecking_drop_excluded": 0,
+        "pvs_null_window_searches": 0,
+        "pvs_researches": 0,
+        "aspiration_fail_low": 0,
+        "aspiration_fail_high": 0,
+        "aspiration_researches": 0,
+        "root_scan_nodes": 35,
+        "root_scan_used_fallback": false,
+        "move_picker_generated": 0,
+        "move_picker_yielded": 0,
+        "move_picker_yielded_by_stage": {},
+        "ordering_calls": 37,
+        "ordered_moves": 1389,
+        "ordering_seconds": 0.01500000013038516,
+        "legal_generation_calls": 3182,
+        "legal_generation_seconds": 0.8209988907910883,
+        "evaluation_calls": 6279,
+        "evaluation_seconds": 0.5662130014970899,
+        "countermove_hits": 0,
+        "mate_pruning_cutoffs": 0,
+        "legal_actions_generated": 72224,
+        "successor_handles_created": 1389,
+        "successors_materialized": 353,
+        "successors_searched": 353,
+        "terminal_results_computed": 353,
+        "terminal_cache_hits": 0,
+        "position_keys_computed": 390,
+        "position_key_cache_hits": 353,
+        "declaration_checks": 0,
+        "declaration_win_options": 0,
+        "declaration_restart_options": 0,
+        "declaration_root_selected": false,
+        "native_legality_calls": 3179,
+        "native_legality_fallbacks": 0,
+        "native_legality_operational_failures": 0,
+        "material_change_qactions": 0,
+        "result_source": "main_iteration",
+        "result_ordinary_qdepth": 4,
+        "result_check_hard_qdepth": 8
+      },
+      "peak_pending": 0,
+      "outside_formal_push": {},
+      "stages": []
+    }
+  ],
+  "seconds": 32.32693299977109
+}
