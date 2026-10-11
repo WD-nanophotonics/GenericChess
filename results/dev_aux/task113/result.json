@@ -1,0 +1,897 @@
+{
+  "complete": true,
+  "backend": "PROJECT_CORE_RULES_ONLY; NOT_MATURE_SEARCH",
+  "source_hashes": {
+    "generic_chess/rules/standard_shogi.py": "2ebd8042ee97c72219329913be44498c1ad91a9d751f244573b2ef25f60efe79",
+    "generic_chess/learning/shogi_rules.py": "4e9db254096c72010e79b28431c16106e943b95f8e834f857762d633a84c1909",
+    "generic_chess/core/movegen.py": "05db961e128965bf7a9ab35e2f797401ae051d7e4c46ce0e9adf6968de27df6a",
+    "generic_chess/core/transition.py": "80a01f61bac9db9907326017425da9ac4beec03efa6359a1066492d0f60dd7a8"
+  },
+  "ruleset_fingerprint": "ba3518b989fe3965a08ead19a1ff1607102911734b9849948f4b1584b5c801a8",
+  "synthetic_prices": {
+    "P": 48,
+    "L": 65,
+    "N": 82,
+    "S": 99,
+    "B": 116,
+    "R": 133,
+    "G": 150,
+    "TP": 184,
+    "TL": 201,
+    "TN": 218,
+    "TS": 235,
+    "TB": 252,
+    "TR": 269,
+    "K": 0
+  },
+  "probes": [
+    {
+      "kind": "board",
+      "type": "P",
+      "owner": 0,
+      "sfen": "k8/9/9/4P4/9/9/9/9/8K b - 1",
+      "expected_raw_e": 48
+    },
+    {
+      "kind": "board",
+      "type": "L",
+      "owner": 0,
+      "sfen": "k8/9/9/4L4/9/9/9/9/8K b - 1",
+      "expected_raw_e": 65
+    },
+    {
+      "kind": "board",
+      "type": "N",
+      "owner": 0,
+      "sfen": "k8/9/9/4N4/9/9/9/9/8K b - 1",
+      "expected_raw_e": 82
+    },
+    {
+      "kind": "board",
+      "type": "S",
+      "owner": 0,
+      "sfen": "k8/9/9/4S4/9/9/9/9/8K b - 1",
+      "expected_raw_e": 99
+    },
+    {
+      "kind": "board",
+      "type": "B",
+      "owner": 0,
+      "sfen": "k8/9/9/4B4/9/9/9/9/8K b - 1",
+      "expected_raw_e": 116
+    },
+    {
+      "kind": "board",
+      "type": "R",
+      "owner": 0,
+      "sfen": "k8/9/9/4R4/9/9/9/9/8K b - 1",
+      "expected_raw_e": 133
+    },
+    {
+      "kind": "board",
+      "type": "G",
+      "owner": 0,
+      "sfen": "k8/9/9/4G4/9/9/9/9/8K b - 1",
+      "expected_raw_e": 150
+    },
+    {
+      "kind": "board",
+      "type": "TP",
+      "owner": 0,
+      "sfen": "k8/9/9/4+P4/9/9/9/9/8K b - 1",
+      "expected_raw_e": 184
+    },
+    {
+      "kind": "board",
+      "type": "TL",
+      "owner": 0,
+      "sfen": "k8/9/9/4+L4/9/9/9/9/8K b - 1",
+      "expected_raw_e": 201
+    },
+    {
+      "kind": "board",
+      "type": "TN",
+      "owner": 0,
+      "sfen": "k8/9/9/4+N4/9/9/9/9/8K b - 1",
+      "expected_raw_e": 218
+    },
+    {
+      "kind": "board",
+      "type": "TS",
+      "owner": 0,
+      "sfen": "k8/9/9/4+S4/9/9/9/9/8K b - 1",
+      "expected_raw_e": 235
+    },
+    {
+      "kind": "board",
+      "type": "TB",
+      "owner": 0,
+      "sfen": "k8/9/9/4+B4/9/9/9/9/8K b - 1",
+      "expected_raw_e": 252
+    },
+    {
+      "kind": "board",
+      "type": "TR",
+      "owner": 0,
+      "sfen": "k8/9/9/4+R4/9/9/9/9/8K b - 1",
+      "expected_raw_e": 269
+    },
+    {
+      "kind": "hand",
+      "type": "P",
+      "owner": 0,
+      "sfen": "k8/9/9/9/9/9/9/9/8K b P 1",
+      "expected_raw_e": 48
+    },
+    {
+      "kind": "hand",
+      "type": "L",
+      "owner": 0,
+      "sfen": "k8/9/9/9/9/9/9/9/8K b L 1",
+      "expected_raw_e": 65
+    },
+    {
+      "kind": "hand",
+      "type": "N",
+      "owner": 0,
+      "sfen": "k8/9/9/9/9/9/9/9/8K b N 1",
+      "expected_raw_e": 82
+    },
+    {
+      "kind": "hand",
+      "type": "S",
+      "owner": 0,
+      "sfen": "k8/9/9/9/9/9/9/9/8K b S 1",
+      "expected_raw_e": 99
+    },
+    {
+      "kind": "hand",
+      "type": "B",
+      "owner": 0,
+      "sfen": "k8/9/9/9/9/9/9/9/8K b B 1",
+      "expected_raw_e": 116
+    },
+    {
+      "kind": "hand",
+      "type": "R",
+      "owner": 0,
+      "sfen": "k8/9/9/9/9/9/9/9/8K b R 1",
+      "expected_raw_e": 133
+    },
+    {
+      "kind": "hand",
+      "type": "G",
+      "owner": 0,
+      "sfen": "k8/9/9/9/9/9/9/9/8K b G 1",
+      "expected_raw_e": 150
+    },
+    {
+      "kind": "board",
+      "type": "P",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4p4/9/9/8K w - 1",
+      "expected_raw_e": 48
+    },
+    {
+      "kind": "board",
+      "type": "L",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4l4/9/9/8K w - 1",
+      "expected_raw_e": 65
+    },
+    {
+      "kind": "board",
+      "type": "N",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4n4/9/9/8K w - 1",
+      "expected_raw_e": 82
+    },
+    {
+      "kind": "board",
+      "type": "S",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4s4/9/9/8K w - 1",
+      "expected_raw_e": 99
+    },
+    {
+      "kind": "board",
+      "type": "B",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4b4/9/9/8K w - 1",
+      "expected_raw_e": 116
+    },
+    {
+      "kind": "board",
+      "type": "R",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4r4/9/9/8K w - 1",
+      "expected_raw_e": 133
+    },
+    {
+      "kind": "board",
+      "type": "G",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4g4/9/9/8K w - 1",
+      "expected_raw_e": 150
+    },
+    {
+      "kind": "board",
+      "type": "TP",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4+p4/9/9/8K w - 1",
+      "expected_raw_e": 184
+    },
+    {
+      "kind": "board",
+      "type": "TL",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4+l4/9/9/8K w - 1",
+      "expected_raw_e": 201
+    },
+    {
+      "kind": "board",
+      "type": "TN",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4+n4/9/9/8K w - 1",
+      "expected_raw_e": 218
+    },
+    {
+      "kind": "board",
+      "type": "TS",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4+s4/9/9/8K w - 1",
+      "expected_raw_e": 235
+    },
+    {
+      "kind": "board",
+      "type": "TB",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4+b4/9/9/8K w - 1",
+      "expected_raw_e": 252
+    },
+    {
+      "kind": "board",
+      "type": "TR",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4+r4/9/9/8K w - 1",
+      "expected_raw_e": 269
+    },
+    {
+      "kind": "hand",
+      "type": "P",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/9/9/9/8K w p 1",
+      "expected_raw_e": 48
+    },
+    {
+      "kind": "hand",
+      "type": "L",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/9/9/9/8K w l 1",
+      "expected_raw_e": 65
+    },
+    {
+      "kind": "hand",
+      "type": "N",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/9/9/9/8K w n 1",
+      "expected_raw_e": 82
+    },
+    {
+      "kind": "hand",
+      "type": "S",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/9/9/9/8K w s 1",
+      "expected_raw_e": 99
+    },
+    {
+      "kind": "hand",
+      "type": "B",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/9/9/9/8K w b 1",
+      "expected_raw_e": 116
+    },
+    {
+      "kind": "hand",
+      "type": "R",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/9/9/9/8K w r 1",
+      "expected_raw_e": 133
+    },
+    {
+      "kind": "hand",
+      "type": "G",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/9/9/9/8K w g 1",
+      "expected_raw_e": 150
+    }
+  ],
+  "probe_count": 40,
+  "legal_transition_witnesses": [
+    {
+      "case": "capture_P",
+      "owner": 0,
+      "sfen": "k8/9/9/4p4/4G4/9/9/9/8K b - 1",
+      "usi": "5e5d",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/4G4/9/9/9/9/8K w 1P 2",
+      "material_delta": 96,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_L",
+      "owner": 0,
+      "sfen": "k8/9/9/4l4/4G4/9/9/9/8K b - 1",
+      "usi": "5e5d",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/4G4/9/9/9/9/8K w 1L 2",
+      "material_delta": 130,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_N",
+      "owner": 0,
+      "sfen": "k8/9/9/4n4/4G4/9/9/9/8K b - 1",
+      "usi": "5e5d",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/4G4/9/9/9/9/8K w 1N 2",
+      "material_delta": 164,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_S",
+      "owner": 0,
+      "sfen": "k8/9/9/4s4/4G4/9/9/9/8K b - 1",
+      "usi": "5e5d",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/4G4/9/9/9/9/8K w 1S 2",
+      "material_delta": 198,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_B",
+      "owner": 0,
+      "sfen": "k8/9/9/4b4/4G4/9/9/9/8K b - 1",
+      "usi": "5e5d",
+      "legal_action_count": 8,
+      "child_sfen": "k8/9/9/4G4/9/9/9/9/8K w 1B 2",
+      "material_delta": 232,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_R",
+      "owner": 0,
+      "sfen": "k8/9/9/4r4/4G4/9/9/9/8K b - 1",
+      "usi": "5e5d",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/4G4/9/9/9/9/8K w 1R 2",
+      "material_delta": 266,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_G",
+      "owner": 0,
+      "sfen": "k8/9/9/4g4/4G4/9/9/9/8K b - 1",
+      "usi": "5e5d",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/4G4/9/9/9/9/8K w 1G 2",
+      "material_delta": 300,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_TP",
+      "owner": 0,
+      "sfen": "k8/9/9/4+p4/4G4/9/9/9/8K b - 1",
+      "usi": "5e5d",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/4G4/9/9/9/9/8K w 1P 2",
+      "material_delta": 232,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_TL",
+      "owner": 0,
+      "sfen": "k8/9/9/4+l4/4G4/9/9/9/8K b - 1",
+      "usi": "5e5d",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/4G4/9/9/9/9/8K w 1L 2",
+      "material_delta": 266,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_TN",
+      "owner": 0,
+      "sfen": "k8/9/9/4+n4/4G4/9/9/9/8K b - 1",
+      "usi": "5e5d",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/4G4/9/9/9/9/8K w 1N 2",
+      "material_delta": 300,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_TS",
+      "owner": 0,
+      "sfen": "k8/9/9/4+s4/4G4/9/9/9/8K b - 1",
+      "usi": "5e5d",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/4G4/9/9/9/9/8K w 1S 2",
+      "material_delta": 334,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_TB",
+      "owner": 0,
+      "sfen": "k8/9/9/4+b4/4G4/9/9/9/8K b - 1",
+      "usi": "5e5d",
+      "legal_action_count": 8,
+      "child_sfen": "k8/9/9/4G4/9/9/9/9/8K w 1B 2",
+      "material_delta": 368,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_TR",
+      "owner": 0,
+      "sfen": "k8/9/9/4+r4/4G4/9/9/9/8K b - 1",
+      "usi": "5e5d",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/4G4/9/9/9/9/8K w 1R 2",
+      "material_delta": 402,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "promotion_P",
+      "owner": 0,
+      "sfen": "k8/9/9/4P4/9/9/9/9/8K b - 1",
+      "usi": "5d5c+",
+      "legal_action_count": 5,
+      "child_sfen": "k8/9/4+P4/9/9/9/9/9/8K w - 2",
+      "material_delta": 136,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 0
+    },
+    {
+      "case": "promotion_L",
+      "owner": 0,
+      "sfen": "k8/9/9/4L4/9/9/9/9/8K b - 1",
+      "usi": "5d5c+",
+      "legal_action_count": 8,
+      "child_sfen": "k8/9/4+L4/9/9/9/9/9/8K w - 2",
+      "material_delta": 136,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 0
+    },
+    {
+      "case": "promotion_N",
+      "owner": 0,
+      "sfen": "k8/9/9/4N4/9/9/9/9/8K b - 1",
+      "usi": "5d4b+",
+      "legal_action_count": 5,
+      "child_sfen": "k8/5+N3/9/9/9/9/9/9/8K w - 2",
+      "material_delta": 136,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 0
+    },
+    {
+      "case": "promotion_S",
+      "owner": 0,
+      "sfen": "k8/9/9/4S4/9/9/9/9/8K b - 1",
+      "usi": "5d5c+",
+      "legal_action_count": 11,
+      "child_sfen": "k8/9/4+S4/9/9/9/9/9/8K w - 2",
+      "material_delta": 136,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 0
+    },
+    {
+      "case": "promotion_B",
+      "owner": 0,
+      "sfen": "k8/9/9/4B4/9/9/9/9/8K b - 1",
+      "usi": "5d4c+",
+      "legal_action_count": 23,
+      "child_sfen": "k8/9/5+B3/9/9/9/9/9/8K w - 2",
+      "material_delta": 136,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 0
+    },
+    {
+      "case": "promotion_R",
+      "owner": 0,
+      "sfen": "k8/9/9/4R4/9/9/9/9/8K b - 1",
+      "usi": "5d5c+",
+      "legal_action_count": 22,
+      "child_sfen": "k8/9/4+R4/9/9/9/9/9/8K w - 2",
+      "material_delta": 136,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 0
+    },
+    {
+      "case": "drop_P",
+      "owner": 0,
+      "sfen": "k8/9/9/9/9/9/9/9/8K b P 1",
+      "usi": "P*5d",
+      "legal_action_count": 74,
+      "child_sfen": "k8/9/9/4P4/9/9/9/9/8K w - 2",
+      "material_delta": 0,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 1
+    },
+    {
+      "case": "drop_L",
+      "owner": 0,
+      "sfen": "k8/9/9/9/9/9/9/9/8K b L 1",
+      "usi": "L*5d",
+      "legal_action_count": 74,
+      "child_sfen": "k8/9/9/4L4/9/9/9/9/8K w - 2",
+      "material_delta": 0,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 1
+    },
+    {
+      "case": "drop_N",
+      "owner": 0,
+      "sfen": "k8/9/9/9/9/9/9/9/8K b N 1",
+      "usi": "N*5d",
+      "legal_action_count": 65,
+      "child_sfen": "k8/9/9/4N4/9/9/9/9/8K w - 2",
+      "material_delta": 0,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 1
+    },
+    {
+      "case": "drop_S",
+      "owner": 0,
+      "sfen": "k8/9/9/9/9/9/9/9/8K b S 1",
+      "usi": "S*5d",
+      "legal_action_count": 82,
+      "child_sfen": "k8/9/9/4S4/9/9/9/9/8K w - 2",
+      "material_delta": 0,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 1
+    },
+    {
+      "case": "drop_B",
+      "owner": 0,
+      "sfen": "k8/9/9/9/9/9/9/9/8K b B 1",
+      "usi": "B*5d",
+      "legal_action_count": 82,
+      "child_sfen": "k8/9/9/4B4/9/9/9/9/8K w - 2",
+      "material_delta": 0,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 1
+    },
+    {
+      "case": "drop_R",
+      "owner": 0,
+      "sfen": "k8/9/9/9/9/9/9/9/8K b R 1",
+      "usi": "R*5d",
+      "legal_action_count": 82,
+      "child_sfen": "k8/9/9/4R4/9/9/9/9/8K w - 2",
+      "material_delta": 0,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 1
+    },
+    {
+      "case": "drop_G",
+      "owner": 0,
+      "sfen": "k8/9/9/9/9/9/9/9/8K b G 1",
+      "usi": "G*5d",
+      "legal_action_count": 82,
+      "child_sfen": "k8/9/9/4G4/9/9/9/9/8K w - 2",
+      "material_delta": 0,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_P",
+      "owner": 1,
+      "sfen": "k8/9/9/9/4g4/4P4/9/9/8K w - 1",
+      "usi": "5e5f",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/9/9/4g4/9/9/8K b 1p 2",
+      "material_delta": 96,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_L",
+      "owner": 1,
+      "sfen": "k8/9/9/9/4g4/4L4/9/9/8K w - 1",
+      "usi": "5e5f",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/9/9/4g4/9/9/8K b 1l 2",
+      "material_delta": 130,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_N",
+      "owner": 1,
+      "sfen": "k8/9/9/9/4g4/4N4/9/9/8K w - 1",
+      "usi": "5e5f",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/9/9/4g4/9/9/8K b 1n 2",
+      "material_delta": 164,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_S",
+      "owner": 1,
+      "sfen": "k8/9/9/9/4g4/4S4/9/9/8K w - 1",
+      "usi": "5e5f",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/9/9/4g4/9/9/8K b 1s 2",
+      "material_delta": 198,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_B",
+      "owner": 1,
+      "sfen": "k8/9/9/9/4g4/4B4/9/9/8K w - 1",
+      "usi": "5e5f",
+      "legal_action_count": 8,
+      "child_sfen": "k8/9/9/9/9/4g4/9/9/8K b 1b 2",
+      "material_delta": 232,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_R",
+      "owner": 1,
+      "sfen": "k8/9/9/9/4g4/4R4/9/9/8K w - 1",
+      "usi": "5e5f",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/9/9/4g4/9/9/8K b 1r 2",
+      "material_delta": 266,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_G",
+      "owner": 1,
+      "sfen": "k8/9/9/9/4g4/4G4/9/9/8K w - 1",
+      "usi": "5e5f",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/9/9/4g4/9/9/8K b 1g 2",
+      "material_delta": 300,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_TP",
+      "owner": 1,
+      "sfen": "k8/9/9/9/4g4/4+P4/9/9/8K w - 1",
+      "usi": "5e5f",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/9/9/4g4/9/9/8K b 1p 2",
+      "material_delta": 232,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_TL",
+      "owner": 1,
+      "sfen": "k8/9/9/9/4g4/4+L4/9/9/8K w - 1",
+      "usi": "5e5f",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/9/9/4g4/9/9/8K b 1l 2",
+      "material_delta": 266,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_TN",
+      "owner": 1,
+      "sfen": "k8/9/9/9/4g4/4+N4/9/9/8K w - 1",
+      "usi": "5e5f",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/9/9/4g4/9/9/8K b 1n 2",
+      "material_delta": 300,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_TS",
+      "owner": 1,
+      "sfen": "k8/9/9/9/4g4/4+S4/9/9/8K w - 1",
+      "usi": "5e5f",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/9/9/4g4/9/9/8K b 1s 2",
+      "material_delta": 334,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_TB",
+      "owner": 1,
+      "sfen": "k8/9/9/9/4g4/4+B4/9/9/8K w - 1",
+      "usi": "5e5f",
+      "legal_action_count": 8,
+      "child_sfen": "k8/9/9/9/9/4g4/9/9/8K b 1b 2",
+      "material_delta": 368,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "capture_TR",
+      "owner": 1,
+      "sfen": "k8/9/9/9/4g4/4+R4/9/9/8K w - 1",
+      "usi": "5e5f",
+      "legal_action_count": 9,
+      "child_sfen": "k8/9/9/9/9/4g4/9/9/8K b 1r 2",
+      "material_delta": 402,
+      "board_plus_hand_delta": 2,
+      "board_only_delta": 1
+    },
+    {
+      "case": "promotion_P",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4p4/9/9/8K w - 1",
+      "usi": "5f5g+",
+      "legal_action_count": 5,
+      "child_sfen": "k8/9/9/9/9/9/4+p4/9/8K b - 2",
+      "material_delta": 136,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 0
+    },
+    {
+      "case": "promotion_L",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4l4/9/9/8K w - 1",
+      "usi": "5f5g+",
+      "legal_action_count": 8,
+      "child_sfen": "k8/9/9/9/9/9/4+l4/9/8K b - 2",
+      "material_delta": 136,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 0
+    },
+    {
+      "case": "promotion_N",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4n4/9/9/8K w - 1",
+      "usi": "5f6h+",
+      "legal_action_count": 5,
+      "child_sfen": "k8/9/9/9/9/9/9/3+n5/8K b - 2",
+      "material_delta": 136,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 0
+    },
+    {
+      "case": "promotion_S",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4s4/9/9/8K w - 1",
+      "usi": "5f5g+",
+      "legal_action_count": 11,
+      "child_sfen": "k8/9/9/9/9/9/4+s4/9/8K b - 2",
+      "material_delta": 136,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 0
+    },
+    {
+      "case": "promotion_B",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4b4/9/9/8K w - 1",
+      "usi": "5f6g+",
+      "legal_action_count": 23,
+      "child_sfen": "k8/9/9/9/9/9/3+b5/9/8K b - 2",
+      "material_delta": 136,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 0
+    },
+    {
+      "case": "promotion_R",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/4r4/9/9/8K w - 1",
+      "usi": "5f5g+",
+      "legal_action_count": 22,
+      "child_sfen": "k8/9/9/9/9/9/4+r4/9/8K b - 2",
+      "material_delta": 136,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 0
+    },
+    {
+      "case": "drop_P",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/9/9/9/8K w p 1",
+      "usi": "P*5f",
+      "legal_action_count": 74,
+      "child_sfen": "k8/9/9/9/9/4p4/9/9/8K b - 2",
+      "material_delta": 0,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 1
+    },
+    {
+      "case": "drop_L",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/9/9/9/8K w l 1",
+      "usi": "L*5f",
+      "legal_action_count": 74,
+      "child_sfen": "k8/9/9/9/9/4l4/9/9/8K b - 2",
+      "material_delta": 0,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 1
+    },
+    {
+      "case": "drop_N",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/9/9/9/8K w n 1",
+      "usi": "N*5f",
+      "legal_action_count": 65,
+      "child_sfen": "k8/9/9/9/9/4n4/9/9/8K b - 2",
+      "material_delta": 0,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 1
+    },
+    {
+      "case": "drop_S",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/9/9/9/8K w s 1",
+      "usi": "S*5f",
+      "legal_action_count": 82,
+      "child_sfen": "k8/9/9/9/9/4s4/9/9/8K b - 2",
+      "material_delta": 0,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 1
+    },
+    {
+      "case": "drop_B",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/9/9/9/8K w b 1",
+      "usi": "B*5f",
+      "legal_action_count": 82,
+      "child_sfen": "k8/9/9/9/9/4b4/9/9/8K b - 2",
+      "material_delta": 0,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 1
+    },
+    {
+      "case": "drop_R",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/9/9/9/8K w r 1",
+      "usi": "R*5f",
+      "legal_action_count": 82,
+      "child_sfen": "k8/9/9/9/9/4r4/9/9/8K b - 2",
+      "material_delta": 0,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 1
+    },
+    {
+      "case": "drop_G",
+      "owner": 1,
+      "sfen": "k8/9/9/9/9/9/9/9/8K w g 1",
+      "usi": "G*5f",
+      "legal_action_count": 82,
+      "child_sfen": "k8/9/9/9/9/4g4/9/9/8K b - 2",
+      "material_delta": 0,
+      "board_plus_hand_delta": 0,
+      "board_only_delta": 1
+    }
+  ],
+  "legal_transition_count": 52,
+  "initial_nonroyal_actors": 38,
+  "proposed_cutoff_quantity": "(owned board+hand actors - opponent board+hand actors)/38",
+  "mature_games_executed": 0,
+  "mature_search_calls": 0,
+  "wall_seconds": 0.2524100001901388,
+  "scope": [
+    "52 one-action PROJECT_CORE legality/material bookkeeping checks, not games, external parity or learning.",
+    "40 future raw e probe expectations, not executed USI parameter acceptance. Require binding to the actual supplied source/build and both signs before actual qualification.",
+    "Board-only reward improves merely by dropping a held piece; board+hand reward is invariant under drop and promotion and increases by2 under capture.",
+    "Equal unit reward does not identify piece ratios or promotion values by itself; future behavioral evidence is necessary.",
+    "Standard-game terminal/perpetual-check/declaration authority and history require separate actual adapter validation; these fixtures do not certify them."
+  ]
+}

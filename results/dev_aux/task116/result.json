@@ -1,0 +1,1648 @@
+{
+  "complete": true,
+  "source_task114_sha256": "e7a1413aa79fc2eeb7d1eea033af5407c7b437dbcec5afb20f734ae6099f1554",
+  "profiles": [
+    {
+      "P": 208,
+      "N": 73,
+      "B": 901,
+      "R": 149,
+      "Q": 397,
+      "K": 0
+    },
+    {
+      "P": 208,
+      "N": 701,
+      "B": 89,
+      "R": 997,
+      "Q": 131,
+      "K": 0
+    },
+    {
+      "P": 1,
+      "N": 1,
+      "B": 1,
+      "R": 1,
+      "Q": 1,
+      "K": 0
+    }
+  ],
+  "states": [
+    {
+      "seed": 61001,
+      "opening_length": 6,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "rnbqk1nr/p1pp1ppp/1p1bp3/8/2P2P2/7N/PP1PP1PP/RNBQKB1R w KQkq - 0 4",
+      "legal_count": 22,
+      "capture_moves": 0,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "a2a3",
+          "leaf_value": 0,
+          "maximizer_count": 22,
+          "unique_leaf_values": 1
+        },
+        {
+          "action": "a2a3",
+          "leaf_value": 0,
+          "maximizer_count": 22,
+          "unique_leaf_values": 1
+        },
+        {
+          "action": "a2a3",
+          "leaf_value": 0,
+          "maximizer_count": 22,
+          "unique_leaf_values": 1
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": true
+    },
+    {
+      "seed": 61001,
+      "opening_length": 6,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "e2e3"
+      ],
+      "fen": "rnbqk1nr/p1pp1ppp/1p1bp3/8/2P2P2/4P2N/PP1P2PP/RNBQKB1R b KQkq - 0 4",
+      "legal_count": 32,
+      "capture_moves": 1,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "d6f4",
+          "leaf_value": 208,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "d6f4",
+          "leaf_value": 208,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "d6f4",
+          "leaf_value": 1,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61001,
+      "opening_length": 24,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "rn2k1nr/pb1q2pp/1p2p3/2pp1pb1/2PP1P2/P1Q3KN/1P1NP1PP/R1B2B1R w kq - 2 13",
+      "legal_count": 27,
+      "capture_moves": 4,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "f4g5",
+          "leaf_value": 901,
+          "maximizer_count": 2,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "c4d5",
+          "leaf_value": 208,
+          "maximizer_count": 2,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "c4d5",
+          "leaf_value": 1,
+          "maximizer_count": 4,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61001,
+      "opening_length": 24,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "d2b1"
+      ],
+      "fen": "rn2k1nr/pb1q2pp/1p2p3/2pp1pb1/2PP1P2/P1Q3KN/1P2P1PP/RNB2B1R b kq - 3 13",
+      "legal_count": 36,
+      "capture_moves": 3,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "c5d4",
+          "leaf_value": 208,
+          "maximizer_count": 3,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "c5d4",
+          "leaf_value": 208,
+          "maximizer_count": 3,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "c5d4",
+          "leaf_value": 1,
+          "maximizer_count": 3,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61001,
+      "opening_length": 48,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "3rrk2/pb5p/2n1p1pn/1qpp1pP1/2PPP3/Pp5K/1R1NN1PP/2B2BR1 w - - 3 25",
+      "legal_count": 23,
+      "capture_moves": 8,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "c4b5",
+          "leaf_value": 693,
+          "maximizer_count": 1,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "g5h6",
+          "leaf_value": 451,
+          "maximizer_count": 1,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "b2b3",
+          "leaf_value": 0,
+          "maximizer_count": 8,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61001,
+      "opening_length": 48,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "e2g3"
+      ],
+      "fen": "3rrk2/pb5p/2n1p1pn/1qpp1pP1/2PPP3/Pp4NK/1R1N2PP/2B2BR1 b - - 4 25",
+      "legal_count": 36,
+      "capture_moves": 6,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "b5c4",
+          "leaf_value": -88,
+          "maximizer_count": 6,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "b5c4",
+          "leaf_value": 458,
+          "maximizer_count": 6,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "b5c4",
+          "leaf_value": 2,
+          "maximizer_count": 6,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61002,
+      "opening_length": 6,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "r1bqkbnr/pppp2pp/2n5/4pp2/7P/1P4P1/P1PPPP2/RNBQKBNR w KQkq - 1 4",
+      "legal_count": 23,
+      "capture_moves": 0,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "a2a3",
+          "leaf_value": 0,
+          "maximizer_count": 23,
+          "unique_leaf_values": 1
+        },
+        {
+          "action": "a2a3",
+          "leaf_value": 0,
+          "maximizer_count": 23,
+          "unique_leaf_values": 1
+        },
+        {
+          "action": "a2a3",
+          "leaf_value": 0,
+          "maximizer_count": 23,
+          "unique_leaf_values": 1
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": true
+    },
+    {
+      "seed": 61002,
+      "opening_length": 6,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "c1b2"
+      ],
+      "fen": "r1bqkbnr/pppp2pp/2n5/4pp2/7P/1P4P1/PBPPPP2/RN1QKBNR b KQkq - 2 4",
+      "legal_count": 32,
+      "capture_moves": 1,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "d8h4",
+          "leaf_value": 208,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "d8h4",
+          "leaf_value": 208,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "d8h4",
+          "leaf_value": 1,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61002,
+      "opening_length": 24,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "rnbb2nr/p1pp1k1p/6p1/1p2P3/P1P1PpP1/1P1B4/5P2/RNBQK1NR w Q - 0 13",
+      "legal_count": 37,
+      "capture_moves": 4,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "a4b5",
+          "leaf_value": 605,
+          "maximizer_count": 4,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "a4b5",
+          "leaf_value": 339,
+          "maximizer_count": 4,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "a4b5",
+          "leaf_value": 2,
+          "maximizer_count": 4,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61002,
+      "opening_length": 24,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "c1f4"
+      ],
+      "fen": "rnbb2nr/p1pp1k1p/6p1/1p2P3/P1P1PBP1/1P1B4/5P2/RN1QK1NR b Q - 0 13",
+      "legal_count": 28,
+      "capture_moves": 2,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "b5a4",
+          "leaf_value": -397,
+          "maximizer_count": 2,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "b5a4",
+          "leaf_value": -131,
+          "maximizer_count": 2,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "b5a4",
+          "leaf_value": -1,
+          "maximizer_count": 2,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61002,
+      "opening_length": 48,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "r1b4r/p4k1p/P2p1np1/b1p1P1P1/2p1PB1R/3B4/3n1P2/RNQ2KN1 w - - 7 25",
+      "legal_count": 6,
+      "capture_moves": 3,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "b1d2",
+          "leaf_value": 262,
+          "maximizer_count": 3,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "b1d2",
+          "leaf_value": 624,
+          "maximizer_count": 3,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "b1d2",
+          "leaf_value": 1,
+          "maximizer_count": 3,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61002,
+      "opening_length": 48,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "c1d2"
+      ],
+      "fen": "r1b4r/p4k1p/P2p1np1/b1p1P1P1/2p1PB1R/3B4/3Q1P2/RN3KN1 b - - 0 25",
+      "legal_count": 37,
+      "capture_moves": 5,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "c4d3",
+          "leaf_value": 639,
+          "maximizer_count": 1,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "c8a6",
+          "leaf_value": -416,
+          "maximizer_count": 3,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "a5d2",
+          "leaf_value": 0,
+          "maximizer_count": 5,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61003,
+      "opening_length": 6,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "rn1qkbnr/pbpp1ppp/1p2p3/8/1P4P1/7N/P1PPPP1P/RNBQKB1R w KQkq - 2 4",
+      "legal_count": 21,
+      "capture_moves": 0,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "a2a3",
+          "leaf_value": 0,
+          "maximizer_count": 21,
+          "unique_leaf_values": 1
+        },
+        {
+          "action": "a2a3",
+          "leaf_value": 0,
+          "maximizer_count": 21,
+          "unique_leaf_values": 1
+        },
+        {
+          "action": "a2a3",
+          "leaf_value": 0,
+          "maximizer_count": 21,
+          "unique_leaf_values": 1
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": true
+    },
+    {
+      "seed": 61003,
+      "opening_length": 6,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "f1g2"
+      ],
+      "fen": "rn1qkbnr/pbpp1ppp/1p2p3/8/1P4P1/7N/P1PPPPBP/RNBQK2R b KQkq - 3 4",
+      "legal_count": 36,
+      "capture_moves": 2,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "b7g2",
+          "leaf_value": 901,
+          "maximizer_count": 1,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "f8b4",
+          "leaf_value": 208,
+          "maximizer_count": 1,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "b7g2",
+          "leaf_value": 1,
+          "maximizer_count": 2,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61003,
+      "opening_length": 24,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "1rbqkb1r/p2p1pp1/npn1p3/1Pp3N1/P2P2Pp/2N2P1P/2P1P1R1/R1BQKB2 w Qk - 1 13",
+      "legal_count": 32,
+      "capture_moves": 5,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "d4c5",
+          "leaf_value": 208,
+          "maximizer_count": 3,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "b5a6",
+          "leaf_value": 701,
+          "maximizer_count": 2,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "b5a6",
+          "leaf_value": 1,
+          "maximizer_count": 5,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61003,
+      "opening_length": 24,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "g2g3"
+      ],
+      "fen": "1rbqkb1r/p2p1pp1/npn1p3/1Pp3N1/P2P2Pp/2N2PRP/2P1P3/R1BQKB2 b Qk - 2 13",
+      "legal_count": 30,
+      "capture_moves": 4,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "c5d4",
+          "leaf_value": 208,
+          "maximizer_count": 2,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "h4g3",
+          "leaf_value": 997,
+          "maximizer_count": 1,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "c5d4",
+          "leaf_value": 1,
+          "maximizer_count": 4,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61003,
+      "opening_length": 48,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "rnb4r/p1q1k1b1/1p1p4/PPp1ppp1/1BPP1PPp/3PQ2P/R3K3/R4B2 w - - 0 25",
+      "legal_count": 36,
+      "capture_moves": 8,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "a5b6",
+          "leaf_value": 135,
+          "maximizer_count": 8,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "a5b6",
+          "leaf_value": -493,
+          "maximizer_count": 8,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "a5b6",
+          "leaf_value": 0,
+          "maximizer_count": 8,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61003,
+      "opening_length": 48,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "e3e4"
+      ],
+      "fen": "rnb4r/p1q1k1b1/1p1p4/PPp1ppp1/1BPPQPPp/3P3P/R3K3/R4B2 b - - 1 25",
+      "legal_count": 36,
+      "capture_moves": 6,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "c5b4",
+          "leaf_value": 974,
+          "maximizer_count": 1,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "b6a5",
+          "leaf_value": 909,
+          "maximizer_count": 4,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "b6a5",
+          "leaf_value": 2,
+          "maximizer_count": 6,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61004,
+      "opening_length": 6,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "rnbqkbnr/2p1pppp/p2p4/Pp6/8/R7/1PPPPPPP/1NBQKBNR w Kkq b6 0 4",
+      "legal_count": 28,
+      "capture_moves": 1,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "a5b6",
+          "leaf_value": 208,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "a5b6",
+          "leaf_value": 208,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "a5b6",
+          "leaf_value": 1,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61004,
+      "opening_length": 6,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "g2g4"
+      ],
+      "fen": "rnbqkbnr/2p1pppp/p2p4/Pp6/6P1/R7/1PPPPP1P/1NBQKBNR b Kkq - 0 4",
+      "legal_count": 24,
+      "capture_moves": 1,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "c8g4",
+          "leaf_value": 208,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "c8g4",
+          "leaf_value": 208,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "c8g4",
+          "leaf_value": 1,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61004,
+      "opening_length": 24,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "rq2kb1r/2pn1p1p/p2p2p1/np2p3/1B1P4/1P1Q2R1/2P1bPBP/1N2K1NR w Kkq - 0 13",
+      "legal_count": 47,
+      "capture_moves": 10,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "d3e2",
+          "leaf_value": 277,
+          "maximizer_count": 3,
+          "unique_leaf_values": 5
+        },
+        {
+          "action": "g2a8",
+          "leaf_value": 373,
+          "maximizer_count": 1,
+          "unique_leaf_values": 5
+        },
+        {
+          "action": "b4a5",
+          "leaf_value": -2,
+          "maximizer_count": 10,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61004,
+      "opening_length": 24,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "b1a3"
+      ],
+      "fen": "rq2kb1r/2pn1p1p/p2p2p1/np2p3/1B1P4/NP1Q2R1/2P1bPBP/4K1NR b Kkq - 1 13",
+      "legal_count": 35,
+      "capture_moves": 3,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "e2d3",
+          "leaf_value": 1021,
+          "maximizer_count": 1,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "a5b3",
+          "leaf_value": 832,
+          "maximizer_count": 2,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "a5b3",
+          "leaf_value": 4,
+          "maximizer_count": 3,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61004,
+      "opening_length": 48,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "2r1k1r1/1np2pbp/pq4p1/1N2p1R1/n1QP4/Bb6/2P2P1P/3KNB1R w - - 15 25",
+      "legal_count": 49,
+      "capture_moves": 9,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "c2b3",
+          "leaf_value": 485,
+          "maximizer_count": 2,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "c4a4",
+          "leaf_value": 285,
+          "maximizer_count": 1,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "b5c7",
+          "leaf_value": -1,
+          "maximizer_count": 9,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61004,
+      "opening_length": 48,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "a3b2"
+      ],
+      "fen": "2r1k1r1/1np2pbp/pq4p1/1N2p1R1/n1QP4/1b6/1BP2P1P/3KNB1R b - - 16 25",
+      "legal_count": 42,
+      "capture_moves": 7,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "a4b2",
+          "leaf_value": 1317,
+          "maximizer_count": 1,
+          "unique_leaf_values": 5
+        },
+        {
+          "action": "a6b5",
+          "leaf_value": 1117,
+          "maximizer_count": 2,
+          "unique_leaf_values": 5
+        },
+        {
+          "action": "a4b2",
+          "leaf_value": 3,
+          "maximizer_count": 7,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61005,
+      "opening_length": 6,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "rnb1k1nr/pppp1ppp/B3p3/8/4P1Qq/b7/PPPP1PPP/RNB1K1NR w KQkq - 4 4",
+      "legal_count": 37,
+      "capture_moves": 6,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "b1a3",
+          "leaf_value": 901,
+          "maximizer_count": 2,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "a6b7",
+          "leaf_value": 208,
+          "maximizer_count": 3,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "a6b7",
+          "leaf_value": 1,
+          "maximizer_count": 6,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61005,
+      "opening_length": 6,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "a6c4"
+      ],
+      "fen": "rnb1k1nr/pppp1ppp/4p3/8/2B1P1Qq/b7/PPPP1PPP/RNB1K1NR b KQkq - 5 4",
+      "legal_count": 40,
+      "capture_moves": 4,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "h4g4",
+          "leaf_value": 397,
+          "maximizer_count": 1,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "a3b2",
+          "leaf_value": 208,
+          "maximizer_count": 3,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "a3b2",
+          "leaf_value": 1,
+          "maximizer_count": 4,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61005,
+      "opening_length": 24,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "rnb1k2r/p1ppn1p1/B3p2p/4bp2/1p2PQ1N/1P1K2Pq/P1PP1P1P/R1BR4 w kq - 2 13",
+      "legal_count": 31,
+      "capture_moves": 6,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "a6c8",
+          "leaf_value": 828,
+          "maximizer_count": 2,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "e4f5",
+          "leaf_value": -493,
+          "maximizer_count": 4,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "a6c8",
+          "leaf_value": 0,
+          "maximizer_count": 6,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61005,
+      "opening_length": 24,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "a2a3"
+      ],
+      "fen": "rnb1k2r/p1ppn1p1/B3p2p/4bp2/1p2PQ1N/PP1K2Pq/2PP1P1P/R1BR4 b kq - 0 13",
+      "legal_count": 37,
+      "capture_moves": 9,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "b8a6",
+          "leaf_value": 974,
+          "maximizer_count": 2,
+          "unique_leaf_values": 6
+        },
+        {
+          "action": "e5a1",
+          "leaf_value": 1698,
+          "maximizer_count": 1,
+          "unique_leaf_values": 6
+        },
+        {
+          "action": "b4a3",
+          "leaf_value": 2,
+          "maximizer_count": 9,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61005,
+      "opening_length": 48,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "rn1k3r/pb1pn3/2p1p2p/5Pp1/1pP1PP1N/1P1KQ3/Pb1P2q1/3RR3 w - - 1 25",
+      "legal_count": 28,
+      "capture_moves": 4,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "h4g2",
+          "leaf_value": -1478,
+          "maximizer_count": 1,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "e3a7",
+          "leaf_value": -671,
+          "maximizer_count": 3,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "e3a7",
+          "leaf_value": -2,
+          "maximizer_count": 4,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61005,
+      "opening_length": 48,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "a2a4"
+      ],
+      "fen": "rn1k3r/pb1pn3/2p1p2p/5Pp1/PpP1PP1N/1P1KQ3/1b1P2q1/3RR3 b - a3 0 25",
+      "legal_count": 47,
+      "capture_moves": 7,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "b4a3",
+          "leaf_value": 2083,
+          "maximizer_count": 6,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "g5h4",
+          "leaf_value": 1580,
+          "maximizer_count": 1,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "b4a3",
+          "leaf_value": 4,
+          "maximizer_count": 7,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61006,
+      "opening_length": 6,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "r1bqkbnr/ppp1pppp/3p4/n7/P2N4/8/1PPPPPPP/RNBQKB1R w KQkq - 0 4",
+      "legal_count": 24,
+      "capture_moves": 0,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "a1a2",
+          "leaf_value": 0,
+          "maximizer_count": 24,
+          "unique_leaf_values": 1
+        },
+        {
+          "action": "a1a2",
+          "leaf_value": 0,
+          "maximizer_count": 24,
+          "unique_leaf_values": 1
+        },
+        {
+          "action": "a1a2",
+          "leaf_value": 0,
+          "maximizer_count": 24,
+          "unique_leaf_values": 1
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": true
+    },
+    {
+      "seed": 61006,
+      "opening_length": 6,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "d4b5"
+      ],
+      "fen": "r1bqkbnr/ppp1pppp/3p4/nN6/P7/8/1PPPPPPP/RNBQKB1R b KQkq - 1 4",
+      "legal_count": 26,
+      "capture_moves": 0,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "a5b3",
+          "leaf_value": 0,
+          "maximizer_count": 26,
+          "unique_leaf_values": 1
+        },
+        {
+          "action": "a5b3",
+          "leaf_value": 0,
+          "maximizer_count": 26,
+          "unique_leaf_values": 1
+        },
+        {
+          "action": "a5b3",
+          "leaf_value": 0,
+          "maximizer_count": 26,
+          "unique_leaf_values": 1
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": true
+    },
+    {
+      "seed": 61006,
+      "opening_length": 24,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "rq2kbnr/pp2ppp1/2pp4/n4P1p/P6P/2N1P1P1/1PPPN3/R1BQKB1b w Qkq - 0 13",
+      "legal_count": 21,
+      "capture_moves": 0,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "a1a2",
+          "leaf_value": -149,
+          "maximizer_count": 21,
+          "unique_leaf_values": 1
+        },
+        {
+          "action": "a1a2",
+          "leaf_value": -997,
+          "maximizer_count": 21,
+          "unique_leaf_values": 1
+        },
+        {
+          "action": "a1a2",
+          "leaf_value": -1,
+          "maximizer_count": 21,
+          "unique_leaf_values": 1
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": true
+    },
+    {
+      "seed": 61006,
+      "opening_length": 24,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "d2d3"
+      ],
+      "fen": "rq2kbnr/pp2ppp1/2pp4/n4P1p/P6P/2NPP1P1/1PP1N3/R1BQKB1b b Qkq - 0 13",
+      "legal_count": 25,
+      "capture_moves": 0,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "a5b3",
+          "leaf_value": 149,
+          "maximizer_count": 25,
+          "unique_leaf_values": 1
+        },
+        {
+          "action": "a5b3",
+          "leaf_value": 997,
+          "maximizer_count": 25,
+          "unique_leaf_values": 1
+        },
+        {
+          "action": "a5b3",
+          "leaf_value": 1,
+          "maximizer_count": 25,
+          "unique_leaf_values": 1
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": true
+    },
+    {
+      "seed": 61006,
+      "opening_length": 48,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "rq6/pp1k1pp1/2p2n2/P1bN3p/2nPp1rP/1PP1P1P1/R1QBN3/4KB1b w - - 0 25",
+      "legal_count": 28,
+      "capture_moves": 4,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "d4c5",
+          "leaf_value": 752,
+          "maximizer_count": 1,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "b3c4",
+          "leaf_value": -296,
+          "maximizer_count": 2,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "b3c4",
+          "leaf_value": 0,
+          "maximizer_count": 4,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61006,
+      "opening_length": 48,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "c2d1"
+      ],
+      "fen": "rq6/pp1k1pp1/2p2n2/P1bN3p/2nPp1rP/1PP1P1P1/R2BN3/3QKB1b b - - 1 25",
+      "legal_count": 48,
+      "capture_moves": 9,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "c4d2",
+          "leaf_value": 1050,
+          "maximizer_count": 1,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "c6d5",
+          "leaf_value": 1698,
+          "maximizer_count": 2,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "b8g3",
+          "leaf_value": 2,
+          "maximizer_count": 9,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61007,
+      "opening_length": 6,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "r1bqkb1r/p1pppppp/1pn4n/8/8/5PPB/PPPPP2P/RNBQK1NR w KQkq - 0 4",
+      "legal_count": 22,
+      "capture_moves": 1,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "h3d7",
+          "leaf_value": 208,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "h3d7",
+          "leaf_value": 208,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "h3d7",
+          "leaf_value": 1,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61007,
+      "opening_length": 6,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "c2c4"
+      ],
+      "fen": "r1bqkb1r/p1pppppp/1pn4n/8/2P5/5PPB/PP1PP2P/RNBQK1NR b KQkq - 0 4",
+      "legal_count": 23,
+      "capture_moves": 0,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "a7a5",
+          "leaf_value": 0,
+          "maximizer_count": 23,
+          "unique_leaf_values": 1
+        },
+        {
+          "action": "a7a5",
+          "leaf_value": 0,
+          "maximizer_count": 23,
+          "unique_leaf_values": 1
+        },
+        {
+          "action": "a7a5",
+          "leaf_value": 0,
+          "maximizer_count": 23,
+          "unique_leaf_values": 1
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": true
+    },
+    {
+      "seed": 61007,
+      "opening_length": 24,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "r3kb1r/2p1qp1p/1pnpb1p1/p3p3/2P3n1/3P1P2/PP1QPNBP/RNB1K2R w KQk - 0 13",
+      "legal_count": 34,
+      "capture_moves": 3,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "d2a5",
+          "leaf_value": 0,
+          "maximizer_count": 1,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "f2g4",
+          "leaf_value": 493,
+          "maximizer_count": 2,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "d2a5",
+          "leaf_value": 0,
+          "maximizer_count": 3,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61007,
+      "opening_length": 24,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "d2g5"
+      ],
+      "fen": "r3kb1r/2p1qp1p/1pnpb1p1/p3p1Q1/2P3n1/3P1P2/PP2PNBP/RNB1K2R b KQk - 1 13",
+      "legal_count": 37,
+      "capture_moves": 4,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "e7g5",
+          "leaf_value": 605,
+          "maximizer_count": 1,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "g4f2",
+          "leaf_value": 909,
+          "maximizer_count": 1,
+          "unique_leaf_values": 4
+        },
+        {
+          "action": "e6c4",
+          "leaf_value": 2,
+          "maximizer_count": 4,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61007,
+      "opening_length": 48,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "5r2/2N2pbp/rpkp2p1/n3pb2/2P1PPnB/Pp1P4/6BP/RN1Q1RK1 w - - 3 25",
+      "legal_count": 37,
+      "capture_moves": 5,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "e4f5",
+          "leaf_value": 1090,
+          "maximizer_count": 1,
+          "unique_leaf_values": 5
+        },
+        {
+          "action": "c7a6",
+          "leaf_value": 920,
+          "maximizer_count": 1,
+          "unique_leaf_values": 5
+        },
+        {
+          "action": "c7a6",
+          "leaf_value": 1,
+          "maximizer_count": 5,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61007,
+      "opening_length": 48,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "d1d2"
+      ],
+      "fen": "5r2/2N2pbp/rpkp2p1/n3pb2/2P1PPnB/Pp1P4/3Q2BP/RN3RK1 b - - 4 25",
+      "legal_count": 35,
+      "capture_moves": 5,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "a5c4",
+          "leaf_value": 19,
+          "maximizer_count": 4,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "c6c7",
+          "leaf_value": 778,
+          "maximizer_count": 1,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "a5c4",
+          "leaf_value": 1,
+          "maximizer_count": 5,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61008,
+      "opening_length": 6,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "rnb1kbnr/ppp2ppp/3p1q2/4p3/3P4/8/PPPBPPPP/RN1QKBNR w KQkq - 0 4",
+      "legal_count": 29,
+      "capture_moves": 1,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "d4e5",
+          "leaf_value": 208,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "d4e5",
+          "leaf_value": 208,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "d4e5",
+          "leaf_value": 1,
+          "maximizer_count": 1,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61008,
+      "opening_length": 6,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "f2f4"
+      ],
+      "fen": "rnb1kbnr/ppp2ppp/3p1q2/4p3/3P1P2/8/PPPBP1PP/RN1QKBNR b KQkq - 0 4",
+      "legal_count": 37,
+      "capture_moves": 3,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "e5d4",
+          "leaf_value": 208,
+          "maximizer_count": 3,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "e5d4",
+          "leaf_value": 208,
+          "maximizer_count": 3,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "e5d4",
+          "leaf_value": 1,
+          "maximizer_count": 3,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61008,
+      "opening_length": 24,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "1n1k1b1r/1pp1n1pp/r2pQ2q/p3ppB1/3PPN2/8/PPP2PPP/RN2KB1R w KQ - 2 13",
+      "legal_count": 50,
+      "capture_moves": 10,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "e6h6",
+          "leaf_value": 1298,
+          "maximizer_count": 2,
+          "unique_leaf_values": 5
+        },
+        {
+          "action": "f1a6",
+          "leaf_value": 1086,
+          "maximizer_count": 1,
+          "unique_leaf_values": 5
+        },
+        {
+          "action": "d4e5",
+          "leaf_value": 2,
+          "maximizer_count": 10,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61008,
+      "opening_length": 24,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "g5h4"
+      ],
+      "fen": "1n1k1b1r/1pp1n1pp/r2pQ2q/p3pp2/3PPN1B/8/PPP2PPP/RN2KB1R b KQ - 3 13",
+      "legal_count": 26,
+      "capture_moves": 6,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "h6h4",
+          "leaf_value": 0,
+          "maximizer_count": 1,
+          "unique_leaf_values": 5
+        },
+        {
+          "action": "e5f4",
+          "leaf_value": 612,
+          "maximizer_count": 2,
+          "unique_leaf_values": 5
+        },
+        {
+          "action": "e5d4",
+          "leaf_value": 0,
+          "maximizer_count": 6,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61008,
+      "opening_length": 48,
+      "agent_color": true,
+      "additional_opponent_prefix": [],
+      "fen": "1n3B2/rk4pr/1ppp4/4Ppp1/p2p1P1q/5K1N/PPP3PP/RN3B1R w - - 0 25",
+      "legal_count": 26,
+      "capture_moves": 5,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "e5d6",
+          "leaf_value": 1478,
+          "maximizer_count": 5,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "e5d6",
+          "leaf_value": 748,
+          "maximizer_count": 5,
+          "unique_leaf_values": 2
+        },
+        {
+          "action": "e5d6",
+          "leaf_value": 2,
+          "maximizer_count": 5,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": false,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    },
+    {
+      "seed": 61008,
+      "opening_length": 48,
+      "agent_color": false,
+      "additional_opponent_prefix": [
+        "h1g1"
+      ],
+      "fen": "1n3B2/rk4pr/1ppp4/4Ppp1/p2p1P1q/5K1N/PPP3PP/RN3BR1 b - - 1 25",
+      "legal_count": 28,
+      "capture_moves": 4,
+      "promotion_moves": 0,
+      "choices": [
+        {
+          "action": "d6e5",
+          "leaf_value": -1062,
+          "maximizer_count": 3,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "h4h3",
+          "leaf_value": 161,
+          "maximizer_count": 1,
+          "unique_leaf_values": 3
+        },
+        {
+          "action": "d6e5",
+          "leaf_value": 0,
+          "maximizer_count": 4,
+          "unique_leaf_values": 2
+        }
+      ],
+      "two_price_profiles_differ": true,
+      "both_extreme_profiles_tie_every_legal_leaf": false
+    }
+  ],
+  "state_count": 48,
+  "summary": [
+    {
+      "opening_length": 6,
+      "states": 16,
+      "price_profiles_choose_different": 3,
+      "both_extreme_profiles_tie_every_legal_leaf": 6,
+      "any_capture_available": 10
+    },
+    {
+      "opening_length": 24,
+      "states": 16,
+      "price_profiles_choose_different": 11,
+      "both_extreme_profiles_tie_every_legal_leaf": 2,
+      "any_capture_available": 14
+    },
+    {
+      "opening_length": 48,
+      "states": 16,
+      "price_profiles_choose_different": 12,
+      "both_extreme_profiles_tie_every_legal_leaf": 0,
+      "any_capture_available": 16
+    }
+  ],
+  "wall_seconds": 0.19894079957157373,
+  "mature_games_executed": 0,
+  "scope": [
+    "Exposed source positions, not an independent human or scientific holdout. No additional games or trained parameters.",
+    "Static one-ply choice differences or ties are neither gains nor estimates of true mature-engine16ply reward sensitivity.",
+    "When all candidate legal material leaves tie, prices cannot affect this static policy; deeper actual search can distinguish quiet actions.",
+    "Changing openings to improve this statistic changes the distribution; do not silently optimize/reselect frozen tests."
+  ]
+}
