@@ -1,0 +1,5 @@
+# Evaluator correspondence check — declared before execution
+Question: can the weighted D2 bridge evaluator be transferred to full semantic Native by copying coefficients (2,3,5)?
+Two existing imported roots only: shogi-drop and chess-tactic from frozen CASES. No child search, no timing claim, no fit, no default/product change. Use existing installed pyd 2f97cfb8816bc963163207095bf40ac990169284cd0cfb2e7b545f0a6bf07bf1 and product b4108a68a7ee06327be39cb3a222939644085a52.
+Read the public literal SFEN/FEN constructor and preserve board/base/current/promoted/owner/hand/aux/ply. Native current-position packing is explicitly history-free for evaluation/legality; it is not terminal-eligible repetition evidence. Query Native dynamic features and full score with exact board/hand values and copied coefficients; compare Core weighted score and material. Call terminal capability gate separately without a search.
+Expected decision: any score mismatch rejects copying coefficients as an aligned full-backend cost control. Equality at two points does not prove evaluator equivalence. Whole wall fuse30seconds, no repeats or tuning.

@@ -1,0 +1,585 @@
+{
+  "complete": true,
+  "primary_revision": "ee48d0a55c7bda3d702f45ce2dc4162cc3bbc0ac",
+  "profile_base": "200608a6550f76da271389076da65aca04eb75a6",
+  "source_only": true,
+  "profile_archive": {
+    "path": "docs/archive/runtime_cost_controls_20261011/evidence.zip",
+    "bytes": 283895,
+    "uncompressed_bytes": 3973228,
+    "members": 125,
+    "sha256": "22502ad8801134f4a8a91c3b271fa1e6731da3acce8d072493a2a3db17e071ff"
+  },
+  "profile_members": [
+    {
+      "member": ".local_agent/availability-core-20261011/residual-function-profile.json",
+      "bytes": 301447,
+      "sha256": "5576366a180fa13ec2ab65d93f4334e83f53fe4a3b2b3ec3e3d859c88a61af37"
+    },
+    {
+      "member": ".local_agent/availability-core-20261011/residual_function_profile.py",
+      "bytes": 2389,
+      "sha256": "d55060929be7a689740de48fc4e4069165423e7b074a4b5b7edacad3e3e0849f"
+    }
+  ],
+  "frozen_archive": {
+    "path": "docs/archive/availability_core_20261011/evidence.zip",
+    "bytes": 1223696,
+    "uncompressed_bytes": 10088060,
+    "members": 310,
+    "sha256": "f21bda944f971c0151f4cb7cefc62c909bc367c2120d9f018874d2568d22f499"
+  },
+  "frozen_members": [
+    {
+      "member": ".local_agent/availability-core-20261011/residual-bridge.json",
+      "bytes": 91952,
+      "sha256": "0a2d7e9d17a70ea6c52c7c5d9d9ceca11fa014fd6b6aeb157db55d1c4d650401"
+    }
+  ],
+  "rows": [
+    {
+      "root": "chess-ep",
+      "work": {
+        "nodes": 270,
+        "leaves": 238,
+        "terminal_queries": 270,
+        "legal_queries": 32,
+        "pushes": 269,
+        "cutoffs": 27,
+        "root_completed": 31
+      },
+      "move": "d1f3",
+      "score": 6,
+      "plain_wall": 0.05425250018015504,
+      "profile_wall": 0.1567319999448955,
+      "profile_over_plain": 2.8889359831240795,
+      "coarse_scopes": {
+        "provider": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 952,
+          "name": "_legal_actions_from_provider",
+          "primitive_calls": 32,
+          "total_calls": 32,
+          "self_seconds": 0.0007133,
+          "inclusive_seconds": 0.013821100000000001
+        },
+        "push_including_terminal": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 1250,
+          "name": "_push_impl",
+          "primitive_calls": 269,
+          "total_calls": 269,
+          "self_seconds": 0.0029658,
+          "inclusive_seconds": 0.0675114
+        },
+        "leaf_evaluation": {
+          "file": "generic_chess/ai/evaluation/evaluator.py",
+          "line": 57,
+          "name": "evaluate",
+          "primitive_calls": 238,
+          "total_calls": 238,
+          "self_seconds": 0.0024939000000000003,
+          "inclusive_seconds": 0.0699366
+        },
+        "pop": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 1339,
+          "name": "pop",
+          "primitive_calls": 269,
+          "total_calls": 269,
+          "self_seconds": 0.0006006000000000001,
+          "inclusive_seconds": 0.0019519000000000001
+        }
+      },
+      "terminal_nested": {
+        "file": "generic_chess/core/terminal.py",
+        "line": 419,
+        "name": "terminal_from_search_runtime",
+        "primitive_calls": 269,
+        "total_calls": 269,
+        "self_seconds": 0.0012929,
+        "inclusive_seconds": 0.027351300000000002
+      },
+      "unassigned_wall": 0.00351099994489551,
+      "python_filtered_self_sum": 0.0971765,
+      "dominant_scope": "leaf_evaluation"
+    },
+    {
+      "root": "chess-middle",
+      "work": {
+        "nodes": 631,
+        "leaves": 595,
+        "terminal_queries": 631,
+        "legal_queries": 36,
+        "pushes": 630,
+        "cutoffs": 29,
+        "root_completed": 35
+      },
+      "move": "f3e5",
+      "score": -100,
+      "plain_wall": 0.1362060997635126,
+      "profile_wall": 0.38816520012915134,
+      "profile_over_plain": 2.8498371277285077,
+      "coarse_scopes": {
+        "provider": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 952,
+          "name": "_legal_actions_from_provider",
+          "primitive_calls": 36,
+          "total_calls": 36,
+          "self_seconds": 0.0010926,
+          "inclusive_seconds": 0.0224875
+        },
+        "push_including_terminal": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 1250,
+          "name": "_push_impl",
+          "primitive_calls": 630,
+          "total_calls": 630,
+          "self_seconds": 0.0075665,
+          "inclusive_seconds": 0.1632366
+        },
+        "leaf_evaluation": {
+          "file": "generic_chess/ai/evaluation/evaluator.py",
+          "line": 57,
+          "name": "evaluate",
+          "primitive_calls": 595,
+          "total_calls": 595,
+          "self_seconds": 0.0064335,
+          "inclusive_seconds": 0.1905936
+        },
+        "pop": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 1339,
+          "name": "pop",
+          "primitive_calls": 630,
+          "total_calls": 630,
+          "self_seconds": 0.0014136,
+          "inclusive_seconds": 0.004675
+        }
+      },
+      "terminal_nested": {
+        "file": "generic_chess/core/terminal.py",
+        "line": 419,
+        "name": "terminal_from_search_runtime",
+        "primitive_calls": 630,
+        "total_calls": 630,
+        "self_seconds": 0.0031529,
+        "inclusive_seconds": 0.0660714
+      },
+      "unassigned_wall": 0.007172500129151327,
+      "python_filtered_self_sum": 0.2406285,
+      "dominant_scope": "leaf_evaluation"
+    },
+    {
+      "root": "chess-promotion",
+      "work": {
+        "nodes": 38,
+        "leaves": 30,
+        "terminal_queries": 38,
+        "legal_queries": 8,
+        "pushes": 37,
+        "cutoffs": 3,
+        "root_completed": 7
+      },
+      "move": "a7a8q",
+      "score": 417,
+      "plain_wall": 0.005247300025075674,
+      "profile_wall": 0.013195100240409374,
+      "profile_over_plain": 2.514645661073874,
+      "coarse_scopes": {
+        "provider": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 952,
+          "name": "_legal_actions_from_provider",
+          "primitive_calls": 8,
+          "total_calls": 8,
+          "self_seconds": 8.75e-05,
+          "inclusive_seconds": 0.0012111000000000001
+        },
+        "push_including_terminal": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 1250,
+          "name": "_push_impl",
+          "primitive_calls": 37,
+          "total_calls": 37,
+          "self_seconds": 0.00038280000000000003,
+          "inclusive_seconds": 0.008445000000000001
+        },
+        "leaf_evaluation": {
+          "file": "generic_chess/ai/evaluation/evaluator.py",
+          "line": 57,
+          "name": "evaluate",
+          "primitive_calls": 30,
+          "total_calls": 30,
+          "self_seconds": 0.00016690000000000002,
+          "inclusive_seconds": 0.0028309000000000003
+        },
+        "pop": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 1339,
+          "name": "pop",
+          "primitive_calls": 37,
+          "total_calls": 37,
+          "self_seconds": 7.87e-05,
+          "inclusive_seconds": 0.0002633
+        }
+      },
+      "terminal_nested": {
+        "file": "generic_chess/core/terminal.py",
+        "line": 419,
+        "name": "terminal_from_search_runtime",
+        "primitive_calls": 37,
+        "total_calls": 37,
+        "self_seconds": 0.00018800000000000002,
+        "inclusive_seconds": 0.0031167
+      },
+      "unassigned_wall": 0.00044480024040937337,
+      "python_filtered_self_sum": 0.0084816,
+      "dominant_scope": "push_including_terminal"
+    },
+    {
+      "root": "chess-tactic",
+      "work": {
+        "nodes": 64,
+        "leaves": 35,
+        "terminal_queries": 64,
+        "legal_queries": 29,
+        "pushes": 63,
+        "cutoffs": 27,
+        "root_completed": 29
+      },
+      "move": "f3a8",
+      "score": 999999999,
+      "plain_wall": 0.013845600187778473,
+      "profile_wall": 0.02655569976195693,
+      "profile_over_plain": 1.917988342997054,
+      "coarse_scopes": {
+        "provider": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 952,
+          "name": "_legal_actions_from_provider",
+          "primitive_calls": 29,
+          "total_calls": 29,
+          "self_seconds": 0.000346,
+          "inclusive_seconds": 0.0050786
+        },
+        "push_including_terminal": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 1250,
+          "name": "_push_impl",
+          "primitive_calls": 63,
+          "total_calls": 63,
+          "self_seconds": 0.0007064,
+          "inclusive_seconds": 0.0154353
+        },
+        "leaf_evaluation": {
+          "file": "generic_chess/ai/evaluation/evaluator.py",
+          "line": 57,
+          "name": "evaluate",
+          "primitive_calls": 34,
+          "total_calls": 34,
+          "self_seconds": 0.00023040000000000002,
+          "inclusive_seconds": 0.0045087
+        },
+        "pop": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 1339,
+          "name": "pop",
+          "primitive_calls": 63,
+          "total_calls": 63,
+          "self_seconds": 0.0001441,
+          "inclusive_seconds": 0.00044360000000000005
+        }
+      },
+      "terminal_nested": {
+        "file": "generic_chess/core/terminal.py",
+        "line": 419,
+        "name": "terminal_from_search_runtime",
+        "primitive_calls": 63,
+        "total_calls": 63,
+        "self_seconds": 0.00032290000000000004,
+        "inclusive_seconds": 0.00578
+      },
+      "unassigned_wall": 0.0010894997619569288,
+      "python_filtered_self_sum": 0.016540600000000003,
+      "dominant_scope": "push_including_terminal"
+    },
+    {
+      "root": "shogi-drop",
+      "work": {
+        "nodes": 971,
+        "leaves": 807,
+        "terminal_queries": 971,
+        "legal_queries": 164,
+        "pushes": 970,
+        "cutoffs": 158,
+        "root_completed": 163
+      },
+      "move": "R*5c",
+      "score": 729,
+      "plain_wall": 0.2570755002088845,
+      "profile_wall": 0.5626665004529059,
+      "profile_over_plain": 2.188720823243429,
+      "coarse_scopes": {
+        "provider": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 952,
+          "name": "_legal_actions_from_provider",
+          "primitive_calls": 164,
+          "total_calls": 164,
+          "self_seconds": 0.0126928,
+          "inclusive_seconds": 0.2498129
+        },
+        "push_including_terminal": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 1250,
+          "name": "_push_impl",
+          "primitive_calls": 970,
+          "total_calls": 970,
+          "self_seconds": 0.0126222,
+          "inclusive_seconds": 0.20012560000000001
+        },
+        "leaf_evaluation": {
+          "file": "generic_chess/ai/evaluation/evaluator.py",
+          "line": 57,
+          "name": "evaluate",
+          "primitive_calls": 807,
+          "total_calls": 807,
+          "self_seconds": 0.0045981,
+          "inclusive_seconds": 0.0732308
+        },
+        "pop": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 1339,
+          "name": "pop",
+          "primitive_calls": 970,
+          "total_calls": 970,
+          "self_seconds": 0.0024786,
+          "inclusive_seconds": 0.0070531000000000005
+        }
+      },
+      "terminal_nested": {
+        "file": "generic_chess/core/terminal.py",
+        "line": 419,
+        "name": "terminal_from_search_runtime",
+        "primitive_calls": 970,
+        "total_calls": 970,
+        "self_seconds": 0.0047326,
+        "inclusive_seconds": 0.0777637
+      },
+      "unassigned_wall": 0.03244410045290591,
+      "python_filtered_self_sum": 0.2916163,
+      "dominant_scope": "provider"
+    },
+    {
+      "root": "shogi-middle",
+      "work": {
+        "nodes": 519,
+        "leaves": 476,
+        "terminal_queries": 519,
+        "legal_queries": 43,
+        "pushes": 518,
+        "cutoffs": 38,
+        "root_completed": 42
+      },
+      "move": "8h2b",
+      "score": -204,
+      "plain_wall": 0.11695599975064397,
+      "profile_wall": 0.36155290016904473,
+      "profile_over_plain": 3.0913582966234614,
+      "coarse_scopes": {
+        "provider": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 952,
+          "name": "_legal_actions_from_provider",
+          "primitive_calls": 43,
+          "total_calls": 43,
+          "self_seconds": 0.0013568,
+          "inclusive_seconds": 0.0299314
+        },
+        "push_including_terminal": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 1250,
+          "name": "_push_impl",
+          "primitive_calls": 518,
+          "total_calls": 518,
+          "self_seconds": 0.0056534,
+          "inclusive_seconds": 0.120495
+        },
+        "leaf_evaluation": {
+          "file": "generic_chess/ai/evaluation/evaluator.py",
+          "line": 57,
+          "name": "evaluate",
+          "primitive_calls": 476,
+          "total_calls": 476,
+          "self_seconds": 0.006318300000000001,
+          "inclusive_seconds": 0.2003618
+        },
+        "pop": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 1339,
+          "name": "pop",
+          "primitive_calls": 518,
+          "total_calls": 518,
+          "self_seconds": 0.0011123,
+          "inclusive_seconds": 0.0037399000000000004
+        }
+      },
+      "terminal_nested": {
+        "file": "generic_chess/core/terminal.py",
+        "line": 419,
+        "name": "terminal_from_search_runtime",
+        "primitive_calls": 518,
+        "total_calls": 518,
+        "self_seconds": 0.0026204,
+        "inclusive_seconds": 0.0561586
+      },
+      "unassigned_wall": 0.00702480016904472,
+      "python_filtered_self_sum": 0.2157727,
+      "dominant_scope": "leaf_evaluation"
+    },
+    {
+      "root": "shogi-promotion",
+      "work": {
+        "nodes": 15,
+        "leaves": 9,
+        "terminal_queries": 15,
+        "legal_queries": 6,
+        "pushes": 14,
+        "cutoffs": 3,
+        "root_completed": 5
+      },
+      "move": "5c5b+",
+      "score": 477,
+      "plain_wall": 0.0019994997419416904,
+      "profile_wall": 0.004409800283610821,
+      "profile_over_plain": 2.2054517893203207,
+      "coarse_scopes": {
+        "provider": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 952,
+          "name": "_legal_actions_from_provider",
+          "primitive_calls": 6,
+          "total_calls": 6,
+          "self_seconds": 5.3700000000000004e-05,
+          "inclusive_seconds": 0.0007162000000000001
+        },
+        "push_including_terminal": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 1250,
+          "name": "_push_impl",
+          "primitive_calls": 14,
+          "total_calls": 14,
+          "self_seconds": 0.00013900000000000002,
+          "inclusive_seconds": 0.0027327000000000002
+        },
+        "leaf_evaluation": {
+          "file": "generic_chess/ai/evaluation/evaluator.py",
+          "line": 57,
+          "name": "evaluate",
+          "primitive_calls": 9,
+          "total_calls": 9,
+          "self_seconds": 4.8700000000000005e-05,
+          "inclusive_seconds": 0.0006635
+        },
+        "pop": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 1339,
+          "name": "pop",
+          "primitive_calls": 14,
+          "total_calls": 14,
+          "self_seconds": 2.72e-05,
+          "inclusive_seconds": 9.28e-05
+        }
+      },
+      "terminal_nested": {
+        "file": "generic_chess/core/terminal.py",
+        "line": 419,
+        "name": "terminal_from_search_runtime",
+        "primitive_calls": 14,
+        "total_calls": 14,
+        "self_seconds": 7.390000000000001e-05,
+        "inclusive_seconds": 0.0011413
+      },
+      "unassigned_wall": 0.0002046002836108207,
+      "python_filtered_self_sum": 0.0028087000000000003,
+      "dominant_scope": "push_including_terminal"
+    },
+    {
+      "root": "shogi-tactic",
+      "work": {
+        "nodes": 226,
+        "leaves": 114,
+        "terminal_queries": 226,
+        "legal_queries": 112,
+        "pushes": 225,
+        "cutoffs": 109,
+        "root_completed": 113
+      },
+      "move": "3c2c+",
+      "score": 999999999,
+      "plain_wall": 0.02989900019019842,
+      "profile_wall": 0.07766339974477887,
+      "profile_over_plain": 2.5975249757762375,
+      "coarse_scopes": {
+        "provider": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 952,
+          "name": "_legal_actions_from_provider",
+          "primitive_calls": 112,
+          "total_calls": 112,
+          "self_seconds": 0.0009539,
+          "inclusive_seconds": 0.013817900000000001
+        },
+        "push_including_terminal": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 1250,
+          "name": "_push_impl",
+          "primitive_calls": 225,
+          "total_calls": 225,
+          "self_seconds": 0.0028309000000000003,
+          "inclusive_seconds": 0.046889700000000006
+        },
+        "leaf_evaluation": {
+          "file": "generic_chess/ai/evaluation/evaluator.py",
+          "line": 57,
+          "name": "evaluate",
+          "primitive_calls": 112,
+          "total_calls": 112,
+          "self_seconds": 0.0006448000000000001,
+          "inclusive_seconds": 0.012436000000000001
+        },
+        "pop": {
+          "file": "generic_chess/core/search_runtime.py",
+          "line": 1339,
+          "name": "pop",
+          "primitive_calls": 225,
+          "total_calls": 225,
+          "self_seconds": 0.00040950000000000003,
+          "inclusive_seconds": 0.0014318
+        }
+      },
+      "terminal_nested": {
+        "file": "generic_chess/core/terminal.py",
+        "line": 419,
+        "name": "terminal_from_search_runtime",
+        "primitive_calls": 225,
+        "total_calls": 225,
+        "self_seconds": 0.0010889,
+        "inclusive_seconds": 0.019427100000000003
+      },
+      "unassigned_wall": 0.0030879997447788576,
+      "python_filtered_self_sum": 0.047666700000000006,
+      "dominant_scope": "push_including_terminal"
+    }
+  ],
+  "limits": [
+    "All sixteen archived calls match the eighty frozen decisions and work, not their elapsed times.",
+    "Profile has no typed-token memo; provider reused across plain then profiled call, so syntax may be warm.",
+    "cProfile perturbation is large and nonuniform; these shares rank observed scopes, not attainable savings or a profiled/plain speedup.",
+    "Provider, push, evaluate, pop are nonrecursive coarse scopes under this caller with cached parent legality; terminal is nested in push and must not be added.",
+    "Wall residual contains script/control, labels, builtins and profiler effects; Python-only self totals exclude other work.",
+    "No pure C-kernel duration is isolated. Profile source base differs from current product only in a relevant support-limit accessor on inspected normal paths; source-stage repair remains declared."
+  ]
+}

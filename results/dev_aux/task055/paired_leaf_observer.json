@@ -1,0 +1,87 @@
+{
+  "complete": true,
+  "product_revision": "b4108a68a7ee06327be39cb3a222939644085a52",
+  "binary_sha256": "2f97cfb8816bc963163207095bf40ac990169284cd0cfb2e7b545f0a6bf07bf1",
+  "rows": [
+    {
+      "arm": "hybrid",
+      "result": {
+        "move": "f3e5",
+        "score": -100,
+        "reason": "completed_depth",
+        "wall_seconds": 0.24347180034965277,
+        "completed_depth": 2,
+        "work": {
+          "nodes": 631,
+          "leaves": 595,
+          "terminal_queries": 631,
+          "legal_queries": 36,
+          "pushes": 630,
+          "cutoffs": 29,
+          "root_completed": 35
+        },
+        "trace_sha256": "2f72edf6156ef0e0fd81ed97933f608d6fbb478c2586061d41c61f48f0c88798",
+        "runtime_counters": {
+          "pushes": 630,
+          "pops": 630,
+          "legal_provider_calls": 36,
+          "legal_provider_actions": 1354,
+          "legal_provider_seconds": 0.01813019998371601,
+          "legal_provider_payload_seconds": 0.001206700224429369,
+          "legal_provider_decode_binding_seconds": 0.005748499184846878,
+          "legal_provider_fallbacks": 0,
+          "legal_provider_operational_failures": 0,
+          "child_external_key_computations": 0,
+          "history_reconstruction_attempts": 0,
+          "opaque_history_child_external_key_computations": 0
+        },
+        "native_provider_active": true
+      },
+      "leaf_observer": {
+        "calls": 595,
+        "core_seconds": 0.05392830213531852
+      },
+      "ordered_position_score_sha256": "80fcdc55820b672e895a1aab2cdc2cd8440a0437df915b4490a369bd168aa17c",
+      "specialized_conversion_seconds": 0.0,
+      "root_restored_four_predicates": true,
+      "whole_minus_evaluator_core": 0.18954349821433425
+    },
+    {
+      "arm": "specialized",
+      "result": {
+        "move": "f3e5",
+        "score": -100,
+        "reason": "completed_depth",
+        "wall_seconds": 0.1494194995611906,
+        "completed_depth": 2,
+        "work": {
+          "nodes": 631,
+          "leaves": 595,
+          "terminal_queries": 631,
+          "legal_queries": 36,
+          "pushes": 630,
+          "cutoffs": 29,
+          "root_completed": 35
+        },
+        "trace_sha256": "2f72edf6156ef0e0fd81ed97933f608d6fbb478c2586061d41c61f48f0c88798",
+        "runtime_counters": {},
+        "native_provider_active": null
+      },
+      "leaf_observer": {
+        "calls": 595,
+        "core_seconds": 0.04726188722997904
+      },
+      "ordered_position_score_sha256": "80fcdc55820b672e895a1aab2cdc2cd8440a0437df915b4490a369bd168aa17c",
+      "specialized_conversion_seconds": 0.016697602346539497,
+      "root_restored_four_predicates": true,
+      "whole_minus_evaluator_core": 0.10215761233121157
+    }
+  ],
+  "observed_delta": {
+    "whole": 0.09405230078846216,
+    "evaluator_core": 0.0066664149053394794,
+    "whole_minus_core": 0.08738588588312268,
+    "specialized_conversion": 0.016697602346539497
+  },
+  "limits": "One observed pair. Ordered Position/score and trace correspondence,595calls each; not identical full-history proof or controlled speed measurement. Whole timings include observers/hashing. Same-function cost equality is not guaranteed. Residual is all other observed execution, control and instrumentation, not pure rule cost. Specialist conversion charged separately. No generalization to Shogi/q4 or further repeated cohort."
+}

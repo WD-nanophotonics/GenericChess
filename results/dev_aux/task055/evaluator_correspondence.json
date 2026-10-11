@@ -1,0 +1,82 @@
+{
+  "complete": true,
+  "binary_sha256": "2f97cfb8816bc963163207095bf40ac990169284cd0cfb2e7b545f0a6bf07bf1",
+  "product_revision": "b4108a68a7ee06327be39cb3a222939644085a52",
+  "rows": [
+    {
+      "root": "shogi-drop",
+      "setup": "4k4/9/9/9/9/9/9/9/4K4 b RSnp 1",
+      "material": 700,
+      "core_weighted": 700,
+      "native_copied_coefficients": 750,
+      "difference": 50,
+      "pseudo_attack_counts": [
+        5,
+        5
+      ],
+      "native_features": [
+        25,
+        0,
+        0
+      ],
+      "native_type_ids": [
+        "B",
+        "G",
+        "K",
+        "L",
+        "N",
+        "P",
+        "R",
+        "S",
+        "TB",
+        "TL",
+        "TN",
+        "TP",
+        "TR",
+        "TS"
+      ],
+      "native_report": {
+        "payload_version": 4,
+        "executable": true
+      },
+      "terminal_gate": {
+        "supported": false,
+        "error_type": "NativeUnsupportedRuleError",
+        "message": "Native semantic terminal/search does not support stalemate loss policy; use Core terminal/search"
+      }
+    },
+    {
+      "root": "chess-tactic",
+      "setup": "7k/5ppp/8/8/8/5Q2/6PP/6K1 w - - 0 1",
+      "material": 400,
+      "core_weighted": 451,
+      "native_copied_coefficients": 454,
+      "difference": 3,
+      "pseudo_attack_counts": [
+        25,
+        3
+      ],
+      "native_features": [
+        22,
+        0,
+        2
+      ],
+      "native_type_ids": [
+        "B",
+        "K",
+        "N",
+        "P",
+        "Q",
+        "R"
+      ],
+      "native_report": {
+        "payload_version": 4,
+        "executable": true
+      },
+      "terminal_gate": {
+        "supported": true
+      }
+    }
+  ],
+  "limits": "Two exposed imported static roots; no search, timing, terminal adjudication or full history transport claim. Mismatch disproves coefficient-copy correspondence only. No evaluator is preferred or fitted."
+}

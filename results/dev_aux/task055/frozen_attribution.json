@@ -1,0 +1,723 @@
+{
+  "complete": true,
+  "primary_revision": "ee48d0a55c7bda3d702f45ce2dc4162cc3bbc0ac",
+  "archive_sha256": "f21bda944f971c0151f4cb7cefc62c909bc367c2120d9f018874d2568d22f499",
+  "member": ".local_agent/availability-core-20261011/residual-bridge.json",
+  "member_sha256": "0a2d7e9d17a70ea6c52c7c5d9d9ceca11fa014fd6b6aeb157db55d1c4d650401",
+  "source_only": true,
+  "rows": [
+    {
+      "root": "chess-ep",
+      "work": {
+        "nodes": 270,
+        "leaves": 238,
+        "terminal_queries": 270,
+        "legal_queries": 32,
+        "pushes": 269,
+        "cutoffs": 27,
+        "root_completed": 31
+      },
+      "arms": {
+        "core": {
+          "wall_mean": 0.06663289992138743,
+          "setup_mean": 0.007971899816766381,
+          "runtime": {
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "core-memo": {
+          "wall_mean": 0.06393860001116991,
+          "setup_mean": 0.007313400041311979,
+          "runtime": {
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "hybrid": {
+          "wall_mean": 0.056903749937191606,
+          "setup_mean": 0.007206249982118607,
+          "runtime": {
+            "legal_provider_seconds": 0.007792000193148851,
+            "legal_provider_payload_seconds": 0.0010730007197707891,
+            "legal_provider_decode_binding_seconds": 0.0032011002767831087,
+            "legal_provider_calls": 32,
+            "legal_provider_actions": 812,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "hybrid-memo": {
+          "wall_mean": 0.05224795010872185,
+          "setup_mean": 0.0071974501479417086,
+          "runtime": {
+            "legal_provider_seconds": 0.006981900194659829,
+            "legal_provider_payload_seconds": 0.0009649007115513086,
+            "legal_provider_decode_binding_seconds": 0.002795550273731351,
+            "legal_provider_calls": 32,
+            "legal_provider_actions": 812,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "specialized": {
+          "wall_mean": 0.02772659994661808,
+          "setup_mean": 0.0001121999230235815,
+          "runtime": {
+            "legal_provider_seconds": 0,
+            "legal_provider_payload_seconds": 0,
+            "legal_provider_decode_binding_seconds": 0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        }
+      },
+      "ratio": 1.8843980224518924,
+      "provider_share": 0.1336301267347583,
+      "decode_share": 0.0535054536668738,
+      "payload_share": 0.018467723796693716,
+      "outside_provider": 0.04526604991406202,
+      "provider_unassigned": 0.0032214492093771696,
+      "hypothetical_decode_removed_ratio": 1.783572451371644,
+      "hypothetical_whole_provider_removed_ratio": 1.632585675892918,
+      "actions_per_push": 3.0185873605947955,
+      "setup_included_ratio": 2.135343496667363
+    },
+    {
+      "root": "chess-middle",
+      "work": {
+        "nodes": 631,
+        "leaves": 595,
+        "terminal_queries": 631,
+        "legal_queries": 36,
+        "pushes": 630,
+        "cutoffs": 29,
+        "root_completed": 35
+      },
+      "arms": {
+        "core": {
+          "wall_mean": 0.1449167497921735,
+          "setup_mean": 0.018843650119379163,
+          "runtime": {
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "core-memo": {
+          "wall_mean": 0.13146864995360374,
+          "setup_mean": 0.018600049894303083,
+          "runtime": {
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "hybrid": {
+          "wall_mean": 0.13188959984108806,
+          "setup_mean": 0.019183300202712417,
+          "runtime": {
+            "legal_provider_seconds": 0.018126351293176413,
+            "legal_provider_payload_seconds": 0.0011654503177851439,
+            "legal_provider_decode_binding_seconds": 0.004793100291863084,
+            "legal_provider_calls": 36,
+            "legal_provider_actions": 1354,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "hybrid-memo": {
+          "wall_mean": 0.11933899996802211,
+          "setup_mean": 0.01821939996443689,
+          "runtime": {
+            "legal_provider_seconds": 0.011161749716848135,
+            "legal_provider_payload_seconds": 0.0011475502979010344,
+            "legal_provider_decode_binding_seconds": 0.004558400018140674,
+            "legal_provider_calls": 36,
+            "legal_provider_actions": 1354,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "specialized": {
+          "wall_mean": 0.06891655013896525,
+          "setup_mean": 0.00016084988601505756,
+          "runtime": {
+            "legal_provider_seconds": 0,
+            "legal_provider_payload_seconds": 0,
+            "legal_provider_decode_binding_seconds": 0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        }
+      },
+      "ratio": 1.731645007293366,
+      "provider_share": 0.09352977417138589,
+      "decode_share": 0.03819706901651711,
+      "payload_share": 0.009615886660760775,
+      "outside_provider": 0.10817725025117397,
+      "provider_unassigned": 0.005455799400806427,
+      "hypothetical_decode_removed_ratio": 1.6655012434376741,
+      "hypothetical_whole_provider_removed_ratio": 1.5696846408162097,
+      "actions_per_push": 2.149206349206349,
+      "setup_included_ratio": 1.9913662049051362
+    },
+    {
+      "root": "chess-promotion",
+      "work": {
+        "nodes": 38,
+        "leaves": 30,
+        "terminal_queries": 38,
+        "legal_queries": 8,
+        "pushes": 37,
+        "cutoffs": 3,
+        "root_completed": 7
+      },
+      "arms": {
+        "core": {
+          "wall_mean": 0.005195349920541048,
+          "setup_mean": 0.0005632499232888222,
+          "runtime": {
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "core-memo": {
+          "wall_mean": 0.004996049916371703,
+          "setup_mean": 0.0005993999075144529,
+          "runtime": {
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "hybrid": {
+          "wall_mean": 0.004885599948465824,
+          "setup_mean": 0.0005558999255299568,
+          "runtime": {
+            "legal_provider_seconds": 0.0006135997828096151,
+            "legal_provider_payload_seconds": 0.00019439938478171825,
+            "legal_provider_decode_binding_seconds": 0.0001988997682929039,
+            "legal_provider_calls": 8,
+            "legal_provider_actions": 46,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "hybrid-memo": {
+          "wall_mean": 0.004763149889186025,
+          "setup_mean": 0.00064514996483922,
+          "runtime": {
+            "legal_provider_seconds": 0.0006059496663510799,
+            "legal_provider_payload_seconds": 0.00019239913672208786,
+            "legal_provider_decode_binding_seconds": 0.00019320030696690083,
+            "legal_provider_calls": 8,
+            "legal_provider_actions": 46,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "specialized": {
+          "wall_mean": 0.0017164999153465033,
+          "setup_mean": 4.584994167089462e-05,
+          "runtime": {
+            "legal_provider_seconds": 0,
+            "legal_provider_payload_seconds": 0,
+            "legal_provider_decode_binding_seconds": 0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        }
+      },
+      "ratio": 2.77491996742948,
+      "provider_share": 0.12721616586679171,
+      "decode_share": 0.04056145858553212,
+      "payload_share": 0.040393256814970184,
+      "outside_provider": 0.004157200222834945,
+      "provider_unassigned": 0.00022035022266209126,
+      "hypothetical_decode_removed_ratio": 2.6623651660924232,
+      "hypothetical_whole_provider_removed_ratio": 2.4219052885858994,
+      "actions_per_push": 1.2432432432432432,
+      "setup_included_ratio": 3.068800347723383
+    },
+    {
+      "root": "chess-tactic",
+      "work": {
+        "nodes": 64,
+        "leaves": 35,
+        "terminal_queries": 64,
+        "legal_queries": 29,
+        "pushes": 63,
+        "cutoffs": 27,
+        "root_completed": 29
+      },
+      "arms": {
+        "core": {
+          "wall_mean": 0.011785350041463971,
+          "setup_mean": 0.0006055498961359262,
+          "runtime": {
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "core-memo": {
+          "wall_mean": 0.012451999820768833,
+          "setup_mean": 0.0006547002121806145,
+          "runtime": {
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "hybrid": {
+          "wall_mean": 0.010347049916163087,
+          "setup_mean": 0.0005879001691937447,
+          "runtime": {
+            "legal_provider_seconds": 0.0024711498990654945,
+            "legal_provider_payload_seconds": 0.0007190501783043146,
+            "legal_provider_decode_binding_seconds": 0.0008599990978837013,
+            "legal_provider_calls": 29,
+            "legal_provider_actions": 215,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "hybrid-memo": {
+          "wall_mean": 0.009786499897018075,
+          "setup_mean": 0.0006793499924242496,
+          "runtime": {
+            "legal_provider_seconds": 0.0023369998671114445,
+            "legal_provider_payload_seconds": 0.0006804498843848705,
+            "legal_provider_decode_binding_seconds": 0.0008021995890885592,
+            "legal_provider_calls": 29,
+            "legal_provider_actions": 215,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "specialized": {
+          "wall_mean": 0.0027267001569271088,
+          "setup_mean": 5.665002390742302e-05,
+          "runtime": {
+            "legal_provider_seconds": 0,
+            "legal_provider_payload_seconds": 0,
+            "legal_provider_decode_binding_seconds": 0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        }
+      },
+      "ratio": 3.5891368077842127,
+      "provider_share": 0.2387983335925363,
+      "decode_share": 0.08197001967301788,
+      "payload_share": 0.0695294427573848,
+      "outside_provider": 0.0074495000299066305,
+      "provider_unassigned": 0.0008543503936380148,
+      "hypothetical_decode_removed_ratio": 3.2949351930409883,
+      "hypothetical_whole_provider_removed_ratio": 2.7320569190497075,
+      "actions_per_push": 3.4126984126984126,
+      "setup_included_ratio": 3.760162828776489
+    },
+    {
+      "root": "shogi-drop",
+      "work": {
+        "nodes": 971,
+        "leaves": 807,
+        "terminal_queries": 971,
+        "legal_queries": 164,
+        "pushes": 970,
+        "cutoffs": 158,
+        "root_completed": 163
+      },
+      "arms": {
+        "core": {
+          "wall_mean": 0.35815909993834794,
+          "setup_mean": 0.00040449993684887886,
+          "runtime": {
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "core-memo": {
+          "wall_mean": 0.36180529999546707,
+          "setup_mean": 0.0004863000940531492,
+          "runtime": {
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "hybrid": {
+          "wall_mean": 0.2559160999953747,
+          "setup_mean": 0.000414449954405427,
+          "runtime": {
+            "legal_provider_seconds": 0.14096610201522708,
+            "legal_provider_payload_seconds": 0.003910849103704095,
+            "legal_provider_decode_binding_seconds": 0.04727890295907855,
+            "legal_provider_calls": 164,
+            "legal_provider_actions": 20000,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "hybrid-memo": {
+          "wall_mean": 0.2472734001930803,
+          "setup_mean": 0.0004940500948578119,
+          "runtime": {
+            "legal_provider_seconds": 0.13982094987295568,
+            "legal_provider_payload_seconds": 0.003879301715642214,
+            "legal_provider_decode_binding_seconds": 0.04703975119628012,
+            "legal_provider_calls": 164,
+            "legal_provider_actions": 20000,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "specialized": {
+          "wall_mean": 0.031977950129657984,
+          "setup_mean": 3.410014323890209e-05,
+          "runtime": {
+            "legal_provider_seconds": 0,
+            "legal_provider_payload_seconds": 0,
+            "legal_provider_decode_binding_seconds": 0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        }
+      },
+      "ratio": 7.73262198453885,
+      "provider_share": 0.5654508320093397,
+      "decode_share": 0.19023377022983357,
+      "payload_share": 0.01568830983281303,
+      "outside_provider": 0.10745245032012463,
+      "provider_unassigned": 0.08890189696103334,
+      "hypothetical_decode_removed_ratio": 6.261616150657927,
+      "hypothetical_whole_provider_removed_ratio": 3.3602044497676458,
+      "actions_per_push": 20.61855670103093,
+      "setup_included_ratio": 7.739818230190376
+    },
+    {
+      "root": "shogi-middle",
+      "work": {
+        "nodes": 519,
+        "leaves": 476,
+        "terminal_queries": 519,
+        "legal_queries": 43,
+        "pushes": 518,
+        "cutoffs": 38,
+        "root_completed": 42
+      },
+      "arms": {
+        "core": {
+          "wall_mean": 0.15630569984205067,
+          "setup_mean": 0.01743910019285977,
+          "runtime": {
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "core-memo": {
+          "wall_mean": 0.15437925001606345,
+          "setup_mean": 0.016627599950879812,
+          "runtime": {
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "hybrid": {
+          "wall_mean": 0.11604609992355108,
+          "setup_mean": 0.017476750072091818,
+          "runtime": {
+            "legal_provider_seconds": 0.016165649984031916,
+            "legal_provider_payload_seconds": 0.0013733496889472008,
+            "legal_provider_decode_binding_seconds": 0.005480149062350392,
+            "legal_provider_calls": 43,
+            "legal_provider_actions": 1665,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "hybrid-memo": {
+          "wall_mean": 0.11234869994223118,
+          "setup_mean": 0.017100500175729394,
+          "runtime": {
+            "legal_provider_seconds": 0.016166350338608027,
+            "legal_provider_payload_seconds": 0.0013760998845100403,
+            "legal_provider_decode_binding_seconds": 0.005413950886577368,
+            "legal_provider_calls": 43,
+            "legal_provider_actions": 1665,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "specialized": {
+          "wall_mean": 0.06289829988963902,
+          "setup_mean": 7.43502750992775e-05,
+          "runtime": {
+            "legal_provider_seconds": 0,
+            "legal_provider_payload_seconds": 0,
+            "legal_provider_decode_binding_seconds": 0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        }
+      },
+      "ratio": 1.7861961315227524,
+      "provider_share": 0.14389441397115085,
+      "decode_share": 0.0481888165093248,
+      "payload_share": 0.012248471813359835,
+      "outside_provider": 0.09618234960362315,
+      "provider_unassigned": 0.009376299567520618,
+      "hypothetical_decode_removed_ratio": 1.7001214538911367,
+      "hypothetical_whole_provider_removed_ratio": 1.529172485939749,
+      "actions_per_push": 3.2142857142857144,
+      "setup_included_ratio": 2.0556416123399233
+    },
+    {
+      "root": "shogi-promotion",
+      "work": {
+        "nodes": 15,
+        "leaves": 9,
+        "terminal_queries": 15,
+        "legal_queries": 6,
+        "pushes": 14,
+        "cutoffs": 3,
+        "root_completed": 5
+      },
+      "arms": {
+        "core": {
+          "wall_mean": 0.0020222498569637537,
+          "setup_mean": 0.00035060010850429535,
+          "runtime": {
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "core-memo": {
+          "wall_mean": 0.0019511498976498842,
+          "setup_mean": 0.00040739960968494415,
+          "runtime": {
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "hybrid": {
+          "wall_mean": 0.0017621000297367573,
+          "setup_mean": 0.0003482499159872532,
+          "runtime": {
+            "legal_provider_seconds": 0.00041184970177710056,
+            "legal_provider_payload_seconds": 0.00014315033331513405,
+            "legal_provider_decode_binding_seconds": 9.265006519854069e-05,
+            "legal_provider_calls": 6,
+            "legal_provider_actions": 20,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "hybrid-memo": {
+          "wall_mean": 0.001752649899572134,
+          "setup_mean": 0.0004093500319868326,
+          "runtime": {
+            "legal_provider_seconds": 0.0003931000828742981,
+            "legal_provider_payload_seconds": 0.00013724993914365768,
+            "legal_provider_decode_binding_seconds": 8.575012907385826e-05,
+            "legal_provider_calls": 6,
+            "legal_provider_actions": 20,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "specialized": {
+          "wall_mean": 0.00036615016870200634,
+          "setup_mean": 2.2300053387880325e-05,
+          "runtime": {
+            "legal_provider_seconds": 0,
+            "legal_provider_payload_seconds": 0,
+            "legal_provider_decode_binding_seconds": 0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        }
+      },
+      "ratio": 4.786696960389876,
+      "provider_share": 0.2242889940371227,
+      "decode_share": 0.04892598863857067,
+      "payload_share": 0.07830995749759484,
+      "outside_provider": 0.001359549816697836,
+      "provider_unassigned": 0.00017010001465678215,
+      "hypothetical_decode_removed_ratio": 4.55250307928956,
+      "hypothetical_whole_provider_removed_ratio": 3.713093514383478,
+      "actions_per_push": 1.4285714285714286,
+      "setup_included_ratio": 5.565706514279412
+    },
+    {
+      "root": "shogi-tactic",
+      "work": {
+        "nodes": 226,
+        "leaves": 114,
+        "terminal_queries": 226,
+        "legal_queries": 112,
+        "pushes": 225,
+        "cutoffs": 109,
+        "root_completed": 113
+      },
+      "arms": {
+        "core": {
+          "wall_mean": 0.0358283999375999,
+          "setup_mean": 0.00039045000448822975,
+          "runtime": {
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "core-memo": {
+          "wall_mean": 0.033932150108739734,
+          "setup_mean": 0.0005105496384203434,
+          "runtime": {
+            "legal_provider_seconds": 0.0,
+            "legal_provider_payload_seconds": 0.0,
+            "legal_provider_decode_binding_seconds": 0.0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "hybrid": {
+          "wall_mean": 0.029769250191748142,
+          "setup_mean": 0.0003845500759780407,
+          "runtime": {
+            "legal_provider_seconds": 0.007376299472525716,
+            "legal_provider_payload_seconds": 0.0024380518589168787,
+            "legal_provider_decode_binding_seconds": 0.0016605020500719547,
+            "legal_provider_calls": 112,
+            "legal_provider_actions": 424,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "hybrid-memo": {
+          "wall_mean": 0.037945049814879894,
+          "setup_mean": 0.00045935017988085747,
+          "runtime": {
+            "legal_provider_seconds": 0.007104101125150919,
+            "legal_provider_payload_seconds": 0.002384651219472289,
+            "legal_provider_decode_binding_seconds": 0.0015259981155395508,
+            "legal_provider_calls": 112,
+            "legal_provider_actions": 424,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        },
+        "specialized": {
+          "wall_mean": 0.005030449945479631,
+          "setup_mean": 3.320001997053623e-05,
+          "runtime": {
+            "legal_provider_seconds": 0,
+            "legal_provider_payload_seconds": 0,
+            "legal_provider_decode_binding_seconds": 0,
+            "legal_provider_calls": 0,
+            "legal_provider_actions": 0,
+            "legal_provider_fallbacks": 0,
+            "legal_provider_operational_failures": 0
+          }
+        }
+      },
+      "ratio": 7.543072732286575,
+      "provider_share": 0.18722076159628848,
+      "decode_share": 0.040215999794026916,
+      "payload_share": 0.06284485673641584,
+      "outside_provider": 0.030840948689728975,
+      "provider_unassigned": 0.003193451790139079,
+      "hypothetical_decode_removed_ratio": 7.239720520838608,
+      "hypothetical_whole_provider_removed_ratio": 6.130852910571686,
+      "actions_per_push": 1.8844444444444444,
+      "setup_included_ratio": 7.584331511221774
+    }
+  ],
+  "limits": "Two original correlated repeats; nested provider/payload/decode times. Perfect removal is a conditional arithmetic ceiling retaining all other work, not an implementation forecast. Provider residual includes kernel and validation; outside-provider includes sorting/evaluation/transition/terminal/history. Zero missing specialized runtime fields are not measured zero costs."
+}
