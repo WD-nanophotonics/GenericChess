@@ -1,0 +1,328 @@
+{
+  "complete": true,
+  "observed_at_utc": "2026-10-11T04:43:37.778493+00:00",
+  "published_comparison_pin": "558b497ba9ab4bd5464274571923959e628cbc03",
+  "working_runtime_sha256": "39f7592ac788f449213f844dffebdcf100f5a940f20fc7473aa1c6f16f33426f",
+  "frozen_resolve_sha256": "cb0f5cd0ef5b5621b1e89c5b4c2b653a7444de64d8238e135b704b8d25a5b922",
+  "working_module_only_changes_resolve_relative_to_published_ast": true,
+  "primary_working_source_not_immutable_publication": true,
+  "scope": "eight changed-premise candidate-only constructor/retry cells; no primary test execution, timing or all-allocation guarantee",
+  "rows": [
+    {
+      "context": "complete",
+      "collision": false,
+      "constructor_hit_count": 0,
+      "constructor_callers": [],
+      "original_exception_object_preserved": null,
+      "exception_type": null,
+      "exception_context_type": null,
+      "exception_cause_type": null,
+      "restored_after_fault_or_control_pop": {
+        "position": true,
+        "ply": true,
+        "status": true,
+        "identity": true,
+        "hash": true,
+        "snapshot": true,
+        "history": true,
+        "history_context": true,
+        "counts": true,
+        "bucket_keys": true,
+        "opaque_keys": true,
+        "aliases": true,
+        "frames": true,
+        "cache": true,
+        "bindings": true
+      },
+      "snapshot_actual_after_fault": {
+        "items": true,
+        "digest": true
+      },
+      "same_runtime_retry_public_parity": true,
+      "retry_snapshot_actual": {
+        "items": true,
+        "digest": true
+      },
+      "restored_after_retry_pop_counts": true,
+      "frame_depth_after_retry_pop": 0
+    },
+    {
+      "context": "complete",
+      "collision": true,
+      "constructor_hit_count": 0,
+      "constructor_callers": [],
+      "original_exception_object_preserved": null,
+      "exception_type": null,
+      "exception_context_type": null,
+      "exception_cause_type": null,
+      "restored_after_fault_or_control_pop": {
+        "position": true,
+        "ply": true,
+        "status": true,
+        "identity": true,
+        "hash": true,
+        "snapshot": true,
+        "history": true,
+        "history_context": true,
+        "counts": true,
+        "bucket_keys": true,
+        "opaque_keys": true,
+        "aliases": true,
+        "frames": true,
+        "cache": true,
+        "bindings": true
+      },
+      "snapshot_actual_after_fault": {
+        "items": true,
+        "digest": true
+      },
+      "same_runtime_retry_public_parity": true,
+      "retry_snapshot_actual": {
+        "items": true,
+        "digest": true
+      },
+      "restored_after_retry_pop_counts": true,
+      "frame_depth_after_retry_pop": 0
+    },
+    {
+      "context": "opaque",
+      "collision": false,
+      "constructor_hit_count": 1,
+      "constructor_callers": [
+        "_resolve_opaque_history_key"
+      ],
+      "original_exception_object_preserved": true,
+      "exception_type": "MemoryError",
+      "exception_context_type": null,
+      "exception_cause_type": null,
+      "restored_after_fault_or_control_pop": {
+        "position": true,
+        "ply": true,
+        "status": true,
+        "identity": true,
+        "hash": true,
+        "snapshot": true,
+        "history": true,
+        "history_context": true,
+        "counts": true,
+        "bucket_keys": true,
+        "opaque_keys": true,
+        "aliases": true,
+        "frames": true,
+        "cache": true,
+        "bindings": true
+      },
+      "snapshot_actual_after_fault": {
+        "items": true,
+        "digest": true
+      },
+      "same_runtime_retry_public_parity": true,
+      "retry_snapshot_actual": {
+        "items": true,
+        "digest": true
+      },
+      "restored_after_retry_pop_counts": true,
+      "frame_depth_after_retry_pop": 0
+    },
+    {
+      "context": "opaque",
+      "collision": true,
+      "constructor_hit_count": 1,
+      "constructor_callers": [
+        "_resolve_opaque_history_key"
+      ],
+      "original_exception_object_preserved": true,
+      "exception_type": "MemoryError",
+      "exception_context_type": null,
+      "exception_cause_type": null,
+      "restored_after_fault_or_control_pop": {
+        "position": true,
+        "ply": true,
+        "status": true,
+        "identity": true,
+        "hash": true,
+        "snapshot": true,
+        "history": true,
+        "history_context": true,
+        "counts": true,
+        "bucket_keys": true,
+        "opaque_keys": true,
+        "aliases": true,
+        "frames": true,
+        "cache": true,
+        "bindings": true
+      },
+      "snapshot_actual_after_fault": {
+        "items": true,
+        "digest": true
+      },
+      "same_runtime_retry_public_parity": true,
+      "retry_snapshot_actual": {
+        "items": true,
+        "digest": true
+      },
+      "restored_after_retry_pop_counts": true,
+      "frame_depth_after_retry_pop": 0
+    },
+    {
+      "context": "nested",
+      "collision": false,
+      "constructor_hit_count": 1,
+      "constructor_callers": [
+        "_resolve_opaque_history_key"
+      ],
+      "original_exception_object_preserved": true,
+      "exception_type": "MemoryError",
+      "exception_context_type": null,
+      "exception_cause_type": null,
+      "restored_after_fault_or_control_pop": {
+        "position": true,
+        "ply": true,
+        "status": true,
+        "identity": true,
+        "hash": true,
+        "snapshot": true,
+        "history": true,
+        "history_context": true,
+        "counts": true,
+        "bucket_keys": true,
+        "opaque_keys": true,
+        "aliases": true,
+        "frames": true,
+        "cache": true,
+        "bindings": true
+      },
+      "snapshot_actual_after_fault": {
+        "items": true,
+        "digest": true
+      },
+      "same_runtime_retry_public_parity": true,
+      "retry_snapshot_actual": {
+        "items": true,
+        "digest": true
+      },
+      "restored_after_retry_pop_counts": true,
+      "frame_depth_after_retry_pop": 1
+    },
+    {
+      "context": "nested",
+      "collision": true,
+      "constructor_hit_count": 1,
+      "constructor_callers": [
+        "_resolve_opaque_history_key"
+      ],
+      "original_exception_object_preserved": true,
+      "exception_type": "MemoryError",
+      "exception_context_type": null,
+      "exception_cause_type": null,
+      "restored_after_fault_or_control_pop": {
+        "position": true,
+        "ply": true,
+        "status": true,
+        "identity": true,
+        "hash": true,
+        "snapshot": true,
+        "history": true,
+        "history_context": true,
+        "counts": true,
+        "bucket_keys": true,
+        "opaque_keys": true,
+        "aliases": true,
+        "frames": true,
+        "cache": true,
+        "bindings": true
+      },
+      "snapshot_actual_after_fault": {
+        "items": true,
+        "digest": true
+      },
+      "same_runtime_retry_public_parity": true,
+      "retry_snapshot_actual": {
+        "items": true,
+        "digest": true
+      },
+      "restored_after_retry_pop_counts": true,
+      "frame_depth_after_retry_pop": 1
+    },
+    {
+      "context": "ordinary_new",
+      "collision": false,
+      "constructor_hit_count": 1,
+      "constructor_callers": [
+        "_occurrence_add"
+      ],
+      "original_exception_object_preserved": true,
+      "exception_type": "MemoryError",
+      "exception_context_type": null,
+      "exception_cause_type": null,
+      "restored_after_fault_or_control_pop": {
+        "position": true,
+        "ply": true,
+        "status": true,
+        "identity": true,
+        "hash": true,
+        "snapshot": true,
+        "history": true,
+        "history_context": true,
+        "counts": true,
+        "bucket_keys": false,
+        "opaque_keys": true,
+        "aliases": true,
+        "frames": true,
+        "cache": true,
+        "bindings": true
+      },
+      "snapshot_actual_after_fault": {
+        "items": true,
+        "digest": true
+      },
+      "same_runtime_retry_public_parity": true,
+      "retry_snapshot_actual": {
+        "items": true,
+        "digest": true
+      },
+      "restored_after_retry_pop_counts": true,
+      "frame_depth_after_retry_pop": 0
+    },
+    {
+      "context": "ordinary_new",
+      "collision": true,
+      "constructor_hit_count": 1,
+      "constructor_callers": [
+        "_occurrence_add"
+      ],
+      "original_exception_object_preserved": true,
+      "exception_type": "MemoryError",
+      "exception_context_type": null,
+      "exception_cause_type": null,
+      "restored_after_fault_or_control_pop": {
+        "position": true,
+        "ply": true,
+        "status": true,
+        "identity": true,
+        "hash": true,
+        "snapshot": true,
+        "history": true,
+        "history_context": true,
+        "counts": true,
+        "bucket_keys": true,
+        "opaque_keys": true,
+        "aliases": true,
+        "frames": true,
+        "cache": true,
+        "bindings": true
+      },
+      "snapshot_actual_after_fault": {
+        "items": true,
+        "digest": true
+      },
+      "same_runtime_retry_public_parity": true,
+      "retry_snapshot_actual": {
+        "items": true,
+        "digest": true
+      },
+      "restored_after_retry_pop_counts": true,
+      "frame_depth_after_retry_pop": 0
+    }
+  ]
+}
