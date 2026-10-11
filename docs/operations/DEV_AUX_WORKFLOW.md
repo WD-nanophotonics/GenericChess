@@ -74,3 +74,18 @@ Own ROOT/STATE and structurally valid memo were verified; no active research
 session was created. This bounded workflow setup is not a duration sample.
 Dot consultation was sent in a fresh root and exact payload readback verified;
 answer remains pending at this checkpoint, no resend. Raw records stay ignored.
+
+## Collaboration record — user update 2026-10-11
+
+At every completed DEV_AUX research segment update this branch's
+`docs/operations/COLLABORATION_LOG.md` with a short Agent-only contribution
+summary: both sides' work, resource coordination, corrections, adoption reasons,
+efficiency evidence/limits and unresolved matters. Bind own science and reviewed
+primary evidence to fixed revisions. Deliver the fixed auxiliary link to Dot and
+PRIMARY through authorized Slack. PRIMARY remains the sole sandbox writer and
+incorporates the relevant auxiliary entry into its canonical sandbox log; DEV_AUX
+never writes the primary checkout or pushes sandbox. A copied primary base is
+provenance, not permission to overwrite its newer log. Keep raw Slack/account,
+private input and credentials excluded. No routine replies, new approval gates,
+identity challenges or extra Agents. Bounded policy/resource coordination does
+not reopen a finished research segment or count as a duration sample.
