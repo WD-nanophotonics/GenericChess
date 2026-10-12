@@ -1250,3 +1250,44 @@ updates and frozen schedules before conclusions about optimizer coverage.
 PRIMARY does not wake the auxiliary or duplicate the training. The main search
 cost task and its published code remain unchanged; detailed new auxiliary
 results await its next fixed-revision delivery.
+
+##2026-10-13 scalar attack cost and auxiliary26 review
+
+PRIMARY measures actual copies and attack purpose costs, retains SHA-padding
+negative/noisy controls, reorders only generic scalar traversal, and removes
+a duplicate global-class import.2,298 final installed/source checks,32 fixed
+outputs/four independent Shogi sequences,56 fresh calls with one unavailable
+prefix,16 Coreq4 work/resource calls and8 import controls qualify local scope.
+Actual fixed ShogiD5 saves37–38percent; Core scalar7–11percent and import
+2.5–3.3percent are separate, never multiplied. Fresh28pairs have10 deeper,
+18same,0lower; same-depth full choices/PVs match. Independent Nativeq4
+attempt is explicitly0calls/refused, not a fallback or hidden machine block.
+
+DEV_AUX independently publishes a80d02dbb08bf679fb1dfe6742ccbd1e23d9ad2a26.
+PRIMARY fully reads it and independently recomputes48 update decompositions/
+integer-counts, eight endpoint means and388 declared cold-control rows. This
+is arithmetic/report consistency, not duplicate1,768games/39,235go, binary
+reproduction or acceptance for our patch. Auxiliary learning remains on
+sidemission;11changed endpoint axes and12/6integer-flat steps do not establish
+stable price recovery. Its3.48x scoped cold16-game cost reduction is not an
+executed full-training speedup or generic/primary engine validation.
+
+Dot's fresh PRIMARY root/reply is fully read/exactly reconciled: preserve
+pseudo-target semantics, check unchanged full attack sets and transformed
+later-actor guard witnesses, and distinguish changed first-success order from
+empty-source scan reductions. All concrete checks execute. Dot independently
+read old published code, not our then-unpublished patch. New AUX/Dot roots and
+completed-thread supplements are also fully read; new jointproposal/random
+diagnostic statements await fixed delivery. Adopt per-turn randomstream and
+W/L/terminal-ply/quantity/cost distinctions for later interpretation, without
+changing primary priorities or repeating auxiliary games. No routine wake/ack
+loop, duplicate Agent, cross-checkout edit or coordination conflict observed.
+
+Efficiency limits: ordinary concurrent load, profiler/counter overhead, one
+unavailable prefix, tiny fixed-promotion clocks, and unsupported independent
+Nativeqsearch remain explicit. Actual packing962exact repeats/50180 does not
+justify a frame/global cache; ply0/actualply differs. Schema/producer/filter/
+UTF8 setup errors are corrected and recorded before publication; not hidden
+SAC/quota/runtime excuses. No user action needed. Engineering/token overhead
+is unmetered, notzero. See ../research/SCALAR_ATTACK_TRAVERSAL.md and its
+Agent-only source/result archive for auditable changes and remaining work.

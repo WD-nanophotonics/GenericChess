@@ -104,3 +104,16 @@ There is no public result schema or UI/default policy change.2286 active tests
 pass on the final source; current finite resource/cost evidence and limitations:
 ../research/CURRENT_CALLER_TERMINAL_IDENTITY.md. UI Test remains user-owned;
 PRIMARY only publishes backend changes on sandbox, with reviewed later merges.
+
+## Scalar attack execution2026-10-13
+
+Rebuild the optional Native extension from sandbox for source-first scalar
+attack traversal. Public payload/version/result/identity and required-error
+contracts are unchanged. Capture-eligible pseudo-attacks still include empty
+and friendly targets; selected-action check witnesses keep separate predicates.
+A duplicate Python typeclass import is removed without cache or class change.
+Independent SemanticSearchEngine remains q0; Core AlphaBeta supplies q4 with
+Native legality/availability. Do not infer independent Native qsearch support
+from provider labels.2,298 final active tests pass without Native skips;
+local fixed/resource limits are in ../research/SCALAR_ATTACK_TRAVERSAL.md.
+PRIMARY sandbox backend only; UI Test stays user-owned on the other computer.

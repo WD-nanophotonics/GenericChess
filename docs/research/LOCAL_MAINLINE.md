@@ -26,6 +26,19 @@ roots, not claimed improved end-to-end or an independently reproduced user loss.
 
 ## Current measured question
 
+SCALAR_ATTACK_TRAVERSAL.md is the current result/selection. Generic scalar
+source-first attack and removal of a duplicate global-class import preserve
+full existing rule/identity/history/required-error contracts. Final2,298 tests,
+fixed complete-sequence controls and declared fresh resource results qualify
+local execution benefits, not universal speed or strength. Actual Core state
+import has962 exact repeats/50,180; availability ply0 and actual-ply consumers
+must stay distinct. Do not build a frame/global cache from object-only counts.
+Next choose one measured required builder/key primitive whose possible outcomes
+change a concrete implementation choice. IndependentNative search remainsq0;
+supportedCore-with-Native-legality suppliesq4. Auxiliary learning is separate.
+
+## Prior selections and preserved limits
+
 Q0_RESOURCE_AND_ORDERING.md separates fixed-work, node-limited delivery and a
 new equal-time resource plane. Original278-query evidence remains frozen.
 The saved checking-drop local gain remains avoidable at its parent/root.
@@ -244,3 +257,22 @@ Freshgenerated transfer is predeclared; retain every root and partial/cap result
 Auxb5fc958d segment25 matureMaterialLv1 build/cheapcost/learning reviewed,
 notreproduced or used for primaryacceptance. Next inspect the remaining actual
 consumer cost after exactidentity reuse; no new specialist/positioncache/engine.
+
+Current decision2026-10-13: SCALAR_ATTACK_TRAVERSAL.md adopts only the generic
+source-first scalar capture-attack traversal and deletes a duplicate already-
+global typeclass import. Empty/friendly/enemy targets, state/slot guards and
+later transformed-actor continuation are retained. Current installed/final
+source2,298 tests pass,0skip;32 fixed cells preserve full outputs and four
+Shogi traces match independent sequences. Same-work ShogiD5 saves37–38percent
+locally; Core D2 saves7–11percent for the scalar stage and2.5–3.3percent for
+the separate import stage, not multiplied. Fresh eight-seed16/64 plane keeps
+unavailable1344,56calls/28pairs:10 deeper,18 unchanged,0 shallower; all same-
+depth full choices/PVs agree. Coreq4 16s horizons remainunchanged; independent
+Native SemanticSearchEngine qsearch is unsupported and0calls are claimed.
+Required full identity/history/error semantics and UI/defaults remain. Copy,
+SHA-padding, bulkmap, per-type-index and state-import caches are deferred on
+measured information/cost; actual Core packing has962 exact repeats/50180,
+with ply0 versusactualply kept distinct. AUXa80d02db26 is independently checked
+for published arithmetic/row consistency only, notbinary/training reproduction
+or primaryacceptance; later randomstream advice has no newresults yet. Next
+choose one actual requiredbuilder/key primitive cost, no newengine/framework.

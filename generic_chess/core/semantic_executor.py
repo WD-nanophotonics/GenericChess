@@ -111,8 +111,6 @@ def _sources_by_owner_type(position: Position) -> dict[tuple[int, str], tuple[tu
 
 
 def is_semantic_compiled(compiled) -> bool:
-    from ..rules.ir import CompiledSemanticRuleset
-
     return isinstance(compiled, CompiledSemanticRuleset)
 
 
