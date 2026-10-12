@@ -1,0 +1,151 @@
+{
+  "complete": true,
+  "games": 24,
+  "actual_queries": 338,
+  "all_full_history_legal_random_and_PV_checks": true,
+  "groups": [
+    {
+      "profile": "unit",
+      "games": 8,
+      "wins": 7,
+      "losses": 0,
+      "unknown": 1,
+      "mean_fitness": "103/192",
+      "mean_completed_mate_plies": 19.571428571428573
+    },
+    {
+      "profile": "semantic",
+      "games": 8,
+      "wins": 8,
+      "losses": 0,
+      "unknown": 0,
+      "mean_fitness": "13/32",
+      "mean_completed_mate_plies": 29.5
+    },
+    {
+      "profile": "s703-base",
+      "games": 8,
+      "wins": 8,
+      "losses": 0,
+      "unknown": 0,
+      "mean_fitness": "37/96",
+      "mean_completed_mate_plies": 30.5
+    }
+  ],
+  "contrasts": [
+    {
+      "profile": "semantic",
+      "paired_differences": [
+        {
+          "root": 0,
+          "color": true,
+          "seed": 2026102301,
+          "delta": "-1/12"
+        },
+        {
+          "root": 0,
+          "color": true,
+          "seed": 2026102302,
+          "delta": "-1/6"
+        },
+        {
+          "root": 0,
+          "color": false,
+          "seed": 2026102301,
+          "delta": "-7/24"
+        },
+        {
+          "root": 0,
+          "color": false,
+          "seed": 2026102302,
+          "delta": "-1/12"
+        },
+        {
+          "root": 1,
+          "color": true,
+          "seed": 2026102301,
+          "delta": "-5/12"
+        },
+        {
+          "root": 1,
+          "color": true,
+          "seed": 2026102302,
+          "delta": "1/12"
+        },
+        {
+          "root": 1,
+          "color": false,
+          "seed": 2026102301,
+          "delta": "-7/24"
+        },
+        {
+          "root": 1,
+          "color": false,
+          "seed": 2026102302,
+          "delta": "5/24"
+        }
+      ],
+      "positive": 2,
+      "negative": 6
+    },
+    {
+      "profile": "s703-base",
+      "paired_differences": [
+        {
+          "root": 0,
+          "color": true,
+          "seed": 2026102301,
+          "delta": "1/24"
+        },
+        {
+          "root": 0,
+          "color": true,
+          "seed": 2026102302,
+          "delta": "-13/24"
+        },
+        {
+          "root": 0,
+          "color": false,
+          "seed": 2026102301,
+          "delta": "-5/24"
+        },
+        {
+          "root": 0,
+          "color": false,
+          "seed": 2026102302,
+          "delta": "-13/24"
+        },
+        {
+          "root": 1,
+          "color": true,
+          "seed": 2026102301,
+          "delta": "-5/24"
+        },
+        {
+          "root": 1,
+          "color": true,
+          "seed": 2026102302,
+          "delta": "1/2"
+        },
+        {
+          "root": 1,
+          "color": false,
+          "seed": 2026102301,
+          "delta": "-1/12"
+        },
+        {
+          "root": 1,
+          "color": false,
+          "seed": 2026102302,
+          "delta": "-1/6"
+        }
+      ],
+      "positive": 2,
+      "negative": 6
+    }
+  ],
+  "pilot_wall": 4.735000000335276,
+  "audit_seconds": 0.04700000025331974,
+  "decision": "Denseactualterminalsignal23/24mate. Fitnessrankingunit>semantic>s703, unlike oldsearchopponentbaseline. Proceed oneboundedpredeclaredcoordinatelearning withroot/color/seed diagnostics; nohumanadoption.",
+  "scope": "Randomopponentgoal local: highwinratealone notpricelearning; mate-speed differenttarget, uniformlegalreply bias observed300 remains. 8correlatedcells eachprofile; notconfidencebounds/generalstrength."
+}

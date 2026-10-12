@@ -1,0 +1,2207 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "root": "capture-0",
+      "profile": "unit",
+      "weights": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 208,
+        "K": 0
+      },
+      "nodes_limit": 1024,
+      "move": "e5c7",
+      "metadata": {
+        "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "full_history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5"
+        ],
+        "reported_nodes": 1030,
+        "reported_depth": 5,
+        "nodes_limit": 1024,
+        "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+        "uci_info": [
+          "info string classical evaluation enabled",
+          "info depth 1 seldepth 1 multipv 1 score cp 0 nodes 139 nps 139000 tbhits 0 time 1 pv a3b5",
+          "info depth 2 seldepth 2 multipv 1 score cp 0 nodes 380 nps 380000 tbhits 0 time 1 pv e5c7 a5b4 a3b5",
+          "info depth 3 seldepth 3 multipv 1 score cp 0 nodes 499 nps 499000 tbhits 0 time 1 pv e5c7 a5b4 a3b5",
+          "info depth 4 seldepth 4 multipv 1 score cp 0 nodes 752 nps 752000 tbhits 0 time 1 pv e5c7 a5b4 a3b5 a8a2",
+          "info depth 5 seldepth 4 multipv 1 score cp 0 nodes 1030 nps 1030000 tbhits 0 time 1 pv e5c7 a5b4 a3b5 a8a2"
+        ]
+      },
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:208:208 3:208:208 4:208:208 5:208:208",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            208,
+            208
+          ],
+          "3": [
+            208,
+            208
+          ],
+          "4": [
+            208,
+            208
+          ],
+          "5": [
+            208,
+            208
+          ]
+        },
+        "alignment": 3
+      },
+      "wall_seconds": 0.0,
+      "score": {
+        "kind": "cp",
+        "value": 0,
+        "depth": 5,
+        "bound": "exact_report",
+        "pv": [
+          "e5c7",
+          "a5b4",
+          "a3b5",
+          "a8a2"
+        ],
+        "line": "info depth 5 seldepth 4 multipv 1 score cp 0 nodes 1030 nps 1030000 tbhits 0 time 1 pv e5c7 a5b4 a3b5 a8a2"
+      },
+      "PV_leaf_vector": [
+        -2,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "root": "capture-0",
+      "profile": "unit",
+      "weights": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 208,
+        "K": 0
+      },
+      "nodes_limit": 16384,
+      "move": "e5c7",
+      "metadata": {
+        "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "full_history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5"
+        ],
+        "reported_nodes": 16398,
+        "reported_depth": 9,
+        "nodes_limit": 16384,
+        "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+        "uci_info": [
+          "info string classical evaluation enabled",
+          "info depth 1 seldepth 1 multipv 1 score cp 0 nodes 139 nps 69500 tbhits 0 time 2 pv a3b5",
+          "info depth 2 seldepth 2 multipv 1 score cp 0 nodes 380 nps 190000 tbhits 0 time 2 pv e5c7 a5b4 a3b5",
+          "info depth 3 seldepth 3 multipv 1 score cp 0 nodes 499 nps 249500 tbhits 0 time 2 pv e5c7 a5b4 a3b5",
+          "info depth 4 seldepth 4 multipv 1 score cp 0 nodes 752 nps 376000 tbhits 0 time 2 pv e5c7 a5b4 a3b5 a8a2",
+          "info depth 5 seldepth 5 multipv 1 score cp 0 nodes 1484 nps 742000 tbhits 0 time 2 pv e5c7 a5b4 a3b5 a8a2 a1a2",
+          "info depth 6 seldepth 6 multipv 1 score cp 0 nodes 2591 nps 1295500 tbhits 0 time 2 pv e5c7 a5b4 a3b5 a8a2 a1a2 h6g4",
+          "info depth 7 seldepth 7 multipv 1 score cp 0 nodes 7587 nps 1896750 tbhits 0 time 4 pv e5c7 d3e2 d1e2 c6b4 c4b5 b4a2",
+          "info depth 8 seldepth 8 multipv 1 score cp 0 nodes 11743 nps 2348600 tbhits 0 time 5 pv e5c7 d3e2 d1e2 c6b4 c4b5 b4a2 c7a5 a8a5",
+          "info depth 9 seldepth 8 multipv 1 score cp 0 nodes 16398 nps 2342571 tbhits 0 time 7 pv e5c7 d3e2 d1e2 c6b4 c4b5 b4a2 c7a5 a8a5"
+        ]
+      },
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:208:208 3:208:208 4:208:208 5:208:208",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            208,
+            208
+          ],
+          "3": [
+            208,
+            208
+          ],
+          "4": [
+            208,
+            208
+          ],
+          "5": [
+            208,
+            208
+          ]
+        },
+        "alignment": 3
+      },
+      "wall_seconds": 0.01500000013038516,
+      "score": {
+        "kind": "cp",
+        "value": 0,
+        "depth": 9,
+        "bound": "exact_report",
+        "pv": [
+          "e5c7",
+          "d3e2",
+          "d1e2",
+          "c6b4",
+          "c4b5",
+          "b4a2",
+          "c7a5",
+          "a8a5"
+        ],
+        "line": "info depth 9 seldepth 8 multipv 1 score cp 0 nodes 16398 nps 2342571 tbhits 0 time 7 pv e5c7 d3e2 d1e2 c6b4 c4b5 b4a2 c7a5 a8a5"
+      },
+      "PV_leaf_vector": [
+        -1,
+        0,
+        -1,
+        0,
+        1
+      ]
+    },
+    {
+      "root": "capture-0",
+      "profile": "semantic",
+      "weights": {
+        "K": 0,
+        "P": 208,
+        "N": 1138,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "nodes_limit": 1024,
+      "move": "e5c7",
+      "metadata": {
+        "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "full_history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5"
+        ],
+        "reported_nodes": 1025,
+        "reported_depth": 6,
+        "nodes_limit": 1024,
+        "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+        "uci_info": [
+          "info string classical evaluation enabled",
+          "info depth 1 seldepth 1 multipv 1 score cp 1562 nodes 57 nps 57000 tbhits 0 time 1 pv e5c7 d3e2",
+          "info depth 2 seldepth 2 multipv 1 score cp 1562 nodes 115 nps 115000 tbhits 0 time 1 pv e5c7 d3e2",
+          "info depth 3 seldepth 3 multipv 1 score cp 1562 nodes 176 nps 176000 tbhits 0 time 1 pv e5c7 d3e2 g1e2",
+          "info depth 4 seldepth 4 multipv 1 score cp 1562 nodes 259 nps 129500 tbhits 0 time 2 pv e5c7 d3e2 g1e2 a5b4",
+          "info depth 5 seldepth 5 multipv 1 score cp 1215 nodes 962 nps 481000 tbhits 0 time 2 pv e5c7 e7e6 e2d3 f8b4 e1e2 b4a3",
+          "info depth 6 seldepth 6 multipv 1 score cp 1555 nodes 1025 nps 512500 tbhits 0 time 2 pv e5c7"
+        ]
+      },
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 5.47,
+          "expected_white_pawns": 5.471153846153846
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 7.14,
+          "expected_white_pawns": 7.144230769230769
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 10.49,
+          "expected_white_pawns": 10.485576923076923
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 17.63,
+          "expected_white_pawns": 17.629807692307693
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:1138:1138 3:1486:1486 4:2181:2181 5:3667:3667",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            1138,
+            1138
+          ],
+          "3": [
+            1486,
+            1486
+          ],
+          "4": [
+            2181,
+            2181
+          ],
+          "5": [
+            3667,
+            3667
+          ]
+        },
+        "alignment": 3
+      },
+      "wall_seconds": 0.0,
+      "score": {
+        "kind": "cp",
+        "value": 1555,
+        "depth": 6,
+        "bound": "exact_report",
+        "pv": [
+          "e5c7"
+        ],
+        "line": "info depth 6 seldepth 6 multipv 1 score cp 1555 nodes 1025 nps 512500 tbhits 0 time 2 pv e5c7"
+      },
+      "PV_leaf_vector": [
+        -1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "root": "capture-0",
+      "profile": "semantic",
+      "weights": {
+        "K": 0,
+        "P": 208,
+        "N": 1138,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "nodes_limit": 16384,
+      "move": "e5c7",
+      "metadata": {
+        "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "full_history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5"
+        ],
+        "reported_nodes": 16389,
+        "reported_depth": 11,
+        "nodes_limit": 16384,
+        "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+        "uci_info": [
+          "info string classical evaluation enabled",
+          "info depth 1 seldepth 1 multipv 1 score cp 1562 nodes 57 nps 57000 tbhits 0 time 1 pv e5c7 d3e2",
+          "info depth 2 seldepth 2 multipv 1 score cp 1562 nodes 115 nps 115000 tbhits 0 time 1 pv e5c7 d3e2",
+          "info depth 3 seldepth 3 multipv 1 score cp 1562 nodes 176 nps 176000 tbhits 0 time 1 pv e5c7 d3e2 g1e2",
+          "info depth 4 seldepth 4 multipv 1 score cp 1562 nodes 259 nps 259000 tbhits 0 time 1 pv e5c7 d3e2 g1e2 a5b4",
+          "info depth 5 seldepth 5 multipv 1 score cp 1215 nodes 962 nps 962000 tbhits 0 time 1 pv e5c7 e7e6 e2d3 f8b4 e1e2 b4a3",
+          "info depth 6 seldepth 6 multipv 1 score cp 1462 nodes 1263 nps 1263000 tbhits 0 time 1 pv e5c7 e7e5 a3b1 f8b4 b1d2 d3e2",
+          "info depth 7 seldepth 7 multipv 1 score cp 1562 nodes 1819 nps 1819000 tbhits 0 time 1 pv e5c7 e7e5 d1b3 f8b4 e1d1",
+          "info depth 8 seldepth 9 multipv 1 score cp 1562 nodes 4567 nps 2283500 tbhits 0 time 2 pv e5c7 d3e2 g1e2 a5b4 c4b5 b4a3 b5c6",
+          "info depth 9 seldepth 10 multipv 1 score cp 1655 nodes 6874 nps 2291333 tbhits 0 time 3 pv e5c7 d3e2 g1e2 a5b4 a3b5 h6g4",
+          "info depth 10 seldepth 10 multipv 1 score cp 1562 nodes 13707 nps 2284500 tbhits 0 time 6 pv e5c7 e7e6 c4c5 c8a6 c7d6 f8d6 c5d6 a5b4 a3b1 h6g4",
+          "info depth 11 seldepth 10 multipv 1 score cp 1562 nodes 16389 nps 2341285 tbhits 0 time 7 pv e5c7 e7e6 c4c5 c8a6 c7d6 f8d6 c5d6 a5b4 a3b1 h6g4"
+        ]
+      },
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 5.47,
+          "expected_white_pawns": 5.471153846153846
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 7.14,
+          "expected_white_pawns": 7.144230769230769
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 10.49,
+          "expected_white_pawns": 10.485576923076923
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 17.63,
+          "expected_white_pawns": 17.629807692307693
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:1138:1138 3:1486:1486 4:2181:2181 5:3667:3667",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            1138,
+            1138
+          ],
+          "3": [
+            1486,
+            1486
+          ],
+          "4": [
+            2181,
+            2181
+          ],
+          "5": [
+            3667,
+            3667
+          ]
+        },
+        "alignment": 3
+      },
+      "wall_seconds": 0.015999999828636646,
+      "score": {
+        "kind": "cp",
+        "value": 1562,
+        "depth": 11,
+        "bound": "exact_report",
+        "pv": [
+          "e5c7",
+          "e7e6",
+          "c4c5",
+          "c8a6",
+          "c7d6",
+          "f8d6",
+          "c5d6",
+          "a5b4",
+          "a3b1",
+          "h6g4"
+        ],
+        "line": "info depth 11 seldepth 10 multipv 1 score cp 1562 nodes 16389 nps 2341285 tbhits 0 time 7 pv e5c7 e7e6 c4c5 c8a6 c7d6 f8d6 c5d6 a5b4 a3b1 h6g4"
+      },
+      "PV_leaf_vector": [
+        -3,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "root": "capture-1",
+      "profile": "semantic",
+      "weights": {
+        "K": 0,
+        "P": 208,
+        "N": 1138,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "nodes_limit": 16384,
+      "move": "a3b5",
+      "metadata": {
+        "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "full_history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5",
+          "e5g7",
+          "a5b4"
+        ],
+        "reported_nodes": 16405,
+        "reported_depth": 12,
+        "nodes_limit": 16384,
+        "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+        "uci_info": [
+          "info string classical evaluation enabled",
+          "info depth 1 seldepth 1 multipv 1 score cp 501 nodes 59 nps 59000 tbhits 0 time 1 pv g7h8 b4a3 e2d3",
+          "info depth 2 seldepth 2 multipv 1 score cp 501 nodes 105 nps 105000 tbhits 0 time 1 pv g7h8 b4a3",
+          "info depth 3 seldepth 3 multipv 1 score cp 401 nodes 175 nps 175000 tbhits 0 time 1 pv g7h8 b4a3 e2d3 c7a5 d1d2 a5d2 e1d2 h6g4",
+          "info depth 4 seldepth 4 multipv 1 score cp 401 nodes 268 nps 268000 tbhits 0 time 1 pv g7h8 b4a3 d1d3 h6g4",
+          "info depth 5 seldepth 5 multipv 1 score cp 401 nodes 439 nps 439000 tbhits 0 time 1 pv g7h8 b4a3 d1d3 h6g4 d3h7 b5c4",
+          "info depth 6 seldepth 6 multipv 1 score cp 501 nodes 598 nps 598000 tbhits 0 time 1 pv g7h8 b4a3 d1d3 h6g4",
+          "info depth 7 seldepth 7 multipv 1 score cp 1048 nodes 1360 nps 1360000 tbhits 0 time 1 pv a3b5 d3d2 d1d2 c7a5 g7h8 h6g4",
+          "info depth 8 seldepth 8 multipv 1 score cp 1048 nodes 2123 nps 2123000 tbhits 0 time 1 pv a3b5 c7f4 g7h8 h6g4 f2f3 d3d2 d1d2",
+          "info depth 9 seldepth 11 multipv 1 score cp 1048 nodes 3406 nps 1703000 tbhits 0 time 2 pv a3b5 d3d2 d1d2 c7b8 g7h8 h6g4 f2f4 g4h6 e2e3",
+          "info depth 10 seldepth 13 multipv 1 score cp 1048 nodes 7124 nps 1781000 tbhits 0 time 4 pv a3b5 d3d2 d1d2 c7b8 g7h8 h6g4 e2e3 g4f6 f2f3 f6h5 f1d3 h5f6 e1d1",
+          "info depth 11 seldepth 16 multipv 1 score cp 1048 nodes 11033 nps 1838833 tbhits 0 time 6 pv a3b5 d3d2 d1d2 c7b8 g7h8 h6g4 e2e3 g4f6 f2f3 f6h5 a1d1 h5f6 f1g2 f8h6 d2e2 b8e5",
+          "info depth 12 seldepth 16 multipv 1 score cp 1048 nodes 16405 nps 2050625 tbhits 0 time 8 pv a3b5 d3d2 d1d2 c7b8 g7h8 h6g4 e2e3 g4f6 f2f3 f6h5 a1d1 h5f6 f1g2 f8h6 d2e2 b8e5"
+        ]
+      },
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 5.47,
+          "expected_white_pawns": 5.471153846153846
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 7.14,
+          "expected_white_pawns": 7.144230769230769
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 10.49,
+          "expected_white_pawns": 10.485576923076923
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 17.63,
+          "expected_white_pawns": 17.629807692307693
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:1138:1138 3:1486:1486 4:2181:2181 5:3667:3667",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            1138,
+            1138
+          ],
+          "3": [
+            1486,
+            1486
+          ],
+          "4": [
+            2181,
+            2181
+          ],
+          "5": [
+            3667,
+            3667
+          ]
+        },
+        "alignment": 3
+      },
+      "wall_seconds": 0.016000000294297934,
+      "score": {
+        "kind": "cp",
+        "value": 1048,
+        "depth": 12,
+        "bound": "exact_report",
+        "pv": [
+          "a3b5",
+          "d3d2",
+          "d1d2",
+          "c7b8",
+          "g7h8",
+          "h6g4",
+          "e2e3",
+          "g4f6",
+          "f2f3",
+          "f6h5",
+          "a1d1",
+          "h5f6",
+          "f1g2",
+          "f8h6",
+          "d2e2",
+          "b8e5"
+        ],
+        "line": "info depth 12 seldepth 16 multipv 1 score cp 1048 nodes 16405 nps 2050625 tbhits 0 time 8 pv a3b5 d3d2 d1d2 c7b8 g7h8 h6g4 e2e3 g4f6 f2f3 f6h5 a1d1 h5f6 f1g2 f8h6 d2e2 b8e5"
+      },
+      "PV_leaf_vector": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "root": "capture-1",
+      "profile": "semantic",
+      "weights": {
+        "K": 0,
+        "P": 208,
+        "N": 1138,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "nodes_limit": 1024,
+      "move": "g7h8",
+      "metadata": {
+        "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "full_history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5",
+          "e5g7",
+          "a5b4"
+        ],
+        "reported_nodes": 1025,
+        "reported_depth": 7,
+        "nodes_limit": 1024,
+        "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+        "uci_info": [
+          "info string classical evaluation enabled",
+          "info depth 1 seldepth 1 multipv 1 score cp 501 nodes 59 nps 59000 tbhits 0 time 1 pv g7h8 b4a3 e2d3",
+          "info depth 2 seldepth 2 multipv 1 score cp 501 nodes 105 nps 105000 tbhits 0 time 1 pv g7h8 b4a3",
+          "info depth 3 seldepth 3 multipv 1 score cp 401 nodes 175 nps 175000 tbhits 0 time 1 pv g7h8 b4a3 e2d3 c7a5 d1d2 a5d2 e1d2 h6g4",
+          "info depth 4 seldepth 4 multipv 1 score cp 401 nodes 268 nps 268000 tbhits 0 time 1 pv g7h8 b4a3 d1d3 h6g4",
+          "info depth 5 seldepth 5 multipv 1 score cp 401 nodes 439 nps 439000 tbhits 0 time 1 pv g7h8 b4a3 d1d3 h6g4 d3h7 b5c4",
+          "info depth 6 seldepth 6 multipv 1 score cp 501 nodes 598 nps 598000 tbhits 0 time 1 pv g7h8 b4a3 d1d3 h6g4",
+          "info depth 7 seldepth 6 multipv 1 score cp 501 nodes 1025 nps 512500 tbhits 0 time 2 pv g7h8 b4a3 d1d3 h6g4"
+        ]
+      },
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 5.47,
+          "expected_white_pawns": 5.471153846153846
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 7.14,
+          "expected_white_pawns": 7.144230769230769
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 10.49,
+          "expected_white_pawns": 10.485576923076923
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 17.63,
+          "expected_white_pawns": 17.629807692307693
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:1138:1138 3:1486:1486 4:2181:2181 5:3667:3667",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            1138,
+            1138
+          ],
+          "3": [
+            1486,
+            1486
+          ],
+          "4": [
+            2181,
+            2181
+          ],
+          "5": [
+            3667,
+            3667
+          ]
+        },
+        "alignment": 3
+      },
+      "wall_seconds": 0.0,
+      "score": {
+        "kind": "cp",
+        "value": 501,
+        "depth": 7,
+        "bound": "exact_report",
+        "pv": [
+          "g7h8",
+          "b4a3",
+          "d1d3",
+          "h6g4"
+        ],
+        "line": "info depth 7 seldepth 6 multipv 1 score cp 501 nodes 1025 nps 512500 tbhits 0 time 2 pv g7h8 b4a3 d1d3 h6g4"
+      },
+      "PV_leaf_vector": [
+        -1,
+        -1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "root": "capture-1",
+      "profile": "unit",
+      "weights": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 208,
+        "K": 0
+      },
+      "nodes_limit": 16384,
+      "move": "a3b5",
+      "metadata": {
+        "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "full_history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5",
+          "e5g7",
+          "a5b4"
+        ],
+        "reported_nodes": 16406,
+        "reported_depth": 11,
+        "nodes_limit": 16384,
+        "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+        "uci_info": [
+          "info string classical evaluation enabled",
+          "info depth 1 seldepth 1 multipv 1 score cp 0 nodes 124 nps 124000 tbhits 0 time 1 pv a3b5",
+          "info depth 2 seldepth 2 multipv 1 score cp 100 nodes 224 nps 224000 tbhits 0 time 1 pv a3b5 d3e2 b5c7 e8d8 g1e2",
+          "info depth 3 seldepth 3 multipv 1 score cp 100 nodes 285 nps 285000 tbhits 0 time 1 pv a3b5 d3e2 b5c7 e8d8",
+          "info depth 4 seldepth 4 multipv 1 score cp 100 nodes 441 nps 441000 tbhits 0 time 1 pv a3b5 d3e2 b5c7 e8d8",
+          "info depth 5 seldepth 5 multipv 1 score cp 0 nodes 1320 nps 660000 tbhits 0 time 2 pv a3b5 d3e2 b5c7 e8d8 g1e2",
+          "info depth 6 seldepth 6 multipv 1 score cp 0 nodes 1745 nps 872500 tbhits 0 time 2 pv a3b5 d3e2 f1e2 h6g4 g7h8 a8a2 b5c7 e8d8",
+          "info depth 7 seldepth 7 multipv 1 score cp 0 nodes 2830 nps 1415000 tbhits 0 time 2 pv a3b5 d3e2 b5c7 e8d8 f1e2 d8c7",
+          "info depth 8 seldepth 9 multipv 1 score cp 0 nodes 4689 nps 1563000 tbhits 0 time 3 pv a3b5 d3e2 f1e2 a8a2 b5c7 e8d8 a1a2",
+          "info depth 9 seldepth 12 multipv 1 score cp 0 nodes 13811 nps 2762200 tbhits 0 time 5 pv a3b5 d3e2 f1e2 a8a2 b5c7 e8d8 a1a2 h6g4 e2g4 f8g7 g4d7 d8c7",
+          "info depth 10 seldepth 11 multipv 1 score cp 0 nodes 15836 nps 2639333 tbhits 0 time 6 pv a3b5 d3e2 f1e2 a8a2 b5c7 e8d8 a1a2 h6g4 e2g4 f8g7 g4d7",
+          "info depth 11 seldepth 11 multipv 1 score cp 0 nodes 16406 nps 2734333 tbhits 0 time 6 pv a3b5 d3e2 f1e2 a8a2 b5c7 e8d8 a1a2 h6g4 e2g4 f8g7 g4d7"
+        ]
+      },
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:208:208 3:208:208 4:208:208 5:208:208",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            208,
+            208
+          ],
+          "3": [
+            208,
+            208
+          ],
+          "4": [
+            208,
+            208
+          ],
+          "5": [
+            208,
+            208
+          ]
+        },
+        "alignment": 3
+      },
+      "wall_seconds": 0.0,
+      "score": {
+        "kind": "cp",
+        "value": 0,
+        "depth": 11,
+        "bound": "exact_report",
+        "pv": [
+          "a3b5",
+          "d3e2",
+          "f1e2",
+          "a8a2",
+          "b5c7",
+          "e8d8",
+          "a1a2",
+          "h6g4",
+          "e2g4",
+          "f8g7",
+          "g4d7"
+        ],
+        "line": "info depth 11 seldepth 11 multipv 1 score cp 0 nodes 16406 nps 2734333 tbhits 0 time 6 pv a3b5 d3e2 f1e2 a8a2 b5c7 e8d8 a1a2 h6g4 e2g4 f8g7 g4d7"
+      },
+      "PV_leaf_vector": [
+        -1,
+        1,
+        -1,
+        1,
+        1
+      ]
+    },
+    {
+      "root": "capture-1",
+      "profile": "unit",
+      "weights": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 208,
+        "K": 0
+      },
+      "nodes_limit": 1024,
+      "move": "a3b5",
+      "metadata": {
+        "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "full_history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5",
+          "e5g7",
+          "a5b4"
+        ],
+        "reported_nodes": 1046,
+        "reported_depth": 5,
+        "nodes_limit": 1024,
+        "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+        "uci_info": [
+          "info string classical evaluation enabled",
+          "info depth 1 seldepth 1 multipv 1 score cp 0 nodes 124 nps 62000 tbhits 0 time 2 pv a3b5",
+          "info depth 2 seldepth 2 multipv 1 score cp 100 nodes 224 nps 112000 tbhits 0 time 2 pv a3b5 d3e2 b5c7 e8d8 g1e2",
+          "info depth 3 seldepth 3 multipv 1 score cp 100 nodes 285 nps 142500 tbhits 0 time 2 pv a3b5 d3e2 b5c7 e8d8",
+          "info depth 4 seldepth 4 multipv 1 score cp 100 nodes 441 nps 220500 tbhits 0 time 2 pv a3b5 d3e2 b5c7 e8d8",
+          "info depth 5 seldepth 5 multipv 1 score cp 0 upperbound nodes 1046 nps 523000 tbhits 0 time 2 pv a3b5 d3e2"
+        ]
+      },
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:208:208 3:208:208 4:208:208 5:208:208",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            208,
+            208
+          ],
+          "3": [
+            208,
+            208
+          ],
+          "4": [
+            208,
+            208
+          ],
+          "5": [
+            208,
+            208
+          ]
+        },
+        "alignment": 3
+      },
+      "wall_seconds": 0.0,
+      "score": {
+        "kind": "cp",
+        "value": 0,
+        "depth": 5,
+        "bound": "upperbound",
+        "pv": [
+          "a3b5",
+          "d3e2"
+        ],
+        "line": "info depth 5 seldepth 5 multipv 1 score cp 0 upperbound nodes 1046 nps 523000 tbhits 0 time 2 pv a3b5 d3e2"
+      },
+      "PV_leaf_vector": [
+        -1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "root": "capture-2",
+      "profile": "unit",
+      "weights": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 208,
+        "K": 0
+      },
+      "nodes_limit": 1024,
+      "move": "d1d3",
+      "metadata": {
+        "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "full_history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5",
+          "e5g7",
+          "a5b4",
+          "g7h8",
+          "h6g4",
+          "a3b5",
+          "a8a7"
+        ],
+        "reported_nodes": 1030,
+        "reported_depth": 6,
+        "nodes_limit": 1024,
+        "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+        "uci_info": [
+          "info string classical evaluation enabled",
+          "info depth 1 seldepth 1 multipv 1 score cp 100 nodes 97 nps 97000 tbhits 0 time 1 pv e2d3",
+          "info depth 2 seldepth 2 multipv 1 score cp 100 nodes 326 nps 326000 tbhits 0 time 1 pv e2d3 g4f2",
+          "info depth 3 seldepth 3 multipv 1 score cp 100 nodes 386 nps 386000 tbhits 0 time 1 pv e2d3 g4f2 b5c7 a7c7 e1f2",
+          "info depth 4 seldepth 4 multipv 1 score cp 100 nodes 674 nps 674000 tbhits 0 time 1 pv d1d3 g4f2 e1f2 c7f4 g1f3",
+          "info depth 5 seldepth 5 multipv 1 score cp 100 nodes 933 nps 933000 tbhits 0 time 1 pv d1d3 g4f2 e1f2 c7f4 g1f3",
+          "info depth 6 seldepth 5 multipv 1 score cp 100 nodes 1030 nps 515000 tbhits 0 time 2 pv d1d3 g4f2 e1f2 c7f4 g1f3"
+        ]
+      },
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:208:208 3:208:208 4:208:208 5:208:208",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            208,
+            208
+          ],
+          "3": [
+            208,
+            208
+          ],
+          "4": [
+            208,
+            208
+          ],
+          "5": [
+            208,
+            208
+          ]
+        },
+        "alignment": 3
+      },
+      "wall_seconds": 0.0,
+      "score": {
+        "kind": "cp",
+        "value": 100,
+        "depth": 6,
+        "bound": "exact_report",
+        "pv": [
+          "d1d3",
+          "g4f2",
+          "e1f2",
+          "c7f4",
+          "g1f3"
+        ],
+        "line": "info depth 6 seldepth 5 multipv 1 score cp 100 nodes 1030 nps 515000 tbhits 0 time 2 pv d1d3 g4f2 e1f2 c7f4 g1f3"
+      },
+      "PV_leaf_vector": [
+        -1,
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "root": "capture-2",
+      "profile": "unit",
+      "weights": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 208,
+        "K": 0
+      },
+      "nodes_limit": 16384,
+      "move": "d1d3",
+      "metadata": {
+        "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "full_history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5",
+          "e5g7",
+          "a5b4",
+          "g7h8",
+          "h6g4",
+          "a3b5",
+          "a8a7"
+        ],
+        "reported_nodes": 16462,
+        "reported_depth": 11,
+        "nodes_limit": 16384,
+        "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+        "uci_info": [
+          "info string classical evaluation enabled",
+          "info depth 1 seldepth 1 multipv 1 score cp 100 nodes 97 nps 97000 tbhits 0 time 1 pv e2d3",
+          "info depth 2 seldepth 2 multipv 1 score cp 100 nodes 326 nps 326000 tbhits 0 time 1 pv e2d3 g4f2",
+          "info depth 3 seldepth 3 multipv 1 score cp 100 nodes 386 nps 386000 tbhits 0 time 1 pv e2d3 g4f2 b5c7 a7c7 e1f2",
+          "info depth 4 seldepth 4 multipv 1 score cp 100 nodes 674 nps 674000 tbhits 0 time 1 pv d1d3 g4f2 e1f2 c7f4 g1f3",
+          "info depth 5 seldepth 5 multipv 1 score cp 100 nodes 933 nps 933000 tbhits 0 time 1 pv d1d3 g4f2 e1f2 c7f4 g1f3",
+          "info depth 6 seldepth 6 multipv 1 score cp 100 nodes 1666 nps 833000 tbhits 0 time 2 pv d1d3 g4f2 e1f2 c7f4 g1f3 f4f3 e2f3",
+          "info depth 7 seldepth 7 multipv 1 score cp 100 nodes 2828 nps 1414000 tbhits 0 time 2 pv d1d3 g4f2 e1f2 c7f4 g1f3 f4f3 e2f3",
+          "info depth 8 seldepth 9 multipv 1 score cp 100 nodes 5947 nps 1982333 tbhits 0 time 3 pv d1d3 g4f2 e1f2 c7f4 g1f3 f4f3 e2f3 a7a2 a1a2",
+          "info depth 9 seldepth 9 multipv 1 score cp 100 nodes 8093 nps 2023250 tbhits 0 time 4 pv d1d3 g4f2 e1f2 c7f4 g1f3 f4f3 e2f3 a7a2 a1a2",
+          "info depth 10 seldepth 11 multipv 1 score cp 100 nodes 12993 nps 2165500 tbhits 0 time 6 pv d1d3 g4f2 e1f2 c7f4 g1f3 f4f3 e2f3 a7a2 a1a2 h7h6 b5d4",
+          "info depth 11 seldepth 11 multipv 1 score cp 100 nodes 16462 nps 2351714 tbhits 0 time 7 pv d1d3 g4f2 e1f2 c7f4 g1f3 f4f3 e2f3 a7a2 a1a2 h7h6 b5d4"
+        ]
+      },
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:208:208 3:208:208 4:208:208 5:208:208",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            208,
+            208
+          ],
+          "3": [
+            208,
+            208
+          ],
+          "4": [
+            208,
+            208
+          ],
+          "5": [
+            208,
+            208
+          ]
+        },
+        "alignment": 3
+      },
+      "wall_seconds": 0.015999999828636646,
+      "score": {
+        "kind": "cp",
+        "value": 100,
+        "depth": 11,
+        "bound": "exact_report",
+        "pv": [
+          "d1d3",
+          "g4f2",
+          "e1f2",
+          "c7f4",
+          "g1f3",
+          "f4f3",
+          "e2f3",
+          "a7a2",
+          "a1a2",
+          "h7h6",
+          "b5d4"
+        ],
+        "line": "info depth 11 seldepth 11 multipv 1 score cp 100 nodes 16462 nps 2351714 tbhits 0 time 7 pv d1d3 g4f2 e1f2 c7f4 g1f3 f4f3 e2f3 a7a2 a1a2 h7h6 b5d4"
+      },
+      "PV_leaf_vector": [
+        -2,
+        0,
+        0,
+        2,
+        1
+      ]
+    },
+    {
+      "root": "capture-2",
+      "profile": "semantic",
+      "weights": {
+        "K": 0,
+        "P": 208,
+        "N": 1138,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "nodes_limit": 1024,
+      "move": "b5c7",
+      "metadata": {
+        "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "full_history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5",
+          "e5g7",
+          "a5b4",
+          "g7h8",
+          "h6g4",
+          "a3b5",
+          "a8a7"
+        ],
+        "reported_nodes": 1024,
+        "reported_depth": 7,
+        "nodes_limit": 1024,
+        "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+        "uci_info": [
+          "info string classical evaluation enabled",
+          "info depth 1 seldepth 1 multipv 1 score cp 2264 nodes 54 nps 54000 tbhits 0 time 1 pv b5c7 a7c7 e2d3",
+          "info depth 2 seldepth 2 multipv 1 score cp 2264 nodes 98 nps 98000 tbhits 0 time 1 pv b5c7 a7c7",
+          "info depth 3 seldepth 3 multipv 1 score cp 2264 nodes 142 nps 142000 tbhits 0 time 1 pv b5c7 a7c7 e2d3",
+          "info depth 4 seldepth 4 multipv 1 score cp 2289 nodes 198 nps 198000 tbhits 0 time 1 pv b5c7 a7c7 d1d3",
+          "info depth 5 seldepth 5 multipv 1 score cp 2364 nodes 255 nps 255000 tbhits 0 time 1 pv b5c7 a7c7 d1d3 d7d6",
+          "info depth 6 seldepth 6 multipv 1 score cp 2637 nodes 371 nps 371000 tbhits 0 time 1 pv b5c7 a7c7 d1d3 d7d6 f2f3",
+          "info depth 7 seldepth 9 multipv 1 score cp 2338 nodes 1024 nps 1024000 tbhits 0 time 1 pv b5c7 a7c7"
+        ]
+      },
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 5.47,
+          "expected_white_pawns": 5.471153846153846
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 7.14,
+          "expected_white_pawns": 7.144230769230769
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 10.49,
+          "expected_white_pawns": 10.485576923076923
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 17.63,
+          "expected_white_pawns": 17.629807692307693
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:1138:1138 3:1486:1486 4:2181:2181 5:3667:3667",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            1138,
+            1138
+          ],
+          "3": [
+            1486,
+            1486
+          ],
+          "4": [
+            2181,
+            2181
+          ],
+          "5": [
+            3667,
+            3667
+          ]
+        },
+        "alignment": 3
+      },
+      "wall_seconds": 0.0,
+      "score": {
+        "kind": "cp",
+        "value": 2338,
+        "depth": 7,
+        "bound": "exact_report",
+        "pv": [
+          "b5c7",
+          "a7c7"
+        ],
+        "line": "info depth 7 seldepth 9 multipv 1 score cp 2338 nodes 1024 nps 1024000 tbhits 0 time 1 pv b5c7 a7c7"
+      },
+      "PV_leaf_vector": [
+        -1,
+        -1,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "root": "capture-2",
+      "profile": "semantic",
+      "weights": {
+        "K": 0,
+        "P": 208,
+        "N": 1138,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "nodes_limit": 16384,
+      "move": "b5c7",
+      "metadata": {
+        "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "full_history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5",
+          "e5g7",
+          "a5b4",
+          "g7h8",
+          "h6g4",
+          "a3b5",
+          "a8a7"
+        ],
+        "reported_nodes": 16404,
+        "reported_depth": 10,
+        "nodes_limit": 16384,
+        "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+        "uci_info": [
+          "info string classical evaluation enabled",
+          "info depth 1 seldepth 1 multipv 1 score cp 2264 nodes 54 nps 54000 tbhits 0 time 1 pv b5c7 a7c7 e2d3",
+          "info depth 2 seldepth 2 multipv 1 score cp 2264 nodes 98 nps 98000 tbhits 0 time 1 pv b5c7 a7c7",
+          "info depth 3 seldepth 3 multipv 1 score cp 2264 nodes 142 nps 142000 tbhits 0 time 1 pv b5c7 a7c7 e2d3",
+          "info depth 4 seldepth 4 multipv 1 score cp 2289 nodes 198 nps 198000 tbhits 0 time 1 pv b5c7 a7c7 d1d3",
+          "info depth 5 seldepth 5 multipv 1 score cp 2364 nodes 255 nps 255000 tbhits 0 time 1 pv b5c7 a7c7 d1d3 d7d6",
+          "info depth 6 seldepth 6 multipv 1 score cp 2637 nodes 371 nps 371000 tbhits 0 time 1 pv b5c7 a7c7 d1d3 d7d6 f2f3",
+          "info depth 7 seldepth 9 multipv 1 score cp 2171 nodes 4264 nps 1421333 tbhits 0 time 3 pv b5c7 a7c7 d1d3 d7d6 h3h1 f7f5 g1f3 c6e5 f3e5",
+          "info depth 8 seldepth 13 multipv 1 score cp 2264 nodes 5531 nps 1843666 tbhits 0 time 3 pv b5c7 a7c7 d1d3 g4e5 d3h7 e5c4",
+          "info depth 9 seldepth 10 multipv 1 score cp 2264 nodes 6772 nps 1693000 tbhits 0 time 4 pv b5c7 a7c7 d1d3 g4e5 d3h7 e5c4 g1f3 d7d6 h3h2 f7f5",
+          "info depth 10 seldepth 13 multipv 1 score cp 2197 nodes 16404 nps 2050500 tbhits 0 time 8 pv b5c7 a7c7"
+        ]
+      },
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 5.47,
+          "expected_white_pawns": 5.471153846153846
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 7.14,
+          "expected_white_pawns": 7.144230769230769
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 10.49,
+          "expected_white_pawns": 10.485576923076923
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 17.63,
+          "expected_white_pawns": 17.629807692307693
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:1138:1138 3:1486:1486 4:2181:2181 5:3667:3667",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            1138,
+            1138
+          ],
+          "3": [
+            1486,
+            1486
+          ],
+          "4": [
+            2181,
+            2181
+          ],
+          "5": [
+            3667,
+            3667
+          ]
+        },
+        "alignment": 3
+      },
+      "wall_seconds": 0.015999999828636646,
+      "score": {
+        "kind": "cp",
+        "value": 2197,
+        "depth": 10,
+        "bound": "exact_report",
+        "pv": [
+          "b5c7",
+          "a7c7"
+        ],
+        "line": "info depth 10 seldepth 13 multipv 1 score cp 2197 nodes 16404 nps 2050500 tbhits 0 time 8 pv b5c7 a7c7"
+      },
+      "PV_leaf_vector": [
+        -1,
+        -1,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "root": "capture-3",
+      "profile": "semantic",
+      "weights": {
+        "K": 0,
+        "P": 208,
+        "N": 1138,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "nodes_limit": 16384,
+      "move": "c7e5",
+      "metadata": {
+        "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "full_history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5",
+          "a1c1"
+        ],
+        "reported_nodes": 16385,
+        "reported_depth": 11,
+        "nodes_limit": 16384,
+        "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+        "uci_info": [
+          "info string classical evaluation enabled",
+          "info depth 1 seldepth 1 multipv 1 score cp 814 nodes 84 nps 42000 tbhits 0 time 2 pv c6e5",
+          "info depth 2 seldepth 2 multipv 1 score cp 714 nodes 131 nps 65500 tbhits 0 time 2 pv c6e5 c4b5",
+          "info depth 3 seldepth 3 multipv 1 score cp 714 nodes 216 nps 108000 tbhits 0 time 2 pv c7e5 c4b5 a5b4 b5c6 b4a3 c6d7 c8d7 h3d3",
+          "info depth 4 seldepth 4 multipv 1 score cp 814 nodes 296 nps 148000 tbhits 0 time 2 pv c7e5 c4b5",
+          "info depth 5 seldepth 5 multipv 1 score cp 814 nodes 729 nps 364500 tbhits 0 time 2 pv c7e5 a3b5 a5b4 h3d3",
+          "info depth 6 seldepth 6 multipv 1 score cp 714 nodes 1469 nps 734500 tbhits 0 time 2 pv c7e5 b4a5 b5b4 a3b5 a8a5 h3d3",
+          "info depth 7 seldepth 7 multipv 1 score cp 814 nodes 1887 nps 943500 tbhits 0 time 2 pv c7e5 b4a5 b5b4 a3b5 a8a5",
+          "info depth 8 seldepth 9 multipv 1 score cp 814 nodes 4457 nps 1485666 tbhits 0 time 3 pv c7e5 a3b5 h6g4 b4a5 a8a5 h3d3 a5a2",
+          "info depth 9 seldepth 10 multipv 1 score cp 814 nodes 7267 nps 1453400 tbhits 0 time 5 pv c7e5 a3b5 h6g4 b4a5 d3e2 d1e2 a8a5 e2e5 g4e5 b5c7 e8d8",
+          "info depth 10 seldepth 12 multipv 1 score cp 814 nodes 12816 nps 1281600 tbhits 0 time 10 pv c7e5 b4a5 b5b4 a3b5 a8a5 h3d3 h6g4 a2a3 b4a3 d3a3 a5a3",
+          "info depth 11 seldepth 12 multipv 1 score cp 814 nodes 16385 nps 1489545 tbhits 0 time 11 pv c7e5 b4a5 b5b4 a3b5 a8a5 h3d3 h6g4 a2a3 b4a3 d3a3 a5a3"
+        ]
+      },
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 5.47,
+          "expected_white_pawns": 5.471153846153846
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 7.14,
+          "expected_white_pawns": 7.144230769230769
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 10.49,
+          "expected_white_pawns": 10.485576923076923
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 17.63,
+          "expected_white_pawns": 17.629807692307693
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:1138:1138 3:1486:1486 4:2181:2181 5:3667:3667",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            1138,
+            1138
+          ],
+          "3": [
+            1486,
+            1486
+          ],
+          "4": [
+            2181,
+            2181
+          ],
+          "5": [
+            3667,
+            3667
+          ]
+        },
+        "alignment": 3
+      },
+      "wall_seconds": 0.015999999828636646,
+      "score": {
+        "kind": "cp",
+        "value": 814,
+        "depth": 11,
+        "bound": "exact_report",
+        "pv": [
+          "c7e5",
+          "b4a5",
+          "b5b4",
+          "a3b5",
+          "a8a5",
+          "h3d3",
+          "h6g4",
+          "a2a3",
+          "b4a3",
+          "d3a3",
+          "a5a3"
+        ],
+        "line": "info depth 11 seldepth 12 multipv 1 score cp 814 nodes 16385 nps 1489545 tbhits 0 time 11 pv c7e5 b4a5 b5b4 a3b5 a8a5 h3d3 h6g4 a2a3 b4a3 d3a3 a5a3"
+      },
+      "PV_leaf_vector": [
+        1,
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "root": "capture-3",
+      "profile": "semantic",
+      "weights": {
+        "K": 0,
+        "P": 208,
+        "N": 1138,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "nodes_limit": 1024,
+      "move": "c7e5",
+      "metadata": {
+        "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "full_history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5",
+          "a1c1"
+        ],
+        "reported_nodes": 1024,
+        "reported_depth": 6,
+        "nodes_limit": 1024,
+        "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+        "uci_info": [
+          "info string classical evaluation enabled",
+          "info depth 1 seldepth 1 multipv 1 score cp 814 nodes 84 nps 84000 tbhits 0 time 1 pv c6e5",
+          "info depth 2 seldepth 2 multipv 1 score cp 714 nodes 131 nps 131000 tbhits 0 time 1 pv c6e5 c4b5",
+          "info depth 3 seldepth 3 multipv 1 score cp 714 nodes 216 nps 216000 tbhits 0 time 1 pv c7e5 c4b5 a5b4 b5c6 b4a3 c6d7 c8d7 h3d3",
+          "info depth 4 seldepth 4 multipv 1 score cp 814 nodes 296 nps 296000 tbhits 0 time 1 pv c7e5 c4b5",
+          "info depth 5 seldepth 5 multipv 1 score cp 814 nodes 729 nps 729000 tbhits 0 time 1 pv c7e5 a3b5 a5b4 h3d3",
+          "info depth 6 seldepth 5 multipv 1 score cp 814 nodes 1024 nps 512000 tbhits 0 time 2 pv c7e5 a3b5 a5b4 h3d3"
+        ]
+      },
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 5.47,
+          "expected_white_pawns": 5.471153846153846
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 7.14,
+          "expected_white_pawns": 7.144230769230769
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 10.49,
+          "expected_white_pawns": 10.485576923076923
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 17.63,
+          "expected_white_pawns": 17.629807692307693
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:1138:1138 3:1486:1486 4:2181:2181 5:3667:3667",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            1138,
+            1138
+          ],
+          "3": [
+            1486,
+            1486
+          ],
+          "4": [
+            2181,
+            2181
+          ],
+          "5": [
+            3667,
+            3667
+          ]
+        },
+        "alignment": 3
+      },
+      "wall_seconds": 0.016000000294297934,
+      "score": {
+        "kind": "cp",
+        "value": 814,
+        "depth": 6,
+        "bound": "exact_report",
+        "pv": [
+          "c7e5",
+          "a3b5",
+          "a5b4",
+          "h3d3"
+        ],
+        "line": "info depth 6 seldepth 5 multipv 1 score cp 814 nodes 1024 nps 512000 tbhits 0 time 2 pv c7e5 a3b5 a5b4 h3d3"
+      },
+      "PV_leaf_vector": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "root": "capture-3",
+      "profile": "unit",
+      "weights": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 208,
+        "K": 0
+      },
+      "nodes_limit": 16384,
+      "move": "c7e5",
+      "metadata": {
+        "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "full_history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5",
+          "a1c1"
+        ],
+        "reported_nodes": 16426,
+        "reported_depth": 8,
+        "nodes_limit": 16384,
+        "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+        "uci_info": [
+          "info string classical evaluation enabled",
+          "info depth 1 seldepth 1 multipv 1 score cp 200 nodes 344 nps 344000 tbhits 0 time 1 pv b5c4",
+          "info depth 2 seldepth 2 multipv 1 score cp 200 nodes 971 nps 971000 tbhits 0 time 1 pv c7e5 a3b5",
+          "info depth 3 seldepth 3 multipv 1 score cp 100 nodes 1477 nps 1477000 tbhits 0 time 1 pv c7e5 b4a5 b5c4 a3c4",
+          "info depth 4 seldepth 4 multipv 1 score cp 100 nodes 2135 nps 2135000 tbhits 0 time 1 pv d3e2 f1e2 c7e5 b4a5",
+          "info depth 5 seldepth 5 multipv 1 score cp 200 nodes 3824 nps 1912000 tbhits 0 time 2 pv c6e5 a3b5 c7c4",
+          "info depth 6 seldepth 6 multipv 1 score cp 200 nodes 5871 nps 1957000 tbhits 0 time 3 pv c6e5 a3b5 c7c4 b4a5 c4b4 b5c3",
+          "info depth 7 seldepth 7 multipv 1 score cp 200 nodes 11565 nps 2891250 tbhits 0 time 4 pv c7e5 b4a5 d3e2 g1e2 a8a5 a3b5 a5a2",
+          "info depth 8 seldepth 7 multipv 1 score cp 200 nodes 16426 nps 2737666 tbhits 0 time 6 pv c7e5 b4a5 d3e2 g1e2 a8a5 a3b5 a5a2"
+        ]
+      },
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:208:208 3:208:208 4:208:208 5:208:208",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            208,
+            208
+          ],
+          "3": [
+            208,
+            208
+          ],
+          "4": [
+            208,
+            208
+          ],
+          "5": [
+            208,
+            208
+          ]
+        },
+        "alignment": 3
+      },
+      "wall_seconds": 0.01500000013038516,
+      "score": {
+        "kind": "cp",
+        "value": 200,
+        "depth": 8,
+        "bound": "exact_report",
+        "pv": [
+          "c7e5",
+          "b4a5",
+          "d3e2",
+          "g1e2",
+          "a8a5",
+          "a3b5",
+          "a5a2"
+        ],
+        "line": "info depth 8 seldepth 7 multipv 1 score cp 200 nodes 16426 nps 2737666 tbhits 0 time 6 pv c7e5 b4a5 d3e2 g1e2 a8a5 a3b5 a5a2"
+      },
+      "PV_leaf_vector": [
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "root": "capture-3",
+      "profile": "unit",
+      "weights": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 208,
+        "K": 0
+      },
+      "nodes_limit": 1024,
+      "move": "c7e5",
+      "metadata": {
+        "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "full_history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5",
+          "a1c1"
+        ],
+        "reported_nodes": 1051,
+        "reported_depth": 3,
+        "nodes_limit": 1024,
+        "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+        "uci_info": [
+          "info string classical evaluation enabled",
+          "info depth 1 seldepth 1 multipv 1 score cp 200 nodes 344 nps 344000 tbhits 0 time 1 pv b5c4",
+          "info depth 2 seldepth 2 multipv 1 score cp 200 nodes 971 nps 971000 tbhits 0 time 1 pv c7e5 a3b5",
+          "info depth 3 seldepth 2 multipv 1 score cp 200 nodes 1051 nps 1051000 tbhits 0 time 1 pv c7e5 a3b5"
+        ]
+      },
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:208:208 3:208:208 4:208:208 5:208:208",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            208,
+            208
+          ],
+          "3": [
+            208,
+            208
+          ],
+          "4": [
+            208,
+            208
+          ],
+          "5": [
+            208,
+            208
+          ]
+        },
+        "alignment": 3
+      },
+      "wall_seconds": 0.014999999664723873,
+      "score": {
+        "kind": "cp",
+        "value": 200,
+        "depth": 3,
+        "bound": "exact_report",
+        "pv": [
+          "c7e5",
+          "a3b5"
+        ],
+        "line": "info depth 3 seldepth 2 multipv 1 score cp 200 nodes 1051 nps 1051000 tbhits 0 time 1 pv c7e5 a3b5"
+      },
+      "PV_leaf_vector": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "actual_queries": 16,
+  "seconds": 2.0779999997466803
+}

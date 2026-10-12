@@ -1,0 +1,20 @@
+{
+  "error": "AssertionError reported_nodes>=1024 inchecker; declarationis uppernodebudget, notminimumwork",
+  "actual_below_budget_queries": 1,
+  "witnesses": [
+    {
+      "game": 3576,
+      "profile": "s703-base-g3-B-",
+      "ply": 39,
+      "actual_nodes": 980,
+      "nodes_limit": 1024,
+      "last_info": [
+        "info depth 244 seldepth 2 multipv 1 score mate 1 nodes 976 nps 325333 tbhits 0 time 3 pv f7e6",
+        "info depth 245 seldepth 2 multipv 1 score mate 1 nodes 980 nps 326666 tbhits 0 time 3 pv f7e6"
+      ]
+    }
+  ],
+  "cause": "Gonodes ismaximum target; maturesearch mayterminateearlier for mate. Belowlimit notprotocolfailure. Sourceandactualinfo inspected; allquerieslegality/scoremateformatwillrecheck.",
+  "actual_queries_repeated": 0,
+  "recovery": "Replace falseminimum with nonnegative actualnodeandconfiguredlimit1024. Keep actualbudget/work fields; countbelowlimit andretainedfinalscorekind, noprovenmate depth claim solelyfromUCI."
+}

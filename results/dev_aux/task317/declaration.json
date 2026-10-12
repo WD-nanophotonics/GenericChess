@@ -1,0 +1,337 @@
+{
+  "task_id": "317",
+  "roots": [
+    {
+      "id": "capture-0",
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "b7b5",
+        "d2d3",
+        "c7c6",
+        "h2h3",
+        "d8c7",
+        "c1b2",
+        "g8h6",
+        "h3h4",
+        "c6c5",
+        "b2e5",
+        "b8c6",
+        "b1a3",
+        "c5c4",
+        "g2g4",
+        "c4d3",
+        "h1h3",
+        "a7a6",
+        "c2c4",
+        "a6a5"
+      ],
+      "fen": "r1b1kb1r/2qppppp/2n4n/pp2B3/1PP3PP/N2p3R/P3PP2/R2QKBN1 w Qkq - 0 11",
+      "captures": [
+        {
+          "move": "a3b5",
+          "actor": "N",
+          "victim": "P"
+        },
+        {
+          "move": "b4a5",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "c4b5",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "d1d3",
+          "actor": "Q",
+          "victim": "P"
+        },
+        {
+          "move": "e2d3",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "e5c7",
+          "actor": "B",
+          "victim": "Q"
+        },
+        {
+          "move": "e5g7",
+          "actor": "B",
+          "victim": "P"
+        },
+        {
+          "move": "h3d3",
+          "actor": "R",
+          "victim": "P"
+        }
+      ],
+      "source_game": "train-s703-base-random-o0-c1",
+      "phase": "train"
+    },
+    {
+      "id": "capture-1",
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "b7b5",
+        "d2d3",
+        "c7c6",
+        "h2h3",
+        "d8c7",
+        "c1b2",
+        "g8h6",
+        "h3h4",
+        "c6c5",
+        "b2e5",
+        "b8c6",
+        "b1a3",
+        "c5c4",
+        "g2g4",
+        "c4d3",
+        "h1h3",
+        "a7a6",
+        "c2c4",
+        "a6a5",
+        "e5g7",
+        "a5b4"
+      ],
+      "fen": "r1b1kb1r/2qpppBp/2n4n/1p6/1pP3PP/N2p3R/P3PP2/R2QKBN1 w Qkq - 0 12",
+      "captures": [
+        {
+          "move": "a3b5",
+          "actor": "N",
+          "victim": "P"
+        },
+        {
+          "move": "c4b5",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "d1d3",
+          "actor": "Q",
+          "victim": "P"
+        },
+        {
+          "move": "e2d3",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "g7f8",
+          "actor": "B",
+          "victim": "B"
+        },
+        {
+          "move": "g7h6",
+          "actor": "B",
+          "victim": "N"
+        },
+        {
+          "move": "g7h8",
+          "actor": "B",
+          "victim": "R"
+        },
+        {
+          "move": "h3d3",
+          "actor": "R",
+          "victim": "P"
+        }
+      ],
+      "source_game": "train-s703-base-random-o0-c1",
+      "phase": "train"
+    },
+    {
+      "id": "capture-2",
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "b7b5",
+        "d2d3",
+        "c7c6",
+        "h2h3",
+        "d8c7",
+        "c1b2",
+        "g8h6",
+        "h3h4",
+        "c6c5",
+        "b2e5",
+        "b8c6",
+        "b1a3",
+        "c5c4",
+        "g2g4",
+        "c4d3",
+        "h1h3",
+        "a7a6",
+        "c2c4",
+        "a6a5",
+        "e5g7",
+        "a5b4",
+        "g7h8",
+        "h6g4",
+        "a3b5",
+        "a8a7"
+      ],
+      "fen": "2b1kb1B/r1qppp1p/2n5/1N6/1pP3nP/3p3R/P3PP2/R2QKBN1 w Q - 1 14",
+      "captures": [
+        {
+          "move": "b5a7",
+          "actor": "N",
+          "victim": "R"
+        },
+        {
+          "move": "b5c7",
+          "actor": "N",
+          "victim": "Q"
+        },
+        {
+          "move": "d1d3",
+          "actor": "Q",
+          "victim": "P"
+        },
+        {
+          "move": "e2d3",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "h3d3",
+          "actor": "R",
+          "victim": "P"
+        }
+      ],
+      "source_game": "train-s703-base-random-o0-c1",
+      "phase": "development"
+    },
+    {
+      "id": "capture-3",
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "b7b5",
+        "d2d3",
+        "c7c6",
+        "h2h3",
+        "d8c7",
+        "c1b2",
+        "g8h6",
+        "h3h4",
+        "c6c5",
+        "b2e5",
+        "b8c6",
+        "b1a3",
+        "c5c4",
+        "g2g4",
+        "c4d3",
+        "h1h3",
+        "a7a6",
+        "c2c4",
+        "a6a5",
+        "a1c1"
+      ],
+      "fen": "r1b1kb1r/2qppppp/2n4n/pp2B3/1PP3PP/N2p3R/P3PP2/2RQKBN1 b kq - 1 11",
+      "captures": [
+        {
+          "move": "a5b4",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "b5c4",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "c6b4",
+          "actor": "N",
+          "victim": "P"
+        },
+        {
+          "move": "c6e5",
+          "actor": "N",
+          "victim": "B"
+        },
+        {
+          "move": "c7e5",
+          "actor": "Q",
+          "victim": "B"
+        },
+        {
+          "move": "d3e2",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "h6g4",
+          "actor": "N",
+          "victim": "P"
+        }
+      ],
+      "source_game": "train-s703-base-random-o0-c0",
+      "phase": "development"
+    }
+  ],
+  "profiles": {
+    "unit": {
+      "P": 208,
+      "N": 208,
+      "B": 208,
+      "R": 208,
+      "Q": 208,
+      "K": 0
+    },
+    "semantic": {
+      "K": 0,
+      "P": 208,
+      "N": 1138,
+      "B": 1486,
+      "R": 2181,
+      "Q": 3667
+    }
+  },
+  "node_limits": [
+    1024,
+    16384
+  ],
+  "calls": 16,
+  "binary_sha256": "c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+  "alignment": 3,
+  "threads": 1,
+  "hash_mib": 16,
+  "NNUE": false,
+  "tablebase": false,
+  "cold_per_query": true,
+  "whole_fuse_seconds": 300,
+  "question": "Qualify actual finite-budget score format, readbacks and cp quantization before +/-8 price panel.",
+  "scope": "Experimental Fairy; prices affect leaf and SEE/order; fixed selective pruning remains. Four old exposed related roots; not exact minimax derivative or human price learning.",
+  "dependencies": {
+    "results\\dev_aux\\task267\\configure.py": "a0821e362a07fc3374dc0aff1568d5039c7369b8e5ae03d63df093d3db9174b0",
+    "results\\dev_aux\\task258\\declaration.json": "c74521c103d3cde85d61f04f67d1f75dc2cd861aaf7c622cfdcfd96b65a15c62",
+    "results\\dev_aux\\task312\\next_work.json": "374d6d071f2dc2d4b957137e462a157a8155a6804b3fc1b9171a85888a82d95a"
+  },
+  "calls_new": 158,
+  "calls_reused": 18,
+  "step": 8,
+  "variants": [
+    "P-",
+    "P+",
+    "N-",
+    "N+",
+    "B-",
+    "B+",
+    "R-",
+    "R+",
+    "Q-",
+    "Q+"
+  ],
+  "reason_for_panel": "Pilot16 price/readbackpassed; oneboundedscore retained andexcludedfromexactdifference;  +/-8raw is3.846cp for unit feature, observable above integer display bin. Still finite-budget response not gradient.",
+  "pilot_sha256": "13a4cddf8a44e4e9e427af69dddc41ff7ba47caaa77db072964a97f3a46b6ed5",
+  "source_score_cpp_sha256": "d902bb05efdce4be85a97112434f9eabbae96739fba603204ab055c4edadb3ee",
+  "score_display": "source uci.cpp v*100/PawnValueEg; types.h PawnValueEg=208, integertruncation. Fixeddisplaydenominator; notcandidatePnormalized.",
+  "recovery": "316actualreadbacks/source show same-name immutable VariantMap. Freshprocessperweight; reuse2valid315P-rows and16bases313, neverreruncompletequeries.",
+  "source317": "OwnfrozenFairy c378... unchanged; config267 unchanged; scope315 unchanged."
+}

@@ -1,0 +1,473 @@
+{
+  "complete": true,
+  "new_games_audited": 4328,
+  "prior_pilot_games_rechecked": 24,
+  "actual_new_queries_audited": 54561,
+  "prior_pilot_queries": 338,
+  "total_query_history_PV_checks": 54899,
+  "all_price_legal_random_history_terminal_checks": true,
+  "rounds": 9,
+  "groups": [
+    {
+      "family": "unit",
+      "initial_weights": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 208,
+        "K": 0
+      },
+      "endpoint": {
+        "weights": {
+          "P": 208,
+          "N": 208,
+          "B": 208,
+          "R": 208,
+          "Q": 208,
+          "K": 0
+        },
+        "rounds": 1,
+        "ending": "no_strict_coordinate_improvement",
+        "fitness": "1651/3072"
+      },
+      "initial_speed": "1651/3072",
+      "endpoint_speed": "1651/3072",
+      "initial_wins": 60,
+      "endpoint_wins": 60,
+      "initial_losses": 0,
+      "endpoint_losses": 0,
+      "initial_unknown": 4,
+      "endpoint_unknown": 4
+    },
+    {
+      "family": "semantic",
+      "initial_weights": {
+        "K": 0,
+        "P": 208,
+        "N": 1138,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "endpoint": {
+        "weights": {
+          "K": 0,
+          "P": 208,
+          "N": 1138,
+          "B": 1486,
+          "R": 4362,
+          "Q": 7334
+        },
+        "rounds": 3,
+        "ending": "no_strict_coordinate_improvement",
+        "fitness": "419/768"
+      },
+      "initial_speed": "275/512",
+      "endpoint_speed": "419/768",
+      "initial_wins": 64,
+      "endpoint_wins": 64,
+      "initial_losses": 0,
+      "endpoint_losses": 0,
+      "initial_unknown": 0,
+      "endpoint_unknown": 0
+    },
+    {
+      "family": "s703-base",
+      "initial_weights": {
+        "P": 208,
+        "K": 0,
+        "N": 87,
+        "B": 126,
+        "R": 2258,
+        "Q": 176
+      },
+      "endpoint": {
+        "weights": {
+          "P": 208,
+          "K": 0,
+          "N": 87,
+          "B": 126,
+          "R": 565,
+          "Q": 704
+        },
+        "rounds": 5,
+        "ending": "no_strict_coordinate_improvement",
+        "fitness": "153/256"
+      },
+      "initial_speed": "1253/3072",
+      "endpoint_speed": "153/256",
+      "initial_wins": 54,
+      "endpoint_wins": 63,
+      "initial_losses": 0,
+      "endpoint_losses": 0,
+      "initial_unknown": 10,
+      "endpoint_unknown": 1
+    }
+  ],
+  "round_checks": [
+    {
+      "family": "unit",
+      "generation": 0,
+      "chosen": "base",
+      "delta": "0",
+      "root_deltas": [
+        "0",
+        "0"
+      ],
+      "color_deltas": [
+        "0",
+        "0"
+      ],
+      "seed_deltas": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "negative_seeds": 0,
+      "positive_seeds": 0,
+      "net_sign_delta": "0"
+    },
+    {
+      "family": "semantic",
+      "generation": 0,
+      "chosen": "Q+",
+      "delta": "5/768",
+      "root_deltas": [
+        "-1/768",
+        "11/768"
+      ],
+      "color_deltas": [
+        "-1/768",
+        "11/768"
+      ],
+      "seed_deltas": [
+        "1/32",
+        "-1/32",
+        "-1/32",
+        "-13/96",
+        "-1/48",
+        "0",
+        "1/16",
+        "1/48",
+        "7/48",
+        "0",
+        "0",
+        "-1/96",
+        "-1/24",
+        "0",
+        "11/96",
+        "0"
+      ],
+      "negative_seeds": 6,
+      "positive_seeds": 5,
+      "net_sign_delta": "-1/64"
+    },
+    {
+      "family": "semantic",
+      "generation": 1,
+      "chosen": "R+",
+      "delta": "1/512",
+      "root_deltas": [
+        "5/192",
+        "-17/768"
+      ],
+      "color_deltas": [
+        "1/64",
+        "-3/256"
+      ],
+      "seed_deltas": [
+        "1/16",
+        "1/32",
+        "0",
+        "-1/96",
+        "-1/16",
+        "-1/16",
+        "-1/32",
+        "1/8",
+        "-3/32",
+        "0",
+        "5/96",
+        "1/32",
+        "1/48",
+        "0",
+        "1/16",
+        "-3/32"
+      ],
+      "negative_seeds": 6,
+      "positive_seeds": 7,
+      "net_sign_delta": "1/64"
+    },
+    {
+      "family": "semantic",
+      "generation": 2,
+      "chosen": "base",
+      "delta": "0",
+      "root_deltas": [
+        "0",
+        "0"
+      ],
+      "color_deltas": [
+        "0",
+        "0"
+      ],
+      "seed_deltas": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "negative_seeds": 0,
+      "positive_seeds": 0,
+      "net_sign_delta": "0"
+    },
+    {
+      "family": "s703-base",
+      "generation": 0,
+      "chosen": "Q+",
+      "delta": "11/128",
+      "root_deltas": [
+        "15/512",
+        "73/512"
+      ],
+      "color_deltas": [
+        "19/128",
+        "3/128"
+      ],
+      "seed_deltas": [
+        "1/48",
+        "41/192",
+        "7/32",
+        "7/48",
+        "1/12",
+        "7/96",
+        "11/96",
+        "1/6",
+        "-11/48",
+        "1/24",
+        "-1/16",
+        "3/16",
+        "-7/64",
+        "1/6",
+        "5/48",
+        "23/96"
+      ],
+      "negative_seeds": 3,
+      "positive_seeds": 13,
+      "net_sign_delta": "3/64"
+    },
+    {
+      "family": "s703-base",
+      "generation": 1,
+      "chosen": "Q+",
+      "delta": "71/3072",
+      "root_deltas": [
+        "47/1536",
+        "1/64"
+      ],
+      "color_deltas": [
+        "-23/768",
+        "39/512"
+      ],
+      "seed_deltas": [
+        "0",
+        "43/192",
+        "-1/24",
+        "-7/48",
+        "-11/192",
+        "5/32",
+        "1/32",
+        "-7/96",
+        "7/192",
+        "-1/48",
+        "1/8",
+        "-11/96",
+        "7/64",
+        "0",
+        "9/64",
+        "0"
+      ],
+      "negative_seeds": 6,
+      "positive_seeds": 7,
+      "net_sign_delta": "5/64"
+    },
+    {
+      "family": "s703-base",
+      "generation": 2,
+      "chosen": "R-",
+      "delta": "5/192",
+      "root_deltas": [
+        "7/128",
+        "-1/384"
+      ],
+      "color_deltas": [
+        "1/24",
+        "1/96"
+      ],
+      "seed_deltas": [
+        "5/96",
+        "0",
+        "3/64",
+        "1/12",
+        "37/192",
+        "0",
+        "1/24",
+        "7/96",
+        "-1/24",
+        "7/48",
+        "-1/32",
+        "-1/6",
+        "-1/32",
+        "5/32",
+        "-5/48",
+        "0"
+      ],
+      "negative_seeds": 5,
+      "positive_seeds": 8,
+      "net_sign_delta": "0"
+    },
+    {
+      "family": "s703-base",
+      "generation": 3,
+      "chosen": "R-",
+      "delta": "7/128",
+      "root_deltas": [
+        "37/512",
+        "19/512"
+      ],
+      "color_deltas": [
+        "-3/256",
+        "31/256"
+      ],
+      "seed_deltas": [
+        "1/12",
+        "-1/32",
+        "7/64",
+        "1/96",
+        "1/12",
+        "3/16",
+        "-19/96",
+        "1/6",
+        "49/192",
+        "-5/96",
+        "7/96",
+        "3/16",
+        "1/96",
+        "7/96",
+        "1/12",
+        "-1/6"
+      ],
+      "negative_seeds": 4,
+      "positive_seeds": 12,
+      "net_sign_delta": "1/64"
+    },
+    {
+      "family": "s703-base",
+      "generation": 4,
+      "chosen": "base",
+      "delta": "0",
+      "root_deltas": [
+        "0",
+        "0"
+      ],
+      "color_deltas": [
+        "0",
+        "0"
+      ],
+      "seed_deltas": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "negative_seeds": 0,
+      "positive_seeds": 0,
+      "net_sign_delta": "0"
+    }
+  ],
+  "descriptive_human_reference": [
+    {
+      "family": "unit",
+      "initial_log_MSE": 1.9663968317711453,
+      "endpoint_log_MSE": 1.9663968317711453,
+      "endpoint_ratios": {
+        "P": 1.0,
+        "N": 1.0,
+        "B": 1.0,
+        "R": 1.0,
+        "Q": 1.0
+      },
+      "closer": false
+    },
+    {
+      "family": "semantic",
+      "initial_log_MSE": 0.42289086131267145,
+      "endpoint_log_MSE": 1.0068192469990096,
+      "endpoint_ratios": {
+        "P": 1.0,
+        "N": 5.471153846153846,
+        "B": 7.144230769230769,
+        "R": 20.971153846153847,
+        "Q": 35.25961538461539
+      },
+      "closer": false
+    },
+    {
+      "family": "s703-base",
+      "initial_log_MSE": 2.5264546682859477,
+      "endpoint_log_MSE": 1.5540340500305838,
+      "endpoint_ratios": {
+        "P": 1.0,
+        "N": 0.4182692307692308,
+        "B": 0.6057692307692307,
+        "R": 2.7163461538461537,
+        "Q": 3.3846153846153846
+      },
+      "closer": true
+    }
+  ],
+  "aggregate_complete_games": 4352,
+  "aggregate_wins": 4086,
+  "aggregate_losses": 0,
+  "aggregate_unknown": 266,
+  "seconds": 8.265999999828637,
+  "producer_seconds": 758.625,
+  "scope": "Cachedexactsameinputs reusednotphysicalqueries. Neighbor fitness optimization is empiricalpolicysearch underfixed64cells, not confidence/causaluniversalpricelearning. Humanreference strictlypostendpoint; no negativeclipping/fitafterexposure. Seedcoupling exact Pythonrandrange legaluniformpermove; rejectionmayconsumevariablebits andshiftsfuturewithin-game RNGcoupling, independentnewseedpergameprevents crossgamestreamshift. Dotrequestedturn-indexedstreamcounterfactual isseparatefuturecontrol, historicaldataunchanged."
+}

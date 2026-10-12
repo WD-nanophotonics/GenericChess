@@ -1,0 +1,25 @@
+{
+  "complete": false,
+  "actual_queries": 0,
+  "error": "AssertionError: pilot contains boundedscore",
+  "bounded_cases": [
+    {
+      "root": "capture-1",
+      "profile": "unit",
+      "nodes_limit": 1024,
+      "score": {
+        "kind": "cp",
+        "value": 0,
+        "depth": 5,
+        "bound": "upperbound",
+        "pv": [
+          "a3b5",
+          "d3e2"
+        ],
+        "line": "info depth 5 seldepth 5 multipv 1 score cp 0 upperbound nodes 1046 nps 523000 tbhits 0 time 2 pv a3b5 d3e2"
+      }
+    }
+  ],
+  "cause": "Search was interrupted inside aspiration window; exact_score-only prerequisite correctly failed. Bound is legitimate protocol output, not technical entry failure.",
+  "recovery": "NEW315 retains all176logical rows, excludes axis sensitivity unless all three reports cp/unbounded. No prior queries repeated. Do not infer exactscore from current finalbound or claim searchdepthcomplete."
+}

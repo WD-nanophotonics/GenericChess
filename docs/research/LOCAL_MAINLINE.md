@@ -1,20 +1,24 @@
 ## DEV_AUX current scope2026-10-12
 
-Science OPEN; sidemission only; normal entry/heartbeat ACTIVE, no severe blocker.
-Segment22:72physicalcompletegames/2943persistedactualnewNativequeries;
-failed294partialgo countunknown; historical16basequeries explicitly reused.
-CompleteD3/repetition5 baseline64oldrootgames37W0L27unknown, actualallquery
-finitevalue/PV/historychecks; price-binding permutationcontrol20W0L12unknown.
-Onegen H/root/speedunstable; OLSrank5 butnegativeP/N/R, root/familyconfounded,
-olddevpredictionworsethanzero; nohumanprice recovery/positivityclipping/adoption.
-204newpriceperturbations:correctPVscalarvalue notalwaysrootgradient;
-12unitaxes mismatches independentlyexact, noallTD/materiallearningrefutation.
-Actualone-parent5plyrandommate goalsR1/9,Q0; all5tablesflat here; contextnotgeneralR>Q.
-308/310losslesssparseappend:4realmatchedgames/all139hashes,253.64MB->.931MB writes.
-Recordedchecker/3sD4/codec failures+recovery intact; no product/default/UI change.
-Science287..312/reportSEGMENT_20261012_22.md; ownfixedf1eaDLL/installedbaselineunchanged.
-Next312:maturefinite-response qualification, optimalPVties, distinctpromotionparents;
-no nextquerypanel/training/games active; primarycache/viewwork separate/read-only.
+Science OPEN; sidemission only; normalentry/90minheartbeat ACTIVE; no severe blocker.
+Segment23:4912actualnewshortgames/62975go; allcap48. Producer1427.266s
+incl315failed.297s, separate Nativeoracle418.61s; notwholeAgent duration.
+Mature goal truefastmate vsuniformrandom: threeinitials/max6rounds/fixed16seeds,
+actual1/3/5rounds plateau;4328newgames54561go758.625s, cache856reuses.
+End ratio unit1each;semanticN5.47/B7.14/R20.97/Q35.26;703N.418/B.606/R2.716/Q3.385.
+Humanreference postendpointonly:unitflat,semanticfarther,703closerbutN/B<P;
+no coherent/stablehumanprice recovery. Training improvementnotgeneralization.
+Semanticmaturedevspeed0/NativeDevnegative;703maturedevspeednegativebut
+NativeDevpositive;ordinalstream703positive, allfixedcontrasts/noncausal limits.
+325400pureD3games5741queries all326score/argmax/PV/hash exactpasses.
+3191207optimalpaths all20PVmembers;20axesuniformmean stillnotrootgradient.
+316same-nameVariantPathreload failure actual200/216readbacks diagnosed;
+new317freshprocess fixed. Priorpriceisolated267/269notinvalidated.
+318176queries9upperbounds/31budgetpairs5signreversals; finitecpnotgradient.
+328ordinalrandomstreams preservegoal, nohistoricalrerun/fit; rawSlack/privateexcluded.
+Science313..330/reportSEGMENT_20261012_23.md; next331PREPAREDonly:
+allfrozenendpoints vsunitSEARCH20games, N/Bintervention exposure, robustlossdiagnostic.
+Owninstalled/pinnedbinaries unchanged; primaryerrorstatus/view work read-only/separate.
 
 # Current local research mainline
 

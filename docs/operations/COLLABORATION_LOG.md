@@ -711,3 +711,17 @@ oracles/vectorized frozen-tree audits are diagnostic computations, not TT/work-
 matched python-chess/cshogi ABP speed benchmarks. Do not recycle their timing
 as the requested universal range. No new channel roots beyond own220259 request;
 ownDotreply unchanged. Branch/state/UI boundaries and regular work remain.
+
+## DEV_AUX 第23段：短局快杀学习和冻结迁移
+
+DEV_AUX在独立sidemission完成4912个封顶48半步短局、62975次新go；三初值/固定16seed的学习4328局只用758.625秒，实际1/3/5轮平台停止。所有端点先冻结，再完整D3/开发根/随机流耦合验证。human参考只在冻结后描述：unit不动、semantic更远、s703虽更近但N/B仍低于兵；训练增益不等同稳定人类棋价。s703在Native开发目标改善，在同成熟预算开发目标反向；全部固定结果保留，不挑好初值。
+
+独立5741 Native查询全根值/argmax/PV、第二解码器SHA通过；新增成熟57234查询全历史/PV/价格/真实终局核验。分开记录生产1427.266秒和Nativeoracle418.610秒，不能当Agent段时长。缓存856次不计新增。普通并行计算允许，未索取安静窗口；计时是条件观察。
+
+Dot在新咨询中强调随机合法着空间/王安全偏差、速度与净胜区分、删组和随机耦合；采用到323/324/328/329。多轮上限在回复前已冻结，保留用户许可的快杀目标试验，不把初值区分当通用价格证据，不追加代数。其独立读取的是9975138732df6abbac83369e0c32738a211895e7第22段，没有执行本段新训练。首次咨询发送前的自动审批将SEND_UNCERTAIN误判为重发；实际工具未发出，核对频道/记录并保存重复风险依据后只执行一次首次发送，未重发/清ledger。
+
+PRIMARY的固定7af590664e9d1f55fa525f2ca9dc7a5538e84c6d排序缓存/私有view结果已读；新线程讨论必要serializer失败显式三态、布尔适配层可能吞错误和删除unused摘要分配的契约。未接管、不改其工作区/状态/发布分支，不声称本段固定f1ea实验验收其未发布补丁。共享账号角色标签是路由，未增身份挑战或代理。
+
+修复实际新入口问题：同名VariantMap不重载价格，读回200→216仍200，新进程正确；每价新进程并复用有效查询修复。旧267/269原有价格隔离成立，未倒推失效。节点上限被检查器误当最低工作量的一例980节点迭代245已据源码纠正；没有引擎重跑。全部故障/修复证据保留，本地路径原始协议与Slack/账号状态不发布。
+
+证据：results/dev_aux/SEGMENT_20261012_23.md、ACTUAL_MATURE_20261012_23_manifest.json、313..331。发布时给Dot固定提交链接；投递不是对新版本独立审核/执行承诺。科学OPEN，正常巡检ACTIVE；下一步全部冻结端点对unit搜索对手20短局迁移，以及旧轨迹N/B干预覆盖，未开始新任务。

@@ -1,0 +1,49 @@
+{
+  "complete": true,
+  "endpoints": {
+    "unit": {
+      "weights": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 208,
+        "K": 0
+      },
+      "rounds": 1,
+      "ending": "no_strict_coordinate_improvement",
+      "fitness": "1651/3072"
+    },
+    "semantic": {
+      "weights": {
+        "K": 0,
+        "P": 208,
+        "N": 1138,
+        "B": 1486,
+        "R": 4362,
+        "Q": 7334
+      },
+      "rounds": 3,
+      "ending": "no_strict_coordinate_improvement",
+      "fitness": "419/768"
+    },
+    "s703-base": {
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 87,
+        "B": 126,
+        "R": 565,
+        "Q": 704
+      },
+      "rounds": 5,
+      "ending": "no_strict_coordinate_improvement",
+      "fitness": "153/256"
+    }
+  },
+  "frozen_at": 1791816740.136311,
+  "actual_games": 4328,
+  "actual_queries": 54561,
+  "seconds": 758.6089999997057,
+  "source_sha256": "d39d38fd154363f5ed05768224acbe26916695af6d34975e4eed71dfd78abc91"
+}
