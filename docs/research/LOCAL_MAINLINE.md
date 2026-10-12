@@ -1,19 +1,23 @@
-## DEV_AUX current scope2026-10-12 segment26
+## DEV_AUX current scope2026-10-12 segment27
 
 Science OPEN; sidemission only; heartbeatACTIVE; no primary/default/UI changes.
-387fresh4train/4dev prefixes,2starts/2methods;1600games36547go29.10min.
-Coordinate2-axis traininggainlarge, development0/+3/38; SPSA11-axis development-3/76/+1/76.
-SPSA fixed normalizedgain has12/24 and6/24 integerflatsteps; allendpointsfrozen.
-Sourceprior describes postfreeze unitcloser/randomfarther, not human recovery.
-384fiveexposedmate families120games/94terminals57.39s;18/30priceinvariantcells.
-392633199PVchecks/fullhistory/price/goals/journals;3896400tableentries pass.
-391finitehand-omission SEE threshold witness, notwrongmove/optimaldefense proof.
-396ready78%of18.251s; newprivate80a43db8 retainscoldTT/history, reusesoneworker.
-Same384go4007.283s;403nativevalidation5.250s; allactions/scores/nodes/PV/hashfull match.
-402all194actualpricevectors388first-lastqueries/6208tables exact, finite scope.
-Select thisexperimentalentry forfuture scopedcost, neverretime/refitoldfrozenbatch.
-Nextfresh jointproposal/quantization control, retainnegativeSPSA andSEE scope.
-ReportSEGMENT_20261012_26.md,384..404, exact71memberarchive; primaryb5f02 readonly.
+405..409 actualjoint acceptance:1584games37739go534.265s, real12/9-axis endpoints,
+development-3/76/0; coordinate-1/19,-303/76. All frozen failures remain.
+410..414 uniformrandom48games8.781s/23trueends versusunit16.344s/2trueends.
+Dot peropponentturn RNG adopted BEFORErandomoutputs, originaldecl preserved.
+417..426 fresh matchedoptimizer opponent study:1632games27843go426.891s;
+all4endpoints beforeANYdevelopment, ALLcross96cells beforeoutcomes declared.
+Randomunit-start gains303/76 unitenv and295/76 randomenv at1024;
+randomstart-1/19/+1/76, bothsourcepriors farther, not stablehumanrecovery.
+415 verifiednewhandSEE guardedposition-only;41691cases546auxsee old173/new0
+localpredicatemismatches;42148games mixedgoal/34trajectorychanges/no terminalchange.
+42724old/reuse8192go exact;428ALL96cells29.688s/1643go, gainsfrequentlyreverse.
+430 actualresource/resultcurve: nominalnodes notstrictcounters/equaltime.
+Total3488newgames70592go+546auxsee; allCshogi/history/goal/PV/journal audits pass.
+431 fresh8roots/320prefixplies and48directions frozen, run_next syntaxONLY.
+Next matched1024/8192 learning usesALL2starts/endpoints/BOTHdevenvironments.
+ReportSEGMENT_20261012_27.md;101memberarchive405..431; primary7ccreadonly.
+RawSlack/privatebuilds excluded; no extraAgents/workers/fees or>1hourrun.
 
 # Current local research mainline
 

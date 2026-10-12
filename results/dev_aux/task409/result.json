@@ -1,0 +1,1954 @@
+{
+  "endpoint_sha256": "a5ce110a51b942901f6cb529c219e29c3b4563ce4a1df1e43dbf07d2538cb52b",
+  "metrics": [
+    {
+      "method": "coordinate",
+      "family": "unit",
+      "phase": "train_endpoint_diagnostic",
+      "initial_mean": "0",
+      "endpoint_mean": "157/38",
+      "mean_delta": "157/38",
+      "quantity_initial": "0",
+      "quantity_endpoint": "11/4",
+      "paired_cell_delta": [
+        "4/19",
+        "2/19",
+        "6/19",
+        "-2/19",
+        "0",
+        "4/19",
+        "0",
+        "614/19"
+      ],
+      "root_family_delta": [
+        "3/19",
+        "2/19",
+        "2/19",
+        "307/19"
+      ],
+      "leave_one_family_out_mean_delta": [
+        "311/57",
+        "104/19",
+        "104/19",
+        "7/57"
+      ],
+      "initial_true_wins": 0,
+      "initial_true_losses": 0,
+      "endpoint_true_wins": 1,
+      "endpoint_true_losses": 0,
+      "changed_price_axes": 2,
+      "endpoint_log_distance_from_initial": 0.08007550231970023,
+      "scope": "eightpairedcells/fourindependentgeneratorseeds; no sampling CI/no price/model selection"
+    },
+    {
+      "method": "coordinate",
+      "family": "unit",
+      "phase": "development",
+      "initial_mean": "0",
+      "endpoint_mean": "-1/19",
+      "mean_delta": "-1/19",
+      "quantity_initial": "0",
+      "quantity_endpoint": "-1",
+      "paired_cell_delta": [
+        "0",
+        "0",
+        "2/19",
+        "-2/19",
+        "2/19",
+        "-2/19",
+        "2/19",
+        "-10/19"
+      ],
+      "root_family_delta": [
+        "0",
+        "0",
+        "0",
+        "-4/19"
+      ],
+      "leave_one_family_out_mean_delta": [
+        "-4/57",
+        "-4/57",
+        "-4/57",
+        "0"
+      ],
+      "initial_true_wins": 0,
+      "initial_true_losses": 0,
+      "endpoint_true_wins": 0,
+      "endpoint_true_losses": 0,
+      "changed_price_axes": 2,
+      "endpoint_log_distance_from_initial": 0.08007550231970023,
+      "scope": "eightpairedcells/fourindependentgeneratorseeds; no sampling CI/no price/model selection"
+    },
+    {
+      "method": "coordinate",
+      "family": "random2514",
+      "phase": "train_endpoint_diagnostic",
+      "initial_mean": "-5/38",
+      "endpoint_mean": "5/76",
+      "mean_delta": "15/76",
+      "quantity_initial": "-5/2",
+      "quantity_endpoint": "5/4",
+      "paired_cell_delta": [
+        "-2/19",
+        "4/19",
+        "4/19",
+        "4/19",
+        "10/19",
+        "4/19",
+        "10/19",
+        "-4/19"
+      ],
+      "root_family_delta": [
+        "1/19",
+        "4/19",
+        "7/19",
+        "3/19"
+      ],
+      "leave_one_family_out_mean_delta": [
+        "14/57",
+        "11/57",
+        "8/57",
+        "4/19"
+      ],
+      "initial_true_wins": 0,
+      "initial_true_losses": 0,
+      "endpoint_true_wins": 0,
+      "endpoint_true_losses": 0,
+      "changed_price_axes": 2,
+      "endpoint_log_distance_from_initial": 0.08007550231970023,
+      "scope": "eightpairedcells/fourindependentgeneratorseeds; no sampling CI/no price/model selection"
+    },
+    {
+      "method": "coordinate",
+      "family": "random2514",
+      "phase": "development",
+      "initial_mean": "-7/76",
+      "endpoint_mean": "-155/38",
+      "mean_delta": "-303/76",
+      "quantity_initial": "-7/4",
+      "quantity_endpoint": "-2",
+      "paired_cell_delta": [
+        "4/19",
+        "-604/19",
+        "0",
+        "2/19",
+        "0",
+        "-10/19",
+        "2/19",
+        "0"
+      ],
+      "root_family_delta": [
+        "-300/19",
+        "1/19",
+        "-5/19",
+        "1/19"
+      ],
+      "leave_one_family_out_mean_delta": [
+        "-1/19",
+        "-16/3",
+        "-298/57",
+        "-16/3"
+      ],
+      "initial_true_wins": 0,
+      "initial_true_losses": 0,
+      "endpoint_true_wins": 0,
+      "endpoint_true_losses": 1,
+      "changed_price_axes": 2,
+      "endpoint_log_distance_from_initial": 0.08007550231970023,
+      "scope": "eightpairedcells/fourindependentgeneratorseeds; no sampling CI/no price/model selection"
+    },
+    {
+      "method": "joint",
+      "family": "unit",
+      "phase": "train_endpoint_diagnostic",
+      "initial_mean": "0",
+      "endpoint_mean": "307/38",
+      "mean_delta": "307/38",
+      "quantity_initial": "0",
+      "quantity_endpoint": "11/4",
+      "paired_cell_delta": [
+        "602/19",
+        "4/19",
+        "610/19",
+        "0",
+        "0",
+        "10/19",
+        "-2/19",
+        "4/19"
+      ],
+      "root_family_delta": [
+        "303/19",
+        "305/19",
+        "5/19",
+        "1/19"
+      ],
+      "leave_one_family_out_mean_delta": [
+        "311/57",
+        "103/19",
+        "203/19",
+        "613/57"
+      ],
+      "initial_true_wins": 0,
+      "initial_true_losses": 0,
+      "endpoint_true_wins": 2,
+      "endpoint_true_losses": 0,
+      "changed_price_axes": 12,
+      "endpoint_log_distance_from_initial": 0.18723831126540036,
+      "scope": "eightpairedcells/fourindependentgeneratorseeds; no sampling CI/no price/model selection"
+    },
+    {
+      "method": "joint",
+      "family": "unit",
+      "phase": "development",
+      "initial_mean": "0",
+      "endpoint_mean": "-3/76",
+      "mean_delta": "-3/76",
+      "quantity_initial": "0",
+      "quantity_endpoint": "-3/4",
+      "paired_cell_delta": [
+        "2/19",
+        "-4/19",
+        "0",
+        "0",
+        "0",
+        "-4/19",
+        "2/19",
+        "-2/19"
+      ],
+      "root_family_delta": [
+        "-1/19",
+        "0",
+        "-2/19",
+        "0"
+      ],
+      "leave_one_family_out_mean_delta": [
+        "-2/57",
+        "-1/19",
+        "-1/57",
+        "-1/19"
+      ],
+      "initial_true_wins": 0,
+      "initial_true_losses": 0,
+      "endpoint_true_wins": 0,
+      "endpoint_true_losses": 0,
+      "changed_price_axes": 12,
+      "endpoint_log_distance_from_initial": 0.18723831126540036,
+      "scope": "eightpairedcells/fourindependentgeneratorseeds; no sampling CI/no price/model selection"
+    },
+    {
+      "method": "joint",
+      "family": "random2514",
+      "phase": "train_endpoint_diagnostic",
+      "initial_mean": "-5/38",
+      "endpoint_mean": "305/38",
+      "mean_delta": "155/19",
+      "quantity_initial": "-5/2",
+      "quantity_endpoint": "1",
+      "paired_cell_delta": [
+        "2/19",
+        "4/19",
+        "32",
+        "2/19",
+        "6/19",
+        "2/19",
+        "8/19",
+        "32"
+      ],
+      "root_family_delta": [
+        "3/19",
+        "305/19",
+        "4/19",
+        "308/19"
+      ],
+      "leave_one_family_out_mean_delta": [
+        "617/57",
+        "105/19",
+        "616/57",
+        "104/19"
+      ],
+      "initial_true_wins": 0,
+      "initial_true_losses": 0,
+      "endpoint_true_wins": 2,
+      "endpoint_true_losses": 0,
+      "changed_price_axes": 9,
+      "endpoint_log_distance_from_initial": 0.3165290124507186,
+      "scope": "eightpairedcells/fourindependentgeneratorseeds; no sampling CI/no price/model selection"
+    },
+    {
+      "method": "joint",
+      "family": "random2514",
+      "phase": "development",
+      "initial_mean": "-7/76",
+      "endpoint_mean": "-7/76",
+      "mean_delta": "0",
+      "quantity_initial": "-7/4",
+      "quantity_endpoint": "-7/4",
+      "paired_cell_delta": [
+        "0",
+        "0",
+        "0",
+        "-2/19",
+        "4/19",
+        "-6/19",
+        "2/19",
+        "2/19"
+      ],
+      "root_family_delta": [
+        "0",
+        "-1/19",
+        "-1/19",
+        "2/19"
+      ],
+      "leave_one_family_out_mean_delta": [
+        "0",
+        "1/57",
+        "1/57",
+        "-2/57"
+      ],
+      "initial_true_wins": 0,
+      "initial_true_losses": 0,
+      "endpoint_true_wins": 0,
+      "endpoint_true_losses": 0,
+      "changed_price_axes": 9,
+      "endpoint_log_distance_from_initial": 0.3165290124507186,
+      "scope": "eightpairedcells/fourindependentgeneratorseeds; no sampling CI/no price/model selection"
+    }
+  ],
+  "resources": [
+    {
+      "method": "coordinate",
+      "family": "unit",
+      "logical_games": 400,
+      "distinct_physical_source_games": 384,
+      "go": 9126,
+      "gamewall_sum": 122.37300000106916,
+      "go_transport_seconds": 8.167000003624707,
+      "reported_lastinfo_nodes_sum": 9582690,
+      "queries_without_reported_nodes": 0,
+      "node_range": [
+        21,
+        7474
+      ],
+      "depth_range": [
+        1,
+        16
+      ],
+      "scope": "sourceunique resources may overlap acrossmethods; nocausalexclusivewall/equaltimeclaim, actual lastinfo counters not total hiddenwork certificate"
+    },
+    {
+      "method": "coordinate",
+      "family": "random2514",
+      "logical_games": 400,
+      "distinct_physical_source_games": 384,
+      "go": 9207,
+      "gamewall_sum": 122.19299999903888,
+      "go_transport_seconds": 7.276000001002103,
+      "reported_lastinfo_nodes_sum": 9554900,
+      "queries_without_reported_nodes": 0,
+      "node_range": [
+        21,
+        6080
+      ],
+      "depth_range": [
+        1,
+        15
+      ],
+      "scope": "sourceunique resources may overlap acrossmethods; nocausalexclusivewall/equaltimeclaim, actual lastinfo counters not total hiddenwork certificate"
+    },
+    {
+      "method": "joint",
+      "family": "unit",
+      "logical_games": 384,
+      "distinct_physical_source_games": 384,
+      "go": 9123,
+      "gamewall_sum": 123.20500000100583,
+      "go_transport_seconds": 8.133000008761883,
+      "reported_lastinfo_nodes_sum": 9560662,
+      "queries_without_reported_nodes": 0,
+      "node_range": [
+        21,
+        7019
+      ],
+      "depth_range": [
+        1,
+        16
+      ],
+      "scope": "sourceunique resources may overlap acrossmethods; nocausalexclusivewall/equaltimeclaim, actual lastinfo counters not total hiddenwork certificate"
+    },
+    {
+      "method": "joint",
+      "family": "random2514",
+      "logical_games": 384,
+      "distinct_physical_source_games": 384,
+      "go": 9136,
+      "gamewall_sum": 129.5979999997653,
+      "go_transport_seconds": 8.808999998960644,
+      "reported_lastinfo_nodes_sum": 9540384,
+      "queries_without_reported_nodes": 0,
+      "node_range": [
+        21,
+        4743
+      ],
+      "depth_range": [
+        1,
+        16
+      ],
+      "scope": "sourceunique resources may overlap acrossmethods; nocausalexclusivewall/equaltimeclaim, actual lastinfo counters not total hiddenwork certificate"
+    }
+  ],
+  "probe_family_sensitivity": [
+    {
+      "family": "unit",
+      "iteration": 0,
+      "mean": "-1/76",
+      "rootfamily_means": [
+        "3/19",
+        "-2/19",
+        "-1/19",
+        "-1/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-4/57",
+        "1/57",
+        "0",
+        "0"
+      ],
+      "leaveone_sign_agreement": 1,
+      "directions": [
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 1,
+      "mean": "-5/76",
+      "rootfamily_means": [
+        "2/19",
+        "-1/19",
+        "-2/19",
+        "-4/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-7/57",
+        "-4/57",
+        "-1/19",
+        "-1/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 2,
+      "mean": "-297/76",
+      "rootfamily_means": [
+        "-6/19",
+        "6/19",
+        "7/19",
+        "-16"
+      ],
+      "leave_one_rootfamily_means": [
+        "-97/19",
+        "-101/19",
+        "-16/3",
+        "7/57"
+      ],
+      "leaveone_sign_agreement": 3,
+      "directions": [
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 3,
+      "mean": "9/38",
+      "rootfamily_means": [
+        "1/19",
+        "9/19",
+        "2/19",
+        "6/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "17/57",
+        "3/19",
+        "16/57",
+        "4/19"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 4,
+      "mean": "7/38",
+      "rootfamily_means": [
+        "5/19",
+        "8/19",
+        "0",
+        "1/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "3/19",
+        "2/19",
+        "14/57",
+        "13/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 5,
+      "mean": "307/76",
+      "rootfamily_means": [
+        "-2/19",
+        "305/19",
+        "4/19",
+        "0"
+      ],
+      "leave_one_rootfamily_means": [
+        "103/19",
+        "2/57",
+        "101/19",
+        "307/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 6,
+      "mean": "-3/38",
+      "rootfamily_means": [
+        "-7/19",
+        "1/19",
+        "1/19",
+        "-1/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "1/57",
+        "-7/57",
+        "-7/57",
+        "-5/57"
+      ],
+      "leaveone_sign_agreement": 3,
+      "directions": [
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 7,
+      "mean": "-621/76",
+      "rootfamily_means": [
+        "-3/19",
+        "-16",
+        "-3/19",
+        "-311/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-206/19",
+        "-317/57",
+        "-206/19",
+        "-310/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 8,
+      "mean": "4",
+      "rootfamily_means": [
+        "-6/19",
+        "306/19",
+        "1/19",
+        "3/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "310/57",
+        "-2/57",
+        "101/19",
+        "301/57"
+      ],
+      "leaveone_sign_agreement": 3,
+      "directions": [
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 9,
+      "mean": "-1/38",
+      "rootfamily_means": [
+        "0",
+        "3/19",
+        "-1/19",
+        "-4/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-2/57",
+        "-5/57",
+        "-1/57",
+        "2/57"
+      ],
+      "leaveone_sign_agreement": 3,
+      "directions": [
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 10,
+      "mean": "-151/38",
+      "rootfamily_means": [
+        "5/19",
+        "-308/19",
+        "0",
+        "1/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-307/57",
+        "2/19",
+        "-302/57",
+        "-101/19"
+      ],
+      "leaveone_sign_agreement": 3,
+      "directions": [
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 11,
+      "mean": "-299/76",
+      "rootfamily_means": [
+        "-1/19",
+        "-298/19",
+        "1/19",
+        "-1/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-298/57",
+        "-1/57",
+        "-100/19",
+        "-298/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 12,
+      "mean": "-1/38",
+      "rootfamily_means": [
+        "-2/19",
+        "300/19",
+        "-300/19",
+        "0"
+      ],
+      "leave_one_rootfamily_means": [
+        "0",
+        "-302/57",
+        "298/57",
+        "-2/57"
+      ],
+      "leaveone_sign_agreement": 2,
+      "directions": [
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 13,
+      "mean": "2/19",
+      "rootfamily_means": [
+        "6/19",
+        "3/19",
+        "0",
+        "-1/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "2/57",
+        "5/57",
+        "8/57",
+        "3/19"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 14,
+      "mean": "-153/38",
+      "rootfamily_means": [
+        "-2/19",
+        "-305/19",
+        "3/19",
+        "-2/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-16/3",
+        "-1/57",
+        "-103/19",
+        "-16/3"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 15,
+      "mean": "0",
+      "rootfamily_means": [
+        "6/19",
+        "1/19",
+        "-1/19",
+        "-6/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-2/19",
+        "-1/57",
+        "1/57",
+        "2/19"
+      ],
+      "leaveone_sign_agreement": 0,
+      "directions": [
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 16,
+      "mean": "-303/76",
+      "rootfamily_means": [
+        "-2/19",
+        "-301/19",
+        "0",
+        "0"
+      ],
+      "leave_one_rootfamily_means": [
+        "-301/57",
+        "-2/57",
+        "-101/19",
+        "-101/19"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 17,
+      "mean": "1/76",
+      "rootfamily_means": [
+        "-1/19",
+        "300/19",
+        "-300/19",
+        "2/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "2/57",
+        "-299/57",
+        "301/57",
+        "-1/57"
+      ],
+      "leaveone_sign_agreement": 2,
+      "directions": [
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 18,
+      "mean": "1/76",
+      "rootfamily_means": [
+        "0",
+        "1/19",
+        "1/19",
+        "-1/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "1/57",
+        "0",
+        "0",
+        "2/57"
+      ],
+      "leaveone_sign_agreement": 2,
+      "directions": [
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 19,
+      "mean": "3/19",
+      "rootfamily_means": [
+        "7/19",
+        "2/19",
+        "1/19",
+        "2/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "5/57",
+        "10/57",
+        "11/57",
+        "10/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 20,
+      "mean": "-77/19",
+      "rootfamily_means": [
+        "0",
+        "-306/19",
+        "-1/19",
+        "-1/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-308/57",
+        "-2/57",
+        "-307/57",
+        "-307/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 21,
+      "mean": "-307/38",
+      "rootfamily_means": [
+        "-305/19",
+        "-302/19",
+        "-5/19",
+        "-2/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-103/19",
+        "-104/19",
+        "-203/19",
+        "-204/19"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 22,
+      "mean": "-3/76",
+      "rootfamily_means": [
+        "-1/19",
+        "3/19",
+        "-1/19",
+        "-4/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-2/57",
+        "-2/19",
+        "-2/57",
+        "1/57"
+      ],
+      "leaveone_sign_agreement": 3,
+      "directions": [
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "family": "unit",
+      "iteration": 23,
+      "mean": "307/76",
+      "rootfamily_means": [
+        "4/19",
+        "309/19",
+        "-4/19",
+        "-2/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "101/19",
+        "-2/57",
+        "311/57",
+        "103/19"
+      ],
+      "leaveone_sign_agreement": 3,
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 0,
+      "mean": "-1/19",
+      "rootfamily_means": [
+        "-4/19",
+        "3/19",
+        "1/19",
+        "-4/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "0",
+        "-7/57",
+        "-5/57",
+        "0"
+      ],
+      "leaveone_sign_agreement": 2,
+      "directions": [
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 1,
+      "mean": "301/76",
+      "rootfamily_means": [
+        "0",
+        "-6/19",
+        "4/19",
+        "303/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "301/57",
+        "307/57",
+        "99/19",
+        "-2/57"
+      ],
+      "leaveone_sign_agreement": 3,
+      "directions": [
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 2,
+      "mean": "-2/19",
+      "rootfamily_means": [
+        "-2/19",
+        "-3/19",
+        "0",
+        "-3/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-2/19",
+        "-5/57",
+        "-8/57",
+        "-5/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 3,
+      "mean": "-11/38",
+      "rootfamily_means": [
+        "-3/19",
+        "-4/19",
+        "-7/19",
+        "-8/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-1/3",
+        "-6/19",
+        "-5/19",
+        "-14/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 4,
+      "mean": "155/38",
+      "rootfamily_means": [
+        "5/19",
+        "301/19",
+        "2/19",
+        "2/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "305/57",
+        "3/19",
+        "308/57",
+        "308/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 5,
+      "mean": "11/76",
+      "rootfamily_means": [
+        "7/19",
+        "5/19",
+        "-3/19",
+        "2/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "4/57",
+        "2/19",
+        "14/57",
+        "3/19"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        -1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 6,
+      "mean": "0",
+      "rootfamily_means": [
+        "-1/19",
+        "-5/19",
+        "4/19",
+        "2/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "1/57",
+        "5/57",
+        "-4/57",
+        "-2/57"
+      ],
+      "leaveone_sign_agreement": 0,
+      "directions": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 7,
+      "mean": "0",
+      "rootfamily_means": [
+        "3/19",
+        "-1/19",
+        "-2/19",
+        "0"
+      ],
+      "leave_one_rootfamily_means": [
+        "-1/19",
+        "1/57",
+        "2/57",
+        "0"
+      ],
+      "leaveone_sign_agreement": 1,
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        -1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 8,
+      "mean": "-7/76",
+      "rootfamily_means": [
+        "-2/19",
+        "-1/19",
+        "2/19",
+        "-6/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-5/57",
+        "-2/19",
+        "-3/19",
+        "-1/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 9,
+      "mean": "145/38",
+      "rootfamily_means": [
+        "-4/19",
+        "-8/19",
+        "-2/19",
+        "16"
+      ],
+      "leave_one_rootfamily_means": [
+        "98/19",
+        "298/57",
+        "292/57",
+        "-14/57"
+      ],
+      "leaveone_sign_agreement": 3,
+      "directions": [
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 10,
+      "mean": "153/38",
+      "rootfamily_means": [
+        "5/19",
+        "303/19",
+        "-2/19",
+        "0"
+      ],
+      "leave_one_rootfamily_means": [
+        "301/57",
+        "1/19",
+        "308/57",
+        "102/19"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 11,
+      "mean": "0",
+      "rootfamily_means": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "leave_one_rootfamily_means": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 12,
+      "mean": "-3/38",
+      "rootfamily_means": [
+        "-3/19",
+        "-3/19",
+        "1/19",
+        "-1/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-1/19",
+        "-1/19",
+        "-7/57",
+        "-5/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 13,
+      "mean": "3/38",
+      "rootfamily_means": [
+        "3/19",
+        "5/19",
+        "-2/19",
+        "0"
+      ],
+      "leave_one_rootfamily_means": [
+        "1/19",
+        "1/57",
+        "8/57",
+        "2/19"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 14,
+      "mean": "-77/19",
+      "rootfamily_means": [
+        "-4/19",
+        "-16",
+        "0",
+        "0"
+      ],
+      "leave_one_rootfamily_means": [
+        "-16/3",
+        "-4/57",
+        "-308/57",
+        "-308/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 15,
+      "mean": "-5/38",
+      "rootfamily_means": [
+        "-6/19",
+        "-1/19",
+        "2/19",
+        "-5/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-4/57",
+        "-3/19",
+        "-4/19",
+        "-5/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 16,
+      "mean": "-605/76",
+      "rootfamily_means": [
+        "-4/19",
+        "-306/19",
+        "-301/19",
+        "6/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-601/57",
+        "-299/57",
+        "-16/3",
+        "-611/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 17,
+      "mean": "1/38",
+      "rootfamily_means": [
+        "-1/19",
+        "2/19",
+        "1/19",
+        "0"
+      ],
+      "leave_one_rootfamily_means": [
+        "1/19",
+        "0",
+        "1/57",
+        "2/57"
+      ],
+      "leaveone_sign_agreement": 3,
+      "directions": [
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 18,
+      "mean": "149/38",
+      "rootfamily_means": [
+        "303/19",
+        "-3/19",
+        "2/19",
+        "-4/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-5/57",
+        "301/57",
+        "296/57",
+        "302/57"
+      ],
+      "leaveone_sign_agreement": 3,
+      "directions": [
+        -1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 19,
+      "mean": "155/38",
+      "rootfamily_means": [
+        "-1/19",
+        "306/19",
+        "0",
+        "5/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "311/57",
+        "4/57",
+        "310/57",
+        "305/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 20,
+      "mean": "303/76",
+      "rootfamily_means": [
+        "1/19",
+        "0",
+        "0",
+        "302/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "302/57",
+        "101/19",
+        "101/19",
+        "1/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        -1,
+        -1,
+        -1,
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        -1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 21,
+      "mean": "-615/76",
+      "rootfamily_means": [
+        "-6/19",
+        "-16",
+        "0",
+        "-305/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-203/19",
+        "-311/57",
+        "-205/19",
+        "-310/57"
+      ],
+      "leaveone_sign_agreement": 4,
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 22,
+      "mean": "-5/76",
+      "rootfamily_means": [
+        "-4/19",
+        "-2/19",
+        "-5/19",
+        "6/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "-1/57",
+        "-1/19",
+        "0",
+        "-11/57"
+      ],
+      "leaveone_sign_agreement": 3,
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "family": "random2514",
+      "iteration": 23,
+      "mean": "7/76",
+      "rootfamily_means": [
+        "4/19",
+        "-302/19",
+        "301/19",
+        "4/19"
+      ],
+      "leave_one_rootfamily_means": [
+        "1/19",
+        "103/19",
+        "-98/19",
+        "1/19"
+      ],
+      "leaveone_sign_agreement": 3,
+      "directions": [
+        1,
+        -1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        -1,
+        1
+      ]
+    }
+  ],
+  "actual_total": {
+    "seconds": 534.2650000001304,
+    "new_games": 1584,
+    "new_go": 37739,
+    "logical_games": 1680,
+    "cache_hits": 96
+  },
+  "fit_total": {
+    "fit_seconds": 518.030999999959,
+    "fit_new_games": 1536,
+    "fit_new_go": 36592,
+    "fit_cache_hits": 48,
+    "fit_logical_games": 1584
+  },
+  "seconds": 0.5780000002123415,
+  "new_go": 0,
+  "scope": "allfrozenendpoints nohumanread/selection; no density/uniquecoverage explanation inferred from meanonly"
+}

@@ -1,0 +1,1995 @@
+{
+  "seconds": 16.45299999974668,
+  "games": 48,
+  "actual_go": 1140,
+  "rows": [
+    {
+      "names": [
+        "coordinate-unit-initial",
+        "spsa-unit-initial"
+      ],
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "root_index": 0,
+      "color": 0,
+      "goal": "-32",
+      "termination": {
+        "kind": "checkmate",
+        "winner": 1
+      },
+      "plies": 18,
+      "go": 18,
+      "seconds": 0.25
+    },
+    {
+      "names": [
+        "coordinate-unit-initial",
+        "spsa-unit-initial"
+      ],
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "root_index": 0,
+      "color": 1,
+      "goal": "32",
+      "termination": {
+        "kind": "checkmate",
+        "winner": 1
+      },
+      "plies": 18,
+      "go": 18,
+      "seconds": 0.25
+    },
+    {
+      "names": [
+        "coordinate-unit-initial",
+        "spsa-unit-initial"
+      ],
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "root_index": 1,
+      "color": 0,
+      "goal": "0",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32799999974668026
+    },
+    {
+      "names": [
+        "coordinate-unit-initial",
+        "spsa-unit-initial"
+      ],
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "root_index": 1,
+      "color": 1,
+      "goal": "8/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3130000000819564
+    },
+    {
+      "names": [
+        "coordinate-unit-initial",
+        "spsa-unit-initial"
+      ],
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "root_index": 2,
+      "color": 0,
+      "goal": "0",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32800000021234155
+    },
+    {
+      "names": [
+        "coordinate-unit-initial",
+        "spsa-unit-initial"
+      ],
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "root_index": 2,
+      "color": 1,
+      "goal": "2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3119999999180436
+    },
+    {
+      "names": [
+        "coordinate-unit-initial",
+        "spsa-unit-initial"
+      ],
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "root_index": 3,
+      "color": 0,
+      "goal": "-6/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32899999991059303
+    },
+    {
+      "names": [
+        "coordinate-unit-initial",
+        "spsa-unit-initial"
+      ],
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "root_index": 3,
+      "color": 1,
+      "goal": "6/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32800000021234155
+    },
+    {
+      "names": [
+        "coordinate-unit-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        90,
+        180,
+        90,
+        90,
+        180,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "root_index": 0,
+      "color": 0,
+      "goal": "4/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32800000021234155
+    },
+    {
+      "names": [
+        "coordinate-unit-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        90,
+        180,
+        90,
+        90,
+        180,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "root_index": 0,
+      "color": 1,
+      "goal": "0",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3119999999180436
+    },
+    {
+      "names": [
+        "coordinate-unit-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        90,
+        180,
+        90,
+        90,
+        180,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "root_index": 1,
+      "color": 0,
+      "goal": "-2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3130000000819564
+    },
+    {
+      "names": [
+        "coordinate-unit-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        90,
+        180,
+        90,
+        90,
+        180,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "root_index": 1,
+      "color": 1,
+      "goal": "4/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3119999999180436
+    },
+    {
+      "names": [
+        "coordinate-unit-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        90,
+        180,
+        90,
+        90,
+        180,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "root_index": 2,
+      "color": 0,
+      "goal": "2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3130000000819564
+    },
+    {
+      "names": [
+        "coordinate-unit-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        90,
+        180,
+        90,
+        90,
+        180,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "root_index": 2,
+      "color": 1,
+      "goal": "2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3119999999180436
+    },
+    {
+      "names": [
+        "coordinate-unit-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        90,
+        180,
+        90,
+        90,
+        180,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "root_index": 3,
+      "color": 0,
+      "goal": "-2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.29700000025331974
+    },
+    {
+      "names": [
+        "coordinate-unit-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        90,
+        180,
+        90,
+        90,
+        180,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "root_index": 3,
+      "color": 1,
+      "goal": "-4/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3440000000409782
+    },
+    {
+      "names": [
+        "coordinate-random2514-initial",
+        "spsa-random2514-initial"
+      ],
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "root_index": 0,
+      "color": 0,
+      "goal": "-2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3440000000409782
+    },
+    {
+      "names": [
+        "coordinate-random2514-initial",
+        "spsa-random2514-initial"
+      ],
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "root_index": 0,
+      "color": 1,
+      "goal": "0",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.35900000017136335
+    },
+    {
+      "names": [
+        "coordinate-random2514-initial",
+        "spsa-random2514-initial"
+      ],
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "root_index": 1,
+      "color": 0,
+      "goal": "0",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3119999999180436
+    },
+    {
+      "names": [
+        "coordinate-random2514-initial",
+        "spsa-random2514-initial"
+      ],
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "root_index": 1,
+      "color": 1,
+      "goal": "-4/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3440000000409782
+    },
+    {
+      "names": [
+        "coordinate-random2514-initial",
+        "spsa-random2514-initial"
+      ],
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "root_index": 2,
+      "color": 0,
+      "goal": "-2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32799999974668026
+    },
+    {
+      "names": [
+        "coordinate-random2514-initial",
+        "spsa-random2514-initial"
+      ],
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "root_index": 2,
+      "color": 1,
+      "goal": "-2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3440000000409782
+    },
+    {
+      "names": [
+        "coordinate-random2514-initial",
+        "spsa-random2514-initial"
+      ],
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "root_index": 3,
+      "color": 0,
+      "goal": "-6/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32800000021234155
+    },
+    {
+      "names": [
+        "coordinate-random2514-initial",
+        "spsa-random2514-initial"
+      ],
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "root_index": 3,
+      "color": 1,
+      "goal": "-2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3440000000409782
+    },
+    {
+      "names": [
+        "coordinate-random2514-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        151,
+        39,
+        68,
+        284,
+        109,
+        358,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "root_index": 0,
+      "color": 0,
+      "goal": "4/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3429999998770654
+    },
+    {
+      "names": [
+        "coordinate-random2514-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        151,
+        39,
+        68,
+        284,
+        109,
+        358,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "root_index": 0,
+      "color": 1,
+      "goal": "0",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3440000000409782
+    },
+    {
+      "names": [
+        "coordinate-random2514-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        151,
+        39,
+        68,
+        284,
+        109,
+        358,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "root_index": 1,
+      "color": 0,
+      "goal": "4/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32800000021234155
+    },
+    {
+      "names": [
+        "coordinate-random2514-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        151,
+        39,
+        68,
+        284,
+        109,
+        358,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "root_index": 1,
+      "color": 1,
+      "goal": "2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32799999974668026
+    },
+    {
+      "names": [
+        "coordinate-random2514-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        151,
+        39,
+        68,
+        284,
+        109,
+        358,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "root_index": 2,
+      "color": 0,
+      "goal": "-4/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3440000000409782
+    },
+    {
+      "names": [
+        "coordinate-random2514-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        151,
+        39,
+        68,
+        284,
+        109,
+        358,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "root_index": 2,
+      "color": 1,
+      "goal": "0",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32800000021234155
+    },
+    {
+      "names": [
+        "coordinate-random2514-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        151,
+        39,
+        68,
+        284,
+        109,
+        358,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "root_index": 3,
+      "color": 0,
+      "goal": "2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32800000021234155
+    },
+    {
+      "names": [
+        "coordinate-random2514-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        151,
+        39,
+        68,
+        284,
+        109,
+        358,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "root_index": 3,
+      "color": 1,
+      "goal": "2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32799999974668026
+    },
+    {
+      "names": [
+        "spsa-unit-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        104,
+        99,
+        85,
+        78,
+        100,
+        110,
+        0,
+        110,
+        77,
+        95,
+        86,
+        110,
+        90,
+        0
+      ],
+      "root_index": 0,
+      "color": 0,
+      "goal": "2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3440000000409782
+    },
+    {
+      "names": [
+        "spsa-unit-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        104,
+        99,
+        85,
+        78,
+        100,
+        110,
+        0,
+        110,
+        77,
+        95,
+        86,
+        110,
+        90,
+        0
+      ],
+      "root_index": 0,
+      "color": 1,
+      "goal": "2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.35899999970570207
+    },
+    {
+      "names": [
+        "spsa-unit-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        104,
+        99,
+        85,
+        78,
+        100,
+        110,
+        0,
+        110,
+        77,
+        95,
+        86,
+        110,
+        90,
+        0
+      ],
+      "root_index": 1,
+      "color": 0,
+      "goal": "-10/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.29700000025331974
+    },
+    {
+      "names": [
+        "spsa-unit-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        104,
+        99,
+        85,
+        78,
+        100,
+        110,
+        0,
+        110,
+        77,
+        95,
+        86,
+        110,
+        90,
+        0
+      ],
+      "root_index": 1,
+      "color": 1,
+      "goal": "4/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32799999974668026
+    },
+    {
+      "names": [
+        "spsa-unit-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        104,
+        99,
+        85,
+        78,
+        100,
+        110,
+        0,
+        110,
+        77,
+        95,
+        86,
+        110,
+        90,
+        0
+      ],
+      "root_index": 2,
+      "color": 0,
+      "goal": "2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3429999998770654
+    },
+    {
+      "names": [
+        "spsa-unit-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        104,
+        99,
+        85,
+        78,
+        100,
+        110,
+        0,
+        110,
+        77,
+        95,
+        86,
+        110,
+        90,
+        0
+      ],
+      "root_index": 2,
+      "color": 1,
+      "goal": "-8/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3440000000409782
+    },
+    {
+      "names": [
+        "spsa-unit-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        104,
+        99,
+        85,
+        78,
+        100,
+        110,
+        0,
+        110,
+        77,
+        95,
+        86,
+        110,
+        90,
+        0
+      ],
+      "root_index": 3,
+      "color": 0,
+      "goal": "0",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32799999974668026
+    },
+    {
+      "names": [
+        "spsa-unit-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        104,
+        99,
+        85,
+        78,
+        100,
+        110,
+        0,
+        110,
+        77,
+        95,
+        86,
+        110,
+        90,
+        0
+      ],
+      "root_index": 3,
+      "color": 1,
+      "goal": "2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32800000021234155
+    },
+    {
+      "names": [
+        "spsa-random2514-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        144,
+        78,
+        59,
+        329,
+        115,
+        793,
+        0,
+        84,
+        162,
+        211,
+        297,
+        122,
+        50,
+        0
+      ],
+      "root_index": 0,
+      "color": 0,
+      "goal": "-2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32799999974668026
+    },
+    {
+      "names": [
+        "spsa-random2514-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        144,
+        78,
+        59,
+        329,
+        115,
+        793,
+        0,
+        84,
+        162,
+        211,
+        297,
+        122,
+        50,
+        0
+      ],
+      "root_index": 0,
+      "color": 1,
+      "goal": "-2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.375
+    },
+    {
+      "names": [
+        "spsa-random2514-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        144,
+        78,
+        59,
+        329,
+        115,
+        793,
+        0,
+        84,
+        162,
+        211,
+        297,
+        122,
+        50,
+        0
+      ],
+      "root_index": 1,
+      "color": 0,
+      "goal": "2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32800000021234155
+    },
+    {
+      "names": [
+        "spsa-random2514-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        144,
+        78,
+        59,
+        329,
+        115,
+        793,
+        0,
+        84,
+        162,
+        211,
+        297,
+        122,
+        50,
+        0
+      ],
+      "root_index": 1,
+      "color": 1,
+      "goal": "-4/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.32899999991059303
+    },
+    {
+      "names": [
+        "spsa-random2514-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        144,
+        78,
+        59,
+        329,
+        115,
+        793,
+        0,
+        84,
+        162,
+        211,
+        297,
+        122,
+        50,
+        0
+      ],
+      "root_index": 2,
+      "color": 0,
+      "goal": "-2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3429999998770654
+    },
+    {
+      "names": [
+        "spsa-random2514-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        144,
+        78,
+        59,
+        329,
+        115,
+        793,
+        0,
+        84,
+        162,
+        211,
+        297,
+        122,
+        50,
+        0
+      ],
+      "root_index": 2,
+      "color": 1,
+      "goal": "-8/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3440000000409782
+    },
+    {
+      "names": [
+        "spsa-random2514-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        144,
+        78,
+        59,
+        329,
+        115,
+        793,
+        0,
+        84,
+        162,
+        211,
+        297,
+        122,
+        50,
+        0
+      ],
+      "root_index": 3,
+      "color": 0,
+      "goal": "-2/19",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.3440000000409782
+    },
+    {
+      "names": [
+        "spsa-random2514-endpoint"
+      ],
+      "weights": [
+        0,
+        90,
+        144,
+        78,
+        59,
+        329,
+        115,
+        793,
+        0,
+        84,
+        162,
+        211,
+        297,
+        122,
+        50,
+        0
+      ],
+      "root_index": 3,
+      "color": 1,
+      "goal": "0",
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "plies": 24,
+      "go": 24,
+      "seconds": 0.35900000017136335
+    }
+  ],
+  "prices": [
+    {
+      "role": "oldunit",
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "prices": [
+        "info string auxprice 0 0 0 0 0",
+        "info string auxprice 1 90 90 180 0",
+        "info string auxprice 2 90 90 180 0",
+        "info string auxprice 3 90 90 180 0",
+        "info string auxprice 4 90 90 180 0",
+        "info string auxprice 5 90 90 180 0",
+        "info string auxprice 6 90 90 180 0",
+        "info string auxprice 7 90 90 180 0",
+        "info string auxprice 8 0 0 0 0",
+        "info string auxprice 9 90 90 180 0",
+        "info string auxprice 10 90 90 180 0",
+        "info string auxprice 11 90 90 180 0",
+        "info string auxprice 12 90 90 180 0",
+        "info string auxprice 13 90 90 180 0",
+        "info string auxprice 14 90 90 180 0",
+        "info string auxprice 15 0 0 0 0",
+        "info string auxprice 16 0 0 0 0",
+        "info string auxprice 17 90 -90 180 0",
+        "info string auxprice 18 90 -90 180 0",
+        "info string auxprice 19 90 -90 180 0",
+        "info string auxprice 20 90 -90 180 0",
+        "info string auxprice 21 90 -90 180 0",
+        "info string auxprice 22 90 -90 180 0",
+        "info string auxprice 23 90 -90 180 0",
+        "info string auxprice 24 0 0 0 0",
+        "info string auxprice 25 90 -90 180 0",
+        "info string auxprice 26 90 -90 180 0",
+        "info string auxprice 27 90 -90 180 0",
+        "info string auxprice 28 90 -90 180 0",
+        "info string auxprice 29 90 -90 180 0",
+        "info string auxprice 30 90 -90 180 0",
+        "info string auxprice 31 0 0 0 0"
+      ]
+    },
+    {
+      "role": "handcandidate",
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "prices": [
+        "info string auxprice 0 0 0 0 0",
+        "info string auxprice 1 90 90 180 0",
+        "info string auxprice 2 90 90 180 0",
+        "info string auxprice 3 90 90 180 0",
+        "info string auxprice 4 90 90 180 0",
+        "info string auxprice 5 90 90 180 0",
+        "info string auxprice 6 90 90 180 0",
+        "info string auxprice 7 90 90 180 0",
+        "info string auxprice 8 0 0 0 0",
+        "info string auxprice 9 90 90 180 0",
+        "info string auxprice 10 90 90 180 0",
+        "info string auxprice 11 90 90 180 0",
+        "info string auxprice 12 90 90 180 0",
+        "info string auxprice 13 90 90 180 0",
+        "info string auxprice 14 90 90 180 0",
+        "info string auxprice 15 0 0 0 0",
+        "info string auxprice 16 0 0 0 0",
+        "info string auxprice 17 90 -90 180 0",
+        "info string auxprice 18 90 -90 180 0",
+        "info string auxprice 19 90 -90 180 0",
+        "info string auxprice 20 90 -90 180 0",
+        "info string auxprice 21 90 -90 180 0",
+        "info string auxprice 22 90 -90 180 0",
+        "info string auxprice 23 90 -90 180 0",
+        "info string auxprice 24 0 0 0 0",
+        "info string auxprice 25 90 -90 180 0",
+        "info string auxprice 26 90 -90 180 0",
+        "info string auxprice 27 90 -90 180 0",
+        "info string auxprice 28 90 -90 180 0",
+        "info string auxprice 29 90 -90 180 0",
+        "info string auxprice 30 90 -90 180 0",
+        "info string auxprice 31 0 0 0 0"
+      ]
+    },
+    {
+      "role": "handcandidate",
+      "weights": [
+        0,
+        90,
+        90,
+        180,
+        90,
+        90,
+        180,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "prices": [
+        "info string auxprice 0 0 0 0 0",
+        "info string auxprice 1 90 90 180 0",
+        "info string auxprice 2 90 90 180 0",
+        "info string auxprice 3 180 180 360 -90",
+        "info string auxprice 4 90 90 180 0",
+        "info string auxprice 5 90 90 180 0",
+        "info string auxprice 6 180 180 360 -90",
+        "info string auxprice 7 90 90 180 0",
+        "info string auxprice 8 0 0 0 0",
+        "info string auxprice 9 90 90 180 0",
+        "info string auxprice 10 90 90 180 0",
+        "info string auxprice 11 90 90 270 -90",
+        "info string auxprice 12 90 90 180 0",
+        "info string auxprice 13 90 90 180 0",
+        "info string auxprice 14 90 90 270 -90",
+        "info string auxprice 15 0 0 0 0",
+        "info string auxprice 16 0 0 0 0",
+        "info string auxprice 17 90 -90 180 0",
+        "info string auxprice 18 90 -90 180 0",
+        "info string auxprice 19 180 -180 360 -90",
+        "info string auxprice 20 90 -90 180 0",
+        "info string auxprice 21 90 -90 180 0",
+        "info string auxprice 22 180 -180 360 -90",
+        "info string auxprice 23 90 -90 180 0",
+        "info string auxprice 24 0 0 0 0",
+        "info string auxprice 25 90 -90 180 0",
+        "info string auxprice 26 90 -90 180 0",
+        "info string auxprice 27 90 -90 270 -90",
+        "info string auxprice 28 90 -90 180 0",
+        "info string auxprice 29 90 -90 180 0",
+        "info string auxprice 30 90 -90 270 -90",
+        "info string auxprice 31 0 0 0 0"
+      ]
+    },
+    {
+      "role": "handcandidate",
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "prices": [
+        "info string auxprice 0 0 0 0 0",
+        "info string auxprice 1 90 90 180 -10",
+        "info string auxprice 2 151 151 302 20",
+        "info string auxprice 3 78 78 156 122",
+        "info string auxprice 4 68 68 136 277",
+        "info string auxprice 5 284 284 568 -163",
+        "info string auxprice 6 109 109 218 -54",
+        "info string auxprice 7 716 716 1432 0",
+        "info string auxprice 8 0 0 0 0",
+        "info string auxprice 9 80 80 170 -10",
+        "info string auxprice 10 171 171 322 20",
+        "info string auxprice 11 200 200 278 122",
+        "info string auxprice 12 345 345 413 277",
+        "info string auxprice 13 121 121 405 -163",
+        "info string auxprice 14 55 55 164 -54",
+        "info string auxprice 15 0 0 0 0",
+        "info string auxprice 16 0 0 0 0",
+        "info string auxprice 17 90 -90 180 -10",
+        "info string auxprice 18 151 -151 302 20",
+        "info string auxprice 19 78 -78 156 122",
+        "info string auxprice 20 68 -68 136 277",
+        "info string auxprice 21 284 -284 568 -163",
+        "info string auxprice 22 109 -109 218 -54",
+        "info string auxprice 23 716 -716 1432 0",
+        "info string auxprice 24 0 0 0 0",
+        "info string auxprice 25 80 -80 170 -10",
+        "info string auxprice 26 171 -171 322 20",
+        "info string auxprice 27 200 -200 278 122",
+        "info string auxprice 28 345 -345 413 277",
+        "info string auxprice 29 121 -121 405 -163",
+        "info string auxprice 30 55 -55 164 -54",
+        "info string auxprice 31 0 0 0 0"
+      ]
+    },
+    {
+      "role": "handcandidate",
+      "weights": [
+        0,
+        90,
+        151,
+        39,
+        68,
+        284,
+        109,
+        358,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "prices": [
+        "info string auxprice 0 0 0 0 0",
+        "info string auxprice 1 90 90 180 -10",
+        "info string auxprice 2 151 151 302 20",
+        "info string auxprice 3 39 39 78 161",
+        "info string auxprice 4 68 68 136 277",
+        "info string auxprice 5 284 284 568 -163",
+        "info string auxprice 6 109 109 218 -54",
+        "info string auxprice 7 358 358 716 0",
+        "info string auxprice 8 0 0 0 0",
+        "info string auxprice 9 80 80 170 -10",
+        "info string auxprice 10 171 171 322 20",
+        "info string auxprice 11 200 200 239 161",
+        "info string auxprice 12 345 345 413 277",
+        "info string auxprice 13 121 121 405 -163",
+        "info string auxprice 14 55 55 164 -54",
+        "info string auxprice 15 0 0 0 0",
+        "info string auxprice 16 0 0 0 0",
+        "info string auxprice 17 90 -90 180 -10",
+        "info string auxprice 18 151 -151 302 20",
+        "info string auxprice 19 39 -39 78 161",
+        "info string auxprice 20 68 -68 136 277",
+        "info string auxprice 21 284 -284 568 -163",
+        "info string auxprice 22 109 -109 218 -54",
+        "info string auxprice 23 358 -358 716 0",
+        "info string auxprice 24 0 0 0 0",
+        "info string auxprice 25 80 -80 170 -10",
+        "info string auxprice 26 171 -171 322 20",
+        "info string auxprice 27 200 -200 239 161",
+        "info string auxprice 28 345 -345 413 277",
+        "info string auxprice 29 121 -121 405 -163",
+        "info string auxprice 30 55 -55 164 -54",
+        "info string auxprice 31 0 0 0 0"
+      ]
+    },
+    {
+      "role": "handcandidate",
+      "weights": [
+        0,
+        90,
+        104,
+        99,
+        85,
+        78,
+        100,
+        110,
+        0,
+        110,
+        77,
+        95,
+        86,
+        110,
+        90,
+        0
+      ],
+      "prices": [
+        "info string auxprice 0 0 0 0 0",
+        "info string auxprice 1 90 90 180 20",
+        "info string auxprice 2 104 104 208 -27",
+        "info string auxprice 3 99 99 198 -4",
+        "info string auxprice 4 85 85 170 1",
+        "info string auxprice 5 78 78 156 32",
+        "info string auxprice 6 100 100 200 -10",
+        "info string auxprice 7 110 110 220 0",
+        "info string auxprice 8 0 0 0 0",
+        "info string auxprice 9 110 110 200 20",
+        "info string auxprice 10 77 77 181 -27",
+        "info string auxprice 11 95 95 194 -4",
+        "info string auxprice 12 86 86 171 1",
+        "info string auxprice 13 110 110 188 32",
+        "info string auxprice 14 90 90 190 -10",
+        "info string auxprice 15 0 0 0 0",
+        "info string auxprice 16 0 0 0 0",
+        "info string auxprice 17 90 -90 180 20",
+        "info string auxprice 18 104 -104 208 -27",
+        "info string auxprice 19 99 -99 198 -4",
+        "info string auxprice 20 85 -85 170 1",
+        "info string auxprice 21 78 -78 156 32",
+        "info string auxprice 22 100 -100 200 -10",
+        "info string auxprice 23 110 -110 220 0",
+        "info string auxprice 24 0 0 0 0",
+        "info string auxprice 25 110 -110 200 20",
+        "info string auxprice 26 77 -77 181 -27",
+        "info string auxprice 27 95 -95 194 -4",
+        "info string auxprice 28 86 -86 171 1",
+        "info string auxprice 29 110 -110 188 32",
+        "info string auxprice 30 90 -90 190 -10",
+        "info string auxprice 31 0 0 0 0"
+      ]
+    },
+    {
+      "role": "handcandidate",
+      "weights": [
+        0,
+        90,
+        144,
+        78,
+        59,
+        329,
+        115,
+        793,
+        0,
+        84,
+        162,
+        211,
+        297,
+        122,
+        50,
+        0
+      ],
+      "prices": [
+        "info string auxprice 0 0 0 0 0",
+        "info string auxprice 1 90 90 180 -6",
+        "info string auxprice 2 144 144 288 18",
+        "info string auxprice 3 78 78 156 133",
+        "info string auxprice 4 59 59 118 238",
+        "info string auxprice 5 329 329 658 -207",
+        "info string auxprice 6 115 115 230 -65",
+        "info string auxprice 7 793 793 1586 0",
+        "info string auxprice 8 0 0 0 0",
+        "info string auxprice 9 84 84 174 -6",
+        "info string auxprice 10 162 162 306 18",
+        "info string auxprice 11 211 211 289 133",
+        "info string auxprice 12 297 297 356 238",
+        "info string auxprice 13 122 122 451 -207",
+        "info string auxprice 14 50 50 165 -65",
+        "info string auxprice 15 0 0 0 0",
+        "info string auxprice 16 0 0 0 0",
+        "info string auxprice 17 90 -90 180 -6",
+        "info string auxprice 18 144 -144 288 18",
+        "info string auxprice 19 78 -78 156 133",
+        "info string auxprice 20 59 -59 118 238",
+        "info string auxprice 21 329 -329 658 -207",
+        "info string auxprice 22 115 -115 230 -65",
+        "info string auxprice 23 793 -793 1586 0",
+        "info string auxprice 24 0 0 0 0",
+        "info string auxprice 25 84 -84 174 -6",
+        "info string auxprice 26 162 -162 306 18",
+        "info string auxprice 27 211 -211 289 133",
+        "info string auxprice 28 297 -297 356 238",
+        "info string auxprice 29 122 -122 451 -207",
+        "info string auxprice 30 50 -50 165 -65",
+        "info string auxprice 31 0 0 0 0"
+      ]
+    }
+  ],
+  "declaration_sha256": "fa6d21e565d2ad92a94b085ee235514d69009960e0941113b5c6b86d56637eba"
+}

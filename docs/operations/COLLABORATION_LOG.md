@@ -1,3 +1,52 @@
+## DEV_AUX segment27 — cheaper terminal feedback and budget-sensitive learning
+
+DEV_AUX independently completes3488new capped24ply games/70592actualgo plus546
+auxsee, with full frozen inputs/endpoints, exactprice/history/rule/PV/journal
+audits. Actualjoint displacement improves training but not firstcohort transfer.
+Fresh random opposition is cheaper8.781s versus16.344s/48games and yields23
+versus2true terminals. Samejoint optimizer training takes140.547s random versus
+268.578s unit, not an equal-strength/equal-time benchmark. Ordinary parallel
+computation remains allowed; no pause/quiet-window requests or new monitoring.
+
+All initial/endpoints are evaluated in bothopponent environments under a
+cross declaration made BEFORE development. Randomunit start improves both1024
+environments; randomstart doesnotrobustlytransfer. Sourceprior disagreement grows
+in both randomtrained starts; postfreeze officialApery reference is not independent
+humanconsensus. At8192nodes many signs reverse. Coldqualification and actual
+resource curves show substantiallymore search work at modest protocolcost;
+fresh matchedbudget learning is the next decision, not oldtest refitting.
+
+The observed hand-omission SEE control uses a new privateposition-only guarded
+build.91finite cases/546predicates match exactlegal material sequence, versus173
+old mismatches; actual48game control has mixedsmall gains/no terminalchange.
+No general/all-defense/default/main deployment follows. Allnegative evidence stays.
+431 has begun freshinput construction/independent320ply replay; futureexecutor
+is syntaxchecked only, no nexttraining/game/endpoints are claimed.
+
+PRIMARY's fixed7ccbf8f9a9d674f31ab76a8bcb3859c1ce30fefc remains separate public
+context. Its later sharedattackexists loop reordering/source-first guard work,
+4.3->2.7s localD5 and ongoingnewgenerated tests are attributed channelreports,
+not AUXexecution/patch acceptance. PRIMARY rechecked48old26updates/arithmetic,
+8source descriptors and reported388cold rows without rerunning1768games;
+that doesnotreview27. Dot independentlyread old7ccattackfunctions and advised
+wholeattackset crosschecks, not a new delegation or authority for AUXwrites.
+
+Dot's27reply corrects randomseed-only rejection-sampling drift using perturn
+streams. AUX adopted it beforeANYrandom outputs, preserved originaldecl/amendment
+and recorded ownlegalset/draw/seed/turn; this is reducedcoupling confounding,
+not expectedrandomWDL. Its point that fixedquantity is a possiblybiased proxy,
+not candidateweightedself-scoring, is adopted. Advisor advice is not approval,
+publication gate, fittedparameter selector or work issuer. Allchannel/newroot and
+relevantthread pages were saved privately before evaluation, no selfreply/retryloops.
+
+Efficiency is observed useful feedback/resources, with no complete token or
+single-Agent counterfactual accounting. Totallearning/game production, engineering,
+audits and Agentsegment duration staydistinct. No primarywrites/default/UI,
+automaticmerge, extraAgent/worker/fee, stopclearing or>1h projectrun. RawSlack,
+account/privateinputs, absolutebuildlogs and binaries/toolchains are excluded.
+Reviewed27report/archive/source summaries publish onlysidemission with fullremote
+SHA verification; PRIMARY integrates deliberately. ScienceOPEN; heartbeatACTIVE.
+
 ## DEV_AUX segment26 — cheap learning and real entry-cost repair
 
 DEV_AUX runs freshsamecohort coordinate/SPSA,1600games36547go29.10min.

@@ -1,0 +1,6 @@
+from pathlib import Path
+import json
+R=Path.cwd();s=(R/'results/dev_aux/task405/prepare.py').read_text(encoding='utf-8').replace("task405","task417").replace("2026102710","2026102910").replace("2026102714","2026102914").replace("2026102780","2026102980").replace("2026102784","2026102984").replace("2026102791","2026102991")
+s=s.replace("(O/'declaration.json').write_text",'''d.update(question='Does replacing fixedunit search opponent with uniform legal random improve cheap joint learned price generalization on freshsame roots?',arms=['unit','random'],random_seed_base=2026102992,random_seed_rule='(seedbase+2*root_index+color+100*phase_index)*100+opponent_turn; phase_index0train/1development; independent Random(seed).randrange ownsortedlegal list',training='ONLY same24jointdirections/2starts/49vectorsmax each, originalgoal; BOTHarms endpointsfreeze before ANYdevelopment; no speedgoal orhumanprice fit/selection',estimated_cost='pairedcombined~6-10min from16.344s/48unit and8.781s/48random;1800sfuseTOTAL;max1568fitlogical plusendpointdiagnostics; sequentialgo1worker',scope='fresh paired opponentenvironment comparison, samejointoptimizer/roots/radius/goal/nodes/cap; stochasticonepredeclaredconditionperrootcolor notexpectedrandom WDL, not independenthumanvalidation')
+(O/'declaration.json').write_text''')
+exec(compile(s,'task417/prepare.py','exec'))

@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "unit": {
+    "task": 411,
+    "games": 48,
+    "actual_go": 1140,
+    "all_PV_move_checks": 19636,
+    "game_sha256": "3fa516e35c6bf4ed12430152982fdb05ddf9927ef5daf3c2fd02523d11f1766b",
+    "query_sha256": "292796c013e9de0e18d56172bcb6c71c6364112e7eb8e7d571b4d000174f2e98"
+  },
+  "random": {
+    "games": 48,
+    "actual_go": 501,
+    "random_draws": 489,
+    "PV_move_checks": 8656,
+    "game_sha256": "a21466dbae86dbfecc64959926e35f95377f1e151afef3b7bb3c87ff6158c59b",
+    "query_sha256": "2828c737e4ae60e9628d4328747d87cd4cbf7cfa65ba1cdb2d5f5ee45f8a1050"
+  },
+  "coverage": "all6declaredvectors/4roots/bothcolors, independent cshogi fullhistory/terminal/legal lists/peropponentturn RNG/candidate realquery prices/PV/quantity/original&speedgoals; no fakego forrandom",
+  "seconds": 0.28059570025652647
+}

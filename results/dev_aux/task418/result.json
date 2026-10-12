@@ -1,0 +1,675 @@
+{
+  "arm": "unit",
+  "status": "completed",
+  "fit_seconds": 268.5779999997467,
+  "fit_new_games": 784,
+  "fit_new_go": 18566,
+  "fit_logical_games": 784,
+  "fit_cache_hits": 0,
+  "new_games": 816,
+  "new_go": 19334,
+  "logical_games": 848,
+  "cache_hits": 32,
+  "endpoints": [
+    {
+      "method": "joint",
+      "family": "unit",
+      "initial": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        55,
+        149,
+        149,
+        90,
+        149,
+        90,
+        0,
+        149,
+        149,
+        90,
+        90,
+        55,
+        55,
+        0
+      ],
+      "iterations": 24
+    },
+    {
+      "method": "joint",
+      "family": "random2514",
+      "initial": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        152,
+        128,
+        41,
+        469,
+        180,
+        264,
+        0,
+        48,
+        171,
+        200,
+        209,
+        44,
+        91,
+        0
+      ],
+      "iterations": 24
+    }
+  ],
+  "diagnostics": [
+    {
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "mean_goal": "0",
+      "mean_quantity": "0",
+      "goals": [
+        "-2/19",
+        "2/19",
+        "-2/19",
+        "2/19",
+        "-2/19",
+        "2/19",
+        "-2/19",
+        "2/19"
+      ],
+      "sources": [
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 1
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 2
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 3
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 4
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 5
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 6
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 7
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 8
+        }
+      ],
+      "true_wins": 0,
+      "true_losses": 0,
+      "phase": "train_endpoint_diagnostic",
+      "names": [
+        "joint-unit-initial"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        55,
+        149,
+        149,
+        90,
+        149,
+        90,
+        0,
+        149,
+        149,
+        90,
+        90,
+        55,
+        55,
+        0
+      ],
+      "mean_goal": "8",
+      "mean_quantity": "5/4",
+      "goals": [
+        "2/19",
+        "10/19",
+        "0",
+        "0",
+        "-14/19",
+        "32",
+        "32",
+        "2/19"
+      ],
+      "sources": [
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 97
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 98
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 99
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 100
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 101
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 102
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 103
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 104
+        }
+      ],
+      "true_wins": 2,
+      "true_losses": 0,
+      "phase": "train_endpoint_diagnostic",
+      "names": [
+        "joint-unit-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "mean_goal": "-3/38",
+      "mean_quantity": "-3/2",
+      "goals": [
+        "-2/19",
+        "4/19",
+        "-4/19",
+        "0",
+        "-10/19",
+        "4/19",
+        "-2/19",
+        "-2/19"
+      ],
+      "sources": [
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 393
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 394
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 395
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 396
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 397
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 398
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 399
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 400
+        }
+      ],
+      "true_wins": 0,
+      "true_losses": 0,
+      "phase": "train_endpoint_diagnostic",
+      "names": [
+        "joint-random2514-initial"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        152,
+        128,
+        41,
+        469,
+        180,
+        264,
+        0,
+        48,
+        171,
+        200,
+        209,
+        44,
+        91,
+        0
+      ],
+      "mean_goal": "75/19",
+      "mean_quantity": "-5/4",
+      "goals": [
+        "32",
+        "-4/19",
+        "-2/19",
+        "0",
+        "-10/19",
+        "6/19",
+        "2/19",
+        "0"
+      ],
+      "sources": [
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 537
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 538
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 539
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 540
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 541
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 542
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 543
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 544
+        }
+      ],
+      "true_wins": 1,
+      "true_losses": 0,
+      "phase": "train_endpoint_diagnostic",
+      "names": [
+        "joint-random2514-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "mean_goal": "0",
+      "mean_quantity": "0",
+      "goals": [
+        "2/19",
+        "-2/19",
+        "-4/19",
+        "4/19",
+        "-2/19",
+        "2/19",
+        "-4/19",
+        "4/19"
+      ],
+      "sources": [
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 785
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 786
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 787
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 788
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 789
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 790
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 791
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 792
+        }
+      ],
+      "true_wins": 0,
+      "true_losses": 0,
+      "phase": "development",
+      "names": [
+        "joint-unit-initial"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        55,
+        149,
+        149,
+        90,
+        149,
+        90,
+        0,
+        149,
+        149,
+        90,
+        90,
+        55,
+        55,
+        0
+      ],
+      "mean_goal": "-307/76",
+      "mean_quantity": "-3/2",
+      "goals": [
+        "2/19",
+        "-8/19",
+        "-32",
+        "6/19",
+        "-8/19",
+        "0",
+        "0",
+        "2/19"
+      ],
+      "sources": [
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 793
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 794
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 795
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 796
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 797
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 798
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 799
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 800
+        }
+      ],
+      "true_wins": 0,
+      "true_losses": 1,
+      "phase": "development",
+      "names": [
+        "joint-unit-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "mean_goal": "-3/38",
+      "mean_quantity": "-3/2",
+      "goals": [
+        "2/19",
+        "-8/19",
+        "-6/19",
+        "2/19",
+        "-2/19",
+        "-4/19",
+        "2/19",
+        "2/19"
+      ],
+      "sources": [
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 801
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 802
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 803
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 804
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 805
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 806
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 807
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 808
+        }
+      ],
+      "true_wins": 0,
+      "true_losses": 0,
+      "phase": "development",
+      "names": [
+        "joint-random2514-initial"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        152,
+        128,
+        41,
+        469,
+        180,
+        264,
+        0,
+        48,
+        171,
+        200,
+        209,
+        44,
+        91,
+        0
+      ],
+      "mean_goal": "-3/76",
+      "mean_quantity": "-3/4",
+      "goals": [
+        "0",
+        "-4/19",
+        "-8/19",
+        "4/19",
+        "0",
+        "0",
+        "-2/19",
+        "4/19"
+      ],
+      "sources": [
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 809
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 810
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 811
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 812
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 813
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 814
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 815
+        },
+        {
+          "file": "results/dev_aux/task418/games.jsonl",
+          "line": 816
+        }
+      ],
+      "true_wins": 0,
+      "true_losses": 0,
+      "phase": "development",
+      "names": [
+        "joint-random2514-endpoint"
+      ]
+    }
+  ]
+}
