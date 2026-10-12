@@ -445,6 +445,18 @@ A runtime_limit/block label is not a default excuse for repeated short exits
 or peripheral preparation; no waiting or microchecks to manufacture duration.
 A changed condition warrants one bounded startup/protocol qualification before
 resuming the intended experiment. Never claim recovery from a setting alone.
+The existing session finish entry now requires a JSON file for user_decision
+and runtime_limit. Bind session_id and observed_at to the active segment; state
+failure, diagnosis, impact, attempted_fixes, cannot_continue and evidence_reference.
+For user_decision, user_request contains sent=true, action, reference and
+why_agent_cannot_do_it, pointing to the actual delivered user-visible request.
+For runtime_limit, actual_runtime_exhausted=true and limit_kind is runtime_shutdown,
+runtime_expired or resource_exhaustion, backed by this run's real failure.
+Runtime evidence older than the current resume is rejected; the original segment
+clock is retained. All user_paused/stopped flags in rollout/advisor/slack stop
+start/checkpoint; no flag is cleared. An old4551 or vague waiting note is neither. These structural checks
+cannot prove report truth or replace Agent judgment. Actual user_stop and other
+real hard-limit paths remain available; no waiting to satisfy duration.
 Machine-wide security changes remain the user's decision, not an automatic
 Agent action; provide the actionable diagnosis instead of silently giving up.
 

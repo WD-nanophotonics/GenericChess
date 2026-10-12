@@ -782,3 +782,34 @@ evidence, impact, attempted remedies, uncertainty and specific user steps.
 Authorized fixes proceed directly; unreported blocks do not excuse non-progress.
 This is a bounded policy update, not a research-duration segment or additional
 approval process. Shared with the existing auxiliary chat; no new Agent created.
+
+##2026-10-12 PRIMARY public-consumer/ordering segment
+
+PRIMARY completes68 physical searches:60 Core,8 restored original Stockfish.
+Raw public PVS reachesD2/q4 at16s where AB retainsD1. Paired64s quiet/combined
+controls confirm extraD3 support, same chosen move; a changed public-tuple
+premise lets existing q ordering deliverD3 without a private collection.
+Restricted full-window branch diagnostics quantify202/97 conditional regret of
+the D1 pawn choice. No new engine/default/UI/API or training change.
+
+DEV_AUX supplies actual Task120 four-game pilot and Task121480 saved records;
+PRIMARY independently replays484 games/3666 search records and source hashes,
+without a duplicate live run. A concrete per-seed versus all-endpoints freeze
+metadata correction was sent to its existing chat. AUX retains its own training.
+Sparse terminal rewards/dispersed endpoints prevent a stable-price claim.
+Coordination supplied useful evidence and avoided duplicate experiments; net
+saved time/tokens are unmeasured. No writing conflict was observed.
+
+Dot's new request1791769337.399679 reply1791769390.889279 is fully read/saved/
+reconciled/adopted: same-batch quiet controls before API, historical depth is
+not pairing. Later completed paired evidence led to a distinct existing-q-order
+check because the public tuple avoids the old collection tax. Dot did not
+independently execute these new unpublished searches. No routine receipt loop.
+
+Its earlier actual finish-source review motivated minimal existing-helper
+repair, with current diagnosed reports, already-sent action requests, runtime
+freshness and all six stop flags. Tests retain genuine stop/tool/quota exits.
+Raw Slack/account/user records stay private. Failures and remediation are in
+research evidence; neither restored progress nor tests erase earlier handling
+failures. Pending: small unfamiliar-rule ordering transfer and an actual
+full9x9 Shogi mature-entry remedy under existing permission/cost rules.

@@ -1,5 +1,6 @@
 """Bounded receipts and structural checks; no model, scheduler or restart loop."""
 from datetime import datetime, timezone
+from pathlib import Path
 from uuid import uuid4
 
 from .common import STATE, LocalFlowError, read_json, write_json
@@ -14,8 +15,9 @@ def now():
 
 
 def stopped():
-    return (read_json(STATE/'rollout.json').get('user_paused', False)
-            or read_json(STATE/'slack.json').get('stopped', False))
+    return any(read_json(STATE/name).get(flag, False)
+               for name in ('rollout.json', 'advisor.json', 'slack.json')
+               for flag in ('user_paused', 'stopped'))
 
 
 def memo():
@@ -105,6 +107,8 @@ def finish(reason, evidence, alternatives=()):
         raise LocalFlowError('ending evidence required')
     if stopped() and reason != 'user_stop':
         raise LocalFlowError('stop takes precedence')
+    if reason in {'user_decision', 'runtime_limit'}:
+        _validate_block_report(reason, evidence, current)
     ended = now()
     elapsed = (ended-datetime.fromisoformat(current['started_at'])).total_seconds()/60
     if elapsed < 0:
@@ -134,3 +138,35 @@ def finish(reason, evidence, alternatives=()):
     write_json(STATE/'session_receipts.json', {'receipts': (receipts+[summary])[-3:]})
     write_json(STATE/'session.json', value)
     return value
+
+
+def _validate_block_report(reason, evidence, current):
+    """Require a current concrete report; this does not authenticate its truth."""
+    path = Path(evidence)
+    if not path.is_absolute():
+        path = STATE.parent / path
+    try:
+        report = read_json(path)
+        observed = datetime.fromisoformat(report['observed_at'])
+        started = datetime.fromisoformat(current['started_at'])
+        if reason == 'runtime_limit' and current.get('resumed_at'):
+            started = datetime.fromisoformat(current['resumed_at'])
+        valid_time = started <= observed <= now()
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        raise LocalFlowError('current structured block report required') from exc
+    if (report.get('session_id') != current['id'] or not valid_time
+            or not all(isinstance(report.get(key), str) and report[key].strip()
+                       for key in ('failure', 'diagnosis', 'impact',
+                                   'attempted_fixes', 'cannot_continue',
+                                   'evidence_reference'))):
+        raise LocalFlowError('current diagnosed block and attempted fixes required')
+    if reason == 'user_decision':
+        request = report.get('user_request')
+        if (not isinstance(request, dict) or request.get('sent') is not True
+                or not all(isinstance(request.get(key), str) and request[key].strip()
+                           for key in ('action', 'reference', 'why_agent_cannot_do_it'))):
+            raise LocalFlowError('specific already-sent user action request required')
+    elif (report.get('limit_kind') not in {'runtime_shutdown', 'runtime_expired',
+                                         'resource_exhaustion'}
+          or report.get('actual_runtime_exhausted') is not True):
+        raise LocalFlowError('actual current runtime exhaustion required; launch failure is not a runtime limit')

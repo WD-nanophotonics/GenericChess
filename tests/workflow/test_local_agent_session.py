@@ -38,7 +38,9 @@ def test_compact_resume_preserves_id_start_and_does_not_create_other_writer(work
         session.start()
 
 
-@pytest.mark.parametrize('file,flag', [('rollout.json', 'user_paused'), ('slack.json', 'stopped')])
+@pytest.mark.parametrize('file,flag', [(file, flag)
+    for file in ('rollout.json', 'advisor.json', 'slack.json')
+    for flag in ('user_paused', 'stopped')])
 def test_stop_cannot_be_cleared_by_start_or_checkpoint(workspace, file, flag):
     path, _ = workspace
     session.start()
@@ -98,12 +100,88 @@ def test_memo_missing_oversized_abstract_or_duplicate_fields_fail(workspace, con
         session.start()
 
 
-def test_hard_obstruction_requires_evidence_and_can_end_early(workspace):
+@pytest.mark.parametrize('reason', ['tool_limit', 'quota_limit'])
+def test_hard_obstruction_requires_evidence_and_can_end_early(workspace, reason):
     session.start()
     with pytest.raises(LocalFlowError, match='evidence'):
-        session.finish('tool_limit', '')
-    result = session.finish('tool_limit', 'actual unavailable tool with failure record')
+        session.finish(reason, '')
+    result = session.finish(reason, 'actual unavailable tool/quota with failure record')
     assert result['state'] == 'ended' and not result['duration_gate_passed']
+
+
+@pytest.mark.parametrize('reason', ['user_decision', 'runtime_limit'])
+def test_old_4551_or_vague_text_is_not_a_completed_handoff(workspace, reason):
+    path, _ = workspace
+    session.start()
+    with pytest.raises(LocalFlowError, match='structured block'):
+        session.finish(reason, 'Windows4551; waiting for a usable path')
+    assert session.status()['state'] == 'active'
+    assert not (path/'session_receipts.json').exists()
+
+
+def block_report(path, moment):
+    current = session.status()
+    report = dict(session_id=current['id'], observed_at=moment[0].isoformat(),
+                  failure='binary launch rejected with4551',
+                  diagnosis='CodeIntegrity3077 identifies SAC enforcement',
+                  impact='required engine cannot start',
+                  attempted_fixes='checked exact event, signature and normal alternatives',
+                  cannot_continue='this required operation needs user intervention',
+                  evidence_reference='saved exact project event/launch result')
+    target = path/'block.json'
+    target.write_text(json.dumps(report), encoding='utf-8')
+    return target, report
+
+
+def test_diagnosis_without_specific_sent_request_stays_active(workspace):
+    path, moment = workspace
+    session.start()
+    target, report = block_report(path, moment)
+    with pytest.raises(LocalFlowError, match='already-sent'):
+        session.finish('user_decision', str(target))
+    report['user_request'] = dict(sent=True, action='user decides system policy change',
+                                 reference='saved actual user-visible request',
+                                 why_agent_cannot_do_it='system change not authorized')
+    target.write_text(json.dumps(report), encoding='utf-8')
+    assert session.finish('user_decision', str(target))['state'] == 'ended'
+
+
+def test_launch_failure_is_not_runtime_exhaustion_but_real_limit_can_exit(workspace):
+    path, moment = workspace
+    session.start()
+    target, report = block_report(path, moment)
+    report.update(limit_kind='binary_launch_policy', actual_runtime_exhausted=True)
+    target.write_text(json.dumps(report), encoding='utf-8')
+    with pytest.raises(LocalFlowError, match='runtime exhaustion'):
+        session.finish('runtime_limit', str(target))
+    report.update(failure='current execution host shutdown',
+                  diagnosis='current host reports execution runtime expired',
+                  limit_kind='runtime_expired')
+    target.write_text(json.dumps(report), encoding='utf-8')
+    assert session.finish('runtime_limit', str(target))['state'] == 'ended'
+
+
+def test_old_segment_report_cannot_end_new_segment(workspace):
+    path, moment = workspace
+    session.start()
+    target, report = block_report(path, moment)
+    report['session_id'] = 'old-segment'
+    target.write_text(json.dumps(report), encoding='utf-8')
+    with pytest.raises(LocalFlowError, match='current diagnosed'):
+        session.finish('runtime_limit', str(target))
+
+
+def test_resumed_environment_cannot_reuse_old_runtime_exhaustion(workspace):
+    path, moment = workspace
+    first = session.start()
+    target, report = block_report(path, moment)
+    report.update(limit_kind='runtime_expired', actual_runtime_exhausted=True)
+    target.write_text(json.dumps(report), encoding='utf-8')
+    moment[0] += timedelta(minutes=5)
+    resumed = session.start()
+    assert resumed['id'] == first['id'] and resumed['started_at'] == first['started_at']
+    with pytest.raises(LocalFlowError, match='current diagnosed'):
+        session.finish('runtime_limit', str(target))
 
 
 def test_missing_memo_must_be_rebuilt_before_start(workspace):

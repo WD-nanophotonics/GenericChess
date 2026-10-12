@@ -26,22 +26,26 @@ roots, not claimed improved end-to-end or an independently reproduced user loss.
 
 ## Current measured question
 
-CANCELLATION_AND_Q_SCHEDULING.md completes same-call cancellation checks and
-existing q4 algorithm controls.50 actual cancelled returns restore full root
-state and retain the same call's complete result; warm emptyPV is the existing
-TT flag contract. Changing Native chunks1/8/32 adds no completed support.
-Existing PVS preserves completeD2 values/actions/PV on1090/1091 and reduces
-expensive q work. At64s1091 PVS returnsD3/q4 versus ABD2/q4 in both orders;
-at256s bothD3. No product/default/UI/private-iterator API change.
+PUBLIC_CORE_Q_DELIVERY.md confirms actual public-consumer PVS delivery and a
+cheaper existing-q-ordering alternative. Raw16s AB retainsD1/q0 while PVS
+reachesD2/q4. Four paired64s quiet/combined calls demonstrateD2 versusD3,
+but the same move. Existing q ordering on the public tuple quiet caller halves
+D2 q work and reachesD3 at64s in both orders; no private iterable needed for
+that local target. One next iteration hits hard8; retain the completeD3 and cap.
+Independent forced branches give the D1 pawn choice202/97 lower value than the
+D2 king choice under parentD2/D3 q4. This is defined utility, not WDL/strength.
+Keep production/default/UI frozen; test transfer before promoting any hook.
 
-The user identified inadequate4551 root-cause handling. Smart App Control is
-now Off; PRIMARY Stockfish uci/isready and DEV_AUX task120's20 actual Fairy
-search probes pass. Resume mature-engine comparisons from this changed state,
-not an unchanged failed launch. AUX owns its existing four-game short pilot;
-primary reviews its source/conditions/results without duplicating that work.
-The next independent caller question is whether existing PVS gains transfer
-to unmodified public Core q consumers; the prepared finite control has not run.
-Data: data/cancel_q_scheduling_20261012.json. Earlier caps/failures stay immutable.
+Recovered original Stockfish now executes8 legal search/PV probes; its NNUE/
+selective depth is an unaligned overall reference. Unsupported full9x9 Shogi
+entry still needs a concrete capability/build remedy, not repeated old launches.
+Independent AUX four-pilot/480-record replay verifies actual signal/configuration
+but dispersed endpoints and sparse-mate-sensitive heldout, not stable prices.
+AUX retains training ownership. Existing finish reports now require diagnosed
+current evidence; serious-block reports and all three files' stop flags govern.
+Next compare the existing public tuple/quiet/q-ordering route on a small
+predeclared unfamiliar semantic transfer; no API/kernel expansion from one root.
+Data: data/public_core_q_20261012.json. Earlier failed caps/outputs stay immutable.
 
 ## Retained long-term objectives and evidence discipline
 
@@ -76,6 +80,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Actual public tuple, existing q ordering, decision utility and recovered mature entry|PUBLIC_CORE_Q_DELIVERY.md; data/public_core_q_20261012.json|
 |Cancellation, q transport and existing PVS delivery|CANCELLATION_AND_Q_SCHEDULING.md; data/cancel_q_scheduling_20261012.json|
 |Auxiliary q transfer, actual q0 work and optional exact-root repair|AUXILIARY_Q_AND_ROOT_WINDOWS.md; data/auxiliary_q_root_20261012.json|
 |Native candidate-chunk legality, quiet-board guards and ordered scheduling|NATIVE_Q_LEGALITY_TRANSPORT.md; data/native_q_legality_20261012.json|
