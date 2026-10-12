@@ -1,0 +1,231 @@
+{
+  "complete": true,
+  "logical_cases": 192,
+  "new_games": 96,
+  "reused_cases": 96,
+  "new_queries": 2260,
+  "total_query_checks_including_reuse": 4515,
+  "summary": [
+    {
+      "phase": "train",
+      "profile": "initial-unit",
+      "fitness": "0",
+      "wins": 0,
+      "losses": 0,
+      "quantity_mean": "0"
+    },
+    {
+      "phase": "train",
+      "profile": "initial-semantic",
+      "fitness": "481/240",
+      "wins": 1,
+      "losses": 0,
+      "quantity_mean": "1/16"
+    },
+    {
+      "phase": "train",
+      "profile": "initial-s703-base",
+      "fitness": "-41/20",
+      "wins": 0,
+      "losses": 1,
+      "quantity_mean": "-7/8"
+    },
+    {
+      "phase": "train",
+      "profile": "endpoint-unit",
+      "fitness": "-1/240",
+      "wins": 0,
+      "losses": 0,
+      "quantity_mean": "-1/16"
+    },
+    {
+      "phase": "train",
+      "profile": "endpoint-semantic",
+      "fitness": "487/240",
+      "wins": 1,
+      "losses": 0,
+      "quantity_mean": "7/16"
+    },
+    {
+      "phase": "train",
+      "profile": "endpoint-s703-base",
+      "fitness": "-41/20",
+      "wins": 0,
+      "losses": 1,
+      "quantity_mean": "-7/8"
+    },
+    {
+      "phase": "development",
+      "profile": "initial-unit",
+      "fitness": "0",
+      "wins": 1,
+      "losses": 1,
+      "quantity_mean": "0"
+    },
+    {
+      "phase": "development",
+      "profile": "initial-semantic",
+      "fitness": "2",
+      "wins": 1,
+      "losses": 0,
+      "quantity_mean": "0"
+    },
+    {
+      "phase": "development",
+      "profile": "initial-s703-base",
+      "fitness": "-1/30",
+      "wins": 0,
+      "losses": 0,
+      "quantity_mean": "-1/2"
+    },
+    {
+      "phase": "development",
+      "profile": "endpoint-unit",
+      "fitness": "-1/60",
+      "wins": 0,
+      "losses": 0,
+      "quantity_mean": "-1/4"
+    },
+    {
+      "phase": "development",
+      "profile": "endpoint-semantic",
+      "fitness": "1439/240",
+      "wins": 3,
+      "losses": 0,
+      "quantity_mean": "1/16"
+    },
+    {
+      "phase": "development",
+      "profile": "endpoint-s703-base",
+      "fitness": "-247/120",
+      "wins": 0,
+      "losses": 1,
+      "quantity_mean": "-1"
+    }
+  ],
+  "contrasts": [
+    {
+      "phase": "train",
+      "family": "unit",
+      "fitness_delta": "-1/240",
+      "net_mate_delta": "0",
+      "quantity_delta": "-1/16",
+      "positive_cells": 5,
+      "negative_cells": 5,
+      "same_trajectories": 0,
+      "root_deltas": [
+        "0",
+        "-1/10",
+        "0",
+        "1/30",
+        "-1/30",
+        "-1/30",
+        "1/30",
+        "1/15"
+      ]
+    },
+    {
+      "phase": "train",
+      "family": "semantic",
+      "fitness_delta": "1/40",
+      "net_mate_delta": "0",
+      "quantity_delta": "3/8",
+      "positive_cells": 3,
+      "negative_cells": 0,
+      "same_trajectories": 12,
+      "root_deltas": [
+        "1/30",
+        "2/15",
+        "0",
+        "0",
+        "1/30",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "phase": "train",
+      "family": "s703-base",
+      "fitness_delta": "0",
+      "net_mate_delta": "0",
+      "quantity_delta": "0",
+      "positive_cells": 3,
+      "negative_cells": 4,
+      "same_trajectories": 7,
+      "root_deltas": [
+        "-1/30",
+        "-1/30",
+        "0",
+        "0",
+        "-1/30",
+        "1/6",
+        "-1/15",
+        "0"
+      ]
+    },
+    {
+      "phase": "development",
+      "family": "unit",
+      "fitness_delta": "-1/60",
+      "net_mate_delta": "0",
+      "quantity_delta": "-1/4",
+      "positive_cells": 4,
+      "negative_cells": 7,
+      "same_trajectories": 0,
+      "root_deltas": [
+        "1/30",
+        "0",
+        "1/30",
+        "-1/30",
+        "-1/15",
+        "-1/10",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "phase": "development",
+      "family": "semantic",
+      "fitness_delta": "959/240",
+      "net_mate_delta": "1/8",
+      "quantity_delta": "1/16",
+      "positive_cells": 4,
+      "negative_cells": 2,
+      "same_trajectories": 10,
+      "root_deltas": [
+        "0",
+        "239/15",
+        "479/30",
+        "0",
+        "1/15",
+        "-1/15",
+        "1/15",
+        "0"
+      ]
+    },
+    {
+      "phase": "development",
+      "family": "s703-base",
+      "fitness_delta": "-81/40",
+      "net_mate_delta": "-1/16",
+      "quantity_delta": "-1/2",
+      "positive_cells": 3,
+      "negative_cells": 5,
+      "same_trajectories": 2,
+      "root_deltas": [
+        "-1/15",
+        "-1/6",
+        "-479/30",
+        "1/30",
+        "1/30",
+        "0",
+        "-1/10",
+        "1/30"
+      ]
+    }
+  ],
+  "producer_seconds": 32.360000000335276,
+  "seconds": 1.2179999998770654,
+  "scope": "FrozenRootTDendpoints independentpolicyvalue evaluation, exactinitialcase reuse sourcequalified. No furtherfit/epoch/human selection. Training-root labels exposed; development roots already342/345exposed butnotused350updates.96TDsamples differcostfrom1008coordinategames: compare resource/result, not unfairclaimsamebudgetwinner. No ultimateWDL/coherenthumanprice success."
+}

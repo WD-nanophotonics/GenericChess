@@ -1,0 +1,482 @@
+{
+  "complete": true,
+  "mature_games_checked": 192,
+  "mature_queries_checked": 4481,
+  "Native_games": 96,
+  "Native_queries": 2198,
+  "Native_value_receipt": "343 independentwholeD3oracle mustpass beforeclaim exactvalues",
+  "summary": [
+    {
+      "dataset": "mature_1024",
+      "profile": "initial-unit",
+      "fitness": "0",
+      "wins": 1,
+      "losses": 1,
+      "quantity_mean": "0",
+      "mate_contribution": "0",
+      "quantity_contribution": "0"
+    },
+    {
+      "dataset": "mature_1024",
+      "profile": "initial-semantic",
+      "fitness": "2",
+      "wins": 1,
+      "losses": 0,
+      "quantity_mean": "0",
+      "mate_contribution": "2",
+      "quantity_contribution": "0"
+    },
+    {
+      "dataset": "mature_1024",
+      "profile": "initial-s703-base",
+      "fitness": "-1/30",
+      "wins": 0,
+      "losses": 0,
+      "quantity_mean": "-1/2",
+      "mate_contribution": "0",
+      "quantity_contribution": "-1/30"
+    },
+    {
+      "dataset": "mature_1024",
+      "profile": "endpoint-unit",
+      "fitness": "161/80",
+      "wins": 1,
+      "losses": 0,
+      "quantity_mean": "9/16",
+      "mate_contribution": "2",
+      "quantity_contribution": "1/80"
+    },
+    {
+      "dataset": "mature_1024",
+      "profile": "endpoint-semantic",
+      "fitness": "119/60",
+      "wins": 1,
+      "losses": 0,
+      "quantity_mean": "-1/8",
+      "mate_contribution": "2",
+      "quantity_contribution": "-1/60"
+    },
+    {
+      "dataset": "mature_1024",
+      "profile": "endpoint-s703-base",
+      "fitness": "-39/20",
+      "wins": 0,
+      "losses": 1,
+      "quantity_mean": "13/16",
+      "mate_contribution": "-2",
+      "quantity_contribution": "1/20"
+    },
+    {
+      "dataset": "mature_8192",
+      "profile": "initial-unit",
+      "fitness": "0",
+      "wins": 1,
+      "losses": 1,
+      "quantity_mean": "0",
+      "mate_contribution": "0",
+      "quantity_contribution": "0"
+    },
+    {
+      "dataset": "mature_8192",
+      "profile": "initial-semantic",
+      "fitness": "239/60",
+      "wins": 2,
+      "losses": 0,
+      "quantity_mean": "-1/4",
+      "mate_contribution": "4",
+      "quantity_contribution": "-1/60"
+    },
+    {
+      "dataset": "mature_8192",
+      "profile": "initial-s703-base",
+      "fitness": "-11/240",
+      "wins": 0,
+      "losses": 0,
+      "quantity_mean": "-11/16",
+      "mate_contribution": "0",
+      "quantity_contribution": "-11/240"
+    },
+    {
+      "dataset": "mature_8192",
+      "profile": "endpoint-unit",
+      "fitness": "31/15",
+      "wins": 1,
+      "losses": 0,
+      "quantity_mean": "9/8",
+      "mate_contribution": "2",
+      "quantity_contribution": "1/15"
+    },
+    {
+      "dataset": "mature_8192",
+      "profile": "endpoint-semantic",
+      "fitness": "479/120",
+      "wins": 2,
+      "losses": 0,
+      "quantity_mean": "1/16",
+      "mate_contribution": "4",
+      "quantity_contribution": "-1/120"
+    },
+    {
+      "dataset": "mature_8192",
+      "profile": "endpoint-s703-base",
+      "fitness": "1/60",
+      "wins": 0,
+      "losses": 0,
+      "quantity_mean": "1/4",
+      "mate_contribution": "0",
+      "quantity_contribution": "1/60"
+    },
+    {
+      "dataset": "Native_D3",
+      "profile": "initial-unit",
+      "fitness": "0",
+      "wins": 0,
+      "losses": 0,
+      "quantity_mean": "0",
+      "mate_contribution": "0",
+      "quantity_contribution": "0"
+    },
+    {
+      "dataset": "Native_D3",
+      "profile": "initial-semantic",
+      "fitness": "49/12",
+      "wins": 2,
+      "losses": 0,
+      "quantity_mean": "25/16",
+      "mate_contribution": "4",
+      "quantity_contribution": "1/12"
+    },
+    {
+      "dataset": "Native_D3",
+      "profile": "initial-s703-base",
+      "fitness": "-385/48",
+      "wins": 0,
+      "losses": 4,
+      "quantity_mean": "-13/16",
+      "mate_contribution": "-8",
+      "quantity_contribution": "-1/48"
+    },
+    {
+      "dataset": "Native_D3",
+      "profile": "endpoint-unit",
+      "fitness": "1/40",
+      "wins": 1,
+      "losses": 1,
+      "quantity_mean": "5/8",
+      "mate_contribution": "0",
+      "quantity_contribution": "1/40"
+    },
+    {
+      "dataset": "Native_D3",
+      "profile": "endpoint-semantic",
+      "fitness": "327/80",
+      "wins": 2,
+      "losses": 0,
+      "quantity_mean": "13/8",
+      "mate_contribution": "4",
+      "quantity_contribution": "7/80"
+    },
+    {
+      "dataset": "Native_D3",
+      "profile": "endpoint-s703-base",
+      "fitness": "65/16",
+      "wins": 2,
+      "losses": 0,
+      "quantity_mean": "21/16",
+      "mate_contribution": "4",
+      "quantity_contribution": "1/16"
+    }
+  ],
+  "contrasts": [
+    {
+      "dataset": "mature_1024",
+      "family": "unit",
+      "fitness_delta": "161/80",
+      "net_mate_delta": "1/16",
+      "rawquantity_delta": "9/16",
+      "positive_cells": 7,
+      "negative_cells": 3,
+      "same_trajectories": 0,
+      "root_delta": [
+        "-1/30",
+        "1/15",
+        "1/30",
+        "479/30",
+        "0",
+        "1/30",
+        "0",
+        "1/30"
+      ],
+      "leave_one_root_delta": [
+        "242/105",
+        "481/210",
+        "241/105",
+        "2/105",
+        "23/10",
+        "241/105",
+        "23/10",
+        "241/105"
+      ],
+      "negative_leave_one_root": 0,
+      "scope": "Fixedallendpoints, no development/human modelselection orconfidence; singlemate\u00b132 dominatesquantity; Nativeallqueryoracle343 separate qualification."
+    },
+    {
+      "dataset": "mature_1024",
+      "family": "semantic",
+      "fitness_delta": "-1/60",
+      "net_mate_delta": "0",
+      "rawquantity_delta": "-1/8",
+      "positive_cells": 1,
+      "negative_cells": 3,
+      "same_trajectories": 4,
+      "root_delta": [
+        "-1/10",
+        "0",
+        "-1/15",
+        "1/15",
+        "0",
+        "-1/30",
+        "0",
+        "0"
+      ],
+      "leave_one_root_delta": [
+        "-1/210",
+        "-2/105",
+        "-1/105",
+        "-1/35",
+        "-2/105",
+        "-1/70",
+        "-2/105",
+        "-2/105"
+      ],
+      "negative_leave_one_root": 8,
+      "scope": "Fixedallendpoints, no development/human modelselection orconfidence; singlemate\u00b132 dominatesquantity; Nativeallqueryoracle343 separate qualification."
+    },
+    {
+      "dataset": "mature_1024",
+      "family": "s703-base",
+      "fitness_delta": "-23/12",
+      "net_mate_delta": "-1/16",
+      "rawquantity_delta": "21/16",
+      "positive_cells": 10,
+      "negative_cells": 4,
+      "same_trajectories": 0,
+      "root_delta": [
+        "1/30",
+        "1/15",
+        "-1/30",
+        "1/10",
+        "1/10",
+        "3/10",
+        "0",
+        "-159/10"
+      ],
+      "leave_one_root_delta": [
+        "-461/210",
+        "-11/5",
+        "-153/70",
+        "-463/210",
+        "-463/210",
+        "-67/30",
+        "-46/21",
+        "17/210"
+      ],
+      "negative_leave_one_root": 7,
+      "scope": "Fixedallendpoints, no development/human modelselection orconfidence; singlemate\u00b132 dominatesquantity; Nativeallqueryoracle343 separate qualification."
+    },
+    {
+      "dataset": "mature_8192",
+      "family": "unit",
+      "fitness_delta": "31/15",
+      "net_mate_delta": "1/16",
+      "rawquantity_delta": "9/8",
+      "positive_cells": 10,
+      "negative_cells": 2,
+      "same_trajectories": 0,
+      "root_delta": [
+        "1/15",
+        "1/30",
+        "1/30",
+        "2/15",
+        "1/15",
+        "1/6",
+        "-1/30",
+        "241/15"
+      ],
+      "leave_one_root_delta": [
+        "247/105",
+        "33/14",
+        "33/14",
+        "82/35",
+        "247/105",
+        "491/210",
+        "71/30",
+        "1/15"
+      ],
+      "negative_leave_one_root": 0,
+      "scope": "Fixedallendpoints, no development/human modelselection orconfidence; singlemate\u00b132 dominatesquantity; Nativeallqueryoracle343 separate qualification."
+    },
+    {
+      "dataset": "mature_8192",
+      "family": "semantic",
+      "fitness_delta": "1/120",
+      "net_mate_delta": "0",
+      "rawquantity_delta": "5/16",
+      "positive_cells": 9,
+      "negative_cells": 4,
+      "same_trajectories": 1,
+      "root_delta": [
+        "1/30",
+        "1/15",
+        "479/30",
+        "0",
+        "-16",
+        "1/15",
+        "0",
+        "-1/15"
+      ],
+      "leave_one_root_delta": [
+        "1/210",
+        "0",
+        "-159/70",
+        "1/105",
+        "241/105",
+        "0",
+        "1/105",
+        "2/105"
+      ],
+      "negative_leave_one_root": 1,
+      "scope": "Fixedallendpoints, no development/human modelselection orconfidence; singlemate\u00b132 dominatesquantity; Nativeallqueryoracle343 separate qualification."
+    },
+    {
+      "dataset": "mature_8192",
+      "family": "s703-base",
+      "fitness_delta": "1/16",
+      "net_mate_delta": "0",
+      "rawquantity_delta": "15/16",
+      "positive_cells": 8,
+      "negative_cells": 2,
+      "same_trajectories": 0,
+      "root_delta": [
+        "1/30",
+        "-1/30",
+        "1/15",
+        "0",
+        "-1/15",
+        "2/15",
+        "2/15",
+        "7/30"
+      ],
+      "leave_one_root_delta": [
+        "1/15",
+        "8/105",
+        "13/210",
+        "1/14",
+        "17/210",
+        "11/210",
+        "11/210",
+        "4/105"
+      ],
+      "negative_leave_one_root": 0,
+      "scope": "Fixedallendpoints, no development/human modelselection orconfidence; singlemate\u00b132 dominatesquantity; Nativeallqueryoracle343 separate qualification."
+    },
+    {
+      "dataset": "Native_D3",
+      "family": "unit",
+      "fitness_delta": "1/40",
+      "net_mate_delta": "0",
+      "rawquantity_delta": "5/8",
+      "positive_cells": 8,
+      "negative_cells": 3,
+      "same_trajectories": 2,
+      "root_delta": [
+        "0",
+        "1/30",
+        "16",
+        "0",
+        "-239/15",
+        "-1/30",
+        "0",
+        "2/15"
+      ],
+      "leave_one_root_delta": [
+        "1/35",
+        "1/42",
+        "-79/35",
+        "1/35",
+        "242/105",
+        "1/30",
+        "1/35",
+        "1/105"
+      ],
+      "negative_leave_one_root": 1,
+      "scope": "Fixedallendpoints, no development/human modelselection orconfidence; singlemate\u00b132 dominatesquantity; Nativeallqueryoracle343 separate qualification."
+    },
+    {
+      "dataset": "Native_D3",
+      "family": "semantic",
+      "fitness_delta": "1/240",
+      "net_mate_delta": "0",
+      "rawquantity_delta": "1/16",
+      "positive_cells": 2,
+      "negative_cells": 1,
+      "same_trajectories": 11,
+      "root_delta": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1/30",
+        "1/30",
+        "0",
+        "1/30"
+      ],
+      "leave_one_root_delta": [
+        "1/210",
+        "1/210",
+        "1/210",
+        "1/210",
+        "1/105",
+        "0",
+        "1/210",
+        "0"
+      ],
+      "negative_leave_one_root": 0,
+      "scope": "Fixedallendpoints, no development/human modelselection orconfidence; singlemate\u00b132 dominatesquantity; Nativeallqueryoracle343 separate qualification."
+    },
+    {
+      "dataset": "Native_D3",
+      "family": "s703-base",
+      "fitness_delta": "145/12",
+      "net_mate_delta": "3/8",
+      "rawquantity_delta": "17/8",
+      "positive_cells": 14,
+      "negative_cells": 1,
+      "same_trajectories": 0,
+      "root_delta": [
+        "4/15",
+        "161/10",
+        "319/10",
+        "32",
+        "1/5",
+        "-1/30",
+        "242/15",
+        "1/10"
+      ],
+      "leave_one_root_delta": [
+        "482/35",
+        "2417/210",
+        "1943/210",
+        "194/21",
+        "1447/105",
+        "967/70",
+        "1208/105",
+        "2897/210"
+      ],
+      "negative_leave_one_root": 0,
+      "scope": "Fixedallendpoints, no development/human modelselection orconfidence; singlemate\u00b132 dominatesquantity; Nativeallqueryoracle343 separate qualification."
+    }
+  ],
+  "seconds": 0.625,
+  "scope": "Samefrozen24cap/root/color/goal at1024/8192bothplayers givesresource/usefulness curve; NativeD3bothactors hasdifferentalgorithm/work/internalterminalclamp, overalldeploymentreference only, no isolatedpruningcausalclaim. Rootswerefixedbeforetraining; after342areexposeddevelopment and345cannotrestoreunexposed status. Trainingendpoints andoldfailures retained."
+}

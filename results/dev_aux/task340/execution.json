@@ -1,0 +1,81 @@
+{
+  "profiles": {
+    "initial-unit": {
+      "P": 208,
+      "N": 208,
+      "B": 208,
+      "R": 208,
+      "Q": 208,
+      "K": 0
+    },
+    "initial-semantic": {
+      "K": 0,
+      "P": 208,
+      "N": 1138,
+      "B": 1486,
+      "R": 2181,
+      "Q": 3667
+    },
+    "initial-s703-base": {
+      "P": 208,
+      "K": 0,
+      "N": 87,
+      "B": 126,
+      "R": 2258,
+      "Q": 176
+    },
+    "endpoint-unit": {
+      "P": 208,
+      "N": 208,
+      "B": 416,
+      "R": 208,
+      "Q": 416,
+      "K": 0
+    },
+    "endpoint-semantic": {
+      "K": 0,
+      "P": 208,
+      "N": 569,
+      "B": 1486,
+      "R": 2181,
+      "Q": 3667
+    },
+    "endpoint-s703-base": {
+      "P": 208,
+      "K": 0,
+      "N": 174,
+      "B": 252,
+      "R": 2258,
+      "Q": 704
+    }
+  },
+  "unique_profiles": [
+    "initial-unit",
+    "initial-semantic",
+    "initial-s703-base",
+    "endpoint-unit",
+    "endpoint-semantic",
+    "endpoint-s703-base"
+  ],
+  "aliases": {
+    "initial-unit": "initial-unit",
+    "initial-semantic": "initial-semantic",
+    "initial-s703-base": "initial-s703-base",
+    "endpoint-unit": "endpoint-unit",
+    "endpoint-semantic": "endpoint-semantic",
+    "endpoint-s703-base": "endpoint-s703-base"
+  },
+  "unit": {
+    "P": 208,
+    "N": 208,
+    "B": 208,
+    "R": 208,
+    "Q": 208,
+    "K": 0
+  },
+  "endpoint_sha256": "9ad13af1950b526b9b4f93c7c90ace0d573e9ae998841dbb4a7d91af1f2ace16",
+  "binary_sha256": "477d2117a5c5a74639f917c3ca58830593240e1905e5db594ba3a4d9877476fe",
+  "source_commit": "f1ea1d3870302777de6b56ae4cd62a17d7bf7bb0",
+  "whole_fuse_seconds": 1800,
+  "scope": "340prepared beforeendpointresults; exactallfrozeninitial/endpointaliases afterfreeze, noselection. BothplayersNativeD3 vs342bothFairy1024 is overalldeploymentreference, notpurepruning effect."
+}

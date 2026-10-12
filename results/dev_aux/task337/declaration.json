@@ -1,0 +1,105 @@
+{
+  "task_id": "337",
+  "roots": [
+    {
+      "seed": 2026102400,
+      "phase": "train",
+      "index": 0,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "d2d4",
+        "c7c6",
+        "e2e3",
+        "d8c7",
+        "f1b5",
+        "g8f6",
+        "b5a6",
+        "b7b6",
+        "d1f3",
+        "c7e5",
+        "f3g3",
+        "e7e6",
+        "e1e2",
+        "g7g5",
+        "a6c8",
+        "a7a5",
+        "g3e5",
+        "f6h5",
+        "e2d2",
+        "f8g7"
+      ],
+      "expected_fen": "rnB1k2r/3p1pbp/1pp1p3/p3Q1pn/3P4/4P3/PPPK1PPP/RNB3NR w kq - 3 11"
+    },
+    {
+      "seed": 2026102401,
+      "phase": "train",
+      "index": 1,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "c2c3",
+        "b7b5",
+        "f2f3",
+        "c7c5",
+        "g2g4",
+        "g8f6",
+        "d1a4",
+        "e7e5",
+        "a4c4",
+        "h8g8",
+        "h2h4",
+        "f8d6",
+        "f1h3",
+        "g7g5",
+        "c4c5",
+        "g5h4",
+        "c5e3",
+        "d8a5",
+        "c3c4",
+        "b5c4"
+      ],
+      "expected_fen": "rnb1k1r1/p2p1p1p/3b1n2/q3p3/2p3Pp/4QP1B/PP1PP3/RNB1K1NR w KQq - 0 11"
+    }
+  ],
+  "profiles": {
+    "unit": {
+      "P": 208,
+      "N": 208,
+      "B": 208,
+      "R": 208,
+      "Q": 208,
+      "K": 0
+    },
+    "semantic": {
+      "K": 0,
+      "P": 208,
+      "N": 1138,
+      "B": 1486,
+      "R": 2181,
+      "Q": 3667
+    },
+    "s703-base": {
+      "P": 208,
+      "K": 0,
+      "N": 87,
+      "B": 126,
+      "R": 2258,
+      "Q": 176
+    },
+    "unit-NB-double": {
+      "P": 208,
+      "N": 416,
+      "B": 416,
+      "R": 208,
+      "Q": 208,
+      "K": 0
+    }
+  },
+  "node_limits": [
+    1024,
+    8192
+  ],
+  "calls": 16,
+  "question": "Are prices responsive at low and higher fixedbudget before quantity optimization?",
+  "whole_fuse_seconds": 300,
+  "scope": "First2algorithmic roots fixedbeforequery; threeinitials pluspredeclaredjointN/Bdouble. Exactsamebinary/readbacks/fullhistory/coldmode3; actualdepth/bounds/choices recorded. Highbudget changesworkandselectivity, notexactpricegradient/control or human fitting. No secondhorizon/model choice."
+}

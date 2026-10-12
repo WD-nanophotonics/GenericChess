@@ -1,0 +1,1583 @@
+{
+  "actual_games": 1008,
+  "actual_queries": 23983,
+  "cache_reuses": 288,
+  "unique_cases": 1056,
+  "rounds": [
+    {
+      "family": "unit",
+      "generation": 0,
+      "starting": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 208,
+        "K": 0
+      },
+      "selected": "Q+",
+      "weights": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 416,
+        "K": 0
+      },
+      "strict_gain": true,
+      "baseline_fitness": "0",
+      "selected_fitness": "1/48",
+      "candidates": [
+        {
+          "variant": "base",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 208,
+            "R": 208,
+            "Q": 208,
+            "K": 0
+          },
+          "fitness": "0",
+          "mate_sign_mean": "0",
+          "quantity_mean": "0",
+          "mate_contribution": "0",
+          "quantity_contribution": "0"
+        },
+        {
+          "variant": "N-",
+          "weights": {
+            "P": 208,
+            "N": 104,
+            "B": 208,
+            "R": 208,
+            "Q": 208,
+            "K": 0
+          },
+          "fitness": "-1/60",
+          "mate_sign_mean": "0",
+          "quantity_mean": "-1/4",
+          "mate_contribution": "0",
+          "quantity_contribution": "-1/60"
+        },
+        {
+          "variant": "N+",
+          "weights": {
+            "P": 208,
+            "N": 416,
+            "B": 208,
+            "R": 208,
+            "Q": 208,
+            "K": 0
+          },
+          "fitness": "-121/60",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "-5/16",
+          "mate_contribution": "-2",
+          "quantity_contribution": "-1/60"
+        },
+        {
+          "variant": "B-",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 104,
+            "R": 208,
+            "Q": 208,
+            "K": 0
+          },
+          "fitness": "-161/80",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "-1/2",
+          "mate_contribution": "-2",
+          "quantity_contribution": "-1/80"
+        },
+        {
+          "variant": "B+",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 416,
+            "R": 208,
+            "Q": 208,
+            "K": 0
+          },
+          "fitness": "-95/48",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "3/16",
+          "mate_contribution": "-2",
+          "quantity_contribution": "1/48"
+        },
+        {
+          "variant": "R-",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 208,
+            "R": 104,
+            "Q": 208,
+            "K": 0
+          },
+          "fitness": "-81/40",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "-1/2",
+          "mate_contribution": "-2",
+          "quantity_contribution": "-1/40"
+        },
+        {
+          "variant": "R+",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 208,
+            "R": 416,
+            "Q": 208,
+            "K": 0
+          },
+          "fitness": "-479/120",
+          "mate_sign_mean": "-1/8",
+          "quantity_mean": "0",
+          "mate_contribution": "-4",
+          "quantity_contribution": "1/120"
+        },
+        {
+          "variant": "Q-",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 208,
+            "R": 208,
+            "Q": 104,
+            "K": 0
+          },
+          "fitness": "-97/24",
+          "mate_sign_mean": "-1/8",
+          "quantity_mean": "-17/16",
+          "mate_contribution": "-4",
+          "quantity_contribution": "-1/24"
+        },
+        {
+          "variant": "Q+",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 208,
+            "R": 208,
+            "Q": 416,
+            "K": 0
+          },
+          "fitness": "1/48",
+          "mate_sign_mean": "0",
+          "quantity_mean": "5/16",
+          "mate_contribution": "0",
+          "quantity_contribution": "1/48"
+        }
+      ]
+    },
+    {
+      "family": "unit",
+      "generation": 1,
+      "starting": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 416,
+        "K": 0
+      },
+      "selected": "B+",
+      "weights": {
+        "P": 208,
+        "N": 208,
+        "B": 416,
+        "R": 208,
+        "Q": 416,
+        "K": 0
+      },
+      "strict_gain": true,
+      "baseline_fitness": "1/48",
+      "selected_fitness": "481/120",
+      "candidates": [
+        {
+          "variant": "base",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 208,
+            "R": 208,
+            "Q": 416,
+            "K": 0
+          },
+          "fitness": "1/48",
+          "mate_sign_mean": "0",
+          "quantity_mean": "5/16",
+          "mate_contribution": "0",
+          "quantity_contribution": "1/48"
+        },
+        {
+          "variant": "N-",
+          "weights": {
+            "P": 208,
+            "N": 104,
+            "B": 208,
+            "R": 208,
+            "Q": 416,
+            "K": 0
+          },
+          "fitness": "11/240",
+          "mate_sign_mean": "0",
+          "quantity_mean": "11/16",
+          "mate_contribution": "0",
+          "quantity_contribution": "11/240"
+        },
+        {
+          "variant": "N+",
+          "weights": {
+            "P": 208,
+            "N": 416,
+            "B": 208,
+            "R": 208,
+            "Q": 416,
+            "K": 0
+          },
+          "fitness": "1/40",
+          "mate_sign_mean": "0",
+          "quantity_mean": "3/8",
+          "mate_contribution": "0",
+          "quantity_contribution": "1/40"
+        },
+        {
+          "variant": "B-",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 104,
+            "R": 208,
+            "Q": 416,
+            "K": 0
+          },
+          "fitness": "1/60",
+          "mate_sign_mean": "0",
+          "quantity_mean": "1/4",
+          "mate_contribution": "0",
+          "quantity_contribution": "1/60"
+        },
+        {
+          "variant": "B+",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 416,
+            "R": 208,
+            "Q": 416,
+            "K": 0
+          },
+          "fitness": "481/120",
+          "mate_sign_mean": "1/8",
+          "quantity_mean": "7/16",
+          "mate_contribution": "4",
+          "quantity_contribution": "1/120"
+        },
+        {
+          "variant": "R-",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 208,
+            "R": 104,
+            "Q": 416,
+            "K": 0
+          },
+          "fitness": "491/240",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "13/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "11/240"
+        },
+        {
+          "variant": "R+",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 208,
+            "R": 416,
+            "Q": 416,
+            "K": 0
+          },
+          "fitness": "3/80",
+          "mate_sign_mean": "0",
+          "quantity_mean": "9/16",
+          "mate_contribution": "0",
+          "quantity_contribution": "3/80"
+        },
+        {
+          "variant": "Q-",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 208,
+            "R": 208,
+            "Q": 208,
+            "K": 0
+          },
+          "fitness": "0",
+          "mate_sign_mean": "0",
+          "quantity_mean": "0",
+          "mate_contribution": "0",
+          "quantity_contribution": "0"
+        },
+        {
+          "variant": "Q+",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 208,
+            "R": 208,
+            "Q": 832,
+            "K": 0
+          },
+          "fitness": "-79/40",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "3/8",
+          "mate_contribution": "-2",
+          "quantity_contribution": "1/40"
+        }
+      ]
+    },
+    {
+      "family": "unit",
+      "generation": 2,
+      "starting": {
+        "P": 208,
+        "N": 208,
+        "B": 416,
+        "R": 208,
+        "Q": 416,
+        "K": 0
+      },
+      "selected": "base",
+      "weights": {
+        "P": 208,
+        "N": 208,
+        "B": 416,
+        "R": 208,
+        "Q": 416,
+        "K": 0
+      },
+      "strict_gain": false,
+      "baseline_fitness": "481/120",
+      "selected_fitness": "481/120",
+      "candidates": [
+        {
+          "variant": "base",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 416,
+            "R": 208,
+            "Q": 416,
+            "K": 0
+          },
+          "fitness": "481/120",
+          "mate_sign_mean": "1/8",
+          "quantity_mean": "7/16",
+          "mate_contribution": "4",
+          "quantity_contribution": "1/120"
+        },
+        {
+          "variant": "N-",
+          "weights": {
+            "P": 208,
+            "N": 104,
+            "B": 416,
+            "R": 208,
+            "Q": 416,
+            "K": 0
+          },
+          "fitness": "3/80",
+          "mate_sign_mean": "0",
+          "quantity_mean": "9/16",
+          "mate_contribution": "0",
+          "quantity_contribution": "3/80"
+        },
+        {
+          "variant": "N+",
+          "weights": {
+            "P": 208,
+            "N": 416,
+            "B": 416,
+            "R": 208,
+            "Q": 416,
+            "K": 0
+          },
+          "fitness": "239/120",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "0",
+          "mate_contribution": "2",
+          "quantity_contribution": "-1/120"
+        },
+        {
+          "variant": "B-",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 208,
+            "R": 208,
+            "Q": 416,
+            "K": 0
+          },
+          "fitness": "1/48",
+          "mate_sign_mean": "0",
+          "quantity_mean": "5/16",
+          "mate_contribution": "0",
+          "quantity_contribution": "1/48"
+        },
+        {
+          "variant": "B+",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 832,
+            "R": 208,
+            "Q": 416,
+            "K": 0
+          },
+          "fitness": "-61/30",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "-1/2",
+          "mate_contribution": "-2",
+          "quantity_contribution": "-1/30"
+        },
+        {
+          "variant": "R-",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 416,
+            "R": 104,
+            "Q": 416,
+            "K": 0
+          },
+          "fitness": "479/240",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "1/8",
+          "mate_contribution": "2",
+          "quantity_contribution": "-1/240"
+        },
+        {
+          "variant": "R+",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 416,
+            "R": 416,
+            "Q": 416,
+            "K": 0
+          },
+          "fitness": "3/80",
+          "mate_sign_mean": "0",
+          "quantity_mean": "9/16",
+          "mate_contribution": "0",
+          "quantity_contribution": "3/80"
+        },
+        {
+          "variant": "Q-",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 416,
+            "R": 208,
+            "Q": 208,
+            "K": 0
+          },
+          "fitness": "-95/48",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "3/16",
+          "mate_contribution": "-2",
+          "quantity_contribution": "1/48"
+        },
+        {
+          "variant": "Q+",
+          "weights": {
+            "P": 208,
+            "N": 208,
+            "B": 416,
+            "R": 208,
+            "Q": 832,
+            "K": 0
+          },
+          "fitness": "7/240",
+          "mate_sign_mean": "0",
+          "quantity_mean": "5/16",
+          "mate_contribution": "0",
+          "quantity_contribution": "7/240"
+        }
+      ]
+    },
+    {
+      "family": "semantic",
+      "generation": 0,
+      "starting": {
+        "K": 0,
+        "P": 208,
+        "N": 1138,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "selected": "N-",
+      "weights": {
+        "K": 0,
+        "P": 208,
+        "N": 569,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "strict_gain": true,
+      "baseline_fitness": "481/240",
+      "selected_fitness": "97/48",
+      "candidates": [
+        {
+          "variant": "base",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 1138,
+            "B": 1486,
+            "R": 2181,
+            "Q": 3667
+          },
+          "fitness": "481/240",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "1/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "1/240"
+        },
+        {
+          "variant": "N-",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 569,
+            "B": 1486,
+            "R": 2181,
+            "Q": 3667
+          },
+          "fitness": "97/48",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "1/4",
+          "mate_contribution": "2",
+          "quantity_contribution": "1/48"
+        },
+        {
+          "variant": "N+",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 2276,
+            "B": 1486,
+            "R": 2181,
+            "Q": 3667
+          },
+          "fitness": "-95/48",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "1/4",
+          "mate_contribution": "-2",
+          "quantity_contribution": "1/48"
+        },
+        {
+          "variant": "B-",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 1138,
+            "B": 743,
+            "R": 2181,
+            "Q": 3667
+          },
+          "fitness": "1/24",
+          "mate_sign_mean": "0",
+          "quantity_mean": "5/8",
+          "mate_contribution": "0",
+          "quantity_contribution": "1/24"
+        },
+        {
+          "variant": "B+",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 1138,
+            "B": 2972,
+            "R": 2181,
+            "Q": 3667
+          },
+          "fitness": "1/40",
+          "mate_sign_mean": "0",
+          "quantity_mean": "3/8",
+          "mate_contribution": "0",
+          "quantity_contribution": "1/40"
+        },
+        {
+          "variant": "R-",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 1138,
+            "B": 1486,
+            "R": 1091,
+            "Q": 3667
+          },
+          "fitness": "2",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "1/8",
+          "mate_contribution": "2",
+          "quantity_contribution": "0"
+        },
+        {
+          "variant": "R+",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 1138,
+            "B": 1486,
+            "R": 4362,
+            "Q": 3667
+          },
+          "fitness": "1/80",
+          "mate_sign_mean": "0",
+          "quantity_mean": "3/16",
+          "mate_contribution": "0",
+          "quantity_contribution": "1/80"
+        },
+        {
+          "variant": "Q-",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 1138,
+            "B": 1486,
+            "R": 2181,
+            "Q": 1834
+          },
+          "fitness": "1/80",
+          "mate_sign_mean": "0",
+          "quantity_mean": "3/16",
+          "mate_contribution": "0",
+          "quantity_contribution": "1/80"
+        },
+        {
+          "variant": "Q+",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 1138,
+            "B": 1486,
+            "R": 2181,
+            "Q": 7334
+          },
+          "fitness": "481/240",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "1/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "1/240"
+        }
+      ]
+    },
+    {
+      "family": "semantic",
+      "generation": 1,
+      "starting": {
+        "K": 0,
+        "P": 208,
+        "N": 569,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "selected": "base",
+      "weights": {
+        "K": 0,
+        "P": 208,
+        "N": 569,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "strict_gain": false,
+      "baseline_fitness": "97/48",
+      "selected_fitness": "97/48",
+      "candidates": [
+        {
+          "variant": "base",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 569,
+            "B": 1486,
+            "R": 2181,
+            "Q": 3667
+          },
+          "fitness": "97/48",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "1/4",
+          "mate_contribution": "2",
+          "quantity_contribution": "1/48"
+        },
+        {
+          "variant": "N-",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 285,
+            "B": 1486,
+            "R": 2181,
+            "Q": 3667
+          },
+          "fitness": "13/240",
+          "mate_sign_mean": "0",
+          "quantity_mean": "3/4",
+          "mate_contribution": "0",
+          "quantity_contribution": "13/240"
+        },
+        {
+          "variant": "N+",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 1138,
+            "B": 1486,
+            "R": 2181,
+            "Q": 3667
+          },
+          "fitness": "481/240",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "1/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "1/240"
+        },
+        {
+          "variant": "B-",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 569,
+            "B": 743,
+            "R": 2181,
+            "Q": 3667
+          },
+          "fitness": "1/30",
+          "mate_sign_mean": "0",
+          "quantity_mean": "1/2",
+          "mate_contribution": "0",
+          "quantity_contribution": "1/30"
+        },
+        {
+          "variant": "B+",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 569,
+            "B": 2972,
+            "R": 2181,
+            "Q": 3667
+          },
+          "fitness": "481/240",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "3/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "1/240"
+        },
+        {
+          "variant": "R-",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 569,
+            "B": 1486,
+            "R": 1091,
+            "Q": 3667
+          },
+          "fitness": "241/120",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "1/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "1/120"
+        },
+        {
+          "variant": "R+",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 569,
+            "B": 1486,
+            "R": 4362,
+            "Q": 3667
+          },
+          "fitness": "241/120",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "3/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "1/120"
+        },
+        {
+          "variant": "Q-",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 569,
+            "B": 1486,
+            "R": 2181,
+            "Q": 1834
+          },
+          "fitness": "161/80",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "1/8",
+          "mate_contribution": "2",
+          "quantity_contribution": "1/80"
+        },
+        {
+          "variant": "Q+",
+          "weights": {
+            "K": 0,
+            "P": 208,
+            "N": 569,
+            "B": 1486,
+            "R": 2181,
+            "Q": 7334
+          },
+          "fitness": "241/120",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "1/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "1/120"
+        }
+      ]
+    },
+    {
+      "family": "s703-base",
+      "generation": 0,
+      "starting": {
+        "P": 208,
+        "K": 0,
+        "N": 87,
+        "B": 126,
+        "R": 2258,
+        "Q": 176
+      },
+      "selected": "N+",
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 174,
+        "B": 126,
+        "R": 2258,
+        "Q": 176
+      },
+      "strict_gain": true,
+      "baseline_fitness": "-41/20",
+      "selected_fitness": "-1/24",
+      "candidates": [
+        {
+          "variant": "base",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 87,
+            "B": 126,
+            "R": 2258,
+            "Q": 176
+          },
+          "fitness": "-41/20",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "-7/8",
+          "mate_contribution": "-2",
+          "quantity_contribution": "-1/20"
+        },
+        {
+          "variant": "N-",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 44,
+            "B": 126,
+            "R": 2258,
+            "Q": 176
+          },
+          "fitness": "-21/10",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "-13/8",
+          "mate_contribution": "-2",
+          "quantity_contribution": "-1/10"
+        },
+        {
+          "variant": "N+",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 126,
+            "R": 2258,
+            "Q": 176
+          },
+          "fitness": "-1/24",
+          "mate_sign_mean": "0",
+          "quantity_mean": "-5/8",
+          "mate_contribution": "0",
+          "quantity_contribution": "-1/24"
+        },
+        {
+          "variant": "B-",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 87,
+            "B": 63,
+            "R": 2258,
+            "Q": 176
+          },
+          "fitness": "-31/15",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "-1",
+          "mate_contribution": "-2",
+          "quantity_contribution": "-1/15"
+        },
+        {
+          "variant": "B+",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 87,
+            "B": 252,
+            "R": 2258,
+            "Q": 176
+          },
+          "fitness": "-49/24",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "-7/8",
+          "mate_contribution": "-2",
+          "quantity_contribution": "-1/24"
+        },
+        {
+          "variant": "R-",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 87,
+            "B": 126,
+            "R": 1129,
+            "Q": 176
+          },
+          "fitness": "-161/40",
+          "mate_sign_mean": "-1/8",
+          "quantity_mean": "-9/16",
+          "mate_contribution": "-4",
+          "quantity_contribution": "-1/40"
+        },
+        {
+          "variant": "R+",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 87,
+            "B": 126,
+            "R": 4516,
+            "Q": 176
+          },
+          "fitness": "-41/20",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "-7/8",
+          "mate_contribution": "-2",
+          "quantity_contribution": "-1/20"
+        },
+        {
+          "variant": "Q-",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 87,
+            "B": 126,
+            "R": 2258,
+            "Q": 88
+          },
+          "fitness": "-25/12",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "-21/16",
+          "mate_contribution": "-2",
+          "quantity_contribution": "-1/12"
+        },
+        {
+          "variant": "Q+",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 87,
+            "B": 126,
+            "R": 2258,
+            "Q": 352
+          },
+          "fitness": "-1/24",
+          "mate_sign_mean": "0",
+          "quantity_mean": "-5/8",
+          "mate_contribution": "0",
+          "quantity_contribution": "-1/24"
+        }
+      ]
+    },
+    {
+      "family": "s703-base",
+      "generation": 1,
+      "starting": {
+        "P": 208,
+        "K": 0,
+        "N": 174,
+        "B": 126,
+        "R": 2258,
+        "Q": 176
+      },
+      "selected": "Q+",
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 174,
+        "B": 126,
+        "R": 2258,
+        "Q": 352
+      },
+      "strict_gain": true,
+      "baseline_fitness": "-1/24",
+      "selected_fitness": "95/48",
+      "candidates": [
+        {
+          "variant": "base",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 126,
+            "R": 2258,
+            "Q": 176
+          },
+          "fitness": "-1/24",
+          "mate_sign_mean": "0",
+          "quantity_mean": "-5/8",
+          "mate_contribution": "0",
+          "quantity_contribution": "-1/24"
+        },
+        {
+          "variant": "N-",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 87,
+            "B": 126,
+            "R": 2258,
+            "Q": 176
+          },
+          "fitness": "-41/20",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "-7/8",
+          "mate_contribution": "-2",
+          "quantity_contribution": "-1/20"
+        },
+        {
+          "variant": "N+",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 348,
+            "B": 126,
+            "R": 2258,
+            "Q": 176
+          },
+          "fitness": "-3/80",
+          "mate_sign_mean": "0",
+          "quantity_mean": "-9/16",
+          "mate_contribution": "0",
+          "quantity_contribution": "-3/80"
+        },
+        {
+          "variant": "B-",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 63,
+            "R": 2258,
+            "Q": 176
+          },
+          "fitness": "-1/30",
+          "mate_sign_mean": "0",
+          "quantity_mean": "-1/2",
+          "mate_contribution": "0",
+          "quantity_contribution": "-1/30"
+        },
+        {
+          "variant": "B+",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 252,
+            "R": 2258,
+            "Q": 176
+          },
+          "fitness": "-1/120",
+          "mate_sign_mean": "0",
+          "quantity_mean": "-1/8",
+          "mate_contribution": "0",
+          "quantity_contribution": "-1/120"
+        },
+        {
+          "variant": "R-",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 126,
+            "R": 1129,
+            "Q": 176
+          },
+          "fitness": "-3/80",
+          "mate_sign_mean": "0",
+          "quantity_mean": "-9/16",
+          "mate_contribution": "0",
+          "quantity_contribution": "-3/80"
+        },
+        {
+          "variant": "R+",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 126,
+            "R": 4516,
+            "Q": 176
+          },
+          "fitness": "-1/24",
+          "mate_sign_mean": "0",
+          "quantity_mean": "-5/8",
+          "mate_contribution": "0",
+          "quantity_contribution": "-1/24"
+        },
+        {
+          "variant": "Q-",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 126,
+            "R": 2258,
+            "Q": 88
+          },
+          "fitness": "-41/20",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "-1",
+          "mate_contribution": "-2",
+          "quantity_contribution": "-1/20"
+        },
+        {
+          "variant": "Q+",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 126,
+            "R": 2258,
+            "Q": 352
+          },
+          "fitness": "95/48",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "-3/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "-1/48"
+        }
+      ]
+    },
+    {
+      "family": "s703-base",
+      "generation": 2,
+      "starting": {
+        "P": 208,
+        "K": 0,
+        "N": 174,
+        "B": 126,
+        "R": 2258,
+        "Q": 352
+      },
+      "selected": "B+",
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 174,
+        "B": 252,
+        "R": 2258,
+        "Q": 352
+      },
+      "strict_gain": true,
+      "baseline_fitness": "95/48",
+      "selected_fitness": "61/30",
+      "candidates": [
+        {
+          "variant": "base",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 126,
+            "R": 2258,
+            "Q": 352
+          },
+          "fitness": "95/48",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "-3/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "-1/48"
+        },
+        {
+          "variant": "N-",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 87,
+            "B": 126,
+            "R": 2258,
+            "Q": 352
+          },
+          "fitness": "-1/24",
+          "mate_sign_mean": "0",
+          "quantity_mean": "-5/8",
+          "mate_contribution": "0",
+          "quantity_contribution": "-1/24"
+        },
+        {
+          "variant": "N+",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 348,
+            "B": 126,
+            "R": 2258,
+            "Q": 352
+          },
+          "fitness": "1/48",
+          "mate_sign_mean": "0",
+          "quantity_mean": "5/16",
+          "mate_contribution": "0",
+          "quantity_contribution": "1/48"
+        },
+        {
+          "variant": "B-",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 63,
+            "R": 2258,
+            "Q": 352
+          },
+          "fitness": "-61/30",
+          "mate_sign_mean": "-1/16",
+          "quantity_mean": "-5/8",
+          "mate_contribution": "-2",
+          "quantity_contribution": "-1/30"
+        },
+        {
+          "variant": "B+",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 252,
+            "R": 2258,
+            "Q": 352
+          },
+          "fitness": "61/30",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "9/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "1/30"
+        },
+        {
+          "variant": "R-",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 126,
+            "R": 1129,
+            "Q": 352
+          },
+          "fitness": "95/48",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "-3/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "-1/48"
+        },
+        {
+          "variant": "R+",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 126,
+            "R": 4516,
+            "Q": 352
+          },
+          "fitness": "95/48",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "-3/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "-1/48"
+        },
+        {
+          "variant": "Q-",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 126,
+            "R": 2258,
+            "Q": 176
+          },
+          "fitness": "-1/24",
+          "mate_sign_mean": "0",
+          "quantity_mean": "-5/8",
+          "mate_contribution": "0",
+          "quantity_contribution": "-1/24"
+        },
+        {
+          "variant": "Q+",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 126,
+            "R": 2258,
+            "Q": 704
+          },
+          "fitness": "1/240",
+          "mate_sign_mean": "0",
+          "quantity_mean": "1/16",
+          "mate_contribution": "0",
+          "quantity_contribution": "1/240"
+        }
+      ]
+    },
+    {
+      "family": "s703-base",
+      "generation": 3,
+      "starting": {
+        "P": 208,
+        "K": 0,
+        "N": 174,
+        "B": 252,
+        "R": 2258,
+        "Q": 352
+      },
+      "selected": "Q+",
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 174,
+        "B": 252,
+        "R": 2258,
+        "Q": 704
+      },
+      "strict_gain": true,
+      "baseline_fitness": "61/30",
+      "selected_fitness": "49/24",
+      "candidates": [
+        {
+          "variant": "base",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 252,
+            "R": 2258,
+            "Q": 352
+          },
+          "fitness": "61/30",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "9/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "1/30"
+        },
+        {
+          "variant": "N-",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 87,
+            "B": 252,
+            "R": 2258,
+            "Q": 352
+          },
+          "fitness": "-3/80",
+          "mate_sign_mean": "0",
+          "quantity_mean": "-9/16",
+          "mate_contribution": "0",
+          "quantity_contribution": "-3/80"
+        },
+        {
+          "variant": "N+",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 348,
+            "B": 252,
+            "R": 2258,
+            "Q": 352
+          },
+          "fitness": "1/30",
+          "mate_sign_mean": "0",
+          "quantity_mean": "1/2",
+          "mate_contribution": "0",
+          "quantity_contribution": "1/30"
+        },
+        {
+          "variant": "B-",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 126,
+            "R": 2258,
+            "Q": 352
+          },
+          "fitness": "95/48",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "-3/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "-1/48"
+        },
+        {
+          "variant": "B+",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 504,
+            "R": 2258,
+            "Q": 352
+          },
+          "fitness": "0",
+          "mate_sign_mean": "0",
+          "quantity_mean": "0",
+          "mate_contribution": "0",
+          "quantity_contribution": "0"
+        },
+        {
+          "variant": "R-",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 252,
+            "R": 1129,
+            "Q": 352
+          },
+          "fitness": "97/48",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "3/8",
+          "mate_contribution": "2",
+          "quantity_contribution": "1/48"
+        },
+        {
+          "variant": "R+",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 252,
+            "R": 4516,
+            "Q": 352
+          },
+          "fitness": "61/30",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "9/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "1/30"
+        },
+        {
+          "variant": "Q-",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 252,
+            "R": 2258,
+            "Q": 176
+          },
+          "fitness": "-1/120",
+          "mate_sign_mean": "0",
+          "quantity_mean": "-1/8",
+          "mate_contribution": "0",
+          "quantity_contribution": "-1/120"
+        },
+        {
+          "variant": "Q+",
+          "weights": {
+            "P": 208,
+            "K": 0,
+            "N": 174,
+            "B": 252,
+            "R": 2258,
+            "Q": 704
+          },
+          "fitness": "49/24",
+          "mate_sign_mean": "1/16",
+          "quantity_mean": "11/16",
+          "mate_contribution": "2",
+          "quantity_contribution": "1/24"
+        }
+      ]
+    }
+  ],
+  "endpoints": {
+    "unit": {
+      "weights": {
+        "P": 208,
+        "N": 208,
+        "B": 416,
+        "R": 208,
+        "Q": 416,
+        "K": 0
+      },
+      "rounds": 3,
+      "ending": "no_strict_coordinate_improvement",
+      "fitness": "481/120"
+    },
+    "semantic": {
+      "weights": {
+        "K": 0,
+        "P": 208,
+        "N": 569,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "rounds": 2,
+      "ending": "no_strict_coordinate_improvement",
+      "fitness": "97/48"
+    },
+    "s703-base": {
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 174,
+        "B": 252,
+        "R": 2258,
+        "Q": 704
+      },
+      "rounds": 4,
+      "ending": "max_rounds",
+      "fitness": "49/24"
+    }
+  },
+  "seconds": 327.28200000012293,
+  "status": {
+    "complete": true
+  }
+}

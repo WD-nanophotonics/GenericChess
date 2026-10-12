@@ -1,24 +1,23 @@
-## DEV_AUX current scope2026-10-12
+## DEV_AUX current scope2026-10-12 segment24
 
-Science OPEN; sidemission only; normalentry/90minheartbeat ACTIVE; no severe blocker.
-Segment23:4912actualnewshortgames/62975go; allcap48. Producer1427.266s
-incl315failed.297s, separate Nativeoracle418.61s; notwholeAgent duration.
-Mature goal truefastmate vsuniformrandom: threeinitials/max6rounds/fixed16seeds,
-actual1/3/5rounds plateau;4328newgames54561go758.625s, cache856reuses.
-End ratio unit1each;semanticN5.47/B7.14/R20.97/Q35.26;703N.418/B.606/R2.716/Q3.385.
-Humanreference postendpointonly:unitflat,semanticfarther,703closerbutN/B<P;
-no coherent/stablehumanprice recovery. Training improvementnotgeneralization.
-Semanticmaturedevspeed0/NativeDevnegative;703maturedevspeednegativebut
-NativeDevpositive;ordinalstream703positive, allfixedcontrasts/noncausal limits.
-325400pureD3games5741queries all326score/argmax/PV/hash exactpasses.
-3191207optimalpaths all20PVmembers;20axesuniformmean stillnotrootgradient.
-316same-nameVariantPathreload failure actual200/216readbacks diagnosed;
-new317freshprocess fixed. Priorpriceisolated267/269notinvalidated.
-318176queries9upperbounds/31budgetpairs5signreversals; finitecpnotgradient.
-328ordinalrandomstreams preservegoal, nohistoricalrerun/fit; rawSlack/privateexcluded.
-Science313..330/reportSEGMENT_20261012_23.md; next331PREPAREDonly:
-allfrozenendpoints vsunitSEARCH20games, N/Bintervention exposure, robustlossdiagnostic.
-Owninstalled/pinnedbinaries unchanged; primaryerrorstatus/view work read-only/separate.
+Science OPEN; sidemission only; recoveredentry/90minheartbeat ACTIVE; no seriousblocker.
+1556newcompletedshortgames37196newgo; gameproducers656.424s, notAgentduration.
+Quantity/mate capped24/coldFairy1024 fixedunit8trainroots/bothcolors:
+3381008newgames23983go327.282s/288cachehits; actual3/2/4rounds max4.
+All3postfrozenhumanMSEcloser butratiosincoherent; mate32 dominates16cells.
+344allfrozen96devcases at1024/8192 and96NativeD3 resourcecurve:
+unitpositive,semanticmixedsmall,703lownegative/high+Nativepositive; noadoption.
+343all2198Nativequeries fullvalue/argmax/PV/history/2nddecoderSHA pass98.219s.
+RootTD35096games2268go40.36s;351allbackwardupdates pass0boundhits.
+35396newfixedendpointgames2260go32.36s+96exactreuses; human2worse1slightlycloser,
+train/developmentmixed.356saturation146/370semantic,74/383703,unit0/382;
+rootcountdifferencegradient distinctfrom captures; no universalTDfailure.
+346319985finiteleafpaths;347/348all48basequeries+2016directionchecks pass;
+unit/learnedunit33PVaxis219mixedmismatches; otherfourprofilesnone finitepanel.
+349officialYaneura c1b80eaa material1/fourmutabletables/board+hand sourcequalified
+butnoruntimepriceoption; NOenginebuild/Shogisearch/learning execution claimed.
+Next355prepared: ownmaterial1build/readback; same96episodePVcritic; cutoffexchange.
+ReportSEGMENT_20261012_24.md/332..356; ownbinaries unchanged, PRIMARY130readonly.
 
 # Current local research mainline
 

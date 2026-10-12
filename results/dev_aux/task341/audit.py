@@ -1,0 +1,33 @@
+"""Independent all-query replay, exact candidate selection, and frozen endpoint diagnostics."""
+import json,time,math,hashlib,collections
+from pathlib import Path
+from fractions import Fraction as F
+import chess
+R=Path.cwd();O=R/'results/dev_aux/task341';assert not (O/'audit.json').exists();start=time.monotonic();D=json.loads((R/'results/dev_aux/task338/declaration.json').read_bytes());P=json.loads((R/'results/dev_aux/task338/progress.json').read_bytes());E=json.loads((R/'results/dev_aux/task338/endpoints.json').read_bytes());assert P['status']['complete'] and E['complete'];pilot=json.loads((R/'results/dev_aux/task335/result.json').read_bytes())['calls'];new=[json.loads(s) for s in (R/'results/dev_aux/task338/games.jsonl').read_bytes().splitlines()];keyw=lambda w:tuple(w[k] for k in 'PNBRQK');cache={};nq=0
+for z in pilot+new:
+ kk=keyw(z['weights']),z['root'],z['color'];assert kk not in cache;cache[kk]=z;f=D['roots'][z['root']];b=chess.Board(f['initial_fen'])
+ for u in f['history']:b.push_uci(u)
+ assert b.fen()==f['expected_fen'];ss={q['ply']:q for q in z['search_records']};assert len(ss)==len(z['actions'])<=24
+ for ply,u in enumerate(z['actions']):
+  assert not b.is_game_over(claim_draw=False);q=ss[ply];assert q['player']==('candidate' if b.turn==z['color'] else 'unit');m=q['record'];assert m['root_fen']==f['initial_fen'] and m['full_history']==[a.uci() for a in b.move_stack] and m['nodes_limit']==1024 and m['reported_nodes']>=0;parts=[s.split() for s in m['uci_info'] if ' pv ' in s];pv=parts[-1][parts[-1].index('pv')+1:];assert pv[0]==u;c=b.copy(stack=True)
+  for t in pv:assert chess.Move.from_uci(t) in c.legal_moves;c.push_uci(t)
+  assert chess.Move.from_uci(u) in b.legal_moves;b.push_uci(u);nq+=1
+ oo=b.outcome(claim_draw=False);kind='UNKNOWN_CUTOFF' if oo is None else oo.termination.name;sign=0 if kind!='CHECKMATE' else 1 if oo.winner==z['color'] else -1;cnt=lambda color:sum(len(b.pieces(k,color)) for k in range(1,6));quantity=cnt(z['color'])-cnt(not z['color']);goal=F(32*sign) if sign else F(quantity,15) if oo is None else F(0);assert (kind,sign,str(goal),quantity,b.fen())==(z['termination'],z['finite_mate_sign'],z['fitness'],z['quantity_difference'],z['final_fen'])
+ for field,w in [('table_ack',z['weights']),('opponent_table_ack',D['unit'])]:assert z[field]['prices']=={str(i+1):[w[k]]*2 for i,k in enumerate('PNBRQ')}
+ for field,w in [('leaf_probes',z['weights']),('opponent_leaf_probes',D['unit'])]:
+  for pr in z[field]:assert math.isfinite(pr['measured_white_pawns']) and abs(pr['measured_white_pawns']-w[pr['type']]/208)<.011
+assert len(new)==P['actual_games']==1008 and len(cache)==P['unique_cases'];assert sum(len(z['search_records']) for z in new)==P['actual_queries'];assert P['actual_queries']==sum(json.loads(s).get('event')=='query' for s in (R/'results/dev_aux/task338/queries.jsonl').read_bytes().splitlines())
+def records(w):return [cache[(keyw(w),ri,color)] for ri in range(8) for color in D['colors']]
+def stats(rr):
+ return dict(games=len(rr),fitness=str(sum(F(z['fitness']) for z in rr)/len(rr)),mate_sign_mean=str(F(sum(z['finite_mate_sign'] for z in rr),len(rr))),quantity_mean=str(F(sum(z['quantity_difference'] for z in rr),len(rr))),mate_contribution=str(F(sum(z['finite_mate_sign'] for z in rr)*32,len(rr))),quantity_contribution=str(sum(F(z['fitness']) if z['finite_mate_sign']==0 else F(0) for z in rr)/len(rr)),wins=sum(z['finite_mate_sign']==1 for z in rr),losses=sum(z['finite_mate_sign']==-1 for z in rr))
+rounds=[]
+for rd in P['rounds']:
+ scores=[];qmeans=[]
+ for c in rd['candidates']:
+  rr=records(c['weights']);s=stats(rr);assert s['fitness']==c['fitness'];assert all(s[k]==c[k] for k in ('mate_sign_mean','quantity_mean','mate_contribution','quantity_contribution'));scores.append(F(c['fitness']));qmeans.append(F(s['quantity_mean']))
+ ix=max(range(9),key=lambda i:scores[i]);assert rd['selected']==rd['candidates'][ix]['variant'] and rd['weights']==rd['candidates'][ix]['weights'] and rd['strict_gain']==(scores[ix]>scores[0]);a=records(rd['starting']);b=records(rd['weights']);delta=[F(y['fitness'])-F(x['fitness']) for x,y in zip(a,b)];drops=[sum(delta[i] for i,z in enumerate(a) if z['root']!=ri)/14 for ri in range(8)];rounds.append(dict(family=rd['family'],generation=rd['generation'],selected=rd['selected'],fitness_delta=str(scores[ix]-scores[0]),net_mate_delta=str(F(sum(y['finite_mate_sign']-x['finite_mate_sign'] for x,y in zip(a,b)),16)),rawquantity_delta=str(F(sum(y['quantity_difference']-x['quantity_difference'] for x,y in zip(a,b)),16)),leave_one_root_delta=list(map(str,drops)),negative_leave_one_root=sum(v<0 for v in drops),zero_leave_one_root=sum(v==0 for v in drops),quantity_first_round_diagnostic_best=rd['candidates'][max(range(9),key=lambda i:qmeans[i])]['variant'],quantity_diagnostic_used_for_selection=False))
+endpoints=[];human=(1,3,3,5,9)
+for family,ep in E['endpoints'].items():
+ rr=[r for r in P['rounds'] if r['family']==family];assert len(rr)==ep['rounds'] and rr[-1]['weights']==ep['weights'];assert not rr[-1]['strict_gain'] if ep['ending']=='no_strict_coordinate_improvement' else len(rr)==4 and ep['ending']=='max_rounds';w=ep['weights'];old=D['initials'][family];err=lambda v:sum(math.log((v[k]/v['P'])/h)**2 for k,h in zip('PNBRQ',human))/5;endpoints.append(dict(family=family,initial=stats(records(old)),endpoint=stats(records(w)),weights=w,ratios={k:w[k]/w['P'] for k in 'PNBRQ'},initial_human_logMSE=err(old),endpoint_human_logMSE=err(w),reference_role='Descriptive AFTERallendpointfreeze; never usedbyrun338 orcandidate/stopselection'))
+out=dict(complete=True,new_games=len(new),prior_pilot_games=len(pilot),new_queries=P['actual_queries'],prior_pilot_queries=nq-P['actual_queries'],all_history_price_PV_legal_terminalchecks=nq,cache_reuses=P['cache_reuses'],round_checks=rounds,endpoints=endpoints,seconds=time.monotonic()-start,producer_seconds=P['seconds'],source_endpoint_sha256=hashlib.sha256((R/'results/dev_aux/task338/endpoints.json').read_bytes()).hexdigest(),scope='Allfrozen learning selection audited; purequantitybest is only diagnostic, no newendpoint re-selection. Source335rule-drawquantity wasexplicit butno48pilotdraw, reuseexact. Sixnewprofiles atmostallinitial+endpoint deployment, no unseen-case fit or confidence. Terminal ±32 deliberately nonneutral; one mate/16 dominates ordinaryquantity; oldfailures retained.')
+(O/'audit.json').write_text(json.dumps(out,indent=2),encoding='utf-8');print(json.dumps({k:v for k,v in out.items() if k not in ('round_checks','scope')},indent=2))

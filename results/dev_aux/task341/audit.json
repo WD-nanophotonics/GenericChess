@@ -1,0 +1,338 @@
+{
+  "complete": true,
+  "new_games": 1008,
+  "prior_pilot_games": 48,
+  "new_queries": 23983,
+  "prior_pilot_queries": 1136,
+  "all_history_price_PV_legal_terminalchecks": 25119,
+  "cache_reuses": 288,
+  "round_checks": [
+    {
+      "family": "unit",
+      "generation": 0,
+      "selected": "Q+",
+      "fitness_delta": "1/48",
+      "net_mate_delta": "0",
+      "rawquantity_delta": "5/16",
+      "leave_one_root_delta": [
+        "1/42",
+        "1/42",
+        "1/70",
+        "1/42",
+        "1/70",
+        "1/42",
+        "1/35",
+        "1/70"
+      ],
+      "negative_leave_one_root": 0,
+      "zero_leave_one_root": 0,
+      "quantity_first_round_diagnostic_best": "Q+",
+      "quantity_diagnostic_used_for_selection": false
+    },
+    {
+      "family": "unit",
+      "generation": 1,
+      "selected": "B+",
+      "fitness_delta": "319/80",
+      "net_mate_delta": "1/8",
+      "rawquantity_delta": "1/8",
+      "leave_one_root_delta": [
+        "319/70",
+        "479/105",
+        "478/105",
+        "319/70",
+        "137/30",
+        "159/35",
+        "239/105",
+        "16/7"
+      ],
+      "negative_leave_one_root": 0,
+      "zero_leave_one_root": 0,
+      "quantity_first_round_diagnostic_best": "R-",
+      "quantity_diagnostic_used_for_selection": false
+    },
+    {
+      "family": "unit",
+      "generation": 2,
+      "selected": "base",
+      "fitness_delta": "0",
+      "net_mate_delta": "0",
+      "rawquantity_delta": "0",
+      "leave_one_root_delta": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "negative_leave_one_root": 0,
+      "zero_leave_one_root": 8,
+      "quantity_first_round_diagnostic_best": "N-",
+      "quantity_diagnostic_used_for_selection": false
+    },
+    {
+      "family": "semantic",
+      "generation": 0,
+      "selected": "N-",
+      "fitness_delta": "1/60",
+      "net_mate_delta": "0",
+      "rawquantity_delta": "3/16",
+      "leave_one_root_delta": [
+        "1/42",
+        "1/70",
+        "3/70",
+        "1/105",
+        "1/70",
+        "1/210",
+        "1/210",
+        "2/105"
+      ],
+      "negative_leave_one_root": 0,
+      "zero_leave_one_root": 0,
+      "quantity_first_round_diagnostic_best": "B-",
+      "quantity_diagnostic_used_for_selection": false
+    },
+    {
+      "family": "semantic",
+      "generation": 1,
+      "selected": "base",
+      "fitness_delta": "0",
+      "net_mate_delta": "0",
+      "rawquantity_delta": "0",
+      "leave_one_root_delta": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "negative_leave_one_root": 0,
+      "zero_leave_one_root": 8,
+      "quantity_first_round_diagnostic_best": "N-",
+      "quantity_diagnostic_used_for_selection": false
+    },
+    {
+      "family": "s703-base",
+      "generation": 0,
+      "selected": "N+",
+      "fitness_delta": "241/120",
+      "net_mate_delta": "1/16",
+      "rawquantity_delta": "1/4",
+      "leave_one_root_delta": [
+        "97/42",
+        "23/10",
+        "23/10",
+        "1/70",
+        "481/210",
+        "239/105",
+        "481/210",
+        "16/7"
+      ],
+      "negative_leave_one_root": 0,
+      "zero_leave_one_root": 0,
+      "quantity_first_round_diagnostic_best": "R-",
+      "quantity_diagnostic_used_for_selection": false
+    },
+    {
+      "family": "s703-base",
+      "generation": 1,
+      "selected": "Q+",
+      "fitness_delta": "97/48",
+      "net_mate_delta": "1/16",
+      "rawquantity_delta": "7/16",
+      "leave_one_root_delta": [
+        "241/105",
+        "23/10",
+        "23/10",
+        "23/10",
+        "81/35",
+        "1/35",
+        "81/35",
+        "81/35"
+      ],
+      "negative_leave_one_root": 0,
+      "zero_leave_one_root": 0,
+      "quantity_first_round_diagnostic_best": "B+",
+      "quantity_diagnostic_used_for_selection": false
+    },
+    {
+      "family": "s703-base",
+      "generation": 2,
+      "selected": "B+",
+      "fitness_delta": "13/240",
+      "net_mate_delta": "0",
+      "rawquantity_delta": "3/4",
+      "leave_one_root_delta": [
+        "13/210",
+        "1/21",
+        "1/15",
+        "11/210",
+        "11/210",
+        "2/35",
+        "11/210",
+        "3/70"
+      ],
+      "negative_leave_one_root": 0,
+      "zero_leave_one_root": 0,
+      "quantity_first_round_diagnostic_best": "B+",
+      "quantity_diagnostic_used_for_selection": false
+    },
+    {
+      "family": "s703-base",
+      "generation": 3,
+      "selected": "Q+",
+      "fitness_delta": "1/120",
+      "net_mate_delta": "0",
+      "rawquantity_delta": "1/8",
+      "leave_one_root_delta": [
+        "1/105",
+        "1/105",
+        "1/70",
+        "1/210",
+        "-159/70",
+        "34/15",
+        "2/105",
+        "1/70"
+      ],
+      "negative_leave_one_root": 1,
+      "zero_leave_one_root": 0,
+      "quantity_first_round_diagnostic_best": "Q+",
+      "quantity_diagnostic_used_for_selection": false
+    }
+  ],
+  "endpoints": [
+    {
+      "family": "unit",
+      "initial": {
+        "games": 16,
+        "fitness": "0",
+        "mate_sign_mean": "0",
+        "quantity_mean": "0",
+        "mate_contribution": "0",
+        "quantity_contribution": "0",
+        "wins": 0,
+        "losses": 0
+      },
+      "endpoint": {
+        "games": 16,
+        "fitness": "481/120",
+        "mate_sign_mean": "1/8",
+        "quantity_mean": "7/16",
+        "mate_contribution": "4",
+        "quantity_contribution": "1/120",
+        "wins": 2,
+        "losses": 0
+      },
+      "weights": {
+        "P": 208,
+        "N": 208,
+        "B": 416,
+        "R": 208,
+        "Q": 416,
+        "K": 0
+      },
+      "ratios": {
+        "P": 1.0,
+        "N": 1.0,
+        "B": 2.0,
+        "R": 1.0,
+        "Q": 2.0
+      },
+      "initial_human_logMSE": 1.9663968317711453,
+      "endpoint_human_logMSE": 1.244778024835855,
+      "reference_role": "Descriptive AFTERallendpointfreeze; never usedbyrun338 orcandidate/stopselection"
+    },
+    {
+      "family": "semantic",
+      "initial": {
+        "games": 16,
+        "fitness": "481/240",
+        "mate_sign_mean": "1/16",
+        "quantity_mean": "1/16",
+        "mate_contribution": "2",
+        "quantity_contribution": "1/240",
+        "wins": 1,
+        "losses": 0
+      },
+      "endpoint": {
+        "games": 16,
+        "fitness": "97/48",
+        "mate_sign_mean": "1/16",
+        "quantity_mean": "1/4",
+        "mate_contribution": "2",
+        "quantity_contribution": "1/48",
+        "wins": 1,
+        "losses": 0
+      },
+      "weights": {
+        "K": 0,
+        "P": 208,
+        "N": 569,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "ratios": {
+        "P": 1.0,
+        "N": 2.735576923076923,
+        "B": 7.144230769230769,
+        "R": 10.485576923076923,
+        "Q": 17.629807692307693
+      },
+      "initial_human_logMSE": 0.42289086131267145,
+      "endpoint_human_logMSE": 0.35238291643745284,
+      "reference_role": "Descriptive AFTERallendpointfreeze; never usedbyrun338 orcandidate/stopselection"
+    },
+    {
+      "family": "s703-base",
+      "initial": {
+        "games": 16,
+        "fitness": "-41/20",
+        "mate_sign_mean": "-1/16",
+        "quantity_mean": "-7/8",
+        "mate_contribution": "-2",
+        "quantity_contribution": "-1/20",
+        "wins": 0,
+        "losses": 1
+      },
+      "endpoint": {
+        "games": 16,
+        "fitness": "49/24",
+        "mate_sign_mean": "1/16",
+        "quantity_mean": "11/16",
+        "mate_contribution": "2",
+        "quantity_contribution": "1/24",
+        "wins": 1,
+        "losses": 0
+      },
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 174,
+        "B": 252,
+        "R": 2258,
+        "Q": 704
+      },
+      "ratios": {
+        "P": 1.0,
+        "N": 0.8365384615384616,
+        "B": 1.2115384615384615,
+        "R": 10.85576923076923,
+        "Q": 3.3846153846153846
+      },
+      "initial_human_logMSE": 2.5264546682859477,
+      "endpoint_human_logMSE": 0.8021189446060355,
+      "reference_role": "Descriptive AFTERallendpointfreeze; never usedbyrun338 orcandidate/stopselection"
+    }
+  ],
+  "seconds": 2.9679999998770654,
+  "producer_seconds": 327.28200000012293,
+  "source_endpoint_sha256": "9ad13af1950b526b9b4f93c7c90ace0d573e9ae998841dbb4a7d91af1f2ace16",
+  "scope": "Allfrozen learning selection audited; purequantitybest is only diagnostic, no newendpoint re-selection. Source335rule-drawquantity wasexplicit butno48pilotdraw, reuseexact. Sixnewprofiles atmostallinitial+endpoint deployment, no unseen-case fit or confidence. Terminal \u00b132 deliberately nonneutral; one mate/16 dominates ordinaryquantity; oldfailures retained."
+}

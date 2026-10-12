@@ -1,0 +1,109 @@
+{
+  "complete": true,
+  "new_games": 0,
+  "new_go": 0,
+  "threshold": 0.99,
+  "threshold_role": "Descriptivefixedmodelcondition; beta(1-y*y)<=.004975 whenabs(y)>=.99, notanalternative-selectedhyperparameter.",
+  "groups": [
+    {
+      "family": "unit",
+      "episodes": 32,
+      "observations": 382,
+      "saturation_abs_prediction_ge_099": 0,
+      "mean_abs_prediction": 0.26113262169759816,
+      "mean_abs_terminal_target": 0.0650390625,
+      "nonzero_rootcountdifference": {
+        "N": 188,
+        "B": 174,
+        "R": 114,
+        "Q": 127
+      },
+      "perpiece_mean_abs_gradient": {
+        "N": 0.1414339097142891,
+        "B": 0.12657331499803,
+        "R": 0.06745535836903853,
+        "Q": 0.06685781273237704
+      },
+      "perpiece_mean_abs_update": {
+        "N": 0.00736644831303153,
+        "B": 0.005294608456163506,
+        "R": 0.005476731053469533,
+        "Q": 0.0058118834836141655
+      },
+      "nonzero_exposure_with_saturation": {
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0
+      },
+      "scope": "Observedmodel saturation androotfeatureexposure; no uniquecausality/choiceofbeta/alpha/newepochs orhumanfitting. Capturesin334arepolicyevents, RootTDgradientadditionallyneedsnonzero own-opponentCOUNTdifference, so equalcounttypes canparticipate inplaywithoutcriticalgradient."
+    },
+    {
+      "family": "semantic",
+      "episodes": 32,
+      "observations": 370,
+      "saturation_abs_prediction_ge_099": 146,
+      "mean_abs_prediction": 0.7931735880538479,
+      "mean_abs_terminal_target": 0.06634114583333334,
+      "nonzero_rootcountdifference": {
+        "N": 176,
+        "B": 189,
+        "R": 139,
+        "Q": 108
+      },
+      "perpiece_mean_abs_gradient": {
+        "N": 0.027345205863923985,
+        "B": 0.02284524587589323,
+        "R": 0.00492757232893008,
+        "Q": 0.00022806611510244954
+      },
+      "perpiece_mean_abs_update": {
+        "N": 0.00305774499552566,
+        "B": 0.0035612163262338328,
+        "R": 0.00037274209692893413,
+        "Q": 6.667276708852412e-06
+      },
+      "nonzero_exposure_with_saturation": {
+        "N": 95,
+        "B": 94,
+        "R": 84,
+        "Q": 103
+      },
+      "scope": "Observedmodel saturation androotfeatureexposure; no uniquecausality/choiceofbeta/alpha/newepochs orhumanfitting. Capturesin334arepolicyevents, RootTDgradientadditionallyneedsnonzero own-opponentCOUNTdifference, so equalcounttypes canparticipate inplaywithoutcriticalgradient."
+    },
+    {
+      "family": "s703-base",
+      "episodes": 32,
+      "observations": 383,
+      "saturation_abs_prediction_ge_099": 74,
+      "mean_abs_prediction": 0.5673744711924888,
+      "mean_abs_terminal_target": 0.0349609375,
+      "nonzero_rootcountdifference": {
+        "N": 240,
+        "B": 164,
+        "R": 157,
+        "Q": 182
+      },
+      "perpiece_mean_abs_gradient": {
+        "N": 0.08584686582700223,
+        "B": 0.062213617846991275,
+        "R": 0.0028075520490942595,
+        "Q": 0.05240487541624135
+      },
+      "perpiece_mean_abs_update": {
+        "N": 0.010124929416736036,
+        "B": 0.007876046591849314,
+        "R": 0.0006809540263082585,
+        "Q": 0.007550658016462749
+      },
+      "nonzero_exposure_with_saturation": {
+        "N": 51,
+        "B": 35,
+        "R": 74,
+        "Q": 42
+      },
+      "scope": "Observedmodel saturation androotfeatureexposure; no uniquecausality/choiceofbeta/alpha/newepochs orhumanfitting. Capturesin334arepolicyevents, RootTDgradientadditionallyneedsnonzero own-opponentCOUNTdifference, so equalcounttypes canparticipate inplaywithoutcriticalgradient."
+    }
+  ],
+  "decision": "Weak RootTDpriceupdate canreflectsmoothmodelscale, balancedfeaturedifference andonly32episodes, evenwhensearchpolicy reacts toprice. Diagnosebeforechangingtargetorclaimingmaturesearch cannotlearn. No hyperparameter sweep/peripheral repair substituted foractual experiments."
+}
