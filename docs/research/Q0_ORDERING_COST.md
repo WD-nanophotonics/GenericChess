@@ -94,3 +94,9 @@ not a product change or proof of every invalid-input/OOM case. Normal-candidate
 cost and capacity refusal need scoped checks before product adoption. No user
 intervention is required; no real machine OOM or Smart App Control fault occurred.
 Evidence supplement: data/q0_ordering_failure_20261012.json.
+
+The actually begun next check removes fault injection and uses the
+capacity-guarded helper: four normalD3 calls on gen2/Shogi retain full tuples and
+work3650/3236, about0.29/0.16s. This first narrow negative-control passes without
+misclassifying these valid filtered actions. Nested postcondition and boundary
+error classification remain the next targeted checks; no production guard yet.
