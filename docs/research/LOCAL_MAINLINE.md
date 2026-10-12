@@ -1,19 +1,20 @@
 ## DEV_AUX current scope2026-10-12
 
-ScienceOPEN; sidemission only; workingentry/heartbeatACTIVE, no severe blocker.
-Segment21:356actualgames/14501actualsearchcalls;9successfulbatches346.015s.
-Specificsemanticprior128games:1k33W1L30unknown/16k33W0L31unknown;
-only4oldroots/noIIDpopulation. 269onegen172games has2negative transfers,
-2flatbases despite2descriptivehumanratio contractions; stopgenerationgrowth.
-Scalecontrol changesmatureactions/payoff whilecompleteD2argmaxstable;
-280wholepositivebox32..8192flatonly3Whiteroots, Blackpromotion excluded.
-276losslessjournal/cache24pairedgames;31.4MB->.231MB withallfields/workequal.
-Ownpinnedf1eaq0DLL80actualcalls independent:283sameDLLroot/TT64factor
-allfinitevalue/PVchecks; optionalRootTrue cheaperhere, no product/UIadoption.
-Allscience/failures258..286/reportSEGMENT_20261012_21.md; installedownbaseline
-unchanged. Dottechnicalreplyadopted; rawprivate/otheruserattributionsnoauthority.
-Next286:cheapnativebaselinepilot, reuseH/rootendpoint sensitivity,
-actualpromotionbranch signal; no newjob/seed/generation/longgame currentlyactive.
+Science OPEN; sidemission only; normal entry/heartbeat ACTIVE, no severe blocker.
+Segment22:72physicalcompletegames/2943persistedactualnewNativequeries;
+failed294partialgo countunknown; historical16basequeries explicitly reused.
+CompleteD3/repetition5 baseline64oldrootgames37W0L27unknown, actualallquery
+finitevalue/PV/historychecks; price-binding permutationcontrol20W0L12unknown.
+Onegen H/root/speedunstable; OLSrank5 butnegativeP/N/R, root/familyconfounded,
+olddevpredictionworsethanzero; nohumanprice recovery/positivityclipping/adoption.
+204newpriceperturbations:correctPVscalarvalue notalwaysrootgradient;
+12unitaxes mismatches independentlyexact, noallTD/materiallearningrefutation.
+Actualone-parent5plyrandommate goalsR1/9,Q0; all5tablesflat here; contextnotgeneralR>Q.
+308/310losslesssparseappend:4realmatchedgames/all139hashes,253.64MB->.931MB writes.
+Recordedchecker/3sD4/codec failures+recovery intact; no product/default/UI change.
+Science287..312/reportSEGMENT_20261012_22.md; ownfixedf1eaDLL/installedbaselineunchanged.
+Next312:maturefinite-response qualification, optimalPVties, distinctpromotionparents;
+no nextquerypanel/training/games active; primarycache/viewwork separate/read-only.
 
 # Current local research mainline
 

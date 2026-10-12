@@ -1,0 +1,111 @@
+{
+  "task_id": "309",
+  "question": "Does integratedsparse append recording preserveallactualscientificfields andfixobservedgrowing-prefix IOcost?",
+  "roots": [
+    {
+      "seed": 2026105400,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "b7b5",
+        "d2d3",
+        "c7c6",
+        "h2h3",
+        "d8c7",
+        "c1b2",
+        "g8h6",
+        "h3h4",
+        "c6c5",
+        "b2e5",
+        "b8c6",
+        "b1a3",
+        "c5c4",
+        "g2g4",
+        "c4d3",
+        "h1h3",
+        "a7a6",
+        "c2c4",
+        "a6a5"
+      ],
+      "expected_fen": "r1b1kb1r/2qppppp/2n4n/pp2B3/1PP3PP/N2p3R/P3PP2/R2QKBN1 w Qkq - 0 11",
+      "phase": "train",
+      "index": 0
+    },
+    {
+      "seed": 2026105401,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "h2h3",
+        "h7h6",
+        "a2a4",
+        "g8f6",
+        "g2g3",
+        "g7g5",
+        "b1a3",
+        "c7c6",
+        "a1a2",
+        "d8c7",
+        "e2e4",
+        "f6d5",
+        "b2b3",
+        "c7b6",
+        "a3c4",
+        "h8g8",
+        "d1g4",
+        "d5b4",
+        "c4a5",
+        "b4d5"
+      ],
+      "expected_fen": "rnb1kbr1/pp1ppp2/1qp4p/N2n2p1/P3P1Q1/1P4PP/R1PP1P2/2B1KBNR w Kq - 7 11",
+      "phase": "train",
+      "index": 1
+    }
+  ],
+  "profiles": {
+    "semantic": {
+      "K": 0,
+      "P": 208,
+      "N": 1138,
+      "B": 1486,
+      "R": 2181,
+      "Q": 3667
+    },
+    "unit": {
+      "P": 208,
+      "N": 208,
+      "B": 208,
+      "R": 208,
+      "Q": 208,
+      "K": 0
+    }
+  },
+  "cells": [
+    {
+      "root": 0,
+      "opponent": "unit",
+      "color": true
+    },
+    {
+      "root": 0,
+      "opponent": "unit",
+      "color": false
+    },
+    {
+      "root": 1,
+      "opponent": "unit",
+      "color": true
+    },
+    {
+      "root": 1,
+      "opponent": "unit",
+      "color": false
+    }
+  ],
+  "cap": 48,
+  "depth": 3,
+  "repetition_limit": 5,
+  "binary_sha256": "477d2117a5c5a74639f917c3ca58830593240e1905e5db594ba3a4d9877476fe",
+  "source_commit": "f1ea1d3870302777de6b56ae4cd62a17d7bf7bb0",
+  "whole_fuse_seconds": 240,
+  "scope": "Fouractualsame-input matchedgames versusqualified289cells, allnon-timefields mustmatch. Onephysicalsearchpermove; twoIOformats sameactualrecord, alternatingIOorder: constant-codec wholeprefix versus sparse-codec appendperquery/fsync. Legacyreplay bounded4gamesonly; nocausalold297wall speedup/machineexclusiveclaim. Allfields/typedzeros retained, no product/default/UI oroldresultwrites."
+}

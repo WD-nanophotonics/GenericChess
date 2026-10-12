@@ -1,0 +1,113 @@
+{
+  "complete": true,
+  "actual_games": 32,
+  "actual_queries": 1235,
+  "outcomes": {
+    "win": 17,
+    "loss": 0,
+    "draw": 0,
+    "unknown": 15
+  },
+  "finite_net": "17/32",
+  "worst_unknown_net": "1/16",
+  "opponents": [
+    {
+      "opponent": "unit",
+      "games": 8,
+      "outcomes": {
+        "win": 4,
+        "loss": 0,
+        "draw": 0,
+        "unknown": 4
+      },
+      "finite_net": "1/2",
+      "worst_unknown_net": "0"
+    },
+    {
+      "opponent": "s703-base",
+      "games": 8,
+      "outcomes": {
+        "win": 7,
+        "loss": 0,
+        "draw": 0,
+        "unknown": 1
+      },
+      "finite_net": "7/8",
+      "worst_unknown_net": "3/4"
+    },
+    {
+      "opponent": "s704-base",
+      "games": 8,
+      "outcomes": {
+        "win": 3,
+        "loss": 0,
+        "draw": 0,
+        "unknown": 5
+      },
+      "finite_net": "3/8",
+      "worst_unknown_net": "-1/4"
+    },
+    {
+      "opponent": "s705-base",
+      "games": 8,
+      "outcomes": {
+        "win": 3,
+        "loss": 0,
+        "draw": 0,
+        "unknown": 5
+      },
+      "finite_net": "3/8",
+      "worst_unknown_net": "-1/4"
+    }
+  ],
+  "roots": [
+    {
+      "root": 0,
+      "outcomes": {
+        "win": 7,
+        "loss": 0,
+        "draw": 0,
+        "unknown": 1
+      },
+      "finite_net": "7/8"
+    },
+    {
+      "root": 1,
+      "outcomes": {
+        "win": 3,
+        "loss": 0,
+        "draw": 0,
+        "unknown": 5
+      },
+      "finite_net": "3/8"
+    },
+    {
+      "root": 2,
+      "outcomes": {
+        "win": 3,
+        "loss": 0,
+        "draw": 0,
+        "unknown": 5
+      },
+      "finite_net": "3/8"
+    },
+    {
+      "root": 3,
+      "outcomes": {
+        "win": 4,
+        "loss": 0,
+        "draw": 0,
+        "unknown": 4
+      },
+      "finite_net": "1/2"
+    }
+  ],
+  "Native_node_visits": 4508095,
+  "Native_reported_seconds": 80.4817983,
+  "actual_caller_seconds": 92.70499999821186,
+  "batch_seconds": 103.60900000017136,
+  "everyD3_complete": true,
+  "noFallback": true,
+  "source_SHA256": "b190a4150f67a12d033f0cd7606ee494be756a83387d46549ba2430490677871",
+  "scope": "ExactD3optionalRootTrueTT1/explicitrepetition5/cold eachquery; actualcompletefixeddepthmaterial reference, notmaturefixednodeequalwork. Fouroldroots3fixedrandomopponents notindependentpopulation. Positivefinitegoal countsunknown0; worstunknown bound isfinitecensoringbound notconfidence. FIDEexternaldraws and searchinsufficient/no-progress differences remain explicit."
+}

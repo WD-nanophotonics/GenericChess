@@ -1,0 +1,124 @@
+{
+  "task_id": "291",
+  "complete": true,
+  "selection": "First3 nonterminalactualBlackthirdpromotions lexicalstored258traversal; full originalsource preserved, no humanlabel/goal/outcome basedselection",
+  "source_sha256": "1dd66b2de7ed8398a6aa98eecbfef839c21a320d3fb9fc300db2cbb5aee5b6ac",
+  "root": {
+    "id": "capture-3",
+    "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "history": [
+      "b2b4",
+      "b7b5",
+      "d2d3",
+      "c7c6",
+      "h2h3",
+      "d8c7",
+      "c1b2",
+      "g8h6",
+      "h3h4",
+      "c6c5",
+      "b2e5",
+      "b8c6",
+      "b1a3",
+      "c5c4",
+      "g2g4",
+      "c4d3",
+      "h1h3",
+      "a7a6",
+      "c2c4",
+      "a6a5",
+      "a1c1"
+    ],
+    "fen": "r1b1kb1r/2qppppp/2n4n/pp2B3/1PP3PP/N2p3R/P3PP2/2RQKBN1 b kq - 1 11",
+    "captures": [
+      {
+        "move": "a5b4",
+        "actor": "P",
+        "victim": "P"
+      },
+      {
+        "move": "b5c4",
+        "actor": "P",
+        "victim": "P"
+      },
+      {
+        "move": "c6b4",
+        "actor": "N",
+        "victim": "P"
+      },
+      {
+        "move": "c6e5",
+        "actor": "N",
+        "victim": "B"
+      },
+      {
+        "move": "c7e5",
+        "actor": "Q",
+        "victim": "B"
+      },
+      {
+        "move": "d3e2",
+        "actor": "P",
+        "victim": "P"
+      },
+      {
+        "move": "h6g4",
+        "actor": "N",
+        "victim": "P"
+      }
+    ],
+    "source_game": "train-s703-base-random-o0-c0",
+    "phase": "development"
+  },
+  "selected": [
+    {
+      "first": "d3e2",
+      "reply": "a3b1",
+      "third": "e2d1b",
+      "leaf": {
+        "vector": [
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "goal": 3,
+        "fen": "r1b1kb1r/2qppppp/2n4n/pp2B3/1PP3PP/7R/P4P2/1NRbKBN1 w kq - 0 13"
+      }
+    },
+    {
+      "first": "d3e2",
+      "reply": "a3b1",
+      "third": "e2d1n",
+      "leaf": {
+        "vector": [
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "goal": 3,
+        "fen": "r1b1kb1r/2qppppp/2n4n/pp2B3/1PP3PP/7R/P4P2/1NRnKBN1 w kq - 0 13"
+      }
+    },
+    {
+      "first": "d3e2",
+      "reply": "a3b1",
+      "third": "e2d1q",
+      "leaf": {
+        "vector": [
+          1,
+          0,
+          0,
+          0,
+          2
+        ],
+        "goal": 3,
+        "fen": "r1b1kb1r/2qppppp/2n4n/pp2B3/1PP3PP/7R/P4P2/1NRqKBN1 w kq - 0 13"
+      }
+    }
+  ],
+  "next": "Freeze eachbranchparent beforepromotion, all4promotionoptions andoriginal5priceprofiles; inspectnextmate/defense atboundedsamefullhistory. No longgames."
+}

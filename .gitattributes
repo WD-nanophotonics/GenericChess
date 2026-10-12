@@ -228,3 +228,34 @@ results/dev_aux/restore_segment21.py -text whitespace=cr-at-eol
 # Preserve exact archived scientific-source bytes, including their original blank EOF.
 results/dev_aux/task262/audit.py -text whitespace=cr-at-eol,-blank-at-eof
 results/dev_aux/task280/prove.py -text whitespace=cr-at-eol,-blank-at-eof
+
+# DEV_AUX segment22 frozen science bytes.
+results/dev_aux/task287/** -text whitespace=cr-at-eol
+results/dev_aux/task288/** -text whitespace=cr-at-eol
+results/dev_aux/task289/** -text whitespace=cr-at-eol
+results/dev_aux/task290/** -text whitespace=cr-at-eol
+results/dev_aux/task291/** -text whitespace=cr-at-eol
+results/dev_aux/task292/** -text whitespace=cr-at-eol
+results/dev_aux/task293/** -text whitespace=cr-at-eol
+results/dev_aux/task294/** -text whitespace=cr-at-eol
+results/dev_aux/task295/** -text whitespace=cr-at-eol
+results/dev_aux/task296/** -text whitespace=cr-at-eol
+results/dev_aux/task297/** -text whitespace=cr-at-eol
+results/dev_aux/task298/** -text whitespace=cr-at-eol
+results/dev_aux/task299/** -text whitespace=cr-at-eol
+results/dev_aux/task300/** -text whitespace=cr-at-eol
+results/dev_aux/task301/** -text whitespace=cr-at-eol
+results/dev_aux/task302/** -text whitespace=cr-at-eol
+results/dev_aux/task303/** -text whitespace=cr-at-eol
+results/dev_aux/task304/** -text whitespace=cr-at-eol
+results/dev_aux/task305/** -text whitespace=cr-at-eol
+results/dev_aux/task306/** -text whitespace=cr-at-eol
+results/dev_aux/task307/** -text whitespace=cr-at-eol
+results/dev_aux/task308/** -text whitespace=cr-at-eol
+results/dev_aux/task309/** -text whitespace=cr-at-eol
+results/dev_aux/task310/** -text whitespace=cr-at-eol
+results/dev_aux/task311/** -text whitespace=cr-at-eol
+results/dev_aux/task312/** -text whitespace=cr-at-eol
+results/dev_aux/*20261012_22* -text whitespace=cr-at-eol
+results/dev_aux/package_segment22.py -text whitespace=cr-at-eol
+results/dev_aux/restore_segment22.py -text whitespace=cr-at-eol

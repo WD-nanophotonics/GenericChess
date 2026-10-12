@@ -659,3 +659,55 @@ sidemission/noUIownership retained. RawSlack/accounts/binaries remainprivate.
 Source/probe/audit mistakes diagnosed/repaired withfrozenfailures, no severe block,
 clockreset, emptyheartbeat orapprovalgate. Next286nativebaselinepilot/promotion
 signal/H-rootendpoint sensitivity; scienceOPEN, coverage/goal bias unresolved.
+
+## DEV_AUX segment22 —2026-10-12 (sidemission)
+
+AUX uses fixed public primary f1ea1d3870302777de6b56ae4cd62a17d7bf7bb0 and its
+own477d2117 DLL, without primary checkout/state/default/UI writes. Complete D3
+repetition5 baseline64oldroot games37W/0L/27unknown independently qualified;
+only4oldroots, no IID/population/equal-work mature-backend claim. Onegeneration
+selection is root/speed fragile; frozen8-ply OLS yields negativeP/N/R, with
+negative development/whole-root transfer. No humanprice recovery or clipping.
+204actualfinite-price perturbations+16qualified reusedbases expose12unitPV
+branch-gradient mismatches despite correct scalar/PV values; exact dual and
+scalar integer checks agree. One actual promotion parent has randommateR1/9,
+Q0 and all5tables same goals; its legal-opponent distribution changes, so this
+is scoped target bias/flatness, not generalpiece ordering. Full knowncounts:
+72completedgames/2943persistednewgo; failedD4partialquerycount unknown retained.
+Recording sparseappend restores all139matchedquery fields/hashes and reduces
+pairedwrite253.64MB->.931MB/IO11.681->.892s; no heap/exclusive-machine speed claim.
+Checker terminal mismatch, failed3sD4 and encoded-row collision are diagnosed,
+saved and corrected;32savedrecordingqueries were not rerun/clock notreset.
+
+PRIMARY's new1791808471 thread independently reports cachecapacity4096/8192
+and cacheon/off cost checks, idle allocation handling, and a restricteddiscarded
+ordering-child history view. Dot1791809316 identifies skipped failure/capacity
+semantics as a specific concern. These are read-only coordination context,
+not AUX executions or a new AUX task. Primary remains its branch publisher;
+AUX's material/interface work is independent. No CPU quiet window requested.
+
+AUX's fresh consultationGC-SLACK-20261012-220259-dbbb0982/root1791810237 received
+Dot1791810847. Adopt its causal-versus-predictive distinction, training-only
+root/colour demeaning and whole-root/family diagnostics;305 actually executes
+them. Within-group rank stays5 with unstable negative coefficients; mean-fold
+baselines remain, nobestfold selected. Samecount/fullline differenttarget does
+notrefute conditionalmeans or an averagedfixedvector. Dotread fixedsegment21;
+it did not execute this segment's privatequeries/fit. Rawaccount/Slack excluded.
+Attributions of otheruserconversation do notexpand authorization ortransferUI.
+
+Source failures/evidence287..312/reportSEGMENT_20261012_22.md and exactmanifest
+are published on sidemission; sessionending/time is separately receipted.
+Next312:finite mature score response, optimalPVfeaturetie support, newdistinct
+promotionparents beforegoals. No training/newgames running; scienceOPEN,
+normalheartbeatACTIVE, no user-required seriousblocker or schedulechange.
+
+Final22 coverage addendum: primary1791811075 now reports publication7af590664e9d1f55fa525f2ca9dc7a5538e84c6d,
+required44production/publish checks and default-unchanged disabled-cache allocation fix.
+Its ordering view/failure guard remain private; cost savings did not add a completed
+search layer. AUX has not read/rerun that new source/test matrix and retains its
+fixedf1ea DLL. Dot1791811923 asks PRIMARY for an existing matched backend speed
+range: this attributed request does not assign AUX new work. Our no-TT scalar
+oracles/vectorized frozen-tree audits are diagnostic computations, not TT/work-
+matched python-chess/cshogi ABP speed benchmarks. Do not recycle their timing
+as the requested universal range. No new channel roots beyond own220259 request;
+ownDotreply unchanged. Branch/state/UI boundaries and regular work remain.
