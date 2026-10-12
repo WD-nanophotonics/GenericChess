@@ -1,0 +1,78 @@
+{
+  "id": "6ad232bd-26b6-4dbb-9b34-7116b9cc2f53",
+  "started_at": "2026-10-12T11:18:00.510081+00:00",
+  "ended_at": "2026-10-12T12:27:34.631980+00:00",
+  "elapsed_minutes": 69.569,
+  "research_stage_count": 5,
+  "reason": "safe_checkpoint",
+  "duration_gate_passed": true,
+  "ending_evidence": "results/dev_aux/SEGMENT_20261012_21.md",
+  "scientific_complete": false,
+  "science_commit": "3dbb4510addd21a3623f727d606ac8109200d0a2",
+  "science_remote_sha_verified": "3dbb4510addd21a3623f727d606ac8109200d0a2",
+  "checkpoints": [
+    {
+      "at": "2026-10-12T11:21:55.451022+00:00",
+      "kind": "research",
+      "question": "Do frozen realcapture roots provide finitepricediscriminating signals?",
+      "observation": "258 complete235698leaves/8.843s;625pricegrid changesD2/D3min quantities butallfourtrainselectedunitwith36to625optima; unitquantitycircularity/terminalscope needsdiagnosis.",
+      "evidence": "results/dev_aux/task258/result.json",
+      "next_action": "Independentaudit fulltree andactualNative/Fairy samehistory/control; reviewobjectivepriceidentifiability beforetraining."
+    },
+    {
+      "at": "2026-10-12T11:32:14.762344+00:00",
+      "kind": "research",
+      "question": "Does actualmaturetransport supportsemantic/randomprice controls andhighernodecurve cheaply?",
+      "observation": "265all108UCIqueries completeafterdiagnosedoldP208/3328restrictions; exact5leafreadbacks andMG/EGack retained; 25996Nativecompleteand262allscore/argmaxverified with61tiechoices; nohumanpricelearningyet.",
+      "evidence": "results/dev_aux/task266/audit.json",
+      "next_action": "Frozenboundedmatchedsemantic/randomsearch baseline actualterminalgoal plusquantityseparate; objectivecircularity controls beforemutation."
+    },
+    {
+      "at": "2026-10-12T11:46:55.496431+00:00",
+      "kind": "research",
+      "question": "Does cheapactualmategoal optimizeprices withrealtransfer?",
+      "observation": "267128games75.140s/5353go independentlyaudited:1k33W1L30unknown,16k33W0L31unknown; fourroots only.269172games77.985s:semantic B-.1 speedgain train butdev3W->1W;704Q+.1trainloss->win butdevunknown->loss;2basesflat. Human descriptivecontractionnottransfer.",
+      "evidence": "results/dev_aux/task270/audit.json",
+      "next_action": "ReuseH16/32/48/rootdeletion andsmallcommonprice scale testwithcompleteq0control, noaddedgeneration/seedgrowth."
+    },
+    {
+      "at": "2026-10-12T12:09:54.204112+00:00",
+      "kind": "research",
+      "question": "Are recordcost repair andfixednewpublicq0API independentlyfeasible forfuturepricechecks?",
+      "observation": "27624games8.235s/96go alltriplesequal;277independentdecoder+96scores verified;recordbytes31.4MB->.231MB/IO.375->.078s. Own279Clangpinnedf1eaDLLbuilt;28116D3RootTrue/TT1actualqueries2.453s;282allscore/argmax/literalPVleaf verified. Timingplanesunaligned, notisolatedgain.",
+      "evidence": "results/dev_aux/task282/audit.json",
+      "next_action": "Repairselectionreproducibility andreportallbaseline/negativelearning/scalelimits; reviewexactarchive/outgoingprivacy andnextfrozenexperimenttasks."
+    },
+    {
+      "at": "2026-10-12T12:24:22.937134+00:00",
+      "kind": "research",
+      "question": "WithinonefixedDLL doRootMode/TT costs preserveexactpricehistory/PV?",
+      "observation": "28364D3queries41.969s;284all64score/argmax/literalPVleafs pass. RootFalseTT0 17.783s/968844visits vsRootTrueTT0 2.501s/126613, TT1RootTrue1.936s/96335; localmodefactoronly, notisolatedold/newrepair. Noproductadoption.",
+      "evidence": "results/dev_aux/task284/audit.json",
+      "next_action": "Validatearchive87members/allnewsyntax/JSON/outgoingprivacy; stageandpublishreviewedownscience andrecordsafecheckpoint."
+    },
+    {
+      "at": "2026-10-12T12:26:01.227313+00:00",
+      "kind": "documentation",
+      "question": "Are full scientificdelivery andprivacy/byte checksready?",
+      "observation": "87archive members reread exact,35Python sourcescompile/51JSONparse; allrelevantgame/oracle/PV audits completed. No product files/binaries changed. Only2archivedsourceEOFstyle exceptions, preserveexactbytes; stageddiffcheckpasses andsmallblobs matchmanifest.",
+      "evidence": "results/dev_aux/SEGMENT_20261012_21.md",
+      "next_action": "Commit andpushonlyorigin/sidemission; verifyfullremoteSHA thenactualsessionfinish andsanitizedreceipt."
+    }
+  ],
+  "actual_games": 356,
+  "actual_search_calls": 14501,
+  "successful_batch_seconds": 346.015,
+  "quality_review": {
+    "complete": true,
+    "archive_members": 87,
+    "python_sources_compiled": 35,
+    "JSON_files_parsed": 51,
+    "private_signature_scan_clear": true,
+    "installed_baseline_unchanged": "2f97cfb8816bc963163207095bf40ac990169284cd0cfb2e7b545f0a6bf07bf1",
+    "tracked_product_changes": [],
+    "scope": "ExactarchiveSHA/member reread plusobservedrelevantscientificaudits alreadycompleted; no mirrorpytest suite orphantomrepeat. RawSlack/account/privateexports/binaries/compilerlogs excluded. Originalfailure sourcescompiledbutnotrerun.",
+    "archive_exact_byte_whitespace_scope": "Two newsciencefiles retain original extraEOFblank inimmutablearchive; scopedwhitespace=-blank-at-eof preservesexactbytes; productstyle unchanged. Initialstage diff-check failed onlythese2 EOFblanks; no functionaldata edited."
+  },
+  "scope": "Sanitizedactualsessionreceipt; thread/account/rawSlack/privateinputs excluded; normalresearch69.569min, no exception orclockreset, nojobactive. Source/mate/backend/scales/samplinglimits inreport; scienceOPEN."
+}
