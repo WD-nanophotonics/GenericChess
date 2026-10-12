@@ -5568,8 +5568,11 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
             child_beta = -alpha;
         }
         int branch = gc_semantic_iterative_negamax(
-            ctx, ply + 1, depth - 1, child_alpha, child_beta, child_pv,
-            pv_replay);
+            ctx, ply + 1, depth - 1, child_alpha, child_beta,
+            /* Scalar probes may reuse TT bounds; only the selected child
+             * is recursively reconstructed as the canonical continuation. */
+            (ctx->root_window_pruning && pv_replay) ? 0 : child_pv,
+            (ctx->root_window_pruning && pv_replay) ? 0 : pv_replay);
         if (ctx->control != 0) break;
         int score = -branch;
         /* A later narrowed root child can return only an UPPER bound equal
@@ -5615,8 +5618,8 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
     }
     gc_semantic_action_buffer_free(&actions);
     if (ctx->control != 0) return 0;
-    if ((ctx->tt != NULL || ctx->root_window_pruning) && !pv_replay && pv_node && found &&
-        (!ctx->root_window_pruning || ply == 0) &&
+    if ((ctx->tt != NULL || ctx->root_window_pruning) && (!pv_replay || ctx->root_window_pruning) && pv_node && found &&
+        (!ctx->root_window_pruning || ply == 0 || pv_replay) &&
         !gc_semantic_is_declaration_action(best_action)) {
         /* Re-search the selected branch with a full PV window so TT ordering
          * cannot change the deterministic principal line. */
@@ -5645,7 +5648,10 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
          * materialize the canonical PV for the selected action; exact-root
          * mode defers intermediate replay to this complete root pass. The main
          * alpha-beta result remains authoritative. */
-        (void)branch;
+        if (ctx->root_window_pruning && best != -branch) {
+            ctx->control = 4;
+            return 0;
+        }
         ctx->pv_table[(size_t)ply * ctx->pv_stride] = best_action;
         uint16_t child_len = ctx->pv_length[ply + 1];
         ctx->pv_length[ply] = (uint16_t)(1 + child_len);

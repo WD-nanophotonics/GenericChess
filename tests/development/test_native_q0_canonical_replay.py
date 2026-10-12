@@ -86,3 +86,38 @@ def test_exact_score_refinement_preserves_canonical_pv_within_node_budget():
         assert action in legal_actions(state, compiled)
         state = apply_action(state, action, compiled)
     assert session.state is before and session._search_witnesses is witnesses
+
+
+def test_selected_branch_reconstruction_keeps_full_canonical_pv_under_budget():
+    # Observed naive replay TT shortened this exact PV from four to two actions.
+    # The original complete replay required35219 visits; selected-branch
+    # reconstruction requires14699 with the same score and complete line.
+    from generic_chess.learning.material import LearnableMaterialCheckpoint
+    from generic_chess.ai.evaluation.profile import build_ruleset_profile
+    from generic_chess.ai.evaluation.config import EvaluationConfig
+    from scripts.research_record import record_value
+    directory = Path(__file__).parent / 'data'
+    data = json.loads((directory / 'native_q0_aux_pv_1091.json').read_text(encoding='utf-8'))
+    expected = json.loads((directory / 'native_q0_trace_rebuild_1091.json').read_text(encoding='utf-8'))
+    compiled = compile_ruleset_for_execution(ruleset_from_dict(json.loads(data['rules'])))
+    session = GameSession(compiled)
+    for event in data['state']['history'][1:]:
+        session.submit(action_from_dict(json.loads(event['action_signature'])))
+    before, witnesses = session.state, session._search_witnesses
+    provider = NativeSemanticLegalityProvider.try_create(compiled, strict=True)
+    checkpoint = LearnableMaterialCheckpoint.from_profile(
+        compiled, build_ruleset_profile(compiled, EvaluationConfig()), dynamic_weights={})
+    engine = SemanticSearchEngine(compiled, provider.native_rules,
+        board_values=data['board'], hand_values=data['hand'], dynamic_values=(0,0,0),
+        evaluator_scale=1, tt_megabytes=1, ordering_checkpoint=checkpoint,
+        ordering_min_depth=2)
+    result = engine.search(session, SearchLimits(max_depth=4,
+        max_nodes=expected['node_budget'], max_time_seconds=16,
+        quiescence_max_depth=0), root_window_pruning=True)
+    assert result.completed_depth == 4 and result.score == expected['score']
+    assert record_value(result.principal_variation) == expected['expected_pv']
+    state = before
+    for action in result.principal_variation:
+        assert action in legal_actions(state, compiled)
+        state = apply_action(state, action, compiled)
+    assert session.state is before and session._search_witnesses is witnesses

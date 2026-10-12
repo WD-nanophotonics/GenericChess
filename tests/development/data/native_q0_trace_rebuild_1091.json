@@ -1,0 +1,63 @@
+{
+  "score": -2514,
+  "expected_pv": [
+    {
+      "pattern_id": "legacy_022",
+      "geometry_id": "g19",
+      "actor_type_id": "K",
+      "from_square": {
+        "file": 3,
+        "rank": 0
+      },
+      "to_square": {
+        "file": 2,
+        "rank": 0
+      },
+      "promotion_target_id": null
+    },
+    {
+      "pattern_id": "legacy_039",
+      "geometry_id": "g26",
+      "actor_type_id": "P",
+      "from_square": {
+        "file": 2,
+        "rank": 7
+      },
+      "to_square": {
+        "file": 5,
+        "rank": 1
+      },
+      "promotion_target_id": null
+    },
+    {
+      "pattern_id": "legacy_039",
+      "geometry_id": "g26",
+      "actor_type_id": "P",
+      "from_square": {
+        "file": 4,
+        "rank": 2
+      },
+      "to_square": {
+        "file": 2,
+        "rank": 6
+      },
+      "promotion_target_id": null
+    },
+    {
+      "pattern_id": "legacy_043",
+      "geometry_id": "g28",
+      "actor_type_id": "P",
+      "from_square": {
+        "file": 5,
+        "rank": 1
+      },
+      "to_square": {
+        "file": 4,
+        "rank": 0
+      },
+      "promotion_target_id": "X"
+    }
+  ],
+  "source": "c5396cbe gen1091turn0 D4 samepriorfixture rules/board/hand/state; frozenfullPV acrossbotharms/orders",
+  "node_budget": 16000
+}

@@ -71,6 +71,16 @@ Shogi same-lengthchange) despite root/final scalar agreement; reject that contro
 Next preserve actual decision/output semantics when reducing canonical cost;
 newgen delivery also tests existing immediate-terminal caller shortcuts.
 No global/default/strength claim or new NativePVS kernel follows.
+Q0_TRACE_AND_TERMINAL_POLICY.md now separates explicit selected-branch canonical
+reconstruction from actual one-ply terminal caller proof. Twelve fixedD4 TT1 and
+twelveTT0 fulltuples agree,56finite generated queries agree, phaseabort/reusedTT
+checks pass; equal64s givesgen0D5→D6, gen2D5unchanged, ShogiD4→D5. A new16000-node
+regression fails old replay atD3 and naiveTT at truncatedPV2, passes reconstructed
+D4/fullPV4. The actual terminal shortcut remains a separate private opt-in caller
+policy; corrected cancellation and real GameSession submissions preserve actual
+D1/proof cause and rules-based outcomes, notfixeddepth/training labels. NoUI or
+q4/default change. Next verify final stage delivery and choose the remaining
+measured canonical/caller bottleneck, not unchangednaiveTT or a newPVS kernel.
 AUX498291c0 proxy-prediction/deployment report is read only: small models learn
 quantity signal, yet prediction gains do not establish win utility or universal
 human prices. Primary search and auxiliary learning remain separate lanes.

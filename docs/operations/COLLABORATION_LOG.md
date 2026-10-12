@@ -968,3 +968,39 @@ cells show no Native depth gain; six existing Core immediate-win choices are
 independently replayed to terminal winner. No artificial idle time or clock
 reset; all owned calculation processes finish before product DLL replacement.
 The next terminal-proof prototype is source-assessed but not executed.
+
+## 2026-10-12：canonical完整线重构与真实终局调用
+
+主段 UTC09:25:06.755593–10:32:45.996482，67.654分钟，11研究检查点；
+session finish接受safe_checkpoint，科学仍OPEN。566次科学查询、3次真实回归敏感性
+查询，39私有相关检查与40生产相关检查分别通过；publisher重复40项不算独立证据。
+本段证据：[Q0_TRACE_AND_TERMINAL_POLICY.md](../research/Q0_TRACE_AND_TERMINAL_POLICY.md)，
+109个归档成员逐SHA回读，完整源/规则/状态/正负结果和修正可查。
+
+PRIMARY_SANDBOX独立实现并验证选定分支递归canonical重构，修复缓存分数不能提供
+完整PV的问题。等64秒gen0 D5→D6、Shogi D4→D5，gen2仍D5；新16000节点回归旧
+完整重放D3失败、旧naiveTT PV2失败、新完整PV4通过。只采用existing optional
+exact-root q0重构，默认/UI不改；终局早返回及根单独canonical排序继续为私有策略。
+最小TTfreeCore将棋64秒只D4，不能冒称独立确认D5。后续阶段成本定位与根排序消融
+也实际完成，七根14个horizon成本5降/7升/2不变，混合结果不被单局面收益掩盖。
+
+DEV_AUX最新可读固定版本仍d7a5e7194c7f68f3afbdd6bee609c809477c39d0，fetch再次
+确认无新发布提交；这不证明辅助没有本地活动。沿用已读segment18与辅助条件bootstrap
+意见，不重复它的11392局，不接管/修改它的工作或唤醒它收例行回执。本段没有直接
+辅助任务往返，没有观察到越界写入或计算状态破坏；各自证据、checkout/branch边界
+保留。普通并发正常，不索取独占窗口。节省重复计算的收益是定性判断，不声称实测
+合作加速率；未出现需要双方处理的新依赖或技术分歧。
+
+Dot新AGENT_REQUEST根实际送达，新回复1791798325完整读取、原始记录保存后对账
+采纳：终局证明属于显式caller目标，必须记录D1/真实原因和实际落子终局，不能冒称
+requestedD12/训练标签。Dot独立读已发布c5396cbe输出代码，没有运行本段私有实验。
+28真实GameSession调用、35确定性Native取消、112 offset/TT/legacy边界和160前瞻
+调用落实这项异议。新根/角色标记按现行简单身份规则，发送和读回不等于Dot完成审核。
+发布后提供同提交报告及本记录的固定链接，不要求例行回执。
+
+实际错误及处理：初版私有proof漏掉证明期间到达的Native取消，修正前后force检查，
+旧性能数据保留不重标为修正版；计数构建字符串定位/PowerShell引用错误在搜索前修正；
+反序核验器按列表顺序误认两臂，失败后按明确arm重核并修复派生成本标签，原raw不动。
+这段没有待用户操作的系统阻塞，也没有把Smart App Control作为未核实的解释。
+下一段测根排序同资源调用曲线，并检查guarded终局策略与当前重构组合；不新增框架、
+身份挑战、审批队列或自动worker。
