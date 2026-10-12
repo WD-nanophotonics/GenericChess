@@ -874,3 +874,46 @@ JSON/aux还原、测试路径错误均立即定位修复，原结果/源码保�
 固定报告读取成功，实质协作来源与未复跑边界保留；Dot收到固定版本链接。
 
 最终session验收：2026-10-12T04:27:04.790337+00:00至2026-10-12T05:29:50.689411+00:00，62.765分钟，7个研究阶段，safe_checkpoint/duration_gate_passed=true，科学OPEN。三个后续任务已补齐；同根结果1791782987.587369实际投递并完整readback。最终新根读为空，无新增Dot意见被遗漏；来源答复保留当前adopt决定。
+
+## 2026-10-12: resource conditions, real regression correction and TT-negative test
+
+PRIMARY completes91.369minutes/9research checkpoints (UTC06:02:14.462289 to
+07:33:36.581089), safe_checkpoint accepted at the final completed probe. The
+60–90minute aim was exceeded1.369minutes at that safe boundary; no idle padding,
+extra Agent, clock reset or scientific-completion claim.164 new scientific
+queries plus three sensitivity-test queries;69 relevant checks pass. Search
+source/default/UI stay fixed. Two new explicit archives42/9members are verified;
+older156/278-query archives are not rewritten.
+
+PRIMARY alone compares fullhistory q0 resources, hints, existing ordering,
+72saved-turn calls, a separately predeclared twelve-call64s plane,24fixed-horizon
+controls and eight Dot-selected TT-priority calls. Min2's root-local gain has
+node-cap counterexamples; equal time reverses one selection but retains Shogi
+Core advantage. Actual TT priority conflicts occur, yet restoration worsens
+main work, so no production adoption. D4replay1075404 dominates; origin split is
+unknown and now the executable next choice. No strength or primitive-speed claim.
+
+A serious reporting/testing error was proactively corrected to user and Dot:
+old/new recorded PV literal leaves both-2514; independently valued old third
+branch permits opponent-best-4912. Original leaf-only test falsely passedold;
+actual corrected-third-action test failsold/passescurrent. Frozen raw evidence
+is retained. Own serializer, UTF8 edit and manually mistyped local Slack binding
+errors were diagnosed/fixed with original/before/after records, no search rerun,
+resend, cleared ledger or hidden SAC block. The receipt extraction sentence is
+added to the existing manual, without new identity gates.
+
+DEV_AUX fixed498291c0ca965123f9c38620509a10824dfc35c3 segment17 is readonly
+reviewed, not independently rerun. It reports9668shortgames, two2second ridge
+studies,224fresh deployments and proxy-goal/component/rootcluster diagnostics.
+All six prediction MSEs improve, yet all six original mate-weighted random-
+opponent returns decline; quantity gains do not establish win utility or stable
+human ratios. Primary does not duplicate its learning or import its engine.
+
+Coordination is actual shared-thread/fixed-report reading, no direct new task
+or routine acknowledgement to AUX. Dot's concrete response was saved before
+adoption and independently source-read, not remote execution. Separate branches,
+files and responsibilities hold; no unauthorized write conflict observed. Ordinary
+concurrent load is normal; three short primary regression queries overlapped
+one curve portion. No exclusive/noise-free benchmark or quantified collaboration
+speed saving. Source/results and this summary are delivered together with a
+fixed-revision link for Dot; raw Slack/account/private/state/binaries excluded.

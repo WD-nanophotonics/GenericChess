@@ -77,7 +77,9 @@ sending, account-wide zero usage or arbitrary delegation by dot.
 2. consult --begin-send REQUEST_ID commits SEND_UNCERTAIN before returning
    one Slack plugin send action. Send that exact payload to that channel once.
 3. Persist the receipt with slack-bind-sent --request-id REQUEST_ID
-   --channel-id C0C6L21UU20 --message-ts 'ROOT_TS'. Always quote the timestamp;
+   --channel-id C0C6L21UU20 --message-ts 'ROOT_TS'. Extract ROOT_TS from the
+   actual tool receipt's message_context.message_ts; never predict or manually
+   invent it. Always quote the timestamp;
    PowerShell numeric conversion can round away its microseconds. The adapter
    requires all six fractional digits. If send acknowledgement is lost,
    search/read the original channel root and reconcile exact original payload.

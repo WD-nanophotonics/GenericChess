@@ -26,34 +26,43 @@ roots, not claimed improved end-to-end or an independently reproduced user loss.
 
 ## Current measured question
 
-Q0_CONSUMER_AND_CANONICAL_REPLAY.md closes the saved-parent transfer: its local
-700→900 checking-drop gain does not alter complete public root900/R@a3; the
-complete affected king branch remains700 with a different opponent reply.
-Four8192-node whole-set scans remain incomplete, no capraise.
+Q0_RESOURCE_AND_ORDERING.md separates fixed-work, node-limited delivery and a
+new equal-time resource plane. Original278-query evidence remains frozen.
+The saved checking-drop local gain remains avoidable at its parent/root.
 
-Actual activeS4/generated1091 q0 consumers accept full states and match fixed
-Material values, but Native does not dominate CorePVS delivery. Unconditional
-full-child material ordering loses depth; constructor/history transport is a
-small measured cost in the six-turn assay. New Source diagnosis targets actual
-nonroot INF windows and repeated canonical replay, not a new search API.
+Sixteen paired before/current q0 calls retain1M caps: S4D7→D8 and1091 at64s
+D4→D5, while1091 at16s remainsD4. A cheap D3 root hint adds no ranking signal.
+Existing ordering_min_depth2/3 recovers1091D5 at16s, but72actual saved-turn
+calls show a min2 node-cap depth loss on1091turn2 and no Shogi depth benefit.
+All36reverse triplets agree; actual Core Native-legality fallbacks are zero.
+No uniform/default/UI adoption, playing-utility or primitive-speed claim.
 
-A real generated1091D4 PV difference was independently diagnosed: old internal
-continuation-4912 versus corrected-2514 under identical fullhistory/residualdepth
-on Core and Native. Existing exact-root opt-in now narrows normal nonroot AB,
-sorts full canonical replay by its encoded tie order and defers intermediate
-replay to the complete selected-root pass, retaining all root-bound refinements,
-TT/horizon/history and complete-iteration commits. Defaults/UI remain frozen.
-Private fixed1091D4 cost4.26→1.37s/183544→60133nodes; S4same1M capD7→D8, but
-1091 at16s remainsD4. Native stillq0-only; this does not replace fullgenerated/q4.
-Dot's actual internal UPPER100/exact0 risk is triggered and checked under
-isolated cold/warm TT, not assumed fixed by retaining replay. Production Native
-regression binds the observed PV defect. Detailed failures/limits stay in the
-purpose-specific record; prior source/results remain immutable. ScienceOPEN.
+A separately predeclared twelve-call64s plane removes node limits forALLarms,
+keeping old curves immutable/exposed.1091turn2 min2 nowD5 versus lexicalD4,
+reversing its1M selection; bothNative Shogi0 arms stillD4 versusCorePVS D5.
+Resource definition matters but does not explain the entire remaining gap.
+Twenty-four original1091 fixedD4/D5 comparisons agree in fullvalue/action/PV
+across lexical/min2/min3, TT0/cold1 and reverse orders; min2 reduces actualD5
+visits686484→318082 withoutTT. Complete-domain/q4 target remains.
 
-Next choose one defined remaining q0 normal-search/canonical-pass bottleneck,
-with existing CoreAB/PVS matching leaf and declared resources. Defer new Cq4/API
-until an explicit consumer requirement and measured cost justify it. AUX retains
-its independent learning lane; new b50681c8 report is read, not duplicated.
+Correction: both recorded old/new1091D4 PV literal leaves were-2514, not old
+-4912. Independent opponent-best residual queries put oldthirdAa2-d4 at-4912
+versusPe3-c7 at-2514. The prior leaf-only regression falsely passedoldbinary;
+correctedthird-action test failsold/passescurrent. Search repair stands;
+its earlier literal-value/testcoverage assertions were wrong. Originalraw
+records remain unchanged; user/Dot informed. See the purpose report.
+
+Actual Core runtime also includes ordered fullhistory context, so no unsupported
+Native-only history-key explanation or new key framework. Next choose one
+existing ordering scope or same-cost TT-first priority ablation; do not mistake
+its result for isolating PVS, cache size or whole-domain utility. Dot1791787532.299919 is saved/reconciled/adopted: singlefailedturn2 TT-first
+comparison, sameper-node scorer but aggregatecost measured. Eight actualcold
+D3/D4 calls triggerconflicts, preservefulltriplets andworsenwork; rejectadoption.
+D4replay1075404 versusmain9629 dominates. Next split root-bound-refinement
+replay from finalselected-root replay beforea normalPVS kernel; origins unmeasured.
+AUX498291c0 proxy-prediction/deployment report is read only: small models learn
+quantity signal, yet prediction gains do not establish win utility or universal
+human prices. Primary search and auxiliary learning remain separate lanes.
 
 ## Retained long-term objectives and evidence discipline
 
@@ -88,6 +97,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|q0 resource conditions, existing ordering, real trace/test correction|Q0_RESOURCE_AND_ORDERING.md; data/q0_resource_delivery_20261012.json|
 |Actual q0 scope, saved-parent root transfer, canonical replay and played callers|Q0_CONSUMER_AND_CANONICAL_REPLAY.md; data/q0_consumer_20261012.json|
 |Actual public tuple, existing q ordering, decision utility and recovered mature entry|PUBLIC_CORE_Q_DELIVERY.md; data/public_core_q_20261012.json|
 |Cancellation, q transport and existing PVS delivery|CANCELLATION_AND_Q_SCHEDULING.md; data/cancel_q_scheduling_20261012.json|

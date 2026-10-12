@@ -49,7 +49,10 @@ Sorting/deferred replay changes four fixed1091D4 PV pairs while preserving all
 48 fixed-pair root values/actions. These differences were diagnosed before
 adoption. Independent Core and TT-free Native D1 residual queries from the exact
 common two-move history value the old third action at-4912 and the new action at
--2514; literal leaf values agree. This is an inferior old internal continuation,
+-2514. Correction2026-10-12: both originally recorded PV literal leaves are
+-2514; the -4912 is the independently searched opponent-best response to the
+old third action. The prior literal-leaf assertion was wrong. This is an
+inferior old internal continuation,
 not a harmless tie. Root value/action had remained correct; historical Native
 results already distinguish estimates from literal PV-leaf certification.
 

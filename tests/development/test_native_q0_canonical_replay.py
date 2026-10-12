@@ -5,7 +5,8 @@ import pytest
 from generic_chess import compile_ruleset_for_execution
 from generic_chess.rules.schema import ruleset_from_dict
 from generic_chess.session.session import GameSession
-from generic_chess.core.actions import action_from_dict
+from generic_chess.core.actions import action_from_dict, SemanticBoardMove
+from generic_chess.core.coordinates import Square
 from generic_chess.core.movegen import legal_actions
 from generic_chess.core.transition import apply_action
 from generic_chess.ai.alphabeta.native_legality import NativeSemanticLegalityProvider
@@ -34,9 +35,14 @@ def test_exact_root_canonical_replay_does_not_keep_inferior_auxiliary_pv():
     for action in result.principal_variation:
         assert action in legal_actions(state, compiled)
         state = apply_action(state, action, compiled)
-    # In the old exact-root replay the same reported -2514 accompanied a
-    # legal line whose local residual value/leaf was -4912. Both independent
-    # Core and TT-free Native branch queries established this distinction.
+    # Both recorded lines finish at material -2514. However, the old A a2-d4
+    # third move permits an independently verified best reply worth -4912,
+    # while P e3-c7 keeps the residual minimax value -2514. A leaf-only check
+    # therefore cannot detect the observed inferior continuation.
+    assert result.principal_variation[2] == SemanticBoardMove(
+        pattern_id="legacy_039", geometry_id="g26", actor_type_id="P",
+        from_square=Square(4, 2), to_square=Square(2, 6),
+    )
     values = [0,0]
     for piece in state.position.board:
         if piece:
