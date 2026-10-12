@@ -1,0 +1,47 @@
+{
+  "task_id": "131",
+  "question": "Can the full-domain coordinate control be completed with an explicit terminal-opening contract, avoiding repeated valid-prefix work?",
+  "old_task129": "INTERRUPTED816actualtraininggames,0heldout; preserved and never relabeled completed",
+  "source_controller_sha256": "5d6f77c2b20017cd329d150dbff82d4d585fe42f76578be4689e56d43b0202ea",
+  "source_driver_sha256": "aeb2a03b244c78061abfad65081a84e7b86933291768626b2ce68ff7c933978b",
+  "new_premise": "Fixed24randomopening may itself become terminal. Preflight all200declaredseedroots without resampling; terminal input is EXCLUDED_INPUT, no engine game/reward, zero-information slot contribution only. Same exclusions for all candidates and bothcolors, no userdecision needed.",
+  "terminal_inputs": [
+    {
+      "seed": "87136",
+      "moves": [
+        "b1c3",
+        "g7g6",
+        "d2d4",
+        "b8a6",
+        "h2h4",
+        "a6b8",
+        "h1h3",
+        "c7c6",
+        "a1b1",
+        "g6g5",
+        "d4d5",
+        "b7b6",
+        "e2e3",
+        "f7f5",
+        "d1h5"
+      ],
+      "terminal": true,
+      "fen": "rnbqkbnr/p2pp2p/1pp5/3P1ppQ/7P/2N1P2R/PPP2PP1/1RB1KBN1 b kq - 1 8",
+      "termination": "CHECKMATE"
+    }
+  ],
+  "cached_actual_games": 816,
+  "new_actual_games_maximum": 2736,
+  "planned_trial_slots": 3552,
+  "planned_train_slots": 3456,
+  "planned_heldout_slots": 96,
+  "selection": "SameTask129schedule and reward; excludedinput contributes0 to fixedslot mean, equivalent to same positive common denominator rescaling across allarms; report eligible-only heldout means separately",
+  "human_prices_in_training": false,
+  "old_human_description": "unchangedfixedreference; reusedstarts/exposedprefix, not independent validation",
+  "per_seed_order": "freeze that seed final then heldout, nextseedtraining; no crossseed heldout feedback",
+  "total_original_plus_new_run_budget_seconds": 900,
+  "old_actual_seconds": 101.98400000017136,
+  "new_run_budget_seconds": 798.0159999998286,
+  "scope": "Changed input contract continuation with auditable oldprefix provenance, not fresh independent rerun or recovery of oldfrozencompletion status. No new seeds, longergames,extra workers or fees.",
+  "done": "Exact3552trialslots classified; cached/new actual outputs independentlyreplayed; all3ends/eligibleheldout and inclusive old/newcost reported. Any otherfailure stops, no expansion."
+}

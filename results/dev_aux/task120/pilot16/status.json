@@ -1,0 +1,96 @@
+{
+  "status": "FOUR_GAME_PILOT_COMPLETE",
+  "scope": "REAL_QUALIFIED_MATURE",
+  "cap": 16,
+  "limit_seconds": 120,
+  "physical_completed_games": 4,
+  "accepted_games": 4,
+  "pairs": [
+    {
+      "agent_color": true,
+      "reward_difference": -0.4,
+      "first_action_difference_ply": 0,
+      "profile_scores": [
+        {
+          "reward": 0.4666666666666667,
+          "quantity_difference": 7,
+          "agent_quantity": 15,
+          "opponent_quantity": 8,
+          "terminal_component": 0,
+          "mate_speed_component": 0,
+          "cutoff_quantity_component": 0.4666666666666667,
+          "terminal": false,
+          "termination": "cutoff",
+          "winner": null,
+          "proxy_result": 1,
+          "played_plies": 16,
+          "cap": 16
+        },
+        {
+          "reward": 0.06666666666666667,
+          "quantity_difference": 1,
+          "agent_quantity": 14,
+          "opponent_quantity": 13,
+          "terminal_component": 0,
+          "mate_speed_component": 0,
+          "cutoff_quantity_component": 0.06666666666666667,
+          "terminal": false,
+          "termination": "cutoff",
+          "winner": null,
+          "proxy_result": 1,
+          "played_plies": 16,
+          "cap": 16
+        }
+      ]
+    },
+    {
+      "agent_color": false,
+      "reward_difference": -0.13333333333333333,
+      "first_action_difference_ply": 3,
+      "profile_scores": [
+        {
+          "reward": 0.26666666666666666,
+          "quantity_difference": 4,
+          "agent_quantity": 14,
+          "opponent_quantity": 10,
+          "terminal_component": 0,
+          "mate_speed_component": 0,
+          "cutoff_quantity_component": 0.26666666666666666,
+          "terminal": false,
+          "termination": "cutoff",
+          "winner": null,
+          "proxy_result": 1,
+          "played_plies": 16,
+          "cap": 16
+        },
+        {
+          "reward": 0.13333333333333333,
+          "quantity_difference": 2,
+          "agent_quantity": 13,
+          "opponent_quantity": 11,
+          "terminal_component": 0,
+          "mate_speed_component": 0,
+          "cutoff_quantity_component": 0.13333333333333333,
+          "terminal": false,
+          "termination": "cutoff",
+          "winner": null,
+          "proxy_result": 1,
+          "played_plies": 16,
+          "cap": 16
+        }
+      ]
+    }
+  ],
+  "paired_reward_signal": true,
+  "paired_behavior_signal": true,
+  "signal_classification": "BEHAVIOR_AND_REWARD_SIGNAL",
+  "opposite_color_reward_directions": false,
+  "wall_seconds": 1.0940000000409782,
+  "mature_training_calls": 0,
+  "learned_updates": 0,
+  "automatic_expansion": false,
+  "learning_failure": false,
+  "note": "Observed profile signal is a pilot screening observation, not statistical proof, human-ratio recovery or permission to auto-expand. Setup/leaf probes/search/journal/cleanup included; qualification separately reported by CLI.",
+  "binary_sha256": "477628ae141c6e5fb7dcb562e31e3bc40eab95b20c8b966ece131a1dbf090999",
+  "qualification_seconds": 0.0
+}

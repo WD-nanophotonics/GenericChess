@@ -27,3 +27,25 @@ htmlcov/
 *.pyd
 .local_agent/
 .rebuild/
+
+# Segment14 exact large scientific records are preserved in verified archive.
+/results/dev_aux/task121/controller.json
+/results/dev_aux/task121/events.jsonl
+/results/dev_aux/task123/control.json
+/results/dev_aux/task123/events.jsonl
+/results/dev_aux/task124/controller.json
+/results/dev_aux/task124/events.jsonl
+/results/dev_aux/task124/partial.json
+/results/dev_aux/task129/controller.json
+/results/dev_aux/task129/events.jsonl
+/results/dev_aux/task131/controller.json
+/results/dev_aux/task131/events.jsonl
+/results/dev_aux/task131/partial.json
+
+# Additional bulky segment14data: exactbytes remain in verifiedarchive.
+/results/dev_aux/task122/game_summary.json
+/results/dev_aux/task126/rows.json
+/results/dev_aux/task127/events.jsonl
+/results/dev_aux/task127/games.json
+/results/dev_aux/task130/trace.json
+/results/dev_aux/task131/opening_contract.json

@@ -1,0 +1,185 @@
+{
+  "complete": true,
+  "source_pin": "9f778da667f6e07dae1e85d3e2ea204fc6dee94d",
+  "source_bindings": {
+    "evaluate.cpp": {
+      "sha256": "b875e3f460216430daf5ad61bee19bf5c5d2efb4c0377a2cde5c2d9172012fc3",
+      "url": "https://github.com/fairy-stockfish/Fairy-Stockfish/blob/9f778da667f6e07dae1e85d3e2ea204fc6dee94d/src/evaluate.cpp",
+      "source_note": "evaluate.cpp includes retainedTask091patch; other retainedfiles matchdeclaredhash where available",
+      "witness_lines": {
+        "GENERICCHESS_MATERIAL_DEVELOPMENT": [
+          1609
+        ],
+        "material += EvalPieceValue[MG][pt]": [
+          1614
+        ],
+        "return Value(std::clamp(material": [
+          1616
+        ]
+      }
+    },
+    "psqt.cpp": {
+      "sha256": "c1d918eefcf1c4ea152a5e1440db5c17d940a0904f273ab7649626367ec4e7c2",
+      "url": "https://github.com/fairy-stockfish/Fairy-Stockfish/blob/9f778da667f6e07dae1e85d3e2ea204fc6dee94d/src/psqt.cpp",
+      "source_note": "evaluate.cpp includes retainedTask091patch; other retainedfiles matchdeclaredhash where available",
+      "witness_lines": {
+        "if (is_custom(pt))": [
+          200
+        ],
+        "PieceValue[MG][make_piece(WHITE, pt)]": [
+          202
+        ],
+        "if (v->pieceValue[MG][pt])": [
+          290
+        ],
+        "CapturePieceValue[MG][pc]": [
+          295
+        ],
+        "EvalPieceValue[MG][pc]": [
+          302
+        ]
+      }
+    },
+    "movepick.cpp": {
+      "sha256": "496fcdbdd760838825cdc1647d5d11c8fd41d2988b3d899fe310cdb554297371",
+      "url": "https://github.com/fairy-stockfish/Fairy-Stockfish/blob/9f778da667f6e07dae1e85d3e2ea204fc6dee94d/src/movepick.cpp",
+      "source_note": "evaluate.cpp includes retainedTask091patch; other retainedfiles matchdeclaredhash where available",
+      "witness_lines": {
+        "PieceValue[MG][pos.piece_on(to_sq(m))]": [
+          136,
+          152
+        ]
+      }
+    },
+    "position.cpp": {
+      "sha256": "16f28fecb31f9d68fcd6010e3d231aea9c08182db10edf66ed232964ecc684fc",
+      "url": "https://github.com/fairy-stockfish/Fairy-Stockfish/blob/9f778da667f6e07dae1e85d3e2ea204fc6dee94d/src/position.cpp",
+      "source_note": "evaluate.cpp includes retainedTask091patch; other retainedfiles matchdeclaredhash where available",
+      "witness_lines": {
+        "st->nonPawnMaterial[them] -= PieceValue[MG][captured]": [
+          1632
+        ],
+        "int swap = PieceValue[MG][piece_on(to)] - threshold": [
+          2502
+        ],
+        "PieceValue[MG][moved_piece(m)] - swap": [
+          2506
+        ]
+      }
+    },
+    "search.cpp": {
+      "sha256": "02f1a8002cfd945f18b70582740139311c61dcb9805315f735bde4ad5b5be01a",
+      "url": "https://github.com/fairy-stockfish/Fairy-Stockfish/blob/9f778da667f6e07dae1e85d3e2ea204fc6dee94d/src/search.cpp",
+      "source_note": "evaluate.cpp includes retainedTask091patch; other retainedfiles matchdeclaredhash where available",
+      "witness_lines": {
+        "TT.clear();": [
+          169
+        ],
+        "Threads.clear();": [
+          170
+        ],
+        "futilityBase = bestValue + 155": [
+          1623
+        ],
+        "futilityValue = futilityBase + PieceValue[EG][pos.piece_on(to_sq(move))]": [
+          1663
+        ]
+      }
+    },
+    "thread.cpp": {
+      "sha256": "690983f6d61c05ba9f646040930b8cbe314de98af76779654e170aef930cb92c",
+      "url": "https://github.com/fairy-stockfish/Fairy-Stockfish/blob/9f778da667f6e07dae1e85d3e2ea204fc6dee94d/src/thread.cpp",
+      "source_note": "evaluate.cpp includes retainedTask091patch; other retainedfiles matchdeclaredhash where available",
+      "witness_lines": {
+        "counterMoves.fill(MOVE_NONE)": [
+          62
+        ],
+        "mainHistory.fill(0)": [
+          63
+        ],
+        "captureHistory.fill(0)": [
+          66
+        ],
+        "main()->bestPreviousScore = VALUE_INFINITE": [
+          173
+        ]
+      }
+    },
+    "types.h": {
+      "sha256": "7e42ef80439fb779713d8be1b06e14f31f85e7dfdd18a915a61fad38f355868d",
+      "url": "https://github.com/fairy-stockfish/Fairy-Stockfish/blob/9f778da667f6e07dae1e85d3e2ea204fc6dee94d/src/types.h",
+      "source_note": "evaluate.cpp includes retainedTask091patch; other retainedfiles matchdeclaredhash where available",
+      "witness_lines": {
+        "PawnValueMg   = 126": [
+          365
+        ],
+        "KnightValueMg = 781": [
+          366
+        ],
+        "BishopValueMg = 825": [
+          367
+        ],
+        "RookValueMg   = 1276": [
+          368
+        ],
+        "QueenValueMg  = 2538": [
+          369
+        ]
+      }
+    }
+  },
+  "standard_search_prices_MG": {
+    "P": 126,
+    "N": 781,
+    "B": 825,
+    "R": 1276,
+    "Q": 2538
+  },
+  "standard_search_prices_EG": {
+    "P": 208,
+    "N": 854,
+    "B": 915,
+    "R": 1380,
+    "Q": 2682
+  },
+  "candidate_leaf": "EvalPieceValueMGcustomPNBRQlinearcounts; kingexcluded; side-to-move sign; TBclamp",
+  "remaining_priors": "StandardPieceValue remains in SEE/movepick/nonpawnmaterial/qfutility, plus fixedcentipawn pruning margins. CapturePieceValue is separately overridden; not all capture logic uses the same table.",
+  "scope_limit": "This explains a possible alignment issue, not an executed prior-ablation cause of learning failure. Binaryprovenance remains retainedbuildrecord+hash+actualprobes, not independentsource-to-binaryattestation.",
+  "coordinate_reachability": [
+    {
+      "seed": 103,
+      "per_coordinate_min_distance": {
+        "N": 0.012739025777429712,
+        "B": 0.016155440222285145,
+        "R": 0.006753523015779778,
+        "Q": 0.000534045406551155
+      },
+      "best_attainable_mean_log_distance": 0.009045508605511447,
+      "no_best_price_vectors_exported": true
+    },
+    {
+      "seed": 104,
+      "per_coordinate_min_distance": {
+        "N": 0.009569451016150672,
+        "B": 0.016155440222285145,
+        "R": 0.006753523015779778,
+        "Q": 0.009661910911736859
+      },
+      "best_attainable_mean_log_distance": 0.010535081291488113,
+      "no_best_price_vectors_exported": true
+    },
+    {
+      "seed": 105,
+      "per_coordinate_min_distance": {
+        "N": 0.016155440222285145,
+        "B": 0.004819286435948995,
+        "R": 0.005752652489449841,
+        "Q": 0.009661910911736859
+      },
+      "best_attainable_mean_log_distance": 0.00909732251485521,
+      "no_best_price_vectors_exported": true
+    }
+  ],
+  "reachability_scope": "Exactindependentcoordinate paths3^6each over6sweeps. Assumes all choices reachable under any reward; bound only, no convergence/feedbackproof, no humanfit or deployment.",
+  "coordinate_bound_seconds": 0.0
+}

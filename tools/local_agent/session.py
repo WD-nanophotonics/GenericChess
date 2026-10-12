@@ -1,12 +1,13 @@
 """Bounded receipts and structural checks; no model, scheduler or restart loop."""
 from datetime import datetime, timezone
 from uuid import uuid4
+from pathlib import Path
 
 from .common import STATE, LocalFlowError, read_json, write_json
 
 
 HARD_REASONS = {'user_stop', 'user_decision', 'tool_limit', 'quota_limit',
-                'runtime_limit', 'scientific_complete'}
+                'runtime_limit'}
 
 
 def now():
@@ -95,11 +96,54 @@ def checkpoint(question, observation, evidence, next_action, kind='research'):
     return item
 
 
+def blocking_evidence(reason, evidence, current, ended):
+    """Require current evidence for the two historically misused exit reasons.
+
+    This checks records, not the truth of a diagnosis or report delivery.
+    The calling Agent still reports and pauses its native schedule itself.
+    """
+    path = Path(evidence)
+    if not path.is_absolute():
+        path = STATE / path
+    if not path.resolve().is_relative_to(STATE.resolve()) or not path.is_file():
+        raise LocalFlowError('blocking exit requires current JSON evidence in own state')
+    try:
+        record = read_json(path)
+        observed = datetime.fromisoformat(record['observed_at'])
+        start = datetime.fromisoformat(current.get('resumed_at', current['started_at']))
+        if record.get('session_id') != current['id'] or not start <= observed <= ended:
+            raise ValueError('stale session or observation')
+        if reason == 'user_decision':
+            fields = ('diagnosis', 'why_agent_cannot_resolve', 'required_user_action',
+                      'user_report_text', 'user_report_reference')
+            if (record.get('diagnosis_status') != 'confirmed'
+                    or record.get('serious_user_required') is not True
+                    or not isinstance(record.get('checks_attempted'), list)
+                    or not record['checks_attempted']
+                    or any(not isinstance(x, str) or not x.strip()
+                           for x in record['checks_attempted'])
+                    or any(not isinstance(record.get(k), str) or not record[k].strip()
+                           for k in fields)):
+                raise ValueError('diagnosis and delivered concrete user action required')
+            reported = datetime.fromisoformat(record['user_reported_at'])
+            if not observed <= reported <= ended:
+                raise ValueError('user report is not current')
+        elif (record.get('runtime_exhausted') is not True
+              or record.get('runtime_category') not in {
+                  'execution_environment_exhausted', 'platform_context_limit',
+                  'forced_runtime_shutdown'}
+              or not isinstance(record.get('actual_runtime_event'), str)
+              or not record['actual_runtime_event'].strip()):
+            raise ValueError('actual current environment exhaustion required')
+    except (OSError, ValueError, TypeError, KeyError) as error:
+        raise LocalFlowError('invalid current blocking evidence: ' + str(error)) from error
+
+
 def finish(reason, evidence, alternatives=()):
     current = read_json(STATE/'session.json')
     if current.get('state') != 'active':
         raise LocalFlowError('no active segment to finish')
-    if reason not in HARD_REASONS | {'safe_checkpoint', 'no_viable_action'}:
+    if reason not in HARD_REASONS | {'safe_checkpoint', 'no_viable_action', 'scientific_complete'}:
         raise LocalFlowError('soft blockage/publication/inspection is not an ending reason')
     if not evidence.strip():
         raise LocalFlowError('ending evidence required')
@@ -109,6 +153,8 @@ def finish(reason, evidence, alternatives=()):
     elapsed = (ended-datetime.fromisoformat(current['started_at'])).total_seconds()/60
     if elapsed < 0:
         raise LocalFlowError('clock moved backwards; elapsed duration unverified')
+    if reason in {'user_decision', 'runtime_limit'}:
+        blocking_evidence(reason, evidence, current, ended)
     if reason not in HARD_REASONS:
         if elapsed < 60:
             raise LocalFlowError('before60 minutes switch tasks/explore; normal finish forbidden')

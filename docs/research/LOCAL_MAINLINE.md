@@ -1,3 +1,20 @@
+## DEV_AUX current scope2026-10-12
+
+In this independent sidemission clone, the current auxiliary decision is cheap
+mature-material learning and independent failure/cost attribution. The primary
+search mainline below is pinned background, not a task to take over. Mature entry
+477628ae is now actually qualified; user independently changed Smart App Control.
+Task121/124 and full-domaincoordinate129failed-input/131changedcontract have real
+short-game evidence but no stabletraditionalprice recovery. Predictor126does not
+produce a successfuldeployedpolicy127. Detailed conditions/allstarts/failedinput/
+sourcepriors/cost are in results/dev_aux/SEGMENT_20261012_14.md and its exactarchive.
+Next: one small objective/pricealignment mechanism control, no unchangedtraining
+or longergames by default. ScientificOPEN. The user latestdiagnosedblocker rule
+in ownAGENTS/workflow takes precedence: unknown/oldentry errors cannot justify
+before60finish or recurringempty runs. Existing exitchecker minimally enforces
+currentdiagnosis/report or realenvironmentexhaustion evidence; truth remains
+Agent responsibility, and actualnativepause is mandatory if trulyuser-required.
+
 # Current local research mainline
 
 AGENTS.md and current user directions govern. Science is OPEN. This is current

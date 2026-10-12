@@ -141,3 +141,78 @@ def test_no_next_exit_requires_two_fresh_alternative_observations(workspace):
         session.finish('no_viable_action', 'old notes', ['alt1', 'unexecuted'])
     session.checkpoint('alt2', 'new finding2', 'report2', 'future exploration')
     assert session.finish('no_viable_action', 'specific new failures', ['alt1', 'alt2'])['state'] == 'ended'
+
+
+@pytest.mark.parametrize('reason', ['user_decision', 'runtime_limit'])
+def test_old_4551_or_generic_prose_cannot_finish_as_hard_blocker(workspace, reason):
+    path, _ = workspace
+    session.start()
+    with pytest.raises(LocalFlowError, match='current JSON'):
+        session.finish(reason, 'old WinError4551; wait for a path')
+    assert session.status()['state'] == 'active'
+    assert not (path/'session_receipts.json').exists()
+
+
+def blocker_record(workspace, reason):
+    path, moment = workspace
+    current = session.start()
+    data = dict(session_id=current['id'], observed_at=moment[0].isoformat())
+    if reason == 'user_decision':
+        data.update(diagnosis_status='confirmed', serious_user_required=True,
+            diagnosis='Application control requires a human-owned policy choice',
+            checks_attempted=['Read actual target CodeIntegrity event and signature'],
+            why_agent_cannot_resolve='Agent lacks authority to change system security',
+            required_user_action='Choose the stated system security setting and report completion',
+            user_report_text='Concrete cause, impact and required step have been sent',
+            user_report_reference='current-chat-delivered-message-fixture',
+            user_reported_at=moment[0].isoformat())
+    else:
+        data.update(runtime_exhausted=True, runtime_category='forced_runtime_shutdown',
+            actual_runtime_event='Current environment forcibly shut down execution')
+    (path/'blocking.json').write_text(json.dumps(data))
+    return path, moment, data
+
+
+@pytest.mark.parametrize('reason', ['user_decision', 'runtime_limit'])
+def test_current_diagnosed_report_or_actual_runtime_event_can_end(workspace, reason):
+    path, _, _ = blocker_record(workspace, reason)
+    result = session.finish(reason, 'blocking.json')
+    assert result['state'] == 'ended' and not result['duration_gate_passed']
+
+
+@pytest.mark.parametrize('change', [
+    {'diagnosis_status': 'unknown'}, {'serious_user_required': False},
+    {'checks_attempted': []}, {'checks_attempted': 'only an old error'},
+    {'why_agent_cannot_resolve': ''}, {'required_user_action': ''},
+    {'user_report_text': ''}, {'user_report_reference': ''},
+    {'session_id': 'old-session'}, {'observed_at': '2026-10-03T00:00:00+00:00'},
+    {'user_reported_at': '2026-10-03T00:00:00+00:00'},
+])
+def test_user_decision_requires_current_diagnosis_and_already_reported_action(workspace, change):
+    path, _, data = blocker_record(workspace, 'user_decision')
+    data.update(change)
+    (path/'blocking.json').write_text(json.dumps(data))
+    with pytest.raises(LocalFlowError, match='blocking evidence'):
+        session.finish('user_decision', 'blocking.json')
+    assert session.status()['state'] == 'active'
+
+
+@pytest.mark.parametrize('change', [
+    {'runtime_exhausted': False}, {'runtime_category': 'program_launch_failure'},
+    {'runtime_category': 'planned_batch_budget'}, {'actual_runtime_event': ''},
+    {'session_id': 'old-session'}, {'observed_at': '2026-10-03T00:00:00+00:00'},
+])
+def test_program_error_or_old_record_is_not_environment_exhaustion(workspace, change):
+    path, _, data = blocker_record(workspace, 'runtime_limit')
+    data.update(change)
+    (path/'blocking.json').write_text(json.dumps(data))
+    with pytest.raises(LocalFlowError, match='blocking evidence'):
+        session.finish('runtime_limit', 'blocking.json')
+    assert session.status()['state'] == 'active'
+
+
+def test_scientific_complete_is_not_an_early_exit_loophole(workspace):
+    session.start()
+    with pytest.raises(LocalFlowError, match='before60'):
+        session.finish('scientific_complete', 'a small assigned check completed')
+    assert session.status()['state'] == 'active'

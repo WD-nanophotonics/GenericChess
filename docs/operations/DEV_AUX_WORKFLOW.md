@@ -111,3 +111,18 @@ Each Agent owns its state and schedule; communicate the project-wide rule throug
 the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
+
+## Existing finish-entry correction2026-10-12
+
+For user_decision/runtime_limit, pass --evidence EXIT.json for a record in own
+.local_agent, bound to this session and a current observation (after resume if
+resumed). user_decision requires a confirmed serioususer-required diagnosis,
+checks_attempted, why_agent_cannot_resolve, required_user_action and the text,
+reference/time of the already delivered user report. runtime_limit requires
+actualcurrent environment exhaustion, not old4551 or a plannedbatch budget.
+No new framework/approvalqueue: this repairs only the misused ending paths.
+Science-complete cannot bypass60minutes; genuine stops/tool/quota paths remain.
+The checker cannot prove truth or delivery. The Agent must still report plainly
+and actually pause its own native schedule/consultation when necessary. Current
+entry is recovered anddev-aux staysACTIVE.39focusedregressions pass; rawrecords
+remainprivate, historicalincorrect endings remain and are explicitly corrected.

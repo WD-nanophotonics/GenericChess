@@ -1,0 +1,56 @@
+{
+  "complete": true,
+  "scope": "Exploratory posthoc optimizer reachability diagnostic; not human-price training",
+  "reference": {
+    "N": 3,
+    "B": 3,
+    "R": 5,
+    "Q": 9
+  },
+  "distance": "same meanabsolute logratio",
+  "rows": [
+    {
+      "seed": 103,
+      "all_schedule_paths": 729,
+      "distinct_rounded_endpoints": 247,
+      "initial_distance": 0.6540198944534149,
+      "best_attainable_distance": 0.34427357873678505,
+      "actual_final_distances_Task121_then_Task124_runorder": [
+        1.1305793974204792,
+        0.7858570737790268,
+        0.8196354546009841
+      ],
+      "parameter_vectors_not_exported": true
+    },
+    {
+      "seed": 104,
+      "all_schedule_paths": 729,
+      "distinct_rounded_endpoints": 334,
+      "initial_distance": 1.1727888366033823,
+      "best_attainable_distance": 0.3732537016769315,
+      "actual_final_distances_Task121_then_Task124_runorder": [
+        1.08051397296876,
+        1.8299743970653584,
+        1.1068816030002717
+      ],
+      "parameter_vectors_not_exported": true
+    },
+    {
+      "seed": 105,
+      "all_schedule_paths": 729,
+      "distinct_rounded_endpoints": 296,
+      "initial_distance": 0.530471103174539,
+      "best_attainable_distance": 0.22455078908310075,
+      "actual_final_distances_Task121_then_Task124_runorder": [
+        0.8236223056424917,
+        0.4148563402143885,
+        0.4721804942904876
+      ],
+      "parameter_vectors_not_exported": true
+    }
+  ],
+  "all3unconstrained_schedule_paths": 2187,
+  "fuse_seconds": 10,
+  "wall_seconds": 0.11000000033527613,
+  "limits": "Bound assumes any incumbent/plus/minus choice can occur; real reward-selection constraints may restrict these paths. No closest vector is exported, deployed or used for updates. Does not prove optimizer convergence or label adequacy."
+}

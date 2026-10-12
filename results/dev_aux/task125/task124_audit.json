@@ -1,0 +1,950 @@
+{
+  "complete": true,
+  "scope": "Actual frozen Task124 replay and all6endpoint descriptive assessment",
+  "input_sha256": "a34d3de3bbbf31c29fc0816226cef2c67cadad97f8e204ea362f79dba4ee124f",
+  "physical_games": 1920,
+  "legal_actions_replayed": 29588,
+  "search_calls": 14851,
+  "leaf_probes_verified": 9600,
+  "exact_schedule_selection_and_call_order": true,
+  "reported_nodes_min": 1024,
+  "reported_nodes_max": 1120,
+  "reported_nodes_total": 15235620,
+  "all6rows": [
+    {
+      "seed": 103,
+      "opening_plies": 6,
+      "initial_ratios": {
+        "N": 11.14423076923077,
+        "B": 1.7548076923076923,
+        "R": 4.4423076923076925,
+        "Q": 4.701923076923077
+      },
+      "final_ratios": {
+        "N": 3.355769230769231,
+        "B": 5.831730769230769,
+        "R": 2.9759615384615383,
+        "Q": 1.4182692307692308
+      },
+      "updates": 3,
+      "human_reference_initial_distance": 0.6540198944534149,
+      "human_reference_final_distance": 0.7858570737790268,
+      "heldout": {
+        "initial": {
+          "games": 16,
+          "reward_mean": 6.490885416666667,
+          "cutoff_component_mean": 0.22916666666666666,
+          "terminal_component_mean": 6.25,
+          "speed_component_mean": 0.01171875,
+          "mates": 1,
+          "wins": 1,
+          "losses": 0
+        },
+        "final": {
+          "games": 16,
+          "reward_mean": 0.24583333333333332,
+          "cutoff_component_mean": 0.24583333333333332,
+          "terminal_component_mean": 0,
+          "speed_component_mean": 0,
+          "mates": 0,
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "paired": [
+        {
+          "opening": 0,
+          "color": true,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 0,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 1,
+          "color": true,
+          "reward_delta": -0.13333333333333336,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.13333333333333333
+        },
+        {
+          "opening": 1,
+          "color": false,
+          "reward_delta": 0.06666666666666671,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.06666666666666667
+        },
+        {
+          "opening": 2,
+          "color": true,
+          "reward_delta": 0.19999999999999998,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.2
+        },
+        {
+          "opening": 2,
+          "color": false,
+          "reward_delta": -0.1333333333333333,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.13333333333333333
+        },
+        {
+          "opening": 3,
+          "color": true,
+          "reward_delta": -99.85416666666667,
+          "both_nonterminal": false,
+          "quantity_delta_if_both_nonterminal": null
+        },
+        {
+          "opening": 3,
+          "color": false,
+          "reward_delta": -0.13333333333333336,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.13333333333333333
+        },
+        {
+          "opening": 4,
+          "color": true,
+          "reward_delta": 0.2,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.2
+        },
+        {
+          "opening": 4,
+          "color": false,
+          "reward_delta": -0.06666666666666671,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.06666666666666667
+        },
+        {
+          "opening": 5,
+          "color": true,
+          "reward_delta": -0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.06666666666666667
+        },
+        {
+          "opening": 5,
+          "color": false,
+          "reward_delta": -0.06666666666666668,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.06666666666666667
+        },
+        {
+          "opening": 6,
+          "color": true,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 6,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 7,
+          "color": true,
+          "reward_delta": 0.1333333333333333,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.13333333333333333
+        },
+        {
+          "opening": 7,
+          "color": false,
+          "reward_delta": -0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.06666666666666667
+        }
+      ]
+    },
+    {
+      "seed": 103,
+      "opening_plies": 24,
+      "initial_ratios": {
+        "N": 11.14423076923077,
+        "B": 1.7548076923076923,
+        "R": 4.4423076923076925,
+        "Q": 4.701923076923077
+      },
+      "final_ratios": {
+        "N": 10.725961538461538,
+        "B": 1.1778846153846154,
+        "R": 2.9759615384615383,
+        "Q": 15.610576923076923
+      },
+      "updates": 5,
+      "human_reference_initial_distance": 0.6540198944534149,
+      "human_reference_final_distance": 0.8196354546009841,
+      "heldout": {
+        "initial": {
+          "games": 16,
+          "reward_mean": 19.028385416666666,
+          "cutoff_component_mean": 0.20416666666666666,
+          "terminal_component_mean": 18.75,
+          "speed_component_mean": 0.07421875,
+          "mates": 3,
+          "wins": 3,
+          "losses": 0
+        },
+        "final": {
+          "games": 16,
+          "reward_mean": 19.0546875,
+          "cutoff_component_mean": 0.25,
+          "terminal_component_mean": 18.75,
+          "speed_component_mean": 0.0546875,
+          "mates": 3,
+          "wins": 3,
+          "losses": 0
+        }
+      },
+      "paired": [
+        {
+          "opening": 0,
+          "color": true,
+          "reward_delta": 99.92083333333333,
+          "both_nonterminal": false,
+          "quantity_delta_if_both_nonterminal": null
+        },
+        {
+          "opening": 0,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 1,
+          "color": true,
+          "reward_delta": 0.26666666666666666,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.26666666666666666
+        },
+        {
+          "opening": 1,
+          "color": false,
+          "reward_delta": 0.2666666666666667,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.26666666666666666
+        },
+        {
+          "opening": 2,
+          "color": true,
+          "reward_delta": 0.06666666666666668,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.06666666666666667
+        },
+        {
+          "opening": 2,
+          "color": false,
+          "reward_delta": -0.06666666666666667,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.06666666666666667
+        },
+        {
+          "opening": 3,
+          "color": true,
+          "reward_delta": -0.13333333333333336,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.13333333333333333
+        },
+        {
+          "opening": 3,
+          "color": false,
+          "reward_delta": -100.16666666666667,
+          "both_nonterminal": false,
+          "quantity_delta_if_both_nonterminal": null
+        },
+        {
+          "opening": 4,
+          "color": true,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 4,
+          "color": false,
+          "reward_delta": 0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.06666666666666667
+        },
+        {
+          "opening": 5,
+          "color": true,
+          "reward_delta": 0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.06666666666666667
+        },
+        {
+          "opening": 5,
+          "color": false,
+          "reward_delta": 0.1333333333333333,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.13333333333333333
+        },
+        {
+          "opening": 6,
+          "color": true,
+          "reward_delta": 0.13333333333333336,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.13333333333333333
+        },
+        {
+          "opening": 6,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": false,
+          "quantity_delta_if_both_nonterminal": null
+        },
+        {
+          "opening": 7,
+          "color": true,
+          "reward_delta": 0.0,
+          "both_nonterminal": false,
+          "quantity_delta_if_both_nonterminal": null
+        },
+        {
+          "opening": 7,
+          "color": false,
+          "reward_delta": -0.1333333333333333,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.13333333333333333
+        }
+      ]
+    },
+    {
+      "seed": 104,
+      "opening_plies": 24,
+      "initial_ratios": {
+        "N": 10.41826923076923,
+        "B": 7.6298076923076925,
+        "R": 4.653846153846154,
+        "Q": 0.7836538461538461
+      },
+      "final_ratios": {
+        "N": 16.0,
+        "B": 16.0,
+        "R": 10.350961538461538,
+        "Q": 0.35096153846153844
+      },
+      "updates": 4,
+      "human_reference_initial_distance": 1.1727888366033823,
+      "human_reference_final_distance": 1.8299743970653584,
+      "heldout": {
+        "initial": {
+          "games": 16,
+          "reward_mean": 25.236979166666668,
+          "cutoff_component_mean": 0.16666666666666666,
+          "terminal_component_mean": 25,
+          "speed_component_mean": 0.0703125,
+          "mates": 4,
+          "wins": 4,
+          "losses": 0
+        },
+        "final": {
+          "games": 16,
+          "reward_mean": 19.0203125,
+          "cutoff_component_mean": 0.2,
+          "terminal_component_mean": 18.75,
+          "speed_component_mean": 0.0703125,
+          "mates": 3,
+          "wins": 3,
+          "losses": 0
+        }
+      },
+      "paired": [
+        {
+          "opening": 0,
+          "color": true,
+          "reward_delta": 0.0,
+          "both_nonterminal": false,
+          "quantity_delta_if_both_nonterminal": null
+        },
+        {
+          "opening": 0,
+          "color": false,
+          "reward_delta": 0.13333333333333333,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.13333333333333333
+        },
+        {
+          "opening": 1,
+          "color": true,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 1,
+          "color": false,
+          "reward_delta": -99.85,
+          "both_nonterminal": false,
+          "quantity_delta_if_both_nonterminal": null
+        },
+        {
+          "opening": 2,
+          "color": true,
+          "reward_delta": -99.92916666666666,
+          "both_nonterminal": false,
+          "quantity_delta_if_both_nonterminal": null
+        },
+        {
+          "opening": 2,
+          "color": false,
+          "reward_delta": -0.13333333333333333,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.13333333333333333
+        },
+        {
+          "opening": 3,
+          "color": true,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 3,
+          "color": false,
+          "reward_delta": 0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.06666666666666667
+        },
+        {
+          "opening": 4,
+          "color": true,
+          "reward_delta": 0.13333333333333336,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.13333333333333333
+        },
+        {
+          "opening": 4,
+          "color": false,
+          "reward_delta": -0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.06666666666666667
+        },
+        {
+          "opening": 5,
+          "color": true,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 5,
+          "color": false,
+          "reward_delta": 0.13333333333333333,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.13333333333333333
+        },
+        {
+          "opening": 6,
+          "color": true,
+          "reward_delta": 99.97916666666667,
+          "both_nonterminal": false,
+          "quantity_delta_if_both_nonterminal": null
+        },
+        {
+          "opening": 6,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": false,
+          "quantity_delta_if_both_nonterminal": null
+        },
+        {
+          "opening": 7,
+          "color": true,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 7,
+          "color": false,
+          "reward_delta": 0.06666666666666668,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.06666666666666667
+        }
+      ]
+    },
+    {
+      "seed": 104,
+      "opening_plies": 6,
+      "initial_ratios": {
+        "N": 10.41826923076923,
+        "B": 7.6298076923076925,
+        "R": 4.653846153846154,
+        "Q": 0.7836538461538461
+      },
+      "final_ratios": {
+        "N": 10.41826923076923,
+        "B": 1.5384615384615385,
+        "R": 2.0913461538461537,
+        "Q": 1.7403846153846154
+      },
+      "updates": 6,
+      "human_reference_initial_distance": 1.1727888366033823,
+      "human_reference_final_distance": 1.1068816030002717,
+      "heldout": {
+        "initial": {
+          "games": 16,
+          "reward_mean": 0.225,
+          "cutoff_component_mean": 0.225,
+          "terminal_component_mean": 0,
+          "speed_component_mean": 0,
+          "mates": 0,
+          "wins": 0,
+          "losses": 0
+        },
+        "final": {
+          "games": 16,
+          "reward_mean": 0.24166666666666667,
+          "cutoff_component_mean": 0.24166666666666667,
+          "terminal_component_mean": 0,
+          "speed_component_mean": 0,
+          "mates": 0,
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "paired": [
+        {
+          "opening": 0,
+          "color": true,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 0,
+          "color": false,
+          "reward_delta": -0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.06666666666666667
+        },
+        {
+          "opening": 1,
+          "color": true,
+          "reward_delta": 0.13333333333333333,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.13333333333333333
+        },
+        {
+          "opening": 1,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 2,
+          "color": true,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 2,
+          "color": false,
+          "reward_delta": 0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.06666666666666667
+        },
+        {
+          "opening": 3,
+          "color": true,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 3,
+          "color": false,
+          "reward_delta": 0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.06666666666666667
+        },
+        {
+          "opening": 4,
+          "color": true,
+          "reward_delta": -0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.06666666666666667
+        },
+        {
+          "opening": 4,
+          "color": false,
+          "reward_delta": 0.06666666666666671,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.06666666666666667
+        },
+        {
+          "opening": 5,
+          "color": true,
+          "reward_delta": -0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.06666666666666667
+        },
+        {
+          "opening": 5,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 6,
+          "color": true,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 6,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 7,
+          "color": true,
+          "reward_delta": 0.13333333333333333,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.13333333333333333
+        },
+        {
+          "opening": 7,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 105,
+      "opening_plies": 6,
+      "initial_ratios": {
+        "N": 7.798076923076923,
+        "B": 1.2019230769230769,
+        "R": 5.725961538461538,
+        "Q": 10.110576923076923
+      },
+      "final_ratios": {
+        "N": 5.225961538461538,
+        "B": 3.9903846153846154,
+        "R": 8.54326923076923,
+        "Q": 6.778846153846154
+      },
+      "updates": 3,
+      "human_reference_initial_distance": 0.530471103174539,
+      "human_reference_final_distance": 0.4148563402143885,
+      "heldout": {
+        "initial": {
+          "games": 16,
+          "reward_mean": 6.502864583333333,
+          "cutoff_component_mean": 0.23333333333333334,
+          "terminal_component_mean": 6.25,
+          "speed_component_mean": 0.01953125,
+          "mates": 1,
+          "wins": 1,
+          "losses": 0
+        },
+        "final": {
+          "games": 16,
+          "reward_mean": 0.26666666666666666,
+          "cutoff_component_mean": 0.26666666666666666,
+          "terminal_component_mean": 0,
+          "speed_component_mean": 0,
+          "mates": 0,
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "paired": [
+        {
+          "opening": 0,
+          "color": true,
+          "reward_delta": 0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.06666666666666667
+        },
+        {
+          "opening": 0,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 1,
+          "color": true,
+          "reward_delta": -0.13333333333333336,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.13333333333333333
+        },
+        {
+          "opening": 1,
+          "color": false,
+          "reward_delta": 0.13333333333333336,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.13333333333333333
+        },
+        {
+          "opening": 2,
+          "color": true,
+          "reward_delta": 0.06666666666666667,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.06666666666666667
+        },
+        {
+          "opening": 2,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 3,
+          "color": true,
+          "reward_delta": -99.97916666666667,
+          "both_nonterminal": false,
+          "quantity_delta_if_both_nonterminal": null
+        },
+        {
+          "opening": 3,
+          "color": false,
+          "reward_delta": 0.06666666666666671,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.06666666666666667
+        },
+        {
+          "opening": 4,
+          "color": true,
+          "reward_delta": -0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.06666666666666667
+        },
+        {
+          "opening": 4,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 5,
+          "color": true,
+          "reward_delta": -0.06666666666666668,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.06666666666666667
+        },
+        {
+          "opening": 5,
+          "color": false,
+          "reward_delta": -0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.06666666666666667
+        },
+        {
+          "opening": 6,
+          "color": true,
+          "reward_delta": 0.2,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.2
+        },
+        {
+          "opening": 6,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 7,
+          "color": true,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 7,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 105,
+      "opening_plies": 24,
+      "initial_ratios": {
+        "N": 7.798076923076923,
+        "B": 1.2019230769230769,
+        "R": 5.725961538461538,
+        "Q": 10.110576923076923
+      },
+      "final_ratios": {
+        "N": 5.225961538461538,
+        "B": 1.7932692307692308,
+        "R": 8.54326923076923,
+        "Q": 6.778846153846154
+      },
+      "updates": 5,
+      "human_reference_initial_distance": 0.530471103174539,
+      "human_reference_final_distance": 0.4721804942904876,
+      "heldout": {
+        "initial": {
+          "games": 16,
+          "reward_mean": 25.275260416666665,
+          "cutoff_component_mean": 0.21666666666666667,
+          "terminal_component_mean": 25,
+          "speed_component_mean": 0.05859375,
+          "mates": 4,
+          "wins": 4,
+          "losses": 0
+        },
+        "final": {
+          "games": 16,
+          "reward_mean": 12.780989583333334,
+          "cutoff_component_mean": 0.24583333333333332,
+          "terminal_component_mean": 12.5,
+          "speed_component_mean": 0.03515625,
+          "mates": 2,
+          "wins": 2,
+          "losses": 0
+        }
+      },
+      "paired": [
+        {
+          "opening": 0,
+          "color": true,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 0,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 1,
+          "color": true,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 1,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        },
+        {
+          "opening": 2,
+          "color": true,
+          "reward_delta": 0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.06666666666666667
+        },
+        {
+          "opening": 2,
+          "color": false,
+          "reward_delta": -0.13333333333333333,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.13333333333333333
+        },
+        {
+          "opening": 3,
+          "color": true,
+          "reward_delta": 0.1333333333333333,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.13333333333333333
+        },
+        {
+          "opening": 3,
+          "color": false,
+          "reward_delta": 0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.06666666666666667
+        },
+        {
+          "opening": 4,
+          "color": true,
+          "reward_delta": -99.59583333333333,
+          "both_nonterminal": false,
+          "quantity_delta_if_both_nonterminal": null
+        },
+        {
+          "opening": 4,
+          "color": false,
+          "reward_delta": -100.04166666666667,
+          "both_nonterminal": false,
+          "quantity_delta_if_both_nonterminal": null
+        },
+        {
+          "opening": 5,
+          "color": true,
+          "reward_delta": -0.2,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.2
+        },
+        {
+          "opening": 5,
+          "color": false,
+          "reward_delta": -99.8,
+          "both_nonterminal": false,
+          "quantity_delta_if_both_nonterminal": null
+        },
+        {
+          "opening": 6,
+          "color": true,
+          "reward_delta": 99.6625,
+          "both_nonterminal": false,
+          "quantity_delta_if_both_nonterminal": null
+        },
+        {
+          "opening": 6,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": false,
+          "quantity_delta_if_both_nonterminal": null
+        },
+        {
+          "opening": 7,
+          "color": true,
+          "reward_delta": -0.06666666666666665,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": -0.06666666666666667
+        },
+        {
+          "opening": 7,
+          "color": false,
+          "reward_delta": 0.0,
+          "both_nonterminal": true,
+          "quantity_delta_if_both_nonterminal": 0.0
+        }
+      ]
+    }
+  ],
+  "reference_fixed_before_this_run": true,
+  "metric_and_reference_used_only_after_selection": true,
+  "independent_human_recovery_test": false,
+  "limits": "Three starts reused; mixed mature priors, random opponent and16ply objective; exploratory changed-distribution control, not genericrules/Elo/convergence. All outcomes retained.",
+  "audit_seconds": 1.9219999997876585
+}

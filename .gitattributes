@@ -125,3 +125,28 @@ results/dev_aux/SEGMENT_20261011_7* -text
 /results/dev_aux/task118/** -text
 /results/dev_aux/task119/** -text
 /results/dev_aux/SEGMENT_20261012_13* -text
+
+/results/dev_aux/task120/** -text
+/results/dev_aux/task121/** -text
+/results/dev_aux/task122/** -text
+/results/dev_aux/task123/** -text
+/results/dev_aux/task124/** -text
+/results/dev_aux/task125/** -text
+/results/dev_aux/task126/** -text
+/results/dev_aux/task127/** -text
+/results/dev_aux/task128/** -text
+/results/dev_aux/task129/** -text
+/results/dev_aux/task130/** -text
+/results/dev_aux/task131/** -text
+/results/dev_aux/task132/** -text
+/results/dev_aux/ACTUAL_MATURE_20261012_14* -text
+/results/dev_aux/SEGMENT_20261012_14* -text
+/results/dev_aux/*segment14.py -text
+# Preserve exact Windows artifact bytes; carriage-return line endings are intentional.
+/results/dev_aux/task12[0-9]/** whitespace=cr-at-eol
+/results/dev_aux/task13[0-2]/** whitespace=cr-at-eol
+/results/dev_aux/ACTUAL_MATURE_20261012_14* whitespace=cr-at-eol
+/results/dev_aux/SEGMENT_20261012_14* whitespace=cr-at-eol
+/results/dev_aux/*segment14.py whitespace=cr-at-eol
+
+/results/dev_aux/task131/*.patch whitespace=-blank-at-eol,cr-at-eol

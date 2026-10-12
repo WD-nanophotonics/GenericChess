@@ -1,0 +1,341 @@
+{
+  "scope": "Replay of already exposed frozen Task121; no new games",
+  "input_sha256": "0b4911b733fd4a19ec2384865ac9486916e0d7400234401e5f81cebd171d69d5",
+  "complete": true,
+  "games": 480,
+  "legal_action_replays": 7299,
+  "actual_search_calls": 3666,
+  "leaf_probes_verified": 2400,
+  "exact_controller_and_selection_replayed": true,
+  "reported_nodes_min": 1024,
+  "reported_nodes_max": 1064,
+  "reported_nodes_total": 3758770,
+  "nodes_over_configured": 1553,
+  "training_terminal_count": 66,
+  "heldout_terminal_count": 3,
+  "all_three_rows": [
+    {
+      "seed": 103,
+      "initial_ratios": {
+        "N": 11.14423076923077,
+        "B": 1.7548076923076923,
+        "R": 4.4423076923076925,
+        "Q": 4.701923076923077
+      },
+      "final_ratios": {
+        "N": 2.25,
+        "B": 8.697115384615385,
+        "R": 1.9951923076923077,
+        "Q": 0.9471153846153846
+      },
+      "updates": 4,
+      "heldout": {
+        "initial": {
+          "games": 8,
+          "reward_mean": 12.682291666666666,
+          "cutoff_quantity_component_mean": 0.16666666666666666,
+          "cutoff_mean_among_nonterminal": 0.19047619047619047,
+          "wins": 1,
+          "mates": 1,
+          "terminal_games": 1
+        },
+        "final": {
+          "games": 8,
+          "reward_mean": 0.23333333333333334,
+          "cutoff_quantity_component_mean": 0.23333333333333334,
+          "cutoff_mean_among_nonterminal": 0.23333333333333334,
+          "wins": 0,
+          "mates": 0,
+          "terminal_games": 0
+        }
+      },
+      "paired": [
+        {
+          "opening_index": 0,
+          "color": true,
+          "reward_delta": -0.19999999999999998,
+          "cutoff_component_delta": -0.19999999999999998,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": -0.19999999999999998
+        },
+        {
+          "opening_index": 0,
+          "color": false,
+          "reward_delta": -99.65833333333333,
+          "cutoff_component_delta": 0.4666666666666667,
+          "both_nonterminal": false,
+          "both_nonterminal_quantity_delta": null
+        },
+        {
+          "opening_index": 1,
+          "color": true,
+          "reward_delta": 0.0,
+          "cutoff_component_delta": 0.0,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": 0.0
+        },
+        {
+          "opening_index": 1,
+          "color": false,
+          "reward_delta": 0.0,
+          "cutoff_component_delta": 0.0,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": 0.0
+        },
+        {
+          "opening_index": 2,
+          "color": true,
+          "reward_delta": 0.06666666666666665,
+          "cutoff_component_delta": 0.06666666666666665,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": 0.06666666666666665
+        },
+        {
+          "opening_index": 2,
+          "color": false,
+          "reward_delta": 0.0,
+          "cutoff_component_delta": 0.0,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": 0.0
+        },
+        {
+          "opening_index": 3,
+          "color": true,
+          "reward_delta": 0.2,
+          "cutoff_component_delta": 0.2,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": 0.2
+        },
+        {
+          "opening_index": 3,
+          "color": false,
+          "reward_delta": 0.0,
+          "cutoff_component_delta": 0.0,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": 0.0
+        }
+      ],
+      "posthoc_initial_log_distance": 0.6540198944534149,
+      "posthoc_final_log_distance": 1.1305793974204792
+    },
+    {
+      "seed": 104,
+      "initial_ratios": {
+        "N": 10.41826923076923,
+        "B": 7.6298076923076925,
+        "R": 4.653846153846154,
+        "Q": 0.7836538461538461
+      },
+      "final_ratios": {
+        "N": 16.0,
+        "B": 3.4278846153846154,
+        "R": 2.0913461538461537,
+        "Q": 1.7403846153846154
+      },
+      "updates": 2,
+      "heldout": {
+        "initial": {
+          "games": 8,
+          "reward_mean": 0.225,
+          "cutoff_quantity_component_mean": 0.225,
+          "cutoff_mean_among_nonterminal": 0.225,
+          "wins": 0,
+          "mates": 0,
+          "terminal_games": 0
+        },
+        "final": {
+          "games": 8,
+          "reward_mean": 25.140104166666667,
+          "cutoff_quantity_component_mean": 0.11666666666666667,
+          "cutoff_mean_among_nonterminal": 0.15555555555555556,
+          "wins": 2,
+          "mates": 2,
+          "terminal_games": 2
+        }
+      },
+      "paired": [
+        {
+          "opening_index": 0,
+          "color": true,
+          "reward_delta": -0.06666666666666668,
+          "cutoff_component_delta": -0.06666666666666668,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": -0.06666666666666668
+        },
+        {
+          "opening_index": 0,
+          "color": false,
+          "reward_delta": 99.53333333333333,
+          "cutoff_component_delta": -0.4666666666666667,
+          "both_nonterminal": false,
+          "both_nonterminal_quantity_delta": null
+        },
+        {
+          "opening_index": 1,
+          "color": true,
+          "reward_delta": -0.06666666666666665,
+          "cutoff_component_delta": -0.06666666666666665,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": -0.06666666666666665
+        },
+        {
+          "opening_index": 1,
+          "color": false,
+          "reward_delta": 0.0,
+          "cutoff_component_delta": 0.0,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": 0.0
+        },
+        {
+          "opening_index": 2,
+          "color": true,
+          "reward_delta": 100.12083333333334,
+          "cutoff_component_delta": -0.06666666666666667,
+          "both_nonterminal": false,
+          "both_nonterminal_quantity_delta": null
+        },
+        {
+          "opening_index": 2,
+          "color": false,
+          "reward_delta": -0.13333333333333333,
+          "cutoff_component_delta": -0.13333333333333333,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": -0.13333333333333333
+        },
+        {
+          "opening_index": 3,
+          "color": true,
+          "reward_delta": -0.2,
+          "cutoff_component_delta": -0.2,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": -0.2
+        },
+        {
+          "opening_index": 3,
+          "color": false,
+          "reward_delta": 0.13333333333333336,
+          "cutoff_component_delta": 0.13333333333333336,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": 0.13333333333333336
+        }
+      ],
+      "posthoc_initial_log_distance": 1.1727888366033823,
+      "posthoc_final_log_distance": 1.08051397296876
+    },
+    {
+      "seed": 105,
+      "initial_ratios": {
+        "N": 7.798076923076923,
+        "B": 1.2019230769230769,
+        "R": 5.725961538461538,
+        "Q": 10.110576923076923
+      },
+      "final_ratios": {
+        "N": 2.3509615384615383,
+        "B": 0.8076923076923077,
+        "R": 16.0,
+        "Q": 16.0
+      },
+      "updates": 3,
+      "heldout": {
+        "initial": {
+          "games": 8,
+          "reward_mean": 0.2,
+          "cutoff_quantity_component_mean": 0.2,
+          "cutoff_mean_among_nonterminal": 0.2,
+          "wins": 0,
+          "mates": 0,
+          "terminal_games": 0
+        },
+        "final": {
+          "games": 8,
+          "reward_mean": 0.225,
+          "cutoff_quantity_component_mean": 0.225,
+          "cutoff_mean_among_nonterminal": 0.225,
+          "wins": 0,
+          "mates": 0,
+          "terminal_games": 0
+        }
+      },
+      "paired": [
+        {
+          "opening_index": 0,
+          "color": true,
+          "reward_delta": 0.0,
+          "cutoff_component_delta": 0.0,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": 0.0
+        },
+        {
+          "opening_index": 0,
+          "color": false,
+          "reward_delta": 0.0,
+          "cutoff_component_delta": 0.0,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": 0.0
+        },
+        {
+          "opening_index": 1,
+          "color": true,
+          "reward_delta": 0.06666666666666665,
+          "cutoff_component_delta": 0.06666666666666665,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": 0.06666666666666665
+        },
+        {
+          "opening_index": 1,
+          "color": false,
+          "reward_delta": 0.06666666666666668,
+          "cutoff_component_delta": 0.06666666666666668,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": 0.06666666666666668
+        },
+        {
+          "opening_index": 2,
+          "color": true,
+          "reward_delta": 0.0,
+          "cutoff_component_delta": 0.0,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": 0.0
+        },
+        {
+          "opening_index": 2,
+          "color": false,
+          "reward_delta": -0.06666666666666665,
+          "cutoff_component_delta": -0.06666666666666665,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": -0.06666666666666665
+        },
+        {
+          "opening_index": 3,
+          "color": true,
+          "reward_delta": -0.06666666666666668,
+          "cutoff_component_delta": -0.06666666666666668,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": -0.06666666666666668
+        },
+        {
+          "opening_index": 3,
+          "color": false,
+          "reward_delta": 0.2,
+          "cutoff_component_delta": 0.2,
+          "both_nonterminal": true,
+          "both_nonterminal_quantity_delta": 0.2
+        }
+      ],
+      "posthoc_initial_log_distance": 0.530471103174539,
+      "posthoc_final_log_distance": 0.8236223056424917
+    }
+  ],
+  "traditional_reference": {
+    "N": 3,
+    "B": 3,
+    "R": 5,
+    "Q": 9
+  },
+  "reference_source": "https://www.chess.com/terms/chess-piece-value",
+  "distance_definition": "mean absolute log((piece/P)/traditional_reference) over NBRQ",
+  "reference_and_distance_selected_after_endpoint_exposure": true,
+  "human_description_status": "EXPLORATORY_POSTHOC_NOT_INDEPENDENT_RECOVERY_TEST",
+  "audit_seconds": 0.32899999991059303
+}
