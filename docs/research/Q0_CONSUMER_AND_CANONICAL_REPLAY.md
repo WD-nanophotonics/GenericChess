@@ -94,3 +94,13 @@ Next separate the remaining Native normal-search versus canonical-pass work on
 one defined q0 consumer; compare existing CoreAB/PVS under matching prices and
 explicit resource conditions before new Cq4/API. Preserve this segment's negative
 whole-set/cap/ordering results. Data/archive: data/q0_consumer_20261012.json.
+
+Post-publication new six-call D3/q0/TT0 bridge keeps value0 and legal/fullhistory
+results: Core lexicalAB1765nodes/.253–.259s; CorePVS1279/.207–.210s; Nativeexact
+2639/.075s. Only the Core pair isolates its PVS flag. Native candidate order/
+canonical pass differ; more nodes yet lower caller cost is not a primitive proof.
+Keep fixed-work and delivery evidence separate. data/q0_bridge_20261012.json
+binds this later source revision; the original278-query archive remains frozen.
+Main tested delivery is09f4edb00f7ebc34c5b0d8047ad04d9de52001f7,67 publisher
+checks passed and full HEAD/tracking/lsremote match. These repeat the earlier67
+production checks, not134 independent tests. No user action is needed.

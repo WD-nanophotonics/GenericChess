@@ -866,3 +866,9 @@ DEV_AUX独立发布b50681c895fe841103527649cb5df8eddbf3d740 segment16，
 没有单Agent对照/完整token工时数据，不虚报效率百分比。主自身原型签名、
 JSON/aux还原、测试路径错误均立即定位修复，原结果/源码保留；没有未报
 隐藏阻塞或Smart App Control复发。科学OPEN，最终时间与发布SHA按验收。
+
+主实质交付09f4edb00f7ebc34c5b0d8047ad04d9de52001f7经67相关publisher检查
+通过，HEAD/tracking/lsremote完整SHA一致；95成员1202305字节归档逐成员
+验证。发布后继续实际做6次无TT/D3 CoreAB/PVS/Native桥接，并另存小归档，
+没有改写原278查询的已发布冻结归档或以提交作为提前结束理由。辅助b506
+固定报告读取成功，实质协作来源与未复跑边界保留；Dot收到固定版本链接。
