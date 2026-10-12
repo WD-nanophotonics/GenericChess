@@ -1133,6 +1133,19 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
     }
     rules->repetition_policy = repetition_policy;
 
+    uint8_t stalemate_result = 0; /* Older payloads retain draw semantics. */
+    PyObject *stalemate_obj = PyDict_GetItemString(payload, "stalemate_result");
+    if (stalemate_obj != NULL && !sem_u8(stalemate_obj, &stalemate_result)) {
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    if (stalemate_result > 1) {
+        PyErr_SetString(PyExc_ValueError, "semantic stalemate_result out of range");
+        gc_semantic_rules_free(rules);
+        return NULL;
+    }
+    rules->stalemate_result = stalemate_result;
+
     uint16_t automatic_ply = 0;
     PyObject *automatic_obj = PyDict_GetItemString(payload, "automatic_adjudication_ply");
     if (automatic_obj != NULL && automatic_obj != Py_None &&
@@ -2890,6 +2903,7 @@ PyObject *gc_semantic_rules_build_info(const GCSemanticRules *rules) {
     SEM_INFO_SET("board_size", PyLong_FromUnsignedLong(rules->board_size));
     SEM_INFO_SET("repetition_limit", PyLong_FromUnsignedLong(rules->repetition_limit));
     SEM_INFO_SET("repetition_policy", PyLong_FromUnsignedLong(rules->repetition_policy));
+    SEM_INFO_SET("stalemate_result", PyLong_FromUnsignedLong(rules->stalemate_result));
     SEM_INFO_SET("automatic_adjudication_ply",
                  rules->automatic_adjudication_ply
                      ? PyLong_FromUnsignedLong(rules->automatic_adjudication_ply)

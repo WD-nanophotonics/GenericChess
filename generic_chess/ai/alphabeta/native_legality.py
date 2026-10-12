@@ -27,7 +27,15 @@ _MAX_U64 = (1 << 64) - 1
 
 
 class NativeSemanticLegalityProvider:
-    """Callable, compile-once Native semantic legality route."""
+    """Callable, compile-once route for Core-adjudicated ongoing states.
+
+    Native trial transitions also enforce state-local cutoffs such as max_ply.
+    An empty result at that boundary is not Core's pre-adjudication no-action
+    predicate: using it there can turn a max-ply draw into mate or stalemate.
+    Core owns terminal precedence and history adjudication before this frontier.
+    Ongoing checking-continuation states can exceed max_ply; supports_position
+    excludes them so the caller uses Core instead of accepting an empty set.
+    """
 
     def __init__(self, compiled, engine, native_rules, *, strict: bool = False):
         self.compiled = compiled
@@ -39,12 +47,59 @@ class NativeSemanticLegalityProvider:
         self.pattern_ids = tuple(native_rules.pattern_ids)
         self.geometry_ids = tuple(native_rules.geometry_ids)
         self.pattern_by_id = {pattern.pattern_id: pattern for pattern in engine._patterns}
+        self._requires_reply_probe = any(
+            condition.kind == "no_legal_reply"
+            for pattern in engine._patterns for condition in pattern.postconditions
+        )
         self._metrics_local = threading.local()
         self.compile_seconds = 0.0
 
     @property
     def last_call_metrics(self):
         return getattr(self._metrics_local, "last", {})
+
+    @property
+    def availability_metrics(self):
+        """Current thread's actual readonly availability calls, independent of legality."""
+        return dict(getattr(self._metrics_local, "availability", {}))
+
+    def has_legal_action(self, position, checkpoint=None):
+        """Core pre-adjudication availability: readonly bool, or None to decline.
+
+        This predicate deliberately uses ply0 and no imported history. Core
+        retains actual-ply, repetition, declarations and terminal precedence.
+        A one-ply ruleset with S4 reply guards needs Core's existing fallback;
+        Native's nested reply cutoff cannot implement that predicate.
+        """
+        from ...native.semantic import pack_position, has_legal_action
+
+        metrics = getattr(self._metrics_local, "availability", None)
+        if metrics is None:
+            metrics = dict(calls=0, imports=0, queries=0, declines=0)
+            self._metrics_local.availability = metrics
+        metrics["calls"] += 1
+        if checkpoint is not None:
+            checkpoint()
+        if position.ruleset_fingerprint != self.native_rules.fingerprint:
+            raise ValueError("Native availability compiled source mismatch")
+        if self._requires_reply_probe and self.compiled.support.max_ply <= 1:
+            metrics["declines"] += 1
+            return None
+        packed = pack_position(self.native_rules, self._state_only_payload(position, 0))
+        metrics["imports"] += 1
+        value = has_legal_action(self.native_rules, packed)
+        metrics["queries"] += 1
+        if checkpoint is not None:
+            checkpoint()
+        return value
+
+    def supports_position(self, position, ply_count):
+        """Native's state-local cutoff cannot implement Core continuation."""
+        # S4 no-reply conditions test a child through S3. Native also filters
+        # that reply parent at max_ply, one ply before the outer cutoff.
+        # Pure semantic IR products expose this on the typed support payload;
+        # a legacy compatibility attribute is not required for execution.
+        return ply_count < self.compiled.support.max_ply - int(self._requires_reply_probe)
 
     @classmethod
     def try_create(cls, compiled, *, strict: bool = False):
@@ -53,6 +108,15 @@ class NativeSemanticLegalityProvider:
             return None
         engine = semantic_engine_for(compiled)
         if engine is None:
+            return None
+        # Installed kernels bind these filters to the affected piece instead
+        # of the action actor. Preserve Core legality for these rules.
+        if any(
+            effect.kind in ("move", "shift", "remove")
+            and effect.piece_type_ref is not None
+            and effect.piece_type_ref.kind in ("action_base", "action_current")
+            for pattern in engine._patterns for effect in pattern.effects
+        ):
             return None
         started = time.perf_counter()
         try:
@@ -171,6 +235,10 @@ class NativeSemanticLegalityProvider:
             checkpoint()
 
         decoded_started = time.perf_counter()
+        public_cache = getattr(self._metrics_local, "public_cache", None)
+        if public_cache is None:
+            public_cache = {}
+            self._metrics_local.public_cache = public_cache
         pairs = []
         for index, packed in enumerate(raw_actions):
             if index and index % 64 == 0 and checkpoint is not None:
@@ -182,7 +250,15 @@ class NativeSemanticLegalityProvider:
             binding = self.engine._make_binding_from_action(
                 position, semantic_action, pattern
             )
-            public = _semantic_public_action(self.engine, semantic_action)
+            # Only immutable public syntax is reused. Decoding, source/type
+            # validation and the complete position-dependent binding above
+            # still execute for every action, including cache hits.
+            public = public_cache.get(packed)
+            if public is None:
+                public = _semantic_public_action(self.engine, semantic_action)
+                if len(public_cache) >= 2048:
+                    public_cache.clear()
+                public_cache[packed] = public
             pairs.append((public, (semantic_action, binding)))
         if checkpoint is not None:
             checkpoint()

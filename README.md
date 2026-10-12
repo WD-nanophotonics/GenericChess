@@ -1,6 +1,9 @@
 # GenericChess UI Test
 
-UI-only development branch with a complete frozen AI backend for PVE.
+UI development branch with a complete pinned production AI backend for PVE.
+The user-authorized 2026-10-12 engine sync uses sandbox source
+`7b988c9f247fd3eb96ca17daedf28e5c4d93b3cd`; see
+[engine synchronization](docs/ui/ADR-WEB-002-engine-sync.md).
 See [UI Test handoff](docs/ui/UI_TEST.md) for scope, interfaces and merge guidance.
 
 ## Browser game / 网页小游戏

@@ -566,6 +566,109 @@ def _declaration_dict(value: CompiledDeclaration) -> dict:
     }
 
 
+def _incoming_attack_paths(ir, squares: int, *, max_paths: int = 65536):
+    """Bounded, compile-owned reverse geometry; no position or attack cache.
+
+    Preserve pattern/type/source/geometry/path order, including duplicate
+    endpoints and S4-bearing capture patterns. The executor still checks
+    occupancy, path and state/slot predicates. Large metadata falls back to
+    the original traversal without excluding any rule or changing semantics.
+    """
+    incoming = {(str(owner), target): [] for owner in (0, 1) for target in range(squares)}
+    count = 0
+    for owner in (0, 1):
+        for pattern in ir.patterns:
+            if pattern.target.kind != "target_enemy":
+                continue
+            for tid in pattern.type_ids:
+                for source in range(squares):
+                    for gid in pattern.geometry_ids:
+                        geometry = ir.geometry.get(gid)
+                        if geometry is None or geometry.kind == "drop":
+                            continue
+                        if geometry.atom_source is not None and geometry.atom_source[0] != tid:
+                            continue
+                        compiled_path = geometry.paths.get(str(owner), {}).get(source, ())
+                        if geometry.kind == "leap":
+                            endpoints = range(min(1, len(compiled_path)))
+                        else:
+                            endpoints = range(max(0, (geometry.min_steps or 1) - 1), len(compiled_path))
+                        for endpoint in endpoints:
+                            count += 1
+                            if count > max_paths:
+                                return None
+                            target = compiled_path[endpoint]
+                            path = () if geometry.kind == "leap" else tuple(compiled_path[:endpoint])
+                            incoming[(str(owner), target)].append((pattern, tid, source, gid, path))
+    # Tuples retain path order; the private mapping follows the IR's existing
+    # pickleable mapping convention rather than introducing mappingproxy.
+    return {key: tuple(rows) for key, rows in incoming.items()}
+
+
+def _incoming_attack_sources(incoming):
+    """Partition bounded endpoint rows by source/current type, retaining rank.
+
+    The rows and path tuples are borrowed from the existing incoming index.
+    Runtime occupancy and guards are never compiled into this dispatch data.
+    """
+    if incoming is None:
+        return None
+    result = {}
+    for key, rows in incoming.items():
+        groups = {}
+        for rank, row in enumerate(rows):
+            groups.setdefault(row[2], {}).setdefault(row[1], []).append((rank, row))
+        result[key] = {
+            source: {tid: tuple(entries) for tid, entries in typed.items()}
+            for source, typed in groups.items()
+        }
+    return result
+
+
+def _fixed_transition_triggers(ir, support):
+    """Index static event squares once per compiled ruleset.
+
+    Dynamic square operands stay on the original runtime path. All trigger
+    writes clear a slot, so matching static clears commute with dynamic clears;
+    explicit auxiliary effects still run afterwards in their declared order.
+    """
+    slots = {slot.slot_id: slot for slot in ir.aux_slots}
+    plans = []
+    shape = support.board_shape
+    for side in (0, 1):
+        entries = {}
+        dynamic = []
+        for trigger in ir.triggers:
+            slot = slots.get(trigger.slot_id)
+            if slot is None:
+                continue
+            ref = trigger.square_ref
+            if ref.kind != "fixed":
+                dynamic.append(trigger)
+                continue
+            for owner in ((0, 1) if slot.scope == "per_owner" else (side,)):
+                file, rank = ref.square
+                if ref.owner_relative and owner == 1:
+                    file, rank = shape.width - 1 - file, shape.height - 1 - rank
+                if 0 <= file < shape.width and 0 <= rank < shape.height:
+                    key = trigger.event, rank * shape.width + file
+                    logical = owner if slot.scope == "per_owner" else -1
+                    entries.setdefault(key, []).append(
+                        (trigger.slot_id, logical, owner, trigger.owner))
+        plans.append(({key: tuple(rows) for key, rows in entries.items()}, tuple(dynamic)))
+    return tuple(plans)
+
+
+def _actor_capture_patterns(ir):
+    """Ordered type dispatch for the actor-only pseudo-attack witness."""
+    by_type = {}
+    for pattern in ir.patterns:
+        if pattern.target.kind == "target_enemy":
+            for tid in dict.fromkeys(pattern.type_ids):
+                by_type.setdefault(tid, []).append(pattern)
+    return {tid: tuple(patterns) for tid, patterns in by_type.items()}
+
+
 @dataclass(frozen=True, slots=True)
 class CompiledSemanticRuleset:
     """Compiled product for semantic-DSL rulesets.
@@ -578,6 +681,32 @@ class CompiledSemanticRuleset:
     ir: CompiledSemanticIR
     _legacy_compiled: Any = None
     support: "CompiledSemanticSupport | None" = None
+    _incoming_attack_paths: Any = field(init=False, repr=False, compare=False, default=None)
+    _incoming_attack_sources: Any = field(init=False, repr=False, compare=False, default=None)
+    _fixed_transition_triggers: Any = field(init=False, repr=False, compare=False, default=None)
+    _actor_capture_patterns: Any = field(init=False, repr=False, compare=False, default=None)
+    _pattern_drop_kinds: Any = field(init=False, repr=False, compare=False, default=None)
+
+    def __post_init__(self):
+        # Derived execution data is not part of the IR/fingerprint/payload.
+        # init=False also rebuilds it when dataclasses.replace changes IR.
+        if self.support is not None and self.ir.capabilities.new_ir_core_executable:
+            object.__setattr__(self, "_pattern_drop_kinds", {
+                pattern.geometry_ids: any(
+                    self.ir.geometry[g].kind == "drop"
+                    for g in pattern.geometry_ids if g in self.ir.geometry
+                )
+                for pattern in self.ir.patterns
+            })
+            object.__setattr__(self, "_actor_capture_patterns",
+                _actor_capture_patterns(self.ir))
+            object.__setattr__(self, "_incoming_attack_paths",
+                _incoming_attack_paths(self.ir, self.support.board_shape.area))
+            object.__setattr__(self, "_incoming_attack_sources",
+                _incoming_attack_sources(self._incoming_attack_paths))
+            if self.ir.triggers:
+                object.__setattr__(self, "_fixed_transition_triggers",
+                    _fixed_transition_triggers(self.ir, self.support))
 
     @property
     def ruleset_fingerprint(self) -> str:

@@ -5,6 +5,7 @@ Shogi Tanigawa teaching table (koichi.jp/shogi/rule/tips/tips-01.php).
 Kings are terminal anchors, excluded from ordinary material arithmetic.
 """
 from functools import lru_cache
+from dataclasses import replace
 from statistics import median
 
 from ..ai.evaluation.cache import EvaluationProfileCache
@@ -22,8 +23,13 @@ SHOGI_VALUES = {"K": 0, "P": 1, "L": 3, "N": 4, "S": 5, "G": 6,
 
 @lru_cache(maxsize=1)
 def builtin_fingerprints():
-    return {compile_ruleset_for_execution(build_builtin_ruleset(name)).ruleset_fingerprint: name
-            for name in builtin_ruleset_names()}
+    fingerprints = {compile_ruleset_for_execution(build_builtin_ruleset(name)).ruleset_fingerprint: name
+                    for name in builtin_ruleset_names()}
+    # Original UI saves embed the earlier production Shogi draw-on-no-moves rule.
+    # Preserve those rules verbatim while keeping their human material policy.
+    legacy_shogi = replace(build_builtin_ruleset("standard_shogi"), stalemate_result="draw")
+    fingerprints[compile_ruleset_for_execution(legacy_shogi).ruleset_fingerprint] = "standard_shogi"
+    return fingerprints
 
 
 def human_material_profile(compiled, config):

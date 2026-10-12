@@ -15,7 +15,7 @@ from ...clock import TimeControl, TimeControlMode
 from ...core.actions import action_to_dict
 from ...rules.serialization import deserialize_ruleset, serialize_ruleset
 from ...visual.textures import generate_piece_texture
-from ..ai_backend import create_ui_player
+from ..ai_backend import create_ui_player, ENGINE_BASE_SHA, ENGINE_LABEL
 from ..controller import UIController
 from ..match import MatchConfig, ParticipantKind
 from ..stores import DictSettingsStore
@@ -122,7 +122,8 @@ class WebGame:
             "history": [{"ply": e.ply, "player": e.player, "label": e.label,
                          "action": action_to_dict(e.action)} for e in ctrl.history_entries()],
             "actions": actions, "can_undo": self.can_undo(), "active": self.active,
-            "ai": {"thinking": ctrl.ai_thinking, "queued": bool(self.task) and not ctrl.ai_thinking,
+            "ai": {"backend": ENGINE_LABEL, "engine_sha": ENGINE_BASE_SHA,
+                   "thinking": ctrl.ai_thinking, "queued": bool(self.task) and not ctrl.ai_thinking,
                    "paused": self.paused, "error": self.ai_error}, "storage_error": self.storage_error}
         return self._state
 

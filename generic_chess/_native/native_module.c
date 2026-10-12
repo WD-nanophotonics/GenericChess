@@ -432,6 +432,9 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     PyDict_SetItemString(dict, "semantic_fixed_depth_search", value);
     Py_DECREF(value);
     value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "semantic_exact_root_windows", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "semantic_material_evaluator", value);
     Py_DECREF(value);
     return dict;
@@ -2200,7 +2203,11 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
         return NULL;
     }
     GCSemanticBoardPayload bp;
-    memset(&bp, 0, sizeof(bp));
+    /* Only supplied history entries are transport authority. Avoid clearing
+     * the reserved tail on every current-position attack/availability import. */
+    memset(&bp, 0, offsetof(GCSemanticBoardPayload, history_lo));
+    memset(&bp.history_len, 0,
+           sizeof(bp) - offsetof(GCSemanticBoardPayload, history_len));
     bp.history_exact = 1;
     int ok = 1;
     bp.side_to_move = (uint8_t)gc_py_long_as_long(side_obj, &ok);
@@ -2289,6 +2296,11 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
                 PyErr_SetString(PyExc_ValueError, "semantic history entry must have two, four, or six words");
                 return NULL;
             }
+            /* Legacy two-word transport retains zero upper digest words and
+             * zero unspecified events, just as the former full memset did. */
+            memset(bp.history_digest[i], 0, sizeof(bp.history_digest[i]));
+            bp.history_actor[i] = 0;
+            bp.history_gave_check[i] = 0;
             if (word_count == 2) bp.history_exact = 0;
             if (word_count != 6) history_events_complete = 0;
             for (Py_ssize_t word = 0; word < word_count; word++) {
@@ -2378,6 +2390,37 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
         pos->history_events_exact = 1;
     }
     return PyCapsule_New(pos, GC_SEM_POSITION_CAPSULE, gc_semantic_position_capsule_free);
+}
+
+/* Read-only actual post-transition counts for the existing Python q policy.
+ * Current board types plus base hand types, not an evaluation or legality test. */
+static PyObject *gc_semantic_material_summary(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &pos_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *pos = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !pos) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, pos)) return NULL;
+    uint32_t inventory[2][GC_MAX_TYPES] = {{0}};
+    unsigned board_count[2] = {0, 0};
+    for (uint16_t square = 0; square < rules->board_size * rules->board_size; ++square) {
+        const GCPiece *piece = &pos->board[square];
+        if (!piece->occupied) continue;
+        board_count[piece->owner]++;
+        inventory[piece->owner][piece->current_type]++;
+    }
+    PyObject *counts = PyTuple_New(2 * rules->type_count);
+    if (!counts) return NULL;
+    for (unsigned owner = 0; owner < 2; ++owner) {
+        for (unsigned type = 0; type < rules->type_count; ++type) {
+            PyObject *count = PyLong_FromUnsignedLong(inventory[owner][type] + pos->hand_counts[owner][type]);
+            if (!count) { Py_DECREF(counts); return NULL; }
+            PyTuple_SET_ITEM(counts, owner * rules->type_count + type, count);
+        }
+    }
+    return Py_BuildValue("(ii(ii)N)", pos->side_to_move, pos->ply,
+                         board_count[0], board_count[1], counts);
 }
 
 static PyObject *gc_semantic_position_snapshot(PyObject *self, PyObject *args) {
@@ -2591,12 +2634,18 @@ typedef struct {
     uint64_t *data;
     size_t count;
     size_t capacity;
+    int (*visit)(void *context, uint64_t action);
+    void *context;
+    int stopped;
 } GCSemanticActionBuffer;
 
 static void gc_semantic_action_buffer_init(GCSemanticActionBuffer *buffer) {
     buffer->data = NULL;
     buffer->count = 0;
     buffer->capacity = 0;
+    buffer->visit = NULL;
+    buffer->context = NULL;
+    buffer->stopped = 0;
 }
 
 static void gc_semantic_action_buffer_free(GCSemanticActionBuffer *buffer) {
@@ -2607,6 +2656,11 @@ static void gc_semantic_action_buffer_free(GCSemanticActionBuffer *buffer) {
 }
 
 static int gc_semantic_action_buffer_append(GCSemanticActionBuffer *buffer, uint64_t action) {
+    if (buffer->visit) {
+        buffer->count++;
+        if (buffer->visit(buffer->context, action)) buffer->stopped = 1;
+        return 1;
+    }
     if (buffer->count == buffer->capacity) {
         size_t next = buffer->capacity ? buffer->capacity * 2 : 64;
         if (next < buffer->capacity || next > (size_t)-1 / sizeof(*buffer->data)) return 0;
@@ -2666,6 +2720,7 @@ static int gc_semantic_append_board_actions(GCSemanticActionBuffer *out,
             ((uint64_t)pattern_index << 36) | ((uint64_t)geometry_index << 44) |
             ((uint64_t)piece->current_type << 56);
         if (!gc_semantic_action_buffer_append(out, action)) return 0;
+        if (out->stopped) return 1;
     }
     return 1;
 }
@@ -2700,6 +2755,7 @@ static int gc_semantic_generate_candidate_buffer(const GCSemanticRules *rules,
                             PyErr_NoMemory();
                             return 0;
                         }
+                        if (buffer->stopped) return 1;
                     }
                 }
                 continue;
@@ -2723,6 +2779,7 @@ static int gc_semantic_generate_candidate_buffer(const GCSemanticRules *rules,
                             PyErr_SetString(PyExc_ValueError, "semantic promotion action construction failed");
                             return 0;
                         }
+                        if (buffer->stopped) return 1;
                     }
                 }
             }
@@ -3051,6 +3108,53 @@ static PyObject *gc_semantic_transient_legal_actions_impl(
     return tuple;
 }
 
+/* Readonly S3/S4 checks for a caller-ordered candidate chunk.  This is a
+ * legality transport, not a terminal verdict or a persistent search runtime. */
+static PyObject *gc_semantic_transient_legal_subset(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *position_capsule, *input;
+    if (!PyArg_ParseTuple(args, "OOO", &rules_capsule, &position_capsule, &input)) return NULL;
+    GCSemanticRules *rules = PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position || !gc_semantic_require_matching_rules(rules, position)) return NULL;
+    PyObject *sequence = PySequence_Fast(input, "candidate chunk must be a sequence");
+    if (!sequence) return NULL;
+    GCSemanticActionBuffer candidates;
+    gc_semantic_action_buffer_init(&candidates);
+    for (Py_ssize_t i = 0; i < PySequence_Fast_GET_SIZE(sequence); i++) {
+        PyObject *item = PySequence_Fast_GET_ITEM(sequence, i);
+        if (!PyLong_Check(item) || PyBool_Check(item)) {
+            PyErr_SetString(PyExc_TypeError, "candidate must be a nonboolean u64");
+            goto input_error;
+        }
+        unsigned long long value = PyLong_AsUnsignedLongLong(item);
+        if (PyErr_Occurred() || !gc_semantic_action_buffer_append(&candidates, value)) goto input_error;
+    }
+    Py_DECREF(sequence);
+    PyObject *out = PyList_New(0);
+    if (!out) { gc_semantic_action_buffer_free(&candidates); return NULL; }
+    gc_semantic_runtime_history_mode_start();
+    for (size_t i = 0; i < candidates.count; i++) {
+        GCSemanticPosition child;
+        if (!gc_semantic_runtime_make_checked(&child, rules, position, candidates.data[i])) continue;
+        PyObject *value = PyLong_FromUnsignedLongLong(candidates.data[i]);
+        if (!value || PyList_Append(out, value) != 0) {
+            Py_XDECREF(value); Py_CLEAR(out); break;
+        }
+        Py_DECREF(value);
+    }
+    gc_semantic_runtime_history_mode_stop();
+    gc_semantic_action_buffer_free(&candidates);
+    if (!out) return NULL;
+    PyObject *result = PySequence_Tuple(out);
+    Py_DECREF(out);
+    return result;
+input_error:
+    Py_DECREF(sequence);
+    gc_semantic_action_buffer_free(&candidates);
+    return NULL;
+}
+
 static PyObject *gc_semantic_transient_legal_actions(PyObject *self, PyObject *args) {
     return gc_semantic_transient_legal_actions_impl(self, args, NULL);
 }
@@ -3083,32 +3187,95 @@ static PyObject *gc_semantic_transient_legal_actions_audit(PyObject *self, PyObj
     return out;
 }
 
-static int gc_semantic_has_guarded_action(const GCSemanticRules *rules,
-                                          const GCSemanticPosition *position,
-                                          int *ok) {
+typedef struct {
+    const GCSemanticRules *rules;
+    GCSemanticPosition probe;
+} GCSemanticAvailabilityProbe;
+
+static int gc_semantic_visit_available_action(void *context, uint64_t action) {
+    GCSemanticAvailabilityProbe *probe = (GCSemanticAvailabilityProbe *)context;
+    return gc_semantic_runtime_probe_action(probe->rules, &probe->probe, action);
+}
+
+static int gc_semantic_has_guarded_action_impl(const GCSemanticRules *rules,
+                                               const GCSemanticPosition *position,
+                                               int *ok,
+                                               GCSemanticRuntimeAudit *audit) {
+    GCSemanticAvailabilityProbe probe;
+    probe.rules = rules;
+    /* A boolean query needs neither a complete candidate list nor the unused
+     * reserved history tail. Keep the exact checked transition and S4 guards. */
+    memcpy(&probe.probe, position, offsetof(GCSemanticPosition, history_lo));
+    probe.probe.ply = 0;
+    probe.probe.history_len = 0;
+    probe.probe.history_exact = 1;
+    probe.probe.history_events_exact = position->history_events_exact;
     GCSemanticActionBuffer candidates;
     gc_semantic_action_buffer_init(&candidates);
-    if (!gc_semantic_generate_candidate_buffer(rules, position, &candidates)) {
-        gc_semantic_action_buffer_free(&candidates);
+    candidates.visit = gc_semantic_visit_available_action;
+    candidates.context = &probe;
+    if (audit) gc_semantic_runtime_audit_start(audit);
+    int generated = gc_semantic_generate_candidate_buffer(rules, position, &candidates);
+    if (audit) {
+        gc_semantic_runtime_audit_stop();
+        audit->candidate_count = (unsigned long long)candidates.count;
+    }
+    if (!generated) {
         *ok = 0;
         return 0;
     }
-    for (size_t i = 0; i < candidates.count; i++) {
-        uint64_t raw = candidates.data[i];
-        GCSemanticPosition probe = *position;
-        /* Terminal authority checks legal-action availability independently of
-         * the max-ply/repetition-history cutoff, matching SemanticEngine. */
-        probe.ply = 0;
-        probe.history_len = 0;
-        probe.history_exact = 1;
-        GCSemanticPosition child;
-        if (gc_semantic_runtime_make_checked(&child, rules, &probe, (uint64_t)raw)) {
-            gc_semantic_action_buffer_free(&candidates);
-            return 1;
-        }
+    return candidates.stopped;
+}
+
+static int gc_semantic_has_guarded_action(const GCSemanticRules *rules,
+                                          const GCSemanticPosition *position,
+                                          int *ok) {
+    return gc_semantic_has_guarded_action_impl(rules, position, ok, NULL);
+}
+
+/* Read-only S0-S4 availability primitive for Core-owned terminal callers.
+ * Adjudication/history policy remains the caller's separate authority. */
+static PyObject *gc_semantic_has_legal_action(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &pos_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    int ok = 1;
+    int available = gc_semantic_has_guarded_action(rules, position, &ok);
+    if (!ok) {
+        PyErr_SetString(PyExc_ValueError, "semantic availability candidate generation failed");
+        return NULL;
     }
-    gc_semantic_action_buffer_free(&candidates);
-    return 0;
+    return PyBool_FromLong(available);
+}
+
+static PyObject *gc_semantic_has_legal_action_audit(PyObject *self, PyObject *args) {
+    (void)self;
+    PyObject *rules_capsule, *pos_capsule;
+    if (!PyArg_ParseTuple(args, "OO", &rules_capsule, &pos_capsule)) return NULL;
+    GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(rules_capsule, GC_SEM_RULES_CAPSULE);
+    GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
+    if (!rules || !position) return NULL;
+    if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    GCSemanticRuntimeAudit audit = {0};
+    int ok = 1;
+    int available = gc_semantic_has_guarded_action_impl(rules, position, &ok, &audit);
+    if (!ok) {
+        PyErr_SetString(PyExc_ValueError, "semantic availability candidate generation failed");
+        return NULL;
+    }
+    return Py_BuildValue("{s:O,s:K,s:K,s:K,s:K,s:K,s:K,s:K}",
+        "available", available ? Py_True : Py_False,
+        "candidate_count", audit.candidate_count,
+        "s3_trial_count", audit.s3_trial_count,
+        "s4_count", audit.s4_count,
+        "nested_reply_count", audit.nested_reply_count,
+        "child_canonical_key_computations", audit.child_canonical_key_computations,
+        "history_appends", audit.history_appends,
+        "attack_check_calls", audit.attack_check_calls);
 }
 
 static int gc_semantic_repetition_count(const GCSemanticRules *rules,
@@ -3312,6 +3479,8 @@ static int gc_semantic_terminal_status(const GCSemanticRules *rules,
             return 1; /* checkmate */
         }
         /* No-legal-action states have checkmate/stalemate precedence. */
+        if (rules->stalemate_result == 1 && winner_out)
+            *winner_out = 1 - position->side_to_move;
         return 2; /* stalemate */
     }
     unsigned long repetitions = 0;
@@ -3731,7 +3900,10 @@ static int gc_semantic_probe_material(
             score += owner == position->side_to_move ? hand_score : -hand_score;
         }
     }
-    if (profile && profile->dynamic_supplied) {
+    /* A supplied zero vector is a neutral term, not a request to enumerate
+     * dynamic features at every leaf. Returned leaf metadata is separate. */
+    if (profile && profile->dynamic_supplied &&
+        (profile->dynamic[0] || profile->dynamic[1] || profile->dynamic[2])) {
         int features[3] = {0, 0, 0};
         /* The vector is owner-0 minus owner-1; leaf scores are always from
          * the side-to-move perspective, matching the material terms above. */
@@ -4028,8 +4200,11 @@ static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *ru
         *ok = 0;
         return result;
     }
-    if (terminal == 1) { result.score = -1000000; return result; }
-    if (terminal != 0) { result.score = 0; return result; }
+    if (terminal != 0) {
+        result.score = winner < 0 ? 0 :
+            (winner == position->side_to_move ? 1000000 : -1000000);
+        return result;
+    }
     if (depth == 0) return result;
     GCSemanticActionBuffer actions;
     gc_semantic_action_buffer_init(&actions);
@@ -4215,6 +4390,8 @@ typedef struct {
     uint64_t root_order_hint;
     int root_order_hint_present;
     int root_window_pruning;
+    uint64_t root_tie_refinements;
+    uint64_t root_tie_aborts;
     int root_hint_legal;
     uint64_t root_hint_apply_count;
     uint8_t root_iteration_attempted[GC_SEM_MAX_PLY + 1];
@@ -5160,6 +5337,12 @@ static PyObject *gc_semantic_policy_logits(PyObject *self, PyObject *args) {
     return out;
 }
 
+static int gc_semantic_canonical_action_compare(const void *left, const void *right) {
+    uint64_t a = *(const uint64_t *)left;
+    uint64_t b = *(const uint64_t *)right;
+    return (a > b) - (a < b);
+}
+
 static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
                                          uint32_t ply, uint32_t depth,
                                          int alpha, int beta, int pv_node,
@@ -5228,7 +5411,10 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
                 ctx->tt_previous_iteration_hits++;
             else
                 ctx->tt_current_iteration_hits++;
-            if (!pv_node && stored_depth >= (int)depth) {
+            /* Exact-root mode preserves the current finite horizon. Deeper
+             * entries remain ordering hints, not current-depth score bounds. */
+            if (!pv_node && (ctx->root_window_pruning
+                    ? stored_depth == (int)depth : stored_depth >= (int)depth)) {
                 int score = gc_semantic_score_from_tt(
                     stored_score, ctx->root_ply_offset + ply);
                 if (stored_bound == GC_TT_BOUND_EXACT) {
@@ -5311,7 +5497,13 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
             }
         }
     }
-    if (!gc_semantic_order_actions(ctx, position, ply, depth, &actions)) {
+    if (ctx->root_window_pruning && pv_replay) {
+        /* Canonical replay owns its order. Later actions cannot replace an
+         * earlier incumbent using an inexact equal upper bound. */
+        if (actions.count > 1)
+            qsort(actions.data, actions.count, sizeof(uint64_t),
+                  gc_semantic_canonical_action_compare);
+    } else if (!gc_semantic_order_actions(ctx, position, ply, depth, &actions)) {
         gc_semantic_action_buffer_free(&actions);
         return 0;
     }
@@ -5371,11 +5563,46 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
         int child_beta = (ply == 0 && ctx->root_window_pruning && !root_first_child)
             ? -alpha
             : (pv_node || ply == 0 ? GC_SEMANTIC_PROBE_INF : -alpha);
+        if (ctx->root_window_pruning && ply > 0) {
+            child_alpha = -beta;
+            child_beta = -alpha;
+        }
         int branch = gc_semantic_iterative_negamax(
-            ctx, ply + 1, depth - 1, child_alpha, child_beta, child_pv,
-            pv_replay);
+            ctx, ply + 1, depth - 1, child_alpha, child_beta,
+            /* Scalar probes may reuse TT bounds; only the selected child
+             * is recursively reconstructed as the canonical continuation. */
+            (ctx->root_window_pruning && pv_replay) ? 0 : child_pv,
+            (ctx->root_window_pruning && pv_replay) ? 0 : pv_replay);
         if (ctx->control != 0) break;
         int score = -branch;
+        /* A later narrowed root child can return only an UPPER bound equal
+         * to the exact incumbent. Refine only a bound that would replace its
+         * canonical action; commit nothing if the full-window search aborts. */
+        if (ply == 0 && ctx->root_window_pruning && !root_first_child && found &&
+            score == best && !gc_semantic_is_declaration_action(best_action) &&
+            action < best_action) {
+            ctx->root_tie_refinements++;
+            /* Confirm the score with normal finite-horizon search. Only the
+             * final selected root branch needs canonical PV materialization;
+             * losing tie candidates must not pay for a complete replay. */
+            /* The earlier parent UPPER==best gives child value >= -best.
+             * An integer threshold test can confirm equality without solving
+             * the entire losing subtree. Keep the PV entry's TT-cutoff policy. */
+            int confirmed_incumbent = best;
+            branch = gc_semantic_iterative_negamax(
+                ctx, ply + 1, depth - 1, -confirmed_incumbent,
+                -confirmed_incumbent + 1, 1, 0);
+            if (ctx->control != 0) { ctx->root_tie_aborts++; break; }
+            /* A child fail-low below its earlier lower bound is contradictory,
+             * not an improved move or a tie. Fail-high is a losing parent bound,
+             * never an exact value for the final canonical trace. */
+            if (branch < -confirmed_incumbent) {
+                ctx->control = 4;
+                break;
+            }
+            score = branch == -confirmed_incumbent
+                ? confirmed_incumbent : -branch;
+        }
         int prefer_equal = score == best &&
             ((!gc_semantic_is_declaration_action(best_action) &&
               gc_semantic_is_declaration_action(action)) ||
@@ -5403,7 +5630,8 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
     }
     gc_semantic_action_buffer_free(&actions);
     if (ctx->control != 0) return 0;
-    if ((ctx->tt != NULL || ctx->root_window_pruning) && !pv_replay && pv_node && found &&
+    if ((ctx->tt != NULL || ctx->root_window_pruning) && (!pv_replay || ctx->root_window_pruning) && pv_node && found &&
+        (!ctx->root_window_pruning || ply == 0 || pv_replay) &&
         !gc_semantic_is_declaration_action(best_action)) {
         /* Re-search the selected branch with a full PV window so TT ordering
          * cannot change the deterministic principal line. */
@@ -5429,9 +5657,13 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
             GC_SEMANTIC_PROBE_INF, 1, 1);
         if (ctx->control != 0) return 0;
         /* Keep the already selected score/bound.  This pass is solely to
-         * materialize the canonical PV for the selected action; the main
+         * materialize the canonical PV for the selected action; exact-root
+         * mode defers intermediate replay to this complete root pass. The main
          * alpha-beta result remains authoritative. */
-        (void)branch;
+        if (ctx->root_window_pruning && best != -branch) {
+            ctx->control = 4;
+            return 0;
+        }
         ctx->pv_table[(size_t)ply * ctx->pv_stride] = best_action;
         uint16_t child_len = ctx->pv_length[ply + 1];
         ctx->pv_length[ply] = (uint16_t)(1 + child_len);
@@ -6079,6 +6311,12 @@ static PyObject *gc_semantic_iterative_search(
     }
     memcpy(&ctx.stack[0], position, sizeof(GCSemanticPosition));
     gc_semantic_context_seed(position, ctx.history_context[0]);
+    if (ctx.root_window_pruning) {
+        /* Legacy deeper-depth score reuse and finite-depth exact-root search
+         * cannot share score entries when a persistent engine switches modes. */
+        ctx.history_context[0][0] ^= UINT64_C(0x726f6f742d657861);
+        ctx.history_context[0][1] ^= UINT64_C(0x63742d6465707468);
+    }
     uint64_t completed_pv[GC_SEM_MAX_PLY + 1];
     uint16_t completed_len = 0;
     uint64_t completed_action = 0;
@@ -6246,6 +6484,8 @@ static PyObject *gc_semantic_iterative_search(
         gc_semantic_set_u64(out, "policy_state_inferences", ctx.policy_state_inferences) != 0 ||
         gc_semantic_set_u64(out, "policy_actions_scored", ctx.policy_actions_scored) != 0 ||
         gc_semantic_set_u64(out, "policy_action_embeddings", ctx.policy_actions_scored) != 0 ||
+        gc_semantic_set_u64(out, "root_tie_refinements", ctx.root_tie_refinements) != 0 ||
+        gc_semantic_set_u64(out, "root_tie_aborts", ctx.root_tie_aborts) != 0 ||
         gc_semantic_set_u64(out, "policy_preorder_checked_transitions", ctx.policy_preorder_checked_transitions) != 0 ||
         gc_semantic_set_u64(out, "policy_traversal_checked_attempts", ctx.policy_traversal_checked_attempts) != 0 ||
         gc_semantic_set_u64(out, "policy_traversal_illegal_skips", ctx.policy_traversal_illegal_skips) != 0 ||
@@ -6892,6 +7132,8 @@ static PyMethodDef gc_methods[] = {
      "semantic_action_layout() -> exact 64-bit semantic action identity layout"},
     {"semantic_pack_position", gc_semantic_pack_position, METH_VARARGS,
      "semantic_pack_position(rules, payload) -> semantic position capsule"},
+    {"semantic_material_summary", gc_semantic_material_summary, METH_VARARGS,
+     "semantic_material_summary(rules, position) -> (side, ply, board_counts, inventory)"},
     {"semantic_position_snapshot", gc_semantic_position_snapshot, METH_VARARGS,
      "semantic_position_snapshot(rules, position) -> canonical board snapshot"},
     {"semantic_position_key", gc_semantic_position_key, METH_VARARGS,
@@ -6936,10 +7178,16 @@ static PyMethodDef gc_methods[] = {
      "test-only guarded action counters and exact action set"},
     {"semantic_transient_legal_actions", gc_semantic_transient_legal_actions, METH_VARARGS,
      "semantic_transient_legal_actions(rules, position) -> ordered legal action set without history"},
+    {"semantic_transient_legal_subset", gc_semantic_transient_legal_subset, METH_VARARGS,
+     "readonly legal subset preserving supplied candidate order and duplicates"},
     {"semantic_transient_legal_actions_audit", gc_semantic_transient_legal_actions_audit, METH_VARARGS,
      "test-only transient legality counters and exact action set"},
     {"semantic_policy_logits", gc_semantic_policy_logits, METH_VARARGS,
      "semantic_policy_logits(rules, position, SemanticPolicyV1) -> actions and logits"},
+    {"semantic_has_legal_action_audit", gc_semantic_has_legal_action_audit, METH_VARARGS,
+     "test-only boolean availability and actual candidate/transition counters"},
+    {"semantic_has_legal_action", gc_semantic_has_legal_action, METH_VARARGS,
+     "semantic_has_legal_action(rules, position) -> readonly S0-S4 availability"},
     {"semantic_terminal", gc_semantic_terminal, METH_VARARGS,
      "semantic_terminal(rules, position) -> exact terminal status"},
     {"semantic_probe_search", gc_semantic_probe_search, METH_VARARGS,

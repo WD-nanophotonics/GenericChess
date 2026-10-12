@@ -25,7 +25,9 @@ int gc_semantic_position_pack(GCSemanticPosition *pos,
     }
     GCSemAuxValue provided[GC_SEM_MAX_AUX_SLOTS][3];
     memcpy(provided, payload->aux, sizeof(provided));
-    memset(pos, 0, sizeof(*pos));
+    memset(pos, 0, offsetof(GCSemanticPosition, history_lo));
+    memset(&pos->history_len, 0,
+           sizeof(*pos) - offsetof(GCSemanticPosition, history_len));
     memcpy(pos->rules_fingerprint, rules->fingerprint, sizeof(pos->rules_fingerprint));
     pos->side_to_move = payload->side_to_move;
     pos->ply = payload->ply;
@@ -34,11 +36,16 @@ int gc_semantic_position_pack(GCSemanticPosition *pos,
     memcpy(pos->hand_counts, payload->hand_counts, sizeof(pos->hand_counts));
     if (payload->history_len > GC_SEM_MAX_PLY + 1) return 0;
     pos->history_len = payload->history_len;
-    memcpy(pos->history_lo, payload->history_lo, sizeof(pos->history_lo));
-    memcpy(pos->history_hi, payload->history_hi, sizeof(pos->history_hi));
-    memcpy(pos->history_digest, payload->history_digest, sizeof(pos->history_digest));
-    memcpy(pos->history_actor, payload->history_actor, sizeof(pos->history_actor));
-    memcpy(pos->history_gave_check, payload->history_gave_check, sizeof(pos->history_gave_check));
+    memcpy(pos->history_lo, payload->history_lo,
+           sizeof(pos->history_lo[0]) * (size_t)payload->history_len);
+    memcpy(pos->history_hi, payload->history_hi,
+           sizeof(pos->history_hi[0]) * (size_t)payload->history_len);
+    memcpy(pos->history_digest, payload->history_digest,
+           sizeof(pos->history_digest[0]) * (size_t)payload->history_len);
+    memcpy(pos->history_actor, payload->history_actor,
+           sizeof(pos->history_actor[0]) * (size_t)payload->history_len);
+    memcpy(pos->history_gave_check, payload->history_gave_check,
+           sizeof(pos->history_gave_check[0]) * (size_t)payload->history_len);
     pos->history_exact = payload->history_exact;
     pos->history_events_exact = payload->history_events_exact;
     for (uint16_t sq = 0; sq < (uint16_t)(rules->board_size * rules->board_size); sq++) {

@@ -5,8 +5,11 @@ sandbox local research agent. Read README.md and docs/ui/UI_TEST.md first.
 Do not require ignored .local_agent files, Slack credentials, research sessions,
 a heartbeat, native build tools or any additional worker to develop this UI.
 
+The user-authorized 2026-10-12 production engine sync is recorded in
+docs/ui/ADR-WEB-002-engine-sync.md. Future updates require explicit user direction.
+
 The complete Python Core AI, rules, generation, session, clocks and evaluation
-are frozen from b236c79ab7d11b2f234af4e099eb8b4208149f26. Source hashes are in
+are frozen from 7b988c9f247fd3eb96ca17daedf28e5c4d93b3cd. Source hashes are in
 docs/ui/AI_BASELINE.json. Use generic_chess/ui/ai_backend.py as the player factory.
 No completion-search prototypes, training, price experiments or research files
 are runtime dependencies. Research history in this Git checkout is reference,

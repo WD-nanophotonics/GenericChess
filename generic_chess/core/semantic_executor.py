@@ -616,6 +616,37 @@ class SemanticEngine:
         capture eligibility to pseudo-attack; S4 postconditions are never
         consulted here."""
         self._ensure_match(position)
+        incoming = self.semantic._incoming_attack_paths
+        if incoming is not None:
+            _checkpoint(checkpoint)
+            key = (str(by_owner), square)
+            source_groups = self.semantic._incoming_attack_sources
+            rows = incoming.get(key, ())
+            if source_groups is not None:
+                selected = []
+                for source, typed in source_groups.get(key, {}).items():
+                    _checkpoint(checkpoint)
+                    piece = position.board[source]
+                    if piece is not None and piece.owner == by_owner:
+                        selected.extend(typed.get(piece.current_type_id, ()))
+                # Preserve the original pattern/type/source/path short-circuit
+                # order, including repeated rows from shared geometry.
+                selected.sort(key=lambda entry: entry[0])
+                rows = (row for rank, row in selected)
+            for pattern, tid, source, gid, path in rows:
+                _checkpoint(checkpoint)
+                piece = position.board[source]
+                if piece is None or piece.owner != by_owner or piece.current_type_id != tid:
+                    continue
+                binding = self._make_binding(
+                    pattern, gid, tid, piece, source, square, None, path, position)
+                if self._path_holds(
+                    pattern.path, position, binding, by_owner, checkpoint=checkpoint,
+                ) and self._guards_hold(
+                    pattern, position, binding, by_owner, checkpoint=checkpoint,
+                ):
+                    return True
+            return False
         sources_by_owner_type = _sources_by_owner_type(position)
         owner_key = str(by_owner)
         for pattern in self._patterns:
@@ -1092,6 +1123,20 @@ class SemanticEngine:
 
     # ------------------------------------------------------- legality
 
+    def _pattern_is_drop(self, pattern) -> bool:
+        # Classification depends only on immutable geometry IDs in this IR.
+        # Tuple keys also survive serialization; replacement rebuilds the table.
+        # Foreign/missing entries retain the original mixed-geometry meaning.
+        kinds = self.semantic._pattern_drop_kinds
+        if kinds is not None:
+            kind = kinds.get(pattern.geometry_ids)
+            if kind is not None:
+                return kind
+        return any(
+            self.ir.geometry[g].kind == "drop"
+            for g in pattern.geometry_ids if g in self.ir.geometry
+        )
+
     def _iter_candidates(
         self, pattern, position: Position, checkpoint: Checkpoint | None = None,
         sources_by_owner_type=None,
@@ -1103,11 +1148,7 @@ class SemanticEngine:
         legality and the reply probe (B-3: one S0-S3 machinery)."""
         side = position.side_to_move
         _checkpoint(checkpoint)
-        is_drop = any(
-            self.ir.geometry[g].kind == "drop"
-            for g in pattern.geometry_ids
-            if g in self.ir.geometry
-        )
+        is_drop = self._pattern_is_drop(pattern)
         if is_drop:
             yield from self._iter_drop_candidates(
                 pattern, position, side, checkpoint=checkpoint
@@ -1288,14 +1329,25 @@ class SemanticEngine:
         Position or ``None`` when S3-illegal.  The same child is handed to
         the S4 postconditions in normal mode, so a candidate never gets a
         second, theoretically-equivalent transition (ADR-016 section 9)."""
+        checkpoint_failed = False
         try:
             if checkpoint is None:
                 child = self._transition(position, action, binding)
             else:
+                def trial_checkpoint():
+                    nonlocal checkpoint_failed
+                    try:
+                        checkpoint()
+                    except BaseException:
+                        checkpoint_failed = True
+                        raise
+
                 child = self._transition(
-                    position, action, binding, checkpoint=checkpoint
+                    position, action, binding, checkpoint=trial_checkpoint
                 )
         except RuntimeError:
+            if checkpoint_failed:
+                raise
             return None
         for invariant in pattern.invariants:
             _checkpoint(checkpoint)
@@ -1336,7 +1388,12 @@ class SemanticEngine:
         piece = child.board[source]
         if piece is None or piece.owner != position.side_to_move:
             return False
-        for pattern in self._patterns:
+        # Only scheduling is compiled; the original geometry/path/state guards
+        # still determine the actor witness. Missing metadata keeps full dispatch.
+        _checkpoint(checkpoint)
+        indexed = self.semantic._actor_capture_patterns
+        patterns = self._patterns if indexed is None else indexed.get(piece.current_type_id, ())
+        for pattern in patterns:
             _checkpoint(checkpoint)
             if pattern.target.kind != "target_enemy" or piece.current_type_id not in pattern.type_ids:
                 continue
@@ -1419,11 +1476,7 @@ class SemanticEngine:
         sources_by_owner_type = None
         for pattern in self._patterns:
             _checkpoint(checkpoint)
-            is_drop = any(
-                self.ir.geometry[g].kind == "drop"
-                for g in pattern.geometry_ids
-                if g in self.ir.geometry
-            )
+            is_drop = self._pattern_is_drop(pattern)
             if not is_drop and sources_by_owner_type is None:
                 sources_by_owner_type = _sources_by_owner_type(position)
             for action, binding in self._iter_candidates(
@@ -1476,11 +1529,7 @@ class SemanticEngine:
             )
         for pattern in self._patterns:
             _checkpoint(checkpoint)
-            is_drop = any(
-                self.ir.geometry[g].kind == "drop"
-                for g in pattern.geometry_ids
-                if g in self.ir.geometry
-            )
+            is_drop = self._pattern_is_drop(pattern)
             if not is_drop and sources_by_owner_type is None:
                 sources_by_owner_type = _sources_by_owner_type(position)
             for action, binding in self._iter_candidates(
@@ -1577,7 +1626,39 @@ class SemanticEngine:
                     ),
                 )
         # 5) transition triggers against the pre-bound event trace.
-        for trigger in self.ir.triggers:
+        if self.ir.triggers:
+            self._apply_transition_triggers(position, work, binding, aux, checkpoint)
+        # 6) explicit aux effects in declared order.
+        for effect in aux_effects:
+            _checkpoint(checkpoint)
+            _apply_aux_effect(effect, aux, self.support, self.ir.aux_slots, position, binding)
+        # 7) switch side.
+        work.side = 1 - side
+        return work.to_position(
+            tuple(sorted(aux.items())),
+            self.support.ruleset_fingerprint,
+        )
+
+    def _apply_transition_triggers(self, position, work, binding, aux, checkpoint):
+        side = position.side_to_move
+        plans = self.semantic._fixed_transition_triggers
+        if plans is None:
+            # Compile-only carriers retain the complete original execution seam.
+            dynamic_triggers = self.ir.triggers
+        else:
+            entries, dynamic_triggers = plans[side]
+            for event, piece, square in work.events:
+                _checkpoint(checkpoint)
+                if piece is None:
+                    continue
+                for slot, logical, owner, owner_filter in entries.get((event, square), ()):
+                    _checkpoint(checkpoint)
+                    if owner_filter == "self" and piece.owner != owner:
+                        continue
+                    if owner_filter == "opponent" and piece.owner == owner:
+                        continue
+                    aux[(slot, logical)] = 0
+        for trigger in dynamic_triggers:
             _checkpoint(checkpoint)
             slot = _aux_slot_by_id(self.ir.aux_slots, trigger.slot_id)
             if slot is None:
@@ -1596,16 +1677,6 @@ class SemanticEngine:
                     checkpoint=checkpoint,
                 ):
                     aux[(trigger.slot_id, GLOBAL_OWNER_TAG)] = 0
-        # 6) explicit aux effects in declared order.
-        for effect in aux_effects:
-            _checkpoint(checkpoint)
-            _apply_aux_effect(effect, aux, self.support, self.ir.aux_slots, position, binding)
-        # 7) switch side.
-        work.side = 1 - side
-        return work.to_position(
-            tuple(sorted(aux.items())),
-            self.support.ruleset_fingerprint,
-        )
 
     def _trigger_fires(
         self, trigger, owner, position, work, binding,

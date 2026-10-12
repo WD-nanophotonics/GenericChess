@@ -5,7 +5,10 @@ from .catalog import (
     builtin_ruleset_names,
     resolve_builtin_ruleset_by_fingerprint,
 )
-from .compiler import compile_ruleset, compile_ruleset_for_execution
+from .compiler import (
+    compile_ruleset, compile_ruleset_for_execution,
+    compile_legacy_ruleset_for_semantic_execution,
+)
 from .western_chess import build_western_chess_ruleset
 from .standard_shogi import build_standard_shogi_ruleset
 from .schema import (
@@ -26,6 +29,7 @@ __all__ = [
     "build_standard_shogi_ruleset",
     "compile_ruleset",
     "compile_ruleset_for_execution",
+    "compile_legacy_ruleset_for_semantic_execution",
     "RuleDeclaration",
     "RuleAutomaticAdjudication",
     "RuleConsecutiveActionAdjudication",

@@ -162,20 +162,20 @@ class _Context:
 
     def checkpoint(self) -> None:
         """Cooperative callback passed into Core semantic work units."""
-        # Fixed-node searches are the non-interactive audit/product path.  In
-        # that mode Budget.check() would repeat the same max-node comparison
-        # and then return through its coarse polling branch on every semantic
-        # callback.  Keep interactive cancellation/deadline semantics on the
-        # original path; only elide that proven-redundant dispatch for the
-        # fixed-node case.
-        if self.budget._interactive:
-            self.budget.check(self.stats, force=True)
-            return
+        # This is Budget.check(force=True) without its second dispatch layer.
+        # Keep every semantic poll and live deadline (reserve scheduling can
+        # change it), with node/cancellation/time abort precedence unchanged.
+        budget = self.budget
         if (
-            self.budget._max_nodes is not None
-            and self.stats.nodes + self.stats.qnodes >= self.budget._max_nodes
+            budget._max_nodes is not None
+            and self.stats.nodes + self.stats.qnodes >= budget._max_nodes
         ):
             raise SearchAborted("node_limit")
+        if budget._interactive:
+            if budget._cancel is not None and budget._cancel.is_cancelled():
+                raise SearchAborted("cancelled")
+            if budget._deadline is not None and time.monotonic() >= budget._deadline:
+                raise SearchAborted("time_limit")
 
 
 def _evaluate(state, evaluator, ctx: _Context) -> int:
@@ -1024,6 +1024,18 @@ def _aspiration_iteration(
             return result
 
 
+def _set_result_provenance(stats, source: str, ctx=None) -> None:
+    """Describe the last retained result without changing its search policy.
+
+    Capture before the first-iteration flag/refresh limits are changed. TT
+    reuse and checked extensions make this policy metadata, not a uniform
+    finite-horizon certificate. Fallback/terminal sources have no q policy.
+    """
+    stats.result_source = source
+    stats.result_ordinary_qdepth = None if ctx is None else _ordinary_qdepth_limit(ctx)
+    stats.result_check_hard_qdepth = None if ctx is None else ctx.qhard_depth_limit
+
+
 def run_root_search(
     state: GameState,
     compiled,
@@ -1038,27 +1050,32 @@ def run_root_search(
     tuning: SearchTuning = SearchTuning(),
     _history_witnesses=None,
     legal_binding_provider=None,
+    availability_provider=None,
     recorder: AuditRecorder | None = None,
     progress_callback=None,
 ) -> tuple[Action | None, int, tuple[Action, ...], str]:
     """Iterative deepening; returns (action, score, pv, termination_reason)."""
     started = time.monotonic()
+    # Importing complete history consumes this search call's time allowance.
+    # Legality/terminal authority and the mandatory fallback still run below.
+    budget = _Budget(limits, cancel_token)
     runtime = SearchPathRuntime.from_state(
         state,
         compiled,
         history_witnesses=_history_witnesses,
         legal_binding_provider=legal_binding_provider,
+        availability_provider=availability_provider,
     )
     terminal = runtime.terminal_status
     if terminal.is_terminal:
         stats.termination_reason = "terminal_position"
+        _set_result_provenance(stats, 'terminal')
         return (
             None,
             terminal_score(terminal, state.position.side_to_move, 0),
             (),
             stats.termination_reason,
         )
-    budget = _Budget(limits, cancel_token)
     tt.new_generation()
     ctx = _Context(
         compiled,
@@ -1086,6 +1103,7 @@ def run_root_search(
         stats.declaration_root_selected = True
         stats.root_declaration = root_winning
         stats.termination_reason = "root_declaration_win"
+        _set_result_provenance(stats, 'root_declaration')
         return None, MATE_SCORE, (), stats.termination_reason
 
     root_first_action: Action | None = None
@@ -1101,13 +1119,16 @@ def run_root_search(
             actions = _runtime_legal_actions(ctx, None)
             if not actions:
                 stats.termination_reason = str(exc)
+                _set_result_provenance(stats, 'terminal' if stats.termination_reason == 'terminal_position' else 'no_legal_fallback')
                 return None, 0, (), stats.termination_reason
             stats.time_to_first_legal_action = time.monotonic() - started
             stats.root_scan_used_fallback = True
             stats.termination_reason = str(exc)
+            _set_result_provenance(stats, 'legal_fallback')
             return sorted(actions, key=str)[0], 0, (), stats.termination_reason
         if not actions:
             stats.termination_reason = "terminal_position"
+            _set_result_provenance(stats, 'terminal')
             return None, 0, (), stats.termination_reason
         root_first_action = sorted(actions, key=str)[0]
         stats.time_to_first_legal_action = time.monotonic() - started
@@ -1116,6 +1137,7 @@ def run_root_search(
         except SearchAborted as exc:
             stats.root_scan_used_fallback = True
             stats.termination_reason = str(exc)
+            _set_result_provenance(stats, 'legal_fallback')
             return root_first_action, 0, (), stats.termination_reason
     elif semantic_engine_for(compiled) is not None:
         root_stream = iter_legal_successor_handles(
@@ -1125,9 +1147,11 @@ def run_root_search(
             first_handle = next(root_stream)
         except StopIteration:
             stats.termination_reason = "terminal_position"
+            _set_result_provenance(stats, 'terminal')
             return None, 0, (), stats.termination_reason
         except SearchAborted:
             stats.termination_reason = "NO_LEGAL_FALLBACK_BEFORE_DEADLINE"
+            _set_result_provenance(stats, 'no_legal_fallback')
             return None, 0, (), stats.termination_reason
         root_first_action = first_handle.action
         stats.time_to_first_legal_action = time.monotonic() - started
@@ -1137,17 +1161,20 @@ def run_root_search(
         except SearchAborted as exc:
             stats.root_scan_used_fallback = True
             stats.termination_reason = str(exc)
+            _set_result_provenance(stats, 'legal_fallback')
             return root_first_action, 0, (), stats.termination_reason
     else:
         actions = legal_actions(state, compiled)
         if not actions:
             stats.termination_reason = "terminal_position"
+            _set_result_provenance(stats, 'terminal')
             return None, 0, (), stats.termination_reason
         try:
             budget.check(stats, force=True)
         except SearchAborted as exc:
             stats.root_scan_used_fallback = True
             stats.termination_reason = str(exc)
+            _set_result_provenance(stats, 'legal_fallback')
             return sorted(actions, key=str)[0], 0, (), stats.termination_reason
 
     immediate_win: Action | None = None
@@ -1163,9 +1190,11 @@ def run_root_search(
             fallback = ctx.root_scan_best_action or root_first_action
             if fallback is None:
                 fallback = sorted(actions, key=str)[0]
+            _set_result_provenance(stats, 'root_scan_fallback' if ctx.root_scan_best_action is not None else 'legal_fallback')
             return fallback, 0, (), stats.termination_reason
     if immediate_win is not None:
         stats.termination_reason = "root_immediate_win"
+        _set_result_provenance(stats, 'root_immediate_win')
         return immediate_win, MATE_SCORE - 1, (immediate_win,), stats.termination_reason
 
     max_depth = limits.max_depth if limits.max_depth is not None else 64
@@ -1191,6 +1220,7 @@ def run_root_search(
         except SearchAborted as exc:
             abort_reason = str(exc)
             break
+        _set_result_provenance(stats, 'main_iteration', ctx)
         stats.completed_depth = depth
         stats.selective_depth = depth
         ctx.first_main_iteration_complete = True
@@ -1212,8 +1242,10 @@ def run_root_search(
     stats.root_scan_used_fallback = True
     stats.termination_reason = abort_reason or "fallback"
     if tuning.use_root_tactical and scan_best is not None:
+        _set_result_provenance(stats, 'root_scan_fallback')
         return scan_best, 0, (), stats.termination_reason
     fallback = root_first_action
     if fallback is None:
         fallback = sorted(actions, key=str)[0]
+    _set_result_provenance(stats, 'root_scan_fallback' if ctx.root_scan_best_action is not None else 'legal_fallback')
     return fallback, 0, (), stats.termination_reason

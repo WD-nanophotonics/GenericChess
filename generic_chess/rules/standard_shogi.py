@@ -226,7 +226,7 @@ def build_standard_shogi_ruleset() -> RuleSet:
         promotion_allowed={key: tuple(value) for key, value in promotion_allowed.items()},
         promotion_forced={key: tuple(value) for key, value in promotion_forced.items()},
         repetition_limit=4, repetition_policy="continuous_check_loss", max_ply=512,
-        stalemate_result="draw", semantic_actions=(_pawn_drop_pattern(),), semantic_dsl_version=2,
+        stalemate_result="loss", semantic_actions=(_pawn_drop_pattern(),), semantic_dsl_version=2,
         declarations=_declaration_definitions(),
         automatic_adjudications=(
             RuleAutomaticAdjudication(

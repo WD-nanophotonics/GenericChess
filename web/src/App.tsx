@@ -456,7 +456,7 @@ export default function App() {
           <small>
             {isHuman
               ? "自由思考，享受每一步"
-              : `${game.config.think_seconds} 秒 / 步 · 真实引擎`}
+              : `${game.config.think_seconds} 秒 / 步 · ${game.ai.backend || "Core AI"}`}
           </small>
         </div>
         {game.side_to_move === owner && !result && (

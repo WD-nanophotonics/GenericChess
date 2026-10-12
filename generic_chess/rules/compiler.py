@@ -2131,6 +2131,32 @@ def compile_semantic_ruleset(ruleset: RuleSet | Mapping[str, Any]):
     return compiled
 
 
+def compile_legacy_ruleset_for_semantic_execution(ruleset: RuleSet | Mapping[str, Any]):
+    """Compile a square legacy RuleSet for explicit semantic Core execution.
+
+    This opt-in adapter uses the ordinary legacy schema/position validation,
+    then the shared normalized IR/completeness and semantic-start validation.
+    It preserves the RuleSet fingerprint and promotion/drop/history rules.
+    Semantic actions and identity keys belong to the resulting representation;
+    import a played history by replay, rather than copying legacy key strings.
+    Overlapping movement atoms retain distinct pattern/geometry actions with
+    equal visible coordinates; this is not a one-to-one legacy action adapter.
+    Core execution support does not remove separate Native or search path-state
+    restrictions (for example no-progress adjudication).
+    The default execution selector and semantic-DSL entry remain unchanged.
+    """
+    if not isinstance(ruleset, RuleSet):
+        ruleset = ruleset_from_dict(ruleset)
+    baseline = compile_ruleset(ruleset)
+    compiled = _compile_semantic_ruleset_from_baseline(baseline, ruleset)
+    _validate_semantic_initial_position(compiled)
+    from .execution import ExecutableSemanticRuleset
+
+    return ExecutableSemanticRuleset(
+        ir=compiled.ir, _legacy_compiled=baseline, support=compiled.support
+    )
+
+
 def _validate_semantic_initial_position(compiled) -> None:
     """Validate a carrier-backed semantic start position with its executor."""
     from ..core.semantic_executor import SemanticEngine

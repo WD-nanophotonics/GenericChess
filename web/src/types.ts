@@ -53,6 +53,8 @@ export type State = {
   can_undo: boolean;
   active: boolean;
   ai: {
+    backend: string;
+    engine_sha: string;
     thinking: boolean;
     queued: boolean;
     paused: boolean;

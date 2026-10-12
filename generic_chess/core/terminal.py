@@ -446,9 +446,13 @@ def terminal_from_search_runtime(runtime, checkpoint=None) -> TerminalResult:
     # materialization is intentionally deferred to the next search node;
     # root tactical scans may inspect many children without recursing into
     # them, and must not pay for every complete child action set.
-    if engine is not None:
+    provider = getattr(runtime, "availability_provider", None)
+    has_legal = None if provider is None else provider(position, checkpoint=checkpoint)
+    if has_legal is not None and type(has_legal) is not bool:
+        raise TypeError("availability provider must return bool or None")
+    if has_legal is None and engine is not None:
         has_legal = engine.has_legal_action(position, checkpoint=checkpoint)
-    else:
+    elif has_legal is None:
         has_legal = has_legal_action(position, compiled)
     if not has_legal:
         # Check only distinguishes mate from stalemate when no action exists.

@@ -12,7 +12,8 @@ from __future__ import annotations
 import hashlib
 import json
 from contextlib import contextmanager
-from dataclasses import dataclass
+from functools import lru_cache
+from dataclasses import dataclass, replace
 from typing import Any, Callable, Iterable, Mapping
 
 from .actions import Action, BoardMove, DropMove, PassAction, action_from_dict, action_to_dict
@@ -32,11 +33,60 @@ from .terminal import TerminalResult, TerminalStatus, terminal_from_search_runti
 MASK64 = (1 << 64) - 1
 
 
-@dataclass(frozen=True, slots=True)
+def _aux_value_equal(left: object, right: object) -> bool:
+    """Match the scalar types retained by the public semantic identity."""
+    if left is right:
+        return True
+    if type(left) is not type(right) or left != right:
+        return False
+    if isinstance(left, tuple):
+        return all(_aux_value_equal(a, b) for a, b in zip(left, right))
+    return True
+
+
+@dataclass(frozen=True, slots=True, eq=False)
 class RuntimePositionIdentity:
     """Exact in-process position identity used after the root import."""
 
     position: Position
+
+    def __hash__(self):
+        return hash(self.position)
+
+    def __eq__(self, other):
+        if not isinstance(other, RuntimePositionIdentity):
+            return NotImplemented
+        return (
+            self.position == other.position
+            and _aux_value_equal(self.position.aux_state, other.position.aux_state)
+        )
+
+
+def _runtime_position_identity(position: Position, compiled) -> RuntimePositionIdentity:
+    """Keep semantic default omission equal in the exact collision guard.
+
+    F1 already treats an absent compiled aux slot as its declared default.
+    Transitions can materialize that default without changing the logical
+    position. Normalize only the private identity; actual state/witnesses and
+    external record keys remain unchanged. Foreign aux entries stay present.
+    """
+    engine = semantic_engine_for(compiled)
+    if engine is None or not position.aux_state:
+        return RuntimePositionIdentity(position)
+    defaults = {
+        (slot.slot_id, owner): slot.initial
+        for slot in engine.ir.aux_slots
+        for owner in ((-1,) if slot.scope == "global" else (0, 1))
+    }
+    aux = tuple(sorted(
+        (item for item in position.aux_state
+         if item[0] not in defaults
+         or not _aux_value_equal(item[1], defaults[item[0]])),
+        key=lambda item: item[0],
+    ))
+    if aux != position.aux_state:
+        position = replace(position, aux_state=aux)
+    return RuntimePositionIdentity(position)
 
 
 @dataclass(frozen=True, slots=True)
@@ -90,7 +140,7 @@ def _identity_sort_key(identity: object) -> str:
 
 def _identity_equal(left: object, right: object) -> bool:
     if isinstance(left, RuntimePositionIdentity) and isinstance(right, RuntimePositionIdentity):
-        return left.position == right.position
+        return left == right
     if isinstance(left, _ImportedIdentity) and isinstance(right, _ImportedIdentity):
         return left.external_key == right.external_key
     return left == right
@@ -369,14 +419,20 @@ def _xor(left: RuntimeHash, right: RuntimeHash) -> RuntimeHash:
 
 def _component_map(position: Position, compiled) -> dict[tuple, object]:
     """Build the exact F1 identity component map for root/oracle/fallback use."""
-    values: dict[tuple, object] = {
-        ("ruleset",): compiled.ruleset_fingerprint,
-        ("side",): position.side_to_move,
-    }
+    values = _nonboard_component_map(position, compiled)
     for index, piece in enumerate(position.board):
         values[("board", index)] = None if piece is None else (
             piece.owner, piece.base_type_id, piece.current_type_id, piece.promoted
         )
+    return values
+
+
+def _nonboard_component_map(position: Position, compiled) -> dict[tuple, object]:
+    """Project every hand/auxiliary component, including logical defaults."""
+    values: dict[tuple, object] = {
+        ("ruleset",): compiled.ruleset_fingerprint,
+        ("side",): position.side_to_move,
+    }
     for owner, hand in enumerate(position.hands):
         values[("hand", owner)] = tuple(hand.counts)
     engine = semantic_engine_for(compiled)
@@ -395,8 +451,39 @@ def _component_map(position: Position, compiled) -> dict[tuple, object]:
     return values
 
 
-def _component_token(address: tuple, value: object) -> RuntimeHash:
+def _uncached_component_token(address: tuple, value: object) -> RuntimeHash:
     return _token((address, value))
+
+
+@lru_cache(maxsize=4096, typed=True)
+def _board_component_token(index, owner, base, current, promoted) -> RuntimeHash:
+    return _uncached_component_token(("board", index), (owner, base, current, promoted))
+
+
+@lru_cache(maxsize=256, typed=True)
+def _empty_board_component_token(index) -> RuntimeHash:
+    return _uncached_component_token(("board", index), None)
+
+
+@lru_cache(maxsize=4, typed=True)
+def _side_component_token(value) -> RuntimeHash:
+    return _uncached_component_token(("side",), value)
+
+
+def _component_token(address: tuple, value: object) -> RuntimeHash:
+    # Complete immutable fields, with bool/int kept distinct just as JSON does.
+    # Aux/hand/ruleset inputs retain the original serialization and identity.
+    if type(address) is tuple and len(address) == 2 and address[0] == "board" and type(address[1]) is int:
+        if value is None:
+            return _empty_board_component_token(address[1])
+        if (type(value) is tuple and len(value) == 4
+                and type(value[0]) in (int, bool)
+                and type(value[1]) is str and type(value[2]) is str
+                and type(value[3]) is bool):
+            return _board_component_token(address[1], *value)
+    if address == ("side",) and type(value) in (int, bool):
+        return _side_component_token(value)
+    return _uncached_component_token(address, value)
 
 
 def _full_runtime_hash(position: Position, compiled) -> RuntimeHash:
@@ -446,13 +533,31 @@ def _component_map_cell(position: Position, index: int):
 
 
 def _semantic_component_diff_hash(parent: Position, child: Position, compiled, current: RuntimeHash) -> RuntimeHash:
-    before = _component_map(parent, compiled)
-    after = _component_map(child, compiled)
+    """Scan the whole board, avoiding maps/tuples for unchanged cells.
+
+    Compound actions and transition triggers can affect arbitrary cells; the
+    action's source/target is deliberately not used as a footprint bound.
+    """
     value = current
+    for index, (left, right) in enumerate(zip(parent.board, child.board)):
+        if left is right:
+            continue
+        old = _component_map_cell(parent, index)
+        new = _component_map_cell(child, index)
+        if old != new:
+            value = _xor(value, _component_token(("board", index), old))
+            value = _xor(value, _component_token(("board", index), new))
+    before = _nonboard_component_map(parent, compiled)
+    after = _nonboard_component_map(child, compiled)
     for address in before.keys() | after.keys():
         old = before.get(address)
         new = after.get(address)
-        if old != new:
+        if (
+            (address in before) != (address in after)
+            or old != new
+            or (address[0] in ("aux", "aux_unknown")
+                and not _aux_value_equal(old, new))
+        ):
             if address in before:
                 value = _xor(value, _component_token(address, old))
             if address in after:
@@ -471,6 +576,7 @@ class SearchPathRuntime:
         hash_override=None,
         history_witnesses=None,
         legal_binding_provider: Callable | None = None,
+        availability_provider: Callable | None = None,
     ):
         if getattr(compiled, "no_progress_draw", None) is not None:
             raise NotImplementedError(
@@ -480,13 +586,14 @@ class SearchPathRuntime:
         self.compiled = compiled
         # Opaque Core-neutral callback: Core never imports Native and never
         # stores a Native capsule/rules object.
+        self.availability_provider = availability_provider
         self._legal_binding_provider = legal_binding_provider
         self._legal_provider_active = legal_binding_provider is not None
         self.position = state.position
         self.ply_count = state.ply_count
         self.terminal_status = state.terminal_status
         self._external_root_key = ExternalStableKey(position_identity_key(self.position, compiled))
-        self._identity = RuntimePositionIdentity(self.position)
+        self._identity = _runtime_position_identity(self.position, compiled)
         self._counts_external = dict(state.repetition_counts)
         if self._counts_external and any(int(count) <= 0 for count in self._counts_external.values()):
             raise ValueError("malformed imported repetition counts")
@@ -528,6 +635,10 @@ class SearchPathRuntime:
             self._history_complete = True
 
         self._history: list[RuntimeHistoryRecord] = []
+        # Core-produced history keys already bind each witness to its logical
+        # position. Reuse their hashes only within this import, including the
+        # occurrence seed; discard the map when construction returns.
+        imported_hashes = {str(self._external_root_key): self.runtime_hash}
         if state.history:
             for record, witness in zip(state.history, witnesses):
                 identity = self._identity_for_imported_key(record.position_key)
@@ -535,9 +646,13 @@ class SearchPathRuntime:
                     identity = (
                         self._identity
                         if witness == self.position
-                        else RuntimePositionIdentity(witness)
+                        and _aux_value_equal(witness.aux_state, self.position.aux_state)
+                        else _runtime_position_identity(witness, compiled)
                     )
-                runtime_hash = self._runtime_hash_for_identity(identity)
+                runtime_hash = imported_hashes.get(record.position_key)
+                if runtime_hash is None:
+                    runtime_hash = self._runtime_hash_for_identity(identity)
+                    imported_hashes[record.position_key] = runtime_hash
                 self._history.append(
                     RuntimeHistoryRecord(
                         identity,
@@ -576,7 +691,7 @@ class SearchPathRuntime:
         self._history_context_updates = 0
         self._history_context_exact_comparisons = 0
         self._occurrences: dict[RuntimeHash, list[_Occurrence]] = {}
-        self._seed_occurrences()
+        self._seed_occurrences(imported_hashes)
         self._snapshot = self._snapshot_from_occurrences()
         self._frames: list[_Frame] = []
         self._legal_cache: tuple[Action, ...] | None = None
@@ -643,13 +758,26 @@ class SearchPathRuntime:
             if not state.history:
                 raise ValueError("empty history")
             first = state.history[0]
-            if (
-                first.position_key != replayed.history[0].position_key
-                or first.actor != -1
-                or first.action_signature != ""
-                or first.gave_check
-            ):
+            if first.actor != -1 or first.action_signature != "" or first.gave_check:
                 raise ValueError("invalid initial history record")
+            if first.position_key != replayed.history[0].position_key:
+                # Public GameState has no setup key. A declared alternate start
+                # is still recoverable from its exact initial history record;
+                # custom/imported roots retain the opaque-history fallback.
+                engine = semantic_engine_for(self.compiled)
+                setups = (
+                    engine.support.initial_setup_options
+                    if engine is not None
+                    else self.compiled.initial_setup_positions
+                )
+                for setup_key in sorted(setups):
+                    candidate = initial_state(self.compiled, setup_key)
+                    self.history_reconstruction_key_computations += 1
+                    if candidate.history[0] == first:
+                        replayed = candidate
+                        break
+                else:
+                    raise ValueError("unknown initial history record")
             witnesses = [replayed.position]
             for record in state.history[1:]:
                 action = action_from_dict(json.loads(record.action_signature))
@@ -661,7 +789,8 @@ class SearchPathRuntime:
                 witnesses.append(replayed.position)
 
             if (
-                replayed.position != state.position
+                _runtime_position_identity(replayed.position, self.compiled)
+                != _runtime_position_identity(state.position, self.compiled)
                 or replayed.ply_count != state.ply_count
                 or replayed.repetition_counts != tuple(state.repetition_counts)
                 or replayed.terminal_status != state.terminal_status
@@ -671,7 +800,10 @@ class SearchPathRuntime:
             by_key: dict[str, Position] = {}
             for record, witness in zip(state.history, witnesses):
                 previous = by_key.get(record.position_key)
-                if previous is not None and previous != witness:
+                if previous is not None and previous != witness and (
+                    _runtime_position_identity(previous, self.compiled)
+                    != _runtime_position_identity(witness, self.compiled)
+                ):
                     raise ValueError("one external key maps to distinct positions")
                 by_key[record.position_key] = witness
             return tuple(witnesses)
@@ -687,22 +819,24 @@ class SearchPathRuntime:
             return self._identity
         witness = self._history_witness_by_key.get(key)
         if witness is not None:
-            return RuntimePositionIdentity(witness)
+            return _runtime_position_identity(witness, self.compiled)
         return _ImportedIdentity(key)
 
     def _runtime_hash_for_identity(self, identity: object) -> RuntimeHash:
         if self._forced_hash is not None:
             return self.runtime_hash
         if isinstance(identity, RuntimePositionIdentity):
-            if identity.position == self.position:
+            if identity == self._identity:
                 return self.runtime_hash
             return _full_runtime_hash(identity.position, self.compiled)
         return _token(("imported", _identity_sort_key(identity)))
 
-    def _seed_occurrences(self):
+    def _seed_occurrences(self, imported_hashes):
         for key, count in self._counts_external.items():
             identity = self._identity_for_imported_key(key)
-            runtime_hash = self._runtime_hash_for_identity(identity)
+            runtime_hash = imported_hashes.get(key)
+            if runtime_hash is None:
+                runtime_hash = self._runtime_hash_for_identity(identity)
             self._occurrence_add(identity, runtime_hash, int(count), count_collision=False)
         if not self._counts_external:
             self._occurrence_add(self._identity, self.runtime_hash, 1, count_collision=False)
@@ -727,6 +861,7 @@ class SearchPathRuntime:
         hash_override=None,
         history_witnesses=None,
         legal_binding_provider: Callable | None = None,
+        availability_provider: Callable | None = None,
     ):
         return cls(
             state,
@@ -734,6 +869,7 @@ class SearchPathRuntime:
             hash_override=hash_override,
             history_witnesses=history_witnesses,
             legal_binding_provider=legal_binding_provider,
+            availability_provider=availability_provider,
         )
 
     @property
@@ -850,7 +986,13 @@ class SearchPathRuntime:
         return checked, lambda: aborted
 
     def _legal_actions_from_provider(self, checkpoint):
-        """Validate one complete opaque-provider result before mutating caches."""
+        """Validate a complete result, honoring optional per-state capability.
+
+        A callable may expose supports_position(position, ply_count). False
+        selects Core for this state without marking an operational failure or
+        disabling the provider for other states. Omitted capability preserves
+        the existing callable contract.
+        """
         import time
 
         provider = self._legal_binding_provider
@@ -858,6 +1000,14 @@ class SearchPathRuntime:
         started = time.perf_counter()
         try:
             checked()
+            provider_owner = getattr(provider, "__self__", None) or provider
+            supports_position = getattr(provider_owner, "supports_position", None)
+            if supports_position is not None and not supports_position(self.position, self.ply_count):
+                # A declared per-state capability miss is normal Core fallback,
+                # not an operational failure or a permanent provider disable.
+                self.legal_provider_fallbacks += 1
+                self._sync_stats()
+                return None
             raw = provider(self.position, self.ply_count, checked)
             checked()
             pairs = tuple(raw)
@@ -879,7 +1029,7 @@ class SearchPathRuntime:
         except BaseException as exc:
             if was_aborted() or not isinstance(exc, Exception):
                 raise
-            provider_owner = getattr(provider, "__self__", None)
+            provider_owner = getattr(provider, "__self__", None) or provider
             if bool(getattr(provider_owner, "strict", False)):
                 raise
             self.legal_provider_fallbacks += 1
@@ -891,7 +1041,7 @@ class SearchPathRuntime:
         self.legal_provider_calls += 1
         self.legal_provider_actions += len(actions)
         self.legal_provider_seconds += time.perf_counter() - started
-        provider_owner = getattr(provider, "__self__", None)
+        provider_owner = getattr(provider, "__self__", None) or provider
         metrics = getattr(provider_owner, "last_call_metrics", {}) or {}
         self.legal_provider_payload_seconds += float(metrics.get("payload_seconds", 0.0))
         self.legal_provider_decode_binding_seconds += float(
@@ -1001,21 +1151,34 @@ class SearchPathRuntime:
         old_bucket, old_entry = self._find_occurrence(old_identity, old_hash, instrument=False)
         if old_entry is None:
             raise AssertionError("opaque imported occurrence is missing")
+        # Resolve the removal index before target mutation: dataclass equality
+        # in list.remove/index can itself fail while allocating comparison tuples.
+        old_index = old_bucket.index(old_entry)
+        # Prepare target storage before journaling/removing the opaque entry.
+        # A single target-constructor failure leaves the original counts intact.
+        new_bucket = self._occurrences.get(runtime_hash)
+        new_entry = next(
+            (candidate for candidate in new_bucket or ()
+             if _identity_equal(candidate.identity, identity)), None)
+        if new_entry is None:
+            prepared_entry = _Occurrence(identity, old_entry.count)
+            if new_bucket is None:
+                self._occurrences[runtime_hash] = [prepared_entry]
+            else:
+                new_bucket.append(prepared_entry)
+        else:
+            new_entry.count += old_entry.count
+
         frame = self._frames[-1]
         frame.bridge_key = key
         frame.bridge_identity = identity
         frame.bridge_runtime_hash = runtime_hash
         frame.bridge_old_hash = old_hash
         frame.bridge_old_count = old_entry.count
-        old_bucket.remove(old_entry)
+        del old_bucket[old_index]
         if not old_bucket:
             self._occurrences.pop(old_hash, None)
 
-        new_bucket, new_entry = self._find_occurrence(identity, runtime_hash, instrument=False)
-        if new_entry is None:
-            new_bucket.append(_Occurrence(identity, old_entry.count))
-        else:
-            new_entry.count += old_entry.count
         self._opaque_imported_keys.remove(key)
         self._history_aliases[key] = identity
         self._snapshot = self._snapshot_from_occurrences()
@@ -1110,10 +1273,11 @@ class SearchPathRuntime:
                 removed_history += 1
             if (
                 rollback_frame is not None
-                and rollback_frame.bridge_key is not None
                 and rollback_frame.child_occurrence_added
                 and removed_history == 0
             ):
+                # Snapshot construction can fail after adding the child but
+                # before appending history, even without an imported-key bridge.
                 self._occurrence_remove(
                     rollback_frame.child_identity,
                     rollback_frame.child_runtime_hash,
@@ -1166,7 +1330,7 @@ class SearchPathRuntime:
             None if isinstance(action, PassAction) else gave_check
         )
         child_external_key = self._opaque_history_key_for_child(child)
-        child_identity = RuntimePositionIdentity(child)
+        child_identity = _runtime_position_identity(child, self.compiled)
         if self._forced_hash is not None:
             child_hash = self.runtime_hash
         elif engine is None:

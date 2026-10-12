@@ -27,6 +27,11 @@ int gc_semantic_runtime_make_checked(GCSemanticPosition *child,
                                       const GCSemanticPosition *parent,
                                       uint64_t action);
 
+/* Readonly S0-S4 action existence probe; no child identity/history output. */
+int gc_semantic_runtime_probe_action(const GCSemanticRules *rules,
+                                    const GCSemanticPosition *parent,
+                                    uint64_t action);
+
 /* Test-only witness inspection; not exposed through generic_chess.native.semantic. */
 int gc_semantic_runtime_action_delivers_check_debug(
     const GCSemanticRules *rules,

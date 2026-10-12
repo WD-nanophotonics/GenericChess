@@ -82,3 +82,10 @@ class PlayerDecision:
     native_legality_operational_failures: int = 0
     # Appended to preserve existing optional positional argument order.
     material_change_qactions: int = 0
+
+    # Source of the retained result, independent of why the search stopped.
+    # Q fields describe its iteration policy, not a uniform leaf/horizon proof:
+    # check extensions and selective TT reuse retain their existing semantics.
+    result_source: str = "unknown"
+    result_ordinary_qdepth: int | None = None
+    result_check_hard_qdepth: int | None = None

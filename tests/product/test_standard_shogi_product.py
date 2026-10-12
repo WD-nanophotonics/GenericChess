@@ -37,10 +37,12 @@ def test_product_builder_matches_historical_semantic_gameplay_fields():
     assert {
         key: value
         for key, value in product_data.items()
-        if key not in {"declarations", "automatic_adjudications"}
-    } == historical_data
+        if key not in {"declarations", "automatic_adjudications", "stalemate_result"}
+    } == {key: value for key, value in historical_data.items() if key != "stalemate_result"}
     assert compute_fingerprint(historical) == "5b3d04eda31a342b729fc9af8a04cdde13c796646b2b37024891f8c99703c345"
-    assert compute_fingerprint(product) == "ac987c3ffe75d8fa885ba787c1aa7cf60e92205465bf056b12b2989674007635"
+    assert compute_fingerprint(product) == "ba3518b989fe3965a08ead19a1ff1607102911734b9849948f4b1584b5c801a8"
+    assert historical.stalemate_result == "draw"
+    assert product.stalemate_result == "loss"
     assert product.metadata["nyugyoku_supported"] is True
     assert product.metadata["move_500_no_contest_supported"] is True
     assert product.automatic_adjudications[0].trigger_ply == 500

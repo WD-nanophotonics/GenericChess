@@ -13,6 +13,7 @@ from fastapi.staticfiles import StaticFiles
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 from ...rules.serialization import serialize_ruleset
 from ...visual.textures import generate_piece_texture
+from ..ai_backend import ENGINE_BASE_SHA, ENGINE_LABEL
 from .identity import APPLICATION, instance_id
 from .models import CreateGame, Operation
 from .service import GameService, GameError
@@ -67,7 +68,8 @@ def create_app(state_dir=None, dist_dir=None):
     @app.get("/api/health")
     async def health():
         return {"ok": True, "mode": "local", "backend": "python-core",
-                "application": APPLICATION, "instance_id": instance_id(state_dir)}
+                "application": APPLICATION, "instance_id": instance_id(state_dir),
+                "engine_sha": ENGINE_BASE_SHA, "search_policy": ENGINE_LABEL}
 
     @app.get("/api/games")
     async def games():
