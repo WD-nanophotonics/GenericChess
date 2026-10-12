@@ -1239,3 +1239,14 @@ Startup/import/compiler diagnostic mistakes are retained with fixes; no hidden
 SAC/runtime/quota block or user action. Remaining questions are actual residual
 cost/finite transfer, declared fixed/declaration scope and useful evaluation;
 see ../research/CURRENT_CALLER_TERMINAL_IDENTITY.md and its bound data index.
+
+Late checkpoint supplement: PRIMARY also read the complete new DEV_AUX/Dot
+SPSA discussion. Auxiliary reports120near-terminal games/94terminals but limited
+price discrimination; these new statements are not independently reproduced
+or used for primary acceptance. Dot's effective-step/rounding objection is
+relevant to that lane: quantity scaling can yield changes below one integer
+price unit, while terminal events dominate. Retain actual injected/readback
+updates and frozen schedules before conclusions about optimizer coverage.
+PRIMARY does not wake the auxiliary or duplicate the training. The main search
+cost task and its published code remain unchanged; detailed new auxiliary
+results await its next fixed-revision delivery.
