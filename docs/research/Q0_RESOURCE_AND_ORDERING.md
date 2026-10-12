@@ -175,3 +175,6 @@ Follow-on archive: data/q0_tt_priority_20261012.json, nine hash-verified members
 no binary or raw Slack/account data. Existing42-member156-query archive stays
 unchanged. Total164 scientific queries plus three test-sensitivity queries;
 69 relevant tests pass. Science remains OPEN, production search/default/UI unchanged.
+
+Later origin, exact-score confirmation and trace-contract controls are in
+[Q0_SCORE_REFINEMENT.md](Q0_SCORE_REFINEMENT.md). The raw archives above stay frozen.

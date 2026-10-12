@@ -58,8 +58,19 @@ existing ordering scope or same-cost TT-first priority ablation; do not mistake
 its result for isolating PVS, cache size or whole-domain utility. Dot1791787532.299919 is saved/reconciled/adopted: singlefailedturn2 TT-first
 comparison, sameper-node scorer but aggregatecost measured. Eight actualcold
 D3/D4 calls triggerconflicts, preservefulltriplets andworsenwork; rejectadoption.
-D4replay1075404 versusmain9629 dominates. Next split root-bound-refinement
-replay from finalselected-root replay beforea normalPVS kernel; origins unmeasured.
+Q0_SCORE_REFINEMENT.md now measures that origin: D4 tie-refinement replay
+1010693 versus final64711. Normal exact-score confirmation retains the final
+canonical pass and gives342036 visits/fulltuple;48 saved consumer cells improve
+onlygen2 (16sD3→D4,1M64sD3→D5). Fixed factors show the configured material
+ordering is the main local lever, not TT. Fresh7root/84 finite queries and
+phase abort/persistentTT recovery checks pass; public exact-root change scoped,
+legacy/default/UI policies retained. Equal64s withoutnodecaps stillNativeShogiD4
+versusbothCoreAB/PVS D5. Shogi finalcanonical replay~1.9M dominates attempted
+work. Naively enabling nonPV TT in replay breaks canonicalPV (gen0 4→2 and
+Shogi same-lengthchange) despite root/final scalar agreement; reject that control.
+Next preserve actual decision/output semantics when reducing canonical cost;
+newgen delivery also tests existing immediate-terminal caller shortcuts.
+No global/default/strength claim or new NativePVS kernel follows.
 AUX498291c0 proxy-prediction/deployment report is read only: small models learn
 quantity signal, yet prediction gains do not establish win utility or universal
 human prices. Primary search and auxiliary learning remain separate lanes.
@@ -96,6 +107,7 @@ not a growing task list or publication gate.
 ## Evidence routing
 
 |Purpose|Document and records|
+|q0 root score confirmation, canonical cost, phase aborts and naiveTT trace failure|Q0_SCORE_REFINEMENT.md; data/q0_score_refinement_20261012.json|
 |---|---|
 |q0 resource conditions, existing ordering, real trace/test correction|Q0_RESOURCE_AND_ORDERING.md; data/q0_resource_delivery_20261012.json|
 |Actual q0 scope, saved-parent root transfer, canonical replay and played callers|Q0_CONSUMER_AND_CANONICAL_REPLAY.md; data/q0_consumer_20261012.json|

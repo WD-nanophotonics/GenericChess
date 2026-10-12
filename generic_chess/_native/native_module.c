@@ -5579,9 +5579,12 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
             score == best && !gc_semantic_is_declaration_action(best_action) &&
             action < best_action) {
             ctx->root_tie_refinements++;
+            /* Confirm the score with normal finite-horizon search. Only the
+             * final selected root branch needs canonical PV materialization;
+             * losing tie candidates must not pay for a complete replay. */
             branch = gc_semantic_iterative_negamax(
                 ctx, ply + 1, depth - 1, -GC_SEMANTIC_PROBE_INF,
-                GC_SEMANTIC_PROBE_INF, 1, 1);
+                GC_SEMANTIC_PROBE_INF, 1, 0);
             if (ctx->control != 0) { ctx->root_tie_aborts++; break; }
             score = -branch;
         }

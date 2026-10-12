@@ -917,3 +917,54 @@ concurrent load is normal; three short primary regression queries overlapped
 one curve portion. No exclusive/noise-free benchmark or quantified collaboration
 speed saving. Source/results and this summary are delivered together with a
 fixed-revision link for Dot; raw Slack/account/private/state/binaries excluded.
+
+
+## 2026-10-12 primary exact-score refinement segment
+
+PRIMARY_SANDBOX measures q0 replay origins, then isolates normal exact-score
+confirmation from final canonical materialization. D4gen2 total1,085,033 to
+342,036 preserves the full tuple; fixed factors show configured material ordering
+is the main local contributor.48saved consumer cells improve onlygen2. Equal
+64s/no-node conditions still leave NativeShogiD4 versus bothCoreAB/PVS D5.
+The tested production change is confined to optional exact-root confirmation;
+final canonical replay remains. Actualnew regression baselineFAIL/candidatePASS
+and deterministic phase abort/persistentTT retry checks are recorded.
+
+Dot1791793149 source review is fully read/saved/reconciled/adopted. Its objection
+adds rootbest==-finalbranch checks and actual phase aborts, rather than relying
+on legal PV or literal material. This is source assessment, not Dot independently
+running unpublished measurements. Private naive nonPV replay-TT reuse then
+produces a real negative: gen0 PV4→2 and Shogi canonical line change despite
+scalar agreement. Reject adoption; no unnecessary normalPVS kernel follows
+from eight existing Core AB/PVS flags-only time controls. Source closure,
+finite new-rule coverage, all negative results and budget conditions are retained.
+
+DEV_AUX fixed d7a5e7194c7f68f3afbdd6bee609c809477c39d0 segment18 is read
+only, not rerun or merged. It reports11,392scoped shortgames, three24ply bounded
+return improvements without stable human-price recovery, and50,020legal mature
+PVs with18,632/36,438unbounded/nonterminal static-endpoint mismatches. The user
+objective is not achieved by prediction/return gains alone. Dot's AUX reply
+1791791317 permits a separately labeled frozen-search-teacher/root-student
+bootstrap, requiring consistent perspective/scale and update derivatives;
+legal PV does not establish a TDLeaf gradient. Primary retains that distinction
+without redirecting the search priority or taking over auxiliary training.
+
+Actual coordination is shared-channel/fixed-report reading; no new auxiliary
+task, routine receipt loop or duplicate validation batch. Separate branches and
+file ownership hold; no unauthorized write conflict observed. Neither role
+label nor a shared account authenticates a separate process. Ordinary concurrent
+computer use is normal. Short primary regression/phase diagnostics overlap
+some timing cells and are disclosed; opposite-order pairs and actual counters
+bound interpretation, without machine-exclusive/noise-free claims. Avoiding
+repeated auxiliary games is qualitative; collaboration time savings were not
+measured. No raw Slack/account/private input, stop/session files or binaries
+are published. The final fixed-revision summary is sent to Dot after publication.
+
+Actual primary segment UTC2026-10-12T07:54:56.151180+00:00 to2026-10-12T09:07:54.226915+00:00,
+72.968minutes/11research checkpoints; safe_checkpoint accepted.
+236 scientific calls, two real regression sensitivity calls,39production
+checks;72 archive members individually SHA/privacy verified.42 new-root budget
+cells show no Native depth gain; six existing Core immediate-win choices are
+independently replayed to terminal winner. No artificial idle time or clock
+reset; all owned calculation processes finish before product DLL replacement.
+The next terminal-proof prototype is source-assessed but not executed.
