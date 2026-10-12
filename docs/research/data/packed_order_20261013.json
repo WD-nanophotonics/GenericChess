@@ -2,8 +2,8 @@
   "base_sha": "94aea9b3394ee6b416c1d840f24801a92e91f1a2",
   "scope": "Agent-only fixed-search repair and finite backend/order/resource attribution. No rawSlack/account/privateUI/userinputs/binaries/toolchains/session/memo.",
   "archive": "docs/archive/packed_order_20261013/evidence.zip",
-  "archive_sha256": "8c50f295a5743e5d94a0f44677beae9a105bc963c0b2f1efe6dc2f611711f603",
-  "archive_bytes": 1496824,
+  "archive_sha256": "b0fc5827f64479b16bb1adfcf9f317b17e1f5e1b34a131584c96e4e58f67550a",
+  "archive_bytes": 1553606,
   "members": [
     {
       "member": "research/audit.py",
@@ -47,8 +47,8 @@
     },
     {
       "member": "research/direct-child-module.c",
-      "bytes": 343565,
-      "sha256": "05940f4ec0e4d084622b46275d76ca9d6f825df6c777bcc92417cbd24b150504"
+      "bytes": 336286,
+      "sha256": "96764b8e6a713f8a948e8d530de271a95547413eb22342e5920b042054e95548"
     },
     {
       "member": "research/direct-child-summary.json",
@@ -182,8 +182,8 @@
     },
     {
       "member": "research/handling-failures.json",
-      "bytes": 2700,
-      "sha256": "8605bf10e3cdda5ed99b1489fcec15fa10283601ebddd886be3ec5564c15dd5e"
+      "bytes": 3206,
+      "sha256": "2983a097669501d17f1afcf4bdec5958f9f5e9220f475ce6db08ec7805b2e3b8"
     },
     {
       "member": "research/independent-root-values.json",
@@ -209,6 +209,31 @@
       "member": "research/lazy-timing.py",
       "bytes": 1508,
       "sha256": "26800c34171031ed184d19fb87e9fdd10240d55ce8d30809fc0b99a75fd62559"
+    },
+    {
+      "member": "research/leaf-eval-declaration.json",
+      "bytes": 457,
+      "sha256": "bd3e7b66bb146ca480515852e426b7d7bdc756452f80f8b2e3a61922cc7db5ed"
+    },
+    {
+      "member": "research/leaf-eval-module.c",
+      "bytes": 336502,
+      "sha256": "ba72c82f16f6990896f5ce1107da28c9fb1b66e8c4d799a291a3422698e0cb23"
+    },
+    {
+      "member": "research/leaf-eval-summary.json",
+      "bytes": 1395,
+      "sha256": "1ce6042abaa43d0bd1eec98163791aa009e95440a1fd04f07c4909debe6e528c"
+    },
+    {
+      "member": "research/leaf-eval-timing.json",
+      "bytes": 6505,
+      "sha256": "b3c7a6db73efd68062273850145fdfab118d2d2de1f6901bc4206e8f5ff7fa33"
+    },
+    {
+      "member": "research/leaf-eval.py",
+      "bytes": 2327,
+      "sha256": "823b3640bd39734c759788c903779a0e42e9f0536f487a42e4e0d0a83343c2a2"
     },
     {
       "member": "research/native_semantic_runtime.h",
