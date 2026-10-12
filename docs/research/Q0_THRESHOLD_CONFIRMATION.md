@@ -114,3 +114,20 @@ and encoding-cost findings remain its own lane, not q0 production validation.
 Science is OPEN. Next separate remaining canonical cost from actual caller
 usefulness, and extend the explicit local UI adapter only where a real complete
 interface can be demonstrated.
+
+## Remaining completed-horizon cost
+
+Two subsequently declared cold Shogi D5 calls retain the exact old/reverse tuple
+and take 174824 visits versus the old 181699.
+Actual all-visit phases are main 113754,
+confirmation 214, canonical output 60856;
+their sum is the total. They are completed D5 measurements, not cumulative
+attempted D6 work. The separate four-member remaining-shogi archive is bound by
+data/q0_threshold_remaining_shogi_20261012.json; the original94members stay fixed.
+
+At gen2 completed D5, main61292 visits are unchanged, confirmation267696→617,
+and final18124→17892. Remaining ordering cache shows7114hits/198491misses,
+194395collisions at4096entries of2712bytes. This motivates inspecting actual
+key/collision cost before changing capacity: larger cache spends additional
+memory and is not yet a speedup or correctness claim. No naive TT replay,
+root-order or newPVS rerun is selected.
