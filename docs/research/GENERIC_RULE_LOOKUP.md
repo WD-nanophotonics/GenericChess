@@ -157,3 +157,11 @@ Next choose a remaining ACTUAL supported-caller/key cost or caller/backend
 attribution whose opposite results change a concrete choice. Do not rerun the
 unchanged SHA/O3/fingerprint microcontrols, add static tables from counts alone,
 claim scientific completion, or use publication as an early segment ending.
+
+Late zero-new-go check of existing auxiliary27 accepted steps: the published
+chosen-proposal gain decompositions give13 steps needing quantity versus base
+and13 with positive true-terminal support for the chosen proposal. See data/auxiliary_quantity_gate_20261013.json. This does not choose between
+unreported plus/minus alternatives or invent a pure-terminal training path.
+The newly read AUX/Dot431/438 discussion correctly separates budget and target
+dependence without unique causal identification across different cohorts.
+New431/438 results are not yet imported or used for primary acceptance.

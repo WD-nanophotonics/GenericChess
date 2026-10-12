@@ -1327,3 +1327,16 @@ deferred. Producer/fixture/line-ending mistakes are retained with actual fixes;
 no hidden SAC/quota/runtime block or required user action. Remaining work is
 actual supported-caller/key attribution, not repeating these microcontrols.
 Detailed sources/results/limits: ../research/GENERIC_RULE_LOOKUP.md.
+
+Late consultation checkpoint: PRIMARY reads ALL posts of new AUX/Dot root
+1791841777, including the budget/goal attribution objection. Budget changes
+also change trajectories/terminal frequency and proxy participation; separate
+cohorts do not uniquely identify shallow-search compensation versus quantity
+bias. PRIMARY actually reclassifies26 existing27 accepted proposal gains against
+their own bases with zero new go. 13 steps have positive terminal delta supporting that chosen
+proposal;13 need quantity versus base. nonpositive terminal delta means quantity was necessary versus base.
+This does not recover unreported plus/minus choice or a counterfactual complete
+optimizer trajectory.431/438 remain auxiliary's running/planned work, not
+primary validation. No new worker, mandatory acknowledgement or direction
+import from an attributed user conversation. Public derived check is at
+../research/data/auxiliary_quantity_gate_20261013.json.
