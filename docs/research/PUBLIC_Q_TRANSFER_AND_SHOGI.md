@@ -173,3 +173,29 @@ Independent Core full-history replay validates that full noisy classification
 retains it while capture-only excludes it. This is an inclusion witness, not a
 score/strength gain. Its equal-context continuation-value check is the next memo
 Main, rather than an assumption that either profile solves the whole problem.
+## Adopted Dot review and completed local parent counterfactual
+
+The fresh direction-request root receives Dot reply1791777555.200089. Adopt:
+corrected q0+existing exact-root option is a scoped cheap baseline; defer newCq4/
+API. The key objection is causal: inclusion or a changed branch score alone does
+not show a parent decision change. Dot read the fixed report, not the new binary,
+212 runs or archive, so this is direction/source review, not independent testing.
+
+That next step was actually executed. The saved full-history parent is replayed
+from the original Shogi handroot. Two isolated TT-disabled direct parentq queries
+use the same frozen Material, remainingmain0, qstart0/ordinaryq4/hard8,8192nodes/
+64s and full windows. Baseline capture-only has value700 with sole best
+continuation stand_pat, qnodes1. Adding exactly the verified rook checking drop
+at this parent has value900 with sole best R@a9, qnodes81. All descendants still
+use capture-only inclusion; the original complete legal check evasions are
+retained. Both finish normally and restore the complete root.
+
+Two independent Core-legality/check/availability-authority reruns match values,
+best sets, included actions and qnodes. Four bounded q queries are separate from
+the212 public/mature searches. This is a local parent-policy counterexample,
+not a root-move/strength gain or universal checking strategy. Original online
+alpha/beta/qoffset were not serialized, so the explicit controlled context does
+not claim to reproduce its original window. A producer ROOT-path import error
+was corrected before any query; no failed score or higher cap is used.
+Evidence: data/check_parent_20261012.json. Next test transmission to the same
+original root with only this one exact parent/history inclusion changed.

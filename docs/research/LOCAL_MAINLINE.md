@@ -53,7 +53,7 @@ steps; one unknown original bridge exit remains as a recovered, unconfirmed-caus
 failure with24+1+35coverage, not a clean uninterrupted batch. Declaration copying
 errors are explicitly corrected from frozen source/actual receipts. ScienceOPEN.
 
-Keep UI/default selection frozen and AUX training independent. Next choose one
+Keep UI/default selection frozen and AUX training independent. Dot1791777555.200089 adopts the scoped cheapq0 baseline and defers newCq4/API. Four direct parentq queries then establish700/standpat versus900/onecheckingdrop, exact values/sets/qnodes1/81 on Native and independent Core authorities. This is a controlled exposed parent, not root/strength; originalonlinewindow was not serialized. Next propagate only this exactparent/history inclusion to the original root, retaining caps and isolatedTT. Next choose one
 explicit consumer requirement for q/check support versus the existing corrected
 q0 material service; measure the distinction before proposing Cq4 or interfaces.
 Data: data/public_transfer_20261012.json. Earlier records remain immutable.
