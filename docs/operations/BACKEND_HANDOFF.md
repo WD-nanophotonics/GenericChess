@@ -56,7 +56,7 @@ See research/NATIVE_EXECUTION_FAILURES.md and SEARCH_SPEED_EVIDENCE.md for scope
 
 Still private, not enabled: root-only canonical ordering (observed depth loss),
 immediate-terminal proof stop (different caller goal), altered q4 completion
-policy and the transient static-ordering view. Larger cache capacity was rejected; normal-output parity of the view does not establish identical digest/allocation failure handling. Small learned evaluators
+policy. Larger cache capacity and the no-gain ASCII-run key candidate were rejected. Small learned evaluators
 remain separate research; no UI/default training model has been promoted.
 
 LOCAL_UI_SEARCH_TEST.md describes a historical work-machine browser/worker test,
@@ -70,3 +70,13 @@ or raw Slack/account data is copied into sandbox.
 Dot's completed-thread supplements were read and reconciled on2026-10-12.
 The compatible backend/UI boundary is adopted; quoted other-chat user context
 does not expand branch, publication, master-promotion or machine authority.
+
+Guarded discarded static-material ordering is now enabled only by existing
+explicit ordering_cache_enabled=False with no dynamic/spatial/localized/compact
+or policy ordering consumer. It retains full parent history/postconditions and
+required nested failure propagation; recursive/TT/PV children keep full identity.
+Deleting an unused digest removes its failure opportunity deliberately, without
+claiming identical OOM trajectories. ordering_material_view_trials exposes actual
+attempts (None for older/not-started kernels). Exact decimal key formatting keeps
+canonical bytes; no cache/default/evaluation/UI policy changes. See
+research/MATERIAL_ORDERING_VIEW.md for actual local costs and resource limits.

@@ -1139,3 +1139,50 @@ Dot建议24局random-mate pilot按根/颜色/seed成对、去速度权重与删�
 冲突证据；没有例行回执、重复启动或让辅助暂停。新增信息不要求再跑主
 补丁测试；净协作效率仍未量化。可执行下一步是private静态ordering view
 在已修复必要错误链上的局部采用判断，而非扩展学习/身份工程。
+
+## 2026-10-13 PRIMARY guarded ordering consumer / DEV_AUX learning
+
+PRIMARY implemented and tested the discarded static-material ordering path,
+retaining required nested failures, full searched histories and complex-profile
+fallbacks. Initial2274 full active tests pass;24fresh generated played roots/
+48finite calls match output/work. At32s gen2 completesD6 instead ofD5 with the
+same action; Shogi staysD5. Both64s conditions finishD6. Higher128s plane is
+separate/ongoing, never an extension of oldcaps. ASCII-run key candidate has
+no useful fixed-work gain and is rejected; generic decimal spelling passes
+192Cidentity/552integer checks and saves a small1.3–5.6% across the two roots.
+No UI/default model, positional patches, extra Agent or identity framework.
+
+Read the complete DEV_AUX thread including new result and fixed report
+0f503d3321bf0d3b28e4fa075a5c38c155c2cd78/results/dev_aux/SEGMENT_20261012_23.md.
+Its reported4912 short games/62975newgo and bounded training/transfer audits
+belong to AUX's separate sidemission/frozenf1ea source. PRIMARY did not reproduce
+them or use those old-source results to qualify its new backend patch.
+AUX likewise explicitly read130c/c915 and did not claim independent verification
+of PRIMARY's2272 prior tests. Both lanes' sources and evidence are readable.
+
+Adopt the interpretation limits: random-mate training improvement and some
+NativeD3 transfer do not establish consistent human-price recovery; mature
+development speed reverses for s703, semantic moves farther from reference,
+and random-stream coupling is not an identical-opponent/cause proof. AUX keeps
+its own frozen endpoint/search-opponent next step; PRIMARY stays search costs.
+No routine wake/reply or task delegation was needed. No boundary write/state
+conflict is observed. Ordinary concurrent computations are normal. Efficient
+reuse of existing proof/producer paths is visible, but net cooperation time
+saved is unmeasured. Full channel plus existing-thread reading actually found
+the auxiliary result that channel-root polling alone would miss.
+Raw Slack/accounts, user UI/private input and credentials remain excluded.
+
+Further PRIMARY result: the separately fixed128s plane gives onlyD6 in both
+roots/arms, with identical completed tuples; no rescue/playing-gain claim.
+Measured discarded-position53920bytes includes51250reservedhistory bytes.
+A single guarded caller clear omission keeps full output/work and saves
+about32.6–32.8% gen2/23.4–23.7% Shogi atD6. Finalcombined twelve profile calls
+retain required fallbacks;2277 full active tests pass0fail/error/skip.
+Original scripts/temporary fixture preparation failures were diagnosed and
+fixed without hidden stops, machine-security changes or user intervention.
+Finalresource32 composition measurement remains separate from oldercurves.
+
+Final eight32s composition calls completed: both roots baselineD5→newD6,
+reversed pairs; gen2 keeps its action, Shogi changes. Entire newD6 tuples match
+the old128s completeD6 outputs. This is earlier complete output, not proven
+winning utility. All original32/64/128 records are retained independently.

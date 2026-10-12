@@ -129,10 +129,19 @@ static PyObject *gc_test_avail_count(PyObject *self, PyObject *args) {
 
 @pytest.mark.parametrize("root_windows", [False, True])
 @pytest.mark.parametrize("cache_enabled", [False, True])
-def test_serializer_error_retains_iteration_and_does_not_poison_tt(
+def test_required_serializer_error_and_discarded_view_contract(
     fault_kernel, monkeypatch, root_windows, cache_enabled,
 ):
     monkeypatch.setattr(native, "_MODULE", fault_kernel)
+    raw_results = []
+    original_search = fault_kernel.semantic_engine_search
+
+    def counted(*args):
+        result = original_search(*args)
+        raw_results.append(dict(result))
+        return result
+
+    monkeypatch.setattr(fault_kernel, "semantic_engine_search", counted)
     compiled = compile_ruleset_for_execution(build_western_chess_ruleset())
     rules = compile_native_semantic_rules(compiled)
     profile = build_ruleset_profile(compiled, EvaluationConfig())
@@ -163,23 +172,35 @@ def test_serializer_error_retains_iteration_and_does_not_poison_tt(
         failed = tested.search(session, limits, root_window_pruning=root_windows)
     finally:
         fault_kernel.test_set_fault(False)
-    assert failed.termination_reason == "internal_error"
-    assert failed.completed_depth == 1
-    assert failed.action in session.legal_actions()
-    assert (failed.action, failed.score, failed.principal_variation) == (
-        baseline.action, baseline.score, baseline.principal_variation)
+    if cache_enabled:
+        assert failed.termination_reason == "internal_error"
+        assert failed.completed_depth == 1
+        assert failed.action in session.legal_actions()
+        assert (failed.action, failed.score, failed.principal_variation) == (
+            baseline.action, baseline.score, baseline.principal_variation)
+    else:
+        # No top-level ordering digest is computed for a discarded static view.
+        assert failed.termination_reason == "completed"
+        assert failed.completed_depth == 3
+        assert raw_results[-1]["ordering_material_view_trials"] > 0
+    if cache_enabled:
+        assert raw_results[-1]["ordering_material_view_trials"] == 0
     retry = tested.search(session, limits, root_window_pruning=root_windows)
     cold = engine().search(session, limits, root_window_pruning=root_windows)
     assert retry.completed_depth == cold.completed_depth == 3
     assert retry.termination_reason == cold.termination_reason == "completed"
     assert (retry.action, retry.score, retry.principal_variation) == (
         cold.action, cold.score, cold.principal_variation)
+    if not cache_enabled:
+        assert (failed.action, failed.score, failed.principal_variation) == (
+            cold.action, cold.score, cold.principal_variation)
     assert session.state is before and session._search_witnesses is witnesses
 
 
 @pytest.mark.parametrize("root_windows", [False, True])
+@pytest.mark.parametrize("cache_enabled", [False, True])
 def test_nested_terminal_failure_is_not_completed_stalemate(
-    fault_kernel, monkeypatch, root_windows,
+    fault_kernel, monkeypatch, root_windows, cache_enabled,
 ):
     from dataclasses import replace
     from generic_chess.core.movement import LeapAtom
@@ -217,7 +238,7 @@ def test_nested_terminal_failure_is_not_completed_stalemate(
         return SemanticSearchEngine(
             compiled, rules, checkpoint=checkpoint,
             ordering_checkpoint=checkpoint, ordering_min_depth=2,
-            ordering_cache_enabled=True, tt_megabytes=1)
+            ordering_cache_enabled=cache_enabled, tt_megabytes=1)
 
     def search(e, depth):
         return e.search(session, SearchLimits(

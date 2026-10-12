@@ -569,6 +569,16 @@ int gc_semantic_runtime_make_checked(GCSemanticPosition *child,
     return gc_semantic_runtime_make_checked_status(child, r, parent, action) > 0;
 }
 
+/* Discarded material-ordering state only: never a search/TT/cache/trace node.
+ * Parent history and postconditions remain authoritative. Omitting unused
+ * identity construction removes its allocation-failure opportunity; actual
+ * nested reply failures still propagate. Preserve capacity refusal. */
+int gc_semantic_runtime_make_material_view_status(GCSemanticPosition *child,
+    const GCSemanticRules *rules, const GCSemanticPosition *parent, uint64_t action) {
+    if (parent->history_len >= GC_SEM_MAX_PLY + 1) return 0;
+    return gc_semantic_runtime_make_mode(child, rules, parent, action, 1, 0);
+}
+
 /* Availability never consumes the successful child's digest or history.
  * Explicit per-call mode avoids changing the existing transient global flag. */
 int gc_semantic_runtime_probe_action_status(const GCSemanticRules *rules,

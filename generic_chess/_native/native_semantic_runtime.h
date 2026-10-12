@@ -32,6 +32,11 @@ int gc_semantic_runtime_make_checked(GCSemanticPosition *child,
 int gc_semantic_runtime_make_checked_status(GCSemanticPosition *,
     const GCSemanticRules *, const GCSemanticPosition *, uint64_t);
 
+/* Discarded pure material scoring only; preserves postconditions and parent history.
+ * Returns 1/0/-1. Never use this child for search, TT, cache or terminal checks. */
+int gc_semantic_runtime_make_material_view_status(GCSemanticPosition *,
+    const GCSemanticRules *, const GCSemanticPosition *, uint64_t);
+
 /* Internal availability keeps nested execution failures distinct from no move. */
 int gc_semantic_runtime_probe_action_status(const GCSemanticRules *,
     const GCSemanticPosition *, uint64_t);

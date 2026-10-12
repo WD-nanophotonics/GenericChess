@@ -103,8 +103,9 @@ default True is unchanged. Private static ordering-view D5 costs drop roughly
 25%/16.5% on two roots with equal output/work, but every16s delivery staysD5.
 Finite/profile/cancel/allcandidate controls pass; a synthetic capacity corner
 was guarded. Dot identifies digest failure, and a direct injected serializer
-failure confirms oldrefusal/viewacceptance. Keep this fast path private until
-its failure contract is explicitly resolved; no global key framework or UI task.
+failure confirms oldrefusal/viewacceptance. That initial fast path remained private pending its failure contract; the
+current guarded consumer adoption below resolves this tested path, without a
+new key framework or UI task.
 New allarms64s D6 resource results are separate, old caps remain immutable.
 
 NATIVE_EXECUTION_FAILURES.md repairs the observed false completion with explicit
@@ -113,8 +114,9 @@ loss is fixed through the existing ok channel; actualplayedprefix3 fault retains
 D1 andsameTT recovery. Sixpersistentfaultregressions coverbothpaths. Initialproduction
 2270active tests and actualold-fails/new-passes regression support the scoped
 iterative-search change; no global/default/UI optimizer follows. Probe retry alone
-misses nested failures and is rejected. A private material view under a declared
-valid-input/required-computation failure contract remains a separate cost choice.
+misses nested failures and is rejected. The material view now has a declared valid-input/required-computation failure
+contract and an adopted scoped consumer path; required terminal errors remain
+explicit. Old no-gain and failure witnesses stay frozen.
 SEARCH_SPEED_EVIDENCE.md separates existing specialized/hybrid/native-state
 ratios from the missing current matched persistentNative/specialist interval.
 
@@ -194,3 +196,17 @@ single writer, stops, duration, consultation identity/new-root instructions,
 publication and machine/data boundaries remain unchanged. Publish reviewed/tested
 Agent-only code/results/evidence each completed segment and verify full remote
 origin/sandbox SHA; exclude private/user inputs and raw Slack/account credentials.
+
+Current consumer decision2026-10-13: MATERIAL_ORDERING_VIEW.md adopts the scoped
+uncached static ordering view after required-error repair, with actual profile,
+fault and fresh generated-state controls. Gen2 at32s completesD6 versusD5 with
+same action; Shogi32s bothD5, bothroots64s D6. No general strength claim.
+A tiny exact decimal serializer improves fixed work modestly; ASCII-run candidate
+is rejected without a resource-extension hunt. Complete-domain/key/history
+semantics and defaultcache/UI policy remain. The measured discarded-child full-tail clear omission is also adopted only
+under the same immediate static consumer guard, with required history preserved.
+Final combined regressions/resource results qualify this local choice.
+Final2277 tests pass; eightcombined32s calls givebothroots D5→D6,
+gen2sameaction/Shogichanged, exactold128s D6tuplematch. View-only128s remainsD6
+botharms. Next isolate actual packedcanonical versus UCI/USI lexical comparator
+order andTT/scheduling before a currentNative/specialist interval claim.

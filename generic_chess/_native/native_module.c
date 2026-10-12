@@ -4380,6 +4380,7 @@ typedef struct {
     uint64_t ordering_elapsed_nanoseconds;
     uint64_t ordering_cache_hits;
     uint64_t ordering_cache_misses;
+    uint64_t ordering_material_view_trials;
     uint64_t ordering_cache_collisions;
     uint64_t ordering_evaluations_by_ply[GC_SEM_MAX_PLY + 1];
     uint64_t ordering_nodes_by_ply[GC_SEM_MAX_PLY + 1];
@@ -4955,6 +4956,12 @@ static int gc_semantic_order_actions(GCSemanticIterativeContext *ctx,
         ctx->control = 4;
         return 0;
     }
+    /* Discard immediately; recursive search and cached/profile scoring keep full identity. */
+    int material_view = ctx->ordering_cache == NULL &&
+        ctx->ordering_profile.compact == NULL && ctx->ordering_profile.policy == NULL &&
+        !ctx->ordering_profile.spatial_supplied && !ctx->ordering_profile.localized_control_supplied &&
+        ctx->ordering_profile.dynamic[0] == 0 && ctx->ordering_profile.dynamic[1] == 0 &&
+        ctx->ordering_profile.dynamic[2] == 0;
     size_t legal_count = 0;
     for (size_t i = 0; i < actions->count; i++) {
         if (!gc_semantic_iterative_check_budget(ctx, 1)) {
@@ -4962,9 +4969,16 @@ static int gc_semantic_order_actions(GCSemanticIterativeContext *ctx,
             return 0;
         }
         GCSemanticPosition child;
-        memset(&child, 0, sizeof(child));
-        int made = gc_semantic_runtime_make_checked_status(
-            &child, ctx->rules, position, actions->data[i]);
+        /* make_material_view copies every field consumed below, including
+         * live parent history. Its unused reserved history tail is never read. */
+        if (!material_view) memset(&child, 0, sizeof(child));
+        int made;
+        if (material_view) {
+            ctx->ordering_material_view_trials++;
+            made = gc_semantic_runtime_make_material_view_status(
+                &child, ctx->rules, position, actions->data[i]);
+        } else made = gc_semantic_runtime_make_checked_status(
+                &child, ctx->rules, position, actions->data[i]);
         if (made < 0) { free(ordered); ctx->control = 4; return 0; }
         if (!made) continue;
         int mover_score = 0;
@@ -6496,6 +6510,7 @@ static PyObject *gc_semantic_iterative_search(
         gc_semantic_set_u64(out, "policy_state_inferences", ctx.policy_state_inferences) != 0 ||
         gc_semantic_set_u64(out, "policy_actions_scored", ctx.policy_actions_scored) != 0 ||
         gc_semantic_set_u64(out, "policy_action_embeddings", ctx.policy_actions_scored) != 0 ||
+        gc_semantic_set_u64(out, "ordering_material_view_trials", ctx.ordering_material_view_trials) != 0 ||
         gc_semantic_set_u64(out, "root_tie_refinements", ctx.root_tie_refinements) != 0 ||
         gc_semantic_set_u64(out, "root_tie_aborts", ctx.root_tie_aborts) != 0 ||
         gc_semantic_set_u64(out, "policy_preorder_checked_transitions", ctx.policy_preorder_checked_transitions) != 0 ||

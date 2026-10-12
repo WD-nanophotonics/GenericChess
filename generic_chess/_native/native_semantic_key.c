@@ -15,8 +15,17 @@ static void sb_reserve(GCSemBuf *b, size_t add) {
 }
 static void sb_raw(GCSemBuf *b, const char *s, size_t n) { sb_reserve(b,n); if (!b->ok)return; memcpy(b->data+b->len,s,n); b->len+=n;b->data[b->len]='\0'; }
 static void sb_lit(GCSemBuf *b, const char *s) { sb_raw(b,s,strlen(s)); }
-static void sb_u64(GCSemBuf *b, uint64_t v) { char x[32]; int n=snprintf(x,sizeof(x),"%llu",(unsigned long long)v); if(n<0){b->ok=0;return;} sb_raw(b,x,(size_t)n); }
-static void sb_i64(GCSemBuf *b, int64_t v) { char x[32]; int n=snprintf(x,sizeof(x),"%lld",(long long)v); if(n<0){b->ok=0;return;} sb_raw(b,x,(size_t)n); }
+static void sb_u64(GCSemBuf *b, uint64_t v) {
+    char x[20]; size_t i = sizeof(x);
+    do { x[--i] = (char)('0' + v % 10); v /= 10; } while (v);
+    sb_raw(b, x+i, sizeof(x)-i);
+}
+static void sb_i64(GCSemBuf *b, int64_t v) {
+    if (v < 0) {
+        sb_lit(b, "-");
+        sb_u64(b, (uint64_t)(-(v+1)) + 1u);
+    } else sb_u64(b, (uint64_t)v);
+}
 static void sb_json_u16_escape(GCSemBuf *b, uint32_t value) {
     char x[7];
     snprintf(x, sizeof(x), "\\u%04x", (unsigned)(value & 0xffffu));
