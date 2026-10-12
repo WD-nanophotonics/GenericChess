@@ -43,6 +43,8 @@ checksPASS, withinengine repeats exact;16intentionalcross-engine responsechanges
 No newgames/fit or prospectiveexecutor acceptance. 473preflight:0bestmovechanges,6score/4depth/8nodes/10PVchanges; no16decisionchange
 claim.474same searchsource checks remainingboard-onlycapturefutility+fixedmargins;
 not observed harmfulpruning/uniquelearningfailurecause. Archive remains unchanged.
+476conditionalN8vsN32single-win dominance bound derived; ALL96actualbreadth
+rounds show0strictterminalpreference overrides, so noobservedharm claim.
 Fixedscience report/archive is available on sidemission afterpublication, and
 will be sent once in the substantive ownDot thread, not a routine receiptloop.
 
