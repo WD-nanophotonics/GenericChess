@@ -1,6 +1,13 @@
-# Local UI search test
+# Historical work-machine UI consumer test
 
-This local test copy keeps the user frontend at
+This is a historical work-machine experiment, not the current user integration
+route or a delivery to another computer. UI Test is maintained on the user
+computer; PRIMARY supplies reviewed backend changes through sandbox, and
+DEV_AUX supplies its own sidemission validation. Existing copies remain as
+evidence. See [backend handoff](../operations/BACKEND_HANDOFF.md) for actual
+public entry points, parameters and limits. No UI-copy maintenance is selected.
+
+The historical local test copy kept the user frontend at
 99c97bb87474c44af94c76571f326ef8a41eb898 and overlays the reviewed current
 sandbox backend in an ignored directory. It does not overwrite ui-test,
 a user's checkout, historical exports or game saves. This is a local manual

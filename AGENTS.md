@@ -23,6 +23,13 @@ summaries to sandbox and give Dot a fixed-revision link. Exclude raw Slack,
 account/private inputs. This is a short evidence summary, not extra approval,
 identity challenges or a requirement to wake the auxiliary for routine replies.
 
+UI Test remains user-maintained on the other computer. PRIMARY delivers tested
+backend changes on sandbox; DEV_AUX keeps its sidemission lane. Neither Agent
+maintains or publishes UI Test. Old work-machine UI copies are historical
+consumer evidence, not a new frontend delivery route. Backend activation and
+compatibility notes: docs/operations/BACKEND_HANDOFF.md. This restates the
+existing branch separation; Dot supplements grant no new cross-branch authority.
+
 At every start, restart, heartbeat and after compaction, FIRST read
 .local_agent/NEXT_WORK.md in full, then this file, LOCAL_MAINLINE.md and
 rollout/advisor/slack stop flags. Never clear a user stop. A missing/stale memo

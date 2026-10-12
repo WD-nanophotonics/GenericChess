@@ -30,8 +30,8 @@ Q0_RESOURCE_AND_ORDERING.md separates fixed-work, node-limited delivery and a
 new equal-time resource plane. Original278-query evidence remains frozen.
 The saved checking-drop local gain remains avoidable at its parent/root.
 
-Sixteen paired before/current q0 calls retain1M caps: S4D7→D8 and1091 at64s
-D4→D5, while1091 at16s remainsD4. A cheap D3 root hint adds no ranking signal.
+Sixteen paired before/current q0 calls retain1M caps: S4D7â†’D8 and1091 at64s
+D4â†’D5, while1091 at16s remainsD4. A cheap D3 root hint adds no ranking signal.
 Existing ordering_min_depth2/3 recovers1091D5 at16s, but72actual saved-turn
 calls show a min2 node-cap depth loss on1091turn2 and no Shogi depth benefit.
 All36reverse triplets agree; actual Core Native-legality fallbacks are zero.
@@ -43,7 +43,7 @@ reversing its1M selection; bothNative Shogi0 arms stillD4 versusCorePVS D5.
 Resource definition matters but does not explain the entire remaining gap.
 Twenty-four original1091 fixedD4/D5 comparisons agree in fullvalue/action/PV
 across lexical/min2/min3, TT0/cold1 and reverse orders; min2 reduces actualD5
-visits686484→318082 withoutTT. Complete-domain/q4 target remains.
+visits686484â†’318082 withoutTT. Complete-domain/q4 target remains.
 
 Correction: both recorded old/new1091D4 PV literal leaves were-2514, not old
 -4912. Independent opponent-best residual queries put oldthirdAa2-d4 at-4912
@@ -61,12 +61,12 @@ D3/D4 calls triggerconflicts, preservefulltriplets andworsenwork; rejectadoption
 Q0_SCORE_REFINEMENT.md now measures that origin: D4 tie-refinement replay
 1010693 versus final64711. Normal exact-score confirmation retains the final
 canonical pass and gives342036 visits/fulltuple;48 saved consumer cells improve
-onlygen2 (16sD3→D4,1M64sD3→D5). Fixed factors show the configured material
+onlygen2 (16sD3â†’D4,1M64sD3â†’D5). Fixed factors show the configured material
 ordering is the main local lever, not TT. Fresh7root/84 finite queries and
 phase abort/persistentTT recovery checks pass; public exact-root change scoped,
 legacy/default/UI policies retained. Equal64s withoutnodecaps stillNativeShogiD4
 versusbothCoreAB/PVS D5. Shogi finalcanonical replay~1.9M dominates attempted
-work. Naively enabling nonPV TT in replay breaks canonicalPV (gen0 4→2 and
+work. Naively enabling nonPV TT in replay breaks canonicalPV (gen0 4â†’2 and
 Shogi same-lengthchange) despite root/final scalar agreement; reject that control.
 Next preserve actual decision/output semantics when reducing canonical cost;
 newgen delivery also tests existing immediate-terminal caller shortcuts.
@@ -74,7 +74,7 @@ No global/default/strength claim or new NativePVS kernel follows.
 Q0_TRACE_AND_TERMINAL_POLICY.md now separates explicit selected-branch canonical
 reconstruction from actual one-ply terminal caller proof. Twelve fixedD4 TT1 and
 twelveTT0 fulltuples agree,56finite generated queries agree, phaseabort/reusedTT
-checks pass; equal64s givesgen0D5→D6, gen2D5unchanged, ShogiD4→D5. A new16000-node
+checks pass; equal64s givesgen0D5â†’D6, gen2D5unchanged, ShogiD4â†’D5. A new16000-node
 regression fails old replay atD3 and naiveTT at truncatedPV2, passes reconstructed
 D4/fullPV4. The actual terminal shortcut remains a separate private opt-in caller
 policy; corrected cancellation and real GameSession submissions preserve actual
@@ -90,11 +90,22 @@ after an observed equal-budget D5-to-D4 loss. Integer threshold confirmation
 retains material root order and selected full canonical reconstruction; savedgen2
 fixed D4 visits281094to13794/D5 347112to79801. Full finite/delivery/boundary/TT
 recovery checks and41production regressions pass; old16000node regression fails
-D3 versusnewD4. No global/default/q4 change. LOCAL_UI_SEARCH_TEST.md records an
-actual separately prepared local test copy: explicit ChessNativeq0, labelled
-Coreq4 for declarations/generated compatibility, real worker andHTTP checks,
-userui-test branch untouched. Next measure remaining canonical/caller cost and
-finish complete UI adapter interfaces only from concrete consumer evidence.
+D3 versusnewD4. No global/default/q4 change. LOCAL_UI_SEARCH_TEST.md retains historical
+work-machine consumer evidence only. The user owns UI Test on the other
+computer; PRIMARY continues sandbox backend and publishes tested changes plus
+explicit activation/compatibility notes in operations/BACKEND_HANDOFF.md.
+No UI-copy maintenance or frontend integration backlog is selected. Next
+measure remaining canonical/mainsearch cost under unchanged decision semantics.
+
+Q0_ORDERING_COST.md rejects capacity doubling and records the disabled-cache
+allocation fix (44 production regressions). Explicit False now avoids11.1MB;
+default True is unchanged. Private static ordering-view D5 costs drop roughly
+25%/16.5% on two roots with equal output/work, but every16s delivery staysD5.
+Finite/profile/cancel/allcandidate controls pass; a synthetic capacity corner
+was guarded. Dot identifies digest failure, and a direct injected serializer
+failure confirms oldrefusal/viewacceptance. Keep this fast path private until
+its failure contract is explicitly resolved; no global key framework or UI task.
+New allarms64s D6 resource results are separate, old caps remain immutable.
 
 ## Retained long-term objectives and evidence discipline
 

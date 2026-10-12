@@ -116,6 +116,8 @@ class SemanticIterativeSearchResult:
     # or all checked attempts: canonical selected-PV replays are separate work.
     legal_generation_count: int | None = None
     transition_count: int | None = None
+    # None means an older kernel or a search that did not start; never infer RSS.
+    ordering_cache_allocated_bytes: int | None = None
 
 
 def _profile_tuple(native_rules, values):
@@ -571,6 +573,8 @@ class SemanticSearchEngine:
             ordering_cache_hit_rate=float(raw.get("ordering_cache_hit_rate", 0.0)),
             ordering_cache_capacity=int(raw.get("ordering_cache_capacity", 0)),
             ordering_cache_entry_bytes=int(raw.get("ordering_cache_entry_bytes", 0)),
+            ordering_cache_allocated_bytes=(int(raw["ordering_cache_allocated_bytes"])
+                                            if "ordering_cache_allocated_bytes" in raw else None),
             ordering_max_ply=int(raw.get("ordering_max_ply", -1)),
             ordering_min_depth=int(raw.get("ordering_min_depth", 1)),
             ordering_evaluations_by_ply=tuple(int(value) for value in raw.get("ordering_evaluations_by_ply", ())),

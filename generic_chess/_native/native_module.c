@@ -6807,14 +6807,16 @@ static PyObject *gc_create_semantic_search_engine(PyObject *self, PyObject *args
     GCSemanticSearchEngine *engine = (GCSemanticSearchEngine *)calloc(
         1, sizeof(*engine));
     if (engine == NULL) { PyErr_NoMemory(); return NULL; }
-    engine->ordering_cache = (GCSemanticOrderingCache *)calloc(
-        1, sizeof(*engine->ordering_cache));
-    if (engine->ordering_cache == NULL) {
-        free(engine);
-        PyErr_NoMemory();
-        return NULL;
+    if (ordering_cache_enabled) {
+        engine->ordering_cache = (GCSemanticOrderingCache *)calloc(
+            1, sizeof(*engine->ordering_cache));
+        if (engine->ordering_cache == NULL) {
+            free(engine);
+            PyErr_NoMemory();
+            return NULL;
+        }
+        engine->ordering_cache->profile_generation = 1;
     }
-    engine->ordering_cache->profile_generation = 1;
     engine->ordering_cache_enabled = ordering_cache_enabled;
     engine->ordering_feature_reuse_enabled = ordering_feature_reuse_enabled;
     engine->ordering_max_ply = ordering_max_ply;
@@ -6947,6 +6949,13 @@ static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
         engine->ordering_feature_reuse_enabled);
     engine->busy = 0;
     Py_DECREF(call_args);
+    /* Allocated table bytes differ from active lookup capacity and from RSS. */
+    if (result != NULL && gc_semantic_set_u64(
+            result, "ordering_cache_allocated_bytes",
+            engine->ordering_cache == NULL ? 0 : sizeof(*engine->ordering_cache)) != 0) {
+        Py_DECREF(result);
+        return NULL;
+    }
     return result;
 }
 
