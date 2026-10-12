@@ -26,16 +26,20 @@ roots, not claimed improved end-to-end or an independently reproduced user loss.
 
 ## Current measured question
 
-SCALAR_ATTACK_TRAVERSAL.md is the current result/selection. Generic scalar
-source-first attack and removal of a duplicate global-class import preserve
-full existing rule/identity/history/required-error contracts. Final2,298 tests,
-fixed complete-sequence controls and declared fresh resource results qualify
-local execution benefits, not universal speed or strength. Actual Core state
-import has962 exact repeats/50,180; availability ply0 and actual-ply consumers
-must stay distinct. Do not build a frame/global cache from object-only counts.
-Next choose one measured required builder/key primitive whose possible outcomes
-change a concrete implementation choice. IndependentNative search remainsq0;
-supportedCore-with-Native-legality suppliesq4. Auxiliary learning is separate.
+GENERIC_RULE_LOOKUP.md is the current result/selection. Mechanical immutable
+capture-pattern and ordered-source lookup preserve full state/history/required
+errors and supported numeric inputs. Final2,314 tests, complete finite traces
+and direct combined sameD5~43percent saving qualify local execution benefits.
+Actual Coreq4 D2 saves4.3/4.6percent but16s completion depths remainD2/D3.
+Index8newseed16/64 plane retains unavailable1357:56calls/28ALLsame horizons;
+path-only exposedsame-rule16 panel28calls/14pairs has4deeper/10same/0lower,
+same-depth full choices/PVs equal. No global strength/WDL or Nativeq4 claim.
+Cold constructor costs and32,896bytes/livecapsule are explicit; rebuild ALL C
+objects/clean process after internal layout change. UI remains user-maintained.
+SHA-round/O3/FP microcontrols are deferred on actual low/noisy gain. AUX60f6d33b27
+is independently checked for66 exact rows/96profiles only, not3,488games/binary
+or primary acceptance. Next select one remaining actual caller/key cost or
+capability attribution; no unchanged micro-rerun/state-cache/newengine backlog.
 
 ## Prior selections and preserved limits
 

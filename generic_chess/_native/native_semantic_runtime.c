@@ -73,6 +73,19 @@ static void reset_aux_value(const GCSemAuxSlot *slot, GCSemAuxValue *value, uint
 }
 static int path_entry(const GCSemGeometry *g, uint8_t owner, uint16_t source, const GCSemPathEntry **out) {
     const GCSemPathOwner *paths = &g->paths[owner];
+    if (paths->sources_sorted) {
+        uint32_t lo = 0, hi = paths->count;
+        while (lo < hi) {
+            uint32_t mid = lo + (hi - lo) / 2;
+            if (paths->entries[mid].source < source) lo = mid + 1;
+            else hi = mid;
+        }
+        if (lo < paths->count && paths->entries[lo].source == source) {
+            *out = &paths->entries[lo];
+            return 1;
+        }
+        return 0;
+    }
     for (uint16_t i = 0; i < paths->count; i++) if (paths->entries[i].source == source) { *out = &paths->entries[i]; return 1; }
     return 0;
 }
@@ -350,9 +363,10 @@ static int semantic_attacked_by(const GCSemanticRules *r, const GCSemanticPositi
     for (uint16_t si=0; si<r->board_size*r->board_size; si++) {
         const GCPiece *actor=&pos->board[si];
         if (!actor->occupied || actor->owner!=attacker) continue;
-        for (uint16_t pi=0; pi<r->pattern_count; pi++) {
+        if (actor->current_type >= r->type_count) continue;
+        for (uint16_t ci=0; ci<r->capture_pattern_count[actor->current_type]; ci++) {
+            uint16_t pi=r->capture_pattern_indices[actor->current_type][ci];
             const GCSemPattern *pattern=&r->patterns[pi];
-            if (pattern->target!=1 || !pattern_has_type(pattern,actor->current_type)) continue;
             for (uint8_t gi=0; gi<pattern->geometry_count; gi++) {
                 uint16_t gid=pattern->geometry_indices[gi]; if(gid>=r->geometry_count)continue;
                 const GCSemGeometry *geo=&r->geometries[gid]; if(geo->kind==2)continue;

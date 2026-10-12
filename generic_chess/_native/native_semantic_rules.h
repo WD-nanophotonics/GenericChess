@@ -153,6 +153,7 @@ typedef struct {
 typedef struct {
     GCSemPathEntry *entries;
     uint16_t count;
+    uint8_t sources_sorted;
 } GCSemPathOwner;
 
 typedef struct {
@@ -274,6 +275,8 @@ typedef struct {
     uint16_t trigger_count;
     GCSemPattern *patterns;
     uint16_t pattern_count;
+    uint16_t capture_pattern_count[GC_MAX_TYPES];
+    uint16_t capture_pattern_indices[GC_MAX_TYPES][GC_SEM_MAX_PATTERNS];
     GCSemDeclaration *declarations;
     uint8_t declaration_count;
 } GCSemanticRules;

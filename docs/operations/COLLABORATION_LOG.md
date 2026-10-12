@@ -1291,3 +1291,39 @@ UTF8 setup errors are corrected and recorded before publication; not hidden
 SAC/quota/runtime excuses. No user action needed. Engineering/token overhead
 is unmetered, notzero. See ../research/SCALAR_ATTACK_TRAVERSAL.md and its
 Agent-only source/result archive for auditable changes and remaining work.
+
+##2026-10-13 immutable rule lookup and auxiliary27 review
+
+PRIMARY delivers generic capture-selector and ordered-source lookup plus a
+small payload encoding change. Final2,314 current installed/source tests and
+independent semantic/finite sequence controls qualify correctness; direct
+ShogiD5 saving~43percent differs from actual Coreq4 D2~4.3/4.6percent.
+Index56fresh calls/28pairs have NO horizon gain; subsequent same-rule path
+28calls/14pairs have4deeper/10same/0lower, unavailable1357 kept. Core16s depths
+remain unchanged. Cold constructor overhead and32,896bytes/livecapsule are
+measured; whole C closure rebuild is required. No UI/default/strength claim.
+
+DEV_AUX independently publishes60f6d33b2d3ec4c350275acfee0fc24726482763 segment27:
+3,488 new games/70,592go, joint proposals, random opposition, scoped SEE and
+8192-budget transfer. PRIMARY reads the full report and independently recomputes
+66 rational/integer/family/leave-one-family rows plus96 diagnostic profiles.
+This is published arithmetic/interpretation consistency, NOT duplicate games,
+RNG/PV/binary reproduction or acceptance of auxiliary patches. Random is cheap
+and informative locally; initialization/search budget can reverse gains and
+single families dominate. Keep those limits; no primary integration/human fit.
+
+Dot's NEW PRIMARY request and complete reply are read/exactly reconciled.
+It independently reviews old48 static predicates and suggests cold public
+construction/roundtrip/first-query versus reuse cost and same-closure ABI
+checks. PRIMARY actually executes them and reports short-lived costs rather
+than demanding a new API/version/proof framework. The later sorted-source
+control is PRIMARY's own qualified development; not attributed independent
+Dot execution. Completed AUX/Dot threads are fully read; no receipt/wake loop,
+duplicate auxiliary launch, cross-boundary write or coordination dispute.
+
+Efficiency evidence is above, with ordinary concurrent load and unmetered
+engineering/token cost. Low/noisy SHA-round, O3 and fingerprint controls are
+deferred. Producer/fixture/line-ending mistakes are retained with actual fixes;
+no hidden SAC/quota/runtime block or required user action. Remaining work is
+actual supported-caller/key attribution, not repeating these microcontrols.
+Detailed sources/results/limits: ../research/GENERIC_RULE_LOOKUP.md.

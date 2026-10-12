@@ -1600,6 +1600,7 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                 }
                 rules->geometries[g].paths[o].count = n;
             }
+            rules->geometries[g].paths[o].sources_sorted = 1;
             for (uint16_t i = 0; i < n; i++) {
                 PyObject *entry = PyList_GetItem(owner_entries, i);
                 if (!PyList_Check(entry) || PyList_Size(entry) != 2) {
@@ -1621,6 +1622,8 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
                 }
                 GCSemPathEntry *pe = &rules->geometries[g].paths[o].entries[i];
                 pe->source = source;
+                if (i && rules->geometries[g].paths[o].entries[i-1].source > source)
+                    rules->geometries[g].paths[o].sources_sorted = 0;
                 PyObject *sqs = PyList_GetItem(entry, 1);
                 if (!sem_alloc_uint16_list(sqs, &pe->squares, &pe->count, 0xFFFF)) {
                     gc_semantic_rules_free(rules);
@@ -2170,6 +2173,20 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
         return NULL;
     }
 
+    /* Stable, deduplicated capture-pattern subsequences for each current type. */
+    for (uint16_t type = 0; type < rules->type_count; type++) {
+        for (uint16_t pi = 0; pi < rules->pattern_count; pi++) {
+            const GCSemPattern *pattern = &rules->patterns[pi];
+            if (pattern->target != 1) continue;
+            for (uint8_t ti = 0; ti < pattern->type_count; ti++) {
+                if (pattern->type_indices[ti] == type) {
+                    uint16_t count = rules->capture_pattern_count[type]++;
+                    rules->capture_pattern_indices[type][count] = pi;
+                    break;
+                }
+            }
+        }
+    }
     return rules;
 }
 

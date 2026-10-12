@@ -135,6 +135,7 @@ class NativeSemanticLegalityProvider:
 
     def _state_only_payload(self, position, ply_count):
         """Build exactly the F20 state-only payload; never read history/SHA."""
+        type_map = self.type_map
         board = []
         for piece in position.board:
             if piece is None:
@@ -143,21 +144,21 @@ class NativeSemanticLegalityProvider:
             if piece.owner not in (0, 1):
                 raise ValueError("Native legality payload has an invalid owner")
             try:
-                base = self.type_map[piece.base_type_id]
-                current = self.type_map[piece.current_type_id]
+                base = type_map[piece.base_type_id]
+                current = type_map[piece.current_type_id]
             except KeyError as exc:
                 raise ValueError("Native legality payload has an unknown piece type") from exc
-            board.append([base, current, int(piece.owner), int(bool(piece.promoted))])
+            board.append([base, current, int(piece.owner), 1 if piece.promoted else 0])
 
         hands = []
         for hand in position.hands:
             counts = [0] * len(self.type_ids)
             for type_id, count in hand.counts:
-                if type_id not in self.type_map:
+                if type_id not in type_map:
                     raise ValueError("Native legality payload has an unknown hand type")
                 if int(count) < 0:
                     raise ValueError("Native legality payload has a negative hand count")
-                counts[self.type_map[type_id]] = int(count)
+                counts[type_map[type_id]] = int(count)
             hands.append(counts)
         return {
             "side": int(position.side_to_move),

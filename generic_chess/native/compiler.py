@@ -1177,7 +1177,9 @@ def build_semantic_compile_payload(semantic):
     }
 
     estimated = (
-        65
+        # C-owned uint16 capture counts and per-type pattern subsequences.
+        GC_SEM_MAX_TYPES * (1 + GC_SEM_MAX_PATTERNS) * 2
+        + 65
         + len(types) * 16
         + sum(
             (len(pairs[0]) + len(pairs[1])) * 4

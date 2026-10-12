@@ -1,0 +1,562 @@
+{
+  "question": "Can immutable rule predicates and path ordering reduce supported generic execution without state/history/error weakening?",
+  "base_sha": "48f151ad960cf21415385ebf69ab964e0be9cfce",
+  "adopted": [
+    "ascending deduplicated capture-pattern subsequence by current type",
+    "compiler-verified nondecreasing source paths with first-match lower_bound and unchanged unordered linear fallback",
+    "existing provider local-map binding/direct truth-to-integer encoding"
+  ],
+  "retained": "Full rules/promotion/drop/aux/history, complete required identities/errors, evaluation/order/TT/UI policies and supported Coreq4 versus independentNativeq0 distinction",
+  "tests": {
+    "tests": 2314,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 243.293,
+    "binary_sha256": "a5352f67bf5a0ed2a337c7c2e35a1015b32402765aa0c6469acadbc4fd987b04",
+    "source_sha256": {
+      "generic_chess/_native/native_semantic_runtime.c": "4f6f92bdb520e466d309737ddc9031737a789aa58580227080bcb8def27f070b",
+      "generic_chess/_native/native_semantic_rules.c": "20a9ef7d79ce3d1b27d15955d4add81f7a8b31db9c171038d66d20f2b73a0277",
+      "generic_chess/_native/native_semantic_rules.h": "2e0dc49401d91617b914e72799ecc87fcdccd6d3530d30ff1c5a453cd12597e4",
+      "generic_chess/native/compiler.py": "d4adaf09a1e174fdf3a4ae2f9690154a67e7fbc95240cd3959c0a2b11eebb4dc",
+      "generic_chess/ai/alphabeta/native_legality.py": "4c6572da93c22c569532341597bcb2baa68492cd0b4dccf78be1f364df715702",
+      "tests/product/test_native_capture_pattern_index.py": "f0b4fa62be2109b200e47a624e7cfe1325311aa2e159b6223479c218a6f52e1c",
+      "tests/product/test_native_path_source_lookup.py": "9851bd00cb9381e3e06167e04d641e11227f64f34bc4441c4ce9a21a4381556a"
+    },
+    "scope": "Actual installedfinal fullclosure, cleanprocess completeactive tests including rebuiltcurrentfault kernels; XML/rawlogs privatehostnamepaths excludedfrompublication."
+  },
+  "archive": {
+    "path": "docs/archive/generic_rule_lookup_20261013/evidence.zip",
+    "bytes": 1273440,
+    "members": 298,
+    "sha256": "7a564436804d5199474c2e94a17e439c86cf51c821d391e0438a4e8bb65a14f8",
+    "raw_bytes": 25037253,
+    "source_files": 45,
+    "all_member_bytes_readback_equal": true,
+    "scope": "Agent-generated code/results/prototypes only; raw Slack/account/privateinputs/credentials/testXMLhostname/logs/binaries/toolchains/cache excluded. Exact source and scientificrecords, nobit-identical compiler/machine speed guarantee. Baseline34C/headers and final45source closure included. FourShogi trace reference tables are retained in preceding scalararchive/Git purpose evidence."
+  },
+  "capture_resource": {
+    "complete": true,
+    "calls": 56,
+    "caller_seconds": 2240.465733198449,
+    "unavailable": [
+      {
+        "seed": 2026101357,
+        "unavailable": "terminal/prefix unavailable",
+        "no_replacement": true
+      }
+    ],
+    "pairs": [
+      {
+        "seed": 2026101351,
+        "seconds": 16,
+        "order": 0,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": 99999999,
+        "new_score": 99999999,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101351,
+        "seconds": 16,
+        "order": 1,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": 99999999,
+        "new_score": 99999999,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101351,
+        "seconds": 64,
+        "order": 0,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": 99999999,
+        "new_score": 99999999,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101351,
+        "seconds": 64,
+        "order": 1,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": 99999999,
+        "new_score": 99999999,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101352,
+        "seconds": 16,
+        "order": 0,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": -1800,
+        "new_score": -1800,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101352,
+        "seconds": 16,
+        "order": 1,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": -1800,
+        "new_score": -1800,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101352,
+        "seconds": 64,
+        "order": 0,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": -1800,
+        "new_score": -1800,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101352,
+        "seconds": 64,
+        "order": 1,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": -1800,
+        "new_score": -1800,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101353,
+        "seconds": 16,
+        "order": 0,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": -200,
+        "new_score": -200,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101353,
+        "seconds": 16,
+        "order": 1,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": -200,
+        "new_score": -200,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101353,
+        "seconds": 64,
+        "order": 0,
+        "old_depth": 7,
+        "new_depth": 7,
+        "old_score": 200,
+        "new_score": 200,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101353,
+        "seconds": 64,
+        "order": 1,
+        "old_depth": 7,
+        "new_depth": 7,
+        "old_score": 200,
+        "new_score": 200,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101354,
+        "seconds": 16,
+        "order": 0,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": 99999999,
+        "new_score": 99999999,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101354,
+        "seconds": 16,
+        "order": 1,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": 99999999,
+        "new_score": 99999999,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101354,
+        "seconds": 64,
+        "order": 0,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": 99999999,
+        "new_score": 99999999,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101354,
+        "seconds": 64,
+        "order": 1,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": 99999999,
+        "new_score": 99999999,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101355,
+        "seconds": 16,
+        "order": 0,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": 100,
+        "new_score": 100,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101355,
+        "seconds": 16,
+        "order": 1,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": 100,
+        "new_score": 100,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101355,
+        "seconds": 64,
+        "order": 0,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": 100,
+        "new_score": 100,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101355,
+        "seconds": 64,
+        "order": 1,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": 100,
+        "new_score": 100,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101356,
+        "seconds": 16,
+        "order": 0,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": 800,
+        "new_score": 800,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101356,
+        "seconds": 16,
+        "order": 1,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": 800,
+        "new_score": 800,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101356,
+        "seconds": 64,
+        "order": 0,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": 800,
+        "new_score": 800,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101356,
+        "seconds": 64,
+        "order": 1,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": 800,
+        "new_score": 800,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101358,
+        "seconds": 16,
+        "order": 0,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": 300,
+        "new_score": 300,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101358,
+        "seconds": 16,
+        "order": 1,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": 300,
+        "new_score": 300,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101358,
+        "seconds": 64,
+        "order": 0,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": 0,
+        "new_score": 0,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101358,
+        "seconds": 64,
+        "order": 1,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": 0,
+        "new_score": 0,
+        "same_depth_full_tuple_equal": true
+      }
+    ],
+    "counts": {
+      "same": 28
+    },
+    "same_depth_keys": [
+      "completed_depth",
+      "score",
+      "action",
+      "declaration_id",
+      "principal_variation",
+      "decision_line"
+    ],
+    "scope": "Developmental bounded resource plane, not strength/WDL/independentstatisticalholdout; allunavailable retained, root+PVlegality checkedbyproducer. Pathpanel reuses identicalpredeclaredrules afterindexplane began; baseline16s calls are distinct contemporaneousrun, no oldcounterfeit reuse."
+  },
+  "path_resource": {
+    "complete": true,
+    "calls": 28,
+    "caller_seconds": 448.2360115000047,
+    "unavailable": [
+      {
+        "seed": 2026101357,
+        "unavailable": "terminal/prefix unavailable",
+        "no_replacement": true
+      }
+    ],
+    "pairs": [
+      {
+        "seed": 2026101351,
+        "seconds": 16,
+        "order": 0,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": 99999999,
+        "new_score": 99999999,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101351,
+        "seconds": 16,
+        "order": 1,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": 99999999,
+        "new_score": 99999999,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101352,
+        "seconds": 16,
+        "order": 0,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": -1800,
+        "new_score": -1800,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101352,
+        "seconds": 16,
+        "order": 1,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": -1800,
+        "new_score": -1800,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101353,
+        "seconds": 16,
+        "order": 0,
+        "old_depth": 6,
+        "new_depth": 7,
+        "old_score": -200,
+        "new_score": 200,
+        "same_depth_full_tuple_equal": null
+      },
+      {
+        "seed": 2026101353,
+        "seconds": 16,
+        "order": 1,
+        "old_depth": 6,
+        "new_depth": 7,
+        "old_score": -200,
+        "new_score": 200,
+        "same_depth_full_tuple_equal": null
+      },
+      {
+        "seed": 2026101354,
+        "seconds": 16,
+        "order": 0,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": 99999999,
+        "new_score": 99999999,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101354,
+        "seconds": 16,
+        "order": 1,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": 99999999,
+        "new_score": 99999999,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101355,
+        "seconds": 16,
+        "order": 0,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": 100,
+        "new_score": 100,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101355,
+        "seconds": 16,
+        "order": 1,
+        "old_depth": 6,
+        "new_depth": 6,
+        "old_score": 100,
+        "new_score": 100,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101356,
+        "seconds": 16,
+        "order": 0,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": 800,
+        "new_score": 800,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101356,
+        "seconds": 16,
+        "order": 1,
+        "old_depth": 5,
+        "new_depth": 5,
+        "old_score": 800,
+        "new_score": 800,
+        "same_depth_full_tuple_equal": true
+      },
+      {
+        "seed": 2026101358,
+        "seconds": 16,
+        "order": 0,
+        "old_depth": 5,
+        "new_depth": 6,
+        "old_score": 300,
+        "new_score": 0,
+        "same_depth_full_tuple_equal": null
+      },
+      {
+        "seed": 2026101358,
+        "seconds": 16,
+        "order": 1,
+        "old_depth": 5,
+        "new_depth": 6,
+        "old_score": 300,
+        "new_score": 0,
+        "same_depth_full_tuple_equal": null
+      }
+    ],
+    "counts": {
+      "same": 10,
+      "deeper": 4
+    },
+    "same_depth_keys": [
+      "completed_depth",
+      "score",
+      "action",
+      "declaration_id",
+      "principal_variation",
+      "decision_line"
+    ],
+    "scope": "Developmental bounded resource plane, not strength/WDL/independentstatisticalholdout; allunavailable retained, root+PVlegality checkedbyproducer. Pathpanel reuses identicalpredeclaredrules afterindexplane began; baseline16s calls are distinct contemporaneousrun, no oldcounterfeit reuse."
+  },
+  "combined_core": {
+    "calls": 8,
+    "fields": [
+      "decision",
+      "stats",
+      "physical_frontier",
+      "availability_counts",
+      "provider_created",
+      "score_calls",
+      "map_calls",
+      "actual_attack_imports",
+      "actual_attack_queries",
+      "root_restored"
+    ],
+    "rows": [
+      {
+        "seed": 1008,
+        "baseline_mean_seconds": 2.2495942497625947,
+        "combined_mean_seconds": 2.1528545001056045,
+        "local_saving_fraction": 0.043003199206789966,
+        "full_nontime_work_equal": true
+      },
+      {
+        "seed": 1052,
+        "baseline_mean_seconds": 4.534209549892694,
+        "combined_mean_seconds": 4.3256668001413345,
+        "local_saving_fraction": 0.04599318744681635,
+        "full_nontime_work_equal": true
+      }
+    ],
+    "scope": "Actual combinedcaller directlymeasured, not productofstageratios; ordinary concurrentresourceproducers/noise. Samefullq4/history/Nativeavailability/evaluation andrequired error semantics."
+  },
+  "auxiliary_review": {
+    "aux_sha": "60f6d33b2d3ec4c350275acfee0fc24726482763",
+    "exact_rows_checked": 66,
+    "diagnostic_profile_rows": 96,
+    "checks": "Exactfractions gain/subcomponents/family/leave-one-family means, realintegerchangedaxes, terminal-only speedbonus/capquantity, diagnosticterminalcounts",
+    "source_sha256": {
+      "aux27-task414.json": "f5821128e302d6a4f6d9b366e121f8f48b4c02d32bc649e57cdf8aa41340a6d3",
+      "aux27-task424.json": "4a968739f8081304db680ed707cff4bb5c17e923314009b2f5f3afe485040fb2",
+      "aux27-task430.json": "7e7ca51acc007327a0545b75d56e43b050ed85c7ecef1383ec905f37771b6651"
+    },
+    "scope": "Independentpublished arithmetic/readback consistency, NOT independent3488game/binary/PV/RNG/fulljournal reproduction; no primarypatchadoption/defaultmerge/worker."
+  },
+  "deferred": [
+    "eight-round SHA:2376 exact digest/context but mixed2.0/-0.43percent D5 changes",
+    "compilerO3: same source/target fourD5 about0.5/-0.38percent, defaultO2 remains",
+    "privateimmutable64hex fingerprint encoding: nine exact fullSHA/fallback cases but only0.1/0.7percent D5 gain, no adoption",
+    "position/state/capsule caches and large geometry arrays not selected"
+  ],
+  "scope": "Developmental finite evidence, ordinary concurrent load, no universal speed/strength/WDL or statisticalholdout; raw private transport and logs excluded."
+}

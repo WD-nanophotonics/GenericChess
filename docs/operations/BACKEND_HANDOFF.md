@@ -117,3 +117,14 @@ Native legality/availability. Do not infer independent Native qsearch support
 from provider labels.2,298 final active tests pass without Native skips;
 local fixed/resource limits are in ../research/SCALAR_ATTACK_TRAVERSAL.md.
 PRIMARY sandbox backend only; UI Test stays user-owned on the other computer.
+
+###2026-10-13 rule lookup delivery
+
+GENERIC_RULE_LOOKUP.md records tested mechanical capture-selector and sorted-source
+lookup plus a small Native legality payload encoder change. Numeric payload/v4
+and Python entry signatures are unchanged, but C Rules internal layout changes:
+rebuild ALL Native sources via scripts/build_native_zig.py and restart the process;
+do not mix old capsules/objects with new consumers. Final2,314 installed/source
+checks pass. Coreq4 remains supported through Core; independent Native search is
+q0. Search/evaluation/ordering/TT/UI policies are unchanged. PRIMARY publishes
+sandbox backend only; user-maintained UI Test integration remains separate.
