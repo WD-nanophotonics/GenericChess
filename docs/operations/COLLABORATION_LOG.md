@@ -765,3 +765,11 @@ and remediation reporting; no unchanged failure loops or new approval machinery.
 Historical failed comparisons remain failed; recovered startup does not validate
 old experiments. Pending: AUX pilot evidence and public-Core PVS transfer.
 Raw Slack, account records, host events and private inputs stay outside Git.
+
+Completed AUX thread1791766744.469279 was read in full, including Dot supplement
+1791767340.459379 addressed to both Agents. Adopt the concrete-error/checks/
+user-action report and reject default short blocked exits; existing manual
+updated, no new workflow layer. AUX reports its four16ply games completed;
+PRIMARY has not independently checked that pilot output yet. Material-learning
+proxy versus human-reference distinction is retained for review, not adopted
+as a new mainline training assignment. Raw thread saved privately before use.
