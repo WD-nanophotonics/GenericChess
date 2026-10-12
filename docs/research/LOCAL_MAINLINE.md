@@ -26,37 +26,34 @@ roots, not claimed improved end-to-end or an independently reproduced user loss.
 
 ## Current measured question
 
-PUBLIC_Q_TRANSFER_AND_SHOGI.md finds and fixes a concrete Native material-call
-cost: explicitzero dynamic coefficients unnecessarily computed every leaf's
-feature vector. Complete neutral/omitted D2 controls preserve action/PV/value/
-work/returnedfeatures; handroot33.5s becomes0.4s after a narrow C guard. Relevant
-nonzero/binding/compact/root regressions pass. Full9x9 mature Shogi entry is now
-built from the pinned clean official source with normal largeboard/precomputed
-flags and actually returns8 legal search/PVs. No security-setting intervention.
+Q0_CONSUMER_AND_CANONICAL_REPLAY.md closes the saved-parent transfer: its local
+700→900 checking-drop gain does not alter complete public root900/R@a3; the
+complete affected king branch remains700 with a different opponent reply.
+Four8192-node whole-set scans remain incomplete, no capraise.
 
-After that repair, existing exact-root-window q0 opt-in deliversD4 at16s on
-middle/hand roots versus full-rootD3/D2 in both orders. Complete D2 same-value
-controls and actual raw tie counters support this transfer; no new API/kernel.
-Cold1MiB TT alone does not improve delivery. Native q4 requests still reject.
-Publicq4 handroot retainsD1/q0 king at16s; quiet transport alone does not finish
-D2 under8192nodes. Capture-only diagnostic changes support, not an equal-q gain.
-Independent same-material D4 Core/cshogi restricted branches give king500 versus
-actual selected rook900; mature reference rook500 under that shallow criterion
-is not evidence its deeper/different evaluation chose incorrectly.
+Actual activeS4/generated1091 q0 consumers accept full states and match fixed
+Material values, but Native does not dominate CorePVS delivery. Unconditional
+full-child material ordering loses depth; constructor/history transport is a
+small measured cost in the six-turn assay. New Source diagnosis targets actual
+nonroot INF windows and repeated canonical replay, not a new search API.
 
-Existing weighted q ordering helps1091 but hurts1090. Q-only unweighted priority
-reverses those effects; eager quiet prefilter wastes more transitions. Reject
-universal switches and exposed-root selectors. Active S4 hand/prohibition and
-Core shadow checks pass. True hard8 witness has12legal moves,10evasions and no
-repetition: retain that bound, not cap-rescue.212completed physicalcalls/286PV
-steps; one unknown original bridge exit remains as a recovered, unconfirmed-cause
-failure with24+1+35coverage, not a clean uninterrupted batch. Declaration copying
-errors are explicitly corrected from frozen source/actual receipts. ScienceOPEN.
+A real generated1091D4 PV difference was independently diagnosed: old internal
+continuation-4912 versus corrected-2514 under identical fullhistory/residualdepth
+on Core and Native. Existing exact-root opt-in now narrows normal nonroot AB,
+sorts full canonical replay by its encoded tie order and defers intermediate
+replay to the complete selected-root pass, retaining all root-bound refinements,
+TT/horizon/history and complete-iteration commits. Defaults/UI remain frozen.
+Private fixed1091D4 cost4.26→1.37s/183544→60133nodes; S4same1M capD7→D8, but
+1091 at16s remainsD4. Native stillq0-only; this does not replace fullgenerated/q4.
+Dot's actual internal UPPER100/exact0 risk is triggered and checked under
+isolated cold/warm TT, not assumed fixed by retaining replay. Production Native
+regression binds the observed PV defect. Detailed failures/limits stay in the
+purpose-specific record; prior source/results remain immutable. ScienceOPEN.
 
-Keep UI/default selection frozen and AUX training independent. Dot1791777555.200089 adopts the scoped cheapq0 baseline and defers newCq4/API. Four direct parentq queries then establish700/standpat versus900/onecheckingdrop, exact values/sets/qnodes1/81 on Native and independent Core authorities. This is a controlled exposed parent, not root/strength; originalonlinewindow was not serialized. Next propagate only this exactparent/history inclusion to the original root, retaining caps and isolatedTT. Next choose one
-explicit consumer requirement for q/check support versus the existing corrected
-q0 material service; measure the distinction before proposing Cq4 or interfaces.
-Data: data/public_transfer_20261012.json. Earlier records remain immutable.
+Next choose one defined remaining q0 normal-search/canonical-pass bottleneck,
+with existing CoreAB/PVS matching leaf and declared resources. Defer new Cq4/API
+until an explicit consumer requirement and measured cost justify it. AUX retains
+its independent learning lane; new b50681c8 report is read, not duplicated.
 
 ## Retained long-term objectives and evidence discipline
 
@@ -91,6 +88,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Actual q0 scope, saved-parent root transfer, canonical replay and played callers|Q0_CONSUMER_AND_CANONICAL_REPLAY.md; data/q0_consumer_20261012.json|
 |Actual public tuple, existing q ordering, decision utility and recovered mature entry|PUBLIC_CORE_Q_DELIVERY.md; data/public_core_q_20261012.json|
 |Cancellation, q transport and existing PVS delivery|CANCELLATION_AND_Q_SCHEDULING.md; data/cancel_q_scheduling_20261012.json|
 |Auxiliary q transfer, actual q0 work and optional exact-root repair|AUXILIARY_Q_AND_ROOT_WINDOWS.md; data/auxiliary_q_root_20261012.json|

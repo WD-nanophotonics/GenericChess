@@ -5337,6 +5337,12 @@ static PyObject *gc_semantic_policy_logits(PyObject *self, PyObject *args) {
     return out;
 }
 
+static int gc_semantic_canonical_action_compare(const void *left, const void *right) {
+    uint64_t a = *(const uint64_t *)left;
+    uint64_t b = *(const uint64_t *)right;
+    return (a > b) - (a < b);
+}
+
 static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
                                          uint32_t ply, uint32_t depth,
                                          int alpha, int beta, int pv_node,
@@ -5491,7 +5497,13 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
             }
         }
     }
-    if (!gc_semantic_order_actions(ctx, position, ply, depth, &actions)) {
+    if (ctx->root_window_pruning && pv_replay) {
+        /* Canonical replay owns its order. Later actions cannot replace an
+         * earlier incumbent using an inexact equal upper bound. */
+        if (actions.count > 1)
+            qsort(actions.data, actions.count, sizeof(uint64_t),
+                  gc_semantic_canonical_action_compare);
+    } else if (!gc_semantic_order_actions(ctx, position, ply, depth, &actions)) {
         gc_semantic_action_buffer_free(&actions);
         return 0;
     }
@@ -5551,6 +5563,10 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
         int child_beta = (ply == 0 && ctx->root_window_pruning && !root_first_child)
             ? -alpha
             : (pv_node || ply == 0 ? GC_SEMANTIC_PROBE_INF : -alpha);
+        if (ctx->root_window_pruning && ply > 0) {
+            child_alpha = -beta;
+            child_beta = -alpha;
+        }
         int branch = gc_semantic_iterative_negamax(
             ctx, ply + 1, depth - 1, child_alpha, child_beta, child_pv,
             pv_replay);
@@ -5597,6 +5613,7 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
     gc_semantic_action_buffer_free(&actions);
     if (ctx->control != 0) return 0;
     if ((ctx->tt != NULL || ctx->root_window_pruning) && !pv_replay && pv_node && found &&
+        (!ctx->root_window_pruning || ply == 0) &&
         !gc_semantic_is_declaration_action(best_action)) {
         /* Re-search the selected branch with a full PV window so TT ordering
          * cannot change the deterministic principal line. */
@@ -5622,7 +5639,8 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
             GC_SEMANTIC_PROBE_INF, 1, 1);
         if (ctx->control != 0) return 0;
         /* Keep the already selected score/bound.  This pass is solely to
-         * materialize the canonical PV for the selected action; the main
+         * materialize the canonical PV for the selected action; exact-root
+         * mode defers intermediate replay to this complete root pass. The main
          * alpha-beta result remains authoritative. */
         (void)branch;
         ctx->pv_table[(size_t)ply * ctx->pv_stride] = best_action;
