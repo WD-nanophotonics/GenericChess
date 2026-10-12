@@ -1,0 +1,405 @@
+{
+  "complete": true,
+  "games": 64,
+  "seconds": 8.485000000335276,
+  "groups": [
+    {
+      "profile": "unit",
+      "opponent": "random",
+      "games": 16,
+      "mate_wins": 13,
+      "mate_losses": 0,
+      "cutoffs": 3,
+      "original_reward_mean": 81.92213541666666,
+      "opponent_leaf_nodes": 0,
+      "opponent_compute_seconds": 0
+    },
+    {
+      "profile": "learned",
+      "opponent": "random",
+      "games": 16,
+      "mate_wins": 15,
+      "mate_losses": 0,
+      "cutoffs": 1,
+      "original_reward_mean": 94.41901041666667,
+      "opponent_leaf_nodes": 0,
+      "opponent_compute_seconds": 0
+    },
+    {
+      "profile": "unit",
+      "opponent": "unit2ply",
+      "games": 16,
+      "mate_wins": 10,
+      "mate_losses": 0,
+      "cutoffs": 6,
+      "original_reward_mean": 63.014583333333334,
+      "opponent_leaf_nodes": 35513,
+      "opponent_compute_seconds": 1.0930000003427267
+    },
+    {
+      "profile": "learned",
+      "opponent": "unit2ply",
+      "games": 16,
+      "mate_wins": 10,
+      "mate_losses": 2,
+      "cutoffs": 4,
+      "original_reward_mean": 50.43333333333333,
+      "opponent_leaf_nodes": 26370,
+      "opponent_compute_seconds": 0.811999998986721
+    }
+  ],
+  "profile_pairs": [
+    {
+      "opponent": "random",
+      "opening": 0,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "random",
+      "opening": 0,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "random",
+      "opening": 1,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": true,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "random",
+      "opening": 1,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "random",
+      "opening": 2,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": true,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "random",
+      "opening": 2,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": true,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "random",
+      "opening": 3,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "random",
+      "opening": 3,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": true,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "random",
+      "opening": 4,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": true,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "random",
+      "opening": 4,
+      "color": false,
+      "reward_delta": -0.25,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "random",
+      "opening": 5,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "random",
+      "opening": 5,
+      "color": false,
+      "reward_delta": -0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "opponent": "random",
+      "opening": 6,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": true,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "random",
+      "opening": 6,
+      "color": false,
+      "reward_delta": 100.47916666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "random",
+      "opening": 7,
+      "color": true,
+      "reward_delta": 99.85416666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "random",
+      "opening": 7,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "unit2ply",
+      "opening": 0,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": true,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "unit2ply",
+      "opening": 0,
+      "color": false,
+      "reward_delta": -201.0625,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "unit2ply",
+      "opening": 1,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": true,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "unit2ply",
+      "opening": 1,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "unit2ply",
+      "opening": 2,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": true,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "unit2ply",
+      "opening": 2,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": true,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "unit2ply",
+      "opening": 3,
+      "color": true,
+      "reward_delta": 100.1125,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "unit2ply",
+      "opening": 3,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": true,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "unit2ply",
+      "opening": 4,
+      "color": true,
+      "reward_delta": 0.125,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "unit2ply",
+      "opening": 4,
+      "color": false,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "opponent": "unit2ply",
+      "opening": 5,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "unit2ply",
+      "opening": 5,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "opponent": "unit2ply",
+      "opening": 6,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": true,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "unit2ply",
+      "opening": 6,
+      "color": false,
+      "reward_delta": -100.74166666666666,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "opponent": "unit2ply",
+      "opening": 7,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "opponent": "unit2ply",
+      "opening": 7,
+      "color": false,
+      "reward_delta": 0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    }
+  ]
+}

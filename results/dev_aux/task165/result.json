@@ -1,0 +1,609 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "mode": 0,
+      "move": "g7h8n",
+      "before": {
+        "fen": "7r/6P1/1k6/8/8/8/8/6K1 w - - 0 1",
+        "expected_material": -188,
+        "measured_white_pawns": -0.9,
+        "raw": "Final evaluation       -0.90 (white side)"
+      },
+      "after": {
+        "fen": "7N/8/1k6/8/8/8/8/6K1 b - - 0 1",
+        "expected_material": 2000,
+        "measured_white_pawns": 9.62,
+        "raw": "Final evaluation       +9.62 (white side)"
+      },
+      "gain": 2188,
+      "price_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 9.62,
+          "expected_white_pawns": 9.615384615384615
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 0.25,
+          "expected_white_pawns": 0.25
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.9,
+          "expected_white_pawns": 1.9038461538461537
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 2.45,
+          "expected_white_pawns": 2.451923076923077
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 0 1:126:208 2:781:854 3:825:915 4:1276:1380 5:2538:2682",
+        "prices": {
+          "1": [
+            126,
+            208
+          ],
+          "2": [
+            781,
+            854
+          ],
+          "3": [
+            825,
+            915
+          ],
+          "4": [
+            1276,
+            1380
+          ],
+          "5": [
+            2538,
+            2682
+          ]
+        },
+        "alignment": 0
+      }
+    },
+    {
+      "mode": 0,
+      "move": "g7h8b",
+      "before": {
+        "fen": "7r/6P1/1k6/8/8/8/8/6K1 w - - 0 1",
+        "expected_material": -188,
+        "measured_white_pawns": -0.9,
+        "raw": "Final evaluation       -0.90 (white side)"
+      },
+      "after": {
+        "fen": "7B/8/1k6/8/8/8/8/6K1 b - - 0 1",
+        "expected_material": 52,
+        "measured_white_pawns": 0.25,
+        "raw": "Final evaluation       +0.25 (white side)"
+      },
+      "gain": 240,
+      "price_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 9.62,
+          "expected_white_pawns": 9.615384615384615
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 0.25,
+          "expected_white_pawns": 0.25
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.9,
+          "expected_white_pawns": 1.9038461538461537
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 2.45,
+          "expected_white_pawns": 2.451923076923077
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 0 1:126:208 2:781:854 3:825:915 4:1276:1380 5:2538:2682",
+        "prices": {
+          "1": [
+            126,
+            208
+          ],
+          "2": [
+            781,
+            854
+          ],
+          "3": [
+            825,
+            915
+          ],
+          "4": [
+            1276,
+            1380
+          ],
+          "5": [
+            2538,
+            2682
+          ]
+        },
+        "alignment": 0
+      }
+    },
+    {
+      "mode": 0,
+      "move": "g7h8r",
+      "before": {
+        "fen": "7r/6P1/1k6/8/8/8/8/6K1 w - - 0 1",
+        "expected_material": -188,
+        "measured_white_pawns": -0.9,
+        "raw": "Final evaluation       -0.90 (white side)"
+      },
+      "after": {
+        "fen": "7R/8/1k6/8/8/8/8/6K1 b - - 0 1",
+        "expected_material": 396,
+        "measured_white_pawns": 1.9,
+        "raw": "Final evaluation       +1.90 (white side)"
+      },
+      "gain": 584,
+      "price_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 9.62,
+          "expected_white_pawns": 9.615384615384615
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 0.25,
+          "expected_white_pawns": 0.25
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.9,
+          "expected_white_pawns": 1.9038461538461537
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 2.45,
+          "expected_white_pawns": 2.451923076923077
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 0 1:126:208 2:781:854 3:825:915 4:1276:1380 5:2538:2682",
+        "prices": {
+          "1": [
+            126,
+            208
+          ],
+          "2": [
+            781,
+            854
+          ],
+          "3": [
+            825,
+            915
+          ],
+          "4": [
+            1276,
+            1380
+          ],
+          "5": [
+            2538,
+            2682
+          ]
+        },
+        "alignment": 0
+      }
+    },
+    {
+      "mode": 0,
+      "move": "g7h8q",
+      "before": {
+        "fen": "7r/6P1/1k6/8/8/8/8/6K1 w - - 0 1",
+        "expected_material": -188,
+        "measured_white_pawns": -0.9,
+        "raw": "Final evaluation       -0.90 (white side)"
+      },
+      "after": {
+        "fen": "7Q/8/1k6/8/8/8/8/6K1 b - - 0 1",
+        "expected_material": 510,
+        "measured_white_pawns": 2.45,
+        "raw": "Final evaluation       +2.45 (white side)"
+      },
+      "gain": 698,
+      "price_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 9.62,
+          "expected_white_pawns": 9.615384615384615
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 0.25,
+          "expected_white_pawns": 0.25
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.9,
+          "expected_white_pawns": 1.9038461538461537
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 2.45,
+          "expected_white_pawns": 2.451923076923077
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 0 1:126:208 2:781:854 3:825:915 4:1276:1380 5:2538:2682",
+        "prices": {
+          "1": [
+            126,
+            208
+          ],
+          "2": [
+            781,
+            854
+          ],
+          "3": [
+            825,
+            915
+          ],
+          "4": [
+            1276,
+            1380
+          ],
+          "5": [
+            2538,
+            2682
+          ]
+        },
+        "alignment": 0
+      }
+    },
+    {
+      "mode": 3,
+      "move": "g7h8n",
+      "before": {
+        "fen": "7r/6P1/1k6/8/8/8/8/6K1 w - - 0 1",
+        "expected_material": -188,
+        "measured_white_pawns": -0.9,
+        "raw": "Final evaluation       -0.90 (white side)"
+      },
+      "after": {
+        "fen": "7N/8/1k6/8/8/8/8/6K1 b - - 0 1",
+        "expected_material": 2000,
+        "measured_white_pawns": 9.62,
+        "raw": "Final evaluation       +9.62 (white side)"
+      },
+      "gain": 2188,
+      "price_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 9.62,
+          "expected_white_pawns": 9.615384615384615
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 0.25,
+          "expected_white_pawns": 0.25
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.9,
+          "expected_white_pawns": 1.9038461538461537
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 2.45,
+          "expected_white_pawns": 2.451923076923077
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:2000:2000 3:52:52 4:396:396 5:510:510",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            2000,
+            2000
+          ],
+          "3": [
+            52,
+            52
+          ],
+          "4": [
+            396,
+            396
+          ],
+          "5": [
+            510,
+            510
+          ]
+        },
+        "alignment": 3
+      }
+    },
+    {
+      "mode": 3,
+      "move": "g7h8b",
+      "before": {
+        "fen": "7r/6P1/1k6/8/8/8/8/6K1 w - - 0 1",
+        "expected_material": -188,
+        "measured_white_pawns": -0.9,
+        "raw": "Final evaluation       -0.90 (white side)"
+      },
+      "after": {
+        "fen": "7B/8/1k6/8/8/8/8/6K1 b - - 0 1",
+        "expected_material": 52,
+        "measured_white_pawns": 0.25,
+        "raw": "Final evaluation       +0.25 (white side)"
+      },
+      "gain": 240,
+      "price_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 9.62,
+          "expected_white_pawns": 9.615384615384615
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 0.25,
+          "expected_white_pawns": 0.25
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.9,
+          "expected_white_pawns": 1.9038461538461537
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 2.45,
+          "expected_white_pawns": 2.451923076923077
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:2000:2000 3:52:52 4:396:396 5:510:510",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            2000,
+            2000
+          ],
+          "3": [
+            52,
+            52
+          ],
+          "4": [
+            396,
+            396
+          ],
+          "5": [
+            510,
+            510
+          ]
+        },
+        "alignment": 3
+      }
+    },
+    {
+      "mode": 3,
+      "move": "g7h8r",
+      "before": {
+        "fen": "7r/6P1/1k6/8/8/8/8/6K1 w - - 0 1",
+        "expected_material": -188,
+        "measured_white_pawns": -0.9,
+        "raw": "Final evaluation       -0.90 (white side)"
+      },
+      "after": {
+        "fen": "7R/8/1k6/8/8/8/8/6K1 b - - 0 1",
+        "expected_material": 396,
+        "measured_white_pawns": 1.9,
+        "raw": "Final evaluation       +1.90 (white side)"
+      },
+      "gain": 584,
+      "price_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 9.62,
+          "expected_white_pawns": 9.615384615384615
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 0.25,
+          "expected_white_pawns": 0.25
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.9,
+          "expected_white_pawns": 1.9038461538461537
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 2.45,
+          "expected_white_pawns": 2.451923076923077
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:2000:2000 3:52:52 4:396:396 5:510:510",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            2000,
+            2000
+          ],
+          "3": [
+            52,
+            52
+          ],
+          "4": [
+            396,
+            396
+          ],
+          "5": [
+            510,
+            510
+          ]
+        },
+        "alignment": 3
+      }
+    },
+    {
+      "mode": 3,
+      "move": "g7h8q",
+      "before": {
+        "fen": "7r/6P1/1k6/8/8/8/8/6K1 w - - 0 1",
+        "expected_material": -188,
+        "measured_white_pawns": -0.9,
+        "raw": "Final evaluation       -0.90 (white side)"
+      },
+      "after": {
+        "fen": "7Q/8/1k6/8/8/8/8/6K1 b - - 0 1",
+        "expected_material": 510,
+        "measured_white_pawns": 2.45,
+        "raw": "Final evaluation       +2.45 (white side)"
+      },
+      "gain": 698,
+      "price_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 9.62,
+          "expected_white_pawns": 9.615384615384615
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 0.25,
+          "expected_white_pawns": 0.25
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.9,
+          "expected_white_pawns": 1.9038461538461537
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 2.45,
+          "expected_white_pawns": 2.451923076923077
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:2000:2000 3:52:52 4:396:396 5:510:510",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            2000,
+            2000
+          ],
+          "3": [
+            52,
+            52
+          ],
+          "4": [
+            396,
+            396
+          ],
+          "5": [
+            510,
+            510
+          ]
+        },
+        "alignment": 3
+      }
+    }
+  ],
+  "actual_eval_requests": 10,
+  "singlepiece_probe_calls": 10,
+  "seconds": 0.5,
+  "scope": "Newlegalfixture relocateskings beforeoutputs; originalTask153in-checktracesremainUNAVAILABLE. Measurespricecount semantics, notWDL orpromotionpolicygain; sourceSEE0specialshortcut unchanged."
+}

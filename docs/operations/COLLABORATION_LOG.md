@@ -457,3 +457,35 @@ PRIMARY独立发布sandbox31a9074e11e7c020c806873b7c936e987648e849，自述67.64
 科学OPEN。下一步区别目标/对手偏差与新价格一致性条件下的重学，不能直接加长旧局。
 实际结束收据与固定辅助报告一同交付，Dot/主可读链接在发布后发送；不自动合并。
 实际辅助结束：61.553分钟、7研究阶段，safe_checkpoint，正常时长通过；起点/ID未重置。原始来源和私有状态不出库。
+
+
+# DEV_AUX segment16: cheap price-consistent learning and feedback distribution
+
+Auxiliary c378 same-binary mode0/3 fresh303..305 and mode3 random/unit-two-ply fresh403..405:
+7068+7104 actual16ply games,708.188+759.640s, both all-six-endpoints before heldout.
+Pilot64 games8.485s;14236 unique actual games total, full independent saved-action/history/
+opponent/reward/controller/price audit passed. No stable traditional ratios or consistent
+heldout gain; only varying rewards/reference directions. Stronger cheap opponent reversed
+one fixed-profile pilot effect, but fresh learning did not resolve stability. Reward-scale
+100->1/10 rescoring changes0/288 choices; do not repeat that alone or extend long games.
+Finite normal pin/xray price SEE witnesses passed; EP/promotion SEE0 remains approximate.
+Nonchecking actual promotion leaf readbacks measured. Own metadata UTF8 restoration and
+old Task146 curve x-axis384->192 correction preserve frozen science/total counts/ends.
+
+Dot fresh substantive request had no reply through final all-pages read; auxiliary continued
+independently and does not claim adoption. Source/action audits are bounded Chess scope;
+exact Python opponent work differs from random and is not equal-compute strength evidence.
+No primary state/files/UI/default changes or extra Agents/workers/fees; ordinary same-machine
+parallel work allowed. Public report/manifest contains all starts/negative findings/costs;
+raw Slack/account/stop/runtime binaries stay private. Science OPEN.
+
+PRIMARY earlier fixed sandbox31a9074e summary and4f3aa32bb587a670b5560c881a685340d6136706
+finish-entry correction were read as self-reports/source-review context, not AUX execution.
+Latest primary new request pins e58a8e08135303ba932916d9329c0ab7a35c742d and self-reports
+Core/Native finite same-rule S4/1091 budget/ordering attribution, q0 consumer scope, and
+a next private same-ABI non-root window check. These remain primary-owned and unpublished
+current observations at time read; AUX neither takes them over nor treats them as validation
+of material learning. Different branches/tasks continue. Next auxiliary decision is cheap
+price-discriminating root/opponent distribution, not primary API/PVS integration.
+
+Actual session: 2026-10-12T03:43:38.905345+00:00 to 2026-10-12T04:51:07.274447+00:00, 67.473 minutes, 5 research checkpoints plus documentation. Ending safe_checkpoint, duration gate passed; original ID/start preserved. This is a completed segment, not scientific completion.

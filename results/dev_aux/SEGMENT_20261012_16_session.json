@@ -1,0 +1,62 @@
+{
+  "id": "c9feae06-d679-4a79-8334-7331af219203",
+  "started_at": "2026-10-12T03:43:38.905345+00:00",
+  "ended_at": "2026-10-12T04:51:07.274447+00:00",
+  "state": "ended",
+  "elapsed_minutes": 67.473,
+  "reason": "safe_checkpoint",
+  "ending_evidence": "results/dev_aux/SEGMENT_20261012_16.md",
+  "duration_gate_passed": true,
+  "research_stage_count": 5,
+  "quality_review_required": true,
+  "checkpoints": [
+    {
+      "at": "2026-10-12T03:48:30.009136+00:00",
+      "evidence": "results/dev_aux/task152/declaration.json",
+      "kind": "research",
+      "next_action": "Continueboundedactualbatch andpredeclare8finitepins/promotion/xray normal/special SEE cases, separateapproximation fromprice-routing defects.",
+      "observation": "Declared303/304/305 freshstarts, mode0/3samec378binary,32actualqualificationsearches160leafreadbacks2.672s. Fixed7104slots1800sfuse; one terminalopening2007185 excludedsymmetrically36slots/noresampling. Actualbatch alreadyrunning, allendsbeforeheldout.",
+      "question": "Can newprice-consistentmode3 learning be compared atmatchedfixedcost?"
+    },
+    {
+      "at": "2026-10-12T03:54:19.404707+00:00",
+      "evidence": "results/dev_aux/task153/summary.json",
+      "kind": "research",
+      "next_action": "Completefreshmode0/3learning thenreplay allcandidates andchoosecost-effectiveobjective/opponent ablation fromresults, notmorelonggames.",
+      "observation": "8newfixtures/112actualSEEqueries1.922s; mode3pin/xray normalcaptures agreewithrestrictedlegaloracle inbothcolors. EP/promotion stillSEE0shortcut;24legalevaltracesmatchcounts,8in-checktracesexplicitlyunavailable. NofullSEEclaim ornewadmissiongate.",
+      "question": "Does mode3coverfinitepins/xray andspecialmoveprices?"
+    },
+    {
+      "at": "2026-10-12T04:04:51.733700+00:00",
+      "evidence": "results/dev_aux/task158/analysis.json",
+      "kind": "research",
+      "next_action": "BeginTask157 exact2plyunit-opponent versus random, same2fixedprofiles/roots/seeds16ply; inspect feedback separatelyfromhumanpricefit.",
+      "observation": "Task152 completed7068actualgames708.188s,36fixedterminal-inputexclusions;105949moves/53348searches/35340probes/7068tableacks and144choices verified. Mode3mixedreward/reference directions, no stableconvergence. Executepredeclared64gamecoveredking/opponentdistributionpilot next.",
+      "question": "Does repairedprice handling recoverstabletraditionalvalues quickly?"
+    },
+    {
+      "at": "2026-10-12T04:12:08.838928+00:00",
+      "evidence": "results/dev_aux/task159/audit.json",
+      "kind": "research",
+      "next_action": "ExecuteTask160randomvsunit2ply learning,7104fixed16plyslots1800fuse,8freshgeometryheldouts/allendsbeforeheldout; nosecondengineworker.",
+      "observation": "64actualcoveredkinggames8.485s andfullopponentreplay61883leafnodes passed. Learned-vs-unitmean +12.4969random but-12.5813unit2ply. Randommate13/15wins versusstronger10/10wins andlearned2losses; nothumanpriceproof. New403/404/405 matcheddistributionlearning nowfrozen.",
+      "question": "Is randomopponent feedback invariantunder a cheapstrongeropponent?"
+    },
+    {
+      "at": "2026-10-12T04:42:26.427385+00:00",
+      "evidence": "results/dev_aux/task162/analysis.json",
+      "kind": "research",
+      "next_action": "Review reportedmate/cp coverage andscope, packageallnewactualevidence withfixedcost/negative results; memo selectsrepresentativepricefeedback notmorelonggames.",
+      "observation": "Task1607104actualgames759.640s, all6912train+192heldout globalfrozen;46487moves26162agentsearches+11937completeunit-opponentsearches6682866leaves,35520priceprobes and144choices verified. Mixedreference/heldout, no stableconvergence. Score100\u21921/10 rescoring changes0/288candidatechoices; do notrerunrewardscale alone.",
+      "question": "Does cheapstrongeropponent makehumanprice learningstable?"
+    },
+    {
+      "at": "2026-10-12T04:50:37.050882+00:00",
+      "evidence": "results/dev_aux/SEGMENT_20261012_16.md",
+      "kind": "documentation",
+      "next_action": "Review outgoing diff, finish active session at safe checkpoint, then publish only reviewed sidemission evidence and fixed links.",
+      "observation": "14236 actual16ply games, full audits and all12ends; no stablehumanprices.52 exact archive members423809159bytes SHA7396f43a,18syntax sources checked. Metadata corrections explicit; next3tasks executable.",
+      "question": "Are all cheap learning outcomes and cost limits reviewable?"
+    }
+  ]
+}
