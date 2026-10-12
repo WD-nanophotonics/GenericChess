@@ -26,33 +26,22 @@ roots, not claimed improved end-to-end or an independently reproduced user loss.
 
 ## Current measured question
 
-AUXILIARY_Q_AND_ROOT_WINDOWS.md completes temporary auxiliary creation/expiry
-shadows and actual guarded q4 transfer. Generated1090's played slot stays0;
-1091 is the first predeclared active/no-one-ply-win root. At64s board-plus-drop
-exclusion deliversD3/q4 versus drop-onlyD2/q4 in both orders; at256s bothD3/q4.
-1090 instead stops at hardq8 with matched work, so its faster finish is cost,
-not extra support. Full Core mechanical/history/terminal authority and old caps
-remain. These are finite exposed controls, not full-domain or stronger moves.
+CANCELLATION_AND_Q_SCHEDULING.md completes same-call cancellation checks and
+existing q4 algorithm controls.50 actual cancelled returns restore full root
+state and retain the same call's complete result; warm emptyPV is the existing
+TT flag contract. Changing Native chunks1/8/32 adds no completed support.
+Existing PVS preserves completeD2 values/actions/PV on1090/1091 and reduces
+expensive q work. At64s1091 PVS returnsD3/q4 versus ABD2/q4 in both orders;
+at256s bothD3. No product/default/UI/private-iterator API change.
 
-Dot selects existing material-only q0 paths before a new C q4 kernel. Final
-scores alone hid different work. A source-derived D1+D2 scheduling control
-matches accepted nodes/transitions and canonical action, but conversion/eager
-frontier/terminal costs remain distinct. The q0 system curve has minimalCoreD4
-versus C full-PVD3 at64s despite cheaper compiled execution. Algorithm matters.
-
-A narrow repair of the existing optional C root windows refines only a tied
-UPPER bound that would replace an exact incumbent, and preserves older complete
-results on abort. Exact mode qualifies current-depth TT scores and separates
-legacy-mode entries in the existing context.17new/3compatibility and2245full
-active tests pass. Default remainsFalse, old binary guard remains, C remainsq0.
-Four completeD3 controls preserve action/PV/score with nodes876164to74414 and
-17.2to1.50s; exploratory4/16s controls deliverD3 versusD2. Do not extrapolate to
-q4 or change UI/defaults. Next inspect one actual consumer's q/evaluator/budget
-boundary before another interface or kernel. Science remains OPEN.
-
-Data: data/auxiliary_q_root_20261012.json. Prior current detail is recoverable at
-6862c0bddfb359aeff391a4078927cc7dc86cc43; the separate old Native transport,
-quiet-drop/PVS, capsule and negative controls remain immutable below.
+The user identified inadequate4551 root-cause handling. Smart App Control is
+now Off; PRIMARY Stockfish uci/isready and DEV_AUX task120's20 actual Fairy
+search probes pass. Resume mature-engine comparisons from this changed state,
+not an unchanged failed launch. AUX owns its existing four-game short pilot;
+primary reviews its source/conditions/results without duplicating that work.
+The next independent caller question is whether existing PVS gains transfer
+to unmodified public Core q consumers; the prepared finite control has not run.
+Data: data/cancel_q_scheduling_20261012.json. Earlier caps/failures stay immutable.
 
 ## Retained long-term objectives and evidence discipline
 
@@ -87,6 +76,7 @@ not a growing task list or publication gate.
 
 |Purpose|Document and records|
 |---|---|
+|Cancellation, q transport and existing PVS delivery|CANCELLATION_AND_Q_SCHEDULING.md; data/cancel_q_scheduling_20261012.json|
 |Auxiliary q transfer, actual q0 work and optional exact-root repair|AUXILIARY_Q_AND_ROOT_WINDOWS.md; data/auxiliary_q_root_20261012.json|
 |Native candidate-chunk legality, quiet-board guards and ordered scheduling|NATIVE_Q_LEGALITY_TRANSPORT.md; data/native_q_legality_20261012.json|
 |Quiet-drop exclusion, semantic PVS transfer and actual minimal-q executor attribution|QUIET_DROP_AND_PVS.md; data/quiet_drop_20261012.json|

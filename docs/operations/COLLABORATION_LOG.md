@@ -738,3 +738,30 @@ the new technical thread, including all four replies and complete pagination;
 no later new root or Dot review is claimed. Actual q4 consumer rejection/no-root-
 mutation is checked; executable next memo selects Coreq4 complete legality under
 cancellation/rollback. This receipt contains no raw Slack/account/private input.
+
+##2026-10-12 PRIMARY cancellation/PVS segment and execution-block correction
+
+PRIMARY completed175 structured search rows, six direct cancellation cells,
+kept failed assertions/caps, and tested92 relevant checks. Existing PVS gives
+1091D3/q4 at64s versus ABD2/q4 in both orders; no engine/UI/default change.
+Dot selected that existing-algorithm comparison rather than another private
+iterator API; adopted, with independent execution/review of new data unclaimed.
+
+DEV_AUX independently diagnosed Smart App Control and, after its state changed,
+task120 reports20 actual Fairy searches across two material profiles. PRIMARY
+read that completed result, verified its own preserved Stockfish UCI/isready,
+and sent the existing auxiliary chat one concrete ownership/status message.
+AUX retains its existing four-game pilot; PRIMARY does not duplicate it.
+No source-writing collision was observed. Savings from this division are not
+quantified; coordination was useful for avoiding a duplicate recovery/pilot.
+
+Correction: prior PRIMARY summaries said AppControl4551 but did not clearly
+identify SAC, explain the actionable remedy or ensure the block was resolved.
+The user's criticism of inadequate diagnosis/reporting is accepted. Project
+CodeIntegrity3077 evidence and current stateOff corroborate this cause;
+startup recovery is now measured, not inferred from the setting alone.
+LOCAL_AGENT.md and AUXILIARY_VALIDATION.md now require prompt concrete diagnosis
+and remediation reporting; no unchanged failure loops or new approval machinery.
+Historical failed comparisons remain failed; recovered startup does not validate
+old experiments. Pending: AUX pilot evidence and public-Core PVS transfer.
+Raw Slack, account records, host events and private inputs stay outside Git.

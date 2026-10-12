@@ -103,3 +103,12 @@ interpretation limit, not a stop/approval gate, a reason for automatic reruns or
 extra process monitoring. Preserve frozen raw results and earlier declarations;
 this user instruction supersedes the earlier resource-window practice without
 retrospectively converting old timing evidence into a clean benchmark.
+
+## Block handling
+
+Apply LOCAL_AGENT.md Diagnose execution blocks to actual validation failures.
+Diagnose and report the concrete cause/remedy promptly, rather than silently
+repeating4551 or declaring the route unavailable indefinitely. Changed system
+conditions permit a bounded qualification; preserve earlier failures. Each Agent
+owns its own recovery and test outputs. Share decision-changing status once,
+without duplicate pilot launches or routine acknowledgement loops.

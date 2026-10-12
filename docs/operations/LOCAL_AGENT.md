@@ -420,3 +420,26 @@ interpretation limit, not a stop/approval gate, a reason for automatic reruns or
 extra process monitoring. Preserve frozen raw results and earlier declarations;
 this user instruction supersedes the earlier resource-window practice without
 retrospectively converting old timing evidence into a clean benchmark.
+
+## Diagnose execution blocks —2026-10-12 correction
+
+Windows4551 is an execution-policy symptom, not a sufficient root-cause report.
+For an observed binary/import failure, inspect the exact error and relevant
+CodeIntegrity event for this project's path; distinguish Smart App Control,
+other policy, permissions and missing dependencies. Report the confirmed cause,
+what remains unknown and the concrete remedy promptly. Do not repeat an
+unchanged blocked launch or spend a night recording the same failure. Continue
+useful independent work while resolving the actual cause; do not hide the block.
+A changed condition warrants one bounded startup/protocol qualification before
+resuming the intended experiment. Never claim recovery from a setting alone.
+Machine-wide security changes remain the user's decision, not an automatic
+Agent action; provide the actionable diagnosis instead of silently giving up.
+
+The observed2026-10-12 case was Smart App Control. Project CodeIntegrity3077
+records corroborated the earlier4551 failures; current registry state0 is Off.
+After that change, PRIMARY's preserved Stockfish passed uci/isready, and DEV_AUX
+task120 reports20 actual Fairy search probes. Earlier failures stay historical.
+Primary had recorded AppControl4551 without making the SAC diagnosis/remedy
+clear: that was inadequate handling and reporting, not a scientific limitation.
+Microsoft documents these state values and enforcement events at
+https://learn.microsoft.com/en-us/windows/apps/develop/smart-app-control/test-your-app-with-smart-app-control .
