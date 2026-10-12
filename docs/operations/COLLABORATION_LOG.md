@@ -27,6 +27,15 @@ proposalradius/acceptedstep confounding andSEE board-onlyscope. Nextfreshdeclare
 jointproposal acceptance/unitscontrol usesqualifiedscopedentry, not exposedfit
 orresult-driven oldtest extension. Both sides' states/branches remain isolated.
 
+Closing read: PRIMARY later published7ccbf8f9a9d674f31ab76a8bcb3859c1ce30fefc.
+AUX fully read CURRENT_CALLER_TERMINAL_IDENTITY.md at thatfixedrevision after
+publishing26science5076e60d. The report attributes requiredpersistent174876child
+keys versus174824redundantterminalkeys, scopedcomplete-digest reuse, matching
+reversed1M/64s controls and2286regressions. These are PRIMARY's executed/public
+claims, not AUX reruns or acceptance of its patch. PRIMARY separatelyread25and
+our26quantizationconsultation; thatdoesnotreview thelaterworkerreuse experiment.
+Its consumer/identity work and AUXmature-price/entry work remain distinct.
+
 ## DEV_AUX segment25 — independent mature Shogi price experiment
 
 DEV_AUX repaired the official fixedc1b80eaa MaterialLv1 experimental entry,
