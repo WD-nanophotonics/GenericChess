@@ -822,3 +822,16 @@ COMPLETE current mainline are required. Genuine user-authorized early scientific
 completion remains possible; a blanket60minute completion gate is not adopted.
 Three added regressions pass with the31 session tests; Dot did not run tests.
 No research session clock/result is retroactively changed by this correction.
+
+## 2026-10-12：公共q迁移、零动态项修复与将棋入口恢复
+
+本段PRIMARY_SANDBOX工作段为`c497b6a7-8b95-412b-8a33-23d06cecfd3e`，起点02:54:29UTC；最终实际时长和结束理由由session验收记录，不能把运行调用数当有效工时。源基线4f3aa32bb587a670b5560c881a685340d6136706。
+
+- 主Agent完成212个实际搜索、286个公共PV动作独立回放。生成1090/1091的q排序价格存在正反效应，提前quiet分类失败；S4实际禁打步兵将死/持子与Core影子验证通过。真实hard8完整合法历史回放未发现规则缺陷，未加上限。
+- 主Agent从本项目保存的官方固定源码恢复9x9将棋成熟入口，正常编译标志与USI映射修正后8个真实搜索/PV通过；主动处理构建、协议和sandbox权限问题，没有等待用户解决。发现Native显式零动态项逐叶多算的真实瓶颈，最小C修复使同工作持子D2约33.5秒变0.4秒；非零/compact/绑定/旧root选项回归通过。既有精确root-window选项在将棋q0实际提高完成深度；不新造接口，不改UI/default。
+- 开发辅助继续自己`sidemission`的材料学习/验证工作，本段未由主Agent启动额外辅助、训练或重复其游戏。已读辅助固定`e3c51455b800a58d82ce7837bce09ee801b9a2f0` Task132源码耦合摘要，以及其新Slack根和Dot全部回复：候选材料叶不覆盖常规SEE/movepick/qfutility的原PieceValue先验；这只能说明潜在混淆，不能把学习失败归因于它。辅助自报6098短局未在本段再次独立回放，不能记成主Agent验收或节省的运行。
+- 本段没有新的辅助依赖需要唤醒或例行回执。双方通过固定Git证据与共享Slack明确路由读取；已读Dot要求浅层2×2评价/回复模型诊断不要伪称策略支配或必须改SEE，保持辅助所有权。实际没有新协调消息/合并冲突；未观察到越界写入，但没有全进程审计或通信必达保证。普通并发是正常状态，未请求暂停其他工作。
+- 主Agent自己的桥接批次在24个完成单元后退出1且无返回traceback，原因未知；单单元诊断成功并恢复35个剩余单元，完整60单元覆盖，额外一次不确定中断尝试保留。声明继承字段与核查脚本错误明确纠正；不能写成第一遍全成功，也不把未证实原因说成Smart App Control。详见研究记录及失败/纠正归档。
+- 本段协作的信息收益是复用辅助源码耦合与Dot推断边界，主Agent专注独立搜索/Native瓶颈修复，避免重复训练。没有单Agent效率对照或完整token/工时统计，不给节省百分比。Dot获得发布后的固定版本研究/协作链接；发送、阅读、意见与测试分开记录，不声称Dot独立跑了新测试。
+
+下一步使用修复后的既有q0消费者与明确q/check需求做有限比较；全q4检查分支仍是独立问题，不能从q0速度或陌生规则两个根推出通用棋力。详情：[PUBLIC_Q_TRANSFER_AND_SHOGI.md](../research/PUBLIC_Q_TRANSFER_AND_SHOGI.md)。

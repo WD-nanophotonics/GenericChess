@@ -3900,7 +3900,10 @@ static int gc_semantic_probe_material(
             score += owner == position->side_to_move ? hand_score : -hand_score;
         }
     }
-    if (profile && profile->dynamic_supplied) {
+    /* A supplied zero vector is a neutral term, not a request to enumerate
+     * dynamic features at every leaf. Returned leaf metadata is separate. */
+    if (profile && profile->dynamic_supplied &&
+        (profile->dynamic[0] || profile->dynamic[1] || profile->dynamic[2])) {
         int features[3] = {0, 0, 0};
         /* The vector is owner-0 minus owner-1; leaf scores are always from
          * the side-to-move perspective, matching the material terms above. */

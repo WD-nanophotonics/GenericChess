@@ -125,3 +125,38 @@ def test_compensated_spatial_rows_are_rejected_by_both_public_entries(lengths):
     packed = pack_semantic_search_position(c, n, s)
     with pytest.raises(ValueError, match="mapping row"):
         semantic_iterative_search(n, packed, 1, spatial_occupancy_values=rows)
+
+@pytest.mark.parametrize("case_id", ["chess-promotion", "shogi-drop"])
+def test_neutral_dynamic_term_preserves_search_and_reported_leaf_features(case_id):
+    from types import SimpleNamespace
+    from scripts.search_backend_comparison import CASES, CoreBoard, VALUES
+    from generic_chess.core.movegen import legal_actions
+    from generic_chess.core.transition import apply_action
+
+    case = next(row for row in CASES if row["id"] == case_id)
+    game = case["game"]
+    c = compile_ruleset_for_execution(build_builtin_ruleset(
+        "western_chess" if game == "chess" else "standard_shogi"))
+    n = compile_native_semantic_rules(c)
+    core = CoreBoard(case, c)
+    session = SimpleNamespace(compiled=c, state=core.initial,
+        _search_witnesses=core.witnesses,
+        result=SimpleNamespace(status=SimpleNamespace(value="ongoing")))
+    before = session.state, session._search_witnesses
+    outcomes = []
+    for dynamic in (None, (0, 0, 0)):
+        engine = SemanticSearchEngine(c, n, board_values=VALUES[game],
+            hand_values=VALUES[game], dynamic_values=dynamic, tt_megabytes=0)
+        result = engine.search(session, SearchLimits(max_depth=2,
+            max_nodes=100000, quiescence_max_depth=0))
+        assert result.completed_depth == 2
+        state = core.initial
+        for action in result.principal_variation:
+            assert action in legal_actions(state, c)
+            state = apply_action(state, action, c)
+        outcomes.append((result.score, result.action, result.principal_variation,
+                         result.nodes, result.dynamic_features))
+        assert (session.state, session._search_witnesses) == before
+    assert outcomes[0] == outcomes[1]
+    # The zero scoring term does not erase separately reported leaf features.
+    assert len(outcomes[1][-1]) == 3

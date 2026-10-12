@@ -26,26 +26,37 @@ roots, not claimed improved end-to-end or an independently reproduced user loss.
 
 ## Current measured question
 
-PUBLIC_CORE_Q_DELIVERY.md confirms actual public-consumer PVS delivery and a
-cheaper existing-q-ordering alternative. Raw16s AB retainsD1/q0 while PVS
-reachesD2/q4. Four paired64s quiet/combined calls demonstrateD2 versusD3,
-but the same move. Existing q ordering on the public tuple quiet caller halves
-D2 q work and reachesD3 at64s in both orders; no private iterable needed for
-that local target. One next iteration hits hard8; retain the completeD3 and cap.
-Independent forced branches give the D1 pawn choice202/97 lower value than the
-D2 king choice under parentD2/D3 q4. This is defined utility, not WDL/strength.
-Keep production/default/UI frozen; test transfer before promoting any hook.
+PUBLIC_Q_TRANSFER_AND_SHOGI.md finds and fixes a concrete Native material-call
+cost: explicitzero dynamic coefficients unnecessarily computed every leaf's
+feature vector. Complete neutral/omitted D2 controls preserve action/PV/value/
+work/returnedfeatures; handroot33.5s becomes0.4s after a narrow C guard. Relevant
+nonzero/binding/compact/root regressions pass. Full9x9 mature Shogi entry is now
+built from the pinned clean official source with normal largeboard/precomputed
+flags and actually returns8 legal search/PVs. No security-setting intervention.
 
-Recovered original Stockfish now executes8 legal search/PV probes; its NNUE/
-selective depth is an unaligned overall reference. Unsupported full9x9 Shogi
-entry still needs a concrete capability/build remedy, not repeated old launches.
-Independent AUX four-pilot/480-record replay verifies actual signal/configuration
-but dispersed endpoints and sparse-mate-sensitive heldout, not stable prices.
-AUX retains training ownership. Existing finish reports now require diagnosed
-current evidence; serious-block reports and all three files' stop flags govern.
-Next compare the existing public tuple/quiet/q-ordering route on a small
-predeclared unfamiliar semantic transfer; no API/kernel expansion from one root.
-Data: data/public_core_q_20261012.json. Earlier failed caps/outputs stay immutable.
+After that repair, existing exact-root-window q0 opt-in deliversD4 at16s on
+middle/hand roots versus full-rootD3/D2 in both orders. Complete D2 same-value
+controls and actual raw tie counters support this transfer; no new API/kernel.
+Cold1MiB TT alone does not improve delivery. Native q4 requests still reject.
+Publicq4 handroot retainsD1/q0 king at16s; quiet transport alone does not finish
+D2 under8192nodes. Capture-only diagnostic changes support, not an equal-q gain.
+Independent same-material D4 Core/cshogi restricted branches give king500 versus
+actual selected rook900; mature reference rook500 under that shallow criterion
+is not evidence its deeper/different evaluation chose incorrectly.
+
+Existing weighted q ordering helps1091 but hurts1090. Q-only unweighted priority
+reverses those effects; eager quiet prefilter wastes more transitions. Reject
+universal switches and exposed-root selectors. Active S4 hand/prohibition and
+Core shadow checks pass. True hard8 witness has12legal moves,10evasions and no
+repetition: retain that bound, not cap-rescue.212completed physicalcalls/286PV
+steps; one unknown original bridge exit remains as a recovered, unconfirmed-cause
+failure with24+1+35coverage, not a clean uninterrupted batch. Declaration copying
+errors are explicitly corrected from frozen source/actual receipts. ScienceOPEN.
+
+Keep UI/default selection frozen and AUX training independent. Next choose one
+explicit consumer requirement for q/check support versus the existing corrected
+q0 material service; measure the distinction before proposing Cq4 or interfaces.
+Data: data/public_transfer_20261012.json. Earlier records remain immutable.
 
 ## Retained long-term objectives and evidence discipline
 
