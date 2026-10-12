@@ -191,3 +191,40 @@ results/dev_aux/SEGMENT_20261011_7* -text
 /results/dev_aux/task25[0-7]/** -text whitespace=cr-at-eol
 /results/dev_aux/*20261012_20* -text whitespace=cr-at-eol
 /results/dev_aux/*segment20.py -text whitespace=cr-at-eol
+
+results/dev_aux/task258/** -text whitespace=cr-at-eol
+results/dev_aux/task259/** -text whitespace=cr-at-eol
+results/dev_aux/task260/** -text whitespace=cr-at-eol
+results/dev_aux/task261/** -text whitespace=cr-at-eol
+results/dev_aux/task262/** -text whitespace=cr-at-eol
+results/dev_aux/task263/** -text whitespace=cr-at-eol
+results/dev_aux/task264/** -text whitespace=cr-at-eol
+results/dev_aux/task265/** -text whitespace=cr-at-eol
+results/dev_aux/task266/** -text whitespace=cr-at-eol
+results/dev_aux/task267/** -text whitespace=cr-at-eol
+results/dev_aux/task268/** -text whitespace=cr-at-eol
+results/dev_aux/task269/** -text whitespace=cr-at-eol
+results/dev_aux/task270/** -text whitespace=cr-at-eol
+results/dev_aux/task271/** -text whitespace=cr-at-eol
+results/dev_aux/task272/** -text whitespace=cr-at-eol
+results/dev_aux/task273/** -text whitespace=cr-at-eol
+results/dev_aux/task274/** -text whitespace=cr-at-eol
+results/dev_aux/task275/** -text whitespace=cr-at-eol
+results/dev_aux/task276/** -text whitespace=cr-at-eol
+results/dev_aux/task277/** -text whitespace=cr-at-eol
+results/dev_aux/task278/** -text whitespace=cr-at-eol
+results/dev_aux/task279/** -text whitespace=cr-at-eol
+results/dev_aux/task280/** -text whitespace=cr-at-eol
+results/dev_aux/task281/** -text whitespace=cr-at-eol
+results/dev_aux/task282/** -text whitespace=cr-at-eol
+results/dev_aux/task283/** -text whitespace=cr-at-eol
+results/dev_aux/task284/** -text whitespace=cr-at-eol
+results/dev_aux/task285/** -text whitespace=cr-at-eol
+results/dev_aux/task286/** -text whitespace=cr-at-eol
+results/dev_aux/*20261012_21* -text whitespace=cr-at-eol
+results/dev_aux/package_segment21.py -text whitespace=cr-at-eol
+results/dev_aux/restore_segment21.py -text whitespace=cr-at-eol
+
+# Preserve exact archived scientific-source bytes, including their original blank EOF.
+results/dev_aux/task262/audit.py -text whitespace=cr-at-eol,-blank-at-eof
+results/dev_aux/task280/prove.py -text whitespace=cr-at-eol,-blank-at-eof

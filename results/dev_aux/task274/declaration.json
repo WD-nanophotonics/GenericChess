@@ -1,0 +1,317 @@
+{
+  "task_id": "274",
+  "question": "Do commonscalec1/2and2 change semantic-versus-unit finitegoal direction withbothplayersprices scaledsame?",
+  "roots": [
+    {
+      "seed": 2026105400,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "b7b5",
+        "d2d3",
+        "c7c6",
+        "h2h3",
+        "d8c7",
+        "c1b2",
+        "g8h6",
+        "h3h4",
+        "c6c5",
+        "b2e5",
+        "b8c6",
+        "b1a3",
+        "c5c4",
+        "g2g4",
+        "c4d3",
+        "h1h3",
+        "a7a6",
+        "c2c4",
+        "a6a5"
+      ],
+      "expected_fen": "r1b1kb1r/2qppppp/2n4n/pp2B3/1PP3PP/N2p3R/P3PP2/R2QKBN1 w Qkq - 0 11",
+      "phase": "train",
+      "index": 0
+    },
+    {
+      "seed": 2026105401,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "h2h3",
+        "h7h6",
+        "a2a4",
+        "g8f6",
+        "g2g3",
+        "g7g5",
+        "b1a3",
+        "c7c6",
+        "a1a2",
+        "d8c7",
+        "e2e4",
+        "f6d5",
+        "b2b3",
+        "c7b6",
+        "a3c4",
+        "h8g8",
+        "d1g4",
+        "d5b4",
+        "c4a5",
+        "b4d5"
+      ],
+      "expected_fen": "rnb1kbr1/pp1ppp2/1qp4p/N2n2p1/P3P1Q1/1P4PP/R1PP1P2/2B1KBNR w Kq - 7 11",
+      "phase": "train",
+      "index": 1
+    },
+    {
+      "seed": 2026105600,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "c2c4",
+        "g8h6",
+        "c4c5",
+        "f7f6",
+        "c5c6",
+        "g7g6",
+        "f2f3",
+        "f6f5",
+        "b1c3",
+        "b7b6",
+        "f3f4",
+        "d7d6",
+        "d1b3",
+        "h8g8",
+        "g1f3",
+        "b8c6",
+        "b3b5",
+        "g8h8",
+        "d2d4",
+        "d8d7"
+      ],
+      "expected_fen": "r1b1kb1r/p1pqp2p/1pnp2pn/1Q3p2/3P1P2/2N2N2/PP2P1PP/R1B1KB1R w KQq - 1 11",
+      "phase": "heldout",
+      "index": 0
+    },
+    {
+      "seed": 2026105601,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "h2h3",
+        "f7f6",
+        "b2b3",
+        "d7d6",
+        "g2g3",
+        "h7h5",
+        "b1a3",
+        "b7b6",
+        "d2d3",
+        "c8d7",
+        "d3d4",
+        "d7c8",
+        "a3b5",
+        "c8e6",
+        "e2e3",
+        "e6c4",
+        "d1d2",
+        "d8c8",
+        "d2b4",
+        "g7g6"
+      ],
+      "expected_fen": "rnq1kbnr/p1p1p3/1p1p1pp1/1N5p/1QbP4/1P2P1PP/P1P2P2/R1B1KBNR w KQkq - 0 11",
+      "phase": "heldout",
+      "index": 1
+    }
+  ],
+  "profiles": {
+    "semantic-c1over2": {
+      "weights": {
+        "K": 0,
+        "P": 104,
+        "N": 569,
+        "B": 743,
+        "R": 1090,
+        "Q": 1834
+      },
+      "unscaled": {
+        "K": 0,
+        "P": 208,
+        "N": 1138,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "numerator": 1,
+      "denominator": 2,
+      "rounding": {
+        "K": 0.0,
+        "P": 0.0,
+        "N": 0.0,
+        "B": 0.0,
+        "R": -0.5,
+        "Q": 0.5
+      }
+    },
+    "semantic-c1over1": {
+      "weights": {
+        "K": 0,
+        "P": 208,
+        "N": 1138,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "unscaled": {
+        "K": 0,
+        "P": 208,
+        "N": 1138,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "numerator": 1,
+      "denominator": 1,
+      "rounding": {
+        "K": 0.0,
+        "P": 0.0,
+        "N": 0.0,
+        "B": 0.0,
+        "R": 0.0,
+        "Q": 0.0
+      }
+    },
+    "semantic-c2over1": {
+      "weights": {
+        "K": 0,
+        "P": 416,
+        "N": 2276,
+        "B": 2972,
+        "R": 4362,
+        "Q": 7334
+      },
+      "unscaled": {
+        "K": 0,
+        "P": 208,
+        "N": 1138,
+        "B": 1486,
+        "R": 2181,
+        "Q": 3667
+      },
+      "numerator": 2,
+      "denominator": 1,
+      "rounding": {
+        "K": 0.0,
+        "P": 0.0,
+        "N": 0.0,
+        "B": 0.0,
+        "R": 0.0,
+        "Q": 0.0
+      }
+    },
+    "unit-c1over2": {
+      "weights": {
+        "P": 104,
+        "N": 104,
+        "B": 104,
+        "R": 104,
+        "Q": 104,
+        "K": 0
+      },
+      "unscaled": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 208,
+        "K": 0
+      },
+      "numerator": 1,
+      "denominator": 2,
+      "rounding": {
+        "P": 0.0,
+        "N": 0.0,
+        "B": 0.0,
+        "R": 0.0,
+        "Q": 0.0,
+        "K": 0.0
+      }
+    },
+    "unit-c1over1": {
+      "weights": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 208,
+        "K": 0
+      },
+      "unscaled": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 208,
+        "K": 0
+      },
+      "numerator": 1,
+      "denominator": 1,
+      "rounding": {
+        "P": 0.0,
+        "N": 0.0,
+        "B": 0.0,
+        "R": 0.0,
+        "Q": 0.0,
+        "K": 0.0
+      }
+    },
+    "unit-c2over1": {
+      "weights": {
+        "P": 416,
+        "N": 416,
+        "B": 416,
+        "R": 416,
+        "Q": 416,
+        "K": 0
+      },
+      "unscaled": {
+        "P": 208,
+        "N": 208,
+        "B": 208,
+        "R": 208,
+        "Q": 208,
+        "K": 0
+      },
+      "numerator": 2,
+      "denominator": 1,
+      "rounding": {
+        "P": 0.0,
+        "N": 0.0,
+        "B": 0.0,
+        "R": 0.0,
+        "Q": 0.0,
+        "K": 0.0
+      }
+    }
+  },
+  "scales": [
+    "1over2",
+    "2over1"
+  ],
+  "node_limits": [
+    1024,
+    16384
+  ],
+  "cap": 48,
+  "colors": [
+    true,
+    false
+  ],
+  "deadline_seconds": 180,
+  "binary_relative": ".local_agent/alignment-order/fairy-order-toggle.exe",
+  "binary_sha256": "c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+  "created_at": "2026-10-12T11:53:02.572080+00:00",
+  "baseline_reuse": "16existing267semantic-vsunit games atc1, same4roots*2colors*2nodelevels; no rerun/independentduplication.",
+  "scope": "New32actualpairedgames only after273observed3maturescaleactionchanges,0completeq0changes. Bothplayer MG/EG/SEE entriessamec; exactdouble/explicitintegerhalfrounding, coldTT/fullhistory. Samecap48 terminalgoal/nohumanlearning. No selectionofmostfavorablec/nodelevel orseedgrowth.",
+  "cost": "32games estimated<=25s from267;180sfuse serial1thread/16MiB, nohourjob.",
+  "source_hashes": {
+    "results/dev_aux/task267/result.json": "c992e0624af128574ef5cde84d7c46b0e9b39be5fdacda7c7b4f03c1c71ec675",
+    "results/dev_aux/task273/audit.json": "13f172a3353a18b610faf6f7a1b7b1cd15837b0f963f6cac4a39b046301b1c79",
+    "results/dev_aux/task272/configure.py": "017038150faab9bb063921a821206fc7b62bc389684d526cdfd1f9b37062c705"
+  }
+}

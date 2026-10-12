@@ -1,0 +1,902 @@
+{
+  "complete": true,
+  "actual_mature_queries": 48,
+  "pairs": [
+    {
+      "profile": "semantic",
+      "root": "baseline-0",
+      "nodes": 1024,
+      "actual_actions": [
+        "e5c7",
+        "e5c7",
+        "e5c7"
+      ],
+      "actual_depths": [
+        5,
+        6,
+        6
+      ],
+      "actual_nodes": [
+        1024,
+        1025,
+        1024
+      ],
+      "changed_actions": false,
+      "rounded_reference_argmax_changed": false
+    },
+    {
+      "profile": "semantic",
+      "root": "baseline-0",
+      "nodes": 16384,
+      "actual_actions": [
+        "e5c7",
+        "e5c7",
+        "e5c7"
+      ],
+      "actual_depths": [
+        10,
+        11,
+        12
+      ],
+      "actual_nodes": [
+        16396,
+        16389,
+        16393
+      ],
+      "changed_actions": false,
+      "rounded_reference_argmax_changed": false
+    },
+    {
+      "profile": "semantic",
+      "root": "baseline-1",
+      "nodes": 1024,
+      "actual_actions": [
+        "a5c4",
+        "a5c4",
+        "a5c4"
+      ],
+      "actual_depths": [
+        6,
+        7,
+        7
+      ],
+      "actual_nodes": [
+        1024,
+        1026,
+        1025
+      ],
+      "changed_actions": false,
+      "rounded_reference_argmax_changed": false
+    },
+    {
+      "profile": "semantic",
+      "root": "baseline-1",
+      "nodes": 16384,
+      "actual_actions": [
+        "a5c4",
+        "a5c4",
+        "a5c4"
+      ],
+      "actual_depths": [
+        12,
+        14,
+        14
+      ],
+      "actual_nodes": [
+        16388,
+        16403,
+        16402
+      ],
+      "changed_actions": false,
+      "rounded_reference_argmax_changed": false
+    },
+    {
+      "profile": "semantic",
+      "root": "baseline-2",
+      "nodes": 1024,
+      "actual_actions": [
+        "d4d5",
+        "d4d5",
+        "d4d5"
+      ],
+      "actual_depths": [
+        7,
+        7,
+        7
+      ],
+      "actual_nodes": [
+        1024,
+        1028,
+        1026
+      ],
+      "changed_actions": false,
+      "rounded_reference_argmax_changed": false
+    },
+    {
+      "profile": "semantic",
+      "root": "baseline-2",
+      "nodes": 16384,
+      "actual_actions": [
+        "d4d5",
+        "d4d5",
+        "d4d5"
+      ],
+      "actual_depths": [
+        14,
+        14,
+        14
+      ],
+      "actual_nodes": [
+        16391,
+        16401,
+        16391
+      ],
+      "changed_actions": false,
+      "rounded_reference_argmax_changed": false
+    },
+    {
+      "profile": "semantic",
+      "root": "baseline-3",
+      "nodes": 1024,
+      "actual_actions": [
+        "b4c4",
+        "b4c4",
+        "b4c4"
+      ],
+      "actual_depths": [
+        6,
+        6,
+        6
+      ],
+      "actual_nodes": [
+        1024,
+        1031,
+        1024
+      ],
+      "changed_actions": false,
+      "rounded_reference_argmax_changed": false
+    },
+    {
+      "profile": "semantic",
+      "root": "baseline-3",
+      "nodes": 16384,
+      "actual_actions": [
+        "f1c4",
+        "b3c4",
+        "b4c4"
+      ],
+      "actual_depths": [
+        9,
+        11,
+        11
+      ],
+      "actual_nodes": [
+        16391,
+        16400,
+        16445
+      ],
+      "changed_actions": true,
+      "rounded_reference_argmax_changed": false
+    },
+    {
+      "profile": "unit",
+      "root": "baseline-0",
+      "nodes": 1024,
+      "actual_actions": [
+        "e5c7",
+        "e5c7",
+        "e5c7"
+      ],
+      "actual_depths": [
+        5,
+        5,
+        5
+      ],
+      "actual_nodes": [
+        1028,
+        1030,
+        1034
+      ],
+      "changed_actions": false,
+      "rounded_reference_argmax_changed": false
+    },
+    {
+      "profile": "unit",
+      "root": "baseline-0",
+      "nodes": 16384,
+      "actual_actions": [
+        "e5c7",
+        "e5c7",
+        "e5c7"
+      ],
+      "actual_depths": [
+        10,
+        9,
+        10
+      ],
+      "actual_nodes": [
+        16384,
+        16398,
+        16403
+      ],
+      "changed_actions": false,
+      "rounded_reference_argmax_changed": false
+    },
+    {
+      "profile": "unit",
+      "root": "baseline-1",
+      "nodes": 1024,
+      "actual_actions": [
+        "e4d5",
+        "e4d5",
+        "e4d5"
+      ],
+      "actual_depths": [
+        5,
+        5,
+        5
+      ],
+      "actual_nodes": [
+        1027,
+        1025,
+        1024
+      ],
+      "changed_actions": false,
+      "rounded_reference_argmax_changed": false
+    },
+    {
+      "profile": "unit",
+      "root": "baseline-1",
+      "nodes": 16384,
+      "actual_actions": [
+        "e4d5",
+        "e4d5",
+        "e4d5"
+      ],
+      "actual_depths": [
+        10,
+        11,
+        11
+      ],
+      "actual_nodes": [
+        16391,
+        16409,
+        16471
+      ],
+      "changed_actions": false,
+      "rounded_reference_argmax_changed": false
+    },
+    {
+      "profile": "unit",
+      "root": "baseline-2",
+      "nodes": 1024,
+      "actual_actions": [
+        "a2a3",
+        "a2a3",
+        "a2a3"
+      ],
+      "actual_depths": [
+        5,
+        5,
+        5
+      ],
+      "actual_nodes": [
+        1024,
+        1024,
+        1024
+      ],
+      "changed_actions": false,
+      "rounded_reference_argmax_changed": false
+    },
+    {
+      "profile": "unit",
+      "root": "baseline-2",
+      "nodes": 16384,
+      "actual_actions": [
+        "a2a3",
+        "a2a3",
+        "a2a3"
+      ],
+      "actual_depths": [
+        9,
+        10,
+        10
+      ],
+      "actual_nodes": [
+        16389,
+        16385,
+        16412
+      ],
+      "changed_actions": false,
+      "rounded_reference_argmax_changed": false
+    },
+    {
+      "profile": "unit",
+      "root": "baseline-3",
+      "nodes": 1024,
+      "actual_actions": [
+        "b3c4",
+        "b3c4",
+        "b4c4"
+      ],
+      "actual_depths": [
+        4,
+        4,
+        4
+      ],
+      "actual_nodes": [
+        1051,
+        1026,
+        1024
+      ],
+      "changed_actions": true,
+      "rounded_reference_argmax_changed": false
+    },
+    {
+      "profile": "unit",
+      "root": "baseline-3",
+      "nodes": 16384,
+      "actual_actions": [
+        "b4c4",
+        "b3c4",
+        "b4c4"
+      ],
+      "actual_depths": [
+        7,
+        8,
+        9
+      ],
+      "actual_nodes": [
+        16394,
+        16422,
+        16390
+      ],
+      "changed_actions": true,
+      "rounded_reference_argmax_changed": false
+    }
+  ],
+  "mature_changed_action_groups": 3,
+  "rounded_fullq0_changed_argmax_groups": 0,
+  "D2_terminal_leaf_visits": 0,
+  "reference": [
+    {
+      "root": "baseline-0",
+      "controls": {
+        "semantic-c1over2": {
+          "rounded": {
+            "value": "1626",
+            "argmax": [
+              "e5c7"
+            ],
+            "max_abs_leaf": "1938"
+          },
+          "exact_rational": {
+            "value": "3251/2",
+            "argmax": [
+              "e5c7"
+            ],
+            "max_abs_leaf": "3875/2"
+          }
+        },
+        "semantic-c1over1": {
+          "rounded": {
+            "value": "3251",
+            "argmax": [
+              "e5c7"
+            ],
+            "max_abs_leaf": "3875"
+          },
+          "exact_rational": {
+            "value": "3251",
+            "argmax": [
+              "e5c7"
+            ],
+            "max_abs_leaf": "3875"
+          }
+        },
+        "semantic-c2over1": {
+          "rounded": {
+            "value": "6502",
+            "argmax": [
+              "e5c7"
+            ],
+            "max_abs_leaf": "7750"
+          },
+          "exact_rational": {
+            "value": "6502",
+            "argmax": [
+              "e5c7"
+            ],
+            "max_abs_leaf": "7750"
+          }
+        },
+        "unit-c1over2": {
+          "rounded": {
+            "value": "-104",
+            "argmax": [
+              "a3b5",
+              "b4a5",
+              "c4b5",
+              "d1d3",
+              "e2d3",
+              "e5c7",
+              "e5g7",
+              "h3d3"
+            ],
+            "max_abs_leaf": "208"
+          },
+          "exact_rational": {
+            "value": "-104",
+            "argmax": [
+              "a3b5",
+              "b4a5",
+              "c4b5",
+              "d1d3",
+              "e2d3",
+              "e5c7",
+              "e5g7",
+              "h3d3"
+            ],
+            "max_abs_leaf": "208"
+          }
+        },
+        "unit-c1over1": {
+          "rounded": {
+            "value": "-208",
+            "argmax": [
+              "a3b5",
+              "b4a5",
+              "c4b5",
+              "d1d3",
+              "e2d3",
+              "e5c7",
+              "e5g7",
+              "h3d3"
+            ],
+            "max_abs_leaf": "416"
+          },
+          "exact_rational": {
+            "value": "-208",
+            "argmax": [
+              "a3b5",
+              "b4a5",
+              "c4b5",
+              "d1d3",
+              "e2d3",
+              "e5c7",
+              "e5g7",
+              "h3d3"
+            ],
+            "max_abs_leaf": "416"
+          }
+        },
+        "unit-c2over1": {
+          "rounded": {
+            "value": "-416",
+            "argmax": [
+              "a3b5",
+              "b4a5",
+              "c4b5",
+              "d1d3",
+              "e2d3",
+              "e5c7",
+              "e5g7",
+              "h3d3"
+            ],
+            "max_abs_leaf": "832"
+          },
+          "exact_rational": {
+            "value": "-416",
+            "argmax": [
+              "a3b5",
+              "b4a5",
+              "c4b5",
+              "d1d3",
+              "e2d3",
+              "e5c7",
+              "e5g7",
+              "h3d3"
+            ],
+            "max_abs_leaf": "832"
+          }
+        }
+      }
+    },
+    {
+      "root": "baseline-1",
+      "controls": {
+        "semantic-c1over2": {
+          "rounded": {
+            "value": "0",
+            "argmax": [
+              "e4d5"
+            ],
+            "max_abs_leaf": "1834"
+          },
+          "exact_rational": {
+            "value": "0",
+            "argmax": [
+              "e4d5"
+            ],
+            "max_abs_leaf": "3667/2"
+          }
+        },
+        "semantic-c1over1": {
+          "rounded": {
+            "value": "0",
+            "argmax": [
+              "e4d5"
+            ],
+            "max_abs_leaf": "3667"
+          },
+          "exact_rational": {
+            "value": "0",
+            "argmax": [
+              "e4d5"
+            ],
+            "max_abs_leaf": "3667"
+          }
+        },
+        "semantic-c2over1": {
+          "rounded": {
+            "value": "0",
+            "argmax": [
+              "e4d5"
+            ],
+            "max_abs_leaf": "7334"
+          },
+          "exact_rational": {
+            "value": "0",
+            "argmax": [
+              "e4d5"
+            ],
+            "max_abs_leaf": "7334"
+          }
+        },
+        "unit-c1over2": {
+          "rounded": {
+            "value": "0",
+            "argmax": [
+              "a5b7",
+              "a5c6",
+              "e4d5",
+              "g4d7",
+              "g4g5"
+            ],
+            "max_abs_leaf": "104"
+          },
+          "exact_rational": {
+            "value": "0",
+            "argmax": [
+              "a5b7",
+              "a5c6",
+              "e4d5",
+              "g4d7",
+              "g4g5"
+            ],
+            "max_abs_leaf": "104"
+          }
+        },
+        "unit-c1over1": {
+          "rounded": {
+            "value": "0",
+            "argmax": [
+              "a5b7",
+              "a5c6",
+              "e4d5",
+              "g4d7",
+              "g4g5"
+            ],
+            "max_abs_leaf": "208"
+          },
+          "exact_rational": {
+            "value": "0",
+            "argmax": [
+              "a5b7",
+              "a5c6",
+              "e4d5",
+              "g4d7",
+              "g4g5"
+            ],
+            "max_abs_leaf": "208"
+          }
+        },
+        "unit-c2over1": {
+          "rounded": {
+            "value": "0",
+            "argmax": [
+              "a5b7",
+              "a5c6",
+              "e4d5",
+              "g4d7",
+              "g4g5"
+            ],
+            "max_abs_leaf": "416"
+          },
+          "exact_rational": {
+            "value": "0",
+            "argmax": [
+              "a5b7",
+              "a5c6",
+              "e4d5",
+              "g4d7",
+              "g4g5"
+            ],
+            "max_abs_leaf": "416"
+          }
+        }
+      }
+    },
+    {
+      "root": "baseline-2",
+      "controls": {
+        "semantic-c1over2": {
+          "rounded": {
+            "value": "-104",
+            "argmax": [
+              "d4d5"
+            ],
+            "max_abs_leaf": "1938"
+          },
+          "exact_rational": {
+            "value": "-104",
+            "argmax": [
+              "d4d5"
+            ],
+            "max_abs_leaf": "3875/2"
+          }
+        },
+        "semantic-c1over1": {
+          "rounded": {
+            "value": "-208",
+            "argmax": [
+              "d4d5"
+            ],
+            "max_abs_leaf": "3875"
+          },
+          "exact_rational": {
+            "value": "-208",
+            "argmax": [
+              "d4d5"
+            ],
+            "max_abs_leaf": "3875"
+          }
+        },
+        "semantic-c2over1": {
+          "rounded": {
+            "value": "-416",
+            "argmax": [
+              "d4d5"
+            ],
+            "max_abs_leaf": "7750"
+          },
+          "exact_rational": {
+            "value": "-416",
+            "argmax": [
+              "d4d5"
+            ],
+            "max_abs_leaf": "7750"
+          }
+        },
+        "unit-c1over2": {
+          "rounded": {
+            "value": "-104",
+            "argmax": [
+              "b5b6",
+              "b5c6",
+              "b5f5",
+              "d4d5"
+            ],
+            "max_abs_leaf": "208"
+          },
+          "exact_rational": {
+            "value": "-104",
+            "argmax": [
+              "b5b6",
+              "b5c6",
+              "b5f5",
+              "d4d5"
+            ],
+            "max_abs_leaf": "208"
+          }
+        },
+        "unit-c1over1": {
+          "rounded": {
+            "value": "-208",
+            "argmax": [
+              "b5b6",
+              "b5c6",
+              "b5f5",
+              "d4d5"
+            ],
+            "max_abs_leaf": "416"
+          },
+          "exact_rational": {
+            "value": "-208",
+            "argmax": [
+              "b5b6",
+              "b5c6",
+              "b5f5",
+              "d4d5"
+            ],
+            "max_abs_leaf": "416"
+          }
+        },
+        "unit-c2over1": {
+          "rounded": {
+            "value": "-416",
+            "argmax": [
+              "b5b6",
+              "b5c6",
+              "b5f5",
+              "d4d5"
+            ],
+            "max_abs_leaf": "832"
+          },
+          "exact_rational": {
+            "value": "-416",
+            "argmax": [
+              "b5b6",
+              "b5c6",
+              "b5f5",
+              "d4d5"
+            ],
+            "max_abs_leaf": "832"
+          }
+        }
+      }
+    },
+    {
+      "root": "baseline-3",
+      "controls": {
+        "semantic-c1over2": {
+          "rounded": {
+            "value": "639",
+            "argmax": [
+              "b3c4",
+              "b4c4",
+              "f1c4"
+            ],
+            "max_abs_leaf": "1834"
+          },
+          "exact_rational": {
+            "value": "639",
+            "argmax": [
+              "b3c4",
+              "b4c4",
+              "f1c4"
+            ],
+            "max_abs_leaf": "3667/2"
+          }
+        },
+        "semantic-c1over1": {
+          "rounded": {
+            "value": "1278",
+            "argmax": [
+              "b3c4",
+              "b4c4",
+              "f1c4"
+            ],
+            "max_abs_leaf": "3667"
+          },
+          "exact_rational": {
+            "value": "1278",
+            "argmax": [
+              "b3c4",
+              "b4c4",
+              "f1c4"
+            ],
+            "max_abs_leaf": "3667"
+          }
+        },
+        "semantic-c2over1": {
+          "rounded": {
+            "value": "2556",
+            "argmax": [
+              "b3c4",
+              "b4c4",
+              "f1c4"
+            ],
+            "max_abs_leaf": "7334"
+          },
+          "exact_rational": {
+            "value": "2556",
+            "argmax": [
+              "b3c4",
+              "b4c4",
+              "f1c4"
+            ],
+            "max_abs_leaf": "7334"
+          }
+        },
+        "unit-c1over2": {
+          "rounded": {
+            "value": "0",
+            "argmax": [
+              "b3c4",
+              "b4c4",
+              "b4d6",
+              "b5a7",
+              "b5c7",
+              "b5d6",
+              "f1c4"
+            ],
+            "max_abs_leaf": "104"
+          },
+          "exact_rational": {
+            "value": "0",
+            "argmax": [
+              "b3c4",
+              "b4c4",
+              "b4d6",
+              "b5a7",
+              "b5c7",
+              "b5d6",
+              "f1c4"
+            ],
+            "max_abs_leaf": "104"
+          }
+        },
+        "unit-c1over1": {
+          "rounded": {
+            "value": "0",
+            "argmax": [
+              "b3c4",
+              "b4c4",
+              "b4d6",
+              "b5a7",
+              "b5c7",
+              "b5d6",
+              "f1c4"
+            ],
+            "max_abs_leaf": "208"
+          },
+          "exact_rational": {
+            "value": "0",
+            "argmax": [
+              "b3c4",
+              "b4c4",
+              "b4d6",
+              "b5a7",
+              "b5c7",
+              "b5d6",
+              "f1c4"
+            ],
+            "max_abs_leaf": "208"
+          }
+        },
+        "unit-c2over1": {
+          "rounded": {
+            "value": "0",
+            "argmax": [
+              "b3c4",
+              "b4c4",
+              "b4d6",
+              "b5a7",
+              "b5c7",
+              "b5d6",
+              "f1c4"
+            ],
+            "max_abs_leaf": "416"
+          },
+          "exact_rational": {
+            "value": "0",
+            "argmax": [
+              "b3c4",
+              "b4c4",
+              "b4d6",
+              "b5a7",
+              "b5c7",
+              "b5d6",
+              "f1c4"
+            ],
+            "max_abs_leaf": "416"
+          }
+        }
+      }
+    }
+  ],
+  "seconds": 0.35900000017136335,
+  "source_sha256": "62f62cd3270dbff390952c5a6258fa77beab7a6ad85ad7a03a34792709534028",
+  "scope": "Actual48queries/readbacks/PVs/fullhistory verified; purecompleteD2 exactrationalpositivecommon scale invariant(no terminalD2leaves); roundedcontrols independentlycomputed. Maturechanges candidateheuristic/budget interactions, notcausalidentificationofsinglepruningrule. NoallChess/generalpriorabsenceclaim."
+}

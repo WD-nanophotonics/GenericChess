@@ -1,0 +1,535 @@
+{
+  "complete": true,
+  "task_id": "261",
+  "question": "Whatactualsemantic opportunity prices/scope does ownpinnedproductionAPI generate, withoutinventinghumanprices?",
+  "source_base": "1de362ef6c7ef9b5de3ec5ef236333469f1428f7",
+  "raw_prices": {
+    "K": 0,
+    "P": 140,
+    "N": 766,
+    "B": 1000,
+    "R": 1468,
+    "Q": 2468
+  },
+  "normalized_P208": {
+    "K": 0,
+    "P": 208,
+    "N": 1138,
+    "B": 1486,
+    "R": 2181,
+    "Q": 3667
+  },
+  "normalization": "round(raw*208/rawP), allnonanchor>=1; king0fixed. Generator raw kept. No humanprior/fitting.",
+  "generator_config": {
+    "density_points": [
+      0.0,
+      0.125,
+      0.25,
+      0.375,
+      0.5
+    ],
+    "density_weights": [
+      0.25,
+      0.2,
+      0.2,
+      0.18,
+      0.17
+    ],
+    "coverage_weight": 0.1,
+    "reachability_weight": 0.05,
+    "path_efficiency_weight": 0.05,
+    "hand_weight": 0.9,
+    "dynamic_mobility_weight": 2,
+    "anchor_escape_weight": 5,
+    "promotion_potential_weight": 3,
+    "normal_piece_median_value": 1000,
+    "mc_samples": 64,
+    "evaluator_version": "generic-v2"
+  },
+  "generator_config_hash": "9bcc32628f22a6867eec9948593a1f84e96de36b740dce699c411a1150332513",
+  "profile": {
+    "ruleset_fingerprint": "7bc6cf3179f4eaea30b205576b9032dca47a16803e9cc8b3e29405cb1e820b35",
+    "schema_version": 1,
+    "evaluator_version": "semantic-opportunity-v3",
+    "config_hash": "9bcc32628f22a6867eec9948593a1f84e96de36b740dce699c411a1150332513",
+    "piece_profiles": {
+      "K": {
+        "type_id": "K",
+        "movement_signature": "ddca4d468cce4e4fb5539db16e0724a82b7e07ca08ce4361d34f9730339baa61",
+        "raw_capability_score": 5.816015625,
+        "normalized_board_value": 0,
+        "normalized_hand_value": 0,
+        "promotion_option_value": 0,
+        "drop_freedom_ratio": 0.0,
+        "drop_mobility": 0.0,
+        "is_anchor": true,
+        "is_promotable": false
+      },
+      "P": {
+        "type_id": "P",
+        "movement_signature": "b9047c80e6409dbeaf4e8460f9bb5409774ec27d0dd9b5f6c1dd1160f2c6e723",
+        "raw_capability_score": 0.8501171875,
+        "normalized_board_value": 140,
+        "normalized_hand_value": 126,
+        "promotion_option_value": 2328,
+        "drop_freedom_ratio": 0.0,
+        "drop_mobility": 0.0,
+        "is_anchor": false,
+        "is_promotable": true
+      },
+      "N": {
+        "type_id": "N",
+        "movement_signature": "9be7693b572192dc8a0eb54758b07939fc81b6ebe774618f96c8dc9cf5ad13b2",
+        "raw_capability_score": 4.6528125000000005,
+        "normalized_board_value": 766,
+        "normalized_hand_value": 689,
+        "promotion_option_value": 0,
+        "drop_freedom_ratio": 0.0,
+        "drop_mobility": 0.0,
+        "is_anchor": false,
+        "is_promotable": false
+      },
+      "B": {
+        "type_id": "B",
+        "movement_signature": "725641f1e309c4e76df6ddb05251f437577c4bbb76942f11c761274727374cf8",
+        "raw_capability_score": 6.074621444642544,
+        "normalized_board_value": 1000,
+        "normalized_hand_value": 900,
+        "promotion_option_value": 0,
+        "drop_freedom_ratio": 0.0,
+        "drop_mobility": 0.0,
+        "is_anchor": false,
+        "is_promotable": false
+      },
+      "R": {
+        "type_id": "R",
+        "movement_signature": "2e166eceda4326c74c5975dead71e81c945aaf010f64ddb262b475526a0eded0",
+        "raw_capability_score": 8.91991486310959,
+        "normalized_board_value": 1468,
+        "normalized_hand_value": 1321,
+        "promotion_option_value": 0,
+        "drop_freedom_ratio": 0.0,
+        "drop_mobility": 0.0,
+        "is_anchor": false,
+        "is_promotable": false
+      },
+      "Q": {
+        "type_id": "Q",
+        "movement_signature": "a774f89eca644ab5d37e322e969dfcdf4df78f4d9a118dcb41ca54b3ef5d28d1",
+        "raw_capability_score": 14.994536307752133,
+        "normalized_board_value": 2468,
+        "normalized_hand_value": 2221,
+        "promotion_option_value": 0,
+        "drop_freedom_ratio": 0.0,
+        "drop_mobility": 0.0,
+        "is_anchor": false,
+        "is_promotable": false
+      }
+    },
+    "median_non_anchor_value": 1000,
+    "board_value_by_type": {
+      "K": 0,
+      "P": 140,
+      "N": 766,
+      "B": 1000,
+      "R": 1468,
+      "Q": 2468
+    },
+    "hand_value_by_base_type": {
+      "K": 0,
+      "P": 126,
+      "N": 689,
+      "B": 900,
+      "R": 1321,
+      "Q": 2221
+    },
+    "promotion_gain_by_type": {
+      "K": 0,
+      "P": 2328,
+      "N": 0,
+      "B": 0,
+      "R": 0,
+      "Q": 0
+    }
+  },
+  "scope": {
+    "candidate": "semantic-opportunity-v3",
+    "complete_legal_mobility": false,
+    "hand_policy": "legacy_scale_unvalidated",
+    "ir_source": "compiled_semantic",
+    "law": "Independent square occupancy: empty1-d, friend/enemy d/2; equal owner/source weighting.",
+    "ignored": "Anchor safety, future promotion/custody utility; excluded patterns listed per type. Hand scaling outside the proved-inert subset, promotion differences, drop diagnostics and dynamic terms retain legacy conventions, not validated semantic utility.",
+    "types": {
+      "K": {
+        "included": [
+          "sem_00_k_quiet",
+          "sem_01_k_capture"
+        ],
+        "excluded": [
+          {
+            "pattern": "sem_16_castle_w_ks",
+            "reasons": [
+              "compound/state effect",
+              "non-anchor invariant",
+              "not simple actor move",
+              "state/zone/postcondition"
+            ]
+          },
+          {
+            "pattern": "sem_17_castle_w_qs",
+            "reasons": [
+              "compound/state effect",
+              "non-anchor invariant",
+              "not simple actor move",
+              "state/zone/postcondition"
+            ]
+          },
+          {
+            "pattern": "sem_18_castle_b_ks",
+            "reasons": [
+              "compound/state effect",
+              "non-anchor invariant",
+              "not simple actor move",
+              "state/zone/postcondition"
+            ]
+          },
+          {
+            "pattern": "sem_19_castle_b_qs",
+            "reasons": [
+              "compound/state effect",
+              "non-anchor invariant",
+              "not simple actor move",
+              "state/zone/postcondition"
+            ]
+          }
+        ],
+        "signature": "ddca4d468cce4e4fb5539db16e0724a82b7e07ca08ce4361d34f9730339baa61",
+        "quiet_endpoints": 420.0,
+        "capture_endpoints": 420.0,
+        "curves": [
+          {
+            "density": 0.0,
+            "quiet": 6.5625,
+            "capture": 0.0,
+            "total": 6.5625
+          },
+          {
+            "density": 0.125,
+            "quiet": 5.7421875,
+            "capture": 0.41015625,
+            "total": 6.15234375
+          },
+          {
+            "density": 0.25,
+            "quiet": 4.921875,
+            "capture": 0.8203125,
+            "total": 5.7421875
+          },
+          {
+            "density": 0.375,
+            "quiet": 4.1015625,
+            "capture": 1.23046875,
+            "total": 5.33203125
+          },
+          {
+            "density": 0.5,
+            "quiet": 3.28125,
+            "capture": 1.640625,
+            "total": 4.921875
+          }
+        ],
+        "raw": 5.816015625
+      },
+      "P": {
+        "included": [
+          "sem_10_pawn_one_step",
+          "sem_12_pawn_capture_right",
+          "sem_13_pawn_capture_left"
+        ],
+        "excluded": [
+          {
+            "pattern": "legacy_066",
+            "reasons": [
+              "compound/state effect",
+              "drop",
+              "not simple actor move"
+            ]
+          },
+          {
+            "pattern": "sem_11_pawn_double_step",
+            "reasons": [
+              "compound/state effect",
+              "state/zone/postcondition"
+            ]
+          },
+          {
+            "pattern": "sem_14_en_passant_right",
+            "reasons": [
+              "compound/state effect",
+              "state/zone/postcondition"
+            ]
+          },
+          {
+            "pattern": "sem_15_en_passant_left",
+            "reasons": [
+              "compound/state effect",
+              "state/zone/postcondition"
+            ]
+          }
+        ],
+        "signature": "b9047c80e6409dbeaf4e8460f9bb5409774ec27d0dd9b5f6c1dd1160f2c6e723",
+        "quiet_endpoints": 56.0,
+        "capture_endpoints": 98.0,
+        "curves": [
+          {
+            "density": 0.0,
+            "quiet": 0.875,
+            "capture": 0.0,
+            "total": 0.875
+          },
+          {
+            "density": 0.125,
+            "quiet": 0.765625,
+            "capture": 0.095703125,
+            "total": 0.861328125
+          },
+          {
+            "density": 0.25,
+            "quiet": 0.65625,
+            "capture": 0.19140625,
+            "total": 0.84765625
+          },
+          {
+            "density": 0.375,
+            "quiet": 0.546875,
+            "capture": 0.287109375,
+            "total": 0.833984375
+          },
+          {
+            "density": 0.5,
+            "quiet": 0.4375,
+            "capture": 0.3828125,
+            "total": 0.8203125
+          }
+        ],
+        "raw": 0.8501171875
+      },
+      "N": {
+        "included": [
+          "sem_02_n_quiet",
+          "sem_03_n_capture"
+        ],
+        "excluded": [
+          {
+            "pattern": "legacy_065",
+            "reasons": [
+              "compound/state effect",
+              "drop",
+              "not simple actor move"
+            ]
+          }
+        ],
+        "signature": "9be7693b572192dc8a0eb54758b07939fc81b6ebe774618f96c8dc9cf5ad13b2",
+        "quiet_endpoints": 336.0,
+        "capture_endpoints": 336.0,
+        "curves": [
+          {
+            "density": 0.0,
+            "quiet": 5.25,
+            "capture": 0.0,
+            "total": 5.25
+          },
+          {
+            "density": 0.125,
+            "quiet": 4.59375,
+            "capture": 0.328125,
+            "total": 4.921875
+          },
+          {
+            "density": 0.25,
+            "quiet": 3.9375,
+            "capture": 0.65625,
+            "total": 4.59375
+          },
+          {
+            "density": 0.375,
+            "quiet": 3.28125,
+            "capture": 0.984375,
+            "total": 4.265625
+          },
+          {
+            "density": 0.5,
+            "quiet": 2.625,
+            "capture": 1.3125,
+            "total": 3.9375
+          }
+        ],
+        "raw": 4.6528125000000005
+      },
+      "B": {
+        "included": [
+          "sem_04_b_quiet",
+          "sem_05_b_capture"
+        ],
+        "excluded": [
+          {
+            "pattern": "legacy_064",
+            "reasons": [
+              "compound/state effect",
+              "drop",
+              "not simple actor move"
+            ]
+          }
+        ],
+        "signature": "725641f1e309c4e76df6ddb05251f437577c4bbb76942f11c761274727374cf8",
+        "quiet_endpoints": 560.0,
+        "capture_endpoints": 560.0,
+        "curves": [
+          {
+            "density": 0.0,
+            "quiet": 8.75,
+            "capture": 0.0,
+            "total": 8.75
+          },
+          {
+            "density": 0.125,
+            "quiet": 6.460531920194626,
+            "capture": 0.46146656572818756,
+            "total": 6.921998485922813
+          },
+          {
+            "density": 0.25,
+            "quiet": 4.724407196044922,
+            "capture": 0.7874011993408203,
+            "total": 5.511808395385742
+          },
+          {
+            "density": 0.375,
+            "quiet": 3.397900015115738,
+            "capture": 1.0193700045347214,
+            "total": 4.417270019650459
+          },
+          {
+            "density": 0.5,
+            "quiet": 2.37353515625,
+            "capture": 1.186767578125,
+            "total": 3.560302734375
+          }
+        ],
+        "raw": 6.074621444642544
+      },
+      "R": {
+        "included": [
+          "sem_06_r_quiet",
+          "sem_07_r_capture"
+        ],
+        "excluded": [
+          {
+            "pattern": "legacy_068",
+            "reasons": [
+              "compound/state effect",
+              "drop",
+              "not simple actor move"
+            ]
+          }
+        ],
+        "signature": "2e166eceda4326c74c5975dead71e81c945aaf010f64ddb262b475526a0eded0",
+        "quiet_endpoints": 896.0,
+        "capture_endpoints": 896.0,
+        "curves": [
+          {
+            "density": 0.0,
+            "quiet": 14.0,
+            "capture": 0.0,
+            "total": 14.0
+          },
+          {
+            "density": 0.125,
+            "quiet": 9.621049642562866,
+            "capture": 0.6872178316116333,
+            "total": 10.3082674741745
+          },
+          {
+            "density": 0.25,
+            "quiet": 6.600677490234375,
+            "capture": 1.1001129150390625,
+            "total": 7.7007904052734375
+          },
+          {
+            "density": 0.375,
+            "quiet": 4.496184587478638,
+            "capture": 1.3488553762435913,
+            "total": 5.845039963722229
+          },
+          {
+            "density": 0.5,
+            "quiet": 3.00390625,
+            "capture": 1.501953125,
+            "total": 4.505859375
+          }
+        ],
+        "raw": 8.91991486310959
+      },
+      "Q": {
+        "included": [
+          "sem_08_q_quiet",
+          "sem_09_q_capture"
+        ],
+        "excluded": [
+          {
+            "pattern": "legacy_067",
+            "reasons": [
+              "compound/state effect",
+              "drop",
+              "not simple actor move"
+            ]
+          }
+        ],
+        "signature": "a774f89eca644ab5d37e322e969dfcdf4df78f4d9a118dcb41ca54b3ef5d28d1",
+        "quiet_endpoints": 1456.0,
+        "capture_endpoints": 1456.0,
+        "curves": [
+          {
+            "density": 0.0,
+            "quiet": 22.75,
+            "capture": 0.0,
+            "total": 22.75
+          },
+          {
+            "density": 0.125,
+            "quiet": 16.081581562757492,
+            "capture": 1.1486843973398209,
+            "total": 17.230265960097313
+          },
+          {
+            "density": 0.25,
+            "quiet": 11.325084686279297,
+            "capture": 1.8875141143798828,
+            "total": 13.21259880065918
+          },
+          {
+            "density": 0.375,
+            "quiet": 7.894084602594376,
+            "capture": 2.3682253807783127,
+            "total": 10.262309983372688
+          },
+          {
+            "density": 0.5,
+            "quiet": 5.37744140625,
+            "capture": 2.688720703125,
+            "total": 8.066162109375
+          }
+        ],
+        "raw": 14.994536307752133
+      }
+    }
+  },
+  "source_hashes": {
+    "generic_chess/ai/evaluation/semantic.py": "bea749952b88dd7cc8975b4fff3e9eac9a38ba90f9bf67976a7a106de594e8a9",
+    "generic_chess/ai/evaluation/profile.py": "3a6ef4798d8434b146c31f567ad1510e24d9976f57f6e06bae724d00bc8ecb04",
+    "generic_chess/ai/evaluation/config.py": "504ad4df6af42efa9f09bdb89ee8c7b704182782a9c1680530fa1181b35edfb4",
+    "generic_chess/rules/western_chess.py": "2b3bc415763ce209264504c751fa3a94d66de016262da0cd91f6c82172d3ae2a"
+  },
+  "seconds": 0.14000000013038516,
+  "authority": "Independentfeasibilityreview ofDotsupplement1791802864; attributedanotheruserconversationnotimportedasauthority. No takeoverprimaryUI/searchtask. Defaultsemanticcandidateignoresfuturepromotion/king-safety/compoundeffects; notfullgamevalueproof."
+}

@@ -1,0 +1,229 @@
+{
+  "task_id": "267",
+  "question": "Do semantic-generated prices beat fixedrandom-price SEARCH players atcheapboundedactualmate/quantity tasks?",
+  "roots": [
+    {
+      "seed": 2026105400,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "b7b5",
+        "d2d3",
+        "c7c6",
+        "h2h3",
+        "d8c7",
+        "c1b2",
+        "g8h6",
+        "h3h4",
+        "c6c5",
+        "b2e5",
+        "b8c6",
+        "b1a3",
+        "c5c4",
+        "g2g4",
+        "c4d3",
+        "h1h3",
+        "a7a6",
+        "c2c4",
+        "a6a5"
+      ],
+      "expected_fen": "r1b1kb1r/2qppppp/2n4n/pp2B3/1PP3PP/N2p3R/P3PP2/R2QKBN1 w Qkq - 0 11",
+      "phase": "train",
+      "index": 0
+    },
+    {
+      "seed": 2026105401,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "h2h3",
+        "h7h6",
+        "a2a4",
+        "g8f6",
+        "g2g3",
+        "g7g5",
+        "b1a3",
+        "c7c6",
+        "a1a2",
+        "d8c7",
+        "e2e4",
+        "f6d5",
+        "b2b3",
+        "c7b6",
+        "a3c4",
+        "h8g8",
+        "d1g4",
+        "d5b4",
+        "c4a5",
+        "b4d5"
+      ],
+      "expected_fen": "rnb1kbr1/pp1ppp2/1qp4p/N2n2p1/P3P1Q1/1P4PP/R1PP1P2/2B1KBNR w Kq - 7 11",
+      "phase": "train",
+      "index": 1
+    },
+    {
+      "seed": 2026105600,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "c2c4",
+        "g8h6",
+        "c4c5",
+        "f7f6",
+        "c5c6",
+        "g7g6",
+        "f2f3",
+        "f6f5",
+        "b1c3",
+        "b7b6",
+        "f3f4",
+        "d7d6",
+        "d1b3",
+        "h8g8",
+        "g1f3",
+        "b8c6",
+        "b3b5",
+        "g8h8",
+        "d2d4",
+        "d8d7"
+      ],
+      "expected_fen": "r1b1kb1r/p1pqp2p/1pnp2pn/1Q3p2/3P1P2/2N2N2/PP2P1PP/R1B1KB1R w KQq - 1 11",
+      "phase": "heldout",
+      "index": 0
+    },
+    {
+      "seed": 2026105601,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "h2h3",
+        "f7f6",
+        "b2b3",
+        "d7d6",
+        "g2g3",
+        "h7h5",
+        "b1a3",
+        "b7b6",
+        "d2d3",
+        "c8d7",
+        "d3d4",
+        "d7c8",
+        "a3b5",
+        "c8e6",
+        "e2e3",
+        "e6c4",
+        "d1d2",
+        "d8c8",
+        "d2b4",
+        "g7g6"
+      ],
+      "expected_fen": "rnq1kbnr/p1p1p3/1p1p1pp1/1N5p/1QbP4/1P2P1PP/P1P2P2/R1B1KBNR w KQkq - 0 11",
+      "phase": "heldout",
+      "index": 1
+    }
+  ],
+  "profiles": {
+    "unit": {
+      "P": 208,
+      "N": 208,
+      "B": 208,
+      "R": 208,
+      "Q": 208,
+      "K": 0
+    },
+    "semantic": {
+      "K": 0,
+      "P": 208,
+      "N": 1138,
+      "B": 1486,
+      "R": 2181,
+      "Q": 3667
+    },
+    "s703-base": {
+      "P": 208,
+      "K": 0,
+      "N": 87,
+      "B": 126,
+      "R": 2258,
+      "Q": 176
+    },
+    "s704-base": {
+      "P": 208,
+      "K": 0,
+      "N": 1422,
+      "B": 272,
+      "R": 996,
+      "Q": 214
+    },
+    "s705-base": {
+      "P": 208,
+      "K": 0,
+      "N": 1147,
+      "B": 75,
+      "R": 216,
+      "Q": 335
+    },
+    "semantic-permutation-1": {
+      "P": 1138,
+      "N": 1486,
+      "B": 2181,
+      "R": 3667,
+      "Q": 208,
+      "K": 0
+    },
+    "semantic-permutation-2": {
+      "P": 1486,
+      "N": 2181,
+      "B": 3667,
+      "R": 208,
+      "Q": 1138,
+      "K": 0
+    },
+    "semantic-permutation-3": {
+      "P": 2181,
+      "N": 3667,
+      "B": 208,
+      "R": 1138,
+      "Q": 1486,
+      "K": 0
+    },
+    "semantic-permutation-4": {
+      "P": 3667,
+      "N": 208,
+      "B": 1138,
+      "R": 1486,
+      "Q": 2181,
+      "K": 0
+    }
+  },
+  "agent": "semantic",
+  "opponents": [
+    "unit",
+    "s703-base",
+    "s704-base",
+    "s705-base",
+    "semantic-permutation-1",
+    "semantic-permutation-2",
+    "semantic-permutation-3",
+    "semantic-permutation-4"
+  ],
+  "node_limits": [
+    1024,
+    16384
+  ],
+  "cap": 48,
+  "colors": [
+    true,
+    false
+  ],
+  "deadline_seconds": 600,
+  "binary_relative": ".local_agent/alignment-order/fairy-order-toggle.exe",
+  "binary_sha256": "c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+  "created_at": "2026-10-12T11:33:22.744728+00:00",
+  "source_hashes": {
+    "results/dev_aux/task236/declaration.json": "7cd8e13c988d40a79b89c67820d85caf86f6848b159821bc5005ea92c3b365a7",
+    "results/dev_aux/task261/profile.json": "0f9c1a31697b892671a23a64dc6724bcf8dac489475ebb1bb4f27f12bba1d20b",
+    "results/dev_aux/task265/run.py": "ff02860b245d8980c9515340fe32c5f502053f26cd8b7c692d20e502d82a67f0",
+    "results/dev_aux/task267/configure.py": "a0821e362a07fc3374dc0aff1568d5039c7369b8e5ae03d63df093d3db9174b0"
+  },
+  "goal": "Actualmateby48: win1/loss-1/draw0/unknown0 as finitegoal; terminalwin/loss/draw andunknownreportedseparately, cutoffquantitydistinctproxy NEVERfinalWDL. Speedamongmatewinsreportedonly. No training/humanratio selection; alltables/frozenpairedcolors/nodelevels.",
+  "fairness": "Bothnormalmaturesearch players same1thread16MiB/alignment3/nodelimit/binary/rules. Eachprice ownprocess; ucinewgame beforeeachgame; fulllegalhistory. Random-price opponent means fixedarbitrarytable+normalsearch, notrandommoves. Otherconcurrentprojectsallowed. 12848plyboundedgames estimated<90s, nohourrun.",
+  "scope": "Fourpreviouslyexposed20plyroots twoeacholdtrain/heldout; nofreshIIDholdout/randtablepopulationinference. 3originalrandomtables fromoldseeds plus4deterministicsemanticPNBRQcyclicpermutations preserveprice multiset/K0. Stopatdeclared48, do notextendmissingWDL."
+}

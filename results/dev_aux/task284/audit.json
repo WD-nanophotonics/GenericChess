@@ -1,0 +1,170 @@
+{
+  "complete": true,
+  "actual_queries": 64,
+  "all_exact_score_argmax_checks": 64,
+  "all_legal_PV_checks": 64,
+  "groups": [
+    {
+      "arm": {
+        "root": false,
+        "tt": 0
+      },
+      "queries": 16,
+      "caller_seconds": 17.783000000286847,
+      "nodes": 968844,
+      "PV_full_and_value_matches": 16,
+      "tt_hits": 0
+    },
+    {
+      "arm": {
+        "root": false,
+        "tt": 1
+      },
+      "queries": 16,
+      "caller_seconds": 18.719000000040978,
+      "nodes": 1013356,
+      "PV_full_and_value_matches": 16,
+      "tt_hits": 3456
+    },
+    {
+      "arm": {
+        "root": true,
+        "tt": 0
+      },
+      "queries": 16,
+      "caller_seconds": 2.5009999996982515,
+      "nodes": 126613,
+      "PV_full_and_value_matches": 16,
+      "tt_hits": 0
+    },
+    {
+      "arm": {
+        "root": true,
+        "tt": 1
+      },
+      "queries": 16,
+      "caller_seconds": 1.9359999992884696,
+      "nodes": 96335,
+      "PV_full_and_value_matches": 16,
+      "tt_hits": 7517
+    }
+  ],
+  "pairs": [
+    {
+      "root": "capture-0",
+      "profile": "unit",
+      "same_score": true,
+      "same_action": true,
+      "same_PV": true
+    },
+    {
+      "root": "capture-0",
+      "profile": "s703-base",
+      "same_score": true,
+      "same_action": true,
+      "same_PV": true
+    },
+    {
+      "root": "capture-0",
+      "profile": "s704-base",
+      "same_score": true,
+      "same_action": true,
+      "same_PV": true
+    },
+    {
+      "root": "capture-0",
+      "profile": "s705-base",
+      "same_score": true,
+      "same_action": true,
+      "same_PV": true
+    },
+    {
+      "root": "capture-1",
+      "profile": "unit",
+      "same_score": true,
+      "same_action": true,
+      "same_PV": true
+    },
+    {
+      "root": "capture-1",
+      "profile": "s703-base",
+      "same_score": true,
+      "same_action": true,
+      "same_PV": true
+    },
+    {
+      "root": "capture-1",
+      "profile": "s704-base",
+      "same_score": true,
+      "same_action": true,
+      "same_PV": true
+    },
+    {
+      "root": "capture-1",
+      "profile": "s705-base",
+      "same_score": true,
+      "same_action": true,
+      "same_PV": true
+    },
+    {
+      "root": "capture-2",
+      "profile": "unit",
+      "same_score": true,
+      "same_action": true,
+      "same_PV": true
+    },
+    {
+      "root": "capture-2",
+      "profile": "s703-base",
+      "same_score": true,
+      "same_action": true,
+      "same_PV": true
+    },
+    {
+      "root": "capture-2",
+      "profile": "s704-base",
+      "same_score": true,
+      "same_action": true,
+      "same_PV": true
+    },
+    {
+      "root": "capture-2",
+      "profile": "s705-base",
+      "same_score": true,
+      "same_action": true,
+      "same_PV": true
+    },
+    {
+      "root": "capture-3",
+      "profile": "unit",
+      "same_score": true,
+      "same_action": true,
+      "same_PV": true
+    },
+    {
+      "root": "capture-3",
+      "profile": "s703-base",
+      "same_score": true,
+      "same_action": true,
+      "same_PV": true
+    },
+    {
+      "root": "capture-3",
+      "profile": "s704-base",
+      "same_score": true,
+      "same_action": true,
+      "same_PV": true
+    },
+    {
+      "root": "capture-3",
+      "profile": "s705-base",
+      "same_score": true,
+      "same_action": true,
+      "same_PV": true
+    }
+  ],
+  "PV_mismatch_records": [],
+  "seconds": 1.3599999998696148,
+  "source_sha256": "d6fccec8a5d2602092ad2eee60fb093f3ad2ee1019147a64d3aaf5136dc94d16",
+  "scope": "Samefixedpublicsource/compiler/DLL/leaf/history/3s budget; actualRootMode xcoldTT factor, all64D3complete/finitevalue/argmax. PVtracechecks separatefromvalues; mismatchrecordsretained. Differentnodes/searchalg workdefinitions remain; notisolatedold/newcanonicalpatch orhumanvalueproof. No product/default/UI adoption."
+}

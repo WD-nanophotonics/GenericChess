@@ -634,3 +634,28 @@ ifneeded. ScienceOPEN; currententryconcise; reportSEGMENT_20261012_20.md and
 exact236..257archivehold allclaims/limits/failures. Onlyorigin/sidemission sync,
 fullremoteSHAverifiedafterpush; fixedreport/collaborationlinks deliveredtoDot
 andPRIMARY, deliverydistinctfromreview/adoption. Actualsessionreceipt separate.
+
+## DEV_AUX segment21 — semantic baseline and failed local learning,2026-10-12
+
+DEV_AUX independently completed356games/14501calls,9batches346.015s;
+258..286 exactarchive/report on sidemission. Specificgeneratedsemanticprices
+beat fixedunit/3oldrandom/4permuted SEARCH controls on4oldroots byfiniteH48:
+1k33W1L30unknown,16k33W0L31unknown. No population/IID orhumanrecoveryclaim.
+Onefrozen172game generation gives2negative transfers/2flat bases, despite
+2descriptivehumanratio contractions. Keepfailures and stopmutationgrowth.
+Dot1791805158 technicalreview adopted:auditedbaseline before269, unknownnotdraw,
+fullsample/rootdeletion/reusedH16/32/48, smallcommonscale andcompleteq0control.
+Scalingchangesactualmaturechoices/payoff; attributionto ratiosalone rejected.
+280proofnarrowedafterobservedBlackpromotion; originalfalsepremise retained.
+276ownharness24games/8triples allfields/workequal,31.4MB->.231MB recording;
+277seconddecoder/96exactgo audit. No physicalheap ormachineexclusiveclaim.
+PRIMARYpublishedf1ea q0source/report independentlyread, own279sourceboundDLL
+built withouttouchingPRIMARY. 80actualAUXcalls/282/284 exactscore/argmax/PVleaf
+validated;64sameDLLroot/TTfactor isolateswithinversioncost, notold/newpatch.
+PRIMARYprivateimmediatewin/rootordering/UI or109archive claims notrerun/adopted.
+Installedown/primaryproducts/defaults/UI untouched; no otherAgent config changes.
+Attributed UI/priority userconversations viaDot do notgrantnewauthority; existing
+sidemission/noUIownership retained. RawSlack/accounts/binaries remainprivate.
+Source/probe/audit mistakes diagnosed/repaired withfrozenfailures, no severe block,
+clockreset, emptyheartbeat orapprovalgate. Next286nativebaselinepilot/promotion
+signal/H-rootendpoint sensitivity; scienceOPEN, coverage/goal bias unresolved.

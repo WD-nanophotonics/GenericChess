@@ -1,19 +1,19 @@
 ## DEV_AUX current scope2026-10-12
 
-ScienceOPEN; sidemission only; workingentry/heartbeatACTIVE, no seriousblocker.
-Segment20:160actual8plygames+124completedextraNativequeries,221.905batchs;
-1preerrorquery notaudited.236Qcontrast128games mixedtransfer, all512D2exact.
-Cfinitegoal diagnosis:244ANYpositiveN cannotfixoneD2mate miss;245D3actualfix.
-24796D3familyqueries havepositive/negativegoalgains; Dotmean-opponentreview
-adopted.250meanD3solvesfinite24rootgoal;251entiredeclaredpriceboxflat,
-so thisgoal doesnotidentifyprices. No fullChess/mature impossibilityclaim.
-25232pairedgames snapshot/fullhistory/workequal, modestprefixcostbenefit;
-253lossless126.766->16.820MBtelemetrycodec,255atomicwritegain;
-256seconddecoder/fullsourcehash/30000scalarcontrol audits pass.
-No stablehumanprice recovery; next257fewcapture/recapture signalchecks,
-owncompactharness andnewprimaryq0API feasibility, no blindgame/seedgrowth.
-Allscience/failures/costs236..257/reportSEGMENT_20261012_20.md; PRIMARY
-f1ea1d38context self-reported, notAUXrerun/adoption. Product/state untouched.
+ScienceOPEN; sidemission only; workingentry/heartbeatACTIVE, no severe blocker.
+Segment21:356actualgames/14501actualsearchcalls;9successfulbatches346.015s.
+Specificsemanticprior128games:1k33W1L30unknown/16k33W0L31unknown;
+only4oldroots/noIIDpopulation. 269onegen172games has2negative transfers,
+2flatbases despite2descriptivehumanratio contractions; stopgenerationgrowth.
+Scalecontrol changesmatureactions/payoff whilecompleteD2argmaxstable;
+280wholepositivebox32..8192flatonly3Whiteroots, Blackpromotion excluded.
+276losslessjournal/cache24pairedgames;31.4MB->.231MB withallfields/workequal.
+Ownpinnedf1eaq0DLL80actualcalls independent:283sameDLLroot/TT64factor
+allfinitevalue/PVchecks; optionalRootTrue cheaperhere, no product/UIadoption.
+Allscience/failures258..286/reportSEGMENT_20261012_21.md; installedownbaseline
+unchanged. Dottechnicalreplyadopted; rawprivate/otheruserattributionsnoauthority.
+Next286:cheapnativebaselinepilot, reuseH/rootendpoint sensitivity,
+actualpromotionbranch signal; no newjob/seed/generation/longgame currentlyactive.
 
 # Current local research mainline
 

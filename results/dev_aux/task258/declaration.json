@@ -1,0 +1,311 @@
+{
+  "task_id": "258",
+  "question": "Do real fullhistory competingcapture roots provide useful pricediscriminating short signals?",
+  "roots": [
+    {
+      "id": "capture-0",
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "b7b5",
+        "d2d3",
+        "c7c6",
+        "h2h3",
+        "d8c7",
+        "c1b2",
+        "g8h6",
+        "h3h4",
+        "c6c5",
+        "b2e5",
+        "b8c6",
+        "b1a3",
+        "c5c4",
+        "g2g4",
+        "c4d3",
+        "h1h3",
+        "a7a6",
+        "c2c4",
+        "a6a5"
+      ],
+      "fen": "r1b1kb1r/2qppppp/2n4n/pp2B3/1PP3PP/N2p3R/P3PP2/R2QKBN1 w Qkq - 0 11",
+      "captures": [
+        {
+          "move": "a3b5",
+          "actor": "N",
+          "victim": "P"
+        },
+        {
+          "move": "b4a5",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "c4b5",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "d1d3",
+          "actor": "Q",
+          "victim": "P"
+        },
+        {
+          "move": "e2d3",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "e5c7",
+          "actor": "B",
+          "victim": "Q"
+        },
+        {
+          "move": "e5g7",
+          "actor": "B",
+          "victim": "P"
+        },
+        {
+          "move": "h3d3",
+          "actor": "R",
+          "victim": "P"
+        }
+      ],
+      "source_game": "train-s703-base-random-o0-c1",
+      "phase": "train"
+    },
+    {
+      "id": "capture-1",
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "b7b5",
+        "d2d3",
+        "c7c6",
+        "h2h3",
+        "d8c7",
+        "c1b2",
+        "g8h6",
+        "h3h4",
+        "c6c5",
+        "b2e5",
+        "b8c6",
+        "b1a3",
+        "c5c4",
+        "g2g4",
+        "c4d3",
+        "h1h3",
+        "a7a6",
+        "c2c4",
+        "a6a5",
+        "e5g7",
+        "a5b4"
+      ],
+      "fen": "r1b1kb1r/2qpppBp/2n4n/1p6/1pP3PP/N2p3R/P3PP2/R2QKBN1 w Qkq - 0 12",
+      "captures": [
+        {
+          "move": "a3b5",
+          "actor": "N",
+          "victim": "P"
+        },
+        {
+          "move": "c4b5",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "d1d3",
+          "actor": "Q",
+          "victim": "P"
+        },
+        {
+          "move": "e2d3",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "g7f8",
+          "actor": "B",
+          "victim": "B"
+        },
+        {
+          "move": "g7h6",
+          "actor": "B",
+          "victim": "N"
+        },
+        {
+          "move": "g7h8",
+          "actor": "B",
+          "victim": "R"
+        },
+        {
+          "move": "h3d3",
+          "actor": "R",
+          "victim": "P"
+        }
+      ],
+      "source_game": "train-s703-base-random-o0-c1",
+      "phase": "train"
+    },
+    {
+      "id": "capture-2",
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "b7b5",
+        "d2d3",
+        "c7c6",
+        "h2h3",
+        "d8c7",
+        "c1b2",
+        "g8h6",
+        "h3h4",
+        "c6c5",
+        "b2e5",
+        "b8c6",
+        "b1a3",
+        "c5c4",
+        "g2g4",
+        "c4d3",
+        "h1h3",
+        "a7a6",
+        "c2c4",
+        "a6a5",
+        "e5g7",
+        "a5b4",
+        "g7h8",
+        "h6g4",
+        "a3b5",
+        "a8a7"
+      ],
+      "fen": "2b1kb1B/r1qppp1p/2n5/1N6/1pP3nP/3p3R/P3PP2/R2QKBN1 w Q - 1 14",
+      "captures": [
+        {
+          "move": "b5a7",
+          "actor": "N",
+          "victim": "R"
+        },
+        {
+          "move": "b5c7",
+          "actor": "N",
+          "victim": "Q"
+        },
+        {
+          "move": "d1d3",
+          "actor": "Q",
+          "victim": "P"
+        },
+        {
+          "move": "e2d3",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "h3d3",
+          "actor": "R",
+          "victim": "P"
+        }
+      ],
+      "source_game": "train-s703-base-random-o0-c1",
+      "phase": "development"
+    },
+    {
+      "id": "capture-3",
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "b7b5",
+        "d2d3",
+        "c7c6",
+        "h2h3",
+        "d8c7",
+        "c1b2",
+        "g8h6",
+        "h3h4",
+        "c6c5",
+        "b2e5",
+        "b8c6",
+        "b1a3",
+        "c5c4",
+        "g2g4",
+        "c4d3",
+        "h1h3",
+        "a7a6",
+        "c2c4",
+        "a6a5",
+        "a1c1"
+      ],
+      "fen": "r1b1kb1r/2qppppp/2n4n/pp2B3/1PP3PP/N2p3R/P3PP2/2RQKBN1 b kq - 1 11",
+      "captures": [
+        {
+          "move": "a5b4",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "b5c4",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "c6b4",
+          "actor": "N",
+          "victim": "P"
+        },
+        {
+          "move": "c6e5",
+          "actor": "N",
+          "victim": "B"
+        },
+        {
+          "move": "c7e5",
+          "actor": "Q",
+          "victim": "B"
+        },
+        {
+          "move": "d3e2",
+          "actor": "P",
+          "victim": "P"
+        },
+        {
+          "move": "h6g4",
+          "actor": "N",
+          "victim": "P"
+        }
+      ],
+      "source_game": "train-s703-base-random-o0-c0",
+      "phase": "development"
+    }
+  ],
+  "selection": "First4 unique fullhistory TRAIN searchrecords in frozen236order with>=2 distinct legalcapturevictimtypes. Norootgoal/human/referenceprice used; first2train/last2development; allsource previouslyexposed.",
+  "unit": {
+    "P": 208,
+    "N": 208,
+    "B": 208,
+    "R": 208,
+    "Q": 208,
+    "K": 0
+  },
+  "grid": [
+    52,
+    104,
+    208,
+    416,
+    832
+  ],
+  "depths": [
+    2,
+    3
+  ],
+  "operators": [
+    "min",
+    "uniform_mean"
+  ],
+  "tie": "lexicographicUCI at every maximizer",
+  "leaf": "SignedPNBRQcounts fromrootactor; actualterminal nativealigned +/-100000000-ply/draw0",
+  "objective": "Priceindependent signedunitquantity at samecutoff; terminal+/-100/draw0. Evaluate candidatepolicy against minimum or uniformmean opponent matchingsearch; retainunknownfinalWDL. AllNBRQ x.25/4 contrasts +625grid arediagnostic, nohumanlabels.",
+  "deadline_seconds": 300,
+  "source_sha": "1de362ef6c7ef9b5de3ec5ef236333469f1428f7",
+  "source_file": "results\\dev_aux\\task253\\compact_236.json",
+  "source_file_sha256": "d5728f7aeba4a6a66e8ad58d410f51986622c942e0e61ef5a1315d60b441bcde",
+  "created_at": "2026-10-12T11:19:58.288396+00:00"
+}
