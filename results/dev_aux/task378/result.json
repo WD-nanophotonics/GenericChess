@@ -1,0 +1,2045 @@
+{
+  "status": "PASS exactgoals/selection",
+  "seconds": 0.7969999997876585,
+  "comparisons": [
+    {
+      "family": "unit",
+      "panel": "training",
+      "initial": {
+        "games": 8,
+        "mean_goal": "0",
+        "rule_contribution": "0",
+        "cutoff_quantity_contribution": "0",
+        "mean_raw_quantity": "0",
+        "wins": 0,
+        "losses": 0,
+        "draws": 0,
+        "terminal_games": 0
+      },
+      "endpoint": {
+        "games": 8,
+        "mean_goal": "153/38",
+        "rule_contribution": "4",
+        "cutoff_quantity_contribution": "1/38",
+        "mean_raw_quantity": "0",
+        "wins": 1,
+        "losses": 0,
+        "draws": 0,
+        "terminal_games": 1
+      },
+      "mean_goal_delta": "153/38",
+      "mean_raw_quantity_delta": "0",
+      "positive_cells": 3,
+      "negative_cells": 1,
+      "zero_cells": 4,
+      "identical_trajectories": 2,
+      "leave_one_root_deltas": [
+        {
+          "removed_seed": 2026102510,
+          "mean_goal_delta": "305/57"
+        },
+        {
+          "removed_seed": 2026102511,
+          "mean_goal_delta": "2/57"
+        },
+        {
+          "removed_seed": 2026102512,
+          "mean_goal_delta": "308/57"
+        },
+        {
+          "removed_seed": 2026102513,
+          "mean_goal_delta": "101/19"
+        }
+      ]
+    },
+    {
+      "family": "unit",
+      "panel": "development1024",
+      "initial": {
+        "games": 8,
+        "mean_goal": "0",
+        "rule_contribution": "0",
+        "cutoff_quantity_contribution": "0",
+        "mean_raw_quantity": "0",
+        "wins": 0,
+        "losses": 0,
+        "draws": 0,
+        "terminal_games": 0
+      },
+      "endpoint": {
+        "games": 8,
+        "mean_goal": "-301/76",
+        "rule_contribution": "-4",
+        "cutoff_quantity_contribution": "3/76",
+        "mean_raw_quantity": "0",
+        "wins": 0,
+        "losses": 1,
+        "draws": 0,
+        "terminal_games": 1
+      },
+      "mean_goal_delta": "-301/76",
+      "mean_raw_quantity_delta": "0",
+      "positive_cells": 1,
+      "negative_cells": 1,
+      "zero_cells": 6,
+      "identical_trajectories": 3,
+      "leave_one_root_deltas": [
+        {
+          "removed_seed": 2026102580,
+          "mean_goal_delta": "1/57"
+        },
+        {
+          "removed_seed": 2026102581,
+          "mean_goal_delta": "-301/57"
+        },
+        {
+          "removed_seed": 2026102582,
+          "mean_goal_delta": "-301/57"
+        },
+        {
+          "removed_seed": 2026102583,
+          "mean_goal_delta": "-302/57"
+        }
+      ]
+    },
+    {
+      "family": "unit",
+      "panel": "development8192",
+      "initial": {
+        "games": 8,
+        "mean_goal": "0",
+        "rule_contribution": "0",
+        "cutoff_quantity_contribution": "0",
+        "mean_raw_quantity": "0",
+        "wins": 0,
+        "losses": 0,
+        "draws": 0,
+        "terminal_games": 0
+      },
+      "endpoint": {
+        "games": 8,
+        "mean_goal": "-1/38",
+        "rule_contribution": "0",
+        "cutoff_quantity_contribution": "-1/38",
+        "mean_raw_quantity": "-1",
+        "wins": 1,
+        "losses": 1,
+        "draws": 0,
+        "terminal_games": 2
+      },
+      "mean_goal_delta": "-1/38",
+      "mean_raw_quantity_delta": "-1",
+      "positive_cells": 1,
+      "negative_cells": 3,
+      "zero_cells": 4,
+      "identical_trajectories": 0,
+      "leave_one_root_deltas": [
+        {
+          "removed_seed": 2026102580,
+          "mean_goal_delta": "301/57"
+        },
+        {
+          "removed_seed": 2026102581,
+          "mean_goal_delta": "-1/57"
+        },
+        {
+          "removed_seed": 2026102582,
+          "mean_goal_delta": "0"
+        },
+        {
+          "removed_seed": 2026102583,
+          "mean_goal_delta": "-102/19"
+        }
+      ]
+    },
+    {
+      "family": "unit",
+      "panel": "single_seed_neighbourhood1024",
+      "initial": {
+        "games": 16,
+        "mean_goal": "0",
+        "rule_contribution": "0",
+        "cutoff_quantity_contribution": "0",
+        "mean_raw_quantity": "0",
+        "wins": 1,
+        "losses": 1,
+        "draws": 0,
+        "terminal_games": 2
+      },
+      "endpoint": {
+        "games": 16,
+        "mean_goal": "-609/152",
+        "rule_contribution": "-4",
+        "cutoff_quantity_contribution": "-1/152",
+        "mean_raw_quantity": "-1/8",
+        "wins": 1,
+        "losses": 3,
+        "draws": 0,
+        "terminal_games": 4
+      },
+      "mean_goal_delta": "-609/152",
+      "mean_raw_quantity_delta": "-1/8",
+      "positive_cells": 4,
+      "negative_cells": 6,
+      "zero_cells": 6,
+      "identical_trajectories": 2,
+      "leave_one_root_deltas": [
+        {
+          "removed_seed": 2026102572,
+          "mean_goal_delta": "-607/133"
+        },
+        {
+          "removed_seed": 2026102573,
+          "mean_goal_delta": "-87/19"
+        },
+        {
+          "removed_seed": 2026102574,
+          "mean_goal_delta": "-306/133"
+        },
+        {
+          "removed_seed": 2026102575,
+          "mean_goal_delta": "-87/19"
+        },
+        {
+          "removed_seed": 2026102576,
+          "mean_goal_delta": "-305/133"
+        },
+        {
+          "removed_seed": 2026102577,
+          "mean_goal_delta": "-606/133"
+        },
+        {
+          "removed_seed": 2026102578,
+          "mean_goal_delta": "-613/133"
+        },
+        {
+          "removed_seed": 2026102579,
+          "mean_goal_delta": "-32/7"
+        }
+      ]
+    },
+    {
+      "family": "random2514",
+      "panel": "training",
+      "initial": {
+        "games": 8,
+        "mean_goal": "-15/76",
+        "rule_contribution": "0",
+        "cutoff_quantity_contribution": "-15/76",
+        "mean_raw_quantity": "-15/4",
+        "wins": 0,
+        "losses": 0,
+        "draws": 0,
+        "terminal_games": 0
+      },
+      "endpoint": {
+        "games": 8,
+        "mean_goal": "4",
+        "rule_contribution": "4",
+        "cutoff_quantity_contribution": "0",
+        "mean_raw_quantity": "-1/4",
+        "wins": 1,
+        "losses": 0,
+        "draws": 0,
+        "terminal_games": 1
+      },
+      "mean_goal_delta": "319/76",
+      "mean_raw_quantity_delta": "7/2",
+      "positive_cells": 6,
+      "negative_cells": 0,
+      "zero_cells": 2,
+      "identical_trajectories": 1,
+      "leave_one_root_deltas": [
+        {
+          "removed_seed": 2026102510,
+          "mean_goal_delta": "317/57"
+        },
+        {
+          "removed_seed": 2026102511,
+          "mean_goal_delta": "313/57"
+        },
+        {
+          "removed_seed": 2026102512,
+          "mean_goal_delta": "317/57"
+        },
+        {
+          "removed_seed": 2026102513,
+          "mean_goal_delta": "10/57"
+        }
+      ]
+    },
+    {
+      "family": "random2514",
+      "panel": "development1024",
+      "initial": {
+        "games": 8,
+        "mean_goal": "-7/76",
+        "rule_contribution": "0",
+        "cutoff_quantity_contribution": "-7/76",
+        "mean_raw_quantity": "-7/4",
+        "wins": 0,
+        "losses": 0,
+        "draws": 0,
+        "terminal_games": 0
+      },
+      "endpoint": {
+        "games": 8,
+        "mean_goal": "-13/76",
+        "rule_contribution": "0",
+        "cutoff_quantity_contribution": "-13/76",
+        "mean_raw_quantity": "-13/4",
+        "wins": 0,
+        "losses": 0,
+        "draws": 0,
+        "terminal_games": 0
+      },
+      "mean_goal_delta": "-3/38",
+      "mean_raw_quantity_delta": "-3/2",
+      "positive_cells": 1,
+      "negative_cells": 5,
+      "zero_cells": 2,
+      "identical_trajectories": 1,
+      "leave_one_root_deltas": [
+        {
+          "removed_seed": 2026102580,
+          "mean_goal_delta": "-4/57"
+        },
+        {
+          "removed_seed": 2026102581,
+          "mean_goal_delta": "-2/19"
+        },
+        {
+          "removed_seed": 2026102582,
+          "mean_goal_delta": "-2/19"
+        },
+        {
+          "removed_seed": 2026102583,
+          "mean_goal_delta": "-2/57"
+        }
+      ]
+    },
+    {
+      "family": "random2514",
+      "panel": "development8192",
+      "initial": {
+        "games": 8,
+        "mean_goal": "-7/76",
+        "rule_contribution": "0",
+        "cutoff_quantity_contribution": "-7/76",
+        "mean_raw_quantity": "-7/4",
+        "wins": 0,
+        "losses": 0,
+        "draws": 0,
+        "terminal_games": 0
+      },
+      "endpoint": {
+        "games": 8,
+        "mean_goal": "-5/38",
+        "rule_contribution": "0",
+        "cutoff_quantity_contribution": "-5/38",
+        "mean_raw_quantity": "-5/2",
+        "wins": 0,
+        "losses": 0,
+        "draws": 0,
+        "terminal_games": 0
+      },
+      "mean_goal_delta": "-3/76",
+      "mean_raw_quantity_delta": "-3/4",
+      "positive_cells": 2,
+      "negative_cells": 4,
+      "zero_cells": 2,
+      "identical_trajectories": 0,
+      "leave_one_root_deltas": [
+        {
+          "removed_seed": 2026102580,
+          "mean_goal_delta": "-4/57"
+        },
+        {
+          "removed_seed": 2026102581,
+          "mean_goal_delta": "-4/57"
+        },
+        {
+          "removed_seed": 2026102582,
+          "mean_goal_delta": "-1/57"
+        },
+        {
+          "removed_seed": 2026102583,
+          "mean_goal_delta": "0"
+        }
+      ]
+    },
+    {
+      "family": "random2514",
+      "panel": "single_seed_neighbourhood1024",
+      "initial": {
+        "games": 16,
+        "mean_goal": "-5/38",
+        "rule_contribution": "0",
+        "cutoff_quantity_contribution": "-5/38",
+        "mean_raw_quantity": "-7/2",
+        "wins": 3,
+        "losses": 3,
+        "draws": 0,
+        "terminal_games": 6
+      },
+      "endpoint": {
+        "games": 16,
+        "mean_goal": "-7/76",
+        "rule_contribution": "0",
+        "cutoff_quantity_contribution": "-7/76",
+        "mean_raw_quantity": "-19/8",
+        "wins": 2,
+        "losses": 2,
+        "draws": 0,
+        "terminal_games": 4
+      },
+      "mean_goal_delta": "3/76",
+      "mean_raw_quantity_delta": "9/8",
+      "positive_cells": 8,
+      "negative_cells": 3,
+      "zero_cells": 5,
+      "identical_trajectories": 4,
+      "leave_one_root_deltas": [
+        {
+          "removed_seed": 2026102572,
+          "mean_goal_delta": "2/133"
+        },
+        {
+          "removed_seed": 2026102573,
+          "mean_goal_delta": "1/19"
+        },
+        {
+          "removed_seed": 2026102574,
+          "mean_goal_delta": "309/133"
+        },
+        {
+          "removed_seed": 2026102575,
+          "mean_goal_delta": "6/133"
+        },
+        {
+          "removed_seed": 2026102576,
+          "mean_goal_delta": "5/133"
+        },
+        {
+          "removed_seed": 2026102577,
+          "mean_goal_delta": "1/133"
+        },
+        {
+          "removed_seed": 2026102578,
+          "mean_goal_delta": "-295/133"
+        },
+        {
+          "removed_seed": 2026102579,
+          "mean_goal_delta": "1/19"
+        }
+      ]
+    }
+  ],
+  "source_prior_reference": {
+    "source": "fixedc1b80eaa source/evaluate.h Apery(WCSC26)materialenum; notindependenthumanconsensus",
+    "prices": [
+      0,
+      90,
+      315,
+      405,
+      495,
+      855,
+      990,
+      540,
+      0,
+      540,
+      540,
+      540,
+      540,
+      945,
+      1395,
+      0
+    ],
+    "read_for_descriptivecomparison_afterendpointfreeze": true,
+    "rows": [
+      {
+        "family": "unit",
+        "initial": [
+          0,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          0,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          0
+        ],
+        "endpoint": [
+          0,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          0,
+          180,
+          45,
+          90,
+          90,
+          90,
+          90,
+          0
+        ],
+        "initial_log_ratio_MSE_to_Apery_source_prior": 3.8874355037576436,
+        "endpoint_log_ratio_MSE_to_Apery_source_prior": 3.967511006077344
+      },
+      {
+        "family": "random2514",
+        "initial": [
+          0,
+          90,
+          151,
+          78,
+          68,
+          284,
+          109,
+          716,
+          0,
+          80,
+          171,
+          200,
+          345,
+          121,
+          55,
+          0
+        ],
+        "endpoint": [
+          0,
+          90,
+          151,
+          78,
+          68,
+          284,
+          109,
+          358,
+          0,
+          80,
+          86,
+          200,
+          345,
+          121,
+          55,
+          0
+        ],
+        "initial_log_ratio_MSE_to_Apery_source_prior": 2.849287526055576,
+        "endpoint_log_ratio_MSE_to_Apery_source_prior": 3.027826304305107
+      }
+    ]
+  },
+  "rounds": [
+    {
+      "family": "unit",
+      "round": 0,
+      "selected": "9-double",
+      "strict_gain": "305/76",
+      "all_candidates": [
+        {
+          "label": "base",
+          "stats": {
+            "games": 8,
+            "mean_goal": "0",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "0",
+            "mean_raw_quantity": "0",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "2-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-1/38",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-1/38",
+            "mean_raw_quantity": "-1/2",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "2-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "3/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "3/76",
+            "mean_raw_quantity": "3/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "3-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "0",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "0",
+            "mean_raw_quantity": "0",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "3-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "1/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "1/76",
+            "mean_raw_quantity": "1/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "4-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-1/38",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-1/38",
+            "mean_raw_quantity": "-1/2",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "4-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "3/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "3/76",
+            "mean_raw_quantity": "3/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "5-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "75/19",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-1/19",
+            "mean_raw_quantity": "-1/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "5-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "5/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "5/76",
+            "mean_raw_quantity": "5/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "6-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-7/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-7/76",
+            "mean_raw_quantity": "-7/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "6-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "1/19",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "1/19",
+            "mean_raw_quantity": "1",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "7-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "5/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "5/76",
+            "mean_raw_quantity": "5/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "7-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "0",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "0",
+            "mean_raw_quantity": "0",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "9-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "0",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "0",
+            "mean_raw_quantity": "0",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "9-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "305/76",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "1/76",
+            "mean_raw_quantity": "-1/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "10-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "3/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "3/76",
+            "mean_raw_quantity": "3/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "10-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "1/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "1/76",
+            "mean_raw_quantity": "1/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "11-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-1/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-1/76",
+            "mean_raw_quantity": "-1/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "11-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "0",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "0",
+            "mean_raw_quantity": "0",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "12-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "0",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "0",
+            "mean_raw_quantity": "0",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "12-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "0",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "0",
+            "mean_raw_quantity": "0",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "13-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-1/38",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-1/38",
+            "mean_raw_quantity": "-1/2",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "13-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "4",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "0",
+            "mean_raw_quantity": "-1/2",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "14-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-1/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-1/76",
+            "mean_raw_quantity": "-1/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "14-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-307/76",
+            "rule_contribution": "-4",
+            "cutoff_quantity_contribution": "-3/76",
+            "mean_raw_quantity": "-1",
+            "wins": 0,
+            "losses": 1,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        }
+      ],
+      "interpretation": "rule +/-32 event has4mean units in8cells; price/quantity ranking separate, no rereselect"
+    },
+    {
+      "family": "unit",
+      "round": 1,
+      "selected": "10-half",
+      "strict_gain": "1/76",
+      "all_candidates": [
+        {
+          "label": "base",
+          "stats": {
+            "games": 8,
+            "mean_goal": "305/76",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "1/76",
+            "mean_raw_quantity": "-1/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "2-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-1/19",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-1/19",
+            "mean_raw_quantity": "-1",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "2-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "0",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "0",
+            "mean_raw_quantity": "0",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "3-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "1/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "1/76",
+            "mean_raw_quantity": "1/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "3-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "1/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "1/76",
+            "mean_raw_quantity": "1/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "4-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-1/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-1/76",
+            "mean_raw_quantity": "-1/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "4-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "1/38",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "1/38",
+            "mean_raw_quantity": "1/2",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "5-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "75/19",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-1/19",
+            "mean_raw_quantity": "-1/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "5-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "1/19",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "1/19",
+            "mean_raw_quantity": "1",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "6-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-313/76",
+            "rule_contribution": "-4",
+            "cutoff_quantity_contribution": "-9/76",
+            "mean_raw_quantity": "-11/4",
+            "wins": 0,
+            "losses": 1,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "6-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "5/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "5/76",
+            "mean_raw_quantity": "5/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "7-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "1/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "1/76",
+            "mean_raw_quantity": "1/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "7-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "1/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "1/76",
+            "mean_raw_quantity": "1/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "9-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "0",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "0",
+            "mean_raw_quantity": "0",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "9-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "4",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "0",
+            "mean_raw_quantity": "-1/2",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "10-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "153/38",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "1/38",
+            "mean_raw_quantity": "0",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "10-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "4",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "0",
+            "mean_raw_quantity": "-1/2",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "11-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-1/19",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-1/19",
+            "mean_raw_quantity": "-1",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "11-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "305/76",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "1/76",
+            "mean_raw_quantity": "-1/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "12-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "305/76",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "1/76",
+            "mean_raw_quantity": "-1/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "12-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "305/76",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "1/76",
+            "mean_raw_quantity": "-1/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "13-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "303/76",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-1/76",
+            "mean_raw_quantity": "-3/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "13-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "1/38",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "1/38",
+            "mean_raw_quantity": "1/2",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "14-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-3/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-3/76",
+            "mean_raw_quantity": "-3/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "14-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-305/76",
+            "rule_contribution": "-4",
+            "cutoff_quantity_contribution": "-1/76",
+            "mean_raw_quantity": "-1/2",
+            "wins": 0,
+            "losses": 1,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        }
+      ],
+      "interpretation": "rule +/-32 event has4mean units in8cells; price/quantity ranking separate, no rereselect"
+    },
+    {
+      "family": "random2514",
+      "round": 0,
+      "selected": "10-half",
+      "strict_gain": "309/76",
+      "all_candidates": [
+        {
+          "label": "base",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-15/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-15/76",
+            "mean_raw_quantity": "-15/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "2-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-5/38",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-5/38",
+            "mean_raw_quantity": "-5/2",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "2-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-5/38",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-5/38",
+            "mean_raw_quantity": "-5/2",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "3-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-13/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-13/76",
+            "mean_raw_quantity": "-13/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "3-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-7/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-7/76",
+            "mean_raw_quantity": "-7/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "4-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-2/19",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-2/19",
+            "mean_raw_quantity": "-2",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "4-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-4/19",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-4/19",
+            "mean_raw_quantity": "-4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "5-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-1/38",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-1/38",
+            "mean_raw_quantity": "-1/2",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "5-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-3/38",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-3/38",
+            "mean_raw_quantity": "-3/2",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "6-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-17/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-17/76",
+            "mean_raw_quantity": "-17/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "6-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-7/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-7/76",
+            "mean_raw_quantity": "-7/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "7-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-1/19",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-1/19",
+            "mean_raw_quantity": "-1",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "7-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-5/38",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-5/38",
+            "mean_raw_quantity": "-5/2",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "9-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-13/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-13/76",
+            "mean_raw_quantity": "-13/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "9-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-7/38",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-7/38",
+            "mean_raw_quantity": "-7/2",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "10-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "147/38",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-5/38",
+            "mean_raw_quantity": "-11/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "10-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-4/19",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-4/19",
+            "mean_raw_quantity": "-4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "11-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-7/38",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-7/38",
+            "mean_raw_quantity": "-7/2",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "11-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-13/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-13/76",
+            "mean_raw_quantity": "-13/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "12-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-15/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-15/76",
+            "mean_raw_quantity": "-15/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "12-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-15/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-15/76",
+            "mean_raw_quantity": "-15/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "13-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-11/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-11/76",
+            "mean_raw_quantity": "-11/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "13-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-15/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-15/76",
+            "mean_raw_quantity": "-15/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "14-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-9/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-9/76",
+            "mean_raw_quantity": "-9/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "14-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-13/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-13/76",
+            "mean_raw_quantity": "-13/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        }
+      ],
+      "interpretation": "rule +/-32 event has4mean units in8cells; price/quantity ranking separate, no rereselect"
+    },
+    {
+      "family": "random2514",
+      "round": 1,
+      "selected": "7-half",
+      "strict_gain": "5/38",
+      "all_candidates": [
+        {
+          "label": "base",
+          "stats": {
+            "games": 8,
+            "mean_goal": "147/38",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-5/38",
+            "mean_raw_quantity": "-11/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "2-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-2/19",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-2/19",
+            "mean_raw_quantity": "-2",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "2-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-9/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-9/76",
+            "mean_raw_quantity": "-9/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "3-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "147/38",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-5/38",
+            "mean_raw_quantity": "-11/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "3-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-9/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-9/76",
+            "mean_raw_quantity": "-9/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "4-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-1/19",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-1/19",
+            "mean_raw_quantity": "-1",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "4-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-15/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-15/76",
+            "mean_raw_quantity": "-15/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "5-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-1/19",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-1/19",
+            "mean_raw_quantity": "-1",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "5-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-5/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-5/76",
+            "mean_raw_quantity": "-5/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "6-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-15/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-15/76",
+            "mean_raw_quantity": "-15/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "6-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "149/38",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-3/38",
+            "mean_raw_quantity": "-7/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "7-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "4",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "0",
+            "mean_raw_quantity": "-1/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "7-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "293/76",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-11/76",
+            "mean_raw_quantity": "-3",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "9-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "147/38",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-5/38",
+            "mean_raw_quantity": "-11/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "9-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-11/76",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-11/76",
+            "mean_raw_quantity": "-11/4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "10-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "147/38",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-5/38",
+            "mean_raw_quantity": "-11/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "10-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "-4/19",
+            "rule_contribution": "0",
+            "cutoff_quantity_contribution": "-4/19",
+            "mean_raw_quantity": "-4",
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 0
+          }
+        },
+        {
+          "label": "11-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "295/76",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-9/76",
+            "mean_raw_quantity": "-5/2",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "11-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "295/76",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-9/76",
+            "mean_raw_quantity": "-5/2",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "12-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "147/38",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-5/38",
+            "mean_raw_quantity": "-11/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "12-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "147/38",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-5/38",
+            "mean_raw_quantity": "-11/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "13-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "75/19",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-1/19",
+            "mean_raw_quantity": "-5/4",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "13-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "293/76",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-11/76",
+            "mean_raw_quantity": "-3",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "14-half",
+          "stats": {
+            "games": 8,
+            "mean_goal": "299/76",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-5/76",
+            "mean_raw_quantity": "-3/2",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        },
+        {
+          "label": "14-double",
+          "stats": {
+            "games": 8,
+            "mean_goal": "295/76",
+            "rule_contribution": "4",
+            "cutoff_quantity_contribution": "-9/76",
+            "mean_raw_quantity": "-5/2",
+            "wins": 1,
+            "losses": 0,
+            "draws": 0,
+            "terminal_games": 1
+          }
+        }
+      ],
+      "interpretation": "rule +/-32 event has4mean units in8cells; price/quantity ranking separate, no rereselect"
+    }
+  ],
+  "physical_cost_rows": [
+    {
+      "task": 364,
+      "games": 16,
+      "actual_go": 384,
+      "seconds": 85.96900000004098,
+      "rule_terminal_games": 0
+    },
+    {
+      "task": 365,
+      "games": 2,
+      "actual_go": 53,
+      "seconds": 15.436999999918044,
+      "rule_terminal_games": 0
+    },
+    {
+      "task": 367,
+      "games": 16,
+      "actual_go": 384,
+      "seconds": 83.60999999986961,
+      "rule_terminal_games": 0
+    },
+    {
+      "task": 369,
+      "games": 16,
+      "actual_go": 384,
+      "seconds": 20.375,
+      "rule_terminal_games": 0
+    },
+    {
+      "task": 370,
+      "games": 760,
+      "actual_go": 18154,
+      "seconds": 867.719000000041,
+      "rule_terminal_games": 29
+    },
+    {
+      "task": 377,
+      "games": 32,
+      "actual_go": 766,
+      "seconds": 37.032000000122935,
+      "rule_terminal_games": 1
+    },
+    {
+      "task": 373,
+      "games": 64,
+      "actual_go": 1281,
+      "seconds": 56.54699999978766,
+      "rule_terminal_games": 16
+    },
+    {
+      "task": 380,
+      "games": 32,
+      "actual_go": 760,
+      "seconds": 39.75,
+      "rule_terminal_games": 2
+    }
+  ],
+  "physical_completed_games": 938,
+  "physical_journalled_go": 22166,
+  "physical_gameproducer_seconds": 1206.4389999997802,
+  "other_go": "36110+36310 qualification,3601 smoke whosemetadata onlytooloutput;371/372/376price-state/SEEcallsNOTgo;379zero newgo/fits",
+  "decision": "Bothinitials improve training proxy, fail samebudget development anddo notapproachsourceprior. Higherbudgetresourcecurve changesoutcomes butdoesnotvalidatelearnedhumanvalues. Nearseedcohort raisesrealterminalfeedback, singlefamilycannot bevalidation; no addedrounds/reselection."
+}

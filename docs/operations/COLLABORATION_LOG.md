@@ -1,3 +1,30 @@
+## DEV_AUX segment25 — independent mature Shogi price experiment
+
+DEV_AUX repaired the official fixedc1b80eaa MaterialLv1 experimental entry,
+coherently injected board/hand/promotion prices, disclosed/qualified scoped SEE,
+and removed two measured keepalive costs while retaining384fixed-go behaviours.
+938physical shortgames/22166journalgo; learning760games14.46minutes improves
+trainingproxy butbothfixedendpoints fail1024/8192development andmovefartherfrom
+Aperysourceprior. Onecuratedseedfamily yields25%trueends, notholdout. Independent
+cshogi/fullhistory/literalprice/goal/PV+journal audit passes; all failures retained.
+See results/dev_aux/SEGMENT_20261012_25.md andexact88member archive.
+
+PRIMARY independently reports a same-order finite C/Python/backend attribution
+bridge after94aea9, fixed-root/action-error repair and replay-overhead questions.
+AUX read its complete channel/thread evidence as attributed context, didnot
+execute unpublishedsource, altermainstate or merge/publishsandbox. Tasks differ.
+Ordinary concurrency isallowed; localcostcontrol isnot exclusive/noisefree.
+DOT's complete exact-bound reply adopted actualpromotion branch response and
+quantityrange[-2,2], not fixed-trajectory repricing orblindmoretraining. The
+attributedotheruser direction isnot additionalauthority. Sourcepath404 corrected
+bytheactualfixedsource/eval/evaluate.cpp; no missingentry remains.
+
+Remaining: stablehumanprice recovery, objective/cohort identification andfull
+exchange-model scope. Task382begins15legalrollback roots acrossfiveactualmate
+sourcefamilies, exposed/generator-biased diagnostics only. NoextraAgents,
+workers/fees, no>1hprojectrun, no stop or schedulechange. Independent summaries
+only; rawSlack/account/buildlocalpaths private. PRIMARY integrates deliberately.
+
 # 主Agent与开发辅助协作记录
 
 这是供用户与 Dot 阅读的协作摘要。保存分工、实际沟通、反例处理、效率判断和未解决问题；不复制原始聊天、账号资料、用户私人输入或凭据。科学结论以链接中的固定版本证据为准。

@@ -1,0 +1,56 @@
+{
+  "status": "completed_same_data_diagnostic",
+  "episodes": 96,
+  "candidate_queries": 1135,
+  "seconds": 0.35900000017136335,
+  "summary": [
+    {
+      "family": "s703-base",
+      "queries": 383,
+      "cp_queries": 379,
+      "mate_queries": 4,
+      "bound_queries": 97,
+      "literal_cp_matches": 137,
+      "unbound_literal_cp_mismatches": 147,
+      "max_abs_cp_difference": 1184,
+      "root_mean_residual2": 0.48856683937975515,
+      "leaf_mean_residual2": 0.5628871893732365,
+      "root_saturated": 74,
+      "leaf_saturated": 109,
+      "leaf_terminal_count": 4
+    },
+    {
+      "family": "semantic",
+      "queries": 370,
+      "cp_queries": 367,
+      "mate_queries": 3,
+      "bound_queries": 49,
+      "literal_cp_matches": 237,
+      "unbound_literal_cp_mismatches": 93,
+      "max_abs_cp_difference": 2310,
+      "root_mean_residual2": 0.7052949110262354,
+      "leaf_mean_residual2": 0.7674497562806677,
+      "root_saturated": 146,
+      "leaf_saturated": 174,
+      "leaf_terminal_count": 3
+    },
+    {
+      "family": "unit",
+      "queries": 382,
+      "cp_queries": 377,
+      "mate_queries": 5,
+      "bound_queries": 35,
+      "literal_cp_matches": 201,
+      "unbound_literal_cp_mismatches": 144,
+      "max_abs_cp_difference": 200,
+      "root_mean_residual2": 0.16430732417666338,
+      "leaf_mean_residual2": 0.1710521034964605,
+      "root_saturated": 0,
+      "leaf_saturated": 0,
+      "leaf_terminal_count": 4
+    }
+  ],
+  "new_go": 0,
+  "new_fits": 0,
+  "decision": "LiteralPV material isnot generallyreportedselectiveenginecp; leafcritic remainsanexplicit approximation, residualchange ontheseexposedconditionalepisodes isnot learningvalidation. Do not launch TDLeaftraining merelybecausein-sample residualshrinks."
+}

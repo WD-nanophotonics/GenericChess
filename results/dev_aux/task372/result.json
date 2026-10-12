@@ -1,0 +1,675 @@
+{
+  "status": "PASS",
+  "seconds": 0.0940000000409782,
+  "fixtures": [
+    {
+      "name": "ordinaryfourfold",
+      "initial": "4k4/9/9/9/9/9/9/9/4K4 b - 1",
+      "cycle": [
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a",
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a",
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a"
+      ],
+      "expected": {
+        "kind": "fourfold_draw",
+        "winner": null
+      }
+    },
+    {
+      "name": "perpetualBlackchecker",
+      "initial": "4k4/9/4R4/9/9/9/9/9/8K w - 1",
+      "cycle": [
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c",
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c",
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c"
+      ],
+      "expected": {
+        "kind": "perpetual_check_loss",
+        "winner": 1
+      }
+    },
+    {
+      "name": "sourcecuratedmate",
+      "initial": "ln1ks1rnl/1+B1sg4/3p2p1b/p1p2p1pp/1P1P5/PpR1p1PPP/2N1PP1S1/4G3L/L1SKG2N1 b GP 65",
+      "cycle": [
+        "G*7b"
+      ],
+      "expected": {
+        "kind": "checkmate",
+        "winner": 0
+      }
+    }
+  ],
+  "rows": [
+    {
+      "fixture": "ordinaryfourfold",
+      "ply": 0,
+      "history": [],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_none",
+      "state": {
+        "cached": 0,
+        "full": 0,
+        "turn_value": 0,
+        "repetition": "rep_none",
+        "sfen": "4k4/9/9/9/9/9/9/9/4K4 b - 1"
+      },
+      "legal_count": 5
+    },
+    {
+      "fixture": "ordinaryfourfold",
+      "ply": 1,
+      "history": [
+        "5i4i"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_none",
+      "state": {
+        "cached": 0,
+        "full": 0,
+        "turn_value": 0,
+        "repetition": "rep_none",
+        "sfen": "4k4/9/9/9/9/9/9/9/5K3 w - 2"
+      },
+      "legal_count": 5
+    },
+    {
+      "fixture": "ordinaryfourfold",
+      "ply": 2,
+      "history": [
+        "5i4i",
+        "5a4a"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_none",
+      "state": {
+        "cached": 0,
+        "full": 0,
+        "turn_value": 0,
+        "repetition": "rep_none",
+        "sfen": "5k3/9/9/9/9/9/9/9/5K3 b - 3"
+      },
+      "legal_count": 5
+    },
+    {
+      "fixture": "ordinaryfourfold",
+      "ply": 3,
+      "history": [
+        "5i4i",
+        "5a4a",
+        "4i5i"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_none",
+      "state": {
+        "cached": 0,
+        "full": 0,
+        "turn_value": 0,
+        "repetition": "rep_none",
+        "sfen": "5k3/9/9/9/9/9/9/9/4K4 w - 4"
+      },
+      "legal_count": 5
+    },
+    {
+      "fixture": "ordinaryfourfold",
+      "ply": 4,
+      "history": [
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_draw",
+      "state": {
+        "cached": 0,
+        "full": 0,
+        "turn_value": 0,
+        "repetition": "rep_draw",
+        "sfen": "4k4/9/9/9/9/9/9/9/4K4 b - 5"
+      },
+      "legal_count": 5
+    },
+    {
+      "fixture": "ordinaryfourfold",
+      "ply": 5,
+      "history": [
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a",
+        "5i4i"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_draw",
+      "state": {
+        "cached": 0,
+        "full": 0,
+        "turn_value": 0,
+        "repetition": "rep_draw",
+        "sfen": "4k4/9/9/9/9/9/9/9/5K3 w - 6"
+      },
+      "legal_count": 5
+    },
+    {
+      "fixture": "ordinaryfourfold",
+      "ply": 6,
+      "history": [
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a",
+        "5i4i",
+        "5a4a"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_draw",
+      "state": {
+        "cached": 0,
+        "full": 0,
+        "turn_value": 0,
+        "repetition": "rep_draw",
+        "sfen": "5k3/9/9/9/9/9/9/9/5K3 b - 7"
+      },
+      "legal_count": 5
+    },
+    {
+      "fixture": "ordinaryfourfold",
+      "ply": 7,
+      "history": [
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a",
+        "5i4i",
+        "5a4a",
+        "4i5i"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_draw",
+      "state": {
+        "cached": 0,
+        "full": 0,
+        "turn_value": 0,
+        "repetition": "rep_draw",
+        "sfen": "5k3/9/9/9/9/9/9/9/4K4 w - 8"
+      },
+      "legal_count": 5
+    },
+    {
+      "fixture": "ordinaryfourfold",
+      "ply": 8,
+      "history": [
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a",
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_draw",
+      "state": {
+        "cached": 0,
+        "full": 0,
+        "turn_value": 0,
+        "repetition": "rep_draw",
+        "sfen": "4k4/9/9/9/9/9/9/9/4K4 b - 9"
+      },
+      "legal_count": 5
+    },
+    {
+      "fixture": "ordinaryfourfold",
+      "ply": 9,
+      "history": [
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a",
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a",
+        "5i4i"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_draw",
+      "state": {
+        "cached": 0,
+        "full": 0,
+        "turn_value": 0,
+        "repetition": "rep_draw",
+        "sfen": "4k4/9/9/9/9/9/9/9/5K3 w - 10"
+      },
+      "legal_count": 5
+    },
+    {
+      "fixture": "ordinaryfourfold",
+      "ply": 10,
+      "history": [
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a",
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a",
+        "5i4i",
+        "5a4a"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_draw",
+      "state": {
+        "cached": 0,
+        "full": 0,
+        "turn_value": 0,
+        "repetition": "rep_draw",
+        "sfen": "5k3/9/9/9/9/9/9/9/5K3 b - 11"
+      },
+      "legal_count": 5
+    },
+    {
+      "fixture": "ordinaryfourfold",
+      "ply": 11,
+      "history": [
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a",
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a",
+        "5i4i",
+        "5a4a",
+        "4i5i"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_draw",
+      "state": {
+        "cached": 0,
+        "full": 0,
+        "turn_value": 0,
+        "repetition": "rep_draw",
+        "sfen": "5k3/9/9/9/9/9/9/9/4K4 w - 12"
+      },
+      "legal_count": 5
+    },
+    {
+      "fixture": "ordinaryfourfold",
+      "ply": 12,
+      "history": [
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a",
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a",
+        "5i4i",
+        "5a4a",
+        "4i5i",
+        "4a5a"
+      ],
+      "independent_terminal": {
+        "kind": "fourfold_draw",
+        "winner": null
+      },
+      "diagnostic_repetition_lookback16": "rep_draw",
+      "state": {
+        "cached": 0,
+        "full": 0,
+        "turn_value": 0,
+        "repetition": "rep_draw",
+        "sfen": "4k4/9/9/9/9/9/9/9/4K4 b - 13"
+      },
+      "legal_count": 5
+    },
+    {
+      "fixture": "perpetualBlackchecker",
+      "ply": 0,
+      "history": [],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_none",
+      "state": {
+        "cached": 90,
+        "full": 90,
+        "turn_value": -90,
+        "repetition": "rep_none",
+        "sfen": "4k4/9/4R4/9/9/9/9/9/8K w - 1"
+      },
+      "legal_count": 4
+    },
+    {
+      "fixture": "perpetualBlackchecker",
+      "ply": 1,
+      "history": [
+        "5a4a"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_none",
+      "state": {
+        "cached": 90,
+        "full": 90,
+        "turn_value": 90,
+        "repetition": "rep_none",
+        "sfen": "5k3/9/4R4/9/9/9/9/9/8K b - 2"
+      },
+      "legal_count": 35
+    },
+    {
+      "fixture": "perpetualBlackchecker",
+      "ply": 2,
+      "history": [
+        "5a4a",
+        "5c4c"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_none",
+      "state": {
+        "cached": 90,
+        "full": 90,
+        "turn_value": -90,
+        "repetition": "rep_none",
+        "sfen": "5k3/9/5R3/9/9/9/9/9/8K w - 3"
+      },
+      "legal_count": 4
+    },
+    {
+      "fixture": "perpetualBlackchecker",
+      "ply": 3,
+      "history": [
+        "5a4a",
+        "5c4c",
+        "4a5a"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_none",
+      "state": {
+        "cached": 90,
+        "full": 90,
+        "turn_value": 90,
+        "repetition": "rep_none",
+        "sfen": "4k4/9/5R3/9/9/9/9/9/8K b - 4"
+      },
+      "legal_count": 35
+    },
+    {
+      "fixture": "perpetualBlackchecker",
+      "ply": 4,
+      "history": [
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_win",
+      "state": {
+        "cached": 90,
+        "full": 90,
+        "turn_value": -90,
+        "repetition": "rep_win",
+        "sfen": "4k4/9/4R4/9/9/9/9/9/8K w - 5"
+      },
+      "legal_count": 4
+    },
+    {
+      "fixture": "perpetualBlackchecker",
+      "ply": 5,
+      "history": [
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c",
+        "5a4a"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_lose",
+      "state": {
+        "cached": 90,
+        "full": 90,
+        "turn_value": 90,
+        "repetition": "rep_lose",
+        "sfen": "5k3/9/4R4/9/9/9/9/9/8K b - 6"
+      },
+      "legal_count": 35
+    },
+    {
+      "fixture": "perpetualBlackchecker",
+      "ply": 6,
+      "history": [
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c",
+        "5a4a",
+        "5c4c"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_win",
+      "state": {
+        "cached": 90,
+        "full": 90,
+        "turn_value": -90,
+        "repetition": "rep_win",
+        "sfen": "5k3/9/5R3/9/9/9/9/9/8K w - 7"
+      },
+      "legal_count": 4
+    },
+    {
+      "fixture": "perpetualBlackchecker",
+      "ply": 7,
+      "history": [
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c",
+        "5a4a",
+        "5c4c",
+        "4a5a"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_lose",
+      "state": {
+        "cached": 90,
+        "full": 90,
+        "turn_value": 90,
+        "repetition": "rep_lose",
+        "sfen": "4k4/9/5R3/9/9/9/9/9/8K b - 8"
+      },
+      "legal_count": 35
+    },
+    {
+      "fixture": "perpetualBlackchecker",
+      "ply": 8,
+      "history": [
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c",
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_win",
+      "state": {
+        "cached": 90,
+        "full": 90,
+        "turn_value": -90,
+        "repetition": "rep_win",
+        "sfen": "4k4/9/4R4/9/9/9/9/9/8K w - 9"
+      },
+      "legal_count": 4
+    },
+    {
+      "fixture": "perpetualBlackchecker",
+      "ply": 9,
+      "history": [
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c",
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c",
+        "5a4a"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_lose",
+      "state": {
+        "cached": 90,
+        "full": 90,
+        "turn_value": 90,
+        "repetition": "rep_lose",
+        "sfen": "5k3/9/4R4/9/9/9/9/9/8K b - 10"
+      },
+      "legal_count": 35
+    },
+    {
+      "fixture": "perpetualBlackchecker",
+      "ply": 10,
+      "history": [
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c",
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c",
+        "5a4a",
+        "5c4c"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_win",
+      "state": {
+        "cached": 90,
+        "full": 90,
+        "turn_value": -90,
+        "repetition": "rep_win",
+        "sfen": "5k3/9/5R3/9/9/9/9/9/8K w - 11"
+      },
+      "legal_count": 4
+    },
+    {
+      "fixture": "perpetualBlackchecker",
+      "ply": 11,
+      "history": [
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c",
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c",
+        "5a4a",
+        "5c4c",
+        "4a5a"
+      ],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_lose",
+      "state": {
+        "cached": 90,
+        "full": 90,
+        "turn_value": 90,
+        "repetition": "rep_lose",
+        "sfen": "4k4/9/5R3/9/9/9/9/9/8K b - 12"
+      },
+      "legal_count": 35
+    },
+    {
+      "fixture": "perpetualBlackchecker",
+      "ply": 12,
+      "history": [
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c",
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c",
+        "5a4a",
+        "5c4c",
+        "4a5a",
+        "4c5c"
+      ],
+      "independent_terminal": {
+        "kind": "perpetual_check_loss",
+        "winner": 1
+      },
+      "diagnostic_repetition_lookback16": "rep_win",
+      "state": {
+        "cached": 90,
+        "full": 90,
+        "turn_value": -90,
+        "repetition": "rep_win",
+        "sfen": "4k4/9/4R4/9/9/9/9/9/8K w - 13"
+      },
+      "legal_count": 4
+    },
+    {
+      "fixture": "sourcecuratedmate",
+      "ply": 0,
+      "history": [],
+      "independent_terminal": null,
+      "diagnostic_repetition_lookback16": "rep_none",
+      "state": {
+        "cached": 180,
+        "full": 180,
+        "turn_value": 180,
+        "repetition": "rep_none",
+        "sfen": "ln1ks1rnl/1+B1sg4/3p2p1b/p1p2p1pp/1P1P5/PpR1p1PPP/2N1PP1S1/4G3L/L1SKG2N1 b GP 65"
+      },
+      "legal_count": 91
+    },
+    {
+      "fixture": "sourcecuratedmate",
+      "ply": 1,
+      "history": [
+        "G*7b"
+      ],
+      "independent_terminal": {
+        "kind": "checkmate",
+        "winner": 0
+      },
+      "diagnostic_repetition_lookback16": "rep_none",
+      "state": {
+        "cached": 180,
+        "full": 180,
+        "turn_value": -180,
+        "repetition": "rep_none",
+        "sfen": "ln1ks1rnl/1+BGsg4/3p2p1b/p1p2p1pp/1P1P5/PpR1p1PPP/2N1PP1S1/4G3L/L1SKG2N1 w P 66"
+      },
+      "legal_count": 0
+    }
+  ],
+  "scope": "Actual goal usesexactfourfoldfullhistory+continuouschecker loss, not diagnostic defaultlookback16 repetition enum. Engine andPython legalsets agree; curatedSFEN hasunknownpre-SFENhistory andisnotnewindependentreachablecertificate."
+}

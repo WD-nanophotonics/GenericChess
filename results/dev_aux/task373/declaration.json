@@ -1,0 +1,258 @@
+{
+  "known_true_mate_seed": {
+    "initial_sfen": "ln1ks1rnl/1+B1sg4/3p2p1b/p1p2p1pp/1P1P5/PpR1p1PPP/2N1PP1S1/4G3L/L1SKG2N1 b GP 65",
+    "history": [
+      "G*7b"
+    ],
+    "terminal_sfen": "ln1ks1rnl/1+BGsg4/3p2p1b/p1p2p1pp/1P1P5/PpR1p1PPP/2N1PP1S1/4G3L/L1SKG2N1 w P 66",
+    "source": "ownfixedinheritedgeneric_chess/learning/shogi_certification.py curatedcheckmate; entirepre-SFENhistory unavailable"
+  },
+  "roots": [
+    {
+      "phase": "near_seed_diagnostic",
+      "family": "curated_seed_family0",
+      "index": 0,
+      "seed": 2026102572,
+      "initial_sfen": "ln1ks1rnl/1+B1sg4/3p2p1b/p1p2p1pp/1P1P5/PpR1p1PPP/2N1PP1S1/4G3L/L1SKG2N1 b GP 65",
+      "history": [
+        "G*2h",
+        "6b5c",
+        "P*7b",
+        "5b6b",
+        "5h6h",
+        "8f8g"
+      ],
+      "expected_sfen": "ln1ks1rnl/1+BPg5/3ps1p1b/p1p2p1pp/1P1P5/P1R1p1PPP/1pN1PP1S1/3G3GL/L1SKG2N1 b - 71",
+      "generation": "sixlegalstepsfromknownmatepredecessor"
+    },
+    {
+      "phase": "near_seed_diagnostic",
+      "family": "curated_seed_family0",
+      "index": 1,
+      "seed": 2026102573,
+      "initial_sfen": "ln1ks1rnl/1+B1sg4/3p2p1b/p1p2p1pp/1P1P5/PpR1p1PPP/2N1PP1S1/4G3L/L1SKG2N1 b GP 65",
+      "history": [
+        "8b9b",
+        "3a4a",
+        "G*4b",
+        "6b7a",
+        "4g4f",
+        "5a4b"
+      ],
+      "expected_sfen": "lnsk1r1nl/+B3gs3/3p2p1b/p1p2p1pp/1P1P5/PpR1pPPPP/2N1P2S1/4G3L/L1SKG2N1 b Pg 71",
+      "generation": "sixlegalstepsfromknownmatepredecessor"
+    },
+    {
+      "phase": "near_seed_diagnostic",
+      "family": "curated_seed_family0",
+      "index": 2,
+      "seed": 2026102574,
+      "initial_sfen": "ln1ks1rnl/1+B1sg4/3p2p1b/p1p2p1pp/1P1P5/PpR1p1PPP/2N1PP1S1/4G3L/L1SKG2N1 b GP 65",
+      "history": [
+        "G*2e",
+        "9a9b",
+        "8b1i",
+        "6c6d",
+        "7i8h",
+        "5b6c"
+      ],
+      "expected_sfen": "1n1ks1rnl/l2s5/3g2p1b/p1pp1p1pp/1P1P3G1/PpR1p1PPP/2N1PP1S1/1S2G3L/L2KG2N+B b P 71",
+      "generation": "sixlegalstepsfromknownmatepredecessor"
+    },
+    {
+      "phase": "near_seed_diagnostic",
+      "family": "curated_seed_family0",
+      "index": 3,
+      "seed": 2026102575,
+      "initial_sfen": "ln1ks1rnl/1+B1sg4/3p2p1b/p1p2p1pp/1P1P5/PpR1p1PPP/2N1PP1S1/4G3L/L1SKG2N1 b GP 65",
+      "history": [
+        "G*4f",
+        "1d1e",
+        "7i7h",
+        "6b7a",
+        "P*7b",
+        "6c6d"
+      ],
+      "expected_sfen": "lnsks1rnl/1+BP1g4/6p1b/p1pp1p1p1/1P1P4p/PpR1pGPPP/2N1PP1S1/2S1G3L/L2KG2N1 b - 71",
+      "generation": "sixlegalstepsfromknownmatepredecessor"
+    },
+    {
+      "phase": "near_seed_diagnostic",
+      "family": "curated_seed_family0",
+      "index": 4,
+      "seed": 2026102576,
+      "initial_sfen": "ln1ks1rnl/1+B1sg4/3p2p1b/p1p2p1pp/1P1P5/PpR1p1PPP/2N1PP1S1/4G3L/L1SKG2N1 b GP 65",
+      "history": [
+        "G*1e",
+        "9d9e",
+        "8b7c",
+        "8a7c",
+        "7i7h",
+        "B*2c"
+      ],
+      "expected_sfen": "l2ks1rnl/3sg4/2np2pbb/2p2p1pp/pP1P4G/PpR1p1PPP/2N1PP1S1/2S1G3L/L2KG2N1 b P 71",
+      "generation": "sixlegalstepsfromknownmatepredecessor"
+    },
+    {
+      "phase": "near_seed_diagnostic",
+      "family": "curated_seed_family0",
+      "index": 5,
+      "seed": 2026102577,
+      "initial_sfen": "ln1ks1rnl/1+B1sg4/3p2p1b/p1p2p1pp/1P1P5/PpR1p1PPP/2N1PP1S1/4G3L/L1SKG2N1 b GP 65",
+      "history": [
+        "G*2h",
+        "3a3b",
+        "8b8a",
+        "7d7e",
+        "9i9h",
+        "4d4e"
+      ],
+      "expected_sfen": "l+B1ks2nl/3sg1r2/3p2p1b/p6pp/1PpP1p3/PpR1p1PPP/2N1PP1S1/L3G2GL/2SKG2N1 b NP 71",
+      "generation": "sixlegalstepsfromknownmatepredecessor"
+    },
+    {
+      "phase": "near_seed_diagnostic",
+      "family": "curated_seed_family0",
+      "index": 6,
+      "seed": 2026102578,
+      "initial_sfen": "ln1ks1rnl/1+B1sg4/3p2p1b/p1p2p1pp/1P1P5/PpR1p1PPP/2N1PP1S1/4G3L/L1SKG2N1 b GP 65",
+      "history": [
+        "G*6f",
+        "6b7c",
+        "7f7e",
+        "5f5g+",
+        "9i9g",
+        "P*5e"
+      ],
+      "expected_sfen": "ln1ks1rnl/1+B2g4/2sp2p1b/p1p2p1pp/1PRPp4/Pp1G2PPP/L1N1+pP1S1/4G3L/2SKG2N1 b P 71",
+      "generation": "sixlegalstepsfromknownmatepredecessor"
+    },
+    {
+      "phase": "near_seed_diagnostic",
+      "family": "curated_seed_family0",
+      "index": 7,
+      "seed": 2026102579,
+      "initial_sfen": "ln1ks1rnl/1+B1sg4/3p2p1b/p1p2p1pp/1P1P5/PpR1p1PPP/2N1PP1S1/4G3L/L1SKG2N1 b GP 65",
+      "history": [
+        "G*2b",
+        "3c3d",
+        "4g4f",
+        "3a3c",
+        "6i6h",
+        "9d9e"
+      ],
+      "expected_sfen": "ln1ks2nl/1+B1sg2G1/3p2r1b/2p2pppp/pP1P5/PpR1pPPPP/2N1P2S1/3KG3L/L1S1G2N1 b P 71",
+      "generation": "sixlegalstepsfromknownmatepredecessor"
+    }
+  ],
+  "generation_paths": [
+    {
+      "seed": 2026102572,
+      "all_random_history": [
+        "G*2h",
+        "6b5c",
+        "P*7b",
+        "5b6b",
+        "5h6h",
+        "8f8g"
+      ],
+      "random_terminal": null,
+      "selected_prefix_length": 6
+    },
+    {
+      "seed": 2026102573,
+      "all_random_history": [
+        "8b9b",
+        "3a4a",
+        "G*4b",
+        "6b7a",
+        "4g4f",
+        "5a4b"
+      ],
+      "random_terminal": null,
+      "selected_prefix_length": 6
+    },
+    {
+      "seed": 2026102574,
+      "all_random_history": [
+        "G*2e",
+        "9a9b",
+        "8b1i",
+        "6c6d",
+        "7i8h",
+        "5b6c"
+      ],
+      "random_terminal": null,
+      "selected_prefix_length": 6
+    },
+    {
+      "seed": 2026102575,
+      "all_random_history": [
+        "G*4f",
+        "1d1e",
+        "7i7h",
+        "6b7a",
+        "P*7b",
+        "6c6d"
+      ],
+      "random_terminal": null,
+      "selected_prefix_length": 6
+    },
+    {
+      "seed": 2026102576,
+      "all_random_history": [
+        "G*1e",
+        "9d9e",
+        "8b7c",
+        "8a7c",
+        "7i7h",
+        "B*2c"
+      ],
+      "random_terminal": null,
+      "selected_prefix_length": 6
+    },
+    {
+      "seed": 2026102577,
+      "all_random_history": [
+        "G*2h",
+        "3a3b",
+        "8b8a",
+        "7d7e",
+        "9i9h",
+        "4d4e"
+      ],
+      "random_terminal": null,
+      "selected_prefix_length": 6
+    },
+    {
+      "seed": 2026102578,
+      "all_random_history": [
+        "G*6f",
+        "6b7c",
+        "7f7e",
+        "5f5g+",
+        "9i9g",
+        "P*5e"
+      ],
+      "random_terminal": null,
+      "selected_prefix_length": 6
+    },
+    {
+      "seed": 2026102579,
+      "all_random_history": [
+        "G*2b",
+        "3c3d",
+        "4g4f",
+        "3a3c",
+        "6i6h",
+        "9d9e"
+      ],
+      "random_terminal": null,
+      "selected_prefix_length": 6
+    }
+  ],
+  "selection": "fixed8seeds/alllegaluniform6steps, no price/human/tactical screening; ifterminal rollbackpredeterminedrandom1/2/4 preservingactuallegalhistory, no replacement",
+  "scope": "single seed familyallkeptdiagnostic; no siblingtrain/validation split, no independentholdout/standard-startreachabilityclaim; unknownpre-SFENrepetitionexcluded",
+  "execution": "all original2profiles+allfrozen370endpoints unique prices, bothcolors, fixedunit cold1024 cap24/goal364; runonlyafter370ends toavoidextra searchworkers; no training/reselectonthis panel",
+  "hypothesis": "highertrue-terminalrate atlowerper-outcome cost may still havezero price discrimination ifall prices solve same easy seeds"
+}

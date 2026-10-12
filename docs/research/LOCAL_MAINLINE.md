@@ -1,23 +1,18 @@
-## DEV_AUX current scope2026-10-12 segment24
+## DEV_AUX current scope2026-10-12 segment25
 
-Science OPEN; sidemission only; recoveredentry/90minheartbeat ACTIVE; no seriousblocker.
-1556newcompletedshortgames37196newgo; gameproducers656.424s, notAgentduration.
-Quantity/mate capped24/coldFairy1024 fixedunit8trainroots/bothcolors:
-3381008newgames23983go327.282s/288cachehits; actual3/2/4rounds max4.
-All3postfrozenhumanMSEcloser butratiosincoherent; mate32 dominates16cells.
-344allfrozen96devcases at1024/8192 and96NativeD3 resourcecurve:
-unitpositive,semanticmixedsmall,703lownegative/high+Nativepositive; noadoption.
-343all2198Nativequeries fullvalue/argmax/PV/history/2nddecoderSHA pass98.219s.
-RootTD35096games2268go40.36s;351allbackwardupdates pass0boundhits.
-35396newfixedendpointgames2260go32.36s+96exactreuses; human2worse1slightlycloser,
-train/developmentmixed.356saturation146/370semantic,74/383703,unit0/382;
-rootcountdifferencegradient distinctfrom captures; no universalTDfailure.
-346319985finiteleafpaths;347/348all48basequeries+2016directionchecks pass;
-unit/learnedunit33PVaxis219mixedmismatches; otherfourprofilesnone finitepanel.
-349officialYaneura c1b80eaa material1/fourmutabletables/board+hand sourcequalified
-butnoruntimepriceoption; NOenginebuild/Shogisearch/learning execution claimed.
-Next355prepared: ownmaterial1build/readback; same96episodePVcritic; cutoffexchange.
-ReportSEGMENT_20261012_24.md/332..356; ownbinaries unchanged, PRIMARY130readonly.
+Science OPEN; sidemission only; actualYaneuraMaterial1 entry and90minheartbeat ACTIVE.
+Fixedc1b80eaa board/hand/promotedprice tables +candidateboardSEE/LVA qualified;
+SEE retainsomittedhand/recapturepromotion approximation, fixedsearchmargins.
+Coldready keepalive repair actualsame384go behaviour,84.922→20.077s gamewall.
+370760newgames18154go867.719s,2starts/max2rounds; endpointsfrozen.
+Bothtrainingproxy gains; both1024/8192development meanloss, sourceprior errorworse.
+373onecuratedfamily64games16realends56.547s, mixedgain/notvalidation.
+375/381independentcshogi/literalSFEN all938games22166journalgo/416105PVmoves pass.
+37697post-fit reloads/options/1261stateprobes pass; not fabricatedpastacks.
+379frozen96RootTD/1135queries PVcritic all3same-data residualsworse;0newfits/go.
+382startedprepared45actualmate histories/fivefamilies15legalrollbackroots2/6/10;
+nextALLfixedinitial/endpoint diagnostics, noexposedseedfit/siblingholdout.
+ReportSEGMENT_20261012_25.md,357..383; primary94aea9 readonly, no defaults/UI changes.
 
 # Current local research mainline
 
