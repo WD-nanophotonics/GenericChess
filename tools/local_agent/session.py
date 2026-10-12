@@ -8,6 +8,7 @@ from .common import STATE, LocalFlowError, read_json, write_json
 
 HARD_REASONS = {'user_stop', 'user_decision', 'tool_limit', 'quota_limit',
                 'runtime_limit', 'scientific_complete'}
+MAINLINE = STATE.parent / 'docs/research/LOCAL_MAINLINE.md'
 
 
 def now():
@@ -109,6 +110,8 @@ def finish(reason, evidence, alternatives=()):
         raise LocalFlowError('stop takes precedence')
     if reason in {'user_decision', 'runtime_limit'}:
         _validate_block_report(reason, evidence, current)
+    if reason == 'scientific_complete':
+        _validate_scientific_completion(evidence, current)
     ended = now()
     elapsed = (ended-datetime.fromisoformat(current['started_at'])).total_seconds()/60
     if elapsed < 0:
@@ -170,3 +173,25 @@ def _validate_block_report(reason, evidence, current):
                                          'resource_exhaustion'}
           or report.get('actual_runtime_exhausted') is not True):
         raise LocalFlowError('actual current runtime exhaustion required; launch failure is not a runtime limit')
+
+
+def _validate_scientific_completion(evidence, current):
+    """Retain genuine early completion, without accepting a local milestone."""
+    if not current['research_stage_count']:
+        raise LocalFlowError('scientific completion requires actual research evidence')
+    path = Path(evidence)
+    if not path.is_absolute():
+        path = STATE.parent / path
+    try:
+        report = read_json(path)
+        mainline = MAINLINE.read_text(encoding='utf-8')
+    except (OSError, ValueError) as exc:
+        raise LocalFlowError('whole current objective completion record required') from exc
+    if (report.get('session_id') != current['id']
+            or report.get('scope') != 'whole_current_objective'
+            or report.get('remaining_work') != []
+            or not all(isinstance(report.get(key), str) and report[key].strip()
+                       for key in ('conclusion', 'evidence_reference'))):
+        raise LocalFlowError('whole current objective completion record required; a local milestone is insufficient')
+    if 'Science is COMPLETE.' not in mainline or 'Science is OPEN.' in mainline:
+        raise LocalFlowError('current mainline remains open; scientific_complete forbidden')

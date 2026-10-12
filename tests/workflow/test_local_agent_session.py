@@ -19,6 +19,8 @@ Evidence: docs/research/LOCAL_MAINLINE.md
 @pytest.fixture
 def workspace(tmp_path, monkeypatch):
     monkeypatch.setattr(session, 'STATE', tmp_path)
+    monkeypatch.setattr(session, 'MAINLINE', tmp_path/'mainline.md')
+    session.MAINLINE.write_text('Science is OPEN.', encoding='utf-8')
     (tmp_path/'NEXT_WORK.md').write_text(MEMO, encoding='utf-8')
     (tmp_path/'rollout.json').write_text(json.dumps({'thread_id': 'same-chat'}))
     moment = [datetime(2026, 10, 4, tzinfo=timezone.utc)]
@@ -182,6 +184,47 @@ def test_resumed_environment_cannot_reuse_old_runtime_exhaustion(workspace):
     assert resumed['id'] == first['id'] and resumed['started_at'] == first['started_at']
     with pytest.raises(LocalFlowError, match='current diagnosed'):
         session.finish('runtime_limit', str(target))
+
+
+def test_scientific_label_cannot_end_zero_research_segment(workspace):
+    session.start()
+    with pytest.raises(LocalFlowError, match='actual research'):
+        session.finish('scientific_complete', 'one local experiment done')
+    assert session.status()['state'] == 'active'
+
+
+def test_open_mainline_cannot_be_closed_by_completion_label(workspace):
+    path, _ = workspace
+    current = session.start()
+    session.checkpoint('bounded question', 'local result', 'report', 'more research')
+    target = path/'completion.json'
+    target.write_text(json.dumps(dict(session_id=current['id'],
+        scope='whole_current_objective', remaining_work=[],
+        conclusion='claimed completion', evidence_reference='result')), encoding='utf-8')
+    with pytest.raises(LocalFlowError, match='remains open'):
+        session.finish('scientific_complete', str(target))
+    assert session.status()['state'] == 'active'
+
+
+def test_local_milestone_rejected_but_real_whole_completion_can_end_early(workspace):
+    path, _ = workspace
+    current = session.start()
+    session.checkpoint('whole objective', 'objective evidence examined', 'report', 'deliver')
+    session.MAINLINE.write_text('Science is COMPLETE.', encoding='utf-8')
+    target = path/'completion.json'
+    report = dict(session_id=current['id'], scope='local_milestone', remaining_work=[],
+                  conclusion='one check passed', evidence_reference='report')
+    target.write_text(json.dumps(report), encoding='utf-8')
+    with pytest.raises(LocalFlowError, match='local milestone'):
+        session.finish('scientific_complete', str(target))
+    report.update(scope='whole_current_objective', remaining_work=['unfinished research'])
+    target.write_text(json.dumps(report), encoding='utf-8')
+    with pytest.raises(LocalFlowError, match='whole current objective'):
+        session.finish('scientific_complete', str(target))
+    report['remaining_work'] = []
+    target.write_text(json.dumps(report), encoding='utf-8')
+    result = session.finish('scientific_complete', str(target))
+    assert result['state'] == 'ended' and not result['duration_gate_passed']
 
 
 def test_missing_memo_must_be_rebuilt_before_start(workspace):

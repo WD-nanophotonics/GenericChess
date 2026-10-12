@@ -813,3 +813,12 @@ Raw Slack/account/user records stay private. Failures and remediation are in
 research evidence; neither restored progress nor tests erase earlier handling
 failures. Pending: small unfamiliar-rule ordering transfer and an actual
 full9x9 Shogi mature-entry remedy under existing permission/cost rules.
+
+After the67.642minute research finish, Dot independently read31a9074e session
+and test sources and identified a remaining scientific_complete text-only exit.
+PRIMARY adopted that concrete finding in a bounded follow-on correction: actual
+research, current whole-objective record, no remaining work and explicitly
+COMPLETE current mainline are required. Genuine user-authorized early scientific
+completion remains possible; a blanket60minute completion gate is not adopted.
+Three added regressions pass with the31 session tests; Dot did not run tests.
+No research session clock/result is retroactively changed by this correction.

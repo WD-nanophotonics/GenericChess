@@ -468,3 +468,11 @@ Primary had recorded AppControl4551 without making the SAC diagnosis/remedy
 clear: that was inadequate handling and reporting, not a scientific limitation.
 Microsoft documents these state values and enforcement events at
 https://learn.microsoft.com/en-us/windows/apps/develop/smart-app-control/test-your-app-with-smart-app-control .
+
+Scientific_complete also requires actual research and a JSON record bound to
+this session: scope=whole_current_objective, remaining_work=[], conclusion and
+evidence_reference. Current LOCAL_MAINLINE must explicitly say Science is
+COMPLETE, without Science is OPEN. A single result/local milestone is insufficient.
+This preserves the user's genuine evidence-supported early-completion exception;
+it does not impose idle waiting on completed science or on real stop/forced limits.
+The check cannot authenticate evidence truth; Agent review still owns that duty.
