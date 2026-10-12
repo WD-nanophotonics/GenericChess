@@ -63,6 +63,15 @@ unexposed validation status. Compare methods under the same resource condition
 or report resource/result curves. No result-driven extension of frozen tests,
 runaway jobs, extra fees/workers or access bypass. See LOCAL_AGENT.md Budget.
 
+User2026-10-12 requires proactive, detailed reporting of serious problems or
+necessary user intervention. Diagnose and resolve what existing authority
+permits. Report the exact failure/evidence, impact, checks and attempted fixes,
+confirmed cause versus uncertainty, and the specific user steps needed. Do not
+wait to be asked. Without that report, do not invoke a hidden block to explain
+non-progress, repeated peripheral preparation or an early exit. Unreported
+inability is a handling/reporting failure, not proof that work can proceed or
+permission to cross a boundary. Never hide failures or claim unverified success.
+
 Work for concrete results: add engineering, proofs or regression checks only for
 an observed defect or a specific serious foreseeable error. Keep current entry
 files concise; move historical detail out of routine reads rather than duplicating

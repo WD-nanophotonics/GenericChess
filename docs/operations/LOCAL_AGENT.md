@@ -432,6 +432,15 @@ unchanged blocked launch or spend a night recording the same failure. Continue
 useful independent work while resolving the actual cause; do not hide the block.
 If user action is necessary, promptly state the exact error, checks already
 performed and the specific next action needed. Fix authorized causes directly.
+For a serious problem or necessary user intervention, report proactively:
+exact error and evidence; affected work/results and current status; checks and
+attempted fixes with outcomes; confirmed cause versus unresolved questions;
+the concrete user steps needed and how recovery will be verified. Say explicitly
+when no user action is needed and continue the authorized repair. Report before
+repeated attempts or another blocked continuation, not only when asked.
+Absent this report, a hidden obstacle cannot excuse lack of progress. Do not
+conceal failure, invent completion or repeat peripheral preparation. Silence
+does not prove the obstacle is solvable or authorize crossing a boundary.
 A runtime_limit/block label is not a default excuse for repeated short exits
 or peripheral preparation; no waiting or microchecks to manufacture duration.
 A changed condition warrants one bounded startup/protocol qualification before

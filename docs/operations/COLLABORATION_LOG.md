@@ -773,3 +773,12 @@ updated, no new workflow layer. AUX reports its four16ply games completed;
 PRIMARY has not independently checked that pilot output yet. Material-learning
 proxy versus human-reference distinction is retained for review, not adopted
 as a new mainline training assignment. Raw thread saved privately before use.
+
+##2026-10-12 bounded reporting-policy clarification
+
+PRIMARY clarified existing AGENTS/manual/AUX instructions: serious problems
+and necessary user intervention require proactive detailed reports with error
+evidence, impact, attempted remedies, uncertainty and specific user steps.
+Authorized fixes proceed directly; unreported blocks do not excuse non-progress.
+This is a bounded policy update, not a research-duration segment or additional
+approval process. Shared with the existing auxiliary chat; no new Agent created.

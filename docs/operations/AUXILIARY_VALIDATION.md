@@ -112,3 +112,8 @@ repeating4551 or declaring the route unavailable indefinitely. Changed system
 conditions permit a bounded qualification; preserve earlier failures. Each Agent
 owns its own recovery and test outputs. Share decision-changing status once,
 without duplicate pilot launches or routine acknowledgement loops.
+
+Serious problems and necessary user intervention require the proactive detailed
+report in LOCAL_AGENT.md: evidence, impact, attempted fixes, uncertainty and
+specific user action. Do not wait for the user to ask or use an unreported
+obstacle to explain non-progress. This applies independently to both Agents.
