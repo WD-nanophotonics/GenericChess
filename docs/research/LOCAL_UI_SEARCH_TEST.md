@@ -27,7 +27,7 @@ The frontend was built from its fixed dependencies. Actual worker submission,
 pause/restart cancellation and same current-state commit checks passed on
 Chess/Shogi/hybrid. Real HTTP page/banner/health and all three first moves
 passed; the declared 4x4 hybrid seed42 checkmated on its first move, a genuine
-terminal outcome with no next actions. No screenshot/rendered-browser proof.
+terminal outcome with no next actions. Subsequent actual in-app browser observation and screenshots verify Chess setup,\nAI b1-c3, reload/continue, human e7-e5 and Native reply g1-h3 with three-step\nhistory. An old CoreAI label was observed and corrected only in this local\ntest copy to follow ai.backend; the setup text now declares the profile.\nThis does not extend the rendered check to all Shogi/generated interactions.
 
 Manual checks:
 1. Play Chess PVE as either color; confirm legal AI replies and the explicit

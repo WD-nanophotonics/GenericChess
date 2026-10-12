@@ -95,7 +95,7 @@ installed Native q0/material/maxdepth12 for Chess; declaration-enabled Shogi
 and generated legacy rules retain explicitly labelled Core q4/hard8. It does
 not silently downgrade a q4 request. Six real WebGame submit/cancel/restart
 scenarios pass; a built page, health and three real HTTP PVE first moves pass.
-No rendered-browser interaction or all-rule consumer coverage is claimed.
+A later real in-app browser check additionally verifies Chess setup, reload/continue,\nhuman e7-e5 and the Native reply with three-step history. Old CoreAI labels were\ncorrected in the isolated copy. All-rule browser coverage remains unclaimed.
 
 Resolved integration failures remain local: missing explicit Native max_depth,
 Windows CP1252 stdout, and a check incorrectly demanding next actions after the
