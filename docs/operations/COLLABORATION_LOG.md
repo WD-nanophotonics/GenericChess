@@ -835,3 +835,6 @@ No research session clock/result is retroactively changed by this correction.
 - 本段协作的信息收益是复用辅助源码耦合与Dot推断边界，主Agent专注独立搜索/Native瓶颈修复，避免重复训练。没有单Agent效率对照或完整token/工时统计，不给节省百分比。Dot获得发布后的固定版本研究/协作链接；发送、阅读、意见与测试分开记录，不声称Dot独立跑了新测试。
 
 下一步使用修复后的既有q0消费者与明确q/check需求做有限比较；全q4检查分支仍是独立问题，不能从q0速度或陌生规则两个根推出通用棋力。详情：[PUBLIC_Q_TRANSFER_AND_SHOGI.md](../research/PUBLIC_Q_TRANSFER_AND_SHOGI.md)。
+本段交付后的最新辅助补充已读取：`80b2baea17ee8ad61fc311a32dae4b35b4b09f50`的SEGMENT_20261012_15.md及对应新根全部帖子。DEV_AUX报告7312唯一16ply局，两个限定SEE价格一致性反例112/-188及实验mode2/3修复；固定旧端点192局部署多数负差，未稳定恢复传统棋价。主Agent只核对固定报告/源码耦合边界，没有重跑这些对局、SEE二进制或完整轨迹。Dot明确限定“旧权重换搜索处理”不能判定mode3重新学习成败，并要求允许交换双方停止；辅助报告已采纳，不能把手工算例当独立运行。没有新主辅助冲突或必须唤醒的依赖。该证据与主Native零特征/根窗口修复属于不同实现、不同问题，不互相替代或合并参数。
+
+主实质交付`sandbox975e84498e970ce7f37203a97a9a1cb4e7cd2520`经114相关publisher测试通过，HEAD/tracking/ls-remote完整SHA相同；129成员417846字节的Agent-only归档逐成员验证。新方向咨询按用户规则开全新AGENT_REQUEST根，REQUEST_ID GC-SLACK-20261012-125751-fcf17333，投递1791777503.272759；包含上述固定研究/源码/协作链接，请Dot评估一个关键异议与下一步，不是审批。此时仅证明投递，不声称已经回复或审核。继续沿实际检查打入父历史证据独立判别，不等待回执。
