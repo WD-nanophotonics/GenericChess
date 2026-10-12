@@ -220,3 +220,24 @@ as a collaboration failure. Protect separate checkout files and running computat
 state; act on direct boundary violations or damage. Record relevant measurement
 conditions as interpretation limits without adding coordination gates or automatic
 reruns. This user instruction supersedes earlier CPU-solitude wording.
+
+
+## User update2026-10-12: diagnosed blockers and schedule termination
+
+This applies to every GenericChess Agent, including PRIMARY_SANDBOX and DEV_AUX.
+A blocked Agent must actively diagnose the root cause, assess severity and
+necessary permissions, and solve recoverable technical/entry problems itself.
+An undiagnosed error, missing entry, stale failure, silent advisor or missing
+next idea is not a severe blocker and does not justify ending before60minutes.
+Repeated heartbeat checks of the same limitation, memo edits, mocks and side
+results cannot substitute for fixing the obstacle to the requested experiment.
+Only an evidence-backed serious problem that the Agent cannot solve without
+necessary user intervention permits the blocked ending: first report the concrete
+cause, attempted remedies, indispensable user action and saved state, then pause
+that Agent's existing schedule/heartbeat and consultation. Do not keep recurring
+empty runs, create replacements or auto-resume. Explicit user stops still win.
+The session validator accepting an exception is not evidence that it was justified.
+Each Agent owns its state and schedule; communicate the project-wide rule through
+the authorized channel, never write another checkout. A resolved entry keeps its
+normal research cadence. Preserve historical failures and mark mistaken endings
+as mistakes rather than rewriting them into compliant runs.
