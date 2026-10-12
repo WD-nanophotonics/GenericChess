@@ -4188,6 +4188,8 @@ static PyObject *gc_semantic_spatial_features(PyObject *self, PyObject *args) {
     return out;
 }
 
+static int gc_semantic_canonical_action_compare(const void *left, const void *right);
+
 static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *rules,
                                                         const GCSemanticPosition *position,
                                                         unsigned int depth,
@@ -4218,21 +4220,29 @@ static GCSemanticProbeSearch gc_semantic_probe_negamax(const GCSemanticRules *ru
         gc_semantic_action_buffer_free(&actions);
         return result;
     }
+    /* Packed canonical order makes equal fail-low bounds harmless: a later
+     * candidate can never replace an earlier exact incumbent on a tie. */
+    if (actions.count > 1)
+        qsort(actions.data, actions.count, sizeof(uint64_t),
+              gc_semantic_canonical_action_compare);
     int found = 0;
     int best_score = -GC_SEMANTIC_PROBE_INF;
     for (size_t i = 0; i < actions.count; i++) {
         uint64_t raw = actions.data[i];
         if (raw == 0) continue;
-        GCSemanticPosition work = *position;
-        GCSemanticUndo undo;
-        if (!gc_semantic_runtime_make_trusted(&work, rules, (uint64_t)raw, &undo)) continue;
-        GCSemanticProbeSearch branch = gc_semantic_probe_negamax(rules, &work, depth - 1, -beta, -alpha, profile, ok);
-        if (!*ok) {
-            gc_semantic_runtime_unmake(&work, &undo);
+        GCSemanticPosition work;
+        int make_status = gc_semantic_runtime_make_checked_status(&work, rules, position, (uint64_t)raw);
+        if (make_status < 0) {
+            *ok = 0;
             gc_semantic_action_buffer_free(&actions);
             return result;
         }
-        gc_semantic_runtime_unmake(&work, &undo);
+        if (make_status == 0) continue;
+        GCSemanticProbeSearch branch = gc_semantic_probe_negamax(rules, &work, depth - 1, -beta, -alpha, profile, ok);
+        if (!*ok) {
+            gc_semantic_action_buffer_free(&actions);
+            return result;
+        }
         result.nodes += branch.nodes;
         int score = -branch.score;
         if (!found || score > best_score || (score == best_score && raw < result.best_action)) {
@@ -4295,7 +4305,7 @@ static PyObject *gc_semantic_probe_search(PyObject *self, PyObject *args) {
     if (!ok) {
         if (!PyErr_Occurred()) {
             PyErr_SetString(PyExc_RuntimeError,
-                            "semantic fixed-depth search failed during terminal evaluation");
+                            "semantic fixed-depth search failed during required execution");
         }
         return NULL;
     }

@@ -210,3 +210,19 @@ Final2277 tests pass; eightcombined32s calls givebothroots D5→D6,
 gen2sameaction/Shogichanged, exactold128s D6tuplematch. View-only128s remainsD6
 botharms. Next isolate actual packedcanonical versus UCI/USI lexical comparator
 order andTT/scheduling before a currentNative/specialist interval claim.
+
+Current decision2026-10-13: PACKED_ORDER_AND_FIXED_SEARCH.md repairs fixed/probe
+child-error swallowing and a normal-input nonoptimal canonical action. It uses
+existing full checked child/status, ascending packed order and no unused local
+undo; no newtrusted API or UI/default policy. Final2280 tests pass. FourChess
+D4 same-order finite bridges match complete visited sequences; their finalwarm
+C/specializedPython-replay ratios.575–.907 are end-to-end scoped quantities,
+with asymmetric replay cost and ordinary load. The original lexicalNative
+bridge also does much more physical legality/identity work; lazy/cachedlabel
+controls are private diagnostics. Shogi fixed/persistent matched interval stays
+missing. New1M/32/64 plane retains Gen2 boundary variance and Shogi32 D5→D6;
+both64sD6. One finalGen2 ordering check gives no-explicitD4 versusmin2viewD6,
+not uniform/default adoption. Auxiliarye915 segment24 read-only cheaplearning
+shows conditional proxy gains and mixedTD; no human-price fitting or mainpatch
+acceptance follows. Next choose one actual supported caller/remaining primitive
+cost or matchedpersistent scheduling question, not a new specialist engine.

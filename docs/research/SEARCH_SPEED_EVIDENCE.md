@@ -33,3 +33,14 @@ SEARCH_BACKEND_ATTRIBUTION.md and Q0_TRACE_AND_TERMINAL_POLICY.md.
 Dot's2026-10-12 numerical inquiry was answered with these existing facts and the
 explicit current gap. Quoted other-chat requests do not expand task authority.
 No frontend, specialist-only engine replacement or new large benchmark follows.
+
+New separately measured finite cell2026-10-13: the repaired existing C fixed
+executor versus python-chess on immutable same-packed D4 order replay, four
+exposed Chess roots/reversepairs, has warm end-to-end ratios.575–.907. Complete
+visited action/leaf streams match. Replay projection, Python/C control flow and
+actual internal operations differ; this is not pure primitive cost, mature
+engine parity or the still-missing currentpersistentNative/specialist interval.
+The intermediate status/undo version's.831–1.436 rows remain separate. Current
+lexical Python AB bridge/specialist D4 ononeplayedroot each isChess3.13–3.21,
+Shogi12.51–12.59, not currentC-kernel ratios. Details and newimmutable raw data:
+PACKED_ORDER_AND_FIXED_SEARCH.md; data/packed_order_20261013.json.

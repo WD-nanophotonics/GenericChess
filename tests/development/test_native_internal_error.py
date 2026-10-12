@@ -99,6 +99,53 @@ static PyObject *gc_test_avail_count(PyObject *self, PyObject *args) {
         '    {"test_set_availability_fault",gc_test_set_avail,METH_VARARGS,"Private availability"},\n'
         '    {"test_availability_count",gc_test_avail_count,METH_NOARGS,"Private counters"},\n' + needle
     )
+    # Cover the observed old Boolean trusted path and final direct checked child.
+    # Inject only around that actual consumer, never terminal availability.
+    probe_start = module.index("static GCSemanticProbeSearch gc_semantic_probe_negamax(")
+    probe_end = module.index("static PyObject *gc_semantic_probe_search(", probe_start)
+    probe = module[probe_start:probe_end]
+    trusted_name = ("gc_semantic_runtime_make_trusted_status" if
+                    "gc_semantic_runtime_make_trusted_status(" in probe else
+                    "gc_semantic_runtime_make_trusted")
+    probe = probe.replace(trusted_name + "(", "gc_test_probe_make(")
+    helper = """
+static int gc_test_probe_fault=0;
+static int gc_test_probe_make(GCSemanticPosition *position,
+    const GCSemanticRules *rules, uint64_t action, GCSemanticUndo *undo) {
+    extern int gc_test_key_failure;
+    gc_test_key_failure=gc_test_probe_fault;
+    int result=gc_semantic_runtime_make_trusted(position,rules,action,undo);
+    gc_test_key_failure=0;return result;
+}
+static PyObject *gc_test_set_probe_fault(PyObject *self,PyObject *args) {
+    (void)self;
+    if(!PyArg_ParseTuple(args,"p",&gc_test_probe_fault))return NULL;
+    Py_RETURN_NONE;
+}
+"""
+    if "gc_semantic_runtime_make_checked_status(" in probe:
+        trusted_name = "gc_semantic_runtime_make_checked_status"
+        probe = probe.replace(trusted_name + "(", "gc_test_probe_make(")
+        helper = """
+static int gc_test_probe_fault=0;
+static int gc_test_probe_make(GCSemanticPosition *child,
+    const GCSemanticRules *rules, const GCSemanticPosition *parent, uint64_t action) {
+    extern int gc_test_key_failure;
+    gc_test_key_failure=gc_test_probe_fault;
+    int result=gc_semantic_runtime_make_checked_status(child,rules,parent,action);
+    gc_test_key_failure=0;return result;
+}
+static PyObject *gc_test_set_probe_fault(PyObject *self,PyObject *args) {
+    (void)self;
+    if(!PyArg_ParseTuple(args,"p",&gc_test_probe_fault))return NULL;
+    Py_RETURN_NONE;
+}
+"""
+    else:
+        helper=helper.replace("gc_semantic_runtime_make_trusted(", trusted_name + "(")
+    module=module[:probe_start]+helper+probe+module[probe_end:]
+    module=module.replace(needle,
+        '    {"test_set_probe_fault",gc_test_set_probe_fault,METH_VARARGS,"Private probe fault"},\n'+needle)
     key = (source / "native_semantic_key.c").read_text(encoding="utf-8")
     needle = ("int gc_semantic_position_key_digest(const GCSemanticRules *r, "
               "const GCSemanticPosition *p, char out_hex[65]) {")
@@ -267,3 +314,27 @@ def test_nested_terminal_failure_is_not_completed_stalemate(
     assert (retry.action, retry.score, retry.principal_variation) == (
         cold.action, cold.score, cold.principal_variation)
     assert session.state is before and session._search_witnesses is witnesses
+
+
+def test_fixed_depth_required_child_failure_is_not_empty_result(fault_kernel, monkeypatch):
+    from generic_chess.native.adapter import pack_semantic_search_position
+    from generic_chess.native.semantic import fixed_depth_search, snapshot
+    monkeypatch.setattr(native, "_MODULE", fault_kernel)
+    compiled=compile_ruleset_for_execution(build_western_chess_ruleset())
+    session=GameSession(compiled)
+    for _ in range(2):
+        session.submit(session.legal_actions()[0])
+    rules=compile_native_semantic_rules(compiled)
+    position=pack_semantic_search_position(compiled,rules,session)
+    before=snapshot(rules,position)
+    assert len(session.state.history)==3
+    baseline=fixed_depth_search(rules,position,2)
+    assert baseline['nodes']>1 and baseline['best_action'] is not None
+    fault_kernel.test_set_probe_fault(True)
+    try:
+        with pytest.raises(RuntimeError,match="fixed-depth search failed"):
+            fixed_depth_search(rules,position,2)
+    finally:
+        fault_kernel.test_set_probe_fault(False)
+    assert snapshot(rules,position)==before
+    assert fixed_depth_search(rules,position,2)==baseline

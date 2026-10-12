@@ -80,3 +80,13 @@ claiming identical OOM trajectories. ordering_material_view_trials exposes actua
 attempts (None for older/not-started kernels). Exact decimal key formatting keeps
 canonical bytes; no cache/default/evaluation/UI policy changes. See
 research/MATERIAL_ORDERING_VIEW.md for actual local costs and resource limits.
+
+Fixed/probe backend correction2026-10-13: normal dict shape is unchanged, but
+returned canonical moves now genuinely realize the complete reported value.
+Required child identity failures raise RuntimeError rather than returning an
+apparently completed empty/material result. Direct full checked children retain
+all effects/aux/history/postconditions; no new public trusted API is needed.
+The original Shogi fixed/probe policy gate remains explicit. Persistent Native
+and Core/UI routes are separate; no frontend branch or default was modified.
+Final2280 full regressions and preserved old-fails/new-passes witnesses qualify
+this finite repair. See research/PACKED_ORDER_AND_FIXED_SEARCH.md.

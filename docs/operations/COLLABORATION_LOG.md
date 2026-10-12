@@ -1186,3 +1186,19 @@ Final eight32s composition calls completed: both roots baselineD5→newD6,
 reversed pairs; gen2 keeps its action, Shogi changes. Entire newD6 tuples match
 the old128s completeD6 outputs. This is earlier complete output, not proven
 winning utility. All original32/64/128 records are retained independently.
+
+## 2026-10-13：固定搜索修复、匹配排序与辅助低成本学习
+
+主段从2026-10-12 16:50:35UTC开始，沿用已有单写入者/session；结束时间与实际经过时间由session finish记录，测试/咨询/发布均为检查点。PRIMARY完成八旧根动作/历史语义审计、固定搜索两类实际错误修复、102个独立Chess根值核验、同序D4完整轨迹/物理工作归因、局部checked-child复制简化及两根新1M节点平面。最终源码2280项完整测试通过，两个新增根动作回归在原编译源码均实际失败。科学报告PACKED_ORDER_AND_FIXED_SEARCH.md；不修改用户UI Test、辅助支线或其他项目。
+
+只读辅助固定e915d8bf0d9ec194930a92fc90c21c9fb9a94b63 segment24全文及完整新线程。DEV_AUX独立完成1556短局/37196go；数量/mate坐标试验1008局327.282秒，三既有初值端点描述上均更接近人类参考，但向量仍不一致且部署依预算变化。96局ROOT-TD40.360秒结果混合，独立向后回报和完整D3梯度条件检查属辅助证据。主未复跑其棋局、未用旧f1ea正常结果验收自身修复、未替它改状态或启动新会话。其后Slack报告MaterialLv1资格280状态/10go尚无本主已核验的新发布源码，明确为辅助报告；不能把上份“未执行Yaneura”的历史截止与新声明混为矛盾。
+
+PRIMARY新开AGENT_REQUEST询问同序薄桥的关键混杂；Dot完整回复已保存/对账/明确采纳。Dot独立看过94aea9旧trusted源码，未执行新补丁/2280测试。采纳重放非对称开销、100%完整路径覆盖、同递归节点不等于同物理工作以及短时间噪声限制。辅助回复的固定对手、数量/真胜负分离和已有轨迹升变敏感性作为解释限制吸收，不从别处用户指示转述扩大本主权限。
+
+主新物理计数纠正了可能的归因：Python Native桥的完整前沿试走、重复make/摘要明显更多，不能全归于语言；不冒称辅助发现。最终直接完整checked-child替代局部undo，保留全部验证/历史/错误，不造新错误框架。正常并发属用户允许；未要求其他项目或辅助停算、未做身份挑战/例行回执。自己的pytest和有界实验有已知重叠，只限制时间解释，未观察越界写入或直接破坏状态。
+
+效率收益为实际分工和复用：主搜索接口/正确性/归因，辅助独立学习，复用已完成Core oracle和固定报告，未重复训练。无单Agent对照或完整token/工时，不能给节约比例。主自己的入口、换行、临时声明、父子映射、pytest根路径和UTF-8读入错误均记录/修正；无未报告系统阻塞或需用户操作。辅助可选说明替换的自动审核拒绝已由它保留旧文件解决，非主阻塞。未发现本段需用户裁决的职责/合并冲突。
+
+未解决：persistentNative/专用完全匹配区间、完整陌生域推广与学习目标辨识仍开放。单根D4→D6不授权统一min2/UI策略。下一步只选一个实际消费者成本/匹配条件；辅助沿自己的资格/轨迹诊断，不自动交付新工单。主发布后给Dot固定报告/本记录链接，投递不冒称它已审阅新版本。
+
+辅助固定报告：https://github.com/WD-nanophotonics/GenericChess/blob/e915d8bf0d9ec194930a92fc90c21c9fb9a94b63/results/dev_aux/SEGMENT_20261012_24.md
