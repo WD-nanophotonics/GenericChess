@@ -1,0 +1,7 @@
+import json,math,hashlib,time
+from pathlib import Path
+R=Path.cwd();O=R/'results/dev_aux/task398';O.mkdir(exist_ok=True);t0=time.monotonic();p=R/'results/dev_aux/task387/endpoints.json';e=json.loads(p.read_text(encoding='utf-8'));assert e['frozen_before_development'];prior=json.loads((R/'results/dev_aux/task378/result.json').read_text(encoding='utf-8'))['source_prior_reference'];ref=prior['prices'];axes=[2,3,4,5,6,7,9,10,11,12,13,14];rows=[]
+for ep in e['endpoints']:
+ metric=lambda w:sum(math.log(w[a]/ref[a])**2 for a in axes)/12
+ rows.append(dict(method=ep['method'],family=ep['family'],initial=ep['initial'],endpoint=ep['endpoint'],initial_log_ratio_MSE=metric(ep['initial']),endpoint_log_ratio_MSE=metric(ep['endpoint']),delta_log_ratio_MSE=metric(ep['endpoint'])-metric(ep['initial'])))
+r=dict(scope='DescriptiveALLfrozenendpoints only; officialsourceApery materialprior not independenthumanconsensus/validation, never fit/gain/proposal/stop/modelselection',reference_source=prior['source'],reference_prices=ref,endpoints_sha256=hashlib.sha256(p.read_bytes()).hexdigest(),rows=rows,seconds=time.monotonic()-t0,new_go=0);(O/'result.json').write_text(json.dumps(r,indent=2),encoding='utf-8');print(json.dumps(r))

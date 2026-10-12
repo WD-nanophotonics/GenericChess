@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "same_games": 16,
+  "same_go": 384,
+  "independent_audit": {
+    "task": 396,
+    "games": 16,
+    "actual_go": 384,
+    "all_PV_move_checks": 6865,
+    "game_sha256": "b76f66fcf312467308c3241280e76006ed255f79e16062ba16a194a8174706aa",
+    "query_sha256": "fe4ad05bb1a461dfc8de5f8054d29232159e1ee6b0ed8bb3b3cc0959ddf55edc"
+  },
+  "component_gamewall_fractions": {
+    "ready": 0.779907298357912,
+    "controller_validation_and_gamejournal_residual": 0.15509827406395488,
+    "go": 0.03806416638740646,
+    "fsync": 0.020522009614298387,
+    "position_state": 0.004786778763559352,
+    "flush": 0.0007242891988477124,
+    "serialize": 0.0007173306613130926,
+    "write": 6.136620230975403e-05
+  },
+  "dominant": "ready",
+  "seconds": 0.0940000000409782,
+  "scope": "samecompleteactions/state/score/bound/depth/nodes/PV/hashfull, onlyelapsedtime/NPS excluded; tracedcostnotnoisefreegeneralperformance"
+}

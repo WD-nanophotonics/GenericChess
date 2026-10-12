@@ -1,0 +1,185 @@
+{
+  "status": "PASS",
+  "auxsee_calls": 8,
+  "new_go": 0,
+  "seconds": 0.17200000025331974,
+  "rows": [
+    {
+      "case": "real_recorded_capture",
+      "move": "2i1g",
+      "threshold": 89,
+      "actual_board_SEE_pass": true,
+      "expected_board_see": 90,
+      "exact_local_material_value": 135,
+      "local_material_pass": true,
+      "lines": [
+        "info string auxsee 1"
+      ],
+      "scope": "localmaterialvalue notall-defense/minimax orstrength certificate"
+    },
+    {
+      "case": "real_recorded_capture",
+      "move": "2i1g",
+      "threshold": 90,
+      "actual_board_SEE_pass": true,
+      "expected_board_see": 90,
+      "exact_local_material_value": 135,
+      "local_material_pass": true,
+      "lines": [
+        "info string auxsee 1"
+      ],
+      "scope": "localmaterialvalue notall-defense/minimax orstrength certificate"
+    },
+    {
+      "case": "real_recorded_capture",
+      "move": "2i1g",
+      "threshold": 91,
+      "actual_board_SEE_pass": false,
+      "expected_board_see": 90,
+      "exact_local_material_value": 135,
+      "local_material_pass": true,
+      "lines": [
+        "info string auxsee 0"
+      ],
+      "scope": "localmaterialvalue notall-defense/minimax orstrength certificate"
+    },
+    {
+      "case": "local_exchange",
+      "move": "5f5e",
+      "threshold": -74,
+      "actual_board_SEE_pass": true,
+      "expected_board_see": -31,
+      "exact_local_material_value": -225,
+      "local_material_pass": false,
+      "lines": [
+        "info string auxsee 1"
+      ],
+      "scope": "localmaterialvalue notall-defense/minimax orstrength certificate"
+    },
+    {
+      "case": "local_exchange",
+      "move": "5f5e",
+      "threshold": -73,
+      "actual_board_SEE_pass": true,
+      "expected_board_see": -31,
+      "exact_local_material_value": -225,
+      "local_material_pass": false,
+      "lines": [
+        "info string auxsee 1"
+      ],
+      "scope": "localmaterialvalue notall-defense/minimax orstrength certificate"
+    },
+    {
+      "case": "local_exchange",
+      "move": "5f5e",
+      "threshold": -32,
+      "actual_board_SEE_pass": true,
+      "expected_board_see": -31,
+      "exact_local_material_value": -225,
+      "local_material_pass": false,
+      "lines": [
+        "info string auxsee 1"
+      ],
+      "scope": "localmaterialvalue notall-defense/minimax orstrength certificate"
+    },
+    {
+      "case": "local_exchange",
+      "move": "5f5e",
+      "threshold": -31,
+      "actual_board_SEE_pass": true,
+      "expected_board_see": -31,
+      "exact_local_material_value": -225,
+      "local_material_pass": false,
+      "lines": [
+        "info string auxsee 1"
+      ],
+      "scope": "localmaterialvalue notall-defense/minimax orstrength certificate"
+    },
+    {
+      "case": "local_exchange",
+      "move": "5f5e",
+      "threshold": -30,
+      "actual_board_SEE_pass": false,
+      "expected_board_see": -31,
+      "exact_local_material_value": -225,
+      "local_material_pass": false,
+      "lines": [
+        "info string auxsee 0"
+      ],
+      "scope": "localmaterialvalue notall-defense/minimax orstrength certificate"
+    }
+  ],
+  "states": [
+    {
+      "initial_sfen": "lnsgkgsnl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LNSGKGSNL b - 1",
+      "history": [
+        "6i6h",
+        "2c2d",
+        "4g4f",
+        "6a5b",
+        "3i4h",
+        "5a6a",
+        "4h3i",
+        "7c7d",
+        "3i4h",
+        "5c5d",
+        "7i7h",
+        "4a4b",
+        "8g8f",
+        "4b3b",
+        "1i1h",
+        "8b9b",
+        "4i3i",
+        "3c3d",
+        "3i3h",
+        "4c4d",
+        "6h6i",
+        "8c8d",
+        "4h3i",
+        "5b5c",
+        "3i4h",
+        "9b7b",
+        "1g1f",
+        "3a4b",
+        "6i6h",
+        "4b4c",
+        "8h7i",
+        "2b3c",
+        "2g2f",
+        "4c5b",
+        "2h2g",
+        "6c6d",
+        "5i5h",
+        "3b2b",
+        "2f2e",
+        "2b2c",
+        "1f1e",
+        "1c1d",
+        "1e1d",
+        "1a1d",
+        "1h1g",
+        "1d1g+"
+      ],
+      "state": "info string auxstate -135 -135 -135 rep_none lnsk3n1/2r1s4/p3g1bg1/1ppppppp1/7P1/1P3P3/P1PPP1PR+l/2SGKSG2/LNB4N1 b Plp 47",
+      "literal_material": -135
+    },
+    {
+      "initial_sfen": "k8/9/9/4p4/4p4/4+B4/9/9/8K b - 1",
+      "history": [],
+      "state": "info string auxstate -59 -59 -59 rep_none k8/9/9/4p4/4p4/4+B4/9/9/8K b - 1",
+      "literal_material": -59
+    },
+    {
+      "initial_sfen": "k8/9/9/4p4/4p4/4+B4/9/9/8K b - 1",
+      "history": [
+        "5f5e",
+        "5d5e"
+      ],
+      "state": "info string auxstate -284 -284 -284 rep_none k8/9/9/9/4p4/9/9/9/8K b Pb 3",
+      "literal_material": -284
+    }
+  ],
+  "source_sha": "c1b80eaa09fe13d5f12b1599d1ae4d53c224de30",
+  "executable_sha256": "9741bfd2670d015997a4b10f64595b2874e87c299e49e91edced31be6f647843",
+  "scope": "actualexperimentalbinary board-onlySEE threshold mismatch with board+hand evaluation; observedscope limit, no defaultpatch orwrongmoveclaim"
+}

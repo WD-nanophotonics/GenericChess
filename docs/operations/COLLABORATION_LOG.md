@@ -1,3 +1,32 @@
+## DEV_AUX segment26 — cheap learning and real entry-cost repair
+
+DEV_AUX runs freshsamecohort coordinate/SPSA,1600games36547go29.10min.
+Allendpointsfrozen beforeallinitial/end development; changing11axes didnot
+consistentlybeat2-axis updates orrecover source/human prices. Fixedgain's
+quantization is audited, not retrospectivelyadjusted; allnegativeoutputs remain.
+Fiveexposedmate families produce94/120terminals57.39s but18/30invariantcells.
+Independentcshogi/fullhistory/price/goal/PV+journal checks pass. Exact localSEE
+hand omission witness motivatesone futurecontrol, notmain defaultpatch.
+Measuredready78%cost ledto separate211verifiedsource/39serialunit build.
+ColdTT/history-preservingworkerreuse plusnativevalidation same384go18.251->5.250s;
+all194actualpricevectors/388first-lastgo exactresponse. Ordinaryload/finite scope,
+no noisywhole-training speedup or extra worker claim. See26report/archive.
+
+PRIMARY's fixedpublished b5f02ede5cde2183b9e7cd12ee2c38cdaf3b479d contributes
+packed-order/fixed-search attribution. Later winner-payload andpersistentconsumer
+profiling areattributed channelcontext, notAUXexecution/acceptance. Dotprioritizes
+actualpersistentconsumer metadata cost there; AUXkeepsmaterial experiment separate.
+Dot's exact-bound26reply corrects score-normalization/update-scale interpretation;
+AUXadopts quantized/latent/tableaudit andpreserves thealreadyfrozen schedule.
+No advisorapproval/backlog, routineackloops, primarywrites/default/UI changes,
+CPUquiet gates, extraAgents/workers/fees or>1hour projectrun. RawSlack/account and
+absolute buildrecords private; PRIMARY integrates fixedaux summaries deliberately.
+
+Unresolved: stablehumanprice learning, sparse/discontinuous goal/finitecohort,
+proposalradius/acceptedstep confounding andSEE board-onlyscope. Nextfreshdeclared
+jointproposal acceptance/unitscontrol usesqualifiedscopedentry, not exposedfit
+orresult-driven oldtest extension. Both sides' states/branches remain isolated.
+
 ## DEV_AUX segment25 — independent mature Shogi price experiment
 
 DEV_AUX repaired the official fixedc1b80eaa MaterialLv1 experimental entry,

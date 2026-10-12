@@ -1,18 +1,19 @@
-## DEV_AUX current scope2026-10-12 segment25
+## DEV_AUX current scope2026-10-12 segment26
 
-Science OPEN; sidemission only; actualYaneuraMaterial1 entry and90minheartbeat ACTIVE.
-Fixedc1b80eaa board/hand/promotedprice tables +candidateboardSEE/LVA qualified;
-SEE retainsomittedhand/recapturepromotion approximation, fixedsearchmargins.
-Coldready keepalive repair actualsame384go behaviour,84.922→20.077s gamewall.
-370760newgames18154go867.719s,2starts/max2rounds; endpointsfrozen.
-Bothtrainingproxy gains; both1024/8192development meanloss, sourceprior errorworse.
-373onecuratedfamily64games16realends56.547s, mixedgain/notvalidation.
-375/381independentcshogi/literalSFEN all938games22166journalgo/416105PVmoves pass.
-37697post-fit reloads/options/1261stateprobes pass; not fabricatedpastacks.
-379frozen96RootTD/1135queries PVcritic all3same-data residualsworse;0newfits/go.
-382startedprepared45actualmate histories/fivefamilies15legalrollbackroots2/6/10;
-nextALLfixedinitial/endpoint diagnostics, noexposedseedfit/siblingholdout.
-ReportSEGMENT_20261012_25.md,357..383; primary94aea9 readonly, no defaults/UI changes.
+Science OPEN; sidemission only; heartbeatACTIVE; no primary/default/UI changes.
+387fresh4train/4dev prefixes,2starts/2methods;1600games36547go29.10min.
+Coordinate2-axis traininggainlarge, development0/+3/38; SPSA11-axis development-3/76/+1/76.
+SPSA fixed normalizedgain has12/24 and6/24 integerflatsteps; allendpointsfrozen.
+Sourceprior describes postfreeze unitcloser/randomfarther, not human recovery.
+384fiveexposedmate families120games/94terminals57.39s;18/30priceinvariantcells.
+392633199PVchecks/fullhistory/price/goals/journals;3896400tableentries pass.
+391finitehand-omission SEE threshold witness, notwrongmove/optimaldefense proof.
+396ready78%of18.251s; newprivate80a43db8 retainscoldTT/history, reusesoneworker.
+Same384go4007.283s;403nativevalidation5.250s; allactions/scores/nodes/PV/hashfull match.
+402all194actualpricevectors388first-lastqueries/6208tables exact, finite scope.
+Select thisexperimentalentry forfuture scopedcost, neverretime/refitoldfrozenbatch.
+Nextfresh jointproposal/quantization control, retainnegativeSPSA andSEE scope.
+ReportSEGMENT_20261012_26.md,384..404, exact71memberarchive; primaryb5f02 readonly.
 
 # Current local research mainline
 

@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "rootpairs": 4,
+  "games": 8,
+  "queries": 160,
+  "mean_goal": "0",
+  "rows": [
+    {
+      "seed": 2026102610,
+      "lines": [
+        1,
+        2
+      ],
+      "plies": 24,
+      "goals": [
+        "0",
+        "0"
+      ],
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "same_actual_action_history": true,
+      "same_query_position_prices_state_bestmove": true,
+      "scope": "measuredinfo time/NPS notclaimedidentical, no machineexclusivity"
+    },
+    {
+      "seed": 2026102611,
+      "lines": [
+        3,
+        4
+      ],
+      "plies": 24,
+      "goals": [
+        "-2/19",
+        "2/19"
+      ],
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "same_actual_action_history": true,
+      "same_query_position_prices_state_bestmove": true,
+      "scope": "measuredinfo time/NPS notclaimedidentical, no machineexclusivity"
+    },
+    {
+      "seed": 2026102612,
+      "lines": [
+        5,
+        6
+      ],
+      "plies": 24,
+      "goals": [
+        "4/19",
+        "-4/19"
+      ],
+      "termination": {
+        "kind": "cap24",
+        "winner": null
+      },
+      "same_actual_action_history": true,
+      "same_query_position_prices_state_bestmove": true,
+      "scope": "measuredinfo time/NPS notclaimedidentical, no machineexclusivity"
+    },
+    {
+      "seed": 2026102613,
+      "lines": [
+        7,
+        8
+      ],
+      "plies": 8,
+      "goals": [
+        "-32",
+        "32"
+      ],
+      "termination": {
+        "kind": "checkmate",
+        "winner": 1
+      },
+      "same_actual_action_history": true,
+      "same_query_position_prices_state_bestmove": true,
+      "scope": "measuredinfo time/NPS notclaimedidentical, no machineexclusivity"
+    }
+  ],
+  "seconds": 0.0,
+  "new_go": 0,
+  "scope": "fixedzeroupdatecontrol actualcolourantisymmetry/fullhistory; rules\u00b132 not noise purelybecausemagnitude. Nomodelreselection orabsenceofallstochasticity proof"
+}

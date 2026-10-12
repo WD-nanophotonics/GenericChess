@@ -1,0 +1,681 @@
+{
+  "profiles": [
+    {
+      "names": [
+        "unit-initial"
+      ],
+      "games": 30,
+      "terminals": 24,
+      "wins": 12,
+      "losses": 12,
+      "mean_goal": "0"
+    },
+    {
+      "names": [
+        "unit-endpoint"
+      ],
+      "games": 30,
+      "terminals": 27,
+      "wins": 13,
+      "losses": 14,
+      "mean_goal": "-16/15"
+    },
+    {
+      "names": [
+        "random2514-initial"
+      ],
+      "games": 30,
+      "terminals": 21,
+      "wins": 13,
+      "losses": 8,
+      "mean_goal": "1522/285"
+    },
+    {
+      "names": [
+        "random2514-endpoint"
+      ],
+      "games": 30,
+      "terminals": 22,
+      "wins": 14,
+      "losses": 8,
+      "mean_goal": "1823/285"
+    }
+  ],
+  "root_color_cells": 30,
+  "rule_response_cells": 10,
+  "quantity_or_rule_response_cells": 12,
+  "allterminal_price_invariant_cells": 18,
+  "matrix": [
+    {
+      "family": "curated_seed_family0",
+      "distance": 2,
+      "seed": "curated_seed_family0@2",
+      "color": 0,
+      "goals": [
+        "32",
+        "32",
+        "32",
+        "32"
+      ],
+      "rule_signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "curated_seed_family0",
+      "distance": 2,
+      "seed": "curated_seed_family0@2",
+      "color": 1,
+      "goals": [
+        "-32",
+        "-32",
+        "-32",
+        "-32"
+      ],
+      "rule_signs": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "curated_seed_family0",
+      "distance": 6,
+      "seed": "curated_seed_family0@6",
+      "color": 0,
+      "goals": [
+        "32",
+        "32",
+        "32",
+        "32"
+      ],
+      "rule_signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "curated_seed_family0",
+      "distance": 6,
+      "seed": "curated_seed_family0@6",
+      "color": 1,
+      "goals": [
+        "-32",
+        "-32",
+        "8/19",
+        "4/19"
+      ],
+      "rule_signs": [
+        -1,
+        -1,
+        0,
+        0
+      ],
+      "distinct_rule_signs": 2,
+      "distinct_goals": 3,
+      "all_terminal": false
+    },
+    {
+      "family": "curated_seed_family0",
+      "distance": 10,
+      "seed": "curated_seed_family0@10",
+      "color": 0,
+      "goals": [
+        "0",
+        "32",
+        "2/19",
+        "0"
+      ],
+      "rule_signs": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "distinct_rule_signs": 2,
+      "distinct_goals": 3,
+      "all_terminal": false
+    },
+    {
+      "family": "curated_seed_family0",
+      "distance": 10,
+      "seed": "curated_seed_family0@10",
+      "color": 1,
+      "goals": [
+        "0",
+        "-32",
+        "32",
+        "32"
+      ],
+      "rule_signs": [
+        0,
+        -1,
+        1,
+        1
+      ],
+      "distinct_rule_signs": 3,
+      "distinct_goals": 3,
+      "all_terminal": false
+    },
+    {
+      "family": "standard_prefix_2026102510",
+      "distance": 2,
+      "seed": "standard_prefix_2026102510@2",
+      "color": 0,
+      "goals": [
+        "-32",
+        "-32",
+        "-32",
+        "-32"
+      ],
+      "rule_signs": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "standard_prefix_2026102510",
+      "distance": 2,
+      "seed": "standard_prefix_2026102510@2",
+      "color": 1,
+      "goals": [
+        "32",
+        "32",
+        "32",
+        "32"
+      ],
+      "rule_signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "standard_prefix_2026102510",
+      "distance": 6,
+      "seed": "standard_prefix_2026102510@6",
+      "color": 0,
+      "goals": [
+        "-32",
+        "-32",
+        "-32",
+        "-32"
+      ],
+      "rule_signs": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "standard_prefix_2026102510",
+      "distance": 6,
+      "seed": "standard_prefix_2026102510@6",
+      "color": 1,
+      "goals": [
+        "32",
+        "32",
+        "32",
+        "32"
+      ],
+      "rule_signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "standard_prefix_2026102510",
+      "distance": 10,
+      "seed": "standard_prefix_2026102510@10",
+      "color": 0,
+      "goals": [
+        "-10/19",
+        "-32",
+        "-12/19",
+        "-8/19"
+      ],
+      "rule_signs": [
+        0,
+        -1,
+        0,
+        0
+      ],
+      "distinct_rule_signs": 2,
+      "distinct_goals": 4,
+      "all_terminal": false
+    },
+    {
+      "family": "standard_prefix_2026102510",
+      "distance": 10,
+      "seed": "standard_prefix_2026102510@10",
+      "color": 1,
+      "goals": [
+        "10/19",
+        "2/19",
+        "-2/19",
+        "2/19"
+      ],
+      "rule_signs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 3,
+      "all_terminal": false
+    },
+    {
+      "family": "standard_prefix_2026102511",
+      "distance": 2,
+      "seed": "standard_prefix_2026102511@2",
+      "color": 0,
+      "goals": [
+        "-32",
+        "-32",
+        "-32",
+        "-32"
+      ],
+      "rule_signs": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "standard_prefix_2026102511",
+      "distance": 2,
+      "seed": "standard_prefix_2026102511@2",
+      "color": 1,
+      "goals": [
+        "32",
+        "32",
+        "32",
+        "32"
+      ],
+      "rule_signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "standard_prefix_2026102511",
+      "distance": 6,
+      "seed": "standard_prefix_2026102511@6",
+      "color": 0,
+      "goals": [
+        "-32",
+        "-32",
+        "8/19",
+        "8/19"
+      ],
+      "rule_signs": [
+        -1,
+        -1,
+        0,
+        0
+      ],
+      "distinct_rule_signs": 2,
+      "distinct_goals": 2,
+      "all_terminal": false
+    },
+    {
+      "family": "standard_prefix_2026102511",
+      "distance": 6,
+      "seed": "standard_prefix_2026102511@6",
+      "color": 1,
+      "goals": [
+        "32",
+        "32",
+        "32",
+        "32"
+      ],
+      "rule_signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "standard_prefix_2026102511",
+      "distance": 10,
+      "seed": "standard_prefix_2026102511@10",
+      "color": 0,
+      "goals": [
+        "-32",
+        "-32",
+        "-6/19",
+        "-2/19"
+      ],
+      "rule_signs": [
+        -1,
+        -1,
+        0,
+        0
+      ],
+      "distinct_rule_signs": 2,
+      "distinct_goals": 3,
+      "all_terminal": false
+    },
+    {
+      "family": "standard_prefix_2026102511",
+      "distance": 10,
+      "seed": "standard_prefix_2026102511@10",
+      "color": 1,
+      "goals": [
+        "32",
+        "32",
+        "-4/19",
+        "-4/19"
+      ],
+      "rule_signs": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "distinct_rule_signs": 2,
+      "distinct_goals": 2,
+      "all_terminal": false
+    },
+    {
+      "family": "standard_prefix_2026102512",
+      "distance": 2,
+      "seed": "standard_prefix_2026102512@2",
+      "color": 0,
+      "goals": [
+        "-32",
+        "-32",
+        "-32",
+        "-32"
+      ],
+      "rule_signs": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "standard_prefix_2026102512",
+      "distance": 2,
+      "seed": "standard_prefix_2026102512@2",
+      "color": 1,
+      "goals": [
+        "32",
+        "32",
+        "32",
+        "32"
+      ],
+      "rule_signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "standard_prefix_2026102512",
+      "distance": 6,
+      "seed": "standard_prefix_2026102512@6",
+      "color": 0,
+      "goals": [
+        "-32",
+        "-32",
+        "-32",
+        "-32"
+      ],
+      "rule_signs": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "standard_prefix_2026102512",
+      "distance": 6,
+      "seed": "standard_prefix_2026102512@6",
+      "color": 1,
+      "goals": [
+        "32",
+        "32",
+        "32",
+        "32"
+      ],
+      "rule_signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "standard_prefix_2026102512",
+      "distance": 10,
+      "seed": "standard_prefix_2026102512@10",
+      "color": 0,
+      "goals": [
+        "-32",
+        "-32",
+        "-32",
+        "-32"
+      ],
+      "rule_signs": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "standard_prefix_2026102512",
+      "distance": 10,
+      "seed": "standard_prefix_2026102512@10",
+      "color": 1,
+      "goals": [
+        "32",
+        "32",
+        "8/19",
+        "32"
+      ],
+      "rule_signs": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "distinct_rule_signs": 2,
+      "distinct_goals": 2,
+      "all_terminal": false
+    },
+    {
+      "family": "standard_prefix_2026102513",
+      "distance": 2,
+      "seed": "standard_prefix_2026102513@2",
+      "color": 0,
+      "goals": [
+        "-32",
+        "-32",
+        "-32",
+        "-32"
+      ],
+      "rule_signs": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "standard_prefix_2026102513",
+      "distance": 2,
+      "seed": "standard_prefix_2026102513@2",
+      "color": 1,
+      "goals": [
+        "32",
+        "32",
+        "32",
+        "32"
+      ],
+      "rule_signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "standard_prefix_2026102513",
+      "distance": 6,
+      "seed": "standard_prefix_2026102513@6",
+      "color": 0,
+      "goals": [
+        "-32",
+        "-32",
+        "32",
+        "32"
+      ],
+      "rule_signs": [
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "distinct_rule_signs": 2,
+      "distinct_goals": 2,
+      "all_terminal": true
+    },
+    {
+      "family": "standard_prefix_2026102513",
+      "distance": 6,
+      "seed": "standard_prefix_2026102513@6",
+      "color": 1,
+      "goals": [
+        "32",
+        "32",
+        "32",
+        "32"
+      ],
+      "rule_signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 1,
+      "all_terminal": true
+    },
+    {
+      "family": "standard_prefix_2026102513",
+      "distance": 10,
+      "seed": "standard_prefix_2026102513@10",
+      "color": 0,
+      "goals": [
+        "0",
+        "2/19",
+        "2/19",
+        "-2/19"
+      ],
+      "rule_signs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "distinct_rule_signs": 1,
+      "distinct_goals": 3,
+      "all_terminal": false
+    },
+    {
+      "family": "standard_prefix_2026102513",
+      "distance": 10,
+      "seed": "standard_prefix_2026102513@10",
+      "color": 1,
+      "goals": [
+        "0",
+        "-4/19",
+        "32",
+        "32"
+      ],
+      "rule_signs": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "distinct_rule_signs": 2,
+      "distinct_goals": 3,
+      "all_terminal": false
+    }
+  ],
+  "scope": "fixed exposedfivefamilies, all4vectors/bothcolors; no training/reselection. Rootprice-response distinctfrom terminaldensity."
+}

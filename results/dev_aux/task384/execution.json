@@ -1,0 +1,104 @@
+{
+  "profiles": [
+    {
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "names": [
+        "unit-initial"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        180,
+        45,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "names": [
+        "unit-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "names": [
+        "random2514-initial"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        358,
+        0,
+        80,
+        86,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "names": [
+        "random2514-endpoint"
+      ]
+    }
+  ],
+  "allfrozen_beforepanel": true,
+  "cap": 24,
+  "nodes": 1024,
+  "goal": "364fixedrulewin/loss32,draw0,quantity/19",
+  "source_sha": "c1b80eaa09fe13d5f12b1599d1ae4d53c224de30",
+  "prepared382_sha256": "b827967ef816ced64c636b73f9c310f59dfbc874213307fbbe52b479310c2ed1",
+  "executable_sha256": "9741bfd2670d015997a4b10f64595b2874e87c299e49e91edced31be6f647843",
+  "scope": "ALL5exposedsourcefamilies/ALL15actuallegalrollbackroots2/6/10; all4frozenprofiles/bothcolors, nottraining/holdout/mate-distanceproof; preservegeneratorprice+unknowncuratedpreSFENhistory"
+}
