@@ -1,0 +1,35 @@
+{
+  "task_id": "144",
+  "question": "Do residualhardcodedSEErecapture constants disagreewithcandidate-material targetexchange?",
+  "source_pin": "9f778da667f6e07dae1e85d3e2ea204fc6dee94d",
+  "build_parent_sha256": "b9b2cb6a13fce01421c5d9d662fbdcd4246fe9c8ac2ba4abf3c05b625f41c7ce",
+  "modes": {
+    "off": 0,
+    "table_only": 1,
+    "table_and_recapture": 2
+  },
+  "intervention": "Mode2replacesfivefixedPawn/Knight/Bishop/Rook/QueenValueMgrecaptureconstants withconfiguredPieceValueMG; samePSQTtablealignment asmode1. Fixedclass-orderPNBRQ, margins andotherpriorsremain. No fullSEEalignmentclaim.",
+  "witness": {
+    "fen": "7k/3nB3/5p2/6P1/8/8/8/K7 w - - 0 1",
+    "move": "e7f6",
+    "candidate": {
+      "P": 208,
+      "K": 0,
+      "N": 232,
+      "B": 328,
+      "R": 396,
+      "Q": 510
+    },
+    "thresholds": [
+      0,
+      111,
+      112,
+      113,
+      207,
+      208,
+      209
+    ]
+  },
+  "cost": "Oneadditionalserialownedbuild estimated<1min,900sfuse;21actualSEEqueries+leaf/tableacks<5s. No newtraining, no currentbatchfiles/binary modified.",
+  "prediction": "Candidate-material targetswap BxP NxB PxN has208-328+232=112; threshold113rejects. Mode1still781recaptureN yieldsdifferentSEEthreshold behavior; mode2mayresolvepriceconstant mismatch. ThisdoesnotprovestrengthorfullyexactSEE."
+}

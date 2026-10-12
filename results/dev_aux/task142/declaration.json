@@ -1,0 +1,130 @@
+{
+  "task_id": "142",
+  "question": "Does synchronizingcandidatePNBRQsearchtables causallychange shortobjective learning/heldout/human-referencebehavior under matchedsamebinary conditions?",
+  "new_premise": "JSONdecode inonlyruntimeJSONreadsite stop_check; allsix currentflags nowvalid/notstopped, ownstatesunchanged. Primaryrolloutmtimecoincides with failure, suggests transientrewrite but originalerrorlackedfilename so exactfileunproven. Addown boundedread3attempts withpath/errorjournal, requirevalidparsebeforecontinue; neverclearorignorevalidstop. Ordinaryconcurrencyallowed.",
+  "start_seeds": [
+    203,
+    204,
+    205
+  ],
+  "alignment_arms": [
+    0,
+    1
+  ],
+  "seed_alignment_order": [
+    [
+      203,
+      0
+    ],
+    [
+      203,
+      1
+    ],
+    [
+      204,
+      1
+    ],
+    [
+      204,
+      0
+    ],
+    [
+      205,
+      0
+    ],
+    [
+      205,
+      1
+    ]
+  ],
+  "updates": 24,
+  "sweeps": 6,
+  "coordinates": [
+    "N",
+    "B",
+    "R",
+    "Q"
+  ],
+  "steps": [
+    2.0794415416798357,
+    1.0397207708399179,
+    0.5198603854199589,
+    0.25993019270997947,
+    0.12996509635498973,
+    0.06498254817749487
+  ],
+  "weight_bounds": [
+    52,
+    3328
+  ],
+  "P": 208,
+  "K": 0,
+  "arms_per_update": 3,
+  "training_openings_per_update": 8,
+  "colors": [
+    true,
+    false
+  ],
+  "training_slots": 6912,
+  "heldout_slots": 192,
+  "total_slots": 7104,
+  "opening_plies": 24,
+  "postopening_cap": 16,
+  "train_opening_seeds": [
+    1007000,
+    1007191
+  ],
+  "train_random_seeds": [
+    1107000,
+    1107191
+  ],
+  "heldout_opening_seeds": [
+    1009000,
+    1009001,
+    1009002,
+    1009003,
+    1009004,
+    1009005,
+    1009006,
+    1009007
+  ],
+  "heldout_random_seeds": [
+    1109000,
+    1109001,
+    1109002,
+    1109003,
+    1109004,
+    1109005,
+    1109006,
+    1109007
+  ],
+  "selection": "OriginalTask108strictincumbentties coordinatecurrent/+/- ; sameTask131domainstep; nohumanvalues inupdates",
+  "reward": "OriginalTask104 terminal\u00b1100 plusboundedmatespeed orcutoffunit-count/15",
+  "terminalinput": "Preflightall200fixedroots; exclude terminalinput identicalacrossallarms/colors/starts/alignments withNone result and0 selectioncontribution; noresampling or enginegame.",
+  "terminal_input_seeds": [],
+  "reuse": "onefreshownprocessperalignment/profile48gameblock, immutableprofile;5leafprobes+exactMG/EGtableack+ucinewgamepergame; fullinitialorthodoxhistory1024nodes1thread16MiB",
+  "binary_sha256": "e29db97c003421674390fe7ea0b7aff2c54309386c3fb884ed490c0fa13fdbc9",
+  "qualification_result_sha256": "8b9b58f4d176bbaacfd1c66e5949d05a82732b46157ccac64265ccc131e55584",
+  "deadline_seconds": 1782.217999999877,
+  "cost": "7104slot matchedbatch estimated12-20minutes fromactual0.12-0.17s/game;1800sinclusivefuse. Completecounts nottimeclaim, serialoneengine. Noaddedworker/fee or expected>1hprojectrun.",
+  "freeze": "ALL6endpoints frozen and endpoints.json writtenbeforeANYheldout; noheldoutfeedback",
+  "human_reference": {
+    "P": 1,
+    "N": 3,
+    "B": 3,
+    "R": 5,
+    "Q": 9
+  },
+  "human_reference_source": "https://www.chess.com/terms/chess-piece-value",
+  "reference_metric": "meanabsolute ln((actualprice/P)/reference) NBRQ; allinitial/finalvalues independentlydescriptiveonly; no fitting/selection/extension",
+  "scope": "Freshstart/game seeds withinmethoddesignedfromexposedearlierfailures; conditionalmatureenginepriorsstillremain, notexpertfree discovery/universalvalues. Samebinary+leaf+candidateconditions isolatesjointsearch-table family; notSEE-only. Originalfailureisinputreadavailability, notserioususer-requiredissue. No schedulepause orclockreset.",
+  "decision": "Consistent3startreferencecontraction pluspairedheldoutbenefit wouldsupportscopedquicklearning; feedbackbenefitwithoutreferencecontraction isproxygain. Dispersed/negativeends limitthischeaproute andhelpcost/difficultyassessment. Noautomaticrerun/defaultpromotion.",
+  "fixtures_sha256": "5df28cf8b0a4c70a8952d9e4825cecd2309e6f7d95e82028c379df9268bfc41d",
+  "old_task140": "INTERRUPTED130actualtrain0heldout, preserved",
+  "source_controller_sha256": "0016c72630039fba561385d75a06bb4de7c608a04b5feba514aded8086acb8dc",
+  "source_driver_sha256": "2d8b44a4536c8cea346bb336384b5f3d86160482cbd43a92c4cade0c30f0077b",
+  "old_actual_seconds": 17.782000000122935,
+  "original_total_budget_seconds": 1800,
+  "read_recovery": "3attempts50ms apart onlyonJSONDecodeError/OSError, currentvalidflagsrequired; persistentfailure raises namedpath, no assumptionallowed",
+  "cache": "130independentlyreplayedactualcalls copiedexactly withSHA/context/weights checks;noenginererun;globalendpointsstillbeforeANYheldout"
+}

@@ -1,0 +1,264 @@
+{
+  "status": "INTERRUPTED",
+  "build_seconds": 13.171999999787658,
+  "source_pin": "9f778da667f6e07dae1e85d3e2ea204fc6dee94d",
+  "toolchain_sha256": "317492c456aa27ee607a5919f1d2d38dcdc1112516a24d0bf4b00d078f52d17a",
+  "compiler_version": "clang version 23.1.3 (https://github.com/llvm/llvm-project.git 0d261d1ca552c95a8f007e061c787ac7132fbcbc)\nTarget: x86_64-w64-windows-gnu\nThread model: posix\nInstalledDir: C:/Users/wdai/Documents/ChatGPT/GenericChess-DEV_AUX/.local_agent/alignment-build/toolchain/llvm-mingw-20261006-ucrt-x86_64/bin\nConfiguration file: C:/Users/wdai/Documents/ChatGPT/GenericChess-DEV_AUX/.local_agent/alignment-build/toolchain/llvm-mingw-20261006-ucrt-x86_64/bin/x86_64-w64-windows-gnu.cfg\n",
+  "compile_flags": [
+    "-std=c++17",
+    "-O2",
+    "-DNDEBUG",
+    "-fno-exceptions",
+    "-DIS_64BIT",
+    "-DNO_PREFETCH",
+    "-DNNUE_EMBEDDING_OFF",
+    "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+    "-msse2",
+    "-pthread"
+  ],
+  "commands": [
+    {
+      "source": "benchmark.cpp",
+      "source_sha256": "cdb8b8963ee2a023443827b0956e2f28da3fc05d22aef6354ac5ab5a80195567",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "29871e927ba3d44daa8d3067719e0146f105345715824c911c734e75bdbb6583"
+    },
+    {
+      "source": "bitbase.cpp",
+      "source_sha256": "a03e309abe5dd7c5cb17f8473fa41c72071966a8a6da3bdf6db17fa537ad5041",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "a665f908f64a2af874cdaa221aed42062b00511f5c62ca0098a2a5400d1ed4a0"
+    },
+    {
+      "source": "bitboard.cpp",
+      "source_sha256": "767c344c93b6d2e1daaa9a861b3e20d4ff4bc5324935565aebad8fdf7f877b29",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "365789ec4d33f092eb75120a484ee68cb9cef18562528a45c130d56a17457aad"
+    },
+    {
+      "source": "endgame.cpp",
+      "source_sha256": "58dc3e70e598d86ca1ff8bf3772a831190e7be614045ab79806f2cb274055442",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "6467df8cf2c0218feedcbd19e7a4e45e2286ab14f9e005e3b80a71cf94004515"
+    },
+    {
+      "source": "evaluate.cpp",
+      "source_sha256": "b875e3f460216430daf5ad61bee19bf5c5d2efb4c0377a2cde5c2d9172012fc3",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "a88d89f583ed993b727595e430e420a6960e6288dbef8595c421c6b6fee04027"
+    },
+    {
+      "source": "main.cpp",
+      "source_sha256": "88edb1472bd5c241ed49c55edebb4d7ee6037d35a2f32d19e0108398c2caa639",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "5f03ed3e826c630e5e0db119c78aaf08e027889d22a80ad5046b77dd14f015ee"
+    },
+    {
+      "source": "material.cpp",
+      "source_sha256": "e9bf9f79ce64a94f3df7da288019c28bda3f1c665e07255eb693ff6d993b346d",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "26d1ef126e9bbc716e6a5f97f0a2bf596868738aa67f0ffd80f4cc91ff384348"
+    },
+    {
+      "source": "misc.cpp",
+      "source_sha256": "d81cd5fcd40352e391680d71e0bb3cfbd5c3f639293b76df9f619777159fd420",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "94a839049dd8275b885421a29c36450c0d9c22fbabeb6fe214fca77817c8ca47"
+    },
+    {
+      "source": "movegen.cpp",
+      "source_sha256": "0ec1dd919ee6778f690030dc78dce9b18fded040089904b55ea37f9fb781b748",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "d79e870fa69300a9632dc4bf454d260652640324f74f6e96ba6835dc37015606"
+    },
+    {
+      "source": "movepick.cpp",
+      "source_sha256": "496fcdbdd760838825cdc1647d5d11c8fd41d2988b3d899fe310cdb554297371",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "04802d071b9afea24bf735bc786eddb62d70f58127c99a4b508bb59a534a5abb"
+    },
+    {
+      "source": "pawns.cpp",
+      "source_sha256": "b440976d91ae833ca012be2e2460a335fffe68ea3f47cdcf9177ba182b194641",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "30987a67f967c75912c055d9178f896ff1124dc24bccb8e53ba3f453621b4899"
+    },
+    {
+      "source": "position.cpp",
+      "source_sha256": "16f28fecb31f9d68fcd6010e3d231aea9c08182db10edf66ed232964ecc684fc",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "edf2d2f75bf8153913e21140aa7cde1c20c84e6d0814b762e51c1a361b8bb128"
+    },
+    {
+      "source": "psqt.cpp",
+      "source_sha256": "25cf7bb47028a1e6d6a3887ee7085c4efa7235ec9c16267b9a1aa8a6746a4ecf",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 1,
+      "object_sha256": null
+    }
+  ],
+  "link_flags": [
+    "-pthread",
+    "-static"
+  ],
+  "binary_relative": ".local_agent\\alignment-build\\fairy-toggle.exe",
+  "binary_sha256": null,
+  "experimental_psqt_sha256": "25cf7bb47028a1e6d6a3887ee7085c4efa7235ec9c16267b9a1aa8a6746a4ecf",
+  "error": "RuntimeError: compilefailed:psqt.cpp C:\\Users\\wdai\\Documents\\ChatGPT\\GenericChess-DEV_AUX\\.local_agent\\alignment-build\\source\\Fairy-Stockfish-9f778da667f6e07dae1e85d3e2ea204fc6dee94d\\src\\psqt.cpp:207:62: error: assigning to 'Value' from incompatible type 'const int'\n  207 |                   PieceValue[phase][make_piece(BLACK, pt)] = v->pieceValue[phase][pt];\n      |                                                              ^~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+  "scope": "Ownedexperimentalcompile of exactpinnedsource withmaterialpatch plusoneprocess-env tabletoggle. No source-to-binary identityclaim for old477628ae; singlebinarysamecompiler comparison controls newablation."
+}

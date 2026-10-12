@@ -1,19 +1,23 @@
 ## DEV_AUX current scope2026-10-12
 
-In this independent sidemission clone, the current auxiliary decision is cheap
-mature-material learning and independent failure/cost attribution. The primary
-search mainline below is pinned background, not a task to take over. Mature entry
-477628ae is now actually qualified; user independently changed Smart App Control.
-Task121/124 and full-domaincoordinate129failed-input/131changedcontract have real
-short-game evidence but no stabletraditionalprice recovery. Predictor126does not
-produce a successfuldeployedpolicy127. Detailed conditions/allstarts/failedinput/
-sourcepriors/cost are in results/dev_aux/SEGMENT_20261012_14.md and its exactarchive.
-Next: one small objective/pricealignment mechanism control, no unchangedtraining
-or longergames by default. ScientificOPEN. The user latestdiagnosedblocker rule
-in ownAGENTS/workflow takes precedence: unknown/oldentry errors cannot justify
-before60finish or recurringempty runs. Existing exitchecker minimally enforces
-currentdiagnosis/report or realenvironmentexhaustion evidence; truth remains
-Agent responsibility, and actualnativepause is mandatory if trulyuser-required.
+Independent sidemission currentquestion: cheapmaturemateriallearning and actual
+candidateprice-consistency, notprimary Core/PVS takeover. Segment15 nowhas7312
+actual16plygames,176rootsearches,49SEEqueries. Samebinaryprice-table learning
+7104uniquegames709.55sinclusive (130failureprefixcachedonce), fresh203/204/205,
+all6endsgloballybeforeANYheldout. Tablealignment1 improves2starts butthirdfails;
+no stabletraditionalvalue recovery.97/144choices opening-clustersensitive,
+exactintegerreward gives0selectionchanges.
+RealSEEcounterexamples112/-188 revealfixedrecaptureconstants andPNBRQclassorder;
+mode2/3scopedsourcefixes actualthresholds, not universalSEE orstrengthclaims.
+Qualifiedc378f0b3experiment:96rootsearches48mode2/3pairs allsamechoices. New192
+paireddeployment ofall6oldends modes1/3 ismostlynegative; cannotjudge mode3
+relearning. Fullactualreplays/cost/failures/interpretation: SEGMENT_20261012_15.md
+and81memberexactarchive; rawSlack/account/stop/binaries/toolchain excluded.
+Next memoMain: declarefreshmatchedmode0/3learning onlywithcost/decision, separate
+changedselectiontrajectory fromfixedoldweightdeployment. Backup: cheaper
+objective/opponent signal andfinitepins/promotion/xraypriceconsistency checks.
+ScienceOPEN; recoveredentry, no severeuser-requiredblocker. Userdiagnosedblocker
+rule and60-90effective work govern; ownheartbeatACTIVE andprimary readonly.
 
 # Current local research mainline
 
@@ -76,7 +80,7 @@ counterexample was Session DRAW but Runtime ONGOING. Private default omission
 now follows public logical identity, preserving nondefaults, foreign slots and
 scalar types; full-history reconstruction and exact collision checks recover.
 An import-local public-key hash map removes duplicate history/occurrence hashing
-and is discarded on return. Supplied400ply import48ms becomes3.3–3.7ms;
+and is discarded on return. Supplied400ply import48ms becomes3.3â€“3.7ms;
 101unique-history import33ms becomes18.5ms. Short-root adverse cost and expensive
 synchronous reconstruction remain. No instant-cancellation or hard deadline claim.
 
@@ -104,7 +108,7 @@ savings; warm-root and deferred-binding limits remain in their purpose documents
 Full Shogi-history/blocked-DLL boundaries are unchanged. Ordinary eager binding
 remains selected after allocator-fault fallback differences in the deferred trial.
 
-## Latest reserve and mechanical evidence —2026-10-10
+## Latest reserve and mechanical evidence â€”2026-10-10
 
 The initial UI diagnostic records30 returned=committed moves,24D1 completions
 and two direct queen losses. FiniteD2 material exposes better choices. First
@@ -132,8 +136,8 @@ node-limited reserve. Internal search restoration never grants commit authority.
 
 48 same-TT-input comparisons on the two old queen roots and old whiteply17
 reconstruct warmth from13 baseline searches on actual recorded prefixes.
-50/100ms keep cheapD1;1second improves both queen material rows7000→0 and
-repeats the inverse0→1000. At4seconds the black queen root completesD2 in both
+50/100ms keep cheapD1;1second improves both queen material rows7000â†’0 and
+repeats the inverse0â†’1000. At4seconds the black queen root completesD2 in both
 arms with the same move. No configured-q4 completion was displaced here; the
 small set cannot prove absence of opportunity cost. Dot's complete technical
 review supports experimental use and this check, not a default change or a new
@@ -146,7 +150,7 @@ remain authoritative; missing metadata falls back and replacement rebuilds it.
 wall falls about23%, with jitter and adverse Chess-middle/EP means retained.
 32 prototype same-time calls add no layer/action benefit.467 legal children/
 32 positive actor witnesses/467 cancellation probes agree; the earlier492text
-is explicitly corrected without altering raw data. Owned containers336–1592bytes
+is explicitly corrected without altering raw data. Owned containers336â€“1592bytes
 exclude borrowed IR objects; setup timings are mixed, not a compilation gain.
 
 Public DSL aux scope/owner/token/side coverage adds48 configurations/720 legal
@@ -208,7 +212,7 @@ does not refute a fixed vector averaged under an explicit play distribution.
 Static tables remain candidates/cheap baselines, not a required predecessor.
 Small local training is authorized; any single run expected above one hour
 first obtains dot's necessity assessment, with cheaper alternatives recorded.
-This is distinct from a60–90minute Agent segment, not a general compute gate.
+This is distinct from a60â€“90minute Agent segment, not a general compute gate.
 
 Equivalent supported rule encodings and finite-board saturation must preserve
 semantics. Separate raw opportunity, normalization, rounding/clipping and

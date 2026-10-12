@@ -1,0 +1,46 @@
+{
+  "complete": true,
+  "deployment_counts": {
+    "games": 192,
+    "moves": 2893,
+    "searches": 1462,
+    "probes": 960,
+    "acks": 192
+  },
+  "reported_nodes_total": 1506050,
+  "reported_nodes_min": 1024,
+  "reported_nodes_max": 1249,
+  "root_qualification_searches": 96,
+  "root_qualification_probes": 480,
+  "oracle_witness_checks": [
+    {
+      "task": "145",
+      "value": 112,
+      "nodes": 3,
+      "all_declines_have_legal_nontarget_action": true
+    },
+    {
+      "task": "148",
+      "value": -188,
+      "nodes": 7,
+      "all_declines_have_legal_nontarget_action": true
+    }
+  ],
+  "training_origin_deployment_summaries": {
+    "0": {
+      "endpoint_count": 3,
+      "mean_original_deployment_delta": -8.30876736111111,
+      "mean_bounded_deployment_delta": -0.044444444444444446,
+      "mate_wins_mode1": 10,
+      "mate_wins_mode3": 6
+    },
+    "1": {
+      "endpoint_count": 3,
+      "mean_original_deployment_delta": -2.082291666666667,
+      "mean_bounded_deployment_delta": -0.004166666666666666,
+      "mate_wins_mode1": 10,
+      "mate_wins_mode3": 9
+    }
+  },
+  "scope": "Actualtrace/qualification replay and restrictedlegalexchange arithmetic. Deploymentfixedweights doesnotdecidefuturemode3training efficacy; source/kernelremainapproximate."
+}

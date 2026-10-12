@@ -1,0 +1,36 @@
+{
+  "task_id": "147",
+  "question": "Does fixedPNBRQleast-attackerpriority remain inconsistent when learnedpositivepricesare nonmonotonic?",
+  "source_pin": "9f778da667f6e07dae1e85d3e2ea204fc6dee94d",
+  "modes": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "mode3": "Mode2plusselectleastconfiguredMG standardattackerclass at eachSEErecapture; sameclass tieorder andLSBwithinclass; dynamicpins/xrays andkingbranchretainoriginal. ScopedStandardChess, not generalexactSEE.",
+  "witness": {
+    "fen": "7k/3n2b1/4Rp2/6P1/8/8/8/K7 w - - 0 1",
+    "move": "e6f6",
+    "candidate": {
+      "P": 208,
+      "K": 0,
+      "N": 2000,
+      "B": 52,
+      "R": 396,
+      "Q": 510
+    },
+    "thresholds": [
+      -189,
+      -188,
+      -187,
+      0,
+      207,
+      208,
+      209
+    ]
+  },
+  "prediction": "Legalrestrictedtargetexchange value-188: BlackcheapBcanrecaptureR, Whitestops; fixedclassSEE choosesexpensiveNfirstandcanaccept0. Mode3candidatepriceordering shouldreject0. Pricechoice is synthetic counterexample withinprevious52..3328domain, nothumanfit ortrainingcandidate.",
+  "cost": "Oneownserialbuild~20s,28SEEqueries<2s,900sfuse; noadditionaltraining orchange tocompleted7104batch.",
+  "scope": "Syntheticprice-consistency witness; notpolicygain/strength/fullrules-oracle. Alloldfrozenoutputs retained."
+}

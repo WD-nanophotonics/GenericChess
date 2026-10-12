@@ -1,0 +1,379 @@
+{
+  "complete": true,
+  "binary_sha256": "c238051783661c18253c253637d238b48a6e4becab98579cb0b87ec43c99341a",
+  "witness": {
+    "fen": "7k/3nB3/5p2/6P1/8/8/8/K7 w - - 0 1",
+    "move": "e7f6",
+    "candidate": {
+      "P": 208,
+      "K": 0,
+      "N": 232,
+      "B": 328,
+      "R": 396,
+      "Q": 510
+    },
+    "thresholds": [
+      0,
+      111,
+      112,
+      113,
+      207,
+      208,
+      209
+    ]
+  },
+  "oracle_value": 112,
+  "oracle_tree": {
+    "fen": "7k/3n4/5B2/6P1/8/8/8/K7 b - - 0 1",
+    "decline_value": 208,
+    "turn": false,
+    "legal_target_captures": [
+      {
+        "move": "d7f6",
+        "value": 112,
+        "child": {
+          "fen": "7k/8/5n2/6P1/8/8/8/K7 w - - 0 2",
+          "decline_value": -120,
+          "turn": true,
+          "legal_target_captures": [
+            {
+              "move": "g5f6",
+              "value": 112,
+              "child": {
+                "fen": "7k/8/5P2/8/8/8/8/K7 b - - 0 2",
+                "decline_value": 112,
+                "turn": false,
+                "legal_target_captures": [],
+                "value": 112,
+                "scope": "Restrictedcapture-on-one-target withdeclineoption; notfullchessWDL."
+              }
+            }
+          ],
+          "value": 112,
+          "scope": "Restrictedcapture-on-one-target withdeclineoption; notfullchessWDL."
+        }
+      }
+    ],
+    "value": 112,
+    "scope": "Restrictedcapture-on-one-target withdeclineoption; notfullchessWDL."
+  },
+  "rows": [
+    {
+      "mode": 0,
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.12,
+          "expected_white_pawns": 1.1153846153846154
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.58,
+          "expected_white_pawns": 1.5769230769230769
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.9,
+          "expected_white_pawns": 1.9038461538461537
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 2.45,
+          "expected_white_pawns": 2.451923076923077
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 0 1:126:208 2:781:854 3:825:915 4:1276:1380 5:2538:2682",
+        "prices": {
+          "1": [
+            126,
+            208
+          ],
+          "2": [
+            781,
+            854
+          ],
+          "3": [
+            825,
+            915
+          ],
+          "4": [
+            1276,
+            1380
+          ],
+          "5": [
+            2538,
+            2682
+          ]
+        },
+        "alignment": 0
+      },
+      "answers": [
+        {
+          "threshold": 0,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e7f6 0 1"
+        },
+        {
+          "threshold": 111,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e7f6 111 0"
+        },
+        {
+          "threshold": 112,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e7f6 112 0"
+        },
+        {
+          "threshold": 113,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e7f6 113 0"
+        },
+        {
+          "threshold": 207,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e7f6 207 0"
+        },
+        {
+          "threshold": 208,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e7f6 208 0"
+        },
+        {
+          "threshold": 209,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e7f6 209 0"
+        }
+      ]
+    },
+    {
+      "mode": 1,
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.12,
+          "expected_white_pawns": 1.1153846153846154
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.58,
+          "expected_white_pawns": 1.5769230769230769
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.9,
+          "expected_white_pawns": 1.9038461538461537
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 2.45,
+          "expected_white_pawns": 2.451923076923077
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 1 1:208:208 2:232:232 3:328:328 4:396:396 5:510:510",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            232,
+            232
+          ],
+          "3": [
+            328,
+            328
+          ],
+          "4": [
+            396,
+            396
+          ],
+          "5": [
+            510,
+            510
+          ]
+        },
+        "alignment": 1
+      },
+      "answers": [
+        {
+          "threshold": 0,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e7f6 0 1"
+        },
+        {
+          "threshold": 111,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e7f6 111 1"
+        },
+        {
+          "threshold": 112,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e7f6 112 1"
+        },
+        {
+          "threshold": 113,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e7f6 113 1"
+        },
+        {
+          "threshold": 207,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e7f6 207 1"
+        },
+        {
+          "threshold": 208,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e7f6 208 1"
+        },
+        {
+          "threshold": 209,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e7f6 209 0"
+        }
+      ]
+    },
+    {
+      "mode": 2,
+      "leaf_probes": [
+        {
+          "type": "P",
+          "fen": "7k/8/8/3P4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.0,
+          "expected_white_pawns": 1.0
+        },
+        {
+          "type": "N",
+          "fen": "7k/8/8/3N4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.12,
+          "expected_white_pawns": 1.1153846153846154
+        },
+        {
+          "type": "B",
+          "fen": "7k/8/8/3B4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.58,
+          "expected_white_pawns": 1.5769230769230769
+        },
+        {
+          "type": "R",
+          "fen": "7k/8/8/3R4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 1.9,
+          "expected_white_pawns": 1.9038461538461537
+        },
+        {
+          "type": "Q",
+          "fen": "7k/8/8/3Q4/8/8/8/K7 w - - 0 1",
+          "measured_white_pawns": 2.45,
+          "expected_white_pawns": 2.451923076923077
+        }
+      ],
+      "table_ack": {
+        "raw": "info string DEV_AUX alignment 2 1:208:208 2:232:232 3:328:328 4:396:396 5:510:510",
+        "prices": {
+          "1": [
+            208,
+            208
+          ],
+          "2": [
+            232,
+            232
+          ],
+          "3": [
+            328,
+            328
+          ],
+          "4": [
+            396,
+            396
+          ],
+          "5": [
+            510,
+            510
+          ]
+        },
+        "alignment": 2
+      },
+      "answers": [
+        {
+          "threshold": 0,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e7f6 0 1"
+        },
+        {
+          "threshold": 111,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e7f6 111 1"
+        },
+        {
+          "threshold": 112,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e7f6 112 1"
+        },
+        {
+          "threshold": 113,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e7f6 113 0"
+        },
+        {
+          "threshold": 207,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e7f6 207 0"
+        },
+        {
+          "threshold": 208,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e7f6 208 0"
+        },
+        {
+          "threshold": 209,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e7f6 209 0"
+        }
+      ]
+    }
+  ],
+  "wall_seconds": 0.6719999997876585,
+  "scope": "Oneactualprices-consistencycounterexample to table-onlylabel, not generalSEEcorrectness orengine-strength/learninggain. Fixedattackerorder remains, but thiswitnesshasoneattackerat eachrecapture."
+}

@@ -1,0 +1,95 @@
+--- mode2/psqt.cpp
++++ mode3/psqt.cpp
+@@ -198,7 +198,7 @@
+ // DEV_AUX scoped Standard-Chess price-table ablation, defaultoff perprocess.
+ #ifdef GENERICCHESS_MATERIAL_DEVELOPMENT
+   const char* aligned = std::getenv("GENERICCHESS_ALIGN_SEARCH_PRICES");
+-  const int alignmentMode = aligned && std::string(aligned) == "2" ? 2 : (aligned && std::string(aligned) == "1" ? 1 : 0);
++  const int alignmentMode = aligned && std::string(aligned) == "3" ? 3 : (aligned && std::string(aligned) == "2" ? 2 : (aligned && std::string(aligned) == "1" ? 1 : 0));
+   const bool alignSearch = alignmentMode != 0;
+   if (alignSearch)
+       for (PieceType pt : {PAWN, KNIGHT, BISHOP, ROOK, QUEEN})
+--- mode2/position.cpp
++++ mode3/position.cpp
+@@ -2504,10 +2504,19 @@
+   // One furtherablation: recaptureconstants only, class-attackerorder unchanged.
+   static const bool alignRecapture = [] {
+       const char* value = std::getenv("GENERICCHESS_ALIGN_SEARCH_PRICES");
+-      return value && std::string(value) == "2";
++      return value && (std::string(value) == "2" || std::string(value) == "3");
+   }();
+ #else
+   constexpr bool alignRecapture = false;
++#endif
++
++#ifdef GENERICCHESS_MATERIAL_DEVELOPMENT
++  static const bool alignOrder = [] {
++      const char* value = std::getenv("GENERICCHESS_ALIGN_SEARCH_PRICES");
++      return value && std::string(value) == "3";
++  }();
++#else
++  constexpr bool alignOrder = false;
+ #endif
+ 
+   int swap = PieceValue[MG][piece_on(to)] - threshold;
+@@ -2562,11 +2571,23 @@
+       if (!stmAttackers)
+           break;
+ 
++      PieceType leastPricedType = NO_PIECE_TYPE;
++      if (alignOrder)
++      {
++          Value leastPrice = VALUE_INFINITE;
++          for (PieceType pt : {PAWN, KNIGHT, BISHOP, ROOK, QUEEN})
++              if ((stmAttackers & pieces(pt)) && PieceValue[MG][pt] < leastPrice)
++              {
++                  leastPrice = PieceValue[MG][pt];
++                  leastPricedType = pt;
++              }
++      }
++
+       res ^= 1;
+ 
+       // Locate and remove the next least valuable attacker, and add to
+       // the bitboard 'attackers' any X-ray attackers behind it.
+-      if ((bb = stmAttackers & pieces(PAWN)))
++      if ((bb = stmAttackers & pieces(PAWN)) && (!alignOrder || leastPricedType == PAWN))
+       {
+           if ((swap = (alignRecapture ? PieceValue[MG][PAWN] : PawnValueMg) - swap) < res)
+               break;
+@@ -2575,7 +2596,7 @@
+           attackers |= attacks_bb<BISHOP>(to, occupied) & pieces(BISHOP, QUEEN);
+       }
+ 
+-      else if ((bb = stmAttackers & pieces(KNIGHT)))
++      else if ((bb = stmAttackers & pieces(KNIGHT)) && (!alignOrder || leastPricedType == KNIGHT))
+       {
+           if ((swap = (alignRecapture ? PieceValue[MG][KNIGHT] : KnightValueMg) - swap) < res)
+               break;
+@@ -2583,7 +2604,7 @@
+           occupied ^= least_significant_square_bb(bb);
+       }
+ 
+-      else if ((bb = stmAttackers & pieces(BISHOP)))
++      else if ((bb = stmAttackers & pieces(BISHOP)) && (!alignOrder || leastPricedType == BISHOP))
+       {
+           if ((swap = (alignRecapture ? PieceValue[MG][BISHOP] : BishopValueMg) - swap) < res)
+               break;
+@@ -2592,7 +2613,7 @@
+           attackers |= attacks_bb<BISHOP>(to, occupied) & pieces(BISHOP, QUEEN);
+       }
+ 
+-      else if ((bb = stmAttackers & pieces(ROOK)))
++      else if ((bb = stmAttackers & pieces(ROOK)) && (!alignOrder || leastPricedType == ROOK))
+       {
+           if ((swap = (alignRecapture ? PieceValue[MG][ROOK] : RookValueMg) - swap) < res)
+               break;
+@@ -2601,7 +2622,7 @@
+           attackers |= attacks_bb<ROOK>(to, occupied) & pieces(ROOK, QUEEN);
+       }
+ 
+-      else if ((bb = stmAttackers & pieces(QUEEN)))
++      else if ((bb = stmAttackers & pieces(QUEEN)) && (!alignOrder || leastPricedType == QUEEN))
+       {
+           if ((swap = (alignRecapture ? PieceValue[MG][QUEEN] : QueenValueMg) - swap) < res)
+               break;

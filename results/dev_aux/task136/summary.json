@@ -1,0 +1,89 @@
+{
+  "complete": true,
+  "games": 16,
+  "wall_seconds": 1.9220000002533197,
+  "pairs": [
+    {
+      "root": 0,
+      "color": true,
+      "delta": 0.0,
+      "same_actions": true,
+      "termination": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "root": 0,
+      "color": false,
+      "delta": 0.125,
+      "same_actions": false,
+      "termination": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "root": 1,
+      "color": true,
+      "delta": -0.25,
+      "same_actions": false,
+      "termination": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "root": 1,
+      "color": false,
+      "delta": 0.0,
+      "same_actions": false,
+      "termination": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "root": 2,
+      "color": true,
+      "delta": 0.0,
+      "same_actions": false,
+      "termination": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "root": 2,
+      "color": false,
+      "delta": 0.375,
+      "same_actions": false,
+      "termination": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "root": 3,
+      "color": true,
+      "delta": 0.0,
+      "same_actions": true,
+      "termination": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "root": 3,
+      "color": false,
+      "delta": 0.0,
+      "same_actions": true,
+      "termination": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    }
+  ],
+  "informative": true,
+  "scope": "Syntheticbalanced16ply pilot; nohumanrecovery or generalstrength evidence"
+}

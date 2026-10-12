@@ -1,0 +1,32 @@
+--- a/src/psqt.cpp
++++ b/src/psqt.cpp
+@@ -1,3 +1,5 @@
++#include <cstdlib>
++#include <iostream>
+ /*
+   Stockfish, a UCI chess playing engine derived from Glaurung 2.1
+   Copyright (C) 2004-2022 The Stockfish developers (see AUTHORS file)
+@@ -192,6 +194,23 @@
+ // copied from Bonus[] and PBonus[], adding the piece value, then the black halves of
+ // the tables are initialized by flipping and changing the sign of the white scores.
+ void init(const Variant* v) {
++
++// DEV_AUX scoped Standard-Chess price-table ablation, defaultoff perprocess.
++#ifdef GENERICCHESS_MATERIAL_DEVELOPMENT
++  const char* aligned = std::getenv("GENERICCHESS_ALIGN_SEARCH_PRICES");
++  const bool alignSearch = aligned && std::string(aligned) == "1";
++  if (alignSearch)
++      for (PieceType pt : {PAWN, KNIGHT, BISHOP, ROOK, QUEEN})
++          for (Phase phase : {MG, EG})
++              if (v->pieceValue[phase][pt])
++                  PieceValue[phase][make_piece(WHITE, pt)] =
++                  PieceValue[phase][make_piece(BLACK, pt)] = v->pieceValue[phase][pt];
++  std::cout << "info string DEV_AUX alignment " << (alignSearch ? 1 : 0);
++  for (PieceType pt : {PAWN, KNIGHT, BISHOP, ROOK, QUEEN})
++      std::cout << " " << int(pt) << ":" << PieceValue[MG][pt] << ":" << PieceValue[EG][pt];
++  std::cout << std::endl;
++#endif
++
+ 
+   PieceType strongestPiece = NO_PIECE_TYPE;
+   for (PieceSet ps = v->pieceTypes; ps;)

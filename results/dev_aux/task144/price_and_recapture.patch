@@ -1,0 +1,126 @@
+--- a/src/psqt.cpp
++++ b/src/psqt.cpp
+@@ -1,3 +1,5 @@
++#include <cstdlib>
++#include <iostream>
+ /*
+   Stockfish, a UCI chess playing engine derived from Glaurung 2.1
+   Copyright (C) 2004-2022 The Stockfish developers (see AUTHORS file)
+@@ -192,6 +194,24 @@
+ // copied from Bonus[] and PBonus[], adding the piece value, then the black halves of
+ // the tables are initialized by flipping and changing the sign of the white scores.
+ void init(const Variant* v) {
++
++// DEV_AUX scoped Standard-Chess price-table ablation, defaultoff perprocess.
++#ifdef GENERICCHESS_MATERIAL_DEVELOPMENT
++  const char* aligned = std::getenv("GENERICCHESS_ALIGN_SEARCH_PRICES");
++  const int alignmentMode = aligned && std::string(aligned) == "2" ? 2 : (aligned && std::string(aligned) == "1" ? 1 : 0);
++  const bool alignSearch = alignmentMode != 0;
++  if (alignSearch)
++      for (PieceType pt : {PAWN, KNIGHT, BISHOP, ROOK, QUEEN})
++          for (Phase phase : {MG, EG})
++              if (v->pieceValue[phase][pt])
++                  PieceValue[phase][make_piece(WHITE, pt)] =
++                  PieceValue[phase][make_piece(BLACK, pt)] = Value(v->pieceValue[phase][pt]);
++  std::cout << "info string DEV_AUX alignment " << alignmentMode;
++  for (PieceType pt : {PAWN, KNIGHT, BISHOP, ROOK, QUEEN})
++      std::cout << " " << int(pt) << ":" << PieceValue[MG][pt] << ":" << PieceValue[EG][pt];
++  std::cout << std::endl;
++#endif
++
+ 
+   PieceType strongestPiece = NO_PIECE_TYPE;
+   for (PieceSet ps = v->pieceTypes; ps;)
+--- a/src/position.cpp
++++ b/src/position.cpp
+@@ -1,3 +1,4 @@
++#include <cstdlib>
+ /*
+   Stockfish, a UCI chess playing engine derived from Glaurung 2.1
+   Copyright (C) 2004-2022 The Stockfish developers (see AUTHORS file)
+@@ -2499,6 +2500,16 @@
+       || count<CLOBBER_PIECE>() == count<ALL_PIECES>())
+       return VALUE_ZERO >= threshold;
+ 
++#ifdef GENERICCHESS_MATERIAL_DEVELOPMENT
++  // One furtherablation: recaptureconstants only, class-attackerorder unchanged.
++  static const bool alignRecapture = [] {
++      const char* value = std::getenv("GENERICCHESS_ALIGN_SEARCH_PRICES");
++      return value && std::string(value) == "2";
++  }();
++#else
++  constexpr bool alignRecapture = false;
++#endif
++
+   int swap = PieceValue[MG][piece_on(to)] - threshold;
+   if (swap < 0)
+       return false;
+@@ -2557,7 +2568,7 @@
+       // the bitboard 'attackers' any X-ray attackers behind it.
+       if ((bb = stmAttackers & pieces(PAWN)))
+       {
+-          if ((swap = PawnValueMg - swap) < res)
++          if ((swap = (alignRecapture ? PieceValue[MG][PAWN] : PawnValueMg) - swap) < res)
+               break;
+ 
+           occupied ^= least_significant_square_bb(bb);
+@@ -2566,7 +2577,7 @@
+ 
+       else if ((bb = stmAttackers & pieces(KNIGHT)))
+       {
+-          if ((swap = KnightValueMg - swap) < res)
++          if ((swap = (alignRecapture ? PieceValue[MG][KNIGHT] : KnightValueMg) - swap) < res)
+               break;
+ 
+           occupied ^= least_significant_square_bb(bb);
+@@ -2574,7 +2585,7 @@
+ 
+       else if ((bb = stmAttackers & pieces(BISHOP)))
+       {
+-          if ((swap = BishopValueMg - swap) < res)
++          if ((swap = (alignRecapture ? PieceValue[MG][BISHOP] : BishopValueMg) - swap) < res)
+               break;
+ 
+           occupied ^= least_significant_square_bb(bb);
+@@ -2583,7 +2594,7 @@
+ 
+       else if ((bb = stmAttackers & pieces(ROOK)))
+       {
+-          if ((swap = RookValueMg - swap) < res)
++          if ((swap = (alignRecapture ? PieceValue[MG][ROOK] : RookValueMg) - swap) < res)
+               break;
+ 
+           occupied ^= least_significant_square_bb(bb);
+@@ -2592,7 +2603,7 @@
+ 
+       else if ((bb = stmAttackers & pieces(QUEEN)))
+       {
+-          if ((swap = QueenValueMg - swap) < res)
++          if ((swap = (alignRecapture ? PieceValue[MG][QUEEN] : QueenValueMg) - swap) < res)
+               break;
+ 
+           occupied ^= least_significant_square_bb(bb);
+--- a/src/uci.cpp
++++ b/src/uci.cpp
+@@ -388,6 +388,21 @@
+       else if (token == "flip")     pos.flip();
+       else if (token == "bench")    bench(pos, is, states);
+       else if (token == "d")        sync_cout << pos << sync_endl;
++#ifdef GENERICCHESS_MATERIAL_DEVELOPMENT
++      else if (token == "devauxsee")
++      {
++          std::string moveText;
++          int threshold = 0;
++          is >> moveText >> threshold;
++          Move move = UCI::to_move(pos, moveText);
++          if (move == MOVE_NONE || threshold < -10000 || threshold > 10000)
++              sync_cout << "info string DEV_AUX SEE invalid" << sync_endl;
++          else
++              sync_cout << "info string DEV_AUX SEE " << moveText << " "
++                        << threshold << " " << (pos.see_ge(move, Value(threshold)) ? 1 : 0)
++                        << sync_endl;
++      }
++#endif
+       else if (token == "eval")     trace_eval(pos);
+       else if (token == "compiler") sync_cout << compiler_info() << sync_endl;
+       else if (token == "export_net")

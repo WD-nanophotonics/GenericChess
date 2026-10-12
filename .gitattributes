@@ -150,3 +150,11 @@ results/dev_aux/SEGMENT_20261011_7* -text
 /results/dev_aux/*segment14.py whitespace=cr-at-eol
 
 /results/dev_aux/task131/*.patch whitespace=-blank-at-eol,cr-at-eol
+
+/results/dev_aux/task13[3-9]/** -text whitespace=cr-at-eol
+/results/dev_aux/task14[0-9]/** -text whitespace=cr-at-eol
+/results/dev_aux/task15[0-1]/** -text whitespace=cr-at-eol
+/results/dev_aux/task1[345][0-9]/*.patch whitespace=-blank-at-eol,cr-at-eol
+/results/dev_aux/*segment15.py -text whitespace=cr-at-eol
+/results/dev_aux/ACTUAL_MATURE_20261012_15* -text whitespace=cr-at-eol
+/results/dev_aux/SEGMENT_20261012_15* -text whitespace=cr-at-eol

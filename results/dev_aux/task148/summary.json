@@ -1,0 +1,214 @@
+{
+  "complete": true,
+  "queries": 28,
+  "seconds": 0.8589999997057021,
+  "oracle_value": -188,
+  "modes": [
+    {
+      "mode": 0,
+      "mismatching_thresholds": [
+        -189,
+        -188
+      ],
+      "answers": [
+        {
+          "threshold": -189,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e6f6 -189 0"
+        },
+        {
+          "threshold": -188,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e6f6 -188 0"
+        },
+        {
+          "threshold": -187,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 -187 0"
+        },
+        {
+          "threshold": 0,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 0 0"
+        },
+        {
+          "threshold": 207,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 207 0"
+        },
+        {
+          "threshold": 208,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 208 0"
+        },
+        {
+          "threshold": 209,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 209 0"
+        }
+      ]
+    },
+    {
+      "mode": 1,
+      "mismatching_thresholds": [
+        -187,
+        0,
+        207,
+        208
+      ],
+      "answers": [
+        {
+          "threshold": -189,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e6f6 -189 1"
+        },
+        {
+          "threshold": -188,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e6f6 -188 1"
+        },
+        {
+          "threshold": -187,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 -187 1"
+        },
+        {
+          "threshold": 0,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 0 1"
+        },
+        {
+          "threshold": 207,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 207 1"
+        },
+        {
+          "threshold": 208,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 208 1"
+        },
+        {
+          "threshold": 209,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 209 0"
+        }
+      ]
+    },
+    {
+      "mode": 2,
+      "mismatching_thresholds": [
+        -187,
+        0,
+        207,
+        208
+      ],
+      "answers": [
+        {
+          "threshold": -189,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e6f6 -189 1"
+        },
+        {
+          "threshold": -188,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e6f6 -188 1"
+        },
+        {
+          "threshold": -187,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 -187 1"
+        },
+        {
+          "threshold": 0,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 0 1"
+        },
+        {
+          "threshold": 207,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 207 1"
+        },
+        {
+          "threshold": 208,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 208 1"
+        },
+        {
+          "threshold": 209,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 209 0"
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "mismatching_thresholds": [],
+      "answers": [
+        {
+          "threshold": -189,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e6f6 -189 1"
+        },
+        {
+          "threshold": -188,
+          "actual_see_ge": true,
+          "candidate_target_oracle_ge": true,
+          "raw": "info string DEV_AUX SEE e6f6 -188 1"
+        },
+        {
+          "threshold": -187,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 -187 0"
+        },
+        {
+          "threshold": 0,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 0 0"
+        },
+        {
+          "threshold": 207,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 207 0"
+        },
+        {
+          "threshold": 208,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 208 0"
+        },
+        {
+          "threshold": 209,
+          "actual_see_ge": false,
+          "candidate_target_oracle_ge": false,
+          "raw": "info string DEV_AUX SEE e6f6 209 0"
+        }
+      ]
+    }
+  ],
+  "scope": "Oneactualfixedattacker-priority counterexample for nonmonotonicpositivecandidateprices, not generalSEEcorrectness orengine-strength/learninggain. Mode3changescandidateattackerpriority; LSBwithinclass andotherSEEapproximationsremain. TwoBlackattackerclasses onfirstrecapture."
+}

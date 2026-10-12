@@ -1,0 +1,534 @@
+{
+  "status": "INTERRUPTED",
+  "build_seconds": 18.67200000025332,
+  "source_pin": "9f778da667f6e07dae1e85d3e2ea204fc6dee94d",
+  "toolchain_sha256": "317492c456aa27ee607a5919f1d2d38dcdc1112516a24d0bf4b00d078f52d17a",
+  "compiler_version": "clang version 23.1.3 (https://github.com/llvm/llvm-project.git 0d261d1ca552c95a8f007e061c787ac7132fbcbc)\nTarget: x86_64-w64-windows-gnu\nThread model: posix\nInstalledDir: C:/Users/wdai/Documents/ChatGPT/GenericChess-DEV_AUX/.local_agent/alignment-build/toolchain/llvm-mingw-20261006-ucrt-x86_64/bin\nConfiguration file: C:/Users/wdai/Documents/ChatGPT/GenericChess-DEV_AUX/.local_agent/alignment-build/toolchain/llvm-mingw-20261006-ucrt-x86_64/bin/x86_64-w64-windows-gnu.cfg\n",
+  "compile_flags": [
+    "-std=c++17",
+    "-O2",
+    "-DNDEBUG",
+    "-fno-exceptions",
+    "-DIS_64BIT",
+    "-DNO_PREFETCH",
+    "-DNNUE_EMBEDDING_OFF",
+    "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+    "-msse2",
+    "-pthread"
+  ],
+  "commands": [
+    {
+      "source": "benchmark.cpp",
+      "source_sha256": "cdb8b8963ee2a023443827b0956e2f28da3fc05d22aef6354ac5ab5a80195567",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "04efbd1ca3e2783214bac5c70fa37b21bac317ff2864c96b449af8baf4da8c92"
+    },
+    {
+      "source": "bitbase.cpp",
+      "source_sha256": "a03e309abe5dd7c5cb17f8473fa41c72071966a8a6da3bdf6db17fa537ad5041",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "5b8dfb9a306c913ebbc3314ad57e8b3ec61fa59c9d3984bd773126e22de8e244"
+    },
+    {
+      "source": "bitboard.cpp",
+      "source_sha256": "767c344c93b6d2e1daaa9a861b3e20d4ff4bc5324935565aebad8fdf7f877b29",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "189848872be2f5017cb9848d5e0bfa5c931d7a3c1446300ee111a835fc4487c1"
+    },
+    {
+      "source": "endgame.cpp",
+      "source_sha256": "58dc3e70e598d86ca1ff8bf3772a831190e7be614045ab79806f2cb274055442",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "f06b54619838f17693334dfb3c0f22b2fed95522e378185461b35f89f4057832"
+    },
+    {
+      "source": "evaluate.cpp",
+      "source_sha256": "b875e3f460216430daf5ad61bee19bf5c5d2efb4c0377a2cde5c2d9172012fc3",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "b02f1ea082734c1ff23ff0d45e7c5d6bf44ca6921da1d33204a941213878ad22"
+    },
+    {
+      "source": "main.cpp",
+      "source_sha256": "88edb1472bd5c241ed49c55edebb4d7ee6037d35a2f32d19e0108398c2caa639",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "bdbe90f83fcff7ca9276a0dd84cd2cc8081d9a0a0b9e38e0b1b28a4fa7c08744"
+    },
+    {
+      "source": "material.cpp",
+      "source_sha256": "e9bf9f79ce64a94f3df7da288019c28bda3f1c665e07255eb693ff6d993b346d",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "d1ca3fc35a21c60965426ce536567869fd998e1288fd4e952b4b13bf2103eba9"
+    },
+    {
+      "source": "misc.cpp",
+      "source_sha256": "d81cd5fcd40352e391680d71e0bb3cfbd5c3f639293b76df9f619777159fd420",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "5c8235ec50ff32f446ac103f196ee9735ee3e9e83059d926d40592fbf70ad67b"
+    },
+    {
+      "source": "movegen.cpp",
+      "source_sha256": "0ec1dd919ee6778f690030dc78dce9b18fded040089904b55ea37f9fb781b748",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "1c59d1e8769d3ffee2197a99c1439f3c6000dd23e420b787b03dcb1a3fe71b38"
+    },
+    {
+      "source": "movepick.cpp",
+      "source_sha256": "496fcdbdd760838825cdc1647d5d11c8fd41d2988b3d899fe310cdb554297371",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "0e58a8ebf18dd7be3656c479b4466d00bccb7d81c5c16244d67b242835c1c707"
+    },
+    {
+      "source": "pawns.cpp",
+      "source_sha256": "b440976d91ae833ca012be2e2460a335fffe68ea3f47cdcf9177ba182b194641",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "a2af95f81ee079d6c85145032424a6907a228580165129a92794a733869bbc5e"
+    },
+    {
+      "source": "position.cpp",
+      "source_sha256": "16f28fecb31f9d68fcd6010e3d231aea9c08182db10edf66ed232964ecc684fc",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "6544adfd0fdcf1d395257aa70f5f992a6b8e6bcda6689bed3cb6941942923cc0"
+    },
+    {
+      "source": "psqt.cpp",
+      "source_sha256": "710aa6ddcf4edd26b792edf2e1e3a9c5f62335c964bc788cc7041be7df179b6d",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "cba47586e276ed3fb546ff5913243f3a93f0f248ca446a87ce29e5547134ca07"
+    },
+    {
+      "source": "search.cpp",
+      "source_sha256": "02f1a8002cfd945f18b70582740139311c61dcb9805315f735bde4ad5b5be01a",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "97c2467915071924f6dceef07d686d2661f87d9d156c99e9327fb7158a5da16e"
+    },
+    {
+      "source": "thread.cpp",
+      "source_sha256": "690983f6d61c05ba9f646040930b8cbe314de98af76779654e170aef930cb92c",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "80122a9c3c3d12572f0d3c8276cb40c5651fd3d99c25dc736d000f7418ddfa73"
+    },
+    {
+      "source": "timeman.cpp",
+      "source_sha256": "8d95bacf61d3e3181a175ae06ea4be6954b35b35cd0447ce8df50f6a1b401836",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "fa35073bd884faf688de9361abafe0487cd684519572cf2e3c377dc614fbf571"
+    },
+    {
+      "source": "tt.cpp",
+      "source_sha256": "d7196362fc06a1adcb0a2fd2d18ee751453425069834a018a6a4424ac0450dd1",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "6eecfc8899f4590181fb31b47615948d0db557e20374b13b1ae53ada6cdf1e00"
+    },
+    {
+      "source": "uci.cpp",
+      "source_sha256": "a087a5ee7a26f23fc80dbf5f4891f609e338ed8bd38d3532689806c03a9389ac",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "a1d571c3af6cc68bf8daffd328cb1c73a634868387ef53ce56600d1dc9803bbb"
+    },
+    {
+      "source": "ucioption.cpp",
+      "source_sha256": "b41c40fe1ad75e21ba33bc6fe1c85fca736a5cf61eced73bdc0a1f38143e1022",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "79ce036db34615632595a58d15eb947759c278c3fce47e4a0b0055364b41fdff"
+    },
+    {
+      "source": "tune.cpp",
+      "source_sha256": "5c4ec1cb22a171e8758afba4e6d467a1e9e7c5299dce5dd202d5e94316d5ecac",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "b42152a23d3f49bc585f29c2b53488c051c3094017644603c4b62c1f26e4e7c1"
+    },
+    {
+      "source": "syzygy/tbprobe.cpp",
+      "source_sha256": "c0badee0722895e5e52a8d7c5906256c56ff13aff127ea744f81cffa2ca1850d",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "0b81267701b32eb42de276a90710a706fb6f4f7d9e956473c237aab5a072887a"
+    },
+    {
+      "source": "nnue/evaluate_nnue.cpp",
+      "source_sha256": "42748f6ef0923e4899e3d57b59fff40089f31f3bd8408132f1f40cfc6266e3d5",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "1b9b01ad4c13597bba1143f3d01c2d05a904146473513cce7d31c4db6fda5862"
+    },
+    {
+      "source": "nnue/features/half_ka_v2.cpp",
+      "source_sha256": "49f089a2092500892532d93196dcd5001961e778916b767e7d5f7f16b8eaaec3",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "dc1879989e9e29af25b4d1739e4de64794108b3d972bab4712d737e9a916e809"
+    },
+    {
+      "source": "partner.cpp",
+      "source_sha256": "49428e981a1ab6dfa40e05beedfa2f89c457abd1c1e2e7a11fc16cd173eb0569",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "b1f31531669994b53e9f7e6321ffa6e5b8026f4cf69e78ec4846e6c01d34ccea"
+    },
+    {
+      "source": "parser.cpp",
+      "source_sha256": "b696c1fcc3f7f2a2e28732eb73fb3cff2e8762f92eda7d0f0aeb5cf5c00e3f41",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "be941ff8b8c9cafa74ad5f8a719811ab71cd9f64fd7fa891ae0f041ff859c471"
+    },
+    {
+      "source": "piece.cpp",
+      "source_sha256": "6695601cb82b230aab5bd3f8f7422ff8be1ab05163f80bc374ec8137e23399ef",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "efcc05e2204ec7c68f7ed832109508e598b4327cd8d8cc33899dfd08ec389c5e"
+    },
+    {
+      "source": "variant.cpp",
+      "source_sha256": "0e835a90bb2c2d27b03e55ef164092927d68084087cdad19ccd29ba9981058d4",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 0,
+      "object_sha256": "f8134846d5bbc01b43f6f9e25236b65d139296923e80930d14afd1dc17006feb"
+    },
+    {
+      "source": "xboard.cpp",
+      "source_sha256": "ff76bc5024a129aac6cb15fa2909b7ad83435f94b41297672703193d20d738c1",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-DNDEBUG",
+        "-fno-exceptions",
+        "-DIS_64BIT",
+        "-DNO_PREFETCH",
+        "-DNNUE_EMBEDDING_OFF",
+        "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+        "-msse2",
+        "-pthread"
+      ],
+      "returncode": 1,
+      "object_sha256": null
+    }
+  ],
+  "link_flags": [
+    "-pthread",
+    "-static"
+  ],
+  "binary_relative": ".local_agent\\alignment-build\\fairy-toggle.exe",
+  "binary_sha256": null,
+  "experimental_psqt_sha256": "710aa6ddcf4edd26b792edf2e1e3a9c5f62335c964bc788cc7041be7df179b6d",
+  "error": "RuntimeError: compilefailed:xboard.cpp C:\\Users\\wdai\\Documents\\ChatGPT\\GenericChess-DEV_AUX\\.local_agent\\alignment-build\\source\\Fairy-Stockfish-9f778da667f6e07dae1e85d3e2ea204fc6dee94d\\src\\xboard.cpp:202:55: error: use of undeclared identifier 'back_inserter'\n  202 |                   copy_if(moves.begin(), moves.end(), back_inserter(filteredMoves), [&](const Move m) {\n      |                                                       ^~~~~~~~~~~~~\n1 error generated.\n",
+  "scope": "Ownedexperimentalcompile of exactpinnedsource withmaterialpatch plusoneprocess-env tabletoggle. No source-to-binary identityclaim for old477628ae; singlebinarysamecompiler comparison controls newablation."
+}
