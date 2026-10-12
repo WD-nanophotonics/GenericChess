@@ -1,0 +1,79 @@
+{
+  "duration_gate_passed": true,
+  "elapsed_minutes": 60.23,
+  "ended_at": "2026-10-12T22:44:41.755237+00:00",
+  "ending_evidence": "results/dev_aux/SEGMENT_20261012_28.md",
+  "id": "53cab110-42f1-428d-8445-b994e78ed318",
+  "quality_review_required": true,
+  "reason": "safe_checkpoint",
+  "research_stage_count": 8,
+  "started_at": "2026-10-12T21:44:27.934479+00:00",
+  "agent_id": "DEV_AUX",
+  "branch": "sidemission",
+  "scientific_complete": false,
+  "actual_new_games": 9104,
+  "actual_go": 95189,
+  "game_go": 92509,
+  "qualification_go": 2616,
+  "preflight_go": 64,
+  "producer_wall_seconds": 1593.204,
+  "checkpoints": [
+    {
+      "at": "2026-10-12T22:21:56.989027+00:00",
+      "evidence": "results/dev_aux/task454/result.json",
+      "kind": "research",
+      "next_action": "456 soleproducer74173 running few4/wide16 unequalcost; finishallendpoints then460qualification461audit462localcomponents464coverage465ALLcrossmetrics, sourceprior onlyafterALLendpoints freeze.",
+      "observation": "4451664games17545go305.188s;452180groups720go exact;453318449PV18176tables PASS. Fast objective accepts3+3 versuspure1+1 but random-start dev truewins4->2 fast versus4->1 pure, no stable recovery.464 fixedunit baseline playedrank11, PVrank11at1k cohort431 and12inothercohorts; notformalidentifiability.",
+      "question": "Does fast-mate reward or broader training provide robust feedback rather than extra accepted steps?"
+    },
+    {
+      "at": "2026-10-12T22:25:19.793388+00:00",
+      "evidence": "results/dev_aux/task465/result.json",
+      "kind": "research",
+      "next_action": "Begin467fresh matched legacy/handSEE input construction motivatedbyobserved173finiteSEE mismatches; performindependentprefixaudit, freeze nextstudy WITHOUTtrainingthissegment. Package28 ALLnegative/cross/cost results andpublish.",
+      "observation": "456 completed4112games41616go715.656s. FitFew4 784games135.141s;Wide16 3136games532.250s.460184groups736old/reusego exact;461831602PV/38653randomdraws/18432tableentries PASS. Unit-start randomdev3->8few/3->9wide; randomstart9->10few/9->8wide.464wide baseline rank12, yet no stable value recovery;466ALL16descriptors frozenafteroutputs.",
+      "question": "Does wider training remove initialization sensitivity at quantified extra cost?"
+    },
+    {
+      "at": "2026-10-12T22:26:28.120229+00:00",
+      "evidence": "results/dev_aux/task467/input_audit.json",
+      "kind": "research",
+      "next_action": "Review scientificscope/source/allcosts/privacy, archiveexactnew28science, updateownmainline/collab, publishsidemission/fullremoteSHA; retain3executablememo tasks andnormalfinish after60.",
+      "observation": "9104actual cappedgames92509gamego;2616additionalcoldqualificationgo. Fourfrozenstudies26.553producer minutes. Budgetinteraction, objectiveablation and breadth effects preservedALL.46616sourceprior descriptors mixed signs; officialprior not independenthumanconsensus.467fresh8prefixes/320nativeplies and48directions validated, finalfe2eae69; no nextfit executed.",
+      "question": "What does the short-game learning evidence establish about human-like material values?"
+    },
+    {
+      "at": "2026-10-12T22:38:13.845438+00:00",
+      "evidence": "results/dev_aux/ACTUAL_MATURE_20261012_28_manifest.json",
+      "kind": "research",
+      "next_action": "Review preflight response components andsourceprice influence scope, preservingproduction/archives; refill3memo tasks, normalfinish onlyafter60, publishactualfinishreceipt/fullSHA.",
+      "observation": "Science5ef777228c276435e47d5d71b62bc379e020c7f0 fullorigin/sidemission exact; report/manifest/collab HTTPbytes==Gitblobs.146member436975728raw/37756195zip reviewedAST34/JSON78/104293journal lines/privacyPASS.47164coldgo1490PV128tableentriesPASS;472futureaudit syntaxONLY notexecuted. Dotresult sentonce fixedlinks, deliverysavedprivately; exactargs/receiptprivate. Originalsession active52+min, notreset.",
+      "question": "Can the reviewed evidence be inspected remotely without private data or main-project changes?"
+    },
+    {
+      "at": "2026-10-12T22:39:44.384483+00:00",
+      "evidence": "results/dev_aux/task474/result.json",
+      "kind": "research",
+      "next_action": "Publish these scopeclarifications andrefill memo; continue nextSEE comparison throughreviewedfutureexecutor/nativeaudit onnextresearchsegment, normalfinish>=60/fullreceipt/remote verification.",
+      "observation": "473ALL16preflightpairs:0bestmovechanges,6lastscore/4depth/8nodes/10PVchanges.474binary-source-pinned same searchsource inSEEarms preserves board-onlycapturefutility+fixed/history margins; sourceapproximation, notharmfulpruning proof. Archives/frozenproduction unchanged, additional standalonefiles reviewed. Own qthreadreadallpages checkpointprivate, no newsupplement/roots/resend.",
+      "question": "Does a changed complete engine response imply changed decisions or a full material-search repair?"
+    },
+    {
+      "at": "2026-10-12T22:42:54.491476+00:00",
+      "evidence": "results/dev_aux/task476/result.json",
+      "kind": "research",
+      "next_action": "Verify finalscientificcommit/publicreport bytes, preserve3executablememo tasks, normalfinish>=60 andpublishsanitizedactualsession receipt; no nextproducer orschedulepause.",
+      "observation": "476conditional38actor quantity[-2,2] proof: one newwin withotherongoing givesmingain+1/4N8, -47/16N32. ALL96actualfew/wide rounds havezero strictterminalpreference overrides; differingproposals areterminalties, notobservedharm. Exactdata/fitness/archivesunchanged, no newgo. Source/response/materialscopeclarifications reviewedandpublished.",
+      "question": "Does aggregation change event dominance, and was a strict terminal preference actually reversed?"
+    }
+  ],
+  "science_sha": "6d69b8731257759263911443dac2d63f64a7dc50",
+  "science_remote_verified": true,
+  "public_archive_bytes_verified": true,
+  "quality_review": "Actualnative/fullhistory/rule/RNG/PV/fitness/price/table/integerupdates, exactarchive/hash/privacy/source/scope reviews passed; validator provesstructure/time only. Normal60+segment effective stages; elapsed notAppuptime guarantee. No newworkers/fees/default/UI/mainchanges.",
+  "no_active_producer": true,
+  "heartbeat": "ACTIVE",
+  "private_excluded": "No chatthread id/rawSlack/account/credentials/userinput; generated summaries only.",
+  "checkpoint_window_retained": 6,
+  "checkpoint_retention_note": "Helper retained recentcheckpoint window; research_stage_count8 owns cumulative count, not a claim all8 are listed."
+}
