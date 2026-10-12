@@ -1,0 +1,2453 @@
+{
+  "complete": true,
+  "games": 224,
+  "seconds": 38.875,
+  "groups": [
+    {
+      "profile": "unit",
+      "opponent": "random",
+      "games": 16,
+      "mate_wins": 5,
+      "mate_losses": 0,
+      "cutoffs": 11,
+      "original_reward_mean": 31.509375,
+      "opponent_leaf_nodes": 0
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "games": 16,
+      "mate_wins": 3,
+      "mate_losses": 0,
+      "cutoffs": 13,
+      "original_reward_mean": 19.03203125,
+      "opponent_leaf_nodes": 0
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "games": 16,
+      "mate_wins": 4,
+      "mate_losses": 0,
+      "cutoffs": 12,
+      "original_reward_mean": 25.365104166666665,
+      "opponent_leaf_nodes": 0
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "games": 16,
+      "mate_wins": 0,
+      "mate_losses": 0,
+      "cutoffs": 16,
+      "original_reward_mean": 0.3416666666666667,
+      "opponent_leaf_nodes": 0
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "games": 16,
+      "mate_wins": 4,
+      "mate_losses": 0,
+      "cutoffs": 12,
+      "original_reward_mean": 25.304427083333334,
+      "opponent_leaf_nodes": 0
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "games": 16,
+      "mate_wins": 3,
+      "mate_losses": 0,
+      "cutoffs": 13,
+      "original_reward_mean": 19.01015625,
+      "opponent_leaf_nodes": 0
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "games": 16,
+      "mate_wins": 2,
+      "mate_losses": 0,
+      "cutoffs": 14,
+      "original_reward_mean": 12.829427083333334,
+      "opponent_leaf_nodes": 0
+    },
+    {
+      "profile": "unit",
+      "opponent": "unit2ply",
+      "games": 16,
+      "mate_wins": 0,
+      "mate_losses": 0,
+      "cutoffs": 16,
+      "original_reward_mean": 0.12916666666666668,
+      "opponent_leaf_nodes": 88786
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "games": 16,
+      "mate_wins": 1,
+      "mate_losses": 0,
+      "cutoffs": 15,
+      "original_reward_mean": 6.3828125,
+      "opponent_leaf_nodes": 94499
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "games": 16,
+      "mate_wins": 0,
+      "mate_losses": 0,
+      "cutoffs": 16,
+      "original_reward_mean": 0.15,
+      "opponent_leaf_nodes": 93926
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "games": 16,
+      "mate_wins": 0,
+      "mate_losses": 0,
+      "cutoffs": 16,
+      "original_reward_mean": 0.08333333333333333,
+      "opponent_leaf_nodes": 89043
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "games": 16,
+      "mate_wins": 0,
+      "mate_losses": 0,
+      "cutoffs": 16,
+      "original_reward_mean": 0.16666666666666666,
+      "opponent_leaf_nodes": 94043
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "games": 16,
+      "mate_wins": 1,
+      "mate_losses": 0,
+      "cutoffs": 15,
+      "original_reward_mean": 6.4078125,
+      "opponent_leaf_nodes": 92845
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "games": 16,
+      "mate_wins": 1,
+      "mate_losses": 0,
+      "cutoffs": 15,
+      "original_reward_mean": 6.415885416666667,
+      "opponent_leaf_nodes": 98639
+    }
+  ],
+  "profile_pairs": [
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "opening": 0,
+      "color": true,
+      "reward_delta": 0.1333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "opening": 0,
+      "color": false,
+      "reward_delta": 0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "opening": 1,
+      "color": true,
+      "reward_delta": -100.2875,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "opening": 1,
+      "color": false,
+      "reward_delta": -100.24166666666666,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "opening": 2,
+      "color": true,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "opening": 2,
+      "color": false,
+      "reward_delta": 0.1333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "opening": 3,
+      "color": true,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "opening": 3,
+      "color": false,
+      "reward_delta": -99.65833333333333,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "opening": 4,
+      "color": true,
+      "reward_delta": -0.06666666666666671,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "opening": 4,
+      "color": false,
+      "reward_delta": -100.175,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "opening": 5,
+      "color": true,
+      "reward_delta": -99.85416666666667,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "opening": 5,
+      "color": false,
+      "reward_delta": 99.53333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "opening": 6,
+      "color": true,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "opening": 6,
+      "color": false,
+      "reward_delta": 99.925,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "opening": 7,
+      "color": true,
+      "reward_delta": 100.05416666666666,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "random",
+      "opening": 7,
+      "color": false,
+      "reward_delta": 0.1333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "opening": 0,
+      "color": true,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "opening": 0,
+      "color": false,
+      "reward_delta": 0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "opening": 1,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "opening": 1,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": true,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "opening": 2,
+      "color": true,
+      "reward_delta": 0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "opening": 2,
+      "color": false,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "opening": 3,
+      "color": true,
+      "reward_delta": 0.26666666666666666,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "opening": 3,
+      "color": false,
+      "reward_delta": -99.59166666666667,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "opening": 4,
+      "color": true,
+      "reward_delta": -0.06666666666666671,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "opening": 4,
+      "color": false,
+      "reward_delta": -99.975,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "opening": 5,
+      "color": true,
+      "reward_delta": -99.92083333333333,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "opening": 5,
+      "color": false,
+      "reward_delta": -0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "opening": 6,
+      "color": true,
+      "reward_delta": 0.26666666666666666,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "opening": 6,
+      "color": false,
+      "reward_delta": 99.925,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "opening": 7,
+      "color": true,
+      "reward_delta": 100.05416666666666,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "random",
+      "opening": 7,
+      "color": false,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "opening": 0,
+      "color": true,
+      "reward_delta": 0.1333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "opening": 0,
+      "color": false,
+      "reward_delta": -0.06666666666666665,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "opening": 1,
+      "color": true,
+      "reward_delta": -100.55416666666666,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "opening": 1,
+      "color": false,
+      "reward_delta": -100.10833333333333,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "opening": 2,
+      "color": true,
+      "reward_delta": 0.26666666666666666,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "opening": 2,
+      "color": false,
+      "reward_delta": 0.26666666666666666,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "opening": 3,
+      "color": true,
+      "reward_delta": 0.1333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "opening": 3,
+      "color": false,
+      "reward_delta": -99.79166666666667,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "opening": 4,
+      "color": true,
+      "reward_delta": -0.06666666666666671,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "opening": 4,
+      "color": false,
+      "reward_delta": -99.90833333333333,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "opening": 5,
+      "color": true,
+      "reward_delta": -99.7875,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "opening": 5,
+      "color": false,
+      "reward_delta": -0.06666666666666665,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "opening": 6,
+      "color": true,
+      "reward_delta": 0.4,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "opening": 6,
+      "color": false,
+      "reward_delta": 0.1333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "opening": 7,
+      "color": true,
+      "reward_delta": 0.19999999999999998,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "random",
+      "opening": 7,
+      "color": false,
+      "reward_delta": 0.1333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "opening": 0,
+      "color": true,
+      "reward_delta": 99.8625,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "opening": 0,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "opening": 1,
+      "color": true,
+      "reward_delta": -100.2875,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "opening": 1,
+      "color": false,
+      "reward_delta": -100.04166666666667,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "opening": 2,
+      "color": true,
+      "reward_delta": 0.26666666666666666,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "opening": 2,
+      "color": false,
+      "reward_delta": 0.1333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "opening": 3,
+      "color": true,
+      "reward_delta": 100.1125,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "opening": 3,
+      "color": false,
+      "reward_delta": -99.725,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "opening": 4,
+      "color": true,
+      "reward_delta": -0.06666666666666671,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "opening": 4,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": true,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "opening": 5,
+      "color": true,
+      "reward_delta": -99.7875,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "opening": 5,
+      "color": false,
+      "reward_delta": -0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "opening": 6,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "opening": 6,
+      "color": false,
+      "reward_delta": 0.3333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "opening": 7,
+      "color": true,
+      "reward_delta": 100.05416666666666,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "random",
+      "opening": 7,
+      "color": false,
+      "reward_delta": 0.06666666666666665,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "opening": 0,
+      "color": true,
+      "reward_delta": 0.1333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "opening": 0,
+      "color": false,
+      "reward_delta": 0.06666666666666665,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "opening": 1,
+      "color": true,
+      "reward_delta": -100.2875,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "opening": 1,
+      "color": false,
+      "reward_delta": -99.975,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "opening": 2,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "opening": 2,
+      "color": false,
+      "reward_delta": 0.26666666666666666,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "opening": 3,
+      "color": true,
+      "reward_delta": -0.06666666666666668,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "opening": 3,
+      "color": false,
+      "reward_delta": -99.79166666666667,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "opening": 4,
+      "color": true,
+      "reward_delta": -0.06666666666666671,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "opening": 4,
+      "color": false,
+      "reward_delta": -0.125,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "opening": 5,
+      "color": true,
+      "reward_delta": -99.92083333333333,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "opening": 5,
+      "color": false,
+      "reward_delta": 99.65833333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "opening": 6,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "opening": 6,
+      "color": false,
+      "reward_delta": -0.06666666666666668,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "opening": 7,
+      "color": true,
+      "reward_delta": 100.05416666666666,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "random",
+      "opening": 7,
+      "color": false,
+      "reward_delta": 0.1333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "opening": 0,
+      "color": true,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "opening": 0,
+      "color": false,
+      "reward_delta": 0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "opening": 1,
+      "color": true,
+      "reward_delta": -0.125,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "opening": 1,
+      "color": false,
+      "reward_delta": -100.175,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "opening": 2,
+      "color": true,
+      "reward_delta": 0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "opening": 2,
+      "color": false,
+      "reward_delta": 0.1333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "opening": 3,
+      "color": true,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "opening": 3,
+      "color": false,
+      "reward_delta": -99.59166666666667,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "opening": 4,
+      "color": true,
+      "reward_delta": -0.06666666666666671,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "opening": 4,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": true,
+      "terminal": [
+        "CHECKMATE",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "opening": 5,
+      "color": true,
+      "reward_delta": -99.92083333333333,
+      "same_actions": false,
+      "terminal": [
+        "CHECKMATE",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "opening": 5,
+      "color": false,
+      "reward_delta": -0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "opening": 6,
+      "color": true,
+      "reward_delta": 0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "opening": 6,
+      "color": false,
+      "reward_delta": 0.06666666666666665,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "opening": 7,
+      "color": true,
+      "reward_delta": 0.13333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "random",
+      "opening": 7,
+      "color": false,
+      "reward_delta": 0.06666666666666665,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "opening": 0,
+      "color": true,
+      "reward_delta": -0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "opening": 0,
+      "color": false,
+      "reward_delta": 0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "opening": 1,
+      "color": true,
+      "reward_delta": -0.06666666666666668,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "opening": 1,
+      "color": false,
+      "reward_delta": 99.99166666666666,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "opening": 2,
+      "color": true,
+      "reward_delta": -0.13333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "opening": 2,
+      "color": false,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "opening": 3,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "opening": 3,
+      "color": false,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "opening": 4,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "opening": 4,
+      "color": false,
+      "reward_delta": -0.06666666666666665,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "opening": 5,
+      "color": true,
+      "reward_delta": 0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "opening": 5,
+      "color": false,
+      "reward_delta": -0.06666666666666668,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "opening": 6,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "opening": 6,
+      "color": false,
+      "reward_delta": 0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "opening": 7,
+      "color": true,
+      "reward_delta": -0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-bounded",
+      "opponent": "unit2ply",
+      "opening": 7,
+      "color": false,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "opening": 0,
+      "color": true,
+      "reward_delta": -0.13333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "opening": 0,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "opening": 1,
+      "color": true,
+      "reward_delta": -0.06666666666666668,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "opening": 1,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "opening": 2,
+      "color": true,
+      "reward_delta": 0.06666666666666668,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "opening": 2,
+      "color": false,
+      "reward_delta": 0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "opening": 3,
+      "color": true,
+      "reward_delta": 0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "opening": 3,
+      "color": false,
+      "reward_delta": 0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "opening": 4,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "opening": 4,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "opening": 5,
+      "color": true,
+      "reward_delta": 0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "opening": 5,
+      "color": false,
+      "reward_delta": 0.06666666666666665,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "opening": 6,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "opening": 6,
+      "color": false,
+      "reward_delta": 0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "opening": 7,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "random-quantity",
+      "opponent": "unit2ply",
+      "opening": 7,
+      "color": false,
+      "reward_delta": -0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "opening": 0,
+      "color": true,
+      "reward_delta": -0.06666666666666665,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "opening": 0,
+      "color": false,
+      "reward_delta": -0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "opening": 1,
+      "color": true,
+      "reward_delta": 0.06666666666666665,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "opening": 1,
+      "color": false,
+      "reward_delta": -0.13333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "opening": 2,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "opening": 2,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "opening": 3,
+      "color": true,
+      "reward_delta": -0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "opening": 3,
+      "color": false,
+      "reward_delta": 0.13333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "opening": 4,
+      "color": true,
+      "reward_delta": -0.13333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "opening": 4,
+      "color": false,
+      "reward_delta": -0.4,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "opening": 5,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "opening": 5,
+      "color": false,
+      "reward_delta": -0.06666666666666668,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "opening": 6,
+      "color": true,
+      "reward_delta": -0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "opening": 6,
+      "color": false,
+      "reward_delta": 0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "opening": 7,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-bounded",
+      "opponent": "unit2ply",
+      "opening": 7,
+      "color": false,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "opening": 0,
+      "color": true,
+      "reward_delta": -0.06666666666666665,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "opening": 0,
+      "color": false,
+      "reward_delta": 0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "opening": 1,
+      "color": true,
+      "reward_delta": -0.06666666666666668,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "opening": 1,
+      "color": false,
+      "reward_delta": 0.06666666666666668,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "opening": 2,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "opening": 2,
+      "color": false,
+      "reward_delta": 0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "opening": 3,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "opening": 3,
+      "color": false,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "opening": 4,
+      "color": true,
+      "reward_delta": 0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "opening": 4,
+      "color": false,
+      "reward_delta": -0.06666666666666665,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "opening": 5,
+      "color": true,
+      "reward_delta": 0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "opening": 5,
+      "color": false,
+      "reward_delta": 0.06666666666666665,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "opening": 6,
+      "color": true,
+      "reward_delta": -0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "opening": 6,
+      "color": false,
+      "reward_delta": 0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "opening": 7,
+      "color": true,
+      "reward_delta": -0.06666666666666671,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "unit2ply-quantity",
+      "opponent": "unit2ply",
+      "opening": 7,
+      "color": false,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "opening": 0,
+      "color": true,
+      "reward_delta": -0.06666666666666665,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "opening": 0,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "opening": 1,
+      "color": true,
+      "reward_delta": -0.06666666666666668,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "opening": 1,
+      "color": false,
+      "reward_delta": 99.99166666666666,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "opening": 2,
+      "color": true,
+      "reward_delta": -0.13333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "opening": 2,
+      "color": false,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "opening": 3,
+      "color": true,
+      "reward_delta": 0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "opening": 3,
+      "color": false,
+      "reward_delta": 0.13333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "opening": 4,
+      "color": true,
+      "reward_delta": 0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "opening": 4,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "opening": 5,
+      "color": true,
+      "reward_delta": 0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "opening": 5,
+      "color": false,
+      "reward_delta": -0.06666666666666668,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "opening": 6,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "opening": 6,
+      "color": false,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "opening": 7,
+      "color": true,
+      "reward_delta": -0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-bounded",
+      "opponent": "unit2ply",
+      "opening": 7,
+      "color": false,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "opening": 0,
+      "color": true,
+      "reward_delta": -0.13333333333333333,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "opening": 0,
+      "color": false,
+      "reward_delta": 0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "opening": 1,
+      "color": true,
+      "reward_delta": -0.06666666666666668,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "opening": 1,
+      "color": false,
+      "reward_delta": -0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "opening": 2,
+      "color": true,
+      "reward_delta": 0.06666666666666668,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "opening": 2,
+      "color": false,
+      "reward_delta": 0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "opening": 3,
+      "color": true,
+      "reward_delta": 0.06666666666666667,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "opening": 3,
+      "color": false,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "opening": 4,
+      "color": true,
+      "reward_delta": 0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "opening": 4,
+      "color": false,
+      "reward_delta": -0.06666666666666665,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "opening": 5,
+      "color": true,
+      "reward_delta": 0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "opening": 5,
+      "color": false,
+      "reward_delta": 0.0,
+      "same_actions": true,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "opening": 6,
+      "color": true,
+      "reward_delta": 0.0,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "opening": 6,
+      "color": false,
+      "reward_delta": 0.13333333333333336,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "opening": 7,
+      "color": true,
+      "reward_delta": 99.7875,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "CHECKMATE"
+      ]
+    },
+    {
+      "profile": "pooled-quantity",
+      "opponent": "unit2ply",
+      "opening": 7,
+      "color": false,
+      "reward_delta": 0.2,
+      "same_actions": false,
+      "terminal": [
+        "cutoff",
+        "cutoff"
+      ]
+    }
+  ]
+}

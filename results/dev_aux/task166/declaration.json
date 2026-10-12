@@ -1,0 +1,457 @@
+{
+  "task_id": "166",
+  "question": "Do reachable full-army 20ply noncapture roots provide short-game price feedback with less mate saturation?",
+  "roots": [
+    {
+      "seed": 2026102600,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b3",
+        "c7c6",
+        "c2c4",
+        "e7e5",
+        "g2g3",
+        "d8c7",
+        "f1g2",
+        "f8d6",
+        "c1a3",
+        "e8e7",
+        "b3b4",
+        "e7f8",
+        "a3b2",
+        "h7h5",
+        "g2f3",
+        "a7a6",
+        "f3e4",
+        "f7f6",
+        "d1a4",
+        "g8e7"
+      ],
+      "expected_fen": "rnb2k1r/1pqpn1p1/p1pb1p2/4p2p/QPP1B3/6P1/PB1PPP1P/RN2K1NR w KQ - 2 11",
+      "counts": {
+        "1": [
+          8,
+          8
+        ],
+        "2": [
+          2,
+          2
+        ],
+        "3": [
+          2,
+          2
+        ],
+        "4": [
+          2,
+          2
+        ],
+        "5": [
+          1,
+          1
+        ],
+        "6": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026102601,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "g2g4",
+        "a7a5",
+        "b2b4",
+        "g7g5",
+        "c2c3",
+        "a8a6",
+        "g1f3",
+        "a6a8",
+        "c1b2",
+        "e7e6",
+        "h2h3",
+        "c7c6",
+        "d2d4",
+        "f8h6",
+        "b1a3",
+        "c6c5",
+        "d1d2",
+        "a8a7",
+        "h3h4",
+        "d8b6"
+      ],
+      "expected_fen": "1nb1k1nr/rp1p1p1p/1q2p2b/p1p3p1/1P1P2PP/N1P2N2/PB1QPP2/R3KB1R w KQk - 1 11",
+      "counts": {
+        "1": [
+          8,
+          8
+        ],
+        "2": [
+          2,
+          2
+        ],
+        "3": [
+          2,
+          2
+        ],
+        "4": [
+          2,
+          2
+        ],
+        "5": [
+          1,
+          1
+        ],
+        "6": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026102602,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "e2e3",
+        "b8c6",
+        "b1a3",
+        "e7e6",
+        "g1f3",
+        "f7f5",
+        "f3e5",
+        "g8h6",
+        "b2b4",
+        "b7b5",
+        "e5c4",
+        "d8f6",
+        "f1d3",
+        "e8d8",
+        "d3e2",
+        "c6a5",
+        "h2h4",
+        "f6e7",
+        "e2f3",
+        "a5b3"
+      ],
+      "expected_fen": "r1bk1b1r/p1ppq1pp/4p2n/1p3p2/1PN4P/Nn2PB2/P1PP1PP1/R1BQK2R w KQ - 3 11",
+      "counts": {
+        "1": [
+          8,
+          8
+        ],
+        "2": [
+          2,
+          2
+        ],
+        "3": [
+          2,
+          2
+        ],
+        "4": [
+          2,
+          2
+        ],
+        "5": [
+          1,
+          1
+        ],
+        "6": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026102603,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "g2g3",
+        "b8c6",
+        "a2a3",
+        "g7g6",
+        "h2h4",
+        "f8h6",
+        "d2d3",
+        "e7e6",
+        "d3d4",
+        "h6g5",
+        "f1g2",
+        "g8f6",
+        "g2h3",
+        "c6b4",
+        "d4d5",
+        "a7a5",
+        "e2e4",
+        "c7c5",
+        "d1d2",
+        "e8g8"
+      ],
+      "expected_fen": "r1bq1rk1/1p1p1p1p/4pnp1/p1pP2b1/1n2P2P/P5PB/1PPQ1P2/RNB1K1NR w KQ - 2 11",
+      "counts": {
+        "1": [
+          8,
+          8
+        ],
+        "2": [
+          2,
+          2
+        ],
+        "3": [
+          2,
+          2
+        ],
+        "4": [
+          2,
+          2
+        ],
+        "5": [
+          1,
+          1
+        ],
+        "6": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026102604,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b1a3",
+        "e7e6",
+        "a3b1",
+        "d8g5",
+        "g1h3",
+        "g7g6",
+        "b1c3",
+        "g5b5",
+        "h3g5",
+        "b5b6",
+        "c3d5",
+        "f8b4",
+        "d5e3",
+        "b6a6",
+        "e3f5",
+        "e8d8",
+        "h1g1",
+        "h7h5",
+        "g5e4",
+        "g8h6"
+      ],
+      "expected_fen": "rnbk3r/pppp1p2/q3p1pn/5N1p/1b2N3/8/PPPPPPPP/R1BQKBR1 w Q - 2 11",
+      "counts": {
+        "1": [
+          8,
+          8
+        ],
+        "2": [
+          2,
+          2
+        ],
+        "3": [
+          2,
+          2
+        ],
+        "4": [
+          2,
+          2
+        ],
+        "5": [
+          1,
+          1
+        ],
+        "6": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026102606,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "h2h4",
+        "c7c6",
+        "f2f3",
+        "b7b6",
+        "a2a3",
+        "h7h6",
+        "d2d3",
+        "f7f5",
+        "e2e4",
+        "g7g6",
+        "g1h3",
+        "h8h7",
+        "f1e2",
+        "e7e6",
+        "d1d2",
+        "g6g5",
+        "e2d1",
+        "c8a6",
+        "c2c4",
+        "c6c5"
+      ],
+      "expected_fen": "rn1qkbn1/p2p3r/bp2p2p/2p2pp1/2P1P2P/P2P1P1N/1P1Q2P1/RNBBK2R w KQq - 0 11",
+      "counts": {
+        "1": [
+          8,
+          8
+        ],
+        "2": [
+          2,
+          2
+        ],
+        "3": [
+          2,
+          2
+        ],
+        "4": [
+          2,
+          2
+        ],
+        "5": [
+          1,
+          1
+        ],
+        "6": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026102607,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b1c3",
+        "h7h6",
+        "g2g3",
+        "h6h5",
+        "b2b3",
+        "c7c6",
+        "h2h4",
+        "e7e6",
+        "a2a4",
+        "g8f6",
+        "g1f3",
+        "e8e7",
+        "h1g1",
+        "a7a6",
+        "c3e4",
+        "g7g6",
+        "e4c5",
+        "a6a5",
+        "d2d4",
+        "f6g4"
+      ],
+      "expected_fen": "rnbq1b1r/1p1pkp2/2p1p1p1/p1N4p/P2P2nP/1P3NP1/2P1PP2/R1BQKBR1 w Q - 1 11",
+      "counts": {
+        "1": [
+          8,
+          8
+        ],
+        "2": [
+          2,
+          2
+        ],
+        "3": [
+          2,
+          2
+        ],
+        "4": [
+          2,
+          2
+        ],
+        "5": [
+          1,
+          1
+        ],
+        "6": [
+          1,
+          1
+        ]
+      }
+    }
+  ],
+  "excluded_roots": [
+    {
+      "seed": 2026102605,
+      "excluded": true,
+      "reason": "no legal noncapture continuation or terminal",
+      "ply": 11,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b3",
+        "f7f6",
+        "g2g3",
+        "b7b6",
+        "b1a3",
+        "g8h6",
+        "a1b1",
+        "c8b7",
+        "a3c4",
+        "b7a6",
+        "c4d6"
+      ],
+      "expected_fen": "rn1qkb1r/p1ppp1pp/bp1N1p1n/8/8/1P4P1/P1PPPP1P/1RBQKBNR b Kkq - 7 6",
+      "legal_moves": [
+        "c7d6",
+        "e7d6"
+      ]
+    }
+  ],
+  "planned_games": 96,
+  "excluded_slots": 12,
+  "profiles": {
+    "unit": {
+      "P": 208,
+      "K": 0,
+      "N": 208,
+      "B": 208,
+      "R": 208,
+      "Q": 208
+    },
+    "learned": {
+      "P": 208,
+      "K": 0,
+      "N": 232,
+      "B": 328,
+      "R": 396,
+      "Q": 510
+    },
+    "reversed": {
+      "P": 208,
+      "K": 0,
+      "N": 510,
+      "B": 396,
+      "R": 328,
+      "Q": 232
+    }
+  },
+  "opponents": [
+    "random",
+    "unit2ply"
+  ],
+  "random_seeds": [
+    2026202600,
+    2026202601,
+    2026202602,
+    2026202603,
+    2026202604,
+    2026202605,
+    2026202606,
+    2026202607
+  ],
+  "cap": 16,
+  "games": 84,
+  "deadline_seconds": 300,
+  "binary_sha256": "c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+  "agent": "mode3 one thread16MiB/go nodes1024; fivepriceprobes/exactMG/EGack/reset pergame; one engine only",
+  "root_rule": "Exactly20uniform legal noncapture/nonpromotion actions from orthodox initial position; impossible construction slots excluded symmetrically across all profile/opponent/color arms before engine results and preserved without resampling, no engine/outcome/human-price selection. Complete preludehistory stays in every engine/opponent query.",
+  "profiles_scope": "Unit and exposed Task126 predictor, plus fixed reversal of its NBRQ weights as diagnostic intervention; no human reference input, no new training.",
+  "reward": "Unchanged Task104 terminal100+speed elseunitcountdiff/15; bounded andcomponent measures separate",
+  "decision": "Paired action/reward differences and lower terminal saturation can support further feedback-learning check, not humanpriceidentification. Retain zero/negative profile/opponent findings.",
+  "cost": "96fixed16plygames estimated<60s with extraPython completeunit2ply work;300s fuse, noextraengine/worker or fees. This is distribution intervention not equal-compute strength.",
+  "scope": "Reachable standardChess/fullarmy/count-preserving preludes; fullcastling/EP/history afterroots, notfullgeneric orShogi. No longer games or seedresampling."
+}

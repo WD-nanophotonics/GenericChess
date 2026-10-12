@@ -489,3 +489,40 @@ of material learning. Different branches/tasks continue. Next auxiliary decision
 price-discriminating root/opponent distribution, not primary API/PVS integration.
 
 Actual session: 2026-10-12T03:43:38.905345+00:00 to 2026-10-12T04:51:07.274447+00:00, 67.473 minutes, 5 research checkpoints plus documentation. Ending safe_checkpoint, duration gate passed; original ID/start preserved. This is a completed segment, not scientific completion.
+
+
+# DEV_AUX segment17: cheap full-army feedback, quantity control and prediction
+
+Independent auxiliary mode3 c378:84pilot14.547s,6240random/unit-opponent learning1115.578s,
+3120directquantity learning827.047s,224all6predictor+unit newdeployment38.875s.9668actual
+16-postroot-ply games, completeinitial/prelude/subsequenthistory andallactualopponent/
+reward/price/controller audits. Newconstructionfailure2026102605 onlycaptureevasions:
+fixed exclusions kept/noresampling; pilot summaryrange8 bug repairedfromsavedgames,
+runtime dependency/syntaxerrors resolved, no clockreset/severeuserblocker/pause.
+
+Directquantity control all3heldoutmeans smallpositive butprices stilldisparate and504
+losesmateweightedreturn. Sixtraining-onlymodels2s improveheldoutMSE; freshdeployments
+all6random-opponentquantitygains butall6mateweightedlosses; strongeropponent5/6positive.
+Unit-boundedhuman-lookingQ ratio fragile underwhole-root deletion (allpositive4/7),
+quantityprices narrower butnottraditional. No humanfitting, best-profile selection,
+newengine/default/UI or primary writes. ScientificOPEN, no oneexpensivelongrun.
+
+Dot actualfollowup1791782661 advice adopted: samecandidate components/fulloptimalsets/
+rootcontributions before scale. Positive rootcount alone didnotestablishrobustness;
+weightedlargestroot dominates17/41random and4/10unit winners, correction explicit.
+172scale code/declaration unexecuted/deferred.180sixactualmaturemate-versusquantity
+witnesses passed;183allactual47firstdivergences41full/6caplimited3plytrees showzero
+goal-setdisjointness, so syntheticmismatch notestablishedcause inactualdataset.
+No cap rescue/newgame replays orindependentrepeat claim. Consultation notapproval;
+fullrawreads/privateledger kept, evidence-basedfollowup preserved pendingroot.
+
+PRIMARY independently publishes self-reported09f4edb0 scientificsource and85c73e83326d905256d28e0d22666ba6e545d3a2
+canonicalreplay/window/q0 consumer records,67related checks repeatednot134independent,
+36actualcold/reuse/warmcalls; it readAUXb50681c8 report without rerunningtraining.
+AUX readsitsfullthread summary, doesnotexecute/claimvalidation orrepeat/ownitssearch.
+Bothbranches/roles/state separate; normalcomputersideparallel allowed. Reviewedaux
+fixed links delivered throughauthorizedSlack; no routineackoruserpermissionqueue.
+Allsource/data/failures exactarchive166..184, rawSlack/account/privateinputs/binaries
+excluded. Actualworkending time/receipt recorded separately, notsciencecompletion.
+
+Actual session: 2026-10-12T05:14:41.441562+00:00 to 2026-10-12T06:15:42.429011+00:00, 61.016 minutes, five research checkpoints plus documentation; safe_checkpoint, duration gate passed, original ID/start retained. Science remains OPEN.

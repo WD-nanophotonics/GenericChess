@@ -1,18 +1,19 @@
 ## DEV_AUX current scope2026-10-12
 
-Independent sidemission: cheap mature material learning; primary Core/Native tasks stay separate.
-Segment16 completes14236 unique16ply games. Same c378 binary fresh303/304/305 mode0/3:
-7068 games708.188s,36 symmetric preflight terminal exclusions. Fresh403/404/405 mode3
-random/unit-two-ply:7104 games759.640s. All ends globally frozen before heldout.
-Neither comparison yields stable traditional price ratios or consistent heldout gains.
-Pilot64 games8.485s reverses fixed-profile feedback by opponent; exact reward100->1/10
-rescoring changes0/288 choices. No blind longer games or same-data reward-only reruns.
-Actual full history/opponent/controller/price replay passed; finite pin/xray SEE agrees,
-special EP/promotion SEE0 approximation remains; nonchecking promotion readback measured.
-Metadata correction preserves old frozen files: Task146 curve x-axis384 should192;
-UTF8 pinned background restored exact bytes. Report SEGMENT_20261012_16.md/archive.
-Next: predeclare balanced rule-generated cheap feedback pilot before more learning.
-Science OPEN; entry works, no severe user-required blocker; own heartbeat ACTIVE.
+Independent sidemission segment17:9668 actual16-postroot-ply games, same c378 mode3,
+no product/default/UI/primary-state changes. Reachable fullarmy20ply preludes.
+6240matched random/unit2ply learning1115.578s stillmixedhumanratios;3120directquantity
+learning827.047s gives3smallpositiveheldoutquantitymeans butdisparateprices/WDL.
+Sixtraining-only countregressions2s improveheldoutprediction;224freshall-profile
+deployments38.875s improvequantity versusrandom butallloseoriginalmate-weightedreward.
+Whole-root deletion makesunit-boundedprices nonpositive3/7;quantityprices narrower,
+stillnottraditional. Fulllegal/history/opponent/controller/probes audits passed.
+Dot174component/optimalset/rootconcentration advice adopted;172scalequeries deferred.
+180sixactualgoal-witnesses disagree;183actual47divergences41full/6cappedtrees give
+zero3plygoal-maxsetdisjointness, notestablishedcurrentfailurecause. Preservefailures.
+Report SEGMENT_20261012_17.md/archive166..184 hasall9learningends/all6models/all12pairs.
+Next: cheaper win-preserving feedback/representative roots orfrozen predictor deployment
+mechanism, no unchangedlonggames/human-modelselection. ScienceOPEN; ownheartbeatACTIVE.
 
 # Current local research mainline
 

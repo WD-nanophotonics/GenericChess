@@ -1,0 +1,18 @@
+import json,math,hashlib,importlib.util
+from pathlib import Path
+R=Path.cwd();O=R/'results/dev_aux/task169';O.mkdir(exist_ok=True)
+if (O/'declaration.json').exists():raise FileExistsError('frozen')
+s=importlib.util.spec_from_file_location('F169',R/'results/dev_aux/task166/freeze.py');F=importlib.util.module_from_spec(s);s.loader.exec_module(F)
+old=json.loads((R/'results/dev_aux/task160/declaration.json').read_bytes());pilot=json.loads((R/'results/dev_aux/task166/declaration.json').read_bytes())
+held=[F.make(2026102800+i) for i in range(8)];valid=[r for r in held if not r.get('excluded')];bad=[r for r in held if r.get('excluded')];assert valid
+D={**old,'task_id':'169','question':'Does reachable balanced fullarmy feedback support cheap stable material learning compared with random opponent?','premise':'Task166/16784actual14.547s shows price-sensitive profiles with muchlowerunit2ply mate saturation; newgeometry/currentfullhistory changespremise from Task160, no longer games.','start_seeds':[503,504,505],'method_order':[[503,'random'],[503,'unit2ply'],[504,'unit2ply'],[504,'random'],[505,'random'],[505,'unit2ply']],'train_roots':pilot['roots'],'heldout_roots':valid,'excluded_train_roots':pilot['excluded_roots'],'excluded_heldout_roots':bad,'train_slots':6*24*3*2*len(pilot['roots']),'heldout_slots':6*2*2*len(valid),'train_root_use':'All7pilot-exposed reachable root histories, everycoordinate/arm; randomseeds2026500000+(sweep*4+k)*8+root commonacrossmethods/starts/arms. No resampling excludedpreludes.','heldout_random_seeds':[2026600000+i for i in range(len(valid))],'root_status':'Exactly20uniformlegalnoncapture/nonpromotion fromorthodoxinitial; countsbalancedfullarmy. Validalltrainroots exposedpilot, freshheldroots frozenbeforelearning, failedconstruction slots retained/excludedallarms. Completepreludehistory afterroot preserved; nohumanprice/engine-output filtering.','reward':'UnchangedTask104 mate100+speed orunitcountdifference/15; component-onlyexactdiagnostic plannedfromsamecalls, notautomaticnewtrajectory.','cost':'Fixedshortbatch estimated18-22min from84pilot14.547s,1800sfuse; oneC++engine, fulllegalPythonunit2plyonlyonitsturn. NoextraAgent/worker orfees.','scope':'ReachableStandardChess/fullarmy/completepreludes+subsequenthistory, notgeneric/Shogi. Sameagentbudget and priceconditions; opponentwork differs, notequal-costsearchstrength.'}
+D['total_slots']=D['train_slots']+D['heldout_slots'];D['planned_slots_beforeconstruction_exclusions']=6*24*3*16+6*2*16
+D['excluded_slots_beforeexecution']=D['planned_slots_beforeconstruction_exclusions']-D['total_slots']
+(O/'declaration.json').write_text(json.dumps(D,indent=2),encoding='utf-8')
+src=(R/'results/dev_aux/task160/run.py').read_text(encoding='utf-8').replace('task160','task169').replace('2026300000','2026500000').replace('2026400000','2026600000')
+src=src.replace("fen=fixture['white_fen' if color else 'black_fen'];b=chess.Board(fen);","fen=fixture['initial_fen'];b=chess.Board(fen)\n     for prelude in fixture['history']:b.push_uci(prelude)\n     assert b.fen()==fixture['expected_fen'];")
+src=src.replace("result=dict(root_fen=fen,actions=","result=dict(root_fen=fen,opening_history=fixture['history'],opening_fen=fixture['expected_fen'],actions=")
+src=src.replace("means=[sum(z)/16 for z in groups]","means=[sum(z)/len(z) for z in groups]")
+src=src.replace("on syntheticcoveredkingroots","on reachablefullarmyroots")
+compile(src,'run169','exec');(O/'run.py').write_text(src,encoding='utf-8')
+print(json.dumps(dict(frozen=True,total_slots=D['total_slots'],train_slots=D['train_slots'],heldout_slots=D['heldout_slots'],train_roots=len(D['train_roots']),heldout_roots=len(D['heldout_roots']),excluded=D['excluded_slots_beforeexecution'])))

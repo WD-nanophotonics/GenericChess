@@ -1,0 +1,52 @@
+{
+  "task_id": "180",
+  "question": "Can unchanged mature mate priority disagree with finalquantity proxy even in a simple legal root?",
+  "roots": [
+    {
+      "id": "white",
+      "fen": "k7/8/1QK5/8/8/8/5p2/8 w - - 0 1",
+      "agent_color": true
+    },
+    {
+      "id": "black-mirror",
+      "fen": "8/5P2/8/8/8/1qk5/8/K7 b - - 0 1",
+      "agent_color": false
+    }
+  ],
+  "profiles": {
+    "unit": {
+      "P": 208,
+      "K": 0,
+      "N": 208,
+      "B": 208,
+      "R": 208,
+      "Q": 208
+    },
+    "learned": {
+      "P": 208,
+      "K": 0,
+      "N": 232,
+      "B": 328,
+      "R": 396,
+      "Q": 510
+    },
+    "reversed": {
+      "P": 208,
+      "K": 0,
+      "N": 510,
+      "B": 396,
+      "R": 328,
+      "Q": 232
+    }
+  },
+  "searches": 6,
+  "cap": 16,
+  "node_limit": 1024,
+  "deadline_seconds": 90,
+  "binary_sha256": "c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+  "witness": "WhiteQb6/Kc6, BlackKa8/Pf2: Qb7 mate leavescountdifference0; Qxf2 islegal/nonterminal leavesdifference1. Colorsmirrored. Nohumanprices or engine-outputfixture selection.",
+  "oracle": "Completelegal2ply with finalunitquantity terminalincluded, no matebonus; actualterminal stops tree. All-bestmoves kept, fulllegalchild/reply counts.",
+  "decision": "If actualmature choosesmate outsideunitquantityargmax, it proves thisfinite task/search goalmismatch, notsourcebug/pricelearningfailurecausality orunitquantitygeneral impossibility. If not, retainfailure.",
+  "cost": "6boundedactualrootqueries pluscompletelegal2plyoracle, estimated<2s/90sfuse; serialafterotherownedengine. Notgame-strength/wholelearning.",
+  "scope": "SyntheticStandardChess/noncastlinginitialhistoryempty, allroyal/terminal legality preserved; unchangedbinary mode3 materialpricing. Newgoalonlyobjectiveanalysis; noenginecode modification."
+}
