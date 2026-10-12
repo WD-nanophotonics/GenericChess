@@ -31,3 +31,11 @@ Private transport/algorithm resource producers imported0ad before this repair;
 their frozen timings are not measurements of this later Python fix. Detailed
 source/failure/old-current probes will be bound in CORE_CHECK_TRANSPORT.md and its
 Agent-only archive once the remaining declared research producer closes.
+
+Later fixed-source Dot review confirms the conditional signature retains the
+information read by consecutive-action adjudication; it does not independently
+execute our tests. The supported provenance is trusted Core/session witnesses
+or successful public-history replay, not arbitrary forged supplied witnesses.
+The same pair without supplied witnesses reconstructs with0 misses/2 key calls
+per history, keeps distinct keys and prevents cross-history table hits. Detailed
+closed resource and source evidence: CORE_CHECK_TRANSPORT.md.

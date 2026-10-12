@@ -202,3 +202,52 @@ same first failed fixture passes1/1 in0.19s with a fresh project-owned basetemp.
 The full suite then passes2,319 tests with zero failure/error/skip under that
 changed, qualified condition, preserving original XML privately. No system ACL/security setting is changed and no user
 intervention is needed. Actual final test/source binding is in data/history_action_cache_20261013.json.
+
+## Existing public algorithm factors: closed results
+
+After the rule-cost repairs, sixteen counterbalanced D2 calls on the exposed
+1008/1052 roots use only public PVS and q-ordering flags (2x2), keeping current
+Native legality/availability/semantic attack leaves and full Core history.
+Full action/score/PV choices agree in all cells.1008 AB lexical2.167s/4161qnodes
+becomes ordered1.375s/2552q; PVS lexical2.253s/4385q is worse, ordered1.536s/2814q.
+1052 AB lexical4.293s/10939q becomes ordered2.247s/4518q; PVS lexical3.485s/8600q,
+ordered2.249s/4621q. Main PVS work/null-window/research counters are retained.
+These are conditional algorithm/work changes, not isolated primitive speedups.
+
+The separate four-fresh-rule plane2026101401..04 closes ALL64 declared calls,
+2325.621 caller seconds, with no unavailable/replaced roots,16/64seconds,
+no node cap, q4/hard8 and two counterbalanced orders. Compared with AB lexical:
+
+|Existing public flag|Deeper|Same|Lower|Hard8 stops|
+|---|---:|---:|---:|---:|
+|PVS lexical|0|16|0|0|
+|AB q-ordered|1|13|2|4|
+|PVS q-ordered|0|14|2|4|
+
+All same-depth full choices agree. AB ordered1402 reachesD5 at64s in only one
+order (otherD4); both lexical/PVS lexical retainD4. On1403 at64s, both ordered
+arms retainD2/338 after hard-check abort while both lexical arms completeD3/2071.
+At16s all retainD2, but ordered stops early on the same hard limit. Retain order
+variance and the adverse result; no universal adoption or cap-rescue follows.
+
+One separately predeclared attribution trace repeats that existing failed
+AB-ordered D3 context under SAME16s/hard8. It stops after10.989s: the first
+failing node is qdepth8, runtime depth11, actual ply19, checked and ONGOING with
+13 legal evasions. Independent Core replay verifies all19 legal plies, actor/
+check history, exact final position and all13 evasions. This is the configured
+checked-extension boundary, not lost Native legal actions or a runtime failure.
+The extra trace is an explanation of an observed failure, not a repeated timing
+hunt or an enlarged search. Keep the current default policy and use actual
+completed decisions/bounds when selecting future scheduling work.
+
+## Advisor review and imported-history boundary
+
+Dot reads fixedf88 sources and all five new cache tests. Its conditional-signature
+review finds no missed consecutive-action information in the supported sources:
+trusted Core/session-produced witnesses, or public history successfully replayed.
+Supplied witnesses are a trust contract, not authentication of arbitrary forged
+external inputs. PRIMARY actually checks the same legal pair without supplied
+witnesses: both histories reconstruct with0 misses/2 reconstruction key calls,
+keys remain distinct and an entry from one does not probe on the other. Dot did
+not execute2,319 tests, the private prototypes or the resource plane. No new
+identity challenge, witness framework or approval gate is added.

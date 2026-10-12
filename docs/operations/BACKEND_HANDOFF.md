@@ -128,3 +128,18 @@ do not mix old capsules/objects with new consumers. Final2,314 installed/source
 checks pass. Coreq4 remains supported through Core; independent Native search is
 q0. Search/evaluation/ordering/TT/UI policies are unchanged. PRIMARY publishes
 sandbox backend only; user-maintained UI Test integration remains separate.
+
+## Consecutive-action history cache repair —2026-10-13
+
+Backend commit f88c0930eed09f55e12d2f909704d868a0b665d8 fixes wrong TT reuse
+between complete legal histories with identical boards but different future
+consecutive-action adjudication. Only those policies add exact action signatures;
+plain-rule cache reuse and public position/repetition SHA stay.2,319 active tests
+and89 publisher checks pass. This is Python-source only; restart the downstream
+Python engine process after taking this backend commit. It adds no new Native ABI
+rebuild requirement; earlier Native-layout commits still require their documented
+complete C rebuild. UI Test remains user-maintained, with no automatic integration.
+Private shared-check transport and public PVS/q-ordering experiments do not change
+engine defaults. Scope, negative completion results and restored temporary-test
+validation: ../research/CORE_CHECK_TRANSPORT.md; correctness witness/tests:
+../research/HISTORY_ACTION_CACHE.md.

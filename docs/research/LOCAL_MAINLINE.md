@@ -26,20 +26,39 @@ roots, not claimed improved end-to-end or an independently reproduced user loss.
 
 ## Current measured question
 
-GENERIC_RULE_LOOKUP.md is the current result/selection. Mechanical immutable
-capture-pattern and ordered-source lookup preserve full state/history/required
-errors and supported numeric inputs. Final2,314 tests, complete finite traces
-and direct combined sameD5~43percent saving qualify local execution benefits.
-Actual Coreq4 D2 saves4.3/4.6percent but16s completion depths remainD2/D3.
-Index8newseed16/64 plane retains unavailable1357:56calls/28ALLsame horizons;
-path-only exposedsame-rule16 panel28calls/14pairs has4deeper/10same/0lower,
-same-depth full choices/PVs equal. No global strength/WDL or Nativeq4 claim.
-Cold constructor costs and32,896bytes/livecapsule are explicit; rebuild ALL C
-objects/clean process after internal layout change. UI remains user-maintained.
-SHA-round/O3/FP microcontrols are deferred on actual low/noisy gain. AUX60f6d33b27
-is independently checked for66 exact rows/96profiles only, not3,488games/binary
-or primary acceptance. Next select one remaining actual caller/key cost or
-capability attribution; no unchanged micro-rerun/state-cache/newengine backlog.
+CORE_CHECK_TRANSPORT.md closes the current caller/algorithm question. Native
+check with an extra import has no consistent gain; private immediate sharing
+saves3–5percent locally but48fresh calls/24pairs have NO horizon gain and an
+observed external-pending/error-stage gap prevents transparent API adoption.
+Keep it private. Existing public PVS/q-ordering factors instead change work:
+16fixedD2 cells agree in full choices;64fresh16/64s cells show PVSlex0deeper/
+16same, ABqordered1deeper/13same/2lower, PVSqordered0/14/2. The1403 hard8 loss
+is a real checked nonterminal with13evasions after19legal plies; no cap-rescue
+or uniform default switch. Same-depth full choices agree, ordinary load retained.
+
+HISTORY_ACTION_CACHE.md fixes a separate actual relevant-history loss found
+during this work: legalpass/noop same current state has different future
+consecutive-action draw, yet old TT keys merge. Actual public warm0/cold-7
+becomes-7/-7 with conditional fullsignature/digest/exactguard and verified-history
+TT eligibility; plain rules retain old keys. Final2,319 tests/0fail/error/skip,
+publisher89 and actualremote f88 qualify this scoped repair.124initial default-
+temp setup errors are retained and the fresh project-temp recovery is verified.
+Dot reads fixedsource/tests, notexecuted; trusted Core/sessionwitness or successful
+public replay is the provenance scope, not arbitrary forgedwitness certification.
+
+AUX28 fixed5ef/6d69 is read and independently checked for384actualrounds/
+12672scorecells/88endpoint-family rows, not9,104games/binary/RNG/PV reproduction.
+Budget/objective/initialization effects remain mixed; local mixed winners never
+override a strict higher terminal mean in these384rounds. No human fitting,
+unique-cause or primarymerge follows. Reviewed111member archive and data index
+bind source/results/failures; Native C closure remains in prior lookup archive.
+
+Next judge the observed changed1403 D2/D3 root decisions under the SAMEparent
+D3/q4/hard8 context via one bounded existing forced-action diagnostic, if it
+changes whether completion loss is a decision-quality issue versus support-only.
+Keep caps/root/profile fixed, TT-off diagnostic separately declared and unknown
+branches retained. Price learning and currentNative/specialist scheduling remain
+open later tasks; no new cache/engine/framework or unchanged micro-rerun backlog.
 
 ## Prior selections and preserved limits
 

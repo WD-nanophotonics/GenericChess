@@ -1399,3 +1399,15 @@ independently checked:16 responses have0 bestmove changes; conditional event
 bounds are exact, and all384 local mixed winners respect strict terminal means.
 No PV/upstream-engine reproduction, causal overclaim or new auxiliary run follows.
 Public existing q-ordering/PVS resource factors remain a separate ongoing task.
+
+Final public factor closes64calls/2325.621s, all four roots retained. PVS lexical
+has0deeper/16same; AB qordered1deeper/13same/2lower and PVS qordered0/14/2.
+Both ordered modes hit hard8 on1403; a single same-budget trace plus independent
+19-ply/13-evasion replay identifies the real configured boundary. Defaults stay.
+Dot independently reviews fixedf88 source/tests and confirms the scoped cache
+repair reasoning, with trusted witness/public replay limits. PRIMARY executes
+the no-supplied-witness pair reconstruction check; Dot is not credited with our
+runs. All raw Slack/accounts stay private, scientific summaries/source archives
+are published for review. No user intervention, duplicate worker or boundary
+conflict occurred. Remaining work is explicit current scheduler/capability
+selection, not adopting mixed-benefit interfaces or changing frozen caps.
