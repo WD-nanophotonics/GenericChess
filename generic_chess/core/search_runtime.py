@@ -296,6 +296,7 @@ class RuntimeHistoryContext:
     gave_check: bool
     length: int
     digest: bytes
+    action_signature: str = ""
 
     @staticmethod
     def _record_digest(
@@ -303,6 +304,7 @@ class RuntimeHistoryContext:
         runtime_hash: RuntimeHash,
         actor: int,
         gave_check: bool,
+        action_signature: str = "",
     ) -> bytes:
         return hashlib.blake2b(
             b"generic-chess-runtime-history-context\0"
@@ -310,12 +312,13 @@ class RuntimeHistoryContext:
             + runtime_hash.lo.to_bytes(8, "little")
             + runtime_hash.hi.to_bytes(8, "little")
             + int(actor).to_bytes(4, "little", signed=True)
-            + bytes((int(bool(gave_check)),)),
+            + bytes((int(bool(gave_check)),))
+            + action_signature.encode("utf-8"),
             digest_size=16,
         ).digest()
 
     @classmethod
-    def from_records(cls, records: Iterable[RuntimeHistoryRecord]):
+    def from_records(cls, records: Iterable[RuntimeHistoryRecord], *, include_actions: bool = False):
         context = None
         for record in records:
             context = cls.append(
@@ -324,6 +327,7 @@ class RuntimeHistoryContext:
                 record.runtime_hash or RuntimeHash(0, 0),
                 record.actor,
                 record.gave_check,
+                record.action_signature if include_actions else "",
             )
         return context
 
@@ -335,6 +339,7 @@ class RuntimeHistoryContext:
         runtime_hash: RuntimeHash,
         actor: int,
         gave_check: bool,
+        action_signature: str = "",
     ) -> "RuntimeHistoryContext":
         parent_digest = parent.digest if parent is not None else bytes(16)
         return cls(
@@ -344,7 +349,8 @@ class RuntimeHistoryContext:
             int(actor),
             bool(gave_check),
             (parent.length if parent is not None else 0) + 1,
-            cls._record_digest(parent_digest, runtime_hash, actor, gave_check),
+            cls._record_digest(parent_digest, runtime_hash, actor, gave_check, action_signature),
+            action_signature,
         )
 
     def _records_reversed(self):
@@ -367,6 +373,7 @@ class RuntimeHistoryContext:
             if (
                 left.actor != right.actor
                 or left.gave_check != right.gave_check
+                or left.action_signature != right.action_signature
                 or not _identity_equal(left.identity, right.identity)
             ):
                 return False
@@ -687,7 +694,12 @@ class SearchPathRuntime:
         if state.history and not self._history_witness_by_key:
             self.history_witness_misses = len(self._opaque_imported_keys)
         self._history_aliases: dict[str, RuntimePositionIdentity] = {}
-        self._history_context = RuntimeHistoryContext.from_records(self._history)
+        # Consecutive action rules distinguish pass from a semantic no-op even
+        # when every position/actor/check fact is identical.
+        self._history_action_sensitive = bool(getattr(compiled, "consecutive_action_adjudications", ()))
+        self._history_context = RuntimeHistoryContext.from_records(
+            self._history, include_actions=self._history_action_sensitive,
+        )
         self._history_context_updates = 0
         self._history_context_exact_comparisons = 0
         self._occurrences: dict[RuntimeHash, list[_Occurrence]] = {}
@@ -1374,6 +1386,7 @@ class SearchPathRuntime:
             child_hash,
             parent.side_to_move,
             gave_check,
+            signature if self._history_action_sensitive else "",
         )
         self._history_context_updates += 1
         self.runtime_hash = child_hash

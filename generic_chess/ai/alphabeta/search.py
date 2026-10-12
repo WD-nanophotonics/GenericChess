@@ -347,7 +347,8 @@ def negamax(
     tt_compatible = bool(ctx.use_tt)
     # These terminal rules depend on verified move history beyond the
     # identity/actor/check facts represented by RuntimeHistoryContext.
-    if continuous_check_policy or repeated_cycle_target_policy:
+    action_history_policy = bool(getattr(ctx.compiled, "consecutive_action_adjudications", ()))
+    if continuous_check_policy or repeated_cycle_target_policy or action_history_policy:
         tt_compatible = bool(ctx.use_tt and ctx.runtime is not None and ctx.runtime.tt_eligible)
         if ctx.use_tt:
             if tt_compatible:

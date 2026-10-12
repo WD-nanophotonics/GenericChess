@@ -1340,3 +1340,62 @@ optimizer trajectory.431/438 remain auxiliary's running/planned work, not
 primary validation. No new worker, mandatory acknowledgement or direction
 import from an attributed user conversation. Public derived check is at
 ../research/data/auxiliary_quantity_gate_20261013.json.
+
+##2026-10-13 Core check transport and auxiliary28 review
+
+PRIMARY measures the actual Core child-check cost rather than adding a duplicate
+frame cache. Standalone Native check plus an extra import has no consistent
+benefit; a private one-capsule check/availability handoff saves3–5percent on
+one same-work q4 caller. Dot's concrete cross-stage objection is reproduced:
+Core rollback can leave external pending state, and constructed malformed
+hands change the observed failure stage. A separately measured finally cleanup
+repairs pending only; the transparent product interface remains unqualified.
+No production/default/UI change or duplicate-state cache follows. Full generated
+q4 transport delivery and existing public PVS/q-ordering factors are separately
+predeclared; final outcomes will be bound to the completed records below.
+
+DEV_AUX independently delivers fixed5ef777228c276435e47d5d71b62bc379e020c7f0
+segment28:9,104 capped Shogi games, four budget/objective/data studies and
+prospective SEE preflight. PRIMARY reads the complete report, verifies selected
+archive hashes and recomputes384 rounds/12,672 scored cells and88 endpoint/
+family/leave-one rows with zero new go. This validates exact arithmetic/local
+choice classification, not games/binaries/RNG/PV reproduction.431 has3 quantity-
+dependent and6 same-proposal terminal-supported accepts;438 paths agree,
+445 speed feedback changes paths but adverse starts remain, and wider roots
+do not remove initializer dependence. No human-price fit or primary merge.
+
+Communication uses full channel/relevant-thread recovery and a NEW concrete
+PRIMARY request. Dot independently reads the public baseline, not the private
+candidate, and recommends one handoff table. PRIMARY tests that suggestion
+without treating it as an approval gate or expanding a framework. No routine
+auxiliary wake/ack, duplicate Agent/game run, cross-checkout write or coordination
+conflict occurs. A quoted earlier complete-source claim is not promoted into
+independent candidate execution. Shared account fixed IDs provide routing only.
+
+Efficiency evidence: local mixed/negative microcontrols are stopped; the public
+q-ordering factor has a larger conditional work effect than the private handoff.
+Ordinary concurrent load and observer costs remain limits; engineering/token
+cost is unmetered, notzero. Preparation errors (Position/Runtime ply ownership,
+capability fallback, CLI argument and filenames) are corrected with preserved
+evidence; no hidden SAC/quota/runtime block or required user action. A pytest
+cache-write warning does not invalidate97 passed functional regressions and is
+not a scientific stop. Details: ../research/CORE_CHECK_TRANSPORT.md.
+
+Further PRIMARY history inspection independently reproduces a real TT defect:
+pass versus semantic no-op can have different future consecutive-action draws
+while old keys coincide. Public warm0/cold-7 becomes warm-7/cold-7 after the
+scoped signature repair. This is PRIMARY execution, not AUX/Dot execution.
+The user is proactively informed; no user action is required. Related100 tests
+pass. An initial full run encounters124 confirmed default-temp setup permission
+errors; changed project-temp qualification passes and full rerun completes2,319 tests
+with zero failure/error/skip.
+Original validation failure is retained, not hidden as a passing test run.
+Private probe-overwrite and timer-filter handling mistakes are explicitly fixed
+with pinned reexecution and all27-runtime-counter checks; resource files stay.
+
+The private transport plane closes48calls/24pairs with no horizon benefit,
+1363/1368 unavailable retained. Later AUX6d69 scope corrections are read and
+independently checked:16 responses have0 bestmove changes; conditional event
+bounds are exact, and all384 local mixed winners respect strict terminal means.
+No PV/upstream-engine reproduction, causal overclaim or new auxiliary run follows.
+Public existing q-ordering/PVS resource factors remain a separate ongoing task.
