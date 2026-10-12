@@ -1,0 +1,94 @@
+{
+  "complete": true,
+  "counts": {
+    "games": 96,
+    "moves": 1357,
+    "engine_searches": 682,
+    "unit_opponent_searches": 335,
+    "unit_opponent_leaf_nodes": 257604,
+    "price_probes": 480
+  },
+  "paired": {
+    "random-pooled-bounded": {
+      "profile_reward_difference_mean": 6.2281249999999995,
+      "nonzero_paired_deltas": 13,
+      "changed_action_pairs": 15,
+      "scope": "Same16matchedfreshreachable-root/color pairs, all6training-onlymodelprofiles; not generallearning/strength."
+    },
+    "random-pooled-quantity": {
+      "profile_reward_difference_mean": 6.305989583333334,
+      "nonzero_paired_deltas": 14,
+      "changed_action_pairs": 14,
+      "scope": "Same16matchedfreshreachable-root/color pairs, all6training-onlymodelprofiles; not generallearning/strength."
+    },
+    "unit2ply-pooled-bounded": {
+      "profile_reward_difference_mean": 6.244791666666666,
+      "nonzero_paired_deltas": 11,
+      "changed_action_pairs": 14,
+      "scope": "Same16matchedfreshreachable-root/color pairs, all6training-onlymodelprofiles; not generallearning/strength."
+    },
+    "unit2ply-pooled-quantity": {
+      "profile_reward_difference_mean": 6.269791666666666,
+      "nonzero_paired_deltas": 12,
+      "changed_action_pairs": 14,
+      "scope": "Same16matchedfreshreachable-root/color pairs, all6training-onlymodelprofiles; not generallearning/strength."
+    }
+  },
+  "components": [
+    {
+      "opponent": "random",
+      "profile": "unit",
+      "original_mean": 25.321875,
+      "bounded_mean": 0.4625,
+      "final_quantity_mean": 0.2625,
+      "mate_wins": 4,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "random",
+      "profile": "pooled-bounded",
+      "original_mean": 31.55,
+      "bounded_mean": 0.55,
+      "final_quantity_mean": 0.2875,
+      "mate_wins": 5,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "random",
+      "profile": "pooled-quantity",
+      "original_mean": 31.627864583333334,
+      "bounded_mean": 0.5458333333333334,
+      "final_quantity_mean": 0.29583333333333334,
+      "mate_wins": 5,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "unit2ply",
+      "profile": "unit",
+      "original_mean": 0.09583333333333334,
+      "bounded_mean": 0.09583333333333334,
+      "final_quantity_mean": 0.09583333333333334,
+      "mate_wins": 1,
+      "mate_losses": 1
+    },
+    {
+      "opponent": "unit2ply",
+      "profile": "pooled-bounded",
+      "original_mean": 6.340625,
+      "bounded_mean": 0.1375,
+      "final_quantity_mean": 0.0875,
+      "mate_wins": 2,
+      "mate_losses": 1
+    },
+    {
+      "opponent": "unit2ply",
+      "profile": "pooled-quantity",
+      "original_mean": 6.365625,
+      "bounded_mean": 0.1625,
+      "final_quantity_mean": 0.1125,
+      "mate_wins": 2,
+      "mate_losses": 1
+    }
+  ],
+  "scope": "Independentactualtrace/fullpreludehistory/fullopponentsearch replay, notengine rerun. Noextraengineworker orallgame-ruleclaim."
+}

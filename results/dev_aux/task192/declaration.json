@@ -1,0 +1,8 @@
+{
+  "task_id": "192",
+  "source": "191/187",
+  "question": "Are all9fastreturn-price models robust to removing onewholetrainingroot?",
+  "rule": "Fixedlambda1,all8rootdeletions per9models,allcoefficients includingnegative retained. No deploymentofdeletedfits, nohuman-selection/heldoutrefit/clipping/CIclaims.",
+  "expected_fits": 72,
+  "cost": "Reuse savedactualdata,estimated3s,noenginegames/workers."
+}

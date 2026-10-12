@@ -526,3 +526,39 @@ Allsource/data/failures exactarchive166..184, rawSlack/account/privateinputs/bin
 excluded. Actualworkending time/receipt recorded separately, notsciencecompletion.
 
 Actual session: 2026-10-12T05:14:41.441562+00:00 to 2026-10-12T06:15:42.429011+00:00, 61.016 minutes, five research checkpoints plus documentation; safe_checkpoint, duration gate passed, original ID/start retained. Science remains OPEN.
+
+## DEV_AUX segment18,2026-10-12
+
+AUX11392actualshortgames, gamebatch1182.218s, twolearning1077.219s; ownc378
+purematerialmode3, fulllegalrandom20plypreludes.16ply6armsfailstablehumanrecovery;
+24ply3armsallimproveboundedobservedreturns butmixedprices. Countfitsreusegames
+1.875s; all7eligiblefreshdeployments mixedvsrandom/allloseunit2plyoriginal.
+Finitecomplete2plycontrols expose changedtree/work, notisolatedsearchstrength.
+Allactualhistories/RNG/rewards/probes/tables/216choices audited; no NNUE/humanfit.
+
+Dot1791788840 fourcategory/unknowncutoff/fixeddenominator/whole-root conflict
+advice adopted through196 withzero newgames; oneboundedsample tradeoff loses1
+completednetwingains320/240cutoff, disappearswithoutroot4. Lexlearningdeferred.
+Correction: cutoffquantitydefinition SAME fororiginalandbounded; amplitude/speed
+changejointly.24plydevelopmentresourcecurve usesexposed187roots/starts, morework
+than16, notnewblindholdout. No oldfrozenrecord/capfailure erased/extended.
+
+194observedmaterialclippingzero;202same-ratio144queries change7/48groups while
+48finite2plyargmaxsetsinvariant, nofixedmargincause/strength claim.20850020savedPV
+legal,18632/36438unboundedcp notstaticPVendpointmaterial;2104actualevalsconfirm
+purematerialleaves. LiteralPV notTDleafcertificate, no rootbug claim. Newconcrete
+TDquestion deliveredfreshroot1791790469.968509; workcontinues, notpendingapproval.
+207cheapquadraticprice-response alternative hasmixedroottransfer/indefiniteHessian;
+allrecommendations retained/unplayed, noCLOPsuccess or human-reference selection.
+
+PRIMARY independently owns genericq0ordering/TT diagnosis at497445594d2695653f393e90a29ff9166dbb0466.
+AUXread itsfullnewrequest/thread andDotTT-first advice, recordscontributions as
+self-reportedsource-bound context, no rerun/validation/branch takeover. Fixedsource:
+https://github.com/WD-nanophotonics/GenericChess/blob/497445594d2695653f393e90a29ff9166dbb0466/generic_chess/_native/native_module.c
+Ownbranch/state/files isolated; ordinaryparallelcomputeruse normal.
+
+Ownmetadata/dir/sourcepath/Gitpermission mistakes activelycorrected, no severe
+userblocker, clockreset or schedulepause. RawSlack/account/privateinputs/binaries
+excluded; exactarchive185..21131.084MB/86members. Reviewedauxfixedlinks delivered
+throughauthorizedSlack, PRIMARY integratesonlyitsowncanonicalsandboxlog.
+ScienceOPEN; actualsessionendingreceipt recordedseparately.

@@ -1,0 +1,958 @@
+{
+  "task_id": "203",
+  "question": "Does modest24ply bounded feedback change rapidmaterial learning vs previouslyfrozen16ply condition?",
+  "premise": "199boundedQ/P1.21->1.51->2.42 atlag2/4/8;200/201 newmatched16/24pilot increasescompletedwins22/128->55/128 for25.734s, allprefixesmatch. Changedsmallhorizon,notunchangedlonggames.",
+  "start_seeds": [
+    603,
+    604,
+    605
+  ],
+  "opponents": [
+    "random-bounded"
+  ],
+  "method_order": [
+    [
+      603,
+      "random-bounded"
+    ],
+    [
+      604,
+      "random-bounded"
+    ],
+    [
+      605,
+      "random-bounded"
+    ]
+  ],
+  "train_roots": [
+    {
+      "seed": 2026103200,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "g1f3",
+        "b7b6",
+        "d2d4",
+        "b8a6",
+        "c1f4",
+        "g7g6",
+        "c2c4",
+        "d7d6",
+        "d1a4",
+        "d8d7",
+        "e1d1",
+        "b6b5",
+        "a4c2",
+        "d7h3",
+        "c2d2",
+        "h7h6",
+        "d2c1",
+        "f8g7",
+        "d1e1",
+        "c8g4"
+      ],
+      "expected_fen": "r3k1nr/p1p1ppb1/n2p2pp/1p6/2PP1Bb1/5N1q/PP2PPPP/RNQ1KB1R w kq - 4 11",
+      "captures": 0,
+      "counts": {
+        "p": [
+          8,
+          8
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103201,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "g1f3",
+        "b7b5",
+        "b2b3",
+        "c8a6",
+        "f3g5",
+        "d8c8",
+        "g2g3",
+        "g7g6",
+        "g3g4",
+        "d7d6",
+        "f1h3",
+        "h7h5",
+        "c2c4",
+        "c8d7",
+        "h3f1",
+        "g8h6",
+        "g5f7",
+        "h6g4",
+        "c1b2",
+        "e7e5"
+      ],
+      "expected_fen": "rn2kb1r/p1pq1N2/b2p2p1/1p2p2p/2P3n1/1P6/PB1PPP1P/RN1QKB1R w KQkq - 0 11",
+      "captures": 2,
+      "counts": {
+        "p": [
+          7,
+          7
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103202,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "h2h3",
+        "h7h5",
+        "c2c3",
+        "h8h6",
+        "e2e4",
+        "e7e5",
+        "d1f3",
+        "d8h4",
+        "f3f4",
+        "f8d6",
+        "c3c4",
+        "h4d8",
+        "d2d3",
+        "d6a3",
+        "f4f6",
+        "g7g6",
+        "f6e5",
+        "e8f8",
+        "b2b4",
+        "g6g5"
+      ],
+      "expected_fen": "rnbq1kn1/pppp1p2/7r/4Q1pp/1PP1P3/b2P3P/P4PP1/RNB1KBNR w KQ - 0 11",
+      "captures": 1,
+      "counts": {
+        "p": [
+          8,
+          7
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103203,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "h7h5",
+        "g2g4",
+        "h5h4",
+        "f1h3",
+        "d7d5",
+        "e2e4",
+        "a7a5",
+        "c1a3",
+        "a8a7",
+        "d1f3",
+        "f7f5",
+        "e4f5",
+        "a5b4",
+        "f3f4",
+        "g7g5",
+        "d2d4",
+        "c8f5",
+        "f4d6",
+        "h8h5"
+      ],
+      "expected_fen": "1n1qkbn1/rpp1p3/3Q4/3p1bpr/1p1P2Pp/B6B/P1P2P1P/RN2K1NR w KQ - 2 11",
+      "captures": 3,
+      "counts": {
+        "p": [
+          6,
+          7
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103204,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "a2a3",
+        "e7e6",
+        "e2e4",
+        "f8e7",
+        "d1h5",
+        "d7d5",
+        "g2g4",
+        "d5e4",
+        "f1h3",
+        "e7d6",
+        "h5a5",
+        "b8d7",
+        "a5c7",
+        "d6c7",
+        "c2c4",
+        "c7b8",
+        "b2b3",
+        "b7b6",
+        "b3b4",
+        "g8e7"
+      ],
+      "expected_fen": "rbbqk2r/p2nnppp/1p2p3/8/1PP1p1P1/P6B/3P1P1P/RNB1K1NR w KQkq - 1 11",
+      "captures": 3,
+      "counts": {
+        "p": [
+          7,
+          7
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          0,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103205,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "f7f6",
+        "d2d3",
+        "b8a6",
+        "e2e4",
+        "a6c5",
+        "d1e2",
+        "c7c6",
+        "c2c4",
+        "d8a5",
+        "c1f4",
+        "a5d8",
+        "e2h5",
+        "g7g6",
+        "a2a3",
+        "a7a6",
+        "f1e2",
+        "g6h5",
+        "h2h3",
+        "a8b8"
+      ],
+      "expected_fen": "1rbqkbnr/1p1pp2p/p1p2p2/2n4p/1PP1PB2/P2P3P/4BPP1/RN2K1NR w KQk - 1 11",
+      "captures": 1,
+      "counts": {
+        "p": [
+          8,
+          8
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          0,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103206,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "g1h3",
+        "g8f6",
+        "h3g5",
+        "b7b6",
+        "g5h7",
+        "f6d5",
+        "d2d3",
+        "c8a6",
+        "f2f4",
+        "d5c3",
+        "f4f5",
+        "g7g5",
+        "e1f2",
+        "a6b5",
+        "d1e1",
+        "h8g8",
+        "h7g5",
+        "a7a5",
+        "b1d2",
+        "f8h6"
+      ],
+      "expected_fen": "rn1qk1r1/2pppp2/1p5b/pb3PN1/8/2nP4/PPPNPKPP/R1B1QB1R w q - 2 11",
+      "captures": 2,
+      "counts": {
+        "p": [
+          8,
+          6
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103207,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "g2g3",
+        "d7d5",
+        "b2b3",
+        "b7b6",
+        "b1a3",
+        "e7e6",
+        "f1g2",
+        "a7a6",
+        "c2c4",
+        "b8d7",
+        "a3c2",
+        "d8f6",
+        "g2f3",
+        "h7h6",
+        "c2b4",
+        "e8d8",
+        "b4c6",
+        "d8e8",
+        "b3b4",
+        "g7g5"
+      ],
+      "expected_fen": "r1b1kbnr/2pn1p2/ppN1pq1p/3p2p1/1PP5/5BP1/P2PPP1P/R1BQK1NR w KQ - 0 11",
+      "captures": 0,
+      "counts": {
+        "p": [
+          8,
+          8
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    }
+  ],
+  "heldout_roots": [
+    {
+      "seed": 2026103400,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "f2f3",
+        "a7a5",
+        "d2d4",
+        "a5a4",
+        "a2a3",
+        "h7h5",
+        "c1d2",
+        "g8h6",
+        "e2e4",
+        "g7g6",
+        "g1h3",
+        "h8g8",
+        "f3f4",
+        "b8a6",
+        "f1c4",
+        "e7e5",
+        "d4e5",
+        "a6c5",
+        "e1e2",
+        "c7c6"
+      ],
+      "expected_fen": "r1bqkbr1/1p1p1p2/2p3pn/2n1P2p/p1B1PP2/P6N/1PPBK1PP/RN1Q3R w q - 0 11",
+      "captures": 1,
+      "counts": {
+        "p": [
+          8,
+          7
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103401,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "a7a5",
+        "e2e3",
+        "g8h6",
+        "b4a5",
+        "e7e6",
+        "c2c3",
+        "e8e7",
+        "d1a4",
+        "f7f5",
+        "c1b2",
+        "a8a6",
+        "f1e2",
+        "b7b5",
+        "b2c1",
+        "c8b7",
+        "g1f3",
+        "b7e4",
+        "h2h3",
+        "a6d6"
+      ],
+      "expected_fen": "1n1q1b1r/2ppk1pp/3rp2n/Pp3p2/Q3b3/2P1PN1P/P2PBPP1/RNB1K2R w KQ - 1 11",
+      "captures": 1,
+      "counts": {
+        "p": [
+          8,
+          7
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103402,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "d2d3",
+        "f7f6",
+        "c1g5",
+        "b8a6",
+        "g1f3",
+        "d7d6",
+        "g5f4",
+        "e8f7",
+        "f4e5",
+        "d6e5",
+        "f3d2",
+        "d8e8",
+        "a2a4",
+        "c7c5",
+        "f2f3",
+        "b7b6",
+        "d2c4",
+        "e8c6",
+        "f3f4",
+        "a6b8"
+      ],
+      "expected_fen": "rnb2bnr/p3pkpp/1pq2p2/2p1p3/P1N2P2/3P4/1PP1P1PP/RN1QKB1R w KQ - 1 11",
+      "captures": 1,
+      "counts": {
+        "p": [
+          8,
+          8
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          1,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103403,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "b8a6",
+        "a2a3",
+        "g8f6",
+        "g1h3",
+        "a6c5",
+        "g2g4",
+        "f6g4",
+        "h3g5",
+        "c5e6",
+        "b4b5",
+        "g4f2",
+        "a3a4",
+        "f2d1",
+        "e2e4",
+        "a7a6",
+        "g5f7",
+        "e6d4",
+        "f1g2",
+        "d1e3"
+      ],
+      "expected_fen": "r1bqkb1r/1ppppNpp/p7/1P6/P2nP3/4n3/2PP2BP/RNB1K2R w KQkq - 3 11",
+      "captures": 4,
+      "counts": {
+        "p": [
+          6,
+          7
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          0,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103404,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "h7h5",
+        "c1b2",
+        "h5h4",
+        "b2d4",
+        "d7d6",
+        "b1c3",
+        "e7e6",
+        "e2e3",
+        "h8h6",
+        "e3e4",
+        "h6h8",
+        "c3b5",
+        "e6e5",
+        "d1h5",
+        "e8d7",
+        "h5f3",
+        "g8h6",
+        "h2h3",
+        "d7e7"
+      ],
+      "expected_fen": "rnbq1b1r/ppp1kpp1/3p3n/1N2p3/1P1BP2p/5Q1P/P1PP1PP1/R3KBNR w KQ - 1 11",
+      "captures": 0,
+      "counts": {
+        "p": [
+          8,
+          8
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103405,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "d2d3",
+        "h7h6",
+        "f2f4",
+        "h8h7",
+        "c2c3",
+        "f7f6",
+        "e1f2",
+        "e7e5",
+        "c3c4",
+        "e8e7",
+        "h2h4",
+        "e5e4",
+        "f2e1",
+        "e7e8",
+        "d3e4",
+        "f6f5",
+        "b1c3",
+        "g7g6",
+        "a2a3",
+        "d8h4"
+      ],
+      "expected_fen": "rnb1kbn1/pppp3r/6pp/5p2/2P1PP1q/P1N5/1P2P1P1/R1BQKBNR w - - 0 11",
+      "captures": 2,
+      "counts": {
+        "p": [
+          7,
+          7
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103406,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b1a3",
+        "g7g5",
+        "h2h4",
+        "h7h6",
+        "c2c3",
+        "d7d6",
+        "h4g5",
+        "c8f5",
+        "c3c4",
+        "f5d3",
+        "g1f3",
+        "c7c5",
+        "g5h6",
+        "a7a5",
+        "f3g5",
+        "g8f6",
+        "a3c2",
+        "d3e4",
+        "g5h3",
+        "e4d3"
+      ],
+      "expected_fen": "rn1qkb1r/1p2pp2/3p1n1P/p1p5/2P5/3b3N/PPNPPPP1/R1BQKB1R w KQkq - 6 11",
+      "captures": 2,
+      "counts": {
+        "p": [
+          8,
+          6
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103407,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "h2h3",
+        "e7e5",
+        "d2d3",
+        "g8f6",
+        "c1h6",
+        "f8b4",
+        "c2c3",
+        "b7b5",
+        "h3h4",
+        "f6g8",
+        "g1h3",
+        "b4e7",
+        "d1c2",
+        "e7d6",
+        "a2a3",
+        "e8e7",
+        "h1g1",
+        "g7g5",
+        "e2e3",
+        "a7a5"
+      ],
+      "expected_fen": "rnbq2nr/2ppkp1p/3b3B/pp2p1p1/7P/P1PPP2N/1PQ2PP1/RN2KBR1 w Q - 0 11",
+      "captures": 0,
+      "counts": {
+        "p": [
+          8,
+          8
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    }
+  ],
+  "updates": 24,
+  "sweeps": 6,
+  "steps": [
+    2.0794415416798357,
+    1.0397207708399179,
+    0.5198603854199589,
+    0.25993019270997947,
+    0.12996509635498973,
+    0.06498254817749487
+  ],
+  "coordinates": [
+    "N",
+    "B",
+    "R",
+    "Q"
+  ],
+  "price_bounds": [
+    52,
+    3328
+  ],
+  "P": 208,
+  "K": 0,
+  "train_slots": 3456,
+  "heldout_slots": 96,
+  "total_slots": 3552,
+  "train_root_use": "Samefixed8rootsas187, all3arms percoordinate, commonrandomseeds unchanged.",
+  "heldout_random_seeds": [
+    2026600000,
+    2026600001,
+    2026600002,
+    2026600003,
+    2026600004,
+    2026600005,
+    2026600006,
+    2026600007
+  ],
+  "root_status": "187fulllegal20plyhistories, capturesallowed,8train/8held valid; no resample/humanfilter.",
+  "binary_sha256": "c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+  "engine_mode": 3,
+  "search": "Agent1thread16MiB1024nodes; exactleaf/table readbacks+reset pergame. OneownedC++ processperimmutablecandidateblock; Pythonopponent computes2ply onlyatits turns, nosecondengineworker.",
+  "opponent_evaluator": "Uniformsortedlegalrandom, samecommonseeds; no2plyopponent.",
+  "reward": "Two fixed objectives: original true-terminal100+mate speed, else unit quantity/15; bounded true-terminal +/-1, true draws0, else final unit quantity/15. Exact240scale integer selection; incumbent ties. Components separately; average bounded payoff does not preserve WDL lexicographically.",
+  "freeze": "All3cap24ends beforeANYcap24held. Roots/methodfamily/earlier16results exposed; explicit developmentresourcecurve, no regainblindholdout.",
+  "selection": "Same24coordinate current/+/- domainhalfsteps andstrictincumbentties; humanreference onlydescriptive.",
+  "human_reference": {
+    "P": 1,
+    "N": 3,
+    "B": 3,
+    "R": 5,
+    "Q": 9
+  },
+  "human_reference_source": "https://www.chess.com/terms/chess-piece-value",
+  "reference_metric": "Meanabsolute log-ratio NBRQ, allstarts/ends, neverupdate/seed/modelselection",
+  "deadline_seconds": 1800,
+  "cost": "3456train+96held24maxplygames expected6-9min from187and200cost,1800sfuse. Same603/604/605and187geometry/go1024; moreworkthan16ply arm, report resource/resultcurve,not equalcost comparison.",
+  "scope": "Changedsearchgamehorizon24, sameagentnodes/materialalign/startingweights/optimizer. Compositebounded payoff, cutoffsunknownfinalWDL. Prior16testfrozen/notextended. No human tuning/startselection orautomaticallyhighercap.",
+  "decision": "All3referencecontraction with observedterminal/quantity gains supports scoped24cheaproute. Mixed/failure retainsdifficulty,do not automatically lengthen/trainmore. All3results reported.",
+  "excluded_train_roots": [],
+  "excluded_heldout_roots": [],
+  "planned_slots_beforeconstruction_exclusions": 3552,
+  "excluded_slots_beforeexecution": 0,
+  "created_at": "2026-10-12T07:19:53.549030+00:00",
+  "cap": 24
+}

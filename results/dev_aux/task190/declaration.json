@@ -1,0 +1,15 @@
+{
+  "task_id": "190",
+  "source": "187",
+  "question": "Does bounded selection sacrifice recorded true-WDL, and how concentrated are selected gains?",
+  "components": [
+    "actual",
+    "original",
+    "bounded",
+    "wdl_then_cutoff_quantity",
+    "final_quantity"
+  ],
+  "analysis_rule": "All144candidatecomparisons, strictincumbent ties, exactinteger components,8whole-rootdeletions each; fulloptimalsets retained. Counterfactualrescoring not futurepolicy/holdoutproof.",
+  "proof": "At16pairedcases and |secondary game payoff|<=1, original100*sumWDL+sumsecondary preserves ordering of distinct integer sumWDL because100>32. Bounded coefficient1 lacks this guarantee; this doesnot prove an observed sacrifice.",
+  "created_at": "2026-10-12T06:58:02.553903+00:00"
+}

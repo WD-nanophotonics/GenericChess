@@ -1,0 +1,2943 @@
+{
+  "complete": true,
+  "source_controller_sha256": "f18facac6b828b61ecd4b964cc258088dbf07afe3b1c411e88a40682692aa3a7",
+  "all_start_results": [
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "initial_weights": {
+        "P": 208,
+        "K": 0,
+        "N": 130,
+        "B": 544,
+        "R": 351,
+        "Q": 562
+      },
+      "final_weights": {
+        "P": 208,
+        "K": 0,
+        "N": 448,
+        "B": 63,
+        "R": 309,
+        "Q": 104
+      },
+      "initial_Pnormalized": {
+        "N": 0.625,
+        "B": 2.6153846153846154,
+        "R": 1.6875,
+        "Q": 2.701923076923077
+      },
+      "final_Pnormalized": {
+        "N": 2.1538461538461537,
+        "B": 0.30288461538461536,
+        "R": 1.4855769230769231,
+        "Q": 0.5
+      },
+      "initial_distance": 0.9988169038101823,
+      "final_distance": 1.682094812766544,
+      "updates": 15,
+      "heldout": {
+        "initial": {
+          "objective_mean": 12.73671875,
+          "original_mean": 12.73671875,
+          "quantity_mean": 0.2583333333333333,
+          "bounded_mean": 0.35,
+          "mate_wins": 2,
+          "mate_losses": 0,
+          "cutoffs": 14,
+          "cutoff_component_mean": 0.225,
+          "speed_component_mean": 0.01171875
+        },
+        "final": {
+          "objective_mean": 6.568489583333333,
+          "original_mean": 6.568489583333333,
+          "quantity_mean": 0.2916666666666667,
+          "bounded_mean": 0.3458333333333333,
+          "mate_wins": 1,
+          "mate_losses": 0,
+          "cutoffs": 15,
+          "cutoff_component_mean": 0.2833333333333333,
+          "speed_component_mean": 0.03515625
+        }
+      },
+      "paired_quantity_mean": 0.03333333333333333,
+      "paired_objective_mean": -6.168229166666666,
+      "paired_original_mean": -6.168229166666666,
+      "paired_original_median": 0.06666666666666665,
+      "paired_bounded_mean": -0.004166666666666664,
+      "pairs": [
+        {
+          "root": 0,
+          "color": true,
+          "objective_delta": 0.06666666666666668,
+          "original_delta": 0.06666666666666668,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666668
+        },
+        {
+          "root": 0,
+          "color": false,
+          "objective_delta": -0.26666666666666666,
+          "original_delta": -0.26666666666666666,
+          "quantity_delta": -0.26666666666666666,
+          "bounded_delta": -0.26666666666666666
+        },
+        {
+          "root": 1,
+          "color": true,
+          "objective_delta": 0.06666666666666671,
+          "original_delta": 0.06666666666666671,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666671
+        },
+        {
+          "root": 1,
+          "color": false,
+          "objective_delta": 0.06666666666666668,
+          "original_delta": 0.06666666666666668,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666668
+        },
+        {
+          "root": 2,
+          "color": true,
+          "objective_delta": 0.06666666666666665,
+          "original_delta": 0.06666666666666665,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666665
+        },
+        {
+          "root": 2,
+          "color": false,
+          "objective_delta": -99.6,
+          "original_delta": -99.6,
+          "quantity_delta": 0.0,
+          "bounded_delta": -0.6
+        },
+        {
+          "root": 3,
+          "color": true,
+          "objective_delta": -100.05416666666666,
+          "original_delta": -100.05416666666666,
+          "quantity_delta": 0.0,
+          "bounded_delta": -0.8666666666666667
+        },
+        {
+          "root": 3,
+          "color": false,
+          "objective_delta": 0.1333333333333333,
+          "original_delta": 0.1333333333333333,
+          "quantity_delta": 0.13333333333333333,
+          "bounded_delta": 0.1333333333333333
+        },
+        {
+          "root": 4,
+          "color": true,
+          "objective_delta": 0.06666666666666665,
+          "original_delta": 0.06666666666666665,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666665
+        },
+        {
+          "root": 4,
+          "color": false,
+          "objective_delta": 0.06666666666666665,
+          "original_delta": 0.06666666666666665,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666665
+        },
+        {
+          "root": 5,
+          "color": true,
+          "objective_delta": 0.06666666666666665,
+          "original_delta": 0.06666666666666665,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666665
+        },
+        {
+          "root": 5,
+          "color": false,
+          "objective_delta": 0.06666666666666671,
+          "original_delta": 0.06666666666666671,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666671
+        },
+        {
+          "root": 6,
+          "color": true,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 6,
+          "color": false,
+          "objective_delta": 0.06666666666666665,
+          "original_delta": 0.06666666666666665,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666665
+        },
+        {
+          "root": 7,
+          "color": true,
+          "objective_delta": 100.3625,
+          "original_delta": 100.3625,
+          "quantity_delta": -0.06666666666666667,
+          "bounded_delta": 0.8
+        },
+        {
+          "root": 7,
+          "color": false,
+          "objective_delta": 0.13333333333333333,
+          "original_delta": 0.13333333333333333,
+          "quantity_delta": 0.13333333333333333,
+          "bounded_delta": 0.13333333333333333
+        }
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "initial_weights": {
+        "P": 208,
+        "K": 0,
+        "N": 130,
+        "B": 544,
+        "R": 351,
+        "Q": 562
+      },
+      "final_weights": {
+        "P": 208,
+        "K": 0,
+        "N": 82,
+        "B": 73,
+        "R": 1061,
+        "Q": 293
+      },
+      "initial_Pnormalized": {
+        "N": 0.625,
+        "B": 2.6153846153846154,
+        "R": 1.6875,
+        "Q": 2.701923076923077
+      },
+      "final_Pnormalized": {
+        "N": 0.3942307692307692,
+        "B": 0.35096153846153844,
+        "R": 5.100961538461538,
+        "Q": 1.4086538461538463
+      },
+      "initial_distance": 0.9988169038101823,
+      "final_distance": 1.5124258107063115,
+      "updates": 11,
+      "heldout": {
+        "initial": {
+          "objective_mean": 0.35,
+          "original_mean": 12.73671875,
+          "quantity_mean": 0.2583333333333333,
+          "bounded_mean": 0.35,
+          "mate_wins": 2,
+          "mate_losses": 0,
+          "cutoffs": 14,
+          "cutoff_component_mean": 0.225,
+          "speed_component_mean": 0.01171875
+        },
+        "final": {
+          "objective_mean": 0.3958333333333333,
+          "original_mean": 12.778645833333334,
+          "quantity_mean": 0.325,
+          "bounded_mean": 0.3958333333333333,
+          "mate_wins": 2,
+          "mate_losses": 0,
+          "cutoffs": 14,
+          "cutoff_component_mean": 0.2708333333333333,
+          "speed_component_mean": 0.0078125
+        }
+      },
+      "paired_quantity_mean": 0.06666666666666667,
+      "paired_objective_mean": 0.045833333333333344,
+      "paired_original_mean": 0.04192708333333357,
+      "paired_original_median": 0.06666666666666667,
+      "paired_bounded_mean": 0.045833333333333344,
+      "pairs": [
+        {
+          "root": 0,
+          "color": true,
+          "objective_delta": 0.06666666666666668,
+          "original_delta": 0.06666666666666668,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666668
+        },
+        {
+          "root": 0,
+          "color": false,
+          "objective_delta": -0.06666666666666665,
+          "original_delta": -0.06666666666666665,
+          "quantity_delta": -0.06666666666666667,
+          "bounded_delta": -0.06666666666666665
+        },
+        {
+          "root": 1,
+          "color": true,
+          "objective_delta": 0.6666666666666667,
+          "original_delta": 99.72916666666667,
+          "quantity_delta": 0.13333333333333333,
+          "bounded_delta": 0.6666666666666667
+        },
+        {
+          "root": 1,
+          "color": false,
+          "objective_delta": 0.13333333333333333,
+          "original_delta": 0.13333333333333333,
+          "quantity_delta": 0.13333333333333333,
+          "bounded_delta": 0.13333333333333333
+        },
+        {
+          "root": 2,
+          "color": true,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 2,
+          "color": false,
+          "objective_delta": -0.5333333333333333,
+          "original_delta": -99.53333333333333,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": -0.5333333333333333
+        },
+        {
+          "root": 3,
+          "color": true,
+          "objective_delta": -0.9333333333333333,
+          "original_delta": -100.12083333333334,
+          "quantity_delta": -0.06666666666666667,
+          "bounded_delta": -0.9333333333333333
+        },
+        {
+          "root": 3,
+          "color": false,
+          "objective_delta": 0.1333333333333333,
+          "original_delta": 0.1333333333333333,
+          "quantity_delta": 0.13333333333333333,
+          "bounded_delta": 0.1333333333333333
+        },
+        {
+          "root": 4,
+          "color": true,
+          "objective_delta": 0.13333333333333336,
+          "original_delta": 0.13333333333333336,
+          "quantity_delta": 0.13333333333333333,
+          "bounded_delta": 0.13333333333333336
+        },
+        {
+          "root": 4,
+          "color": false,
+          "objective_delta": 0.2,
+          "original_delta": 0.2,
+          "quantity_delta": 0.2,
+          "bounded_delta": 0.2
+        },
+        {
+          "root": 5,
+          "color": true,
+          "objective_delta": 0.7333333333333334,
+          "original_delta": 99.79583333333333,
+          "quantity_delta": 0.13333333333333333,
+          "bounded_delta": 0.7333333333333334
+        },
+        {
+          "root": 5,
+          "color": false,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 6,
+          "color": true,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 6,
+          "color": false,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 7,
+          "color": true,
+          "objective_delta": 0.06666666666666665,
+          "original_delta": 0.06666666666666665,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666665
+        },
+        {
+          "root": 7,
+          "color": false,
+          "objective_delta": 0.13333333333333333,
+          "original_delta": 0.13333333333333333,
+          "quantity_delta": 0.13333333333333333,
+          "bounded_delta": 0.13333333333333333
+        }
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "initial_weights": {
+        "P": 208,
+        "K": 0,
+        "N": 91,
+        "B": 1825,
+        "R": 1106,
+        "Q": 266
+      },
+      "final_weights": {
+        "P": 208,
+        "K": 0,
+        "N": 2922,
+        "B": 1738,
+        "R": 2739,
+        "Q": 264
+      },
+      "initial_Pnormalized": {
+        "N": 0.4375,
+        "B": 8.774038461538462,
+        "R": 5.3173076923076925,
+        "Q": 1.2788461538461537
+      },
+      "final_Pnormalized": {
+        "N": 14.048076923076923,
+        "B": 8.35576923076923,
+        "R": 13.16826923076923,
+        "Q": 1.2692307692307692
+      },
+      "initial_distance": 1.2528178244256105,
+      "final_distance": 1.3738497231040019,
+      "updates": 15,
+      "heldout": {
+        "initial": {
+          "objective_mean": 0.31666666666666665,
+          "original_mean": 6.511979166666666,
+          "quantity_mean": 0.2791666666666667,
+          "bounded_mean": 0.31666666666666665,
+          "mate_wins": 1,
+          "mate_losses": 0,
+          "cutoffs": 15,
+          "cutoff_component_mean": 0.25416666666666665,
+          "speed_component_mean": 0.0078125
+        },
+        "final": {
+          "objective_mean": 0.22083333333333333,
+          "original_mean": 0.22083333333333333,
+          "quantity_mean": 0.22083333333333333,
+          "bounded_mean": 0.22083333333333333,
+          "mate_wins": 0,
+          "mate_losses": 0,
+          "cutoffs": 16,
+          "cutoff_component_mean": 0.22083333333333333,
+          "speed_component_mean": 0
+        }
+      },
+      "paired_quantity_mean": -0.058333333333333334,
+      "paired_objective_mean": -0.09583333333333334,
+      "paired_original_mean": -6.291145833333333,
+      "paired_original_median": -0.033333333333333354,
+      "paired_bounded_mean": -0.09583333333333334,
+      "pairs": [
+        {
+          "root": 0,
+          "color": true,
+          "objective_delta": 0.1333333333333333,
+          "original_delta": 0.1333333333333333,
+          "quantity_delta": 0.13333333333333333,
+          "bounded_delta": 0.1333333333333333
+        },
+        {
+          "root": 0,
+          "color": false,
+          "objective_delta": 0.06666666666666668,
+          "original_delta": 0.06666666666666668,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666668
+        },
+        {
+          "root": 1,
+          "color": true,
+          "objective_delta": -0.26666666666666666,
+          "original_delta": -0.26666666666666666,
+          "quantity_delta": -0.26666666666666666,
+          "bounded_delta": -0.26666666666666666
+        },
+        {
+          "root": 1,
+          "color": false,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 2,
+          "color": true,
+          "objective_delta": -0.06666666666666671,
+          "original_delta": -0.06666666666666671,
+          "quantity_delta": -0.06666666666666667,
+          "bounded_delta": -0.06666666666666671
+        },
+        {
+          "root": 2,
+          "color": false,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 3,
+          "color": true,
+          "objective_delta": -0.2,
+          "original_delta": -0.2,
+          "quantity_delta": -0.2,
+          "bounded_delta": -0.2
+        },
+        {
+          "root": 3,
+          "color": false,
+          "objective_delta": -0.06666666666666671,
+          "original_delta": -0.06666666666666671,
+          "quantity_delta": -0.06666666666666667,
+          "bounded_delta": -0.06666666666666671
+        },
+        {
+          "root": 4,
+          "color": true,
+          "objective_delta": -0.13333333333333333,
+          "original_delta": -0.13333333333333333,
+          "quantity_delta": -0.13333333333333333,
+          "bounded_delta": -0.13333333333333333
+        },
+        {
+          "root": 4,
+          "color": false,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 5,
+          "color": true,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 5,
+          "color": false,
+          "objective_delta": -0.7333333333333334,
+          "original_delta": -99.85833333333333,
+          "quantity_delta": -0.13333333333333333,
+          "bounded_delta": -0.7333333333333334
+        },
+        {
+          "root": 6,
+          "color": true,
+          "objective_delta": -0.2,
+          "original_delta": -0.2,
+          "quantity_delta": -0.2,
+          "bounded_delta": -0.2
+        },
+        {
+          "root": 6,
+          "color": false,
+          "objective_delta": 0.13333333333333336,
+          "original_delta": 0.13333333333333336,
+          "quantity_delta": 0.13333333333333333,
+          "bounded_delta": 0.13333333333333336
+        },
+        {
+          "root": 7,
+          "color": true,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 7,
+          "color": false,
+          "objective_delta": -0.2,
+          "original_delta": -0.2,
+          "quantity_delta": -0.2,
+          "bounded_delta": -0.2
+        }
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "initial_weights": {
+        "P": 208,
+        "K": 0,
+        "N": 91,
+        "B": 1825,
+        "R": 1106,
+        "Q": 266
+      },
+      "final_weights": {
+        "P": 208,
+        "K": 0,
+        "N": 563,
+        "B": 384,
+        "R": 343,
+        "Q": 204
+      },
+      "initial_Pnormalized": {
+        "N": 0.4375,
+        "B": 8.774038461538462,
+        "R": 5.3173076923076925,
+        "Q": 1.2788461538461537
+      },
+      "final_Pnormalized": {
+        "N": 2.706730769230769,
+        "B": 1.8461538461538463,
+        "R": 1.6490384615384615,
+        "Q": 0.9807692307692307
+      },
+      "initial_distance": 1.2528178244256105,
+      "final_distance": 0.9785666910435593,
+      "updates": 15,
+      "heldout": {
+        "initial": {
+          "objective_mean": 6.511979166666666,
+          "original_mean": 6.511979166666666,
+          "quantity_mean": 0.2791666666666667,
+          "bounded_mean": 0.31666666666666665,
+          "mate_wins": 1,
+          "mate_losses": 0,
+          "cutoffs": 15,
+          "cutoff_component_mean": 0.25416666666666665,
+          "speed_component_mean": 0.0078125
+        },
+        "final": {
+          "objective_mean": 19.01953125,
+          "original_mean": 19.01953125,
+          "quantity_mean": 0.30833333333333335,
+          "bounded_mean": 0.4375,
+          "mate_wins": 3,
+          "mate_losses": 0,
+          "cutoffs": 13,
+          "cutoff_component_mean": 0.25,
+          "speed_component_mean": 0.01953125
+        }
+      },
+      "paired_quantity_mean": 0.029166666666666667,
+      "paired_objective_mean": 12.507552083333332,
+      "paired_original_mean": 12.507552083333332,
+      "paired_original_median": 0.06666666666666665,
+      "paired_bounded_mean": 0.12083333333333333,
+      "pairs": [
+        {
+          "root": 0,
+          "color": true,
+          "objective_delta": 0.1333333333333333,
+          "original_delta": 0.1333333333333333,
+          "quantity_delta": 0.13333333333333333,
+          "bounded_delta": 0.1333333333333333
+        },
+        {
+          "root": 0,
+          "color": false,
+          "objective_delta": 99.99166666666666,
+          "original_delta": 99.99166666666666,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.8666666666666667
+        },
+        {
+          "root": 1,
+          "color": true,
+          "objective_delta": -0.1333333333333333,
+          "original_delta": -0.1333333333333333,
+          "quantity_delta": -0.13333333333333333,
+          "bounded_delta": -0.1333333333333333
+        },
+        {
+          "root": 1,
+          "color": false,
+          "objective_delta": 0.19999999999999998,
+          "original_delta": 0.19999999999999998,
+          "quantity_delta": 0.2,
+          "bounded_delta": 0.19999999999999998
+        },
+        {
+          "root": 2,
+          "color": true,
+          "objective_delta": 99.6625,
+          "original_delta": 99.6625,
+          "quantity_delta": -0.06666666666666667,
+          "bounded_delta": 0.6
+        },
+        {
+          "root": 2,
+          "color": false,
+          "objective_delta": 0.06666666666666665,
+          "original_delta": 0.06666666666666665,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666665
+        },
+        {
+          "root": 3,
+          "color": true,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 3,
+          "color": false,
+          "objective_delta": 99.725,
+          "original_delta": 99.725,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.6
+        },
+        {
+          "root": 4,
+          "color": true,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 4,
+          "color": false,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 5,
+          "color": true,
+          "objective_delta": 0.06666666666666665,
+          "original_delta": 0.06666666666666665,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666665
+        },
+        {
+          "root": 5,
+          "color": false,
+          "objective_delta": -99.725,
+          "original_delta": -99.725,
+          "quantity_delta": 0.0,
+          "bounded_delta": -0.6
+        },
+        {
+          "root": 6,
+          "color": true,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 6,
+          "color": false,
+          "objective_delta": 0.06666666666666667,
+          "original_delta": 0.06666666666666667,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666667
+        },
+        {
+          "root": 7,
+          "color": true,
+          "objective_delta": 0.06666666666666665,
+          "original_delta": 0.06666666666666665,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666665
+        },
+        {
+          "root": 7,
+          "color": false,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "initial_weights": {
+        "P": 208,
+        "K": 0,
+        "N": 134,
+        "B": 555,
+        "R": 338,
+        "Q": 419
+      },
+      "final_weights": {
+        "P": 208,
+        "K": 0,
+        "N": 103,
+        "B": 124,
+        "R": 468,
+        "Q": 114
+      },
+      "initial_Pnormalized": {
+        "N": 0.6442307692307693,
+        "B": 2.668269230769231,
+        "R": 1.625,
+        "Q": 2.014423076923077
+      },
+      "final_Pnormalized": {
+        "N": 0.4951923076923077,
+        "B": 0.5961538461538461,
+        "R": 2.25,
+        "Q": 0.5480769230769231
+      },
+      "initial_distance": 1.0690786642023271,
+      "final_distance": 1.753590521941249,
+      "updates": 11,
+      "heldout": {
+        "initial": {
+          "objective_mean": 6.540104166666667,
+          "original_mean": 6.540104166666667,
+          "quantity_mean": 0.2833333333333333,
+          "bounded_mean": 0.32916666666666666,
+          "mate_wins": 1,
+          "mate_losses": 0,
+          "cutoffs": 15,
+          "cutoff_component_mean": 0.26666666666666666,
+          "speed_component_mean": 0.0234375
+        },
+        "final": {
+          "objective_mean": 12.841927083333333,
+          "original_mean": 12.841927083333333,
+          "quantity_mean": 0.3,
+          "bounded_mean": 0.4083333333333333,
+          "mate_wins": 2,
+          "mate_losses": 0,
+          "cutoffs": 14,
+          "cutoff_component_mean": 0.2833333333333333,
+          "speed_component_mean": 0.05859375
+        }
+      },
+      "paired_quantity_mean": 0.016666666666666666,
+      "paired_objective_mean": 6.301822916666667,
+      "paired_original_mean": 6.301822916666667,
+      "paired_original_median": 0.033333333333333326,
+      "paired_bounded_mean": 0.07916666666666666,
+      "pairs": [
+        {
+          "root": 0,
+          "color": true,
+          "objective_delta": 0.06666666666666665,
+          "original_delta": 0.06666666666666665,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666665
+        },
+        {
+          "root": 0,
+          "color": false,
+          "objective_delta": 100.10833333333333,
+          "original_delta": 100.10833333333333,
+          "quantity_delta": -0.13333333333333333,
+          "bounded_delta": 0.7333333333333334
+        },
+        {
+          "root": 1,
+          "color": true,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 1,
+          "color": false,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 2,
+          "color": true,
+          "objective_delta": -0.13333333333333333,
+          "original_delta": -0.13333333333333333,
+          "quantity_delta": -0.13333333333333333,
+          "bounded_delta": -0.13333333333333333
+        },
+        {
+          "root": 2,
+          "color": false,
+          "objective_delta": -99.84166666666667,
+          "original_delta": -99.84166666666667,
+          "quantity_delta": 0.26666666666666666,
+          "bounded_delta": -0.4666666666666667
+        },
+        {
+          "root": 3,
+          "color": true,
+          "objective_delta": 0.06666666666666668,
+          "original_delta": 0.06666666666666668,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666668
+        },
+        {
+          "root": 3,
+          "color": false,
+          "objective_delta": 0.06666666666666665,
+          "original_delta": 0.06666666666666665,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666665
+        },
+        {
+          "root": 4,
+          "color": true,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 4,
+          "color": false,
+          "objective_delta": 0.06666666666666665,
+          "original_delta": 0.06666666666666665,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666665
+        },
+        {
+          "root": 5,
+          "color": true,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 5,
+          "color": false,
+          "objective_delta": 0.06666666666666665,
+          "original_delta": 0.06666666666666665,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666665
+        },
+        {
+          "root": 6,
+          "color": true,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 6,
+          "color": false,
+          "objective_delta": 0.1333333333333333,
+          "original_delta": 0.1333333333333333,
+          "quantity_delta": 0.13333333333333333,
+          "bounded_delta": 0.1333333333333333
+        },
+        {
+          "root": 7,
+          "color": true,
+          "objective_delta": 100.29583333333333,
+          "original_delta": 100.29583333333333,
+          "quantity_delta": -0.13333333333333333,
+          "bounded_delta": 0.7333333333333334
+        },
+        {
+          "root": 7,
+          "color": false,
+          "objective_delta": -0.06666666666666671,
+          "original_delta": -0.06666666666666671,
+          "quantity_delta": -0.06666666666666667,
+          "bounded_delta": -0.06666666666666671
+        }
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "initial_weights": {
+        "P": 208,
+        "K": 0,
+        "N": 134,
+        "B": 555,
+        "R": 338,
+        "Q": 419
+      },
+      "final_weights": {
+        "P": 208,
+        "K": 0,
+        "N": 110,
+        "B": 74,
+        "R": 261,
+        "Q": 368
+      },
+      "initial_Pnormalized": {
+        "N": 0.6442307692307693,
+        "B": 2.668269230769231,
+        "R": 1.625,
+        "Q": 2.014423076923077
+      },
+      "final_Pnormalized": {
+        "N": 0.5288461538461539,
+        "B": 0.3557692307692308,
+        "R": 1.2548076923076923,
+        "Q": 1.7692307692307692
+      },
+      "initial_distance": 1.0690786642023271,
+      "final_distance": 1.7192226453559,
+      "updates": 14,
+      "heldout": {
+        "initial": {
+          "objective_mean": 0.32916666666666666,
+          "original_mean": 6.540104166666667,
+          "quantity_mean": 0.2833333333333333,
+          "bounded_mean": 0.32916666666666666,
+          "mate_wins": 1,
+          "mate_losses": 0,
+          "cutoffs": 15,
+          "cutoff_component_mean": 0.26666666666666666,
+          "speed_component_mean": 0.0234375
+        },
+        "final": {
+          "objective_mean": 0.5458333333333334,
+          "original_mean": 31.549739583333334,
+          "quantity_mean": 0.3375,
+          "bounded_mean": 0.5458333333333334,
+          "mate_wins": 5,
+          "mate_losses": 0,
+          "cutoffs": 11,
+          "cutoff_component_mean": 0.23333333333333334,
+          "speed_component_mean": 0.06640625
+        }
+      },
+      "paired_quantity_mean": 0.05416666666666667,
+      "paired_objective_mean": 0.21666666666666667,
+      "paired_original_mean": 25.009635416666665,
+      "paired_original_median": 0.13333333333333336,
+      "paired_bounded_mean": 0.21666666666666667,
+      "pairs": [
+        {
+          "root": 0,
+          "color": true,
+          "objective_delta": 0.13333333333333336,
+          "original_delta": 0.13333333333333336,
+          "quantity_delta": 0.13333333333333333,
+          "bounded_delta": 0.13333333333333336
+        },
+        {
+          "root": 0,
+          "color": false,
+          "objective_delta": 0.13333333333333336,
+          "original_delta": 0.13333333333333336,
+          "quantity_delta": 0.13333333333333333,
+          "bounded_delta": 0.13333333333333336
+        },
+        {
+          "root": 1,
+          "color": true,
+          "objective_delta": 0.6,
+          "original_delta": 99.6625,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.6
+        },
+        {
+          "root": 1,
+          "color": false,
+          "objective_delta": 0.06666666666666668,
+          "original_delta": 0.06666666666666668,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666668
+        },
+        {
+          "root": 2,
+          "color": true,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        },
+        {
+          "root": 2,
+          "color": false,
+          "objective_delta": -0.5333333333333333,
+          "original_delta": -99.90833333333333,
+          "quantity_delta": 0.2,
+          "bounded_delta": -0.5333333333333333
+        },
+        {
+          "root": 3,
+          "color": true,
+          "objective_delta": -0.06666666666666667,
+          "original_delta": -0.06666666666666667,
+          "quantity_delta": -0.06666666666666667,
+          "bounded_delta": -0.06666666666666667
+        },
+        {
+          "root": 3,
+          "color": false,
+          "objective_delta": 0.5333333333333333,
+          "original_delta": 99.78333333333333,
+          "quantity_delta": -0.13333333333333333,
+          "bounded_delta": 0.5333333333333333
+        },
+        {
+          "root": 4,
+          "color": true,
+          "objective_delta": 0.7333333333333334,
+          "original_delta": 99.79583333333333,
+          "quantity_delta": 0.13333333333333333,
+          "bounded_delta": 0.7333333333333334
+        },
+        {
+          "root": 4,
+          "color": false,
+          "objective_delta": 0.13333333333333336,
+          "original_delta": 0.13333333333333336,
+          "quantity_delta": 0.13333333333333333,
+          "bounded_delta": 0.13333333333333336
+        },
+        {
+          "root": 5,
+          "color": true,
+          "objective_delta": 0.06666666666666671,
+          "original_delta": 0.06666666666666671,
+          "quantity_delta": 0.06666666666666667,
+          "bounded_delta": 0.06666666666666671
+        },
+        {
+          "root": 5,
+          "color": false,
+          "objective_delta": 0.8,
+          "original_delta": 99.925,
+          "quantity_delta": 0.2,
+          "bounded_delta": 0.8
+        },
+        {
+          "root": 6,
+          "color": true,
+          "objective_delta": -0.06666666666666671,
+          "original_delta": -0.06666666666666671,
+          "quantity_delta": -0.06666666666666667,
+          "bounded_delta": -0.06666666666666671
+        },
+        {
+          "root": 6,
+          "color": false,
+          "objective_delta": 0.2,
+          "original_delta": 0.2,
+          "quantity_delta": 0.2,
+          "bounded_delta": 0.2
+        },
+        {
+          "root": 7,
+          "color": true,
+          "objective_delta": 0.7333333333333334,
+          "original_delta": 100.29583333333333,
+          "quantity_delta": -0.13333333333333333,
+          "bounded_delta": 0.7333333333333334
+        },
+        {
+          "root": 7,
+          "color": false,
+          "objective_delta": 0.0,
+          "original_delta": 0.0,
+          "quantity_delta": 0.0,
+          "bounded_delta": 0.0
+        }
+      ]
+    }
+  ],
+  "reference_curves": [
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 0,
+      "training_games": 192,
+      "reference_distance": 2.039428941191224,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 130,
+        "B": 68,
+        "R": 351,
+        "Q": 70
+      }
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 1,
+      "training_games": 384,
+      "reference_distance": 1.5174109971262046,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 369,
+        "B": 68,
+        "R": 351,
+        "Q": 199
+      }
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 2,
+      "training_games": 576,
+      "reference_distance": 1.7150143282151926,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 620,
+        "B": 52,
+        "R": 209,
+        "Q": 118
+      }
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 3,
+      "training_games": 768,
+      "reference_distance": 1.7150953723733906,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 478,
+        "B": 52,
+        "R": 271,
+        "Q": 118
+      }
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 4,
+      "training_games": 960,
+      "reference_distance": 1.6822897583688794,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 478,
+        "B": 59,
+        "R": 309,
+        "Q": 104
+      }
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 5,
+      "training_games": 1152,
+      "reference_distance": 1.682094812766544,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 448,
+        "B": 63,
+        "R": 309,
+        "Q": 104
+      }
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 0,
+      "training_games": 192,
+      "reference_distance": 1.5186772892301412,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 130,
+        "B": 68,
+        "R": 351,
+        "Q": 562
+      }
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 1,
+      "training_games": 384,
+      "reference_distance": 1.487512226401003,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 52,
+        "B": 68,
+        "R": 994,
+        "Q": 562
+      }
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 2,
+      "training_games": 576,
+      "reference_distance": 1.6176024406302505,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 52,
+        "B": 68,
+        "R": 994,
+        "Q": 334
+      }
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 3,
+      "training_games": 768,
+      "reference_distance": 1.5542402154278658,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 67,
+        "B": 68,
+        "R": 994,
+        "Q": 334
+      }
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 4,
+      "training_games": 960,
+      "reference_distance": 1.5620857310893113,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 77,
+        "B": 68,
+        "R": 1132,
+        "Q": 293
+      }
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 5,
+      "training_games": 1152,
+      "reference_distance": 1.5124258107063115,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 82,
+        "B": 73,
+        "R": 1061,
+        "Q": 293
+      }
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 0,
+      "training_games": 192,
+      "reference_distance": 1.4945294343223265,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 731,
+        "B": 1825,
+        "R": 3328,
+        "Q": 52
+      }
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 1,
+      "training_games": 384,
+      "reference_distance": 1.6446691487365774,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 2066,
+        "B": 3328,
+        "R": 3328,
+        "Q": 147
+      }
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 2,
+      "training_games": 576,
+      "reference_distance": 1.5041745352550127,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 3328,
+        "B": 1979,
+        "R": 3328,
+        "Q": 247
+      }
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 3,
+      "training_games": 768,
+      "reference_distance": 1.3741629068722538,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 2566,
+        "B": 1979,
+        "R": 2566,
+        "Q": 247
+      }
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 4,
+      "training_games": 960,
+      "reference_distance": 1.3741787587117127,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 2922,
+        "B": 1738,
+        "R": 2566,
+        "Q": 247
+      }
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 5,
+      "training_games": 1152,
+      "reference_distance": 1.3738497231040019,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 2922,
+        "B": 1738,
+        "R": 2739,
+        "Q": 264
+      }
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 0,
+      "training_games": 192,
+      "reference_distance": 1.7086723086154598,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 731,
+        "B": 1825,
+        "R": 138,
+        "Q": 52
+      }
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 1,
+      "training_games": 384,
+      "reference_distance": 1.1097223085707522,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 258,
+        "B": 645,
+        "R": 391,
+        "Q": 147
+      }
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 2,
+      "training_games": 576,
+      "reference_distance": 0.963064100652584,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 434,
+        "B": 384,
+        "R": 391,
+        "Q": 247
+      }
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 3,
+      "training_games": 768,
+      "reference_distance": 0.9625754627953867,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 563,
+        "B": 384,
+        "R": 302,
+        "Q": 247
+      }
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 4,
+      "training_games": 960,
+      "reference_distance": 0.9631223511194985,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 563,
+        "B": 384,
+        "R": 343,
+        "Q": 217
+      }
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 5,
+      "training_games": 1152,
+      "reference_distance": 0.9785666910435593,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 563,
+        "B": 384,
+        "R": 343,
+        "Q": 204
+      }
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 0,
+      "training_games": 192,
+      "reference_distance": 2.1119508668247984,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 134,
+        "B": 69,
+        "R": 338,
+        "Q": 52
+      }
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 1,
+      "training_games": 384,
+      "reference_distance": 1.8504587280291265,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 134,
+        "B": 69,
+        "R": 338,
+        "Q": 148
+      }
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 2,
+      "training_games": 576,
+      "reference_distance": 1.8473951617982598,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 80,
+        "B": 117,
+        "R": 338,
+        "Q": 148
+      }
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 3,
+      "training_games": 768,
+      "reference_distance": 1.7841096503536882,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 103,
+        "B": 117,
+        "R": 439,
+        "Q": 114
+      }
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 4,
+      "training_games": 960,
+      "reference_distance": 1.751582479016933,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 103,
+        "B": 117,
+        "R": 500,
+        "Q": 114
+      }
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 5,
+      "training_games": 1152,
+      "reference_distance": 1.753590521941249,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 103,
+        "B": 124,
+        "R": 468,
+        "Q": 114
+      }
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 0,
+      "training_games": 192,
+      "reference_distance": 2.1119508668247984,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 134,
+        "B": 69,
+        "R": 338,
+        "Q": 52
+      }
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 1,
+      "training_games": 384,
+      "reference_distance": 1.8504587280291265,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 134,
+        "B": 69,
+        "R": 338,
+        "Q": 148
+      }
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 2,
+      "training_games": 576,
+      "reference_distance": 1.7173350061231116,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 80,
+        "B": 117,
+        "R": 338,
+        "Q": 249
+      }
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 3,
+      "training_games": 768,
+      "reference_distance": 1.71933199920164,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 103,
+        "B": 90,
+        "R": 261,
+        "Q": 323
+      }
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 4,
+      "training_games": 960,
+      "reference_distance": 1.7193147999308824,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 103,
+        "B": 79,
+        "R": 261,
+        "Q": 368
+      }
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 5,
+      "training_games": 1152,
+      "reference_distance": 1.7192226453559,
+      "weights": {
+        "P": 208,
+        "K": 0,
+        "N": 110,
+        "B": 74,
+        "R": 261,
+        "Q": 368
+      }
+    }
+  ],
+  "exactreward_choice_changes": 0,
+  "exactreward_changes": [],
+  "leave_one_root_out_choice_changes": 78,
+  "leave_one_root_out": [
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 0,
+      "coordinate": "N",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 0,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 0,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        0
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 0,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        4
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 1,
+      "coordinate": "N",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 1,
+      "coordinate": "B",
+      "removed_roots_changing_choice": [
+        1,
+        2
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 1,
+      "coordinate": "R",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 1,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 2,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        3
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 2,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 2,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        3,
+        6
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 2,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 3,
+      "coordinate": "N",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 3,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 3,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        2,
+        6
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 3,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        1,
+        2
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 4,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        3,
+        6
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 4,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 4,
+      "coordinate": "R",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 4,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 5,
+      "coordinate": "N",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 5,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 5,
+      "coordinate": "R",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-original",
+      "sweep": 5,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        1
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 0,
+      "coordinate": "N",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 0,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 0,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        0
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 0,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 1,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        2,
+        5,
+        6
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 1,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 1,
+      "coordinate": "R",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 1,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 2,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        4
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 2,
+      "coordinate": "B",
+      "removed_roots_changing_choice": [
+        5
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 2,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        6
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 2,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        0
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 3,
+      "coordinate": "N",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 3,
+      "coordinate": "B",
+      "removed_roots_changing_choice": [
+        6
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 3,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        7
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 3,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 4,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        6
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 4,
+      "coordinate": "B",
+      "removed_roots_changing_choice": [
+        1,
+        5
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 4,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        7
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 4,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        0
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 5,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        7
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 5,
+      "coordinate": "B",
+      "removed_roots_changing_choice": [
+        0,
+        5,
+        6
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 5,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        5,
+        7
+      ]
+    },
+    {
+      "seed": 603,
+      "opponent": "random-bounded",
+      "sweep": 5,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 0,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        0,
+        6
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 0,
+      "coordinate": "B",
+      "removed_roots_changing_choice": [
+        5,
+        7
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 0,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 0,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 1,
+      "coordinate": "N",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 1,
+      "coordinate": "B",
+      "removed_roots_changing_choice": [
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 1,
+      "coordinate": "R",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 1,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        4
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 2,
+      "coordinate": "N",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 2,
+      "coordinate": "B",
+      "removed_roots_changing_choice": [
+        7
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 2,
+      "coordinate": "R",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 2,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        0
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 3,
+      "coordinate": "N",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 3,
+      "coordinate": "B",
+      "removed_roots_changing_choice": [
+        1,
+        6
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 3,
+      "coordinate": "R",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 3,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 4,
+      "coordinate": "N",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 4,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 4,
+      "coordinate": "R",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 4,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 5,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        1
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 5,
+      "coordinate": "B",
+      "removed_roots_changing_choice": [
+        3
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 5,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        4,
+        6
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-bounded",
+      "sweep": 5,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        6
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 0,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        0,
+        4,
+        6
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 0,
+      "coordinate": "B",
+      "removed_roots_changing_choice": [
+        7
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 0,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        3,
+        7
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 0,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 1,
+      "coordinate": "N",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 1,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 1,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        6
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 1,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        0
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 2,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        6
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 2,
+      "coordinate": "B",
+      "removed_roots_changing_choice": [
+        6
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 2,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        3,
+        4,
+        6,
+        7
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 2,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 3,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        2,
+        3,
+        4,
+        6,
+        7
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 3,
+      "coordinate": "B",
+      "removed_roots_changing_choice": [
+        2,
+        6
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 3,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        1,
+        4,
+        6,
+        7
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 3,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 4,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        2
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 4,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 4,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 4,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        2,
+        6
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 5,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        3
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 5,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 5,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        0,
+        2
+      ]
+    },
+    {
+      "seed": 604,
+      "opponent": "random-original",
+      "sweep": 5,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 0,
+      "coordinate": "N",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 0,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 0,
+      "coordinate": "R",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 0,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        0,
+        3
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 1,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        7
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 1,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 1,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 1,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        0,
+        3,
+        6
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 2,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        1
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 2,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 2,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        1,
+        3
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 2,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        0,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 3,
+      "coordinate": "N",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 3,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 3,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        0,
+        3
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 3,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        7
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 4,
+      "coordinate": "N",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 4,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 4,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        0
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 4,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 5,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        1,
+        3
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 5,
+      "coordinate": "B",
+      "removed_roots_changing_choice": [
+        6
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 5,
+      "coordinate": "R",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-original",
+      "sweep": 5,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 0,
+      "coordinate": "N",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 0,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 0,
+      "coordinate": "R",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 0,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        0,
+        3
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 1,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        7
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 1,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 1,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        1,
+        4
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 1,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 2,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        1,
+        4
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 2,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 2,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        1,
+        3
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 2,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": [
+        1,
+        3,
+        7
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 3,
+      "coordinate": "N",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 3,
+      "coordinate": "B",
+      "removed_roots_changing_choice": [
+        6
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 3,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        2,
+        3
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 3,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 4,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        4
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 4,
+      "coordinate": "B",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 4,
+      "coordinate": "R",
+      "removed_roots_changing_choice": [
+        6
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 4,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 5,
+      "coordinate": "N",
+      "removed_roots_changing_choice": [
+        2,
+        4,
+        7
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 5,
+      "coordinate": "B",
+      "removed_roots_changing_choice": [
+        6
+      ]
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 5,
+      "coordinate": "R",
+      "removed_roots_changing_choice": []
+    },
+    {
+      "seed": 605,
+      "opponent": "random-bounded",
+      "sweep": 5,
+      "coordinate": "Q",
+      "removed_roots_changing_choice": []
+    }
+  ],
+  "scope": "Allfreshstartends, allgeometryheldouts; trainingroots exposedpilot and reachablefullarmyfixeddistribution. Descriptivehumanreference neverfitting. Samecandidate exact/clusterrescoring notfuturelearning orconfidenceinterval."
+}

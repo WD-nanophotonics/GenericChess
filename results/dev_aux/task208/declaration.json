@@ -1,0 +1,12 @@
+{
+  "task_id": "208",
+  "question": "Can recorded mature PV endpoints safely supply leaf-count TD targets?",
+  "source_task": "187",
+  "source_pin": "9f778da667f6e07dae1e85d3e2ea204fc6dee94d",
+  "uci_source_sha256": "d902bb05efdce4be85a97112434f9eabbae96739fba603204ab055c4edadb3ee",
+  "protocol": "Last scored PV peractualsearch, fullroot/history andlegalPVreconstruction, exactC++ cp conversionint(material*100/208). Separatecp/mate,bounds,PVterminal/check,historyclaims andmismatches; allrecords, first20examples only.",
+  "decision": "Widespreadcp-vs-PVmaterial disagreement means UCI PV endpoint notqualified aschosenstaticleaf TDfeature; requiresactualleafinstrumentation or explicit bootstrapapproximation beforelearning. Matching endpoints onlynecessaryscopedcheck, not proofoptimalPV/TDsuccess/humanrecovery.",
+  "cost": "Reuseactual50020go records,estimated10-30s,180sfuse,noengineworker ornewgames.",
+  "scope": "Ownorthodoxmaturec378mode3 evidence only; notPRIMARYgenericPV validation. No teacher/humanlabels, noextractPVcountsasgroundtruthsilently.",
+  "created_at": "2026-10-12T07:28:34.996356+00:00"
+}

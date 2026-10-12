@@ -1,0 +1,1881 @@
+{
+  "complete": true,
+  "fits": 72,
+  "results": [
+    {
+      "opponent": "random-original",
+      "target": "original_terminal100_speed_else_unitdiff15",
+      "original_Pnormalized": {
+        "P": 1.0,
+        "N": 212.27366925482983,
+        "B": 84.62993171503457,
+        "R": 85.62891207367693,
+        "Q": 439.38797036192966
+      },
+      "all8_positive": 4,
+      "Pnormalized_ranges": {
+        "N": [
+          -43.92046290170392,
+          98.37423545325939
+        ],
+        "B": [
+          -21.076398128607337,
+          56.652622457286654
+        ],
+        "R": [
+          -14.475808937900155,
+          30.396809984099786
+        ],
+        "Q": [
+          -73.57974953498578,
+          295.03126915289306
+        ]
+      },
+      "rows": [
+        {
+          "removed_training_root": 0,
+          "n": 2602,
+          "coefficients": [
+            11.08396622472106,
+            -0.14741179447684352,
+            6.474394250593809,
+            3.1069096692463942,
+            1.1755876117970447,
+            10.846522916108947
+          ],
+          "positive_material": false,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": -43.92046290170392,
+            "B": -21.076398128607337,
+            "R": -7.974854494982179,
+            "Q": -73.57974953498578
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 1,
+          "n": 2697,
+          "coefficients": [
+            11.654894602998517,
+            0.29216687485319204,
+            5.346389954977158,
+            2.144822433982473,
+            1.74991790263237,
+            11.176161103560004
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 18.299096903656896,
+            "B": 7.341086956076739,
+            "R": 5.989446625363223,
+            "Q": 38.252663342399096
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 2,
+          "n": 2598,
+          "coefficients": [
+            13.58529185917464,
+            -0.5269221681604498,
+            4.819857692666103,
+            1.1790183544071762,
+            2.35564880784332,
+            10.36861249312813
+          ],
+          "positive_material": false,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": -9.147190958947164,
+            "B": -2.2375569403794007,
+            "R": -4.470582090078276,
+            "Q": -19.677692683392376
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 3,
+          "n": 2592,
+          "coefficients": [
+            12.405522076583727,
+            0.573207741687312,
+            5.334967305692597,
+            1.868760826795431,
+            1.5404232302504894,
+            10.808994295254472
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 9.307214326848452,
+            "B": 3.2601807178920663,
+            "R": 2.6873733870307683,
+            "Q": 18.85702775652817
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 4,
+          "n": 2592,
+          "coefficients": [
+            14.639459784743115,
+            -0.4777987282129424,
+            4.330679333638461,
+            1.5573630942065697,
+            1.8385525609379156,
+            8.07771209805316
+          ],
+          "positive_material": false,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": -9.063815112769388,
+            "B": -3.2594542476732875,
+            "R": -3.847964534804121,
+            "Q": -16.906097946860033
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 5,
+          "n": 2813,
+          "coefficients": [
+            13.862695327345236,
+            0.0403405656458925,
+            3.968472303166696,
+            2.285398835250136,
+            1.226224508589298,
+            11.901728280853261
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 98.37423545325939,
+            "B": 56.652622457286654,
+            "R": 30.396809984099786,
+            "Q": 295.03126915289306
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 6,
+          "n": 2607,
+          "coefficients": [
+            11.113323084306153,
+            0.7200003675946758,
+            5.225654402584653,
+            1.903346182611851,
+            3.2557158325523674,
+            11.629925357438449
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 7.257849631441348,
+            "B": 2.643535015086742,
+            "R": 4.521825236602063,
+            "Q": 16.152665860839555
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 7,
+          "n": 2611,
+          "coefficients": [
+            12.08851836772473,
+            -0.22386246774178173,
+            5.674499471106982,
+            2.73328347032844,
+            3.240590311396869,
+            10.75364699009798
+          ],
+          "positive_material": false,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": -25.348150265422507,
+            "B": -12.209654873818312,
+            "R": -14.475808937900155,
+            "Q": -48.03684645566389
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        }
+      ]
+    },
+    {
+      "opponent": "random-original",
+      "target": "bounded_terminal_1_else_unitdiff15",
+      "original_Pnormalized": {
+        "P": 1.0,
+        "N": 1.714904519097921,
+        "B": 1.3258766138323144,
+        "R": 1.598022615808638,
+        "Q": 2.8076555475425837
+      },
+      "all8_positive": 8,
+      "Pnormalized_ranges": {
+        "N": [
+          1.5213762042675771,
+          1.9386392716355636
+        ],
+        "B": [
+          1.199978047051231,
+          1.5626761317132218
+        ],
+        "R": [
+          1.4301944214118807,
+          1.8013109235965015
+        ],
+        "Q": [
+          2.541262464976598,
+          2.9358368599803235
+        ]
+      },
+      "rows": [
+        {
+          "removed_training_root": 0,
+          "n": 2602,
+          "coefficients": [
+            0.2583623736955097,
+            0.0482000567242394,
+            0.09344252286067233,
+            0.07532107819019229,
+            0.07271240914919232,
+            0.14043717621304058
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.9386392716355636,
+            "B": 1.5626761317132218,
+            "R": 1.508554431070324,
+            "Q": 2.913630932355644
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 1,
+          "n": 2697,
+          "coefficients": [
+            0.26380465962686084,
+            0.05137167096471646,
+            0.08580708028828611,
+            0.06705934317740751,
+            0.0759437641446074,
+            0.1433239233528113
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.6703190431010289,
+            "B": 1.305375938101484,
+            "R": 1.4783199128711964,
+            "Q": 2.789940849914154
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 2,
+          "n": 2598,
+          "coefficients": [
+            0.27356518403185054,
+            0.04691004848428092,
+            0.08444249963630411,
+            0.06145262044751138,
+            0.08449958276117672,
+            0.13704181189747422
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.8000940601159245,
+            "B": 1.310009740623132,
+            "R": 1.8013109235965015,
+            "Q": 2.921374339303775
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 3,
+          "n": 2592,
+          "coefficients": [
+            0.27004735208491504,
+            0.05266114295213289,
+            0.0850910095303574,
+            0.06480458221545835,
+            0.07531567287531403,
+            0.13907757294481543
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.6158215481137983,
+            "B": 1.230595816622579,
+            "R": 1.4301944214118807,
+            "Q": 2.6409903991493695
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 4,
+          "n": 2592,
+          "coefficients": [
+            0.28898497064708367,
+            0.04625791428681066,
+            0.07847764063150721,
+            0.05995847968170922,
+            0.07525420792377623,
+            0.11755350128517664
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.696523542867198,
+            "B": 1.296177759117102,
+            "R": 1.626839624830062,
+            "Q": 2.541262464976598
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 5,
+          "n": 2813,
+          "coefficients": [
+            0.2755920800499907,
+            0.050118488578768945,
+            0.07989425519362586,
+            0.06619331325916343,
+            0.07561821015164873,
+            0.14713970613605273
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.5941074333887724,
+            "B": 1.320736421552905,
+            "R": 1.5087887184148228,
+            "Q": 2.9358368599803235
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 6,
+          "n": 2607,
+          "coefficients": [
+            0.25813764621170204,
+            0.05460439663748287,
+            0.08307382969265495,
+            0.0655240772374575,
+            0.08837795031734655,
+            0.14530164851142865
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.5213762042675771,
+            "B": 1.199978047051231,
+            "R": 1.6185134487262152,
+            "Q": 2.660988078965187
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 7,
+          "n": 2611,
+          "coefficients": [
+            0.2674059940017771,
+            0.04831145414537305,
+            0.08757001231024619,
+            0.0679050544422502,
+            0.08487230463279134,
+            0.1411083100025653
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.8126138792415767,
+            "B": 1.405568423544413,
+            "R": 1.7567739604236245,
+            "Q": 2.9208044448001718
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        }
+      ]
+    },
+    {
+      "opponent": "random-original",
+      "target": "final_unitdiff15_including_terminal",
+      "original_Pnormalized": {
+        "P": 1.0,
+        "N": 0.8892253720193507,
+        "B": 1.0124715636831145,
+        "R": 1.2124596388526552,
+        "Q": 1.1413536585604112
+      },
+      "all8_positive": 8,
+      "Pnormalized_ranges": {
+        "N": [
+          0.8561056865251854,
+          0.9382832235708892
+        ],
+        "B": [
+          0.9341845085867988,
+          1.060984677157456
+        ],
+        "R": [
+          1.1273185498997047,
+          1.2590237594536098
+        ],
+        "Q": [
+          1.1076572809164413,
+          1.1732533384975277
+        ]
+      },
+      "rows": [
+        {
+          "removed_training_root": 0,
+          "n": 2602,
+          "coefficients": [
+            0.15697919760042559,
+            0.06076117468857485,
+            0.05201798717083909,
+            0.062451084065470515,
+            0.0727666454847474,
+            0.06921616590854407
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8561056865251854,
+            "B": 1.02781232235152,
+            "R": 1.1975845736641095,
+            "Q": 1.139151213966886
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 1,
+          "n": 2697,
+          "coefficients": [
+            0.15855242772481506,
+            0.059959934514099825,
+            0.05322520759468703,
+            0.06171486135816914,
+            0.07307010232092082,
+            0.07034819334476075
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8876795484519902,
+            "B": 1.0292683248954624,
+            "R": 1.2186488012881016,
+            "Q": 1.1732533384975277
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 2,
+          "n": 2598,
+          "coefficients": [
+            0.15260666158526154,
+            0.061972279341176204,
+            0.055988829913843866,
+            0.06320355464960856,
+            0.07728919943239307,
+            0.06864404642724138
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.9034495827660036,
+            "B": 1.0198681623706918,
+            "R": 1.24715760423935,
+            "Q": 1.1076572809164413
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 3,
+          "n": 2592,
+          "coefficients": [
+            0.15843583485830404,
+            0.059590596337272636,
+            0.052625925649045995,
+            0.06218828907993227,
+            0.07311951553523471,
+            0.06819123643020751
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8831246687177321,
+            "B": 1.0435923266811618,
+            "R": 1.2270311094285866,
+            "Q": 1.1443288139668333
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 4,
+          "n": 2592,
+          "coefficients": [
+            0.15489872443471342,
+            0.06180176626066115,
+            0.05513014826814753,
+            0.06089485600407476,
+            0.0730708020881256,
+            0.07113334737926813
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8920481015967285,
+            "B": 0.9853254961555415,
+            "R": 1.1823416466761656,
+            "Q": 1.150992142833737
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 5,
+          "n": 2813,
+          "coefficients": [
+            0.15298963041765484,
+            0.0612226387126781,
+            0.05744417480684752,
+            0.060487219488131,
+            0.07588799990713478,
+            0.06879484678051052
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.9382832235708892,
+            "B": 0.9879877894842385,
+            "R": 1.2395414752258913,
+            "Q": 1.1236831379217302
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 6,
+          "n": 2607,
+          "coefficients": [
+            0.1584733954802433,
+            0.05895759517868118,
+            0.052682783765631576,
+            0.06255310508663305,
+            0.0742290131302072,
+            0.06755656721822789
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8935707707542564,
+            "B": 1.060984677157456,
+            "R": 1.2590237594536098,
+            "Q": 1.1458501150443134
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 7,
+          "n": 2611,
+          "coefficients": [
+            0.15861563370128104,
+            0.061689529671690946,
+            0.052844908363632676,
+            0.05762940296129935,
+            0.06954375113348545,
+            0.07074883633522135
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8566268643134586,
+            "B": 0.9341845085867988,
+            "R": 1.1273185498997047,
+            "Q": 1.1468532295795355
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        }
+      ]
+    },
+    {
+      "opponent": "random-bounded",
+      "target": "original_terminal100_speed_else_unitdiff15",
+      "original_Pnormalized": {
+        "P": 1.0,
+        "N": 4.930965185155457,
+        "B": 1.8678960590028193,
+        "R": 2.8032269345172343,
+        "Q": 9.017460458160183
+      },
+      "all8_positive": 7,
+      "Pnormalized_ranges": {
+        "N": [
+          -30.203362620084523,
+          7.980793636844124
+        ],
+        "B": [
+          1.094775097771991,
+          3.586217937927033
+        ],
+        "R": [
+          -2.8218801632345123,
+          5.2490027088775495
+        ],
+        "Q": [
+          -65.47079971873535,
+          15.71713422822649
+        ]
+      },
+      "rows": [
+        {
+          "removed_training_root": 0,
+          "n": 2615,
+          "coefficients": [
+            10.836152698099335,
+            0.711349613011682,
+            5.677134465095162,
+            2.551054742319947,
+            1.3838322810499957,
+            8.924934403314762
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 7.980793636844124,
+            "B": 3.586217937927033,
+            "R": 1.9453616839561982,
+            "Q": 12.546480999024869
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 1,
+          "n": 2714,
+          "coefficients": [
+            9.995478002571607,
+            1.0951097289990355,
+            5.528698572181463,
+            2.1418491513306535,
+            3.288736369420242,
+            9.54283739902773
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 5.048533882750605,
+            "B": 1.9558306301308916,
+            "R": 3.003111270343886,
+            "Q": 8.714046772052862
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 2,
+          "n": 2603,
+          "coefficients": [
+            13.94745602941291,
+            -0.14114198649149043,
+            4.262962598921557,
+            -0.3936534155790027,
+            0.3982857718798503,
+            9.24067872948882
+          ],
+          "positive_material": false,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": -30.203362620084523,
+            "B": 2.7890596226143973,
+            "R": -2.8218801632345123,
+            "Q": -65.47079971873535
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 3,
+          "n": 2606,
+          "coefficients": [
+            10.30791738402996,
+            1.3501746500612677,
+            5.768967261640841,
+            1.7340409590944401,
+            3.933207902772139,
+            9.244336887949919
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 4.272756314436106,
+            "B": 1.2843086329725961,
+            "R": 2.9131104650747663,
+            "Q": 6.84677118440228
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 4,
+          "n": 2605,
+          "coefficients": [
+            12.552364392219355,
+            0.7148891780645951,
+            4.27942285454723,
+            0.7826428698118053,
+            3.2433638412569583,
+            4.871438648842007
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 5.986134614784384,
+            "B": 1.094775097771991,
+            "R": 4.536876400951615,
+            "Q": 6.814257088113089
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 5,
+          "n": 2824,
+          "coefficients": [
+            11.366198274729276,
+            1.069733712168581,
+            3.8953482880104993,
+            2.7152097188233486,
+            2.68146827113257,
+            10.448531158500705
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 3.6414186481173787,
+            "B": 2.538210853726422,
+            "R": 2.5066689407185785,
+            "Q": 9.767413179228761
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 6,
+          "n": 2613,
+          "coefficients": [
+            6.967972656555209,
+            3.010126775291214,
+            4.778266224489192,
+            3.893562811526101,
+            4.622137720519537,
+            10.393463639845704
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.58739700391088,
+            "B": 1.293487983126365,
+            "R": 1.5355292536050642,
+            "Q": 3.452832526909167
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 7,
+          "n": 2609,
+          "coefficients": [
+            10.689723616598718,
+            0.6364144640234829,
+            4.939242699770068,
+            1.8695802862472177,
+            3.3405412456281156,
+            10.002611555841899
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 7.761047208989606,
+            "B": 2.9376772401235565,
+            "R": 5.2490027088775495,
+            "Q": 15.71713422822649
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        }
+      ]
+    },
+    {
+      "opponent": "random-bounded",
+      "target": "bounded_terminal_1_else_unitdiff15",
+      "original_Pnormalized": {
+        "P": 1.0,
+        "N": 1.396457963355766,
+        "B": 1.0302772795304418,
+        "R": 1.2453937261467491,
+        "Q": 2.1319836855348933
+      },
+      "all8_positive": 8,
+      "Pnormalized_ranges": {
+        "N": [
+          1.0748599431001216,
+          1.5515686916944074
+        ],
+        "B": [
+          0.839773220423279,
+          1.1936670010976722
+        ],
+        "R": [
+          1.1135710990756182,
+          1.34201036121731
+        ],
+        "Q": [
+          1.6913536383252235,
+          2.477533461966627
+        ]
+      },
+      "rows": [
+        {
+          "removed_training_root": 0,
+          "n": 2615,
+          "coefficients": [
+            0.2506328056046762,
+            0.05815304325539213,
+            0.09022844124181705,
+            0.06941536874736715,
+            0.06475754829249898,
+            0.1272737149058262
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.5515686916944074,
+            "B": 1.1936670010976722,
+            "R": 1.1135710990756182,
+            "Q": 2.188599388459777
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 1,
+          "n": 2714,
+          "coefficients": [
+            0.24668889331805058,
+            0.06084676797176168,
+            0.08651626528868868,
+            0.06550640007716253,
+            0.07634565252716836,
+            0.13162608793941283
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.4218711720044017,
+            "B": 1.076579780006776,
+            "R": 1.2547199312640491,
+            "Q": 2.163238777127802
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 2,
+          "n": 2603,
+          "coefficients": [
+            0.27266375215992733,
+            0.052859590501434614,
+            0.07977060467013723,
+            0.04439006854564551,
+            0.05972936460583518,
+            0.13096140425315753
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.5091037201276134,
+            "B": 0.839773220423279,
+            "R": 1.1299626811186538,
+            "Q": 2.477533461966627
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 3,
+          "n": 2606,
+          "coefficients": [
+            0.25026980664297754,
+            0.06222330879369392,
+            0.08843275399969483,
+            0.061049208154734046,
+            0.08121757960772692,
+            0.12674051271430883
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.4212158709351235,
+            "B": 0.9811308549525597,
+            "R": 1.3052597359778784,
+            "Q": 2.036865527908948
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 4,
+          "n": 2605,
+          "coefficients": [
+            0.264889009063945,
+            0.05845856800104524,
+            0.0797343191165427,
+            0.05474131509217655,
+            0.07835087570915779,
+            0.09887411167985036
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.3639458139843086,
+            "B": 0.9364121798398786,
+            "R": 1.3402804479876562,
+            "Q": 1.6913536383252235
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 5,
+          "n": 2824,
+          "coefficients": [
+            0.2553071739558866,
+            0.06092807024376,
+            0.07781637535107558,
+            0.06519330117979401,
+            0.07590184761040189,
+            0.13738281420207618
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.2771843099535096,
+            "B": 1.0700043661151541,
+            "R": 1.2457615563193625,
+            "Q": 2.25483613139949
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 6,
+          "n": 2613,
+          "coefficients": [
+            0.22714551459263138,
+            0.07321508803620497,
+            0.07869596536066566,
+            0.07649415962132938,
+            0.0871846357502301,
+            0.1357668742569813
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.0748599431001216,
+            "B": 1.0447868284130575,
+            "R": 1.1908014876266646,
+            "Q": 1.8543564980737903
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 7,
+          "n": 2609,
+          "coefficients": [
+            0.25377885795979055,
+            0.05749974442020969,
+            0.08401699244005979,
+            0.06009043349960221,
+            0.07716525277926861,
+            0.13310755972127086
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.461171580625843,
+            "B": 1.0450556625166834,
+            "R": 1.34201036121731,
+            "Q": 2.3149243716375016
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        }
+      ]
+    },
+    {
+      "opponent": "random-bounded",
+      "target": "final_unitdiff15_including_terminal",
+      "original_Pnormalized": {
+        "P": 1.0,
+        "N": 0.8489015732073184,
+        "B": 0.947770406936885,
+        "R": 1.0230393576745531,
+        "Q": 1.097724558167619
+      },
+      "all8_positive": 8,
+      "Pnormalized_ranges": {
+        "N": [
+          0.8222105525892527,
+          0.8674101347167016
+        ],
+        "B": [
+          0.8996308594242317,
+          0.9878569046361833
+        ],
+        "R": [
+          0.98819734202708,
+          1.0501999663620356
+        ],
+        "Q": [
+          1.0704333721135897,
+          1.1523303479187288
+        ]
+      },
+      "rows": [
+        {
+          "removed_training_root": 0,
+          "n": 2615,
+          "coefficients": [
+            0.1547624833348837,
+            0.061997349835880636,
+            0.05261361538821054,
+            0.06124451010451963,
+            0.06360142263055128,
+            0.06840314818802777
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8486429746995523,
+            "B": 0.9878569046361833,
+            "R": 1.025873247790703,
+            "Q": 1.1033237447907784
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 1,
+          "n": 2714,
+          "coefficients": [
+            0.15704895218354029,
+            0.06194940400140377,
+            0.05093545369656906,
+            0.060119325517386635,
+            0.06232161810666427,
+            0.06863647376177331
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8222105525892527,
+            "B": 0.9704584973250805,
+            "R": 1.006008356517071,
+            "Q": 1.1079440531860163
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 2,
+          "n": 2603,
+          "coefficients": [
+            0.1540012522029408,
+            0.06292213540539572,
+            0.053748745917457985,
+            0.05785975499869314,
+            0.06608082448617404,
+            0.06896539723982882
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8542104550515446,
+            "B": 0.919545317810869,
+            "R": 1.0501999663620356,
+            "Q": 1.0960434955917735
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 3,
+          "n": 2606,
+          "coefficients": [
+            0.15706481105690723,
+            0.0618265998832126,
+            0.052108035196179785,
+            0.0597725681601167,
+            0.06188988613933779,
+            0.06618125579930494
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8428093295540964,
+            "B": 0.9667775402985792,
+            "R": 1.0010236088713391,
+            "Q": 1.0704333721135897
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 4,
+          "n": 2605,
+          "coefficients": [
+            0.1541299800079828,
+            0.06237199602153067,
+            0.05401279453533858,
+            0.05956825586915409,
+            0.06445487084005477,
+            0.07187314387587601
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8659782912301458,
+            "B": 0.9550480931954023,
+            "R": 1.033394390934757,
+            "Q": 1.1523303479187288
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 5,
+          "n": 2824,
+          "coefficients": [
+            0.15531803566162228,
+            0.06248049089017037,
+            0.05419621102020832,
+            0.05620937771677185,
+            0.06537085042360688,
+            0.0681217433232548
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8674101347167016,
+            "B": 0.8996308594242317,
+            "R": 1.0462601924577906,
+            "Q": 1.0902882220147847
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 6,
+          "n": 2613,
+          "coefficients": [
+            0.16289887398000094,
+            0.059298634865824575,
+            0.05078214547083514,
+            0.05762057436847755,
+            0.06114701298782142,
+            0.06544532864370639
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8563796719054367,
+            "B": 0.9717015324021542,
+            "R": 1.0311706690411877,
+            "Q": 1.1036565815012434
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 7,
+          "n": 2609,
+          "coefficients": [
+            0.15824716564464025,
+            0.062291582062056636,
+            0.05296696661145129,
+            0.056704664789173104,
+            0.061556375824386105,
+            0.06704035655837454
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.850306973399457,
+            "B": 0.9103102363443316,
+            "R": 0.98819734202708,
+            "Q": 1.0762346105062324
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        }
+      ]
+    },
+    {
+      "opponent": "pooled",
+      "target": "original_terminal100_speed_else_unitdiff15",
+      "original_Pnormalized": {
+        "P": 1.0,
+        "N": 9.306115347899768,
+        "B": 3.671172118039839,
+        "R": 4.365260783191376,
+        "Q": 18.106245734717437
+      },
+      "all8_positive": 7,
+      "Pnormalized_ranges": {
+        "N": [
+          -16.272797580811005,
+          29.068502985810472
+        ],
+        "B": [
+          -1.6376444777919439,
+          9.33515291216756
+        ],
+        "R": [
+          -4.6095688353256605,
+          16.254492662944923
+        ],
+        "Q": [
+          -35.14529269294711,
+          43.44117559804591
+        ]
+      },
+      "rows": [
+        {
+          "removed_training_root": 0,
+          "n": 5217,
+          "coefficients": [
+            10.929189248721729,
+            0.3058757050708193,
+            6.057715968273593,
+            2.8553964789531645,
+            1.2465194557863888,
+            9.895556902790618
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 19.80450185434326,
+            "B": 9.33515291216756,
+            "R": 4.0752483283946415,
+            "Q": 32.35156221544141
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 1,
+          "n": 5411,
+          "coefficients": [
+            10.79125546083362,
+            0.7000772998237831,
+            5.447574146697949,
+            2.1837993855864473,
+            2.495267011745856,
+            10.35773303136696
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 7.781389495230258,
+            "B": 3.1193689413099563,
+            "R": 3.5642735628964703,
+            "Q": 14.795127672292919
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 2,
+          "n": 5201,
+          "coefficients": [
+            13.641559100370658,
+            -0.27994177352664135,
+            4.555435815012272,
+            0.45844509951918716,
+            1.2904108749542,
+            9.838635567576523
+          ],
+          "positive_material": false,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": -16.272797580811005,
+            "B": -1.6376444777919439,
+            "R": -4.6095688353256605,
+            "Q": -35.14529269294711
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 3,
+          "n": 5198,
+          "coefficients": [
+            11.335992549261318,
+            0.9648782848886465,
+            5.560411535340913,
+            1.8311921214725566,
+            2.7343389527925863,
+            10.02506575030088
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 5.762811353954994,
+            "B": 1.897847790909595,
+            "R": 2.8338693031195614,
+            "Q": 10.389979655784089
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 4,
+          "n": 5197,
+          "coefficients": [
+            13.481266246796876,
+            0.15006470083539689,
+            4.36215620429849,
+            1.2479477155983605,
+            2.4392255786959836,
+            6.518987020058703
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 29.068502985810472,
+            "B": 8.316064395231832,
+            "R": 16.254492662944923,
+            "Q": 43.44117559804591
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 5,
+          "n": 5637,
+          "coefficients": [
+            12.576833579133565,
+            0.5815034514540685,
+            3.976802831825299,
+            2.5298290533649688,
+            1.8806043447850458,
+            11.15599678671572
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 6.8388292827517585,
+            "B": 4.3504970555876294,
+            "R": 3.2340381472930777,
+            "Q": 19.184747328360277
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 6,
+          "n": 5220,
+          "coefficients": [
+            8.951786001074584,
+            1.9360816986344505,
+            5.0381336307049045,
+            2.903839213825371,
+            3.8570055866457142,
+            10.976002489432242
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 2.60223193796955,
+            "B": 1.4998536559038265,
+            "R": 1.9921708827505173,
+            "Q": 5.669183535577963
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 7,
+          "n": 5220,
+          "coefficients": [
+            11.348986353901518,
+            0.2529120085998337,
+            5.347049268348473,
+            2.331278147932465,
+            3.1705672750414995,
+            10.395971338209621
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 21.141935086240856,
+            "B": 9.217743992619566,
+            "R": 12.53624647004438,
+            "Q": 41.105091829223866
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        }
+      ]
+    },
+    {
+      "opponent": "pooled",
+      "target": "bounded_terminal_1_else_unitdiff15",
+      "original_Pnormalized": {
+        "P": 1.0,
+        "N": 1.531641823354925,
+        "B": 1.1593041540795253,
+        "R": 1.372813029858427,
+        "Q": 2.4191589675363194
+      },
+      "all8_positive": 8,
+      "Pnormalized_ranges": {
+        "N": [
+          1.255950039237348,
+          1.713348110675762
+        ],
+        "B": [
+          1.057370533380172,
+          1.3546634759233493
+        ],
+        "R": [
+          1.2666150869585175,
+          1.493080053671373
+        ],
+        "Q": [
+          2.0543674959044806,
+          2.654015939782615
+        ]
+      },
+      "rows": [
+        {
+          "removed_training_root": 0,
+          "n": 5217,
+          "coefficients": [
+            0.25357976357345957,
+            0.053631499814045566,
+            0.09188942887910245,
+            0.07265263395707743,
+            0.06793046680068304,
+            0.1341585322994072
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.713348110675762,
+            "B": 1.3546634759233493,
+            "R": 1.2666150869585175,
+            "Q": 2.5014876101651065
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 1,
+          "n": 5411,
+          "coefficients": [
+            0.25432781050932995,
+            0.05649985907199137,
+            0.08648178416882844,
+            0.06671043232570877,
+            0.07513166878968518,
+            0.13761494921957693
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.53065486514992,
+            "B": 1.180718561451759,
+            "R": 1.3297673662150804,
+            "Q": 2.4356688933370574
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 2,
+          "n": 5201,
+          "coefficients": [
+            0.2714723249805405,
+            0.050663370816233524,
+            0.08242815472111409,
+            0.05356995542279828,
+            0.07094339687413727,
+            0.13446139370940113
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.6269773091115074,
+            "B": 1.057370533380172,
+            "R": 1.4002897109129113,
+            "Q": 2.654015939782615
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 3,
+          "n": 5198,
+          "coefficients": [
+            0.2593814409719931,
+            0.057767629837772984,
+            0.08692140788849101,
+            0.06316321120621576,
+            0.07769290493372284,
+            0.13310578792293182
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.5046732596194385,
+            "B": 1.0934014669390977,
+            "R": 1.3449211115620527,
+            "Q": 2.304158718242874
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 4,
+          "n": 5197,
+          "coefficients": [
+            0.2754664313522504,
+            0.05291470664043584,
+            0.07980627186928858,
+            0.057949532757232754,
+            0.07563472382183621,
+            0.10870625337743237
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.508205883320593,
+            "B": 1.0951498446548968,
+            "R": 1.4293705592244257,
+            "Q": 2.0543674959044806
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 5,
+          "n": 5637,
+          "coefficients": [
+            0.26459203149879285,
+            0.05603427591342914,
+            0.07931162138019826,
+            0.06594992124210709,
+            0.07472087637892647,
+            0.14239907242015568
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.415412621780493,
+            "B": 1.1769567852361875,
+            "R": 1.3334851777930963,
+            "Q": 2.5412851348370578
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 6,
+          "n": 5220,
+          "coefficients": [
+            0.24134472353163075,
+            0.06473595967126598,
+            0.08130513108919389,
+            0.07116740249851367,
+            0.08672976217663927,
+            0.14044846480471124
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.255950039237348,
+            "B": 1.0993488450608755,
+            "R": 1.3397462958309332,
+            "Q": 2.169558704588902
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 7,
+          "n": 5220,
+          "coefficients": [
+            0.25980391194817376,
+            0.05341318865614161,
+            0.08614726375673738,
+            0.0643552550279308,
+            0.07975016658547109,
+            0.13738005996148542
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 1.6128463011509784,
+            "B": 1.2048570146641309,
+            "R": 1.493080053671373,
+            "Q": 2.572025063807702
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        }
+      ]
+    },
+    {
+      "opponent": "pooled",
+      "target": "final_unitdiff15_including_terminal",
+      "original_Pnormalized": {
+        "P": 1.0,
+        "N": 0.8686264066463028,
+        "B": 0.978046314116654,
+        "R": 1.1057582046618268,
+        "Q": 1.1171497839642384
+      },
+      "all8_positive": 8,
+      "Pnormalized_ranges": {
+        "N": [
+          0.8541309253937122,
+          0.9010382461570289
+        ],
+        "B": [
+          0.9232804808117075,
+          1.0147645292181169
+        ],
+        "R": [
+          1.0504610093219973,
+          1.1360522665530304
+        ],
+        "Q": [
+          1.0987863507337343,
+          1.14846067163219
+        ]
+      },
+      "rows": [
+        {
+          "removed_training_root": 0,
+          "n": 5217,
+          "coefficients": [
+            0.15528697443531114,
+            0.0616039316286703,
+            0.05261782312988714,
+            0.06199965945807419,
+            0.067730767850979,
+            0.06894062905065032
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8541309253937122,
+            "B": 1.0064237430784324,
+            "R": 1.0994552792383352,
+            "Q": 1.1190946296447992
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 1,
+          "n": 5411,
+          "coefficients": [
+            0.157211480063038,
+            0.061252816558279015,
+            0.05235803653377431,
+            0.061084507063041395,
+            0.06698451652651075,
+            0.06958900571909825
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8547857792622195,
+            "B": 0.9972522162294777,
+            "R": 1.0935744720045373,
+            "Q": 1.1360947892557358
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 2,
+          "n": 5201,
+          "coefficients": [
+            0.1526796509088574,
+            0.06275779180052024,
+            0.05508219054077121,
+            0.060736346723110214,
+            0.07129613161884421,
+            0.06895740503260112
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8776948480891993,
+            "B": 0.9677897354349987,
+            "R": 1.1360522665530304,
+            "Q": 1.0987863507337343
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 3,
+          "n": 5198,
+          "coefficients": [
+            0.15718887773834392,
+            0.060947483318891486,
+            0.0524822622403419,
+            0.061045508067595525,
+            0.06708124977470309,
+            0.0673548413670365
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8611063063218284,
+            "B": 1.0016083477670628,
+            "R": 1.100640192536225,
+            "Q": 1.1051291652949837
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 4,
+          "n": 5197,
+          "coefficients": [
+            0.15409000701220882,
+            0.062302542549110426,
+            0.05482605856537394,
+            0.060311980768915835,
+            0.06843990909523233,
+            0.07155201986034444
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8799971288837355,
+            "B": 0.9680500714938637,
+            "R": 1.0985090863873506,
+            "Q": 1.14846067163219
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 5,
+          "n": 5637,
+          "coefficients": [
+            0.15366532502958236,
+            0.062109086708726564,
+            0.055962662558445814,
+            0.05842080554454278,
+            0.07027783460859344,
+            0.0686792255664942
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.9010382461570289,
+            "B": 0.9406160779423348,
+            "R": 1.1315225892497165,
+            "Q": 1.1057838587867128
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 6,
+          "n": 5220,
+          "coefficients": [
+            0.16004347805456973,
+            0.05937782422178943,
+            0.05176361596249558,
+            0.06025450984242025,
+            0.06738149937816425,
+            0.06672258821524864
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8717668025212059,
+            "B": 1.0147645292181169,
+            "R": 1.1347923279653918,
+            "Q": 1.123695404634984
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        },
+        {
+          "removed_training_root": 7,
+          "n": 5220,
+          "coefficients": [
+            0.15799653843227884,
+            0.062127979009515645,
+            0.05310249709329183,
+            0.05736155033176528,
+            0.06526301953747167,
+            0.0689264944936472
+          ],
+          "positive_material": true,
+          "Pnormalized": {
+            "P": 1.0,
+            "N": 0.8547275791018173,
+            "B": 0.9232804808117075,
+            "R": 1.0504610093219973,
+            "Q": 1.1094275975577812
+          },
+          "rank": 6,
+          "scope": "Samefixedlambda1/dataalgorithm, onewholetrainingroot removed, noheldoutread/modelselection ornewtrajectory."
+        }
+      ]
+    }
+  ],
+  "source_controller_sha256": "f18facac6b828b61ecd4b964cc258088dbf07afe3b1c411e88a40682692aa3a7",
+  "seconds": 1.875,
+  "scope": "Exploratory allwhole-training-root deletion sensitivity on alreadyexposedrootfamily. NotformaljackknifeCI/independentmodeldiscovery, nohumanfitting/modelselection/clipping/newenginegames orworkers."
+}

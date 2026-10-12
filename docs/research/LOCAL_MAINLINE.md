@@ -1,19 +1,21 @@
 ## DEV_AUX current scope2026-10-12
 
-Independent sidemission segment17:9668 actual16-postroot-ply games, same c378 mode3,
-no product/default/UI/primary-state changes. Reachable fullarmy20ply preludes.
-6240matched random/unit2ply learning1115.578s stillmixedhumanratios;3120directquantity
-learning827.047s gives3smallpositiveheldoutquantitymeans butdisparateprices/WDL.
-Sixtraining-only countregressions2s improveheldoutprediction;224freshall-profile
-deployments38.875s improvequantity versusrandom butallloseoriginalmate-weightedreward.
-Whole-root deletion makesunit-boundedprices nonpositive3/7;quantityprices narrower,
-stillnottraditional. Fulllegal/history/opponent/controller/probes audits passed.
-Dot174component/optimalset/rootconcentration advice adopted;172scalequeries deferred.
-180sixactualgoal-witnesses disagree;183actual47divergences41full/6cappedtrees give
-zero3plygoal-maxsetdisjointness, notestablishedcurrentfailurecause. Preservefailures.
-Report SEGMENT_20261012_17.md/archive166..184 hasall9learningends/all6models/all12pairs.
-Next: cheaper win-preserving feedback/representative roots orfrozen predictor deployment
-mechanism, no unchangedlonggames/human-modelselection. ScienceOPEN; ownheartbeatACTIVE.
+Independent sidemission segment18:11392actualshortgames/1182.218gamebatchseconds;
+11264maturec378mode3 games,128complete2plycontrols. Fulllegal20plyrandompreludes,
+completehistory/captures, nohumanprices/selection/product/default/UI/primarywrites.
+7104matched16plylearning674.266s: boundedall3reference distancesworse/mixedreturns;
+3552bounded24ply402.953s: all3scopedreturnsimprove, only1/3referencecontracts.
+Ninecountfits1.875s; all7eligibledeployed, mixedrandom gains/allloseunit2plyoriginal.
+Samecandidate1/72completednettradeoff quantified; cutoffs unknown, notfinalWDL;
+Dotfourcategory/whole-root adviceadopted, nolexlearningarm.199shortreturnlagcurve
+and20016/24pilot motivatedboundedcapchange, existingfrozen16test notextended.
+202144scalequeries7/48actionchanges butfinite2plyargmaxinvariant, notcauseproof.
+20850020PVlegal;18632/36438unboundedcp notliteralstaticPVmaterial;2104actualevals
+confirmleafmaterial, soPVcountsnotqualifiedTDgroundtruth. NewTDconsultdelivered,
+notapproval; noentryblocker.207parametersurrogate mixedroottransfer/notCLOP proof.
+Allscience/cost/failures185..211 exactarchive/reportSEGMENT_20261012_18.md.
+ScienceOPEN; ownheartbeatACTIVE; nextscopedTD/bootstraporvalue-expression check,
+notmorelonggames orhumanratiofitting. Agentelapsed/finishreceipt separate.
 
 # Current local research mainline
 

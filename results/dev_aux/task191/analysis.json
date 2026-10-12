@@ -1,0 +1,1739 @@
+{
+  "complete": true,
+  "train_rows": 6043,
+  "heldout_rows": 189,
+  "excluded_terminal_at8": {
+    "train": {
+      "random-original": 440,
+      "random-bounded": 429
+    },
+    "heldout": {
+      "random-original": 2,
+      "random-bounded": 1
+    }
+  },
+  "all_models_frozen_at": "2026-10-12T07:05:47.981255+00:00",
+  "results": [
+    {
+      "opponent": "random-original",
+      "target": "original_terminal100_speed_else_unitdiff15",
+      "coefficients": [
+        12.490399418592522,
+        0.02453092627238252,
+        5.207269730058343,
+        2.0760506153382803,
+        2.1005565288636943,
+        10.778593905920292
+      ],
+      "training_target_mean": 19.30151276525199,
+      "empirical_material_alias_support": {
+        "unique_material_vectors": 259,
+        "within_identical_material_mse_lower_bound": 1344.8982061736347,
+        "nonconstant_target_vector_groups": 186,
+        "scope": "Empirical training-only minimum residual of any deterministic count-vector predictor on these exposed data; notholdoutbound, causalproof orrefutation of distribution-averaged piecevalues."
+      },
+      "training_n": 3016,
+      "training_feature_rank": 6,
+      "centered_material_gram_eigenvalues": [
+        610.6904221577157,
+        1081.6464022660327,
+        1214.3887456024702,
+        1566.0568276011904,
+        4711.367469746596
+      ],
+      "nonzero_countdiff_per_type": {
+        "P": 2422,
+        "N": 1338,
+        "B": 1331,
+        "R": 1175,
+        "Q": 1580
+      },
+      "training_metrics": {
+        "n": 3016,
+        "mse": 1482.4274089095043,
+        "mae": 29.709881811370526,
+        "target_mean": 19.30151276525199
+      },
+      "heldout": {
+        "n": 94,
+        "mse": 868.6416864940826,
+        "mae": 22.213201015242554,
+        "target_mean": 8.791223404255321
+      },
+      "heldout_current_unit": {
+        "n": 94,
+        "mse": 850.7547159426712,
+        "mae": 8.645833333333334,
+        "target_mean": 8.791223404255321
+      },
+      "heldout_trainmean": {
+        "n": 94,
+        "mse": 887.2622102548073,
+        "mae": 24.275457400953773,
+        "target_mean": 8.791223404255321
+      },
+      "heldout_terminal_games": 8,
+      "Pnormalized": {
+        "P": 1.0,
+        "N": 212.27366925482983,
+        "B": 84.62993171503457,
+        "R": 85.62891207367693,
+        "Q": 439.38797036192966
+      },
+      "all_positive_material_coefficients": true,
+      "descriptive_reference_distance": 3.581920760188748,
+      "heldout_per_root": [
+        {
+          "root_index": 0,
+          "model": {
+            "n": 12,
+            "mse": 1467.6436954717126,
+            "mae": 25.591216730456622,
+            "target_mean": 16.897222222222222
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 1671.6916319444445,
+            "mae": 16.791666666666668,
+            "target_mean": 16.897222222222222
+          }
+        },
+        {
+          "root_index": 1,
+          "model": {
+            "n": 12,
+            "mse": 437.2596358808643,
+            "mae": 19.47116462977439,
+            "target_mean": 0.2611111111111111
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.029259259259259266,
+            "mae": 0.1611111111111111,
+            "target_mean": 0.2611111111111111
+          }
+        },
+        {
+          "root_index": 2,
+          "model": {
+            "n": 12,
+            "mse": 1869.6603756461766,
+            "mae": 33.5835159168191,
+            "target_mean": 25.303124999999998
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 2493.9905164930556,
+            "mae": 25.08645833333333,
+            "target_mean": 25.303124999999998
+          }
+        },
+        {
+          "root_index": 3,
+          "model": {
+            "n": 12,
+            "mse": 1407.0397354026309,
+            "mae": 29.60244385173398,
+            "target_mean": 16.93715277777778
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 1667.460713252315,
+            "mae": 16.809375,
+            "target_mean": 16.93715277777778
+          }
+        },
+        {
+          "root_index": 4,
+          "model": {
+            "n": 12,
+            "mse": 179.1339037856019,
+            "mae": 12.027783365602678,
+            "target_mean": 0.29444444444444445
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.023333333333333334,
+            "mae": 0.14999999999999997,
+            "target_mean": 0.29444444444444445
+          }
+        },
+        {
+          "root_index": 5,
+          "model": {
+            "n": 12,
+            "mse": 1036.6025851495087,
+            "mae": 27.060858555741834,
+            "target_mean": 8.632638888888888
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 830.9950057870369,
+            "mae": 8.438194444444445,
+            "target_mean": 8.632638888888888
+          }
+        },
+        {
+          "root_index": 6,
+          "model": {
+            "n": 12,
+            "mse": 248.80881521881773,
+            "mae": 15.524962472547193,
+            "target_mean": 0.2888888888888889
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.0262962962962963,
+            "mae": 0.15,
+            "target_mean": 0.2888888888888889
+          }
+        },
+        {
+          "root_index": 7,
+          "model": {
+            "n": 10,
+            "mse": 189.85335717800038,
+            "mae": 13.369754916069036,
+            "target_mean": 0.3
+          },
+          "current_unit": {
+            "n": 10,
+            "mse": 0.03422222222222223,
+            "mae": 0.16666666666666666,
+            "target_mean": 0.3
+          }
+        }
+      ]
+    },
+    {
+      "opponent": "random-original",
+      "target": "bounded_terminal_1_else_unitdiff15",
+      "coefficients": [
+        0.2688226986941624,
+        0.04975924359248269,
+        0.08533235170364284,
+        0.06597461740125823,
+        0.07951639660631839,
+        0.1397068163139568
+      ],
+      "training_target_mean": 0.45550397877984083,
+      "empirical_material_alias_support": {
+        "unique_material_vectors": 259,
+        "within_identical_material_mse_lower_bound": 0.06159163211161502,
+        "nonconstant_target_vector_groups": 186,
+        "scope": "Empirical training-only minimum residual of any deterministic count-vector predictor on these exposed data; notholdoutbound, causalproof orrefutation of distribution-averaged piecevalues."
+      },
+      "training_n": 3016,
+      "training_feature_rank": 6,
+      "centered_material_gram_eigenvalues": [
+        610.6904221577157,
+        1081.6464022660327,
+        1214.3887456024702,
+        1566.0568276011904,
+        4711.367469746596
+      ],
+      "nonzero_countdiff_per_type": {
+        "P": 2422,
+        "N": 1338,
+        "B": 1331,
+        "R": 1175,
+        "Q": 1580
+      },
+      "training_metrics": {
+        "n": 3016,
+        "mse": 0.06876671340044081,
+        "mae": 0.1986947946053536,
+        "target_mean": 0.45550397877984083
+      },
+      "heldout": {
+        "n": 94,
+        "mse": 0.044885173046716347,
+        "mae": 0.1593499703653665,
+        "target_mean": 0.35106382978723405
+      },
+      "heldout_current_unit": {
+        "n": 94,
+        "mse": 0.08104018912529552,
+        "mae": 0.20567375886524816,
+        "target_mean": 0.35106382978723405
+      },
+      "heldout_trainmean": {
+        "n": 94,
+        "mse": 0.0611371094416824,
+        "mae": 0.20256316195421115,
+        "target_mean": 0.35106382978723405
+      },
+      "heldout_terminal_games": 8,
+      "Pnormalized": {
+        "P": 1.0,
+        "N": 1.714904519097921,
+        "B": 1.3258766138323144,
+        "R": 1.598022615808638,
+        "Q": 2.8076555475425837
+      },
+      "all_positive_material_coefficients": true,
+      "descriptive_reference_distance": 0.9203347539520201,
+      "heldout_per_root": [
+        {
+          "root_index": 0,
+          "model": {
+            "n": 12,
+            "mse": 0.09157595209937457,
+            "mae": 0.21899914337735196,
+            "target_mean": 0.35555555555555557
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.15222222222222223,
+            "mae": 0.25,
+            "target_mean": 0.35555555555555557
+          }
+        },
+        {
+          "root_index": 1,
+          "model": {
+            "n": 12,
+            "mse": 0.03166167953550541,
+            "mae": 0.1528406605492324,
+            "target_mean": 0.2611111111111111
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.029259259259259266,
+            "mae": 0.1611111111111111,
+            "target_mean": 0.2611111111111111
+          }
+        },
+        {
+          "root_index": 2,
+          "model": {
+            "n": 12,
+            "mse": 0.06599353203876558,
+            "mae": 0.2012921707612367,
+            "target_mean": 0.5166666666666667
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.15555555555555559,
+            "mae": 0.30000000000000004,
+            "target_mean": 0.5166666666666667
+          }
+        },
+        {
+          "root_index": 3,
+          "model": {
+            "n": 12,
+            "mse": 0.07134083793399022,
+            "mae": 0.19998072888189322,
+            "target_mean": 0.41111111111111104
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.15370370370370376,
+            "mae": 0.2833333333333334,
+            "target_mean": 0.41111111111111104
+          }
+        },
+        {
+          "root_index": 4,
+          "model": {
+            "n": 12,
+            "mse": 0.00975999496357435,
+            "mae": 0.08726571282827857,
+            "target_mean": 0.29444444444444445
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.023333333333333334,
+            "mae": 0.14999999999999997,
+            "target_mean": 0.29444444444444445
+          }
+        },
+        {
+          "root_index": 5,
+          "model": {
+            "n": 12,
+            "mse": 0.05292253627316046,
+            "mae": 0.20352936964504134,
+            "target_mean": 0.37222222222222223
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.06592592592592594,
+            "mae": 0.17777777777777778,
+            "target_mean": 0.37222222222222223
+          }
+        },
+        {
+          "root_index": 6,
+          "model": {
+            "n": 12,
+            "mse": 0.017359688487304785,
+            "mae": 0.11100357848451255,
+            "target_mean": 0.2888888888888889
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.0262962962962963,
+            "mae": 0.15,
+            "target_mean": 0.2888888888888889
+          }
+        },
+        {
+          "root_index": 7,
+          "model": {
+            "n": 10,
+            "mse": 0.013183561041123218,
+            "mae": 0.08799608400138895,
+            "target_mean": 0.3
+          },
+          "current_unit": {
+            "n": 10,
+            "mse": 0.03422222222222223,
+            "mae": 0.16666666666666666,
+            "target_mean": 0.3
+          }
+        }
+      ]
+    },
+    {
+      "opponent": "random-original",
+      "target": "final_unitdiff15_including_terminal",
+      "coefficients": [
+        0.15636957516553576,
+        0.06075696013073545,
+        0.054026630475018086,
+        0.06151469442819836,
+        0.07366536193789668,
+        0.06934517872822395
+      ],
+      "training_target_mean": 0.3188770999115827,
+      "empirical_material_alias_support": {
+        "unique_material_vectors": 259,
+        "within_identical_material_mse_lower_bound": 0.004590597686989307,
+        "nonconstant_target_vector_groups": 185,
+        "scope": "Empirical training-only minimum residual of any deterministic count-vector predictor on these exposed data; notholdoutbound, causalproof orrefutation of distribution-averaged piecevalues."
+      },
+      "training_n": 3016,
+      "training_feature_rank": 6,
+      "centered_material_gram_eigenvalues": [
+        610.6904221577157,
+        1081.6464022660327,
+        1214.3887456024702,
+        1566.0568276011904,
+        4711.367469746596
+      ],
+      "nonzero_countdiff_per_type": {
+        "P": 2422,
+        "N": 1338,
+        "B": 1331,
+        "R": 1175,
+        "Q": 1580
+      },
+      "training_metrics": {
+        "n": 3016,
+        "mse": 0.005391044119928069,
+        "mae": 0.060114125887580236,
+        "target_mean": 0.3188770999115827
+      },
+      "heldout": {
+        "n": 94,
+        "mse": 0.004582961402445958,
+        "mae": 0.054872952511044494,
+        "target_mean": 0.2900709219858155
+      },
+      "heldout_current_unit": {
+        "n": 94,
+        "mse": 0.025342789598108754,
+        "mae": 0.14468085106382977,
+        "target_mean": 0.2900709219858155
+      },
+      "heldout_trainmean": {
+        "n": 94,
+        "mse": 0.012906150194824348,
+        "mae": 0.09037850142032092,
+        "target_mean": 0.2900709219858155
+      },
+      "heldout_terminal_games": 8,
+      "Pnormalized": {
+        "P": 1.0,
+        "N": 0.8892253720193507,
+        "B": 1.0124715636831145,
+        "R": 1.2124596388526552,
+        "Q": 1.1413536585604112
+      },
+      "all_positive_material_coefficients": true,
+      "descriptive_reference_distance": 1.4460077907538922,
+      "heldout_per_root": [
+        {
+          "root_index": 0,
+          "model": {
+            "n": 12,
+            "mse": 0.007407156933757136,
+            "mae": 0.07480221733075086,
+            "target_mean": 0.21666666666666667
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.017777777777777778,
+            "mae": 0.1111111111111111,
+            "target_mean": 0.21666666666666667
+          }
+        },
+        {
+          "root_index": 1,
+          "model": {
+            "n": 12,
+            "mse": 0.0037406164636821816,
+            "mae": 0.0534644164696804,
+            "target_mean": 0.2611111111111111
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.029259259259259266,
+            "mae": 0.1611111111111111,
+            "target_mean": 0.2611111111111111
+          }
+        },
+        {
+          "root_index": 2,
+          "model": {
+            "n": 12,
+            "mse": 0.004157795511969987,
+            "mae": 0.050204492653111187,
+            "target_mean": 0.35000000000000003
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.022222222222222227,
+            "mae": 0.13333333333333333,
+            "target_mean": 0.35000000000000003
+          }
+        },
+        {
+          "root_index": 3,
+          "model": {
+            "n": 12,
+            "mse": 0.0031091005869411676,
+            "mae": 0.04944303037908121,
+            "target_mean": 0.2888888888888889
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.028518518518518526,
+            "mae": 0.1611111111111111,
+            "target_mean": 0.2888888888888889
+          }
+        },
+        {
+          "root_index": 4,
+          "model": {
+            "n": 12,
+            "mse": 0.0008108293448121843,
+            "mae": 0.022131118479711772,
+            "target_mean": 0.29444444444444445
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.023333333333333334,
+            "mae": 0.14999999999999997,
+            "target_mean": 0.29444444444444445
+          }
+        },
+        {
+          "root_index": 5,
+          "model": {
+            "n": 12,
+            "mse": 0.00726412122745223,
+            "mae": 0.06979822245382795,
+            "target_mean": 0.32222222222222224
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.022592592592592595,
+            "mae": 0.12777777777777777,
+            "target_mean": 0.32222222222222224
+          }
+        },
+        {
+          "root_index": 6,
+          "model": {
+            "n": 12,
+            "mse": 0.003942581558586327,
+            "mae": 0.053437647155314384,
+            "target_mean": 0.2888888888888889
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.0262962962962963,
+            "mae": 0.15,
+            "target_mean": 0.2888888888888889
+          }
+        },
+        {
+          "root_index": 7,
+          "model": {
+            "n": 10,
+            "mse": 0.006561195230350545,
+            "mae": 0.06786837969804493,
+            "target_mean": 0.3
+          },
+          "current_unit": {
+            "n": 10,
+            "mse": 0.03422222222222223,
+            "mae": 0.16666666666666666,
+            "target_mean": 0.3
+          }
+        }
+      ]
+    },
+    {
+      "opponent": "random-bounded",
+      "target": "original_terminal100_speed_else_unitdiff15",
+      "coefficients": [
+        10.775616349781066,
+        1.0195898503951413,
+        5.027562055436302,
+        1.9044878633523585,
+        2.8581417307880574,
+        9.194111159479643
+      ],
+      "training_target_mean": 18.530099933927982,
+      "empirical_material_alias_support": {
+        "unique_material_vectors": 270,
+        "within_identical_material_mse_lower_bound": 1264.5919450231454,
+        "nonconstant_target_vector_groups": 188,
+        "scope": "Empirical training-only minimum residual of any deterministic count-vector predictor on these exposed data; notholdoutbound, causalproof orrefutation of distribution-averaged piecevalues."
+      },
+      "training_n": 3027,
+      "training_feature_rank": 6,
+      "centered_material_gram_eigenvalues": [
+        625.5820829303187,
+        1065.2978095023163,
+        1220.8008847133017,
+        1432.603616282557,
+        5276.129217407319
+      ],
+      "nonzero_countdiff_per_type": {
+        "P": 2343,
+        "N": 1070,
+        "B": 1296,
+        "R": 1474,
+        "Q": 1689
+      },
+      "training_metrics": {
+        "n": 3027,
+        "mse": 1450.3216963146297,
+        "mae": 29.050314574271074,
+        "target_mean": 18.530099933927982
+      },
+      "heldout": {
+        "n": 95,
+        "mse": 938.6007478726622,
+        "mae": 22.832392621459,
+        "target_mean": 10.787850877192984
+      },
+      "heldout_current_unit": {
+        "n": 95,
+        "mse": 1050.5074343932747,
+        "mae": 10.640482456140353,
+        "target_mean": 10.787850877192984
+      },
+      "heldout_trainmean": {
+        "n": 95,
+        "mse": 999.0432277164398,
+        "mae": 24.921438544329106,
+        "target_mean": 10.787850877192984
+      },
+      "heldout_terminal_games": 10,
+      "Pnormalized": {
+        "P": 1.0,
+        "N": 4.930965185155457,
+        "B": 1.8678960590028193,
+        "R": 2.8032269345172343,
+        "Q": 9.017460458160183
+      },
+      "all_positive_material_coefficients": true,
+      "descriptive_reference_distance": 0.3878317262893947,
+      "heldout_per_root": [
+        {
+          "root_index": 0,
+          "model": {
+            "n": 12,
+            "mse": 293.5833131336371,
+            "mae": 16.11985060360907,
+            "target_mean": 0.2611111111111111
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.01925925925925926,
+            "mae": 0.12222222222222222,
+            "target_mean": 0.2611111111111111
+          }
+        },
+        {
+          "root_index": 1,
+          "model": {
+            "n": 12,
+            "mse": 1362.1181729614689,
+            "mae": 27.6366257435628,
+            "target_mean": 16.85486111111111
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 1660.996160300926,
+            "mae": 16.75486111111111,
+            "target_mean": 16.85486111111111
+          }
+        },
+        {
+          "root_index": 2,
+          "model": {
+            "n": 12,
+            "mse": 1429.8253697755417,
+            "mae": 30.012226102632322,
+            "target_mean": 16.992361111111112
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 1662.949496527778,
+            "mae": 16.775694444444444,
+            "target_mean": 16.992361111111112
+          }
+        },
+        {
+          "root_index": 3,
+          "model": {
+            "n": 12,
+            "mse": 1360.1921670994936,
+            "mae": 27.57191858751034,
+            "target_mean": 16.897569444444446
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 1669.5342491319445,
+            "mae": 16.786458333333332,
+            "target_mean": 16.897569444444446
+          }
+        },
+        {
+          "root_index": 4,
+          "model": {
+            "n": 12,
+            "mse": 703.8607109068552,
+            "mae": 19.376035836045965,
+            "target_mean": 8.621875000000001
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 829.9610662615742,
+            "mae": 8.466319444444444,
+            "target_mean": 8.621875000000001
+          }
+        },
+        {
+          "root_index": 5,
+          "model": {
+            "n": 12,
+            "mse": 1932.036038082704,
+            "mae": 34.886410460092286,
+            "target_mean": 25.248263888888886
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 2493.003253761574,
+            "mae": 25.048263888888886,
+            "target_mean": 25.248263888888886
+          }
+        },
+        {
+          "root_index": 6,
+          "model": {
+            "n": 12,
+            "mse": 197.9713006838646,
+            "mae": 13.688333947738256,
+            "target_mean": 0.27222222222222225
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.020370370370370375,
+            "mae": 0.12777777777777777,
+            "target_mean": 0.27222222222222225
+          }
+        },
+        {
+          "root_index": 7,
+          "model": {
+            "n": 11,
+            "mse": 164.72965238001095,
+            "mae": 12.50731669675573,
+            "target_mean": 0.27878787878787875
+          },
+          "current_unit": {
+            "n": 11,
+            "mse": 0.036363636363636376,
+            "mae": 0.1696969696969697,
+            "target_mean": 0.27878787878787875
+          }
+        }
+      ]
+    },
+    {
+      "opponent": "random-bounded",
+      "target": "bounded_terminal_1_else_unitdiff15",
+      "coefficients": [
+        0.2522309695764895,
+        0.06029271270269157,
+        0.084196238785995,
+        0.062118212018839575,
+        0.07508816613230049,
+        0.12854307983878085
+      ],
+      "training_target_mean": 0.4416253716551041,
+      "empirical_material_alias_support": {
+        "unique_material_vectors": 270,
+        "within_identical_material_mse_lower_bound": 0.06002593131190235,
+        "nonconstant_target_vector_groups": 188,
+        "scope": "Empirical training-only minimum residual of any deterministic count-vector predictor on these exposed data; notholdoutbound, causalproof orrefutation of distribution-averaged piecevalues."
+      },
+      "training_n": 3027,
+      "training_feature_rank": 6,
+      "centered_material_gram_eigenvalues": [
+        625.5820829303187,
+        1065.2978095023163,
+        1220.8008847133017,
+        1432.603616282557,
+        5276.129217407319
+      ],
+      "nonzero_countdiff_per_type": {
+        "P": 2343,
+        "N": 1070,
+        "B": 1296,
+        "R": 1474,
+        "Q": 1689
+      },
+      "training_metrics": {
+        "n": 3027,
+        "mse": 0.06919109929891162,
+        "mae": 0.19659248374736651,
+        "target_mean": 0.4416253716551041
+      },
+      "heldout": {
+        "n": 95,
+        "mse": 0.04522086588184563,
+        "mae": 0.1644610991960588,
+        "target_mean": 0.35298245614035084
+      },
+      "heldout_current_unit": {
+        "n": 95,
+        "mse": 0.08425730994152052,
+        "mae": 0.20561403508771928,
+        "target_mean": 0.35298245614035084
+      },
+      "heldout_trainmean": {
+        "n": 95,
+        "mse": 0.06931943166024467,
+        "mae": 0.21023490341314147,
+        "target_mean": 0.35298245614035084
+      },
+      "heldout_terminal_games": 10,
+      "Pnormalized": {
+        "P": 1.0,
+        "N": 1.396457963355766,
+        "B": 1.0302772795304418,
+        "R": 1.2453937261467491,
+        "Q": 2.1319836855348933
+      },
+      "all_positive_material_coefficients": true,
+      "descriptive_reference_distance": 1.165903878308861,
+      "heldout_per_root": [
+        {
+          "root_index": 0,
+          "model": {
+            "n": 12,
+            "mse": 0.026296016668294318,
+            "mae": 0.14363336255203854,
+            "target_mean": 0.2611111111111111
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.01925925925925926,
+            "mae": 0.12222222222222222,
+            "target_mean": 0.2611111111111111
+          }
+        },
+        {
+          "root_index": 1,
+          "model": {
+            "n": 12,
+            "mse": 0.06320970145611395,
+            "mae": 0.2027985653208282,
+            "target_mean": 0.3444444444444445
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.11703703703703706,
+            "mae": 0.24444444444444446,
+            "target_mean": 0.3444444444444445
+          }
+        },
+        {
+          "root_index": 2,
+          "model": {
+            "n": 12,
+            "mse": 0.05168741772518279,
+            "mae": 0.18285819756215696,
+            "target_mean": 0.4611111111111111
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.10444444444444446,
+            "mae": 0.24444444444444446,
+            "target_mean": 0.4611111111111111
+          }
+        },
+        {
+          "root_index": 3,
+          "model": {
+            "n": 12,
+            "mse": 0.0792923901709728,
+            "mae": 0.21660621735869623,
+            "target_mean": 0.36111111111111116
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.14555555555555558,
+            "mae": 0.25000000000000006,
+            "target_mean": 0.36111111111111116
+          }
+        },
+        {
+          "root_index": 4,
+          "model": {
+            "n": 12,
+            "mse": 0.023670347711441723,
+            "mae": 0.11345210660310716,
+            "target_mean": 0.3666666666666667
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.07185185185185188,
+            "mae": 0.21111111111111114,
+            "target_mean": 0.3666666666666667
+          }
+        },
+        {
+          "root_index": 5,
+          "model": {
+            "n": 12,
+            "mse": 0.08562855628287665,
+            "mae": 0.25097209738141313,
+            "target_mean": 0.47222222222222227
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.15518518518518523,
+            "mae": 0.27222222222222225,
+            "target_mean": 0.47222222222222227
+          }
+        },
+        {
+          "root_index": 6,
+          "model": {
+            "n": 12,
+            "mse": 0.01575999685408659,
+            "mae": 0.11540669616858756,
+            "target_mean": 0.27222222222222225
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.020370370370370375,
+            "mae": 0.12777777777777777,
+            "target_mean": 0.27222222222222225
+          }
+        },
+        {
+          "root_index": 7,
+          "model": {
+            "n": 11,
+            "mse": 0.013586285122519061,
+            "mae": 0.08318886438760474,
+            "target_mean": 0.27878787878787875
+          },
+          "current_unit": {
+            "n": 11,
+            "mse": 0.036363636363636376,
+            "mae": 0.1696969696969697,
+            "target_mean": 0.27878787878787875
+          }
+        }
+      ]
+    },
+    {
+      "opponent": "random-bounded",
+      "target": "final_unitdiff15_including_terminal",
+      "coefficients": [
+        0.15664141651793767,
+        0.06196503101313243,
+        0.052602212310888394,
+        0.05872862265917322,
+        0.06339266552595876,
+        0.0680205362907336
+      ],
+      "training_target_mean": 0.3107146790001101,
+      "empirical_material_alias_support": {
+        "unique_material_vectors": 270,
+        "within_identical_material_mse_lower_bound": 0.004438856159916731,
+        "nonconstant_target_vector_groups": 187,
+        "scope": "Empirical training-only minimum residual of any deterministic count-vector predictor on these exposed data; notholdoutbound, causalproof orrefutation of distribution-averaged piecevalues."
+      },
+      "training_n": 3027,
+      "training_feature_rank": 6,
+      "centered_material_gram_eigenvalues": [
+        625.5820829303187,
+        1065.2978095023163,
+        1220.8008847133017,
+        1432.603616282557,
+        5276.129217407319
+      ],
+      "nonzero_countdiff_per_type": {
+        "P": 2343,
+        "N": 1070,
+        "B": 1296,
+        "R": 1474,
+        "Q": 1689
+      },
+      "training_metrics": {
+        "n": 3027,
+        "mse": 0.005271560275390818,
+        "mae": 0.05864061854236912,
+        "target_mean": 0.3107146790001101
+      },
+      "heldout": {
+        "n": 95,
+        "mse": 0.0044925507232576566,
+        "mae": 0.05237031244200409,
+        "target_mean": 0.28561403508771915
+      },
+      "heldout_current_unit": {
+        "n": 95,
+        "mse": 0.02381286549707603,
+        "mae": 0.13824561403508767,
+        "target_mean": 0.28561403508771915
+      },
+      "heldout_trainmean": {
+        "n": 95,
+        "mse": 0.01435291089976279,
+        "mae": 0.09657897634737654,
+        "target_mean": 0.28561403508771915
+      },
+      "heldout_terminal_games": 10,
+      "Pnormalized": {
+        "P": 1.0,
+        "N": 0.8489015732073184,
+        "B": 0.947770406936885,
+        "R": 1.0230393576745531,
+        "Q": 1.097724558167619
+      },
+      "all_positive_material_coefficients": true,
+      "descriptive_reference_distance": 1.5263311697686333,
+      "heldout_per_root": [
+        {
+          "root_index": 0,
+          "model": {
+            "n": 12,
+            "mse": 0.004963888940737266,
+            "mae": 0.0516552494743272,
+            "target_mean": 0.2611111111111111
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.01925925925925926,
+            "mae": 0.12222222222222222,
+            "target_mean": 0.2611111111111111
+          }
+        },
+        {
+          "root_index": 1,
+          "model": {
+            "n": 12,
+            "mse": 0.003686723466034216,
+            "mae": 0.05147120078252173,
+            "target_mean": 0.25000000000000006
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.0262962962962963,
+            "mae": 0.15,
+            "target_mean": 0.25000000000000006
+          }
+        },
+        {
+          "root_index": 2,
+          "model": {
+            "n": 12,
+            "mse": 0.004734637454456321,
+            "mae": 0.051007186123316596,
+            "target_mean": 0.35000000000000003
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.022962962962962966,
+            "mae": 0.13333333333333333,
+            "target_mean": 0.35000000000000003
+          }
+        },
+        {
+          "root_index": 3,
+          "model": {
+            "n": 12,
+            "mse": 0.005056155258590501,
+            "mae": 0.0595867674593763,
+            "target_mean": 0.23333333333333336
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.019259259259259264,
+            "mae": 0.12222222222222222,
+            "target_mean": 0.23333333333333336
+          }
+        },
+        {
+          "root_index": 4,
+          "model": {
+            "n": 12,
+            "mse": 0.0025143028779036256,
+            "mae": 0.03881686951902823,
+            "target_mean": 0.31666666666666665
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.028518518518518516,
+            "mae": 0.16111111111111112,
+            "target_mean": 0.31666666666666665
+          }
+        },
+        {
+          "root_index": 5,
+          "model": {
+            "n": 12,
+            "mse": 0.003851149204663677,
+            "mae": 0.04647552823532164,
+            "target_mean": 0.32222222222222224
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.01851851851851852,
+            "mae": 0.12222222222222222,
+            "target_mean": 0.32222222222222224
+          }
+        },
+        {
+          "root_index": 6,
+          "model": {
+            "n": 12,
+            "mse": 0.003922792740683373,
+            "mae": 0.046697319134029386,
+            "target_mean": 0.27222222222222225
+          },
+          "current_unit": {
+            "n": 12,
+            "mse": 0.020370370370370375,
+            "mae": 0.12777777777777777,
+            "target_mean": 0.27222222222222225
+          }
+        },
+        {
+          "root_index": 7,
+          "model": {
+            "n": 11,
+            "mse": 0.007457865399331789,
+            "mae": 0.07515074847775777,
+            "target_mean": 0.27878787878787875
+          },
+          "current_unit": {
+            "n": 11,
+            "mse": 0.036363636363636376,
+            "mae": 0.1696969696969697,
+            "target_mean": 0.27878787878787875
+          }
+        }
+      ]
+    },
+    {
+      "opponent": "pooled",
+      "target": "original_terminal100_speed_else_unitdiff15",
+      "coefficients": [
+        11.577251453059732,
+        0.5518859500173833,
+        5.135914309747014,
+        2.0260683120417458,
+        2.409126094405199,
+        9.992582628552727
+      ],
+      "training_target_mean": 18.915104252854544,
+      "empirical_material_alias_support": {
+        "unique_material_vectors": 305,
+        "within_identical_material_mse_lower_bound": 1346.8532055692006,
+        "nonconstant_target_vector_groups": 223,
+        "scope": "Empirical training-only minimum residual of any deterministic count-vector predictor on these exposed data; notholdoutbound, causalproof orrefutation of distribution-averaged piecevalues."
+      },
+      "training_n": 6043,
+      "training_feature_rank": 6,
+      "centered_material_gram_eigenvalues": [
+        1238.4860594126067,
+        2182.7877397255947,
+        2496.5609532538047,
+        2960.0595727141294,
+        9995.318979543852
+      ],
+      "nonzero_countdiff_per_type": {
+        "P": 4765,
+        "N": 2408,
+        "B": 2627,
+        "R": 2649,
+        "Q": 3269
+      },
+      "training_metrics": {
+        "n": 6043,
+        "mse": 1467.3769981332014,
+        "mae": 29.396373302677635,
+        "target_mean": 18.915104252854544
+      },
+      "heldout": {
+        "n": 189,
+        "mse": 905.6667312610297,
+        "mae": 22.553911230525046,
+        "target_mean": 9.794819223985892
+      },
+      "heldout_current_unit": {
+        "n": 189,
+        "mse": 951.1595215130804,
+        "mae": 9.64843474426808,
+        "target_mean": 9.794819223985892
+      },
+      "heldout_trainmean": {
+        "n": 189,
+        "mse": 942.5539966786823,
+        "mae": 24.593466229383132,
+        "target_mean": 9.794819223985892
+      },
+      "heldout_terminal_games": 18,
+      "Pnormalized": {
+        "P": 1.0,
+        "N": 9.306115347899768,
+        "B": 3.671172118039839,
+        "R": 4.365260783191376,
+        "Q": 18.106245734717437
+      },
+      "all_positive_material_coefficients": true,
+      "descriptive_reference_distance": 0.542187627678343,
+      "heldout_per_root": [
+        {
+          "root_index": 0,
+          "model": {
+            "n": 24,
+            "mse": 893.0968105917946,
+            "mae": 21.077302002716348,
+            "target_mean": 8.579166666666666
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 835.8554456018519,
+            "mae": 8.456944444444446,
+            "target_mean": 8.579166666666666
+          }
+        },
+        {
+          "root_index": 1,
+          "model": {
+            "n": 24,
+            "mse": 903.2342226263366,
+            "mae": 23.54437781186641,
+            "target_mean": 8.557986111111111
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 830.5127097800927,
+            "mae": 8.45798611111111,
+            "target_mean": 8.557986111111111
+          }
+        },
+        {
+          "root_index": 2,
+          "model": {
+            "n": 24,
+            "mse": 1655.249541459599,
+            "mae": 31.922154568968562,
+            "target_mean": 21.147743055555555
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 2078.4700065104166,
+            "mae": 20.93107638888889,
+            "target_mean": 21.147743055555555
+          }
+        },
+        {
+          "root_index": 3,
+          "model": {
+            "n": 24,
+            "mse": 1383.272213373583,
+            "mae": 28.594951952809236,
+            "target_mean": 16.91736111111111
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 1668.49748119213,
+            "mae": 16.797916666666666,
+            "target_mean": 16.91736111111111
+          }
+        },
+        {
+          "root_index": 4,
+          "model": {
+            "n": 24,
+            "mse": 441.31979169827156,
+            "mae": 15.799221200108725,
+            "target_mean": 4.458159722222223
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 414.9921997974537,
+            "mae": 4.308159722222222,
+            "target_mean": 4.458159722222223
+          }
+        },
+        {
+          "root_index": 5,
+          "model": {
+            "n": 24,
+            "mse": 1479.5920047466059,
+            "mae": 30.84368884130852,
+            "target_mean": 16.94045138888889
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 1661.9991297743054,
+            "mae": 16.743229166666666,
+            "target_mean": 16.94045138888889
+          }
+        },
+        {
+          "root_index": 6,
+          "model": {
+            "n": 24,
+            "mse": 220.4840671233292,
+            "mae": 14.496283750106203,
+            "target_mean": 0.2805555555555556
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 0.023333333333333334,
+            "mae": 0.1388888888888889,
+            "target_mean": 0.2805555555555556
+          }
+        },
+        {
+          "root_index": 7,
+          "model": {
+            "n": 21,
+            "mse": 178.14497949838847,
+            "mae": 12.95322378571513,
+            "target_mean": 0.2888888888888889
+          },
+          "current_unit": {
+            "n": 21,
+            "mse": 0.03534391534391536,
+            "mae": 0.16825396825396827,
+            "target_mean": 0.2888888888888889
+          }
+        }
+      ]
+    },
+    {
+      "opponent": "pooled",
+      "target": "bounded_terminal_1_else_unitdiff15",
+      "coefficients": [
+        0.25950741077091827,
+        0.05553940575228288,
+        0.08506647669447556,
+        0.06438706380372983,
+        0.076245219887328,
+        0.13435865147727338
+      ],
+      "training_target_mean": 0.44855204368691054,
+      "empirical_material_alias_support": {
+        "unique_material_vectors": 305,
+        "within_identical_material_mse_lower_bound": 0.06294640420032044,
+        "nonconstant_target_vector_groups": 223,
+        "scope": "Empirical training-only minimum residual of any deterministic count-vector predictor on these exposed data; notholdoutbound, causalproof orrefutation of distribution-averaged piecevalues."
+      },
+      "training_n": 6043,
+      "training_feature_rank": 6,
+      "centered_material_gram_eigenvalues": [
+        1238.4860594126067,
+        2182.7877397255947,
+        2496.5609532538047,
+        2960.0595727141294,
+        9995.318979543852
+      ],
+      "nonzero_countdiff_per_type": {
+        "P": 4765,
+        "N": 2408,
+        "B": 2627,
+        "R": 2649,
+        "Q": 3269
+      },
+      "training_metrics": {
+        "n": 6043,
+        "mse": 0.06908383492159302,
+        "mae": 0.19775136892305803,
+        "target_mean": 0.44855204368691054
+      },
+      "heldout": {
+        "n": 189,
+        "mse": 0.04504983435057425,
+        "mae": 0.1615991109024125,
+        "target_mean": 0.3520282186948854
+      },
+      "heldout_current_unit": {
+        "n": 189,
+        "mse": 0.08265726043503822,
+        "mae": 0.2056437389770723,
+        "target_mean": 0.3520282186948854
+      },
+      "heldout_trainmean": {
+        "n": 189,
+        "mse": 0.06519309961149242,
+        "mae": 0.2063002917655684,
+        "target_mean": 0.3520282186948854
+      },
+      "heldout_terminal_games": 18,
+      "Pnormalized": {
+        "P": 1.0,
+        "N": 1.531641823354925,
+        "B": 1.1593041540795253,
+        "R": 1.372813029858427,
+        "Q": 2.4191589675363194
+      },
+      "all_positive_material_coefficients": true,
+      "descriptive_reference_distance": 1.0573612437732969,
+      "heldout_per_root": [
+        {
+          "root_index": 0,
+          "model": {
+            "n": 24,
+            "mse": 0.05976055675329297,
+            "mae": 0.1830911954759289,
+            "target_mean": 0.30833333333333335
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 0.08574074074074074,
+            "mae": 0.18611111111111112,
+            "target_mean": 0.30833333333333335
+          }
+        },
+        {
+          "root_index": 1,
+          "model": {
+            "n": 24,
+            "mse": 0.04710048973646841,
+            "mae": 0.17591240808065378,
+            "target_mean": 0.3027777777777778
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 0.07314814814814817,
+            "mae": 0.2027777777777778,
+            "target_mean": 0.3027777777777778
+          }
+        },
+        {
+          "root_index": 2,
+          "model": {
+            "n": 24,
+            "mse": 0.059020070107195566,
+            "mae": 0.19263510512639748,
+            "target_mean": 0.4888888888888889
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 0.13000000000000003,
+            "mae": 0.2722222222222222,
+            "target_mean": 0.4888888888888889
+          }
+        },
+        {
+          "root_index": 3,
+          "model": {
+            "n": 24,
+            "mse": 0.0754885991814865,
+            "mae": 0.20747736076360826,
+            "target_mean": 0.38611111111111107
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 0.14962962962962964,
+            "mae": 0.26666666666666666,
+            "target_mean": 0.38611111111111107
+          }
+        },
+        {
+          "root_index": 4,
+          "model": {
+            "n": 24,
+            "mse": 0.016763747946712707,
+            "mae": 0.10115833636022964,
+            "target_mean": 0.3305555555555556
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 0.0475925925925926,
+            "mae": 0.18055555555555558,
+            "target_mean": 0.3305555555555556
+          }
+        },
+        {
+          "root_index": 5,
+          "model": {
+            "n": 24,
+            "mse": 0.06871077200378374,
+            "mae": 0.22533657822009226,
+            "target_mean": 0.4222222222222222
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 0.11055555555555557,
+            "mae": 0.22499999999999998,
+            "target_mean": 0.4222222222222222
+          }
+        },
+        {
+          "root_index": 6,
+          "model": {
+            "n": 24,
+            "mse": 0.016073072011337796,
+            "mae": 0.11186320590762433,
+            "target_mean": 0.2805555555555556
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 0.023333333333333334,
+            "mae": 0.1388888888888889,
+            "target_mean": 0.2805555555555556
+          }
+        },
+        {
+          "root_index": 7,
+          "model": {
+            "n": 21,
+            "mse": 0.01354301459485093,
+            "mae": 0.0858500667679584,
+            "target_mean": 0.2888888888888889
+          },
+          "current_unit": {
+            "n": 21,
+            "mse": 0.03534391534391536,
+            "mae": 0.16825396825396827,
+            "target_mean": 0.2888888888888889
+          }
+        }
+      ]
+    },
+    {
+      "opponent": "pooled",
+      "target": "final_unitdiff15_including_terminal",
+      "coefficients": [
+        0.15598131071220853,
+        0.06159789644820051,
+        0.053505559448771466,
+        0.06024559557850184,
+        0.06811237938750732,
+        0.06881407670975873
+      ],
+      "training_target_mean": 0.31478846047768766,
+      "empirical_material_alias_support": {
+        "unique_material_vectors": 305,
+        "within_identical_material_mse_lower_bound": 0.004702671897187044,
+        "nonconstant_target_vector_groups": 222,
+        "scope": "Empirical training-only minimum residual of any deterministic count-vector predictor on these exposed data; notholdoutbound, causalproof orrefutation of distribution-averaged piecevalues."
+      },
+      "training_n": 6043,
+      "training_feature_rank": 6,
+      "centered_material_gram_eigenvalues": [
+        1238.4860594126067,
+        2182.7877397255947,
+        2496.5609532538047,
+        2960.0595727141294,
+        9995.318979543852
+      ],
+      "nonzero_countdiff_per_type": {
+        "P": 4765,
+        "N": 2408,
+        "B": 2627,
+        "R": 2649,
+        "Q": 3269
+      },
+      "training_metrics": {
+        "n": 6043,
+        "mse": 0.005345416014952015,
+        "mae": 0.05942751062383915,
+        "target_mean": 0.31478846047768766
+      },
+      "heldout": {
+        "n": 189,
+        "mse": 0.004527408458121644,
+        "mae": 0.05348586692734694,
+        "target_mean": 0.28783068783068777
+      },
+      "heldout_current_unit": {
+        "n": 189,
+        "mse": 0.024573780129335688,
+        "mae": 0.14144620811287476,
+        "target_mean": 0.28783068783068777
+      },
+      "heldout_trainmean": {
+        "n": 189,
+        "mse": 0.013635654626660661,
+        "mae": 0.09368928907789296,
+        "target_mean": 0.28783068783068777
+      },
+      "heldout_terminal_games": 18,
+      "Pnormalized": {
+        "P": 1.0,
+        "N": 0.8686264066463028,
+        "B": 0.978046314116654,
+        "R": 1.1057582046618268,
+        "Q": 1.1171497839642384
+      },
+      "all_positive_material_coefficients": true,
+      "descriptive_reference_distance": 1.4889039038710687,
+      "heldout_per_root": [
+        {
+          "root_index": 0,
+          "model": {
+            "n": 24,
+            "mse": 0.006154344483846598,
+            "mae": 0.06285472471955982,
+            "target_mean": 0.23888888888888893
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 0.018518518518518517,
+            "mae": 0.11666666666666668,
+            "target_mean": 0.23888888888888893
+          }
+        },
+        {
+          "root_index": 1,
+          "model": {
+            "n": 24,
+            "mse": 0.0037170811246182585,
+            "mae": 0.052151132646957955,
+            "target_mean": 0.2555555555555556
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 0.02777777777777778,
+            "mae": 0.15555555555555556,
+            "target_mean": 0.2555555555555556
+          }
+        },
+        {
+          "root_index": 2,
+          "model": {
+            "n": 24,
+            "mse": 0.004427635409838233,
+            "mae": 0.049936366851008884,
+            "target_mean": 0.3499999999999999
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 0.022592592592592598,
+            "mae": 0.13333333333333333,
+            "target_mean": 0.3499999999999999
+          }
+        },
+        {
+          "root_index": 3,
+          "model": {
+            "n": 24,
+            "mse": 0.004112009582699861,
+            "mae": 0.054765025139460334,
+            "target_mean": 0.2611111111111111
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 0.023888888888888894,
+            "mae": 0.1416666666666667,
+            "target_mean": 0.2611111111111111
+          }
+        },
+        {
+          "root_index": 4,
+          "model": {
+            "n": 24,
+            "mse": 0.0015740231281608109,
+            "mae": 0.029767198063022526,
+            "target_mean": 0.3055555555555556
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 0.025925925925925925,
+            "mae": 0.15555555555555556,
+            "target_mean": 0.3055555555555556
+          }
+        },
+        {
+          "root_index": 5,
+          "model": {
+            "n": 24,
+            "mse": 0.005568224503912103,
+            "mae": 0.05872785448222114,
+            "target_mean": 0.32222222222222224
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 0.020555555555555556,
+            "mae": 0.125,
+            "target_mean": 0.32222222222222224
+          }
+        },
+        {
+          "root_index": 6,
+          "model": {
+            "n": 24,
+            "mse": 0.003928393053071425,
+            "mae": 0.05018368645539902,
+            "target_mean": 0.2805555555555556
+          },
+          "current_unit": {
+            "n": 24,
+            "mse": 0.023333333333333334,
+            "mae": 0.1388888888888889,
+            "target_mean": 0.2805555555555556
+          }
+        },
+        {
+          "root_index": 7,
+          "model": {
+            "n": 21,
+            "mse": 0.007053291796069323,
+            "mae": 0.07178881565168856,
+            "target_mean": 0.2888888888888889
+          },
+          "current_unit": {
+            "n": 21,
+            "mse": 0.03534391534391536,
+            "mae": 0.16825396825396827,
+            "target_mean": 0.2888888888888889
+          }
+        }
+      ]
+    }
+  ],
+  "wall_seconds": 1.875,
+  "scope": "Exploratory distribution-conditioned return prediction; sparse labels/position omitted. Predictiongain isnotcausalprice/policygain; negativecoefficients kept, nohumanfit ornewgames."
+}

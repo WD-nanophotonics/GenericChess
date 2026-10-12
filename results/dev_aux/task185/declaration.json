@@ -1,0 +1,491 @@
+{
+  "task_id": "185",
+  "question": "Does full-legal reachable geometry retain cheap bounded feedback and price discrimination?",
+  "roots": [
+    {
+      "seed": 2026103200,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "g1f3",
+        "b7b6",
+        "d2d4",
+        "b8a6",
+        "c1f4",
+        "g7g6",
+        "c2c4",
+        "d7d6",
+        "d1a4",
+        "d8d7",
+        "e1d1",
+        "b6b5",
+        "a4c2",
+        "d7h3",
+        "c2d2",
+        "h7h6",
+        "d2c1",
+        "f8g7",
+        "d1e1",
+        "c8g4"
+      ],
+      "expected_fen": "r3k1nr/p1p1ppb1/n2p2pp/1p6/2PP1Bb1/5N1q/PP2PPPP/RNQ1KB1R w kq - 4 11",
+      "captures": 0,
+      "counts": {
+        "p": [
+          8,
+          8
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103201,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "g1f3",
+        "b7b5",
+        "b2b3",
+        "c8a6",
+        "f3g5",
+        "d8c8",
+        "g2g3",
+        "g7g6",
+        "g3g4",
+        "d7d6",
+        "f1h3",
+        "h7h5",
+        "c2c4",
+        "c8d7",
+        "h3f1",
+        "g8h6",
+        "g5f7",
+        "h6g4",
+        "c1b2",
+        "e7e5"
+      ],
+      "expected_fen": "rn2kb1r/p1pq1N2/b2p2p1/1p2p2p/2P3n1/1P6/PB1PPP1P/RN1QKB1R w KQkq - 0 11",
+      "captures": 2,
+      "counts": {
+        "p": [
+          7,
+          7
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103202,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "h2h3",
+        "h7h5",
+        "c2c3",
+        "h8h6",
+        "e2e4",
+        "e7e5",
+        "d1f3",
+        "d8h4",
+        "f3f4",
+        "f8d6",
+        "c3c4",
+        "h4d8",
+        "d2d3",
+        "d6a3",
+        "f4f6",
+        "g7g6",
+        "f6e5",
+        "e8f8",
+        "b2b4",
+        "g6g5"
+      ],
+      "expected_fen": "rnbq1kn1/pppp1p2/7r/4Q1pp/1PP1P3/b2P3P/P4PP1/RNB1KBNR w KQ - 0 11",
+      "captures": 1,
+      "counts": {
+        "p": [
+          8,
+          7
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103203,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "h7h5",
+        "g2g4",
+        "h5h4",
+        "f1h3",
+        "d7d5",
+        "e2e4",
+        "a7a5",
+        "c1a3",
+        "a8a7",
+        "d1f3",
+        "f7f5",
+        "e4f5",
+        "a5b4",
+        "f3f4",
+        "g7g5",
+        "d2d4",
+        "c8f5",
+        "f4d6",
+        "h8h5"
+      ],
+      "expected_fen": "1n1qkbn1/rpp1p3/3Q4/3p1bpr/1p1P2Pp/B6B/P1P2P1P/RN2K1NR w KQ - 2 11",
+      "captures": 3,
+      "counts": {
+        "p": [
+          6,
+          7
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103204,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "a2a3",
+        "e7e6",
+        "e2e4",
+        "f8e7",
+        "d1h5",
+        "d7d5",
+        "g2g4",
+        "d5e4",
+        "f1h3",
+        "e7d6",
+        "h5a5",
+        "b8d7",
+        "a5c7",
+        "d6c7",
+        "c2c4",
+        "c7b8",
+        "b2b3",
+        "b7b6",
+        "b3b4",
+        "g8e7"
+      ],
+      "expected_fen": "rbbqk2r/p2nnppp/1p2p3/8/1PP1p1P1/P6B/3P1P1P/RNB1K1NR w KQkq - 1 11",
+      "captures": 3,
+      "counts": {
+        "p": [
+          7,
+          7
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          0,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103205,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "b2b4",
+        "f7f6",
+        "d2d3",
+        "b8a6",
+        "e2e4",
+        "a6c5",
+        "d1e2",
+        "c7c6",
+        "c2c4",
+        "d8a5",
+        "c1f4",
+        "a5d8",
+        "e2h5",
+        "g7g6",
+        "a2a3",
+        "a7a6",
+        "f1e2",
+        "g6h5",
+        "h2h3",
+        "a8b8"
+      ],
+      "expected_fen": "1rbqkbnr/1p1pp2p/p1p2p2/2n4p/1PP1PB2/P2P3P/4BPP1/RN2K1NR w KQk - 1 11",
+      "captures": 1,
+      "counts": {
+        "p": [
+          8,
+          8
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          0,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103206,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "g1h3",
+        "g8f6",
+        "h3g5",
+        "b7b6",
+        "g5h7",
+        "f6d5",
+        "d2d3",
+        "c8a6",
+        "f2f4",
+        "d5c3",
+        "f4f5",
+        "g7g5",
+        "e1f2",
+        "a6b5",
+        "d1e1",
+        "h8g8",
+        "h7g5",
+        "a7a5",
+        "b1d2",
+        "f8h6"
+      ],
+      "expected_fen": "rn1qk1r1/2pppp2/1p5b/pb3PN1/8/2nP4/PPPNPKPP/R1B1QB1R w q - 2 11",
+      "captures": 2,
+      "counts": {
+        "p": [
+          8,
+          6
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "seed": 2026103207,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "g2g3",
+        "d7d5",
+        "b2b3",
+        "b7b6",
+        "b1a3",
+        "e7e6",
+        "f1g2",
+        "a7a6",
+        "c2c4",
+        "b8d7",
+        "a3c2",
+        "d8f6",
+        "g2f3",
+        "h7h6",
+        "c2b4",
+        "e8d8",
+        "b4c6",
+        "d8e8",
+        "b3b4",
+        "g7g5"
+      ],
+      "expected_fen": "r1b1kbnr/2pn1p2/ppN1pq1p/3p2p1/1PP5/5BP1/P2PPP1P/R1BQK1NR w KQ - 0 11",
+      "captures": 0,
+      "counts": {
+        "p": [
+          8,
+          8
+        ],
+        "n": [
+          2,
+          2
+        ],
+        "b": [
+          2,
+          2
+        ],
+        "r": [
+          2,
+          2
+        ],
+        "q": [
+          1,
+          1
+        ],
+        "k": [
+          1,
+          1
+        ]
+      }
+    }
+  ],
+  "excluded_roots": [],
+  "profiles": {
+    "unit": {
+      "P": 208,
+      "N": 208,
+      "B": 208,
+      "R": 208,
+      "Q": 208,
+      "K": 0
+    },
+    "pooled-bounded": {
+      "P": 208,
+      "N": 287,
+      "B": 352,
+      "R": 162,
+      "Q": 493,
+      "K": 0
+    },
+    "pooled-quantity": {
+      "P": 208,
+      "N": 240,
+      "B": 241,
+      "R": 275,
+      "Q": 330,
+      "K": 0
+    }
+  },
+  "opponents": [
+    "random",
+    "unit2ply"
+  ],
+  "random_seeds": [
+    2026203200,
+    2026203201,
+    2026203202,
+    2026203203,
+    2026203204,
+    2026203205,
+    2026203206,
+    2026203207
+  ],
+  "cap": 16,
+  "binary_sha256": "c378f0b3fc9f99d48e3089294a7c6adf5d5215bcac070200424d0d24f4d4b460",
+  "deadline_seconds": 180,
+  "planned_games": 96,
+  "games": 96,
+  "excluded_slots": 0,
+  "root_rule": "8 fixed seeds,20 uniform FULL legal moves incl captures/promotions, full history, no output/human filtering/resampling.",
+  "reward": "Original true-terminal100+speed saved; bounded terminal +/-1, true draws0, cutoff final unit quantity/15 separately. Final quantity including terminals separately.",
+  "scope": "New geometry; within-root paired profiles only. Existing models exposed, not new learning/holdout.",
+  "decision": "Pilot informs next small matched bounded-vs-original learning; no cheapest profile or human-root selection.",
+  "cost": "96 games estimated20s,180s fuse,one serial process at a time; no extra workers/fees.",
+  "created_at": "2026-10-12T06:50:59.250783+00:00"
+}

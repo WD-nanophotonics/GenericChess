@@ -1,0 +1,317 @@
+{
+  "complete": true,
+  "counts": {
+    "games": 128,
+    "moves": 1888,
+    "searches": 948,
+    "leaf_nodes": 884964
+  },
+  "cache_hits": 0,
+  "seconds": 9.405999999959022,
+  "source_sha256": "86ab6df8952c9359ae52e1a62a29e7f3b9ef2b8bfc493e89d2f6181f5f49b997",
+  "components": [
+    {
+      "backend": "complete2ply",
+      "profile": "unit",
+      "original": 12.887760416666667,
+      "bounded": 0.45416666666666666,
+      "quantity": 0.3666666666666667,
+      "wins": 2,
+      "losses": 0,
+      "cutoffs": 14
+    },
+    {
+      "backend": "complete2ply",
+      "profile": "fit1-random-original-bounded",
+      "original": 12.898697916666666,
+      "bounded": 0.44166666666666665,
+      "quantity": 0.3416666666666667,
+      "wins": 2,
+      "losses": 0,
+      "cutoffs": 14
+    },
+    {
+      "backend": "complete2ply",
+      "profile": "fit2-random-original-final",
+      "original": 19.151822916666667,
+      "bounded": 0.49166666666666664,
+      "quantity": 0.3416666666666667,
+      "wins": 3,
+      "losses": 0,
+      "cutoffs": 13
+    },
+    {
+      "backend": "complete2ply",
+      "profile": "fit3-random-bounded-original",
+      "original": 12.86484375,
+      "bounded": 0.4,
+      "quantity": 0.3,
+      "wins": 2,
+      "losses": 0,
+      "cutoffs": 14
+    },
+    {
+      "backend": "complete2ply",
+      "profile": "fit4-random-bounded-bounded",
+      "original": 12.898697916666666,
+      "bounded": 0.44166666666666665,
+      "quantity": 0.3416666666666667,
+      "wins": 2,
+      "losses": 0,
+      "cutoffs": 14
+    },
+    {
+      "backend": "complete2ply",
+      "profile": "fit5-random-bounded-final",
+      "original": 12.91640625,
+      "bounded": 0.475,
+      "quantity": 0.37916666666666665,
+      "wins": 2,
+      "losses": 0,
+      "cutoffs": 14
+    },
+    {
+      "backend": "complete2ply",
+      "profile": "fit7-pooled-bounded",
+      "original": 12.898697916666666,
+      "bounded": 0.44166666666666665,
+      "quantity": 0.3416666666666667,
+      "wins": 2,
+      "losses": 0,
+      "cutoffs": 14
+    },
+    {
+      "backend": "complete2ply",
+      "profile": "fit8-pooled-final",
+      "original": 12.91640625,
+      "bounded": 0.475,
+      "quantity": 0.37916666666666665,
+      "wins": 2,
+      "losses": 0,
+      "cutoffs": 14
+    },
+    {
+      "backend": "mature1024",
+      "profile": "unit",
+      "original": 25.349479166666665,
+      "bounded": 0.5291666666666667,
+      "quantity": 0.3541666666666667,
+      "wins": 4,
+      "losses": 0,
+      "cutoffs": 12
+    },
+    {
+      "backend": "mature1024",
+      "profile": "fit1-random-original-bounded",
+      "original": 31.51171875,
+      "bounded": 0.5,
+      "quantity": 0.26666666666666666,
+      "wins": 5,
+      "losses": 0,
+      "cutoffs": 11
+    },
+    {
+      "backend": "mature1024",
+      "profile": "fit2-random-original-final",
+      "original": 37.82239583333333,
+      "bounded": 0.5958333333333333,
+      "quantity": 0.3125,
+      "wins": 6,
+      "losses": 0,
+      "cutoffs": 10
+    },
+    {
+      "backend": "mature1024",
+      "profile": "fit3-random-bounded-original",
+      "original": 25.298697916666665,
+      "bounded": 0.4666666666666667,
+      "quantity": 0.2833333333333333,
+      "wins": 4,
+      "losses": 0,
+      "cutoffs": 12
+    },
+    {
+      "backend": "mature1024",
+      "profile": "fit4-random-bounded-bounded",
+      "original": 19.054427083333334,
+      "bounded": 0.43333333333333335,
+      "quantity": 0.2916666666666667,
+      "wins": 3,
+      "losses": 0,
+      "cutoffs": 13
+    },
+    {
+      "backend": "mature1024",
+      "profile": "fit5-random-bounded-final",
+      "original": 50.27161458333333,
+      "bounded": 0.6583333333333333,
+      "quantity": 0.3,
+      "wins": 8,
+      "losses": 0,
+      "cutoffs": 8
+    },
+    {
+      "backend": "mature1024",
+      "profile": "fit7-pooled-bounded",
+      "original": 44.04322916666667,
+      "bounded": 0.6291666666666667,
+      "quantity": 0.29583333333333334,
+      "wins": 7,
+      "losses": 0,
+      "cutoffs": 9
+    },
+    {
+      "backend": "mature1024",
+      "profile": "fit8-pooled-final",
+      "original": 31.622395833333332,
+      "bounded": 0.5833333333333334,
+      "quantity": 0.3416666666666667,
+      "wins": 5,
+      "losses": 0,
+      "cutoffs": 11
+    }
+  ],
+  "paired": [
+    {
+      "backend": "complete2ply",
+      "profile": "fit1-random-original-bounded",
+      "paired_mean_deltas": {
+        "original": 0.010937499999998934,
+        "bounded": -0.012500000000000011,
+        "quantity": -0.025000000000000022
+      },
+      "completed_net_delta": 0
+    },
+    {
+      "backend": "complete2ply",
+      "profile": "fit2-random-original-final",
+      "paired_mean_deltas": {
+        "original": 6.2640625,
+        "bounded": 0.03749999999999998,
+        "quantity": -0.025000000000000022
+      },
+      "completed_net_delta": 1
+    },
+    {
+      "backend": "complete2ply",
+      "profile": "fit3-random-bounded-original",
+      "paired_mean_deltas": {
+        "original": -0.02291666666666714,
+        "bounded": -0.05416666666666664,
+        "quantity": -0.06666666666666671
+      },
+      "completed_net_delta": 0
+    },
+    {
+      "backend": "complete2ply",
+      "profile": "fit4-random-bounded-bounded",
+      "paired_mean_deltas": {
+        "original": 0.010937499999998934,
+        "bounded": -0.012500000000000011,
+        "quantity": -0.025000000000000022
+      },
+      "completed_net_delta": 0
+    },
+    {
+      "backend": "complete2ply",
+      "profile": "fit5-random-bounded-final",
+      "paired_mean_deltas": {
+        "original": 0.02864583333333215,
+        "bounded": 0.020833333333333315,
+        "quantity": 0.012499999999999956
+      },
+      "completed_net_delta": 0
+    },
+    {
+      "backend": "complete2ply",
+      "profile": "fit7-pooled-bounded",
+      "paired_mean_deltas": {
+        "original": 0.010937499999998934,
+        "bounded": -0.012500000000000011,
+        "quantity": -0.025000000000000022
+      },
+      "completed_net_delta": 0
+    },
+    {
+      "backend": "complete2ply",
+      "profile": "fit8-pooled-final",
+      "paired_mean_deltas": {
+        "original": 0.02864583333333215,
+        "bounded": 0.020833333333333315,
+        "quantity": 0.012499999999999956
+      },
+      "completed_net_delta": 0
+    },
+    {
+      "backend": "mature1024",
+      "profile": "fit1-random-original-bounded",
+      "paired_mean_deltas": {
+        "original": 6.162239583333335,
+        "bounded": -0.029166666666666674,
+        "quantity": -0.08750000000000002
+      },
+      "completed_net_delta": 1
+    },
+    {
+      "backend": "mature1024",
+      "profile": "fit2-random-original-final",
+      "paired_mean_deltas": {
+        "original": 12.472916666666666,
+        "bounded": 0.06666666666666665,
+        "quantity": -0.041666666666666685
+      },
+      "completed_net_delta": 2
+    },
+    {
+      "backend": "mature1024",
+      "profile": "fit3-random-bounded-original",
+      "paired_mean_deltas": {
+        "original": -0.05078125,
+        "bounded": -0.0625,
+        "quantity": -0.07083333333333336
+      },
+      "completed_net_delta": 0
+    },
+    {
+      "backend": "mature1024",
+      "profile": "fit4-random-bounded-bounded",
+      "paired_mean_deltas": {
+        "original": -6.295052083333331,
+        "bounded": -0.09583333333333333,
+        "quantity": -0.0625
+      },
+      "completed_net_delta": -1
+    },
+    {
+      "backend": "mature1024",
+      "profile": "fit5-random-bounded-final",
+      "paired_mean_deltas": {
+        "original": 24.922135416666666,
+        "bounded": 0.12916666666666665,
+        "quantity": -0.054166666666666696
+      },
+      "completed_net_delta": 4
+    },
+    {
+      "backend": "mature1024",
+      "profile": "fit7-pooled-bounded",
+      "paired_mean_deltas": {
+        "original": 18.693750000000005,
+        "bounded": 0.09999999999999998,
+        "quantity": -0.05833333333333335
+      },
+      "completed_net_delta": 3
+    },
+    {
+      "backend": "mature1024",
+      "profile": "fit8-pooled-final",
+      "paired_mean_deltas": {
+        "original": 6.272916666666667,
+        "bounded": 0.054166666666666696,
+        "quantity": -0.012500000000000011
+      },
+      "completed_net_delta": 1
+    }
+  ],
+  "scope": "Fullhistory/actuallegality/random/complete2ply controls verified. Exactauditcache includesweights+initialfen+fullhistory; notnewphysicalgame. Sameprofile/root/color/RNG, but algorithm/tree/work differ: backendcomparisons cannotisolate selectiveheuristics orprove equalcoststrength."
+}
