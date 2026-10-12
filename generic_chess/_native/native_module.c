@@ -3190,11 +3190,16 @@ static PyObject *gc_semantic_transient_legal_actions_audit(PyObject *self, PyObj
 typedef struct {
     const GCSemanticRules *rules;
     GCSemanticPosition probe;
+    int failed;
 } GCSemanticAvailabilityProbe;
 
 static int gc_semantic_visit_available_action(void *context, uint64_t action) {
     GCSemanticAvailabilityProbe *probe = (GCSemanticAvailabilityProbe *)context;
-    return gc_semantic_runtime_probe_action(probe->rules, &probe->probe, action);
+    int status = gc_semantic_runtime_probe_action_status(
+        probe->rules, &probe->probe, action);
+    if (status < 0) probe->failed = 1;
+    /* Stop enumeration on failure as well as success; the owner checks failed. */
+    return status != 0;
 }
 
 static int gc_semantic_has_guarded_action_impl(const GCSemanticRules *rules,
@@ -3203,6 +3208,7 @@ static int gc_semantic_has_guarded_action_impl(const GCSemanticRules *rules,
                                                GCSemanticRuntimeAudit *audit) {
     GCSemanticAvailabilityProbe probe;
     probe.rules = rules;
+    probe.failed = 0;
     /* A boolean query needs neither a complete candidate list nor the unused
      * reserved history tail. Keep the exact checked transition and S4 guards. */
     memcpy(&probe.probe, position, offsetof(GCSemanticPosition, history_lo));
@@ -3220,7 +3226,7 @@ static int gc_semantic_has_guarded_action_impl(const GCSemanticRules *rules,
         gc_semantic_runtime_audit_stop();
         audit->candidate_count = (unsigned long long)candidates.count;
     }
-    if (!generated) {
+    if (!generated || probe.failed) {
         *ok = 0;
         return 0;
     }
@@ -4888,7 +4894,10 @@ static int gc_semantic_policy_order_actions(GCSemanticIterativeContext *ctx,
         if (!deferred_legality) {
             GCSemanticPosition child;
             ctx->policy_preorder_checked_transitions++;
-            if (!gc_semantic_runtime_make_checked(&child, ctx->rules, position, actions->data[i])) continue;
+            int made = gc_semantic_runtime_make_checked_status(
+                &child, ctx->rules, position, actions->data[i]);
+            if (made < 0) { free(ordered); ctx->control = 4; return 0; }
+            if (!made) continue;
         }
         double features[24];
         if (!gc_semantic_policy_action_features(ctx->rules, position, actions->data[i], features)) {
@@ -4954,10 +4963,10 @@ static int gc_semantic_order_actions(GCSemanticIterativeContext *ctx,
         }
         GCSemanticPosition child;
         memset(&child, 0, sizeof(child));
-        if (!gc_semantic_runtime_make_checked(
-                &child, ctx->rules, position, actions->data[i])) {
-            continue;
-        }
+        int made = gc_semantic_runtime_make_checked_status(
+            &child, ctx->rules, position, actions->data[i]);
+        if (made < 0) { free(ordered); ctx->control = 4; return 0; }
+        if (!made) continue;
         int mover_score = 0;
         int cache_hit = 0;
         if (ctx->ordering_cache != NULL) {
@@ -5528,7 +5537,10 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
         if (gc_semantic_is_declaration_action(action)) continue;
         int deferred_policy = ctx->policy_deferred_legality;
         if (deferred_policy) ctx->policy_traversal_checked_attempts++;
-        if (!gc_semantic_runtime_make_checked(child, ctx->rules, position, action)) {
+        int made = gc_semantic_runtime_make_checked_status(
+            child, ctx->rules, position, action);
+        if (made < 0) { ctx->control = 4; break; }
+        if (!made) {
             if (deferred_policy) ctx->policy_traversal_illegal_skips++;
             continue;
         }

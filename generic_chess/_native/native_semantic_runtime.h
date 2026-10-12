@@ -27,6 +27,15 @@ int gc_semantic_runtime_make_checked(GCSemanticPosition *child,
                                       const GCSemanticPosition *parent,
                                       uint64_t action);
 
+/* Internal status: 1 success, 0 rule/input/capacity rejection, -1 child
+ * identity failure (including nested reply). Boolean callers stay 0/1. */
+int gc_semantic_runtime_make_checked_status(GCSemanticPosition *,
+    const GCSemanticRules *, const GCSemanticPosition *, uint64_t);
+
+/* Internal availability keeps nested execution failures distinct from no move. */
+int gc_semantic_runtime_probe_action_status(const GCSemanticRules *,
+    const GCSemanticPosition *, uint64_t);
+
 /* Readonly S0-S4 action existence probe; no child identity/history output. */
 int gc_semantic_runtime_probe_action(const GCSemanticRules *rules,
                                     const GCSemanticPosition *parent,

@@ -107,6 +107,17 @@ failure confirms oldrefusal/viewacceptance. Keep this fast path private until
 its failure contract is explicitly resolved; no global key framework or UI task.
 New allarms64s D6 resource results are separate, old caps remain immutable.
 
+NATIVE_EXECUTION_FAILURES.md repairs the observed false completion with explicit
+internal child-identity failure status, including nestedS3 replies. A second observed terminal-availability Boolean
+loss is fixed through the existing ok channel; actualplayedprefix3 fault retains
+D1 andsameTT recovery. Sixpersistentfaultregressions coverbothpaths. Initialproduction
+2270active tests and actualold-fails/new-passes regression support the scoped
+iterative-search change; no global/default/UI optimizer follows. Probe retry alone
+misses nested failures and is rejected. A private material view under a declared
+valid-input/required-computation failure contract remains a separate cost choice.
+SEARCH_SPEED_EVIDENCE.md separates existing specialized/hybrid/native-state
+ratios from the missing current matched persistentNative/specialist interval.
+
 ## Retained long-term objectives and evidence discipline
 
 Two long-term lines remain: rule-only generic piece-value generation with

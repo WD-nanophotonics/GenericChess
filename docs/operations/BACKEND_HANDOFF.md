@@ -47,6 +47,13 @@ ordering_cache_allocated_bytes reports table allocation, not RSS or active
 capacity; None indicates older kernels or a search that did not start.
 Rebinding, clearing TT, cancellation and retry are tested.
 
+Persistent iterative Native search now reports child-identity execution failures
+as internal_error and retains the last completed action/score/PV. An error result
+is not a claim the requested horizon completed. Actual serializer fault
+regressions and full active tests cover the repaired path; standalone Boolean
+helpers and arbitrary OOM/corrupt-state handling are not universally certified.
+See research/NATIVE_EXECUTION_FAILURES.md and SEARCH_SPEED_EVIDENCE.md for scope.
+
 Still private, not enabled: root-only canonical ordering (observed depth loss),
 immediate-terminal proof stop (different caller goal), altered q4 completion
 policy and the transient static-ordering view. Larger cache capacity was rejected; normal-output parity of the view does not establish identical digest/allocation failure handling. Small learned evaluators
