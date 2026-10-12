@@ -1202,3 +1202,40 @@ PRIMARY新开AGENT_REQUEST询问同序薄桥的关键混杂；Dot完整回复已
 未解决：persistentNative/专用完全匹配区间、完整陌生域推广与学习目标辨识仍开放。单根D4→D6不授权统一min2/UI策略。下一步只选一个实际消费者成本/匹配条件；辅助沿自己的资格/轨迹诊断，不自动交付新工单。主发布后给Dot固定报告/本记录链接，投递不冒称它已审阅新版本。
 
 辅助固定报告：https://github.com/WD-nanophotonics/GenericChess/blob/e915d8bf0d9ec194930a92fc90c21c9fb9a94b63/results/dev_aux/SEGMENT_20261012_24.md
+
+## PRIMARY current caller/terminal identity —2026-10-13
+
+PRIMARY repairs the observed stale fixed-winner gate and removes redundant
+terminal digest queries, retaining canonical full identities/import/history
+semantics. Actual Core profiles,4Shogi same-order cells, purpose-separated
+persistent counts,72-cell delivery, exact1M controls and final2286 regressions
+support the change. Full matched persistent/specialist scheduling is not claimed;
+ordinary concurrent load, asymmetric replay cost and synthetic import controls
+stay explicit. Runtime changes remain backend-only; no UI/default switch.
+
+DEV_AUX independently delivers b5fc958d4a8263ce3946fd2b92f7f37513851231 segment25:
+MaterialLv1 qualification, candidate-price SEE, two keepalive cost controls,
+small learning/development failure and prepared multiple mate-family roots.
+PRIMARY read its complete published report without repeating938games or using
+its earlier kernel as acceptance for our patch. Its SEE remains approximate and
+its engine has fixed margins/heuristics; the data is an overall reference.
+
+Dot's new PRIMARY request/reply was read completely and reconciled. Adopt one
+actual persistent call-purpose check before extrapolating fixed costs; defer a
+new aligned specialist engine and2percent nonboard-map caching. That check
+finds requiredchild identity, zeroidentity in readonly/frontier/staticordering,
+and redundantterminal hashing; implementation follows the actual consumer.
+Dot read the previous fixed report, not our then-unpublished new code or tests.
+No routine acknowledgement/wake loop, duplicate auxiliary launch, shared-file
+write or coordination conflict was observed. Shared IDs route participants;
+they are not cryptographic process authentication. Source/delivery boundaries
+and timing interpretation stay separate. The substantive source/cost issue was
+resolved without a new communication framework or approval queue.
+
+Efficiency evidence: exact1M reuse controls save11–14percent locally, and Gen2
+16s completes one further depth. The auxiliary's cheapness result belongs to its
+separate16game cohort. Engineering/model token overhead is unmetered, not zero.
+Startup/import/compiler diagnostic mistakes are retained with fixes; no hidden
+SAC/runtime/quota block or user action. Remaining questions are actual residual
+cost/finite transfer, declared fixed/declaration scope and useful evaluation;
+see ../research/CURRENT_CALLER_TERMINAL_IDENTITY.md and its bound data index.

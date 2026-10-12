@@ -399,6 +399,9 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     PyDict_SetItemString(dict, "fixed_depth_alphabeta", value);
     Py_DECREF(value);
     value = PyBool_FromLong(1);
+    PyDict_SetItemString(dict, "semantic_fixed_depth_terminal_winners", value);
+    Py_DECREF(value);
+    value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "repetition_context_hash", value);
     Py_DECREF(value);
     value = PyBool_FromLong(1);
@@ -3284,18 +3287,26 @@ static PyObject *gc_semantic_has_legal_action_audit(PyObject *self, PyObject *ar
         "attack_check_calls", audit.attack_check_calls);
 }
 
-static int gc_semantic_repetition_count(const GCSemanticRules *rules,
-                                        const GCSemanticPosition *position,
-                                        unsigned long *count_out) {
-    if (position->history_len > 0 && !position->history_exact) return -1;
+static int gc_semantic_current_words(const GCSemanticRules *rules,
+    const GCSemanticPosition *position, const uint64_t *known, uint64_t words[4]) {
+    if (known) { memcpy(words, known, 4*sizeof(uint64_t)); return 1; }
     char digest[65];
     if (!gc_semantic_position_key_digest(rules, position, digest)) return -1;
-    uint64_t words[4] = {0, 0, 0, 0};
+    memset(words, 0, 4*sizeof(uint64_t));
     for (int w = 0; w < 4; w++) for (int i = 0; i < 16; i++) {
         char c = digest[w * 16 + i];
         uint8_t n = (uint8_t)(c >= '0' && c <= '9' ? c - '0' : c - 'a' + 10);
         words[w] = (words[w] << 4) | n;
     }
+    return 1;
+}
+
+static int gc_semantic_repetition_count(const GCSemanticRules *rules,
+                                        const GCSemanticPosition *position,
+                                        unsigned long *count_out, const uint64_t *known) {
+    if (position->history_len > 0 && !position->history_exact) return -1;
+    uint64_t words[4];
+    if (gc_semantic_current_words(rules, position, known, words) < 0) return -1;
     unsigned long count = 0;
     for (uint16_t i = 0; i < position->history_len; i++)
         if (memcmp(position->history_digest[i], words, sizeof(words)) == 0) count++;
@@ -3402,17 +3413,11 @@ static PyObject *gc_semantic_available_declarations(PyObject *self, PyObject *ar
 
 static int gc_semantic_continuous_check_winner(const GCSemanticRules *rules,
                                                const GCSemanticPosition *position,
-                                               int *winner_out) {
+                                               int *winner_out, const uint64_t *known) {
     if (rules->repetition_limit < 1 || !position->history_events_exact ||
         position->history_len == 0) return 0;
-    char digest[65];
-    if (!gc_semantic_position_key_digest(rules, position, digest)) return -1;
-    uint64_t words[4] = {0, 0, 0, 0};
-    for (int w = 0; w < 4; w++) for (int i = 0; i < 16; i++) {
-        char c = digest[w * 16 + i];
-        uint8_t n = (uint8_t)(c >= '0' && c <= '9' ? c - '0' : c - 'a' + 10);
-        words[w] = (words[w] << 4) | n;
-    }
+    uint64_t words[4];
+    if (gc_semantic_current_words(rules, position, known, words) < 0) return -1;
     uint16_t occurrences[GC_SEM_MAX_PLY + 1];
     uint16_t count = 0;
     for (uint16_t i = 0; i < position->history_len; i++) {
@@ -3473,9 +3478,9 @@ static int gc_semantic_automatic_status(const GCSemanticRules *rules,
     return 0;
 }
 
-static int gc_semantic_terminal_status(const GCSemanticRules *rules,
+static int gc_semantic_terminal_status_known(const GCSemanticRules *rules,
                                        const GCSemanticPosition *position,
-                                       int *winner_out) {
+                                       int *winner_out, const uint64_t *known) {
     int ok = 1;
     int has_action = gc_semantic_has_guarded_action(rules, position, &ok);
     if (!ok) return -1;
@@ -3490,15 +3495,17 @@ static int gc_semantic_terminal_status(const GCSemanticRules *rules,
         return 2; /* stalemate */
     }
     unsigned long repetitions = 0;
-    if (gc_semantic_repetition_count(rules, position, &repetitions) < 0) return -1;
-    if (rules->repetition_policy == 1) {
+    if (gc_semantic_repetition_count(rules, position, &repetitions, known) < 0) return -1;
+    /* The exact count is already known. Below the threshold, continuous
+     * check cannot decide a winner; avoid a second digest/history scan. */
+    if (rules->repetition_policy == 1 && repetitions >= rules->repetition_limit) {
         /* At the repetition threshold, digests alone cannot distinguish a
          * draw from continuous-check loss. Do not silently adjudicate a draw
          * when an imported history has omitted actors/check events. */
         if (repetitions >= rules->repetition_limit &&
             !position->history_events_exact) return -1;
         int perpetual_winner = -1;
-        int perpetual = gc_semantic_continuous_check_winner(rules, position, &perpetual_winner);
+        int perpetual = gc_semantic_continuous_check_winner(rules, position, &perpetual_winner, known);
         if (perpetual < 0) return -1;
         if (perpetual > 0) {
             if (winner_out) *winner_out = perpetual_winner;
@@ -3512,6 +3519,11 @@ static int gc_semantic_terminal_status(const GCSemanticRules *rules,
         rules->automatic_adjudications[0].outcome == 3) return 6;
     if (position->ply >= rules->max_ply) return 4; /* max ply */
     return 0; /* ongoing */
+}
+
+static int gc_semantic_terminal_status(const GCSemanticRules *rules,
+    const GCSemanticPosition *position, int *winner_out) {
+    return gc_semantic_terminal_status_known(rules, position, winner_out, NULL);
 }
 
 static PyObject *gc_semantic_terminal(PyObject *self, PyObject *args) {
@@ -5412,7 +5424,14 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
         return score;
     }
     int winner = -1;
-    int terminal = gc_semantic_terminal_status(ctx->rules, position, &winner);
+    /* Only a successful full checked edge can extend the parent history by
+     * one entry. That appended digest is the current child's canonical key.
+     * Imported roots and transient/discarded children use the original oracle. */
+    const uint64_t *known = NULL;
+    if (ply > 0 && position->history_exact && position->history_len > 0 &&
+        position->history_len == ctx->stack[ply-1].history_len + 1)
+        known = position->history_digest[position->history_len-1];
+    int terminal = gc_semantic_terminal_status_known(ctx->rules, position, &winner, known);
     if (terminal < 0) {
         ctx->control = 4;
         return 0;

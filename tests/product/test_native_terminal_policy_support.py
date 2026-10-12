@@ -41,10 +41,16 @@ def test_draw_policy_keeps_existing_native_search_entry():
 
 
 @pytest.mark.parametrize('entry',[fixed_depth_search,probe_search])
-def test_legacy_fixed_probe_reject_continuous_check_winner_policy(entry):
+def test_legacy_fixed_probe_reject_continuous_check_winner_policy(entry, monkeypatch):
     rules=replace(build_builtin_ruleset('standard_shogi'),stalemate_result='draw')
     compiled=compile_ruleset_for_execution(rules)
     native=compile_native_semantic_rules(compiled)
+    from generic_chess.native import _module
+    kernel = _module()
+    original = kernel.native_capabilities
+    monkeypatch.setattr(kernel, 'native_capabilities', lambda: {
+        k: v for k, v in original().items()
+        if k != 'semantic_fixed_depth_terminal_winners'})
     with pytest.raises(NativeUnsupportedRuleError,match='continuous-check winners'):
         entry(native,None,1)
 
@@ -174,3 +180,83 @@ def test_recursive_child_uses_shared_stalemate_winner(policy, score):
     assert all(r["terminal"] and r["search_ply"] == 1 and r["score_native"] == score
                for r in matching)
     assert snapshot(native, packed) == saved
+
+
+@pytest.mark.parametrize("entry", [fixed_depth_search, probe_search])
+@pytest.mark.parametrize("checker", [0, 1])
+def test_fixed_reference_preserves_legally_replayed_continuous_winner(entry, checker):
+    from scripts.search_backend_comparison import CoreBoard, VALUES
+    from scripts.native_backend_bridge import NativeBoard
+    from generic_chess.native.semantic import snapshot, make_checked
+    from generic_chess.core.transition import apply_action
+    from generic_chess.core.movegen import legal_actions
+    rules = replace(build_builtin_ruleset('standard_shogi'), stalemate_result='draw')
+    compiled = compile_ruleset_for_execution(rules)
+    setup, cycle = (('4k4/3R5/9/9/9/9/9/9/8K b - 1', '6b5b 5a6a 5b6b 6a5a')
+                    if checker == 0 else
+                    ('k8/9/9/9/9/9/9/5r3/4K4 w - 1', '4h5h 5i4i 5h4h 4i5i'))
+    moves = (cycle.split() * 3)
+    ended = CoreBoard(dict(game='shogi', setup=setup, moves=' '.join(moves)), compiled)
+    terminal = NativeBoard(ended, VALUES['shogi'])
+    before = snapshot(terminal.native, terminal.position)
+    result = entry(terminal.native, terminal.position, 2,
+                   board_values=VALUES['shogi'], hand_values=VALUES['shogi'])
+    assert ended.initial.terminal_status.winner == 1-checker
+    assert result['score'] == -1000000 and result['best_action'] is None
+    assert result['nodes'] == 1
+    assert snapshot(terminal.native, terminal.position) == before
+
+    # An actual recursive child reaches the fourth repetition: compare every
+    # one-ply root value to Core's complete history, not just terminal roots.
+    core = CoreBoard(dict(game='shogi', setup=setup, moves=' '.join(moves[:-1])), compiled)
+    board = NativeBoard(core, VALUES['shogi'])
+    before = snapshot(board.native, board.position)
+    actions = {core.label(a): a for a in legal_actions(core.initial, compiled)}
+    values = {}
+    for label, raw in board.actions():
+        child = apply_action(core.initial, actions[label], compiled)
+        status = child.terminal_status
+        expected = (0 if status.winner is None else
+                    (1000000 if status.winner == core.initial.position.side_to_move else -1000000)) if status.is_terminal else -core.material.evaluate(child)
+        observed = entry(board.native, make_checked(board.native, board.position, raw), 0,
+                         board_values=VALUES['shogi'], hand_values=VALUES['shogi'])
+        assert -observed['score'] == expected
+        values[raw] = expected
+    result = entry(board.native, board.position, 1,
+                   board_values=VALUES['shogi'], hand_values=VALUES['shogi'])
+    best = max(values.values())
+    assert best == 1000000 and result['score'] == best
+    assert result['best_action'] == min(raw for raw, score in values.items() if score == best)
+    assert snapshot(board.native, board.position) == before
+    assert core.restored() and board.restored()
+
+
+@pytest.mark.parametrize("tt_megabytes", [0, 1])
+def test_persistent_imported_root_must_not_trust_last_history_digest(tt_megabytes):
+    from generic_chess.native import _module
+    from generic_chess.native.semantic import pack_position, snapshot
+    compiled = compile_ruleset_for_execution(replace(
+        build_builtin_ruleset('western_chess'), repetition_limit=4))
+    session = GameSession(compiled)
+    provider = NativeSemanticLegalityProvider.try_create(compiled, strict=True)
+    payload = provider._state_only_payload(session.state.position, 3)
+    # Raw imported-history boundary, not a claim of a legally replayed game.
+    # All four supplied digests match each other, but none is this board's key.
+    payload['history'] = [(1, 2, 3, 4, 255, 0), (1, 2, 3, 4, 0, 0),
+                          (1, 2, 3, 4, 1, 0), (1, 2, 3, 4, 0, 0)]
+    rules = provider.native_rules
+    packed = pack_position(rules, payload)
+    before = snapshot(rules, packed)
+    assert terminal_status(rules, packed)['status'] == 'ongoing'
+    engine = SemanticSearchEngine(compiled, rules, tt_megabytes=tt_megabytes)
+    for _ in range(2):
+        result = _module().semantic_engine_search(
+            engine._capsule, packed, 2, 100000, 8, None, None, True, False)
+        assert result['completed_depth'] == 2 and result['nodes'] > 1
+        assert result['best_action'] is not None
+        assert snapshot(rules, packed) == before
+    payload['history'] = [(1, 2)] * 4
+    bad = pack_position(rules, payload)
+    with pytest.raises(ValueError, match='exact full history'):
+        _module().semantic_engine_search(
+            engine._capsule, bad, 2, 100000, 8, None, None, True, False)

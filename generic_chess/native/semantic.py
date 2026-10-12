@@ -425,8 +425,12 @@ def search_runtime_sizes() -> dict:
 
 def _run_search(native_rules, position, depth: int, *, board_values=None, hand_values=None, entrypoint: str) -> dict:
     native_rules.require_terminal_policy_support()
-    if (native_rules.report.semantic_payload_version < 5
-            and native_rules.repetition_policy == "continuous_check_loss"):
+    # The executor now shares the exact terminal/winner authority. Payload
+    # version describes rule encoding, not this installed search capability.
+    # Older kernels retain the explicit rejection until rebuilt.
+    if (native_rules.repetition_policy == "continuous_check_loss"
+            and not _module().native_capabilities().get(
+                "semantic_fixed_depth_terminal_winners", False)):
         from .compiler import NativeUnsupportedRuleError
         raise NativeUnsupportedRuleError(
             "Native fixed/probe search does not score continuous-check winners; "
@@ -454,7 +458,10 @@ def _run_search(native_rules, position, depth: int, *, board_values=None, hand_v
 
 
 def fixed_depth_search(native_rules, position, depth: int, *, board_values=None, hand_values=None) -> dict:
-    """Run production fixed-depth semantic AlphaBeta over guarded actions.
+    """Run fixed-depth semantic AlphaBeta over guarded board/drop actions.
+
+    This finite board-action reference retains terminal winner/history rules.
+    Optional declarations are not searched; use persistent search for them.
 
     ``board_values`` and ``hand_values`` are optional evaluator profiles; when
     supplied they must be paired.  A

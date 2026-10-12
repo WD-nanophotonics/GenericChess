@@ -226,3 +226,21 @@ not uniform/default adoption. Auxiliarye915 segment24 read-only cheaplearning
 shows conditional proxy gains and mixedTD; no human-price fitting or mainpatch
 acceptance follows. Next choose one actual supported caller/remaining primitive
 cost or matchedpersistent scheduling question, not a new specialist engine.
+
+Current decision2026-10-13: CURRENT_CALLER_TERMINAL_IDENTITY.md distinguishes
+actual Core readonly frontier0child-key/history from the oldguarded bridge.
+Do not port that bridge's cost as a productCore defect; nonboard-map2percent
+is deferred. Fixed/probe now checks an installed shared-winner capability,
+retaining oldbinary rejection and explicit board/drop-only reference scope.
+FourShogiD3 sameorder/fullsequence cells and legal continuouscheck history
+controls qualify this finite comparison, not completepersistent scheduling.
+Actualpersistent purpose counters locate requiredchild and redundantterminal
+canonical SHA work. Threshold-only pruning and reuse only of a fullchecked
+nonroot child's appended digest preserve fullhistory, importoracle, TT/order
+andrequired errors. Final2286 active tests pass; equal1M/64 pairs save11–14percent
+for the reuse stage after threshold repair, without changed result/work.
+Gen2 uncapped16s D5→D6 in bothorders; Shogi4/16/64 horizons unchanged.
+Freshgenerated transfer is predeclared; retain every root and partial/cap result.
+Auxb5fc958d segment25 matureMaterialLv1 build/cheapcost/learning reviewed,
+notreproduced or used for primaryacceptance. Next inspect the remaining actual
+consumer cost after exactidentity reuse; no new specialist/positioncache/engine.

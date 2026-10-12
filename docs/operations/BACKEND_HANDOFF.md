@@ -90,3 +90,17 @@ The original Shogi fixed/probe policy gate remains explicit. Persistent Native
 and Core/UI routes are separate; no frontend branch or default was modified.
 Final2280 full regressions and preserved old-fails/new-passes witnesses qualify
 this finite repair. See research/PACKED_ORDER_AND_FIXED_SEARCH.md.
+
+## Terminal identity update2026-10-13
+
+Rebuild the optional Native extension with scripts/build_native_zig.py to get
+semantic_fixed_depth_terminal_winners. Payload remains4; old kernels without
+that capability keep rejecting continuous-check fixed/probe calls. The fixed
+reference searches board/drop actions with complete terminal winner/history,
+not optional declaration decisions. Persistent search retains declarations.
+Its internal nonroot checked-child digest reuse preserves canonical full SHA,
+root revalidation, exact history, prices, TT/ordering and required error paths.
+There is no public result schema or UI/default policy change.2286 active tests
+pass on the final source; current finite resource/cost evidence and limitations:
+../research/CURRENT_CALLER_TERMINAL_IDENTITY.md. UI Test remains user-owned;
+PRIMARY only publishes backend changes on sandbox, with reviewed later merges.
