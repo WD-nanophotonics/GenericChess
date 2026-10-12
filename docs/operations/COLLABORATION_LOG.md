@@ -1080,3 +1080,10 @@ Dot新请求1791808471/回复1791809316完整保存/对账；它独立读已发�
 
 记录与Agent-only科学归档将同步sandbox并给Dot固定版本链接；送达不等于其已审查。
 排除原始Slack/account、用户UI/私有输入、二进制、stop/session/memo和compiler私有日志。
+
+本段后续实际serializer故障传播检查发现旧排序会completedD2/score0/actionNone，
+而私有view有合法D2；并非本机OOM。初步私有fail-closed补丁实际返回internal_error，
+保留合法D1，不虚称生产修复；正常候选和capacity错误分类留待下段具体检查。
+Dot异议转化成可重复失败证据和一个实际下一步；已主动告知用户，无需用户操作。
+说明格式检查最初遇UTF8默认解码/CRLF，已用字节LF规范化修正并再次44测试发布，
+历史未重写；最终发布38ce/a9d8只是当前中间版本，补充证据另行固定链接。

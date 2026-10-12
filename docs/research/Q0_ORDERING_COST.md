@@ -75,3 +75,22 @@ full51.20/51.91s versusguarded41.34/41.65s. This confirms lower fixed-work cost 
 a deeper horizon; it does not show an extra completed horizon or better decision.
 The entire declared short plane stayed below its600s fuse. No old16s run was
 extended or relabelled, and the serializer-failure limit still prevents adoption.
+
+## Actual private failure propagation and first guard
+
+Scoped serializer-false injection during ordering only (packing/recursive
+transitions remain normal) exposes a concrete failure path: savedgen2 D2 returns
+completed/score0/actionNone/80visits after all ordering candidates are discarded.
+The recorder initially rejected the missing legal action; raw unexpected output
+was then captured explicitly. One prior attempt plus two recorded arms were
+actually called; no repeated machine blockage is inferred. The same private
+view returns a legalD2/-2514 result, confirming different failure behavior.
+
+A one-call PRIVATE repair checks a failed fullchecked ordering action against
+the same postcondition view; if it would otherwise succeed, stop with
+internal_error and retain the prior completedD1/legal action. That actual guard
+passes, with parent restoration. This is an observed error-path repair candidate,
+not a product change or proof of every invalid-input/OOM case. Normal-candidate
+cost and capacity refusal need scoped checks before product adoption. No user
+intervention is required; no real machine OOM or Smart App Control fault occurred.
+Evidence supplement: data/q0_ordering_failure_20261012.json.
