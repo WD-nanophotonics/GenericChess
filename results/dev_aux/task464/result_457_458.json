@@ -1,0 +1,540 @@
+{
+  "status": "PASS_DERIVATION",
+  "rows": [
+    {
+      "task": 457,
+      "arm": "few4",
+      "baseline_games": 8,
+      "source_file": "results/dev_aux/task457/games.jsonl",
+      "source_sha256": "50397e110656d031cee3716cd397a109761de26b450fef833978337564f168c9",
+      "source_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "query_calls": 85,
+      "played_states": 176,
+      "PV_states": 1620,
+      "played_rank": 11,
+      "PV_rank": 12,
+      "combined_rank": 12,
+      "combined_singular_values": [
+        87.02809315287261,
+        66.98299095837453,
+        44.866160062727566,
+        36.614700454963206,
+        29.859282485690247,
+        25.34646661398646,
+        16.31593337662004,
+        14.820179675646004,
+        12.256076643179442,
+        11.96122226292375,
+        6.083009278516267,
+        5.256285164666137
+      ],
+      "played_presence": {
+        "2": 176,
+        "3": 176,
+        "4": 176,
+        "5": 158,
+        "6": 176,
+        "7": 176,
+        "9": 39,
+        "10": 0,
+        "11": 18,
+        "12": 20,
+        "13": 47,
+        "14": 6
+      },
+      "PV_presence": {
+        "2": 1620,
+        "3": 1620,
+        "4": 1620,
+        "5": 1510,
+        "6": 1620,
+        "7": 1620,
+        "9": 225,
+        "10": 31,
+        "11": 201,
+        "12": 182,
+        "13": 401,
+        "14": 56
+      },
+      "cells": [
+        {
+          "root_seed": 2026103310,
+          "color": 0,
+          "played_states": 22,
+          "PV_states": 256,
+          "played_rank": 3,
+          "PV_rank": 5,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103310,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 253,
+          "played_rank": 4,
+          "PV_rank": 6,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103311,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 162,
+          "played_rank": 6,
+          "PV_rank": 11,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103311,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 287,
+          "played_rank": 3,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103312,
+          "color": 0,
+          "played_states": 16,
+          "PV_states": 161,
+          "played_rank": 5,
+          "PV_rank": 9,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103312,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 140,
+          "played_rank": 6,
+          "PV_rank": 8,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103313,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 229,
+          "played_rank": 4,
+          "PV_rank": 7,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103313,
+          "color": 1,
+          "played_states": 13,
+          "PV_states": 132,
+          "played_rank": 4,
+          "PV_rank": 8,
+          "terminal": "checkmate"
+        }
+      ]
+    },
+    {
+      "task": 458,
+      "arm": "wide16",
+      "baseline_games": 32,
+      "source_file": "results/dev_aux/task458/games.jsonl",
+      "source_sha256": "4192a90341014d97e40e8026e3c7ce78e4de1c1850a2b4149643aad5c01b7ad9",
+      "source_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "query_calls": 341,
+      "played_states": 709,
+      "PV_states": 6109,
+      "played_rank": 12,
+      "PV_rank": 12,
+      "combined_rank": 12,
+      "combined_singular_values": [
+        150.9092992589771,
+        106.42138412990052,
+        82.65136043853187,
+        78.8847158937895,
+        68.21578248672988,
+        65.36679534795402,
+        35.873763365969296,
+        34.353904496679284,
+        28.668275289316988,
+        20.710800355946414,
+        16.096374628700868,
+        14.717252151085244
+      ],
+      "played_presence": {
+        "2": 709,
+        "3": 709,
+        "4": 709,
+        "5": 691,
+        "6": 709,
+        "7": 709,
+        "9": 152,
+        "10": 27,
+        "11": 156,
+        "12": 46,
+        "13": 189,
+        "14": 28
+      },
+      "PV_presence": {
+        "2": 6109,
+        "3": 6109,
+        "4": 6109,
+        "5": 5993,
+        "6": 6109,
+        "7": 6109,
+        "9": 920,
+        "10": 238,
+        "11": 1181,
+        "12": 418,
+        "13": 1545,
+        "14": 269
+      },
+      "cells": [
+        {
+          "root_seed": 2026103310,
+          "color": 0,
+          "played_states": 22,
+          "PV_states": 256,
+          "played_rank": 3,
+          "PV_rank": 5,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103310,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 253,
+          "played_rank": 4,
+          "PV_rank": 6,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103311,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 162,
+          "played_rank": 6,
+          "PV_rank": 11,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103311,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 287,
+          "played_rank": 3,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103312,
+          "color": 0,
+          "played_states": 16,
+          "PV_states": 161,
+          "played_rank": 5,
+          "PV_rank": 9,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103312,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 140,
+          "played_rank": 6,
+          "PV_rank": 8,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103313,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 229,
+          "played_rank": 4,
+          "PV_rank": 7,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103313,
+          "color": 1,
+          "played_states": 13,
+          "PV_states": 132,
+          "played_rank": 4,
+          "PV_rank": 8,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103314,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 205,
+          "played_rank": 6,
+          "PV_rank": 7,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103314,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 199,
+          "played_rank": 6,
+          "PV_rank": 8,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103315,
+          "color": 0,
+          "played_states": 14,
+          "PV_states": 158,
+          "played_rank": 3,
+          "PV_rank": 6,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103315,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 178,
+          "played_rank": 6,
+          "PV_rank": 8,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103316,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 269,
+          "played_rank": 7,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103316,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 108,
+          "played_rank": 7,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103317,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 205,
+          "played_rank": 6,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103317,
+          "color": 1,
+          "played_states": 19,
+          "PV_states": 165,
+          "played_rank": 5,
+          "PV_rank": 9,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103318,
+          "color": 0,
+          "played_states": 12,
+          "PV_states": 99,
+          "played_rank": 4,
+          "PV_rank": 5,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103318,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 164,
+          "played_rank": 5,
+          "PV_rank": 8,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103319,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 216,
+          "played_rank": 5,
+          "PV_rank": 7,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103319,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 230,
+          "played_rank": 5,
+          "PV_rank": 8,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103320,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 276,
+          "played_rank": 5,
+          "PV_rank": 11,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103320,
+          "color": 1,
+          "played_states": 11,
+          "PV_states": 80,
+          "played_rank": 3,
+          "PV_rank": 5,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103321,
+          "color": 0,
+          "played_states": 10,
+          "PV_states": 112,
+          "played_rank": 5,
+          "PV_rank": 9,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103321,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 185,
+          "played_rank": 7,
+          "PV_rank": 10,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103322,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 294,
+          "played_rank": 4,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103322,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 201,
+          "played_rank": 7,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103323,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 193,
+          "played_rank": 4,
+          "PV_rank": 8,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103323,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 174,
+          "played_rank": 5,
+          "PV_rank": 7,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103324,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 253,
+          "played_rank": 3,
+          "PV_rank": 8,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103324,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 217,
+          "played_rank": 6,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103325,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 162,
+          "played_rank": 5,
+          "PV_rank": 8,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103325,
+          "color": 1,
+          "played_states": 17,
+          "PV_states": 146,
+          "played_rank": 2,
+          "PV_rank": 6,
+          "terminal": "checkmate"
+        }
+      ]
+    }
+  ],
+  "axes": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "new_go": 0,
+  "seconds": 0.26721350010484457,
+  "scope": "ALL declared unit-initial baseline cells selected by exact immutable update source references; signed board+hand linear feature rank of played and actually returned PV states ONLY, no full searched-frontier/parameter identifiability or human-price proof. Shared baseline records may occur across same-root objective arms; no independent replications claim."
+}

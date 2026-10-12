@@ -1,0 +1,3603 @@
+{
+  "status": "PASS_DERIVATION",
+  "summaries": [
+    {
+      "task": 432,
+      "family": "unit",
+      "root_color_cells": 8,
+      "goalinvariant_cells": 0,
+      "allpricewin_cells": 0,
+      "first_move_invariant_cells": 1,
+      "price_sensitive_first_move_but_goal_invariant": 0,
+      "allpricewin_with_speed_response": 0
+    },
+    {
+      "task": 432,
+      "family": "random2514",
+      "root_color_cells": 8,
+      "goalinvariant_cells": 1,
+      "allpricewin_cells": 1,
+      "first_move_invariant_cells": 4,
+      "price_sensitive_first_move_but_goal_invariant": 0,
+      "allpricewin_with_speed_response": 0
+    },
+    {
+      "task": 433,
+      "family": "unit",
+      "root_color_cells": 8,
+      "goalinvariant_cells": 0,
+      "allpricewin_cells": 0,
+      "first_move_invariant_cells": 2,
+      "price_sensitive_first_move_but_goal_invariant": 0,
+      "allpricewin_with_speed_response": 0
+    },
+    {
+      "task": 433,
+      "family": "random2514",
+      "root_color_cells": 8,
+      "goalinvariant_cells": 0,
+      "allpricewin_cells": 0,
+      "first_move_invariant_cells": 5,
+      "price_sensitive_first_move_but_goal_invariant": 0,
+      "allpricewin_with_speed_response": 0
+    },
+    {
+      "task": 439,
+      "family": "unit",
+      "root_color_cells": 8,
+      "goalinvariant_cells": 1,
+      "allpricewin_cells": 1,
+      "first_move_invariant_cells": 3,
+      "price_sensitive_first_move_but_goal_invariant": 0,
+      "allpricewin_with_speed_response": 0
+    },
+    {
+      "task": 439,
+      "family": "random2514",
+      "root_color_cells": 8,
+      "goalinvariant_cells": 1,
+      "allpricewin_cells": 1,
+      "first_move_invariant_cells": 4,
+      "price_sensitive_first_move_but_goal_invariant": 0,
+      "allpricewin_with_speed_response": 0
+    },
+    {
+      "task": 440,
+      "family": "unit",
+      "root_color_cells": 8,
+      "goalinvariant_cells": 1,
+      "allpricewin_cells": 1,
+      "first_move_invariant_cells": 3,
+      "price_sensitive_first_move_but_goal_invariant": 0,
+      "allpricewin_with_speed_response": 0
+    },
+    {
+      "task": 440,
+      "family": "random2514",
+      "root_color_cells": 8,
+      "goalinvariant_cells": 1,
+      "allpricewin_cells": 1,
+      "first_move_invariant_cells": 4,
+      "price_sensitive_first_move_but_goal_invariant": 0,
+      "allpricewin_with_speed_response": 0
+    },
+    {
+      "task": 449,
+      "family": "unit",
+      "root_color_cells": 8,
+      "goalinvariant_cells": 0,
+      "allpricewin_cells": 0,
+      "first_move_invariant_cells": 2,
+      "price_sensitive_first_move_but_goal_invariant": 0,
+      "allpricewin_with_speed_response": 0
+    },
+    {
+      "task": 449,
+      "family": "random2514",
+      "root_color_cells": 8,
+      "goalinvariant_cells": 0,
+      "allpricewin_cells": 0,
+      "first_move_invariant_cells": 4,
+      "price_sensitive_first_move_but_goal_invariant": 0,
+      "allpricewin_with_speed_response": 0
+    },
+    {
+      "task": 450,
+      "family": "unit",
+      "root_color_cells": 8,
+      "goalinvariant_cells": 0,
+      "allpricewin_cells": 0,
+      "first_move_invariant_cells": 1,
+      "price_sensitive_first_move_but_goal_invariant": 0,
+      "allpricewin_with_speed_response": 0
+    },
+    {
+      "task": 450,
+      "family": "random2514",
+      "root_color_cells": 8,
+      "goalinvariant_cells": 0,
+      "allpricewin_cells": 0,
+      "first_move_invariant_cells": 5,
+      "price_sensitive_first_move_but_goal_invariant": 0,
+      "allpricewin_with_speed_response": 0
+    }
+  ],
+  "rows": [
+    {
+      "task": 432,
+      "arm": "random1024",
+      "family": "unit",
+      "root_seed": 2026103010,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 529,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        15,
+        17,
+        19,
+        21
+      ],
+      "distinct_full_action_trajectories": 34,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "3fff9bbbdfeca537d1199c9c52fdbcb1a138322a06fc352aaaddce401460ba0d"
+    },
+    {
+      "task": 432,
+      "arm": "random1024",
+      "family": "unit",
+      "root_seed": 2026103010,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 439,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "10/19",
+        "12/19",
+        "14/19",
+        "18/19",
+        "20/19",
+        "22/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 32,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "606847124d46dedbf4d6894f9aa29250b5965d08ad3aa7ef4b485c7c4618dc08"
+    },
+    {
+      "task": 432,
+      "arm": "random1024",
+      "family": "unit",
+      "root_seed": 2026103011,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 475,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "20/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        11,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 31,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "49806b9a0daef2e75075a92bad412801ef68c76756c71574bbc2fb4b7f283a73"
+    },
+    {
+      "task": 432,
+      "arm": "random1024",
+      "family": "unit",
+      "root_seed": 2026103011,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 569,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 6,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "22/19",
+        "24/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        10,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 48,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "84b6c4d47b0fb2bd35338608921ba99cb856400028dfb63462289153002ca5a0"
+    },
+    {
+      "task": 432,
+      "arm": "random1024",
+      "family": "unit",
+      "root_seed": 2026103012,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 579,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 6,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        17,
+        23
+      ],
+      "distinct_full_action_trajectories": 48,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "7b7ef80a98502b6e11d94aa5df6f21d8dccdcc04f92e3357a6c31b47a50a2d72"
+    },
+    {
+      "task": 432,
+      "arm": "random1024",
+      "family": "unit",
+      "root_seed": 2026103012,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 515,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 6,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        8,
+        10,
+        14,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 44,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "9dea24f063de97819f965ff1cac279da52f351c73dd782415eb89d5cad63badc"
+    },
+    {
+      "task": 432,
+      "arm": "random1024",
+      "family": "unit",
+      "root_seed": 2026103013,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 481,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 3,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        7,
+        9,
+        11,
+        13,
+        15,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 36,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "93327d73b0c8c740e48e00bd2aee0b90a62a84ea09b1811a1366698761d0f622"
+    },
+    {
+      "task": 432,
+      "arm": "random1024",
+      "family": "unit",
+      "root_seed": 2026103013,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 511,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 4,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "16/19",
+        "18/19",
+        "20/19",
+        "22/19",
+        "24/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        6,
+        14,
+        18,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 34,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "67ba3cf19c8f97d18c9edf173fef92e858d95413dcd413328bad4db11d9ff540"
+    },
+    {
+      "task": 432,
+      "arm": "random1024",
+      "family": "random2514",
+      "root_seed": 2026103010,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 542,
+      "games": 47,
+      "distinct_actual_prices": 47,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        15,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 30,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "3fff9bbbdfeca537d1199c9c52fdbcb1a138322a06fc352aaaddce401460ba0d"
+    },
+    {
+      "task": 432,
+      "arm": "random1024",
+      "family": "random2514",
+      "root_seed": 2026103010,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 516,
+      "games": 47,
+      "distinct_actual_prices": 47,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 10,
+      "original_goals": [
+        "4/19",
+        "6/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        14,
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 31,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "606847124d46dedbf4d6894f9aa29250b5965d08ad3aa7ef4b485c7c4618dc08"
+    },
+    {
+      "task": 432,
+      "arm": "random1024",
+      "family": "random2514",
+      "root_seed": 2026103011,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 533,
+      "games": 47,
+      "distinct_actual_prices": 47,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 10,
+      "original_goals": [
+        "4/19",
+        "6/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 35,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "49806b9a0daef2e75075a92bad412801ef68c76756c71574bbc2fb4b7f283a73"
+    },
+    {
+      "task": 432,
+      "arm": "random1024",
+      "family": "random2514",
+      "root_seed": 2026103011,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 541,
+      "games": 47,
+      "distinct_actual_prices": 47,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 5,
+      "original_goals": [
+        "16/19",
+        "18/19",
+        "20/19",
+        "22/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 34,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "84b6c4d47b0fb2bd35338608921ba99cb856400028dfb63462289153002ca5a0"
+    },
+    {
+      "task": 432,
+      "arm": "random1024",
+      "family": "random2514",
+      "root_seed": 2026103012,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 324,
+      "games": 47,
+      "distinct_actual_prices": 47,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 3,
+      "original_goals": [
+        "12/19",
+        "16/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        11,
+        15,
+        17,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 9,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "7b7ef80a98502b6e11d94aa5df6f21d8dccdcc04f92e3357a6c31b47a50a2d72"
+    },
+    {
+      "task": 432,
+      "arm": "random1024",
+      "family": "random2514",
+      "root_seed": 2026103012,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 402,
+      "games": 47,
+      "distinct_actual_prices": 47,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 3,
+      "original_goals": [
+        "4/19",
+        "8/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        8,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 24,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "9dea24f063de97819f965ff1cac279da52f351c73dd782415eb89d5cad63badc"
+    },
+    {
+      "task": 432,
+      "arm": "random1024",
+      "family": "random2514",
+      "root_seed": 2026103013,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 518,
+      "games": 47,
+      "distinct_actual_prices": 47,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 5,
+      "original_goals": [
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 33,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "93327d73b0c8c740e48e00bd2aee0b90a62a84ea09b1811a1366698761d0f622"
+    },
+    {
+      "task": 432,
+      "arm": "random1024",
+      "family": "random2514",
+      "root_seed": 2026103013,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 141,
+      "games": 47,
+      "distinct_actual_prices": 47,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 1,
+      "original_goals": [
+        "32"
+      ],
+      "observed_terminal_states": [
+        "win"
+      ],
+      "all_tested_prices_win": true,
+      "distinct_win_terminal_plies": [
+        6
+      ],
+      "distinct_full_action_trajectories": 1,
+      "all_observed_game_goals_invariant": true,
+      "first_input_sha256": "67ba3cf19c8f97d18c9edf173fef92e858d95413dcd413328bad4db11d9ff540"
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "family": "unit",
+      "root_seed": 2026103010,
+      "color": 0,
+      "nodes": 8192,
+      "actual_go": 521,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 4,
+      "original_goals": [
+        "12/19",
+        "14/19",
+        "16/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 41,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "e954269dcbfd70085fb1a2c0125670df5ebb61657fd0483631112aea2424898e"
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "family": "unit",
+      "root_seed": 2026103010,
+      "color": 1,
+      "nodes": 8192,
+      "actual_go": 496,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 6,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "20/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 49,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "98c140f0268125f9edcf5a855cecec7b44a45cee06bd7a23845917090c2ba00d"
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "family": "unit",
+      "root_seed": 2026103011,
+      "color": 0,
+      "nodes": 8192,
+      "actual_go": 490,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        9,
+        11,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 41,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "5876d948468905b2b5c4ee4150a5e2162dac0687d529db7e442259e2d38c6dd0"
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "family": "unit",
+      "root_seed": 2026103011,
+      "color": 1,
+      "nodes": 8192,
+      "actual_go": 448,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 4,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "14/19",
+        "18/19",
+        "20/19",
+        "22/19",
+        "24/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        16,
+        18,
+        20,
+        24
+      ],
+      "distinct_full_action_trajectories": 35,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "2cd96136cf9013366c8803f3c3cce3e583ea6cb2dfb3f537cf600e2719cd4e2f"
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "family": "unit",
+      "root_seed": 2026103012,
+      "color": 0,
+      "nodes": 8192,
+      "actual_go": 489,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 5,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 5,
+      "original_goals": [
+        "12/19",
+        "14/19",
+        "16/19",
+        "20/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 38,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "6a86dac661337848bf78f59205d8d058c50d75b0c7620730c2b36e167f1d1974"
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "family": "unit",
+      "root_seed": 2026103012,
+      "color": 1,
+      "nodes": 8192,
+      "actual_go": 349,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 3,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 4,
+      "original_goals": [
+        "12/19",
+        "14/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 37,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "0455a2f03e0bcceba59efd6b475df16ae044917b59bf7619987decb9f6f8fb5d"
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "family": "unit",
+      "root_seed": 2026103013,
+      "color": 0,
+      "nodes": 8192,
+      "actual_go": 416,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 36,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "ccc969833cd321bcb2ba8f51531cb88324a7f1b6479a144b5b9057d1a9cc6be1"
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "family": "unit",
+      "root_seed": 2026103013,
+      "color": 1,
+      "nodes": 8192,
+      "actual_go": 318,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 3,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "22/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        6,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "distinct_full_action_trajectories": 22,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "872ee4f926788ae7b857817a3f628e4fc00a7a86272bf1dd31b67b2f6c687977"
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "family": "random2514",
+      "root_seed": 2026103010,
+      "color": 0,
+      "nodes": 8192,
+      "actual_go": 533,
+      "games": 47,
+      "distinct_actual_prices": 47,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "6/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 42,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "e954269dcbfd70085fb1a2c0125670df5ebb61657fd0483631112aea2424898e"
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "family": "random2514",
+      "root_seed": 2026103010,
+      "color": 1,
+      "nodes": 8192,
+      "actual_go": 522,
+      "games": 47,
+      "distinct_actual_prices": 47,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 8,
+      "original_goals": [
+        "4/19",
+        "6/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 40,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "98c140f0268125f9edcf5a855cecec7b44a45cee06bd7a23845917090c2ba00d"
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "family": "random2514",
+      "root_seed": 2026103011,
+      "color": 0,
+      "nodes": 8192,
+      "actual_go": 500,
+      "games": 47,
+      "distinct_actual_prices": 47,
+      "distinct_first_candidate_moves": 4,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 11,
+      "original_goals": [
+        "2/19",
+        "4/19",
+        "6/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 42,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "5876d948468905b2b5c4ee4150a5e2162dac0687d529db7e442259e2d38c6dd0"
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "family": "random2514",
+      "root_seed": 2026103011,
+      "color": 1,
+      "nodes": 8192,
+      "actual_go": 510,
+      "games": 47,
+      "distinct_actual_prices": 47,
+      "distinct_first_candidate_moves": 4,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "22/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        14,
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 44,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "2cd96136cf9013366c8803f3c3cce3e583ea6cb2dfb3f537cf600e2719cd4e2f"
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "family": "random2514",
+      "root_seed": 2026103012,
+      "color": 0,
+      "nodes": 8192,
+      "actual_go": 324,
+      "games": 47,
+      "distinct_actual_prices": 47,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 2,
+      "original_goals": [
+        "16/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        11,
+        13,
+        15,
+        17
+      ],
+      "distinct_full_action_trajectories": 16,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "6a86dac661337848bf78f59205d8d058c50d75b0c7620730c2b36e167f1d1974"
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "family": "random2514",
+      "root_seed": 2026103012,
+      "color": 1,
+      "nodes": 8192,
+      "actual_go": 418,
+      "games": 47,
+      "distinct_actual_prices": 47,
+      "distinct_first_candidate_moves": 3,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 4,
+      "original_goals": [
+        "12/19",
+        "14/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        8,
+        10,
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 25,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "0455a2f03e0bcceba59efd6b475df16ae044917b59bf7619987decb9f6f8fb5d"
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "family": "random2514",
+      "root_seed": 2026103013,
+      "color": 0,
+      "nodes": 8192,
+      "actual_go": 463,
+      "games": 47,
+      "distinct_actual_prices": 47,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 5,
+      "original_goals": [
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        13,
+        15,
+        17,
+        19,
+        21
+      ],
+      "distinct_full_action_trajectories": 37,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "ccc969833cd321bcb2ba8f51531cb88324a7f1b6479a144b5b9057d1a9cc6be1"
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "family": "random2514",
+      "root_seed": 2026103013,
+      "color": 1,
+      "nodes": 8192,
+      "actual_go": 300,
+      "games": 47,
+      "distinct_actual_prices": 47,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 3,
+      "original_goals": [
+        "12/19",
+        "14/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        6,
+        14,
+        16,
+        18,
+        20,
+        24
+      ],
+      "distinct_full_action_trajectories": 23,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "872ee4f926788ae7b857817a3f628e4fc00a7a86272bf1dd31b67b2f6c687977"
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "family": "unit",
+      "root_seed": 2026103110,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 496,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 5,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "12/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        13,
+        15,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 37,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "f01ec51020524683a477073c8690e92ae8d6dcd9156a3446b08a2c6a29ad352f"
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "family": "unit",
+      "root_seed": 2026103110,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 575,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "6/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 40,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "8437a26dcd92fee6974ef131c359de6477b5f42605c71ba7cc6fcfe4c32189d8"
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "family": "unit",
+      "root_seed": 2026103111,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 147,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 1,
+      "original_goals": [
+        "32"
+      ],
+      "observed_terminal_states": [
+        "win"
+      ],
+      "all_tested_prices_win": true,
+      "distinct_win_terminal_plies": [
+        5
+      ],
+      "distinct_full_action_trajectories": 2,
+      "all_observed_game_goals_invariant": true,
+      "first_input_sha256": "1dc75149c4dfd580cdea388a12c998ecde5b393b4eeeb3c2c83694b63870c445"
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "family": "unit",
+      "root_seed": 2026103111,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 459,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 5,
+      "original_goals": [
+        "16/19",
+        "18/19",
+        "20/19",
+        "22/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        12,
+        14,
+        16,
+        18,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 36,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "d7ae2d45bfd60646a43bdb3f6d4f056346ec85bba8075d1835c4cd10be3de93d"
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "family": "unit",
+      "root_seed": 2026103112,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 432,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 5,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 3,
+      "original_goals": [
+        "20/19",
+        "26/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 41,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "aa6cd56c86adbaba56f5558cfcba069f0cc83a453b85b90d25303b3d2bfbbb8a"
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "family": "unit",
+      "root_seed": 2026103112,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 558,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 5,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 40,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "1e12dd8012c072c8c08cc41fa0a161c57db958dbfecab019b67bd16a020bf2df"
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "family": "unit",
+      "root_seed": 2026103113,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 526,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "22/19",
+        "24/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 40,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "d780ddefcabfcb41073cb10779c0f30bd282761bc06fccd687b4ef4515026b1f"
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "family": "unit",
+      "root_seed": 2026103113,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 562,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 8,
+      "original_goals": [
+        "6/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 45,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "df89df49a8f31531e1ffa06f3ff1cb75babd2c9e3a22bc173237b1b10cb8d041"
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "family": "random2514",
+      "root_seed": 2026103110,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 476,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 5,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        13,
+        15,
+        17,
+        23
+      ],
+      "distinct_full_action_trajectories": 27,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "f01ec51020524683a477073c8690e92ae8d6dcd9156a3446b08a2c6a29ad352f"
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "family": "random2514",
+      "root_seed": 2026103110,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 571,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 4,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "6/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        14,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 34,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "8437a26dcd92fee6974ef131c359de6477b5f42605c71ba7cc6fcfe4c32189d8"
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "family": "random2514",
+      "root_seed": 2026103111,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 147,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 1,
+      "original_goals": [
+        "32"
+      ],
+      "observed_terminal_states": [
+        "win"
+      ],
+      "all_tested_prices_win": true,
+      "distinct_win_terminal_plies": [
+        5
+      ],
+      "distinct_full_action_trajectories": 2,
+      "all_observed_game_goals_invariant": true,
+      "first_input_sha256": "1dc75149c4dfd580cdea388a12c998ecde5b393b4eeeb3c2c83694b63870c445"
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "family": "random2514",
+      "root_seed": 2026103111,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 520,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 3,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        14,
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 37,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "d7ae2d45bfd60646a43bdb3f6d4f056346ec85bba8075d1835c4cd10be3de93d"
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "family": "random2514",
+      "root_seed": 2026103112,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 443,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 4,
+      "original_goals": [
+        "14/19",
+        "18/19",
+        "22/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 30,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "aa6cd56c86adbaba56f5558cfcba069f0cc83a453b85b90d25303b3d2bfbbb8a"
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "family": "random2514",
+      "root_seed": 2026103112,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 491,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 5,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "6/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        12,
+        16,
+        18,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 34,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "1e12dd8012c072c8c08cc41fa0a161c57db958dbfecab019b67bd16a020bf2df"
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "family": "random2514",
+      "root_seed": 2026103113,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 440,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 8,
+      "original_goals": [
+        "10/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "22/19",
+        "24/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        11,
+        13,
+        19,
+        23
+      ],
+      "distinct_full_action_trajectories": 19,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "d780ddefcabfcb41073cb10779c0f30bd282761bc06fccd687b4ef4515026b1f"
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "family": "random2514",
+      "root_seed": 2026103113,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 548,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        14,
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 35,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "df89df49a8f31531e1ffa06f3ff1cb75babd2c9e3a22bc173237b1b10cb8d041"
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "family": "unit",
+      "root_seed": 2026103110,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 496,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 5,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "12/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        13,
+        15,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 37,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "f01ec51020524683a477073c8690e92ae8d6dcd9156a3446b08a2c6a29ad352f"
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "family": "unit",
+      "root_seed": 2026103110,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 575,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "6/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 40,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "8437a26dcd92fee6974ef131c359de6477b5f42605c71ba7cc6fcfe4c32189d8"
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "family": "unit",
+      "root_seed": 2026103111,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 147,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 1,
+      "original_goals": [
+        "32"
+      ],
+      "observed_terminal_states": [
+        "win"
+      ],
+      "all_tested_prices_win": true,
+      "distinct_win_terminal_plies": [
+        5
+      ],
+      "distinct_full_action_trajectories": 2,
+      "all_observed_game_goals_invariant": true,
+      "first_input_sha256": "1dc75149c4dfd580cdea388a12c998ecde5b393b4eeeb3c2c83694b63870c445"
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "family": "unit",
+      "root_seed": 2026103111,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 459,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 5,
+      "original_goals": [
+        "16/19",
+        "18/19",
+        "20/19",
+        "22/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        12,
+        14,
+        16,
+        18,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 36,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "d7ae2d45bfd60646a43bdb3f6d4f056346ec85bba8075d1835c4cd10be3de93d"
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "family": "unit",
+      "root_seed": 2026103112,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 432,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 5,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 3,
+      "original_goals": [
+        "20/19",
+        "26/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 41,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "aa6cd56c86adbaba56f5558cfcba069f0cc83a453b85b90d25303b3d2bfbbb8a"
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "family": "unit",
+      "root_seed": 2026103112,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 558,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 5,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 40,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "1e12dd8012c072c8c08cc41fa0a161c57db958dbfecab019b67bd16a020bf2df"
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "family": "unit",
+      "root_seed": 2026103113,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 526,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "22/19",
+        "24/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 40,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "d780ddefcabfcb41073cb10779c0f30bd282761bc06fccd687b4ef4515026b1f"
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "family": "unit",
+      "root_seed": 2026103113,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 562,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 8,
+      "original_goals": [
+        "6/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 45,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "df89df49a8f31531e1ffa06f3ff1cb75babd2c9e3a22bc173237b1b10cb8d041"
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "family": "random2514",
+      "root_seed": 2026103110,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 476,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 5,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        13,
+        15,
+        17,
+        23
+      ],
+      "distinct_full_action_trajectories": 27,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "f01ec51020524683a477073c8690e92ae8d6dcd9156a3446b08a2c6a29ad352f"
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "family": "random2514",
+      "root_seed": 2026103110,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 571,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 4,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "6/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        14,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 34,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "8437a26dcd92fee6974ef131c359de6477b5f42605c71ba7cc6fcfe4c32189d8"
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "family": "random2514",
+      "root_seed": 2026103111,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 147,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 1,
+      "original_goals": [
+        "32"
+      ],
+      "observed_terminal_states": [
+        "win"
+      ],
+      "all_tested_prices_win": true,
+      "distinct_win_terminal_plies": [
+        5
+      ],
+      "distinct_full_action_trajectories": 2,
+      "all_observed_game_goals_invariant": true,
+      "first_input_sha256": "1dc75149c4dfd580cdea388a12c998ecde5b393b4eeeb3c2c83694b63870c445"
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "family": "random2514",
+      "root_seed": 2026103111,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 520,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 3,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        14,
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 37,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "d7ae2d45bfd60646a43bdb3f6d4f056346ec85bba8075d1835c4cd10be3de93d"
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "family": "random2514",
+      "root_seed": 2026103112,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 443,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 4,
+      "original_goals": [
+        "14/19",
+        "18/19",
+        "22/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 30,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "aa6cd56c86adbaba56f5558cfcba069f0cc83a453b85b90d25303b3d2bfbbb8a"
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "family": "random2514",
+      "root_seed": 2026103112,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 491,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 5,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "6/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        12,
+        16,
+        18,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 34,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "1e12dd8012c072c8c08cc41fa0a161c57db958dbfecab019b67bd16a020bf2df"
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "family": "random2514",
+      "root_seed": 2026103113,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 440,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 8,
+      "original_goals": [
+        "10/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "22/19",
+        "24/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        11,
+        13,
+        19,
+        23
+      ],
+      "distinct_full_action_trajectories": 19,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "d780ddefcabfcb41073cb10779c0f30bd282761bc06fccd687b4ef4515026b1f"
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "family": "random2514",
+      "root_seed": 2026103113,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 548,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        14,
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 35,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "df89df49a8f31531e1ffa06f3ff1cb75babd2c9e3a22bc173237b1b10cb8d041"
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "family": "unit",
+      "root_seed": 2026103210,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 472,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 5,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "18/19",
+        "20/19",
+        "22/19",
+        "24/19",
+        "26/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 46,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "3c687fc40475ef2313f313bea0c9d9872029c0948265da66ac06b9fab43e22ea"
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "family": "unit",
+      "root_seed": 2026103210,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 535,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 3,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        10,
+        16,
+        24
+      ],
+      "distinct_full_action_trajectories": 32,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "b4975766f6f2918062b5c584f65a4732a2d454beddf63e50a302333a42238269"
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "family": "unit",
+      "root_seed": 2026103211,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 554,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 8,
+      "original_goals": [
+        "-2/19",
+        "0",
+        "2/19",
+        "4/19",
+        "6/19",
+        "8/19",
+        "12/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        13,
+        15,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 41,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "02366dbd991fe11ae3c06d917e0c4b4271af5064e8831a96608d285909f19902"
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "family": "unit",
+      "root_seed": 2026103211,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 357,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 3,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 2,
+      "original_goals": [
+        "12/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        8,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "distinct_full_action_trajectories": 28,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "b464b7e4e727d9cd40db1096fe7db049f85d74d0cad05ee75e398ac5d242579f"
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "family": "unit",
+      "root_seed": 2026103212,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 582,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 5,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        11,
+        23
+      ],
+      "distinct_full_action_trajectories": 41,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "994e101c2525e7e0245dbdd855c155ecd6318c1006f4a3eab19fd99a779c07ee"
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "family": "unit",
+      "root_seed": 2026103212,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 566,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 8,
+      "original_goals": [
+        "6/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        20
+      ],
+      "distinct_full_action_trajectories": 22,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "93ddb8ce79101a5a4ea96037a3b702684e6295562c1d22fdbae89563bf4ba7af"
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "family": "unit",
+      "root_seed": 2026103213,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 515,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 7,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "8/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        9,
+        13,
+        15,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 38,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "be9651099824d79afdc7e634f420d41b89d67ae9afdfdb4fc65c85751adc3107"
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "family": "unit",
+      "root_seed": 2026103213,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 558,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 8,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        16,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 41,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "6eb94ed76571b4b663478e59b129b6a0b7e0e6e416d8f82c1b6bac1e8a89e353"
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "family": "random2514",
+      "root_seed": 2026103210,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 493,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 5,
+      "original_goals": [
+        "18/19",
+        "20/19",
+        "22/19",
+        "24/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 28,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "3c687fc40475ef2313f313bea0c9d9872029c0948265da66ac06b9fab43e22ea"
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "family": "random2514",
+      "root_seed": 2026103210,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 568,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 4,
+      "original_goals": [
+        "12/19",
+        "14/19",
+        "16/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        16,
+        24
+      ],
+      "distinct_full_action_trajectories": 15,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "b4975766f6f2918062b5c584f65a4732a2d454beddf63e50a302333a42238269"
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "family": "random2514",
+      "root_seed": 2026103211,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 435,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 3,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 3,
+      "original_goals": [
+        "6/19",
+        "8/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        15,
+        17,
+        19,
+        21
+      ],
+      "distinct_full_action_trajectories": 22,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "02366dbd991fe11ae3c06d917e0c4b4271af5064e8831a96608d285909f19902"
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "family": "random2514",
+      "root_seed": 2026103211,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 312,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 4,
+      "original_goals": [
+        "12/19",
+        "14/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        8,
+        10,
+        12,
+        18,
+        20,
+        22
+      ],
+      "distinct_full_action_trajectories": 18,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "b464b7e4e727d9cd40db1096fe7db049f85d74d0cad05ee75e398ac5d242579f"
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "family": "random2514",
+      "root_seed": 2026103212,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 588,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "6/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19"
+      ],
+      "observed_terminal_states": [
+        "cap"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [],
+      "distinct_full_action_trajectories": 38,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "994e101c2525e7e0245dbdd855c155ecd6318c1006f4a3eab19fd99a779c07ee"
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "family": "random2514",
+      "root_seed": 2026103212,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 588,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        24
+      ],
+      "distinct_full_action_trajectories": 22,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "93ddb8ce79101a5a4ea96037a3b702684e6295562c1d22fdbae89563bf4ba7af"
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "family": "random2514",
+      "root_seed": 2026103213,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 275,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 2,
+      "original_goals": [
+        "12/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        9,
+        17,
+        21
+      ],
+      "distinct_full_action_trajectories": 9,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "be9651099824d79afdc7e634f420d41b89d67ae9afdfdb4fc65c85751adc3107"
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "family": "random2514",
+      "root_seed": 2026103213,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 576,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "6/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 31,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "6eb94ed76571b4b663478e59b129b6a0b7e0e6e416d8f82c1b6bac1e8a89e353"
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "family": "unit",
+      "root_seed": 2026103210,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 429,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 4,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "16/19",
+        "18/19",
+        "20/19",
+        "22/19",
+        "24/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 38,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "3c687fc40475ef2313f313bea0c9d9872029c0948265da66ac06b9fab43e22ea"
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "family": "unit",
+      "root_seed": 2026103210,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 570,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 6,
+      "original_goals": [
+        "8/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        10,
+        16,
+        24
+      ],
+      "distinct_full_action_trajectories": 39,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "b4975766f6f2918062b5c584f65a4732a2d454beddf63e50a302333a42238269"
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "family": "unit",
+      "root_seed": 2026103211,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 540,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 9,
+      "original_goals": [
+        "-4/19",
+        "-2/19",
+        "0",
+        "2/19",
+        "4/19",
+        "6/19",
+        "8/19",
+        "10/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        13,
+        15,
+        17,
+        19,
+        21
+      ],
+      "distinct_full_action_trajectories": 33,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "02366dbd991fe11ae3c06d917e0c4b4271af5064e8831a96608d285909f19902"
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "family": "unit",
+      "root_seed": 2026103211,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 322,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 4,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 2,
+      "original_goals": [
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 26,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "b464b7e4e727d9cd40db1096fe7db049f85d74d0cad05ee75e398ac5d242579f"
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "family": "unit",
+      "root_seed": 2026103212,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 588,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        23
+      ],
+      "distinct_full_action_trajectories": 39,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "994e101c2525e7e0245dbdd855c155ecd6318c1006f4a3eab19fd99a779c07ee"
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "family": "unit",
+      "root_seed": 2026103212,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 572,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 7,
+      "original_goals": [
+        "6/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        20
+      ],
+      "distinct_full_action_trajectories": 25,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "93ddb8ce79101a5a4ea96037a3b702684e6295562c1d22fdbae89563bf4ba7af"
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "family": "unit",
+      "root_seed": 2026103213,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 458,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 6,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 4,
+      "original_goals": [
+        "12/19",
+        "14/19",
+        "16/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        9,
+        13,
+        15,
+        19
+      ],
+      "distinct_full_action_trajectories": 14,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "be9651099824d79afdc7e634f420d41b89d67ae9afdfdb4fc65c85751adc3107"
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "family": "unit",
+      "root_seed": 2026103213,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 553,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 2,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 8,
+      "original_goals": [
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "22/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        14,
+        18,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 41,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "6eb94ed76571b4b663478e59b129b6a0b7e0e6e416d8f82c1b6bac1e8a89e353"
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "family": "random2514",
+      "root_seed": 2026103210,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 496,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 4,
+      "original_goals": [
+        "18/19",
+        "22/19",
+        "24/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        11,
+        13,
+        15,
+        17,
+        19,
+        21
+      ],
+      "distinct_full_action_trajectories": 25,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "3c687fc40475ef2313f313bea0c9d9872029c0948265da66ac06b9fab43e22ea"
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "family": "random2514",
+      "root_seed": 2026103210,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 586,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 3,
+      "original_goals": [
+        "12/19",
+        "14/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 29,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "b4975766f6f2918062b5c584f65a4732a2d454beddf63e50a302333a42238269"
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "family": "random2514",
+      "root_seed": 2026103211,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 459,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 3,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 4,
+      "original_goals": [
+        "4/19",
+        "6/19",
+        "8/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "distinct_full_action_trajectories": 28,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "02366dbd991fe11ae3c06d917e0c4b4271af5064e8831a96608d285909f19902"
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "family": "random2514",
+      "root_seed": 2026103211,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 327,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 5,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 5,
+      "original_goals": [
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        8,
+        10,
+        12,
+        14,
+        16,
+        20,
+        22,
+        24
+      ],
+      "distinct_full_action_trajectories": 25,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "b464b7e4e727d9cd40db1096fe7db049f85d74d0cad05ee75e398ac5d242579f"
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "family": "random2514",
+      "root_seed": 2026103212,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 588,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 5,
+      "original_goals": [
+        "4/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19"
+      ],
+      "observed_terminal_states": [
+        "cap"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [],
+      "distinct_full_action_trajectories": 41,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "994e101c2525e7e0245dbdd855c155ecd6318c1006f4a3eab19fd99a779c07ee"
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "family": "random2514",
+      "root_seed": 2026103212,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 588,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 8,
+      "original_goals": [
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "18/19",
+        "20/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        24
+      ],
+      "distinct_full_action_trajectories": 28,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "93ddb8ce79101a5a4ea96037a3b702684e6295562c1d22fdbae89563bf4ba7af"
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "family": "random2514",
+      "root_seed": 2026103213,
+      "color": 0,
+      "nodes": 1024,
+      "actual_go": 252,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 3,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 2,
+      "original_goals": [
+        "10/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        9
+      ],
+      "distinct_full_action_trajectories": 6,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "be9651099824d79afdc7e634f420d41b89d67ae9afdfdb4fc65c85751adc3107"
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "family": "random2514",
+      "root_seed": 2026103213,
+      "color": 1,
+      "nodes": 1024,
+      "actual_go": 570,
+      "games": 49,
+      "distinct_actual_prices": 49,
+      "distinct_first_candidate_moves": 1,
+      "first_candidate_input_equal_across_prices": true,
+      "distinct_original_goals": 9,
+      "original_goals": [
+        "2/19",
+        "4/19",
+        "6/19",
+        "8/19",
+        "10/19",
+        "12/19",
+        "14/19",
+        "16/19",
+        "32"
+      ],
+      "observed_terminal_states": [
+        "cap",
+        "win"
+      ],
+      "all_tested_prices_win": false,
+      "distinct_win_terminal_plies": [
+        16,
+        20
+      ],
+      "distinct_full_action_trajectories": 31,
+      "all_observed_game_goals_invariant": false,
+      "first_input_sha256": "6eb94ed76571b4b663478e59b129b6a0b7e0e6e416d8f82c1b6bac1e8a89e353"
+    }
+  ],
+  "existing_fitgames": 4672,
+  "new_go": 0,
+  "seconds": 0.3668408999219537,
+  "scope": "ALLactuallytestedpriceprobes, firstcandidate input provenfixed withinroot/color/budget under indexedrandom. Differentfirstmove is searchresponse notgain; invariantfirstmove doesnotprove laterinvariance. Flatobservedgoal orallwin cells are finitediscrimination/saturation evidence, notglobalparameteridentifiability orhumanvalue/expectedrandomWDL proof."
+}

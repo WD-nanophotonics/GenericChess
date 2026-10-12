@@ -1,0 +1,856 @@
+{
+  "status": "PASS_DERIVATION",
+  "rows": [
+    {
+      "task": 432,
+      "arm": "random1024",
+      "baseline_games": 8,
+      "source_file": "results/dev_aux/task432/games.jsonl",
+      "source_sha256": "374d03db9b7c419f853f4f8f3c872b8e968baee3159b03c39af911f6572cb6c6",
+      "source_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "query_calls": 93,
+      "played_states": 194,
+      "PV_states": 1250,
+      "played_rank": 11,
+      "PV_rank": 11,
+      "combined_rank": 11,
+      "combined_singular_values": [
+        99.62886802217011,
+        56.820399576321854,
+        42.63716852156184,
+        40.46413087674183,
+        26.863161201944855,
+        19.539950178376518,
+        19.084124795650368,
+        14.39802309652876,
+        13.714455616353431,
+        7.412426650460706,
+        6.0233287077313316,
+        3.9239946330717103e-16
+      ],
+      "played_presence": {
+        "2": 194,
+        "3": 194,
+        "4": 194,
+        "5": 194,
+        "6": 194,
+        "7": 194,
+        "9": 58,
+        "10": 9,
+        "11": 36,
+        "12": 0,
+        "13": 76,
+        "14": 9
+      },
+      "PV_presence": {
+        "2": 1250,
+        "3": 1250,
+        "4": 1250,
+        "5": 1244,
+        "6": 1250,
+        "7": 1250,
+        "9": 333,
+        "10": 41,
+        "11": 213,
+        "12": 0,
+        "13": 490,
+        "14": 61
+      },
+      "cells": [
+        {
+          "root_seed": 2026103010,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 218,
+          "played_rank": 5,
+          "PV_rank": 7,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103010,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 184,
+          "played_rank": 7,
+          "PV_rank": 11,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103011,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 118,
+          "played_rank": 4,
+          "PV_rank": 8,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103011,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 114,
+          "played_rank": 6,
+          "PV_rank": 8,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103012,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 147,
+          "played_rank": 7,
+          "PV_rank": 8,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103012,
+          "color": 1,
+          "played_states": 21,
+          "PV_states": 136,
+          "played_rank": 4,
+          "PV_rank": 9,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103013,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 193,
+          "played_rank": 7,
+          "PV_rank": 11,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103013,
+          "color": 1,
+          "played_states": 23,
+          "PV_states": 140,
+          "played_rank": 6,
+          "PV_rank": 8,
+          "terminal": "checkmate"
+        }
+      ]
+    },
+    {
+      "task": 433,
+      "arm": "random8192",
+      "baseline_games": 8,
+      "source_file": "results/dev_aux/task433/games.jsonl",
+      "source_sha256": "c6b676dc30cbdef3a012e03d9f40ed00b8d4f8f1d125c25849727d7f3bf22a61",
+      "source_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "query_calls": 82,
+      "played_states": 168,
+      "PV_states": 3895,
+      "played_rank": 11,
+      "PV_rank": 12,
+      "combined_rank": 12,
+      "combined_singular_values": [
+        165.62047167403244,
+        101.44807535002741,
+        83.44805888554664,
+        61.854936608980786,
+        48.17310802105229,
+        46.418273212675835,
+        35.05374414035781,
+        26.284047834300328,
+        23.1860554767255,
+        19.4838813936391,
+        13.886784412515274,
+        4.307841485071529
+      ],
+      "played_presence": {
+        "2": 168,
+        "3": 168,
+        "4": 168,
+        "5": 163,
+        "6": 168,
+        "7": 168,
+        "9": 33,
+        "10": 0,
+        "11": 48,
+        "12": 1,
+        "13": 55,
+        "14": 24
+      },
+      "PV_presence": {
+        "2": 3895,
+        "3": 3895,
+        "4": 3895,
+        "5": 3662,
+        "6": 3878,
+        "7": 3895,
+        "9": 724,
+        "10": 214,
+        "11": 1008,
+        "12": 18,
+        "13": 1390,
+        "14": 772
+      },
+      "cells": [
+        {
+          "root_seed": 2026103010,
+          "color": 0,
+          "played_states": 18,
+          "PV_states": 342,
+          "played_rank": 4,
+          "PV_rank": 9,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103010,
+          "color": 1,
+          "played_states": 15,
+          "PV_states": 290,
+          "played_rank": 6,
+          "PV_rank": 9,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103011,
+          "color": 0,
+          "played_states": 18,
+          "PV_states": 350,
+          "played_rank": 2,
+          "PV_rank": 8,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103011,
+          "color": 1,
+          "played_states": 19,
+          "PV_states": 444,
+          "played_rank": 5,
+          "PV_rank": 10,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103012,
+          "color": 0,
+          "played_states": 24,
+          "PV_states": 659,
+          "played_rank": 5,
+          "PV_rank": 11,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103012,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 606,
+          "played_rank": 5,
+          "PV_rank": 11,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103013,
+          "color": 0,
+          "played_states": 24,
+          "PV_states": 584,
+          "played_rank": 9,
+          "PV_rank": 11,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103013,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 620,
+          "played_rank": 5,
+          "PV_rank": 10,
+          "terminal": "cap24"
+        }
+      ]
+    },
+    {
+      "task": 439,
+      "arm": "mixed",
+      "baseline_games": 8,
+      "source_file": "results/dev_aux/task439/games.jsonl",
+      "source_sha256": "fa602f5530565e48abed1fe7d89c0b7dae2ef641cff91dcadd910c63dab8217e",
+      "source_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "query_calls": 81,
+      "played_states": 168,
+      "PV_states": 1491,
+      "played_rank": 11,
+      "PV_rank": 12,
+      "combined_rank": 12,
+      "combined_singular_values": [
+        85.90540173853766,
+        53.87237651126089,
+        42.863092750673246,
+        36.70164359835054,
+        30.02178746055459,
+        23.917548089295302,
+        15.538632950511277,
+        12.199249980569563,
+        11.452461021672697,
+        7.102975812776995,
+        5.079289887746986,
+        2.595318977128124
+      ],
+      "played_presence": {
+        "2": 168,
+        "3": 168,
+        "4": 168,
+        "5": 167,
+        "6": 163,
+        "7": 168,
+        "9": 35,
+        "10": 2,
+        "11": 13,
+        "12": 0,
+        "13": 60,
+        "14": 13
+      },
+      "PV_presence": {
+        "2": 1491,
+        "3": 1491,
+        "4": 1491,
+        "5": 1486,
+        "6": 1446,
+        "7": 1491,
+        "9": 279,
+        "10": 31,
+        "11": 54,
+        "12": 7,
+        "13": 483,
+        "14": 125
+      },
+      "cells": [
+        {
+          "root_seed": 2026103110,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 270,
+          "played_rank": 3,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103110,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 285,
+          "played_rank": 3,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103111,
+          "color": 0,
+          "played_states": 6,
+          "PV_states": 89,
+          "played_rank": 1,
+          "PV_rank": 5,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103111,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 190,
+          "played_rank": 5,
+          "PV_rank": 7,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103112,
+          "color": 0,
+          "played_states": 16,
+          "PV_states": 78,
+          "played_rank": 4,
+          "PV_rank": 10,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103112,
+          "color": 1,
+          "played_states": 21,
+          "PV_states": 175,
+          "played_rank": 4,
+          "PV_rank": 8,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103113,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 221,
+          "played_rank": 6,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103113,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 183,
+          "played_rank": 3,
+          "PV_rank": 8,
+          "terminal": "cap24"
+        }
+      ]
+    },
+    {
+      "task": 440,
+      "arm": "terminal_only",
+      "baseline_games": 8,
+      "source_file": "results/dev_aux/task440/games.jsonl",
+      "source_sha256": "459e8e0b4b835149e64a09bb8f537fb25bb3065779c0c4b307a631e35d28ea15",
+      "source_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "query_calls": 81,
+      "played_states": 168,
+      "PV_states": 1491,
+      "played_rank": 11,
+      "PV_rank": 12,
+      "combined_rank": 12,
+      "combined_singular_values": [
+        85.90540173853766,
+        53.87237651126089,
+        42.863092750673246,
+        36.70164359835054,
+        30.02178746055459,
+        23.917548089295302,
+        15.538632950511277,
+        12.199249980569563,
+        11.452461021672697,
+        7.102975812776995,
+        5.079289887746986,
+        2.595318977128124
+      ],
+      "played_presence": {
+        "2": 168,
+        "3": 168,
+        "4": 168,
+        "5": 167,
+        "6": 163,
+        "7": 168,
+        "9": 35,
+        "10": 2,
+        "11": 13,
+        "12": 0,
+        "13": 60,
+        "14": 13
+      },
+      "PV_presence": {
+        "2": 1491,
+        "3": 1491,
+        "4": 1491,
+        "5": 1486,
+        "6": 1446,
+        "7": 1491,
+        "9": 279,
+        "10": 31,
+        "11": 54,
+        "12": 7,
+        "13": 483,
+        "14": 125
+      },
+      "cells": [
+        {
+          "root_seed": 2026103110,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 270,
+          "played_rank": 3,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103110,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 285,
+          "played_rank": 3,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103111,
+          "color": 0,
+          "played_states": 6,
+          "PV_states": 89,
+          "played_rank": 1,
+          "PV_rank": 5,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103111,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 190,
+          "played_rank": 5,
+          "PV_rank": 7,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103112,
+          "color": 0,
+          "played_states": 16,
+          "PV_states": 78,
+          "played_rank": 4,
+          "PV_rank": 10,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103112,
+          "color": 1,
+          "played_states": 21,
+          "PV_states": 175,
+          "played_rank": 4,
+          "PV_rank": 8,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103113,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 221,
+          "played_rank": 6,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103113,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 183,
+          "played_rank": 3,
+          "PV_rank": 8,
+          "terminal": "cap24"
+        }
+      ]
+    },
+    {
+      "task": 449,
+      "arm": "terminal_only",
+      "baseline_games": 8,
+      "source_file": "results/dev_aux/task449/games.jsonl",
+      "source_sha256": "65d0074812f174f45629e19ebee94259638944b54d2603c7d63a5023d316db3a",
+      "source_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "query_calls": 78,
+      "played_states": 162,
+      "PV_states": 1606,
+      "played_rank": 11,
+      "PV_rank": 12,
+      "combined_rank": 12,
+      "combined_singular_values": [
+        77.37838804199532,
+        59.023563604143206,
+        51.29699890538677,
+        33.183894950715796,
+        25.947441381638292,
+        18.67159392576221,
+        18.340832949013716,
+        11.31831968535928,
+        10.057897822811766,
+        7.651548935739202,
+        6.744040617418136,
+        4.655403458927573
+      ],
+      "played_presence": {
+        "2": 162,
+        "3": 162,
+        "4": 162,
+        "5": 161,
+        "6": 162,
+        "7": 162,
+        "9": 9,
+        "10": 11,
+        "11": 7,
+        "12": 11,
+        "13": 57,
+        "14": 0
+      },
+      "PV_presence": {
+        "2": 1606,
+        "3": 1606,
+        "4": 1606,
+        "5": 1565,
+        "6": 1606,
+        "7": 1606,
+        "9": 50,
+        "10": 146,
+        "11": 115,
+        "12": 133,
+        "13": 579,
+        "14": 24
+      },
+      "cells": [
+        {
+          "root_seed": 2026103210,
+          "color": 0,
+          "played_states": 12,
+          "PV_states": 138,
+          "played_rank": 4,
+          "PV_rank": 9,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103210,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 145,
+          "played_rank": 5,
+          "PV_rank": 10,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103211,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 279,
+          "played_rank": 4,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103211,
+          "color": 1,
+          "played_states": 9,
+          "PV_states": 68,
+          "played_rank": 3,
+          "PV_rank": 8,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103212,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 363,
+          "played_rank": 3,
+          "PV_rank": 8,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103212,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 269,
+          "played_rank": 3,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103213,
+          "color": 0,
+          "played_states": 16,
+          "PV_states": 113,
+          "played_rank": 2,
+          "PV_rank": 5,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103213,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 231,
+          "played_rank": 6,
+          "PV_rank": 9,
+          "terminal": "checkmate"
+        }
+      ]
+    },
+    {
+      "task": 450,
+      "arm": "fast_terminal",
+      "baseline_games": 8,
+      "source_file": "results/dev_aux/task450/games.jsonl",
+      "source_sha256": "314ec7adb15594f46fb7761533e3b7cfd2af3bf6891070038b08cebafb0dc2e6",
+      "source_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "query_calls": 78,
+      "played_states": 162,
+      "PV_states": 1606,
+      "played_rank": 11,
+      "PV_rank": 12,
+      "combined_rank": 12,
+      "combined_singular_values": [
+        77.37838804199532,
+        59.023563604143206,
+        51.29699890538677,
+        33.183894950715796,
+        25.947441381638292,
+        18.67159392576221,
+        18.340832949013716,
+        11.31831968535928,
+        10.057897822811766,
+        7.651548935739202,
+        6.744040617418136,
+        4.655403458927573
+      ],
+      "played_presence": {
+        "2": 162,
+        "3": 162,
+        "4": 162,
+        "5": 161,
+        "6": 162,
+        "7": 162,
+        "9": 9,
+        "10": 11,
+        "11": 7,
+        "12": 11,
+        "13": 57,
+        "14": 0
+      },
+      "PV_presence": {
+        "2": 1606,
+        "3": 1606,
+        "4": 1606,
+        "5": 1565,
+        "6": 1606,
+        "7": 1606,
+        "9": 50,
+        "10": 146,
+        "11": 115,
+        "12": 133,
+        "13": 579,
+        "14": 24
+      },
+      "cells": [
+        {
+          "root_seed": 2026103210,
+          "color": 0,
+          "played_states": 12,
+          "PV_states": 138,
+          "played_rank": 4,
+          "PV_rank": 9,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103210,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 145,
+          "played_rank": 5,
+          "PV_rank": 10,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103211,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 279,
+          "played_rank": 4,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103211,
+          "color": 1,
+          "played_states": 9,
+          "PV_states": 68,
+          "played_rank": 3,
+          "PV_rank": 8,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103212,
+          "color": 0,
+          "played_states": 25,
+          "PV_states": 363,
+          "played_rank": 3,
+          "PV_rank": 8,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103212,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 269,
+          "played_rank": 3,
+          "PV_rank": 9,
+          "terminal": "cap24"
+        },
+        {
+          "root_seed": 2026103213,
+          "color": 0,
+          "played_states": 16,
+          "PV_states": 113,
+          "played_rank": 2,
+          "PV_rank": 5,
+          "terminal": "checkmate"
+        },
+        {
+          "root_seed": 2026103213,
+          "color": 1,
+          "played_states": 25,
+          "PV_states": 231,
+          "played_rank": 6,
+          "PV_rank": 9,
+          "terminal": "checkmate"
+        }
+      ]
+    }
+  ],
+  "axes": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "new_go": 0,
+  "seconds": 0.3651980999857187,
+  "scope": "ALL declared unit-initial baseline cells selected by exact immutable update source references; signed board+hand linear feature rank of played and actually returned PV states ONLY, no full searched-frontier/parameter identifiability or human-price proof. Shared baseline records may occur across same-root objective arms; no independent replications claim."
+}

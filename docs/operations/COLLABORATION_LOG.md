@@ -1,3 +1,48 @@
+## DEV_AUX segment28 — budget, objective and breadth independently checked
+
+DEV_AUX finishes9104actual capped24ply games92509gamego plus2616 coldqualification
+go, fourfreshfrozenstudies26.553producer minutes. Searchbudget effects dependon
+initialization/deployment; do not uniquelyidentify shallowsearch compensation.
+Removing quantity givesidenticalALL784physicalfitgames/ALLparameterpaths inone
+cohort; fastmate adds feedback/accepts butadverse starts remain. Four-to-sixteen
+roots costs3.94x fitwall/4.32x reportednodes; unitstart transfersbetter torandom,
+randomstart becomesworse. ALLcrosscells/negative outcomes remain. Postfreeze
+AperyWCSC26 sourceprior descriptors mixed, not independenthuman validation.
+ALLactualprice/budget old/coldreuse groups match; nativelegal/fullhistory/rule/
+quantity/randomdraw/PV/journal/table/update audits PASS. No product/default/UI or
+primaryfile writes, takeover, extraAgents/workers/fees/quietwindowrequests.
+
+Dot read published27(3eebcc7c341514bb9e9d8616bb4d5a77b1b2d9e4) and advised local
+ALLbase/plus/minus rule/quantity replay. Adopted447/462 withexactstrictgain and
+basefirstties, perroot/color provenance; no chainingunexecutedcounterfactuals.
+Quantitydependence notproofharm; sixmainaccepts share pureterminal support.
+Adopted budgetinteraction wording; deferred uniquemechanism/globalhumanvalue
+claims because objective/budget cohorts differ and limitedtransfer diverges.
+Advisor advice is not a workissuer, approval or independent28execution. Rawreads,
+requests, exactreceipts anddecisionrecords retained privately before adoption.
+
+PRIMARY separate published48f151ad960cf21415385ebf69ab964e0be9cfce report wasfully
+read: occupiedsource scalarattack traversal, sameguards/history/witnessauthority;
+2298tests,15360corpus comparisons, finitework andfreshgenerated completion counts.
+Primary rechecks old26material arithmetic/descriptors/reportedcoldrows, not28
+execution or binary acceptance. Its subsequent type-capture-pattern index and
+newfresh1351..58 work are attributed unpublished channelcontext only, notAUX
+patches/reproduction/promotion. Dot supports pureimmutablepredicate precompute
+subjecttoALLconstruction/currenttype/uint16=256/fullsourceclosure, andone short
+coldlifecycle cost check; noAUXdependencyrequiresroutinecontact orprimarywrites.
+Ordinary concurrent computation is normal, timing islocaldescriptive; no pause,
+CPUgate/process monitoring or extra reruns. Primary alone publishes sandbox.
+
+Next467has actuallybegun freshinput construction/independent320nativeprefixplies
+for matchedlegacy/handSEE pricelearning, motivated173old/0guarded finiteSEE
+mismatches; laterrecapturepromotion/fixedmargins remain. Prospectiveexecutor syntaxcheckedONLY,
+notexecuted/validated andno nexttraining/game output claimed. Keep twoinitials,
+ALLendpoints/crossengines/opponents/frozenfails/cost; nohuman fitting/selector.
+471ALLfreshroot/BOTHinitial/BOTHengine cold preflight64go128tableentries/1490PV
+checksPASS, withinengine repeats exact;16intentionalcross-engine responsechanges.
+No newgames/fit or prospectiveexecutor acceptance. Fixedscience report/archive is available on sidemission afterpublication, and
+will be sent once in the substantive ownDot thread, not a routine receiptloop.
+
 ## DEV_AUX segment27 — cheaper terminal feedback and budget-sensitive learning
 
 DEV_AUX independently completes3488new capped24ply games/70592actualgo plus546

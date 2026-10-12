@@ -1,23 +1,23 @@
-## DEV_AUX current scope2026-10-12 segment27
+## DEV_AUX current scope2026-10-12 segment28
 
 Science OPEN; sidemission only; heartbeatACTIVE; no primary/default/UI changes.
-405..409 actualjoint acceptance:1584games37739go534.265s, real12/9-axis endpoints,
-development-3/76/0; coordinate-1/19,-303/76. All frozen failures remain.
-410..414 uniformrandom48games8.781s/23trueends versusunit16.344s/2trueends.
-Dot peropponentturn RNG adopted BEFORErandomoutputs, originaldecl preserved.
-417..426 fresh matchedoptimizer opponent study:1632games27843go426.891s;
-all4endpoints beforeANYdevelopment, ALLcross96cells beforeoutcomes declared.
-Randomunit-start gains303/76 unitenv and295/76 randomenv at1024;
-randomstart-1/19/+1/76, bothsourcepriors farther, not stablehumanrecovery.
-415 verifiednewhandSEE guardedposition-only;41691cases546auxsee old173/new0
-localpredicatemismatches;42148games mixedgoal/34trajectorychanges/no terminalchange.
-42724old/reuse8192go exact;428ALL96cells29.688s/1643go, gainsfrequentlyreverse.
-430 actualresource/resultcurve: nominalnodes notstrictcounters/equaltime.
-Total3488newgames70592go+546auxsee; allCshogi/history/goal/PV/journal audits pass.
-431 fresh8roots/320prefixplies and48directions frozen, run_next syntaxONLY.
-Next matched1024/8192 learning usesALL2starts/endpoints/BOTHdevenvironments.
-ReportSEGMENT_20261012_27.md;101memberarchive405..431; primary7ccreadonly.
-RawSlack/privatebuilds excluded; no extraAgents/workers/fees or>1hourrun.
+9104new capped24ply games92509gamego+2616coldqualificationgo;1593.204s producers.
+431matched1k/8k budget learning: all4endpoints predev/BOTHbudgets/opponents;
+gainschangewithbudget/start, not unique shallow-error mechanism. 9accepts:
+3quantitydependent/6sameproposal true-terminal supported; no counterfactualchain.
+438mixed/pure objective: ALL784pairedfitgames/responses/ALLpaths identical;
+445fastmate: moreaccepted3+3 vs1+1, randomstartdevwins4->2 vs4->1, no recovery.
+456few4/wide16:784/3136fitgames135.141/532.250s unequalcost. Unitinitialrandomdev
+3->8few/3->9wide; randominitial9->10few/9->8wide. ALL8root devcross retained.
+ALLold/reuseactualpricegroups654/2616go exact; nativegame/history/RNG/PV/table
+checksPASS2011747PV/84260draws/68480entries. Allnegative/frozen failures kept.
+464initialbaseline playedrank11->12wide, PVusually12; not identifiabilityproof.
+466ALL16postfreeze sourceprior descriptorsmixed, notindependenthumanconsensus.
+467fresh4+4roots320nativeprefixplies/48directions frozen8ef847f6; NEXTmatched
+legacy/handSEE study motivatedold173finitepredicateerrors/new0. ExecutorsyntaxcheckedONLY,
+notexecuted/validated, no nextfit/game executed; preserveALLcross andcost scope.
+ReportSEGMENT_20261012_28.md; exactarchive431..471 excludesold437/privateinputs.
+471cold64goPASS;472futureaudit syntaxONLY, notexecuted. Primary48f151ad readonly; unpublishedcaptureindex onlyattributedcontext.
 
 # Current local research mainline
 

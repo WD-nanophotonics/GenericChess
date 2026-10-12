@@ -1,0 +1,616 @@
+{
+  "status": "PASS_DERIVATION",
+  "rows": [
+    {
+      "train_nodes": 1024,
+      "family": "unit",
+      "development_nodes": 1024,
+      "opponent": "unit",
+      "initial_mean": "0",
+      "endpoint_mean": "-5/38",
+      "gain": "-5/38",
+      "terminal_component_gain": "0",
+      "quantity_component_gain": "-5/38",
+      "paired_gains": [
+        "-4/19",
+        "0",
+        "0",
+        "-4/19",
+        "-4/19",
+        "0",
+        "-4/19",
+        "-4/19"
+      ],
+      "root_family_gains": [
+        "-2/19",
+        "-2/19",
+        "-2/19",
+        "-4/19"
+      ],
+      "leave_one_family_gains": [
+        "-8/57",
+        "-8/57",
+        "-8/57",
+        "-2/19"
+      ],
+      "initial_true_wins": 0,
+      "endpoint_true_wins": 0,
+      "initial_true_losses": 0,
+      "endpoint_true_losses": 0,
+      "changed_axes": 12
+    },
+    {
+      "train_nodes": 1024,
+      "family": "unit",
+      "development_nodes": 1024,
+      "opponent": "random",
+      "initial_mean": "477/38",
+      "endpoint_mean": "359/76",
+      "gain": "-595/76",
+      "terminal_component_gain": "-8",
+      "quantity_component_gain": "13/76",
+      "paired_gains": [
+        "-4/19",
+        "-590/19",
+        "-2/19",
+        "-2/19",
+        "0",
+        "0",
+        "-592/19",
+        "0"
+      ],
+      "root_family_gains": [
+        "-297/19",
+        "-2/19",
+        "0",
+        "-296/19"
+      ],
+      "leave_one_family_gains": [
+        "-298/57",
+        "-593/57",
+        "-595/57",
+        "-299/57"
+      ],
+      "initial_true_wins": 3,
+      "endpoint_true_wins": 1,
+      "initial_true_losses": 0,
+      "endpoint_true_losses": 0,
+      "changed_axes": 12
+    },
+    {
+      "train_nodes": 1024,
+      "family": "unit",
+      "development_nodes": 8192,
+      "opponent": "unit",
+      "initial_mean": "0",
+      "endpoint_mean": "-77/19",
+      "gain": "-77/19",
+      "terminal_component_gain": "-4",
+      "quantity_component_gain": "-1/19",
+      "paired_gains": [
+        "-6/19",
+        "-604/19",
+        "0",
+        "2/19",
+        "-4/19",
+        "4/19",
+        "-2/19",
+        "-6/19"
+      ],
+      "root_family_gains": [
+        "-305/19",
+        "1/19",
+        "0",
+        "-4/19"
+      ],
+      "leave_one_family_gains": [
+        "-1/19",
+        "-103/19",
+        "-308/57",
+        "-16/3"
+      ],
+      "initial_true_wins": 0,
+      "endpoint_true_wins": 0,
+      "initial_true_losses": 0,
+      "endpoint_true_losses": 1,
+      "changed_axes": 12
+    },
+    {
+      "train_nodes": 1024,
+      "family": "unit",
+      "development_nodes": 8192,
+      "opponent": "random",
+      "initial_mean": "387/19",
+      "endpoint_mean": "1247/76",
+      "gain": "-301/76",
+      "terminal_component_gain": "-4",
+      "quantity_component_gain": "3/76",
+      "paired_gains": [
+        "588/19",
+        "0",
+        "-594/19",
+        "-4/19",
+        "0",
+        "0",
+        "0",
+        "-592/19"
+      ],
+      "root_family_gains": [
+        "294/19",
+        "-299/19",
+        "0",
+        "-296/19"
+      ],
+      "leave_one_family_gains": [
+        "-595/57",
+        "-2/57",
+        "-301/57",
+        "-5/57"
+      ],
+      "initial_true_wins": 5,
+      "endpoint_true_wins": 4,
+      "initial_true_losses": 0,
+      "endpoint_true_losses": 0,
+      "changed_axes": 12
+    },
+    {
+      "train_nodes": 1024,
+      "family": "random2514",
+      "development_nodes": 1024,
+      "opponent": "unit",
+      "initial_mean": "-3/38",
+      "endpoint_mean": "-5/76",
+      "gain": "1/76",
+      "terminal_component_gain": "0",
+      "quantity_component_gain": "1/76",
+      "paired_gains": [
+        "0",
+        "2/19",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-2/19",
+        "2/19"
+      ],
+      "root_family_gains": [
+        "1/19",
+        "0",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "0",
+        "1/57",
+        "1/57",
+        "1/57"
+      ],
+      "initial_true_wins": 0,
+      "endpoint_true_wins": 0,
+      "initial_true_losses": 0,
+      "endpoint_true_losses": 0,
+      "changed_axes": 8
+    },
+    {
+      "train_nodes": 1024,
+      "family": "random2514",
+      "development_nodes": 1024,
+      "opponent": "random",
+      "initial_mean": "238/19",
+      "endpoint_mean": "919/38",
+      "gain": "443/38",
+      "terminal_component_gain": "12",
+      "quantity_component_gain": "-13/38",
+      "paired_gains": [
+        "590/19",
+        "0",
+        "596/19",
+        "594/19",
+        "0",
+        "-596/19",
+        "0",
+        "588/19"
+      ],
+      "root_family_gains": [
+        "295/19",
+        "595/19",
+        "-298/19",
+        "294/19"
+      ],
+      "leave_one_family_gains": [
+        "197/19",
+        "97/19",
+        "1184/57",
+        "592/57"
+      ],
+      "initial_true_wins": 3,
+      "endpoint_true_wins": 6,
+      "initial_true_losses": 0,
+      "endpoint_true_losses": 0,
+      "changed_axes": 8
+    },
+    {
+      "train_nodes": 1024,
+      "family": "random2514",
+      "development_nodes": 8192,
+      "opponent": "unit",
+      "initial_mean": "-7/76",
+      "endpoint_mean": "150/19",
+      "gain": "607/76",
+      "terminal_component_gain": "8",
+      "quantity_component_gain": "-1/76",
+      "paired_gains": [
+        "-6/19",
+        "4/19",
+        "-2/19",
+        "-2/19",
+        "2/19",
+        "610/19",
+        "0",
+        "32"
+      ],
+      "root_family_gains": [
+        "-1/19",
+        "-2/19",
+        "306/19",
+        "16"
+      ],
+      "leave_one_family_gains": [
+        "32/3",
+        "203/19",
+        "301/57",
+        "101/19"
+      ],
+      "initial_true_wins": 0,
+      "endpoint_true_wins": 2,
+      "initial_true_losses": 0,
+      "endpoint_true_losses": 0,
+      "changed_axes": 8
+    },
+    {
+      "train_nodes": 1024,
+      "family": "random2514",
+      "development_nodes": 8192,
+      "opponent": "random",
+      "initial_mean": "384/19",
+      "endpoint_mean": "917/38",
+      "gain": "149/38",
+      "terminal_component_gain": "4",
+      "quantity_component_gain": "-3/38",
+      "paired_gains": [
+        "0",
+        "-2/19",
+        "600/19",
+        "0",
+        "-2/19",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "-1/19",
+        "300/19",
+        "-1/19",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "299/57",
+        "-2/57",
+        "299/57",
+        "298/57"
+      ],
+      "initial_true_wins": 5,
+      "endpoint_true_wins": 6,
+      "initial_true_losses": 0,
+      "endpoint_true_losses": 0,
+      "changed_axes": 8
+    },
+    {
+      "train_nodes": 8192,
+      "family": "unit",
+      "development_nodes": 1024,
+      "opponent": "unit",
+      "initial_mean": "0",
+      "endpoint_mean": "-155/38",
+      "gain": "-155/38",
+      "terminal_component_gain": "-4",
+      "quantity_component_gain": "-3/38",
+      "paired_gains": [
+        "-2/19",
+        "-2/19",
+        "2/19",
+        "-6/19",
+        "0",
+        "-2/19",
+        "-4/19",
+        "-606/19"
+      ],
+      "root_family_gains": [
+        "-2/19",
+        "-2/19",
+        "-1/19",
+        "-305/19"
+      ],
+      "leave_one_family_gains": [
+        "-308/57",
+        "-308/57",
+        "-103/19",
+        "-5/57"
+      ],
+      "initial_true_wins": 0,
+      "endpoint_true_wins": 0,
+      "initial_true_losses": 0,
+      "endpoint_true_losses": 1,
+      "changed_axes": 3
+    },
+    {
+      "train_nodes": 8192,
+      "family": "unit",
+      "development_nodes": 1024,
+      "opponent": "random",
+      "initial_mean": "477/38",
+      "endpoint_mean": "355/76",
+      "gain": "-599/76",
+      "terminal_component_gain": "-8",
+      "quantity_component_gain": "9/76",
+      "paired_gains": [
+        "-4/19",
+        "-594/19",
+        "0",
+        "-4/19",
+        "596/19",
+        "0",
+        "-594/19",
+        "-598/19"
+      ],
+      "root_family_gains": [
+        "-299/19",
+        "-2/19",
+        "298/19",
+        "-596/19"
+      ],
+      "leave_one_family_gains": [
+        "-100/19",
+        "-199/19",
+        "-299/19",
+        "-1/19"
+      ],
+      "initial_true_wins": 3,
+      "endpoint_true_wins": 1,
+      "initial_true_losses": 0,
+      "endpoint_true_losses": 0,
+      "changed_axes": 3
+    },
+    {
+      "train_nodes": 8192,
+      "family": "unit",
+      "development_nodes": 8192,
+      "opponent": "unit",
+      "initial_mean": "0",
+      "endpoint_mean": "-1/76",
+      "gain": "-1/76",
+      "terminal_component_gain": "0",
+      "quantity_component_gain": "-1/76",
+      "paired_gains": [
+        "-8/19",
+        "2/19",
+        "-4/19",
+        "0",
+        "2/19",
+        "2/19",
+        "2/19",
+        "2/19"
+      ],
+      "root_family_gains": [
+        "-3/19",
+        "-2/19",
+        "2/19",
+        "2/19"
+      ],
+      "leave_one_family_gains": [
+        "2/57",
+        "1/57",
+        "-1/19",
+        "-1/19"
+      ],
+      "initial_true_wins": 0,
+      "endpoint_true_wins": 0,
+      "initial_true_losses": 0,
+      "endpoint_true_losses": 0,
+      "changed_axes": 3
+    },
+    {
+      "train_nodes": 8192,
+      "family": "unit",
+      "development_nodes": 8192,
+      "opponent": "random",
+      "initial_mean": "387/19",
+      "endpoint_mean": "919/38",
+      "gain": "145/38",
+      "terminal_component_gain": "4",
+      "quantity_component_gain": "-7/38",
+      "paired_gains": [
+        "588/19",
+        "0",
+        "-592/19",
+        "588/19",
+        "0",
+        "-4/19",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "294/19",
+        "-2/19",
+        "-2/19",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "-4/57",
+        "292/57",
+        "292/57",
+        "290/57"
+      ],
+      "initial_true_wins": 5,
+      "endpoint_true_wins": 6,
+      "initial_true_losses": 0,
+      "endpoint_true_losses": 0,
+      "changed_axes": 3
+    },
+    {
+      "train_nodes": 8192,
+      "family": "random2514",
+      "development_nodes": 1024,
+      "opponent": "unit",
+      "initial_mean": "-3/38",
+      "endpoint_mean": "-3/38",
+      "gain": "0",
+      "terminal_component_gain": "0",
+      "quantity_component_gain": "0",
+      "paired_gains": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "initial_true_wins": 0,
+      "endpoint_true_wins": 0,
+      "initial_true_losses": 0,
+      "endpoint_true_losses": 0,
+      "changed_axes": 0
+    },
+    {
+      "train_nodes": 8192,
+      "family": "random2514",
+      "development_nodes": 1024,
+      "opponent": "random",
+      "initial_mean": "238/19",
+      "endpoint_mean": "238/19",
+      "gain": "0",
+      "terminal_component_gain": "0",
+      "quantity_component_gain": "0",
+      "paired_gains": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "initial_true_wins": 3,
+      "endpoint_true_wins": 3,
+      "initial_true_losses": 0,
+      "endpoint_true_losses": 0,
+      "changed_axes": 0
+    },
+    {
+      "train_nodes": 8192,
+      "family": "random2514",
+      "development_nodes": 8192,
+      "opponent": "unit",
+      "initial_mean": "-7/76",
+      "endpoint_mean": "-7/76",
+      "gain": "0",
+      "terminal_component_gain": "0",
+      "quantity_component_gain": "0",
+      "paired_gains": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "initial_true_wins": 0,
+      "endpoint_true_wins": 0,
+      "initial_true_losses": 0,
+      "endpoint_true_losses": 0,
+      "changed_axes": 0
+    },
+    {
+      "train_nodes": 8192,
+      "family": "random2514",
+      "development_nodes": 8192,
+      "opponent": "random",
+      "initial_mean": "384/19",
+      "endpoint_mean": "384/19",
+      "gain": "0",
+      "terminal_component_gain": "0",
+      "quantity_component_gain": "0",
+      "paired_gains": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "initial_true_wins": 5,
+      "endpoint_true_wins": 5,
+      "initial_true_losses": 0,
+      "endpoint_true_losses": 0,
+      "changed_axes": 0
+    }
+  ],
+  "new_go": 0,
+  "seconds": 0.005918500013649464,
+  "scope": "ALLfour endpoints/BOTHnodes/BOTHopponents, aliasesretainunchangedendpoint, exactrule/quantity/family components. Budgetspecialization/interaction ratherthanunique shallow-error correction; unitopponent search alsochangesnodes. Random branch fixedopponentpolicy, but trajectories/terminal availability change. No samplingCI, model/node/price selector."
+}

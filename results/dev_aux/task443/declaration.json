@@ -1,0 +1,3062 @@
+{
+  "question": "Finite qualification EVERY actualprice/budget first&lastcold responses, no success/model filter",
+  "sources": [
+    {
+      "path": "results/dev_aux/task439/queries.jsonl",
+      "sha256": "f93c0a24db5cababa0aebc8dd061754d806ace89b3f4074f6300309388eb2a69"
+    },
+    {
+      "path": "results/dev_aux/task440/queries.jsonl",
+      "sha256": "bef4cda640308b5b571bbb7abee650edaf6be2c5f619161db41c7ab4f63caa53"
+    }
+  ],
+  "node_budgets": [
+    1024
+  ],
+  "groups": [
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 1
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 81
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        70,
+        70,
+        70,
+        116,
+        116,
+        116,
+        0,
+        116,
+        116,
+        70,
+        116,
+        70,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 82
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 156
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        116,
+        116,
+        116,
+        70,
+        70,
+        70,
+        0,
+        70,
+        70,
+        116,
+        70,
+        116,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 157
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 235
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        55,
+        90,
+        90,
+        149,
+        90,
+        149,
+        0,
+        90,
+        149,
+        55,
+        90,
+        55,
+        90,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 236
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 309
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        90,
+        55,
+        55,
+        90,
+        149,
+        90,
+        0,
+        149,
+        90,
+        90,
+        149,
+        90,
+        149,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 310
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 387
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        116,
+        70,
+        191,
+        70,
+        191,
+        0,
+        116,
+        191,
+        71,
+        116,
+        71,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 388
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 458
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        70,
+        116,
+        116,
+        116,
+        116,
+        0,
+        70,
+        116,
+        43,
+        70,
+        43,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 459
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 531
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        116,
+        70,
+        116,
+        116,
+        191,
+        0,
+        116,
+        116,
+        71,
+        116,
+        71,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 532
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 617
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        70,
+        116,
+        191,
+        70,
+        116,
+        0,
+        70,
+        191,
+        43,
+        70,
+        43,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 618
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 688
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        116,
+        116,
+        191,
+        70,
+        191,
+        0,
+        70,
+        116,
+        71,
+        116,
+        43,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 689
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 761
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        70,
+        70,
+        116,
+        116,
+        116,
+        0,
+        116,
+        191,
+        43,
+        70,
+        71,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 762
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 831
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        70,
+        70,
+        191,
+        70,
+        191,
+        0,
+        70,
+        116,
+        43,
+        70,
+        71,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 832
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 906
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        116,
+        116,
+        116,
+        116,
+        116,
+        0,
+        116,
+        191,
+        71,
+        116,
+        43,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 907
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 984
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        116,
+        116,
+        116,
+        70,
+        116,
+        0,
+        70,
+        191,
+        43,
+        116,
+        71,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 985
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 1061
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        70,
+        70,
+        191,
+        116,
+        191,
+        0,
+        116,
+        116,
+        71,
+        70,
+        43,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 1062
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 1142
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        116,
+        116,
+        191,
+        70,
+        191,
+        0,
+        116,
+        191,
+        43,
+        70,
+        71,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 1143
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 1223
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        70,
+        70,
+        116,
+        116,
+        116,
+        0,
+        70,
+        116,
+        71,
+        116,
+        43,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 1224
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 1298
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        116,
+        70,
+        116,
+        116,
+        116,
+        0,
+        70,
+        191,
+        71,
+        116,
+        43,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 1299
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 1375
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        70,
+        116,
+        191,
+        70,
+        191,
+        0,
+        116,
+        116,
+        43,
+        70,
+        71,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 1376
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 1451
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        70,
+        70,
+        116,
+        116,
+        116,
+        0,
+        70,
+        116,
+        71,
+        116,
+        71,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 1452
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 1525
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        116,
+        116,
+        191,
+        70,
+        191,
+        0,
+        116,
+        191,
+        43,
+        70,
+        43,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 1526
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 1606
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        70,
+        116,
+        191,
+        116,
+        191,
+        0,
+        70,
+        116,
+        43,
+        70,
+        43,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 1607
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 1683
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        116,
+        70,
+        116,
+        70,
+        116,
+        0,
+        116,
+        191,
+        71,
+        116,
+        71,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 1684
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 1761
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        70,
+        116,
+        116,
+        70,
+        116,
+        0,
+        70,
+        191,
+        71,
+        116,
+        71,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 1762
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 1840
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        116,
+        70,
+        191,
+        116,
+        191,
+        0,
+        116,
+        116,
+        43,
+        70,
+        43,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 1841
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 1912
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        116,
+        70,
+        191,
+        70,
+        191,
+        0,
+        70,
+        191,
+        71,
+        116,
+        43,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 1913
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 1989
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        70,
+        116,
+        116,
+        116,
+        116,
+        0,
+        116,
+        116,
+        43,
+        70,
+        71,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 1990
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 2059
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        70,
+        116,
+        191,
+        70,
+        191,
+        0,
+        70,
+        116,
+        71,
+        116,
+        71,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 2060
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 2139
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        116,
+        70,
+        116,
+        116,
+        116,
+        0,
+        116,
+        191,
+        43,
+        70,
+        43,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 2140
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 2217
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        70,
+        116,
+        191,
+        116,
+        191,
+        0,
+        70,
+        191,
+        71,
+        70,
+        43,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 2218
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 2295
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        116,
+        70,
+        116,
+        70,
+        116,
+        0,
+        116,
+        116,
+        43,
+        116,
+        71,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 2296
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 2372
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        116,
+        70,
+        116,
+        116,
+        116,
+        0,
+        70,
+        116,
+        43,
+        116,
+        71,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 2373
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 2452
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        70,
+        116,
+        191,
+        70,
+        191,
+        0,
+        116,
+        191,
+        71,
+        70,
+        43,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 2453
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 2530
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        116,
+        70,
+        191,
+        70,
+        116,
+        0,
+        116,
+        191,
+        71,
+        70,
+        43,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 2531
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 2610
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        70,
+        116,
+        116,
+        116,
+        191,
+        0,
+        70,
+        116,
+        43,
+        116,
+        71,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 2611
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 2683
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        116,
+        70,
+        116,
+        70,
+        191,
+        0,
+        70,
+        191,
+        43,
+        116,
+        43,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 2684
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 2754
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        70,
+        116,
+        191,
+        116,
+        116,
+        0,
+        116,
+        116,
+        71,
+        70,
+        71,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 2755
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 2832
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        70,
+        70,
+        116,
+        70,
+        116,
+        0,
+        116,
+        191,
+        43,
+        70,
+        71,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 2833
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 2906
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        116,
+        116,
+        191,
+        116,
+        191,
+        0,
+        70,
+        116,
+        71,
+        116,
+        43,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 2907
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 2980
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        70,
+        116,
+        116,
+        116,
+        191,
+        0,
+        116,
+        116,
+        71,
+        70,
+        43,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 2981
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 3054
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        116,
+        70,
+        191,
+        70,
+        116,
+        0,
+        70,
+        191,
+        43,
+        116,
+        71,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 3055
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 3141
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        116,
+        116,
+        191,
+        116,
+        191,
+        0,
+        70,
+        191,
+        71,
+        116,
+        71,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 3142
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 3214
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        70,
+        70,
+        116,
+        70,
+        116,
+        0,
+        116,
+        116,
+        43,
+        70,
+        43,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 3215
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 3293
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        116,
+        70,
+        191,
+        116,
+        116,
+        0,
+        116,
+        116,
+        43,
+        70,
+        71,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 3294
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 3375
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        70,
+        116,
+        116,
+        70,
+        191,
+        0,
+        70,
+        191,
+        71,
+        116,
+        43,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 3376
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 3450
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        116,
+        70,
+        191,
+        70,
+        116,
+        0,
+        70,
+        116,
+        43,
+        70,
+        43,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 3451
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 3537
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        70,
+        116,
+        116,
+        116,
+        191,
+        0,
+        116,
+        191,
+        71,
+        116,
+        71,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 3538
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 3605
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        71,
+        70,
+        70,
+        116,
+        70,
+        191,
+        0,
+        70,
+        191,
+        71,
+        116,
+        71,
+        70,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 3606
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 3682
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        43,
+        116,
+        116,
+        191,
+        116,
+        116,
+        0,
+        116,
+        116,
+        43,
+        70,
+        43,
+        116,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 3683
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 3755
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 3756
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 3818
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        118,
+        61,
+        87,
+        365,
+        140,
+        919,
+        0,
+        62,
+        220,
+        156,
+        443,
+        155,
+        71,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 3819
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 3880
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        194,
+        100,
+        53,
+        221,
+        85,
+        558,
+        0,
+        103,
+        133,
+        257,
+        269,
+        94,
+        43,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 3881
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 3963
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        194,
+        61,
+        53,
+        365,
+        140,
+        558,
+        0,
+        62,
+        133,
+        156,
+        443,
+        94,
+        43,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 3964
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 4035
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        118,
+        100,
+        87,
+        221,
+        85,
+        919,
+        0,
+        103,
+        220,
+        257,
+        269,
+        155,
+        71,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 4036
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 4115
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        118,
+        100,
+        87,
+        365,
+        140,
+        558,
+        0,
+        103,
+        133,
+        257,
+        443,
+        94,
+        43,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 4116
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 4188
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        194,
+        61,
+        53,
+        221,
+        85,
+        919,
+        0,
+        62,
+        220,
+        156,
+        269,
+        155,
+        71,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 4189
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 4264
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        78,
+        68,
+        284,
+        180,
+        716,
+        0,
+        132,
+        171,
+        330,
+        345,
+        73,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 4265
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 4336
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        128,
+        112,
+        469,
+        109,
+        435,
+        0,
+        80,
+        104,
+        200,
+        569,
+        121,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 4337
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 4415
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        128,
+        112,
+        469,
+        180,
+        435,
+        0,
+        132,
+        171,
+        200,
+        345,
+        73,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 4416
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 4494
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        104,
+        330,
+        569,
+        121,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 4495
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 4562
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        78,
+        68,
+        284,
+        180,
+        435,
+        0,
+        80,
+        104,
+        200,
+        569,
+        73,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 4563
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 4637
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        128,
+        112,
+        469,
+        109,
+        716,
+        0,
+        132,
+        171,
+        330,
+        345,
+        121,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 4638
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 4707
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        128,
+        112,
+        284,
+        180,
+        716,
+        0,
+        132,
+        171,
+        200,
+        569,
+        73,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 4708
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 4779
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        78,
+        68,
+        469,
+        109,
+        435,
+        0,
+        80,
+        104,
+        330,
+        345,
+        121,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 4780
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 4852
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        128,
+        68,
+        284,
+        109,
+        716,
+        0,
+        132,
+        171,
+        330,
+        345,
+        73,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 4853
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 4928
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        78,
+        112,
+        469,
+        180,
+        435,
+        0,
+        80,
+        104,
+        200,
+        569,
+        121,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 4929
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 5001
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        128,
+        112,
+        469,
+        109,
+        435,
+        0,
+        80,
+        171,
+        200,
+        345,
+        73,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 5002
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 5082
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        78,
+        68,
+        284,
+        180,
+        716,
+        0,
+        132,
+        104,
+        330,
+        569,
+        121,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 5083
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 5149
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        128,
+        112,
+        284,
+        109,
+        435,
+        0,
+        80,
+        171,
+        330,
+        345,
+        121,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 5150
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 5225
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        78,
+        68,
+        469,
+        180,
+        716,
+        0,
+        132,
+        104,
+        200,
+        569,
+        73,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 5226
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 5296
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        128,
+        68,
+        284,
+        109,
+        716,
+        0,
+        132,
+        104,
+        330,
+        345,
+        73,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 5297
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 5372
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        78,
+        112,
+        469,
+        180,
+        435,
+        0,
+        80,
+        171,
+        200,
+        569,
+        121,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 5373
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 5444
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        78,
+        112,
+        284,
+        180,
+        435,
+        0,
+        80,
+        104,
+        200,
+        569,
+        73,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 5445
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 5512
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        128,
+        68,
+        469,
+        109,
+        716,
+        0,
+        132,
+        171,
+        330,
+        345,
+        121,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 5513
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 5581
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        128,
+        68,
+        284,
+        109,
+        716,
+        0,
+        132,
+        171,
+        200,
+        569,
+        73,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 5582
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 5655
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        78,
+        112,
+        469,
+        180,
+        435,
+        0,
+        80,
+        104,
+        330,
+        345,
+        121,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 5656
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 5732
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        78,
+        68,
+        469,
+        180,
+        435,
+        0,
+        80,
+        104,
+        330,
+        569,
+        73,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 5733
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 5811
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        128,
+        112,
+        284,
+        109,
+        716,
+        0,
+        132,
+        171,
+        200,
+        345,
+        121,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 5812
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 5887
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        128,
+        68,
+        284,
+        109,
+        435,
+        0,
+        80,
+        171,
+        200,
+        569,
+        73,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 5888
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 5966
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        78,
+        112,
+        469,
+        180,
+        716,
+        0,
+        132,
+        104,
+        330,
+        345,
+        121,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 5967
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 6040
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        128,
+        112,
+        469,
+        180,
+        435,
+        0,
+        80,
+        104,
+        200,
+        569,
+        121,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 6041
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 6110
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        132,
+        171,
+        330,
+        345,
+        73,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 6111
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 6174
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        128,
+        68,
+        469,
+        180,
+        435,
+        0,
+        80,
+        104,
+        200,
+        569,
+        73,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 6175
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 6258
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        78,
+        112,
+        284,
+        109,
+        716,
+        0,
+        132,
+        171,
+        330,
+        345,
+        121,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 6259
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 6326
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        128,
+        68,
+        284,
+        109,
+        435,
+        0,
+        132,
+        171,
+        330,
+        345,
+        73,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 6327
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 6407
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        78,
+        112,
+        469,
+        180,
+        716,
+        0,
+        80,
+        104,
+        200,
+        569,
+        121,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 6408
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 6487
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        78,
+        112,
+        469,
+        109,
+        716,
+        0,
+        132,
+        104,
+        330,
+        345,
+        121,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 6488
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 6563
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        128,
+        68,
+        284,
+        180,
+        435,
+        0,
+        80,
+        171,
+        200,
+        569,
+        73,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 6564
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 6634
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        78,
+        112,
+        469,
+        180,
+        435,
+        0,
+        132,
+        171,
+        200,
+        345,
+        73,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 6635
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 6710
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        128,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        104,
+        330,
+        569,
+        121,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 6711
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 6787
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        78,
+        68,
+        284,
+        109,
+        435,
+        0,
+        80,
+        104,
+        330,
+        569,
+        121,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 6788
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 6855
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        128,
+        112,
+        469,
+        180,
+        716,
+        0,
+        132,
+        171,
+        200,
+        345,
+        73,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 6856
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 6934
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        128,
+        112,
+        469,
+        180,
+        716,
+        0,
+        80,
+        171,
+        200,
+        569,
+        73,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 6935
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 7011
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        78,
+        68,
+        284,
+        109,
+        435,
+        0,
+        132,
+        104,
+        330,
+        345,
+        121,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 7012
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 7087
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        128,
+        68,
+        469,
+        180,
+        435,
+        0,
+        132,
+        171,
+        330,
+        345,
+        73,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 7088
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 7163
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        78,
+        112,
+        284,
+        109,
+        716,
+        0,
+        80,
+        104,
+        200,
+        569,
+        121,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 7164
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 7227
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        92,
+        128,
+        112,
+        284,
+        109,
+        435,
+        0,
+        132,
+        104,
+        330,
+        569,
+        73,
+        33,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 7228
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 7314
+        }
+      ]
+    },
+    {
+      "nodes": 1024,
+      "weights": [
+        0,
+        90,
+        152,
+        78,
+        68,
+        469,
+        180,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "source_refs": [
+        {
+          "file": "results/dev_aux/task439/queries.jsonl",
+          "line": 7315
+        },
+        {
+          "file": "results/dev_aux/task440/queries.jsonl",
+          "line": 7391
+        }
+      ]
+    }
+  ],
+  "executable_hashes": {
+    "old": "9741bfd2670d015997a4b10f64595b2874e87c299e49e91edced31be6f647843",
+    "reuse": "80a43db8915073e68af43432f9bb4371507baef73f583de1d19cfde0e5700781"
+  },
+  "scope": "ALL actualnewfitvectors, samecoldinput/goal; no retraining or globalhistory/options/NNUE proof",
+  "cost": "4go/group max~200groups, expected1-2min/300sfuse; no newgames/training"
+}
