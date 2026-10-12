@@ -55,7 +55,8 @@ def test_exact_root_canonical_replay_does_not_keep_inferior_auxiliary_pv():
     assert session.state is before and session._search_witnesses is witnesses
 
 
-def test_exact_score_refinement_preserves_canonical_pv_within_node_budget():
+@pytest.mark.parametrize("node_budget", [1_000_000, 16_000])
+def test_exact_score_refinement_preserves_canonical_pv_within_node_budget(node_budget):
     from generic_chess.learning.material import LearnableMaterialCheckpoint
     from generic_chess.ai.evaluation.profile import build_ruleset_profile
     from generic_chess.ai.evaluation.config import EvaluationConfig
@@ -77,7 +78,7 @@ def test_exact_score_refinement_preserves_canonical_pv_within_node_budget():
         board_values=data['board'], hand_values=data['hand'], dynamic_values=(0,0,0),
         evaluator_scale=1, tt_megabytes=1, ordering_checkpoint=checkpoint,
         ordering_min_depth=2)
-    result = engine.search(session, SearchLimits(max_depth=4, max_nodes=1_000_000,
+    result = engine.search(session, SearchLimits(max_depth=4, max_nodes=node_budget,
         max_time_seconds=64, quiescence_max_depth=0), root_window_pruning=True)
     assert result.completed_depth == 4 and result.score == follow['score']
     assert record_value(result.principal_variation) == follow['expected_pv']

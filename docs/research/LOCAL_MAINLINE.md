@@ -85,6 +85,17 @@ AUX498291c0 proxy-prediction/deployment report is read only: small models learn
 quantity signal, yet prediction gains do not establish win utility or universal
 human prices. Primary search and auxiliary learning remain separate lanes.
 
+Q0_THRESHOLD_CONFIRMATION.md now rejects uniform root-only canonical ordering
+after an observed equal-budget D5-to-D4 loss. Integer threshold confirmation
+retains material root order and selected full canonical reconstruction; savedgen2
+fixed D4 visits281094to13794/D5 347112to79801. Full finite/delivery/boundary/TT
+recovery checks and41production regressions pass; old16000node regression fails
+D3 versusnewD4. No global/default/q4 change. LOCAL_UI_SEARCH_TEST.md records an
+actual separately prepared local test copy: explicit ChessNativeq0, labelled
+Coreq4 for declarations/generated compatibility, real worker andHTTP checks,
+userui-test branch untouched. Next measure remaining canonical/caller cost and
+finish complete UI adapter interfaces only from concrete consumer evidence.
+
 ## Retained long-term objectives and evidence discipline
 
 Two long-term lines remain: rule-only generic piece-value generation with

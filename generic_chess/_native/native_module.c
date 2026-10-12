@@ -5585,11 +5585,23 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
             /* Confirm the score with normal finite-horizon search. Only the
              * final selected root branch needs canonical PV materialization;
              * losing tie candidates must not pay for a complete replay. */
+            /* The earlier parent UPPER==best gives child value >= -best.
+             * An integer threshold test can confirm equality without solving
+             * the entire losing subtree. Keep the PV entry's TT-cutoff policy. */
+            int confirmed_incumbent = best;
             branch = gc_semantic_iterative_negamax(
-                ctx, ply + 1, depth - 1, -GC_SEMANTIC_PROBE_INF,
-                GC_SEMANTIC_PROBE_INF, 1, 0);
+                ctx, ply + 1, depth - 1, -confirmed_incumbent,
+                -confirmed_incumbent + 1, 1, 0);
             if (ctx->control != 0) { ctx->root_tie_aborts++; break; }
-            score = -branch;
+            /* A child fail-low below its earlier lower bound is contradictory,
+             * not an improved move or a tie. Fail-high is a losing parent bound,
+             * never an exact value for the final canonical trace. */
+            if (branch < -confirmed_incumbent) {
+                ctx->control = 4;
+                break;
+            }
+            score = branch == -confirmed_incumbent
+                ? confirmed_incumbent : -branch;
         }
         int prefer_equal = score == best &&
             ((!gc_semantic_is_declaration_action(best_action) &&
