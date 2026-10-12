@@ -370,7 +370,7 @@ the full remote SHA. Direct git push is rejected by the existing repository
 hook; do not bypass it. A full passing regression may precede the focused checks
 required by this publication entry.
 
-### Repository visibility and private access acceptance —2026-10-11
+### Repository visibility and private access acceptance â€”2026-10-11
 
 The user authorized changing WD-nanophotonics/GenericChess to PRIVATE and
 continuing through authenticated GitHub access. The visibility change and
@@ -406,7 +406,7 @@ REPOSITORY_LAYOUT.md owns the purpose map and isolated historical recovery.
 Default pytest uses product/development/workflow/specification directories; old
 experiment receipts and retired policies are evidence, not active requirements.
 
-## Concurrent local work — user2026-10-11
+## Concurrent local work â€” user2026-10-11
 
 Multiple projects and Agents running on this computer are normal. Do not ask
 other projects or DEV_AUX to pause, obtain source-only timing windows, or treat
@@ -421,7 +421,7 @@ extra process monitoring. Preserve frozen raw results and earlier declarations;
 this user instruction supersedes the earlier resource-window practice without
 retrospectively converting old timing evidence into a clean benchmark.
 
-## Diagnose execution blocks —2026-10-12 correction
+## Diagnose execution blocks â€”2026-10-12 correction
 
 Windows4551 is an execution-policy symptom, not a sufficient root-cause report.
 For an observed binary/import failure, inspect the exact error and relevant
@@ -430,6 +430,10 @@ other policy, permissions and missing dependencies. Report the confirmed cause,
 what remains unknown and the concrete remedy promptly. Do not repeat an
 unchanged blocked launch or spend a night recording the same failure. Continue
 useful independent work while resolving the actual cause; do not hide the block.
+If user action is necessary, promptly state the exact error, checks already
+performed and the specific next action needed. Fix authorized causes directly.
+A runtime_limit/block label is not a default excuse for repeated short exits
+or peripheral preparation; no waiting or microchecks to manufacture duration.
 A changed condition warrants one bounded startup/protocol qualification before
 resuming the intended experiment. Never claim recovery from a setting alone.
 Machine-wide security changes remain the user's decision, not an automatic
