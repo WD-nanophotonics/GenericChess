@@ -1,17 +1,19 @@
 ## DEV_AUX current scope2026-10-12
 
-ScienceOPEN; sidemission only; entry working/heartbeatACTIVE, no seriousblocker.
-Segment19:1648actualshortgames517.751s (1600Fairy24ply,48ownNative8ply).
-Correctrootbootstrap3starts fixed/refreshed/terminal-only:960games147.172s;
-3838updatesaudited, referencecontractsmodestlybutpolicymixed, nohumanrecovery.
-9lambda shadowfits.047s/5604updatesexact;416freshgames89.766s, mixedutility.
-3true-terminalwholegameshadowmodels570updates/224freshgames47.688s, mixed.
-Dotroutecomparison adopted; ownpublishedq0fullroot all24D2/D3complete;
-all12D2+12D3score/argmax independentlyenumerated, D3oracle81576leaves.
-Own48eightplygames233.125s/192allD3complete; quantitydiscrimination, allcutoffs.
-No moreFairytraininggrids/seeds; nextboundedowncandidatecontrast prepared235,
-finiteoraclebackup; product/default/UI/PRIMARYstate untouched. Frozenfailures,
-costs/fulloutcomes/audits212..235 and reportSEGMENT_20261012_19.md.
+ScienceOPEN; sidemission only; workingentry/heartbeatACTIVE, no seriousblocker.
+Segment20:160actual8plygames+124completedextraNativequeries,221.905batchs;
+1preerrorquery notaudited.236Qcontrast128games mixedtransfer, all512D2exact.
+Cfinitegoal diagnosis:244ANYpositiveN cannotfixoneD2mate miss;245D3actualfix.
+24796D3familyqueries havepositive/negativegoalgains; Dotmean-opponentreview
+adopted.250meanD3solvesfinite24rootgoal;251entiredeclaredpriceboxflat,
+so thisgoal doesnotidentifyprices. No fullChess/mature impossibilityclaim.
+25232pairedgames snapshot/fullhistory/workequal, modestprefixcostbenefit;
+253lossless126.766->16.820MBtelemetrycodec,255atomicwritegain;
+256seconddecoder/fullsourcehash/30000scalarcontrol audits pass.
+No stablehumanprice recovery; next257fewcapture/recapture signalchecks,
+owncompactharness andnewprimaryq0API feasibility, no blindgame/seedgrowth.
+Allscience/failures/costs236..257/reportSEGMENT_20261012_20.md; PRIMARY
+f1ea1d38context self-reported, notAUXrerun/adoption. Product/state untouched.
 
 # Current local research mainline
 

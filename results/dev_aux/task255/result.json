@@ -1,0 +1,58 @@
+{
+  "complete": true,
+  "seconds": 0.6869999999180436,
+  "rows": [
+    {
+      "frontier": 4,
+      "arms": {
+        "dense": {
+          "seconds": 0.04699999978765845,
+          "cpu_seconds": 0.046875,
+          "bytes": 3910988,
+          "canonical_roundtrip_sha256": "bf10b9b17157ad583b2ac4a9190730c7354a06002717d8cd6b5424e5605097d2"
+        },
+        "compact": {
+          "seconds": 0.015999999828636646,
+          "cpu_seconds": 0.015625,
+          "bytes": 506796,
+          "canonical_roundtrip_sha256": "bf10b9b17157ad583b2ac4a9190730c7354a06002717d8cd6b5424e5605097d2"
+        }
+      }
+    },
+    {
+      "frontier": 8,
+      "arms": {
+        "compact": {
+          "seconds": 0.030999999959021807,
+          "cpu_seconds": 0.015625,
+          "bytes": 1003295,
+          "canonical_roundtrip_sha256": "4b0e15bae8e930cfa69bb51ea44ae10b39d4f2ff83b64be94b162d75959cf8ee"
+        },
+        "dense": {
+          "seconds": 0.09299999987706542,
+          "cpu_seconds": 0.09375,
+          "bytes": 7811679,
+          "canonical_roundtrip_sha256": "4b0e15bae8e930cfa69bb51ea44ae10b39d4f2ff83b64be94b162d75959cf8ee"
+        }
+      }
+    },
+    {
+      "frontier": 16,
+      "arms": {
+        "dense": {
+          "seconds": 0.1880000000819564,
+          "cpu_seconds": 0.1875,
+          "bytes": 15609387,
+          "canonical_roundtrip_sha256": "6c5e883fd928dac823218af244c547298ef8eb9e5373cf7e31512cb23016e588"
+        },
+        "compact": {
+          "seconds": 0.030999999959021807,
+          "cpu_seconds": 0.015625,
+          "bytes": 1992619,
+          "canonical_roundtrip_sha256": "6c5e883fd928dac823218af244c547298ef8eb9e5373cf7e31512cb23016e588"
+        }
+      }
+    }
+  ],
+  "scope": "FileIOstage measurementnotengine speed orold236fullbatchcausalprofile. Originalrawsourcesunchanged; sparsewritefiles derivefromAgentdata, no uniqueevidencecleanup."
+}

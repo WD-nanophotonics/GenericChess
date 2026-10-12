@@ -1,0 +1,252 @@
+{
+  "task_id": "236",
+  "question": "Can one Q-coordinate candidatecompetition improve ownfiniteq0 shortquantity task with freshheldout?",
+  "profiles": {
+    "s703-base": {
+      "P": 208,
+      "K": 0,
+      "N": 87,
+      "B": 126,
+      "R": 2258,
+      "Q": 176
+    },
+    "s703-qminus": {
+      "P": 208,
+      "K": 0,
+      "N": 87,
+      "B": 126,
+      "R": 2258,
+      "Q": 141
+    },
+    "s703-qplus": {
+      "P": 208,
+      "K": 0,
+      "N": 87,
+      "B": 126,
+      "R": 2258,
+      "Q": 220
+    },
+    "s704-base": {
+      "P": 208,
+      "K": 0,
+      "N": 1422,
+      "B": 272,
+      "R": 996,
+      "Q": 214
+    },
+    "s704-qminus": {
+      "P": 208,
+      "K": 0,
+      "N": 1422,
+      "B": 272,
+      "R": 996,
+      "Q": 171
+    },
+    "s704-qplus": {
+      "P": 208,
+      "K": 0,
+      "N": 1422,
+      "B": 272,
+      "R": 996,
+      "Q": 268
+    },
+    "s705-base": {
+      "P": 208,
+      "K": 0,
+      "N": 1147,
+      "B": 75,
+      "R": 216,
+      "Q": 335
+    },
+    "s705-qminus": {
+      "P": 208,
+      "K": 0,
+      "N": 1147,
+      "B": 75,
+      "R": 216,
+      "Q": 268
+    },
+    "s705-qplus": {
+      "P": 208,
+      "K": 0,
+      "N": 1147,
+      "B": 75,
+      "R": 216,
+      "Q": 419
+    }
+  },
+  "seed_profiles": {
+    "703": [
+      "s703-base",
+      "s703-qminus",
+      "s703-qplus"
+    ],
+    "704": [
+      "s704-base",
+      "s704-qminus",
+      "s704-qplus"
+    ],
+    "705": [
+      "s705-base",
+      "s705-qminus",
+      "s705-qplus"
+    ]
+  },
+  "unit": {
+    "P": 208,
+    "K": 0,
+    "N": 208,
+    "B": 208,
+    "R": 208,
+    "Q": 208
+  },
+  "roots": {
+    "train": [
+      {
+        "seed": 2026105400,
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "history": [
+          "b2b4",
+          "b7b5",
+          "d2d3",
+          "c7c6",
+          "h2h3",
+          "d8c7",
+          "c1b2",
+          "g8h6",
+          "h3h4",
+          "c6c5",
+          "b2e5",
+          "b8c6",
+          "b1a3",
+          "c5c4",
+          "g2g4",
+          "c4d3",
+          "h1h3",
+          "a7a6",
+          "c2c4",
+          "a6a5"
+        ],
+        "expected_fen": "r1b1kb1r/2qppppp/2n4n/pp2B3/1PP3PP/N2p3R/P3PP2/R2QKBN1 w Qkq - 0 11"
+      },
+      {
+        "seed": 2026105401,
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "history": [
+          "h2h3",
+          "h7h6",
+          "a2a4",
+          "g8f6",
+          "g2g3",
+          "g7g5",
+          "b1a3",
+          "c7c6",
+          "a1a2",
+          "d8c7",
+          "e2e4",
+          "f6d5",
+          "b2b3",
+          "c7b6",
+          "a3c4",
+          "h8g8",
+          "d1g4",
+          "d5b4",
+          "c4a5",
+          "b4d5"
+        ],
+        "expected_fen": "rnb1kbr1/pp1ppp2/1qp4p/N2n2p1/P3P1Q1/1P4PP/R1PP1P2/2B1KBNR w Kq - 7 11"
+      }
+    ],
+    "heldout": [
+      {
+        "seed": 2026105600,
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "history": [
+          "c2c4",
+          "g8h6",
+          "c4c5",
+          "f7f6",
+          "c5c6",
+          "g7g6",
+          "f2f3",
+          "f6f5",
+          "b1c3",
+          "b7b6",
+          "f3f4",
+          "d7d6",
+          "d1b3",
+          "h8g8",
+          "g1f3",
+          "b8c6",
+          "b3b5",
+          "g8h8",
+          "d2d4",
+          "d8d7"
+        ],
+        "expected_fen": "r1b1kb1r/p1pqp2p/1pnp2pn/1Q3p2/3P1P2/2N2N2/PP2P1PP/R1B1KB1R w KQq - 1 11"
+      },
+      {
+        "seed": 2026105601,
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "history": [
+          "h2h3",
+          "f7f6",
+          "b2b3",
+          "d7d6",
+          "g2g3",
+          "h7h5",
+          "b1a3",
+          "b7b6",
+          "d2d3",
+          "c8d7",
+          "d3d4",
+          "d7c8",
+          "a3b5",
+          "c8e6",
+          "e2e3",
+          "e6c4",
+          "d1d2",
+          "d8c8",
+          "d2b4",
+          "g7g6"
+        ],
+        "expected_fen": "rnq1kbnr/p1p1p3/1p1p1pp1/1N5p/1QbP4/1P2P1PP/P1P2P2/R1B1KBNR w KQkq - 0 11"
+      }
+    ]
+  },
+  "excluded_roots": {
+    "train": [],
+    "heldout": []
+  },
+  "opponents": [
+    "random",
+    "unit2ply"
+  ],
+  "random_seed_base": {
+    "train": 2026305400,
+    "heldout": 2026305600
+  },
+  "cap": 8,
+  "search": {
+    "max_depth": 2,
+    "max_nodes": null,
+    "max_time_seconds": 3,
+    "quiescence_max_depth": 0,
+    "tt_megabytes": 0,
+    "root_window_pruning": false
+  },
+  "deadline_seconds": 900,
+  "native_binary_sha256": "2f97cfb8816bc963163207095bf40ac990169284cd0cfb2e7b545f0a6bf07bf1",
+  "source_hashes": {
+    "generic_chess/native/semantic_engine.py": "1ef1e798dcf1decd4eede9bc36924e7127f07ebcb6456eaf5d84e4d3e3d00360",
+    "generic_chess/_native/native_module.c": "60faec2b354953ce778fef9c5aaf4aa5af49e5e3db1baaf54a9a94e78f772753",
+    "generic_chess/_native/native_search.c": "588298552762c0bab66556ad488cea2861524e4c17c9e254247860dde9a9addb"
+  },
+  "source_base": "277de53a1f4d73f2626604b81ab90e501ed34791",
+  "select": "For eachseed choose highesttraining meanquantity/15 acrossall2roots*2colors*2opponents. Deterministicties base thenqminus thenqplus; actualterminalcategoriesreportedseparately. No selectiononheldout/humanratio; all3selected frozen before firstheldout.",
+  "unique_games": "72training +56heldout maximum=128; commonbaseline perseed/phase onlyphysicallyonce. All7heldoutprofiles unit+3initial+3selected even ifsameweights logically duplicated declared.",
+  "extra_checks": "12D3queries: all3seeds base andselected on2heldoutroots, BEFOREoutcomes? Endpointselectionusestrainonly andALL12afterfreeze, fixedno gamecontinuation; sameheldoutsdevelopmentexposedafterdeploy, notmodelselection.",
+  "cost": "128actual8plyD2games estimated<=180s plus12D3checks estimated15s,900swholefuse, oneprocessserial. No hour-longrun/extra worker/Fairygrid.",
+  "scope": "Onegeneration Q-only step, arbitrarynonhuman starts; ownWesternNative q0 vsorthodoxopponents, fullhistory/legalsets checked; drawpolicy notgloballyidentical. Unknowncap notdraw; quantityproxy canbe gamed; no claimedfullpricelearning/generalWDL/causalprice.",
+  "created_at": "2026-10-12T09:42:18.103569+00:00"
+}

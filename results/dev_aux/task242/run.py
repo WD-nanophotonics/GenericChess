@@ -1,0 +1,24 @@
+import json,itertools,time,hashlib,datetime,math
+from fractions import Fraction
+from pathlib import Path
+import chess,numpy as np
+R=Path.cwd();O=R/'results/dev_aux/task242';D=json.loads((O/'declaration.json').read_bytes());P=R/'results/dev_aux/task241/result.json';assert hashlib.sha256(P.read_bytes()).hexdigest()==D['source_sha256'];S=json.loads(P.read_bytes());assert not (O/'result.json').exists();start=time.monotonic();ratios=list(itertools.product(D['grid'],repeat=4));W=np.array([[208]+[round(208*x) for x in t] for t in ratios],dtype=np.int64);sourceD=json.loads((R/'results/dev_aux/task241/declaration.json').read_bytes());oldW=np.array([[sourceD['profiles'][p][k] for k in 'PNBRQ'] for p in sourceD['profiles']],dtype=np.int64);phase={f['name']:f['phase'] for f in D['roots']};results=[];features=[];goalFractions=[];count=0
+for root in S['results']:
+ b=chess.Board(root['fen']);actor=b.turn;rows=[];goals=[];moves=[]
+ for row in root['rows']:
+  b.push_uci(row['move']);term=b.outcome(claim_draw=False);branches=[];oldbranches=[];meta=[]
+  if term:
+   v=0 if term.winner is None else (1000000000-1 if term.winner==actor else -1000000000+1);branches.append(np.full(625,v,dtype=np.int64));oldbranches.append(np.full(len(oldW),v,dtype=np.int64));goal=Fraction(int(term.winner==actor));meta.append(dict(terminal=v))
+  else:
+   goal=Fraction(sum(z['success_within3'] for z in row['replies']),len(row['replies']))
+   assert [z['reply'] for z in row['replies']]==sorted(m.uci() for m in b.legal_moves)
+   for rr in row['replies']:
+    b.push_uci(rr['reply']);term=b.outcome(claim_draw=False)
+    if term:v=0 if term.winner is None else (1000000000-2 if term.winner==actor else -1000000000+2);vals=np.full(625,v,dtype=np.int64);olds=np.full(len(oldW),v,dtype=np.int64);meta.append(dict(reply=rr['reply'],terminal=v))
+    else:phi=np.array([len(b.pieces(t,actor))-len(b.pieces(t,not actor)) for t in range(1,6)]);vals=W@phi;olds=oldW@phi;meta.append(dict(reply=rr['reply'],features=phi.tolist()))
+    assert olds.tolist()==rr['leaf_values'];branches.append(vals);oldbranches.append(olds);b.pop();count+=1
+  b.pop();mins=np.min(branches,axis=0);oldmins=np.min(oldbranches,axis=0);assert oldmins.tolist()==row['minimax2_values'];rows.append(mins);goals.append(goal);moves.append(row['move']);features.append(dict(root=root['name'],move=row['move'],goal=str(goal),branches=meta))
+ mat=np.array(rows);best=mat.max(axis=0);chosen=np.argmax(mat,axis=0);ties=mat==best;chosenGoals=[goals[i] for i in chosen];goalFractions.append(chosenGoals);ranges=[(min(goals[i] for i in np.where(ties[:,j])[0]),max(goals[i] for i in np.where(ties[:,j])[0])) for j in range(625)];results.append(dict(root=root['name'],phase=phase[root['name']],moves=moves,chosen_indices=chosen.tolist(),goal_values=[str(g) for g in chosenGoals],tie_goal_min=[str(g[0]) for g in ranges],tie_goal_max=[str(g[1]) for g in ranges],exact_goal_optimum=str(max(goals))))
+train=[i for i,r in enumerate(results) if r['phase']=='train'];held=[i for i,r in enumerate(results) if r['phase']=='heldout'];means=[sum(goalFractions[i][j] for i in train)/len(train) for j in range(625)];best=max(means);ties=[j for j,x in enumerate(means) if x==best];selected=min(ties,key=lambda j:(sum(math.log(x)**2 for x in ratios[j]),ratios[j]));endpoint=dict(complete=True,selected_index=selected,ratios=dict(zip('NBRQ',ratios[selected])),training_goal=str(means[selected]),training_optimal_profiles=len(ties),frozen_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),selection='TrainexactFraction only; logunit-distance tie thenlex, nohumanlabels/heldselection.');(O/'endpoint.json').write_text(json.dumps(endpoint,indent=2),encoding='utf-8')
+heldmeans=[sum(goalFractions[i][j] for i in held)/len(held) for j in range(625)];unit=ratios.index((1,1,1,1));models=[dict(index=j,ratios=dict(zip('NBRQ',r)),train_goal=str(means[j]),heldout_goal=str(heldmeans[j]),heldout_delta_vs_unit=str(heldmeans[j]-heldmeans[unit])) for j,r in enumerate(ratios)]
+out=dict(complete=True,seconds=time.monotonic()-start,configs=625,source_leaf_checks=count,endpoint=endpoint,unit=dict(train=str(means[unit]),heldout=str(heldmeans[unit])),selected_heldout=str(heldmeans[selected]),selected_heldout_delta=str(heldmeans[selected]-heldmeans[unit]),training_unique_goal_values=len(set(means)),heldout_unique_goal_values=len(set(heldmeans)),models=models,root_policies=results,scope=D['scope']);(O/'features.json').write_text(json.dumps(dict(complete=True,rows=features),indent=2),encoding='utf-8');(O/'result.json').write_text(json.dumps(out,indent=2),encoding='utf-8');print(json.dumps({k:out[k] for k in ('complete','seconds','configs','source_leaf_checks','endpoint','unit','selected_heldout','selected_heldout_delta','training_unique_goal_values','heldout_unique_goal_values')},indent=2))

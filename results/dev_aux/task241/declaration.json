@@ -1,0 +1,362 @@
+{
+  "task_id": "241",
+  "question": "Can adding competingcaptures create identifiable cheapmate-task signal, and doesonefinitegridoptimization transfer?",
+  "roots": [
+    {
+      "name": "Kf5-Rg4-Nc2-pg7",
+      "fen": "7k/6p1/8/5K2/6R1/8/2n5/3Q4 w - - 0 1",
+      "phase": "train",
+      "king": "f5",
+      "rook": "g4",
+      "enemy": "N",
+      "square": "c2"
+    },
+    {
+      "name": "Kf5-Rg4-Bc2-pg7",
+      "fen": "7k/6p1/8/5K2/6R1/8/2b5/3Q4 w - - 0 1",
+      "phase": "train",
+      "king": "f5",
+      "rook": "g4",
+      "enemy": "B",
+      "square": "c2"
+    },
+    {
+      "name": "Kf5-Rg4-Rc2-pg7",
+      "fen": "7k/6p1/8/5K2/6R1/8/2r5/3Q4 w - - 0 1",
+      "phase": "train",
+      "king": "f5",
+      "rook": "g4",
+      "enemy": "R",
+      "square": "c2"
+    },
+    {
+      "name": "Kf5-Rg4-Nd7-pg7",
+      "fen": "7k/3n2p1/8/5K2/6R1/8/8/3Q4 w - - 0 1",
+      "phase": "train",
+      "king": "f5",
+      "rook": "g4",
+      "enemy": "N",
+      "square": "d7"
+    },
+    {
+      "name": "Kf5-Rg4-Bd7-pg7",
+      "fen": "7k/3b2p1/8/5K2/6R1/8/8/3Q4 w - - 0 1",
+      "phase": "train",
+      "king": "f5",
+      "rook": "g4",
+      "enemy": "B",
+      "square": "d7"
+    },
+    {
+      "name": "Kf5-Rg4-Rd7-pg7",
+      "fen": "7k/3r2p1/8/5K2/6R1/8/8/3Q4 w - - 0 1",
+      "phase": "train",
+      "king": "f5",
+      "rook": "g4",
+      "enemy": "R",
+      "square": "d7"
+    },
+    {
+      "name": "Kf5-Rg5-Nc2-pg7",
+      "fen": "7k/6p1/8/5KR1/8/8/2n5/3Q4 w - - 0 1",
+      "phase": "train",
+      "king": "f5",
+      "rook": "g5",
+      "enemy": "N",
+      "square": "c2"
+    },
+    {
+      "name": "Kf5-Rg5-Bc2-pg7",
+      "fen": "7k/6p1/8/5KR1/8/8/2b5/3Q4 w - - 0 1",
+      "phase": "train",
+      "king": "f5",
+      "rook": "g5",
+      "enemy": "B",
+      "square": "c2"
+    },
+    {
+      "name": "Kf5-Rg5-Rc2-pg7",
+      "fen": "7k/6p1/8/5KR1/8/8/2r5/3Q4 w - - 0 1",
+      "phase": "train",
+      "king": "f5",
+      "rook": "g5",
+      "enemy": "R",
+      "square": "c2"
+    },
+    {
+      "name": "Kf5-Rg5-Nd7-pg7",
+      "fen": "7k/3n2p1/8/5KR1/8/8/8/3Q4 w - - 0 1",
+      "phase": "train",
+      "king": "f5",
+      "rook": "g5",
+      "enemy": "N",
+      "square": "d7"
+    },
+    {
+      "name": "Kf5-Rg5-Bd7-pg7",
+      "fen": "7k/3b2p1/8/5KR1/8/8/8/3Q4 w - - 0 1",
+      "phase": "train",
+      "king": "f5",
+      "rook": "g5",
+      "enemy": "B",
+      "square": "d7"
+    },
+    {
+      "name": "Kf5-Rg5-Rd7-pg7",
+      "fen": "7k/3r2p1/8/5KR1/8/8/8/3Q4 w - - 0 1",
+      "phase": "train",
+      "king": "f5",
+      "rook": "g5",
+      "enemy": "R",
+      "square": "d7"
+    },
+    {
+      "name": "Kf6-Rg4-Nc2-pg7",
+      "fen": "7k/6p1/5K2/8/6R1/8/2n5/3Q4 w - - 0 1",
+      "phase": "heldout",
+      "king": "f6",
+      "rook": "g4",
+      "enemy": "N",
+      "square": "c2"
+    },
+    {
+      "name": "Kf6-Rg4-Bc2-pg7",
+      "fen": "7k/6p1/5K2/8/6R1/8/2b5/3Q4 w - - 0 1",
+      "phase": "heldout",
+      "king": "f6",
+      "rook": "g4",
+      "enemy": "B",
+      "square": "c2"
+    },
+    {
+      "name": "Kf6-Rg4-Rc2-pg7",
+      "fen": "7k/6p1/5K2/8/6R1/8/2r5/3Q4 w - - 0 1",
+      "phase": "heldout",
+      "king": "f6",
+      "rook": "g4",
+      "enemy": "R",
+      "square": "c2"
+    },
+    {
+      "name": "Kf6-Rg4-Nd7-pg7",
+      "fen": "7k/3n2p1/5K2/8/6R1/8/8/3Q4 w - - 0 1",
+      "phase": "heldout",
+      "king": "f6",
+      "rook": "g4",
+      "enemy": "N",
+      "square": "d7"
+    },
+    {
+      "name": "Kf6-Rg4-Bd7-pg7",
+      "fen": "7k/3b2p1/5K2/8/6R1/8/8/3Q4 w - - 0 1",
+      "phase": "heldout",
+      "king": "f6",
+      "rook": "g4",
+      "enemy": "B",
+      "square": "d7"
+    },
+    {
+      "name": "Kf6-Rg4-Rd7-pg7",
+      "fen": "7k/3r2p1/5K2/8/6R1/8/8/3Q4 w - - 0 1",
+      "phase": "heldout",
+      "king": "f6",
+      "rook": "g4",
+      "enemy": "R",
+      "square": "d7"
+    },
+    {
+      "name": "Kf6-Rg5-Nc2-pg7",
+      "fen": "7k/6p1/5K2/6R1/8/8/2n5/3Q4 w - - 0 1",
+      "phase": "heldout",
+      "king": "f6",
+      "rook": "g5",
+      "enemy": "N",
+      "square": "c2"
+    },
+    {
+      "name": "Kf6-Rg5-Bc2-pg7",
+      "fen": "7k/6p1/5K2/6R1/8/8/2b5/3Q4 w - - 0 1",
+      "phase": "heldout",
+      "king": "f6",
+      "rook": "g5",
+      "enemy": "B",
+      "square": "c2"
+    },
+    {
+      "name": "Kf6-Rg5-Rc2-pg7",
+      "fen": "7k/6p1/5K2/6R1/8/8/2r5/3Q4 w - - 0 1",
+      "phase": "heldout",
+      "king": "f6",
+      "rook": "g5",
+      "enemy": "R",
+      "square": "c2"
+    },
+    {
+      "name": "Kf6-Rg5-Nd7-pg7",
+      "fen": "7k/3n2p1/5K2/6R1/8/8/8/3Q4 w - - 0 1",
+      "phase": "heldout",
+      "king": "f6",
+      "rook": "g5",
+      "enemy": "N",
+      "square": "d7"
+    },
+    {
+      "name": "Kf6-Rg5-Bd7-pg7",
+      "fen": "7k/3b2p1/5K2/6R1/8/8/8/3Q4 w - - 0 1",
+      "phase": "heldout",
+      "king": "f6",
+      "rook": "g5",
+      "enemy": "B",
+      "square": "d7"
+    },
+    {
+      "name": "Kf6-Rg5-Rd7-pg7",
+      "fen": "7k/3r2p1/5K2/6R1/8/8/8/3Q4 w - - 0 1",
+      "phase": "heldout",
+      "king": "f6",
+      "rook": "g5",
+      "enemy": "R",
+      "square": "d7"
+    }
+  ],
+  "excluded": [],
+  "profiles": {
+    "unit": {
+      "P": 208,
+      "K": 0,
+      "N": 208,
+      "B": 208,
+      "R": 208,
+      "Q": 208
+    },
+    "s703-base": {
+      "P": 208,
+      "K": 0,
+      "N": 87,
+      "B": 126,
+      "R": 2258,
+      "Q": 176
+    },
+    "s703-qminus": {
+      "P": 208,
+      "K": 0,
+      "N": 87,
+      "B": 126,
+      "R": 2258,
+      "Q": 141
+    },
+    "s703-qplus": {
+      "P": 208,
+      "K": 0,
+      "N": 87,
+      "B": 126,
+      "R": 2258,
+      "Q": 220
+    },
+    "s704-base": {
+      "P": 208,
+      "K": 0,
+      "N": 1422,
+      "B": 272,
+      "R": 996,
+      "Q": 214
+    },
+    "s704-qminus": {
+      "P": 208,
+      "K": 0,
+      "N": 1422,
+      "B": 272,
+      "R": 996,
+      "Q": 171
+    },
+    "s704-qplus": {
+      "P": 208,
+      "K": 0,
+      "N": 1422,
+      "B": 272,
+      "R": 996,
+      "Q": 268
+    },
+    "s705-base": {
+      "P": 208,
+      "K": 0,
+      "N": 1147,
+      "B": 75,
+      "R": 216,
+      "Q": 335
+    },
+    "s705-qminus": {
+      "P": 208,
+      "K": 0,
+      "N": 1147,
+      "B": 75,
+      "R": 216,
+      "Q": 268
+    },
+    "s705-qplus": {
+      "P": 208,
+      "K": 0,
+      "N": 1147,
+      "B": 75,
+      "R": 216,
+      "Q": 419
+    },
+    "gridQ52": {
+      "P": 208,
+      "K": 0,
+      "N": 208,
+      "B": 208,
+      "R": 208,
+      "Q": 52
+    },
+    "gridQ104": {
+      "P": 208,
+      "K": 0,
+      "N": 208,
+      "B": 208,
+      "R": 208,
+      "Q": 104
+    },
+    "gridQ208": {
+      "P": 208,
+      "K": 0,
+      "N": 208,
+      "B": 208,
+      "R": 208,
+      "Q": 208
+    },
+    "gridQ416": {
+      "P": 208,
+      "K": 0,
+      "N": 208,
+      "B": 208,
+      "R": 208,
+      "Q": 416
+    },
+    "gridQ832": {
+      "P": 208,
+      "K": 0,
+      "N": 208,
+      "B": 208,
+      "R": 208,
+      "Q": 832
+    }
+  },
+  "decision_depth": 2,
+  "goal_depth": 3,
+  "deadline_seconds": 90,
+  "goal": "For everyfirstWhitemove, enumeratealllegalBlackreplies uniformly; lastWhite turn choosesanyactualmate-in1 ifavailable. Successindicator1 iftrueWhitecheckmate within3plies else0. This is boundedtimegoal, NOT finalWDL/drawclassification; unknownfinalstates separatelycounted.",
+  "control": "For eachprofile completepurematerialD2minimax and fullargmax; deploylexicographicallyfirsttie (fixed). Compareall10policies againstexactuniformBlackgoalvalue, onegeometry family, nohumanprice/model/rootselection.",
+  "cost": "24fixedpositions maximum, complete2ply+thirdrealmate checks,15simultaneouspriceprofiles, estimate5s/90swholeguard; no engineworker.",
+  "scope": "C6piecegeometryfamily diagnostic; trainKf5/heldKf6 deterministicgeometrysplit notIID/generalhumanprices. Truegoalwithin3plies isknown evenwhenfinalWDLunknown. OnlyQgrid optimized, expertlabelsabsent.",
+  "created_at": "2026-10-12T09:53:25.860517+00:00",
+  "grid_profiles": [
+    "gridQ52",
+    "gridQ104",
+    "gridQ208",
+    "gridQ416",
+    "gridQ832"
+  ],
+  "select": "Selectonlyoneof5nonhumanmechanicalQgrid profiles bytraining meanexact3plygoal, deterministictiepreferQ208then52/104/416/832; allprofiles frozen beforeanyoutcome, allheldout laterdescriptive/no modelselection.",
+  "changed_premise": "240all24pricepolicies identical despiteknownmate-goalregret; nowcompetingQUEENcapture enemyN/B/R vsROOKcapturepawn addsmaterialchoice andrecapturecost. No unchangedrerun/extra randomseeds."
+}

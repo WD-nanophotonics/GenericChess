@@ -1,0 +1,403 @@
+{
+  "complete": true,
+  "counts": {
+    "games": 128,
+    "moves": 1024,
+    "agent_searches": 512,
+    "unit_searches": 256,
+    "unit_leaf_nodes": 250874,
+    "completed_D2": 512,
+    "lower_completed": 0,
+    "main_nodes": 581812,
+    "qnodes": 0
+  },
+  "completed_depths": {
+    "2": 512
+  },
+  "search_wall": {
+    "min": 0.0,
+    "mean": 0.046994140618153324,
+    "max": 0.07899999991059303,
+    "sum": 24.060999996494502
+  },
+  "actual_game_batch_seconds": 182.04700000025332,
+  "audit_seconds": 2.625,
+  "selection_train_only": true,
+  "all_endpoints_before_heldout": true,
+  "selection": {
+    "complete": true,
+    "selected": {
+      "703": "s703-qplus",
+      "704": "s704-base",
+      "705": "s705-base"
+    },
+    "training_means": {
+      "703": {
+        "s703-base": 0.06666666666666667,
+        "s703-qminus": 0.06666666666666667,
+        "s703-qplus": 0.10833333333333334
+      },
+      "704": {
+        "s704-base": 0.09166666666666667,
+        "s704-qminus": 0.058333333333333334,
+        "s704-qplus": 0.09166666666666667
+      },
+      "705": {
+        "s705-base": 0.1,
+        "s705-qminus": 0.1,
+        "s705-qplus": 0.1
+      }
+    },
+    "weights": {
+      "703": {
+        "P": 208,
+        "K": 0,
+        "N": 87,
+        "B": 126,
+        "R": 2258,
+        "Q": 220
+      },
+      "704": {
+        "P": 208,
+        "K": 0,
+        "N": 1422,
+        "B": 272,
+        "R": 996,
+        "Q": 214
+      },
+      "705": {
+        "P": 208,
+        "K": 0,
+        "N": 1147,
+        "B": 75,
+        "R": 216,
+        "Q": 335
+      }
+    },
+    "training_games": 72,
+    "frozen_at": "2026-10-12T09:44:25.290001+00:00"
+  },
+  "components": [
+    {
+      "seed": "703",
+      "selected": "s703-qplus",
+      "opponent": "random",
+      "initial": {
+        "original": 0.2,
+        "quantity": 0.2,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "final": {
+        "original": 0.16666666666666669,
+        "quantity": 0.16666666666666669,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "unit": {
+        "original": 0.16666666666666666,
+        "quantity": 0.16666666666666666,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "delta_vs_initial": {
+        "original": -0.033333333333333326,
+        "quantity": -0.033333333333333326
+      },
+      "delta_vs_unit": {
+        "original": 2.7755575615628914e-17,
+        "quantity": 2.7755575615628914e-17
+      },
+      "changed_action_pairs": 2
+    },
+    {
+      "seed": "703",
+      "selected": "s703-qplus",
+      "opponent": "unit2ply",
+      "initial": {
+        "original": 0.0,
+        "quantity": 0.0,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "final": {
+        "original": 0.03333333333333333,
+        "quantity": 0.03333333333333333,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "unit": {
+        "original": 0.05,
+        "quantity": 0.05,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "delta_vs_initial": {
+        "original": 0.03333333333333333,
+        "quantity": 0.03333333333333333
+      },
+      "delta_vs_unit": {
+        "original": -0.01666666666666667,
+        "quantity": -0.01666666666666667
+      },
+      "changed_action_pairs": 1
+    },
+    {
+      "seed": "704",
+      "selected": "s704-base",
+      "opponent": "random",
+      "initial": {
+        "original": 0.15,
+        "quantity": 0.15,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "final": {
+        "original": 0.15,
+        "quantity": 0.15,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "unit": {
+        "original": 0.16666666666666666,
+        "quantity": 0.16666666666666666,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "delta_vs_initial": {
+        "original": 0.0,
+        "quantity": 0.0
+      },
+      "delta_vs_unit": {
+        "original": -0.016666666666666663,
+        "quantity": -0.016666666666666663
+      },
+      "changed_action_pairs": 0
+    },
+    {
+      "seed": "704",
+      "selected": "s704-base",
+      "opponent": "unit2ply",
+      "initial": {
+        "original": 0.0,
+        "quantity": 0.0,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "final": {
+        "original": 0.0,
+        "quantity": 0.0,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "unit": {
+        "original": 0.05,
+        "quantity": 0.05,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "delta_vs_initial": {
+        "original": 0.0,
+        "quantity": 0.0
+      },
+      "delta_vs_unit": {
+        "original": -0.05,
+        "quantity": -0.05
+      },
+      "changed_action_pairs": 0
+    },
+    {
+      "seed": "705",
+      "selected": "s705-base",
+      "opponent": "random",
+      "initial": {
+        "original": 0.18333333333333335,
+        "quantity": 0.18333333333333335,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "final": {
+        "original": 0.18333333333333335,
+        "quantity": 0.18333333333333335,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "unit": {
+        "original": 0.16666666666666666,
+        "quantity": 0.16666666666666666,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "delta_vs_initial": {
+        "original": 0.0,
+        "quantity": 0.0
+      },
+      "delta_vs_unit": {
+        "original": 0.01666666666666669,
+        "quantity": 0.01666666666666669
+      },
+      "changed_action_pairs": 0
+    },
+    {
+      "seed": "705",
+      "selected": "s705-base",
+      "opponent": "unit2ply",
+      "initial": {
+        "original": 0.0,
+        "quantity": 0.0,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "final": {
+        "original": 0.0,
+        "quantity": 0.0,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "unit": {
+        "original": 0.05,
+        "quantity": 0.05,
+        "wins": 0,
+        "losses": 0,
+        "unknown": 4
+      },
+      "delta_vs_initial": {
+        "original": 0.0,
+        "quantity": 0.0
+      },
+      "delta_vs_unit": {
+        "original": -0.05,
+        "quantity": -0.05
+      },
+      "changed_action_pairs": 0
+    }
+  ],
+  "queries": [
+    {
+      "seed": "703",
+      "label": "initial",
+      "root": 0,
+      "completed_depth": 3,
+      "action": "d4d5",
+      "score": 0,
+      "seconds": 1.4690000000409782
+    },
+    {
+      "seed": "703",
+      "label": "initial",
+      "root": 1,
+      "completed_depth": 3,
+      "action": "b5c7",
+      "score": 329,
+      "seconds": 1.6869999999180436
+    },
+    {
+      "seed": "703",
+      "label": "selected",
+      "root": 0,
+      "completed_depth": 3,
+      "action": "d4d5",
+      "score": 0,
+      "seconds": 1.4679999998770654
+    },
+    {
+      "seed": "703",
+      "label": "selected",
+      "root": 1,
+      "completed_depth": 3,
+      "action": "b5c7",
+      "score": 329,
+      "seconds": 1.6559999999590218
+    },
+    {
+      "seed": "704",
+      "label": "initial",
+      "root": 0,
+      "completed_depth": 3,
+      "action": "b5c6",
+      "score": 1000,
+      "seconds": 1.4690000000409782
+    },
+    {
+      "seed": "704",
+      "label": "initial",
+      "root": 1,
+      "completed_depth": 3,
+      "action": "f1c4",
+      "score": 480,
+      "seconds": 1.6559999999590218
+    },
+    {
+      "seed": "704",
+      "label": "selected",
+      "root": 0,
+      "completed_depth": 3,
+      "action": "b5c6",
+      "score": 1000,
+      "seconds": 1.4529999997466803
+    },
+    {
+      "seed": "704",
+      "label": "selected",
+      "root": 1,
+      "completed_depth": 3,
+      "action": "f1c4",
+      "score": 480,
+      "seconds": 1.6869999999180436
+    },
+    {
+      "seed": "705",
+      "label": "initial",
+      "root": 0,
+      "completed_depth": 3,
+      "action": "b5c6",
+      "score": 604,
+      "seconds": 1.4690000000409782
+    },
+    {
+      "seed": "705",
+      "label": "initial",
+      "root": 1,
+      "completed_depth": 3,
+      "action": "f1c4",
+      "score": 283,
+      "seconds": 1.6720000002533197
+    },
+    {
+      "seed": "705",
+      "label": "selected",
+      "root": 0,
+      "completed_depth": 3,
+      "action": "b5c6",
+      "score": 604,
+      "seconds": 1.483999999705702
+    },
+    {
+      "seed": "705",
+      "label": "selected",
+      "root": 1,
+      "completed_depth": 3,
+      "action": "f1c4",
+      "score": 283,
+      "seconds": 1.6719999997876585
+    }
+  ],
+  "scope": "Onegeneration Q-only step, arbitrarynonhuman starts; ownWesternNative q0 vsorthodoxopponents, fullhistory/legalsets checked; drawpolicy notgloballyidentical. Unknowncap notdraw; quantityproxy canbe gamed; no claimedfullpricelearning/generalWDL/causalprice."
+}

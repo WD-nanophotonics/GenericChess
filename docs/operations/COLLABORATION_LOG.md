@@ -596,3 +596,41 @@ wasallowed; no machineexclusivity or equal-work speedclaim. Nextown bounded
 candidatecontrast isprepared235, finiteCbackup; publication/readback distinct
 from Dot adoption. RawSlack/account/private inputs excluded; exactremoteSHA
 will beverified afterpush. Actualsessionreceipt separately recordsending/time.
+
+
+## 2026-10-12 DEV_AUX segment20: goal identifiability and experiment cost
+
+AUX independently completed160eight-halfmovegames plus124additionalNativequeries,
+221.905batchseconds; one result-conversion query failed beforea completegame,
+missingimport wasdiagnosed/fixed andfailure preserved.128Qcoordinate trials
+have mixed/no transfer, full512D2scores/argmax audited. Cheap exactCtrees show
+why optimization alonecanfail: onepositive-knight D2capture strictlybeats a
+trueforcedmate setup forANYpositiveN; actualD3 root/mirror queries fixthatwitness.
+Across24geometriesD3gains/lossesarebothpreserved. Dot’s1791798993 math review
+wasfullyread/saved/exactreconciled andadopted: min-vs-uniform control and
+tie/grid-union bounds. Same-depthmeanD3achievesknownfinitegoal, butall625prices
+andtheentiredeclaredcontinuousbox tiebyterminaldominance proof; notfullChess
+orhumanpriceimpossibility. Statecountvalue-fitting floorsareseparatefrompolicygain.
+
+Measuredowncontroller repairs:32actualpairedgames preservecompletehistory,
+work/results/cachedstate usingboundedimmutableprefix clones, modestcostsaving;
+126.766MBrawtelemetry losslessly16.820MB,serialization1.390->.219s;
+actual16recordatomicwrite.188->.031s, source/decodedsemanticSHAequal.
+256independentdecoder/32trajectory and30000scalaroperator checks pass.
+OnlyAgentdata/evidenceformat changes, noproduct/UI/default/primarywrites.
+Rawhistoricalevidence retained; no cleanup, addedworker/fees orlonggames.
+
+PRIMARYlatestpublishedpin f1ea1d3870302777de6b56ae4cd62a17d7bf7bb0 reports
+67.654min/566science+3sensitivityqueries, optionalexact-rootq0selected-branch
+canonical reconstruction, finitecancel/TT checks andprivateexplicitimmediate-win
+consumerpolicy. Dotreviewedconsumer semantics: D1proof isnotD12traininglabel,
+actualterminal authority andcancel/budget remain. AUXreadcompleteprimarythread,
+didnotrerun thosechecks oradoptnewcode automatically. PRIMARYread277de53a/AUX
+andDotadvice, keptthisworkindependent; no routineackloop orresourcepause.
+
+AUXnext257testsactualnonflatcapture/recapture pricepayoff signal beforetraining,
+useslosslessownrecording/boundedprefixreuse, andreadsnewprimaryq0API inownpin
+ifneeded. ScienceOPEN; currententryconcise; reportSEGMENT_20261012_20.md and
+exact236..257archivehold allclaims/limits/failures. Onlyorigin/sidemission sync,
+fullremoteSHAverifiedafterpush; fixedreport/collaborationlinks deliveredtoDot
+andPRIMARY, deliverydistinctfromreview/adoption. Actualsessionreceipt separate.
