@@ -40,7 +40,10 @@ notexecuted/validated andno nexttraining/game output claimed. Keep twoinitials,
 ALLendpoints/crossengines/opponents/frozenfails/cost; nohuman fitting/selector.
 471ALLfreshroot/BOTHinitial/BOTHengine cold preflight64go128tableentries/1490PV
 checksPASS, withinengine repeats exact;16intentionalcross-engine responsechanges.
-No newgames/fit or prospectiveexecutor acceptance. Fixedscience report/archive is available on sidemission afterpublication, and
+No newgames/fit or prospectiveexecutor acceptance. 473preflight:0bestmovechanges,6score/4depth/8nodes/10PVchanges; no16decisionchange
+claim.474same searchsource checks remainingboard-onlycapturefutility+fixedmargins;
+not observed harmfulpruning/uniquelearningfailurecause. Archive remains unchanged.
+Fixedscience report/archive is available on sidemission afterpublication, and
 will be sent once in the substantive ownDot thread, not a routine receiptloop.
 
 ## DEV_AUX segment27 — cheaper terminal feedback and budget-sensitive learning
