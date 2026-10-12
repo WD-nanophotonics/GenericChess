@@ -1,0 +1,124 @@
+{
+  "task_id": "231",
+  "question": "Doall12completedD3Nativefullroot scores realize independentlyenumeratedpurematerialminimax?",
+  "roots": [
+    {
+      "seed": 2026105000,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "g1h3",
+        "b7b6",
+        "b1c3",
+        "c8b7",
+        "d2d3",
+        "g7g5",
+        "f2f3",
+        "f8g7",
+        "c1e3",
+        "h7h6",
+        "e3g5",
+        "d7d6",
+        "g5f6",
+        "b8c6",
+        "d3d4",
+        "e7f6",
+        "a2a4",
+        "a7a6",
+        "g2g3",
+        "c6b8"
+      ],
+      "expected_fen": "rn1qk1nr/1bp2pb1/pp1p1p1p/8/P2P4/2N2PPN/1PP1P2P/R2QKB1R w KQkq - 1 11"
+    },
+    {
+      "seed": 2026105001,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "g2g3",
+        "g8f6",
+        "b2b3",
+        "g7g5",
+        "d2d4",
+        "d7d6",
+        "c1e3",
+        "f6g8",
+        "h2h3",
+        "e7e5",
+        "g3g4",
+        "d8f6",
+        "f2f3",
+        "e8d8",
+        "f1g2",
+        "f6f3",
+        "a2a3",
+        "d6d5",
+        "d1c1",
+        "g8e7"
+      ],
+      "expected_fen": "rnbk1b1r/ppp1np1p/8/3pp1p1/3P2P1/PP2Bq1P/2P1P1B1/RNQ1K1NR w KQ - 2 11"
+    },
+    {
+      "seed": 2026105002,
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [
+        "a2a3",
+        "g7g6",
+        "g2g3",
+        "e7e5",
+        "f1g2",
+        "b8a6",
+        "c2c3",
+        "e5e4",
+        "a3a4",
+        "f7f5",
+        "g1f3",
+        "c7c5",
+        "f3h4",
+        "g8e7",
+        "c3c4",
+        "a6b4",
+        "d2d3",
+        "d8b6",
+        "e2e3",
+        "d7d5"
+      ],
+      "expected_fen": "r1b1kb1r/pp2n2p/1q4p1/2pp1p2/PnP1p2N/3PP1P1/1P3PBP/RNBQK2R w KQkq - 0 11"
+    }
+  ],
+  "profiles": {
+    "unit": {
+      "P": 208,
+      "K": 0,
+      "N": 208,
+      "B": 208,
+      "R": 208,
+      "Q": 208
+    },
+    "initial-s703": {
+      "P": 208,
+      "K": 0,
+      "N": 87,
+      "B": 126,
+      "R": 2258,
+      "Q": 176
+    },
+    "initial-s704": {
+      "P": 208,
+      "K": 0,
+      "N": 1422,
+      "B": 272,
+      "R": 996,
+      "Q": 214
+    },
+    "initial-s705": {
+      "P": 208,
+      "K": 0,
+      "N": 1147,
+      "B": 75,
+      "R": 216,
+      "Q": 335
+    }
+  },
+  "depth": 3,
+  "cost": "3fullorthodox3plytrees, simultaneous4pricevalues, estimate6s/60sguard, no engine rerun or training.",
+  "scope": "3exposedWesternhistoryroots only; projectterminalusescheckmate/stalemate anddeclaredhistory rules, omittedautomaticinsufficient/75draw countrecorded. Independentnodework notsamebudgetmatureenginecontrol; noallgamerules orPVgeneralclaim."
+}

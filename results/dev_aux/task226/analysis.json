@@ -1,0 +1,198 @@
+{
+  "complete": true,
+  "results": [
+    {
+      "seed": 703,
+      "ratios": {
+        "N": 0.4182692307692308,
+        "B": 0.6153846153846154,
+        "R": 10.85576923076923,
+        "Q": 0.9278846153846154
+      },
+      "distances": [
+        1.6774120314265921,
+        1.6504233937178738
+      ],
+      "updates": 180,
+      "completed": 27,
+      "unknown": 37,
+      "initial": {
+        "random": {
+          "original": 50.371874999999996,
+          "bounded": 0.7208333333333333,
+          "quantity": 0.38333333333333336,
+          "win": 8,
+          "loss": 0,
+          "unknown": 8
+        },
+        "unit2ply": {
+          "original": 18.913020833333334,
+          "bounded": 0.31666666666666665,
+          "quantity": 0.17083333333333334,
+          "win": 3,
+          "loss": 0,
+          "unknown": 13
+        }
+      },
+      "final": {
+        "random": {
+          "original": 37.87447916666667,
+          "bounded": 0.6583333333333333,
+          "quantity": 0.4125,
+          "win": 6,
+          "loss": 0,
+          "unknown": 10
+        },
+        "unit2ply": {
+          "original": 18.957291666666666,
+          "bounded": 0.35833333333333334,
+          "quantity": 0.1875,
+          "win": 3,
+          "loss": 0,
+          "unknown": 13
+        }
+      },
+      "deltas": {
+        "random": {
+          "original": -12.497395833333329,
+          "bounded": -0.0625,
+          "quantity": 0.02916666666666662
+        },
+        "unit2ply": {
+          "original": 0.04427083333333215,
+          "bounded": 0.041666666666666685,
+          "quantity": 0.016666666666666663
+        }
+      }
+    },
+    {
+      "seed": 704,
+      "ratios": {
+        "N": 6.451923076923077,
+        "B": 1.3846153846153846,
+        "R": 4.394230769230769,
+        "Q": 1.0913461538461537
+      },
+      "distances": [
+        0.9665082301584237,
+        0.9444784744082712
+      ],
+      "updates": 173,
+      "completed": 20,
+      "unknown": 44,
+      "initial": {
+        "random": {
+          "original": 56.690625,
+          "bounded": 0.7583333333333333,
+          "quantity": 0.3458333333333333,
+          "win": 9,
+          "loss": 0,
+          "unknown": 7
+        },
+        "unit2ply": {
+          "original": 12.647916666666667,
+          "bounded": 0.22083333333333333,
+          "quantity": 0.11666666666666667,
+          "win": 2,
+          "loss": 0,
+          "unknown": 14
+        }
+      },
+      "final": {
+        "random": {
+          "original": 37.91979166666667,
+          "bounded": 0.6333333333333333,
+          "quantity": 0.3458333333333333,
+          "win": 6,
+          "loss": 0,
+          "unknown": 10
+        },
+        "unit2ply": {
+          "original": 18.9078125,
+          "bounded": 0.29583333333333334,
+          "quantity": 0.12916666666666668,
+          "win": 3,
+          "loss": 0,
+          "unknown": 13
+        }
+      },
+      "deltas": {
+        "random": {
+          "original": -18.77083333333333,
+          "bounded": -0.125,
+          "quantity": 0.0
+        },
+        "unit2ply": {
+          "original": 6.259895833333331,
+          "bounded": 0.07500000000000001,
+          "quantity": 0.012500000000000011
+        }
+      }
+    },
+    {
+      "seed": 705,
+      "ratios": {
+        "N": 4.975961538461538,
+        "B": 0.36538461538461536,
+        "R": 1.0336538461538463,
+        "Q": 1.7644230769230769
+      },
+      "distances": [
+        1.5049366783141962,
+        1.4542905346009651
+      ],
+      "updates": 217,
+      "completed": 27,
+      "unknown": 37,
+      "initial": {
+        "random": {
+          "original": 56.62708333333333,
+          "bounded": 0.7625,
+          "quantity": 0.37916666666666665,
+          "win": 9,
+          "loss": 0,
+          "unknown": 7
+        },
+        "unit2ply": {
+          "original": 12.643229166666666,
+          "bounded": 0.22916666666666666,
+          "quantity": 0.1125,
+          "win": 2,
+          "loss": 0,
+          "unknown": 14
+        }
+      },
+      "final": {
+        "random": {
+          "original": 56.619791666666664,
+          "bounded": 0.75,
+          "quantity": 0.375,
+          "win": 9,
+          "loss": 0,
+          "unknown": 7
+        },
+        "unit2ply": {
+          "original": 25.1578125,
+          "bounded": 0.3375,
+          "quantity": 0.12916666666666668,
+          "win": 4,
+          "loss": 0,
+          "unknown": 12
+        }
+      },
+      "deltas": {
+        "random": {
+          "original": -0.00729166666666714,
+          "bounded": -0.012499999999999956,
+          "quantity": -0.004166666666666652
+        },
+        "unit2ply": {
+          "original": 12.514583333333333,
+          "bounded": 0.10833333333333336,
+          "quantity": 0.016666666666666677
+        }
+      }
+    }
+  ],
+  "scope": "Allthree actualterminal-onlyshadowmodels, no searchscorelabels, unknowngamesnotdraw; humanrefposthoc; conditionalcompletedselectionbias retained."
+}

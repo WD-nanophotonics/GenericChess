@@ -1,0 +1,17 @@
+{
+  "task_id": "213",
+  "question": "Do completefirst-blockmidgame trajectories supply usable NBRQ coverage and consistentbootstrapunits?",
+  "source_task": "187",
+  "source_controller_sha256": "f18facac6b828b61ecd4b964cc258088dbf07afe3b1c411e88a40682692aa3a7",
+  "seeds": [
+    603,
+    604,
+    605
+  ],
+  "use": "ALLrandom-original train g0 k0 a0 games,16casesperteacher; allactualagentroottransitions, samefixedteacherweightsperblock. Nohuman/outcome filtering/resampling.",
+  "target": "actorviewtanh(nextreportedcp/400); reportedmate sign is boundedforecast, notactualtermination. Actualterminalwithin1/2realplies->trueWDL, unknowncutoffwithoutnextteacherquery->excluded/reported. No currentsearchvalue gradient.",
+  "features": "PNBRQ actordifference atactualroot, P1; logNBRQ student derivative withsame tanh4. Fullhistory/draw/legality andactualaction checked.",
+  "coverage": "Rawintercept+PNBRQ rank and NBRQupdatecolumns, ranges,effectivegradient SVD/norms; all3profiles. No learning/extraenginegames yet.",
+  "cost": "Reuse48alreadyactual games, estimated<2s.",
+  "created_at": "2026-10-12T08:22:42.639353+00:00"
+}

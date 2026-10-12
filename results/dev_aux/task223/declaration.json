@@ -1,0 +1,19 @@
+{
+  "task_id": "223",
+  "question": "Can actualterminal returns distributed across entiregame remove bootstrap circularity cheaply?",
+  "source_sha256": "a092048b79314e8f63166280c0a645ca616d877991fb053db3b12a92ff209738",
+  "seeds": [
+    703,
+    704,
+    705
+  ],
+  "source_mode": "fixed_teacher",
+  "alpha": 0.02,
+  "link_pawns": 4,
+  "domain": [
+    0.25,
+    16
+  ],
+  "steps": "Onechronologicalpass per4source rounds, allactor roots oftruly completed sourcegames, unknowncutoffs excludedwholegame; actorWDL +/-1/0, no searchCP/mateforecast as labels.",
+  "scope": "Offpolicyshadow reuse all192savedfixedteachertraininggames; outcomes/caps alreadyexposed; knowntermination-onlyselection may bias distribution; notonpolicy/generalWDL/humanlabels/TDLeaf."
+}

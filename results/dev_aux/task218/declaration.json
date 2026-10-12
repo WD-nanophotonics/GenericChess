@@ -1,0 +1,25 @@
+{
+  "task_id": "218",
+  "question": "Can frozen-search lambda-return propagate realterminalsignal earlier cheaply?",
+  "source_task": "214 fixed_teacher ALL3starts/4rounds; alreadyexposeddata, no independentlearningtrajectory",
+  "source_sha256": "a092048b79314e8f63166280c0a645ca616d877991fb053db3b12a92ff209738",
+  "seeds": [
+    703,
+    704,
+    705
+  ],
+  "lambdas": [
+    0,
+    0.5,
+    1
+  ],
+  "alpha": 0.02,
+  "link_scale_pawns": 4,
+  "epochs": 1,
+  "returns": "Sameeligible\u03bb0rows as214. True-terminal rowG=y. Bootstrap rowG=(1-lambda)y+lambdaG_next if actualnextactorrowindexexists, otherwiseG=y (qualifiedteacher tail/gapfallback, cutoffstillunknown). Gtargets frozen beforestudentupdate, stop-gradient.",
+  "controls": "\u03bb0 mustreproduceall3frozenfixed_teachercontinuous/roundedends. Samefirstdataset, teacher alwaysoldinitial, all9shadowendsbeforefreshdeployment. No newdata or longerhorizon; \u03bb1notfullMonteCarlo ifgaps/unknown tail.",
+  "student": "SameP1rootNBRQcount tanh4/logparams/domain.25..16, onechronologicalpass per4rounds, normalized\u03b1.02, noPVleaf/searchgradient.",
+  "scope": "Offpolicyfrozen-search rootstudent lambda-return approximation, notTDLeaf/equivalent TD-directed ornewactualpolicytraining. Teacherinitialprices nonhuman; nohumanlabels/tuning/endpoint selection.",
+  "cost": "Reuse192actualfirstteachertraininggames,9shadowmodels estimated<1s; subsequentALL9models+3initialbaselines416new24plygames estimated70s,180sfuse. No extraengineworkers/fees.",
+  "created_at": "2026-10-12T08:42:00.160081+00:00"
+}

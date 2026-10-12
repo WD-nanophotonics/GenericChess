@@ -564,3 +564,35 @@ throughauthorizedSlack, PRIMARY integratesonlyitsowncanonicalsandboxlog.
 ScienceOPEN; actualsessionendingreceipt recordedseparately.
 
 Actual session: 2026-10-12T06:45:19.927789+00:00 to 2026-10-12T07:46:16.759984+00:00, 60.947 minutes; 8 research checkpoints plus documentation, safe_checkpoint; duration gate passed. Scientific objective remains OPEN. Prepared15/16nextTDsemantic cases have feature rank3/6 (N/B/R variation zero), not a full-price fit; no TD training occurred.
+
+
+## 2026-10-12 DEV_AUX segment19: cheap signals and a different search route
+
+DEV_AUX retained its08:15:09UTC session start and own sidemission boundaries.
+1648actualshortgames used517.751batchseconds;1600experimentalFairy24ply,
+48ownNative8ply. Correctrootbootstrap removes a demonstrated mixed-gradient
+error; allstarts/fulloutcomes retain modestreference contraction and mixedutility.
+Nine lambda shadowmodels reuse192existingtraininggames, fit.047s; true-terminal
+wholegame propagation570updates also remainsmixed. No stablehumanprice recovery.
+All1648trajectories/pricechecks/opponenttrees/updates audited; science212..235
+and reportSEGMENT_20261012_19.md hold exactresults/costs/knownfailures.
+
+Dot original residual/units advice adopted and verified by12finite-difference
+checks and3wrong-direction counterexamples. Its later three-route advice was
+read in full and reconciled as a new response version, used as technicaladvice
+consistentwithdirectusercostgoals, nevernewauthority froman attributed conversation.
+AUX chose ownpublishedfiniteq0 feasibility: supportedfullroot D2/D3 calls24all
+complete;12D2/12D3exactscore/argmax checks;48actual8plygames192allD3complete.
+Pricechoices discriminate quantity butall48 areunknowncutoffs, no learningproof.
+Maturefixedpriors/self-bootstrap/sparse biased terminalsignals remainhypotheses,
+notcausallyisolated failures. No additionalFairygrid/seeds/longgames/worker.
+
+PRIMARY's62b1d208 pinned context reported private root-tie score-only confirmation
+and finalcanonical replay cost reduction, with38regressions/self-reported paired
+results; Dot conditionallyreviewed publishedsource and requested finalbranchscore
+and deterministicinterruption checks. AUX didnotrerun orvalidate these primary
+claims and didnotedit primaryfiles/state/default/UI. Ordinary concurrentwork
+wasallowed; no machineexclusivity or equal-work speedclaim. Nextown bounded
+candidatecontrast isprepared235, finiteCbackup; publication/readback distinct
+from Dot adoption. RawSlack/account/private inputs excluded; exactremoteSHA
+will beverified afterpush. Actualsessionreceipt separately recordsending/time.

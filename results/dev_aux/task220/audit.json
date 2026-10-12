@@ -1,0 +1,394 @@
+{
+  "complete": true,
+  "counts": {
+    "games": 416,
+    "moves": 9089,
+    "engine_searches": 4574,
+    "unit_opponent_searches": 2377,
+    "unit_opponent_leaf_nodes": 1582833,
+    "price_probes": 2080
+  },
+  "paired": {
+    "random-initial-s703": {
+      "profile_reward_difference_mean": -0.0005208333333326862,
+      "nonzero_paired_deltas": 15,
+      "changed_action_pairs": 15,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "random-s703-lambda0": {
+      "profile_reward_difference_mean": -6.234895833333333,
+      "nonzero_paired_deltas": 14,
+      "changed_action_pairs": 15,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "random-s703-lambda0p5": {
+      "profile_reward_difference_mean": -18.716145833333332,
+      "nonzero_paired_deltas": 13,
+      "changed_action_pairs": 15,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "random-s703-lambda1": {
+      "profile_reward_difference_mean": -18.696354166666666,
+      "nonzero_paired_deltas": 15,
+      "changed_action_pairs": 15,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "random-initial-s704": {
+      "profile_reward_difference_mean": 6.128125,
+      "nonzero_paired_deltas": 15,
+      "changed_action_pairs": 15,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "random-s704-lambda0": {
+      "profile_reward_difference_mean": 12.419270833333334,
+      "nonzero_paired_deltas": 10,
+      "changed_action_pairs": 15,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "random-s704-lambda0p5": {
+      "profile_reward_difference_mean": 6.169791666666668,
+      "nonzero_paired_deltas": 13,
+      "changed_action_pairs": 15,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "random-s704-lambda1": {
+      "profile_reward_difference_mean": 6.1260416666666675,
+      "nonzero_paired_deltas": 13,
+      "changed_action_pairs": 15,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "random-initial-s705": {
+      "profile_reward_difference_mean": -0.041145833333332806,
+      "nonzero_paired_deltas": 14,
+      "changed_action_pairs": 15,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "random-s705-lambda0": {
+      "profile_reward_difference_mean": 6.166145833333334,
+      "nonzero_paired_deltas": 14,
+      "changed_action_pairs": 15,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "random-s705-lambda0p5": {
+      "profile_reward_difference_mean": 24.998958333333334,
+      "nonzero_paired_deltas": 13,
+      "changed_action_pairs": 15,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "random-s705-lambda1": {
+      "profile_reward_difference_mean": 31.163541666666667,
+      "nonzero_paired_deltas": 15,
+      "changed_action_pairs": 15,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "unit2ply-initial-s703": {
+      "profile_reward_difference_mean": -18.815625,
+      "nonzero_paired_deltas": 15,
+      "changed_action_pairs": 16,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "unit2ply-s703-lambda0": {
+      "profile_reward_difference_mean": -25.04375,
+      "nonzero_paired_deltas": 16,
+      "changed_action_pairs": 16,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "unit2ply-s703-lambda0p5": {
+      "profile_reward_difference_mean": -18.823958333333334,
+      "nonzero_paired_deltas": 15,
+      "changed_action_pairs": 16,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "unit2ply-s703-lambda1": {
+      "profile_reward_difference_mean": -18.875520833333333,
+      "nonzero_paired_deltas": 16,
+      "changed_action_pairs": 16,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "unit2ply-initial-s704": {
+      "profile_reward_difference_mean": -18.824479166666666,
+      "nonzero_paired_deltas": 15,
+      "changed_action_pairs": 16,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "unit2ply-s704-lambda0": {
+      "profile_reward_difference_mean": -12.545833333333334,
+      "nonzero_paired_deltas": 15,
+      "changed_action_pairs": 16,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "unit2ply-s704-lambda0p5": {
+      "profile_reward_difference_mean": -12.564583333333333,
+      "nonzero_paired_deltas": 15,
+      "changed_action_pairs": 16,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "unit2ply-s704-lambda1": {
+      "profile_reward_difference_mean": -12.557291666666668,
+      "nonzero_paired_deltas": 15,
+      "changed_action_pairs": 16,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "unit2ply-initial-s705": {
+      "profile_reward_difference_mean": -12.577604166666667,
+      "nonzero_paired_deltas": 16,
+      "changed_action_pairs": 16,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "unit2ply-s705-lambda0": {
+      "profile_reward_difference_mean": -12.567187500000001,
+      "nonzero_paired_deltas": 16,
+      "changed_action_pairs": 16,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "unit2ply-s705-lambda0p5": {
+      "profile_reward_difference_mean": -0.04895833333333434,
+      "nonzero_paired_deltas": 16,
+      "changed_action_pairs": 16,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    },
+    "unit2ply-s705-lambda1": {
+      "profile_reward_difference_mean": -6.294791666666668,
+      "nonzero_paired_deltas": 16,
+      "changed_action_pairs": 16,
+      "scope": "Same16matched24plyfreshreachable-root/color pairs, allmechanicallyeligibletraining-onlymodelprofiles; not generallearning/strength."
+    }
+  },
+  "components": [
+    {
+      "opponent": "random",
+      "profile": "unit",
+      "original_mean": 37.93697916666667,
+      "bounded_mean": 0.6583333333333333,
+      "final_quantity_mean": 0.37916666666666665,
+      "mate_wins": 6,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "random",
+      "profile": "initial-s703",
+      "original_mean": 37.936458333333334,
+      "bounded_mean": 0.7125,
+      "final_quantity_mean": 0.46249999999999997,
+      "mate_wins": 6,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "random",
+      "profile": "s703-lambda0",
+      "original_mean": 31.702083333333334,
+      "bounded_mean": 0.65,
+      "final_quantity_mean": 0.4166666666666667,
+      "mate_wins": 5,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "random",
+      "profile": "s703-lambda0p5",
+      "original_mean": 19.22083333333333,
+      "bounded_mean": 0.575,
+      "final_quantity_mean": 0.42916666666666664,
+      "mate_wins": 3,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "random",
+      "profile": "s703-lambda1",
+      "original_mean": 19.240625,
+      "bounded_mean": 0.6208333333333333,
+      "final_quantity_mean": 0.4875,
+      "mate_wins": 3,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "random",
+      "profile": "initial-s704",
+      "original_mean": 44.065104166666664,
+      "bounded_mean": 0.6458333333333334,
+      "final_quantity_mean": 0.32083333333333336,
+      "mate_wins": 7,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "random",
+      "profile": "s704-lambda0",
+      "original_mean": 50.35625,
+      "bounded_mean": 0.6791666666666667,
+      "final_quantity_mean": 0.325,
+      "mate_wins": 8,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "random",
+      "profile": "s704-lambda0p5",
+      "original_mean": 44.106770833333336,
+      "bounded_mean": 0.6458333333333334,
+      "final_quantity_mean": 0.3375,
+      "mate_wins": 7,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "random",
+      "profile": "s704-lambda1",
+      "original_mean": 44.06302083333333,
+      "bounded_mean": 0.6541666666666667,
+      "final_quantity_mean": 0.37916666666666665,
+      "mate_wins": 7,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "random",
+      "profile": "initial-s705",
+      "original_mean": 37.895833333333336,
+      "bounded_mean": 0.6458333333333334,
+      "final_quantity_mean": 0.39166666666666666,
+      "mate_wins": 6,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "random",
+      "profile": "s705-lambda0",
+      "original_mean": 44.103125,
+      "bounded_mean": 0.6708333333333333,
+      "final_quantity_mean": 0.3958333333333333,
+      "mate_wins": 7,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "random",
+      "profile": "s705-lambda0p5",
+      "original_mean": 62.9359375,
+      "bounded_mean": 0.7875,
+      "final_quantity_mean": 0.3458333333333333,
+      "mate_wins": 10,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "random",
+      "profile": "s705-lambda1",
+      "original_mean": 69.10052083333333,
+      "bounded_mean": 0.8166666666666667,
+      "final_quantity_mean": 0.3375,
+      "mate_wins": 11,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "unit2ply",
+      "profile": "unit",
+      "original_mean": 31.4453125,
+      "bounded_mean": 0.4583333333333333,
+      "final_quantity_mean": 0.22083333333333333,
+      "mate_wins": 5,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "unit2ply",
+      "profile": "initial-s703",
+      "original_mean": 12.629687500000001,
+      "bounded_mean": 0.22083333333333333,
+      "final_quantity_mean": 0.1125,
+      "mate_wins": 2,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "unit2ply",
+      "profile": "s703-lambda0",
+      "original_mean": 6.401562500000001,
+      "bounded_mean": 0.19583333333333333,
+      "final_quantity_mean": 0.14166666666666666,
+      "mate_wins": 1,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "unit2ply",
+      "profile": "s703-lambda0p5",
+      "original_mean": 12.621354166666666,
+      "bounded_mean": 0.23333333333333334,
+      "final_quantity_mean": 0.1375,
+      "mate_wins": 2,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "unit2ply",
+      "profile": "s703-lambda1",
+      "original_mean": 12.569791666666667,
+      "bounded_mean": 0.2,
+      "final_quantity_mean": 0.10833333333333334,
+      "mate_wins": 3,
+      "mate_losses": 1
+    },
+    {
+      "opponent": "unit2ply",
+      "profile": "initial-s704",
+      "original_mean": 12.620833333333334,
+      "bounded_mean": 0.20416666666666666,
+      "final_quantity_mean": 0.09999999999999999,
+      "mate_wins": 2,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "unit2ply",
+      "profile": "s704-lambda0",
+      "original_mean": 18.899479166666666,
+      "bounded_mean": 0.30833333333333335,
+      "final_quantity_mean": 0.17916666666666667,
+      "mate_wins": 3,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "unit2ply",
+      "profile": "s704-lambda0p5",
+      "original_mean": 18.88072916666667,
+      "bounded_mean": 0.3,
+      "final_quantity_mean": 0.15416666666666667,
+      "mate_wins": 3,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "unit2ply",
+      "profile": "s704-lambda1",
+      "original_mean": 18.888020833333332,
+      "bounded_mean": 0.2708333333333333,
+      "final_quantity_mean": 0.10833333333333334,
+      "mate_wins": 3,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "unit2ply",
+      "profile": "initial-s705",
+      "original_mean": 18.867708333333333,
+      "bounded_mean": 0.25833333333333336,
+      "final_quantity_mean": 0.11666666666666667,
+      "mate_wins": 3,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "unit2ply",
+      "profile": "s705-lambda0",
+      "original_mean": 18.878125,
+      "bounded_mean": 0.25833333333333336,
+      "final_quantity_mean": 0.1125,
+      "mate_wins": 3,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "unit2ply",
+      "profile": "s705-lambda0p5",
+      "original_mean": 31.396354166666665,
+      "bounded_mean": 0.38333333333333336,
+      "final_quantity_mean": 0.125,
+      "mate_wins": 5,
+      "mate_losses": 0
+    },
+    {
+      "opponent": "unit2ply",
+      "profile": "s705-lambda1",
+      "original_mean": 25.15052083333333,
+      "bounded_mean": 0.325,
+      "final_quantity_mean": 0.1125,
+      "mate_wins": 4,
+      "mate_losses": 0
+    }
+  ],
+  "scope": "Independentactualtrace/fullpreludehistory/fullopponentsearch replay, notengine rerun. Noextraengineworker orallgame-ruleclaim."
+}

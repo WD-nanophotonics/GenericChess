@@ -1,21 +1,17 @@
 ## DEV_AUX current scope2026-10-12
 
-Independent sidemission segment18:11392actualshortgames/1182.218gamebatchseconds;
-11264maturec378mode3 games,128complete2plycontrols. Fulllegal20plyrandompreludes,
-completehistory/captures, nohumanprices/selection/product/default/UI/primarywrites.
-7104matched16plylearning674.266s: boundedall3reference distancesworse/mixedreturns;
-3552bounded24ply402.953s: all3scopedreturnsimprove, only1/3referencecontracts.
-Ninecountfits1.875s; all7eligibledeployed, mixedrandom gains/allloseunit2plyoriginal.
-Samecandidate1/72completednettradeoff quantified; cutoffs unknown, notfinalWDL;
-Dotfourcategory/whole-root adviceadopted, nolexlearningarm.199shortreturnlagcurve
-and20016/24pilot motivatedboundedcapchange, existingfrozen16test notextended.
-202144scalequeries7/48actionchanges butfinite2plyargmaxinvariant, notcauseproof.
-20850020PVlegal;18632/36438unboundedcp notliteralstaticPVmaterial;2104actualevals
-confirmleafmaterial, soPVcountsnotqualifiedTDgroundtruth. NewTDconsultdelivered,
-notapproval; noentryblocker.207parametersurrogate mixedroottransfer/notCLOP proof.
-Allscience/cost/failures185..211 exactarchive/reportSEGMENT_20261012_18.md.
-ScienceOPEN; ownheartbeatACTIVE; nextscopedTD/bootstraporvalue-expression check,
-notmorelonggames orhumanratiofitting. Agentelapsed/finishreceipt separate.
+ScienceOPEN; sidemission only; entry working/heartbeatACTIVE, no seriousblocker.
+Segment19:1648actualshortgames517.751s (1600Fairy24ply,48ownNative8ply).
+Correctrootbootstrap3starts fixed/refreshed/terminal-only:960games147.172s;
+3838updatesaudited, referencecontractsmodestlybutpolicymixed, nohumanrecovery.
+9lambda shadowfits.047s/5604updatesexact;416freshgames89.766s, mixedutility.
+3true-terminalwholegameshadowmodels570updates/224freshgames47.688s, mixed.
+Dotroutecomparison adopted; ownpublishedq0fullroot all24D2/D3complete;
+all12D2+12D3score/argmax independentlyenumerated, D3oracle81576leaves.
+Own48eightplygames233.125s/192allD3complete; quantitydiscrimination, allcutoffs.
+No moreFairytraininggrids/seeds; nextboundedowncandidatecontrast prepared235,
+finiteoraclebackup; product/default/UI/PRIMARYstate untouched. Frozenfailures,
+costs/fulloutcomes/audits212..235 and reportSEGMENT_20261012_19.md.
 
 # Current local research mainline
 
