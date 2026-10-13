@@ -1,0 +1,71 @@
+{
+  "id": "58aae0a9-c16a-4300-bc78-7c2cc0967c6b",
+  "started_at": "2026-10-13T16:20:52.866691+00:00",
+  "ended_at": "2026-10-13T17:23:07.402250+00:00",
+  "elapsed_minutes": 62.242,
+  "reason": "safe_checkpoint",
+  "state": "ended",
+  "duration_gate_passed": true,
+  "research_stage_count": 9,
+  "scientific_complete": false,
+  "science_sha": "167320577c74f2efc6226633e1f7f06a695f8629",
+  "remote_science_sha_verified": true,
+  "actual_new_games": 5442,
+  "actual_go": 92234,
+  "valid_stock_games": 4380,
+  "unsupported_stock_games": 1062,
+  "partial_unclosed_go": 18,
+  "archive_QA": {
+    "status": "PASS_ALL_ARCHIVE_HASH_JSON_AST_PRIVACY_AND_PRIVATE_FULL_RESTORE",
+    "counts": {
+      "files": 179,
+      "python": 45,
+      "json": 102,
+      "jsonl_lines": 97758
+    },
+    "raw_bytes": 250845019,
+    "compressed_bytes": 20670381,
+    "seconds": 6.2969999997876585,
+    "scope": "Exact179savedAgentrecords includingfailures; allrawdata retained. Stockqualification39doesnotconvertinvalidruns to validscience. No privateSlack/account/userauthoredinput found."
+  },
+  "actual_independent_audits": [
+    887,
+    891,
+    895,
+    899,
+    924,
+    926,
+    930,
+    935,
+    939,
+    944,
+    949,
+    955,
+    959,
+    961,
+    962
+  ],
+  "immutable_public_bytes_verified": [
+    {
+      "path": "results/dev_aux/SEGMENT_20261014_39.md",
+      "bytes": 13962,
+      "sha256": "42323375894ef1d7883e3aebe649b8b8ed302ffcfbeeaf905556ce4cfa91e69d"
+    },
+    {
+      "path": "results/dev_aux/COST_20261014_39.json",
+      "bytes": 6528,
+      "sha256": "6cafebc0262c3984c45464a9f3ae707e2620c9acebd504ccb6f9b252da0f9d32"
+    },
+    {
+      "path": "docs/operations/COLLABORATION_LOG.md",
+      "bytes": 122453,
+      "sha256": "ef6e0dc5636268ab7edddf28e421416575a3ea8c65039d51959a2c9a22061de0"
+    }
+  ],
+  "heartbeat": "ACTIVE",
+  "next_work": "NEXT_FEASIBILITY_20261014_39.json",
+  "stock_error_recovered": true,
+  "all_failures_kept": true,
+  "no_product_default_primary_UI_changes": true,
+  "checkpoint_scope": "Structuralstagecounternotproofeveryoldinterpretationvalid; stockinvalidity/941prematurecheckpoint explicitlycorrected inqualification andreport. Validscientificworkflow independentlyreviewed."
+}
