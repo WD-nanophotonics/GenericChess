@@ -67,6 +67,21 @@ sameboard/differentlegalhistory terminal-before-go/RNG andexactorderedaction/RNG
 parity; adoptasinterpretation, no duplicateauxwork. Its pooling/diversefamilies
 price direction is a hypothesis forlaterline, no newauthority/humanfitting.
 
+Current2026-10-13 bridge: CURRENT_SHOGI_Q0_BRIDGE.md closes48 original cells,
+47 fullD2 argmax children,16 same-comparator trace controls and existingavailability
+cost/delivery supplements.Bridge140 retained/142 physical calls; separately6 TT controls plus1
+unrecorded checker call give segment146retained/149physical;41 existingtests pass.
+Differentfixedmiddle actions are exactties, fullCore/Native PVs differ. No same-
+algorithm persistentNative/specialist factor: canonical/TT/work differ. SameUSI
+Core legal+availability stillcosts8.46–8.50x middle and14.74–15.03x promotion,
+localordinaryload; availabilityalone middleD3 at1/4s. Requiredtransport/check/
+history costs remain; no defaults/UI/q4/newengine change. AUXpublished8a04fa5e
+report31 read-only; newcross-horizon advice belongsAUX, no duplicategames/fit.
+Slack chat comments are reference suggestions, assessed ratherthanautomatically
+adopted. ActualpromotionD8 TT/fullPV control6calls allfulltuple11953visits
+exact, TT1.907–1.937s/noTT1.281s; no globaldisable. Nextplayedroot fixedTT
+transfer or actualCore transport/check primitive, not newcacheframework.
+
 ## Prior selections and preserved limits
 
 Q0_RESOURCE_AND_ORDERING.md separates fixed-work, node-limited delivery and a

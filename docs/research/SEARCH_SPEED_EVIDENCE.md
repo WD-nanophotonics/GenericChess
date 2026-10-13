@@ -44,3 +44,11 @@ The intermediate status/undo version's.831–1.436 rows remain separate. Current
 lexical Python AB bridge/specialist D4 ononeplayedroot each isChess3.13–3.21,
 Shogi12.51–12.59, not currentC-kernel ratios. Details and newimmutable raw data:
 PACKED_ORDER_AND_FIXED_SEARCH.md; data/packed_order_20261013.json.
+
+Current separately scoped update: CURRENT_SHOGI_Q0_BRIDGE.md now measures two
+current Shogi roots. Identical USI minimal-AB work gives Core Native legality
+plus existing Native availability / cshogi local cost8.46–8.50 (middleD3) and
+14.74–15.03 (promotionD6). Current persistent Native/Core/specialist equal-time
+completed outputs are measured too, with different TT/comparator/PVs/work; the
+fully aligned persistent interval described above remains missing. All original
+historical factors and failures stay immutable. This is not a q4/strength factor.

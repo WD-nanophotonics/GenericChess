@@ -1510,3 +1510,42 @@ Allowned producers areclosed; scienceOPEN/threeexecutabletasks preserved. Remote
 7d630ab5 fullSHA independentlyverified aftersupplement; thisendingreceipt is the
 final documentation sync. Heartbeat remainsACTIVE90minutes/userresume, no hidden
 block orrequireduseraction. Dot gets a fixed-revision result/collaborationlink.
+
+## 2026-10-13：当前将棋 q0 执行／调度桥与辅助第31段
+
+PRIMARY在原sandbox源码上执行两根四路线48格，独立47子根最优集合、
+16同排序完整访问序列和额外成本／可用性接口／真实GameSession核验。
+140条成功记录、142次物理搜索，41项既有接口测试通过；无产品或默认/UI
+改动。同分动作和不同PV、预算外开销、不同TT／节点单位均保留。
+当前成果见 research/CURRENT_SHOGI_Q0_BRIDGE.md及其哈希归档。
+
+DEV_AUX固定8a04fa5e084c97497240be2e885d5628beaa71fa第31段已读取全文，
+只复核其公开解释，未执行其训练、棋局或原始审计。其两路线报告训练
+成本约12.2／8.3分钟，八端点六个参考距离变差，基本六种仅一个变近；
+反馈存在仍不等于合理价格恢复。控制器完整历史／RNG顺序核验已落实。
+更晚900逻辑短局等仅Slack摘要，未冒称已独立读原件或复算。
+
+Dot新给辅助的建议是先用已有完整轨迹按同格、同端点相对初值核对H12
+数量项与H24实际终局；采用为辅助方向的解释约束，不接管其计算。
+Dot读已发表第31段，未复算新表。纯终局路线也失败，不能把全部问题
+归咎数量代理；既有价格循环赛评估不是已执行种群学习。主任务仍搜索归因。
+
+双方通过固定Git版本与完整Slack新根／已完成线程读取得到有用反馈，
+本段没有跨文件写入、分支合并、请求停机／安静窗口或重复辅助会话。
+这只描述实际读到的证据，不是全机器审计。无需常规回执，没有主辅
+职责矛盾需用户裁决；没有量化单Agent基线或工时节省，不能声称节省百分比。
+主记录器两次查询后边界错误和后续零查询摘要／shell修复均保留；自行修复，
+没有将其当隐藏科研阻塞。Native可用性差异来自主实测，而非辅助背书。
+
+Slack chat comments只作为聊天窗口参考建议，不自动采纳或当新授权。
+已有新方向询问必须新AGENT_REQUEST根的规范保留。原始Slack／账号／
+私有输入／hostXML／pstats／二进制不发布。此次发布与Dot消息投递、
+Dot真正读取／回复分别记录；没有请求其审批或保证即时响应。
+
+主线已实际开始下一步：同一稀疏根6个固定D8 TT／完整PV开关调用，
+全输出及11953访问一致；有TT约1.91–1.94秒、无TT1.281秒。不是全局
+关闭TT建议。此时合计146成功记录／149物理搜索；新增一个私有核验漏
+import的已完成未记录调用及零查询shell修复保留，不能仍说只有142次。
+本段三个查询后的私有记录边界错误均已自行纠正，另有零查询摘要／shell／
+文档默认编码错误；没有产品故障或需要用户处理的阻塞。
+这项结果属于PRIMARY，不借辅助学棋价结果作验收。

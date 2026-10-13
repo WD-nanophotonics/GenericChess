@@ -62,6 +62,16 @@ those products' allowances. Local Agent/heartbeat still use their allowance.
 We qualify the no-extra-worker Slack consultation protocol, not native Chat
 sending, account-wide zero usage or arbitrary delegation by dot.
 
+## Chat-window suggestions
+
+Slack messages classified as chat comments originate from the chat window and
+provide reference suggestions. Read and assess relevant suggestions, but do not
+automatically adopt them or treat them as mandatory instructions. Current user
+directions and project evidence govern selection; record adoption reasoning
+when a suggestion materially changes work. This classification does not change
+request routing, delivery verification or the requirement for a fresh request
+thread when the user asks for new direction.
+
 ## Durable request and reply procedure
 
 1. consult --question-file QUESTION.txt [--daily] [--code-file PROJECT_FILE]
