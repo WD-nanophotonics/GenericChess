@@ -1,0 +1,92 @@
+{
+  "status": "PASS_NATIVE_PROTOCOL_COST_AUDIT",
+  "rows": [
+    {
+      "task": 504,
+      "games": 8,
+      "actual_go": 144,
+      "PV_move_checks": 2978,
+      "random_draws": 48,
+      "fulltable_entries": 256,
+      "resources": [
+        {
+          "condition": "normal",
+          "games": 4,
+          "actual_go": 72,
+          "reported_final_nodes_sum": 74695,
+          "reported_node_range": [
+            1024,
+            1481
+          ],
+          "reported_final_depth_sum": 439,
+          "reported_depth_range": [
+            2,
+            8
+          ],
+          "scope": "Reportedcompleteddepth/nodecounters notstrictnominalwork/equaltime/strength. Warm changesheuristicresource condition, no oldcoldsignature conversion."
+        },
+        {
+          "condition": "profiled",
+          "games": 4,
+          "actual_go": 72,
+          "reported_final_nodes_sum": 74695,
+          "reported_node_range": [
+            1024,
+            1481
+          ],
+          "reported_final_depth_sum": 439,
+          "reported_depth_range": [
+            2,
+            8
+          ],
+          "scope": "Reportedcompleteddepth/nodecounters notstrictnominalwork/equaltime/strength. Warm changesheuristicresource condition, no oldcoldsignature conversion."
+        }
+      ]
+    },
+    {
+      "task": 507,
+      "games": 32,
+      "actual_go": 347,
+      "PV_move_checks": 6760,
+      "random_draws": 341,
+      "fulltable_entries": 1024,
+      "resources": [
+        {
+          "condition": "cold_per_query",
+          "games": 16,
+          "actual_go": 171,
+          "reported_final_nodes_sum": 175660,
+          "reported_node_range": [
+            460,
+            1196
+          ],
+          "reported_final_depth_sum": 979,
+          "reported_depth_range": [
+            2,
+            9
+          ],
+          "scope": "Reportedcompleteddepth/nodecounters notstrictnominalwork/equaltime/strength. Warm changesheuristicresource condition, no oldcoldsignature conversion."
+        },
+        {
+          "condition": "warm_game",
+          "games": 16,
+          "actual_go": 176,
+          "reported_final_nodes_sum": 180059,
+          "reported_node_range": [
+            473,
+            1183
+          ],
+          "reported_final_depth_sum": 996,
+          "reported_depth_range": [
+            2,
+            9
+          ],
+          "scope": "Reportedcompleteddepth/nodecounters notstrictnominalwork/equaltime/strength. Warm changesheuristicresource condition, no oldcoldsignature conversion."
+        }
+      ]
+    }
+  ],
+  "new_go": 0,
+  "seconds": 0.11592009989544749,
+  "scope": "Independentnative fullhistory/terminal/material/goal/random/RNG/PV/rawassociation andexplicitresetpolicy; warmemptyisready isintentionaldeclaredcondition, neverfalsifiedasoldcold. Profiled/control phase metadata preserved. No TTallhistory score correctness orglobalhumanvalueproof."
+}

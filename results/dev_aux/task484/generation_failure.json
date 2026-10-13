@@ -1,0 +1,59 @@
+{
+  "status": "FAILED_INPUT_ASSUMPTION",
+  "original_prepare": "results/dev_aux/task484/prepare.py",
+  "original_prepare_sha256": "a137fb3f32267abc3d74bfbbdcb952b80a655feb91db95302490424956d9f94b",
+  "reason": "rigid8roots expectedallnonterminal40prefixes; actualpredeclaredseedterminal, no originaldeclaration ortraining/game emitted",
+  "actual_unavailable": [
+    {
+      "root": {
+        "phase": "train",
+        "index": 3,
+        "seed": 2026103513,
+        "initial_sfen": "lnsgkgsnl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LNSGKGSNL b - 1",
+        "history": [
+          "9g9f",
+          "5a6b",
+          "2h7h",
+          "6a7b",
+          "1g1f",
+          "4a4b",
+          "7h4h",
+          "7c7d",
+          "6g6f",
+          "1a1b",
+          "3i2h",
+          "4b3b",
+          "9i9h",
+          "9a9b",
+          "6i5h",
+          "3a4b",
+          "8h9g",
+          "7d7e",
+          "2h1g",
+          "2b3a",
+          "4h2h",
+          "7e7f",
+          "5i6h",
+          "1c1d",
+          "9g6d",
+          "5c5d",
+          "1f1e",
+          "8a7c",
+          "6d4b+",
+          "1d1e",
+          "S*4a",
+          "2a1c",
+          "4a5b+"
+        ],
+        "expected_sfen": "2s3b2/lrgk+S+Bg1l/ppnp1pppn/4p4/8p/P1pP5/1PP1PPPPS/L2KG2R1/1NS2G1NL w p 34"
+      },
+      "terminal": {
+        "kind": "checkmate",
+        "winner": 0
+      },
+      "reason": "prefixterminal no replacement"
+    }
+  ],
+  "new_go": 0,
+  "old_policy_preserved": true
+}

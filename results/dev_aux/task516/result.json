@@ -1,0 +1,1926 @@
+{
+  "status": "PASS_DERIVATION",
+  "metrics": [
+    {
+      "train_engine": "cold_per_query",
+      "start": "unit",
+      "deployment_engine": "cold_per_query",
+      "opponent": "unit",
+      "metric": "mixed",
+      "initial_mean": "0",
+      "endpoint_mean": "-17/76",
+      "gain": "-17/76",
+      "paired_gains": [
+        "6/19",
+        "-8/19",
+        "-12/19",
+        "-2/19",
+        "-2/19",
+        "-4/19",
+        "-8/19",
+        "-4/19"
+      ],
+      "root_family_gains": [
+        "-1/19",
+        "-7/19",
+        "-3/19",
+        "-6/19"
+      ],
+      "leave_one_family_gains": [
+        "-16/57",
+        "-10/57",
+        "-14/57",
+        "-11/57"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 0,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "unit",
+      "deployment_engine": "cold_per_query",
+      "opponent": "unit",
+      "metric": "terminal",
+      "initial_mean": "0",
+      "endpoint_mean": "0",
+      "gain": "0",
+      "paired_gains": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 0,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "unit",
+      "deployment_engine": "cold_per_query",
+      "opponent": "unit",
+      "metric": "fast",
+      "initial_mean": "0",
+      "endpoint_mean": "0",
+      "gain": "0",
+      "paired_gains": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 0,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "unit",
+      "deployment_engine": "cold_per_query",
+      "opponent": "random",
+      "metric": "mixed",
+      "initial_mean": "53/76",
+      "endpoint_mean": "89/19",
+      "gain": "303/76",
+      "paired_gains": [
+        "4/19",
+        "-2/19",
+        "600/19",
+        "8/19",
+        "0",
+        "-2/19",
+        "-4/19",
+        "2/19"
+      ],
+      "root_family_gains": [
+        "1/19",
+        "16",
+        "-1/19",
+        "-1/19"
+      ],
+      "leave_one_family_gains": [
+        "302/57",
+        "-1/57",
+        "16/3",
+        "16/3"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 1,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "unit",
+      "deployment_engine": "cold_per_query",
+      "opponent": "random",
+      "metric": "terminal",
+      "initial_mean": "0",
+      "endpoint_mean": "4",
+      "gain": "4",
+      "paired_gains": [
+        "0",
+        "0",
+        "32",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "16",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "16/3",
+        "0",
+        "16/3",
+        "16/3"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 1,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "unit",
+      "deployment_engine": "cold_per_query",
+      "opponent": "random",
+      "metric": "fast",
+      "initial_mean": "0",
+      "endpoint_mean": "261/64",
+      "gain": "261/64",
+      "paired_gains": [
+        "0",
+        "0",
+        "261/8",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "261/16",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "87/16",
+        "0",
+        "87/16",
+        "87/16"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 1,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "unit",
+      "deployment_engine": "warm_game",
+      "opponent": "unit",
+      "metric": "mixed",
+      "initial_mean": "0",
+      "endpoint_mean": "-13/76",
+      "gain": "-13/76",
+      "paired_gains": [
+        "-6/19",
+        "0",
+        "-618/19",
+        "604/19",
+        "-8/19",
+        "6/19",
+        "-8/19",
+        "4/19"
+      ],
+      "root_family_gains": [
+        "-3/19",
+        "-7/19",
+        "-1/19",
+        "-2/19"
+      ],
+      "leave_one_family_gains": [
+        "-10/57",
+        "-2/19",
+        "-4/19",
+        "-11/57"
+      ],
+      "initial_wins": 1,
+      "endpoint_wins": 0,
+      "initial_losses": 1,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "unit",
+      "deployment_engine": "warm_game",
+      "opponent": "unit",
+      "metric": "terminal",
+      "initial_mean": "0",
+      "endpoint_mean": "0",
+      "gain": "0",
+      "paired_gains": [
+        "0",
+        "0",
+        "-32",
+        "32",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "initial_wins": 1,
+      "endpoint_wins": 0,
+      "initial_losses": 1,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "unit",
+      "deployment_engine": "warm_game",
+      "opponent": "unit",
+      "metric": "fast",
+      "initial_mean": "0",
+      "endpoint_mean": "0",
+      "gain": "0",
+      "paired_gains": [
+        "0",
+        "0",
+        "-769/24",
+        "769/24",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "initial_wins": 1,
+      "endpoint_wins": 0,
+      "initial_losses": 1,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "unit",
+      "deployment_engine": "warm_game",
+      "opponent": "random",
+      "metric": "mixed",
+      "initial_mean": "163/19",
+      "endpoint_mean": "619/38",
+      "gain": "293/38",
+      "paired_gains": [
+        "-2/19",
+        "596/19",
+        "0",
+        "592/19",
+        "-2/19",
+        "-602/19",
+        "-2/19",
+        "592/19"
+      ],
+      "root_family_gains": [
+        "297/19",
+        "296/19",
+        "-302/19",
+        "295/19"
+      ],
+      "leave_one_family_gains": [
+        "289/57",
+        "290/57",
+        "296/19",
+        "97/19"
+      ],
+      "initial_wins": 2,
+      "endpoint_wins": 4,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "unit",
+      "deployment_engine": "warm_game",
+      "opponent": "random",
+      "metric": "terminal",
+      "initial_mean": "8",
+      "endpoint_mean": "16",
+      "gain": "8",
+      "paired_gains": [
+        "0",
+        "32",
+        "0",
+        "32",
+        "0",
+        "-32",
+        "0",
+        "32"
+      ],
+      "root_family_gains": [
+        "16",
+        "16",
+        "-16",
+        "16"
+      ],
+      "leave_one_family_gains": [
+        "16/3",
+        "16/3",
+        "16",
+        "16/3"
+      ],
+      "initial_wins": 2,
+      "endpoint_wins": 4,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "unit",
+      "deployment_engine": "warm_game",
+      "opponent": "random",
+      "metric": "fast",
+      "initial_mean": "1559/192",
+      "endpoint_mean": "3115/192",
+      "gain": "389/48",
+      "paired_gains": [
+        "0",
+        "65/2",
+        "0",
+        "385/12",
+        "0",
+        "-97/3",
+        "0",
+        "391/12"
+      ],
+      "root_family_gains": [
+        "65/4",
+        "385/24",
+        "-97/6",
+        "391/24"
+      ],
+      "leave_one_family_gains": [
+        "97/18",
+        "131/24",
+        "583/36",
+        "43/8"
+      ],
+      "initial_wins": 2,
+      "endpoint_wins": 4,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "random2514",
+      "deployment_engine": "cold_per_query",
+      "opponent": "unit",
+      "metric": "mixed",
+      "initial_mean": "-77/19",
+      "endpoint_mean": "-13/76",
+      "gain": "295/76",
+      "paired_gains": [
+        "0",
+        "4/19",
+        "-10/19",
+        "596/19",
+        "2/19",
+        "2/19",
+        "-4/19",
+        "0"
+      ],
+      "root_family_gains": [
+        "2/19",
+        "293/19",
+        "2/19",
+        "-2/19"
+      ],
+      "leave_one_family_gains": [
+        "293/57",
+        "2/57",
+        "293/57",
+        "99/19"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 0,
+      "initial_losses": 1,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "random2514",
+      "deployment_engine": "cold_per_query",
+      "opponent": "unit",
+      "metric": "terminal",
+      "initial_mean": "-4",
+      "endpoint_mean": "0",
+      "gain": "4",
+      "paired_gains": [
+        "0",
+        "0",
+        "0",
+        "32",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "16",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "16/3",
+        "0",
+        "16/3",
+        "16/3"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 0,
+      "initial_losses": 1,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "random2514",
+      "deployment_engine": "cold_per_query",
+      "opponent": "unit",
+      "metric": "fast",
+      "initial_mean": "-259/64",
+      "endpoint_mean": "0",
+      "gain": "259/64",
+      "paired_gains": [
+        "0",
+        "0",
+        "0",
+        "259/8",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "259/16",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "259/48",
+        "0",
+        "259/48",
+        "259/48"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 0,
+      "initial_losses": 1,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "random2514",
+      "deployment_engine": "cold_per_query",
+      "opponent": "random",
+      "metric": "mixed",
+      "initial_mean": "235/19",
+      "endpoint_mean": "641/76",
+      "gain": "-299/76",
+      "paired_gains": [
+        "-600/19",
+        "0",
+        "0",
+        "2/19",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "-300/19",
+        "1/19",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "1/57",
+        "-100/19",
+        "-299/57",
+        "-299/57"
+      ],
+      "initial_wins": 3,
+      "endpoint_wins": 2,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "random2514",
+      "deployment_engine": "cold_per_query",
+      "opponent": "random",
+      "metric": "terminal",
+      "initial_mean": "12",
+      "endpoint_mean": "8",
+      "gain": "-4",
+      "paired_gains": [
+        "-32",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "-16",
+        "0",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "0",
+        "-16/3",
+        "-16/3",
+        "-16/3"
+      ],
+      "initial_wins": 3,
+      "endpoint_wins": 2,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "random2514",
+      "deployment_engine": "cold_per_query",
+      "opponent": "random",
+      "metric": "fast",
+      "initial_mean": "2327/192",
+      "endpoint_mean": "389/48",
+      "gain": "-257/64",
+      "paired_gains": [
+        "-257/8",
+        "0",
+        "1/6",
+        "0",
+        "-1/6",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "-257/16",
+        "1/12",
+        "-1/12",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "0",
+        "-775/144",
+        "-767/144",
+        "-257/48"
+      ],
+      "initial_wins": 3,
+      "endpoint_wins": 2,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "random2514",
+      "deployment_engine": "warm_game",
+      "opponent": "unit",
+      "metric": "mixed",
+      "initial_mean": "-3/76",
+      "endpoint_mean": "291/76",
+      "gain": "147/38",
+      "paired_gains": [
+        "0",
+        "-4/19",
+        "606/19",
+        "-14/19",
+        "2/19",
+        "-2/19",
+        "-4/19",
+        "4/19"
+      ],
+      "root_family_gains": [
+        "-2/19",
+        "296/19",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "296/57",
+        "-2/57",
+        "98/19",
+        "98/19"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 1,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "random2514",
+      "deployment_engine": "warm_game",
+      "opponent": "unit",
+      "metric": "terminal",
+      "initial_mean": "0",
+      "endpoint_mean": "4",
+      "gain": "4",
+      "paired_gains": [
+        "0",
+        "0",
+        "32",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "16",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "16/3",
+        "0",
+        "16/3",
+        "16/3"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 1,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "random2514",
+      "deployment_engine": "warm_game",
+      "opponent": "unit",
+      "metric": "fast",
+      "initial_mean": "0",
+      "endpoint_mean": "769/192",
+      "gain": "769/192",
+      "paired_gains": [
+        "0",
+        "0",
+        "769/24",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "769/48",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "769/144",
+        "0",
+        "769/144",
+        "769/144"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 1,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "random2514",
+      "deployment_engine": "warm_game",
+      "opponent": "random",
+      "metric": "mixed",
+      "initial_mean": "645/76",
+      "endpoint_mean": "384/19",
+      "gain": "891/76",
+      "paired_gains": [
+        "598/19",
+        "-596/19",
+        "0",
+        "0",
+        "598/19",
+        "586/19",
+        "-2/19",
+        "598/19"
+      ],
+      "root_family_gains": [
+        "1/19",
+        "0",
+        "592/19",
+        "298/19"
+      ],
+      "leave_one_family_gains": [
+        "890/57",
+        "297/19",
+        "299/57",
+        "593/57"
+      ],
+      "initial_wins": 2,
+      "endpoint_wins": 5,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "random2514",
+      "deployment_engine": "warm_game",
+      "opponent": "random",
+      "metric": "terminal",
+      "initial_mean": "8",
+      "endpoint_mean": "20",
+      "gain": "12",
+      "paired_gains": [
+        "32",
+        "-32",
+        "0",
+        "0",
+        "32",
+        "32",
+        "0",
+        "32"
+      ],
+      "root_family_gains": [
+        "0",
+        "0",
+        "32",
+        "16"
+      ],
+      "leave_one_family_gains": [
+        "16",
+        "16",
+        "16/3",
+        "32/3"
+      ],
+      "initial_wins": 2,
+      "endpoint_wins": 5,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "cold_per_query",
+      "start": "random2514",
+      "deployment_engine": "warm_game",
+      "opponent": "random",
+      "metric": "fast",
+      "initial_mean": "517/64",
+      "endpoint_mean": "3869/192",
+      "gain": "1159/96",
+      "paired_gains": [
+        "769/24",
+        "-193/6",
+        "1/6",
+        "0",
+        "769/24",
+        "389/12",
+        "0",
+        "385/12"
+      ],
+      "root_family_gains": [
+        "-1/16",
+        "1/12",
+        "1547/48",
+        "385/24"
+      ],
+      "leave_one_family_gains": [
+        "2321/144",
+        "1157/72",
+        "257/48",
+        "43/4"
+      ],
+      "initial_wins": 2,
+      "endpoint_wins": 5,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "unit",
+      "deployment_engine": "cold_per_query",
+      "opponent": "unit",
+      "metric": "mixed",
+      "initial_mean": "0",
+      "endpoint_mean": "-315/76",
+      "gain": "-315/76",
+      "paired_gains": [
+        "2/19",
+        "-10/19",
+        "-14/19",
+        "-32",
+        "-2/19",
+        "0",
+        "0",
+        "2/19"
+      ],
+      "root_family_gains": [
+        "-4/19",
+        "-311/19",
+        "-1/19",
+        "1/19"
+      ],
+      "leave_one_family_gains": [
+        "-311/57",
+        "-4/57",
+        "-314/57",
+        "-316/57"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 0,
+      "initial_losses": 0,
+      "endpoint_losses": 1
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "unit",
+      "deployment_engine": "cold_per_query",
+      "opponent": "unit",
+      "metric": "terminal",
+      "initial_mean": "0",
+      "endpoint_mean": "-4",
+      "gain": "-4",
+      "paired_gains": [
+        "0",
+        "0",
+        "0",
+        "-32",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "-16",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "-16/3",
+        "0",
+        "-16/3",
+        "-16/3"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 0,
+      "initial_losses": 0,
+      "endpoint_losses": 1
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "unit",
+      "deployment_engine": "cold_per_query",
+      "opponent": "unit",
+      "metric": "fast",
+      "initial_mean": "0",
+      "endpoint_mean": "-257/64",
+      "gain": "-257/64",
+      "paired_gains": [
+        "0",
+        "0",
+        "0",
+        "-257/8",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "-257/16",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "-257/48",
+        "0",
+        "-257/48",
+        "-257/48"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 0,
+      "initial_losses": 0,
+      "endpoint_losses": 1
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "unit",
+      "deployment_engine": "cold_per_query",
+      "opponent": "random",
+      "metric": "mixed",
+      "initial_mean": "53/76",
+      "endpoint_mean": "311/19",
+      "gain": "1191/76",
+      "paired_gains": [
+        "4/19",
+        "594/19",
+        "0",
+        "8/19",
+        "592/19",
+        "590/19",
+        "-2/19",
+        "596/19"
+      ],
+      "root_family_gains": [
+        "299/19",
+        "4/19",
+        "591/19",
+        "297/19"
+      ],
+      "leave_one_family_gains": [
+        "892/57",
+        "1187/57",
+        "200/19",
+        "298/19"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 4,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "unit",
+      "deployment_engine": "cold_per_query",
+      "opponent": "random",
+      "metric": "terminal",
+      "initial_mean": "0",
+      "endpoint_mean": "16",
+      "gain": "16",
+      "paired_gains": [
+        "0",
+        "32",
+        "0",
+        "0",
+        "32",
+        "32",
+        "0",
+        "32"
+      ],
+      "root_family_gains": [
+        "16",
+        "0",
+        "32",
+        "16"
+      ],
+      "leave_one_family_gains": [
+        "16",
+        "64/3",
+        "32/3",
+        "16"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 4,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "unit",
+      "deployment_engine": "cold_per_query",
+      "opponent": "random",
+      "metric": "fast",
+      "initial_mean": "0",
+      "endpoint_mean": "3107/192",
+      "gain": "3107/192",
+      "paired_gains": [
+        "0",
+        "65/2",
+        "0",
+        "0",
+        "257/8",
+        "65/2",
+        "0",
+        "97/3"
+      ],
+      "root_family_gains": [
+        "65/4",
+        "0",
+        "517/16",
+        "97/6"
+      ],
+      "leave_one_family_gains": [
+        "2327/144",
+        "3107/144",
+        "389/36",
+        "259/16"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 4,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "unit",
+      "deployment_engine": "warm_game",
+      "opponent": "unit",
+      "metric": "mixed",
+      "initial_mean": "0",
+      "endpoint_mean": "-7/38",
+      "gain": "-7/38",
+      "paired_gains": [
+        "-8/19",
+        "-4/19",
+        "-616/19",
+        "604/19",
+        "-2/19",
+        "8/19",
+        "-12/19",
+        "2/19"
+      ],
+      "root_family_gains": [
+        "-6/19",
+        "-6/19",
+        "3/19",
+        "-5/19"
+      ],
+      "leave_one_family_gains": [
+        "-8/57",
+        "-8/57",
+        "-17/57",
+        "-3/19"
+      ],
+      "initial_wins": 1,
+      "endpoint_wins": 0,
+      "initial_losses": 1,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "unit",
+      "deployment_engine": "warm_game",
+      "opponent": "unit",
+      "metric": "terminal",
+      "initial_mean": "0",
+      "endpoint_mean": "0",
+      "gain": "0",
+      "paired_gains": [
+        "0",
+        "0",
+        "-32",
+        "32",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "initial_wins": 1,
+      "endpoint_wins": 0,
+      "initial_losses": 1,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "unit",
+      "deployment_engine": "warm_game",
+      "opponent": "unit",
+      "metric": "fast",
+      "initial_mean": "0",
+      "endpoint_mean": "0",
+      "gain": "0",
+      "paired_gains": [
+        "0",
+        "0",
+        "-769/24",
+        "769/24",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "initial_wins": 1,
+      "endpoint_wins": 0,
+      "initial_losses": 1,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "unit",
+      "deployment_engine": "warm_game",
+      "opponent": "random",
+      "metric": "mixed",
+      "initial_mean": "163/19",
+      "endpoint_mean": "384/19",
+      "gain": "221/19",
+      "paired_gains": [
+        "0",
+        "596/19",
+        "0",
+        "592/19",
+        "-4/19",
+        "-598/19",
+        "590/19",
+        "592/19"
+      ],
+      "root_family_gains": [
+        "298/19",
+        "296/19",
+        "-301/19",
+        "591/19"
+      ],
+      "leave_one_family_gains": [
+        "586/57",
+        "196/19",
+        "395/19",
+        "293/57"
+      ],
+      "initial_wins": 2,
+      "endpoint_wins": 5,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "unit",
+      "deployment_engine": "warm_game",
+      "opponent": "random",
+      "metric": "terminal",
+      "initial_mean": "8",
+      "endpoint_mean": "20",
+      "gain": "12",
+      "paired_gains": [
+        "0",
+        "32",
+        "0",
+        "32",
+        "0",
+        "-32",
+        "32",
+        "32"
+      ],
+      "root_family_gains": [
+        "16",
+        "16",
+        "-16",
+        "32"
+      ],
+      "leave_one_family_gains": [
+        "32/3",
+        "32/3",
+        "64/3",
+        "16/3"
+      ],
+      "initial_wins": 2,
+      "endpoint_wins": 5,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "unit",
+      "deployment_engine": "warm_game",
+      "opponent": "random",
+      "metric": "fast",
+      "initial_mean": "1559/192",
+      "endpoint_mean": "121/6",
+      "gain": "771/64",
+      "paired_gains": [
+        "0",
+        "389/12",
+        "0",
+        "385/12",
+        "0",
+        "-97/3",
+        "769/24",
+        "193/6"
+      ],
+      "root_family_gains": [
+        "389/24",
+        "385/24",
+        "-97/6",
+        "1541/48"
+      ],
+      "leave_one_family_gains": [
+        "1535/144",
+        "1543/144",
+        "3089/144",
+        "193/36"
+      ],
+      "initial_wins": 2,
+      "endpoint_wins": 5,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "random2514",
+      "deployment_engine": "cold_per_query",
+      "opponent": "unit",
+      "metric": "mixed",
+      "initial_mean": "-77/19",
+      "endpoint_mean": "149/38",
+      "gain": "303/38",
+      "paired_gains": [
+        "2/19",
+        "32",
+        "-10/19",
+        "602/19",
+        "0",
+        "4/19",
+        "6/19",
+        "0"
+      ],
+      "root_family_gains": [
+        "305/19",
+        "296/19",
+        "2/19",
+        "3/19"
+      ],
+      "leave_one_family_gains": [
+        "301/57",
+        "310/57",
+        "604/57",
+        "201/19"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 1,
+      "initial_losses": 1,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "random2514",
+      "deployment_engine": "cold_per_query",
+      "opponent": "unit",
+      "metric": "terminal",
+      "initial_mean": "-4",
+      "endpoint_mean": "4",
+      "gain": "8",
+      "paired_gains": [
+        "0",
+        "32",
+        "0",
+        "32",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "16",
+        "16",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "16/3",
+        "16/3",
+        "32/3",
+        "32/3"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 1,
+      "initial_losses": 1,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "random2514",
+      "deployment_engine": "cold_per_query",
+      "opponent": "unit",
+      "metric": "fast",
+      "initial_mean": "-259/64",
+      "endpoint_mean": "4",
+      "gain": "515/64",
+      "paired_gains": [
+        "0",
+        "32",
+        "0",
+        "259/8",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "16",
+        "259/16",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "259/48",
+        "16/3",
+        "515/48",
+        "515/48"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 1,
+      "initial_losses": 1,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "random2514",
+      "deployment_engine": "cold_per_query",
+      "opponent": "random",
+      "metric": "mixed",
+      "initial_mean": "235/19",
+      "endpoint_mean": "236/19",
+      "gain": "1/19",
+      "paired_gains": [
+        "-600/19",
+        "8/19",
+        "0",
+        "-2/19",
+        "-590/19",
+        "590/19",
+        "2/19",
+        "600/19"
+      ],
+      "root_family_gains": [
+        "-296/19",
+        "-1/19",
+        "0",
+        "301/19"
+      ],
+      "leave_one_family_gains": [
+        "100/19",
+        "5/57",
+        "4/57",
+        "-99/19"
+      ],
+      "initial_wins": 3,
+      "endpoint_wins": 3,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "random2514",
+      "deployment_engine": "cold_per_query",
+      "opponent": "random",
+      "metric": "terminal",
+      "initial_mean": "12",
+      "endpoint_mean": "12",
+      "gain": "0",
+      "paired_gains": [
+        "-32",
+        "0",
+        "0",
+        "0",
+        "-32",
+        "32",
+        "0",
+        "32"
+      ],
+      "root_family_gains": [
+        "-16",
+        "0",
+        "0",
+        "16"
+      ],
+      "leave_one_family_gains": [
+        "16/3",
+        "0",
+        "0",
+        "-16/3"
+      ],
+      "initial_wins": 3,
+      "endpoint_wins": 3,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "random2514",
+      "deployment_engine": "cold_per_query",
+      "opponent": "random",
+      "metric": "fast",
+      "initial_mean": "2327/192",
+      "endpoint_mean": "2335/192",
+      "gain": "1/24",
+      "paired_gains": [
+        "-257/8",
+        "0",
+        "1/6",
+        "0",
+        "-259/8",
+        "391/12",
+        "0",
+        "385/12"
+      ],
+      "root_family_gains": [
+        "-257/16",
+        "1/12",
+        "5/48",
+        "385/24"
+      ],
+      "leave_one_family_gains": [
+        "779/144",
+        "1/36",
+        "1/48",
+        "-127/24"
+      ],
+      "initial_wins": 3,
+      "endpoint_wins": 3,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "random2514",
+      "deployment_engine": "warm_game",
+      "opponent": "unit",
+      "metric": "mixed",
+      "initial_mean": "-3/76",
+      "endpoint_mean": "-2/19",
+      "gain": "-5/76",
+      "paired_gains": [
+        "2/19",
+        "0",
+        "-12/19",
+        "-2/19",
+        "0",
+        "-2/19",
+        "2/19",
+        "2/19"
+      ],
+      "root_family_gains": [
+        "1/19",
+        "-7/19",
+        "-1/19",
+        "2/19"
+      ],
+      "leave_one_family_gains": [
+        "-2/19",
+        "2/57",
+        "-4/57",
+        "-7/57"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 0,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "random2514",
+      "deployment_engine": "warm_game",
+      "opponent": "unit",
+      "metric": "terminal",
+      "initial_mean": "0",
+      "endpoint_mean": "0",
+      "gain": "0",
+      "paired_gains": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 0,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "random2514",
+      "deployment_engine": "warm_game",
+      "opponent": "unit",
+      "metric": "fast",
+      "initial_mean": "0",
+      "endpoint_mean": "0",
+      "gain": "0",
+      "paired_gains": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "root_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "leave_one_family_gains": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "initial_wins": 0,
+      "endpoint_wins": 0,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "random2514",
+      "deployment_engine": "warm_game",
+      "opponent": "random",
+      "metric": "mixed",
+      "initial_mean": "645/76",
+      "endpoint_mean": "467/38",
+      "gain": "289/76",
+      "paired_gains": [
+        "-2/19",
+        "-600/19",
+        "0",
+        "4/19",
+        "598/19",
+        "-18/19",
+        "-2/19",
+        "598/19"
+      ],
+      "root_family_gains": [
+        "-301/19",
+        "2/19",
+        "290/19",
+        "298/19"
+      ],
+      "leave_one_family_gains": [
+        "590/57",
+        "287/57",
+        "-1/57",
+        "-3/19"
+      ],
+      "initial_wins": 2,
+      "endpoint_wins": 3,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "random2514",
+      "deployment_engine": "warm_game",
+      "opponent": "random",
+      "metric": "terminal",
+      "initial_mean": "8",
+      "endpoint_mean": "12",
+      "gain": "4",
+      "paired_gains": [
+        "0",
+        "-32",
+        "0",
+        "0",
+        "32",
+        "0",
+        "0",
+        "32"
+      ],
+      "root_family_gains": [
+        "-16",
+        "0",
+        "16",
+        "16"
+      ],
+      "leave_one_family_gains": [
+        "32/3",
+        "16/3",
+        "0",
+        "0"
+      ],
+      "initial_wins": 2,
+      "endpoint_wins": 3,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    },
+    {
+      "train_engine": "warm_game",
+      "start": "random2514",
+      "deployment_engine": "warm_game",
+      "opponent": "random",
+      "metric": "fast",
+      "initial_mean": "517/64",
+      "endpoint_mean": "1165/96",
+      "gain": "779/192",
+      "paired_gains": [
+        "0",
+        "-193/6",
+        "1/6",
+        "0",
+        "259/8",
+        "0",
+        "0",
+        "385/12"
+      ],
+      "root_family_gains": [
+        "-193/12",
+        "1/12",
+        "259/16",
+        "385/24"
+      ],
+      "leave_one_family_gains": [
+        "517/48",
+        "775/144",
+        "1/72",
+        "1/16"
+      ],
+      "initial_wins": 2,
+      "endpoint_wins": 3,
+      "initial_losses": 0,
+      "endpoint_losses": 0
+    }
+  ],
+  "source_prior_descriptors": [
+    {
+      "arm": "cold_per_query",
+      "family": "unit",
+      "initial": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        245,
+        90,
+        90,
+        55,
+        55,
+        245,
+        0,
+        90,
+        91,
+        90,
+        90,
+        90,
+        149,
+        0
+      ],
+      "initial_log_ratio_MSE_to_source_prior": 3.8874355037576436,
+      "endpoint_log_ratio_MSE_to_source_prior": 3.7560515753799706
+    },
+    {
+      "arm": "cold_per_query",
+      "family": "random2514",
+      "initial": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        118,
+        62,
+        87,
+        365,
+        140,
+        1515,
+        0,
+        62,
+        81,
+        424,
+        269,
+        155,
+        43,
+        0
+      ],
+      "initial_log_ratio_MSE_to_source_prior": 2.849287526055576,
+      "endpoint_log_ratio_MSE_to_source_prior": 3.11055335960506
+    },
+    {
+      "arm": "warm_game",
+      "family": "unit",
+      "initial": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        149,
+        149,
+        245,
+        41,
+        90,
+        149,
+        0,
+        90,
+        149,
+        91,
+        55,
+        149,
+        149,
+        0
+      ],
+      "initial_log_ratio_MSE_to_source_prior": 3.8874355037576436,
+      "endpoint_log_ratio_MSE_to_source_prior": 3.363465013669587
+    },
+    {
+      "arm": "warm_game",
+      "family": "random2514",
+      "initial": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        118,
+        61,
+        32,
+        602,
+        85,
+        1515,
+        0,
+        169,
+        81,
+        257,
+        443,
+        256,
+        42,
+        0
+      ],
+      "initial_log_ratio_MSE_to_source_prior": 2.849287526055576,
+      "endpoint_log_ratio_MSE_to_source_prior": 3.2315747704927413
+    }
+  ],
+  "source_prior_scope": "OfficialAperyWCSC26 sourceenum fixed c1b80eaa, NOTindependenthumanconsensus; readforALLdescriptiveendpoints onlyafter467fit/allcrossalreadyfrozen, neverfitness/selector/H/root/stop",
+  "source_prior": [
+    0,
+    90,
+    315,
+    405,
+    495,
+    855,
+    990,
+    540,
+    0,
+    540,
+    540,
+    540,
+    540,
+    945,
+    1395,
+    0
+  ],
+  "new_go": 0,
+  "additional_qualification_fulltable_entries": 12544,
+  "seconds": 0.02591770002618432,
+  "scope": "ALL4trained endpoints/BOTHengine implementations/BOTHopponents/threegoals, actualroot-family/leaveone; not newindependentholdout, unmodifiedmatureengine orgenericrule/humanprice recovery. Sourcepriordistance notoptimizationgoal."
+}

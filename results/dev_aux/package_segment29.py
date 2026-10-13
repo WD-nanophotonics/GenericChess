@@ -1,0 +1,15 @@
+import json,hashlib,zipfile,time
+from pathlib import Path
+R=Path.cwd();O=R/'results/dev_aux';archive=O/'ACTUAL_MATURE_20261012_29.zip';manifest=O/'ACTUAL_MATURE_20261012_29_manifest.json'
+assert not archive.exists() and not manifest.exists();private=set()
+paths=sorted(p for n in [467, 468, 469, 470, 472, 477, 478, 479, 480, 481, 482, 484, 491, 492, 493, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518] for p in (O/f'task{n:03d}').rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix not in ('.pyc','.tmp','.ini') and p.relative_to(R).as_posix() not in private)
+rows=[];start=time.monotonic()
+with zipfile.ZipFile(archive,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:
+ for p in paths:
+  relative=p.relative_to(R).as_posix();data=p.read_bytes();z.writestr(relative,data);rows.append(dict(path=relative,bytes=len(data),sha256=hashlib.sha256(data).hexdigest()))
+with zipfile.ZipFile(archive) as z:
+ assert set(z.namelist())=={r['path'] for r in rows}
+ for row in rows:
+  data=z.read(row['path']);assert len(data)==row['bytes'] and hashlib.sha256(data).hexdigest()==row['sha256']
+out=dict(complete=True,archive=archive.name,archive_bytes=archive.stat().st_size,archive_sha256=hashlib.sha256(archive.read_bytes()).hexdigest(),members=len(rows),raw_bytes=sum(r['bytes'] for r in rows),seconds=time.monotonic()-start,files=rows,archive_only_paths=[r['path'] for r in rows if r['bytes']>100000],private_excluded_paths=sorted(private),excluded='No.local_agent, binaries/toolchain/sourcezip, rawSlack/stop/account/privateinputs; Agentgenerated29science explicit whitelist;467input/executor and472audit prepared28 includedasprovenance, actual29outputs; old471/473..476excluded. task518INPUTSONLY nofit. DerivedINIconfigs excluded.No thirdparty complete source copies; no rawaccount/Slackmetadata. Originals neverdeleted.')
+manifest.write_text(json.dumps(out,indent=2),encoding='utf-8');print(json.dumps({k:out[k] for k in ('complete','members','raw_bytes','archive_bytes','archive_sha256','seconds')}))

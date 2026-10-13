@@ -1,23 +1,21 @@
-## DEV_AUX current scope2026-10-12 segment28
+## DEV_AUX current scope2026-10-12 segment29
 
-Science OPEN; sidemission only; heartbeatACTIVE; no primary/default/UI changes.
-9104new capped24ply games92509gamego+2616coldqualificationgo;1593.204s producers.
-431matched1k/8k budget learning: all4endpoints predev/BOTHbudgets/opponents;
-gainschangewithbudget/start, not unique shallow-error mechanism. 9accepts:
-3quantitydependent/6sameproposal true-terminal supported; no counterfactualchain.
-438mixed/pure objective: ALL784pairedfitgames/responses/ALLpaths identical;
-445fastmate: moreaccepted3+3 vs1+1, randomstartdevwins4->2 vs4->1, no recovery.
-456few4/wide16:784/3136fitgames135.141/532.250s unequalcost. Unitinitialrandomdev
-3->8few/3->9wide; randominitial9->10few/9->8wide. ALL8root devcross retained.
-ALLold/reuseactualpricegroups654/2616go exact; nativegame/history/RNG/PV/table
-checksPASS2011747PV/84260draws/68480entries. Allnegative/frozen failures kept.
-464initialbaseline playedrank11->12wide, PVusually12; not identifiabilityproof.
-466ALL16postfreeze sourceprior descriptorsmixed, notindependenthumanconsensus.
-467fresh4+4roots320nativeprefixplies/48directions frozen8ef847f6; NEXTmatched
-legacy/handSEE study motivatedold173finitepredicateerrors/new0. ExecutorsyntaxcheckedONLY,
-notexecuted/validated, no nextfit/game executed; preserveALLcross andcost scope.
-ReportSEGMENT_20261012_28.md; exactarchive431..471 excludesold437/privateinputs.
-471cold64goPASS;472futureaudit syntaxONLY, notexecuted. Primary48f151ad readonly; unpublishedcaptureindex onlyattributedcontext.
+Science OPEN; sidemission only; heartbeatACTIVE; no primary/default/UI writes.
+4922actualnew capped24ply games56107gamego+4885qualification+216diagnostic=61208go.
+467SEE/495futility/510reset allendpoints predevGAME andALLcross retained; 467prior471
+initial-price developmentROOT protocolpreflight exposed, notindependentholdout.
+495keeps484seed3513mate33 unavailable; postconstruction policy, no replacement.
+26firstfutility effects recurse/6qaccumulator-only,22upper4lower returns, no harm/safe-bound proof.
+504coldreadydominant; warm510784fitgames68.250s vs146.422s cold,8014vs8496go;
+newresourcecondition/statewithinGAME, no acrossexperiment conversion/noisefreeequalworkclaim.
+ALLnative/fullhistory/RNG/PV/table/jointaudit+515392wholegame replays4103go PASS.
+467/495ALL4sourceMSE worse;510unitbothcloser/randombothworse, no stablehumanprices.
+Warmrandomoppositionwins unit2->5/random2->3,negativecross/familyreversals preserved.
+518NEXTfresh4+4roots/native320prefix/48dirs, mixed-vs-pure SAMEwarm resources;
+inputsONLY, noexecutor/game/go/fit/endpoint yet. Expected2-5minonecombined batch.
+ReportSEGMENT_20261012_29.md/exactarchive29, rawprivateSlack/profiles/builds excluded.
+Dotfirstcontext controladopted; primary7b99185f reportedhistoryTTrepair/full2319tests,
+384round/12672cell/88dev28 independentmathcheck attributed, notourproductexecution.
 
 # Current local research mainline
 

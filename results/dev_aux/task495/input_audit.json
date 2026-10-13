@@ -1,0 +1,70 @@
+{
+  "status": "PASS_INPUTS",
+  "roots": [
+    {
+      "seed": 2026103510,
+      "phase": "train",
+      "prefix_plies": 40,
+      "terminal": null,
+      "available": true
+    },
+    {
+      "seed": 2026103511,
+      "phase": "train",
+      "prefix_plies": 40,
+      "terminal": null,
+      "available": true
+    },
+    {
+      "seed": 2026103512,
+      "phase": "train",
+      "prefix_plies": 40,
+      "terminal": null,
+      "available": true
+    },
+    {
+      "seed": 2026103580,
+      "phase": "development",
+      "prefix_plies": 40,
+      "terminal": null,
+      "available": true
+    },
+    {
+      "seed": 2026103581,
+      "phase": "development",
+      "prefix_plies": 40,
+      "terminal": null,
+      "available": true
+    },
+    {
+      "seed": 2026103582,
+      "phase": "development",
+      "prefix_plies": 40,
+      "terminal": null,
+      "available": true
+    },
+    {
+      "seed": 2026103583,
+      "phase": "development",
+      "prefix_plies": 40,
+      "terminal": null,
+      "available": true
+    },
+    {
+      "seed": 2026103513,
+      "phase": "train",
+      "prefix_plies": 33,
+      "terminal": {
+        "kind": "checkmate",
+        "winner": 0
+      },
+      "available": false
+    }
+  ],
+  "native_prefix_plies": 313,
+  "directions": 48,
+  "new_go": 0,
+  "all8seeds_retained": true,
+  "declaration_sha256": "43bf6845a6501786de4df4813f621b3b271d07f0527f2564a6eb0f3cea5bf0e2",
+  "scope": "3eligibletrain/4dev, unavailabletrain3513 terminalat33 preserved/no replacement; changedafter484rigidconstructionfailure, exposure disclosed. No development queries yet."
+}

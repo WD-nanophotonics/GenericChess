@@ -1,0 +1,20 @@
+{
+  "question": "Samefrozen seed cohort with explicit unavailable-root retention after484construction failure",
+  "seeds": {
+    "train": [
+      2026103510,
+      2026103511,
+      2026103512,
+      2026103513
+    ],
+    "development": [
+      2026103580,
+      2026103581,
+      2026103582,
+      2026103583
+    ]
+  },
+  "target_prefix": 40,
+  "unavailable_policy": "Atfirstactual terminal beforeorafter40plies recordunavailable fullprefix/terminal; NEVERreplace/reseed/shorten usableprefix. Useeligiblecohort symmetrically, denominator actual2*eligibleroots. Newpostconstructionexposure policy, NOTunexposedholdout orrevivalof484 success.",
+  "prepared_time": 1791848404.4538815
+}

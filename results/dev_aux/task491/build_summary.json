@@ -1,0 +1,244 @@
+{
+  "seconds": 2.052417099941522,
+  "executable_sha256": "12a34266a635998e07d8c3238f170d20476297b26340f3acabb75dee1de6805a",
+  "reused_object_hashes": [
+    {
+      "source": "main.cpp",
+      "object_sha256": "f87d4b15a48a31e755f0f527bd4e808f432228779006e9ef1523400db53aeb04"
+    },
+    {
+      "source": "types.cpp",
+      "object_sha256": "a2e31c66c620ebae12116de63cbc68663362f733a2673a6884d1107c4b4e7157"
+    },
+    {
+      "source": "bitboard.cpp",
+      "object_sha256": "9d9905f060015739e764edb9993927c3bdb262df93b9f0084f7c7be3443ee1e8"
+    },
+    {
+      "source": "misc.cpp",
+      "object_sha256": "763ccc787a0fd8e2421cedb9d72f080c4a478cf8d3536866757c3a325529224c"
+    },
+    {
+      "source": "movegen.cpp",
+      "object_sha256": "7d1720a1b55f2a0fd61238eb04a77a7b76e7ce84da68b518e0513e29bc41338c"
+    },
+    {
+      "source": "position.cpp",
+      "object_sha256": "8623b690acccc12385e8ed526534da75a1af9db41469ddcf5ba7ade887f934e2"
+    },
+    {
+      "source": "usi.cpp",
+      "object_sha256": "77ce3fc451ce8a5b9e9e99de3824d1e1e1d550682d28dcb1cdaca8b476d187ef"
+    },
+    {
+      "source": "usioption.cpp",
+      "object_sha256": "3d9724a3785f27bc96b9ae33c802399502f36d850a21f0d210fa68f07db483af"
+    },
+    {
+      "source": "thread.cpp",
+      "object_sha256": "22ddb525f3fd3e87b45eac9376f7d32975a2a04ad20a4ce51fca67010c0facfa"
+    },
+    {
+      "source": "tt.cpp",
+      "object_sha256": "41ffbefafa1c09f493f27760e7e360f9197bfe1d7d9a6255c2e89dfabc95fb1e"
+    },
+    {
+      "source": "movepick.cpp",
+      "object_sha256": "af6cd5202f25c31f322b3f039b2889cbbfd662ae8ac248ec0597cff3ef551145"
+    },
+    {
+      "source": "timeman.cpp",
+      "object_sha256": "9b8c18505ec45fd3122e9f9a4b655ea322d2e076f94b5f2baf05123dac4dd94f"
+    },
+    {
+      "source": "memory.cpp",
+      "object_sha256": "f74630aa1471fc13f12043d9759c3a9186ee69a0f86e38242de9093b3c6150c7"
+    },
+    {
+      "source": "engine.cpp",
+      "object_sha256": "bcf5b928e3b5e4b035fc9cff022aaa9cb1fc41b9ade1ac612870ec335a26b9ca"
+    },
+    {
+      "source": "search.cpp",
+      "object_sha256": "596af6798ca4cd781b1f2d25be82732fe5e711bb61117ac48738ffcb34f5127a"
+    },
+    {
+      "source": "score.cpp",
+      "object_sha256": "b93f4d2cb2782568daba0e6ff77d588bce47eace41ebd74b29bb825fe55dbc72"
+    },
+    {
+      "source": "benchmark.cpp",
+      "object_sha256": "dbc082a912201c68c4c7b3b82bba331ea7a4f863203c1a40c224d9637d2790c8"
+    },
+    {
+      "source": "tune.cpp",
+      "object_sha256": "0f2f95515c910c87f0b42dc995e9012c74d1c86b22a46132cb9b799b04a0a687"
+    },
+    {
+      "source": "book/book.cpp",
+      "object_sha256": "bea4f08a6e60124d50cd927e70eb5b3fa6b6652685bbe9d7d270b24cf830553c"
+    },
+    {
+      "source": "book/apery_book.cpp",
+      "object_sha256": "f43d4691f319eb8f0ebb823d6530a0a1da4b631d7bd61b292276ee4cf5bbef85"
+    },
+    {
+      "source": "book/policybook.cpp",
+      "object_sha256": "6a848609e1e749d59758ba742d194c2c32e44b0bb7dbaf8d94abb3a4bb6ccb1c"
+    },
+    {
+      "source": "extra/bitop.cpp",
+      "object_sha256": "189980cff879e270c09f5ad52ab8aa522129da921f553deb899c47120fc12890"
+    },
+    {
+      "source": "extra/long_effect.cpp",
+      "object_sha256": "566d31e1347709d562a66c87ec9ea11b378ee3da947bbc44bf61c4661ce74e52"
+    },
+    {
+      "source": "extra/sfen_packer.cpp",
+      "object_sha256": "0cdbd930365493584c557da2762c89c27c2045fa5c0dc8310e36bcea0bde16ba"
+    },
+    {
+      "source": "mate/mate.cpp",
+      "object_sha256": "dd25d1c895a26b2026a70004341f7a1900d5a8bb02d0f4aa55997c58dcaa9864"
+    },
+    {
+      "source": "mate/mate1ply_without_effect.cpp",
+      "object_sha256": "41b2850100b0782c5bef7f5da589959f01c7d506dcce8dcca8e0d78fe65bed9d"
+    },
+    {
+      "source": "mate/mate1ply_with_effect.cpp",
+      "object_sha256": "808406a460b58ee346f81cabe027ec51324a45c08dcb66b4e9cbc941ad4b8193"
+    },
+    {
+      "source": "mate/mate_solver.cpp",
+      "object_sha256": "51b1f29b71d9388caa56fa1d02c87acfa903ac27c80d028d6c4e7a01fd5b181c"
+    },
+    {
+      "source": "eval/evaluate_bona_piece.cpp",
+      "object_sha256": "ec304e1bd1cd16be93971dfbc375f353140a4579559776c2e206c690dbbd8647"
+    },
+    {
+      "source": "eval/evaluate.cpp",
+      "object_sha256": "72843ee462561574732e7dc3edd1a754d3b9e896da1a5b8da3d4ff143cb752f4"
+    },
+    {
+      "source": "eval/evaluate_io.cpp",
+      "object_sha256": "3f62b5803b27af462005a038e16127f969826a09a4feca472018a09f4adf68be"
+    },
+    {
+      "source": "eval/evaluate_mir_inv_tools.cpp",
+      "object_sha256": "3bc2c52d47b21a4184d176253479491abd4efbe1802be323cad89411520f070a"
+    },
+    {
+      "source": "eval/material/evaluate_material.cpp",
+      "object_sha256": "83c8582c88b0eb76fbad0566c4cc12c05c4beab44dc0e81d5bd4d75cd5b80772"
+    },
+    {
+      "source": "testcmd/unit_test.cpp",
+      "object_sha256": "860ba9464d1453c6bfb1fc01b3f3df1dd844e147fe12e9b0dc495148124f481b"
+    },
+    {
+      "source": "testcmd/mate_test_cmd.cpp",
+      "object_sha256": "d9c7b60a19972dc1db8187c0fb9bfd1431e10ada1a145159aa14caeea72b8d6c"
+    },
+    {
+      "source": "testcmd/normal_test_cmd.cpp",
+      "object_sha256": "87f00b9a64c9055c51a15d673c3fc6927fd4640723aef4527be76613175ecd44"
+    },
+    {
+      "source": "book/makebook.cpp",
+      "object_sha256": "8fa79d757d833c384de4be822bef7104a74d198e679e27e3a1598948ee6bb091"
+    },
+    {
+      "source": "book/makebook2025.cpp",
+      "object_sha256": "aa80b25a68173b48ee8f139a4e4b994c77bf6e840137ecea600c8d159199f570"
+    }
+  ],
+  "compiler_sha256": "ee85bef2c733e24a26c22be3df94bd631cf9528a048fce91241c182a936737fe",
+  "commands": [
+    {
+      "args": [
+        "DEV_AUX_ROOT\\.local_agent\\alignment-build\\toolchain\\llvm-mingw-20261006-ucrt-x86_64\\bin\\clang++.exe",
+        "-DDEV_AUX_FIRST_FUTILITY",
+        "-DDEV_AUX_COLD_REUSE",
+        "-std=c++17",
+        "-fno-exceptions",
+        "-fno-rtti",
+        "-O3",
+        "-ffast-math",
+        "-DNDEBUG",
+        "-DNO_EXCEPTIONS",
+        "-DUNICODE",
+        "-DYANEURAOU_ENGINE_MATERIAL",
+        "-DMATERIAL_LEVEL=1",
+        "-DUSE_SSE2",
+        "-msse2",
+        "-DTARGET_CPU=\"SSE2\"",
+        "-Wno-unused-parameter",
+        "-fno-threadsafe-statics",
+        "-c",
+        "engine/yaneuraou-engine/yaneuraou-search.cpp",
+        "-o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\38.o"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "args": [
+        "DEV_AUX_ROOT\\.local_agent\\alignment-build\\toolchain\\llvm-mingw-20261006-ucrt-x86_64\\bin\\clang++.exe",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\0.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\1.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\2.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\3.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\4.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\5.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\6.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\7.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\8.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\9.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\10.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\11.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\12.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\13.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\14.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\15.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\16.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\17.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\18.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\19.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\20.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\21.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\22.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\23.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\24.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\25.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\26.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\27.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\28.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\29.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\30.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\31.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\32.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\33.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\34.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\35.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\36.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\37.o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\objects\\38.o",
+        "-static",
+        "-lpthread",
+        "-fuse-ld=lld",
+        "-Wl,--stack,25000000",
+        "-o",
+        "DEV_AUX_ROOT\\.local_agent\\yaneura31\\yaneura-material1-first-futility.exe"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "buildONLY, behaviour/contextqualification pending"
+}
