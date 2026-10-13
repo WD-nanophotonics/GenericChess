@@ -1,0 +1,1147 @@
+{
+  "status": "ALL_TERMINAL_GUARDED_DEV_SCORES_FROZEN",
+  "models": [
+    {
+      "start": "unit",
+      "initial": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        32,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        45,
+        90,
+        180,
+        90,
+        0
+      ],
+      "accepted": 3,
+      "metrics": [
+        {
+          "metric": "fitness12",
+          "gain": "0",
+          "initial_mean": "0",
+          "endpoint_mean": "0",
+          "negative_cells": 0,
+          "by_family": [
+            {
+              "family": 2026132016,
+              "gain": "0"
+            },
+            {
+              "family": 2026132017,
+              "gain": "0"
+            },
+            {
+              "family": 2026132018,
+              "gain": "0"
+            },
+            {
+              "family": 2026132019,
+              "gain": "0"
+            },
+            {
+              "family": 2026132020,
+              "gain": "0"
+            },
+            {
+              "family": 2026132021,
+              "gain": "0"
+            },
+            {
+              "family": 2026132022,
+              "gain": "0"
+            },
+            {
+              "family": 2026132023,
+              "gain": "0"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026132016,
+              "gain": "0"
+            },
+            {
+              "omit": 2026132017,
+              "gain": "0"
+            },
+            {
+              "omit": 2026132018,
+              "gain": "0"
+            },
+            {
+              "omit": 2026132019,
+              "gain": "0"
+            },
+            {
+              "omit": 2026132020,
+              "gain": "0"
+            },
+            {
+              "omit": 2026132021,
+              "gain": "0"
+            },
+            {
+              "omit": 2026132022,
+              "gain": "0"
+            },
+            {
+              "omit": 2026132023,
+              "gain": "0"
+            }
+          ]
+        },
+        {
+          "metric": "royalfirst_sign24",
+          "gain": "-1/8",
+          "initial_mean": "0",
+          "endpoint_mean": "-1/8",
+          "negative_cells": 2,
+          "by_family": [
+            {
+              "family": 2026132016,
+              "gain": "0"
+            },
+            {
+              "family": 2026132017,
+              "gain": "0"
+            },
+            {
+              "family": 2026132018,
+              "gain": "0"
+            },
+            {
+              "family": 2026132019,
+              "gain": "0"
+            },
+            {
+              "family": 2026132020,
+              "gain": "0"
+            },
+            {
+              "family": 2026132021,
+              "gain": "-1"
+            },
+            {
+              "family": 2026132022,
+              "gain": "0"
+            },
+            {
+              "family": 2026132023,
+              "gain": "0"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026132016,
+              "gain": "-1/7"
+            },
+            {
+              "omit": 2026132017,
+              "gain": "-1/7"
+            },
+            {
+              "omit": 2026132018,
+              "gain": "-1/7"
+            },
+            {
+              "omit": 2026132019,
+              "gain": "-1/7"
+            },
+            {
+              "omit": 2026132020,
+              "gain": "-1/7"
+            },
+            {
+              "omit": 2026132021,
+              "gain": "0"
+            },
+            {
+              "omit": 2026132022,
+              "gain": "-1/7"
+            },
+            {
+              "omit": 2026132023,
+              "gain": "-1/7"
+            }
+          ]
+        },
+        {
+          "metric": "qty12",
+          "gain": "1/38",
+          "initial_mean": "0",
+          "endpoint_mean": "1/38",
+          "negative_cells": 2,
+          "by_family": [
+            {
+              "family": 2026132016,
+              "gain": "1/19"
+            },
+            {
+              "family": 2026132017,
+              "gain": "2/19"
+            },
+            {
+              "family": 2026132018,
+              "gain": "-1/19"
+            },
+            {
+              "family": 2026132019,
+              "gain": "-2/19"
+            },
+            {
+              "family": 2026132020,
+              "gain": "3/19"
+            },
+            {
+              "family": 2026132021,
+              "gain": "0"
+            },
+            {
+              "family": 2026132022,
+              "gain": "0"
+            },
+            {
+              "family": 2026132023,
+              "gain": "1/19"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026132016,
+              "gain": "3/133"
+            },
+            {
+              "omit": 2026132017,
+              "gain": "2/133"
+            },
+            {
+              "omit": 2026132018,
+              "gain": "5/133"
+            },
+            {
+              "omit": 2026132019,
+              "gain": "6/133"
+            },
+            {
+              "omit": 2026132020,
+              "gain": "1/133"
+            },
+            {
+              "omit": 2026132021,
+              "gain": "4/133"
+            },
+            {
+              "omit": 2026132022,
+              "gain": "4/133"
+            },
+            {
+              "omit": 2026132023,
+              "gain": "3/133"
+            }
+          ]
+        },
+        {
+          "metric": "qty24",
+          "gain": "3/152",
+          "initial_mean": "0",
+          "endpoint_mean": "3/152",
+          "negative_cells": 5,
+          "by_family": [
+            {
+              "family": 2026132016,
+              "gain": "1/19"
+            },
+            {
+              "family": 2026132017,
+              "gain": "1/19"
+            },
+            {
+              "family": 2026132018,
+              "gain": "3/19"
+            },
+            {
+              "family": 2026132019,
+              "gain": "0"
+            },
+            {
+              "family": 2026132020,
+              "gain": "3/19"
+            },
+            {
+              "family": 2026132021,
+              "gain": "-2/19"
+            },
+            {
+              "family": 2026132022,
+              "gain": "0"
+            },
+            {
+              "family": 2026132023,
+              "gain": "-3/19"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026132016,
+              "gain": "2/133"
+            },
+            {
+              "omit": 2026132017,
+              "gain": "2/133"
+            },
+            {
+              "omit": 2026132018,
+              "gain": "0"
+            },
+            {
+              "omit": 2026132019,
+              "gain": "3/133"
+            },
+            {
+              "omit": 2026132020,
+              "gain": "0"
+            },
+            {
+              "omit": 2026132021,
+              "gain": "5/133"
+            },
+            {
+              "omit": 2026132022,
+              "gain": "3/133"
+            },
+            {
+              "omit": 2026132023,
+              "gain": "6/133"
+            }
+          ]
+        },
+        {
+          "metric": "meanqty",
+          "gain": "7/304",
+          "initial_mean": "0",
+          "endpoint_mean": "7/304",
+          "negative_cells": 5,
+          "by_family": [
+            {
+              "family": 2026132016,
+              "gain": "1/19"
+            },
+            {
+              "family": 2026132017,
+              "gain": "3/38"
+            },
+            {
+              "family": 2026132018,
+              "gain": "1/19"
+            },
+            {
+              "family": 2026132019,
+              "gain": "-1/19"
+            },
+            {
+              "family": 2026132020,
+              "gain": "3/19"
+            },
+            {
+              "family": 2026132021,
+              "gain": "-1/19"
+            },
+            {
+              "family": 2026132022,
+              "gain": "0"
+            },
+            {
+              "family": 2026132023,
+              "gain": "-1/19"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026132016,
+              "gain": "5/266"
+            },
+            {
+              "omit": 2026132017,
+              "gain": "2/133"
+            },
+            {
+              "omit": 2026132018,
+              "gain": "5/266"
+            },
+            {
+              "omit": 2026132019,
+              "gain": "9/266"
+            },
+            {
+              "omit": 2026132020,
+              "gain": "1/266"
+            },
+            {
+              "omit": 2026132021,
+              "gain": "9/266"
+            },
+            {
+              "omit": 2026132022,
+              "gain": "1/38"
+            },
+            {
+              "omit": 2026132023,
+              "gain": "9/266"
+            }
+          ]
+        },
+        {
+          "metric": "fast",
+          "gain": "-1/100",
+          "initial_mean": "-1/16",
+          "endpoint_mean": "-29/400",
+          "negative_cells": 2,
+          "by_family": [
+            {
+              "family": 2026132016,
+              "gain": "0"
+            },
+            {
+              "family": 2026132017,
+              "gain": "-6/25"
+            },
+            {
+              "family": 2026132018,
+              "gain": "0"
+            },
+            {
+              "family": 2026132019,
+              "gain": "0"
+            },
+            {
+              "family": 2026132020,
+              "gain": "-19/50"
+            },
+            {
+              "family": 2026132021,
+              "gain": "0"
+            },
+            {
+              "family": 2026132022,
+              "gain": "0"
+            },
+            {
+              "family": 2026132023,
+              "gain": "27/50"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026132016,
+              "gain": "-2/175"
+            },
+            {
+              "omit": 2026132017,
+              "gain": "4/175"
+            },
+            {
+              "omit": 2026132018,
+              "gain": "-2/175"
+            },
+            {
+              "omit": 2026132019,
+              "gain": "-2/175"
+            },
+            {
+              "omit": 2026132020,
+              "gain": "3/70"
+            },
+            {
+              "omit": 2026132021,
+              "gain": "-2/175"
+            },
+            {
+              "omit": 2026132022,
+              "gain": "-2/175"
+            },
+            {
+              "omit": 2026132023,
+              "gain": "-31/350"
+            }
+          ]
+        },
+        {
+          "metric": "terminal",
+          "gain": "0",
+          "initial_mean": "0",
+          "endpoint_mean": "0",
+          "negative_cells": 2,
+          "by_family": [
+            {
+              "family": 2026132016,
+              "gain": "0"
+            },
+            {
+              "family": 2026132017,
+              "gain": "0"
+            },
+            {
+              "family": 2026132018,
+              "gain": "0"
+            },
+            {
+              "family": 2026132019,
+              "gain": "0"
+            },
+            {
+              "family": 2026132020,
+              "gain": "-16"
+            },
+            {
+              "family": 2026132021,
+              "gain": "0"
+            },
+            {
+              "family": 2026132022,
+              "gain": "0"
+            },
+            {
+              "family": 2026132023,
+              "gain": "16"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026132016,
+              "gain": "0"
+            },
+            {
+              "omit": 2026132017,
+              "gain": "0"
+            },
+            {
+              "omit": 2026132018,
+              "gain": "0"
+            },
+            {
+              "omit": 2026132019,
+              "gain": "0"
+            },
+            {
+              "omit": 2026132020,
+              "gain": "16/7"
+            },
+            {
+              "omit": 2026132021,
+              "gain": "0"
+            },
+            {
+              "omit": 2026132022,
+              "gain": "0"
+            },
+            {
+              "omit": 2026132023,
+              "gain": "-16/7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": "random2514",
+      "initial": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        302,
+        312,
+        68,
+        284,
+        109,
+        4096,
+        0,
+        80,
+        171,
+        200,
+        345,
+        61,
+        55,
+        0
+      ],
+      "accepted": 4,
+      "metrics": [
+        {
+          "metric": "fitness12",
+          "gain": "-1/4",
+          "initial_mean": "0",
+          "endpoint_mean": "-1/4",
+          "negative_cells": 3,
+          "by_family": [
+            {
+              "family": 2026132016,
+              "gain": "-1/2"
+            },
+            {
+              "family": 2026132017,
+              "gain": "0"
+            },
+            {
+              "family": 2026132018,
+              "gain": "0"
+            },
+            {
+              "family": 2026132019,
+              "gain": "0"
+            },
+            {
+              "family": 2026132020,
+              "gain": "0"
+            },
+            {
+              "family": 2026132021,
+              "gain": "-1/2"
+            },
+            {
+              "family": 2026132022,
+              "gain": "-1"
+            },
+            {
+              "family": 2026132023,
+              "gain": "0"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026132016,
+              "gain": "-3/14"
+            },
+            {
+              "omit": 2026132017,
+              "gain": "-2/7"
+            },
+            {
+              "omit": 2026132018,
+              "gain": "-2/7"
+            },
+            {
+              "omit": 2026132019,
+              "gain": "-2/7"
+            },
+            {
+              "omit": 2026132020,
+              "gain": "-2/7"
+            },
+            {
+              "omit": 2026132021,
+              "gain": "-3/14"
+            },
+            {
+              "omit": 2026132022,
+              "gain": "-1/7"
+            },
+            {
+              "omit": 2026132023,
+              "gain": "-2/7"
+            }
+          ]
+        },
+        {
+          "metric": "royalfirst_sign24",
+          "gain": "-5/16",
+          "initial_mean": "-3/16",
+          "endpoint_mean": "-1/2",
+          "negative_cells": 4,
+          "by_family": [
+            {
+              "family": 2026132016,
+              "gain": "0"
+            },
+            {
+              "family": 2026132017,
+              "gain": "0"
+            },
+            {
+              "family": 2026132018,
+              "gain": "-1/2"
+            },
+            {
+              "family": 2026132019,
+              "gain": "-1/2"
+            },
+            {
+              "family": 2026132020,
+              "gain": "0"
+            },
+            {
+              "family": 2026132021,
+              "gain": "-1/2"
+            },
+            {
+              "family": 2026132022,
+              "gain": "-1"
+            },
+            {
+              "family": 2026132023,
+              "gain": "0"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026132016,
+              "gain": "-5/14"
+            },
+            {
+              "omit": 2026132017,
+              "gain": "-5/14"
+            },
+            {
+              "omit": 2026132018,
+              "gain": "-2/7"
+            },
+            {
+              "omit": 2026132019,
+              "gain": "-2/7"
+            },
+            {
+              "omit": 2026132020,
+              "gain": "-5/14"
+            },
+            {
+              "omit": 2026132021,
+              "gain": "-2/7"
+            },
+            {
+              "omit": 2026132022,
+              "gain": "-3/14"
+            },
+            {
+              "omit": 2026132023,
+              "gain": "-5/14"
+            }
+          ]
+        },
+        {
+          "metric": "qty12",
+          "gain": "-3/38",
+          "initial_mean": "-1/19",
+          "endpoint_mean": "-5/38",
+          "negative_cells": 6,
+          "by_family": [
+            {
+              "family": 2026132016,
+              "gain": "-2/19"
+            },
+            {
+              "family": 2026132017,
+              "gain": "0"
+            },
+            {
+              "family": 2026132018,
+              "gain": "-3/19"
+            },
+            {
+              "family": 2026132019,
+              "gain": "1/19"
+            },
+            {
+              "family": 2026132020,
+              "gain": "-2/19"
+            },
+            {
+              "family": 2026132021,
+              "gain": "-2/19"
+            },
+            {
+              "family": 2026132022,
+              "gain": "-4/19"
+            },
+            {
+              "family": 2026132023,
+              "gain": "0"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026132016,
+              "gain": "-10/133"
+            },
+            {
+              "omit": 2026132017,
+              "gain": "-12/133"
+            },
+            {
+              "omit": 2026132018,
+              "gain": "-9/133"
+            },
+            {
+              "omit": 2026132019,
+              "gain": "-13/133"
+            },
+            {
+              "omit": 2026132020,
+              "gain": "-10/133"
+            },
+            {
+              "omit": 2026132021,
+              "gain": "-10/133"
+            },
+            {
+              "omit": 2026132022,
+              "gain": "-8/133"
+            },
+            {
+              "omit": 2026132023,
+              "gain": "-12/133"
+            }
+          ]
+        },
+        {
+          "metric": "qty24",
+          "gain": "-29/152",
+          "initial_mean": "-17/152",
+          "endpoint_mean": "-23/76",
+          "negative_cells": 11,
+          "by_family": [
+            {
+              "family": 2026132016,
+              "gain": "-9/19"
+            },
+            {
+              "family": 2026132017,
+              "gain": "1/19"
+            },
+            {
+              "family": 2026132018,
+              "gain": "-8/19"
+            },
+            {
+              "family": 2026132019,
+              "gain": "-3/19"
+            },
+            {
+              "family": 2026132020,
+              "gain": "-4/19"
+            },
+            {
+              "family": 2026132021,
+              "gain": "-2/19"
+            },
+            {
+              "family": 2026132022,
+              "gain": "-5/19"
+            },
+            {
+              "family": 2026132023,
+              "gain": "1/19"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026132016,
+              "gain": "-20/133"
+            },
+            {
+              "omit": 2026132017,
+              "gain": "-30/133"
+            },
+            {
+              "omit": 2026132018,
+              "gain": "-3/19"
+            },
+            {
+              "omit": 2026132019,
+              "gain": "-26/133"
+            },
+            {
+              "omit": 2026132020,
+              "gain": "-25/133"
+            },
+            {
+              "omit": 2026132021,
+              "gain": "-27/133"
+            },
+            {
+              "omit": 2026132022,
+              "gain": "-24/133"
+            },
+            {
+              "omit": 2026132023,
+              "gain": "-30/133"
+            }
+          ]
+        },
+        {
+          "metric": "meanqty",
+          "gain": "-41/304",
+          "initial_mean": "-25/304",
+          "endpoint_mean": "-33/152",
+          "negative_cells": 10,
+          "by_family": [
+            {
+              "family": 2026132016,
+              "gain": "-11/38"
+            },
+            {
+              "family": 2026132017,
+              "gain": "1/38"
+            },
+            {
+              "family": 2026132018,
+              "gain": "-11/38"
+            },
+            {
+              "family": 2026132019,
+              "gain": "-1/19"
+            },
+            {
+              "family": 2026132020,
+              "gain": "-3/19"
+            },
+            {
+              "family": 2026132021,
+              "gain": "-2/19"
+            },
+            {
+              "family": 2026132022,
+              "gain": "-9/38"
+            },
+            {
+              "family": 2026132023,
+              "gain": "1/38"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026132016,
+              "gain": "-15/133"
+            },
+            {
+              "omit": 2026132017,
+              "gain": "-3/19"
+            },
+            {
+              "omit": 2026132018,
+              "gain": "-15/133"
+            },
+            {
+              "omit": 2026132019,
+              "gain": "-39/266"
+            },
+            {
+              "omit": 2026132020,
+              "gain": "-5/38"
+            },
+            {
+              "omit": 2026132021,
+              "gain": "-37/266"
+            },
+            {
+              "omit": 2026132022,
+              "gain": "-16/133"
+            },
+            {
+              "omit": 2026132023,
+              "gain": "-3/19"
+            }
+          ]
+        },
+        {
+          "metric": "fast",
+          "gain": "-141/400",
+          "initial_mean": "21/400",
+          "endpoint_mean": "-3/10",
+          "negative_cells": 7,
+          "by_family": [
+            {
+              "family": 2026132016,
+              "gain": "-1/2"
+            },
+            {
+              "family": 2026132017,
+              "gain": "-4/25"
+            },
+            {
+              "family": 2026132018,
+              "gain": "0"
+            },
+            {
+              "family": 2026132019,
+              "gain": "0"
+            },
+            {
+              "family": 2026132020,
+              "gain": "-4/5"
+            },
+            {
+              "family": 2026132021,
+              "gain": "-1/2"
+            },
+            {
+              "family": 2026132022,
+              "gain": "-1/2"
+            },
+            {
+              "family": 2026132023,
+              "gain": "-9/25"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026132016,
+              "gain": "-58/175"
+            },
+            {
+              "omit": 2026132017,
+              "gain": "-19/50"
+            },
+            {
+              "omit": 2026132018,
+              "gain": "-141/350"
+            },
+            {
+              "omit": 2026132019,
+              "gain": "-141/350"
+            },
+            {
+              "omit": 2026132020,
+              "gain": "-101/350"
+            },
+            {
+              "omit": 2026132021,
+              "gain": "-58/175"
+            },
+            {
+              "omit": 2026132022,
+              "gain": "-58/175"
+            },
+            {
+              "omit": 2026132023,
+              "gain": "-123/350"
+            }
+          ]
+        },
+        {
+          "metric": "terminal",
+          "gain": "-12",
+          "initial_mean": "4",
+          "endpoint_mean": "-8",
+          "negative_cells": 6,
+          "by_family": [
+            {
+              "family": 2026132016,
+              "gain": "-16"
+            },
+            {
+              "family": 2026132017,
+              "gain": "0"
+            },
+            {
+              "family": 2026132018,
+              "gain": "0"
+            },
+            {
+              "family": 2026132019,
+              "gain": "0"
+            },
+            {
+              "family": 2026132020,
+              "gain": "-32"
+            },
+            {
+              "family": 2026132021,
+              "gain": "-16"
+            },
+            {
+              "family": 2026132022,
+              "gain": "-16"
+            },
+            {
+              "family": 2026132023,
+              "gain": "-16"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026132016,
+              "gain": "-80/7"
+            },
+            {
+              "omit": 2026132017,
+              "gain": "-96/7"
+            },
+            {
+              "omit": 2026132018,
+              "gain": "-96/7"
+            },
+            {
+              "omit": 2026132019,
+              "gain": "-96/7"
+            },
+            {
+              "omit": 2026132020,
+              "gain": "-64/7"
+            },
+            {
+              "omit": 2026132021,
+              "gain": "-80/7"
+            },
+            {
+              "omit": 2026132022,
+              "gain": "-80/7"
+            },
+            {
+              "omit": 2026132023,
+              "gain": "-80/7"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "744": "707753afbf71f30343a4b467811e6c8dcf9b837ec4bdce50663c7d3625b173eb",
+    "750": "a61fba4bbb5f373b7d52216555e2066b11d820a9eac64ac579dd6eace3080c2b",
+    "764": "c1919f6455fcd11d5a95d21c866db408e40ca4840437fb866dddef2d2394f441"
+  },
+  "reference_read_here": false,
+  "new_go": 0,
+  "scope": "ALL16preassigned7408devfamilies nowEXPOSED, fullvectorqualified744750reuse explicit; guard protectsTRAINH12only, no blindmethodvalidation. ALL16cells/fixedunit perprofile, allendpoints beforedev; ALLgoals/quantities/H24/fast/terminal/negativefamilies beforedescriptive reference. Independent765physicalaudit requiredbeforevalidatedclaim. No fakeRNGreplicates/equal-time/wholegameWDL/humanpriceproof."
+}

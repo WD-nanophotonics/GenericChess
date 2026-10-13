@@ -1,0 +1,2926 @@
+{
+  "status": "ALL48_VISITED_GRID_TERMINAL_GUARD_FEASIBILITY_CHECKED",
+  "summary": [
+    {
+      "method": "A_sign",
+      "start": "unit",
+      "grids": 12,
+      "accepted_updates": 3,
+      "accepted_updates_violate_terminal_guard": 0,
+      "grids_with_positive_guarded_candidate": 3,
+      "guarded_local_choice_changes": 0
+    },
+    {
+      "method": "A_sign",
+      "start": "random2514",
+      "grids": 12,
+      "accepted_updates": 6,
+      "accepted_updates_violate_terminal_guard": 2,
+      "grids_with_positive_guarded_candidate": 4,
+      "guarded_local_choice_changes": 2
+    },
+    {
+      "method": "B_magnitude",
+      "start": "unit",
+      "grids": 12,
+      "accepted_updates": 3,
+      "accepted_updates_violate_terminal_guard": 2,
+      "grids_with_positive_guarded_candidate": 1,
+      "guarded_local_choice_changes": 2
+    },
+    {
+      "method": "B_magnitude",
+      "start": "random2514",
+      "grids": 12,
+      "accepted_updates": 7,
+      "accepted_updates_violate_terminal_guard": 2,
+      "grids_with_positive_guarded_candidate": 6,
+      "guarded_local_choice_changes": 2
+    }
+  ],
+  "rows": [
+    {
+      "method": "A_sign",
+      "start": "unit",
+      "iteration": 0,
+      "axis": 2,
+      "original_selected": 1,
+      "original_selection_feasible": true,
+      "original_accepted": true,
+      "guarded_local_selected": 1,
+      "guarded_local_gain": "1/4",
+      "all_feasible": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [
+            17
+          ],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "unit",
+      "iteration": 1,
+      "axis": 3,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "unit",
+      "iteration": 2,
+      "axis": 4,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "unit",
+      "iteration": 3,
+      "axis": 5,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [
+            2
+          ],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [
+            2
+          ],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [
+            2
+          ],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "unit",
+      "iteration": 4,
+      "axis": 6,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [
+            2,
+            18
+          ],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "unit",
+      "iteration": 5,
+      "axis": 7,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "unit",
+      "iteration": 6,
+      "axis": 9,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [
+            23
+          ],
+          "lose_true_win": [
+            3,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [
+            23
+          ],
+          "lose_true_win": [
+            3,
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "unit",
+      "iteration": 7,
+      "axis": 10,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "unit",
+      "iteration": 8,
+      "axis": 11,
+      "original_selected": 2,
+      "original_selection_feasible": true,
+      "original_accepted": true,
+      "guarded_local_selected": 2,
+      "guarded_local_gain": "1/32",
+      "all_feasible": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "unit",
+      "iteration": 9,
+      "axis": 12,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "unit",
+      "iteration": 10,
+      "axis": 13,
+      "original_selected": 3,
+      "original_selection_feasible": true,
+      "original_accepted": true,
+      "guarded_local_selected": 3,
+      "guarded_local_gain": "1/16",
+      "all_feasible": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "unit",
+      "iteration": 11,
+      "axis": 14,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "random2514",
+      "iteration": 0,
+      "axis": 2,
+      "original_selected": 3,
+      "original_selection_feasible": true,
+      "original_accepted": true,
+      "guarded_local_selected": 3,
+      "guarded_local_gain": "1/16",
+      "all_feasible": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [
+            23
+          ],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "random2514",
+      "iteration": 1,
+      "axis": 3,
+      "original_selected": 4,
+      "original_selection_feasible": true,
+      "original_accepted": true,
+      "guarded_local_selected": 4,
+      "guarded_local_gain": "1/32",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        true,
+        true,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "random2514",
+      "iteration": 2,
+      "axis": 4,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "random2514",
+      "iteration": 3,
+      "axis": 5,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [
+            23
+          ],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "random2514",
+      "iteration": 4,
+      "axis": 6,
+      "original_selected": 4,
+      "original_selection_feasible": false,
+      "original_accepted": true,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "random2514",
+      "iteration": 5,
+      "axis": 7,
+      "original_selected": 1,
+      "original_selection_feasible": false,
+      "original_accepted": true,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "random2514",
+      "iteration": 6,
+      "axis": 9,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "random2514",
+      "iteration": 7,
+      "axis": 10,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "random2514",
+      "iteration": 8,
+      "axis": 11,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "random2514",
+      "iteration": 9,
+      "axis": 12,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "random2514",
+      "iteration": 10,
+      "axis": 13,
+      "original_selected": 2,
+      "original_selection_feasible": true,
+      "original_accepted": true,
+      "guarded_local_selected": 2,
+      "guarded_local_gain": "1/32",
+      "all_feasible": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        }
+      ]
+    },
+    {
+      "method": "A_sign",
+      "start": "random2514",
+      "iteration": 11,
+      "axis": 14,
+      "original_selected": 5,
+      "original_selection_feasible": true,
+      "original_accepted": true,
+      "guarded_local_selected": 5,
+      "guarded_local_gain": "1/16",
+      "all_feasible": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "unit",
+      "iteration": 0,
+      "axis": 2,
+      "original_selected": 1,
+      "original_selection_feasible": true,
+      "original_accepted": true,
+      "guarded_local_selected": 1,
+      "guarded_local_gain": "27/304",
+      "all_feasible": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [
+            17
+          ],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "unit",
+      "iteration": 1,
+      "axis": 3,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "unit",
+      "iteration": 2,
+      "axis": 4,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "unit",
+      "iteration": 3,
+      "axis": 5,
+      "original_selected": 3,
+      "original_selection_feasible": false,
+      "original_accepted": true,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [
+            2
+          ],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [
+            2
+          ],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [
+            2
+          ],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "unit",
+      "iteration": 4,
+      "axis": 6,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            5,
+            18
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            5,
+            18
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            5,
+            18,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            5,
+            18,
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "unit",
+      "iteration": 5,
+      "axis": 7,
+      "original_selected": 2,
+      "original_selection_feasible": false,
+      "original_accepted": true,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            18
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            18
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            18,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            18,
+            22,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            18,
+            22,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            5,
+            18,
+            22,
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "unit",
+      "iteration": 6,
+      "axis": 9,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [
+            18
+          ],
+          "lose_true_win": [
+            3,
+            5,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            3,
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [
+            13
+          ],
+          "lose_true_win": [
+            22,
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "unit",
+      "iteration": 7,
+      "axis": 10,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [
+            2
+          ],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "unit",
+      "iteration": 8,
+      "axis": 11,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "unit",
+      "iteration": 9,
+      "axis": 12,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "unit",
+      "iteration": 10,
+      "axis": 13,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [
+            2
+          ],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [
+            2
+          ],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "unit",
+      "iteration": 11,
+      "axis": 14,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [
+            2
+          ],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "random2514",
+      "iteration": 0,
+      "axis": 2,
+      "original_selected": 3,
+      "original_selection_feasible": true,
+      "original_accepted": true,
+      "guarded_local_selected": 3,
+      "guarded_local_gain": "13/608",
+      "all_feasible": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [
+            23
+          ],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "random2514",
+      "iteration": 1,
+      "axis": 3,
+      "original_selected": 4,
+      "original_selection_feasible": true,
+      "original_accepted": true,
+      "guarded_local_selected": 4,
+      "guarded_local_gain": "15/608",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        true,
+        true,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "random2514",
+      "iteration": 2,
+      "axis": 4,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "random2514",
+      "iteration": 3,
+      "axis": 5,
+      "original_selected": 2,
+      "original_selection_feasible": false,
+      "original_accepted": true,
+      "guarded_local_selected": 3,
+      "guarded_local_gain": "1/304",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        },
+        {
+          "enter_true_loss": [
+            23
+          ],
+          "lose_true_win": [
+            5,
+            31
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "random2514",
+      "iteration": 4,
+      "axis": 6,
+      "original_selected": 2,
+      "original_selection_feasible": false,
+      "original_accepted": true,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "random2514",
+      "iteration": 5,
+      "axis": 7,
+      "original_selected": 3,
+      "original_selection_feasible": true,
+      "original_accepted": true,
+      "guarded_local_selected": 3,
+      "guarded_local_gain": "1/608",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "random2514",
+      "iteration": 6,
+      "axis": 9,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6,
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "random2514",
+      "iteration": 7,
+      "axis": 10,
+      "original_selected": 1,
+      "original_selection_feasible": true,
+      "original_accepted": true,
+      "guarded_local_selected": 1,
+      "guarded_local_gain": "1/304",
+      "all_feasible": [
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "random2514",
+      "iteration": 8,
+      "axis": 11,
+      "original_selected": 4,
+      "original_selection_feasible": true,
+      "original_accepted": true,
+      "guarded_local_selected": 4,
+      "guarded_local_gain": "1/152",
+      "all_feasible": [
+        true,
+        false,
+        true,
+        false,
+        true,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6,
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "random2514",
+      "iteration": 9,
+      "axis": 12,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [
+            23
+          ],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [
+            5
+          ],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [
+            5
+          ],
+          "lose_true_win": [
+            5
+          ]
+        },
+        {
+          "enter_true_loss": [
+            5
+          ],
+          "lose_true_win": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "random2514",
+      "iteration": 10,
+      "axis": 13,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            6
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            6
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            6
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "method": "B_magnitude",
+      "start": "random2514",
+      "iteration": 11,
+      "axis": 14,
+      "original_selected": 0,
+      "original_selection_feasible": true,
+      "original_accepted": false,
+      "guarded_local_selected": 0,
+      "guarded_local_gain": "0",
+      "all_feasible": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "reasons": [
+        {
+          "enter_true_loss": [],
+          "lose_true_win": []
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            6,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            6,
+            22
+          ]
+        },
+        {
+          "enter_true_loss": [],
+          "lose_true_win": [
+            5,
+            6,
+            22
+          ]
+        }
+      ]
+    }
+  ],
+  "new_go": 0,
+  "scope": "Observed757masked true-terminal damage motivatesfinite updatepredicate check onALREADYvisitedA/B grids. Guard prevents newlyentering trueloss andlosingtruewin peroriginal32traincells atH12; all7candidates kept. Localalternatechoice NOTnewendpoint/offpolicytraining; actualfuturepath needsactualcached matching fullvectors/newexecution. No unseen dev/stability/humanpriceproof."
+}

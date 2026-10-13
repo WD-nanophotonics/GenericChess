@@ -1,0 +1,1427 @@
+{
+  "status": "COMPLETE_ALL_FIXED_OPPONENT_PROBES",
+  "actual_games": 96,
+  "actual_go": 2071,
+  "rows": [
+    {
+      "names": [
+        "unit-initial"
+      ],
+      "pool": "newfixed_rootpool",
+      "batch": {
+        "weights": [
+          0,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          0,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          0
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 1
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 2
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 3
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 4
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 5
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 6
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 7
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 8
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 9
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 10
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 11
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 12
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 13
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 14
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 15
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 16
+          }
+        ],
+        "goals": [
+          "1/19",
+          "6/19",
+          "-4/19",
+          "8/19",
+          "6/19",
+          "-5/19",
+          "8/19",
+          "-5/19",
+          "-6/19",
+          "6/19",
+          "1/19",
+          "0",
+          "-3/19",
+          "4/19",
+          "14/19",
+          "-6/19"
+        ],
+        "quantity12": [
+          0,
+          6,
+          -4,
+          6,
+          4,
+          -6,
+          8,
+          -4,
+          -6,
+          6,
+          -2,
+          0,
+          -4,
+          4,
+          14,
+          -6
+        ],
+        "quantity24": [
+          2,
+          6,
+          -4,
+          10,
+          8,
+          -4,
+          8,
+          -6,
+          -6,
+          6,
+          4,
+          0,
+          -2,
+          4,
+          14,
+          -6
+        ],
+        "terminations": [
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 1
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 1
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          }
+        ],
+        "mean_goal": "25/304"
+      }
+    },
+    {
+      "names": [
+        "random2514-initial"
+      ],
+      "pool": "newfixed_rootpool",
+      "batch": {
+        "weights": [
+          0,
+          90,
+          151,
+          78,
+          68,
+          284,
+          109,
+          716,
+          0,
+          80,
+          171,
+          200,
+          345,
+          121,
+          55,
+          0
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 17
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 18
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 19
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 20
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 21
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 22
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 23
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 24
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 25
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 26
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 27
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 28
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 29
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 30
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 31
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 32
+          }
+        ],
+        "goals": [
+          "-4/19",
+          "4/19",
+          "0",
+          "0",
+          "-1/19",
+          "1/19",
+          "5/19",
+          "-5/19",
+          "-5/19",
+          "5/19",
+          "0",
+          "0",
+          "-6/19",
+          "6/19",
+          "8/19",
+          "-8/19"
+        ],
+        "quantity12": [
+          -4,
+          4,
+          -2,
+          2,
+          2,
+          -2,
+          4,
+          -4,
+          -4,
+          4,
+          -2,
+          2,
+          -6,
+          6,
+          8,
+          -8
+        ],
+        "quantity24": [
+          -4,
+          4,
+          2,
+          -2,
+          -4,
+          4,
+          6,
+          -6,
+          -6,
+          6,
+          2,
+          -2,
+          -6,
+          6,
+          8,
+          -8
+        ],
+        "terminations": [
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 1
+          },
+          {
+            "kind": "checkmate",
+            "winner": 1
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          }
+        ],
+        "mean_goal": "0"
+      }
+    },
+    {
+      "names": [
+        "A-unit-endpoint"
+      ],
+      "pool": "newfixed_rootpool",
+      "batch": {
+        "weights": [
+          0,
+          90,
+          32,
+          90,
+          90,
+          90,
+          90,
+          90,
+          0,
+          90,
+          90,
+          45,
+          90,
+          180,
+          90,
+          0
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 33
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 34
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 35
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 36
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 37
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 38
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 39
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 40
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 41
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 42
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 43
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 44
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 45
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 46
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 47
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 48
+          }
+        ],
+        "goals": [
+          "1/19",
+          "4/19",
+          "0",
+          "3/19",
+          "12/19",
+          "-4/19",
+          "8/19",
+          "-5/19",
+          "-7/19",
+          "6/19",
+          "-3/19",
+          "4/19",
+          "0",
+          "2/19",
+          "14/19",
+          "-11/19"
+        ],
+        "quantity12": [
+          0,
+          4,
+          -2,
+          2,
+          8,
+          -6,
+          8,
+          -6,
+          -4,
+          6,
+          -4,
+          4,
+          0,
+          2,
+          14,
+          -12
+        ],
+        "quantity24": [
+          2,
+          4,
+          2,
+          4,
+          16,
+          -2,
+          8,
+          -4,
+          -10,
+          6,
+          -2,
+          4,
+          0,
+          2,
+          14,
+          -10
+        ],
+        "terminations": [
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          }
+        ],
+        "mean_goal": "3/38"
+      }
+    },
+    {
+      "names": [
+        "A-random2514-endpoint"
+      ],
+      "pool": "newfixed_rootpool",
+      "batch": {
+        "weights": [
+          0,
+          90,
+          302,
+          312,
+          68,
+          284,
+          436,
+          179,
+          0,
+          80,
+          171,
+          200,
+          345,
+          61,
+          440,
+          0
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 49
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 50
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 51
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 52
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 53
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 54
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 55
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 56
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 57
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 58
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 59
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 60
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 61
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 62
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 63
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 64
+          }
+        ],
+        "goals": [
+          "2/19",
+          "2/19",
+          "-6/19",
+          "9/19",
+          "13/19",
+          "-7/19",
+          "6/19",
+          "-7/19",
+          "-8/19",
+          "4/19",
+          "-2/19",
+          "6/19",
+          "1/19",
+          "1/19",
+          "10/19",
+          "-6/19"
+        ],
+        "quantity12": [
+          0,
+          0,
+          -6,
+          6,
+          8,
+          -6,
+          6,
+          -8,
+          -8,
+          4,
+          -2,
+          6,
+          0,
+          2,
+          10,
+          -6
+        ],
+        "quantity24": [
+          4,
+          4,
+          -6,
+          12,
+          18,
+          -8,
+          6,
+          -6,
+          -8,
+          4,
+          -2,
+          6,
+          2,
+          0,
+          10,
+          -6
+        ],
+        "terminations": [
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 1
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 1
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          }
+        ],
+        "mean_goal": "9/152"
+      }
+    },
+    {
+      "names": [
+        "B-unit-endpoint"
+      ],
+      "pool": "newfixed_rootpool",
+      "batch": {
+        "weights": [
+          0,
+          90,
+          32,
+          90,
+          90,
+          180,
+          90,
+          45,
+          0,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          0
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 65
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 66
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 67
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 68
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 69
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 70
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 71
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 72
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 73
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 74
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 75
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 76
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 77
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 78
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 79
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 80
+          }
+        ],
+        "goals": [
+          "-5/19",
+          "6/19",
+          "-1/19",
+          "6/19",
+          "7/19",
+          "-4/19",
+          "7/19",
+          "-3/19",
+          "-4/19",
+          "7/19",
+          "-4/19",
+          "4/19",
+          "1/19",
+          "3/19",
+          "14/19",
+          "-8/19"
+        ],
+        "quantity12": [
+          -4,
+          6,
+          -2,
+          6,
+          6,
+          -6,
+          6,
+          -4,
+          -4,
+          6,
+          -4,
+          4,
+          0,
+          2,
+          14,
+          -8
+        ],
+        "quantity24": [
+          -6,
+          6,
+          0,
+          6,
+          8,
+          -2,
+          8,
+          -2,
+          -4,
+          8,
+          -4,
+          4,
+          2,
+          4,
+          14,
+          -8
+        ],
+        "terminations": [
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 1
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          }
+        ],
+        "mean_goal": "13/152"
+      }
+    },
+    {
+      "names": [
+        "B-random2514-endpoint"
+      ],
+      "pool": "newfixed_rootpool",
+      "batch": {
+        "weights": [
+          0,
+          90,
+          302,
+          312,
+          68,
+          142,
+          55,
+          1432,
+          0,
+          80,
+          43,
+          800,
+          345,
+          121,
+          55,
+          0
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 81
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 82
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 83
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 84
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 85
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 86
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 87
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 88
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 89
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 90
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 91
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 92
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 93
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 94
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 95
+          },
+          {
+            "file": "results/dev_aux/task755/games.jsonl",
+            "line": 96
+          }
+        ],
+        "goals": [
+          "-3/19",
+          "-2/19",
+          "2/19",
+          "1/19",
+          "4/19",
+          "0",
+          "1/19",
+          "-2/19",
+          "-6/19",
+          "6/19",
+          "-3/19",
+          "-1/19",
+          "-2/19",
+          "5/19",
+          "6/19",
+          "-8/19"
+        ],
+        "quantity12": [
+          -4,
+          0,
+          0,
+          2,
+          2,
+          -2,
+          2,
+          -4,
+          -6,
+          6,
+          -2,
+          0,
+          0,
+          4,
+          6,
+          -8
+        ],
+        "quantity24": [
+          -2,
+          -4,
+          4,
+          0,
+          6,
+          2,
+          0,
+          0,
+          -6,
+          6,
+          -4,
+          -2,
+          -4,
+          6,
+          6,
+          -8
+        ],
+        "terminations": [
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 1
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          }
+        ],
+        "mean_goal": "-1/152"
+      }
+    }
+  ],
+  "profiles": [
+    {
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "names": [
+        "unit-initial"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "names": [
+        "random2514-initial"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        32,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        45,
+        90,
+        180,
+        90,
+        0
+      ],
+      "names": [
+        "A-unit-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        302,
+        312,
+        68,
+        284,
+        436,
+        179,
+        0,
+        80,
+        171,
+        200,
+        345,
+        61,
+        440,
+        0
+      ],
+      "names": [
+        "A-random2514-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        32,
+        90,
+        90,
+        180,
+        90,
+        45,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "names": [
+        "B-unit-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        302,
+        312,
+        68,
+        142,
+        55,
+        1432,
+        0,
+        80,
+        43,
+        800,
+        345,
+        121,
+        55,
+        0
+      ],
+      "names": [
+        "B-random2514-endpoint"
+      ]
+    }
+  ],
+  "seconds": 8.405999999959022,
+  "scope": "Concrete q36 proposedbeforeAendpoints andBfit, scopedto ALLA/B. Crossopponent counterexample diagnosesdependence/exploitation, notpricecopying/fullWDL/humanvalue. PostA/Bdevfixedroots exploratory, nofit/adoption. Estimatedunder10seconds+audit, no fakeRNGrepeats/extraepochs/newworkers/default/UI/primarywrites."
+}

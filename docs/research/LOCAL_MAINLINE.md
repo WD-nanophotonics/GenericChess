@@ -1,17 +1,9 @@
-## DEV_AUX current scope 2026-10-13 segment35
+# DEV_AUX current scope 2026-10-13 segment36
 
-Science OPEN; sidemission only; heartbeat ACTIVE; no primary/default/UI/UI Test writes.
-Actual NEW29568 games/326018go, full independent688697702710723732 audits; all negatives and failures retained.
-A/B same-condition two-horizon vsH12-only: percell lower-envelope improves7/304unit,2/19random; unitA absoluteMstillnegative.
-ALL4A/B basic6 distancesworse; Aunit ALL12 slightlybetter,715corrects overstatement. No modeladoption.
-Rich717 ALLlegal60 prelude roots preserve76captures13prom32drops; C3/5acceptedupdates, quantityunitnegative/randompositive butfastnegativeboth.
-Cunit basic6closer/ALL12worse; neithernewC vector qualifiesfamiliar effectivevalues, no pricefitness/referencefit.
-ALL6endpoints againstfixedunit searchopponent onboth8-family pools: ALL12H24quantitygainsnegative; randomtarget gainsdo nottransfer.
-Realcap12 control128paths matchescap24prefix allnon-time outputs;768vs1503go, actualwork notwalltime guarantee.
-Auditrootcache736onALL256fixedopponentgames:16originalconstructors512clones, ALLcounts/sourceSHA equal732;8.279vs14.488s finiteaudit only.
-Original532INCOMPLETE/oldstops retained. Dotpercellmin advice adopted; chatcommentsadvisory; primary5a291dictmembershipwork read-onlycontext.
-Report results/dev_aux/SEGMENT_20261013_35.md; exactACTUAL_MATURE_20261013_35 archives/fullprivacyQA; sourceexe c69unchanged.
-Next738INPUTONLY: fresh24sourceblindfamilies, fixedunitopponent/cap12terminal-first countsign; no newfit oroldextraepochsclaimed.
+ScienceOPEN; sidemission only. A sign/B magnitude/C train-terminalguard shortfits complete.
+A randomsourcecloser but real/generalization unstable; noadoption.9584closedgames121321go incl12partialduplicates.
+745751756765775778PASS; original769FAILED retained, separate777250complete notoriginalbudgetsuccess.
+78072grids4terminalflat11lexchoicesdiffer diagnostic only;782INPUTONLY. Report SEGMENT_20261013_36.md.
 
 # Current local research mainline
 

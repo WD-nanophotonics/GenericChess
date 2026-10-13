@@ -1,0 +1,36 @@
+{
+  "status": "PASS_ALL_FIXED_UNIT_MAGNITUDE_CONTROL_CACHED_AND_NEW",
+  "counts": {
+    "games": 3072,
+    "actual_go": 36983,
+    "PV_moves": 679481,
+    "Python_actual_actions": 36983,
+    "random_draws": 0,
+    "sorted_legal_arrays": 0,
+    "price_ACK_entries": 6272,
+    "batches": 168,
+    "proposal_rounds": 24,
+    "prefixes": 3072
+  },
+  "root_cache_stats": {
+    "original_constructions": 24,
+    "clone_lookups": 6144
+  },
+  "source_sha256": {
+    "749": {
+      "games.jsonl": "2d4dc79f332cfe217da685450c826659b174aed09813a2dc8f8989be9ff58cb1",
+      "queries.jsonl": "64342814dea1be68050343f956d775423320885f7da8e3192200f63672e33f0d",
+      "price_acks.json": "181988dcad89c3e80cdc626cfb5edaeb1d6f7dc84ed64f812fe9b474275a547d",
+      "result.json": "ba2189937be3882ac3792501ddf5785fd8fece1b78cea935934561663a47763f"
+    },
+    "750": {
+      "games.jsonl": "a61fba4bbb5f373b7d52216555e2066b11d820a9eac64ac579dd6eace3080c2b",
+      "queries.jsonl": "38e8c0d879e1fc38d0d80a2bca6165437300dd3d970c068236f680df3c819d2c",
+      "price_acks.json": "916412783618b886e9834adaaa8c20827829c22106eaae18e4842c3b89e1e0c6",
+      "result.json": "80dd180baffb48f114e67a26b6e4fbb98234f454645a4bd7f80f35e476c6c53c"
+    }
+  },
+  "new_go": 0,
+  "seconds": 87.71341990027577,
+  "scope": "ALL749newcap12fit/750cap24dev +exactqualified743closedcache independentPython rules/fullhistory/PV/nativequeries/ACK/material/terminal/H12prefix-royalfirstmagnitudefitness plusALL24coordinateupdates/168logicalgridpoints, allendpoints beforeNEWdev. Exactcanonicalfullroot firstvalidatedconstruction/deepclone preservesimmutablekeys/check/mover andboard, no skippedrule/price/source verification. Deterministicfixedunit opponent, no fakeRNGreplicates, Adevexposed duringBfit, exploratorymethodcomparison; cachephysicalnotnew, no source/humanfitness/universalhumanprices claim."
+}

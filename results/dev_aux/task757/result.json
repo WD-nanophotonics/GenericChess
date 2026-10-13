@@ -1,0 +1,2923 @@
+{
+  "status": "ALL256_SIXSTATE_PAIR_DECOMPOSITIONS_EXACT",
+  "rows": [
+    {
+      "opponent": "unit",
+      "method": "A",
+      "start": "unit",
+      "cap": 12,
+      "cells": 16,
+      "real_terminal_contribution": "0",
+      "unfinished_proxy_contribution": "0",
+      "literal_sign_total": "0",
+      "initial_counts": {
+        "unfinished_less": 6,
+        "unfinished_more": 6,
+        "true_loss": 1,
+        "true_win": 1,
+        "unfinished_equal": 2
+      },
+      "endpoint_counts": {
+        "unfinished_less": 6,
+        "unfinished_more": 6,
+        "true_win": 1,
+        "true_loss": 1,
+        "unfinished_equal": 2
+      },
+      "state_pairs": [
+        {
+          "family": 2026132016,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132016,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "true_win",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "true_loss",
+          "after": "true_loss",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "true_win",
+          "after": "unfinished_more",
+          "real_delta": -1,
+          "proxy_delta": 1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132022,
+          "color": 0,
+          "before": "unfinished_equal",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132022,
+          "color": 1,
+          "before": "unfinished_equal",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        }
+      ],
+      "entering_true_loss": 0,
+      "leaving_true_loss": 0,
+      "scalar_masked_terminal_damage": [
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "true_win",
+          "after": "unfinished_more",
+          "scalar_delta": 0,
+          "real_delta": -1,
+          "proxy_delta": 1
+        }
+      ]
+    },
+    {
+      "opponent": "unit",
+      "method": "A",
+      "start": "unit",
+      "cap": 24,
+      "cells": 16,
+      "real_terminal_contribution": "0",
+      "unfinished_proxy_contribution": "-1/8",
+      "literal_sign_total": "-1/8",
+      "initial_counts": {
+        "unfinished_less": 6,
+        "unfinished_more": 6,
+        "true_loss": 2,
+        "true_win": 2
+      },
+      "endpoint_counts": {
+        "unfinished_less": 6,
+        "unfinished_more": 4,
+        "true_loss": 2,
+        "true_win": 2,
+        "unfinished_equal": 2
+      },
+      "state_pairs": [
+        {
+          "family": 2026132016,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132016,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "true_loss",
+          "real_delta": -1,
+          "proxy_delta": 1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "true_win",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "true_loss",
+          "after": "true_loss",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "true_win",
+          "after": "unfinished_more",
+          "real_delta": -1,
+          "proxy_delta": 1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -2,
+          "scalar_delta": -2
+        },
+        {
+          "family": 2026132021,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132022,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 1,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132022,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": -1,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "true_loss",
+          "after": "unfinished_less",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        }
+      ],
+      "entering_true_loss": 1,
+      "leaving_true_loss": 1,
+      "scalar_masked_terminal_damage": [
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "true_loss",
+          "scalar_delta": 0,
+          "real_delta": -1,
+          "proxy_delta": 1
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "true_win",
+          "after": "unfinished_more",
+          "scalar_delta": 0,
+          "real_delta": -1,
+          "proxy_delta": 1
+        }
+      ]
+    },
+    {
+      "opponent": "unit",
+      "method": "A",
+      "start": "random2514",
+      "cap": 12,
+      "cells": 16,
+      "real_terminal_contribution": "-3/16",
+      "unfinished_proxy_contribution": "0",
+      "literal_sign_total": "-3/16",
+      "initial_counts": {
+        "unfinished_less": 7,
+        "unfinished_equal": 2,
+        "true_win": 3,
+        "unfinished_more": 4
+      },
+      "endpoint_counts": {
+        "unfinished_less": 7,
+        "unfinished_equal": 3,
+        "true_win": 1,
+        "unfinished_more": 4,
+        "true_loss": 1
+      },
+      "state_pairs": [
+        {
+          "family": 2026132016,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132016,
+          "color": 1,
+          "before": "unfinished_equal",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 1,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "true_win",
+          "after": "unfinished_more",
+          "real_delta": -1,
+          "proxy_delta": 1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 0,
+          "before": "unfinished_equal",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -1,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132021,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": -1,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132022,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 1,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132022,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -2,
+          "scalar_delta": -2
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "true_win",
+          "after": "unfinished_more",
+          "real_delta": -1,
+          "proxy_delta": 1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "true_loss",
+          "real_delta": -1,
+          "proxy_delta": 1,
+          "scalar_delta": 0
+        }
+      ],
+      "entering_true_loss": 1,
+      "leaving_true_loss": 0,
+      "scalar_masked_terminal_damage": [
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "true_win",
+          "after": "unfinished_more",
+          "scalar_delta": 0,
+          "real_delta": -1,
+          "proxy_delta": 1
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "true_win",
+          "after": "unfinished_more",
+          "scalar_delta": 0,
+          "real_delta": -1,
+          "proxy_delta": 1
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "true_loss",
+          "scalar_delta": 0,
+          "real_delta": -1,
+          "proxy_delta": 1
+        }
+      ]
+    },
+    {
+      "opponent": "unit",
+      "method": "A",
+      "start": "random2514",
+      "cap": 24,
+      "cells": 16,
+      "real_terminal_contribution": "0",
+      "unfinished_proxy_contribution": "0",
+      "literal_sign_total": "0",
+      "initial_counts": {
+        "unfinished_less": 8,
+        "true_win": 3,
+        "unfinished_more": 3,
+        "unfinished_equal": 1,
+        "true_loss": 1
+      },
+      "endpoint_counts": {
+        "unfinished_less": 8,
+        "true_win": 3,
+        "unfinished_more": 3,
+        "unfinished_equal": 1,
+        "true_loss": 1
+      },
+      "state_pairs": [
+        {
+          "family": 2026132016,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132016,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 1,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 0,
+          "before": "unfinished_equal",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132022,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "true_win",
+          "real_delta": 1,
+          "proxy_delta": 1,
+          "scalar_delta": 2
+        },
+        {
+          "family": 2026132022,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -2,
+          "scalar_delta": -2
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "true_win",
+          "after": "unfinished_more",
+          "real_delta": -1,
+          "proxy_delta": 1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "true_loss",
+          "after": "true_loss",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        }
+      ],
+      "entering_true_loss": 0,
+      "leaving_true_loss": 0,
+      "scalar_masked_terminal_damage": [
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "true_win",
+          "after": "unfinished_more",
+          "scalar_delta": 0,
+          "real_delta": -1,
+          "proxy_delta": 1
+        }
+      ]
+    },
+    {
+      "opponent": "unit",
+      "method": "B",
+      "start": "unit",
+      "cap": 12,
+      "cells": 16,
+      "real_terminal_contribution": "-1/16",
+      "unfinished_proxy_contribution": "0",
+      "literal_sign_total": "-1/16",
+      "initial_counts": {
+        "unfinished_less": 6,
+        "unfinished_more": 6,
+        "true_loss": 1,
+        "true_win": 1,
+        "unfinished_equal": 2
+      },
+      "endpoint_counts": {
+        "unfinished_less": 6,
+        "unfinished_more": 6,
+        "unfinished_equal": 1,
+        "true_loss": 2,
+        "true_win": 1
+      },
+      "state_pairs": [
+        {
+          "family": 2026132016,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132016,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": -1,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132018,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "true_loss",
+          "after": "true_loss",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132022,
+          "color": 0,
+          "before": "unfinished_equal",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 1,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132022,
+          "color": 1,
+          "before": "unfinished_equal",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -1,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "true_loss",
+          "real_delta": -1,
+          "proxy_delta": 1,
+          "scalar_delta": 0
+        }
+      ],
+      "entering_true_loss": 1,
+      "leaving_true_loss": 0,
+      "scalar_masked_terminal_damage": [
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "true_loss",
+          "scalar_delta": 0,
+          "real_delta": -1,
+          "proxy_delta": 1
+        }
+      ]
+    },
+    {
+      "opponent": "unit",
+      "method": "B",
+      "start": "unit",
+      "cap": 24,
+      "cells": 16,
+      "real_terminal_contribution": "1/16",
+      "unfinished_proxy_contribution": "0",
+      "literal_sign_total": "1/16",
+      "initial_counts": {
+        "unfinished_less": 6,
+        "unfinished_more": 6,
+        "true_loss": 2,
+        "true_win": 2
+      },
+      "endpoint_counts": {
+        "unfinished_less": 4,
+        "true_win": 4,
+        "true_loss": 3,
+        "unfinished_equal": 1,
+        "unfinished_more": 4
+      },
+      "state_pairs": [
+        {
+          "family": 2026132016,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132016,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "true_win",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "true_loss",
+          "real_delta": -1,
+          "proxy_delta": 1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": -1,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132018,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "true_win",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "true_loss",
+          "after": "true_loss",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -2,
+          "scalar_delta": -2
+        },
+        {
+          "family": 2026132021,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 2,
+          "scalar_delta": 2
+        },
+        {
+          "family": 2026132022,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 2,
+          "scalar_delta": 2
+        },
+        {
+          "family": 2026132022,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "true_loss",
+          "after": "true_loss",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        }
+      ],
+      "entering_true_loss": 1,
+      "leaving_true_loss": 0,
+      "scalar_masked_terminal_damage": [
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "true_loss",
+          "scalar_delta": 0,
+          "real_delta": -1,
+          "proxy_delta": 1
+        }
+      ]
+    },
+    {
+      "opponent": "unit",
+      "method": "B",
+      "start": "random2514",
+      "cap": 12,
+      "cells": 16,
+      "real_terminal_contribution": "-1/8",
+      "unfinished_proxy_contribution": "-1/16",
+      "literal_sign_total": "-3/16",
+      "initial_counts": {
+        "unfinished_less": 7,
+        "unfinished_equal": 2,
+        "true_win": 3,
+        "unfinished_more": 4
+      },
+      "endpoint_counts": {
+        "unfinished_less": 8,
+        "true_win": 2,
+        "unfinished_more": 4,
+        "unfinished_equal": 1,
+        "true_loss": 1
+      },
+      "state_pairs": [
+        {
+          "family": 2026132016,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132016,
+          "color": 1,
+          "before": "unfinished_equal",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -1,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 1,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "true_win",
+          "after": "unfinished_more",
+          "real_delta": -1,
+          "proxy_delta": 1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 0,
+          "before": "unfinished_equal",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -1,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132021,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132022,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132022,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": -1,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "true_loss",
+          "real_delta": -1,
+          "proxy_delta": 1,
+          "scalar_delta": 0
+        }
+      ],
+      "entering_true_loss": 1,
+      "leaving_true_loss": 0,
+      "scalar_masked_terminal_damage": [
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "true_win",
+          "after": "unfinished_more",
+          "scalar_delta": 0,
+          "real_delta": -1,
+          "proxy_delta": 1
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "true_loss",
+          "scalar_delta": 0,
+          "real_delta": -1,
+          "proxy_delta": 1
+        }
+      ]
+    },
+    {
+      "opponent": "unit",
+      "method": "B",
+      "start": "random2514",
+      "cap": 24,
+      "cells": 16,
+      "real_terminal_contribution": "-1/16",
+      "unfinished_proxy_contribution": "-3/16",
+      "literal_sign_total": "-1/4",
+      "initial_counts": {
+        "unfinished_less": 8,
+        "true_win": 3,
+        "unfinished_more": 3,
+        "unfinished_equal": 1,
+        "true_loss": 1
+      },
+      "endpoint_counts": {
+        "unfinished_less": 10,
+        "true_win": 2,
+        "unfinished_more": 2,
+        "unfinished_equal": 1,
+        "true_loss": 1
+      },
+      "state_pairs": [
+        {
+          "family": 2026132016,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132016,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 1,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -2,
+          "scalar_delta": -2
+        },
+        {
+          "family": 2026132018,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "true_win",
+          "after": "unfinished_more",
+          "real_delta": -1,
+          "proxy_delta": 1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 0,
+          "before": "unfinished_equal",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -1,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132021,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 1,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132022,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132022,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -2,
+          "scalar_delta": -2
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "true_loss",
+          "after": "true_loss",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        }
+      ],
+      "entering_true_loss": 0,
+      "leaving_true_loss": 0,
+      "scalar_masked_terminal_damage": [
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "true_win",
+          "after": "unfinished_more",
+          "scalar_delta": 0,
+          "real_delta": -1,
+          "proxy_delta": 1
+        }
+      ]
+    },
+    {
+      "opponent": "other_random2514",
+      "method": "A",
+      "start": "unit",
+      "cap": 12,
+      "cells": 16,
+      "real_terminal_contribution": "3/16",
+      "unfinished_proxy_contribution": "-1/16",
+      "literal_sign_total": "1/8",
+      "initial_counts": {
+        "unfinished_equal": 2,
+        "unfinished_more": 7,
+        "true_loss": 3,
+        "unfinished_less": 4
+      },
+      "endpoint_counts": {
+        "unfinished_equal": 2,
+        "unfinished_more": 8,
+        "unfinished_less": 6
+      },
+      "state_pairs": [
+        {
+          "family": 2026132016,
+          "color": 0,
+          "before": "unfinished_equal",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132016,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "true_loss",
+          "after": "unfinished_less",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "true_loss",
+          "after": "unfinished_less",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 1,
+          "before": "unfinished_equal",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 1,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132022,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 1,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132022,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "true_loss",
+          "after": "unfinished_less",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        }
+      ],
+      "entering_true_loss": 0,
+      "leaving_true_loss": 3,
+      "scalar_masked_terminal_damage": []
+    },
+    {
+      "opponent": "other_random2514",
+      "method": "A",
+      "start": "unit",
+      "cap": 24,
+      "cells": 16,
+      "real_terminal_contribution": "1/16",
+      "unfinished_proxy_contribution": "-3/16",
+      "literal_sign_total": "-1/8",
+      "initial_counts": {
+        "unfinished_more": 8,
+        "true_loss": 3,
+        "unfinished_less": 3,
+        "unfinished_equal": 1,
+        "true_win": 1
+      },
+      "endpoint_counts": {
+        "unfinished_more": 7,
+        "unfinished_less": 5,
+        "true_loss": 2,
+        "unfinished_equal": 1,
+        "true_win": 1
+      },
+      "state_pairs": [
+        {
+          "family": 2026132016,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132016,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "true_loss",
+          "after": "unfinished_more",
+          "real_delta": 1,
+          "proxy_delta": 1,
+          "scalar_delta": 2
+        },
+        {
+          "family": 2026132017,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "true_loss",
+          "after": "unfinished_less",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -2,
+          "scalar_delta": -2
+        },
+        {
+          "family": 2026132021,
+          "color": 1,
+          "before": "unfinished_equal",
+          "after": "true_loss",
+          "real_delta": -1,
+          "proxy_delta": 0,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132022,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 1,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132022,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "true_loss",
+          "real_delta": -1,
+          "proxy_delta": -1,
+          "scalar_delta": -2
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "true_loss",
+          "after": "unfinished_less",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        }
+      ],
+      "entering_true_loss": 2,
+      "leaving_true_loss": 3,
+      "scalar_masked_terminal_damage": []
+    },
+    {
+      "opponent": "other_random2514",
+      "method": "A",
+      "start": "random2514",
+      "cap": 12,
+      "cells": 16,
+      "real_terminal_contribution": "0",
+      "unfinished_proxy_contribution": "1/16",
+      "literal_sign_total": "1/16",
+      "initial_counts": {
+        "unfinished_less": 7,
+        "unfinished_more": 7,
+        "true_win": 1,
+        "true_loss": 1
+      },
+      "endpoint_counts": {
+        "unfinished_equal": 3,
+        "true_loss": 2,
+        "unfinished_more": 5,
+        "unfinished_less": 4,
+        "true_win": 2
+      },
+      "state_pairs": [
+        {
+          "family": 2026132016,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 1,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132016,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": -1,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "true_loss",
+          "real_delta": -1,
+          "proxy_delta": 1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "true_win",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132022,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 1,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132022,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "true_loss",
+          "after": "true_loss",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        }
+      ],
+      "entering_true_loss": 1,
+      "leaving_true_loss": 0,
+      "scalar_masked_terminal_damage": [
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "true_loss",
+          "scalar_delta": 0,
+          "real_delta": -1,
+          "proxy_delta": 1
+        }
+      ]
+    },
+    {
+      "opponent": "other_random2514",
+      "method": "A",
+      "start": "random2514",
+      "cap": 24,
+      "cells": 16,
+      "real_terminal_contribution": "-1/16",
+      "unfinished_proxy_contribution": "1/4",
+      "literal_sign_total": "3/16",
+      "initial_counts": {
+        "unfinished_less": 6,
+        "unfinished_more": 6,
+        "true_loss": 2,
+        "true_win": 2
+      },
+      "endpoint_counts": {
+        "unfinished_more": 7,
+        "true_loss": 3,
+        "unfinished_less": 3,
+        "true_win": 2,
+        "unfinished_equal": 1
+      },
+      "state_pairs": [
+        {
+          "family": 2026132016,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 2,
+          "scalar_delta": 2
+        },
+        {
+          "family": 2026132016,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "true_loss",
+          "real_delta": -1,
+          "proxy_delta": -1,
+          "scalar_delta": -2
+        },
+        {
+          "family": 2026132017,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 2,
+          "scalar_delta": 2
+        },
+        {
+          "family": 2026132018,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 2,
+          "scalar_delta": 2
+        },
+        {
+          "family": 2026132018,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -2,
+          "scalar_delta": -2
+        },
+        {
+          "family": 2026132019,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "true_loss",
+          "real_delta": -1,
+          "proxy_delta": 1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "true_loss",
+          "after": "unfinished_less",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -2,
+          "scalar_delta": -2
+        },
+        {
+          "family": 2026132021,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 2,
+          "scalar_delta": 2
+        },
+        {
+          "family": 2026132022,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 2,
+          "scalar_delta": 2
+        },
+        {
+          "family": 2026132022,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": -1,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "true_loss",
+          "after": "true_loss",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        }
+      ],
+      "entering_true_loss": 2,
+      "leaving_true_loss": 1,
+      "scalar_masked_terminal_damage": [
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "true_loss",
+          "scalar_delta": 0,
+          "real_delta": -1,
+          "proxy_delta": 1
+        }
+      ]
+    },
+    {
+      "opponent": "other_random2514",
+      "method": "B",
+      "start": "unit",
+      "cap": 12,
+      "cells": 16,
+      "real_terminal_contribution": "1/8",
+      "unfinished_proxy_contribution": "-1/16",
+      "literal_sign_total": "1/16",
+      "initial_counts": {
+        "unfinished_equal": 2,
+        "unfinished_more": 7,
+        "true_loss": 3,
+        "unfinished_less": 4
+      },
+      "endpoint_counts": {
+        "unfinished_less": 6,
+        "unfinished_more": 8,
+        "unfinished_equal": 1,
+        "true_loss": 1
+      },
+      "state_pairs": [
+        {
+          "family": 2026132016,
+          "color": 0,
+          "before": "unfinished_equal",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -1,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132016,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "true_loss",
+          "after": "unfinished_less",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "true_loss",
+          "after": "unfinished_less",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 1,
+          "before": "unfinished_equal",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 1,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132022,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 1,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132022,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "true_loss",
+          "after": "true_loss",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        }
+      ],
+      "entering_true_loss": 0,
+      "leaving_true_loss": 2,
+      "scalar_masked_terminal_damage": []
+    },
+    {
+      "opponent": "other_random2514",
+      "method": "B",
+      "start": "unit",
+      "cap": 24,
+      "cells": 16,
+      "real_terminal_contribution": "3/16",
+      "unfinished_proxy_contribution": "-3/16",
+      "literal_sign_total": "0",
+      "initial_counts": {
+        "unfinished_more": 8,
+        "true_loss": 3,
+        "unfinished_less": 3,
+        "unfinished_equal": 1,
+        "true_win": 1
+      },
+      "endpoint_counts": {
+        "unfinished_less": 5,
+        "unfinished_more": 7,
+        "unfinished_equal": 1,
+        "true_win": 2,
+        "true_loss": 1
+      },
+      "state_pairs": [
+        {
+          "family": 2026132016,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -2,
+          "scalar_delta": -2
+        },
+        {
+          "family": 2026132016,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "true_loss",
+          "after": "unfinished_equal",
+          "real_delta": 1,
+          "proxy_delta": 0,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132017,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "true_win",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "true_loss",
+          "after": "unfinished_less",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -2,
+          "scalar_delta": -2
+        },
+        {
+          "family": 2026132021,
+          "color": 1,
+          "before": "unfinished_equal",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 1,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132022,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 2,
+          "scalar_delta": 2
+        },
+        {
+          "family": 2026132022,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "true_loss",
+          "after": "true_loss",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        }
+      ],
+      "entering_true_loss": 0,
+      "leaving_true_loss": 2,
+      "scalar_masked_terminal_damage": []
+    },
+    {
+      "opponent": "other_random2514",
+      "method": "B",
+      "start": "random2514",
+      "cap": 12,
+      "cells": 16,
+      "real_terminal_contribution": "0",
+      "unfinished_proxy_contribution": "0",
+      "literal_sign_total": "0",
+      "initial_counts": {
+        "unfinished_less": 7,
+        "unfinished_more": 7,
+        "true_win": 1,
+        "true_loss": 1
+      },
+      "endpoint_counts": {
+        "unfinished_less": 5,
+        "unfinished_equal": 4,
+        "unfinished_more": 5,
+        "true_loss": 1,
+        "true_win": 1
+      },
+      "state_pairs": [
+        {
+          "family": 2026132016,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132016,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": -1,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 1,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132017,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132018,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "true_loss",
+          "real_delta": -1,
+          "proxy_delta": 1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": -1,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132022,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 1,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132022,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "true_loss",
+          "after": "unfinished_less",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        }
+      ],
+      "entering_true_loss": 1,
+      "leaving_true_loss": 1,
+      "scalar_masked_terminal_damage": [
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "true_loss",
+          "scalar_delta": 0,
+          "real_delta": -1,
+          "proxy_delta": 1
+        }
+      ]
+    },
+    {
+      "opponent": "other_random2514",
+      "method": "B",
+      "start": "random2514",
+      "cap": 24,
+      "cells": 16,
+      "real_terminal_contribution": "0",
+      "unfinished_proxy_contribution": "-1/16",
+      "literal_sign_total": "-1/16",
+      "initial_counts": {
+        "unfinished_less": 6,
+        "unfinished_more": 6,
+        "true_loss": 2,
+        "true_win": 2
+      },
+      "endpoint_counts": {
+        "unfinished_less": 6,
+        "unfinished_more": 5,
+        "unfinished_equal": 3,
+        "true_loss": 1,
+        "true_win": 1
+      },
+      "state_pairs": [
+        {
+          "family": 2026132016,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132016,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -2,
+          "scalar_delta": -2
+        },
+        {
+          "family": 2026132017,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132017,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 1,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132018,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 2,
+          "scalar_delta": 2
+        },
+        {
+          "family": 2026132018,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132019,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": -1,
+          "scalar_delta": -1
+        },
+        {
+          "family": 2026132019,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_equal",
+          "real_delta": 0,
+          "proxy_delta": 1,
+          "scalar_delta": 1
+        },
+        {
+          "family": 2026132020,
+          "color": 0,
+          "before": "true_loss",
+          "after": "true_loss",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "true_win",
+          "after": "unfinished_more",
+          "real_delta": -1,
+          "proxy_delta": 1,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132021,
+          "color": 0,
+          "before": "unfinished_more",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": -2,
+          "scalar_delta": -2
+        },
+        {
+          "family": 2026132021,
+          "color": 1,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132022,
+          "color": 0,
+          "before": "unfinished_less",
+          "after": "unfinished_less",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132022,
+          "color": 1,
+          "before": "unfinished_more",
+          "after": "unfinished_more",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 0,
+          "before": "true_win",
+          "after": "true_win",
+          "real_delta": 0,
+          "proxy_delta": 0,
+          "scalar_delta": 0
+        },
+        {
+          "family": 2026132023,
+          "color": 1,
+          "before": "true_loss",
+          "after": "unfinished_less",
+          "real_delta": 1,
+          "proxy_delta": -1,
+          "scalar_delta": 0
+        }
+      ],
+      "entering_true_loss": 0,
+      "leaving_true_loss": 1,
+      "scalar_masked_terminal_damage": [
+        {
+          "family": 2026132020,
+          "color": 1,
+          "before": "true_win",
+          "after": "unfinished_more",
+          "scalar_delta": 0,
+          "real_delta": -1,
+          "proxy_delta": 1
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "744": "707753afbf71f30343a4b467811e6c8dcf9b837ec4bdce50663c7d3625b173eb",
+    "750": "a61fba4bbb5f373b7d52216555e2066b11d820a9eac64ac579dd6eace3080c2b",
+    "755": "d2f611ede7b04bb0d8214a462d3af0efe941259e97cdd802a48edadba1cf100b"
+  },
+  "new_go": 0,
+  "scope": "752Dot postA/exploratory/preB diagnostic appliedALL16devcells/2starts/2methods/2opponents/2horizons. Classificationterminal-first perstate NOTaggregatelexicographicpriority; scalar+1truewin andproxyplus collide. Exactsignsumdecomp checked, Bmagnitude actualfitness isdistinct andnotreplaced. Root/opponent family dependence andsparse trueoutcomes retained; no completeWDL/pricecopy/humanvalues/modelselection claims."
+}
