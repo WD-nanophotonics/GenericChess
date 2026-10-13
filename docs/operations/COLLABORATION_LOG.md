@@ -1808,3 +1808,42 @@ pytest calls are separate. Finalarchive includes the closedcurves/profile and
 publication-format failure evidence; raw/private data andbinaries remainexcluded.
 
 Actual primary segment endsUTC2026-10-13T21:08:49.337131+00:00, 83.279minutes/7research stages, safe_checkpoint accepted. ScienceOPEN, all ownedproducers closed; next executable memo is full handcanonicalization/trial representation comparison. A freshAGENT_REQUEST/newID/root carries the fixed e1d9707e science andcollaboration links for Dot review; delivery is not response/execution/adoption. No extraAgent/worker or userintervention.
+
+
+## 2026-10-14 PRIMARY trial-storage and wide-q segment
+
+PRIMARY executes194 saved research searches, including16 unqualified private frontier
+candidate outputs explicitly excluded from gain inference. Corrected per-owner
+nonempty materialization and actual inner593-child checks expose/fix the external
+replay qualification gap. Empty-only/slots/normalized frontier costs remain mixed;
+production Core is restored. Wide-Core mixed ordinary-q transfer24 calls gives
+all12 complete retained tuples same; backend/domain/evaluator differences from
+historical8x8Native are explicit. New S3 counts begin the next export-consumer
+premise.68related and108closing contracts pass; source/defaults/UI are unchanged.
+
+Dot's completed primary thread is fully reread and reconciled with exact original
+payload, no new reply/retry. Adopt its noncanonical-input/per-owner advice, then
+reject deployment from measurements. DEV_AUX independently owns sidemission41/42
+and active43. PRIMARY fully reads fixed8caab67241 and16b5b9a342, checks ratio/MSE/
+finite-outcome arithmetic only, and reads43's complete advice thread. Prediction,
+matched inventory effects and leaf-policy deployment stay separate;43 results are
+reported/unpublished, not reproduced here. No direct task/wake or duplicate native
+training/game run, auxiliary write or merge. Shared-account fixed routing supplies
+practical roles, not process authentication. No observed boundary conflict in
+this checkout; no claim that uninspected projects/aux files are conflict-free.
+
+Coordination is useful asynchronous source/constraint feedback; one real objection
+becomes16 regression cases.0duplicated auxiliary games is observable; counterfactual
+time savings and full communication latency are unmeasured. Serious unresolved
+machine/tool/user-intervention block: none. Actual prototype/registry/analysis
+failures are retained and repaired, not attributed to SAC or hidden approval.
+Final duration/session and full remote SHA follow the closing receipt; Git remains
+reviewed final delivery, not a communication or Dot approval prerequisite.
+
+Actual closing receipt: PRIMARYad75d1d2-4e0f-4e80-b99a-31f250e7a841 runs UTC2026-10-13T21:20:01.537759+00:00
+to2026-10-13T22:36:48.996672+00:00, 76.791minutes/5 research checkpoints;
+safe_checkpoint accepted, all owned producers closed, science OPEN.
+85-member scientific archive member hashes reviewed;108 closing contracts pass.
+Report-codec/guard mistake was repaired before commit/push; original failed working
+copy stays private, typed failure is published. Nothing is called sent/published
+until the actual tested delivery and exact remote SHA check.

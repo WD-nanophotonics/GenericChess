@@ -32,12 +32,17 @@ otherorder. Do not deploy from it or extend its frozen budgets. The new24-call v
 closes967.336s with extra compile/player preparation charged to total16/64s:
 all12 complete retained tuples same,0deeper/12same/0shallower.18/24still retain
 D1/effectiveq0 despite configuredq4 and extra partialqnodes. Defer adoption.
-Next question is required Core physical-trial/representation cost in unfinished
-q4D2, not largerbudgets oroldunchangedlazycheck. One16s actualprofile has begun:
-301140transitions/to_position vs18116runtimepushes,283024S3trials; inclusive
-binding/terminal/transition times overlap, and profiled counts are not ordinary
-throughput. Choose one concrete consumer premise/finite control with complete
-semantics/stops; no positioncache/globalcap/evaluator/framework gate.
+TRIAL_STORAGE_AND_WIDE_Q.md closes194 new searches. Empty-only/slots and
+corrected normalized-hand frontier carriers give no stable caller gain; original
+Core is restored. Private V1 inventory loss and its external-replay gap are kept,
+not called speedup. Actual generated exports both hands materialized70/78/89%.
+The changed24-call wide-Core ordinary-q ordering curve retains all12 full tuples
+same;18/24 remainD1/effectiveq0. Its geometric evaluation differs from historical
+Native semantic8x8, so no sole backend/size attribution. Do not extend these routes.
+New16s S3 consumer probe begins:739699/757726 prepared unchanged tests reuse
+own-anchor safety, yet physical child export persists. Next is one finite full
+work-view/export shadow preserving complete effects/aux/history/errors and direct
+child contracts; no implementation/gain or skipped semantics claimed.
 SCALAR_COUNT_AND_NATIVE_BOUNDARY.md retains rejected lazy/count routes and
 old byte/codec limits; no unchanged reruns or reclaimed unexposed status.
 
@@ -82,6 +87,7 @@ checkout writes, merge or routine wake. COLLABORATION_LOG records the scope.
 
 |Purpose|Record|
 |---|---|
+|Trial hand/inner-child correctness and wide Core ordering|TRIAL_STORAGE_AND_WIDE_Q.md; data/hand_trials_20261014.json|
 |Readonly view caller/stop feasibility and current costs|WIDE_READONLY_VIEW.md; data/wide_readonly_20261014.json|
 |Previous private cost rejections, native boundary and auxiliary uncertainty|SCALAR_COUNT_AND_NATIVE_BOUNDARY.md; data/scalar_count_native_boundary_20261014.json|
 |Adopted full-frontier intent/coordinate cost and metadata correction|S3_FULL_FRONTIER_INTENT.md; data/s3_intent_20261014.json|
