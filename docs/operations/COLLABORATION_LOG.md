@@ -1806,3 +1806,5 @@ pushes. Overlapping profiler times are not summed or called recoverable wallgain
 299actual research searches include failed/unsaved andcancelledcalls; internal
 pytest calls are separate. Finalarchive includes the closedcurves/profile and
 publication-format failure evidence; raw/private data andbinaries remainexcluded.
+
+Actual primary segment endsUTC2026-10-13T21:08:49.337131+00:00, 83.279minutes/7research stages, safe_checkpoint accepted. ScienceOPEN, all ownedproducers closed; next executable memo is full handcanonicalization/trial representation comparison. A freshAGENT_REQUEST/newID/root carries the fixed e1d9707e science andcollaboration links for Dot review; delivery is not response/execution/adoption. No extraAgent/worker or userintervention.
