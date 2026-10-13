@@ -1,0 +1,111 @@
+{
+  "status": "PASS_ALL256_SCALE_GAMES_LITERAL_RULES",
+  "counts": {
+    "literal_frontiers": 3593,
+    "tbhits_zero": 9858,
+    "literal_PVmoves": 21630,
+    "go": 2722,
+    "actions": 3593,
+    "randomdraws": 871
+  },
+  "rows": [
+    {
+      "scale": 2,
+      "price": 90,
+      "opponent": "unit_search",
+      "N": 32,
+      "counts": {
+        "C": 22,
+        "L": 5,
+        "W": 5
+      },
+      "J16": "0"
+    },
+    {
+      "scale": 2,
+      "price": 262,
+      "opponent": "unit_search",
+      "N": 32,
+      "counts": {
+        "C": 27,
+        "W": 3,
+        "L": 2
+      },
+      "J16": "1/32"
+    },
+    {
+      "scale": 2,
+      "price": 90,
+      "opponent": "uniform_random",
+      "N": 32,
+      "counts": {
+        "C": 20,
+        "W": 7,
+        "D": 5
+      },
+      "J16": "7/32"
+    },
+    {
+      "scale": 2,
+      "price": 262,
+      "opponent": "uniform_random",
+      "N": 32,
+      "counts": {
+        "C": 21,
+        "W": 10,
+        "D": 1
+      },
+      "J16": "5/16"
+    },
+    {
+      "scale": 4,
+      "price": 90,
+      "opponent": "unit_search",
+      "N": 32,
+      "counts": {
+        "L": 5,
+        "W": 5,
+        "D": 2,
+        "C": 20
+      },
+      "J16": "0"
+    },
+    {
+      "scale": 4,
+      "price": 262,
+      "opponent": "unit_search",
+      "N": 32,
+      "counts": {
+        "L": 3,
+        "W": 4,
+        "C": 25
+      },
+      "J16": "1/32"
+    },
+    {
+      "scale": 4,
+      "price": 90,
+      "opponent": "uniform_random",
+      "N": 32,
+      "counts": {
+        "C": 19,
+        "W": 8,
+        "D": 5
+      },
+      "J16": "1/4"
+    },
+    {
+      "scale": 4,
+      "price": 262,
+      "opponent": "uniform_random",
+      "N": 32,
+      "counts": {
+        "C": 21,
+        "W": 10,
+        "D": 1
+      },
+      "J16": "5/16"
+    }
+  ],
+  "new_go": 0
+}

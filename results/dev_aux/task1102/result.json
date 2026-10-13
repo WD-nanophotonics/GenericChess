@@ -1,0 +1,84 @@
+{
+  "status": "PASS_ALL384_GLOBAL_OPTIMIZER_NEW_H24_GAMES_LITERAL_RULES",
+  "counts": {
+    "literal_frontiers": 7299,
+    "tbhits_zero": 17390,
+    "literal_PVmoves": 37353,
+    "go": 5499,
+    "actions": 7299,
+    "randomdraws": 1800
+  },
+  "rows": [
+    {
+      "price": 64,
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "C": 43,
+        "D": 8,
+        "L": 6,
+        "W": 7
+      },
+      "J16": "1/64"
+    },
+    {
+      "price": 90,
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "D": 12,
+        "C": 36,
+        "L": 8,
+        "W": 8
+      },
+      "J16": "0"
+    },
+    {
+      "price": 671,
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "L": 9,
+        "C": 43,
+        "W": 8,
+        "D": 4
+      },
+      "J16": "-1/64"
+    },
+    {
+      "price": 64,
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "C": 33,
+        "W": 27,
+        "D": 4
+      },
+      "J16": "27/64"
+    },
+    {
+      "price": 90,
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 18,
+        "C": 44,
+        "D": 2
+      },
+      "J16": "9/32"
+    },
+    {
+      "price": 671,
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "C": 39,
+        "W": 23,
+        "D": 2
+      },
+      "J16": "23/64"
+    }
+  ],
+  "new_go": 0,
+  "scope": "Mechanical5x5 K/R/N,mate/stalemate/3foldauto/50move/kingonly. NoChess8x8oracle applied,noPawn/promotion/drop/castling/EP,notfullgenericdomain; printedPVlegalnotforcemate"
+}

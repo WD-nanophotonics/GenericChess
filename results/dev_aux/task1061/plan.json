@@ -1,0 +1,29 @@
+{
+  "question": "Separate candidate-only/opponent-only changes from joint4scale system.",
+  "conditions": [
+    [
+      4,
+      1
+    ],
+    [
+      1,
+      4
+    ]
+  ],
+  "cached_conditions": {
+    "1,1": "task1043",
+    "4,4": "task1059"
+  },
+  "profiles": [
+    90,
+    262
+  ],
+  "opponent_base_R": 90,
+  "roots": "same16qualifiedfirst4percomp task1042",
+  "nodes": 64,
+  "H": 16,
+  "new_games": 128,
+  "max_seconds": 120,
+  "estimated_seconds": 15,
+  "decision": "2x2 numericalpolicy attribution underfixedopponent; no refit/newroots/strengthgeneralization."
+}

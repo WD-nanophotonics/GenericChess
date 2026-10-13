@@ -1,0 +1,61 @@
+{
+  "status": "PASS_ALL256_NATIVE_LEAF_FACTORIAL_GAMES_LITERAL_RULES",
+  "counts": {
+    "literal_frontiers": 4945,
+    "tbhits_zero": 11640,
+    "literal_PVmoves": 24958,
+    "go": 3737,
+    "actions": 4945,
+    "randomdraws": 1208
+  },
+  "rows": [
+    {
+      "price": 64,
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "D": 9,
+        "C": 42,
+        "L": 7,
+        "W": 6
+      },
+      "J16": "-1/64"
+    },
+    {
+      "price": 90,
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "C": 41,
+        "D": 11,
+        "L": 6,
+        "W": 6
+      },
+      "J16": "0"
+    },
+    {
+      "price": 64,
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 19,
+        "C": 44,
+        "D": 1
+      },
+      "J16": "19/64"
+    },
+    {
+      "price": 90,
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "C": 36,
+        "W": 24,
+        "D": 4
+      },
+      "J16": "3/8"
+    }
+  ],
+  "new_go": 0,
+  "scope": "Mechanical5x5 K/R/N,mate/stalemate/3foldauto/50move/kingonly. NoChess8x8oracle applied,noPawn/promotion/drop/castling/EP,notfullgenericdomain; printedPVlegalnotforcemate"
+}

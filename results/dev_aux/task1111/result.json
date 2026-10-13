@@ -1,0 +1,115 @@
+{
+  "status": "PASS_FINAL_PHYSICAL_COUNTS_FAMILY_AND_FACTORIAL_AUDIT",
+  "perft": [
+    {
+      "task": 1042,
+      "frontiers": 192,
+      "all_unfiltered_tokens_matched": true
+    },
+    {
+      "task": 1074,
+      "frontiers": 128,
+      "all_unfiltered_tokens_matched": true
+    },
+    {
+      "task": 1078,
+      "frontiers": 448,
+      "all_unfiltered_tokens_matched": true
+    },
+    {
+      "task": 1098,
+      "frontiers": 96,
+      "all_unfiltered_tokens_matched": true
+    }
+  ],
+  "global_transfer_uncertainty": [
+    {
+      "H": 16,
+      "paired32family_delta": "5/128",
+      "stratified_family_bootstrap95": [
+        -0.015625,
+        0.0859375
+      ],
+      "composition_delta": {
+        "KNNNNNNvKR": "-1/32",
+        "KNNNNvKR": "1/8",
+        "KRNNvKRNN": "1/32",
+        "KRRvKNNNN": "1/32"
+      },
+      "scope": "Exploratorydescriptivepercentileinterval,32families correlatedcolors/opponents,not universal/noninferiority proof."
+    },
+    {
+      "H": 24,
+      "paired32family_delta": "5/64",
+      "stratified_family_bootstrap95": [
+        0.0234375,
+        0.140625
+      ],
+      "composition_delta": {
+        "KNNNNNNvKR": "1/32",
+        "KNNNNvKR": "1/8",
+        "KRNNvKRNN": "3/32",
+        "KRRvKNNNN": "1/16"
+      },
+      "scope": "Exploratorydescriptivepercentileinterval,32families correlatedcolors/opponents,not universal/noninferiority proof."
+    }
+  ],
+  "gain_factorial": {
+    "rows": [
+      {
+        "nativeR": 90,
+        "leafR": 90,
+        "N": 128,
+        "counts": {
+          "D": 14,
+          "C": 80,
+          "L": 8,
+          "W": 26
+        },
+        "J24": "9/64"
+      },
+      {
+        "nativeR": 64,
+        "leafR": 90,
+        "N": 128,
+        "counts": {
+          "D": 10,
+          "C": 86,
+          "L": 7,
+          "W": 25
+        },
+        "J24": "9/64"
+      },
+      {
+        "nativeR": 90,
+        "leafR": 64,
+        "N": 128,
+        "counts": {
+          "C": 77,
+          "D": 15,
+          "L": 6,
+          "W": 30
+        },
+        "J24": "3/16"
+      },
+      {
+        "nativeR": 64,
+        "leafR": 64,
+        "N": 128,
+        "counts": {
+          "C": 76,
+          "D": 12,
+          "L": 6,
+          "W": 34
+        },
+        "J24": "7/32"
+      }
+    ],
+    "leaf_only_delta": "3/64",
+    "native_only_delta": "0",
+    "joint_delta": "5/64",
+    "interaction": "1/32"
+  },
+  "root_qualified_controls": "1057 eightunset419/1718 and1072 fourunset419 exact;1110 fourunset64/90 exactdecisions",
+  "new_go": 0
+}

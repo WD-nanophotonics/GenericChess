@@ -1,10 +1,12 @@
-# DEV_AUX current scope — 2026-10-14 segment40
+# DEV_AUX current scope — 2026-10-14 segment41
 
-ScienceOPEN; own sidemission only. Cheap actualW-L learning works; stablehumanprice ratio notproved.
-Capture-choice stockN4B2G2 gainmixed, B/Horse interactionstrong. ExactfewpieceChess oracle exposes outcome-equivalentprice sets andlimitednewfamilygain; fullpolicygamesweak.
-Mechanical5x5K/R/N nativefrontiers/literalrules qualified. Simpletrainfourstarts102, originalheldoutnegative; quantitymix best262..1718plateau, searchingpositive/randomnotstable. Noquantity/humanfitness, noUI/default/primarywrites.
-2088closedgames28572searchcalls384perft, allactualaudits/negative/censored preserved. Report SEGMENT_20261014_40.md; COST/QA/archive40; later1039–1040smallaudits separatelytracked.
-Next independent price-interval transfer underfrozen opponentdistribution andrules, notunchangedepochs/longgames.
+ScienceOPEN; sidemissiononly, heartbeatACTIVE; main/default/UIunchanged.
+Trueoutcome learningcheap, humanprice recoverynotproved. 64freshintervalfamilies gain1/32 pooled withCIcross0, broadplateau.
+Fixedcompletepurematerialtree orderstabilizesR>kN;262notuniformlyabove270. Actualleafonlycommonscalechangesmaturechoices despiteexactleaforders.
+Richer4..6N localstarts64/671stagnate; olddevelopmentlowpricegainflipsH16/H24. Cachedglobal64 improvesfresh32familyfiniteW-L:5/128 H16,10/128 H24, largelyrandom; learnedR<N/gridboundary,nothumanratio.
+H24 leafonlygain6/128,nativeonly0,joint10/128,interaction4/128. 5056closed incl128invalid,4928qualified;57465journallednativego,55622qualified,1347completecalls/111917nodes,864perft. Failed5inferredunsaved noted.
+Allliteral/price/history/PV/RNG/terminal controls, exactarchive/privatefullrestore passed; failures/corrections preserved. Report SEGMENT_20261014_41.md; COST/QA41.
+Next fixed-anchor balancedexchange-choice curriculum, finiteprice-set/leaf-vs-native tests; no unchangedepochs/ultralonggames/wholecalibrationgate.
 
 # Current local research mainline
 

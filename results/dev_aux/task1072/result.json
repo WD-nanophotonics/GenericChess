@@ -1,0 +1,1385 @@
+{
+  "status": "PASS_ACTUAL_LEAF_READBACK_AND_FIXEDTREE_SCALE_INVARIANCE",
+  "actual_go": 16,
+  "eval_calls": 771,
+  "rows": [
+    {
+      "case": "exposed_changed_witness",
+      "scale": null,
+      "move": "c1a1",
+      "last": {
+        "kind": "cp",
+        "value": 114,
+        "depth": 3,
+        "nodes": 66
+      },
+      "printed_PVs": [
+        [
+          "c1a1"
+        ],
+        [
+          "c1a1",
+          "a2c1",
+          "c4c5"
+        ],
+        [
+          "c1a1",
+          "a2c1",
+          "a1b1"
+        ]
+      ],
+      "raw": [
+        "info string classical evaluation enabled",
+        "info depth 1 seldepth 1 multipv 1 score cp 114 nodes 13 nps 13000 tbhits 0 time 1 pv c1a1",
+        "info depth 2 seldepth 2 multipv 1 score cp 158 nodes 39 nps 39000 tbhits 0 time 1 pv c1a1 a2c1 c4c5",
+        "info depth 3 seldepth 3 multipv 1 score cp 114 nodes 66 nps 66000 tbhits 0 time 1 pv c1a1 a2c1 a1b1",
+        "bestmove c1a1 ponder a2c1"
+      ]
+    },
+    {
+      "case": "new_frozen_control_0",
+      "scale": null,
+      "move": "e3d3",
+      "last": {
+        "kind": "cp",
+        "value": 359,
+        "depth": 4,
+        "nodes": 64
+      },
+      "printed_PVs": [
+        [
+          "b2c2",
+          "a5b3"
+        ],
+        [
+          "e3d3",
+          "c2a3",
+          "b3a3"
+        ],
+        [
+          "e3d3",
+          "c2a3",
+          "b3a3"
+        ],
+        [
+          "e3d3",
+          "c2a3",
+          "b3a3"
+        ]
+      ],
+      "raw": [
+        "info string classical evaluation enabled",
+        "info depth 1 seldepth 1 multipv 1 score cp 158 nodes 10 nps 10000 tbhits 0 time 1 pv b2c2 a5b3",
+        "info depth 2 seldepth 2 multipv 1 score cp 359 nodes 43 nps 43000 tbhits 0 time 1 pv e3d3 c2a3 b3a3",
+        "info depth 3 seldepth 3 multipv 1 score cp 359 nodes 62 nps 62000 tbhits 0 time 1 pv e3d3 c2a3 b3a3",
+        "info depth 4 seldepth 3 multipv 1 score cp 359 nodes 64 nps 64000 tbhits 0 time 1 pv e3d3 c2a3 b3a3",
+        "bestmove e3d3 ponder c2a3"
+      ]
+    },
+    {
+      "case": "new_frozen_control_1",
+      "scale": null,
+      "move": "d3b4",
+      "last": {
+        "kind": "cp",
+        "value": 43,
+        "depth": 2,
+        "nodes": 64
+      },
+      "printed_PVs": [
+        [
+          "d3b4",
+          "c2b1"
+        ],
+        [
+          "d3b4",
+          "c2b1"
+        ]
+      ],
+      "raw": [
+        "info string classical evaluation enabled",
+        "info depth 1 seldepth 1 multipv 1 score cp 43 nodes 37 nps 37000 tbhits 0 time 1 pv d3b4 c2b1",
+        "info depth 2 seldepth 2 multipv 1 score cp 43 nodes 64 nps 64000 tbhits 0 time 1 pv d3b4 c2b1",
+        "bestmove d3b4 ponder c2b1"
+      ]
+    },
+    {
+      "case": "new_frozen_control_2",
+      "scale": null,
+      "move": "e4c3",
+      "last": {
+        "kind": "cp",
+        "value": -31,
+        "depth": 4,
+        "nodes": 65
+      },
+      "printed_PVs": [
+        [
+          "e4c3"
+        ],
+        [
+          "e4c3",
+          "a4a1"
+        ],
+        [
+          "e4c3",
+          "a4a1",
+          "b2d1"
+        ],
+        [
+          "e4c3"
+        ]
+      ],
+      "raw": [
+        "info string classical evaluation enabled",
+        "info depth 1 seldepth 1 multipv 1 score cp -114 nodes 3 nps 3000 tbhits 0 time 1 pv e4c3",
+        "info depth 2 seldepth 2 multipv 1 score cp -114 nodes 15 nps 15000 tbhits 0 time 1 pv e4c3 a4a1",
+        "info depth 3 seldepth 3 multipv 1 score cp -114 nodes 33 nps 33000 tbhits 0 time 1 pv e4c3 a4a1 b2d1",
+        "info depth 4 seldepth 4 multipv 1 score cp -31 nodes 65 nps 65000 tbhits 0 time 1 pv e4c3",
+        "bestmove e4c3 ponder a4a1"
+      ]
+    },
+    {
+      "case": "exposed_changed_witness",
+      "scale": 1,
+      "move": "c1a1",
+      "last": {
+        "kind": "cp",
+        "value": 114,
+        "depth": 3,
+        "nodes": 66
+      },
+      "printed_PVs": [
+        [
+          "c1a1"
+        ],
+        [
+          "c1a1",
+          "a2c1",
+          "c4c5"
+        ],
+        [
+          "c1a1",
+          "a2c1",
+          "a1b1"
+        ]
+      ],
+      "raw": [
+        "info string classical evaluation enabled",
+        "info depth 1 seldepth 1 multipv 1 score cp 114 nodes 13 nps 13000 tbhits 0 time 1 pv c1a1",
+        "info depth 2 seldepth 2 multipv 1 score cp 158 nodes 39 nps 39000 tbhits 0 time 1 pv c1a1 a2c1 c4c5",
+        "info depth 3 seldepth 3 multipv 1 score cp 114 nodes 66 nps 66000 tbhits 0 time 1 pv c1a1 a2c1 a1b1",
+        "bestmove c1a1 ponder a2c1"
+      ]
+    },
+    {
+      "case": "new_frozen_control_0",
+      "scale": 1,
+      "move": "e3d3",
+      "last": {
+        "kind": "cp",
+        "value": 359,
+        "depth": 4,
+        "nodes": 64
+      },
+      "printed_PVs": [
+        [
+          "b2c2",
+          "a5b3"
+        ],
+        [
+          "e3d3",
+          "c2a3",
+          "b3a3"
+        ],
+        [
+          "e3d3",
+          "c2a3",
+          "b3a3"
+        ],
+        [
+          "e3d3",
+          "c2a3",
+          "b3a3"
+        ]
+      ],
+      "raw": [
+        "info string classical evaluation enabled",
+        "info depth 1 seldepth 1 multipv 1 score cp 158 nodes 10 nps 10000 tbhits 0 time 1 pv b2c2 a5b3",
+        "info depth 2 seldepth 2 multipv 1 score cp 359 nodes 43 nps 43000 tbhits 0 time 1 pv e3d3 c2a3 b3a3",
+        "info depth 3 seldepth 3 multipv 1 score cp 359 nodes 62 nps 62000 tbhits 0 time 1 pv e3d3 c2a3 b3a3",
+        "info depth 4 seldepth 3 multipv 1 score cp 359 nodes 64 nps 64000 tbhits 0 time 1 pv e3d3 c2a3 b3a3",
+        "bestmove e3d3 ponder c2a3"
+      ]
+    },
+    {
+      "case": "new_frozen_control_1",
+      "scale": 1,
+      "move": "d3b4",
+      "last": {
+        "kind": "cp",
+        "value": 43,
+        "depth": 2,
+        "nodes": 64
+      },
+      "printed_PVs": [
+        [
+          "d3b4",
+          "c2b1"
+        ],
+        [
+          "d3b4",
+          "c2b1"
+        ]
+      ],
+      "raw": [
+        "info string classical evaluation enabled",
+        "info depth 1 seldepth 1 multipv 1 score cp 43 nodes 37 nps 37000 tbhits 0 time 1 pv d3b4 c2b1",
+        "info depth 2 seldepth 2 multipv 1 score cp 43 nodes 64 nps 64000 tbhits 0 time 1 pv d3b4 c2b1",
+        "bestmove d3b4 ponder c2b1"
+      ]
+    },
+    {
+      "case": "new_frozen_control_2",
+      "scale": 1,
+      "move": "e4c3",
+      "last": {
+        "kind": "cp",
+        "value": -31,
+        "depth": 4,
+        "nodes": 65
+      },
+      "printed_PVs": [
+        [
+          "e4c3"
+        ],
+        [
+          "e4c3",
+          "a4a1"
+        ],
+        [
+          "e4c3",
+          "a4a1",
+          "b2d1"
+        ],
+        [
+          "e4c3"
+        ]
+      ],
+      "raw": [
+        "info string classical evaluation enabled",
+        "info depth 1 seldepth 1 multipv 1 score cp -114 nodes 3 nps 3000 tbhits 0 time 1 pv e4c3",
+        "info depth 2 seldepth 2 multipv 1 score cp -114 nodes 15 nps 15000 tbhits 0 time 1 pv e4c3 a4a1",
+        "info depth 3 seldepth 3 multipv 1 score cp -114 nodes 33 nps 33000 tbhits 0 time 1 pv e4c3 a4a1 b2d1",
+        "info depth 4 seldepth 4 multipv 1 score cp -31 nodes 65 nps 65000 tbhits 0 time 1 pv e4c3",
+        "bestmove e4c3 ponder a4a1"
+      ]
+    },
+    {
+      "case": "exposed_changed_witness",
+      "scale": 2,
+      "move": "c1b1",
+      "last": {
+        "kind": "cp",
+        "value": 316,
+        "depth": 3,
+        "nodes": 66
+      },
+      "printed_PVs": [
+        [
+          "c1a1"
+        ],
+        [
+          "c1a1",
+          "a2c1",
+          "c4c5"
+        ],
+        [
+          "c1b1",
+          "a2c1",
+          "c4c5"
+        ]
+      ],
+      "raw": [
+        "info string classical evaluation enabled",
+        "info depth 1 seldepth 1 multipv 1 score cp 229 nodes 13 nps 13000 tbhits 0 time 1 pv c1a1",
+        "info depth 2 seldepth 2 multipv 1 score cp 316 nodes 39 nps 39000 tbhits 0 time 1 pv c1a1 a2c1 c4c5",
+        "info depth 3 seldepth 3 multipv 1 score cp 316 nodes 66 nps 66000 tbhits 0 time 1 pv c1b1 a2c1 c4c5",
+        "bestmove c1b1 ponder a2c1"
+      ]
+    },
+    {
+      "case": "new_frozen_control_0",
+      "scale": 2,
+      "move": "e3d3",
+      "last": {
+        "kind": "cp",
+        "value": 719,
+        "depth": 4,
+        "nodes": 65
+      },
+      "printed_PVs": [
+        [
+          "b2c2",
+          "a5b3"
+        ],
+        [
+          "e3d3",
+          "c2a3",
+          "b3a3"
+        ],
+        [
+          "e3d3",
+          "c2a3",
+          "b3a3"
+        ],
+        [
+          "e3d3",
+          "c2a3",
+          "b3a3"
+        ]
+      ],
+      "raw": [
+        "info string classical evaluation enabled",
+        "info depth 1 seldepth 1 multipv 1 score cp 316 nodes 10 nps 10000 tbhits 0 time 1 pv b2c2 a5b3",
+        "info depth 2 seldepth 2 multipv 1 score cp 719 nodes 43 nps 43000 tbhits 0 time 1 pv e3d3 c2a3 b3a3",
+        "info depth 3 seldepth 3 multipv 1 score cp 719 nodes 52 nps 52000 tbhits 0 time 1 pv e3d3 c2a3 b3a3",
+        "info depth 4 seldepth 3 multipv 1 score cp 719 nodes 65 nps 65000 tbhits 0 time 1 pv e3d3 c2a3 b3a3",
+        "bestmove e3d3 ponder c2a3"
+      ]
+    },
+    {
+      "case": "new_frozen_control_1",
+      "scale": 2,
+      "move": "d3c5",
+      "last": {
+        "kind": "cp",
+        "value": 402,
+        "depth": 2,
+        "nodes": 64
+      },
+      "printed_PVs": [
+        [
+          "d3b4",
+          "c2b1"
+        ],
+        [
+          "d3c5",
+          "c2b1"
+        ]
+      ],
+      "raw": [
+        "info string classical evaluation enabled",
+        "info depth 1 seldepth 1 multipv 1 score cp 86 nodes 36 nps 36000 tbhits 0 time 1 pv d3b4 c2b1",
+        "info depth 2 seldepth 2 multipv 1 score cp 402 nodes 64 nps 64000 tbhits 0 time 1 pv d3c5 c2b1",
+        "bestmove d3c5 ponder c2b1"
+      ]
+    },
+    {
+      "case": "new_frozen_control_2",
+      "scale": 2,
+      "move": "e4c3",
+      "last": {
+        "kind": "cp",
+        "value": 55,
+        "depth": 4,
+        "nodes": 65
+      },
+      "printed_PVs": [
+        [
+          "e4c3"
+        ],
+        [
+          "e4c3",
+          "a4a1"
+        ],
+        [
+          "e4c3",
+          "a4a1",
+          "b2d1"
+        ],
+        [
+          "e4c3"
+        ]
+      ],
+      "raw": [
+        "info string classical evaluation enabled",
+        "info depth 1 seldepth 1 multipv 1 score cp -229 nodes 3 nps 3000 tbhits 0 time 1 pv e4c3",
+        "info depth 2 seldepth 2 multipv 1 score cp -229 nodes 15 nps 15000 tbhits 0 time 1 pv e4c3 a4a1",
+        "info depth 3 seldepth 3 multipv 1 score cp -229 nodes 33 nps 33000 tbhits 0 time 1 pv e4c3 a4a1 b2d1",
+        "info depth 4 seldepth 4 multipv 1 score cp 55 nodes 65 nps 65000 tbhits 0 time 1 pv e4c3",
+        "bestmove e4c3 ponder a4a1"
+      ]
+    },
+    {
+      "case": "exposed_changed_witness",
+      "scale": 4,
+      "move": "c1b1",
+      "last": {
+        "kind": "cp",
+        "value": 632,
+        "depth": 3,
+        "nodes": 64
+      },
+      "printed_PVs": [
+        [
+          "c1a1"
+        ],
+        [
+          "c1a1",
+          "a2c1",
+          "c4c5"
+        ],
+        [
+          "c1b1",
+          "a2c1",
+          "c4c5"
+        ]
+      ],
+      "raw": [
+        "info string classical evaluation enabled",
+        "info depth 1 seldepth 1 multipv 1 score cp 459 nodes 13 nps 13000 tbhits 0 time 1 pv c1a1",
+        "info depth 2 seldepth 2 multipv 1 score cp 632 nodes 29 nps 29000 tbhits 0 time 1 pv c1a1 a2c1 c4c5",
+        "info depth 3 seldepth 3 multipv 1 score cp 632 nodes 64 nps 64000 tbhits 0 time 1 pv c1b1 a2c1 c4c5",
+        "bestmove c1b1 ponder a2c1"
+      ]
+    },
+    {
+      "case": "new_frozen_control_0",
+      "scale": 4,
+      "move": "e3d3",
+      "last": {
+        "kind": "cp",
+        "value": 1611,
+        "depth": 4,
+        "nodes": 64
+      },
+      "printed_PVs": [
+        [
+          "b2c2",
+          "a5b3"
+        ],
+        [
+          "e3d3",
+          "c2a3",
+          "b3a3"
+        ],
+        [
+          "e3d3",
+          "c2a3",
+          "b3a3"
+        ],
+        [
+          "e3d3",
+          "c2a3",
+          "b3a3"
+        ]
+      ],
+      "raw": [
+        "info string classical evaluation enabled",
+        "info depth 1 seldepth 1 multipv 1 score cp 632 nodes 6 nps 6000 tbhits 0 time 1 pv b2c2 a5b3",
+        "info depth 2 seldepth 2 multipv 1 score cp 1438 nodes 36 nps 36000 tbhits 0 time 1 pv e3d3 c2a3 b3a3",
+        "info depth 3 seldepth 3 multipv 1 score cp 1438 nodes 45 nps 45000 tbhits 0 time 1 pv e3d3 c2a3 b3a3",
+        "info depth 4 seldepth 4 multipv 1 score cp 1611 nodes 64 nps 64000 tbhits 0 time 1 pv e3d3 c2a3 b3a3",
+        "bestmove e3d3 ponder c2a3"
+      ]
+    },
+    {
+      "case": "new_frozen_control_1",
+      "scale": 4,
+      "move": "d3b4",
+      "last": {
+        "kind": "cp",
+        "value": 173,
+        "depth": 3,
+        "nodes": 67
+      },
+      "printed_PVs": [
+        [
+          "d3b4",
+          "c2b1"
+        ],
+        [
+          "d3b4",
+          "c2b1"
+        ],
+        [
+          "d3b4",
+          "c2b1"
+        ]
+      ],
+      "raw": [
+        "info string classical evaluation enabled",
+        "info depth 1 seldepth 1 multipv 1 score cp 173 nodes 36 nps 36000 tbhits 0 time 1 pv d3b4 c2b1",
+        "info depth 2 seldepth 2 multipv 1 score cp 173 nodes 58 nps 58000 tbhits 0 time 1 pv d3b4 c2b1",
+        "info depth 3 seldepth 2 multipv 1 score cp 173 nodes 67 nps 67000 tbhits 0 time 1 pv d3b4 c2b1",
+        "bestmove d3b4 ponder c2b1"
+      ]
+    },
+    {
+      "case": "new_frozen_control_2",
+      "scale": 4,
+      "move": "e4c3",
+      "last": {
+        "kind": "cp",
+        "value": 173,
+        "depth": 4,
+        "nodes": 65
+      },
+      "printed_PVs": [
+        [
+          "e4c3"
+        ],
+        [
+          "e4c3",
+          "a4a1"
+        ],
+        [
+          "e4c3",
+          "a4a1",
+          "b2d1"
+        ],
+        [
+          "e4c3"
+        ]
+      ],
+      "raw": [
+        "info string classical evaluation enabled",
+        "info depth 1 seldepth 1 multipv 1 score cp -459 nodes 3 nps 3000 tbhits 0 time 1 pv e4c3",
+        "info depth 2 seldepth 2 multipv 1 score cp -459 nodes 15 nps 15000 tbhits 0 time 1 pv e4c3 a4a1",
+        "info depth 3 seldepth 3 multipv 1 score cp -459 nodes 33 nps 33000 tbhits 0 time 1 pv e4c3 a4a1 b2d1",
+        "info depth 4 seldepth 4 multipv 1 score cp 173 nodes 65 nps 65000 tbhits 0 time 1 pv e4c3",
+        "bestmove e4c3 ponder a4a1"
+      ]
+    }
+  ],
+  "acks": [
+    {
+      "scale": null,
+      "native": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:90:90 3:208:208 4:419:419 5:208:208",
+        "probes": [
+          {
+            "piece": "N",
+            "measured": 0.43,
+            "expected": 0.4326923076923077,
+            "raw": [
+              "info string classical evaluation enabled",
+              "",
+              " Contributing terms for the classical eval:",
+              "+------------+-------------+-------------+-------------+",
+              "|    Term    |    White    |    Black    |    Total    |",
+              "|            |   MG    EG  |   MG    EG  |   MG    EG  |",
+              "+------------+-------------+-------------+-------------+",
+              "|   Material |  ----  ---- |  ----  ---- |  0.46  0.39 |",
+              "|  Imbalance |  ----  ---- |  ----  ---- | -0.01 -0.01 |",
+              "|      Pawns |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|    Knights | -0.08 -0.09 |  0.00  0.00 | -0.08 -0.09 |",
+              "|    Bishops |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|      Rooks |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|     Queens |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|   Mobility |  0.18  0.12 |  0.00  0.00 |  0.18  0.12 |",
+              "|King safety | -0.97 -0.88 | -1.05 -0.88 |  0.08  0.00 |",
+              "|    Threats |  0.07  0.07 |  0.07  0.07 |  0.00  0.00 |",
+              "|     Passed |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|      Space |  0.00  0.00 |  0.01  0.00 | -0.01  0.00 |",
+              "|    Variant |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|   Winnable |  ----  ---- |  ----  ---- | -0.29 -0.42 |",
+              "+------------+-------------+-------------+-------------+",
+              "|      Total |  ----  ---- |  ----  ---- |  0.32  0.00 |",
+              "+------------+-------------+-------------+-------------+",
+              "",
+              "Classical evaluation   +0.00 (white side)",
+              "Final evaluation       +0.43 (white side)",
+              "",
+              "readyok"
+            ]
+          },
+          {
+            "piece": "R",
+            "measured": 2.01,
+            "expected": 2.014423076923077,
+            "raw": [
+              "info string classical evaluation enabled",
+              "",
+              " Contributing terms for the classical eval:",
+              "+------------+-------------+-------------+-------------+",
+              "|    Term    |    White    |    Black    |    Total    |",
+              "|            |   MG    EG  |   MG    EG  |   MG    EG  |",
+              "+------------+-------------+-------------+-------------+",
+              "|   Material |  ----  ---- |  ----  ---- |  2.01  2.00 |",
+              "|  Imbalance |  ----  ---- |  ----  ---- | -0.07 -0.07 |",
+              "|      Pawns |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|    Knights |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|    Bishops |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|      Rooks |  0.23  0.12 |  0.00  0.00 |  0.23  0.12 |",
+              "|     Queens |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|   Mobility |  0.20  0.64 |  0.00  0.00 |  0.20  0.64 |",
+              "|King safety | -0.97 -0.88 | -5.77 -1.47 |  4.80  0.60 |",
+              "|    Threats |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|     Passed |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|      Space |  0.00  0.00 |  0.01  0.00 | -0.01  0.00 |",
+              "|    Variant |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|   Winnable |  ----  ---- |  ----  ---- | -0.29 -3.29 |",
+              "+------------+-------------+-------------+-------------+",
+              "|      Total |  ----  ---- |  ----  ---- |  6.86  0.00 |",
+              "+------------+-------------+-------------+-------------+",
+              "",
+              "Classical evaluation   +0.00 (white side)",
+              "Final evaluation       +2.01 (white side)",
+              "",
+              "readyok"
+            ]
+          }
+        ],
+        "weights": {
+          "P": 208,
+          "N": 90,
+          "B": 208,
+          "R": 419,
+          "Q": 208,
+          "K": 0
+        }
+      },
+      "leafack": null
+    },
+    {
+      "scale": 1,
+      "native": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:90:90 3:208:208 4:419:419 5:208:208",
+        "probes": [
+          {
+            "piece": "N",
+            "measured": 0.43,
+            "expected": 0.4326923076923077,
+            "raw": [
+              "info string classical evaluation enabled",
+              "",
+              " Contributing terms for the classical eval:",
+              "+------------+-------------+-------------+-------------+",
+              "|    Term    |    White    |    Black    |    Total    |",
+              "|            |   MG    EG  |   MG    EG  |   MG    EG  |",
+              "+------------+-------------+-------------+-------------+",
+              "|   Material |  ----  ---- |  ----  ---- |  0.46  0.39 |",
+              "|  Imbalance |  ----  ---- |  ----  ---- | -0.01 -0.01 |",
+              "|      Pawns |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|    Knights | -0.08 -0.09 |  0.00  0.00 | -0.08 -0.09 |",
+              "|    Bishops |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|      Rooks |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|     Queens |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|   Mobility |  0.18  0.12 |  0.00  0.00 |  0.18  0.12 |",
+              "|King safety | -0.97 -0.88 | -1.05 -0.88 |  0.08  0.00 |",
+              "|    Threats |  0.07  0.07 |  0.07  0.07 |  0.00  0.00 |",
+              "|     Passed |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|      Space |  0.00  0.00 |  0.01  0.00 | -0.01  0.00 |",
+              "|    Variant |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|   Winnable |  ----  ---- |  ----  ---- | -0.29 -0.42 |",
+              "+------------+-------------+-------------+-------------+",
+              "|      Total |  ----  ---- |  ----  ---- |  0.32  0.00 |",
+              "+------------+-------------+-------------+-------------+",
+              "",
+              "Classical evaluation   +0.00 (white side)",
+              "Final evaluation       +0.43 (white side)",
+              "",
+              "readyok"
+            ]
+          },
+          {
+            "piece": "R",
+            "measured": 2.01,
+            "expected": 2.014423076923077,
+            "raw": [
+              "info string classical evaluation enabled",
+              "",
+              " Contributing terms for the classical eval:",
+              "+------------+-------------+-------------+-------------+",
+              "|    Term    |    White    |    Black    |    Total    |",
+              "|            |   MG    EG  |   MG    EG  |   MG    EG  |",
+              "+------------+-------------+-------------+-------------+",
+              "|   Material |  ----  ---- |  ----  ---- |  2.01  2.00 |",
+              "|  Imbalance |  ----  ---- |  ----  ---- | -0.07 -0.07 |",
+              "|      Pawns |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|    Knights |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|    Bishops |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|      Rooks |  0.23  0.12 |  0.00  0.00 |  0.23  0.12 |",
+              "|     Queens |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|   Mobility |  0.20  0.64 |  0.00  0.00 |  0.20  0.64 |",
+              "|King safety | -0.97 -0.88 | -5.77 -1.47 |  4.80  0.60 |",
+              "|    Threats |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|     Passed |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|      Space |  0.00  0.00 |  0.01  0.00 | -0.01  0.00 |",
+              "|    Variant |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|   Winnable |  ----  ---- |  ----  ---- | -0.29 -3.29 |",
+              "+------------+-------------+-------------+-------------+",
+              "|      Total |  ----  ---- |  ----  ---- |  6.86  0.00 |",
+              "+------------+-------------+-------------+-------------+",
+              "",
+              "Classical evaluation   +0.00 (white side)",
+              "Final evaluation       +2.01 (white side)",
+              "",
+              "readyok"
+            ]
+          }
+        ],
+        "weights": {
+          "P": 208,
+          "N": 90,
+          "B": 208,
+          "R": 419,
+          "Q": 208,
+          "K": 0
+        }
+      },
+      "leafack": "info string DEV_AUX leafR 419 leafN 90 nativeN 90 captureN 90 nativeR 419 captureR 419"
+    },
+    {
+      "scale": 2,
+      "native": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:90:90 3:208:208 4:419:419 5:208:208",
+        "probes": [
+          {
+            "piece": "N",
+            "measured": 0.43,
+            "expected": 0.4326923076923077,
+            "raw": [
+              "info string classical evaluation enabled",
+              "",
+              " Contributing terms for the classical eval:",
+              "+------------+-------------+-------------+-------------+",
+              "|    Term    |    White    |    Black    |    Total    |",
+              "|            |   MG    EG  |   MG    EG  |   MG    EG  |",
+              "+------------+-------------+-------------+-------------+",
+              "|   Material |  ----  ---- |  ----  ---- |  0.46  0.39 |",
+              "|  Imbalance |  ----  ---- |  ----  ---- | -0.01 -0.01 |",
+              "|      Pawns |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|    Knights | -0.08 -0.09 |  0.00  0.00 | -0.08 -0.09 |",
+              "|    Bishops |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|      Rooks |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|     Queens |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|   Mobility |  0.18  0.12 |  0.00  0.00 |  0.18  0.12 |",
+              "|King safety | -0.97 -0.88 | -1.05 -0.88 |  0.08  0.00 |",
+              "|    Threats |  0.07  0.07 |  0.07  0.07 |  0.00  0.00 |",
+              "|     Passed |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|      Space |  0.00  0.00 |  0.01  0.00 | -0.01  0.00 |",
+              "|    Variant |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|   Winnable |  ----  ---- |  ----  ---- | -0.29 -0.42 |",
+              "+------------+-------------+-------------+-------------+",
+              "|      Total |  ----  ---- |  ----  ---- |  0.32  0.00 |",
+              "+------------+-------------+-------------+-------------+",
+              "",
+              "Classical evaluation   +0.00 (white side)",
+              "Final evaluation       +0.43 (white side)",
+              "",
+              "readyok"
+            ]
+          },
+          {
+            "piece": "R",
+            "measured": 2.01,
+            "expected": 2.014423076923077,
+            "raw": [
+              "info string classical evaluation enabled",
+              "",
+              " Contributing terms for the classical eval:",
+              "+------------+-------------+-------------+-------------+",
+              "|    Term    |    White    |    Black    |    Total    |",
+              "|            |   MG    EG  |   MG    EG  |   MG    EG  |",
+              "+------------+-------------+-------------+-------------+",
+              "|   Material |  ----  ---- |  ----  ---- |  2.01  2.00 |",
+              "|  Imbalance |  ----  ---- |  ----  ---- | -0.07 -0.07 |",
+              "|      Pawns |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|    Knights |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|    Bishops |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|      Rooks |  0.23  0.12 |  0.00  0.00 |  0.23  0.12 |",
+              "|     Queens |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|   Mobility |  0.20  0.64 |  0.00  0.00 |  0.20  0.64 |",
+              "|King safety | -0.97 -0.88 | -5.77 -1.47 |  4.80  0.60 |",
+              "|    Threats |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|     Passed |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|      Space |  0.00  0.00 |  0.01  0.00 | -0.01  0.00 |",
+              "|    Variant |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|   Winnable |  ----  ---- |  ----  ---- | -0.29 -3.29 |",
+              "+------------+-------------+-------------+-------------+",
+              "|      Total |  ----  ---- |  ----  ---- |  6.86  0.00 |",
+              "+------------+-------------+-------------+-------------+",
+              "",
+              "Classical evaluation   +0.00 (white side)",
+              "Final evaluation       +2.01 (white side)",
+              "",
+              "readyok"
+            ]
+          }
+        ],
+        "weights": {
+          "P": 208,
+          "N": 90,
+          "B": 208,
+          "R": 419,
+          "Q": 208,
+          "K": 0
+        }
+      },
+      "leafack": "info string DEV_AUX leafR 838 leafN 180 nativeN 90 captureN 90 nativeR 419 captureR 419"
+    },
+    {
+      "scale": 4,
+      "native": {
+        "raw": "info string DEV_AUX alignment 3 1:208:208 2:90:90 3:208:208 4:419:419 5:208:208",
+        "probes": [
+          {
+            "piece": "N",
+            "measured": 0.43,
+            "expected": 0.4326923076923077,
+            "raw": [
+              "info string classical evaluation enabled",
+              "",
+              " Contributing terms for the classical eval:",
+              "+------------+-------------+-------------+-------------+",
+              "|    Term    |    White    |    Black    |    Total    |",
+              "|            |   MG    EG  |   MG    EG  |   MG    EG  |",
+              "+------------+-------------+-------------+-------------+",
+              "|   Material |  ----  ---- |  ----  ---- |  0.46  0.39 |",
+              "|  Imbalance |  ----  ---- |  ----  ---- | -0.01 -0.01 |",
+              "|      Pawns |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|    Knights | -0.08 -0.09 |  0.00  0.00 | -0.08 -0.09 |",
+              "|    Bishops |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|      Rooks |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|     Queens |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|   Mobility |  0.18  0.12 |  0.00  0.00 |  0.18  0.12 |",
+              "|King safety | -0.97 -0.88 | -1.05 -0.88 |  0.08  0.00 |",
+              "|    Threats |  0.07  0.07 |  0.07  0.07 |  0.00  0.00 |",
+              "|     Passed |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|      Space |  0.00  0.00 |  0.01  0.00 | -0.01  0.00 |",
+              "|    Variant |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|   Winnable |  ----  ---- |  ----  ---- | -0.29 -0.42 |",
+              "+------------+-------------+-------------+-------------+",
+              "|      Total |  ----  ---- |  ----  ---- |  0.32  0.00 |",
+              "+------------+-------------+-------------+-------------+",
+              "",
+              "Classical evaluation   +0.00 (white side)",
+              "Final evaluation       +0.43 (white side)",
+              "",
+              "readyok"
+            ]
+          },
+          {
+            "piece": "R",
+            "measured": 2.01,
+            "expected": 2.014423076923077,
+            "raw": [
+              "info string classical evaluation enabled",
+              "",
+              " Contributing terms for the classical eval:",
+              "+------------+-------------+-------------+-------------+",
+              "|    Term    |    White    |    Black    |    Total    |",
+              "|            |   MG    EG  |   MG    EG  |   MG    EG  |",
+              "+------------+-------------+-------------+-------------+",
+              "|   Material |  ----  ---- |  ----  ---- |  2.01  2.00 |",
+              "|  Imbalance |  ----  ---- |  ----  ---- | -0.07 -0.07 |",
+              "|      Pawns |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|    Knights |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|    Bishops |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|      Rooks |  0.23  0.12 |  0.00  0.00 |  0.23  0.12 |",
+              "|     Queens |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|   Mobility |  0.20  0.64 |  0.00  0.00 |  0.20  0.64 |",
+              "|King safety | -0.97 -0.88 | -5.77 -1.47 |  4.80  0.60 |",
+              "|    Threats |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|     Passed |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|      Space |  0.00  0.00 |  0.01  0.00 | -0.01  0.00 |",
+              "|    Variant |  0.00  0.00 |  0.00  0.00 |  0.00  0.00 |",
+              "|   Winnable |  ----  ---- |  ----  ---- | -0.29 -3.29 |",
+              "+------------+-------------+-------------+-------------+",
+              "|      Total |  ----  ---- |  ----  ---- |  6.86  0.00 |",
+              "+------------+-------------+-------------+-------------+",
+              "",
+              "Classical evaluation   +0.00 (white side)",
+              "Final evaluation       +2.01 (white side)",
+              "",
+              "readyok"
+            ]
+          }
+        ],
+        "weights": {
+          "P": 208,
+          "N": 90,
+          "B": 208,
+          "R": 419,
+          "Q": 208,
+          "K": 0
+        }
+      },
+      "leafack": "info string DEV_AUX leafR 1676 leafN 360 nativeN 90 captureN 90 nativeR 419 captureR 419"
+    }
+  ],
+  "controls": [
+    {
+      "case": "exposed_changed_witness",
+      "exact_default": true
+    },
+    {
+      "case": "new_frozen_control_0",
+      "exact_default": true
+    },
+    {
+      "case": "new_frozen_control_1",
+      "exact_default": true
+    },
+    {
+      "case": "new_frozen_control_2",
+      "exact_default": true
+    }
+  ],
+  "treecurves": [
+    {
+      "case": "exposed_changed_witness",
+      "scale": 1,
+      "all_best": [
+        "c1a1",
+        "c1b1"
+      ],
+      "children": [
+        {
+          "move": "c1a1",
+          "value": 239
+        },
+        {
+          "move": "c1b1",
+          "value": 239
+        },
+        {
+          "move": "c1c2",
+          "value": -180
+        },
+        {
+          "move": "c1c3",
+          "value": -180
+        },
+        {
+          "move": "c1d1",
+          "value": -180
+        },
+        {
+          "move": "c1e1",
+          "value": -180
+        },
+        {
+          "move": "c4b5",
+          "value": -180
+        },
+        {
+          "move": "c4c5",
+          "value": -90
+        },
+        {
+          "move": "c4d4",
+          "value": -180
+        },
+        {
+          "move": "c4d5",
+          "value": -180
+        }
+      ]
+    },
+    {
+      "case": "new_frozen_control_0",
+      "scale": 1,
+      "all_best": [
+        "b2c2"
+      ],
+      "children": [
+        {
+          "move": "b2c2",
+          "value": 329
+        },
+        {
+          "move": "e3d3",
+          "value": 239
+        },
+        {
+          "move": "e3e4",
+          "value": 239
+        }
+      ]
+    },
+    {
+      "case": "new_frozen_control_1",
+      "scale": 1,
+      "all_best": [
+        "d3b4",
+        "d3c5"
+      ],
+      "children": [
+        {
+          "move": "a3a1",
+          "value": -90
+        },
+        {
+          "move": "a3a2",
+          "value": -419
+        },
+        {
+          "move": "a3b3",
+          "value": -90
+        },
+        {
+          "move": "a3c3",
+          "value": -419
+        },
+        {
+          "move": "a4a5",
+          "value": -90
+        },
+        {
+          "move": "a4b5",
+          "value": -90
+        },
+        {
+          "move": "d3b2",
+          "value": -90
+        },
+        {
+          "move": "d3b4",
+          "value": 0
+        },
+        {
+          "move": "d3c1",
+          "value": -90
+        },
+        {
+          "move": "d3c5",
+          "value": 0
+        },
+        {
+          "move": "d3e1",
+          "value": -90
+        },
+        {
+          "move": "d3e5",
+          "value": -90
+        }
+      ]
+    },
+    {
+      "case": "new_frozen_control_2",
+      "scale": 1,
+      "all_best": [
+        "e4c3"
+      ],
+      "children": [
+        {
+          "move": "b3a4",
+          "value": -329
+        },
+        {
+          "move": "b3c3",
+          "value": -329
+        },
+        {
+          "move": "e4c3",
+          "value": -239
+        }
+      ]
+    },
+    {
+      "case": "exposed_changed_witness",
+      "scale": 2,
+      "all_best": [
+        "c1a1",
+        "c1b1"
+      ],
+      "children": [
+        {
+          "move": "c1a1",
+          "value": 478
+        },
+        {
+          "move": "c1b1",
+          "value": 478
+        },
+        {
+          "move": "c1c2",
+          "value": -360
+        },
+        {
+          "move": "c1c3",
+          "value": -360
+        },
+        {
+          "move": "c1d1",
+          "value": -360
+        },
+        {
+          "move": "c1e1",
+          "value": -360
+        },
+        {
+          "move": "c4b5",
+          "value": -360
+        },
+        {
+          "move": "c4c5",
+          "value": -180
+        },
+        {
+          "move": "c4d4",
+          "value": -360
+        },
+        {
+          "move": "c4d5",
+          "value": -360
+        }
+      ]
+    },
+    {
+      "case": "new_frozen_control_0",
+      "scale": 2,
+      "all_best": [
+        "b2c2"
+      ],
+      "children": [
+        {
+          "move": "b2c2",
+          "value": 658
+        },
+        {
+          "move": "e3d3",
+          "value": 478
+        },
+        {
+          "move": "e3e4",
+          "value": 478
+        }
+      ]
+    },
+    {
+      "case": "new_frozen_control_1",
+      "scale": 2,
+      "all_best": [
+        "d3b4",
+        "d3c5"
+      ],
+      "children": [
+        {
+          "move": "a3a1",
+          "value": -180
+        },
+        {
+          "move": "a3a2",
+          "value": -838
+        },
+        {
+          "move": "a3b3",
+          "value": -180
+        },
+        {
+          "move": "a3c3",
+          "value": -838
+        },
+        {
+          "move": "a4a5",
+          "value": -180
+        },
+        {
+          "move": "a4b5",
+          "value": -180
+        },
+        {
+          "move": "d3b2",
+          "value": -180
+        },
+        {
+          "move": "d3b4",
+          "value": 0
+        },
+        {
+          "move": "d3c1",
+          "value": -180
+        },
+        {
+          "move": "d3c5",
+          "value": 0
+        },
+        {
+          "move": "d3e1",
+          "value": -180
+        },
+        {
+          "move": "d3e5",
+          "value": -180
+        }
+      ]
+    },
+    {
+      "case": "new_frozen_control_2",
+      "scale": 2,
+      "all_best": [
+        "e4c3"
+      ],
+      "children": [
+        {
+          "move": "b3a4",
+          "value": -658
+        },
+        {
+          "move": "b3c3",
+          "value": -658
+        },
+        {
+          "move": "e4c3",
+          "value": -478
+        }
+      ]
+    },
+    {
+      "case": "exposed_changed_witness",
+      "scale": 4,
+      "all_best": [
+        "c1a1",
+        "c1b1"
+      ],
+      "children": [
+        {
+          "move": "c1a1",
+          "value": 956
+        },
+        {
+          "move": "c1b1",
+          "value": 956
+        },
+        {
+          "move": "c1c2",
+          "value": -720
+        },
+        {
+          "move": "c1c3",
+          "value": -720
+        },
+        {
+          "move": "c1d1",
+          "value": -720
+        },
+        {
+          "move": "c1e1",
+          "value": -720
+        },
+        {
+          "move": "c4b5",
+          "value": -720
+        },
+        {
+          "move": "c4c5",
+          "value": -360
+        },
+        {
+          "move": "c4d4",
+          "value": -720
+        },
+        {
+          "move": "c4d5",
+          "value": -720
+        }
+      ]
+    },
+    {
+      "case": "new_frozen_control_0",
+      "scale": 4,
+      "all_best": [
+        "b2c2"
+      ],
+      "children": [
+        {
+          "move": "b2c2",
+          "value": 1316
+        },
+        {
+          "move": "e3d3",
+          "value": 956
+        },
+        {
+          "move": "e3e4",
+          "value": 956
+        }
+      ]
+    },
+    {
+      "case": "new_frozen_control_1",
+      "scale": 4,
+      "all_best": [
+        "d3b4",
+        "d3c5"
+      ],
+      "children": [
+        {
+          "move": "a3a1",
+          "value": -360
+        },
+        {
+          "move": "a3a2",
+          "value": -1676
+        },
+        {
+          "move": "a3b3",
+          "value": -360
+        },
+        {
+          "move": "a3c3",
+          "value": -1676
+        },
+        {
+          "move": "a4a5",
+          "value": -360
+        },
+        {
+          "move": "a4b5",
+          "value": -360
+        },
+        {
+          "move": "d3b2",
+          "value": -360
+        },
+        {
+          "move": "d3b4",
+          "value": 0
+        },
+        {
+          "move": "d3c1",
+          "value": -360
+        },
+        {
+          "move": "d3c5",
+          "value": 0
+        },
+        {
+          "move": "d3e1",
+          "value": -360
+        },
+        {
+          "move": "d3e5",
+          "value": -360
+        }
+      ]
+    },
+    {
+      "case": "new_frozen_control_2",
+      "scale": 4,
+      "all_best": [
+        "e4c3"
+      ],
+      "children": [
+        {
+          "move": "b3a4",
+          "value": -1316
+        },
+        {
+          "move": "b3c3",
+          "value": -1316
+        },
+        {
+          "move": "e4c3",
+          "value": -956
+        }
+      ]
+    }
+  ],
+  "seconds": 2.2029999997466803
+}

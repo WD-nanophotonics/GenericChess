@@ -1,0 +1,63 @@
+{
+  "status": "PASS_ALL128_FACTORIAL_GAMES_LITERAL_RULES",
+  "counts": {
+    "literal_frontiers": 1831,
+    "tbhits_zero": 7113,
+    "literal_PVmoves": 15913,
+    "go": 1831,
+    "actions": 1831
+  },
+  "rows": [
+    {
+      "scale": 4,
+      "opp_scale": 1,
+      "price": 90,
+      "N": 32,
+      "counts": {
+        "C": 22,
+        "W": 4,
+        "L": 5,
+        "D": 1
+      },
+      "J16": "-1/32"
+    },
+    {
+      "scale": 4,
+      "opp_scale": 1,
+      "price": 262,
+      "N": 32,
+      "counts": {
+        "C": 27,
+        "W": 3,
+        "L": 2
+      },
+      "J16": "1/32"
+    },
+    {
+      "scale": 1,
+      "opp_scale": 4,
+      "price": 90,
+      "N": 32,
+      "counts": {
+        "L": 4,
+        "C": 22,
+        "W": 5,
+        "D": 1
+      },
+      "J16": "1/32"
+    },
+    {
+      "scale": 1,
+      "opp_scale": 4,
+      "price": 262,
+      "N": 32,
+      "counts": {
+        "L": 2,
+        "W": 4,
+        "C": 26
+      },
+      "J16": "1/16"
+    }
+  ],
+  "new_go": 0
+}

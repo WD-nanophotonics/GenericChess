@@ -1,0 +1,22 @@
+{
+  "question": "Does completefixed2plymaterial consumer behave differently frommatureselectiveconsumer onlearnedprices?",
+  "prices": [
+    64,
+    90,
+    671
+  ],
+  "roots": "task1078 developmentfirst4/composition,16exposeddiagnosticfamilies",
+  "H": 16,
+  "opponents": [
+    "unit_search",
+    "uniform_random"
+  ],
+  "mature_reference": "matchingtask1081games",
+  "candidate": "complete2ply minimax, pureactualmaterialleafN90, sortedlegalfirstties, noselectiveprune/TT/q",
+  "opponent": "samefixedoriginalmaturenodes64unitR90/N90 orrandom",
+  "new_games": 192,
+  "max_seconds": 120,
+  "expected_seconds": 45,
+  "decision": "Attributioncontrol notequalbudget/equal-time strengthsclaim. Preserveactualcompleteworkcounts/realW-L/noquantityreward.",
+  "scope": "Ownedmini prototype inresults only, nomainline/default/UIedits; exposedmechanism cohort, notunexposedvalidationorhumanratiolearning."
+}

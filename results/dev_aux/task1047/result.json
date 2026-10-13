@@ -1,0 +1,120 @@
+{
+  "status": "PASS_ALL864_NEW_INTERVAL_REPLICATION_GAMES_WITH_INDEPENDENT_LITERAL_ROYAL_RULES",
+  "counts": {
+    "literal_frontiers": 12688,
+    "tbhits_zero": 36140,
+    "literal_PVmoves": 81402,
+    "go": 10639,
+    "actions": 12688,
+    "randomdraws": 2049
+  },
+  "rows": [
+    {
+      "price": 90,
+      "opponent": "unit_search",
+      "N": 96,
+      "counts": {
+        "C": 74,
+        "L": 5,
+        "W": 5,
+        "D": 12
+      },
+      "J16": "0"
+    },
+    {
+      "price": 262,
+      "opponent": "unit_search",
+      "N": 96,
+      "counts": {
+        "D": 11,
+        "C": 77,
+        "L": 4,
+        "W": 4
+      },
+      "J16": "0"
+    },
+    {
+      "price": 1718,
+      "opponent": "unit_search",
+      "N": 96,
+      "counts": {
+        "D": 14,
+        "C": 73,
+        "L": 4,
+        "W": 5
+      },
+      "J16": "1/96"
+    },
+    {
+      "price": 90,
+      "opponent": "high_search",
+      "N": 96,
+      "counts": {
+        "C": 73,
+        "D": 14,
+        "L": 5,
+        "W": 4
+      },
+      "J16": "-1/96"
+    },
+    {
+      "price": 262,
+      "opponent": "high_search",
+      "N": 96,
+      "counts": {
+        "C": 83,
+        "L": 3,
+        "W": 3,
+        "D": 7
+      },
+      "J16": "0"
+    },
+    {
+      "price": 1718,
+      "opponent": "high_search",
+      "N": 96,
+      "counts": {
+        "C": 80,
+        "L": 3,
+        "W": 3,
+        "D": 10
+      },
+      "J16": "0"
+    },
+    {
+      "price": 90,
+      "opponent": "uniform_random",
+      "N": 96,
+      "counts": {
+        "C": 72,
+        "W": 20,
+        "D": 4
+      },
+      "J16": "5/24"
+    },
+    {
+      "price": 262,
+      "opponent": "uniform_random",
+      "N": 96,
+      "counts": {
+        "C": 70,
+        "W": 25,
+        "D": 1
+      },
+      "J16": "25/96"
+    },
+    {
+      "price": 1718,
+      "opponent": "uniform_random",
+      "N": 96,
+      "counts": {
+        "C": 71,
+        "W": 24,
+        "D": 1
+      },
+      "J16": "1/4"
+    }
+  ],
+  "new_go": 0,
+  "scope": "Mechanical5x5 K/R/N,mate/stalemate/3foldauto/50move/kingonly. NoChess8x8oracle applied,noPawn/promotion/drop/castling/EP,notfullgenericdomain; printedPVlegalnotforcemate"
+}

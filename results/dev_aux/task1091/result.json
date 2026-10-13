@@ -1,0 +1,132 @@
+{
+  "status": "PASS_ALL384_EXACT_ACTION_AND_DECISION_QUERY_PREFIXES_IGNORE_TIME_NPS",
+  "rows": [
+    {
+      "H": 16,
+      "price": 64,
+      "N": 128,
+      "counts": {
+        "C": 78,
+        "L": 9,
+        "W": 34,
+        "D": 7
+      },
+      "mixed_J": "25/128",
+      "opponent_J": {
+        "unit_search": "1/64",
+        "uniform_random": "3/8"
+      }
+    },
+    {
+      "H": 16,
+      "price": 90,
+      "N": 128,
+      "counts": {
+        "C": 74,
+        "D": 7,
+        "L": 12,
+        "W": 35
+      },
+      "mixed_J": "23/128",
+      "opponent_J": {
+        "unit_search": "0",
+        "uniform_random": "23/64"
+      }
+    },
+    {
+      "H": 16,
+      "price": 671,
+      "N": 128,
+      "counts": {
+        "C": 75,
+        "D": 5,
+        "L": 12,
+        "W": 36
+      },
+      "mixed_J": "3/16",
+      "opponent_J": {
+        "unit_search": "-1/64",
+        "uniform_random": "25/64"
+      }
+    },
+    {
+      "H": 24,
+      "price": 64,
+      "N": 128,
+      "counts": {
+        "C": 68,
+        "D": 10,
+        "L": 12,
+        "W": 38
+      },
+      "mixed_J": "13/64",
+      "opponent_J": {
+        "unit_search": "-1/64",
+        "uniform_random": "27/64"
+      }
+    },
+    {
+      "H": 24,
+      "price": 90,
+      "N": 128,
+      "counts": {
+        "C": 64,
+        "D": 7,
+        "L": 13,
+        "W": 44
+      },
+      "mixed_J": "31/128",
+      "opponent_J": {
+        "unit_search": "0",
+        "uniform_random": "31/64"
+      }
+    },
+    {
+      "H": 24,
+      "price": 671,
+      "N": 128,
+      "counts": {
+        "C": 63,
+        "D": 7,
+        "L": 13,
+        "W": 45
+      },
+      "mixed_J": "1/4",
+      "opponent_J": {
+        "unit_search": "-1/64",
+        "uniform_random": "33/64"
+      }
+    }
+  ],
+  "transitions": {
+    "64": {
+      "C->C": 68,
+      "C->D": 3,
+      "C->L": 3,
+      "L->L": 9,
+      "W->W": 34,
+      "C->W": 4,
+      "D->D": 7
+    },
+    "90": {
+      "C->C": 64,
+      "D->D": 7,
+      "L->L": 12,
+      "W->W": 35,
+      "C->L": 1,
+      "C->W": 9
+    },
+    "671": {
+      "C->C": 63,
+      "C->D": 2,
+      "D->D": 5,
+      "L->L": 12,
+      "W->W": 36,
+      "C->L": 1,
+      "C->W": 9
+    }
+  },
+  "comparison": "H16mixed64=671=25/128 versus90=23/128; H24 mixed64=13/64<90=31/128<671=1/4. Lowpricedlocallearneradvantageflipswithdeadline. No refit; noteventualWDL.",
+  "scope": "Developmentexposeddeadlinecontrast, finiteactualW-L,C!=draw. Exactmove/depth/nodes/score/PVprefixes (time/npsomittedonly, rawretained) meanpolicyunchanged,onlycapdiffers.",
+  "new_go": 0
+}
