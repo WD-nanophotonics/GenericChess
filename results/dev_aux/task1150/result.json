@@ -1,0 +1,117 @@
+{
+  "status": "PASS_ALL128_CANDIDATE_COMMON_SCALE_FULL8_LITERAL",
+  "counts": {
+    "literal_frontiers": 2477,
+    "tbhits_zero": 5120,
+    "literal_PVmoves": 10302,
+    "go": 1931,
+    "actions": 2477,
+    "randomdraws": 546
+  },
+  "rows": [
+    {
+      "scale": 1,
+      "N_actual": 90,
+      "price_class": 90,
+      "opponent": "unit_search",
+      "N": 16,
+      "counts": {
+        "C": 12,
+        "D": 2,
+        "W": 1,
+        "L": 1
+      },
+      "J24": "0"
+    },
+    {
+      "scale": 1,
+      "N_actual": 90,
+      "price_class": 164,
+      "opponent": "unit_search",
+      "N": 16,
+      "counts": {
+        "C": 11,
+        "D": 3,
+        "W": 1,
+        "L": 1
+      },
+      "J24": "0"
+    },
+    {
+      "scale": 1,
+      "N_actual": 90,
+      "price_class": 90,
+      "opponent": "uniform_random",
+      "N": 16,
+      "counts": {
+        "C": 9,
+        "W": 7
+      },
+      "J24": "7/16"
+    },
+    {
+      "scale": 1,
+      "N_actual": 90,
+      "price_class": 164,
+      "opponent": "uniform_random",
+      "N": 16,
+      "counts": {
+        "C": 12,
+        "W": 4
+      },
+      "J24": "1/4"
+    },
+    {
+      "scale": 8,
+      "N_actual": 720,
+      "price_class": 90,
+      "opponent": "unit_search",
+      "N": 16,
+      "counts": {
+        "C": 12,
+        "D": 2,
+        "W": 2
+      },
+      "J24": "1/8"
+    },
+    {
+      "scale": 8,
+      "N_actual": 720,
+      "price_class": 164,
+      "opponent": "unit_search",
+      "N": 16,
+      "counts": {
+        "C": 11,
+        "D": 2,
+        "W": 2,
+        "L": 1
+      },
+      "J24": "1/16"
+    },
+    {
+      "scale": 8,
+      "N_actual": 720,
+      "price_class": 90,
+      "opponent": "uniform_random",
+      "N": 16,
+      "counts": {
+        "C": 8,
+        "W": 8
+      },
+      "J24": "1/2"
+    },
+    {
+      "scale": 8,
+      "N_actual": 720,
+      "price_class": 164,
+      "opponent": "uniform_random",
+      "N": 16,
+      "counts": {
+        "C": 10,
+        "W": 6
+      },
+      "J24": "3/8"
+    }
+  ],
+  "new_go": 0
+}

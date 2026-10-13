@@ -1,12 +1,12 @@
-# DEV_AUX current scope — 2026-10-14 segment41
+# DEV_AUX current scope — 2026-10-14 segment42
 
-ScienceOPEN; sidemissiononly, heartbeatACTIVE; main/default/UIunchanged.
-Trueoutcome learningcheap, humanprice recoverynotproved. 64freshintervalfamilies gain1/32 pooled withCIcross0, broadplateau.
-Fixedcompletepurematerialtree orderstabilizesR>kN;262notuniformlyabove270. Actualleafonlycommonscalechangesmaturechoices despiteexactleaforders.
-Richer4..6N localstarts64/671stagnate; olddevelopmentlowpricegainflipsH16/H24. Cachedglobal64 improvesfresh32familyfiniteW-L:5/128 H16,10/128 H24, largelyrandom; learnedR<N/gridboundary,nothumanratio.
-H24 leafonlygain6/128,nativeonly0,joint10/128,interaction4/128. 5056closed incl128invalid,4928qualified;57465journallednativego,55622qualified,1347completecalls/111917nodes,864perft. Failed5inferredunsaved noted.
-Allliteral/price/history/PV/RNG/terminal controls, exactarchive/privatefullrestore passed; failures/corrections preserved. Report SEGMENT_20261014_41.md; COST/QA41.
-Next fixed-anchor balancedexchange-choice curriculum, finiteprice-set/leaf-vs-native tests; no unchangedepochs/ultralonggames/wholecalibrationgate.
+ScienceOPEN; own sidemission, heartbeatACTIVE; primary/default/UI unchanged.
+Balanced5selectedJ164/L671 replication+1/32 but CIcross0; full8transfer0/-3/256 anddirect8dev0/-1/64.
+Full8contact fixedpolicy trueW-L OLSbetaR1/4,N5/48 =>R/N2.4; heldoutMSEimprovement77/3072; conditionalbootstrapnotCI.
+Searchconsumptionjoint/leafonly each64devgain7/64, baseline9W2L→15W1L or14W0L. Same16families; no independentpopulationconfirmation/humanratio recovery.
+6144actualgames88536go576perft495.687producerseconds; allliteral/history/PV/RNG/priceauditsPASS, failures/censoredretained.
+Report SEGMENT_20261014_42.md; COST/QA42. Fresh64full8contactreplication1164 frozen360/720/1728, inputs1165literal1166PASS; nativequalificationbeforegames.
+No moretoy/circularquantityreward/continuousintervalclaims; sourceconstants and selectiveconsumers remain. Next practicalepsilon0.03 fixed, no posthocrefit.
 
 # Current local research mainline
 

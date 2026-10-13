@@ -1,0 +1,30 @@
+{
+  "status": "EXACT_TRAIN_ONLY_STATISTICAL_OUTCOME_MATERIAL_FIT",
+  "coefficients_R_N_random_offset": [
+    "1/4",
+    "5/48",
+    "5/32"
+  ],
+  "restricted_equalprice_coefficients": [
+    "5/48",
+    "5/32"
+  ],
+  "train_N": 64,
+  "dev_N": 64,
+  "train_MSE": "641/6144",
+  "dev_MSE": "239/2048",
+  "restricted_train_MSE": "739/6144",
+  "restricted_dev_MSE": "871/6144",
+  "positive_ratio": "12/5",
+  "normalized_table_R": 1728,
+  "normalized_table_N": 720,
+  "table_supported": true,
+  "bootstrap_replicates": 2000,
+  "nonpositive_or_singular_bootstraps": 7,
+  "conditional_positive_ratio_quantiles": [
+    2.0,
+    4.0
+  ],
+  "scope": "Countdifferencesareinputfeatures,actualW-Lislabel,C/Ddistinct0finiteevent. Predictivefixedpolicy/contactdistributionmarginalsNOTpolicyoptimalprices orintrinsic/universalwinprobabilities. Nohumanlabels/prior/signclipping. BootstrapconditionalquantilesnotunconditionalCI.",
+  "new_go": 0
+}

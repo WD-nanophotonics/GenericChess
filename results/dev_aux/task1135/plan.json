@@ -1,0 +1,35 @@
+{
+  "status": "FROZEN_DIRECT8_TRAINING_BEFORE_OUTCOMES",
+  "question": "Can direct8x8training recoverfinite-WLpriceordering whenmini-trainedpolicyfailed8x8transfer?",
+  "source_roots": "1113 same32 priceblindbalanceddual-victiminitialFENs projectedfull8; prior5labels notusedfull8fit",
+  "split": "first4eligible/composition train16;next4development16, no outcome-basedselection",
+  "prices": [
+    64,
+    90,
+    164,
+    262,
+    671
+  ],
+  "N": 90,
+  "arms": {
+    "J": "nativeR=leafR candidateprice",
+    "L": "nativeR=90 fixed, leafR candidateprice"
+  },
+  "opponents": {
+    "unit_search": 90,
+    "uniform_random": null
+  },
+  "random_seed_base": 2026195000,
+  "H": 24,
+  "nodes": 64,
+  "train_games": 640,
+  "development_games": 640,
+  "optimizer": "Globalfrozen5-gridmean W-L/N equalopponent/color/composition;lowestprice tie. Adjacent strictascent from64/671 diagnosticmax4updates. Trainonly selectionsboundbeforedev;devall5once forcurve, neverrefitfromdev.",
+  "max_seconds_per_phase": 240,
+  "estimated_total_seconds": 100,
+  "decision": "Trainonlyglobal/local5-grid,16new-world train/16new-worlddev,all5curves once; compare5vs8learningbutnotclaimunexposedpopulation/geometric-onlycausality. No human/quantity fitness.",
+  "scope": "Mechanical5x5K/R/N, symmetricinventories andR/Ncapturechoices; notstandardChess/Shogi/unmodifiedupstream/humanfitness. Noquantityreward, no tablebase, sourceanchorsfixed.",
+  "binary_sha256": "2ec3e0959a1c6a130e28e4659a8ed21a6150f30b8aa384ca3faaa6f128f1bdfd",
+  "world": "aux_full:chess8x8K/R/N, declared3fold50auto/sufficientinsuffdraw",
+  "expected_seconds": 110
+}

@@ -1,0 +1,171 @@
+{
+  "status": "PASS_ALL1536_FULL8_COUNTERFACTUAL_GAMES_LITERAL_RULES",
+  "counts": {
+    "literal_frontiers": 30937,
+    "tbhits_zero": 60497,
+    "literal_PVmoves": 117647,
+    "go": 23480,
+    "actions": 30937,
+    "randomdraws": 7457
+  },
+  "rows": [
+    {
+      "arm": "J",
+      "price": 90,
+      "opponent": "unit_search",
+      "N": 128,
+      "counts": {
+        "C": 88,
+        "D": 26,
+        "W": 7,
+        "L": 7
+      },
+      "J24": "0"
+    },
+    {
+      "arm": "J",
+      "price": 164,
+      "opponent": "unit_search",
+      "N": 128,
+      "counts": {
+        "C": 92,
+        "D": 20,
+        "W": 9,
+        "L": 7
+      },
+      "J24": "1/64"
+    },
+    {
+      "arm": "J",
+      "price": 671,
+      "opponent": "unit_search",
+      "N": 128,
+      "counts": {
+        "C": 94,
+        "D": 18,
+        "L": 7,
+        "W": 9
+      },
+      "J24": "1/64"
+    },
+    {
+      "arm": "J",
+      "price": 90,
+      "opponent": "uniform_random",
+      "N": 128,
+      "counts": {
+        "C": 88,
+        "W": 36,
+        "D": 3,
+        "L": 1
+      },
+      "J24": "35/128"
+    },
+    {
+      "arm": "J",
+      "price": 164,
+      "opponent": "uniform_random",
+      "N": 128,
+      "counts": {
+        "C": 92,
+        "W": 34,
+        "D": 1,
+        "L": 1
+      },
+      "J24": "33/128"
+    },
+    {
+      "arm": "J",
+      "price": 671,
+      "opponent": "uniform_random",
+      "N": 128,
+      "counts": {
+        "C": 90,
+        "W": 36,
+        "D": 1,
+        "L": 1
+      },
+      "J24": "35/128"
+    },
+    {
+      "arm": "L",
+      "price": 90,
+      "opponent": "unit_search",
+      "N": 128,
+      "counts": {
+        "C": 88,
+        "D": 26,
+        "W": 7,
+        "L": 7
+      },
+      "J24": "0"
+    },
+    {
+      "arm": "L",
+      "price": 164,
+      "opponent": "unit_search",
+      "N": 128,
+      "counts": {
+        "C": 93,
+        "D": 21,
+        "W": 7,
+        "L": 7
+      },
+      "J24": "0"
+    },
+    {
+      "arm": "L",
+      "price": 671,
+      "opponent": "unit_search",
+      "N": 128,
+      "counts": {
+        "C": 89,
+        "D": 24,
+        "L": 7,
+        "W": 8
+      },
+      "J24": "1/128"
+    },
+    {
+      "arm": "L",
+      "price": 90,
+      "opponent": "uniform_random",
+      "N": 128,
+      "counts": {
+        "C": 88,
+        "W": 36,
+        "D": 3,
+        "L": 1
+      },
+      "J24": "35/128"
+    },
+    {
+      "arm": "L",
+      "price": 164,
+      "opponent": "uniform_random",
+      "N": 128,
+      "counts": {
+        "C": 88,
+        "W": 38,
+        "D": 1,
+        "L": 1
+      },
+      "J24": "37/128"
+    },
+    {
+      "arm": "L",
+      "price": 671,
+      "opponent": "uniform_random",
+      "N": 128,
+      "counts": {
+        "C": 93,
+        "W": 32,
+        "D": 2,
+        "L": 1
+      },
+      "J24": "31/128"
+    }
+  ],
+  "new_go": 0,
+  "scope": "ActualW-Lonly,C24!=draw,nofit/human/quantityproxy in audit"
+}

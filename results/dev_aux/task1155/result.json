@@ -1,0 +1,40 @@
+{
+  "status": "PASS_ALL128_CONTACT_FIXED_POLICY_DATA_GAMES_LITERAL_RULES",
+  "counts": {
+    "literal_frontiers": 2570,
+    "tbhits_zero": 9565,
+    "literal_PVmoves": 27223,
+    "go": 1916,
+    "actions": 2570,
+    "randomdraws": 654
+  },
+  "rows": [
+    {
+      "arm": "J",
+      "price": 720,
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "C": 36,
+        "D": 20,
+        "W": 4,
+        "L": 4
+      },
+      "J24": "0"
+    },
+    {
+      "arm": "J",
+      "price": 720,
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "C": 49,
+        "W": 12,
+        "D": 3
+      },
+      "J24": "3/16"
+    }
+  ],
+  "new_go": 0,
+  "scope": "ActualW-Lonly,C24!=draw,nofit/human/quantityproxy in audit"
+}

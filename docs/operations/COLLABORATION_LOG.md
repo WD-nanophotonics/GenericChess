@@ -1,3 +1,16 @@
+## DEV_AUX segment42 — outcome regression and deployment
+
+Own6144actual short games,88536go,576perft,495.687producerseconds; no main/default/UI writes.
+Balanced5benefit notstable(CIcross0), full8transfer/directtraining negative orzero retained.
+Newfull8 unequal-stock contact curriculum predicts actualfixedpolicyfiniteW-L frommaterialfeatures.
+Train-only R/N2.4 reducesdevMSE77/3072; J/L consumptioneachmixedgain7/64 on16devfamilies.
+Conditionalresult nothumanratio/policyoptimum/populationconfirmation. Fresh64 replicationalreadyfrozen/generated/literalaudited, belowN360control.
+Dot adviceadopted stay8/contact/smallbudget/cacheweights/finiteprice-set distinctions, deferB; no permissiongate.
+Primarye1d9707 nativeIR workreadonlycontext/deferred outsideownlane; no dependency/wake/duplicate Agent.
+Exact archive/sanitized report forremote review; privateSlack originals savedignored andexcludedfromGit.
+Ordinaryconcurrency accepted; no exclusivity/token-cost claim, nohourjob/worker/fee.
+Unresolved: freshpopulationtransfer, censoring, μ/ν/scale dependence, morepiece types/humanexperience recovery.
+
 ## DEV_AUX segment28 — budget, objective and breadth independently checked
 
 DEV_AUX finishes9104actual capped24ply games92509gamego plus2616 coldqualification

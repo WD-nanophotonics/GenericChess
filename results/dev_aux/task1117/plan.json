@@ -1,0 +1,33 @@
+{
+  "status": "FROZEN_BEFORE_FIRST_BALANCED_LEARNING_GO",
+  "question": "Does balanceddual-victimcapturechoice genuinefinite-WL learning recoverusefulR/N ordering, leafonly vsjointnativeconsumer?",
+  "source_roots": "task1113 roots,1114 all4096filters literalPASS,1116 160unfilterednativefrontiers/priceACKPASS",
+  "split": "first4eligible/composition train16;next4development16, no outcome-basedselection",
+  "prices": [
+    64,
+    90,
+    164,
+    262,
+    671
+  ],
+  "N": 90,
+  "arms": {
+    "J": "nativeR=leafR candidateprice",
+    "L": "nativeR=90 fixed, leafR candidateprice"
+  },
+  "opponents": {
+    "unit_search": 90,
+    "uniform_random": null
+  },
+  "random_seed_base": 2026195000,
+  "H": 24,
+  "nodes": 64,
+  "train_games": 640,
+  "development_games": 640,
+  "optimizer": "Globalfrozen5-gridmean W-L/N equalopponent/color/composition;lowestprice tie. Adjacent strictascent from64/671 diagnosticmax4updates. Trainonly selectionsboundbeforedev;devall5once forcurve, neverrefitfromdev.",
+  "max_seconds_per_phase": 120,
+  "estimated_total_seconds": 100,
+  "decision": "Direction/transfer/priceplateaus byarm; unchangedJ90/L90 fulldecisionprefixcontrol; actualW-L andcensor/Dseparate. Ifdifferent ratio orconsumer dependence persists, distribution/budget remainslimitation ratherthanaddingunchangedepochs.",
+  "scope": "Mechanical5x5K/R/N, symmetricinventories andR/Ncapturechoices; notstandardChess/Shogi/unmodifiedupstream/humanfitness. Noquantityreward, no tablebase, sourceanchorsfixed.",
+  "binary_sha256": "2ec3e0959a1c6a130e28e4659a8ed21a6150f30b8aa384ca3faaa6f128f1bdfd"
+}

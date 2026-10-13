@@ -1,0 +1,64 @@
+{
+  "status": "PASS_ALL128_LEARNED_STAT_PRICE_CONSUMPTION_GAMES_LITERAL_RULES",
+  "counts": {
+    "literal_frontiers": 2415,
+    "tbhits_zero": 8910,
+    "literal_PVmoves": 25051,
+    "go": 1809,
+    "actions": 2415,
+    "randomdraws": 606
+  },
+  "rows": [
+    {
+      "arm": "J",
+      "price": 1728,
+      "opponent": "unit_search",
+      "N": 32,
+      "counts": {
+        "D": 10,
+        "C": 18,
+        "L": 1,
+        "W": 3
+      },
+      "J24": "1/16"
+    },
+    {
+      "arm": "J",
+      "price": 1728,
+      "opponent": "uniform_random",
+      "N": 32,
+      "counts": {
+        "W": 12,
+        "D": 2,
+        "C": 18
+      },
+      "J24": "3/8"
+    },
+    {
+      "arm": "L",
+      "price": 1728,
+      "opponent": "unit_search",
+      "N": 32,
+      "counts": {
+        "D": 9,
+        "C": 19,
+        "W": 4
+      },
+      "J24": "1/8"
+    },
+    {
+      "arm": "L",
+      "price": 1728,
+      "opponent": "uniform_random",
+      "N": 32,
+      "counts": {
+        "W": 10,
+        "D": 2,
+        "C": 20
+      },
+      "J24": "5/16"
+    }
+  ],
+  "new_go": 0,
+  "scope": "ActualW-Lonly,C24!=draw,nofit/human/quantityproxy in audit"
+}
