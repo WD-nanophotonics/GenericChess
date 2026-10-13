@@ -1,12 +1,14 @@
-# DEV_AUX current scope — 2026-10-14 segment42
+# DEV_AUX current scope — 2026-10-14 segment43
 
-ScienceOPEN; own sidemission, heartbeatACTIVE; primary/default/UI unchanged.
-Balanced5selectedJ164/L671 replication+1/32 but CIcross0; full8transfer0/-3/256 anddirect8dev0/-1/64.
-Full8contact fixedpolicy trueW-L OLSbetaR1/4,N5/48 =>R/N2.4; heldoutMSEimprovement77/3072; conditionalbootstrapnotCI.
-Searchconsumptionjoint/leafonly each64devgain7/64, baseline9W2L→15W1L or14W0L. Same16families; no independentpopulationconfirmation/humanratio recovery.
-6144actualgames88536go576perft495.687producerseconds; allliteral/history/PV/RNG/priceauditsPASS, failures/censoredretained.
-Report SEGMENT_20261014_42.md; COST/QA42. Fresh64full8contactreplication1164 frozen360/720/1728, inputs1165literal1166PASS; nativequalificationbeforegames.
-No moretoy/circularquantityreward/continuousintervalclaims; sourceconstants and selectiveconsumers remain. Next practicalepsilon0.03 fixed, no posthocrefit.
+ScienceOPEN; own sidemission, heartbeatACTIVE; noDEV_AUXprimary/default/UI writes.
+17184true24plygames254473searchgo5088perft1544.109storedproducerseconds.
+Old2.4 predictsbetter(21/1024contact,7/1024uniform MSE); contactpolicy3/256J,-3/256L.
+Matched512 ΔR21/64 ΔN71/1024; ratioresidual207/1280 CIpositive; conditional4.73 differsold2.4.
+R3407 privateguard4096/36coldpairsPASS; new64policygain1/768J,-1/768L, estimatedupper<epsilon.03.
+Directtruefitness TRAIN16+DEV16 selectsJ1440,L1728; primaryDEVboth5/192 CIcross0; search-onlyJ5/96 exploratory.
+No humanratio/globalintrinsicprice; prediction/intervention/leafpolicy distinct. Allraw/failures/censored preserved.
+Next1237 new64 J720/1440 L720/1440/1728, inputs1238/literal1239PASS; nativebeforegames; no refit/oldDEV extension.
+Report SEGMENT_20261014_43.md; COST/QA43. Oracleexportdenied0requests, localworkcontinued; nohourjob/worker/fee.
 
 # Current local research mainline
 

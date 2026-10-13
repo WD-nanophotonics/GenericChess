@@ -1,0 +1,82 @@
+{
+  "status": "PASS_ALL96_FORCED_FIRST_MOVE_THEN_FIXED_TEACHER",
+  "counts": {
+    "literal_frontiers": 1959,
+    "tbhits_zero": 7379,
+    "literal_PVmoves": 20334,
+    "go": 1463,
+    "actions": 1959,
+    "randomdraws": 496
+  },
+  "rows": [
+    {
+      "profile": "baseline",
+      "opponent": "unit_search",
+      "N": 16,
+      "counts": {
+        "L": 2,
+        "C": 9,
+        "W": 3,
+        "D": 2
+      },
+      "J24": "1/16"
+    },
+    {
+      "profile": "baseline",
+      "opponent": "uniform_random",
+      "N": 16,
+      "counts": {
+        "C": 12,
+        "W": 4
+      },
+      "J24": "1/4"
+    },
+    {
+      "profile": "J_first",
+      "opponent": "unit_search",
+      "N": 16,
+      "counts": {
+        "C": 11,
+        "L": 1,
+        "W": 3,
+        "D": 1
+      },
+      "J24": "1/8"
+    },
+    {
+      "profile": "J_first",
+      "opponent": "uniform_random",
+      "N": 16,
+      "counts": {
+        "C": 12,
+        "W": 4
+      },
+      "J24": "1/4"
+    },
+    {
+      "profile": "L_first",
+      "opponent": "unit_search",
+      "N": 16,
+      "counts": {
+        "C": 12,
+        "L": 1,
+        "W": 2,
+        "D": 1
+      },
+      "J24": "1/16"
+    },
+    {
+      "profile": "L_first",
+      "opponent": "uniform_random",
+      "N": 16,
+      "counts": {
+        "C": 11,
+        "W": 5
+      },
+      "J24": "5/16"
+    }
+  ],
+  "baseline_fulltrajectory_controls": 32,
+  "new_go": 0,
+  "scope": "PrefillquerylegalPV anduniformprice, forcedfirstactionfromcachedsource, lateractualpolicyuniform720; firstmovechanged only. Exposeddiagnosticnotvalidation."
+}

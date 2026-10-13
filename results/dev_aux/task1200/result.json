@@ -1,0 +1,73 @@
+{
+  "status": "EXACT_WEIGHTED_REACHED_STATE_H12_VALUE_DIAGNOSTIC",
+  "samples": 1523,
+  "rows": [
+    {
+      "model": "rootH12",
+      "training_samples": 64,
+      "families": 16,
+      "coef": [
+        "1/12",
+        "1/24",
+        "1/8"
+      ],
+      "positive_ratio": "2",
+      "candidateR": 1440,
+      "supported": true,
+      "train_MSE": "5/96",
+      "dev_reached_MSE": "36121849/316293120",
+      "dev_root_MSE": "11/128"
+    },
+    {
+      "model": "reachedH12",
+      "training_samples": 767,
+      "families": 16,
+      "coef": [
+        "27831735890546/207691579040083",
+        "1672463518551/207691579040083",
+        "15113788053985/207691579040083"
+      ],
+      "positive_ratio": "3975962270078/238923359793",
+      "candidateR": 11982,
+      "supported": false,
+      "train_MSE": "56466932155919107/691197575045396224",
+      "dev_reached_MSE": "857187320789322577574876646663029/7895575368442003596405827206562560",
+      "dev_root_MSE": "232009452848954466569275933867/2760690688266434823918121400896"
+    }
+  ],
+  "label_counts": {
+    "C": 1238,
+    "D": 139,
+    "L": 72,
+    "W": 74
+  },
+  "new_go": 0,
+  "scope": {
+    "status": "FROZEN_REACHED_STATE_VS_ROOT_VALUE_H12_DIAGNOSTIC",
+    "source_teacher": 1154,
+    "split": "originalfirst4/compositiontrain16 next4dev16, unchanged; newposthocestimanddiagnostic not pristineunexposeddev",
+    "horizon": 12,
+    "state_offsets": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "model": "signedlinear actual12ply W-L ~ Rdiff+Ndiff+z;z=+1 if side-to-move is teacher versusrandom,-1 if randomSTM,0 bothuniformsearch",
+    "weights": "Eachfamilyequalmass; eachteacherphysicalepisodeequalwithinfamily; eachstateequalwithinepisode. Rootmodelusesoffset0 H12same labels, notoldH24model.",
+    "labels": "Onlyactualterminalwithin12followingplies -> +/-1 orD0; otherwiseC0; nonterminalstatesonly, noquantitywinlabels. Alltrajectoryhistories/labeltimes retained.",
+    "comparison": "RootH12 training versusreachedH12 training; comparebothonoriginaldev reachedstates androotstates. No devfit, signclip/humanprior ornewdefault.",
+    "price_candidate": "OnlypositiveR/N normalizeN720 andRroundratio*720 if1..3328; noclipping. Predictratio forconditionalvaluefunction notpolicyoptimalthusrequiresnewpolicy test.",
+    "new_go": 0,
+    "decision": "Doesroot-trainedmarginalfailaftermovingtoactualteacherreachedstates, anddoesreached-state fittingrepairheldoutstateprediction atsameH? Ifunsupported preservefailure; no newH48."
+  }
+}

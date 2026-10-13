@@ -1,0 +1,11 @@
+--- leaf-native41/uci.cpp
++++ leaf-4096-43/uci.cpp
+@@ -408,7 +408,7 @@
+       {
+           int price = 0;
+           is >> price;
+-          if (!is || price < 1 || price > 3328)
++          if (!is || price < 1 || price > 4096)
+               sync_cout << "info string DEV_AUX leafR invalid" << sync_endl;
+           else
+           {

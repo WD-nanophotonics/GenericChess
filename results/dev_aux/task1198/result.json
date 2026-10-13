@@ -1,0 +1,40 @@
+{
+  "status": "PASS_ALL6144_MATCHED_STOCK_INTERVENTION_GAMES_LITERAL_RULES",
+  "counts": {
+    "literal_frontiers": 117910,
+    "tbhits_zero": 439562,
+    "literal_PVmoves": 1206519,
+    "go": 89456,
+    "actions": 117910,
+    "randomdraws": 28454
+  },
+  "rows": [
+    {
+      "arm": "J",
+      "price": 720,
+      "opponent": "unit_search",
+      "N": 3072,
+      "counts": {
+        "D": 691,
+        "C": 1966,
+        "W": 349,
+        "L": 66
+      },
+      "J24": "283/3072"
+    },
+    {
+      "arm": "J",
+      "price": 720,
+      "opponent": "uniform_random",
+      "N": 3072,
+      "counts": {
+        "W": 1068,
+        "C": 1895,
+        "D": 109
+      },
+      "J24": "89/256"
+    }
+  ],
+  "new_go": 0,
+  "scope": "ActualW-Lonly,C24!=draw,nofit/human/quantityproxy in audit"
+}

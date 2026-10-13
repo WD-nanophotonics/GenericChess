@@ -1,3 +1,16 @@
+## DEV_AUX segment43 — three estimands and direct true-outcome learning
+
+17184physical24plygames254473go5088perft1544.109producerseconds; noDEV_AUXprimary/default/UI writes.
+Old2.4 predictsnewteacherfamilies butweakdeployment; matched512 ΔR.328125 ΔN.069336 impliesdifferentconditional4.73.
+Privateguard4096 enables3407 with36old/newcoldpairsPASS; new64deploymentnear0. Oldbinary/source preserved.
+DirectactualW-L TRAIN16/DEV16 selectsJ1440/L1728; bothmixedDEV5/192 CIcross0; search-onlyJ5/96 exploratory.
+Dotadoptedmatchedcontrols/divisionfree/estimandseparation/cachedH12; no authoritygate/independent43execution claim.
+Primary97b4d1 nativeIR readonlycontext, no dependency/wake. Exactarchive/sanitizedownpublication; no merge/defaultpromotion.
+Fresh64nextinputs frozen/generated/literalaudited, native/gamespending; no Humanfit oroldDEV extension.
+Preexecquote/Windowslength errors0queries self-fixed. FirstSlackreviewmisread solvedwithevidence same-toolonce. Lichessexportdenied0requests, localworkcontinues.
+PrivaterawSlack preservedignored; ordinaryconcurrency/noexclusivity/token-cost claim, worker/fee/hourrun.
+Unresolved: stablepolicygain/humanratio, μ/ν/H sensitivity, root-to-leaf mismatch/fullgeneratedrulecoverage.
+
 ## DEV_AUX segment42 — outcome regression and deployment
 
 Own6144actual short games,88536go,576perft,495.687producerseconds; no main/default/UI writes.

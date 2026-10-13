@@ -1,0 +1,21 @@
+{
+  "status": "FROZEN4096_BOUND_DEFAULT_AND_PRICE_CONTROL",
+  "roots": "task1186 first12roots",
+  "profiles": [
+    {
+      "nativeR": 720,
+      "leafR": null
+    },
+    {
+      "nativeR": 1728,
+      "leafR": 1728
+    },
+    {
+      "nativeR": 720,
+      "leafR": 1728
+    }
+  ],
+  "nodes": 256,
+  "expected_go": 72,
+  "controls": "Old/newsameprice colddecision infoexactexcepttime/nps; default/leaf/consumer bothMG/EG; new3407/4096 reads andinvalid0/4097 preservevalues. Onlynewinputguardrange, no oldscientificclaimrebinding."
+}

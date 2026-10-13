@@ -1,0 +1,906 @@
+{
+  "status": "EXACT_TEACHER_COEFFICIENT_STABILITY_NO_DEPLOYMENT",
+  "rows": [
+    {
+      "source": 1154,
+      "prefix_percomposition": 4,
+      "omit": null,
+      "role": "all",
+      "N": 64,
+      "coefficients": [
+        "1/4",
+        "5/48",
+        "5/32"
+      ],
+      "positive_ratio": "12/5",
+      "train_MSE": "641/6144",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1154,
+      "prefix_percomposition": 4,
+      "omit": null,
+      "role": "whitecandidate",
+      "N": 32,
+      "coefficients": [
+        "1/3",
+        "7/33",
+        "3/11"
+      ],
+      "positive_ratio": "11/7",
+      "train_MSE": "59/528",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1154,
+      "prefix_percomposition": 4,
+      "omit": null,
+      "role": "blackcandidate",
+      "N": 32,
+      "coefficients": [
+        "1/6",
+        "7/264",
+        "1/11"
+      ],
+      "positive_ratio": "44/7",
+      "train_MSE": "325/4224",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1154,
+      "prefix_percomposition": 4,
+      "omit": "KRNNvKRRN",
+      "role": "all",
+      "N": 48,
+      "coefficients": [
+        "25/96",
+        "5/48",
+        "1/8"
+      ],
+      "positive_ratio": "5/2",
+      "train_MSE": "319/4608",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1154,
+      "prefix_percomposition": 4,
+      "omit": "KRNNvKRRN",
+      "role": "whitecandidate",
+      "N": 24,
+      "coefficients": [
+        "15/44",
+        "9/44",
+        "5/22"
+      ],
+      "positive_ratio": "5/3",
+      "train_MSE": "43/528",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1154,
+      "prefix_percomposition": 4,
+      "omit": "KRNNvKRRN",
+      "role": "blackcandidate",
+      "N": 24,
+      "coefficients": [
+        "21/176",
+        "3/88",
+        "1/22"
+      ],
+      "positive_ratio": "7/2",
+      "train_MSE": "155/4224",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1154,
+      "prefix_percomposition": 4,
+      "omit": "KRNvKNNN",
+      "role": "all",
+      "N": 48,
+      "coefficients": [
+        "1/4",
+        "1/16",
+        "5/24"
+      ],
+      "positive_ratio": "4",
+      "train_MSE": "19/144",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1154,
+      "prefix_percomposition": 4,
+      "omit": "KRNvKNNN",
+      "role": "whitecandidate",
+      "N": 24,
+      "coefficients": [
+        "1/3",
+        "1/6",
+        "1/3"
+      ],
+      "positive_ratio": "2",
+      "train_MSE": "5/36",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1154,
+      "prefix_percomposition": 4,
+      "omit": "KRNvKNNN",
+      "role": "blackcandidate",
+      "N": 24,
+      "coefficients": [
+        "1/6",
+        "-1/24",
+        "1/12"
+      ],
+      "positive_ratio": null,
+      "train_MSE": "7/72",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1154,
+      "prefix_percomposition": 4,
+      "omit": "KRNvKRNN",
+      "role": "all",
+      "N": 48,
+      "coefficients": [
+        "29/96",
+        "5/32",
+        "5/24"
+      ],
+      "positive_ratio": "29/15",
+      "train_MSE": "197/1536",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1154,
+      "prefix_percomposition": 4,
+      "omit": "KRNvKRNN",
+      "role": "whitecandidate",
+      "N": 24,
+      "coefficients": [
+        "25/68",
+        "1/4",
+        "5/17"
+      ],
+      "positive_ratio": "25/17",
+      "train_MSE": "19/136",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1154,
+      "prefix_percomposition": 4,
+      "omit": "KRNvKRNN",
+      "role": "blackcandidate",
+      "N": 24,
+      "coefficients": [
+        "57/272",
+        "1/16",
+        "9/68"
+      ],
+      "positive_ratio": "57/17",
+      "train_MSE": "643/6528",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1154,
+      "prefix_percomposition": 4,
+      "omit": "KRRNvKRN",
+      "role": "all",
+      "N": 48,
+      "coefficients": [
+        "1/8",
+        "1/24",
+        "1/12"
+      ],
+      "positive_ratio": "3",
+      "train_MSE": "11/144",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1154,
+      "prefix_percomposition": 4,
+      "omit": "KRRNvKRN",
+      "role": "whitecandidate",
+      "N": 24,
+      "coefficients": [
+        "3/20",
+        "1/10",
+        "3/20"
+      ],
+      "positive_ratio": "3/2",
+      "train_MSE": "37/480",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1154,
+      "prefix_percomposition": 4,
+      "omit": "KRRNvKRN",
+      "role": "blackcandidate",
+      "N": 24,
+      "coefficients": [
+        "1/5",
+        "1/20",
+        "1/20"
+      ],
+      "positive_ratio": "4",
+      "train_MSE": "11/160",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 4,
+      "omit": null,
+      "role": "all",
+      "N": 64,
+      "coefficients": [
+        "7/16",
+        "5/24",
+        "7/32"
+      ],
+      "positive_ratio": "21/10",
+      "train_MSE": "1043/6144",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 4,
+      "omit": null,
+      "role": "whitecandidate",
+      "N": 32,
+      "coefficients": [
+        "1/2",
+        "23/88",
+        "7/22"
+      ],
+      "positive_ratio": "44/23",
+      "train_MSE": "239/1408",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 4,
+      "omit": null,
+      "role": "blackcandidate",
+      "N": 32,
+      "coefficients": [
+        "3/8",
+        "3/16",
+        "1/8"
+      ],
+      "positive_ratio": "2",
+      "train_MSE": "81/512",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 4,
+      "omit": "KRNNvKRRN",
+      "role": "all",
+      "N": 48,
+      "coefficients": [
+        "11/24",
+        "5/24",
+        "1/4"
+      ],
+      "positive_ratio": "11/5",
+      "train_MSE": "101/576",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 4,
+      "omit": "KRNNvKRRN",
+      "role": "whitecandidate",
+      "N": 24,
+      "coefficients": [
+        "5/11",
+        "3/11",
+        "17/44"
+      ],
+      "positive_ratio": "5/3",
+      "train_MSE": "203/1056",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 4,
+      "omit": "KRNNvKRRN",
+      "role": "blackcandidate",
+      "N": 24,
+      "coefficients": [
+        "17/44",
+        "2/11",
+        "7/44"
+      ],
+      "positive_ratio": "17/8",
+      "train_MSE": "155/1056",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 4,
+      "omit": "KRNvKNNN",
+      "role": "all",
+      "N": 48,
+      "coefficients": [
+        "7/16",
+        "1/4",
+        "1/4"
+      ],
+      "positive_ratio": "7/4",
+      "train_MSE": "79/384",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 4,
+      "omit": "KRNvKNNN",
+      "role": "whitecandidate",
+      "N": 24,
+      "coefficients": [
+        "1/2",
+        "1/4",
+        "1/3"
+      ],
+      "positive_ratio": "2",
+      "train_MSE": "7/36",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 4,
+      "omit": "KRNvKNNN",
+      "role": "blackcandidate",
+      "N": 24,
+      "coefficients": [
+        "3/8",
+        "1/4",
+        "1/6"
+      ],
+      "positive_ratio": "3/2",
+      "train_MSE": "59/288",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 4,
+      "omit": "KRNvKRNN",
+      "role": "all",
+      "N": 48,
+      "coefficients": [
+        "5/12",
+        "3/16",
+        "5/24"
+      ],
+      "positive_ratio": "20/9",
+      "train_MSE": "101/768",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 4,
+      "omit": "KRNvKRNN",
+      "role": "whitecandidate",
+      "N": 24,
+      "coefficients": [
+        "1/2",
+        "1/4",
+        "1/4"
+      ],
+      "positive_ratio": "2",
+      "train_MSE": "13/96",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 4,
+      "omit": "KRNvKRNN",
+      "role": "blackcandidate",
+      "N": 24,
+      "coefficients": [
+        "43/136",
+        "1/8",
+        "5/34"
+      ],
+      "positive_ratio": "43/17",
+      "train_MSE": "193/1632",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 4,
+      "omit": "KRRNvKRN",
+      "role": "all",
+      "N": 48,
+      "coefficients": [
+        "7/16",
+        "5/24",
+        "1/6"
+      ],
+      "positive_ratio": "21/10",
+      "train_MSE": "187/1152",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 4,
+      "omit": "KRRNvKRN",
+      "role": "whitecandidate",
+      "N": 24,
+      "coefficients": [
+        "13/20",
+        "7/20",
+        "2/5"
+      ],
+      "positive_ratio": "13/7",
+      "train_MSE": "3/20",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 4,
+      "omit": "KRRNvKRN",
+      "role": "blackcandidate",
+      "N": 24,
+      "coefficients": [
+        "29/40",
+        "2/5",
+        "-1/10"
+      ],
+      "positive_ratio": "29/16",
+      "train_MSE": "67/480",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 8,
+      "omit": null,
+      "role": "all",
+      "N": 128,
+      "coefficients": [
+        "17/48",
+        "7/48",
+        "9/32"
+      ],
+      "positive_ratio": "17/7",
+      "train_MSE": "1091/6144",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 8,
+      "omit": null,
+      "role": "whitecandidate",
+      "N": 64,
+      "coefficients": [
+        "5/16",
+        "53/352",
+        "49/176"
+      ],
+      "positive_ratio": "110/53",
+      "train_MSE": "4267/22528",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 8,
+      "omit": null,
+      "role": "blackcandidate",
+      "N": 64,
+      "coefficients": [
+        "19/48",
+        "13/96",
+        "5/16"
+      ],
+      "positive_ratio": "38/13",
+      "train_MSE": "995/6144",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 8,
+      "omit": "KRNNvKRRN",
+      "role": "all",
+      "N": 96,
+      "coefficients": [
+        "29/96",
+        "7/48",
+        "1/4"
+      ],
+      "positive_ratio": "29/14",
+      "train_MSE": "739/4608",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 8,
+      "omit": "KRNNvKRRN",
+      "role": "whitecandidate",
+      "N": 48,
+      "coefficients": [
+        "43/176",
+        "7/44",
+        "29/88"
+      ],
+      "positive_ratio": "43/28",
+      "train_MSE": "391/2112",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 8,
+      "omit": "KRNNvKRRN",
+      "role": "blackcandidate",
+      "N": 48,
+      "coefficients": [
+        "29/88",
+        "13/88",
+        "21/88"
+      ],
+      "positive_ratio": "29/13",
+      "train_MSE": "559/4224",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 8,
+      "omit": "KRNvKNNN",
+      "role": "all",
+      "N": 96,
+      "coefficients": [
+        "17/48",
+        "7/48",
+        "1/3"
+      ],
+      "positive_ratio": "17/7",
+      "train_MSE": "247/1152",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 8,
+      "omit": "KRNvKNNN",
+      "role": "whitecandidate",
+      "N": 48,
+      "coefficients": [
+        "5/16",
+        "1/8",
+        "7/24"
+      ],
+      "positive_ratio": "5/2",
+      "train_MSE": "127/576",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 8,
+      "omit": "KRNvKNNN",
+      "role": "blackcandidate",
+      "N": 48,
+      "coefficients": [
+        "19/48",
+        "1/6",
+        "3/8"
+      ],
+      "positive_ratio": "19/8",
+      "train_MSE": "59/288",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 8,
+      "omit": "KRNvKRNN",
+      "role": "all",
+      "N": 96,
+      "coefficients": [
+        "29/96",
+        "3/32",
+        "1/4"
+      ],
+      "positive_ratio": "29/9",
+      "train_MSE": "685/4608",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 8,
+      "omit": "KRNvKRNN",
+      "role": "whitecandidate",
+      "N": 48,
+      "coefficients": [
+        "5/17",
+        "1/8",
+        "4/17"
+      ],
+      "positive_ratio": "40/17",
+      "train_MSE": "185/1088",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 8,
+      "omit": "KRNvKRNN",
+      "role": "blackcandidate",
+      "N": 48,
+      "coefficients": [
+        "87/272",
+        "1/16",
+        "5/17"
+      ],
+      "positive_ratio": "87/17",
+      "train_MSE": "793/6528",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 8,
+      "omit": "KRRNvKRN",
+      "role": "all",
+      "N": 96,
+      "coefficients": [
+        "9/16",
+        "1/4",
+        "7/24"
+      ],
+      "positive_ratio": "9/4",
+      "train_MSE": "25/144",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 8,
+      "omit": "KRRNvKRN",
+      "role": "whitecandidate",
+      "N": 48,
+      "coefficients": [
+        "49/80",
+        "13/40",
+        "17/40"
+      ],
+      "positive_ratio": "49/26",
+      "train_MSE": "161/960",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 8,
+      "omit": "KRRNvKRN",
+      "role": "blackcandidate",
+      "N": 48,
+      "coefficients": [
+        "13/16",
+        "3/8",
+        "1/8"
+      ],
+      "positive_ratio": "13/6",
+      "train_MSE": "31/192",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 16,
+      "omit": null,
+      "role": "all",
+      "N": 256,
+      "coefficients": [
+        "53/192",
+        "7/64",
+        "19/64"
+      ],
+      "positive_ratio": "53/21",
+      "train_MSE": "8273/49152",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 16,
+      "omit": null,
+      "role": "whitecandidate",
+      "N": 128,
+      "coefficients": [
+        "25/96",
+        "281/2112",
+        "105/352"
+      ],
+      "positive_ratio": "550/281",
+      "train_MSE": "46681/270336",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 16,
+      "omit": null,
+      "role": "blackcandidate",
+      "N": 128,
+      "coefficients": [
+        "7/24",
+        "85/1056",
+        "29/88"
+      ],
+      "positive_ratio": "308/85",
+      "train_MSE": "10837/67584",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 16,
+      "omit": "KRNNvKRRN",
+      "role": "all",
+      "N": 192,
+      "coefficients": [
+        "31/128",
+        "7/64",
+        "25/96"
+      ],
+      "positive_ratio": "31/14",
+      "train_MSE": "11495/73728",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 16,
+      "omit": "KRNNvKRRN",
+      "role": "whitecandidate",
+      "N": 96,
+      "coefficients": [
+        "5/22",
+        "3/22",
+        "7/22"
+      ],
+      "positive_ratio": "5/3",
+      "train_MSE": "15/88",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 16,
+      "omit": "KRNNvKRRN",
+      "role": "blackcandidate",
+      "N": 96,
+      "coefficients": [
+        "15/64",
+        "3/32",
+        "1/4"
+      ],
+      "positive_ratio": "5/2",
+      "train_MSE": "857/6144",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 16,
+      "omit": "KRNvKNNN",
+      "role": "all",
+      "N": 192,
+      "coefficients": [
+        "53/192",
+        "13/192",
+        "11/32"
+      ],
+      "positive_ratio": "53/13",
+      "train_MSE": "905/4608",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 16,
+      "omit": "KRNvKNNN",
+      "role": "whitecandidate",
+      "N": 96,
+      "coefficients": [
+        "25/96",
+        "1/12",
+        "1/3"
+      ],
+      "positive_ratio": "25/8",
+      "train_MSE": "925/4608",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 16,
+      "omit": "KRNvKNNN",
+      "role": "blackcandidate",
+      "N": 96,
+      "coefficients": [
+        "7/24",
+        "5/96",
+        "17/48"
+      ],
+      "positive_ratio": "28/5",
+      "train_MSE": "55/288",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 16,
+      "omit": "KRNvKRNN",
+      "role": "all",
+      "N": 192,
+      "coefficients": [
+        "109/384",
+        "15/128",
+        "7/24"
+      ],
+      "positive_ratio": "109/45",
+      "train_MSE": "3935/24576",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 16,
+      "omit": "KRNvKRNN",
+      "role": "whitecandidate",
+      "N": 96,
+      "coefficients": [
+        "159/544",
+        "5/32",
+        "67/272"
+      ],
+      "positive_ratio": "159/85",
+      "train_MSE": "533/3264",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 16,
+      "omit": "KRNvKRNN",
+      "role": "blackcandidate",
+      "N": 96,
+      "coefficients": [
+        "321/1088",
+        "5/64",
+        "99/272"
+      ],
+      "positive_ratio": "321/85",
+      "train_MSE": "15515/104448",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 16,
+      "omit": "KRRNvKRN",
+      "role": "all",
+      "N": 192,
+      "coefficients": [
+        "21/64",
+        "13/96",
+        "7/24"
+      ],
+      "positive_ratio": "63/26",
+      "train_MSE": "2887/18432",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 16,
+      "omit": "KRRNvKRN",
+      "role": "whitecandidate",
+      "N": 96,
+      "coefficients": [
+        "49/160",
+        "13/80",
+        "27/80"
+      ],
+      "positive_ratio": "49/26",
+      "train_MSE": "581/3840",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    },
+    {
+      "source": 1170,
+      "prefix_percomposition": 16,
+      "omit": "KRRNvKRN",
+      "role": "blackcandidate",
+      "N": 96,
+      "coefficients": [
+        "9/20",
+        "7/40",
+        "19/80"
+      ],
+      "positive_ratio": "18/7",
+      "train_MSE": "1193/7680",
+      "scope": "Postcollectiondiagnostictrainingonly, notnewheldoutprediction or retrainedpolicytest."
+    }
+  ],
+  "new_go": 0
+}

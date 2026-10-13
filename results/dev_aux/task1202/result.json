@@ -1,0 +1,208 @@
+{
+  "status": "EXACT_OBSERVATIONAL_NU_WEIGHT_CURVES_NO_RESELECTION",
+  "rows": [
+    {
+      "source": 1154,
+      "N": 64,
+      "gram": [
+        [
+          "3/4",
+          "-3/4"
+        ],
+        [
+          "-3/4",
+          "3/2"
+        ]
+      ],
+      "endpoint_coefficients": {
+        "unit_search": [
+          "1/4",
+          "1/12"
+        ],
+        "uniform_random": [
+          "1/4",
+          "1/8"
+        ]
+      },
+      "rows": [
+        {
+          "search_weight": "0",
+          "coef": [
+            "1/4",
+            "1/8"
+          ],
+          "positive_ratio": "2"
+        },
+        {
+          "search_weight": "1/4",
+          "coef": [
+            "1/4",
+            "11/96"
+          ],
+          "positive_ratio": "24/11"
+        },
+        {
+          "search_weight": "1/2",
+          "coef": [
+            "1/4",
+            "5/48"
+          ],
+          "positive_ratio": "12/5"
+        },
+        {
+          "search_weight": "3/4",
+          "coef": [
+            "1/4",
+            "3/32"
+          ],
+          "positive_ratio": "8/3"
+        },
+        {
+          "search_weight": "1",
+          "coef": [
+            "1/4",
+            "1/12"
+          ],
+          "positive_ratio": "3"
+        }
+      ],
+      "root_color_stock_balancing_exact": true
+    },
+    {
+      "source": 1170,
+      "N": 256,
+      "gram": [
+        [
+          "3/4",
+          "-3/4"
+        ],
+        [
+          "-3/4",
+          "3/2"
+        ]
+      ],
+      "endpoint_coefficients": {
+        "unit_search": [
+          "17/48",
+          "1/6"
+        ],
+        "uniform_random": [
+          "19/96",
+          "5/96"
+        ]
+      },
+      "rows": [
+        {
+          "search_weight": "0",
+          "coef": [
+            "19/96",
+            "5/96"
+          ],
+          "positive_ratio": "19/5"
+        },
+        {
+          "search_weight": "1/4",
+          "coef": [
+            "91/384",
+            "31/384"
+          ],
+          "positive_ratio": "91/31"
+        },
+        {
+          "search_weight": "1/2",
+          "coef": [
+            "53/192",
+            "7/64"
+          ],
+          "positive_ratio": "53/21"
+        },
+        {
+          "search_weight": "3/4",
+          "coef": [
+            "121/384",
+            "53/384"
+          ],
+          "positive_ratio": "121/53"
+        },
+        {
+          "search_weight": "1",
+          "coef": [
+            "17/48",
+            "1/6"
+          ],
+          "positive_ratio": "17/8"
+        }
+      ],
+      "root_color_stock_balancing_exact": true
+    },
+    {
+      "source": 1176,
+      "N": 128,
+      "gram": [
+        [
+          "3/4",
+          "-3/4"
+        ],
+        [
+          "-3/4",
+          "3/2"
+        ]
+      ],
+      "endpoint_coefficients": {
+        "unit_search": [
+          "1/24",
+          "0"
+        ],
+        "uniform_random": [
+          "1/6",
+          "0"
+        ]
+      },
+      "rows": [
+        {
+          "search_weight": "0",
+          "coef": [
+            "1/6",
+            "0"
+          ],
+          "positive_ratio": null
+        },
+        {
+          "search_weight": "1/4",
+          "coef": [
+            "13/96",
+            "0"
+          ],
+          "positive_ratio": null
+        },
+        {
+          "search_weight": "1/2",
+          "coef": [
+            "5/48",
+            "0"
+          ],
+          "positive_ratio": null
+        },
+        {
+          "search_weight": "3/4",
+          "coef": [
+            "7/96",
+            "0"
+          ],
+          "positive_ratio": null
+        },
+        {
+          "search_weight": "1",
+          "coef": [
+            "1/24",
+            "0"
+          ],
+          "positive_ratio": null
+        }
+      ],
+      "root_color_stock_balancing_exact": true
+    }
+  ],
+  "new_go": 0,
+  "scope": "C/Dlabelzero remainfiniteH24, same\u03c0 different\u03bd; no humanprior/positiveclipping/favorableweightselection orpolicydeployment."
+}

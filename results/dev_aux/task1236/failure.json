@@ -1,0 +1,8 @@
+{
+  "status": "PREEXEC_SHELL_WRAPPER_ERROR_DIAGNOSED_FIXED",
+  "cause": "UnpairedtrailingPowerShellsinglequoteline accidentallyappendedafterheredoc; wholecommanddidnotexecute.",
+  "evidence": "Toolexit1emptyoutput, Test-Path analysisfile/outputdir bothFalse beforecorrected rerun.",
+  "actual_engine_go": 0,
+  "actual_files_before_correction": 0,
+  "correction": "Removedunpairedtail, executedvalidhere-string source; originalexperiments unchanged, no clockreset or earlyfinish."
+}

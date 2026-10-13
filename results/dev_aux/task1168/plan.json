@@ -1,0 +1,28 @@
+{
+  "status": "PRE_EXECUTION_NORMALIZED_FROZEN1164_SPEC",
+  "source": "task1164/plan.json",
+  "source_sha256": "17730c49a42f68f0595f9003dce519e1ecebd1d69e499765c6e0e004d3e3878e",
+  "roots": "task1165/roots.json all64",
+  "prices": [
+    360,
+    720,
+    1728
+  ],
+  "N": 720,
+  "arms": [
+    "J",
+    "L"
+  ],
+  "opponents": {
+    "unit_search": 720,
+    "uniform_random": null
+  },
+  "H": 24,
+  "nodes": 256,
+  "random_seed_base": 2026239000,
+  "epsilon": 0.03,
+  "max_seconds": 180,
+  "expected_seconds": 100,
+  "new_games": 1536,
+  "correction": "1164copiesold1151 split/new_games128/max_seconds120/random_seed_base fields; explicitnextreplicationfields override beforeexecution. No root or outcome change. ActualCartesian64roots2colors2opponents3prices2arms=1536, not768. Originalplan retained."
+}
