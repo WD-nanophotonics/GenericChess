@@ -1,0 +1,110 @@
+{
+  "status": "ENDED_REMOTE_VERIFIED",
+  "segment": 43,
+  "session_id": "8cdaf122-d00e-4dab-8d1e-9e211f5536cb",
+  "started_at": "2026-10-13T22:16:06.339455+00:00",
+  "ended_at": "2026-10-13T23:45:03.468055+00:00",
+  "elapsed_minutes": 88.952,
+  "reason": "safe_checkpoint",
+  "duration_gate_passed": true,
+  "research_stage_count": 5,
+  "scientific_complete": false,
+  "actual_cost": {
+    "status": "ACTUAL_COMPLETE_PHYSICAL_COUNTS",
+    "games": 17184,
+    "game_search_go": 254401,
+    "cold_controls_search_go": 72,
+    "total_search_go": 254473,
+    "perft_go": 5088,
+    "game_producer_seconds": 1544.1089999997057,
+    "game_batches": [
+      {
+        "task": 1170,
+        "games": 1536,
+        "go": 22988,
+        "producer_seconds": 138.70299999974668
+      },
+      {
+        "task": 1176,
+        "games": 768,
+        "go": 12739,
+        "producer_seconds": 76.48400000017136
+      },
+      {
+        "task": 1188,
+        "games": 384,
+        "go": 5825,
+        "producer_seconds": 34.57800000021234
+      },
+      {
+        "task": 1197,
+        "games": 6144,
+        "go": 89456,
+        "producer_seconds": 531.0
+      },
+      {
+        "task": 1206,
+        "games": 96,
+        "go": 1463,
+        "producer_seconds": 10.469000000040978
+      },
+      {
+        "task": 1217,
+        "games": 4608,
+        "go": 68796,
+        "producer_seconds": 418.25
+      },
+      {
+        "task": 1230,
+        "games": 2688,
+        "go": 38507,
+        "producer_seconds": 247.45299999974668
+      },
+      {
+        "task": 1233,
+        "games": 960,
+        "go": 14627,
+        "producer_seconds": 87.17199999978766
+      }
+    ],
+    "perft_batches": [
+      {
+        "task": 1169,
+        "count": 192
+      },
+      {
+        "task": 1175,
+        "count": 96
+      },
+      {
+        "task": 1187,
+        "count": 160
+      },
+      {
+        "task": 1196,
+        "count": 2560
+      },
+      {
+        "task": 1216,
+        "count": 960
+      },
+      {
+        "task": 1229,
+        "count": 1120
+      }
+    ],
+    "tiny_build_seconds": 0.9840000001713634,
+    "oracle_requests": 0,
+    "scope": "Allactualclosed/qualified24plygames. CachedH12zeroqueries. No singlehourrun, concurrency normal/noexclusivity/speedup. Analysis/audit/engineering/transport/publicationcostinsessionwall; tokensunmeasured.",
+    "measurement": "Storedcompletedproducerelapsed snapshot beforefinalresultserialization; consoleprintedtimecanincludeadditionalmilliseconds. Nativego literalcountsareexact; no tokenestimate."
+  },
+  "science_sha": "823fe60a55faec901e2b86471bebdba126464ebc",
+  "remote_full_sha_verified": true,
+  "immutable_report_cost_QA_bytes_exact": true,
+  "core_archive": "ACTUAL_MATURE_20261014_43.zip",
+  "core_archive_sha256": "be1165579237eb0bc635ba18f710e6a800aa9ddb9302c45a0dfe8fda71db1dbb",
+  "quality": "Actualliteral/history/PV/RNG/journal/terminal/nativeperft/oldnewdefault/price/readback/AST/JSON/privacy/archivehash/fullrestore checks passed. Allnegatives/censored/preexecutionfailures retained. Decoded162stagedZIPpayloads verified; randomcompressed6-characterpattern notcredential.",
+  "next_course": "1237 new64inputs/1238/1239 generationliteralcomplete; nativequalificationbefore3840games; no newgamesplayed",
+  "heartbeat": "ACTIVE",
+  "private_raw_published": false
+}
