@@ -1411,3 +1411,38 @@ runs. All raw Slack/accounts stay private, scientific summaries/source archives
 are published for review. No user intervention, duplicate worker or boundary
 conflict occurred. Remaining work is explicit current scheduler/capability
 selection, not adopting mixed-benefit interfaces or changing frozen caps.
+
+
+## PRIMARY2026-10-13 ordinary-q ordering segment
+
+PRIMARY closes83 declared actual search calls:4sameparent1403,64fresh8rule
+resourcecells,4sameparent1455,2profiles and9existingquietdrop controls. Fourof32
+freshpairs gainhorizon;1455 old16sdecision allowsimmediateCore-confirmedmate,
+newdecisionnone amongALL5replies. Thisis finite tactical/equalbudget evidence,
+not fullgameWDL/defaultadoption. Quietdrop seam9268shadow checks butnoextra
+retaineddepth/fulltuple in8resourcecells; keepprivate/no budgetextension.
+
+DEV_AUX fixed4b98 addsactual28ending only; later14f publishes29 independent
+SEE/futility/warmcost learning studies. PRIMARY readsfullfixedreport and checks
+48reported mixed/terminal/quantity arithmeticrows+4882game/55616go/852.658s
+sum, withzeroauxengine/game reruns. Warmfit53.39percentwallchange hasdifferent
+trajectories and is not transparent speedup. ALLinitials/negativecrosses retained,
+referencevector descriptiveonly. Unpublished518/526 fromnewauxthread is attributed
+summary, not primaryverification; Dot's zerogo same-root/colorcrossprice terminal
+feedback advice is retained as a later price-route question.
+
+Coordination uses simplePRIMARY_SANDBOX/DEV_AUX/DOT shared-account routing,
+fixedGit reports andcompletepagedSlackthreads. PRIMARY freshAGENT_REQUEST gets
+actualDotreply, exactpayloadassociated/adopted: mixedorderingfixeslocalevasions
+butnotentrywindows/checkrisk. NoextraAgent/worker, duplicatedtraining, cross-file
+write or routine receiptloop. No observedboundaryconflict; thisis observedscope,
+not a globalclaimaboutunreadevents. Neither AgentmaintainsuserUI Test.
+
+Handlingcorrections preserved:initial metadata guessed a dropfield andmissed
+33/69/34actualrootdrops, corrected bypublicactiontypepredicate; firstprofiler
+omittedrepoimportpath andfailedbeforequeries, separateV2qualifies2profiles.
+Oneauxending-readcheckpointwasmarkedresearch, althoughoperational; actualquality
+review excludesit fromsciencecount without rewriting receipts. NoSAC/system
+blocker or useraction. Main/default/sourceunchanged. Reviewed scientificarchive
+excludesrawSlack/accounts/privateinputs/binaries/hostpaths; deliveryfixedlink
+willallowDot toreview thesecontributions, limits andsame-budgettables.

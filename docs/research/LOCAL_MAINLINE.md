@@ -26,39 +26,30 @@ roots, not claimed improved end-to-end or an independently reproduced user loss.
 
 ## Current measured question
 
-CORE_CHECK_TRANSPORT.md closes the current caller/algorithm question. Native
-check with an extra import has no consistent gain; private immediate sharing
-saves3–5percent locally but48fresh calls/24pairs have NO horizon gain and an
-observed external-pending/error-stage gap prevents transparent API adoption.
-Keep it private. Existing public PVS/q-ordering factors instead change work:
-16fixedD2 cells agree in full choices;64fresh16/64s cells show PVSlex0deeper/
-16same, ABqordered1deeper/13same/2lower, PVSqordered0/14/2. The1403 hard8 loss
-is a real checked nonterminal with13evasions after19legal plies; no cap-rescue
-or uniform default switch. Same-depth full choices agree, ordinary load retained.
+ORDINARY_Q_ORDERING.md tests existing ordering only outside check, retaining
+lexical evasions. Eight fresh movement-mixture roots close64calls/32pairs:
+4deeper,28same,0lower; same-depth fulltuples exact, alltime exits/nohard8,
+fullroot/history restored. No universal stability or default/UI adoption.
+On1455,16s lexicalD1 selects a move with2 immediate mating replies among59;
+mixedD2 selects a move with0 among5. IndependentCore ALLreply/PV replays and
+sameparentD2q4 forcedbranches qualify this finite tactical difference, not WDL.
+1403 sameparentD3 forced1913/2071 has conditionalregret158; oldhard8 remains.
 
-HISTORY_ACTION_CACHE.md fixes a separate actual relevant-history loss found
-during this work: legalpass/noop same current state has different future
-consecutive-action draw, yet old TT keys merge. Actual public warm0/cold-7
-becomes-7/-7 with conditional fullsignature/digest/exactguard and verified-history
-TT eligibility; plain rules retain old keys. Final2,319 tests/0fail/error/skip,
-publisher89 and actualremote f88 qualify this scoped repair.124initial default-
-temp setup errors are retained and the fresh project-temp recovery is verified.
-Dot reads fixedsource/tests, notexecuted; trusted Core/sessionwitness or successful
-public replay is the provenance scope, not arbitrary forgedwitness certification.
+Two explanatoryD2 profiles locate discardedquietdrop Core bookkeeping; existing
+guardedexclusion shadow9268 passes, but8mixed16/64cells allsameD2/D3fulltuples.
+Keep that seam private, no unchanged scaling. Currentmixedordering remains a
+private useful feasibility candidate; next examine one relevant supported-caller
+integration/qualification question, not more budgets or newengines/caches.
+Dot fixedsource review adopts stage-intervention versus unique-cause distinction;
+checked boundary abort precedes localorder and ordinaryorder changeswindows.
 
-AUX28 fixed5ef/6d69 is read and independently checked for384actualrounds/
-12672scorecells/88endpoint-family rows, not9,104games/binary/RNG/PV reproduction.
-Budget/objective/initialization effects remain mixed; local mixed winners never
-override a strict higher terminal mean in these384rounds. No human fitting,
-unique-cause or primarymerge follows. Reviewed111member archive and data index
-bind source/results/failures; Native C closure remains in prior lookup archive.
-
-Next judge the observed changed1403 D2/D3 root decisions under the SAMEparent
-D3/q4/hard8 context via one bounded existing forced-action diagnostic, if it
-changes whether completion loss is a decision-quality issue versus support-only.
-Keep caps/root/profile fixed, TT-off diagnostic separately declared and unknown
-branches retained. Price learning and currentNative/specialist scheduling remain
-open later tasks; no new cache/engine/framework or unchanged micro-rerun backlog.
+HISTORY_ACTION_CACHE.md/f88 remains testedproduction: trustedCore/session or
+successfulpublicreplay, finalprior2319fulltests. Current7b source unchanged.
+AUX29 fixed14f is report-read/arithmetic-only48rows/4882games/55616go, notbinary/
+training/PV reproduction. Warm53.39percentfitwallchange alsochangestrajectories;
+priceidentification remainsopen. LatestauxDot advice recommends zerogo same-root/
+color cross-price terminal feedback with DRAW distinctfromunfinished; unpublished
+518/526 summary is not PRIMARY verifieddata. No humanfitting/primarymerge.
 
 ## Prior selections and preserved limits
 
