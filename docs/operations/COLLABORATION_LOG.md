@@ -1793,3 +1793,16 @@ active-window failure and minor private script/fixture/import errors are kept,
 repaired and counted; no hidden block or necessary user intervention remains.
 Source/qualified scope and evidence are in WIDE_READONLY_VIEW.md and its
 explicit allowlist archive, excluding rawSlack/account/receipts/binaries.
+
+Publication correction: initial diff --check flagged CR endings and the shell sequence still committed/published; no claim that this check passed. Standalone public source/report/JSON now normalize LF only; exact private bytes stay in the original ZIP.66related tests passed. Future dependent checks explicitly stop on error; no raw/private data or production change and no user intervention.
+
+Closed science supplement: the24call immutable-view curve completes967.336s,
+all12 full retained tuples same and0newcompleteddepths.18/24still effectiveq0
+under configuredq4, while12 retainsq4. Extra compile/player setup is charged,
+so no excluded-preparation gain. Decision is defer production/interface adoption
+and retain the primitive only as finite evidence. One new16s consumerprofile
+began immediately:301140transitions/to_position and283024S3trials vs18116runtime
+pushes. Overlapping profiler times are not summed or called recoverable wallgain.
+299actual research searches include failed/unsaved andcancelledcalls; internal
+pytest calls are separate. Finalarchive includes the closedcurves/profile and
+publication-format failure evidence; raw/private data andbinaries remainexcluded.

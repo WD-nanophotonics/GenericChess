@@ -94,13 +94,29 @@ ordinary concurrent load is an interpretation limit. This curve compares search
 allowances, reporting extra static preparation separately; its budgets were not
 extended.
 
-A distinct prospective24-call immutable-view curve is running for the exposed
-generated12/18/24 q4 roots,16/64 seconds and both orders. Incremental readonly
-compile and player initialization are deducted from the same end-to-end allowance.
-The8-board immediate tactical control is already retained in the fixed study
-and is explicitly excluded from an ordinary-q curve, not resampled. This new
-premise followed the recorded representation failures; the two different curves
-are not a split of one planned>1hour run. No result is claimed before it closes.
+The prospective24-call complete-view curve closed967.336s. Incremental readonly
+compile and player initialization are charged to the same16/64s totalallowance.
+All12 pairs retain identical complete action/score/PV/depth/policy tuples:
+0deeper/12same/0shallower.12board retainsD2/D3 with effectiveq4;18/24 retainD1
+with effectiveq0 at both16/64s, despite configuredq4 and higher candidatepartial
+qnodes. No hardq/check-budget abort explains those outcomes: ordinary time
+expires before the first q4D2 is retained. Compilation/preparation sometimes
+costs0.16s at18 and0.61s at24 and is not excluded from this result. The8board
+immediate tactical case remains in the fixed controls, explicitly not resampled.
+
+Decision: preserve the readonly view as a finite viable primitive, defer
+production/interface adoption and do not extend these budgets chasing depth.
+Fixed-cost reductions did not change useful retained decisions here. The next
+actual work began with one16s profiled Core pending-q4D2 consumer diagnostic on
+2017/18board. It again retainsD1/effectiveq0. In the profiled call,301140 physical
+transitions/to_position constructions and283024S3 trials accompany18116 runtime
+push/check calls. iter_legal_action_bindings has10.621s inclusive, transitions
+3.196s, terminalprobe4.344s and _gave_check0.777s; these overlap and cannot be
+summed as recoverable walltime. Selftime separates7million checkpoints, board
+candidate scheduling and repeated transition/materialization. Do not revive the
+rejected old lazy/S3 route without a changed consumer premise and a finite test.
+Choose one required Core trial/representation consumer next; no position patch,
+Elo campaign, evaluator fitting, arbitrary cap lift or framework prerequisite.
 
 ## Failures and collaboration limits
 
@@ -126,13 +142,13 @@ is inferred. Raw Slack/account/receipts remain private and excluded from Git.
 
 ## Reproducible science checkpoint
 
-Explicit115-member archive:299594bytes, SHA256
-7eaef48f6e6e7a4091879220884c7825ea6d592b32227e5d437c3e64e269b15b.
-All member hashes,38 Python ASTs and72 JSON records were checked. It excludes
-raw Slack/account/receipts, pstats, binaries and the still-running view curve.
+Final explicit122-member archive:313901bytes, SHA256
+3cfbfc28fcc62460f38e492c07050b50b56025c99b4c75ddb66ffd80b6add258.
+All member hashes,39 Python ASTs and78 JSON records were checked. It excludes
+raw Slack/account/receipts, pstats and binaries; both declared curves are closed.
 The legacy imports counter for the last version counts carrier entries;
-it does not mean a full native board projection was copied. Published source
-copies and archive members are exact private-prototype versions.
+it does not mean a full native board projection was copied. Archive members preserve exact private-prototype bytes. Standalone published
+source copies have only CRLF-to-LF normalization; code content is unchanged.
 
 The all-check bridge is a temporary process-local attribution experiment that
 restores the class method in finally. It is not a production injection interface.
@@ -141,3 +157,12 @@ unbounded guard list or no-checkpoint caller. Any later production integration
 must retain explicit Core fallback and a local caller boundary; this is a
 concrete consequence of the observed coverage/transport costs, not an approval
 queue or demand for a new framework.
+
+Publication workflow correction: git diff --check flagged CR line endings; the
+PowerShell sequence did not halt before the first commit/push. That check was
+not passed. Standalone public text is now normalized to LF, while the original
+science ZIP remains unchanged. Relevant66 tests passed. Subsequent outgoing
+checks stop on failure; this is a resolved workflow defect, not a private-data
+publication or production-code change.
+
+Actual research searches:299 as explicitly accounted in the data index;280 fixed/curve calls are not the total. Original failures, both cancellation versions and5profile calls remain separate. No active producer or necessary user action remains; science is OPEN.

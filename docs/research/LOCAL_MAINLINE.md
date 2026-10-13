@@ -28,12 +28,16 @@ windows. Up to19ms request execution delay is not hidden or called a guarantee.
 
 The old narrow-hook64-resource curve closes2565.031s:1deeper/31same/0shallower,
 one24/aux-on/q0/16s crossing with unchangedaction/score, unconfirmed by the
-otherorder. Do not deploy from it or extend its frozen budgets. Current next
-actual work is the running24-call generated12/18/24 q4 view curve, charging
-incremental staticcompile/player preparation to same16/64s totalallowance.
-Select a local readonly consumer interface only if endtoend useful; otherwise
-keep the finite reader as evidence and choose an actual Core bottleneck. No
-position cache, globalcap lift, new evaluator or framework admission gate.
+otherorder. Do not deploy from it or extend its frozen budgets. The new24-call view curve
+closes967.336s with extra compile/player preparation charged to total16/64s:
+all12 complete retained tuples same,0deeper/12same/0shallower.18/24still retain
+D1/effectiveq0 despite configuredq4 and extra partialqnodes. Defer adoption.
+Next question is required Core physical-trial/representation cost in unfinished
+q4D2, not largerbudgets oroldunchangedlazycheck. One16s actualprofile has begun:
+301140transitions/to_position vs18116runtimepushes,283024S3trials; inclusive
+binding/terminal/transition times overlap, and profiled counts are not ordinary
+throughput. Choose one concrete consumer premise/finite control with complete
+semantics/stops; no positioncache/globalcap/evaluator/framework gate.
 SCALAR_COUNT_AND_NATIVE_BOUNDARY.md retains rejected lazy/count routes and
 old byte/codec limits; no unchanged reruns or reclaimed unexposed status.
 
