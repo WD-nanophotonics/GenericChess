@@ -1753,3 +1753,43 @@ DEV_AUX继续自己的库存合法Shogi与少子Chess exact动作WDL支线。主
 结束前再次读取已完成线程，发现DEV_AUX40后来结果及固定7870cd240040a3a4d1010214d96af0e6414e3dbd报告/COST，纠正上面“尚未发布”的当时状态。主Agent全文读取并核对12局批次2088局、27420游戏搜索+1152根查询=28572、逐批terminal+C、169API批次+1预检=170，以及镜像4/64和6/64平均5/64。仅汇总算术，不是原始游戏/标签/perft/引擎复现；5x5KRN是明确无升变/drop的局部规则，不替代完整generic目标。报告all32trainingcases的分母未独立厘清，不冒认单局覆盖。没有新增辅助任务、重复对局或merge。
 
 主工作段实际UTC2026-10-13T18:13:37.215474+00:00至2026-10-13T19:26:34.933744+00:00，72.962分钟/13研究检查点，safe_checkpoint finish接受。包含声明计算、推导、诊断和传输，不声称精确CPU或独占有效分钟；80研究搜索/78已存决策如上。结束依据是实际研究后的安全经过时间检查点，科学仍OPEN，全部自身producer闭合、无用户操作障碍；下一只读原型及两个独立备选已写入可执行memo。
+
+## 2026-10-14: wide readonly carrier, actual caller and cancellation limits
+
+PRIMARY_SANDBOX session96df9275-a371-45d9-a5a9-cacbf6c44416 started
+2026-10-13T19:45:32.585154Z and is still active at this publication checkpoint.
+Main work is isolated mechanical capture-row C reading, complete aux/immutable
+board carrier comparisons, real token/exception rollback and endtoend search
+costs. Production code/old Native ABI/cap/defaults/UI stay unchanged.
+
+Six fixed series192calls preserve all recorded non-timing decisions/PVs/work.
+C import/callback failures are kept, not silently generalized into speedups.
+The last view has6ordinary generatedq4 pairs locally0.910–0.973x; the8board
+D0 tacticalcontrol is separately retained. The old narrow64curve closes with
+oneD9/D8 crossing/31same, sameaction/score andotherorderD9/D9; no stablegain
+or strength claim. One different24call viewcurve now charges extra compile
+cost to the same total allowance; current scientific result remains pending.
+
+DEV_AUX continues its own sidemission lane. PRIMARY read the complete new
+AUX41 root/reply, but did not reproduce1152games/64trees/UCI isolation. Adopt
+only the stated interpretation limits: strictR>kN,262notuniform270saturation,
+actual leaf-scaling verification andfixedopponent needed for candidate-scale
+attribution. Defer price work here; no duplicate games, merge, checkout/state
+write, routine auxiliary wake or resource exclusivity request. No observed
+cross-writer conflict; no measured team-efficiency percentage. Simple shared-
+account labels remain routing, not cryptographic process authentication.
+
+Slack new roots and completed threads are fully saved privately and original
+primary reply is exactly reconciled unchanged. Delivery/read/adoption do not
+mean Dot independently executed the new C prototypes. No acknowledgement loop
+or invented approval gate. This fixed science/archive/source checkpoint and
+collaboration summary will be published for actual remote review.
+
+The latest six full-search cancellation controls all return legal retained
+fallback and fullhistory. Four see a cancelledtoken at an actual C poll; two
+miss short scans. Requests sometimes execute in a later query than the one
+which scheduled them, and request execution can lag19ms. The earlier asserted
+active-window failure and minor private script/fixture/import errors are kept,
+repaired and counted; no hidden block or necessary user intervention remains.
+Source/qualified scope and evidence are in WIDE_READONLY_VIEW.md and its
+explicit allowlist archive, excluding rawSlack/account/receipts/binaries.

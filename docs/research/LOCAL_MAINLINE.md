@@ -13,28 +13,29 @@ minimal alpha-beta/specialized-rule controls and mature overall references.
 Separate rule execution, representation, repeated scheduling, optimization,
 defined work and equal-time retained useful decisions. No Elo/speed parity gate.
 
-SCALAR_COUNT_AND_NATIVE_BOUNDARY.md closes80 research calls (78 retained plus
-2 unsaved failed-diagnostic calls). Reject the lazy first-reply write witness;
-defer sparse enemy-count yields: scalar0.336Ã¢â‚¬â€œ0.584x but actualfixed caller mixed,
-64 fresh resource calls/32pairs all retained same. q0 negativecontrol and
-configured q4/effective q0 fallback are distinguished. No production/default/
-UI/Native change or claim of tactical benefit;35 private candidate tests pass.
-First observed qpolicy difference has0 immediate opponent wins in all2/155
-replies, not general safety. Native pack256/575 refusal and concrete u64 alias,
-actual53,920-byte layout and hypothetical +2,560-copy-byte cost are separated.
+WIDE_READONLY_VIEW.md is the current isolated readonly feasibility result.
+Old Native codec/cap/defaults/UI are unchanged. Core owns complete legality,
+transitions, promotion/drop, S3/S4 and history. The scoped ray/leap/pathclear/
+square-slot reader declines other guards/references; it is not the full target.
+Full ctypes import loses; compact payload/all-check coverage alone is mixed;
+synthetic chunk-poll gains fail transfer. Complete immutableboard C reading gives
+six ordinary q4 generated fixed-work pairs0.910–0.973x with full recorded
+non-timing tuples/PV/work equal. This is exposed development, not deployment or
+strength.128 typed states115200 paired scalar queries and actual token/required-
+error rollback qualify finite cases. Latest six actual cancelled searches return
+legal fallback/fullhistory;4 observe cancelledtoken insideC,2 miss shortquery
+windows. Up to19ms request execution delay is not hidden or called a guarantee.
 
-Next useful question: can an explicitly opt-in large-board readonly scalar
-carrier improve an actual supported caller while preserving full aux and
-active-scan stop response? Existing Core check_provider reaches _gave_check
-only; measure imports/hits/wholecaller cost, not all S3 queries. Dot fixedsource
-review supports scoped feasibility, identifies GIL/nointernalpoll and old
-availability-handoff boundaries, and grants no new authority. Four18/24 aux-flip
-Core controls, >255 source/anchor and8 normal/cancel runtime pushes have begun
-this input baseline; Native-wide implementation/latency remains untested. Existing fullPython payload
-floor is0.229â€“0.263 ofCore query on these4states, excludingCimport/query; one
-bounded opt-in prototype is selected, not accepted orglobally enabled.
-Keep Core full fallback and old small-board ABI/cap; do not blindly enlarge
-globalarrays, add a position cache or demand a new framework before a finite test.
+The old narrow-hook64-resource curve closes2565.031s:1deeper/31same/0shallower,
+one24/aux-on/q0/16s crossing with unchangedaction/score, unconfirmed by the
+otherorder. Do not deploy from it or extend its frozen budgets. Current next
+actual work is the running24-call generated12/18/24 q4 view curve, charging
+incremental staticcompile/player preparation to same16/64s totalallowance.
+Select a local readonly consumer interface only if endtoend useful; otherwise
+keep the finite reader as evidence and choose an actual Core bottleneck. No
+position cache, globalcap lift, new evaluator or framework admission gate.
+SCALAR_COUNT_AND_NATIVE_BOUNDARY.md retains rejected lazy/count routes and
+old byte/codec limits; no unchanged reruns or reclaimed unexposed status.
 
 S3_FULL_FRONTIER_INTENT.md remains the latest adopted product change:
 exact generator-local observation for explicit full binding materialization,
@@ -77,7 +78,8 @@ checkout writes, merge or routine wake. COLLABORATION_LOG records the scope.
 
 |Purpose|Record|
 |---|---|
-|Current private cost rejections, readonly feasibility, auxiliary uncertainty|SCALAR_COUNT_AND_NATIVE_BOUNDARY.md; data/scalar_count_native_boundary_20261014.json|
+|Readonly view caller/stop feasibility and current costs|WIDE_READONLY_VIEW.md; data/wide_readonly_20261014.json|
+|Previous private cost rejections, native boundary and auxiliary uncertainty|SCALAR_COUNT_AND_NATIVE_BOUNDARY.md; data/scalar_count_native_boundary_20261014.json|
 |Adopted full-frontier intent/coordinate cost and metadata correction|S3_FULL_FRONTIER_INTENT.md; data/s3_intent_20261014.json|
 |Compile-owned endpoint fallback and stable generated IDs|COMPILED_ENDPOINT_FALLBACK.md|
 |Core check/provider/input lifecycle contract|CHECK_INPUT_HANDOFF.md|
