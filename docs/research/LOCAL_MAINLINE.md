@@ -1,395 +1,89 @@
 # Current local research mainline
 
-AGENTS.md and current user directions govern. Science is OPEN. This is current
-selection/resume context, not a diary or advisor backlog. Detailed results and
-failed attempts belong to the purpose-specific records below. The previous
-long mainline is recoverable at Git396b773b3afe6ff5a0545a0e8ffbf9534d64eb8a;
-consolidating this file changes no experiment, permission or operating rule.
+AGENTS.md and current user directions govern. Science is OPEN. This file is
+current selection, not a diary or advisor backlog. Detailed prior mainline is
+recoverable at Git071042ee0add38761cf2992c881f7f44d00784bb; purpose reports and
+frozen data/archives remain unchanged. The former large inline history caused
+routine-read truncation and is no longer duplicated here.
 
-## Current direction and next decision
+## Priority and current decision
 
-The2026-10-10 user-requested handoff places search capability and bottleneck
-attribution first. Diagnose actual supported generic search/backend against a
-minimal alpha-beta with Chess/Shogi specialized rules and mature engines; use
-the same minimal AB on generic rules as a thin cost-attribution bridge. Fix and
-measure infrastructure defects when they impede these judgments. Distinguish
-rule execution, representation, repeated scheduling, algorithm optimizations,
-actual budget completion and useful decisions. No speed/Elo parity threshold.
+Search capability/bottleneck attribution first: supported generic backend,
+minimal alpha-beta/specialized-rule controls and mature overall references.
+Separate rule execution, representation, repeated scheduling, optimization,
+defined work and equal-time retained useful decisions. No Elo/speed parity gate.
 
-Dot reply1791720309.389569 selects a one-second delivery comparison after the
-prospective completion-policy depth loss. Completed112prospective calls,
-48equal-node controls and120offlineUI calls reject unconditional full-q4 refresh
-adoption: support gains compete with completed depth. Keep production/UI
-policies fixed; close cap-rescue/adaptive-refresh work and return to cost attribution.
-The frozenUI99c97 one-second profile is tested offline on30existing synthetic
-roots, not claimed improved end-to-end or an independently reproduced user loss.
+SCALAR_COUNT_AND_NATIVE_BOUNDARY.md closes80 research calls (78 retained plus
+2 unsaved failed-diagnostic calls). Reject the lazy first-reply write witness;
+defer sparse enemy-count yields: scalar0.336–0.584x but actualfixed caller mixed,
+64 fresh resource calls/32pairs all retained same. q0 negativecontrol and
+configured q4/effective q0 fallback are distinguished. No production/default/
+UI/Native change or claim of tactical benefit;35 private candidate tests pass.
+First observed qpolicy difference has0 immediate opponent wins in all2/155
+replies, not general safety. Native pack256/575 refusal and concrete u64 alias,
+actual53,920-byte layout and hypothetical +2,560-copy-byte cost are separated.
 
-## Current measured question
+Next useful question: can an explicitly opt-in large-board readonly scalar
+carrier improve an actual supported caller while preserving full aux and
+active-scan stop response? Existing Core check_provider reaches _gave_check
+only; measure imports/hits/wholecaller cost, not all S3 queries. Dot fixedsource
+review supports scoped feasibility, identifies GIL/nointernalpoll and old
+availability-handoff boundaries, and grants no new authority. Four18/24 aux-flip
+Core controls, >255 source/anchor and8 normal/cancel runtime pushes have begun
+this input baseline; Native-wide implementation/latency remains untested.
+Keep Core full fallback and old small-board ABI/cap; do not blindly enlarge
+globalarrays, add a position cache or demand a new framework before a finite test.
 
-Latest2026-10-14: S3_FULL_FRONTIER_INTENT.md delivers exact generator-local
-S3 observation only for existing completebinding materialization; existence/
-filters/provider/cache routes unchanged. Fulltransition/otherS3/S4/history/
-required errors andcancellation retained; guard/retype/secondinvariant controls.
-Final2,429active tests,200actualsearches close. S3fresh64andfinalcombined16:
-40retainedpairs allsame depth/fulltuple, no strength/depthgain. Final16fixed
-fullnon-time/work exact, localcost22.4–40.2percent lower; ordinaryload remains.
-Private sourcecoordinate16fixed+32fresh qualifies one small guarded removal;
-evaluator scores/weights/defaults/UI/Native unchanged. Nativeevaluation16 q4
-tiny/mixed anddirectpoll8mixed deferred.96grammar/794transitions+16rectangle+
-8actualmetadata-absent24PVE controls retainfull domain/fallback.
-q4profile1994 has209112endpointrows, not metadataabsent: mistaken assumption
-and0-queryfailedtargetcache probe retained/corrected, actualcounts intact.
-Existingendpoint/currentboardjoin is2.17–3.06xslower; reject. Next changed
-premise: existingvalidatedframe check pluscandidate-local dependency/write
-closure forfirst-only reply, finitecost/error counterbefore integration;
-no newpositioncache/metadata/default. Aux37/3b5ca fixedreports read/arithmetic only;
-newAux39 NB8inventory withdrawal honored, no primaryadoption/merge/rerun.
+S3_FULL_FRONTIER_INTENT.md remains the latest adopted product change:
+exact generator-local observation for explicit full binding materialization,
+complete transition/S3/S4/history/errors/stops, existence routes unchanged.
+Prior final2,429 active tests and200 searches; combined fixed costs locally
+22.4–40.2% lower,40 retained resource pairs same. No strength claim.
+COMPILED_ENDPOINT_FALLBACK.md retains2398/48fixed/64fresh and the K/P/X ID repair.
+Native<=16 and actual compile endpoint metadata are distinct from Core fallback.
 
-Latest2026-10-13: COMPILED_ENDPOINT_FALLBACK.md adopts one bounded compile-owned
-endpoint schedule only after originalincoming metadata declines; normal indexed/Native
-routes remain.2398 active/44focused/141forcedconsumer/37generator checks pass;48fixed
-fullnon-time/work exact.64fresh q0/q4 resource calls give6deeper26same0shallower
-pairs; gains onlyq0 three16s roots, no strength claim. Memorypeak freezing andcold
-constructor cost are measured separately. Reserved K/P/X collision blocked23+
-generator boards; stable IDs repair it without changing originalvalid<=22seeds.
-Actual24Core twoD0node256 moves submit;28openingfilter unavailable stays. Rawfailed
-probe/Temppermissions/checkpoint403 error and per-pollfile-read timing artifact are
-retained/corrected, not hidden backend failures or user approval gates.
-Next: residual q4 fullfrontier/S3 costs.631/681 finite unchanged childchecks suggest
-a frontier-local influence premise; a validremote state-guard counterexample rejects
-geometry-only generalization. Actualcompile guard/effect facts have begun a bounded
-conditionalprototype input; preservefull fallback, child/S4/history/errors/stops.
-No productionS3skip, additionalcache, UI/default orNative expansion.
+## Retained objectives and evidence discipline
 
+Two long-term lines: rule-only generic piece values, cross-game ordering/ratios/
+bias; efficient stable generic search on unfamiliar mixtures/recombined/generated
+rules. Generic means the complete generated domain, preserving promotion/drop/
+auxiliary state and relevant history. Scoped prototypes may state exclusions;
+they cannot replace that target with hand-written game solutions.
 
-MIXED_Q_PUBLIC_API.md delivers the ordinary-only q orderer through an appended
-explicit SearchTuning field. Final2,328 active checks, actual before-source
-8call default/all-q parity, scoped mate/type-effect/hardabort/cancel recovery
-and4existingpublicNativeavailability optin calls qualify the small interface.
-Old defaults/UI/PVS/nativeABI remain. No duplicate provider is added: reuse
-use_native_semantic_availability=True; normal Core availability is supported too,
-but1455 mixed16s remainsD1 withoutthatoptionalbackend (Native routeD2/6449).
+After search attribution, compare rule constants, averaged/frozen constants and
+small state-interaction evaluators by useful signal and caller cost. Static
+tables are cheap candidates; context dependence does not refute averaging under
+an explicit play distribution. Small local training is authorized. Any single
+project run expected>1hour first obtains Dot's necessity assessment, retaining
+cheaper alternatives, fair conditions and stops; this is not a segment-duration gate.
 
-The new4freshrule PVS x qscope plane accounts for64cells:48actual plus16unavailable
-1511 retained withoutreplacement. All24PVS/24qscope fulltuples agree/no extra
-horizon/action; exits28time/4hard8/16rootwins. IndependentCore replay ofALL48
-PVs andfullroot/history restoration pass.16fixedD2/D4 controls show PVS qwork
-saves10–12percent on1512 butgrows1.71percent in1514mixed; no universaladoption.
-OnecurrentmixedD4 profile has68930pushes/12820q; classification/fullchildcommit
-remainlarge, whileXOR/nonboardmap smallcomponents defernewtoken/cacheengineering.
-Do not rerun oldquietdrop/sharedcheck negativeplanes withoutchangedpremise.
+Games diagnose methods/price holes; no positional-patch/Elo campaign, human-price
+fitting or Xiangqi human-holdout reads. Preserve frozen cap failures and exposed
+status. Semantic equivalence, finite-board saturation, raw/normalized/clipped
+prices, empirical quantity/splitting and separate game semantics remain.
+Exact WDL/all-defense proofs are not development admission requirements.
 
-ORDINARY_Q_ORDERING.md remains immutable prior64call/32pair4deeper28same0lower
-andfinite1455 immediate-mate distinction, not fullWDL. Itsprivatecandidate is now
-a supportedoptin withexplicitconsumer/backend limits, not universalhard8immunity.
-HISTORY_ACTION_CACHE.md/f88 productionhistoryrepair remains intact.
-Q_CLASSIFICATION_COST.md closes18 additionalactualcalls:twofullchild classifiers,
-each63029classification/6categoryshadow,8fixedD2/D4controls and40privatechecks.
-Allnontime/fulltuplework exact; costs locally.49–2.70percent lower, not a clean
-factor/horizon gain. Retainprivate/deferintegration oninformation/engineeringcost;
-no arbitrarypercentgate/extension/newcache/runtime/default/UI. Dotfixed774 review
-adopts affectedversusrecoverablecost andgeneratorprofileperturbation.
-PrimaryRG/Ludii/splitmove papers are forwardmodel/simulation evidence, notmatched
-Coreq4. Exactcurrent3root hypotheticalgroup-uniform TV383/700,891/1648,19/84
-shows a split sampler changes complete-action distribution; current samplerfixed.
-Next choose one actualconsumer/representation premise with a decision-changing
-finite control, not newcompiler/framework or unmatchedexternal-speedclaim.
+AUX40 advice is later interpretation: legal/selected WDL ranges, true paired
+gains/losses and shared unknown action labels. Its newgame/label numbers remain
+attributed preliminary summaries. PRIMARY verifies22,830 finite uncertainty
+bounds only, not auxiliary training/binaries. No duplicate auxiliary work,
+checkout writes, merge or routine wake. COLLABORATION_LOG records the scope.
 
-DEV_AUX latestpublished source stays14f/report29, previously48arithmeticrows
-checked only. New31resume thread reports closed533/534 andpartial535 underold
-expired532wallclock; no resets/full8endpoint claim. Theseunpublished numbers are
-attributedsummary, not primaryverifieddata. NewDotcontroller advice requires
-sameboard/differentlegalhistory terminal-before-go/RNG andexactorderedaction/RNG
-parity; adoptasinterpretation, no duplicateauxwork. Its pooling/diversefamilies
-price direction is a hypothesis forlaterline, no newauthority/humanfitting.
+## Current evidence
 
-Current2026-10-13 bridge: CURRENT_SHOGI_Q0_BRIDGE.md closes48 original cells,
-47 fullD2 argmax children,16 same-comparator trace controls and existingavailability
-cost/delivery supplements.Bridge140 retained/142 physical calls; separately6 TT controls plus1
-unrecorded checker call give segment146retained/149physical;41 existingtests pass.
-Differentfixedmiddle actions are exactties, fullCore/Native PVs differ. No same-
-algorithm persistentNative/specialist factor: canonical/TT/work differ. SameUSI
-Core legal+availability stillcosts8.46–8.50x middle and14.74–15.03x promotion,
-localordinaryload; availabilityalone middleD3 at1/4s. Requiredtransport/check/
-history costs remain; no defaults/UI/q4/newengine change. AUXpublished8a04fa5e
-report31 read-only; newcross-horizon advice belongsAUX, no duplicategames/fit.
-Slack chat comments are reference suggestions, assessed ratherthanautomatically
-adopted. ActualpromotionD8 TT/fullPV control6calls allfulltuple11953visits
-exact, TT1.907–1.937s/noTT1.281s; no globaldisable. Nextplayedroot fixedTT
-transfer or actualCore transport/check primitive, not newcacheframework.
-
-Currentchecktransport2026-10-13: CHECK_INPUT_HANDOFF.md qualifies default-OFF
-publicNativecheck plusgenericCore check_provider; one-use exactPosition input
-for existingreadonlyavailability, no boolean/history/terminal/score caching.
-201closedcalls; final2341/45checks. Dot's sameP entrycancel exposesunpublished
-candidatepending retention; fixedentrycleanup oldfails/newpasses andexactretry
-imports1. Defaultbefore/current8sourcecalls exact; active13history terminal
-versusfreshsameP staysCore-owned, firstpassfixture onlyunsupportedCorefallback.
-Fresh4roots32fixed/8shadow982check/64equal-time: allretained32tuples/depthsame,
-mixedsmallcosts; no globaladoption. Heavy1455D2/1514D4 fullworkexact,1.5–5.1percent
-localcost saved. CoreTTon/off changes middlefulltuple thoughbothoptimal, no
-globaldisable. Nextprofilealreadybegun16.798s: requiredpush/componentdiff/
-frontier costsremain; identityguard/tokencaches alreadyexist, no duplicatepatch.
-Actual3transition/0search witness rejects existingtrigger events ascompletewrites
-(promotion/drop misses, handchanges); no framework, privateactualset_piece trace
-onlyifcompletehash/state/history proof andwholecallcost canchangechoice.
-AUX32fixed54c95e0d read-only: denserterminaltrial objectiveschooseidentical
-endpoints, bothreference distancesworse; nofit/default adoption.
-
-Currentmembership2026-10-13: CORE_BINDING_MEMBERSHIP.md adopts only reuse of
-the existing complete current semantic bindingdict fornonpass membership.
-Pass/legacy/unhashable rejection keepoldtuple path; no addedcache/lazybinding/
-NativeABI/default/UI policy.115 actualsearches/final2349checks,154focused;
-actualbefore/source fixedwork savings1.90–5.10percent locally, no globalfactor.
-All12 retainedresource tuples at4/16/64seconds unchanged; morework notdeepergain.
-New4rule64declared:48actual/16unavailable1731 retained, no replacement; full
-nontime/backend/history/PVs exact. Footprint9 andhelper9/index8 remainprivate
-onmeasuredcost/contract;83595pathshadow corrects138399factory shorthand.
-Actual4same-actor continuations addlegalactions: rejectside-only oldfrontier
-reuse, not conditionalcompiled capability. Nextselectone actualremaining
-consumer primitive/algorithm cost, no wholefrontier cache or budgethunt.
-User2026-10-13 configuration separatelyclarifies standingprojectauthority and
-private rawstorage versusGitpublication. Nativeheartbeat prompt synchronized;
-cadence/status/target preserved; controls notdisabled. No newworker/Goal.
-
-## Prior selections and preserved limits
-
-Q0_RESOURCE_AND_ORDERING.md separates fixed-work, node-limited delivery and a
-new equal-time resource plane. Original278-query evidence remains frozen.
-The saved checking-drop local gain remains avoidable at its parent/root.
-
-Sixteen paired before/current q0 calls retain1M caps: S4D7â†’D8 and1091 at64s
-D4â†’D5, while1091 at16s remainsD4. A cheap D3 root hint adds no ranking signal.
-Existing ordering_min_depth2/3 recovers1091D5 at16s, but72actual saved-turn
-calls show a min2 node-cap depth loss on1091turn2 and no Shogi depth benefit.
-All36reverse triplets agree; actual Core Native-legality fallbacks are zero.
-No uniform/default/UI adoption, playing-utility or primitive-speed claim.
-
-A separately predeclared twelve-call64s plane removes node limits forALLarms,
-keeping old curves immutable/exposed.1091turn2 min2 nowD5 versus lexicalD4,
-reversing its1M selection; bothNative Shogi0 arms stillD4 versusCorePVS D5.
-Resource definition matters but does not explain the entire remaining gap.
-Twenty-four original1091 fixedD4/D5 comparisons agree in fullvalue/action/PV
-across lexical/min2/min3, TT0/cold1 and reverse orders; min2 reduces actualD5
-visits686484â†’318082 withoutTT. Complete-domain/q4 target remains.
-
-Correction: both recorded old/new1091D4 PV literal leaves were-2514, not old
--4912. Independent opponent-best residual queries put oldthirdAa2-d4 at-4912
-versusPe3-c7 at-2514. The prior leaf-only regression falsely passedoldbinary;
-correctedthird-action test failsold/passescurrent. Search repair stands;
-its earlier literal-value/testcoverage assertions were wrong. Originalraw
-records remain unchanged; user/Dot informed. See the purpose report.
-
-Actual Core runtime also includes ordered fullhistory context, so no unsupported
-Native-only history-key explanation or new key framework. Next choose one
-existing ordering scope or same-cost TT-first priority ablation; do not mistake
-its result for isolating PVS, cache size or whole-domain utility. Dot1791787532.299919 is saved/reconciled/adopted: singlefailedturn2 TT-first
-comparison, sameper-node scorer but aggregatecost measured. Eight actualcold
-D3/D4 calls triggerconflicts, preservefulltriplets andworsenwork; rejectadoption.
-Q0_SCORE_REFINEMENT.md now measures that origin: D4 tie-refinement replay
-1010693 versus final64711. Normal exact-score confirmation retains the final
-canonical pass and gives342036 visits/fulltuple;48 saved consumer cells improve
-onlygen2 (16sD3â†’D4,1M64sD3â†’D5). Fixed factors show the configured material
-ordering is the main local lever, not TT. Fresh7root/84 finite queries and
-phase abort/persistentTT recovery checks pass; public exact-root change scoped,
-legacy/default/UI policies retained. Equal64s withoutnodecaps stillNativeShogiD4
-versusbothCoreAB/PVS D5. Shogi finalcanonical replay~1.9M dominates attempted
-work. Naively enabling nonPV TT in replay breaks canonicalPV (gen0 4â†’2 and
-Shogi same-lengthchange) despite root/final scalar agreement; reject that control.
-Next preserve actual decision/output semantics when reducing canonical cost;
-newgen delivery also tests existing immediate-terminal caller shortcuts.
-No global/default/strength claim or new NativePVS kernel follows.
-Q0_TRACE_AND_TERMINAL_POLICY.md now separates explicit selected-branch canonical
-reconstruction from actual one-ply terminal caller proof. Twelve fixedD4 TT1 and
-twelveTT0 fulltuples agree,56finite generated queries agree, phaseabort/reusedTT
-checks pass; equal64s givesgen0D5â†’D6, gen2D5unchanged, ShogiD4â†’D5. A new16000-node
-regression fails old replay atD3 and naiveTT at truncatedPV2, passes reconstructed
-D4/fullPV4. The actual terminal shortcut remains a separate private opt-in caller
-policy; corrected cancellation and real GameSession submissions preserve actual
-D1/proof cause and rules-based outcomes, notfixeddepth/training labels. NoUI or
-q4/default change. Next verify final stage delivery and choose the remaining
-measured canonical/caller bottleneck, not unchangednaiveTT or a newPVS kernel.
-AUX498291c0 proxy-prediction/deployment report is read only: small models learn
-quantity signal, yet prediction gains do not establish win utility or universal
-human prices. Primary search and auxiliary learning remain separate lanes.
-
-Q0_THRESHOLD_CONFIRMATION.md now rejects uniform root-only canonical ordering
-after an observed equal-budget D5-to-D4 loss. Integer threshold confirmation
-retains material root order and selected full canonical reconstruction; savedgen2
-fixed D4 visits281094to13794/D5 347112to79801. Full finite/delivery/boundary/TT
-recovery checks and41production regressions pass; old16000node regression fails
-D3 versusnewD4. No global/default/q4 change. LOCAL_UI_SEARCH_TEST.md retains historical
-work-machine consumer evidence only. The user owns UI Test on the other
-computer; PRIMARY continues sandbox backend and publishes tested changes plus
-explicit activation/compatibility notes in operations/BACKEND_HANDOFF.md.
-No UI-copy maintenance or frontend integration backlog is selected. Next
-measure remaining canonical/mainsearch cost under unchanged decision semantics.
-
-Q0_ORDERING_COST.md rejects capacity doubling and records the disabled-cache
-allocation fix (44 production regressions). Explicit False now avoids11.1MB;
-default True is unchanged. Private static ordering-view D5 costs drop roughly
-25%/16.5% on two roots with equal output/work, but every16s delivery staysD5.
-Finite/profile/cancel/allcandidate controls pass; a synthetic capacity corner
-was guarded. Dot identifies digest failure, and a direct injected serializer
-failure confirms oldrefusal/viewacceptance. That initial fast path remained private pending its failure contract; the
-current guarded consumer adoption below resolves this tested path, without a
-new key framework or UI task.
-New allarms64s D6 resource results are separate, old caps remain immutable.
-
-NATIVE_EXECUTION_FAILURES.md repairs the observed false completion with explicit
-internal child-identity failure status, including nestedS3 replies. A second observed terminal-availability Boolean
-loss is fixed through the existing ok channel; actualplayedprefix3 fault retains
-D1 andsameTT recovery. Sixpersistentfaultregressions coverbothpaths. Initialproduction
-2270active tests and actualold-fails/new-passes regression support the scoped
-iterative-search change; no global/default/UI optimizer follows. Probe retry alone
-misses nested failures and is rejected. The material view now has a declared valid-input/required-computation failure
-contract and an adopted scoped consumer path; required terminal errors remain
-explicit. Old no-gain and failure witnesses stay frozen.
-SEARCH_SPEED_EVIDENCE.md separates existing specialized/hybrid/native-state
-ratios from the missing current matched persistentNative/specialist interval.
-
-## Retained long-term objectives and evidence discipline
-
-Two long-term lines remain: rule-only generic piece-value generation with
-cross-game ordering/ratios/bias explanations, and efficient stable generic search
-on unfamiliar generated rules, familiar-piece mixtures and recombined mechanics.
-Games diagnose evaluation/price holes; no player-strength/Elo or positional-patch
-campaign. Generic covers the full project generated-rule domain. Scoped models
-may declare exclusions; they cannot shrink that target or replace it with
-separate manual game solutions.
-
-After search attribution, compare rule-generated constants, statistically
-averaged/frozen constants and small state-interaction evaluators by actual
-supported input domain, useful signal and caller cost. Context dependence alone
-does not refute a fixed vector averaged under an explicit play distribution.
-Static tables remain candidates/cheap baselines, not a required predecessor.
-Small local training is authorized; any single run expected above one hour
-first obtains dot's necessity assessment, with cheaper alternatives recorded.
-This is distinct from a60-90minute Agent segment, not a general compute gate.
-
-Equivalent supported rule encodings and finite-board saturation must preserve
-semantics. Separate raw opportunity, normalization, rounding/clipping and
-unsupported scope; actor splitting/quantity relations are empirical, not
-assumed linear conservation. Keep Chess/Shogi/Xiangqi semantic boundaries,
-frozen tests/cap failures and human-data restrictions. Human agreement is
-only descriptive, never fitting authority or proof of universal value.
-Development approximations need stated limits, not prior exact WDL/all-defense
-or holdout proofs. Advisor risks guide one decision-changing objection/action,
-not a growing task list or publication gate.
-
-## Evidence routing
-
-|Purpose|Document and records|
-|q0 root score confirmation, canonical cost, phase aborts and naiveTT trace failure|Q0_SCORE_REFINEMENT.md; data/q0_score_refinement_20261012.json|
+|Purpose|Record|
 |---|---|
-|q0 resource conditions, existing ordering, real trace/test correction|Q0_RESOURCE_AND_ORDERING.md; data/q0_resource_delivery_20261012.json|
-|Actual q0 scope, saved-parent root transfer, canonical replay and played callers|Q0_CONSUMER_AND_CANONICAL_REPLAY.md; data/q0_consumer_20261012.json|
-|Actual public tuple, existing q ordering, decision utility and recovered mature entry|PUBLIC_CORE_Q_DELIVERY.md; data/public_core_q_20261012.json|
-|Cancellation, q transport and existing PVS delivery|CANCELLATION_AND_Q_SCHEDULING.md; data/cancel_q_scheduling_20261012.json|
-|Auxiliary q transfer, actual q0 work and optional exact-root repair|AUXILIARY_Q_AND_ROOT_WINDOWS.md; data/auxiliary_q_root_20261012.json|
-|Native candidate-chunk legality, quiet-board guards and ordered scheduling|NATIVE_Q_LEGALITY_TRANSPORT.md; data/native_q_legality_20261012.json|
-|Quiet-drop exclusion, semantic PVS transfer and actual minimal-q executor attribution|QUIET_DROP_AND_PVS.md; data/quiet_drop_20261012.json|
-|Core availability, supplied-history transport, public delivery and exact token costs|CORE_AVAILABILITY_COST.md; data/core_availability_20261012.json|
-|Corrected capsule consumers, actual Core caller and inventory/delivery costs|CAPSULE_INTERFACE_COST.md; data/capsule_interface_20261012.json|
-|Shared Native terminal/winner, evaluator binding and same-leaf view costs|NATIVE_TERMINAL_AND_BINDING.md; data/native_terminal_binding_20261011.json|
-|Prospective fullq4 tradeoff, fixed-work/UI controls and evaluator entry repair|Q4_COMPLETION_TRADEOFF.md; data/q4_tradeoff_20261011.json|
-|Currentq4 capability, caller costs and observed wildcard capture repair|Q4_BACKEND_CAPABILITY.md; data/q4_caller_20261011.json; q4_iteration_20261011.json|
-|Same-q windows, score units, memory/q bounds, ordering and resource failure|PHASE_AWARE_SEARCH_WINDOWS.md; data/phase_aware_transfer_20261011.json|
-|Physical publication, PVS work/time and currentPython warm horizon|SEARCH_SCHEDULING_DIAGNOSTIC.md; data/physical_publication_20261011.json|
-|Availability dispatch, quiet-q execution and representation/residual costs|AVAILABILITY_AND_Q_EXECUTION.md; data/availability_core_20261011.json|
-|Typed auxiliary collision/history/hash identity, whole-board projection and S3 callback origin|RUNTIME_AUX_IDENTITY.md; data/runtime_aux_identity_20261011.json|
-|Retained-result metadata, weighted completion/backend and negative allocation controls|COMPLETION_POLICY_ATTRIBUTION.md; data/completion_policy_20261011.json|
-|Generated semantic bridge, typed alias attribution and alternate history|GENERATED_SEMANTIC_BRIDGE.md; data/generated_semantic_bridge_20261011.json|
-|Incoming source dispatch and hybrid replacement ledger|INCOMING_SOURCE_DISPATCH.md; data/incoming_source_20261011.json|
-|Latest warm-root eligibility/caller/cancellation contract|PHASE_BYPASS_DIAGNOSTIC.md; data/warm_root_contract_20261011.json|
-|Earlier phase/caller/warm controls and actor dispatch|PHASE_BYPASS_DIAGNOSTIC.md; data/phase_bypass_20261010.json|
-|Protected reserve, inverse horizon and residual alternatives|RESERVE_REFRESH_DIAGNOSTIC.md; data/reserve_refresh_20261010.json|
-|Frozen UI path and trigger execution cost|UI_PRODUCT_DIAGNOSTIC.md; data/ui_product_20261010.json|
-|Layered search/backend/window/budget attribution and deployment limits|SEARCH_BACKEND_ATTRIBUTION.md; data/search_attribution_20261010.json; native_conversion_20261010.json; terminal_frontier_20261010.json; cooperative_budget_20261010.json; root_bound_20261010.json; frontier_contract_20261010.json|
-|Evaluation families and state-input signal/cost|EVALUATION_ROUTES.md; STATE_INPUT_FEASIBILITY.md; data/state_inputs_20261009.json|
-|Small learned compression, partial preferences and frozen controls|FINITE_SEARCH_COMPRESSION.md; data/search_compression_20261009.json|
-|Price/task prediction and response support|TASK_PREDICTION_DIAGNOSTIC.md; data/qfrontier_20261009.json|
-|Semantic opportunity and transformation/retention laws|SEMANTIC_CAPABILITY.md; data/tasklaw_20261009.json; task_compression_20261009.json; finite_law_20261009.json; preparation_transfer_20261008.json; retention_20261008.json|
-|Descriptive cross-game ratios and preparation/promotion bias|CROSS_GAME_PRICE_DIAGNOSTIC.md; data/pawn_bias_20261009.json|
-|Primitive geometry, representation and rectangle scope|GEOMETRY_OCCUPANCY.md; data/geometry_occupancy_20261009.json; leaf_order_20261009.json|
-|Generic search interface and qsupport/cost boundaries|UNFAMILIAR_RULE_SEARCH.md; data/event_qsearch_20261009.json; rect_search_20261009.json; query_transfer_20261009.json; qfactorial_20261009.json; qeffects_20261008.json; generated6_20261008.json; generated8_20261008.json|
-|Completion-aware alternatives and actual caller cost|COMPLETION_SEARCH_FEASIBILITY.md; data/completion_search_20261010.json; handle_time_20261010.json; completion_ablation_20261010.json; bounded_completion_20261010.json|
-|Retained utility alternatives|TEMPORAL_HAND_SERVICE.md; GOAL_INTERACTION.md; CONTRIBUTION_MODEL.md; JOINT_SERVICE_DIAGNOSTIC.md; CUSTODY_CONTINUATION.md|
+|Current private cost rejections, readonly feasibility, auxiliary uncertainty|SCALAR_COUNT_AND_NATIVE_BOUNDARY.md; data/scalar_count_native_boundary_20261014.json|
+|Adopted full-frontier intent/coordinate cost and metadata correction|S3_FULL_FRONTIER_INTENT.md; data/s3_intent_20261014.json|
+|Compile-owned endpoint fallback and stable generated IDs|COMPILED_ENDPOINT_FALLBACK.md|
+|Core check/provider/input lifecycle contract|CHECK_INPUT_HANDOFF.md|
+|Complete generic q semantics/ordering and capability limits|MIXED_Q_PUBLIC_API.md; ORDINARY_Q_ORDERING.md; Q4_BACKEND_CAPABILITY.md|
+|Current matched/reference cost limits|SEARCH_SPEED_EVIDENCE.md; CURRENT_SHOGI_Q0_BRIDGE.md|
+|Later price/evaluation candidates|EVALUATION_ROUTES.md|
+|Current collaboration and backend delivery|../operations/COLLABORATION_LOG.md; ../operations/BACKEND_HANDOFF.md|
 
-Data indices bind source/failure/raw-output hashes to purpose-specific archives;
-older results stay recoverable rather than becoming active next tasks. The still
-older long mainline is at Gitaf8ed2c62f4c87a17e7fe33d2e2df3a65fd3af2e.
-Exact operational policy is AGENTS.md, LOCAL_AGENT.md and SLACK_WORKFLOW.md:
-single writer, stops, duration, consultation identity/new-root instructions,
-publication and machine/data boundaries remain unchanged. Publish reviewed/tested
-Agent-only code/results/evidence each completed segment and verify full remote
-origin/sandbox SHA; exclude private/user inputs and raw Slack/account credentials.
-
-Current consumer decision2026-10-13: MATERIAL_ORDERING_VIEW.md adopts the scoped
-uncached static ordering view after required-error repair, with actual profile,
-fault and fresh generated-state controls. Gen2 at32s completesD6 versusD5 with
-same action; Shogi32s bothD5, bothroots64s D6. No general strength claim.
-A tiny exact decimal serializer improves fixed work modestly; ASCII-run candidate
-is rejected without a resource-extension hunt. Complete-domain/key/history
-semantics and defaultcache/UI policy remain. The measured discarded-child full-tail clear omission is also adopted only
-under the same immediate static consumer guard, with required history preserved.
-Final combined regressions/resource results qualify this local choice.
-Final2277 tests pass; eightcombined32s calls givebothroots D5→D6,
-gen2sameaction/Shogichanged, exactold128s D6tuplematch. View-only128s remainsD6
-botharms. Next isolate actual packedcanonical versus UCI/USI lexical comparator
-order andTT/scheduling before a currentNative/specialist interval claim.
-
-Current decision2026-10-13: PACKED_ORDER_AND_FIXED_SEARCH.md repairs fixed/probe
-child-error swallowing and a normal-input nonoptimal canonical action. It uses
-existing full checked child/status, ascending packed order and no unused local
-undo; no newtrusted API or UI/default policy. Final2280 tests pass. FourChess
-D4 same-order finite bridges match complete visited sequences; their finalwarm
-C/specializedPython-replay ratios.575–.907 are end-to-end scoped quantities,
-with asymmetric replay cost and ordinary load. The original lexicalNative
-bridge also does much more physical legality/identity work; lazy/cachedlabel
-controls are private diagnostics. Shogi fixed/persistent matched interval stays
-missing. New1M/32/64 plane retains Gen2 boundary variance and Shogi32 D5→D6;
-both64sD6. One finalGen2 ordering check gives no-explicitD4 versusmin2viewD6,
-not uniform/default adoption. Auxiliarye915 segment24 read-only cheaplearning
-shows conditional proxy gains and mixedTD; no human-price fitting or mainpatch
-acceptance follows. Next choose one actual supported caller/remaining primitive
-cost or matchedpersistent scheduling question, not a new specialist engine.
-
-Current decision2026-10-13: CURRENT_CALLER_TERMINAL_IDENTITY.md distinguishes
-actual Core readonly frontier0child-key/history from the oldguarded bridge.
-Do not port that bridge's cost as a productCore defect; nonboard-map2percent
-is deferred. Fixed/probe now checks an installed shared-winner capability,
-retaining oldbinary rejection and explicit board/drop-only reference scope.
-FourShogiD3 sameorder/fullsequence cells and legal continuouscheck history
-controls qualify this finite comparison, not completepersistent scheduling.
-Actualpersistent purpose counters locate requiredchild and redundantterminal
-canonical SHA work. Threshold-only pruning and reuse only of a fullchecked
-nonroot child's appended digest preserve fullhistory, importoracle, TT/order
-andrequired errors. Final2286 active tests pass; equal1M/64 pairs save11–14percent
-for the reuse stage after threshold repair, without changed result/work.
-Gen2 uncapped16s D5→D6 in bothorders; Shogi4/16/64 horizons unchanged.
-Freshgenerated transfer is predeclared; retain every root and partial/cap result.
-Auxb5fc958d segment25 matureMaterialLv1 build/cheapcost/learning reviewed,
-notreproduced or used for primaryacceptance. Next inspect the remaining actual
-consumer cost after exactidentity reuse; no new specialist/positioncache/engine.
-
-Current decision2026-10-13: SCALAR_ATTACK_TRAVERSAL.md adopts only the generic
-source-first scalar capture-attack traversal and deletes a duplicate already-
-global typeclass import. Empty/friendly/enemy targets, state/slot guards and
-later transformed-actor continuation are retained. Current installed/final
-source2,298 tests pass,0skip;32 fixed cells preserve full outputs and four
-Shogi traces match independent sequences. Same-work ShogiD5 saves37–38percent
-locally; Core D2 saves7–11percent for the scalar stage and2.5–3.3percent for
-the separate import stage, not multiplied. Fresh eight-seed16/64 plane keeps
-unavailable1344,56calls/28pairs:10 deeper,18 unchanged,0 shallower; all same-
-depth full choices/PVs agree. Coreq4 16s horizons remainunchanged; independent
-Native SemanticSearchEngine qsearch is unsupported and0calls are claimed.
-Required full identity/history/error semantics and UI/defaults remain. Copy,
-SHA-padding, bulkmap, per-type-index and state-import caches are deferred on
-measured information/cost; actual Core packing has962 exact repeats/50180,
-with ply0 versusactualply kept distinct. AUXa80d02db26 is independently checked
-for published arithmetic/row consistency only, notbinary/training reproduction
-or primaryacceptance; later randomstream advice has no newresults yet. Next
-choose one actual requiredbuilder/key primitive cost, no newengine/framework.
-
-Current decision2026-10-13: COLD_RULE_COORDINATE.md adopts only exact positive-builtin-int row-major indexing without temporary BoardShape. Invalid/bool/shape/subclass fallback preserved;2356 active/105 focused pass;16 costs and64 fresh callers fullnon-time/work exact,24 resourcecells no newretaineddepth. Cold setup remains a distinct clock and can matter on20-board. PREFIX_FREE_INCOMING.md exposes originalmetadata65536/131072 and Native<=16 limits while completeCore stillruns larger rules. Privateprefix-free schedule retains178104 orderedrows/guards and improves4096node localcost~76%;16 fresh18/20 resourcecells produce4deeper/4unchanged pairs, no strength/universalclaim.220 actualsearches closed. Prototypecompilerfield/cap/Native/UI/default unchanged; fallback-only memory/normalconsumer integration is the next specific decision.
+Detailed earlier route decisions remain in their purpose reports and the fixed
+prior mainline Git revision. They are evidence, not automatically renewed tasks.
+Operational duration/stops/Git/Slack/private-save/Agent boundaries stay exactly
+in AGENTS.md, LOCAL_AGENT.md and SLACK_WORKFLOW.md. Publish reviewed Agent-only
+results each completed segment with full origin/sandbox SHA verification.
