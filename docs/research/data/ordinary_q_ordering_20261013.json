@@ -186,5 +186,23 @@
     "quiet_drop": 9,
     "initial_profile_import_failure_queries": 0
   },
-  "scope": "Source binding references public7b production and previous9f C closure; no Nativebuild or engine/default/UIchange."
+  "scope": "Source binding references public7b production and previous9f C closure; no Nativebuild or engine/default/UIchange.",
+  "delivery": {
+    "science_sha": "96953355dbc751e713c4592a250fffead77d8e52",
+    "science_remote_verified_full_sha": true,
+    "relevant_publisher_tests": 64,
+    "first_qualification_failure": "Guessed missing test_alphabeta_full_pv.py, exit4 beforepush; actualtest_full_pv_contract.py correction, successfulrequiredpublish",
+    "full_suite_scope": "Priorf88 2319; currentproduction unchanged; notnewfullrun",
+    "segment": {
+      "id": "dff43167-44e6-4aa1-b490-5f805332321c",
+      "started_at": "2026-10-13T00:07:20.774265+00:00",
+      "ended_at": "2026-10-13T01:09:47.870909+00:00",
+      "elapsed_minutes": 62.452,
+      "reason": "safe_checkpoint",
+      "duration_gate_passed": true,
+      "mechanical_research_stage_count": 14,
+      "actual_scientific_stage_count_excluding_operational_receipt": 13
+    },
+    "quality_review": "Actualsource/result/privacy/phase chain review, nothelpertimeonly; originaloperationalcheckpointmislabel preserved/excluded."
+  }
 }

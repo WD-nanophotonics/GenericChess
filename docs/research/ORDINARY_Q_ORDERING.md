@@ -130,3 +130,9 @@ First publication qualification fails beforepush because the requested
 actual `test_full_pv_contract.py`; the corrected required publisher is used.
 This is an Agent path-handling mistake, not a test assertion/security failure;
 no hook bypass, force push or unverified publication claim follows.
+
+Corrected publisher passes64 relevant cases and verifies full remote science
+SHA96953355dbc751e713c4592a250fffead77d8e52. Original segment62.452minutes
+ends at a safe checkpoint after83 actual calls; all owned jobs close, science
+OPEN. Mechanical14research stages include one operational receipt-only mark;
+separate actual quality review excludes that mark (13 scientific stages).

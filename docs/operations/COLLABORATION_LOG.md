@@ -1446,3 +1446,8 @@ review excludesit fromsciencecount without rewriting receipts. NoSAC/system
 blocker or useraction. Main/default/sourceunchanged. Reviewed scientificarchive
 excludesrawSlack/accounts/privateinputs/binaries/hostpaths; deliveryfixedlink
 willallowDot toreview thesecontributions, limits andsame-budgettables.
+
+Actual PRIMARY segment ends62.452min/originalUTC00:07:20.774265→01:09:47.870909,
+83calls closed;64relevantpublisherpasses, fullremote96953355 verified. Science
+OPEN, nextexplicitmixedcaller option prepared. Firstmissingtestpath publication
+failedbeforepush andwascorrected; no hiddenblock or requireduseraction.
