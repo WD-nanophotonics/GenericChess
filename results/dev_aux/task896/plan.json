@@ -1,0 +1,95 @@
+{
+  "status": "FROZEN_BEFORE_CONTROL_QUERY",
+  "profiles": [
+    128,
+    512,
+    724,
+    1448,
+    4096
+  ],
+  "roots": [
+    {
+      "seed": 2026145032,
+      "source_family": 2026145032,
+      "index": 32,
+      "phase": "validation",
+      "variant": "NB",
+      "initial_sfen": "9/9/9/5k3/6n2/2bK3N1/5B3/9/9 b - 1",
+      "history": [],
+      "expected_sfen": "9/9/9/5k3/6n2/2bK3N1/5B3/9/9 b - 1",
+      "inventory": 4
+    },
+    {
+      "seed": 2026145033,
+      "source_family": 2026145033,
+      "index": 33,
+      "phase": "validation",
+      "variant": "NB",
+      "initial_sfen": "9/9/7n1/2N1k4/4b4/4K2B1/9/9/9 b - 1",
+      "history": [],
+      "expected_sfen": "9/9/7n1/2N1k4/4b4/4K2B1/9/9/9 b - 1",
+      "inventory": 4
+    },
+    {
+      "seed": 2026145034,
+      "source_family": 2026145034,
+      "index": 34,
+      "phase": "validation",
+      "variant": "NB",
+      "initial_sfen": "9/9/9/5k3/3N2b2/4K1Bn1/9/9/9 b - 1",
+      "history": [],
+      "expected_sfen": "9/9/9/5k3/3N2b2/4K1Bn1/9/9/9 b - 1",
+      "inventory": 4
+    },
+    {
+      "seed": 2026145035,
+      "source_family": 2026145035,
+      "index": 35,
+      "phase": "validation",
+      "variant": "NB",
+      "initial_sfen": "9/9/5n3/5k3/3B3b1/4K2N1/9/9/9 b - 1",
+      "history": [],
+      "expected_sfen": "9/9/5n3/5k3/3B3b1/4K2N1/9/9/9 b - 1",
+      "inventory": 4
+    }
+  ],
+  "conditions": [
+    [
+      12,
+      256
+    ],
+    [
+      24,
+      256
+    ],
+    [
+      48,
+      256
+    ],
+    [
+      12,
+      1024
+    ],
+    [
+      24,
+      1024
+    ],
+    [
+      48,
+      1024
+    ]
+  ],
+  "cached_condition": [
+    24,
+    256
+  ],
+  "cached_task": "task894 qualified895 only; exact root/weights/opponent/color/reset/RNG",
+  "seed_base": 2026145500,
+  "opponents": [
+    "unit_search",
+    "uniform_random"
+  ],
+  "limit_seconds": 240,
+  "source_endpoint_sha256": "3b2f81c3c321703f277a1cb08acc443528953e62e8f71a72570a980c103aa64d",
+  "scope": "Original predeclared indices32..35, no failed-root replacement/no positive case selection; no refit"
+}

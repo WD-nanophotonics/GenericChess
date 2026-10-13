@@ -1,0 +1,36 @@
+{
+  "status": "FROZEN_BEFORE_SEARCH_ONLY_COOPERATION_FIT",
+  "question": "Does richer centerNB8 give a stable relative B/N under genuine searching-opponent outcomes?",
+  "source": "task902 center8 roots, all7eligibletrainingfamilies; grammar selected bypilot information, notindividualpricewins; holdouts untouched",
+  "grid": [
+    32,
+    45,
+    64,
+    90,
+    128,
+    181,
+    256,
+    328,
+    362,
+    512,
+    724,
+    1024,
+    1448,
+    2048,
+    2896,
+    4096
+  ],
+  "starts": [
+    1448,
+    128,
+    512,
+    4096
+  ],
+  "primary": "actual W-L mean searchingopponent only; unresolved0 finiteeventgoal; strictadjacent-gridlocalascent, stayontie; randomperformance separatevalidation",
+  "pilot_cache": "task903 qualified906 center8/unit_search rows exactconditions",
+  "cap": 24,
+  "nodes": 256,
+  "seed_base": 2026146500,
+  "limits": "<=168newphysicaltraininggames/120secproducer; no fitexposedoldholdouts",
+  "validation": "All8development+8validationcenter8families bothcandidatecolors, search andrandom; fourstarts anduniqueendpoints beforevalidation; no fittedhypothesis uses heldout outcomes."
+}

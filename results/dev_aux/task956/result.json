@@ -1,0 +1,220 @@
+{
+  "status": "ALL144_FRESH_FAMILY_REPLICATION_OUTCOMES",
+  "rows": [
+    {
+      "opponent": "unit_search",
+      "B": 90,
+      "G": 90,
+      "N": 36,
+      "counts": {
+        "C": 36
+      },
+      "J24": "0"
+    },
+    {
+      "opponent": "unit_search",
+      "B": 128,
+      "G": 90,
+      "N": 36,
+      "counts": {
+        "W": 2,
+        "C": 31,
+        "L": 3
+      },
+      "J24": "-1/36"
+    },
+    {
+      "opponent": "uniform_random",
+      "B": 90,
+      "G": 90,
+      "N": 36,
+      "counts": {
+        "W": 20,
+        "C": 16
+      },
+      "J24": "5/9"
+    },
+    {
+      "opponent": "uniform_random",
+      "B": 128,
+      "G": 90,
+      "N": 36,
+      "counts": {
+        "W": 20,
+        "C": 16
+      },
+      "J24": "5/9"
+    }
+  ],
+  "pairs": [
+    {
+      "opponent": "unit_search",
+      "delta": "-1/36",
+      "transitions": {
+        "C->W": 2,
+        "C->C": 31,
+        "C->L": 3
+      },
+      "family_deltas": [
+        {
+          "seed": 2026148002,
+          "delta": "1/2"
+        },
+        {
+          "seed": 2026148006,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148007,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148010,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148011,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148012,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148014,
+          "delta": "-1/2"
+        },
+        {
+          "seed": 2026148015,
+          "delta": "-1/2"
+        },
+        {
+          "seed": 2026148016,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148018,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148019,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148020,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148021,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148024,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148027,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148028,
+          "delta": "1/2"
+        },
+        {
+          "seed": 2026148029,
+          "delta": "-1/2"
+        },
+        {
+          "seed": 2026148031,
+          "delta": "0"
+        }
+      ]
+    },
+    {
+      "opponent": "uniform_random",
+      "delta": "0",
+      "transitions": {
+        "W->W": 16,
+        "C->C": 12,
+        "C->W": 4,
+        "W->C": 4
+      },
+      "family_deltas": [
+        {
+          "seed": 2026148002,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148006,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148007,
+          "delta": "1/2"
+        },
+        {
+          "seed": 2026148010,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148011,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148012,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148014,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148015,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148016,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148018,
+          "delta": "1/2"
+        },
+        {
+          "seed": 2026148019,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148020,
+          "delta": "-1/2"
+        },
+        {
+          "seed": 2026148021,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148024,
+          "delta": "-1/2"
+        },
+        {
+          "seed": 2026148027,
+          "delta": "1/2"
+        },
+        {
+          "seed": 2026148028,
+          "delta": "0"
+        },
+        {
+          "seed": 2026148029,
+          "delta": "-1/2"
+        },
+        {
+          "seed": 2026148031,
+          "delta": "0"
+        }
+      ]
+    }
+  ],
+  "new_go": 0,
+  "scope": "Frozenchosenfirst2Dgridtie128/90 vsunit90/90;18eligible32attempted independentedgefamilyseeds,53allvariantfailureskept. No fit orscreeningnewoutcomes. FiniteH24only."
+}

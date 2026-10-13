@@ -1,11 +1,12 @@
-# DEV_AUX current scope 2026-10-14 segment38
+# DEV_AUX current scope — 2026-10-14 segment39
 
-ScienceOPEN; sidemissiononly.2536closednewshortgames/43007gamego +320diagnosticgo +1failedunclosedgo.
-Fullactual audits839843845847854856858863865867872877878 PASS.
-CheapMC128games8.11s+4fits.233s, weak/confoundedtransfer. Fewpiece552newfitgames29.97s learnsallR>N; Bunstable/mixedholdout.
-Dualpriceleaf/nativefactorial304equivalentcontrolsexact; stablePV/depth/bestmovestill3scoreincrementcounterexamples.
-Newcheckedgrammar frozenunitprices exploratorytransfer, nooldtestextension/refit. NB104pilot4.75s/23trueoutcomes; nextfixedB/Nstudy inputonly.
-Originalc69/source/default/UI/mainstate unchanged; failedsource/partial852/rawprivate retained. Report SEGMENT_20261014_38.md.
+ScienceOPEN; sidemissiononly, primary/default/UI read-only. True finiteW-L fewpiece learning implemented, no quantity/humanfitness.
+NB4 sharedgrid/independentcontrols notstable. OverstockNB8 semanticfailure Bhand4->0 coldreproduced; interpretationswithdrawn, originaldata retained.
+Recovered stockN4B2G2 plusK2 withguard/maxhand32controls andallactualrule/PV/leafaudits. No OS/userintervention.
+Twoaxisbest128/90 ties512/180 and1448/180. Fresh18family candidate128/90 vsunit searching delta-1/36, random0: nolearning success.
+Threeforce6certificates independentlyPythonverified;16prices trivialroot outcomesidentical. Validdual144controls exact; leaf/nativeconsumer effects mixed.
+5442closedgames/92234actualgo incl18partial;4380stockvalid1062unsupported cost, notscientificsuccess. Allnegatives/censored/failures kept.
+Report SEGMENT_20261014_39.md; COST/QUALIFICATION/QA39 andexactarchives. Nextpriceblindcapture-choice curriculum, no moreunchangedepochs/quantityfallback.
 
 # Current local research mainline
 

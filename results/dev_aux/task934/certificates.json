@@ -1,0 +1,3192 @@
+{
+  "status": "THREE_STOCK_SAFE_FINITE_FORCE_CERTIFICATES",
+  "cases": [
+    {
+      "root": {
+        "seed": 2026147010,
+        "source_family": 2026147010,
+        "index": 10,
+        "phase": "train",
+        "variant": "edge8",
+        "initial_sfen": "4b4/2K6/4g1n2/1Bk4n1/5NN2/3G5/9/9/9 b - 1",
+        "history": [],
+        "expected_sfen": "4b4/2K6/4g1n2/1Bk4n1/5NN2/3G5/9/9/9 b - 1",
+        "inventory": 8
+      },
+      "attacker": 0,
+      "horizon": 6,
+      "nodes": 262134,
+      "proof": {
+        "sfen": "4b4/2K6/4g1n2/1Bk4n1/5NN2/3G5/9/9/9 b - 1",
+        "actor": 0,
+        "children": [
+          {
+            "move": "6f7e",
+            "proof": {
+              "sfen": "4b4/2K6/4g1n2/1Bk4n1/2G2NN2/9/9/9/9 w - 2",
+              "terminal": {
+                "kind": "checkmate",
+                "winner": 0
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "seed": 2026147017,
+        "source_family": 2026147017,
+        "index": 17,
+        "phase": "train",
+        "variant": "edge8",
+        "initial_sfen": "5n3/3K5/1n2Ng3/3kBb3/9/1N1G5/9/9/9 b - 1",
+        "history": [],
+        "expected_sfen": "5n3/3K5/1n2Ng3/3kBb3/9/1N1G5/9/9/9 b - 1",
+        "inventory": 8
+      },
+      "attacker": 0,
+      "horizon": 6,
+      "nodes": 152206,
+      "proof": {
+        "sfen": "5n3/3K5/1n2Ng3/3kBb3/9/1N1G5/9/9/9 b - 1",
+        "actor": 0,
+        "children": [
+          {
+            "move": "5d4c",
+            "proof": {
+              "sfen": "5n3/3K5/1n2NB3/3k1b3/9/1N1G5/9/9/9 w G 2",
+              "actor": 1,
+              "children": [
+                {
+                  "move": "4a3c",
+                  "proof": {
+                    "sfen": "9/3K5/1n2NBn2/3k1b3/9/1N1G5/9/9/9 b G 3",
+                    "actor": 0,
+                    "children": [
+                      {
+                        "move": "4c6e+",
+                        "proof": {
+                          "sfen": "9/3K5/1n2N1n2/3k1b3/3+B5/1N1G5/9/9/9 w G 4",
+                          "terminal": {
+                            "kind": "checkmate",
+                            "winner": 0
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "move": "4a5c",
+                  "proof": {
+                    "sfen": "9/3K5/1n2nB3/3k1b3/9/1N1G5/9/9/9 b Gn 3",
+                    "actor": 0,
+                    "children": [
+                      {
+                        "move": "G*5d",
+                        "proof": {
+                          "sfen": "9/3K5/1n2nB3/3kGb3/9/1N1G5/9/9/9 w n 4",
+                          "terminal": {
+                            "kind": "checkmate",
+                            "winner": 0
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "move": "4d1a",
+                  "proof": {
+                    "sfen": "5n2b/3K5/1n2NB3/3k5/9/1N1G5/9/9/9 b G 3",
+                    "actor": 0,
+                    "children": [
+                      {
+                        "move": "4c2a",
+                        "proof": {
+                          "sfen": "5n1Bb/3K5/1n2N4/3k5/9/1N1G5/9/9/9 w G 4",
+                          "actor": 1,
+                          "children": [
+                            {
+                              "move": "1a2b",
+                              "proof": {
+                                "sfen": "5n1B1/3K3b1/1n2N4/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K3b1/1n2N4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "1a3c",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N1b2/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/1n2N1b2/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "1a4d",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N4/3k1b3/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/1n2N4/3k1b3/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "1a5e",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N4/3k5/4b4/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/1n2N4/3k5/3+Bb4/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "1a6f",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N4/3k5/9/1N1b5/9/9/9 b Gg 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*6e",
+                                    "proof": {
+                                      "sfen": "5n1B1/3K5/1n2N4/3k5/3G5/1N1b5/9/9/9 w g 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4a3c",
+                              "proof": {
+                                "sfen": "7Bb/3K5/1n2N1n2/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "8b/3K5/1n2N1n2/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4a5c",
+                              "proof": {
+                                "sfen": "7Bb/3K5/1n2n4/3k5/9/1N1G5/9/9/9 b Gn 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*5d",
+                                    "proof": {
+                                      "sfen": "7Bb/3K5/1n2n4/3kG4/9/1N1G5/9/9/9 w n 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "8c7e",
+                              "proof": {
+                                "sfen": "5n1Bb/3K5/4N4/3k5/2n6/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n2b/3K5/4N4/3k5/2n+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "8c9e",
+                              "proof": {
+                                "sfen": "5n1Bb/3K5/4N4/3k5/n8/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n2b/3K5/4N4/3k5/n2+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "move": "4d1g",
+                  "proof": {
+                    "sfen": "5n3/3K5/1n2NB3/3k5/9/1N1G5/8b/9/9 b G 3",
+                    "actor": 0,
+                    "children": [
+                      {
+                        "move": "4c6e+",
+                        "proof": {
+                          "sfen": "5n3/3K5/1n2N4/3k5/3+B5/1N1G5/8b/9/9 w G 4",
+                          "terminal": {
+                            "kind": "checkmate",
+                            "winner": 0
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "move": "4d1g+",
+                  "proof": {
+                    "sfen": "5n3/3K5/1n2NB3/3k5/9/1N1G5/8+b/9/9 b G 3",
+                    "actor": 0,
+                    "children": [
+                      {
+                        "move": "4c6e+",
+                        "proof": {
+                          "sfen": "5n3/3K5/1n2N4/3k5/3+B5/1N1G5/8+b/9/9 w G 4",
+                          "terminal": {
+                            "kind": "checkmate",
+                            "winner": 0
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "move": "4d2b",
+                  "proof": {
+                    "sfen": "5n3/3K3b1/1n2NB3/3k5/9/1N1G5/9/9/9 b G 3",
+                    "actor": 0,
+                    "children": [
+                      {
+                        "move": "4c2a",
+                        "proof": {
+                          "sfen": "5n1B1/3K3b1/1n2N4/3k5/9/1N1G5/9/9/9 w G 4",
+                          "actor": 1,
+                          "children": [
+                            {
+                              "move": "2b1a",
+                              "proof": {
+                                "sfen": "5n1Bb/3K5/1n2N4/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n2b/3K5/1n2N4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2b1c",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N3b/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/1n2N3b/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2b3a",
+                              "proof": {
+                                "sfen": "5nbB1/3K5/1n2N4/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5nb2/3K5/1n2N4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2b3c",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N1b2/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/1n2N1b2/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2b4d",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N4/3k1b3/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/1n2N4/3k1b3/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2b5e",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N4/3k5/4b4/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/1n2N4/3k5/3+Bb4/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2b6f",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N4/3k5/9/1N1b5/9/9/9 b Gg 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*6e",
+                                    "proof": {
+                                      "sfen": "5n1B1/3K5/1n2N4/3k5/3G5/1N1b5/9/9/9 w g 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4a3c",
+                              "proof": {
+                                "sfen": "7B1/3K3b1/1n2N1n2/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "9/3K3b1/1n2N1n2/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4a5c",
+                              "proof": {
+                                "sfen": "7B1/3K3b1/1n2n4/3k5/9/1N1G5/9/9/9 b Gn 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*5d",
+                                    "proof": {
+                                      "sfen": "7B1/3K3b1/1n2n4/3kG4/9/1N1G5/9/9/9 w n 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "8c7e",
+                              "proof": {
+                                "sfen": "5n1B1/3K3b1/4N4/3k5/2n6/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K3b1/4N4/3k5/2n+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "8c9e",
+                              "proof": {
+                                "sfen": "5n1B1/3K3b1/4N4/3k5/n8/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K3b1/4N4/3k5/n2+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "move": "4d2f",
+                  "proof": {
+                    "sfen": "5n3/3K5/1n2NB3/3k5/9/1N1G3b1/9/9/9 b G 3",
+                    "actor": 0,
+                    "children": [
+                      {
+                        "move": "4c6e+",
+                        "proof": {
+                          "sfen": "5n3/3K5/1n2N4/3k5/3+B5/1N1G3b1/9/9/9 w G 4",
+                          "terminal": {
+                            "kind": "checkmate",
+                            "winner": 0
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "move": "4d3c",
+                  "proof": {
+                    "sfen": "5n3/3K5/1n2NBb2/3k5/9/1N1G5/9/9/9 b G 3",
+                    "actor": 0,
+                    "children": [
+                      {
+                        "move": "4c6e+",
+                        "proof": {
+                          "sfen": "5n3/3K5/1n2N1b2/3k5/3+B5/1N1G5/9/9/9 w G 4",
+                          "terminal": {
+                            "kind": "checkmate",
+                            "winner": 0
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "move": "4d3e",
+                  "proof": {
+                    "sfen": "5n3/3K5/1n2NB3/3k5/6b2/1N1G5/9/9/9 b G 3",
+                    "actor": 0,
+                    "children": [
+                      {
+                        "move": "4c6e+",
+                        "proof": {
+                          "sfen": "5n3/3K5/1n2N4/3k5/3+B2b2/1N1G5/9/9/9 w G 4",
+                          "terminal": {
+                            "kind": "checkmate",
+                            "winner": 0
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "move": "4d5c",
+                  "proof": {
+                    "sfen": "5n3/3K5/1n2bB3/3k5/9/1N1G5/9/9/9 b Gn 3",
+                    "actor": 0,
+                    "children": [
+                      {
+                        "move": "6b7b",
+                        "proof": {
+                          "sfen": "5n3/2K6/1n2bB3/3k5/9/1N1G5/9/9/9 w Gn 4",
+                          "actor": 1,
+                          "children": [
+                            {
+                              "move": "4a3c",
+                              "proof": {
+                                "sfen": "9/2K6/1n2bBn2/3k5/9/1N1G5/9/9/9 b Gn 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "9/2K6/1n2b1n2/3k5/3+B5/1N1G5/9/9/9 w Gn 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5c1g",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n3B3/3k5/9/1N1G5/8b/9/9 b Gn 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*5d",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n3B3/3kG4/9/1N1G5/8b/9/9 w n 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5c1g+",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n3B3/3k5/9/1N1G5/8+b/9/9 b Gn 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*5d",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n3B3/3kG4/9/1N1G5/8+b/9/9 w n 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5c2f",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n3B3/3k5/9/1N1G3b1/9/9/9 b Gn 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*5d",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n3B3/3kG4/9/1N1G3b1/9/9/9 w n 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5c3a",
+                              "proof": {
+                                "sfen": "5nb2/2K6/1n3B3/3k5/9/1N1G5/9/9/9 b Gn 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*5d",
+                                    "proof": {
+                                      "sfen": "5nb2/2K6/1n3B3/3kG4/9/1N1G5/9/9/9 w n 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5c3e",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n3B3/3k5/6b2/1N1G5/9/9/9 b Gn 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*5d",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n3B3/3kG4/6b2/1N1G5/9/9/9 w n 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5c4b",
+                              "proof": {
+                                "sfen": "5n3/2K2b3/1n3B3/3k5/9/1N1G5/9/9/9 b Gn 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*5d",
+                                    "proof": {
+                                      "sfen": "5n3/2K2b3/1n3B3/3kG4/9/1N1G5/9/9/9 w n 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5c4d",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n3B3/3k1b3/9/1N1G5/9/9/9 b Gn 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*5d",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n3B3/3kGb3/9/1N1G5/9/9/9 w n 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5c6b",
+                              "proof": {
+                                "sfen": "5n3/2Kb5/1n3B3/3k5/9/1N1G5/9/9/9 b Gn 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*5d",
+                                    "proof": {
+                                      "sfen": "5n3/2Kb5/1n3B3/3kG4/9/1N1G5/9/9/9 w n 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5c7a",
+                              "proof": {
+                                "sfen": "2b2n3/2K6/1n3B3/3k5/9/1N1G5/9/9/9 b Gn 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*5d",
+                                    "proof": {
+                                      "sfen": "2b2n3/2K6/1n3B3/3kG4/9/1N1G5/9/9/9 w n 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "8c7e",
+                              "proof": {
+                                "sfen": "5n3/2K6/4bB3/3k5/2n6/1N1G5/9/9/9 b Gn 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/4b4/3k5/2n+B5/1N1G5/9/9/9 w Gn 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "8c9e",
+                              "proof": {
+                                "sfen": "5n3/2K6/4bB3/3k5/n8/1N1G5/9/9/9 b Gn 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/4b4/3k5/n2+B5/1N1G5/9/9/9 w Gn 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*1a",
+                              "proof": {
+                                "sfen": "5n2n/2K6/1n2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n2n/2K6/1n2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*1b",
+                              "proof": {
+                                "sfen": "5n3/2K5n/1n2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K5n/1n2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*1c",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB2n/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b3n/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*1d",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k4n/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k4n/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*1e",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/8n/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B4n/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*1f",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/9/1N1G4n/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/1N1G4n/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*1g",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/9/1N1G5/8n/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/1N1G5/8n/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*2a",
+                              "proof": {
+                                "sfen": "5n1n1/2K6/1n2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n1n1/2K6/1n2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*2b",
+                              "proof": {
+                                "sfen": "5n3/2K4n1/1n2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K4n1/1n2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*2c",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB1n1/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b2n1/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*2d",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k3n1/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k3n1/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*2e",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/7n1/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B3n1/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*2f",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/9/1N1G3n1/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/1N1G3n1/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*2g",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/9/1N1G5/7n1/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/1N1G5/7n1/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*3a",
+                              "proof": {
+                                "sfen": "5nn2/2K6/1n2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5nn2/2K6/1n2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*3b",
+                              "proof": {
+                                "sfen": "5n3/2K3n2/1n2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K3n2/1n2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*3c",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bBn2/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b1n2/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*3d",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k2n2/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k2n2/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*3e",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/6n2/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B2n2/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*3f",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/9/1N1G2n2/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/1N1G2n2/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*3g",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/9/1N1G5/6n2/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/1N1G5/6n2/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*4b",
+                              "proof": {
+                                "sfen": "5n3/2K2n3/1n2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K2n3/1n2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*4d",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k1n3/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k1n3/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*4e",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/5n3/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B1n3/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*4f",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/9/1N1G1n3/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/1N1G1n3/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*4g",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/9/1N1G5/5n3/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/1N1G5/5n3/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*5a",
+                              "proof": {
+                                "sfen": "4nn3/2K6/1n2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "4nn3/2K6/1n2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*5b",
+                              "proof": {
+                                "sfen": "5n3/2K1n4/1n2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K1n4/1n2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*5d",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3kn4/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*5e",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2bB3/3kn4/4G4/1N1G5/9/9/9 w - 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*5e",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/4n4/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+Bn4/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*5f",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/9/1N1Gn4/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/1N1Gn4/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*5g",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/9/1N1G5/4n4/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/1N1G5/4n4/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*6a",
+                              "proof": {
+                                "sfen": "3n1n3/2K6/1n2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "3n1n3/2K6/1n2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*6b",
+                              "proof": {
+                                "sfen": "5n3/2Kn5/1n2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2Kn5/1n2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*6c",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n1nbB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n1nb4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*6e",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/3n5/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/1N1G5/9/9/9 w GN 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*6g",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/9/1N1G5/3n5/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/1N1G5/3n5/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*7a",
+                              "proof": {
+                                "sfen": "2n2n3/2K6/1n2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "2n2n3/2K6/1n2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*7c",
+                              "proof": {
+                                "sfen": "5n3/2K6/1nn1bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*5d",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1nn1bB3/3kG4/9/1N1G5/9/9/9 w - 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*7d",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/2nk5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/2nk5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*7e",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/2n6/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/2n+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*7f",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/9/1NnG5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/1NnG5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*7g",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/9/1N1G5/2n6/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/1N1G5/2n6/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*8a",
+                              "proof": {
+                                "sfen": "1n3n3/2K6/1n2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "1n3n3/2K6/1n2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*8b",
+                              "proof": {
+                                "sfen": "5n3/1nK6/1n2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/1nK6/1n2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*8d",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/1n1k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/1n1k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*8e",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/1n7/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/1n1+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*8g",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/9/1N1G5/1n7/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/1N1G5/1n7/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*9a",
+                              "proof": {
+                                "sfen": "n4n3/2K6/1n2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "n4n3/2K6/1n2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*9b",
+                              "proof": {
+                                "sfen": "5n3/n1K6/1n2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/n1K6/1n2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*9c",
+                              "proof": {
+                                "sfen": "5n3/2K6/nn2bB3/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/nn2b4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*9d",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/n2k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/n2k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*9e",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/n8/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/n2+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*9f",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/9/nN1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/nN1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "N*9g",
+                              "proof": {
+                                "sfen": "5n3/2K6/1n2bB3/3k5/9/1N1G5/n8/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "4c6e+",
+                                    "proof": {
+                                      "sfen": "5n3/2K6/1n2b4/3k5/3+B5/1N1G5/n8/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "move": "4d5e",
+                  "proof": {
+                    "sfen": "5n3/3K5/1n2NB3/3k5/4b4/1N1G5/9/9/9 b G 3",
+                    "actor": 0,
+                    "children": [
+                      {
+                        "move": "4c2a",
+                        "proof": {
+                          "sfen": "5n1B1/3K5/1n2N4/3k5/4b4/1N1G5/9/9/9 w G 4",
+                          "actor": 1,
+                          "children": [
+                            {
+                              "move": "4a3c",
+                              "proof": {
+                                "sfen": "7B1/3K5/1n2N1n2/3k5/4b4/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "9/3K5/1n2N1n2/3k5/3+Bb4/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4a5c",
+                              "proof": {
+                                "sfen": "7B1/3K5/1n2n4/3k5/4b4/1N1G5/9/9/9 b Gn 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*5d",
+                                    "proof": {
+                                      "sfen": "7B1/3K5/1n2n4/3kG4/4b4/1N1G5/9/9/9 w n 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5e1a",
+                              "proof": {
+                                "sfen": "5n1Bb/3K5/1n2N4/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n2b/3K5/1n2N4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5e1i",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N4/3k5/9/1N1G5/9/9/8b b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/1n2N4/3k5/3+B5/1N1G5/9/9/8b w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5e1i+",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N4/3k5/9/1N1G5/9/9/8+b b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/1n2N4/3k5/3+B5/1N1G5/9/9/8+b w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5e2b",
+                              "proof": {
+                                "sfen": "5n1B1/3K3b1/1n2N4/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K3b1/1n2N4/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5e2h",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N4/3k5/9/1N1G5/9/7b1/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/1n2N4/3k5/3+B5/1N1G5/9/7b1/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5e2h+",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N4/3k5/9/1N1G5/9/7+b1/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/1n2N4/3k5/3+B5/1N1G5/9/7+b1/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5e3c",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N1b2/3k5/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/1n2N1b2/3k5/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5e3g",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N4/3k5/9/1N1G5/6b2/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/1n2N4/3k5/3+B5/1N1G5/6b2/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5e3g+",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N4/3k5/9/1N1G5/6+b2/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/1n2N4/3k5/3+B5/1N1G5/6+b2/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5e4d",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N4/3k1b3/9/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/1n2N4/3k1b3/3+B5/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5e4f",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N4/3k5/9/1N1G1b3/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/1n2N4/3k5/3+B5/1N1G1b3/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "5e6f",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/1n2N4/3k5/9/1N1b5/9/9/9 b Gg 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "G*6e",
+                                    "proof": {
+                                      "sfen": "5n1B1/3K5/1n2N4/3k5/3G5/1N1b5/9/9/9 w g 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "8c7e",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/4N4/3k5/2n1b4/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/4N4/3k5/2n+Bb4/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "8c9e",
+                              "proof": {
+                                "sfen": "5n1B1/3K5/4N4/3k5/n3b4/1N1G5/9/9/9 b G 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "2a6e+",
+                                    "proof": {
+                                      "sfen": "5n3/3K5/4N4/3k5/n2+Bb4/1N1G5/9/9/9 w G 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "move": "4d6f",
+                  "proof": {
+                    "sfen": "5n3/3K5/1n2NB3/3k5/9/1N1b5/9/9/9 b Gg 3",
+                    "actor": 0,
+                    "children": [
+                      {
+                        "move": "G*6e",
+                        "proof": {
+                          "sfen": "5n3/3K5/1n2NB3/3k5/3G5/1N1b5/9/9/9 w g 4",
+                          "terminal": {
+                            "kind": "checkmate",
+                            "winner": 0
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "move": "8c7e",
+                  "proof": {
+                    "sfen": "5n3/3K5/4NB3/3k1b3/2n6/1N1G5/9/9/9 b G 3",
+                    "actor": 0,
+                    "children": [
+                      {
+                        "move": "4c6e+",
+                        "proof": {
+                          "sfen": "5n3/3K5/4N4/3k1b3/2n+B5/1N1G5/9/9/9 w G 4",
+                          "terminal": {
+                            "kind": "checkmate",
+                            "winner": 0
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "move": "8c9e",
+                  "proof": {
+                    "sfen": "5n3/3K5/4NB3/3k1b3/n8/1N1G5/9/9/9 b G 3",
+                    "actor": 0,
+                    "children": [
+                      {
+                        "move": "4c6e+",
+                        "proof": {
+                          "sfen": "5n3/3K5/4N4/3k1b3/n2+B5/1N1G5/9/9/9 w G 4",
+                          "terminal": {
+                            "kind": "checkmate",
+                            "winner": 0
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "seed": 2026147019,
+        "source_family": 2026147019,
+        "index": 19,
+        "phase": "train",
+        "variant": "edge8",
+        "initial_sfen": "7n1/1nK6/5gN2/1k5b1/4B4/1G2N4/9/9/9 b - 1",
+        "history": [],
+        "expected_sfen": "7n1/1nK6/5gN2/1k5b1/4B4/1G2N4/9/9/9 b - 1",
+        "inventory": 8
+      },
+      "attacker": 0,
+      "horizon": 6,
+      "nodes": 83634,
+      "proof": {
+        "sfen": "7n1/1nK6/5gN2/1k5b1/4B4/1G2N4/9/9/9 b - 1",
+        "actor": 0,
+        "children": [
+          {
+            "move": "5e7c+",
+            "proof": {
+              "sfen": "7n1/1nK6/2+B2gN2/1k5b1/9/1G2N4/9/9/9 w - 2",
+              "actor": 1,
+              "children": [
+                {
+                  "move": "8d9c",
+                  "proof": {
+                    "sfen": "7n1/1nK6/k1+B2gN2/7b1/9/1G2N4/9/9/9 b - 3",
+                    "actor": 0,
+                    "children": [
+                      {
+                        "move": "3c2a+",
+                        "proof": {
+                          "sfen": "7+N1/1nK6/k1+B2g3/7b1/9/1G2N4/9/9/9 w N 4",
+                          "actor": 1,
+                          "children": [
+                            {
+                              "move": "2d1c",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B2g2b/9/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B3g2b/9/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d1e",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B2g3/9/8b/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B3g3/9/8b/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d3c",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B2gb2/9/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B3gb2/9/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d3e",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B2g3/9/6b2/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B3g3/9/6b2/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d4b",
+                              "proof": {
+                                "sfen": "7+N1/1nK2b3/k1+B2g3/9/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK2b3/k+B3g3/9/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d4f",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B2g3/9/9/1G2Nb3/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B3g3/9/9/1G2Nb3/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d5a",
+                              "proof": {
+                                "sfen": "4b2+N1/1nK6/k1+B2g3/9/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "4b2+N1/1nK6/k+B3g3/9/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d5g",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B2g3/9/9/1G2N4/4b4/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B3g3/9/9/1G2N4/4b4/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d5g+",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B2g3/9/9/1G2N4/4+b4/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B3g3/9/9/1G2N4/4+b4/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d6h",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B2g3/9/9/1G2N4/9/3b5/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B3g3/9/9/1G2N4/9/3b5/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d6h+",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B2g3/9/9/1G2N4/9/3+b5/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B3g3/9/9/1G2N4/9/3+b5/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d7i",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B2g3/9/9/1G2N4/9/9/2b6 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B3g3/9/9/1G2N4/9/9/2b6 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d7i+",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B2g3/9/9/1G2N4/9/9/2+b6 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B3g3/9/9/1G2N4/9/9/2+b6 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4c3c",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B3g2/7b1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B4g2/7b1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4c3d",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B6/6gb1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B7/6gb1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4c4b",
+                              "proof": {
+                                "sfen": "7+N1/1nK2g3/k1+B6/7b1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK2g3/k+B7/7b1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4c4d",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B6/5g1b1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B7/5g1b1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4c5c",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B1g4/7b1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B2g4/7b1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4c5d",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B6/4g2b1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B7/4g2b1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "8b7d",
+                              "proof": {
+                                "sfen": "7+N1/2K6/k1+B2g3/2n4b1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/2K6/k+B3g3/2n4b1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "8b9d",
+                              "proof": {
+                                "sfen": "7+N1/2K6/k1+B2g3/n6b1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/2K6/k+B3g3/n6b1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "9c9b",
+                              "proof": {
+                                "sfen": "7+N1/knK6/2+B2g3/7b1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8b",
+                                    "proof": {
+                                      "sfen": "7+N1/k+BK6/5g3/7b1/9/1G2N4/9/9/9 w 2N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "9c9d",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B2g3/k6b1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B3g3/k6b1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "move": "8d9d",
+                  "proof": {
+                    "sfen": "7n1/1nK6/2+B2gN2/k6b1/9/1G2N4/9/9/9 b - 3",
+                    "actor": 0,
+                    "children": [
+                      {
+                        "move": "3c2a+",
+                        "proof": {
+                          "sfen": "7+N1/1nK6/2+B2g3/k6b1/9/1G2N4/9/9/9 w N 4",
+                          "actor": 1,
+                          "children": [
+                            {
+                              "move": "2d1c",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B2g2b/k8/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B3g2b/k8/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d1e",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B2g3/k8/8b/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B3g3/k8/8b/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d3c",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B2gb2/k8/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B3gb2/k8/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d3e",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B2g3/k8/6b2/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B3g3/k8/6b2/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d4b",
+                              "proof": {
+                                "sfen": "7+N1/1nK2b3/2+B2g3/k8/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK2b3/1+B3g3/k8/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d4f",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B2g3/k8/9/1G2Nb3/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B3g3/k8/9/1G2Nb3/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d5a",
+                              "proof": {
+                                "sfen": "4b2+N1/1nK6/2+B2g3/k8/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "4b2+N1/1nK6/1+B3g3/k8/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d5g",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B2g3/k8/9/1G2N4/4b4/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B3g3/k8/9/1G2N4/4b4/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d5g+",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B2g3/k8/9/1G2N4/4+b4/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B3g3/k8/9/1G2N4/4+b4/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d6h",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B2g3/k8/9/1G2N4/9/3b5/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B3g3/k8/9/1G2N4/9/3b5/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d6h+",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B2g3/k8/9/1G2N4/9/3+b5/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B3g3/k8/9/1G2N4/9/3+b5/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d7i",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B2g3/k8/9/1G2N4/9/9/2b6 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B3g3/k8/9/1G2N4/9/9/2b6 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "2d7i+",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B2g3/k8/9/1G2N4/9/9/2+b6 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B3g3/k8/9/1G2N4/9/9/2+b6 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4c3c",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B3g2/k6b1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B4g2/k6b1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4c3d",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B6/k5gb1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B7/k5gb1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4c4b",
+                              "proof": {
+                                "sfen": "7+N1/1nK2g3/2+B6/k6b1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK2g3/1+B7/k6b1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4c4d",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B6/k4g1b1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B7/k4g1b1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4c5c",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B1g4/k6b1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B2g4/k6b1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "4c5d",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/2+B6/k3g2b1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/1+B7/k3g2b1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "8b7d",
+                              "proof": {
+                                "sfen": "7+N1/2K6/2+B2g3/k1n4b1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/2K6/1+B3g3/k1n4b1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "move": "9d9c",
+                              "proof": {
+                                "sfen": "7+N1/1nK6/k1+B2g3/7b1/9/1G2N4/9/9/9 b N 5",
+                                "actor": 0,
+                                "children": [
+                                  {
+                                    "move": "7c8c",
+                                    "proof": {
+                                      "sfen": "7+N1/1nK6/k+B3g3/7b1/9/1G2N4/9/9/9 w N 6",
+                                      "terminal": {
+                                        "kind": "checkmate",
+                                        "winner": 0
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "seconds": 3.405999999959022,
+  "new_go": 0
+}

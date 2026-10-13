@@ -1,0 +1,589 @@
+{
+  "status": "QUALIFIED_ZERO_GO_PLATEAU_ESCAPE_AND_REGRET_DIAGNOSTIC",
+  "reports": [
+    {
+      "task": 892,
+      "groups": [
+        {
+          "lo": 0,
+          "hi": 0,
+          "prices": [
+            32
+          ],
+          "value": "5/52",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            45
+          ]
+        },
+        {
+          "lo": 1,
+          "hi": 1,
+          "prices": [
+            45
+          ],
+          "value": "9/52",
+          "neutral_path_to_improving_exit": false,
+          "exits": []
+        },
+        {
+          "lo": 2,
+          "hi": 2,
+          "prices": [
+            64
+          ],
+          "value": "1/13",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            45,
+            90
+          ]
+        },
+        {
+          "lo": 3,
+          "hi": 3,
+          "prices": [
+            90
+          ],
+          "value": "3/26",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            128
+          ]
+        },
+        {
+          "lo": 4,
+          "hi": 4,
+          "prices": [
+            128
+          ],
+          "value": "11/52",
+          "neutral_path_to_improving_exit": false,
+          "exits": []
+        },
+        {
+          "lo": 5,
+          "hi": 5,
+          "prices": [
+            181
+          ],
+          "value": "7/52",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            128,
+            256
+          ]
+        },
+        {
+          "lo": 6,
+          "hi": 6,
+          "prices": [
+            256
+          ],
+          "value": "2/13",
+          "neutral_path_to_improving_exit": false,
+          "exits": []
+        },
+        {
+          "lo": 7,
+          "hi": 7,
+          "prices": [
+            328
+          ],
+          "value": "5/52",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            256,
+            362
+          ]
+        },
+        {
+          "lo": 8,
+          "hi": 8,
+          "prices": [
+            362
+          ],
+          "value": "7/52",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            512
+          ]
+        },
+        {
+          "lo": 9,
+          "hi": 9,
+          "prices": [
+            512
+          ],
+          "value": "2/13",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            724
+          ]
+        },
+        {
+          "lo": 10,
+          "hi": 10,
+          "prices": [
+            724
+          ],
+          "value": "9/52",
+          "neutral_path_to_improving_exit": false,
+          "exits": []
+        },
+        {
+          "lo": 11,
+          "hi": 11,
+          "prices": [
+            1024
+          ],
+          "value": "2/13",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            724,
+            1448
+          ]
+        },
+        {
+          "lo": 12,
+          "hi": 12,
+          "prices": [
+            1448
+          ],
+          "value": "1/4",
+          "neutral_path_to_improving_exit": false,
+          "exits": []
+        },
+        {
+          "lo": 13,
+          "hi": 13,
+          "prices": [
+            2048
+          ],
+          "value": "3/13",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            1448
+          ]
+        },
+        {
+          "lo": 14,
+          "hi": 14,
+          "prices": [
+            2896
+          ],
+          "value": "9/52",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            2048
+          ]
+        },
+        {
+          "lo": 15,
+          "hi": 15,
+          "prices": [
+            4096
+          ],
+          "value": "5/52",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            2896
+          ]
+        }
+      ],
+      "paths": [
+        {
+          "method": "adjacent",
+          "initial": 1448,
+          "endpoint": 1448,
+          "regret_to_grid_best": "0",
+          "plateau": {
+            "lo": 12,
+            "hi": 12,
+            "prices": [
+              1448
+            ],
+            "value": "1/4",
+            "neutral_path_to_improving_exit": false,
+            "exits": []
+          },
+          "classification": "sample_global_maximum"
+        },
+        {
+          "method": "adjacent",
+          "initial": 128,
+          "endpoint": 128,
+          "regret_to_grid_best": "1/26",
+          "plateau": {
+            "lo": 4,
+            "hi": 4,
+            "prices": [
+              128
+            ],
+            "value": "11/52",
+            "neutral_path_to_improving_exit": false,
+            "exits": []
+          },
+          "classification": "local_peak_or_valley_barrier"
+        },
+        {
+          "method": "adjacent",
+          "initial": 512,
+          "endpoint": 724,
+          "regret_to_grid_best": "1/13",
+          "plateau": {
+            "lo": 10,
+            "hi": 10,
+            "prices": [
+              724
+            ],
+            "value": "9/52",
+            "neutral_path_to_improving_exit": false,
+            "exits": []
+          },
+          "classification": "local_peak_or_valley_barrier"
+        },
+        {
+          "method": "adjacent",
+          "initial": 4096,
+          "endpoint": 1448,
+          "regret_to_grid_best": "0",
+          "plateau": {
+            "lo": 12,
+            "hi": 12,
+            "prices": [
+              1448
+            ],
+            "value": "1/4",
+            "neutral_path_to_improving_exit": false,
+            "exits": []
+          },
+          "classification": "sample_global_maximum"
+        }
+      ],
+      "weights_scope": "Original892equalopponentaggregate unchanged;936search-onlyaggregate unchanged; noinvalidB4data"
+    },
+    {
+      "task": 936,
+      "groups": [
+        {
+          "lo": 0,
+          "hi": 0,
+          "prices": [
+            32
+          ],
+          "value": "-1/12",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            45
+          ]
+        },
+        {
+          "lo": 1,
+          "hi": 1,
+          "prices": [
+            45
+          ],
+          "value": "0",
+          "neutral_path_to_improving_exit": false,
+          "exits": []
+        },
+        {
+          "lo": 2,
+          "hi": 2,
+          "prices": [
+            64
+          ],
+          "value": "-1/24",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            45,
+            90
+          ]
+        },
+        {
+          "lo": 3,
+          "hi": 3,
+          "prices": [
+            90
+          ],
+          "value": "0",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            128
+          ]
+        },
+        {
+          "lo": 4,
+          "hi": 4,
+          "prices": [
+            128
+          ],
+          "value": "1/12",
+          "neutral_path_to_improving_exit": false,
+          "exits": []
+        },
+        {
+          "lo": 5,
+          "hi": 5,
+          "prices": [
+            181
+          ],
+          "value": "-1/12",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            128,
+            256
+          ]
+        },
+        {
+          "lo": 6,
+          "hi": 6,
+          "prices": [
+            256
+          ],
+          "value": "0",
+          "neutral_path_to_improving_exit": false,
+          "exits": []
+        },
+        {
+          "lo": 7,
+          "hi": 7,
+          "prices": [
+            328
+          ],
+          "value": "-1/24",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            256,
+            362
+          ]
+        },
+        {
+          "lo": 8,
+          "hi": 8,
+          "prices": [
+            362
+          ],
+          "value": "0",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            512
+          ]
+        },
+        {
+          "lo": 9,
+          "hi": 9,
+          "prices": [
+            512
+          ],
+          "value": "1/24",
+          "neutral_path_to_improving_exit": false,
+          "exits": []
+        },
+        {
+          "lo": 10,
+          "hi": 10,
+          "prices": [
+            724
+          ],
+          "value": "0",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            512
+          ]
+        },
+        {
+          "lo": 11,
+          "hi": 11,
+          "prices": [
+            1024
+          ],
+          "value": "-1/24",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            724,
+            1448
+          ]
+        },
+        {
+          "lo": 12,
+          "hi": 12,
+          "prices": [
+            1448
+          ],
+          "value": "0",
+          "neutral_path_to_improving_exit": false,
+          "exits": []
+        },
+        {
+          "lo": 13,
+          "hi": 13,
+          "prices": [
+            2048
+          ],
+          "value": "-1/24",
+          "neutral_path_to_improving_exit": true,
+          "exits": [
+            1448,
+            2896
+          ]
+        },
+        {
+          "lo": 14,
+          "hi": 15,
+          "prices": [
+            2896,
+            4096
+          ],
+          "value": "0",
+          "neutral_path_to_improving_exit": false,
+          "exits": []
+        }
+      ],
+      "paths": [
+        {
+          "method": "adjacent",
+          "initial": 1448,
+          "endpoint": 1448,
+          "regret_to_grid_best": "1/12",
+          "plateau": {
+            "lo": 12,
+            "hi": 12,
+            "prices": [
+              1448
+            ],
+            "value": "0",
+            "neutral_path_to_improving_exit": false,
+            "exits": []
+          },
+          "classification": "local_peak_or_valley_barrier"
+        },
+        {
+          "method": "adjacent",
+          "initial": 128,
+          "endpoint": 128,
+          "regret_to_grid_best": "0",
+          "plateau": {
+            "lo": 4,
+            "hi": 4,
+            "prices": [
+              128
+            ],
+            "value": "1/12",
+            "neutral_path_to_improving_exit": false,
+            "exits": []
+          },
+          "classification": "sample_global_maximum"
+        },
+        {
+          "method": "adjacent",
+          "initial": 512,
+          "endpoint": 512,
+          "regret_to_grid_best": "1/24",
+          "plateau": {
+            "lo": 9,
+            "hi": 9,
+            "prices": [
+              512
+            ],
+            "value": "1/24",
+            "neutral_path_to_improving_exit": false,
+            "exits": []
+          },
+          "classification": "local_peak_or_valley_barrier"
+        },
+        {
+          "method": "adjacent",
+          "initial": 4096,
+          "endpoint": 4096,
+          "regret_to_grid_best": "1/12",
+          "plateau": {
+            "lo": 14,
+            "hi": 15,
+            "prices": [
+              2896,
+              4096
+            ],
+            "value": "0",
+            "neutral_path_to_improving_exit": false,
+            "exits": []
+          },
+          "classification": "local_peak_or_valley_barrier"
+        },
+        {
+          "method": "multiscale",
+          "initial": 1448,
+          "endpoint": 1448,
+          "regret_to_grid_best": "1/12",
+          "plateau": {
+            "lo": 12,
+            "hi": 12,
+            "prices": [
+              1448
+            ],
+            "value": "0",
+            "neutral_path_to_improving_exit": false,
+            "exits": []
+          },
+          "classification": "local_peak_or_valley_barrier"
+        },
+        {
+          "method": "multiscale",
+          "initial": 128,
+          "endpoint": 128,
+          "regret_to_grid_best": "0",
+          "plateau": {
+            "lo": 4,
+            "hi": 4,
+            "prices": [
+              128
+            ],
+            "value": "1/12",
+            "neutral_path_to_improving_exit": false,
+            "exits": []
+          },
+          "classification": "sample_global_maximum"
+        },
+        {
+          "method": "multiscale",
+          "initial": 512,
+          "endpoint": 512,
+          "regret_to_grid_best": "1/24",
+          "plateau": {
+            "lo": 9,
+            "hi": 9,
+            "prices": [
+              512
+            ],
+            "value": "1/24",
+            "neutral_path_to_improving_exit": false,
+            "exits": []
+          },
+          "classification": "local_peak_or_valley_barrier"
+        },
+        {
+          "method": "multiscale",
+          "initial": 4096,
+          "endpoint": 4096,
+          "regret_to_grid_best": "1/12",
+          "plateau": {
+            "lo": 14,
+            "hi": 15,
+            "prices": [
+              2896,
+              4096
+            ],
+            "value": "0",
+            "neutral_path_to_improving_exit": false,
+            "exits": []
+          },
+          "classification": "local_peak_or_valley_barrier"
+        }
+      ],
+      "weights_scope": "Original892equalopponentaggregate unchanged;936search-onlyaggregate unchanged; noinvalidB4data"
+    }
+  ],
+  "new_go": 0,
+  "scope": "Dotadvice adoptedonlyvalidfixedlandscapes; noflatness->nonidentifiable inference andnochangedfitnessweights."
+}

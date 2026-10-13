@@ -1,0 +1,42 @@
+{
+  "status": "FROZEN_BEFORE_GRID_FIT",
+  "grid": [
+    32,
+    45,
+    64,
+    90,
+    128,
+    181,
+    256,
+    328,
+    362,
+    512,
+    724,
+    1024,
+    1448,
+    2048,
+    2896,
+    4096
+  ],
+  "starts": [
+    1448,
+    128,
+    512,
+    4096
+  ],
+  "start_rng_seed": 2026145900,
+  "primary": "Mean actual W-L across all fixed train families/colors/two opponents equally; cap24 unresolved0 separately labeled. Strict increase only, adjacent-grid local ascent, left neighbor first on equal improving candidates; stay on ties.",
+  "pilot_cache": "task886 qualified by887, exact conditions/weights/cases only",
+  "source_roots": "task885/roots_frozen.json",
+  "cap": 24,
+  "nodes": 256,
+  "seed_base": 2026145500,
+  "opponents": [
+    "unit_search",
+    "uniform_random"
+  ],
+  "producer_limit_seconds": 180,
+  "maximum_new_games": 624,
+  "holdout": "All eligible development/validation slots fixed in884; compare unique endpoint prices plus all4start prices, frozen before any heldout games. No fit/read heldout during grid.",
+  "horizon_controls": "All selected endpoint/start prices on original eligible indices32..35 only, H12/24/48 nodes256/1024 bothcolors/opponents; no replacement of failed slots; predeclared884."
+}

@@ -1,0 +1,14 @@
+{
+  "status": "FINITE_FORCE_ORACLE_CASES_PRESERVED",
+  "cases": 24,
+  "expected_cases": 24,
+  "nodes": 1330330,
+  "seconds": 7.063000000081956,
+  "counts": {
+    "PROVED_FORCE_WIN_WITHIN6": 3,
+    "EXHAUSTED_NO_FORCE_WIN_WITHIN6": 21,
+    "UNKNOWN_BUDGET": 0
+  },
+  "new_go": 0,
+  "scope": "All legal moves, terminal nolegal loss, noenteringking; fourfold/perpetual tracked. Attacker OR defender AND for forcing a genuine win within6plies. No mate found byfullfiniteexhaustion is not eventualdraw/loss; cappedcasesUNKNOWN. No valueweights orquantityheuristic."
+}

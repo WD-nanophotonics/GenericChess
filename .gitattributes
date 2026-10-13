@@ -1375,3 +1375,17 @@ results/dev_aux/task851/controller_reduced.py -text whitespace=-blank-at-eof,cr-
 results/dev_aux/task851/pilot.py -text whitespace=-blank-at-eof,cr-at-eol
 
 results/dev_aux/task874/pilot.py -text whitespace=-blank-at-eof,cr-at-eol
+
+# Preserve exactly executed segment39 archival source EOFs; no product/source-style waiver.
+results/dev_aux/task884/pilot.py whitespace=-blank-at-eof
+results/dev_aux/task889/sweep.py whitespace=-blank-at-eof
+results/dev_aux/task893/evaluate.py whitespace=-blank-at-eof
+results/dev_aux/task901/controller_cooperation.py whitespace=-blank-at-eof
+results/dev_aux/task901/pilot.py whitespace=-blank-at-eof
+results/dev_aux/task907/sweep.py whitespace=-blank-at-eof
+results/dev_aux/task913/evaluate.py whitespace=-blank-at-eof
+results/dev_aux/task921/pilot.py whitespace=-blank-at-eof
+results/dev_aux/task928/sweep.py whitespace=-blank-at-eof
+results/dev_aux/task937/evaluate.py whitespace=-blank-at-eof
+results/dev_aux/task947/sweep.py whitespace=-blank-at-eof
+results/dev_aux/task952/evaluate.py whitespace=-blank-at-eof

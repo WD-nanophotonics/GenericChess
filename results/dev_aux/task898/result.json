@@ -1,0 +1,503 @@
+{
+  "status": "ALL_FROZEN_ENDPOINT_HELDOUT_OUTCOMES",
+  "rows": [
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "price": 128,
+      "N": 20,
+      "counts": {
+        "C": 18,
+        "W": 1,
+        "L": 1
+      },
+      "J24": "0",
+      "eventual_return_bound": [
+        "-9/10",
+        "9/10"
+      ]
+    },
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "price": 512,
+      "N": 20,
+      "counts": {
+        "C": 19,
+        "W": 1
+      },
+      "J24": "1/20",
+      "eventual_return_bound": [
+        "-9/10",
+        "1"
+      ]
+    },
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "price": 724,
+      "N": 20,
+      "counts": {
+        "C": 17,
+        "W": 2,
+        "L": 1
+      },
+      "J24": "1/20",
+      "eventual_return_bound": [
+        "-4/5",
+        "9/10"
+      ]
+    },
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "price": 1448,
+      "N": 20,
+      "counts": {
+        "C": 15,
+        "W": 3,
+        "L": 2
+      },
+      "J24": "1/20",
+      "eventual_return_bound": [
+        "-7/10",
+        "4/5"
+      ]
+    },
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "price": 4096,
+      "N": 20,
+      "counts": {
+        "C": 17,
+        "W": 2,
+        "L": 1
+      },
+      "J24": "1/20",
+      "eventual_return_bound": [
+        "-4/5",
+        "9/10"
+      ]
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "price": 128,
+      "N": 20,
+      "counts": {
+        "W": 5,
+        "C": 15
+      },
+      "J24": "1/4",
+      "eventual_return_bound": [
+        "-1/2",
+        "1"
+      ]
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "price": 512,
+      "N": 20,
+      "counts": {
+        "C": 13,
+        "W": 7
+      },
+      "J24": "7/20",
+      "eventual_return_bound": [
+        "-3/10",
+        "1"
+      ]
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "price": 724,
+      "N": 20,
+      "counts": {
+        "C": 17,
+        "W": 3
+      },
+      "J24": "3/20",
+      "eventual_return_bound": [
+        "-7/10",
+        "1"
+      ]
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "price": 1448,
+      "N": 20,
+      "counts": {
+        "C": 18,
+        "W": 2
+      },
+      "J24": "1/10",
+      "eventual_return_bound": [
+        "-4/5",
+        "1"
+      ]
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "price": 4096,
+      "N": 20,
+      "counts": {
+        "C": 16,
+        "W": 4
+      },
+      "J24": "1/5",
+      "eventual_return_bound": [
+        "-3/5",
+        "1"
+      ]
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "price": 128,
+      "N": 26,
+      "counts": {
+        "C": 26
+      },
+      "J24": "0",
+      "eventual_return_bound": [
+        "-1",
+        "1"
+      ]
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "price": 512,
+      "N": 26,
+      "counts": {
+        "C": 24,
+        "W": 1,
+        "L": 1
+      },
+      "J24": "0",
+      "eventual_return_bound": [
+        "-12/13",
+        "12/13"
+      ]
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "price": 724,
+      "N": 26,
+      "counts": {
+        "C": 26
+      },
+      "J24": "0",
+      "eventual_return_bound": [
+        "-1",
+        "1"
+      ]
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "price": 1448,
+      "N": 26,
+      "counts": {
+        "C": 25,
+        "W": 1
+      },
+      "J24": "1/26",
+      "eventual_return_bound": [
+        "-12/13",
+        "1"
+      ]
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "price": 4096,
+      "N": 26,
+      "counts": {
+        "C": 25,
+        "L": 1
+      },
+      "J24": "-1/26",
+      "eventual_return_bound": [
+        "-1",
+        "12/13"
+      ]
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "price": 128,
+      "N": 26,
+      "counts": {
+        "C": 17,
+        "W": 9
+      },
+      "J24": "9/26",
+      "eventual_return_bound": [
+        "-4/13",
+        "1"
+      ]
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "price": 512,
+      "N": 26,
+      "counts": {
+        "C": 19,
+        "W": 7
+      },
+      "J24": "7/26",
+      "eventual_return_bound": [
+        "-6/13",
+        "1"
+      ]
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "price": 724,
+      "N": 26,
+      "counts": {
+        "C": 20,
+        "W": 6
+      },
+      "J24": "3/13",
+      "eventual_return_bound": [
+        "-7/13",
+        "1"
+      ]
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "price": 1448,
+      "N": 26,
+      "counts": {
+        "C": 18,
+        "W": 8
+      },
+      "J24": "4/13",
+      "eventual_return_bound": [
+        "-5/13",
+        "1"
+      ]
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "price": 4096,
+      "N": 26,
+      "counts": {
+        "C": 18,
+        "W": 8
+      },
+      "J24": "4/13",
+      "eventual_return_bound": [
+        "-5/13",
+        "1"
+      ]
+    }
+  ],
+  "deltas": [
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "initial": 1448,
+      "endpoint": 1448,
+      "net_delta": "0",
+      "transitions": {
+        "C->C": 15,
+        "W->W": 3,
+        "L->L": 2
+      }
+    },
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "initial": 128,
+      "endpoint": 128,
+      "net_delta": "0",
+      "transitions": {
+        "C->C": 18,
+        "W->W": 1,
+        "L->L": 1
+      }
+    },
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "initial": 512,
+      "endpoint": 724,
+      "net_delta": "0",
+      "transitions": {
+        "C->C": 16,
+        "C->W": 2,
+        "W->C": 1,
+        "C->L": 1
+      }
+    },
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "initial": 4096,
+      "endpoint": 1448,
+      "net_delta": "0",
+      "transitions": {
+        "C->C": 15,
+        "C->W": 1,
+        "C->L": 1,
+        "W->W": 2,
+        "L->L": 1
+      }
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "initial": 1448,
+      "endpoint": 1448,
+      "net_delta": "0",
+      "transitions": {
+        "C->C": 18,
+        "W->W": 2
+      }
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "initial": 128,
+      "endpoint": 128,
+      "net_delta": "0",
+      "transitions": {
+        "W->W": 5,
+        "C->C": 15
+      }
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "initial": 512,
+      "endpoint": 724,
+      "net_delta": "-1/5",
+      "transitions": {
+        "C->C": 11,
+        "C->W": 2,
+        "W->W": 1,
+        "W->C": 6
+      }
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "initial": 4096,
+      "endpoint": 1448,
+      "net_delta": "-1/10",
+      "transitions": {
+        "C->C": 16,
+        "W->W": 2,
+        "W->C": 2
+      }
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "initial": 1448,
+      "endpoint": 1448,
+      "net_delta": "0",
+      "transitions": {
+        "C->C": 25,
+        "W->W": 1
+      }
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "initial": 128,
+      "endpoint": 128,
+      "net_delta": "0",
+      "transitions": {
+        "C->C": 26
+      }
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "initial": 512,
+      "endpoint": 724,
+      "net_delta": "0",
+      "transitions": {
+        "C->C": 24,
+        "W->C": 1,
+        "L->C": 1
+      }
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "initial": 4096,
+      "endpoint": 1448,
+      "net_delta": "1/13",
+      "transitions": {
+        "C->C": 24,
+        "L->C": 1,
+        "C->W": 1
+      }
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "initial": 1448,
+      "endpoint": 1448,
+      "net_delta": "0",
+      "transitions": {
+        "C->C": 18,
+        "W->W": 8
+      }
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "initial": 128,
+      "endpoint": 128,
+      "net_delta": "0",
+      "transitions": {
+        "C->C": 17,
+        "W->W": 9
+      }
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "initial": 512,
+      "endpoint": 724,
+      "net_delta": "-1/26",
+      "transitions": {
+        "C->C": 17,
+        "C->W": 2,
+        "W->W": 4,
+        "W->C": 3
+      }
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "initial": 4096,
+      "endpoint": 1448,
+      "net_delta": "0",
+      "transitions": {
+        "C->C": 16,
+        "C->W": 2,
+        "W->W": 6,
+        "W->C": 2
+      }
+    }
+  ],
+  "new_go": 0,
+  "scope": "Family-paired finiteH24 return; bounds only [-1,1] unresolved algebra, not eventual probability or stability proof."
+}

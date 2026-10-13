@@ -1,0 +1,72 @@
+{
+  "status": "FROZEN_FRESH_VALIDATION_AFTER951_ENDPOINTS",
+  "seeds": [
+    2026148000,
+    2026148001,
+    2026148002,
+    2026148003,
+    2026148004,
+    2026148005,
+    2026148006,
+    2026148007,
+    2026148008,
+    2026148009,
+    2026148010,
+    2026148011,
+    2026148012,
+    2026148013,
+    2026148014,
+    2026148015,
+    2026148016,
+    2026148017,
+    2026148018,
+    2026148019,
+    2026148020,
+    2026148021,
+    2026148022,
+    2026148023,
+    2026148024,
+    2026148025,
+    2026148026,
+    2026148027,
+    2026148028,
+    2026148029,
+    2026148030,
+    2026148031
+  ],
+  "phases": "All validation; newseedfamilies samegeometry/stock acceptance; nofit orresampling",
+  "variants": [
+    "center4",
+    "center8",
+    "edge4",
+    "edge8"
+  ],
+  "placement": "SharedpergeometryN,N,B,G eachside; NB4 retainsfirstN/B; NBG8 retainsallactors. Centerrows5/3 andedgerows1/3, samepriceblindplacementdomain as901. No prefix.",
+  "stock_guard": "Global base inventory <= standardstock: P18 L4 N4 S4 B2 R2 G4 K2. NBG8exactN4 B2 G2 K2. Allpromotions andcaptures preservebaseinventory.",
+  "prices": [
+    32,
+    90,
+    328,
+    1024
+  ],
+  "opponents": [
+    "unit_search",
+    "uniform_random"
+  ],
+  "seed_base": 2026148500,
+  "cap": 24,
+  "nodes": 256,
+  "limits": "<=256closedgames/120sec, sameH24/256 and2opponents2colors, allfailuresretained",
+  "eligibility": "Onlynonmovingcheck/nonterminal/legalaction>=2 filters, noprice-outcome selection",
+  "scope": "Independentprospective replication ofstockedgeNBG learned128/90 vsunit90/90; changedtwo-axisfit testedchosenfirsttie, otherbestplateaupoints notvalidated.",
+  "profiles": [
+    {
+      "B": 90,
+      "G": 90
+    },
+    {
+      "B": 128,
+      "G": 90
+    }
+  ]
+}
