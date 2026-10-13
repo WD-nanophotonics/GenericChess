@@ -1847,3 +1847,9 @@ safe_checkpoint accepted, all owned producers closed, science OPEN.
 Report-codec/guard mistake was repaired before commit/push; original failed working
 copy stays private, typed failure is published. Nothing is called sent/published
 until the actual tested delivery and exact remote SHA check.
+
+Reviewed science delivery e95b3c29c48e367b1bb8dc522bc22958c9be2568
+is independently verified at origin/sandbox;108 required publisher tests pass.
+The fixed science/report/collaboration links are delivered once to Dot in the
+existing primary thread. Delivery is not a claim of reply/review/execution.
+Exact arguments/receipt stay private; no raw Slack/account record is published.
