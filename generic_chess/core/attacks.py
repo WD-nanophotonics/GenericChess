@@ -35,12 +35,16 @@ def pseudo_attacks(position: Position, player: int, compiled: "CompiledRuleSet")
     """All squares geometrically attacked by ``player``'s pieces."""
     ensure_ruleset_match(position, compiled)
     n = compiled.board_size
+    # The source coordinate has no consumer. Retain its original conversion
+    # only outside the canonical validated square-board shape.
+    canonical_shape = type(n) is int and n > 0 and len(position.board) == n * n
     attacked: set[Square] = set()
     for idx, piece in enumerate(position.board):
         if piece is None or piece.owner != player:
             continue
         tid = piece.current_type_id
-        square = index_to_square(idx, n)
+        if not canonical_shape:
+            index_to_square(idx, n)
         atoms = compiled.types_by_id[tid].movement_atoms
         leap_row = compiled.leap_targets[tid][player][idx]
         ray_row = compiled.ray_paths[tid][player][idx]

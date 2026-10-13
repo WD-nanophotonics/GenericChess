@@ -1085,7 +1085,9 @@ class SearchPathRuntime:
                     return self._legal_cache
             actions = []
             bindings = {}
-            for semantic_action, binding in engine.iter_legal_action_bindings(self.position, checkpoint=checkpoint):
+            for semantic_action, binding in engine.iter_legal_action_bindings(
+                    self.position, checkpoint=checkpoint, full_frontier=True
+                ):
                 public = _semantic_public_action(engine, semantic_action)
                 actions.append(public)
                 bindings[public] = (semantic_action, binding)

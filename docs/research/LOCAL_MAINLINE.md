@@ -26,21 +26,24 @@ roots, not claimed improved end-to-end or an independently reproduced user loss.
 
 ## Current measured question
 
-Latest2026-10-14: S3_TRANSACTION_CLOSURE.md closes129actual searches.
-Conditional guard-free own-anchor reuse keeps full transition/S3-other/S4/history;
-valid remote guard, enemy-retype and second-invariant controls require fallback.
-Optional-parent required-error and interleaved-iterator retention defects are
-repaired privately. Broad setup is deferred: old64/new32 resource planes give
-48same-depth pairs,0gains/0losses; fixed16 costs mixed. Actual24-board metadata-
-absent q0 at64s givesbothD2→D3, q4D1 unchanged, not strength/Native coverage.
-Profile4 shows4308setup contexts cost2.10–2.12profile seconds; an actual original
-caller finds4093first-only versus215exhausted, fullwork preserved. A mistaken
-checkpoint4100/208 is explicitly corrected with originaldata retained.
-Private fullcaller4 restores local fixed-work costs but is one-order diagnostic,
-not deployment. Production remains2d1bed;70relatedtests pass.
-Next implement minimal explicit intent at existing SearchPathRuntime fullbinding
-materialization; preserve existence, all invariants/errors/stops and full domain.
-No production stack inspection, positioncache, UI/default or newengine route.
+Latest2026-10-14: S3_FULL_FRONTIER_INTENT.md delivers exact generator-local
+S3 observation only for existing completebinding materialization; existence/
+filters/provider/cache routes unchanged. Fulltransition/otherS3/S4/history/
+required errors andcancellation retained; guard/retype/secondinvariant controls.
+Final2,429active tests,200actualsearches close. S3fresh64andfinalcombined16:
+40retainedpairs allsame depth/fulltuple, no strength/depthgain. Final16fixed
+fullnon-time/work exact, localcost22.4–40.2percent lower; ordinaryload remains.
+Private sourcecoordinate16fixed+32fresh qualifies one small guarded removal;
+evaluator scores/weights/defaults/UI/Native unchanged. Nativeevaluation16 q4
+tiny/mixed anddirectpoll8mixed deferred.96grammar/794transitions+16rectangle+
+8actualmetadata-absent24PVE controls retainfull domain/fallback.
+q4profile1994 has209112endpointrows, not metadataabsent: mistaken assumption
+and0-queryfailedtargetcache probe retained/corrected, actualcounts intact.
+Existingendpoint/currentboardjoin is2.17–3.06xslower; reject. Next changed
+premise: existingvalidatedframe check pluscandidate-local dependency/write
+closure forfirst-only reply, finitecost/error counterbefore integration;
+no newpositioncache/metadata/default. Aux37/3b5ca fixedreports read/arithmetic only;
+newAux39 NB8inventory withdrawal honored, no primaryadoption/merge/rerun.
 
 Latest2026-10-13: COMPILED_ENDPOINT_FALLBACK.md adopts one bounded compile-owned
 endpoint schedule only after originalincoming metadata declines; normal indexed/Native

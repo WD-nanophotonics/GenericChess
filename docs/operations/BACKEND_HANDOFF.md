@@ -206,3 +206,15 @@ qualify this path. Nativeboard<=16 remains; q4 hardcheck limits and existing
 defaults remain. ReservedID generation repair affects boards>=23; original<=22
 seed namespaces unchanged.24Core twoD0/node256 choices actually submit, not a
 strength/completeNative claim. See research/COMPILED_ENDPOINT_FALLBACK.md.
+
+
+2026-10-14: complete Core SearchPathRuntime binding materialization uses an
+internal full-frontier intent with transaction-local S3 observations.
+Other invariants/S4/history/errors/stops and all unsupported guard/source routes
+remain complete; existence/provider/cache paths stay. A guarded unused legacy
+attack source-coordinate allocation is removed without score/weight changes.
+Take the complete backend commit and restart Python; no new Native ABI/build
+feature, public UI flag or frontend work is required. UI Test remains user-owned.
+Final2,429active tests and200actual calls qualify the finite measured scope;
+fixed-cost improvement is not retained-depth/strength improvement. See
+research/S3_FULL_FRONTIER_INTENT.md and its explicit scientific archive.
