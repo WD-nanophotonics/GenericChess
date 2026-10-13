@@ -1,0 +1,30 @@
+{
+  "status": "PASS_ALL_NEW_D_E_TWO_OPPONENT_TWO_POOL_PROBES",
+  "root_cache_stats": {
+    "original_constructions": 24,
+    "clone_lookups": 1152
+  },
+  "counts": {
+    "games": 576,
+    "actual_go": 13517,
+    "PV_moves": 238149,
+    "Python_actual_actions": 13517,
+    "random_draws": 0,
+    "sorted_legal_arrays": 0,
+    "price_ACK_entries": 768,
+    "batches": 0,
+    "proposal_rounds": 0,
+    "prefixes": 576
+  },
+  "source_sha256": {
+    "797": {
+      "games.jsonl": "b0f2983892ba50d3a97200a836a0a3effdbc338e3182911e878a12bb4affa2d5",
+      "queries.jsonl": "f791cf8cd9f4034b6bad098f94413d401586414406c05f043e9e0b23192ca6e5",
+      "price_acks.json": "a9ef5cfb4d003658efe440b7f519d86457fa47c84ba23245efc5dbfc6afcbd23",
+      "result.json": "1f2d7db8b482f80f391ff81561d07105025aa93a433bcf8e1302189842a07d82"
+    }
+  },
+  "new_go": 0,
+  "seconds": 27.014641900081187,
+  "scope": "ALL797NEW D/E/frozeninitials24family2opponentH24 fullindependentPython rules/history/PV/material/terminal/ACK/raw metadata/pairedcells; allnegativekept. Immutablecanonicalrootcache no skippedchecks. Shortwindow notwholeWDL/source/human/general-domainproof."
+}

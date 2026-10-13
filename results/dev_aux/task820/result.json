@@ -1,0 +1,30 @@
+{
+  "status": "PASS_ALL_FROZEN_D_E_F_G_PRICES_CROSSED_BUDGETS",
+  "root_cache_stats": {
+    "original_constructions": 24,
+    "clone_lookups": 3456
+  },
+  "counts": {
+    "games": 1728,
+    "actual_go": 39919,
+    "PV_moves": 516749,
+    "Python_actual_actions": 39919,
+    "random_draws": 0,
+    "sorted_legal_arrays": 0,
+    "price_ACK_entries": 2560,
+    "batches": 0,
+    "proposal_rounds": 0,
+    "prefixes": 1728
+  },
+  "source_sha256": {
+    "819": {
+      "games.jsonl": "bc1d77b4d723dc9a7c373e4e71bb4ea432ec191221ca737649d1989261fb159f",
+      "queries.jsonl": "8033175b635e9d9e56ada5c68251af21525cfc12c418082adb054dcbe3906bde",
+      "price_acks.json": "23f6ccd4815993b2b7cfc8a1319cf5cd3615bc27ecbdebb1fed496c883f9ab10",
+      "result.json": "74ff7c9be04825d5cac0559cd2e4757972e47cb6e2995e5ba00244f45ce4b0ab"
+    }
+  },
+  "new_go": 0,
+  "seconds": 79.23874920001253,
+  "scope": "ALL819NEW plusqualified797oldDEV D/E/F/G/frozeninitials24family2opponentH24 fullindependentPython rules/history/PV/material/terminal/ACK/raw metadata/pairedcells; allnegativekept. Immutablecanonicalrootcache no skippedchecks. Shortwindow notwholeWDL/source/human/general-domainproof."
+}

@@ -1,0 +1,30 @@
+{
+  "status": "PASS_ALL_NEW_LEXICOGRAPHIC_TRAINING_ACTUAL_AND_SELECTIONS",
+  "counts": {
+    "games": 4608,
+    "actual_go": 54940,
+    "PV_moves": 962323,
+    "Python_actual_actions": 54940,
+    "random_draws": 0,
+    "sorted_legal_arrays": 0,
+    "price_ACK_entries": 9216,
+    "batches": 168,
+    "proposal_rounds": 24,
+    "prefixes": 4608
+  },
+  "root_cache_stats": {
+    "original_constructions": 16,
+    "clone_lookups": 9216
+  },
+  "source_sha256": {
+    "787": {
+      "games.jsonl": "76e1b3c8a0f9104f74e0bded45304442cb5421716b8434ee4dcb891c4f0a378f",
+      "queries.jsonl": "ed23adf62ac3a92ccf989939b2d81f334025edc07c63f8bb26073c24bff8d269",
+      "price_acks.json": "f45a7f8ecb6091e0f1bb434fa37b16ef18368ae94c349cc335d1a3f7bafa25e5",
+      "result.json": "50ffcfa0aaf46b434295fd21ddf8dc817c2c8f5a2c4d3a09af4442c0b3c16cb4"
+    }
+  },
+  "new_go": 0,
+  "seconds": 130.5512784998864,
+  "scope": "ALL787NEW H12fit independentPython fullhistory/legal/PV/material/terminal/ACK/rawquery plusH12 literalquantityfeedback andALL24lexicographic coordinateupdate decisions/168logicalgridpoints. Immutable24root validatedconstructor/deepclones no skippedchecks, no newgo. Allendpoints before anyD/Edevelopment."
+}

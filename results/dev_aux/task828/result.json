@@ -1,0 +1,765 @@
+{
+  "status": "ALL64_ABBA_QUERY_DURABILITY_CONTROL_COMPLETE",
+  "actual_games": 64,
+  "actual_go": 768,
+  "blocks": [
+    {
+      "block": 0,
+      "policy": "A",
+      "games": 16,
+      "go": 192,
+      "seconds": 0.9690000000409782,
+      "profile": [
+        {
+          "file": "adapter.py",
+          "line": 33,
+          "function": "close",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 8.200000000000001e-06,
+          "cumulative_seconds": 1.8376787
+        },
+        {
+          "file": "subprocess.py",
+          "line": 1259,
+          "function": "wait",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 5.53e-05,
+          "cumulative_seconds": 1.8376705000000002
+        },
+        {
+          "file": "subprocess.py",
+          "line": 1580,
+          "function": "_wait",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 1.87e-05,
+          "cumulative_seconds": 1.8280074000000002
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method _winapi.WaitForSingleObject>",
+          "primitive_calls": 4,
+          "calls": 4,
+          "self_seconds": 0.0011929,
+          "cumulative_seconds": 1.8279227
+        },
+        {
+          "file": "adapter.py",
+          "line": 18,
+          "function": "until",
+          "primitive_calls": 422,
+          "calls": 422,
+          "self_seconds": 0.0026912000000000004,
+          "cumulative_seconds": 0.5839527
+        },
+        {
+          "file": "queue.py",
+          "line": 154,
+          "function": "get",
+          "primitive_calls": 1615,
+          "calls": 1615,
+          "self_seconds": 0.0045073000000000005,
+          "cumulative_seconds": 0.5793316000000001
+        },
+        {
+          "file": "threading.py",
+          "line": 323,
+          "function": "wait",
+          "primitive_calls": 1085,
+          "calls": 1085,
+          "self_seconds": 0.0022162,
+          "cumulative_seconds": 0.5706273000000001
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'acquire' of '_thread.lock' objects>",
+          "primitive_calls": 5957,
+          "calls": 7576,
+          "self_seconds": 0.5548019000000001,
+          "cumulative_seconds": 0.5665588
+        },
+        {
+          "file": "controller_curriculum.py",
+          "line": 13,
+          "function": "native_game",
+          "primitive_calls": 16,
+          "calls": 16,
+          "self_seconds": 0.0108856,
+          "cumulative_seconds": 0.5003714
+        },
+        {
+          "file": "warm_adapter.py",
+          "line": 10,
+          "function": "search",
+          "primitive_calls": 192,
+          "calls": 192,
+          "self_seconds": 0.00219,
+          "cumulative_seconds": 0.3336176
+        },
+        {
+          "file": "warm_adapter.py",
+          "line": 7,
+          "function": "begin_game",
+          "primitive_calls": 32,
+          "calls": 32,
+          "self_seconds": 8.99e-05,
+          "cumulative_seconds": 0.27637480000000003
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method nt.fsync>",
+          "primitive_calls": 225,
+          "calls": 225,
+          "self_seconds": 0.1742813,
+          "cumulative_seconds": 0.1742813
+        },
+        {
+          "file": "warm_adapter.py",
+          "line": 5,
+          "function": "__init__",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 8.3e-06,
+          "cumulative_seconds": 0.1495508
+        },
+        {
+          "file": "adapter.py",
+          "line": 7,
+          "function": "__init__",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 0.0005204000000000001,
+          "cumulative_seconds": 0.1495361
+        },
+        {
+          "file": "run.py",
+          "line": 6,
+          "function": "stop",
+          "primitive_calls": 208,
+          "calls": 208,
+          "self_seconds": 0.0050731000000000005,
+          "cumulative_seconds": 0.1242134
+        },
+        {
+          "file": "pathlib.py",
+          "line": 1022,
+          "function": "read_text",
+          "primitive_calls": 1248,
+          "calls": 1248,
+          "self_seconds": 0.0015603000000000001,
+          "cumulative_seconds": 0.0880282
+        },
+        {
+          "file": "pathlib.py",
+          "line": 1005,
+          "function": "open",
+          "primitive_calls": 1249,
+          "calls": 1249,
+          "self_seconds": 0.0004981,
+          "cumulative_seconds": 0.0543574
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method _io.open>",
+          "primitive_calls": 1253,
+          "calls": 1253,
+          "self_seconds": 0.0351454,
+          "cumulative_seconds": 0.053798200000000004
+        },
+        {
+          "file": "audit.py",
+          "line": 21,
+          "function": "query",
+          "primitive_calls": 192,
+          "calls": 192,
+          "self_seconds": 0.0200064,
+          "cumulative_seconds": 0.0268059
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'read' of '_io.TextIOWrapper' objects>",
+          "primitive_calls": 1248,
+          "calls": 1248,
+          "self_seconds": 0.023252000000000002,
+          "cumulative_seconds": 0.0247139
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "policy": "B",
+      "games": 16,
+      "go": 192,
+      "seconds": 0.7969999997876585,
+      "profile": [
+        {
+          "file": "adapter.py",
+          "line": 33,
+          "function": "close",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 7.8e-06,
+          "cumulative_seconds": 1.5288951000000002
+        },
+        {
+          "file": "subprocess.py",
+          "line": 1259,
+          "function": "wait",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 3.82e-05,
+          "cumulative_seconds": 1.5288873
+        },
+        {
+          "file": "subprocess.py",
+          "line": 1580,
+          "function": "_wait",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 1.56e-05,
+          "cumulative_seconds": 1.5243172
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method _winapi.WaitForSingleObject>",
+          "primitive_calls": 4,
+          "calls": 4,
+          "self_seconds": 0.0015547,
+          "cumulative_seconds": 1.5242467000000002
+        },
+        {
+          "file": "adapter.py",
+          "line": 18,
+          "function": "until",
+          "primitive_calls": 422,
+          "calls": 422,
+          "self_seconds": 0.0026953000000000003,
+          "cumulative_seconds": 0.5768178
+        },
+        {
+          "file": "queue.py",
+          "line": 154,
+          "function": "get",
+          "primitive_calls": 1615,
+          "calls": 1615,
+          "self_seconds": 0.0046717,
+          "cumulative_seconds": 0.5722532
+        },
+        {
+          "file": "threading.py",
+          "line": 323,
+          "function": "wait",
+          "primitive_calls": 1097,
+          "calls": 1097,
+          "self_seconds": 0.0023418000000000002,
+          "cumulative_seconds": 0.5632796
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'acquire' of '_thread.lock' objects>",
+          "primitive_calls": 6005,
+          "calls": 7624,
+          "self_seconds": 0.5481815,
+          "cumulative_seconds": 0.5591418
+        },
+        {
+          "file": "controller_curriculum.py",
+          "line": 13,
+          "function": "native_game",
+          "primitive_calls": 16,
+          "calls": 16,
+          "self_seconds": 0.010604800000000001,
+          "cumulative_seconds": 0.3325808
+        },
+        {
+          "file": "warm_adapter.py",
+          "line": 7,
+          "function": "begin_game",
+          "primitive_calls": 32,
+          "calls": 32,
+          "self_seconds": 0.00011700000000000001,
+          "cumulative_seconds": 0.2789879
+        },
+        {
+          "file": "execute.py",
+          "line": 10,
+          "function": "search",
+          "primitive_calls": 192,
+          "calls": 192,
+          "self_seconds": 0.0006504000000000001,
+          "cumulative_seconds": 0.1653329
+        },
+        {
+          "file": "warm_adapter.py",
+          "line": 10,
+          "function": "search",
+          "primitive_calls": 192,
+          "calls": 192,
+          "self_seconds": 0.0013986,
+          "cumulative_seconds": 0.1588534
+        },
+        {
+          "file": "warm_adapter.py",
+          "line": 5,
+          "function": "__init__",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 6.4000000000000006e-06,
+          "cumulative_seconds": 0.14527710000000002
+        },
+        {
+          "file": "adapter.py",
+          "line": 7,
+          "function": "__init__",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 0.0002843,
+          "cumulative_seconds": 0.14526160000000002
+        },
+        {
+          "file": "run.py",
+          "line": 6,
+          "function": "stop",
+          "primitive_calls": 208,
+          "calls": 208,
+          "self_seconds": 0.005198400000000001,
+          "cumulative_seconds": 0.12561830000000002
+        },
+        {
+          "file": "pathlib.py",
+          "line": 1022,
+          "function": "read_text",
+          "primitive_calls": 1248,
+          "calls": 1248,
+          "self_seconds": 0.001567,
+          "cumulative_seconds": 0.0887115
+        },
+        {
+          "file": "pathlib.py",
+          "line": 1005,
+          "function": "open",
+          "primitive_calls": 1249,
+          "calls": 1249,
+          "self_seconds": 0.000515,
+          "cumulative_seconds": 0.054461300000000004
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method _io.open>",
+          "primitive_calls": 1253,
+          "calls": 1253,
+          "self_seconds": 0.034584000000000004,
+          "cumulative_seconds": 0.053878800000000004
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method nt.fsync>",
+          "primitive_calls": 33,
+          "calls": 33,
+          "self_seconds": 0.029578,
+          "cumulative_seconds": 0.029578
+        },
+        {
+          "file": "audit.py",
+          "line": 21,
+          "function": "query",
+          "primitive_calls": 192,
+          "calls": 192,
+          "self_seconds": 0.019440100000000002,
+          "cumulative_seconds": 0.026172200000000003
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "policy": "B",
+      "games": 16,
+      "go": 192,
+      "seconds": 0.796000000089407,
+      "profile": [
+        {
+          "file": "adapter.py",
+          "line": 33,
+          "function": "close",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 7.100000000000001e-06,
+          "cumulative_seconds": 1.5157113
+        },
+        {
+          "file": "subprocess.py",
+          "line": 1259,
+          "function": "wait",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 3.43e-05,
+          "cumulative_seconds": 1.5157042
+        },
+        {
+          "file": "subprocess.py",
+          "line": 1580,
+          "function": "_wait",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 1.48e-05,
+          "cumulative_seconds": 1.5110193
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method _winapi.WaitForSingleObject>",
+          "primitive_calls": 4,
+          "calls": 4,
+          "self_seconds": 0.001567,
+          "cumulative_seconds": 1.5109488000000002
+        },
+        {
+          "file": "adapter.py",
+          "line": 18,
+          "function": "until",
+          "primitive_calls": 422,
+          "calls": 422,
+          "self_seconds": 0.0027123,
+          "cumulative_seconds": 0.5679336
+        },
+        {
+          "file": "queue.py",
+          "line": 154,
+          "function": "get",
+          "primitive_calls": 1615,
+          "calls": 1615,
+          "self_seconds": 0.004543800000000001,
+          "cumulative_seconds": 0.5633424
+        },
+        {
+          "file": "threading.py",
+          "line": 323,
+          "function": "wait",
+          "primitive_calls": 1115,
+          "calls": 1115,
+          "self_seconds": 0.0023379,
+          "cumulative_seconds": 0.5545756000000001
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'acquire' of '_thread.lock' objects>",
+          "primitive_calls": 6077,
+          "calls": 7696,
+          "self_seconds": 0.5398929,
+          "cumulative_seconds": 0.5504041000000001
+        },
+        {
+          "file": "controller_curriculum.py",
+          "line": 13,
+          "function": "native_game",
+          "primitive_calls": 16,
+          "calls": 16,
+          "self_seconds": 0.0105203,
+          "cumulative_seconds": 0.3216894
+        },
+        {
+          "file": "warm_adapter.py",
+          "line": 7,
+          "function": "begin_game",
+          "primitive_calls": 32,
+          "calls": 32,
+          "self_seconds": 0.00010680000000000001,
+          "cumulative_seconds": 0.2764092
+        },
+        {
+          "file": "execute.py",
+          "line": 10,
+          "function": "search",
+          "primitive_calls": 192,
+          "calls": 192,
+          "self_seconds": 0.0006514,
+          "cumulative_seconds": 0.1567202
+        },
+        {
+          "file": "warm_adapter.py",
+          "line": 10,
+          "function": "search",
+          "primitive_calls": 192,
+          "calls": 192,
+          "self_seconds": 0.0013532000000000001,
+          "cumulative_seconds": 0.1505274
+        },
+        {
+          "file": "warm_adapter.py",
+          "line": 5,
+          "function": "__init__",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 6.7e-06,
+          "cumulative_seconds": 0.14734740000000002
+        },
+        {
+          "file": "adapter.py",
+          "line": 7,
+          "function": "__init__",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 0.0005104,
+          "cumulative_seconds": 0.1473351
+        },
+        {
+          "file": "run.py",
+          "line": 6,
+          "function": "stop",
+          "primitive_calls": 208,
+          "calls": 208,
+          "self_seconds": 0.0052118,
+          "cumulative_seconds": 0.12411100000000001
+        },
+        {
+          "file": "pathlib.py",
+          "line": 1022,
+          "function": "read_text",
+          "primitive_calls": 1248,
+          "calls": 1248,
+          "self_seconds": 0.0015781,
+          "cumulative_seconds": 0.0872951
+        },
+        {
+          "file": "pathlib.py",
+          "line": 1005,
+          "function": "open",
+          "primitive_calls": 1249,
+          "calls": 1249,
+          "self_seconds": 0.0005009,
+          "cumulative_seconds": 0.054396700000000006
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method _io.open>",
+          "primitive_calls": 1253,
+          "calls": 1253,
+          "self_seconds": 0.034830200000000006,
+          "cumulative_seconds": 0.0538295
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method nt.fsync>",
+          "primitive_calls": 33,
+          "calls": 33,
+          "self_seconds": 0.0349509,
+          "cumulative_seconds": 0.0349509
+        },
+        {
+          "file": "audit.py",
+          "line": 21,
+          "function": "query",
+          "primitive_calls": 192,
+          "calls": 192,
+          "self_seconds": 0.0191977,
+          "cumulative_seconds": 0.0257998
+        }
+      ]
+    },
+    {
+      "block": 3,
+      "policy": "A",
+      "games": 16,
+      "go": 192,
+      "seconds": 0.9849999998696148,
+      "profile": [
+        {
+          "file": "adapter.py",
+          "line": 33,
+          "function": "close",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 5.8e-06,
+          "cumulative_seconds": 1.8625157
+        },
+        {
+          "file": "subprocess.py",
+          "line": 1259,
+          "function": "wait",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 3.04e-05,
+          "cumulative_seconds": 1.8625099
+        },
+        {
+          "file": "subprocess.py",
+          "line": 1580,
+          "function": "_wait",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 1.66e-05,
+          "cumulative_seconds": 1.8580832
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method _winapi.WaitForSingleObject>",
+          "primitive_calls": 4,
+          "calls": 4,
+          "self_seconds": 0.0015433,
+          "cumulative_seconds": 1.8579946
+        },
+        {
+          "file": "adapter.py",
+          "line": 18,
+          "function": "until",
+          "primitive_calls": 422,
+          "calls": 422,
+          "self_seconds": 0.0028574000000000004,
+          "cumulative_seconds": 0.6070767
+        },
+        {
+          "file": "queue.py",
+          "line": 154,
+          "function": "get",
+          "primitive_calls": 1615,
+          "calls": 1615,
+          "self_seconds": 0.0048022,
+          "cumulative_seconds": 0.6022222
+        },
+        {
+          "file": "threading.py",
+          "line": 323,
+          "function": "wait",
+          "primitive_calls": 1102,
+          "calls": 1102,
+          "self_seconds": 0.0024186000000000004,
+          "cumulative_seconds": 0.5928824
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'acquire' of '_thread.lock' objects>",
+          "primitive_calls": 6025,
+          "calls": 7644,
+          "self_seconds": 0.5760333000000001,
+          "cumulative_seconds": 0.5884994
+        },
+        {
+          "file": "controller_curriculum.py",
+          "line": 13,
+          "function": "native_game",
+          "primitive_calls": 16,
+          "calls": 16,
+          "self_seconds": 0.010855400000000001,
+          "cumulative_seconds": 0.4909315
+        },
+        {
+          "file": "warm_adapter.py",
+          "line": 10,
+          "function": "search",
+          "primitive_calls": 192,
+          "calls": 192,
+          "self_seconds": 0.0022018000000000003,
+          "cumulative_seconds": 0.32647210000000004
+        },
+        {
+          "file": "warm_adapter.py",
+          "line": 7,
+          "function": "begin_game",
+          "primitive_calls": 32,
+          "calls": 32,
+          "self_seconds": 0.00012140000000000001,
+          "cumulative_seconds": 0.2894049
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method nt.fsync>",
+          "primitive_calls": 225,
+          "calls": 225,
+          "self_seconds": 0.16957570000000002,
+          "cumulative_seconds": 0.16957570000000002
+        },
+        {
+          "file": "warm_adapter.py",
+          "line": 5,
+          "function": "__init__",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 6.6e-06,
+          "cumulative_seconds": 0.1614373
+        },
+        {
+          "file": "adapter.py",
+          "line": 7,
+          "function": "__init__",
+          "primitive_calls": 2,
+          "calls": 2,
+          "self_seconds": 0.0005441,
+          "cumulative_seconds": 0.16142530000000002
+        },
+        {
+          "file": "run.py",
+          "line": 6,
+          "function": "stop",
+          "primitive_calls": 208,
+          "calls": 208,
+          "self_seconds": 0.0051558,
+          "cumulative_seconds": 0.12192040000000001
+        },
+        {
+          "file": "pathlib.py",
+          "line": 1022,
+          "function": "read_text",
+          "primitive_calls": 1248,
+          "calls": 1248,
+          "self_seconds": 0.0015752000000000001,
+          "cumulative_seconds": 0.08506430000000001
+        },
+        {
+          "file": "pathlib.py",
+          "line": 1005,
+          "function": "open",
+          "primitive_calls": 1249,
+          "calls": 1249,
+          "self_seconds": 0.0005167,
+          "cumulative_seconds": 0.054079
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method _io.open>",
+          "primitive_calls": 1253,
+          "calls": 1253,
+          "self_seconds": 0.0346559,
+          "cumulative_seconds": 0.0534957
+        },
+        {
+          "file": "audit.py",
+          "line": 21,
+          "function": "query",
+          "primitive_calls": 192,
+          "calls": 192,
+          "self_seconds": 0.020142700000000003,
+          "cumulative_seconds": 0.0269787
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'read' of '_io.TextIOWrapper' objects>",
+          "primitive_calls": 1248,
+          "calls": 1248,
+          "self_seconds": 0.0206057,
+          "cumulative_seconds": 0.021974800000000003
+        }
+      ]
+    }
+  ],
+  "seconds": 3.655999999959022,
+  "source_scope": "827ABBA journal durability overhead control only, ALL64physical1024warmH12 fixedcandidate/opponent/devroots, nolearning/newholdoutclaims. A perqueryfsync/B closedgame fsyncbeforeclosedrecord; same semantic/PVchecks. cProfileallblocks equally."
+}

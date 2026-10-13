@@ -1,0 +1,178 @@
+{
+  "status": "PASS_ALL_DECLARED_ALLLEGAL_ROOTS_NATIVE",
+  "actual_moves": 960,
+  "eligible_roots": 16,
+  "failed": [],
+  "prelude_counts": {
+    "capture": 77,
+    "promotion": 24,
+    "drop": 32
+  },
+  "roots": [
+    {
+      "seed": 2026140000,
+      "phase": "independent_validation",
+      "promoted_on_board": 2,
+      "hand_pieces": 6,
+      "current_legal_moves": 99,
+      "current_capture_moves": 7,
+      "current_promotion_moves": 1,
+      "current_drop_moves": 71
+    },
+    {
+      "seed": 2026140001,
+      "phase": "independent_validation",
+      "promoted_on_board": 2,
+      "hand_pieces": 5,
+      "current_legal_moves": 54,
+      "current_capture_moves": 9,
+      "current_promotion_moves": 1,
+      "current_drop_moves": 13
+    },
+    {
+      "seed": 2026140002,
+      "phase": "independent_validation",
+      "promoted_on_board": 1,
+      "hand_pieces": 3,
+      "current_legal_moves": 75,
+      "current_capture_moves": 6,
+      "current_promotion_moves": 7,
+      "current_drop_moves": 33
+    },
+    {
+      "seed": 2026140003,
+      "phase": "independent_validation",
+      "promoted_on_board": 1,
+      "hand_pieces": 3,
+      "current_legal_moves": 5,
+      "current_capture_moves": 3,
+      "current_promotion_moves": 0,
+      "current_drop_moves": 0
+    },
+    {
+      "seed": 2026140004,
+      "phase": "independent_validation",
+      "promoted_on_board": 0,
+      "hand_pieces": 2,
+      "current_legal_moves": 34,
+      "current_capture_moves": 0,
+      "current_promotion_moves": 0,
+      "current_drop_moves": 4
+    },
+    {
+      "seed": 2026140005,
+      "phase": "independent_validation",
+      "promoted_on_board": 0,
+      "hand_pieces": 2,
+      "current_legal_moves": 32,
+      "current_capture_moves": 6,
+      "current_promotion_moves": 2,
+      "current_drop_moves": 0
+    },
+    {
+      "seed": 2026140006,
+      "phase": "independent_validation",
+      "promoted_on_board": 0,
+      "hand_pieces": 2,
+      "current_legal_moves": 75,
+      "current_capture_moves": 4,
+      "current_promotion_moves": 1,
+      "current_drop_moves": 43
+    },
+    {
+      "seed": 2026140007,
+      "phase": "independent_validation",
+      "promoted_on_board": 1,
+      "hand_pieces": 2,
+      "current_legal_moves": 25,
+      "current_capture_moves": 0,
+      "current_promotion_moves": 0,
+      "current_drop_moves": 0
+    },
+    {
+      "seed": 2026140008,
+      "phase": "independent_validation",
+      "promoted_on_board": 2,
+      "hand_pieces": 3,
+      "current_legal_moves": 39,
+      "current_capture_moves": 4,
+      "current_promotion_moves": 1,
+      "current_drop_moves": 0
+    },
+    {
+      "seed": 2026140009,
+      "phase": "independent_validation",
+      "promoted_on_board": 2,
+      "hand_pieces": 3,
+      "current_legal_moves": 40,
+      "current_capture_moves": 4,
+      "current_promotion_moves": 1,
+      "current_drop_moves": 0
+    },
+    {
+      "seed": 2026140010,
+      "phase": "independent_validation",
+      "promoted_on_board": 0,
+      "hand_pieces": 1,
+      "current_legal_moves": 25,
+      "current_capture_moves": 2,
+      "current_promotion_moves": 0,
+      "current_drop_moves": 0
+    },
+    {
+      "seed": 2026140011,
+      "phase": "independent_validation",
+      "promoted_on_board": 1,
+      "hand_pieces": 3,
+      "current_legal_moves": 39,
+      "current_capture_moves": 3,
+      "current_promotion_moves": 0,
+      "current_drop_moves": 8
+    },
+    {
+      "seed": 2026140012,
+      "phase": "independent_validation",
+      "promoted_on_board": 0,
+      "hand_pieces": 1,
+      "current_legal_moves": 39,
+      "current_capture_moves": 6,
+      "current_promotion_moves": 2,
+      "current_drop_moves": 0
+    },
+    {
+      "seed": 2026140013,
+      "phase": "independent_validation",
+      "promoted_on_board": 1,
+      "hand_pieces": 4,
+      "current_legal_moves": 30,
+      "current_capture_moves": 3,
+      "current_promotion_moves": 0,
+      "current_drop_moves": 0
+    },
+    {
+      "seed": 2026140014,
+      "phase": "independent_validation",
+      "promoted_on_board": 3,
+      "hand_pieces": 4,
+      "current_legal_moves": 108,
+      "current_capture_moves": 12,
+      "current_promotion_moves": 0,
+      "current_drop_moves": 61
+    },
+    {
+      "seed": 2026140015,
+      "phase": "independent_validation",
+      "promoted_on_board": 0,
+      "hand_pieces": 1,
+      "current_legal_moves": 25,
+      "current_capture_moves": 1,
+      "current_promotion_moves": 0,
+      "current_drop_moves": 0
+    }
+  ],
+  "independent_rule_library": "cshogi vsPython-shogi generator",
+  "source_sha256": "8d61e121ca3a157c927fb17fa8ef36449140ab501bc658db26180055dcd92205",
+  "new_go": 0,
+  "seconds": 0.12512720003724098,
+  "scope": "ALL16preassigned60plyindependentvalidationfamilies allsortedlegalarrays/RNG/history/royalterminal/promotion/drop/capture/38board+hand conservation independentlyreplayed, ALLfailures retained. Uniformalllegal sourceblind rulegenerator notnaturalhuman play/generalrule-domain orlearnedpriceproof; inputcoverage only, noengine searches."
+}

@@ -1,0 +1,12 @@
+{
+  "status": "PREDECLARED_OBSERVED_DURABILITY_OVERHEAD_CONTROL",
+  "declared_at": 1791900611.1209762,
+  "question": "Does synchronous rawquery fsync dominate shortexperiment overhead, and can game-level durablecommit reducecost without losing closedgameevidence?",
+  "observed": "warm_adapter.search writes/flushes/fsyncs rawquery everygo;826 actualsearch seconds muchsmaller thanwholeproducer. Thisis observedcomponentgap, notprovenfsyncattribution.",
+  "profiles": "Originalrandom2514 candidate vsoriginalunit90searchopponent, BOTH1024nodes/warmgame/H12. same784ALL8devroots2colors=16cases.",
+  "blocks": "ABBA four16gameblocks, A originalperqueryfsync, B allqueries append+flush andonefsync atclosedgameboundary BEFOREclosedgame JSONwritten/fsynced; possibleuncloseddiskdurabilitywindowexplicit. No lostrawrecords or semantic/PV checks removed.",
+  "policy": "Newlocal experimental subclassonly, original509/c69/productunchanged. Everycompletedgame rawqueries durablebeforeclosedrecord, journalalsoflush/fsync finallyonexit. No crashdurabilityclaim beyondOSfsync andno hardinterruptsimulation.",
+  "check": "All64actualgames rawoutputs/Python/PV/ACK/legal/history, comparesamecaseallnon-time query+actions/terminal/fitness exact; wallsABBA descriptive/noisefree notclaimed. cProfileeachblock ifused instrumentallfourequally.",
+  "cost": "Atmost64actualH12games768go, whole120secondfuse expected4-6s; AFTERcurrent learning/probeclosed. No repeatedbenchmark ornewworkers. If blockedownlane continueother usefulwork.",
+  "done": "Observedcomponentprofile/non-time equality/durableordering verified; onlyadopt fornextnewscientific batches ifcompleteindependentaudit passes, originaldata untouched."
+}

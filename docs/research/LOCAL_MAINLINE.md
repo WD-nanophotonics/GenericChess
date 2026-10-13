@@ -1,9 +1,11 @@
-# DEV_AUX current scope 2026-10-13 segment36
+# DEV_AUX current scope 2026-10-13 segment37
 
-ScienceOPEN; sidemission only. A sign/B magnitude/C train-terminalguard shortfits complete.
-A randomsourcecloser but real/generalization unstable; noadoption.9584closedgames121321go incl12partialduplicates.
-745751756765775778PASS; original769FAILED retained, separate777250complete notoriginalbudgetsuccess.
-78072grids4terminalflat11lexchoicesdiffer diagnostic only;782INPUTONLY. Report SEGMENT_20261013_36.md.
+ScienceOPEN; sidemission only. D/E terminalpriority/scalar;F/G mixedopponents1024/256 completed.
+28256closedgames363846go;789792798806816820829833 fullactualPASS, allpositive/negative/failuresretained.
+G randomsourcecloser andnew16H24/1024realpositivebothopponents/allLOOpositive, butDragon55<R872 ablationreversesgains.
+835game-durable journalqualified64ABBAallnon-time equal, local~18% costreduction; futureexperimentaluseonly.
+817printedPV oftennot scorematerialleaf evenunbounded,830scoreprovenance input/sourceauditbegun;836futureplan only.
+818metadatafailure1728closed+192cachedreconstructed/noenginererun, fulltimerunknown. Report SEGMENT_20261013_37.md.
 
 # Current local research mainline
 

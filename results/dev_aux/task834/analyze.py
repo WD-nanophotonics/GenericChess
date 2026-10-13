@@ -1,0 +1,33 @@
+import json,hashlib
+from pathlib import Path
+from fractions import Fraction as F
+R=Path.cwd();O=R/'results/dev_aux/task834';assert json.loads((R/'results/dev_aux/task833/result.json').read_bytes())['status']=='PASS_ALL96_PROMOTION_HOLE_ABLATION_ACTUAL';new=[json.loads(x) for x in (R/'results/dev_aux/task832/games.jsonl').open(encoding='utf-8')];old=[]
+for n in [797,819]:
+ for x in (R/f'results/dev_aux/task{n}/games.jsonl').open(encoding='utf-8'):old.append((json.loads(x),n))
+d=json.loads((R/'results/dev_aux/task818/execution_inputs.json').read_bytes());w=next(x['weights'] for x in d['profiles'] if 'G-random2514-endpoint' in x['names']);iw=json.loads((R/'results/dev_aux/task596/declaration.json').read_bytes())['initial_profiles'][1]['weights'];key=lambda g:(g['opponent'],g['pool'],json.dumps(g['root'],sort_keys=True),g['color']);by={}
+for g,n in old:
+ if g.get('nodes',1024)!=1024:continue
+ if g['weights']==w:by[('G',key(g))]=g
+ if g['weights']==iw:by[('initial',key(g))]=g
+
+def state(g,h):
+ if len(g['actions'])<=h and not g['termination']['kind'].startswith('cap'):
+  z=g['termination']['winner'];return 'draw' if z is None else 'win' if z==g['color'] else 'loss'
+ return 'unfinished'
+def value(g,h,m):
+ s=state(g,h)
+ if m=='real':return F((s=='win')-(s=='loss'))
+ if m=='qty':return F(g['quantity12' if h==12 else 'quantity24'],19)
+ return F(25-len(g['actions']),25) if s=='win' else F(-1) if s=='loss' else F(0)
+rows=[]
+for pool in ['development','independent_validation']:
+ for opp in ['unit','random2514']:
+  nn=[g for g in new if g['pool']==pool and g['opponent']==opp];assert len(nn)==(16 if pool=='development' else 32)
+  for base in ['G','initial']:
+   aa=[by[(base,key(g))] for g in nn]
+   for h in [12,24]:
+    metrics=[];families=sorted({g['root']['source_family'] for g in nn})
+    for m in ['real','qty','fast']:
+     diff=[value(b,h,m)-value(a,h,m) for a,b in zip(aa,nn)];loo=[dict(omit=f,gain=str(sum(z for z,g in zip(diff,nn) if g['root']['source_family']!=f)/(len(nn)-2))) for f in families];metrics.append(dict(metric=m,gain=str(sum(diff)/len(nn)),minimum_leave_one=str(min(F(x['gain']) for x in loo)),by_family=[dict(family=f,gain=str(sum(z for z,g in zip(diff,nn) if g['root']['source_family']==f)/2)) for f in families],leave_one=loo))
+    rows.append(dict(pool=pool,opponent=opp,comparison='Dragonfloor-'+base,cap=h,cells=len(nn),metrics=metrics))
+out=dict(status='ALL96_PROMOTION_HOLE_ABLATION_PAIRED',rows=rows,new_go=0,source_sha256={str(n):hashlib.sha256((R/f'results/dev_aux/task{n}/games.jsonl').read_bytes()).hexdigest() for n in [797,819,832]},scope='Posthoc observedDragon55<R872 ablationto872 only, no human/sourceprice. ALLsame8dev/new16validation/twofixedopponents/1024/H24 physicallyqualified833 and820; oldG/sourcecaseexactcomparison. Nottraining/independentholdout/modelselection orproof promotionmonotonic law. Allnegative andfamilyLOO kept.');(O/'result.json').write_text(json.dumps(out,indent=2),encoding='utf-8');print(json.dumps([dict(pool=x['pool'],opponent=x['opponent'],comparison=x['comparison'],cap=x['cap'],gains={m['metric']:m['gain'] for m in x['metrics']}) for x in rows if x['cap']==24]))

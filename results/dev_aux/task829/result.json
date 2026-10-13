@@ -1,0 +1,31 @@
+{
+  "all64_non_time_results_equal": true,
+  "status": "PASS_ALL64_ACTUAL_ABBA_IO_AND_SEMANTIC_EQUALITY",
+  "root_cache_stats": {
+    "original_constructions": 8,
+    "clone_lookups": 128
+  },
+  "counts": {
+    "games": 64,
+    "actual_go": 768,
+    "PV_moves": 14276,
+    "Python_actual_actions": 768,
+    "random_draws": 0,
+    "sorted_legal_arrays": 0,
+    "price_ACK_entries": 256,
+    "batches": 0,
+    "proposal_rounds": 0,
+    "prefixes": 64
+  },
+  "source_sha256": {
+    "828": {
+      "games.jsonl": "bc890e2ba8524dc2b814f482b6585501b47fbf8f159fe921bc89326844c2e110",
+      "queries.jsonl": "c8b0c842712ab1c722457e165782f4d3f594ba3716b1476e0e9dfe655eb9eda7",
+      "price_acks.json": "9bb13245fd5663955306612bc812da27b149309f7d75f90dfca3f66c77f1b493",
+      "result.json": "b7bb7a42b1bc1aa5706633cd1777170fb7a150ff958294246f6d4c500ad882e0"
+    }
+  },
+  "new_go": 0,
+  "seconds": 2.1183950998820364,
+  "scope": "ALL828actual64ABBA/H12 fullindependentPython rules/history/PV/material/terminal/ACK/raw metadata/pairedcells; allnegativekept. Immutablecanonicalrootcache no skippedchecks. Shortwindow notwholeWDL/source/human/general-domainproof."
+}
