@@ -1,0 +1,7 @@
+
+static Value aux_return_trace(const Position& pos, int ply, Value v, int site) {
+    sync_cout << "info string auxreturn " << site << " " << ply << " " << int(v) << " " << int(pos.side_to_move()) << " " << int(pos.state()->materialValue) << " " << pos.sfen() << sync_endl;
+    return v;
+}
+
+REPLACEMENTS {"bestValue": 6, "(2 * beta + eval) / 3": 1}

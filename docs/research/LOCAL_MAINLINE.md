@@ -1,11 +1,11 @@
-# DEV_AUX current scope 2026-10-13 segment37
+# DEV_AUX current scope 2026-10-14 segment38
 
-ScienceOPEN; sidemission only. D/E terminalpriority/scalar;F/G mixedopponents1024/256 completed.
-28256closedgames363846go;789792798806816820829833 fullactualPASS, allpositive/negative/failuresretained.
-G randomsourcecloser andnew16H24/1024realpositivebothopponents/allLOOpositive, butDragon55<R872 ablationreversesgains.
-835game-durable journalqualified64ABBAallnon-time equal, local~18% costreduction; futureexperimentaluseonly.
-817printedPV oftennot scorematerialleaf evenunbounded,830scoreprovenance input/sourceauditbegun;836futureplan only.
-818metadatafailure1728closed+192cachedreconstructed/noenginererun, fulltimerunknown. Report SEGMENT_20261013_37.md.
+ScienceOPEN; sidemissiononly.2536closednewshortgames/43007gamego +320diagnosticgo +1failedunclosedgo.
+Fullactual audits839843845847854856858863865867872877878 PASS.
+CheapMC128games8.11s+4fits.233s, weak/confoundedtransfer. Fewpiece552newfitgames29.97s learnsallR>N; Bunstable/mixedholdout.
+Dualpriceleaf/nativefactorial304equivalentcontrolsexact; stablePV/depth/bestmovestill3scoreincrementcounterexamples.
+Newcheckedgrammar frozenunitprices exploratorytransfer, nooldtestextension/refit. NB104pilot4.75s/23trueoutcomes; nextfixedB/Nstudy inputonly.
+Originalc69/source/default/UI/mainstate unchanged; failedsource/partial852/rawprivate retained. Report SEGMENT_20261014_38.md.
 
 # Current local research mainline
 

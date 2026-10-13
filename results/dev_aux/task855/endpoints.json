@@ -1,0 +1,4332 @@
+{
+  "status": "ALL4_REDUCED_TRUE_TERMINAL_ENDPOINTS_FROZEN",
+  "endpoints": [
+    {
+      "name": "NR_unit",
+      "variant": "NR",
+      "start": "unit",
+      "initial": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        180,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        180,
+        0
+      ]
+    },
+    {
+      "name": "NR_random_ratio",
+      "variant": "NR",
+      "start": "random_ratio",
+      "initial": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        328,
+        126,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        328,
+        126,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        328,
+        504,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        328,
+        504,
+        0
+      ]
+    },
+    {
+      "name": "NRB_unit",
+      "variant": "NRB",
+      "start": "unit",
+      "initial": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        360,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        360,
+        0
+      ]
+    },
+    {
+      "name": "NRB_random_ratio",
+      "variant": "NRB",
+      "start": "random_ratio",
+      "initial": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        328,
+        126,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        328,
+        126,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        82,
+        504,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        82,
+        504,
+        0
+      ]
+    }
+  ],
+  "updates": [
+    {
+      "variant": "NR",
+      "start": "unit",
+      "axis": 6,
+      "start_weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "candidates": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task853/games.jsonl",
+              "line": 1
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 2
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 3
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 4
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 7
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 8
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 11
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 12
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 15
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 16
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 17
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 18
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 19
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 20
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 23
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 24
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 27
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 28
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 31
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 32
+            }
+          ],
+          "mean": [
+            "3/10",
+            "23/250"
+          ],
+          "cells": 20,
+          "new_physical": false,
+          "terminal_counts": {
+            "win": 8,
+            "loss": 2,
+            "censored": 10,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            32,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            32,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 1
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 2
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 3
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 4
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 5
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 6
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 7
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 8
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 9
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 10
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 11
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 12
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 13
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 14
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 15
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 16
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 17
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 18
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 19
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 20
+            }
+          ],
+          "mean": [
+            "1/4",
+            "-1/500"
+          ],
+          "cells": 20,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 9,
+            "loss": 4,
+            "censored": 7,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            45,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            45,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 21
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 22
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 23
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 24
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 25
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 26
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 27
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 28
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 29
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 30
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 31
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 32
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 33
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 34
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 35
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 36
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 37
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 38
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 39
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 40
+            }
+          ],
+          "mean": [
+            "1/5",
+            "-2/125"
+          ],
+          "cells": 20,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 8,
+            "loss": 4,
+            "censored": 8,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            180,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            180,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 41
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 42
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 43
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 44
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 45
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 46
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 47
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 48
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 49
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 50
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 51
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 52
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 53
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 54
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 55
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 56
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 57
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 58
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 59
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 60
+            }
+          ],
+          "mean": [
+            "1/2",
+            "19/100"
+          ],
+          "cells": 20,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 11,
+            "loss": 1,
+            "censored": 8,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            360,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            360,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 61
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 62
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 63
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 64
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 65
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 66
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 67
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 68
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 69
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 70
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 71
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 72
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 73
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 74
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 75
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 76
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 77
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 78
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 79
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 80
+            }
+          ],
+          "mean": [
+            "1/2",
+            "19/100"
+          ],
+          "cells": 20,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 11,
+            "loss": 1,
+            "censored": 8,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            720,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            720,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 81
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 82
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 83
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 84
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 85
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 86
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 87
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 88
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 89
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 90
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 91
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 92
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 93
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 94
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 95
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 96
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 97
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 98
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 99
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 100
+            }
+          ],
+          "mean": [
+            "2/5",
+            "33/250"
+          ],
+          "cells": 20,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 9,
+            "loss": 1,
+            "censored": 10,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            1440,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            1440,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 101
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 102
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 103
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 104
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 105
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 106
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 107
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 108
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 109
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 110
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 111
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 112
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 113
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 114
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 115
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 116
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 117
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 118
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 119
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 120
+            }
+          ],
+          "mean": [
+            "2/5",
+            "4/25"
+          ],
+          "cells": 20,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 9,
+            "loss": 1,
+            "censored": 10,
+            "draw": 0
+          }
+        }
+      ],
+      "selected_index": 3,
+      "after_weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        180,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        180,
+        0
+      ]
+    },
+    {
+      "variant": "NR",
+      "start": "random_ratio",
+      "axis": 6,
+      "start_weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        328,
+        126,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        328,
+        126,
+        0
+      ],
+      "candidates": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            126,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            126,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task853/games.jsonl",
+              "line": 33
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 34
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 35
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 36
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 39
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 40
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 43
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 44
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 47
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 48
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 49
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 50
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 51
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 52
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 55
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 56
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 59
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 60
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 63
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 64
+            }
+          ],
+          "mean": [
+            "7/20",
+            "7/100"
+          ],
+          "cells": 20,
+          "new_physical": false,
+          "terminal_counts": {
+            "win": 9,
+            "loss": 2,
+            "censored": 9,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            32,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            32,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 121
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 122
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 123
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 124
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 125
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 126
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 127
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 128
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 129
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 130
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 131
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 132
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 133
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 134
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 135
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 136
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 137
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 138
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 139
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 140
+            }
+          ],
+          "mean": [
+            "1/4",
+            "-1/500"
+          ],
+          "cells": 20,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 9,
+            "loss": 4,
+            "censored": 7,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            63,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            63,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 141
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 142
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 143
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 144
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 145
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 146
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 147
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 148
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 149
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 150
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 151
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 152
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 153
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 154
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 155
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 156
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 157
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 158
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 159
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 160
+            }
+          ],
+          "mean": [
+            "1/20",
+            "-2/25"
+          ],
+          "cells": 20,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 6,
+            "loss": 5,
+            "censored": 9,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            252,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            252,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 161
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 162
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 163
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 164
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 165
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 166
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 167
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 168
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 169
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 170
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 171
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 172
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 173
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 174
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 175
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 176
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 177
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 178
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 179
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 180
+            }
+          ],
+          "mean": [
+            "3/10",
+            "67/500"
+          ],
+          "cells": 20,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 7,
+            "loss": 1,
+            "censored": 12,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            504,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            504,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 181
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 182
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 183
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 184
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 185
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 186
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 187
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 188
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 189
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 190
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 191
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 192
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 193
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 194
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 195
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 196
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 197
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 198
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 199
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 200
+            }
+          ],
+          "mean": [
+            "11/20",
+            "87/500"
+          ],
+          "cells": 20,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 12,
+            "loss": 1,
+            "censored": 7,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            1008,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            1008,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 201
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 202
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 203
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 204
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 205
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 206
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 207
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 208
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 209
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 210
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 211
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 212
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 213
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 214
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 215
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 216
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 217
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 218
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 219
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 220
+            }
+          ],
+          "mean": [
+            "9/20",
+            "79/500"
+          ],
+          "cells": 20,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 10,
+            "loss": 1,
+            "censored": 9,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            2016,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            2016,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 221
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 222
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 223
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 224
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 225
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 226
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 227
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 228
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 229
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 230
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 231
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 232
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 233
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 234
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 235
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 236
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 237
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 238
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 239
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 240
+            }
+          ],
+          "mean": [
+            "9/20",
+            "21/125"
+          ],
+          "cells": 20,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 10,
+            "loss": 1,
+            "censored": 9,
+            "draw": 0
+          }
+        }
+      ],
+      "selected_index": 4,
+      "after_weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        328,
+        504,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        328,
+        504,
+        0
+      ]
+    },
+    {
+      "variant": "NRB",
+      "start": "unit",
+      "axis": 6,
+      "start_weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "candidates": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task853/games.jsonl",
+              "line": 5
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 6
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 9
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 10
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 13
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 14
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 21
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 22
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 25
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 26
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 29
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 30
+            }
+          ],
+          "mean": [
+            "5/12",
+            "41/300"
+          ],
+          "cells": 12,
+          "new_physical": false,
+          "terminal_counts": {
+            "win": 6,
+            "loss": 1,
+            "censored": 5,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            32,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            32,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 241
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 242
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 243
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 244
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 245
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 246
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 247
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 248
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 249
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 250
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 251
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 252
+            }
+          ],
+          "mean": [
+            "1/2",
+            "13/60"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 6,
+            "loss": 0,
+            "censored": 6,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            45,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            45,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 253
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 254
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 255
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 256
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 257
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 258
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 259
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 260
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 261
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 262
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 263
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 264
+            }
+          ],
+          "mean": [
+            "5/12",
+            "19/300"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 7,
+            "loss": 2,
+            "censored": 3,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            180,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            180,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 265
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 266
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 267
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 268
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 269
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 270
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 271
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 272
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 273
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 274
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 275
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 276
+            }
+          ],
+          "mean": [
+            "1/2",
+            "37/150"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 7,
+            "loss": 1,
+            "censored": 4,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            360,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            360,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 277
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 278
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 279
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 280
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 281
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 282
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 283
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 284
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 285
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 286
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 287
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 288
+            }
+          ],
+          "mean": [
+            "7/12",
+            "27/100"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 7,
+            "loss": 0,
+            "censored": 5,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            720,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            720,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 289
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 290
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 291
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 292
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 293
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 294
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 295
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 296
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 297
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 298
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 299
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 300
+            }
+          ],
+          "mean": [
+            "1/2",
+            "2/15"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 7,
+            "loss": 1,
+            "censored": 4,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            1440,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            1440,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 301
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 302
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 303
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 304
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 305
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 306
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 307
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 308
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 309
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 310
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 311
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 312
+            }
+          ],
+          "mean": [
+            "1/2",
+            "23/300"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 7,
+            "loss": 1,
+            "censored": 4,
+            "draw": 0
+          }
+        }
+      ],
+      "selected_index": 4,
+      "after_weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        360,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        360,
+        0
+      ]
+    },
+    {
+      "variant": "NRB",
+      "start": "unit",
+      "axis": 5,
+      "start_weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        360,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        360,
+        0
+      ],
+      "candidates": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            360,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            360,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 313
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 314
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 315
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 316
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 317
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 318
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 319
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 320
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 321
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 322
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 323
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 324
+            }
+          ],
+          "mean": [
+            "7/12",
+            "27/100"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 7,
+            "loss": 0,
+            "censored": 5,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            32,
+            360,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            32,
+            360,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 325
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 326
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 327
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 328
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 329
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 330
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 331
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 332
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 333
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 334
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 335
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 336
+            }
+          ],
+          "mean": [
+            "7/12",
+            "27/100"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 7,
+            "loss": 0,
+            "censored": 5,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            45,
+            360,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            45,
+            360,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 337
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 338
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 339
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 340
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 341
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 342
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 343
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 344
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 345
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 346
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 347
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 348
+            }
+          ],
+          "mean": [
+            "1/2",
+            "13/75"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 7,
+            "loss": 1,
+            "censored": 4,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            180,
+            360,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            180,
+            360,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 349
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 350
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 351
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 352
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 353
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 354
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 355
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 356
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 357
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 358
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 359
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 360
+            }
+          ],
+          "mean": [
+            "1/3",
+            "37/300"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 5,
+            "loss": 1,
+            "censored": 6,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            360,
+            360,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            360,
+            360,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 361
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 362
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 363
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 364
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 365
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 366
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 367
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 368
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 369
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 370
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 371
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 372
+            }
+          ],
+          "mean": [
+            "7/12",
+            "14/75"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 8,
+            "loss": 1,
+            "censored": 3,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            720,
+            360,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            720,
+            360,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 373
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 374
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 375
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 376
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 377
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 378
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 379
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 380
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 381
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 382
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 383
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 384
+            }
+          ],
+          "mean": [
+            "1/2",
+            "11/50"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 7,
+            "loss": 1,
+            "censored": 4,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            1440,
+            360,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            1440,
+            360,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 385
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 386
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 387
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 388
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 389
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 390
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 391
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 392
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 393
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 394
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 395
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 396
+            }
+          ],
+          "mean": [
+            "5/12",
+            "1/60"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 7,
+            "loss": 2,
+            "censored": 3,
+            "draw": 0
+          }
+        }
+      ],
+      "selected_index": 0,
+      "after_weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        360,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        360,
+        0
+      ]
+    },
+    {
+      "variant": "NRB",
+      "start": "random_ratio",
+      "axis": 6,
+      "start_weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        328,
+        126,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        328,
+        126,
+        0
+      ],
+      "candidates": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            126,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            126,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task853/games.jsonl",
+              "line": 37
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 38
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 41
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 42
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 45
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 46
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 53
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 54
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 57
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 58
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 61
+            },
+            {
+              "file": "task853/games.jsonl",
+              "line": 62
+            }
+          ],
+          "mean": [
+            "1/2",
+            "23/150"
+          ],
+          "cells": 12,
+          "new_physical": false,
+          "terminal_counts": {
+            "win": 7,
+            "loss": 1,
+            "censored": 4,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            32,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            32,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 397
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 398
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 399
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 400
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 401
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 402
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 403
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 404
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 405
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 406
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 407
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 408
+            }
+          ],
+          "mean": [
+            "1/2",
+            "8/75"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 7,
+            "loss": 1,
+            "censored": 4,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            63,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            63,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 409
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 410
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 411
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 412
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 413
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 414
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 415
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 416
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 417
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 418
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 419
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 420
+            }
+          ],
+          "mean": [
+            "1/3",
+            "3/100"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 6,
+            "loss": 2,
+            "censored": 4,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            252,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            252,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 421
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 422
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 423
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 424
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 425
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 426
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 427
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 428
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 429
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 430
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 431
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 432
+            }
+          ],
+          "mean": [
+            "7/12",
+            "91/300"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 7,
+            "loss": 0,
+            "censored": 5,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            504,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            504,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 433
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 434
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 435
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 436
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 437
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 438
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 439
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 440
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 441
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 442
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 443
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 444
+            }
+          ],
+          "mean": [
+            "2/3",
+            "67/300"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 8,
+            "loss": 0,
+            "censored": 4,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            1008,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            1008,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 445
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 446
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 447
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 448
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 449
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 450
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 451
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 452
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 453
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 454
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 455
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 456
+            }
+          ],
+          "mean": [
+            "7/12",
+            "73/300"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 7,
+            "loss": 0,
+            "censored": 5,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            2016,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            2016,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 457
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 458
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 459
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 460
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 461
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 462
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 463
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 464
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 465
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 466
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 467
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 468
+            }
+          ],
+          "mean": [
+            "7/12",
+            "1/15"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 9,
+            "loss": 2,
+            "censored": 1,
+            "draw": 0
+          }
+        }
+      ],
+      "selected_index": 4,
+      "after_weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        328,
+        504,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        328,
+        504,
+        0
+      ]
+    },
+    {
+      "variant": "NRB",
+      "start": "random_ratio",
+      "axis": 5,
+      "start_weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        328,
+        504,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        328,
+        504,
+        0
+      ],
+      "candidates": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            504,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            328,
+            504,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 469
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 470
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 471
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 472
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 473
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 474
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 475
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 476
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 477
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 478
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 479
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 480
+            }
+          ],
+          "mean": [
+            "2/3",
+            "67/300"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 8,
+            "loss": 0,
+            "censored": 4,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            82,
+            504,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            82,
+            504,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 481
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 482
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 483
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 484
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 485
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 486
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 487
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 488
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 489
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 490
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 491
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 492
+            }
+          ],
+          "mean": [
+            "3/4",
+            "83/300"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 9,
+            "loss": 0,
+            "censored": 3,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            164,
+            504,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            164,
+            504,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 493
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 494
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 495
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 496
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 497
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 498
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 499
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 500
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 501
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 502
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 503
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 504
+            }
+          ],
+          "mean": [
+            "7/12",
+            "16/75"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 8,
+            "loss": 1,
+            "censored": 3,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            656,
+            504,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            656,
+            504,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 505
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 506
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 507
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 508
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 509
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 510
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 511
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 512
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 513
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 514
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 515
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 516
+            }
+          ],
+          "mean": [
+            "5/12",
+            "1/100"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 7,
+            "loss": 2,
+            "censored": 3,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            1312,
+            504,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            1312,
+            504,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 517
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 518
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 519
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 520
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 521
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 522
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 523
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 524
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 525
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 526
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 527
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 528
+            }
+          ],
+          "mean": [
+            "1/6",
+            "-8/75"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 5,
+            "loss": 3,
+            "censored": 4,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            2624,
+            504,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            2624,
+            504,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 529
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 530
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 531
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 532
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 533
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 534
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 535
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 536
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 537
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 538
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 539
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 540
+            }
+          ],
+          "mean": [
+            "1/4",
+            "1/300"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 5,
+            "loss": 2,
+            "censored": 5,
+            "draw": 0
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            4096,
+            504,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            4096,
+            504,
+            0
+          ],
+          "sources": [
+            {
+              "file": "task855/games.jsonl",
+              "line": 541
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 542
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 543
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 544
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 545
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 546
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 547
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 548
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 549
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 550
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 551
+            },
+            {
+              "file": "task855/games.jsonl",
+              "line": 552
+            }
+          ],
+          "mean": [
+            "1/4",
+            "-9/100"
+          ],
+          "cells": 12,
+          "new_physical": true,
+          "terminal_counts": {
+            "win": 6,
+            "loss": 3,
+            "censored": 3,
+            "draw": 0
+          }
+        }
+      ],
+      "selected_index": 1,
+      "after_weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        82,
+        504,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        82,
+        504,
+        0
+      ]
+    }
+  ],
+  "actual_new_games": 552,
+  "actual_go": 7889,
+  "seconds": 29.967999999877065,
+  "qualified_cache_source_sha256": "e261df6487af4835061047495bf0bd9ffb21823074498221e1b16c2ef5730ed3",
+  "scope": "42logical7pointcandidatebatches acrossNR/NRB2initials, 6coordinateupdates. Realterminal contribution thenfastterminal, noquantityfitness. ALLcandidates/base-firstties; qualifiedinitialpilotcacheonly, otherphysicalrepeatskept. Endpointfreeze beforeholdout/reference. Reducedinventory+promotedtiesscopeonly."
+}

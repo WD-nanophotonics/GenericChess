@@ -1,0 +1,71 @@
+{
+  "status": "ACTUAL_SEGMENT38_COUNT_AND_FAILURE_BINDINGS",
+  "closed_game_sources": [
+    842,
+    846,
+    853,
+    855,
+    857,
+    862,
+    871,
+    876
+  ],
+  "closed_games": 2536,
+  "closed_game_go": 43007,
+  "diagnostic_go": 320,
+  "partial_unclosed_go": 1,
+  "total_actual_go": 43328,
+  "source_sha256": {
+    "842": {
+      "games": "7a3ef3987e6dbe29ebfcaf2bf14137e5fdadeb286f8e46798c88bb0bf064bcab",
+      "queries": "af6c9f796c5391db7ebf88c9c29ff00930061b57b28ce9d1010b065869b3682d"
+    },
+    "846": {
+      "games": "e81c9224e66c280a70adbfd633461b0d3bfa593d719a5998020cafea2c05e5c9",
+      "queries": "e5470642e180d93ed532377360512b8dd410a066393e79b9f6dc8688a36c490f"
+    },
+    "853": {
+      "games": "e261df6487af4835061047495bf0bd9ffb21823074498221e1b16c2ef5730ed3",
+      "queries": "d50307abbcadbeae558a6342dc823858be81f3f305755be3bfbb2259b734e725"
+    },
+    "855": {
+      "games": "3b2f025f7c91e4a57e0664a2cc75f19a2d0cdc8c02faa8dc6486c10b2bd08502",
+      "queries": "b41a13f8b36548289e274fe0fa2f7be7a332aec224b662a0280072fc6844a575"
+    },
+    "857": {
+      "games": "f6c9b1cf54de21b9d235a5f7b8305773023a8a3a0d8d12ef85d2be8a564367ec",
+      "queries": "14c195771383ef95904fa31e13c2652d2d8efd3a6fa9faa4f7fb411c2458278b"
+    },
+    "862": {
+      "games": "3e70bc23f009b55dd2b61f2015ee3eb063544525e6ec1b684974e24f328da65d",
+      "queries": "625452ad895282b5244da1d4117da4563a3a6e8c35b1096291c7f12653fe0880"
+    },
+    "871": {
+      "games": "99ddd07061f18f183fbb929838d1f399fa233afc2fc0ab63d850ffca8342b47a",
+      "queries": "3e1ded29cabb1e2e1e7835e6d6420bf4211c5544f6a4aee092dc32bbc700840e"
+    },
+    "876": {
+      "games": "8512a7600bddd0ee2834427abd0407445dc7218b371fddccbd28c263d7e47f62",
+      "queries": "ed62ddc50a5597ba918d24d8ecdf92fe3f54af6860834a788be4e8b8faeebbc0"
+    }
+  },
+  "corrections": [
+    "837prebuildexpected8return sites butactual6bestValue+1mixed; assertionbeforecompile/noenginecalls, failedrecipepreserved.",
+    "852pilotfirstactualquerycompleted thenmissingMAPindependentliteral initialization failed beforeclosedgame; exactfailedcontroller/pilot and1rawquery preserved, no finishedgamesrerun. Fresh853correctedpilot.",
+    "845scope text says192finite differences, actualcounter96 iscorrect (4models x2epochs x12axes); source/output kept, error isdescriptive only.865 ablationalso96.",
+    "875generate copiedstdout NR/NRB zerocounts areirrelevantlabels; actualNB32roots13train/remainingdevvalidation binding/source and877/878 authoritative.",
+    "CLIbegin-send firstusedincorrectargument format; parserrejectedbeforestate/send; correctedonce withnewroot actualreceipt, no duplicateexternal send."
+  ],
+  "scope": "Allfailures/unfinished/negative retained; rawprivateSlack/account remainsignored andnotpublished. ScientificgoalOPEN, no primary/default/UI writes.",
+  "lastNB_pilot_counts": {
+    "('unit', 'unit_search', 'cap24')": 26,
+    "('unit', 'uniform_random', 'cap24')": 15,
+    "('unit', 'uniform_random', 'no_legal_moves')": 5,
+    "('unit', 'uniform_random', 'checkmate')": 6,
+    "('random_ratio', 'unit_search', 'cap24')": 25,
+    "('random_ratio', 'unit_search', 'no_legal_moves')": 1,
+    "('random_ratio', 'uniform_random', 'checkmate')": 8,
+    "('random_ratio', 'uniform_random', 'cap24')": 15,
+    "('random_ratio', 'uniform_random', 'no_legal_moves')": 3
+  }
+}

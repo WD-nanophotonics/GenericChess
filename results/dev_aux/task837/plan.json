@@ -1,0 +1,12 @@
+{
+  "status": "FROZEN_BEFORE_BUILD",
+  "question": "Which returned scores are soft bounds or corrected material rather than a printed PV material leaf?",
+  "source_sha256": "1ee4daa31cd082bbef86082cd33c351455e211394da2b686e09dd71b9e91ca34",
+  "changed_return_sites": {
+    "bestValue": 6,
+    "(2 * beta + eval) / 3": 1
+  },
+  "limits": "32 cold diagnostic queries, original2profiles, balanced256/1024; at most300seconds queries. Telemetry does NOT claim complete propagated leaf gradients or original wall timing.",
+  "original_executable_sha256": "c69d96c10244b65da124d66c653449bc701680f4e3da05ec48b3979ef950d2e2",
+  "instrumented_source_sha256": "7c0d9fa3cf03c5a42c8f5a95adf8ab85c9a016a1d52d5abe44aeb279f7940453"
+}
