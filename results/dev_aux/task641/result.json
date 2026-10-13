@@ -1,0 +1,23 @@
+{
+  "status": "PASS_ALL_FRESH_RNG_PHYSICAL",
+  "counts": {
+    "games": 10400,
+    "actual_go": 50906,
+    "PV_moves": 1035791,
+    "Python_actual_actions": 101734,
+    "random_draws": 50828,
+    "sorted_legal_arrays": 50828,
+    "price_ACK_entries": 3200
+  },
+  "source_sha256": {
+    "games.jsonl": "7e3f9ae0ede090c327ab01aa0fef83252b35e2a37f52b67496edc2e4f13d6ca6",
+    "queries.jsonl": "58f19f850a0d35e2bc5998220310397b68d3518aa1a93e276f7481229504cb6c",
+    "price_acks.json": "ffbcce4ed27d1c9b0019db33383c1956d8a5c3008e7ad2c7cb52a03a8ba73fcd",
+    "result.json": "21bcc23cf6a5b107615e67105056784db89ad46f75d3245d418aecfe784cbe73"
+  },
+  "original635cached_source_verified": true,
+  "all_cells_covered": 10400,
+  "new_go": 0,
+  "seconds": 358.97758730035275,
+  "scope": "Everyphysical640trajectory fullindependentPython rules/PV/material/state/fullhistory/terminal/randomdraw/legalarrays/reset/priceACK audited. All50exactpriceprofiles BOTHfreshRNGsets/52roots/bothcolors; logicalproposalaliases are notnewphysicalgames. Originalcached635fullhash and637audit qualifycontrols. No fit/endpoints/newtraining/WDL/globalidentifiabilityclaim."
+}

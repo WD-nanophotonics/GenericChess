@@ -1,0 +1,32 @@
+{
+  "status": "ACTUAL_SEARCH_BOUNDARY_CORRECTION_PRESENT_NO_PATCH_NEEDED",
+  "rows": [
+    {
+      "maximum": 90,
+      "raw_aux_material": 3420,
+      "actual_info": "info depth 2 seldepth 2 multipv 1 score cp 3800 nodes 570 nps 285000 hashfull 0 time 2 pv 5i4h",
+      "legal_PV_moves": 2
+    },
+    {
+      "maximum": 1000,
+      "raw_aux_material": 21620,
+      "actual_info": "info depth 2 seldepth 2 multipv 1 score cp 24022 nodes 570 nps 570000 hashfull 0 time 1 pv 5i4h",
+      "legal_PV_moves": 2
+    },
+    {
+      "maximum": 4096,
+      "raw_aux_material": 83540,
+      "actual_info": "info depth 2 seldepth 2 multipv 1 score cp 35281 nodes 570 nps 285000 hashfull 0 time 2 pv 5i4h",
+      "legal_PV_moves": 2
+    }
+  ],
+  "source_sha256": "1ee4daa31cd082bbef86082cd33c351455e211394da2b686e09dd71b9e91ca34",
+  "corrected_static_eval_clamp": "return std::clamp(v + cv / 131072, VALUE_TB_LOSS_IN_MAX_PLY + 1, VALUE_TB_WIN_IN_MAX_PLY - 1);",
+  "MAX_PLY": 246,
+  "VALUE_MATE": 32000,
+  "max_nonterminal_corrected_eval": 31753,
+  "observed_all136_candidate_inventory_envelope": 12152,
+  "new_go": 0,
+  "correction": "660andcommentaryinitiallycalledrawauxevalaboveMATE adefecttooearly. Actualmain/qsearch appliescorrection/clampbelowmate threshold; all3go64returncpandlegalPV. Rawauxeval83540bydesign differsfromcorrectedsearch31753, CPnormalizedP90so35281isNOTmateencodingcollision. No actualsearchbugproved orprivateclipbuildneeded. Preserveinitialdeclaration/actualqueries, do notattributelearningfailuretothisboundary.",
+  "scope": "Source+threeactualrootrequests checked; notuniversaloverflow/correction/TTproof forarbitraryweights. Originalexe/source untouched, nonewbuild/repeatedgo/priceclamp/productdefaultchange. Finitecandidateenvelope excludesrawterminalcollision amongactualcurrentpriceprofiles."
+}

@@ -1,16 +1,18 @@
-## DEV_AUX current scope2026-10-13 segment33
+## DEV_AUX current scope2026-10-13 segment34
 
-Science OPEN; sidemission only; ownheartbeatACTIVE; no primary/default/UI/UI Test writes.
-NEW8464physicalgames41264go;615621625630 independentaudits PASS;94exactarchive members.
-Fastmate5200train80newdev139.438s; botholddevnegative andBASE6referenceworse.
-Newbalancedtransfer randomfast9/56 survivesbothgenerators/all7LOO;unit-1/56;notbasicprice recovery.
-MAIN-only price-policy interaction bothsigns; prior29alreadyMAIN+Q trial, correctionretained.
-611180buildfuse INCOMPLETE;612cachedoneTU2s, notcleanbuild; allfailed/negative preserved.
-624ALL6prices new1024vs8192condition,1152newgames+576cachedcontrols; notnewtrainedmodel.
-633robustselector input/prefixonly; nextactualfreshtrajectory,no splicingafterchoicesdiverge.
-Dotinteractionadopted;chatcommentsadvisory;privateSlack excluded;532INCOMPLETEunchanged.
-Primaryecd988d17c7ad06d55db3e5329d9e570892b6cf2 handoffqualification onlyreportedcontext.
-Report results/dev_aux/SEGMENT_20261013_33.md;finalreceiptactualclock/endingcause.
+Science OPEN; sidemission only; heartbeatACTIVE; no primary/default/UI/UI Test writes.
+NEW35664physicalgames185726go incl3standaloneboundary, allactual audits/pass/fail/corrections retained.
+Freshrobust fastfit137.750s randomolddev+3/40 butbothsource distancesworse; Dotfixednetgain notlocalsignmajority adopted.
+640ALL50prices/24frozencontexts2draws10400games275.953s, full641PASS; 4crossrootRNGcollisions disclosed, no IIDclaim.
+Quantity-materootfit135.937s randomsourceALL12/base6closer;8disjointdrawtransfer quantitypositive/mateworse. Notstablebasicprices.
+Newordinary16train8dev662:1600fit64dev52.141s;full666/668PASS, bothsourceworse.
+Coordinategridonepass12axes:4608fit64dev144.265s;673PASS, bothsourceworse; direction+step+cost changeexplicit.
+675new16ordinaryfamilies384H24probes+literalH12prefix;677/680PASS;679actual32cap12controls allnon-timeexact.
+681100positiveH12qtycells ->36nonpositive/24negativeH24; no actualendpointloss24. Temporalproxycounterexamples notfinalWDL.
+660/661raw83540 boundary: actualsearchalreadyclamps31753, no searchdefect/patch; prematureclaim explicitlycorrected.
+682NEXT two-draw/two-horizonquantity NEWdecl INPUTONLY; axisrollback ablation/costcurve alternatives. No extraoldepochs/sourcefitness.
+Report results/dev_aux/SEGMENT_20261013_34.md; 174member8archives +small683descriptors. Only1/8newendpoints improvesbothsource distances.
+Primaryecd988 handoff/cancellation advice onlyreportedread-onlycontext, no newprimaryroots in34; chatcommentsadvisory.
 
 # Current local research mainline
 

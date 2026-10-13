@@ -1,0 +1,31 @@
+{
+  "status": "PASS_ALL_FAST_LEARNING_AND_NEWDEV",
+  "counts": {
+    "games": 5280,
+    "actual_go": 25589,
+    "PV_moves": 520806,
+    "Python_actual_actions": 51125,
+    "random_draws": 25536,
+    "sorted_legal_arrays": 25536,
+    "price_ACK_entries": 1664,
+    "proposal_rounds": 24,
+    "batches": 72
+  },
+  "source_sha256": {
+    "635": {
+      "games.jsonl": "00f0e5e5eab85e3bbe6c2f58b78ea17225f3bec3bd0dda81165b2a5df2dd4443",
+      "queries.jsonl": "4edc0de1d6c83c28dd8493f5316429dc01af5ae704a3a9d905c6d1988732e588",
+      "price_acks.json": "13e82474c2aa1fdaf445dad6c170d37226a2184522f75570f2e09f66703c1ed8",
+      "result.json": "56e75e646f6eb1d8461373169c13277075e28286286c50607e6a62eba106a879"
+    },
+    "636": {
+      "games.jsonl": "095625edde830ef255582806aef60ef751554ab986a7aa609023ad4154b45287",
+      "queries.jsonl": "a019c6fcdb857f11c2016b236c91000a5a4ebe24fe2ce0e7cf4b3451b48dab60",
+      "price_acks.json": "e19b1e5b8895fdfe65e9ee41dd5579dcd4affe8ec36a2b2a8eb80886bc3a16ea",
+      "result.json": "d4fa943bc0c17bcd81809703497b63b6234226b2264e66bca12e51ccf38e0d2f"
+    }
+  },
+  "new_go": 0,
+  "seconds": 181.9504038998857,
+  "scope": "ALL619/620physical actualpaths independentPython/PV/fullhistory/material/terminal/RNG/table/reset/rawjournal andALL24jointproposalrounds/72logicalcandidatebatches; rawmixedscore separatelyfromactualshortestmatefitness, ALL2endpoints beforeNEWdev. Existing599initialdevreuse tocheckseparately beforegainanalysis; exposedpriorroots notindependentnewholdout. No source/human fitness oruniversalvalueproof."
+}
