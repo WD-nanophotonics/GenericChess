@@ -124,3 +124,9 @@ source/binary hashes, verification and retained handling failures. Raw Slack,
 account/private inputs, host-path profiles and credentials are excluded. Production
 source remains fixed7b; previous2319 full tests remain previous qualification.
 This segment's relevant publisher tests and remote SHA are recorded separately.
+
+First publication qualification fails beforepush because the requested
+`test_alphabeta_full_pv.py` filename does not exist. `rg --files` identifies
+actual `test_full_pv_contract.py`; the corrected required publisher is used.
+This is an Agent path-handling mistake, not a test assertion/security failure;
+no hook bypass, force push or unverified publication claim follows.
