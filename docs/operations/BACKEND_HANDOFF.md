@@ -194,3 +194,5 @@ Current full2349 and focused154 qualification includes value-equal reconstructed
 EP/promotion/drop actions and full history/cache restoration. Local fixed-work
 savings1.90–5.10percent are conditional; resource curves show no deeper retained
 decision. Evidence: research/CORE_BINDING_MEMBERSHIP.md.
+
+2026-10-13: square_to_index avoids temporary BoardShape only for exact positive builtin int. All other extent/error behavior stays;2356 tests pass. No option/Native rebuild/UI work required; consumer process restart loads the Python change. Private prefix-free incoming schedule is research evidence only, unavailable as a product flag. Native20-board remainsunsupported, complete Core fallback retained. See research/COLD_RULE_COORDINATE.md and PREFIX_FREE_INCOMING.md.

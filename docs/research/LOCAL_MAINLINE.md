@@ -355,3 +355,5 @@ with ply0 versusactualply kept distinct. AUXa80d02db26 is independently checked
 for published arithmetic/row consistency only, notbinary/training reproduction
 or primaryacceptance; later randomstream advice has no newresults yet. Next
 choose one actual requiredbuilder/key primitive cost, no newengine/framework.
+
+Current decision2026-10-13: COLD_RULE_COORDINATE.md adopts only exact positive-builtin-int row-major indexing without temporary BoardShape. Invalid/bool/shape/subclass fallback preserved;2356 active/105 focused pass;16 costs and64 fresh callers fullnon-time/work exact,24 resourcecells no newretaineddepth. Cold setup remains a distinct clock and can matter on20-board. PREFIX_FREE_INCOMING.md exposes originalmetadata65536/131072 and Native<=16 limits while completeCore stillruns larger rules. Privateprefix-free schedule retains178104 orderedrows/guards and improves4096node localcost~76%;16 fresh18/20 resourcecells produce4deeper/4unchanged pairs, no strength/universalclaim.220 actualsearches closed. Prototypecompilerfield/cap/Native/UI/default unchanged; fallback-only memory/normalconsumer integration is the next specific decision.

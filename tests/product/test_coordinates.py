@@ -103,3 +103,9 @@ def test_is_forward_directions():
 
 def test_offset_between():
     assert offset_between(Square(1, 2), Square(4, 6)) == (3, 4)
+
+
+@pytest.mark.parametrize("extent", [0, -1, True, False, None, 2.5, "8"])
+def test_square_index_rejects_invalid_extent_including_bool(extent):
+    with pytest.raises(ValueError, match="positive integers"):
+        square_to_index(Square(2, 3), extent)
