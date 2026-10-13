@@ -47,8 +47,17 @@ ORDINARY_Q_ORDERING.md remains immutable prior64call/32pair4deeper28same0lower
 andfinite1455 immediate-mate distinction, not fullWDL. Itsprivatecandidate is now
 a supportedoptin withexplicitconsumer/backend limits, not universalhard8immunity.
 HISTORY_ACTION_CACHE.md/f88 productionhistoryrepair remains intact.
-Next choose one substantial requiredactualq classification/commit operation,
-not budgetextension/newengine/tinyhashoptimization or a genericstrengthcampaign.
+Q_CLASSIFICATION_COST.md closes18 additionalactualcalls:twofullchild classifiers,
+each63029classification/6categoryshadow,8fixedD2/D4controls and40privatechecks.
+Allnontime/fulltuplework exact; costs locally.49–2.70percent lower, not a clean
+factor/horizon gain. Retainprivate/deferintegration oninformation/engineeringcost;
+no arbitrarypercentgate/extension/newcache/runtime/default/UI. Dotfixed774 review
+adopts affectedversusrecoverablecost andgeneratorprofileperturbation.
+PrimaryRG/Ludii/splitmove papers are forwardmodel/simulation evidence, notmatched
+Coreq4. Exactcurrent3root hypotheticalgroup-uniform TV383/700,891/1648,19/84
+shows a split sampler changes complete-action distribution; current samplerfixed.
+Next choose one actualconsumer/representation premise with a decision-changing
+finite control, not newcompiler/framework or unmatchedexternal-speedclaim.
 
 DEV_AUX latestpublished source stays14f/report29, previously48arithmeticrows
 checked only. New31resume thread reports closed533/534 andpartial535 underold

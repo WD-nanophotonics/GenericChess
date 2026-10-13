@@ -1489,3 +1489,14 @@ was resolved withboundedchunks andactualJSONrecord; no evidence fabricated.
 No SAC/systemexecution block or necessaryuser intervention inthissegment.
 RawSlack/accounts/XML/hostprofiles/privateinputs/binaries excludedfrompublication.
 The segment remainsactive; publication is acheckpoint, notits ending.
+
+PRIMARY continued after publication:18 additionalactualprivateclassifier calls,
+126058shadow comparisons and40existingtests pervariant. Fulltuples/allnon-timework
+agree; local.49–2.70percent savings remain scoped, no productionintegration/cache.
+FreshPRIMARY AGENT_REQUEST newroot gets actualDotreply; exactpayload readback,
+fullpagedreply saved thenexplicitlyadopted. Dotreads774source/report only, not our
+privateexecution; affectedcost/profilergenerator objection changesinterpretation.
+Zero-search exact3rule sampler counterexample and3primarypaper review reject
+borrowing playout/split throughput as same-policyCoreq4 orpricefeedback evidence.
+No AUX process/search duplicated, no auxiliaryfilewrite. Earlier86callarchive and
+774remote remain immutable; thissupplement brings actualPRIMARY calls to104.
