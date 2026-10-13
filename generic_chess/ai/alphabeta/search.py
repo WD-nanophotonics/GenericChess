@@ -1053,6 +1053,7 @@ def run_root_search(
     _history_witnesses=None,
     legal_binding_provider=None,
     availability_provider=None,
+    check_provider=None,
     recorder: AuditRecorder | None = None,
     progress_callback=None,
 ) -> tuple[Action | None, int, tuple[Action, ...], str]:
@@ -1067,6 +1068,7 @@ def run_root_search(
         history_witnesses=_history_witnesses,
         legal_binding_provider=legal_binding_provider,
         availability_provider=availability_provider,
+        check_provider=check_provider,
     )
     terminal = runtime.terminal_status
     if terminal.is_terminal:

@@ -63,6 +63,41 @@ class NativeSemanticLegalityProvider:
         """Current thread's actual readonly availability calls, independent of legality."""
         return dict(getattr(self._metrics_local, "availability", {}))
 
+    @property
+    def check_metrics(self):
+        """Actual readonly child-check imports/queries in the current thread."""
+        return dict(getattr(self._metrics_local, "check", {}))
+
+    def in_check(self, position, side, checkpoint=None):
+        """Readonly check with one-use input handoff to availability.
+
+        Only the complete immutable position object is associated. No check,
+        availability, history, terminal result or score is cached. Frontiers
+        retain their separate actual-ply import.
+        """
+        from ...native.semantic import pack_position, in_check
+
+        self._metrics_local.check_handoff = None
+        if checkpoint is not None:
+            checkpoint()
+        if position.ruleset_fingerprint != self.native_rules.fingerprint:
+            raise ValueError("Native check compiled source mismatch")
+        if isinstance(side, bool) or not isinstance(side, int) or side not in (0, 1):
+            raise ValueError("side must be 0 or 1")
+        metrics = getattr(self._metrics_local, "check", None)
+        if metrics is None:
+            metrics = dict(calls=0, imports=0, queries=0)
+            self._metrics_local.check = metrics
+        metrics["calls"] += 1
+        packed = pack_position(self.native_rules, self._state_only_payload(position, 0))
+        metrics["imports"] += 1
+        value = in_check(self.native_rules, packed, side)
+        metrics["queries"] += 1
+        if checkpoint is not None:
+            checkpoint()
+        self._metrics_local.check_handoff = (position, packed)
+        return value
+
     def has_legal_action(self, position, checkpoint=None):
         """Core pre-adjudication availability: readonly bool, or None to decline.
 
@@ -72,6 +107,10 @@ class NativeSemanticLegalityProvider:
         Native's nested reply cutoff cannot implement that predicate.
         """
         from ...native.semantic import pack_position, has_legal_action
+
+        # Consume the one-use input before any poll/eligibility failure.
+        handoff = getattr(self._metrics_local, "check_handoff", None)
+        self._metrics_local.check_handoff = None
 
         metrics = getattr(self._metrics_local, "availability", None)
         if metrics is None:
@@ -85,8 +124,12 @@ class NativeSemanticLegalityProvider:
         if self._requires_reply_probe and self.compiled.support.max_ply <= 1:
             metrics["declines"] += 1
             return None
-        packed = pack_position(self.native_rules, self._state_only_payload(position, 0))
-        metrics["imports"] += 1
+        if handoff is not None and handoff[0] is position:
+            packed = handoff[1]
+            metrics["reused_imports"] = metrics.get("reused_imports", 0) + 1
+        else:
+            packed = pack_position(self.native_rules, self._state_only_payload(position, 0))
+            metrics["imports"] += 1
         value = has_legal_action(self.native_rules, packed)
         metrics["queries"] += 1
         if checkpoint is not None:

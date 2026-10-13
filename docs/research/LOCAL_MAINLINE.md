@@ -82,6 +82,21 @@ adopted. ActualpromotionD8 TT/fullPV control6calls allfulltuple11953visits
 exact, TT1.907–1.937s/noTT1.281s; no globaldisable. Nextplayedroot fixedTT
 transfer or actualCore transport/check primitive, not newcacheframework.
 
+Currentchecktransport2026-10-13: CHECK_INPUT_HANDOFF.md qualifies default-OFF
+publicNativecheck plusgenericCore check_provider; one-use exactPosition input
+for existingreadonlyavailability, no boolean/history/terminal/score caching.
+201closedcalls; final2341/45checks. Dot's sameP entrycancel exposesunpublished
+candidatepending retention; fixedentrycleanup oldfails/newpasses andexactretry
+imports1. Defaultbefore/current8sourcecalls exact; active13history terminal
+versusfreshsameP staysCore-owned, firstpassfixture onlyunsupportedCorefallback.
+Fresh4roots32fixed/8shadow982check/64equal-time: allretained32tuples/depthsame,
+mixedsmallcosts; no globaladoption. Heavy1455D2/1514D4 fullworkexact,1.5–5.1percent
+localcost saved. CoreTTon/off changes middlefulltuple thoughbothoptimal, no
+globaldisable. Nextprofilealreadybegun16.798s: requiredpush/componentdiff/
+frontier costsremain; identityguard/tokencaches alreadyexist, no duplicatepatch.
+AUX32fixed54c95e0d read-only: denserterminaltrial objectiveschooseidentical
+endpoints, bothreference distancesworse; nofit/default adoption.
+
 ## Prior selections and preserved limits
 
 Q0_RESOURCE_AND_ORDERING.md separates fixed-work, node-limited delivery and a

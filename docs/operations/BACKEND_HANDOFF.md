@@ -169,3 +169,19 @@ quiet checking drops and the hard checked boundary. No UI Test/default/PVS
 policy change or independent Native q4 capability follows. Complete activation,
 finite limits, actual before-source parity and archived evidence:
 ../research/MIXED_Q_PUBLIC_API.md.
+
+## Explicit child-check input option2026-10-13
+
+AlphaBetaPlayer now supports use_native_semantic_check=False (default) and
+generic readonly check_provider(position, side, checkpoint=...) -> bool | None.
+To use the measured one-use state import, explicitly request both
+use_native_semantic_check=True and use_native_semantic_availability=True.
+Both use existing Native functions; no new Native ABI/build feature is required.
+Unsupported providers retain Core; required errors propagate. Core still owns
+complete actual history, terminal precedence, declarations and checked commits.
+Do not expose this implementation option as a new UI task or silently enable it.
+Check-alone transport lost cost; combined actual consumers saved locally1.5–5.1%,
+while fresh fixed costs were mixed and equal-time completed horizons unchanged.
+Default/UI/PVS/price policy stays.2,341 active checks/45 focused pass, candidate
+entry-cancel failure and same-object retry fixed before publication. See
+research/CHECK_INPUT_HANDOFF.md and data/check_input_handoff_20261013.json.

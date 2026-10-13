@@ -584,6 +584,7 @@ class SearchPathRuntime:
         history_witnesses=None,
         legal_binding_provider: Callable | None = None,
         availability_provider: Callable | None = None,
+        check_provider: Callable | None = None,
     ):
         if getattr(compiled, "no_progress_draw", None) is not None:
             raise NotImplementedError(
@@ -594,6 +595,7 @@ class SearchPathRuntime:
         # Opaque Core-neutral callback: Core never imports Native and never
         # stores a Native capsule/rules object.
         self.availability_provider = availability_provider
+        self._check_provider = check_provider
         self._legal_binding_provider = legal_binding_provider
         self._legal_provider_active = legal_binding_provider is not None
         self.position = state.position
@@ -874,6 +876,7 @@ class SearchPathRuntime:
         history_witnesses=None,
         legal_binding_provider: Callable | None = None,
         availability_provider: Callable | None = None,
+        check_provider: Callable | None = None,
     ):
         return cls(
             state,
@@ -882,6 +885,7 @@ class SearchPathRuntime:
             history_witnesses=history_witnesses,
             legal_binding_provider=legal_binding_provider,
             availability_provider=availability_provider,
+            check_provider=check_provider,
         )
 
     @property
@@ -1095,6 +1099,16 @@ class SearchPathRuntime:
         return self._legal_cache
 
     def _gave_check(self, position, checkpoint=None):
+        # Optional readonly state-local query. None declines to Core; required
+        # errors propagate through push's existing exception-safe undo.
+        if self._check_provider is not None:
+            value = self._check_provider(
+                position, position.side_to_move, checkpoint=checkpoint
+            )
+            if value is not None:
+                if not isinstance(value, bool):
+                    raise TypeError("check provider must return bool or None")
+                return value
         engine = semantic_engine_for(self.compiled)
         return engine.in_check(position, position.side_to_move, checkpoint=checkpoint) if engine is not None else is_in_check(position, position.side_to_move, self.compiled)
 

@@ -48,6 +48,10 @@ class AlphaBetaPlayer:
         availability_provider=None,
         # Opt-in Core-owned terminal probe; default and UI policy stay unchanged.
         use_native_semantic_availability: bool = False,
+        # Optional child-check query; pair with Native availability to share
+        # one readonly state import. Defaults and UI policy stay unchanged.
+        use_native_semantic_check: bool = False,
+        check_provider=None,
     ) -> None:
         self._compiled = compiled
         self._config = evaluation_config if evaluation_config is not None else EvaluationConfig()
@@ -72,9 +76,11 @@ class AlphaBetaPlayer:
         self._use_ordering = use_ordering
         self._use_native_semantic_legality = bool(use_native_semantic_legality)
         self._use_native_semantic_availability = bool(use_native_semantic_availability)
+        self._use_native_semantic_check = bool(use_native_semantic_check)
         self._native_legality_provider = (
             NativeSemanticLegalityProvider.try_create(compiled)
-            if self._use_native_semantic_legality or self._use_native_semantic_availability
+            if (self._use_native_semantic_legality or self._use_native_semantic_availability
+                or self._use_native_semantic_check)
             else None
         )
         # Optional state-local boolean only; Core keeps adjudication/history.
@@ -83,6 +89,10 @@ class AlphaBetaPlayer:
                 and self._use_native_semantic_availability
                 and self._native_legality_provider is not None):
             self._availability_provider = self._native_legality_provider.has_legal_action
+        self._check_provider = check_provider
+        if (self._check_provider is None and self._use_native_semantic_check
+                and self._native_legality_provider is not None):
+            self._check_provider = self._native_legality_provider.in_check
         self._tuning = tuning
 
     @property
@@ -106,6 +116,11 @@ class AlphaBetaPlayer:
     def use_native_semantic_availability(self) -> bool:
         """Requested opt-in; unsupported providers still use Core's fallback."""
         return self._use_native_semantic_availability
+
+    @property
+    def use_native_semantic_check(self) -> bool:
+        """Requested optional query; unsupported providers retain Core check."""
+        return self._use_native_semantic_check
 
     @property
     def native_legality_provider(self):
@@ -152,6 +167,7 @@ class AlphaBetaPlayer:
                 else None
             ),
             availability_provider=self._availability_provider,
+            check_provider=self._check_provider,
             recorder=recorder,
             progress_callback=progress_callback,
         )
