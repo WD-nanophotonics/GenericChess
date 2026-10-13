@@ -1,0 +1,48 @@
+{
+  "status": "FROZEN_TRAIN_ONLY_EXACTWDL_ENDPOINT",
+  "train": [
+    {
+      "price": 90,
+      "N": 16,
+      "score": "1/8",
+      "regret": "0",
+      "labels": {
+        "1": 2,
+        "0": 14
+      }
+    },
+    {
+      "price": 180,
+      "N": 16,
+      "score": "1/8",
+      "regret": "0",
+      "labels": {
+        "1": 2,
+        "0": 14
+      }
+    },
+    {
+      "price": 360,
+      "N": 16,
+      "score": "1/8",
+      "regret": "0",
+      "labels": {
+        "1": 2,
+        "0": 14
+      }
+    },
+    {
+      "price": 1448,
+      "N": 16,
+      "score": "1/8",
+      "regret": "0",
+      "labels": {
+        "1": 2,
+        "0": 14
+      }
+    }
+  ],
+  "selected": 90,
+  "objective": "chosenaction WDL withoptimalcontinuation",
+  "holdout_not_used_for_selection": true
+}

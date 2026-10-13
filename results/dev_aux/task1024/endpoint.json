@@ -1,0 +1,83 @@
+{
+  "status": "FROZEN_TRUE_MINI_WL_ENDPOINT_BEFORE_HELDOUT",
+  "selected": 102,
+  "rows": [
+    {
+      "price": 64,
+      "N": 32,
+      "counts": {
+        "C": 22,
+        "D": 8,
+        "L": 2
+      },
+      "J16": "-1/16"
+    },
+    {
+      "price": 90,
+      "N": 32,
+      "counts": {
+        "C": 22,
+        "D": 8,
+        "L": 1,
+        "W": 1
+      },
+      "J16": "0"
+    },
+    {
+      "price": 102,
+      "N": 32,
+      "counts": {
+        "C": 23,
+        "W": 3,
+        "D": 6
+      },
+      "J16": "3/32"
+    },
+    {
+      "price": 1718,
+      "N": 32,
+      "counts": {
+        "C": 24,
+        "W": 2,
+        "D": 6
+      },
+      "J16": "1/16"
+    }
+  ],
+  "cached_actual_local_paths": [
+    {
+      "initial": 64,
+      "endpoint": 102,
+      "path": [
+        64,
+        90,
+        102
+      ]
+    },
+    {
+      "initial": 90,
+      "endpoint": 102,
+      "path": [
+        90,
+        102
+      ]
+    },
+    {
+      "initial": 102,
+      "endpoint": 102,
+      "path": [
+        102
+      ]
+    },
+    {
+      "initial": 1718,
+      "endpoint": 102,
+      "path": [
+        1718,
+        102
+      ]
+    }
+  ],
+  "no_human_or_proxy_fitness": true,
+  "scope": "4pricegridglobalandneighborascent onall16families no uniquecontinuousratio/human8x8claim"
+}

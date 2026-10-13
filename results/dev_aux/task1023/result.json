@@ -1,0 +1,58 @@
+{
+  "status": "PASS_ALL64_MINI_TRAIN_GAMES_WITH_INDEPENDENT_LITERAL_ROYAL_RULES",
+  "counts": {
+    "literal_frontiers": 982,
+    "tbhits_zero": 3129,
+    "literal_PVmoves": 6880,
+    "go": 982,
+    "actions": 982
+  },
+  "rows": [
+    {
+      "price": 64,
+      "opponent": "unit_search",
+      "N": 16,
+      "counts": {
+        "C": 12,
+        "D": 2,
+        "L": 2
+      },
+      "J16": "-1/8"
+    },
+    {
+      "price": 90,
+      "opponent": "unit_search",
+      "N": 16,
+      "counts": {
+        "C": 12,
+        "D": 2,
+        "L": 1,
+        "W": 1
+      },
+      "J16": "0"
+    },
+    {
+      "price": 102,
+      "opponent": "unit_search",
+      "N": 16,
+      "counts": {
+        "C": 13,
+        "D": 2,
+        "W": 1
+      },
+      "J16": "1/16"
+    },
+    {
+      "price": 1718,
+      "opponent": "unit_search",
+      "N": 16,
+      "counts": {
+        "C": 14,
+        "D": 2
+      },
+      "J16": "0"
+    }
+  ],
+  "new_go": 0,
+  "scope": "Mechanical5x5 K/R/N,mate/stalemate/3foldauto/50move/kingonly. NoChess8x8oracle applied,noPawn/promotion/drop/castling/EP,notfullgenericdomain; printedPVlegalnotforcemate"
+}

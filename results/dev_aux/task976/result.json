@@ -1,0 +1,395 @@
+{
+  "status": "INDEPENDENT_TRUE_TERMINAL_HELDOUT_DECOMPOSITION",
+  "rows": [
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "price": 90,
+      "N": 10,
+      "counts": {
+        "C": 10
+      },
+      "J": "0"
+    },
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "price": 128,
+      "N": 10,
+      "counts": {
+        "C": 10
+      },
+      "J": "0"
+    },
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "price": 512,
+      "N": 10,
+      "counts": {
+        "C": 8,
+        "W": 2
+      },
+      "J": "1/5"
+    },
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "price": 1448,
+      "N": 10,
+      "counts": {
+        "C": 10
+      },
+      "J": "0"
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "price": 90,
+      "N": 10,
+      "counts": {
+        "W": 4,
+        "C": 6
+      },
+      "J": "2/5"
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "price": 128,
+      "N": 10,
+      "counts": {
+        "C": 8,
+        "W": 2
+      },
+      "J": "1/5"
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "price": 512,
+      "N": 10,
+      "counts": {
+        "C": 2,
+        "W": 8
+      },
+      "J": "4/5"
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "price": 1448,
+      "N": 10,
+      "counts": {
+        "W": 9,
+        "C": 1
+      },
+      "J": "9/10"
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "price": 90,
+      "N": 8,
+      "counts": {
+        "C": 8
+      },
+      "J": "0"
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "price": 128,
+      "N": 8,
+      "counts": {
+        "C": 8
+      },
+      "J": "0"
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "price": 512,
+      "N": 8,
+      "counts": {
+        "C": 8
+      },
+      "J": "0"
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "price": 1448,
+      "N": 8,
+      "counts": {
+        "W": 1,
+        "C": 7
+      },
+      "J": "1/8"
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "price": 90,
+      "N": 8,
+      "counts": {
+        "C": 4,
+        "W": 4
+      },
+      "J": "1/2"
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "price": 128,
+      "N": 8,
+      "counts": {
+        "W": 4,
+        "C": 4
+      },
+      "J": "1/2"
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "price": 512,
+      "N": 8,
+      "counts": {
+        "W": 5,
+        "C": 3
+      },
+      "J": "5/8"
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "price": 1448,
+      "N": 8,
+      "counts": {
+        "W": 4,
+        "C": 4
+      },
+      "J": "1/2"
+    }
+  ],
+  "families": [
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "seed": 2026149048,
+      "scores": {
+        "90": 0,
+        "128": 0,
+        "512": 0,
+        "1448": 0
+      },
+      "selected_delta_half": "0"
+    },
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "seed": 2026149053,
+      "scores": {
+        "90": 0,
+        "128": 0,
+        "512": 1,
+        "1448": 0
+      },
+      "selected_delta_half": "0"
+    },
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "seed": 2026149057,
+      "scores": {
+        "90": 0,
+        "128": 0,
+        "512": 0,
+        "1448": 0
+      },
+      "selected_delta_half": "0"
+    },
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "seed": 2026149058,
+      "scores": {
+        "90": 0,
+        "128": 0,
+        "512": 1,
+        "1448": 0
+      },
+      "selected_delta_half": "0"
+    },
+    {
+      "phase": "development",
+      "opponent": "unit_search",
+      "seed": 2026149062,
+      "scores": {
+        "90": 0,
+        "128": 0,
+        "512": 0,
+        "1448": 0
+      },
+      "selected_delta_half": "0"
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "seed": 2026149048,
+      "scores": {
+        "90": 1,
+        "128": 0,
+        "512": 1,
+        "1448": 2
+      },
+      "selected_delta_half": "1/2"
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "seed": 2026149053,
+      "scores": {
+        "90": 2,
+        "128": 1,
+        "512": 2,
+        "1448": 2
+      },
+      "selected_delta_half": "0"
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "seed": 2026149057,
+      "scores": {
+        "90": 0,
+        "128": 0,
+        "512": 2,
+        "1448": 2
+      },
+      "selected_delta_half": "1"
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "seed": 2026149058,
+      "scores": {
+        "90": 0,
+        "128": 1,
+        "512": 2,
+        "1448": 2
+      },
+      "selected_delta_half": "1"
+    },
+    {
+      "phase": "development",
+      "opponent": "uniform_random",
+      "seed": 2026149062,
+      "scores": {
+        "90": 1,
+        "128": 0,
+        "512": 1,
+        "1448": 1
+      },
+      "selected_delta_half": "0"
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "seed": 2026149075,
+      "scores": {
+        "90": 0,
+        "128": 0,
+        "512": 0,
+        "1448": 1
+      },
+      "selected_delta_half": "1/2"
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "seed": 2026149081,
+      "scores": {
+        "90": 0,
+        "128": 0,
+        "512": 0,
+        "1448": 0
+      },
+      "selected_delta_half": "0"
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "seed": 2026149087,
+      "scores": {
+        "90": 0,
+        "128": 0,
+        "512": 0,
+        "1448": 0
+      },
+      "selected_delta_half": "0"
+    },
+    {
+      "phase": "validation",
+      "opponent": "unit_search",
+      "seed": 2026149090,
+      "scores": {
+        "90": 0,
+        "128": 0,
+        "512": 0,
+        "1448": 0
+      },
+      "selected_delta_half": "0"
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "seed": 2026149075,
+      "scores": {
+        "90": 1,
+        "128": 1,
+        "512": 2,
+        "1448": 1
+      },
+      "selected_delta_half": "0"
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "seed": 2026149081,
+      "scores": {
+        "90": 1,
+        "128": 1,
+        "512": 2,
+        "1448": 2
+      },
+      "selected_delta_half": "1/2"
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "seed": 2026149087,
+      "scores": {
+        "90": 1,
+        "128": 1,
+        "512": 0,
+        "1448": 1
+      },
+      "selected_delta_half": "0"
+    },
+    {
+      "phase": "validation",
+      "opponent": "uniform_random",
+      "seed": 2026149090,
+      "scores": {
+        "90": 1,
+        "128": 1,
+        "512": 1,
+        "1448": 0
+      },
+      "selected_delta_half": "-1/2"
+    }
+  ],
+  "new_go": 0,
+  "scope": "family units, two colorsnotindependent; finiteW-L denominator includescensored, unresolvednotdraw"
+}

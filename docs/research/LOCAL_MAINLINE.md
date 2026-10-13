@@ -1,12 +1,10 @@
-# DEV_AUX current scope — 2026-10-14 segment39
+# DEV_AUX current scope — 2026-10-14 segment40
 
-ScienceOPEN; sidemissiononly, primary/default/UI read-only. True finiteW-L fewpiece learning implemented, no quantity/humanfitness.
-NB4 sharedgrid/independentcontrols notstable. OverstockNB8 semanticfailure Bhand4->0 coldreproduced; interpretationswithdrawn, originaldata retained.
-Recovered stockN4B2G2 plusK2 withguard/maxhand32controls andallactualrule/PV/leafaudits. No OS/userintervention.
-Twoaxisbest128/90 ties512/180 and1448/180. Fresh18family candidate128/90 vsunit searching delta-1/36, random0: nolearning success.
-Threeforce6certificates independentlyPythonverified;16prices trivialroot outcomesidentical. Validdual144controls exact; leaf/nativeconsumer effects mixed.
-5442closedgames/92234actualgo incl18partial;4380stockvalid1062unsupported cost, notscientificsuccess. Allnegatives/censored/failures kept.
-Report SEGMENT_20261014_39.md; COST/QUALIFICATION/QA39 andexactarchives. Nextpriceblindcapture-choice curriculum, no moreunchangedepochs/quantityfallback.
+ScienceOPEN; own sidemission only. Cheap actualW-L learning works; stablehumanprice ratio notproved.
+Capture-choice stockN4B2G2 gainmixed, B/Horse interactionstrong. ExactfewpieceChess oracle exposes outcome-equivalentprice sets andlimitednewfamilygain; fullpolicygamesweak.
+Mechanical5x5K/R/N nativefrontiers/literalrules qualified. Simpletrainfourstarts102, originalheldoutnegative; quantitymix best262..1718plateau, searchingpositive/randomnotstable. Noquantity/humanfitness, noUI/default/primarywrites.
+2088closedgames28572searchcalls384perft, allactualaudits/negative/censored preserved. Report SEGMENT_20261014_40.md; COST/QA/archive40; later1039–1040smallaudits separatelytracked.
+Next independent price-interval transfer underfrozen opponentdistribution andrules, notunchangedepochs/longgames.
 
 # Current local research mainline
 

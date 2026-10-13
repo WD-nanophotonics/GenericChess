@@ -1,0 +1,159 @@
+{
+  "status": "ACTUAL_COST_NOT_SPEEDUP",
+  "games": 2088,
+  "game_search_go": 27420,
+  "root_search_go": 1152,
+  "total_search_go": 28572,
+  "perft_go": 384,
+  "public_WDL_API_requests": 170,
+  "game_batches": [
+    {
+      "task": 966,
+      "games": 80,
+      "actual_search_go": 1281,
+      "producer_seconds": 3.905999999959022,
+      "terminal": 30,
+      "censored": 50
+    },
+    {
+      "task": 970,
+      "games": 72,
+      "actual_search_go": 1695,
+      "producer_seconds": 4.219000000040978,
+      "terminal": 5,
+      "censored": 67
+    },
+    {
+      "task": 974,
+      "games": 144,
+      "actual_search_go": 2402,
+      "producer_seconds": 6.359000000171363,
+      "terminal": 43,
+      "censored": 101
+    },
+    {
+      "task": 979,
+      "games": 64,
+      "actual_search_go": 1237,
+      "producer_seconds": 3.609999999869615,
+      "terminal": 16,
+      "censored": 48
+    },
+    {
+      "task": 995,
+      "games": 128,
+      "actual_search_go": 2454,
+      "producer_seconds": 5.45299999974668,
+      "terminal": 30,
+      "censored": 98
+    },
+    {
+      "task": 1013,
+      "games": 384,
+      "actual_search_go": 3984,
+      "producer_seconds": 24.717999999877065,
+      "terminal": 81,
+      "censored": 303
+    },
+    {
+      "task": 1019,
+      "games": 128,
+      "actual_search_go": 1329,
+      "producer_seconds": 8.390000000130385,
+      "terminal": 42,
+      "censored": 86
+    },
+    {
+      "task": 1022,
+      "games": 64,
+      "actual_search_go": 982,
+      "producer_seconds": 5.969000000040978,
+      "terminal": 13,
+      "censored": 51
+    },
+    {
+      "task": 1025,
+      "games": 256,
+      "actual_search_go": 2734,
+      "producer_seconds": 15.561999999918044,
+      "terminal": 67,
+      "censored": 189
+    },
+    {
+      "task": 1030,
+      "games": 128,
+      "actual_search_go": 1838,
+      "producer_seconds": 11.5,
+      "terminal": 31,
+      "censored": 97
+    },
+    {
+      "task": 1033,
+      "games": 128,
+      "actual_search_go": 1887,
+      "producer_seconds": 12.530999999959022,
+      "terminal": 32,
+      "censored": 96
+    },
+    {
+      "task": 1036,
+      "games": 512,
+      "actual_search_go": 5597,
+      "producer_seconds": 34.04700000025332,
+      "terminal": 104,
+      "censored": 408
+    }
+  ],
+  "root_batches": [
+    {
+      "task": 987,
+      "search_go": 128,
+      "seconds": 10.671999999787658
+    },
+    {
+      "task": 993,
+      "search_go": 384,
+      "seconds": 31.407000000122935
+    },
+    {
+      "task": 1004,
+      "search_go": 256,
+      "seconds": 21.57800000021234
+    },
+    {
+      "task": 1011,
+      "search_go": 384,
+      "seconds": 31.640999999828637
+    }
+  ],
+  "api_batches": [
+    {
+      "task": 985,
+      "requests": 32,
+      "seconds": 25.219000000040978
+    },
+    {
+      "task": 992,
+      "requests": 32,
+      "seconds": 27.57800000021234
+    },
+    {
+      "task": 1003,
+      "requests": 32,
+      "seconds": 27.67200000025332
+    },
+    {
+      "task": 1009,
+      "requests": 64,
+      "seconds": 54.061999999918044
+    },
+    {
+      "task": 1000,
+      "requests": 9,
+      "seconds": 7.092999999877065
+    }
+  ],
+  "network_preflight": "OneKRvK request plusoneofficialREADME download separate; accountSlacktransport separatelyprivate",
+  "cost_limits": "Ordinaryconcurrentmachine; no same-task speedup/exclusivityclaim. Engineering, analysis, audits, archive/publication/modeltoken costs arepartofsegment, notgameproducerseconds. No worker/fee/hour-run.",
+  "new_go_in_summary": 0
+}

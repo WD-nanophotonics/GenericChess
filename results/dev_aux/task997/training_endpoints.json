@@ -1,0 +1,160 @@
+{
+  "status": "FROZEN_TRAIN_ONLY_RESOURCE_ENDPOINTS",
+  "endpoints": [
+    {
+      "limit": 16,
+      "train": [
+        {
+          "price": 90,
+          "N": 16,
+          "score": "5/16",
+          "regret": "1/16",
+          "labels": {
+            "0": 11,
+            "1": 5
+          }
+        },
+        {
+          "price": 180,
+          "N": 16,
+          "score": "3/8",
+          "regret": "0",
+          "labels": {
+            "1": 6,
+            "0": 10
+          }
+        },
+        {
+          "price": 360,
+          "N": 16,
+          "score": "3/8",
+          "regret": "0",
+          "labels": {
+            "1": 6,
+            "0": 10
+          }
+        },
+        {
+          "price": 1448,
+          "N": 16,
+          "score": "3/8",
+          "regret": "0",
+          "labels": {
+            "1": 6,
+            "0": 10
+          }
+        }
+      ],
+      "selected": 180,
+      "plateau": [
+        180,
+        360,
+        1448
+      ]
+    },
+    {
+      "limit": 64,
+      "train": [
+        {
+          "price": 90,
+          "N": 16,
+          "score": "3/8",
+          "regret": "0",
+          "labels": {
+            "1": 6,
+            "0": 10
+          }
+        },
+        {
+          "price": 180,
+          "N": 16,
+          "score": "3/8",
+          "regret": "0",
+          "labels": {
+            "1": 6,
+            "0": 10
+          }
+        },
+        {
+          "price": 360,
+          "N": 16,
+          "score": "3/8",
+          "regret": "0",
+          "labels": {
+            "1": 6,
+            "0": 10
+          }
+        },
+        {
+          "price": 1448,
+          "N": 16,
+          "score": "3/8",
+          "regret": "0",
+          "labels": {
+            "1": 6,
+            "0": 10
+          }
+        }
+      ],
+      "selected": 90,
+      "plateau": [
+        90,
+        180,
+        360,
+        1448
+      ]
+    },
+    {
+      "limit": 256,
+      "train": [
+        {
+          "price": 90,
+          "N": 16,
+          "score": "5/16",
+          "regret": "1/16",
+          "labels": {
+            "0": 11,
+            "1": 5
+          }
+        },
+        {
+          "price": 180,
+          "N": 16,
+          "score": "3/8",
+          "regret": "0",
+          "labels": {
+            "1": 6,
+            "0": 10
+          }
+        },
+        {
+          "price": 360,
+          "N": 16,
+          "score": "3/8",
+          "regret": "0",
+          "labels": {
+            "1": 6,
+            "0": 10
+          }
+        },
+        {
+          "price": 1448,
+          "N": 16,
+          "score": "5/16",
+          "regret": "1/16",
+          "labels": {
+            "1": 5,
+            "0": 11
+          }
+        }
+      ],
+      "selected": 180,
+      "plateau": [
+        180,
+        360
+      ]
+    }
+  ],
+  "objective": "chosenaction WDL withoptimalcontinuation",
+  "holdout_not_used_for_selection": true
+}
