@@ -15,7 +15,7 @@ defined work and equal-time retained useful decisions. No Elo/speed parity gate.
 
 SCALAR_COUNT_AND_NATIVE_BOUNDARY.md closes80 research calls (78 retained plus
 2 unsaved failed-diagnostic calls). Reject the lazy first-reply write witness;
-defer sparse enemy-count yields: scalar0.336–0.584x but actualfixed caller mixed,
+defer sparse enemy-count yields: scalar0.336Ã¢â‚¬â€œ0.584x but actualfixed caller mixed,
 64 fresh resource calls/32pairs all retained same. q0 negativecontrol and
 configured q4/effective q0 fallback are distinguished. No production/default/
 UI/Native change or claim of tactical benefit;35 private candidate tests pass.
@@ -30,7 +30,9 @@ only; measure imports/hits/wholecaller cost, not all S3 queries. Dot fixedsource
 review supports scoped feasibility, identifies GIL/nointernalpoll and old
 availability-handoff boundaries, and grants no new authority. Four18/24 aux-flip
 Core controls, >255 source/anchor and8 normal/cancel runtime pushes have begun
-this input baseline; Native-wide implementation/latency remains untested.
+this input baseline; Native-wide implementation/latency remains untested. Existing fullPython payload
+floor is0.229â€“0.263 ofCore query on these4states, excludingCimport/query; one
+bounded opt-in prototype is selected, not accepted orglobally enabled.
 Keep Core full fallback and old small-board ABI/cap; do not blindly enlarge
 globalarrays, add a position cache or demand a new framework before a finite test.
 
@@ -38,7 +40,7 @@ S3_FULL_FRONTIER_INTENT.md remains the latest adopted product change:
 exact generator-local observation for explicit full binding materialization,
 complete transition/S3/S4/history/errors/stops, existence routes unchanged.
 Prior final2,429 active tests and200 searches; combined fixed costs locally
-22.4–40.2% lower,40 retained resource pairs same. No strength claim.
+22.4Ã¢â‚¬â€œ40.2% lower,40 retained resource pairs same. No strength claim.
 COMPILED_ENDPOINT_FALLBACK.md retains2398/48fixed/64fresh and the K/P/X ID repair.
 Native<=16 and actual compile endpoint metadata are distinct from Core fallback.
 
@@ -64,9 +66,11 @@ prices, empirical quantity/splitting and separate game semantics remain.
 Exact WDL/all-defense proofs are not development admission requirements.
 
 AUX40 advice is later interpretation: legal/selected WDL ranges, true paired
-gains/losses and shared unknown action labels. Its newgame/label numbers remain
-attributed preliminary summaries. PRIMARY verifies22,830 finite uncertainty
-bounds only, not auxiliary training/binaries. No duplicate auxiliary work,
+gains/losses and shared unknown action labels. Late AUX40 fixed7870cd report/cost is fullyread;12game and4root
+batch arithmetic verifies2088games/28572searches, but rawgames/labels/perft/
+binaries/training are not reproduced. PRIMARY also verifies22,830 finite
+shared-uncertainty bounds. Mirrors are familycoupled andscoped5x5KRN excludes
+promotion/drop; intervals/mixedvalidation do notidentify universalratios. No duplicate auxiliary work,
 checkout writes, merge or routine wake. COLLABORATION_LOG records the scope.
 
 ## Current evidence

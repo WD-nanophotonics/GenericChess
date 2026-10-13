@@ -140,3 +140,38 @@ explicit Agent-only [science archive](../archive/scalar_count_native_boundary_20
 Original raw Slack/account inputs, receipts, XML and credentials remain private.
 Resolved quoting/import/path/SQLite-WAL/Windows206 and compiled-slot failures
 are recorded without hiding missing evidence or claiming a Native/OS repair.
+
+## Next step actually begun after publication
+
+The existing complete Python state-only payload builder is measured on the four
+active18/24 aux-flip inputs,2,000 repetitions per arm and both orders.
+Its time is0.229–0.263 of the Core scalar query; all board cells, owner/current/
+base/promoted mappings and full aux are retained. A mapping-only test receiver
+calls this pure Python helper; no Native rules/position capsule or unsupported
+C query is created. This is an input-cost floor with observed headroom on these
+four states, not C parsing/import cost, Native speed or cancellation acceptance.
+It justifies one bounded readonly prototype trial; the actual existing hook
+scope/complete imports/active-scan stopping still decide the choice. No new
+search call or frozen resource extension is added. The previous56-member
+published archive is retained in Git and a private exact copy; the updated
+59-member archive adds only this declared producer/results.
+
+## Later completed auxiliary supplement
+
+Recovery also reads completed threads. A later AUX40 result supplies fixed
+[report](https://github.com/WD-nanophotonics/GenericChess/blob/7870cd240040a3a4d1010214d96af0e6414e3dbd/results/dev_aux/SEGMENT_20261014_40.md)
+and [cost](https://github.com/WD-nanophotonics/GenericChess/blob/7870cd240040a3a4d1010214d96af0e6414e3dbd/results/dev_aux/COST_20261014_40.json);
+these supersede the earlier preliminary-only availability statement. PRIMARY
+reads both fully and checks12 batch game totals2,088, game searches27,420 plus
+four root batches1,152 equals28,572, and terminal+censored equality per batch.
+API batch requests169 plus the documented one preflight equal170. Perft384
+remains the report's count. These are independent summary/arithmetic checks,
+not reproduction of raw games, API labels, perft, binaries or training.
+
+The reported mirror gains4/64 and6/64 average5/64; mirrors remain one family.
+Reported5x5 K/R/N games exclude promotion/drop/castling/EP and do not reuse8x8
+oracle labels. Plateaus and mixed search/random heldout outcomes support scoped
+conditional directions, not a unique universal ratio or a complete generic
+domain. The phrase all32 training cases in the23-root Shogi section is not
+independently resolved; do not infer exact per-game coverage from that wording.
+No new auxiliary assignment, duplicate game, cross-checkout write or merge follows.

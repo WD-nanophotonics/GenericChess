@@ -33,9 +33,22 @@
     "prior_unchanged_product_full_suite": 2429
   },
   "auxiliary": {
-    "latest_fixed_seen": "7b912c59dcea061fd1ac20974060e3ce1eb55f85",
-    "segment40_evidence": "preliminary attributed Slacksummary only, not rawgame/label/binary validation",
-    "primary_contribution": "22830 exact shared-unknown-label boundchecks; no AUXduplicatework/checkoutwrites/merge"
+    "latest_fixed_seen": "7870cd240040a3a4d1010214d96af0e6414e3dbd",
+    "segment40_evidence": "Latefixedreport andcost read;12game/4root batch arithmetic verified. No rawgame/label/perft/binary/training reproduction.",
+    "primary_contribution": "22830 exact shared-unknown-label boundchecks; no AUXduplicatework/checkoutwrites/merge",
+    "verified_summary": {
+      "game_batches": 12,
+      "games": 2088,
+      "game_go": 27420,
+      "root_batches": 4,
+      "root_go": 1152,
+      "total_go": 28572,
+      "all_terminal_plus_censor_equals_games": true,
+      "api_batches_requests": 169,
+      "documented_preflight": 1,
+      "total_api": 170,
+      "mirror_mean": "(4/64+6/64)/2=5/64"
+    }
   },
   "advisor": {
     "newroot": true,
@@ -44,9 +57,9 @@
   },
   "archive": {
     "path": "docs/archive/scalar_count_native_boundary_20261014/evidence.zip",
-    "members": 56,
-    "bytes": 143940,
-    "sha256": "c46a12fe7d892f6d4b01a56c0f030e5ca76c540b108cd20abe3e76d5c180178d",
+    "members": 60,
+    "bytes": 147228,
+    "sha256": "b90af29a212ec00edf32268d7920891e2e5bbd7437e094dc2ad230ea74136296",
     "member_sha256": {
       "lazy_witness.py": "81f4c32a6ec3e9d6ddb21627180fb30af86a935c61c3b10b2ece289b3cdb0fde",
       "lazy_candidate.py": "a604a146d44ab534a40edd26ae991b76673c03d47e1b4e3b1ffc1f6e1e906e8a",
@@ -103,7 +116,12 @@
       "original_quiescence.py": "6d70c4aab48641b9d5215acd4dc7230022e0fec4e07cebbbdfdd6418873fc0da",
       "original_search.py": "b76ba45ed8484539da8ba99a6b83e08a2fd1c115877938e23d649ecb5150107e",
       "hook-reach-scope.json": "16cde0370ba457ce1d42b444c6f322aefce5de12e0314bdf2751854719348765",
-      "failure-summary.json": "8ce881490b1f074cf80bd4f171b89c4ef70db2fa7eb5e1dacbc2bd39b12c9710"
+      "failure-summary.json": "8ce881490b1f074cf80bd4f171b89c4ef70db2fa7eb5e1dacbc2bd39b12c9710",
+      "pack_floor.py": "1b191743fb26704807e564818e33103b87125531fb20bd0d26812622e411e8cc",
+      "pack-floor-declaration.json": "7149bc060ce04539808989fb3c50552e1d0b10f798ac14cbe50379cf64b2eb31",
+      "pack-floor.json": "32794d566388df03fa6e87fb340b3768a574e02fef58572232b518166a3d5c37",
+      "aux40-summary-arithmetic.json": "c66a47df7ca96bb9e69b9eb16cff04d67bb6bf772b3d9e494281028ee207deee"
     }
-  }
+  },
+  "next_step_started": "Existing exact Python payload-only floor on4active>255auxflip inputs,8counterbalanced pairs; componentcost0.229-0.263ofCore scalar; no Cimport/Nativewidequery/wholecaller orcancel gain claimed."
 }
