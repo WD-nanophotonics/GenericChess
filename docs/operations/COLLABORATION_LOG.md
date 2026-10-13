@@ -1500,3 +1500,13 @@ Zero-search exact3rule sampler counterexample and3primarypaper review reject
 borrowing playout/split throughput as same-policyCoreq4 orpricefeedback evidence.
 No AUX process/search duplicated, no auxiliaryfilewrite. Earlier86callarchive and
 774remote remain immutable; thissupplement brings actualPRIMARY calls to104.
+
+CompletedPRIMARY segment a4e6f48e-434c-4032-bca0-f7fd39f4817e retains original
+UTC05:06:44.990745→06:12:17.815979,65.547minutes,10 actualresearch stages.
+Sessionfinish accepted safe_checkpoint; separateactualqualityreview verifies104
+closedsearch calls, archives,2,328productionchecks/72publisherchecks, bothprivate
+40testqualifications, fullhistories/negativecells, noextraAgent/worker oridlepad.
+Allowned producers areclosed; scienceOPEN/threeexecutabletasks preserved. Remote
+7d630ab5 fullSHA independentlyverified aftersupplement; thisendingreceipt is the
+final documentation sync. Heartbeat remainsACTIVE90minutes/userresume, no hidden
+block orrequireduseraction. Dot gets a fixed-revision result/collaborationlink.
