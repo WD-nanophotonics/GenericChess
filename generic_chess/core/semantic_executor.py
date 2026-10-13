@@ -645,6 +645,33 @@ class SemanticEngine:
                 ):
                     return True
             return False
+        endpoints = self.semantic._incoming_attack_endpoints
+        if endpoints is not None:
+            _checkpoint(checkpoint)
+            owner_key = str(by_owner)
+            selected = []
+            for source, typed in endpoints.get((owner_key, square), {}).items():
+                _checkpoint(checkpoint)
+                piece = position.board[source]
+                if piece is not None and piece.owner == by_owner:
+                    selected.extend((rank, pattern, source, piece.current_type_id, gid, endpoint)
+                        for rank, pattern, gid, endpoint in typed.get(piece.current_type_id, ()))
+            selected.sort(key=lambda row: row[0])
+            for rank, pattern, source, tid, gid, endpoint in selected:
+                _checkpoint(checkpoint)
+                piece = position.board[source]
+                geometry = self.ir.geometry[gid]
+                path = (() if geometry.kind == "leap"
+                    else tuple(geometry.paths[owner_key][source][:endpoint]))
+                binding = self._make_binding(
+                    pattern, gid, tid, piece, source, square, None, path, position)
+                if self._path_holds(
+                    pattern.path, position, binding, by_owner, checkpoint=checkpoint,
+                ) and self._guards_hold(
+                    pattern, position, binding, by_owner, checkpoint=checkpoint,
+                ):
+                    return True
+            return False
         sources_by_owner_type = _sources_by_owner_type(position)
         owner_key = str(by_owner)
         for pattern in self._patterns:

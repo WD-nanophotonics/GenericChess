@@ -26,6 +26,23 @@ roots, not claimed improved end-to-end or an independently reproduced user loss.
 
 ## Current measured question
 
+Latest2026-10-13: COMPILED_ENDPOINT_FALLBACK.md adopts one bounded compile-owned
+endpoint schedule only after originalincoming metadata declines; normal indexed/Native
+routes remain.2398 active/44focused/141forcedconsumer/37generator checks pass;48fixed
+fullnon-time/work exact.64fresh q0/q4 resource calls give6deeper26same0shallower
+pairs; gains onlyq0 three16s roots, no strength claim. Memorypeak freezing andcold
+constructor cost are measured separately. Reserved K/P/X collision blocked23+
+generator boards; stable IDs repair it without changing originalvalid<=22seeds.
+Actual24Core twoD0node256 moves submit;28openingfilter unavailable stays. Rawfailed
+probe/Temppermissions/checkpoint403 error and per-pollfile-read timing artifact are
+retained/corrected, not hidden backend failures or user approval gates.
+Next: residual q4 fullfrontier/S3 costs.631/681 finite unchanged childchecks suggest
+a frontier-local influence premise; a validremote state-guard counterexample rejects
+geometry-only generalization. Actualcompile guard/effect facts have begun a bounded
+conditionalprototype input; preservefull fallback, child/S4/history/errors/stops.
+No productionS3skip, additionalcache, UI/default orNative expansion.
+
+
 MIXED_Q_PUBLIC_API.md delivers the ordinary-only q orderer through an appended
 explicit SearchTuning field. Final2,328 active checks, actual before-source
 8call default/all-q parity, scoped mate/type-effect/hardabort/cancel recovery

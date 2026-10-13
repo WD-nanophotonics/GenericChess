@@ -196,3 +196,13 @@ savings1.90–5.10percent are conditional; resource curves show no deeper retain
 decision. Evidence: research/CORE_BINDING_MEMBERSHIP.md.
 
 2026-10-13: square_to_index avoids temporary BoardShape only for exact positive builtin int. All other extent/error behavior stays;2356 tests pass. No option/Native rebuild/UI work required; consumer process restart loads the Python change. Private prefix-free incoming schedule is research evidence only, unavailable as a product flag. Native20-board remainsunsupported, complete Core fallback retained. See research/COLD_RULE_COORDINATE.md and PREFIX_FREE_INCOMING.md.
+
+
+2026-10-13 backend addition: the compile-owned endpoint fallback automatically
+accelerates Core scalar attacks only when the original incoming metadata is absent.
+Its262144-row bound declines to the complete old executor; no public searchflag
+or frontend change.2398 active checks and48fixed publicCore/Native q0/q4 parity
+qualify this path. Nativeboard<=16 remains; q4 hardcheck limits and existing
+defaults remain. ReservedID generation repair affects boards>=23; original<=22
+seed namespaces unchanged.24Core twoD0/node256 choices actually submit, not a
+strength/completeNative claim. See research/COMPILED_ENDPOINT_FALLBACK.md.

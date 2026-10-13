@@ -31,15 +31,22 @@ def ordinary_type_ids(board_size: int) -> tuple[str, ...]:
     """Default ordinary type IDs for the generated setups.
 
     ``P`` is the promotable front type; ``X`` is the even-board companion;
-    ``A, B, C, ...`` fill the outer back-rank pairs.
+    ``A, B, C, ...`` fill the outer back-rank pairs, skipping reserved
+    ``K/P/X``. Larger boards continue with alphanumeric IDs after ``Z``.
     """
     pairs = (board_size - 1) // 2
     ids: list[str] = ["P"]
     if board_size % 2 == 0:
         ids.append("X")
         pairs = (board_size - 2) // 2
-    for i in range(pairs):
-        ids.append(chr(ord("A") + i))
+    letter = 0
+    for _ in range(pairs):
+        while True:
+            candidate = chr(ord("A") + letter) if letter < 26 else f"T{letter - 25}"
+            letter += 1
+            if candidate not in ("K", "P", "X"):
+                ids.append(candidate)
+                break
     return tuple(ids)
 
 
