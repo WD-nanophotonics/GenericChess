@@ -100,6 +100,22 @@ onlyifcompletehash/state/history proof andwholecallcost canchangechoice.
 AUX32fixed54c95e0d read-only: denserterminaltrial objectiveschooseidentical
 endpoints, bothreference distancesworse; nofit/default adoption.
 
+Currentmembership2026-10-13: CORE_BINDING_MEMBERSHIP.md adopts only reuse of
+the existing complete current semantic bindingdict fornonpass membership.
+Pass/legacy/unhashable rejection keepoldtuple path; no addedcache/lazybinding/
+NativeABI/default/UI policy.115 actualsearches/final2349checks,154focused;
+actualbefore/source fixedwork savings1.90–5.10percent locally, no globalfactor.
+All12 retainedresource tuples at4/16/64seconds unchanged; morework notdeepergain.
+New4rule64declared:48actual/16unavailable1731 retained, no replacement; full
+nontime/backend/history/PVs exact. Footprint9 andhelper9/index8 remainprivate
+onmeasuredcost/contract;83595pathshadow corrects138399factory shorthand.
+Actual4same-actor continuations addlegalactions: rejectside-only oldfrontier
+reuse, not conditionalcompiled capability. Nextselectone actualremaining
+consumer primitive/algorithm cost, no wholefrontier cache or budgethunt.
+User2026-10-13 configuration separatelyclarifies standingprojectauthority and
+private rawstorage versusGitpublication. Nativeheartbeat prompt synchronized;
+cadence/status/target preserved; controls notdisabled. No newworker/Goal.
+
 ## Prior selections and preserved limits
 
 Q0_RESOURCE_AND_ORDERING.md separates fixed-work, node-limited delivery and a

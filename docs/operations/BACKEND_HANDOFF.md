@@ -185,3 +185,12 @@ while fresh fixed costs were mixed and equal-time completed horizons unchanged.
 Default/UI/PVS/price policy stays.2,341 active checks/45 focused pass, candidate
 entry-cancel failure and same-object retry fixed before publication. See
 research/CHECK_INPUT_HANDOFF.md and data/check_input_handoff_20261013.json.
+
+
+2026-10-13: Core push membership reuses its already complete validated semantic
+binding map, with original tuple handling for pass/legacy/unhashable inputs.
+No consumer activation, new option, Native rebuild or UI integration is required.
+Current full2349 and focused154 qualification includes value-equal reconstructed
+EP/promotion/drop actions and full history/cache restoration. Local fixed-work
+savings1.90–5.10percent are conditional; resource curves show no deeper retained
+decision. Evidence: research/CORE_BINDING_MEMBERSHIP.md.

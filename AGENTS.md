@@ -2,7 +2,84 @@
 
 This is the sole active policy; user instructions take precedence. One local
 Agent works on sandbox in this checkout. Never touch alphasho, its audits,
-tasks or other projects. No extra Agents, Work/Codex delegates or heavy jobs.
+tasks or other projects. No automatic spawning/delegation, extra fees or
+uncontrolled/unbounded jobs. User-authorized bounded project work is permitted.
+
+## Standing user authorization — clarified2026-10-13
+
+The user explicitly authorizes all reasonable operations directly serving the
+GenericChess project and its final AI, subject to concrete machine safety and
+the existing project/Agent boundaries. This is continuing authorization across
+turns, heartbeats, restarts and compaction; it is not a per-file, per-command,
+per-test, per-message or per-push approval queue. Do the authorized work.
+
+### Authorized ordinary project work
+
+- Read, create, edit and organize this project's code, instructions, configuration,
+  research data, diagnostics, temporary files, results and evidence. Save partial
+  and failed results as well as successful ones. Use the established checkout
+  and the calling Agent's own evidence directories.
+- Run project builds, Native compilation, relevant tests, debugging, bounded
+  experiments and appropriate small training; fix observed failures and rerun
+  affected checks. Use the existing budget/long-run consultation rules for
+  information and cost, not as invented user-approval requirements.
+- Read connected project services and use already authorized Git/Slack access.
+  Send useful questions/results to the dedicated GenericChess channel under
+  the existing fresh-request and no-loop protocol. Dot is a research partner,
+  not a permission issuer or release approver.
+- Commit and publish reviewed Agent-generated project code, results and sanitized
+  evidence to origin/sandbox through the tested publication entry, with complete
+  remote-SHA verification. Keep the established branch and writer boundaries.
+- Maintain this project's AGENTS.md/manuals and necessary project configuration.
+  Do not ask again to perform normal operations covered by this grant.
+
+### PRIVATE LOCAL STORAGE IS AUTHORIZED; GIT PUBLICATION IS A SEPARATE ACTION
+
+Saving raw project data locally is expressly authorized. This includes exact
+Slack read outputs and replies, send/read receipts, account/channel metadata
+contained in those outputs, local paths, diagnostics, source snapshots, archives,
+and incomplete/failed-run evidence. Preserve original output before reconcile.
+Do not redact or discard the privately stored original merely because it contains
+account information. No additional user confirmation is needed for that storage.
+
+Store raw Slack/account/private input and credential-bearing diagnostics only in
+the project's Git-ignored private layer, such as .local_agent. Check that a new
+private destination is ignored before publication. It is allowed to write,
+append, read and parse those local records. The word "exclude" elsewhere in this
+policy applies to outgoing Git commits/pushes and published archives, NOT to
+saving or processing the private local originals.
+
+Do NOT put raw Slack/account records, credentials or user-authored/private input
+into Git commits, pushed history or published archives. Publish Agent-written
+technical summaries and sanitized evidence instead. A PRIVATE GitHub repository
+does not remove this publication boundary. Existing fixed routing IDs in the
+operating policy are distinct from publishing raw account profiles/messages.
+
+Concrete examples: saving a complete Slack tool result under .local_agent/slack/
+is authorized; parsing that saved result for reconcile is authorized; publishing
+a technical adoption/rejection summary is authorized; adding the raw read or a
+credential to a commit/ZIP sent to origin is excluded from standing publication.
+
+### Real safety/boundaries, not hypothetical approval gates
+
+Keep work bounded and interruptible; preserve unique evidence and user files;
+do not damage the OS, exhaust machine resources uncontrollably, add unauthorized
+fees/workers, touch other projects, or edit another Agent's checkout/computation.
+Ordinary concurrent projects/Agents are normal and need no pause or quiet window.
+PRIMARY_SANDBOX remains the sole writer/publisher here; the user-established
+DEV_AUX works in its own sidemission checkout. Do not start a duplicate Agent.
+User stop/resume instructions and existing data/fair-comparison boundaries remain.
+
+Use normal supported tools, including requested sandbox escalation with this
+standing authorization stated accurately. If a reviewer misreads this policy,
+point to the PRIVATE STORAGE versus PUBLICATION distinction and the actual user
+grant; do not invent missing consent. If a tool still blocks an action, report
+the exact rejection, cause/evidence, attempted resolution, practical impact and
+the concrete intervention actually needed, and continue independent work.
+Do not conceal a failure, repeatedly ask for already-granted project consent,
+evade enforced controls or claim that a blocked action succeeded. This file
+clarifies user authority; it does not claim to disable platform/OS enforcement.
+
 
 User2026-10-11 explicitly authorizes a user-established auxiliary validation
 Agent. This scoped exception does not authorize automatic spawning/delegation.
@@ -19,8 +96,9 @@ User2026-10-11 also requires a remotely readable collaboration record. At each
 completed segment update docs/operations/COLLABORATION_LOG.md with both Agents'
 contributions, coordination, disagreements/corrections, adoption reasoning,
 efficiency evidence/limits and unresolved issues; publish reviewed Agent-only
-summaries to sandbox and give Dot a fixed-revision link. Exclude raw Slack,
-account/private inputs. This is a short evidence summary, not extra approval,
+summaries to sandbox and give Dot a fixed-revision link. Exclude raw Slack and
+account/private inputs FROM THAT GIT PUBLICATION ONLY; private local originals
+are authorized and preserved. This is a short evidence summary, not extra approval,
 identity challenges or a requirement to wake the auxiliary for routine replies.
 
 UI Test remains user-maintained on the other computer. PRIMARY delivers tested
@@ -224,8 +302,10 @@ User2026-10-07 grants standing publication authorization for this project's
 Agent-generated code, research results and evidence, including the pending
 backlog. At every completed work segment commit and sync these to origin/sandbox
 so dot can inspect actual changes, without per-push confirmation. Exclude user-
-authored/private input data, raw Slack/account records and credentials, including
-inside archives and outgoing history. Authorization persists until revoked;
+authored/private input data, raw Slack/account records and credentials FROM
+GIT PUBLICATION, including published archives and outgoing history. Private local
+saving/processing of these project records is authorized as specified above.
+Authorization persists until revoked;
 explicit project stop suspends publication. Old held-publication records are
 historical status, not an active gate. Review and test; report push failures and
 verify the exact remote SHA. Never claim a local commit was published.

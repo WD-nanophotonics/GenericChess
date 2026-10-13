@@ -1324,7 +1324,17 @@ class SearchPathRuntime:
             raise
 
     def _push_impl(self, action: Action, checkpoint=None) -> RuntimeSearchState:
-        if action not in self.legal_actions(checkpoint):
+        legal = self.legal_actions(checkpoint)
+        # Semantic frontiers already own a complete validated binding map.
+        # Keep tuple authority for pass/legacy and unhashable caller inputs.
+        if self._bindings and not isinstance(action, PassAction):
+            try:
+                accepted = action in self._bindings
+            except TypeError:
+                accepted = action in legal
+        else:
+            accepted = action in legal
+        if not accepted:
             raise IllegalActionError(f"action is not legal in the current state: {action}")
         self._frames.append(
             _Frame(

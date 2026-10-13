@@ -14,6 +14,18 @@ A separate Socket Mode app
 and immediate model wake are no longer required. Their prototype is historical
 text only; no token, daemon, Windows task or extra model is needed here.
 
+## Private local raw records are authorized —2026-10-13
+
+The user explicitly authorizes saving all GenericChess-related data locally,
+including complete raw Slack outputs, account metadata and send/read receipts.
+Keep these exact originals in Git-ignored .local_agent and save before reconcile;
+no per-save approval or private-original redaction is required. "Exclude raw
+Slack/account/private input" means exclude it from Git publication and published
+archives, not from local storage or parsing. Publish only reviewed technical
+summaries/sanitized evidence. See AGENTS.md Standing user authorization.
+A real tool rejection must be diagnosed/reported truthfully; it is not evidence
+that this already-authorized local save lacks user consent.
+
 ## Destination and evidence
 
 Standing user authorization, reaffirmed 2026-10-04: the GenericChess Agent may

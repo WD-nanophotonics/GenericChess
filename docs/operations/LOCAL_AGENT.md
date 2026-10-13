@@ -3,6 +3,28 @@
 AGENTS.md is the sole active policy. The user approved broader exploration,
 time plus executable work reserves, and a small local work-segment validator.
 
+## Standing project authority —2026-10-13
+
+AGENTS.md explicitly records continuing authority for reasonable GenericChess
+work and private local data storage. Raw Slack/account outputs, diagnostics and
+failed-run evidence may be saved/read/parsed in Git-ignored .local_agent without
+asking again. Publication exclusions apply only to outgoing Git/history/archive
+delivery; they do not prohibit the private local originals required by reconcile.
+Machine safety, stops, sole-writer/other-project boundaries and fair conditions
+remain concrete limits. Do not add approval queues or treat ordinary concurrency
+as a reason to stop. Diagnose/report real tool or OS failures and keep progressing.
+
+### TOML scope checked2026-10-13
+
+This checkout has no project .codex/config.toml. pyproject.toml controls build,
+dependencies and tests; it is not a consent/approval policy and is unchanged.
+The existing genericchess automation.toml prompt was updated through the native
+automation interface, preserving its active90-minute schedule and same chat.
+AGENTS.md records project authority; platform/OS enforced settings remain
+separate. No global permission file was changed or extra automation created.
+Configuration references: [official AGENTS.md guidance](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
+and [official config basics](https://learn.chatgpt.com/docs/config-file/config-basic).
+
 ## Start and resume
 
 Read NEXT_WORK.md first, policy, current mainline and persisted stop flags.
@@ -359,7 +381,9 @@ GenericChess code, results and evidence, including the held backlog. Finish each
 work segment by committing/syncing that work to origin/sandbox so dot can inspect
 the actual code; no repeated push approval. Review the entire outgoing history
 and archive contents for user-authored/private input, raw Slack/account records
-and credentials, which remain excluded. The standing grant ends only if revoked;
+and credentials, which remain excluded FROM GIT PUBLICATION ONLY. Saving and
+processing their project-related private local originals remains authorized.
+The standing grant ends only if revoked;
 explicit project stop suspends publication. Previous held statuses describe
 their original segment, not a current approval requirement. Keep tests/diff
 review and exact remote SHA verification; report failures instead of claiming
