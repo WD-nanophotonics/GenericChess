@@ -1,0 +1,78 @@
+{
+  "status": "PREPARED_NOT_EXECUTED",
+  "scope": "Bounded user-requested review; zero new engine queries or fitting. Supersedes only unexecuted immediate NB fitting in NEXT_FEASIBILITY38. Original declarations/results stay unchanged.",
+  "question": "Can a prospective few-piece distribution supply genuine outcome information about B/N against a searching opponent cheaply?",
+  "primary": "J24 = mean(actual win +1, actual loss -1, actual draw 0, unresolved at 24 plies 0). Unresolved is a separate censored class, never a draw or quantity-based win. This is finite-horizon event return, not eventual WDL.",
+  "diagnostics": [
+    "W/L/D/C and termination time per opponent/color/family",
+    "first candidate action and whole trajectory changes",
+    "paired transitions including lost wins and new losses",
+    "terminal changes across independent families",
+    "cost including producer, audit, engineering and review"
+  ],
+  "next_action": "Implement and freeze a new price-blind zero-prefix NB root generator before any query. Move kings closer than task875 and retain cooperative two-N/two-B inventory. Pilot training roots only.",
+  "proposed_grammar": {
+    "board": "standard 9x9 Shogi",
+    "king_rows": [
+      5,
+      3
+    ],
+    "prefix_plies": 0,
+    "inventory": "two N and two B plus two kings; no R",
+    "mechanics": "retain promotion, hand/drop and relevant history exactly as engine/controller support",
+    "acceptance": "legal nonterminal state, nonmoving king not in check, moving side has at least two legal actions; no screening by prices, wins or human values",
+    "failures": "all original attempted seeds retained; no resampling"
+  },
+  "freeze_before_execution": "Exact placement/RNG, fresh disjoint seeds, family train/dev/validation allocation, color/opponent RNG, fixed budget and audit source must be written before collection; this design is not a claim of an already executed or fully frozen experiment.",
+  "pilot": {
+    "N": 90,
+    "B_and_Horse": [
+      32,
+      90,
+      328,
+      1024
+    ],
+    "promoted_N": 90,
+    "opponents": [
+      "unit_search",
+      "uniform_random"
+    ],
+    "colors": [
+      0,
+      1
+    ],
+    "horizon": 24,
+    "nodes": 256,
+    "threads": 1,
+    "hash_MiB": 16,
+    "limit": "At most 16 attempted training families, 256 closed games and 120 seconds producer wall time; preserve partial/failed results. No new fit in pilot."
+  },
+  "pilot_decision": "Look for actual terminal-contribution changes in at least two independent families against search, and report coverage/censoring and random-opponent results separately. This is a practical information check, not proof of identifiable values or a user-approval gate. If weak, assess a changed prospective grammar or costed small exact-state feasibility; do not add unchanged epochs or quantity reward.",
+  "fit_after_useful_pilot": {
+    "price_axis": "one B/Horse family coefficient relative to fixed N90",
+    "common_grid": [
+      32,
+      45,
+      64,
+      90,
+      128,
+      181,
+      256,
+      328,
+      362,
+      512,
+      724,
+      1024,
+      1448,
+      2048,
+      2896,
+      4096
+    ],
+    "objective": "strict J24 improvement only; retain current parameter on ties. Fast-mate score reported separately, not used to certify a precise price.",
+    "starts": "at least four seeded arbitrary grid starts fixed before outcomes; adjacent-grid local ascent with exact frozen-condition cache",
+    "interpretation": "Report score landscape and plateau/range. A shared exhaustive argmax returned from all starts is convergence by construction, not evidence of initialization independence."
+  },
+  "validation": "Before fitting, freeze independent families/opponents and a fixed-index small control subset at H12/H24/H48 and nodes256/1024. Preserve all endpoints, losses, unresolved cases and horizon reversals; no result-driven extension or selected favorable roots.",
+  "transfer": "NR and NB edges then prospective NRB composition. Tied promoted-family coefficients are explicit restrictions, not independently learned promoted-piece prices. Keep evaluation, ordering, SEE and cached native consumers distinguished.",
+  "claim_boundary": "Conditional useful ratios under declared start/opponent/search distribution. Human-price comparison only after endpoints freeze. Current modified YaneuraOu evidence does not establish stock Stockfish/NNUE or full generic-rule learning feasibility. Tablebases optional after state-space/cost estimate; no mandatory platform rewrite."
+}
