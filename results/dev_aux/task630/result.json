@@ -1,0 +1,36 @@
+{
+  "status": "PASS_ALL_NEW_BALANCED_SETUP_PROBES",
+  "counts": {
+    "games": 704,
+    "actual_go": 4129,
+    "PV_moves": 85181,
+    "Python_actual_actions": 8244,
+    "random_draws": 4115,
+    "sorted_legal_arrays": 4115,
+    "price_ACK_entries": 256
+  },
+  "coverage": {
+    "628": 32,
+    "629": 672
+  },
+  "eligible_roots": 56,
+  "eligible_families": 7,
+  "nomate_setup_count": 18,
+  "source_sha256": {
+    "628": {
+      "games.jsonl": "a8cb4d1e7d9734eb748baeb672cf6869c00913c41d31eee640bed4d3bbbf8056",
+      "queries.jsonl": "b8cdba134d614334e4ae0cef9f7de12537ef3f8b45803c8883230e42fb2c6ef5",
+      "price_acks.json": "2c844e8a9a11120b46f391c0731ab5e8a51c8824afac5dad51c053ce0d057517",
+      "result.json": "9fbd9260a5db232b6e337eb932fa60b05534e53e363b2a992b2a424126a63013"
+    },
+    "629": {
+      "games.jsonl": "79570be457966c47378e6cdd9384fa8f7dcfdc5a039f57148441999d5ec249d8",
+      "queries.jsonl": "183cf4c63a50bf54bf0a079ddbf9373357019d78efcf57ff76e534111b8afb53",
+      "price_acks.json": "bd284acd05b59e0ee45d6a21dd6f029c0c3b8ad5629b2b6417208c9922f4a954",
+      "result.json": "ebb0db4264ba40aea6c483c0e7cb4ca9411381dd46f56216ff08e4df153a3744"
+    }
+  },
+  "new_go": 0,
+  "seconds": 23.716562199871987,
+  "scope": "ALL32newsetup andALL629priceprobe physicalpaths independentPython/PV/material/fullhistory/terminal/RNG/table/rawjournal/reset andALLeligibility/unavailability reconstructed. Rootbias conditionalmate remains, bothgeneratorpolicies/setupcolors/offsets grouped by8originalseedfamilies; seveneligiblefamilies not56independentroots. No sourceprices/selector/resampling/pricelearning/generalhumanrecovery proof."
+}

@@ -1,0 +1,25 @@
+import json,hashlib,time,sys,os
+from pathlib import Path
+R=Path.cwd();O=R/'results/dev_aux/task624';O.mkdir(exist_ok=True);d=json.loads((R/'results/dev_aux/task618/declaration.json').read_bytes());b=json.loads((R/'results/dev_aux/task612/result.json').read_bytes());prior=json.loads((R/'results/dev_aux/task614/result.json').read_bytes());assert prior['status']=='COMPLETE_ALL_CELLS';profiles=list(json.loads((R/'results/dev_aux/task599/result.json').read_bytes())['profiles'])
+for p in json.loads((R/'results/dev_aux/task620/result.json').read_bytes())['profiles']:
+ assert not any(x['weights']==p['weights'] for x in profiles);profiles.append(dict(weights=p['weights'],names=['fast-'+n for n in p['names']]))
+assert len(profiles)==6;plan=dict(question='Doesadditionalsearchrequestwork changeendpoint-relative performance, ALLprices atSAMEleaf/SEE/MAINold/pruning?',profiles=profiles,roots=d['roots'],nodes=[1024,8192],modes=[0],colors=[0,1],cap=12,seed_base=d['seed_base'],executable_sha256=b['executable_sha256'],planned_logical_games=1728,planned_new_physical_games=1152,cached_1024_control_games=576,cached_source='614ALL4oldprofiles mode0 72roots bothcolors',cached_source_sha256=hashlib.sha256((R/'results/dev_aux/task614/games.jsonl').read_bytes()).hexdigest(),goals=['fast','terminal','mixed'],fuse_seconds=600,expected_cost='New864node8192games+288fastprice1024controls, expected1-3min; greateractualsearchwork itsown declaredpolicy/cost, notstrictsame-node/horizon quality ornewfit.',analysis='ALLold+fast endpoints vsowninitial withinbudget then differences-in-differences; 8train/3eligibledevfamilies separately, ALLfamilyomissions. Bothsignedinteractions retained, no depth filtering.',scope='Newrequest-budget premise after616MAINinteraction and622fastdevnegative; not extension ofoldfit orfrozentest. ALLprices/ALLroots/BOTHcolors sameoriginalhistory/RNG/cap12; no human/sourcepricefitness/ranking orrootselection. Samecode=countermode0 qualified vsoriginal; new8192 isdifferentresource policy, neitherpricelearning norindependentholdout. Original6141024raw cachedhonestlynotnewgo; sourceparameters/role/reset verified by615.');(O/'declaration.json').write_text(json.dumps(plan,indent=2),encoding='utf-8')
+for n in [360,364,381,509]:sys.path.insert(0,str(R/f'results/dev_aux/task{n}'))
+import adapter as A,run as G,audit as V
+from warm_adapter import ControlledEngine
+sys.path.insert(0,str(R/'results/dev_aux/task583'));from controller_curriculum import native_game
+fields=['eligible','old_pruned','new_pruned','rescued_by_new','newly_pruned_by_new','new_gain_larger','new_gain_smaller'];s=(R/'results/dev_aux/task613/qualify.py').read_text(encoding='utf-8');exec(compile(s[s.index('class CounterEngine('):s.index('semq=')],'counteronly','exec'));A.EXE=R/'.local_agent/yaneura33_capture/yaneura-capture-diag.exe';assert hashlib.sha256(A.EXE.read_bytes()).hexdigest()==plan['executable_sha256'];os.environ['DEV_AUX_CAPTURE_GAIN_MODE']='0';cached={(x['profile'],x['root'],x['color']):x for x in prior['rows'] if x['mode']==0};rows=[];acks=[];games=0;go=0;start=time.monotonic();deadline=start+600;assert not(O/'games.jsonl').exists()
+with (O/'queries.jsonl').open('w') as qj,(O/'games.jsonl').open('w') as gj:
+ for pi,p in enumerate(profiles):
+  e=CounterEngine(p['weights'],qj,'warm_game');acks.append(dict(profile=pi,mode=0,weights=e.w,prices=e.prices));(O/'price_acks.json').write_text(json.dumps(acks,indent=2),encoding='utf-8')
+  try:
+   for f in d['roots']:
+    for c in [0,1]:
+     for nodes in [1024,8192]:
+      G.stop();assert time.monotonic()<deadline
+      if pi<4 and nodes==1024:
+       x=cached[(pi,f['index'],c)];rows.append(dict(profile=pi,nodes=nodes,root=f['index'],family=f['source_family'],phase=f['phase'],color=c,goal=x['goal'],termination=x['termination'],go=x['go'],plies=x['plies'],source=x['source'],reused=True));continue
+      e.begin_game();dd=dict(d,nodes=nodes);g=native_game(e,None,e.w,f,c,None,dd,deadline);g.update(profile=pi,mode=0,budget=nodes);gj.write(json.dumps(g)+'\n');gj.flush();os.fsync(gj.fileno());games+=1;go+=len(g['queries']);rows.append(dict(profile=pi,nodes=nodes,root=f['index'],family=f['source_family'],phase=f['phase'],color=c,goal=g['goal'],termination=g['termination'],go=len(g['queries']),plies=len(g['actions']),source=dict(file='results/dev_aux/task624/games.jsonl',line=games),reused=False))
+  finally:e.close()
+  print('budgetprice',pi,games,go,len(rows),round(time.monotonic()-start,1),flush=True)
+out=dict(status='COMPLETE_ALL_BUDGET_CELLS',logical_games=len(rows),actual_games=games,actual_go=go,reused_games=sum(x['reused'] for x in rows),rows=rows,price_acks=acks,seconds=time.monotonic()-start,scope=plan['scope']);assert len(rows)==1728 and games==1152 and out['reused_games']==576;(O/'result.json').write_text(json.dumps(out,indent=2),encoding='utf-8');print(json.dumps({k:v for k,v in out.items() if k not in ['rows','price_acks']}))

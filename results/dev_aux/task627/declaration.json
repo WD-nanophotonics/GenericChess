@@ -1,0 +1,226 @@
+{
+  "question": "DoALLold+fastlearnedprices transfer toNEWindependentfamilymatecurriculum withbalancedinitial-generatorpolicy?",
+  "independent_seeds": [
+    2026105010,
+    2026105011,
+    2026105012,
+    2026105013,
+    2026105014,
+    2026105015,
+    2026105016,
+    2026105017
+  ],
+  "generator_profiles": [
+    {
+      "name": "unit",
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ]
+    },
+    {
+      "name": "random2514",
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ]
+    }
+  ],
+  "generator_colors": [
+    0,
+    1
+  ],
+  "setup_cap": 48,
+  "offsets": [
+    2,
+    4,
+    8,
+    12
+  ],
+  "probe_profiles": [
+    {
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "names": [
+        "terminal-unit-initial",
+        "mixed-unit-initial"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        149,
+        90,
+        55,
+        90,
+        0,
+        55,
+        55,
+        55,
+        90,
+        149,
+        90,
+        0
+      ],
+      "names": [
+        "terminal-unit-endpoint",
+        "mixed-unit-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "names": [
+        "terminal-random2514-initial",
+        "mixed-random2514-initial"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        194,
+        62,
+        87,
+        365,
+        51,
+        558,
+        0,
+        62,
+        133,
+        94,
+        443,
+        57,
+        117,
+        0
+      ],
+      "names": [
+        "terminal-random2514-endpoint",
+        "mixed-random2514-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        149,
+        33,
+        90,
+        41,
+        55,
+        404,
+        0,
+        149,
+        149,
+        90,
+        404,
+        245,
+        55,
+        0
+      ],
+      "names": [
+        "fast-unit-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        195,
+        61,
+        53,
+        221,
+        140,
+        919,
+        0,
+        169,
+        134,
+        156,
+        163,
+        155,
+        71,
+        0
+      ],
+      "names": [
+        "fast-random2514-endpoint"
+      ]
+    }
+  ],
+  "probe_colors": [
+    0,
+    1
+  ],
+  "probe_cap": 12,
+  "nodes": 1024,
+  "setup_seed_base": 2026105092,
+  "probe_seed_base": 2026105192,
+  "executable_sha256": "c69d96c10244b65da124d66c653449bc701680f4e3da05ec48b3979ef950d2e2",
+  "fuse_seconds": 600,
+  "expected_cost": "32newsetupgamesmax48plies+ALLeligibleoffsets\u00d7ALL6prices\u00d7bothcolors max1536probe shortgames; expectedunder2min, no resampling/extraepochs",
+  "eligibility": "ALLactualCHECKMATE setups includeALL2/4/8/12offsets ifavailable; ALLnomate/draw/loss retained, no replacement. Bothgeneratorprices/setupcolors/offsets share originalseedfamily, notextraindependentsamples.",
+  "freeze": "Allroots+unavailable frozen BEFOREany6priceprobe. Allprices alreadyfixed619oldnewendpoints, no next-fit/selector orreferenceuse.",
+  "scope": "NEWindependentfamilies vs596train/dev but deliberatelyterminal-enriched conditionalcurriculum, twoarbitraryinitial-generatorpolicies weighted equally; not natural-game distribution/unexposedentiremethod discovery orhumanpricevalidation. No sourceprices/learnedendpoint-selectedroots; ALLnegativecases andallcandidatecolors retained. No product/default/UI/state changes."
+}

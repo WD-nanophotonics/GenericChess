@@ -1,18 +1,16 @@
-## DEV_AUX current scope2026-10-13 segment32
+## DEV_AUX current scope2026-10-13 segment33
 
 Science OPEN; sidemission only; ownheartbeatACTIVE; no primary/default/UI/UI Test writes.
-NEW13902physicalgames89858go; allrawfailed/negative/unfinished/unavailable retained.
-575-578900logical902physicalpopulation:6negative2fragilepositivecommon8gains; notpopulationlearning.
-583-587newmatecurriculum124/400mates14/40terminalresponse;5901000axisgames296mates0stableterminalchoice.
-588589Dot samecell temporalcheck adopted:7contradictions147quantitypositive512pairs325bothunfinished.
-593594NEW8train4devfamily splitbeforegeneration;52train20devroots; fourthdevunavailable retained.
-59610400train50746go+160dev764go280.672s; SAMEH12terminal/mixed2starts12fixedrounds.
-600fullPython/PV/3328ACK/joint48PASS;597physical_goals mislabeledterminalfitness correction preserved, rawactualcorrect; firstfailedaudit+fullzerogo rerun costs retained.
-601ALL4logicalmodels/twodistinctendpoints sourceALL12/base6distancesworse,R/P0.611/0.567; noadoption.
-603ALL5200physicalpath/querypairs equalacrossobjectives;60248rounds384familyomissions only0/1stableacceptedsteps;604feedback nonflat everyround.
-605606NEXTactuallybegunALL72rootcoverage; Rook52/52train20/20dev present, notidentifiabilityproof. ContinueALLactualownership/action/searchwork attribution, no unchangedepochs.
-ReportSEGMENT_20261013_32.md; exact117member32archives/privateexcluded;532INCOMPLETEuserstop untouched.
-Primary1a8c612c9506e93a19a97826a3d7ea3c28a17ec0 publicqconsumer104queries2328tests onlyreadonlyreportedcontext, notourqueries.
+NEW8464physicalgames41264go;615621625630 independentaudits PASS;94exactarchive members.
+Fastmate5200train80newdev139.438s; botholddevnegative andBASE6referenceworse.
+Newbalancedtransfer randomfast9/56 survivesbothgenerators/all7LOO;unit-1/56;notbasicprice recovery.
+MAIN-only price-policy interaction bothsigns; prior29alreadyMAIN+Q trial, correctionretained.
+611180buildfuse INCOMPLETE;612cachedoneTU2s, notcleanbuild; allfailed/negative preserved.
+624ALL6prices new1024vs8192condition,1152newgames+576cachedcontrols; notnewtrainedmodel.
+633robustselector input/prefixonly; nextactualfreshtrajectory,no splicingafterchoicesdiverge.
+Dotinteractionadopted;chatcommentsadvisory;privateSlack excluded;532INCOMPLETEunchanged.
+Primaryecd988d17c7ad06d55db3e5329d9e570892b6cf2 handoffqualification onlyreportedcontext.
+Report results/dev_aux/SEGMENT_20261013_33.md;finalreceiptactualclock/endingcause.
 
 # Current local research mainline
 

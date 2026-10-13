@@ -1,0 +1,53 @@
+--- a/usi.cpp
++++ b/usi.cpp
+@@ -1,4 +1,5 @@
+-﻿#include <cstdlib>
++#include "aux_capture_diag.h"
++#include <cstdlib>
+ #include <sstream>
+ #include <queue>
+ 
+@@ -397,6 +398,11 @@
+ 	// evaluate()を呼び出して生の評価値の出力。(デバッグ用)
+ 	else if (token == "auxsee") { std::string u; int threshold; is >> u >> threshold; auto& pos=engine.get_position(); auto m=USIEngine::to_move(pos,u); if(!m.is_ok()) sync_cout << "info string auxsee invalid" << sync_endl; else sync_cout << "info string auxsee " << pos.see_ge(m,Value(threshold)) << sync_endl; }
+     else if (token == "auxstate") { auto& pos=engine.get_position(); sync_cout << "info string auxstate " << pos.state()->materialValue << " " << Eval::material(pos) << " " << engine.evaluate() << " " << pos.is_repetition() << " " << pos.sfen() << sync_endl; }
++    else if (token == "auxcapture") {
++        sync_cout << "info string auxcapture " << int(AuxCaptureDiag::GainMode);
++        for(auto x:AuxCaptureDiag::C) std::cout << " " << x;
++        std::cout << sync_endl;
++    }
+     else if (token == "auxprices") {
+         for(int pc=0;pc<32;++pc)
+           sync_cout << "info string auxprice " << pc << " " << Eval::PieceValue[pc] << " " << Eval::PieceValueM[pc] << " " << Eval::CapturePieceValue[pc] << " " << Eval::ProDiffPieceValue[pc] << sync_endl;
+@@ -658,6 +664,7 @@
+ void USIEngine::go(std::istringstream& is)
+ {
+     Search::LimitsType limits = parse_limits(is);
++    AuxCaptureDiag::reset();
+ 
+ 	if (limits.perft)
+ 		perft(limits);
+--- a/engine/yaneuraou-engine/yaneuraou-search.cpp
++++ b/engine/yaneuraou-engine/yaneuraou-search.cpp
+@@ -1,3 +1,4 @@
++#include "../../aux_capture_diag.h"
+ #include "../../types.h"
+ 
+ #if defined (YANEURAOU_ENGINE)
+@@ -3634,8 +3635,14 @@
+                     //       = CapturePieceValuePlusPromote()
+                     //     のほうがより正確な評価ではないか？
+ 
+-                    Value futilityValue = ss->staticEval + 218 + 223 * lmrDepth
+-                                        + PieceValue[capturedPiece] + 131 * captHist / 1024;
++                    const int auxOldGain = int(PieceValue[capturedPiece]);
++                    const int auxNewGain = int(CapturePieceValue[capturedPiece])
++                        + (move.is_promote() ? int(ProDiffPieceValue[pos.piece_on(move.from_sq())]) : 0);
++                    const Value auxCommon = ss->staticEval + 218 + 223 * lmrDepth + 131 * captHist / 1024;
++                    const Value auxOldValue = auxCommon + auxOldGain;
++                    const Value auxNewValue = auxCommon + auxNewGain;
++                    AuxCaptureDiag::record(auxOldValue,auxNewValue,alpha,auxOldGain,auxNewGain);
++                    Value futilityValue = AuxCaptureDiag::GainMode ? auxNewValue : auxOldValue;
+ 
+ 
+                     if (futilityValue <= alpha)

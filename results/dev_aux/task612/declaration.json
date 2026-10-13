@@ -1,0 +1,283 @@
+{
+  "parent": "611original180wallfuse expired remainsINCOMPLETE",
+  "question": "Finishalreadydiagnosed privatecountermechanism withminimalincrementalcompile cost, thenqualify beforeanygame",
+  "source_changed_only": [
+    "aux_capture_diag.h",
+    "engine/yaneuraou-engine/yaneuraou-search.cpp",
+    "usi.cpp"
+  ],
+  "incremental_compile_sources": [
+    "engine/yaneuraou-engine/yaneuraou-search.cpp"
+  ],
+  "reused_object_manifest": [
+    {
+      "source": "main.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\0.o",
+      "sha256": "f87d4b15a48a31e755f0f527bd4e808f432228779006e9ef1523400db53aeb04",
+      "bytes": 33463,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "types.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\1.o",
+      "sha256": "a2e31c66c620ebae12116de63cbc68663362f733a2673a6884d1107c4b4e7157",
+      "bytes": 28528,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "bitboard.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\2.o",
+      "sha256": "9d9905f060015739e764edb9993927c3bdb262df93b9f0084f7c7be3443ee1e8",
+      "bytes": 56060,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "misc.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\3.o",
+      "sha256": "763ccc787a0fd8e2421cedb9d72f080c4a478cf8d3536866757c3a325529224c",
+      "bytes": 170176,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "movegen.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\4.o",
+      "sha256": "7d1720a1b55f2a0fd61238eb04a77a7b76e7ce84da68b518e0513e29bc41338c",
+      "bytes": 195584,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "position.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\5.o",
+      "sha256": "8623b690acccc12385e8ed526534da75a1af9db41469ddcf5ba7ade887f934e2",
+      "bytes": 143704,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "usi.cpp",
+      "object": ".local_agent\\yaneura33_capture\\objects\\6.o",
+      "sha256": "ce29061a351640dee4ed734297df943a0b909306f66ca161f3b8f20ca26cab1b",
+      "bytes": 136483,
+      "reuse": "privatecorrectedusi"
+    },
+    {
+      "source": "usioption.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\7.o",
+      "sha256": "3d9724a3785f27bc96b9ae33c802399502f36d850a21f0d210fa68f07db483af",
+      "bytes": 72020,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "thread.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\8.o",
+      "sha256": "22ddb525f3fd3e87b45eac9376f7d32975a2a04ad20a4ce51fca67010c0facfa",
+      "bytes": 64646,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "tt.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\9.o",
+      "sha256": "41ffbefafa1c09f493f27760e7e360f9197bfe1d7d9a6255c2e89dfabc95fb1e",
+      "bytes": 26508,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "movepick.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\10.o",
+      "sha256": "af6cd5202f25c31f322b3f039b2889cbbfd662ae8ac248ec0597cff3ef551145",
+      "bytes": 7655,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "timeman.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\11.o",
+      "sha256": "9b8c18505ec45fd3122e9f9a4b655ea322d2e076f94b5f2baf05123dac4dd94f",
+      "bytes": 21983,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "memory.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\12.o",
+      "sha256": "f74630aa1471fc13f12043d9759c3a9186ee69a0f86e38242de9093b3c6150c7",
+      "bytes": 8395,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "engine.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\13.o",
+      "sha256": "bcf5b928e3b5e4b035fc9cff022aaa9cb1fc41b9ade1ac612870ec335a26b9ca",
+      "bytes": 145258,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "search.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\14.o",
+      "sha256": "596af6798ca4cd781b1f2d25be82732fe5e711bb61117ac48738ffcb34f5127a",
+      "bytes": 14775,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "score.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\15.o",
+      "sha256": "b93f4d2cb2782568daba0e6ff77d588bce47eace41ebd74b29bb825fe55dbc72",
+      "bytes": 13840,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "benchmark.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\16.o",
+      "sha256": "dbc082a912201c68c4c7b3b82bba331ea7a4f863203c1a40c224d9637d2790c8",
+      "bytes": 61228,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "tune.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\17.o",
+      "sha256": "0f2f95515c910c87f0b42dc995e9012c74d1c86b22a46132cb9b799b04a0a687",
+      "bytes": 37385,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "book/book.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\18.o",
+      "sha256": "bea4f08a6e60124d50cd927e70eb5b3fa6b6652685bbe9d7d270b24cf830553c",
+      "bytes": 216898,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "book/apery_book.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\19.o",
+      "sha256": "f43d4691f319eb8f0ebb823d6530a0a1da4b631d7bd61b292276ee4cf5bbef85",
+      "bytes": 34012,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "book/policybook.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\20.o",
+      "sha256": "6a848609e1e749d59758ba742d194c2c32e44b0bb7dbaf8d94abb3a4bb6ccb1c",
+      "bytes": 628,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "extra/bitop.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\21.o",
+      "sha256": "189980cff879e270c09f5ad52ab8aa522129da921f553deb899c47120fc12890",
+      "bytes": 1030,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "extra/long_effect.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\22.o",
+      "sha256": "566d31e1347709d562a66c87ec9ea11b378ee3da947bbc44bf61c4661ce74e52",
+      "bytes": 628,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "extra/sfen_packer.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\23.o",
+      "sha256": "0cdbd930365493584c557da2762c89c27c2045fa5c0dc8310e36bcea0bde16ba",
+      "bytes": 16677,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "mate/mate.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\24.o",
+      "sha256": "dd25d1c895a26b2026a70004341f7a1900d5a8bb02d0f4aa55997c58dcaa9864",
+      "bytes": 182174,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "mate/mate1ply_without_effect.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\25.o",
+      "sha256": "41b2850100b0782c5bef7f5da589959f01c7d506dcce8dcca8e0d78fe65bed9d",
+      "bytes": 78526,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "mate/mate1ply_with_effect.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\26.o",
+      "sha256": "808406a460b58ee346f81cabe027ec51324a45c08dcb66b4e9cbc941ad4b8193",
+      "bytes": 12454,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "mate/mate_solver.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\27.o",
+      "sha256": "51b1f29b71d9388caa56fa1d02c87acfa903ac27c80d028d6c4e7a01fd5b181c",
+      "bytes": 28218,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "eval/evaluate_bona_piece.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\28.o",
+      "sha256": "ec304e1bd1cd16be93971dfbc375f353140a4579559776c2e206c690dbbd8647",
+      "bytes": 8648,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "eval/evaluate.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\29.o",
+      "sha256": "72843ee462561574732e7dc3edd1a754d3b9e896da1a5b8da3d4ff143cb752f4",
+      "bytes": 3442,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "eval/evaluate_io.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\30.o",
+      "sha256": "3f62b5803b27af462005a038e16127f969826a09a4feca472018a09f4adf68be",
+      "bytes": 55972,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "eval/evaluate_mir_inv_tools.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\31.o",
+      "sha256": "3bc2c52d47b21a4184d176253479491abd4efbe1802be323cad89411520f070a",
+      "bytes": 3748,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "eval/material/evaluate_material.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\32.o",
+      "sha256": "83c8582c88b0eb76fbad0566c4cc12c05c4beab44dc0e81d5bd4d75cd5b80772",
+      "bytes": 1169,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "testcmd/unit_test.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\33.o",
+      "sha256": "860ba9464d1453c6bfb1fc01b3f3df1dd844e147fe12e9b0dc495148124f481b",
+      "bytes": 52137,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "testcmd/mate_test_cmd.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\34.o",
+      "sha256": "d9c7b60a19972dc1db8187c0fb9bfd1431e10ada1a145159aa14caeea72b8d6c",
+      "bytes": 74506,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "testcmd/normal_test_cmd.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\35.o",
+      "sha256": "87f00b9a64c9055c51a15d673c3fc6927fd4640723aef4527be76613175ecd44",
+      "bytes": 70801,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "book/makebook.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\36.o",
+      "sha256": "8fa79d757d833c384de4be822bef7104a74d198e679e27e3a1598948ee6bb091",
+      "bytes": 18927,
+      "reuse": "unchangedoriginalobject"
+    },
+    {
+      "source": "book/makebook2025.cpp",
+      "object": ".local_agent\\yaneura27\\objects\\37.o",
+      "sha256": "aa80b25a68173b48ee8f139a4e4b994c77bf6e840137ecea600c8d159199f570",
+      "bytes": 145382,
+      "reuse": "unchangedoriginalobject"
+    }
+  ],
+  "incremental_fuse_seconds": 120,
+  "expected_cost": "OneTUcompile+link about5-15seconds; no repeatedfullbuild/uncontrolledjobs. Changedcostpremise verifiedoriginalTUs/flags reusable; no exception tohourconsultation needed.",
+  "scope": "No originalsource/object/exe writes; originalfixture remains c69d96c. Countermode0/1 changesONE maincapturefutilitygain only, unlikeold29bothmain+q. Sameleaf/SEE/order/caller. Qualification mandatorybeforephysicalmode comparison."
+}

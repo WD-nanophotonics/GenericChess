@@ -1,0 +1,9 @@
+{
+  "stage": "compileusi",
+  "source": "usi.cpp",
+  "new_go": 0,
+  "completed_objects": 6,
+  "diagnosis": "Originalusi.cpp UTF8 BOM moved into middleofsource byprependedheader, compilerfirsterror confirms unexpectedcharacter thencascadingSTL errors",
+  "resolution": "Strip BOM inprivateclones only, originalbytes untouched; continueuncompiledobjects, no recompilationof0..5, original180secondbuildfuse retained",
+  "first_error": "usi.cpp:2:1: error: unexpected character <U+FEFF>"
+}
