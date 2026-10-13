@@ -1,0 +1,752 @@
+{
+  "status": "PASS_ALL_MODELS",
+  "models": [
+    {
+      "objective": "terminal",
+      "start": "unit",
+      "accepted": 2,
+      "all3tied": 0,
+      "metrics": [
+        {
+          "metric": "terminal",
+          "initial_mean": "56/5",
+          "endpoint_mean": "52/5",
+          "gain": "-4/5",
+          "by_family": [
+            {
+              "family": 2026104880,
+              "cells": 16,
+              "gain": "-2"
+            },
+            {
+              "family": 2026104882,
+              "cells": 8,
+              "gain": "4"
+            },
+            {
+              "family": 2026104883,
+              "cells": 16,
+              "gain": "-2"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026104880,
+              "gain": "0"
+            },
+            {
+              "omit": 2026104882,
+              "gain": "-2"
+            },
+            {
+              "omit": 2026104883,
+              "gain": "0"
+            }
+          ]
+        },
+        {
+          "metric": "mixed",
+          "initial_mean": "4233/380",
+          "endpoint_mean": "789/76",
+          "gain": "-72/95",
+          "by_family": [
+            {
+              "family": 2026104880,
+              "cells": 16,
+              "gain": "-145/76"
+            },
+            {
+              "family": 2026104882,
+              "cells": 8,
+              "gain": "149/38"
+            },
+            {
+              "family": 2026104883,
+              "cells": 16,
+              "gain": "-37/19"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026104880,
+              "gain": "1/114"
+            },
+            {
+              "omit": 2026104882,
+              "gain": "-293/152"
+            },
+            {
+              "omit": 2026104883,
+              "gain": "2/57"
+            }
+          ]
+        }
+      ],
+      "initial_mates": 14,
+      "endpoint_mates": 13,
+      "development_independent_eligible_families": 3,
+      "development_cells": 40
+    },
+    {
+      "objective": "terminal",
+      "start": "random2514",
+      "accepted": 3,
+      "all3tied": 0,
+      "metrics": [
+        {
+          "metric": "terminal",
+          "initial_mean": "56/5",
+          "endpoint_mean": "12",
+          "gain": "4/5",
+          "by_family": [
+            {
+              "family": 2026104880,
+              "cells": 16,
+              "gain": "2"
+            },
+            {
+              "family": 2026104882,
+              "cells": 8,
+              "gain": "4"
+            },
+            {
+              "family": 2026104883,
+              "cells": 16,
+              "gain": "-2"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026104880,
+              "gain": "0"
+            },
+            {
+              "omit": 2026104882,
+              "gain": "0"
+            },
+            {
+              "omit": 2026104883,
+              "gain": "8/3"
+            }
+          ]
+        },
+        {
+          "metric": "mixed",
+          "initial_mean": "847/76",
+          "endpoint_mean": "2257/190",
+          "gain": "279/380",
+          "by_family": [
+            {
+              "family": 2026104880,
+              "cells": 16,
+              "gain": "293/152"
+            },
+            {
+              "family": 2026104882,
+              "cells": 8,
+              "gain": "297/76"
+            },
+            {
+              "family": 2026104883,
+              "cells": 16,
+              "gain": "-311/152"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026104880,
+              "gain": "-7/114"
+            },
+            {
+              "omit": 2026104882,
+              "gain": "-9/152"
+            },
+            {
+              "omit": 2026104883,
+              "gain": "295/114"
+            }
+          ]
+        }
+      ],
+      "initial_mates": 14,
+      "endpoint_mates": 15,
+      "development_independent_eligible_families": 3,
+      "development_cells": 40
+    },
+    {
+      "objective": "mixed",
+      "start": "unit",
+      "accepted": 2,
+      "all3tied": 0,
+      "metrics": [
+        {
+          "metric": "terminal",
+          "initial_mean": "56/5",
+          "endpoint_mean": "52/5",
+          "gain": "-4/5",
+          "by_family": [
+            {
+              "family": 2026104880,
+              "cells": 16,
+              "gain": "-2"
+            },
+            {
+              "family": 2026104882,
+              "cells": 8,
+              "gain": "4"
+            },
+            {
+              "family": 2026104883,
+              "cells": 16,
+              "gain": "-2"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026104880,
+              "gain": "0"
+            },
+            {
+              "omit": 2026104882,
+              "gain": "-2"
+            },
+            {
+              "omit": 2026104883,
+              "gain": "0"
+            }
+          ]
+        },
+        {
+          "metric": "mixed",
+          "initial_mean": "4233/380",
+          "endpoint_mean": "789/76",
+          "gain": "-72/95",
+          "by_family": [
+            {
+              "family": 2026104880,
+              "cells": 16,
+              "gain": "-145/76"
+            },
+            {
+              "family": 2026104882,
+              "cells": 8,
+              "gain": "149/38"
+            },
+            {
+              "family": 2026104883,
+              "cells": 16,
+              "gain": "-37/19"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026104880,
+              "gain": "1/114"
+            },
+            {
+              "omit": 2026104882,
+              "gain": "-293/152"
+            },
+            {
+              "omit": 2026104883,
+              "gain": "2/57"
+            }
+          ]
+        }
+      ],
+      "initial_mates": 14,
+      "endpoint_mates": 13,
+      "development_independent_eligible_families": 3,
+      "development_cells": 40
+    },
+    {
+      "objective": "mixed",
+      "start": "random2514",
+      "accepted": 3,
+      "all3tied": 0,
+      "metrics": [
+        {
+          "metric": "terminal",
+          "initial_mean": "56/5",
+          "endpoint_mean": "12",
+          "gain": "4/5",
+          "by_family": [
+            {
+              "family": 2026104880,
+              "cells": 16,
+              "gain": "2"
+            },
+            {
+              "family": 2026104882,
+              "cells": 8,
+              "gain": "4"
+            },
+            {
+              "family": 2026104883,
+              "cells": 16,
+              "gain": "-2"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026104880,
+              "gain": "0"
+            },
+            {
+              "omit": 2026104882,
+              "gain": "0"
+            },
+            {
+              "omit": 2026104883,
+              "gain": "8/3"
+            }
+          ]
+        },
+        {
+          "metric": "mixed",
+          "initial_mean": "847/76",
+          "endpoint_mean": "2257/190",
+          "gain": "279/380",
+          "by_family": [
+            {
+              "family": 2026104880,
+              "cells": 16,
+              "gain": "293/152"
+            },
+            {
+              "family": 2026104882,
+              "cells": 8,
+              "gain": "297/76"
+            },
+            {
+              "family": 2026104883,
+              "cells": 16,
+              "gain": "-311/152"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026104880,
+              "gain": "-7/114"
+            },
+            {
+              "omit": 2026104882,
+              "gain": "-9/152"
+            },
+            {
+              "omit": 2026104883,
+              "gain": "295/114"
+            }
+          ]
+        }
+      ],
+      "initial_mates": 14,
+      "endpoint_mates": 15,
+      "development_independent_eligible_families": 3,
+      "development_cells": 40
+    }
+  ],
+  "source_prior_descriptors_after_ALLfreeze": [
+    {
+      "objective": "terminal",
+      "start": "unit",
+      "initial": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        90,
+        90,
+        149,
+        90,
+        55,
+        90,
+        0,
+        55,
+        55,
+        55,
+        90,
+        149,
+        90,
+        0
+      ],
+      "ALL12_initial_logMSE": 3.8874355037576436,
+      "ALL12_endpoint_logMSE": 4.307849636645807,
+      "BASE6_initial_logMSE": 3.461074737677869,
+      "BASE6_endpoint_logMSE": 3.651016232897769,
+      "basic_endpoint_ratios": {
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.6555555555555554,
+        "5": 1.0,
+        "6": 0.6111111111111112,
+        "7": 1.0
+      }
+    },
+    {
+      "objective": "terminal",
+      "start": "random2514",
+      "initial": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        194,
+        62,
+        87,
+        365,
+        51,
+        558,
+        0,
+        62,
+        133,
+        94,
+        443,
+        57,
+        117,
+        0
+      ],
+      "ALL12_initial_logMSE": 2.849287526055576,
+      "ALL12_endpoint_logMSE": 3.3395361741070464,
+      "BASE6_initial_logMSE": 2.22609298925436,
+      "BASE6_endpoint_logMSE": 2.71701917385998,
+      "basic_endpoint_ratios": {
+        "2": 2.1555555555555554,
+        "3": 0.6888888888888889,
+        "4": 0.9666666666666667,
+        "5": 4.055555555555555,
+        "6": 0.5666666666666667,
+        "7": 6.2
+      }
+    },
+    {
+      "objective": "mixed",
+      "start": "unit",
+      "initial": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        90,
+        90,
+        149,
+        90,
+        55,
+        90,
+        0,
+        55,
+        55,
+        55,
+        90,
+        149,
+        90,
+        0
+      ],
+      "ALL12_initial_logMSE": 3.8874355037576436,
+      "ALL12_endpoint_logMSE": 4.307849636645807,
+      "BASE6_initial_logMSE": 3.461074737677869,
+      "BASE6_endpoint_logMSE": 3.651016232897769,
+      "basic_endpoint_ratios": {
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.6555555555555554,
+        "5": 1.0,
+        "6": 0.6111111111111112,
+        "7": 1.0
+      }
+    },
+    {
+      "objective": "mixed",
+      "start": "random2514",
+      "initial": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        194,
+        62,
+        87,
+        365,
+        51,
+        558,
+        0,
+        62,
+        133,
+        94,
+        443,
+        57,
+        117,
+        0
+      ],
+      "ALL12_initial_logMSE": 2.849287526055576,
+      "ALL12_endpoint_logMSE": 3.3395361741070464,
+      "BASE6_initial_logMSE": 2.22609298925436,
+      "BASE6_endpoint_logMSE": 2.71701917385998,
+      "basic_endpoint_ratios": {
+        "2": 2.1555555555555554,
+        "3": 0.6888888888888889,
+        "4": 0.9666666666666667,
+        "5": 4.055555555555555,
+        "6": 0.5666666666666667,
+        "7": 6.2
+      }
+    }
+  ],
+  "source_reference_scope": "Matureengine source price descriptive proxy not directhumanconsensus, read AFTERALL4endpoint/devphysicalfreeze; no reward/opponent/root/model/H/selector/stop use.",
+  "fit_resources": [
+    {
+      "objective": "terminal",
+      "status": "FIT_COMPLETE",
+      "opponent": "terminal",
+      "actual_games": 5200,
+      "actual_go": 25373,
+      "seconds": 138.67200000025332,
+      "endpoints": [
+        {
+          "family": "unit",
+          "initial": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "endpoint": [
+            0,
+            90,
+            90,
+            90,
+            149,
+            90,
+            55,
+            90,
+            0,
+            55,
+            55,
+            55,
+            90,
+            149,
+            90,
+            0
+          ],
+          "iterations": 12
+        },
+        {
+          "family": "random2514",
+          "initial": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "endpoint": [
+            0,
+            90,
+            194,
+            62,
+            87,
+            365,
+            51,
+            558,
+            0,
+            62,
+            133,
+            94,
+            443,
+            57,
+            117,
+            0
+          ],
+          "iterations": 12
+        }
+      ]
+    },
+    {
+      "objective": "mixed",
+      "status": "FIT_COMPLETE",
+      "opponent": "mixed",
+      "actual_games": 5200,
+      "actual_go": 25373,
+      "seconds": 137.68699999991804,
+      "endpoints": [
+        {
+          "family": "unit",
+          "initial": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "endpoint": [
+            0,
+            90,
+            90,
+            90,
+            149,
+            90,
+            55,
+            90,
+            0,
+            55,
+            55,
+            55,
+            90,
+            149,
+            90,
+            0
+          ],
+          "iterations": 12
+        },
+        {
+          "family": "random2514",
+          "initial": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "endpoint": [
+            0,
+            90,
+            194,
+            62,
+            87,
+            365,
+            51,
+            558,
+            0,
+            62,
+            133,
+            94,
+            443,
+            57,
+            117,
+            0
+          ],
+          "iterations": 12
+        }
+      ]
+    }
+  ],
+  "physical_train_games": 10400,
+  "physical_train_go": 50746,
+  "physical_dev_games": 160,
+  "physical_dev_go": 764,
+  "physical_combined_seconds": 280.6720000002533,
+  "development_mates": 56,
+  "development_unfinished": 104,
+  "new_go": 0,
+  "seconds": 0.028216800186783075,
+  "scope": "Fresh5938train4development families,52train20devroots, ALL4offsets familycoupled, allunavailable retained. Twoobjective terminal-only ormixed, each2sourcefreeinitials12fixedjointdirections. SAMEcap12/warm1024/randomRNG/fullhistory; basefirststrict,pricebounds32..4096,P90K0. All4endpoints freeze BEFOREanydevelopmentprice outcomes/reference; no sourcefitness/opponent/axis/root selection. Generatorunitpolicybiased distribution; no naturalholdout/universalpriceclaim. Expectedphysical2-5min/whole900wallfuse, no adaptiveextension. Actual8trainfamilies3eligibledevfamilies/fourthno-mate unavailable. Sampling ALLroots means familieswithtwosetupmates receive16cells vs8; reportedfamilyomissions retainthisdeclaredrootweighting. 12fixedroundcostcheckpoint notresultadaptiveextension; no generalgoalcompletion/referencelearned claim."
+}

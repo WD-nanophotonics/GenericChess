@@ -1,0 +1,17 @@
+import json,time
+from fractions import Fraction as F
+from pathlib import Path
+R=Path.cwd();O=R/'results/dev_aux/task592';O.mkdir(exist_ok=True);d=json.loads((R/'results/dev_aux/task590/declaration.json').read_bytes());r=json.loads((R/'results/dev_aux/task590/result.json').read_bytes());gs=[json.loads(x) for x in (R/'results/dev_aux/task590/games.jsonl').open()];rows=[];families=sorted({f['source_family'] for f in d['roots']});axes=json.loads((R/'results/dev_aux/task580/declaration.json').read_bytes())['axes'];assert len(families)==5
+for axis in axes:
+ ids=[0]+[next(i for i,p in enumerate(d['profiles']) if p['axis']==axis and p['sign']==s) for s in [-1,1]];groups=[[g for g in gs if g['profile']==pi] for pi in ids]
+ for metric in ['mixed','terminal']:
+  vals=[[F(g['goal']) if metric=='mixed' else F(32 if g['termination']['winner']==g['color'] else -32) if g['termination']['winner'] is not None else F(0) for g in gg] for gg in groups];means=[sum(v)/40 for v in vals];choice=max(range(3),key=lambda j:means[j]);loo=[];fam=[]
+  for f in families:
+   indices=[i for i,g in enumerate(groups[0]) if g['root']['source_family']==f];assert len(indices)==8;fam.append(dict(family=f,means=[str(sum(v[i] for i in indices)/8) for v in vals]));mu=[sum(v[i] for i in range(40) if i not in indices)/32 for v in vals];b=max(range(3),key=lambda j:mu[j]);loo.append(dict(omit=f,selected=['base','minus','plus'][b],gain=str(mu[b]-mu[0])))
+  rows.append(dict(axis=axis,metric=metric,means=list(map(str,means)),selected=['base','minus','plus'][choice],gain=str(means[choice]-means[0]),cells_differ=sum(len({v[i] for v in vals})>1 for i in range(40)),all_means_tied=len(set(means))==1,by_family=fam,leave_one=loo))
+summary=[dict(metric=m,axes=12,all_means_tied=sum(x['all_means_tied'] for x in rows if x['metric']==m),strict_improvements=sum(F(x['gain'])>0 for x in rows if x['metric']==m),axes_differ=sum(x['cells_differ']>0 for x in rows if x['metric']==m),robust_same_strict_choice=sum(x['selected']!='base' and all(y['selected']==x['selected'] and F(y['gain'])>0 for y in x['leave_one']) for x in rows if x['metric']==m)) for m in ['mixed','terminal']]
+# Freshunitprofile physicalpaths mustmatch prior585unitprofile underSAMEwarmparameters/RNG/fullhistory.
+old=[json.loads(x) for x in (R/'results/dev_aux/task585/games.jsonl').open() if json.loads(x)['profile']==0];base=groups[0];assert len(old)==len(base)==40
+for a,b in zip(old,base):
+ for k in ['weights','root','color','actions','termination','final_sfen','raw_quantity','goal']:assert a[k]==b[k],k
+out=dict(status='PASS_ALL_AXES',actual_games=1000,actual_go=r['actual_go'],true_mates=sum(g['termination']['kind']=='checkmate' for g in gs),summary=summary,rows=rows,prior585unit_actual_paths_equal=40,family_count=5,root_count=20,new_go=0,scope='ALL25actualpriceprobe/ALL12axis +/- andbaseline onSAME20curriculumroots BOTHcolors,5independentfamilies. Familyomissionremovesall8cells inclall4offsets. Sourcefreeexposeddiagnostic NOT learner/priceidentifiability or independentholdout. Densematefeedbackwithlocalcliffs canmotivatefreshfamilytraining butnotguaranteehumanvalues.');(O/'result.json').write_text(json.dumps(out,indent=2),encoding='utf-8');print(json.dumps({k:v for k,v in out.items() if k!='rows'}))

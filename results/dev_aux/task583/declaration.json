@@ -1,0 +1,297 @@
+{
+  "question": "Can a cheapnewrootcurriculum giveactualmatefeedback withoutmakingALLprices triviallyequivalent?",
+  "input_policy": {
+    "seeds": [
+      2026104610,
+      2026104611,
+      2026104612,
+      2026104613,
+      2026104614,
+      2026104615,
+      2026104616,
+      2026104617
+    ],
+    "unit_actor_colors": [
+      0,
+      1
+    ],
+    "setup_cap": 48,
+    "offsets": [
+      2,
+      4,
+      8,
+      12
+    ],
+    "unavailable": "Predeclared: no CHECKMATE within48 =>no eligiblepre-mate roots, preserveallno-mate/draw/loss; forsuccessfulmate ALLeligibleoffsets, no replacement/reseed/price-ranking selection",
+    "root_families": "Bothsetupactorcolors andalloffsets shareoriginalfamilyseed, NOTindependentroots; no human/sourceprices oroldsuccessroot filtering",
+    "frozen_before_setup": 1791875351.4969316
+  },
+  "profiles": [
+    {
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "names": [
+        "pure24-unit-unit-initial",
+        "pure24-random-unit-initial",
+        "mixed12-unit-unit-initial",
+        "mixed12-random-unit-initial"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        55,
+        149,
+        90,
+        149,
+        90,
+        55,
+        0,
+        90,
+        90,
+        90,
+        55,
+        90,
+        149,
+        0
+      ],
+      "names": [
+        "pure24-unit-unit-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "names": [
+        "pure24-unit-random2514-initial",
+        "pure24-random-random2514-initial",
+        "mixed12-unit-random2514-initial",
+        "mixed12-random-random2514-initial"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        195,
+        37,
+        87,
+        365,
+        140,
+        919,
+        0,
+        103,
+        133,
+        156,
+        269,
+        256,
+        32,
+        0
+      ],
+      "names": [
+        "pure24-unit-random2514-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        149,
+        33,
+        90,
+        55,
+        149,
+        245,
+        0,
+        90,
+        90,
+        55,
+        245,
+        90,
+        55,
+        0
+      ],
+      "names": [
+        "pure24-random-unit-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        195,
+        37,
+        53,
+        221,
+        140,
+        919,
+        0,
+        169,
+        220,
+        257,
+        443,
+        155,
+        42,
+        0
+      ],
+      "names": [
+        "pure24-random-random2514-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        70,
+        71,
+        191,
+        71,
+        116,
+        116,
+        0,
+        43,
+        71,
+        116,
+        116,
+        191,
+        71,
+        0
+      ],
+      "names": [
+        "mixed12-unit-unit-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        152,
+        128,
+        32,
+        104,
+        109,
+        1180,
+        0,
+        80,
+        171,
+        330,
+        209,
+        121,
+        33,
+        0
+      ],
+      "names": [
+        "mixed12-unit-random2514-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        149,
+        55,
+        90,
+        55,
+        90,
+        149,
+        0,
+        90,
+        90,
+        90,
+        149,
+        90,
+        55,
+        0
+      ],
+      "names": [
+        "mixed12-random-unit-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        118,
+        100,
+        53,
+        221,
+        140,
+        919,
+        0,
+        103,
+        133,
+        257,
+        269,
+        155,
+        43,
+        0
+      ],
+      "names": [
+        "mixed12-random-random2514-endpoint"
+      ]
+    }
+  ],
+  "profile_source_sha256": "3d95b5082d53adc868ec3b1c64370551721780036995c18070623f25eec58d90",
+  "setup_weights": [
+    0,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    0,
+    90,
+    90,
+    90,
+    90,
+    90,
+    90,
+    0
+  ],
+  "setup_seed_base": 2026104692,
+  "probe_seed_base": 2026104792,
+  "setup_cap": 48,
+  "probe_cap": 12,
+  "nodes": 1024,
+  "policy": "warm_game",
+  "executable_sha256": "c69d96c10244b65da124d66c653449bc701680f4e3da05ec48b3979ef950d2e2",
+  "whole_fuse": 600,
+  "estimated_cost": "ONEcombined16setupgames max768ply +max1280probe12ply (16*4roots*10prices*2colors), expected1-4minutes/600wholewall; No pricefit/workers/fees/replacements. One-time48plysetup cost, not repeatedlongselfplaytraining.",
+  "eligibility": "OnlynewmechanicallygeneratedCHECKMATE paths; includesunitloss aswellaswin; each2/4/8/12legalpreterminaloffset iflengthpermits. Genunitpolicy nothumanlabels. ALLrootsfreeze beforeanypriceprobe.",
+  "scope": "Deliberatelyterminal-enriched, generatorpolicy-biased curriculum feasibility, NOTindependentnatural-distributionholdout/valuelearning/globalsuccess. ALLeligibleoffsets/fullhistory/drops/promotion/repetition preserved, NoEnteringKing. Densefeedbackmaystill beunidentifiable; no sourcevector reward/opponent oroldfitextension."
+}

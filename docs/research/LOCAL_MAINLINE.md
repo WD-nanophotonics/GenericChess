@@ -1,17 +1,18 @@
-## DEV_AUX current scope2026-10-13 segment31
+## DEV_AUX current scope2026-10-13 segment32
 
-Science OPEN; sidemission only; userresume ownheartbeatACTIVE; no primary/default/UI/UI Test writes.
-Actual25796shortgames338996go; cap24pure12544train734.968s vscap12mixed12544train496.063s.
-Native55132pairedcases fullnon-time/paths match,552Pythonphysicalaudit PASS; shorttimer/concurrencylimits.
-ALL4+4endpoints beforedev/reference; ALL8sourceMSE2slightlycloser6worse; base6only1closer.
-557/568 ALLphysical/Python/RNG/PV/joint/table audits PASS;559/569392fullwarmquerysequences each.
-QuantityH12feedbackdenser/cheaper but no stablebasicratios; no learnedtable adoption/nohumanfitness.
-532INCOMPLETE userstop;3300wallfuse notreset.533/534closed535partial536/537notexecuted/missingACK retained.
-548scopewording separatelycorrected;529zero-queryfailures+10orphans preserved, no transportgainadoption.
-574 NEXTINPUTSONLY:ALL10actualprices/10freshfamilies/900maxshortgames, dualpriceopponent qualification first.
-ReportSEGMENT_20261013_31.md, exact30retained+31archives; privateSlack/accounts/binaries excluded.
-Dot q31 historyentry/RNG/costresidual advice adopted; source/pool hypothesis scope retained.
-Primary774235 mixedq publicconsumer report read-only,2328tests86queries attributed, notourprimaryexecution.
+Science OPEN; sidemission only; ownheartbeatACTIVE; no primary/default/UI/UI Test writes.
+NEW13902physicalgames89858go; allrawfailed/negative/unfinished/unavailable retained.
+575-578900logical902physicalpopulation:6negative2fragilepositivecommon8gains; notpopulationlearning.
+583-587newmatecurriculum124/400mates14/40terminalresponse;5901000axisgames296mates0stableterminalchoice.
+588589Dot samecell temporalcheck adopted:7contradictions147quantitypositive512pairs325bothunfinished.
+593594NEW8train4devfamily splitbeforegeneration;52train20devroots; fourthdevunavailable retained.
+59610400train50746go+160dev764go280.672s; SAMEH12terminal/mixed2starts12fixedrounds.
+600fullPython/PV/3328ACK/joint48PASS;597physical_goals mislabeledterminalfitness correction preserved, rawactualcorrect; firstfailedaudit+fullzerogo rerun costs retained.
+601ALL4logicalmodels/twodistinctendpoints sourceALL12/base6distancesworse,R/P0.611/0.567; noadoption.
+603ALL5200physicalpath/querypairs equalacrossobjectives;60248rounds384familyomissions only0/1stableacceptedsteps;604feedback nonflat everyround.
+605606NEXTactuallybegunALL72rootcoverage; Rook52/52train20/20dev present, notidentifiabilityproof. ContinueALLactualownership/action/searchwork attribution, no unchangedepochs.
+ReportSEGMENT_20261013_32.md; exact117member32archives/privateexcluded;532INCOMPLETEuserstop untouched.
+Primary1a8c612c9506e93a19a97826a3d7ea3c28a17ec0 publicqconsumer104queries2328tests onlyreadonlyreportedcontext, notourqueries.
 
 # Current local research mainline
 

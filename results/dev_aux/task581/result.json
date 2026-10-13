@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "counts": {
+    "games": 1000,
+    "actual_go": 9000,
+    "PV_moves": 193538,
+    "Python_actions": 11999,
+    "random_draws": 2999,
+    "price_ACK_entries": 832
+  },
+  "all_cells": 1000,
+  "source_sha256": {
+    "declaration.json": "273ce2909505f31d03bb791699f7748615355b9553f550871a7d8d05e710a788",
+    "games.jsonl": "ae8102f717a769e87704e4bcb0ebb75792978f63b51435c6d150ee961302d369",
+    "queries.jsonl": "b9c8dcaf474ae65c468789edf88cf0208b8bc8f469f90a731e80e6bbb2d07cd0",
+    "result.json": "796b2ffbcec1109492f1da6f5a7098578ec7ce1b5d586de8f833400b862780ed"
+  },
+  "seconds": 24.956466199830174,
+  "new_go": 0,
+  "scope": "ALLactual25single-axisprice/fullhistory/Pythonrules/metadata/rolewarmstate/material/PV/randomsortedarray/ACK/cellcoverage checked. Exposedpooldiagnostic, no newtraining/holdout/globalpriceidentifiability or sourcefitness."
+}
