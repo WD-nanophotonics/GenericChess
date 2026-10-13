@@ -94,6 +94,9 @@ mixedsmallcosts; no globaladoption. Heavy1455D2/1514D4 fullworkexact,1.5–5.1pe
 localcost saved. CoreTTon/off changes middlefulltuple thoughbothoptimal, no
 globaldisable. Nextprofilealreadybegun16.798s: requiredpush/componentdiff/
 frontier costsremain; identityguard/tokencaches alreadyexist, no duplicatepatch.
+Actual3transition/0search witness rejects existingtrigger events ascompletewrites
+(promotion/drop misses, handchanges); no framework, privateactualset_piece trace
+onlyifcompletehash/state/history proof andwholecallcost canchangechoice.
 AUX32fixed54c95e0d read-only: denserterminaltrial objectiveschooseidentical
 endpoints, bothreference distancesworse; nofit/default adoption.
 

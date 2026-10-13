@@ -178,3 +178,13 @@ hash-diff interface. Complete arbitrary effect writes/aux/history/required error
 remain; source/target footprints are not a generic bound. If no actual metadata
 exists, weigh the information/engineering cost and choose another existing
 primitive or search comparison rather than building a new runtime framework.
+
+Actual next-step source/finite evidence: _WorkingPosition.events records trigger
+departures/removals, not all writes. Three direct semantic transitions, ZERO new
+searches, show promotion changes58/67 but events only58, R*5e places40 with no
+event, and capture-promotion changes the hand beyond its board events. Thus
+existing events cannot serve as a generic hash footprint. The first archive
+remains immutable; this counterexample has a separate3-member event-footprint
+archive/index. Next a private exact set_piece write observer can be considered
+only with complete state/hash/history verification and whole-call cost, or choose
+another existing primitive; no new collector/runtime framework was built here.
