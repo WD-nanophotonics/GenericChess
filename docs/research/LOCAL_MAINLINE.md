@@ -1,18 +1,17 @@
-## DEV_AUX current scope2026-10-13 segment34
+## DEV_AUX current scope 2026-10-13 segment35
 
-Science OPEN; sidemission only; heartbeatACTIVE; no primary/default/UI/UI Test writes.
-NEW35664physicalgames185726go incl3standaloneboundary, allactual audits/pass/fail/corrections retained.
-Freshrobust fastfit137.750s randomolddev+3/40 butbothsource distancesworse; Dotfixednetgain notlocalsignmajority adopted.
-640ALL50prices/24frozencontexts2draws10400games275.953s, full641PASS; 4crossrootRNGcollisions disclosed, no IIDclaim.
-Quantity-materootfit135.937s randomsourceALL12/base6closer;8disjointdrawtransfer quantitypositive/mateworse. Notstablebasicprices.
-Newordinary16train8dev662:1600fit64dev52.141s;full666/668PASS, bothsourceworse.
-Coordinategridonepass12axes:4608fit64dev144.265s;673PASS, bothsourceworse; direction+step+cost changeexplicit.
-675new16ordinaryfamilies384H24probes+literalH12prefix;677/680PASS;679actual32cap12controls allnon-timeexact.
-681100positiveH12qtycells ->36nonpositive/24negativeH24; no actualendpointloss24. Temporalproxycounterexamples notfinalWDL.
-660/661raw83540 boundary: actualsearchalreadyclamps31753, no searchdefect/patch; prematureclaim explicitlycorrected.
-682NEXT two-draw/two-horizonquantity NEWdecl INPUTONLY; axisrollback ablation/costcurve alternatives. No extraoldepochs/sourcefitness.
-Report results/dev_aux/SEGMENT_20261013_34.md; 174member8archives +small683descriptors. Only1/8newendpoints improvesbothsource distances.
-Primaryecd988 handoff/cancellation advice onlyreportedread-onlycontext, no newprimaryroots in34; chatcommentsadvisory.
+Science OPEN; sidemission only; heartbeat ACTIVE; no primary/default/UI/UI Test writes.
+Actual NEW29568 games/326018go, full independent688697702710723732 audits; all negatives and failures retained.
+A/B same-condition two-horizon vsH12-only: percell lower-envelope improves7/304unit,2/19random; unitA absoluteMstillnegative.
+ALL4A/B basic6 distancesworse; Aunit ALL12 slightlybetter,715corrects overstatement. No modeladoption.
+Rich717 ALLlegal60 prelude roots preserve76captures13prom32drops; C3/5acceptedupdates, quantityunitnegative/randompositive butfastnegativeboth.
+Cunit basic6closer/ALL12worse; neithernewC vector qualifiesfamiliar effectivevalues, no pricefitness/referencefit.
+ALL6endpoints againstfixedunit searchopponent onboth8-family pools: ALL12H24quantitygainsnegative; randomtarget gainsdo nottransfer.
+Realcap12 control128paths matchescap24prefix allnon-time outputs;768vs1503go, actualwork notwalltime guarantee.
+Auditrootcache736onALL256fixedopponentgames:16originalconstructors512clones, ALLcounts/sourceSHA equal732;8.279vs14.488s finiteaudit only.
+Original532INCOMPLETE/oldstops retained. Dotpercellmin advice adopted; chatcommentsadvisory; primary5a291dictmembershipwork read-onlycontext.
+Report results/dev_aux/SEGMENT_20261013_35.md; exactACTUAL_MATURE_20261013_35 archives/fullprivacyQA; sourceexe c69unchanged.
+Next738INPUTONLY: fresh24sourceblindfamilies, fixedunitopponent/cap12terminal-first countsign; no newfit oroldextraepochsclaimed.
 
 # Current local research mainline
 

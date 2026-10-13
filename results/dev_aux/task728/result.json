@@ -1,0 +1,1333 @@
+{
+  "status": "ALL24_RICH_ROOT_VISITED_GRID_TWO_DRAW_SENSITIVITY_PASS",
+  "summary": [
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "unit",
+      "grids": 12,
+      "one_draw_orders": 24,
+      "accepted_one_draw": 7,
+      "accepted_other_negative": 2,
+      "accepted_other_nonpositive": 3,
+      "one_two_disagreements": 3,
+      "two_draw_accepted": 3,
+      "two_draw_accepted_has_negative_draw": 0
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "random2514",
+      "grids": 12,
+      "one_draw_orders": 24,
+      "accepted_one_draw": 8,
+      "accepted_other_negative": 5,
+      "accepted_other_nonpositive": 6,
+      "one_two_disagreements": 7,
+      "two_draw_accepted": 5,
+      "two_draw_accepted_has_negative_draw": 3
+    }
+  ],
+  "rows": [
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "unit",
+      "iteration": 0,
+      "axis": 2,
+      "draw_means": [
+        [
+          "89/152",
+          "181/304",
+          "369/608",
+          "383/608",
+          "5/8",
+          "181/304",
+          "387/608"
+        ],
+        [
+          "185/304",
+          "173/304",
+          "173/304",
+          "401/608",
+          "87/152",
+          "369/608",
+          "185/304"
+        ]
+      ],
+      "two_draw_selected": 3,
+      "two_draw_gain": "29/608",
+      "two_draw_own_gains": [
+        "27/608",
+        "31/608"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 6,
+          "accepted": true,
+          "own_gain": "31/608",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "31/608",
+          "other_draw_gain": "27/608",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "unit",
+      "iteration": 1,
+      "axis": 3,
+      "draw_means": [
+        [
+          "383/608",
+          "183/304",
+          "175/304",
+          "189/304",
+          "175/304",
+          "331/608",
+          "85/152"
+        ],
+        [
+          "401/608",
+          "173/304",
+          "355/608",
+          "337/608",
+          "345/608",
+          "173/304",
+          "177/304"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "unit",
+      "iteration": 2,
+      "axis": 4,
+      "draw_means": [
+        [
+          "383/608",
+          "5/8",
+          "385/608",
+          "347/608",
+          "10/19",
+          "77/152",
+          "161/304"
+        ],
+        [
+          "401/608",
+          "359/608",
+          "23/38",
+          "337/608",
+          "311/608",
+          "321/608",
+          "303/608"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 2,
+          "accepted": true,
+          "own_gain": "1/304",
+          "other_draw_gain": "-33/608",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "unit",
+      "iteration": 3,
+      "axis": 5,
+      "draw_means": [
+        [
+          "383/608",
+          "373/608",
+          "23/38",
+          "375/608",
+          "343/608",
+          "167/304",
+          "321/608"
+        ],
+        [
+          "401/608",
+          "11/19",
+          "183/304",
+          "41/76",
+          "307/608",
+          "321/608",
+          "329/608"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "unit",
+      "iteration": 4,
+      "axis": 6,
+      "draw_means": [
+        [
+          "383/608",
+          "371/608",
+          "187/304",
+          "343/608",
+          "173/304",
+          "317/608",
+          "151/304"
+        ],
+        [
+          "401/608",
+          "395/608",
+          "385/608",
+          "87/152",
+          "341/608",
+          "351/608",
+          "339/608"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "unit",
+      "iteration": 5,
+      "axis": 7,
+      "draw_means": [
+        [
+          "383/608",
+          "369/608",
+          "5/8",
+          "11/19",
+          "313/608",
+          "327/608",
+          "299/608"
+        ],
+        [
+          "401/608",
+          "49/76",
+          "393/608",
+          "89/152",
+          "77/152",
+          "305/608",
+          "305/608"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "unit",
+      "iteration": 6,
+      "axis": 9,
+      "draw_means": [
+        [
+          "383/608",
+          "379/608",
+          "375/608",
+          "365/608",
+          "345/608",
+          "321/608",
+          "315/608"
+        ],
+        [
+          "401/608",
+          "187/304",
+          "375/608",
+          "89/152",
+          "85/152",
+          "335/608",
+          "85/152"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "unit",
+      "iteration": 7,
+      "axis": 10,
+      "draw_means": [
+        [
+          "383/608",
+          "193/304",
+          "193/304",
+          "391/608",
+          "185/304",
+          "89/152",
+          "355/608"
+        ],
+        [
+          "401/608",
+          "201/304",
+          "407/608",
+          "397/608",
+          "383/608",
+          "5/8",
+          "375/608"
+        ]
+      ],
+      "two_draw_selected": 2,
+      "two_draw_gain": "9/1216",
+      "two_draw_own_gains": [
+        "3/608",
+        "3/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "1/76",
+          "other_draw_gain": "-1/152",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 2,
+          "accepted": true,
+          "own_gain": "3/304",
+          "other_draw_gain": "3/608",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "unit",
+      "iteration": 8,
+      "axis": 11,
+      "draw_means": [
+        [
+          "193/304",
+          "369/608",
+          "23/38",
+          "341/608",
+          "85/152",
+          "9/16",
+          "87/152"
+        ],
+        [
+          "407/608",
+          "379/608",
+          "195/304",
+          "381/608",
+          "345/608",
+          "165/304",
+          "173/304"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "unit",
+      "iteration": 9,
+      "axis": 12,
+      "draw_means": [
+        [
+          "193/304",
+          "49/76",
+          "387/608",
+          "373/608",
+          "187/304",
+          "377/608",
+          "47/76"
+        ],
+        [
+          "407/608",
+          "103/152",
+          "411/608",
+          "405/608",
+          "195/304",
+          "25/38",
+          "397/608"
+        ]
+      ],
+      "two_draw_selected": 1,
+      "two_draw_gain": "11/1216",
+      "two_draw_own_gains": [
+        "3/304",
+        "5/608"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "3/304",
+          "other_draw_gain": "5/608",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "5/608",
+          "other_draw_gain": "3/304",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "unit",
+      "iteration": 10,
+      "axis": 13,
+      "draw_means": [
+        [
+          "49/76",
+          "387/608",
+          "381/608",
+          "379/608",
+          "23/38",
+          "343/608",
+          "353/608"
+        ],
+        [
+          "103/152",
+          "401/608",
+          "403/608",
+          "385/608",
+          "369/608",
+          "43/76",
+          "179/304"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "unit",
+      "iteration": 11,
+      "axis": 14,
+      "draw_means": [
+        [
+          "49/76",
+          "12/19",
+          "12/19",
+          "379/608",
+          "183/304",
+          "19/32",
+          "11/19"
+        ],
+        [
+          "103/152",
+          "383/608",
+          "389/608",
+          "97/152",
+          "353/608",
+          "19/32",
+          "359/608"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "random2514",
+      "iteration": 0,
+      "axis": 2,
+      "draw_means": [
+        [
+          "301/608",
+          "295/608",
+          "37/76",
+          "307/608",
+          "315/608",
+          "299/608",
+          "9/19"
+        ],
+        [
+          "265/608",
+          "129/304",
+          "137/304",
+          "259/608",
+          "307/608",
+          "139/304",
+          "293/608"
+        ]
+      ],
+      "two_draw_selected": 4,
+      "two_draw_gain": "7/152",
+      "two_draw_own_gains": [
+        "7/304",
+        "21/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 4,
+          "accepted": true,
+          "own_gain": "7/304",
+          "other_draw_gain": "21/304",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 4,
+          "accepted": true,
+          "own_gain": "21/304",
+          "other_draw_gain": "7/304",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "random2514",
+      "iteration": 1,
+      "axis": 3,
+      "draw_means": [
+        [
+          "315/608",
+          "69/152",
+          "37/76",
+          "71/152",
+          "147/304",
+          "289/608",
+          "253/608"
+        ],
+        [
+          "307/608",
+          "139/304",
+          "277/608",
+          "67/152",
+          "139/304",
+          "277/608",
+          "279/608"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "random2514",
+      "iteration": 2,
+      "axis": 4,
+      "draw_means": [
+        [
+          "315/608",
+          "77/152",
+          "291/608",
+          "153/304",
+          "281/608",
+          "295/608",
+          "73/152"
+        ],
+        [
+          "307/608",
+          "7/16",
+          "137/304",
+          "145/304",
+          "143/304",
+          "289/608",
+          "137/304"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "random2514",
+      "iteration": 3,
+      "axis": 5,
+      "draw_means": [
+        [
+          "315/608",
+          "75/152",
+          "309/608",
+          "293/608",
+          "77/152",
+          "37/76",
+          "293/608"
+        ],
+        [
+          "307/608",
+          "137/304",
+          "37/76",
+          "143/304",
+          "283/608",
+          "293/608",
+          "75/152"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "random2514",
+      "iteration": 4,
+      "axis": 6,
+      "draw_means": [
+        [
+          "315/608",
+          "289/608",
+          "149/304",
+          "151/304",
+          "137/304",
+          "145/304",
+          "145/304"
+        ],
+        [
+          "307/608",
+          "141/304",
+          "69/152",
+          "71/152",
+          "287/608",
+          "35/76",
+          "279/608"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "random2514",
+      "iteration": 5,
+      "axis": 7,
+      "draw_means": [
+        [
+          "315/608",
+          "315/608",
+          "299/608",
+          "277/608",
+          "293/608",
+          "151/304",
+          "151/304"
+        ],
+        [
+          "307/608",
+          "41/76",
+          "147/304",
+          "283/608",
+          "261/608",
+          "281/608",
+          "281/608"
+        ]
+      ],
+      "two_draw_selected": 1,
+      "two_draw_gain": "21/1216",
+      "two_draw_own_gains": [
+        "0",
+        "21/608"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "21/608",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "random2514",
+      "iteration": 6,
+      "axis": 9,
+      "draw_means": [
+        [
+          "315/608",
+          "17/32",
+          "79/152",
+          "161/304",
+          "77/152",
+          "311/608",
+          "283/608"
+        ],
+        [
+          "41/76",
+          "153/304",
+          "313/608",
+          "79/152",
+          "149/304",
+          "317/608",
+          "297/608"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "1/76",
+          "other_draw_gain": "-11/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "random2514",
+      "iteration": 7,
+      "axis": 10,
+      "draw_means": [
+        [
+          "315/608",
+          "157/304",
+          "315/608",
+          "313/608",
+          "39/76",
+          "315/608",
+          "313/608"
+        ],
+        [
+          "41/76",
+          "165/304",
+          "329/608",
+          "321/608",
+          "161/304",
+          "155/304",
+          "309/608"
+        ]
+      ],
+      "two_draw_selected": 1,
+      "two_draw_gain": "1/1216",
+      "two_draw_own_gains": [
+        "-1/608",
+        "1/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "1/304",
+          "other_draw_gain": "-1/608",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "random2514",
+      "iteration": 8,
+      "axis": 11,
+      "draw_means": [
+        [
+          "157/304",
+          "17/32",
+          "313/608",
+          "327/608",
+          "299/608",
+          "9/19",
+          "79/152"
+        ],
+        [
+          "165/304",
+          "37/76",
+          "313/608",
+          "299/608",
+          "291/608",
+          "301/608",
+          "139/304"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "13/608",
+          "other_draw_gain": "-31/608",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "random2514",
+      "iteration": 9,
+      "axis": 12,
+      "draw_means": [
+        [
+          "157/304",
+          "81/152",
+          "315/608",
+          "319/608",
+          "313/608",
+          "315/608",
+          "155/304"
+        ],
+        [
+          "165/304",
+          "163/304",
+          "321/608",
+          "81/152",
+          "79/152",
+          "319/608",
+          "39/76"
+        ]
+      ],
+      "two_draw_selected": 1,
+      "two_draw_gain": "3/608",
+      "two_draw_own_gains": [
+        "5/304",
+        "-1/152"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "5/304",
+          "other_draw_gain": "-1/152",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "random2514",
+      "iteration": 10,
+      "axis": 13,
+      "draw_means": [
+        [
+          "81/152",
+          "315/608",
+          "319/608",
+          "17/32",
+          "39/76",
+          "311/608",
+          "309/608"
+        ],
+        [
+          "163/304",
+          "151/304",
+          "1/2",
+          "293/608",
+          "303/608",
+          "77/152",
+          "151/304"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "C_richroot_mean12_24",
+      "start": "random2514",
+      "iteration": 11,
+      "axis": 14,
+      "draw_means": [
+        [
+          "81/152",
+          "327/608",
+          "327/608",
+          "333/608",
+          "161/304",
+          "165/304",
+          "10/19"
+        ],
+        [
+          "163/304",
+          "81/152",
+          "81/152",
+          "77/152",
+          "157/304",
+          "17/32",
+          "313/608"
+        ]
+      ],
+      "two_draw_selected": 5,
+      "two_draw_gain": "3/1216",
+      "two_draw_own_gains": [
+        "3/304",
+        "-3/608"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "9/608",
+          "other_draw_gain": "-9/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    }
+  ],
+  "new_go": 0,
+  "new_games": 0,
+  "scope": "Post-A/exploratory/pre-Bfinish cost-sensitivity diagnostic. Allgrids and bothdraworders retained, no selectfavorable axis/model/draw prefix. Crossdrawcostsigns conditionalvisitedweights, NOTunexposed holdout, newlearned endpoint, 1drawvs2drawend-to-end success orglobalIIDconfidence. Nothingchangesfitness/schedule/defaults/humanprices. AppliedtoNEW717richroots ALL24visitedupdates, originallymemoBackup2. Notoldraw rerun; changedgeometry signal andsameconditionallimits.",
+  "source_sha256": {
+    "721": "9309e9ff239ca4774d3613bed1cc7d7a3bf0b658a2f6e0d9f4902e51470f112c"
+  }
+}

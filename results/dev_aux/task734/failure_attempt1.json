@@ -1,0 +1,7 @@
+{
+  "error": "Initialchecksentinel length expectation wrong: Pythonfull_root checks includes initialstate; keys/checks61,movers60",
+  "phase": "firstroot firstcopy exactstate comparisons passed then wronglength assertion",
+  "cache_mutation_observed": false,
+  "fix": "Assert keys==checks61 andmovers60; no engine runs/running723 restarted",
+  "new_go": 0
+}

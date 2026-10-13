@@ -1,0 +1,678 @@
+{
+  "status": "ALL4_RICH_ROOT_DESCRIPTORS_AFTER_FROZEN_SCORES",
+  "rows": [
+    {
+      "method": "richroot_mean12_24",
+      "start": "unit",
+      "stage": "initial",
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "rook_to_pawn": 1.0,
+      "bishop_to_pawn": 1.0,
+      "base7_pair_ordering_agreements": 0,
+      "all_base_order_pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 1,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 2,
+          "b": 7,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 2,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 3,
+          "b": 7,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 3,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 4,
+          "b": 7,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 4,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 4,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 7,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 7,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 5,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 0
+        }
+      ],
+      "negative_promotion_deltas": [],
+      "source_all12_logMSE": 3.8874355037576436,
+      "source_base6_logMSE": 3.461074737677869
+    },
+    {
+      "method": "richroot_mean12_24",
+      "start": "unit",
+      "stage": "endpoint",
+      "weights": [
+        0,
+        90,
+        180,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        45,
+        90,
+        32,
+        90,
+        90,
+        0
+      ],
+      "rook_to_pawn": 1.0,
+      "bishop_to_pawn": 1.0,
+      "base7_pair_ordering_agreements": 1,
+      "all_base_order_pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 1,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 2,
+          "b": 7,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 2,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 3,
+          "b": 7,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 3,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 4,
+          "b": 7,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 4,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 4,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 7,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 7,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 0
+        },
+        {
+          "a": 5,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 0
+        }
+      ],
+      "negative_promotion_deltas": [
+        {
+          "base": 2,
+          "promoted": 10,
+          "delta": -135
+        },
+        {
+          "base": 4,
+          "promoted": 12,
+          "delta": -58
+        }
+      ],
+      "source_all12_logMSE": 4.427689280746529,
+      "source_base6_logMSE": 3.2517005334900784
+    },
+    {
+      "method": "richroot_mean12_24",
+      "start": "random2514",
+      "stage": "initial",
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "rook_to_pawn": 1.211111111111111,
+      "bishop_to_pawn": 3.1555555555555554,
+      "base7_pair_ordering_agreements": 12,
+      "all_base_order_pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 1,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 2,
+          "b": 7,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 2,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 3,
+          "b": 7,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 3,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 4,
+          "b": 7,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 4,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 4,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 7,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 7,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 5,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 1
+        }
+      ],
+      "negative_promotion_deltas": [
+        {
+          "base": 1,
+          "promoted": 9,
+          "delta": -10
+        },
+        {
+          "base": 5,
+          "promoted": 13,
+          "delta": -163
+        },
+        {
+          "base": 6,
+          "promoted": 14,
+          "delta": -54
+        }
+      ],
+      "source_all12_logMSE": 2.8492875260555763,
+      "source_base6_logMSE": 2.22609298925436
+    },
+    {
+      "method": "richroot_mean12_24",
+      "start": "random2514",
+      "stage": "endpoint",
+      "weights": [
+        0,
+        90,
+        604,
+        78,
+        68,
+        284,
+        109,
+        179,
+        0,
+        80,
+        43,
+        200,
+        86,
+        121,
+        440,
+        0
+      ],
+      "rook_to_pawn": 1.211111111111111,
+      "bishop_to_pawn": 3.1555555555555554,
+      "base7_pair_ordering_agreements": 11,
+      "all_base_order_pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 1,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 2,
+          "b": 7,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 2,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 3,
+          "b": 7,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 3,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 4,
+          "b": 7,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 4,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 4,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 7,
+          "b": 5,
+          "source_sign": -1,
+          "candidate_sign": -1
+        },
+        {
+          "a": 7,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 1
+        },
+        {
+          "a": 5,
+          "b": 6,
+          "source_sign": -1,
+          "candidate_sign": 1
+        }
+      ],
+      "negative_promotion_deltas": [
+        {
+          "base": 1,
+          "promoted": 9,
+          "delta": -10
+        },
+        {
+          "base": 2,
+          "promoted": 10,
+          "delta": -561
+        },
+        {
+          "base": 5,
+          "promoted": 13,
+          "delta": -163
+        }
+      ],
+      "source_all12_logMSE": 2.8622055274892992,
+      "source_base6_logMSE": 2.3965566105796046
+    }
+  ],
+  "source_reference_sha256": "7d1c7ad393eeb89f45bcdaf924977440c8da91086725292d04295068350a9388",
+  "scope": "Frozen sourceprior descriptiveproxy, NOT independenthumanconsensus/optimalprices. All2richrootendpoints ALLaxes frozen before scores and thisreference read. No target/root/modelselection/fitness usingreference. Maturematerial-only Yanemodifiedcaller isnotunalignedNNUE/unmodifiedengine control."
+}

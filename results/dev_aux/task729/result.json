@@ -1,0 +1,207 @@
+{
+  "status": "ALL_FROZEN_DEV_CAP_ADJUDICATION_VARIATION_CHECKED",
+  "rows": [
+    {
+      "method": "A_mean12_24",
+      "start": "unit",
+      "metrics": [
+        {
+          "cap": 12,
+          "mode": "quantity_sign_only",
+          "initial_wins": 26,
+          "endpoint_wins": 29,
+          "initial_losses": 0,
+          "endpoint_losses": 0,
+          "gain": "3/32",
+          "distinct_result_cells": 7,
+          "all32cells": true
+        },
+        {
+          "cap": 12,
+          "mode": "royal_terminal_first_else_quantity_sign",
+          "initial_wins": 26,
+          "endpoint_wins": 29,
+          "initial_losses": 0,
+          "endpoint_losses": 0,
+          "gain": "3/32",
+          "distinct_result_cells": 7,
+          "all32cells": true
+        },
+        {
+          "cap": 24,
+          "mode": "quantity_sign_only",
+          "initial_wins": 31,
+          "endpoint_wins": 32,
+          "initial_losses": 0,
+          "endpoint_losses": 0,
+          "gain": "1/32",
+          "distinct_result_cells": 1,
+          "all32cells": true
+        },
+        {
+          "cap": 24,
+          "mode": "royal_terminal_first_else_quantity_sign",
+          "initial_wins": 31,
+          "endpoint_wins": 32,
+          "initial_losses": 0,
+          "endpoint_losses": 0,
+          "gain": "1/32",
+          "distinct_result_cells": 1,
+          "all32cells": true
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "random2514",
+      "metrics": [
+        {
+          "cap": 12,
+          "mode": "quantity_sign_only",
+          "initial_wins": 30,
+          "endpoint_wins": 29,
+          "initial_losses": 0,
+          "endpoint_losses": 0,
+          "gain": "-1/32",
+          "distinct_result_cells": 5,
+          "all32cells": true
+        },
+        {
+          "cap": 12,
+          "mode": "royal_terminal_first_else_quantity_sign",
+          "initial_wins": 30,
+          "endpoint_wins": 29,
+          "initial_losses": 0,
+          "endpoint_losses": 0,
+          "gain": "-1/32",
+          "distinct_result_cells": 5,
+          "all32cells": true
+        },
+        {
+          "cap": 24,
+          "mode": "quantity_sign_only",
+          "initial_wins": 32,
+          "endpoint_wins": 32,
+          "initial_losses": 0,
+          "endpoint_losses": 0,
+          "gain": "0",
+          "distinct_result_cells": 0,
+          "all32cells": true
+        },
+        {
+          "cap": 24,
+          "mode": "royal_terminal_first_else_quantity_sign",
+          "initial_wins": 32,
+          "endpoint_wins": 32,
+          "initial_losses": 0,
+          "endpoint_losses": 0,
+          "gain": "0",
+          "distinct_result_cells": 0,
+          "all32cells": true
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "unit",
+      "metrics": [
+        {
+          "cap": 12,
+          "mode": "quantity_sign_only",
+          "initial_wins": 26,
+          "endpoint_wins": 29,
+          "initial_losses": 0,
+          "endpoint_losses": 0,
+          "gain": "3/32",
+          "distinct_result_cells": 5,
+          "all32cells": true
+        },
+        {
+          "cap": 12,
+          "mode": "royal_terminal_first_else_quantity_sign",
+          "initial_wins": 26,
+          "endpoint_wins": 29,
+          "initial_losses": 0,
+          "endpoint_losses": 0,
+          "gain": "3/32",
+          "distinct_result_cells": 5,
+          "all32cells": true
+        },
+        {
+          "cap": 24,
+          "mode": "quantity_sign_only",
+          "initial_wins": 31,
+          "endpoint_wins": 32,
+          "initial_losses": 0,
+          "endpoint_losses": 0,
+          "gain": "1/32",
+          "distinct_result_cells": 1,
+          "all32cells": true
+        },
+        {
+          "cap": 24,
+          "mode": "royal_terminal_first_else_quantity_sign",
+          "initial_wins": 31,
+          "endpoint_wins": 32,
+          "initial_losses": 0,
+          "endpoint_losses": 0,
+          "gain": "1/32",
+          "distinct_result_cells": 1,
+          "all32cells": true
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "random2514",
+      "metrics": [
+        {
+          "cap": 12,
+          "mode": "quantity_sign_only",
+          "initial_wins": 30,
+          "endpoint_wins": 30,
+          "initial_losses": 0,
+          "endpoint_losses": 0,
+          "gain": "0",
+          "distinct_result_cells": 4,
+          "all32cells": true
+        },
+        {
+          "cap": 12,
+          "mode": "royal_terminal_first_else_quantity_sign",
+          "initial_wins": 30,
+          "endpoint_wins": 30,
+          "initial_losses": 0,
+          "endpoint_losses": 0,
+          "gain": "0",
+          "distinct_result_cells": 4,
+          "all32cells": true
+        },
+        {
+          "cap": 24,
+          "mode": "quantity_sign_only",
+          "initial_wins": 32,
+          "endpoint_wins": 32,
+          "initial_losses": 0,
+          "endpoint_losses": 0,
+          "gain": "0",
+          "distinct_result_cells": 0,
+          "all32cells": true
+        },
+        {
+          "cap": 24,
+          "mode": "royal_terminal_first_else_quantity_sign",
+          "initial_wins": 32,
+          "endpoint_wins": 32,
+          "initial_losses": 0,
+          "endpoint_losses": 0,
+          "gain": "0",
+          "distinct_result_cells": 0,
+          "all32cells": true
+        }
+      ]
+    }
+  ],
+  "new_go": 0,
+  "scope": "Usercheapmove-capmaterial-countvictory idea: zero-go applysignquantity andterminal-first variants toALREADYfrozen actualA/Bdev. Exploratory post-outcome feasibility only, notnewtrainedmodel/independenttargetholdout. Highwin saturation mayreducesfitnessdiscrimination; no human/referenceprices orcandidateprice selfscoring. No futuregoal/model chosenby favorablemetric; allfourmodels/bothcaps/modes retained."
+}

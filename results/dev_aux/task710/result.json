@@ -1,0 +1,26 @@
+{
+  "status": "PASS_ALL128_ACTUAL_CAP12_PREFIX_CONTROLS",
+  "counts": {
+    "games": 128,
+    "actual_go": 768,
+    "PV_moves": 15044,
+    "Python_actual_actions": 1536,
+    "random_draws": 768,
+    "sorted_legal_arrays": 768,
+    "price_ACK_entries": 256,
+    "batches": 0,
+    "proposal_rounds": 0,
+    "prefixes": 128
+  },
+  "source_sha256": {
+    "709": {
+      "games.jsonl": "7926be354509d73689bfa27dcc19689f2d7d8736e4a646c972d48a359c686d26",
+      "queries.jsonl": "6209a2f042689c8d80c1f99cd6ee93d84052b9a6bdd5b7d6071cb4da24a48c24",
+      "price_acks.json": "6c108a564b3172ed91ace543b30847aed0f93972780bb17afcf0df97e4950e31",
+      "result.json": "7c4bd7ea0f7d20f08ed845659ecfb740ce15e9ce0a0aa4cdb64f65706f96d502"
+    }
+  },
+  "new_go": 0,
+  "seconds": 3.6551365996710956,
+  "scope": "ALL709 actualcap12paths plusexactqualified696cap24prefix independentPython rules/PV/fullhistory/metadata/material/terminal/RNG/legalarrays/reset/ACK plusALLphysicalH12prefix/count/fitness andALL128independentactualcap12 controls, not justcachedoldprefix. TwofullydisjointRNGsets averaged BEFOREselection, no newlearning; ALL4profile callerqualification. Allclippedpricealiases explicitsources notnewgames. No source/humanfitness oruniversalvalueproof."
+}

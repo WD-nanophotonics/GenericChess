@@ -1,0 +1,32 @@
+{
+  "question": "Which native price-axis changes account for quantity gain or late deterioration?",
+  "declared_at": 1791890160.5046136,
+  "models": "ALL4endpoints fromA686/B695, twooriginalinitials; no endpoint/model/axis selection",
+  "axes": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "operation": "For EACHendpoint EACHaxis, restore ONLYthat coordinate to owninitial; duplicate fullvectors shared explicitly, no optimization/retraining",
+  "roots": "ALL16 frozen675 independentordinaryfamilies, already exposed in34; exploratorymechanismprobe notnewblindvalidation",
+  "seed_bases": [
+    2026120002,
+    2026122002
+  ],
+  "cap": 24,
+  "nodes": 1024,
+  "max_physical_games": 3456,
+  "fuse_seconds": 600,
+  "expected_cost": "2-3minutes physical plusindependentaudit, decisiongain mechanism vs mereparameterchanges. No longrun/split/extraepochs.",
+  "metrics": "ALLq12/q24/meanquantity/commonfast/terminal paired against endpoint ANDowninitial, bothRNG/family/negativecells; no winnerselection/referencefitness",
+  "scope": "Inputplan BEFOREBfitfinish/anyBdevvalues; all12rollbacks evenunchanged/negative. Development reused andnomethodholdoutclaim. Fresh fullydisjoint2RNG allocations/allfullhistory/prom/drop/legal checks. SameoriginalYaneexe1024caller, no main/default/UI writes/humanlabeltuning/newworkers/fees."
+}

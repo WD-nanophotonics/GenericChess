@@ -1,0 +1,2654 @@
+{
+  "status": "ALL48_VISITED_GRID_TWO_DRAW_SENSITIVITY_PASS",
+  "summary": [
+    {
+      "method": "A_mean12_24",
+      "start": "unit",
+      "grids": 12,
+      "one_draw_orders": 24,
+      "accepted_one_draw": 16,
+      "accepted_other_negative": 13,
+      "accepted_other_nonpositive": 13,
+      "one_two_disagreements": 14,
+      "two_draw_accepted": 5,
+      "two_draw_accepted_has_negative_draw": 3
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "random2514",
+      "grids": 12,
+      "one_draw_orders": 24,
+      "accepted_one_draw": 17,
+      "accepted_other_negative": 11,
+      "accepted_other_nonpositive": 11,
+      "one_two_disagreements": 10,
+      "two_draw_accepted": 8,
+      "two_draw_accepted_has_negative_draw": 5
+    },
+    {
+      "method": "B_q12only",
+      "start": "unit",
+      "grids": 12,
+      "one_draw_orders": 24,
+      "accepted_one_draw": 15,
+      "accepted_other_negative": 7,
+      "accepted_other_nonpositive": 8,
+      "one_two_disagreements": 9,
+      "two_draw_accepted": 5,
+      "two_draw_accepted_has_negative_draw": 0
+    },
+    {
+      "method": "B_q12only",
+      "start": "random2514",
+      "grids": 12,
+      "one_draw_orders": 24,
+      "accepted_one_draw": 19,
+      "accepted_other_negative": 10,
+      "accepted_other_nonpositive": 11,
+      "one_two_disagreements": 10,
+      "two_draw_accepted": 8,
+      "two_draw_accepted_has_negative_draw": 2
+    }
+  ],
+  "rows": [
+    {
+      "method": "A_mean12_24",
+      "start": "unit",
+      "iteration": 0,
+      "axis": 2,
+      "draw_means": [
+        [
+          "307/608",
+          "1/2",
+          "147/304",
+          "341/608",
+          "83/152",
+          "317/608",
+          "351/608"
+        ],
+        [
+          "299/608",
+          "73/152",
+          "73/152",
+          "75/152",
+          "39/76",
+          "155/304",
+          "151/304"
+        ]
+      ],
+      "two_draw_selected": 6,
+      "two_draw_gain": "47/1216",
+      "two_draw_own_gains": [
+        "11/152",
+        "3/608"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 6,
+          "accepted": true,
+          "own_gain": "11/152",
+          "other_draw_gain": "3/608",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 4,
+          "accepted": true,
+          "own_gain": "13/608",
+          "other_draw_gain": "25/608",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "unit",
+      "iteration": 1,
+      "axis": 3,
+      "draw_means": [
+        [
+          "351/608",
+          "77/152",
+          "1/2",
+          "85/152",
+          "81/152",
+          "341/608",
+          "341/608"
+        ],
+        [
+          "151/304",
+          "153/304",
+          "307/608",
+          "299/608",
+          "305/608",
+          "1/2",
+          "309/608"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 6,
+          "accepted": true,
+          "own_gain": "7/608",
+          "other_draw_gain": "-5/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "unit",
+      "iteration": 2,
+      "axis": 4,
+      "draw_means": [
+        [
+          "351/608",
+          "83/152",
+          "345/608",
+          "85/152",
+          "21/38",
+          "10/19",
+          "321/608"
+        ],
+        [
+          "151/304",
+          "37/76",
+          "1/2",
+          "157/304",
+          "143/304",
+          "307/608",
+          "275/608"
+        ]
+      ],
+      "two_draw_selected": 3,
+      "two_draw_gain": "1/1216",
+      "two_draw_own_gains": [
+        "-11/608",
+        "3/152"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "3/152",
+          "other_draw_gain": "-11/608",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "unit",
+      "iteration": 3,
+      "axis": 5,
+      "draw_means": [
+        [
+          "85/152",
+          "345/608",
+          "159/304",
+          "147/304",
+          "135/304",
+          "127/304",
+          "67/152"
+        ],
+        [
+          "157/304",
+          "79/152",
+          "41/76",
+          "135/304",
+          "259/608",
+          "63/152",
+          "27/76"
+        ]
+      ],
+      "two_draw_selected": 1,
+      "two_draw_gain": "7/1216",
+      "two_draw_own_gains": [
+        "5/608",
+        "1/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "5/608",
+          "other_draw_gain": "1/304",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 2,
+          "accepted": true,
+          "own_gain": "7/304",
+          "other_draw_gain": "-11/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "unit",
+      "iteration": 4,
+      "axis": 6,
+      "draw_means": [
+        [
+          "345/608",
+          "85/152",
+          "91/152",
+          "21/38",
+          "351/608",
+          "327/608",
+          "21/38"
+        ],
+        [
+          "79/152",
+          "315/608",
+          "39/76",
+          "343/608",
+          "17/32",
+          "83/152",
+          "169/304"
+        ]
+      ],
+      "two_draw_selected": 3,
+      "two_draw_gain": "9/608",
+      "two_draw_own_gains": [
+        "-9/608",
+        "27/608"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 2,
+          "accepted": true,
+          "own_gain": "1/32",
+          "other_draw_gain": "-1/152",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "27/608",
+          "other_draw_gain": "-9/608",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "unit",
+      "iteration": 5,
+      "axis": 7,
+      "draw_means": [
+        [
+          "21/38",
+          "165/304",
+          "339/608",
+          "159/304",
+          "147/304",
+          "159/304",
+          "281/608"
+        ],
+        [
+          "343/608",
+          "79/152",
+          "315/608",
+          "79/152",
+          "39/76",
+          "151/304",
+          "313/608"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 2,
+          "accepted": true,
+          "own_gain": "3/608",
+          "other_draw_gain": "-7/152",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "unit",
+      "iteration": 6,
+      "axis": 9,
+      "draw_means": [
+        [
+          "21/38",
+          "339/608",
+          "329/608",
+          "81/152",
+          "81/152",
+          "335/608",
+          "41/76"
+        ],
+        [
+          "343/608",
+          "333/608",
+          "335/608",
+          "345/608",
+          "345/608",
+          "169/304",
+          "9/16"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "3/608",
+          "other_draw_gain": "-5/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "1/304",
+          "other_draw_gain": "-3/152",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "unit",
+      "iteration": 7,
+      "axis": 10,
+      "draw_means": [
+        [
+          "21/38",
+          "335/608",
+          "337/608",
+          "337/608",
+          "341/608",
+          "43/76",
+          "167/304"
+        ],
+        [
+          "343/608",
+          "343/608",
+          "341/608",
+          "9/16",
+          "9/16",
+          "337/608",
+          "21/38"
+        ]
+      ],
+      "two_draw_selected": 4,
+      "two_draw_gain": "1/304",
+      "two_draw_own_gains": [
+        "5/608",
+        "-1/608"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 5,
+          "accepted": true,
+          "own_gain": "1/76",
+          "other_draw_gain": "-3/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "unit",
+      "iteration": 8,
+      "axis": 11,
+      "draw_means": [
+        [
+          "341/608",
+          "85/152",
+          "43/76",
+          "337/608",
+          "331/608",
+          "337/608",
+          "339/608"
+        ],
+        [
+          "9/16",
+          "335/608",
+          "167/304",
+          "343/608",
+          "165/304",
+          "21/38",
+          "169/304"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 2,
+          "accepted": true,
+          "own_gain": "3/608",
+          "other_draw_gain": "-1/76",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "1/608",
+          "other_draw_gain": "-1/152",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "unit",
+      "iteration": 9,
+      "axis": 12,
+      "draw_means": [
+        [
+          "341/608",
+          "333/608",
+          "335/608",
+          "83/152",
+          "165/304",
+          "83/152",
+          "163/304"
+        ],
+        [
+          "9/16",
+          "43/76",
+          "9/16",
+          "21/38",
+          "339/608",
+          "165/304",
+          "167/304"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "1/304",
+          "other_draw_gain": "-1/76",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "unit",
+      "iteration": 10,
+      "axis": 13,
+      "draw_means": [
+        [
+          "341/608",
+          "83/152",
+          "165/304",
+          "315/608",
+          "331/608",
+          "303/608",
+          "307/608"
+        ],
+        [
+          "9/16",
+          "321/608",
+          "315/608",
+          "79/152",
+          "315/608",
+          "287/608",
+          "73/152"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "unit",
+      "iteration": 11,
+      "axis": 14,
+      "draw_means": [
+        [
+          "341/608",
+          "345/608",
+          "11/19",
+          "21/38",
+          "41/76",
+          "81/152",
+          "329/608"
+        ],
+        [
+          "9/16",
+          "333/608",
+          "331/608",
+          "21/38",
+          "331/608",
+          "317/608",
+          "161/304"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 2,
+          "accepted": true,
+          "own_gain": "11/608",
+          "other_draw_gain": "-11/608",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "random2514",
+      "iteration": 0,
+      "axis": 2,
+      "draw_means": [
+        [
+          "255/608",
+          "221/608",
+          "237/608",
+          "259/608",
+          "7/16",
+          "257/608",
+          "127/304"
+        ],
+        [
+          "253/608",
+          "233/608",
+          "33/76",
+          "249/608",
+          "233/608",
+          "235/608",
+          "241/608"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 4,
+          "accepted": true,
+          "own_gain": "11/608",
+          "other_draw_gain": "-5/152",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 2,
+          "accepted": true,
+          "own_gain": "11/608",
+          "other_draw_gain": "-9/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "random2514",
+      "iteration": 1,
+      "axis": 3,
+      "draw_means": [
+        [
+          "255/608",
+          "267/608",
+          "267/608",
+          "131/304",
+          "67/152",
+          "37/76",
+          "35/76"
+        ],
+        [
+          "253/608",
+          "261/608",
+          "223/608",
+          "63/152",
+          "225/608",
+          "251/608",
+          "31/76"
+        ]
+      ],
+      "two_draw_selected": 5,
+      "two_draw_gain": "39/1216",
+      "two_draw_own_gains": [
+        "41/608",
+        "-1/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 5,
+          "accepted": true,
+          "own_gain": "41/608",
+          "other_draw_gain": "-1/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "1/76",
+          "other_draw_gain": "3/152",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "random2514",
+      "iteration": 2,
+      "axis": 4,
+      "draw_means": [
+        [
+          "37/76",
+          "281/608",
+          "69/152",
+          "33/76",
+          "277/608",
+          "143/304",
+          "73/152"
+        ],
+        [
+          "251/608",
+          "8/19",
+          "15/38",
+          "119/304",
+          "243/608",
+          "131/304",
+          "255/608"
+        ]
+      ],
+      "two_draw_selected": 5,
+      "two_draw_gain": "1/1216",
+      "two_draw_own_gains": [
+        "-5/304",
+        "11/608"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 5,
+          "accepted": true,
+          "own_gain": "11/608",
+          "other_draw_gain": "-5/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "random2514",
+      "iteration": 3,
+      "axis": 5,
+      "draw_means": [
+        [
+          "143/304",
+          "139/304",
+          "299/608",
+          "37/76",
+          "69/152",
+          "221/608",
+          "255/608"
+        ],
+        [
+          "131/304",
+          "139/304",
+          "241/608",
+          "243/608",
+          "215/608",
+          "221/608",
+          "119/304"
+        ]
+      ],
+      "two_draw_selected": 1,
+      "two_draw_gain": "1/152",
+      "two_draw_own_gains": [
+        "-1/76",
+        "1/38"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 2,
+          "accepted": true,
+          "own_gain": "13/608",
+          "other_draw_gain": "-21/608",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "1/38",
+          "other_draw_gain": "-1/76",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "random2514",
+      "iteration": 4,
+      "axis": 6,
+      "draw_means": [
+        [
+          "139/304",
+          "305/608",
+          "153/304",
+          "261/608",
+          "35/76",
+          "9/19",
+          "307/608"
+        ],
+        [
+          "139/304",
+          "71/152",
+          "153/304",
+          "263/608",
+          "17/38",
+          "267/608",
+          "255/608"
+        ]
+      ],
+      "two_draw_selected": 2,
+      "two_draw_gain": "7/152",
+      "two_draw_own_gains": [
+        "7/152",
+        "7/152"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 6,
+          "accepted": true,
+          "own_gain": "29/608",
+          "other_draw_gain": "-23/608",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 2,
+          "accepted": true,
+          "own_gain": "7/152",
+          "other_draw_gain": "7/152",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "random2514",
+      "iteration": 5,
+      "axis": 7,
+      "draw_means": [
+        [
+          "153/304",
+          "41/76",
+          "39/76",
+          "313/608",
+          "289/608",
+          "73/152",
+          "73/152"
+        ],
+        [
+          "153/304",
+          "313/608",
+          "293/608",
+          "9/19",
+          "9/19",
+          "69/152",
+          "69/152"
+        ]
+      ],
+      "two_draw_selected": 1,
+      "two_draw_gain": "29/1216",
+      "two_draw_own_gains": [
+        "11/304",
+        "7/608"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "11/304",
+          "other_draw_gain": "7/608",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "7/608",
+          "other_draw_gain": "11/304",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "random2514",
+      "iteration": 6,
+      "axis": 9,
+      "draw_means": [
+        [
+          "41/76",
+          "337/608",
+          "167/304",
+          "163/304",
+          "157/304",
+          "317/608",
+          "163/304"
+        ],
+        [
+          "313/608",
+          "311/608",
+          "153/304",
+          "291/608",
+          "287/608",
+          "291/608",
+          "73/152"
+        ]
+      ],
+      "two_draw_selected": 1,
+      "two_draw_gain": "7/1216",
+      "two_draw_own_gains": [
+        "9/608",
+        "-1/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "9/608",
+          "other_draw_gain": "-1/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "random2514",
+      "iteration": 7,
+      "axis": 10,
+      "draw_means": [
+        [
+          "337/608",
+          "331/608",
+          "167/304",
+          "339/608",
+          "167/304",
+          "333/608",
+          "339/608"
+        ],
+        [
+          "311/608",
+          "39/76",
+          "157/304",
+          "81/152",
+          "155/304",
+          "311/608",
+          "321/608"
+        ]
+      ],
+      "two_draw_selected": 3,
+      "two_draw_gain": "15/1216",
+      "two_draw_own_gains": [
+        "1/304",
+        "13/608"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "1/304",
+          "other_draw_gain": "13/608",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "13/608",
+          "other_draw_gain": "1/304",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "random2514",
+      "iteration": 8,
+      "axis": 11,
+      "draw_means": [
+        [
+          "339/608",
+          "85/152",
+          "335/608",
+          "161/304",
+          "319/608",
+          "305/608",
+          "157/304"
+        ],
+        [
+          "81/152",
+          "155/304",
+          "39/76",
+          "159/304",
+          "17/32",
+          "161/304",
+          "315/608"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "1/608",
+          "other_draw_gain": "-7/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "random2514",
+      "iteration": 9,
+      "axis": 12,
+      "draw_means": [
+        [
+          "339/608",
+          "335/608",
+          "21/38",
+          "325/608",
+          "17/32",
+          "159/304",
+          "161/304"
+        ],
+        [
+          "81/152",
+          "81/152",
+          "163/304",
+          "10/19",
+          "305/608",
+          "77/152",
+          "317/608"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 2,
+          "accepted": true,
+          "own_gain": "1/304",
+          "other_draw_gain": "-3/608",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "random2514",
+      "iteration": 10,
+      "axis": 13,
+      "draw_means": [
+        [
+          "339/608",
+          "81/152",
+          "165/304",
+          "10/19",
+          "319/608",
+          "331/608",
+          "299/608"
+        ],
+        [
+          "81/152",
+          "281/608",
+          "9/19",
+          "157/304",
+          "153/304",
+          "1/2",
+          "10/19"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "A_mean12_24",
+      "start": "random2514",
+      "iteration": 11,
+      "axis": 14,
+      "draw_means": [
+        [
+          "339/608",
+          "347/608",
+          "347/608",
+          "83/152",
+          "331/608",
+          "81/152",
+          "341/608"
+        ],
+        [
+          "81/152",
+          "159/304",
+          "159/304",
+          "79/152",
+          "313/608",
+          "153/304",
+          "299/608"
+        ]
+      ],
+      "two_draw_selected": 1,
+      "two_draw_gain": "1/608",
+      "two_draw_own_gains": [
+        "1/76",
+        "-3/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "1/76",
+          "other_draw_gain": "-3/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "unit",
+      "iteration": 0,
+      "axis": 2,
+      "draw_means": [
+        [
+          "49/152",
+          "25/76",
+          "6/19",
+          "3/8",
+          "13/38",
+          "53/152",
+          "7/19"
+        ],
+        [
+          "49/152",
+          "25/76",
+          "97/304",
+          "101/304",
+          "103/304",
+          "13/38",
+          "5/16"
+        ]
+      ],
+      "two_draw_selected": 3,
+      "two_draw_gain": "1/32",
+      "two_draw_own_gains": [
+        "1/19",
+        "3/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "1/19",
+          "other_draw_gain": "3/304",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 5,
+          "accepted": true,
+          "own_gain": "3/152",
+          "other_draw_gain": "1/38",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "unit",
+      "iteration": 1,
+      "axis": 3,
+      "draw_means": [
+        [
+          "3/8",
+          "105/304",
+          "53/152",
+          "103/304",
+          "111/304",
+          "13/38",
+          "53/152"
+        ],
+        [
+          "101/304",
+          "99/304",
+          "51/152",
+          "103/304",
+          "97/304",
+          "49/152",
+          "49/152"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "1/152",
+          "other_draw_gain": "-11/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "unit",
+      "iteration": 2,
+      "axis": 4,
+      "draw_means": [
+        [
+          "3/8",
+          "27/76",
+          "107/304",
+          "119/304",
+          "27/76",
+          "7/19",
+          "53/152"
+        ],
+        [
+          "101/304",
+          "89/304",
+          "23/76",
+          "51/152",
+          "91/304",
+          "6/19",
+          "5/16"
+        ]
+      ],
+      "two_draw_selected": 3,
+      "two_draw_gain": "3/304",
+      "two_draw_own_gains": [
+        "5/304",
+        "1/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "5/304",
+          "other_draw_gain": "1/304",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "1/304",
+          "other_draw_gain": "5/304",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "unit",
+      "iteration": 3,
+      "axis": 5,
+      "draw_means": [
+        [
+          "119/304",
+          "121/304",
+          "3/8",
+          "5/16",
+          "89/304",
+          "81/304",
+          "37/152"
+        ],
+        [
+          "51/152",
+          "115/304",
+          "113/304",
+          "91/304",
+          "77/304",
+          "77/304",
+          "5/19"
+        ]
+      ],
+      "two_draw_selected": 1,
+      "two_draw_gain": "15/608",
+      "two_draw_own_gains": [
+        "1/152",
+        "13/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "1/152",
+          "other_draw_gain": "13/304",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "13/304",
+          "other_draw_gain": "1/152",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "unit",
+      "iteration": 4,
+      "axis": 6,
+      "draw_means": [
+        [
+          "121/304",
+          "123/304",
+          "15/38",
+          "59/152",
+          "111/304",
+          "55/152",
+          "111/304"
+        ],
+        [
+          "115/304",
+          "27/76",
+          "111/304",
+          "117/304",
+          "115/304",
+          "3/8",
+          "117/304"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "1/152",
+          "other_draw_gain": "-7/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "1/152",
+          "other_draw_gain": "-3/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "unit",
+      "iteration": 5,
+      "axis": 7,
+      "draw_means": [
+        [
+          "121/304",
+          "117/304",
+          "31/76",
+          "3/8",
+          "5/16",
+          "97/304",
+          "101/304"
+        ],
+        [
+          "115/304",
+          "123/304",
+          "61/152",
+          "111/304",
+          "31/76",
+          "113/304",
+          "55/152"
+        ]
+      ],
+      "two_draw_selected": 2,
+      "two_draw_gain": "5/304",
+      "two_draw_own_gains": [
+        "3/304",
+        "7/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 2,
+          "accepted": true,
+          "own_gain": "3/304",
+          "other_draw_gain": "7/304",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 4,
+          "accepted": true,
+          "own_gain": "9/304",
+          "other_draw_gain": "-13/152",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "unit",
+      "iteration": 6,
+      "axis": 9,
+      "draw_means": [
+        [
+          "31/76",
+          "15/38",
+          "3/8",
+          "61/152",
+          "29/76",
+          "55/152",
+          "111/304"
+        ],
+        [
+          "61/152",
+          "15/38",
+          "125/304",
+          "61/152",
+          "29/76",
+          "15/38",
+          "61/152"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 2,
+          "accepted": true,
+          "own_gain": "3/304",
+          "other_draw_gain": "-5/152",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "unit",
+      "iteration": 7,
+      "axis": 10,
+      "draw_means": [
+        [
+          "31/76",
+          "123/304",
+          "31/76",
+          "125/304",
+          "121/304",
+          "123/304",
+          "121/304"
+        ],
+        [
+          "61/152",
+          "119/304",
+          "119/304",
+          "15/38",
+          "15/38",
+          "117/304",
+          "117/304"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "1/304",
+          "other_draw_gain": "-1/152",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "unit",
+      "iteration": 8,
+      "axis": 11,
+      "draw_means": [
+        [
+          "31/76",
+          "61/152",
+          "125/304",
+          "63/152",
+          "125/304",
+          "125/304",
+          "125/304"
+        ],
+        [
+          "61/152",
+          "119/304",
+          "119/304",
+          "117/304",
+          "3/8",
+          "113/304",
+          "113/304"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "1/152",
+          "other_draw_gain": "-5/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "unit",
+      "iteration": 9,
+      "axis": 12,
+      "draw_means": [
+        [
+          "31/76",
+          "31/76",
+          "31/76",
+          "123/304",
+          "15/38",
+          "15/38",
+          "117/304"
+        ],
+        [
+          "61/152",
+          "123/304",
+          "31/76",
+          "61/152",
+          "31/76",
+          "123/304",
+          "123/304"
+        ]
+      ],
+      "two_draw_selected": 2,
+      "two_draw_gain": "1/304",
+      "two_draw_own_gains": [
+        "0",
+        "1/152"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 2,
+          "accepted": true,
+          "own_gain": "1/152",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "unit",
+      "iteration": 10,
+      "axis": 13,
+      "draw_means": [
+        [
+          "31/76",
+          "115/304",
+          "7/19",
+          "107/304",
+          "105/304",
+          "99/304",
+          "49/152"
+        ],
+        [
+          "31/76",
+          "7/19",
+          "117/304",
+          "107/304",
+          "103/304",
+          "103/304",
+          "99/304"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "unit",
+      "iteration": 11,
+      "axis": 14,
+      "draw_means": [
+        [
+          "31/76",
+          "29/76",
+          "29/76",
+          "29/76",
+          "15/38",
+          "117/304",
+          "3/8"
+        ],
+        [
+          "31/76",
+          "29/76",
+          "119/304",
+          "59/152",
+          "29/76",
+          "59/152",
+          "115/304"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "random2514",
+      "iteration": 0,
+      "axis": 2,
+      "draw_means": [
+        [
+          "11/38",
+          "81/304",
+          "21/76",
+          "91/304",
+          "87/304",
+          "11/38",
+          "85/304"
+        ],
+        [
+          "81/304",
+          "81/304",
+          "43/152",
+          "77/304",
+          "39/152",
+          "81/304",
+          "81/304"
+        ]
+      ],
+      "two_draw_selected": 2,
+      "two_draw_gain": "1/608",
+      "two_draw_own_gains": [
+        "-1/76",
+        "5/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "3/304",
+          "other_draw_gain": "-1/76",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 2,
+          "accepted": true,
+          "own_gain": "5/304",
+          "other_draw_gain": "-1/76",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "random2514",
+      "iteration": 1,
+      "axis": 3,
+      "draw_means": [
+        [
+          "21/76",
+          "77/304",
+          "75/304",
+          "39/152",
+          "39/152",
+          "87/304",
+          "41/152"
+        ],
+        [
+          "43/152",
+          "73/304",
+          "1/4",
+          "79/304",
+          "79/304",
+          "75/304",
+          "39/152"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 5,
+          "accepted": true,
+          "own_gain": "3/304",
+          "other_draw_gain": "-11/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "random2514",
+      "iteration": 2,
+      "axis": 4,
+      "draw_means": [
+        [
+          "21/76",
+          "81/304",
+          "79/304",
+          "41/152",
+          "11/38",
+          "39/152",
+          "39/152"
+        ],
+        [
+          "43/152",
+          "1/4",
+          "39/152",
+          "21/76",
+          "89/304",
+          "45/152",
+          "11/38"
+        ]
+      ],
+      "two_draw_selected": 4,
+      "two_draw_gain": "7/608",
+      "two_draw_own_gains": [
+        "1/76",
+        "3/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 4,
+          "accepted": true,
+          "own_gain": "1/76",
+          "other_draw_gain": "3/304",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 5,
+          "accepted": true,
+          "own_gain": "1/76",
+          "other_draw_gain": "-3/152",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "random2514",
+      "iteration": 3,
+      "axis": 5,
+      "draw_means": [
+        [
+          "11/38",
+          "5/16",
+          "79/304",
+          "41/152",
+          "9/38",
+          "69/304",
+          "17/76"
+        ],
+        [
+          "89/304",
+          "107/304",
+          "43/152",
+          "83/304",
+          "9/38",
+          "73/304",
+          "73/304"
+        ]
+      ],
+      "two_draw_selected": 1,
+      "two_draw_gain": "25/608",
+      "two_draw_own_gains": [
+        "7/304",
+        "9/152"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "7/304",
+          "other_draw_gain": "9/152",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "9/152",
+          "other_draw_gain": "7/304",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "random2514",
+      "iteration": 4,
+      "axis": 6,
+      "draw_means": [
+        [
+          "5/16",
+          "91/304",
+          "47/152",
+          "47/152",
+          "6/19",
+          "45/152",
+          "87/304"
+        ],
+        [
+          "107/304",
+          "51/152",
+          "53/152",
+          "49/152",
+          "25/76",
+          "99/304",
+          "97/304"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 4,
+          "accepted": true,
+          "own_gain": "1/304",
+          "other_draw_gain": "-7/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "random2514",
+      "iteration": 5,
+      "axis": 7,
+      "draw_means": [
+        [
+          "5/16",
+          "101/304",
+          "25/76",
+          "11/38",
+          "45/152",
+          "97/304",
+          "97/304"
+        ],
+        [
+          "107/304",
+          "7/19",
+          "101/304",
+          "49/152",
+          "13/38",
+          "97/304",
+          "97/304"
+        ]
+      ],
+      "two_draw_selected": 1,
+      "two_draw_gain": "11/608",
+      "two_draw_own_gains": [
+        "3/152",
+        "5/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "3/152",
+          "other_draw_gain": "5/304",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "5/304",
+          "other_draw_gain": "3/152",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "random2514",
+      "iteration": 6,
+      "axis": 9,
+      "draw_means": [
+        [
+          "101/304",
+          "13/38",
+          "101/304",
+          "51/152",
+          "51/152",
+          "13/38",
+          "99/304"
+        ],
+        [
+          "7/19",
+          "3/8",
+          "113/304",
+          "111/304",
+          "111/304",
+          "115/304",
+          "111/304"
+        ]
+      ],
+      "two_draw_selected": 5,
+      "two_draw_gain": "3/304",
+      "two_draw_own_gains": [
+        "3/304",
+        "3/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "3/304",
+          "other_draw_gain": "1/152",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 5,
+          "accepted": true,
+          "own_gain": "3/304",
+          "other_draw_gain": "3/304",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "random2514",
+      "iteration": 7,
+      "axis": 10,
+      "draw_means": [
+        [
+          "13/38",
+          "53/152",
+          "105/304",
+          "107/304",
+          "105/304",
+          "109/304",
+          "55/152"
+        ],
+        [
+          "115/304",
+          "53/152",
+          "107/304",
+          "109/304",
+          "113/304",
+          "7/19",
+          "7/19"
+        ]
+      ],
+      "two_draw_selected": 6,
+      "two_draw_gain": "3/608",
+      "two_draw_own_gains": [
+        "3/152",
+        "-3/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 6,
+          "accepted": true,
+          "own_gain": "3/152",
+          "other_draw_gain": "-3/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "random2514",
+      "iteration": 8,
+      "axis": 11,
+      "draw_means": [
+        [
+          "55/152",
+          "113/304",
+          "55/152",
+          "111/304",
+          "7/19",
+          "113/304",
+          "7/19"
+        ],
+        [
+          "7/19",
+          "109/304",
+          "7/19",
+          "113/304",
+          "55/152",
+          "27/76",
+          "27/76"
+        ]
+      ],
+      "two_draw_selected": 3,
+      "two_draw_gain": "1/304",
+      "two_draw_own_gains": [
+        "1/304",
+        "1/304"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "3/304",
+          "other_draw_gain": "-3/304",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        },
+        {
+          "draw": 1,
+          "selected_index": 3,
+          "accepted": true,
+          "own_gain": "1/304",
+          "other_draw_gain": "1/304",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": false,
+          "agrees_with_two_draws": true
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "random2514",
+      "iteration": 9,
+      "axis": 12,
+      "draw_means": [
+        [
+          "111/304",
+          "109/304",
+          "109/304",
+          "105/304",
+          "53/152",
+          "13/38",
+          "105/304"
+        ],
+        [
+          "113/304",
+          "3/8",
+          "7/19",
+          "113/304",
+          "111/304",
+          "111/304",
+          "55/152"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "1/304",
+          "other_draw_gain": "-1/152",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "random2514",
+      "iteration": 10,
+      "axis": 13,
+      "draw_means": [
+        [
+          "111/304",
+          "105/304",
+          "53/152",
+          "23/76",
+          "47/152",
+          "43/152",
+          "23/76"
+        ],
+        [
+          "113/304",
+          "115/304",
+          "27/76",
+          "13/38",
+          "13/38",
+          "6/19",
+          "5/16"
+        ]
+      ],
+      "two_draw_selected": 0,
+      "two_draw_gain": "0",
+      "two_draw_own_gains": [
+        "0",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 0,
+          "accepted": false,
+          "own_gain": "0",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "1/152",
+          "other_draw_gain": "-3/152",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    },
+    {
+      "method": "B_q12only",
+      "start": "random2514",
+      "iteration": 11,
+      "axis": 14,
+      "draw_means": [
+        [
+          "111/304",
+          "7/19",
+          "7/19",
+          "55/152",
+          "7/19",
+          "105/304",
+          "107/304"
+        ],
+        [
+          "113/304",
+          "113/304",
+          "113/304",
+          "7/19",
+          "111/304",
+          "29/76",
+          "3/8"
+        ]
+      ],
+      "two_draw_selected": 1,
+      "two_draw_gain": "1/608",
+      "two_draw_own_gains": [
+        "1/304",
+        "0"
+      ],
+      "one_draw_choices": [
+        {
+          "draw": 0,
+          "selected_index": 1,
+          "accepted": true,
+          "own_gain": "1/304",
+          "other_draw_gain": "0",
+          "other_draw_negative": false,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": true
+        },
+        {
+          "draw": 1,
+          "selected_index": 5,
+          "accepted": true,
+          "own_gain": "3/304",
+          "other_draw_gain": "-3/152",
+          "other_draw_negative": true,
+          "other_draw_nonpositive": true,
+          "agrees_with_two_draws": false
+        }
+      ]
+    }
+  ],
+  "new_go": 0,
+  "new_games": 0,
+  "scope": "Post-A/exploratory/pre-Bfinish cost-sensitivity diagnostic. Allgrids and bothdraworders retained, no selectfavorable axis/model/draw prefix. Crossdrawcostsigns conditionalvisitedweights, NOTunexposed holdout, newlearned endpoint, 1drawvs2drawend-to-end success orglobalIIDconfidence. Nothingchangesfitness/schedule/defaults/humanprices.",
+  "source_sha256": {
+    "686": "56c2e0f86e56ce073832b23b0efe4f2f2881f24145f31e3d13e47c7e2c7afbb5",
+    "695": "c5962000a33623f754839c9e79aeab31ac79483a4ca9ce8a829285c427197804"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "status": "CORRECTED_PREMATURE_ALL_DISTANCE_STATEMENT",
+  "at": 1791890895.200955,
+  "incorrect": "11:27:41 session checkpoint observation said allfourlearnedvectors worsen BOTHsourceALL12/base6",
+  "correct": "ALL4base6distancesworsen;3of4ALL12worsen, AunitALL12improves3.8874355 to3.7785357. NONEimprovesBOTH. Originalfrozen704descriptors unchanged, oldcheckpointretained andexplicitlycorrected.",
+  "checks": [
+    {
+      "method": "mean12_24",
+      "start": "unit",
+      "all12_initial": 3.8874355037576436,
+      "all12_endpoint": 3.778535672984495,
+      "all12_improves": true,
+      "base6_initial": 3.461074737677869,
+      "base6_endpoint": 3.750941749744111,
+      "base6_improves": false
+    },
+    {
+      "method": "mean12_24",
+      "start": "random2514",
+      "all12_initial": 2.8492875260555763,
+      "all12_endpoint": 3.6964988104823484,
+      "all12_improves": false,
+      "base6_initial": 2.22609298925436,
+      "base6_endpoint": 2.7503547618213773,
+      "base6_improves": false
+    },
+    {
+      "method": "q12_only",
+      "start": "unit",
+      "all12_initial": 3.8874355037576436,
+      "all12_endpoint": 4.597015119362804,
+      "all12_improves": false,
+      "base6_initial": 3.461074737677869,
+      "base6_endpoint": 4.38617412512282,
+      "base6_improves": false
+    },
+    {
+      "method": "q12_only",
+      "start": "random2514",
+      "all12_initial": 2.8492875260555763,
+      "all12_endpoint": 3.2333484361169185,
+      "all12_improves": false,
+      "base6_initial": 2.22609298925436,
+      "base6_endpoint": 2.8954676440074905,
+      "base6_improves": false
+    }
+  ],
+  "new_go": 0,
+  "impact": "No modelselection/fitness/physicalresults changed; humanvalue recovery stillnotestablished butclaimmustrespectpartialALL12improvement."
+}

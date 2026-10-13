@@ -1,0 +1,32 @@
+{
+  "status": "PASS_ALL_RICH_ALLLEGAL_MULTI_HORIZON_LEARNING_DEV",
+  "counts": {
+    "games": 9344,
+    "actual_go": 95917,
+    "PV_moves": 1755355,
+    "Python_actual_actions": 189493,
+    "random_draws": 93576,
+    "sorted_legal_arrays": 93576,
+    "price_ACK_entries": 9472,
+    "batches": 168,
+    "proposal_rounds": 24,
+    "prefixes": 9344
+  },
+  "source_sha256": {
+    "721": {
+      "games.jsonl": "85486890d849f8d0409e1f6abc1c68693ce73835ad9739e6a31c6bf775d7541f",
+      "queries.jsonl": "68ae3cde4b158cea735e9c63d646f7f7c9dd6abafe78e0322f16a6faeb46b4ed",
+      "price_acks.json": "71c611e1716f5ca7cab6e96fadea5fd47ecff4b6cb83f119fca194285298ff02",
+      "result.json": "858aad2270ae2d739bf393dbe5877b1aa0a522eb799b42df9316d1bf114cb667"
+    },
+    "722": {
+      "games.jsonl": "226e35f9984df85776aa40f090652e85f95b54dc2d3476651518d61633cf57b3",
+      "queries.jsonl": "35abf0cfac90f72cffa91b55875634004dd41c2bf2c0e9d5e333c7fcfd5a15bf",
+      "price_acks.json": "82650f3244d2a2b7862c9ca27bde55161730b149183dea8f82be5a80bd971729",
+      "result.json": "6003a816c4c9a00c58e2ea99b6dc6a12da49b2d0619a245a71d39ae8d241d930"
+    }
+  },
+  "new_go": 0,
+  "seconds": 728.3968772999942,
+  "scope": "ALL721/722actualH24 paths independentPython rules/PV/fullhistory/metadata/material/terminal/RNG/legalarrays/reset/ACK plusALLphysicalH12prefix/count/fitness andALL24coordinateupdates/168logicalcandidates. NEW717fulllegal60prelude sourceblind families, initialqtyconstant cancels inpairedgains; twofullydisjointRNGsets averaged BEFOREselection, allendpoints beforeNEWdev. Allclippedpricealiases explicitsources notnewgames. No source/humanfitness oruniversalvalueproof."
+}

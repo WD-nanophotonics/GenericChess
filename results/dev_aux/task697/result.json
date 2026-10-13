@@ -1,0 +1,32 @@
+{
+  "status": "PASS_ALL_PAIRED_H12_CONTROL_CACHED_AND_NEW",
+  "counts": {
+    "games": 8448,
+    "actual_go": 94327,
+    "PV_moves": 1826530,
+    "Python_actual_actions": 187451,
+    "random_draws": 93124,
+    "sorted_legal_arrays": 93124,
+    "price_ACK_entries": 8576,
+    "batches": 168,
+    "proposal_rounds": 24,
+    "prefixes": 8448
+  },
+  "source_sha256": {
+    "695": {
+      "games.jsonl": "c2c5adc149335573f8beafe550f0ec85090d8d9934b81f144945b80aceceabd0",
+      "queries.jsonl": "5a60aeb652bc244d1676f33bace150c639c17ba54b36cde5bc658267bc3bcc34",
+      "price_acks.json": "1d5ba7315dd9d523af7c9ea3655f9c7020a0dca4729935384b492121d0042709",
+      "result.json": "614a0959990a905ff52568fa99a91a1686505bb4125554d4247f8bbd0badc49f"
+    },
+    "696": {
+      "games.jsonl": "f119bf6dbf01d649d7cbf38bec64228964659cdadd2bca3818839ced9ae90b86",
+      "queries.jsonl": "e377d8a29645e7afb6af91653942ecde0ef8d634586e8b73279b0a07d63eb69b",
+      "price_acks.json": "6c108a564b3172ed91ace543b30847aed0f93972780bb17afcf0df97e4950e31",
+      "result.json": "ad08744ace3b1f9051c10ae504dd70a3dae56f1d582855595e132ed6aa615ae0"
+    }
+  },
+  "new_go": 0,
+  "seconds": 347.30431560007855,
+  "scope": "ALL695/696NEWactualH24 paths plus exactqualified686cached full-vector source hashes independentPython rules/PV/fullhistory/metadata/material/terminal/RNG/legalarrays/reset/ACK plusALLphysicalH12prefix/count/fitness andALL24coordinateupdates/168logicalcandidates. H12-only objective on SAMEtwofullydisjointRNGsets averaged BEFOREselection, allBendpoints beforeNEWBdev; Adevalreadyexposed during Bexecution, exploratory pairedcomparison. Allclippedpricealiases explicitsources notnewgames. No source/humanfitness oruniversalvalueproof."
+}

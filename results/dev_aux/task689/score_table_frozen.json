@@ -1,0 +1,933 @@
+{
+  "status": "ALL_MULTI_HORIZON_DEV_SCORES_FROZEN",
+  "models": [
+    {
+      "start": "unit",
+      "initial": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        1440,
+        90,
+        180,
+        32,
+        180,
+        90,
+        0,
+        90,
+        360,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "accepted": 5,
+      "metrics": [
+        {
+          "metric": "meanqty",
+          "gain": "47/608",
+          "initial_mean": "231/608",
+          "endpoint_mean": "139/304",
+          "by_replica": [
+            {
+              "replica": 0,
+              "gain": "3/19"
+            },
+            {
+              "replica": 1,
+              "gain": "-1/304"
+            }
+          ],
+          "by_family": [
+            {
+              "family": 2026116016,
+              "gain": "-1/38"
+            },
+            {
+              "family": 2026116017,
+              "gain": "5/38"
+            },
+            {
+              "family": 2026116018,
+              "gain": "1/76"
+            },
+            {
+              "family": 2026116019,
+              "gain": "2/19"
+            },
+            {
+              "family": 2026116020,
+              "gain": "-1/19"
+            },
+            {
+              "family": 2026116021,
+              "gain": "1/38"
+            },
+            {
+              "family": 2026116022,
+              "gain": "5/38"
+            },
+            {
+              "family": 2026116023,
+              "gain": "11/38"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026116016,
+              "gain": "7/76"
+            },
+            {
+              "omit": 2026116017,
+              "gain": "37/532"
+            },
+            {
+              "omit": 2026116018,
+              "gain": "23/266"
+            },
+            {
+              "omit": 2026116019,
+              "gain": "39/532"
+            },
+            {
+              "omit": 2026116020,
+              "gain": "51/532"
+            },
+            {
+              "omit": 2026116021,
+              "gain": "45/532"
+            },
+            {
+              "omit": 2026116022,
+              "gain": "37/532"
+            },
+            {
+              "omit": 2026116023,
+              "gain": "25/532"
+            }
+          ]
+        },
+        {
+          "metric": "qty12",
+          "gain": "29/304",
+          "initial_mean": "59/304",
+          "endpoint_mean": "11/38",
+          "by_replica": [
+            {
+              "replica": 0,
+              "gain": "13/76"
+            },
+            {
+              "replica": 1,
+              "gain": "3/152"
+            }
+          ],
+          "by_family": [
+            {
+              "family": 2026116016,
+              "gain": "1/19"
+            },
+            {
+              "family": 2026116017,
+              "gain": "3/38"
+            },
+            {
+              "family": 2026116018,
+              "gain": "1/19"
+            },
+            {
+              "family": 2026116019,
+              "gain": "3/19"
+            },
+            {
+              "family": 2026116020,
+              "gain": "1/38"
+            },
+            {
+              "family": 2026116021,
+              "gain": "3/38"
+            },
+            {
+              "family": 2026116022,
+              "gain": "2/19"
+            },
+            {
+              "family": 2026116023,
+              "gain": "4/19"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026116016,
+              "gain": "27/266"
+            },
+            {
+              "omit": 2026116017,
+              "gain": "13/133"
+            },
+            {
+              "omit": 2026116018,
+              "gain": "27/266"
+            },
+            {
+              "omit": 2026116019,
+              "gain": "23/266"
+            },
+            {
+              "omit": 2026116020,
+              "gain": "2/19"
+            },
+            {
+              "omit": 2026116021,
+              "gain": "13/133"
+            },
+            {
+              "omit": 2026116022,
+              "gain": "25/266"
+            },
+            {
+              "omit": 2026116023,
+              "gain": "3/38"
+            }
+          ]
+        },
+        {
+          "metric": "qty24",
+          "gain": "9/152",
+          "initial_mean": "43/76",
+          "endpoint_mean": "5/8",
+          "by_replica": [
+            {
+              "replica": 0,
+              "gain": "11/76"
+            },
+            {
+              "replica": 1,
+              "gain": "-1/38"
+            }
+          ],
+          "by_family": [
+            {
+              "family": 2026116016,
+              "gain": "-2/19"
+            },
+            {
+              "family": 2026116017,
+              "gain": "7/38"
+            },
+            {
+              "family": 2026116018,
+              "gain": "-1/38"
+            },
+            {
+              "family": 2026116019,
+              "gain": "1/19"
+            },
+            {
+              "family": 2026116020,
+              "gain": "-5/38"
+            },
+            {
+              "family": 2026116021,
+              "gain": "-1/38"
+            },
+            {
+              "family": 2026116022,
+              "gain": "3/19"
+            },
+            {
+              "family": 2026116023,
+              "gain": "7/19"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026116016,
+              "gain": "11/133"
+            },
+            {
+              "omit": 2026116017,
+              "gain": "11/266"
+            },
+            {
+              "omit": 2026116018,
+              "gain": "1/14"
+            },
+            {
+              "omit": 2026116019,
+              "gain": "8/133"
+            },
+            {
+              "omit": 2026116020,
+              "gain": "23/266"
+            },
+            {
+              "omit": 2026116021,
+              "gain": "1/14"
+            },
+            {
+              "omit": 2026116022,
+              "gain": "6/133"
+            },
+            {
+              "omit": 2026116023,
+              "gain": "2/133"
+            }
+          ]
+        },
+        {
+          "metric": "common_fast",
+          "gain": "19/800",
+          "initial_mean": "9/800",
+          "endpoint_mean": "7/200",
+          "by_replica": [
+            {
+              "replica": 0,
+              "gain": "0"
+            },
+            {
+              "replica": 1,
+              "gain": "19/400"
+            }
+          ],
+          "by_family": [
+            {
+              "family": 2026116016,
+              "gain": "0"
+            },
+            {
+              "family": 2026116017,
+              "gain": "-7/100"
+            },
+            {
+              "family": 2026116018,
+              "gain": "0"
+            },
+            {
+              "family": 2026116019,
+              "gain": "3/25"
+            },
+            {
+              "family": 2026116020,
+              "gain": "3/50"
+            },
+            {
+              "family": 2026116021,
+              "gain": "2/25"
+            },
+            {
+              "family": 2026116022,
+              "gain": "0"
+            },
+            {
+              "family": 2026116023,
+              "gain": "0"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026116016,
+              "gain": "19/700"
+            },
+            {
+              "omit": 2026116017,
+              "gain": "13/350"
+            },
+            {
+              "omit": 2026116018,
+              "gain": "19/700"
+            },
+            {
+              "omit": 2026116019,
+              "gain": "1/100"
+            },
+            {
+              "omit": 2026116020,
+              "gain": "13/700"
+            },
+            {
+              "omit": 2026116021,
+              "gain": "11/700"
+            },
+            {
+              "omit": 2026116022,
+              "gain": "19/700"
+            },
+            {
+              "omit": 2026116023,
+              "gain": "19/700"
+            }
+          ]
+        },
+        {
+          "metric": "terminal",
+          "gain": "1",
+          "initial_mean": "3",
+          "endpoint_mean": "4",
+          "by_replica": [
+            {
+              "replica": 0,
+              "gain": "0"
+            },
+            {
+              "replica": 1,
+              "gain": "2"
+            }
+          ],
+          "by_family": [
+            {
+              "family": 2026116016,
+              "gain": "0"
+            },
+            {
+              "family": 2026116017,
+              "gain": "-16"
+            },
+            {
+              "family": 2026116018,
+              "gain": "0"
+            },
+            {
+              "family": 2026116019,
+              "gain": "8"
+            },
+            {
+              "family": 2026116020,
+              "gain": "8"
+            },
+            {
+              "family": 2026116021,
+              "gain": "8"
+            },
+            {
+              "family": 2026116022,
+              "gain": "0"
+            },
+            {
+              "family": 2026116023,
+              "gain": "0"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026116016,
+              "gain": "8/7"
+            },
+            {
+              "omit": 2026116017,
+              "gain": "24/7"
+            },
+            {
+              "omit": 2026116018,
+              "gain": "8/7"
+            },
+            {
+              "omit": 2026116019,
+              "gain": "0"
+            },
+            {
+              "omit": 2026116020,
+              "gain": "0"
+            },
+            {
+              "omit": 2026116021,
+              "gain": "0"
+            },
+            {
+              "omit": 2026116022,
+              "gain": "8/7"
+            },
+            {
+              "omit": 2026116023,
+              "gain": "8/7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "start": "random2514",
+      "initial": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "endpoint": [
+        0,
+        90,
+        151,
+        624,
+        544,
+        71,
+        55,
+        179,
+        0,
+        32,
+        342,
+        200,
+        345,
+        121,
+        32,
+        0
+      ],
+      "accepted": 8,
+      "metrics": [
+        {
+          "metric": "meanqty",
+          "gain": "71/608",
+          "initial_mean": "7/19",
+          "endpoint_mean": "295/608",
+          "by_replica": [
+            {
+              "replica": 0,
+              "gain": "1/8"
+            },
+            {
+              "replica": 1,
+              "gain": "33/304"
+            }
+          ],
+          "by_family": [
+            {
+              "family": 2026116016,
+              "gain": "7/76"
+            },
+            {
+              "family": 2026116017,
+              "gain": "33/76"
+            },
+            {
+              "family": 2026116018,
+              "gain": "1/19"
+            },
+            {
+              "family": 2026116019,
+              "gain": "-11/76"
+            },
+            {
+              "family": 2026116020,
+              "gain": "9/38"
+            },
+            {
+              "family": 2026116021,
+              "gain": "-3/76"
+            },
+            {
+              "family": 2026116022,
+              "gain": "5/76"
+            },
+            {
+              "family": 2026116023,
+              "gain": "9/38"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026116016,
+              "gain": "16/133"
+            },
+            {
+              "omit": 2026116017,
+              "gain": "1/14"
+            },
+            {
+              "omit": 2026116018,
+              "gain": "67/532"
+            },
+            {
+              "omit": 2026116019,
+              "gain": "41/266"
+            },
+            {
+              "omit": 2026116020,
+              "gain": "53/532"
+            },
+            {
+              "omit": 2026116021,
+              "gain": "37/266"
+            },
+            {
+              "omit": 2026116022,
+              "gain": "33/266"
+            },
+            {
+              "omit": 2026116023,
+              "gain": "53/532"
+            }
+          ]
+        },
+        {
+          "metric": "qty12",
+          "gain": "15/152",
+          "initial_mean": "65/304",
+          "endpoint_mean": "5/16",
+          "by_replica": [
+            {
+              "replica": 0,
+              "gain": "9/76"
+            },
+            {
+              "replica": 1,
+              "gain": "3/38"
+            }
+          ],
+          "by_family": [
+            {
+              "family": 2026116016,
+              "gain": "3/38"
+            },
+            {
+              "family": 2026116017,
+              "gain": "7/19"
+            },
+            {
+              "family": 2026116018,
+              "gain": "0"
+            },
+            {
+              "family": 2026116019,
+              "gain": "-3/38"
+            },
+            {
+              "family": 2026116020,
+              "gain": "3/19"
+            },
+            {
+              "family": 2026116021,
+              "gain": "-1/38"
+            },
+            {
+              "family": 2026116022,
+              "gain": "5/38"
+            },
+            {
+              "family": 2026116023,
+              "gain": "3/19"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026116016,
+              "gain": "27/266"
+            },
+            {
+              "omit": 2026116017,
+              "gain": "8/133"
+            },
+            {
+              "omit": 2026116018,
+              "gain": "15/133"
+            },
+            {
+              "omit": 2026116019,
+              "gain": "33/266"
+            },
+            {
+              "omit": 2026116020,
+              "gain": "12/133"
+            },
+            {
+              "omit": 2026116021,
+              "gain": "31/266"
+            },
+            {
+              "omit": 2026116022,
+              "gain": "25/266"
+            },
+            {
+              "omit": 2026116023,
+              "gain": "12/133"
+            }
+          ]
+        },
+        {
+          "metric": "qty24",
+          "gain": "41/304",
+          "initial_mean": "159/304",
+          "endpoint_mean": "25/38",
+          "by_replica": [
+            {
+              "replica": 0,
+              "gain": "5/38"
+            },
+            {
+              "replica": 1,
+              "gain": "21/152"
+            }
+          ],
+          "by_family": [
+            {
+              "family": 2026116016,
+              "gain": "2/19"
+            },
+            {
+              "family": 2026116017,
+              "gain": "1/2"
+            },
+            {
+              "family": 2026116018,
+              "gain": "2/19"
+            },
+            {
+              "family": 2026116019,
+              "gain": "-4/19"
+            },
+            {
+              "family": 2026116020,
+              "gain": "6/19"
+            },
+            {
+              "family": 2026116021,
+              "gain": "-1/19"
+            },
+            {
+              "family": 2026116022,
+              "gain": "0"
+            },
+            {
+              "family": 2026116023,
+              "gain": "6/19"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026116016,
+              "gain": "37/266"
+            },
+            {
+              "omit": 2026116017,
+              "gain": "11/133"
+            },
+            {
+              "omit": 2026116018,
+              "gain": "37/266"
+            },
+            {
+              "omit": 2026116019,
+              "gain": "7/38"
+            },
+            {
+              "omit": 2026116020,
+              "gain": "29/266"
+            },
+            {
+              "omit": 2026116021,
+              "gain": "43/266"
+            },
+            {
+              "omit": 2026116022,
+              "gain": "41/266"
+            },
+            {
+              "omit": 2026116023,
+              "gain": "29/266"
+            }
+          ]
+        },
+        {
+          "metric": "common_fast",
+          "gain": "0",
+          "initial_mean": "3/100",
+          "endpoint_mean": "3/100",
+          "by_replica": [
+            {
+              "replica": 0,
+              "gain": "0"
+            },
+            {
+              "replica": 1,
+              "gain": "0"
+            }
+          ],
+          "by_family": [
+            {
+              "family": 2026116016,
+              "gain": "-1/100"
+            },
+            {
+              "family": 2026116017,
+              "gain": "0"
+            },
+            {
+              "family": 2026116018,
+              "gain": "-3/50"
+            },
+            {
+              "family": 2026116019,
+              "gain": "2/25"
+            },
+            {
+              "family": 2026116020,
+              "gain": "-3/50"
+            },
+            {
+              "family": 2026116021,
+              "gain": "1/25"
+            },
+            {
+              "family": 2026116022,
+              "gain": "0"
+            },
+            {
+              "family": 2026116023,
+              "gain": "1/100"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026116016,
+              "gain": "1/700"
+            },
+            {
+              "omit": 2026116017,
+              "gain": "0"
+            },
+            {
+              "omit": 2026116018,
+              "gain": "3/350"
+            },
+            {
+              "omit": 2026116019,
+              "gain": "-2/175"
+            },
+            {
+              "omit": 2026116020,
+              "gain": "3/350"
+            },
+            {
+              "omit": 2026116021,
+              "gain": "-1/175"
+            },
+            {
+              "omit": 2026116022,
+              "gain": "0"
+            },
+            {
+              "omit": 2026116023,
+              "gain": "-1/700"
+            }
+          ]
+        },
+        {
+          "metric": "terminal",
+          "gain": "1",
+          "initial_mean": "5",
+          "endpoint_mean": "6",
+          "by_replica": [
+            {
+              "replica": 0,
+              "gain": "2"
+            },
+            {
+              "replica": 1,
+              "gain": "0"
+            }
+          ],
+          "by_family": [
+            {
+              "family": 2026116016,
+              "gain": "-8"
+            },
+            {
+              "family": 2026116017,
+              "gain": "0"
+            },
+            {
+              "family": 2026116018,
+              "gain": "-8"
+            },
+            {
+              "family": 2026116019,
+              "gain": "16"
+            },
+            {
+              "family": 2026116020,
+              "gain": "-8"
+            },
+            {
+              "family": 2026116021,
+              "gain": "8"
+            },
+            {
+              "family": 2026116022,
+              "gain": "0"
+            },
+            {
+              "family": 2026116023,
+              "gain": "8"
+            }
+          ],
+          "leave_one": [
+            {
+              "omit": 2026116016,
+              "gain": "16/7"
+            },
+            {
+              "omit": 2026116017,
+              "gain": "8/7"
+            },
+            {
+              "omit": 2026116018,
+              "gain": "16/7"
+            },
+            {
+              "omit": 2026116019,
+              "gain": "-8/7"
+            },
+            {
+              "omit": 2026116020,
+              "gain": "16/7"
+            },
+            {
+              "omit": 2026116021,
+              "gain": "0"
+            },
+            {
+              "omit": 2026116022,
+              "gain": "8/7"
+            },
+            {
+              "omit": 2026116023,
+              "gain": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source_sha256": "a9dae88d4093e12bd659534c4c96328126987dcff3a29cd0b2d11906f453c2a9",
+  "reference_read_here": false,
+  "new_go": 0,
+  "scope": "ALLinitial+endpoint32cells perprofile onpreassignedNEW8devfamilies/twofixedRNG, allmean/H12/H24/commonfast/terminal/family omissions. Models/endpointshavefrozenbeforephysicaldev; quantitativegain table beforeanydescriptive reference. Independent688fullphysicalaudit required forfinalclaim. Comparative692H12-onlycontrolplan frozenbefore685dev; do notusegains toselectbaseline/conditions."
+}

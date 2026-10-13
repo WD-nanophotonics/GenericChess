@@ -1,0 +1,1663 @@
+{
+  "status": "COMPLETE",
+  "actual_games": 128,
+  "actual_go": 1508,
+  "rows": [
+    {
+      "names": [
+        "unit-initial"
+      ],
+      "batch": {
+        "weights": [
+          0,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          0,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          0
+        ],
+        "objective": "actual_two_draw_quantity12_24",
+        "mean_goal": "231/608",
+        "goals": [
+          "11/19",
+          "11/19",
+          "6/19",
+          "6/19",
+          "4/19",
+          "8/19",
+          "2/19",
+          "7/19",
+          "6/19",
+          "5/19",
+          "6/19",
+          "7/19",
+          "9/19",
+          "13/19",
+          "1/19",
+          "1/19",
+          "12/19",
+          "6/19",
+          "7/19",
+          "8/19",
+          "6/19",
+          "11/19",
+          "9/19",
+          "11/19",
+          "11/19",
+          "7/19",
+          "6/19",
+          "3/19",
+          "0",
+          "11/19",
+          "12/19",
+          "8/19"
+        ],
+        "quantity12": [
+          6,
+          6,
+          6,
+          2,
+          0,
+          4,
+          0,
+          4,
+          2,
+          0,
+          2,
+          4,
+          6,
+          8,
+          0,
+          0,
+          8,
+          2,
+          2,
+          4,
+          2,
+          8,
+          4,
+          8,
+          6,
+          2,
+          2,
+          2,
+          0,
+          6,
+          8,
+          4
+        ],
+        "quantity24": [
+          16,
+          16,
+          6,
+          10,
+          8,
+          12,
+          4,
+          10,
+          10,
+          10,
+          10,
+          10,
+          12,
+          18,
+          2,
+          2,
+          16,
+          10,
+          12,
+          12,
+          10,
+          14,
+          14,
+          14,
+          16,
+          12,
+          10,
+          4,
+          0,
+          16,
+          16,
+          12
+        ],
+        "terminations": [
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 1
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          }
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 1
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 2
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 3
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 4
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 5
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 6
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 7
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 8
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 9
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 10
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 11
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 12
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 13
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 14
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 15
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 16
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 17
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 18
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 19
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 20
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 21
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 22
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 23
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 24
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 25
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 26
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 27
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 28
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 29
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 30
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 31
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 32
+          }
+        ]
+      }
+    },
+    {
+      "names": [
+        "random2514-initial"
+      ],
+      "batch": {
+        "weights": [
+          0,
+          90,
+          151,
+          78,
+          68,
+          284,
+          109,
+          716,
+          0,
+          80,
+          171,
+          200,
+          345,
+          121,
+          55,
+          0
+        ],
+        "objective": "actual_two_draw_quantity12_24",
+        "mean_goal": "7/19",
+        "goals": [
+          "10/19",
+          "12/19",
+          "3/19",
+          "4/19",
+          "9/19",
+          "8/19",
+          "8/19",
+          "9/19",
+          "3/19",
+          "7/19",
+          "10/19",
+          "5/19",
+          "9/19",
+          "6/19",
+          "6/19",
+          "3/19",
+          "13/19",
+          "5/19",
+          "6/19",
+          "4/19",
+          "9/19",
+          "9/19",
+          "9/19",
+          "10/19",
+          "4/19",
+          "3/19",
+          "5/19",
+          "3/19",
+          "5/19",
+          "8/19",
+          "9/19",
+          "10/19"
+        ],
+        "quantity12": [
+          6,
+          8,
+          2,
+          0,
+          6,
+          6,
+          4,
+          6,
+          2,
+          4,
+          6,
+          2,
+          4,
+          2,
+          4,
+          2,
+          8,
+          2,
+          4,
+          2,
+          6,
+          6,
+          6,
+          6,
+          4,
+          0,
+          2,
+          2,
+          2,
+          6,
+          4,
+          6
+        ],
+        "quantity24": [
+          14,
+          16,
+          4,
+          8,
+          12,
+          10,
+          12,
+          12,
+          4,
+          10,
+          14,
+          8,
+          14,
+          10,
+          8,
+          4,
+          18,
+          8,
+          8,
+          6,
+          12,
+          12,
+          12,
+          14,
+          4,
+          6,
+          8,
+          4,
+          8,
+          10,
+          14,
+          14
+        ],
+        "terminations": [
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 1
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 1
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          }
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 33
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 34
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 35
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 36
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 37
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 38
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 39
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 40
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 41
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 42
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 43
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 44
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 45
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 46
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 47
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 48
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 49
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 50
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 51
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 52
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 53
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 54
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 55
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 56
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 57
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 58
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 59
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 60
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 61
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 62
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 63
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 64
+          }
+        ]
+      }
+    },
+    {
+      "names": [
+        "unit-endpoint"
+      ],
+      "batch": {
+        "weights": [
+          0,
+          90,
+          1440,
+          90,
+          180,
+          32,
+          180,
+          90,
+          0,
+          90,
+          360,
+          90,
+          90,
+          90,
+          90,
+          0
+        ],
+        "objective": "actual_two_draw_quantity12_24",
+        "mean_goal": "139/304",
+        "goals": [
+          "8/19",
+          "11/19",
+          "8/19",
+          "13/19",
+          "8/19",
+          "9/19",
+          "11/19",
+          "11/19",
+          "12/19",
+          "4/19",
+          "5/19",
+          "9/19",
+          "5/19",
+          "13/19",
+          "13/19",
+          "11/19",
+          "14/19",
+          "5/19",
+          "3/19",
+          "13/19",
+          "2/19",
+          "11/19",
+          "6/19",
+          "9/19",
+          "6/19",
+          "3/19",
+          "4/19",
+          "6/19",
+          "15/19",
+          "10/19",
+          "13/19",
+          "7/19"
+        ],
+        "quantity12": [
+          6,
+          8,
+          2,
+          8,
+          4,
+          6,
+          8,
+          8,
+          10,
+          0,
+          4,
+          8,
+          4,
+          8,
+          12,
+          6,
+          10,
+          2,
+          2,
+          8,
+          0,
+          8,
+          6,
+          6,
+          2,
+          0,
+          2,
+          2,
+          10,
+          6,
+          8,
+          2
+        ],
+        "quantity24": [
+          10,
+          14,
+          14,
+          18,
+          12,
+          12,
+          14,
+          14,
+          14,
+          8,
+          6,
+          10,
+          6,
+          18,
+          14,
+          16,
+          18,
+          8,
+          4,
+          18,
+          4,
+          14,
+          6,
+          12,
+          10,
+          6,
+          6,
+          10,
+          20,
+          14,
+          18,
+          12
+        ],
+        "terminations": [
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          }
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 65
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 66
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 67
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 68
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 69
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 70
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 71
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 72
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 73
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 74
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 75
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 76
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 77
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 78
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 79
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 80
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 81
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 82
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 83
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 84
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 85
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 86
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 87
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 88
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 89
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 90
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 91
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 92
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 93
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 94
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 95
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 96
+          }
+        ]
+      }
+    },
+    {
+      "names": [
+        "random2514-endpoint"
+      ],
+      "batch": {
+        "weights": [
+          0,
+          90,
+          151,
+          624,
+          544,
+          71,
+          55,
+          179,
+          0,
+          32,
+          342,
+          200,
+          345,
+          121,
+          32,
+          0
+        ],
+        "objective": "actual_two_draw_quantity12_24",
+        "mean_goal": "295/608",
+        "goals": [
+          "15/19",
+          "13/19",
+          "16/19",
+          "11/19",
+          "10/19",
+          "11/19",
+          "7/19",
+          "6/19",
+          "10/19",
+          "4/19",
+          "2/19",
+          "3/19",
+          "4/19",
+          "13/19",
+          "13/19",
+          "12/19",
+          "11/19",
+          "8/19",
+          "11/19",
+          "12/19",
+          "7/19",
+          "11/19",
+          "4/19",
+          "8/19",
+          "14/19",
+          "7/19",
+          "5/19",
+          "10/19",
+          "8/19",
+          "8/19",
+          "14/19",
+          "7/19"
+        ],
+        "quantity12": [
+          10,
+          8,
+          12,
+          8,
+          6,
+          6,
+          6,
+          4,
+          10,
+          0,
+          0,
+          2,
+          2,
+          10,
+          8,
+          8,
+          8,
+          4,
+          8,
+          8,
+          4,
+          8,
+          0,
+          6,
+          10,
+          2,
+          2,
+          6,
+          8,
+          4,
+          10,
+          2
+        ],
+        "quantity24": [
+          20,
+          18,
+          20,
+          14,
+          14,
+          16,
+          8,
+          8,
+          10,
+          8,
+          4,
+          4,
+          6,
+          16,
+          18,
+          16,
+          14,
+          12,
+          14,
+          16,
+          10,
+          14,
+          8,
+          10,
+          18,
+          12,
+          8,
+          14,
+          8,
+          12,
+          18,
+          12
+        ],
+        "terminations": [
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 1
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 1
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 1
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 1
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "checkmate",
+            "winner": 0
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          },
+          {
+            "kind": "cap24",
+            "winner": null
+          }
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 97
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 98
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 99
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 100
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 101
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 102
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 103
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 104
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 105
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 106
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 107
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 108
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 109
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 110
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 111
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 112
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 113
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 114
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 115
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 116
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 117
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 118
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 119
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 120
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 121
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 122
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 123
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 124
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 125
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 126
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 127
+          },
+          {
+            "file": "results/dev_aux/task687/games.jsonl",
+            "line": 128
+          }
+        ]
+      }
+    }
+  ],
+  "profiles": [
+    {
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "names": [
+        "unit-initial"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "names": [
+        "random2514-initial"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        1440,
+        90,
+        180,
+        32,
+        180,
+        90,
+        0,
+        90,
+        360,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "names": [
+        "unit-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        151,
+        624,
+        544,
+        71,
+        55,
+        179,
+        0,
+        32,
+        342,
+        200,
+        345,
+        121,
+        32,
+        0
+      ],
+      "names": [
+        "random2514-endpoint"
+      ]
+    }
+  ],
+  "endpoint_freeze": {
+    "before_any_new_development": true,
+    "endpoint_sha256": "56c2e0f86e56ce073832b23b0efe4f2f2881f24145f31e3d13e47c7e2c7afbb5"
+  },
+  "seconds": 437.4529999997467,
+  "scope": "NEW682premise/68416train8devpreassignedfreshfamilies; onepass12native-ID-order coordinategrids baselinefirststrictpositive, max9344fit128devH24shortgames expected8-12min/900wholefuse. DifferentH/goal/RNG/rootcondition than670, notoldfitextension/equalcostorisolatedcausality. All2endpoints BEFOREanydevelopment/reference; ALLinitial/endpoints physicallyevaluatedonNEWdev. No human/sourcefitness/root/axis/model/stop selection; preserveallfailed/negative/unfinished, no primary/default/UI/newworkers/fees."
+}

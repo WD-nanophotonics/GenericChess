@@ -1,0 +1,26 @@
+{
+  "status": "PASS_ALL_ACTUAL_12_AXIS_ROLLBACKS",
+  "counts": {
+    "games": 2048,
+    "actual_go": 23240,
+    "PV_moves": 459931,
+    "Python_actual_actions": 46280,
+    "random_draws": 23040,
+    "sorted_legal_arrays": 23040,
+    "price_ACK_entries": 2048,
+    "batches": 0,
+    "proposal_rounds": 0,
+    "prefixes": 2048
+  },
+  "source_sha256": {
+    "701": {
+      "games.jsonl": "fc5890c47073282029004493050191ca363b4264de1f1536cbf397362ae4bdb9",
+      "queries.jsonl": "ec44a242b23b582c5f0427dddbe02e748e59563ae836ea77c7fb50ab5a864aa9",
+      "price_acks.json": "2be096b29ddc573a94fc3263733ede32f250cce04eee01aacc8b5d6cd3bc7493",
+      "result.json": "754f205d2bfad395b964d472c4d390e2ef00d158d3545adcd05af836849a3d3e"
+    }
+  },
+  "new_go": 0,
+  "seconds": 77.14107930008322,
+  "scope": "ALL701actualH24 paths independentPython rules/PV/fullhistory/metadata/material/terminal/RNG/legalarrays/reset/ACK plusALLphysicalH12prefix/count/fitness and ALL48logicalrollbacks/4endpoints/2initials, exactfullvectoraliases. TwofullydisjointRNGsets averaged BEFOREselection, allprofiles beforeexploratory675geometry probes. Allclippedpricealiases explicitsources notnewgames. No source/humanfitness oruniversalvalueproof."
+}
