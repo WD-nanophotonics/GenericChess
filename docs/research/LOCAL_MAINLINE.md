@@ -26,30 +26,37 @@ roots, not claimed improved end-to-end or an independently reproduced user loss.
 
 ## Current measured question
 
-ORDINARY_Q_ORDERING.md tests existing ordering only outside check, retaining
-lexical evasions. Eight fresh movement-mixture roots close64calls/32pairs:
-4deeper,28same,0lower; same-depth fulltuples exact, alltime exits/nohard8,
-fullroot/history restored. No universal stability or default/UI adoption.
-On1455,16s lexicalD1 selects a move with2 immediate mating replies among59;
-mixedD2 selects a move with0 among5. IndependentCore ALLreply/PV replays and
-sameparentD2q4 forcedbranches qualify this finite tactical difference, not WDL.
-1403 sameparentD3 forced1913/2071 has conditionalregret158; oldhard8 remains.
+MIXED_Q_PUBLIC_API.md delivers the ordinary-only q orderer through an appended
+explicit SearchTuning field. Final2,328 active checks, actual before-source
+8call default/all-q parity, scoped mate/type-effect/hardabort/cancel recovery
+and4existingpublicNativeavailability optin calls qualify the small interface.
+Old defaults/UI/PVS/nativeABI remain. No duplicate provider is added: reuse
+use_native_semantic_availability=True; normal Core availability is supported too,
+but1455 mixed16s remainsD1 withoutthatoptionalbackend (Native routeD2/6449).
 
-Two explanatoryD2 profiles locate discardedquietdrop Core bookkeeping; existing
-guardedexclusion shadow9268 passes, but8mixed16/64cells allsameD2/D3fulltuples.
-Keep that seam private, no unchanged scaling. Currentmixedordering remains a
-private useful feasibility candidate; next examine one relevant supported-caller
-integration/qualification question, not more budgets or newengines/caches.
-Dot fixedsource review adopts stage-intervention versus unique-cause distinction;
-checked boundary abort precedes localorder and ordinaryorder changeswindows.
+The new4freshrule PVS x qscope plane accounts for64cells:48actual plus16unavailable
+1511 retained withoutreplacement. All24PVS/24qscope fulltuples agree/no extra
+horizon/action; exits28time/4hard8/16rootwins. IndependentCore replay ofALL48
+PVs andfullroot/history restoration pass.16fixedD2/D4 controls show PVS qwork
+saves10–12percent on1512 butgrows1.71percent in1514mixed; no universaladoption.
+OnecurrentmixedD4 profile has68930pushes/12820q; classification/fullchildcommit
+remainlarge, whileXOR/nonboardmap smallcomponents defernewtoken/cacheengineering.
+Do not rerun oldquietdrop/sharedcheck negativeplanes withoutchangedpremise.
 
-HISTORY_ACTION_CACHE.md/f88 remains testedproduction: trustedCore/session or
-successfulpublicreplay, finalprior2319fulltests. Current7b source unchanged.
-AUX29 fixed14f is report-read/arithmetic-only48rows/4882games/55616go, notbinary/
-training/PV reproduction. Warm53.39percentfitwallchange alsochangestrajectories;
-priceidentification remainsopen. LatestauxDot advice recommends zerogo same-root/
-color cross-price terminal feedback with DRAW distinctfromunfinished; unpublished
-518/526 summary is not PRIMARY verifieddata. No humanfitting/primarymerge.
+ORDINARY_Q_ORDERING.md remains immutable prior64call/32pair4deeper28same0lower
+andfinite1455 immediate-mate distinction, not fullWDL. Itsprivatecandidate is now
+a supportedoptin withexplicitconsumer/backend limits, not universalhard8immunity.
+HISTORY_ACTION_CACHE.md/f88 productionhistoryrepair remains intact.
+Next choose one substantial requiredactualq classification/commit operation,
+not budgetextension/newengine/tinyhashoptimization or a genericstrengthcampaign.
+
+DEV_AUX latestpublished source stays14f/report29, previously48arithmeticrows
+checked only. New31resume thread reports closed533/534 andpartial535 underold
+expired532wallclock; no resets/full8endpoint claim. Theseunpublished numbers are
+attributedsummary, not primaryverifieddata. NewDotcontroller advice requires
+sameboard/differentlegalhistory terminal-before-go/RNG andexactorderedaction/RNG
+parity; adoptasinterpretation, no duplicateauxwork. Its pooling/diversefamilies
+price direction is a hypothesis forlaterline, no newauthority/humanfitting.
 
 ## Prior selections and preserved limits
 

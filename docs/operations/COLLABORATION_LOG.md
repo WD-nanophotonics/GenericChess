@@ -1451,3 +1451,41 @@ Actual PRIMARY segment ends62.452min/originalUTC00:07:20.774265→01:09:47.87090
 83calls closed;64relevantpublisherpasses, fullremote96953355 verified. Science
 OPEN, nextexplicitmixedcaller option prepared. Firstmissingtestpath publication
 failedbeforepush andwascorrected; no hiddenblock or requireduseraction.
+
+## PRIMARY2026-10-13 resumed mixed-q interface segment
+
+User explicitly resumes the paused PRIMARY work and existing90-minute heartbeat.
+PRIMARY retains pause/send-rejection history; obsolete unsent cancellation is not
+resent. Sole sandbox writer remains PRIMARY, no extraAgent or duplicateaux start.
+
+PRIMARY delivers one appended q-scope flag and passes2,328 active tests.86 actual
+research search calls cover old-source parity, public1455,48freshfactor cells,
+16fixed controls,1profile,8normalCore and4existingpublicNativeactivation calls.
+No newengine/provider/default/UI policy. Freshplane gainsno retainedhorizon/action;
+PVS fixedwork varies, and missingoptionalavailability removes the old1455 gain.
+IndependentCore replays all48 retainedPV records. Requiredhistory/errors remain.
+
+DEV_AUX remains user-established on sidemission. Fixedremote14f still hasreport29;
+no newpublishedsource is merged or treatedas independentlyverifiedtraining.
+Newauxresume channelroot andcompleteDotthread are read: retainedclosed533/534,
+partial535 andunexecuted536/537, no originalclock reset. Theseare auxreported
+unpublished results, not PRIMARY rawgame/engineverification. Dot independently
+readpublished29 only; newcontroller/history/RNG andpooling advice is methodological.
+PRIMARY adopts the first as a boundary for cost interpretation, retains pooling
+as laterhypothesis, anddoesnotduplicateauxsearch/training orwriteitsfiles.
+
+Coordination uses actualnewchannelroots/allrelevantcompletedthreads, simple
+PRIMARY_SANDBOX/DEV_AUX/DOT routing, fixedGitlinks andsource/evidence distinction.
+No observed boundaryconflict, duplicatework request or routine receipt loop.
+Efficiency evidence:auxresults reuse/reportreading without go; existingpublic
+Native option avoids a duplicatehelper; measuredtinyXOR/map costs deferengineering.
+No claim ofglobalcollaboration efficiency, guaranteedwake orunseenprojectstate.
+
+Handlingcorrections:3newtests initially assumed noRuntimeinitialhistorysentinel,
+corrected toactualsnapshot; originaltests retained. Automaticreview rejected first
+oldsource launch beforeexecution onover-one-hour estimate; bounded8x30sec
+alternative accepted/completed. Windowscommand-length206 while savingrawSlack
+was resolved withboundedchunks andactualJSONrecord; no evidence fabricated.
+No SAC/systemexecution block or necessaryuser intervention inthissegment.
+RawSlack/accounts/XML/hostprofiles/privateinputs/binaries excludedfrompublication.
+The segment remainsactive; publication is acheckpoint, notits ending.

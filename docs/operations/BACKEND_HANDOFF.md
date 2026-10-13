@@ -143,3 +143,29 @@ Private shared-check transport and public PVS/q-ordering experiments do not chan
 engine defaults. Scope, negative completion results and restored temporary-test
 validation: ../research/CORE_CHECK_TRANSPORT.md; correctness witness/tests:
 ../research/HISTORY_ACTION_CACHE.md.
+
+## Mixed q ordering opt-in —2026-10-13
+
+`SearchTuning(use_ordered_qsearch=True, use_ordered_qsearch_in_check=False)`
+orders ordinary q nodes with the existing orderer and keeps checked evasions
+lexical. The appended field preserves old positional fields; old all-q flags and
+default lexical behavior remain. This Python-only change needs consumer process
+restart, not a new Native rebuild beyond earlier documented layout changes.
+
+For the measured optional Native terminal route, use the already supported
+`AlphaBetaPlayer(..., use_native_semantic_availability=True, tuning=tuning)`;
+no scripts helper or private function replacement is required. Core still owns
+complete history/adjudication, and unsupported providers retain Core fallback.
+The flag is default-off and custom availability callbacks take precedence.
+These measurements use the Native semantic evaluator and fixed rule-derived
+weights; a different evaluator is a different condition.
+
+Four real public-flag calls reproduce helper full choices/tree work, with
+actual Native availability counters. Without the optional callback, the measured
+1455 mixed16s horizon gain disappears. The new four-root PVS/mixed plane adds no
+retained-depth/action gain; every negative/unavailable result is retained.
+Final2,328 active checks pass, including cancellation, implicit type effects,
+quiet checking drops and the hard checked boundary. No UI Test/default/PVS
+policy change or independent Native q4 capability follows. Complete activation,
+finite limits, actual before-source parity and archived evidence:
+../research/MIXED_Q_PUBLIC_API.md.

@@ -49,3 +49,8 @@ class SearchTuning:
     # Opt-in output contract: validate a complete cached principal line or
     # replay its nodes. Non-principal TT cutoffs remain available.
     require_full_pv: bool = False
+
+    # Scope of opt-in q ordering. False preserves lexical check evasions while
+    # ordinary q actions use the existing orderer. Ignored when q ordering is off.
+    # True retains the historical all-q behavior; defaults do not enable ordering.
+    use_ordered_qsearch_in_check: bool = True
