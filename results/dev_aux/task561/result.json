@@ -1,0 +1,46 @@
+{
+  "status": "PASS_RETAINED_FIRST8",
+  "actual_new_go": 0,
+  "first_attempt_complete_games": 8,
+  "pairs": [
+    {
+      "case": 0,
+      "non_time_equal": true,
+      "game_seconds": {
+        "separate": 0.4059999999590218,
+        "batched": 0.42200000025331974
+      },
+      "go": 24
+    },
+    {
+      "case": 1,
+      "non_time_equal": true,
+      "game_seconds": {
+        "batched": 0.4059999999590218,
+        "separate": 0.4369999999180436
+      },
+      "go": 24
+    },
+    {
+      "case": 2,
+      "non_time_equal": true,
+      "game_seconds": {
+        "separate": 0.42199999978765845,
+        "batched": 0.4059999999590218
+      },
+      "go": 24
+    },
+    {
+      "case": 3,
+      "non_time_equal": true,
+      "game_seconds": {
+        "batched": 0.4380000000819564,
+        "separate": 0.39099999982863665
+      },
+      "go": 24
+    }
+  ],
+  "orphan_queries_retained": 10,
+  "scope": "Supplementfirst4transportpairs whoseouterstartup/ACK arrays were lostbeforeoriginalNameError; allretainednon-time rawgame/query outputs equal. Per-game timerretained; no fabricatedstartup/table/normalwholebatchsuccess. Final28pairsremainoriginal529 result.",
+  "seconds": 0.01134889991953969
+}

@@ -1,0 +1,3240 @@
+{
+  "status": "PASS_ACTUAL_RESPONSE_TABLE",
+  "source": {
+    "path": "results/dev_aux/task521/games.jsonl",
+    "sha256": "f310b80acf2d69890db4e2767b8a36baf2661b20a3e6efbd6a73783784bf017a"
+  },
+  "actual_games": 80,
+  "actual_prices": 5,
+  "root_color_opponent_rows": 16,
+  "table": [
+    {
+      "root_seed": 2026103880,
+      "color": 0,
+      "opponent": "random",
+      "cells": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-initial",
+            "pure_terminal-trained-unit-initial"
+          ],
+          "source_line": 41,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "16/19",
+          "raw_quantity": 16,
+          "plies": 24,
+          "trajectory_sha256": "6adf72cc7779ee647eaddceeb91a023fe263373ab9bd26d7fd4a018e378ea754",
+          "same_trajectory_as_initial": {
+            "unit": true,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            70,
+            116,
+            191,
+            70,
+            191,
+            116,
+            0,
+            71,
+            116,
+            116,
+            116,
+            116,
+            191,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-endpoint",
+            "pure_terminal-trained-unit-endpoint"
+          ],
+          "source_line": 49,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 16,
+          "plies": 23,
+          "trajectory_sha256": "a0485804b3924d650d4ef0ce2759476c060f473c0e5f37cdbd50ff6ed4acffa2",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-initial",
+            "pure_terminal-trained-random2514-initial"
+          ],
+          "source_line": 57,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 4,
+          "plies": 9,
+          "trajectory_sha256": "228e971916b18a0ae84f786e4a6c004860d900d3155263d31c8bf4f9a7343711",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            118,
+            100,
+            87,
+            81,
+            231,
+            919,
+            0,
+            37,
+            362,
+            94,
+            731,
+            155,
+            43,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-endpoint"
+          ],
+          "source_line": 65,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 4,
+          "plies": 9,
+          "trajectory_sha256": "35220ea4df5be3c1b338a8cfe194ff86a101961e84e56e93a798be418ca0369f",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            152,
+            48,
+            41,
+            284,
+            109,
+            1180,
+            0,
+            48,
+            171,
+            200,
+            345,
+            199,
+            55,
+            0
+          ],
+          "profile_names": [
+            "pure_terminal-trained-random2514-endpoint"
+          ],
+          "source_line": 73,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 4,
+          "plies": 9,
+          "trajectory_sha256": "883f1375cb08cd3ccc03ba99ee2f184558f563f3803c0e680258b9fa04edee17",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        }
+      ],
+      "distinct_terminal_scores": [
+        0,
+        32
+      ],
+      "distinct_true_outcomes": [
+        "UNFINISHED",
+        "WIN"
+      ],
+      "distinct_trajectories": 5,
+      "terminal_discriminates": true,
+      "terminal_tied_with_changed_trajectory": false,
+      "unfinished_quantity_discriminates": false
+    },
+    {
+      "root_seed": 2026103880,
+      "color": 0,
+      "opponent": "unit",
+      "cells": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-initial",
+            "pure_terminal-trained-unit-initial"
+          ],
+          "source_line": 1,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "0",
+          "raw_quantity": 0,
+          "plies": 24,
+          "trajectory_sha256": "916948698b9a644b67a8b9c956ebaf0c9930b931f7c5202b010bbd17c55dab0f",
+          "same_trajectory_as_initial": {
+            "unit": true,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            70,
+            116,
+            191,
+            70,
+            191,
+            116,
+            0,
+            71,
+            116,
+            116,
+            116,
+            116,
+            191,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-endpoint",
+            "pure_terminal-trained-unit-endpoint"
+          ],
+          "source_line": 9,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-2/19",
+          "raw_quantity": -2,
+          "plies": 24,
+          "trajectory_sha256": "e5d0f0a1365d1e66b0b3584909cde5036787d46a32c1624878cd3ce68be30df4",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-initial",
+            "pure_terminal-trained-random2514-initial"
+          ],
+          "source_line": 17,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-6/19",
+          "raw_quantity": -6,
+          "plies": 24,
+          "trajectory_sha256": "7ea47610141a636ca246a695c639067336726201ab0174ca4b725511080c7842",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            118,
+            100,
+            87,
+            81,
+            231,
+            919,
+            0,
+            37,
+            362,
+            94,
+            731,
+            155,
+            43,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-endpoint"
+          ],
+          "source_line": 25,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-2/19",
+          "raw_quantity": -2,
+          "plies": 24,
+          "trajectory_sha256": "e30c996fe5fd4062a630b12b04856d5bdb56b6e56b7132debaa0d611db53d504",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            152,
+            48,
+            41,
+            284,
+            109,
+            1180,
+            0,
+            48,
+            171,
+            200,
+            345,
+            199,
+            55,
+            0
+          ],
+          "profile_names": [
+            "pure_terminal-trained-random2514-endpoint"
+          ],
+          "source_line": 33,
+          "true_outcome": "LOSS",
+          "termination_kind": "checkmate",
+          "terminal_score": -32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": -8,
+          "plies": 20,
+          "trajectory_sha256": "939564ce818698d01c031010484ec831df39000f34bcdf731cecd7a3ba95fb25",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        }
+      ],
+      "distinct_terminal_scores": [
+        -32,
+        0
+      ],
+      "distinct_true_outcomes": [
+        "LOSS",
+        "UNFINISHED"
+      ],
+      "distinct_trajectories": 5,
+      "terminal_discriminates": true,
+      "terminal_tied_with_changed_trajectory": false,
+      "unfinished_quantity_discriminates": true
+    },
+    {
+      "root_seed": 2026103880,
+      "color": 1,
+      "opponent": "random",
+      "cells": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-initial",
+            "pure_terminal-trained-unit-initial"
+          ],
+          "source_line": 42,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 18,
+          "plies": 20,
+          "trajectory_sha256": "5b81dc7a06d203f48ee7a39caed89152fb59ef2f440b0bc0017d15f24052f6b6",
+          "same_trajectory_as_initial": {
+            "unit": true,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            70,
+            116,
+            191,
+            70,
+            191,
+            116,
+            0,
+            71,
+            116,
+            116,
+            116,
+            116,
+            191,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-endpoint",
+            "pure_terminal-trained-unit-endpoint"
+          ],
+          "source_line": 50,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 14,
+          "plies": 22,
+          "trajectory_sha256": "1ca4646763740a2eb4124c9125a76c8045edcbecdee4fae346b7a706906bbcff",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-initial",
+            "pure_terminal-trained-random2514-initial"
+          ],
+          "source_line": 58,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 4,
+          "plies": 8,
+          "trajectory_sha256": "03d3b467f3184f7c2e6562265fe8ab51ffb1a6b5f6c112c3bf515c0c2e4dd6b3",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            118,
+            100,
+            87,
+            81,
+            231,
+            919,
+            0,
+            37,
+            362,
+            94,
+            731,
+            155,
+            43,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-endpoint"
+          ],
+          "source_line": 66,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 6,
+          "plies": 8,
+          "trajectory_sha256": "9d2c78d0e2a767a570f29018d3c95d8be99cb7107e9419b4fe99f2f2473eac34",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            152,
+            48,
+            41,
+            284,
+            109,
+            1180,
+            0,
+            48,
+            171,
+            200,
+            345,
+            199,
+            55,
+            0
+          ],
+          "profile_names": [
+            "pure_terminal-trained-random2514-endpoint"
+          ],
+          "source_line": 74,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 4,
+          "plies": 8,
+          "trajectory_sha256": "03d3b467f3184f7c2e6562265fe8ab51ffb1a6b5f6c112c3bf515c0c2e4dd6b3",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        }
+      ],
+      "distinct_terminal_scores": [
+        32
+      ],
+      "distinct_true_outcomes": [
+        "WIN"
+      ],
+      "distinct_trajectories": 4,
+      "terminal_discriminates": false,
+      "terminal_tied_with_changed_trajectory": true,
+      "unfinished_quantity_discriminates": false
+    },
+    {
+      "root_seed": 2026103880,
+      "color": 1,
+      "opponent": "unit",
+      "cells": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-initial",
+            "pure_terminal-trained-unit-initial"
+          ],
+          "source_line": 2,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "0",
+          "raw_quantity": 0,
+          "plies": 24,
+          "trajectory_sha256": "916948698b9a644b67a8b9c956ebaf0c9930b931f7c5202b010bbd17c55dab0f",
+          "same_trajectory_as_initial": {
+            "unit": true,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            70,
+            116,
+            191,
+            70,
+            191,
+            116,
+            0,
+            71,
+            116,
+            116,
+            116,
+            116,
+            191,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-endpoint",
+            "pure_terminal-trained-unit-endpoint"
+          ],
+          "source_line": 10,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 0,
+          "plies": 24,
+          "trajectory_sha256": "3361c862ab37f5e2b379ce85f9195ed93914b930b99ae64a2a473cac451fdcaa",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-initial",
+            "pure_terminal-trained-random2514-initial"
+          ],
+          "source_line": 18,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-8/19",
+          "raw_quantity": -8,
+          "plies": 24,
+          "trajectory_sha256": "c442860b29cb1d4f47c2244c25c70101f01d543f5b218117413164b36b7130b7",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            118,
+            100,
+            87,
+            81,
+            231,
+            919,
+            0,
+            37,
+            362,
+            94,
+            731,
+            155,
+            43,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-endpoint"
+          ],
+          "source_line": 26,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-4/19",
+          "raw_quantity": -4,
+          "plies": 24,
+          "trajectory_sha256": "bc9426dd5045d85d085f6fbc883a3b9aba5b45fc322400cdeea8b2a5f428b561",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            152,
+            48,
+            41,
+            284,
+            109,
+            1180,
+            0,
+            48,
+            171,
+            200,
+            345,
+            199,
+            55,
+            0
+          ],
+          "profile_names": [
+            "pure_terminal-trained-random2514-endpoint"
+          ],
+          "source_line": 34,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": -6,
+          "plies": 20,
+          "trajectory_sha256": "c4907eafe369d2b161dd3867eea58020cc1092c6f419b04eb3b2aaba3d7e6791",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        }
+      ],
+      "distinct_terminal_scores": [
+        0,
+        32
+      ],
+      "distinct_true_outcomes": [
+        "UNFINISHED",
+        "WIN"
+      ],
+      "distinct_trajectories": 5,
+      "terminal_discriminates": true,
+      "terminal_tied_with_changed_trajectory": false,
+      "unfinished_quantity_discriminates": true
+    },
+    {
+      "root_seed": 2026103881,
+      "color": 0,
+      "opponent": "random",
+      "cells": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-initial",
+            "pure_terminal-trained-unit-initial"
+          ],
+          "source_line": 43,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "14/19",
+          "raw_quantity": 14,
+          "plies": 24,
+          "trajectory_sha256": "49a346fa86d88cae01c00eea7461e430e4b3fdd7eb9a7052f84d9cbf690374e6",
+          "same_trajectory_as_initial": {
+            "unit": true,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            70,
+            116,
+            191,
+            70,
+            191,
+            116,
+            0,
+            71,
+            116,
+            116,
+            116,
+            116,
+            191,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-endpoint",
+            "pure_terminal-trained-unit-endpoint"
+          ],
+          "source_line": 51,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 8,
+          "plies": 21,
+          "trajectory_sha256": "aaa84d09727d68d5a57fae0bd0cc9e49c2462ff49203b7f79d48c39dd6cec53d",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-initial",
+            "pure_terminal-trained-random2514-initial"
+          ],
+          "source_line": 59,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "14/19",
+          "raw_quantity": 14,
+          "plies": 24,
+          "trajectory_sha256": "d0ff3afa5718973ba38fcdfdadf5e5238d4c4d35bfab774ed6e8c26456d57db7",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            118,
+            100,
+            87,
+            81,
+            231,
+            919,
+            0,
+            37,
+            362,
+            94,
+            731,
+            155,
+            43,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-endpoint"
+          ],
+          "source_line": 67,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 10,
+          "plies": 21,
+          "trajectory_sha256": "636632650d8531d59c83e589fd17215de6cc1ff622b476e1c48e1e96d1599149",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            152,
+            48,
+            41,
+            284,
+            109,
+            1180,
+            0,
+            48,
+            171,
+            200,
+            345,
+            199,
+            55,
+            0
+          ],
+          "profile_names": [
+            "pure_terminal-trained-random2514-endpoint"
+          ],
+          "source_line": 75,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 2,
+          "plies": 13,
+          "trajectory_sha256": "ba28108f573c902324679b51542ada6cc788d75127841183667a8a14384be614",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        }
+      ],
+      "distinct_terminal_scores": [
+        0,
+        32
+      ],
+      "distinct_true_outcomes": [
+        "UNFINISHED",
+        "WIN"
+      ],
+      "distinct_trajectories": 5,
+      "terminal_discriminates": true,
+      "terminal_tied_with_changed_trajectory": false,
+      "unfinished_quantity_discriminates": false
+    },
+    {
+      "root_seed": 2026103881,
+      "color": 0,
+      "opponent": "unit",
+      "cells": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-initial",
+            "pure_terminal-trained-unit-initial"
+          ],
+          "source_line": 3,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-2/19",
+          "raw_quantity": -2,
+          "plies": 24,
+          "trajectory_sha256": "ef0ec3d470c765462964c056e222bb32120852fc06f9fd0c2871621c53cd50a0",
+          "same_trajectory_as_initial": {
+            "unit": true,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            70,
+            116,
+            191,
+            70,
+            191,
+            116,
+            0,
+            71,
+            116,
+            116,
+            116,
+            116,
+            191,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-endpoint",
+            "pure_terminal-trained-unit-endpoint"
+          ],
+          "source_line": 11,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-2/19",
+          "raw_quantity": -2,
+          "plies": 24,
+          "trajectory_sha256": "de070955e4d7f612f7d17c11176a2b091c20aacb19f049cd27ecf560daff2264",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-initial",
+            "pure_terminal-trained-random2514-initial"
+          ],
+          "source_line": 19,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-4/19",
+          "raw_quantity": -4,
+          "plies": 24,
+          "trajectory_sha256": "0e2be07e333fd10f8db9ac7f8e6ed6d8a72cee93830669d819cd4ab2a57080e2",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            118,
+            100,
+            87,
+            81,
+            231,
+            919,
+            0,
+            37,
+            362,
+            94,
+            731,
+            155,
+            43,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-endpoint"
+          ],
+          "source_line": 27,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-4/19",
+          "raw_quantity": -4,
+          "plies": 24,
+          "trajectory_sha256": "82b5fcedbc5eddb60934c217bad7c911b65fc28431e528d012691865990b5c96",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            152,
+            48,
+            41,
+            284,
+            109,
+            1180,
+            0,
+            48,
+            171,
+            200,
+            345,
+            199,
+            55,
+            0
+          ],
+          "profile_names": [
+            "pure_terminal-trained-random2514-endpoint"
+          ],
+          "source_line": 35,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": -6,
+          "plies": 21,
+          "trajectory_sha256": "3c377da21d653f61ed302f0fa9fbead4cda53a65d54da20ac3bd77ec7c686b94",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        }
+      ],
+      "distinct_terminal_scores": [
+        0,
+        32
+      ],
+      "distinct_true_outcomes": [
+        "UNFINISHED",
+        "WIN"
+      ],
+      "distinct_trajectories": 5,
+      "terminal_discriminates": true,
+      "terminal_tied_with_changed_trajectory": false,
+      "unfinished_quantity_discriminates": true
+    },
+    {
+      "root_seed": 2026103881,
+      "color": 1,
+      "opponent": "random",
+      "cells": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-initial",
+            "pure_terminal-trained-unit-initial"
+          ],
+          "source_line": 44,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "12/19",
+          "raw_quantity": 12,
+          "plies": 24,
+          "trajectory_sha256": "8fa3a905b15a9630ad40786e5946d56050ea41efa537c19bd56afeb049ca2ac1",
+          "same_trajectory_as_initial": {
+            "unit": true,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            70,
+            116,
+            191,
+            70,
+            191,
+            116,
+            0,
+            71,
+            116,
+            116,
+            116,
+            116,
+            191,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-endpoint",
+            "pure_terminal-trained-unit-endpoint"
+          ],
+          "source_line": 52,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "12/19",
+          "raw_quantity": 12,
+          "plies": 24,
+          "trajectory_sha256": "a07ea19e7af5482e1805eb7dd091c1edcee11626e65e1fcb2f8a72869d3881f3",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-initial",
+            "pure_terminal-trained-random2514-initial"
+          ],
+          "source_line": 60,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "12/19",
+          "raw_quantity": 12,
+          "plies": 24,
+          "trajectory_sha256": "d0c350596ebc57bb17c8e09376b76924228bfd1b9ff39564450070055822f55a",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            118,
+            100,
+            87,
+            81,
+            231,
+            919,
+            0,
+            37,
+            362,
+            94,
+            731,
+            155,
+            43,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-endpoint"
+          ],
+          "source_line": 68,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "10/19",
+          "raw_quantity": 10,
+          "plies": 24,
+          "trajectory_sha256": "14cc9364671561d10d4388404030ef07d1438adf24b79d3d5e1a951bf0959d3b",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            152,
+            48,
+            41,
+            284,
+            109,
+            1180,
+            0,
+            48,
+            171,
+            200,
+            345,
+            199,
+            55,
+            0
+          ],
+          "profile_names": [
+            "pure_terminal-trained-random2514-endpoint"
+          ],
+          "source_line": 76,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "8/19",
+          "raw_quantity": 8,
+          "plies": 24,
+          "trajectory_sha256": "421d64d0244f79ec372f6dcdf23e76312662f05afd5e56d363334d4d22b86965",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        }
+      ],
+      "distinct_terminal_scores": [
+        0
+      ],
+      "distinct_true_outcomes": [
+        "UNFINISHED"
+      ],
+      "distinct_trajectories": 5,
+      "terminal_discriminates": false,
+      "terminal_tied_with_changed_trajectory": true,
+      "unfinished_quantity_discriminates": true
+    },
+    {
+      "root_seed": 2026103881,
+      "color": 1,
+      "opponent": "unit",
+      "cells": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-initial",
+            "pure_terminal-trained-unit-initial"
+          ],
+          "source_line": 4,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "2/19",
+          "raw_quantity": 2,
+          "plies": 24,
+          "trajectory_sha256": "ef0ec3d470c765462964c056e222bb32120852fc06f9fd0c2871621c53cd50a0",
+          "same_trajectory_as_initial": {
+            "unit": true,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            70,
+            116,
+            191,
+            70,
+            191,
+            116,
+            0,
+            71,
+            116,
+            116,
+            116,
+            116,
+            191,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-endpoint",
+            "pure_terminal-trained-unit-endpoint"
+          ],
+          "source_line": 12,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-8/19",
+          "raw_quantity": -8,
+          "plies": 24,
+          "trajectory_sha256": "91b1ca9269ee04efe3d59a5c27bdc3730b85de32979b8735b8289c50878aae7a",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-initial",
+            "pure_terminal-trained-random2514-initial"
+          ],
+          "source_line": 20,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": -4,
+          "plies": 20,
+          "trajectory_sha256": "24eb2d7566de6a4b5544fe76fda598e69ffd2927afbdd2595c554a1157f0dfb9",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            118,
+            100,
+            87,
+            81,
+            231,
+            919,
+            0,
+            37,
+            362,
+            94,
+            731,
+            155,
+            43,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-endpoint"
+          ],
+          "source_line": 28,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-4/19",
+          "raw_quantity": -4,
+          "plies": 24,
+          "trajectory_sha256": "cf9bbd8992d1edb40a76702a4c224e9495f1e2c1b2c5daad7cbfc27facf56e3d",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            152,
+            48,
+            41,
+            284,
+            109,
+            1180,
+            0,
+            48,
+            171,
+            200,
+            345,
+            199,
+            55,
+            0
+          ],
+          "profile_names": [
+            "pure_terminal-trained-random2514-endpoint"
+          ],
+          "source_line": 36,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "0",
+          "raw_quantity": 0,
+          "plies": 24,
+          "trajectory_sha256": "06bc115c23140ec77fbda016854c88ada591e33d9b14f7eefb5e31728ddc75de",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        }
+      ],
+      "distinct_terminal_scores": [
+        0,
+        32
+      ],
+      "distinct_true_outcomes": [
+        "UNFINISHED",
+        "WIN"
+      ],
+      "distinct_trajectories": 5,
+      "terminal_discriminates": true,
+      "terminal_tied_with_changed_trajectory": false,
+      "unfinished_quantity_discriminates": true
+    },
+    {
+      "root_seed": 2026103882,
+      "color": 0,
+      "opponent": "random",
+      "cells": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-initial",
+            "pure_terminal-trained-unit-initial"
+          ],
+          "source_line": 45,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 16,
+          "plies": 19,
+          "trajectory_sha256": "b391b136e7f0db11ee04914423c8958e8fbbdc7e0c754cbf9ee263713f094492",
+          "same_trajectory_as_initial": {
+            "unit": true,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            70,
+            116,
+            191,
+            70,
+            191,
+            116,
+            0,
+            71,
+            116,
+            116,
+            116,
+            116,
+            191,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-endpoint",
+            "pure_terminal-trained-unit-endpoint"
+          ],
+          "source_line": 53,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 8,
+          "plies": 11,
+          "trajectory_sha256": "3ee98b10b17f001f69548c1aa07d0c5803b125bddc5c544064e6aa4f58e396f0",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-initial",
+            "pure_terminal-trained-random2514-initial"
+          ],
+          "source_line": 61,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 10,
+          "plies": 11,
+          "trajectory_sha256": "0d5d481f67ad4d80355a7e10c53ad8cdb5551862b53cbd9c616af5023df38ee4",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            118,
+            100,
+            87,
+            81,
+            231,
+            919,
+            0,
+            37,
+            362,
+            94,
+            731,
+            155,
+            43,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-endpoint"
+          ],
+          "source_line": 69,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 14,
+          "plies": 17,
+          "trajectory_sha256": "d400ba8e3152138889dc1670af812134c2bb3e181cd5f68d7649a6b76da3fed9",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            152,
+            48,
+            41,
+            284,
+            109,
+            1180,
+            0,
+            48,
+            171,
+            200,
+            345,
+            199,
+            55,
+            0
+          ],
+          "profile_names": [
+            "pure_terminal-trained-random2514-endpoint"
+          ],
+          "source_line": 77,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 10,
+          "plies": 19,
+          "trajectory_sha256": "ac7cacac4bf71155f2e506c492b64556718d1f939a587697fb2a7c4b29cc530a",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        }
+      ],
+      "distinct_terminal_scores": [
+        32
+      ],
+      "distinct_true_outcomes": [
+        "WIN"
+      ],
+      "distinct_trajectories": 5,
+      "terminal_discriminates": false,
+      "terminal_tied_with_changed_trajectory": true,
+      "unfinished_quantity_discriminates": false
+    },
+    {
+      "root_seed": 2026103882,
+      "color": 0,
+      "opponent": "unit",
+      "cells": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-initial",
+            "pure_terminal-trained-unit-initial"
+          ],
+          "source_line": 5,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "8/19",
+          "raw_quantity": 8,
+          "plies": 24,
+          "trajectory_sha256": "210c239ba3ff9c5f08150afeaeaedc1c41267f500e14b519e808804286898535",
+          "same_trajectory_as_initial": {
+            "unit": true,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            70,
+            116,
+            191,
+            70,
+            191,
+            116,
+            0,
+            71,
+            116,
+            116,
+            116,
+            116,
+            191,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-endpoint",
+            "pure_terminal-trained-unit-endpoint"
+          ],
+          "source_line": 13,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "8/19",
+          "raw_quantity": 8,
+          "plies": 24,
+          "trajectory_sha256": "6ce38c9af374614210ca3d11c4123845fcbd887b0f329e5b239f74f5ff6dc00d",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-initial",
+            "pure_terminal-trained-random2514-initial"
+          ],
+          "source_line": 21,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "2/19",
+          "raw_quantity": 2,
+          "plies": 24,
+          "trajectory_sha256": "9841af55e9722025fc91207eda04fe5e7b444ba7e903594680afe89ba938721c",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            118,
+            100,
+            87,
+            81,
+            231,
+            919,
+            0,
+            37,
+            362,
+            94,
+            731,
+            155,
+            43,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-endpoint"
+          ],
+          "source_line": 29,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "6/19",
+          "raw_quantity": 6,
+          "plies": 24,
+          "trajectory_sha256": "1f2db585573ae5006d68c171e4b47ff537e23687d413c40d6ac9ad6523b1e8ed",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            152,
+            48,
+            41,
+            284,
+            109,
+            1180,
+            0,
+            48,
+            171,
+            200,
+            345,
+            199,
+            55,
+            0
+          ],
+          "profile_names": [
+            "pure_terminal-trained-random2514-endpoint"
+          ],
+          "source_line": 37,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "0",
+          "raw_quantity": 0,
+          "plies": 24,
+          "trajectory_sha256": "54fd6daaf4771314952b791f9dc8401d6e05fe65cda901bbeec46a318c628271",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        }
+      ],
+      "distinct_terminal_scores": [
+        0
+      ],
+      "distinct_true_outcomes": [
+        "UNFINISHED"
+      ],
+      "distinct_trajectories": 5,
+      "terminal_discriminates": false,
+      "terminal_tied_with_changed_trajectory": true,
+      "unfinished_quantity_discriminates": true
+    },
+    {
+      "root_seed": 2026103882,
+      "color": 1,
+      "opponent": "random",
+      "cells": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-initial",
+            "pure_terminal-trained-unit-initial"
+          ],
+          "source_line": 46,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "16/19",
+          "raw_quantity": 16,
+          "plies": 24,
+          "trajectory_sha256": "47d9e982d2185b5d22e2186431616666d3fddf4a4d46fe667170eb20b67e69b4",
+          "same_trajectory_as_initial": {
+            "unit": true,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            70,
+            116,
+            191,
+            70,
+            191,
+            116,
+            0,
+            71,
+            116,
+            116,
+            116,
+            116,
+            191,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-endpoint",
+            "pure_terminal-trained-unit-endpoint"
+          ],
+          "source_line": 54,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 8,
+          "plies": 22,
+          "trajectory_sha256": "034ef6f490d8ea1779b15d291c55cfb312a5f0a0fc0acee06767ee01e9ff0ac8",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-initial",
+            "pure_terminal-trained-random2514-initial"
+          ],
+          "source_line": 62,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "16/19",
+          "raw_quantity": 16,
+          "plies": 24,
+          "trajectory_sha256": "b1c56afcb01ebe6b6097865e9c971f127f39d1a8cec3485b91b4a3218493525e",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            118,
+            100,
+            87,
+            81,
+            231,
+            919,
+            0,
+            37,
+            362,
+            94,
+            731,
+            155,
+            43,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-endpoint"
+          ],
+          "source_line": 70,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "12/19",
+          "raw_quantity": 12,
+          "plies": 24,
+          "trajectory_sha256": "0c4ab8ae839a46e6bcc8db735570de89d16db062ec015fa4c97c5be78653f0be",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            152,
+            48,
+            41,
+            284,
+            109,
+            1180,
+            0,
+            48,
+            171,
+            200,
+            345,
+            199,
+            55,
+            0
+          ],
+          "profile_names": [
+            "pure_terminal-trained-random2514-endpoint"
+          ],
+          "source_line": 78,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "16/19",
+          "raw_quantity": 16,
+          "plies": 24,
+          "trajectory_sha256": "509796efea3effa17d54f3779d53444b451cbe8bf493da013a47a0f777849903",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        }
+      ],
+      "distinct_terminal_scores": [
+        0,
+        32
+      ],
+      "distinct_true_outcomes": [
+        "UNFINISHED",
+        "WIN"
+      ],
+      "distinct_trajectories": 5,
+      "terminal_discriminates": true,
+      "terminal_tied_with_changed_trajectory": false,
+      "unfinished_quantity_discriminates": true
+    },
+    {
+      "root_seed": 2026103882,
+      "color": 1,
+      "opponent": "unit",
+      "cells": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-initial",
+            "pure_terminal-trained-unit-initial"
+          ],
+          "source_line": 6,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-8/19",
+          "raw_quantity": -8,
+          "plies": 24,
+          "trajectory_sha256": "210c239ba3ff9c5f08150afeaeaedc1c41267f500e14b519e808804286898535",
+          "same_trajectory_as_initial": {
+            "unit": true,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            70,
+            116,
+            191,
+            70,
+            191,
+            116,
+            0,
+            71,
+            116,
+            116,
+            116,
+            116,
+            191,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-endpoint",
+            "pure_terminal-trained-unit-endpoint"
+          ],
+          "source_line": 14,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-4/19",
+          "raw_quantity": -4,
+          "plies": 24,
+          "trajectory_sha256": "cf92cd910f938e5ad309daa7fc4b21c3c7fb22909477326165d1be6fa1f8ff58",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-initial",
+            "pure_terminal-trained-random2514-initial"
+          ],
+          "source_line": 22,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-6/19",
+          "raw_quantity": -6,
+          "plies": 24,
+          "trajectory_sha256": "6a7a61d6301ba9d7090852cbe71ae9c42e0f543685588aa698ede65dbf2393be",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            118,
+            100,
+            87,
+            81,
+            231,
+            919,
+            0,
+            37,
+            362,
+            94,
+            731,
+            155,
+            43,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-endpoint"
+          ],
+          "source_line": 30,
+          "true_outcome": "LOSS",
+          "termination_kind": "checkmate",
+          "terminal_score": -32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": -12,
+          "plies": 21,
+          "trajectory_sha256": "217c46b9f3bd38ca5bd07e4ba6dac193f3acda527e93d9dc61dcc30b03127e9d",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            152,
+            48,
+            41,
+            284,
+            109,
+            1180,
+            0,
+            48,
+            171,
+            200,
+            345,
+            199,
+            55,
+            0
+          ],
+          "profile_names": [
+            "pure_terminal-trained-random2514-endpoint"
+          ],
+          "source_line": 38,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-8/19",
+          "raw_quantity": -8,
+          "plies": 24,
+          "trajectory_sha256": "df9f1020ab3de04ebb3ec3c24a80a92ad6edcb4a523a4d4bf23e41812cc4c3ec",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        }
+      ],
+      "distinct_terminal_scores": [
+        -32,
+        0
+      ],
+      "distinct_true_outcomes": [
+        "LOSS",
+        "UNFINISHED"
+      ],
+      "distinct_trajectories": 5,
+      "terminal_discriminates": true,
+      "terminal_tied_with_changed_trajectory": false,
+      "unfinished_quantity_discriminates": true
+    },
+    {
+      "root_seed": 2026103883,
+      "color": 0,
+      "opponent": "random",
+      "cells": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-initial",
+            "pure_terminal-trained-unit-initial"
+          ],
+          "source_line": 47,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 12,
+          "plies": 19,
+          "trajectory_sha256": "17907be2763c7acd1815661021438c31c9518e4214d6093c31b6a858323bbad3",
+          "same_trajectory_as_initial": {
+            "unit": true,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            70,
+            116,
+            191,
+            70,
+            191,
+            116,
+            0,
+            71,
+            116,
+            116,
+            116,
+            116,
+            191,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-endpoint",
+            "pure_terminal-trained-unit-endpoint"
+          ],
+          "source_line": 55,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "16/19",
+          "raw_quantity": 16,
+          "plies": 24,
+          "trajectory_sha256": "83dceb9b3b8e4981b472fefb4707e317c1a072a7efffbfced2c20e0b08068568",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-initial",
+            "pure_terminal-trained-random2514-initial"
+          ],
+          "source_line": 63,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 10,
+          "plies": 15,
+          "trajectory_sha256": "7941b42f5d4ee1ffe7b85e10e03f43d2876ee6da68bdbd8805bb11ebbc2c91f1",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            118,
+            100,
+            87,
+            81,
+            231,
+            919,
+            0,
+            37,
+            362,
+            94,
+            731,
+            155,
+            43,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-endpoint"
+          ],
+          "source_line": 71,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 6,
+          "plies": 9,
+          "trajectory_sha256": "6337e66cc1beaccfcdc39cd943a737f02c2c820aef16ed7fb6b999684c5e3d58",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            152,
+            48,
+            41,
+            284,
+            109,
+            1180,
+            0,
+            48,
+            171,
+            200,
+            345,
+            199,
+            55,
+            0
+          ],
+          "profile_names": [
+            "pure_terminal-trained-random2514-endpoint"
+          ],
+          "source_line": 79,
+          "true_outcome": "WIN",
+          "termination_kind": "checkmate",
+          "terminal_score": 32,
+          "unfinished_quantity_component": null,
+          "raw_quantity": 10,
+          "plies": 15,
+          "trajectory_sha256": "7941b42f5d4ee1ffe7b85e10e03f43d2876ee6da68bdbd8805bb11ebbc2c91f1",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        }
+      ],
+      "distinct_terminal_scores": [
+        0,
+        32
+      ],
+      "distinct_true_outcomes": [
+        "UNFINISHED",
+        "WIN"
+      ],
+      "distinct_trajectories": 4,
+      "terminal_discriminates": true,
+      "terminal_tied_with_changed_trajectory": false,
+      "unfinished_quantity_discriminates": false
+    },
+    {
+      "root_seed": 2026103883,
+      "color": 0,
+      "opponent": "unit",
+      "cells": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-initial",
+            "pure_terminal-trained-unit-initial"
+          ],
+          "source_line": 7,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-4/19",
+          "raw_quantity": -4,
+          "plies": 24,
+          "trajectory_sha256": "d24ef072d69e16984cb7216a5fd19b7280e0f77374a34eab544aa39d8ff7aa40",
+          "same_trajectory_as_initial": {
+            "unit": true,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            70,
+            116,
+            191,
+            70,
+            191,
+            116,
+            0,
+            71,
+            116,
+            116,
+            116,
+            116,
+            191,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-endpoint",
+            "pure_terminal-trained-unit-endpoint"
+          ],
+          "source_line": 15,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "2/19",
+          "raw_quantity": 2,
+          "plies": 24,
+          "trajectory_sha256": "c02ea2bd9920f0eddb5b805232bebbcd179a6667f504b4878ce1d3815e92bfdb",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-initial",
+            "pure_terminal-trained-random2514-initial"
+          ],
+          "source_line": 23,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-4/19",
+          "raw_quantity": -4,
+          "plies": 24,
+          "trajectory_sha256": "b4dff221a7111163383a0dbbcf0f737d80b2f3859b1289fb8f160a33090da77c",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            118,
+            100,
+            87,
+            81,
+            231,
+            919,
+            0,
+            37,
+            362,
+            94,
+            731,
+            155,
+            43,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-endpoint"
+          ],
+          "source_line": 31,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-4/19",
+          "raw_quantity": -4,
+          "plies": 24,
+          "trajectory_sha256": "625d2959a60e74757d5963bacc4ebef678202d96fe1099e570fa4c2008ec7094",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            152,
+            48,
+            41,
+            284,
+            109,
+            1180,
+            0,
+            48,
+            171,
+            200,
+            345,
+            199,
+            55,
+            0
+          ],
+          "profile_names": [
+            "pure_terminal-trained-random2514-endpoint"
+          ],
+          "source_line": 39,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "-4/19",
+          "raw_quantity": -4,
+          "plies": 24,
+          "trajectory_sha256": "9e086c18aa54f12f9acd67ef62890c1da10380d455d9b78ab2fd4694a5fad8e6",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        }
+      ],
+      "distinct_terminal_scores": [
+        0
+      ],
+      "distinct_true_outcomes": [
+        "UNFINISHED"
+      ],
+      "distinct_trajectories": 5,
+      "terminal_discriminates": false,
+      "terminal_tied_with_changed_trajectory": true,
+      "unfinished_quantity_discriminates": true
+    },
+    {
+      "root_seed": 2026103883,
+      "color": 1,
+      "opponent": "random",
+      "cells": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-initial",
+            "pure_terminal-trained-unit-initial"
+          ],
+          "source_line": 48,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "10/19",
+          "raw_quantity": 10,
+          "plies": 24,
+          "trajectory_sha256": "e7ef74ad997a9d62f4327f78241706edb4406adf8c477f9f231afc9e7e36bda8",
+          "same_trajectory_as_initial": {
+            "unit": true,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            70,
+            116,
+            191,
+            70,
+            191,
+            116,
+            0,
+            71,
+            116,
+            116,
+            116,
+            116,
+            191,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-endpoint",
+            "pure_terminal-trained-unit-endpoint"
+          ],
+          "source_line": 56,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "12/19",
+          "raw_quantity": 12,
+          "plies": 24,
+          "trajectory_sha256": "5bdcaa4efbb6e75fd55495bceef503c02675f24f72dc7844d0f24b16d4cfa7a3",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-initial",
+            "pure_terminal-trained-random2514-initial"
+          ],
+          "source_line": 64,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "8/19",
+          "raw_quantity": 8,
+          "plies": 24,
+          "trajectory_sha256": "fc2b922e5d2f3577f62613222b202e4c99bca390e03ec6065145a00ca5e4a434",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            118,
+            100,
+            87,
+            81,
+            231,
+            919,
+            0,
+            37,
+            362,
+            94,
+            731,
+            155,
+            43,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-endpoint"
+          ],
+          "source_line": 72,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "16/19",
+          "raw_quantity": 16,
+          "plies": 24,
+          "trajectory_sha256": "c04269b9175eac87e2dc30cf2fa47b3680abb3fdef8ae2576e7b8a57f4d11bbe",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            152,
+            48,
+            41,
+            284,
+            109,
+            1180,
+            0,
+            48,
+            171,
+            200,
+            345,
+            199,
+            55,
+            0
+          ],
+          "profile_names": [
+            "pure_terminal-trained-random2514-endpoint"
+          ],
+          "source_line": 80,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "8/19",
+          "raw_quantity": 8,
+          "plies": 24,
+          "trajectory_sha256": "6a99be222ecf4b228dc2e9be3d0d8900a588d48a58ab4ff86729cff67e53283d",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        }
+      ],
+      "distinct_terminal_scores": [
+        0
+      ],
+      "distinct_true_outcomes": [
+        "UNFINISHED"
+      ],
+      "distinct_trajectories": 5,
+      "terminal_discriminates": false,
+      "terminal_tied_with_changed_trajectory": true,
+      "unfinished_quantity_discriminates": true
+    },
+    {
+      "root_seed": 2026103883,
+      "color": 1,
+      "opponent": "unit",
+      "cells": [
+        {
+          "weights": [
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0,
+            90,
+            90,
+            90,
+            90,
+            90,
+            90,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-initial",
+            "pure_terminal-trained-unit-initial"
+          ],
+          "source_line": 8,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "4/19",
+          "raw_quantity": 4,
+          "plies": 24,
+          "trajectory_sha256": "d24ef072d69e16984cb7216a5fd19b7280e0f77374a34eab544aa39d8ff7aa40",
+          "same_trajectory_as_initial": {
+            "unit": true,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            70,
+            116,
+            191,
+            70,
+            191,
+            116,
+            0,
+            71,
+            116,
+            116,
+            116,
+            116,
+            191,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-unit-endpoint",
+            "pure_terminal-trained-unit-endpoint"
+          ],
+          "source_line": 16,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "0",
+          "raw_quantity": 0,
+          "plies": 24,
+          "trajectory_sha256": "96cbc1afb75dde2e00a44f54179db0fbc872f03c4ce5ea57fc24ed33351f210d",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            151,
+            78,
+            68,
+            284,
+            109,
+            716,
+            0,
+            80,
+            171,
+            200,
+            345,
+            121,
+            55,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-initial",
+            "pure_terminal-trained-random2514-initial"
+          ],
+          "source_line": 24,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "4/19",
+          "raw_quantity": 4,
+          "plies": 24,
+          "trajectory_sha256": "4fbffdeb3df5336c5da619e10c01342cf0605e27bdb78e5854b0fb4bdb0afeb5",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": true
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            118,
+            100,
+            87,
+            81,
+            231,
+            919,
+            0,
+            37,
+            362,
+            94,
+            731,
+            155,
+            43,
+            0
+          ],
+          "profile_names": [
+            "mixed-trained-random2514-endpoint"
+          ],
+          "source_line": 32,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "4/19",
+          "raw_quantity": 4,
+          "plies": 24,
+          "trajectory_sha256": "824adbccc424337a5a34db8b635c29e199ef98853a8040fff28051abc5899a87",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        },
+        {
+          "weights": [
+            0,
+            90,
+            152,
+            48,
+            41,
+            284,
+            109,
+            1180,
+            0,
+            48,
+            171,
+            200,
+            345,
+            199,
+            55,
+            0
+          ],
+          "profile_names": [
+            "pure_terminal-trained-random2514-endpoint"
+          ],
+          "source_line": 40,
+          "true_outcome": "UNFINISHED",
+          "termination_kind": "cap24",
+          "terminal_score": 0,
+          "unfinished_quantity_component": "4/19",
+          "raw_quantity": 4,
+          "plies": 24,
+          "trajectory_sha256": "a11bab56a59e78dbfb3858dc2c30f6ffa3ff18fcdf8dd7863b673f2d6ee3e073",
+          "same_trajectory_as_initial": {
+            "unit": false,
+            "random2514": false
+          }
+        }
+      ],
+      "distinct_terminal_scores": [
+        0
+      ],
+      "distinct_true_outcomes": [
+        "UNFINISHED"
+      ],
+      "distinct_trajectories": 5,
+      "terminal_discriminates": false,
+      "terminal_tied_with_changed_trajectory": true,
+      "unfinished_quantity_discriminates": true
+    }
+  ],
+  "opponent_summary": [
+    {
+      "opponent": "unit",
+      "root_color_rows": 8,
+      "terminal_discriminating_rows": 5,
+      "discriminating_root_families": [
+        2026103880,
+        2026103881,
+        2026103882
+      ],
+      "terminal_tied_changed_trajectory_rows": 3,
+      "all_true_terminal_zero_rows": 3,
+      "unfinished_quantity_only_rows": 3
+    },
+    {
+      "opponent": "random",
+      "root_color_rows": 8,
+      "terminal_discriminating_rows": 4,
+      "discriminating_root_families": [
+        2026103880,
+        2026103881,
+        2026103882,
+        2026103883
+      ],
+      "terminal_tied_changed_trajectory_rows": 4,
+      "all_true_terminal_zero_rows": 2,
+      "unfinished_quantity_only_rows": 2
+    }
+  ],
+  "matched_opponent_cross": [
+    {
+      "root_seed": 2026103880,
+      "color": 0,
+      "unit_discriminates": true,
+      "random_discriminates": true,
+      "random_signal_unit_absent": false
+    },
+    {
+      "root_seed": 2026103880,
+      "color": 1,
+      "unit_discriminates": true,
+      "random_discriminates": false,
+      "random_signal_unit_absent": false
+    },
+    {
+      "root_seed": 2026103881,
+      "color": 0,
+      "unit_discriminates": true,
+      "random_discriminates": true,
+      "random_signal_unit_absent": false
+    },
+    {
+      "root_seed": 2026103881,
+      "color": 1,
+      "unit_discriminates": true,
+      "random_discriminates": false,
+      "random_signal_unit_absent": false
+    },
+    {
+      "root_seed": 2026103882,
+      "color": 0,
+      "unit_discriminates": false,
+      "random_discriminates": false,
+      "random_signal_unit_absent": false
+    },
+    {
+      "root_seed": 2026103882,
+      "color": 1,
+      "unit_discriminates": true,
+      "random_discriminates": true,
+      "random_signal_unit_absent": false
+    },
+    {
+      "root_seed": 2026103883,
+      "color": 0,
+      "unit_discriminates": false,
+      "random_discriminates": true,
+      "random_signal_unit_absent": true
+    },
+    {
+      "root_seed": 2026103883,
+      "color": 1,
+      "unit_discriminates": false,
+      "random_discriminates": false,
+      "random_signal_unit_absent": false
+    }
+  ],
+  "new_go": 0,
+  "seconds": 0.004300999920815229,
+  "scope": "ALLfrozen5actualprices/ALL4rootfamilies/ALLcolors/BOTHopponents, no selection/refit/replay. WIN/DRAW/LOSS/UNFINISHED distinct; trajectoryactualfullmove/afterstate path, not score/PV hash; bothinitial reference flags. Quantityonlyunfinisheddiagnostic, nothumanvalue labels orfullprice-neighborhoodflatness. Distinctterminalfeedback notuniquepriceidentification."
+}

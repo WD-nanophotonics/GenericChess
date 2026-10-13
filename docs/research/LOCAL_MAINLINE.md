@@ -1,21 +1,17 @@
-## DEV_AUX current scope2026-10-12 segment29
+## DEV_AUX current scope2026-10-13 segment31
 
-Science OPEN; sidemission only; heartbeatACTIVE; no primary/default/UI writes.
-4922actualnew capped24ply games56107gamego+4885qualification+216diagnostic=61208go.
-467SEE/495futility/510reset allendpoints predevGAME andALLcross retained; 467prior471
-initial-price developmentROOT protocolpreflight exposed, notindependentholdout.
-495keeps484seed3513mate33 unavailable; postconstruction policy, no replacement.
-26firstfutility effects recurse/6qaccumulator-only,22upper4lower returns, no harm/safe-bound proof.
-504coldreadydominant; warm510784fitgames68.250s vs146.422s cold,8014vs8496go;
-newresourcecondition/statewithinGAME, no acrossexperiment conversion/noisefreeequalworkclaim.
-ALLnative/fullhistory/RNG/PV/table/jointaudit+515392wholegame replays4103go PASS.
-467/495ALL4sourceMSE worse;510unitbothcloser/randombothworse, no stablehumanprices.
-Warmrandomoppositionwins unit2->5/random2->3,negativecross/familyreversals preserved.
-518NEXTfresh4+4roots/native320prefix/48dirs, mixed-vs-pure SAMEwarm resources;
-inputsONLY, noexecutor/game/go/fit/endpoint yet. Expected2-5minonecombined batch.
-ReportSEGMENT_20261012_29.md/exactarchive29, rawprivateSlack/profiles/builds excluded.
-Dotfirstcontext controladopted; primary7b99185f reportedhistoryTTrepair/full2319tests,
-384round/12672cell/88dev28 independentmathcheck attributed, notourproductexecution.
+Science OPEN; sidemission only; userresume ownheartbeatACTIVE; no primary/default/UI/UI Test writes.
+Actual25796shortgames338996go; cap24pure12544train734.968s vscap12mixed12544train496.063s.
+Native55132pairedcases fullnon-time/paths match,552Pythonphysicalaudit PASS; shorttimer/concurrencylimits.
+ALL4+4endpoints beforedev/reference; ALL8sourceMSE2slightlycloser6worse; base6only1closer.
+557/568 ALLphysical/Python/RNG/PV/joint/table audits PASS;559/569392fullwarmquerysequences each.
+QuantityH12feedbackdenser/cheaper but no stablebasicratios; no learnedtable adoption/nohumanfitness.
+532INCOMPLETE userstop;3300wallfuse notreset.533/534closed535partial536/537notexecuted/missingACK retained.
+548scopewording separatelycorrected;529zero-queryfailures+10orphans preserved, no transportgainadoption.
+574 NEXTINPUTSONLY:ALL10actualprices/10freshfamilies/900maxshortgames, dualpriceopponent qualification first.
+ReportSEGMENT_20261013_31.md, exact30retained+31archives; privateSlack/accounts/binaries excluded.
+Dot q31 historyentry/RNG/costresidual advice adopted; source/pool hypothesis scope retained.
+Primary774235 mixedq publicconsumer report read-only,2328tests86queries attributed, notourprimaryexecution.
 
 # Current local research mainline
 

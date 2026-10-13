@@ -1,0 +1,28 @@
+{
+  "status": "PASS_ACTUAL_RESOURCE_COUNTERS",
+  "task": 533,
+  "condition": "random1024",
+  "nodes_perquery_limit": 1024,
+  "opponent": "random",
+  "source_sha256": "09dd9e3d7952fb505554ba6b1e0f92d046dfffc3fb18d9d78933081396cc9704",
+  "totals": {
+    "candidate_go": 33730,
+    "unit_go": 0,
+    "reported_nodes": 34713969,
+    "returned_depth_sum": 184523,
+    "query_seconds": 29.93900002259761,
+    "game_seconds": 217.78799999970943,
+    "plies": 66822,
+    "games": 3136
+  },
+  "fit_wall_seconds": 261.8899999996647,
+  "logical_games": 3136,
+  "exact_cache_hits": 0,
+  "terminations": {
+    "cap24": 1996,
+    "checkmate": 1140
+  },
+  "new_go": 0,
+  "seconds": 0.47564469976350665,
+  "scope": "ALLcompletedfit games/queryroles; reportedlastinfo nodes/depth areactualenginecounters, notconfiguredlimit multipliedbycount oruniformhorizon/warmbound proofs. Game/querysum differsbatch/startup/phase/native/serialization costs; noexclusiveCPU/causalpercent attribution."
+}

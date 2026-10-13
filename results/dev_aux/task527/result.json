@@ -1,0 +1,397 @@
+{
+  "status": "PASS_NATIVE_GEOMETRY",
+  "source_sha256": "fe3639c19441f3923daa6c569bd2ae9ae0f8ba93690852a485dde9d6140dd07f",
+  "native_literal_state_vector_checks": 26543,
+  "all_null_vector_dot_checks": 5231,
+  "rows": [
+    {
+      "profile_names": [
+        "mixed-trained-unit-initial",
+        "pure_terminal-trained-unit-initial"
+      ],
+      "opponent": "unit",
+      "verified": {
+        "played": {
+          "rank": 11,
+          "vectors": 200,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        },
+        "played_delta": {
+          "rank": 11,
+          "vectors": 200,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        },
+        "PV": {
+          "rank": 12,
+          "vectors": 3738,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "PV_delta": {
+          "rank": 12,
+          "vectors": 3738,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "move_delta": {
+          "rank": 11,
+          "vectors": 192,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        }
+      }
+    },
+    {
+      "profile_names": [
+        "mixed-trained-unit-endpoint",
+        "pure_terminal-trained-unit-endpoint"
+      ],
+      "opponent": "unit",
+      "verified": {
+        "played": {
+          "rank": 12,
+          "vectors": 200,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "played_delta": {
+          "rank": 12,
+          "vectors": 200,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "PV": {
+          "rank": 12,
+          "vectors": 3116,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "PV_delta": {
+          "rank": 12,
+          "vectors": 3116,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "move_delta": {
+          "rank": 12,
+          "vectors": 192,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        }
+      }
+    },
+    {
+      "profile_names": [
+        "mixed-trained-random2514-initial",
+        "pure_terminal-trained-random2514-initial"
+      ],
+      "opponent": "unit",
+      "verified": {
+        "played": {
+          "rank": 12,
+          "vectors": 196,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "played_delta": {
+          "rank": 12,
+          "vectors": 196,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "PV": {
+          "rank": 12,
+          "vectors": 3520,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "PV_delta": {
+          "rank": 12,
+          "vectors": 3520,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "move_delta": {
+          "rank": 12,
+          "vectors": 188,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        }
+      }
+    },
+    {
+      "profile_names": [
+        "mixed-trained-random2514-endpoint"
+      ],
+      "opponent": "unit",
+      "verified": {
+        "played": {
+          "rank": 12,
+          "vectors": 197,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "played_delta": {
+          "rank": 12,
+          "vectors": 197,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "PV": {
+          "rank": 12,
+          "vectors": 3530,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "PV_delta": {
+          "rank": 12,
+          "vectors": 3530,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "move_delta": {
+          "rank": 12,
+          "vectors": 189,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        }
+      }
+    },
+    {
+      "profile_names": [
+        "pure_terminal-trained-random2514-endpoint"
+      ],
+      "opponent": "unit",
+      "verified": {
+        "played": {
+          "rank": 11,
+          "vectors": 189,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        },
+        "played_delta": {
+          "rank": 11,
+          "vectors": 189,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        },
+        "PV": {
+          "rank": 12,
+          "vectors": 3317,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "PV_delta": {
+          "rank": 12,
+          "vectors": 3317,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "move_delta": {
+          "rank": 11,
+          "vectors": 181,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        }
+      }
+    },
+    {
+      "profile_names": [
+        "mixed-trained-unit-initial",
+        "pure_terminal-trained-unit-initial"
+      ],
+      "opponent": "random",
+      "verified": {
+        "played": {
+          "rank": 11,
+          "vectors": 186,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        },
+        "played_delta": {
+          "rank": 11,
+          "vectors": 186,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        },
+        "PV": {
+          "rank": 11,
+          "vectors": 1341,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        },
+        "PV_delta": {
+          "rank": 11,
+          "vectors": 1341,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        },
+        "move_delta": {
+          "rank": 11,
+          "vectors": 178,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        }
+      }
+    },
+    {
+      "profile_names": [
+        "mixed-trained-unit-endpoint",
+        "pure_terminal-trained-unit-endpoint"
+      ],
+      "opponent": "random",
+      "verified": {
+        "played": {
+          "rank": 12,
+          "vectors": 179,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "played_delta": {
+          "rank": 12,
+          "vectors": 179,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "PV": {
+          "rank": 12,
+          "vectors": 1609,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "PV_delta": {
+          "rank": 12,
+          "vectors": 1609,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "move_delta": {
+          "rank": 12,
+          "vectors": 171,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        }
+      }
+    },
+    {
+      "profile_names": [
+        "mixed-trained-random2514-initial",
+        "pure_terminal-trained-random2514-initial"
+      ],
+      "opponent": "random",
+      "verified": {
+        "played": {
+          "rank": 12,
+          "vectors": 147,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "played_delta": {
+          "rank": 12,
+          "vectors": 147,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "PV": {
+          "rank": 12,
+          "vectors": 1586,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "PV_delta": {
+          "rank": 12,
+          "vectors": 1586,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "move_delta": {
+          "rank": 12,
+          "vectors": 139,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        }
+      }
+    },
+    {
+      "profile_names": [
+        "mixed-trained-random2514-endpoint"
+      ],
+      "opponent": "random",
+      "verified": {
+        "played": {
+          "rank": 11,
+          "vectors": 144,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        },
+        "played_delta": {
+          "rank": 11,
+          "vectors": 144,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        },
+        "PV": {
+          "rank": 12,
+          "vectors": 1599,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "PV_delta": {
+          "rank": 12,
+          "vectors": 1599,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "move_delta": {
+          "rank": 11,
+          "vectors": 136,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        }
+      }
+    },
+    {
+      "profile_names": [
+        "pure_terminal-trained-random2514-endpoint"
+      ],
+      "opponent": "random",
+      "verified": {
+        "played": {
+          "rank": 11,
+          "vectors": 144,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        },
+        "played_delta": {
+          "rank": 11,
+          "vectors": 144,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        },
+        "PV": {
+          "rank": 12,
+          "vectors": 1405,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "PV_delta": {
+          "rank": 12,
+          "vectors": 1405,
+          "independent_exact_witness_rank": 12,
+          "all_native_nullvectors_verified": true
+        },
+        "move_delta": {
+          "rank": 11,
+          "vectors": 136,
+          "independent_exact_witness_rank": 11,
+          "all_native_nullvectors_verified": true
+        }
+      }
+    }
+  ],
+  "new_go": 0,
+  "seconds": 0.5671491003595293,
+  "scope": "Nativepieces/nativehands independentlyagreeALLsignedvector/typecounts; exactforwardelimination confirms each witnessrank andALLobservednull orthogonality; float rank additionalcrosscheck only. Freepriceaxesexclude fixedP90: featureinvariant may includeP-onlycapturing, NOTallmaterialscoreinvariant. RepeatedPVstates notindependent samples; rank notrewardidentification."
+}

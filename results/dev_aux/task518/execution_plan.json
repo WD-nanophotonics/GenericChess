@@ -1,0 +1,24 @@
+{
+  "declaration_sha256": "6639b09b8c3359f8a001ddc7af6a090d3f3a5b9307583b52abb3c438a01434b3",
+  "resource_policy": "warm_game",
+  "arms": [
+    "mixed",
+    "pure_terminal"
+  ],
+  "objective_definitions": {
+    "mixed": "Physical frozen goal: true winner +/-32,draw0,cap24 unweightedquantity/19",
+    "pure_terminal": "true winner +/-32,draw or cap24 0"
+  },
+  "physical_goal": "Bothrawgame journals retain existingmixedgoal; candidates additionally storeobjective fitness_goals andmean_goal. No fakechanges tophysicalgame or rawquantity.",
+  "hash_mapping": "Use shared executable_sha256; inherited executable_hashes keys identify oldresourcearms, notnewobjective arms.",
+  "metadata_correction": "Original518 objectives.both andexecution_status are inherited preparation labels; training/evaluation paragraph specifies objectiveintervention. Immutable originaldeclaration retained. This plan resolves executorrouting before ANYnewgo, no input/proposal/objective changes.",
+  "fits": {
+    "mixed": 519,
+    "pure_terminal": 520
+  },
+  "development_task": 521,
+  "development_resource_arms": [
+    "warm_game"
+  ],
+  "status": "EXECUTOR_PREPARED_ONLY"
+}

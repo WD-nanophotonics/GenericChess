@@ -1,0 +1,3322 @@
+{
+  "status": "COMPLETE",
+  "profiles": [
+    {
+      "weights": [
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        0
+      ],
+      "names": [
+        "unit-unit-initial",
+        "random-unit-initial"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        55,
+        149,
+        90,
+        149,
+        90,
+        55,
+        0,
+        90,
+        90,
+        90,
+        55,
+        90,
+        149,
+        0
+      ],
+      "names": [
+        "unit-unit-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        151,
+        78,
+        68,
+        284,
+        109,
+        716,
+        0,
+        80,
+        171,
+        200,
+        345,
+        121,
+        55,
+        0
+      ],
+      "names": [
+        "unit-random2514-initial",
+        "random-random2514-initial"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        195,
+        37,
+        87,
+        365,
+        140,
+        919,
+        0,
+        103,
+        133,
+        156,
+        269,
+        256,
+        32,
+        0
+      ],
+      "names": [
+        "unit-random2514-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        149,
+        33,
+        90,
+        55,
+        149,
+        245,
+        0,
+        90,
+        90,
+        55,
+        245,
+        90,
+        55,
+        0
+      ],
+      "names": [
+        "random-unit-endpoint"
+      ]
+    },
+    {
+      "weights": [
+        0,
+        90,
+        195,
+        37,
+        53,
+        221,
+        140,
+        919,
+        0,
+        169,
+        220,
+        257,
+        443,
+        155,
+        42,
+        0
+      ],
+      "names": [
+        "random-random2514-endpoint"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "names": [
+        "unit-unit-initial",
+        "random-unit-initial"
+      ],
+      "opponent": "unit",
+      "batch": {
+        "objective": "pure_terminal",
+        "weights": [
+          0,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          0,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          0
+        ],
+        "mean_goal": "0",
+        "mean_quantity": "0",
+        "goals": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "physical_goals": [
+          "-2/19",
+          "2/19",
+          "14/19",
+          "-14/19",
+          "-4/19",
+          "4/19",
+          "2/19",
+          "-2/19",
+          "2/19",
+          "-2/19",
+          "-4/19",
+          "4/19",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "14/19",
+          "-14/19",
+          "8/19",
+          "-8/19",
+          "2/19",
+          "-2/19",
+          "0",
+          "0",
+          "-2/19",
+          "2/19",
+          "-8/19",
+          "8/19",
+          "-2/19",
+          "2/19"
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 1
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 2
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 3
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 4
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 5
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 6
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 7
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 8
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 9
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 10
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 11
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 12
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 13
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 14
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 15
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 16
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 17
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 18
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 19
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 20
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 21
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 22
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 23
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 24
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 25
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 26
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 27
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 28
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 29
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 30
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 31
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 32
+          }
+        ],
+        "true_wins": 0,
+        "true_losses": 0,
+        "rule_outcomes": [
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24"
+        ]
+      }
+    },
+    {
+      "names": [
+        "unit-unit-initial",
+        "random-unit-initial"
+      ],
+      "opponent": "random",
+      "batch": {
+        "objective": "pure_terminal",
+        "weights": [
+          0,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          0,
+          90,
+          90,
+          90,
+          90,
+          90,
+          90,
+          0
+        ],
+        "mean_goal": "13",
+        "mean_quantity": "51/4",
+        "goals": [
+          "0",
+          "32",
+          "32",
+          "32",
+          "0",
+          "32",
+          "32",
+          "32",
+          "32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "32",
+          "32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "32",
+          "32",
+          "32",
+          "0",
+          "0"
+        ],
+        "physical_goals": [
+          "8/19",
+          "32",
+          "32",
+          "32",
+          "14/19",
+          "32",
+          "32",
+          "32",
+          "32",
+          "14/19",
+          "10/19",
+          "12/19",
+          "14/19",
+          "32",
+          "32",
+          "12/19",
+          "16/19",
+          "16/19",
+          "16/19",
+          "12/19",
+          "22/19",
+          "32",
+          "16/19",
+          "22/19",
+          "20/19",
+          "16/19",
+          "14/19",
+          "32",
+          "32",
+          "32",
+          "16/19",
+          "12/19"
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 33
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 34
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 35
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 36
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 37
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 38
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 39
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 40
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 41
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 42
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 43
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 44
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 45
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 46
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 47
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 48
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 49
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 50
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 51
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 52
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 53
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 54
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 55
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 56
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 57
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 58
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 59
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 60
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 61
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 62
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 63
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 64
+          }
+        ],
+        "true_wins": 13,
+        "true_losses": 0,
+        "rule_outcomes": [
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "cap24"
+        ]
+      }
+    },
+    {
+      "names": [
+        "unit-unit-endpoint"
+      ],
+      "opponent": "unit",
+      "batch": {
+        "objective": "pure_terminal",
+        "weights": [
+          0,
+          90,
+          55,
+          149,
+          90,
+          149,
+          90,
+          55,
+          0,
+          90,
+          90,
+          90,
+          55,
+          90,
+          149,
+          0
+        ],
+        "mean_goal": "1",
+        "mean_quantity": "-1/8",
+        "goals": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "32",
+          "0",
+          "0",
+          "0"
+        ],
+        "physical_goals": [
+          "-6/19",
+          "2/19",
+          "14/19",
+          "-12/19",
+          "-6/19",
+          "8/19",
+          "0",
+          "-8/19",
+          "6/19",
+          "2/19",
+          "-4/19",
+          "-4/19",
+          "-2/19",
+          "4/19",
+          "0",
+          "0",
+          "4/19",
+          "0",
+          "6/19",
+          "-2/19",
+          "10/19",
+          "-8/19",
+          "-2/19",
+          "2/19",
+          "-2/19",
+          "0",
+          "0",
+          "-4/19",
+          "32",
+          "0",
+          "4/19",
+          "-6/19"
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 65
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 66
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 67
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 68
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 69
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 70
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 71
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 72
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 73
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 74
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 75
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 76
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 77
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 78
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 79
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 80
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 81
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 82
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 83
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 84
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 85
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 86
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 87
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 88
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 89
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 90
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 91
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 92
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 93
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 94
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 95
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 96
+          }
+        ],
+        "true_wins": 1,
+        "true_losses": 0,
+        "rule_outcomes": [
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24"
+        ]
+      }
+    },
+    {
+      "names": [
+        "unit-unit-endpoint"
+      ],
+      "opponent": "random",
+      "batch": {
+        "objective": "pure_terminal",
+        "weights": [
+          0,
+          90,
+          55,
+          149,
+          90,
+          149,
+          90,
+          55,
+          0,
+          90,
+          90,
+          90,
+          55,
+          90,
+          149,
+          0
+        ],
+        "mean_goal": "14",
+        "mean_quantity": "99/8",
+        "goals": [
+          "0",
+          "32",
+          "32",
+          "32",
+          "0",
+          "32",
+          "32",
+          "32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "32",
+          "32",
+          "32",
+          "32",
+          "32",
+          "32",
+          "0",
+          "32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "32",
+          "0",
+          "0"
+        ],
+        "physical_goals": [
+          "12/19",
+          "32",
+          "32",
+          "32",
+          "6/19",
+          "32",
+          "32",
+          "32",
+          "16/19",
+          "6/19",
+          "10/19",
+          "12/19",
+          "16/19",
+          "18/19",
+          "14/19",
+          "14/19",
+          "14/19",
+          "32",
+          "32",
+          "32",
+          "32",
+          "32",
+          "32",
+          "16/19",
+          "32",
+          "20/19",
+          "20/19",
+          "14/19",
+          "6/19",
+          "32",
+          "16/19",
+          "16/19"
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 97
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 98
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 99
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 100
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 101
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 102
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 103
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 104
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 105
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 106
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 107
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 108
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 109
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 110
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 111
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 112
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 113
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 114
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 115
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 116
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 117
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 118
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 119
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 120
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 121
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 122
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 123
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 124
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 125
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 126
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 127
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 128
+          }
+        ],
+        "true_wins": 14,
+        "true_losses": 0,
+        "rule_outcomes": [
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "cap24"
+        ]
+      }
+    },
+    {
+      "names": [
+        "unit-random2514-initial",
+        "random-random2514-initial"
+      ],
+      "opponent": "unit",
+      "batch": {
+        "objective": "pure_terminal",
+        "weights": [
+          0,
+          90,
+          151,
+          78,
+          68,
+          284,
+          109,
+          716,
+          0,
+          80,
+          171,
+          200,
+          345,
+          121,
+          55,
+          0
+        ],
+        "mean_goal": "0",
+        "mean_quantity": "-2",
+        "goals": [
+          "0",
+          "0",
+          "32",
+          "-32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "physical_goals": [
+          "0",
+          "2/19",
+          "32",
+          "-32",
+          "-10/19",
+          "2/19",
+          "-2/19",
+          "-10/19",
+          "0",
+          "-4/19",
+          "-4/19",
+          "0",
+          "-6/19",
+          "2/19",
+          "-2/19",
+          "6/19",
+          "-4/19",
+          "0",
+          "4/19",
+          "-18/19",
+          "4/19",
+          "-6/19",
+          "-8/19",
+          "0",
+          "0",
+          "2/19",
+          "-2/19",
+          "0",
+          "-6/19",
+          "0",
+          "-4/19",
+          "0"
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 129
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 130
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 131
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 132
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 133
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 134
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 135
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 136
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 137
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 138
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 139
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 140
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 141
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 142
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 143
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 144
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 145
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 146
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 147
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 148
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 149
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 150
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 151
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 152
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 153
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 154
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 155
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 156
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 157
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 158
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 159
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 160
+          }
+        ],
+        "true_wins": 1,
+        "true_losses": 1,
+        "rule_outcomes": [
+          "cap24",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24"
+        ]
+      }
+    },
+    {
+      "names": [
+        "unit-random2514-initial",
+        "random-random2514-initial"
+      ],
+      "opponent": "random",
+      "batch": {
+        "objective": "pure_terminal",
+        "weights": [
+          0,
+          90,
+          151,
+          78,
+          68,
+          284,
+          109,
+          716,
+          0,
+          80,
+          171,
+          200,
+          345,
+          121,
+          55,
+          0
+        ],
+        "mean_goal": "14",
+        "mean_quantity": "145/16",
+        "goals": [
+          "0",
+          "0",
+          "32",
+          "0",
+          "32",
+          "32",
+          "0",
+          "32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "32",
+          "32",
+          "0",
+          "32",
+          "0",
+          "32",
+          "32",
+          "0",
+          "32",
+          "32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "32",
+          "32",
+          "32"
+        ],
+        "physical_goals": [
+          "2/19",
+          "12/19",
+          "32",
+          "2/19",
+          "32",
+          "32",
+          "12/19",
+          "32",
+          "10/19",
+          "6/19",
+          "6/19",
+          "10/19",
+          "32",
+          "32",
+          "10/19",
+          "32",
+          "10/19",
+          "32",
+          "32",
+          "10/19",
+          "32",
+          "32",
+          "14/19",
+          "14/19",
+          "10/19",
+          "14/19",
+          "16/19",
+          "10/19",
+          "8/19",
+          "32",
+          "32",
+          "32"
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 161
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 162
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 163
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 164
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 165
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 166
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 167
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 168
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 169
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 170
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 171
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 172
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 173
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 174
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 175
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 176
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 177
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 178
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 179
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 180
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 181
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 182
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 183
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 184
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 185
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 186
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 187
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 188
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 189
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 190
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 191
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 192
+          }
+        ],
+        "true_wins": 14,
+        "true_losses": 0,
+        "rule_outcomes": [
+          "cap24",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "checkmate"
+        ]
+      }
+    },
+    {
+      "names": [
+        "unit-random2514-endpoint"
+      ],
+      "opponent": "unit",
+      "batch": {
+        "objective": "pure_terminal",
+        "weights": [
+          0,
+          90,
+          195,
+          37,
+          87,
+          365,
+          140,
+          919,
+          0,
+          103,
+          133,
+          156,
+          269,
+          256,
+          32,
+          0
+        ],
+        "mean_goal": "4",
+        "mean_quantity": "-29/16",
+        "goals": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "32",
+          "0",
+          "32",
+          "0"
+        ],
+        "physical_goals": [
+          "-4/19",
+          "4/19",
+          "8/19",
+          "-16/19",
+          "-8/19",
+          "6/19",
+          "-4/19",
+          "-6/19",
+          "-4/19",
+          "-6/19",
+          "-8/19",
+          "0",
+          "-4/19",
+          "4/19",
+          "0",
+          "32",
+          "-2/19",
+          "-2/19",
+          "6/19",
+          "-14/19",
+          "10/19",
+          "32",
+          "-4/19",
+          "-2/19",
+          "-2/19",
+          "2/19",
+          "-2/19",
+          "-2/19",
+          "32",
+          "2/19",
+          "32",
+          "-4/19"
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 193
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 194
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 195
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 196
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 197
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 198
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 199
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 200
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 201
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 202
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 203
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 204
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 205
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 206
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 207
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 208
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 209
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 210
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 211
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 212
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 213
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 214
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 215
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 216
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 217
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 218
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 219
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 220
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 221
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 222
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 223
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 224
+          }
+        ],
+        "true_wins": 4,
+        "true_losses": 0,
+        "rule_outcomes": [
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "cap24"
+        ]
+      }
+    },
+    {
+      "names": [
+        "unit-random2514-endpoint"
+      ],
+      "opponent": "random",
+      "batch": {
+        "objective": "pure_terminal",
+        "weights": [
+          0,
+          90,
+          195,
+          37,
+          87,
+          365,
+          140,
+          919,
+          0,
+          103,
+          133,
+          156,
+          269,
+          256,
+          32,
+          0
+        ],
+        "mean_goal": "15",
+        "mean_quantity": "10",
+        "goals": [
+          "0",
+          "0",
+          "32",
+          "32",
+          "0",
+          "32",
+          "32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "32",
+          "0",
+          "32",
+          "32",
+          "32",
+          "0",
+          "32",
+          "32",
+          "0",
+          "32",
+          "32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "32",
+          "32",
+          "32",
+          "0"
+        ],
+        "physical_goals": [
+          "6/19",
+          "16/19",
+          "32",
+          "32",
+          "8/19",
+          "32",
+          "32",
+          "14/19",
+          "10/19",
+          "12/19",
+          "10/19",
+          "32",
+          "10/19",
+          "32",
+          "32",
+          "32",
+          "8/19",
+          "32",
+          "32",
+          "4/19",
+          "32",
+          "32",
+          "12/19",
+          "16/19",
+          "8/19",
+          "16/19",
+          "16/19",
+          "18/19",
+          "32",
+          "32",
+          "32",
+          "8/19"
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 225
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 226
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 227
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 228
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 229
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 230
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 231
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 232
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 233
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 234
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 235
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 236
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 237
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 238
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 239
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 240
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 241
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 242
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 243
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 244
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 245
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 246
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 247
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 248
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 249
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 250
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 251
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 252
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 253
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 254
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 255
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 256
+          }
+        ],
+        "true_wins": 15,
+        "true_losses": 0,
+        "rule_outcomes": [
+          "cap24",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "cap24"
+        ]
+      }
+    },
+    {
+      "names": [
+        "random-unit-endpoint"
+      ],
+      "opponent": "unit",
+      "batch": {
+        "objective": "pure_terminal",
+        "weights": [
+          0,
+          90,
+          149,
+          33,
+          90,
+          55,
+          149,
+          245,
+          0,
+          90,
+          90,
+          55,
+          245,
+          90,
+          55,
+          0
+        ],
+        "mean_goal": "0",
+        "mean_quantity": "-29/16",
+        "goals": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "physical_goals": [
+          "2/19",
+          "2/19",
+          "2/19",
+          "-16/19",
+          "-2/19",
+          "4/19",
+          "-32",
+          "2/19",
+          "-2/19",
+          "-10/19",
+          "-4/19",
+          "-2/19",
+          "-8/19",
+          "-2/19",
+          "-2/19",
+          "32",
+          "2/19",
+          "0",
+          "4/19",
+          "-12/19",
+          "0",
+          "-2/19",
+          "-4/19",
+          "-2/19",
+          "2/19",
+          "4/19",
+          "-4/19",
+          "0",
+          "2/19",
+          "-4/19",
+          "-4/19",
+          "-2/19"
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 257
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 258
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 259
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 260
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 261
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 262
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 263
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 264
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 265
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 266
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 267
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 268
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 269
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 270
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 271
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 272
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 273
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 274
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 275
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 276
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 277
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 278
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 279
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 280
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 281
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 282
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 283
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 284
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 285
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 286
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 287
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 288
+          }
+        ],
+        "true_wins": 1,
+        "true_losses": 1,
+        "rule_outcomes": [
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24"
+        ]
+      }
+    },
+    {
+      "names": [
+        "random-unit-endpoint"
+      ],
+      "opponent": "random",
+      "batch": {
+        "objective": "pure_terminal",
+        "weights": [
+          0,
+          90,
+          149,
+          33,
+          90,
+          55,
+          149,
+          245,
+          0,
+          90,
+          90,
+          55,
+          245,
+          90,
+          55,
+          0
+        ],
+        "mean_goal": "17",
+        "mean_quantity": "177/16",
+        "goals": [
+          "0",
+          "0",
+          "32",
+          "32",
+          "0",
+          "32",
+          "0",
+          "32",
+          "32",
+          "0",
+          "0",
+          "0",
+          "32",
+          "0",
+          "32",
+          "32",
+          "0",
+          "32",
+          "32",
+          "32",
+          "32",
+          "32",
+          "0",
+          "0",
+          "0",
+          "32",
+          "0",
+          "0",
+          "32",
+          "32",
+          "0",
+          "32"
+        ],
+        "physical_goals": [
+          "6/19",
+          "18/19",
+          "32",
+          "32",
+          "8/19",
+          "32",
+          "20/19",
+          "32",
+          "32",
+          "12/19",
+          "8/19",
+          "14/19",
+          "32",
+          "16/19",
+          "32",
+          "32",
+          "16/19",
+          "32",
+          "32",
+          "32",
+          "32",
+          "32",
+          "16/19",
+          "18/19",
+          "12/19",
+          "32",
+          "16/19",
+          "12/19",
+          "32",
+          "32",
+          "16/19",
+          "32"
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 289
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 290
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 291
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 292
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 293
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 294
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 295
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 296
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 297
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 298
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 299
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 300
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 301
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 302
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 303
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 304
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 305
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 306
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 307
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 308
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 309
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 310
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 311
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 312
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 313
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 314
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 315
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 316
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 317
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 318
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 319
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 320
+          }
+        ],
+        "true_wins": 17,
+        "true_losses": 0,
+        "rule_outcomes": [
+          "cap24",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "checkmate"
+        ]
+      }
+    },
+    {
+      "names": [
+        "random-random2514-endpoint"
+      ],
+      "opponent": "unit",
+      "batch": {
+        "objective": "pure_terminal",
+        "weights": [
+          0,
+          90,
+          195,
+          37,
+          53,
+          221,
+          140,
+          919,
+          0,
+          169,
+          220,
+          257,
+          443,
+          155,
+          42,
+          0
+        ],
+        "mean_goal": "0",
+        "mean_quantity": "-23/16",
+        "goals": [
+          "0",
+          "0",
+          "0",
+          "-32",
+          "0",
+          "32",
+          "0",
+          "0",
+          "32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "physical_goals": [
+          "-4/19",
+          "-2/19",
+          "2/19",
+          "-32",
+          "-12/19",
+          "32",
+          "0",
+          "-6/19",
+          "32",
+          "-6/19",
+          "-6/19",
+          "2/19",
+          "0",
+          "0",
+          "-6/19",
+          "2/19",
+          "-2/19",
+          "2/19",
+          "6/19",
+          "-32",
+          "8/19",
+          "-10/19",
+          "0",
+          "-2/19",
+          "-2/19",
+          "0",
+          "0",
+          "0",
+          "-2/19",
+          "2/19",
+          "0",
+          "-2/19"
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 321
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 322
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 323
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 324
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 325
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 326
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 327
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 328
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 329
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 330
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 331
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 332
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 333
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 334
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 335
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 336
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 337
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 338
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 339
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 340
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 341
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 342
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 343
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 344
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 345
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 346
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 347
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 348
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 349
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 350
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 351
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 352
+          }
+        ],
+        "true_wins": 2,
+        "true_losses": 2,
+        "rule_outcomes": [
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24"
+        ]
+      }
+    },
+    {
+      "names": [
+        "random-random2514-endpoint"
+      ],
+      "opponent": "random",
+      "batch": {
+        "objective": "pure_terminal",
+        "weights": [
+          0,
+          90,
+          195,
+          37,
+          53,
+          221,
+          140,
+          919,
+          0,
+          169,
+          220,
+          257,
+          443,
+          155,
+          42,
+          0
+        ],
+        "mean_goal": "16",
+        "mean_quantity": "171/16",
+        "goals": [
+          "0",
+          "32",
+          "32",
+          "0",
+          "0",
+          "32",
+          "32",
+          "32",
+          "32",
+          "0",
+          "0",
+          "0",
+          "32",
+          "32",
+          "0",
+          "0",
+          "0",
+          "32",
+          "32",
+          "0",
+          "32",
+          "32",
+          "32",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "32",
+          "32",
+          "32",
+          "0"
+        ],
+        "physical_goals": [
+          "8/19",
+          "32",
+          "32",
+          "8/19",
+          "6/19",
+          "32",
+          "32",
+          "32",
+          "32",
+          "14/19",
+          "10/19",
+          "10/19",
+          "32",
+          "32",
+          "6/19",
+          "14/19",
+          "12/19",
+          "32",
+          "32",
+          "12/19",
+          "32",
+          "32",
+          "32",
+          "18/19",
+          "12/19",
+          "12/19",
+          "12/19",
+          "16/19",
+          "32",
+          "32",
+          "32",
+          "10/19"
+        ],
+        "sources": [
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 353
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 354
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 355
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 356
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 357
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 358
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 359
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 360
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 361
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 362
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 363
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 364
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 365
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 366
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 367
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 368
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 369
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 370
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 371
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 372
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 373
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 374
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 375
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 376
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 377
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 378
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 379
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 380
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 381
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 382
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 383
+          },
+          {
+            "file": "results/dev_aux/task556/games.jsonl",
+            "line": 384
+          }
+        ],
+        "true_wins": 16,
+        "true_losses": 0,
+        "rule_outcomes": [
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "cap24",
+          "checkmate",
+          "checkmate",
+          "checkmate",
+          "cap24"
+        ]
+      }
+    }
+  ],
+  "actual_games": 384,
+  "actual_go": 6413,
+  "seconds": 759.7969999997877,
+  "training_games": 12544,
+  "training_go": 208482,
+  "endpoint_freeze": {
+    "before_any_development": true,
+    "declaration_sha256": "bb46b058119d7971f7459793313f24a273dd83e296a380232d0dceb0a2be653a",
+    "endpoint_sha256": {
+      "unit": "935339e8b9b31cd6d56cb7dc4b93c71965742e439a565ca4e4de7f330fbb4256",
+      "random": "b2b7e1224b58bfd5b753858438963adb77dd8f8a3507563b6ad785296f161ce9"
+    },
+    "seconds": 734.9839999997057
+  },
+  "scope": "FixedstandardShogi NoEnteringKing/material1handSEE/selectiveYaneuraou/1024warmgame resource; sourceagreement descriptive nothumanconsensus/universaloptimum; no arbitrarygeneratedrules claim"
+}

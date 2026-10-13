@@ -1,0 +1,220 @@
+{
+  "status": "PASS",
+  "qualification": [
+    {
+      "task": 559,
+      "actual_go": 6446,
+      "full_price_ACK_entries": 18816
+    },
+    {
+      "task": 569,
+      "actual_go": 3491,
+      "full_price_ACK_entries": 18816
+    }
+  ],
+  "all_descriptor_splits": [
+    {
+      "route": "pure24",
+      "training_opponent": "unit",
+      "family": "unit",
+      "base6": {
+        "initial": 3.461074737677869,
+        "endpoint": 3.495349188685161
+      },
+      "promoted6": {
+        "initial": 4.313796269837418,
+        "endpoint": 4.2301245881697005
+      },
+      "all12": {
+        "initial": 3.8874355037576436,
+        "endpoint": 3.8627368884274307
+      },
+      "base_piece_ratios_to_pawn": {
+        "L": 0.6111111111111112,
+        "N": 1.6555555555555554,
+        "S": 1.0,
+        "B": 1.6555555555555554,
+        "R": 1.0,
+        "G": 0.6111111111111112
+      }
+    },
+    {
+      "route": "pure24",
+      "training_opponent": "unit",
+      "family": "random2514",
+      "base6": {
+        "initial": 2.22609298925436,
+        "endpoint": 2.3021077129623713
+      },
+      "promoted6": {
+        "initial": 3.472482062856792,
+        "endpoint": 3.781938121066056
+      },
+      "all12": {
+        "initial": 2.849287526055576,
+        "endpoint": 3.0420229170142137
+      },
+      "base_piece_ratios_to_pawn": {
+        "L": 2.1666666666666665,
+        "N": 0.4111111111111111,
+        "S": 0.9666666666666667,
+        "B": 4.055555555555555,
+        "R": 1.5555555555555556,
+        "G": 10.21111111111111
+      }
+    },
+    {
+      "route": "pure24",
+      "training_opponent": "random",
+      "family": "unit",
+      "base6": {
+        "initial": 3.461074737677869,
+        "endpoint": 3.5821228274436243
+      },
+      "promoted6": {
+        "initial": 4.313796269837418,
+        "endpoint": 4.707738416368552
+      },
+      "all12": {
+        "initial": 3.8874355037576436,
+        "endpoint": 4.144930621906088
+      },
+      "base_piece_ratios_to_pawn": {
+        "L": 1.6555555555555554,
+        "N": 0.36666666666666664,
+        "S": 1.0,
+        "B": 0.6111111111111112,
+        "R": 1.6555555555555554,
+        "G": 2.7222222222222223
+      }
+    },
+    {
+      "route": "pure24",
+      "training_opponent": "random",
+      "family": "random2514",
+      "base6": {
+        "initial": 2.22609298925436,
+        "endpoint": 2.8145970733270875
+      },
+      "promoted6": {
+        "initial": 3.472482062856792,
+        "endpoint": 3.0475236520363116
+      },
+      "all12": {
+        "initial": 2.849287526055576,
+        "endpoint": 2.9310603626817
+      },
+      "base_piece_ratios_to_pawn": {
+        "L": 2.1666666666666665,
+        "N": 0.4111111111111111,
+        "S": 0.5888888888888889,
+        "B": 2.4555555555555557,
+        "R": 1.5555555555555556,
+        "G": 10.21111111111111
+      }
+    },
+    {
+      "route": "mixed12",
+      "training_opponent": "unit",
+      "family": "unit",
+      "base6": {
+        "initial": 3.461074737677869,
+        "endpoint": 3.2259576804561028
+      },
+      "promoted6": {
+        "initial": 4.313796269837418,
+        "endpoint": 4.445789957259423
+      },
+      "all12": {
+        "initial": 3.8874355037576436,
+        "endpoint": 3.8358738188577632
+      },
+      "base_piece_ratios_to_pawn": {
+        "L": 0.7777777777777778,
+        "N": 0.7888888888888889,
+        "S": 2.1222222222222222,
+        "B": 0.7888888888888889,
+        "R": 1.288888888888889,
+        "G": 1.288888888888889
+      }
+    },
+    {
+      "route": "mixed12",
+      "training_opponent": "unit",
+      "family": "random2514",
+      "base6": {
+        "initial": 2.22609298925436,
+        "endpoint": 3.212701362660263
+      },
+      "promoted6": {
+        "initial": 3.472482062856792,
+        "endpoint": 4.059243627293545
+      },
+      "all12": {
+        "initial": 2.849287526055576,
+        "endpoint": 3.6359724949769037
+      },
+      "base_piece_ratios_to_pawn": {
+        "L": 1.6888888888888889,
+        "N": 1.4222222222222223,
+        "S": 0.35555555555555557,
+        "B": 1.1555555555555554,
+        "R": 1.211111111111111,
+        "G": 13.11111111111111
+      }
+    },
+    {
+      "route": "mixed12",
+      "training_opponent": "random",
+      "family": "unit",
+      "base6": {
+        "initial": 3.461074737677869,
+        "endpoint": 3.7314955905183576
+      },
+      "promoted6": {
+        "initial": 4.313796269837418,
+        "endpoint": 4.54541329931128
+      },
+      "all12": {
+        "initial": 3.8874355037576436,
+        "endpoint": 4.138454444914818
+      },
+      "base_piece_ratios_to_pawn": {
+        "L": 1.6555555555555554,
+        "N": 0.6111111111111112,
+        "S": 1.0,
+        "B": 0.6111111111111112,
+        "R": 1.0,
+        "G": 1.6555555555555554
+      }
+    },
+    {
+      "route": "mixed12",
+      "training_opponent": "random",
+      "family": "random2514",
+      "base6": {
+        "initial": 2.22609298925436,
+        "endpoint": 2.308633952118674
+      },
+      "promoted6": {
+        "initial": 3.472482062856792,
+        "endpoint": 3.5200013972570594
+      },
+      "all12": {
+        "initial": 2.849287526055576,
+        "endpoint": 2.9143176746878665
+      },
+      "base_piece_ratios_to_pawn": {
+        "L": 1.3111111111111111,
+        "N": 1.1111111111111112,
+        "S": 0.5888888888888889,
+        "B": 2.4555555555555557,
+        "R": 1.5555555555555556,
+        "G": 10.21111111111111
+      }
+    }
+  ],
+  "new_go": 0,
+  "seconds": 0.0732939001172781,
+  "scope": "AllpriceACKresponse tables plusrawquerycounts independentlyrechecked, ALL8descriptivefree12/base6/promoted6distances andbaseprice/P ratios reported withoutchoosingbestreference/model. Fixedofficialsource prior notindependenthumanconsensus, neverfitness/parameterselection. Basecoverage notidentifiability proof; rarepromotion cannot byitselfdismissobservedbasicpriceordering errors."
+}

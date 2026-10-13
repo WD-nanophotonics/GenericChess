@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "counts": {
+    "games": 12928,
+    "actual_go": 214895,
+    "PV_moves": 3851691,
+    "Python_actual_actions": 280476,
+    "random_draws": 65581,
+    "sorted_legal_arrays": 65581,
+    "price_ACK_entries": 6880,
+    "joint_batches": 288,
+    "proposal_rounds": 96
+  },
+  "source_sha256": {
+    "554": {
+      "games.jsonl": "488951f65e11bebb7d01bcf9b38d54bd2ba4cdd7879a0ef08dd054d9c2b4af21",
+      "queries.jsonl": "b152776a4297dd2244560f8c5262ff7e26f6618284014b447761ad50c17eedc2",
+      "price_acks.json": "0584d619bfe447b373fe8e45fe39b929dae6189c685fcbd567b7c9f460ef2c00"
+    },
+    "555": {
+      "games.jsonl": "a0c4094ee1265a555b2b1f88b2a388091da654ef50e7bd64abfb9d6c7f5e662b",
+      "queries.jsonl": "54053fad1113ae5516f197ccf8ec04854e7ef7cff6fcc9fc5288eef6f6244bf8",
+      "price_acks.json": "8a1213200539690be593bbbee30a8817edd752da3fa32fbe1ca14f90ac855a5e"
+    },
+    "556": {
+      "games.jsonl": "fd56725892d2b571bfe644c1fd57adc0209f0b9112bed41aa40d5251fe42a9a8",
+      "queries.jsonl": "1601963d5b4a2b44bfb990bb68e8191305ad0d4789a983a0d286f19937926fed",
+      "price_acks.json": "21480fc59015b333f4c6297a1b1346084aae54233f2dca4a9fd5b970826c7a94"
+    }
+  },
+  "seconds": 502.13764750026166,
+  "new_go": 0,
+  "scope": "IndependentPythonrules allactualtrajectories/material/metadata/fullhistory/terminal/RNG+nativePV readback; exactjointproposals/goals/table/reset/rawjournal andALLendpointfreeze. Finite standardShogi1024caller, no genericdomain/humanrecovery proof. QA cost separatefromphysicallearning wall."
+}

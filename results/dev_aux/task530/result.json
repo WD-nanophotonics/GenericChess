@@ -1,0 +1,35 @@
+{
+  "status": "PASS_NATIVE_TRANSPORT",
+  "complete_journaled_games": 64,
+  "actual_go": 1092,
+  "orphan_go": 10,
+  "PV_move_checks": 49448,
+  "random_draws": 302,
+  "fulltable_entries": 1792,
+  "price_ack_scope": "56resumedgames only; first8constructorack arrays notsaved, leaf cachedstate/rule/PV independentlychecked, no fabricated startup/ACK.",
+  "journals": [
+    {
+      "game_file": "games.jsonl",
+      "query_file": "queries.jsonl",
+      "complete_journaled_games": 8,
+      "actualgo": 193,
+      "orphan_go": 1
+    },
+    {
+      "game_file": "games_resumed.jsonl",
+      "query_file": "queries_resumed.jsonl",
+      "complete_journaled_games": 0,
+      "actualgo": 9,
+      "orphan_go": 9
+    },
+    {
+      "game_file": "games_final.jsonl",
+      "query_file": "queries_final.jsonl",
+      "complete_journaled_games": 56,
+      "actualgo": 890,
+      "orphan_go": 0
+    }
+  ],
+  "seconds": 0.2080800998955965,
+  "scope": "ALL64completedgame rules/fullhistory/RNG/PV/warm-coldperrole queryindex/rawjournals plus10orphanqueries fromtwoordinaryimportfailures. Existingcontrols notrerun; prospective estimates corrected afterobserved costs. Sourcefixedmatchesallwithin-case non-time responses as529 result and supplementalfirst4case table."
+}
