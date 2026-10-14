@@ -8,20 +8,15 @@ routine-read truncation and is no longer duplicated here.
 
 ## Priority and current decision
 
-Latest supplement: private approximateC ordering closes228 calls; fixed38 paired
-tuples agree, but transfer has2 shallower cases and caller worst6.813x. Keep it
-private, not default. Dot neutral-leaf objection was actually reproduced:
-Core0/Native+100; repaired q0 neutral floor,8old failures then44 focusedpass,
-fixed literal probe all0. Frozen earlier images/results remain immutable.
-Next prioritize this semantic correction's verification and actual remaining
-frontier paths before any broader equivalent-objective claim. AUX48 final
-summary available, not independently replayed; no duplicate toy learning.
-
-
-Search capability/bottleneck attribution first: supported generic backend,
-minimal alpha-beta/specialized-rule controls and mature overall references.
-Separate rule execution, representation, repeated scheduling, optimization,
-defined work and equal-time retained useful decisions. No Elo/speed parity gate.
+NATIVE_COMPLETE_QSEARCH.md is the latest capability change: bounded generic
+Native q1/q4 with actual full checked state/history, semantic noisy effects,
+hard/q-node/total/time/cancel controls, retained q-policy metadata and TT phase/
+configuration separation. Candidate2555full tests and installed56focused pass.
+Initial q1/q4 fixed controls close68/60 supported score pairs, with censorship/
+18 limits retained. Builtin and prospective generated q4 comparisons now run
+under fixed declarations; do not treat completion depth alone as WDL/strength.
+The session clock survives an08:29-to12:58 unknown interruption; exclude that
+gap from effective-work claims. Source/API updates are a checkpoint, not finish.
 
 FULL_NATIVE_Q0_AND_TERMINAL_PRIORITY.md is latest:1213 closed research queries,
 2535 unique active tests pass (2411 initial+124 exact temp-setup recovery),

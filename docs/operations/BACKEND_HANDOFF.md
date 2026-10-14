@@ -312,3 +312,10 @@ SearchBackend adapter, authorize silent q4-to-q0 downgrade or select a UI defaul
 UI Test remains user-owned and isolated.
 
 Later q0 neutral-leaf correction: legal NO_CONTEST/RESTART floors negative static leaf at0. Rebuild C after pulling;8new regressions cover cold/warm TT/root-window modes. Private cheap ordering remains an archive-only experiment; no installed ordering/default change.
+
+Complete semantic Native qsearch is now opt-in through nonzero SearchLimits q
+depths on a rebuilt SEMANTIC_QSEARCH_VERSION=1 kernel. Old binaries fail clearly
+for nonzero q and keep q0 calls. First-iteration ordinary-q0 reserve, mandatory
+check hard limit and retained-policy fields are explicit; no UI/backend selection
+changes. Read ../research/NATIVE_COMPLETE_QSEARCH.md before interpreting depth,
+q-node budgets or reused TT results. Legacy Native search is still separate.

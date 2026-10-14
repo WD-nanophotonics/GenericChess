@@ -120,6 +120,10 @@ class SemanticIterativeSearchResult:
     ordering_cache_allocated_bytes: int | None = None
     # Actual discarded static-ordering transitions; None for older/not-started kernels.
     ordering_material_view_trials: int | None = None
+    # Retained iteration policy, not merely requested q depth. None means
+    # no complete iteration (or an older kernel without provenance).
+    result_ordinary_qdepth: int | None = None
+    result_check_hard_qdepth: int | None = None
 
 
 def _profile_tuple(native_rules, values):
@@ -429,6 +433,14 @@ class SemanticSearchEngine:
         root_window_pruning: bool = False,
         trace_enabled: bool = False,
     ) -> SemanticIterativeSearchResult:
+        """Search with the requested finite main/q policy and cooperative budgets.
+
+        Nonzero q depth requires SEMANTIC_QSEARCH_VERSION=1. The first
+        complete main iteration reserves ordinary q depth zero, while checks
+        still require evasions up to the hard limit. Later iterations use
+        the requested ordinary depth. Retained policy is reported separately
+        from requested limits; a hard/q-node abort keeps the last full result.
+        """
         if root_order_hint is not None and (
             self._ordering_checkpoint_id is not None or self._policy_model is not None
         ):
@@ -447,8 +459,24 @@ class SemanticSearchEngine:
             and abs(limits.max_time_seconds) != float("inf")
         ):
             raise ValueError("max_time_seconds must be a finite non-negative value")
-        if limits.quiescence_max_depth != 0 or limits.quiescence_max_nodes not in (None, 0):
-            raise ValueError("SemanticSearchEngine does not implement qsearch")
+        for name in ("quiescence_max_depth", "quiescence_hard_max_depth"):
+            value = getattr(limits, name)
+            if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+                raise ValueError(f"{name} must be a non-negative integer")
+        if limits.quiescence_max_nodes is not None and (
+            isinstance(limits.quiescence_max_nodes, bool)
+            or not isinstance(limits.quiescence_max_nodes, int)
+            or limits.quiescence_max_nodes < 0
+        ):
+            raise ValueError("quiescence_max_nodes must be a non-negative integer")
+        q_args = ()
+        if limits.quiescence_max_depth > 0:
+            if getattr(_module(), "SEMANTIC_QSEARCH_VERSION", 0) < 1:
+                raise ValueError("SemanticSearchEngine qsearch requires a rebuilt Native kernel")
+            if limits.max_depth + limits.quiescence_hard_max_depth > GC_SEM_MAX_PLY:
+                raise ValueError("main and hard q depth exceed the bounded Native stack")
+            q_args = (limits.quiescence_max_depth, limits.quiescence_hard_max_depth,
+                      limits.quiescence_max_nodes)
         if not isinstance(root_window_pruning, bool):
             raise TypeError("root_window_pruning must be a bool")
         _require_root_window_support(root_window_pruning)
@@ -482,6 +510,7 @@ class SemanticSearchEngine:
                 packed_root_hint,
                 root_window_pruning,
                 trace_enabled,
+                *q_args,
             ))
         finally:
             if unregister is not None:
@@ -605,6 +634,10 @@ class SemanticSearchEngine:
             policy_state_inferences_by_ply=tuple(int(value) for value in raw.get("policy_state_inferences_by_ply", ())),
             policy_actions_scored_by_ply=tuple(int(value) for value in raw.get("policy_actions_scored_by_ply", ())),
             policy_elapsed_nanoseconds_by_ply=tuple(int(value) for value in raw.get("policy_elapsed_nanoseconds_by_ply", ())),
+            result_ordinary_qdepth=(None if raw.get("result_ordinary_qdepth") is None
+                                    else int(raw["result_ordinary_qdepth"])),
+            result_check_hard_qdepth=(None if raw.get("result_check_hard_qdepth") is None
+                                      else int(raw["result_check_hard_qdepth"])),
             training_trace=tuple(dict(row) for row in raw.get("training_trace", ())),
             training_trace_enabled=bool(raw.get("training_trace_enabled", False)),
             training_trace_count=int(raw.get("training_trace_count", 0)),

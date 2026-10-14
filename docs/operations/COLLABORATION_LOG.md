@@ -2183,3 +2183,23 @@ No direct auxiliary wake/reply or boundary conflict observed; routing was smooth
 enough for useful evidence delivery but no measured saved-minutes claim.
 
 Final closure: same session 1454d68a-b43a-4fa3-8b89-71c72a473f49 ran UTC2026-10-14T06:47:08.386384+00:00 to 2026-10-14T08:13:11.931503+00:00 (86.059min),10 research stages; safe_checkpoint accepted, science OPEN. All2543 active tests pass in one uninterrupted new-temp run;44 focused/publisher pass. Code/science4a21332fa52e3885fbc2539ecfb343a4650abcbf full remote SHA independently verified. No active research producer remains; next executable tasks saved. Final close receipt is in the purpose archive.
+
+###2026-10-14 ongoing q capability checkpoint
+
+PRIMARY independently closed the stale root-fallback task (alreadyfixed),
+attributed saved ordering adverse cases, and built bounded fullsemantic C q
+capability instead of another q0 transport micro-optimization. Private q1/q4
+controls match68/60 completed supported score pairs; fullcandidate2555tests and
+installed56focused checks pass. Explicit TT objective isolation is justified by
+two failing unsafe-ablation regressions. New builtin/prospective q4 comparisons
+are in progress under fixed budgets, not advertised as WDL or deployment gain.
+
+An interrupted producer left29 durable rows, no original exit receipt/process;
+a20s-fused pending-call probe exits0, then only remaining cells resume. The
+08:29-to12:58 gap is effective-work UNKNOWN and reported to the user; neither SAC
+nor a C crash is established. Session ID/start remain unchanged.
+
+DEV_AUX receives no duplicate task or file edits. The last recovered channel/
+original thread has no new q review from Dot; prior neutral-leaf advice is
+already adopted and applied. New q code will be linked for one concrete objection,
+without treating Dot as a release gate or claiming its independent execution.
