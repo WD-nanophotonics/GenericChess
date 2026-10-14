@@ -13,18 +13,33 @@ minimal alpha-beta/specialized-rule controls and mature overall references.
 Separate rule execution, representation, repeated scheduling, optimization,
 defined work and equal-time retained useful decisions. No Elo/speed parity gate.
 
-GEOMETRY_PREFIX_AND_DROP_GOAL.md is latest:187 actual research searches.
-Two generic Python search fixes reserve terminal utility bands and retain a
-completed winning root child when a later sibling aborts. Actual stop reason/
-last full depth remain; completed_root_win records partial-iteration provenance.
-Eight same16s calls recover4/4 independently proved H3 paired targets; no uniform
-D2/globalstrength claim.16 new regressions pass. Old64call q misses are pre-repair
-evidence, not a current-default ranking. Prefix caches stay private: small/mixed
-caller gain and2.63-34.86MB extra. MDP saves work on three proved-win roots only;
-fresh generated roots show no cuts. Defaults/Native/Core/UI/stop remain.
-Next is completed-root transfer/provenance under actual Native providers and
-varied generated history/effects, retaining negative98node/cancellation controls;
-no unchanged q/cache curve or new scheduler.
+ROOT_WIN_DECLARATIONS_AND_NATIVE_INPUTS.md is latest:516 actual research
+search attempts/515complete/1harness failure. A supported NO_CONTEST declaration
+was missing from Python recursive neutral options and produced false winning
+bounds. The minimal repair covers negamax/bothq/reference and preserves
+RESTART/action-tie/WIN/TT identity semantics;2502full tests pass and code is
+published932f03b2.64 intervention controls give27false old/0false fixed wins,
+while preserving12 qualified H3 wins. Dot's strict-alpha equality control also
+passes; its conditional premise was necessary, not a full-domain certificate.
+120 generated and64 active semantic/history old-new calls retain tuples;
+8distinct positive certificates receive separate full-defense Core replay.
+Existing optional Native availability/check inputs make actual1s H3 choices
+succeed on the16board where Core/legality-only miss, twice each; all stillD1
+and positive provenance is completed_root_win/q2. No global strength claim.
+25,037checks and25,037availability queries shadow complete Core semantics on
+six active Native played roots; two unsupported EP roots explicitly stay Core.
+Defaults/Core/NativeABI/UI/stop unchanged. Private completeC payload V1 is
+mixed/slower; changed V2 interned-name mapping gives two-order caller ratios
+.9518-.9740 on four exposed roots with equal work/fields/errors/history.
+Next weigh/qualify one narrow Native integration seam, including existing
+module ownership, old-binary fallback and real cancellation/errors, before
+deployment; no unchanged q/read-only/cache curve. AUX46 a4fb396e full report/blob
+and listed arithmetic reviewed, not raw games/training/bootstrap/native replay.
+
+GEOMETRY_PREFIX_AND_DROP_GOAL.md retains prior187searches, total-static-band/
+completed-winning-child repairs, independent H3 and rejected prefix-cache costs.
+Its no-NO_CONTEST certificates remain valid; do not generalize them over omitted
+defensive declaration options or replace goal checks with a cooperative PV.
 
 WIDE_READONLY_VIEW.md is the current isolated readonly feasibility result.
 Old Native codec/cap/defaults/UI are unchanged. Core owns complete legality,
@@ -109,7 +124,8 @@ checkout writes, merge or routine wake. COLLABORATION_LOG records the scope.
 
 |Purpose|Record|
 |---|---|
-|Latest utility/root-win repairs and drop goal|GEOMETRY_PREFIX_AND_DROP_GOAL.md; data/geometry_prefix_drop_20261014.json|
+|Current neutral declarations/root proof/Native input delivery|ROOT_WIN_DECLARATIONS_AND_NATIVE_INPUTS.md; data/root_transfer_20261014.json|
+|Prior utility/root-win repairs and drop goal|GEOMETRY_PREFIX_AND_DROP_GOAL.md; data/geometry_prefix_drop_20261014.json|
 |Prior q1/q2 completion, actual consumers and noncheckmate rootwins|Q12_COMPLETION_AND_WORK.md; data/q12_completion_20261014.json|
 |Actual runtime work, export feasibility and finite q policy|TRIAL_EXPORT_AND_Q_POLICY.md; data/trial_export_q_policy_20261014.json|
 |Trial hand/inner-child correctness and wide Core ordering|TRIAL_STORAGE_AND_WIDE_Q.md; data/hand_trials_20261014.json|

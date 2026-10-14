@@ -254,3 +254,21 @@ remains last complete uniform iteration, not the interrupted depth. Its q policy
 belongs to that retained proof; PV can omit q continuation. No default q4/hard8/
 MDP/Native/Core/UI changes. Integrate tested sandbox backend through the existing
 user-maintained UI lane; no UI copy is published. See GEOMETRY_PREFIX_AND_DROP_GOAL.
+
+
+## 2026-10-14 neutral declaration correctness and optional inputs
+
+Python AlphaBetaPlayer now includes qualified NO_CONTEST as a zero-value
+defensive declaration in main/q/reference search; the actual declaration
+identity survives warm TT. Callers continue to use choice_kind/declaration
+and GameSession.declare, including action=None. WIN priority, RESTART preference,
+action ties, stops and existing result_source/depth/q metadata remain.
+Code fix932f03b268c2eecd4e3347219ded566d89e8872a passes2502 active tests.
+No Native ABI, default flag or UI change accompanies this fix.
+
+The existing explicit use_native_semantic_availability/check options have
+finite full-state transfer and1sH3 evidence in
+../research/ROOT_WIN_DECLARATIONS_AND_NATIVE_INPUTS.md. A requested backend is
+not actual execution: unsupported EP roots retain Core fallback. Private C
+payload prototypes are not installed or a consumer requirement. UI Test remains
+user-owned; this is backend delivery only.

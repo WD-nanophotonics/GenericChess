@@ -2033,3 +2033,34 @@ Session elapsed95.709minutes includes full regression and observed corrections,
 exceeding60-90target without idle padding/backdating. Researchcount12 includes
 one withdrawn checkpoint;11 receive validated credit. Science remains open.
 [Fixed auxiliary45 report](https://github.com/WD-nanophotonics/GenericChess/blob/ed113f9af378504a844da3d13c2813b19120c858/results/dev_aux/SEGMENT_20261014_45.md).
+
+
+## 2026-10-14：完整声明反例、Native输入与辅助46
+
+PRIMARY本段验证真实Native/root保留边界、完整已走promotion/drop/aux/history、
+一秒实际目标及输入成本；发现Python递归遗漏NO_CONTEST，实际session立即中立结果
+反驳旧获胜声明。已修复并发布932f03b2，2502完整测试通过。Dot的等号负控制被采纳；
+父子取负方向已澄清，其条件性源码分析不冒称独立执行或覆盖所有声明。新的遗漏由
+本地反例纠正，非对等号guard的误判；无审批/回执循环或等待Dot才研究。
+
+DEV_AUX继续自己的sidemission棋价/尺度/成本/兵机制研究，46固定
+[a4fb396e报告](https://github.com/WD-nanophotonics/GenericChess/blob/a4fb396e00349d0c57321174b8ccaeab5196f90d/results/dev_aux/SEGMENT_20261014_46.md)
+已由PRIMARY全文读取、精确Git blob绑定和列出的6656局/1311.782累计秒、
+-3/64交互、5/256预算差、28.906%观测墙钟下降及250go节省算术核验。
+PRIMARY未复跑原始games/training/native/CI bootstrap/私有归档恢复；联合尺度最差
+下界为负、比例不唯一、P/N2边界和DEV零EP仍保留。报告核验不升级为独立实验复现。
+
+协作通过既有Slack固定PRIMARY_SANDBOX/DEV_AUX/DOT路由及固定版本记录；
+本段读取辅助面向双方的RESULT，无例行唤醒、重复训练/对局、接管Core、
+支线合并或互写状态。普通并发正常，未请求静默窗口。未观察越界写入或合并冲突，
+不是监控全机后的绝对证明。双方科学职责分明；辅助结果补充条件性棋价解释，
+主线保持搜索语义/接口。省去重复研究有具体依据，但没有单Agent对照或完整token/
+工程成本，不能量化团队节约率；辅助29%属于其预算实验，非协作效率百分比。
+
+PRIMARY的原始Slack/account/回执留ignored，公开仅技术摘要。
+[本段结果和边界](../research/ROOT_WIN_DECLARATIONS_AND_NATIVE_INPUTS.md)
+以及data/证据ZIP记录全部516搜索尝试、负例/小型harness错误和私有C候选。
+这些产出不表示科学完成、额外worker授权或UI维护职责改变。
+
+本段实际UTC03:42:53.001619至04:43:39.634021，共60.777分钟，9项实质检查点，
+session finish接受safe_checkpoint；所有生产者关闭，科学仍OPEN，memo已补可执行后续。
