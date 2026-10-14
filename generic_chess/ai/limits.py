@@ -15,6 +15,12 @@ class SearchLimits:
     deadline or cancellation token enables prompt polling; fixed-node work
     avoids clock polling. An indivisible work unit can delay a wall-clock stop,
     so the time limit is cooperative rather than a strict execution deadline.
+
+    ``quiescence_max_nodes`` is checked when further q expansion is needed,
+    after terminal, stand-pat and ordinary-depth exits. It is not a strict
+    ceiling on q visits: the first-iteration ordinary-q0 reserve can finish
+    several quiet leaves after that count. Use ``max_nodes`` to bound all
+    main-plus-q visits, independently of q expansion policy.
     """
 
     max_depth: int | None = None

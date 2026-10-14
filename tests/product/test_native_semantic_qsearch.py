@@ -135,3 +135,29 @@ def test_retained_iteration_reports_actual_q_policy(depth, ordinary):
     assert result.completed_depth == depth
     assert result.result_ordinary_qdepth == ordinary
     assert result.result_check_hard_qdepth == 8
+
+def test_q_node_limit_is_expansion_check_not_quiet_reserve_visit_cap():
+    from generic_chess import build_builtin_ruleset
+    session = GameSession(compile_ruleset_for_execution(build_builtin_ruleset("western_chess")))
+    values = {tid: 0 if m.is_anchor else 100
+              for tid, m in session.compiled.support.type_metadata.items()}
+    e = SemanticSearchEngine(session.compiled, compile_native_semantic_rules(session.compiled),
+        board_values=values, hand_values=values, tt_megabytes=0)
+    before = session.state, session.to_record(), session._search_witnesses
+    result = e.search(session, SearchLimits(max_depth=1, max_time_seconds=5,
+        quiescence_max_depth=4, quiescence_hard_max_depth=8, quiescence_max_nodes=1))
+    assert result.completed_depth == 1 and result.result_ordinary_qdepth == 0
+    assert result.qnodes > 1
+    assert result.termination_reason == "completed"
+    assert before == (session.state, session.to_record(), session._search_witnesses)
+
+def test_raw_q_call_rejects_combined_stack_overflow_and_releases_engine():
+    from generic_chess.native.compiler import GC_SEM_MAX_PLY
+    from generic_chess.native.adapter import pack_semantic_search_position
+    session = fixture()
+    e = engine(session)
+    position = pack_semantic_search_position(session.compiled, e._native_rules, session)
+    with pytest.raises(ValueError, match="bounded search stack"):
+        _module().semantic_engine_search(e._capsule, position, GC_SEM_MAX_PLY,
+            None, 0.0, None, None, False, False, 1, 8, None)
+    assert e.search(session, limits(0)).completed_depth == 2

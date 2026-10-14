@@ -8,17 +8,23 @@ routine-read truncation and is no longer duplicated here.
 
 ## Priority and current decision
 
-NATIVE_COMPLETE_QSEARCH.md is the latest capability change: bounded generic
-Native q1/q4 with actual full checked state/history, semantic noisy effects,
-hard/q-node/total/time/cancel controls, retained q-policy metadata and TT phase/
-configuration separation. Candidate2555full tests and installed56focused pass.
-Initial q1/q4 fixed controls close68/60 supported score pairs, with censorship/
-18 limits retained. Builtin and prospective generated q4 comparisons now run
-under fixed declarations; do not treat completion depth alone as WDL/strength.
-The session clock survives an08:29-to12:58 unknown interruption; exclude that
-gap from effective-work claims. Source/API updates are a checkpoint, not finish.
+NATIVE_COMPLETE_QSEARCH.md is latest: full semantic Native boundedq4 with
+actual checked state/history, TT phase isolation and retained-policy metadata.
+Fullcandidate2555 plus two later boundary guards validated;58focused installed
+checks pass (not one full2557 run).884durable research searches preserve scope.
+Builtin16 resource pairs give12deeper/4same; prospective generated120 give
+36deeper/82same/2shallower. Closed fixed pairs agree, censored cases unextended.
+Literal commonD2/q4 chosen-action checks give Shogi-drop16s700(Core) versus900
+(Native), conditional finite objective only. No WDL/strength/default claim.
+Private qhard retry improves only2/36supported pairs;20/22secondsearches buy no
+depth. Retain privately, no new public scheduler. Next investigate actual q
+candidate-classification/reuse cost versus ordering with full checked semantics;
+conditional excess-transition count is evidence of work, not predicted speedup.
+Dot's q-budget wording objection is tested and documented: qmax1 permits20/21
+Core/Native visits on quietD1 because it checkpoints expansion, not all visits.
+The08:29–12:58 unknown interruption is excluded from effective-work reporting.
 
-FULL_NATIVE_Q0_AND_TERMINAL_PRIORITY.md is latest:1213 closed research queries,
+FULL_NATIVE_Q0_AND_TERMINAL_PRIORITY.md preserves prior:1213 closed research queries,
 2535 unique active tests pass (2411 initial+124 exact temp-setup recovery),
 codepublisher45pass. Code8800b7fe fixes Native WIN checked before actualterminal:
 old Native missed a realM1;9regressions old8fail/1pass, allfixedpass. Rebuild C;
@@ -42,11 +48,8 @@ Keepcheapflat control; depth/actions/staticD3 diagnostics are not WDL/strength.
 
 Cheap frontier and private C comparison are now CLOSED, not pending tasks:
 3098Coreactions/32frontiers retain hand/offtarget errors and bad ties; candidate
-228calls show scoped savings and adverse transfer. Next concrete question:
-publicCore neutral declaration fallback before a completedD1 (existing node1
-fixture/control), with explicit cancellation separate; no new long games/Elo.
-Then diagnose the saved adverseordering cases only if this changes a supported
-option decision. Preserve fullchecked state/history and frozen imagebindings.
+228calls show scoped savings and adverse transfer. The later q report closes stale fallback (alreadyfixed90dd) and adverse
+ordering attribution (all2505 retained actions are actualM1); no unchanged rerun.
 Prior input-builder/32s no-choice-gain evidence remains in its purpose report.
 
 ROOT_WIN_DECLARATIONS_AND_NATIVE_INPUTS.md preserves the prior recursive NC
@@ -142,7 +145,8 @@ checkout writes, merge or routine wake. COLLABORATION_LOG records the scope.
 
 |Purpose|Record|
 |---|---|
-|Current completeNative/terminalpriority/samealgorithm/staticorder/transfer|FULL_NATIVE_Q0_AND_TERMINAL_PRIORITY.md; data/full_native_q0_20261014.json|
+|Current completeNative q/caller/transfer|NATIVE_COMPLETE_QSEARCH.md; data/native_complete_q_20261014.json|
+|Prior completeNative/terminalpriority/samealgorithm/staticorder/transfer|FULL_NATIVE_Q0_AND_TERMINAL_PRIORITY.md; data/full_native_q0_20261014.json|
 |Current fallback/input delivery/default caller/full-backend qualification|NATIVE_PAYLOAD_AND_NEUTRAL_FALLBACK.md; data/native_payload_20261014.json|
 |Current neutral declarations/root proof/Native input delivery|ROOT_WIN_DECLARATIONS_AND_NATIVE_INPUTS.md; data/root_transfer_20261014.json|
 |Prior utility/root-win repairs and drop goal|GEOMETRY_PREFIX_AND_DROP_GOAL.md; data/geometry_prefix_drop_20261014.json|

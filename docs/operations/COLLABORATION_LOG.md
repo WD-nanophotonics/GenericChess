@@ -2203,3 +2203,71 @@ DEV_AUX receives no duplicate task or file edits. The last recovered channel/
 original thread has no new q review from Dot; prior neutral-leaf advice is
 already adopted and applied. New q code will be linked for one concrete objection,
 without treating Dot as a release gate or claiming its independent execution.
+
+Dot's new fixed-source q review found no established TT/iteration-commit
+counterexample within its scope. PRIMARY adopted its one budget wording concern,
+ran quietChessD1/qmax1 (Core20/Native21q visits, bothcompleteordinary0), and
+documented expansion-check versus stricttotal-node semantics with regression.
+No Core/C stop-policy rewrite or automatic task list followed. Dot did not rerun
+2555/56 tests. The first send was auto-review-rejected as allegedly duplicate;
+actual-call/ledger/channel evidence showed no successful new-request receipt.
+One sameID/samepayload reviewed retry delivered root1791983742.025539; no
+alternate transport or ID workaround. Rejection and exact originals stay private.
+
+### Same-segment final scientific evidence, complete Native q
+
+PRIMARY closes884 durable recorded research searches and38 literal child
+transitions, implementing full-state Native boundedq with actual q metadata/
+TT phase separation and preserving all censoring/unsupported cases. Full2555
+candidate tests plus two later guards pass, installed focused58pass; not a
+full2557 rerun. Builtin resource12/4/0 and new generated36/82/2 deeper/same/
+shallower evidence, commonD2 Shogi-drop700vs900, limited retry2/36gain and
+conditional q-classification work counts are in NATIVE_COMPLETE_QSEARCH.md
+and its63-member immutable archive. Retry remains private; no default/UI changes.
+
+Dot source review found no established q-TT/false-commit counterexample within
+its read scope. Its one qbudget objection led to two real calls and a public
+documentation/test clarification. This is a concrete benefit, not universal
+approval or an independent2555 rerun. Final q thread read has one reply and no
+more pages; channel latestfive covers back to the already-read older comment.
+No new own-question supplement. Raw exact reads preserved privately first.
+
+DEV_AUX independently reports segment49 KRN3x4 reachable-policy results and
+staged KRNB oracle learning with explicit stock/capture-handoff restrictions.
+PRIMARY reads the complete new request/reply thread only, not49source/raw
+policy; its reported9/64 gain and4096-stage1/256 with crossing-zero interval
+are not independently reproduced. Dot's reply distinguishes composite policy
+WDL, price-equivalence plateaus and family versus continuation holdout; reasonable
+interpretation advice, not new authority or a required PRIMARY task. Keep that
+learning lane separate and do not duplicate it or infer universal human prices.
+
+No direct auxiliary wake, merge, crosswrite or resource pause was requested.
+Coordination delivered fixed-scope evidence without receipt loops; no observed
+file conflict, but no full process audit or measured saved-minutes/efficiency
+percentage. PRIMARY's serious unknown interruption was proactively reported;
+29durable rows and original declaration survived, pendingcall exit0, remaining
+only resumed.269.0326min unknown gap is excluded from active-work claims. No
+confirmed crash/SAC cause. One actual Slack auto-review duplicate rejection was
+reported, resolved through evidence-reviewed sameID retry under existing user
+authority; no transport/identity workaround or renewed consent requirement.
+Research is OPEN; executable next question targets q classification costs.
+
+Final delivery BLOCKED: automatic review rejected two identical commit/publish
+attempts before process start, citing unapproved project egress. PRIMARY verified
+exact origin/sandbox, existinga762 remote SHA,63member scientific allowlist and
+hashes, then retried once citing the actual standing user grant. Review still
+rejected. No new commit/push occurred; final58 local tests pass. The user was
+given the specific reason/impact and an explicit destination/scope approval
+question; this is platform review, no established SAC fault. Do not claim Dot
+can yet read this new summary remotely. Earliera762 capability/source remains
+published; new evidence awaits resolution, no alternate upload bypass.
+
+Same session 87cdffaf-8937-4ed7-8130-3182a116175e accepted safe_checkpoint at2026-10-14T14:15:14.512445+00:00; wall359.665min contains269.033min unknown gap, observed work/computation/delivery spans approximately90.632min. Nine research stages; not uninterrupted uptime or preciseCPU claim. Producers closed, scienceOPEN, next executable memo present; final report/collaboration remains local pending publication resolution.
+
+Publication authorization resolution: the user explicitly confirmed this exact
+GitHub sandbox release after the recorded rejection, and reaffirmed continuing
+authorization for all project publications. Proceed with reviewed Agent-only
+source/tests/generated results/sanitized summaries without asking again for
+ordinary publication. The earlier refusal is historical evidence, not missing
+user consent. This one publication does not resume paused inspection/research
+or Slack consultation. Publication outcome is verified separately after push.

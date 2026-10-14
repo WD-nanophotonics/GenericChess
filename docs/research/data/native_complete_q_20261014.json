@@ -1,0 +1,95 @@
+{
+  "science_complete": false,
+  "code_sha": "a76214d0d361425a162c02a780673b3789484e97",
+  "archive": "../../archive/native_complete_q_20261014/evidence.zip",
+  "archive_sha256": "b5a895513424fa80f2191c2a6886e64466e681a66a55afb3e2aa151e1a4a7ff3",
+  "archive_bytes": 1565119,
+  "archive_members": 63,
+  "durable_recorded_queries_lower_bound": 884,
+  "physical_attempts_unknown": true,
+  "adverse_literal_transitions": 38,
+  "full_candidate_tests": 2555,
+  "final_focused_tests": 58,
+  "unique_active_tests_validated": 2557,
+  "one_full_2557_run": false,
+  "default_changed": false,
+  "interruption_unknown_minutes": 269.0326,
+  "builtin": {
+    "complete": true,
+    "actual_queries": 48,
+    "fixed_pairs": 8,
+    "fixed_both_D2_complete": 6,
+    "fixed_closed_mismatches": [],
+    "resource_pairs": 16,
+    "resource_depth": {
+      "deeper": 12,
+      "same": 4
+    },
+    "resource_same_action": 6,
+    "resource_same_retained_qpolicy": 14,
+    "actual_backends": {
+      "Core Nativeprovider": 24,
+      "CompleteNativeq4candidate2": 24
+    }
+  },
+  "generic": {
+    "complete": true,
+    "durable_rows": 384,
+    "actual_recorded_queries": 372,
+    "unsupported_cells": 12,
+    "fixed_pairs": 60,
+    "closed_D2_pairs": 18,
+    "closed_D2_mismatches": [],
+    "resource_pairs": 120,
+    "resource_depth": {
+      "deeper": 36,
+      "shallower": 2,
+      "same": 82
+    },
+    "resource_same_action_declaration": 92,
+    "resource_same_retained_qpolicy": 102,
+    "actual_backends": {
+      "CoreNativeprovider": 180,
+      "CompleteNativeq4candidate2": 180,
+      "CoreFALLBACK": 12
+    }
+  },
+  "retry": {
+    "complete": true,
+    "decisions": 132,
+    "actual_recorded_queries": 146,
+    "unsupported_native_only_decisions": 8,
+    "retry_decisions": 44,
+    "retry_two_search_decisions": 22,
+    "retry_selected_core": 10,
+    "retry_vs_supported_native": {
+      "same": 34,
+      "deeper": 2
+    },
+    "retry_vs_core": {
+      "deeper": 20,
+      "same": 24
+    },
+    "maximum_caller_overshoot_seconds": 0.18889760000092792,
+    "all_root_state_history_unchanged": true,
+    "scope": "Exposedtriggercohort7qhard+2unsupported+2controls; equalcooperativecallerremainderallocation, notoldkerneldeadline condition orstrictwallguarantee. Privateprototype, no newdefault. Timingvaries,20of22secondsearches donotimproveuniformdepth; callerovershoot retained. ImproveddepthnotWDL orproofthatallqhardcasefallbackpays.",
+    "worst_caller_overshoot_case": {
+      "root": "2609-ply8",
+      "method": "Core",
+      "seconds": 4,
+      "order": 0,
+      "caller_seconds": 4.188897600000928
+    }
+  },
+  "q_work_bound": {
+    "complete": true,
+    "scope": "Supportedcandidate2/plainorder/TT0 completeNative queries only. Transitioncounter excludesnestedterminal/availability andcanonicalPV replay, so notallphysicalwork. Boundmax(0,T-mainnodes-qnodes-1): countedrecursiveedges requirevisits; mainleaf-to-q duplicatevisits androot/canonicalreplay onlyloosenthebound; atmostonefinalcheckededge canabortbeforeavisit. Withplainorder/TT0 no discardedmainorderingtrials; excesssuccessfulcheckedchildren areq-candidateclassification withoutrecursion. Conditional codepathcountbound, NOTtimefraction/speedup/wastedsemanticproof.",
+    "query_count": 180,
+    "positive_lower_bound_queries": 180,
+    "total_outer_checked": 29840628,
+    "total_nonrecursive_lower_bound": 23958257
+  },
+  "publication_state": "USER_EXPLICITLY_CONFIRMED_TESTED_RELEASE_PREPARED",
+  "published_code_sha": "a76214d0d361425a162c02a780673b3789484e97",
+  "authorization": "Exact release confirmed after review rejection; continuing project publication authorization reaffirmed. Inspection/research remain paused."
+}

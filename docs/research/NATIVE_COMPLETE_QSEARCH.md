@@ -39,7 +39,7 @@ while the supported candidate passes. The frozen4x4 played fixture actually
 distinguishes q0 material200 from a q-extended mate estimate. No static-payload,
 position or history cache is introduced.
 
-## Finite validation and ongoing comparisons
+## Finite validation and completed comparisons
 
 Eight initial private q1/hard4 smoke calls and144 fixed calls retain68 supported
 D1/D2 paired scores after existing100M/1B terminal-unit normalization.
@@ -55,9 +55,10 @@ semantic q, real warm-cache policy changes, total/q/hard budgets,
 pre-cancellation, actual state restoration and old-capability rejection checks.
 One first test fixture did not distinguish q objectives; its failed assumption
 is preserved privately, then replaced with the frozen distinguishing fixture.
-The shipped q implementation is tested code; caller usefulness comparisons
-on four builtin Chess/Shogi roots and16 prospectively generated rules continue
-in the same segment and will be reported without changing their budgets.
+The shipped implementation is tested code. Subsequent two boundary/stack guards
+bring unique active cases validated to2557, using the full2555 run plus58 focused
+installed-image cases; this is not one uninterrupted full2557 run. No C changes
+followed the full run. The following declared comparisons have now closed.
 
 ## Interruption and interpretation
 
@@ -80,3 +81,119 @@ versus ordinary0.006s; a scheduler cause remains unproved.
 Raw Slack/account/receipts, host logs and binaries remain private and ignored.
 Research sources/rows and current limitations will be delivered as reviewed
 Agent evidence; the original archives and prior validation status stay frozen.
+
+## Narrow Dot review and verified q-budget boundary
+
+Dot read the fixed source/report/tests and did not establish an incompatible
+q-TT reuse or false complete-iteration result. That is a scoped source review,
+not an independent test rerun or universal correctness proof. Its one wording
+objection was actually tested: standard quiet Chess D1, q4/hard8 and qmax_nodes1
+completes with Core20 and Native21 q visits, both retained ordinary-q0 reserve.
+The extra Native canonical main-PV replay is real work, not another unique state.
+Q-node limits are expansion checkpoints after terminal/stand-pat/depth returns,
+as in Core; they are not strict q-visit ceilings. Total max_nodes remains the
+all-visit budget. The public limits documentation and an actual public-call
+regression now state this boundary, without changing either search's stop policy.
+
+## Caller usefulness and transfer
+
+All arms keep the same declared static board-current/hand-base vector within
+that experiment, q4/hard8, TT0 and ordering/root-tactical disabled. Core uses
+supported actual Native rule providers with fallback explicitly logged; the
+complete Native arm executes the search itself. These are completion/decision
+comparisons, not isolated state-cost factors or mature-engine strength controls.
+
+|Cohort|Actual searches|Closed fixedD2 agreement|Resource completed-depth pairs|
+|---|---:|---|---|
+|Four existing Chess/Shogi analysis roots|48|6/8 pairs close and agree;2 censored|16:12 Native deeper,4 same,0 shallower|
+|16 prospectively generated rules,32 played roots|372 plus12 explicit Native18 declines|18/60 close and agree;42 censored|120:36 deeper,82 same,2 shallower|
+
+Builtin resource allocations are16/64s in two opposite orders; generated1/4s
+follow fixedD2/5s controls, also two orders. Generated seeds2601–2616 freeze
+4/8/12/16 boards plus18 controls before querying; early terminals stay included.
+Builtin analysis setups and complete histories are saved; generated roots retain
+actual played GameRecords/witnesses. No result-dependent budget extensions.
+Concurrent local work is normal, including own build/tests during builtin runs;
+these are not exclusive-machine or noise-free speed measurements.
+
+Builtin selected actions agree6/16; actual retained q policies agree14/16.
+Generated actions/claims agree92/120 and actual q policies102/120. Different
+completed depths or different effective ordinary-q0 reserve policies cannot
+establish equal-horizon strength. Seven separate literal-Core branch searches
+close all distinct builtin chosen actions under a common remainingD1/q4 objective
+(root-relative ply1). Chess changed actions tie0. On Shogi rich-drop16s, Core's
+king action gives700, Native's rook drop900; Core also delivers900 at64s. This
+is useful conditional finite-objective evidence, not WDL or an all-root proof.
+
+The two generated adverse pairs are2601-ply0/4s, both orders: complete Native
+retainsD2 after q-hard interruption while Core reachesD3. All seven q-hard roots
+are retained (an earlier partial checkpoint said six; final full cohort has seven).
+Hard-check censoring is an actual delivered capability limit, not static fallback.
+
+## Bounded retry and next cost question
+
+A private predeclared retry diagnostic takes ALL seven exposed q-hard roots,
+two unsupported18 roots and two lexical nontrigger controls. Across1/4s and two
+counterbalanced orders,132 decisions contain146 actual searches; eight Native-only
+unsupported decisions perform no search. Native-first retry uses only remaining
+cooperative caller allocation for Core and selects a deeper uniform main result
+only with compatible ordinary-q policy; it preserves a positive Native mate
+estimate conservatively. Full root/history restoration holds.
+
+Of44 retry decisions,22 perform a second search,20 of which do not improve
+depth. Against supported Native there are2 deeper/34same/0shallower pairs; the
+only improvements are the already exposed2601-ply0/4s cases where direct Core
+already reachesD3. Eight other Core selections are unsupported-board fallback.
+Retry versus direct Core is20deeper/24same, largely preserving Native advantages;
+this is not independent new holdout or global dominance. Cooperative allocation
+includes constructor time but indivisible packet/PV/fallback work can overshoot:
+maximum observed0.1888976s (direct Core2609-ply8/4s/order0). No strict caller
+wall guarantee is claimed. Keep this candidate private; benefit does not justify
+adding a public automatic scheduler/default on this exposed cohort.
+
+A count-only follow-on uses180 supported generated Native records:29,840,628
+counted successful outer checked transitions exceed main+q visits by at least
+23,958,257 under max(0,T-main-q-1). In this plain-order/TT0 code path recursive
+edges need visits, leaf-to-q duplicate visits only loosen this bound, and at
+most one final checked edge can abort before visiting. The excess is conditional
+nonrecursive q-candidate classification work. Nested terminal/availability and
+canonical-PV replay work are outside that transition counter; this is neither
+all physical work nor a time fraction/speedup promise. Next compare exact noisy
+classification work and full-child reuse in a bounded private probe before
+choosing classification reuse versus move ordering. Preserve checked semantics.
+
+## Delivery and reproducibility
+
+[Compact index](data/native_complete_q_20261014.json) binds the new
+[63-member archive](../archive/native_complete_q_20261014/evidence.zip) and
+[per-member hashes](../archive/native_complete_q_20261014/manifest.json).
+SHA256 b5a895513424fa80f2191c2a6886e64466e681a66a55afb3e2aa151e1a4a7ff3,
+1,565,119 bytes. Its README states dependency paths, exact source/image bindings,
+q1 carrier/counter caveats, candidate versions, failed assumptions and recovery.
+The q1 prototype's nodes already includes qnodes; candidate q4 nodes is main-only.
+Do not combine these into a misleading work factor. Earlier archives stay frozen.
+
+There are884 durable recorded research searches in this segment, plus38 literal
+adverse transitions; tests and unknown original interrupted attempts are excluded.
+All recovered bounded producers exited0 without hitting their external fuses.
+The original missing exit remains unknown, not retroactively certified by rerun.
+Code fixeda76214d0d361425a162c02a780673b3789484e97 was independently remote-verified;
+this report/data and the collaboration summary are delivered separately. Science
+remains OPEN; no UI/default change or learned evaluation integration is implied.
+
+Publication status at final checkpoint: a762 code remains remote-verified. The
+later final evidence/docs are LOCAL ONLY: automatic review twice rejected the
+same commit/tested-publication operation as unauthorized external disclosure,
+despite the standing grant and verified remote/63-member sanitized archive.
+No commit/push executed for this final package. Exact failure and a specific
+approval request were reported to the user; no workaround attempted. Final58
+relevant tests passed locally after the refusal. Do not infer remote delivery
+or Dot reading final artifacts from this local report.
+
+Publication authorization resolution: the user explicitly confirmed this exact
+GitHub sandbox release after the recorded rejection, and reaffirmed continuing
+authorization for all project publications. Proceed with reviewed Agent-only
+source/tests/generated results/sanitized summaries without asking again for
+ordinary publication. The earlier refusal is historical evidence, not missing
+user consent. This one publication does not resume paused inspection/research
+or Slack consultation. Publication outcome is verified separately after push.
