@@ -1139,6 +1139,21 @@ def run_root_search(
         _set_result_provenance(stats, 'root_declaration')
         return None, MATE_SCORE, (), stats.termination_reason
 
+    root_neutral = _neutral_declaration(root_declarations)
+
+    def root_fallback(action, source):
+        # An unfinished iteration supplies no value for an arbitrary action.
+        # A currently executable neutral declaration is already a real floor.
+        # Retain the actual abort reason and zero completed depth; cancellation
+        # returns a choice to the caller, it never executes a declaration here.
+        if root_neutral is not None:
+            stats.declaration_root_selected = True
+            stats.root_declaration = root_neutral
+            _set_result_provenance(stats, 'root_declaration')
+            return None, 0, (), stats.termination_reason
+        _set_result_provenance(stats, source)
+        return action, 0, (), stats.termination_reason
+
     root_first_action: Action | None = None
     root_handles = None
     actions: list[Action] | None = None
@@ -1146,6 +1161,10 @@ def run_root_search(
         try:
             actions = _runtime_legal_actions(ctx, ctx.checkpoint)
         except SearchAborted as exc:
+            if root_neutral is not None:
+                stats.root_scan_used_fallback = True
+                stats.termination_reason = str(exc)
+                return root_fallback(None, 'legal_fallback')
             # A cancelled search still owes the caller one legal fallback,
             # matching the historical root contract.  The fallback generation
             # is outside search and does not recurse or mutate the runtime.
@@ -1157,8 +1176,7 @@ def run_root_search(
             stats.time_to_first_legal_action = time.monotonic() - started
             stats.root_scan_used_fallback = True
             stats.termination_reason = str(exc)
-            _set_result_provenance(stats, 'legal_fallback')
-            return sorted(actions, key=str)[0], 0, (), stats.termination_reason
+            return root_fallback(sorted(actions, key=str)[0], 'legal_fallback')
         if not actions:
             stats.termination_reason = "terminal_position"
             _set_result_provenance(stats, 'terminal')
@@ -1170,8 +1188,7 @@ def run_root_search(
         except SearchAborted as exc:
             stats.root_scan_used_fallback = True
             stats.termination_reason = str(exc)
-            _set_result_provenance(stats, 'legal_fallback')
-            return root_first_action, 0, (), stats.termination_reason
+            return root_fallback(root_first_action, 'legal_fallback')
     elif semantic_engine_for(compiled) is not None:
         root_stream = iter_legal_successor_handles(
             state, compiled, checkpoint=ctx.checkpoint
@@ -1194,8 +1211,7 @@ def run_root_search(
         except SearchAborted as exc:
             stats.root_scan_used_fallback = True
             stats.termination_reason = str(exc)
-            _set_result_provenance(stats, 'legal_fallback')
-            return root_first_action, 0, (), stats.termination_reason
+            return root_fallback(root_first_action, 'legal_fallback')
     else:
         actions = legal_actions(state, compiled)
         if not actions:
@@ -1207,8 +1223,7 @@ def run_root_search(
         except SearchAborted as exc:
             stats.root_scan_used_fallback = True
             stats.termination_reason = str(exc)
-            _set_result_provenance(stats, 'legal_fallback')
-            return sorted(actions, key=str)[0], 0, (), stats.termination_reason
+            return root_fallback(sorted(actions, key=str)[0], 'legal_fallback')
 
     immediate_win: Action | None = None
     scan_best: Action | None = None
@@ -1223,8 +1238,7 @@ def run_root_search(
             fallback = ctx.root_scan_best_action or root_first_action
             if fallback is None:
                 fallback = sorted(actions, key=str)[0]
-            _set_result_provenance(stats, 'root_scan_fallback' if ctx.root_scan_best_action is not None else 'legal_fallback')
-            return fallback, 0, (), stats.termination_reason
+            return root_fallback(fallback, 'root_scan_fallback' if ctx.root_scan_best_action is not None else 'legal_fallback')
     if immediate_win is not None:
         stats.termination_reason = "root_immediate_win"
         _set_result_provenance(stats, 'root_immediate_win')
@@ -1285,10 +1299,8 @@ def run_root_search(
     stats.root_scan_used_fallback = True
     stats.termination_reason = abort_reason or "fallback"
     if tuning.use_root_tactical and scan_best is not None:
-        _set_result_provenance(stats, 'root_scan_fallback')
-        return scan_best, 0, (), stats.termination_reason
+        return root_fallback(scan_best, 'root_scan_fallback')
     fallback = root_first_action
     if fallback is None:
         fallback = sorted(actions, key=str)[0]
-    _set_result_provenance(stats, 'root_scan_fallback' if ctx.root_scan_best_action is not None else 'legal_fallback')
-    return fallback, 0, (), stats.termination_reason
+    return root_fallback(fallback, 'root_scan_fallback' if ctx.root_scan_best_action is not None else 'legal_fallback')

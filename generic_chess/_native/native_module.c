@@ -28,6 +28,7 @@
 #include "native_semantic_key.h"
 #include "native_semantic_runtime.h"
 #include "native_sha256.h"
+#include "native_payload.h"
 
 #define GC_RULES_CAPSULE "generic_chess._native_core.gc_rules"
 #define GC_POSITION_CAPSULE "generic_chess._native_core.gc_position"
@@ -7134,6 +7135,8 @@ static PyObject *gc_semantic_action_layout(PyObject *self, PyObject *args) {
 }
 
 static PyMethodDef gc_methods[] = {
+    {"semantic_core_payload", gc_semantic_core_payload, METH_VARARGS,
+     "semantic_core_payload(position, type_map, type_count, ply, attribute_names) -> complete state-only payload"},
     {"native_available", gc_native_available, METH_NOARGS,
      "Return True (the native kernel is built)."},
     {"native_version", gc_native_version, METH_NOARGS,

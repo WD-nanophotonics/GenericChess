@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import time
 import threading
+import sys
 
 from ...core.coordinates import index_to_square
 from ...core.semantic_executor import (
@@ -20,6 +21,12 @@ from ...core.semantic_executor import (
 )
 from ...rules.ir import CompiledSemanticRuleset
 
+
+# Python owns these references; the C helper borrows them only for one call.
+_PAYLOAD_NAMES = tuple(map(sys.intern, (
+    "owner", "base_type_id", "current_type_id", "promoted", "board", "hands",
+    "counts", "aux_state", "side_to_move",
+)))
 
 _U8 = 0xFF
 _GEOMETRY_MASK = 0xFFF
@@ -52,6 +59,9 @@ class NativeSemanticLegalityProvider:
             for pattern in engine._patterns for condition in pattern.postconditions
         )
         self._metrics_local = threading.local()
+        # Older installed kernels remain fully usable through the Python builder.
+        from ...native import _module
+        self._payload_builder = getattr(_module(), "semantic_core_payload", None)
         self.compile_seconds = 0.0
 
     @property
@@ -178,6 +188,14 @@ class NativeSemanticLegalityProvider:
 
     def _state_only_payload(self, position, ply_count):
         """Build exactly the F20 state-only payload; never read history/SHA."""
+        if self._payload_builder is not None:
+            return self._payload_builder(
+                position, self.type_map, len(self.type_ids), ply_count, _PAYLOAD_NAMES
+            )
+        return self._python_state_only_payload(position, ply_count)
+
+    def _python_state_only_payload(self, position, ply_count):
+        """Compatibility path for an older optional Native binary."""
         type_map = self.type_map
         board = []
         for piece in position.board:

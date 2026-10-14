@@ -149,3 +149,74 @@ def test_winning_declaration_has_priority_over_neutral_options():
     assert decision.choice_kind == "DECLARATION" and decision.declaration.outcome == "WIN"
     assert decision.result_source == "root_declaration"
 
+
+
+@pytest.mark.parametrize("outcome", ["NO_CONTEST", "RESTART"])
+@pytest.mark.parametrize("stop", ["nodes", "cancelled", "root_generation", "root_scan"])
+def test_incomplete_root_keeps_executable_neutral_floor(outcome, stop, monkeypatch):
+    from generic_chess.ai.cancellation import CancellationToken
+    rules = make_ruleset(4, [king_type()], lines=["...k", "....", "....", "K..."])
+    session = compile_session(replace(rules, declarations=(neutral(0, outcome),)))
+    before = session.state, session.to_record(), session._search_witnesses
+    if stop == "root_generation":
+        def interrupted(ctx, checkpoint):
+            if checkpoint is not None:
+                raise search.SearchAborted("time_limit")
+            raise AssertionError("known neutral needs no uncancelled fallback generation")
+        monkeypatch.setattr(search, "_runtime_legal_actions", interrupted)
+    if stop == "root_scan":
+        def interrupted(*args, **kwargs):
+            raise search.SearchAborted("time_limit")
+        monkeypatch.setattr(search, "root_tactical_scan", interrupted)
+    token = CancellationToken()
+    if stop == "cancelled":
+        token.cancel()
+    decision = AlphaBetaPlayer(session.compiled, evaluator_override=Constant(1),
+        use_native_semantic_legality=False,
+        tuning=SearchTuning(use_root_tactical=stop == "root_scan")).choose_action(
+            session, SearchLimits(max_depth=1, max_nodes=1 if stop == "nodes" else None,
+                                  quiescence_max_depth=0), cancel_token=token)
+    assert before == (session.state, session.to_record(), session._search_witnesses)
+    assert decision.action is None and decision.score == 0
+    assert decision.choice_kind == "DECLARATION"
+    assert decision.declaration.outcome == outcome
+    assert decision.result_source == "root_declaration"
+    assert decision.completed_depth == 0 and decision.runtime_depth_balanced
+    assert decision.termination_reason == ({"nodes": "node_limit", "cancelled": "cancelled"}.get(stop, "time_limit"))
+    actual = session.declare(decision.declaration.declaration_id)
+    assert actual.declaration_outcome == outcome and actual.winner is None
+
+
+@pytest.mark.parametrize("decl", [neutral(1), neutral(0, "LOSS"), replace(neutral(0), outcome_bands=(RuleDeclarationOutcomeBand(2, "NO_CONTEST"),))])
+def test_incomplete_root_does_not_invent_a_neutral_option(decl):
+    rules=make_ruleset(4,[king_type()],lines=["...k","....","....","K..."])
+    session=compile_session(replace(rules,declarations=(decl,)))
+    d=AlphaBetaPlayer(session.compiled,evaluator_override=Constant(1),
+        use_native_semantic_legality=False,tuning=SearchTuning(use_root_tactical=False)).choose_action(
+            session,SearchLimits(max_depth=1,max_nodes=1,quiescence_max_depth=0))
+    assert d.choice_kind=="ACTION" and d.declaration is None and d.action in session.legal_actions()
+    assert d.termination_reason=="node_limit" and d.result_source=="legal_fallback"
+
+
+def test_neutral_fallback_keeps_restart_preference_but_completed_action_wins_tie():
+    rules=make_ruleset(4,[king_type()],lines=["...k","....","....","K..."])
+    session=compile_session(replace(rules,declarations=(neutral(0),neutral(0,"RESTART","restart"))))
+    p=AlphaBetaPlayer(session.compiled,evaluator_override=Constant(0),
+        use_native_semantic_legality=False,tuning=SearchTuning(use_root_tactical=False))
+    short=p.choose_action(session,SearchLimits(max_depth=1,max_nodes=1,quiescence_max_depth=0))
+    assert short.choice_kind=="DECLARATION" and short.declaration.outcome=="RESTART"
+    complete=p.choose_action(session,SearchLimits(max_depth=1,quiescence_max_depth=0))
+    assert complete.choice_kind=="ACTION" and complete.score==0 and complete.result_source=="main_iteration"
+
+
+def test_root_immediate_board_win_remains_ahead_of_neutral_floor():
+    # Rd4 mates the a4 king: the b2 king covers a3/b3 and the rook b4.
+    from generic_chess.core.transition import apply_action
+    rules=make_ruleset(4,[king_type(),T("R",RayAtom((0,1)),RayAtom((0,-1)),RayAtom((1,0)),RayAtom((-1,0)))],
+        lines=["k...","....",".K..","...R"])
+    session=compile_session(replace(rules,declarations=(neutral(0),)))
+    d=AlphaBetaPlayer(session.compiled,use_disk_cache=False,use_native_semantic_legality=False).choose_action(
+        session,SearchLimits(max_depth=2,max_nodes=10000,quiescence_max_depth=0))
+    assert d.choice_kind=="ACTION" and d.score>=MATE_THRESHOLD
+    assert d.result_source in ("root_immediate_win","main_iteration","completed_root_win")
+    assert apply_action(session.state,d.action,session.compiled).terminal_status.winner==0
