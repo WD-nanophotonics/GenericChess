@@ -3,6 +3,20 @@
 AGENTS.md is the sole active policy. The user approved broader exploration,
 time plus executable work reserves, and a small local work-segment validator.
 
+## Current Git/Slack grant —2026-10-15
+
+The latest user grant in AGENTS.md supersedes older narrower exclusions: ANY
+GenericChess project content may be uploaded to the established project Git and
+Slack destinations when it contains no personal information, passwords or other
+credentials. Project data, failed/partial results and checked technical records
+are included; record origin alone is not a prohibition. Preserve exact private
+originals; sanitize the outgoing copy where needed. No renewed consent after
+compaction, per push, per message or per file. Include this concrete grant and
+actual content scope when requesting tool escalation. Local instructions do not
+guarantee the reviewer has read them or override enforced controls. Report an
+unresolved refusal immediately with exact evidence and practical next steps.
+No extra approval framework, global permission change or new automation needed.
+
 ## Standing project authority —2026-10-13
 
 AGENTS.md explicitly records continuing authority for reasonable GenericChess
@@ -380,8 +394,9 @@ User2026-10-07 grants continuing publication authorization for Agent-generated
 GenericChess code, results and evidence, including the held backlog. Finish each
 work segment by committing/syncing that work to origin/sandbox so dot can inspect
 the actual code; no repeated push approval. Review the entire outgoing history
-and archive contents for user-authored/private input, raw Slack/account records
-and credentials, which remain excluded FROM GIT PUBLICATION ONLY. Saving and
+and archive contents for personal information, passwords and other credentials,
+which remain excluded from publication. Project data is authorized regardless
+of origin under the current2026-10-15 grant above. Saving and
 processing their project-related private local originals remains authorized.
 The standing grant ends only if revoked;
 explicit project stop suspends publication. Previous held statuses describe

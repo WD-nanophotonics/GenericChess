@@ -2364,3 +2364,18 @@ all positive actual edges. This is thread-only reasoning, not51 artifact/run
 verification. No duplicate physical/learning job or routine reply is sent.
 
 Accepted manual segment 052bd0ed-49b9-4ecd-9b31-748d5251aec6; UTC2026-10-14T16:37:24.147914+00:00 to 2026-10-14T17:38:21.760941+00:00;60.960min/7research checkpoints, safe_checkpoint, scienceOPEN. All1137searches/72declines closed; delivery verified separately.
+
+## 2026-10-15：上传授权澄清（用户插入的有界操作任务）
+
+PRIMARY 将最新持续授权同步到 AGENTS.md、LOCAL_AGENT.md、SLACK_WORKFLOW.md
+和私有恢复 memo：任何 GenericChess 项目内容在不含个人信息、密码或其他凭据时，
+均可上传既定 Git/项目 Slack；不再仅因数据来自聊天、用户输入或原始文件而一律禁止。
+保留精确私有原件，必要时只处理待发布副本；恢复/压缩不是撤销授权，也不需重复征求同意。
+平台是否读取本地文件不能确认，这些文档不宣称取消强制控制。若实际拒绝持续存在，
+应立即报告具体拒绝、纠正尝试、影响和所需处理。此次写入和私有 Slack 保存均成功；
+一次保存命令过长触发 Windows206，改用分段写入成功，未误报为权限/SAC拒绝。
+
+DEV_AUX 未被重复启动、唤醒或要求回执；其51结果线程已完整读取并私下保存，固定报告
+尚未验证，本文不把读到结果声明升级为独立复现。主研究工作段时钟保留，宽棋盘原型仍待
+继续；本次指引修改没有改变 Native 能力、默认参数或辅助分支。该澄清直接消除文档歧义，
+没有新增身份/审批框架；没有单 Agent 效率对照，不能量化节省时间。

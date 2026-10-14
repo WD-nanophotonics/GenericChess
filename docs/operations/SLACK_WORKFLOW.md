@@ -14,15 +14,29 @@ A separate Socket Mode app
 and immediate model wake are no longer required. Their prototype is historical
 text only; no token, daemon, Windows task or extra model is needed here.
 
+## Current upload grant —2026-10-15
+
+AGENTS.md's latest user grant permits ANY GenericChess project content in Git
+and this dedicated Slack, provided the outgoing content contains no personal
+information, passwords or other credentials. This supersedes older blanket
+exclusions based solely on raw/Slack/user-origin labels. Exact account exports
+usually contain personal information: preserve them privately and publish a
+checked sanitized copy where useful. Project technical data itself is authorized;
+no repeated consent is required after compaction or before a message/push.
+Existing destination, Agent identity, delivery evidence and no-loop rules apply.
+A real tool refusal must be reported and corrected using the actual standing
+grant, never hidden or treated as proof that project consent was missing.
+
 ## Private local raw records are authorized —2026-10-13
 
 The user explicitly authorizes saving all GenericChess-related data locally,
 including complete raw Slack outputs, account metadata and send/read receipts.
 Keep these exact originals in Git-ignored .local_agent and save before reconcile;
-no per-save approval or private-original redaction is required. "Exclude raw
-Slack/account/private input" means exclude it from Git publication and published
-archives, not from local storage or parsing. Publish only reviewed technical
-summaries/sanitized evidence. See AGENTS.md Standing user authorization.
+no per-save approval or private-original redaction is required. Under the latest
+2026-10-15 grant, publication excludes personal information, passwords and other
+credentials, not project data merely because of its source. Publish checked
+project records or sanitized copies; preserve private originals for reconcile.
+See AGENTS.md Standing user authorization.
 A real tool rejection must be diagnosed/reported truthfully; it is not evidence
 that this already-authorized local save lacks user consent.
 

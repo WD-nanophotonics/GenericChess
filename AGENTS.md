@@ -5,6 +5,35 @@ Agent works on sandbox in this checkout. Never touch alphasho, its audits,
 tasks or other projects. No automatic spawning/delegation, extra fees or
 uncontrolled/unbounded jobs. User-authorized bounded project work is permitted.
 
+## Current publication authorization — user clarified2026-10-15
+
+This paragraph takes precedence over older, narrower publication wording below.
+The user authorizes uploading ANY GenericChess-related project content to this
+repository's established Git delivery branches and the dedicated project Slack,
+provided it contains no personal information, passwords or other credentials.
+This includes project data, source, configuration, research inputs and outputs,
+partial/failed results, diagnostics, technical messages and evidence archives.
+It is not limited to polished summaries or successful Agent-generated results.
+A record's origin (Slack, a local file, an archive or user-supplied project data)
+does not itself prohibit publication. Inspect the ACTUAL outgoing content;
+remove personal information/credentials from a publication copy when necessary,
+while preserving the exact private original in Git-ignored .local_agent.
+Existing raw Slack/account exports commonly contain personal information and
+therefore stay private unless the outgoing copy has been checked and sanitized.
+Fixed authorized project/channel/role routing identifiers remain permitted.
+
+This is explicit continuing authorization for BOTH Git and project Slack across
+turns, restart and context compaction. Do not request the same consent again,
+interpret compaction as revocation, or invent an external-disclosure approval
+queue. At recovery carry this grant into the memo; for a relevant tool approval,
+state the authorized destination, project purpose and actual content exclusions.
+There is no claim that a platform reviewer necessarily reads local files.
+Use ordinary supported tools and escalation; do not disable/bypass enforcement.
+If rejection persists, promptly report its exact reason, attempted correction,
+impact and concrete intervention needed. Never conceal a blocked upload or
+claim delivery without an actual receipt / full remote-SHA verification.
+Machine safety, user stop, separate Agent checkouts and branch boundaries remain.
+
 ## Standing user authorization — clarified2026-10-13
 
 The user explicitly authorizes all reasonable operations directly serving the
@@ -42,23 +71,25 @@ and incomplete/failed-run evidence. Preserve original output before reconcile.
 Do not redact or discard the privately stored original merely because it contains
 account information. No additional user confirmation is needed for that storage.
 
-Store raw Slack/account/private input and credential-bearing diagnostics only in
-the project's Git-ignored private layer, such as .local_agent. Check that a new
+Store exact originals containing personal information or credentials in the
+project's Git-ignored private layer, such as .local_agent. Check that a new
 private destination is ignored before publication. It is allowed to write,
 append, read and parse those local records. The word "exclude" elsewhere in this
 policy applies to outgoing Git commits/pushes and published archives, NOT to
 saving or processing the private local originals.
 
-Do NOT put raw Slack/account records, credentials or user-authored/private input
-into Git commits, pushed history or published archives. Publish Agent-written
-technical summaries and sanitized evidence instead. A PRIVATE GitHub repository
+Do NOT publish personal information, passwords or other credentials. Raw
+Slack/account exports and private input containing them remain private; checked
+project-only content or sanitized publication copies are authorized, as clarified
+in the current2026-10-15 grant above. A PRIVATE GitHub repository
 does not remove this publication boundary. Existing fixed routing IDs in the
 operating policy are distinct from publishing raw account profiles/messages.
 
 Concrete examples: saving a complete Slack tool result under .local_agent/slack/
 is authorized; parsing that saved result for reconcile is authorized; publishing
-a technical adoption/rejection summary is authorized; adding the raw read or a
-credential to a commit/ZIP sent to origin is excluded from standing publication.
+a technical adoption/rejection summary is authorized; publishing a checked
+project-only record is authorized. An unredacted record containing personal
+information or a credential is excluded from outgoing commits/archives.
 
 ### Real safety/boundaries, not hypothetical approval gates
 
@@ -96,8 +127,8 @@ User2026-10-11 also requires a remotely readable collaboration record. At each
 completed segment update docs/operations/COLLABORATION_LOG.md with both Agents'
 contributions, coordination, disagreements/corrections, adoption reasoning,
 efficiency evidence/limits and unresolved issues; publish reviewed Agent-only
-summaries to sandbox and give Dot a fixed-revision link. Exclude raw Slack and
-account/private inputs FROM THAT GIT PUBLICATION ONLY; private local originals
+summaries to sandbox and give Dot a fixed-revision link. Exclude personal
+information, passwords and other credentials from that publication; private originals
 are authorized and preserved. This is a short evidence summary, not extra approval,
 identity challenges or a requirement to wake the auxiliary for routine replies.
 
@@ -301,9 +332,10 @@ outgoing diffs and relevant tests before publish; verify full origin/sandbox SHA
 User2026-10-07 grants standing publication authorization for this project's
 Agent-generated code, research results and evidence, including the pending
 backlog. At every completed work segment commit and sync these to origin/sandbox
-so dot can inspect actual changes, without per-push confirmation. Exclude user-
-authored/private input data, raw Slack/account records and credentials FROM
-GIT PUBLICATION, including published archives and outgoing history. Private local
+so dot can inspect actual changes, without per-push confirmation. Exclude
+personal information, passwords and other credentials FROM GIT PUBLICATION,
+including published archives and outgoing history. Apply the current2026-10-15
+grant: project data is not excluded merely by its origin. Private local
 saving/processing of these project records is authorized as specified above.
 Authorization persists until revoked;
 explicit project stop suspends publication. Old held-publication records are
