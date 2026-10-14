@@ -272,3 +272,24 @@ finite full-state transfer and1sH3 evidence in
 not actual execution: unsupported EP roots retain Core fallback. Private C
 payload prototypes are not installed or a consumer requirement. UI Test remains
 user-owned; this is backend delivery only.
+
+
+### Neutral root fallback and optional complete input builder (2026-10-14)
+
+An interrupted root with an executable NO_CONTEST/RESTART now returns that
+declaration instead of an unproved fallback action when no complete iteration
+or completed winning child takes priority. Actual stop reason and completed
+depth remain honest; completed action ties and WIN priority retain their rules.
+Cancellation returns a choice only: the caller still owns cancellation/stale-
+snapshot checks and must explicitly execute GameSession.declare.
+
+A source-built optional kernel can accelerate the complete state-only payload
+used by NativeSemanticLegalityProvider. Existing installed kernels without the
+new helper retain the Python builder and ordinary Native legality/search.
+The helper borrows Python-owned interned attributes; Native packet/validation,
+Core adjudication/history, optional Boolean flags/defaults and UI stay unchanged.
+Native caps/unsupported fallback remain explicit. Rebuild from source to obtain
+the optional transport gain; no binary/venv is shipped. Current full2526 tests
+and clean tracked-source no-Native/old-kernel/rebuilt-kernel controls pass.
+See [the report](../research/NATIVE_PAYLOAD_AND_NEUTRAL_FALLBACK.md) for versions, prepared-caller
+perimeters, retained failures, frozen resource results and unknown proof scope.

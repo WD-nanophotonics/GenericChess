@@ -13,28 +13,33 @@ minimal alpha-beta/specialized-rule controls and mature overall references.
 Separate rule execution, representation, repeated scheduling, optimization,
 defined work and equal-time retained useful decisions. No Elo/speed parity gate.
 
-ROOT_WIN_DECLARATIONS_AND_NATIVE_INPUTS.md is latest:516 actual research
-search attempts/515complete/1harness failure. A supported NO_CONTEST declaration
-was missing from Python recursive neutral options and produced false winning
-bounds. The minimal repair covers negamax/bothq/reference and preserves
-RESTART/action-tie/WIN/TT identity semantics;2502full tests pass and code is
-published932f03b2.64 intervention controls give27false old/0false fixed wins,
-while preserving12 qualified H3 wins. Dot's strict-alpha equality control also
-passes; its conditional premise was necessary, not a full-domain certificate.
-120 generated and64 active semantic/history old-new calls retain tuples;
-8distinct positive certificates receive separate full-defense Core replay.
-Existing optional Native availability/check inputs make actual1s H3 choices
-succeed on the16board where Core/legality-only miss, twice each; all stillD1
-and positive provenance is completed_root_win/q2. No global strength claim.
-25,037checks and25,037availability queries shadow complete Core semantics on
-six active Native played roots; two unsupported EP roots explicitly stay Core.
-Defaults/Core/NativeABI/UI/stop unchanged. Private completeC payload V1 is
-mixed/slower; changed V2 interned-name mapping gives two-order caller ratios
-.9518-.9740 on four exposed roots with equal work/fields/errors/history.
-Next weigh/qualify one narrow Native integration seam, including existing
-module ownership, old-binary fallback and real cancellation/errors, before
-deployment; no unchanged q/read-only/cache curve. AUX46 a4fb396e full report/blob
-and listed arithmetic reviewed, not raw games/training/bootstrap/native replay.
+NATIVE_PAYLOAD_AND_NEUTRAL_FALLBACK.md is latest:258 closed research queries,
+2526 full tests pass. Code90dd039a preserves executable NO_CONTEST/RESTART on
+incomplete root fallback, actual stop/depth/cancellation and completed-win/action
+priorities. Three actual queries show old node1 fallback permits mate while the
+fixed choice executes NC. A narrow optional complete C payload borrows Python-
+owned names and retains old-binary Python input; no module lifecycle/default/
+Core adjudication/packet/UI changes. Private V1 module-state expansion rejected.
+128 fresh V1 transfer calls preserve all32 resource tuples at32s; no decision gain.
+Two Core fixed pairs are time-censored;1.312x timing outlier retained. Distinct
+prepared V2 caller ratios.938-.981 are local, not finalV3/global/default speed.
+Defaultq4/1s60calls: all40 flag comparisons retain tuples;48retainq0,6q4,6repeat
+one actual M1 root. Core one-reply audit53closed/7unknown, not full safety.
+H5 independent proof remains UNKNOWN at240s/42224transitions; no extension.
+Fresh V3 shadow25514checks and25514availability matches Core on two roots with
+a separately declared flat evaluator. Clean tracked-source Core/old/rebuilt
+contracts pass27,32(with6expected helper skips),75tests; failures retained.
+Next actually started full Native q0 feasibility: four inputs spanning unfamiliar
+4/8 rules,played history,live transformation/aux and checked NC match Core D2
+max-action/declaration values. Raw terminal units differ100M/1B; normalized
+sign/distance matches, no product defect. Do matched full-backend/q0 attribution
+before another carrier or Boolean flag curve. Q0 versus defaultq4 is a method
+comparison, never silently aligned or treated as a speed/strength certificate.
+
+ROOT_WIN_DECLARATIONS_AND_NATIVE_INPUTS.md preserves the prior recursive NC
+repair, conditional winning-bound/equality checks, independent old certificates
+and optional Native Boolean coupling. Its516query/2502test evidence retains
+its own source/scope; the new censored H5 is not retroactively certified.
 
 GEOMETRY_PREFIX_AND_DROP_GOAL.md retains prior187searches, total-static-band/
 completed-winning-child repairs, independent H3 and rejected prefix-cache costs.
@@ -124,6 +129,7 @@ checkout writes, merge or routine wake. COLLABORATION_LOG records the scope.
 
 |Purpose|Record|
 |---|---|
+|Current fallback/input delivery/default caller/full-backend qualification|NATIVE_PAYLOAD_AND_NEUTRAL_FALLBACK.md; data/native_payload_20261014.json|
 |Current neutral declarations/root proof/Native input delivery|ROOT_WIN_DECLARATIONS_AND_NATIVE_INPUTS.md; data/root_transfer_20261014.json|
 |Prior utility/root-win repairs and drop goal|GEOMETRY_PREFIX_AND_DROP_GOAL.md; data/geometry_prefix_drop_20261014.json|
 |Prior q1/q2 completion, actual consumers and noncheckmate rootwins|Q12_COMPLETION_AND_WORK.md; data/q12_completion_20261014.json|
