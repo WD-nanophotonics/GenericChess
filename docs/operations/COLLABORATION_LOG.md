@@ -2181,3 +2181,5 @@ reported106.371min wallclock includes42.613min unknown effective work; not
 accepted here as a clean duration sample. Research lanes remain separate.
 No direct auxiliary wake/reply or boundary conflict observed; routing was smooth
 enough for useful evidence delivery but no measured saved-minutes claim.
+
+Final closure: same session 1454d68a-b43a-4fa3-8b89-71c72a473f49 ran UTC2026-10-14T06:47:08.386384+00:00 to 2026-10-14T08:13:11.931503+00:00 (86.059min),10 research stages; safe_checkpoint accepted, science OPEN. All2543 active tests pass in one uninterrupted new-temp run;44 focused/publisher pass. Code/science4a21332fa52e3885fbc2539ecfb343a4650abcbf full remote SHA independently verified. No active research producer remains; next executable tasks saved. Final close receipt is in the purpose archive.
