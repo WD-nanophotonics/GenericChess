@@ -1,0 +1,45 @@
+{
+  "status": "PASS_EXACT_SHORT_RATIONAL_FORWARD_BACKWARD_PROBABILITIES_CLOSED_CLASSES",
+  "counts": {
+    "exact_rational_root_horizons": 320,
+    "forward_backward_mean_horizons": 22,
+    "graph_states": 119828
+  },
+  "profiles": [
+    {
+      "price": [
+        720,
+        720,
+        720
+      ],
+      "max_forward_backward_abs_diff": 3.3306690738754696e-16,
+      "closed_certified_states": 0
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720
+      ],
+      "max_forward_backward_abs_diff": 4.440892098500626e-16,
+      "closed_certified_states": 8
+    }
+  ],
+  "pricegain_bounds": [
+    {
+      "scope": "COMPOSITE_PERFECT4",
+      "gain_bounds": [
+        0.04336509829561874,
+        0.043365289906142634
+      ]
+    },
+    {
+      "scope": "PHYSICAL_NONTERMINAL4_UNKNOWN",
+      "gain_bounds": [
+        -1.9695732214929822,
+        1.9739695754008495
+      ]
+    }
+  ],
+  "scope": "16exposedPILOTfamilies mean, conditionalcomposite probabilities notactualphysicalwholegame. Float64 longiteratedbounds use disclosed1e-8numericalreserve, notformal intervalarithmetic/exactrational cert; gain magnitude .04 doesnotrequiremoreprecision."
+}

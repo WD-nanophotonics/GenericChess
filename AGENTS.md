@@ -242,18 +242,17 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope —2026-10-15 segment50
+# DEV_AUX current scope —2026-10-15 segment51
 
-ScienceOPEN; sidemissiononly, manualresearchended91.285min; heartbeatPAUSED.
-Sameobjective3TRAINcohorts R1440 all, B720/720/360; POOLED1440/720.
-Actualfullfive/common4 DEVgain15/128 sharedpositive; no uniquehumanprice.
-Scale0.5/1/2 fixedratios alterschoices/WDL, gainsCI touch0.
-Uniform8 firstchoicefixedCgain.056640625, pairedchangeCI crosses0; scope notfullpolicy.
-4x4<=4teacher539088states ALLliteral/rankPASS; native1024PASS.
-ALLfive60000go fixedcaps partialgain[-.25,.25], UNKNOWNnotdraw.
-Randomfive/common4 learned720720360 DEV9/128 CI[.01953125,.1328125].
-5120shorttrajectories38.593s4160newgo3908hits; mostlyexact4handoff notphysicalmate.
-No4x4stablecohort/no pureengine-random/fullChess/Shogi/genericdomain claim.
-Allsource/PV/control/rank/trajectory/selector auditsPASS; old0goimportfailures retained.
-Nextsameobjective4x4TRAINreplications, priceblindopponentlaw anduniformD4 mechanisms.
-Evidence:SEGMENT_20261015_50.md,1635/1636/1637,COST/QA/SESSION/archives50.
+ScienceOPEN; sidemissiononly; manualresearchended64.303min; heartbeatPAUSED.
+Same50compositeobjective repetitiongainuncertain, notstablehumanprices.
+DirectactualphysicalH48/no-matestockproof TRAINlearned1728/720/720; freshDEVgain.041015625positive.
+BalancedOWN1/2 newroots learn1728/720/1440 bothTRAIN; finiteDEV.037109375positive, infinityUNKNOWN.
+Nativeunit720cold64 opponent/cachedcycles closesall4096policyWDL samples; pooled1440/720/720 DEV.015625 CItouch0.
+Fixed64pricegains survive50%priceblind tactics,4096gains uncertain; pairedinteractions cross0.
+R1512/1728/2088 preserve729leaforders andall512oldactualtrajectories; numericR notunique.
+Strictgridclimb maystoponplatforms; globalargmax isnotmulti-initconvergence.
+129477newgo48640newepisodes2560reuse; source/policy/PV/loop/rule/label auditsPASS.
+NooracleWIN/quantityfitness/humanfit, nofullChess/Shogi/generateddomain/default/UI claim.
+Nextfreshnative-opponentcohortreplication; fieldplatformdiagnostic; scopedPawn/promotionstate feasibility.
+Evidence:SEGMENT_20261015_51.md,1654/1657/1662/1665/1668/1669/1670,COST/QA/SESSION/archives51.

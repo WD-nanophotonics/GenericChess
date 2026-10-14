@@ -1,0 +1,40 @@
+{
+  "status": "PASS_LEAF_ORDERING_EQUIVALENCE_AND_ACTUAL_PHYSICAL_TRAJECTORIES",
+  "counts": {
+    "newgo": 3636,
+    "PVmoves": 27512,
+    "plies": 30684,
+    "games": 1536,
+    "reused_games": 512,
+    "leaf_ordering_pairs": 1458
+  },
+  "R_open_cell": [
+    1440,
+    2160
+  ],
+  "contrasts": [
+    {
+      "price": [
+        1512,
+        720,
+        720
+      ],
+      "different_full_trajectories": 0,
+      "different_payoffs": 0,
+      "finite_gain": 0.0,
+      "identical_outcome_vector": true
+    },
+    {
+      "price": [
+        2088,
+        720,
+        720
+      ],
+      "different_full_trajectories": 0,
+      "different_payoffs": 0,
+      "finite_gain": 0.0,
+      "identical_outcome_vector": true
+    }
+  ],
+  "scope": "ThreewidelydifferentR1512/1728/2088 sameall729materialleafrankings/ties; exactsameobservedWDLvector doesnotuniquelyidentifyR. Only64exposedfamilies, noequivalencegeneralization toallNative states. Tree-order proof scopedcompletefixeddepthminimax, selectiveconsumer maydiffer elsewhere."
+}

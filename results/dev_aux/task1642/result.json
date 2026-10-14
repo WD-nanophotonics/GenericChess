@@ -1,0 +1,76 @@
+{
+  "status": "PASS_ALL_REPLICATION_ROOTS_TRAJECTORIES_POLICY_LABEL_SELECTORS",
+  "counts": {
+    "newgo": 8753,
+    "PVmoves": 98836,
+    "games": 10240,
+    "plies": 22970,
+    "PERFECT4_HANDOFF": 9704,
+    "PHYSICAL_MATE": 412,
+    "PHYSICAL_STALE": 116,
+    "UNRESOLVED": 8,
+    "price_ACK": 28
+  },
+  "selected": {
+    "TRAIN1": [
+      1440,
+      720,
+      720
+    ],
+    "TRAIN2": [
+      1440,
+      720,
+      360
+    ],
+    "POOLED": [
+      1440,
+      720,
+      360
+    ]
+  },
+  "DEV_contrasts": [
+    {
+      "price": [
+        720,
+        720,
+        360
+      ],
+      "primary": false,
+      "gain_lower": 0.009765625,
+      "gain_upper": 0.017578125,
+      "family95_conservative": [
+        -0.015625,
+        0.046875
+      ]
+    },
+    {
+      "price": [
+        1440,
+        720,
+        360
+      ],
+      "primary": true,
+      "gain_lower": 0.00390625,
+      "gain_upper": 0.0078125,
+      "family95_conservative": [
+        -0.04296875,
+        0.0546875
+      ]
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720
+      ],
+      "primary": false,
+      "gain_lower": -0.00390625,
+      "gain_upper": 0.00390625,
+      "family95_conservative": [
+        -0.048828125,
+        0.048828125
+      ]
+    }
+  ],
+  "scope": "Same50objective/rules/cold64/random/H24 and pricegrid; two newTRAIN64+newDEV128 fullorbitsdisjoint. Rootfamilies statisticalunit, unknowns retainedbounds, nohumanfit oruniqueprice claim."
+}
