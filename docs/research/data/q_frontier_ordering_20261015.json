@@ -1,0 +1,325 @@
+{
+  "science_complete": false,
+  "base_sha": "d7fd6bec545b16d61123c87462291114ef9faa63",
+  "selected_C_sha256": "9b5d951e49cc9833567f5519f65c587f286e3257319d128373f1820c4664cca0",
+  "selected_compiler_sha256": "edd7aa3e4651eb070db202b2698a204a67a8dd76310b4289af27d6529229b696",
+  "recorded_searches": 1137,
+  "unsupported_declines": 72,
+  "archive": "../../archive/q_frontier_ordering_20261015/evidence.zip",
+  "archive_sha256": "bdacb714ee0c3019cf1d5571ffe08ea4a92e8d4abefd56ae672b376b96b86036",
+  "archive_bytes": 2985914,
+  "archive_members": 125,
+  "inspection_heartbeat": "PAUSED",
+  "new_agents": 0,
+  "priced": {
+    "complete": true,
+    "method": "hint",
+    "cells": 368,
+    "actual_queries": 336,
+    "declines": 32,
+    "producer_seconds": 1629.3393044000004,
+    "closed_fixed_pairs": 26,
+    "closed_fixed_score_differences": [],
+    "closed_kernel_geomean": 0.6638785614886308,
+    "closed_caller_geomean": 0.6328185649627641,
+    "slower_closed_kernel_pairs": 0,
+    "closed_private_count_ratios": {
+      "private_q_candidates": 0.601816591865888,
+      "private_q_attempts": 0.3263789321831805,
+      "private_q_legal": 0.5622427776343005,
+      "private_q_noisy": 0.5777024482109228
+    },
+    "resource_pairs": 126,
+    "resource_depth_relation": {
+      "deeper": 30,
+      "same": 94,
+      "shallower": 2
+    },
+    "resource_same_action": 110,
+    "resource_same_retained_q": 122,
+    "same_retained_objective_pairs": 136,
+    "same_objective_score_differences": [],
+    "all_root_state_history_unchanged": true,
+    "maximum_caller_overshoot": 0.3880828000001202,
+    "scope": "Fullgeneratedrules/playedhistory,explicitq4hard8. Rootcohortfixedbeforequeries, unsupported/censors unextended. Matchedfixeddepthcostisnotfixedtree: orderingchanges actualtreework. All closed/tiny/adverse cases retained. Retainedmetadata andunfinishediterationwork separate; depthandfinitevaluesnotWDL/strength."
+  },
+  "priced_branches": {
+    "complete": true,
+    "method": "hint",
+    "distinct_literal_Core_queries": 26,
+    "completed_branches": 21,
+    "censored_branches": 5,
+    "all_runtime_balanced": true,
+    "native_legal_provider_calls": 0,
+    "known_pairs": 32,
+    "positive": 2,
+    "negative": 2,
+    "ties": 28,
+    "unknown": 10,
+    "scope": "ALLdistinct16sboardactions frombotharms/twoorders;10s50000visit literalCoreD2/q4hard8 branchcaps. Conditionalfiniteobjective,notWDL,independentgames orallrootmaxset. Noaction/declarationsnotfabricatedasboardlabels. BothinterruptedbranchandmissinglabelUNKNOWN, noextension."
+  },
+  "capture": {
+    "complete": true,
+    "method": "capture",
+    "cells": 192,
+    "actual_queries": 168,
+    "declines": 24,
+    "producer_seconds": 998.532357,
+    "closed_fixed_pairs": 20,
+    "closed_fixed_score_differences": [],
+    "closed_kernel_geomean": 0.7991271185181187,
+    "closed_caller_geomean": 0.9235684975920775,
+    "slower_closed_kernel_pairs": 2,
+    "closed_private_count_ratios": {
+      "private_q_candidates": 1.4052615352397795,
+      "private_q_attempts": 0.6385071664349687,
+      "private_q_legal": 0.8561880020720741,
+      "private_q_noisy": 1.0526731992435963
+    },
+    "resource_pairs": 56,
+    "resource_depth_relation": {
+      "same": 46,
+      "deeper": 6,
+      "shallower": 4
+    },
+    "resource_same_action": 52,
+    "resource_same_retained_q": 52,
+    "same_retained_objective_pairs": 74,
+    "same_objective_score_differences": [],
+    "all_root_state_history_unchanged": true,
+    "maximum_caller_overshoot": 0.36615859999801614,
+    "scope": "Fullgeneratedrules/playedhistory,explicitq4hard8. Rootcohortfixedbeforequeries, unsupported/censors unextended. Matchedfixeddepthcostisnotfixedtree: orderingchanges actualtreework. All closed/tiny/adverse cases retained. Retainedmetadata andunfinishediterationwork separate; depthandfinitevaluesnotWDL/strength."
+  },
+  "capture_branches": {
+    "complete": true,
+    "method": "capture",
+    "distinct_literal_Core_queries": 15,
+    "completed_branches": 11,
+    "censored_branches": 4,
+    "all_runtime_balanced": true,
+    "native_legal_provider_calls": 0,
+    "known_pairs": 22,
+    "positive": 0,
+    "negative": 0,
+    "ties": 22,
+    "unknown": 6,
+    "scope": "ALLdistinct16sboardactions frombotharms/twoorders;10s50000visit literalCoreD2/q4hard8 branchcaps. Conditionalfiniteobjective,notWDL,independentgames orallrootmaxset. Noaction/declarationsnotfabricatedasboardlabels. BothinterruptedbranchandmissinglabelUNKNOWN, noextension."
+  },
+  "tt": {
+    "complete": true,
+    "cells": 160,
+    "actual_queries": 160,
+    "producer_seconds": 353.0983100000012,
+    "paired_methods": 80,
+    "paired_matching_objectives": 72,
+    "method_score_differences": [],
+    "within_arm_repeats": 96,
+    "within_arm_matching_objectives": 96,
+    "within_arm_score_differences": [],
+    "root_state_history_unchanged": true,
+    "scope": "TT64MiB/plainmain/cacheoff,explicitcoldq1 andpersistentcoldq4/warmq4/switchq1/returnq4,D2/6s; retainedsameobjectivescompared, allcensorskept. No independentgames/strength or32bit/fullmachineexclusiveclaim."
+  },
+  "builtin": {
+    "complete": true,
+    "actual_queries": 48,
+    "producer_seconds": 332.53025010000056,
+    "closed_fixed_pairs": 6,
+    "closed_score_differences": [],
+    "closed_kernel_geomean": 0.5397979141205755,
+    "closed_caller_geomean": 0.5531059395261559,
+    "resource_pairs": 16,
+    "resource_depth_relation": {
+      "same": 16
+    },
+    "resource_same_action": 16,
+    "matching_retained_objectives": 24,
+    "same_objective_score_differences": [],
+    "all_full_pvs_legal": true,
+    "all_root_state_history_unchanged": true,
+    "scope": "Existing4Chess/Shogi controls,NEWfrozenrulederivedstaticvectors,fullfreshanalysiswitnesses,actualcounterlessproductionvsinstalledold,TT64/ordercacheoff/plainmain,explicitq4hard8. FixedD2/6s and4/16stwoorders, allcensors retained. NotUIdefaultbackend/fullgame/humanprice/WDLclaim."
+  },
+  "tests": {
+    "full_cases_collected": 2557,
+    "full_private_hint_first_exit": 1,
+    "first_passed": 2547,
+    "first_failed_local_git": 1,
+    "first_setup_errors_compiler": 9,
+    "affected_recheck_passed": 10,
+    "affected_recheck_exit": 0,
+    "private_hint_focused_passed": 58,
+    "private_capture_focused_passed": 58,
+    "unique_cases_passing_across_runs": 2557,
+    "scope": "One fullprivatehintpreloadedrun2547pass+10sandboxinfrastructurefailures;10targetedrecheckpasseswithescalation. Not onecleanfullrun. Sourcebuilding9cases useactualunchangedproductsource, notprivatehints. No installed qorder candidate ornewAPI. Repeatedguardsnotnewunique cases.",
+    "final_full_actual_production_cases": 2557,
+    "final_full_actual_production_exit": 0,
+    "final_scope": "Separatefull2557 run withcounterlessproductionimage preloaded; explicit sourcebuildingfixtures readactualselectedC andpassunderescalation. Both source/image current. Latermetadata-onlyestimatefix adds2regressions,old2fail/new41relatedpass; notclaimonefull2559run.",
+    "metadata_new_regressions": 2,
+    "metadata_related_passed": 41,
+    "final_installed_focused_passed": 58,
+    "unique_active_test_cases_after_new_regressions": 2559
+  },
+  "adoption": {
+    "state": "SELECTED_INSTALLED_TESTED_NOT_YET_PUBLISHED",
+    "source_sha256": "9b5d951e49cc9833567f5519f65c587f286e3257319d128373f1820c4664cca0",
+    "difference_from_capture": "Sameexactbinarycaptureorderinglogic; removeprivatecounters andrenamehelpers only. No leaf/handprice reads, no rule/filter/cache/TT/API/q-depth/defaultchange. qtraversalchangesintentionally ifselected.",
+    "basis": "20newclosedcapturepairs allscoreagree;kernel0.799/caller0.924 and4resource depthnegatives retained. TT72matchingcrossmethod+96matchingrepeat qobjectives allscoreagree. Commonfinite22ties6unknown; actualcounterlessbuiltin6closedpairs agree/all16resourcechoicesunchanged. FullproductionC2557pass, installed58, counterless78sameworkpairs exact.",
+    "decision": "Adopt price-independent binarytargetenemy q ordering as measured backendcost change. All candidates andfullcheckedsemantics retained; q-depth/TT/leafvalue/UI defaults unchanged, actualqtraversal andbudgetchoices canchange. Do not claimuniformcompletion/playinggain.",
+    "installed_image_sha256": "b6d5c5b5e90f3bb0e1d1a9e3b2d2020e4a727d00124ad077a1205a6276b778b8",
+    "installed_guards_passed": 58,
+    "source_building_fault_tests_use_selected_C": true
+  },
+  "wide_codec": {
+    "complete": true,
+    "model_version": "PROSPECTIVE_ONLY_V2_NOT_PRODUCT",
+    "bits": 63,
+    "layout": [
+      {
+        "field": "to",
+        "width": 10,
+        "shift": 0
+      },
+      {
+        "field": "from",
+        "width": 10,
+        "shift": 10
+      },
+      {
+        "field": "promotion",
+        "width": 7,
+        "shift": 20
+      },
+      {
+        "field": "base",
+        "width": 6,
+        "shift": 27
+      },
+      {
+        "field": "kind",
+        "width": 4,
+        "shift": 33
+      },
+      {
+        "field": "pattern",
+        "width": 8,
+        "shift": 37
+      },
+      {
+        "field": "geometry",
+        "width": 12,
+        "shift": 45
+      },
+      {
+        "field": "actor_current",
+        "width": 6,
+        "shift": 57
+      }
+    ],
+    "structural_proof": "Boundedfieldmasksdisjoint/coverbits0..62; concatenationisinjectiveanddecodinginverse. Bit63clear forboard/drop, explicitdeclarationsseparate. This arithmeticfact isnotanengineproof.",
+    "finite_roundtrips": 101728,
+    "sequence_sha256": "c936acaff92a2cb6e4347bd3769a3cc9d631dd6180874dc4f65f5e1d23abde13",
+    "random_seed": 20261015,
+    "seconds": 0.40330350000294857,
+    "source_sha256": "d518b9610a8e1af30abe8114f530382d24029d962bab2692ab7c99208ff140c3",
+    "decision": "Rejectunversionedsparsehighbitpatch: concrete declaration-tag collision andrawactorcontract. uint64 itself neednotbeabandoned: versioneddense63bitcarrier fits32x32/64types withtag. Nextassessstatecapacities andversiondispatch,notguard-only patch. Nativecurrent18stillunsupported;no productionABI/domainchange."
+  },
+  "wide_size": {
+    "complete": true,
+    "rows": [
+      {
+        "capacity": 256,
+        "piece_bytes": 8,
+        "legacy_position_bytes": 10568,
+        "legacy_rules_bytes": 1342320,
+        "semantic_position_bytes": 53920,
+        "semantic_payload_bytes": 53856,
+        "semantic_rules_bytes": 304256,
+        "header_sha256": {
+          "native_types.h": "19109db621b7db5d7a9c76a7bfd04354219a30e3ee32e12483570055ba58d8c0",
+          "native_semantic_rules.h": "2e0dc49401d91617b914e72799ecc87fcdccd6d3530d30ff1c5a453cd12597e4",
+          "native_semantic_state.h": "86cea58e408ba05c3cc783cc79537c93540271fcd518944921c075ef9ff1fabc"
+        },
+        "semantic_position_delta_bytes": 0,
+        "context_22_positions_delta_bytes": 0
+      },
+      {
+        "capacity": 512,
+        "piece_bytes": 8,
+        "legacy_position_bytes": 12616,
+        "legacy_rules_bytes": 2141040,
+        "semantic_position_bytes": 55968,
+        "semantic_payload_bytes": 55904,
+        "semantic_rules_bytes": 566400,
+        "header_sha256": {
+          "native_types.h": "acffd4fdef0ce7a3c72f0e06640e3388da8e64222c1b8682e579801b77659ed4",
+          "native_semantic_rules.h": "2e0dc49401d91617b914e72799ecc87fcdccd6d3530d30ff1c5a453cd12597e4",
+          "native_semantic_state.h": "86cea58e408ba05c3cc783cc79537c93540271fcd518944921c075ef9ff1fabc"
+        },
+        "semantic_position_delta_bytes": 2048,
+        "context_22_positions_delta_bytes": 45056
+      },
+      {
+        "capacity": 1024,
+        "piece_bytes": 8,
+        "legacy_position_bytes": 16712,
+        "legacy_rules_bytes": 3738480,
+        "semantic_position_bytes": 60064,
+        "semantic_payload_bytes": 60000,
+        "semantic_rules_bytes": 1090688,
+        "header_sha256": {
+          "native_types.h": "0a60596aad9055f6ecce1dd66cc6cd7af10ad39020559751b55df03a12082d1b",
+          "native_semantic_rules.h": "2e0dc49401d91617b914e72799ecc87fcdccd6d3530d30ff1c5a453cd12597e4",
+          "native_semantic_state.h": "86cea58e408ba05c3cc783cc79537c93540271fcd518944921c075ef9ff1fabc"
+        },
+        "semantic_position_delta_bytes": 6144,
+        "context_22_positions_delta_bytes": 135168
+      }
+    ],
+    "seconds": 0.9789834999974119,
+    "scope": "Compiledsizeof-only executables withcopiedheaders at256/512/1024. Nocompiledengineexecution, nocapabilityorperformanceclaim. Globalmacrochanges legacystructsizesaswell: preferseparatesemanticcapacity/versionedABI ifpursued. FullSHAhistory4words unchanged; these arenotboardbitsets. Extra22position storage is illustrativemain12+hard8+2,notuniversalpeakmemory."
+  },
+  "estimate_fix": {
+    "complete": true,
+    "rows": [
+      {
+        "seed": 2911,
+        "board_size": 12,
+        "payload_sha256": "4b8baf46fef024fd24ffcfa3ffa60a16d311f678f07ebed4a392752fec2a1fea",
+        "payload_unchanged": true,
+        "old_estimated_bytes": 6254545,
+        "new_estimated_bytes": 124865
+      },
+      {
+        "seed": 3007,
+        "board_size": 12,
+        "payload_sha256": "091ed55a3954df2928cb28b6fba12cd5655a2dc36da6ddc7b00e8d5ab36badd2",
+        "payload_unchanged": true,
+        "old_estimated_bytes": 7916593,
+        "new_estimated_bytes": 135457
+      },
+      {
+        "seed": 2912,
+        "board_size": 18,
+        "old_estimated_bytes": 50420753,
+        "corrected_logical_estimate": 295673,
+        "old_geometry_term": 50301072,
+        "new_geometry_term": 175992,
+        "still_native_executable": false,
+        "scope": "Arithmeticcorrectiontoalreadyfrozenprospectivepayload only; notcurrentNative18activation."
+      },
+      {
+        "seed": 3008,
+        "board_size": 18,
+        "old_estimated_bytes": 71658721,
+        "corrected_logical_estimate": 452465,
+        "old_geometry_term": 71530880,
+        "new_geometry_term": 324624,
+        "still_native_executable": false,
+        "scope": "Arithmeticcorrectiontoalreadyfrozenprospectivepayload only; notcurrentNative18activation."
+      }
+    ],
+    "old_tests_failed": 2,
+    "new_focused_tests_passed": 41,
+    "new_regressions": 2,
+    "scope": "Logicalnumericpayloadestimate, NOTCallocatedbytes ormemorysafetybound. Publicpayloadhashes for2supported12x12rulesunchanged. No semantic/search/ABI changes fromestimatefix. Oldprospectivereports/source retainoriginalbytes/limits, corrections separate."
+  }
+}

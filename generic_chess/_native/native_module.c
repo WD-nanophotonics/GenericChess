@@ -5409,6 +5409,30 @@ static int gc_semantic_inventory_changed(const GCSemanticRules *rules,
             if(delta[owner][t]+a->hand_counts[owner][t]-b->hand_counts[owner][t])return 1;
     return 0;
 }
+/* Price-independent q ordering hints; checked execution alone decides legality/noise. */
+static int gc_semantic_q_candidate_compare(const void *left,const void *right) {
+ const GCSemanticOrderedAction *a=left,*b=right;
+ if(a->mover_score!=b->mover_score)return a->mover_score>b->mover_score?-1:1;
+ return(a->action>b->action)-(a->action<b->action);
+}
+static int gc_semantic_order_q_candidates(GCSemanticIterativeContext *ctx,
+    GCSemanticPosition *pos,GCSemanticActionBuffer *actions) {
+ if(actions->count<2)return 1;
+ GCSemanticOrderedAction *ordered=calloc(actions->count,sizeof(*ordered));
+ if(!ordered){ctx->control=4;return 0;}
+ unsigned cells=ctx->rules->board_size*ctx->rules->board_size;
+ for(size_t i=0;i<actions->count;i++) {
+  if(!gc_semantic_iterative_check_budget(ctx,1)){free(ordered);return 0;}
+  uint64_t action=actions->data[i];
+  unsigned target=GC_ACTION_TO(action);
+  double score=(GC_ACTION_KIND(action)==GC_ACTION_KIND_SEMANTIC_BOARD && target<cells &&
+     pos->board[target].occupied && pos->board[target].owner!=pos->side_to_move)?1.0:0.0;
+  ordered[i].action=action;ordered[i].mover_score=score;
+ }
+ qsort(ordered,actions->count,sizeof(*ordered),gc_semantic_q_candidate_compare);
+ for(size_t i=0;i<actions->count;i++)actions->data[i]=ordered[i].action;
+ free(ordered);return 1;
+}
 static int gc_semantic_quiescence(GCSemanticIterativeContext *ctx,uint32_t ply,
                        unsigned qdepth,int alpha,int beta,
                        int known_terminal,int known_winner) {
@@ -5451,7 +5475,7 @@ static int gc_semantic_quiescence(GCSemanticIterativeContext *ctx,uint32_t ply,
         gc_semantic_action_buffer_free(&actions);ctx->control=4;return 0;
     }
     ctx->legal_generation_count++;
-    if(actions.count>1)qsort(actions.data,actions.count,sizeof(uint64_t),gc_semantic_canonical_action_compare);
+    if(!gc_semantic_order_q_candidates(ctx,pos,&actions)){gc_semantic_action_buffer_free(&actions);return 0;}
     int parent_enemies=0,legal=0;
     unsigned cells=ctx->rules->board_size*ctx->rules->board_size;
     for(unsigned i=0;i<cells;i++)if(pos->board[i].occupied && pos->board[i].owner!=pos->side_to_move)parent_enemies++;

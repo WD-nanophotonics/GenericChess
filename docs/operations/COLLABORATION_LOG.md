@@ -2324,3 +2324,43 @@ Original q thread has no new technical supplement; channel coverage overlaps
 known roots. Raw outputs remain private; delivery of final links is not Dot review.
 
 Accepted segment close: 302c9fc2-8802-4761-b429-54d3dfd7abcc; UTC2026-10-14T14:41:32.068636+00:00 to 2026-10-14T15:57:04.561263+00:00;75.542min,10research stages, safe_checkpoint; scienceOPEN.795 recorded queries, all producersclosed; next executable ordering-cost question retained. Publication and link delivery remain separately verified.
+
+
+### 2026-10-15 manual segment: q ordering and compiled-interface boundaries
+
+PRIMARY independently runs1137 recorded searches plus72 unsupported declines,
+selects binary price-independent full q frontier ordering, verifies actualsource/
+installed checks and fixes an observed geometry-estimate reporting defect. It
+preserves generic depth negatives and unknown labels; no strength claim. New
+width work is bit/source/sizeof/payload-only feasibility, Native18stilldeclines.
+No user/auxiliary source, defaults or UI lane is taken over.
+
+DEV_AUX50 fixed report4137d82bddcb628526d2754495ae088685e02d8d and entire original
+thread are read. PRIMARY verifies104308-query subtotals,5120 trajectory outcome
+arithmetic and reported15/128,9/128 and orientation paired differences. Raworacle/
+policy/PV/training are not reproduced here. Adopt explicit play/root/opponent
+laws, consumer dependence, orientation sampling and first-choice versus complete
+staged-policy distinctions; retain all-defense UNKNOWN bounds. Its repeatedTRAIN
+and opponent experiments stay in its lane. No duplicate training or routine wake.
+
+Communication is via fixed reports and shared-account project Slack with simple
+PRIMARY_SANDBOX/DEV_AUX/DOT labels. No new objection to primary code arrives in
+recovered original primary thread; Dot's earlier review is not certification of
+this new source. Fixed links are sent after publication; delivery is not reading
+or adoption. No actual boundary violation, branch merge or coordination dispute
+is observed; different empirical objectives are stated, not treated as conflict.
+Normal concurrent producers/projects run without pause requests. Some repeated
+preparation errors and sandbox compiler/local-Git failures are preserved and
+resolved; no hidden inability or measured saved-minutes/efficiency percentage.
+The q-priced comparator versus price-independent selection is PRIMARY's own
+correction to keep leaf-price experiments from implicitly changing q ranking.
+Native inspection remains PAUSED; this is explicit manual research.
+
+Late checkpoint reads new AUX51 original thread and Dot's complete reply. Adopt
+the logical boundary: perfect-small-endgame labels do not automatically bound
+cold64-versus-random physical continuation. Unproved physical continuation is
+UNKNOWN; missing probability mass is not renormalized and SCC closure needs
+all positive actual edges. This is thread-only reasoning, not51 artifact/run
+verification. No duplicate physical/learning job or routine reply is sent.
+
+Accepted manual segment 052bd0ed-49b9-4ecd-9b31-748d5251aec6; UTC2026-10-14T16:37:24.147914+00:00 to 2026-10-14T17:38:21.760941+00:00;60.960min/7research checkpoints, safe_checkpoint, scienceOPEN. All1137searches/72declines closed; delivery verified separately.

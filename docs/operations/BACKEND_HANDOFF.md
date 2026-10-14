@@ -329,3 +329,15 @@ to receive it; older complete-q builds retain capability but different cost.
 No API/default/UI activation change. Fixed78 paired outputs/work match; caller
 policy experiments remain research and are not a product q-depth recommendation.
 See ../research/Q_FACT_REUSE_AND_CALLER_POLICY.md and its hashed archive.
+
+
+The2026-10-15 complete-q ordering change uses only binary target-enemy hints and
+canonical ties; leaf prices do not enter this ranking. All generated candidates
+still use full checked execution and actual noisy classification. Rebuild Native
+from the delivered source. No q-depth/TT/evaluator/UI/backend selection defaults
+change; traversal and finite-budget choices can change, including depth losses.
+Native18 remains unsupported; wide codec/sizeof records are prospective models.
+NativeSemanticCompilationReport.estimated_bytes also fixes quadratic geometry
+accounting and explicitly remains rough diagnostic numeric storage, not actual
+C allocation or a safety upper bound. Runtime rule payloads stay unchanged.
+Evidence/limits: ../research/Q_FRONTIER_ORDERING_AND_PRICE_BOUNDARY.md.

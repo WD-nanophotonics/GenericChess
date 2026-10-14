@@ -677,7 +677,11 @@ def compile_native_evaluation(
 
 @dataclass(frozen=True)
 class NativeSemanticCompilationReport:
-    """Compile-time report for the native semantic payload (Phase 1.9C-1)."""
+    """Compile-time report for the native semantic payload (Phase 1.9C-1).
+
+    estimated_bytes approximates numeric payload storage; it is not a measured
+    C allocation or a memory-safety upper bound (pointer/padding costs differ).
+    """
 
     ruleset_fingerprint: str
     ir_version: int
@@ -1188,10 +1192,13 @@ def build_semantic_compile_payload(semantic):
             for pairs, forced, drop in zip(promo_allowed, promo_forced, drop_mask)
         )
         + len(type_ids) * 2 * n * n * 8
+        # Logical uint16 source/count plus uint16 targets, once per path.
+        # This is a payload estimate, not a C allocation/peak-memory bound.
         + sum(
-            (len(o0) + len(o1)) * (4 + 2 * sum(len(e) for e in o0 + o1))
-            for g in geometries
-            for o0, o1 in [tuple(g["paths"])]
+            4 + 2 * len(squares)
+            for geometry in geometries
+            for owner_paths in geometry["paths"]
+            for _source, squares in owner_paths
         )
         + sum(len(z["squares"]) * 2 for z in zones)
         + len(aux_slots) * 24

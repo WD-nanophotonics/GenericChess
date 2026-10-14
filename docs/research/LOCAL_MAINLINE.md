@@ -8,20 +8,23 @@ routine-read truncation and is no longer duplicated here.
 
 ## Priority and current decision
 
-Q_FACT_REUSE_AND_CALLER_POLICY.md is latest: exact fresh checked-child facts
-remove duplicate q queries without changing full state/history or policy.
-All78 same-work pairs agree; kernel/caller geometric means0.9374/0.9497,
-five tiny adverse cases retained.2557 full private tests,58 installed guards
-and9 current-source fault cases pass. Fresh132 resource pairs give only1deeper/
-131same; common finite labels37ties/1negative/6unknown establish no strength gain.
-Explicitq1/q4 common labels6positive/4negative/6ties/4unknown remain mixed.
-Newq2 cohort has36queries/3actualroots (2earlyterminal families unresampled),
-all actions same acrossq1/q2/q4, no decision advantage. Keep policies explicit.
-Next compare complete generic q frontier ordering against plain ordering under
-same requested objective, actual checked work and caller cost; no action filter,
-policy downgrade or UI/default change. Full checked transition remains62% of
-profiled kernel cost; classification reductions cannot remove that whole cost.
-Prior NATIVE_COMPLETE_QSEARCH.md retains capability/TT/control evidence.
+Q_FRONTIER_ORDERING_AND_PRICE_BOUNDARY.md is latest. Select price-independent
+binary target-enemy q frontier ordering; ALL candidates/fullchecked rules/history
+remain.20newclosedD2/q4 pairs agree;kernel/caller0.7991/0.9236,2slowpairs retained.
+56resource pairs6deeper46same4shallower, commonfinite22ties/6unknown: no strength
+claim. TT64cold/warm/q1-q4switch gives72matchingmethod+96matchingrepeat scores
+identical. Counterless78fixedworkpairs agree; builtin16resourcepairs samechoices/
+depths. ActualproductionCfull2557 andinstalled58guards pass. Pricedqhint remains
+research (30deeper94same2shallower,finite2gain2loss28ties10unknown), notdefault.
+1137recordedsearches/72declines archived. No qdepth/leaf/TT/UI default changes;
+actualqtraversal andbudget choicescanchange. Q_FACT_REUSE_AND_CALLER_POLICY.md
+retains prior exactfactreuse evidence andnegativecompletion case.
+Next bounded private interface check is versionedwidecodec+semanticcapacity:
+Native18stilldeclines; naivebit63coordinatepatch collideswithdeclarations.
+Prospective63bitmodel/sizeof/payload-only checks arefeasibility, notwideexecution
+orwholegenerated-domainclosure. Do notraiseguardsortruncatepromotion/drop/history.
+Alsofix observedquadraticgeometryreportestimate:2oldtests fail/new41related pass,
+2supportedpayloadhashes unchanged;estimateisroughnumericstorage, notCmemorybound.
 Dot's q-budget wording objection is tested and documented: qmax1 permits20/21
 Core/Native visits on quietD1 because it checkpoints expansion, not all visits.
 The08:29–12:58 unknown interruption is excluded from effective-work reporting.
@@ -147,6 +150,7 @@ checkout writes, merge or routine wake. COLLABORATION_LOG records the scope.
 
 |Purpose|Record|
 |---|---|
+|Current complete q ordering/price boundary/wide feasibility|Q_FRONTIER_ORDERING_AND_PRICE_BOUNDARY.md; data/q_frontier_ordering_20261015.json|
 |Current q fact reuse/cost/caller policy|Q_FACT_REUSE_AND_CALLER_POLICY.md; data/q_fact_reuse_20261015.json|
 |Current completeNative q/caller/transfer|NATIVE_COMPLETE_QSEARCH.md; data/native_complete_q_20261014.json|
 |Prior completeNative/terminalpriority/samealgorithm/staticorder/transfer|FULL_NATIVE_Q0_AND_TERMINAL_PRIORITY.md; data/full_native_q0_20261014.json|
