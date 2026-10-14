@@ -1,0 +1,275 @@
+{
+  "status": "COMPLETE_FIXED_TRAIN_SELECTOR_AND_VECTOR_IDENTIFIABILITY_DIAGNOSIS",
+  "selected": [
+    1728,
+    720
+  ],
+  "TRAIN_highest_mean": 0.703125,
+  "TRAIN_highest_prices": [
+    [
+      1728,
+      720
+    ]
+  ],
+  "TRAIN_vector_classes": [
+    {
+      "prices": [
+        [
+          1440,
+          1440
+        ]
+      ],
+      "root_vector_sha256": "0a4a8175aca5f370417f060f78968304e2b23375329c91b065fdae468e855f60",
+      "mean": 0.625,
+      "WDL": {
+        "-1": 8,
+        "1": 88,
+        "0": 32
+      }
+    },
+    {
+      "prices": [
+        [
+          1440,
+          360
+        ],
+        [
+          1728,
+          360
+        ]
+      ],
+      "root_vector_sha256": "f3e441a6195e08ed3deec755a16533f1a422840febc0837f29452da234d440e9",
+      "mean": 0.6875,
+      "WDL": {
+        "0": 36,
+        "1": 90,
+        "-1": 2
+      }
+    },
+    {
+      "prices": [
+        [
+          1440,
+          720
+        ]
+      ],
+      "root_vector_sha256": "2a5d985d8d49a2d9cf68dccc582a262d3dbfd60e49d3422cafe4732f285efe2b",
+      "mean": 0.6875,
+      "WDL": {
+        "-1": 4,
+        "0": 32,
+        "1": 92
+      }
+    },
+    {
+      "prices": [
+        [
+          1728,
+          1440
+        ]
+      ],
+      "root_vector_sha256": "eaf52a9e9784717f5981e0bbb02e768b82e61029f9a29903fec72673c67a6643",
+      "mean": 0.6875,
+      "WDL": {
+        "0": 32,
+        "1": 92,
+        "-1": 4
+      }
+    },
+    {
+      "prices": [
+        [
+          1728,
+          720
+        ]
+      ],
+      "root_vector_sha256": "40efc867245757b8a23e3cf791b16606ff87d1fc1f559887d8c857223ee0f7ed",
+      "mean": 0.703125,
+      "WDL": {
+        "0": 34,
+        "1": 92,
+        "-1": 2
+      }
+    },
+    {
+      "prices": [
+        [
+          360,
+          1440
+        ]
+      ],
+      "root_vector_sha256": "bd0c35144fea5d869ad497731cf47ec6b085ee194c334bfcaf58330e7211e627",
+      "mean": 0.390625,
+      "WDL": {
+        "-1": 16,
+        "1": 66,
+        "0": 46
+      }
+    },
+    {
+      "prices": [
+        [
+          360,
+          360
+        ]
+      ],
+      "root_vector_sha256": "2832d81e5888a7a48d9fc77c37f6e6604175c37f62bf8b79383fa597a438be73",
+      "mean": 0.53125,
+      "WDL": {
+        "-1": 12,
+        "1": 80,
+        "0": 36
+      }
+    },
+    {
+      "prices": [
+        [
+          360,
+          720
+        ]
+      ],
+      "root_vector_sha256": "b8d809b923077f0170e9b43cc7287f5a43496176f59e0d185577632f01d6c0f5",
+      "mean": 0.453125,
+      "WDL": {
+        "-1": 14,
+        "1": 72,
+        "0": 42
+      }
+    },
+    {
+      "prices": [
+        [
+          720,
+          1440
+        ]
+      ],
+      "root_vector_sha256": "2574ec734c9b48a075f033c303f6f8b33b43879691d114ce1f6d1a8ed2278d74",
+      "mean": 0.453125,
+      "WDL": {
+        "-1": 14,
+        "1": 72,
+        "0": 42
+      }
+    },
+    {
+      "prices": [
+        [
+          720,
+          360
+        ]
+      ],
+      "root_vector_sha256": "976968ee1357e59d123a66b296cec4384b0f9e9e03af4780055dc32b4e53df78",
+      "mean": 0.609375,
+      "WDL": {
+        "-1": 10,
+        "1": 88,
+        "0": 30
+      }
+    },
+    {
+      "prices": [
+        [
+          720,
+          720
+        ]
+      ],
+      "root_vector_sha256": "b4773256f074528f04d46012e36a52c9d2678b6d2207fce49c727c3f77dfdc77",
+      "mean": 0.578125,
+      "WDL": {
+        "-1": 10,
+        "1": 84,
+        "0": 34
+      }
+    }
+  ],
+  "TRAIN_equalmax_pair_tradeoffs": [],
+  "strict_adjacent_endpoint_counts": {
+    "(1440, 360)": 3,
+    "(1728, 720)": 9
+  },
+  "DEV_contrasts": [
+    {
+      "R": 1440,
+      "B": 360,
+      "mean": 0.5546875,
+      "mean_gain": 0.1171875,
+      "WDL": {
+        "1": 158,
+        "-1": 16,
+        "0": 82
+      },
+      "WDL_transition_from_baseline": {
+        "(1, 1)": 140,
+        "(-1, -1)": 16,
+        "(0, 0)": 62,
+        "(0, 1)": 18,
+        "(-1, 0)": 16,
+        "(1, 0)": 4
+      },
+      "primary": false,
+      "family95": [
+        0.0546875,
+        0.1796875
+      ],
+      "shared95_allendpoint_band": [
+        0.0546875,
+        0.1796875
+      ]
+    },
+    {
+      "R": 1728,
+      "B": 720,
+      "mean": 0.5234375,
+      "mean_gain": 0.0859375,
+      "WDL": {
+        "1": 152,
+        "-1": 18,
+        "0": 86
+      },
+      "WDL_transition_from_baseline": {
+        "(1, 1)": 140,
+        "(-1, -1)": 18,
+        "(0, 0)": 68,
+        "(0, 1)": 12,
+        "(-1, 0)": 14,
+        "(1, 0)": 4
+      },
+      "primary": true,
+      "family95": [
+        0.03125,
+        0.1484375
+      ],
+      "shared95_allendpoint_band": [
+        0.0234375,
+        0.1484375
+      ]
+    },
+    {
+      "R": 720,
+      "B": 720,
+      "mean": 0.4375,
+      "mean_gain": 0.0,
+      "WDL": {
+        "1": 144,
+        "-1": 32,
+        "0": 80
+      },
+      "WDL_transition_from_baseline": {
+        "(1, 1)": 144,
+        "(-1, -1)": 32,
+        "(0, 0)": 80
+      },
+      "primary": false,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "shared95_allendpoint_band": [
+        -0.0625,
+        0.0625
+      ]
+    }
+  ],
+  "allendpoint_shared95_radius": 0.0625,
+  "scope": "ActualcompositeWDL; rootfamilyunit, colorsNOTindependent. Paths sameTRAINlandscape attractoranalysis not12independenttrainingruns. Identicalvectorsnotidenticalpolicies. NoDEVselection/humanfit; rootfamiliesheldout only, continuationoverlap andfixedsearchnumericthresholdlimits remain."
+}

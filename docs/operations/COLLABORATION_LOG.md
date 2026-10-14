@@ -1,3 +1,9 @@
+## DEV_AUX2026-10-14 segment49
+
+Auxiliary sidemission: complete5actor policy and shared4continuation isolate resource/conversion dependence; exact thirdtypeB teacher enables genuineWDL learning.151326go25min selects1728/720/720 withprimaryDEV11/128 positive; freshcheap2048go20s selects1440/720/360 withfullstagedDEV5/32 positive, validation43.516s incrementalusingqualifiedcoldcache. Actualgo171068+1024perft, no physicalnativegames. Allliteral/control/rank/PV androotfamily checks pass; emptyaudit1589 retained/corrected, inlinefreeze bytes limitation independentlyreconstructed. Differentobjective/rootlaws andparameterplatforms mean no uniquehumanprice/matchedmethodspeedup claim.
+
+Primary independently reports genericallybounded qsearch at fixeda76214d0; itsqnodebudget contract is outsideauxpricing anddeferred, noauxproduct/defaultwrites. Dot readfixed48report andadvised outcome-vector/platformdiagnosis; adopted withfixedselector/noDEVwinnerselection. Dotdidnotread/rerun49artifacts. Ordinaryconcurrencyallowed; separatefiles/computation preserved. Outstanding: repeatedindependentTRAINcohort pricestability/numericscale confounding. Own49report/archives deliverfixedrevision; privateSlack/account originals excludedfromGit, notfromlocalstorage.
+
 ## DEV_AUX segment43 — three estimands and direct true-outcome learning
 
 17184physical24plygames254473go5088perft1544.109producerseconds; noDEV_AUXprimary/default/UI writes.

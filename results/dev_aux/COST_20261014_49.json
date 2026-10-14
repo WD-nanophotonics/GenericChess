@@ -1,0 +1,57 @@
+{
+  "status": "ALL_OWNED_PROJECT_RUNS_COMPLETE_BOUNDED",
+  "search_runs": [
+    {
+      "task": 1576,
+      "actual_new_search_go": 11603,
+      "seconds": 125.9380000000001,
+      "status": "REACHABLE_POLICY_CLOSED",
+      "all_owned_engines_closed": true
+    },
+    {
+      "task": 1579,
+      "actual_new_search_go": 2849,
+      "seconds": 199.39099999999962,
+      "status": "REACHABLE_POLICY_CLOSED",
+      "all_owned_engines_closed": true
+    },
+    {
+      "task": 1587,
+      "actual_new_search_go": 151326,
+      "seconds": 1507.811999999998,
+      "status": "COMPLETE",
+      "all_owned_engines_closed": true
+    },
+    {
+      "task": 1604,
+      "actual_new_search_go": 2048,
+      "seconds": 19.84400000000096,
+      "status": "COMPLETE",
+      "all_owned_engines_closed": true
+    },
+    {
+      "task": 1606,
+      "actual_new_search_go": 3242,
+      "seconds": 43.51599999999962,
+      "status": "COMPLETE",
+      "all_owned_engines_closed": true
+    }
+  ],
+  "actual_new_search_go": 171068,
+  "actual_native_perft": 1024,
+  "physical_native_games": 0,
+  "complete_literal_witnesses": 2,
+  "reuse_in_1606": {
+    "actual_choice_states": 19384,
+    "reused_exact_cold64": 16142,
+    "new_queries": 3242,
+    "not_from_scratch_timing": true
+  },
+  "rules_graph": {
+    "states": 677304,
+    "edges": 2542256,
+    "generation_seconds": 20.985
+  },
+  "infinite_cycles_draw": "Only completeclosedgame/control graphs; pendingstatesnotdraw",
+  "scope": "Whole151326querylearning25min vs2048querylearning20s on DIFFERENT rootcohorts/compositeobjectives. Counts/time describeactualcost, notmatchedmethodspeedup. OrdinaryCPUconcurrency permitted, noexclusive/noise-freeclaim."
+}

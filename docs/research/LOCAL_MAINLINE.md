@@ -1,18 +1,17 @@
-# DEV_AUX current scope —2026-10-14 segment48
+# DEV_AUX current scope —2026-10-14 segment49
 
-ScienceOPEN, sidemissiononly, heartbeatACTIVE; no primary/default/UI writes.
-FixedR1728/N720 transfer only; no48training/refit orhumanratio recovery.
-3x4fullgraph694920states2770808edges ALLliteral/rankPASS; native1024+partial58147, remainderUNKNOWN.
-Full6actor64family childWDL jointbands touch/cross0: no robust board-only transfer.
-Closed<=4actor61336state fullcoldpolicy299160go2032.312s,128mixedKRvsKNfamilies.
-64primary actualnetW-Lgain3/64 jointpositive, wins45same losses47to35;16/256jointtouch0.
-Shared<=3oracleboundary64gain9/256; pairdifference uncertain;256conversioneffect secondary, no equivalence.
-Newjoint-required5actor128families, fixedprice onechoicegains64/256positive; full5policyNOTknown.
-Numericalscalingchangesmaturechoices; finitepurematerialD1/3helps,D5uncertain. No productbackendclaim.
-304024searchgo,59171savedperft,0physicalgames; failures/inline-provenance limits retained.
-Observed42.613min toolcheckpointgap notcredited asverifiedeffectivework; ownsessionclock neverreset.
-Next1560reachable5actorpreparedONLY: 480s/50kgo/150kstates, exact4policyboundary+UNKNOWNbounds.
-Evidence:SEGMENT_20261014_48.md,1556/1569proofs,1557/1558,1571/1572,COST/QA/archives48.
+ScienceOPEN; sidemissiononly, heartbeatACTIVE, no primary/default/UIwrites.
+Actual5cold64jointpolicygain9/64;4096five/64fourgain1/256 uncertain.
+Commonperfect4continuation gains64=61/256 and4096=15/256; exactproofsPASS.
+New3x4K/R/N/B677304state graph ALLliteral/rankPASS; native1024PASS.
+FullstagedWDL151326go1507.812s learnsR1728/N720/B720; primaryDEVgain11/128 sharedpositive.
+Cheapfirstchoice/perfectfuture2048go19.844s learnsR1440/N720/B360 onfreshroots.
+Itsactual5policy/common4validationgain5/32 positive;3242newgo43.516s uses16142oldqualifiedcoldchoices.
+IncrementalcostNOTfromscratch; differentobjectives/rootcohortsNOTmatchedlearning-speedup.
+ALLprofile/PV/control/rankproofsPASS; identicalTRAINvectors show numericpricesnotuniquelyidentified.
+Noquantityreward/humanfit, nofullChess/Shogi/genericdomain orstablehumanprice recovery claim.
+NextindependentTRAINcohortstability andsharedscale controls; keep disclosedcontinuation overlap.
+Evidence:SEGMENT_20261014_49.md,1596,1602,1607/1608/1609,1610,COST/QA/archives49.
 
 # Current local research mainline
 

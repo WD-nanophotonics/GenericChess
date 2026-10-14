@@ -1,0 +1,47 @@
+{
+  "status": "COMPLETE_ZERO_GO_FROZEN_DEV_STOCK_STRATA",
+  "rows": [
+    {
+      "stock": "NB_vs_r",
+      "roots": 106,
+      "families": 53,
+      "baseline_mean": -0.018867924528301886,
+      "selected_mean": 0.18867924528301888,
+      "gain": 0.20754716981132076,
+      "WDL_transitions": {
+        "(-1, 0)": 24,
+        "(0, 0)": 40,
+        "(1, 1)": 30,
+        "(-1, -1)": 10,
+        "(1, 0)": 2
+      }
+    },
+    {
+      "stock": "RB_vs_n",
+      "roots": 84,
+      "families": 42,
+      "baseline_mean": 0.6904761904761905,
+      "selected_mean": 0.8095238095238095,
+      "gain": 0.11904761904761904,
+      "WDL_transitions": {
+        "(0, 1)": 10,
+        "(1, 1)": 58,
+        "(0, 0)": 16
+      }
+    },
+    {
+      "stock": "RN_vs_b",
+      "roots": 66,
+      "families": 33,
+      "baseline_mean": 0.6060606060606061,
+      "selected_mean": 0.7272727272727273,
+      "gain": 0.12121212121212122,
+      "WDL_transitions": {
+        "(1, 1)": 40,
+        "(0, 0)": 18,
+        "(0, 1)": 8
+      }
+    }
+  ],
+  "scope": "Descriptive frozenDEV composition; bothR andB changed, notcausalindividualpiece attribution or newprice selection. Sameactual5policy/common4oracle; zero nativego."
+}
