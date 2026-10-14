@@ -125,3 +125,5 @@ credentials are published. Reviewed collaboration is in COLLABORATION_LOG.md.
 Closed research search attempts:258, all completed (128transfer +20privateV2 +2cancel +1old-kernel +3real-loss +20whole-module +16prepared-cost +4fresh-shadow +60default-caller +4full-backend). Pytest, Core reference leaves,5000 reply-audit transitions and42224 censored proof transitions are separate.
 
 Archive: docs/archive/native_payload_20261014/evidence.zip (446132bytes, SHA256 ac31b8b10c6f3b1c95c421b8af0a35292086423365b35bf26b28a97b778ba7f8). 61 members verified byte-for-byte.
+
+Late collaboration supplement: full fixed AUX47 e451a93c report/blob and listed arithmetic reviewed; conditional64/256 complete-cold-policy benefit retained,16 uncertain, geometric split leakage corrected. Raw archives/oracle/policy/native/bootstrap were not independently replayed. See separately hashed aux47_review.json; immutable61-member ZIP unchanged.
