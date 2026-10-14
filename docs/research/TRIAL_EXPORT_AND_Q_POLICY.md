@@ -180,3 +180,11 @@ Archive147 members/397383bytes, SHA256
 Current source review finds only14 added result/projection lines plus two
 observed-behavior regressions; private performance variants remain evidence.
 Closing publication/session receipts are recorded separately, not guessed.
+
+Late release reading obtains DEV_AUX43 fixededeba242 report in full.
+PRIMARY verifies reported game/go/perft sums and exact stock contrasts only;
+raw/native/training reproduction is absent. Stockratio4.73 is not a policyprice;
+direct-policy DEV5/192 with zero-crossing intervals remains unconfirmed. The
+separate small-learning feasibility lane continues without primary duplication.
+Science delivery90c8a1e6eb94d3597044726d8ecfa3e31fab21df passes74 required
+publisher tests and independent exact origin/sandbox verification.

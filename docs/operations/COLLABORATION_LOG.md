@@ -1911,3 +1911,22 @@ UTC2026-10-13T22:53:09.718790+00:00 to2026-10-14T00:11:41.086180+00:00,
 research searches are complete, all own producers closed and next q2 comparison
 is executable/frozen but unexecuted. Science staysOPEN. This endedclock does
 not count later release transport as research or reset for publication.
+
+Late closing transport read finds DEV_AUX43 now fixed-published at
+edeba242367879ce55197736e2f766db0dcb0c07,
+results/dev_aux/SEGMENT_20261014_43.md. PRIMARY reads the whole report and
+independently checks reported arithmetic:17184games,254401+72=254473go,
+perft5088; stock contrasts207/1280 and347/3072, conditionalratio336/71;
+direct-policy DEV5/192 is below.03 with intervals crossing0. This is report/
+arithmetic only, not raw/native/game/training reproduction. Direct true-outcome
+learning is a later feasibility candidate, not stable human-price recovery.
+Full8KRN exclusions, changed μ/targets and prediction/intervention/price-use
+separation remain. Its next64family confirmation is frozen but unplayed;
+PRIMARY does not duplicate or wake it. The optional external-tablebase rejection
+has0requests and does not stop its local outcomes. No new primary study/clock
+reset occurs during this late delivery review.
+
+Science90c8a1e6eb94d3597044726d8ecfa3e31fab21df is tested-published with74
+relevant checks; independent full origin/sandbox SHA equalsHEAD and Gitclean.
+This closing revision only adds actual late auxiliary coordination/delivery
+status. Scientific archive bytes and all query records remain immutable.
