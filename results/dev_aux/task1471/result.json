@@ -1,0 +1,1021 @@
+{
+  "status": "PASS_ALL4096_FUTURE_PAWN_ADVANCEMENT_SAMPLER_REJECTS_FULL_LEGAL_AND_SPLIT",
+  "counts": {
+    "no_pawn_action": 630,
+    "invalid": 2144,
+    "None": 812,
+    "terminal": 30,
+    "no_capture": 358,
+    "too_few_legal": 102,
+    "immediate_win": 20
+  },
+  "selected": 96,
+  "pawn_distance_records": [
+    {
+      "seed": 2026570002,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "c7": 6,
+        "a2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570013,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "e7": 6,
+        "h2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570014,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "d7": 6,
+        "e2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570023,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "d7": 6,
+        "h2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570029,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "c7": 6,
+        "f2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570038,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "d7": 6,
+        "b2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570039,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "g7": 6,
+        "c2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570045,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "b7": 6,
+        "f2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570053,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "e7": 6,
+        "d2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570054,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "b7": 6,
+        "e2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570055,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "b7": 6,
+        "e2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570058,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "b7": 6,
+        "h2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570059,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "a7": 6,
+        "a2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570061,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "b7": 6,
+        "d2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570066,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "g7": 6,
+        "a2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570069,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "b7": 6,
+        "e2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570071,
+      "phase": "DEV",
+      "promotion_distances": {
+        "h7": 6,
+        "f2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570072,
+      "phase": "DEV",
+      "promotion_distances": {
+        "a7": 6,
+        "a2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570074,
+      "phase": "DEV",
+      "promotion_distances": {
+        "e7": 6,
+        "e2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570078,
+      "phase": "DEV",
+      "promotion_distances": {
+        "c7": 6,
+        "f2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570079,
+      "phase": "DEV",
+      "promotion_distances": {
+        "a7": 6,
+        "b2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570082,
+      "phase": "DEV",
+      "promotion_distances": {
+        "h7": 6,
+        "f2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570084,
+      "phase": "DEV",
+      "promotion_distances": {
+        "h7": 6,
+        "e2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570088,
+      "phase": "DEV",
+      "promotion_distances": {
+        "b7": 6,
+        "h2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570113,
+      "phase": "DEV",
+      "promotion_distances": {
+        "h7": 6,
+        "d2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570117,
+      "phase": "DEV",
+      "promotion_distances": {
+        "f7": 6,
+        "g2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570118,
+      "phase": "DEV",
+      "promotion_distances": {
+        "a7": 6,
+        "d2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570124,
+      "phase": "DEV",
+      "promotion_distances": {
+        "d7": 6,
+        "d2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570127,
+      "phase": "DEV",
+      "promotion_distances": {
+        "h7": 6,
+        "c2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570138,
+      "phase": "DEV",
+      "promotion_distances": {
+        "b7": 6,
+        "e2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570141,
+      "phase": "DEV",
+      "promotion_distances": {
+        "g7": 6,
+        "a2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570143,
+      "phase": "DEV",
+      "promotion_distances": {
+        "d7": 6,
+        "b2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570146,
+      "phase": "DEV",
+      "promotion_distances": {
+        "e7": 6,
+        "d2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570147,
+      "phase": "DEV",
+      "promotion_distances": {
+        "b7": 6,
+        "d2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570150,
+      "phase": "DEV",
+      "promotion_distances": {
+        "a7": 6,
+        "a2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570157,
+      "phase": "DEV",
+      "promotion_distances": {
+        "a7": 6,
+        "c2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570163,
+      "phase": "DEV",
+      "promotion_distances": {
+        "c7": 6,
+        "a2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570169,
+      "phase": "DEV",
+      "promotion_distances": {
+        "h7": 6,
+        "h2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570172,
+      "phase": "DEV",
+      "promotion_distances": {
+        "c7": 6,
+        "h2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570174,
+      "phase": "DEV",
+      "promotion_distances": {
+        "h7": 6,
+        "f2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570175,
+      "phase": "DEV",
+      "promotion_distances": {
+        "b7": 6,
+        "e2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570178,
+      "phase": "DEV",
+      "promotion_distances": {
+        "h7": 6,
+        "a2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570184,
+      "phase": "DEV",
+      "promotion_distances": {
+        "c7": 6,
+        "g2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570198,
+      "phase": "DEV",
+      "promotion_distances": {
+        "b7": 6,
+        "b2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570201,
+      "phase": "DEV",
+      "promotion_distances": {
+        "a7": 6,
+        "c2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570203,
+      "phase": "DEV",
+      "promotion_distances": {
+        "g7": 6,
+        "b2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570204,
+      "phase": "DEV",
+      "promotion_distances": {
+        "f7": 6,
+        "h2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026570212,
+      "phase": "DEV",
+      "promotion_distances": {
+        "c7": 6,
+        "c2": 6
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590003,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "d7": 1,
+        "h3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590004,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "e6": 2,
+        "h2": 1
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590009,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "h6": 2,
+        "h2": 1
+      },
+      "immediate_promotion_choices": [
+        "h2h1b",
+        "h2h1n",
+        "h2h1q",
+        "h2h1r"
+      ]
+    },
+    {
+      "seed": 2026590013,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "g6": 2,
+        "b2": 1
+      },
+      "immediate_promotion_choices": [
+        "b2b1b",
+        "b2b1n",
+        "b2b1q",
+        "b2b1r"
+      ]
+    },
+    {
+      "seed": 2026590018,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "a7": 1,
+        "a2": 1
+      },
+      "immediate_promotion_choices": [
+        "a7a8b",
+        "a7a8n",
+        "a7a8q",
+        "a7a8r"
+      ]
+    },
+    {
+      "seed": 2026590024,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "a7": 1,
+        "f2": 1
+      },
+      "immediate_promotion_choices": [
+        "a7a8b",
+        "a7a8n",
+        "a7a8q",
+        "a7a8r"
+      ]
+    },
+    {
+      "seed": 2026590027,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "c6": 2,
+        "a2": 1
+      },
+      "immediate_promotion_choices": [
+        "a2a1b",
+        "a2a1n",
+        "a2a1q",
+        "a2a1r"
+      ]
+    },
+    {
+      "seed": 2026590029,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "c6": 2,
+        "g3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590031,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "h6": 2,
+        "b3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590041,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "d6": 2,
+        "b3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590050,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "d7": 1,
+        "e3": 2
+      },
+      "immediate_promotion_choices": [
+        "d7d8b",
+        "d7d8n",
+        "d7d8q",
+        "d7d8r",
+        "d7e8b",
+        "d7e8n",
+        "d7e8q",
+        "d7e8r"
+      ]
+    },
+    {
+      "seed": 2026590053,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "b6": 2,
+        "c3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590059,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "a7": 1,
+        "c2": 1
+      },
+      "immediate_promotion_choices": [
+        "c2c1b",
+        "c2c1n",
+        "c2c1q",
+        "c2c1r"
+      ]
+    },
+    {
+      "seed": 2026590062,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "d7": 1,
+        "c3": 2
+      },
+      "immediate_promotion_choices": [
+        "d7d8b",
+        "d7d8n",
+        "d7d8q",
+        "d7d8r"
+      ]
+    },
+    {
+      "seed": 2026590070,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "d6": 2,
+        "e3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590074,
+      "phase": "TRAIN",
+      "promotion_distances": {
+        "h7": 1,
+        "b2": 1
+      },
+      "immediate_promotion_choices": [
+        "h7h8b",
+        "h7h8n",
+        "h7h8q",
+        "h7h8r"
+      ]
+    },
+    {
+      "seed": 2026590080,
+      "phase": "DEV",
+      "promotion_distances": {
+        "f6": 2,
+        "b3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590081,
+      "phase": "DEV",
+      "promotion_distances": {
+        "e6": 2,
+        "e3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590082,
+      "phase": "DEV",
+      "promotion_distances": {
+        "f7": 1,
+        "a3": 2
+      },
+      "immediate_promotion_choices": [
+        "f7f8b",
+        "f7f8n",
+        "f7f8q",
+        "f7f8r"
+      ]
+    },
+    {
+      "seed": 2026590087,
+      "phase": "DEV",
+      "promotion_distances": {
+        "f6": 2,
+        "f3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590092,
+      "phase": "DEV",
+      "promotion_distances": {
+        "g7": 1,
+        "a3": 2
+      },
+      "immediate_promotion_choices": [
+        "g7g8b",
+        "g7g8n",
+        "g7g8q",
+        "g7g8r"
+      ]
+    },
+    {
+      "seed": 2026590095,
+      "phase": "DEV",
+      "promotion_distances": {
+        "h7": 1,
+        "f2": 1
+      },
+      "immediate_promotion_choices": [
+        "f2f1b",
+        "f2f1n",
+        "f2f1q",
+        "f2f1r"
+      ]
+    },
+    {
+      "seed": 2026590101,
+      "phase": "DEV",
+      "promotion_distances": {
+        "h7": 1,
+        "f3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590104,
+      "phase": "DEV",
+      "promotion_distances": {
+        "c6": 2,
+        "b3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590118,
+      "phase": "DEV",
+      "promotion_distances": {
+        "a7": 1,
+        "f2": 1
+      },
+      "immediate_promotion_choices": [
+        "a7a8b",
+        "a7a8n",
+        "a7a8q",
+        "a7a8r"
+      ]
+    },
+    {
+      "seed": 2026590126,
+      "phase": "DEV",
+      "promotion_distances": {
+        "c7": 1,
+        "g2": 1
+      },
+      "immediate_promotion_choices": [
+        "c7c8b",
+        "c7c8n",
+        "c7c8q",
+        "c7c8r"
+      ]
+    },
+    {
+      "seed": 2026590128,
+      "phase": "DEV",
+      "promotion_distances": {
+        "g6": 2,
+        "e3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590130,
+      "phase": "DEV",
+      "promotion_distances": {
+        "e6": 2,
+        "b2": 1
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590152,
+      "phase": "DEV",
+      "promotion_distances": {
+        "h6": 2,
+        "h2": 1
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590154,
+      "phase": "DEV",
+      "promotion_distances": {
+        "h6": 2,
+        "g3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590157,
+      "phase": "DEV",
+      "promotion_distances": {
+        "d6": 2,
+        "f2": 1
+      },
+      "immediate_promotion_choices": [
+        "f2f1b",
+        "f2f1n",
+        "f2f1q",
+        "f2f1r"
+      ]
+    },
+    {
+      "seed": 2026590167,
+      "phase": "DEV",
+      "promotion_distances": {
+        "a6": 2,
+        "c2": 1
+      },
+      "immediate_promotion_choices": [
+        "c2c1b",
+        "c2c1n",
+        "c2c1q",
+        "c2c1r"
+      ]
+    },
+    {
+      "seed": 2026590172,
+      "phase": "DEV",
+      "promotion_distances": {
+        "a6": 2,
+        "c3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590198,
+      "phase": "DEV",
+      "promotion_distances": {
+        "c7": 1,
+        "h3": 2
+      },
+      "immediate_promotion_choices": [
+        "c7c8b",
+        "c7c8n",
+        "c7c8q",
+        "c7c8r"
+      ]
+    },
+    {
+      "seed": 2026590199,
+      "phase": "DEV",
+      "promotion_distances": {
+        "c7": 1,
+        "h2": 1
+      },
+      "immediate_promotion_choices": [
+        "h2h1b",
+        "h2h1n",
+        "h2h1q",
+        "h2h1r"
+      ]
+    },
+    {
+      "seed": 2026590200,
+      "phase": "DEV",
+      "promotion_distances": {
+        "h7": 1,
+        "b3": 2
+      },
+      "immediate_promotion_choices": [
+        "h7h8b",
+        "h7h8n",
+        "h7h8q",
+        "h7h8r"
+      ]
+    },
+    {
+      "seed": 2026590201,
+      "phase": "DEV",
+      "promotion_distances": {
+        "f7": 1,
+        "h3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590203,
+      "phase": "DEV",
+      "promotion_distances": {
+        "a6": 2,
+        "c2": 1
+      },
+      "immediate_promotion_choices": [
+        "c2c1b",
+        "c2c1n",
+        "c2c1q",
+        "c2c1r"
+      ]
+    },
+    {
+      "seed": 2026590204,
+      "phase": "DEV",
+      "promotion_distances": {
+        "c7": 1,
+        "d2": 1
+      },
+      "immediate_promotion_choices": [
+        "c7c8b",
+        "c7c8n",
+        "c7c8q",
+        "c7c8r"
+      ]
+    },
+    {
+      "seed": 2026590210,
+      "phase": "DEV",
+      "promotion_distances": {
+        "a6": 2,
+        "a3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590211,
+      "phase": "DEV",
+      "promotion_distances": {
+        "f7": 1,
+        "g2": 1
+      },
+      "immediate_promotion_choices": [
+        "g2g1b",
+        "g2g1n",
+        "g2g1q",
+        "g2g1r"
+      ]
+    },
+    {
+      "seed": 2026590212,
+      "phase": "DEV",
+      "promotion_distances": {
+        "e7": 1,
+        "h3": 2
+      },
+      "immediate_promotion_choices": [
+        "e7e8b",
+        "e7e8n",
+        "e7e8q",
+        "e7e8r"
+      ]
+    },
+    {
+      "seed": 2026590218,
+      "phase": "DEV",
+      "promotion_distances": {
+        "c7": 1,
+        "d2": 1
+      },
+      "immediate_promotion_choices": [
+        "c7c8b",
+        "c7c8n",
+        "c7c8q",
+        "c7c8r"
+      ]
+    },
+    {
+      "seed": 2026590226,
+      "phase": "DEV",
+      "promotion_distances": {
+        "a7": 1,
+        "a3": 2
+      },
+      "immediate_promotion_choices": [
+        "a7a8b",
+        "a7a8n",
+        "a7a8q",
+        "a7a8r"
+      ]
+    },
+    {
+      "seed": 2026590227,
+      "phase": "DEV",
+      "promotion_distances": {
+        "e7": 1,
+        "a3": 2
+      },
+      "immediate_promotion_choices": []
+    },
+    {
+      "seed": 2026590230,
+      "phase": "DEV",
+      "promotion_distances": {
+        "e7": 1,
+        "f3": 2
+      },
+      "immediate_promotion_choices": [
+        "e7e8b",
+        "e7e8n",
+        "e7e8q",
+        "e7e8r"
+      ]
+    },
+    {
+      "seed": 2026590233,
+      "phase": "DEV",
+      "promotion_distances": {
+        "e7": 1,
+        "g2": 1
+      },
+      "immediate_promotion_choices": [
+        "g2g1b",
+        "g2g1n",
+        "g2g1q",
+        "g2g1r"
+      ]
+    },
+    {
+      "seed": 2026590240,
+      "phase": "DEV",
+      "promotion_distances": {
+        "b6": 2,
+        "d2": 1
+      },
+      "immediate_promotion_choices": []
+    }
+  ],
+  "roots_with_immediate_promotion": 27,
+  "new_go": 0,
+  "scope": "Postfreeze distributiondescription only, neverexcludeafterpricefit. ContactrootPpositions are not startingstandardChessrank distribution; promotiondistance mayexplain usefulconditionalprice ratherthanordinaryhumanpawn table."
+}

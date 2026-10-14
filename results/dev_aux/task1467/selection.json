@@ -1,0 +1,166 @@
+{
+  "status": "TRAIN_ONLY_CONDITIONAL_PAWN_AXIS_FROZEN_DEV",
+  "primary": 1440,
+  "rows": [
+    {
+      "weight": "0",
+      "selected": 1440,
+      "all_best": [
+        1440
+      ],
+      "scores": {
+        "180": "25/32",
+        "360": "7/8",
+        "720": "27/32",
+        "1440": "15/16"
+      },
+      "paths": [
+        {
+          "start": 180,
+          "end": 360,
+          "path": [
+            180,
+            360
+          ]
+        },
+        {
+          "start": 360,
+          "end": 360,
+          "path": [
+            360
+          ]
+        },
+        {
+          "start": 720,
+          "end": 1440,
+          "path": [
+            720,
+            1440
+          ]
+        },
+        {
+          "start": 1440,
+          "end": 1440,
+          "path": [
+            1440
+          ]
+        }
+      ],
+      "bootstrap_selector": {
+        "1440": 3404,
+        "720": 481,
+        "360": 1087,
+        "180": 28
+      }
+    },
+    {
+      "weight": "1/2",
+      "selected": 1440,
+      "all_best": [
+        1440
+      ],
+      "scores": {
+        "180": "5/16",
+        "360": "13/32",
+        "720": "13/32",
+        "1440": "29/64"
+      },
+      "paths": [
+        {
+          "start": 180,
+          "end": 360,
+          "path": [
+            180,
+            360
+          ]
+        },
+        {
+          "start": 360,
+          "end": 360,
+          "path": [
+            360
+          ]
+        },
+        {
+          "start": 720,
+          "end": 1440,
+          "path": [
+            720,
+            1440
+          ]
+        },
+        {
+          "start": 1440,
+          "end": 1440,
+          "path": [
+            1440
+          ]
+        }
+      ],
+      "bootstrap_selector": {
+        "360": 1009,
+        "1440": 3355,
+        "720": 630,
+        "180": 6
+      }
+    },
+    {
+      "weight": "1",
+      "selected": 720,
+      "all_best": [
+        720,
+        1440
+      ],
+      "scores": {
+        "180": "-5/32",
+        "360": "-1/16",
+        "720": "-1/32",
+        "1440": "-1/32"
+      },
+      "paths": [
+        {
+          "start": 180,
+          "end": 720,
+          "path": [
+            180,
+            360,
+            720
+          ]
+        },
+        {
+          "start": 360,
+          "end": 720,
+          "path": [
+            360,
+            720
+          ]
+        },
+        {
+          "start": 720,
+          "end": 720,
+          "path": [
+            720
+          ]
+        },
+        {
+          "start": 1440,
+          "end": 1440,
+          "path": [
+            1440
+          ]
+        }
+      ],
+      "bootstrap_selector": {
+        "360": 1847,
+        "1440": 1492,
+        "720": 1641,
+        "180": 20
+      }
+    }
+  ],
+  "DEV_union": [
+    720,
+    1440
+  ],
+  "scope": "16TRAIN fourPgrid, oneprimarymixedgloballowesttie. R1728,N/B720nativePNBR720fixed,Q1664; no humanfit. BothP720sameprice testsdedupnotindependentgain."
+}

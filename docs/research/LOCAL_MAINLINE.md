@@ -1,13 +1,15 @@
-# DEV_AUX current scope —2026-10-14 segment45
+# DEV_AUX current scope —2026-10-14 segment46
 
-ScienceOPEN; own sidemission, heartbeatACTIVE; no primary/default/UI writes.
-6464science/6480physicalgames,112143searchgo,512perft;1140.407producerseconds; H6partial8m/502s retained.
-R-only leaf2.4 from independentTRAIN32/32: originalH24 DEV uncertain; NEW64H48 PRIMARY13/256 CI[.01171875,.09375].
-OldfilteredTRAINleaf2 alsoH48positive; direct2.4-minus2 uncertain, no uniqueinterval/humanfulltable claim.
-Badded: privateatomicR/B command,32exactbinarycontrols; TRAIN16 selectsB720=baseline, gain0; random360 DEVnegative.
-Singleexecutedmanifest budget/input/binary/cleanup repair+10regressions/16actualcontrols; no mocks in science.
-Next1399study/1400fresh32/1402canonicalcoupledTRAINmanifest: literals+32nativelegal ready; no coupledgames.
-ReportSEGMENT_20261014_45.md, COST/QA/exact198member archives45; allraw/failures privateoriginals retained.
+ScienceOPEN, own sidemission, heartbeatACTIVE; no primary/default/UI writes.
+6656science/6712physicalgames,161449sciencego+1212controlgo+88interface,325perft; allproducersclosed.
+R/B TRAIN16 stillselects1728/720 oldbaseline, noadditionalgain; strictneighbor14/16 reachsamepeak.
+NEW64leafscale half/one/two mixedgain5/64,7/128,1/32; primaryinteractionuncertain; worstsimultaneouslowernegative.
+Fresh512 TRAIN32selectsR3407; main64DEV5/128CIcross0.4096secondary15/256positive butprior1728samegain; actualwall124/175 not8x.
+Identicalselfplay56physical/64logical control matchesold64 and saves250go; random/nonuniform notcompressed.
+Pawnpromotion/EP privateinterface qualified; TRAIN16P/N2 uppergrid, DEV16gain3/64CIcross0,74DEVpromotions, nothumanpawnrecovery.
+EPidentity counterexample: naiveboard+turn false3foldat8plies, properat12; controllerfullhistoryalreadycorrect.
+172exactmembers669947769rawbytes restored; reportSEGMENT_20261014_46.md+COST/QA/archives46.
+Next1470earlylatepawnμ96priceblind roots/1471literal4096/1472native96/1473canonicalTRAIN ready; NOGAMES.
 
 # Current local research mainline
 

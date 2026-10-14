@@ -1,0 +1,366 @@
+{
+  "status": "PASS_2048_LOW_NODE_COUPLED_TRAIN_LITERAL_PV_HISTORY_RNG_TERMINAL",
+  "counts": {
+    "literal_frontiers": 57805,
+    "tbhits_zero": 306948,
+    "literal_PVmoves": 990051,
+    "go": 47801,
+    "actions": 57805,
+    "randomdraws": 10004
+  },
+  "rows": [
+    {
+      "arm": "R720B360",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "W": 10,
+        "L": 8,
+        "D": 8,
+        "C": 38
+      },
+      "J48": "1/32"
+    },
+    {
+      "arm": "R720B360",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 51,
+        "C": 13
+      },
+      "J48": "51/64"
+    },
+    {
+      "arm": "R720B720",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "C": 36,
+        "W": 6,
+        "L": 6,
+        "D": 16
+      },
+      "J48": "0"
+    },
+    {
+      "arm": "R720B720",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 53,
+        "C": 11
+      },
+      "J48": "53/64"
+    },
+    {
+      "arm": "R720B1440",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "C": 36,
+        "L": 8,
+        "D": 15,
+        "W": 5
+      },
+      "J48": "-3/64"
+    },
+    {
+      "arm": "R720B1440",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 52,
+        "C": 12
+      },
+      "J48": "13/16"
+    },
+    {
+      "arm": "R720B3407",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "C": 37,
+        "L": 12,
+        "D": 8,
+        "W": 7
+      },
+      "J48": "-5/64"
+    },
+    {
+      "arm": "R720B3407",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 51,
+        "C": 13
+      },
+      "J48": "51/64"
+    },
+    {
+      "arm": "R1440B360",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "C": 34,
+        "L": 6,
+        "W": 11,
+        "D": 13
+      },
+      "J48": "5/64"
+    },
+    {
+      "arm": "R1440B360",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 54,
+        "C": 10
+      },
+      "J48": "27/32"
+    },
+    {
+      "arm": "R1440B720",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "W": 11,
+        "L": 6,
+        "C": 40,
+        "D": 7
+      },
+      "J48": "5/64"
+    },
+    {
+      "arm": "R1440B720",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 55,
+        "C": 9
+      },
+      "J48": "55/64"
+    },
+    {
+      "arm": "R1440B1440",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "D": 11,
+        "L": 7,
+        "W": 11,
+        "C": 35
+      },
+      "J48": "1/16"
+    },
+    {
+      "arm": "R1440B1440",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 57,
+        "C": 7
+      },
+      "J48": "57/64"
+    },
+    {
+      "arm": "R1440B3407",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "D": 6,
+        "L": 15,
+        "W": 9,
+        "C": 34
+      },
+      "J48": "-3/32"
+    },
+    {
+      "arm": "R1440B3407",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 54,
+        "C": 10
+      },
+      "J48": "27/32"
+    },
+    {
+      "arm": "R1728B360",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "W": 12,
+        "L": 8,
+        "C": 35,
+        "D": 9
+      },
+      "J48": "1/16"
+    },
+    {
+      "arm": "R1728B360",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 54,
+        "C": 10
+      },
+      "J48": "27/32"
+    },
+    {
+      "arm": "R1728B720",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "W": 13,
+        "L": 6,
+        "C": 36,
+        "D": 9
+      },
+      "J48": "7/64"
+    },
+    {
+      "arm": "R1728B720",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 53,
+        "C": 11
+      },
+      "J48": "53/64"
+    },
+    {
+      "arm": "R1728B1440",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "W": 10,
+        "L": 8,
+        "C": 37,
+        "D": 9
+      },
+      "J48": "1/32"
+    },
+    {
+      "arm": "R1728B1440",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 52,
+        "C": 12
+      },
+      "J48": "13/16"
+    },
+    {
+      "arm": "R1728B3407",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "C": 35,
+        "L": 10,
+        "W": 5,
+        "D": 14
+      },
+      "J48": "-5/64"
+    },
+    {
+      "arm": "R1728B3407",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 53,
+        "C": 11
+      },
+      "J48": "53/64"
+    },
+    {
+      "arm": "R3407B360",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "W": 11,
+        "L": 5,
+        "D": 7,
+        "C": 41
+      },
+      "J48": "3/32"
+    },
+    {
+      "arm": "R3407B360",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 54,
+        "C": 10
+      },
+      "J48": "27/32"
+    },
+    {
+      "arm": "R3407B720",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "W": 12,
+        "C": 38,
+        "D": 8,
+        "L": 6
+      },
+      "J48": "3/32"
+    },
+    {
+      "arm": "R3407B720",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 58,
+        "C": 6
+      },
+      "J48": "29/32"
+    },
+    {
+      "arm": "R3407B1440",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "W": 10,
+        "L": 6,
+        "D": 7,
+        "C": 41
+      },
+      "J48": "1/16"
+    },
+    {
+      "arm": "R3407B1440",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 54,
+        "C": 10
+      },
+      "J48": "27/32"
+    },
+    {
+      "arm": "R3407B3407",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "W": 6,
+        "L": 10,
+        "C": 40,
+        "D": 8
+      },
+      "J48": "-1/16"
+    },
+    {
+      "arm": "R3407B3407",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 54,
+        "C": 10
+      },
+      "J48": "27/32"
+    }
+  ],
+  "new_go": 0
+}

@@ -1,0 +1,1276 @@
+{
+  "status": "PASS_EXACT_MULTIARCHIVE_AND_PRIVATE_FULL_RESTORE",
+  "archives": [
+    {
+      "name": "ACTUAL_MATURE_20261014_46_01.zip",
+      "bytes": 33727167,
+      "sha256": "a0f6f302c5d5c58dcaa6c604a39f5f58b623de006c8ad779e635f3f3d95c53d0"
+    },
+    {
+      "name": "ACTUAL_MATURE_20261014_46_02.zip",
+      "bytes": 20088080,
+      "sha256": "8bd01de69edb70e9a78f6c8e395cd42b5cb7c43c3b8dc666335657f3aadcbe72"
+    },
+    {
+      "name": "ACTUAL_MATURE_20261014_46_03.zip",
+      "bytes": 1893,
+      "sha256": "735e25ea477e806bc149aef99aea1037d0ad259f434cb7408efc20e1a349f709"
+    }
+  ],
+  "raw_bytes": 669947769,
+  "members": [
+    {
+      "path": "results/dev_aux/task1405/games.jsonl",
+      "bytes": 63446395,
+      "sha256": "a3a18df72e92790e049fb501e7194db46525657653e44e6c1c98ad99cb4c69c1",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 5767245
+    },
+    {
+      "path": "results/dev_aux/task1405/price_acks.json",
+      "bytes": 403327,
+      "sha256": "20db61a199d262e291bb0da606cb055fdb6afc6bd4051bf70595725fc0e4cbf2",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 6580
+    },
+    {
+      "path": "results/dev_aux/task1405/queries.jsonl",
+      "bytes": 57269504,
+      "sha256": "147a120feb2bcf40e6cdfb073c76787ea4742bf87d5f083614d514dbc8b16cda",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 4683665
+    },
+    {
+      "path": "results/dev_aux/task1405/result.json",
+      "bytes": 1077,
+      "sha256": "d63bffeb642cf9fd06986b0650da340fb6236eb123080c7494ae722d3e60aa8a",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 411
+    },
+    {
+      "path": "results/dev_aux/task1405/variant.ini",
+      "bytes": 114,
+      "sha256": "2c1485733467e57b9bb3d2ae45385da478408c9dc3b6e8670175c75bbf4887af",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 61
+    },
+    {
+      "path": "results/dev_aux/task1406/audit.py",
+      "bytes": 4639,
+      "sha256": "f37dcb0abcca57844c81b8a216dcef82635c5f13d1e8f73bf9cbbc71aa75a892",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 2024
+    },
+    {
+      "path": "results/dev_aux/task1406/select.py",
+      "bytes": 3340,
+      "sha256": "9fb84d503cc9f9bc12e3a0cbfc80d960650c735f205f43e13e491372065546c1",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 1605
+    },
+    {
+      "path": "results/dev_aux/task1407/result.json",
+      "bytes": 6630,
+      "sha256": "980dd3c0dedf3d5a69043b04d88156d5935caad7145668853ccb33c81baf08c9",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 739
+    },
+    {
+      "path": "results/dev_aux/task1408/dev_manifest.json",
+      "bytes": 928,
+      "sha256": "067cf37c23421d71857f6cb7ec42235de62f2a1742d44093e0bcbe2b710025d9",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 496
+    },
+    {
+      "path": "results/dev_aux/task1408/selection.json",
+      "bytes": 21779,
+      "sha256": "d53387d3428f4293a1502a4d57a4b1856c4826d13b78d52d70c1fd6b4e0e2d8f",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 1443
+    },
+    {
+      "path": "results/dev_aux/task1408/selection_inputs.json",
+      "bytes": 216,
+      "sha256": "7c8cbe28b71ef2d900d6ba2f18cf4793ccba7eff71bbeec46554d634850c2558",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 161
+    },
+    {
+      "path": "results/dev_aux/task1409/build.py",
+      "bytes": 5107,
+      "sha256": "5e61dc3a32dda76aa471ddbd996473d2b2e8cbedfa9fb4b674a676f7ed5eaf93",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 1858
+    },
+    {
+      "path": "results/dev_aux/task1409/qualify.py",
+      "bytes": 4648,
+      "sha256": "7dadb1ec2749b57a084ed1fec977f61020b5931370430b6bda27deb78c3a6497",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 2035
+    },
+    {
+      "path": "results/dev_aux/task1410/build.json",
+      "bytes": 298,
+      "sha256": "26731cf6ee64b67b1a8672c7fb9e2db0c132982718d4c300ee3d75f6c8310510",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 205
+    },
+    {
+      "path": "results/dev_aux/task1410/compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 2
+    },
+    {
+      "path": "results/dev_aux/task1410/leaf_rnb.patch",
+      "bytes": 1864,
+      "sha256": "1410d7d1f973dd0291d441410861d3221bda5cc775a2807fd9fd7d0e7287946e",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 537
+    },
+    {
+      "path": "results/dev_aux/task1410/link.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 2
+    },
+    {
+      "path": "results/dev_aux/task1410/plan.json",
+      "bytes": 8100,
+      "sha256": "434eb1308a0202928c44c6e5a7a0354ba5db350607e569b9bb694c8f9417959d",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 3564
+    },
+    {
+      "path": "results/dev_aux/task1410/uci.cpp",
+      "bytes": 27215,
+      "sha256": "3610a26a63442142ea43f384784a24d94d38baa6d010226bb6a5ef3d0b2618be",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 7670
+    },
+    {
+      "path": "results/dev_aux/task1411/qualification.json",
+      "bytes": 240709,
+      "sha256": "61660aaa46ef4459d36f6b2745400cb63aaca3b1bf1540fa33e76b64ab52c2b6",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 14538
+    },
+    {
+      "path": "results/dev_aux/task1411/variant.ini",
+      "bytes": 114,
+      "sha256": "2c1485733467e57b9bb3d2ae45385da478408c9dc3b6e8670175c75bbf4887af",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 61
+    },
+    {
+      "path": "results/dev_aux/task1412/games.jsonl",
+      "bytes": 8134425,
+      "sha256": "e936d79bc0a8dc72c927788af03fe9bb427d0994896e3ef7a81f482eba4b4604",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 722517
+    },
+    {
+      "path": "results/dev_aux/task1412/price_acks.json",
+      "bytes": 50411,
+      "sha256": "4dec29815f61a6a1bd451d1f3fa0fdf16cfa5c0c117c2e10c8c5ddb1a1c4aa9c",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 1746
+    },
+    {
+      "path": "results/dev_aux/task1412/queries.jsonl",
+      "bytes": 7371266,
+      "sha256": "23aabcdfc3f0107116616dc9045288601e7e60067b74af6a650b642fc9872300",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 589671
+    },
+    {
+      "path": "results/dev_aux/task1412/result.json",
+      "bytes": 738,
+      "sha256": "3f9e35d5a641ab94371e53df2ca1e53a120de17e984c6bd0910da175ee20aac1",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 405
+    },
+    {
+      "path": "results/dev_aux/task1412/variant.ini",
+      "bytes": 114,
+      "sha256": "2c1485733467e57b9bb3d2ae45385da478408c9dc3b6e8670175c75bbf4887af",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 61
+    },
+    {
+      "path": "results/dev_aux/task1413/analyze.py",
+      "bytes": 2053,
+      "sha256": "eda373054beb3fa5a42366d5d3b41d801d879b476381669e348eb943b3123486",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 1126
+    },
+    {
+      "path": "results/dev_aux/task1413/audit.py",
+      "bytes": 4644,
+      "sha256": "74bf07318063a64aad310a57c67d5e0a58dab77d09a3cbfc4a39aaf6066af3a7",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 2028
+    },
+    {
+      "path": "results/dev_aux/task1413/freeze_scale.py",
+      "bytes": 1431,
+      "sha256": "1c7b0ed7b76f573fb8e524469d954d61e3f77a8ec1f4cf9b1163a1964b6957ca",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 879
+    },
+    {
+      "path": "results/dev_aux/task1413/generate.py",
+      "bytes": 2214,
+      "sha256": "00185ecf32d16433f76e7aba4b7cb05710948b174962c2a70622dadd08c1c86d",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 1237
+    },
+    {
+      "path": "results/dev_aux/task1414/result.json",
+      "bytes": 1064,
+      "sha256": "28f175ca9b97ca981914e3090a9dafc6849ed69345cb101fd3195f3c325e6caf",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 353
+    },
+    {
+      "path": "results/dev_aux/task1415/study.json",
+      "bytes": 1878,
+      "sha256": "a5cda6b482b1bae6e8b7f8fe60eb0018f217c8002cfa039a79bbeb07177e417f",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 778
+    },
+    {
+      "path": "results/dev_aux/task1416/plan.json",
+      "bytes": 1082,
+      "sha256": "568a79bcab5216f1634a0a132b280b4e9a782cfc204ebfcd3775aea7a8a4b037",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 499
+    },
+    {
+      "path": "results/dev_aux/task1416/roots.json",
+      "bytes": 2190902,
+      "sha256": "01ad1b356291e2e317e6d5cdfafa84541f3a82c96dfc923473f406a42725807d",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 206347
+    },
+    {
+      "path": "results/dev_aux/task1417/audit_inputs.py",
+      "bytes": 1767,
+      "sha256": "10be431f3ccd605b1087e7e95e476fd3b9ac41c2fc13000bf4547fe4f5123435",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 952
+    },
+    {
+      "path": "results/dev_aux/task1417/qualify_inputs.py",
+      "bytes": 1427,
+      "sha256": "4d68d53ea20c1861baa6327408545ed8b8492d1cfc7523d9fdd189836fbec42e",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 876
+    },
+    {
+      "path": "results/dev_aux/task1418/result.json",
+      "bytes": 131,
+      "sha256": "c7fd158713dd724f16701c2b7e7d68a3e610ac67feb4c0241135302c50b0e904",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 112
+    },
+    {
+      "path": "results/dev_aux/task1419/qualification.json",
+      "bytes": 48176,
+      "sha256": "a236f1ff2fa7f9859bb90626d48e8d9ce89656716789eb93fddb20e1459f8fc2",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 6100
+    },
+    {
+      "path": "results/dev_aux/task1419/variant.ini",
+      "bytes": 114,
+      "sha256": "2c1485733467e57b9bb3d2ae45385da478408c9dc3b6e8670175c75bbf4887af",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 61
+    },
+    {
+      "path": "results/dev_aux/task1420/freeze.py",
+      "bytes": 1124,
+      "sha256": "9618ba626d8f3ba72a107d6ae4a63728f996b6c6ce7809ab0d54e4c75b0be0fc",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 662
+    },
+    {
+      "path": "results/dev_aux/task1420/manifest.json",
+      "bytes": 1522,
+      "sha256": "e2f67b2faa7539cfcf5a657a8ed421e59848ecc324a3181cc48b9c6464c87b2a",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 624
+    },
+    {
+      "path": "results/dev_aux/task1420/runner.py",
+      "bytes": 10085,
+      "sha256": "fc18b8253f0090ab4681926f34893f7876705116c5d2053d375f5d1368d7b127",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 3901
+    },
+    {
+      "path": "results/dev_aux/task1421/games.jsonl",
+      "bytes": 92884422,
+      "sha256": "277c295a63bca3df6fa6598c84dddad3722e7d74387f3bc3ebeaefdbea42566f",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 8351180
+    },
+    {
+      "path": "results/dev_aux/task1421/price_acks.json",
+      "bytes": 151543,
+      "sha256": "8a92ca78055f7f9642d244a0db65da2012b80476f26df811f302fba7a49bd7a8",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 3292
+    },
+    {
+      "path": "results/dev_aux/task1421/queries.jsonl",
+      "bytes": 83736731,
+      "sha256": "9a5527336ac983d7fc00f0c3058d766d7c74f47f841e6995a8ff480c53685fc8",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 6730836
+    },
+    {
+      "path": "results/dev_aux/task1421/result.json",
+      "bytes": 836,
+      "sha256": "12e09d4cc15ba62571b2491c71c8efd6978b9c9e3a16c04551d6305dad61790d",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 411
+    },
+    {
+      "path": "results/dev_aux/task1421/variant.ini",
+      "bytes": 114,
+      "sha256": "2c1485733467e57b9bb3d2ae45385da478408c9dc3b6e8670175c75bbf4887af",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 61
+    },
+    {
+      "path": "results/dev_aux/task1422/result.json",
+      "bytes": 3215,
+      "sha256": "a467bfa44cb886c850c3e1bc584266c6c2e2c17cafce959d92e7c972bf8ab80d",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 770
+    },
+    {
+      "path": "results/dev_aux/task1424/certificate.json",
+      "bytes": 2028793,
+      "sha256": "1d11cb420d17dd6794ad868e0d52ea16bbbde060acab062ea4b0894331f04dc6",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 58238
+    },
+    {
+      "path": "results/dev_aux/task1425/analyze.py",
+      "bytes": 3481,
+      "sha256": "917e30a2a0e71a8164b21cb702b834b3ee885afb7b6e9348a9aac80bdfc3a493",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 1736
+    },
+    {
+      "path": "results/dev_aux/task1425/audit.py",
+      "bytes": 4740,
+      "sha256": "85a46a008951188c77fd932148fe53e2e5c37127d6d4ee610e00f5ca327d69f0",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 2046
+    },
+    {
+      "path": "results/dev_aux/task1425/choices_vs_d2.py",
+      "bytes": 1717,
+      "sha256": "27fc18698d91f44570a19a52425f745497cbffdf876490b21793247d1de9b399",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 901
+    },
+    {
+      "path": "results/dev_aux/task1425/oracle.py",
+      "bytes": 2417,
+      "sha256": "ea05c1a5d49c54dfdd42e3e4ef59e27d208bebb83a87d95ba1b4c92f32e4dff1",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 1234
+    },
+    {
+      "path": "results/dev_aux/task1425/verify_certificate.py",
+      "bytes": 2697,
+      "sha256": "79e933b4102f23aa5202c1fd6899fd230415b59a032d060c337c67f0c6103a99",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 1307
+    },
+    {
+      "path": "results/dev_aux/task1426/result.json",
+      "bytes": 2679,
+      "sha256": "5052f4905139b568f4ab4570cc305b1982d1a575d00af98cd29421f02a108c49",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 503
+    },
+    {
+      "path": "results/dev_aux/task1428/result.json",
+      "bytes": 27002,
+      "sha256": "166d8251707baad6aecab51b82d582de589b8fd15d592e18b9164e010feac15c",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 2331
+    },
+    {
+      "path": "results/dev_aux/task1429/result.json",
+      "bytes": 342,
+      "sha256": "49e65829b0a057e951ed0537a56445fcc8c4ec2301c46f9add747a3951a9bfb9",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 244
+    },
+    {
+      "path": "results/dev_aux/task1430/audit_inputs.py",
+      "bytes": 1770,
+      "sha256": "f3c8b4ce3c6e08a7f2d126ddc54a12260c10e3e334e136a8f263bc654980287d",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 956
+    },
+    {
+      "path": "results/dev_aux/task1430/freeze.py",
+      "bytes": 1551,
+      "sha256": "db23647b9eb4ee98e6ee0ea9e5028bbf0c41192840af4eb7a343ee2f57ed9712",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 943
+    },
+    {
+      "path": "results/dev_aux/task1430/generate.py",
+      "bytes": 2225,
+      "sha256": "135275558c970ef6cea1420e6521332b9abb337c443b08c0b65220c2a5147e23",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 1227
+    },
+    {
+      "path": "results/dev_aux/task1430/qualify_inputs.py",
+      "bytes": 1423,
+      "sha256": "8aa3e62c1b941463fc79133eec402187e9628207893d38f9b52ff98880fb6f84",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 874
+    },
+    {
+      "path": "results/dev_aux/task1430/study.json",
+      "bytes": 1667,
+      "sha256": "9d1f728e504466d619eef783320f82dcacf9658fbfdf35d98ebe2accb89fb7ad",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 877
+    },
+    {
+      "path": "results/dev_aux/task1431/result.json",
+      "bytes": 85839,
+      "sha256": "783e7bfe6845d86bf01464d082ec4dc338fb280c97dbc0e65c56f7ff19dd017a",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 8673
+    },
+    {
+      "path": "results/dev_aux/task1432/plan.json",
+      "bytes": 1082,
+      "sha256": "568a79bcab5216f1634a0a132b280b4e9a782cfc204ebfcd3775aea7a8a4b037",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 499
+    },
+    {
+      "path": "results/dev_aux/task1432/roots.json",
+      "bytes": 2264930,
+      "sha256": "53f1ed7d7e58d4367d85a1232f70e722b9415627afb0feab4241a589e68c6c98",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 215021
+    },
+    {
+      "path": "results/dev_aux/task1434/result.json",
+      "bytes": 134,
+      "sha256": "e45ebbcb2cc4289ff55d447ad9410c3fcd387603530f4a832ab8f0a325b7fa48",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 115
+    },
+    {
+      "path": "results/dev_aux/task1435/qualification.json",
+      "bytes": 85676,
+      "sha256": "450f07969c335b1b6f19256eacd3dc73cdfcbecec9595617d9c668dc948fa488",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 10298
+    },
+    {
+      "path": "results/dev_aux/task1435/variant.ini",
+      "bytes": 114,
+      "sha256": "2c1485733467e57b9bb3d2ae45385da478408c9dc3b6e8670175c75bbf4887af",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 61
+    },
+    {
+      "path": "results/dev_aux/task1436/freeze.py",
+      "bytes": 783,
+      "sha256": "c39cea0f95f5d14fbc01bfceb5976fe8beb371f68f823a1a259bcf90bf5c1aee",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 456
+    },
+    {
+      "path": "results/dev_aux/task1436/train_manifest.json",
+      "bytes": 2326,
+      "sha256": "9ed1b3e5edf076d7e0e57c2b0857fc3894f9322ba1ea2439d56273eb7bc1d289",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 678
+    },
+    {
+      "path": "results/dev_aux/task1437/games.jsonl",
+      "bytes": 81494881,
+      "sha256": "b8db4a6b28d765289949bc62bc534f84c94bd3cbda8776d1107f929b531db89f",
+      "archive": "ACTUAL_MATURE_20261014_46_01.zip",
+      "compressed_bytes": 6284892
+    },
+    {
+      "path": "results/dev_aux/task1437/price_acks.json",
+      "bytes": 403327,
+      "sha256": "20db61a199d262e291bb0da606cb055fdb6afc6bd4051bf70595725fc0e4cbf2",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 6580
+    },
+    {
+      "path": "results/dev_aux/task1437/queries.jsonl",
+      "bytes": 69504623,
+      "sha256": "8d218c24b750b70ba1d49c13588a3f84a460c48d91904f65c39780708ede97db",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 4354476
+    },
+    {
+      "path": "results/dev_aux/task1437/result.json",
+      "bytes": 1063,
+      "sha256": "83233aa0cb12d5ec8992005d00362f4468536510a430b05004fca75d7d0d8e55",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 403
+    },
+    {
+      "path": "results/dev_aux/task1437/variant.ini",
+      "bytes": 114,
+      "sha256": "2c1485733467e57b9bb3d2ae45385da478408c9dc3b6e8670175c75bbf4887af",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 61
+    },
+    {
+      "path": "results/dev_aux/task1438/audit.py",
+      "bytes": 3079,
+      "sha256": "dd8ba1e14762bf50173b7d96a8b0dd88f2e315f1cff7ca7ac6e5700f79c15e96",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1325
+    },
+    {
+      "path": "results/dev_aux/task1438/freeze.py",
+      "bytes": 819,
+      "sha256": "255f69de7f3c6db4b3303c494607a3ee4298872f3d3b37dbe36caf1cc10ccff0",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 531
+    },
+    {
+      "path": "results/dev_aux/task1438/io_cost.py",
+      "bytes": 1695,
+      "sha256": "65611e1f631bd19dae32385ad9489815e64a82aeb9b7ef53b4512066f95d435a",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 958
+    },
+    {
+      "path": "results/dev_aux/task1438/io_cost_fixed.py",
+      "bytes": 1728,
+      "sha256": "fd4bdd728987a18e556c2d382fbef280ac8004ff623d7311e6d3c9a1392260e9",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 975
+    },
+    {
+      "path": "results/dev_aux/task1438/manifest.json",
+      "bytes": 1128,
+      "sha256": "832f036804ba44c3de22f7d3725e18fd59e239b3469a2e6c9cc8050c97b73c60",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 594
+    },
+    {
+      "path": "results/dev_aux/task1438/runner.py",
+      "bytes": 11083,
+      "sha256": "3788d89c0887b9db977db6acc00ed911731dfcd91c8944608eacf0498a883585",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 4212
+    },
+    {
+      "path": "results/dev_aux/task1439/games.jsonl",
+      "bytes": 3060798,
+      "sha256": "9b3fd5222810f43b844da3c73ed8548749d7eaa7d4ea867fcd71c5da69b167c7",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 283790
+    },
+    {
+      "path": "results/dev_aux/task1439/logical_games.jsonl",
+      "bytes": 14232,
+      "sha256": "bd4fbc71110009948ba2d6ffde152520e5c23c988aee4e005880d2709fa3ea5f",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1162
+    },
+    {
+      "path": "results/dev_aux/task1439/price_acks.json",
+      "bytes": 50408,
+      "sha256": "5cba1c4cee21faf8e2d6d3f46773e01e98db83d5fafe226aa3a76d88c6914149",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1733
+    },
+    {
+      "path": "results/dev_aux/task1439/queries.jsonl",
+      "bytes": 2726269,
+      "sha256": "316dbca90df558813d6e2142879ee7ef8f9903221e1c2783a7e721659cf587de",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 224973
+    },
+    {
+      "path": "results/dev_aux/task1439/result.json",
+      "bytes": 760,
+      "sha256": "eef8f6eef16f56f432f0690a70979fe59c6f03cc38b85dc421ae40280cfca102",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 412
+    },
+    {
+      "path": "results/dev_aux/task1439/variant.ini",
+      "bytes": 114,
+      "sha256": "2c1485733467e57b9bb3d2ae45385da478408c9dc3b6e8670175c75bbf4887af",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 61
+    },
+    {
+      "path": "results/dev_aux/task1440/result.json",
+      "bytes": 640,
+      "sha256": "1c8737b77964318a590aaa42317ba51c3217c1d8b503350b2741757b2f0b6010",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 400
+    },
+    {
+      "path": "results/dev_aux/task1441/failure_diagnosis.json",
+      "bytes": 729,
+      "sha256": "2a98e5de2437d1860cbb01e45bcdbc5e074c46810f57123d495d0c6862dc03ac",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 472
+    },
+    {
+      "path": "results/dev_aux/task1442/analyze.py",
+      "bytes": 2628,
+      "sha256": "ba747ad815b82a5e2c60d8fd362c27bc17df5facf29273a90e85375635cef057",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1297
+    },
+    {
+      "path": "results/dev_aux/task1442/audit.py",
+      "bytes": 4649,
+      "sha256": "ea3bd6561a13d143735e3b37a59251a4b8f02a873d8bce73fc79596ac98fd914",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 2031
+    },
+    {
+      "path": "results/dev_aux/task1442/dev_high_audit.py",
+      "bytes": 4656,
+      "sha256": "549a4a588696d3a9fd4ceb1a6cf9667f777638aae85efdc02ed7dd2554ca4ed2",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 2041
+    },
+    {
+      "path": "results/dev_aux/task1442/dev_low_audit.py",
+      "bytes": 4646,
+      "sha256": "ce0b2a1fe896635fa5ea97d7f9b53e4b8e81362d167643373522b25ce0a03b14",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 2032
+    },
+    {
+      "path": "results/dev_aux/task1442/normalize_dev.py",
+      "bytes": 1637,
+      "sha256": "48eee5d84479bce13c3ec4f6a5954899b643b8c81e2dbce7dedbaff78357eaf2",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 914
+    },
+    {
+      "path": "results/dev_aux/task1442/select.py",
+      "bytes": 3585,
+      "sha256": "af4d5e4c3ed11a446469b435122af462c07810a7513ef9fc52741d660f990b0c",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1709
+    },
+    {
+      "path": "results/dev_aux/task1442/verify_selection.py",
+      "bytes": 2138,
+      "sha256": "0dbbb8cf827372f25175a274becbdbf24068fb70f2dde9b477e02a7c65d2e817",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1108
+    },
+    {
+      "path": "results/dev_aux/task1443/result.json",
+      "bytes": 6581,
+      "sha256": "7b34b8ab797891f34e632474a5fb02566a5a55eb752a94020ba57286b23789f6",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 721
+    },
+    {
+      "path": "results/dev_aux/task1444/dev_high_manifest.json",
+      "bytes": 994,
+      "sha256": "5cd88b68bb19c47e3fdf6989c6726df77a6d4a844bec9d77f7cd112703ac3e21",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 489
+    },
+    {
+      "path": "results/dev_aux/task1444/dev_manifest.json",
+      "bytes": 1017,
+      "sha256": "ec1654977456d39a74440a3c9430c977666353e1f42eddc233f7023104f50fe2",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 507
+    },
+    {
+      "path": "results/dev_aux/task1444/selection.json",
+      "bytes": 21690,
+      "sha256": "85c26f83800f2c39e710b70edf0ec64fae4ce57846c11c1e7b51f102e0abcd08",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1463
+    },
+    {
+      "path": "results/dev_aux/task1444/selection_inputs.json",
+      "bytes": 216,
+      "sha256": "af9cfb04a8ab9d20e7eabfe8f4f12f09cf350cbf3e889567ef09c6cbc972e2bd",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 163
+    },
+    {
+      "path": "results/dev_aux/task1445/games.jsonl",
+      "bytes": 31633963,
+      "sha256": "e20bc75726093b943c3325777aff6f726675df82a3a53e8b89ba4327aea694a4",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 2392105
+    },
+    {
+      "path": "results/dev_aux/task1445/price_acks.json",
+      "bytes": 75618,
+      "sha256": "b515ebfffd5b49323bf112da3c4f2b10987d8ac8b81e14fe8a2efb89e53f5f97",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 2126
+    },
+    {
+      "path": "results/dev_aux/task1445/queries.jsonl",
+      "bytes": 26947054,
+      "sha256": "ab26ddd4fa7e9017138daa612cd588f98d62cfc20639a93ce93c8ed6cef08980",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1635743
+    },
+    {
+      "path": "results/dev_aux/task1445/result.json",
+      "bytes": 762,
+      "sha256": "1537f213efb9facfb5260e12e4e27e60a8b34b3678d8045f173e140079ca7e20",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 404
+    },
+    {
+      "path": "results/dev_aux/task1445/variant.ini",
+      "bytes": 114,
+      "sha256": "2c1485733467e57b9bb3d2ae45385da478408c9dc3b6e8670175c75bbf4887af",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 61
+    },
+    {
+      "path": "results/dev_aux/task1446/games.jsonl",
+      "bytes": 46536821,
+      "sha256": "e5663ab67dd1f6ad68b779fd46af5bb604b197cd23ba093ca85230961c76fb3f",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 4159558
+    },
+    {
+      "path": "results/dev_aux/task1446/price_acks.json",
+      "bytes": 75618,
+      "sha256": "b515ebfffd5b49323bf112da3c4f2b10987d8ac8b81e14fe8a2efb89e53f5f97",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 2126
+    },
+    {
+      "path": "results/dev_aux/task1446/queries.jsonl",
+      "bytes": 42049044,
+      "sha256": "9856d6cee4c2a33c5a654b73df30c2546adf93d1c859df4f547254396437f8e2",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 3373868
+    },
+    {
+      "path": "results/dev_aux/task1446/result.json",
+      "bytes": 763,
+      "sha256": "f003d6917156d9dc18401f1913dc7bf0f05885186ca92b40e49200e39fd92442",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 406
+    },
+    {
+      "path": "results/dev_aux/task1446/variant.ini",
+      "bytes": 114,
+      "sha256": "2c1485733467e57b9bb3d2ae45385da478408c9dc3b6e8670175c75bbf4887af",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 61
+    },
+    {
+      "path": "results/dev_aux/task1447/result.json",
+      "bytes": 1516,
+      "sha256": "3e0edb51a0f76413ce9722ec5828b4c5f75b4018da559a92dbfe0e50b1154cc4",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 400
+    },
+    {
+      "path": "results/dev_aux/task1448/result.json",
+      "bytes": 1506,
+      "sha256": "1f092dafbbef5c352782809718ebef05af4294c873ede163726ef1e9d046fa2e",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 408
+    },
+    {
+      "path": "results/dev_aux/task1449/result.json",
+      "bytes": 45476,
+      "sha256": "c8945df1b317cd7ab51f90c1f4dc56f45022fd44f45c39aa0713c2e63e4ca9f2",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 2882
+    },
+    {
+      "path": "results/dev_aux/task1450/result.json",
+      "bytes": 2073,
+      "sha256": "c1aef478655bf58f40c04070143593fae63248c4398e0a3303fed7ef21e7bae6",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 603
+    },
+    {
+      "path": "results/dev_aux/task1451/high_manifest.json",
+      "bytes": 1097,
+      "sha256": "011bf004bdeaf1eb29390bda2024f33739bf363013400e175a1eab485c925dec",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 551
+    },
+    {
+      "path": "results/dev_aux/task1451/low_manifest.json",
+      "bytes": 1095,
+      "sha256": "1c82512aa75d97e1917d3abe7ca04a5cd64c46ccf80489c30e7a244ccb5a91db",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 551
+    },
+    {
+      "path": "results/dev_aux/task1451/normalization.json",
+      "bytes": 901,
+      "sha256": "7a5d51fe482a77922759a6a58f1b9e77566e90585d6c42b09683767fccff17e5",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 511
+    },
+    {
+      "path": "results/dev_aux/task1452/result.json",
+      "bytes": 1020,
+      "sha256": "05f64bbfd34317c100e63454685c9ef3fc4beb977f524177d798ed5c33765ddd",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 419
+    },
+    {
+      "path": "results/dev_aux/task1453/audit_inputs.py",
+      "bytes": 2741,
+      "sha256": "a68ac979cd563a7282c6917193f8261e977e21921f9a7c2730be3f9ddde69062",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1334
+    },
+    {
+      "path": "results/dev_aux/task1453/build.py",
+      "bytes": 5610,
+      "sha256": "1c8e7f5c07ca6ae3ba2d4b10cae3abc28afa39c09784b83d7fe1b8dc75faf0fe",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1959
+    },
+    {
+      "path": "results/dev_aux/task1453/generate.py",
+      "bytes": 3004,
+      "sha256": "66e846cb6ef2ad86cb8f2c1ed119aaa251084195e35404e790afbd804236716f",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1635
+    },
+    {
+      "path": "results/dev_aux/task1453/literal_pawn.py",
+      "bytes": 1775,
+      "sha256": "e481ea1c5350d1b87e2e8d256a41db713f5e6e80df431de93d87cb4d31875098",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 851
+    },
+    {
+      "path": "results/dev_aux/task1453/prepare.py",
+      "bytes": 2501,
+      "sha256": "92660fe78a8139599ed02e7c02fc8b806df2cff4ddf2453a83535f8de2fa0569",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1029
+    },
+    {
+      "path": "results/dev_aux/task1453/qualify.py",
+      "bytes": 5073,
+      "sha256": "d89d79913594c96e86030e10f000e18e8ecaf40cfb1b4dd7d2d8a45118b69436",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 2207
+    },
+    {
+      "path": "results/dev_aux/task1454/build.json",
+      "bytes": 299,
+      "sha256": "4aaa7801d120874c3fde17913924b1b5b2a49c7c68a4270905bca4aaceeed464",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 206
+    },
+    {
+      "path": "results/dev_aux/task1454/compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 2
+    },
+    {
+      "path": "results/dev_aux/task1454/leaf_rnb.patch",
+      "bytes": 2266,
+      "sha256": "e7b2bc9f306a6d921694431e693b7103a747609f3fbc55fb48b44e7c95b22d84",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 586
+    },
+    {
+      "path": "results/dev_aux/task1454/link.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 2
+    },
+    {
+      "path": "results/dev_aux/task1454/plan.json",
+      "bytes": 8166,
+      "sha256": "ede2e9f91577172b4b375a911a9b0e76957e4c197f91892d9b8a2c5b9faf3799",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 3601
+    },
+    {
+      "path": "results/dev_aux/task1454/uci.cpp",
+      "bytes": 29211,
+      "sha256": "5cf8816d7b3a495385c7db335ed379c4ca92f28610d113ba5b0031ac853f3f2a",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 7777
+    },
+    {
+      "path": "results/dev_aux/task1455/roots.json",
+      "bytes": 2171296,
+      "sha256": "391d267fabdc92fe84a28c620788619222a017842f41a546933f90a2728bc910",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 206256
+    },
+    {
+      "path": "results/dev_aux/task1455/study.json",
+      "bytes": 1193,
+      "sha256": "3920740fabcd133a75d66bc3f806d94cc467982f488908a7f57d8969c960771b",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 707
+    },
+    {
+      "path": "results/dev_aux/task1458/qualification.json",
+      "bytes": 271065,
+      "sha256": "e4702a541d466d3779149842446f08604360bbbb3e15553687bd824ef056c235",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 16335
+    },
+    {
+      "path": "results/dev_aux/task1458/variant.ini",
+      "bytes": 112,
+      "sha256": "bf73a216639cac4f4cc0ada6dd4827c641f85fae7844c0030e090dc822a3267f",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 60
+    },
+    {
+      "path": "results/dev_aux/task1459/result.json",
+      "bytes": 6889,
+      "sha256": "53073053f8ac04e75d135c5cdb2b58b7dba81958d535890448ac401e5490c18d",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 892
+    },
+    {
+      "path": "results/dev_aux/task1460/freeze.py",
+      "bytes": 1253,
+      "sha256": "31d9744dd1970257e2c0d39a39709734f970572a703f95fcd3359ae990183bfa",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 731
+    },
+    {
+      "path": "results/dev_aux/task1460/manifest.json",
+      "bytes": 1401,
+      "sha256": "ddc74dcf0aedc7b11a7151e395370395eee16b47c7ef65a18e9ce1b293641122",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 613
+    },
+    {
+      "path": "results/dev_aux/task1460/runner.py",
+      "bytes": 10227,
+      "sha256": "3ef73d3b40e53c2bef4bea3e256fc3719c1ed53d61a67d152a44c08728b5b7ab",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 3947
+    },
+    {
+      "path": "results/dev_aux/task1461/games.jsonl",
+      "bytes": 13566173,
+      "sha256": "7a3287a8d081f27001f808ef0c24861ca5b38ae4a1d7aa812ba4eb34255f3879",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1133005
+    },
+    {
+      "path": "results/dev_aux/task1461/price_acks.json",
+      "bytes": 131822,
+      "sha256": "6a0a02c7173f11a05afb03479adedc77b4d04eb2b1004359ba092f8324bc2820",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 3009
+    },
+    {
+      "path": "results/dev_aux/task1461/queries.jsonl",
+      "bytes": 11740575,
+      "sha256": "1d09ef35a5e4300788eb52206cef5765eddfc18ab8ca4487465f8da502729f07",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 824295
+    },
+    {
+      "path": "results/dev_aux/task1461/result.json",
+      "bytes": 785,
+      "sha256": "c7df59213bf41ef481c6bd05c1d48096a885f77c271484849de8430e44a4d63e",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 405
+    },
+    {
+      "path": "results/dev_aux/task1461/variant.ini",
+      "bytes": 112,
+      "sha256": "bf73a216639cac4f4cc0ada6dd4827c641f85fae7844c0030e090dc822a3267f",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 60
+    },
+    {
+      "path": "results/dev_aux/task1462/analyze.py",
+      "bytes": 2066,
+      "sha256": "a1dda6f26952b2331c1e8302a8a0cd667584c6d66f8c83edd34515a46f2fcc90",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1156
+    },
+    {
+      "path": "results/dev_aux/task1462/audit.py",
+      "bytes": 5034,
+      "sha256": "70ed608fb28c2125189b264fd966805fa96b060ac33404189cf234f41f5931b0",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 2158
+    },
+    {
+      "path": "results/dev_aux/task1462/dev_audit.py",
+      "bytes": 5047,
+      "sha256": "979d64c184c6a486117a04afbc2870e5fc1871fdebec47b8a65af0df3f65ffe2",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 2166
+    },
+    {
+      "path": "results/dev_aux/task1462/select.py",
+      "bytes": 2238,
+      "sha256": "58fb8fa61930b87a874e617df3e35e852d7ec8175d08f85b5fc3232874b82dfb",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1226
+    },
+    {
+      "path": "results/dev_aux/task1464/games.jsonl",
+      "bytes": 6366209,
+      "sha256": "b4c0e1ab4a4e17c72fabcd405b0f5fde74b2ccf8b837dc16e2dc50176b1cc48d",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 539279
+    },
+    {
+      "path": "results/dev_aux/task1464/price_acks.json",
+      "bytes": 65914,
+      "sha256": "3081695db473ea4170eafcfdb4457894d53ccb03ea6fa808bef6bbb6ff06a757",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 2009
+    },
+    {
+      "path": "results/dev_aux/task1464/queries.jsonl",
+      "bytes": 5505805,
+      "sha256": "4a1195384830fd5cf55c0c59582552f6ae45697d5c09aaa87f0b0419aea6a8f4",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 389152
+    },
+    {
+      "path": "results/dev_aux/task1464/result.json",
+      "bytes": 724,
+      "sha256": "ca0b07ab25c51e356e7d130ff3d272b109bdbeb83854087bfbb0353493661318",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 397
+    },
+    {
+      "path": "results/dev_aux/task1464/variant.ini",
+      "bytes": 112,
+      "sha256": "bf73a216639cac4f4cc0ada6dd4827c641f85fae7844c0030e090dc822a3267f",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 60
+    },
+    {
+      "path": "results/dev_aux/task1465/result.json",
+      "bytes": 1093,
+      "sha256": "5b3f033f3e68fec67b9a0b5b272ad5d7ad3bd0239fe8d2e96b519fbd920cbbe1",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 360
+    },
+    {
+      "path": "results/dev_aux/task1466/result.json",
+      "bytes": 1850,
+      "sha256": "81ba7ce885da1e97e63bf4739a28ccd0ed444bec98ef3c5ae4fdd8c6d9b0751d",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 416
+    },
+    {
+      "path": "results/dev_aux/task1467/dev_manifest.json",
+      "bytes": 1015,
+      "sha256": "ad0ece637c1570ebe8dc8f8adbb287c267745fd009ed9989ae2975fbb60223b3",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 516
+    },
+    {
+      "path": "results/dev_aux/task1467/selection.json",
+      "bytes": 3089,
+      "sha256": "bdd9bb2ed3f241f2074029f8ec55a9fd19109cad721d77b50e5b41137e229dc5",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 592
+    },
+    {
+      "path": "results/dev_aux/task1468/result.json",
+      "bytes": 2870,
+      "sha256": "bfc107e8df269aa254fe1e05b0560cdf83483898012f68ba25c1e717b8687bc7",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 712
+    },
+    {
+      "path": "results/dev_aux/task1469/audit_inputs.py",
+      "bytes": 3130,
+      "sha256": "50b1b6cd6115c1f4d51c808ff7809a257f42f0c3e92d8ac47bdcc7c0633f076a",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1525
+    },
+    {
+      "path": "results/dev_aux/task1469/freeze_manifests.py",
+      "bytes": 1245,
+      "sha256": "409ef7167eaf3a06d770493ce6ec860bcc73c9df567566baa56644316f8c3d54",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 732
+    },
+    {
+      "path": "results/dev_aux/task1469/generate.py",
+      "bytes": 2961,
+      "sha256": "2c4409b5d2672f33b67e00358ad3c76e6056ab6d108b037c174c79d0cbc2fd15",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1603
+    },
+    {
+      "path": "results/dev_aux/task1469/qualify_inputs.py",
+      "bytes": 1446,
+      "sha256": "e9e0f377c310cc183418e187212d0d4006ab2f2c8953d94fc096dbeef5fa4589",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 889
+    },
+    {
+      "path": "results/dev_aux/task1470/roots.json",
+      "bytes": 4600804,
+      "sha256": "da8701baa7b0d59af1217fca8129314e4f71229f6de5274af3e03a4dd4ed3452",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 430780
+    },
+    {
+      "path": "results/dev_aux/task1470/study.json",
+      "bytes": 1052,
+      "sha256": "88896290fa642bb413d7ff3fc5ebd4badfa5317dac8538d038153b6d778730a4",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 605
+    },
+    {
+      "path": "results/dev_aux/task1471/result.json",
+      "bytes": 20467,
+      "sha256": "7d6dd2757b469318bc1e8e691a8ea95dc795d45c8e3c70f288bd6dab869d889b",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 1511
+    },
+    {
+      "path": "results/dev_aux/task1472/qualification.json",
+      "bytes": 104126,
+      "sha256": "9321f057f65b04b2ac99c627e97f0b5ffe3ba5fbcd47fbcd7963de390e5a7771",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 11872
+    },
+    {
+      "path": "results/dev_aux/task1472/variant.ini",
+      "bytes": 112,
+      "sha256": "bf73a216639cac4f4cc0ada6dd4827c641f85fae7844c0030e090dc822a3267f",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 60
+    },
+    {
+      "path": "results/dev_aux/task1473/qualification.json",
+      "bytes": 450,
+      "sha256": "8132a4cff2a54fc9eceb78ae797e2ae319f0275f30728bcdbde734e5e9e03ab6",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 269
+    },
+    {
+      "path": "results/dev_aux/task1473/train_early.json",
+      "bytes": 1343,
+      "sha256": "c92988e83835859f69b7cf4dd87373d1129600a0587b7b431fbce2caab66a545",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 577
+    },
+    {
+      "path": "results/dev_aux/task1473/train_late.json",
+      "bytes": 1343,
+      "sha256": "a512327dc50a142fd3348ac919085efc07b0c9fc998d79e184a36b0683cce552",
+      "archive": "ACTUAL_MATURE_20261014_46_02.zip",
+      "compressed_bytes": 576
+    },
+    {
+      "path": "results/dev_aux/task1480/ep_history.py",
+      "bytes": 1986,
+      "sha256": "9befd68e86230266f284561cca2c9a589c2799d6012818bbdcd230eb208a6fb5",
+      "archive": "ACTUAL_MATURE_20261014_46_03.zip",
+      "compressed_bytes": 1057
+    },
+    {
+      "path": "results/dev_aux/task1481/result.json",
+      "bytes": 1386,
+      "sha256": "2e0aac2492a339c8e2b19e54b67bc1c69f8d027c81d7babefdf7ca8e981a5e34",
+      "archive": "ACTUAL_MATURE_20261014_46_03.zip",
+      "compressed_bytes": 514
+    }
+  ],
+  "large_files_archived_not_individually_tracked": [
+    "results/dev_aux/task1405/games.jsonl",
+    "results/dev_aux/task1405/price_acks.json",
+    "results/dev_aux/task1405/queries.jsonl",
+    "results/dev_aux/task1411/qualification.json",
+    "results/dev_aux/task1412/games.jsonl",
+    "results/dev_aux/task1412/queries.jsonl",
+    "results/dev_aux/task1416/roots.json",
+    "results/dev_aux/task1421/games.jsonl",
+    "results/dev_aux/task1421/price_acks.json",
+    "results/dev_aux/task1421/queries.jsonl",
+    "results/dev_aux/task1424/certificate.json",
+    "results/dev_aux/task1432/roots.json",
+    "results/dev_aux/task1437/games.jsonl",
+    "results/dev_aux/task1437/price_acks.json",
+    "results/dev_aux/task1437/queries.jsonl",
+    "results/dev_aux/task1439/games.jsonl",
+    "results/dev_aux/task1439/queries.jsonl",
+    "results/dev_aux/task1445/games.jsonl",
+    "results/dev_aux/task1445/queries.jsonl",
+    "results/dev_aux/task1446/games.jsonl",
+    "results/dev_aux/task1446/queries.jsonl",
+    "results/dev_aux/task1455/roots.json",
+    "results/dev_aux/task1458/qualification.json",
+    "results/dev_aux/task1461/games.jsonl",
+    "results/dev_aux/task1461/price_acks.json",
+    "results/dev_aux/task1461/queries.jsonl",
+    "results/dev_aux/task1464/games.jsonl",
+    "results/dev_aux/task1464/queries.jsonl",
+    "results/dev_aux/task1470/roots.json",
+    "results/dev_aux/task1472/qualification.json"
+  ],
+  "counts": {
+    "ast": 51,
+    "json": 80,
+    "jsonl_lines": 169437,
+    "other": 22
+  },
+  "privacy_pass": true,
+  "all_original_failures_and_raw_unchanged": true,
+  "seconds": 11.186999999918044,
+  "exact_members": 172,
+  "manual_claim_review": "PASS: currentSCIENCE6656 vscontrol56physical/64logical distinct; leafunitsnotnative/pruning214causal;512primaryuncertain/highsecondarypositiveoldprioridenticalmean; P/N2 boundarynothumanrestored/DEVuncertain; EPproperidentityactual12plycounterexample; next96earlylateNOGAMES.",
+  "handling_corrections": [
+    "WindowsIOcomponentCRLF assertion diagnosed, originalsource/partialprivatefileunchanged/newfixedtest",
+    "Copiedgenerator/selectioninterface textstale retained, scientificstudies and normalizedexecutedmanifests authoritative beforeDEV;32TRAIN calculations independentlyverified",
+    "BarePowerShell Slackts lost6digitformat; quotedstringboundsame deliveredrequest, no resend",
+    "JS parse errors beforeexecution/no filesystemeffect; no severeproblem or durationexception invoked"
+  ]
+}

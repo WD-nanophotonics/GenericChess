@@ -1,0 +1,49 @@
+{
+  "status": "PASS_TRAIN32_ONLY_GRID_SCORES_TIES_COORDINATE_PATHS",
+  "roots": 32,
+  "games": 2048,
+  "primary": [
+    3407,
+    720
+  ],
+  "rows": [
+    {
+      "weight": "0",
+      "selected": [
+        3407,
+        720
+      ],
+      "ends": {
+        "[1440, 1440]": 10,
+        "[1728, 360]": 1,
+        "[3407, 720]": 4,
+        "[3407, 3407]": 1
+      }
+    },
+    {
+      "weight": "1/2",
+      "selected": [
+        3407,
+        720
+      ],
+      "ends": {
+        "[1440, 1440]": 10,
+        "[3407, 720]": 6
+      }
+    },
+    {
+      "weight": "1",
+      "selected": [
+        1728,
+        720
+      ],
+      "ends": {
+        "[1440, 360]": 2,
+        "[1728, 720]": 13,
+        "[3407, 360]": 1
+      }
+    }
+  ],
+  "new_go": 0,
+  "scope": "Independent64peropponent trueW-L aggregate exactlyreconstructs scores andstrictneighbor choices. Nobootstrapasanoracle; copiedselectiontext16stale explicitlycorrected1451beforeDEV. Baseline/price/nodes frozen."
+}

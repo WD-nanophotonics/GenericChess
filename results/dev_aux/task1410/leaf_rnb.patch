@@ -1,0 +1,37 @@
+--- leaf-rb-45/uci.cpp
++++ leaf-rnb-46/uci.cpp
+@@ -404,6 +404,34 @@
+       }
+ #endif
+ #ifdef GENERICCHESS_MATERIAL_DEVELOPMENT
++      else if (token == "devauxleafrnb")
++      {
++          int rook = 0, knight = 0, bishop = 0;
++          is >> rook >> knight >> bishop;
++          if (!is || rook < 1 || rook > 4096 || knight < 1 || knight > 1440 || bishop < 1 || bishop > 4096)
++              sync_cout << "info string DEV_AUX leafRNB invalid" << sync_endl;
++          else
++          {
++              Search::clear();
++              for (Phase phase : {MG, EG})
++              {
++                  EvalPieceValue[phase][make_piece(WHITE, ROOK)] =
++                  EvalPieceValue[phase][make_piece(BLACK, ROOK)] = Value(rook);
++                  EvalPieceValue[phase][make_piece(WHITE, KNIGHT)] =
++                  EvalPieceValue[phase][make_piece(BLACK, KNIGHT)] = Value(knight);
++                  EvalPieceValue[phase][make_piece(WHITE, BISHOP)] =
++                  EvalPieceValue[phase][make_piece(BLACK, BISHOP)] = Value(bishop);
++              }
++              sync_cout << "info string DEV_AUX leafRNB " << int(EvalPieceValue[MG][ROOK])
++                        << " " << int(EvalPieceValue[MG][KNIGHT]) << " " << int(EvalPieceValue[MG][BISHOP])
++                        << " nativeR " << int(PieceValue[MG][ROOK])
++                        << " nativeN " << int(PieceValue[MG][KNIGHT])
++                        << " nativeB " << int(PieceValue[MG][BISHOP])
++                        << " captureR " << int(CapturePieceValue[MG][ROOK])
++                        << " captureN " << int(CapturePieceValue[MG][KNIGHT])
++                        << " captureB " << int(CapturePieceValue[MG][BISHOP]) << sync_endl;
++          }
++      }
+       else if (token == "devauxleafrb")
+       {
+           int rook = 0, bishop = 0;

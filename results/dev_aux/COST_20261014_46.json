@@ -1,0 +1,164 @@
+{
+  "status": "PASS_ACTUAL_ALL_COMPLETE_OWN_PRODUCERS_AND_RELEVANT_AUDITS",
+  "batches": [
+    {
+      "task": 1405,
+      "category": "science",
+      "games": 1024,
+      "go": 25271,
+      "seconds": 239.48499999986961,
+      "budget": {
+        "H": 48,
+        "nodes": 4096,
+        "max_seconds": 600,
+        "random_seed_base": 2026499000,
+        "expected_games": 1024
+      },
+      "source_sha256": "1461b556e10b08609b88aca4732be2dd8636da60481bdfa52a667ba41b09fa0d"
+    },
+    {
+      "task": 1412,
+      "category": "science",
+      "games": 128,
+      "go": 3234,
+      "seconds": 29.640999999828637,
+      "budget": {
+        "H": 48,
+        "nodes": 4096,
+        "max_seconds": 240,
+        "random_seed_base": 2026499000,
+        "expected_games": 128
+      },
+      "source_sha256": "1461b556e10b08609b88aca4732be2dd8636da60481bdfa52a667ba41b09fa0d"
+    },
+    {
+      "task": 1421,
+      "category": "science",
+      "games": 1536,
+      "go": 37441,
+      "seconds": 336.2029999997467,
+      "budget": {
+        "H": 48,
+        "nodes": 4096,
+        "max_seconds": 600,
+        "random_seed_base": 2026519000,
+        "expected_games": 1536
+      },
+      "source_sha256": "fc18b8253f0090ab4681926f34893f7876705116c5d2053d375f5d1368d7b127"
+    },
+    {
+      "task": 1437,
+      "category": "science",
+      "games": 2048,
+      "go": 47801,
+      "seconds": 328.0,
+      "budget": {
+        "H": 48,
+        "nodes": 512,
+        "max_seconds": 400,
+        "random_seed_base": 2026539000,
+        "expected_games": 2048
+      },
+      "source_sha256": "1461b556e10b08609b88aca4732be2dd8636da60481bdfa52a667ba41b09fa0d"
+    },
+    {
+      "task": 1445,
+      "category": "science",
+      "games": 768,
+      "go": 18741,
+      "seconds": 124.20299999974668,
+      "budget": {
+        "H": 48,
+        "nodes": 512,
+        "max_seconds": 180,
+        "random_seed_base": 2026539000,
+        "expected_games": 768
+      },
+      "source_sha256": "1461b556e10b08609b88aca4732be2dd8636da60481bdfa52a667ba41b09fa0d"
+    },
+    {
+      "task": 1446,
+      "category": "science",
+      "games": 768,
+      "go": 18484,
+      "seconds": 174.70300000021234,
+      "budget": {
+        "H": 48,
+        "nodes": 4096,
+        "max_seconds": 400,
+        "random_seed_base": 2026539000,
+        "expected_games": 768
+      },
+      "source_sha256": "1461b556e10b08609b88aca4732be2dd8636da60481bdfa52a667ba41b09fa0d"
+    },
+    {
+      "task": 1461,
+      "category": "science",
+      "games": 256,
+      "go": 7186,
+      "seconds": 53.04699999978766,
+      "budget": {
+        "H": 48,
+        "nodes": 1024,
+        "max_seconds": 180,
+        "random_seed_base": 2026559000,
+        "expected_games": 256
+      },
+      "source_sha256": "3ef73d3b40e53c2bef4bea3e256fc3719c1ed53d61a67d152a44c08728b5b7ab"
+    },
+    {
+      "task": 1464,
+      "category": "science",
+      "games": 128,
+      "go": 3291,
+      "seconds": 26.5,
+      "budget": {
+        "H": 48,
+        "nodes": 1024,
+        "max_seconds": 120,
+        "random_seed_base": 2026559000,
+        "expected_games": 128
+      },
+      "source_sha256": "3ef73d3b40e53c2bef4bea3e256fc3719c1ed53d61a67d152a44c08728b5b7ab"
+    },
+    {
+      "task": 1439,
+      "category": "engineeringcontrol",
+      "games": 56,
+      "go": 1212,
+      "seconds": 13.015000000130385,
+      "budget": {
+        "H": 48,
+        "nodes": 4096,
+        "max_seconds": 120,
+        "random_seed_base": 2026499000,
+        "expected_games": 56
+      },
+      "source_sha256": "3788d89c0887b9db977db6acc00ed911731dfcd91c8944608eacf0498a883585"
+    }
+  ],
+  "science_games": 6656,
+  "physical_games": 6712,
+  "science_search_go": 161449,
+  "all_game_search_go": 162661,
+  "interface_search_go": 88,
+  "native_perft_go": 325,
+  "science_producer_seconds": 1311.7819999991916,
+  "audits": [
+    1407,
+    1414,
+    1426,
+    1443,
+    1447,
+    1448,
+    1466,
+    1465,
+    1429,
+    1440,
+    1452,
+    1459,
+    1471,
+    1481
+  ],
+  "note": "Producerseconds mayoverlap; notresearchsessionelapsed orCPUexclusive. Same64DEV low/high124.203/174.703s, ordinaryownproducer/auditoverlap, no8xwallclaim. Interfacecold40RNB+48P outsidegames; future96perft-only notfuturefit. ExactD2 6650leafs notgames, IOSerializationrecordduplicates notphysics. No mocks/science."
+}

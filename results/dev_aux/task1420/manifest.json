@@ -1,0 +1,60 @@
+{
+  "H": 48,
+  "nodes": 4096,
+  "max_seconds": 600,
+  "expected_seconds": 400,
+  "root_file": "results/dev_aux/task1416/roots.json",
+  "expected_games": 1536,
+  "profiles": {
+    "V_Shalf": {
+      "nativeR": 720,
+      "leafR": 864,
+      "leafN": 360,
+      "leafB": 360
+    },
+    "U_Shalf": {
+      "nativeR": 720,
+      "leafR": 360,
+      "leafN": 360,
+      "leafB": 360
+    },
+    "V_Sone": {
+      "nativeR": 720,
+      "leafR": 1728,
+      "leafN": 720,
+      "leafB": 720
+    },
+    "U_Sone": {
+      "nativeR": 720,
+      "leafR": 720,
+      "leafN": 720,
+      "leafB": 720
+    },
+    "V_Stwo": {
+      "nativeR": 720,
+      "leafR": 3456,
+      "leafN": 1440,
+      "leafB": 1440
+    },
+    "U_Stwo": {
+      "nativeR": 720,
+      "leafR": 1440,
+      "leafN": 1440,
+      "leafB": 1440
+    }
+  },
+  "random_seed_base": 2026519000,
+  "root_sha256": "01ad1b356291e2e317e6d5cdfafa84541f3a82c96dfc923473f406a42725807d",
+  "root_range": [
+    0,
+    64
+  ],
+  "root_count": 64,
+  "binary": ".local_agent\\leaf-rnb-46\\fairy-leaf-rnb.exe",
+  "binary_sha256": "82fbd76703aaa30eb8bc64b966284876419320fb633b37561b606322b1a29a66",
+  "opponents": {
+    "unit_search": 720,
+    "uniform_random": null
+  },
+  "scope": "Frozen64 fixedratios commonleafscore units. task1416/plan.json inheritedgenerator metadata notruntime; study1415+thiscanonicalmanifest govern. Primary interaction ofpairedgain2vs.5, not DEVfit. NativeRNB720 teacherfixed, no pruningrewrite."
+}
