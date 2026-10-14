@@ -182,3 +182,5 @@ Reviewed archive: 76 members/450492 bytes; SHA256
 `194c4a051dbe04a28c7cb7f060dc3fd8affa57d32dec8238f06a0c21b62809cb`. Exact allowlist, source/JSON/AST/hash/privacy checks pass.
 
 Segment closes UTC2026-10-14T00:25:48.895128+00:00 to2026-10-14T01:47:26.429916+00:00: 81.626 minutes/11 research checkpoints; safe_checkpoint accepted. All owned producers closed, science OPEN.80 final related checks pass; prescribed tested publication/full remote SHA remain separate transport evidence.
+
+Science delivery b9043ca8ad425235abd5570857739e7492cd25ec passes80 prescribed publisher tests and independent exact origin/sandbox SHA verification. Closing receipt is a separate tested documentation update; local commit is never equated with publication.
