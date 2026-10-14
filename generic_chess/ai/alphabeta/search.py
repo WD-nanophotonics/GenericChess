@@ -901,7 +901,7 @@ def root_tactical_scan(
     ctx: _Context,
     handles=None,
 ) -> tuple[Action | None, Action | None]:
-    """Cheap root scan: immediate mate first, else best fast-eval root action.
+    """Cheap root scan: immediate winning terminal first, else best fast-eval action.
 
     Returns ``(immediate_win_action, best_action_by_eval)``.  Every root
     successor is examined until the budget ends. Completed child evaluations
@@ -919,7 +919,7 @@ def root_tactical_scan(
                 ctx.stats.nodes += 1
                 ctx.stats.root_scan_nodes += 1
                 if (
-                    child.terminal_status.status is TerminalStatus.CHECKMATE
+                    child.terminal_status.is_terminal
                     and child.terminal_status.winner == state.position.side_to_move
                 ):
                     ctx.stats.root_scan_seconds += time.monotonic() - started
@@ -962,7 +962,7 @@ def root_tactical_scan(
         ctx.stats.nodes += 1
         ctx.stats.root_scan_nodes += 1
         if (
-            child.terminal_status.status is TerminalStatus.CHECKMATE
+            child.terminal_status.is_terminal
             and child.terminal_status.winner == state.position.side_to_move
         ):
             ctx.stats.root_scan_seconds += time.monotonic() - started

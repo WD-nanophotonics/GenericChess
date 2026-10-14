@@ -13,6 +13,25 @@ minimal alpha-beta/specialized-rule controls and mature overall references.
 Separate rule execution, representation, repeated scheduling, optimization,
 defined work and equal-time retained useful decisions. No Elo/speed parity gate.
 
+Q12_COMPLETION_AND_WORK.md is the latest decision:156 actual research searches.
+A real non-checkmate terminal winner lost score/PV/provenance at interrupted
+root scanning. Two predicates now retain Core-authoritative winners, including
+stalemate-loss and legally replayed continuous-check wins; six new regressions
+and actual Core/Native-query controls bind this correction. Source-only change;
+Native/Core/default q4/stop/UI remain unchanged.
+Fresh q1/q2 both complete requested policy28/32, with12changed/20same paired
+choices. All12selectedactions/1207nextreplies have no immediate opponent win;
+three2037actions have separately verified rootH4 no-opponent-forcing certificates.
+These targets do not distinguish policy quality or prove root wins/global safety.
+A changed-premise16call sameq2 completeboard C view curve still retains all8
+full decision tuples unchanged despite more partialwork; keep it private.
+No scheduler/default promotion or unchanged q/readonly curve rerun follows.
+Next bounded question is compile-owned geometry-prefix repetition/cost versus
+memory/startup; inspect exact repeated static work before proposing code.
+Existing F34 coverage summaries are not replayable tactical certificates; the
+checked-chain fixture supplies a concrete evasion mechanism, not a forced-win
+label. Richer independent tactical goals remain optional when decision-changing.
+
 WIDE_READONLY_VIEW.md is the current isolated readonly feasibility result.
 Old Native codec/cap/defaults/UI are unchanged. Core owns complete legality,
 transitions, promotion/drop, S3/S4 and history. The scoped ray/leap/pathclear/
@@ -50,7 +69,7 @@ policies/horizons are not stronger-play proof. Exact1455/newCore16s q4 gives
 2 immediate opponent winningreplies versusq1/q2 zero; this is finite delivered
 loss/avoidance, not forced rootwin or globalstrength. q2 also completesD2/q2
 at18/16 twice. Default/stop/Native/UI unchanged; scheduler deferred. Next is
-bounded q2 completion/decision comparison, not export microoptimization or
+Q12_COMPLETION_AND_WORK.md, not another unchanged curve or
 crosspolicy score/depth selection; all-defense precision is optional when useful.
 SCALAR_COUNT_AND_NATIVE_BOUNDARY.md retains rejected lazy/count routes and
 old byte/codec limits; no unchanged reruns or reclaimed unexposed status.
@@ -96,6 +115,7 @@ checkout writes, merge or routine wake. COLLABORATION_LOG records the scope.
 
 |Purpose|Record|
 |---|---|
+|Latest q1/q2 completion, actual consumers and noncheckmate rootwins|Q12_COMPLETION_AND_WORK.md; data/q12_completion_20261014.json|
 |Actual runtime work, export feasibility and finite q policy|TRIAL_EXPORT_AND_Q_POLICY.md; data/trial_export_q_policy_20261014.json|
 |Trial hand/inner-child correctness and wide Core ordering|TRIAL_STORAGE_AND_WIDE_Q.md; data/hand_trials_20261014.json|
 |Readonly view caller/stop feasibility and current costs|WIDE_READONLY_VIEW.md; data/wide_readonly_20261014.json|

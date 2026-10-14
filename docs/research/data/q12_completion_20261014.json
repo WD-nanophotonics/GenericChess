@@ -1,0 +1,2122 @@
+{
+  "status": "OPEN",
+  "base_sha": "2f72a62d33fd2962ae88fb3e9a46a861c018555b",
+  "search_calls": {
+    "old_q12": 16,
+    "phase_observers": 27,
+    "profile": 7,
+    "root_win_controls": 6,
+    "history_win_controls": 4,
+    "native_query_win_controls": 16,
+    "fresh_q12": 64,
+    "total": 156,
+    "failed_root_imports_separate": 1,
+    "readonly_q2": 16
+  },
+  "old_curve": {
+    "complete": true,
+    "actual_calls": 16,
+    "elapsed_seconds": 647.0871921000071,
+    "pairs": [
+      {
+        "size": 18,
+        "seconds": 16,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            2,
+            1
+          ],
+          "q2": [
+            2,
+            2
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "size": 18,
+        "seconds": 16,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            2,
+            2
+          ],
+          "q1": [
+            2,
+            1
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "size": 18,
+        "seconds": 64,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            3,
+            1
+          ],
+          "q2": [
+            2,
+            2
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "size": 18,
+        "seconds": 64,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            2,
+            2
+          ],
+          "q1": [
+            3,
+            1
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "size": 24,
+        "seconds": 16,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            1,
+            0
+          ],
+          "q2": [
+            1,
+            0
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "size": 24,
+        "seconds": 16,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            1,
+            0
+          ],
+          "q1": [
+            1,
+            0
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "size": 24,
+        "seconds": 64,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            2,
+            1
+          ],
+          "q2": [
+            2,
+            2
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "size": 24,
+        "seconds": 64,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            2,
+            2
+          ],
+          "q1": [
+            2,
+            1
+          ]
+        },
+        "same_action": true
+      }
+    ],
+    "scope": "Different requested policies and q horizons, not strength or comparable score. Both orders fullCore/history. Same16/64 allowance inclprep; no budget extension/default changes."
+  },
+  "fresh_curve": {
+    "complete": true,
+    "actual_calls": 64,
+    "elapsed_seconds": 2592.2990514999256,
+    "requested_policy_completed": {
+      "q1": 28,
+      "q2": 28
+    },
+    "pairs": [
+      {
+        "seed": 2026102030,
+        "size": 12,
+        "seconds": 16,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            3,
+            1
+          ],
+          "q2": [
+            3,
+            2
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102030,
+        "size": 12,
+        "seconds": 16,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            3,
+            2
+          ],
+          "q1": [
+            3,
+            1
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102030,
+        "size": 12,
+        "seconds": 64,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            3,
+            1
+          ],
+          "q2": [
+            3,
+            2
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102030,
+        "size": 12,
+        "seconds": 64,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            3,
+            2
+          ],
+          "q1": [
+            3,
+            1
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102031,
+        "size": 18,
+        "seconds": 16,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            2,
+            1
+          ],
+          "q2": [
+            2,
+            2
+          ]
+        },
+        "same_action": false
+      },
+      {
+        "seed": 2026102031,
+        "size": 18,
+        "seconds": 16,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            2,
+            2
+          ],
+          "q1": [
+            2,
+            1
+          ]
+        },
+        "same_action": false
+      },
+      {
+        "seed": 2026102031,
+        "size": 18,
+        "seconds": 64,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            2,
+            1
+          ],
+          "q2": [
+            3,
+            2
+          ]
+        },
+        "same_action": false
+      },
+      {
+        "seed": 2026102031,
+        "size": 18,
+        "seconds": 64,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            3,
+            2
+          ],
+          "q1": [
+            2,
+            1
+          ]
+        },
+        "same_action": false
+      },
+      {
+        "seed": 2026102032,
+        "size": 24,
+        "seconds": 16,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            1,
+            0
+          ],
+          "q2": [
+            1,
+            0
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102032,
+        "size": 24,
+        "seconds": 16,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            1,
+            0
+          ],
+          "q1": [
+            1,
+            0
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102032,
+        "size": 24,
+        "seconds": 64,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            2,
+            1
+          ],
+          "q2": [
+            2,
+            2
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102032,
+        "size": 24,
+        "seconds": 64,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            2,
+            2
+          ],
+          "q1": [
+            2,
+            1
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102033,
+        "size": 12,
+        "seconds": 16,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            2,
+            1
+          ],
+          "q2": [
+            2,
+            2
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102033,
+        "size": 12,
+        "seconds": 16,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            2,
+            2
+          ],
+          "q1": [
+            2,
+            1
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102033,
+        "size": 12,
+        "seconds": 64,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            3,
+            1
+          ],
+          "q2": [
+            3,
+            2
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102033,
+        "size": 12,
+        "seconds": 64,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            3,
+            2
+          ],
+          "q1": [
+            3,
+            1
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102034,
+        "size": 18,
+        "seconds": 16,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            1,
+            0
+          ],
+          "q2": [
+            1,
+            0
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102034,
+        "size": 18,
+        "seconds": 16,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            1,
+            0
+          ],
+          "q1": [
+            1,
+            0
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102034,
+        "size": 18,
+        "seconds": 64,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            2,
+            1
+          ],
+          "q2": [
+            2,
+            2
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102034,
+        "size": 18,
+        "seconds": 64,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            2,
+            2
+          ],
+          "q1": [
+            2,
+            1
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102035,
+        "size": 24,
+        "seconds": 16,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            2,
+            1
+          ],
+          "q2": [
+            2,
+            2
+          ]
+        },
+        "same_action": false
+      },
+      {
+        "seed": 2026102035,
+        "size": 24,
+        "seconds": 16,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            2,
+            2
+          ],
+          "q1": [
+            2,
+            1
+          ]
+        },
+        "same_action": false
+      },
+      {
+        "seed": 2026102035,
+        "size": 24,
+        "seconds": 64,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            2,
+            1
+          ],
+          "q2": [
+            2,
+            2
+          ]
+        },
+        "same_action": false
+      },
+      {
+        "seed": 2026102035,
+        "size": 24,
+        "seconds": 64,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            2,
+            2
+          ],
+          "q1": [
+            2,
+            1
+          ]
+        },
+        "same_action": false
+      },
+      {
+        "seed": 2026102036,
+        "size": 8,
+        "seconds": 16,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            3,
+            1
+          ],
+          "q2": [
+            3,
+            2
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102036,
+        "size": 8,
+        "seconds": 16,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            3,
+            2
+          ],
+          "q1": [
+            3,
+            1
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102036,
+        "size": 8,
+        "seconds": 64,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            5,
+            1
+          ],
+          "q2": [
+            4,
+            2
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102036,
+        "size": 8,
+        "seconds": 64,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            4,
+            2
+          ],
+          "q1": [
+            5,
+            1
+          ]
+        },
+        "same_action": true
+      },
+      {
+        "seed": 2026102037,
+        "size": 8,
+        "seconds": 16,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            4,
+            1
+          ],
+          "q2": [
+            4,
+            2
+          ]
+        },
+        "same_action": false
+      },
+      {
+        "seed": 2026102037,
+        "size": 8,
+        "seconds": 16,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            4,
+            2
+          ],
+          "q1": [
+            4,
+            1
+          ]
+        },
+        "same_action": false
+      },
+      {
+        "seed": 2026102037,
+        "size": 8,
+        "seconds": 64,
+        "rep": 0,
+        "policies": {
+          "q1": [
+            5,
+            1
+          ],
+          "q2": [
+            5,
+            2
+          ]
+        },
+        "same_action": false
+      },
+      {
+        "seed": 2026102037,
+        "size": 8,
+        "seconds": 64,
+        "rep": 1,
+        "policies": {
+          "q2": [
+            5,
+            2
+          ],
+          "q1": [
+            5,
+            1
+          ]
+        },
+        "same_action": false
+      }
+    ],
+    "scope": "Both orders, predeclared8freshroots two per8/12/18/24, original loaded2f72 Core search; no replacement/newbudgets. Shape/ordinaryqdepth not universal depth/strength. Independent selected-union terminal labels next."
+  },
+  "quality": {
+    "complete": true,
+    "cross_order_retained_action_policy_score_pv_stable": true,
+    "paired_choices_changed": 12,
+    "paired_choices_same": 20,
+    "independent_H2": {
+      "actions": 12,
+      "reply_transitions": 1207,
+      "direct_opponent_wins": 0,
+      "next_opponent_wins": 0,
+      "all_complete": true,
+      "elapsed_seconds": 42.62013150006533
+    },
+    "H4": {
+      "selected_actions": 3,
+      "statuses": [
+        "opponent_cannot_force_win_within_rootH4",
+        "opponent_cannot_force_win_within_rootH4",
+        "opponent_cannot_force_win_within_rootH4"
+      ],
+      "producer_counts": {
+        "apply_calls": 5627,
+        "visited": 5627,
+        "terminal_visits": 0,
+        "frontier_visits": 5312,
+        "legal_lists": 315
+      },
+      "verifier_counts": {
+        "proof_nodes": 5627,
+        "apply_calls": 5627,
+        "all_action_sets_checked": 159,
+        "defender_counteractions_checked": 156
+      },
+      "producer_seconds": 8.552625100128353,
+      "verifier_seconds": 9.425137400161475,
+      "remaining_after_selected": 3
+    },
+    "actual_research_searches": 156,
+    "failed_root_import_entry_attempts": 1,
+    "correction": "Earlier privateH2 checkpoint says13distinctactions; exact saved rows contain12, with1207 replies correct. First final synthesis assertion13 caught this before any outputwrites; corrected12 verified. Original checkpoint/rows retained.",
+    "scope": "Qpolicy loaded prechange2f72; rootwinner correction separate. H2/H4 nondiscrimination neitherq2superiority norrootwin/global safety."
+  },
+  "phase_counts": {
+    "complete": true,
+    "actual_search_calls": 27,
+    "original_v1_seconds": 38.587101199664176,
+    "corrected_v2_seconds": 22.66944249998778,
+    "checks": [
+      {
+        "size": 12,
+        "q": 1,
+        "pushes": 4554,
+        "counts": {
+          "root_tactical_scan:successful_push": 89,
+          "root_tactical_scan:successful_pop": 89,
+          "negamax:successful_push": 369,
+          "negamax:successful_pop": 369,
+          "q_candidate:successful_push": 4086,
+          "q_candidate:discarded": 3896,
+          "q_candidate:successful_pop": 4086,
+          "q_candidate:included": 190,
+          "q_evasion:successful_push": 10,
+          "q_evasion:successful_pop": 10
+        },
+        "discarded_fraction_of_completed_pushes": 0.8555116381203338,
+        "non_time_tuple_equal": true
+      },
+      {
+        "size": 12,
+        "q": 2,
+        "pushes": 6658,
+        "counts": {
+          "root_tactical_scan:successful_push": 89,
+          "root_tactical_scan:successful_pop": 89,
+          "negamax:successful_push": 353,
+          "negamax:successful_pop": 353,
+          "q_candidate:successful_push": 6207,
+          "q_candidate:discarded": 5984,
+          "q_candidate:successful_pop": 6207,
+          "q_candidate:included": 223,
+          "q_evasion:successful_push": 9,
+          "q_evasion:successful_pop": 9
+        },
+        "discarded_fraction_of_completed_pushes": 0.8987683989185942,
+        "non_time_tuple_equal": true
+      },
+      {
+        "size": 12,
+        "q": 4,
+        "pushes": 20370,
+        "counts": {
+          "root_tactical_scan:successful_push": 89,
+          "root_tactical_scan:successful_pop": 89,
+          "negamax:successful_push": 175,
+          "negamax:successful_pop": 175,
+          "q_candidate:successful_push": 20055,
+          "q_candidate:discarded": 19518,
+          "q_candidate:successful_pop": 20055,
+          "q_candidate:included": 537,
+          "q_evasion:successful_push": 51,
+          "q_evasion:successful_pop": 51
+        },
+        "discarded_fraction_of_completed_pushes": 0.9581737849779087,
+        "non_time_tuple_equal": true
+      },
+      {
+        "size": 18,
+        "q": 1,
+        "pushes": 3192,
+        "counts": {
+          "root_tactical_scan:successful_push": 171,
+          "root_tactical_scan:successful_pop": 171,
+          "negamax:successful_push": 323,
+          "negamax:successful_pop": 323,
+          "q_evasion:successful_push": 106,
+          "q_evasion:successful_pop": 106,
+          "q_candidate:successful_push": 2592,
+          "q_candidate:discarded": 2490,
+          "q_candidate:successful_pop": 2592,
+          "q_candidate:included": 102
+        },
+        "discarded_fraction_of_completed_pushes": 0.7800751879699248,
+        "non_time_tuple_equal": true
+      },
+      {
+        "size": 18,
+        "q": 2,
+        "pushes": 2972,
+        "counts": {
+          "root_tactical_scan:successful_push": 171,
+          "root_tactical_scan:successful_pop": 171,
+          "negamax:successful_push": 318,
+          "negamax:successful_pop": 318,
+          "q_evasion:successful_push": 98,
+          "q_evasion:successful_pop": 98,
+          "q_candidate:successful_push": 2385,
+          "q_candidate:discarded": 2266,
+          "q_candidate:successful_pop": 2385,
+          "q_candidate:included": 119
+        },
+        "discarded_fraction_of_completed_pushes": 0.7624495289367429,
+        "non_time_tuple_equal": true
+      },
+      {
+        "size": 18,
+        "q": 4,
+        "pushes": 6193,
+        "counts": {
+          "root_tactical_scan:successful_push": 171,
+          "root_tactical_scan:successful_pop": 171,
+          "negamax:successful_push": 173,
+          "negamax:successful_pop": 173,
+          "q_evasion:successful_push": 331,
+          "q_evasion:successful_pop": 331,
+          "q_candidate:successful_push": 5518,
+          "q_candidate:discarded": 5343,
+          "q_candidate:successful_pop": 5518,
+          "q_candidate:included": 175
+        },
+        "discarded_fraction_of_completed_pushes": 0.8627482641692233,
+        "non_time_tuple_equal": true
+      },
+      {
+        "size": 24,
+        "q": 1,
+        "pushes": 5872,
+        "counts": {
+          "root_tactical_scan:successful_push": 261,
+          "root_tactical_scan:successful_pop": 261,
+          "negamax:successful_push": 291,
+          "negamax:successful_pop": 291,
+          "q_evasion:successful_push": 68,
+          "q_evasion:successful_pop": 68,
+          "q_candidate:successful_push": 5252,
+          "q_candidate:discarded": 5140,
+          "q_candidate:successful_pop": 5252,
+          "q_candidate:included": 112
+        },
+        "discarded_fraction_of_completed_pushes": 0.8753405994550408,
+        "non_time_tuple_equal": true
+      },
+      {
+        "size": 24,
+        "q": 2,
+        "pushes": 6472,
+        "counts": {
+          "root_tactical_scan:successful_push": 261,
+          "root_tactical_scan:successful_pop": 261,
+          "negamax:successful_push": 269,
+          "negamax:successful_pop": 269,
+          "q_evasion:successful_push": 74,
+          "q_evasion:successful_pop": 74,
+          "q_candidate:successful_push": 5868,
+          "q_candidate:discarded": 5718,
+          "q_candidate:successful_pop": 5868,
+          "q_candidate:included": 150
+        },
+        "discarded_fraction_of_completed_pushes": 0.8834981458590853,
+        "non_time_tuple_equal": true
+      },
+      {
+        "size": 24,
+        "q": 4,
+        "pushes": 5881,
+        "counts": {
+          "root_tactical_scan:successful_push": 261,
+          "root_tactical_scan:successful_pop": 261,
+          "negamax:successful_push": 263,
+          "negamax:successful_pop": 263,
+          "q_evasion:successful_push": 82,
+          "q_evasion:successful_pop": 82,
+          "q_candidate:successful_push": 5275,
+          "q_candidate:discarded": 5121,
+          "q_candidate:successful_pop": 5275,
+          "q_candidate:included": 154
+        },
+        "discarded_fraction_of_completed_pushes": 0.8707702771637477,
+        "non_time_tuple_equal": true
+      }
+    ],
+    "observed_defect": "V1 copied globals recurse into originals; undercovered nested categories. V1 source/rows retained, corrected live module globals in v2,9 actual reruns only, exact sum requirement.",
+    "interpretation": "Corrected nine cells discarded quiet/noisy-test negatives consume76.2-95.8% of all successful Core pushes. This is actual work attribution, not time share, proof that omission is safe, or strength. Check/terminal/history inclusion remains mandatory. Main q2 completion alone cannot choose default."
+  },
+  "profile": {
+    "complete": true,
+    "actual_calls": 7,
+    "failed_v1_calls": 1,
+    "complete_v2_calls": 6,
+    "rows": [
+      {
+        "size": 12,
+        "q": 1,
+        "wall": 2.6171643999405205,
+        "functions": {
+          "iter_legal_action_bindings": {
+            "file": "semantic_executor.py",
+            "line": 1645,
+            "function": "iter_legal_action_bindings",
+            "primitive_calls": 29048,
+            "total_calls": 29048,
+            "self_seconds": 0.0629866,
+            "inclusive_seconds": 1.4732104000000001
+          },
+          "_push_impl": {
+            "file": "search_runtime.py",
+            "line": 1328,
+            "function": "_push_impl",
+            "primitive_calls": 4554,
+            "total_calls": 4554,
+            "self_seconds": 0.043680800000000006,
+            "inclusive_seconds": 1.3285950000000002
+          },
+          "terminal_from_search_runtime": {
+            "file": "terminal.py",
+            "line": 419,
+            "function": "terminal_from_search_runtime",
+            "primitive_calls": 4554,
+            "total_calls": 4554,
+            "self_seconds": 0.023458200000000002,
+            "inclusive_seconds": 0.8462737
+          },
+          "noisy_child": {
+            "file": "quiescence.py",
+            "line": 60,
+            "function": "noisy_child",
+            "primitive_calls": 4086,
+            "total_calls": 4086,
+            "self_seconds": 0.0088243,
+            "inclusive_seconds": 0.1262463
+          },
+          "material_inventory": {
+            "file": "quiescence.py",
+            "line": 28,
+            "function": "material_inventory",
+            "primitive_calls": 4038,
+            "total_calls": 4038,
+            "self_seconds": 0.030683600000000002,
+            "inclusive_seconds": 0.0466357
+          },
+          "enemy_board_count": {
+            "file": "quiescence.py",
+            "line": 19,
+            "function": "enemy_board_count",
+            "primitive_calls": 4191,
+            "total_calls": 4191,
+            "self_seconds": 0.0015781,
+            "inclusive_seconds": 0.06590470000000001
+          },
+          "_semantic_component_diff_hash": {
+            "file": "search_runtime.py",
+            "line": 542,
+            "function": "_semantic_component_diff_hash",
+            "primitive_calls": 4554,
+            "total_calls": 4554,
+            "self_seconds": 0.050256,
+            "inclusive_seconds": 0.12948700000000002
+          },
+          "_gave_check": {
+            "file": "search_runtime.py",
+            "line": 1103,
+            "function": "_gave_check",
+            "primitive_calls": 4554,
+            "total_calls": 4554,
+            "self_seconds": 0.0024986,
+            "inclusive_seconds": 0.113946
+          },
+          "_checkpoint": {
+            "file": "semantic_executor.py",
+            "line": 43,
+            "function": "_checkpoint",
+            "primitive_calls": 951175,
+            "total_calls": 951175,
+            "self_seconds": 0.1362037,
+            "inclusive_seconds": 0.3752978
+          }
+        },
+        "exact_original_recorded_tuple_equal": true
+      },
+      {
+        "size": 12,
+        "q": 2,
+        "wall": 2.9658392001874745,
+        "functions": {
+          "iter_legal_action_bindings": {
+            "file": "semantic_executor.py",
+            "line": 1645,
+            "function": "iter_legal_action_bindings",
+            "primitive_calls": 26386,
+            "total_calls": 26386,
+            "self_seconds": 0.0663884,
+            "inclusive_seconds": 1.5285811
+          },
+          "_push_impl": {
+            "file": "search_runtime.py",
+            "line": 1328,
+            "function": "_push_impl",
+            "primitive_calls": 6658,
+            "total_calls": 6658,
+            "self_seconds": 0.062783,
+            "inclusive_seconds": 1.7804625
+          },
+          "terminal_from_search_runtime": {
+            "file": "terminal.py",
+            "line": 419,
+            "function": "terminal_from_search_runtime",
+            "primitive_calls": 6658,
+            "total_calls": 6658,
+            "self_seconds": 0.0337243,
+            "inclusive_seconds": 1.1013095000000002
+          },
+          "noisy_child": {
+            "file": "quiescence.py",
+            "line": 60,
+            "function": "noisy_child",
+            "primitive_calls": 6207,
+            "total_calls": 6207,
+            "self_seconds": 0.0131538,
+            "inclusive_seconds": 0.19164350000000002
+          },
+          "material_inventory": {
+            "file": "quiescence.py",
+            "line": 28,
+            "function": "material_inventory",
+            "primitive_calls": 6116,
+            "total_calls": 6116,
+            "self_seconds": 0.046433,
+            "inclusive_seconds": 0.0706161
+          },
+          "enemy_board_count": {
+            "file": "quiescence.py",
+            "line": 19,
+            "function": "enemy_board_count",
+            "primitive_calls": 6315,
+            "total_calls": 6315,
+            "self_seconds": 0.002328,
+            "inclusive_seconds": 0.09883170000000001
+          },
+          "_semantic_component_diff_hash": {
+            "file": "search_runtime.py",
+            "line": 542,
+            "function": "_semantic_component_diff_hash",
+            "primitive_calls": 6658,
+            "total_calls": 6658,
+            "self_seconds": 0.07256520000000001,
+            "inclusive_seconds": 0.18482120000000002
+          },
+          "_gave_check": {
+            "file": "search_runtime.py",
+            "line": 1103,
+            "function": "_gave_check",
+            "primitive_calls": 6658,
+            "total_calls": 6658,
+            "self_seconds": 0.0036434,
+            "inclusive_seconds": 0.14865
+          },
+          "_checkpoint": {
+            "file": "semantic_executor.py",
+            "line": 43,
+            "function": "_checkpoint",
+            "primitive_calls": 1127476,
+            "total_calls": 1127476,
+            "self_seconds": 0.1583844,
+            "inclusive_seconds": 0.43935650000000004
+          }
+        },
+        "exact_original_recorded_tuple_equal": true
+      },
+      {
+        "size": 18,
+        "q": 1,
+        "wall": 3.2282758997753263,
+        "functions": {
+          "iter_legal_action_bindings": {
+            "file": "semantic_executor.py",
+            "line": 1645,
+            "function": "iter_legal_action_bindings",
+            "primitive_calls": 10729,
+            "total_calls": 10729,
+            "self_seconds": 0.065754,
+            "inclusive_seconds": 2.0602094
+          },
+          "_push_impl": {
+            "file": "search_runtime.py",
+            "line": 1328,
+            "function": "_push_impl",
+            "primitive_calls": 3192,
+            "total_calls": 3192,
+            "self_seconds": 0.0335833,
+            "inclusive_seconds": 1.5597892
+          },
+          "terminal_from_search_runtime": {
+            "file": "terminal.py",
+            "line": 419,
+            "function": "terminal_from_search_runtime",
+            "primitive_calls": 3192,
+            "total_calls": 3192,
+            "self_seconds": 0.0176662,
+            "inclusive_seconds": 1.0984469000000001
+          },
+          "noisy_child": {
+            "file": "quiescence.py",
+            "line": 60,
+            "function": "noisy_child",
+            "primitive_calls": 2592,
+            "total_calls": 2592,
+            "self_seconds": 0.006817500000000001,
+            "inclusive_seconds": 0.1391542
+          },
+          "material_inventory": {
+            "file": "quiescence.py",
+            "line": 28,
+            "function": "material_inventory",
+            "primitive_calls": 2558,
+            "total_calls": 2558,
+            "self_seconds": 0.028782500000000003,
+            "inclusive_seconds": 0.043670900000000006
+          },
+          "enemy_board_count": {
+            "file": "quiescence.py",
+            "line": 19,
+            "function": "enemy_board_count",
+            "primitive_calls": 2600,
+            "total_calls": 2600,
+            "self_seconds": 0.0010976,
+            "inclusive_seconds": 0.0833885
+          },
+          "_semantic_component_diff_hash": {
+            "file": "search_runtime.py",
+            "line": 542,
+            "function": "_semantic_component_diff_hash",
+            "primitive_calls": 3192,
+            "total_calls": 3192,
+            "self_seconds": 0.054104400000000004,
+            "inclusive_seconds": 0.13886300000000001
+          },
+          "_gave_check": {
+            "file": "search_runtime.py",
+            "line": 1103,
+            "function": "_gave_check",
+            "primitive_calls": 3192,
+            "total_calls": 3192,
+            "self_seconds": 0.0018617000000000002,
+            "inclusive_seconds": 0.1439418
+          },
+          "_checkpoint": {
+            "file": "semantic_executor.py",
+            "line": 43,
+            "function": "_checkpoint",
+            "primitive_calls": 1383268,
+            "total_calls": 1383268,
+            "self_seconds": 0.191721,
+            "inclusive_seconds": 0.5318149
+          }
+        },
+        "exact_original_recorded_tuple_equal": true
+      },
+      {
+        "size": 18,
+        "q": 2,
+        "wall": 3.086822499986738,
+        "functions": {
+          "iter_legal_action_bindings": {
+            "file": "semantic_executor.py",
+            "line": 1645,
+            "function": "iter_legal_action_bindings",
+            "primitive_calls": 10769,
+            "total_calls": 10769,
+            "self_seconds": 0.0637904,
+            "inclusive_seconds": 1.9682095000000002
+          },
+          "_push_impl": {
+            "file": "search_runtime.py",
+            "line": 1328,
+            "function": "_push_impl",
+            "primitive_calls": 2972,
+            "total_calls": 2972,
+            "self_seconds": 0.0317485,
+            "inclusive_seconds": 1.4446996
+          },
+          "terminal_from_search_runtime": {
+            "file": "terminal.py",
+            "line": 419,
+            "function": "terminal_from_search_runtime",
+            "primitive_calls": 2972,
+            "total_calls": 2972,
+            "self_seconds": 0.016794200000000002,
+            "inclusive_seconds": 1.0218858
+          },
+          "noisy_child": {
+            "file": "quiescence.py",
+            "line": 60,
+            "function": "noisy_child",
+            "primitive_calls": 2385,
+            "total_calls": 2385,
+            "self_seconds": 0.0059807,
+            "inclusive_seconds": 0.12790210000000002
+          },
+          "material_inventory": {
+            "file": "quiescence.py",
+            "line": 28,
+            "function": "material_inventory",
+            "primitive_calls": 2339,
+            "total_calls": 2339,
+            "self_seconds": 0.0263343,
+            "inclusive_seconds": 0.04028
+          },
+          "enemy_board_count": {
+            "file": "quiescence.py",
+            "line": 19,
+            "function": "enemy_board_count",
+            "primitive_calls": 2395,
+            "total_calls": 2395,
+            "self_seconds": 0.0009582000000000001,
+            "inclusive_seconds": 0.0769879
+          },
+          "_semantic_component_diff_hash": {
+            "file": "search_runtime.py",
+            "line": 542,
+            "function": "_semantic_component_diff_hash",
+            "primitive_calls": 2972,
+            "total_calls": 2972,
+            "self_seconds": 0.0488887,
+            "inclusive_seconds": 0.12283630000000001
+          },
+          "_gave_check": {
+            "file": "search_runtime.py",
+            "line": 1103,
+            "function": "_gave_check",
+            "primitive_calls": 2972,
+            "total_calls": 2972,
+            "self_seconds": 0.001753,
+            "inclusive_seconds": 0.1315083
+          },
+          "_checkpoint": {
+            "file": "semantic_executor.py",
+            "line": 43,
+            "function": "_checkpoint",
+            "primitive_calls": 1325372,
+            "total_calls": 1325372,
+            "self_seconds": 0.18464940000000002,
+            "inclusive_seconds": 0.5159317
+          }
+        },
+        "exact_original_recorded_tuple_equal": true
+      },
+      {
+        "size": 24,
+        "q": 1,
+        "wall": 4.918487200047821,
+        "functions": {
+          "iter_legal_action_bindings": {
+            "file": "semantic_executor.py",
+            "line": 1645,
+            "function": "iter_legal_action_bindings",
+            "primitive_calls": 33941,
+            "total_calls": 33941,
+            "self_seconds": 0.0786406,
+            "inclusive_seconds": 2.4205485
+          },
+          "_push_impl": {
+            "file": "search_runtime.py",
+            "line": 1328,
+            "function": "_push_impl",
+            "primitive_calls": 5872,
+            "total_calls": 5872,
+            "self_seconds": 0.0599053,
+            "inclusive_seconds": 2.2583017
+          },
+          "terminal_from_search_runtime": {
+            "file": "terminal.py",
+            "line": 419,
+            "function": "terminal_from_search_runtime",
+            "primitive_calls": 5872,
+            "total_calls": 5872,
+            "self_seconds": 0.0316694,
+            "inclusive_seconds": 1.247376
+          },
+          "noisy_child": {
+            "file": "quiescence.py",
+            "line": 60,
+            "function": "noisy_child",
+            "primitive_calls": 5252,
+            "total_calls": 5252,
+            "self_seconds": 0.0129146,
+            "inclusive_seconds": 0.42356390000000005
+          },
+          "material_inventory": {
+            "file": "quiescence.py",
+            "line": 28,
+            "function": "material_inventory",
+            "primitive_calls": 5195,
+            "total_calls": 5195,
+            "self_seconds": 0.07612640000000001,
+            "inclusive_seconds": 0.1149151
+          },
+          "enemy_board_count": {
+            "file": "quiescence.py",
+            "line": 19,
+            "function": "enemy_board_count",
+            "primitive_calls": 5280,
+            "total_calls": 5280,
+            "self_seconds": 0.0021479000000000003,
+            "inclusive_seconds": 0.2867013
+          },
+          "_semantic_component_diff_hash": {
+            "file": "search_runtime.py",
+            "line": 542,
+            "function": "_semantic_component_diff_hash",
+            "primitive_calls": 5872,
+            "total_calls": 5872,
+            "self_seconds": 0.1317873,
+            "inclusive_seconds": 0.26263420000000004
+          },
+          "_gave_check": {
+            "file": "search_runtime.py",
+            "line": 1103,
+            "function": "_gave_check",
+            "primitive_calls": 5872,
+            "total_calls": 5872,
+            "self_seconds": 0.0033327,
+            "inclusive_seconds": 0.4259621
+          },
+          "_checkpoint": {
+            "file": "semantic_executor.py",
+            "line": 43,
+            "function": "_checkpoint",
+            "primitive_calls": 2071710,
+            "total_calls": 2071710,
+            "self_seconds": 0.2729305,
+            "inclusive_seconds": 0.7644131000000001
+          }
+        },
+        "exact_original_recorded_tuple_equal": true
+      },
+      {
+        "size": 24,
+        "q": 2,
+        "wall": 6.530078500043601,
+        "functions": {
+          "iter_legal_action_bindings": {
+            "file": "semantic_executor.py",
+            "line": 1645,
+            "function": "iter_legal_action_bindings",
+            "primitive_calls": 42826,
+            "total_calls": 42826,
+            "self_seconds": 0.141815,
+            "inclusive_seconds": 3.8097532000000003
+          },
+          "_push_impl": {
+            "file": "search_runtime.py",
+            "line": 1328,
+            "function": "_push_impl",
+            "primitive_calls": 6472,
+            "total_calls": 6472,
+            "self_seconds": 0.0691814,
+            "inclusive_seconds": 2.3737373
+          },
+          "terminal_from_search_runtime": {
+            "file": "terminal.py",
+            "line": 419,
+            "function": "terminal_from_search_runtime",
+            "primitive_calls": 6472,
+            "total_calls": 6472,
+            "self_seconds": 0.0360872,
+            "inclusive_seconds": 1.2785874000000002
+          },
+          "noisy_child": {
+            "file": "quiescence.py",
+            "line": 60,
+            "function": "noisy_child",
+            "primitive_calls": 5868,
+            "total_calls": 5868,
+            "self_seconds": 0.015152800000000001,
+            "inclusive_seconds": 0.4773952
+          },
+          "material_inventory": {
+            "file": "quiescence.py",
+            "line": 28,
+            "function": "material_inventory",
+            "primitive_calls": 5814,
+            "total_calls": 5814,
+            "self_seconds": 0.085762,
+            "inclusive_seconds": 0.12941270000000002
+          },
+          "enemy_board_count": {
+            "file": "quiescence.py",
+            "line": 19,
+            "function": "enemy_board_count",
+            "primitive_calls": 5908,
+            "total_calls": 5908,
+            "self_seconds": 0.0024951,
+            "inclusive_seconds": 0.323096
+          },
+          "_semantic_component_diff_hash": {
+            "file": "search_runtime.py",
+            "line": 542,
+            "function": "_semantic_component_diff_hash",
+            "primitive_calls": 6472,
+            "total_calls": 6472,
+            "self_seconds": 0.149588,
+            "inclusive_seconds": 0.2921499
+          },
+          "_gave_check": {
+            "file": "search_runtime.py",
+            "line": 1103,
+            "function": "_gave_check",
+            "primitive_calls": 6472,
+            "total_calls": 6472,
+            "self_seconds": 0.0037655,
+            "inclusive_seconds": 0.4343536
+          },
+          "_checkpoint": {
+            "file": "semantic_executor.py",
+            "line": 43,
+            "function": "_checkpoint",
+            "primitive_calls": 2670310,
+            "total_calls": 2670310,
+            "self_seconds": 0.3652731,
+            "inclusive_seconds": 1.0313797
+          }
+        },
+        "exact_original_recorded_tuple_equal": true
+      }
+    ],
+    "scope": "Observed cProfile cost under normal concurrent fresh curve, not ordinary throughput. Function inclusive costs overlap and must not be summed. Full legal bindings roughly49-64percent caller inclusive; noisy_child about4-9percent. Fewer postpush count scans cannot remove dominant preclassification complete transitions/terminal existence. Profile firstcell NameError after actualcall/pstats saved, decision lost and not reconstructed; failedsource/pstats retained; v2 importfix sixcells."
+  },
+  "root_win": {
+    "comment_is_advice_only": true,
+    "independent_reproduction": "Reflected same existing fixture places noncheckmate winning terminal before mate under actual complete Core ordering; original unreflectedfixture firstwincheckmate, so no claim it exposed wholepublic failure directly.",
+    "adopted": "Two root paths use authoritative is_terminal and winner; preserve correct terminal score/PV/provenance at real node-boundary.",
+    "tests": {
+      "new_regressions": 4,
+      "old_loss_failures": 2,
+      "old_draw_passes": 2,
+      "related_passes": 78
+    },
+    "searches": {
+      "successful_real_probe_calls": 6,
+      "failed_loss_runtime_entry_attempts": 1,
+      "failed_loss_import_before_scanning": true
+    },
+    "failures": [
+      "FEN helper rejects loss scope before anyloss search; draw1 completed",
+      "v2 root fingerprint changed but repeat key stale; runtime rejects malformed import before scanning; draw1 completed",
+      "v3 corrected exact trusted key/history and real horizontally reflected fixture, draw/loss2 complete"
+    ],
+    "source_before_sha256": "b76ba45ed8484539da8ba99a6b83e08a2fd1c115877938e23d649ecb5150107e",
+    "source_after_sha256": "bcfb34000e8b5ec47a0c7ac3694095e61868b608abebe72d5ec21566b5029651",
+    "frozen_q_curve_basis": "Process loaded original production code before rootfix. No reload/monkeypatch/state alteration in producer; root-win-v3/search-before.py pins loaded search implementation; existing declarations/scripts/rows preserved.",
+    "source_before_verified": true
+  },
+  "native_controls": {
+    "complete": true,
+    "actual_calls": 16,
+    "cases": 4,
+    "modes": 2,
+    "paired_old_new": 8,
+    "changed_noncheckmate_pairs": 6,
+    "unchanged_checkmate_pairs": 2,
+    "all_current_winners": true,
+    "scope": "Actual Native legality1call per search, nofallback, completeactionset matchesCore; actual optional check/availability query metrics retained. Core terminal/history staysauthoritative. Corrected rootretains true winner/PV in6stalemate/perpetual pairs; checkmate2controls unchanged. Not nativeengine implementation change or speed/strength claim."
+  },
+  "auxiliary_review": {
+    "fixed_revision": "0728ec75ff3b441f5dc2825513cf5faba23b2a1b",
+    "report_path": "results/dev_aux/SEGMENT_20261014_44.md",
+    "git_blob_sha1_verified": "652d24169a0cbc78dda897dbbd3115c93ec8d5b6",
+    "full_report_read": true,
+    "reported": {
+      "segment_minutes": 73.066,
+      "games": 15472,
+      "go": 223735,
+      "partial_go": 1,
+      "perft": 2648,
+      "producer_seconds": 1851.063
+    },
+    "independently_checked": [
+      "exact fetched UTF8 bytes against Git blob SHA",
+      "baseline W-L increase53/768 from two W/L/D/C totals",
+      "2649completed+39missing=2688combinedTRAIN; original batch remainsfailed"
+    ],
+    "not_reproduced": [
+      "rawgames/nativebinary/perft/TT/journal/training/priceintervals/H4certificates"
+    ],
+    "adopt": "Keep action/terminal/price interval joined on exact roots and distinguish native SEE/ordering/nonpawn-material composite fromleafvalues; failed oldcandidates/uncertainnewprice do not invalidate statisticalprediction route.",
+    "defer": "Richerleafpredictor and any materialprice/default adoption until decision evidence. Auxiliary frozen1024game B/J/L/O factorial hasgeneratedinputs only, no primaryduplication.",
+    "correction": "AUX context points oldprimary97b4d1, not currentrootwinfix review. CHATcomments are advice; PRIMARY independently reproduced actualCorefailure and preservedscope.",
+    "limits": "ScopedKRN full8 lacksP/promotion/drop/castling/EP, no completeFIDEdeadoracle or fullgeneric target. No auxcheckout/sourcewrites, merge, routinewake or shared-load stop."
+  },
+  "readonly_q2": {
+    "complete": true,
+    "actual_calls": 16,
+    "elapsed_seconds": 646.7506518000737,
+    "pairs": [
+      {
+        "size": 18,
+        "seconds": 16,
+        "rep": 0,
+        "retained_tuple_equal": true,
+        "core_depth": 2,
+        "c_depth": 2,
+        "q": 2,
+        "extra_c_prepare": 0.1478088996373117,
+        "provider": {
+          "queries": 202731,
+          "imports": 202731,
+          "fallbacks": 0,
+          "pack_seconds": 0.1188405710272491,
+          "query_seconds": 0.3587305820547044,
+          "rows": 14858167,
+          "eligible": 104524,
+          "path_reads": 311294,
+          "guard_reads": 0,
+          "polls": 938727
+        },
+        "core_work": {
+          "nodes": 860,
+          "qnodes": 4956,
+          "runtime_pushes": 49165
+        },
+        "c_work": {
+          "nodes": 1153,
+          "qnodes": 5610,
+          "runtime_pushes": 52086
+        }
+      },
+      {
+        "size": 18,
+        "seconds": 16,
+        "rep": 1,
+        "retained_tuple_equal": true,
+        "core_depth": 2,
+        "c_depth": 2,
+        "q": 2,
+        "extra_c_prepare": 0.1439886000007391,
+        "provider": {
+          "queries": 202145,
+          "imports": 202145,
+          "fallbacks": 0,
+          "pack_seconds": 0.1180294114165008,
+          "query_seconds": 0.3584210784174502,
+          "rows": 14811572,
+          "eligible": 103919,
+          "path_reads": 309654,
+          "guard_reads": 0,
+          "polls": 935127
+        },
+        "core_work": {
+          "nodes": 860,
+          "qnodes": 4943,
+          "runtime_pushes": 49051
+        },
+        "c_work": {
+          "nodes": 1152,
+          "qnodes": 5578,
+          "runtime_pushes": 51912
+        }
+      },
+      {
+        "size": 18,
+        "seconds": 64,
+        "rep": 0,
+        "retained_tuple_equal": true,
+        "core_depth": 2,
+        "c_depth": 2,
+        "q": 2,
+        "extra_c_prepare": 0.06954329973086715,
+        "provider": {
+          "queries": 783955,
+          "imports": 783955,
+          "fallbacks": 0,
+          "pack_seconds": 0.4726122966967523,
+          "query_seconds": 1.4767969525419176,
+          "rows": 57737312,
+          "eligible": 588361,
+          "path_reads": 1645304,
+          "guard_reads": 0,
+          "polls": 4020355
+        },
+        "core_work": {
+          "nodes": 14719,
+          "qnodes": 32503,
+          "runtime_pushes": 197936
+        },
+        "c_work": {
+          "nodes": 16206,
+          "qnodes": 35357,
+          "runtime_pushes": 212138
+        }
+      },
+      {
+        "size": 18,
+        "seconds": 64,
+        "rep": 1,
+        "retained_tuple_equal": true,
+        "core_depth": 2,
+        "c_depth": 2,
+        "q": 2,
+        "extra_c_prepare": 0.15337050007656217,
+        "provider": {
+          "queries": 781067,
+          "imports": 781067,
+          "fallbacks": 0,
+          "pack_seconds": 0.47463169833645225,
+          "query_seconds": 1.4695519777014852,
+          "rows": 57518319,
+          "eligible": 585871,
+          "path_reads": 1636344,
+          "guard_reads": 0,
+          "polls": 4004382
+        },
+        "core_work": {
+          "nodes": 14654,
+          "qnodes": 32338,
+          "runtime_pushes": 196973
+        },
+        "c_work": {
+          "nodes": 16072,
+          "qnodes": 35148,
+          "runtime_pushes": 211431
+        }
+      },
+      {
+        "size": 24,
+        "seconds": 16,
+        "rep": 0,
+        "retained_tuple_equal": true,
+        "core_depth": 1,
+        "c_depth": 1,
+        "q": 0,
+        "extra_c_prepare": 0.25326350005343556,
+        "provider": {
+          "queries": 127182,
+          "imports": 127182,
+          "fallbacks": 0,
+          "pack_seconds": 0.08585071796551347,
+          "query_seconds": 0.3546202555298805,
+          "rows": 21687944,
+          "eligible": 32251,
+          "path_reads": 91979,
+          "guard_reads": 0,
+          "polls": 892310
+        },
+        "core_work": {
+          "nodes": 902,
+          "qnodes": 2553,
+          "runtime_pushes": 48360
+        },
+        "c_work": {
+          "nodes": 908,
+          "qnodes": 2659,
+          "runtime_pushes": 51213
+        }
+      },
+      {
+        "size": 24,
+        "seconds": 16,
+        "rep": 1,
+        "retained_tuple_equal": true,
+        "core_depth": 1,
+        "c_depth": 1,
+        "q": 0,
+        "extra_c_prepare": 0.28058530017733574,
+        "provider": {
+          "queries": 127805,
+          "imports": 127806,
+          "fallbacks": 0,
+          "pack_seconds": 0.08546364773064852,
+          "query_seconds": 0.35268682334572077,
+          "rows": 21794591,
+          "eligible": 32444,
+          "path_reads": 92135,
+          "guard_reads": 0,
+          "polls": 896659
+        },
+        "core_work": {
+          "nodes": 904,
+          "qnodes": 2559,
+          "runtime_pushes": 48502
+        },
+        "c_work": {
+          "nodes": 909,
+          "qnodes": 2667,
+          "runtime_pushes": 51431
+        }
+      },
+      {
+        "size": 24,
+        "seconds": 64,
+        "rep": 0,
+        "retained_tuple_equal": true,
+        "core_depth": 2,
+        "c_depth": 2,
+        "q": 2,
+        "extra_c_prepare": 0.271962100174278,
+        "provider": {
+          "queries": 510225,
+          "imports": 510225,
+          "fallbacks": 0,
+          "pack_seconds": 0.3389211702160537,
+          "query_seconds": 1.3927602814510465,
+          "rows": 85418565,
+          "eligible": 153631,
+          "path_reads": 377850,
+          "guard_reads": 0,
+          "polls": 3552959
+        },
+        "core_work": {
+          "nodes": 1646,
+          "qnodes": 9455,
+          "runtime_pushes": 178931
+        },
+        "c_work": {
+          "nodes": 1916,
+          "qnodes": 10093,
+          "runtime_pushes": 191052
+        }
+      },
+      {
+        "size": 24,
+        "seconds": 64,
+        "rep": 1,
+        "retained_tuple_equal": true,
+        "core_depth": 2,
+        "c_depth": 2,
+        "q": 2,
+        "extra_c_prepare": 0.27034359984099865,
+        "provider": {
+          "queries": 512265,
+          "imports": 512265,
+          "fallbacks": 0,
+          "pack_seconds": 0.33762961672618985,
+          "query_seconds": 1.3952922690659761,
+          "rows": 85769547,
+          "eligible": 153926,
+          "path_reads": 378947,
+          "guard_reads": 0,
+          "polls": 3567011
+        },
+        "core_work": {
+          "nodes": 1643,
+          "qnodes": 9403,
+          "runtime_pushes": 176862
+        },
+        "c_work": {
+          "nodes": 1916,
+          "qnodes": 10131,
+          "runtime_pushes": 191950
+        }
+      }
+    ],
+    "all_retained_tuples_equal": true,
+    "scope": "New q2-completion premise, sameq2 botharms, providercompile+playerprep charged. Extra partialwork not strength or betterdelivery. Originalq4caps/results unchanged; unchanged source4hash/import preflight. No Cdeployment/default/stop changes. Mixed normal concurrentload, no exclusive timing."
+  },
+  "archive": {
+    "members": 76,
+    "bytes": 450492,
+    "sha256": "194c4a051dbe04a28c7cb7f060dc3fd8affa57d32dec8238f06a0c21b62809cb",
+    "uncompressed_bytes": 13273986,
+    "privacy": "Exact allowlist only Agent code/generated scientific rows/declarations/failures/certificates and Agentwritten auxsummary. No rawSlack/account/receipts/privateinputs/pstats/binaries/outboundhistory. UTF8/JSON/AST/secretpathregex and exact bytes/hashes validated.",
+    "member_manifest": {
+      "source/view.py": {
+        "bytes": 4720,
+        "sha256": "8adf79e9a0c3adf323b53df42a397acc43fb286df93130c8b8ea4cd87527ef54"
+      },
+      "source/view2.py": {
+        "bytes": 6241,
+        "sha256": "07b790ba53d861245f8dad893dd4dc70bee0711605c3eab5cb02613a72120dfa"
+      },
+      "source/view4.py": {
+        "bytes": 4503,
+        "sha256": "41abb9ebf6ec6e48fb53fb73e36f8a43ee46cf51b63113b30a644394a6d0e7f6"
+      },
+      "source/next_q2_curve.py": {
+        "bytes": 4089,
+        "sha256": "55d2339dc0b8280b9d18cb2eeb6976048aa8d1138c1ac65cd0e484f5f79d8a24"
+      },
+      "source/phase_counts.py": {
+        "bytes": 4730,
+        "sha256": "0e1585512902ec0bda402a28f268bd244b1060b325233c2cf870b21dd5cd955a"
+      },
+      "source/phase_counts2.py": {
+        "bytes": 4984,
+        "sha256": "778070b8d131608e768e155cef3f96c96ade18238e8aa66563f5720207d56cf5"
+      },
+      "source/q12_profile_failed.py": {
+        "bytes": 2671,
+        "sha256": "0ce6e68e64d8b06e7ff9fbcfc0fb3361b9442af3728f54a8d3c1a5876c4e24c5"
+      },
+      "source/q12_profile.py": {
+        "bytes": 2699,
+        "sha256": "0c50f80f54433d8f4f075baa6e5e94d58693edc3910de13c27e61132ef5a4905"
+      },
+      "source/fresh_q_curve.py": {
+        "bytes": 4535,
+        "sha256": "257d7baf1664ad77b437c1559affb3ac1b14239a6b2a0d70725fafcd233560c5"
+      },
+      "source/fresh_terminal_replies.py": {
+        "bytes": 3233,
+        "sha256": "92fc6b95b97a7a7b310ef82949ff12792132aa35cc94402962c8fef9e7b29147"
+      },
+      "source/root_win_probe_failed.py": {
+        "bytes": 2400,
+        "sha256": "571c84b832e00ed8ffe3286a92e8b9aaeb52eded3ce6b939f93788e4e4b84ce7"
+      },
+      "source/root_win_probe_v2_failed.py": {
+        "bytes": 2736,
+        "sha256": "e7b32bb17687c54dbe3d46d9dd7a01884afa3b6ef2b2a6e0d602b02aadeda8eb"
+      },
+      "source/root_win_probe.py": {
+        "bytes": 2937,
+        "sha256": "cd3ab36a3375393233cdf10248a9e25aac7dc977215ffc495e29f725ab8f4a76"
+      },
+      "source/root_win_after.py": {
+        "bytes": 2940,
+        "sha256": "a85c0bda5b14849441b0afbe9bc4e4bbfcc40052561606b9d4def190b9494201"
+      },
+      "source/root_win_baseline_tests.py": {
+        "bytes": 1107,
+        "sha256": "263caa4aeda8d4c87a4593056f0aee897ce965508ec446b871f652b5fed3ab61"
+      },
+      "source/history_root_win.py": {
+        "bytes": 3053,
+        "sha256": "82e9f823251cc61e81fd628363446520b2b9ba21a8dce385af716f29aafa9af1"
+      },
+      "source/native_root_win.py": {
+        "bytes": 4798,
+        "sha256": "cf9e4ee265bca299470a069377953be67a32294e2194800c256270b8072c9849"
+      },
+      "source/selected_h4.py": {
+        "bytes": 4148,
+        "sha256": "877099d9326c5cebf582588cfc1696a706d1dca54205753052391851b9a55f81"
+      },
+      "source/verify_h4.py": {
+        "bytes": 3089,
+        "sha256": "f8a1fdc74725317692c0a60ecaf885175b065345bfbe698bf5d2491abf8a0e13"
+      },
+      "source/q2_readonly_resource.py": {
+        "bytes": 4859,
+        "sha256": "135188ee5713cb8b64e0ceed21972047313fc5ad6ecd700131290292f8843631"
+      },
+      "science/next-q2-curve/declaration.json": {
+        "bytes": 1087,
+        "sha256": "64ae995c6cddb04b12c8c27cbdfa455ce1aa308b9596d5cd827a22de09fc3710"
+      },
+      "science/next-q2-curve/rows.json": {
+        "bytes": 63086,
+        "sha256": "bef65b1a7e36e9b814441578b4b839fba928ab4bb12f852846ac57dff4f3151c"
+      },
+      "science/next-q2-curve/analysis.json": {
+        "bytes": 2100,
+        "sha256": "53f175239f28e7f866d70325ca4044dd564e4a58b5ea5e13b2d7319d1514a170"
+      },
+      "science/phase-counts/declaration.json": {
+        "bytes": 761,
+        "sha256": "8ee83526517a1c90fa4b27e9334d5d35fd787a729c724fa487e0e11ab52f61ba"
+      },
+      "science/phase-counts/rows.json": {
+        "bytes": 65754,
+        "sha256": "9ae05716409781f5b2012829a06fb6d42991516dde16502878b0f46055dc8eb8"
+      },
+      "science/phase-counts-v2/declaration.json": {
+        "bytes": 760,
+        "sha256": "cba945d74cfbae0eb5006d67ae42d6f2714727c6c8eeae1b79fe7d6957c477d1"
+      },
+      "science/phase-counts-v2/rows.json": {
+        "bytes": 34914,
+        "sha256": "9f422ababb04ff7f035b97605253f13186d4e7e5795d3acd960e371769018c49"
+      },
+      "science/phase-counts-v2/analysis.json": {
+        "bytes": 6283,
+        "sha256": "7e907028e8c3d7fea665bed3db8652e4216f0183bfc01e52e9c43d310874262a"
+      },
+      "science/q12-profile/declaration.json": {
+        "bytes": 610,
+        "sha256": "095b074d80f3a6feb18fb08180b3500192b50184991557ecd39caa57f2eb3462"
+      },
+      "science/q12-profile/failure.json": {
+        "bytes": 369,
+        "sha256": "fcdadb8f6d937cb2c878ebf94e3a5837a5fc01b236a610b0604a581cb8ee0585"
+      },
+      "science/q12-profile-v2/declaration.json": {
+        "bytes": 610,
+        "sha256": "095b074d80f3a6feb18fb08180b3500192b50184991557ecd39caa57f2eb3462"
+      },
+      "science/q12-profile-v2/rows.json": {
+        "bytes": 463933,
+        "sha256": "1c0975dd87c1d3d61cd138a8f384e350a3f052eb92fc9b87e1e79955bea65bd6"
+      },
+      "science/q12-profile-v2/analysis.json": {
+        "bytes": 17674,
+        "sha256": "5bd1f66caaed212fb43fec2bb6ce40ddbc1aadecc8330875dda44ccda1b0123a"
+      },
+      "science/fresh-q1-q2/declaration.json": {
+        "bytes": 1312,
+        "sha256": "0c8bac2b093719430cb6f72f4866e5f53c38fb7c3df20819b145d7503e31e73e"
+      },
+      "science/fresh-q1-q2/rows.json": {
+        "bytes": 267101,
+        "sha256": "8390e078e8f4efe8debb761f5d8b8a3a74c87055ed26aeb94db3123b2db68214"
+      },
+      "science/fresh-q1-q2/analysis.json": {
+        "bytes": 8466,
+        "sha256": "ee39326b066b74f4ad99468111cd3ddf20f596a1b9f03c25b22ce9692019d562"
+      },
+      "science/fresh-q1-q2/quality.json": {
+        "bytes": 1495,
+        "sha256": "5be47acd8b05c3e429467c3ec7f6b80353b1596c7709eb2acf941f1215e17cef"
+      },
+      "science/fresh-q1-q2/terminal-declaration.json": {
+        "bytes": 541,
+        "sha256": "ee7656ad92b3970132880293d349d48fe65f4614e0df94559a0115a30f1c2eab"
+      },
+      "science/fresh-q1-q2/terminal-replies.json": {
+        "bytes": 5638536,
+        "sha256": "b3a9f989afc89adcf8eeeb3688bd487187b27651fa3e4ddca202816c16c539d8"
+      },
+      "science/root-win/failure.json": {
+        "bytes": 412,
+        "sha256": "e4a7bf96362151aa6e0a8a0621b2acbe34bcd3324af1da3da47ca6e6d9cda4fc"
+      },
+      "science/root-win-v2/failure.json": {
+        "bytes": 466,
+        "sha256": "3dfb6e823675ecae4e306bef83f19ca959f895c9615b02364eb3ab5d204805f8"
+      },
+      "science/root-win-v3/before.json": {
+        "bytes": 7636,
+        "sha256": "fdfe1feb6119d25a20896ecd77abd4d042c2c6097441b4d7d51b8c9062e2ac95"
+      },
+      "science/root-win-v3/old-regression-result.json": {
+        "bytes": 375,
+        "sha256": "13701684eb92469a02aa09d1ad154f80c539725a125a1d7b1829b1a50cf543f8"
+      },
+      "science/root-win-v3/search-before.py": {
+        "bytes": 51295,
+        "sha256": "b76ba45ed8484539da8ba99a6b83e08a2fd1c115877938e23d649ecb5150107e"
+      },
+      "science/root-win-after/before.json": {
+        "bytes": 8040,
+        "sha256": "46fee495d811878f3eae5081d2ff4765d04dcdd8ef6e4a2285bf40d071873084"
+      },
+      "science/root-win-after/analysis.json": {
+        "bytes": 1498,
+        "sha256": "7ddf634f4462d04093954fe316325144a0dcf88b29fbeb1b2620cf2f7943c107"
+      },
+      "science/root-win-after/search-before.py": {
+        "bytes": 51256,
+        "sha256": "bcfb34000e8b5ec47a0c7ac3694095e61868b608abebe72d5ec21566b5029651"
+      },
+      "science/history-root-win/declaration.json": {
+        "bytes": 460,
+        "sha256": "d8b91677b5ad3dab9d80a323fe735c04c151e44e0c057fa3a4fae3b8d2d93cde"
+      },
+      "science/history-root-win/rows.json": {
+        "bytes": 14220,
+        "sha256": "dc993bb121f37606857cc078606771e29829df25f77af50acbb9f736f2da6960"
+      },
+      "science/native-root-win/declaration.json": {
+        "bytes": 629,
+        "sha256": "0d78b87c856937ac2e285e4147b982690b99de1660443b9c2ab38585727a0fad"
+      },
+      "science/native-root-win/rows.json": {
+        "bytes": 60521,
+        "sha256": "7fb92a23017afa3a36596ae34ff830fb99a94ac8e43820c76ab4da94855e1443"
+      },
+      "science/native-root-win/analysis.json": {
+        "bytes": 555,
+        "sha256": "06e49643bbf51468fef038c6555838b062646690b2362a16ee15d503b1768fcb"
+      },
+      "science/selected-h4/declaration.json": {
+        "bytes": 736,
+        "sha256": "fe386a20fef79e1d8d088f9f3ba78c3cd979e8048eb86d91a8b275f1c692d51b"
+      },
+      "science/selected-h4/rows.json": {
+        "bytes": 3371659,
+        "sha256": "e1ce4528c9f0b857072e12042ff729ed6c27501eede06a67a29c4b3f6feb78b3"
+      },
+      "science/selected-h4/independent-verification.json": {
+        "bytes": 1706,
+        "sha256": "2c61aa0d50c4de94495fe5ea0241de590ed10bb57bc2da64d1415220e5897f7b"
+      },
+      "science/q2-readonly-resource/declaration.json": {
+        "bytes": 1656,
+        "sha256": "39f4363ef3607ce10003b8ceb0f2504121144be5b9c24a7a6028bbbba99d6df8"
+      },
+      "science/q2-readonly-resource/rows.json": {
+        "bytes": 66573,
+        "sha256": "a6db1285019c4b3ef4c6343d867c341a17253ef240cea34b8c35dfe3a112c081"
+      },
+      "science/q2-readonly-resource/analysis.json": {
+        "bytes": 6467,
+        "sha256": "8317aa0256fa1b5a75723b41ae4aea1baea4da855d2b21031f8f0ca913d0b969"
+      },
+      "science/fresh-q1-q2/sample-2026102030.json": {
+        "bytes": 150996,
+        "sha256": "5845838867d4541bd66b31dc94d3564a6013604ae0fc1d5dea38a5e9b2c50590"
+      },
+      "science/fresh-q1-q2/sample-2026102031.json": {
+        "bytes": 287767,
+        "sha256": "786c50f7d787f56deecefa566db5112213334a2e66c5e4eaccca12651a56e35e"
+      },
+      "science/fresh-q1-q2/sample-2026102032.json": {
+        "bytes": 1015214,
+        "sha256": "3ac28428f9fd771618f04f46ea6c0b7cff7818e25caf7d385ad0b90342ffed7b"
+      },
+      "science/fresh-q1-q2/sample-2026102033.json": {
+        "bytes": 239909,
+        "sha256": "47c8740139ad2a6d4176845dfbc840c68c823d533665de9e0b649f05318b43ac"
+      },
+      "science/fresh-q1-q2/sample-2026102034.json": {
+        "bytes": 348232,
+        "sha256": "39abf49388d66aa59d787987817b8e0bff8a8051b92c52b6191930ac417cd6ab"
+      },
+      "science/fresh-q1-q2/sample-2026102035.json": {
+        "bytes": 646421,
+        "sha256": "123b3b517d633f16e601c72ef3f8422679ebe5828ed66b6bdb8ed78abc750a87"
+      },
+      "science/fresh-q1-q2/sample-2026102036.json": {
+        "bytes": 87974,
+        "sha256": "10da6c3ead2694e50736b4492c53f40a76d60bba018eb98dd77944f9a7304137"
+      },
+      "science/fresh-q1-q2/sample-2026102037.json": {
+        "bytes": 111605,
+        "sha256": "103da9e6cad8f3388d7dbef42e536a0ba8c1d4ba68af48621c4f510906cd3bb0"
+      },
+      "science/next-q2-curve-premise.json": {
+        "bytes": 735,
+        "sha256": "f3c7bd05172d1cb195fbdd9a4547654fd9a5120fcd7543461e9df7e1f53635da"
+      },
+      "science/fresh-q-premise.json": {
+        "bytes": 1024,
+        "sha256": "1a07cbc7b8dc38e9efd33ed1d5171e3d1fc68057e56da27c6cc0aa814ddf615f"
+      },
+      "science/aux44-review.json": {
+        "bytes": 1516,
+        "sha256": "4f68df9d6145dfa25752f93f59d246165da6698e1f1879285c62ed7b0c40070d"
+      },
+      "readonly-source/extension_lazy.c": {
+        "bytes": 8969,
+        "sha256": "a13da5cd70969cc542184f5b451c6d01b3ce78a85aca08fc6c498fe5ddf67ab5"
+      },
+      "readonly-source/lazy_import.py": {
+        "bytes": 2222,
+        "sha256": "55253a98549a219160687d1faa8b55ce1e7c5904e84fdba966da432f5aba2e2a"
+      },
+      "readonly-source/readonly.py": {
+        "bytes": 6029,
+        "sha256": "5687777b0f44d5112f13ce5359f81568e9176cebacc0a6910a40d479b57e89a0"
+      },
+      "readonly-source/all_check.py": {
+        "bytes": 632,
+        "sha256": "028f6db07b0a9316c5a9f738d86aa9f3240a82dddc65b26a54f143a51abe63f3"
+      },
+      "product/search-after.py": {
+        "bytes": 51256,
+        "sha256": "bcfb34000e8b5ec47a0c7ac3694095e61868b608abebe72d5ec21566b5029651"
+      },
+      "product/test_root_terminal_wins.py": {
+        "bytes": 6503,
+        "sha256": "4864aa823a5d884efe1eb4109f60ffeb7b8ee5dec9bb231636d96fc7fc48f39d"
+      }
+    }
+  },
+  "session": {
+    "id": "500df990-04b6-42a3-9a99-62605dca2556",
+    "started_at": "2026-10-14T00:25:48.895128+00:00",
+    "ended_at": "2026-10-14T01:47:26.429916+00:00",
+    "elapsed_minutes": 81.626,
+    "research_stage_count": 11,
+    "reason": "safe_checkpoint",
+    "state": "ended",
+    "duration_gate_passed": true
+  },
+  "final_related_tests_passed": 80,
+  "publication": "PENDING_TESTED_PUBLISHER"
+}

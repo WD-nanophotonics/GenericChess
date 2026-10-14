@@ -1930,3 +1930,55 @@ Science90c8a1e6eb94d3597044726d8ecfa3e31fab21df is tested-published with74
 relevant checks; independent full origin/sandbox SHA equalsHEAD and Gitclean.
 This closing revision only adds actual late auxiliary coordination/delivery
 status. Scientific archive bytes and all query records remain immutable.
+
+## 2026-10-14 PRIMARY q completion / generic rootwinner segment
+
+PRIMARY_SANDBOX owns sandbox. Its156 actual research searches close:80q-policy,
+27consumer observers,7profile calls including one lost-row failure,26rootwinner
+controls and16sameq2 readonly controls. A malformed-history root import fails
+before scanning and is separate.12selectedactions/1207reply transitions and
+5627+5627 producing/independent certificate transitions are not search-call
+inflation. q1/q2 both complete28/32 fresh requested policies; H2 and selectedH4
+labels do not establish a quality winner. Sameq2 C view still preserves all8
+retained tuples, so no reader/default/scheduler deployment follows.
+
+A chat-comments suggestion was reference advice, then independently tested.
+The original fixture first encounters checkmate; its horizontal mirror exposes
+real full-order stalemate-win proof loss at7nodes. Two product predicates now
+preserve authoritative terminal wins; six draw/loss/history regressions pass.
+16 actual Native-interface old/new calls have six nonmate proof improvements
+and two unchanged checkmate pairs. Native/Core/default/stop/UI are unchanged.
+Preparation failures (profile import, FEN scope, stale repetition key, undercounted
+observer recursion, a13/12 action transcription) are retained and corrected;
+no unresolved platform/OS block or user intervention is hidden.
+
+DEV_AUX independently finishes its price lane44 at fixed0728ec75ff3b441f5dc2825513cf5faba23b2a1b.
+PRIMARY reads the whole report and verifies exact Git blob bytes and53/768/
+2649+39 arithmetic only. Reported15472H24 games/223735go(including1partial)/
+2648perft are not primary rawgame/native/training/proof reproductions. Old
+R/N2 and2.4 candidates fail at256/4096; new price/course evidence is uncertain
+and scope remainsKRN without promotion/drop. Its next64-root B/J/L/O factor
+input is frozen/generated, not played. Primary performs no duplicate auxiliary
+games, training, checkout writes, merge or routine wake. AUX's cited primary97b
+context is old and does not authenticate review of the new rootwinner fix.
+
+Dot advice separates same-root action/terminal/price intervals and native
+SEE/ordering/nonpawn-material composite from leaf use. Adopt those boundaries,
+defer new predictor/default adoption. Primary and auxiliary share simple fixed
+routing IDs; no process-authentication claim or extra identity gate. Current
+channel roots and completed/active threads are read, full private originals
+saved before evaluation/reconcile. At10JST no new independent question exists;
+no duplicate direction request/approval/receipt loop is sent. Advice/independent
+case correction proceeds without waiting for Dot approval.
+
+No cross-checkout write or merge conflict is observed in this scoped exchange.
+Communication is sufficient for fixed-result reading and correcting a concrete
+issue; it does not prove guaranteed wake/reply or quantify total collaboration
+speedup. Normal concurrent projects are allowed. Longest owned job is2592.299s,
+under one hour; both orders and actual backend/work are reported. Model/token
+cost is not measured. Session actual ending and full sandbox SHA are recorded
+in the closing receipt; tested Agent-only technical summaries/evidence go to
+sandbox, and Dot receives fixed-revision report and collaboration links. Raw
+Slack/account/private inputs, host pstats and outbound histories stay ignored.
+
+Segment closes UTC2026-10-14T00:25:48.895128+00:00 to2026-10-14T01:47:26.429916+00:00: 81.626 minutes/11 research checkpoints; safe_checkpoint accepted. All owned producers closed, science OPEN.80 final related checks pass; prescribed tested publication/full remote SHA remain separate transport evidence.

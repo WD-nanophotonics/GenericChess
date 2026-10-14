@@ -228,3 +228,17 @@ They exclude failed pushes and S3 trials; nodes/qnodes and budgets keep their
 existing meaning. None means not reported, including other player backends.
 Existing positional constructors keep their order. Consumers may ignore or
 show these diagnostics; no UI/Native/default policy change is required.
+
+## Generic root terminal wins —2026-10-14
+
+AlphaBeta root scans now recognize any Core-authoritative terminal whose winner
+is the root side, including stalemate-loss and history-dependent continuous-check
+loss of the opponent. A previously discovered win could return score0/emptyPV
+as root_scan_fallback when the next scan hit its budget. It now retains the
+winning score/one-actionPV/root_immediate_win, as checkmate already did.
+Draw terminals, root declaration precedence, legal fallback and cancellation
+keep their existing contracts. Six actual draw/loss/history regressions plus
+Core/actual Native-query controls cover this correction. This is Python source;
+restart a consumer to load it. No new Native ABI, private C reader deployment,
+q-policy default or UI maintenance is included. Scope/results:
+../research/Q12_COMPLETION_AND_WORK.md.
