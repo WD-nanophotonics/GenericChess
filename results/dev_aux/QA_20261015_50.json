@@ -42,5 +42,7 @@
       "sha256": "ed9605bf849d7ebac4b7a083f158d456e49dfda7b0499175984c2da11ca367cb"
     }
   ],
-  "source_bytes": "Published exact ZIP is authoritative for executed-source hashes; individual Git text may normalize line endings. Executed sources not rewritten to remove harmless final blank lines."
+  "source_bytes": "Published exact ZIP is authoritative for executed-source hashes; individual Git text may normalize line endings. Executed sources not rewritten to remove harmless final blank lines.",
+  "report_git_blob_sha256": "a3ece1f026eebad2c0bc66326369e3499a99ec596b7447351b3d0a339f31c4a2",
+  "report_line_endings": "report_sha256 binds original local CRLF bytes; report_git_blob_sha256 binds canonical LF Git blob. Verified only CRLF-to-LF difference; exact ZIP blob identity passes."
 }
