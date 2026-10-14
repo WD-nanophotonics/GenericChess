@@ -1,7 +1,8 @@
 # Complete Native q0: terminal priority and execution attribution
 
 Science remains OPEN. The delivered correction is code
-8800b7fe71a195ba534892e638cc2febc954111d. Complete Native q0 is a useful
+8800b7fe71a195ba534892e638cc2febc954111d, followed by the neutral-leaf
+correction described in the later supplement. Complete Native q0 is a useful
 scoped research reference; these results do not authorize a default/backend/UI
 switch or treating q0 as the existing default q4 method.
 
@@ -182,7 +183,7 @@ but candidate buffers can include illegal candidates and full traversal checks
 must remain authoritative. Retain correct first-legal-child/PV/TT behavior,
 all later effects/history and exact fixed-depth result checks. Do not require
 exact ranking as a scientific admission gate or build a new public framework.
-No such C prototype or default change is included in this delivery.
+The initial61-member bundle contains no such C prototype. The separately hashed supplement below preserves the later private experiment; no ordering default is changed.
 
 ## Evidence and limitations
 
@@ -194,3 +195,38 @@ repairs and the actual later producer hashes are recorded separately. No prior
 frozen budget, exposed-validation status or source measurement is relabelled.
 Earlier H5 censorship remains UNKNOWN; this distinct finite H6 certificate does
 not retroactively prove it. Collaboration is in ../operations/COLLABORATION_LOG.md.
+
+## Later private C candidate and decision-changing consultation
+
+The supplement adds228 actual ordering calls, with exact source/DLL hashes:
+96 on eight exposed roots and132 on the existing11-root transfer cohort.
+All16 fixedD3 and22 fixedD2 paired score/action/declaration/PV/decision-line/depth
+tuples match; root state/history remain unchanged. The cheap approximation
+uses current-target, explicit promotion and drop deltas, omitting hand-capture
+yield/off-target/compound effects for ranking only. Actual traversal retains
+complete checked semantics and the actual-first-legal-child guard.
+
+Initial1/4s pairs:12 deeper/20 same/0 shallower;30/32 same action/declaration.
+Transfer:16 deeper/26 same/2 shallower;44/44 same action/declaration.
+Both shallower cases are2505-ply0/4s, retained. Fixed caller cheap/exact ratios:
+initial min/median/max .507/.867/1.026; transfer .206/.704/6.813.
+The6.813 adverse ratio is2503-ply0/order1. Fresh capsule/engine construction is
+included, ordinary concurrent load remains, and feature counts versus full
+material-view trials are different work currencies. Removing discarded trials
+does not ensure improvement. Retain the candidate privately; do not deploy as
+default, claim WDL gains or call this an independent unexposed validation.
+
+Dot's source review found a separate q0 frontier omission: Native returned raw
+material before checking an available neutral declaration. Actual D1 probe on
+4x4 blackKa4/whiteRc1,Kd1 with owner1 NO_CONTEST gives Core0 versus NativeTT0
+andTT1 +100. Each selected child is actually ongoing and actually declares
+the neutral result. This is ordinary static evaluation mismatch, not fake mate.
+The fix floors a negative q0 material leaf at0 when a legal neutral claim exists,
+preserving terminal/WIN priority and existing nonleaf/canonical-PV behavior.
+Eight new NO_CONTEST/RESTART, TT0/1, root-window both modes, real cold/warm
+regressions fail the old image and pass the rebuilt correction. The focused44
+tests pass; fixed probe Core/NativeTT0/NativeTT1 all0. Earlier2535 test coverage
+belongs to the previous fix; the later full run passes all2543 active tests in one uninterrupted run\nusing a new private temporary directory (zero setup/assertion errors).
+All older resource/fixed curves and the private candidate stay bound to their
+actual earlier images. Scoped matching results never imply universal q0
+equivalence across neutral-claim frontiers.

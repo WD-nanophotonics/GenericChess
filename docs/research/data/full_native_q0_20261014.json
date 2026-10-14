@@ -11,7 +11,7 @@
     "members": 61,
     "manifest": "docs/archive/full_native_q0_20261014/manifest.json"
   },
-  "actual_research_queries": 979,
+  "actual_research_queries": 1213,
   "query_counts": {
     "flat_fixed": 142,
     "flat_resource": 284,
@@ -20,7 +20,10 @@
     "rule_profile_caller": 108,
     "frozen_order_intervention": 96,
     "independent_choice_D3_branches": 20,
-    "prospective_order_transfer": 198
+    "prospective_order_transfer": 198,
+    "private_cheap_C": 96,
+    "private_cheap_C_transfer": 132,
+    "neutral_leaf_old_and_fixed_probe": 6
   },
   "queries_exclude": "pytest calls, Core oracle/certificate/frontier transitions and scalar audits, setup/zeroqueryfailures.20bareAB choice branches arequeries, capped oracle/root labels remain separate.",
   "Core_independent_work": {
@@ -244,8 +247,83 @@
         "generic_chess/_native/native_module.c": "3332ad17fbf63fa0bd0961a856e3ccf0f042f29ec0b6ab7c2de6af3d3e166eda",
         "tests/product/test_native_terminal_declaration_priority.py": "385d78ae948bc78b536aa71fb3b220f08bfbf83f8311398e283db467d1e0d93f"
       }
+    },
+    "private_cheap_C": {
+      "complete": true,
+      "actual_queries": 96,
+      "fixed_pairs": 16,
+      "all_fixed_full_tuples_identical": true,
+      "all_root_state_history_unchanged": true,
+      "fixed_ratio_min": 0.5066196851742445,
+      "fixed_ratio_median": 0.8665700254716171,
+      "fixed_ratio_max": 1.026419866419355,
+      "resource_pairs": 32,
+      "depth_relation": {
+        "same": 20,
+        "deeper": 12
+      },
+      "identical_action_declaration_pairs": 30,
+      "decision": "Retain private cheap materialorder candidate for bounded prospective transfer, not production/default. Samefinite outputs andfinitecallerwork support furtherbehavioralcomparison despite explicithandyield/offtarget approximation; no exactranking/WDL admissiongate orElogainclaim.",
+      "scope": "Eightalreadyexposed roots. TwoactualDLLimages andfreshrules percall, sameleafprofile andfixedordering weights; Ccandidate omits discardedtrialscoring only, preservesactualcheckedtraversal,terminal/declaration,history,TT/canonicalPV andactualfirstlegalchild. Dynamic/spatial/cache/policy notaccelerated. Ordering-evaluation counter nowcheapcandidate features vsoldfullchildscores, notsamecurrency; searchwork andextra trials separate."
+    },
+    "private_cheap_C_transfer": {
+      "complete": true,
+      "actual_queries": 132,
+      "fixed_pairs": 22,
+      "all_fixed_full_tuples_identical": true,
+      "all_root_state_history_unchanged": true,
+      "resource_pairs": 44,
+      "depth_relation": {
+        "same": 26,
+        "deeper": 16,
+        "shallower": 2
+      },
+      "identical_action_declaration_pairs": 44,
+      "fixed_ratio_min": 0.20563465178749105,
+      "fixed_ratio_median": 0.7042073226454034,
+      "fixed_ratio_max": 6.813360984974914,
+      "declines": [
+        {
+          "root": "2507-ply0",
+          "unsupported": "semantic board size out of native range (ruleset fingerprint 5a6889fe8afd181e92133b9e83f31998faaf787886b5566b1475d6b291c90ba3, native schema native-0.5.0)",
+          "planned_cells": 12,
+          "actual_searches": 0
+        },
+        {
+          "root": "2507-ply8",
+          "unsupported": "semantic board size out of native range (ruleset fingerprint 5a6889fe8afd181e92133b9e83f31998faaf787886b5566b1475d6b291c90ba3, native schema native-0.5.0)",
+          "planned_cells": 12,
+          "actual_searches": 0
+        }
+      ]
     }
   },
   "raw_private_excluded": true,
-  "scope": "Agent-only results and exactdata/sourceversions. Static/q0/scalar/defaultdynamic/q4 distinct. Approxorder isnot deployed;18 andthin-declaration explicitdeclines retainfullgeneric target. Source/harness/fixture/tempfailures preserved; oldfrozen budgets/unexposedstatus not rewritten."
+  "scope": "Agent-only results and exactdata/sourceversions. Static/q0/scalar/defaultdynamic/q4 distinct. Approxorder isnot deployed;18 andthin-declaration explicitdeclines retainfullgeneric target. Source/harness/fixture/tempfailures preserved; oldfrozen budgets/unexposedstatus not rewritten.",
+  "supplement_archive": {
+    "path": "docs/archive/full_native_q0_20261014/cheap_order_candidate.zip",
+    "sha256": "b0f3cbad4f73fab8bfcd2f52a8bd6e0cf6695cd733c87b23221f40521f3bb75c",
+    "bytes": 490044,
+    "members": 18
+  },
+  "neutral_leaf_fix": {
+    "old_scores": [
+      0,
+      100,
+      100
+    ],
+    "fixed_scores": [
+      0,
+      0,
+      0
+    ],
+    "new_regressions": 8,
+    "focused_passed": 44,
+    "source_sha256": "0f7c0c5f20d17b63d748417570846611b198e5ccdefd34e4089f5cd22dcbbaaf",
+    "full_suite_pending": false,
+    "scope": "Original2535 test result is pre-neutral-leaf patch; frozen research curves retain earlier image. No retroactive equivalence claim.",
+    "full_suite_passed": 2543,
+    "full_suite_assertion_failures": 0,
+    "full_suite_setup_errors": 0
+  }
 }

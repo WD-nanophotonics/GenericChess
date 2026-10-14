@@ -8,12 +8,22 @@ routine-read truncation and is no longer duplicated here.
 
 ## Priority and current decision
 
+Latest supplement: private approximateC ordering closes228 calls; fixed38 paired
+tuples agree, but transfer has2 shallower cases and caller worst6.813x. Keep it
+private, not default. Dot neutral-leaf objection was actually reproduced:
+Core0/Native+100; repaired q0 neutral floor,8old failures then44 focusedpass,
+fixed literal probe all0. Frozen earlier images/results remain immutable.
+Next prioritize this semantic correction's verification and actual remaining
+frontier paths before any broader equivalent-objective claim. AUX48 final
+summary available, not independently replayed; no duplicate toy learning.
+
+
 Search capability/bottleneck attribution first: supported generic backend,
 minimal alpha-beta/specialized-rule controls and mature overall references.
 Separate rule execution, representation, repeated scheduling, optimization,
 defined work and equal-time retained useful decisions. No Elo/speed parity gate.
 
-FULL_NATIVE_Q0_AND_TERMINAL_PRIORITY.md is latest:979 closed research queries,
+FULL_NATIVE_Q0_AND_TERMINAL_PRIORITY.md is latest:1213 closed research queries,
 2535 unique active tests pass (2411 initial+124 exact temp-setup recovery),
 codepublisher45pass. Code8800b7fe fixes Native WIN checked before actualterminal:
 old Native missed a realM1;9regressions old8fail/1pass, allfixedpass. Rebuild C;
@@ -35,14 +45,14 @@ New7rule transfer:198queries/11supportedroots,22fixedD2three-arm tuples identica
 flat20deeper/24same, rule16/28 at1/4s. Earlyterminal root notresampled,18explicit.
 Keepcheapflat control; depth/actions/staticD3 diagnostics are not WDL/strength.
 
-Next actually begun: cheap currenttarget/promotion/drop ordering feasibility.
-3098Coreactions/32frontiers:2820deltaequal; handyield/offtarget andtwo badtop ties
-retained, no newkernel. Native bitfields/candidate traversal inspected. Test one
-private approximateorder against existingplain/exactorder atfixedD3 and1/4s,
-sameleafvalues andactualcaller/work; retain fullcheckedlegality/history/first-
-legalchild/PV/TT behavior. Exactranking/fullWDL isnot an admission gate. No new
-publicframework/default or unchangedtransportcurve. Prior input-builder and
-32s no-choice-gain evidence stays in NATIVE_PAYLOAD_AND_NEUTRAL_FALLBACK.md.
+Cheap frontier and private C comparison are now CLOSED, not pending tasks:
+3098Coreactions/32frontiers retain hand/offtarget errors and bad ties; candidate
+228calls show scoped savings and adverse transfer. Next concrete question:
+publicCore neutral declaration fallback before a completedD1 (existing node1
+fixture/control), with explicit cancellation separate; no new long games/Elo.
+Then diagnose the saved adverseordering cases only if this changes a supported
+option decision. Preserve fullchecked state/history and frozen imagebindings.
+Prior input-builder/32s no-choice-gain evidence remains in its purpose report.
 
 ROOT_WIN_DECLARATIONS_AND_NATIVE_INPUTS.md preserves the prior recursive NC
 repair, conditional winning-bound/equality checks, independent old certificates
@@ -60,7 +70,7 @@ transitions, promotion/drop, S3/S4 and history. The scoped ray/leap/pathclear/
 square-slot reader declines other guards/references; it is not the full target.
 Full ctypes import loses; compact payload/all-check coverage alone is mixed;
 synthetic chunk-poll gains fail transfer. Complete immutableboard C reading gives
-six ordinary q4 generated fixed-work pairs0.910–0.973x with full recorded
+six ordinary q4 generated fixed-work pairs0.910â€“0.973x with full recorded
 non-timing tuples/PV/work equal. This is exposed development, not deployment or
 strength.128 typed states115200 paired scalar queries and actual token/required-
 error rollback qualify finite cases. Latest six actual cancelled searches return

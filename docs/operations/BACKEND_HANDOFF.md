@@ -310,3 +310,5 @@ research reference, explicit18-board/q4 limits, optional existing frozen materia
 ordering, actual trial/search costs and unknowns. It does not introduce a new
 SearchBackend adapter, authorize silent q4-to-q0 downgrade or select a UI default.
 UI Test remains user-owned and isolated.
+
+Later q0 neutral-leaf correction: legal NO_CONTEST/RESTART floors negative static leaf at0. Rebuild C after pulling;8new regressions cover cold/warm TT/root-window modes. Private cheap ordering remains an archive-only experiment; no installed ordering/default change.

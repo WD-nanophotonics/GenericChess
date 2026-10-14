@@ -60,3 +60,29 @@ def test_ongoing_root_win_claim_still_precedes_search():
     assert result.declaration_id == "win"
     assert result.action is None
     assert result.score == 100_000_000
+
+
+@pytest.mark.parametrize("outcome", ["NO_CONTEST", "RESTART"])
+@pytest.mark.parametrize("tt_mb", [0, 1])
+@pytest.mark.parametrize("root_window", [False, True])
+def test_q0_leaf_respects_opponent_neutral_declaration(outcome, tt_mb, root_window):
+    from test_no_contest_search import neutral, compile_session
+    rook = T("R", RayAtom((0, 1)), RayAtom((0, -1)), RayAtom((1, 0)), RayAtom((-1, 0)))
+    rules = make_ruleset(4, [king_type(), rook], lines=["k...", "....", "....", "..RK"])
+    rules = replace(rules, declarations=(neutral(1, outcome, "leaf_neutral"),))
+    session = compile_session(rules)
+    before = session.state, session.to_record(), session._search_witnesses
+    values = {"K": 0, "R": 100}
+    engine = SemanticSearchEngine(session.compiled, compile_native_semantic_rules(session.compiled),
+        board_values=values, hand_values=values, tt_megabytes=tt_mb, ordering_cache_enabled=False)
+    for _ in range(2):
+        result = engine.search(session, SearchLimits(max_depth=1, max_time_seconds=5,
+            quiescence_max_depth=0, quiescence_hard_max_depth=0), root_window_pruning=root_window)
+        assert result.completed_depth == 1
+        assert result.score == 0
+        assert before == (session.state, session.to_record(), session._search_witnesses)
+        child = compile_session(rules)
+        child.submit(result.action)
+        assert child.result.status.value == "ongoing"
+        claimed = child.declare("leaf_neutral")
+        assert claimed.winner is None and claimed.declaration_outcome == outcome

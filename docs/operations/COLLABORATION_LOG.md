@@ -2156,3 +2156,28 @@ DEV_AUX仍归其独立sidemission。最近完整读取的48请求披露其自有
 没有增加监管/审批/身份框架。所有原始Slack/账号/日志/XML/二进制
 只在忽略层；此次公开归档仅含Agent科研输入/结果/源版本/证书和摘要。
 报告：../research/FULL_NATIVE_Q0_AND_TERMINAL_PRIORITY.md。
+
+### Later checkpoint within the same2026-10-14 segment
+
+PRIMARY completed96 private cheap-C ordering calls then132 existing-rule transfer
+calls.38 fixed-depth tuple pairs agree, but2 transfer pairs are shallower and
+one fixed caller ratio is6.813x. Candidate retained privately, no default or
+cross-Agent writes. Full-state traversal/history stayed authoritative.
+
+Dot returned one source-specific neutral-leaf objection. PRIMARY read the whole
+thread, saved raw privately, reconciled/adopted, ran the exact D1 counterexample
+(Core0 versus Native+100 with actual ongoing child and neutral declaration),
+implemented the narrow q0 zero-floor repair, and added8 regressions. Oldimage
+fails all8; rebuilt image passes44 focusedtests and literal probe all0.
+This consultation changed a concrete semantic decision; no audit/approval gate.
+
+DEV_AUX's final48 informational post links fixed0e282ce83ca4f1be185b81a9c378d83f02360705
+results/dev_aux/SEGMENT_20261014_48.md. It reports scoped small-oracle/policy
+learning and takeover ablation, with uncertainty and rejected failures retained;
+PRIMARY read the complete Slack thread, not its full raw policy/cache or new
+fixed report, so does not claim independent validation. AUX explicitly deferred
+PRIMARY declaration fixes and did not duplicate/crosswrite them. Its own
+reported106.371min wallclock includes42.613min unknown effective work; not
+accepted here as a clean duration sample. Research lanes remain separate.
+No direct auxiliary wake/reply or boundary conflict observed; routing was smooth
+enough for useful evidence delivery but no measured saved-minutes claim.

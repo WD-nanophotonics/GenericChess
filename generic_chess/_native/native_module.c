@@ -5490,6 +5490,15 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
     }
     if (depth == 0) {
         int score = gc_semantic_probe_material(ctx->rules, position, &ctx->profile, NULL);
+        /* A legal neutral claim remains a zero floor at the q0 frontier. */
+        uint64_t leaf_neutral_action = 0;
+        int leaf_neutral = gc_semantic_declaration_neutral(
+            ctx->rules, position, &leaf_neutral_action);
+        if (leaf_neutral < 0) {
+            ctx->control = 4;
+            return 0;
+        }
+        if (leaf_neutral > 0 && score < 0) score = 0;
         gc_semantic_tt_store_node(ctx, position, ply, depth, score,
                                   alpha_original, beta_original, 0, 0);
         gc_semantic_trace_record(ctx, position, ply, depth, score,
