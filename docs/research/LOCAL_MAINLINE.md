@@ -13,24 +13,18 @@ minimal alpha-beta/specialized-rule controls and mature overall references.
 Separate rule execution, representation, repeated scheduling, optimization,
 defined work and equal-time retained useful decisions. No Elo/speed parity gate.
 
-Q12_COMPLETION_AND_WORK.md is the latest decision:156 actual research searches.
-A real non-checkmate terminal winner lost score/PV/provenance at interrupted
-root scanning. Two predicates now retain Core-authoritative winners, including
-stalemate-loss and legally replayed continuous-check wins; six new regressions
-and actual Core/Native-query controls bind this correction. Source-only change;
-Native/Core/default q4/stop/UI remain unchanged.
-Fresh q1/q2 both complete requested policy28/32, with12changed/20same paired
-choices. All12selectedactions/1207nextreplies have no immediate opponent win;
-three2037actions have separately verified rootH4 no-opponent-forcing certificates.
-These targets do not distinguish policy quality or prove root wins/global safety.
-A changed-premise16call sameq2 completeboard C view curve still retains all8
-full decision tuples unchanged despite more partialwork; keep it private.
-No scheduler/default promotion or unchanged q/readonly curve rerun follows.
-Next bounded question is compile-owned geometry-prefix repetition/cost versus
-memory/startup; inspect exact repeated static work before proposing code.
-Existing F34 coverage summaries are not replayable tactical certificates; the
-checked-chain fixture supplies a concrete evasion mechanism, not a forced-win
-label. Richer independent tactical goals remain optional when decision-changing.
+GEOMETRY_PREFIX_AND_DROP_GOAL.md is latest:187 actual research searches.
+Two generic Python search fixes reserve terminal utility bands and retain a
+completed winning root child when a later sibling aborts. Actual stop reason/
+last full depth remain; completed_root_win records partial-iteration provenance.
+Eight same16s calls recover4/4 independently proved H3 paired targets; no uniform
+D2/globalstrength claim.16 new regressions pass. Old64call q misses are pre-repair
+evidence, not a current-default ranking. Prefix caches stay private: small/mixed
+caller gain and2.63-34.86MB extra. MDP saves work on three proved-win roots only;
+fresh generated roots show no cuts. Defaults/Native/Core/UI/stop remain.
+Next is completed-root transfer/provenance under actual Native providers and
+varied generated history/effects, retaining negative98node/cancellation controls;
+no unchanged q/cache curve or new scheduler.
 
 WIDE_READONLY_VIEW.md is the current isolated readonly feasibility result.
 Old Native codec/cap/defaults/UI are unchanged. Core owns complete legality,
@@ -115,7 +109,8 @@ checkout writes, merge or routine wake. COLLABORATION_LOG records the scope.
 
 |Purpose|Record|
 |---|---|
-|Latest q1/q2 completion, actual consumers and noncheckmate rootwins|Q12_COMPLETION_AND_WORK.md; data/q12_completion_20261014.json|
+|Latest utility/root-win repairs and drop goal|GEOMETRY_PREFIX_AND_DROP_GOAL.md; data/geometry_prefix_drop_20261014.json|
+|Prior q1/q2 completion, actual consumers and noncheckmate rootwins|Q12_COMPLETION_AND_WORK.md; data/q12_completion_20261014.json|
 |Actual runtime work, export feasibility and finite q policy|TRIAL_EXPORT_AND_Q_POLICY.md; data/trial_export_q_policy_20261014.json|
 |Trial hand/inner-child correctness and wide Core ordering|TRIAL_STORAGE_AND_WIDE_Q.md; data/hand_trials_20261014.json|
 |Readonly view caller/stop feasibility and current costs|WIDE_READONLY_VIEW.md; data/wide_readonly_20261014.json|

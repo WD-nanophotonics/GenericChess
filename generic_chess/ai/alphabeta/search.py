@@ -29,7 +29,7 @@ from ...core.declarations import (
     _available_declarations_position,
 )
 from ..cancellation import CancellationToken
-from ..evaluation.config import MATE_SCORE, MATE_THRESHOLD
+from ..evaluation.config import MATE_SCORE, MATE_THRESHOLD, MAX_STATIC_EVAL
 from ..evaluation.evaluator import Evaluator
 from ..limits import SearchLimits
 from ..audit_instrumentation import AuditMetric, AuditRecorder, NullAuditRecorder
@@ -121,6 +121,7 @@ class _Context:
         "runtime",
         "first_main_iteration_complete",
         "root_scan_best_action",
+        "root_completed_win",
     )
 
     def __init__(
@@ -159,6 +160,7 @@ class _Context:
         # it only after a complete main iteration succeeds.
         self.first_main_iteration_complete = first_main_iteration_complete
         self.root_scan_best_action: Action | None = None
+        self.root_completed_win: tuple[SearchResult, int] | None = None
 
     def checkpoint(self) -> None:
         """Cooperative callback passed into Core semantic work units."""
@@ -178,12 +180,21 @@ class _Context:
                 raise SearchAborted("time_limit")
 
 
+def _bounded_static_score(score: int) -> int:
+    """Reserve terminal/TT distance bands even for oversized total utilities.
+
+    Per-piece profile limits do not bound inventories plus dynamic terms.
+    Raw evaluator output remains available outside the search boundary.
+    """
+    return max(-MAX_STATIC_EVAL, min(MAX_STATIC_EVAL, score))
+
+
 def _evaluate(state, evaluator, ctx: _Context) -> int:
     """Account for actual evaluator calls on every production search path."""
     started = time.perf_counter()
     try:
         with ctx.recorder.time_block(AuditMetric.EVALUATION):
-            return evaluator.evaluate(state)
+            return _bounded_static_score(evaluator.evaluate(state))
     finally:
         ctx.stats.evaluation_calls += 1
         ctx.stats.evaluation_seconds += time.perf_counter() - started
@@ -541,6 +552,16 @@ def negamax(
         else:
             child_result = child_search(-beta, -alpha, pv_node)
             score = -child_result.score
+        # A completed root child can already prove a win even if a later
+        # sibling aborts the iteration. Static totals cannot enter this band.
+        if (ply == 0 and score >= MATE_THRESHOLD and score > alpha
+                and ctx.first_main_iteration_complete is not None
+                and (ctx.root_completed_win is None
+                     or score > ctx.root_completed_win[0].score)):
+            ctx.root_completed_win = (
+                SearchResult(score, action, (action,) + child_result.pv),
+                _ordinary_qdepth_limit(ctx),
+            )
         if score > best:
             best = score
             best_action = action
@@ -878,7 +899,7 @@ def reference_minimax(
     if winning is not None:
         return MATE_SCORE - ply, None
     if depth <= 0:
-        score = evaluator.evaluate(state)
+        score = _bounded_static_score(evaluator.evaluate(state))
         return max(score, 0) if restart is not None else score, None
     successors = sorted(legal_successors(state, compiled), key=lambda pair: str(pair[0]))
     best = -INF
@@ -1232,6 +1253,16 @@ def run_root_search(
             stats.time_to_first_completed_iteration = time.monotonic() - started
         if progress_callback is not None:
             progress_callback(depth, stats.nodes, stats.qnodes)
+
+    if (abort_reason is not None and ctx.root_completed_win is not None
+            and (best is None or ctx.root_completed_win[0].score > best.score)):
+        proof, ordinary_qdepth = ctx.root_completed_win
+        stats.termination_reason = abort_reason
+        _set_result_provenance(stats, 'completed_root_win', ctx)
+        stats.result_ordinary_qdepth = ordinary_qdepth
+        # completed_depth remains the last complete uniform main iteration,
+        # not the depth of this child from an interrupted iteration.
+        return proof.best_action, proof.score, proof.pv, abort_reason
 
     if best is not None:
         stats.termination_reason = "completed_depth" if abort_reason is None else abort_reason

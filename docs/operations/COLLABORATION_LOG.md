@@ -1996,3 +1996,26 @@ dedupe equal choices and use direct paired contrasts. Cached H24−H12 is a
 horizon diagnostic, not infinite-horizon proof. AUX retains execution ownership;
 no primary duplicate work or routine message loop. This transport-time update
 does not reset or inflate the accepted81.626minute research segment.
+
+
+## 2026-10-14：总分边界与已完成根获胜结果
+
+PRIMARY完成187次实际研究搜索，拒绝低收益路径缓存，建立全防守H3目标并比较
+q策略、同Core/评价minimalAB及廉价基线。修复总分假冒终局、超时丢失已完成
+获胜根子树；8次同16秒两序对照恢复4/4目标，真实超时/最后完整D1保留，
+不冒称整轮D2完成。16新回归通过，完整发布测试结果随后如实记录。
+Dot核读固定源码指出总分而非单子上限，PRIMARY独立复现并修复；后续根子树
+保留是主Agent新实现，尚不声称Dot审核/执行。一次读取失败后过早记录通过，
+已撤回保留，实际输出完成后再验证；科学阶段信用扣除该项，不归咎SAC/工具。
+
+开发辅助45固定ed113f9af378504a844da3d13c2813b19120c858全文和Git blob、
+13/256及-1/128算术核对完成。其6464science/6480physical games、112143go、
+512perft属于辅助汇报，主Agent未重放raw/native/训练/区间。H24未确认与NEW64
+H48条件正结果分开，2与2.4未分出优劣，B主价等于基线不等于全棋价恢复。
+辅助46新请求/Dot全部回复已读：叶尺度相对固定native体系的敏感性不是整套
+系统换单位；端点交互不能替代三尺度联合不确定性。46未发布数据仍是汇报。
+
+协作有直接收益：源码异议改变主产品，辅助价格路线独立推进，无重复games/
+training、例行唤醒/回执、合并或越界写入。无完整单Agent/token对照，不能量化
+节省比例。沿用既有fixture/minimalAB减少工程成本；普通并发无停机门槛。
+原始Slack/账号/回执仅私有保存。Dot将获得本段固定科学与协作链接复核。

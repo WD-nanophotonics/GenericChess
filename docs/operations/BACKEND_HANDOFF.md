@@ -242,3 +242,15 @@ Core/actual Native-query controls cover this correction. This is Python source;
 restart a consumer to load it. No new Native ABI, private C reader deployment,
 q-policy default or UI maintenance is included. Scope/results:
 ../research/Q12_COMPLETION_AND_WORK.md.
+
+
+## 2026-10-14 utility totals and completed root wins
+
+Python search/reference caps only total static utility at existing10M; raw
+evaluator/profile values remain available. Core terminal/declaration priority
+stays. completed_root_win can retain a completed positive root child after a
+later abort. termination_reason remains real node/time/cancel; completed_depth
+remains last complete uniform iteration, not the interrupted depth. Its q policy
+belongs to that retained proof; PV can omit q continuation. No default q4/hard8/
+MDP/Native/Core/UI changes. Integrate tested sandbox backend through the existing
+user-maintained UI lane; no UI copy is published. See GEOMETRY_PREFIX_AND_DROP_GOAL.
