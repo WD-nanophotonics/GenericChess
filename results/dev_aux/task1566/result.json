@@ -1,0 +1,62 @@
+{
+  "status": "ACTUAL_JOINT_REQUIRED_WITNESS",
+  "fen": "1N1/r1k/1R1/K2 w - - 0 1",
+  "root": {
+    "id": 33881,
+    "joint_WDL": 1,
+    "without_R_id": 21756,
+    "without_R_WDL": -1,
+    "without_N_id": 14038,
+    "without_N_WDL": 0
+  },
+  "baseline": {
+    "phase": "COOPERATION",
+    "family": 48,
+    "state_id": 33881,
+    "node_budget": 64,
+    "leafR": 720,
+    "leafN": 720,
+    "nativeR": 720,
+    "move": "a1b1",
+    "child_id": 38556,
+    "root_WDL": 1,
+    "chosen_WDL": 0,
+    "regret": 1,
+    "position": "position fen 1N1/r1k/1R1/K2 w - - 0 1",
+    "command": "go nodes 64",
+    "uci_info": [
+      "info string classical evaluation enabled",
+      "info depth 1 seldepth 1 multipv 1 score cp 346 nodes 8 nps 8000 tbhits 0 time 1 pv b4a2 a3a2 b2a2",
+      "info depth 2 seldepth 2 multipv 1 score cp 692 nodes 20 nps 20000 tbhits 0 time 1 pv a1b1 a3a1 b1a1",
+      "info depth 3 seldepth 3 multipv 1 score cp 346 nodes 48 nps 48000 tbhits 0 time 1 pv a1b1 a3b3 b2b3 c3b3",
+      "info depth 4 seldepth 3 multipv 1 score cp 346 nodes 64 nps 64000 tbhits 0 time 1 pv a1b1 a3b3 b2b3 c3b3"
+    ],
+    "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:0263e8d6e9677b82e179c0d1a61ea5080df3275aba3464569e040eb222a20fe9"
+  },
+  "high_R": {
+    "phase": "COOPERATION",
+    "family": 48,
+    "state_id": 33881,
+    "node_budget": 64,
+    "leafR": 1728,
+    "leafN": 720,
+    "nativeR": 720,
+    "move": "b4a2",
+    "child_id": 33832,
+    "root_WDL": 1,
+    "chosen_WDL": 1,
+    "regret": 0,
+    "position": "position fen 1N1/r1k/1R1/K2 w - - 0 1",
+    "command": "go nodes 64",
+    "uci_info": [
+      "info string classical evaluation enabled",
+      "info depth 1 seldepth 1 multipv 1 score cp 346 nodes 8 nps 8000 tbhits 0 time 1 pv b4a2 c3c4",
+      "info depth 2 seldepth 2 multipv 1 score cp 830 nodes 22 nps 22000 tbhits 0 time 1 pv b4a2 a3a2 b2a2",
+      "info depth 3 seldepth 3 multipv 1 score cp 830 nodes 31 nps 31000 tbhits 0 time 1 pv b4a2 a3a2 b2a2",
+      "info depth 4 seldepth 4 multipv 1 score cp 830 nodes 46 nps 46000 tbhits 0 time 1 pv b4a2 a3a2 b2a2 c3b3",
+      "info depth 5 seldepth 4 multipv 1 score cp 830 nodes 65 nps 65000 tbhits 0 time 1 pv b4a2 a3a2 b2a2 c3b3"
+    ],
+    "backend": "FAIRY_EXPERIMENTAL_TABLE_TOGGLE:0263e8d6e9677b82e179c0d1a61ea5080df3275aba3464569e040eb222a20fe9"
+  },
+  "scope": "Newjointrequired cohort actual64node move changes. Bothpiece-removal stateslegal andexactoracle; rootjointWin versusmarginalsless. SelectedchildWDL assumesperfectfuture, not actualfull5policywin. No humanprice reference."
+}

@@ -1,0 +1,137 @@
+{
+  "producers": [
+    {
+      "task": 1532,
+      "status": "COMPLETE_GRAPH_CLOSED_EXACT_WDL",
+      "seconds": 20.54700000025332,
+      "actual_search_go": 0,
+      "saved_perft": 0,
+      "exit_codes": null
+    },
+    {
+      "task": 1534,
+      "status": "PASS_ALL_NATIVE_3X4_LEGAL",
+      "seconds": 4.20299999974668,
+      "actual_search_go": 0,
+      "saved_perft": 1024,
+      "exit_codes": 0
+    },
+    {
+      "task": 1536,
+      "status": "COMPLETE",
+      "seconds": 6.375,
+      "actual_search_go": 768,
+      "saved_perft": 0,
+      "exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "task": 1539,
+      "status": "COMPLETE",
+      "seconds": 2032.311999999918,
+      "actual_search_go": 299160,
+      "saved_perft": 0,
+      "exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "task": 1541,
+      "status": "COMPLETE",
+      "seconds": 14.25,
+      "actual_search_go": 1536,
+      "saved_perft": 0,
+      "exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "task": 1543,
+      "status": "PARTIAL_OR_FAILURE_PRESERVED",
+      "seconds": 180.0,
+      "actual_search_go": 0,
+      "saved_perft": 58147,
+      "exit_codes": 0
+    },
+    {
+      "task": 1547,
+      "status": "COMPLETE",
+      "seconds": 13.813000000081956,
+      "actual_search_go": 1536,
+      "saved_perft": 0,
+      "exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "task": 1550,
+      "status": "COMPLETE",
+      "seconds": 9.233999999705702,
+      "actual_search_go": 1024,
+      "saved_perft": 0,
+      "exit_codes": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "task": 1563,
+      "status": "COMPLETE_FINITE_MATERIAL_SEARCH",
+      "seconds": 7.217999999877065,
+      "actual_search_go": 0,
+      "saved_perft": 0,
+      "exit_codes": null
+    }
+  ],
+  "actual_search_go": 304024,
+  "saved_native_perft": 59171,
+  "possible_native_perft_issued_range": [
+    59171,
+    59172
+  ],
+  "physical_completed_games": 0,
+  "finite_material_root_calls": 768,
+  "finite_material_recursive_calls": 587844,
+  "finite_material_unique_recursive_nodes": 423828,
+  "complete_policy_query_seconds": 2032.312,
+  "timed_producer_seconds_sum_may_overlap": 2287.9519999995828,
+  "untimed_audits_not_estimated": true,
+  "clock_gap": {
+    "previous_elapsed": 40.784,
+    "resumed_elapsed": 83.397,
+    "difference_minutes": 42.613,
+    "effective_work_during_gap": "UNVERIFIED, notcreditedsolelyfromwallclock",
+    "session_clock_not_reset": true
+  },
+  "bounds1560": "PreparedONLY no1561execution orclaimed5actorpolicyWDL",
+  "cost_decision": "Cheapexactoracle labels/firstchoicelearning useful; wholepolicyvalidation costly. Nextreachableboundedmethod testscoverage, noautomaticall694kpolicy orordinaryCPUquietwindow."
+}

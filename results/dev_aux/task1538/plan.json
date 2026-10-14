@@ -1,0 +1,19 @@
+{
+  "nodes": [
+    16,
+    64,
+    256
+  ],
+  "prices": [
+    720,
+    1728
+  ],
+  "state_count": 61336,
+  "expected_go": 299160,
+  "expected_seconds_from_prior_64_256": 2959,
+  "max_seconds": 3300,
+  "scope": "Complete fixedcold policy vs alllegalbestresponse,3x4 closed<=4actors; primary64,16/256resourcecontrols allfrozenbeforechoices",
+  "no_whole694k_policy": true,
+  "decision": "Does fixed3x3 learnedR2.4 improve actual endgame strategy onlargerboard or merelychildWDL?",
+  "all_captures_closed": true
+}

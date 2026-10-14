@@ -1,0 +1,54 @@
+{
+  "status": "PASS_CASES_CHOICES_PV_LABELS_COUNTERS",
+  "rows": [
+    {
+      "task": 1536,
+      "phase": "TRANSFER",
+      "counts": {
+        "exact_labels": 768,
+        "no_external_tablebase": 4221,
+        "literal_PVmoves": 15236,
+        "mate_scores": 621
+      },
+      "reported_node_counters": {
+        "16": {
+          "min": 16,
+          "max": 49,
+          "sum": 4992
+        },
+        "64": {
+          "min": 64,
+          "max": 79,
+          "sum": 16677
+        },
+        "256": {
+          "min": 256,
+          "max": 266,
+          "sum": 65734
+        }
+      },
+      "native_mate_score_vs_exact_WDL_contradictions": [
+        {
+          "tid": 1536,
+          "state_id": 319263,
+          "line": "info depth 3 seldepth 3 multipv 1 score mate -2 nodes 69 nps 69000 tbhits 0 time 1 pv c2a3 a2c3 a3b1 b3b1",
+          "exact_rootWDL": 0
+        },
+        {
+          "tid": 1536,
+          "state_id": 319263,
+          "line": "info depth 3 seldepth 3 multipv 1 score mate -2 nodes 64 nps 64000 tbhits 0 time 1 pv c2a3 a2c3 a3b1 b3b1",
+          "exact_rootWDL": 0
+        },
+        {
+          "tid": 1536,
+          "state_id": 674030,
+          "line": "info depth 7 seldepth 7 multipv 1 score mate -4 upperbound nodes 256 nps 256000 tbhits 0 time 1 pv a1b1 b2b1",
+          "exact_rootWDL": 0
+        }
+      ],
+      "choices_sha256": "c6d01c8f108ce83318d523ae4213a7a91ad882d1231ceada6985f034bd0d1e98"
+    }
+  ],
+  "scope": "Every sampled engine choice/legalPV and exactWDL label audited; native mate score disagreements separately listed, not treated as certificate. Initial1498 split remains downgraded,1503newfullorbits."
+}

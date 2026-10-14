@@ -1,16 +1,18 @@
-# DEV_AUX current scope —2026-10-14 segment47
+# DEV_AUX current scope —2026-10-14 segment48
 
 ScienceOPEN, sidemissiononly, heartbeatACTIVE; no primary/default/UI writes.
-Pawn early/late TRAINP360 failsfreshDEV (-7/128,-3/64,CIcross0); no quantity reward/oldDEVrefit.
-Complete3x3KRN oracle67128states167344edges, independentALLliteral/nativePASS; cheapTRAIN3072go26.5s.
-Initial180color split12fullorbitoverlap retained/downgraded; new128TRAIN/64DEVfullorbits exclude165old.
-R1728/N720 uppergrid selectsall3budgets; onechoicejointbandscross0, notfullhumanprice recovery.
-Wholecoldpolicy vsALLlegalbestresponse gain16:7/128uncertain;64:23/128 and256:1/8 jointlypositive.
-Purepolicy262kgo, explicitWIN-preservingcycles/replays; exactendgamefinisher attribution notpuremature claim.
-Nativejoint exposedmu mechanism keepsR>N; no newvalidation/fullpolicy nativejoint claim.
-301802searchgo+67128perft,1024physicalpawn episodes, allproducersclosed; exactarchives155members.
-Next1530 frozen3x4transfer720/1728, no refit; bound graph/nativeboundary beforequeries, no automaticfullcache.
-Evidence:SEGMENT_20261014_47.md,1529jointpolicy,1526/1528independentresponseproofs,COST/QA/archives47.
+FixedR1728/N720 transfer only; no48training/refit orhumanratio recovery.
+3x4fullgraph694920states2770808edges ALLliteral/rankPASS; native1024+partial58147, remainderUNKNOWN.
+Full6actor64family childWDL jointbands touch/cross0: no robust board-only transfer.
+Closed<=4actor61336state fullcoldpolicy299160go2032.312s,128mixedKRvsKNfamilies.
+64primary actualnetW-Lgain3/64 jointpositive, wins45same losses47to35;16/256jointtouch0.
+Shared<=3oracleboundary64gain9/256; pairdifference uncertain;256conversioneffect secondary, no equivalence.
+Newjoint-required5actor128families, fixedprice onechoicegains64/256positive; full5policyNOTknown.
+Numericalscalingchangesmaturechoices; finitepurematerialD1/3helps,D5uncertain. No productbackendclaim.
+304024searchgo,59171savedperft,0physicalgames; failures/inline-provenance limits retained.
+Observed42.613min toolcheckpointgap notcredited asverifiedeffectivework; ownsessionclock neverreset.
+Next1560reachable5actorpreparedONLY: 480s/50kgo/150kstates, exact4policyboundary+UNKNOWNbounds.
+Evidence:SEGMENT_20261014_48.md,1556/1569proofs,1557/1558,1571/1572,COST/QA/archives48.
 
 # Current local research mainline
 

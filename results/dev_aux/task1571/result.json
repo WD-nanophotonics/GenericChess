@@ -1,0 +1,30 @@
+{
+  "status": "PASS_PRICE_BLIND_FAMILY_GENERATION_RECONSTRUCTION",
+  "rows": [
+    {
+      "task": 1535,
+      "families": 64,
+      "eligible": 29494,
+      "seed": 2026670000,
+      "all_original_frozen_family_outputs_reproduced": true,
+      "invalid_marginals": 0
+    },
+    {
+      "task": 1538,
+      "families": 128,
+      "eligible": 1320,
+      "seed": 2026671000,
+      "all_original_frozen_family_outputs_reproduced": true,
+      "invalid_marginals": 0
+    },
+    {
+      "task": 1549,
+      "families": 128,
+      "eligible": 2144,
+      "seed": 2026672000,
+      "all_original_frozen_family_outputs_reproduced": true,
+      "invalid_marginals": 5312
+    }
+  ],
+  "scope": "Post-execution independentlysavedreconstruction code reproducesfrozenoriginaldatasets exactly usingstatedrulelabels/seed; notclaimingthesearehistoricalinlinegeneratorbytes. Originalstudy hashes bound toactualenginequeryresults; no candidate/humanprice outcomes used togeneratefamilies."
+}
