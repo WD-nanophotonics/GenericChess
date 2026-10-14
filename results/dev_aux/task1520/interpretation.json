@@ -1,0 +1,29 @@
+{
+  "status": "CANONICAL_COMPOSITE_POLICY_INTERPRETATION",
+  "producer": "task1518",
+  "solver": "task1519",
+  "intervention": "Both prices same exact-rule oracle finisher only when totalactors<=3; no humanprices, no engine/productchange, no parameterrefit. Winningoracle uses strictlydecreasing mate rank; drawoptimal action accepted as set thenlex; losingdelaylargest rank.",
+  "scope": "Engineering attribution ablation of compositepolicy, NOT puremature pricelearning success. Opponent remains ALLlegal perfectbestresponse. Fixedactorcount threshold before evaluating resulting WDL.",
+  "metadata_correction": "1519 solver copied generic cold-policy scope; actual1518input is explicit oracle-finish hybrid. Preserve rawsolver and interpret only as composite attribution, not puremature WDL. No newsearch/refit/independentvalidation.",
+  "allgraph_exposed_mechanism": [
+    {
+      "price": 720,
+      "candidateWhite_allgraph_additionalWins": 2018,
+      "unrealized_oracleWin_count_before": 2955,
+      "after": 1664
+    },
+    {
+      "price": 1728,
+      "candidateWhite_allgraph_additionalWins": 2305,
+      "unrealized_oracleWin_count_before": 3173,
+      "after": 1637
+    }
+  ],
+  "DEV_secondary_hybrid_gain": "9/128",
+  "DEV_secondary_hybrid_interval": [
+    -0.015625,
+    0.15625
+  ],
+  "base_pure_policy_gain": "7/128",
+  "new_go": 0
+}

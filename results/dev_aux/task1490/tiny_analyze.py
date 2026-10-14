@@ -1,0 +1,10 @@
+from pathlib import Path
+import json,collections,random
+from fractions import Fraction as F
+R=Path.cwd();O=R/'results/dev_aux/task1509';O.mkdir(exist_ok=False);sel=json.loads((R/'results/dev_aux/task1505/selection.json').read_bytes());gs=[json.loads(x) for x in (R/'results/dev_aux/task1506/choices.jsonl').read_text().splitlines()];assert len(gs)==768;family=sorted({x['family'] for x in gs});assert len(family)==64;rows=[];vectors={}
+for s in sel['rows']:
+ budget=s['budget'];p=s['selected'];xx=[x for x in gs if x['node_budget']==budget];fd={f:F(sum(x['chosen_WDL'] for x in xx if x['family']==f and x['leafR']==p)-sum(x['chosen_WDL'] for x in xx if x['family']==f and x['leafR']==720),2) for f in family};vals=list(map(float,fd.values()));vectors[budget]=vals;rng=random.Random(2026620501+budget);bs=sorted(sum(rng.choices(vals,k=64))/64 for _ in range(10000));rows.append({'budget':budget,'selected':p,'mean':str(sum(fd.values())/64),'bootstrap95':[bs[249],bs[9749]],'family_deltas':{f:str(v) for f,v in fd.items()},'selected_WLD':dict(collections.Counter(x['chosen_WDL'] for x in xx if x['leafR']==p)),'baseline_WLD':dict(collections.Counter(x['chosen_WDL'] for x in xx if x['leafR']==720))})
+means={b:sum(v)/64 for b,v in vectors.items()};rng=random.Random(2026620502);mx=[]
+for _ in range(10000):
+ sample=[rng.randrange(64) for j in range(64)];draws={b:sum(v[j] for j in sample)/64 for b,v in vectors.items()};mx.append(max(abs(draws[b]-means[b]) for b in means))
+mx.sort();radius=mx[9499];out={'status':'NEW_FULL_ORBIT64DEV_EXACT_ONE_CHOICE_WDL','rows':rows,'simultaneous3_primary95':{b:[m-radius,m+radius] for b,m in means.items()},'scope':'NEWunexposed completeD4/color orbit families, exactly3budget primaries. Exact perfect continuation afteroneactual mature move; not entire learned-policy winrate/humanChessprices. Added full-policy best-response study checks this specific gap; noDEV refit.'};(O/'result.json').write_text(json.dumps(out,indent=2));print([{k:v for k,v in x.items() if k!='family_deltas'} for x in rows]);print(out['simultaneous3_primary95'])

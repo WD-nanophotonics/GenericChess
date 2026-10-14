@@ -1,0 +1,13 @@
+{
+  "status": "PASS_ALL_CACHE_PV_SAMPLED_REPLAY_AND_INDEPENDENT_CANDIDATE_CENTRIC_FULL_POLICY_WDL",
+  "counts": {
+    "forced_no_go": 34080,
+    "policy_rows": 134256,
+    "actual_go": 87680,
+    "PVmoves": 490564,
+    "terminal_no_go": 12496,
+    "sampled_exact_nontime_nps_query_matches": 768,
+    "candidate_centric_response_states": 268512
+  },
+  "scope": "Independent candidate-centric min at opponent/maxtrivial at fixedown, strictmate ranks and draw-preserving edges; not merely repeating originalside-negamax recurrence. Allactualcache/solelegal/terminalbasis distinguished. Geometry already ALLnative+literal verified."
+}

@@ -1,0 +1,9 @@
+from pathlib import Path
+import json,hashlib
+R=Path.cwd();O=R/'results/dev_aux/task1521';O.mkdir(exist_ok=False);old=json.loads((R/'results/dev_aux/task1503/study.json').read_bytes());plan=dict(old,question='Does coupling native SEE/order prices to the learned leafR change the apparent useful R/N relation?',intervention='Same fixed3x3full-orbit dataset andRgrid/budgets; nativeR=leafR instead of720; nativeN/B/P720,Q1664. Only research variant configuration, no product/default/source change.',scope='POSTHOC MECHANISM on already exposed mu, not fresh independent validation or humanChessrecovery. TRAINonly selector, allfour DEV profiles frozen upfront, no gridextension/result-driven candidate addition.',max_seconds_train=180,max_seconds_dev=180,selection='After TRAIN only choose eachbudget lowesttie bestR; DEV ALLfourR profiles frozen now, then report jointlearned minus720 and jointfixed1728 minus leafonlyfixed1728 as separate explanatory comparisons. No oldresults rewritten.',DEV_all_grid=[360,720,1440,1728]);(O/'study.json').write_text(json.dumps(plan,indent=2));print(plan['scope'])
+# Build new runner; preserve executed leaf-only sources.
+s=(R/'results/dev_aux/task1490/tiny_runner_full_orbits.py').read_text(encoding='utf-8-sig');s=s.replace('task1503/study.json','task1521/study.json').replace("else:prices=json.loads((R/'results/dev_aux/task1505/selection.json').read_bytes())['DEV_union']","else:prices=plan['DEV_all_grid']")
+s=s.replace("ini=R/plan['variant_ini']","ini0=R/plan['variant_ini']")
+s=s.replace("e=P.M.start(R/plan['binary'],3,deadline,P.stop)","ini=O/f'variant_R{price}.ini';text=ini0.read_text().replace('r:720',f'r:{price}');ini.write_text(text);e=P.M.start(R/plan['binary'],3,deadline,P.stop)")
+s=s.replace('nativeR 720 nativeN','nativeR {price} nativeN').replace('captureR 720 captureN','captureR {price} captureN').replace("'nativeR':720","'nativeR':price")
+(R/'results/dev_aux/task1490/tiny_runner_native_joint.py').write_text(s)

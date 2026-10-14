@@ -1,0 +1,37 @@
+{
+  "status": "ACTUAL_FULL_GEOMETRIC_ORBIT_OVERLAP_CHECK",
+  "TRAIN_180color_families": 128,
+  "DEV_180color_families": 64,
+  "TRAIN_full_orbits": 114,
+  "DEV_full_orbits": 63,
+  "overlap_full_orbits": 12,
+  "overlap_ids": [
+    42814,
+    43118,
+    43130,
+    43153,
+    43161,
+    43509,
+    43530,
+    45339,
+    45393,
+    45493,
+    46868,
+    46978
+  ],
+  "affected_DEV_families": [
+    130,
+    131,
+    132,
+    135,
+    136,
+    140,
+    151,
+    155,
+    165,
+    167,
+    179,
+    182
+  ],
+  "scope": "Current frozen split only180+colorswap. CompleteD4+color symmetries can crosssplit; preserve executedstudy/training/DEV, downgrade independence claims. New study must split entire orbits beforepricechoices; no posthoc deletingoldDEV or labelingclean."
+}

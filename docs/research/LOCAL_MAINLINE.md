@@ -1,15 +1,16 @@
-# DEV_AUX current scope —2026-10-14 segment46
+# DEV_AUX current scope —2026-10-14 segment47
 
-ScienceOPEN, own sidemission, heartbeatACTIVE; no primary/default/UI writes.
-6656science/6712physicalgames,161449sciencego+1212controlgo+88interface,325perft; allproducersclosed.
-R/B TRAIN16 stillselects1728/720 oldbaseline, noadditionalgain; strictneighbor14/16 reachsamepeak.
-NEW64leafscale half/one/two mixedgain5/64,7/128,1/32; primaryinteractionuncertain; worstsimultaneouslowernegative.
-Fresh512 TRAIN32selectsR3407; main64DEV5/128CIcross0.4096secondary15/256positive butprior1728samegain; actualwall124/175 not8x.
-Identicalselfplay56physical/64logical control matchesold64 and saves250go; random/nonuniform notcompressed.
-Pawnpromotion/EP privateinterface qualified; TRAIN16P/N2 uppergrid, DEV16gain3/64CIcross0,74DEVpromotions, nothumanpawnrecovery.
-EPidentity counterexample: naiveboard+turn false3foldat8plies, properat12; controllerfullhistoryalreadycorrect.
-172exactmembers669947769rawbytes restored; reportSEGMENT_20261014_46.md+COST/QA/archives46.
-Next1470earlylatepawnμ96priceblind roots/1471literal4096/1472native96/1473canonicalTRAIN ready; NOGAMES.
+ScienceOPEN, sidemissiononly, heartbeatACTIVE; no primary/default/UI writes.
+Pawn early/late TRAINP360 failsfreshDEV (-7/128,-3/64,CIcross0); no quantity reward/oldDEVrefit.
+Complete3x3KRN oracle67128states167344edges, independentALLliteral/nativePASS; cheapTRAIN3072go26.5s.
+Initial180color split12fullorbitoverlap retained/downgraded; new128TRAIN/64DEVfullorbits exclude165old.
+R1728/N720 uppergrid selectsall3budgets; onechoicejointbandscross0, notfullhumanprice recovery.
+Wholecoldpolicy vsALLlegalbestresponse gain16:7/128uncertain;64:23/128 and256:1/8 jointlypositive.
+Purepolicy262kgo, explicitWIN-preservingcycles/replays; exactendgamefinisher attribution notpuremature claim.
+Nativejoint exposedmu mechanism keepsR>N; no newvalidation/fullpolicy nativejoint claim.
+301802searchgo+67128perft,1024physicalpawn episodes, allproducersclosed; exactarchives155members.
+Next1530 frozen3x4transfer720/1728, no refit; bound graph/nativeboundary beforequeries, no automaticfullcache.
+Evidence:SEGMENT_20261014_47.md,1529jointpolicy,1526/1528independentresponseproofs,COST/QA/archives47.
 
 # Current local research mainline
 

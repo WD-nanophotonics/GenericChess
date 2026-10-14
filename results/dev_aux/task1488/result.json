@@ -1,0 +1,58 @@
+{
+  "status": "PASS_256_PAWN_TRAIN_PROMOTION_EP_LITERAL_PV_HISTORY_RNG_TERMINAL_LITERAL_PV_HISTORY_RNG_TERMINAL",
+  "counts": {
+    "literal_frontiers": 9037,
+    "tbhits_zero": 57864,
+    "literal_PVmoves": 214651,
+    "go": 7325,
+    "actions": 9037,
+    "randomdraws": 1712
+  },
+  "rows": [
+    {
+      "arm": "P360",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "C": 45,
+        "D": 7,
+        "L": 6,
+        "W": 6
+      },
+      "J48": "0"
+    },
+    {
+      "arm": "P360",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "C": 17,
+        "W": 47
+      },
+      "J48": "47/64"
+    },
+    {
+      "arm": "P720",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "W": 7,
+        "C": 51,
+        "L": 5,
+        "D": 1
+      },
+      "J48": "1/32"
+    },
+    {
+      "arm": "P720",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 52,
+        "C": 12
+      },
+      "J48": "13/16"
+    }
+  ],
+  "new_go": 0
+}

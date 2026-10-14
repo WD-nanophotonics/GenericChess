@@ -1,0 +1,168 @@
+{
+  "status": "TRAIN_ONLY_TRUE_GRAPH_WDL_SELECTOR",
+  "rows": [
+    {
+      "budget": 16,
+      "selected": 1728,
+      "all_best": [
+        1728
+      ],
+      "scores": {
+        "360": "19/64",
+        "720": "107/256",
+        "1440": "137/256",
+        "1728": "71/128"
+      },
+      "paths": [
+        {
+          "start": 360,
+          "end": 1728,
+          "path": [
+            360,
+            720,
+            1440,
+            1728
+          ]
+        },
+        {
+          "start": 720,
+          "end": 1728,
+          "path": [
+            720,
+            1440,
+            1728
+          ]
+        },
+        {
+          "start": 1440,
+          "end": 1728,
+          "path": [
+            1440,
+            1728
+          ]
+        },
+        {
+          "start": 1728,
+          "end": 1728,
+          "path": [
+            1728
+          ]
+        }
+      ],
+      "selector_bootstrap": {
+        "1728": 4780,
+        "1440": 220
+      }
+    },
+    {
+      "budget": 64,
+      "selected": 1728,
+      "all_best": [
+        1728
+      ],
+      "scores": {
+        "360": "95/256",
+        "720": "63/128",
+        "1440": "73/128",
+        "1728": "147/256"
+      },
+      "paths": [
+        {
+          "start": 360,
+          "end": 1728,
+          "path": [
+            360,
+            720,
+            1440,
+            1728
+          ]
+        },
+        {
+          "start": 720,
+          "end": 1728,
+          "path": [
+            720,
+            1440,
+            1728
+          ]
+        },
+        {
+          "start": 1440,
+          "end": 1728,
+          "path": [
+            1440,
+            1728
+          ]
+        },
+        {
+          "start": 1728,
+          "end": 1728,
+          "path": [
+            1728
+          ]
+        }
+      ],
+      "selector_bootstrap": {
+        "1440": 1946,
+        "1728": 3054
+      }
+    },
+    {
+      "budget": 256,
+      "selected": 1440,
+      "all_best": [
+        1440,
+        1728
+      ],
+      "scores": {
+        "360": "17/32",
+        "720": "147/256",
+        "1440": "19/32",
+        "1728": "19/32"
+      },
+      "paths": [
+        {
+          "start": 360,
+          "end": 1440,
+          "path": [
+            360,
+            720,
+            1440
+          ]
+        },
+        {
+          "start": 720,
+          "end": 1440,
+          "path": [
+            720,
+            1440
+          ]
+        },
+        {
+          "start": 1440,
+          "end": 1440,
+          "path": [
+            1440
+          ]
+        },
+        {
+          "start": 1728,
+          "end": 1728,
+          "path": [
+            1728
+          ]
+        }
+      ],
+      "selector_bootstrap": {
+        "1440": 4765,
+        "720": 235
+      }
+    }
+  ],
+  "DEV_union": [
+    720,
+    1440,
+    1728
+  ],
+  "scope": "3separate fixed-budget selectors; global lowesttie not natural convergence. Exact perfect-play continuation WDL; no human reference fitting, DEV not used."
+}

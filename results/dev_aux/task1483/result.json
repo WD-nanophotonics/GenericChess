@@ -1,0 +1,102 @@
+{
+  "status": "PASS_256_PAWN_TRAIN_PROMOTION_EP_LITERAL_PV_HISTORY_RNG_TERMINAL_LITERAL_PV_HISTORY_RNG_TERMINAL",
+  "counts": {
+    "literal_frontiers": 8885,
+    "tbhits_zero": 55263,
+    "literal_PVmoves": 204794,
+    "go": 7042,
+    "actions": 8885,
+    "randomdraws": 1843
+  },
+  "rows": [
+    {
+      "arm": "P180",
+      "opponent": "unit_search",
+      "N": 32,
+      "counts": {
+        "D": 5,
+        "C": 22,
+        "W": 3,
+        "L": 2
+      },
+      "J48": "1/32"
+    },
+    {
+      "arm": "P180",
+      "opponent": "uniform_random",
+      "N": 32,
+      "counts": {
+        "C": 12,
+        "W": 20
+      },
+      "J48": "5/8"
+    },
+    {
+      "arm": "P360",
+      "opponent": "unit_search",
+      "N": 32,
+      "counts": {
+        "C": 24,
+        "W": 3,
+        "L": 1,
+        "D": 4
+      },
+      "J48": "1/16"
+    },
+    {
+      "arm": "P360",
+      "opponent": "uniform_random",
+      "N": 32,
+      "counts": {
+        "W": 24,
+        "C": 8
+      },
+      "J48": "3/4"
+    },
+    {
+      "arm": "P720",
+      "opponent": "unit_search",
+      "N": 32,
+      "counts": {
+        "C": 20,
+        "W": 4,
+        "L": 4,
+        "D": 4
+      },
+      "J48": "0"
+    },
+    {
+      "arm": "P720",
+      "opponent": "uniform_random",
+      "N": 32,
+      "counts": {
+        "C": 9,
+        "W": 23
+      },
+      "J48": "23/32"
+    },
+    {
+      "arm": "P1440",
+      "opponent": "unit_search",
+      "N": 32,
+      "counts": {
+        "D": 4,
+        "C": 20,
+        "W": 4,
+        "L": 4
+      },
+      "J48": "0"
+    },
+    {
+      "arm": "P1440",
+      "opponent": "uniform_random",
+      "N": 32,
+      "counts": {
+        "W": 22,
+        "C": 10
+      },
+      "J48": "11/16"
+    }
+  ],
+  "new_go": 0
+}

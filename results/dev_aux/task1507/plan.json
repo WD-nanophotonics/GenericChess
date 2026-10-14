@@ -1,0 +1,16 @@
+{
+  "question": "Does single-choice exactWDL learning improve entire fixed mature policy against a perfect best response?",
+  "nodes": 16,
+  "prices": [
+    720,
+    1728
+  ],
+  "selected_from_TRAIN": 1728,
+  "primary": "Selected1728 minusfixed720 under full-policy best-response WDL on frozen64DEV fullorbits; secondary TRAIN/descriptive allgraph. Never refit prices on this new objective.",
+  "policy": "Fresh cold single-state search, no history draws; sole legal action mechanical no query. For each candidatecolor fix own graph edges to cached mature choices; opponent retains ALL legal defenses. Exact retrograde WDL of resulting graph, cycles draw. Genuine complete-game policy result, no finite cap/material reward/perfect continuation assumption.",
+  "expected_go": 87680,
+  "expected_seconds": 756,
+  "max_seconds": 3300,
+  "state_count": 67128,
+  "scope": "Small3x3 KRN only, not humanChess/Shogi; leaves/native and other heuristics unchanged. Bounded cached policy extraction avoids playing extremely long games; all partials retained."
+}

@@ -1,0 +1,2342 @@
+{
+  "question": "Can material-only mature search learn R/N from exact true-WDL on tiny3x3 game?",
+  "source_graph": "results/dev_aux/task1495",
+  "rules": "results/dev_aux/task1490/tiny_rules.py",
+  "variant_ini": "results/dev_aux/task1497/variant.ini",
+  "TRAIN_families": 128,
+  "DEV_families": 64,
+  "family_basis": "180degree rotation plus colorswap, pair retained across split; shuffled before prices with seed2026610000",
+  "mu": "Full KR NvKR N stock, at least2legal and exactchildWDL conflict, no immediate winningmate. Label-based selection is declared distribution; never candidate/humanprice based.",
+  "R_grid": [
+    360,
+    720,
+    1440,
+    1728
+  ],
+  "N_fixed": 720,
+  "nodes": [
+    16,
+    64,
+    256
+  ],
+  "nativePNBR": 720,
+  "Q_fixed": 1664,
+  "objective": "Mean exact -WDL(child selected by mature engine); perfect-play continuation. This is proved finite-game WDL afteronechoice, not selfplay empirical winrate or humanChessvalue.",
+  "selection": "Independent TRAIN-only global lowesttie at each of3declared budgets; strict adjacent paths reported. DEV fixed union three selectedR plus720 dedup then allthreebudgets; primary eachbudgetownminus720, simultaneous across3; noDEVfit/extension.",
+  "max_seconds_train": 300,
+  "max_seconds_dev": 300,
+  "binary": ".local_agent/leaf-rnbp-46/fairy-leaf-rnb.exe",
+  "binary_sha256": "0263e8d6e9677b82e179c0d1a61ea5080df3275aba3464569e040eb222a20fe9",
+  "families": [
+    {
+      "family": 0,
+      "phase": "TRAIN",
+      "state_ids": [
+        45344,
+        45763
+      ],
+      "fens": [
+        "n1k/Nr1/KR1 b - - 0 1",
+        "1rk/1Rn/K1N w - - 0 1"
+      ]
+    },
+    {
+      "family": 1,
+      "phase": "TRAIN",
+      "state_ids": [
+        43739,
+        52198
+      ],
+      "fens": [
+        "k2/Nn1/KRr b - - 0 1",
+        "Rrk/1Nn/2K w - - 0 1"
+      ]
+    },
+    {
+      "family": 2,
+      "phase": "TRAIN",
+      "state_ids": [
+        58825,
+        58875
+      ],
+      "fens": [
+        "KnN/Rr1/2k w - - 0 1",
+        "K2/1Rr/nNk b - - 0 1"
+      ]
+    },
+    {
+      "family": 3,
+      "phase": "TRAIN",
+      "state_ids": [
+        58336,
+        62703
+      ],
+      "fens": [
+        "KRn/1rN/1k1 b - - 0 1",
+        "1K1/nR1/Nrk w - - 0 1"
+      ]
+    },
+    {
+      "family": 4,
+      "phase": "TRAIN",
+      "state_ids": [
+        48510,
+        67106
+      ],
+      "fens": [
+        "3/NRn/krK w - - 0 1",
+        "kRK/Nrn/3 b - - 0 1"
+      ]
+    },
+    {
+      "family": 5,
+      "phase": "TRAIN",
+      "state_ids": [
+        52331,
+        59295
+      ],
+      "fens": [
+        "1nr/K2/RNk b - - 0 1",
+        "Knr/2k/RN1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 6,
+      "phase": "TRAIN",
+      "state_ids": [
+        46454,
+        50737
+      ],
+      "fens": [
+        "k1r/NRn/1K1 b - - 0 1",
+        "1k1/Nrn/R1K w - - 0 1"
+      ]
+    },
+    {
+      "family": 7,
+      "phase": "TRAIN",
+      "state_ids": [
+        50275,
+        50518
+      ],
+      "fens": [
+        "k2/rR1/NnK b - - 0 1",
+        "kNn/1rR/2K w - - 0 1"
+      ]
+    },
+    {
+      "family": 8,
+      "phase": "TRAIN",
+      "state_ids": [
+        52809,
+        60050
+      ],
+      "fens": [
+        "R1N/Kn1/r1k w - - 0 1",
+        "K1R/1Nk/n1r b - - 0 1"
+      ]
+    },
+    {
+      "family": 9,
+      "phase": "TRAIN",
+      "state_ids": [
+        52577,
+        59437
+      ],
+      "fens": [
+        "N1r/KR1/n1k b - - 0 1",
+        "K1N/1rk/R1n w - - 0 1"
+      ]
+    },
+    {
+      "family": 10,
+      "phase": "TRAIN",
+      "state_ids": [
+        55541,
+        55760
+      ],
+      "fens": [
+        "Nn1/krK/1R1 w - - 0 1",
+        "1r1/kRK/1Nn b - - 0 1"
+      ]
+    },
+    {
+      "family": 11,
+      "phase": "TRAIN",
+      "state_ids": [
+        45150,
+        48336
+      ],
+      "fens": [
+        "Nk1/1nR/Kr1 w - - 0 1",
+        "1Rk/rN1/1Kn b - - 0 1"
+      ]
+    },
+    {
+      "family": 12,
+      "phase": "TRAIN",
+      "state_ids": [
+        58816,
+        59102
+      ],
+      "fens": [
+        "K1N/Rn1/1rk w - - 0 1",
+        "KR1/1Nr/n1k b - - 0 1"
+      ]
+    },
+    {
+      "family": 13,
+      "phase": "TRAIN",
+      "state_ids": [
+        48726,
+        66516
+      ],
+      "fens": [
+        "Nr1/1nR/k1K w - - 0 1",
+        "k1K/rN1/1Rn b - - 0 1"
+      ]
+    },
+    {
+      "family": 14,
+      "phase": "TRAIN",
+      "state_ids": [
+        48782,
+        66991
+      ],
+      "fens": [
+        "R2/r1n/kNK b - - 0 1",
+        "knK/N1R/2r w - - 0 1"
+      ]
+    },
+    {
+      "family": 15,
+      "phase": "TRAIN",
+      "state_ids": [
+        58820,
+        59058
+      ],
+      "fens": [
+        "KnN/R2/1rk b - - 0 1",
+        "KR1/2r/nNk w - - 0 1"
+      ]
+    },
+    {
+      "family": 16,
+      "phase": "TRAIN",
+      "state_ids": [
+        54971,
+        66054
+      ],
+      "fens": [
+        "2N/rRK/k1n b - - 0 1",
+        "N1K/krR/n2 w - - 0 1"
+      ]
+    },
+    {
+      "family": 17,
+      "phase": "TRAIN",
+      "state_ids": [
+        44939,
+        48303
+      ],
+      "fens": [
+        "Nk1/R2/Knr w - - 0 1",
+        "RNk/2r/1Kn b - - 0 1"
+      ]
+    },
+    {
+      "family": 18,
+      "phase": "TRAIN",
+      "state_ids": [
+        63510,
+        63640
+      ],
+      "fens": [
+        "2K/r1R/kNn b - - 0 1",
+        "NnK/r1R/k2 w - - 0 1"
+      ]
+    },
+    {
+      "family": 19,
+      "phase": "TRAIN",
+      "state_ids": [
+        55105,
+        65829
+      ],
+      "fens": [
+        "rR1/n1K/kN1 w - - 0 1",
+        "1nK/k1N/1rR b - - 0 1"
+      ]
+    },
+    {
+      "family": 20,
+      "phase": "TRAIN",
+      "state_ids": [
+        44202,
+        51718
+      ],
+      "fens": [
+        "krN/nR1/K2 b - - 0 1",
+        "2k/1rN/nRK w - - 0 1"
+      ]
+    },
+    {
+      "family": 21,
+      "phase": "TRAIN",
+      "state_ids": [
+        49683,
+        56443
+      ],
+      "fens": [
+        "rR1/k1n/1NK b - - 0 1",
+        "kn1/N1K/1rR w - - 0 1"
+      ]
+    },
+    {
+      "family": 22,
+      "phase": "TRAIN",
+      "state_ids": [
+        53198,
+        53739
+      ],
+      "fens": [
+        "1N1/K1k/Rrn w - - 0 1",
+        "NRr/K1k/1n1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 23,
+      "phase": "TRAIN",
+      "state_ids": [
+        58676,
+        59107
+      ],
+      "fens": [
+        "K2/Rn1/Nrk w - - 0 1",
+        "KRn/1Nr/2k b - - 0 1"
+      ]
+    },
+    {
+      "family": 24,
+      "phase": "TRAIN",
+      "state_ids": [
+        45310,
+        47920
+      ],
+      "fens": [
+        "NkR/n1r/K2 b - - 0 1",
+        "2k/R1N/rKn w - - 0 1"
+      ]
+    },
+    {
+      "family": 25,
+      "phase": "TRAIN",
+      "state_ids": [
+        45431,
+        45665
+      ],
+      "fens": [
+        "N1k/n1r/KR1 w - - 0 1",
+        "1rk/R1N/K1n b - - 0 1"
+      ]
+    },
+    {
+      "family": 26,
+      "phase": "TRAIN",
+      "state_ids": [
+        55021,
+        66307
+      ],
+      "fens": [
+        "R2/N1K/krn b - - 0 1",
+        "NRK/k1n/2r w - - 0 1"
+      ]
+    },
+    {
+      "family": 27,
+      "phase": "TRAIN",
+      "state_ids": [
+        48811,
+        66553
+      ],
+      "fens": [
+        "Rr1/N2/knK w - - 0 1",
+        "kNK/2n/1Rr b - - 0 1"
+      ]
+    },
+    {
+      "family": 28,
+      "phase": "TRAIN",
+      "state_ids": [
+        57733,
+        64985
+      ],
+      "fens": [
+        "KNR/2r/k1n b - - 0 1",
+        "N1K/R2/rnk w - - 0 1"
+      ]
+    },
+    {
+      "family": 29,
+      "phase": "TRAIN",
+      "state_ids": [
+        49917,
+        56743
+      ],
+      "fens": [
+        "N1R/kr1/n1K b - - 0 1",
+        "k1N/1RK/r1n w - - 0 1"
+      ]
+    },
+    {
+      "family": 30,
+      "phase": "TRAIN",
+      "state_ids": [
+        50088,
+        50661
+      ],
+      "fens": [
+        "k2/Nn1/rRK b - - 0 1",
+        "krR/1Nn/2K w - - 0 1"
+      ]
+    },
+    {
+      "family": 31,
+      "phase": "TRAIN",
+      "state_ids": [
+        43963,
+        52084
+      ],
+      "fens": [
+        "kN1/1r1/KnR b - - 0 1",
+        "rNk/1R1/1nK w - - 0 1"
+      ]
+    },
+    {
+      "family": 32,
+      "phase": "TRAIN",
+      "state_ids": [
+        57863,
+        62583
+      ],
+      "fens": [
+        "Kn1/R1r/Nk1 w - - 0 1",
+        "1Kn/R1r/1Nk b - - 0 1"
+      ]
+    },
+    {
+      "family": 33,
+      "phase": "TRAIN",
+      "state_ids": [
+        43653,
+        54230
+      ],
+      "fens": [
+        "rRN/2k/Kn1 w - - 0 1",
+        "1Nk/K2/nrR b - - 0 1"
+      ]
+    },
+    {
+      "family": 34,
+      "phase": "TRAIN",
+      "state_ids": [
+        44462,
+        51677
+      ],
+      "fens": [
+        "krR/Nn1/K2 w - - 0 1",
+        "2k/1Nn/rRK b - - 0 1"
+      ]
+    },
+    {
+      "family": 35,
+      "phase": "TRAIN",
+      "state_ids": [
+        46995,
+        47089
+      ],
+      "fens": [
+        "rkN/n2/RK1 b - - 0 1",
+        "1kr/2N/nKR w - - 0 1"
+      ]
+    },
+    {
+      "family": 36,
+      "phase": "TRAIN",
+      "state_ids": [
+        63241,
+        63527
+      ],
+      "fens": [
+        "1nK/r2/kNR b - - 0 1",
+        "rnK/2R/kN1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 37,
+      "phase": "TRAIN",
+      "state_ids": [
+        48787,
+        66850
+      ],
+      "fens": [
+        "R2/1rn/kNK b - - 0 1",
+        "knK/NR1/2r w - - 0 1"
+      ]
+    },
+    {
+      "family": 38,
+      "phase": "TRAIN",
+      "state_ids": [
+        42446,
+        60608
+      ],
+      "fens": [
+        "2N/1Rr/Knk b - - 0 1",
+        "KNk/Rr1/n2 w - - 0 1"
+      ]
+    },
+    {
+      "family": 39,
+      "phase": "TRAIN",
+      "state_ids": [
+        42583,
+        60203
+      ],
+      "fens": [
+        "Rrn/1N1/K1k w - - 0 1",
+        "K1k/1n1/NRr b - - 0 1"
+      ]
+    },
+    {
+      "family": 40,
+      "phase": "TRAIN",
+      "state_ids": [
+        62040,
+        62211
+      ],
+      "fens": [
+        "1K1/nNR/1kr w - - 0 1",
+        "RK1/rnN/1k1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 41,
+      "phase": "TRAIN",
+      "state_ids": [
+        58496,
+        62735
+      ],
+      "fens": [
+        "KnR/1rN/1k1 b - - 0 1",
+        "1K1/nR1/rNk w - - 0 1"
+      ]
+    },
+    {
+      "family": 42,
+      "phase": "TRAIN",
+      "state_ids": [
+        46190,
+        51476
+      ],
+      "fens": [
+        "k2/Nn1/rKR w - - 0 1",
+        "rkR/1Nn/2K b - - 0 1"
+      ]
+    },
+    {
+      "family": 43,
+      "phase": "TRAIN",
+      "state_ids": [
+        49032,
+        67009
+      ],
+      "fens": [
+        "2R/rn1/kNK w - - 0 1",
+        "knK/1NR/r2 b - - 0 1"
+      ]
+    },
+    {
+      "family": 44,
+      "phase": "TRAIN",
+      "state_ids": [
+        44662,
+        47793
+      ],
+      "fens": [
+        "rk1/n2/KNR w - - 0 1",
+        "rnk/2N/1KR b - - 0 1"
+      ]
+    },
+    {
+      "family": 45,
+      "phase": "TRAIN",
+      "state_ids": [
+        55746,
+        55866
+      ],
+      "fens": [
+        "2n/kRK/Nr1 b - - 0 1",
+        "1Rn/krK/N2 w - - 0 1"
+      ]
+    },
+    {
+      "family": 46,
+      "phase": "TRAIN",
+      "state_ids": [
+        44703,
+        47625
+      ],
+      "fens": [
+        "1kr/Nn1/K1R b - - 0 1",
+        "r1k/1Nn/RK1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 47,
+      "phase": "TRAIN",
+      "state_ids": [
+        58615,
+        59067
+      ],
+      "fens": [
+        "KnN/3/Rrk w - - 0 1",
+        "KRr/3/nNk b - - 0 1"
+      ]
+    },
+    {
+      "family": 48,
+      "phase": "TRAIN",
+      "state_ids": [
+        54894,
+        66101
+      ],
+      "fens": [
+        "1n1/NRK/k1r w - - 0 1",
+        "R1K/krn/1N1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 49,
+      "phase": "TRAIN",
+      "state_ids": [
+        55033,
+        65947
+      ],
+      "fens": [
+        "R2/NrK/k1n w - - 0 1",
+        "N1K/kRn/2r b - - 0 1"
+      ]
+    },
+    {
+      "family": 50,
+      "phase": "TRAIN",
+      "state_ids": [
+        43082,
+        54082
+      ],
+      "fens": [
+        "1rN/n1k/KR1 b - - 0 1",
+        "1rk/K1N/nR1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 51,
+      "phase": "TRAIN",
+      "state_ids": [
+        55854,
+        55925
+      ],
+      "fens": [
+        "1R1/knK/Nr1 w - - 0 1",
+        "1Rn/kNK/1r1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 52,
+      "phase": "TRAIN",
+      "state_ids": [
+        52512,
+        59453
+      ],
+      "fens": [
+        "1rn/KR1/1Nk w - - 0 1",
+        "Kn1/1rk/NR1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 53,
+      "phase": "TRAIN",
+      "state_ids": [
+        42553,
+        60739
+      ],
+      "fens": [
+        "R2/Nr1/Knk b - - 0 1",
+        "KNk/1Rn/2r w - - 0 1"
+      ]
+    },
+    {
+      "family": 54,
+      "phase": "TRAIN",
+      "state_ids": [
+        42528,
+        60712
+      ],
+      "fens": [
+        "R2/nr1/KNk b - - 0 1",
+        "Knk/1RN/2r w - - 0 1"
+      ]
+    },
+    {
+      "family": 55,
+      "phase": "TRAIN",
+      "state_ids": [
+        46978,
+        47372
+      ],
+      "fens": [
+        "1kN/r1n/RK1 w - - 0 1",
+        "1kr/N1R/nK1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 56,
+      "phase": "TRAIN",
+      "state_ids": [
+        57958,
+        62752
+      ],
+      "fens": [
+        "Kn1/RrN/1k1 w - - 0 1",
+        "1K1/nRr/1Nk b - - 0 1"
+      ]
+    },
+    {
+      "family": 57,
+      "phase": "TRAIN",
+      "state_ids": [
+        46480,
+        51272
+      ],
+      "fens": [
+        "kN1/rRn/1K1 b - - 0 1",
+        "1k1/NrR/1nK w - - 0 1"
+      ]
+    },
+    {
+      "family": 58,
+      "phase": "TRAIN",
+      "state_ids": [
+        46217,
+        50722
+      ],
+      "fens": [
+        "knr/N2/1KR b - - 0 1",
+        "rk1/2n/RNK w - - 0 1"
+      ]
+    },
+    {
+      "family": 59,
+      "phase": "TRAIN",
+      "state_ids": [
+        61269,
+        64349
+      ],
+      "fens": [
+        "1K1/rnR/k1N w - - 0 1",
+        "n1K/rNR/1k1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 60,
+      "phase": "TRAIN",
+      "state_ids": [
+        49026,
+        66685
+      ],
+      "fens": [
+        "rRN/3/knK b - - 0 1",
+        "kNK/3/nrR w - - 0 1"
+      ]
+    },
+    {
+      "family": 61,
+      "phase": "TRAIN",
+      "state_ids": [
+        42757,
+        60114
+      ],
+      "fens": [
+        "1Rr/1nN/K1k b - - 0 1",
+        "K1k/nN1/Rr1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 62,
+      "phase": "TRAIN",
+      "state_ids": [
+        46801,
+        51016
+      ],
+      "fens": [
+        "knR/1Nr/1K1 w - - 0 1",
+        "1k1/Rn1/rNK b - - 0 1"
+      ]
+    },
+    {
+      "family": 63,
+      "phase": "TRAIN",
+      "state_ids": [
+        52724,
+        59525
+      ],
+      "fens": [
+        "Rr1/Kn1/1Nk w - - 0 1",
+        "Kn1/1Nk/1Rr b - - 0 1"
+      ]
+    },
+    {
+      "family": 64,
+      "phase": "TRAIN",
+      "state_ids": [
+        49645,
+        56509
+      ],
+      "fens": [
+        "rR1/k2/NnK w - - 0 1",
+        "kNn/2K/1rR b - - 0 1"
+      ]
+    },
+    {
+      "family": 65,
+      "phase": "TRAIN",
+      "state_ids": [
+        53075,
+        59516
+      ],
+      "fens": [
+        "1rR/KnN/2k b - - 0 1",
+        "K2/nNk/rR1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 66,
+      "phase": "TRAIN",
+      "state_ids": [
+        61089,
+        64015
+      ],
+      "fens": [
+        "rK1/1R1/kNn w - - 0 1",
+        "NnK/1r1/1kR b - - 0 1"
+      ]
+    },
+    {
+      "family": 67,
+      "phase": "TRAIN",
+      "state_ids": [
+        49966,
+        50423
+      ],
+      "fens": [
+        "k1n/r2/RNK b - - 0 1",
+        "knr/2R/N1K w - - 0 1"
+      ]
+    },
+    {
+      "family": 68,
+      "phase": "TRAIN",
+      "state_ids": [
+        57569,
+        64752
+      ],
+      "fens": [
+        "KRr/1nN/k2 b - - 0 1",
+        "2K/nN1/Rrk w - - 0 1"
+      ]
+    },
+    {
+      "family": 69,
+      "phase": "TRAIN",
+      "state_ids": [
+        50228,
+        50655
+      ],
+      "fens": [
+        "k2/Rn1/rNK b - - 0 1",
+        "knR/1Nr/2K w - - 0 1"
+      ]
+    },
+    {
+      "family": 70,
+      "phase": "TRAIN",
+      "state_ids": [
+        63354,
+        63678
+      ],
+      "fens": [
+        "1nK/R1N/k1r b - - 0 1",
+        "R1K/n1r/kN1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 71,
+      "phase": "TRAIN",
+      "state_ids": [
+        50232,
+        50317
+      ],
+      "fens": [
+        "k2/Rrn/1NK b - - 0 1",
+        "kn1/NRr/2K w - - 0 1"
+      ]
+    },
+    {
+      "family": 72,
+      "phase": "TRAIN",
+      "state_ids": [
+        49491,
+        56268
+      ],
+      "fens": [
+        "nr1/k1R/1NK b - - 0 1",
+        "kn1/r1K/1RN w - - 0 1"
+      ]
+    },
+    {
+      "family": 73,
+      "phase": "TRAIN",
+      "state_ids": [
+        59150,
+        59151
+      ],
+      "fens": [
+        "KRN/3/nrk w - - 0 1",
+        "KRN/3/nrk b - - 0 1"
+      ]
+    },
+    {
+      "family": 74,
+      "phase": "TRAIN",
+      "state_ids": [
+        44688,
+        47909
+      ],
+      "fens": [
+        "1k1/Nnr/K1R b - - 0 1",
+        "r1k/RNn/1K1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 75,
+      "phase": "TRAIN",
+      "state_ids": [
+        57548,
+        64963
+      ],
+      "fens": [
+        "KR1/nNr/k2 b - - 0 1",
+        "2K/RnN/1rk w - - 0 1"
+      ]
+    },
+    {
+      "family": 76,
+      "phase": "TRAIN",
+      "state_ids": [
+        44976,
+        48150
+      ],
+      "fens": [
+        "1kN/Rr1/Kn1 b - - 0 1",
+        "1Nk/1Rr/nK1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 77,
+      "phase": "TRAIN",
+      "state_ids": [
+        52499,
+        59679
+      ],
+      "fens": [
+        "1n1/KRr/1Nk w - - 0 1",
+        "Kn1/Rrk/1N1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 78,
+      "phase": "TRAIN",
+      "state_ids": [
+        57328,
+        64721
+      ],
+      "fens": [
+        "Knr/2R/k1N w - - 0 1",
+        "n1K/r2/RNk b - - 0 1"
+      ]
+    },
+    {
+      "family": 79,
+      "phase": "TRAIN",
+      "state_ids": [
+        46608,
+        50703
+      ],
+      "fens": [
+        "knr/N1R/1K1 w - - 0 1",
+        "1k1/r1n/RNK b - - 0 1"
+      ]
+    },
+    {
+      "family": 80,
+      "phase": "TRAIN",
+      "state_ids": [
+        45810,
+        45900
+      ],
+      "fens": [
+        "N1k/rR1/Kn1 w - - 0 1",
+        "1Nk/1rR/K1n b - - 0 1"
+      ]
+    },
+    {
+      "family": 81,
+      "phase": "TRAIN",
+      "state_ids": [
+        49100,
+        66944
+      ],
+      "fens": [
+        "n1R/rN1/k1K w - - 0 1",
+        "k1K/1nR/r1N b - - 0 1"
+      ]
+    },
+    {
+      "family": 82,
+      "phase": "TRAIN",
+      "state_ids": [
+        46368,
+        51276
+      ],
+      "fens": [
+        "k2/rRn/NK1 b - - 0 1",
+        "1kn/NrR/2K w - - 0 1"
+      ]
+    },
+    {
+      "family": 83,
+      "phase": "TRAIN",
+      "state_ids": [
+        49553,
+        56731
+      ],
+      "fens": [
+        "1N1/krR/1nK b - - 0 1",
+        "kN1/rRK/1n1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 84,
+      "phase": "TRAIN",
+      "state_ids": [
+        43644,
+        54427
+      ],
+      "fens": [
+        "nRN/r1k/K2 w - - 0 1",
+        "2k/K1R/nrN b - - 0 1"
+      ]
+    },
+    {
+      "family": 85,
+      "phase": "TRAIN",
+      "state_ids": [
+        61772,
+        62189
+      ],
+      "fens": [
+        "1K1/Rn1/Nkr w - - 0 1",
+        "RKn/1Nr/1k1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 86,
+      "phase": "TRAIN",
+      "state_ids": [
+        46446,
+        50898
+      ],
+      "fens": [
+        "kr1/NRn/1K1 w - - 0 1",
+        "1k1/Nrn/1RK b - - 0 1"
+      ]
+    },
+    {
+      "family": 87,
+      "phase": "TRAIN",
+      "state_ids": [
+        45468,
+        45603
+      ],
+      "fens": [
+        "nNk/2r/KR1 b - - 0 1",
+        "1rk/R2/KnN w - - 0 1"
+      ]
+    },
+    {
+      "family": 88,
+      "phase": "TRAIN",
+      "state_ids": [
+        44123,
+        51916
+      ],
+      "fens": [
+        "k2/NRr/K1n w - - 0 1",
+        "N1k/Rrn/2K b - - 0 1"
+      ]
+    },
+    {
+      "family": 89,
+      "phase": "TRAIN",
+      "state_ids": [
+        61232,
+        64013
+      ],
+      "fens": [
+        "rKN/1R1/k1n w - - 0 1",
+        "N1K/1r1/nkR b - - 0 1"
+      ]
+    },
+    {
+      "family": 90,
+      "phase": "TRAIN",
+      "state_ids": [
+        43790,
+        51733
+      ],
+      "fens": [
+        "kr1/nN1/KR1 b - - 0 1",
+        "1rk/1nN/1RK w - - 0 1"
+      ]
+    },
+    {
+      "family": 91,
+      "phase": "TRAIN",
+      "state_ids": [
+        62139,
+        62303
+      ],
+      "fens": [
+        "RK1/N1n/rk1 w - - 0 1",
+        "1KR/N1n/1kr b - - 0 1"
+      ]
+    },
+    {
+      "family": 92,
+      "phase": "TRAIN",
+      "state_ids": [
+        61069,
+        64488
+      ],
+      "fens": [
+        "1K1/1Rn/kNr w - - 0 1",
+        "RnK/Nr1/1k1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 93,
+      "phase": "TRAIN",
+      "state_ids": [
+        42538,
+        60465
+      ],
+      "fens": [
+        "R1n/2r/KNk w - - 0 1",
+        "Knk/R2/N1r b - - 0 1"
+      ]
+    },
+    {
+      "family": 94,
+      "phase": "TRAIN",
+      "state_ids": [
+        61365,
+        64186
+      ],
+      "fens": [
+        "NKn/1rR/k2 w - - 0 1",
+        "2K/rR1/Nkn b - - 0 1"
+      ]
+    },
+    {
+      "family": 95,
+      "phase": "TRAIN",
+      "state_ids": [
+        45393,
+        45826
+      ],
+      "fens": [
+        "2k/1rN/KRn w - - 0 1",
+        "Nrk/nR1/K2 b - - 0 1"
+      ]
+    },
+    {
+      "family": 96,
+      "phase": "TRAIN",
+      "state_ids": [
+        44531,
+        48134
+      ],
+      "fens": [
+        "1k1/Nr1/KRn w - - 0 1",
+        "Nrk/1Rn/1K1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 97,
+      "phase": "TRAIN",
+      "state_ids": [
+        43026,
+        54522
+      ],
+      "fens": [
+        "1N1/1nk/KRr b - - 0 1",
+        "Rrk/KN1/1n1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 98,
+      "phase": "TRAIN",
+      "state_ids": [
+        50313,
+        50572
+      ],
+      "fens": [
+        "kn1/NR1/1rK w - - 0 1",
+        "kR1/1rn/1NK b - - 0 1"
+      ]
+    },
+    {
+      "family": 99,
+      "phase": "TRAIN",
+      "state_ids": [
+        45115,
+        47701
+      ],
+      "fens": [
+        "1kr/N1R/Kn1 b - - 0 1",
+        "1Nk/r1n/RK1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 100,
+      "phase": "TRAIN",
+      "state_ids": [
+        53062,
+        59822
+      ],
+      "fens": [
+        "2R/KrN/n1k w - - 0 1",
+        "K1N/nRk/r2 b - - 0 1"
+      ]
+    },
+    {
+      "family": 101,
+      "phase": "TRAIN",
+      "state_ids": [
+        46097,
+        51354
+      ],
+      "fens": [
+        "k2/rN1/RKn b - - 0 1",
+        "Nkr/1nR/2K w - - 0 1"
+      ]
+    },
+    {
+      "family": 102,
+      "phase": "TRAIN",
+      "state_ids": [
+        43185,
+        54018
+      ],
+      "fens": [
+        "nr1/R1k/K1N b - - 0 1",
+        "n1k/K1r/1RN w - - 0 1"
+      ]
+    },
+    {
+      "family": 103,
+      "phase": "TRAIN",
+      "state_ids": [
+        57509,
+        65130
+      ],
+      "fens": [
+        "KR1/Nr1/k1n w - - 0 1",
+        "N1K/1Rn/1rk b - - 0 1"
+      ]
+    },
+    {
+      "family": 104,
+      "phase": "TRAIN",
+      "state_ids": [
+        55544,
+        55545
+      ],
+      "fens": [
+        "Nr1/k1K/1Rn w - - 0 1",
+        "Nr1/k1K/1Rn b - - 0 1"
+      ]
+    },
+    {
+      "family": 105,
+      "phase": "TRAIN",
+      "state_ids": [
+        44648,
+        48094
+      ],
+      "fens": [
+        "1k1/nr1/KNR b - - 0 1",
+        "rnk/1RN/1K1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 106,
+      "phase": "TRAIN",
+      "state_ids": [
+        43153,
+        54303
+      ],
+      "fens": [
+        "n2/Rrk/KN1 b - - 0 1",
+        "1nk/KRr/2N w - - 0 1"
+      ]
+    },
+    {
+      "family": 107,
+      "phase": "TRAIN",
+      "state_ids": [
+        49488,
+        56383
+      ],
+      "fens": [
+        "1r1/k1R/nNK b - - 0 1",
+        "knN/r1K/1R1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 108,
+      "phase": "TRAIN",
+      "state_ids": [
+        52311,
+        59684
+      ],
+      "fens": [
+        "1n1/K1r/RNk w - - 0 1",
+        "Knr/R1k/1N1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 109,
+      "phase": "TRAIN",
+      "state_ids": [
+        44911,
+        48155
+      ],
+      "fens": [
+        "1k1/RrN/Kn1 w - - 0 1",
+        "1Nk/nRr/1K1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 110,
+      "phase": "TRAIN",
+      "state_ids": [
+        48611,
+        67029
+      ],
+      "fens": [
+        "3/rnR/kNK w - - 0 1",
+        "knK/rNR/3 b - - 0 1"
+      ]
+    },
+    {
+      "family": 111,
+      "phase": "TRAIN",
+      "state_ids": [
+        49242,
+        56431
+      ],
+      "fens": [
+        "rn1/k2/NRK w - - 0 1",
+        "krn/2K/1NR b - - 0 1"
+      ]
+    },
+    {
+      "family": 112,
+      "phase": "TRAIN",
+      "state_ids": [
+        44120,
+        52157
+      ],
+      "fens": [
+        "k1n/NR1/K1r w - - 0 1",
+        "R1k/1rn/N1K b - - 0 1"
+      ]
+    },
+    {
+      "family": 113,
+      "phase": "TRAIN",
+      "state_ids": [
+        57373,
+        65257
+      ],
+      "fens": [
+        "Kn1/1NR/k1r b - - 0 1",
+        "R1K/rn1/1Nk w - - 0 1"
+      ]
+    },
+    {
+      "family": 114,
+      "phase": "TRAIN",
+      "state_ids": [
+        58358,
+        62950
+      ],
+      "fens": [
+        "KnR/3/Nkr w - - 0 1",
+        "RKn/3/rNk b - - 0 1"
+      ]
+    },
+    {
+      "family": 115,
+      "phase": "TRAIN",
+      "state_ids": [
+        63340,
+        63393
+      ],
+      "fens": [
+        "1nK/Rr1/k1N b - - 0 1",
+        "n1K/1Rr/kN1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 116,
+      "phase": "TRAIN",
+      "state_ids": [
+        43954,
+        52294
+      ],
+      "fens": [
+        "kN1/n2/KrR w - - 0 1",
+        "rRk/2N/1nK b - - 0 1"
+      ]
+    },
+    {
+      "family": 117,
+      "phase": "TRAIN",
+      "state_ids": [
+        46475,
+        51376
+      ],
+      "fens": [
+        "kN1/rR1/nK1 w - - 0 1",
+        "1kN/1rR/1nK b - - 0 1"
+      ]
+    },
+    {
+      "family": 118,
+      "phase": "TRAIN",
+      "state_ids": [
+        54766,
+        65723
+      ],
+      "fens": [
+        "1rN/2K/knR w - - 0 1",
+        "rNK/k2/nR1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 119,
+      "phase": "TRAIN",
+      "state_ids": [
+        57678,
+        64989
+      ],
+      "fens": [
+        "K1R/N1r/k1n w - - 0 1",
+        "N1K/R1n/r1k b - - 0 1"
+      ]
+    },
+    {
+      "family": 120,
+      "phase": "TRAIN",
+      "state_ids": [
+        55059,
+        65984
+      ],
+      "fens": [
+        "Rn1/rNK/k2 b - - 0 1",
+        "2K/knR/1Nr w - - 0 1"
+      ]
+    },
+    {
+      "family": 121,
+      "phase": "TRAIN",
+      "state_ids": [
+        43436,
+        53980
+      ],
+      "fens": [
+        "Rrn/1Nk/K2 w - - 0 1",
+        "2k/Kn1/NRr b - - 0 1"
+      ]
+    },
+    {
+      "family": 122,
+      "phase": "TRAIN",
+      "state_ids": [
+        61067,
+        64553
+      ],
+      "fens": [
+        "1K1/nR1/kNr w - - 0 1",
+        "RnK/1rN/1k1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 123,
+      "phase": "TRAIN",
+      "state_ids": [
+        43618,
+        53921
+      ],
+      "fens": [
+        "1Rr/1Nk/K1n b - - 0 1",
+        "N1k/Kn1/Rr1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 124,
+      "phase": "TRAIN",
+      "state_ids": [
+        46444,
+        50979
+      ],
+      "fens": [
+        "kr1/NR1/1Kn w - - 0 1",
+        "Nk1/1rn/1RK b - - 0 1"
+      ]
+    },
+    {
+      "family": 125,
+      "phase": "TRAIN",
+      "state_ids": [
+        52356,
+        59903
+      ],
+      "fens": [
+        "n2/K1N/Rrk b - - 0 1",
+        "KRr/n1k/2N w - - 0 1"
+      ]
+    },
+    {
+      "family": 126,
+      "phase": "TRAIN",
+      "state_ids": [
+        57375,
+        65228
+      ],
+      "fens": [
+        "K1n/1NR/k1r b - - 0 1",
+        "R1K/rn1/N1k w - - 0 1"
+      ]
+    },
+    {
+      "family": 127,
+      "phase": "TRAIN",
+      "state_ids": [
+        57692,
+        65419
+      ],
+      "fens": [
+        "K1R/1Nn/kr1 w - - 0 1",
+        "1RK/Nn1/r1k b - - 0 1"
+      ]
+    },
+    {
+      "family": 128,
+      "phase": "DEV",
+      "state_ids": [
+        52401,
+        59936
+      ],
+      "fens": [
+        "2N/K1n/Rrk b - - 0 1",
+        "KRr/N1k/n2 w - - 0 1"
+      ]
+    },
+    {
+      "family": 129,
+      "phase": "DEV",
+      "state_ids": [
+        44510,
+        51903
+      ],
+      "fens": [
+        "kNR/2r/K1n w - - 0 1",
+        "N1k/R2/rnK b - - 0 1"
+      ]
+    },
+    {
+      "family": 130,
+      "phase": "DEV",
+      "state_ids": [
+        55335,
+        65702
+      ],
+      "fens": [
+        "1rR/N1K/kn1 w - - 0 1",
+        "1NK/k1n/rR1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 131,
+      "phase": "DEV",
+      "state_ids": [
+        48818,
+        66416
+      ],
+      "fens": [
+        "Rrn/N2/k1K b - - 0 1",
+        "k1K/2n/NRr w - - 0 1"
+      ]
+    },
+    {
+      "family": 132,
+      "phase": "DEV",
+      "state_ids": [
+        58576,
+        59003
+      ],
+      "fens": [
+        "K2/rN1/Rnk w - - 0 1",
+        "KNr/1nR/2k b - - 0 1"
+      ]
+    },
+    {
+      "family": 133,
+      "phase": "DEV",
+      "state_ids": [
+        44003,
+        51856
+      ],
+      "fens": [
+        "k1N/1nr/K1R b - - 0 1",
+        "r1k/RN1/n1K w - - 0 1"
+      ]
+    },
+    {
+      "family": 134,
+      "phase": "DEV",
+      "state_ids": [
+        43619,
+        53892
+      ],
+      "fens": [
+        "1Rr/nNk/K2 w - - 0 1",
+        "2k/KnN/Rr1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 135,
+      "phase": "DEV",
+      "state_ids": [
+        53234,
+        53607
+      ],
+      "fens": [
+        "2N/K1k/Rnr b - - 0 1",
+        "RNr/K1k/n2 w - - 0 1"
+      ]
+    },
+    {
+      "family": 136,
+      "phase": "DEV",
+      "state_ids": [
+        54927,
+        66079
+      ],
+      "fens": [
+        "N2/rRK/kn1 w - - 0 1",
+        "1NK/krR/2n b - - 0 1"
+      ]
+    },
+    {
+      "family": 137,
+      "phase": "DEV",
+      "state_ids": [
+        43654,
+        54213
+      ],
+      "fens": [
+        "rRN/2k/K1n w - - 0 1",
+        "N1k/K2/nrR b - - 0 1"
+      ]
+    },
+    {
+      "family": 138,
+      "phase": "DEV",
+      "state_ids": [
+        46211,
+        50877
+      ],
+      "fens": [
+        "k1r/N2/nKR b - - 0 1",
+        "rkN/2n/R1K w - - 0 1"
+      ]
+    },
+    {
+      "family": 139,
+      "phase": "DEV",
+      "state_ids": [
+        45044,
+        47928
+      ],
+      "fens": [
+        "1kN/nRr/K2 b - - 0 1",
+        "2k/RrN/nK1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 140,
+      "phase": "DEV",
+      "state_ids": [
+        49663,
+        56849
+      ],
+      "fens": [
+        "nR1/k2/rNK b - - 0 1",
+        "knR/2K/1rN w - - 0 1"
+      ]
+    },
+    {
+      "family": 141,
+      "phase": "DEV",
+      "state_ids": [
+        58389,
+        62890
+      ],
+      "fens": [
+        "K1R/rn1/1kN w - - 0 1",
+        "nK1/1NR/r1k b - - 0 1"
+      ]
+    },
+    {
+      "family": 142,
+      "phase": "DEV",
+      "state_ids": [
+        49142,
+        66870
+      ],
+      "fens": [
+        "N1R/1r1/knK b - - 0 1",
+        "kNK/1R1/r1n w - - 0 1"
+      ]
+    },
+    {
+      "family": 143,
+      "phase": "DEV",
+      "state_ids": [
+        48717,
+        66891
+      ],
+      "fens": [
+        "N2/1rR/knK w - - 0 1",
+        "kNK/rR1/2n b - - 0 1"
+      ]
+    },
+    {
+      "family": 144,
+      "phase": "DEV",
+      "state_ids": [
+        49928,
+        56367
+      ],
+      "fens": [
+        "NrR/k2/n1K b - - 0 1",
+        "k1N/2K/rRn w - - 0 1"
+      ]
+    },
+    {
+      "family": 145,
+      "phase": "DEV",
+      "state_ids": [
+        61620,
+        64144
+      ],
+      "fens": [
+        "1KR/1Nr/k1n w - - 0 1",
+        "N1K/Rn1/rk1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 146,
+      "phase": "DEV",
+      "state_ids": [
+        49681,
+        56473
+      ],
+      "fens": [
+        "rR1/kn1/1NK b - - 0 1",
+        "kn1/1NK/1rR w - - 0 1"
+      ]
+    },
+    {
+      "family": 147,
+      "phase": "DEV",
+      "state_ids": [
+        48362,
+        66794
+      ],
+      "fens": [
+        "2n/Nr1/kRK b - - 0 1",
+        "krK/1Rn/N2 w - - 0 1"
+      ]
+    },
+    {
+      "family": 148,
+      "phase": "DEV",
+      "state_ids": [
+        43762,
+        51659
+      ],
+      "fens": [
+        "krn/N2/KR1 w - - 0 1",
+        "1rk/2n/NRK b - - 0 1"
+      ]
+    },
+    {
+      "family": 149,
+      "phase": "DEV",
+      "state_ids": [
+        57461,
+        64772
+      ],
+      "fens": [
+        "KRr/n2/kN1 b - - 0 1",
+        "1nK/2N/Rrk w - - 0 1"
+      ]
+    },
+    {
+      "family": 150,
+      "phase": "DEV",
+      "state_ids": [
+        45542,
+        45725
+      ],
+      "fens": [
+        "N1k/2r/KnR b - - 0 1",
+        "rNk/R2/K1n w - - 0 1"
+      ]
+    },
+    {
+      "family": 151,
+      "phase": "DEV",
+      "state_ids": [
+        57769,
+        62762
+      ],
+      "fens": [
+        "Kn1/1rN/Rk1 b - - 0 1",
+        "1Kr/nR1/1Nk w - - 0 1"
+      ]
+    },
+    {
+      "family": 152,
+      "phase": "DEV",
+      "state_ids": [
+        49975,
+        50574
+      ],
+      "fens": [
+        "kn1/N2/RrK w - - 0 1",
+        "kRr/2n/1NK b - - 0 1"
+      ]
+    },
+    {
+      "family": 153,
+      "phase": "DEV",
+      "state_ids": [
+        55066,
+        65574
+      ],
+      "fens": [
+        "Rrn/1NK/k2 b - - 0 1",
+        "2K/kn1/NRr w - - 0 1"
+      ]
+    },
+    {
+      "family": 154,
+      "phase": "DEV",
+      "state_ids": [
+        43630,
+        53890
+      ],
+      "fens": [
+        "NRr/n1k/K2 b - - 0 1",
+        "2k/K1N/Rrn w - - 0 1"
+      ]
+    },
+    {
+      "family": 155,
+      "phase": "DEV",
+      "state_ids": [
+        45243,
+        47665
+      ],
+      "fens": [
+        "Rkr/1N1/K1n b - - 0 1",
+        "N1k/1n1/RKr w - - 0 1"
+      ]
+    },
+    {
+      "family": 156,
+      "phase": "DEV",
+      "state_ids": [
+        52570,
+        59593
+      ],
+      "fens": [
+        "Nr1/KR1/n1k b - - 0 1",
+        "K1N/1rk/1Rn w - - 0 1"
+      ]
+    },
+    {
+      "family": 157,
+      "phase": "DEV",
+      "state_ids": [
+        58803,
+        58829
+      ],
+      "fens": [
+        "KN1/R1r/n1k b - - 0 1",
+        "K1N/R1r/1nk w - - 0 1"
+      ]
+    },
+    {
+      "family": 158,
+      "phase": "DEV",
+      "state_ids": [
+        61148,
+        64065
+      ],
+      "fens": [
+        "nK1/NRr/k2 b - - 0 1",
+        "2K/Rrn/1kN w - - 0 1"
+      ]
+    },
+    {
+      "family": 159,
+      "phase": "DEV",
+      "state_ids": [
+        52351,
+        59322
+      ],
+      "fens": [
+        "n1r/KN1/R1k b - - 0 1",
+        "K1r/1nk/R1N w - - 0 1"
+      ]
+    },
+    {
+      "family": 160,
+      "phase": "DEV",
+      "state_ids": [
+        57419,
+        65194
+      ],
+      "fens": [
+        "K1N/rnR/k2 w - - 0 1",
+        "2K/rNR/n1k b - - 0 1"
+      ]
+    },
+    {
+      "family": 161,
+      "phase": "DEV",
+      "state_ids": [
+        62038,
+        62241
+      ],
+      "fens": [
+        "1Kn/1NR/rk1 b - - 0 1",
+        "1KR/rn1/Nk1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 162,
+      "phase": "DEV",
+      "state_ids": [
+        58357,
+        62976
+      ],
+      "fens": [
+        "K1R/2n/Nkr w - - 0 1",
+        "RKn/N2/r1k b - - 0 1"
+      ]
+    },
+    {
+      "family": 163,
+      "phase": "DEV",
+      "state_ids": [
+        49054,
+        66603
+      ],
+      "fens": [
+        "rnR/3/kNK w - - 0 1",
+        "knK/3/rNR b - - 0 1"
+      ]
+    },
+    {
+      "family": 164,
+      "phase": "DEV",
+      "state_ids": [
+        54663,
+        65976
+      ],
+      "fens": [
+        "2n/r1K/kNR w - - 0 1",
+        "rnK/k1R/N2 b - - 0 1"
+      ]
+    },
+    {
+      "family": 165,
+      "phase": "DEV",
+      "state_ids": [
+        44541,
+        47888
+      ],
+      "fens": [
+        "nk1/N1r/KR1 b - - 0 1",
+        "1rk/R1n/1KN w - - 0 1"
+      ]
+    },
+    {
+      "family": 166,
+      "phase": "DEV",
+      "state_ids": [
+        55212,
+        66067
+      ],
+      "fens": [
+        "NR1/r1K/kn1 w - - 0 1",
+        "1NK/k1R/1rn b - - 0 1"
+      ]
+    },
+    {
+      "family": 167,
+      "phase": "DEV",
+      "state_ids": [
+        47113,
+        47215
+      ],
+      "fens": [
+        "Nk1/n1r/1KR w - - 0 1",
+        "rk1/R1N/1Kn b - - 0 1"
+      ]
+    },
+    {
+      "family": 168,
+      "phase": "DEV",
+      "state_ids": [
+        46150,
+        51254
+      ],
+      "fens": [
+        "knN/r2/RK1 b - - 0 1",
+        "1kr/2R/nNK w - - 0 1"
+      ]
+    },
+    {
+      "family": 169,
+      "phase": "DEV",
+      "state_ids": [
+        46283,
+        50808
+      ],
+      "fens": [
+        "kNr/n2/1KR w - - 0 1",
+        "rk1/2N/RnK b - - 0 1"
+      ]
+    },
+    {
+      "family": 170,
+      "phase": "DEV",
+      "state_ids": [
+        48997,
+        66397
+      ],
+      "fens": [
+        "NRr/3/knK w - - 0 1",
+        "kNK/3/Rrn b - - 0 1"
+      ]
+    },
+    {
+      "family": 171,
+      "phase": "DEV",
+      "state_ids": [
+        52548,
+        59310
+      ],
+      "fens": [
+        "n1r/KRN/2k b - - 0 1",
+        "K2/nrk/R1N w - - 0 1"
+      ]
+    },
+    {
+      "family": 172,
+      "phase": "DEV",
+      "state_ids": [
+        55599,
+        55729
+      ],
+      "fens": [
+        "r2/k1K/NnR w - - 0 1",
+        "rNn/k1K/2R b - - 0 1"
+      ]
+    },
+    {
+      "family": 173,
+      "phase": "DEV",
+      "state_ids": [
+        57947,
+        63069
+      ],
+      "fens": [
+        "K2/R1N/nkr b - - 0 1",
+        "RKN/n1r/2k w - - 0 1"
+      ]
+    },
+    {
+      "family": 174,
+      "phase": "DEV",
+      "state_ids": [
+        58307,
+        62684
+      ],
+      "fens": [
+        "KR1/1Nr/nk1 b - - 0 1",
+        "1KN/Rn1/1rk w - - 0 1"
+      ]
+    },
+    {
+      "family": 175,
+      "phase": "DEV",
+      "state_ids": [
+        43626,
+        54323
+      ],
+      "fens": [
+        "NR1/nrk/K2 b - - 0 1",
+        "2k/KRN/1rn w - - 0 1"
+      ]
+    },
+    {
+      "family": 176,
+      "phase": "DEV",
+      "state_ids": [
+        57725,
+        65055
+      ],
+      "fens": [
+        "KnR/1rN/k2 b - - 0 1",
+        "2K/nR1/rNk w - - 0 1"
+      ]
+    },
+    {
+      "family": 177,
+      "phase": "DEV",
+      "state_ids": [
+        47165,
+        47184
+      ],
+      "fens": [
+        "1k1/Rnr/1KN b - - 0 1",
+        "nk1/RNr/1K1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 178,
+      "phase": "DEV",
+      "state_ids": [
+        52912,
+        59422
+      ],
+      "fens": [
+        "1Rr/KN1/n1k w - - 0 1",
+        "K1N/1nk/Rr1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 179,
+      "phase": "DEV",
+      "state_ids": [
+        63543,
+        63544
+      ],
+      "fens": [
+        "n1K/r1R/k1N w - - 0 1",
+        "n1K/r1R/k1N b - - 0 1"
+      ]
+    },
+    {
+      "family": 180,
+      "phase": "DEV",
+      "state_ids": [
+        61911,
+        61996
+      ],
+      "fens": [
+        "nK1/rR1/1kN b - - 0 1",
+        "nK1/1rR/1kN w - - 0 1"
+      ]
+    },
+    {
+      "family": 181,
+      "phase": "DEV",
+      "state_ids": [
+        54837,
+        65773
+      ],
+      "fens": [
+        "rn1/1RK/kN1 w - - 0 1",
+        "1nK/kr1/1NR b - - 0 1"
+      ]
+    },
+    {
+      "family": 182,
+      "phase": "DEV",
+      "state_ids": [
+        50094,
+        50393
+      ],
+      "fens": [
+        "k2/Nr1/nRK w - - 0 1",
+        "krN/1Rn/2K b - - 0 1"
+      ]
+    },
+    {
+      "family": 183,
+      "phase": "DEV",
+      "state_ids": [
+        50078,
+        50112
+      ],
+      "fens": [
+        "kr1/2n/NRK w - - 0 1",
+        "krn/N2/1RK b - - 0 1"
+      ]
+    },
+    {
+      "family": 184,
+      "phase": "DEV",
+      "state_ids": [
+        58250,
+        62852
+      ],
+      "fens": [
+        "KR1/1r1/nkN w - - 0 1",
+        "nKN/1R1/1rk b - - 0 1"
+      ]
+    },
+    {
+      "family": 185,
+      "phase": "DEV",
+      "state_ids": [
+        63388,
+        63551
+      ],
+      "fens": [
+        "n1K/rR1/kN1 b - - 0 1",
+        "1nK/1rR/k1N w - - 0 1"
+      ]
+    },
+    {
+      "family": 186,
+      "phase": "DEV",
+      "state_ids": [
+        42452,
+        60443
+      ],
+      "fens": [
+        "r1N/1R1/Knk w - - 0 1",
+        "KNk/1r1/n1R b - - 0 1"
+      ]
+    },
+    {
+      "family": 187,
+      "phase": "DEV",
+      "state_ids": [
+        54997,
+        65680
+      ],
+      "fens": [
+        "Rr1/2K/kNn b - - 0 1",
+        "NnK/k2/1Rr w - - 0 1"
+      ]
+    },
+    {
+      "family": 188,
+      "phase": "DEV",
+      "state_ids": [
+        44639,
+        47913
+      ],
+      "fens": [
+        "1kN/1nr/KR1 b - - 0 1",
+        "1rk/RN1/nK1 w - - 0 1"
+      ]
+    },
+    {
+      "family": 189,
+      "phase": "DEV",
+      "state_ids": [
+        53116,
+        53318
+      ],
+      "fens": [
+        "1r1/Knk/RN1 w - - 0 1",
+        "1nr/KNk/1R1 b - - 0 1"
+      ]
+    },
+    {
+      "family": 190,
+      "phase": "DEV",
+      "state_ids": [
+        49652,
+        56401
+      ],
+      "fens": [
+        "rRn/k2/N1K b - - 0 1",
+        "k1n/2K/NrR w - - 0 1"
+      ]
+    },
+    {
+      "family": 191,
+      "phase": "DEV",
+      "state_ids": [
+        46442,
+        50998
+      ],
+      "fens": [
+        "kr1/NR1/nK1 w - - 0 1",
+        "1kN/1rn/1RK b - - 0 1"
+      ]
+    }
+  ],
+  "eligible_families": 5208,
+  "input_hashes": {
+    "states.json": "d35e934a3151be0106b63e570a7a50f1d3f35e0c4ba21a97304eab10089f3489",
+    "values.json": "22d546a844bf3547bc2953c78fa944d873ec85fae4da5fdd5bfb132c417bbfcf",
+    "edges.jsonl": "6661ed7696610586522fcfcddec731b8e686f8fad962edf7e8e8914990f754af"
+  }
+}
