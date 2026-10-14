@@ -226,6 +226,14 @@ def _declaration_options(state, compiled, stats):
     return options
 
 
+def _neutral_declaration(options):
+    """Both neutral outcomes prevent a forced loss; retain RESTART preference."""
+    return (
+        next((option for option in options if option.outcome == "RESTART"), None)
+        or next((option for option in options if option.outcome == "NO_CONTEST"), None)
+    )
+
+
 def _ordinary_qdepth_limit(ctx: _Context) -> int:
     """Return the effective qdepth for ordinary (non-check) qsearch.
 
@@ -325,7 +333,7 @@ def negamax(
         )
     declarations = _declaration_options(state, ctx.compiled, ctx.stats)
     winning = next((a for a in declarations if a.outcome == "WIN"), None)
-    restart = next((a for a in declarations if a.outcome == "RESTART"), None)
+    neutral = _neutral_declaration(declarations)
     if winning is not None:
         return SearchResult(MATE_SCORE - ply, None, (), winning)
     if depth <= 0:
@@ -339,7 +347,7 @@ def negamax(
         else:
             score = _evaluate(state, ctx.evaluator, ctx)
         ctx.budget.check(ctx.stats, force=True)
-        return SearchResult(max(score, 0) if restart is not None else score, None, ())
+        return SearchResult(max(score, 0) if neutral is not None else score, None, ())
 
     if ctx.tuning.use_mate_distance_pruning:
         alpha = max(alpha, -MATE_SCORE + ply)
@@ -398,15 +406,15 @@ def negamax(
                 with ctx.recorder.time_block(AuditMetric.TT_PROBE_STORE):
                     score = score_from_tt(entry.score, ply)
                     if entry.bound is BoundType.EXACT:
-                        # A RESTART floor is intentionally not encoded in the
+                        # A neutral declaration floor is intentionally not encoded in the
                         # TT's Action slot.  Reconstruct its out-of-band
                         # identity from the already-assessed current node,
-                        # but only for a live qualifying RESTART option.
+                        # but only for a live qualifying neutral option.
                         cached_declaration = (
-                            restart
+                            neutral
                             if score == 0
                             and entry.best_action is None
-                            and restart is not None
+                            and neutral is not None
                             else None
                         )
                         return SearchResult(
@@ -419,10 +427,10 @@ def negamax(
                     if alpha >= beta:
                         ctx.stats.tt_cutoffs += 1
                         cached_declaration = (
-                            restart
+                            neutral
                             if score == 0
                             and entry.best_action is None
-                            and restart is not None
+                            and neutral is not None
                             else None
                         )
                         return SearchResult(
@@ -579,11 +587,11 @@ def negamax(
                     ctx.orderer.record_countermove(prev_action, action)
             break
 
-    if restart is not None and best < 0:
+    if neutral is not None and best < 0:
         best = 0
         best_action = None
         best_pv = ()
-        best_declaration = restart
+        best_declaration = neutral
     else:
         best_declaration = None
 
@@ -655,10 +663,10 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
         return terminal_score(terminal, state.position.side_to_move, ply)
     declarations = _declaration_options(state, ctx.compiled, ctx.stats)
     winning = next((a for a in declarations if a.outcome == "WIN"), None)
-    restart = next((a for a in declarations if a.outcome == "RESTART"), None)
+    neutral = _neutral_declaration(declarations)
     if winning is not None:
         return MATE_SCORE - ply
-    if restart is not None:
+    if neutral is not None:
         alpha = max(alpha, 0)
     side = state.position.side_to_move
     in_check = runtime.in_check(side, checkpoint=ctx.checkpoint)
@@ -687,7 +695,7 @@ def _quiescence_runtime(alpha, beta, ply, qdepth, ctx: _Context) -> int:
     ctx.budget.check(ctx.stats, force=True)
     if stand_pat >= beta:
         ctx.stats.stand_pat_cutoffs += 1
-        return max(stand_pat, 0) if restart is not None else stand_pat
+        return max(stand_pat, 0) if neutral is not None else stand_pat
     if stand_pat > alpha:
         alpha = stand_pat
     if qdepth >= _ordinary_qdepth_limit(ctx):
@@ -744,10 +752,10 @@ def quiescence(
         return terminal_score(terminal, state.position.side_to_move, ply)
     declarations = _declaration_options(state, ctx.compiled, ctx.stats)
     winning = next((a for a in declarations if a.outcome == "WIN"), None)
-    restart = next((a for a in declarations if a.outcome == "RESTART"), None)
+    neutral = _neutral_declaration(declarations)
     if winning is not None:
         return MATE_SCORE - ply
-    if restart is not None:
+    if neutral is not None:
         alpha = max(alpha, 0)
 
     side = state.position.side_to_move
@@ -819,7 +827,7 @@ def quiescence(
     ctx.budget.check(ctx.stats, force=True)
     if stand_pat >= beta:
         ctx.stats.stand_pat_cutoffs += 1
-        return max(stand_pat, 0) if restart is not None else stand_pat
+        return max(stand_pat, 0) if neutral is not None else stand_pat
     if stand_pat > alpha:
         alpha = stand_pat
     if qdepth >= _ordinary_qdepth_limit(ctx):
@@ -895,12 +903,12 @@ def reference_minimax(
         state.position, state.ply_count, compiled
     )
     winning = next((a for a in declarations if a.outcome == "WIN"), None)
-    restart = next((a for a in declarations if a.outcome == "RESTART"), None)
+    neutral = _neutral_declaration(declarations)
     if winning is not None:
         return MATE_SCORE - ply, None
     if depth <= 0:
         score = _bounded_static_score(evaluator.evaluate(state))
-        return max(score, 0) if restart is not None else score, None
+        return max(score, 0) if neutral is not None else score, None
     successors = sorted(legal_successors(state, compiled), key=lambda pair: str(pair[0]))
     best = -INF
     best_action: Action | None = None
@@ -910,7 +918,7 @@ def reference_minimax(
         if score > best:
             best = score
             best_action = action
-    if restart is not None and best < 0:
+    if neutral is not None and best < 0:
         return 0, None
     return best, best_action
 
