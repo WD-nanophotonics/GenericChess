@@ -1,0 +1,53 @@
+{
+  "status": "PASS_ALL_ORBIT_CHOICES_PV_LABEL_SELECTORS",
+  "counts": {
+    "reuse": 5376,
+    "PVmoves": 283192,
+    "newgo": 17152
+  },
+  "selected": {
+    "TRAIN1": [
+      1728,
+      1440
+    ],
+    "TRAIN2": [
+      1440,
+      360
+    ],
+    "TRAIN3": [
+      1440,
+      360
+    ],
+    "POOLED": [
+      1440,
+      720
+    ]
+  },
+  "Dot_fixedC50_diagnostic": [
+    {
+      "contrast": "canonical2_gain",
+      "mean": 0.046875,
+      "family95": [
+        0.015625,
+        0.0859375
+      ]
+    },
+    {
+      "contrast": "uniform8_gain",
+      "mean": 0.056640625,
+      "family95": [
+        0.021484375,
+        0.09765625
+      ]
+    },
+    {
+      "contrast": "paired_gain8_minus_gain2",
+      "mean": 0.009765625,
+      "family95": [
+        -0.001953125,
+        0.0234375
+      ]
+    }
+  ],
+  "scope": "Exposed128DEVfamilymechanism; 8dependentmembers perorbit, firstchoice-perfectfuture ONLY; nofull5policy result orgeometric-equivariance/equivalence claim."
+}

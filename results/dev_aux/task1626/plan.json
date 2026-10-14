@@ -1,0 +1,12 @@
+{
+  "question": "Can exact<=4 rule continuation make larger4x4 material-policy evaluation cheap withoutfull5teacher?",
+  "width": 4,
+  "height": 4,
+  "max_actors": 4,
+  "global_nonking_inventory": "Atmostone R,N,B globally, kingsalwaysboth",
+  "state_cap": 1000000,
+  "seconds": 180,
+  "estimated_seconds": 45,
+  "scope": "Royalmate/stalemate/infinitecycles; no promotion/drops/historydraw/castling; NOT fullChess/Shogi orcompletegenerateddomain",
+  "pilot_after_teacher": "Onefrozen64coldbaselinepolicy onpriceblindnearKing5actor roots,300s/30000go/80000reachable cap; closedWDL orUNKNOWNbounds, notall12price training. Feasibilityquestion distinct fromlongfulltraining, noartificialsplit."
+}

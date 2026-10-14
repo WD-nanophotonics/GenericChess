@@ -1,0 +1,48 @@
+{
+  "status": "PASS_ALL_TRAJECTORIES_RANDOM_QUANTILES_POLICY_CACHE_RULE_LABELS_TRAIN_SELECTOR",
+  "counts": {
+    "newgo": 4160,
+    "PVmoves": 45665,
+    "games": 5120,
+    "plies": 11404,
+    "PERFECT4_HANDOFF": 4830,
+    "PHYSICAL_MATE": 218,
+    "PHYSICAL_STALE": 72,
+    "pilot_ALLlower_checks": 256,
+    "H24_H48_identical": 256
+  },
+  "selected": [
+    720,
+    720,
+    360
+  ],
+  "DEV_contrasts": [
+    {
+      "price": [
+        720,
+        720,
+        360
+      ],
+      "primary": true,
+      "gain": 0.0703125,
+      "family95": [
+        0.01953125,
+        0.1328125
+      ]
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720
+      ],
+      "primary": false,
+      "gain": 0.07421875,
+      "family95": [
+        0.0,
+        0.15625
+      ]
+    }
+  ],
+  "scope": "64newDEVrootfamilies, colors/seedsdependent; randomopponentuntilcapture thenBOTHperfect4; exacthandoffWDLisnotphysicalmatewithin24. Sharedteachercontinuations notnewholdout. OneTRAINcohort, no stablehumanprice claim."
+}

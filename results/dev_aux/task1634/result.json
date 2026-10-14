@@ -1,0 +1,347 @@
+{
+  "status": "COMPLETE",
+  "error": null,
+  "actual_go": 4160,
+  "cache_hits": 3908,
+  "seconds": 38.59300000000076,
+  "exit_code": 0,
+  "selected": {
+    "price": [
+      720,
+      720,
+      360
+    ],
+    "phase": "TRAIN",
+    "H": 24,
+    "games": 256,
+    "lower": 0.8203125,
+    "upper": 0.8203125,
+    "categories": {
+      "PERFECT4_HANDOFF": 242,
+      "PHYSICAL_MATE": 10,
+      "PHYSICAL_STALE": 4
+    }
+  },
+  "TRAIN": [
+    {
+      "price": [
+        360,
+        720,
+        360
+      ],
+      "phase": "TRAIN",
+      "H": 24,
+      "games": 256,
+      "lower": 0.7109375,
+      "upper": 0.7109375,
+      "categories": {
+        "PERFECT4_HANDOFF": 242,
+        "PHYSICAL_MATE": 10,
+        "PHYSICAL_STALE": 4
+      }
+    },
+    {
+      "price": [
+        360,
+        720,
+        720
+      ],
+      "phase": "TRAIN",
+      "H": 24,
+      "games": 256,
+      "lower": 0.7421875,
+      "upper": 0.7421875,
+      "categories": {
+        "PERFECT4_HANDOFF": 248,
+        "PHYSICAL_MATE": 8
+      }
+    },
+    {
+      "price": [
+        360,
+        720,
+        1440
+      ],
+      "phase": "TRAIN",
+      "H": 24,
+      "games": 256,
+      "lower": 0.7578125,
+      "upper": 0.7578125,
+      "categories": {
+        "PERFECT4_HANDOFF": 246,
+        "PHYSICAL_MATE": 10
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        360
+      ],
+      "phase": "TRAIN",
+      "H": 24,
+      "games": 256,
+      "lower": 0.8203125,
+      "upper": 0.8203125,
+      "categories": {
+        "PERFECT4_HANDOFF": 242,
+        "PHYSICAL_MATE": 10,
+        "PHYSICAL_STALE": 4
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        720
+      ],
+      "phase": "TRAIN",
+      "H": 24,
+      "games": 256,
+      "lower": 0.75,
+      "upper": 0.75,
+      "categories": {
+        "PERFECT4_HANDOFF": 242,
+        "PHYSICAL_MATE": 10,
+        "PHYSICAL_STALE": 4
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        1440
+      ],
+      "phase": "TRAIN",
+      "H": 24,
+      "games": 256,
+      "lower": 0.7734375,
+      "upper": 0.7734375,
+      "categories": {
+        "PERFECT4_HANDOFF": 244,
+        "PHYSICAL_MATE": 12
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        360
+      ],
+      "phase": "TRAIN",
+      "H": 24,
+      "games": 256,
+      "lower": 0.7734375,
+      "upper": 0.7734375,
+      "categories": {
+        "PERFECT4_HANDOFF": 236,
+        "PHYSICAL_MATE": 12,
+        "PHYSICAL_STALE": 8
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720
+      ],
+      "phase": "TRAIN",
+      "H": 24,
+      "games": 256,
+      "lower": 0.7890625,
+      "upper": 0.7890625,
+      "categories": {
+        "PERFECT4_HANDOFF": 240,
+        "PHYSICAL_MATE": 12,
+        "PHYSICAL_STALE": 4
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        1440
+      ],
+      "phase": "TRAIN",
+      "H": 24,
+      "games": 256,
+      "lower": 0.765625,
+      "upper": 0.765625,
+      "categories": {
+        "PERFECT4_HANDOFF": 238,
+        "PHYSICAL_MATE": 14,
+        "PHYSICAL_STALE": 4
+      }
+    },
+    {
+      "price": [
+        1728,
+        720,
+        360
+      ],
+      "phase": "TRAIN",
+      "H": 24,
+      "games": 256,
+      "lower": 0.7734375,
+      "upper": 0.7734375,
+      "categories": {
+        "PERFECT4_HANDOFF": 236,
+        "PHYSICAL_MATE": 12,
+        "PHYSICAL_STALE": 8
+      }
+    },
+    {
+      "price": [
+        1728,
+        720,
+        720
+      ],
+      "phase": "TRAIN",
+      "H": 24,
+      "games": 256,
+      "lower": 0.765625,
+      "upper": 0.765625,
+      "categories": {
+        "PERFECT4_HANDOFF": 238,
+        "PHYSICAL_MATE": 10,
+        "PHYSICAL_STALE": 8
+      }
+    },
+    {
+      "price": [
+        1728,
+        720,
+        1440
+      ],
+      "phase": "TRAIN",
+      "H": 24,
+      "games": 256,
+      "lower": 0.8046875,
+      "upper": 0.8046875,
+      "categories": {
+        "PERFECT4_HANDOFF": 236,
+        "PHYSICAL_MATE": 16,
+        "PHYSICAL_STALE": 4
+      }
+    }
+  ],
+  "DEV": [
+    {
+      "price": [
+        720,
+        720,
+        360
+      ],
+      "phase": "DEV",
+      "H": 24,
+      "games": 512,
+      "lower": 0.80859375,
+      "upper": 0.80859375,
+      "categories": {
+        "PERFECT4_HANDOFF": 490,
+        "PHYSICAL_MATE": 18,
+        "PHYSICAL_STALE": 4
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        720
+      ],
+      "phase": "DEV",
+      "H": 24,
+      "games": 512,
+      "lower": 0.73828125,
+      "upper": 0.73828125,
+      "categories": {
+        "PERFECT4_HANDOFF": 488,
+        "PHYSICAL_MATE": 22,
+        "PHYSICAL_STALE": 2
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720
+      ],
+      "phase": "DEV",
+      "H": 24,
+      "games": 512,
+      "lower": 0.8125,
+      "upper": 0.8125,
+      "categories": {
+        "PERFECT4_HANDOFF": 474,
+        "PHYSICAL_MATE": 22,
+        "PHYSICAL_STALE": 16
+      }
+    }
+  ],
+  "diagnostics": [
+    {
+      "price": [
+        720,
+        720,
+        720
+      ],
+      "phase": "H48",
+      "H": 48,
+      "games": 128,
+      "lower": 0.875,
+      "upper": 0.875,
+      "categories": {
+        "PERFECT4_HANDOFF": 118,
+        "PHYSICAL_MATE": 10
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        720
+      ],
+      "phase": "PILOT",
+      "H": 24,
+      "games": 128,
+      "lower": 0.796875,
+      "upper": 0.796875,
+      "categories": {
+        "PERFECT4_HANDOFF": 128
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720
+      ],
+      "phase": "H48",
+      "H": 48,
+      "games": 128,
+      "lower": 0.921875,
+      "upper": 0.921875,
+      "categories": {
+        "PERFECT4_HANDOFF": 116,
+        "PHYSICAL_MATE": 10,
+        "PHYSICAL_STALE": 2
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720
+      ],
+      "phase": "PILOT",
+      "H": 24,
+      "games": 128,
+      "lower": 0.8125,
+      "upper": 0.8125,
+      "categories": {
+        "PERFECT4_HANDOFF": 128
+      }
+    }
+  ],
+  "scope": "Uniformlegalrandomuntilfirstcapture, thenBOTHperfect4rulepolicy. Candidateactualcold64untilcapture. NOTpurematurevsrandomwholegame.; Physicalrulemate/stale atanyply; otherwisefirstcapture<=H gets exactinfinite4WDL; atH unresolved keeps[-1,+1]bounds, noquantity/matescore reward."
+}

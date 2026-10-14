@@ -1,0 +1,141 @@
+{
+  "status": "PASS_ALL_SCALE_FIRST_CHOICES_PV_RULE_LABELS_AND_PAIRED_STATS",
+  "counts": {
+    "records": 2304,
+    "reused": 512,
+    "PVmoves": 29358,
+    "new_go": 1792
+  },
+  "firstchoice_contrasts": [
+    {
+      "label": "A49:0.5",
+      "mean_gain": 0.0,
+      "base_mean": 0.7265625,
+      "scaled_mean": 0.7265625,
+      "changed_moves": 2,
+      "changed_root_WDL": 0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "shared95": [
+        -0.015625,
+        0.015625
+      ]
+    },
+    {
+      "label": "A49:2",
+      "mean_gain": 0.0,
+      "base_mean": 0.7265625,
+      "scaled_mean": 0.7265625,
+      "changed_moves": 4,
+      "changed_root_WDL": 0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "shared95": [
+        -0.015625,
+        0.015625
+      ]
+    },
+    {
+      "label": "B49:0.5",
+      "mean_gain": -0.0078125,
+      "base_mean": 0.71875,
+      "scaled_mean": 0.7109375,
+      "changed_moves": 6,
+      "changed_root_WDL": 2,
+      "family95": [
+        -0.0234375,
+        0.0
+      ],
+      "shared95": [
+        -0.0234375,
+        0.0078125
+      ]
+    },
+    {
+      "label": "B49:2",
+      "mean_gain": 0.0,
+      "base_mean": 0.71875,
+      "scaled_mean": 0.71875,
+      "changed_moves": 4,
+      "changed_root_WDL": 0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "shared95": [
+        -0.015625,
+        0.015625
+      ]
+    },
+    {
+      "label": "C50:0.5",
+      "mean_gain": 0.0,
+      "base_mean": 0.71875,
+      "scaled_mean": 0.71875,
+      "changed_moves": 2,
+      "changed_root_WDL": 0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "shared95": [
+        -0.015625,
+        0.015625
+      ]
+    },
+    {
+      "label": "C50:2",
+      "mean_gain": 0.0,
+      "base_mean": 0.71875,
+      "scaled_mean": 0.71875,
+      "changed_moves": 4,
+      "changed_root_WDL": 0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "shared95": [
+        -0.015625,
+        0.015625
+      ]
+    }
+  ],
+  "firstchoice_shared95_radius": 0.015625,
+  "fullpolicy_C50": [
+    {
+      "scale": 0.5,
+      "base_mean": 0.59375,
+      "scaled_mean": 0.5859375,
+      "gain": -0.0078125,
+      "family95": [
+        -0.0234375,
+        0.0
+      ],
+      "WDL": {
+        "1": 166,
+        "-1": 16,
+        "0": 74
+      }
+    },
+    {
+      "scale": 2,
+      "base_mean": 0.59375,
+      "scaled_mean": 0.6171875,
+      "gain": 0.0234375,
+      "family95": [
+        0.0,
+        0.0546875
+      ],
+      "WDL": {
+        "1": 168,
+        "-1": 10,
+        "0": 78
+      }
+    }
+  ],
+  "scope": "9fixedRNBprofiles, nativeorderingall720, SAMEexposedDEV; no bestscalefit. Changingchoices isnotgain; exactruleWDL effects reportedseparately. Full3Cscales independentaudit1625PASS, RNBkey preventsNalias. Bootstrapsharedbands descriptive onexposedmechanism cohort, notnewvalidation."
+}

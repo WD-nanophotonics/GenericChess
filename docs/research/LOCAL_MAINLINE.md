@@ -1,17 +1,18 @@
-# DEV_AUX current scope —2026-10-14 segment49
+# DEV_AUX current scope —2026-10-15 segment50
 
-ScienceOPEN; sidemissiononly, heartbeatACTIVE, no primary/default/UIwrites.
-Actual5cold64jointpolicygain9/64;4096five/64fourgain1/256 uncertain.
-Commonperfect4continuation gains64=61/256 and4096=15/256; exactproofsPASS.
-New3x4K/R/N/B677304state graph ALLliteral/rankPASS; native1024PASS.
-FullstagedWDL151326go1507.812s learnsR1728/N720/B720; primaryDEVgain11/128 sharedpositive.
-Cheapfirstchoice/perfectfuture2048go19.844s learnsR1440/N720/B360 onfreshroots.
-Itsactual5policy/common4validationgain5/32 positive;3242newgo43.516s uses16142oldqualifiedcoldchoices.
-IncrementalcostNOTfromscratch; differentobjectives/rootcohortsNOTmatchedlearning-speedup.
-ALLprofile/PV/control/rankproofsPASS; identicalTRAINvectors show numericpricesnotuniquelyidentified.
-Noquantityreward/humanfit, nofullChess/Shogi/genericdomain orstablehumanprice recovery claim.
-NextindependentTRAINcohortstability andsharedscale controls; keep disclosedcontinuation overlap.
-Evidence:SEGMENT_20261014_49.md,1596,1602,1607/1608/1609,1610,COST/QA/archives49.
+ScienceOPEN; sidemissiononly, manualresearchended91.285min; heartbeatPAUSED.
+Sameobjective3TRAINcohorts R1440 all, B720/720/360; POOLED1440/720.
+Actualfullfive/common4 DEVgain15/128 sharedpositive; no uniquehumanprice.
+Scale0.5/1/2 fixedratios alterschoices/WDL, gainsCI touch0.
+Uniform8 firstchoicefixedCgain.056640625, pairedchangeCI crosses0; scope notfullpolicy.
+4x4<=4teacher539088states ALLliteral/rankPASS; native1024PASS.
+ALLfive60000go fixedcaps partialgain[-.25,.25], UNKNOWNnotdraw.
+Randomfive/common4 learned720720360 DEV9/128 CI[.01953125,.1328125].
+5120shorttrajectories38.593s4160newgo3908hits; mostlyexact4handoff notphysicalmate.
+No4x4stablecohort/no pureengine-random/fullChess/Shogi/genericdomain claim.
+Allsource/PV/control/rank/trajectory/selector auditsPASS; old0goimportfailures retained.
+Nextsameobjective4x4TRAINreplications, priceblindopponentlaw anduniformD4 mechanisms.
+Evidence:SEGMENT_20261015_50.md,1635/1636/1637,COST/QA/SESSION/archives50.
 
 # Current local research mainline
 

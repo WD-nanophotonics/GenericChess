@@ -1,0 +1,50 @@
+{
+  "checkpoints": [
+    {
+      "at": "2026-10-14T14:59:13.541805+00:00",
+      "evidence": "results/dev_aux/task1617/result.json",
+      "kind": "research",
+      "next_action": "Freeze andexecute common0.5/1/2scale control withR/N/Bfullkeys; inspect orientationlaw andTRAINvector platforms withouthumanfit.",
+      "observation": "3TRAIN64 plusDEV128 allrootorbitsdisjoint49;5376coldgo38.25s, allqueries/PV/labels/selectorsPASS. Cohorts1440,720/1440,720/1440,360; pooled1440,720. Full5/common4 pooledDEV15/128 shared95[.0546875,.1796875], alternate19/128positive;48004proofstates2036406PV PASS. Fullvalidation47.828s4570newgo reusedcache. Auto-review3300s>hour arithmetic rejection corrected by55min evidence, sameactionaccepted.",
+      "question": "Are sameobjective learnedprices stable acrossTRAINsamples?"
+    },
+    {
+      "at": "2026-10-14T16:11:05.907959+00:00",
+      "evidence": "results/dev_aux/task1637/result.json",
+      "kind": "research",
+      "next_action": "Review learning scope and random-reference dependence; archive exact outputs and publish reviewed segment50. Freeze later objective-matched independent random TRAIN replication; no capextension.",
+      "observation": "Allorbit audit5376reuse17152new PASS; pairedgainchange.009765625 CIcross0. Scale33788proofstates PASS.4x4teacher539088states ALLliteral PASS; partial60000go boundgain[-.25,.25] no transfer claim. Randomshort5120trajectories38.593s4160newgo38908? cache3908; learned720720360 DEVgain.0703125 family95[.01953125,.1328125], alltrajectory/rule/PV auditPASS.",
+      "question": "Can cheap true-WDL learning survive cohort and geometry changes?"
+    },
+    {
+      "at": "2026-10-14T16:11:40.702396+00:00",
+      "evidence": "results/dev_aux/task1637/result.json",
+      "kind": "research",
+      "next_action": "Stop further compute; archive/review and deliver scoped evidence, refill memo with independentTRAIN and opponent-strength followups.",
+      "observation": "Correction previous checkpoint cache3908 exactly, no38908. Random5120trajectories allreplayed:4830perfect4handoffs218physicalmates72stales, zeroUNRESOLVED;4160newgo+3908hits;38.593s. Primary720720360 gain9/128 CI[.01953125,.1328125]; prior1440720720gain19/256 CIstarts0. All256H24/H48 pairedtrajectories identical;256pilot knownpayoffs obeycertifiedALLlower. 4x4worst-case gainbounds[-.25,.25], nottransfergain.",
+      "question": "What can trueWDL short-game learning establish?"
+    }
+  ],
+  "duration_gate_passed": true,
+  "elapsed_minutes": 91.285,
+  "ended_at": "2026-10-14T16:14:14.806749+00:00",
+  "ending_evidence": "results/dev_aux/SEGMENT_20261015_50.md",
+  "id": "cc1b8701-6881-49c5-bb98-c206cafc5747",
+  "quality_review_required": true,
+  "reason": "safe_checkpoint",
+  "research_stage_count": 3,
+  "started_at": "2026-10-14T14:42:57.709668+00:00",
+  "state": "ended",
+  "thread_id": "01a128cf-ae2d-7352-a456-06bd38367221",
+  "segment": 50,
+  "scientific_complete": false,
+  "all_owned_engines_closed": true,
+  "heartbeat": "PAUSED",
+  "science_publication": "PENDING",
+  "actual_new_search_go": 104308,
+  "native_perft": 1024,
+  "short_phase_trajectories": 5120,
+  "quality_review": "results/dev_aux/QA_20261015_50.json",
+  "raw_Slack_private_input_published": false,
+  "clock_reset": false
+}

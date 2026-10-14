@@ -1,0 +1,74 @@
+{
+  "status": "PASS_ALL36TRAIN3DEV_RAW_CHOICES_PV_RULE_WDL_FIXED_SELECTORS",
+  "counts": {
+    "actual_queries": 5376,
+    "PVmoves": 68918
+  },
+  "selectors": {
+    "TRAIN1": [
+      1440,
+      720
+    ],
+    "TRAIN2": [
+      1440,
+      720
+    ],
+    "TRAIN3": [
+      1440,
+      360
+    ],
+    "POOLED": [
+      1440,
+      720
+    ]
+  },
+  "baselineDEV_mean": 0.671875,
+  "DEV_contrasts": [
+    {
+      "R_B": [
+        1440,
+        360
+      ],
+      "primaryPOOLED": false,
+      "mean": 0.71875,
+      "gain": 0.046875,
+      "WDL": {
+        "1": 190,
+        "0": 60,
+        "-1": 6
+      },
+      "family95": [
+        0.0078125,
+        0.09375
+      ],
+      "shared95": [
+        0.0,
+        0.09375
+      ]
+    },
+    {
+      "R_B": [
+        1440,
+        720
+      ],
+      "primaryPOOLED": true,
+      "mean": 0.71875,
+      "gain": 0.046875,
+      "WDL": {
+        "1": 186,
+        "0": 68,
+        "-1": 2
+      },
+      "family95": [
+        0.015625,
+        0.0859375
+      ],
+      "shared95": [
+        0.0,
+        0.09375
+      ]
+    }
+  ],
+  "shared95_radius": 0.046875,
+  "scope": "Samefirstchoice/perfectfuture objective acrossTHREEdisjointTRAINroot samples; rootfamilyunit/colorpairsdependent. SelectorsfixedbeforeDEV; allcontinuationstatesnotunexposed. Nativewholefivepolicyvalidationseparate."
+}

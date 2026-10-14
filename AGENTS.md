@@ -241,3 +241,19 @@ Each Agent owns its state and schedule; communicate the project-wide rule throug
 the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
+
+# DEV_AUX current scope —2026-10-15 segment50
+
+ScienceOPEN; sidemissiononly, manualresearchended91.285min; heartbeatPAUSED.
+Sameobjective3TRAINcohorts R1440 all, B720/720/360; POOLED1440/720.
+Actualfullfive/common4 DEVgain15/128 sharedpositive; no uniquehumanprice.
+Scale0.5/1/2 fixedratios alterschoices/WDL, gainsCI touch0.
+Uniform8 firstchoicefixedCgain.056640625, pairedchangeCI crosses0; scope notfullpolicy.
+4x4<=4teacher539088states ALLliteral/rankPASS; native1024PASS.
+ALLfive60000go fixedcaps partialgain[-.25,.25], UNKNOWNnotdraw.
+Randomfive/common4 learned720720360 DEV9/128 CI[.01953125,.1328125].
+5120shorttrajectories38.593s4160newgo3908hits; mostlyexact4handoff notphysicalmate.
+No4x4stablecohort/no pureengine-random/fullChess/Shogi/genericdomain claim.
+Allsource/PV/control/rank/trajectory/selector auditsPASS; old0goimportfailures retained.
+Nextsameobjective4x4TRAINreplications, priceblindopponentlaw anduniformD4 mechanisms.
+Evidence:SEGMENT_20261015_50.md,1635/1636/1637,COST/QA/SESSION/archives50.
