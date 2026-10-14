@@ -1,0 +1,60 @@
+{
+  "question": "Can adding bishop give cheap trueWL price signal conditional on fixed R1728?",
+  "H": 48,
+  "nodes": 4096,
+  "max_seconds": 300,
+  "expected_seconds": 100,
+  "root_file": "results/dev_aux/task1386/roots.json",
+  "root_sha256": "2d56149c860546b04c75e50303b3c4b660e46ba7923d167f000e9958b17737bd",
+  "root_range": [
+    0,
+    16
+  ],
+  "root_count": 16,
+  "expected_games": 448,
+  "random_seed_base": 2026479000,
+  "binary": ".local_agent/leaf-rb-45/fairy-leaf-rb.exe",
+  "binary_sha256": "eaebcf77f737f96c8c3a502ee865000ebcf45ec1e863b9757b7b627b80ba0343",
+  "profiles": {
+    "B360": {
+      "nativeR": 720,
+      "leafR": 1728,
+      "leafB": 360
+    },
+    "B720": {
+      "nativeR": 720,
+      "leafR": 1728,
+      "leafB": 720
+    },
+    "B1440": {
+      "nativeR": 720,
+      "leafR": 1728,
+      "leafB": 1440
+    },
+    "B1728": {
+      "nativeR": 720,
+      "leafR": 1728,
+      "leafB": 1728
+    },
+    "B2400": {
+      "nativeR": 720,
+      "leafR": 1728,
+      "leafB": 2400
+    },
+    "B3407": {
+      "nativeR": 720,
+      "leafR": 1728,
+      "leafB": 3407
+    },
+    "B4096": {
+      "nativeR": 720,
+      "leafR": 1728,
+      "leafB": 4096
+    }
+  },
+  "opponents": {
+    "unit_search": 720,
+    "uniform_random": null
+  },
+  "scope": "Frozen TRAIN16 only; conditional leafB axis withR1728/N720,nativeR/B720. TrueW-LH48 only,Cunresolved; global lowesttie+all7strictstarts w1/2primary/w0and1exploratory, freezeDEV priceunion beforeplay. Next16DEV hasonlynativelegality probes/no choices sofar. No Humanfit or universalBclaim."
+}

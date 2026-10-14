@@ -1,0 +1,35 @@
+{
+  "question": "Can adding bishop give cheap trueWL price signal conditional on fixed R1728?",
+  "H": 48,
+  "nodes": 4096,
+  "max_seconds": 120,
+  "expected_seconds": 30,
+  "root_file": "results/dev_aux/task1386/roots.json",
+  "root_sha256": "2d56149c860546b04c75e50303b3c4b660e46ba7923d167f000e9958b17737bd",
+  "root_range": [
+    16,
+    32
+  ],
+  "root_count": 16,
+  "expected_games": 128,
+  "random_seed_base": 2026479000,
+  "binary": ".local_agent/leaf-rb-45/fairy-leaf-rb.exe",
+  "binary_sha256": "eaebcf77f737f96c8c3a502ee865000ebcf45ec1e863b9757b7b627b80ba0343",
+  "profiles": {
+    "B360": {
+      "nativeR": 720,
+      "leafR": 1728,
+      "leafB": 360
+    },
+    "B720": {
+      "nativeR": 720,
+      "leafR": 1728,
+      "leafB": 720
+    }
+  },
+  "opponents": {
+    "unit_search": 720,
+    "uniform_random": null
+  },
+  "scope": "Independent16DEV frozenbeforechoices; mainTRAINselected720 isBASE so primary gain0 byconstruction; onlyoldrandomtrained360 exploratory compare720. No refit or claimingequalB/N universal."
+}

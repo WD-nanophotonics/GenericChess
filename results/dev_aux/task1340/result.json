@@ -1,0 +1,58 @@
+{
+  "status": "PASS_ALL256_FORCED_FIRST_MOVE_THEN_FIXED_TEACHER",
+  "counts": {
+    "literal_frontiers": 3987,
+    "tbhits_zero": 51439,
+    "literal_PVmoves": 226554,
+    "go": 3299,
+    "actions": 3987,
+    "randomdraws": 688
+  },
+  "rows": [
+    {
+      "profile": "baseline",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "C": 40,
+        "W": 17,
+        "D": 7
+      },
+      "J24": "17/64"
+    },
+    {
+      "profile": "baseline",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 54,
+        "C": 10
+      },
+      "J24": "27/32"
+    },
+    {
+      "profile": "L_first",
+      "opponent": "unit_search",
+      "N": 64,
+      "counts": {
+        "C": 39,
+        "W": 18,
+        "D": 7
+      },
+      "J24": "9/32"
+    },
+    {
+      "profile": "L_first",
+      "opponent": "uniform_random",
+      "N": 64,
+      "counts": {
+        "W": 56,
+        "C": 8
+      },
+      "J24": "7/8"
+    }
+  ],
+  "baseline_fulltrajectory_controls": 128,
+  "new_go": 0,
+  "scope": "PrefillquerylegalPV anduniformprice, forcedfirstactionfromcachedsource, lateractualpolicyuniform720; firstmovechanged only. Exposeddiagnosticnotvalidation."
+}

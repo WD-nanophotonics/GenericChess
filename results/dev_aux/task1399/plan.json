@@ -1,0 +1,28 @@
+{
+  "question": "Does R/B interaction change useful values after adding third type?",
+  "root_file": "results/dev_aux/task1400/roots.json",
+  "split": "first16TRAIN/next16DEV freeze beforelabels",
+  "R_grid": [
+    720,
+    1440,
+    1728,
+    3407
+  ],
+  "B_grid": [
+    360,
+    720,
+    1440,
+    3407
+  ],
+  "N": 720,
+  "nativeR": 720,
+  "nativeB": 720,
+  "H": 48,
+  "nodes": 4096,
+  "random_seed_base": 2026499000,
+  "max_train_seconds": 600,
+  "expected_train_seconds": 250,
+  "expected_train_cases": 1024,
+  "selection": "Oneglobal TRAINmixedprimary lowestR thenlowestB tie; coordinate strictneighbor paths fromall16initials reported; no naturalconvergenceclaim, no humanfit; DEVglobal/baseline1728,720/prior1440,720 dedup frozenbeforeplay",
+  "scope": "Changed premise from B-only fixedR1728 to coupledtwoaxes, freshsame\u03bc samples notrescueoldBDEV; preserveR/N H24failure/H48success and old16Bnegative. Future actual runnable manifest uses singlemax_seconds only, do not pass these study estimates as legacy conflicting runfields."
+}

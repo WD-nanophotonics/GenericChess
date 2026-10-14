@@ -1,0 +1,92 @@
+{
+  "status": "PASS_EXACT_MULTIARCHIVE_AND_PRIVATE_FULL_RESTORE",
+  "archives": [
+    {
+      "name": "ACTUAL_MATURE_20261014_45_01.zip",
+      "bytes": 33140451,
+      "sha256": "74f649d4a10272bb86359a0be19283ee88b6995fdd7001d641ade20032f5f8c8"
+    },
+    {
+      "name": "ACTUAL_MATURE_20261014_45_02.zip",
+      "bytes": 17527027,
+      "sha256": "a8af24e4b5dc6915189eb9815855054cfdfa0bc41cf9f1766814acfabd2536f1"
+    },
+    {
+      "name": "ACTUAL_MATURE_20261014_45_03.zip",
+      "bytes": 5176,
+      "sha256": "233c3acf7e7d19b4b2715fc34a16c822327ce94cfe46f69f15c79f4d1f8f36fb"
+    }
+  ],
+  "raw_bytes": 568230645,
+  "large_files_archived_not_individually_tracked": [
+    "results/dev_aux/task1328/qualification.json",
+    "results/dev_aux/task1329/games.jsonl",
+    "results/dev_aux/task1329/queries.jsonl",
+    "results/dev_aux/task1329/result.json",
+    "results/dev_aux/task1334/result.json",
+    "results/dev_aux/task1337/result.json",
+    "results/dev_aux/task1338/plan.json",
+    "results/dev_aux/task1339/games.jsonl",
+    "results/dev_aux/task1339/queries.jsonl",
+    "results/dev_aux/task1343/roots.json",
+    "results/dev_aux/task1345/qualification.json",
+    "results/dev_aux/task1346/games.jsonl",
+    "results/dev_aux/task1346/queries.jsonl",
+    "results/dev_aux/task1346/result.json",
+    "results/dev_aux/task1354/roots.json",
+    "results/dev_aux/task1357/games.jsonl",
+    "results/dev_aux/task1357/queries.jsonl",
+    "results/dev_aux/task1357/result.json",
+    "results/dev_aux/task1361/games.jsonl",
+    "results/dev_aux/task1361/queries.jsonl",
+    "results/dev_aux/task1361/result.json",
+    "results/dev_aux/task1364/result.json",
+    "results/dev_aux/task1367/games.jsonl",
+    "results/dev_aux/task1367/queries.jsonl",
+    "results/dev_aux/task1370/games.jsonl",
+    "results/dev_aux/task1370/queries.jsonl",
+    "results/dev_aux/task1376/roots.json",
+    "results/dev_aux/task1380/games.jsonl",
+    "results/dev_aux/task1380/queries.jsonl",
+    "results/dev_aux/task1386/roots.json",
+    "results/dev_aux/task1388/result.json",
+    "results/dev_aux/task1391/games.jsonl",
+    "results/dev_aux/task1391/price_acks.json",
+    "results/dev_aux/task1391/queries.jsonl",
+    "results/dev_aux/task1397/games.jsonl",
+    "results/dev_aux/task1397/queries.jsonl",
+    "results/dev_aux/task1400/roots.json"
+  ],
+  "counts": {
+    "ast": 59,
+    "json": 94,
+    "jsonl_lines": 118511,
+    "other": 20
+  },
+  "privacy_pass": true,
+  "all_original_failures_and_raw_unchanged": true,
+  "seconds": 9.79700000025332,
+  "exact_members": 198,
+  "supplement_exact_restore": true,
+  "manual_claim_review": "PASS: H24 failure unchanged; H48fresh primary13/256, no infinite/universalclaim; Bprimarybaseline gain0; mocks excludedphysics; H6partialnotdraw; allprivateaccount/raw/userinput excludedpublication.",
+  "handling_corrections": [
+    "Fractionstring float failed before effectanalysis: original source/empty1348 retained,new1350 parsesFraction",
+    "missingreconcile requestID fixed, no resends",
+    "literaturewrite parse error corrected beforefilecreation",
+    "legacy audit fieldname J24 stale on H48; rawactualgo/termination/actions/assertions establish48; no H24 relabel",
+    "futurestudy legacybudget estimates normalized to singlemanifest1402; oldgenerator metadata retained",
+    "prototypecleanup and binary/inputdigest evidence +10regressions/16actualcontrols, no productpatch"
+  ],
+  "actual_manual_review": {
+    "H48_primary_fixed_in_task1375_before768games": true,
+    "H24_original_failures_preserved": true,
+    "sameTRAINprice_not_doubleDEV": true,
+    "Bselectedbaseline_not_gain": true,
+    "teacher_cleanup_and_owned_exit_confirmed": true,
+    "mock_outside_science": true,
+    "old_only_R_source_binary_unchanged": true,
+    "primary_readonly_no_integration": true,
+    "all_producer_and_audit_sessions_closed": true,
+    "no_further_longproof_reruns": true
+  }
+}

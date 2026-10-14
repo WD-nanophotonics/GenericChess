@@ -1,0 +1,60 @@
+{
+  "question": "Add bishop without assuming a human price, interface feasibility only",
+  "types": [
+    6,
+    4,
+    4,
+    2,
+    3,
+    6,
+    4,
+    4,
+    2,
+    3
+  ],
+  "colors": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "split": "first16TRAIN,next16DEV before any choices; feasibility search onlyTRAIN, all32nativelegal",
+  "selection": "priceblind contact valid/capture/non-one-mate, noengine outcomes/D2criterion",
+  "profiles": [
+    [
+      720,
+      720
+    ],
+    [
+      1728,
+      720
+    ],
+    [
+      1728,
+      360
+    ],
+    [
+      1728,
+      1440
+    ],
+    [
+      4096,
+      4096
+    ]
+  ],
+  "N": 720,
+  "nativeR": 720,
+  "nativeB": 720,
+  "nodes": 4096,
+  "max_seconds": 90,
+  "expected_go": 112,
+  "expected_perft": 32,
+  "future": "ActualW-L H48 training B only at fixed priorR1728, TRAIN16/DEV16; no training run yet, no ratioB fit/human labels",
+  "scope": "KRRNBvKRRNB, noP/Q/promotion/drop/castling/ep; finite material upper26016 belowmate32000"
+}

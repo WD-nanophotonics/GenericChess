@@ -1,0 +1,69 @@
+{
+  "status": "DIRECT_PAIRED_H24_MINUS_H12_OBJECTIVE_DIFFERENCE",
+  "rows": [
+    {
+      "profile": "J",
+      "paired_delta24_minus_delta12": "3/256",
+      "bootstrap95": [
+        -0.0390625,
+        0.0625
+      ]
+    },
+    {
+      "profile": "L",
+      "paired_delta24_minus_delta12": "7/256",
+      "bootstrap95": [
+        -0.0234375,
+        0.078125
+      ]
+    },
+    {
+      "profile": "O",
+      "paired_delta24_minus_delta12": "1/64",
+      "bootstrap95": [
+        -0.03125,
+        0.06640625
+      ]
+    }
+  ],
+  "actual_terminal_transitions": {
+    "B": {
+      "C>C": 108,
+      "C>W": 53,
+      "C>L": 11,
+      "W>W": 64,
+      "L>L": 6,
+      "D>D": 10,
+      "C>D": 4
+    },
+    "J": {
+      "C>C": 118,
+      "C>W": 51,
+      "W>W": 68,
+      "L>L": 6,
+      "C>L": 6,
+      "D>D": 3,
+      "C>D": 4
+    },
+    "L": {
+      "C>C": 109,
+      "C>W": 55,
+      "W>W": 70,
+      "L>L": 6,
+      "C>D": 8,
+      "C>L": 6,
+      "D>D": 2
+    },
+    "O": {
+      "C>D": 9,
+      "C>C": 106,
+      "C>W": 51,
+      "W>W": 66,
+      "L>L": 6,
+      "C>L": 5,
+      "D>D": 13
+    }
+  },
+  "new_go": 0,
+  "scope": "Same preserved actualpolicies; nominal CI patterns not comparison test; Cnotdraw, no infiniteWDL or newgames"
+}

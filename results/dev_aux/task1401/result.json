@@ -1,0 +1,34 @@
+{
+  "status": "INDEPENDENT16_B_AXIS_DEV",
+  "primary_selected_B": 720,
+  "primary_gain": 0,
+  "primary_reason": "TRAINmixedselected baseline, zero byconstruction not a second improvement claim",
+  "rows": [
+    {
+      "weight": "0",
+      "exploratoryB360_minus_baselineB720": "-1/32",
+      "bootstrap95": [
+        -0.09375,
+        0.0
+      ]
+    },
+    {
+      "weight": "1/2",
+      "exploratoryB360_minus_baselineB720": "-1/32",
+      "bootstrap95": [
+        -0.078125,
+        0.0
+      ]
+    },
+    {
+      "weight": "1",
+      "exploratoryB360_minus_baselineB720": "-1/32",
+      "bootstrap95": [
+        -0.125,
+        0.0625
+      ]
+    }
+  ],
+  "new_go": 0,
+  "scope": "R1728/N720fixed; mainB=Nselected without humanlabel, but sample16 and no evidence unique/generalBprice. Randomtie-selected lowB failspointvalidation; no DEVrefit."
+}

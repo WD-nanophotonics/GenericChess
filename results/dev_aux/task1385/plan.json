@@ -1,0 +1,173 @@
+{
+  "status": "FROZEN_RESEARCH_ONLY_R_B_LEAF_COMMAND",
+  "source_pin": "9f778da667f6e07dae1e85d3e2ea204fc6dee94d",
+  "old_binary_sha256": "98ef15275b4807b923ef94ed755c544cde9db4190394830d37518434646981bd",
+  "old_uci_sha256": "388d602c0d70045a8cf0f63d487790505d47683d8f00ae284144ab297a7c0a4e",
+  "new_uci_sha256": "fe15f8903784f9208075cc98339dfe07fd5bfe4294b6f3f7db1c7858341f02ab",
+  "sources": [
+    {
+      "source": "benchmark.cpp",
+      "source_sha256": "cdb8b8963ee2a023443827b0956e2f28da3fc05d22aef6354ac5ab5a80195567",
+      "object_sha256": "c8962361e90c95dafefc28a799f01abc9397aaecc72263a30f5e28e59b6e45b3"
+    },
+    {
+      "source": "bitbase.cpp",
+      "source_sha256": "a03e309abe5dd7c5cb17f8473fa41c72071966a8a6da3bdf6db17fa537ad5041",
+      "object_sha256": "8b37e25b0e10f68288c1a04ec80363b50c9b3a51e5c466fd8530f8c819449ef0"
+    },
+    {
+      "source": "bitboard.cpp",
+      "source_sha256": "767c344c93b6d2e1daaa9a861b3e20d4ff4bc5324935565aebad8fdf7f877b29",
+      "object_sha256": "1c47c40f008b259f7c8bad0d94a2c45fff7394925b9e7c5c0c8ad93bb850c800"
+    },
+    {
+      "source": "endgame.cpp",
+      "source_sha256": "58dc3e70e598d86ca1ff8bf3772a831190e7be614045ab79806f2cb274055442",
+      "object_sha256": "9960878cf259004b350423c5688b96a2d631efe87d59558a0ab2bd36cd39ca3e"
+    },
+    {
+      "source": "evaluate.cpp",
+      "source_sha256": "b875e3f460216430daf5ad61bee19bf5c5d2efb4c0377a2cde5c2d9172012fc3",
+      "object_sha256": "39d44967cb9d69cc9836715df3730fda29e4db8fa2f8576e848b29538fda500a"
+    },
+    {
+      "source": "main.cpp",
+      "source_sha256": "88edb1472bd5c241ed49c55edebb4d7ee6037d35a2f32d19e0108398c2caa639",
+      "object_sha256": "df24289e52868ccc843585c677fd827376063248c46508a69bfaaebc21ecddec"
+    },
+    {
+      "source": "material.cpp",
+      "source_sha256": "e9bf9f79ce64a94f3df7da288019c28bda3f1c665e07255eb693ff6d993b346d",
+      "object_sha256": "71c6b349011a75c2123de72ed8f7de348d6c9d6b44a212ef0652eec1fa5fdb93"
+    },
+    {
+      "source": "misc.cpp",
+      "source_sha256": "d81cd5fcd40352e391680d71e0bb3cfbd5c3f639293b76df9f619777159fd420",
+      "object_sha256": "ba6205d8796d5a0c90856bb9e765532f944f32592b83f5925f75f0cca6b4e6e4"
+    },
+    {
+      "source": "movegen.cpp",
+      "source_sha256": "0ec1dd919ee6778f690030dc78dce9b18fded040089904b55ea37f9fb781b748",
+      "object_sha256": "2505e70ce71655cbd7b010afb284268897193fbb39da20a162cd0f88b7c46fcb"
+    },
+    {
+      "source": "movepick.cpp",
+      "source_sha256": "496fcdbdd760838825cdc1647d5d11c8fd41d2988b3d899fe310cdb554297371",
+      "object_sha256": "9198b06f19f5141faf5a5bc86412ec8df947153778b8f20d5506b56379f91c96"
+    },
+    {
+      "source": "pawns.cpp",
+      "source_sha256": "b440976d91ae833ca012be2e2460a335fffe68ea3f47cdcf9177ba182b194641",
+      "object_sha256": "4754daa3faba10066a9888a4df993237bfa7dc19224c8a6a142893582ef67ff4"
+    },
+    {
+      "source": "position.cpp",
+      "source_sha256": "de4148ffa56266a8bb3676e8e46d4b0fc6b18cb7fa399d052bbeaf2fa8fec1aa",
+      "object_sha256": "94a7991599b1f04af74ca7227fc6af6df05a6941b6fa76e85281bf3ec7d4469a"
+    },
+    {
+      "source": "psqt.cpp",
+      "source_sha256": "ee64970e60bbcaf9c6876189b499cc7f0585303de25aedef5d103e51ffb1f5dc",
+      "object_sha256": "bef6989869298c71535c7a54d4ab76f6b042c7d4a1b6c8e6fe155db7a1f0856b"
+    },
+    {
+      "source": "search.cpp",
+      "source_sha256": "02f1a8002cfd945f18b70582740139311c61dcb9805315f735bde4ad5b5be01a",
+      "object_sha256": "59b2017f92f76d6a002b0a9add4d90917c73dba72be7a06ccd5a74ecbe848551"
+    },
+    {
+      "source": "thread.cpp",
+      "source_sha256": "690983f6d61c05ba9f646040930b8cbe314de98af76779654e170aef930cb92c",
+      "object_sha256": "136a98ed4852f9c69c82c0adff5619ecffb221167f9a51da3786d47adde704dc"
+    },
+    {
+      "source": "timeman.cpp",
+      "source_sha256": "8d95bacf61d3e3181a175ae06ea4be6954b35b35cd0447ce8df50f6a1b401836",
+      "object_sha256": "9ad787008c3e9be5fa71468431436169bf1e9b9359eefa52a8ec829842332d87"
+    },
+    {
+      "source": "tt.cpp",
+      "source_sha256": "d7196362fc06a1adcb0a2fd2d18ee751453425069834a018a6a4424ac0450dd1",
+      "object_sha256": "089cb933aaa983577beb684abf148ce36c82011b3406580dca60f17ee07f6d56"
+    },
+    {
+      "source": "uci.cpp",
+      "source_sha256": "d902bb05efdce4be85a97112434f9eabbae96739fba603204ab055c4edadb3ee",
+      "object_sha256": "c2e52c0e61359d15d9c9aa3344065859401d0cbad3fee351362ffe3d050b91f2"
+    },
+    {
+      "source": "ucioption.cpp",
+      "source_sha256": "b41c40fe1ad75e21ba33bc6fe1c85fca736a5cf61eced73bdc0a1f38143e1022",
+      "object_sha256": "b7f695ab353b7a9f4987e876a890ed9d0e394ae392438e825caf74656e35b674"
+    },
+    {
+      "source": "tune.cpp",
+      "source_sha256": "5c4ec1cb22a171e8758afba4e6d467a1e9e7c5299dce5dd202d5e94316d5ecac",
+      "object_sha256": "bee87eba57321dc18f368421ddbd6e152d01c807b07f5ecfe3248d0d2428d738"
+    },
+    {
+      "source": "syzygy/tbprobe.cpp",
+      "source_sha256": "c0badee0722895e5e52a8d7c5906256c56ff13aff127ea744f81cffa2ca1850d",
+      "object_sha256": "1ef14f03a0581b3f8de60cd6d5309ebeb80ee495d055108ece8c15e45bcd5038"
+    },
+    {
+      "source": "nnue/evaluate_nnue.cpp",
+      "source_sha256": "42748f6ef0923e4899e3d57b59fff40089f31f3bd8408132f1f40cfc6266e3d5",
+      "object_sha256": "77fe7da3dbedaa9f2843293ec80a20b82e3e14455d81b31f7125bc26f80d4a81"
+    },
+    {
+      "source": "nnue/features/half_ka_v2.cpp",
+      "source_sha256": "49f089a2092500892532d93196dcd5001961e778916b767e7d5f7f16b8eaaec3",
+      "object_sha256": "03c8d8d1a3b85beb94a4b0bb4153bf644bf483c46ea544cb45656fe1d9beec0f"
+    },
+    {
+      "source": "partner.cpp",
+      "source_sha256": "49428e981a1ab6dfa40e05beedfa2f89c457abd1c1e2e7a11fc16cd173eb0569",
+      "object_sha256": "835903a42c295d2e89237d35321c3728b9f8986a1f8bf36d49d5685e985975ef"
+    },
+    {
+      "source": "parser.cpp",
+      "source_sha256": "b696c1fcc3f7f2a2e28732eb73fb3cff2e8762f92eda7d0f0aeb5cf5c00e3f41",
+      "object_sha256": "01fddae3927f9384bcc152094703576959dd6efd9ce694bdc58c75301abe3988"
+    },
+    {
+      "source": "piece.cpp",
+      "source_sha256": "6695601cb82b230aab5bd3f8f7422ff8be1ab05163f80bc374ec8137e23399ef",
+      "object_sha256": "12d86b21e0c30f3e71e21f74f01dfe0d270dff5456b1454d3ce6ca9b26297b3c"
+    },
+    {
+      "source": "variant.cpp",
+      "source_sha256": "0e835a90bb2c2d27b03e55ef164092927d68084087cdad19ccd29ba9981058d4",
+      "object_sha256": "3c327e438e264f4c0c21d73c1084792fd2b888bede4a8f8a308cb11151feae62"
+    },
+    {
+      "source": "xboard.cpp",
+      "source_sha256": "ff76bc5024a129aac6cb15fa2909b7ad83435f94b41297672703193d20d738c1",
+      "object_sha256": "a5e1ad288047f5834d7ee268fba73261e6ef71fb28653ff4ce2cc992b8dc9a17"
+    },
+    {
+      "source": "nnue/features/half_ka_v2_variants.cpp",
+      "source_sha256": "0db1773800327d8faa86987c49d48790786a879c6df4b92dd2459c66f5b28200",
+      "object_sha256": "efed051eada5c5ae9403ed56cbfc18c6cc287acc9d7289c9d7d443e770136ce3"
+    }
+  ],
+  "flags": [
+    "-include",
+    "iterator",
+    "-std=c++17",
+    "-O2",
+    "-DNDEBUG",
+    "-fno-exceptions",
+    "-DIS_64BIT",
+    "-DNO_PREFETCH",
+    "-DNNUE_EMBEDDING_OFF",
+    "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+    "-msse2",
+    "-pthread"
+  ],
+  "compiler_sha256": "ee85bef2c733e24a26c22be3df94bd631cf9528a048fce91241c182a936737fe",
+  "intervention": "Add atomic devauxleafrb R B1..4096 only in experimental build; old devauxleafr remains untouched. Only EvalPieceValue MG/EG bothcolors R/B; native SEE/capture/order/PSQT untouched. OldR/N binary/source immutable. No product/default/UI/primarywrites.",
+  "decision": "Prepare one-extra-type feasibility after finiteH48 KRN signal; no B price fitting/claim here. KRRNBvKRRNB stock max4R+2B+2N=26016<32000 withN720 andR/B4096; excludesP/Q/drop/promotion/history variants.",
+  "timeout_compile": 180,
+  "timeout_link": 90
+}

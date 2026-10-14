@@ -1,0 +1,205 @@
+{
+  "status": "ACTUAL_CLOSED_PHYSICAL_COST45",
+  "science_games": 6464,
+  "all_actual_games": 6480,
+  "actual_search_go": 112143,
+  "experiment_producer_seconds": 1140.4069999996573,
+  "actual_perft": 512,
+  "qualification_seconds_excluding_mixed1388": 4.217999999877065,
+  "producers": [
+    {
+      "task": 1329,
+      "games": 1024,
+      "go": 13952,
+      "seconds": 150.375,
+      "scope": "science"
+    },
+    {
+      "task": 1339,
+      "games": 256,
+      "go": 3299,
+      "seconds": 36.04700000025332,
+      "scope": "science"
+    },
+    {
+      "task": 1346,
+      "games": 512,
+      "go": 7482,
+      "seconds": 69.18800000008196,
+      "scope": "science"
+    },
+    {
+      "task": 1357,
+      "games": 1792,
+      "go": 24513,
+      "seconds": 248.56300000008196,
+      "scope": "science"
+    },
+    {
+      "task": 1361,
+      "games": 768,
+      "go": 11493,
+      "seconds": 119.64099999982864,
+      "scope": "science"
+    },
+    {
+      "task": 1370,
+      "games": 768,
+      "go": 18947,
+      "seconds": 200.15599999995902,
+      "scope": "science"
+    },
+    {
+      "task": 1380,
+      "games": 768,
+      "go": 18842,
+      "seconds": 176.04699999978766,
+      "scope": "science"
+    },
+    {
+      "task": 1391,
+      "games": 448,
+      "go": 10038,
+      "seconds": 106.17199999978766,
+      "scope": "science"
+    },
+    {
+      "task": 1397,
+      "games": 128,
+      "go": 3216,
+      "seconds": 28.530999999959022,
+      "scope": "science"
+    },
+    {
+      "task": 1367,
+      "games": 16,
+      "go": 249,
+      "seconds": 3.405999999959022,
+      "scope": "actualsmoke/interface not extra learning"
+    },
+    {
+      "task": 1388,
+      "games": 0,
+      "go": 112,
+      "seconds": 2.280999999959022,
+      "scope": "actualsmoke/interface not extra learning"
+    }
+  ],
+  "perft_batches": [
+    {
+      "task": 1328,
+      "go": 128,
+      "seconds": 1.3280000002123415
+    },
+    {
+      "task": 1345,
+      "go": 128,
+      "seconds": 1.0619999999180436
+    },
+    {
+      "task": 1356,
+      "go": 128,
+      "seconds": 0.8909999998286366
+    },
+    {
+      "task": 1379,
+      "go": 64,
+      "seconds": 0.5929999998770654
+    },
+    {
+      "task": 1404,
+      "go": 32,
+      "seconds": 0.3440000000409782,
+      "scope": "futureinputqual only"
+    }
+  ],
+  "proofs": [
+    {
+      "task": 1334,
+      "nodes": 140136,
+      "seconds": 7.390000000130385,
+      "status": "COMPLETE"
+    },
+    {
+      "task": 1337,
+      "nodes": 8000256,
+      "seconds": 502.4850000003353,
+      "status": "PARTIAL_LIMIT"
+    }
+  ],
+  "independent_audits": [
+    {
+      "task": 1327,
+      "status": "PASS_ALL4096_PRICEBLIND_SYMBOLIC_EXCHANGE_GENERATION_LITERAL"
+    },
+    {
+      "task": 1330,
+      "status": "PASS_1024_FROZEN_FACTORIAL_LITERAL_PV_HISTORY_RNG_TERMINAL"
+    },
+    {
+      "task": 1335,
+      "status": "PASS_SELECTED_UNION_H4_CERTIFICATES"
+    },
+    {
+      "task": 1340,
+      "status": "PASS_ALL256_FORCED_FIRST_MOVE_THEN_FIXED_TEACHER"
+    },
+    {
+      "task": 1344,
+      "status": "PASS_ALL4096_PRICEBLIND_SYMBOLIC_EXCHANGE_GENERATION_LITERAL"
+    },
+    {
+      "task": 1347,
+      "status": "PASS_512_FROZEN_TRANSFER_LITERAL_PV_HISTORY_RNG_TERMINAL"
+    },
+    {
+      "task": 1355,
+      "status": "PASS_ALL4096_PRICEBLIND_SYMBOLIC_EXCHANGE_GENERATION_LITERAL"
+    },
+    {
+      "task": 1358,
+      "status": "PASS_512_FROZEN_TRANSFER_LITERAL_PV_HISTORY_RNG_TERMINAL"
+    },
+    {
+      "task": 1362,
+      "status": "PASS_512_FROZEN_TRANSFER_LITERAL_PV_HISTORY_RNG_TERMINAL"
+    },
+    {
+      "task": 1371,
+      "status": "PASS_OBSERVED_BUDGET_INPUT_AND_CLEANUP_REGRESSIONS_PLUS_ACTUAL16_CONTROLS"
+    },
+    {
+      "task": 1372,
+      "status": "PASS_512_FROZEN_TRANSFER_LITERAL_PV_HISTORY_RNG_TERMINAL"
+    },
+    {
+      "task": 1383,
+      "status": "PASS_512_FROZEN_TRANSFER_LITERAL_PV_HISTORY_RNG_TERMINAL"
+    },
+    {
+      "task": 1387,
+      "status": "PASS_ALL_VALID_KRRNB_LITERAL_FRONTIERS"
+    },
+    {
+      "task": 1389,
+      "status": "PASS_NEW_B_LEAF_INTERFACE_LITERAL_PV_AND32_EXACT_OLD_BINARY_CONTROLS"
+    },
+    {
+      "task": 1393,
+      "status": "PASS_ALL2048_RB_PRICEBLIND_SAMPLER_REJECTS_AND_SPLIT"
+    },
+    {
+      "task": 1394,
+      "status": "PASS_512_FROZEN_TRANSFER_LITERAL_PV_HISTORY_RNG_TERMINAL"
+    },
+    {
+      "task": 1398,
+      "status": "PASS_512_FROZEN_TRANSFER_LITERAL_PV_HISTORY_RNG_TERMINAL"
+    },
+    {
+      "task": 1403,
+      "status": "PASS_ALL2048_RB_PRICEBLIND_SAMPLER_REJECTS_AND_SPLIT"
+    }
+  ],
+  "scope": "CPU ordinaryconcurrency allowed; wallproducer totals overlap, not sequentialelapsed/effectivetime. Allraw/partial/H6failure kept. No mock counts as physicalgame/go;16smoke+112interface separate."
+}

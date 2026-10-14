@@ -1,13 +1,13 @@
-# DEV_AUX current scope —2026-10-14 segment44
+# DEV_AUX current scope —2026-10-14 segment45
 
 ScienceOPEN; own sidemission, heartbeatACTIVE; no primary/default/UI writes.
-15472actualH24games223735searchgo2648perft1851.063producerseconds; oldtimeout1partial preserved.
-Oldtrain J1440/L1728 fresh64 failat256/4096; epsilon.03upperexcluded onlytestedprotocol.
-4096TRAINL3407 fresh64+3/256 CIcross0/.03; failed1256retained/39missingseparaterepair;compositeexplicit.
-24rootH4onewinner/34actualactionunion noH4labeldifferences; within-cellplateau notexplanationofnogainvs1.
-Newexchange32TRAIN16/DEV16 R/N2 both:256DEVnegative;4096EXPOSEDresponseJ+5/64 CIcross0/L0, search-onlyJ+1/8 exploratory.
-Next1324 fresh64 B/J/L/O factorial frozen/new1325inputs64ready; nogames/refit/humanfit, priorscompoundnotpureorder.
-ReportSEGMENT_20261014_44.md; COST/QA/archives44; allfailed/C/source/raw preserved.
+6464science/6480physicalgames,112143searchgo,512perft;1140.407producerseconds; H6partial8m/502s retained.
+R-only leaf2.4 from independentTRAIN32/32: originalH24 DEV uncertain; NEW64H48 PRIMARY13/256 CI[.01171875,.09375].
+OldfilteredTRAINleaf2 alsoH48positive; direct2.4-minus2 uncertain, no uniqueinterval/humanfulltable claim.
+Badded: privateatomicR/B command,32exactbinarycontrols; TRAIN16 selectsB720=baseline, gain0; random360 DEVnegative.
+Singleexecutedmanifest budget/input/binary/cleanup repair+10regressions/16actualcontrols; no mocks in science.
+Next1399study/1400fresh32/1402canonicalcoupledTRAINmanifest: literals+32nativelegal ready; no coupledgames.
+ReportSEGMENT_20261014_45.md, COST/QA/exact198member archives45; allraw/failures privateoriginals retained.
 
 # Current local research mainline
 

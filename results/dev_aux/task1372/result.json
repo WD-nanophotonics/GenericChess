@@ -1,0 +1,80 @@
+{
+  "status": "PASS_512_FROZEN_TRANSFER_LITERAL_PV_HISTORY_RNG_TERMINAL",
+  "counts": {
+    "literal_frontiers": 22187,
+    "tbhits_zero": 244450,
+    "literal_PVmoves": 1247916,
+    "go": 18947,
+    "actions": 22187,
+    "randomdraws": 3240
+  },
+  "rows": [
+    {
+      "arm": "P720",
+      "opponent": "unit_search",
+      "N": 128,
+      "counts": {
+        "C": 78,
+        "L": 8,
+        "W": 8,
+        "D": 34
+      },
+      "J24": "0"
+    },
+    {
+      "arm": "P720",
+      "opponent": "uniform_random",
+      "N": 128,
+      "counts": {
+        "C": 15,
+        "W": 113
+      },
+      "J24": "113/128"
+    },
+    {
+      "arm": "P1440",
+      "opponent": "unit_search",
+      "N": 128,
+      "counts": {
+        "C": 91,
+        "L": 5,
+        "W": 19,
+        "D": 13
+      },
+      "J24": "7/64"
+    },
+    {
+      "arm": "P1440",
+      "opponent": "uniform_random",
+      "N": 128,
+      "counts": {
+        "W": 117,
+        "C": 11
+      },
+      "J24": "117/128"
+    },
+    {
+      "arm": "P1728",
+      "opponent": "unit_search",
+      "N": 128,
+      "counts": {
+        "C": 90,
+        "L": 7,
+        "W": 18,
+        "D": 13
+      },
+      "J24": "11/128"
+    },
+    {
+      "arm": "P1728",
+      "opponent": "uniform_random",
+      "N": 128,
+      "counts": {
+        "W": 120,
+        "C": 8
+      },
+      "J24": "15/16"
+    }
+  ],
+  "new_go": 0
+}

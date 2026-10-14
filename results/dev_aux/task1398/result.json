@@ -1,0 +1,58 @@
+{
+  "status": "PASS_512_FROZEN_TRANSFER_LITERAL_PV_HISTORY_RNG_TERMINAL",
+  "counts": {
+    "literal_frontiers": 3744,
+    "tbhits_zero": 40490,
+    "literal_PVmoves": 203314,
+    "go": 3216,
+    "actions": 3744,
+    "randomdraws": 528
+  },
+  "rows": [
+    {
+      "arm": "B360",
+      "opponent": "unit_search",
+      "N": 32,
+      "counts": {
+        "L": 3,
+        "C": 23,
+        "W": 2,
+        "D": 4
+      },
+      "J24": "-1/32"
+    },
+    {
+      "arm": "B360",
+      "opponent": "uniform_random",
+      "N": 32,
+      "counts": {
+        "W": 30,
+        "C": 2
+      },
+      "J24": "15/16"
+    },
+    {
+      "arm": "B720",
+      "opponent": "unit_search",
+      "N": 32,
+      "counts": {
+        "L": 2,
+        "C": 24,
+        "D": 4,
+        "W": 2
+      },
+      "J24": "0"
+    },
+    {
+      "arm": "B720",
+      "opponent": "uniform_random",
+      "N": 32,
+      "counts": {
+        "W": 31,
+        "C": 1
+      },
+      "J24": "31/32"
+    }
+  ],
+  "new_go": 0
+}

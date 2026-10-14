@@ -1073,3 +1073,10 @@ Dotreviewedfixed43 only,44rawnotindependentlyexecuted. Adopt existingroot/action
 Priceblindstructuralexchange32roots/16TRAIN16DEV,896TRAINgrid selectsR/N2; original16DEVnegative. 4096sameEXPOSEDDEVJ+5/64/L0 uncertain, search-onlyJ+1/8exploratory. Fresh64B/J/L/O native/leaffactorial nowfrozen/generated, no oldDEVextension/refit.
 Observedruntimeinherited360 vsintendedtrainfield1800 cutoff retained1256failed2649/2688+1partial; ONLY39missing repaired asnew11sproducer. Originalfailure/Agentclocknotreset; composite2688notphysicalduplicates.
 AllAgenttechnicalevidence ownbranchonly; rawSlack/account/privateinputs savedignored/excludedpublication. Nohourjob/worker/fee; audit/engineering/communication/publication in actualsessionwall, tokensunmeasured.
+
+## DEV_AUX segment45 —2026-10-14
+
+Own sidemission fewtype trueWL learning/causalcontrols,6464science6480physicalgames112143searchgo512perft. R-only TRAIN32/32 selects2.4; original64H24 failure remains. NEW64H48 main13/256 nominalCI[.01171875,.09375], old2secondarypositive/directdifferenceuncertain; no uniquehumanratio/fulltable/defaultpromotion.
+Primary8efc5b3f094d98754a6b5ad1aff1ab1cc478c10b read-onlycontext: reports genericCore winner retention/qcompletion; notindependentlyauditedbyaux, no merge/primary/UIwrites. Dot readfixed44only, not45rawruns; adopt cross-mu sameDEV/directpairedhorizon/three-role comparison, preserve all failures and nominal/multiplicity limits. No routineack/selfloop/worker.
+Bnexttype privatecommand exact32oldbinarycontrols/112actualqueries; TRAIN16 mainB720 equalsbaseline, random360 DEVnegative, no uniqueBclaim. Budgetalias/cleanup observeddefects repaired in ownscope with10regressions and16actualcontrols. Mockfaultzeroactualgo separate. H6partial8m/502s no newusefullabel; no cap escalation.
+198exactoriginals568230645rawbytes in3archives, fullprivate SHArestore/AST/JSON/privacy. RawSlack/account/privateinputs Gitignored only. Ordinaryconcurrency accepted; timingsnotexclusive, token/engineering/audit overhead unmeasured separately. FuturecoupledR/B fresh32 literal/nativequalified, no fit/game yet. ScienceOPEN, heartbeatACTIVE.

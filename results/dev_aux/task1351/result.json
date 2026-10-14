@@ -1,0 +1,61 @@
+{
+  "status": "PREFIX_H12_VS_DECLARED_H24",
+  "rows": [
+    {
+      "arm": "J",
+      "H": 12,
+      "mixed_gain": "1/64",
+      "bootstrap95": [
+        -0.02734375,
+        0.05859375
+      ]
+    },
+    {
+      "arm": "J",
+      "H": 24,
+      "mixed_gain": "7/256",
+      "bootstrap95": [
+        -0.01171875,
+        0.06640625
+      ]
+    },
+    {
+      "arm": "L",
+      "H": 12,
+      "mixed_gain": "3/128",
+      "bootstrap95": [
+        -0.01171875,
+        0.05859375
+      ]
+    },
+    {
+      "arm": "L",
+      "H": 24,
+      "mixed_gain": "13/256",
+      "bootstrap95": [
+        0.0078125,
+        0.09375
+      ]
+    },
+    {
+      "arm": "O",
+      "H": 12,
+      "mixed_gain": "1/128",
+      "bootstrap95": [
+        -0.03125,
+        0.046875
+      ]
+    },
+    {
+      "arm": "O",
+      "H": 24,
+      "mixed_gain": "3/128",
+      "bootstrap95": [
+        -0.015625,
+        0.0625
+      ]
+    }
+  ],
+  "new_go": 0,
+  "scope": "Exposed samepolicy prefix, nominal CIs not adjusted, Cunresolved not draw, no original horizonreset"
+}

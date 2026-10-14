@@ -1,0 +1,37 @@
+[
+  {
+    "profile": "B",
+    "opponent": "unit_search",
+    "native": {
+      "controlled_fake": true
+    },
+    "leafack": "info string DEV_AUX leafR 720 nativeR 720 captureR 720",
+    "leafprobes": [
+      {
+        "piece": "N",
+        "expected": 3.4615384615384617,
+        "measured": 3.46,
+        "raw": [
+          "Final evaluation 3.46"
+        ]
+      },
+      {
+        "piece": "R",
+        "expected": 3.4615384615384617,
+        "measured": 3.46,
+        "raw": [
+          "Final evaluation 3.46"
+        ]
+      }
+    ],
+    "backend": "controlled_fake_transport"
+  },
+  {
+    "profile": "B",
+    "opponent": "unit_search",
+    "unit": {
+      "controlled_fake": true
+    },
+    "backend": "controlled_fake_transport"
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "nodes": 4096,
+  "random_seed_base": 2026419000,
+  "profiles": {
+    "P720": {
+      "nativeR": 720,
+      "leafR": 720
+    },
+    "P1440": {
+      "nativeR": 720,
+      "leafR": 1440
+    },
+    "P1728": {
+      "nativeR": 720,
+      "leafR": 1728
+    }
+  },
+  "opponents": {
+    "unit_search": 720,
+    "uniform_random": null
+  },
+  "H": 48,
+  "max_seconds": 600,
+  "root_file": "results/dev_aux/task1354/roots.json",
+  "root_range": [
+    64,
+    128
+  ],
+  "root_count": 64,
+  "expected_games": 768,
+  "binary": ".local_agent/leaf-4096-43/fairy-leaf-4096.exe",
+  "binary_sha256": "98ef15275b4807b923ef94ed755c544cde9db4190394830d37518434646981bd",
+  "scope": "Separate H48 horizon sensitivity on frozen TRAIN_A/B prices1728 and prior1440 versus720; originalH24 immutable, never extend to significance or change selection. Paired first24 actualhistory prefix checked. Trigger: nominalH12vsH24 signals differ; concern deadline-tuned policy rather than stable leaf value.",
+  "declaration_utc": "2026-10-14T01:52:07.594795+00:00",
+  "root_sha256": "2c480e40ebb8d53c4bc120e2a3d234827d765f9e888409214d44324ea6e9cd41"
+}
