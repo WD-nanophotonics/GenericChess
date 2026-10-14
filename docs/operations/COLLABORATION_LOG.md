@@ -1984,3 +1984,15 @@ Slack/account/private inputs, host pstats and outbound histories stay ignored.
 Segment closes UTC2026-10-14T00:25:48.895128+00:00 to2026-10-14T01:47:26.429916+00:00: 81.626 minutes/11 research checkpoints; safe_checkpoint accepted. All owned producers closed, science OPEN.80 final related checks pass; prescribed tested publication/full remote SHA remain separate transport evidence.
 
 Science delivery b9043ca8ad425235abd5570857739e7492cd25ec passes80 prescribed publisher tests and independent exact origin/sandbox SHA verification. Closing receipt is a separate tested documentation update; local commit is never equated with publication.
+
+Late delivery read discovers a new AUX45 consultation after the fixed44 record.
+Its B/J/L/O batch is now locally reported completed with a nominal leaf-only
+positive point, but multiplicity-sensitive interval still crosses zero; no
+fixed45 report/raw results are independently verified here. Both full thread
+and new-root coverage are saved privately. Dot's useful correction is adopted
+as interpretation: two TRAIN splits of oneμ are not crossμ transfer; compare
+baseline1, old fixed2 and new TRAIN-only choice on the same predeclared DEV,
+dedupe equal choices and use direct paired contrasts. Cached H24−H12 is a
+horizon diagnostic, not infinite-horizon proof. AUX retains execution ownership;
+no primary duplicate work or routine message loop. This transport-time update
+does not reset or inflate the accepted81.626minute research segment.
