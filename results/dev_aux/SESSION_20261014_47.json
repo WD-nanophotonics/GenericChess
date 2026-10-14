@@ -1,0 +1,66 @@
+{
+  "checkpoints": [
+    {
+      "at": "2026-10-14T04:44:07.672673+00:00",
+      "evidence": "results/dev_aux/task1485/selection.json",
+      "kind": "research",
+      "next_action": "Execute fresh32DEV pergroup with frozen360/720 and independently audit; classify actual terminal/promotion mechanisms.",
+      "observation": "Both frozen early/late TRAIN16 select P360/N720; all four strict adjacent starts reach360. Full literal/history/PV/RNG terminal audits pass512games. DEVunion360/720 frozen beforeplay; no humanfit.",
+      "question": "Does pawn advancement change TRAIN selected price?"
+    },
+    {
+      "at": "2026-10-14T04:47:15.209846+00:00",
+      "evidence": "results/dev_aux/task1491/result.json",
+      "kind": "research",
+      "next_action": "Diagnose finite-terminal coverage, selection optimism and genuine choice conflicts; construct bounded terminal-only proof on changed pawn scope, no DEV refit.",
+      "observation": "Both32family mixed gains negative: early -7/128,late -3/64; both family95 intervals cross0 and joint lower negative. Same trained prices give identical crossprice contrast, not equivalence. All512DEV actualclosed; full audits inspected.",
+      "question": "Does TRAIN selectedP360 transfer to fresh early/late DEV?"
+    },
+    {
+      "at": "2026-10-14T04:57:34.153517+00:00",
+      "evidence": "results/dev_aux/task1497/result.json",
+      "kind": "research",
+      "next_action": "Complete TRAIN-only selector, freeze DEV union, audit actual evaluator/choice labels; consult Dot semantic objection independently.",
+      "observation": "Complete3x3 KRN graph67128states167344edges, maxmate rank13; everyedge independentliteral+Bellman/rank verified and ALL67128 nativeperft match. Price-blind label-defined128TRAIN/64DEV symmetryfamilies and16/64/256 budgets frozen;3072TRAIN coldchoices now executing.",
+      "question": "Can exact tiny-game WDL remove censoring and material-surrogate labels?"
+    },
+    {
+      "at": "2026-10-14T05:15:24.115804+00:00",
+      "evidence": "results/dev_aux/task1512/result.json",
+      "kind": "research",
+      "next_action": "Complete64/256 resource-policy controls; independently verify strategy graph/ranks/cycles and actual sampled cache matches, then publish limits and reusable exact-label route.",
+      "observation": "Cold16 fullpolicy ALL67128states perprice complete87680go504.719s; exactbestresponse onDEV64 gain7/128 CIcross0, versusonechoice1/16 CIcross0. Thousands of retained oraclewins not realized; cached-cycle witness audit serialization bug diagnosed and corrected in newsource, original failure retained.",
+      "question": "Does exact one-choice WDL translate to complete mature-policy wins?"
+    },
+    {
+      "at": "2026-10-14T05:36:35.683523+00:00",
+      "evidence": "results/dev_aux/task1529/result.json",
+      "kind": "research",
+      "next_action": "Reviewjointbands andpublicscopes, archiveexactsources/data includingfailures, prepare nextchanged-domain test and synchronizeonlysidmission atsafecheckpoint.",
+      "observation": "NEWfullorbits TRAINallbudgets selectsR1728/N720 boundary; fullcoldpolicy64 gain23/128,256gain1/8 versus720, individualCIpositive; 16gain7/128uncertain. All262kpolicyqueries/matchedsamples and independentcandidatecentricWDL audits PASS; explicitWIN-preservingcycles andnativefalsemate_lowbudget retained; nohumanfulltable claim.",
+      "question": "Can mature material learning improve exact complete-game WDL cheaply in a simplified rule domain?"
+    }
+  ],
+  "duration_gate_passed": true,
+  "elapsed_minutes": 67.212,
+  "ended_at": "2026-10-14T05:48:25.047689+00:00",
+  "ending_evidence": "results/dev_aux/SEGMENT_20261014_47.md",
+  "id": "17230fbf-776b-46dd-92c6-7626fb99d342",
+  "quality_review_required": true,
+  "reason": "safe_checkpoint",
+  "research_stage_count": 5,
+  "started_at": "2026-10-14T04:41:12.310387+00:00",
+  "state": "ended",
+  "thread_id": "01a128cf-ae2d-7352-a456-06bd38367221",
+  "AGENT_ID": "DEV_AUX",
+  "branch": "sidemission",
+  "scientific_state": "OPEN",
+  "heartbeat": "ACTIVE",
+  "manual_quality_review": {
+    "status": "PASS",
+    "evidence": "results/dev_aux/QA_20261014_47.json",
+    "meaning": "Actual independent science/protocol/privacy checks reviewed; session validator time/structure alone does not prove quality."
+  },
+  "private_session_sha256": "495d4f4377063f0fa76a382f036acb61355faf47e369584829063ae5e5f81be2",
+  "science_commit": "56e37577411faac9ceebf7b0a712ee2b391c7276"
+}
