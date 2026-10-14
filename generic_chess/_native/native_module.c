@@ -5403,27 +5403,6 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
     int beta_original = beta;
     uint64_t tt_action = 0;
     int tt_has_action = 0;
-    uint64_t declaration_action = 0;
-    int declaration_win = gc_semantic_declaration_win(
-        ctx->rules, position, ctx->root_ply_offset + ply,
-        &declaration_action);
-    if (declaration_win < 0) {
-        ctx->control = 4;
-        return 0;
-    }
-    if (declaration_win > 0) {
-        int score = gc_semantic_iterative_terminal_score(
-            position->side_to_move, position->side_to_move,
-            (int)(ctx->root_ply_offset + ply));
-        ctx->pv_table[(size_t)ply * ctx->pv_stride] = declaration_action;
-        ctx->pv_length[ply] = 1;
-        gc_semantic_tt_store_node(ctx, position, ply, depth, score,
-                                  alpha_original, beta_original,
-                                  declaration_action, 1);
-        gc_semantic_trace_record(ctx, position, ply, depth, score,
-                                 alpha_original, beta_original, 1);
-        return score;
-    }
     int winner = -1;
     /* Only a successful full checked edge can extend the parent history by
      * one entry. That appended digest is the current child's canonical key.
@@ -5443,6 +5422,28 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
             (int)(ctx->root_ply_offset + ply));
         gc_semantic_tt_store_node(ctx, position, ply, depth, score,
                                   alpha_original, beta_original, 0, 0);
+        gc_semantic_trace_record(ctx, position, ply, depth, score,
+                                 alpha_original, beta_original, 1);
+        return score;
+    }
+    /* A completed game has no subsequent declaration decision. */
+    uint64_t declaration_action = 0;
+    int declaration_win = gc_semantic_declaration_win(
+        ctx->rules, position, ctx->root_ply_offset + ply,
+        &declaration_action);
+    if (declaration_win < 0) {
+        ctx->control = 4;
+        return 0;
+    }
+    if (declaration_win > 0) {
+        int score = gc_semantic_iterative_terminal_score(
+            position->side_to_move, position->side_to_move,
+            (int)(ctx->root_ply_offset + ply));
+        ctx->pv_table[(size_t)ply * ctx->pv_stride] = declaration_action;
+        ctx->pv_length[ply] = 1;
+        gc_semantic_tt_store_node(ctx, position, ply, depth, score,
+                                  alpha_original, beta_original,
+                                  declaration_action, 1);
         gc_semantic_trace_record(ctx, position, ply, depth, score,
                                  alpha_original, beta_original, 1);
         return score;
