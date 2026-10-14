@@ -1,0 +1,49 @@
+{
+  "id": "88f5275f-e0a4-417a-8a01-fe2427e4d05a",
+  "started_at": "2026-10-14T01:27:28.860470+00:00",
+  "ended_at": "2026-10-14T02:31:42.709526+00:00",
+  "elapsed_minutes": 64.231,
+  "reason": "safe_checkpoint",
+  "research_stage_count": 4,
+  "duration_gate_passed": true,
+  "ending_evidence": "results/dev_aux/SEGMENT_20261014_45.md",
+  "status": "MANUALLY_REVIEWED_SAFE_CHECKPOINT",
+  "science": "OPEN",
+  "heartbeat": "ACTIVE",
+  "science_commit": "2441549fbe0455b6e99b6cbb431b523cfba6a9ab",
+  "quality_evidence": "QA_20261014_45.json; structuralvalidator checksnotmanualtruthproof",
+  "checkpoints": [
+    {
+      "at": "2026-10-14T01:32:53.719481+00:00",
+      "evidence": "results/dev_aux/task1331/result.json",
+      "kind": "research",
+      "next_action": "Counterfactual first-only leaf with uniform continuation, paired actual terminal transitions and complete interval ties.",
+      "observation": "1024 actual H24 games150s; leafmixed13/256 bootstrap excludes0, joint/native uncertain. H4first6 selectedunion complete; audit in progress.",
+      "question": "Fresh factorial separates leaf versus native gain?"
+    },
+    {
+      "at": "2026-10-14T01:41:23.189348+00:00",
+      "evidence": "results/dev_aux/task1352/result.json",
+      "kind": "research",
+      "next_action": "Execute two independent32TRAIN fits with fixed leaf grid and predeclared64DEV; compare optimization plateaus and realterminal generalization.",
+      "observation": "Freshunfiltered64 mixed gain11/256 uncertain/search-only1/16 exploratory; factorial simultaneousband crosses0;128firstcontrols exact.",
+      "question": "Cheap leaf signal transfers across sampling distribution?"
+    },
+    {
+      "at": "2026-10-14T01:54:12.939173+00:00",
+      "evidence": "results/dev_aux/task1363/result.json",
+      "kind": "research",
+      "next_action": "Verify H48 prefix/scope and repair own experiment resource manifest/cleanup regression; freeze next changed-premise checkpoint.",
+      "observation": "TRAIN_A/B both mixed1728, but DEV gain5/256 CI[-.0234375,.0625]; strictneighbor initial plateaus persist; newH48 declared separate, no originalreset.",
+      "question": "Independent TRAINs and DEV support stable price?"
+    },
+    {
+      "at": "2026-10-14T02:19:51.992663+00:00",
+      "evidence": "results/dev_aux/task1384/result.json",
+      "kind": "research",
+      "next_action": "Freeze fresh coupledR/B TRAIN16/DEV16 (not refit oldDEV), then review exact raw archives and publish safe checkpoint.",
+      "observation": "New64 PRIMARY1728 gain13/256 CI[.01171875,.09375]; old2secondary15/256, directnewminusold uncertain. B TRAIN16 selected720=baseline;128DEV negative exploratory360.32binarycontrols exact.",
+      "question": "FreshH48 confirmation and adding bishop?"
+    }
+  ]
+}
