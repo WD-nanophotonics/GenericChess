@@ -1,0 +1,111 @@
+{
+  "status": "PASS_ALL_SELECTED_TRUE_POLICY_PRICE_DEV_STOCK_INTERVENTION_GAMES_LITERAL_RULES",
+  "counts": {
+    "literal_frontiers": 4302,
+    "tbhits_zero": 17670,
+    "literal_PVmoves": 47689,
+    "go": 3506,
+    "actions": 4302,
+    "randomdraws": 796
+  },
+  "rows": [
+    {
+      "arm": "J",
+      "price": 720,
+      "opponent": "unit_search",
+      "N": 32,
+      "counts": {
+        "C": 22,
+        "W": 3,
+        "L": 3,
+        "D": 4
+      },
+      "J24": "0"
+    },
+    {
+      "arm": "J",
+      "price": 1440,
+      "opponent": "unit_search",
+      "N": 32,
+      "counts": {
+        "C": 23,
+        "W": 5,
+        "L": 3,
+        "D": 1
+      },
+      "J24": "1/16"
+    },
+    {
+      "arm": "J",
+      "price": 720,
+      "opponent": "uniform_random",
+      "N": 32,
+      "counts": {
+        "W": 24,
+        "C": 8
+      },
+      "J24": "3/4"
+    },
+    {
+      "arm": "J",
+      "price": 1440,
+      "opponent": "uniform_random",
+      "N": 32,
+      "counts": {
+        "W": 25,
+        "C": 7
+      },
+      "J24": "25/32"
+    },
+    {
+      "arm": "L",
+      "price": 720,
+      "opponent": "unit_search",
+      "N": 32,
+      "counts": {
+        "C": 22,
+        "W": 3,
+        "L": 3,
+        "D": 4
+      },
+      "J24": "0"
+    },
+    {
+      "arm": "L",
+      "price": 1728,
+      "opponent": "unit_search",
+      "N": 32,
+      "counts": {
+        "C": 24,
+        "W": 4,
+        "L": 3,
+        "D": 1
+      },
+      "J24": "1/32"
+    },
+    {
+      "arm": "L",
+      "price": 720,
+      "opponent": "uniform_random",
+      "N": 32,
+      "counts": {
+        "W": 24,
+        "C": 8
+      },
+      "J24": "3/4"
+    },
+    {
+      "arm": "L",
+      "price": 1728,
+      "opponent": "uniform_random",
+      "N": 32,
+      "counts": {
+        "W": 27,
+        "C": 5
+      },
+      "J24": "27/32"
+    }
+  ],
+  "new_go": 0,
+  "scope": "ActualW-Lonly,C24!=draw,nofit/human/quantityproxy in audit"
+}

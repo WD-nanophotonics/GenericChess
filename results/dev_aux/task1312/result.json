@@ -1,0 +1,138 @@
+{
+  "status": "FROZEN16_COOPERATIVE_STOCK_TRANSFER",
+  "rows": [
+    {
+      "arm": "J",
+      "price": 1440,
+      "opponent": "ALL",
+      "N": 64,
+      "delta": "3/64",
+      "family_bootstrap95": [
+        -0.046875,
+        0.140625
+      ],
+      "base": {
+        "C": 30,
+        "W": 27,
+        "L": 3,
+        "D": 4
+      },
+      "cand": {
+        "C": 30,
+        "W": 30,
+        "L": 3,
+        "D": 1
+      }
+    },
+    {
+      "arm": "J",
+      "price": 1440,
+      "opponent": "unit_search",
+      "N": 32,
+      "delta": "1/16",
+      "family_bootstrap95": [
+        -0.0625,
+        0.1875
+      ],
+      "base": {
+        "C": 22,
+        "W": 3,
+        "L": 3,
+        "D": 4
+      },
+      "cand": {
+        "C": 23,
+        "W": 5,
+        "L": 3,
+        "D": 1
+      }
+    },
+    {
+      "arm": "J",
+      "price": 1440,
+      "opponent": "uniform_random",
+      "N": 32,
+      "delta": "1/32",
+      "family_bootstrap95": [
+        -0.125,
+        0.1875
+      ],
+      "base": {
+        "W": 24,
+        "C": 8
+      },
+      "cand": {
+        "W": 25,
+        "C": 7
+      }
+    },
+    {
+      "arm": "L",
+      "price": 1728,
+      "opponent": "ALL",
+      "N": 64,
+      "delta": "1/16",
+      "family_bootstrap95": [
+        -0.046875,
+        0.1875
+      ],
+      "base": {
+        "C": 30,
+        "W": 27,
+        "L": 3,
+        "D": 4
+      },
+      "cand": {
+        "C": 29,
+        "W": 31,
+        "L": 3,
+        "D": 1
+      }
+    },
+    {
+      "arm": "L",
+      "price": 1728,
+      "opponent": "unit_search",
+      "N": 32,
+      "delta": "1/32",
+      "family_bootstrap95": [
+        -0.0625,
+        0.125
+      ],
+      "base": {
+        "C": 22,
+        "W": 3,
+        "L": 3,
+        "D": 4
+      },
+      "cand": {
+        "C": 24,
+        "W": 4,
+        "L": 3,
+        "D": 1
+      }
+    },
+    {
+      "arm": "L",
+      "price": 1728,
+      "opponent": "uniform_random",
+      "N": 32,
+      "delta": "3/32",
+      "family_bootstrap95": [
+        -0.09375,
+        0.28125
+      ],
+      "base": {
+        "W": 24,
+        "C": 8
+      },
+      "cand": {
+        "W": 27,
+        "C": 5
+      }
+    }
+  ],
+  "baseline_controls": 64,
+  "new_go": 0,
+  "scope": "Newmu10actors first16priceblindroots, oldtrainselectedfixedprices, no fit/human/or claimof64replication."
+}

@@ -1,0 +1,381 @@
+{
+  "status": "MATURE_NUMERICAL_UNIT_SCALE_RESPONSE",
+  "rows": [
+    {
+      "N": 360,
+      "ratio": "2",
+      "opponent": "ALL",
+      "cases": 96,
+      "paired_delta": "-1/32",
+      "family_bootstrap95": [
+        -0.08333333333333333,
+        0.020833333333333332
+      ],
+      "baseline": {
+        "C": 61,
+        "W": 23,
+        "D": 12
+      },
+      "candidate": {
+        "C": 66,
+        "W": 20,
+        "D": 10
+      }
+    },
+    {
+      "N": 360,
+      "ratio": "2",
+      "opponent": "unit_search",
+      "cases": 48,
+      "paired_delta": "0",
+      "family_bootstrap95": [
+        -0.0625,
+        0.0625
+      ],
+      "baseline": {
+        "C": 34,
+        "W": 4,
+        "D": 10
+      },
+      "candidate": {
+        "C": 37,
+        "W": 4,
+        "D": 7
+      }
+    },
+    {
+      "N": 360,
+      "ratio": "2",
+      "opponent": "uniform_random",
+      "cases": 48,
+      "paired_delta": "-1/16",
+      "family_bootstrap95": [
+        -0.16666666666666666,
+        0.0625
+      ],
+      "baseline": {
+        "C": 27,
+        "W": 19,
+        "D": 2
+      },
+      "candidate": {
+        "C": 29,
+        "W": 16,
+        "D": 3
+      }
+    },
+    {
+      "N": 360,
+      "ratio": "12/5",
+      "opponent": "ALL",
+      "cases": 96,
+      "paired_delta": "-5/96",
+      "family_bootstrap95": [
+        -0.10416666666666667,
+        0.0
+      ],
+      "baseline": {
+        "C": 61,
+        "W": 23,
+        "D": 12
+      },
+      "candidate": {
+        "C": 65,
+        "D": 13,
+        "W": 18
+      }
+    },
+    {
+      "N": 360,
+      "ratio": "12/5",
+      "opponent": "unit_search",
+      "cases": 48,
+      "paired_delta": "-1/48",
+      "family_bootstrap95": [
+        -0.08333333333333333,
+        0.041666666666666664
+      ],
+      "baseline": {
+        "C": 34,
+        "W": 4,
+        "D": 10
+      },
+      "candidate": {
+        "C": 34,
+        "D": 11,
+        "W": 3
+      }
+    },
+    {
+      "N": 360,
+      "ratio": "12/5",
+      "opponent": "uniform_random",
+      "cases": 48,
+      "paired_delta": "-1/12",
+      "family_bootstrap95": [
+        -0.16666666666666666,
+        -0.020833333333333332
+      ],
+      "baseline": {
+        "C": 27,
+        "W": 19,
+        "D": 2
+      },
+      "candidate": {
+        "C": 31,
+        "W": 15,
+        "D": 2
+      }
+    },
+    {
+      "N": 720,
+      "ratio": "2",
+      "opponent": "ALL",
+      "cases": 96,
+      "paired_delta": "-1/96",
+      "family_bootstrap95": [
+        -0.052083333333333336,
+        0.03125
+      ],
+      "baseline": {
+        "C": 63,
+        "W": 23,
+        "D": 10
+      },
+      "candidate": {
+        "C": 62,
+        "D": 12,
+        "W": 22
+      }
+    },
+    {
+      "N": 720,
+      "ratio": "2",
+      "opponent": "unit_search",
+      "cases": 48,
+      "paired_delta": "0",
+      "family_bootstrap95": [
+        -0.0625,
+        0.0625
+      ],
+      "baseline": {
+        "C": 33,
+        "W": 5,
+        "D": 10
+      },
+      "candidate": {
+        "C": 33,
+        "D": 10,
+        "W": 5
+      }
+    },
+    {
+      "N": 720,
+      "ratio": "2",
+      "opponent": "uniform_random",
+      "cases": 48,
+      "paired_delta": "-1/48",
+      "family_bootstrap95": [
+        -0.08333333333333333,
+        0.041666666666666664
+      ],
+      "baseline": {
+        "C": 30,
+        "W": 18
+      },
+      "candidate": {
+        "C": 29,
+        "W": 17,
+        "D": 2
+      }
+    },
+    {
+      "N": 720,
+      "ratio": "12/5",
+      "opponent": "ALL",
+      "cases": 96,
+      "paired_delta": "-1/48",
+      "family_bootstrap95": [
+        -0.052083333333333336,
+        0.020833333333333332
+      ],
+      "baseline": {
+        "C": 63,
+        "W": 23,
+        "D": 10
+      },
+      "candidate": {
+        "C": 65,
+        "W": 21,
+        "D": 10
+      }
+    },
+    {
+      "N": 720,
+      "ratio": "12/5",
+      "opponent": "unit_search",
+      "cases": 48,
+      "paired_delta": "1/48",
+      "family_bootstrap95": [
+        -0.041666666666666664,
+        0.08333333333333333
+      ],
+      "baseline": {
+        "C": 33,
+        "W": 5,
+        "D": 10
+      },
+      "candidate": {
+        "C": 34,
+        "W": 6,
+        "D": 8
+      }
+    },
+    {
+      "N": 720,
+      "ratio": "12/5",
+      "opponent": "uniform_random",
+      "cases": 48,
+      "paired_delta": "-1/16",
+      "family_bootstrap95": [
+        -0.125,
+        -0.020833333333333332
+      ],
+      "baseline": {
+        "C": 30,
+        "W": 18
+      },
+      "candidate": {
+        "C": 31,
+        "W": 15,
+        "D": 2
+      }
+    },
+    {
+      "N": 1440,
+      "ratio": "2",
+      "opponent": "ALL",
+      "cases": 96,
+      "paired_delta": "0",
+      "family_bootstrap95": [
+        -0.041666666666666664,
+        0.041666666666666664
+      ],
+      "baseline": {
+        "C": 62,
+        "W": 22,
+        "D": 12
+      },
+      "candidate": {
+        "C": 63,
+        "W": 22,
+        "D": 11
+      }
+    },
+    {
+      "N": 1440,
+      "ratio": "2",
+      "opponent": "unit_search",
+      "cases": 48,
+      "paired_delta": "0",
+      "family_bootstrap95": [
+        -0.0625,
+        0.0625
+      ],
+      "baseline": {
+        "C": 31,
+        "W": 5,
+        "D": 12
+      },
+      "candidate": {
+        "C": 34,
+        "W": 5,
+        "D": 9
+      }
+    },
+    {
+      "N": 1440,
+      "ratio": "2",
+      "opponent": "uniform_random",
+      "cases": 48,
+      "paired_delta": "0",
+      "family_bootstrap95": [
+        -0.0625,
+        0.0625
+      ],
+      "baseline": {
+        "C": 31,
+        "W": 17
+      },
+      "candidate": {
+        "C": 29,
+        "W": 17,
+        "D": 2
+      }
+    },
+    {
+      "N": 1440,
+      "ratio": "12/5",
+      "opponent": "ALL",
+      "cases": 96,
+      "paired_delta": "-1/96",
+      "family_bootstrap95": [
+        -0.041666666666666664,
+        0.020833333333333332
+      ],
+      "baseline": {
+        "C": 62,
+        "W": 22,
+        "D": 12
+      },
+      "candidate": {
+        "C": 63,
+        "W": 21,
+        "D": 12
+      }
+    },
+    {
+      "N": 1440,
+      "ratio": "12/5",
+      "opponent": "unit_search",
+      "cases": 48,
+      "paired_delta": "0",
+      "family_bootstrap95": [
+        -0.0625,
+        0.0625
+      ],
+      "baseline": {
+        "C": 31,
+        "W": 5,
+        "D": 12
+      },
+      "candidate": {
+        "C": 33,
+        "W": 5,
+        "D": 10
+      }
+    },
+    {
+      "N": 1440,
+      "ratio": "12/5",
+      "opponent": "uniform_random",
+      "cases": 48,
+      "paired_delta": "-1/48",
+      "family_bootstrap95": [
+        -0.0625,
+        0.0
+      ],
+      "baseline": {
+        "C": 31,
+        "W": 17
+      },
+      "candidate": {
+        "C": 30,
+        "W": 16,
+        "D": 2
+      }
+    }
+  ],
+  "new_go": 0,
+  "scope": "Exposed8families9configs. Bothcandidate/opponentunitprices rescaled, priorthresholds fixed; actualH24effect compoundnotsolefirstaction. N720baseline96fulltrajectory exact. No independentvalidation/Humanfit."
+}

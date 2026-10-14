@@ -1,0 +1,66 @@
+{
+  "status": "FIRSTACTION_AND_CONTINUATION_DECOMPOSITION",
+  "rows": [
+    {
+      "profile": "J_first",
+      "opponent": "ALL",
+      "N": 48,
+      "first_only_delta": "0",
+      "full_policy_delta": "1/48",
+      "continuation_and_TT_residual": "1/48",
+      "changed_first_actions": 4,
+      "scope": "Exposedfirst8families, rootSTM24profilecases; actor+variantpair; residualnotpurelaterleafcausation"
+    },
+    {
+      "profile": "J_first",
+      "opponent": "unit_search",
+      "N": 24,
+      "first_only_delta": "0",
+      "full_policy_delta": "0",
+      "continuation_and_TT_residual": "0",
+      "changed_first_actions": 2,
+      "scope": "Exposedfirst8families, rootSTM24profilecases; actor+variantpair; residualnotpurelaterleafcausation"
+    },
+    {
+      "profile": "J_first",
+      "opponent": "uniform_random",
+      "N": 24,
+      "first_only_delta": "0",
+      "full_policy_delta": "1/24",
+      "continuation_and_TT_residual": "1/24",
+      "changed_first_actions": 2,
+      "scope": "Exposedfirst8families, rootSTM24profilecases; actor+variantpair; residualnotpurelaterleafcausation"
+    },
+    {
+      "profile": "L_first",
+      "opponent": "ALL",
+      "N": 48,
+      "first_only_delta": "-1/24",
+      "full_policy_delta": "-1/48",
+      "continuation_and_TT_residual": "1/48",
+      "changed_first_actions": 12,
+      "scope": "Exposedfirst8families, rootSTM24profilecases; actor+variantpair; residualnotpurelaterleafcausation"
+    },
+    {
+      "profile": "L_first",
+      "opponent": "unit_search",
+      "N": 24,
+      "first_only_delta": "-1/12",
+      "full_policy_delta": "0",
+      "continuation_and_TT_residual": "1/12",
+      "changed_first_actions": 6,
+      "scope": "Exposedfirst8families, rootSTM24profilecases; actor+variantpair; residualnotpurelaterleafcausation"
+    },
+    {
+      "profile": "L_first",
+      "opponent": "uniform_random",
+      "N": 24,
+      "first_only_delta": "0",
+      "full_policy_delta": "-1/24",
+      "continuation_and_TT_residual": "-1/24",
+      "changed_first_actions": 6,
+      "scope": "Exposedfirst8families, rootSTM24profilecases; actor+variantpair; residualnotpurelaterleafcausation"
+    }
+  ],
+  "new_go": 0
+}

@@ -1,0 +1,292 @@
+{
+  "status": "PASS_EXACT_MULTIARCHIVE_AND_PRIVATE_FULL_RESTORE",
+  "archives": [
+    {
+      "name": "ACTUAL_MATURE_20261014_44_01.zip",
+      "bytes": 77215689,
+      "sha256": "7635a80a22bd4c5673bd23177f3fbc4acaa2d2c6a66032b760734a7fab454a36"
+    },
+    {
+      "name": "ACTUAL_MATURE_20261014_44_02.zip",
+      "bytes": 15368939,
+      "sha256": "78c925792390a7a1948ee7c5a40b9ac39abcd92f6ca00b37d26403abcde73bd4"
+    },
+    {
+      "name": "ACTUAL_MATURE_20261014_44_03.zip",
+      "bytes": 863517,
+      "sha256": "14222c8e1f508923482178f64ecd925c442244da41adb79444d1679dc6559622"
+    }
+  ],
+  "raw_bytes": 1144246636,
+  "large_files_archived_not_individually_tracked": [
+    "results/dev_aux/task1241/plan.json",
+    "results/dev_aux/task1242/qualification.json",
+    "results/dev_aux/task1243/games.jsonl",
+    "results/dev_aux/task1243/queries.jsonl",
+    "results/dev_aux/task1243/result.json",
+    "results/dev_aux/task1248/roots.json",
+    "results/dev_aux/task1252/plan.json",
+    "results/dev_aux/task1253/games.jsonl",
+    "results/dev_aux/task1253/queries.jsonl",
+    "results/dev_aux/task1253/result.json",
+    "results/dev_aux/task1255/plan.json",
+    "results/dev_aux/task1256/games.jsonl",
+    "results/dev_aux/task1256/price_acks.json",
+    "results/dev_aux/task1256/queries.jsonl",
+    "results/dev_aux/task1256/result.json",
+    "results/dev_aux/task1260/games.jsonl",
+    "results/dev_aux/task1260/queries.jsonl",
+    "results/dev_aux/task1263/games.jsonl",
+    "results/dev_aux/task1263/queries.jsonl",
+    "results/dev_aux/task1269/games.jsonl",
+    "results/dev_aux/task1269/price_acks.json",
+    "results/dev_aux/task1269/queries.jsonl",
+    "results/dev_aux/task1269/result.json",
+    "results/dev_aux/task1270/qualification.json",
+    "results/dev_aux/task1275/result.json",
+    "results/dev_aux/task1280/plan.json",
+    "results/dev_aux/task1281/games.jsonl",
+    "results/dev_aux/task1281/price_acks.json",
+    "results/dev_aux/task1281/queries.jsonl",
+    "results/dev_aux/task1282/games.jsonl",
+    "results/dev_aux/task1282/queries.jsonl",
+    "results/dev_aux/task1282/result.json",
+    "results/dev_aux/task1284/selection.json",
+    "results/dev_aux/task1285/plan.json",
+    "results/dev_aux/task1286/roots.json",
+    "results/dev_aux/task1288/qualification.json",
+    "results/dev_aux/task1289/games.jsonl",
+    "results/dev_aux/task1289/queries.jsonl",
+    "results/dev_aux/task1289/result.json",
+    "results/dev_aux/task1300/result.json",
+    "results/dev_aux/task1302/roots.json",
+    "results/dev_aux/task1305/qualification.json",
+    "results/dev_aux/task1306/games.jsonl",
+    "results/dev_aux/task1306/queries.jsonl",
+    "results/dev_aux/task1309/qualification.json",
+    "results/dev_aux/task1310/games.jsonl",
+    "results/dev_aux/task1310/price_acks.json",
+    "results/dev_aux/task1310/queries.jsonl",
+    "results/dev_aux/task1310/result.json",
+    "results/dev_aux/task1313/games.jsonl",
+    "results/dev_aux/task1313/queries.jsonl",
+    "results/dev_aux/task1317/games.jsonl",
+    "results/dev_aux/task1317/queries.jsonl",
+    "results/dev_aux/task1320/games.jsonl",
+    "results/dev_aux/task1320/queries.jsonl",
+    "results/dev_aux/task1325/roots.json"
+  ],
+  "counts": {
+    "ast": 53,
+    "json": 86,
+    "jsonl_lines": 293022,
+    "other": 18
+  },
+  "privacy_pass": true,
+  "all_original_failures_and_raw_unchanged": true,
+  "seconds": 18.717999999877065,
+  "supplement_scope": "Final audit/analysis outputs andNEXT64inputs completedafter initialarchivefilesnapshot; exactsupplementbeforepublish. Alltask1241..1325 files coveredonce.",
+  "independent_audits": [
+    {
+      "task": 1244,
+      "status": "PASS_ALL_SELECTED_TRUE_POLICY_PRICE_DEV_STOCK_INTERVENTION_GAMES_LITERAL_RULES",
+      "sha256": "89ec80d180fe2ce2eb130b6edde805761551336b55610aa0c9fc8ab201e5a3d3"
+    },
+    {
+      "task": 1254,
+      "status": "PASS_ALL_SELECTED_TRUE_POLICY_PRICE_DEV_STOCK_INTERVENTION_GAMES_LITERAL_RULES",
+      "sha256": "8c3b81cde8c0cf6b018594180e4b045cec207ce4d37cb2ead9cbb9728dac7f42"
+    },
+    {
+      "task": 1261,
+      "status": "PASS_ALL144_FORCED_FIRST_MOVE_THEN_FIXED_TEACHER",
+      "sha256": "da7ee997703e88beb9d35961452454a3f73e6591cb8b828cf989747d1d5ed1a5"
+    },
+    {
+      "task": 1271,
+      "status": "PASS_ALL864_MATERIAL_UNIT_SCALE_GAMES_LITERAL",
+      "sha256": "4fbdda47977cba7826d779b26d0ff08173d6e8fde35bfb19a4952057f78d1efa"
+    },
+    {
+      "task": 1283,
+      "status": "PASS_ALL2688_TRUE_POLICY_PRICE_TRAIN_STOCK_INTERVENTION_GAMES_LITERAL_RULES",
+      "sha256": "8c7177fa11c8176d3cafddea3f33954fdedef9fb38ffdb62017083bb142cef70"
+    },
+    {
+      "task": 1290,
+      "status": "PASS_ALL_SELECTED_TRUE_POLICY_PRICE_DEV_STOCK_INTERVENTION_GAMES_LITERAL_RULES",
+      "sha256": "b4a06ac190694cf7aa7fbdbc9937f9ba5712c51ad8fca16663eb264f6b19a959"
+    },
+    {
+      "task": 1294,
+      "status": "PASS_INDEPENDENT_LITERAL_ALL_DEFENSE_MATE_CERTIFICATES",
+      "sha256": "9d1bc8ac9dfcabf5b895f598a20a07526d10aacc3a15c4f1de5db8e587acb8d1"
+    },
+    {
+      "task": 1304,
+      "status": "PASS_ALL2048_PRICEBLIND_SYMBOLIC_EXCHANGE_GENERATION_LITERAL",
+      "sha256": "72f2bbd9f1c7a8f1264886c7f7729dcf195e8f97275bcdf0cd8bd1986a8fcd7c"
+    },
+    {
+      "task": 1307,
+      "status": "PASS_ALL_SELECTED_TRUE_POLICY_PRICE_DEV_STOCK_INTERVENTION_GAMES_LITERAL_RULES",
+      "sha256": "9f58db410128e2a719e60ee4e0e8d06554d82dee2a81232260336acbca58ae7c"
+    },
+    {
+      "task": 1315,
+      "status": "PASS_ALL_SELECTED_TRUE_POLICY_PRICE_DEV_STOCK_INTERVENTION_GAMES_LITERAL_RULES",
+      "sha256": "4bdf95512a1942e60ee61ddab91eca48d85a438a8cccffe887bc2a3e91b82d79"
+    },
+    {
+      "task": 1318,
+      "status": "PASS_ALL_SELECTED_TRUE_POLICY_PRICE_DEV_STOCK_INTERVENTION_GAMES_LITERAL_RULES",
+      "sha256": "6252a3de2e43e2d3c04ea526e2d2ba98fe563de087adfe75e3ac2a30b33aca89"
+    },
+    {
+      "task": 1321,
+      "status": "PASS_ALL_SELECTED_TRUE_POLICY_PRICE_DEV_STOCK_INTERVENTION_GAMES_LITERAL_RULES",
+      "sha256": "948678b2f8a59f5278dd95c74fd3993cd2e9b7794153b3863a462a04d6267588"
+    }
+  ],
+  "actual_cost": {
+    "status": "ACTUAL_PHYSICAL_PRODUCERS_NOT_COMPOSITE_DOUBLECOUNTS",
+    "games": 15472,
+    "search_go": 223735,
+    "stored_producer_seconds": 1851.0630000005476,
+    "batches": [
+      {
+        "task": 1243,
+        "complete": true,
+        "error": null,
+        "closed_games": 3840,
+        "actual_search_go": 56519,
+        "stored_producer_seconds": 339.98400000017136
+      },
+      {
+        "task": 1253,
+        "complete": true,
+        "error": null,
+        "closed_games": 3840,
+        "actual_search_go": 54965,
+        "stored_producer_seconds": 527.5469999997877
+      },
+      {
+        "task": 1256,
+        "complete": false,
+        "error": "TimeoutError: experiment wall fuse",
+        "closed_games": 2649,
+        "actual_search_go": 37128,
+        "stored_producer_seconds": 360.0
+      },
+      {
+        "task": 1281,
+        "complete": true,
+        "error": null,
+        "closed_games": 39,
+        "actual_search_go": 335,
+        "stored_producer_seconds": 11.016000000294298
+      },
+      {
+        "task": 1260,
+        "complete": true,
+        "error": null,
+        "closed_games": 144,
+        "actual_search_go": 2196,
+        "stored_producer_seconds": 13.25
+      },
+      {
+        "task": 1289,
+        "complete": true,
+        "error": null,
+        "closed_games": 2304,
+        "actual_search_go": 33698,
+        "stored_producer_seconds": 336.125
+      },
+      {
+        "task": 1269,
+        "complete": true,
+        "error": null,
+        "closed_games": 864,
+        "actual_search_go": 12859,
+        "stored_producer_seconds": 76.29700000025332
+      },
+      {
+        "task": 1263,
+        "complete": true,
+        "error": null,
+        "closed_games": 256,
+        "actual_search_go": 3506,
+        "stored_producer_seconds": 23.360000000335276
+      },
+      {
+        "task": 1306,
+        "complete": true,
+        "error": null,
+        "closed_games": 256,
+        "actual_search_go": 3554,
+        "stored_producer_seconds": 21.95299999974668
+      },
+      {
+        "task": 1310,
+        "complete": true,
+        "error": null,
+        "closed_games": 640,
+        "actual_search_go": 9215,
+        "stored_producer_seconds": 63.875
+      },
+      {
+        "task": 1317,
+        "complete": true,
+        "error": null,
+        "closed_games": 320,
+        "actual_search_go": 4884,
+        "stored_producer_seconds": 31.436999999918044
+      },
+      {
+        "task": 1320,
+        "complete": true,
+        "error": null,
+        "closed_games": 320,
+        "actual_search_go": 4876,
+        "stored_producer_seconds": 46.21900000004098
+      }
+    ],
+    "perft_go": 2648,
+    "perft_batches": [
+      {
+        "task": 1242,
+        "count": 960
+      },
+      {
+        "task": 1262,
+        "count": 48
+      },
+      {
+        "task": 1270,
+        "count": 360
+      },
+      {
+        "task": 1288,
+        "count": 960
+      },
+      {
+        "task": 1305,
+        "count": 96
+      },
+      {
+        "task": 1309,
+        "count": 224
+      }
+    ],
+    "old_failed_partial_go": 1,
+    "oracle_nodes": 1399994,
+    "oracle_seconds": 72.5,
+    "scope": "Everyphysicalproducer countedincludingfailed1256partialquery; composites1282/1313 notreruns. Normalconcurrency, noexclusivemachine/speedupclaim. Cachedanalysiszeroextraqueries. Audit/engineering/consult/publication inactualAgentwall; tokensunmeasured. No singlehourrun/workers/fees/longgames."
+  },
+  "binary_sha256": "98ef15275b4807b923ef94ed755c544cde9db4190394830d37518434646981bd",
+  "next64_inputs": 64,
+  "next64_games": 0,
+  "science": "OPEN",
+  "old_failure_not_rewritten": true,
+  "actual_research_quality_review": true
+}

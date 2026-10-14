@@ -1,14 +1,13 @@
-# DEV_AUX current scope — 2026-10-14 segment43
+# DEV_AUX current scope —2026-10-14 segment44
 
-ScienceOPEN; own sidemission, heartbeatACTIVE; noDEV_AUXprimary/default/UI writes.
-17184true24plygames254473searchgo5088perft1544.109storedproducerseconds.
-Old2.4 predictsbetter(21/1024contact,7/1024uniform MSE); contactpolicy3/256J,-3/256L.
-Matched512 ΔR21/64 ΔN71/1024; ratioresidual207/1280 CIpositive; conditional4.73 differsold2.4.
-R3407 privateguard4096/36coldpairsPASS; new64policygain1/768J,-1/768L, estimatedupper<epsilon.03.
-Directtruefitness TRAIN16+DEV16 selectsJ1440,L1728; primaryDEVboth5/192 CIcross0; search-onlyJ5/96 exploratory.
-No humanratio/globalintrinsicprice; prediction/intervention/leafpolicy distinct. Allraw/failures/censored preserved.
-Next1237 new64 J720/1440 L720/1440/1728, inputs1238/literal1239PASS; nativebeforegames; no refit/oldDEV extension.
-Report SEGMENT_20261014_43.md; COST/QA43. Oracleexportdenied0requests, localworkcontinued; nohourjob/worker/fee.
+ScienceOPEN; own sidemission, heartbeatACTIVE; no primary/default/UI writes.
+15472actualH24games223735searchgo2648perft1851.063producerseconds; oldtimeout1partial preserved.
+Oldtrain J1440/L1728 fresh64 failat256/4096; epsilon.03upperexcluded onlytestedprotocol.
+4096TRAINL3407 fresh64+3/256 CIcross0/.03; failed1256retained/39missingseparaterepair;compositeexplicit.
+24rootH4onewinner/34actualactionunion noH4labeldifferences; within-cellplateau notexplanationofnogainvs1.
+Newexchange32TRAIN16/DEV16 R/N2 both:256DEVnegative;4096EXPOSEDresponseJ+5/64 CIcross0/L0, search-onlyJ+1/8 exploratory.
+Next1324 fresh64 B/J/L/O factorial frozen/new1325inputs64ready; nogames/refit/humanfit, priorscompoundnotpureorder.
+ReportSEGMENT_20261014_44.md; COST/QA/archives44; allfailed/C/source/raw preserved.
 
 # Current local research mainline
 

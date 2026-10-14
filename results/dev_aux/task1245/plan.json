@@ -1,0 +1,24 @@
+{
+  "source": 1243,
+  "candidates_by_arm": {
+    "J": [
+      1440
+    ],
+    "L": [
+      1440,
+      1728
+    ]
+  },
+  "bootstrap": 5000,
+  "bootstrap_seed": 2026319500,
+  "epsilon": 0.03,
+  "scope": "Frozen64newfamilies truefiniteW-L only; primarymixedJ1440/L1728, predeclaredsearch-onlyJ1440/L1440 exploratory; no refit/oldDEVextension or censored=draw.",
+  "primary": {
+    "J": 1440,
+    "L": 1728
+  },
+  "exploratory": {
+    "J": 1440,
+    "L": 1440
+  }
+}

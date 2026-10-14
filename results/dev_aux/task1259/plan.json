@@ -1,0 +1,23 @@
+{
+  "question": "Is price ratio robust to material-unit scale in mature search?",
+  "root_input": 1238,
+  "root_selection": "first8families allfiveprofiles; nooutcome/choicefilter",
+  "N_values": [
+    360,
+    720,
+    1440
+  ],
+  "ratios": [
+    "1",
+    "2",
+    "12/5"
+  ],
+  "H": 24,
+  "nodes": 256,
+  "random_seed_base": 2026319000,
+  "new_games": 864,
+  "max_seconds": 180,
+  "expected_seconds": 100,
+  "decision": "Paired trueW-L ratio2/2.4 versusratio1 within eachscale. SameactiveR/Nrelativeweights scaled, opponentunitR=N same Nscale. Fixedmaturepruningthresholds notscaled. Compoundscale/priorpolicy response, notpureleafproof.",
+  "scope": "Mechanism audit onexposedfirst8replicationfamilies. First8selection fixedbeforeoutcomes. NoHumanfit. Guard1..4096; 6..7actorleafupper13248 below matesentinel."
+}

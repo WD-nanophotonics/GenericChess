@@ -1,0 +1,19 @@
+{
+  "source": 1289,
+  "candidates_by_arm": {
+    "L": [
+      3407,
+      4096
+    ]
+  },
+  "bootstrap": 5000,
+  "bootstrap_seed": 2026349500,
+  "epsilon": 0.03,
+  "primary": {
+    "L": 3407
+  },
+  "random_only_exploratory": {
+    "L": 4096
+  },
+  "scope": "Prospectivefresh64 afterTRAINonly4096 selection; primarymixedL3407, random-onlyL4096pretrainexploratory separately. NoHumanfit/earlierDEVreuse/gridextension. NewbatchLonly baseline720; prior1243/1253identitycontrolsnotrecounted."
+}

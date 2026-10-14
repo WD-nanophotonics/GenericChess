@@ -1,0 +1,16 @@
+{
+  "question": "How identifiable is a ratio from16truefitness trainingfamilies?",
+  "sources": [
+    1230,
+    1256
+  ],
+  "bootstrap": 5000,
+  "seed": 2026339500,
+  "weights": [
+    "0",
+    "1/2",
+    "1"
+  ],
+  "decision": "Descriptive resamplingTRAIN only, globalargmax lowestprice tie andallmax sets, pairedfamilyresampling acrossallprices. No refittingor selectingvalidation, no filteredpositiveboot, no ratioCIclaim.",
+  "scope": "Old256TRAIN exposed andnew4096TRAIN planned; quantify discretegrid/plateaus andinitialpricepath instability withoutnewlabels. Missingfuturefile isdeferred, not fabricated."
+}

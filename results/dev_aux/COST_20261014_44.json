@@ -1,0 +1,135 @@
+{
+  "status": "ACTUAL_PHYSICAL_PRODUCERS_NOT_COMPOSITE_DOUBLECOUNTS",
+  "games": 15472,
+  "search_go": 223735,
+  "stored_producer_seconds": 1851.0630000005476,
+  "batches": [
+    {
+      "task": 1243,
+      "complete": true,
+      "error": null,
+      "closed_games": 3840,
+      "actual_search_go": 56519,
+      "stored_producer_seconds": 339.98400000017136
+    },
+    {
+      "task": 1253,
+      "complete": true,
+      "error": null,
+      "closed_games": 3840,
+      "actual_search_go": 54965,
+      "stored_producer_seconds": 527.5469999997877
+    },
+    {
+      "task": 1256,
+      "complete": false,
+      "error": "TimeoutError: experiment wall fuse",
+      "closed_games": 2649,
+      "actual_search_go": 37128,
+      "stored_producer_seconds": 360.0
+    },
+    {
+      "task": 1281,
+      "complete": true,
+      "error": null,
+      "closed_games": 39,
+      "actual_search_go": 335,
+      "stored_producer_seconds": 11.016000000294298
+    },
+    {
+      "task": 1260,
+      "complete": true,
+      "error": null,
+      "closed_games": 144,
+      "actual_search_go": 2196,
+      "stored_producer_seconds": 13.25
+    },
+    {
+      "task": 1289,
+      "complete": true,
+      "error": null,
+      "closed_games": 2304,
+      "actual_search_go": 33698,
+      "stored_producer_seconds": 336.125
+    },
+    {
+      "task": 1269,
+      "complete": true,
+      "error": null,
+      "closed_games": 864,
+      "actual_search_go": 12859,
+      "stored_producer_seconds": 76.29700000025332
+    },
+    {
+      "task": 1263,
+      "complete": true,
+      "error": null,
+      "closed_games": 256,
+      "actual_search_go": 3506,
+      "stored_producer_seconds": 23.360000000335276
+    },
+    {
+      "task": 1306,
+      "complete": true,
+      "error": null,
+      "closed_games": 256,
+      "actual_search_go": 3554,
+      "stored_producer_seconds": 21.95299999974668
+    },
+    {
+      "task": 1310,
+      "complete": true,
+      "error": null,
+      "closed_games": 640,
+      "actual_search_go": 9215,
+      "stored_producer_seconds": 63.875
+    },
+    {
+      "task": 1317,
+      "complete": true,
+      "error": null,
+      "closed_games": 320,
+      "actual_search_go": 4884,
+      "stored_producer_seconds": 31.436999999918044
+    },
+    {
+      "task": 1320,
+      "complete": true,
+      "error": null,
+      "closed_games": 320,
+      "actual_search_go": 4876,
+      "stored_producer_seconds": 46.21900000004098
+    }
+  ],
+  "perft_go": 2648,
+  "perft_batches": [
+    {
+      "task": 1242,
+      "count": 960
+    },
+    {
+      "task": 1262,
+      "count": 48
+    },
+    {
+      "task": 1270,
+      "count": 360
+    },
+    {
+      "task": 1288,
+      "count": 960
+    },
+    {
+      "task": 1305,
+      "count": 96
+    },
+    {
+      "task": 1309,
+      "count": 224
+    }
+  ],
+  "old_failed_partial_go": 1,
+  "oracle_nodes": 1399994,
+  "oracle_seconds": 72.5,
+  "scope": "Everyphysicalproducer countedincludingfailed1256partialquery; composites1282/1313 notreruns. Normalconcurrency, noexclusivemachine/speedupclaim. Cachedanalysiszeroextraqueries. Audit/engineering/consult/publication inactualAgentwall; tokensunmeasured. No singlehourrun/workers/fees/longgames."
+}

@@ -1,0 +1,12 @@
+{
+  "question": "Do material-price rootchoices preserve cheap all-defense four-ply mating outcomes?",
+  "source": 1243,
+  "root_selector": "first8familyordinal<8, candidateinitialSTM; same24specs as1251, nooutcome selection",
+  "depth": 4,
+  "node_limit": 1500000,
+  "max_seconds": 600,
+  "expected_seconds": 300,
+  "decision": "Exact scoped finite-H4 minimax terminalW-L; frontier0 isno forcedH4terminal, notinfinitegame draw. Allrootactions scored; comparefixed720/J1440/L1728. One+1isall-defense actualmatecertificate, uncompletedrootsUNKNOWN, no quantity/pricedheuristic atfrontier.",
+  "scope": "KRNfull8 sameactualcontroller terminals excepthistoryfixednewroots/H4cannotthreefold or50move(halfclock0). TTskeyposition/turn/depth; no earlyclaimfor partialroots. This independentshort-horizon diagnostic isnotretraining/globalWDL/humanprice proof.",
+  "no_workers": true
+}

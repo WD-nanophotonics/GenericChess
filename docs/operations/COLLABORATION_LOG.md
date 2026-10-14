@@ -1063,3 +1063,13 @@ Actual40finish UTC17:52:57.035173->18:56:23.801183,63.446minutes/7researchstages
 Own sidemission completed freshintervalreplication, materialrankingbound, actualleaf/native/commonscale controls, richerstock trueWLlearning, deadlinecontrast andchangedglobaloptimizerfreshtransfer.4928qualifiedgames plus128invalidweights retained;57465journallednativego (55622qualified),1347completecalls111917nodes,864perft. Finiteglobal64 gains5/128 H16 and10/128 H24; H24 leafonly6/128/nativeonly0/joint10/128 showsinteraction4/128. LearnedR<N andgridboundary, nothumanrecovery/uniqueoptimum. Negativevalidation/localstagnation/censoring andallhandlingfailures preserved/corrected.
 
 Dot's inventory/draw0/262threshold/fixedopponent/anchor advice adopted afterrawprivatecapture; argument/previouspublished40 reviewed,41localruns notindependentlyexecuted. Primary newerbackend contextread-only, no dependency/merge/routinewake/primarywrites. No equalbudget/speedupclaim forcomplete2plyconsumer; gamewalls343.875seconds separateengineering/token/audit/publication cost.197exactarchive members140986755raw->9373163compressed, fullprivatehashrestore/AST/JSON/privacyPASS. RawSlack/account/userinputs privateonly. ScienceOPEN, heartbeatACTIVE; nextpriceblindbalancedexchange curriculum/fixedanchor/finiteoutcomeconsumercontrast.
+
+## DEV_AUX segment44 —2026-10-14
+
+Independent sidemission actual15472H24games/223735searchgo/2648perft/1851.063producerseconds, wholeliteral/history/PV/price/RNG audits.
+Primary97b4d1ed5cdc9034c434fd2d4ed51c9b07cf5039 read context/stops only; no primary/default/UI writes/integration. Normalconcurrency/no quiet-window or exclusive timings.
+OlddirectWLselectedratio2/2.4 failsfresh64at256/4096; .03estimatedupperexcluded onlytestedconditions, notallpricesinvalid. StrongTRAINL4.73 new64+3/256uncertain. NoHumanrecovery.
+Dotreviewedfixed43 only,44rawnotindependentlyexecuted. Adopt existingroot/action/H4/fullD2celljoin with1/exact2/2.4/tie sets. Correctedwithin-cellplateaunotexplanationofnogainvs1. H4onewinner/34actualactionunionno shortlabeldifferences.
+Priceblindstructuralexchange32roots/16TRAIN16DEV,896TRAINgrid selectsR/N2; original16DEVnegative. 4096sameEXPOSEDDEVJ+5/64/L0 uncertain, search-onlyJ+1/8exploratory. Fresh64B/J/L/O native/leaffactorial nowfrozen/generated, no oldDEVextension/refit.
+Observedruntimeinherited360 vsintendedtrainfield1800 cutoff retained1256failed2649/2688+1partial; ONLY39missing repaired asnew11sproducer. Originalfailure/Agentclocknotreset; composite2688notphysicalduplicates.
+AllAgenttechnicalevidence ownbranchonly; rawSlack/account/privateinputs savedignored/excludedpublication. Nohourjob/worker/fee; audit/engineering/communication/publication in actualsessionwall, tokensunmeasured.
