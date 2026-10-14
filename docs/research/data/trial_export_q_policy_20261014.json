@@ -1,0 +1,568 @@
+{
+  "base_sha": "36d2d0251f82b71cf71eeb5806f4eebe5eb4af6b",
+  "actual_research_searches": 157,
+  "series": {
+    "view1_fixed": 32,
+    "view2_fixed": 32,
+    "view3_profile": 2,
+    "view4_fixed": 32,
+    "view4_fresh": 16,
+    "consumer_v1": 1,
+    "consumer_v2": 1,
+    "drop_capture": 3,
+    "public_work_probe": 6,
+    "q_policy": 24,
+    "known_witness": 4,
+    "q2_witness": 2,
+    "q2_wide": 2
+  },
+  "archive": {
+    "archive": "docs/archive/trial_export_q_policy_20261014/evidence.zip",
+    "members": 147,
+    "bytes": 397383,
+    "sha256": "a8e7dbe48d92b0bd977995f142a3aec660463c7931e423a5c85fa9bdeb3b66af"
+  },
+  "product_change": "Append nullable completedCore runtime pushes/pops/balance only; default/stop/search/Native/UI unchanged",
+  "verification": {
+    "related_tests": 74,
+    "latest_V4_installed_tests": 101,
+    "latest_V4_inner_S3_pairs": 3886,
+    "latest_V4_actual_full_transitions": 153,
+    "latest_V4_lifecycle_controls": 14
+  },
+  "scope": "Exposed development; finite newgenerated roots, frozen qpolicies, immediate terminal goal; no humanfit/holdout/allWDL/strength claim",
+  "q_policy": {
+    "complete": true,
+    "calls": 24,
+    "pairs": [
+      {
+        "seed": 2026102016,
+        "size": 12,
+        "seconds": 16,
+        "rep": 0,
+        "q4_depth": 2,
+        "q4_policy": 4,
+        "q1_depth": 3,
+        "q1_policy": 1,
+        "same_action": true,
+        "same_score": false,
+        "same_pv": false,
+        "q4_runtime_pushes": 96323,
+        "q1_runtime_pushes": 90331,
+        "q4_visits": 6074,
+        "q1_visits": 23059
+      },
+      {
+        "seed": 2026102016,
+        "size": 12,
+        "seconds": 16,
+        "rep": 1,
+        "q4_depth": 2,
+        "q4_policy": 4,
+        "q1_depth": 3,
+        "q1_policy": 1,
+        "same_action": true,
+        "same_score": false,
+        "same_pv": false,
+        "q4_runtime_pushes": 96268,
+        "q1_runtime_pushes": 90463,
+        "q4_visits": 6065,
+        "q1_visits": 23071
+      },
+      {
+        "seed": 2026102016,
+        "size": 12,
+        "seconds": 64,
+        "rep": 0,
+        "q4_depth": 3,
+        "q4_policy": 4,
+        "q1_depth": 3,
+        "q1_policy": 1,
+        "same_action": true,
+        "same_score": false,
+        "same_pv": false,
+        "q4_runtime_pushes": 374842,
+        "q1_runtime_pushes": 321432,
+        "q4_visits": 40163,
+        "q1_visits": 44691
+      },
+      {
+        "seed": 2026102016,
+        "size": 12,
+        "seconds": 64,
+        "rep": 1,
+        "q4_depth": 3,
+        "q4_policy": 4,
+        "q1_depth": 3,
+        "q1_policy": 1,
+        "same_action": true,
+        "same_score": false,
+        "same_pv": false,
+        "q4_runtime_pushes": 369872,
+        "q1_runtime_pushes": 319577,
+        "q4_visits": 39712,
+        "q1_visits": 44534
+      },
+      {
+        "seed": 2026102017,
+        "size": 18,
+        "seconds": 16,
+        "rep": 0,
+        "q4_depth": 1,
+        "q4_policy": 0,
+        "q1_depth": 2,
+        "q1_policy": 1,
+        "same_action": false,
+        "same_score": false,
+        "same_pv": false,
+        "q4_runtime_pushes": 50504,
+        "q1_runtime_pushes": 43941,
+        "q4_visits": 5544,
+        "q1_visits": 23471
+      },
+      {
+        "seed": 2026102017,
+        "size": 18,
+        "seconds": 16,
+        "rep": 1,
+        "q4_depth": 1,
+        "q4_policy": 0,
+        "q1_depth": 2,
+        "q1_policy": 1,
+        "same_action": false,
+        "same_score": false,
+        "same_pv": false,
+        "q4_runtime_pushes": 48804,
+        "q1_runtime_pushes": 42845,
+        "q4_visits": 5420,
+        "q1_visits": 21329
+      },
+      {
+        "seed": 2026102017,
+        "size": 18,
+        "seconds": 64,
+        "rep": 0,
+        "q4_depth": 1,
+        "q4_policy": 0,
+        "q1_depth": 3,
+        "q1_policy": 1,
+        "same_action": false,
+        "same_score": false,
+        "same_pv": false,
+        "q4_runtime_pushes": 204928,
+        "q1_runtime_pushes": 175038,
+        "q4_visits": 17425,
+        "q1_visits": 79291
+      },
+      {
+        "seed": 2026102017,
+        "size": 18,
+        "seconds": 64,
+        "rep": 1,
+        "q4_depth": 1,
+        "q4_policy": 0,
+        "q1_depth": 3,
+        "q1_policy": 1,
+        "same_action": false,
+        "same_score": false,
+        "same_pv": false,
+        "q4_runtime_pushes": 207150,
+        "q1_runtime_pushes": 174811,
+        "q4_visits": 17638,
+        "q1_visits": 79249
+      },
+      {
+        "seed": 2026102018,
+        "size": 24,
+        "seconds": 16,
+        "rep": 0,
+        "q4_depth": 1,
+        "q4_policy": 0,
+        "q1_depth": 1,
+        "q1_policy": 0,
+        "same_action": true,
+        "same_score": true,
+        "same_pv": true,
+        "q4_runtime_pushes": 54969,
+        "q1_runtime_pushes": 54795,
+        "q4_visits": 2136,
+        "q1_visits": 3574
+      },
+      {
+        "seed": 2026102018,
+        "size": 24,
+        "seconds": 16,
+        "rep": 1,
+        "q4_depth": 1,
+        "q4_policy": 0,
+        "q1_depth": 1,
+        "q1_policy": 0,
+        "same_action": true,
+        "same_score": true,
+        "same_pv": true,
+        "q4_runtime_pushes": 55104,
+        "q1_runtime_pushes": 55988,
+        "q4_visits": 2142,
+        "q1_visits": 3640
+      },
+      {
+        "seed": 2026102018,
+        "size": 24,
+        "seconds": 64,
+        "rep": 0,
+        "q4_depth": 1,
+        "q4_policy": 0,
+        "q1_depth": 2,
+        "q1_policy": 1,
+        "same_action": false,
+        "same_score": false,
+        "same_pv": false,
+        "q4_runtime_pushes": 209693,
+        "q1_runtime_pushes": 188242,
+        "q4_visits": 8089,
+        "q1_visits": 13701
+      },
+      {
+        "seed": 2026102018,
+        "size": 24,
+        "seconds": 64,
+        "rep": 1,
+        "q4_depth": 1,
+        "q4_policy": 0,
+        "q1_depth": 2,
+        "q1_policy": 1,
+        "same_action": false,
+        "same_score": false,
+        "same_pv": false,
+        "q4_runtime_pushes": 209447,
+        "q1_runtime_pushes": 187801,
+        "q4_visits": 8070,
+        "q1_visits": 13664
+      }
+    ],
+    "higher_main_depth": 8,
+    "same_main_depth": 4,
+    "q1_requested_policy_completed": 10,
+    "q4_requested_policy_completed": 4,
+    "scope": "Different policies/horizons; higher main depth and more searchednodes are not stronger decisions or primitive efficiency. Complete legality/history/undo, default stop unchanged; reported work includes successful classifier pushes separately.",
+    "elapsed_seconds": 967.2838084003888
+  },
+  "public_work": {
+    "rows": [
+      {
+        "size": 12,
+        "requested_q": 0,
+        "nodes": 1024,
+        "qnodes": 0,
+        "runtime_pushes": 1021,
+        "ratio": 0.9970703125,
+        "successors_materialized": 932,
+        "effective_q": 0
+      },
+      {
+        "size": 12,
+        "requested_q": 4,
+        "nodes": 266,
+        "qnodes": 758,
+        "runtime_pushes": 20370,
+        "ratio": 19.892578125,
+        "successors_materialized": 175,
+        "effective_q": 0
+      },
+      {
+        "size": 18,
+        "requested_q": 0,
+        "nodes": 1024,
+        "qnodes": 0,
+        "runtime_pushes": 1021,
+        "ratio": 0.9970703125,
+        "successors_materialized": 850,
+        "effective_q": 0
+      },
+      {
+        "size": 18,
+        "requested_q": 4,
+        "nodes": 346,
+        "qnodes": 678,
+        "runtime_pushes": 6193,
+        "ratio": 6.0478515625,
+        "successors_materialized": 173,
+        "effective_q": 0
+      },
+      {
+        "size": 24,
+        "requested_q": 0,
+        "nodes": 1024,
+        "qnodes": 0,
+        "runtime_pushes": 1022,
+        "ratio": 0.998046875,
+        "successors_materialized": 761,
+        "effective_q": 0
+      },
+      {
+        "size": 24,
+        "requested_q": 4,
+        "nodes": 526,
+        "qnodes": 498,
+        "runtime_pushes": 5881,
+        "ratio": 5.7431640625,
+        "successors_materialized": 263,
+        "effective_q": 0
+      }
+    ],
+    "scope": "Completed successfulCore pushes include root and q classification; not allS3 transitions or failed pushes; actual node limits unchanged. This metric is not a portable operation cost."
+  },
+  "view4_old": {
+    "pairs": [
+      {
+        "seed": 2026102015,
+        "size": 8,
+        "q": 0,
+        "rep": 0,
+        "ratio": 2.2093639220397994,
+        "full_non_timing_equal": true
+      },
+      {
+        "seed": 2026102015,
+        "size": 8,
+        "q": 0,
+        "rep": 1,
+        "ratio": 2.3530474341604073,
+        "full_non_timing_equal": true
+      },
+      {
+        "seed": 2026102015,
+        "size": 8,
+        "q": 4,
+        "rep": 0,
+        "ratio": 2.4927412080241624,
+        "full_non_timing_equal": true
+      },
+      {
+        "seed": 2026102015,
+        "size": 8,
+        "q": 4,
+        "rep": 1,
+        "ratio": 2.286869685481435,
+        "full_non_timing_equal": true
+      },
+      {
+        "seed": 2026102016,
+        "size": 12,
+        "q": 0,
+        "rep": 0,
+        "ratio": 1.0049769353828046,
+        "full_non_timing_equal": true
+      },
+      {
+        "seed": 2026102016,
+        "size": 12,
+        "q": 0,
+        "rep": 1,
+        "ratio": 0.9936506328276694,
+        "full_non_timing_equal": true
+      },
+      {
+        "seed": 2026102016,
+        "size": 12,
+        "q": 4,
+        "rep": 0,
+        "ratio": 1.0004982479386142,
+        "full_non_timing_equal": true
+      },
+      {
+        "seed": 2026102016,
+        "size": 12,
+        "q": 4,
+        "rep": 1,
+        "ratio": 1.003338665291439,
+        "full_non_timing_equal": true
+      },
+      {
+        "seed": 2026102017,
+        "size": 18,
+        "q": 0,
+        "rep": 0,
+        "ratio": 1.0033216054576366,
+        "full_non_timing_equal": true
+      },
+      {
+        "seed": 2026102017,
+        "size": 18,
+        "q": 0,
+        "rep": 1,
+        "ratio": 1.026982593630357,
+        "full_non_timing_equal": true
+      },
+      {
+        "seed": 2026102017,
+        "size": 18,
+        "q": 4,
+        "rep": 0,
+        "ratio": 0.9487511882465379,
+        "full_non_timing_equal": true
+      },
+      {
+        "seed": 2026102017,
+        "size": 18,
+        "q": 4,
+        "rep": 1,
+        "ratio": 0.9742041181103553,
+        "full_non_timing_equal": true
+      },
+      {
+        "seed": 2026102018,
+        "size": 24,
+        "q": 0,
+        "rep": 0,
+        "ratio": 0.9480995846989783,
+        "full_non_timing_equal": true
+      },
+      {
+        "seed": 2026102018,
+        "size": 24,
+        "q": 0,
+        "rep": 1,
+        "ratio": 0.9993934105293596,
+        "full_non_timing_equal": true
+      },
+      {
+        "seed": 2026102018,
+        "size": 24,
+        "q": 4,
+        "rep": 0,
+        "ratio": 0.9790083455015038,
+        "full_non_timing_equal": true
+      },
+      {
+        "seed": 2026102018,
+        "size": 24,
+        "q": 4,
+        "rep": 1,
+        "ratio": 0.9716169697511932,
+        "full_non_timing_equal": true
+      }
+    ],
+    "full_equal_pairs": 16,
+    "scope": "same8192/time240 ceiling; q4 local:12 neutral,18/24 lower;8 D0 tactical plus AST setup not ordinaryq4. Exposed3roots, no general/strength/deployment claim."
+  },
+  "view4_fresh": {
+    "pairs": [
+      {
+        "seed": 2026102020,
+        "size": 12,
+        "q": 4,
+        "rep": 0,
+        "ratio": 0.9821210913137394,
+        "full_non_timing_equal": true,
+        "termination": "node_limit",
+        "completed_depth": 1,
+        "effective_q": 0
+      },
+      {
+        "seed": 2026102020,
+        "size": 12,
+        "q": 4,
+        "rep": 1,
+        "ratio": 0.9848866613399728,
+        "full_non_timing_equal": true,
+        "termination": "node_limit",
+        "completed_depth": 1,
+        "effective_q": 0
+      },
+      {
+        "seed": 2026102021,
+        "size": 18,
+        "q": 4,
+        "rep": 0,
+        "ratio": 1.3939636787049967,
+        "full_non_timing_equal": true,
+        "termination": "root_immediate_win",
+        "completed_depth": 0,
+        "effective_q": null
+      },
+      {
+        "seed": 2026102021,
+        "size": 18,
+        "q": 4,
+        "rep": 1,
+        "ratio": 1.251824001339923,
+        "full_non_timing_equal": true,
+        "termination": "root_immediate_win",
+        "completed_depth": 0,
+        "effective_q": null
+      },
+      {
+        "seed": 2026102022,
+        "size": 24,
+        "q": 4,
+        "rep": 0,
+        "ratio": 0.9916930622917532,
+        "full_non_timing_equal": true,
+        "termination": "node_limit",
+        "completed_depth": 1,
+        "effective_q": 0
+      },
+      {
+        "seed": 2026102022,
+        "size": 24,
+        "q": 4,
+        "rep": 1,
+        "ratio": 1.008980030270383,
+        "full_non_timing_equal": true,
+        "termination": "node_limit",
+        "completed_depth": 1,
+        "effective_q": 0
+      },
+      {
+        "seed": 2026102023,
+        "size": 18,
+        "q": 4,
+        "rep": 0,
+        "ratio": 0.9867890213606436,
+        "full_non_timing_equal": true,
+        "termination": "node_limit",
+        "completed_depth": 1,
+        "effective_q": 0
+      },
+      {
+        "seed": 2026102023,
+        "size": 18,
+        "q": 4,
+        "rep": 1,
+        "ratio": 0.9781775935485355,
+        "full_non_timing_equal": true,
+        "termination": "node_limit",
+        "completed_depth": 1,
+        "effective_q": 0
+      }
+    ],
+    "full_equal_pairs": 8,
+    "scope": "V4 frozen before four newgenerated roots; one18root is immediateD0 control, no ordinaryq4 inference from it. Other pairs same work; no broad speed, strength or deployment claim."
+  },
+  "q2_wide": [
+    {
+      "rep": 0,
+      "completed_depth": 2,
+      "effective_q": 2
+    },
+    {
+      "rep": 1,
+      "completed_depth": 2,
+      "effective_q": 2
+    }
+  ],
+  "q2_tactical": "Two same-arm16s repetitions bothD3/q2,0 immediate matingreplies among5; not reversed pairedtiming",
+  "dot_evaluation": "Adopt objection to crosspolicy scores/depth for staging; finite independent terminal checks first. Root-winning all-defenseH proof deferred as no current promotion depends on it. Raw fullreply privately saved/reconciled; no newworker/approvalgate.",
+  "collaboration": "PRIMARYsearch/counter/q-policy lane; DEV_AUX separateprediction/intervention lane, no newfixed43report observed, no duplicate games/training/checkouts/ordinaryreceipt loops",
+  "segment": {
+    "id": "a1f7b640-464f-43a3-8297-e3f5a458fb1d",
+    "started_at": "2026-10-13T22:53:09.718790+00:00",
+    "ended_at": "2026-10-14T00:11:41.086180+00:00",
+    "elapsed_minutes": 78.523,
+    "research_stage_count": 8,
+    "reason": "safe_checkpoint",
+    "finish_accepted": true,
+    "science_complete": false
+  }
+}

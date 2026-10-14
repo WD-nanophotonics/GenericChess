@@ -39,18 +39,27 @@ not called speedup. Actual generated exports both hands materialized70/78/89%.
 The changed24-call wide-Core ordinary-q ordering curve retains all12 full tuples
 same;18/24 remainD1/effectiveq0. Its geometric evaluation differs from historical
 Native semantic8x8, so no sole backend/size attribution. Do not extend these routes.
-New16s S3 consumer probe begins:739699/757726 prepared unchanged tests reuse
-own-anchor safety, yet physical child export persists. Next is one finite full
-work-view/export shadow preserving complete effects/aux/history/errors and direct
-child contracts; no implementation/gain or skipped semantics claimed.
+TRIAL_EXPORT_AND_Q_POLICY.md closes157 new search calls. Full effects/export
+factories remain private: latest V4 fresh ordinary costs0.978-1.009x are small/
+mixed; direct API leak and qualification gaps are retained. New nullable public
+completed-runtime work counters expose q classification: at1024 searchednodes,
+q4 costs20370/6193/5881 successfulpushes on12/18/24 while retainingq0.
+The new24-call q1/q4 curve completes actual requestedpolicy10/12 versus4/12;
+18/16 q1 deliversD2/q1 versusD1/q0 and24/64 D2/q1 versusD1/q0. Different
+policies/horizons are not stronger-play proof. Exact1455/newCore16s q4 gives
+2 immediate opponent winningreplies versusq1/q2 zero; this is finite delivered
+loss/avoidance, not forced rootwin or globalstrength. q2 also completesD2/q2
+at18/16 twice. Default/stop/Native/UI unchanged; scheduler deferred. Next is
+bounded q2 completion/decision comparison, not export microoptimization or
+crosspolicy score/depth selection; all-defense precision is optional when useful.
 SCALAR_COUNT_AND_NATIVE_BOUNDARY.md retains rejected lazy/count routes and
 old byte/codec limits; no unchanged reruns or reclaimed unexposed status.
 
-S3_FULL_FRONTIER_INTENT.md remains the latest adopted product change:
+S3_FULL_FRONTIER_INTENT.md remains the latest adopted search change:
 exact generator-local observation for explicit full binding materialization,
 complete transition/S3/S4/history/errors/stops, existence routes unchanged.
 Prior final2,429 active tests and200 searches; combined fixed costs locally
-22.4Ã¢â‚¬â€œ40.2% lower,40 retained resource pairs same. No strength claim.
+22.4 to40.2% lower,40 retained resource pairs same. No strength claim.
 COMPILED_ENDPOINT_FALLBACK.md retains2398/48fixed/64fresh and the K/P/X ID repair.
 Native<=16 and actual compile endpoint metadata are distinct from Core fallback.
 
@@ -87,6 +96,7 @@ checkout writes, merge or routine wake. COLLABORATION_LOG records the scope.
 
 |Purpose|Record|
 |---|---|
+|Actual runtime work, export feasibility and finite q policy|TRIAL_EXPORT_AND_Q_POLICY.md; data/trial_export_q_policy_20261014.json|
 |Trial hand/inner-child correctness and wide Core ordering|TRIAL_STORAGE_AND_WIDE_Q.md; data/hand_trials_20261014.json|
 |Readonly view caller/stop feasibility and current costs|WIDE_READONLY_VIEW.md; data/wide_readonly_20261014.json|
 |Previous private cost rejections, native boundary and auxiliary uncertainty|SCALAR_COUNT_AND_NATIVE_BOUNDARY.md; data/scalar_count_native_boundary_20261014.json|

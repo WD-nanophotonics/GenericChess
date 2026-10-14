@@ -218,3 +218,13 @@ feature, public UI flag or frontend work is required. UI Test remains user-owned
 Final2,429active tests and200actual calls qualify the finite measured scope;
 fixed-cost improvement is not retained-depth/strength improvement. See
 research/S3_FULL_FRONTIER_INTENT.md and its explicit scientific archive.
+
+## 2026-10-14 Core work diagnostics
+
+PlayerDecision appends optional nullable runtime_pushes, runtime_pops and
+runtime_depth_balanced. AlphaBeta reports already recorded successful Core
+runtime operations after unwind, including q classification/root probes.
+They exclude failed pushes and S3 trials; nodes/qnodes and budgets keep their
+existing meaning. None means not reported, including other player backends.
+Existing positional constructors keep their order. Consumers may ignore or
+show these diagnostics; no UI/Native/default policy change is required.

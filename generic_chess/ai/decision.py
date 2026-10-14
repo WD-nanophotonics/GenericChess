@@ -89,3 +89,12 @@ class PlayerDecision:
     result_source: str = "unknown"
     result_ordinary_qdepth: int | None = None
     result_check_hard_qdepth: int | None = None
+
+    # Completed Core search-runtime pushes include q-action classification and
+    # root probes as well as searched successors. They exclude failed pushes
+    # and S3 candidate trials; nodes/qnodes keep their existing budget meaning.
+    # None means this player/result did not report a Core runtime observation.
+    # Append optional fields to preserve existing positional constructors.
+    runtime_pushes: int | None = None
+    runtime_pops: int | None = None
+    runtime_depth_balanced: bool | None = None

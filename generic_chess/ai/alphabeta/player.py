@@ -243,4 +243,9 @@ class AlphaBetaPlayer:
             result_source=stats.result_source,
             result_ordinary_qdepth=stats.result_ordinary_qdepth,
             result_check_hard_qdepth=stats.result_check_hard_qdepth,
+            runtime_pushes=stats.runtime_pushes if stats.runtime_root_imports else None,
+            runtime_pops=stats.runtime_pops if stats.runtime_root_imports else None,
+            runtime_depth_balanced=(
+                stats.runtime_depth_balanced if stats.runtime_root_imports else None
+            ),
         )

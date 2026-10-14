@@ -1710,7 +1710,7 @@ parent引用，修复为next/close期间才安装上下文、每次yield前释�
 本段UTC2026-10-13T14:56:26.560967+00:00至2026-10-13T16:17:55.790433+00:00，81.487分钟、12研究检查点；session finish safe_checkpoint已接受。经过时间不是精确CPU/独占机器时间，科学仍OPEN。
 
 
-##2026-10-14：完整前沿意图已交付，辅助库存撤回已吸收
+## 2026-10-14：完整前沿意图已交付，辅助库存撤回已吸收
 
 PRIMARY完成200次实际公开搜索及最终2,429活动测试。原广泛setup中4093个
 首动作消费者被隔离；完整binding调用显式准备215次上下文，所有child/S3其他
@@ -1853,3 +1853,61 @@ is independently verified at origin/sandbox;108 required publisher tests pass.
 The fixed science/report/collaboration links are delivered once to Dot in the
 existing primary thread. Delivery is not a claim of reply/review/execution.
 Exact arguments/receipt stay private; no raw Slack/account record is published.
+
+## 2026-10-14 PRIMARY: export feasibility, actual work and q-policy delivery
+
+PRIMARY executes157 research searches: three32-call old-root representation
+controls,16 frozen new-root controls,2 profiles,2 consumer probes,3 actual-drop
+capture calls,6 public-work probes,24 q1/q4 resource calls,4 known-terminal
+calls and4 q2 feasibility calls. Private full-effects factories stay outside
+product: large kernel savings become small/mixed caller savings. A reentrant
+V1 direct-trial leak, qualification/metadata gaps and script failures are
+preserved and corrected, not called deployed capability. Product changes only
+append three nullable successful-runtime diagnostic fields. Two independent
+physical-counter/undo/cancel tests plus74 related contracts pass.
+
+The observed work gap is concrete:1024 searchednodes underq4 spend20370/6193/
+5881 completed Core pushes on12/18/24. q1/q4 same16/64s compares different
+policies; actual requestedpolicy completes10/12 versus4/12. Known1455 exact
+state/history on new Core/geometric16s gives two immediate opponent winning
+replies afterq4's action versusnone afterq1/q2; full reply/history terminal
+records are independent of compared scores. This is a finite delivered tactical
+loss/avoidance, not root forcedwin, universalstrength or a default change.
+q2 also completesD2/q2 twice on18/16. A16-call q1/q2 alternative is frozen for
+next work; it has not been executed or called published evidence.
+
+DEV_AUX keeps its separate sidemission prediction/material-intervention lane.
+No new fixed43 report was visible in the relevant recovery/checkpoint reads;
+prior43 advice remains reported/unexecuted byPRIMARY. PRIMARY does not repeat
+those games/training, edit auxiliary source/state, merge or issue routine wakes.
+Simple fixed routing IDs remain; no identity challenge or new worker is added.
+No direct auxiliary communication is needed for today's independent search lane,
+so no new direct-collaboration efficiency claim is made.
+
+A fresh PRIMARY request asks Dot about finite decision evidence versus staging.
+Exact root/readback and complete reply are privately saved and reconciled.
+Dot replies133.179s after the root; PRIMARY reads at a later useful checkpoint
+while independent work continues. No guaranteed immediate wake/reply is inferred.
+Adopt its specific objection: cross-policy scores/depth cannot select a staged
+result, and two independent players duplicate prep/search. Defer a scheduler.
+PRIMARY had already frozen/executed the known-terminal check and then saves all
+immediate winning terminals. Strong root-winning/all-defenseH proof is deferred
+because no current default/release selection depends on that stronger claim;
+user permission makes precision optional, not a new admission gate. The finite
+H2/remaining1 target and its limitations are explicit. This is a scientific
+scope distinction, not a concealed blocker or a new approval queue.
+
+Costs/limits are measured:24 resource calls967.284s, no single>1h run, reverse
+pairs and ordinary uninspected concurrency. Source-index primitive32cells are
+mixed, so its prepared caller variant is not advanced.147 science-only archive
+members pass JSON/AST and hash review; rawSlack/account/receipts/outbound question
+and host-path profiles remain ignored/private. Report/mainline/backend notes
+include actual counters and policy/quality limits. Tested sandbox delivery and
+actual segment ending receipt follow, with a fixed link given to Dot.
+
+Actual closing: PRIMARY a1f7b640-464f-43a3-8297-e3f5a458fb1d runs
+UTC2026-10-13T22:53:09.718790+00:00 to2026-10-14T00:11:41.086180+00:00,
+78.523minutes/8 research checkpoints; safe_checkpoint accepted.157 actual
+research searches are complete, all own producers closed and next q2 comparison
+is executable/frozen but unexecuted. Science staysOPEN. This endedclock does
+not count later release transport as research or reset for publication.
