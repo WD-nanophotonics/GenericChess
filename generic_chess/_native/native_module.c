@@ -5410,15 +5410,16 @@ static int gc_semantic_inventory_changed(const GCSemanticRules *rules,
     return 0;
 }
 static int gc_semantic_quiescence(GCSemanticIterativeContext *ctx,uint32_t ply,
-                       unsigned qdepth,int alpha,int beta) {
+                       unsigned qdepth,int alpha,int beta,
+                       int known_terminal,int known_winner) {
     if(!gc_semantic_iterative_check_budget(ctx,0))return 0;
     ctx->nodes++;ctx->qnodes++;
     if(ply>ctx->selective_depth)ctx->selective_depth=ply;
     GCSemanticPosition *pos=&ctx->stack[ply];
-    int winner=-1;
+    int winner=known_winner;
     const uint64_t *known=(ply>0 && pos->history_exact && pos->history_len>0)
         ?pos->history_digest[pos->history_len-1]:NULL;
-    int terminal=gc_semantic_terminal_status_known(ctx->rules,pos,&winner,known);
+    int terminal=known_terminal>=0 ? known_terminal : gc_semantic_terminal_status_known(ctx->rules,pos,&winner,known);
     if(terminal<0){ctx->control=4;return 0;}
     if(terminal)return gc_semantic_iterative_terminal_score(winner,pos->side_to_move,ctx->root_ply_offset+ply);
     uint64_t claim=0;
@@ -5428,7 +5429,12 @@ static int gc_semantic_quiescence(GCSemanticIterativeContext *ctx,uint32_t ply,
     int neutral=gc_semantic_declaration_neutral(ctx->rules,pos,&claim);
     if(neutral<0){ctx->control=4;return 0;}
     if(neutral && alpha<0)alpha=0;
-    int check=gc_semantic_runtime_in_check(ctx->rules,pos,pos->side_to_move);
+    /* Only a fresh fully checked edge owns this last gave-check event.
+     * Imported roots and incomplete event histories retain the literal query. */
+    int check=(ply>0 && pos->history_events_exact &&
+               pos->history_len==ctx->stack[ply-1].history_len+1)
+        ? pos->history_gave_check[pos->history_len-1]
+        : gc_semantic_runtime_in_check(ctx->rules,pos,pos->side_to_move);
     if(check<0){ctx->control=4;return 0;}
     if(check && qdepth>=ctx->qhard_depth){ctx->control=5;return 0;}
     if(!check){
@@ -5456,25 +5462,27 @@ static int gc_semantic_quiescence(GCSemanticIterativeContext *ctx,uint32_t ply,
         if(made<0){ctx->control=4;gc_semantic_action_buffer_free(&actions);return 0;}
         if(!made)continue;
         ctx->transition_count++;legal++;
-        int noisy=check;
+        int noisy=check,child_terminal=-1,child_winner=-1;
         if(!noisy){
             int enemies=0;
             for(unsigned j=0;j<cells;j++)if(child->board[j].occupied && child->board[j].owner!=pos->side_to_move)enemies++;
             noisy=enemies<parent_enemies || gc_semantic_inventory_changed(ctx->rules,pos,child);
             if(!noisy){
-                int child_winner=-1;
-                int ended=gc_semantic_terminal_status_known(ctx->rules,child,&child_winner,child->history_digest[child->history_len-1]);
-                if(ended<0){ctx->control=4;gc_semantic_action_buffer_free(&actions);return 0;}
-                noisy=ended!=0;
-            }
-            if(!noisy){
-                int child_check=gc_semantic_runtime_in_check(ctx->rules,child,child->side_to_move);
+                int child_check=(child->history_events_exact &&
+                    child->history_len==pos->history_len+1)
+                    ? child->history_gave_check[child->history_len-1]
+                    : gc_semantic_runtime_in_check(ctx->rules,child,child->side_to_move);
                 if(child_check<0){ctx->control=4;gc_semantic_action_buffer_free(&actions);return 0;}
                 noisy=child_check;
             }
+            if(!noisy){
+                child_terminal=gc_semantic_terminal_status_known(ctx->rules,child,&child_winner,child->history_digest[child->history_len-1]);
+                if(child_terminal<0){ctx->control=4;gc_semantic_action_buffer_free(&actions);return 0;}
+                noisy=child_terminal!=0;
+            }
         }
         if(!noisy)continue;
-        int score=-gc_semantic_quiescence(ctx,ply+1,qdepth+1,-beta,-alpha);
+        int score=-gc_semantic_quiescence(ctx,ply+1,qdepth+1,-beta,-alpha,child_terminal,child_winner);
         if(ctx->control){gc_semantic_action_buffer_free(&actions);return 0;}
         if(score>=beta){gc_semantic_action_buffer_free(&actions);return score;}
         if(score>alpha)alpha=score;
@@ -5596,7 +5604,7 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
             return 0;
         }
         if (ctx->qdepth_limit > 0) {
-            score = gc_semantic_quiescence(ctx, ply, 0, alpha, beta);
+            score = gc_semantic_quiescence(ctx, ply, 0, alpha, beta, -1, -1);
             if (ctx->control) return 0;
         }
         if (leaf_neutral > 0 && score < 0) score = 0;

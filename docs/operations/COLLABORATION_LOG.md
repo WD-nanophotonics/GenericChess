@@ -2271,3 +2271,56 @@ source/tests/generated results/sanitized summaries without asking again for
 ordinary publication. The earlier refusal is historical evidence, not missing
 user consent. This one publication does not resume paused inspection/research
 or Slack consultation. Publication outcome is verified separately after push.
+
+###2026-10-15 JST /2026-10-14 UTC: q-fact cost and explicit caller policy
+
+PRIMARY owns complete semantic q profiling, one exact fresh-edge fact-reuse
+candidate and frozen caller comparisons.150 count/profiler queries,156 fixed
+work queries,24 raw-import searches plus8 expected refusals qualify the narrow
+change;78 fixed pairs match outputs/work/control exactly. Full private-image
+2557 active tests and58 focused checks pass. ALL78 kernel/caller cost means
+0.9374/0.9497;20ms subset is posthoc sensitivity, five tiny adverse pairs stay.
+Fresh12rule24root352queries+32declines give132resourcepairs1deeper/131same,
+131sameaction. ALL16s selected actions get23literalCore branch queries,
+20closed/3censored:38known pairs37ties/1negative,6unknown. No WDL/strength gain.
+One negative commonD2 value is retained despite the depth crossing. Detailed
+code, counts, budgets and limitations: ../research/Q_FACT_REUSE_AND_CALLER_POLICY.md.
+
+DEV_AUX's complete fixed49 report atab5b70392a3d854076f7b590814906b434afcffe is
+now fully read, beyond the prior thread-only scope;171068query and WDL arithmetic
+verify. PRIMARY does not reproduce raw policy/oracle/training/proofs or rerun
+its work. Cheap true-child-WDL training plus separate frozen composite-policy
+validation is useful later direction, scoped3x4/max5/stock/takeover/consumer;
+not universal prices or full generated-domain proof. Cached43.516s validation
+is incremental after16142paid queries;12paths share one TRAIN landscape.
+No auxiliary wake, newAgent, crosswrite, merge, resource pause or duplicate
+learning job. Information exchanged through fixed reports/projectSlack; no
+measured saved-minutes or cooperation-efficiency percentage is claimed.
+
+One Slack read429 was saved privately and one later checkpoint retry succeeds;
+complete original q thread has only earlierDot advice and own informational
+result, no new technical review. The new CHAT root-scan suggestion references
+old90c8 source: currentbothpaths fixed sinceb904 and6existing regressions pass
+inside2557. It is explicitly assessed as a stale concern, no redundant patch.
+Prior Dot budget-contract advice remains adopted; Dot has not independently
+read/run this new candidate or its final experiment archive. A fixed revision
+link will be sent after tested publication; delivery is not review/adoption.
+
+Explicit user research resume is recorded; native inspection stays PAUSED.
+One sandbox import-library access problem resolves through ordinary escalation,
+not an OS/SAC change. Three private carrier/source-prep mistakes are preserved
+and corrected before scientific queries; no product defect or result is hidden.
+No forced policy downgrade, UI/default selection, scheduler or extra fee/worker.
+
+Current segment follow-on closes q1/q4 mixed finite labels6gain/4loss/6tie/
+4unknown; newq2 grid36searches/3roots plus3Corebranches allsameaction/tie.
+Both unavailable ply8 families stay unresampled, including18 control. No policy
+promotion follows. PRIMARY reads the complete new AUX50/Dot thread at the final
+checkpoint: orientation averaging is a useful sampling control but does not make
+a consumer equivariant or turn first-choice labels into complete-policy WDL.
+Adopt this distinction for later interpretation; AUX50 raw artifacts/runs are not
+reproduced or certified here. Its work continues in its own lane, no routine wake.
+Original q thread has no new technical supplement; channel coverage overlaps
+known roots. Raw outputs remain private; delivery of final links is not Dot review.
+
+Accepted segment close: 302c9fc2-8802-4761-b429-54d3dfd7abcc; UTC2026-10-14T14:41:32.068636+00:00 to 2026-10-14T15:57:04.561263+00:00;75.542min,10research stages, safe_checkpoint; scienceOPEN.795 recorded queries, all producersclosed; next executable ordering-cost question retained. Publication and link delivery remain separately verified.

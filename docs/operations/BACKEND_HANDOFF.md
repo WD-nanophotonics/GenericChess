@@ -5,17 +5,19 @@ frontend integration on the other computer. DEV_AUX validates in its own
 sidemission checkout. Import backend changes from sandbox as needed; no automatic
 UI branch merge, replacement or Agent-maintained UI copy is required.
 
-Backend source pinned at 7b988c9f247fd3eb96ca17daedf28e5c4d93b3cd includes the
-tested q0 repairs described below. Later commits must be assessed by their
-actual tests and supported parameters; newest does not mean every prototype
-is enabled or every evaluation configuration is equally strong.
+The earlier q0 repairs below are pinned at7b988c9f247fd3eb96ca17daedf28e5c4d93b3cd.
+Complete semantic Native nonzero q is supported froma76214d0d361425a162c02a780673b3789484e97
+on a rebuilt kernel; capability and research evidence are delivered ina7501271.
+Assess the actual supported parameters and tests; private prototypes are not
+automatically enabled or proven stronger configurations.
 
 | Public entry | Actual execution and activation | Boundary |
 |---|---|---|
 | AlphaBetaPlayer.choose_action(session, limits, cancel_token=...) | Complete Core search with existing q4/hard8 defaults, TT, progress and cancellation. Native semantic legality is requested by default where supported. | Native legality acceleration is not a claim the whole search is Native. UI may retain this complete player. |
 | Native SemanticSearchEngine.search(session, limits, root_window_pruning=True) | Explicit exact-root finite q0: set quiescence_max_depth=0, quiescence_hard_max_depth=0 and an explicit max_depth. Match a supported semantic compiled ruleset/native rule product and fixed evaluator inputs. | Integer threshold confirmation, exact-root bound handling and full selected canonical reconstruction are enabled only in this mode. Full history/witnesses and evaluator/root-offset/TT context remain required. |
 | Existing ordering_checkpoint/min-depth option | Explicit ordering profile and ordering_min_depth=2 were used in the published finite cost controls. | Optional configuration, not a universal optimum or a default/strength guarantee. |
-| Core q4 versus Native q0 | Distinct evaluations/horizons; preserve requested parameters and report actual backend. | Native q4 is unsupported; do not quietly run q0 for a q4 request. No claim q0 is stronger than q4. |
+| Native SemanticSearchEngine nonzero q | Explicit ordinary/hard q depths through SearchLimits on a rebuilt SEMANTIC_QSEARCH_VERSION=1 kernel, including tested q1/q4. | First-iteration ordinary-q0 reserve and mandatory checked extensions are explicit; read result_ordinary_qdepth/result_check_hard_qdepth. Q-node expansion limits differ from total-visit limits. Legacy Native engine is separate; old binaries reject nonzero q clearly. |
+| Historical Core q4 versus Native q0 controls | Distinct evaluations/horizons; preserve requested parameters and report actual backend. | Those historical controls do not establish a current lack of Native q4 or stronger q0. Never silently downgrade requested q policy. |
 
 Native requires building the current optional extension on the target computer;
 do not copy a research binary or venv. The repository's normal package/build
@@ -319,3 +321,11 @@ for nonzero q and keep q0 calls. First-iteration ordinary-q0 reserve, mandatory
 check hard limit and retained-policy fields are explicit; no UI/backend selection
 changes. Read ../research/NATIVE_COMPLETE_QSEARCH.md before interpreting depth,
 q-node budgets or reused TT results. Legacy Native search is still separate.
+
+
+The2026-10-15 q fact-reuse change only removes duplicate observations from an
+immediate successful full-checked child. Rebuild Native from this sandbox source
+to receive it; older complete-q builds retain capability but different cost.
+No API/default/UI activation change. Fixed78 paired outputs/work match; caller
+policy experiments remain research and are not a product q-depth recommendation.
+See ../research/Q_FACT_REUSE_AND_CALLER_POLICY.md and its hashed archive.
