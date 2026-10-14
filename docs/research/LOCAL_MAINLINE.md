@@ -13,28 +13,36 @@ minimal alpha-beta/specialized-rule controls and mature overall references.
 Separate rule execution, representation, repeated scheduling, optimization,
 defined work and equal-time retained useful decisions. No Elo/speed parity gate.
 
-NATIVE_PAYLOAD_AND_NEUTRAL_FALLBACK.md is latest:258 closed research queries,
-2526 full tests pass. Code90dd039a preserves executable NO_CONTEST/RESTART on
-incomplete root fallback, actual stop/depth/cancellation and completed-win/action
-priorities. Three actual queries show old node1 fallback permits mate while the
-fixed choice executes NC. A narrow optional complete C payload borrows Python-
-owned names and retains old-binary Python input; no module lifecycle/default/
-Core adjudication/packet/UI changes. Private V1 module-state expansion rejected.
-128 fresh V1 transfer calls preserve all32 resource tuples at32s; no decision gain.
-Two Core fixed pairs are time-censored;1.312x timing outlier retained. Distinct
-prepared V2 caller ratios.938-.981 are local, not finalV3/global/default speed.
-Defaultq4/1s60calls: all40 flag comparisons retain tuples;48retainq0,6q4,6repeat
-one actual M1 root. Core one-reply audit53closed/7unknown, not full safety.
-H5 independent proof remains UNKNOWN at240s/42224transitions; no extension.
-Fresh V3 shadow25514checks and25514availability matches Core on two roots with
-a separately declared flat evaluator. Clean tracked-source Core/old/rebuilt
-contracts pass27,32(with6expected helper skips),75tests; failures retained.
-Next actually started full Native q0 feasibility: four inputs spanning unfamiliar
-4/8 rules,played history,live transformation/aux and checked NC match Core D2
-max-action/declaration values. Raw terminal units differ100M/1B; normalized
-sign/distance matches, no product defect. Do matched full-backend/q0 attribution
-before another carrier or Boolean flag curve. Q0 versus defaultq4 is a method
-comparison, never silently aligned or treated as a speed/strength certificate.
+FULL_NATIVE_Q0_AND_TERMINAL_PRIORITY.md is latest:979 closed research queries,
+2535 unique active tests pass (2411 initial+124 exact temp-setup recovery),
+codepublisher45pass. Code8800b7fe fixes Native WIN checked before actualterminal:
+old Native missed a realM1;9regressions old8fail/1pass, allfixedpass. Rebuild C;
+no packet/default/UI/q4 downgrade. Original flat source6c9c stays frozen.
+
+Complete-state q0 comparisons retain generated4/8/12/16/18 and played transform/
+drop/aux/compound/offtarget/NC. Native18/thin-declaration limits do not shrink
+our target. Same bareAB32tracepairs have identical trees/work/results; Native
+state cost.145-.549x on32untraced pairs,755fullstate/history imports audited.
+WholeCoreD2 verifies102argmaxchoices/40unknown (six20scaps). DistinctH6loss
+certificate5198Core+86consumer transitions verifies allrootdefenses; earlier
+information in an alreadylostroot isnot betteroutcome. OldH5 remainsUNKNOWN.
+
+Real rulederived static board/current+hand/base leaves reduce plainNative's
+completion advantage (12deeper/20same), defaultdynamic/q4 staysdistinct. Existing
+profilecache suffices; no newcache. Existing fullchild materialordering buys
+horizons but costs millions of discardedviews; leafprices neednot bestorderprices.
+New7rule transfer:198queries/11supportedroots,22fixedD2three-arm tuples identical;
+flat20deeper/24same, rule16/28 at1/4s. Earlyterminal root notresampled,18explicit.
+Keepcheapflat control; depth/actions/staticD3 diagnostics are not WDL/strength.
+
+Next actually begun: cheap currenttarget/promotion/drop ordering feasibility.
+3098Coreactions/32frontiers:2820deltaequal; handyield/offtarget andtwo badtop ties
+retained, no newkernel. Native bitfields/candidate traversal inspected. Test one
+private approximateorder against existingplain/exactorder atfixedD3 and1/4s,
+sameleafvalues andactualcaller/work; retain fullcheckedlegality/history/first-
+legalchild/PV/TT behavior. Exactranking/fullWDL isnot an admission gate. No new
+publicframework/default or unchangedtransportcurve. Prior input-builder and
+32s no-choice-gain evidence stays in NATIVE_PAYLOAD_AND_NEUTRAL_FALLBACK.md.
 
 ROOT_WIN_DECLARATIONS_AND_NATIVE_INPUTS.md preserves the prior recursive NC
 repair, conditional winning-bound/equality checks, independent old certificates
@@ -129,6 +137,7 @@ checkout writes, merge or routine wake. COLLABORATION_LOG records the scope.
 
 |Purpose|Record|
 |---|---|
+|Current completeNative/terminalpriority/samealgorithm/staticorder/transfer|FULL_NATIVE_Q0_AND_TERMINAL_PRIORITY.md; data/full_native_q0_20261014.json|
 |Current fallback/input delivery/default caller/full-backend qualification|NATIVE_PAYLOAD_AND_NEUTRAL_FALLBACK.md; data/native_payload_20261014.json|
 |Current neutral declarations/root proof/Native input delivery|ROOT_WIN_DECLARATIONS_AND_NATIVE_INPUTS.md; data/root_transfer_20261014.json|
 |Prior utility/root-win repairs and drop goal|GEOMETRY_PREFIX_AND_DROP_GOAL.md; data/geometry_prefix_drop_20261014.json|

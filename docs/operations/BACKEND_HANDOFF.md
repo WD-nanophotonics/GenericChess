@@ -293,3 +293,20 @@ the optional transport gain; no binary/venv is shipped. Current full2526 tests
 and clean tracked-source no-Native/old-kernel/rebuilt-kernel controls pass.
 See [the report](../research/NATIVE_PAYLOAD_AND_NEUTRAL_FALLBACK.md) for versions, prepared-caller
 perimeters, retained failures, frozen resource results and unknown proof scope.
+
+
+### Complete Native terminal/declaration priority (2026-10-14)
+
+Source8800b7fe71a195ba534892e638cc2febc954111d moves winning declarations
+after actual terminal adjudication in persistent Native negamax. An ended child
+cannot declare a later win. Existing Python Core and default backend/q policy
+are unchanged. Pulling Python/source files does not replace an installed Native
+binary: rebuild with the existing supported build entry to obtain this correction.
+No binary/venv is shipped. All2535 unique active tests pass through initial2411
+and exact124 temporary-directory setup recovery;45 related publisher tests pass.
+
+FULL_NATIVE_Q0_AND_TERMINAL_PRIORITY.md records the complete-state/history
+research reference, explicit18-board/q4 limits, optional existing frozen material
+ordering, actual trial/search costs and unknowns. It does not introduce a new
+SearchBackend adapter, authorize silent q4-to-q0 downgrade or select a UI default.
+UI Test remains user-owned and isolated.

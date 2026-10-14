@@ -1,0 +1,251 @@
+{
+  "schema": 1,
+  "report": "FULL_NATIVE_Q0_AND_TERMINAL_PRIORITY.md",
+  "science_complete": false,
+  "code_fix": "8800b7fe71a195ba534892e638cc2febc954111d",
+  "original_flat_source": "6c9c4fd82ad5b6698cbac65d8afe77c102af1815",
+  "archive": {
+    "path": "docs/archive/full_native_q0_20261014/evidence.zip",
+    "sha256": "71bb744ba055eadc45de01a04ffec49894490e205a6ad2bfa823aeb06e53cfa1",
+    "bytes": 1329842,
+    "members": 61,
+    "manifest": "docs/archive/full_native_q0_20261014/manifest.json"
+  },
+  "actual_research_queries": 979,
+  "query_counts": {
+    "flat_fixed": 142,
+    "flat_resource": 284,
+    "same_algorithm_state_bridge": 128,
+    "real_terminal_bug_probe": 3,
+    "rule_profile_caller": 108,
+    "frozen_order_intervention": 96,
+    "independent_choice_D3_branches": 20,
+    "prospective_order_transfer": 198
+  },
+  "queries_exclude": "pytest calls, Core oracle/certificate/frontier transitions and scalar audits, setup/zeroqueryfailures.20bareAB choice branches arequeries, capped oracle/root labels remain separate.",
+  "Core_independent_work": {
+    "D2_oracle_transitions": 22821,
+    "H6_producer_transitions": 5198,
+    "H6_consumer_transitions": 86,
+    "frontend_transitions": 3098,
+    "bridge_verified_states": 755,
+    "profile_scalar_states": 694
+  },
+  "results": {
+    "fixed": {
+      "rows": 152,
+      "actual_searches": 142,
+      "explicit_declines": 10,
+      "errors": 0,
+      "root_groups": 19,
+      "all_D2_complete": true,
+      "score_disagreement_groups": [],
+      "selected_action_groups_pending_oracle": [
+        "2402-ply8",
+        "2403-ply0",
+        "2403-ply8",
+        "2404-ply0",
+        "2404-ply8",
+        "2405-ply0",
+        "2405-ply8",
+        "aux_expired_after_reply"
+      ],
+      "scope": "Same q0 material but distinct comparators, schedules,TT. Matching score not maxset or usefulness proof. Actual 18board Core fallback explicit, minimal NC decline."
+    },
+    "resource": {
+      "complete": true,
+      "rows": 304,
+      "actual_queries": 284,
+      "explicit_declines": 20,
+      "errors": 0,
+      "root_unchanged_all": true,
+      "native0_vs_core_depth": {
+        "same": 17,
+        "deeper": 51
+      },
+      "native1_vs_native0_depth": {
+        "same": 55,
+        "deeper": 13
+      },
+      "action_same_native_core": 40,
+      "comparisons": 68,
+      "limit": "Depth and selected actions are not useful-choice proof. Originalbinary fixed before terminal-priority patch; one subsecond diagnostic and focusedtests/build occurred during the curve, alongside ordinary concurrent load; no exclusive CPU or timing-factor claim."
+    },
+    "state_bridge": {
+      "complete": true,
+      "actual_queries": 128,
+      "trace_pairs": 32,
+      "exact_trace_and_work_pairs": 32,
+      "uninstrumented_pairs": 32,
+      "all_fixed_complete": true,
+      "full_state_audit_nodes": 755,
+      "declines": [
+        {
+          "root": "2405-ply0",
+          "declined": "semantic board size out of native range (ruleset fingerprint 0dacecac029c1f8ed8a3601d65fbde6fab03784eb377abb81b0064a2eaebb435, native schema native-0.5.0)"
+        },
+        {
+          "root": "2405-ply8",
+          "declined": "semantic board size out of native range (ruleset fingerprint 0dacecac029c1f8ed8a3601d65fbde6fab03784eb377abb81b0064a2eaebb435, native schema native-0.5.0)"
+        },
+        {
+          "root": "checked_NO_CONTEST",
+          "declined": "thin adapter does not implement declaration competition"
+        }
+      ],
+      "ratio_min": 0.14459685324352176,
+      "ratio_median": 0.3022040073446992,
+      "ratio_max": 0.5485378357434978,
+      "scope": "Same Python minimalAB/ordering/material and full trace/work on16 supported roots. Native capsule includes publicscalar API/profile validation/checked copy/history and uses exact terminal; not persistent C-loop speed factor or production deploy/strength. Different board native>16 and general declarations explicitly declined only in thin adapter. Aux absentdefault canonicalization in shape audit, exact full Native import/history and checks preserved. First96queries kept before preaudit representation mismatch; remaining32 only resumed; zero repeatedqueries."
+    },
+    "oracle_D2": {
+      "roots": 19,
+      "complete_roots": 13,
+      "capped_roots": [
+        "2403-ply0",
+        "2403-ply8",
+        "2404-ply0",
+        "2404-ply8",
+        "2405-ply0",
+        "2405-ply8"
+      ],
+      "actual_Core_transitions": 22821,
+      "verified_query_choices": 102,
+      "unknown_query_choices": 40,
+      "mismatches": 0,
+      "scope": "Complete unpruned Core D2 maxset only where whole root closed.20s capped wide roots stayUNKNOWN; scalar agreement and same-stream bridges do not silently complete missing maxsets. No capextension."
+    },
+    "rule_profile": {
+      "complete": true,
+      "rows": 120,
+      "actual_queries": 108,
+      "explicit_native_declines": 12,
+      "fixed_paired_scores_all_match": true,
+      "fixed_supported_pairs": 16,
+      "resource_supported_pairs": 32,
+      "native_vs_core_depth": {
+        "deeper": 12,
+        "same": 20
+      },
+      "same_actions": 26,
+      "decision": "Actual rulederived leaves reduce plain Native completion advantage vs arbitraryflat control; noautomatic backend switch. Existing coldprofilecache costs measured, no newcache. Inspect existing leaf/order separation, not anothertransportcurve.",
+      "scope": "Static-only profile, boardcurrent/basehanddiscount preserved; defaultdynamic/q4 notaligned. Exposed roots,no fitting/newholdoutclaim.18board explicit Corefallback."
+    },
+    "ordering": {
+      "actual_queries": 96,
+      "fixed_three_arm_groups": 8,
+      "fixed_full_tuples_all_equal": true,
+      "resource_pairs": 48,
+      "depth_by_arm": {
+        "flat100_order": {
+          "same": 12,
+          "deeper": 12
+        },
+        "rules_profile_order": {
+          "same": 14,
+          "deeper": 10
+        }
+      },
+      "decision": "Existing frozen material ordering can buy completed horizons, but realruleprices are not universally bestorderingprices: at2404-ply8/16s flat100 completesD4 bothorders while ruleprofile/plain remainD3. Keep cheapflat baseline in prospective transfer. Allleafprices fixed; no default/newtraining or claimdeeper=stronger.",
+      "scope": "Four exposed12/16 roots, q0 only. Discarded materialviews are actual extra orderingwork, not state transitions that advance the game. Caller/preparation/kernel and C counters distinct."
+    },
+    "choice_D3": {
+      "actual_queries": 20,
+      "selected_branches": 20,
+      "not_started": 0,
+      "seconds": 5.747627799864858,
+      "family_counts": {
+        "flat": {
+          "equal": 56
+        },
+        "profile": {
+          "lower": 4,
+          "higher": 2
+        }
+      },
+      "actual_bare_AB_nodes": 13691,
+      "scope": "Only differingactions in exposed originalflat/profile pairs, shared fixedD3 staticobjective. Higher/lower is that conditional diagnostic, not WDL/actualwin or a verdict on a differentdeeperhorizon. No price fitting, capextension, humanholdout or newvalidation status."
+    },
+    "order_transfer": {
+      "complete": true,
+      "actual_queries": 198,
+      "unsupported_records": [
+        {
+          "root": "2507-ply0",
+          "unsupported": "semantic board size out of native range (ruleset fingerprint 5a6889fe8afd181e92133b9e83f31998faaf787886b5566b1475d6b291c90ba3, native schema native-0.5.0)",
+          "planned_cells": 18,
+          "actual_searches": 0
+        },
+        {
+          "root": "2507-ply8",
+          "unsupported": "semantic board size out of native range (ruleset fingerprint 5a6889fe8afd181e92133b9e83f31998faaf787886b5566b1475d6b291c90ba3, native schema native-0.5.0)",
+          "planned_cells": 18,
+          "actual_searches": 0
+        }
+      ],
+      "planned_unsupported_cells": 36,
+      "fixed_three_arm_groups": 22,
+      "all_fixed_full_tuples_equal": true,
+      "supported_root_count": 11,
+      "unavailable": [
+        {
+          "seed": 2501,
+          "unavailable_ply": 8,
+          "terminal_at": 1,
+          "resampled": false
+        }
+      ],
+      "resource_by_arm": {
+        "flat100_order": {
+          "same": 24,
+          "deeper": 20
+        },
+        "frozen_rules_order": {
+          "same": 28,
+          "deeper": 16
+        }
+      },
+      "source_scope": "New rules selected before transfer queries, after exposed intervention; no training/label fit/terminalresampling, adaptive development not universal/unexposed proof. Actual GameRecord replay/fullhistory andCorePV validation.18 unsupported explicit; no generic domainprojection.",
+      "decision": "Keep explicit existing cheap-flat and rule-profile ordering as scopedq0 research options, report pairedcost andcompletion, do not replace default/q4 or assume learned leafprices optimal forordering."
+    },
+    "cheap_frontier": {
+      "complete": true,
+      "roots": 32,
+      "complete_roots": 32,
+      "actual_Core_transitions": 3098,
+      "seconds": 21.9571488997899,
+      "full_action_count": 3098,
+      "exact_delta_matches": 2820,
+      "cheap_top_contains_exact_max": 32,
+      "cheap_all_top_are_exact_max": 30,
+      "top_ambiguity_roots": [
+        "offtarget_token_live",
+        "2505-ply8"
+      ],
+      "scope": "No searchqueries/newCkernel/product/default. Cheap function explicitly omits handcaptureyield/offtarget/other effects; top set coverage alone canbe trivialties andisnot a deployment test. Timings compare Pythoncheapfeature vscompleteCore apply/eval, NOT Native C speedup. All fullstate/history semantics retained in actualCore comparisons. A future actualapprox-order search may test behavior without requiring exactrank asgate.",
+      "disagreement_root_count": 26
+    },
+    "tests": {
+      "total_active_tests": 2535,
+      "passed_initial_run": 2411,
+      "initial_fixture_errors": 124,
+      "initial_assertion_failures": 0,
+      "recovery_passed": 124,
+      "recovery_error_or_failure": 0,
+      "all_unique_active_tests_executed_successfully": true,
+      "validation_perimeter": "Combined initial full run + exactly124 setupblocked cases on new projectprivate temp; not one uninterrupted clean fullrun.",
+      "native_rebuild_required": true,
+      "related_candidate_tests": 45,
+      "old_corrected_regression": {
+        "passed": 1,
+        "failed": 8
+      },
+      "source_hashes": {
+        "generic_chess/_native/native_module.c": "3332ad17fbf63fa0bd0961a856e3ccf0f042f29ec0b6ab7c2de6af3d3e166eda",
+        "tests/product/test_native_terminal_declaration_priority.py": "385d78ae948bc78b536aa71fb3b220f08bfbf83f8311398e283db467d1e0d93f"
+      }
+    }
+  },
+  "raw_private_excluded": true,
+  "scope": "Agent-only results and exactdata/sourceversions. Static/q0/scalar/defaultdynamic/q4 distinct. Approxorder isnot deployed;18 andthin-declaration explicitdeclines retainfullgeneric target. Source/harness/fixture/tempfailures preserved; oldfrozen budgets/unexposedstatus not rewritten."
+}
