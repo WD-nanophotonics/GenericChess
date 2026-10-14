@@ -2019,3 +2019,17 @@ H48条件正结果分开，2与2.4未分出优劣，B主价等于基线不等于
 training、例行唤醒/回执、合并或越界写入。无完整单Agent/token对照，不能量化
 节省比例。沿用既有fixture/minimalAB减少工程成本；普通并发无停机门槛。
 原始Slack/账号/回执仅私有保存。Dot将获得本段固定科学与协作链接复核。
+
+
+## Validation closure
+
+Complete active run:2468passed, one preexisting positional compatibility fixture
+failed. It dropped today's final3fields after runtime fields had been appended;
+the named pre-provenance boundary and stronger runtime-default checks now pass.
+Production code is unchanged. Corrected provenance, both repairs and delivery
+tests pass30. Direct systemTemp WinError5 was resolved with projectbasetemp;
+no security/ACL change or SAC attribution. Raw failures remain private.
+Session elapsed95.709minutes includes full regression and observed corrections,
+exceeding60-90target without idle padding/backdating. Researchcount12 includes
+one withdrawn checkpoint;11 receive validated credit. Science remains open.
+[Fixed auxiliary45 report](https://github.com/WD-nanophotonics/GenericChess/blob/ed113f9af378504a844da3d13c2813b19120c858/results/dev_aux/SEGMENT_20261014_45.md).

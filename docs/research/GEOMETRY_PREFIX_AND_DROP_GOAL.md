@@ -165,3 +165,23 @@ premature checkpoint after a failed prerequisite read is withdrawn/preserved,
 then reverified only when data exists; exclude it from validated-stage credit.
 See data/geometry_prefix_drop_20261014.json and its exact archive/member hashes.
 Full tested publication and remote SHA are recorded after actual publisher success.
+
+
+## Validation closure
+
+The complete four-layer run passed2468 and failed one preexisting positional
+compatibility fixture. It incorrectly removed today's final3fields rather than
+stopping before provenance, after runtime fields had been appended. The named
+historical boundary and stronger runtime-default assertions now pass; production
+code was unchanged. Corrected provenance, both repairs and delivery tests pass30.
+A direct retest's systemTemp WinError5 was resolved by project-owned basetemp;
+no OS/security setting changed and no SAC cause is claimed. Original failures
+remain private. The prescribed publisher rechecks the same relevant targets
+before push; a containing commit's remote SHA is verified separately.
+
+Actual session elapsed95.709minutes includes complete regression and these
+observed corrections; the60-90minute target was exceeded, without idle padding,
+clock reset or backdating. Structural research count12 includes one withdrawn
+premature checkpoint;11 stages receive validated credit. Science remains open.
+
+[Fixed auxiliary45 report](https://github.com/WD-nanophotonics/GenericChess/blob/ed113f9af378504a844da3d13c2813b19120c858/results/dev_aux/SEGMENT_20261014_45.md).
