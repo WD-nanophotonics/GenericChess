@@ -11,6 +11,16 @@ on a rebuilt kernel; capability and research evidence are delivered ina7501271.
 Assess the actual supported parameters and tests; private prototypes are not
 automatically enabled or proven stronger configurations.
 
+Semantic promotion closure, updated2026-10-15: rebuild to remove the inherited
+legacy eight-target limit from the semantic compiler and both candidate paths.
+Semantic target storage now follows the existing64-type bound, retaining every
+promotion option; four8x8 regressions cover9/62 targets, optional/forced, complete
+legal sets and checked child identities. Legacy target limit8, Native board16,
+raw actionV1 and defaults are unchanged. Private wideV2 research is not enabled.
+Old installed binaries retain their former rejection until rebuilt. Actual
+production full2563 and focused62 checks pass; evidence:
+[semantic target closure](../research/data/semantic_promotion_targets_20261015.json).
+
 | Public entry | Actual execution and activation | Boundary |
 |---|---|---|
 | AlphaBetaPlayer.choose_action(session, limits, cancel_token=...) | Complete Core search with existing q4/hard8 defaults, TT, progress and cancellation. Native semantic legality is requested by default where supported. | Native legality acceleration is not a claim the whole search is Native. UI may retain this complete player. |
@@ -131,7 +141,7 @@ checks pass. Coreq4 remains supported through Core; independent Native search is
 q0. Search/evaluation/ordering/TT/UI policies are unchanged. PRIMARY publishes
 sandbox backend only; user-maintained UI Test integration remains separate.
 
-## Consecutive-action history cache repair —2026-10-13
+## Consecutive-action history cache repair â€”2026-10-13
 
 Backend commit f88c0930eed09f55e12d2f909704d868a0b665d8 fixes wrong TT reuse
 between complete legal histories with identical boards but different future
@@ -146,7 +156,7 @@ engine defaults. Scope, negative completion results and restored temporary-test
 validation: ../research/CORE_CHECK_TRANSPORT.md; correctness witness/tests:
 ../research/HISTORY_ACTION_CACHE.md.
 
-## Mixed q ordering opt-in —2026-10-13
+## Mixed q ordering opt-in â€”2026-10-13
 
 `SearchTuning(use_ordered_qsearch=True, use_ordered_qsearch_in_check=False)`
 orders ordinary q nodes with the existing orderer and keeps checked evasions
@@ -182,7 +192,7 @@ Both use existing Native functions; no new Native ABI/build feature is required.
 Unsupported providers retain Core; required errors propagate. Core still owns
 complete actual history, terminal precedence, declarations and checked commits.
 Do not expose this implementation option as a new UI task or silently enable it.
-Check-alone transport lost cost; combined actual consumers saved locally1.5–5.1%,
+Check-alone transport lost cost; combined actual consumers saved locally1.5â€“5.1%,
 while fresh fixed costs were mixed and equal-time completed horizons unchanged.
 Default/UI/PVS/price policy stays.2,341 active checks/45 focused pass, candidate
 entry-cancel failure and same-object retry fixed before publication. See
@@ -194,7 +204,7 @@ binding map, with original tuple handling for pass/legacy/unhashable inputs.
 No consumer activation, new option, Native rebuild or UI integration is required.
 Current full2349 and focused154 qualification includes value-equal reconstructed
 EP/promotion/drop actions and full history/cache restoration. Local fixed-work
-savings1.90–5.10percent are conditional; resource curves show no deeper retained
+savings1.90â€“5.10percent are conditional; resource curves show no deeper retained
 decision. Evidence: research/CORE_BINDING_MEMBERSHIP.md.
 
 2026-10-13: square_to_index avoids temporary BoardShape only for exact positive builtin int. All other extent/error behavior stays;2356 tests pass. No option/Native rebuild/UI work required; consumer process restart loads the Python change. Private prefix-free incoming schedule is research evidence only, unavailable as a product flag. Native20-board remainsunsupported, complete Core fallback retained. See research/COLD_RULE_COORDINATE.md and PREFIX_FREE_INCOMING.md.
@@ -231,7 +241,7 @@ existing meaning. None means not reported, including other player backends.
 Existing positional constructors keep their order. Consumers may ignore or
 show these diagnostics; no UI/Native/default policy change is required.
 
-## Generic root terminal wins —2026-10-14
+## Generic root terminal wins â€”2026-10-14
 
 AlphaBeta root scans now recognize any Core-authoritative terminal whose winner
 is the root side, including stalemate-loss and history-dependent continuous-check

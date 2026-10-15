@@ -2686,7 +2686,7 @@ static int gc_semantic_append_board_actions(GCSemanticActionBuffer *out,
                                             uint16_t target,
                                             uint16_t pattern_index,
                                             uint16_t geometry_index) {
-    uint16_t promotions[GC_MAX_PROMO_TARGETS + 1];
+    uint16_t promotions[GC_SEM_MAX_PROMO_TARGETS + 1];
     uint8_t promotion_count = 0;
     if (pattern->promotion_mode == 0) {
         promotions[promotion_count++] = 255;

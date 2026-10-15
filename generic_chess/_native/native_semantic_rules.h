@@ -12,6 +12,7 @@
 #include <Python.h>
 #include <stdint.h>
 
+#define GC_SEM_MAX_PROMO_TARGETS GC_MAX_TYPES
 #define GC_SEM_MAX_GEOMETRIES 4096
 #define GC_SEM_MAX_PATTERNS 256
 #define GC_SEM_MAX_AUX_SLOTS 8
@@ -231,7 +232,7 @@ typedef struct {
     uint8_t is_anchor;
     uint8_t is_promotable;
     uint8_t promo_target_count;
-    GCTypeIndex promo_targets[GC_MAX_PROMO_TARGETS];
+    GCTypeIndex promo_targets[GC_SEM_MAX_PROMO_TARGETS];
 } GCSemType;
 
 typedef struct {

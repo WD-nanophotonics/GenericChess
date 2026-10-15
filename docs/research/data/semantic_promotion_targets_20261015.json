@@ -1,0 +1,26 @@
+{
+  "problem": "Semantic compiler and candidate arrays inherited legacy eight-promotion-target limit; valid8x8 semantic rules with9/62targets failed Ccompile.",
+  "change": "Separate GC_SEM_MAX_PROMO_TARGETS=GC_MAX_TYPES(64) insemantic rules storage/parser, modulecandidate list andrecursiveS3runtime list. Retainalloptions; no truncation.",
+  "product_bounds_unchanged": {
+    "legacy_promotion_targets": 8,
+    "Native_board_max_width": 16,
+    "semantic_types": 64,
+    "packed_action": "V1",
+    "payload_version": 4,
+    "defaults_changed": false
+  },
+  "validation": {
+    "old_regressions": {
+      "tests": 4,
+      "failed": 4,
+      "error": "ValueError: too many promotion targets"
+    },
+    "new_focused": 62,
+    "actual_production_full_passed": 2563,
+    "full_seconds": 258.617038999997,
+    "full_nodeids_sha256": "99a8b82b6c91fc6687dc07d06025baf35b3c28b0ea4a0171adae7bc03c1ee940",
+    "private_postfix_qualification": "17roots1301checkededges+5highcoordinatefixtures10150actualCcodec+58guards; privatewide isnotproductsupport"
+  },
+  "rebuild": "Olderinstalledbinariesretainoldtargetlimit until rebuilt; sourcebuildrequired.",
+  "evidence_scope": "ExactfiniteCore legalset/checkedchildidentity regression, notuniversalstrength orfullgenerated-domainclosure."
+}

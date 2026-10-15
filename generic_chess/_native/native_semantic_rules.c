@@ -1337,7 +1337,7 @@ GCSemanticRules *gc_semantic_rules_compile(PyObject *payload) {
             return NULL;
         }
         uint64_t tc64;
-        if (!sem_list_len(targets, GC_MAX_PROMO_TARGETS, &tc64)) {
+        if (!sem_list_len(targets, GC_SEM_MAX_PROMO_TARGETS, &tc64)) {
             PyErr_SetString(PyExc_ValueError, "too many promotion targets");
             gc_semantic_rules_free(rules);
             return NULL;
