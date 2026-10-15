@@ -17,7 +17,7 @@ PROVED_TRUE = "PROVED_TRUE"
 PROVED_FALSE = "PROVED_FALSE"
 UNRESOLVED = "UNRESOLVED"
 THRESHOLDS = (0, 1)
-SOLVER_VERSION = "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1"
+SOLVER_VERSION = "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1-DECLARATION-GUARD"
 
 
 @dataclass(frozen=True)
@@ -75,6 +75,14 @@ def _status_for_terminal(runtime, root_actor: int, threshold: int) -> ThresholdR
 
 def solve_root_threshold_v3(compiled, state, *, max_nodes: int, max_depth: int | None = None, use_tt: bool = True) -> ThresholdSolveResult:
     """Certify every root action using exact threshold predicates."""
+    # This historical board-action reference has no SessionChoice edges. A
+    # legal WIN/RESTART declaration can change WDL while Core stays ongoing.
+    # Reject this domain rather than emit a false exact board-only label.
+    if getattr(compiled, "declarations", ()):
+        return ThresholdSolveResult(False, None, (), (),
+            {"solver_version": SOLVER_VERSION, "states_expanded": 0,
+             "supported_scope": "board_actions_only; session declarations unsupported"},
+            "REFERENCE_SOLVE_UNRESOLVED:declarations")
     root_actor = state.position.side_to_move
     configured_max_ply = getattr(compiled, "max_ply", None)
     if configured_max_ply is None:
