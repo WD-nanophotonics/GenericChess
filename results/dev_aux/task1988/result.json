@@ -1,0 +1,461 @@
+{
+  "status": "PASS_NEW32FAMILY_CONFIRMATION",
+  "physical": {
+    "status": "PASS_ALL_PHYSICAL_SLOTS",
+    "folder": "results\\dev_aux\\task1987",
+    "games": 768,
+    "moves": 15073,
+    "actual_native": 13455,
+    "proof_games": 355,
+    "proof_steps": 355,
+    "all_adopted_proof_games_physically_won": true,
+    "incomplete_game_slots": [],
+    "pending_proof_slots": [],
+    "full_study_complete": true,
+    "expected_games": 768,
+    "missing_game_slots": [],
+    "tail_games": 81,
+    "tail_moves": 856,
+    "terminal": {
+      "checkmate": 355,
+      "ongoing": 369,
+      "repetition": 14,
+      "stalemate": 30
+    },
+    "exit_causes": {
+      "reported_node_overrun": 10506,
+      "external_search_return": 2335,
+      "time_budget": 614,
+      "certificate": 1618
+    },
+    "node_overruns": 10648,
+    "phase_seconds": {
+      "admission_seconds": 22.89573069981998,
+      "proof_seconds": 381.7209213023307,
+      "verification_seconds": 11.205828800535528,
+      "normal_seconds": 408.6016536986572
+    },
+    "proof_work": {
+      "frontiers": 1091492,
+      "transitions": 5468328,
+      "iterations": 1091492,
+      "eager_board_successors": 5641239,
+      "claims_assessed": 0
+    },
+    "full_native_history_bindings": 13455,
+    "selection_scope": "No new fitting. UNIT720, seedFULL720/2160 andPOOLED1260 locked from first416TRAINrows percohort before newinputdraw; alias UNIT/SEED0 shares physicalcell.",
+    "actual_max_proof_depth": 64,
+    "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks"
+  },
+  "labels": {
+    "UNIT": 720,
+    "POOLED": 1260,
+    "SEED0": 720,
+    "SEED1": 2160
+  },
+  "contrasts": [
+    {
+      "label": "UNIT",
+      "R": 720,
+      "ratio": 1.0,
+      "mean": 0.0,
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bootstrap32family_interval": [
+        0.0,
+        0.0
+      ],
+      "UNKNOWN_WDL_bounds": [
+        0.0,
+        0.0
+      ],
+      "per_opponent": {
+        "360": {
+          "mean": 0.0,
+          "outcomes": {
+            "WIN": 22,
+            "UNKNOWN": 31,
+            "DRAW": 3,
+            "LOSS": 8
+          }
+        },
+        "720": {
+          "mean": 0.0,
+          "outcomes": {
+            "WIN": 15,
+            "LOSS": 15,
+            "UNKNOWN": 30,
+            "DRAW": 4
+          }
+        },
+        "1440": {
+          "mean": 0.0,
+          "outcomes": {
+            "UNKNOWN": 31,
+            "LOSS": 18,
+            "WIN": 10,
+            "DRAW": 5
+          }
+        },
+        "2880": {
+          "mean": 0.0,
+          "outcomes": {
+            "WIN": 12,
+            "LOSS": 15,
+            "UNKNOWN": 35,
+            "DRAW": 2
+          }
+        }
+      },
+      "same_price_cell": true
+    },
+    {
+      "label": "POOLED",
+      "R": 1260,
+      "ratio": 1.75,
+      "mean": 0.10546875,
+      "family_deltas": [
+        0.125,
+        0.0,
+        0.0,
+        0.25,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.125,
+        0.0,
+        0.25,
+        0.125,
+        0.0,
+        0.0,
+        0.125,
+        0.25,
+        0.625,
+        0.125,
+        0.0,
+        0.375,
+        0.0,
+        0.0,
+        0.5,
+        0.25,
+        0.0,
+        0.0,
+        0.25,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bootstrap32family_interval": [
+        0.0546875,
+        0.1640625
+      ],
+      "UNKNOWN_WDL_bounds": [
+        -0.86328125,
+        1.07421875
+      ],
+      "per_opponent": {
+        "360": {
+          "mean": 0.078125,
+          "outcomes": {
+            "WIN": 26,
+            "UNKNOWN": 29,
+            "LOSS": 7,
+            "DRAW": 2
+          }
+        },
+        "720": {
+          "mean": 0.125,
+          "outcomes": {
+            "WIN": 18,
+            "LOSS": 10,
+            "UNKNOWN": 31,
+            "DRAW": 5
+          }
+        },
+        "1440": {
+          "mean": 0.125,
+          "outcomes": {
+            "WIN": 13,
+            "LOSS": 13,
+            "UNKNOWN": 31,
+            "DRAW": 7
+          }
+        },
+        "2880": {
+          "mean": 0.09375,
+          "outcomes": {
+            "WIN": 16,
+            "LOSS": 13,
+            "UNKNOWN": 30,
+            "DRAW": 5
+          }
+        }
+      },
+      "same_price_cell": false
+    },
+    {
+      "label": "SEED0",
+      "R": 720,
+      "ratio": 1.0,
+      "mean": 0.0,
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bootstrap32family_interval": [
+        0.0,
+        0.0
+      ],
+      "UNKNOWN_WDL_bounds": [
+        0.0,
+        0.0
+      ],
+      "per_opponent": {
+        "360": {
+          "mean": 0.0,
+          "outcomes": {
+            "WIN": 22,
+            "UNKNOWN": 31,
+            "DRAW": 3,
+            "LOSS": 8
+          }
+        },
+        "720": {
+          "mean": 0.0,
+          "outcomes": {
+            "WIN": 15,
+            "LOSS": 15,
+            "UNKNOWN": 30,
+            "DRAW": 4
+          }
+        },
+        "1440": {
+          "mean": 0.0,
+          "outcomes": {
+            "UNKNOWN": 31,
+            "LOSS": 18,
+            "WIN": 10,
+            "DRAW": 5
+          }
+        },
+        "2880": {
+          "mean": 0.0,
+          "outcomes": {
+            "WIN": 12,
+            "LOSS": 15,
+            "UNKNOWN": 35,
+            "DRAW": 2
+          }
+        }
+      },
+      "same_price_cell": true
+    },
+    {
+      "label": "SEED1",
+      "R": 2160,
+      "ratio": 3.0,
+      "mean": 0.09765625,
+      "family_deltas": [
+        0.125,
+        0.0,
+        0.0,
+        0.375,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.375,
+        0.375,
+        0.0,
+        0.125,
+        0.125,
+        0.0,
+        0.0,
+        0.125,
+        0.125,
+        0.625,
+        0.25,
+        0.0,
+        0.25,
+        0.0,
+        -0.125,
+        0.5,
+        0.375,
+        0.0,
+        0.0,
+        0.25,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bootstrap32family_interval": [
+        0.03515625,
+        0.16796875
+      ],
+      "UNKNOWN_WDL_bounds": [
+        -0.87109375,
+        1.06640625
+      ],
+      "per_opponent": {
+        "360": {
+          "mean": 0.078125,
+          "outcomes": {
+            "WIN": 27,
+            "UNKNOWN": 28,
+            "LOSS": 8,
+            "DRAW": 1
+          }
+        },
+        "720": {
+          "mean": 0.109375,
+          "outcomes": {
+            "WIN": 19,
+            "LOSS": 12,
+            "UNKNOWN": 30,
+            "DRAW": 3
+          }
+        },
+        "1440": {
+          "mean": 0.109375,
+          "outcomes": {
+            "WIN": 13,
+            "LOSS": 14,
+            "UNKNOWN": 34,
+            "DRAW": 3
+          }
+        },
+        "2880": {
+          "mean": 0.09375,
+          "outcomes": {
+            "WIN": 17,
+            "LOSS": 14,
+            "UNKNOWN": 29,
+            "DRAW": 4
+          }
+        }
+      },
+      "same_price_cell": false
+    }
+  ],
+  "pooled_vs_learner_mixture": {
+    "name": "POOLEDminusEQUALTWO16FAMILY_LEARNER_POLICY_MIXTURE",
+    "mean": 0.056640625,
+    "family_deltas": [
+      0.0625,
+      0.0,
+      0.0,
+      0.0625,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.1875,
+      -0.0625,
+      0.0,
+      0.1875,
+      0.0625,
+      0.0,
+      0.0,
+      0.0625,
+      0.1875,
+      0.3125,
+      0.0,
+      0.0,
+      0.25,
+      0.0,
+      0.0625,
+      0.25,
+      0.0625,
+      0.0,
+      0.0,
+      0.125,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "bootstrap32family_interval": [
+      0.02734375,
+      0.08984375
+    ],
+    "UNKNOWN_WDL_bounds": [
+      -0.900390625,
+      1.013671875
+    ],
+    "price_coefficients": {
+      "1260": 1,
+      "720": -0.5,
+      "2160": -0.5
+    },
+    "scope": "Expectation over an equal mixture of two fixed learned policies, evaluated via shared full crossed payoff cells, not two new trainingreplicates or extra physicalgames. Coefficients cancel identical price cells."
+  },
+  "recorded_game_seconds": 882.6012186995649,
+  "outer_late_steps": 0,
+  "scope": "FixedactualH24eventW-L/coldPN1K/UNKNOWNdistinct. Shared32familyclusters acrossmethods/opponents, candidate ratios affect leaf/native/capture. Conditional on these lockedlearners; nohumanfit/fullgenerateddomain/unlimitedWDL/general trainingconvergence claim."
+}

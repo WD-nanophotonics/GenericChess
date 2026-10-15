@@ -1,0 +1,13 @@
+{
+  "status": "BEFORE_BOTH_TRAIN_LOCKS_AND_NEW_CONFIRMATION_INPUTS",
+  "question": "Does pooling two balanced16-family TRAIN grids (32families total) change the selected price and improve new independent confirmation versus each16-family learner and UNIT?",
+  "selection": "Read ONLY first416TRAINrows from1979/cohort0 andcohort1, require both FULLlocks. Sum all832actualW-L grid payoffs, numericascending ties. Pooling law equalcohorts/equalopponents/bothroles; no old1979DEV read before selector.",
+  "confirmation": "If unique {UNIT,FULL0,FULL1,POOLED} has at least2prices, draw32ALLnewDEVfamilies with same price-free law, exclude ALL prior rootorbits. Cross ALLfouropponents/bothroles/prices, same coldPN1K completeplayer, fixed opponentsnormal4096/PN16. One producer starts onlyafter1979closes. If allpricesidentical, record no distinguishable comparison and skip games.",
+  "primary": "POOLEDminusUNIT equalnu/role on32newfamilyclusters; paired difference versus equalmixture of two16-family learner policies secondary, report every arm. Samepricecells reused, notindependent replication.",
+  "cost": "Atmost1024newgames; forecast beforecalls from1977cost1.188s/old13pricefactor/30percentmargin+80s. ONE2400s cap includesNativequalification. No reusing/continuing any oldcap, extension or dividing longruns.",
+  "scope": "Post hoc methodproposal informed by cohort0TRAIN uncertainty, prospective before cohort1TRAINselection/newvalidation. Reuses already-paid TRAIN, notnewindependenttrainingreplication. Existing1979DEV remains originalstudy; thisnew32familyvalidation independent of it.",
+  "unknown": "Actual rule W-L only, UNKNOWNdistinct; no material/theoretical reward. No humanpricefit/opponentweights/rootfilter based onoutcomes.",
+  "source_sha": {
+    "results/dev_aux/task1979/campaign-freeze.json": "a1958656ec71d4c37a86f1faa5eb7e4e8c0df97646a8e393ae2afa0b50706f6c"
+  }
+}

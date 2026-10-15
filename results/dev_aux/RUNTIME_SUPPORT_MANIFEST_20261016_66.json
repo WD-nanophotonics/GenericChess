@@ -1,0 +1,12 @@
+{
+  "status": "SEALED_CRC_ALL_MEMBER_SHA",
+  "archive": {
+    "archive": "results/dev_aux/RUNTIME_REPRO_SUPPORT_20261016_66.zip",
+    "files": 10,
+    "raw_bytes": 609357,
+    "bytes": 142894,
+    "sha256": "5d1be642b4e284cf2683b61032fd01cf0c2ef5ded289e2bb0a31cb6673c03349",
+    "manifest": "MANIFEST66RUNTIME.json"
+  },
+  "why": "Secondrestorepassed50tests andallcost/mainaudits then encountered missing realchess import from restoredsource109adapter. Add exact dependency and explicitlybind its unchanged stop_check to actual liveown+readonlyPRIMARY policyroot; no fake flags/clearing or scientific source/assertion changes."
+}

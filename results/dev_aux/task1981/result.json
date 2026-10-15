@@ -1,0 +1,67 @@
+{
+  "status": "PASS_ALL_CENSUS_STATES_EDGES_NEW_RULES",
+  "targets": [
+    {
+      "rules": "results/dev_aux/task1967/rules.json",
+      "rules_sha": "ade16a3330683797ecd1010a8539d3109c6c2d753d9350a6b61d5d54bfe8b248",
+      "fingerprint": "14d06f0f014687d56c00cca825f65b17683dabe592c65d066545ba8fa8d07864",
+      "all_execution_fields_equal": true,
+      "compiled_differences": [
+        "ruleset_fingerprint",
+        "initial_position",
+        "initial_entity_count",
+        "initial_setup_positions"
+      ],
+      "states": 15240,
+      "edges": 69360,
+      "winning_terminals": {
+        "KK": 0,
+        "KKN": 0,
+        "KKR": 80
+      }
+    },
+    {
+      "rules": "results/dev_aux/task1978/cohort0/rules.json",
+      "rules_sha": "c001a38c73d88014f77c1c11d5c7211365af76e75a9df0486564e20edbbddcd1",
+      "fingerprint": "75b0396c00d2d2bce4cbd434aba5d6ac9b03dbcbf6991a2b74e488c8f5d64038",
+      "all_execution_fields_equal": true,
+      "compiled_differences": [
+        "ruleset_fingerprint",
+        "initial_position",
+        "initial_entity_count",
+        "initial_setup_positions"
+      ],
+      "states": 15240,
+      "edges": 69360,
+      "winning_terminals": {
+        "KK": 0,
+        "KKN": 0,
+        "KKR": 80
+      }
+    },
+    {
+      "rules": "results/dev_aux/task1978/cohort1/rules.json",
+      "rules_sha": "ff89824175dfd2cb9916df49a36126d82767c5eda831c40f751b38c8ac8cb04e",
+      "fingerprint": "c7f900a37658f64b63a2db2e244debe5a0a213087a06c01f17b264f73077f285",
+      "all_execution_fields_equal": true,
+      "compiled_differences": [
+        "ruleset_fingerprint",
+        "initial_position",
+        "initial_entity_count",
+        "initial_setup_positions"
+      ],
+      "states": 15240,
+      "edges": 69360,
+      "winning_terminals": {
+        "KK": 0,
+        "KKN": 0,
+        "KKR": 80
+      }
+    }
+  ],
+  "total_states": 45720,
+  "total_edges": 208080,
+  "seconds": 11.314504899986787,
+  "source_unchanged": true,
+  "scope": "Full old admissibleinputset/edges/terminalcomparison, new three rules. Source-derived monotone inventory closure and draw-only history justify noforcedWIN; not exactdraw/WDL/game labels. Initialentitycount is descriptive; initialsetup keys affect provenance only, which the filter replays in CURRENTrules. No running1979policy/default/integrationchange; originalexact-fingerprintfilter unchanged."
+}

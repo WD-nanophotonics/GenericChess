@@ -1,0 +1,119 @@
+{
+  "status": "PASS_FIXED_COMMON_BUDGET_SENSITIVITY",
+  "physical": {
+    "status": "PASS_ALL_PHYSICAL_SLOTS",
+    "folder": "results\\dev_aux\\task1994",
+    "games": 512,
+    "moves": 10537,
+    "actual_native": 8985,
+    "proof_games": 235,
+    "proof_steps": 235,
+    "all_adopted_proof_games_physically_won": true,
+    "incomplete_game_slots": [],
+    "pending_proof_slots": [],
+    "full_study_complete": true,
+    "expected_games": 512,
+    "missing_game_slots": [],
+    "tail_games": 83,
+    "tail_moves": 786,
+    "terminal": {
+      "checkmate": 235,
+      "ongoing": 244,
+      "repetition": 12,
+      "stalemate": 21
+    },
+    "exit_causes": {
+      "reported_node_overrun": 7011,
+      "external_search_return": 1531,
+      "time_budget": 443,
+      "certificate": 1552
+    },
+    "node_overruns": 7135,
+    "phase_seconds": {
+      "admission_seconds": 16.574023001099704,
+      "proof_seconds": 486.7680955011456,
+      "verification_seconds": 10.68107079991023,
+      "normal_seconds": 274.0883645999129
+    },
+    "proof_work": {
+      "frontiers": 1439201,
+      "transitions": 7148893,
+      "iterations": 1439201,
+      "eager_board_successors": 7340324,
+      "claims_assessed": 0
+    },
+    "full_native_history_bindings": 8985,
+    "selection_scope": "No learning/priceweight/rootselection; pooledprice locked via1985TRAINonly. ALL32shared1986familyinputs, new fixed strongeropponentpolicy, BOTHactor SessionCachedPhasePlayer with independent peractor banks. Fixednormal4096/PN1024/verify16384 andphasecaps. Comparepriceeffect WITHINthiscondition; oldconditioncomparison changes opponentproof+bank completepolicy, not isolatedPNcausality.",
+    "actual_max_proof_depth": 64,
+    "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks"
+  },
+  "prices": [
+    720,
+    1260
+  ],
+  "mean_price_delta": 0.12109375,
+  "family_deltas": [
+    0.125,
+    0.0,
+    0.0,
+    0.25,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.25,
+    0.0,
+    0.375,
+    0.125,
+    0.0,
+    0.0,
+    0.25,
+    0.25,
+    0.625,
+    0.25,
+    0.0,
+    0.375,
+    0.0,
+    0.0,
+    0.5,
+    0.25,
+    0.0,
+    0.0,
+    0.25,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "bootstrap32family_interval": [
+    0.06640625,
+    0.18359375
+  ],
+  "old_same32family_price_delta": 0.10546875,
+  "interaction": {
+    "mean": 0.015625,
+    "bootstrap32family_interval": [
+      0.00390625,
+      0.03125
+    ]
+  },
+  "outcomes": {
+    "720": {
+      "WIN": 59,
+      "UNKNOWN": 123,
+      "LOSS": 60,
+      "DRAW": 14
+    },
+    "1260": {
+      "WIN": 73,
+      "UNKNOWN": 121,
+      "LOSS": 43,
+      "DRAW": 19
+    }
+  },
+  "recorded_game_seconds": 841.6462766998739,
+  "old_samecases_seconds": 584.7745147999376,
+  "outer_late_steps": 0,
+  "scope": "ALL32shared1986families/fourfixedopponentprices/bothroles, notfresh32familyreplication or learning. Bothactorssame cachedPN1024/verify/normal4096/phasecaps, independentcoldperactorbanks. Priceeffect is controlled WITHIN newcondition; crosscondition changes opponentproof+cache completepolicy, cannotisolatePN-onlycausality. No theoreticalWDL/materialreward/parameterfilter; UNKNOWNdistinct."
+}

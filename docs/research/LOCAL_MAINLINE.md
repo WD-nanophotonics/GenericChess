@@ -1,29 +1,42 @@
-# DEV_AUX current mainline — segment65, 2026-10-16
+# DEV_AUX current mainline — segment66, 2026-10-16
 
-Science is OPEN. DEV_AUX owns sidemission; PRIMARY remains read-only here.
-The repository stays PUBLIC for anonymous Dot/Chat access. The failed PRIVATE
-experiment is superseded. Checked project publication is authorized; sensitive
-originals remain ignored. No product/default/UI integration follows this work.
+Science is OPEN; own sidemission only, PRIMARY read-only. PUBLIC enables anonymous
+Dot/Chat access; failed PRIVATE trial superseded. Checked project publication is
+authorized; sensitive originals remain ignored. No product/default/UI integration.
 
-Next decision: test whether cheaper proof can fund more independent TRAIN
-families at matched cost. Freeze each complete player and opponent distribution
-before learning, and use fresh cross-budget DEV. This replaces segment64's now
-completed cold-policy qualification, while preserving its warm results and caps.
+Current decision/reason: learn against a fixed complete player with real rule
+W-L and executable neutral proofs. Pooled training now yields useful heldout
+prices, but exact prices remain unstable. This replaces65's completed cold/nu
+qualification; keep its failures, source archives and cost limits as history.
 
-Two fresh datasets: RACE208 matches FULL416 at ratios2 and2.5. Observed TRAIN
-cost is719 versus1495 seconds. Strong UNIT DEV gain is10/64, family interval
-[.078125,.234375]; weaker gain4/64, [0,.140625]. LOFO/resampling shows price
-uncertainty. These are effective prices for this player, not universal values.
+Next Main: freeze ONE fresh32TRAIN/16DEV common-proof-policy study (both actors
+PN1K/coldbank/normal4096), balanced fixed opponents and same declared mu. Cost
+maximum cases from66 actual common-policy measurements before any labels; obtain
+Dot necessity assessment if expected above one hour. Prospective racing/control
+and independent DEV, no oldcap restart or currentDEV price/root/weight selection.
 
-Four-opponent validation: prior ratio2 gains6/128 with proof,1/128 without;
-both intervals cross zero. Broader transfer remains UNCONFIRMED. UNKNOWN is
-separate from DRAW. Cold1K retraining on416 exposed TRAIN cells keeps all4K
-outcomes/price2 at303 versus519 seconds, with26 changed paths; no fresh validation.
-Do not rebind the old KK/KKN census filter without full rule/history equivalence.
+Two16-family TRAIN results are1 and3; original32-family transfer gain1/256 has
+interval crossing zero. Pooled32TRAIN selects1.75 tied2. On NEW32-family crossed
+confirmation it gains27/256 actualH24 W-L, interval[.0546875,.1640625]. Price3
+also improves;1.75minus3 interval crosses zero. These are effective conditional
+prices, not unique human ratios or full Chess/Shogi tables.
 
-All2080 cases/36967 moves/31556 Native bindings replayed;34 tests pass.
-Source/evidence capsules contain530/105 members. A late restore-directory fix
-preserves the first failure and sealed archives. All producers are CLOSED.
-PRIMARY8ece is an OWNER MESSAGE only; no source execution, adoption or unit pooling.
-Direct user one-hour necessity consultation remains in force.
-Evidence: results/dev_aux/SEGMENT_20261016_65.md; task1966/1969/1971/1975/1976.
+On all32shared families with BOTHactors same PN1K/verify/coldbank/normal budgets,
+pricegain31/256, interval[.06640625,.18359375]. This supports the complete-player
+plan locally; it is not another independent training replication. Crosscondition
+changes opponent PN and cache, so its interaction is not isolated PN causality.
+UNKNOWN remains distinct; unresolved unlimitedWDL bounds are wide.
+
+Opt-in setup-only census transport matches ALL compiled execution fields,
+45720states/208080edges over3rules; current record is replayed.64exposedcases keep
+all paths/outcomes at128.5 versus historical150.2s. It is not generic deadness,
+DRAW labeling or adopted product policy. Four TRAINfamilies are one-move flat,
+but cost only.256s/997s; nine other flat families remain. Any new root filter
+changes conditional mu and must be frozen before new inputs/labels.
+
+All2688games/54036moves/47738Nativebindings and50tests restore. Original two
+capsules stay immutable; two dependency omissions/failures are preserved and
+corrected using explicit historical/runtime support archives and latehelper.
+Real live stop checks remain enabled; source computation otherwise isolated.
+PRIMARYcd30 is OWNER MESSAGE/report-read only; no execution/adoption or unitpooling.
+Evidence: SEGMENT_20261016_66.md; tasks1980/1988/1989/1995 and archive manifests.

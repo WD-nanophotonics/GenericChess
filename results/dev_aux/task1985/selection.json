@@ -1,0 +1,129 @@
+{
+  "status": "LOCKED_BEFORE_NEW_INPUTS_OR_GAMES",
+  "selected_R": 1260,
+  "ratio": 1.75,
+  "empirical_best_set": [
+    1260,
+    1440
+  ],
+  "scores": {
+    "180": -13,
+    "360": -9,
+    "540": -6,
+    "720": 2,
+    "900": 6,
+    "1080": 7,
+    "1260": 8,
+    "1440": 8,
+    "1800": 6,
+    "2160": 7,
+    "2520": 7,
+    "2880": 5,
+    "3600": 6
+  },
+  "outcomes": {
+    "180": {
+      "UNKNOWN": 33,
+      "LOSS": 22,
+      "WIN": 9
+    },
+    "360": {
+      "UNKNOWN": 28,
+      "LOSS": 21,
+      "WIN": 12,
+      "DRAW": 3
+    },
+    "540": {
+      "UNKNOWN": 30,
+      "LOSS": 18,
+      "WIN": 12,
+      "DRAW": 4
+    },
+    "720": {
+      "UNKNOWN": 35,
+      "WIN": 15,
+      "LOSS": 13,
+      "DRAW": 1
+    },
+    "900": {
+      "UNKNOWN": 30,
+      "WIN": 19,
+      "LOSS": 13,
+      "DRAW": 2
+    },
+    "1080": {
+      "UNKNOWN": 32,
+      "WIN": 19,
+      "LOSS": 12,
+      "DRAW": 1
+    },
+    "1260": {
+      "WIN": 21,
+      "UNKNOWN": 29,
+      "LOSS": 13,
+      "DRAW": 1
+    },
+    "1440": {
+      "UNKNOWN": 29,
+      "WIN": 21,
+      "LOSS": 13,
+      "DRAW": 1
+    },
+    "1800": {
+      "UNKNOWN": 30,
+      "WIN": 19,
+      "LOSS": 13,
+      "DRAW": 2
+    },
+    "2160": {
+      "WIN": 21,
+      "UNKNOWN": 26,
+      "LOSS": 14,
+      "DRAW": 3
+    },
+    "2520": {
+      "UNKNOWN": 31,
+      "WIN": 19,
+      "LOSS": 12,
+      "DRAW": 2
+    },
+    "2880": {
+      "UNKNOWN": 29,
+      "WIN": 19,
+      "LOSS": 14,
+      "DRAW": 2
+    },
+    "3600": {
+      "UNKNOWN": 30,
+      "WIN": 19,
+      "LOSS": 13,
+      "DRAW": 2
+    }
+  },
+  "seed_selected_R": [
+    720,
+    2160
+  ],
+  "confirmation_prices": [
+    720,
+    1260,
+    2160
+  ],
+  "maximum_new_games": 768,
+  "source": [
+    {
+      "cohort": 0,
+      "rows": 416,
+      "canonicalTRAINprefix_sha": "4cbe96ec63a177a2f837c779aa58993c7b589341cd865cc7a0f25c8c4d2d447f",
+      "lock_sha": "e9454fe880cbae98534a9636710829504b957028c83b8fd173ea3aad9ad5bd56"
+    },
+    {
+      "cohort": 1,
+      "rows": 416,
+      "canonicalTRAINprefix_sha": "a8d3a10e7bd9558cf901df658a7326d42479a3aeaacadfd95639a85af07ac63f",
+      "lock_sha": "5eba3b535f75ba7c947db98d609bf9e2a5b3e49ed6a9c666d380ffd75299af57"
+    }
+  ],
+  "no_DEV_read": true,
+  "scope": "832already-paid TRAINgames /32families/8peropponent. Fixed pooled actualW-L/numericascendingtie rule. Reuses two priorlearner datasets, notnewtrainingreplicate. NEW independentconfirmation required; if allpricesidentical skip uninformative games."
+}

@@ -1594,3 +1594,41 @@ patrol ACTIVE. Science revision6fdc1cf73bc31178421f6a5e1ba925b0bda862db has full
 remote SHA and anonymous report/source/data/log verification. Final session receipt
 is late direct Git metadata outside the unchanged capsules. Delivery alone does
 not establish Dot/PRIMARY source read or execution.
+
+## DEV_AUX segment66 — 2026-10-16: pooled prices and common proofs
+
+- AUX: two fresh balanced-opponent TRAIN/DEV cohorts, then TRAIN-only pooled32
+  selection and NEW32-family confirmation. Ratios1/3 vary; pooled1.75 tied2
+  gains27/256 actualfiniteH24 W-L. Common-proof-budget variant gains31/256 on
+  the same32families, with positive family intervals. Exact1.75 versus3 is
+  unresolved; no human fitting, unlimitedWDL or full-domain convergence claim.
+- Fairness correction: candidatePN1K/opponentPN16 is asymmetric. New512case
+  condition gives BOTHactors PN1K/verification/coldbank/normal4096; priceeffect
+  is controlled within it. Opponent PN+cache both change acrossconditions, so
+  do not claim PN-only causality. Initial128case/8family proposal retired at0
+  calls before outcome inspection, replaced by one full32family512case protocol.
+- Efficiency: physicalRACE208=FULL416 in both datasets,520 versus997seconds
+  combinedTRAIN, but study paid all controls. Pooled result requires full832
+  TRAIN cells; posthoc288cell racing replay is not prospective qualification.
+  Exposed1K probe cuts cost but loses1WINtoUNKNOWN; no equivalence claim.
+  Strict setup-only noWIN transport keeps64paths/outcomes at128.5 versus
+  historical150.2s. Ordinary concurrent load is allowed; no quiet-window request,
+  automatic reruns, extra Agent/worker/fees, default or UI change.
+- Repro/corrections:2688games/54036moves/47738Nativebindings/50tests and complete
+  census replay. First restore missed historicalcomparisondata; second missed
+  realchess import. Originalcapsules/failures preserved, explicit checked support
+  archives and latehelper fix dependencyclosure in a newdirectory. Real live
+  stop checks are bound to actual own/readonlyPRIMARYroots, never fake/cleared.
+- PRIMARY contribution is its OWNER MESSAGE at
+  cd30db453003ebc0b6c40373287071a27c0a548d,
+  [CHECK_ONLY/TT report](https://github.com/WD-nanophotonics/GenericChess/blob/cd30db453003ebc0b6c40373287071a27c0a548d/docs/research/CHECK_ONLY_TT_AND_HISTORY_CONTEXT_20261016.md).
+  It reports mixed/negative fresh game transfer, no nodegain from context tags,
+  append-recording savings, and report-reading AUX64/65 without source/test/game
+  execution/adoption. AUX read its message only; no independent source execution,
+  unitpooling, crosswrite or integration. Its NativeTT and AUX logical banks are
+  different mechanisms. No acknowledgment loop or new direction authority.
+- Open: fresh common-proof-policy learning with frozen mu/nu/caps and newDEV;
+  precisevalue stability and broader games/rules remain unproved. Price-free
+  rootproof filtering would change mu and needs new protocol, not deleting old
+  cases. Fixed-revision delivery and actual receipts are separate; delivery
+  does not mean Dot/PRIMARY read or executed this new source.

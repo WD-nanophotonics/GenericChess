@@ -1,0 +1,196 @@
+{
+  "status": "PASS_ALL_CASE_ACCOUNTING",
+  "by_price": [
+    {
+      "R": 720,
+      "cases": 256,
+      "transitions": {
+        "WIN->WIN": 59,
+        "UNKNOWN->UNKNOWN": 123,
+        "LOSS->LOSS": 56,
+        "DRAW->DRAW": 14,
+        "UNKNOWN->LOSS": 4
+      },
+      "identical_full_records": 221
+    },
+    {
+      "R": 1260,
+      "cases": 256,
+      "transitions": {
+        "WIN->WIN": 73,
+        "UNKNOWN->UNKNOWN": 121,
+        "LOSS->LOSS": 43,
+        "DRAW->DRAW": 19
+      },
+      "identical_full_records": 235
+    }
+  ],
+  "UNITvsUNIT_commonpolicy_control": {
+    "families": 32,
+    "identical_full_records": 32,
+    "nonzero_role_sums": 0,
+    "per_family": [
+      {
+        "family": 0,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 1,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 2,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 3,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 4,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 5,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 6,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 7,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 8,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 9,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 10,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 11,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 12,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 13,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 14,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 15,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 16,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 17,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 18,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 19,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 20,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 21,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 22,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 23,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 24,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 25,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 26,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 27,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 28,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 29,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 30,
+        "same_full_record": true,
+        "role_score_sum": 0
+      },
+      {
+        "family": 31,
+        "same_full_record": true,
+        "role_score_sum": 0
+      }
+    ]
+  },
+  "scope": "Shared alreadyfrozen cases, no extraGame/Core/PN/Native calls or rejectedcases. EqualUNIT actors have identical requestedpolicy; retain any realclock/pathvariation. CrossconditionchangesopponentPN+cache, notisolatedPNcause, and is notnewtraining replication."
+}

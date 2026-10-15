@@ -1,0 +1,19 @@
+{
+  "status": "SECOND_RESTORE_FAILURE_PRESERVED_AND_FULL_DEPENDENCY_CLOSURE_CORRECTED",
+  "failure": "ModuleNotFoundError: chess",
+  "second_logs_private": ".local_agent/repro66-repaired/tests.log and replay.log",
+  "tests_passed_before_failure": 50,
+  "runtime": {
+    "archive": "results/dev_aux/RUNTIME_REPRO_SUPPORT_20261016_66.zip",
+    "files": 10,
+    "raw_bytes": 609357,
+    "bytes": 142894,
+    "sha256": "5d1be642b4e284cf2683b61032fd01cf0c2ef5ded289e2bb0a31cb6673c03349",
+    "manifest": "MANIFEST66RUNTIME.json"
+  },
+  "dependency_import": "Actualsource109adapter imports chess; realchess package/source/license restored, no mock replacement.",
+  "stop_root_binding": "Adapter assumesproducer cwd/neighborPRIMARY. Newisolateddatareader explicitlybinds unchanged actualstop_check to currentliveprojectroot passed privately fromparent cwd. No oldflagcopy/clearing, semantic/proof/record assertion modification or studyreexecution.",
+  "late_helper_sha": "b3e30b050edd41bf315296421323515d6065c3c84fdc4d91091e5d49a54ce999",
+  "original_capsules_unchanged": true,
+  "new_private_dir": ".local_agent/repro66-complete"
+}

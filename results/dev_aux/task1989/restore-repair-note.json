@@ -1,0 +1,19 @@
+{
+  "status": "FIRST_RESTORE_FAILURE_PRESERVED",
+  "first_tests_passed": 50,
+  "first_failure": "FileNotFoundError: results/dev_aux/task1968/games.jsonl",
+  "cause": "Historicalcomparisondata is in Evidence65, not Source65; initial66package inheritedSource65only and omittedthisruntimeauditdependency.",
+  "first_logs_private": ".local_agent/repro66/tests.log and replay.log",
+  "sealed_source_sha": "00dd5139e9380d6314d55affef06c548f1c004e2dfa207e1463b48763d81295e",
+  "sealed_evidence_sha": "330768b9cb1b6a94fafa058532809aeee8ccc19b31132da0e0fa510e6e6e9a50",
+  "support": {
+    "archive": "results/dev_aux/SUPPORT_REPRO_20261016_66.zip",
+    "files": 3,
+    "raw_bytes": 1419132,
+    "bytes": 42759,
+    "sha256": "e6a85aabcfed611ecd26653352004af3adc26a007e3cd4d81f82f7923ea17faa",
+    "manifest": "MANIFEST66SUPPORT.json"
+  },
+  "late_helper_sha": "24171b1dbf3ac112cdab2f438ca3b1898697bb5c602fd0f5fecd2123dbd40e18",
+  "correction": "Add3byte-exact alreadypublichistorical dependencies in separatechecked supportarchive; newprivate restore directory. No sealedarchive/source/test assertion/study cap modified, no uniqueevidence deleted. Latehelper/notecorrection directGit outsideoriginalsealedcapsules."
+}

@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "physical": {
+    "status": "PASS_ALL_PHYSICAL_SLOTS",
+    "folder": "results\\dev_aux\\task1977",
+    "games": 128,
+    "moves": 2494,
+    "actual_native": 2326,
+    "proof_games": 51,
+    "proof_steps": 51,
+    "all_adopted_proof_games_physically_won": true,
+    "incomplete_game_slots": [],
+    "pending_proof_slots": [],
+    "full_study_complete": true,
+    "expected_games": 128,
+    "missing_game_slots": [],
+    "tail_games": 4,
+    "tail_moves": 68,
+    "terminal": {
+      "checkmate": 51,
+      "ongoing": 73,
+      "stalemate": 3,
+      "repetition": 1
+    },
+    "exit_causes": {
+      "certificate": 168,
+      "time_budget": 108,
+      "external_search_return": 293,
+      "reported_node_overrun": 1925
+    },
+    "node_overruns": 1961,
+    "phase_seconds": {
+      "admission_seconds": 3.6803287010698114,
+      "proof_seconds": 70.8381707999506,
+      "verification_seconds": 0.9529925999813713,
+      "normal_seconds": 67.75384459987981
+    },
+    "proof_work": {
+      "frontiers": 205996,
+      "transitions": 1042766,
+      "iterations": 205996,
+      "eager_board_successors": 1075231,
+      "claims_assessed": 0
+    },
+    "full_native_history_bindings": 2326,
+    "selection_scope": "NO NEW SELECTOR. Prior64TRAINlocked2vs1; equalopponentpricepopulation{.5,1,2,4},fixed4096nodes+PN16, matched32roles/16families andsameproofmodes. Thisisnewvalidation, notoutcomeadaptedweightsorindependent512families.",
+    "actual_max_proof_depth": 64,
+    "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks"
+  },
+  "actual_game_seconds": 152.0801493000763,
+  "old_game_seconds": 345.13214789991616,
+  "cost_ratio": 0.4406432441181271,
+  "identical_full_records": 121,
+  "total_games": 128,
+  "outcome_transitions": {
+    "WIN->WIN": 26,
+    "LOSS->LOSS": 25,
+    "UNKNOWN->UNKNOWN": 72,
+    "DRAW->DRAW": 4,
+    "WIN->UNKNOWN": 1
+  },
+  "bank_hits": 0,
+  "filter_skips": 0,
+  "source_unchanged": true,
+  "scope": "EXPOSED fixedcases, old chronological recordedtiming reference; ordinary concurrent load allowed. Newresource/filter condition may change timed policy. Equality here is measured, not universal. No newpricelearning/DEVvalidation or unlimitedWDL."
+}

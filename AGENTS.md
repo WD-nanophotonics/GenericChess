@@ -261,21 +261,25 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope:2026-10-16 segment65
+# DEV_AUX current scope:2026-10-16 segment66
 
-Science is OPEN; see docs/research/LOCAL_MAINLINE.md and the segment65 report.
-Cold prospective RACE208 matches FULL416 on two datasets at lower observed
-TRAIN cost, but prices2/2.5 and LOFO variants remain uncertain. Strong UNIT
-DEV is positive; broader four-opponent transfer is unconfirmed. UNKNOWN never
-becomes a draw or quantity reward. Next compare more data against proof cost,
-with fixed complete players and independent cross-budget validation.
-Cold1K exposed TRAIN keeps416 payoffs/price2 at303 versus519 seconds; this is
-not fresh validation. It replaces64's completed cold qualification; preserve
-all old warm data, caps and failures. All producers are CLOSED. All2080 cases,
-36967 moves/31556 Native bindings and34 tests were rechecked. A late restore
-parent-directory repair is outside immutable capsules; its first failure remains.
-No blind census-filter rebinding, default/UI/main merge or human/DEV price fitting.
-PUBLIC, checked publication, separate writers and the direct one-hour rule stay.
+Science is OPEN; see segment66 report and LOCAL_MAINLINE. Balanced16-family
+TRAIN gives ratios1/3 and unconfirmed original transfer. Pooled32TRAIN selects
+1.75 tied2; NEW32-family actualH24 W-L gain27/256, and shared-family equal-proof
+opponent gain31/256. These are scoped effective prices, not unique human values,
+unlimitedWDL or complete Chess/Shogi recovery. Price1.75 versus3 remains unclear.
+Next freeze fresh learning against the common proof-policy opponent, using
+actual cost forecasts and new validation. Do not choose prices/roots/weights
+from currentDEV or extend old caps. Rootproof filtering would change mu and
+requires a new before-input protocol; preserve all existing flat/failure cases.
+Strict setup-only noWIN census transport is opt-in, not a default or general
+deadness rule. All execution/history fields must match; UNKNOWN never becomesDRAW.
+All producers CLOSED;2688games/54036moves/47738Nativebindings and50tests replay.
+Two isolated-restore dependency omissions are corrected by explicit support
+archives/latehelper, preserving sealed archives and both first failures. Live
+stop checks remain real. PRIMARYcd30 is OWNER MESSAGE/report-read only, no
+source execution/adoption or unitpooling. PUBLIC/checkedpublication/separate
+writers/directonehournecessity rule remain unchanged; no product/UI integration.
 
 ## Current user publication grant2026-10-15
 
