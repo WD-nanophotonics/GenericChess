@@ -1,3 +1,21 @@
+## Direction-recovery correction —2026-10-15
+
+PRIMARY mistakenly reused superseded PRIVATE authorization despite the earlier
+failed Dot access and PUBLIC rollback. The user restated that direct Dot/Chat
+repository access is the purpose; PRIMARY restored PUBLIC and verified anonymous
+GitHub API visibility=public, private=false. Earlier PRIVATE entries below are
+historical failures, not policy.
+The current caller review did receive the complete source through Slack and Dot
+confirmed reading it, but did not read the entire repository or execute tests.
+PRIMARY corrected the recovery policy to preserve current decision, reason,
+superseded alternative and execution consequence together. No DEV_AUX action or
+coordination is claimed for this correction, and no quantitative efficiency claim
+is made. Existing research changes/session remain separate from this docs repair.
+Recovery simulation preserves the full decision/reason/supersession/condition;
+33 existing session/delivery workflow checks pass. An initial test setup failed
+because its temporary parent directory was absent; creating it fixed the setup,
+and the same checks then passed. No product or platform permission change.
+
 ## 2026-10-15 PRIMARY goal/backend entry and DEV_AUX55
 
 PRIMARY delivers explicit physical-root-win/D0source reporting, known backend-module compilation, full2630tests, source-built32drop/promotion closure and frozen goal/cost evidence. Default finite analysis and UI remain. The fresh24family/46root prefix batch has no additional M1events or general speed gain; negative findings are retained. Native-only replay remains a private candidate after actual caller-cost attribution.

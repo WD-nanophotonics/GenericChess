@@ -42,6 +42,12 @@ and [official config basics](https://learn.chatgpt.com/docs/config-file/config-b
 ## Start and resume
 
 Read NEXT_WORK.md first, policy, current mainline and persisted stop flags.
+Before acting, reconcile the memo with AGENTS.md's current decisions/reasons and
+any newer user direction. Carry decision + reason + superseded alternative +
+execution consequence through compaction; history and old permissions cannot
+revive an abandoned direction. Update existing current entries when direction
+changes, rather than appending competing policies. Keep unresolved issues and
+active boundaries in the handoff. No new approval or automatic monitoring loop.
 Normal manual starts and heartbeat wakes start/resume RESEARCH, not just patrol.
 Use `.venv\Scripts\python.exe -m tools.local_agent.cli session start`.
 It checks stop flags and compact memo structure. An active same-chat segment
@@ -59,7 +65,10 @@ done condition. Three tasks must be distinct and genuinely executable; the
 validator checks structure, the Agent checks scientific usefulness. Overwrite
 completed/superseded entries; no memo history, rule repetition or per-version
 archives. Detailed evidence belongs in research documents/Git. Tasks are
-revisable reserves, not work quotas or an approval queue.
+revisable reserves, not work quotas or an approval queue. State also carries the
+critical current decision/reason (PUBLIC for Dot/Chat access; PRIVATE abandoned),
+with remaining decisions in AGENTS.md. Shorten stale evidence rather than dropping
+that causal relationship to meet the existing memo size limit.
 
 ## Research loop
 
@@ -409,32 +418,27 @@ the full remote SHA. Direct git push is rejected by the existing repository
 hook; do not bypass it. A full passing regression may precede the focused checks
 required by this publication entry.
 
-### Repository visibility and private access acceptance —2026-10-11
+### Current repository visibility — PUBLIC, user2026-10-15
 
-The user authorized changing WD-nanophotonics/GenericChess to PRIVATE and
-continuing through authenticated GitHub access. The visibility change and
-local authenticated reads succeeded; verify dot's connected access separately
-instead of treating a public URL or local access as proof of remote access.
-Record the actual branch SHA, source read and any access error. A pending reply
-is not a failed access test. The user permits restoration to PUBLIC if this
-attempt actually fails; retain the failure evidence and distinguish conversion,
-local transport and advisor access. Do not change credentials or add workers.
-The attempt actually failed advisor acceptance: its existing GitHub connection
-returned404 for the branch and two source reads. The local Agent restored PUBLIC
-under this specific user-authorized rollback. An initial Git403 after restoration
-was followed by successful Git/API branch reads; repository metadata reported
-disabled=false. Keep that transient failure distinct from advisor's private404.
-PUBLIC is the current verified mode; no automatic retry of visibility changes.
-Advisor's existing connector then independently read sandbox
-9146a2e5b06e3349a588a8dd1abc05cab5d0a78c and native_legality.py at that SHA;
-reported blob156d129bf450b9a4de28e8feea26be73f80c0b77 matches local Git.
-This accepts restored PUBLIC reads, not private access or an actual push.
-Future private acceptance must separately record visibility source/date, local
-read, advisor's actual branch SHA and fixed-SHA file read, and tested publication.
-Do not infer push acceptance from read-only checks. Connector scope/identity is a
-possible cause of404, not a proven diagnosis; never copy credentials to repair it.
-Private visibility does not change publication tests, full-SHA verification,
-data exclusions, stops, research duration or long-run consultation rules.
+WD-nanophotonics/GenericChess must stay PUBLIC because Dot/Chat need direct access
+across repository source and evidence. PUBLIC/private=false was verified through
+both authenticated and unauthenticated GitHub API reads on2026-10-15. This proves
+anonymous repository access, not that Dot has read every file or run the tests.
+Only a NEW explicit user direction can authorize another visibility change;
+old PRIVATE permission is not a pending action. Slack attachments can support a
+specific review, but do not establish whole-repository access or replace fixing
+an observed access problem. Report actual read coverage and execution limits.
+
+Historical PRIVATE experiment — superseded, NOT an operating procedure:
+On2026-10-11 authenticated local access worked but Dot's connector returned404;
+PUBLIC restoration then allowed its connector to read sandbox9146a2e and a matching
+fixed-SHA source blob. A later Agent mistakenly reused the old PRIVATE permission,
+again breaking connected reads; Slack evidence/source attachments supported only
+scoped reviews. The user rejected that regression on2026-10-15 and PUBLIC was
+restored. Preserve these events as failure evidence; do not retry the abandoned
+experiment or infer future work from its old acceptance checklist.
+Publication tests, full-SHA verification, content checks and Agent boundaries
+remain as currently specified in AGENTS.md.
 
 Recovery/isolation evidence remains REBUILD_20261003.md; never import old
 App databases, credentials, Goals or retired queues. Do not touch other projects.

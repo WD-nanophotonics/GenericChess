@@ -5,6 +5,37 @@ Agent works on sandbox in this checkout. Never touch alphasho, its audits,
 tasks or other projects. No automatic spawning/delegation, extra fees or
 uncontrolled/unbounded jobs. User-authorized bounded project work is permitted.
 
+## Current decisions and their reasons — user clarified2026-10-15
+
+- Repository: WD-nanophotonics/GenericChess stays PUBLIC so Dot/Chat can read
+  repository source and evidence directly. The earlier PRIVATE experiment failed
+  connected access (404) and was abandoned. The later Agent change back to PRIVATE
+  was an error; PUBLIC was restored and unauthenticated GitHub API access verified
+  on2026-10-15. Historical PRIVATE authorization is superseded, not a retry task.
+  Change visibility only if the user explicitly gives a NEW direction to do so.
+- Publication: all project content without personal information/passwords/other
+  credentials is authorized in established Git/Slack destinations, because source
+  and evidence must be available to collaborators. This replaces older Agent-only
+  and source-origin exclusions; compaction does not revoke authorization.
+- Collaboration: PRIMARY owns sandbox here; user-established DEV_AUX owns its
+  separate sidemission checkout. This supersedes the old blanket no-auxiliary
+  premise, not the ban on automatic spawning or cross-checkout writes. Ordinary
+  concurrent computation is normal; only actual interference needs action.
+- Research: search comparison and bottleneck attribution currently come first;
+  rule-only prices and small learning remain retained later goals. Earlier phase
+  plans and advisor suggestions do not automatically become the current backlog.
+
+When a direction changes, UPDATE its current decision together with its reason,
+superseded decision and execution consequence; retain historical evidence as
+history, not competing live instructions. Latest explicit user direction wins.
+At compaction/handoff carry these causal relationships, active boundaries and
+unresolved issues, not isolated old permissions. NEXT_WORK.md carries a short
+current-decision/reason line and points here for the remaining current decisions.
+On recovery, reconcile the memo with this section and newer user directions before
+acting; a stale memo or summary cannot revive a superseded plan. Before changing
+access, research direction or delivery, check that the action serves the current
+purpose. Resolve from existing evidence without a new user approval queue.
+
 ## Current publication authorization — user clarified2026-10-15
 
 This paragraph takes precedence over older, narrower publication wording below.
@@ -56,7 +87,7 @@ per-test, per-message or per-push approval queue. Do the authorized work.
   Send useful questions/results to the dedicated GenericChess channel under
   the existing fresh-request and no-loop protocol. Dot is a research partner,
   not a permission issuer or release approver.
-- Commit and publish reviewed Agent-generated project code, results and sanitized
+- Commit and publish reviewed project code, results and checked/sanitized
   evidence to origin/sandbox through the tested publication entry, with complete
   remote-SHA verification. Keep the established branch and writer boundaries.
 - Maintain this project's AGENTS.md/manuals and necessary project configuration.
@@ -126,7 +157,7 @@ cryptographic process authentication. Other isolation/safety rules stay.
 User2026-10-11 also requires a remotely readable collaboration record. At each
 completed segment update docs/operations/COLLABORATION_LOG.md with both Agents'
 contributions, coordination, disagreements/corrections, adoption reasoning,
-efficiency evidence/limits and unresolved issues; publish reviewed Agent-only
+efficiency evidence/limits and unresolved issues; publish checked project collaboration
 summaries to sandbox and give Dot a fixed-revision link. Exclude personal
 information, passwords and other credentials from that publication; private originals
 are authorized and preserved. This is a short evidence summary, not extra approval,

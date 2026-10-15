@@ -197,5 +197,5 @@ checkout writes, merge or routine wake. COLLABORATION_LOG records the scope.
 Detailed earlier route decisions remain in their purpose reports and the fixed
 prior mainline Git revision. They are evidence, not automatically renewed tasks.
 Operational duration/stops/Git/Slack/private-save/Agent boundaries stay exactly
-in AGENTS.md, LOCAL_AGENT.md and SLACK_WORKFLOW.md. Publish reviewed Agent-only
+in AGENTS.md, LOCAL_AGENT.md and SLACK_WORKFLOW.md. Publish reviewed project
 results each completed segment with full origin/sandbox SHA verification.
