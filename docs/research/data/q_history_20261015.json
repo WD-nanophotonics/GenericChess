@@ -11546,5 +11546,13 @@
       }
     ],
     "scope": "Compilation only; no label/corpus/holdout reads or old experiments executed."
+  },
+  "witness_mid_search_interrupt": {
+    "complete": true,
+    "calls": 4,
+    "batch_seconds": 0.26181150000775233,
+    "all_cancelled": true,
+    "roots_restored": true,
+    "scope": "Mid-search wall cancellation, not deterministic injection at the hint instruction; complete finite-result/root check only."
   }
 }

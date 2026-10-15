@@ -2554,3 +2554,10 @@ shared fixed-source correction prevented a known local error but no single-Agent
 counterfactual measures saved time. Builder/test normalization and baseline errors
 are recorded, so neither zero-friction communication nor zero rework is claimed.
 Public access remains mandatory for collaborator reading; PRIVATE was abandoned.
+
+Final PUBLIC delivery1facd8295bf0dd57e034ce40d3aaa34a82cae0a2 independently
+remote-verified and sent to Dot (actual receipt1792061448.900259). No Dot
+technical reply observed, no ack gate. Four subsequent bounded private-hint
+mid-search timer cancellations restore complete roots/retained histories; not
+instruction-exact hint injection or product adoption. Supplemental evidence follows
+in this version. Private originals remain; no new collaborators or boundary writes.
