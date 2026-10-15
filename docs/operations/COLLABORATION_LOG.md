@@ -1,3 +1,13 @@
+## 2026-10-15 PRIMARY goal/backend entry and DEV_AUX55
+
+PRIMARY delivers explicit physical-root-win/D0source reporting, known backend-module compilation, full2630tests, source-built32drop/promotion closure and frozen goal/cost evidence. Default finite analysis and UI remain. The fresh24family/46root prefix batch has no additional M1events or general speed gain; negative findings are retained. Native-only replay remains a private candidate after actual caller-cost attribution.
+
+DEV_AUX55 fixedc299879d863eb53119b9eb732b3c4f03fbdbfa9d report fully read through remote Git objects: symmetric physical certificate-tail execution, normal fallback for unsupported runtime,77focused tests,1402adopted-proof games physically winning and318tails. Price gains still cross zero; SMALL trigger saves cost with4fewer highR wins; partial retention0actualhits deferred. These are AUX-reported, not PRIMARY reproduced. AUX keeps generic prover/verifier/cursor, fallback runtime and learning on sidemission; PRIMARY changes Native C/compiler/caller only. No cross-checkout/state write, merge, duplicate solver, extra Agent or pause request.
+
+At recovery and final checkpoint read new channel roots plus whole primary/AUX55threads, no remaining pages; exact originals saved before reconcile. The new AUX result was found in its existing thread despite no new roots. Prior ownership messages1792036243.974859/1792038125.290899 remain operative; no routine acknowledgment/wake/retry loop. Adopt Dot's fixed planned-denominator and actual-terminal interpretation as reference, not authority or independent execution. No observed coordination conflict. Concrete complementary outputs avoid duplicate solver work; elapsed collaboration savings are not independently quantified. Ordinary concurrent load is normal and limits timing interpretation only.
+
+Fixed auxiliary report: https://github.com/WD-nanophotonics/GenericChess/blob/c299879d863eb53119b9eb732b3c4f03fbdbfa9d/results/dev_aux/SEGMENT_20261015_55.md . PRIMARY tested sandbox revision/report/archive is sent through the dedicated project Slack with a sanitized evidence attachment because private-GitHub connector access was404; file delivery does not prove Dot read/adopted it. No publication approval gate. Heartbeat remains PAUSED.
+
 ##2026-10-15 PRIMARY priced completion / AUX54 solver separation
 
 PRIMARY completes prospective16root priced/q0/TT/fixed/backend comparisons, a legal-rule PV counterexample/regression, source replay, root-order intervention and immediate-terminal decision-goal prototype. See ../research/ROOT_ORDER_COST_AND_PRICED_TRANSFER.md and its hashed archive. Actual product implementation/default/UI unchanged.

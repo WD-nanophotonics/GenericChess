@@ -19,7 +19,8 @@ from ..core.transition import apply_action
 from .adapter import pack_semantic_search_position
 from .compiler import GC_SEM_MAX_PLY, NativeUnsupportedRuleError
 from .mirror import pack_semantic_action
-from .semantic import public_action, _require_root_window_support
+from .semantic import (public_action, _require_root_window_support,
+                       _require_immediate_win_support)
 
 DYNAMIC_FEATURE_NAMES = ("mobility", "promotion_potential", "anchor_safety")
 SPATIAL_CELL_COUNT = 9
@@ -126,6 +127,9 @@ class SemanticIterativeSearchResult:
     # Main-frontier ordering attempts, including interrupted allocation/budget.
     # None denotes an older kernel or a search that did not start.
     main_binary_order_calls: int | None = None
+    # A verified physical root child may precede any complete main iteration.
+    immediate_win: bool = False
+    result_source: str = "main_iteration"
 
 
 def _profile_tuple(native_rules, values):
@@ -433,6 +437,7 @@ class SemanticSearchEngine:
         root_order_hint: Action | None = None,
         root_window_pruning: bool = False,
         trace_enabled: bool = False,
+        stop_on_immediate_win: bool = False,
     ) -> SemanticIterativeSearchResult:
         """Search with the requested finite main/q policy and cooperative budgets.
 
@@ -441,6 +446,14 @@ class SemanticSearchEngine:
         still require evasions up to the hard limit. Later iterations use
         the requested ordinary depth. Retained policy is reported separately
         from requested limits; a hard/q-node abort keeps the last full result.
+
+        stop_on_immediate_win explicitly opts into a decision goal: a fully checked
+        root child that actually wins may end the first iteration early. It
+        reports completed_depth=0, no completed q policy, a one-action PV, and
+        result_source="verified_root_child"; this is not a completed D1 claim.
+        A coincident budget/cancel reason is preserved alongside immediate_win.
+        False retains finite-analysis behavior;
+        a score or declaration alone never certifies a physical winning child.
         """
         if root_order_hint is not None and (
             self._ordering_checkpoint_id is not None or self._policy_model is not None
@@ -481,12 +494,19 @@ class SemanticSearchEngine:
         if not isinstance(root_window_pruning, bool):
             raise TypeError("root_window_pruning must be a bool")
         _require_root_window_support(root_window_pruning, self._native_rules)
+        _require_immediate_win_support(stop_on_immediate_win, self._native_rules)
+        goal_args = ()
+        if stop_on_immediate_win:
+            # Supply existing optional q slots before the appended goal flag.
+            q_args = q_args or (0, 0, None)
+            goal_args = (True,)
         if not isinstance(trace_enabled, bool):
             raise TypeError("trace_enabled must be a bool")
         if session.result.status.value != "ongoing":
             return SemanticIterativeSearchResult(
                 0, None, None, (), (), 0, 0, 0, 0, 0.0,
                 "terminal_position", False, "NOT_STARTED", 0, 0, 0, 0, 0, 0, 0,
+                result_source="terminal_position",
             )
 
         position = pack_semantic_search_position(self._compiled, self._native_rules, session)
@@ -512,6 +532,7 @@ class SemanticSearchEngine:
                 root_window_pruning,
                 trace_enabled,
                 *q_args,
+                *goal_args,
             ))
         finally:
             if unregister is not None:
@@ -588,6 +609,9 @@ class SemanticSearchEngine:
             root_iterations_attempted=int(raw.get("root_iterations_attempted", 0)),
             root_iteration_first_actions=tuple(root_first_actions),
             root_window_pruning=bool(raw.get("root_window_pruning", False)),
+            immediate_win=bool(raw.get("immediate_win", False)),
+            result_source=str(raw.get("result_source",
+                "fallback" if raw.get("used_fallback", False) else "main_iteration")),
             beta_cutoffs=int(raw.get("beta_cutoffs", 0)),
             legal_generation_count=(int(raw["legal_generation_count"])
                                     if "legal_generation_count" in raw else None),

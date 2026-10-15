@@ -442,6 +442,18 @@ def _require_root_window_support(enabled: bool, native_rules=None) -> None:
         )
 
 
+def _require_immediate_win_support(enabled: bool, native_rules) -> None:
+    if not isinstance(enabled, bool):
+        raise TypeError("stop_on_immediate_win must be a bool")
+    if enabled and not _backend(native_rules).native_capabilities().get(
+        "semantic_immediate_win_goal", False
+    ):
+        from .compiler import NativeUnsupportedRuleError
+        raise NativeUnsupportedRuleError(
+            "Native immediate-win decision goal requires a rebuilt kernel"
+        )
+
+
 def semantic_iterative_search(
     native_rules,
     position,
@@ -459,6 +471,7 @@ def semantic_iterative_search(
     _root_ply_offset: int = 0,
     tt_megabytes: int = 0,
     root_window_pruning: bool = False,
+    stop_on_immediate_win: bool = False,
 ) -> dict:
     """Run deterministic iterative search on a semantic position.
 
@@ -466,6 +479,11 @@ def semantic_iterative_search(
     node, monotonic-time, and cooperative-cancellation budgets.  Evaluator
     tables are an immutable call binding; they are not part of the RuleSet
     fingerprint and may be changed between searches.
+
+    stop_on_immediate_win opts into a verified physical root-child decision.
+    A prefix win reports completed_depth0, no completed q policy and source
+    verified_root_child. Its checked edge is included in search-loop counters.
+    False preserves finite analysis and old-kernel call compatibility.
     """
     native_rules.require_terminal_policy_support()
     if _root_ply_offset not in (0, 1):
@@ -475,6 +493,7 @@ def semantic_iterative_search(
     if not isinstance(root_window_pruning, bool):
         raise TypeError("root_window_pruning must be a bool")
     _require_root_window_support(root_window_pruning, native_rules)
+    _require_immediate_win_support(stop_on_immediate_win, native_rules)
     if (board_values is None) != (hand_values is None):
         raise ValueError("board_values and hand_values must be supplied together")
     expected = tuple(native_rules.type_ids)
@@ -521,6 +540,8 @@ def semantic_iterative_search(
         localized_control_values = tuple(int(value) for value in localized_control_values)
         if len(localized_control_values) != 9 or sum(localized_control_values) != 0:
             raise ValueError("semantic localized control profile must contain nine values with zero sum")
+    goal_args = ((None,) * 6 + (1, -1, 1, None, False, 0, 0, None, True)
+                 if stop_on_immediate_win else ())
     flag = None
     unregister = None
     if cancel_token is not None:
@@ -546,6 +567,7 @@ def semantic_iterative_search(
             1,
             None,
             root_window_pruning,
+            *goal_args,
         ))
     finally:
         if unregister is not None:
@@ -554,6 +576,9 @@ def semantic_iterative_search(
     raw["principal_variation"] = tuple(int(value) for value in raw.get("principal_variation", ()))
     for key in ("score", "nodes", "completed_depth", "selective_depth", "qnodes", "elapsed_nanoseconds", "legal_generation_count", "transition_count", "beta_cutoffs", "tt_probes", "tt_hits", "tt_exact_hits", "tt_stores", "tt_replacements", "tt_collisions", "tt_cutoffs", "tt_previous_iteration_hits", "tt_current_iteration_hits", "tt_allocated_bytes", "tt_occupied_entries", "tt_entry_bytes"):
         raw[key] = int(raw.get(key, 0))
+    raw["immediate_win"] = bool(raw.get("immediate_win", False))
+    raw["result_source"] = str(raw.get("result_source",
+        "fallback" if raw.get("used_fallback", False) else "main_iteration"))
     raw["used_fallback"] = bool(raw.get("used_fallback", False))
     raw["declaration_id"] = (
         None if raw.get("declaration_id") is None else str(raw["declaration_id"])

@@ -1,3 +1,9 @@
+## 2026-10-15 immediate goals and explicit backend entry
+
+Native semantic search accepts stop_on_immediate_win=True; defaultFalse keeps finite analysis. A true physical winning child may return before completeD1: immediate_win=True, result_source=verified_root_child, completed_depth0, completedqNone, one-actionPV. Preserve node/time/cancel reasons, do not require depth>0 to recognize this explicit goal, and do not relabel it completedD1/q4. Native rebuild is required for True; old kernels still support False without extra arguments. Existing declarations/fallbacks remain distinct.
+
+compile_native_semantic_rules(...,backend_module=module) owns a known explicit backend contract. DefaultV1<=16/normal routing remains; optional source-builtV2 supplies payload5/1024capacity/encoding2/publicfield1. No global loader swap or automaticwide activation. Complete target semantics/fallback boundaries stay. Source, reproduction and actual32drop/promotion evidence: ../research/IMMEDIATE_GOALS_AND_EXPLICIT_BACKENDS.md. Actual installed2630tests and isolated33APItests pass; no UI change.
+
 ##2026-10-15 priced transfer follow-on
 
 See ../research/ROOT_ORDER_COST_AND_PRICED_TRANSFER.md. No product implementation/default/UI change in this segment; actual-rule optimal-PV regression added. Private interior-only ordering is mixed and not adopted. Private physically verified immediate-goal stop improves decision latency but changes finite-analysis objective, so it requires an explicit caller mode before activation. ProductV1<=16/Corefallback and creating-module ownership remain. AUX generic prover/cursor stays on sidemission.

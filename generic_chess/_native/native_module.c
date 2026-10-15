@@ -437,6 +437,7 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     Py_DECREF(value);
     value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "semantic_exact_root_windows", value);
+    PyDict_SetItemString(dict, "semantic_immediate_win_goal", value);
     Py_DECREF(value);
     value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "semantic_material_evaluator", value);
@@ -4426,6 +4427,11 @@ typedef struct {
     uint64_t root_order_hint;
     int root_order_hint_present;
     int root_window_pruning;
+    int goal_prefix_enabled;
+    int goal_prefix_win;
+    int goal_prefix_candidate;
+    uint64_t goal_prefix_action;
+    int goal_prefix_score;
     uint64_t root_tie_refinements;
     uint64_t root_tie_aborts;
     int root_hint_legal;
@@ -5546,6 +5552,8 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
         return 0;
     }
     if (terminal != 0) {
+        if (ctx->goal_prefix_enabled && ply == 1 && depth == 0 &&
+            winner == ctx->stack[0].side_to_move) ctx->goal_prefix_candidate = 1;
         int score = gc_semantic_iterative_terminal_score(
             winner, position->side_to_move,
             (int)(ctx->root_ply_offset + ply));
@@ -5786,6 +5794,13 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
             (ctx->root_window_pruning && pv_replay) ? 0 : pv_replay);
         if (ctx->control != 0) break;
         int score = -branch;
+        if (ply == 0 && ctx->goal_prefix_candidate) {
+            ctx->goal_prefix_action = action;
+            ctx->goal_prefix_score = score;
+            ctx->goal_prefix_win = 1;
+            gc_semantic_action_buffer_free(&actions);
+            return score;
+        }
         /* A later narrowed root child can return only an UPPER bound equal
          * to the exact incumbent. Refine only a bound that would replace its
          * canonical action; commit nothing if the full-window search aborts. */
@@ -6288,6 +6303,7 @@ static PyObject *gc_semantic_iterative_search(
     PyObject *tt_capsule = Py_None;
     PyObject *root_order_hint_obj = Py_None;
     PyObject *root_window_pruning_obj = Py_False;
+    PyObject *stop_on_immediate_win_obj = Py_False;
     PyObject *ordering_board_values = Py_None;
     PyObject *ordering_hand_values = Py_None;
     PyObject *ordering_dynamic_values = Py_None;
@@ -6305,7 +6321,7 @@ static PyObject *gc_semantic_iterative_search(
     int ordering_min_depth = 1;
     unsigned int qdepth = 0, qhard_depth = 0;
     PyObject *qmax_nodes_obj = Py_None;
-    if (!PyArg_ParseTuple(args, "OOI|OOOOOOOOOIIOIOOOOOOOOIiiOOIIO", &rules_capsule, &position_capsule,
+    if (!PyArg_ParseTuple(args, "OOI|OOOOOOOOOIIOIOOOOOOOOIiiOOIIOO", &rules_capsule, &position_capsule,
                           &max_depth, &max_nodes_obj, &max_time_obj,
                           &cancel_capsule, &board_values, &hand_values,
                           &dynamic_values,
@@ -6319,7 +6335,7 @@ static PyObject *gc_semantic_iterative_search(
                           &ordering_compact_values, &ordering_evaluator_scale,
                           &ordering_max_ply, &ordering_min_depth,
                           &policy_values, &trace_enabled_obj, &qdepth, &qhard_depth,
-                          &qmax_nodes_obj)) return NULL;
+                          &qmax_nodes_obj, &stop_on_immediate_win_obj)) return NULL;
     GCSemanticRules *rules = (GCSemanticRules *)PyCapsule_GetPointer(
         rules_capsule, GC_SEM_RULES_CAPSULE);
     GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(
@@ -6365,6 +6381,10 @@ static PyObject *gc_semantic_iterative_search(
     }
     if (!PyBool_Check(root_window_pruning_obj)) {
         PyErr_SetString(PyExc_TypeError, "semantic root_window_pruning must be a bool");
+        return NULL;
+    }
+    if (!PyBool_Check(stop_on_immediate_win_obj)) {
+        PyErr_SetString(PyExc_TypeError, "semantic stop_on_immediate_win must be a bool");
         return NULL;
     }
     if (!PyBool_Check(trace_enabled_obj)) {
@@ -6488,6 +6508,7 @@ static PyObject *gc_semantic_iterative_search(
     ctx.root_order_hint = root_order_hint;
     ctx.root_order_hint_present = root_order_hint_present;
     ctx.root_window_pruning = root_window_pruning_obj == Py_True;
+    ctx.goal_prefix_enabled = stop_on_immediate_win_obj == Py_True;
     ctx.pv_stride = max_depth + 1;
     ctx.qdepth_limit = qdepth;
     ctx.qhard_depth = qhard_depth;
@@ -6553,6 +6574,7 @@ static PyObject *gc_semantic_iterative_search(
     unsigned completed_ordinary_qdepth = 0;
     int completed_iteration = 0;
     int used_fallback = 0;
+    int immediate_win = 0;
     uint64_t start_ns = gc_monotonic_ns();
     uint64_t root_context_seed[4];
     memcpy(root_context_seed, ctx.history_context[0], sizeof(root_context_seed));
@@ -6573,6 +6595,19 @@ static PyObject *gc_semantic_iterative_search(
         int score = gc_semantic_iterative_negamax(&ctx, 0, depth,
                                                   -GC_SEMANTIC_PROBE_INF,
                                                   GC_SEMANTIC_PROBE_INF, 1, 0);
+        if (ctx.goal_prefix_win) {
+            completed_score = ctx.goal_prefix_score;
+            completed_has_action = 1;
+            completed_action = ctx.goal_prefix_action;
+            completed_len = 1;
+            completed_pv[0] = completed_action;
+            immediate_win = 1;
+            /* completed_depth stays0 and retained q fields stayNone. */
+            /* A real proof remains delivered at a coincident stop boundary;
+             * report that stop, rather than inventing a completed iteration. */
+            gc_semantic_iterative_check_budget(&ctx, 1);
+            break;
+        }
         if (ctx.control != 0) break;
         completed_score = score;
         completed_depth = depth;
@@ -6584,8 +6619,9 @@ static PyObject *gc_semantic_iterative_search(
         if (completed_len > GC_SEM_MAX_PLY + 1) completed_len = GC_SEM_MAX_PLY + 1;
         memcpy(completed_pv, ctx.pv_table,
                sizeof(uint64_t) * completed_len);
+
     }
-    if (!completed_iteration) {
+    if (!completed_iteration && !immediate_win) {
         uint64_t fallback = 0;
         if (gc_semantic_iterative_fallback(&ctx, &fallback)) {
             completed_action = fallback;
@@ -6594,7 +6630,7 @@ static PyObject *gc_semantic_iterative_search(
         }
     }
     Py_END_ALLOW_THREADS
-    const char *reason = "completed";
+    const char *reason = immediate_win ? "root_immediate_win" : "completed";
     if (ctx.control == 1) reason = "node_budget";
     else if (ctx.control == 2) reason = "time_budget";
     else if (ctx.control == 3) reason = "cancelled";
@@ -6634,7 +6670,7 @@ static PyObject *gc_semantic_iterative_search(
     }
     PyObject *out = Py_BuildValue(
         "{s:i,s:O,s:K,s:I,s:I,s:O,s:K,s:K,s:K,s:K,s:K,s:s,s:i,s:s,"
-        "s:K,s:K,s:K,s:K,s:K,s:K,s:K,s:K,s:K,s:K,s:K,s:K}",
+        "s:K,s:K,s:K,s:K,s:K,s:K,s:K,s:K,s:K,s:K,s:K,s:K,s:s}",
         "score", completed_score,
         "best_action", best_action_obj,
         "nodes", ctx.nodes - ctx.qnodes,
@@ -6660,7 +6696,10 @@ static PyObject *gc_semantic_iterative_search(
         "tt_current_iteration_hits", ctx.tt_current_iteration_hits,
         "tt_allocated_bytes", ctx.tt == NULL ? (uint64_t)0 : (uint64_t)ctx.tt->allocated_bytes,
         "tt_occupied_entries", ctx.tt == NULL ? (uint64_t)0 : ctx.tt->occupied_entries,
-        "tt_entry_bytes", ctx.tt == NULL ? (uint64_t)0 : (uint64_t)gc_semantic_tt_entry_bytes());
+        "tt_entry_bytes", ctx.tt == NULL ? (uint64_t)0 : (uint64_t)gc_semantic_tt_entry_bytes(),
+        "result_source", ctx.goal_prefix_win ? "verified_root_child" :
+            (completed_iteration ? "main_iteration" :
+             (used_fallback ? "fallback" : "not_started")));
     if (!out) {
         Py_DECREF(best_action_obj);
         Py_DECREF(pv);
@@ -6784,6 +6823,7 @@ static PyObject *gc_semantic_iterative_search(
         !ordering_skipped_by_remaining_depth || !policy_nodes_by_ply ||
         !policy_state_inferences_by_ply || !policy_actions_scored_by_ply ||
         !policy_elapsed_nanoseconds_by_ply ||
+        gc_semantic_set_u64(out, "immediate_win", immediate_win) != 0 ||
         PyDict_SetItemString(out, "ordering_max_ply", ordering_max_ply_obj) != 0 ||
         PyDict_SetItemString(out, "ordering_evaluations_by_ply", ordering_evaluations_by_ply) != 0 ||
         PyDict_SetItemString(out, "ordering_nodes_by_ply", ordering_nodes_by_ply) != 0 ||
@@ -7141,13 +7181,15 @@ static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
     PyObject *max_nodes = Py_None, *max_time = Py_None, *cancel = Py_None;
     PyObject *root_order_hint = Py_None;
     PyObject *root_window_pruning = Py_False;
+    PyObject *stop_on_immediate_win = Py_False;
     PyObject *trace_enabled = Py_False;
     unsigned int qdepth = 0, qhard_depth = 0;
     PyObject *qmax_nodes = Py_None;
-    if (!PyArg_ParseTuple(args, "OOI|OOOOOOIIO", &engine_capsule, &position_capsule,
+    if (!PyArg_ParseTuple(args, "OOI|OOOOOOIIOO", &engine_capsule, &position_capsule,
                           &max_depth, &max_nodes, &max_time, &cancel,
                           &root_order_hint, &root_window_pruning,
-                          &trace_enabled, &qdepth, &qhard_depth, &qmax_nodes)) return NULL;
+                          &trace_enabled, &qdepth, &qhard_depth, &qmax_nodes,
+                          &stop_on_immediate_win)) return NULL;
     GCSemanticSearchEngine *engine = gc_get_semantic_engine(engine_capsule);
     if (engine == NULL) return NULL;
     if (engine->busy) {
@@ -7158,7 +7200,7 @@ static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
         ? PyCapsule_New(engine->tt, GC_SEM_TT_CAPSULE, NULL)
         : Py_NewRef(Py_None);
     if (tt_capsule == NULL) return NULL;
-    PyObject *call_args = PyTuple_New(32);
+    PyObject *call_args = PyTuple_New(33);
     if (call_args == NULL) { Py_DECREF(tt_capsule); return NULL; }
     Py_INCREF(engine->rules_capsule);
     PyTuple_SET_ITEM(call_args, 0, engine->rules_capsule);
@@ -7194,6 +7236,7 @@ static PyObject *gc_semantic_engine_search(PyObject *self, PyObject *args) {
     PyTuple_SET_ITEM(call_args, 29, PyLong_FromUnsignedLong(qdepth));
     PyTuple_SET_ITEM(call_args, 30, PyLong_FromUnsignedLong(qhard_depth));
     Py_INCREF(qmax_nodes); PyTuple_SET_ITEM(call_args, 31, qmax_nodes);
+    Py_INCREF(stop_on_immediate_win); PyTuple_SET_ITEM(call_args, 32, stop_on_immediate_win);
     engine->busy = 1;
     PyObject *result = gc_semantic_iterative_search(
         self, call_args, engine->ordering_cache_enabled
@@ -7460,7 +7503,7 @@ static PyMethodDef gc_methods[] = {
     {"create_semantic_search_engine", gc_create_semantic_search_engine, METH_VARARGS,
      "create_semantic_search_engine(rules, board_values, hand_values, dynamic_values, spatial_values, localized_control_values, tt_megabytes[, evaluator_scale]) -> engine"},
     {"semantic_engine_search", gc_semantic_engine_search, METH_VARARGS,
-     "semantic_engine_search(engine, position, max_depth[, max_nodes, max_time_seconds, cancel, root_hint, root_window, trace, q_depth, q_hard_depth, q_nodes]) -> result"},
+     "semantic_engine_search(engine, position, max_depth[, max_nodes, max_time_seconds, cancel, root_hint, root_window, trace, q_depth, q_hard_depth, q_nodes, stop_on_immediate_win]) -> result"},
     {"semantic_engine_clear_tt", gc_semantic_engine_clear_tt, METH_VARARGS,
      "semantic_engine_clear_tt(engine) -> None"},
     {"semantic_engine_tt_info", gc_semantic_engine_tt_info, METH_VARARGS,
