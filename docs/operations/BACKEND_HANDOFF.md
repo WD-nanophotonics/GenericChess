@@ -363,3 +363,13 @@ shared16-attempt exhaustion; full2575 tests pass. No option, Native rebuild or U
 integration is needed for this Python generator change. Consumers load it after
 process restart. Semantic64-target support described above still requires the
 Native rebuild. Private wide V2 remains a research artifact, not a backend flag.
+
+
+## Semantic capsule backend ownership, 2026-10-15
+
+Semantic rules retain their creating module; state/mirror/legality/search and
+cancellation follow it. A changed default loader no longer reroutes live objects.
+Stateless low-level codec/history/size helpers retain their default and accept
+optional native_rules. Product V1/capability/board limits/defaults are unchanged;
+no Native rebuild is required for this Python fix. See
+../research/SEMANTIC_BACKEND_OWNERSHIP.md. Private V2 is not a product option.

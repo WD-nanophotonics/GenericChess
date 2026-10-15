@@ -16,7 +16,6 @@ from ..ai.cancellation import CancellationToken
 from ..ai.limits import SearchLimits
 from ..core.actions import Action
 from ..core.transition import apply_action
-from . import _module, native_available
 from .adapter import pack_semantic_search_position
 from .compiler import GC_SEM_MAX_PLY, NativeUnsupportedRuleError
 from .mirror import pack_semantic_action
@@ -220,8 +219,7 @@ class SemanticSearchEngine:
             raise NativeUnsupportedRuleError(
                 "native search does not support no-progress draw rules"
             )
-        if not native_available():
-            raise RuntimeError("native extension is not built")
+        self._backend = native_rules.backend_module
         if compiled.ruleset_fingerprint != native_rules.fingerprint:
             raise ValueError("ruleset fingerprint mismatch for semantic engine")
         if isinstance(tt_megabytes, bool) or not isinstance(tt_megabytes, int) or not 0 <= tt_megabytes <= 1024:
@@ -320,7 +318,7 @@ class SemanticSearchEngine:
         if self._policy_deferred_legality:
             policy_payload = dict(policy_payload)
             policy_payload["_defer_legality"] = True
-        return _module().create_semantic_search_engine(
+        return self._backend.create_semantic_search_engine(
             self._native_rules.capsule,
             self._board_values,
             self._hand_values,
@@ -415,12 +413,12 @@ class SemanticSearchEngine:
         }
 
     def clear_tt(self) -> None:
-        _module().semantic_engine_clear_tt(self._capsule)
+        self._backend.semantic_engine_clear_tt(self._capsule)
 
     def tt_info(self) -> dict:
         return {
             key: int(value)
-            for key, value in dict(_module().semantic_engine_tt_info(self._capsule)).items()
+            for key, value in dict(self._backend.semantic_engine_tt_info(self._capsule)).items()
         }
 
     def search(
@@ -471,7 +469,7 @@ class SemanticSearchEngine:
             raise ValueError("quiescence_max_nodes must be a non-negative integer")
         q_args = ()
         if limits.quiescence_max_depth > 0:
-            if getattr(_module(), "SEMANTIC_QSEARCH_VERSION", 0) < 1:
+            if getattr(self._backend, "SEMANTIC_QSEARCH_VERSION", 0) < 1:
                 raise ValueError("SemanticSearchEngine qsearch requires a rebuilt Native kernel")
             if limits.max_depth + limits.quiescence_hard_max_depth > GC_SEM_MAX_PLY:
                 raise ValueError("main and hard q depth exceed the bounded Native stack")
@@ -479,7 +477,7 @@ class SemanticSearchEngine:
                       limits.quiescence_max_nodes)
         if not isinstance(root_window_pruning, bool):
             raise TypeError("root_window_pruning must be a bool")
-        _require_root_window_support(root_window_pruning)
+        _require_root_window_support(root_window_pruning, self._native_rules)
         if not isinstance(trace_enabled, bool):
             raise TypeError("trace_enabled must be a bool")
         if session.result.status.value != "ongoing":
@@ -495,12 +493,12 @@ class SemanticSearchEngine:
         flag = None
         unregister = None
         if cancel_token is not None:
-            flag = _module().create_cancel_flag()
+            flag = self._backend.create_cancel_flag()
             unregister = cancel_token.register_callback(
-                lambda: _module().request_cancel(flag)
+                lambda: self._backend.request_cancel(flag)
             )
         try:
-            raw = dict(_module().semantic_engine_search(
+            raw = dict(self._backend.semantic_engine_search(
                 self._capsule,
                 position,
                 int(limits.max_depth),
@@ -546,7 +544,7 @@ class SemanticSearchEngine:
                 packed = int(packed)
                 if packed & DECLARATION_ACTION_TAG:
                     break
-                leaf_position = _module().semantic_make_checked(
+                leaf_position = self._backend.semantic_make_checked(
                     self._native_rules.capsule, leaf_position, packed
                 )
             from .semantic import dynamic_features as native_dynamic_features

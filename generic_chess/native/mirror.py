@@ -154,7 +154,8 @@ def _semantic_action_fields(native_rules, parent_position, action) -> dict:
 
 def pack_semantic_action(native_rules, parent_position, action) -> int:
     """Directly pack one public semantic action without legal-action enumeration."""
-    return pack_action(_semantic_action_fields(native_rules, parent_position, action))
+    return pack_action(_semantic_action_fields(native_rules, parent_position, action),
+                       native_rules=native_rules)
 
 
 def expected_snapshot(position, native_rules, compiled=None) -> dict:

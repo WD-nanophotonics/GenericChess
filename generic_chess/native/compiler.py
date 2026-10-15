@@ -714,7 +714,10 @@ class NativeSemanticCompiledRules:
         repetition_policy="draw",
         semantic=None,
         bound_stalemate_result=None,
+        *,
+        backend_module=None,
     ) -> None:
+        self._backend_module = _module() if backend_module is None else backend_module
         self._capsule = capsule
         self._report = report
         self._type_ids = tuple(type_ids)
@@ -725,6 +728,15 @@ class NativeSemanticCompiledRules:
         self._repetition_policy = str(repetition_policy)
         self._semantic = semantic
         self._bound_stalemate_result = bound_stalemate_result
+
+    @property
+    def backend_module(self):
+        """Kernel owning this rules capsule and its dependent objects.
+
+        Existing objects never follow later changes to the default loader.
+        This binding does not expand the compiler capability/codec contract.
+        """
+        return self._backend_module
 
     @property
     def capsule(self):
@@ -1237,9 +1249,10 @@ def compile_native_semantic_rules(semantic) -> NativeSemanticCompiledRules:
         raise NativeUnsupportedRuleError(
             "native extension is not built; run scripts/build_native_zig.py"
         )
+    backend = _module()
     payload, report = build_semantic_compile_payload(semantic)
-    capsule = _module().compile_semantic_rules(payload)
-    bound_stalemate_result = _module().semantic_rules_info(capsule).get("stalemate_result")
+    capsule = backend.compile_semantic_rules(payload)
+    bound_stalemate_result = backend.semantic_rules_info(capsule).get("stalemate_result")
     type_ids = tuple(sorted(semantic.support.type_metadata))
     pattern_ids = tuple(p.pattern_id for p in semantic.ir.patterns)
     geometry_ids = tuple(sorted(semantic.ir.geometry))
@@ -1261,4 +1274,5 @@ def compile_native_semantic_rules(semantic) -> NativeSemanticCompiledRules:
         repetition_policy=semantic.support.repetition_policy,
         semantic=semantic,
         bound_stalemate_result=bound_stalemate_result,
+        backend_module=backend,
     )

@@ -60,8 +60,7 @@ class NativeSemanticLegalityProvider:
         )
         self._metrics_local = threading.local()
         # Older installed kernels remain fully usable through the Python builder.
-        from ...native import _module
-        self._payload_builder = getattr(_module(), "semantic_core_payload", None)
+        self._payload_builder = getattr(native_rules.backend_module, "semantic_core_payload", None)
         self.compile_seconds = 0.0
 
     @property

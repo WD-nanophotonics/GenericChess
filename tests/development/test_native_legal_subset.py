@@ -56,7 +56,7 @@ def test_malformed_u64_is_not_a_legal_action(invalid):
 def test_old_native_extension_reports_missing_capability(monkeypatch):
     from types import SimpleNamespace
     provider, position = root('chess-ep')
-    monkeypatch.setattr(ns, '_module', lambda: SimpleNamespace())
+    monkeypatch.setattr(provider.native_rules, '_backend_module', SimpleNamespace())
     with pytest.raises(RuntimeError, match='lacks candidate chunk legality'):
         ns.transient_legal_subset(provider.native_rules, position, ())
 
