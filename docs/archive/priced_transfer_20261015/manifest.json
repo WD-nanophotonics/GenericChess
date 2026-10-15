@@ -426,10 +426,10 @@
     },
     {
       "name": "evidence/isolated-replay.json",
-      "bytes": 1259,
-      "sha256": "3c3d540b255166fbcbf8082a33c8b9fce9e17adaebb65d27f5804be1e2e80c9d",
+      "bytes": 1261,
+      "sha256": "755d6868e7525278247b4738728fc2b0718d5359889465e1249815618fa73a47",
       "original_sha256": "3c3d540b255166fbcbf8082a33c8b9fce9e17adaebb65d27f5804be1e2e80c9d",
-      "sanitized_or_normalized": false,
+      "sanitized_or_normalized": true,
       "restore_to": ".local_agent/priced-completion-20261015/isolated-replay.json"
     },
     {
@@ -522,8 +522,8 @@
     },
     {
       "name": "evidence/package_delivery.py",
-      "bytes": 16554,
-      "sha256": "e84b05285955bb26e39051db0da645e0f4a7c81943b2dd62eced92556ef2019e",
+      "bytes": 16556,
+      "sha256": "2cd653342a50f8e19dc8caca7ef4898bc642dc3c96fef9588bd9fe689c9975b2",
       "original_sha256": "eae20921c561e0f5a53324e6084db28d12222a121ab28f7f2858388b795e9286",
       "sanitized_or_normalized": true,
       "restore_to": ".local_agent/priced-completion-20261015/package_delivery.py"
@@ -666,8 +666,8 @@
     },
     {
       "name": "evidence/pv-test.log",
-      "bytes": 642,
-      "sha256": "75154670c6c576d853653a9559b14bc545dc551032f2a7a1a801d5bc20ba5173",
+      "bytes": 644,
+      "sha256": "33e5df7c597261e4813fe4ca71e5e5fdaa5f8a91bee703905799102d1ae6b1cc",
       "original_sha256": "6020756aefda6aa80b480690267813961f2a97b98942f8b1dbade7bf29df72dd",
       "sanitized_or_normalized": true,
       "restore_to": ".local_agent/priced-completion-20261015/pv-test.log"
@@ -842,10 +842,10 @@
     },
     {
       "name": "evidence/resource-first-results.json",
-      "bytes": 1128,
-      "sha256": "fb2d5b7e233807f5d1dca75795952a3ef56176641a81aa725fb1101d07bbacf9",
+      "bytes": 1134,
+      "sha256": "70406b88973429141a375581aff4787884aea77f7ffa337dc78a9d562fa3ad98",
       "original_sha256": "fb2d5b7e233807f5d1dca75795952a3ef56176641a81aa725fb1101d07bbacf9",
-      "sanitized_or_normalized": false,
+      "sanitized_or_normalized": true,
       "restore_to": ".local_agent/priced-completion-20261015/resource-first-results.json"
     },
     {
@@ -2754,9 +2754,19 @@
     }
   ],
   "count": 344,
-  "zip_sha256": "dc63dd0ea31ece64c40488b12e5e5baf380825a3607a5f61e7bd63e57975c66d",
+  "zip_sha256": "a5943c319b937ed35ad0ee9bc61e4ae385860c72df5d160cec7f208091b3ced2",
   "source_pin": "41e69e1dd8ab2c459239175d0c4091f90dffb389",
   "published_bytes_sanitized": true,
   "private_raw_slack_excluded": true,
-  "binaries_excluded": true
+  "binaries_excluded": true,
+  "path_correction": {
+    "prior_revision": "85914fc344964c6e2d0e376bcd0171dac43615ca",
+    "affected_members": [
+      "evidence/isolated-replay.json",
+      "evidence/package_delivery.py",
+      "evidence/pv-test.log",
+      "evidence/resource-first-results.json"
+    ],
+    "reason": "Escaped Windows paths and a literal checker escaped initial whole-path replacement; current archive sanitized, prior pushed revision retained. No credential identified."
+  }
 }

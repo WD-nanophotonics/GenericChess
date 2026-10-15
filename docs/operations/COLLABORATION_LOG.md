@@ -2409,3 +2409,5 @@ Dot收到一次新请求GC-SLACK-20261015-113009-5a94e719，读固定C及插入�
 开发辅助DEV_AUX的新53请求于最终频道检查点被发现，完整读根+Dot1回帖无余页；只看首段打印曾误判“没有新根”，提取所有REQUEST_ID后已纠正，并非已保证即时协作。53报告了8盘新TRAIN/DEV、叶子/Native/捕获表对齐、64/4096固定混合对手的有限协议；尚无已核验新结果，远端仍为52固定e4634d72a6499f43a607ba475c055af53b7c4e46。Dot建议复用已付费TRAIN相邻R/P扰动的同状态首次分歧/实际结局，不按数字不稳或循环数量直接改任务。主Agent将其保留为后来解释，不重复学习、不改主价、不读/写辅助checkout，不唤醒其写例行回执。
 
 返工与处理如实保留：驱动undo/记录解码错误后36付费查询未重跑；52价格查询后32SCC失败只补剩余4；字节探针漏分配aux指针，早先栈溢出推断已撤回；124测试临时目录访问拒绝改用项目独立目录，4旧路径计数断言改为更强的既定1..256全部前缀/zero实际反例；DLL被本段已加载作业占用时用受支持独立输出验证，作业退出后正常重建。无SAC证据、无用户干预事项或隐瞒阻塞。双方独立推进搜索/评价，未见越界文件写入；没有单Agent对照，不能量化协作节省百分比或称零返工。主Agent的新32SCC修复不等于辅助53的游戏定义获得全域支持。完整来源、失败和成本证据见../research/OWNED_BACKENDS_AND_MAIN_FRONTIER.md。
+
+Publication correction: initial85914fc archive had four escaped machine-username path records missed by whole-path sanitization. Current344-member archive is corrected and all member hashes/CRC/identity scans pass. No password/token identified. The old pushed revision remains in history; no force push or claim of historical removal. Exact originals stay private.
