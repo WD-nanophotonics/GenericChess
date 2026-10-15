@@ -2889,3 +2889,66 @@ proof bank. No retrospective relabeling or Native-unit pooling follows.
 Dot's reference to a2hour rule from another window is not a new PRIMARY user
 instruction: current user-supplied >1hour necessity consultation remains here.
 No acknowledgment loop or additional permission gate was created.
+
+
+## PRIMARY segment 2026-10-16: check-only/TT finite interaction and failed reuse shortcut
+
+PRIMARY_SANDBOX owns only this sandbox delivery. It executed the previously
+prepared forced-only Native prototype, ALL78 triad calls,35 matching all-Core
+finite objectives, persistentaux/control/cancellation checks,27fresh fixedq0
+games and42further fresh four-cell games. All69games/2498physical edges and3063
+retained Core/Native query/phase receipts pass the normal full-history
+search-disabled consumer. There is an explicit preliminary retention failure:
+six auxiliary searches ran but only the final three full receipts survive.
+No overwritten body/timing or successful preservation is invented.
+
+The first finite panel rejects an immediate check-only rollout (net-2/18).
+The later TT four cells each show net+1versusfixedA on only6families; D-C0
+does not mean equivalence: W/UNKNOWN swaps and2DRAW-to-UNKNOWN remain.
+C costs308.557s versusD364.482s. No changed q/default/API/evaluation/price/UI.
+Exact-row recording removes measured duplicate-prefix cost without dropping
+result fields; it is used uniformly only in the new42game protocol.
+
+PRIMARY separately tests persistent Native history-key tagging:104normal,
+104private and156matched-depth calls. Extra identity/hits do not reduce nodes;
+the candidate stays unadopted. A single same-key depth-demotion counter is
+prepared as a falsifiable next source hypothesis. No AUX prover, bank, cursor,
+learner, mutable checkout or work state is copied or edited.
+
+Coordination: recovery and closing read complete PRIMARY root1792058616.873839
+(13replies before this delivery) and AUX64root1792092794.124699 (three replies
+at closing, including new AUX65delivery1792099199.136089), plus new channel roots
+through the existing boundary. Exact raw outputs were saved before assessment.
+No new technical Dot reply or acknowledgement gate; no request/send retry or
+new worker. Dot's valid-cache versus finite-policy distinction supports explicit
+per-call fresh TT conditions here. Another window's two-hour remark does not
+replace this chat's current single-run>one-hour necessity rule; both own finite
+batches are independently below it.
+
+DEV_AUX fixed64report2bfe7d5e6198ec82a75685c6f51f0f58c8ed4513 and fresh65report
+3872124f1eed7bbb1462491460bc5ff39749e7d0 were anonymously READ as REPORTS,
+not final solver/learning source, test/game execution or adoption by PRIMARY.
+65 reports actual two-new-dataset208-vs416 training, R/N2 and2.5, stronger
+fixed-opponent DEV net+10/64, but balanced-four-opponent transfer interval
+crosses0, price instability and retained UNKNOWN. It also reports same exposed
+TRAIN416payoffs with lower1K proof cost. These support its own more-data/
+cross-budget question, not a universal price/default or pooled Native unit.
+The cold-bank correction is implemented by its owner; PRIMARY did not rerun it.
+No disagreement requires a coordination pause, and the parallel lanes stay
+separate. PUBLIC source access, not message delivery, enables later review.
+
+Efficiency/limits: first27game batch1721.389s, new42batch1236.597s, all planned
+slots retained. Actual same-host64row recording contrast25.8s versus.22s
+includes compact formatting/serialization; it is not machine-exclusive search
+speed. Native requestedTT16MiB allocates11MiB. Normal60focused tests actually
+pass; an auto-review rejection of hardcoded retrospective test metadata was
+resolved by a fresh actual60test execution/direct receipt, no bypass or pending
+user consent. Text-guard/path/encoding fixes and the auxiliary data gap are
+disclosed in the research evidence. Source-only qualification has shared
+Core/compiler/host limits; no claim of full study reexecution or independent WDL.
+
+This entry and the detailed report/data/retained-source capsule are published
+together; final full remoteSHA and the single actual Dot delivery receipt are
+recorded locally after publication. No claim that Dot has read or executed them.
+
+Actual extracted-source normal build/Python-S qualification passed:735hash/CRC members, identical3063query/phase receipts,9322PV,69games2498edges,3513literal replies,38choices/82states; total243.236s, no new studysearch. SharedCore/compiler/host limits and auxiliary3receipt gap remain.

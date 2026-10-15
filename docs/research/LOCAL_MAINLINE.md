@@ -182,18 +182,48 @@ features14.6-15.7ms plus serialization~4ms; packing<1.6ms, checkedPV edges
 13-85microseconds. Retain every result field/PV/history.50msreserve is a new
 common protocol on fresh transfer, not a hard timer or repair of old outcomes.
 
-Current next choice: distinguish ACTUAL check-only forced-evasion continuation
-from disabledq0 and ordinaryq1. Existing Python opt-in has this distinction;
-current Nativeq0 disables allq. Private source preparationa5e9f595 has0builds/
-0queries, not a new API/default. ALL13 exposed parents support a cheap78query
-fixed-work triad; include one accepted persistent-aux/history semantic contrast
-before broader claims. If no meaningful difference, stop cheaply; if useful,
-choose one bounded finite-method question. No completeWDL prerequisite.
-This supersedes more unchanged q1/quiet-check/mixing reruns; reconsider those only
-with a changed mechanism/opponent/cost premise. Preserve the complete generic
-target, existing generated inputs/caps and AUX solver/learning ownership.
-Full new source, all109physical games, censors/failures and qualification:
-Q_HORIZON_COMPONENTS_20261016.md. Normal product/API/price/default/UI unchanged.
+Current check-only/TT result: actual78triad calls distinguish disabledq0
+from true forced-only(0,8). Both completeD3 in26/26, ordinaryq1 in18/26; local
+depth is not utility. Fresh9family27game check-only gives4W6L8UNKNOWN versus
+5W5L8UNKNOWN, net-2 with oneW-to-L. Fresh6family42game fixed-opponent four cells
+A=q0TT0/B=checkTT0/C=q0TT16/D=checkTT16 each treatment net+1versusA. D-C0 and
+interaction-1; C preserves2DRAWs that D leavesUNKNOWN, and D trades WIN/UNKNOWN
+both ways. D costs364.482s versusC308.557s. Six-family empirical D-C interval0
+is cancellation in this sample, not equivalence. Keep q0/TT as cheap baseline;
+no new q/default/API/price or broader strength claim. Do not pool cohorts.
+
+All69physical games/2498edges and3063retained Core/Native query/phase receipts
+pass the normal search-disabled full-state/history consumer.35Core pairs have
+matching finite scores; pure persistentaux works without legacy metadata.
+Three earlier auxiliary execution receipts were overwritten during strengthening
+and are explicitly missing, not silently counted as retained/replayed.60actual
+focused tests pass. Source-only extracted normal rebuild/replay is separately
+qualified in the publication receipt; private Native images are provenance.
+
+The recording contrast solves an observed overhead: exact64row append/fsync
+takes~.22s/5.34MB versus full-prefix rewrite~25.8s/803MB, complete dictionaries
+unchanged. New42game panel uses it uniformly; old27game data/caps stay frozen.
+No diagnostics API or general recording framework is introduced.
+
+New actual adjacent-TT study104normal/104private calls restores lookup-key
+context identity and extra hits but saves no nodes on13roots. A changed
+D4parent-to-D2child control156calls also saves0nodes in52paired groups, all
+complete scores/actions/PVs matching. No key-tag rewrite adoption. More hits,
+a symbolic identity correction and same-source finite agreement are not useful
+speed or all-domain qualification. Legacy-mode censors remain separate.
+
+Current next choice: one bounded NativeTT same-key depth-demotion counter,
+BEFORE any retention edit. Source allows shallower replacement solely because
+generation advances; direct demotion counts remain0runs, so this is an explicit
+new hypothesis, not an established causal explanation or an unchanged rerun.
+Use existing13parent/two-PV-move q0 sequences, <=104calls/300s whole/expected60s,
+full history/q/mode guards. If no material explanation, stop this route and
+inspect dominant q0 stage cost on existing wide inputs. If measured, choose
+one scoped retention ablation, not a broad cache rewrite or mandatory WDL proof.
+This supersedes the old0build/0query check-only task; all frozen observations
+and the search-first scheduling choice remain. Source/results/limits:
+CHECK_ONLY_TT_AND_HISTORY_CONTEXT_20261016.md. Normal C/API/prices/default/UI
+unchanged; AUX owns its separate solver/learning lane. Science remains OPEN.
 
 16normal/reconstruction-counter calls all non-time fields match: measured
 canonical sections are~1-2microseconds at the two testedq4hardstops, not their

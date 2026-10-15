@@ -1,0 +1,29 @@
+--- a/generic_chess/_native/native_module.c
++++ b/generic_chess/_native/native_module.c
+@@ -4396,0 +4397 @@
++    uint64_t tt_node_policy_tag[4]; /* PRIVATE: exact-root q0 domain tag at key lookup, never rolling history. */
+@@ -4738,0 +4740,7 @@
++static const uint64_t *gc_semantic_tt_key_context(
++        GCSemanticIterativeContext *ctx, uint32_t ply, uint64_t local[4]) {
++    for (int i = 0; i < 4; i++)
++        local[i] = ctx->history_context[ply][i] ^ ctx->tt_node_policy_tag[i];
++    return local;
++}
++
+@@ -4744,0 +4753 @@
++    uint64_t key_context[4];
+@@ -4750 +4759 @@
+-            ctx->tt, position, ctx->history_context[ply], depth,
++            ctx->tt, position, gc_semantic_tt_key_context(ctx, ply, key_context), depth,
+@@ -5745,0 +5755 @@
++        uint64_t key_context[4];
+@@ -5748 +5758 @@
+-                ctx->tt, position, ctx->history_context[ply], depth,
++                ctx->tt, position, gc_semantic_tt_key_context(ctx, ply, key_context), depth,
+@@ -6730 +6740,5 @@
+-    if (ctx.root_window_pruning) {
++    if (ctx.root_window_pruning && qdepth == 0) {
++        ctx.tt_node_policy_tag[0] = UINT64_C(0x726f6f742d657861);
++        ctx.tt_node_policy_tag[1] = UINT64_C(0x63742d6465707468);
++    }
++    if (ctx.root_window_pruning && qdepth > 0) {
