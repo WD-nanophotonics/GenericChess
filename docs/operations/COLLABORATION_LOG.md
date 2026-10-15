@@ -2524,3 +2524,33 @@ Dot收到一次新请求GC-SLACK-20261015-113009-5a94e719，读固定C及插入�
 Publication correction: initial85914fc archive had four escaped machine-username path records missed by whole-path sanitization. Current344-member archive is corrected and all member hashes/CRC/identity scans pass. No password/token identified. The old pushed revision remains in history; no force push or claim of historical removal. Exact originals stay private.
 
 Final delivery access: repository visibility was PUBLIC at verification and is now verified PRIVATE under the existing user instruction. Connected GitHub file read returns404 although CLI read/SHA verification succeeds; exact connector scope is unknown. A reviewed1.6MB report/collaboration/344-member technical-evidence bundle was POSTed200 and finalized successfully in the dedicated project Slack thread, so channel recipients have an evidence route independent of GitHub. This proves delivery, not Dot reading/adoption. Private GitHub connector authorization may need user-side repository access; no public-repo workaround or repeated consent request. Heartbeat remains PAUSED.
+
+
+## 2026-10-15: quiet-history cost, real path-key correction, AUX57/58
+
+PRIMARY_SANDBOX implemented and qualified narrow q quiet-child history deferral:
+2664full/34focused pass; prospective552/576queries across46/48roots retained,
+92fixed pairs identical non-time fields, caller ratios.885/.690/.674/.688.
+No policy/default/price or strength claim. Actual512ply regression led to an exact
+cheap multiplicity bound. Exposed curve4011/4013 mutable-baseline contamination
+retains16invalid slots without replacement; immutable-image correction documented.
+Next actual availability/check profile and private32call witness probe stay scoped;
+private witness is not adopted. Full evidence: ../research/QUIET_CHILD_HISTORY_AND_TRANSFER.md.
+
+PRIMARY read DEV_AUX57 ecfd98a20a1fde168891e2813aac33f691be687a and58
+30f15b0d8a8e8f256c6b2fa0b9db5cee77febe96. AUX owns optional SessionPN/typed
+verifier/cursor and finite Session/learning evidence on sidemission. Its reported
+120/156tests and proof/price comparisons are not PRIMARY reruns. PRIMARY did
+independently reproduce the shared old counts-only reference-key defect with
+actual legal pass/cycle histories, then adopted the same minimal pinned path-key
+fix in its own existing file. Core already distinguished the paths; no new solver,
+merge, cross-checkout write, extra Agent, training or human holdout access.
+
+One new concrete q-history question was sent to Dot, with a promptly corrected
+complete excerpt after selected lines omitted a continuation. Complete thread
+reads show no technical answer yet; no automatic retry or ack gate. Actual source
+and result links are sent after remote verification. No observed ownership conflict;
+shared fixed-source correction prevented a known local error but no single-Agent
+counterfactual measures saved time. Builder/test normalization and baseline errors
+are recorded, so neither zero-friction communication nor zero rework is claimed.
+Public access remains mandatory for collaborator reading; PRIVATE was abandoned.

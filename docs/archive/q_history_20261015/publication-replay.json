@@ -1,0 +1,208 @@
+{
+  "complete": true,
+  "seconds": 48.78132419999747,
+  "rows": [
+    {
+      "build": "v1",
+      "exit": 0
+    },
+    {
+      "build": "v2",
+      "exit": 0
+    },
+    {
+      "check": "focused",
+      "exit": 0
+    },
+    {
+      "check": "fullstate",
+      "exit": 0
+    }
+  ],
+  "focused_tests": 34,
+  "fullstate": {
+    "complete": true,
+    "roots": 35,
+    "legal_actions": 4497,
+    "results": [
+      {
+        "root": "2911-ply0",
+        "depth": 1,
+        "score": 200
+      },
+      {
+        "root": "2911-ply8",
+        "depth": 1,
+        "score": 200
+      },
+      {
+        "root": "2912-ply0",
+        "depth": 1,
+        "score": 99999999
+      },
+      {
+        "root": "2912-ply8",
+        "depth": 0,
+        "score": 0
+      },
+      {
+        "root": "3007-ply0",
+        "depth": 1,
+        "score": 0
+      },
+      {
+        "root": "3007-ply8",
+        "depth": 1,
+        "score": 200
+      },
+      {
+        "root": "3008-ply0",
+        "depth": 1,
+        "score": 0
+      },
+      {
+        "root": "3008-ply8",
+        "depth": 1,
+        "score": 0
+      },
+      {
+        "root": "transformed_live_aux",
+        "depth": 1,
+        "score": 200
+      },
+      {
+        "root": "capture_reset_base_hand",
+        "depth": 1,
+        "score": -200
+      },
+      {
+        "root": "drop_after_actual_capture",
+        "depth": 1,
+        "score": 0
+      },
+      {
+        "root": "aux_expired_after_reply",
+        "depth": 3,
+        "score": 100
+      },
+      {
+        "root": "compound_castle_right_clear",
+        "depth": 1,
+        "score": 0
+      },
+      {
+        "root": "compound_shift",
+        "depth": 1,
+        "score": -200
+      },
+      {
+        "root": "offtarget_token_live",
+        "depth": 3,
+        "score": 0
+      },
+      {
+        "root": "offtarget_capture_and_expiry",
+        "depth": 3,
+        "score": 0
+      },
+      {
+        "root": "checked_NO_CONTEST",
+        "depth": 3,
+        "score": 0
+      },
+      {
+        "root": "3701-ply0",
+        "depth": 1,
+        "score": 99999999
+      },
+      {
+        "root": "3701-ply8",
+        "depth": 1,
+        "score": 600
+      },
+      {
+        "root": "3702-ply0",
+        "depth": 1,
+        "score": 99999999
+      },
+      {
+        "root": "3702-ply8",
+        "depth": 1,
+        "score": 600
+      },
+      {
+        "root": "3711-ply0",
+        "depth": 1,
+        "score": 200
+      },
+      {
+        "root": "3711-ply8",
+        "depth": 1,
+        "score": 200
+      },
+      {
+        "root": "3712-ply0",
+        "depth": 1,
+        "score": 0
+      },
+      {
+        "root": "3712-ply8",
+        "depth": 1,
+        "score": 200
+      },
+      {
+        "root": "3721-ply0",
+        "depth": 1,
+        "score": 200
+      },
+      {
+        "root": "3721-ply8",
+        "depth": 1,
+        "score": 0
+      },
+      {
+        "root": "3722-ply0",
+        "depth": 1,
+        "score": 200
+      },
+      {
+        "root": "3722-ply8",
+        "depth": 1,
+        "score": 400
+      },
+      {
+        "root": "3731-ply0",
+        "depth": 1,
+        "score": 200
+      },
+      {
+        "root": "3731-ply8",
+        "depth": 1,
+        "score": 200
+      },
+      {
+        "root": "3732-ply0",
+        "depth": 1,
+        "score": 99999999
+      },
+      {
+        "root": "3732-ply8",
+        "depth": 0,
+        "score": 0
+      },
+      {
+        "root": "3602-ply0",
+        "depth": 1,
+        "score": 200
+      },
+      {
+        "root": "3602-ply8",
+        "depth": 1,
+        "score": 200
+      }
+    ],
+    "seconds": 40.639177600009134,
+    "no_older_private_reads": true
+  },
+  "scope": "Sanitized published archive sources rebuilt, no copied binaries/older private inputs; existing machine toolchain, not clean-machine installer or timing replication."
+}

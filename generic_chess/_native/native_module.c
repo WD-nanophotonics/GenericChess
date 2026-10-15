@@ -5445,6 +5445,48 @@ static int gc_semantic_order_q_candidates(GCSemanticIterativeContext *ctx,
  for(size_t i=0;i<actions->count;i++)actions->data[i]=ordered[i].action;
  free(ordered);return 1;
 }
+/* A discarded quiet view may omit only the identity/history append. Any
+ * searched child is reconstructed through the complete checked transition. */
+static int gc_semantic_q_history_deferrable(const GCSemanticRules *rules,
+                                           const GCSemanticPosition *position) {
+    if (rules->automatic_adjudication_count ||
+        !position->history_exact || !position->history_events_exact ||
+        position->history_len != position->ply + 1 ||
+        position->history_len >= GC_SEM_MAX_PLY + 1 ||
+        rules->repetition_limit < 2) return 0;
+    uint32_t forbidden = rules->repetition_limit - 1;
+    /* Every multiplicity is <= the number of recorded positions. This exact
+     * bound avoids a quadratic scan on real long high-threshold histories. */
+    if (position->history_len < forbidden) return 1;
+    for (uint16_t i = 0; i < position->history_len; i++) {
+        uint32_t count = 0;
+        for (uint16_t j = 0; j < position->history_len; j++) {
+            if (!memcmp(position->history_digest[i], position->history_digest[j],
+                        sizeof(position->history_digest[0])) &&
+                ++count >= forbidden) return 0;
+        }
+    }
+    return 1;
+}
+/* Only for a no-automatic-rule child whose next-edge repetition is impossible.
+ * General terminal/repetition authority must never consume transient history. */
+static int gc_semantic_q_quiet_terminal(const GCSemanticRules *rules,
+                                       const GCSemanticPosition *position,
+                                       int *winner) {
+    int ok = 1;
+    int has_action = gc_semantic_has_guarded_action(rules, position, &ok);
+    if (!ok) return -1;
+    if (!has_action) {
+        if (gc_semantic_runtime_in_check(rules, position, position->side_to_move)) {
+            *winner = 1 - position->side_to_move;
+            return 1;
+        }
+        if (rules->stalemate_result == 1) *winner = 1 - position->side_to_move;
+        return 2;
+    }
+    if (position->ply >= rules->max_ply) return 4;
+    return 0;
+}
 static int gc_semantic_quiescence(GCSemanticIterativeContext *ctx,uint32_t ply,
                        unsigned qdepth,int alpha,int beta,
                        int known_terminal,int known_winner) {
@@ -5488,13 +5530,16 @@ static int gc_semantic_quiescence(GCSemanticIterativeContext *ctx,uint32_t ply,
     }
     ctx->legal_generation_count++;
     if(!gc_semantic_order_q_candidates(ctx,pos,&actions)){gc_semantic_action_buffer_free(&actions);return 0;}
+    int can_defer = !check && gc_semantic_q_history_deferrable(ctx->rules, pos);
     int parent_enemies=0,legal=0;
     unsigned cells=ctx->rules->board_size*ctx->rules->board_size;
     for(unsigned i=0;i<cells;i++)if(pos->board[i].occupied && pos->board[i].owner!=pos->side_to_move)parent_enemies++;
     for(size_t i=0;i<actions.count;i++){
         if(!gc_semantic_iterative_check_budget(ctx,1)){gc_semantic_action_buffer_free(&actions);return 0;}
         GCSemanticPosition *child=&ctx->stack[ply+1];
-        int made=gc_semantic_runtime_make_checked_status(child,ctx->rules,pos,actions.data[i]);
+        int made = can_defer
+            ? gc_semantic_runtime_make_material_view_status(child, ctx->rules, pos, actions.data[i])
+            : gc_semantic_runtime_make_checked_status(child, ctx->rules, pos, actions.data[i]);
         if(made<0){ctx->control=4;gc_semantic_action_buffer_free(&actions);return 0;}
         if(!made)continue;
         ctx->transition_count++;legal++;
@@ -5504,7 +5549,7 @@ static int gc_semantic_quiescence(GCSemanticIterativeContext *ctx,uint32_t ply,
             for(unsigned j=0;j<cells;j++)if(child->board[j].occupied && child->board[j].owner!=pos->side_to_move)enemies++;
             noisy=enemies<parent_enemies || gc_semantic_inventory_changed(ctx->rules,pos,child);
             if(!noisy){
-                int child_check=(child->history_events_exact &&
+                int child_check=(!can_defer && child->history_events_exact &&
                     child->history_len==pos->history_len+1)
                     ? child->history_gave_check[child->history_len-1]
                     : gc_semantic_runtime_in_check(ctx->rules,child,child->side_to_move);
@@ -5512,12 +5557,28 @@ static int gc_semantic_quiescence(GCSemanticIterativeContext *ctx,uint32_t ply,
                 noisy=child_check;
             }
             if(!noisy){
-                child_terminal=gc_semantic_terminal_status_known(ctx->rules,child,&child_winner,child->history_digest[child->history_len-1]);
+                child_terminal = can_defer
+                    ? gc_semantic_q_quiet_terminal(ctx->rules, child, &child_winner)
+                    : gc_semantic_terminal_status_known(ctx->rules, child, &child_winner,
+                                                       child->history_digest[child->history_len-1]);
                 if(child_terminal<0){ctx->control=4;gc_semantic_action_buffer_free(&actions);return 0;}
                 noisy=child_terminal!=0;
             }
         }
         if(!noisy)continue;
+        if (can_defer) {
+            /* The view is discarded. Only this full transition may enter the
+             * recursive search, TT, declaration checks or history context.
+             * transition_count retains its logical accepted-edge meaning;
+             * the extra physical reconstruction is included in wall cost. */
+            int committed = gc_semantic_runtime_make_checked_status(
+                child, ctx->rules, pos, actions.data[i]);
+            if (committed <= 0) {
+                ctx->control = 4;
+                gc_semantic_action_buffer_free(&actions);
+                return 0;
+            }
+        }
         int score=-gc_semantic_quiescence(ctx,ply+1,qdepth+1,-beta,-alpha,child_terminal,child_winner);
         if(ctx->control){gc_semantic_action_buffer_free(&actions);return 0;}
         if(score>=beta){gc_semantic_action_buffer_free(&actions);return score;}

@@ -5,7 +5,7 @@ revisable research selection/evidence, not permanent authorization or a diary.
 Previous complete selection/evidence remains at fixed Git
 4f6858b128e38c3b93360d78b7f5de6ad61af695 and its purpose reports/archives.
 
-## Latest user-selected repair —2026-10-15 CLOSED
+## Latest user-selected repair â€”2026-10-15 CLOSED
 
 Decision: close the concrete Slack defects, qualify the changes and publish the
 owner evidence BEFORE resuming mainline experiments. Reason: source review found
@@ -61,13 +61,29 @@ filter yield. Value-key normalization resolves the private cache's observed list
 input failure on two existing inputs, but small-input ratio1.41684 versus wide
 .65271 argues against unconditional adoption. Product compiler/filter unchanged.
 
-Next selection: attribute actual q quiet-discarded-child digest/history work on
-frozen roots before implementing a shortcut. Endpoint32call ratio.166875 is not
-whole-search gain; availability/material-only views already omit unused keys.
-Preserve complete histories for searched branches and all automatic/repetition/
-declaration/promotion/drop/auxiliary semantics. If avoidable share is small,
-reject this optimization and compare actual consumer/algorithm costs instead.
-Do not repeat unchanged q curves or duplicate AUX solver/learning work.
+Current outcome: actual q quiet-discarded history attribution justified the
+qualified final deferral;2664full/34focused tests and source-only full-state replay
+pass. New development cohort46/48roots,552/576queries retains all missing slots;
+92fixed pairs zero non-time mismatch, caller ratios.885/.690/.674/.688 by4/8/12/16.
+184wall pairs14deeper/170same/0shallower do not establish strength. Two exposed
+resource families had mutable-baseline contamination; retain/exclude16slots,
+no replacement. Full versions, failure/long-history controls and limits:
+QUIET_CHILD_HISTORY_AND_TRANSFER.md. q/default/evaluation/price policy unchanged.
+
+Next selection: measured post-deferral quiet terminal availability/check cost.
+A fully rechecked sibling-local reply witness private probe32calls has identical
+fields but4board cost1.0305 and16board.8871. Existing23semantic/physical controls pass, but no mid-hint cancellation
+injection/prospective transfer. Not adopted: decide via targeted qualification
+and prospective transfer, or reject if
+engineering/negative small-board cost outweighs the limited benefit. Do not
+repeat unchanged q curves or duplicate AUX solver/learning. Keep full histories,
+promotion/drop/aux/declarations and unsupported fallbacks; science remains OPEN.
+
+AUX historical path-key supplement independently reproduced on PRIMARY's existing
+reference and minimally adopted from its pinned correction. Core unchanged; no
+new solver/old-label rewrite. Actual direct callers' six rule compilations retain
+the no-path-rule route. AUX57/58 optional SessionPN evidence is owner-reported;
+source/read versus execution and shared-enumeration limitations remain explicit.
 
 Late AUX declaration supplement exposed PRIMARY's same historical reference:
 four falseLOSS cases reproduced, scoped guard adopted; five declaration/control
