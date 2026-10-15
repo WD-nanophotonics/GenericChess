@@ -1,0 +1,72 @@
+{
+  "status": "COMPLETE",
+  "error": null,
+  "active": {},
+  "planned_calls": 144,
+  "complete_calls": 144,
+  "elapsed_seconds": 1.9443296000099508,
+  "summary": [
+    {
+      "allocation": "CANDIDATE_QUARTER",
+      "algorithm": "ANDOR",
+      "calls": 36,
+      "proved": 2,
+      "verified": 2,
+      "physical_wins": 2,
+      "proof_seconds": 0.9342291000066325,
+      "verification_seconds": 0.0015833000070415437,
+      "reasons": {
+        "time_budget": 14,
+        "no_forced_win_in_exhausted_tree": 20,
+        "finite_session_all_defense_certificate": 2
+      }
+    },
+    {
+      "allocation": "CANDIDATE_QUARTER",
+      "algorithm": "SESSION_PN",
+      "calls": 36,
+      "proved": 2,
+      "verified": 2,
+      "physical_wins": 2,
+      "proof_seconds": 0.6692839999741409,
+      "verification_seconds": 0.0016022000054363161,
+      "reasons": {
+        "time_budget": 8,
+        "no_forced_win_in_exhausted_tree": 26,
+        "finite_session_all_defense_certificate": 2
+      }
+    },
+    {
+      "allocation": "UNIT64_QUARTER",
+      "algorithm": "ANDOR",
+      "calls": 36,
+      "proved": 0,
+      "verified": 0,
+      "physical_wins": 0,
+      "proof_seconds": 0.052832100045634434,
+      "verification_seconds": 0,
+      "reasons": {
+        "node_budget": 30,
+        "no_forced_win_in_exhausted_tree": 6
+      }
+    },
+    {
+      "allocation": "UNIT64_QUARTER",
+      "algorithm": "SESSION_PN",
+      "calls": 36,
+      "proved": 2,
+      "verified": 2,
+      "physical_wins": 2,
+      "proof_seconds": 0.056547500018496066,
+      "verification_seconds": 0.0015836999955354258,
+      "reasons": {
+        "node_budget": 18,
+        "no_forced_win_in_exhausted_tree": 16,
+        "finite_session_all_defense_certificate": 2
+      }
+    }
+  ],
+  "new_native_go": 0,
+  "training_games": 0,
+  "new_exact_reference_nodes": 0
+}

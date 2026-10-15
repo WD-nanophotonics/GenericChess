@@ -1,0 +1,185 @@
+{
+  "cases": [
+    {
+      "root": 0,
+      "profile": "NONE",
+      "target": 0,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 0,
+      "profile": "NONE",
+      "target": 1,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 0,
+      "profile": "CONDITIONAL_WIN_RESTART",
+      "target": 0,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 0,
+      "profile": "CONDITIONAL_WIN_RESTART",
+      "target": 1,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 0,
+      "profile": "CONDITIONAL_RESTART_LOSS",
+      "target": 0,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 0,
+      "profile": "CONDITIONAL_RESTART_LOSS",
+      "target": 1,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 1,
+      "profile": "NONE",
+      "target": 0,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 1,
+      "profile": "NONE",
+      "target": 1,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 1,
+      "profile": "CONDITIONAL_WIN_RESTART",
+      "target": 0,
+      "exact_for_player0": 0
+    },
+    {
+      "root": 1,
+      "profile": "CONDITIONAL_WIN_RESTART",
+      "target": 1,
+      "exact_for_player0": 0
+    },
+    {
+      "root": 1,
+      "profile": "CONDITIONAL_RESTART_LOSS",
+      "target": 0,
+      "exact_for_player0": 0
+    },
+    {
+      "root": 1,
+      "profile": "CONDITIONAL_RESTART_LOSS",
+      "target": 1,
+      "exact_for_player0": 0
+    },
+    {
+      "root": 2,
+      "profile": "NONE",
+      "target": 0,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 2,
+      "profile": "NONE",
+      "target": 1,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 2,
+      "profile": "CONDITIONAL_WIN_RESTART",
+      "target": 0,
+      "exact_for_player0": 0
+    },
+    {
+      "root": 2,
+      "profile": "CONDITIONAL_WIN_RESTART",
+      "target": 1,
+      "exact_for_player0": 0
+    },
+    {
+      "root": 2,
+      "profile": "CONDITIONAL_RESTART_LOSS",
+      "target": 0,
+      "exact_for_player0": 0
+    },
+    {
+      "root": 2,
+      "profile": "CONDITIONAL_RESTART_LOSS",
+      "target": 1,
+      "exact_for_player0": 0
+    }
+  ],
+  "roots": [
+    {
+      "k": 3,
+      "b": 12,
+      "r": 9
+    },
+    {
+      "k": 11,
+      "b": 0,
+      "r": 15
+    },
+    {
+      "k": 0,
+      "b": 2,
+      "r": 15
+    },
+    {
+      "k": 12,
+      "b": 15,
+      "r": 5
+    },
+    {
+      "k": 0,
+      "b": 10,
+      "r": 7
+    },
+    {
+      "k": 12,
+      "b": 0,
+      "r": 11
+    },
+    {
+      "k": 13,
+      "b": 11,
+      "r": 0
+    },
+    {
+      "k": 7,
+      "b": 5,
+      "r": 8
+    }
+  ],
+  "max_ply": 8,
+  "max_depth": 9,
+  "settings": [
+    {
+      "id": "CANDIDATE_QUARTER",
+      "nodes": 1024,
+      "seconds": 0.0625
+    },
+    {
+      "id": "UNIT64_QUARTER",
+      "nodes": 16,
+      "seconds": 0.0625
+    }
+  ],
+  "repetitions": 2,
+  "algorithms": [
+    "ANDOR",
+    "SESSION_PN"
+  ],
+  "global_seconds": 120,
+  "expected_seconds": 10,
+  "planned_calls": 144,
+  "source_sha256": {
+    "scripts/generic_session_win_proof.py": "785d1e1afe89de7d07b6e4c921bddd1f353525d6d3e59efff15c84194ecfa18d",
+    "scripts/generic_session_win_proof_pn.py": "5d45ca15281394d5cb7083a8e7da0076b2438024fddf5945d62389b8480d8eda",
+    "results/dev_aux/task1819/allocation.py": "de8dc9dfa66802c6eac5599a6036b69a62f0e7c7ece3d6aafd8b959872ac9b57"
+  },
+  "allocation_source": "results\\dev_aux\\task1804\\plan.json",
+  "allocation_source_sha256": "0272d4cac6f87d8ffb6c592eda25de218e7ee5d0efcff8e94c953a6d6608346c",
+  "scope": "prospective SAME nominal proof+verification quarter allocations, each algorithm visit units still different; no Session policy integrated or new game/learning claim",
+  "decision": "Does the exposed1s PN coverage improvement actually survive the existing.25s-step proof/verification allocations? no tuning of allocations, roots, prices or old caps"
+}

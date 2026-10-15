@@ -1,0 +1,73 @@
+{
+  "cases": [
+    {
+      "root": 0,
+      "profile": "NONE"
+    },
+    {
+      "root": 0,
+      "profile": "CONDITIONAL_WIN_RESTART"
+    },
+    {
+      "root": 1,
+      "profile": "NONE"
+    }
+  ],
+  "roots": [
+    {
+      "k": 3,
+      "b": 12,
+      "r": 9
+    },
+    {
+      "k": 11,
+      "b": 0,
+      "r": 15
+    },
+    {
+      "k": 0,
+      "b": 2,
+      "r": 15
+    },
+    {
+      "k": 12,
+      "b": 15,
+      "r": 5
+    },
+    {
+      "k": 0,
+      "b": 10,
+      "r": 7
+    },
+    {
+      "k": 12,
+      "b": 0,
+      "r": 11
+    },
+    {
+      "k": 13,
+      "b": 11,
+      "r": 0
+    },
+    {
+      "k": 7,
+      "b": 5,
+      "r": 8
+    }
+  ],
+  "max_ply": 8,
+  "max_depth": 9,
+  "proof_nodes": 65536,
+  "proof_seconds": 1.0,
+  "global_seconds": 10,
+  "scope": "three already-exposed complete references; instrumented function counts only, timings include profiler overhead and are not speedup or production comparisons",
+  "decision": "Is public Session transition cost dominated by repeated parent legality or the optional wrapper? Measure before any API/fast-path change; no Core/default patch or primary attribution takeover.",
+  "sources": {
+    "scripts/generic_session_win_proof_pn.py": "5d45ca15281394d5cb7083a8e7da0076b2438024fddf5945d62389b8480d8eda",
+    "scripts/generic_session_win_proof.py": "785d1e1afe89de7d07b6e4c921bddd1f353525d6d3e59efff15c84194ecfa18d",
+    "generic_chess/session/session.py": "1070e555619d244b357a0b3c72c2280b4c0276311ccab02280eae4e2e4c42c4b",
+    "generic_chess/core/transition.py": "80a01f61bac9db9907326017425da9ac4beec03efa6359a1066492d0f60dd7a8",
+    "generic_chess/core/terminal.py": "55dec55905d51122023efdb1222923dd5b5191c398e7326d7441a77f5efb037e",
+    "results/dev_aux/task1820/profile.py": "5bb77d993d0e833a840460d96aa0c6f694d63d2e0ce3f4ce2608570a7ee1612e"
+  }
+}

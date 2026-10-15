@@ -1,0 +1,34 @@
+{
+  "native_engine_go": 0,
+  "new_training_or_statistical_games": 0,
+  "new_exact_reference_nodes": 0,
+  "cost_curve": {
+    "calls": 216,
+    "whole_batch_seconds": 46.91683290000947,
+    "exposed_reference_targets": 18,
+    "board_roots": 3,
+    "profiles": 9,
+    "known_winning_targets": 5,
+    "successful_calls_not_independent_games": 36
+  },
+  "actual_quarter_allocation": {
+    "calls": 144,
+    "whole_batch_seconds": 1.9443296000099508,
+    "candidate_quarter_nodes": 1024,
+    "candidate_quarter_seconds": 0.0625,
+    "candidate_success_unique_targets": {
+      "ANDOR": 1,
+      "SESSION_PN": 1
+    },
+    "unit64_quarter_nodes": 16,
+    "unit64_success_unique_targets": {
+      "ANDOR": 0,
+      "SESSION_PN": 1
+    },
+    "decision": "retain optional solver, do not switch learner or fixed opponent or infer price benefit"
+  },
+  "immediate_claim_cost_scope": "72counterbalanced old/new fixture pairs;0unrelated board frontiers afterrepair; submillisecond savings only",
+  "profile": "3fixed exposed cases, initialunused-alias instrumentation error corrected with samecaps;1027legacy parent legal-set validations on478already-enumerated frontier parents for hardroot; profiler overhead and overlapping cumulative costs prohibit speedup claims",
+  "agent_engineering_cost": "research session elapsed separately reported; code/tests/review/restore/publication/token overhead are not included in46.917s experiment time",
+  "science": "OPEN"
+}

@@ -17,7 +17,7 @@ PROVED_TRUE = "PROVED_TRUE"
 PROVED_FALSE = "PROVED_FALSE"
 UNRESOLVED = "UNRESOLVED"
 THRESHOLDS = (0, 1)
-SOLVER_VERSION = "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1-DECLARATION-HISTORY-GUARD"
+SOLVER_VERSION = "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1-DECLARATION-HISTORY-NOPROGRESS-GUARD"
 
 
 @dataclass(frozen=True)
@@ -90,6 +90,13 @@ def solve_root_threshold_v3(compiled, state, *, max_nodes: int, max_depth: int |
             {"solver_version": SOLVER_VERSION, "states_expanded": 0,
              "supported_scope": "board_actions_only; session declarations unsupported"},
             "REFERENCE_SOLVE_UNRESOLVED:declarations")
+    # Runtime explicitly lacks the no-progress clock identity. Preserve that
+    # unsupported scope in the reference result, not an uncaught worker error.
+    if getattr(compiled, "no_progress_draw", None) is not None:
+        return ThresholdSolveResult(False, None, (), (),
+            {"solver_version": SOLVER_VERSION, "states_expanded": 0,
+             "supported_scope": "no-progress path-state identity unsupported"},
+            "REFERENCE_SOLVE_UNRESOLVED:no_progress_history")
     root_actor = state.position.side_to_move
     configured_max_ply = getattr(compiled, "max_ply", None)
     if configured_max_ply is None:

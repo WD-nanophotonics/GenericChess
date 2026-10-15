@@ -1,0 +1,1043 @@
+{
+  "cases": [
+    {
+      "root": 0,
+      "profile": "NONE",
+      "status": "PROVEN_WIN",
+      "reason": "finite_session_all_defense_certificate",
+      "proof_nodes": 1028,
+      "frontiers": 478,
+      "transitions": 1027,
+      "instrumented_seconds": 0.4244475000014063,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 12,
+        "seconds": 0.005601600001682527,
+        "terminal_leaves": {
+          "checkmate:None": 2
+        },
+        "session_transitions": 11
+      },
+      "counts": {
+        "session_frontiers": 478,
+        "public_submit": 1027
+      },
+      "distinct_validation_parents": 0,
+      "validation_parent_multiplicities": {},
+      "validation_calls_on_already_frontier_enumerated_parents": 0,
+      "top_functions": [
+        {
+          "file": "scripts/generic_session_win_proof_pn.py",
+          "line": 37,
+          "function": "prove_session_win_pn",
+          "primitive_calls": 1,
+          "calls": 1,
+          "self_seconds": 0.006802300000000001,
+          "cumulative_seconds": 0.4245339
+        },
+        {
+          "file": "scripts/generic_session_win_proof.py",
+          "line": 66,
+          "function": "execute",
+          "primitive_calls": 1027,
+          "calls": 1027,
+          "self_seconds": 0.0007683000000000001,
+          "cumulative_seconds": 0.3082225
+        },
+        {
+          "file": "results/dev_aux/task1820/profile.py",
+          "line": 28,
+          "function": "submit",
+          "primitive_calls": 1027,
+          "calls": 1027,
+          "self_seconds": 0.000612,
+          "cumulative_seconds": 0.3013889
+        },
+        {
+          "file": "generic_chess/session/session.py",
+          "line": 119,
+          "function": "submit",
+          "primitive_calls": 1027,
+          "calls": 1027,
+          "self_seconds": 0.0021101,
+          "cumulative_seconds": 0.3007768
+        },
+        {
+          "file": "generic_chess/core/transition.py",
+          "line": 151,
+          "function": "apply_action",
+          "primitive_calls": 1027,
+          "calls": 1027,
+          "self_seconds": 0.0021401000000000002,
+          "cumulative_seconds": 0.2639615
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 243,
+          "function": "iter_legal_actions_from_position",
+          "primitive_calls": 10761,
+          "calls": 10761,
+          "self_seconds": 0.009740500000000001,
+          "cumulative_seconds": 0.255268
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 262,
+          "function": "legal_actions_from_position",
+          "primitive_calls": 1027,
+          "calls": 1027,
+          "self_seconds": 0.0012225,
+          "cumulative_seconds": 0.1491586
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 229,
+          "function": "_is_legal",
+          "primitive_calls": 11899,
+          "calls": 11899,
+          "self_seconds": 0.0078361,
+          "cumulative_seconds": 0.1395694
+        },
+        {
+          "file": "generic_chess/core/transition.py",
+          "line": 129,
+          "function": "_transition",
+          "primitive_calls": 1027,
+          "calls": 1027,
+          "self_seconds": 0.0020204000000000003,
+          "cumulative_seconds": 0.10949800000000001
+        },
+        {
+          "file": "generic_chess/core/coordinates.py",
+          "line": 58,
+          "function": "_shape",
+          "primitive_calls": 73585,
+          "calls": 73585,
+          "self_seconds": 0.020473400000000003,
+          "cumulative_seconds": 0.0873106
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 98,
+          "function": "_expanded_pseudo_actions",
+          "primitive_calls": 14432,
+          "calls": 14432,
+          "self_seconds": 0.008470100000000001,
+          "cumulative_seconds": 0.0858494
+        },
+        {
+          "file": "generic_chess/core/coordinates.py",
+          "line": 84,
+          "function": "square_to_index",
+          "primitive_calls": 57202,
+          "calls": 57202,
+          "self_seconds": 0.010452000000000001,
+          "cumulative_seconds": 0.07768810000000001
+        },
+        {
+          "file": "scripts/generic_session_win_proof.py",
+          "line": 51,
+          "function": "choices",
+          "primitive_calls": 1505,
+          "calls": 1505,
+          "self_seconds": 0.0017130000000000001,
+          "cumulative_seconds": 0.07183010000000001
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 142,
+          "function": "_apply_action_unchecked",
+          "primitive_calls": 12926,
+          "calls": 12926,
+          "self_seconds": 0.0181538,
+          "cumulative_seconds": 0.06607070000000001
+        },
+        {
+          "file": "generic_chess/core/terminal.py",
+          "line": 244,
+          "function": "_terminal_from_parts",
+          "primitive_calls": 1028,
+          "calls": 1028,
+          "self_seconds": 0.0033741,
+          "cumulative_seconds": 0.065001
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 26,
+          "function": "_piece_actions",
+          "primitive_calls": 2533,
+          "calls": 2533,
+          "self_seconds": 0.0162782,
+          "cumulative_seconds": 0.05864780000000001
+        },
+        {
+          "file": "results/dev_aux/task1820/profile.py",
+          "line": 26,
+          "function": "frontier",
+          "primitive_calls": 478,
+          "calls": 478,
+          "self_seconds": 0.0005017,
+          "cumulative_seconds": 0.05859110000000001
+        },
+        {
+          "file": "generic_chess/session/session.py",
+          "line": 93,
+          "function": "legal_actions",
+          "primitive_calls": 478,
+          "calls": 478,
+          "self_seconds": 0.00031850000000000004,
+          "cumulative_seconds": 0.057884700000000004
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 269,
+          "function": "has_legal_action",
+          "primitive_calls": 1028,
+          "calls": 1028,
+          "self_seconds": 0.0014166,
+          "cumulative_seconds": 0.057662200000000004
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 317,
+          "function": "legal_actions",
+          "primitive_calls": 478,
+          "calls": 478,
+          "self_seconds": 0.00046540000000000004,
+          "cumulative_seconds": 0.0553364
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 289,
+          "function": "iter_legal_actions",
+          "primitive_calls": 1852,
+          "calls": 1852,
+          "self_seconds": 0.0012559000000000001,
+          "cumulative_seconds": 0.054871
+        },
+        {
+          "file": "generic_chess/core/attacks.py",
+          "line": 58,
+          "function": "is_square_attacked",
+          "primitive_calls": 12932,
+          "calls": 12932,
+          "self_seconds": 0.028464700000000002,
+          "cumulative_seconds": 0.0459492
+        },
+        {
+          "file": "generic_chess/core/identity.py",
+          "line": 109,
+          "function": "position_identity_key",
+          "primitive_calls": 3082,
+          "calls": 3082,
+          "self_seconds": 0.0008587,
+          "cumulative_seconds": 0.043661500000000006
+        },
+        {
+          "file": "generic_chess/core/identity.py",
+          "line": 91,
+          "function": "position_identity",
+          "primitive_calls": 3082,
+          "calls": 3082,
+          "self_seconds": 0.0038719,
+          "cumulative_seconds": 0.0428028
+        },
+        {
+          "file": "generic_chess/core/coordinates.py",
+          "line": 42,
+          "function": "__post_init__",
+          "primitive_calls": 73585,
+          "calls": 73585,
+          "self_seconds": 0.023690700000000002,
+          "cumulative_seconds": 0.038538
+        },
+        {
+          "file": "generic_chess/core/keys.py",
+          "line": 16,
+          "function": "position_key",
+          "primitive_calls": 3082,
+          "calls": 3082,
+          "self_seconds": 0.0100745,
+          "cumulative_seconds": 0.0337278
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method builtins.isinstance>",
+          "primitive_calls": 587749,
+          "calls": 587749,
+          "self_seconds": 0.0327454,
+          "cumulative_seconds": 0.0327454
+        },
+        {
+          "file": "generic_chess/core/coordinates.py",
+          "line": 89,
+          "function": "index_to_square",
+          "primitive_calls": 16383,
+          "calls": 16383,
+          "self_seconds": 0.007858500000000001,
+          "cumulative_seconds": 0.0324744
+        },
+        {
+          "file": "generic_chess/core/attacks.py",
+          "line": 24,
+          "function": "anchor_square",
+          "primitive_calls": 12932,
+          "calls": 12932,
+          "self_seconds": 0.006847000000000001,
+          "cumulative_seconds": 0.031613300000000004
+        },
+        {
+          "file": "__init__.py",
+          "line": 183,
+          "function": "dumps",
+          "primitive_calls": 5483,
+          "calls": 5483,
+          "self_seconds": 0.0048385,
+          "cumulative_seconds": 0.0242663
+        },
+        {
+          "file": "generic_chess/session/session.py",
+          "line": 70,
+          "function": "result",
+          "primitive_calls": 4042,
+          "calls": 4042,
+          "self_seconds": 0.0010688,
+          "cumulative_seconds": 0.0209971
+        },
+        {
+          "file": "generic_chess/session/result.py",
+          "line": 82,
+          "function": "session_result_from_terminal",
+          "primitive_calls": 4042,
+          "calls": 4042,
+          "self_seconds": 0.0024442,
+          "cumulative_seconds": 0.019928300000000003
+        },
+        {
+          "file": "generic_chess/core/transition.py",
+          "line": 61,
+          "function": "_history_record",
+          "primitive_calls": 1027,
+          "calls": 1027,
+          "self_seconds": 0.0032943,
+          "cumulative_seconds": 0.018600600000000002
+        },
+        {
+          "file": "encoder.py",
+          "line": 183,
+          "function": "encode",
+          "primitive_calls": 5483,
+          "calls": 5483,
+          "self_seconds": 0.0040599,
+          "cumulative_seconds": 0.0182963
+        },
+        {
+          "file": "<string>",
+          "line": 2,
+          "function": "__hash__",
+          "primitive_calls": 20127,
+          "calls": 20127,
+          "self_seconds": 0.0035497000000000003,
+          "cumulative_seconds": 0.0179098
+        }
+      ]
+    },
+    {
+      "root": 0,
+      "profile": "CONDITIONAL_WIN_RESTART",
+      "status": "PROVEN_WIN",
+      "reason": "finite_session_all_defense_certificate",
+      "proof_nodes": 1506,
+      "frontiers": 478,
+      "transitions": 1505,
+      "instrumented_seconds": 0.456723499999498,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 16,
+        "seconds": 0.009566900000208989,
+        "terminal_leaves": {
+          "declaration:LOSS": 4,
+          "checkmate:None": 2
+        },
+        "session_transitions": 15
+      },
+      "counts": {
+        "public_declare": 478,
+        "session_frontiers": 478,
+        "public_submit": 1027
+      },
+      "distinct_validation_parents": 0,
+      "validation_parent_multiplicities": {},
+      "validation_calls_on_already_frontier_enumerated_parents": 0,
+      "top_functions": [
+        {
+          "file": "scripts/generic_session_win_proof_pn.py",
+          "line": 37,
+          "function": "prove_session_win_pn",
+          "primitive_calls": 1,
+          "calls": 1,
+          "self_seconds": 0.007895300000000001,
+          "cumulative_seconds": 0.45680770000000004
+        },
+        {
+          "file": "scripts/generic_session_win_proof.py",
+          "line": 66,
+          "function": "execute",
+          "primitive_calls": 1505,
+          "calls": 1505,
+          "self_seconds": 0.0012601000000000001,
+          "cumulative_seconds": 0.32755680000000004
+        },
+        {
+          "file": "results/dev_aux/task1820/profile.py",
+          "line": 28,
+          "function": "submit",
+          "primitive_calls": 1027,
+          "calls": 1027,
+          "self_seconds": 0.0006625,
+          "cumulative_seconds": 0.3072434
+        },
+        {
+          "file": "generic_chess/session/session.py",
+          "line": 119,
+          "function": "submit",
+          "primitive_calls": 1027,
+          "calls": 1027,
+          "self_seconds": 0.0022532000000000003,
+          "cumulative_seconds": 0.30658080000000004
+        },
+        {
+          "file": "generic_chess/core/transition.py",
+          "line": 151,
+          "function": "apply_action",
+          "primitive_calls": 1027,
+          "calls": 1027,
+          "self_seconds": 0.0022627000000000003,
+          "cumulative_seconds": 0.2687472
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 243,
+          "function": "iter_legal_actions_from_position",
+          "primitive_calls": 10761,
+          "calls": 10761,
+          "self_seconds": 0.010162500000000001,
+          "cumulative_seconds": 0.2598162
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 262,
+          "function": "legal_actions_from_position",
+          "primitive_calls": 1027,
+          "calls": 1027,
+          "self_seconds": 0.0012371,
+          "cumulative_seconds": 0.1513823
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 229,
+          "function": "_is_legal",
+          "primitive_calls": 11899,
+          "calls": 11899,
+          "self_seconds": 0.008144100000000001,
+          "cumulative_seconds": 0.1435352
+        },
+        {
+          "file": "generic_chess/core/transition.py",
+          "line": 129,
+          "function": "_transition",
+          "primitive_calls": 1027,
+          "calls": 1027,
+          "self_seconds": 0.0021455000000000003,
+          "cumulative_seconds": 0.11189990000000001
+        },
+        {
+          "file": "generic_chess/core/coordinates.py",
+          "line": 58,
+          "function": "_shape",
+          "primitive_calls": 73585,
+          "calls": 73585,
+          "self_seconds": 0.0206518,
+          "cumulative_seconds": 0.0881585
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 98,
+          "function": "_expanded_pseudo_actions",
+          "primitive_calls": 14432,
+          "calls": 14432,
+          "self_seconds": 0.0086625,
+          "cumulative_seconds": 0.08569790000000001
+        },
+        {
+          "file": "generic_chess/core/coordinates.py",
+          "line": 84,
+          "function": "square_to_index",
+          "primitive_calls": 57202,
+          "calls": 57202,
+          "self_seconds": 0.0104568,
+          "cumulative_seconds": 0.07828740000000001
+        },
+        {
+          "file": "scripts/generic_session_win_proof.py",
+          "line": 51,
+          "function": "choices",
+          "primitive_calls": 1983,
+          "calls": 1983,
+          "self_seconds": 0.002438,
+          "cumulative_seconds": 0.0759619
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 142,
+          "function": "_apply_action_unchecked",
+          "primitive_calls": 12926,
+          "calls": 12926,
+          "self_seconds": 0.018582900000000003,
+          "cumulative_seconds": 0.06724730000000001
+        },
+        {
+          "file": "generic_chess/core/terminal.py",
+          "line": 244,
+          "function": "_terminal_from_parts",
+          "primitive_calls": 1028,
+          "calls": 1028,
+          "self_seconds": 0.0036000000000000003,
+          "cumulative_seconds": 0.06625210000000001
+        },
+        {
+          "file": "results/dev_aux/task1820/profile.py",
+          "line": 26,
+          "function": "frontier",
+          "primitive_calls": 478,
+          "calls": 478,
+          "self_seconds": 0.00046360000000000005,
+          "cumulative_seconds": 0.060415100000000006
+        },
+        {
+          "file": "generic_chess/session/session.py",
+          "line": 93,
+          "function": "legal_actions",
+          "primitive_calls": 478,
+          "calls": 478,
+          "self_seconds": 0.0003508,
+          "cumulative_seconds": 0.059736000000000004
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 269,
+          "function": "has_legal_action",
+          "primitive_calls": 1028,
+          "calls": 1028,
+          "self_seconds": 0.0014561,
+          "cumulative_seconds": 0.0586585
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 26,
+          "function": "_piece_actions",
+          "primitive_calls": 2533,
+          "calls": 2533,
+          "self_seconds": 0.0156763,
+          "cumulative_seconds": 0.058081400000000005
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 317,
+          "function": "legal_actions",
+          "primitive_calls": 478,
+          "calls": 478,
+          "self_seconds": 0.0004866,
+          "cumulative_seconds": 0.056978600000000004
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 289,
+          "function": "iter_legal_actions",
+          "primitive_calls": 1852,
+          "calls": 1852,
+          "self_seconds": 0.0013948,
+          "cumulative_seconds": 0.056492
+        },
+        {
+          "file": "generic_chess/core/attacks.py",
+          "line": 58,
+          "function": "is_square_attacked",
+          "primitive_calls": 12932,
+          "calls": 12932,
+          "self_seconds": 0.0299354,
+          "cumulative_seconds": 0.048050800000000005
+        },
+        {
+          "file": "generic_chess/core/identity.py",
+          "line": 109,
+          "function": "position_identity_key",
+          "primitive_calls": 3082,
+          "calls": 3082,
+          "self_seconds": 0.0008754,
+          "cumulative_seconds": 0.044858
+        },
+        {
+          "file": "generic_chess/core/identity.py",
+          "line": 91,
+          "function": "position_identity",
+          "primitive_calls": 3082,
+          "calls": 3082,
+          "self_seconds": 0.0041114,
+          "cumulative_seconds": 0.043982600000000004
+        },
+        {
+          "file": "generic_chess/core/coordinates.py",
+          "line": 42,
+          "function": "__post_init__",
+          "primitive_calls": 74541,
+          "calls": 74541,
+          "self_seconds": 0.0243108,
+          "cumulative_seconds": 0.0396605
+        },
+        {
+          "file": "generic_chess/core/keys.py",
+          "line": 16,
+          "function": "position_key",
+          "primitive_calls": 3082,
+          "calls": 3082,
+          "self_seconds": 0.010146,
+          "cumulative_seconds": 0.034390300000000006
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method builtins.isinstance>",
+          "primitive_calls": 593962,
+          "calls": 593962,
+          "self_seconds": 0.033536300000000005,
+          "cumulative_seconds": 0.033536300000000005
+        },
+        {
+          "file": "generic_chess/core/coordinates.py",
+          "line": 89,
+          "function": "index_to_square",
+          "primitive_calls": 16383,
+          "calls": 16383,
+          "self_seconds": 0.0080224,
+          "cumulative_seconds": 0.0330332
+        },
+        {
+          "file": "generic_chess/core/attacks.py",
+          "line": 24,
+          "function": "anchor_square",
+          "primitive_calls": 12932,
+          "calls": 12932,
+          "self_seconds": 0.006906000000000001,
+          "cumulative_seconds": 0.032151200000000005
+        },
+        {
+          "file": "generic_chess/session/session.py",
+          "line": 70,
+          "function": "result",
+          "primitive_calls": 5954,
+          "calls": 5954,
+          "self_seconds": 0.0022076,
+          "cumulative_seconds": 0.0252174
+        },
+        {
+          "file": "__init__.py",
+          "line": 183,
+          "function": "dumps",
+          "primitive_calls": 5483,
+          "calls": 5483,
+          "self_seconds": 0.0049303,
+          "cumulative_seconds": 0.024672200000000002
+        },
+        {
+          "file": "generic_chess/session/result.py",
+          "line": 82,
+          "function": "session_result_from_terminal",
+          "primitive_calls": 4520,
+          "calls": 4520,
+          "self_seconds": 0.0028193000000000003,
+          "cumulative_seconds": 0.022123200000000003
+        },
+        {
+          "file": "generic_chess/core/transition.py",
+          "line": 61,
+          "function": "_history_record",
+          "primitive_calls": 1027,
+          "calls": 1027,
+          "self_seconds": 0.0035116,
+          "cumulative_seconds": 0.0190676
+        },
+        {
+          "file": "encoder.py",
+          "line": 183,
+          "function": "encode",
+          "primitive_calls": 5483,
+          "calls": 5483,
+          "self_seconds": 0.0040548,
+          "cumulative_seconds": 0.0185864
+        },
+        {
+          "file": "<string>",
+          "line": 2,
+          "function": "__hash__",
+          "primitive_calls": 20127,
+          "calls": 20127,
+          "self_seconds": 0.0035936,
+          "cumulative_seconds": 0.018135500000000002
+        }
+      ]
+    },
+    {
+      "root": 1,
+      "profile": "NONE",
+      "status": "PROVEN_WIN",
+      "reason": "finite_session_all_defense_certificate",
+      "proof_nodes": 15,
+      "frontiers": 3,
+      "transitions": 14,
+      "instrumented_seconds": 0.006468799998401664,
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 4,
+        "seconds": 0.0014254999987315387,
+        "terminal_leaves": {
+          "checkmate:None": 1
+        },
+        "session_transitions": 3
+      },
+      "counts": {
+        "session_frontiers": 3,
+        "public_submit": 14
+      },
+      "distinct_validation_parents": 0,
+      "validation_parent_multiplicities": {},
+      "validation_calls_on_already_frontier_enumerated_parents": 0,
+      "top_functions": [
+        {
+          "file": "scripts/generic_session_win_proof_pn.py",
+          "line": 37,
+          "function": "prove_session_win_pn",
+          "primitive_calls": 1,
+          "calls": 1,
+          "self_seconds": 6.68e-05,
+          "cumulative_seconds": 0.006555
+        },
+        {
+          "file": "scripts/generic_session_win_proof.py",
+          "line": 66,
+          "function": "execute",
+          "primitive_calls": 14,
+          "calls": 14,
+          "self_seconds": 1.54e-05,
+          "cumulative_seconds": 0.0051634
+        },
+        {
+          "file": "results/dev_aux/task1820/profile.py",
+          "line": 28,
+          "function": "submit",
+          "primitive_calls": 14,
+          "calls": 14,
+          "self_seconds": 1.43e-05,
+          "cumulative_seconds": 0.0050543
+        },
+        {
+          "file": "generic_chess/session/session.py",
+          "line": 119,
+          "function": "submit",
+          "primitive_calls": 14,
+          "calls": 14,
+          "self_seconds": 4.33e-05,
+          "cumulative_seconds": 0.0050398000000000005
+        },
+        {
+          "file": "generic_chess/core/transition.py",
+          "line": 151,
+          "function": "apply_action",
+          "primitive_calls": 14,
+          "calls": 14,
+          "self_seconds": 3.94e-05,
+          "cumulative_seconds": 0.0044893
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 243,
+          "function": "iter_legal_actions_from_position",
+          "primitive_calls": 181,
+          "calls": 181,
+          "self_seconds": 0.0001662,
+          "cumulative_seconds": 0.0039563
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 262,
+          "function": "legal_actions_from_position",
+          "primitive_calls": 14,
+          "calls": 14,
+          "self_seconds": 2.1700000000000002e-05,
+          "cumulative_seconds": 0.0027191000000000003
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 229,
+          "function": "_is_legal",
+          "primitive_calls": 189,
+          "calls": 189,
+          "self_seconds": 0.00013570000000000002,
+          "cumulative_seconds": 0.0022
+        },
+        {
+          "file": "generic_chess/core/transition.py",
+          "line": 129,
+          "function": "_transition",
+          "primitive_calls": 14,
+          "calls": 14,
+          "self_seconds": 3.63e-05,
+          "cumulative_seconds": 0.0016837
+        },
+        {
+          "file": "generic_chess/core/coordinates.py",
+          "line": 58,
+          "function": "_shape",
+          "primitive_calls": 1107,
+          "calls": 1107,
+          "self_seconds": 0.00032480000000000003,
+          "cumulative_seconds": 0.0013762000000000002
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 98,
+          "function": "_expanded_pseudo_actions",
+          "primitive_calls": 221,
+          "calls": 221,
+          "self_seconds": 0.00014110000000000001,
+          "cumulative_seconds": 0.0012398
+        },
+        {
+          "file": "generic_chess/core/coordinates.py",
+          "line": 84,
+          "function": "square_to_index",
+          "primitive_calls": 854,
+          "calls": 854,
+          "self_seconds": 0.00015460000000000002,
+          "cumulative_seconds": 0.0012126
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 142,
+          "function": "_apply_action_unchecked",
+          "primitive_calls": 203,
+          "calls": 203,
+          "self_seconds": 0.0002925,
+          "cumulative_seconds": 0.0011049
+        },
+        {
+          "file": "generic_chess/core/terminal.py",
+          "line": 244,
+          "function": "_terminal_from_parts",
+          "primitive_calls": 15,
+          "calls": 15,
+          "self_seconds": 6.86e-05,
+          "cumulative_seconds": 0.0009892
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 269,
+          "function": "has_legal_action",
+          "primitive_calls": 15,
+          "calls": 15,
+          "self_seconds": 2.72e-05,
+          "cumulative_seconds": 0.0008572
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 26,
+          "function": "_piece_actions",
+          "primitive_calls": 32,
+          "calls": 32,
+          "self_seconds": 0.00020940000000000002,
+          "cumulative_seconds": 0.0007927
+        },
+        {
+          "file": "generic_chess/core/identity.py",
+          "line": 109,
+          "function": "position_identity_key",
+          "primitive_calls": 43,
+          "calls": 43,
+          "self_seconds": 1.34e-05,
+          "cumulative_seconds": 0.0007442000000000001
+        },
+        {
+          "file": "generic_chess/core/identity.py",
+          "line": 91,
+          "function": "position_identity",
+          "primitive_calls": 43,
+          "calls": 43,
+          "self_seconds": 6.86e-05,
+          "cumulative_seconds": 0.0007308000000000001
+        },
+        {
+          "file": "generic_chess/core/attacks.py",
+          "line": 58,
+          "function": "is_square_attacked",
+          "primitive_calls": 204,
+          "calls": 204,
+          "self_seconds": 0.0004305,
+          "cumulative_seconds": 0.0006599
+        },
+        {
+          "file": "scripts/generic_session_win_proof.py",
+          "line": 51,
+          "function": "choices",
+          "primitive_calls": 17,
+          "calls": 17,
+          "self_seconds": 2.2800000000000002e-05,
+          "cumulative_seconds": 0.0006377
+        },
+        {
+          "file": "generic_chess/core/coordinates.py",
+          "line": 42,
+          "function": "__post_init__",
+          "primitive_calls": 1107,
+          "calls": 1107,
+          "self_seconds": 0.0003909,
+          "cumulative_seconds": 0.0006186000000000001
+        },
+        {
+          "file": "generic_chess/core/keys.py",
+          "line": 16,
+          "function": "position_key",
+          "primitive_calls": 43,
+          "calls": 43,
+          "self_seconds": 0.0001598,
+          "cumulative_seconds": 0.0005661
+        },
+        {
+          "file": "generic_chess/core/coordinates.py",
+          "line": 89,
+          "function": "index_to_square",
+          "primitive_calls": 253,
+          "calls": 253,
+          "self_seconds": 0.000127,
+          "cumulative_seconds": 0.0005162000000000001
+        },
+        {
+          "file": "generic_chess/core/attacks.py",
+          "line": 24,
+          "function": "anchor_square",
+          "primitive_calls": 204,
+          "calls": 204,
+          "self_seconds": 0.00010030000000000001,
+          "cumulative_seconds": 0.0005045000000000001
+        },
+        {
+          "file": "results/dev_aux/task1820/profile.py",
+          "line": 26,
+          "function": "frontier",
+          "primitive_calls": 3,
+          "calls": 3,
+          "self_seconds": 4.6e-06,
+          "cumulative_seconds": 0.0004968
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<built-in method builtins.isinstance>",
+          "primitive_calls": 8803,
+          "calls": 8803,
+          "self_seconds": 0.0004956,
+          "cumulative_seconds": 0.0004956
+        },
+        {
+          "file": "generic_chess/session/session.py",
+          "line": 93,
+          "function": "legal_actions",
+          "primitive_calls": 3,
+          "calls": 3,
+          "self_seconds": 2.4000000000000003e-06,
+          "cumulative_seconds": 0.0004912
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 317,
+          "function": "legal_actions",
+          "primitive_calls": 3,
+          "calls": 3,
+          "self_seconds": 5.500000000000001e-06,
+          "cumulative_seconds": 0.00047510000000000006
+        },
+        {
+          "file": "generic_chess/core/movegen.py",
+          "line": 289,
+          "function": "iter_legal_actions",
+          "primitive_calls": 22,
+          "calls": 22,
+          "self_seconds": 1.1200000000000001e-05,
+          "cumulative_seconds": 0.00046960000000000003
+        },
+        {
+          "file": "__init__.py",
+          "line": 183,
+          "function": "dumps",
+          "primitive_calls": 76,
+          "calls": 76,
+          "self_seconds": 7.36e-05,
+          "cumulative_seconds": 0.0003777
+        },
+        {
+          "file": "generic_chess/core/identity.py",
+          "line": 124,
+          "function": "repetition_identity_key",
+          "primitive_calls": 15,
+          "calls": 15,
+          "self_seconds": 4.6e-06,
+          "cumulative_seconds": 0.0003391
+        },
+        {
+          "file": "generic_chess/core/identity.py",
+          "line": 114,
+          "function": "repetition_identity",
+          "primitive_calls": 15,
+          "calls": 15,
+          "self_seconds": 1.0500000000000001e-05,
+          "cumulative_seconds": 0.0003345
+        },
+        {
+          "file": "generic_chess/core/transition.py",
+          "line": 61,
+          "function": "_history_record",
+          "primitive_calls": 14,
+          "calls": 14,
+          "self_seconds": 6.26e-05,
+          "cumulative_seconds": 0.0003209
+        },
+        {
+          "file": "<string>",
+          "line": 2,
+          "function": "__hash__",
+          "primitive_calls": 338,
+          "calls": 338,
+          "self_seconds": 6.0100000000000004e-05,
+          "cumulative_seconds": 0.0003076
+        },
+        {
+          "file": "generic_chess/session/session.py",
+          "line": 70,
+          "function": "result",
+          "primitive_calls": 53,
+          "calls": 53,
+          "self_seconds": 1.91e-05,
+          "cumulative_seconds": 0.0002906
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 0.9186062999942806,
+  "new_native_go": 0,
+  "training_games": 0,
+  "new_exact_reference_nodes": 0,
+  "interpretation": "source-only research scope; counts show repeated checked parent generation after session frontier, but no fast-path safety/benefit or primary-current-source claim. Root admission/public independent verification remain mandatory."
+}

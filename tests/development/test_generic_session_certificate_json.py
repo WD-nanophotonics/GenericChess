@@ -49,3 +49,19 @@ def test_transport_limits_fail_without_running_a_prover():
     raw=export_session_certificate(current,cert)
     with pytest.raises(ValueError,match='limit'):decode_session_certificate(current.compiled,raw,max_nodes=1)
     with pytest.raises(ValueError,match='limit'):export_session_certificate(current,cert,max_nodes=1)
+
+
+
+def test_named_schema3_root_roundtrip_uses_actual_selected_setup():
+    from scripts.generic_proof_fixtures import krk_ruleset,krk_state
+    from generic_chess.rules import compile_ruleset_for_execution
+    from scripts.generic_session_setup import fresh_setup_session
+    rules=krk_ruleset(4);compiled=compile_ruleset_for_execution(rules)
+    _,current=fresh_setup_session(rules,krk_state(compiled,1,3,8,0),setup_key='artifact-named-root')
+    certificate=prove_session_win_pn(current,max_depth=1,seconds=3.).certificate
+    raw=export_session_certificate(current,certificate)
+    assert raw['root_record']['schema_version']==3 and raw['root_record']['initial_setup_key']=='artifact-named-root'
+    replayed,decoded=decode_session_certificate(current.compiled,json.loads(json.dumps(raw)))
+    assert replayed.to_record()==current.to_record() and verify_session_certificate(replayed,decoded,seconds=3.)['verified']
+    raw['root_record']['initial_setup_key']='unregistered-root'
+    with pytest.raises(ValueError):decode_session_certificate(current.compiled,raw)

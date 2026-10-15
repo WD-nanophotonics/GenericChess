@@ -68,3 +68,28 @@ def test_actual_terminal_session_is_reported_without_a_new_proof():
     current=session(claim(0,'WIN'));current.declare('claim')
     result=prove_session_win_pn(current,seconds=3.)
     assert result.status=='ALREADY_TERMINAL' and result.certificate is None and result.nodes==0
+
+
+@pytest.mark.parametrize('algorithm',['ANDOR','PN'])
+def test_losing_claim_prefix_cannot_hide_a_later_restart_defense(monkeypatch,algorithm):
+    from scripts.generic_session_win_proof import prove_session_win,SessionWinCertificate,SessionProofNode
+    from generic_chess.session.session import GameSession
+    current=session(claim(1,'LOSS','a_loss'),claim(1,'RESTART','z_restart'),k=0,b=2,r=10,turn=1)
+    record=current.to_record();state=current.state
+    # Reference outcomes use actual public declarations, independent of the
+    # shared choices helper used by prover/verifier.
+    loss=GameSession.replay(current.compiled,record);loss.declare('a_loss')
+    restart=GameSession.replay(current.compiled,record);restart.declare('z_restart')
+    assert loss.result.winner==0 and restart.result.winner is None and restart.result.declaration_outcome=='RESTART'
+    assert loss.state==restart.state==state
+    solver=prove_session_win if algorithm=='ANDOR' else prove_session_win_pn
+    def unneeded(self):raise AssertionError('later actual restart refutes before board frontier')
+    with monkeypatch.context() as patch:
+        patch.setattr(GameSession,'legal_actions',unneeded)
+        result=solver(current,target=0,max_depth=8,seconds=3.)
+    assert result.status=='UNKNOWN' and result.certificate is None and result.reason=='no_forced_win_in_exhausted_tree'
+    # A real target-winning LOSS leaf is insufficient for a partial AND root.
+    tree=SessionProofNode(1,((SessionChoice('DECLARATION',declaration_id='a_loss'),SessionProofNode(0,terminal=loss.result)),))
+    forged=SessionWinCertificate(current.compiled.ruleset_fingerprint,record,state,0,tree)
+    assert not verify_session_certificate(current,forged,seconds=3.)['verified']
+    assert current.to_record()==record and current.state==state

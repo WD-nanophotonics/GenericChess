@@ -1324,3 +1324,24 @@ Fresh named setup cannot import the existing balancedKRN roots: inventory and
 initial-side schema are real constraints, not permission gates. Exact scopes,
 failed assumptions and unchanged oldcaps are in PROGRESS_20261015_58.md.
 No default/Core/UI/PRIMARY writes, otherproject files, new workers or fees.
+
+
+DEV_AUX58 checkpoint correction and review: actual.25s-step candidate proof
+quarter1024visits/.0625s leaves both algorithms at1/5knownwins; UNIT64quarter16
+PN1/5vsANDOR0.144predeclaredcalls1.944s, no new labels/games. Therefore1sPN
+headline does not authorize changing the learner/fixed opponent or price claims.
+Dot reply1792057811.073829 read30f15b0d source/dependencies and found no concrete
+invalidating counterexample, did not execute tests/216calls/artifacts. Adopted
+its actual a_loss then z_restart regression and shared-enumeration limitation;
+full rawreply first private-saved/reconciled, no routine self-reply or workers.
+
+Actual normal-callback/internal cancellation bug was reproduced in3failed-before
+checks and fixed/published78e65d37, fullremoteSHA verified. No oldtrajectory
+relabel or new Native query. Historical exact reference no-progress rules now
+explicitly refuse before unsupported Runtime; actual legacy/semantic draw checks
+pass, allsix known historicalcaller compiled rules unaffected. No storedlabels
+or humanholdouts read. Sourceprofile wrong-alias measurement was preserved and
+corrected; duplicateparent generation count is not a safe speedup claim or a
+PRIMARY patch.176focused working+independentlyrestored checks and3savedJSON
+witness executions pass. Source/evidence archives have exactmember hashes/CRC;
+actualsensitive originals ignored, checked project outputs only published.

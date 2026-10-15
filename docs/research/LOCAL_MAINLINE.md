@@ -1,75 +1,67 @@
-# DEV_AUX current mainline —2026-10-15 segment57
+# DEV_AUX current mainline —2026-10-15 segment58
 
-Science OPEN. Own independent sidemission checkout only; PRIMARY owns sandbox
-search/backend/default/UI integration. User Public/checked-project publication
-and stop/resume decisions with reasons are current in own AGENTS. Historical
-PRIVATE experiments, source-origin exclusions and blanket no-AUX premise are
-superseded, not competing instructions. No extra Agents/workers/Goal.
+Science OPEN. Own sidemission only; PRIMARY search/backend/product/default/UI
+integration stays elsewhere. Current Public/publication/isolation decisions and
+causes in AGENTS. Exact sensitive originals ignored; checked project evidence
+may publish. No new Agents/workers/Goal or oldcap continuation.
 
 ## Current decision and reason
 
-User approved material prices forming advantage and fixed rule-win strategies
-redeeming it, learned only from actual rule W-L. Unknown remains unknown. Close
-specific defects before more experiments; repair-first work is now delivered.
-Retain the working mature-material/Generic-proof platform as a scoped research
-assay, not production or proof of universal/human chess values. Prior12parameter
-quantity reward is not the current objective; do not reopen it as cheap WDL.
+Keep the fixed GameState material/proof assay unchanged. Optional full-session
+PN is useful at1s on exposed reference cases, but its success does not improve
+candidate proof coverage at the existing quarter allocation. Do not switch the
+learner or its fixed opponent from this evidence, extend old caps or infer a
+price gain. Preserve actual W-L and UNKNOWN; no quantity reward or human fitting.
 
-## What the evidence now supports
+## Evidence carried forward
 
-Prior1791/1792 TRAIN selected R/N2 and conditional finite DEV gains were positive;
-B-to-D stays valid, but old A/C vs B/D changed both players and cannot isolate
-solver contribution. Corrected fixed-opponent1797/1798 C-to-D/interaction are now
-reported:0 /+.03125 with eight-family intervals[0,0] /[0,.09375], actual costs and
-W/L/UNKNOWN transfers retained. No confirmed general extra solver value.
+Prior fixed-opponent1797/1798 C-to-D0/+.03125(onefamily), and frozen1804H16/H24
+price gains+.015625/+.03125 with intervals including0, remain conditional.
+Old both-player A-to-B switches cannot isolate candidate solver contribution.
+Old1808 original1500s reference partial18/48 remainsclosed,30calls missing.
 
-Frozen successor1804 completed512 actual H16/H24 games/6312go/372.726s; prior
-TRAIN prices fixed, both roles/colors/opponents. H16 pricegain+.015625[0,.046875],
-H24+.03125[0,.078125], no observed reversal; paired change+.015625[0,.046875].
-Unknown70->six mostly real repetitiondraws. All256 paired first16 paths agree.
-254proof games and52tails physicallywin; complete case/ACK/journal/replay audit.
-Old1803inputs/caps unchanged. No new batch after repair-priority coordination.
+New1816 uses only its18COMPLETE exposed targets: three boards/nine profiles,
+fiveknownwins,216fixed algorithm/budget/repeat slots46.917s. At1s PN5/5vs
+ANDOR1/5; at5s both5/5. All36successful calls independently verify and execute.
+No new exactlabels/Nativego/training games; these are not independent36games.
 
-## Concrete engineering/semantic corrections
+Decision-changing1819: actual candidate quarter1024visits/.0625s gives both1/5,
+UNIT64 quarter16visits gives PN1/5vsANDOR0.144slots1.944s. This limits adoption;
+changing both policies would alter the fixed opponent. Visit units differ;
+wall/verification/overhead costs and exposed-case dependence remain explicit.
 
-Atomic terminal, existing-cursor and newly-verified-cursor cancellation now poll
-before action commitment; actual reasons preserved, no old run relabel. Historical
-exact reference rejects declaration domain rather than false strongLOSS; real
-RESTART/WIN counterexamples physically execute. It also retains full action
-history for compiled path rules after a same-board/ply/counts key collision was
-observed. Core's own key already distinguishes the histories and is unchanged.
-Known six direct historical caller families use neither affected domain; no
-labels or holdouts read/recomputed. Fixes separately published and remoteverified.
+## Implemented scope
 
-## Optional session proof boundary
+Optional typed session proof handles actual WIN/RESTART/LOSS, all defender
+choices, full record/history binding and decreasing-rank execution. Lazy target
+claims avoid irrelevant board frontiers; immediate savings are submillisecond.
+Strict JSON witnesses replay/verify/execute without proving. Decode is not
+verification; verifier shares choices/execute but independently replays state.
+Dot read30f15b0d source/dependencies, not execution; proposed actual a_loss then
+z_restart partial-AND regression passes bothmethods. No broad framework split.
 
-Separate SessionChoice/tree/certificate/cursor uses actual GameSession records,
-submit/declare/result, full roots and all defender board/owned-claim choices.
-WIN does not mutate Core; RESTART/no-winner refutes target win.13focusedsemantic
-checks include real counterexamples, full branch execution, promotion/history,
-schema3 setup replay, typed/stale/forged rejection. Old mutable/public GameState
-provers still reject declarations. No automatic Hybrid/product integration;
-arbitrary external GameState admission is not supported or reset to fresh.
+Normal player post-provider cancellation now returns noaction, retains actual
+cost and reports deadline crossing; old source/data preserved. Historical exact
+reference no-progress refusal is explicit UNRESOLVED rather than uncaught
+unsupported Runtime; known six caller rules unaffected, no label recomputation.
+Earlier declaration/history-key guards remain, Core unchanged.
 
-Finite reference1808 kept original1500s wallcap:18/48target calls,9complete root/
-profiles,2,020,864nodes, root3/NONE partial. Oneverified physical3-choice mate;
-only1of5completed winning-target references proved under1s. Thirtycalls missing,
-0Native/training. No complete-domain claim or continuation of exposed cap.
-Full public record replay oracle is costly; do not scale/repeat unchanged.
+Actual tests include capture/hand/drop mate, promotion/base type, pass defense,
+seven-ply perpetual history, no-progress and semantic action IDs.176focused tests
+pass both working and independently restored source; three stored witnesses
+consume without proof calls. Installed dependencies reused, no Nativebinary or
+fresh-machine/full-learning-run acceptance claim. Exact source/evidence ZIPs
+and per-member hashes in manifest58; incremental caller impact is directGit.
 
-## Next executable choice
+## Next useful work
 
-Use existing completed records/actual fixtures to test session-choice protocol
-and declaration/frontier cost, keeping independent verifier/full defenders.
-Measure whether a real available WIN claim needs any board-action enumeration
-before considering a lazy typed-choice adapter. Zero Native/training games.
-Alternative: one named initial-setup bridge for legitimate fresh roots, with
-record/fingerprint/history preserved; never private-state injection. A later
-isolated extra Bishop study is not an automatic backlog or new-game order.
+One opt-in actualSession player/normal-fallback entry, qualified before new
+learning or Nativegames. SourceGameState imports cannot silently become fresh
+Session records: named setups preserve default inventory and initialside0.
+OldKRN roots fail admission. A supported declared inventory/root law must be
+explicitly new, not old-history reset or a one-color replacement.
 
-Actual entry/dependency map: DEV_AUX_ENTRY_CONTRACT.md. Current full report57,
-COST/QA/FAILURES and exact archives retain source versions, cap and errors.
-120focused tests pass in working and independently restored source+data. First
-restore missed one static Chess fixture JSON; failure and correction preserved.
-Publication only origin/sidemission/projectSlack after actual-content review,
-full remoteSHA verification. Raw sensitive originals remain ignored/private.
+Bounded source profile finds1027parent legality re-generations on478frontiers;
+this is a measured work location, not a safe fast-path/speedup proof. Do not
+patch Core/PRIMARY or add another adapter merely to chase that count. Current
+entry map DEV_AUX_ENTRY_CONTRACT.md and SESSION_PROOF_CONTRACT.md explain limits.
