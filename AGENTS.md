@@ -317,3 +317,13 @@ Bounded visibility check2026-10-15: authenticated GitHub metadata PUBLIC;
 anonymous repository API and segment56 raw report both HTTP200. No visibility
 mutation was necessary. Available DEV_AUX local command records contained no
 visibility-change command; this does not identify a historical settings actor.
+
+## Reported advisor window change —2026-10-15 closing59
+
+Dot root1792063970.985749 reports a two-hour autonomous experiment window from
+a separate user conversation. This is recorded as advisor-origin transmittal,
+not a new direct user instruction in this window. Latest direct heartbeat here
+still says consult/obtain necessity assessment before a run expected>onehour;
+keep that gate until directly superseded. Current/planned short runs are unaffected.
+Do not pause, create approval queues or run a long batch merely for this report.
+No changed fees/access/visibility/writer boundary or90minute patrol follows it.

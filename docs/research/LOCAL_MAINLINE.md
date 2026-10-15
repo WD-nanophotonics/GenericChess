@@ -45,3 +45,10 @@ quarter bottleneck and censoring must be explicit. No result-driven old extensio
 Qualify an actual complete-policy entry/control before any changed allocation
 learning; preserve fixed opponent/roles/unknowns. Generic semantic scope and source
 closure take priority over more unchanged games. Exact executable tasks in memo.
+
+Closing59:223current working/restoredtests; Dot readcce source, not executed.
+Concrete lost eager/frontier/transition receipt fixed after2failed-before checks;
+future assay must log dict(decision.proof_stats).4421fullNativehistorycommands
+independently bound,14saved defense leaves physicallywin. Phase probes showproof
+.313s vsnormal.088/admission.008; next task reduces proof visits.1838derived
+threshold-progress obstacle is the begun feasibility step; no new price cohort.
