@@ -1,5 +1,5 @@
 {
-  "status": "VERIFIED_RESEARCH_CHECKPOINT_PENDING_FINAL_FINISH",
+  "status": "PASS_COMPLETED_RESEARCH_SAFE_CHECKPOINT",
   "science": "OPEN",
   "working_tests": 298,
   "initial_restored_tests": 298,
@@ -65,7 +65,7 @@
   "primary_read_only": true,
   "no_product_or_default_change": true,
   "actual_research_stop_or_block": false,
-  "manual_quality_review": "Independentactualstate/history/literalActor/Nativecommand/ACK/physicalrank/actualWDL checks; timechecker separate.",
+  "manual_quality_review": "PASS; actualevidence assessedindependently ofsessionstructure/timecheck",
   "independent_archived_public_replay": {
     "games": 888,
     "moves": 12717,
@@ -73,5 +73,15 @@
     "proof_searches": 0,
     "status": "PASS",
     "evidence": "task1882/archive_replay.json"
-  }
+  },
+  "accepted_finish": {
+    "id": "ceafb086-6414-432a-b6a8-65fbd1190abd",
+    "started_at": "2026-10-15T13:57:12.432393+00:00",
+    "ended_at": "2026-10-15T14:57:59.944832+00:00",
+    "elapsed_minutes": 60.792,
+    "reason": "safe_checkpoint",
+    "duration_gate_passed": true
+  },
+  "science_revision": "78f1c91486a805a43dd6ba744c5c259bc99ad70f",
+  "science_remote_and_anonymous_verified": true
 }
