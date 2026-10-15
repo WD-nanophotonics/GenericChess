@@ -175,6 +175,25 @@ class SessionStrategyCursor:
         if session.result.status is not SessionStatus.ONGOING or session.state.position.side_to_move!=self.certificate.target or not self.node.edges:return None
         return self.node.edges[0][0]
 
+    def observe(self,before,choice,after):
+        """Observe ONE already committed public edge; never mutate either session.
+
+        The owner executes once, then supplies immutable pre/post snapshots to
+        every player. Replaying the expected edge checks the full record, Core
+        history and Session-only result (claims need not change Core state).
+        An invalid observation leaves this cursor untouched.
+        """
+        self._bind(before)
+        matches=[n for c,n in self.node.edges if c==choice]
+        if len(matches)!=1:raise ValueError('choice outside proved session strategy')
+        expected=copy(before);execute(expected,choice)
+        if (after.compiled.ruleset_fingerprint!=self.certificate.ruleset_fingerprint
+            or not _same_state(expected.state,after.state)
+            or not _same_state(expected.to_record(),after.to_record())
+            or not _same_state(expected.result,after.result)):
+            raise ValueError('committed session edge mismatch')
+        self.state=after.state;self.record=after.to_record();self.node=matches[0]
+
     def commit(self,session,choice):
         self._bind(session);matches=[n for c,n in self.node.edges if c==choice]
         if len(matches)!=1:raise ValueError('choice outside proved session strategy')
