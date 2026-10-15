@@ -52,6 +52,11 @@
     {
       "kind": "cost_writer_schema",
       "recovery": "Tail exposes actual_new_native_go rather than actual_native_go; accounting corrected before any delivery."
+    },
+    {
+      "kind": "prepublication_report_encoding",
+      "cause": "Windows default cp1252 could not encode a report arrow; write truncated local report and a local commit recorded it before the shell stopped.",
+      "recovery": "No push occurred. Exact previously reviewed report recovered from its unique unreachable staged Git blob, written explicitly UTF8, size/content verified, and fixed by a normal follow-up commit. No force push or evidence deletion."
     }
   ]
 }
