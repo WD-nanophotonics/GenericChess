@@ -36,6 +36,8 @@ class ProofMaterialPlayer:
     evaluate(position, target) is material-only in the learning assay; the proof
     never receives it. Call observe(state, action) for EVERY committed move.
     The normal arm uses the identical class with proof_enabled=False.
+    Explicit cancellation returns no action. A time cutoff may retain the last
+    completed legal normal-search result, with actual elapsed cost and cause.
     """
     def __init__(self, compiled, evaluate, *, proof_enabled=True, max_depth=3, normal_search=None, proof_search=prove_win, proof_trigger=None, cursor_factory=None):
         if not isinstance(max_depth, int) or not 1 <= max_depth <= 64:
@@ -143,6 +145,10 @@ class ProofMaterialPlayer:
                     raise ValueError('invalid external search receipt')
                 search_nodes = used_nodes
                 action, source = selected, 'EXTERNAL_SEARCH'
+                # The provider is an atomic boundary. Preserve its actual work
+                # receipt before polling; cancellation must not dispatch its
+                # move, while a deadline retains the completed normal result.
+                total.poll()
                 # Mature engines may overshoot requested nodes. Preserve actual
                 # counts rather than silently clipping them into a fair cap.
                 cause = ('reported_node_overrun' if used_nodes > remaining_nodes
@@ -196,10 +202,12 @@ class ProofMaterialPlayer:
                     action, completed, source = best_action, depth, 'MATERIAL_SEARCH'
             except _Interrupted:
                 cause = search.reason
+                if cause == 'cancelled':action = None
             finally:
                 search_nodes = search.nodes
         except _Interrupted:
             cause = total.reason
+            if cause == 'cancelled':action = None
         finally:
             if rt is not None:
                 rt.assert_balanced()

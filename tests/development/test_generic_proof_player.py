@@ -1,5 +1,6 @@
 """Shared-resource fallback and actual proof continuation, not mocked wins."""
 from dataclasses import replace
+import pytest
 from scripts.generic_proof_fixtures import compile_krk,krk_state
 from scripts.generic_proof_player import ProofMaterialPlayer
 from generic_chess.core.transition import apply_action
@@ -160,3 +161,29 @@ def test_new_verified_cursor_cannot_commit_after_cancel_during_choice():
     d=p.choose(s,max_nodes=4096,seconds=3.,cancel=lambda:flag[0])
     assert flag[0] and d.exit_cause=='cancelled' and d.action is None
     assert p.cursor is None and d.proof_nodes>0 and d.verification_nodes>0
+
+
+@pytest.mark.parametrize('mode',['cancel','time'])
+def test_real_external_material_search_receipt_is_checked_after_callback(mode):
+    c=compile_krk();s=krk_state(c,0,15,10,0);flag=[False];clock=[0.];receipts=[]
+    def normal(state,nodes,seconds,cancel):
+        # Actual bounded material search, not a fake winning label or move.
+        result=ProofMaterialPlayer(c,material,proof_enabled=False,max_depth=1).choose(state,max_nodes=32,seconds=1.)
+        assert result.action in legal_actions(state,c) and result.search_nodes>0
+        receipts.append(result);flag[0]=True;clock[0]=2.
+        return result.action,result.search_nodes
+    p=ProofMaterialPlayer(c,material,proof_enabled=False,normal_search=normal)
+    result=p.choose(s,max_nodes=64,seconds=1.,cancel=(lambda:flag[0]) if mode=='cancel' else None,_clock=lambda:clock[0])
+    assert result.exit_cause==('cancelled' if mode=='cancel' else 'time_budget')
+    assert result.search_nodes==receipts[0].search_nodes and result.nodes==result.search_nodes
+    if mode=='cancel':assert result.action is None
+    else:assert result.action==receipts[0].action and result.source=='EXTERNAL_SEARCH'
+    assert p.cursor is None and s.ply_count==0
+
+
+def test_internal_material_cancel_does_not_return_a_move_for_commit():
+    c=compile_krk();s=krk_state(c,0,15,10,0);flag=[False]
+    def evaluate(position,target):
+        score=material(position,target);flag[0]=True;return score
+    result=ProofMaterialPlayer(c,evaluate,proof_enabled=False,max_depth=2).choose(s,max_nodes=64,seconds=1.,cancel=lambda:flag[0])
+    assert result.exit_cause=='cancelled' and result.action is None and result.search_nodes>0
