@@ -91,6 +91,25 @@ static PyObject *gc_test_avail_count(PyObject *self, PyObject *args) {
 }
 """
     module = module[:start] + original + wrapper + module[end:]
+    # The q0 exact-root search now also uses a fully rechecked reply hint.
+    # Inject at that real availability consumer too; retain the nested
+    # serializer failure and every original recovery/state assertion.
+    start = module.index("static int gc_quiet_reply_available(")
+    end = module.index("\nstatic ", start + 1)
+    original = module[start:end].replace(
+        "gc_quiet_reply_available(", "gc_test_reply_available_impl(", 1)
+    wrapper = """
+static int gc_quiet_reply_available(const GCSemanticRules *rules,
+    const GCSemanticPosition *position, int *ok, uint64_t *action, int *have) {
+    extern int gc_test_key_failure;
+    if(position->ply==gc_test_root_ply)gc_test_root_visits++;
+    gc_test_key_failure=position->ply==gc_test_root_ply &&
+        gc_test_root_visits>=gc_test_avail_after;
+    int result=gc_test_reply_available_impl(rules,position,ok,action,have);
+    gc_test_key_failure=0;return result;
+}
+"""
+    module = module[:start] + original + wrapper + module[end:]
     needle = '    {"semantic_make_checked", gc_semantic_make_checked, METH_VARARGS,'
     assert module.count(needle) == 1
     module = module.replace(
@@ -244,10 +263,11 @@ def test_required_serializer_error_and_discarded_view_contract(
     assert session.state is before and session._search_witnesses is witnesses
 
 
+@pytest.mark.parametrize("learned_ordering", [False, True])
 @pytest.mark.parametrize("root_windows", [False, True])
 @pytest.mark.parametrize("cache_enabled", [False, True])
 def test_nested_terminal_failure_is_not_completed_stalemate(
-    fault_kernel, monkeypatch, root_windows, cache_enabled,
+    fault_kernel, monkeypatch, root_windows, cache_enabled, learned_ordering,
 ):
     from dataclasses import replace
     from generic_chess.core.movement import LeapAtom
@@ -284,7 +304,7 @@ def test_nested_terminal_failure_is_not_completed_stalemate(
     def engine():
         return SemanticSearchEngine(
             compiled, rules, checkpoint=checkpoint,
-            ordering_checkpoint=checkpoint, ordering_min_depth=2,
+            ordering_checkpoint=checkpoint if learned_ordering else None, ordering_min_depth=2,
             ordering_cache_enabled=cache_enabled, tt_megabytes=1)
 
     def search(e, depth):

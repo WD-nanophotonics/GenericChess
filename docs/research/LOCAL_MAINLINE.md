@@ -212,18 +212,62 @@ complete scores/actions/PVs matching. No key-tag rewrite adoption. More hits,
 a symbolic identity correction and same-source finite agreement are not useful
 speed or all-domain qualification. Legacy-mode censors remain separate.
 
-Current next choice: one bounded NativeTT same-key depth-demotion counter,
-BEFORE any retention edit. Source allows shallower replacement solely because
-generation advances; direct demotion counts remain0runs, so this is an explicit
-new hypothesis, not an established causal explanation or an unchanged rerun.
-Use existing13parent/two-PV-move q0 sequences, <=104calls/300s whole/expected60s,
-full history/q/mode guards. If no material explanation, stop this route and
-inspect dominant q0 stage cost on existing wide inputs. If measured, choose
-one scoped retention ablation, not a broad cache rewrite or mandatory WDL proof.
-This supersedes the old0build/0query check-only task; all frozen observations
-and the search-first scheduling choice remain. Source/results/limits:
-CHECK_ONLY_TT_AND_HISTORY_CONTEXT_20261016.md. Normal C/API/prices/default/UI
-unchanged; AUX owns its separate solver/learning lane. Science remains OPEN.
+Current demotion/availability outcome: the prior counter is actually closed.
+78counter calls observe1,237same-key demotions after lookup-tag repair; the
+normal path has0. A single refusal of shallower stores gives.697465warm/fresh
+nodes at matchedD4parent/D2child, but.970031at the practical sameD4target
+(156calls each;18lower/8higher groups). All complete finite outputs/PVs match.
+The fresh36game persistent-TT panel adds noWIN:11W10L3UNKNOWN versus11W11L2UNKNOWN,
+sole LOSS-to-UNKNOWN. Keep lookup-tag/retention private; do not promote the
+matched-horizon speed to a general policy gain.
+
+Actual48call q0 attribution finds wide fullhash24-39percent and terminal25-35percent;
+PVbelow1percent, with nested/overlapping counters and measured overhead explicit.
+Reuse the existing fully checked reply helper per search/ply only in exact-root
+disabledq0. Supplied availability never replaces full-history terminal authority.
+144active/inactive controls match all non-time fields. Fresh31/32families retain
+248/256slots (9317actualterminaltail8slots),124fixed calls equal, cost ratios
+.9846/.9662/.9570/.9091 by4/8/12/16; one adverse small family is retained.
+62quartersecond pairs retain SAMEdepth/actions. Separate24game panel has
+7W7L2UNKNOWN BOTH, not equivalence/strength. 192EXPOSEDwide resource-curve calls
+give4greater/0smaller retaineddepth and2actionchanges at1s; both complete allD4
+at16s. No defaultq/price/API/TT/UI change or depth-as-quality inference.
+
+Final rebuilt product passes2691full tests. The original source-built fault
+fixture missed the new availability consumer: first actual fullrun2685pass/2fail.
+Both consumers now receive the same nested serializer injection, all original
+error/retained-depth/root/retry assertions remain, and plain-order cases extend
+coverage;13focused pass. Private preflight2687 is a separate earlier-source tier.
+62actual installed-product binding calls equal the frozen private prototype.
+3126retainedqueries/11292PVedges/60games1898edges/438literalreplies/16diagnostic
+choices/85fullroots pass normal search-disabled replay. Extracted-source
+qualification and immutable manifest are in the new report/archive receipt.
+
+Late all52planned-root diagnosis retains51complete one-ply frontiers/4824full
+Core/Native childstates and1actualtargettail. Literal immediatewin roots are
+3/51observed; twofinite families consume6/60game slots but only.111seconds.
+This diagnoses samplequota, not dominantcompute. Fullvalidation-census cost is
+not optimizedfilter cost. No existing root is discarded and no generatorfilter
+adopted; any futureconditional-root filter needs a new before-input protocol.
+
+Current next question is whether the unchanged fullpath TT misses useful finite
+cross-order reuse. A PRIVATE64call4096slot shadow leaves all results/history/TT
+unchanged:1,047,424visits,12,048candidate-safe NONLEAF and122,070leaf observations,
+769,878replacements. Counts are a bounded lower-bound sample, not actual saved
+work or cache correctness. Candidate condition M+ceil(remainingD/2)<repeatlimit,
+q0/exact coherent history/noautomatic is source-supported, NOT proven generic
+state equivalence. All physical/auxiliary/ply-sensitive declaration inputs matter.
+
+Before one optional cache prototype, capture a REAL same-position/absolute-length/
+different-history pair from an existing wide input; replay both FULL records
+and test the small finite continuation. Keep all history and fallback routes,
+no score/key substitution by default, no duplicate AUX solver or mandatory WDL
+framework. Stop if concrete pair/guard evidence contradicts the premise.
+Source/results/limits: DEPTH_RETENTION_AND_CHECKED_AVAILABILITY_20261016.md.
+This supersedes the old0run demotion task, preserves all frozen observations and
+the search-first selection. AUX66fixed6c9533a report was read only; its pooled
+price/equal-proof results do not authorize copying its solver/learner or pooling
+work units. Science remains OPEN.
 
 16normal/reconstruction-counter calls all non-time fields match: measured
 canonical sections are~1-2microseconds at the two testedq4hardstops, not their

@@ -3483,11 +3483,11 @@ static int gc_semantic_require_search_capacity(const GCSemanticRules *rules,
     return 1;
 }
 
-static int gc_semantic_terminal_status_known(const GCSemanticRules *rules,
+static int gc_semantic_terminal_status_with_availability(const GCSemanticRules *rules,
                                        const GCSemanticPosition *position,
-                                       int *winner_out, const uint64_t *known) {
+                                       int *winner_out, const uint64_t *known, int availability) {
     int ok = 1;
-    int has_action = gc_semantic_has_guarded_action(rules, position, &ok);
+    int has_action = availability >= 0 ? availability : gc_semantic_has_guarded_action(rules, position, &ok);
     if (!ok) return -1;
     if (!has_action) {
         if (gc_semantic_runtime_in_check(rules, position, position->side_to_move)) {
@@ -3525,6 +3525,11 @@ static int gc_semantic_terminal_status_known(const GCSemanticRules *rules,
     if (automatic == 1) return 0; /* PENDING precedes the rule ply limit. */
     if (position->ply >= rules->max_ply) return 4; /* max ply */
     return 0; /* ongoing */
+}
+
+static int gc_semantic_terminal_status_known(const GCSemanticRules *rules,
+ const GCSemanticPosition *position, int *winner_out, const uint64_t *known) {
+ return gc_semantic_terminal_status_with_availability(rules,position,winner_out,known,-1);
 }
 
 static int gc_semantic_terminal_status(const GCSemanticRules *rules,
@@ -4392,6 +4397,8 @@ typedef struct {
     uint64_t tt_collisions;
     uint64_t tt_previous_iteration_hits;
     uint64_t tt_current_iteration_hits;
+    uint64_t terminal_reply_action[GC_SEM_MAX_PLY+1];
+    int terminal_reply_have[GC_SEM_MAX_PLY+1];
     uint32_t tt_iteration_generation;
     GCSemanticTable *tt;
     GCSemanticProbeProfile ordering_profile;
@@ -5698,7 +5705,17 @@ static int gc_semantic_iterative_negamax(GCSemanticIterativeContext *ctx,
     if (ply > 0 && position->history_exact && position->history_len > 0 &&
         position->history_len == ctx->stack[ply-1].history_len + 1)
         known = position->history_digest[position->history_len-1];
-    int terminal = gc_semantic_terminal_status_known(ctx->rules, position, &winner, known);
+    int terminal;
+    /* A same-ply reply is only a physical-legality hint. Recheck it against
+     * this complete position; repetition, automatic adjudication and rule
+     * ply limits below remain authoritative on the full original history. */
+    if (ctx->root_window_pruning && ctx->qdepth_limit == 0) {
+        int ok = 1;
+        int available = gc_quiet_reply_available(ctx->rules, position, &ok,
+            &ctx->terminal_reply_action[ply], &ctx->terminal_reply_have[ply]);
+        terminal = ok ? gc_semantic_terminal_status_with_availability(
+            ctx->rules, position, &winner, known, available) : -1;
+    } else terminal = gc_semantic_terminal_status_known(ctx->rules, position, &winner, known);
     if (terminal < 0) {
         ctx->control = 4;
         return 0;

@@ -2952,3 +2952,76 @@ together; final full remoteSHA and the single actual Dot delivery receipt are
 recorded locally after publication. No claim that Dot has read or executed them.
 
 Actual extracted-source normal build/Python-S qualification passed:735hash/CRC members, identical3063query/phase receipts,9322PV,69games2498edges,3513literal replies,38choices/82states; total243.236s, no new studysearch. SharedCore/compiler/host limits and auxiliary3receipt gap remain.
+
+## PRIMARY — 2026-10-16 checked availability and TT demotion
+
+Segment60a5348a-ab42-4a55-9813-cdcca72baff2 starts UTC2026-10-15T22:08:59.425561.
+Science remains OPEN. Closing evidence and actual finish/delivery receipts are
+separate; this is not a claim of uninterrupted App uptime.
+
+PRIMARY measured the missing demotion mechanism (78calls/1,237demotions), then
+one retention ablation and realistic same-horizon control (156calls each).
+The large matched-horizon benefit shrinks to3percent work with8adverse groups.
+Fresh36games adds noWIN, onlyLOSS→UNKNOWN; lookup-tag/retention stays private.
+
+Measured q0 source cost supports a small shipped change: fully recheck a per-search
+same-ply physical reply hint in exact-root disabledq0 terminal availability.
+Original complete-history adjudication and all result/PV fields remain. Fresh
+31/32family transfer248/256calls preserves8actualterminal-tail slots,124fixed
+calls match; caller ratios.985/.966/.957/.909. Separate24games has identical
+7W7L2UNKNOWN categories. The longer192call curve crosses four depth thresholds,
+two actions; this does not establish strength. No q/TT/price/API/defaultflag/UI change.
+
+Actual rebuilt2691full tests and13required-error checks pass. Initial fullrun
+2685pass/2fail exposed fixture-only missing injection on the new consumer; both
+consumers are now injected/counted, all original assertions retained and four
+plain-order cases added. Private2687full run used then-baseline source in its
+source-building fixture, a separate tier. OSpytesttemp WinError5 and a signature
+edit setup error were corrected with distinct retained receipts; no SAC assertion,
+security edit, missing user consent or hidden retry loop.
+
+62installed-product calls match the private prototype. Final search-disabled
+normal reader checks3126queries,11292PVedges,60games/1898physicaledges,
+438literal replies,16diagnostic choices and85fullroots; no new search/proof/game.
+Shared Core/compiler/host limitations remain. The64call bounded shadow records
+12048candidate-safe nonleaf opportunities, without using cached scores/changing
+history. Next obtain a real paired full-history witness before one optional
+context experiment. Its guard is a hypothesis, not all-domain equivalence.
+
+DEV_AUX independently delivered66fixed6c9533a332e646a4b136428f17075ffa047ffd63.
+PRIMARY read the complete report only (SHA256b71c48ae58205ea2184790461bcaede333b2aa9ff97d124472f284f436817d1c),
+not final solver/learning source/tests/games/proofs. The owner reports pooled32TRAIN
+selection and fresh balanced-opponent confirmation27/256, equal-proof followup31/256;
+exact prices remain unstable, KRN4scope and shared-family/nonindependent limits
+are retained. Setup-only noWIN transport remains AUX opt-in; no PRIMARY adoption.
+These are owner findings, not PRIMARY replication or pooled scientific work units.
+
+Coordination: closing channel roots unchanged after1792092794.124699; full PRIMARY
+thread14unchanged replies; AUX64thread4replies including new66delivery1792104854.801789.
+Exact originals were saved BEFORE evaluation/reconcile. Current PRIMARY1hour run
+boundary is retained despite another-window2hour wording. No cross-checkout writes,
+duplicated agent/solver/learner, routine acknowledgement, requested quiet window,
+approval queue or invented crypto-identity challenge. Shared Slack account is routing,
+not independent process authentication.
+
+Efficiency evidence includes all original caps/slots/UNKNOWN/adverse roots,
+measured profile overhead, actual unequal game counts/costs and setup failures.
+The small checked helper reuses existing machinery; no diagnostics API or policy
+framework. Private raw-save overwrite review refusal was resolved by NEW exclusive
+fragments/complete originals, no resend/bypass. Non-escalated Git metadata read
+failed; authorized escalation confirmed sandbox/nonbare without configuration edits.
+
+Full report/data and immutable source/evidence:
+[DEPTH_RETENTION_AND_CHECKED_AVAILABILITY_20261016.md](../research/DEPTH_RETENTION_AND_CHECKED_AVAILABILITY_20261016.md).
+Require the tested publish entry, full remote SHA and fixed-version Dot link.
+Public availability/delivery do not prove Dot/AUX reading or execution. Actual
+publication and finish receipts remain in the ignored segment evidence.
+
+
+Late independent root-quota diagnosis completes51of52planned frontiers and4824
+full Core/Native child states. Threeobserved roots have a literal one-move win;
+twofinite families occupy6of60games but only~.111s. This supports quota awareness,
+not a new filter or removal of old labels. Late direct-Git Python-S addon replays
+all4824states in41.303s; main sealed1081member source-copy build/reader completes
+in190.544s. Both share Core/compiler/host; no new studysearch/game/proof. The seal
+is unchanged; all late addon data/source/receipts are explicitly outside it.
