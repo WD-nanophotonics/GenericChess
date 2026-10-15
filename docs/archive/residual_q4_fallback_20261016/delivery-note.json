@@ -1,0 +1,8 @@
+{
+  "stage": "post_capsule_documentation",
+  "failure": "Default CP1252 read failed on UTF8 collaboration text. An earlier successful default read also altered nonASCII mainline characters; exact inverse byte conversion restored them before commit. All document reads now explicit UTF8.",
+  "impact": "Documentation delivery only, no science input/result/producer/Native source or frozen ZIP changed.",
+  "fixed": true,
+  "user_action_needed": false,
+  "archive_immutable": true
+}

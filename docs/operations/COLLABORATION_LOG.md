@@ -2760,3 +2760,59 @@ quiet-window request. Ordinary concurrent load is a timing limit. Zero-query
 local seed/import/snapshot wrapper faults are preserved and corrected, rather
 than hidden or attributed to SAC; the accidentally re-evaluated old summary is
 byte-identical to its sealed archive. No user action or approval queue was needed.
+
+## 2026-10-16 PRIMARY residual-policy and component diagnosis
+
+PRIMARY_SANDBOX remains the sole writer of this checkout/sandbox. Product source
+is unchanged from e583f0a7772d2d19498e6db5ba26075f951b235f (NativeC1c855ae5).
+[Owner report](../research/RESIDUAL_Q4_FALLBACK_20261016.md) and checked capsule
+contain all protocols, generated rules, original observations/failures and costs.
+
+PRIMARY actually executed18callers/28phases,7forced-action games/220edges,
+40prospective fixed-opponent games/8families,78all-first-divergence node callers,
+64larger-board callers and16EXPOSED q0-only component games. Reconstruction16
+and changed-horizon24queries are separate diagnostics;9logic/2realcancel controls
+pass. Search-disabled normal replay verifies2770query receipts/
+5579PV edges plus63physical games/2170physical edges.
+Actual focused normal product checks pass38;2687full remains prior unchanged
+product qualification, not another execution. Source-only publication-copy
+rebuild/replay is a separate receipt, not an independent rules/WDL implementation.
+
+The reactive method gives9W4L0D3UNKNOWN, upfrontD2 gives10W1L0D5UNKNOWN against
+shared5W5L0D6UNKNOWN. New exposed q0-only gives9W1L1D5UNKNOWN, with both
+WIN-to-UNKNOWN andUNKNOWN-to-LOSS, so its larger finite net is not dominance.
+Gamecost646.391s versus602.089reactive/879.365upfront includes changed paths and
+scientific recording. No clean kernel speedup/strength/price-gain claim.
+Requested-policy priority was this frozen protocol, not proof q4 is best.
+The missing cheapD2-only component is now prepared0games/0queries; q-noise
+attribution is prepared backup. Neither is a new approval or solver framework.
+
+Actual coordination: complete primary11reply thread/AUX62/priorAUX20reply/
+AUX63parent+2replies were read with all pages; exact account-bearing originals
+stay ignored before reconcile. Own request remains receipt-tier associated,
+legacy payload/binding not byte-proved. No new Dot primary objection or routine
+acknowledgement was manufactured. Delivery uses one result post after verified push; its actual receipt stays private.
+
+DEV_AUX independently owns sidemission/Session solver-verifier-runtime-learning.
+PRIMARY source-read ONLY fixed04993d1b report and order_chambers.py. Its explicit
+capture-only finite-tree/order assumptions are coherent; no32input/game/proof
+execution was rerun. Dot's source review/caveats were read, not called execution.
+Finala579389622e50028c40e0ec4abb0e07baa51c162 was read as OWNER MESSAGE ONLY:
+negative price replication, corrected fixed-opponent proof-ON/OFF comparison and
+restore counts remain owner-reported. No final source/test/game/census adoption,
+merge, unit pooling, private-checkout/session/stop/memo writes or duplicate lane.
+
+Interpretive correction adopted: open finite-price plateaus do not by themselves
+rule out isolated boundary optima; the reported abstract caveat is not chess WDL.
+Mature numerical/selective/time-dependent trees are outside the restricted
+complete-tree lemma. No inference from that theorem is imposed on our generated
+promotion/drop/history domain. AUX proof-OFF evidence motivates honest component
+baselines but does not validate our Native results or supply a shared speed ratio.
+
+No Agent ownership conflict was observed. The hypothesis that a q4 prefix explains
+finite gain weakened under the pure-main component; that is a scientific
+correction, not an authority dispute. Ordinary concurrent load remains a timing
+limit. Reused runners/records/source/reader avoid duplicate solver/training;
+there is no controlled inter-Agent efficiency percentage. Wrapper attribute,
+quoting/conditional/template faults were fixed locally before affected queries.
+No OS/SAC/approval block or user intervention remains; raw failures are retained.

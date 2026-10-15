@@ -131,17 +131,43 @@ The old reserve node-export correction remains: API main nodes excludesqnodes;
 all1044old caller queries/366two-phase receipts were re-accounted, firstphase
 qnodes0 and combinedtotal<=1M, with original sealed data/caps/actions unchanged.
 
-Next discriminating choice: measure a q4-first disabled-q fallback ONLY on actual
-unrequested-policy q-hard stops with residual caller budget. The closed8-board
-decision trajectory has4such D1turns with.031-.468s spare versus55D1time stops;
-D1alone is not evidence of spare time. Freeze a tiny contrast on saved fullstates
-and retain a time-exhausted/literal-loss countercontrol before any implementation.
-Subtract actual firstphase main+q nodes and fullcallerwall, preserve cancellation,
-physical wins and requested-policy priority; never compare cross-objective scores.
-This is a changed ordering of phases, not a retry of the rejected unconditional
-upfrontD16reserve or automatic q/default switch. A second bounded alternative is
-attributing flagged canonical reconstruction cost on2actual hard-stop states,
-without dropping complete-PV/history authority or changing APIs merely to pass.
+Current residual result: all40prospective fixed-opponent games/8board8families
+close with lazy9W4L0D3UNKNOWN versus shared5W5L0D6UNKNOWN; upfrontD2 gives10W1L0D5UNKNOWN.
+Finite W-L deltas+5/+9 and family intervals are development evidence, not
+population strength; upfront includesW-to-UNKNOWN. Seven exposed forced-action
+games/220edges have actual conditional consequences, not all-defense WDL.
+All13first-divergence parents get78fixed-node callers/118phases:26first-q4 pairs
+agree in all non-time fields,0timecensors,14lazy action changes/26. New64callers
+on12/16boards yield2rescues on one12board root and0on16; a1.000733s outer
+overrun explicitly refuses execution. Residual rescue does not fix broad timeout.
+
+The separately frozen EXPOSED16-game pure-main component gives9W1L1D5UNKNOWN,
+finite delta+8, includingW-to-UNKNOWN andUNKNOWN-to-LOSS. Gamecost646.391s is
+above reactive602.089s and below upfront879.365s; no dominance. A paidq4 prefix
+is not established as necessary merely from the portfolio gain. This supersedes
+attributing improvement to phase mixing alone; it does not rewrite the original
+prospective40games/caps or turn component diagnosis into new validation.
+Both players kept the same static rule-derived prices; no price learning claim.
+
+Current next choice: test cheap fullydisabled-q D2-only on ALL eight exposed
+families/both roles against the original fixedq4 control, to distinguish the
+cappedD2 component from its q4 second phase. The runnable protocol is prepared
+with0games/0queries, not executed. Keep categorical outcomes/cost and no default.
+Backup: qdepth0 first-child descendant attribution on ALL13parents, separating
+forced evasions/captures/noncheckinginventory/check/terminal classes, with
+reserve/requested iterations separate. Prepared0builds/0queries; counts are not
+wall-cost proof. Only a changed, substantial premise justifies a selective pilot.
+
+16normal/reconstruction-counter calls all non-time fields match: measured
+canonical sections are~1-2microseconds at the two testedq4hardstops, not their
+bottleneck.24different-static-horizon queries do not restore1sD2; neither result
+licenses dropping completePV/history or silently claiming originalq4 completion.
+Whole-game/batch cost includes scientific recording; innercaller_seconds omits
+its final duplicate selected-record copy while execution eligibility follows it.
+All original fields/caps stay sealed; new node/wide/component outer clocks expose
+that distinction. Full source/evidence: RESIDUAL_Q4_FALLBACK_20261016.md.
+No product/API/evaluator/model/default/UI change. Science remains OPEN.
+
 This is backend search ordering, not AUX Session solver/runtime/model/training,
 no source adoption, changed canonical PV or semantic authority. CappedD2 remains
 a scoped alternative, not a new permanent policy. Do not infer utility from depth

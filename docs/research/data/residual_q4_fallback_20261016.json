@@ -1,0 +1,3454 @@
+{
+  "source_commit": "e583f0a7772d2d19498e6db5ba26075f951b235f",
+  "product_change": false,
+  "initial_callers": 18,
+  "initial_phase_queries": 28,
+  "initial_seconds": 20.488040800002636,
+  "initial_by_root": [
+    {
+      "case_index": 0,
+      "rows": [
+        {
+          "order": 0,
+          "mode": "q4",
+          "source": "q4_initial",
+          "completed_depth": 1,
+          "retained_policy": [
+            0,
+            8
+          ],
+          "caller_seconds": 0.9131712000089465,
+          "total_main_plus_q_nodes": 30713,
+          "diagnostic": "NONE_FOUND_ONE_PLY",
+          "execution_allowed": true
+        },
+        {
+          "order": 0,
+          "mode": "lazy_backup",
+          "source": "disabled_backup",
+          "completed_depth": 2,
+          "retained_policy": [
+            0,
+            0
+          ],
+          "caller_seconds": 0.9872116999904392,
+          "total_main_plus_q_nodes": 39456,
+          "diagnostic": "NONE_FOUND_ONE_PLY",
+          "execution_allowed": true
+        },
+        {
+          "order": 0,
+          "mode": "upfront_cap2",
+          "source": "upfront_disabled_initial",
+          "completed_depth": 2,
+          "retained_policy": [
+            0,
+            0
+          ],
+          "caller_seconds": 0.9357308000035118,
+          "total_main_plus_q_nodes": 32397,
+          "diagnostic": "NONE_FOUND_ONE_PLY",
+          "execution_allowed": true
+        },
+        {
+          "order": 1,
+          "mode": "upfront_cap2",
+          "source": "upfront_disabled_initial",
+          "completed_depth": 2,
+          "retained_policy": [
+            0,
+            0
+          ],
+          "caller_seconds": 0.9309786999947391,
+          "total_main_plus_q_nodes": 32397,
+          "diagnostic": "NONE_FOUND_ONE_PLY",
+          "execution_allowed": true
+        },
+        {
+          "order": 1,
+          "mode": "lazy_backup",
+          "source": "disabled_backup",
+          "completed_depth": 2,
+          "retained_policy": [
+            0,
+            0
+          ],
+          "caller_seconds": 0.9870587000041269,
+          "total_main_plus_q_nodes": 39996,
+          "diagnostic": "NONE_FOUND_ONE_PLY",
+          "execution_allowed": true
+        },
+        {
+          "order": 1,
+          "mode": "q4",
+          "source": "q4_initial",
+          "completed_depth": 1,
+          "retained_policy": [
+            0,
+            8
+          ],
+          "caller_seconds": 0.9227564000029815,
+          "total_main_plus_q_nodes": 30713,
+          "diagnostic": "NONE_FOUND_ONE_PLY",
+          "execution_allowed": true
+        }
+      ]
+    },
+    {
+      "case_index": 1,
+      "rows": [
+        {
+          "order": 0,
+          "mode": "q4",
+          "source": "q4_initial",
+          "completed_depth": 1,
+          "retained_policy": [
+            0,
+            8
+          ],
+          "caller_seconds": 0.5457939999905648,
+          "total_main_plus_q_nodes": 17976,
+          "diagnostic": "NONE_FOUND_ONE_PLY",
+          "execution_allowed": true
+        },
+        {
+          "order": 0,
+          "mode": "lazy_backup",
+          "source": "disabled_backup",
+          "completed_depth": 3,
+          "retained_policy": [
+            0,
+            0
+          ],
+          "caller_seconds": 0.9861662999901455,
+          "total_main_plus_q_nodes": 92981,
+          "diagnostic": "NONE_FOUND_ONE_PLY",
+          "execution_allowed": true
+        },
+        {
+          "order": 0,
+          "mode": "upfront_cap2",
+          "source": "upfront_disabled_initial",
+          "completed_depth": 2,
+          "retained_policy": [
+            0,
+            0
+          ],
+          "caller_seconds": 0.5530836999969324,
+          "total_main_plus_q_nodes": 19141,
+          "diagnostic": "NONE_FOUND_ONE_PLY",
+          "execution_allowed": true
+        },
+        {
+          "order": 1,
+          "mode": "upfront_cap2",
+          "source": "upfront_disabled_initial",
+          "completed_depth": 2,
+          "retained_policy": [
+            0,
+            0
+          ],
+          "caller_seconds": 0.5540110000001732,
+          "total_main_plus_q_nodes": 19141,
+          "diagnostic": "NONE_FOUND_ONE_PLY",
+          "execution_allowed": true
+        },
+        {
+          "order": 1,
+          "mode": "lazy_backup",
+          "source": "disabled_backup",
+          "completed_depth": 3,
+          "retained_policy": [
+            0,
+            0
+          ],
+          "caller_seconds": 0.9861383999959799,
+          "total_main_plus_q_nodes": 93854,
+          "diagnostic": "NONE_FOUND_ONE_PLY",
+          "execution_allowed": true
+        },
+        {
+          "order": 1,
+          "mode": "q4",
+          "source": "q4_initial",
+          "completed_depth": 1,
+          "retained_policy": [
+            0,
+            8
+          ],
+          "caller_seconds": 0.5400594000093406,
+          "total_main_plus_q_nodes": 17976,
+          "diagnostic": "NONE_FOUND_ONE_PLY",
+          "execution_allowed": true
+        }
+      ]
+    },
+    {
+      "case_index": 2,
+      "rows": [
+        {
+          "order": 0,
+          "mode": "q4",
+          "source": "q4_initial",
+          "completed_depth": 1,
+          "retained_policy": [
+            0,
+            8
+          ],
+          "caller_seconds": 0.9893446000060067,
+          "total_main_plus_q_nodes": 24126,
+          "diagnostic": "ONE_REPLY_WIN",
+          "execution_allowed": true
+        },
+        {
+          "order": 0,
+          "mode": "lazy_backup",
+          "source": "q4_initial",
+          "completed_depth": 1,
+          "retained_policy": [
+            0,
+            8
+          ],
+          "caller_seconds": 0.9893239000084577,
+          "total_main_plus_q_nodes": 24145,
+          "diagnostic": "ONE_REPLY_WIN",
+          "execution_allowed": true
+        },
+        {
+          "order": 0,
+          "mode": "upfront_cap2",
+          "source": "upfront_disabled_initial",
+          "completed_depth": 2,
+          "retained_policy": [
+            0,
+            0
+          ],
+          "caller_seconds": 0.9891993000055663,
+          "total_main_plus_q_nodes": 24534,
+          "diagnostic": "NONE_FOUND_ONE_PLY",
+          "execution_allowed": true
+        },
+        {
+          "order": 1,
+          "mode": "upfront_cap2",
+          "source": "upfront_disabled_initial",
+          "completed_depth": 2,
+          "retained_policy": [
+            0,
+            0
+          ],
+          "caller_seconds": 0.9893775999953505,
+          "total_main_plus_q_nodes": 24432,
+          "diagnostic": "NONE_FOUND_ONE_PLY",
+          "execution_allowed": true
+        },
+        {
+          "order": 1,
+          "mode": "lazy_backup",
+          "source": "q4_initial",
+          "completed_depth": 1,
+          "retained_policy": [
+            0,
+            8
+          ],
+          "caller_seconds": 0.989316899998812,
+          "total_main_plus_q_nodes": 24163,
+          "diagnostic": "ONE_REPLY_WIN",
+          "execution_allowed": true
+        },
+        {
+          "order": 1,
+          "mode": "q4",
+          "source": "q4_initial",
+          "completed_depth": 1,
+          "retained_policy": [
+            0,
+            8
+          ],
+          "caller_seconds": 0.9893520000041462,
+          "total_main_plus_q_nodes": 24128,
+          "diagnostic": "ONE_REPLY_WIN",
+          "execution_allowed": true
+        }
+      ]
+    }
+  ],
+  "controls": {
+    "deterministic": 9,
+    "actual_timer_cancellations": 2
+  },
+  "reconstruction": {
+    "queries": 16,
+    "non_time_mismatches": [],
+    "seconds": 8.98972810000123,
+    "rows": [
+      {
+        "case_index": 0,
+        "q": 0,
+        "order": 0,
+        "replay_sections": 3,
+        "replay_visits": 1420,
+        "replay_qvisits": 0,
+        "all_visits": 59361,
+        "visit_fraction": 0.02392142989504894,
+        "replay_seconds": 0.0069828,
+        "caller_seconds": 0.33702059999632183,
+        "caller_fraction": 0.020719208262273015,
+        "aborted_sections": 0
+      },
+      {
+        "case_index": 0,
+        "q": 0,
+        "order": 1,
+        "replay_sections": 3,
+        "replay_visits": 1420,
+        "replay_qvisits": 0,
+        "all_visits": 59361,
+        "visit_fraction": 0.02392142989504894,
+        "replay_seconds": 0.0070254,
+        "caller_seconds": 0.3296486999897752,
+        "caller_fraction": 0.021311778266433053,
+        "aborted_sections": 0
+      },
+      {
+        "case_index": 0,
+        "q": 4,
+        "order": 0,
+        "replay_sections": 1,
+        "replay_visits": 2,
+        "replay_qvisits": 1,
+        "all_visits": 30713,
+        "visit_fraction": 6.511900498160389e-05,
+        "replay_seconds": 1.3e-06,
+        "caller_seconds": 0.9297399000060977,
+        "caller_fraction": 1.3982405186563189e-06,
+        "aborted_sections": 0
+      },
+      {
+        "case_index": 0,
+        "q": 4,
+        "order": 1,
+        "replay_sections": 1,
+        "replay_visits": 2,
+        "replay_qvisits": 1,
+        "all_visits": 30713,
+        "visit_fraction": 6.511900498160389e-05,
+        "replay_seconds": 1.1e-06,
+        "caller_seconds": 0.9315752999973483,
+        "caller_fraction": 1.1807955835702505e-06,
+        "aborted_sections": 0
+      },
+      {
+        "case_index": 1,
+        "q": 0,
+        "order": 0,
+        "replay_sections": 3,
+        "replay_visits": 302,
+        "replay_qvisits": 0,
+        "all_visits": 34826,
+        "visit_fraction": 0.008671682076609429,
+        "replay_seconds": 0.0022425,
+        "caller_seconds": 0.23002879999694414,
+        "caller_fraction": 0.009748779283419254,
+        "aborted_sections": 0
+      },
+      {
+        "case_index": 1,
+        "q": 0,
+        "order": 1,
+        "replay_sections": 3,
+        "replay_visits": 302,
+        "replay_qvisits": 0,
+        "all_visits": 34826,
+        "visit_fraction": 0.008671682076609429,
+        "replay_seconds": 0.0022557,
+        "caller_seconds": 0.23135190000175498,
+        "caller_fraction": 0.009750082017839008,
+        "aborted_sections": 0
+      },
+      {
+        "case_index": 1,
+        "q": 4,
+        "order": 0,
+        "replay_sections": 1,
+        "replay_visits": 2,
+        "replay_qvisits": 1,
+        "all_visits": 17976,
+        "visit_fraction": 0.00011125945705384957,
+        "replay_seconds": 1.8e-06,
+        "caller_seconds": 0.5458054000046104,
+        "caller_fraction": 3.297878694466554e-06,
+        "aborted_sections": 0
+      },
+      {
+        "case_index": 1,
+        "q": 4,
+        "order": 1,
+        "replay_sections": 1,
+        "replay_visits": 2,
+        "replay_qvisits": 1,
+        "all_visits": 17976,
+        "visit_fraction": 0.00011125945705384957,
+        "replay_seconds": 1.7e-06,
+        "caller_seconds": 0.5520207000081427,
+        "caller_fraction": 3.079594660082355e-06,
+        "aborted_sections": 0
+      }
+    ]
+  },
+  "forced_actions": {
+    "complete": true,
+    "games": [
+      {
+        "case_index": 0,
+        "index": 0,
+        "origins": [
+          "q4"
+        ],
+        "kind": "PLY_CAP_UNKNOWN",
+        "initial_actor": 1,
+        "result": {
+          "status": "ongoing",
+          "winner": null,
+          "resigned_by": null,
+          "declaration_id": null,
+          "declared_by": null,
+          "declaration_outcome": null,
+          "declaration_score": null
+        },
+        "edges": 64,
+        "seconds": 89.81124660000205
+      },
+      {
+        "case_index": 0,
+        "index": 1,
+        "origins": [
+          "lazy_backup",
+          "upfront_cap2"
+        ],
+        "kind": "ACTUAL_RULE_TERMINAL",
+        "initial_actor": 1,
+        "result": {
+          "status": "checkmate",
+          "winner": 1,
+          "resigned_by": null,
+          "declaration_id": null,
+          "declared_by": null,
+          "declaration_outcome": null,
+          "declaration_score": null
+        },
+        "edges": 55,
+        "seconds": 77.23880360000476
+      },
+      {
+        "case_index": 1,
+        "index": 0,
+        "origins": [
+          "q4"
+        ],
+        "kind": "PLY_CAP_UNKNOWN",
+        "initial_actor": 1,
+        "result": {
+          "status": "ongoing",
+          "winner": null,
+          "resigned_by": null,
+          "declaration_id": null,
+          "declared_by": null,
+          "declaration_outcome": null,
+          "declaration_score": null
+        },
+        "edges": 64,
+        "seconds": 95.24858500000846
+      },
+      {
+        "case_index": 1,
+        "index": 1,
+        "origins": [
+          "lazy_backup"
+        ],
+        "kind": "ACTUAL_RULE_TERMINAL",
+        "initial_actor": 1,
+        "result": {
+          "status": "checkmate",
+          "winner": 1,
+          "resigned_by": null,
+          "declaration_id": null,
+          "declared_by": null,
+          "declaration_outcome": null,
+          "declaration_score": null
+        },
+        "edges": 3,
+        "seconds": 1.0969307000050321
+      },
+      {
+        "case_index": 1,
+        "index": 2,
+        "origins": [
+          "upfront_cap2"
+        ],
+        "kind": "ACTUAL_RULE_TERMINAL",
+        "initial_actor": 1,
+        "result": {
+          "status": "checkmate",
+          "winner": 1,
+          "resigned_by": null,
+          "declaration_id": null,
+          "declared_by": null,
+          "declaration_outcome": null,
+          "declaration_score": null
+        },
+        "edges": 23,
+        "seconds": 24.759110900005908
+      },
+      {
+        "case_index": 2,
+        "index": 0,
+        "origins": [
+          "q4",
+          "lazy_backup"
+        ],
+        "kind": "ACTUAL_RULE_TERMINAL",
+        "initial_actor": 0,
+        "result": {
+          "status": "checkmate",
+          "winner": 1,
+          "resigned_by": null,
+          "declaration_id": null,
+          "declared_by": null,
+          "declaration_outcome": null,
+          "declaration_score": null
+        },
+        "edges": 2,
+        "seconds": 0.06665860000066459
+      },
+      {
+        "case_index": 2,
+        "index": 1,
+        "origins": [
+          "upfront_cap2"
+        ],
+        "kind": "ACTUAL_RULE_TERMINAL",
+        "initial_actor": 0,
+        "result": {
+          "status": "checkmate",
+          "winner": 0,
+          "resigned_by": null,
+          "declaration_id": null,
+          "declared_by": null,
+          "declaration_outcome": null,
+          "declaration_score": null
+        },
+        "edges": 9,
+        "seconds": 7.920406700010062
+      }
+    ],
+    "seconds": 301.992198500011,
+    "scope": "Seven distinct selected actions from three exposed roots. Identical q4 continuation for both actors. Actual conditional events, not original policy comparison, independent WDL or strength."
+  },
+  "static_horizon": {
+    "queries": 24,
+    "missing": [],
+    "seconds": 77.33770289999666,
+    "rows": [
+      {
+        "case_index": 0,
+        "budget": 1.0,
+        "order": 0,
+        "arm": "q4",
+        "objective": "original_q4_hard_abort",
+        "depth": 1,
+        "reason": "qsearch_check_hard_limit",
+        "static_cap_leaves": null,
+        "caller_seconds": 0.9026142999937292,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 0,
+        "budget": 1.0,
+        "order": 0,
+        "arm": "static_cap",
+        "objective": "ordinary4_check8_static_horizon_NOT_original_q4",
+        "depth": 1,
+        "reason": "time_budget",
+        "static_cap_leaves": 3,
+        "caller_seconds": 0.9831281999940984,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 0,
+        "budget": 1.0,
+        "order": 0,
+        "arm": "q0",
+        "objective": "disabled_q",
+        "depth": 3,
+        "reason": "time_budget",
+        "static_cap_leaves": null,
+        "caller_seconds": 0.9823128999996698,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 0,
+        "budget": 1.0,
+        "order": 1,
+        "arm": "q0",
+        "objective": "disabled_q",
+        "depth": 3,
+        "reason": "time_budget",
+        "static_cap_leaves": null,
+        "caller_seconds": 0.9835243999987142,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 0,
+        "budget": 1.0,
+        "order": 1,
+        "arm": "static_cap",
+        "objective": "ordinary4_check8_static_horizon_NOT_original_q4",
+        "depth": 1,
+        "reason": "time_budget",
+        "static_cap_leaves": 3,
+        "caller_seconds": 0.9830378999904497,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 0,
+        "budget": 1.0,
+        "order": 1,
+        "arm": "q4",
+        "objective": "original_q4_hard_abort",
+        "depth": 1,
+        "reason": "qsearch_check_hard_limit",
+        "static_cap_leaves": null,
+        "caller_seconds": 0.9141645000054268,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 0,
+        "budget": 8.0,
+        "order": 0,
+        "arm": "q4",
+        "objective": "original_q4_hard_abort",
+        "depth": 1,
+        "reason": "qsearch_check_hard_limit",
+        "static_cap_leaves": null,
+        "caller_seconds": 0.9077071000065189,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 0,
+        "budget": 8.0,
+        "order": 0,
+        "arm": "static_cap",
+        "objective": "ordinary4_check8_static_horizon_NOT_original_q4",
+        "depth": 1,
+        "reason": "time_budget",
+        "static_cap_leaves": 42,
+        "caller_seconds": 7.9830813000007765,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 0,
+        "budget": 8.0,
+        "order": 0,
+        "arm": "q0",
+        "objective": "disabled_q",
+        "depth": 4,
+        "reason": "node_budget",
+        "static_cap_leaves": null,
+        "caller_seconds": 6.723368100007065,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 0,
+        "budget": 8.0,
+        "order": 1,
+        "arm": "q0",
+        "objective": "disabled_q",
+        "depth": 4,
+        "reason": "node_budget",
+        "static_cap_leaves": null,
+        "caller_seconds": 6.731190300008166,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 0,
+        "budget": 8.0,
+        "order": 1,
+        "arm": "static_cap",
+        "objective": "ordinary4_check8_static_horizon_NOT_original_q4",
+        "depth": 1,
+        "reason": "time_budget",
+        "static_cap_leaves": 42,
+        "caller_seconds": 7.983047899993835,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 0,
+        "budget": 8.0,
+        "order": 1,
+        "arm": "q4",
+        "objective": "original_q4_hard_abort",
+        "depth": 1,
+        "reason": "qsearch_check_hard_limit",
+        "static_cap_leaves": null,
+        "caller_seconds": 0.9020480000035604,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 1,
+        "budget": 1.0,
+        "order": 0,
+        "arm": "q4",
+        "objective": "original_q4_hard_abort",
+        "depth": 1,
+        "reason": "qsearch_check_hard_limit",
+        "static_cap_leaves": null,
+        "caller_seconds": 0.5319026000070153,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 1,
+        "budget": 1.0,
+        "order": 0,
+        "arm": "static_cap",
+        "objective": "ordinary4_check8_static_horizon_NOT_original_q4",
+        "depth": 1,
+        "reason": "time_budget",
+        "static_cap_leaves": 1,
+        "caller_seconds": 0.9829030999972019,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 1,
+        "budget": 1.0,
+        "order": 0,
+        "arm": "q0",
+        "objective": "disabled_q",
+        "depth": 3,
+        "reason": "time_budget",
+        "static_cap_leaves": null,
+        "caller_seconds": 0.9819537000003038,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 1,
+        "budget": 1.0,
+        "order": 1,
+        "arm": "q0",
+        "objective": "disabled_q",
+        "depth": 3,
+        "reason": "time_budget",
+        "static_cap_leaves": null,
+        "caller_seconds": 0.9825449000054505,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 1,
+        "budget": 1.0,
+        "order": 1,
+        "arm": "static_cap",
+        "objective": "ordinary4_check8_static_horizon_NOT_original_q4",
+        "depth": 1,
+        "reason": "time_budget",
+        "static_cap_leaves": 1,
+        "caller_seconds": 0.9829020000033779,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 1,
+        "budget": 1.0,
+        "order": 1,
+        "arm": "q4",
+        "objective": "original_q4_hard_abort",
+        "depth": 1,
+        "reason": "qsearch_check_hard_limit",
+        "static_cap_leaves": null,
+        "caller_seconds": 0.5379147999919951,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 1,
+        "budget": 8.0,
+        "order": 0,
+        "arm": "q4",
+        "objective": "original_q4_hard_abort",
+        "depth": 1,
+        "reason": "qsearch_check_hard_limit",
+        "static_cap_leaves": null,
+        "caller_seconds": 0.5403940999967745,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 1,
+        "budget": 8.0,
+        "order": 0,
+        "arm": "static_cap",
+        "objective": "ordinary4_check8_static_horizon_NOT_original_q4",
+        "depth": 2,
+        "reason": "time_budget",
+        "static_cap_leaves": 24,
+        "caller_seconds": 7.98300599999493,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 1,
+        "budget": 8.0,
+        "order": 0,
+        "arm": "q0",
+        "objective": "disabled_q",
+        "depth": 4,
+        "reason": "node_budget",
+        "static_cap_leaves": null,
+        "caller_seconds": 6.9044037999992725,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 1,
+        "budget": 8.0,
+        "order": 1,
+        "arm": "q0",
+        "objective": "disabled_q",
+        "depth": 4,
+        "reason": "node_budget",
+        "static_cap_leaves": null,
+        "caller_seconds": 6.886201000001165,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 1,
+        "budget": 8.0,
+        "order": 1,
+        "arm": "static_cap",
+        "objective": "ordinary4_check8_static_horizon_NOT_original_q4",
+        "depth": 2,
+        "reason": "time_budget",
+        "static_cap_leaves": 24,
+        "caller_seconds": 7.982973200007109,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      },
+      {
+        "case_index": 1,
+        "budget": 8.0,
+        "order": 1,
+        "arm": "q4",
+        "objective": "original_q4_hard_abort",
+        "depth": 1,
+        "reason": "qsearch_check_hard_limit",
+        "static_cap_leaves": null,
+        "caller_seconds": 0.5408949999982724,
+        "diagnostic": "NONE_FOUND_ONE_PLY"
+      }
+    ],
+    "decision": "Changed approximate horizon does not restore original requested q4. At1second neither hardstop root gets deeper retained iteration. At8seconds only second root reaches changed-objectiveD2; no immediate safety or utility gain established. No product/default adoption."
+  },
+  "prospective_policy": {
+    "planned_games": 40,
+    "planned_families": 8,
+    "actual_games": 40,
+    "missing": [],
+    "seconds": 1861.5549100000062,
+    "physical_edges": 1447,
+    "by_policy": {
+      "lazy": {
+        "planned_role_comparisons": 16,
+        "baseline_counts": {
+          "WIN": 5,
+          "LOSS": 5,
+          "DRAW": 0,
+          "UNKNOWN": 6
+        },
+        "candidate_counts": {
+          "WIN": 9,
+          "LOSS": 4,
+          "DRAW": 0,
+          "UNKNOWN": 3
+        },
+        "transitions": {
+          "WIN->WIN": 5,
+          "LOSS->LOSS": 4,
+          "UNKNOWN->WIN": 3,
+          "UNKNOWN->UNKNOWN": 3,
+          "LOSS->WIN": 1
+        },
+        "finite_event_net_delta": 5,
+        "mean_delta_per_role": 0.3125,
+        "family_bootstrap_95": [
+          0.0,
+          0.625
+        ],
+        "bootstrap_scope": "5000 resamples of eight families, both dependent roles kept together. Descriptive development interval; not randomized-causal inference, WDL or population strength.",
+        "pairs": [
+          {
+            "seed": 8311,
+            "role": 0,
+            "baseline": "WIN",
+            "candidate": "WIN",
+            "finite_event_delta": 0,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "IDENTICAL_PHYSICAL_PATH",
+              "common_rows": 5
+            },
+            "baseline_seconds": 4.1915938000020105,
+            "candidate_seconds": 4.192628100005095,
+            "same_path": true
+          },
+          {
+            "seed": 8311,
+            "role": 1,
+            "baseline": "LOSS",
+            "candidate": "LOSS",
+            "finite_event_delta": 0,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "IDENTICAL_PHYSICAL_PATH",
+              "common_rows": 5
+            },
+            "baseline_seconds": 4.1915938000020105,
+            "candidate_seconds": 4.360939499994856,
+            "same_path": true
+          },
+          {
+            "seed": 8312,
+            "role": 0,
+            "baseline": "LOSS",
+            "candidate": "LOSS",
+            "finite_event_delta": 0,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "IDENTICAL_PHYSICAL_PATH",
+              "common_rows": 28
+            },
+            "baseline_seconds": 32.08411209999758,
+            "candidate_seconds": 32.10229769999569,
+            "same_path": true
+          },
+          {
+            "seed": 8312,
+            "role": 1,
+            "baseline": "WIN",
+            "candidate": "WIN",
+            "finite_event_delta": 0,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "IDENTICAL_PHYSICAL_PATH",
+              "common_rows": 28
+            },
+            "baseline_seconds": 32.08411209999758,
+            "candidate_seconds": 32.19236789998831,
+            "same_path": true
+          },
+          {
+            "seed": 8313,
+            "role": 0,
+            "baseline": "WIN",
+            "candidate": "WIN",
+            "finite_event_delta": 0,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "IDENTICAL_PHYSICAL_PATH",
+              "common_rows": 15
+            },
+            "baseline_seconds": 15.559331399999792,
+            "candidate_seconds": 15.535508400003891,
+            "same_path": true
+          },
+          {
+            "seed": 8313,
+            "role": 1,
+            "baseline": "LOSS",
+            "candidate": "LOSS",
+            "finite_event_delta": 0,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "IDENTICAL_PHYSICAL_PATH",
+              "common_rows": 15
+            },
+            "baseline_seconds": 15.559331399999792,
+            "candidate_seconds": 15.543299400000251,
+            "same_path": true
+          },
+          {
+            "seed": 8314,
+            "role": 0,
+            "baseline": "UNKNOWN",
+            "candidate": "WIN",
+            "finite_event_delta": 1,
+            "baseline_kind": "PLY_CAP_UNKNOWN",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 18,
+              "actor": 0,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "qsearch_check_hard_limit",
+                "caller": 0.009310100009315647,
+                "action": {
+                  "pattern_id": "legacy_013",
+                  "geometry_id": "g14",
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 2,
+                    "rank": 2
+                  },
+                  "to_square": {
+                    "file": 2,
+                    "rank": 1
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "candidate": {
+                "source": "disabled_backup",
+                "depth": 4,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "time_budget",
+                "caller": 0.9870196000119904,
+                "action": {
+                  "pattern_id": "legacy_033",
+                  "geometry_id": "g23",
+                  "actor_type_id": "X",
+                  "from_square": {
+                    "file": 1,
+                    "rank": 0
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 1
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "before_sha256": "222b2f8a6ba2363e94639c6dd3607b98a5101810b9be87a6dc13914ed0378000"
+            },
+            "baseline_seconds": 86.45017599999846,
+            "candidate_seconds": 60.12800040000002,
+            "same_path": false
+          },
+          {
+            "seed": 8314,
+            "role": 1,
+            "baseline": "UNKNOWN",
+            "candidate": "UNKNOWN",
+            "finite_event_delta": 0,
+            "baseline_kind": "PLY_CAP_UNKNOWN",
+            "candidate_kind": "PLY_CAP_UNKNOWN",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 17,
+              "actor": 1,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "qsearch_check_hard_limit",
+                "caller": 0.7074258999928134,
+                "action": {
+                  "pattern_id": "legacy_029",
+                  "geometry_id": "g21",
+                  "actor_type_id": "X",
+                  "from_square": {
+                    "file": 0,
+                    "rank": 7
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 1
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "candidate": {
+                "source": "disabled_backup",
+                "depth": 3,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "time_budget",
+                "caller": 0.9865726999996696,
+                "action": {
+                  "pattern_id": "legacy_035",
+                  "geometry_id": "g24",
+                  "actor_type_id": "X",
+                  "from_square": {
+                    "file": 2,
+                    "rank": 1
+                  },
+                  "to_square": {
+                    "file": 4,
+                    "rank": 0
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "before_sha256": "f80deb000f03eaac938d3cd2c71b3b5183888f8354972a9978cd5f56b37047e0"
+            },
+            "baseline_seconds": 86.45017599999846,
+            "candidate_seconds": 88.20899220000138,
+            "same_path": false
+          },
+          {
+            "seed": 8315,
+            "role": 0,
+            "baseline": "UNKNOWN",
+            "candidate": "WIN",
+            "finite_event_delta": 1,
+            "baseline_kind": "PLY_CAP_UNKNOWN",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 0,
+              "actor": 0,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "qsearch_check_hard_limit",
+                "caller": 0.7483342999912566,
+                "action": {
+                  "pattern_id": "legacy_043",
+                  "geometry_id": "g28",
+                  "actor_type_id": "X",
+                  "from_square": {
+                    "file": 5,
+                    "rank": 4
+                  },
+                  "to_square": {
+                    "file": 2,
+                    "rank": 7
+                  },
+                  "promotion_target_id": "P"
+                }
+              },
+              "candidate": {
+                "source": "disabled_backup",
+                "depth": 3,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "time_budget",
+                "caller": 0.9857046999968588,
+                "action": {
+                  "pattern_id": "legacy_062",
+                  "geometry_id": "g29",
+                  "base_type_id": "X",
+                  "to_square": {
+                    "file": 6,
+                    "rank": 4
+                  }
+                }
+              },
+              "before_sha256": "5481923032f652d616bf56cce883d901d1b0d99bf149f0b65054e2ad1a763786"
+            },
+            "baseline_seconds": 61.70150860000285,
+            "candidate_seconds": 1.1715657000022475,
+            "same_path": false
+          },
+          {
+            "seed": 8315,
+            "role": 1,
+            "baseline": "UNKNOWN",
+            "candidate": "WIN",
+            "finite_event_delta": 1,
+            "baseline_kind": "PLY_CAP_UNKNOWN",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 3,
+              "actor": 1,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "qsearch_check_hard_limit",
+                "caller": 0.009537299993098713,
+                "action": {
+                  "pattern_id": "legacy_025",
+                  "geometry_id": "g2",
+                  "actor_type_id": "A",
+                  "from_square": {
+                    "file": 5,
+                    "rank": 7
+                  },
+                  "to_square": {
+                    "file": 5,
+                    "rank": 6
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "candidate": {
+                "source": "disabled_backup",
+                "depth": 4,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "time_budget",
+                "caller": 0.9863973000028636,
+                "action": {
+                  "pattern_id": "legacy_011",
+                  "geometry_id": "g13",
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 4,
+                    "rank": 7
+                  },
+                  "to_square": {
+                    "file": 5,
+                    "rank": 6
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "before_sha256": "139d6b8ae2dcb8896e5d489d2657d002da2e4a5d8f9cfb062f7f3e34fe5f2834"
+            },
+            "baseline_seconds": 61.70150860000285,
+            "candidate_seconds": 3.1960610000096494,
+            "same_path": false
+          },
+          {
+            "seed": 8316,
+            "role": 0,
+            "baseline": "LOSS",
+            "candidate": "LOSS",
+            "finite_event_delta": 0,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "IDENTICAL_PHYSICAL_PATH",
+              "common_rows": 48
+            },
+            "baseline_seconds": 62.20057729999826,
+            "candidate_seconds": 62.227622100006556,
+            "same_path": true
+          },
+          {
+            "seed": 8316,
+            "role": 1,
+            "baseline": "WIN",
+            "candidate": "WIN",
+            "finite_event_delta": 0,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "IDENTICAL_PHYSICAL_PATH",
+              "common_rows": 48
+            },
+            "baseline_seconds": 62.20057729999826,
+            "candidate_seconds": 63.448072400002275,
+            "same_path": true
+          },
+          {
+            "seed": 8317,
+            "role": 0,
+            "baseline": "UNKNOWN",
+            "candidate": "UNKNOWN",
+            "finite_event_delta": 0,
+            "baseline_kind": "PLY_CAP_UNKNOWN",
+            "candidate_kind": "PLY_CAP_UNKNOWN",
+            "first_difference": {
+              "kind": "IDENTICAL_PHYSICAL_PATH",
+              "common_rows": 64
+            },
+            "baseline_seconds": 93.37052359999507,
+            "candidate_seconds": 93.05357099999674,
+            "same_path": true
+          },
+          {
+            "seed": 8317,
+            "role": 1,
+            "baseline": "UNKNOWN",
+            "candidate": "UNKNOWN",
+            "finite_event_delta": 0,
+            "baseline_kind": "PLY_CAP_UNKNOWN",
+            "candidate_kind": "PLY_CAP_UNKNOWN",
+            "first_difference": {
+              "kind": "IDENTICAL_PHYSICAL_PATH",
+              "common_rows": 64
+            },
+            "baseline_seconds": 93.37052359999507,
+            "candidate_seconds": 93.02771109998866,
+            "same_path": true
+          },
+          {
+            "seed": 8318,
+            "role": 0,
+            "baseline": "WIN",
+            "candidate": "WIN",
+            "finite_event_delta": 0,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 0,
+              "actor": 0,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "qsearch_check_hard_limit",
+                "caller": 0.24329290000605397,
+                "action": {
+                  "pattern_id": "legacy_043",
+                  "geometry_id": "g28",
+                  "actor_type_id": "X",
+                  "from_square": {
+                    "file": 6,
+                    "rank": 4
+                  },
+                  "to_square": {
+                    "file": 7,
+                    "rank": 7
+                  },
+                  "promotion_target_id": "A"
+                }
+              },
+              "candidate": {
+                "source": "disabled_backup",
+                "depth": 5,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "time_budget",
+                "caller": 0.9870254000124987,
+                "action": {
+                  "pattern_id": "legacy_035",
+                  "geometry_id": "g24",
+                  "actor_type_id": "P",
+                  "from_square": {
+                    "file": 1,
+                    "rank": 7
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 6
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "before_sha256": "05113b729b14b4500e096276b3e94b5706b41f18004e8cba1753433b634ab883"
+            },
+            "baseline_seconds": 0.5785123999958159,
+            "candidate_seconds": 30.55501500000537,
+            "same_path": false
+          },
+          {
+            "seed": 8318,
+            "role": 1,
+            "baseline": "LOSS",
+            "candidate": "WIN",
+            "finite_event_delta": 2,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 1,
+              "actor": 1,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "qsearch_check_hard_limit",
+                "caller": 0.20386810001218691,
+                "action": {
+                  "pattern_id": "legacy_007",
+                  "geometry_id": "g11",
+                  "actor_type_id": "C",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 6
+                  },
+                  "to_square": {
+                    "file": 0,
+                    "rank": 0
+                  },
+                  "promotion_target_id": "A"
+                }
+              },
+              "candidate": {
+                "source": "disabled_backup",
+                "depth": 5,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "time_budget",
+                "caller": 0.986851800000295,
+                "action": {
+                  "pattern_id": "legacy_003",
+                  "geometry_id": "g1",
+                  "actor_type_id": "A",
+                  "from_square": {
+                    "file": 2,
+                    "rank": 2
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 1
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "before_sha256": "018451a1a56644b014105c3679bd8a4a86b1a2c39bf51a5d81f593eed09d1cc2"
+            },
+            "baseline_seconds": 0.5785123999958159,
+            "candidate_seconds": 3.14576240000315,
+            "same_path": false
+          }
+        ],
+        "common_prefix_requested_displacements": [],
+        "selected_sources": {
+          "requested_q4": 343,
+          "q4_initial": 100,
+          "physical_win": 13,
+          "disabled_backup": 21
+        },
+        "phase_termination_reasons": {
+          "time_budget": 435,
+          "root_immediate_win": 13,
+          "qsearch_check_hard_limit": 50
+        },
+        "actual_phase_queries": 498,
+        "caller_seconds": 440.48600559998886,
+        "main_nodes": 3786633,
+        "qnodes": 18168396,
+        "two_phase_callers": 21,
+        "executed_backups": 21,
+        "execution_disallowed": 0
+      },
+      "upfront": {
+        "planned_role_comparisons": 16,
+        "baseline_counts": {
+          "WIN": 5,
+          "LOSS": 5,
+          "DRAW": 0,
+          "UNKNOWN": 6
+        },
+        "candidate_counts": {
+          "WIN": 10,
+          "LOSS": 1,
+          "DRAW": 0,
+          "UNKNOWN": 5
+        },
+        "transitions": {
+          "WIN->WIN": 4,
+          "LOSS->WIN": 3,
+          "LOSS->UNKNOWN": 1,
+          "UNKNOWN->WIN": 3,
+          "UNKNOWN->UNKNOWN": 3,
+          "LOSS->LOSS": 1,
+          "WIN->UNKNOWN": 1
+        },
+        "finite_event_net_delta": 9,
+        "mean_delta_per_role": 0.5625,
+        "family_bootstrap_95": [
+          0.1875,
+          0.875
+        ],
+        "bootstrap_scope": "5000 resamples of eight families, both dependent roles kept together. Descriptive development interval; not randomized-causal inference, WDL or population strength.",
+        "pairs": [
+          {
+            "seed": 8311,
+            "role": 0,
+            "baseline": "WIN",
+            "candidate": "WIN",
+            "finite_event_delta": 0,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "IDENTICAL_PHYSICAL_PATH",
+              "common_rows": 5
+            },
+            "baseline_seconds": 4.1915938000020105,
+            "candidate_seconds": 4.247561099997256,
+            "same_path": true
+          },
+          {
+            "seed": 8311,
+            "role": 1,
+            "baseline": "LOSS",
+            "candidate": "WIN",
+            "finite_event_delta": 2,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 3,
+              "actor": 1,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "time_budget",
+                "caller": 0.9861587999912445,
+                "action": {
+                  "pattern_id": "legacy_051",
+                  "geometry_id": "g4",
+                  "actor_type_id": "B",
+                  "from_square": {
+                    "file": 0,
+                    "rank": 0
+                  },
+                  "to_square": {
+                    "file": 1,
+                    "rank": 0
+                  },
+                  "promotion_target_id": "P"
+                }
+              },
+              "candidate": {
+                "source": "upfront_disabled_initial",
+                "depth": 2,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "completed",
+                "caller": 0.9861994999955641,
+                "action": {
+                  "pattern_id": "legacy_065",
+                  "geometry_id": "g31",
+                  "base_type_id": "P",
+                  "to_square": {
+                    "file": 1,
+                    "rank": 4
+                  }
+                }
+              },
+              "before_sha256": "dbfe20dc4e8bff1e8cc3b87d448b6b1a82575c4734a8143302649e01d001d04e"
+            },
+            "baseline_seconds": 4.1915938000020105,
+            "candidate_seconds": 61.990606099992874,
+            "same_path": false
+          },
+          {
+            "seed": 8312,
+            "role": 0,
+            "baseline": "LOSS",
+            "candidate": "UNKNOWN",
+            "finite_event_delta": 1,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "PLY_CAP_UNKNOWN",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 22,
+              "actor": 0,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "time_budget",
+                "caller": 0.9865314999915427,
+                "action": {
+                  "pattern_id": "legacy_075",
+                  "geometry_id": "g36",
+                  "base_type_id": "P",
+                  "to_square": {
+                    "file": 1,
+                    "rank": 0
+                  }
+                }
+              },
+              "candidate": {
+                "source": "upfront_disabled_initial",
+                "depth": 2,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "completed",
+                "caller": 0.9864807999983896,
+                "action": {
+                  "pattern_id": "legacy_016",
+                  "geometry_id": "g16",
+                  "actor_type_id": "C",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 1
+                  },
+                  "to_square": {
+                    "file": 1,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "before_sha256": "e41b44b06de3d0725c1470cf41ddc80eed2d35810a44b4bec23f65418038cb57"
+            },
+            "baseline_seconds": 32.08411209999758,
+            "candidate_seconds": 97.15503480000189,
+            "same_path": false
+          },
+          {
+            "seed": 8312,
+            "role": 1,
+            "baseline": "WIN",
+            "candidate": "WIN",
+            "finite_event_delta": 0,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "IDENTICAL_PHYSICAL_PATH",
+              "common_rows": 28
+            },
+            "baseline_seconds": 32.08411209999758,
+            "candidate_seconds": 33.49853630000143,
+            "same_path": true
+          },
+          {
+            "seed": 8313,
+            "role": 0,
+            "baseline": "WIN",
+            "candidate": "WIN",
+            "finite_event_delta": 0,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "IDENTICAL_PHYSICAL_PATH",
+              "common_rows": 15
+            },
+            "baseline_seconds": 15.559331399999792,
+            "candidate_seconds": 15.977203000002191,
+            "same_path": true
+          },
+          {
+            "seed": 8313,
+            "role": 1,
+            "baseline": "LOSS",
+            "candidate": "WIN",
+            "finite_event_delta": 2,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 13,
+              "actor": 1,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "time_budget",
+                "caller": 0.9864410000009229,
+                "action": {
+                  "pattern_id": "legacy_053",
+                  "geometry_id": "g32",
+                  "actor_type_id": "X",
+                  "from_square": {
+                    "file": 7,
+                    "rank": 6
+                  },
+                  "to_square": {
+                    "file": 4,
+                    "rank": 3
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "candidate": {
+                "source": "upfront_disabled_initial",
+                "depth": 2,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "completed",
+                "caller": 0.9863325999904191,
+                "action": {
+                  "pattern_id": "legacy_069",
+                  "geometry_id": "g34",
+                  "base_type_id": "B",
+                  "to_square": {
+                    "file": 5,
+                    "rank": 0
+                  }
+                }
+              },
+              "before_sha256": "81fd8da55c26bfc92261406595e12bbe66e3e8cda3592becab026b9df5022bc1"
+            },
+            "baseline_seconds": 15.559331399999792,
+            "candidate_seconds": 88.16696299999603,
+            "same_path": false
+          },
+          {
+            "seed": 8314,
+            "role": 0,
+            "baseline": "UNKNOWN",
+            "candidate": "WIN",
+            "finite_event_delta": 1,
+            "baseline_kind": "PLY_CAP_UNKNOWN",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 18,
+              "actor": 0,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "qsearch_check_hard_limit",
+                "caller": 0.009310100009315647,
+                "action": {
+                  "pattern_id": "legacy_013",
+                  "geometry_id": "g14",
+                  "actor_type_id": "K",
+                  "from_square": {
+                    "file": 2,
+                    "rank": 2
+                  },
+                  "to_square": {
+                    "file": 2,
+                    "rank": 1
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "candidate": {
+                "source": "upfront_disabled_initial",
+                "depth": 2,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "completed",
+                "caller": 0.02219429999240674,
+                "action": {
+                  "pattern_id": "legacy_029",
+                  "geometry_id": "g21",
+                  "actor_type_id": "X",
+                  "from_square": {
+                    "file": 7,
+                    "rank": 2
+                  },
+                  "to_square": {
+                    "file": 6,
+                    "rank": 4
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "before_sha256": "222b2f8a6ba2363e94639c6dd3607b98a5101810b9be87a6dc13914ed0378000"
+            },
+            "baseline_seconds": 86.45017599999846,
+            "candidate_seconds": 41.701881599990884,
+            "same_path": false
+          },
+          {
+            "seed": 8314,
+            "role": 1,
+            "baseline": "UNKNOWN",
+            "candidate": "UNKNOWN",
+            "finite_event_delta": 0,
+            "baseline_kind": "PLY_CAP_UNKNOWN",
+            "candidate_kind": "PLY_CAP_UNKNOWN",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 17,
+              "actor": 1,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "qsearch_check_hard_limit",
+                "caller": 0.7074258999928134,
+                "action": {
+                  "pattern_id": "legacy_029",
+                  "geometry_id": "g21",
+                  "actor_type_id": "X",
+                  "from_square": {
+                    "file": 0,
+                    "rank": 7
+                  },
+                  "to_square": {
+                    "file": 3,
+                    "rank": 1
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "candidate": {
+                "source": "upfront_disabled_initial",
+                "depth": 2,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "completed",
+                "caller": 0.7095167999941623,
+                "action": {
+                  "pattern_id": "legacy_054",
+                  "geometry_id": "g27",
+                  "base_type_id": "A",
+                  "to_square": {
+                    "file": 3,
+                    "rank": 0
+                  }
+                }
+              },
+              "before_sha256": "f80deb000f03eaac938d3cd2c71b3b5183888f8354972a9978cd5f56b37047e0"
+            },
+            "baseline_seconds": 86.45017599999846,
+            "candidate_seconds": 86.66378259999328,
+            "same_path": false
+          },
+          {
+            "seed": 8315,
+            "role": 0,
+            "baseline": "UNKNOWN",
+            "candidate": "WIN",
+            "finite_event_delta": 1,
+            "baseline_kind": "PLY_CAP_UNKNOWN",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 0,
+              "actor": 0,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "qsearch_check_hard_limit",
+                "caller": 0.7483342999912566,
+                "action": {
+                  "pattern_id": "legacy_043",
+                  "geometry_id": "g28",
+                  "actor_type_id": "X",
+                  "from_square": {
+                    "file": 5,
+                    "rank": 4
+                  },
+                  "to_square": {
+                    "file": 2,
+                    "rank": 7
+                  },
+                  "promotion_target_id": "P"
+                }
+              },
+              "candidate": {
+                "source": "upfront_disabled_initial",
+                "depth": 2,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "completed",
+                "caller": 0.7646677999873646,
+                "action": {
+                  "pattern_id": "legacy_062",
+                  "geometry_id": "g29",
+                  "base_type_id": "X",
+                  "to_square": {
+                    "file": 6,
+                    "rank": 6
+                  }
+                }
+              },
+              "before_sha256": "5481923032f652d616bf56cce883d901d1b0d99bf149f0b65054e2ad1a763786"
+            },
+            "baseline_seconds": 61.70150860000285,
+            "candidate_seconds": 0.9865584999934072,
+            "same_path": false
+          },
+          {
+            "seed": 8315,
+            "role": 1,
+            "baseline": "UNKNOWN",
+            "candidate": "WIN",
+            "finite_event_delta": 1,
+            "baseline_kind": "PLY_CAP_UNKNOWN",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 9,
+              "actor": 1,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "qsearch_check_hard_limit",
+                "caller": 0.023693399998592213,
+                "action": {
+                  "pattern_id": "legacy_058",
+                  "geometry_id": "g29",
+                  "base_type_id": "A",
+                  "to_square": {
+                    "file": 5,
+                    "rank": 0
+                  }
+                }
+              },
+              "candidate": {
+                "source": "upfront_disabled_initial",
+                "depth": 2,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "completed",
+                "caller": 0.034144999997806735,
+                "action": {
+                  "pattern_id": "legacy_058",
+                  "geometry_id": "g29",
+                  "base_type_id": "A",
+                  "to_square": {
+                    "file": 6,
+                    "rank": 2
+                  }
+                }
+              },
+              "before_sha256": "40931fd34ab6d902f11e03b7913ec221c5458a6ed1e2d644bd4c0a936a1ccc03"
+            },
+            "baseline_seconds": 61.70150860000285,
+            "candidate_seconds": 27.25106589999632,
+            "same_path": false
+          },
+          {
+            "seed": 8316,
+            "role": 0,
+            "baseline": "LOSS",
+            "candidate": "LOSS",
+            "finite_event_delta": 0,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 46,
+              "actor": 0,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "time_budget",
+                "caller": 0.9913095000083558,
+                "action": {
+                  "pattern_id": "legacy_052",
+                  "geometry_id": "g26",
+                  "base_type_id": "A",
+                  "to_square": {
+                    "file": 1,
+                    "rank": 0
+                  }
+                }
+              },
+              "candidate": {
+                "source": "upfront_disabled_initial",
+                "depth": 2,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "completed",
+                "caller": 0.9871321999962674,
+                "action": {
+                  "pattern_id": "legacy_052",
+                  "geometry_id": "g26",
+                  "base_type_id": "A",
+                  "to_square": {
+                    "file": 5,
+                    "rank": 1
+                  }
+                }
+              },
+              "before_sha256": "9f24826fc78eeb3630831d20c543a2f58a0a39adbc54466d5d95a55fb48c9dbf"
+            },
+            "baseline_seconds": 62.20057729999826,
+            "candidate_seconds": 86.80003260000376,
+            "same_path": false
+          },
+          {
+            "seed": 8316,
+            "role": 1,
+            "baseline": "WIN",
+            "candidate": "UNKNOWN",
+            "finite_event_delta": -1,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "PLY_CAP_UNKNOWN",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 39,
+              "actor": 1,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "time_budget",
+                "caller": 0.9868401999992784,
+                "action": {
+                  "pattern_id": "legacy_003",
+                  "geometry_id": "g1",
+                  "actor_type_id": "A",
+                  "from_square": {
+                    "file": 1,
+                    "rank": 3
+                  },
+                  "to_square": {
+                    "file": 4,
+                    "rank": 3
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "candidate": {
+                "source": "upfront_disabled_initial",
+                "depth": 2,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "completed",
+                "caller": 0.987368800007971,
+                "action": {
+                  "pattern_id": "legacy_052",
+                  "geometry_id": "g26",
+                  "base_type_id": "A",
+                  "to_square": {
+                    "file": 5,
+                    "rank": 0
+                  }
+                }
+              },
+              "before_sha256": "50d1ba1d88e0046ae20c725b5a6f8611fec79693a6bff94662bd08e5de167f5b"
+            },
+            "baseline_seconds": 62.20057729999826,
+            "candidate_seconds": 100.11052400000335,
+            "same_path": false
+          },
+          {
+            "seed": 8317,
+            "role": 0,
+            "baseline": "UNKNOWN",
+            "candidate": "UNKNOWN",
+            "finite_event_delta": 0,
+            "baseline_kind": "PLY_CAP_UNKNOWN",
+            "candidate_kind": "PLY_CAP_UNKNOWN",
+            "first_difference": {
+              "kind": "IDENTICAL_PHYSICAL_PATH",
+              "common_rows": 64
+            },
+            "baseline_seconds": 93.37052359999507,
+            "candidate_seconds": 100.47919319999346,
+            "same_path": true
+          },
+          {
+            "seed": 8317,
+            "role": 1,
+            "baseline": "UNKNOWN",
+            "candidate": "UNKNOWN",
+            "finite_event_delta": 0,
+            "baseline_kind": "PLY_CAP_UNKNOWN",
+            "candidate_kind": "PLY_CAP_UNKNOWN",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 45,
+              "actor": 1,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "time_budget",
+                "caller": 0.9868082000029972,
+                "action": {
+                  "pattern_id": "legacy_037",
+                  "geometry_id": "g3",
+                  "actor_type_id": "A",
+                  "from_square": {
+                    "file": 4,
+                    "rank": 5
+                  },
+                  "to_square": {
+                    "file": 7,
+                    "rank": 2
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "candidate": {
+                "source": "upfront_disabled_initial",
+                "depth": 2,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "completed",
+                "caller": 0.9867576999968151,
+                "action": {
+                  "pattern_id": "legacy_052",
+                  "geometry_id": "g25",
+                  "base_type_id": "C",
+                  "to_square": {
+                    "file": 0,
+                    "rank": 0
+                  }
+                }
+              },
+              "before_sha256": "f7d94c2aab6f7273e69aae4a4ef5140461de5c17ff321633f1f3d11d9b03b5ad"
+            },
+            "baseline_seconds": 93.37052359999507,
+            "candidate_seconds": 100.01001280000492,
+            "same_path": false
+          },
+          {
+            "seed": 8318,
+            "role": 0,
+            "baseline": "WIN",
+            "candidate": "WIN",
+            "finite_event_delta": 0,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 0,
+              "actor": 0,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "qsearch_check_hard_limit",
+                "caller": 0.24329290000605397,
+                "action": {
+                  "pattern_id": "legacy_043",
+                  "geometry_id": "g28",
+                  "actor_type_id": "X",
+                  "from_square": {
+                    "file": 6,
+                    "rank": 4
+                  },
+                  "to_square": {
+                    "file": 7,
+                    "rank": 7
+                  },
+                  "promotion_target_id": "A"
+                }
+              },
+              "candidate": {
+                "source": "upfront_disabled_initial",
+                "depth": 2,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "completed",
+                "caller": 0.24339529999997467,
+                "action": {
+                  "pattern_id": "legacy_037",
+                  "geometry_id": "g25",
+                  "actor_type_id": "P",
+                  "from_square": {
+                    "file": 4,
+                    "rank": 5
+                  },
+                  "to_square": {
+                    "file": 5,
+                    "rank": 6
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "before_sha256": "05113b729b14b4500e096276b3e94b5706b41f18004e8cba1753433b634ab883"
+            },
+            "baseline_seconds": 0.5785123999958159,
+            "candidate_seconds": 31.93455130000075,
+            "same_path": false
+          },
+          {
+            "seed": 8318,
+            "role": 1,
+            "baseline": "LOSS",
+            "candidate": "WIN",
+            "finite_event_delta": 2,
+            "baseline_kind": "ACTUAL_RULE_TERMINAL",
+            "candidate_kind": "ACTUAL_RULE_TERMINAL",
+            "first_difference": {
+              "kind": "ACTION_DIFFERENCE",
+              "ply": 1,
+              "actor": 1,
+              "is_candidate_actor": true,
+              "baseline": {
+                "source": "q4_initial",
+                "depth": 1,
+                "retained_ordinary": 0,
+                "retained_check": 8,
+                "reason": "qsearch_check_hard_limit",
+                "caller": 0.20386810001218691,
+                "action": {
+                  "pattern_id": "legacy_007",
+                  "geometry_id": "g11",
+                  "actor_type_id": "C",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 6
+                  },
+                  "to_square": {
+                    "file": 0,
+                    "rank": 0
+                  },
+                  "promotion_target_id": "A"
+                }
+              },
+              "candidate": {
+                "source": "upfront_disabled_initial",
+                "depth": 2,
+                "retained_ordinary": 0,
+                "retained_check": 0,
+                "reason": "completed",
+                "caller": 0.21474660000239965,
+                "action": {
+                  "pattern_id": "legacy_057",
+                  "geometry_id": "g8",
+                  "actor_type_id": "B",
+                  "from_square": {
+                    "file": 3,
+                    "rank": 2
+                  },
+                  "to_square": {
+                    "file": 1,
+                    "rank": 1
+                  },
+                  "promotion_target_id": null
+                }
+              },
+              "before_sha256": "018451a1a56644b014105c3679bd8a4a86b1a2c39bf51a5d81f593eed09d1cc2"
+            },
+            "baseline_seconds": 0.5785123999958159,
+            "candidate_seconds": 2.391729700000724,
+            "same_path": false
+          }
+        ],
+        "common_prefix_requested_displacements": [],
+        "selected_sources": {
+          "requested_q4": 427,
+          "q4_initial": 112,
+          "physical_win": 11,
+          "upfront_disabled_initial": 129
+        },
+        "phase_termination_reasons": {
+          "completed": 332,
+          "time_budget": 528,
+          "root_immediate_win": 11,
+          "qsearch_check_hard_limit": 140
+        },
+        "actual_phase_queries": 1011,
+        "caller_seconds": 553.5109396999032,
+        "main_nodes": 2165432,
+        "qnodes": 22909195,
+        "two_phase_callers": 332,
+        "executed_backups": 0,
+        "execution_disallowed": 0
+      }
+    },
+    "game_cost_scope": "Physical baseline played once per family and reused for both role comparisons; pairs are correlated. Whole/game cost includes scientific recording. Caller cost excludes Core/audit/file saves. Changed trajectories are not same-work speed comparisons.",
+    "baseline_actual_games": [
+      {
+        "seed": 8311,
+        "result": {
+          "status": "checkmate",
+          "winner": 0,
+          "resigned_by": null,
+          "declaration_id": null,
+          "declared_by": null,
+          "declaration_outcome": null,
+          "declaration_score": null
+        },
+        "kind": "ACTUAL_RULE_TERMINAL",
+        "seconds": 4.1915938000020105,
+        "edges": 5
+      },
+      {
+        "seed": 8312,
+        "result": {
+          "status": "checkmate",
+          "winner": 1,
+          "resigned_by": null,
+          "declaration_id": null,
+          "declared_by": null,
+          "declaration_outcome": null,
+          "declaration_score": null
+        },
+        "kind": "ACTUAL_RULE_TERMINAL",
+        "seconds": 32.08411209999758,
+        "edges": 28
+      },
+      {
+        "seed": 8313,
+        "result": {
+          "status": "checkmate",
+          "winner": 0,
+          "resigned_by": null,
+          "declaration_id": null,
+          "declared_by": null,
+          "declaration_outcome": null,
+          "declaration_score": null
+        },
+        "kind": "ACTUAL_RULE_TERMINAL",
+        "seconds": 15.559331399999792,
+        "edges": 15
+      },
+      {
+        "seed": 8314,
+        "result": {
+          "status": "ongoing",
+          "winner": null,
+          "resigned_by": null,
+          "declaration_id": null,
+          "declared_by": null,
+          "declaration_outcome": null,
+          "declaration_score": null
+        },
+        "kind": "PLY_CAP_UNKNOWN",
+        "seconds": 86.45017599999846,
+        "edges": 64
+      },
+      {
+        "seed": 8315,
+        "result": {
+          "status": "ongoing",
+          "winner": null,
+          "resigned_by": null,
+          "declaration_id": null,
+          "declared_by": null,
+          "declaration_outcome": null,
+          "declaration_score": null
+        },
+        "kind": "PLY_CAP_UNKNOWN",
+        "seconds": 61.70150860000285,
+        "edges": 64
+      },
+      {
+        "seed": 8316,
+        "result": {
+          "status": "checkmate",
+          "winner": 1,
+          "resigned_by": null,
+          "declaration_id": null,
+          "declared_by": null,
+          "declaration_outcome": null,
+          "declaration_score": null
+        },
+        "kind": "ACTUAL_RULE_TERMINAL",
+        "seconds": 62.20057729999826,
+        "edges": 48
+      },
+      {
+        "seed": 8317,
+        "result": {
+          "status": "ongoing",
+          "winner": null,
+          "resigned_by": null,
+          "declaration_id": null,
+          "declared_by": null,
+          "declaration_outcome": null,
+          "declaration_score": null
+        },
+        "kind": "PLY_CAP_UNKNOWN",
+        "seconds": 93.37052359999507,
+        "edges": 64
+      },
+      {
+        "seed": 8318,
+        "result": {
+          "status": "checkmate",
+          "winner": 0,
+          "resigned_by": null,
+          "declaration_id": null,
+          "declared_by": null,
+          "declaration_outcome": null,
+          "declaration_score": null
+        },
+        "kind": "ACTUAL_RULE_TERMINAL",
+        "seconds": 0.5785123999958159,
+        "edges": 3
+      }
+    ]
+  },
+  "fixed_node_controls": {
+    "parents": 13,
+    "planned_callers": 78,
+    "actual_callers": 78,
+    "phase_queries": 118,
+    "missing": [],
+    "first_q4_non_time_mismatches": [],
+    "seconds": 85.58927930000937,
+    "time_censored_phases": 0,
+    "by_mode": {
+      "q4": {
+        "callers": 26,
+        "selected_sources": {
+          "q4_initial": 22,
+          "requested_q4": 4
+        },
+        "selected_depths": {
+          "1": 22,
+          "2": 4
+        },
+        "actual_outer_seconds": 23.65569250001863,
+        "total_main_plus_q": 992120,
+        "action_differences_from_q4": 0
+      },
+      "lazy_backup": {
+        "callers": 26,
+        "selected_sources": {
+          "q4_initial": 8,
+          "requested_q4": 4,
+          "disabled_backup": 14
+        },
+        "selected_depths": {
+          "1": 8,
+          "2": 4,
+          "4": 6,
+          "3": 8
+        },
+        "actual_outer_seconds": 29.250847699993756,
+        "total_main_plus_q": 1703936,
+        "action_differences_from_q4": 14
+      },
+      "upfront_cap2": {
+        "callers": 26,
+        "selected_sources": {
+          "upfront_disabled_initial": 22,
+          "requested_q4": 4
+        },
+        "selected_depths": {
+          "2": 26
+        },
+        "actual_outer_seconds": 23.673854200009373,
+        "total_main_plus_q": 999300,
+        "action_differences_from_q4": 20
+      }
+    }
+  },
+  "larger_boards": {
+    "callers": 64,
+    "missing": [],
+    "phase_queries": 66,
+    "seconds": 57.38963480001257,
+    "by_board_mode": [
+      {
+        "n": 12,
+        "mode": "q4",
+        "callers": 16,
+        "selected_sources": {
+          "q4_initial": 10,
+          "physical_win": 2,
+          "requested_q4": 4
+        },
+        "retained_depths": {
+          "1": 10,
+          "0": 2,
+          "2": 4
+        },
+        "phase_reasons": {
+          "qsearch_check_hard_limit": 2,
+          "time_budget": 12,
+          "root_immediate_win": 2
+        },
+        "execution_disallowed": 0,
+        "max_actual_outer_seconds": 0.9951521000039065,
+        "action_differences_from_q4": 0
+      },
+      {
+        "n": 12,
+        "mode": "lazy_backup",
+        "callers": 16,
+        "selected_sources": {
+          "disabled_backup": 2,
+          "q4_initial": 8,
+          "physical_win": 2,
+          "requested_q4": 4
+        },
+        "retained_depths": {
+          "3": 2,
+          "1": 8,
+          "0": 2,
+          "2": 4
+        },
+        "phase_reasons": {
+          "qsearch_check_hard_limit": 2,
+          "time_budget": 14,
+          "root_immediate_win": 2
+        },
+        "execution_disallowed": 0,
+        "max_actual_outer_seconds": 0.9938124000036623,
+        "action_differences_from_q4": 2
+      },
+      {
+        "n": 16,
+        "mode": "q4",
+        "callers": 16,
+        "selected_sources": {
+          "physical_win": 4,
+          "q4_initial": 8,
+          "requested_q4": 4
+        },
+        "retained_depths": {
+          "0": 4,
+          "1": 8,
+          "2": 4
+        },
+        "phase_reasons": {
+          "root_immediate_win": 4,
+          "time_budget": 12
+        },
+        "execution_disallowed": 1,
+        "max_actual_outer_seconds": 1.000733200009563,
+        "action_differences_from_q4": 0
+      },
+      {
+        "n": 16,
+        "mode": "lazy_backup",
+        "callers": 16,
+        "selected_sources": {
+          "physical_win": 4,
+          "q4_initial": 8,
+          "requested_q4": 4
+        },
+        "retained_depths": {
+          "0": 4,
+          "1": 8,
+          "2": 4
+        },
+        "phase_reasons": {
+          "root_immediate_win": 4,
+          "time_budget": 12
+        },
+        "execution_disallowed": 0,
+        "max_actual_outer_seconds": 0.9981979000003776,
+        "action_differences_from_q4": 0
+      }
+    ]
+  },
+  "q0_component": {
+    "scope": "Posthoc EXPOSED component baseline on all original eight families/two roles, existing q4 control reused. Not new validation or changed old outcomes.",
+    "planned_games": 16,
+    "actual_games": 16,
+    "missing": [],
+    "seconds": 655.1293105999939,
+    "physical_edges": 503,
+    "baseline_counts": {
+      "WIN": 5,
+      "LOSS": 5,
+      "DRAW": 0,
+      "UNKNOWN": 6
+    },
+    "candidate_counts": {
+      "WIN": 9,
+      "LOSS": 1,
+      "DRAW": 1,
+      "UNKNOWN": 5
+    },
+    "transitions": {
+      "WIN->WIN": 4,
+      "LOSS->UNKNOWN": 3,
+      "LOSS->DRAW": 1,
+      "WIN->UNKNOWN": 1,
+      "UNKNOWN->WIN": 4,
+      "UNKNOWN->LOSS": 1,
+      "UNKNOWN->UNKNOWN": 1,
+      "LOSS->WIN": 1
+    },
+    "finite_event_net_delta": 8,
+    "mean_delta_per_role": 0.5,
+    "family_bootstrap_95": [
+      0.25,
+      0.75
+    ],
+    "pairs": [
+      {
+        "seed": 8311,
+        "role": 0,
+        "baseline": "WIN",
+        "candidate": "WIN",
+        "finite_event_delta": 0,
+        "candidate_kind": "ACTUAL_RULE_TERMINAL",
+        "first_difference": {
+          "kind": "IDENTICAL_PHYSICAL_PATH",
+          "common_rows": 5
+        },
+        "candidate_seconds": 4.281620699999621,
+        "baseline_seconds": 4.1915938000020105
+      },
+      {
+        "seed": 8311,
+        "role": 1,
+        "baseline": "LOSS",
+        "candidate": "UNKNOWN",
+        "finite_event_delta": 1,
+        "candidate_kind": "PLY_CAP_UNKNOWN",
+        "first_difference": {
+          "kind": "ACTION_DIFFERENCE",
+          "ply": 3,
+          "actor": 1,
+          "is_candidate_actor": true,
+          "baseline": {
+            "source": "q4_initial",
+            "depth": 1,
+            "retained_ordinary": 0,
+            "retained_check": 8,
+            "reason": "time_budget",
+            "caller": 0.9861587999912445,
+            "action": {
+              "pattern_id": "legacy_051",
+              "geometry_id": "g4",
+              "actor_type_id": "B",
+              "from_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 0
+              },
+              "promotion_target_id": "P"
+            }
+          },
+          "candidate": {
+            "source": "disabled_only",
+            "depth": 4,
+            "retained_ordinary": 0,
+            "retained_check": 0,
+            "reason": "time_budget",
+            "caller": 0.986515500000678,
+            "action": {
+              "pattern_id": "legacy_065",
+              "geometry_id": "g31",
+              "base_type_id": "P",
+              "to_square": {
+                "file": 7,
+                "rank": 4
+              }
+            }
+          },
+          "before_sha256": "dbfe20dc4e8bff1e8cc3b87d448b6b1a82575c4734a8143302649e01d001d04e"
+        },
+        "candidate_seconds": 90.31377789999533,
+        "baseline_seconds": 4.1915938000020105
+      },
+      {
+        "seed": 8312,
+        "role": 0,
+        "baseline": "LOSS",
+        "candidate": "DRAW",
+        "finite_event_delta": 1,
+        "candidate_kind": "ACTUAL_RULE_TERMINAL",
+        "first_difference": {
+          "kind": "ACTION_DIFFERENCE",
+          "ply": 2,
+          "actor": 0,
+          "is_candidate_actor": true,
+          "baseline": {
+            "source": "requested_q4",
+            "depth": 3,
+            "retained_ordinary": 4,
+            "retained_check": 8,
+            "reason": "time_budget",
+            "caller": 0.985827500000596,
+            "action": {
+              "pattern_id": "legacy_058",
+              "geometry_id": "g35",
+              "actor_type_id": "X",
+              "from_square": {
+                "file": 2,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            }
+          },
+          "candidate": {
+            "source": "disabled_only",
+            "depth": 4,
+            "retained_ordinary": 0,
+            "retained_check": 0,
+            "reason": "time_budget",
+            "caller": 0.9855697000020882,
+            "action": {
+              "pattern_id": "legacy_075",
+              "geometry_id": "g36",
+              "base_type_id": "P",
+              "to_square": {
+                "file": 6,
+                "rank": 1
+              }
+            }
+          },
+          "before_sha256": "9c9ac180ba5705641c392ccb631818beee77911dcef53e1dcd200ec1151efd13"
+        },
+        "candidate_seconds": 22.3759168000106,
+        "baseline_seconds": 32.08411209999758
+      },
+      {
+        "seed": 8312,
+        "role": 1,
+        "baseline": "WIN",
+        "candidate": "UNKNOWN",
+        "finite_event_delta": -1,
+        "candidate_kind": "PLY_CAP_UNKNOWN",
+        "first_difference": {
+          "kind": "ACTION_DIFFERENCE",
+          "ply": 13,
+          "actor": 1,
+          "is_candidate_actor": true,
+          "baseline": {
+            "source": "requested_q4",
+            "depth": 3,
+            "retained_ordinary": 4,
+            "retained_check": 8,
+            "reason": "time_budget",
+            "caller": 0.9860916000034194,
+            "action": {
+              "pattern_id": "legacy_075",
+              "geometry_id": "g36",
+              "base_type_id": "P",
+              "to_square": {
+                "file": 0,
+                "rank": 3
+              }
+            }
+          },
+          "candidate": {
+            "source": "disabled_only",
+            "depth": 4,
+            "retained_ordinary": 0,
+            "retained_check": 0,
+            "reason": "time_budget",
+            "caller": 0.9870474000053946,
+            "action": {
+              "pattern_id": "legacy_059",
+              "geometry_id": "g35",
+              "actor_type_id": "X",
+              "from_square": {
+                "file": 6,
+                "rank": 4
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 3
+              },
+              "promotion_target_id": null
+            }
+          },
+          "before_sha256": "8d80ff56e90267aa70722d01983660fe8ed8cfec21548af4ad67b6a79189ac6d"
+        },
+        "candidate_seconds": 104.44403470000543,
+        "baseline_seconds": 32.08411209999758
+      },
+      {
+        "seed": 8313,
+        "role": 0,
+        "baseline": "WIN",
+        "candidate": "WIN",
+        "finite_event_delta": 0,
+        "candidate_kind": "ACTUAL_RULE_TERMINAL",
+        "first_difference": {
+          "kind": "ACTION_DIFFERENCE",
+          "ply": 2,
+          "actor": 0,
+          "is_candidate_actor": true,
+          "baseline": {
+            "source": "requested_q4",
+            "depth": 3,
+            "retained_ordinary": 4,
+            "retained_check": 8,
+            "reason": "time_budget",
+            "caller": 0.9859986999945249,
+            "action": {
+              "pattern_id": "legacy_067",
+              "geometry_id": "g9",
+              "actor_type_id": "B",
+              "from_square": {
+                "file": 5,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 4
+              },
+              "promotion_target_id": null
+            }
+          },
+          "candidate": {
+            "source": "disabled_only",
+            "depth": 4,
+            "retained_ordinary": 0,
+            "retained_check": 0,
+            "reason": "time_budget",
+            "caller": 0.9866252999927383,
+            "action": {
+              "pattern_id": "legacy_065",
+              "geometry_id": "g8",
+              "actor_type_id": "B",
+              "from_square": {
+                "file": 1,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 4,
+                "rank": 4
+              },
+              "promotion_target_id": null
+            }
+          },
+          "before_sha256": "b9b93d43eb1afd2a777c8fa7ae31db9fc47e0186c7217a03a360da6a3031c68e"
+        },
+        "candidate_seconds": 28.13024420000147,
+        "baseline_seconds": 15.559331399999792
+      },
+      {
+        "seed": 8313,
+        "role": 1,
+        "baseline": "LOSS",
+        "candidate": "UNKNOWN",
+        "finite_event_delta": 1,
+        "candidate_kind": "PLY_CAP_UNKNOWN",
+        "first_difference": {
+          "kind": "ACTION_DIFFERENCE",
+          "ply": 3,
+          "actor": 1,
+          "is_candidate_actor": true,
+          "baseline": {
+            "source": "requested_q4",
+            "depth": 2,
+            "retained_ordinary": 4,
+            "retained_check": 8,
+            "reason": "time_budget",
+            "caller": 0.9868826999882003,
+            "action": {
+              "pattern_id": "legacy_071",
+              "geometry_id": "g34",
+              "base_type_id": "P",
+              "to_square": {
+                "file": 3,
+                "rank": 6
+              }
+            }
+          },
+          "candidate": {
+            "source": "disabled_only",
+            "depth": 4,
+            "retained_ordinary": 0,
+            "retained_check": 0,
+            "reason": "time_budget",
+            "caller": 0.9861856999923475,
+            "action": {
+              "pattern_id": "legacy_057",
+              "geometry_id": "g4",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 4,
+                "rank": 4
+              },
+              "to_square": {
+                "file": 1,
+                "rank": 4
+              },
+              "promotion_target_id": null
+            }
+          },
+          "before_sha256": "166db8bb4ba956eb63cd61376564389b3241064fc029078ff91c9d8b478bc3bd"
+        },
+        "candidate_seconds": 85.16591650000191,
+        "baseline_seconds": 15.559331399999792
+      },
+      {
+        "seed": 8314,
+        "role": 0,
+        "baseline": "UNKNOWN",
+        "candidate": "WIN",
+        "finite_event_delta": 1,
+        "candidate_kind": "ACTUAL_RULE_TERMINAL",
+        "first_difference": {
+          "kind": "ACTION_DIFFERENCE",
+          "ply": 2,
+          "actor": 0,
+          "is_candidate_actor": true,
+          "baseline": {
+            "source": "requested_q4",
+            "depth": 2,
+            "retained_ordinary": 4,
+            "retained_check": 8,
+            "reason": "time_budget",
+            "caller": 0.9859405000024708,
+            "action": {
+              "pattern_id": "legacy_030",
+              "geometry_id": "g22",
+              "actor_type_id": "X",
+              "from_square": {
+                "file": 6,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 7,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            }
+          },
+          "candidate": {
+            "source": "disabled_only",
+            "depth": 4,
+            "retained_ordinary": 0,
+            "retained_check": 0,
+            "reason": "time_budget",
+            "caller": 0.9860496000037529,
+            "action": {
+              "pattern_id": "legacy_055",
+              "geometry_id": "g27",
+              "base_type_id": "B",
+              "to_square": {
+                "file": 6,
+                "rank": 3
+              }
+            }
+          },
+          "before_sha256": "6dee2eaac8a36916a71b56428a74b9e4cd32553e9d556275d898dff1e359e012"
+        },
+        "candidate_seconds": 6.339583399996627,
+        "baseline_seconds": 86.45017599999846
+      },
+      {
+        "seed": 8314,
+        "role": 1,
+        "baseline": "UNKNOWN",
+        "candidate": "LOSS",
+        "finite_event_delta": -1,
+        "candidate_kind": "ACTUAL_RULE_TERMINAL",
+        "first_difference": {
+          "kind": "ACTION_DIFFERENCE",
+          "ply": 7,
+          "actor": 1,
+          "is_candidate_actor": true,
+          "baseline": {
+            "source": "requested_q4",
+            "depth": 2,
+            "retained_ordinary": 4,
+            "retained_check": 8,
+            "reason": "time_budget",
+            "caller": 0.9861104000010528,
+            "action": {
+              "pattern_id": "legacy_058",
+              "geometry_id": "g27",
+              "base_type_id": "X",
+              "to_square": {
+                "file": 5,
+                "rank": 4
+              }
+            }
+          },
+          "candidate": {
+            "source": "disabled_only",
+            "depth": 4,
+            "retained_ordinary": 0,
+            "retained_check": 0,
+            "reason": "time_budget",
+            "caller": 0.9863813999982085,
+            "action": {
+              "pattern_id": "legacy_058",
+              "geometry_id": "g27",
+              "base_type_id": "X",
+              "to_square": {
+                "file": 4,
+                "rank": 2
+              }
+            }
+          },
+          "before_sha256": "1e2fd4fcb8ed90b1d7abd096d41b56f771052d02f970d0d782f40d5279d0f614"
+        },
+        "candidate_seconds": 21.266474999996717,
+        "baseline_seconds": 86.45017599999846
+      },
+      {
+        "seed": 8315,
+        "role": 0,
+        "baseline": "UNKNOWN",
+        "candidate": "WIN",
+        "finite_event_delta": 1,
+        "candidate_kind": "ACTUAL_RULE_TERMINAL",
+        "first_difference": {
+          "kind": "ACTION_DIFFERENCE",
+          "ply": 0,
+          "actor": 0,
+          "is_candidate_actor": true,
+          "baseline": {
+            "source": "q4_initial",
+            "depth": 1,
+            "retained_ordinary": 0,
+            "retained_check": 8,
+            "reason": "qsearch_check_hard_limit",
+            "caller": 0.7483342999912566,
+            "action": {
+              "pattern_id": "legacy_043",
+              "geometry_id": "g28",
+              "actor_type_id": "X",
+              "from_square": {
+                "file": 5,
+                "rank": 4
+              },
+              "to_square": {
+                "file": 2,
+                "rank": 7
+              },
+              "promotion_target_id": "P"
+            }
+          },
+          "candidate": {
+            "source": "disabled_only",
+            "depth": 4,
+            "retained_ordinary": 0,
+            "retained_check": 0,
+            "reason": "time_budget",
+            "caller": 0.9859130999975605,
+            "action": {
+              "pattern_id": "legacy_062",
+              "geometry_id": "g29",
+              "base_type_id": "X",
+              "to_square": {
+                "file": 6,
+                "rank": 4
+              }
+            }
+          },
+          "before_sha256": "5481923032f652d616bf56cce883d901d1b0d99bf149f0b65054e2ad1a763786"
+        },
+        "candidate_seconds": 1.1436250999977347,
+        "baseline_seconds": 61.70150860000285
+      },
+      {
+        "seed": 8315,
+        "role": 1,
+        "baseline": "UNKNOWN",
+        "candidate": "WIN",
+        "finite_event_delta": 1,
+        "candidate_kind": "ACTUAL_RULE_TERMINAL",
+        "first_difference": {
+          "kind": "ACTION_DIFFERENCE",
+          "ply": 3,
+          "actor": 1,
+          "is_candidate_actor": true,
+          "baseline": {
+            "source": "q4_initial",
+            "depth": 1,
+            "retained_ordinary": 0,
+            "retained_check": 8,
+            "reason": "qsearch_check_hard_limit",
+            "caller": 0.009537299993098713,
+            "action": {
+              "pattern_id": "legacy_025",
+              "geometry_id": "g2",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 5,
+                "rank": 7
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 6
+              },
+              "promotion_target_id": null
+            }
+          },
+          "candidate": {
+            "source": "disabled_only",
+            "depth": 4,
+            "retained_ordinary": 0,
+            "retained_check": 0,
+            "reason": "time_budget",
+            "caller": 0.9865581000049133,
+            "action": {
+              "pattern_id": "legacy_011",
+              "geometry_id": "g13",
+              "actor_type_id": "K",
+              "from_square": {
+                "file": 4,
+                "rank": 7
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 6
+              },
+              "promotion_target_id": null
+            }
+          },
+          "before_sha256": "139d6b8ae2dcb8896e5d489d2657d002da2e4a5d8f9cfb062f7f3e34fe5f2834"
+        },
+        "candidate_seconds": 3.112290100005339,
+        "baseline_seconds": 61.70150860000285
+      },
+      {
+        "seed": 8316,
+        "role": 0,
+        "baseline": "LOSS",
+        "candidate": "UNKNOWN",
+        "finite_event_delta": 1,
+        "candidate_kind": "PLY_CAP_UNKNOWN",
+        "first_difference": {
+          "kind": "ACTION_DIFFERENCE",
+          "ply": 4,
+          "actor": 0,
+          "is_candidate_actor": true,
+          "baseline": {
+            "source": "requested_q4",
+            "depth": 2,
+            "retained_ordinary": 4,
+            "retained_check": 8,
+            "reason": "time_budget",
+            "caller": 0.9857956999912858,
+            "action": {
+              "pattern_id": "legacy_052",
+              "geometry_id": "g26",
+              "base_type_id": "A",
+              "to_square": {
+                "file": 1,
+                "rank": 5
+              }
+            }
+          },
+          "candidate": {
+            "source": "disabled_only",
+            "depth": 4,
+            "retained_ordinary": 0,
+            "retained_check": 0,
+            "reason": "time_budget",
+            "caller": 0.9862648999987869,
+            "action": {
+              "pattern_id": "legacy_055",
+              "geometry_id": "g26",
+              "base_type_id": "P",
+              "to_square": {
+                "file": 3,
+                "rank": 3
+              }
+            }
+          },
+          "before_sha256": "75d56386574b89fbf04f2d9a3e2f3f5008cefe6c49f749759bd5f8a0d1719e9d"
+        },
+        "candidate_seconds": 89.72779729998729,
+        "baseline_seconds": 62.20057729999826
+      },
+      {
+        "seed": 8316,
+        "role": 1,
+        "baseline": "WIN",
+        "candidate": "WIN",
+        "finite_event_delta": 0,
+        "candidate_kind": "ACTUAL_RULE_TERMINAL",
+        "first_difference": {
+          "kind": "ACTION_DIFFERENCE",
+          "ply": 3,
+          "actor": 1,
+          "is_candidate_actor": true,
+          "baseline": {
+            "source": "requested_q4",
+            "depth": 2,
+            "retained_ordinary": 4,
+            "retained_check": 8,
+            "reason": "time_budget",
+            "caller": 0.9855930000048829,
+            "action": {
+              "pattern_id": "legacy_055",
+              "geometry_id": "g26",
+              "base_type_id": "P",
+              "to_square": {
+                "file": 1,
+                "rank": 1
+              }
+            }
+          },
+          "candidate": {
+            "source": "disabled_only",
+            "depth": 4,
+            "retained_ordinary": 0,
+            "retained_check": 0,
+            "reason": "time_budget",
+            "caller": 0.986044800010859,
+            "action": {
+              "pattern_id": "legacy_052",
+              "geometry_id": "g26",
+              "base_type_id": "A",
+              "to_square": {
+                "file": 3,
+                "rank": 4
+              }
+            }
+          },
+          "before_sha256": "8e7a5233d05bfd98f151fdaedaec0f8c4e2de89c0a78cd8f09f4b64533a08bc8"
+        },
+        "candidate_seconds": 34.85413219999464,
+        "baseline_seconds": 62.20057729999826
+      },
+      {
+        "seed": 8317,
+        "role": 0,
+        "baseline": "UNKNOWN",
+        "candidate": "UNKNOWN",
+        "finite_event_delta": 0,
+        "candidate_kind": "PLY_CAP_UNKNOWN",
+        "first_difference": {
+          "kind": "ACTION_DIFFERENCE",
+          "ply": 0,
+          "actor": 0,
+          "is_candidate_actor": true,
+          "baseline": {
+            "source": "requested_q4",
+            "depth": 3,
+            "retained_ordinary": 4,
+            "retained_check": 8,
+            "reason": "time_budget",
+            "caller": 0.9862393999937922,
+            "action": {
+              "pattern_id": "legacy_039",
+              "geometry_id": "g4",
+              "actor_type_id": "B",
+              "from_square": {
+                "file": 2,
+                "rank": 1
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 3
+              },
+              "promotion_target_id": null
+            }
+          },
+          "candidate": {
+            "source": "disabled_only",
+            "depth": 5,
+            "retained_ordinary": 0,
+            "retained_check": 0,
+            "reason": "time_budget",
+            "caller": 0.9857734000106575,
+            "action": {
+              "pattern_id": "legacy_038",
+              "geometry_id": "g4",
+              "actor_type_id": "B",
+              "from_square": {
+                "file": 4,
+                "rank": 0
+              },
+              "to_square": {
+                "file": 5,
+                "rank": 2
+              },
+              "promotion_target_id": null
+            }
+          },
+          "before_sha256": "b26ec1c1da83f8e2df883a8ad323dff23e7af3822d4b5538776087b41c1885d6"
+        },
+        "candidate_seconds": 88.89781999999832,
+        "baseline_seconds": 93.37052359999507
+      },
+      {
+        "seed": 8317,
+        "role": 1,
+        "baseline": "UNKNOWN",
+        "candidate": "WIN",
+        "finite_event_delta": 1,
+        "candidate_kind": "ACTUAL_RULE_TERMINAL",
+        "first_difference": {
+          "kind": "ACTION_DIFFERENCE",
+          "ply": 3,
+          "actor": 1,
+          "is_candidate_actor": true,
+          "baseline": {
+            "source": "requested_q4",
+            "depth": 2,
+            "retained_ordinary": 4,
+            "retained_check": 8,
+            "reason": "time_budget",
+            "caller": 0.9863993000035407,
+            "action": {
+              "pattern_id": "legacy_050",
+              "geometry_id": "g25",
+              "base_type_id": "A",
+              "to_square": {
+                "file": 0,
+                "rank": 1
+              }
+            }
+          },
+          "candidate": {
+            "source": "disabled_only",
+            "depth": 4,
+            "retained_ordinary": 0,
+            "retained_check": 0,
+            "reason": "time_budget",
+            "caller": 0.9858396999916295,
+            "action": {
+              "pattern_id": "legacy_050",
+              "geometry_id": "g25",
+              "base_type_id": "A",
+              "to_square": {
+                "file": 5,
+                "rank": 4
+              }
+            }
+          },
+          "before_sha256": "c7b7854924906f1d96b5cfa8f4d9646aaa9ac796a7fa964828d00f5ef1d9ff68"
+        },
+        "candidate_seconds": 46.40227320000122,
+        "baseline_seconds": 93.37052359999507
+      },
+      {
+        "seed": 8318,
+        "role": 0,
+        "baseline": "WIN",
+        "candidate": "WIN",
+        "finite_event_delta": 0,
+        "candidate_kind": "ACTUAL_RULE_TERMINAL",
+        "first_difference": {
+          "kind": "ACTION_DIFFERENCE",
+          "ply": 0,
+          "actor": 0,
+          "is_candidate_actor": true,
+          "baseline": {
+            "source": "q4_initial",
+            "depth": 1,
+            "retained_ordinary": 0,
+            "retained_check": 8,
+            "reason": "qsearch_check_hard_limit",
+            "caller": 0.24329290000605397,
+            "action": {
+              "pattern_id": "legacy_043",
+              "geometry_id": "g28",
+              "actor_type_id": "X",
+              "from_square": {
+                "file": 6,
+                "rank": 4
+              },
+              "to_square": {
+                "file": 7,
+                "rank": 7
+              },
+              "promotion_target_id": "A"
+            }
+          },
+          "candidate": {
+            "source": "disabled_only",
+            "depth": 5,
+            "retained_ordinary": 0,
+            "retained_check": 0,
+            "reason": "time_budget",
+            "caller": 0.9866760000004433,
+            "action": {
+              "pattern_id": "legacy_035",
+              "geometry_id": "g24",
+              "actor_type_id": "P",
+              "from_square": {
+                "file": 1,
+                "rank": 7
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 6
+              },
+              "promotion_target_id": null
+            }
+          },
+          "before_sha256": "05113b729b14b4500e096276b3e94b5706b41f18004e8cba1753433b634ab883"
+        },
+        "candidate_seconds": 16.86257189999742,
+        "baseline_seconds": 0.5785123999958159
+      },
+      {
+        "seed": 8318,
+        "role": 1,
+        "baseline": "LOSS",
+        "candidate": "WIN",
+        "finite_event_delta": 2,
+        "candidate_kind": "ACTUAL_RULE_TERMINAL",
+        "first_difference": {
+          "kind": "ACTION_DIFFERENCE",
+          "ply": 1,
+          "actor": 1,
+          "is_candidate_actor": true,
+          "baseline": {
+            "source": "q4_initial",
+            "depth": 1,
+            "retained_ordinary": 0,
+            "retained_check": 8,
+            "reason": "qsearch_check_hard_limit",
+            "caller": 0.20386810001218691,
+            "action": {
+              "pattern_id": "legacy_007",
+              "geometry_id": "g11",
+              "actor_type_id": "C",
+              "from_square": {
+                "file": 3,
+                "rank": 6
+              },
+              "to_square": {
+                "file": 0,
+                "rank": 0
+              },
+              "promotion_target_id": "A"
+            }
+          },
+          "candidate": {
+            "source": "disabled_only",
+            "depth": 5,
+            "retained_ordinary": 0,
+            "retained_check": 0,
+            "reason": "time_budget",
+            "caller": 0.986621500007459,
+            "action": {
+              "pattern_id": "legacy_003",
+              "geometry_id": "g1",
+              "actor_type_id": "A",
+              "from_square": {
+                "file": 2,
+                "rank": 2
+              },
+              "to_square": {
+                "file": 3,
+                "rank": 1
+              },
+              "promotion_target_id": null
+            }
+          },
+          "before_sha256": "018451a1a56644b014105c3679bd8a4a86b1a2c39bf51a5d81f593eed09d1cc2"
+        },
+        "candidate_seconds": 3.072577300001285,
+        "baseline_seconds": 0.5785123999958159
+      }
+    ],
+    "actual_phase_queries": 503,
+    "actual_game_seconds": 646.390656299991,
+    "selected_sources": {
+      "disabled_only": 245,
+      "requested_q4": 190,
+      "q4_initial": 58,
+      "physical_win": 10
+    },
+    "execution_disallowed": 0
+  },
+  "measurement_scope": {
+    "observed_source": "probe.schedule: phase record_value finishes before caller_seconds; final selected record_value follows that measurement, and execution_allowed checks the same original deadline after it.",
+    "budget_consequence": "Execution eligibility includes the final selected-record copy; shared main+q accounting and selected actions/outcomes remain unchanged. No hard final-return or physical-transition deadline is claimed.",
+    "cost_consequence": "Recorded caller_seconds/overrun_seconds omit the final duplicate research selected-result serialization. They are not a complete end-to-end stopwatch. Full game/batch wall includes that cost and other scientific I/O, apart from writing its own final receipt. Use those totals for total-cost interpretation.",
+    "correction": "No frozen fields or caps rewritten. New fixed-node controls also record an outer stopwatch around schedule; original clock-limited games remain immutable.",
+    "user_action_needed": false
+  },
+  "limits": [
+    "UNKNOWN contributes zero only to observed finite W-L statistic, not a draw or missing-outcome imputation. All categorical transitions remain explicit.",
+    "No cross-objective score selection, price changes, cap extensions, human labels, extra agents or AUX write/solver duplication.",
+    "Normal Native source unchanged; counters and changed-horizon image are private explicit-backend diagnostics.",
+    "Own concurrent diagnostics overlap some prospective callers; frozen caps remain, clocks are environment-specific.",
+    "Full source-only receipt replay is separate from search/game rerun and independent rules/WDL validation."
+  ]
+}
