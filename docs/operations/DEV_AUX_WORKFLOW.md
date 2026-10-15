@@ -164,3 +164,20 @@ and sanitize publication copies as needed. Fixed authorized routing IDs remain
 permitted. Continuing authorization survives restart/compaction; no per-upload
 approval queue. Supported tools/escalation only; report actual persistent denial.
 Separate checkouts/branches, stops and machine safety remain mandatory.
+
+## Highest user repository visibility instruction2026-10-15
+
+WD-nanophotonics/GenericChess MUST remain PUBLIC so remote ChatGPT can read
+project evidence without repository authentication. The old private-access
+experiment was rejected; it does not authorize keeping or changing this repo
+Private. Never change visibility to Private without a later explicit user
+instruction superseding this requirement. Public visibility does not permit
+publishing personal information, passwords or credentials; exact sensitive
+originals remain in Git-ignored local storage. An HTTP404 alone establishes
+neither visibility nor who changed settings; verify current metadata and
+anonymous fixed-revision access before reporting a cause.
+
+Bounded visibility check2026-10-15: authenticated GitHub metadata PUBLIC;
+anonymous repository API and segment56 raw report both HTTP200. No visibility
+mutation was necessary. Available DEV_AUX local command records contained no
+visibility-change command; this does not identify a historical settings actor.
