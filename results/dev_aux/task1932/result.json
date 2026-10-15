@@ -1,0 +1,205 @@
+{
+  "status": "PAID_ONLY_ASSESSMENT",
+  "phase": [
+    {
+      "phase": "TRAIN",
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.5,
+        0.0,
+        0.5
+      ],
+      "nonflat_grid_families": [
+        2,
+        4,
+        5,
+        7,
+        12,
+        13,
+        15
+      ],
+      "nonzero_selected_vs_baseline_families": 6,
+      "first_action_categories": {
+        "same_path": 17,
+        "candidate:EXTERNAL_SEARCH|EXTERNAL_SEARCH": 15
+      },
+      "changed_path_same_event_role_groups": 8,
+      "transitions": {
+        "WIN->WIN": 13,
+        "UNKNOWN->UNKNOWN": 7,
+        "UNKNOWN->WIN": 5,
+        "DRAW->UNKNOWN": 1,
+        "DRAW->DRAW": 1,
+        "LOSS->LOSS": 2,
+        "UNKNOWN->DRAW": 1,
+        "DRAW->WIN": 1,
+        "LOSS->UNKNOWN": 1
+      },
+      "symmetric_independent_sign_null_two_sided": 0.03125,
+      "null_scope": "sensitivityunderindependentRademachereffectsignsymmetry, NOTrandomizedtrial/exactarbitrarymeanzerotest or multiplicityadjustedclaim"
+    },
+    {
+      "phase": "DEV",
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nonflat_grid_families": [
+        19,
+        23,
+        28
+      ],
+      "nonzero_selected_vs_baseline_families": 1,
+      "first_action_categories": {
+        "same_path": 25,
+        "candidate:EXTERNAL_SEARCH|EXTERNAL_SEARCH": 7
+      },
+      "changed_path_same_event_role_groups": 6,
+      "transitions": {
+        "WIN->WIN": 13,
+        "UNKNOWN->UNKNOWN": 12,
+        "DRAW->DRAW": 2,
+        "UNKNOWN->WIN": 1,
+        "DRAW->UNKNOWN": 1,
+        "LOSS->LOSS": 3
+      },
+      "symmetric_independent_sign_null_two_sided": 1.0,
+      "null_scope": "sensitivityunderindependentRademachereffectsignsymmetry, NOTrandomizedtrial/exactarbitrarymeanzerotest or multiplicityadjustedclaim"
+    }
+  ],
+  "train_leave_one_family_out": [
+    {
+      "removed_family": 0,
+      "optimal_set": [
+        3.0
+      ]
+    },
+    {
+      "removed_family": 1,
+      "optimal_set": [
+        3.0
+      ]
+    },
+    {
+      "removed_family": 2,
+      "optimal_set": [
+        3.0
+      ]
+    },
+    {
+      "removed_family": 3,
+      "optimal_set": [
+        3.0
+      ]
+    },
+    {
+      "removed_family": 4,
+      "optimal_set": [
+        3.0
+      ]
+    },
+    {
+      "removed_family": 5,
+      "optimal_set": [
+        3.0
+      ]
+    },
+    {
+      "removed_family": 6,
+      "optimal_set": [
+        3.0
+      ]
+    },
+    {
+      "removed_family": 7,
+      "optimal_set": [
+        3.0
+      ]
+    },
+    {
+      "removed_family": 8,
+      "optimal_set": [
+        3.0
+      ]
+    },
+    {
+      "removed_family": 9,
+      "optimal_set": [
+        3.0
+      ]
+    },
+    {
+      "removed_family": 10,
+      "optimal_set": [
+        3.0
+      ]
+    },
+    {
+      "removed_family": 11,
+      "optimal_set": [
+        3.0
+      ]
+    },
+    {
+      "removed_family": 12,
+      "optimal_set": [
+        3.0
+      ]
+    },
+    {
+      "removed_family": 13,
+      "optimal_set": [
+        3.0
+      ]
+    },
+    {
+      "removed_family": 14,
+      "optimal_set": [
+        3.0
+      ]
+    },
+    {
+      "removed_family": 15,
+      "optimal_set": [
+        3.0
+      ]
+    }
+  ],
+  "leave_one_out_scope": "DiagnosticTRAINreuse only; no newselection/independenttrainingseeds/DEVrepair. FourinitialpathsusedSAME128gamefitnesssurface, notfourindependentruns.",
+  "cost": {
+    "total_games": 256,
+    "wall_seconds": 735.4084318999958,
+    "proof_seconds": 595.7790456005023,
+    "normal_seconds": 84.36056859942619,
+    "current_verifier_seconds": 13.032460799979162,
+    "nonzero_param_survey": "No extra opportunityscreen/filter/monitoring built; outputonlyalready-paidstates."
+  },
+  "seconds": 0.06713789999776054,
+  "scope": "ActualW-Lfiniteeventreward only, UNKNOWNseparate, fixedN720/oneRtwoNmu/modifiedmatureengine. StableTRAINfinitegridoptimum isnotheldoutperformance, continuousprice/humanagreement orabsenceofselective-searchbias."
+}

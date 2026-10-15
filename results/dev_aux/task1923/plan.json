@@ -1,0 +1,27 @@
+{
+  "status": "FROZEN_BEFORE_COMPLETE_DEPTH_INPUT_CONTRAST",
+  "inputs": "results\\dev_aux\\task1923\\inputs.json",
+  "rules": "results/dev_aux/task1872/rules.json",
+  "depths": [
+    2,
+    4,
+    6
+  ],
+  "query_nodes": 100000,
+  "query_seconds": 20,
+  "seconds_cap": 900,
+  "expected_seconds": 120,
+  "source_sha": {
+    "results\\dev_aux\\task1923\\inputs.json": "de4280c2aae2ae4110cadc5a9ec21ffed38b005855decbd0431c9ca57d068744",
+    "results\\dev_aux\\task1923\\inventory_contrast.py": "7c0a0ba871e3a4c5a76b0e174be2a39c0abe23f1c04c59eff040d076e6e62d18",
+    "generic_chess/core/search_runtime.py": "142a79bea4f663d42baa2ceb0d3d50b0fdd933aae17434c6bf8c4000622c56eb",
+    "generic_chess/core/transition.py": "80a01f61bac9db9907326017425da9ac4beec03efa6359a1066492d0f60dd7a8"
+  },
+  "question": "Do ALL16newoneRtwoNTRAINroots activateadditionalcomplete-materialchoicechanges acrossrho3, withALL16oldone-eachTRAINnegativecontrols?",
+  "scope": "Dotadvisoryadopted AFTER1920W-Lstudywasfrozen/started, notaretroactivegate/rootselector. All32rootspreserved, noDEVroots, notWDL/learningreward. Completefixeddepth2/4/6/rootfullwindows, node100k/wall20each/total900. Firstlegalvisitedleafvectorwitnesses, notallleavescensus. Publicdepth2independentcheck. Runsduringown1920Nativegames:ordinaryconcurrency, costsdescriptiveonly/no speedupclaim.",
+  "prices": [
+    2.5,
+    3.5
+  ],
+  "expected_queries": 192
+}

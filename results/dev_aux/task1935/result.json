@@ -1,0 +1,138 @@
+{
+  "status": "PASS_ALL_SAVED_PROTECTEDROOK_RECORDS_PARTIALS_RETAINED",
+  "expected_queries": 96,
+  "queries": 96,
+  "complete_queries": 96,
+  "independent_public_leaf_records": 974,
+  "literal_path_edges": 4568,
+  "new_inventory_leaf_order_crossings": [
+    "1/2",
+    "1",
+    "3/2",
+    "2",
+    "3",
+    "4"
+  ],
+  "summary": [
+    {
+      "law": "protected_rook_N_contact",
+      "depth": 2,
+      "all_roots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "unresolved_pair_queries": [],
+      "best_set_changes": [],
+      "disjoint_best_sets": [],
+      "any_root_action_order_changes": [],
+      "roots_with_actual_visited_rho3_leaf_pair": []
+    },
+    {
+      "law": "protected_rook_N_contact",
+      "depth": 4,
+      "all_roots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "unresolved_pair_queries": [],
+      "best_set_changes": [],
+      "disjoint_best_sets": [],
+      "any_root_action_order_changes": [
+        2,
+        8,
+        11
+      ],
+      "roots_with_actual_visited_rho3_leaf_pair": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "law": "protected_rook_N_contact",
+      "depth": 6,
+      "all_roots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "unresolved_pair_queries": [],
+      "best_set_changes": [],
+      "disjoint_best_sets": [],
+      "any_root_action_order_changes": [
+        2,
+        11
+      ],
+      "roots_with_actual_visited_rho3_leaf_pair": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  ],
+  "seconds": 1.2825387000048067,
+  "conclusion": "SeeALL16protectedRrootcounts/setsatall3predeclareddepths. Algebraiccrossings/actualleafpairs/internalorderchanges/optimalrootsetsareseparate. LeavesnotexhaustivewithsoundABcuts; rootvaluescomplete. NotactualW-Lvalue.",
+  "scope": "DotadvisedcheckwasexecutedAFTER1920learningalreadyfrozen/active. Notaretroactivegate orrootfilter, no DEVread/selection. All32preserved. CostincludesordinaryownconcurrentNativelearning; no benchmarkratio. Nottrainingreward/actualWDLgame, no uniquecontinuouspriceimpossibilityclaim."
+}

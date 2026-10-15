@@ -1,47 +1,44 @@
-# DEV_AUX current mainline —2026-10-15 segment62
+# DEV_AUX current mainline —2026-10-16 segment63
 
-ScienceOPEN/own sidemission/patrolACTIVE/PRIMARYreadonly. PUBLIC anonymousDot/Chat;
-failedPRIVATE superseded. Checkedprojectcontent allowed, sensitiveoriginals
-ignored. AGENTS carries purposes/causalboundaries. No default/UI/mainmerge.
+ScienceOPEN/own sidemission/patrolACTIVE/PRIMARYreadonly. PUBLIC enablesanonymous
+Dot/Chat; failedPRIVATEsuperseded. Checkedprojectpublicationauthorized/private
+originalsignored. AGENTS carries userpurpose/supersededdecisions/boundaries.
 
-192contactH24actualgames765.662s: TRAINselects2beforeDEV; DEV+3/32vs1, but
-fresh128confirmation250.873s givesnet0 atopp64/+2/32at512, intervalsinclude0.
-New64H48wholegames/all16exposedfamilies give+4/32 with64/64first24prefixmatches;
-UNKNOWNboundswide/nofreshvalidation oroldcapresume. Allactualproofmatesfinish.
-2isgridmaximum, not finiteoptimum; TRAIN-only2vs4check bothnet11,
-differentactions/offsettingevents, no unique2 ornewselectedprice. No
-DEVselection/humanfit, theta-learning stillconditionalonrule/mu/opponent/search.
+Currentdecision: stop scaling this arbitraryshort-game pricegrid/blanketproof
+budget; investigate rule-only exchange/root-choice mechanisms atsmallcost,
+keepingactualruleW-L as eventualreward. This supersedes62'sfirst2vs4tradeaudit,
+whichiscomplete, and doesnotreviveoldNormal-opportunityscreening oroldcaps.
+GenericSessionproof/strategy retained; no production/default/UI/mainmerge.
 
-Simple<=2prooftrigger miss20/31TRAINproofs andtargetwrongcost. CompleteCore
-inventorycensus27360syntactic15240admissible69360legaledges provesnoWINterminal
-forKK/KKN underEXACTclosedhistory-only-drawrules, KKRpositive80mates. Original
-arithmetictotalcheckerfalse preserved/independentcoveragecorrectsmetadata.
-OptionalexactfpInventoryNoWinFilter returnsUNKNOWN/noaction, skipsnewproofonly;
-otherfullrules fallbackunchanged.15actualmechanismtests/313workingPASS. New48
-pairedcostgames24/24paths/outcomes equal,120.975->77.864s,currentverifier1190
-andnormal766446nodesboth. Notuniversalruledeadness/defaultadoption.
+63newoneRtwoN32rootlaw/256games735.408s: TRAINnets10/14/17/15, fourdeterministic
+startsSHAREonefitnesssurface/allend3. DEV3vs1only+1/32/onefamily. Fresh16CONFIRM
+families/fixedopp64,512: pricegain-3/32,-1/32, bothCIsinclude0. No stableheldout
+value/humanagreement; notpopulationinferiorityproof, noDEVwinnerselection.
+CandidateproofON/OFFfixedopponents127/128sameoutcomes/93samefullrecords;
+622.869s/73.544s, onlyonebaselineU->actualWIN, learned3proofgain0. LocalTRAIN
+3+-5percentnets17/17/16, no perturbationchosen. Costsnotexclusivebenchmark.
 
-Futurecertretentionobservations17offturn/21ownturnverifybut0playedrecordmatches,
-so no retentionframework. PerpollstopfileI/Oactualfailurepreserved/newqueryfixed.
-Only4-7/32rolegroups neverusetheta, andmanydifferentpathsflatfiniteevents; no
-posthocrootremoval. Futureprice-independentNormal-opportunitysampling isjusta
-proposal, mustfreeze separately/no result orhuman-labelfilter.
+One-eachcapture-onlyleafnetR/netNin{-1,0,1}: ordercrossings.5/1/2. Samecomplete
+finite-tree materialminimax hasidenticaloptimalsetsinsideopenchambers; not
+Nativeheuristic/variable-treeinvariance. Finiteinventoriesrefineintervals;
+isolatedboundaryoptima areNOTuniversallyexcluded.1924abstractcaveatnotrealgame.
 
-Dot61bddsource-review alreadyreconciled/not62execution; PRIMARYa3c495/b2e
-messagecontextonly, no sourceadoption/rerun/crosswrite. DifferentNative engines
-andcoldcompiler/precompiledadmissiondenominators notpooled. Nextauditclosed
-rangecheck, seal/restoreexactsource/evidence, publishfixedrevision forDotreview.
-Old1808partial18/48CLOSED, noresumingoldcaps.
+NewN2all16TRAINdepth6haveactuallegalrho3crossingleaves but0optimalrootset
+changesat2.5/3.5/depth2,4,6. ProtectedR/Ncontact16DESIGNroots96completequeries
+64.615s also0bestsetchanges; noW-Ltrainingforthatdesign. Keepallnegativecohorts.
+Proof16k/64k/262kall22children/bothtargets gives5/6/7provedchildren,578.197s;
+nooppositelyprovedwinnerpair, no capextension. UNKNOWNnotdraw/theoreticalreward.
 
-Closing62: Dot read397source/report(notexecution); adoptzero-costexactempirical
-gridcheck.1909 confirmsoptimalset{2,4}/strictlearnerregret0, notoptimization
-failure/structuralnonidentifiability.1908 zero-theta recordedcost~2%; don'tbuild
-largeopportunityfilter. Onlycommonpre-priceprefix conditioning ispricefree.
-Nextfirst auditALL11firstdifferentactionpairs andrawR/Ntradeoffs fromfullpublic
-prestates beforechoosing a boundedfixedcontinuation contrast. No newprice/DEVfit.
+All630newpolicygames/12433moves/10685Nativebindings rechecked,300proof-adopting
+ownersactuallywin;18savedall-defensecertificatesindependentlyreverified and
+physicallyexecuted.442filesSOURCE/131filesEVIDENCE63sealed, independent-Srestore
+313tests andallgame/proof/2822publicleafreplaysPASS. Original1910privatepath
+metadata preservedignored/publiccopyonlyrelativekeys; aliasexplicitnotbyteexact.
 
-Segment62 ended66.928min/safe_checkpoint accepted/4stages/manualqualityPASS.
-313working+313independentrestoredtests; all496games/10435moves/8763bindings
-replayed fromexactarchives, no Native/proofcalls inrestore. Dotreplyread397
-source/notexecute, adopted1909regret0check. PRIMARYef9d4a39accountingmessage
-only; no sourceadoption orcounterdenominatorpooling. PatrolACTIVE/nextmemo ready.
+Dotread04993source/report/notexecute; actualreply1792084394.142879reconciled,
+adoptedcheapold/newcomplete-treecontrol, qualifyuniquenesscaution. PRIMARYe583
+newcutoff-historyresult owner-messageONLY; no sourceadoption/Primarywrites or
+Nativecounterpooling. Separatelanes/ordinaryconcurrency unchanged. No overhour
+singlebatch/fees/workers. Source/test/publication checkpointsdonotcompletescience.
+Evidence: results/dev_aux/SEGMENT_20261016_63.md;1931/result.json;1930/restore.json.
+Old62and1808/532caps remainhistorical CLOSED; neverreset/resumeelapsedruns.

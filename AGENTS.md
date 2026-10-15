@@ -261,22 +261,27 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope —2026-10-15 segment62
+# DEV_AUX current scope —2026-10-16 segment63
 
-ScienceOPEN/own sidemission/patrolACTIVE/PRIMARYreadonly. User-approved material
-plusfixedproof actualW-L remainsauxiliary, no default/UI/mainmerge. Current
-contactTRAINselects2, but freshconfirmation mixed/uncertain; exposedH48control
-positive withallshortprefixesmatching, not independentvalidation/infiniteWDL.
-2isgridboundary, TRAIN-only2vs4check bothnet11/flat; no finite2identification,
-DEV/humanfit ornewselectedprice.
-Naivepiececounttrigger rejected; optionalexactfpclosedinventoryno-WINfilter
-passes15actualhistory/fullmechanismfallbacktests and313workingtotal. FullCore
-census/independentcoverage pinsKK/KKNabsence; new48costpairs24/24paths/outcomes
-equal120.975->77.864s, CURRENTverification andnormalcapunchanged. UNKNOWNnotdraw,
-no specializedwinningtablepolicy. Otherfingerprints fallbackcompleteprover.
-Oldresults/caps/errors retained. Futurecertretention0actualmatches, no framework.
-Dotread397report/filter/not62execution; empiricalgridcheckadopted.
-PRIMARYmessagecontextonly. Mainline/memo ownnextsteps.
+SCIENCE_OPEN/own sidemission/patrolACTIVE/PRIMARYreadonly. The approved fixed
+proof-plus-material actualW-L route is implemented, not a positive price result.
+Reason for next direction: one-each leaves have only.5/1/2 order boundaries;
+addingN gives more legal exchange leaves but no optimal-root changes atd2/4/6.
+NewoneRtwoN TRAIN selects3, DEV+1/32/onefamily; freshCONFIRM-3/32atopp64,
+-1/32at512. CandidateproofON/OFF127/128sameoutcomes,623s/74s, oneextraactual
+baselineWIN. LocalTRAIN3+-5percentnets17/17/16, no newprice selection.
+Thus next prioritize cheap explicit exchange/root-choice mechanisms, retaining
+actualW-L and no humanfit, ratherthan more arbitrary gridgames/largerPNcaps.
+This supersedes62'sfirst2vs4tradeaudit/Normal-opportunityscreening backlog;
+alloldresults/capsremainhistorical, especially1808partial18/48CLOSED.
+No product/default/UI orPRIMARY change; genericverifiedexecutableproofretained.
+630newphysicalgames/12433moves/10685Nativebindings rechecked;300proofgame
+ownersactuallywin. Independentrestored313tests/18transportedproofs/2822leaf
+witnessesPASS. Public1910copy removesoneprivatepathmetadatakey only; raw
+originalignored, historicalsourcepinnotrewritten. See63report/archives.
+DotSOURCE_READ04993/notexecute; adoptfinite-treelemma/control withboundary
+caveat (no universal unique-continuous-price impossibilityclaim). PRIMARYe583
+owner-messagecontext only/no sourceadoption, testsrerun orcounter-unitpooling.
 
 ## Current user publication grant2026-10-15
 
