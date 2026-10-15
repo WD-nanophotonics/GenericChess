@@ -1,0 +1,43 @@
+{
+  "question": "Do actual noncanonical-replay Native main cutoffs reuse complete packed actions enough to justify per-search history ordering?",
+  "source_base": "a3c495916f81a2f1fdb50f2b0344a9f5463583f4",
+  "native_module_sha256": "e3edab1b92b4d1b85a5b45393f5a88c46698120e971c17552d1ccef84e03eca4",
+  "seeds": [
+    4302,
+    4303,
+    4312,
+    4313,
+    4322,
+    4323,
+    4332,
+    4333
+  ],
+  "root": 0,
+  "depth": 3,
+  "nodes": 4096,
+  "seconds": 2,
+  "ordinary_q": 0,
+  "effective_hard_q": 0,
+  "tt": 0,
+  "ordering_cache": false,
+  "root_window": true,
+  "goal": false,
+  "orders": [
+    [
+      "baseline",
+      "counter"
+    ],
+    [
+      "counter",
+      "baseline"
+    ]
+  ],
+  "table_slots": 4096,
+  "scope": "Private COUNTER ONLY, no search ordering/value/state change. Count main alpha-beta sufficient cutoff actions outside canonical PV replay; exact full packedaction+actor comparison in bounded directmap, replacements disclosed. Repeat hits are lowerbound on repetitions, not evidence of predictive ordering usefulness.",
+  "expected_cost": "CompileoneprivateNativecopy then32fixed queries, expectedunder2min hard180s whole. Existinginputs, no worker/model/solver/training or new domain filter.",
+  "decision": "Require non-time output/PV/fullhistory equality; report time-censored pairs and probe overhead. Lowrepeat or excessivecost rejects cheaply; positive repeat only justifies another bounded ordering test, not default/strength or automatic implementation.",
+  "created_utc": "2026-10-15T15:30:30.563495+00:00",
+  "execution_status": "NOT_EXECUTED",
+  "actual_native_probe_queries": 0,
+  "reason": "Actual source-export audit uncovered report/main-only node interpretation error; publication correction took priority, no counter image or heuristic built."
+}

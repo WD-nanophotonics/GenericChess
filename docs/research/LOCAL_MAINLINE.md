@@ -121,6 +121,11 @@ probe. Primary-paper/current-cutoff/trace source examination has begun: the
 existing training trace omits cutoff action/full history, so it cannot supply
 this statistic. Freeze<=8paid roots/fixedD3 counter-only cost/repetition check
 before any ordering implementation; reject low repetition or high overhead.
+The frozen8root plan remains NOT_EXECUTED: checking the actual node exporter
+first exposed a report error. API nodes excludesqnodes; all1044caller queries/
+366two-phase receipts are now re-accounted, firstphaseqnodes0, alltotal<=1M.
+Caps/actions/outcomes stay unchanged and originaldata remains sealed. The
+explicit correction is reserve_node_accounting_correction_20261015.json.
 This is backend search ordering, not AUX Session solver/runtime/model/training,
 no source adoption, changed canonical PV or semantic authority. CappedD2 remains
 a scoped alternative, not a new permanent policy. Do not infer utility from depth

@@ -2711,3 +2711,13 @@ single-Agent baseline for a collaboration-efficiency percentage. A next Native
 cutoff-repetition source question has begun; it does not compete with AUX's
 Session solver/runtime/training. Fixed revision links follow actual tested
 publication/full remoteSHA verification, not an assumed Dot read of every file.
+
+
+PRIMARY source-export correction after first delivery: internal nodes includes
+q work, but the public result exporter reports main nodes and qnodes separately.
+The report and frozen research `total_nodes` interpretation were wrong. All1044
+queries/366two-phase receipts are explicitly re-accounted, every firstphaseq0has
+zeroqnodes and every combined total stays<=1000000. No cap/action/outcome/timing
+changes or hidden rerun. Source/review of the next counter probe exposed this;
+the probe was not executed and no heuristic built. The original sealed archive
+stays intact; corrected report/data and fixed-version supplement are delivered.

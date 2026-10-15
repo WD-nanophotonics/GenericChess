@@ -24,3 +24,9 @@ provenance. That historical binary is not distributed or needed by this replay.
 Timing/search reproduction requires a newly declared run on a normal rebuild
 from the public source; it must not modify/continue these frozen budgets/results.
 No other Agent checkout or work is read/executed by the replay.
+
+Accounting correction after original delivery: the sealed research `total_nodes`
+field is main-only, because the API reports qnodes separately. Use the report's
+`data/reserve_node_accounting_correction_20261015.json` for full work totals.
+All1044queries/366two-phase receipts preserve the shared cap: phase1 qnodes0.
+The original archive and histories are unchanged; no timing/search rerun.

@@ -17,8 +17,10 @@ without displacing useful requested-q completion under the SAME caller deadline.
 The fixed candidate assigns a.25s reserve target to disabled q, then gives actual remaining
 caller time to enabled ordinaryq4/hard8. The single-call controls are disabled
 q and enabledq4. All arms use the physical-root-win goal, maxD16, TT0, no ordering
-cache and one million TOTAL nodes; the second call subtracts actual first-call
-nodes, including qnodes already included in Native nodes. Inputs are precompiled
+cache and one million TOTAL internal budget nodes. The API exposes main `nodes` and
+`qnodes` separately; only their SUM is total work. The first call has disabled q
+and actual zero qnodes, so subtracting its main nodes is exact for phase2.
+Inputs are precompiled
 and priced; engine construction, packing, kernel execution, returned PV checking
 and phase decision/record conversion are charged. Full initial admission is
 outside this per-move experiment, and scientific audits/file saves are separate.
@@ -224,3 +226,18 @@ Focused existing Native goal/cancel/budget/q contracts:56passed. Pytest optional
 Archive: `../archive/reserve_allocation_20261015/evidence.zip`, per-member hashes and `replay.py`; complete phase records, rules/roots, protocols, all missing slots, controls and next-source examination. Public-copy replay receipt is recorded after actual execution.
 
 Actual sealed public-copy replay passes103members,82roots/1320phases/3796edges plus176trajectoryedges, search disabled. Exact archiveSHA and actual duration are in `../archive/reserve_allocation_20261015/publication-replay.json`. All owned producers have closed; no final success is inferred from source reading alone.
+
+Post-publication source-export correction: I initially read the internal counter
+without checking its exporter, then incorrectly said API `nodes` included qnodes.
+It does NOT: exporter subtracts qnodes. The frozen producer's `total_nodes` field
+therefore means main-only, not total work. All1044actual caller queries and366
+two-phase receipts are now audited in
+`data/reserve_node_accounting_correction_20261015.json`: every first phase has
+qnodes0, and combined main+q across all phases never exceeds1000000. Hence shared
+caps, actions, outcomes and timings are unchanged; only the reported work-total
+interpretation was wrong. Original archive/source/rows remain sealed. This is
+an explicit correction, not a silent repair/rerun or new Native bug.
+
+The frozen8root cutoff-counter protocol is NOT EXECUTED: source examination
+found this accounting error first, and correction took priority. No counter
+image or heuristic was built; the next-source question remains begun/unresolved.
