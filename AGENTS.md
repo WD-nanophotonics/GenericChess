@@ -1,12 +1,29 @@
 # GenericChess local research policy
 
-This is the sole active policy; user instructions take precedence. One local
-Agent works on sandbox in this checkout. Never touch alphasho, its audits,
-tasks or other projects. No extra Agents, Work/Codex delegates or heavy jobs.
+This is the sole active policy; user instructions take precedence. One DEV_AUX local
+Agent works on sidemission in this independent checkout; PRIMARY owns sandbox elsewhere. Never touch alphasho, its audits,
+tasks or other projects. No automatic spawning/delegation, extra fees or uncontrolled/unbounded jobs.
+User-authorized bounded project work is permitted.
+
+## Current decisions and reasons — user2026-10-15
+
+PUBLIC repository enables anonymous Dot/Chat evidence access; failed PRIVATE
+access experiment is superseded, never a retry task. Change visibility only
+after a NEW explicit user direction. Actual checked project content of any
+origin may be published to origin/sidemission and project Slack; exclude actual
+personal information/passwords/credentials, preserve sensitive originals ignored.
+PRIMARY owns search/backend integration on sandbox; DEV_AUX independently owns
+the user-approved material-plus-fixed-proof experiment on sidemission. The old
+blanket no-auxiliary premise is superseded; no automatic spawning/cross-writes.
+Search comparison remains project priority; later explicit user implementation
+of material/proof W-L controls establishes this auxiliary task, not authority to
+take over PRIMARY. CHAT_Comments advise; they do not override user directions.
+Carry purpose, superseded premise and consequence into recovery, not isolated
+historical permissions. Update current decisions with reasons when they change.
 
 User2026-10-11 explicitly authorizes a user-established auxiliary validation
 Agent. This scoped exception does not authorize automatic spawning/delegation.
-The primary Agent remains the sole writer/publisher of sandbox in this checkout;
+The primary Agent remains the sole writer/publisher of sandbox in its own checkout;
 the auxiliary validator uses its own checkout, branch and evidence directory,
 reads pinned source and returns independent validation results. It does not edit
 primary state, stop/session/memo files, engine defaults or UI, or publish sandbox.

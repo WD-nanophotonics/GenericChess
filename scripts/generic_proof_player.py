@@ -75,12 +75,16 @@ class ProofMaterialPlayer:
 
         try:
             total.poll()
-            if terminal_result(state, self.compiled).status is not TerminalStatus.ONGOING:
+            terminal = terminal_result(state, self.compiled)
+            total.poll()  # Atomic rule execution may cross cancellation/deadline.
+            if terminal.status is not TerminalStatus.ONGOING:
                 source, cause = 'TERMINAL', 'actual_rule_terminal'
                 return out()
             if self.proof_enabled and self.cursor is not None:
                 try:
-                    action = self.cursor.choose(state)
+                    continuation = self.cursor.choose(state)
+                    total.poll()
+                    action = continuation
                 except ValueError:
                     self.cursor = None
                 if action is not None:

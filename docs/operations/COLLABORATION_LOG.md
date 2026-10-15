@@ -1240,3 +1240,23 @@ with its own tested uncommitted source9e66d92e. Its thread explicitly leaves the
 generic prover/cursor/learning lane to AUX56. DEV_AUX read the full four replies,
 did not fetch/execute that attachment, adopt its authority change or write its
 checkout. Our public proof fallback and caller-cost deferral remain independent.
+
+
+## Segment57 repair checkpoint —2026-10-15, research still active
+
+Dot supplement1792050257 read completely/reconciled after exact private storage.
+Closed atomic terminal/cursor cancellation gap in auxiliary ProofMaterialPlayer;
+real verified cursor cancellation/fake-clock deadline regressions pass. Added
+already-paid1797/1798 fixed-opponent C-to-D/interaction/outcome/cost report,
+0new games for this correction. Corrected own AGENTS sidemission identity and
+current decision/reason; PUBLIC and broad checked-project publication stand.
+Mapped actual TRAIN/DEV entry, full public state, scoped actor/FEN bridge and
+result/config dependencies in DEV_AUX_ENTRY_CONTRACT.md; no bulk API refactor.
+
+PRIMARY coordination assigns production Native PENDING/max_ply/import capacity
+and main recovery docs to PRIMARY; AUX does not write or integrate those files.
+New512case1804 H16/H24 assay had already started before the later coordination
+message asking repair-first/no new verification games. Preserve its original
+1500s/45000go cap and all actual outputs; no rerun, extension or further batch.
+The fix and already-paid analysis are delivered first at this checkpoint; this
+is not a session finish or claim that PRIMARY/Dot executed our changes.

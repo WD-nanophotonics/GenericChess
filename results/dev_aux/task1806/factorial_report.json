@@ -1,0 +1,2845 @@
+[
+  {
+    "source": "results/dev_aux/task1797",
+    "source_games_sha256": "3a52854684a1f7e1127f74add3799a6791968ff6f05273830f933bb7a9dad8e9",
+    "selection_sha256": "b17462a4864cdd52c260c9de77cb9554a7c7e2ba4c67adfc24d4f99611997b23",
+    "new_games": 0,
+    "new_go": 0,
+    "retraining": false,
+    "fixed_opponent_proof": true,
+    "cells": {
+      "A": {
+        "n": 64,
+        "net": 10,
+        "outcomes": {
+          "None": 30,
+          "0": 12,
+          "1": 16,
+          "-1": 6
+        },
+        "seconds": 27.67827480005508,
+        "actual_go": 874,
+        "actual_nodes": 2666767,
+        "planned_n": 64,
+        "missing_games": 0,
+        "early_incomplete": 0,
+        "planned_finite_event_bounds": [
+          0.15625,
+          0.15625
+        ],
+        "planned_infinite_outcome_bounds": [
+          -0.3125,
+          0.625
+        ]
+      },
+      "B": {
+        "n": 64,
+        "net": 10,
+        "outcomes": {
+          "None": 30,
+          "0": 12,
+          "1": 16,
+          "-1": 6
+        },
+        "seconds": 50.076132400063216,
+        "actual_go": 856,
+        "actual_nodes": 2609202,
+        "planned_n": 64,
+        "missing_games": 0,
+        "early_incomplete": 0,
+        "planned_finite_event_bounds": [
+          0.15625,
+          0.15625
+        ],
+        "planned_infinite_outcome_bounds": [
+          -0.3125,
+          0.625
+        ]
+      },
+      "C": {
+        "n": 64,
+        "net": 10,
+        "outcomes": {
+          "None": 34,
+          "0": 8,
+          "1": 16,
+          "-1": 6
+        },
+        "seconds": 30.440679200051818,
+        "actual_go": 902,
+        "actual_nodes": 2734010,
+        "planned_n": 64,
+        "missing_games": 0,
+        "early_incomplete": 0,
+        "planned_finite_event_bounds": [
+          0.15625,
+          0.15625
+        ],
+        "planned_infinite_outcome_bounds": [
+          -0.375,
+          0.6875
+        ]
+      },
+      "D": {
+        "n": 64,
+        "net": 10,
+        "outcomes": {
+          "None": 32,
+          "0": 6,
+          "1": 18,
+          "-1": 8
+        },
+        "seconds": 54.94315960002132,
+        "actual_go": 904,
+        "actual_nodes": 2734458,
+        "planned_n": 64,
+        "missing_games": 0,
+        "early_incomplete": 0,
+        "planned_finite_event_bounds": [
+          0.15625,
+          0.15625
+        ],
+        "planned_infinite_outcome_bounds": [
+          -0.34375,
+          0.65625
+        ]
+      }
+    },
+    "contrasts": [
+      {
+        "contrast": "solver_at_unit",
+        "role": "BALANCED",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 30,
+          "0->0": 12,
+          "1->1": 16,
+          "-1->-1": 6
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 22.397857600008138,
+        "paired_actual_go_difference": -18
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "BALANCED",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 30,
+          "0->0": 6,
+          "1->1": 16,
+          "0->None": 2,
+          "-1->-1": 6,
+          "None->1": 2,
+          "None->-1": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 24.5024803999695,
+        "paired_actual_go_difference": 2
+      },
+      {
+        "contrast": "price_plain",
+        "role": "BALANCED",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 26,
+          "0->None": 8,
+          "None->0": 4,
+          "1->1": 16,
+          "0->0": 4,
+          "-1->-1": 6
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 2.76240439999674,
+        "paired_actual_go_difference": 28
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "BALANCED",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 22,
+          "0->None": 10,
+          "None->0": 4,
+          "1->1": 16,
+          "-1->-1": 6,
+          "None->1": 2,
+          "None->-1": 2,
+          "0->0": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 4.867027199958102,
+        "paired_actual_go_difference": 48
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "BALANCED",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 2.104622799961362,
+        "paired_actual_go_difference": 20
+      },
+      {
+        "contrast": "solver_at_unit",
+        "role": "BALANCED",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 14,
+          "0->0": 8,
+          "1->1": 10
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 11.027823100041132,
+        "paired_actual_go_difference": -16
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "BALANCED",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 18,
+          "1->1": 10,
+          "0->None": 2,
+          "0->0": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 11.806506000022637,
+        "paired_actual_go_difference": -12
+      },
+      {
+        "contrast": "price_plain",
+        "role": "BALANCED",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 14,
+          "0->None": 4,
+          "1->1": 10,
+          "0->0": 4
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.5597323999827495,
+        "paired_actual_go_difference": 24
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "BALANCED",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 14,
+          "0->None": 6,
+          "1->1": 10,
+          "0->0": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 2.338415299964254,
+        "paired_actual_go_difference": 28
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "BALANCED",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.7786828999815043,
+        "paired_actual_go_difference": 4
+      },
+      {
+        "contrast": "solver_at_unit",
+        "role": "BALANCED",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 16,
+          "1->1": 6,
+          "-1->-1": 6,
+          "0->0": 4
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 11.370034499967005,
+        "paired_actual_go_difference": -2
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "BALANCED",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "0->0": 4,
+          "None->None": 12,
+          "1->1": 6,
+          "-1->-1": 6,
+          "None->1": 2,
+          "None->-1": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 12.695974399946863,
+        "paired_actual_go_difference": 14
+      },
+      {
+        "contrast": "price_plain",
+        "role": "BALANCED",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->0": 4,
+          "None->None": 12,
+          "1->1": 6,
+          "-1->-1": 6,
+          "0->None": 4
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.2026720000139903,
+        "paired_actual_go_difference": 4
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "BALANCED",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->0": 4,
+          "None->None": 8,
+          "1->1": 6,
+          "-1->-1": 6,
+          "None->1": 2,
+          "None->-1": 2,
+          "0->None": 4
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 2.528611899993848,
+        "paired_actual_go_difference": 20
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "BALANCED",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.3259398999798577,
+        "paired_actual_go_difference": 16
+      },
+      {
+        "contrast": "solver_at_unit",
+        "role": "TO_MOVE",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 14,
+          "1->1": 16,
+          "0->0": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 10.219475899983081,
+        "paired_actual_go_difference": -18
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "TO_MOVE",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 10,
+          "0->0": 4,
+          "1->1": 16,
+          "None->1": 2
+        },
+        "event_delta": 0.0625,
+        "family95": [
+          0,
+          0.1875
+        ],
+        "family_values": [
+          0,
+          0,
+          0.5,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 10.8416511999676,
+        "paired_actual_go_difference": -9
+      },
+      {
+        "contrast": "price_plain",
+        "role": "TO_MOVE",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 10,
+          "None->0": 4,
+          "1->1": 16,
+          "0->None": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.0884874999755993,
+        "paired_actual_go_difference": 4
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "TO_MOVE",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 8,
+          "None->0": 4,
+          "1->1": 16,
+          "None->1": 2,
+          "0->None": 2
+        },
+        "event_delta": 0.0625,
+        "family95": [
+          0,
+          0.1875
+        ],
+        "family_values": [
+          0,
+          0,
+          0.5,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.7106627999601187,
+        "paired_actual_go_difference": 13
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "TO_MOVE",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": 0.0625,
+        "family95": [
+          0,
+          0.1875
+        ],
+        "family_values": [
+          0,
+          0,
+          0.5,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.6221752999845194,
+        "paired_actual_go_difference": 9
+      },
+      {
+        "contrast": "solver_at_unit",
+        "role": "TO_MOVE",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 6,
+          "1->1": 10
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 4.314204600013909,
+        "paired_actual_go_difference": -16
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "TO_MOVE",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 6,
+          "1->1": 10
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 4.2745966000220506,
+        "paired_actual_go_difference": -16
+      },
+      {
+        "contrast": "price_plain",
+        "role": "TO_MOVE",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 6,
+          "1->1": 10
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.6219028999767033,
+        "paired_actual_go_difference": 4
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "TO_MOVE",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 6,
+          "1->1": 10
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.582294899984845,
+        "paired_actual_go_difference": 4
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "TO_MOVE",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": -0.03960799999185838,
+        "paired_actual_go_difference": 0
+      },
+      {
+        "contrast": "solver_at_unit",
+        "role": "TO_MOVE",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 8,
+          "1->1": 6,
+          "0->0": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 5.905271299969172,
+        "paired_actual_go_difference": -2
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "TO_MOVE",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "0->0": 4,
+          "1->1": 6,
+          "None->1": 2,
+          "None->None": 4
+        },
+        "event_delta": 0.125,
+        "family95": [
+          0,
+          0.375
+        ],
+        "family_values": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 6.56705459994555,
+        "paired_actual_go_difference": 7
+      },
+      {
+        "contrast": "price_plain",
+        "role": "TO_MOVE",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->0": 4,
+          "1->1": 6,
+          "None->None": 4,
+          "0->None": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.466584599998896,
+        "paired_actual_go_difference": 0
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "TO_MOVE",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->0": 4,
+          "1->1": 6,
+          "None->1": 2,
+          "None->None": 2,
+          "0->None": 2
+        },
+        "event_delta": 0.125,
+        "family95": [
+          0,
+          0.375
+        ],
+        "family_values": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.1283678999752738,
+        "paired_actual_go_difference": 9
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "TO_MOVE",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": 0.125,
+        "family95": [
+          0,
+          0.375
+        ],
+        "family_values": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.6617832999763777,
+        "paired_actual_go_difference": 9
+      },
+      {
+        "contrast": "solver_at_unit",
+        "role": "OTHER",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "0->0": 10,
+          "None->None": 16,
+          "-1->-1": 6
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 12.178381700025056,
+        "paired_actual_go_difference": 0
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "OTHER",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 20,
+          "0->None": 2,
+          "-1->-1": 6,
+          "None->-1": 2,
+          "0->0": 2
+        },
+        "event_delta": -0.0625,
+        "family95": [
+          -0.1875,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          -0.5,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 13.6608292000019,
+        "paired_actual_go_difference": 11
+      },
+      {
+        "contrast": "price_plain",
+        "role": "OTHER",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "0->None": 6,
+          "None->None": 16,
+          "0->0": 4,
+          "-1->-1": 6
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.6739169000211405,
+        "paired_actual_go_difference": 24
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "OTHER",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "0->None": 8,
+          "None->None": 14,
+          "-1->-1": 6,
+          "None->-1": 2,
+          "0->0": 2
+        },
+        "event_delta": -0.0625,
+        "family95": [
+          -0.1875,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          -0.5,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 3.156364399997983,
+        "paired_actual_go_difference": 35
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "OTHER",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": -0.0625,
+        "family95": [
+          -0.1875,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          -0.5,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.4824474999768427,
+        "paired_actual_go_difference": 11
+      },
+      {
+        "contrast": "solver_at_unit",
+        "role": "OTHER",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "0->0": 8,
+          "None->None": 8
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 6.7136185000272235,
+        "paired_actual_go_difference": 0
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "OTHER",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 12,
+          "0->None": 2,
+          "0->0": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 7.531909400000586,
+        "paired_actual_go_difference": 4
+      },
+      {
+        "contrast": "price_plain",
+        "role": "OTHER",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "0->None": 4,
+          "0->0": 4,
+          "None->None": 8
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.9378295000060461,
+        "paired_actual_go_difference": 20
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "OTHER",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "0->None": 6,
+          "None->None": 8,
+          "0->0": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.7561203999794088,
+        "paired_actual_go_difference": 24
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "OTHER",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.8182908999733627,
+        "paired_actual_go_difference": 4
+      },
+      {
+        "contrast": "solver_at_unit",
+        "role": "OTHER",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 8,
+          "-1->-1": 6,
+          "0->0": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 5.464763199997833,
+        "paired_actual_go_difference": 0
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "OTHER",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 8,
+          "-1->-1": 6,
+          "None->-1": 2
+        },
+        "event_delta": -0.125,
+        "family95": [
+          -0.375,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 6.128919800001313,
+        "paired_actual_go_difference": 7
+      },
+      {
+        "contrast": "price_plain",
+        "role": "OTHER",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 8,
+          "-1->-1": 6,
+          "0->None": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.7360874000150943,
+        "paired_actual_go_difference": 4
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "OTHER",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 6,
+          "-1->-1": 6,
+          "None->-1": 2,
+          "0->None": 2
+        },
+        "event_delta": -0.125,
+        "family95": [
+          -0.375,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.4002440000185743,
+        "paired_actual_go_difference": 11
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "OTHER",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": -0.125,
+        "family95": [
+          -0.375,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.66415660000348,
+        "paired_actual_go_difference": 7
+      }
+    ],
+    "scope": "Exploratory correction using already-exposed8DEVfamilies; full-family paired bootstrap, not confirmatory significance. UNKNOWN is zero finite event but stays unresolved, all matrices retained. Interaction is identified only because opponent policy is fixed. Actual realized time/work differ, not equal-time strength."
+  },
+  {
+    "source": "results/dev_aux/task1798",
+    "source_games_sha256": "a8fda1c59736c7bd70c5c6d22c7468c6d128308f8f78eeeaf9add6b357c1ba21",
+    "selection_sha256": "3c154e4af5f7e0047ad1b7b5b82ae6e369f4e147e1a61a6ca74b16993150f1eb",
+    "new_games": 0,
+    "new_go": 0,
+    "retraining": false,
+    "fixed_opponent_proof": true,
+    "cells": {
+      "A": {
+        "n": 64,
+        "net": 6,
+        "outcomes": {
+          "1": 18,
+          "None": 4,
+          "-1": 12,
+          "0": 30
+        },
+        "seconds": 23.994255800032988,
+        "actual_go": 718,
+        "actual_nodes": 2146539,
+        "planned_n": 64,
+        "missing_games": 0,
+        "early_incomplete": 0,
+        "planned_finite_event_bounds": [
+          0.09375,
+          0.09375
+        ],
+        "planned_infinite_outcome_bounds": [
+          0.03125,
+          0.15625
+        ]
+      },
+      "B": {
+        "n": 64,
+        "net": 6,
+        "outcomes": {
+          "1": 18,
+          "None": 4,
+          "-1": 12,
+          "0": 30
+        },
+        "seconds": 40.15907289998722,
+        "actual_go": 672,
+        "actual_nodes": 1976751,
+        "planned_n": 64,
+        "missing_games": 0,
+        "early_incomplete": 0,
+        "planned_finite_event_bounds": [
+          0.09375,
+          0.09375
+        ],
+        "planned_infinite_outcome_bounds": [
+          0.03125,
+          0.15625
+        ]
+      },
+      "C": {
+        "n": 64,
+        "net": 8,
+        "outcomes": {
+          "1": 18,
+          "0": 24,
+          "None": 12,
+          "-1": 10
+        },
+        "seconds": 26.79188249995059,
+        "actual_go": 750,
+        "actual_nodes": 2265708,
+        "planned_n": 64,
+        "missing_games": 0,
+        "early_incomplete": 0,
+        "planned_finite_event_bounds": [
+          0.125,
+          0.125
+        ],
+        "planned_infinite_outcome_bounds": [
+          -0.0625,
+          0.3125
+        ]
+      },
+      "D": {
+        "n": 64,
+        "net": 10,
+        "outcomes": {
+          "1": 20,
+          "0": 24,
+          "-1": 10,
+          "None": 10
+        },
+        "seconds": 43.91223779997381,
+        "actual_go": 726,
+        "actual_nodes": 2115460,
+        "planned_n": 64,
+        "missing_games": 0,
+        "early_incomplete": 0,
+        "planned_finite_event_bounds": [
+          0.15625,
+          0.15625
+        ],
+        "planned_infinite_outcome_bounds": [
+          0.0,
+          0.3125
+        ]
+      }
+    },
+    "contrasts": [
+      {
+        "contrast": "solver_at_unit",
+        "role": "BALANCED",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 18,
+          "None->None": 4,
+          "-1->-1": 12,
+          "0->0": 30
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 16.164817099954234,
+        "paired_actual_go_difference": -46
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "BALANCED",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 18,
+          "0->0": 24,
+          "None->1": 2,
+          "-1->-1": 10,
+          "None->None": 10
+        },
+        "event_delta": 0.03125,
+        "family95": [
+          0,
+          0.09375
+        ],
+        "family_values": [
+          0.25,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 17.12035530002322,
+        "paired_actual_go_difference": -24
+      },
+      {
+        "contrast": "price_plain",
+        "role": "BALANCED",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 16,
+          "None->0": 2,
+          "1->None": 2,
+          "-1->0": 2,
+          "0->0": 20,
+          "-1->-1": 10,
+          "0->1": 2,
+          "0->None": 8,
+          "None->None": 2
+        },
+        "event_delta": 0.03125,
+        "family95": [
+          0,
+          0.09375
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0.25,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 2.7976266999176005,
+        "paired_actual_go_difference": 32
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "BALANCED",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 18,
+          "None->0": 2,
+          "-1->0": 2,
+          "0->0": 20,
+          "-1->-1": 10,
+          "0->1": 2,
+          "0->None": 8,
+          "None->None": 2
+        },
+        "event_delta": 0.0625,
+        "family95": [
+          0,
+          0.15625
+        ],
+        "family_values": [
+          0.25,
+          0,
+          0,
+          0.25,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 3.7531648999865865,
+        "paired_actual_go_difference": 54
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "BALANCED",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": 0.03125,
+        "family95": [
+          0,
+          0.09375
+        ],
+        "family_values": [
+          0.25,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.955538200068986,
+        "paired_actual_go_difference": 22
+      },
+      {
+        "contrast": "solver_at_unit",
+        "role": "BALANCED",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 10,
+          "None->None": 4,
+          "0->0": 14,
+          "-1->-1": 4
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 7.806921100011095,
+        "paired_actual_go_difference": -26
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "BALANCED",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 12,
+          "0->0": 14,
+          "-1->-1": 4,
+          "None->None": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 7.510784999947646,
+        "paired_actual_go_difference": -10
+      },
+      {
+        "contrast": "price_plain",
+        "role": "BALANCED",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 10,
+          "None->0": 2,
+          "0->0": 12,
+          "-1->-1": 4,
+          "0->1": 2,
+          "None->None": 2
+        },
+        "event_delta": 0.0625,
+        "family95": [
+          0,
+          0.1875
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0.5,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.251115299979574,
+        "paired_actual_go_difference": 6
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "BALANCED",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 10,
+          "None->0": 2,
+          "0->0": 12,
+          "-1->-1": 4,
+          "0->1": 2,
+          "None->None": 2
+        },
+        "event_delta": 0.0625,
+        "family95": [
+          0,
+          0.1875
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0.5,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.9549791999161243,
+        "paired_actual_go_difference": 22
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "BALANCED",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": -0.2961361000634497,
+        "paired_actual_go_difference": 16
+      },
+      {
+        "contrast": "solver_at_unit",
+        "role": "BALANCED",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 8,
+          "-1->-1": 8,
+          "0->0": 16
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 8.357895999943139,
+        "paired_actual_go_difference": -20
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "BALANCED",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->1": 2,
+          "0->0": 10,
+          "1->1": 6,
+          "-1->-1": 6,
+          "None->None": 8
+        },
+        "event_delta": 0.0625,
+        "family95": [
+          0,
+          0.1875
+        ],
+        "family_values": [
+          0.5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 9.609570300075575,
+        "paired_actual_go_difference": -14
+      },
+      {
+        "contrast": "price_plain",
+        "role": "BALANCED",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->None": 2,
+          "-1->0": 2,
+          "0->0": 8,
+          "1->1": 6,
+          "-1->-1": 6,
+          "0->None": 8
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.5465113999380264,
+        "paired_actual_go_difference": 26
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "BALANCED",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 8,
+          "-1->0": 2,
+          "0->0": 8,
+          "-1->-1": 6,
+          "0->None": 8
+        },
+        "event_delta": 0.0625,
+        "family95": [
+          0,
+          0.1875
+        ],
+        "family_values": [
+          0.5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 2.798185700070462,
+        "paired_actual_go_difference": 32
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "BALANCED",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": 0.0625,
+        "family95": [
+          0,
+          0.1875
+        ],
+        "family_values": [
+          0.5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.2516743001324357,
+        "paired_actual_go_difference": 6
+      },
+      {
+        "contrast": "solver_at_unit",
+        "role": "TO_MOVE",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 16,
+          "0->0": 14,
+          "None->None": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 7.384988599966164,
+        "paired_actual_go_difference": -40
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "TO_MOVE",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 16,
+          "None->1": 2,
+          "0->0": 8,
+          "None->None": 6
+        },
+        "event_delta": 0.0625,
+        "family95": [
+          0,
+          0.1875
+        ],
+        "family_values": [
+          0.5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 7.784894700016594,
+        "paired_actual_go_difference": -20
+      },
+      {
+        "contrast": "price_plain",
+        "role": "TO_MOVE",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 14,
+          "1->None": 2,
+          "0->0": 8,
+          "0->1": 2,
+          "0->None": 4,
+          "None->None": 2
+        },
+        "event_delta": 0.0,
+        "family95": [
+          -0.1875,
+          0.1875
+        ],
+        "family_values": [
+          -0.5,
+          0,
+          0,
+          0.5,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.482438499937416,
+        "paired_actual_go_difference": 14
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "TO_MOVE",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 16,
+          "0->0": 8,
+          "0->1": 2,
+          "0->None": 4,
+          "None->None": 2
+        },
+        "event_delta": 0.0625,
+        "family95": [
+          0,
+          0.1875
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0.5,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.8823445999878459,
+        "paired_actual_go_difference": 34
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "TO_MOVE",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": 0.0625,
+        "family95": [
+          0,
+          0.1875
+        ],
+        "family_values": [
+          0.5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.3999061000504298,
+        "paired_actual_go_difference": 20
+      },
+      {
+        "contrast": "solver_at_unit",
+        "role": "TO_MOVE",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 8,
+          "0->0": 6,
+          "None->None": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 3.3777259000053164,
+        "paired_actual_go_difference": -20
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "TO_MOVE",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 10,
+          "0->0": 4,
+          "None->None": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 3.122295099994517,
+        "paired_actual_go_difference": -6
+      },
+      {
+        "contrast": "price_plain",
+        "role": "TO_MOVE",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 8,
+          "0->0": 4,
+          "0->1": 2,
+          "None->None": 2
+        },
+        "event_delta": 0.125,
+        "family95": [
+          0,
+          0.375
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.7775668999674963,
+        "paired_actual_go_difference": 4
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "TO_MOVE",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 8,
+          "0->0": 4,
+          "0->1": 2,
+          "None->None": 2
+        },
+        "event_delta": 0.125,
+        "family95": [
+          0,
+          0.375
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.5221360999566969,
+        "paired_actual_go_difference": 18
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "TO_MOVE",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": -0.25543080001079943,
+        "paired_actual_go_difference": 14
+      },
+      {
+        "contrast": "solver_at_unit",
+        "role": "TO_MOVE",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 8,
+          "0->0": 8
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 4.007262699960847,
+        "paired_actual_go_difference": -20
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "TO_MOVE",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->1": 2,
+          "0->0": 4,
+          "1->1": 6,
+          "None->None": 4
+        },
+        "event_delta": 0.125,
+        "family95": [
+          0,
+          0.375
+        ],
+        "family_values": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 4.662599600022077,
+        "paired_actual_go_difference": -14
+      },
+      {
+        "contrast": "price_plain",
+        "role": "TO_MOVE",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->None": 2,
+          "0->0": 4,
+          "1->1": 6,
+          "0->None": 4
+        },
+        "event_delta": -0.125,
+        "family95": [
+          -0.375,
+          0
+        ],
+        "family_values": [
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.7048715999699198,
+        "paired_actual_go_difference": 10
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "TO_MOVE",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "1->1": 8,
+          "0->0": 4,
+          "0->None": 4
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.360208500031149,
+        "paired_actual_go_difference": 16
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "TO_MOVE",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": 0.125,
+        "family95": [
+          0,
+          0.375
+        ],
+        "family_values": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.6553369000612292,
+        "paired_actual_go_difference": 6
+      },
+      {
+        "contrast": "solver_at_unit",
+        "role": "OTHER",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 2,
+          "-1->-1": 12,
+          "0->0": 16,
+          "1->1": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 8.77982849998807,
+        "paired_actual_go_difference": -6
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "OTHER",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "0->0": 16,
+          "-1->-1": 10,
+          "1->1": 2,
+          "None->None": 4
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 9.335460600006627,
+        "paired_actual_go_difference": -4
+      },
+      {
+        "contrast": "price_plain",
+        "role": "OTHER",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->0": 2,
+          "-1->0": 2,
+          "0->0": 12,
+          "-1->-1": 10,
+          "1->1": 2,
+          "0->None": 4
+        },
+        "event_delta": 0.0625,
+        "family95": [
+          0,
+          0.1875
+        ],
+        "family_values": [
+          0.5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.3151881999801844,
+        "paired_actual_go_difference": 18
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "OTHER",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->0": 2,
+          "-1->0": 2,
+          "0->0": 12,
+          "-1->-1": 10,
+          "1->1": 2,
+          "0->None": 4
+        },
+        "event_delta": 0.0625,
+        "family95": [
+          0,
+          0.1875
+        ],
+        "family_values": [
+          0.5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.8708202999987407,
+        "paired_actual_go_difference": 20
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "OTHER",
+        "opponent": "MIXED",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.5556321000185562,
+        "paired_actual_go_difference": 2
+      },
+      {
+        "contrast": "solver_at_unit",
+        "role": "OTHER",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->None": 2,
+          "0->0": 8,
+          "-1->-1": 4,
+          "1->1": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 4.429195200005779,
+        "paired_actual_go_difference": -6
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "OTHER",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "0->0": 10,
+          "-1->-1": 4,
+          "1->1": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 4.388489899953129,
+        "paired_actual_go_difference": -4
+      },
+      {
+        "contrast": "price_plain",
+        "role": "OTHER",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->0": 2,
+          "0->0": 8,
+          "-1->-1": 4,
+          "1->1": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.47354840001207776,
+        "paired_actual_go_difference": 2
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "OTHER",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "None->0": 2,
+          "0->0": 8,
+          "-1->-1": 4,
+          "1->1": 2
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.4328430999594275,
+        "paired_actual_go_difference": 4
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "OTHER",
+        "opponent": "UNIT64",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": -0.04070530005265027,
+        "paired_actual_go_difference": 2
+      },
+      {
+        "contrast": "solver_at_unit",
+        "role": "OTHER",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "-1->-1": 8,
+          "0->0": 8
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 4.350633299982292,
+        "paired_actual_go_difference": 0
+      },
+      {
+        "contrast": "solver_at_learned",
+        "role": "OTHER",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "0->0": 6,
+          "-1->-1": 6,
+          "None->None": 4
+        },
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 4.946970700053498,
+        "paired_actual_go_difference": 0
+      },
+      {
+        "contrast": "price_plain",
+        "role": "OTHER",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "-1->0": 2,
+          "0->0": 4,
+          "-1->-1": 6,
+          "0->None": 4
+        },
+        "event_delta": 0.125,
+        "family95": [
+          0,
+          0.375
+        ],
+        "family_values": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.8416397999681067,
+        "paired_actual_go_difference": 16
+      },
+      {
+        "contrast": "price_hybrid",
+        "role": "OTHER",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {
+          "-1->0": 2,
+          "0->0": 4,
+          "-1->-1": 6,
+          "0->None": 4
+        },
+        "event_delta": 0.125,
+        "family95": [
+          0,
+          0.375
+        ],
+        "family_values": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 1.4379772000393132,
+        "paired_actual_go_difference": 16
+      },
+      {
+        "contrast": "price_solver_interaction",
+        "role": "OTHER",
+        "opponent": "UNIT4096",
+        "complete_families": 8,
+        "missing_families": [],
+        "paired_outcome_changes": {},
+        "event_delta": 0,
+        "family95": [
+          0,
+          0
+        ],
+        "family_values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "paired_game_seconds_difference": 0.5963374000712065,
+        "paired_actual_go_difference": 0
+      }
+    ],
+    "scope": "Exploratory correction using already-exposed8DEVfamilies; full-family paired bootstrap, not confirmatory significance. UNKNOWN is zero finite event but stays unresolved, all matrices retained. Interaction is identified only because opponent policy is fixed. Actual realized time/work differ, not equal-time strength."
+  }
+]

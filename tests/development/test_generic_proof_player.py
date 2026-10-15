@@ -129,3 +129,22 @@ def test_unsupported_internal_runtime_has_explicit_public_legal_fallback():
     assert d.action in legal_actions(s,c) and d.source=='LEGAL_FALLBACK'
     assert d.exit_cause=='public_legal_fallback_unsupported_runtime'
     assert d.nodes==0 and d.proof_reason=='unsupported_no_progress_history'
+
+
+def test_verified_continuation_checks_cancel_after_atomic_terminal(monkeypatch):
+    from scripts import generic_proof_player as module
+    from scripts.generic_win_proof import StrategyCursor, prove_win
+    c=compile_krk();s=krk_state(c,1,3,8,0)
+    cert=prove_win(c,s,max_nodes=4096,seconds=2.).certificate
+    assert cert is not None
+    for mode in ('cancel','time'):
+        p=ProofMaterialPlayer(c,material);p.cursor=StrategyCursor(c,cert,seconds=2.)
+        stopped=[False];clock=[0.];original=module.terminal_result
+        def crossing(*args):
+            result=original(*args);stopped[0]=True;clock[0]=2.;return result
+        with monkeypatch.context() as patch:
+            patch.setattr(module,'terminal_result',crossing)
+            d=p.choose(s,max_nodes=64,seconds=1.,cancel=(lambda:stopped[0]) if mode=='cancel' else None,_clock=lambda:clock[0])
+        assert d.action is None and d.source!='PROOF_CONTINUATION'
+        assert d.exit_cause==('cancelled' if mode=='cancel' else 'time_budget')
+        assert d.nodes==0 and p.cursor is not None
