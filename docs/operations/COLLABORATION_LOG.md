@@ -1441,3 +1441,39 @@ Segment60 actualend63.246minutes/4checkpoints, sessionfinishsafe_checkpoint
 accepted; manualqualityseparatePASS. b456f6e3fullremote/clean/reportanonymous
 Gitbloband3ZIPCRC/allmemberSHAverified; finalclose onlybookkeeping, no new
 research or producer. OwnpatrolACTIVE/scienceOPEN.
+
+
+## DEV_AUX segment61 —2026-10-15, science OPEN
+
+DEV_AUX owns optionalcachedphase in sidemission. Actual48game exposedcontrol
+24/24paths/outcomes match,65.865->35.446s with254CURRENTverifiernodesbotharms;
+new2.75s envelope and physical/logicalcosts explicit. Cancelledlogicalconversion
+paidcounter loss reproduced/fixed;298working/restoredtests include5full-rule
+cachedconsumer mechanisms. Originalsourcepins preserved, no product/default/UI.
+
+Independent four-unit768actualgame control898.287s/10804moves/8887go,364proofgames
+physicallywin. AllTRAINselectors ratio1 butfewnonflatfamilies andmixedDEVgains;
+no unitselection/humanclaim.274ratio/440unit firstdivergences allcandidateNormal.
+Sourcefixedmargins and2304unitqueries show ratioalone notdefine modifiedFairy
+policy. Completefinite-material panel3/64conflicts motivated cheapinput-only
+contactlaw.24TRAINcontactpilot signal2/4nonflat but14UNKNOWN;48H8/H24pilot shows
+cheaper45s vs120s andsame2nonflatfamilies canmissoneactualWIN/changecandidate tie.
+Samebudget onlyproveslatecaseat17, not8/12/16; no oldcensoredrelabel/quantityreward.
+
+Dot actually source-reviewed bdd2996ed2ea69e184cc915fd4efecad9e90211e adapter/bank/
+report and phase/verifier/commit/pilotpaths, found no concretecounterexample to
+narrowcostqualification. DidNOTexecute tests/games/queries/reference, later
+controls notclaimedread. Adviceadopted/reconciled7versions; no permissiongate.
+
+PRIMARYa3c495916f81a2f1fdb50f2b0344a9f5463583f4/b2e543a9 technicalmessage read
+withallnewthreadpages. Ownerreports2687tests/admissionreuse andbudgetreserve
+candidate, NOT rerun/sourceadopted locally. Its coldcompileradmission isnot AUX
+precompiledSessionreplay; Nativeunit results not transferable acrossengines.
+It read AUX60andactive61 asowner/message evidence, no rerun/mainmerge. Boundaries
+remain separate. Ordinaryconcurrency allowed; no quietwindow or duplicateworker.
+
+Unresolved: stableusefulprices/generalization, signal-poor mu andhorizon-dependent
+censoring, completegenerated-domain deployment. Keepfixedopponent/actualW-L and
+UNKNOWN, noDEV/humanfit/oldcapextension. PUBLIC unchanged; source/evidence actual
+contentchecked, sensitiveoriginals ignored. Finalfixedrevision deliveredafter
+safecompletion; delivery isnot Dotread/execution or PRIMARYadoption.

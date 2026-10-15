@@ -1,0 +1,18 @@
+{
+  "status": "PASS_ALL_EXACT_PROFILE_AND_FIXED_OPTION_BINDINGS",
+  "folder": "results/dev_aux/task1875",
+  "queries": 372,
+  "counts": {
+    "exact_profile_ACK": 372,
+    "coldclear": 372
+  },
+  "options": {
+    "Threads": 1,
+    "Hash": 16,
+    "Use NNUE": "false",
+    "SyzygyPath": "<empty>",
+    "VariantPath": "results\\dev_aux\\task1866\\variant-qualified.ini"
+  },
+  "binary_sha": "0263e8d6e9677b82e179c0d1a61ea5080df3275aba3464569e040eb222a20fe9",
+  "scope": "Every INTENT preceded by exact aligned leaf/native/capture tableACK andcoldclear; allrequestednodes/fullhistory already independentlybound by gameauditor. Normalmovetime1..100ms, actualreportednodeovershoot retained. SingleThread1Hash16NNUEfalse, no originalStockfish/NNUE or allrulesNative claim."
+}

@@ -1,0 +1,40 @@
+{
+  "status": "FROZEN_BEFORE_PROBES",
+  "case": {
+    "family": 0,
+    "role": 1,
+    "ratio": 2.0,
+    "slots": [
+      7,
+      6
+    ],
+    "first8choices_equal": true,
+    "outcomes": [
+      "UNKNOWN",
+      "WIN"
+    ],
+    "seconds": [
+      4.4765580000093905,
+      10.908913699997356
+    ],
+    "moves": [
+      8,
+      28
+    ]
+  },
+  "plies": [
+    8,
+    12,
+    16,
+    17
+  ],
+  "target": 1,
+  "proof_nodes": 16384,
+  "proof_seconds": 1.5,
+  "verification_nodes": 16384,
+  "verification_seconds": 0.5,
+  "max_depth": 64,
+  "seconds_cap": 20,
+  "question": "Was the loneH24 extraWIN already cheaply provable at H8, or did later normalplay move it within the sameprover budget?",
+  "scope": "ONEexposed outcome-selected mechanism case, no newNative/learningreward/oldcap extension. Preserve oldH8UNKNOWN/H24WIN and fullsamefirst8prefix. ActualSessionverification/physicalonebranch ifproved, not newindependent sample; no besthorizon fromnonflat/sec alone."
+}

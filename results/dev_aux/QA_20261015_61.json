@@ -1,0 +1,77 @@
+{
+  "status": "VERIFIED_RESEARCH_CHECKPOINT_PENDING_FINAL_FINISH",
+  "science": "OPEN",
+  "working_tests": 298,
+  "initial_restored_tests": 298,
+  "final_source_restored_tests": 298,
+  "source_archive": "SOURCE_REPRO_FINAL_20261015_61.zip",
+  "source_sha": "e755139f47664d586c97fa1cef1a146600255b2669ab1b25c96afbffae886c65",
+  "source_files": 381,
+  "scope": "Currentruntime/tests+through1879sources; EVIDENCE61includes late1877auditor/1880producer and allcurrentclosedsource/data, notclaimed allinone sourceZIP.",
+  "studies": {
+    "1863": {
+      "games": 48,
+      "moves": 530,
+      "native_go": 430,
+      "seconds": 101.48426360001031,
+      "proof_games": 34,
+      "source_unchanged": true,
+      "audit": "PASS",
+      "tails": 0,
+      "tail_moves": 0
+    },
+    "1869": {
+      "games": 768,
+      "moves": 10804,
+      "native_go": 8887,
+      "seconds": 898.2870917999971,
+      "proof_games": 364,
+      "source_unchanged": true,
+      "audit": "PASS",
+      "tails": 92,
+      "tail_moves": 1110
+    },
+    "1875": {
+      "games": 24,
+      "moves": 469,
+      "native_go": 372,
+      "seconds": 84.65228150000621,
+      "proof_games": 7,
+      "source_unchanged": true,
+      "audit": "PASS",
+      "tails": 7,
+      "tail_moves": 91
+    },
+    "1877": {
+      "games": 48,
+      "moves": 914,
+      "native_go": 714,
+      "seconds": 165.06775010000274,
+      "proof_games": 15,
+      "source_unchanged": true,
+      "audit": "PASS",
+      "tails": 13,
+      "tail_moves": 200
+    }
+  },
+  "actual_new_policy_games": 888,
+  "actual_physical_moves": 12717,
+  "actual_policy_native_go": 10403,
+  "choice_only_native_go": 2304,
+  "native_perft": 64,
+  "all_policy_producers_closed": true,
+  "price_selection": "1869perfixedunitTRAINonlybeforeDEV; no unitselector, no humanfit; contact/horizon TRAINonlyno selector",
+  "public_visibility_required": true,
+  "primary_read_only": true,
+  "no_product_or_default_change": true,
+  "actual_research_stop_or_block": false,
+  "manual_quality_review": "Independentactualstate/history/literalActor/Nativecommand/ACK/physicalrank/actualWDL checks; timechecker separate.",
+  "independent_archived_public_replay": {
+    "games": 888,
+    "moves": 12717,
+    "native_go": 0,
+    "proof_searches": 0,
+    "status": "PASS",
+    "evidence": "task1882/archive_replay.json"
+  }
+}

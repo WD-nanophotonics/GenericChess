@@ -1,33 +1,37 @@
-# DEV_AUX current mainline —2026-10-15 segment60
+# DEV_AUX current mainline —2026-10-15 segment61
 
-Own sidemission/scienceOPEN/PRIMARYreadonly. PUBLIC for anonymousDot/Chat;
-failedPrivate superseded. Checked projectcontent maypublish; sensitive originals
-ignored. Current authority/isolation reasons in AGENTS. No product/default/UI.
+ScienceOPEN, own sidemission/patrolACTIVE, PRIMARYreadonly. PUBLIC for anonymous
+Dot/Chat; failedPRIVATE superseded. Checkedprojectcontent allowed, sensitive
+originals ignored. AGENTS carries currentpurpose/authority/isolation reasons.
+No product/default/UI changes or automaticmainmerge.
 
-ActualSession separate-phase384game control1848 completes770.196s/5013moves,
-4512Nativequeries,110adoptedproof games physicallywin,23tails280moves. New32
-input-only root families exclude oldorbits; fixedUNIT64proof opponent/roles/
-3prices/H16, trainingselection beforeDEV. TRAINselectsR/N1 bothmodes, only2/16
-hybridtrainfamilies nonflat; learnedhybridDEV versus initial.5/2 is-.03125/-.09375.
-Baseline comparison self-identity0 is not learning success. AtR720 addingproof
-changes no pairedDEV outcomes but cost9.548->115.633s. Proof652.594s dominates.
-Keep largerbudget optional; oldmu changed too, no causalold-to-newprice claim.
+Optionalcache-phase meets declaredNEW2.75s envelope and CURRENTcursor check.
+48exposedgames/530moves preserve24/24paths/outcomes,65.865->35.446s; actualvs
+logicalproofwork/fill/currentverification separate. Cancellation-paidcounter
+loss reproduced/fixed. Original1848/1863sourcepins retained, no oldcapextension.
 
-Threshold doesnotreducevisits; terminalorder cheapcoverage unchanged; checkorder
-harmsdeep proof. Old1808partial18/48closed, no oldcap/horizon reward extension.
-Bank full keys include target and bothverificationlimits after3actual failed
-controls. Historicalverified receipt never replaces currentcursor verification.
-Old768queryonlyprobe saves8percent, not transferable. New192query actualconsumer
-probe42.708->22.691s,4adoptablewins both,0deadlines; firstprefix/workloadscopeonly.
-Fourexposedrequests/2records actual16moveswin, no cache-enabledprice trial.
+Four common units x3ratios x32EXPOSEDfamilies/roles:768games898.287s10804moves,
+8887go,364proofgamesphysicallywin. TRAINperunitselector beforeDEV, allchoose1,
+only2-3/16nonflatfamilies; no stableDEVgain/bestunitselection. Nativefixedscore
+thresholds cause ratioalone notdefinepolicy. 274ratio/440unit firstdivergences
+ALLcandidateNormal, no fixedopponent/proof contamination. Allactualrules/ACKs/
+fullhistories independentlybound, nodeovershoots retained.
 
-283working+independentCURRENTrestoretests,349sourcefiles. Full5013move/literal
-Session replay,4512completecommands and2740ACK/1772clears independentlybound.
-Dot source-reviewed806, not executed; verification-key advice adopted, later
-fix/source not claimedread. PRIMARY75493026contextonly, no crosswrites.
+Completefinite-depth materialpanel only3/64inputs disjointpriceoptimalactions.
+Input-only symmetriccontactlaw32newroots/1368draws/.05s; TRAINfiniteconflicts
+2/16vs1/16weak.24actualcontactTRAINgames2/4nonflat but14UNKNOWN/7WIN. NewH8/H24
+48TRAINgames first8prefixes24/24equal:45s/7WIN vs120s/8WIN, same2nonflatfamilies
+butratio1vs2strictpreference->tie. One extraWIN UNKNOWNat8/12/16under16kproof,
+provedat17/10974visits andphysicallywon. No oldUNKNOWN relabel. Cheaperhorizon
+alone notscientificallyequivalent. ContactDEVoutcomes/proxies remainunread.
 
-Next actualstep1859: opt-in cache-phase adapter with physical/logical receipts
-and frozen totalwall includingfillANDconsumer verification. Include1860slot276
-real verifier-timeout negativecontrol alongside successfulcases. No newlearner
-cohort merelybecausecache isfaster; price generalization remainsunproven.
-Exact executableMain/Backup1/Backup2 in own NEXT_WORK.
+298working+independentrestoredtests, fullactualSession mechanism controls;
+source381files+finalevidence lateauditors/input closure, CRC/memberSHA. SameOS/
+interpreter, nofreshmachine/Nativefullrerun. Dotreadbdd/notexecute, nocounterexample
+to narrowcachequalification. PRIMARYa3c495/b2e messagecontextonly, no sourceadoption,
+rerun/crosswrite; its coldcompiler costs not our replayadmission.
+
+Nextstep: frozenpolicy/source-distribution decision must address late-win
+censoring and weakpriceidentifiability. Keep optionalcostreuse, actualW-L only,
+UNKNOWNdistinct, noDEV/human tuning or longeroldcap. Executablememo tasks own
+NEXT_WORK. Old1808partial18/48 remainsclosed, noresume/reset.

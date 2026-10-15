@@ -1,0 +1,39 @@
+{
+  "status": "COMPLETE_PAID_COUNTERFACTUAL_AUDIT",
+  "summaries": {
+    "RATIO_WITHIN_UNIT": {
+      "counts": {
+        "pairs": 768,
+        "same_actual_outcomes": 690,
+        "same_event_score": 708,
+        "same_action_paths": 494,
+        "first_divergences": 274,
+        "candidate_normal_first_divergences": 274
+      },
+      "first_divergence_categories": {
+        "CANDIDATE:EXTERNAL_SEARCH|EXTERNAL_SEARCH": 274
+      },
+      "non_normal_reason_pairs": {}
+    },
+    "UNIT_WITHIN_RATIO": {
+      "counts": {
+        "pairs": 1152,
+        "same_actual_outcomes": 1065,
+        "same_event_score": 1090,
+        "same_action_paths": 712,
+        "first_divergences": 440,
+        "candidate_normal_first_divergences": 440
+      },
+      "first_divergence_categories": {
+        "CANDIDATE:EXTERNAL_SEARCH|EXTERNAL_SEARCH": 440
+      },
+      "non_normal_reason_pairs": {}
+    }
+  },
+  "non_normal_or_prefix_details": [],
+  "seconds": 0.14767230000870768,
+  "new_games": 0,
+  "new_go": 0,
+  "new_proofs": 0,
+  "scope": "Each axis fixesfamily/role/opponent/otherpricecoordinate; pair counts share roots and areNOT independent samples. First normalcandidate divergence is consistent with changedmaterialpolicy, not proof of betterWDL. Non-normal/fixedopponent/prefix-only divergence needs explicit resource/cursor inspection, not automatically called price effect. Original outcomes, budgets and timefailures preserved."
+}

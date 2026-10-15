@@ -1,0 +1,4288 @@
+{
+  "status": "PASS_FULL_INPUT_GRID_PRICE_SENSITIVITY",
+  "states": 64,
+  "state_ratio_cases": 192,
+  "reused": 28,
+  "actual_new_reference_nodes": 413270,
+  "origin_reused_nodes": 94163,
+  "actual_new_reference_seconds": 37.48269180006173,
+  "different_optimal_sets": 28,
+  "no_common_optimal_move_across3prices": 3,
+  "disjoint_low_high": 3,
+  "unit_changes": {
+    "unit_changed": 14,
+    "unit_changed_unequal_reference_values": 7
+  },
+  "states_detail": [
+    {
+      "state": 0,
+      "common_optimal_moves": [
+        "d3b2"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "d3b2"
+        ],
+        "1.0": [
+          "d3b2"
+        ],
+        "2.0": [
+          "d3b2",
+          "d3c1"
+        ]
+      }
+    },
+    {
+      "state": 1,
+      "common_optimal_moves": [
+        "b2d3"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "b2d3"
+        ],
+        "1.0": [
+          "b2d3"
+        ],
+        "2.0": [
+          "b2d3"
+        ]
+      }
+    },
+    {
+      "state": 2,
+      "common_optimal_moves": [
+        "b2d1"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "b2d1"
+        ],
+        "1.0": [
+          "a4a3",
+          "b2d1"
+        ],
+        "2.0": [
+          "b2d1"
+        ]
+      }
+    },
+    {
+      "state": 3,
+      "common_optimal_moves": [
+        "c3b2"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "c3b2"
+        ],
+        "1.0": [
+          "c3b2",
+          "c3d2"
+        ],
+        "2.0": [
+          "c3b2",
+          "c3d2",
+          "c3d4"
+        ]
+      }
+    },
+    {
+      "state": 4,
+      "common_optimal_moves": [
+        "b2a2"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "b2a2"
+        ],
+        "1.0": [
+          "b2a2"
+        ],
+        "2.0": [
+          "b2a2"
+        ]
+      }
+    },
+    {
+      "state": 5,
+      "common_optimal_moves": [
+        "a3c2"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a3c2"
+        ],
+        "1.0": [
+          "a3c2"
+        ],
+        "2.0": [
+          "a3c2"
+        ]
+      }
+    },
+    {
+      "state": 6,
+      "common_optimal_moves": [
+        "b3b2",
+        "c1b2"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "b3b2",
+          "b3c3",
+          "c1b2"
+        ],
+        "1.0": [
+          "b3b2",
+          "b3c3",
+          "c1b2"
+        ],
+        "2.0": [
+          "b3b2",
+          "c1b2"
+        ]
+      }
+    },
+    {
+      "state": 7,
+      "common_optimal_moves": [
+        "c2a3"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "c2a3"
+        ],
+        "1.0": [
+          "c2a3"
+        ],
+        "2.0": [
+          "c2a3"
+        ]
+      }
+    },
+    {
+      "state": 8,
+      "common_optimal_moves": [
+        "d2d3"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "d2d3"
+        ],
+        "1.0": [
+          "d2d3"
+        ],
+        "2.0": [
+          "d2d3"
+        ]
+      }
+    },
+    {
+      "state": 9,
+      "common_optimal_moves": [
+        "d3d2"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "d3d2"
+        ],
+        "1.0": [
+          "d3d2"
+        ],
+        "2.0": [
+          "d3d2"
+        ]
+      }
+    },
+    {
+      "state": 10,
+      "common_optimal_moves": [
+        "b2b4"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a2c1",
+          "a2c3",
+          "b2b4",
+          "c2b3",
+          "c2c1"
+        ],
+        "1.0": [
+          "b2b4"
+        ],
+        "2.0": [
+          "b2b4"
+        ]
+      }
+    },
+    {
+      "state": 11,
+      "common_optimal_moves": [
+        "a4b2",
+        "d4c4"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a4b2",
+          "d4c4"
+        ],
+        "1.0": [
+          "a4b2",
+          "d4c4"
+        ],
+        "2.0": [
+          "a4b2",
+          "d4c4"
+        ]
+      }
+    },
+    {
+      "state": 12,
+      "common_optimal_moves": [],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": true,
+      "all3_conflict": true,
+      "best_by_ratio": {
+        "0.5": [
+          "d1c3"
+        ],
+        "1.0": [
+          "b3c3",
+          "d1c3"
+        ],
+        "2.0": [
+          "b3c3"
+        ]
+      }
+    },
+    {
+      "state": 13,
+      "common_optimal_moves": [
+        "a1b3"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a1b3"
+        ],
+        "1.0": [
+          "a1b3"
+        ],
+        "2.0": [
+          "a1b3"
+        ]
+      }
+    },
+    {
+      "state": 14,
+      "common_optimal_moves": [
+        "a4a2"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a4a2"
+        ],
+        "1.0": [
+          "a4a2"
+        ],
+        "2.0": [
+          "a4a2"
+        ]
+      }
+    },
+    {
+      "state": 15,
+      "common_optimal_moves": [],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": true,
+      "all3_conflict": true,
+      "best_by_ratio": {
+        "0.5": [
+          "a2c2"
+        ],
+        "1.0": [
+          "a2a3",
+          "a2b2",
+          "a2c2",
+          "a2d2",
+          "b1a3"
+        ],
+        "2.0": [
+          "b1a3"
+        ]
+      }
+    },
+    {
+      "state": 16,
+      "common_optimal_moves": [
+        "a1b3",
+        "b2b3"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a1b3",
+          "b2b3"
+        ],
+        "1.0": [
+          "a1b3",
+          "b2b3"
+        ],
+        "2.0": [
+          "a1b3",
+          "b2b3"
+        ]
+      }
+    },
+    {
+      "state": 17,
+      "common_optimal_moves": [
+        "c4c1",
+        "c4c2"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "c4c1",
+          "c4c2"
+        ],
+        "1.0": [
+          "c4c1",
+          "c4c2"
+        ],
+        "2.0": [
+          "c4c1",
+          "c4c2"
+        ]
+      }
+    },
+    {
+      "state": 18,
+      "common_optimal_moves": [
+        "d1d2"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "d1d2"
+        ],
+        "1.0": [
+          "d1d2"
+        ],
+        "2.0": [
+          "d1d2"
+        ]
+      }
+    },
+    {
+      "state": 19,
+      "common_optimal_moves": [
+        "d2d1"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "c3d1",
+          "d2d1"
+        ],
+        "1.0": [
+          "c3d1",
+          "d2d1"
+        ],
+        "2.0": [
+          "d2d1"
+        ]
+      }
+    },
+    {
+      "state": 20,
+      "common_optimal_moves": [
+        "a2a4"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a2a4"
+        ],
+        "1.0": [
+          "a2a4"
+        ],
+        "2.0": [
+          "a2a4"
+        ]
+      }
+    },
+    {
+      "state": 21,
+      "common_optimal_moves": [
+        "b4a2"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "b4a2",
+          "d3d2",
+          "d4c3"
+        ],
+        "1.0": [
+          "b4a2",
+          "d4c3"
+        ],
+        "2.0": [
+          "b4a2"
+        ]
+      }
+    },
+    {
+      "state": 22,
+      "common_optimal_moves": [
+        "d4b3",
+        "d4c2"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "d4b3",
+          "d4c2"
+        ],
+        "1.0": [
+          "b4c4",
+          "c3c4",
+          "d4b3",
+          "d4c2"
+        ],
+        "2.0": [
+          "b4c4",
+          "c3c4",
+          "d4b3",
+          "d4c2"
+        ]
+      }
+    },
+    {
+      "state": 23,
+      "common_optimal_moves": [
+        "d1d3"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "c4b2",
+          "d1c1",
+          "d1d3"
+        ],
+        "1.0": [
+          "c4b2",
+          "c4d2",
+          "d1c1",
+          "d1d3"
+        ],
+        "2.0": [
+          "d1d3"
+        ]
+      }
+    },
+    {
+      "state": 24,
+      "common_optimal_moves": [
+        "c3b3"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "c3b3"
+        ],
+        "1.0": [
+          "c3b3"
+        ],
+        "2.0": [
+          "c3b3"
+        ]
+      }
+    },
+    {
+      "state": 25,
+      "common_optimal_moves": [],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": true,
+      "all3_conflict": true,
+      "best_by_ratio": {
+        "0.5": [
+          "b3b4"
+        ],
+        "1.0": [
+          "b1b2",
+          "b3b4",
+          "b3d3"
+        ],
+        "2.0": [
+          "b1b2",
+          "b3d3"
+        ]
+      }
+    },
+    {
+      "state": 26,
+      "common_optimal_moves": [
+        "c4b4"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "c4b4"
+        ],
+        "1.0": [
+          "c4b4"
+        ],
+        "2.0": [
+          "c4b4"
+        ]
+      }
+    },
+    {
+      "state": 27,
+      "common_optimal_moves": [
+        "d2c4"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "d2c4"
+        ],
+        "1.0": [
+          "d2c4"
+        ],
+        "2.0": [
+          "b4c4",
+          "d2c4"
+        ]
+      }
+    },
+    {
+      "state": 28,
+      "common_optimal_moves": [
+        "b4d3"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "b4d3",
+          "c4c3",
+          "c4d3",
+          "d4d1",
+          "d4d3"
+        ],
+        "1.0": [
+          "b4d3",
+          "c4c3",
+          "c4d3",
+          "d4d3"
+        ],
+        "2.0": [
+          "b4d3"
+        ]
+      }
+    },
+    {
+      "state": 29,
+      "common_optimal_moves": [
+        "a1c2",
+        "b2c2",
+        "c1c2"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a1c2",
+          "b2c2",
+          "c1c2"
+        ],
+        "1.0": [
+          "a1c2",
+          "b2c2",
+          "c1c2"
+        ],
+        "2.0": [
+          "a1b3",
+          "a1c2",
+          "b2a2",
+          "b2c2",
+          "c1c2"
+        ]
+      }
+    },
+    {
+      "state": 30,
+      "common_optimal_moves": [
+        "d2a2"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "d2a2"
+        ],
+        "1.0": [
+          "d2a2"
+        ],
+        "2.0": [
+          "d2a2"
+        ]
+      }
+    },
+    {
+      "state": 31,
+      "common_optimal_moves": [
+        "d4c2"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "b3b4",
+          "b3c3",
+          "d4c2"
+        ],
+        "1.0": [
+          "b3b4",
+          "b3c3",
+          "d4c2"
+        ],
+        "2.0": [
+          "d4c2"
+        ]
+      }
+    },
+    {
+      "state": 32,
+      "common_optimal_moves": [
+        "a1c1"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a1c1"
+        ],
+        "1.0": [
+          "a1c1"
+        ],
+        "2.0": [
+          "a1c1"
+        ]
+      }
+    },
+    {
+      "state": 33,
+      "common_optimal_moves": [
+        "d2b1"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "d2b1"
+        ],
+        "1.0": [
+          "d2b1"
+        ],
+        "2.0": [
+          "d2b1"
+        ]
+      }
+    },
+    {
+      "state": 34,
+      "common_optimal_moves": [
+        "d3c3"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "d3c3"
+        ],
+        "1.0": [
+          "d3c3"
+        ],
+        "2.0": [
+          "d3c3"
+        ]
+      }
+    },
+    {
+      "state": 35,
+      "common_optimal_moves": [
+        "c3d3",
+        "d4c2"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "c3d3",
+          "d4c2"
+        ],
+        "1.0": [
+          "c3d3",
+          "d4c2"
+        ],
+        "2.0": [
+          "c3d3",
+          "d4c2"
+        ]
+      }
+    },
+    {
+      "state": 36,
+      "common_optimal_moves": [
+        "a4b2"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a3a2",
+          "a3c3",
+          "a4b2"
+        ],
+        "1.0": [
+          "a3a2",
+          "a3c3",
+          "a4b2",
+          "a4c3"
+        ],
+        "2.0": [
+          "a4b2"
+        ]
+      }
+    },
+    {
+      "state": 37,
+      "common_optimal_moves": [
+        "b4c2"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "b4c2"
+        ],
+        "1.0": [
+          "b4c2"
+        ],
+        "2.0": [
+          "b4c2"
+        ]
+      }
+    },
+    {
+      "state": 38,
+      "common_optimal_moves": [
+        "d3b4"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "d3b4"
+        ],
+        "1.0": [
+          "d3b4"
+        ],
+        "2.0": [
+          "d3b4"
+        ]
+      }
+    },
+    {
+      "state": 39,
+      "common_optimal_moves": [
+        "b4d3"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "b4d3"
+        ],
+        "1.0": [
+          "b4d3"
+        ],
+        "2.0": [
+          "b4d3"
+        ]
+      }
+    },
+    {
+      "state": 40,
+      "common_optimal_moves": [
+        "d3c1"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "d3c1"
+        ],
+        "1.0": [
+          "d3c1"
+        ],
+        "2.0": [
+          "d3c1"
+        ]
+      }
+    },
+    {
+      "state": 41,
+      "common_optimal_moves": [
+        "c2b2"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "c2b2"
+        ],
+        "1.0": [
+          "c2b2"
+        ],
+        "2.0": [
+          "c2b2"
+        ]
+      }
+    },
+    {
+      "state": 42,
+      "common_optimal_moves": [
+        "d1a1"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "d1a1"
+        ],
+        "1.0": [
+          "d1a1",
+          "d4c4"
+        ],
+        "2.0": [
+          "d1a1"
+        ]
+      }
+    },
+    {
+      "state": 43,
+      "common_optimal_moves": [
+        "a3b4",
+        "b3b4",
+        "c4b2",
+        "c4d2"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a3b4",
+          "b3b4",
+          "c4b2",
+          "c4d2"
+        ],
+        "1.0": [
+          "a3b4",
+          "b3b4",
+          "c4b2",
+          "c4d2"
+        ],
+        "2.0": [
+          "a3b4",
+          "b3b4",
+          "c4b2",
+          "c4d2"
+        ]
+      }
+    },
+    {
+      "state": 44,
+      "common_optimal_moves": [
+        "a3c3"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a3c3"
+        ],
+        "1.0": [
+          "a3c3"
+        ],
+        "2.0": [
+          "a3c3"
+        ]
+      }
+    },
+    {
+      "state": 45,
+      "common_optimal_moves": [
+        "c3b3",
+        "d1d2"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "c3b3",
+          "c3c2",
+          "d1d2"
+        ],
+        "1.0": [
+          "c3b3",
+          "c3c1",
+          "c3c2",
+          "d1d2"
+        ],
+        "2.0": [
+          "c3b3",
+          "c3c1",
+          "d1d2"
+        ]
+      }
+    },
+    {
+      "state": 46,
+      "common_optimal_moves": [
+        "b3b2",
+        "d3b4"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "b3b2",
+          "d3b4"
+        ],
+        "1.0": [
+          "b3b2",
+          "b3b4",
+          "d3b2",
+          "d3b4",
+          "d3c1",
+          "d4c3"
+        ],
+        "2.0": [
+          "b3b2",
+          "b3b4",
+          "d3b2",
+          "d3b4",
+          "d3c1",
+          "d4c3"
+        ]
+      }
+    },
+    {
+      "state": 47,
+      "common_optimal_moves": [
+        "a2a4"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a2a4"
+        ],
+        "1.0": [
+          "a2a4"
+        ],
+        "2.0": [
+          "a2a4"
+        ]
+      }
+    },
+    {
+      "state": 48,
+      "common_optimal_moves": [
+        "c4c3"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "c4c3"
+        ],
+        "1.0": [
+          "c4c3"
+        ],
+        "2.0": [
+          "c4c3"
+        ]
+      }
+    },
+    {
+      "state": 49,
+      "common_optimal_moves": [
+        "c3c4"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "c3c4"
+        ],
+        "1.0": [
+          "c3c4"
+        ],
+        "2.0": [
+          "c3c4"
+        ]
+      }
+    },
+    {
+      "state": 50,
+      "common_optimal_moves": [
+        "d1b2"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "d1b2"
+        ],
+        "1.0": [
+          "d1b2"
+        ],
+        "2.0": [
+          "d1b2"
+        ]
+      }
+    },
+    {
+      "state": 51,
+      "common_optimal_moves": [
+        "b2d1"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "b2d1"
+        ],
+        "1.0": [
+          "b2d1"
+        ],
+        "2.0": [
+          "b2d1",
+          "b2d3"
+        ]
+      }
+    },
+    {
+      "state": 52,
+      "common_optimal_moves": [
+        "b2a4",
+        "b4a4",
+        "b4d4"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "b2a4",
+          "b4a4",
+          "b4d4"
+        ],
+        "1.0": [
+          "b2a4",
+          "b2c4",
+          "b4a4",
+          "b4d4"
+        ],
+        "2.0": [
+          "b2a4",
+          "b2c4",
+          "b4a4",
+          "b4d4"
+        ]
+      }
+    },
+    {
+      "state": 53,
+      "common_optimal_moves": [
+        "c1a1"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "c1a1"
+        ],
+        "1.0": [
+          "a4b2",
+          "a4c3",
+          "c1a1",
+          "c1b1",
+          "c1c3",
+          "d2c2"
+        ],
+        "2.0": [
+          "a4b2",
+          "a4c3",
+          "c1a1",
+          "c1c3",
+          "d2c2"
+        ]
+      }
+    },
+    {
+      "state": 54,
+      "common_optimal_moves": [
+        "b2c4",
+        "d2c2"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "b2c4",
+          "b2d3",
+          "d2c2"
+        ],
+        "1.0": [
+          "b2c4",
+          "b2d3",
+          "d2c2",
+          "d2d4"
+        ],
+        "2.0": [
+          "b2c4",
+          "d2c2",
+          "d2d4"
+        ]
+      }
+    },
+    {
+      "state": 55,
+      "common_optimal_moves": [
+        "b1d2"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "b1d2"
+        ],
+        "1.0": [
+          "b1d2"
+        ],
+        "2.0": [
+          "b1d2"
+        ]
+      }
+    },
+    {
+      "state": 56,
+      "common_optimal_moves": [
+        "c2a2"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "c2a2"
+        ],
+        "1.0": [
+          "c2a2",
+          "c2b2"
+        ],
+        "2.0": [
+          "c2a2"
+        ]
+      }
+    },
+    {
+      "state": 57,
+      "common_optimal_moves": [
+        "a2b2"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a2b2",
+          "b3c4"
+        ],
+        "1.0": [
+          "a2b2"
+        ],
+        "2.0": [
+          "a2b2"
+        ]
+      }
+    },
+    {
+      "state": 58,
+      "common_optimal_moves": [
+        "c3a4"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "c3a4"
+        ],
+        "1.0": [
+          "c3a4"
+        ],
+        "2.0": [
+          "c3a4"
+        ]
+      }
+    },
+    {
+      "state": 59,
+      "common_optimal_moves": [
+        "a4b4",
+        "a4c4"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a4b4",
+          "a4c4",
+          "c2a3"
+        ],
+        "1.0": [
+          "a4b4",
+          "a4c4"
+        ],
+        "2.0": [
+          "a4b4",
+          "a4c4"
+        ]
+      }
+    },
+    {
+      "state": 60,
+      "common_optimal_moves": [
+        "c2a3"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "c2a3"
+        ],
+        "1.0": [
+          "c2a3"
+        ],
+        "2.0": [
+          "c2a3"
+        ]
+      }
+    },
+    {
+      "state": 61,
+      "common_optimal_moves": [
+        "a2c3"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a2c3"
+        ],
+        "1.0": [
+          "a2c3"
+        ],
+        "2.0": [
+          "a2c3"
+        ]
+      }
+    },
+    {
+      "state": 62,
+      "common_optimal_moves": [
+        "b3b2",
+        "d3b4",
+        "d3c1"
+      ],
+      "different_optimal_sets": false,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "b3b2",
+          "d3b4",
+          "d3c1"
+        ],
+        "1.0": [
+          "b3b2",
+          "d3b4",
+          "d3c1"
+        ],
+        "2.0": [
+          "b3b2",
+          "d3b4",
+          "d3c1"
+        ]
+      }
+    },
+    {
+      "state": 63,
+      "common_optimal_moves": [
+        "a3b3"
+      ],
+      "different_optimal_sets": true,
+      "disjoint_between_low_high": false,
+      "all3_conflict": false,
+      "best_by_ratio": {
+        "0.5": [
+          "a3b3"
+        ],
+        "1.0": [
+          "a2b3",
+          "a3b3"
+        ],
+        "2.0": [
+          "a2b3",
+          "a3b3"
+        ]
+      }
+    }
+  ],
+  "native_scoped_quality": [
+    {
+      "state": 0,
+      "ratio": 0.5,
+      "best_moves": [
+        "d3b2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 0,
+      "ratio": 1.0,
+      "best_moves": [
+        "d3b2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 0,
+      "ratio": 2.0,
+      "best_moves": [
+        "d3b2",
+        "d3c1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 1,
+      "ratio": 0.5,
+      "best_moves": [
+        "b2d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 1,
+      "ratio": 1.0,
+      "best_moves": [
+        "b2d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 1,
+      "ratio": 2.0,
+      "best_moves": [
+        "b2d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 2,
+      "ratio": 0.5,
+      "best_moves": [
+        "b2d1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 2,
+      "ratio": 1.0,
+      "best_moves": [
+        "a4a3",
+        "b2d1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 2,
+      "ratio": 2.0,
+      "best_moves": [
+        "b2d1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 3,
+      "ratio": 0.5,
+      "best_moves": [
+        "c3b2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 3,
+      "ratio": 1.0,
+      "best_moves": [
+        "c3b2",
+        "c3d2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 3,
+      "ratio": 2.0,
+      "best_moves": [
+        "c3b2",
+        "c3d2",
+        "c3d4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 4,
+      "ratio": 0.5,
+      "best_moves": [
+        "b2a2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 4,
+      "ratio": 1.0,
+      "best_moves": [
+        "b2a2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 4,
+      "ratio": 2.0,
+      "best_moves": [
+        "b2a2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 5,
+      "ratio": 0.5,
+      "best_moves": [
+        "a3c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 5,
+      "ratio": 1.0,
+      "best_moves": [
+        "a3c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 5,
+      "ratio": 2.0,
+      "best_moves": [
+        "a3c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 6,
+      "ratio": 0.5,
+      "best_moves": [
+        "b3b2",
+        "b3c3",
+        "c1b2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 6,
+      "ratio": 1.0,
+      "best_moves": [
+        "b3b2",
+        "b3c3",
+        "c1b2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 6,
+      "ratio": 2.0,
+      "best_moves": [
+        "b3b2",
+        "c1b2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 7,
+      "ratio": 0.5,
+      "best_moves": [
+        "c2a3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 7,
+      "ratio": 1.0,
+      "best_moves": [
+        "c2a3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 7,
+      "ratio": 2.0,
+      "best_moves": [
+        "c2a3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 8,
+      "ratio": 0.5,
+      "best_moves": [
+        "d2d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 8,
+      "ratio": 1.0,
+      "best_moves": [
+        "d2d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 8,
+      "ratio": 2.0,
+      "best_moves": [
+        "d2d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 9,
+      "ratio": 0.5,
+      "best_moves": [
+        "d3d2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 9,
+      "ratio": 1.0,
+      "best_moves": [
+        "d3d2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 9,
+      "ratio": 2.0,
+      "best_moves": [
+        "d3d2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 10,
+      "ratio": 0.5,
+      "best_moves": [
+        "a2c1",
+        "a2c3",
+        "b2b4",
+        "c2b3",
+        "c2c1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 10,
+      "ratio": 1.0,
+      "best_moves": [
+        "b2b4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 10,
+      "ratio": 2.0,
+      "best_moves": [
+        "b2b4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 11,
+      "ratio": 0.5,
+      "best_moves": [
+        "a4b2",
+        "d4c4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 11,
+      "ratio": 1.0,
+      "best_moves": [
+        "a4b2",
+        "d4c4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 11,
+      "ratio": 2.0,
+      "best_moves": [
+        "a4b2",
+        "d4c4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 12,
+      "ratio": 0.5,
+      "best_moves": [
+        "d1c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 12,
+      "ratio": 1.0,
+      "best_moves": [
+        "b3c3",
+        "d1c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 12,
+      "ratio": 2.0,
+      "best_moves": [
+        "b3c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 13,
+      "ratio": 0.5,
+      "best_moves": [
+        "a1b3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 13,
+      "ratio": 1.0,
+      "best_moves": [
+        "a1b3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 13,
+      "ratio": 2.0,
+      "best_moves": [
+        "a1b3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 14,
+      "ratio": 0.5,
+      "best_moves": [
+        "a4a2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 14,
+      "ratio": 1.0,
+      "best_moves": [
+        "a4a2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 14,
+      "ratio": 2.0,
+      "best_moves": [
+        "a4a2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 15,
+      "ratio": 0.5,
+      "best_moves": [
+        "a2c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 15,
+      "ratio": 1.0,
+      "best_moves": [
+        "a2a3",
+        "a2b2",
+        "a2c2",
+        "a2d2",
+        "b1a3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 15,
+      "ratio": 2.0,
+      "best_moves": [
+        "b1a3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 16,
+      "ratio": 0.5,
+      "best_moves": [
+        "a1b3",
+        "b2b3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 16,
+      "ratio": 1.0,
+      "best_moves": [
+        "a1b3",
+        "b2b3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 16,
+      "ratio": 2.0,
+      "best_moves": [
+        "a1b3",
+        "b2b3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 17,
+      "ratio": 0.5,
+      "best_moves": [
+        "c4c1",
+        "c4c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 17,
+      "ratio": 1.0,
+      "best_moves": [
+        "c4c1",
+        "c4c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 17,
+      "ratio": 2.0,
+      "best_moves": [
+        "c4c1",
+        "c4c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 18,
+      "ratio": 0.5,
+      "best_moves": [
+        "d1d2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 18,
+      "ratio": 1.0,
+      "best_moves": [
+        "d1d2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 18,
+      "ratio": 2.0,
+      "best_moves": [
+        "d1d2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 19,
+      "ratio": 0.5,
+      "best_moves": [
+        "c3d1",
+        "d2d1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 19,
+      "ratio": 1.0,
+      "best_moves": [
+        "c3d1",
+        "d2d1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 19,
+      "ratio": 2.0,
+      "best_moves": [
+        "d2d1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 20,
+      "ratio": 0.5,
+      "best_moves": [
+        "a2a4"
+      ],
+      "all_native_optimal": false,
+      "native_optimal_by_scale": {
+        "2.0": false,
+        "1.0": false,
+        "0.5": false,
+        "0.25": false
+      }
+    },
+    {
+      "state": 20,
+      "ratio": 1.0,
+      "best_moves": [
+        "a2a4"
+      ],
+      "all_native_optimal": false,
+      "native_optimal_by_scale": {
+        "0.25": false,
+        "0.5": false,
+        "1.0": false,
+        "2.0": false
+      }
+    },
+    {
+      "state": 20,
+      "ratio": 2.0,
+      "best_moves": [
+        "a2a4"
+      ],
+      "all_native_optimal": false,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": false,
+        "1.0": false,
+        "2.0": false
+      }
+    },
+    {
+      "state": 21,
+      "ratio": 0.5,
+      "best_moves": [
+        "b4a2",
+        "d3d2",
+        "d4c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 21,
+      "ratio": 1.0,
+      "best_moves": [
+        "b4a2",
+        "d4c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 21,
+      "ratio": 2.0,
+      "best_moves": [
+        "b4a2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 22,
+      "ratio": 0.5,
+      "best_moves": [
+        "d4b3",
+        "d4c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 22,
+      "ratio": 1.0,
+      "best_moves": [
+        "b4c4",
+        "c3c4",
+        "d4b3",
+        "d4c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 22,
+      "ratio": 2.0,
+      "best_moves": [
+        "b4c4",
+        "c3c4",
+        "d4b3",
+        "d4c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 23,
+      "ratio": 0.5,
+      "best_moves": [
+        "c4b2",
+        "d1c1",
+        "d1d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 23,
+      "ratio": 1.0,
+      "best_moves": [
+        "c4b2",
+        "c4d2",
+        "d1c1",
+        "d1d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 23,
+      "ratio": 2.0,
+      "best_moves": [
+        "d1d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 24,
+      "ratio": 0.5,
+      "best_moves": [
+        "c3b3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 24,
+      "ratio": 1.0,
+      "best_moves": [
+        "c3b3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 24,
+      "ratio": 2.0,
+      "best_moves": [
+        "c3b3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 25,
+      "ratio": 0.5,
+      "best_moves": [
+        "b3b4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 25,
+      "ratio": 1.0,
+      "best_moves": [
+        "b1b2",
+        "b3b4",
+        "b3d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 25,
+      "ratio": 2.0,
+      "best_moves": [
+        "b1b2",
+        "b3d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 26,
+      "ratio": 0.5,
+      "best_moves": [
+        "c4b4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 26,
+      "ratio": 1.0,
+      "best_moves": [
+        "c4b4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 26,
+      "ratio": 2.0,
+      "best_moves": [
+        "c4b4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 27,
+      "ratio": 0.5,
+      "best_moves": [
+        "d2c4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 27,
+      "ratio": 1.0,
+      "best_moves": [
+        "d2c4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 27,
+      "ratio": 2.0,
+      "best_moves": [
+        "b4c4",
+        "d2c4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 28,
+      "ratio": 0.5,
+      "best_moves": [
+        "b4d3",
+        "c4c3",
+        "c4d3",
+        "d4d1",
+        "d4d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 28,
+      "ratio": 1.0,
+      "best_moves": [
+        "b4d3",
+        "c4c3",
+        "c4d3",
+        "d4d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 28,
+      "ratio": 2.0,
+      "best_moves": [
+        "b4d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 29,
+      "ratio": 0.5,
+      "best_moves": [
+        "a1c2",
+        "b2c2",
+        "c1c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 29,
+      "ratio": 1.0,
+      "best_moves": [
+        "a1c2",
+        "b2c2",
+        "c1c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 29,
+      "ratio": 2.0,
+      "best_moves": [
+        "a1b3",
+        "a1c2",
+        "b2a2",
+        "b2c2",
+        "c1c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 30,
+      "ratio": 0.5,
+      "best_moves": [
+        "d2a2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 30,
+      "ratio": 1.0,
+      "best_moves": [
+        "d2a2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 30,
+      "ratio": 2.0,
+      "best_moves": [
+        "d2a2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 31,
+      "ratio": 0.5,
+      "best_moves": [
+        "b3b4",
+        "b3c3",
+        "d4c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 31,
+      "ratio": 1.0,
+      "best_moves": [
+        "b3b4",
+        "b3c3",
+        "d4c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 31,
+      "ratio": 2.0,
+      "best_moves": [
+        "d4c2"
+      ],
+      "all_native_optimal": false,
+      "native_optimal_by_scale": {
+        "2.0": false,
+        "1.0": false,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 32,
+      "ratio": 0.5,
+      "best_moves": [
+        "a1c1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 32,
+      "ratio": 1.0,
+      "best_moves": [
+        "a1c1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 32,
+      "ratio": 2.0,
+      "best_moves": [
+        "a1c1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 33,
+      "ratio": 0.5,
+      "best_moves": [
+        "d2b1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 33,
+      "ratio": 1.0,
+      "best_moves": [
+        "d2b1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 33,
+      "ratio": 2.0,
+      "best_moves": [
+        "d2b1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 34,
+      "ratio": 0.5,
+      "best_moves": [
+        "d3c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 34,
+      "ratio": 1.0,
+      "best_moves": [
+        "d3c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 34,
+      "ratio": 2.0,
+      "best_moves": [
+        "d3c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 35,
+      "ratio": 0.5,
+      "best_moves": [
+        "c3d3",
+        "d4c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 35,
+      "ratio": 1.0,
+      "best_moves": [
+        "c3d3",
+        "d4c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 35,
+      "ratio": 2.0,
+      "best_moves": [
+        "c3d3",
+        "d4c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 36,
+      "ratio": 0.5,
+      "best_moves": [
+        "a3a2",
+        "a3c3",
+        "a4b2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 36,
+      "ratio": 1.0,
+      "best_moves": [
+        "a3a2",
+        "a3c3",
+        "a4b2",
+        "a4c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 36,
+      "ratio": 2.0,
+      "best_moves": [
+        "a4b2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 37,
+      "ratio": 0.5,
+      "best_moves": [
+        "b4c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 37,
+      "ratio": 1.0,
+      "best_moves": [
+        "b4c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 37,
+      "ratio": 2.0,
+      "best_moves": [
+        "b4c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 38,
+      "ratio": 0.5,
+      "best_moves": [
+        "d3b4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 38,
+      "ratio": 1.0,
+      "best_moves": [
+        "d3b4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 38,
+      "ratio": 2.0,
+      "best_moves": [
+        "d3b4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 39,
+      "ratio": 0.5,
+      "best_moves": [
+        "b4d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 39,
+      "ratio": 1.0,
+      "best_moves": [
+        "b4d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 39,
+      "ratio": 2.0,
+      "best_moves": [
+        "b4d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 40,
+      "ratio": 0.5,
+      "best_moves": [
+        "d3c1"
+      ],
+      "all_native_optimal": false,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": false
+      }
+    },
+    {
+      "state": 40,
+      "ratio": 1.0,
+      "best_moves": [
+        "d3c1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 40,
+      "ratio": 2.0,
+      "best_moves": [
+        "d3c1"
+      ],
+      "all_native_optimal": false,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": false,
+        "2.0": false
+      }
+    },
+    {
+      "state": 41,
+      "ratio": 0.5,
+      "best_moves": [
+        "c2b2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 41,
+      "ratio": 1.0,
+      "best_moves": [
+        "c2b2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 41,
+      "ratio": 2.0,
+      "best_moves": [
+        "c2b2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 42,
+      "ratio": 0.5,
+      "best_moves": [
+        "d1a1"
+      ],
+      "all_native_optimal": false,
+      "native_optimal_by_scale": {
+        "2.0": false,
+        "1.0": false,
+        "0.5": false,
+        "0.25": false
+      }
+    },
+    {
+      "state": 42,
+      "ratio": 1.0,
+      "best_moves": [
+        "d1a1",
+        "d4c4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 42,
+      "ratio": 2.0,
+      "best_moves": [
+        "d1a1"
+      ],
+      "all_native_optimal": false,
+      "native_optimal_by_scale": {
+        "0.25": false,
+        "0.5": false,
+        "1.0": false,
+        "2.0": false
+      }
+    },
+    {
+      "state": 43,
+      "ratio": 0.5,
+      "best_moves": [
+        "a3b4",
+        "b3b4",
+        "c4b2",
+        "c4d2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 43,
+      "ratio": 1.0,
+      "best_moves": [
+        "a3b4",
+        "b3b4",
+        "c4b2",
+        "c4d2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 43,
+      "ratio": 2.0,
+      "best_moves": [
+        "a3b4",
+        "b3b4",
+        "c4b2",
+        "c4d2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 44,
+      "ratio": 0.5,
+      "best_moves": [
+        "a3c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 44,
+      "ratio": 1.0,
+      "best_moves": [
+        "a3c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 44,
+      "ratio": 2.0,
+      "best_moves": [
+        "a3c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 45,
+      "ratio": 0.5,
+      "best_moves": [
+        "c3b3",
+        "c3c2",
+        "d1d2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 45,
+      "ratio": 1.0,
+      "best_moves": [
+        "c3b3",
+        "c3c1",
+        "c3c2",
+        "d1d2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 45,
+      "ratio": 2.0,
+      "best_moves": [
+        "c3b3",
+        "c3c1",
+        "d1d2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 46,
+      "ratio": 0.5,
+      "best_moves": [
+        "b3b2",
+        "d3b4"
+      ],
+      "all_native_optimal": false,
+      "native_optimal_by_scale": {
+        "2.0": false,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 46,
+      "ratio": 1.0,
+      "best_moves": [
+        "b3b2",
+        "b3b4",
+        "d3b2",
+        "d3b4",
+        "d3c1",
+        "d4c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 46,
+      "ratio": 2.0,
+      "best_moves": [
+        "b3b2",
+        "b3b4",
+        "d3b2",
+        "d3b4",
+        "d3c1",
+        "d4c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 47,
+      "ratio": 0.5,
+      "best_moves": [
+        "a2a4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 47,
+      "ratio": 1.0,
+      "best_moves": [
+        "a2a4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 47,
+      "ratio": 2.0,
+      "best_moves": [
+        "a2a4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 48,
+      "ratio": 0.5,
+      "best_moves": [
+        "c4c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 48,
+      "ratio": 1.0,
+      "best_moves": [
+        "c4c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 48,
+      "ratio": 2.0,
+      "best_moves": [
+        "c4c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 49,
+      "ratio": 0.5,
+      "best_moves": [
+        "c3c4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 49,
+      "ratio": 1.0,
+      "best_moves": [
+        "c3c4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 49,
+      "ratio": 2.0,
+      "best_moves": [
+        "c3c4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 50,
+      "ratio": 0.5,
+      "best_moves": [
+        "d1b2"
+      ],
+      "all_native_optimal": false,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": false,
+        "0.25": false
+      }
+    },
+    {
+      "state": 50,
+      "ratio": 1.0,
+      "best_moves": [
+        "d1b2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 50,
+      "ratio": 2.0,
+      "best_moves": [
+        "d1b2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 51,
+      "ratio": 0.5,
+      "best_moves": [
+        "b2d1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 51,
+      "ratio": 1.0,
+      "best_moves": [
+        "b2d1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 51,
+      "ratio": 2.0,
+      "best_moves": [
+        "b2d1",
+        "b2d3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 52,
+      "ratio": 0.5,
+      "best_moves": [
+        "b2a4",
+        "b4a4",
+        "b4d4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 52,
+      "ratio": 1.0,
+      "best_moves": [
+        "b2a4",
+        "b2c4",
+        "b4a4",
+        "b4d4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 52,
+      "ratio": 2.0,
+      "best_moves": [
+        "b2a4",
+        "b2c4",
+        "b4a4",
+        "b4d4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 53,
+      "ratio": 0.5,
+      "best_moves": [
+        "c1a1"
+      ],
+      "all_native_optimal": false,
+      "native_optimal_by_scale": {
+        "0.25": false,
+        "0.5": false,
+        "1.0": false,
+        "2.0": false
+      }
+    },
+    {
+      "state": 53,
+      "ratio": 1.0,
+      "best_moves": [
+        "a4b2",
+        "a4c3",
+        "c1a1",
+        "c1b1",
+        "c1c3",
+        "d2c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 53,
+      "ratio": 2.0,
+      "best_moves": [
+        "a4b2",
+        "a4c3",
+        "c1a1",
+        "c1c3",
+        "d2c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 54,
+      "ratio": 0.5,
+      "best_moves": [
+        "b2c4",
+        "b2d3",
+        "d2c2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 54,
+      "ratio": 1.0,
+      "best_moves": [
+        "b2c4",
+        "b2d3",
+        "d2c2",
+        "d2d4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 54,
+      "ratio": 2.0,
+      "best_moves": [
+        "b2c4",
+        "d2c2",
+        "d2d4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 55,
+      "ratio": 0.5,
+      "best_moves": [
+        "b1d2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 55,
+      "ratio": 1.0,
+      "best_moves": [
+        "b1d2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 55,
+      "ratio": 2.0,
+      "best_moves": [
+        "b1d2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 56,
+      "ratio": 0.5,
+      "best_moves": [
+        "c2a2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 56,
+      "ratio": 1.0,
+      "best_moves": [
+        "c2a2",
+        "c2b2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 56,
+      "ratio": 2.0,
+      "best_moves": [
+        "c2a2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 57,
+      "ratio": 0.5,
+      "best_moves": [
+        "a2b2",
+        "b3c4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 57,
+      "ratio": 1.0,
+      "best_moves": [
+        "a2b2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 57,
+      "ratio": 2.0,
+      "best_moves": [
+        "a2b2"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 58,
+      "ratio": 0.5,
+      "best_moves": [
+        "c3a4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 58,
+      "ratio": 1.0,
+      "best_moves": [
+        "c3a4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 58,
+      "ratio": 2.0,
+      "best_moves": [
+        "c3a4"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 59,
+      "ratio": 0.5,
+      "best_moves": [
+        "a4b4",
+        "a4c4",
+        "c2a3"
+      ],
+      "all_native_optimal": false,
+      "native_optimal_by_scale": {
+        "0.25": false,
+        "0.5": false,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 59,
+      "ratio": 1.0,
+      "best_moves": [
+        "a4b4",
+        "a4c4"
+      ],
+      "all_native_optimal": false,
+      "native_optimal_by_scale": {
+        "2.0": false,
+        "1.0": false,
+        "0.5": false,
+        "0.25": false
+      }
+    },
+    {
+      "state": 59,
+      "ratio": 2.0,
+      "best_moves": [
+        "a4b4",
+        "a4c4"
+      ],
+      "all_native_optimal": false,
+      "native_optimal_by_scale": {
+        "2.0": false,
+        "1.0": false,
+        "0.5": false,
+        "0.25": false
+      }
+    },
+    {
+      "state": 60,
+      "ratio": 0.5,
+      "best_moves": [
+        "c2a3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 60,
+      "ratio": 1.0,
+      "best_moves": [
+        "c2a3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 60,
+      "ratio": 2.0,
+      "best_moves": [
+        "c2a3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 61,
+      "ratio": 0.5,
+      "best_moves": [
+        "a2c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 61,
+      "ratio": 1.0,
+      "best_moves": [
+        "a2c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 61,
+      "ratio": 2.0,
+      "best_moves": [
+        "a2c3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 62,
+      "ratio": 0.5,
+      "best_moves": [
+        "b3b2",
+        "d3b4",
+        "d3c1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 62,
+      "ratio": 1.0,
+      "best_moves": [
+        "b3b2",
+        "d3b4",
+        "d3c1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 62,
+      "ratio": 2.0,
+      "best_moves": [
+        "b3b2",
+        "d3b4",
+        "d3c1"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 63,
+      "ratio": 0.5,
+      "best_moves": [
+        "a3b3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "0.25": true,
+        "0.5": true,
+        "1.0": true,
+        "2.0": true
+      }
+    },
+    {
+      "state": 63,
+      "ratio": 1.0,
+      "best_moves": [
+        "a2b3",
+        "a3b3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    },
+    {
+      "state": 63,
+      "ratio": 2.0,
+      "best_moves": [
+        "a2b3",
+        "a3b3"
+      ],
+      "all_native_optimal": true,
+      "native_optimal_by_scale": {
+        "2.0": true,
+        "1.0": true,
+        "0.5": true,
+        "0.25": true
+      }
+    }
+  ],
+  "interpretation": "This finite-depth material comparator is a signal/opportunity diagnostic only; no reward replacement, WDL guarantee, independent holdout, humanpricefit or Nativequiescence equivalence. Shared optimalmove means a price-independent action can satisfy all3finiteobjectives; different sets alone may only remove ties. No common move is a stronger finiteobjective conflict, still not actualW-L informativeness. All192inputs included,28paidresults reused with originwork not chargedtwice. No statistical unit chosen."
+}

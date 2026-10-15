@@ -1,0 +1,1390 @@
+{
+  "status": "PASS_ALL_PHYSICAL_SLOTS",
+  "folder": "results\\dev_aux\\task1869",
+  "games": 768,
+  "moves": 10804,
+  "actual_native": 8887,
+  "proof_games": 364,
+  "proof_steps": 364,
+  "all_adopted_proof_games_physically_won": true,
+  "tail_games": 92,
+  "tail_moves": 1110,
+  "terminal": {
+    "checkmate": 364,
+    "ongoing": 374,
+    "repetition": 14,
+    "stalemate": 16
+  },
+  "exit_causes": {
+    "reported_node_overrun": 5298,
+    "certificate": 1917,
+    "external_search_return": 3519,
+    "time_budget": 70
+  },
+  "node_overruns": 5302,
+  "phase_seconds": {
+    "admission_seconds": 11.331073799621663,
+    "proof_seconds": 641.4294458002114,
+    "verification_seconds": 19.11189600006037,
+    "normal_seconds": 188.52209229947766
+  },
+  "proof_work": {
+    "frontiers": 1936913,
+    "transitions": 9002539,
+    "iterations": 1936913,
+    "peak_depth": 27488,
+    "eager_board_successors": 9183228,
+    "claims_assessed": 0
+  },
+  "full_native_history_bindings": 8887,
+  "selection_scope": "NONE exposedintegrationonly",
+  "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks",
+  "cells": [
+    {
+      "phase": "TRAIN",
+      "N": 180,
+      "ratio": 0.5,
+      "games": 32,
+      "outcomes": {
+        "WIN": 11,
+        "UNKNOWN": 16,
+        "LOSS": 4,
+        "DRAW": 1
+      },
+      "net": 7,
+      "seconds": 78.24804739994579
+    },
+    {
+      "phase": "TRAIN",
+      "N": 180,
+      "ratio": 1.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 12,
+        "UNKNOWN": 16,
+        "LOSS": 3,
+        "DRAW": 1
+      },
+      "net": 9,
+      "seconds": 30.545258500031196
+    },
+    {
+      "phase": "TRAIN",
+      "N": 180,
+      "ratio": 2.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 13,
+        "UNKNOWN": 14,
+        "LOSS": 4,
+        "DRAW": 1
+      },
+      "net": 9,
+      "seconds": 34.52794649999123
+    },
+    {
+      "phase": "DEV",
+      "N": 180,
+      "ratio": 0.5,
+      "games": 32,
+      "outcomes": {
+        "WIN": 11,
+        "UNKNOWN": 17,
+        "DRAW": 2,
+        "LOSS": 2
+      },
+      "net": 9,
+      "seconds": 65.67222899998887
+    },
+    {
+      "phase": "DEV",
+      "N": 180,
+      "ratio": 1.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 11,
+        "UNKNOWN": 16,
+        "DRAW": 3,
+        "LOSS": 2
+      },
+      "net": 9,
+      "seconds": 39.13526460004505
+    },
+    {
+      "phase": "DEV",
+      "N": 180,
+      "ratio": 2.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 13,
+        "UNKNOWN": 15,
+        "DRAW": 2,
+        "LOSS": 2
+      },
+      "net": 11,
+      "seconds": 29.30116570003156
+    },
+    {
+      "phase": "TRAIN",
+      "N": 360,
+      "ratio": 0.5,
+      "games": 32,
+      "outcomes": {
+        "WIN": 11,
+        "UNKNOWN": 17,
+        "LOSS": 4
+      },
+      "net": 7,
+      "seconds": 39.45259460002126
+    },
+    {
+      "phase": "TRAIN",
+      "N": 360,
+      "ratio": 1.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 12,
+        "UNKNOWN": 16,
+        "LOSS": 4
+      },
+      "net": 8,
+      "seconds": 22.487020700005814
+    },
+    {
+      "phase": "TRAIN",
+      "N": 360,
+      "ratio": 2.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 11,
+        "UNKNOWN": 16,
+        "LOSS": 4,
+        "DRAW": 1
+      },
+      "net": 7,
+      "seconds": 26.994737999979407
+    },
+    {
+      "phase": "DEV",
+      "N": 360,
+      "ratio": 0.5,
+      "games": 32,
+      "outcomes": {
+        "WIN": 12,
+        "UNKNOWN": 16,
+        "DRAW": 2,
+        "LOSS": 2
+      },
+      "net": 10,
+      "seconds": 34.42316129998653
+    },
+    {
+      "phase": "DEV",
+      "N": 360,
+      "ratio": 1.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 13,
+        "UNKNOWN": 15,
+        "DRAW": 2,
+        "LOSS": 2
+      },
+      "net": 11,
+      "seconds": 26.855468500085408
+    },
+    {
+      "phase": "DEV",
+      "N": 360,
+      "ratio": 2.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 13,
+        "UNKNOWN": 14,
+        "LOSS": 4,
+        "DRAW": 1
+      },
+      "net": 9,
+      "seconds": 30.98373699998774
+    },
+    {
+      "phase": "TRAIN",
+      "N": 720,
+      "ratio": 0.5,
+      "games": 32,
+      "outcomes": {
+        "WIN": 11,
+        "UNKNOWN": 16,
+        "LOSS": 4,
+        "DRAW": 1
+      },
+      "net": 7,
+      "seconds": 31.654431400020258
+    },
+    {
+      "phase": "TRAIN",
+      "N": 720,
+      "ratio": 1.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 13,
+        "UNKNOWN": 15,
+        "DRAW": 1,
+        "LOSS": 3
+      },
+      "net": 10,
+      "seconds": 10.129490099963732
+    },
+    {
+      "phase": "TRAIN",
+      "N": 720,
+      "ratio": 2.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 12,
+        "UNKNOWN": 16,
+        "LOSS": 4
+      },
+      "net": 8,
+      "seconds": 29.72848359994532
+    },
+    {
+      "phase": "DEV",
+      "N": 720,
+      "ratio": 0.5,
+      "games": 32,
+      "outcomes": {
+        "WIN": 11,
+        "UNKNOWN": 16,
+        "DRAW": 3,
+        "LOSS": 2
+      },
+      "net": 9,
+      "seconds": 55.81331849997514
+    },
+    {
+      "phase": "DEV",
+      "N": 720,
+      "ratio": 1.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 11,
+        "UNKNOWN": 16,
+        "LOSS": 3,
+        "DRAW": 2
+      },
+      "net": 8,
+      "seconds": 38.149302300051204
+    },
+    {
+      "phase": "DEV",
+      "N": 720,
+      "ratio": 2.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 14,
+        "UNKNOWN": 14,
+        "LOSS": 3,
+        "DRAW": 1
+      },
+      "net": 11,
+      "seconds": 17.628493600030197
+    },
+    {
+      "phase": "TRAIN",
+      "N": 1440,
+      "ratio": 0.5,
+      "games": 32,
+      "outcomes": {
+        "WIN": 11,
+        "UNKNOWN": 15,
+        "LOSS": 4,
+        "DRAW": 2
+      },
+      "net": 7,
+      "seconds": 35.70454629996675
+    },
+    {
+      "phase": "TRAIN",
+      "N": 1440,
+      "ratio": 1.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 12,
+        "UNKNOWN": 17,
+        "LOSS": 3
+      },
+      "net": 9,
+      "seconds": 28.16950500002713
+    },
+    {
+      "phase": "TRAIN",
+      "N": 1440,
+      "ratio": 2.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 13,
+        "UNKNOWN": 15,
+        "LOSS": 4
+      },
+      "net": 9,
+      "seconds": 58.7085505000432
+    },
+    {
+      "phase": "DEV",
+      "N": 1440,
+      "ratio": 0.5,
+      "games": 32,
+      "outcomes": {
+        "WIN": 10,
+        "UNKNOWN": 18,
+        "LOSS": 3,
+        "DRAW": 1
+      },
+      "net": 7,
+      "seconds": 47.03926390002016
+    },
+    {
+      "phase": "DEV",
+      "N": 1440,
+      "ratio": 1.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 13,
+        "UNKNOWN": 15,
+        "DRAW": 2,
+        "LOSS": 2
+      },
+      "net": 11,
+      "seconds": 35.5907061999751
+    },
+    {
+      "phase": "DEV",
+      "N": 1440,
+      "ratio": 2.0,
+      "games": 32,
+      "outcomes": {
+        "WIN": 15,
+        "UNKNOWN": 13,
+        "LOSS": 3,
+        "DRAW": 1
+      },
+      "net": 12,
+      "seconds": 51.02152420007042
+    }
+  ],
+  "selections": {
+    "180": {
+      "scores": {
+        "0.5": 7,
+        "1.0": 9,
+        "2.0": 9
+      },
+      "selected": 1.0,
+      "paths": [
+        {
+          "initial": 0.5,
+          "path": [
+            0.5,
+            1.0
+          ],
+          "endpoint": 1.0
+        },
+        {
+          "initial": 1.0,
+          "path": [
+            1.0
+          ],
+          "endpoint": 1.0
+        },
+        {
+          "initial": 2.0,
+          "path": [
+            2.0
+          ],
+          "endpoint": 2.0
+        }
+      ],
+      "nonflat_train_families": 2,
+      "family_vectors": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "360": {
+      "scores": {
+        "0.5": 7,
+        "1.0": 8,
+        "2.0": 7
+      },
+      "selected": 1.0,
+      "paths": [
+        {
+          "initial": 0.5,
+          "path": [
+            0.5,
+            1.0
+          ],
+          "endpoint": 1.0
+        },
+        {
+          "initial": 1.0,
+          "path": [
+            1.0
+          ],
+          "endpoint": 1.0
+        },
+        {
+          "initial": 2.0,
+          "path": [
+            2.0,
+            1.0
+          ],
+          "endpoint": 1.0
+        }
+      ],
+      "nonflat_train_families": 2,
+      "family_vectors": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "720": {
+      "scores": {
+        "0.5": 7,
+        "1.0": 10,
+        "2.0": 8
+      },
+      "selected": 1.0,
+      "paths": [
+        {
+          "initial": 0.5,
+          "path": [
+            0.5,
+            1.0
+          ],
+          "endpoint": 1.0
+        },
+        {
+          "initial": 1.0,
+          "path": [
+            1.0
+          ],
+          "endpoint": 1.0
+        },
+        {
+          "initial": 2.0,
+          "path": [
+            2.0,
+            1.0
+          ],
+          "endpoint": 1.0
+        }
+      ],
+      "nonflat_train_families": 2,
+      "family_vectors": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "1440": {
+      "scores": {
+        "0.5": 7,
+        "1.0": 9,
+        "2.0": 9
+      },
+      "selected": 1.0,
+      "paths": [
+        {
+          "initial": 0.5,
+          "path": [
+            0.5,
+            1.0
+          ],
+          "endpoint": 1.0
+        },
+        {
+          "initial": 1.0,
+          "path": [
+            1.0
+          ],
+          "endpoint": 1.0
+        },
+        {
+          "initial": 2.0,
+          "path": [
+            2.0
+          ],
+          "endpoint": 2.0
+        }
+      ],
+      "nonflat_train_families": 3,
+      "family_vectors": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "comparisons": [
+    {
+      "N": 180,
+      "initial": 0.5,
+      "selected": 1.0,
+      "identical_cell": false,
+      "mean": 0.0,
+      "family95": [
+        -0.09375,
+        0.09375
+      ],
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": 0.0,
+        "1": 0.0
+      },
+      "transitions": {
+        "WIN->WIN": 10,
+        "UNKNOWN->UNKNOWN": 15,
+        "DRAW->DRAW": 2,
+        "UNKNOWN->WIN": 1,
+        "WIN->UNKNOWN": 1,
+        "LOSS->LOSS": 2,
+        "UNKNOWN->DRAW": 1
+      },
+      "unknown_worst_case_bounds": [
+        -1.03125,
+        1.03125
+      ]
+    },
+    {
+      "N": 180,
+      "initial": 1.0,
+      "selected": 1.0,
+      "identical_cell": true,
+      "mean": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": 0.0,
+        "1": 0.0
+      },
+      "transitions": {
+        "WIN->WIN": 11,
+        "UNKNOWN->UNKNOWN": 16,
+        "DRAW->DRAW": 3,
+        "LOSS->LOSS": 2
+      },
+      "unknown_worst_case_bounds": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "N": 180,
+      "initial": 2.0,
+      "selected": 1.0,
+      "identical_cell": false,
+      "mean": -0.0625,
+      "family95": [
+        -0.1875,
+        0.0
+      ],
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": -0.0625,
+        "1": -0.0625
+      },
+      "transitions": {
+        "WIN->WIN": 11,
+        "UNKNOWN->UNKNOWN": 14,
+        "DRAW->DRAW": 2,
+        "WIN->UNKNOWN": 2,
+        "LOSS->LOSS": 2,
+        "UNKNOWN->DRAW": 1
+      },
+      "unknown_worst_case_bounds": [
+        -1.03125,
+        0.90625
+      ]
+    },
+    {
+      "N": 360,
+      "initial": 0.5,
+      "selected": 1.0,
+      "identical_cell": false,
+      "mean": 0.03125,
+      "family95": [
+        0.0,
+        0.09375
+      ],
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": 0.0,
+        "1": 0.0625
+      },
+      "transitions": {
+        "WIN->WIN": 12,
+        "UNKNOWN->UNKNOWN": 15,
+        "DRAW->DRAW": 2,
+        "LOSS->LOSS": 2,
+        "UNKNOWN->WIN": 1
+      },
+      "unknown_worst_case_bounds": [
+        -0.9375,
+        1.0
+      ]
+    },
+    {
+      "N": 360,
+      "initial": 1.0,
+      "selected": 1.0,
+      "identical_cell": true,
+      "mean": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": 0.0,
+        "1": 0.0
+      },
+      "transitions": {
+        "WIN->WIN": 13,
+        "UNKNOWN->UNKNOWN": 15,
+        "DRAW->DRAW": 2,
+        "LOSS->LOSS": 2
+      },
+      "unknown_worst_case_bounds": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "N": 360,
+      "initial": 2.0,
+      "selected": 1.0,
+      "identical_cell": false,
+      "mean": 0.0625,
+      "family95": [
+        0.0,
+        0.15625
+      ],
+      "family_deltas": [
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": -0.0625,
+        "1": 0.1875
+      },
+      "transitions": {
+        "WIN->WIN": 12,
+        "UNKNOWN->UNKNOWN": 13,
+        "LOSS->DRAW": 1,
+        "WIN->UNKNOWN": 1,
+        "UNKNOWN->WIN": 1,
+        "LOSS->LOSS": 2,
+        "LOSS->UNKNOWN": 1,
+        "DRAW->DRAW": 1
+      },
+      "unknown_worst_case_bounds": [
+        -0.84375,
+        0.96875
+      ]
+    },
+    {
+      "N": 720,
+      "initial": 0.5,
+      "selected": 1.0,
+      "identical_cell": false,
+      "mean": -0.03125,
+      "family95": [
+        -0.125,
+        0.0625
+      ],
+      "family_deltas": [
+        0.0,
+        -0.5,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": 0.0,
+        "1": -0.0625
+      },
+      "transitions": {
+        "WIN->WIN": 10,
+        "UNKNOWN->UNKNOWN": 14,
+        "DRAW->LOSS": 1,
+        "UNKNOWN->WIN": 1,
+        "DRAW->UNKNOWN": 1,
+        "WIN->UNKNOWN": 1,
+        "LOSS->LOSS": 2,
+        "DRAW->DRAW": 1,
+        "UNKNOWN->DRAW": 1
+      },
+      "unknown_worst_case_bounds": [
+        -1.03125,
+        0.96875
+      ]
+    },
+    {
+      "N": 720,
+      "initial": 1.0,
+      "selected": 1.0,
+      "identical_cell": true,
+      "mean": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": 0.0,
+        "1": 0.0
+      },
+      "transitions": {
+        "WIN->WIN": 11,
+        "UNKNOWN->UNKNOWN": 16,
+        "LOSS->LOSS": 3,
+        "DRAW->DRAW": 2
+      },
+      "unknown_worst_case_bounds": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "N": 720,
+      "initial": 2.0,
+      "selected": 1.0,
+      "identical_cell": false,
+      "mean": -0.09375,
+      "family95": [
+        -0.25,
+        0.0
+      ],
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": -0.0625,
+        "1": -0.125
+      },
+      "transitions": {
+        "WIN->WIN": 11,
+        "UNKNOWN->UNKNOWN": 13,
+        "LOSS->LOSS": 3,
+        "WIN->UNKNOWN": 3,
+        "DRAW->DRAW": 1,
+        "UNKNOWN->DRAW": 1
+      },
+      "unknown_worst_case_bounds": [
+        -1.03125,
+        0.84375
+      ]
+    },
+    {
+      "N": 1440,
+      "initial": 0.5,
+      "selected": 1.0,
+      "identical_cell": false,
+      "mean": 0.125,
+      "family95": [
+        0.0,
+        0.28125
+      ],
+      "family_deltas": [
+        0.0,
+        0.5,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": 0.0625,
+        "1": 0.1875
+      },
+      "transitions": {
+        "WIN->WIN": 10,
+        "UNKNOWN->UNKNOWN": 15,
+        "LOSS->DRAW": 1,
+        "UNKNOWN->WIN": 3,
+        "LOSS->LOSS": 2,
+        "DRAW->DRAW": 1
+      },
+      "unknown_worst_case_bounds": [
+        -0.90625,
+        1.15625
+      ]
+    },
+    {
+      "N": 1440,
+      "initial": 1.0,
+      "selected": 1.0,
+      "identical_cell": true,
+      "mean": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": 0.0,
+        "1": 0.0
+      },
+      "transitions": {
+        "WIN->WIN": 13,
+        "UNKNOWN->UNKNOWN": 15,
+        "DRAW->DRAW": 2,
+        "LOSS->LOSS": 2
+      },
+      "unknown_worst_case_bounds": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "N": 1440,
+      "initial": 2.0,
+      "selected": 1.0,
+      "identical_cell": false,
+      "mean": -0.03125,
+      "family95": [
+        -0.125,
+        0.0625
+      ],
+      "family_deltas": [
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": 0.0,
+        "1": -0.0625
+      },
+      "transitions": {
+        "WIN->WIN": 13,
+        "UNKNOWN->UNKNOWN": 13,
+        "LOSS->DRAW": 1,
+        "WIN->UNKNOWN": 2,
+        "LOSS->LOSS": 2,
+        "DRAW->DRAW": 1
+      },
+      "unknown_worst_case_bounds": [
+        -0.90625,
+        0.84375
+      ]
+    }
+  ],
+  "candidate_bank": {
+    "queries": 3942,
+    "hits": 3023,
+    "misses": 919,
+    "actual_proof_nodes": 8930601,
+    "logical_proof_nodes": 37139268,
+    "fill_verification_nodes": 4186,
+    "fill_verification_seconds": 7.7004780999996,
+    "current_verification_nodes": 12814,
+    "max_proof_depth": 52
+  },
+  "scope": "Same32EXPOSEDfamilies, all4predeclaredunits/3ratios/roles, fixedcoldUNIT64proofopponent. TRAINselectorperunitwrittenbeforeDEV, NOunitselection. ConditionalfiniteeventW-L/UNKNOWN only, not newindependentholdout or universalhumanprices. CIclusters16families, selfcomparisonzeroalgebraicnotprecision; no isolated attribution to one Native threshold."
+}

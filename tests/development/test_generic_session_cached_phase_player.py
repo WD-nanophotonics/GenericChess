@@ -131,3 +131,47 @@ def test_reentrant_player_rejected_and_exception_clears_context():
     p._query_context=None
     with pytest.raises(ValueError):p.choose(s,seconds=-1.)
     assert p._query_context is None
+
+@pytest.mark.parametrize('kind',['drop','promotion','perpetual_history','semantic_ids','scored_hand_claim'])
+def test_cached_actual_mechanism_witness_survives_current_check_and_execution(kind):
+    from generic_chess.rules.compiler import compile_ruleset_for_execution
+    from generic_chess.rules import build_western_chess_ruleset
+    from generic_chess.rules.schema import RuleDeclaration,RuleWeightedMaterialMetric,RuleDeclarationOutcomeBand
+    from generic_chess.session.session import GameSession
+    from generic_chess.core.pieces import Piece
+    from generic_chess.core.actions import DropMove,SemanticBoardMove
+    from generic_chess.core.movement import RayAtom,LeapAtom
+    from conftest import T,king_type,make_ruleset
+    from scripts.generic_proof_fixtures import krk_ruleset
+    from test_generic_session_proof_mechanisms import layout,played
+    if kind in ('drop','scored_hand_claim'):
+        declaration=RuleDeclaration('hand-score',0,require_not_in_check=False,
+            weighted_metric=RuleWeightedMaterialMetric(weights={'R':5},include_hands=True),
+            outcome_bands=(RuleDeclarationOutcomeBand(10,'WIN'),),failure_outcome='LOSS')
+        rs=replace(krk_ruleset(4),drop_allowed={'R':((True,)*16,)*2},capture_disposition='capture_to_hand',declarations=(declaration,) if kind=='scored_hand_claim' else ())
+        rs=layout(rs,[(1,Piece(0,'K','K')),(3,Piece(1,'K','K')),(4,Piece(0,'R','R')),(8,Piece(1,'R','R'))])
+        s=played(rs,['a2a3','d1d2'])
+    elif kind=='promotion':
+        rook=T('R',*(RayAtom(d) for d in ((1,0),(-1,0),(0,1),(0,-1))))
+        pawn=T('P',LeapAtom((0,1)),is_promotable=True,targets=('R',))
+        s=GameSession(compile_ruleset_for_execution(make_ruleset(4,[king_type(),rook,pawn],lines=['...k','P...','..K.','....'],auto_promotion=True)))
+    elif kind=='perpetual_history':
+        rs=layout(replace(krk_ruleset(4),repetition_policy='continuous_check_loss'),[(0,Piece(0,'K','K')),(15,Piece(1,'K','K')),(2,Piece(0,'R','R'))])
+        s=played(rs,['c1d1','d4c4','d1c1','c4d4','c1d1','d4c4','d1c1'])
+    else:
+        board=[None]*64
+        for i,piece in [(45,Piece(0,'K','K')),(46,Piece(0,'Q','Q')),(63,Piece(1,'K','K'))]:board[i]=piece
+        rs=replace(build_western_chess_ruleset(),initial_position=tuple(tuple(board[i:i+8]) for i in range(0,64,8)))
+        s=GameSession(compile_ruleset_for_execution(rs))
+    bank=SessionLogicalProofBank(prove_session_win_batch_pn);root=s.to_record();target=s.state.position.side_to_move
+    limits=PhaseLimits(proof_nodes=65536,verification_nodes=65536,proof_seconds=3.,verification_seconds=3.)
+    a=player(s,bank=bank,limits=limits,proof_depth=1).choose(s,seconds=10.)
+    p=player(s,bank=bank,limits=limits,proof_depth=1);b=p.choose(s,seconds=10.)
+    assert a.source==b.source=='PROOF' and b.bank_hit and b.proof_nodes==0
+    assert b.verification_nodes>0 and b.choice==a.choice and s.to_record()==root
+    if kind=='drop':assert isinstance(b.choice.action,DropMove)
+    if kind=='semantic_ids':assert isinstance(b.choice.action,SemanticBoardMove) and b.choice.action.pattern_id
+    result=commit_session_decision(s,b,[p]);assert result.winner==target
+    if kind=='promotion':assert s.state.position.board[12].base_type_id=='P' and s.state.position.board[12].promoted
+    if kind=='perpetual_history':assert result.status.value=='perpetual_check' and len(s.to_record().actions)==8
+    if kind=='scored_hand_claim':assert result.declaration_score==10 and s.to_record().declaration.weighted_score==10

@@ -1,0 +1,5 @@
+{
+  "error": "KeyError on normalizedPathbinary key",
+  "cause": "Manifest uses originalforwardslash binarystring, WindowsstrPath changesseparator. All profilechecks completed before this finaldigest lookup, outputnotwritten.",
+  "correction": "Use exact declared native_plan.binary key; no evidence/source/engine change."
+}

@@ -261,21 +261,21 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope —2026-10-15 segment60
+# DEV_AUX current scope —2026-10-15 segment61
 
-ScienceOPEN; own sidemission/restoredpatrolACTIVE, PRIMARYreadonly. Explicit
-user material-plus-fixed-proof implementation remains auxiliary task. Actual
-separate-phase384game experiment completes but does NOT establish effective
-humanprices: TRAINselectsbaselineR/N1, hybridDEV negativeversus otherinitials,
-proof652.6s dominates770.2s. Do not adopt biggerbudget or chase DEVprices.
-Optionalbank nextqualification has realconsumer cost42.708->22.691s on192query
-prefix; keys nowbind requestedtarget AND verificationlimits, historicalreceipt
-not currentverification. No bank-enabledlearning/defaultchange. Preserve
-currentcohort source and old1808partialcap, UNKNOWN and allnegative results.
-Nextadapter must separately account logical/physicalwork and BOTHfill/consumer
-verification under a NEWfrozen total envelope, not extendold2.25s silently.
-Slot276actual verifier-timeout saved as negativeconsumer control.283current
-working/restoredtests; causal evidence and nextactions in mainline/memo.
+ScienceOPEN; own sidemission/patrolACTIVE, PRIMARYreadonly. User-approved
+material-plus-fixed-proof W-L experiment remains auxiliary task, no product/UI.
+Optional cachedphase actual48game control preserves24/24paths/outcomes while
+cost65.865->35.446s with CURRENTverification paid; allarmsNEW2.75s, originalphase
+unchanged. Historicalreceipt never grants currentqualification. Reproduced
+cancelledlogicalconversion counterloss fixed, physical/logicalstats separate.
+298working+independentrestoredtests includeactualdrop/promo/history/semanticIDs.
+Four-unit768game control still no stablepriceimprovement; allTRAINselectors1,
+only2-3/16nonflatfamilies, DEVdirectionmixed. Unit-sensitiveNative isnot ratio-
+only; do not choose units fromDEV or call this humanvalue recovery. Newinput-only
+contactlaw modestTRAINsignal, H8costlower butcensors realH24latewin/changestie.
+Keep actualUNKNOWN and caps; don't pickhorizon bycontrast/min alone. Dotreadbdd
+source/notexecute, narrowcostqualification only. Mainline/memo carry nextactions.
 
 ## Current user publication grant2026-10-15
 
