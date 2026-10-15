@@ -1,0 +1,2167 @@
+{
+  "status": "PASS_COMPLETE_INPUT_PROFILE_ACTION_BINDINGS",
+  "queries": 2304,
+  "full_states": 64,
+  "profiles": 2368,
+  "perfts": 64,
+  "summaries": [
+    {
+      "control": "nodes64",
+      "quartets": 192,
+      "different_actions": 7,
+      "same_reported_depth_different_actions": 1,
+      "different_depths": 92,
+      "node_overshoots": 362,
+      "depth_range": [
+        2,
+        8
+      ]
+    },
+    {
+      "control": "nodes4096",
+      "quartets": 192,
+      "different_actions": 25,
+      "same_reported_depth_different_actions": 1,
+      "different_depths": 171,
+      "node_overshoots": 591,
+      "depth_range": [
+        9,
+        245
+      ]
+    },
+    {
+      "control": "depth5",
+      "quartets": 192,
+      "different_actions": 14,
+      "same_reported_depth_different_actions": 14,
+      "different_depths": 0,
+      "node_overshoots": null,
+      "depth_range": [
+        5,
+        5
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "state": 4,
+      "family": 2,
+      "ratio": 0.5,
+      "control": "nodes64",
+      "rows": [
+        {
+          "slot": 144,
+          "profile": {
+            "R": 90,
+            "N": 180,
+            "ratio": 0.5,
+            "scale": 0.25,
+            "values": [
+              90,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_90_180"
+          },
+          "move": "b2b3",
+          "reported_nodes": 64,
+          "completed_depth": 2,
+          "score_kind": "cp",
+          "score_value": "86"
+        },
+        {
+          "slot": 145,
+          "profile": {
+            "R": 180,
+            "N": 360,
+            "ratio": 0.5,
+            "scale": 0.5,
+            "values": [
+              180,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_180_360"
+          },
+          "move": "b2a2",
+          "reported_nodes": 68,
+          "completed_depth": 3,
+          "score_kind": "cp",
+          "score_value": "86"
+        },
+        {
+          "slot": 146,
+          "profile": {
+            "R": 360,
+            "N": 720,
+            "ratio": 0.5,
+            "scale": 1.0,
+            "values": [
+              360,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_360_720"
+          },
+          "move": "b2a2",
+          "reported_nodes": 65,
+          "completed_depth": 4,
+          "score_kind": "cp",
+          "score_value": "173"
+        },
+        {
+          "slot": 147,
+          "profile": {
+            "R": 720,
+            "N": 1440,
+            "ratio": 0.5,
+            "scale": 2.0,
+            "values": [
+              720,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_720_1440"
+          },
+          "move": "b2a2",
+          "reported_nodes": 64,
+          "completed_depth": 4,
+          "score_kind": "cp",
+          "score_value": "346"
+        }
+      ]
+    },
+    {
+      "state": 7,
+      "family": 3,
+      "ratio": 1.0,
+      "control": "nodes64",
+      "rows": [
+        {
+          "slot": 264,
+          "profile": {
+            "R": 180,
+            "N": 180,
+            "ratio": 1.0,
+            "scale": 0.25,
+            "values": [
+              180,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_180_180"
+          },
+          "move": "c2a1",
+          "reported_nodes": 64,
+          "completed_depth": 3,
+          "score_kind": "cp",
+          "score_value": "-173"
+        },
+        {
+          "slot": 265,
+          "profile": {
+            "R": 360,
+            "N": 360,
+            "ratio": 1.0,
+            "scale": 0.5,
+            "values": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_360_360"
+          },
+          "move": "c2a1",
+          "reported_nodes": 64,
+          "completed_depth": 3,
+          "score_kind": "cp",
+          "score_value": "-346"
+        },
+        {
+          "slot": 266,
+          "profile": {
+            "R": 720,
+            "N": 720,
+            "ratio": 1.0,
+            "scale": 1.0,
+            "values": [
+              720,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_720_720"
+          },
+          "move": "c2a3",
+          "reported_nodes": 65,
+          "completed_depth": 3,
+          "score_kind": "cp",
+          "score_value": "-346"
+        },
+        {
+          "slot": 267,
+          "profile": {
+            "R": 1440,
+            "N": 1440,
+            "ratio": 1.0,
+            "scale": 2.0,
+            "values": [
+              1440,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_1440_1440"
+          },
+          "move": "c2a3",
+          "reported_nodes": 65,
+          "completed_depth": 3,
+          "score_kind": "cp",
+          "score_value": "-692"
+        }
+      ]
+    },
+    {
+      "state": 15,
+      "family": 7,
+      "ratio": 0.5,
+      "control": "nodes64",
+      "rows": [
+        {
+          "slot": 540,
+          "profile": {
+            "R": 720,
+            "N": 1440,
+            "ratio": 0.5,
+            "scale": 2.0,
+            "values": [
+              720,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_720_1440"
+          },
+          "move": "a2c2",
+          "reported_nodes": 66,
+          "completed_depth": 3,
+          "score_kind": "cp",
+          "score_value": "346"
+        },
+        {
+          "slot": 541,
+          "profile": {
+            "R": 360,
+            "N": 720,
+            "ratio": 0.5,
+            "scale": 1.0,
+            "values": [
+              360,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_360_720"
+          },
+          "move": "a2c2",
+          "reported_nodes": 66,
+          "completed_depth": 3,
+          "score_kind": "cp",
+          "score_value": "173"
+        },
+        {
+          "slot": 542,
+          "profile": {
+            "R": 180,
+            "N": 360,
+            "ratio": 0.5,
+            "scale": 0.5,
+            "values": [
+              180,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_180_360"
+          },
+          "move": "a2c2",
+          "reported_nodes": 64,
+          "completed_depth": 2,
+          "score_kind": "cp",
+          "score_value": "86"
+        },
+        {
+          "slot": 543,
+          "profile": {
+            "R": 90,
+            "N": 180,
+            "ratio": 0.5,
+            "scale": 0.25,
+            "values": [
+              90,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_90_180"
+          },
+          "move": "b1a3",
+          "reported_nodes": 64,
+          "completed_depth": 2,
+          "score_kind": "cp",
+          "score_value": "0"
+        }
+      ]
+    },
+    {
+      "state": 15,
+      "family": 7,
+      "ratio": 2.0,
+      "control": "nodes64",
+      "rows": [
+        {
+          "slot": 564,
+          "profile": {
+            "R": 360,
+            "N": 180,
+            "ratio": 2.0,
+            "scale": 0.25,
+            "values": [
+              360,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_360_180"
+          },
+          "move": "a2c2",
+          "reported_nodes": 66,
+          "completed_depth": 3,
+          "score_kind": "cp",
+          "score_value": "173"
+        },
+        {
+          "slot": 565,
+          "profile": {
+            "R": 720,
+            "N": 360,
+            "ratio": 2.0,
+            "scale": 0.5,
+            "values": [
+              720,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_720_360"
+          },
+          "move": "b1a3",
+          "reported_nodes": 75,
+          "completed_depth": 4,
+          "score_kind": "cp",
+          "score_value": "173"
+        },
+        {
+          "slot": 566,
+          "profile": {
+            "R": 1440,
+            "N": 720,
+            "ratio": 2.0,
+            "scale": 1.0,
+            "values": [
+              1440,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_1440_720"
+          },
+          "move": "b1a3",
+          "reported_nodes": 70,
+          "completed_depth": 4,
+          "score_kind": "cp",
+          "score_value": "346"
+        },
+        {
+          "slot": 567,
+          "profile": {
+            "R": 2880,
+            "N": 1440,
+            "ratio": 2.0,
+            "scale": 2.0,
+            "values": [
+              2880,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_2880_1440"
+          },
+          "move": "b1a3",
+          "reported_nodes": 70,
+          "completed_depth": 4,
+          "score_kind": "cp",
+          "score_value": "692"
+        }
+      ]
+    },
+    {
+      "state": 17,
+      "family": 8,
+      "ratio": 0.5,
+      "control": "nodes64",
+      "rows": [
+        {
+          "slot": 612,
+          "profile": {
+            "R": 720,
+            "N": 1440,
+            "ratio": 0.5,
+            "scale": 2.0,
+            "values": [
+              720,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_720_1440"
+          },
+          "move": "c4c2",
+          "reported_nodes": 67,
+          "completed_depth": 4,
+          "score_kind": "cp",
+          "score_value": "-692"
+        },
+        {
+          "slot": 613,
+          "profile": {
+            "R": 360,
+            "N": 720,
+            "ratio": 0.5,
+            "scale": 1.0,
+            "values": [
+              360,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_360_720"
+          },
+          "move": "c4c2",
+          "reported_nodes": 67,
+          "completed_depth": 4,
+          "score_kind": "cp",
+          "score_value": "-346"
+        },
+        {
+          "slot": 614,
+          "profile": {
+            "R": 180,
+            "N": 360,
+            "ratio": 0.5,
+            "scale": 0.5,
+            "values": [
+              180,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_180_360"
+          },
+          "move": "c4c1",
+          "reported_nodes": 65,
+          "completed_depth": 3,
+          "score_kind": "cp",
+          "score_value": "-259"
+        },
+        {
+          "slot": 615,
+          "profile": {
+            "R": 90,
+            "N": 180,
+            "ratio": 0.5,
+            "scale": 0.25,
+            "values": [
+              90,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_90_180"
+          },
+          "move": "c4c1",
+          "reported_nodes": 68,
+          "completed_depth": 3,
+          "score_kind": "cp",
+          "score_value": "-129"
+        }
+      ]
+    },
+    {
+      "state": 20,
+      "family": 10,
+      "ratio": 2.0,
+      "control": "nodes64",
+      "rows": [
+        {
+          "slot": 744,
+          "profile": {
+            "R": 2880,
+            "N": 1440,
+            "ratio": 2.0,
+            "scale": 2.0,
+            "values": [
+              2880,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_2880_1440"
+          },
+          "move": "a2a1",
+          "reported_nodes": 64,
+          "completed_depth": 3,
+          "score_kind": "cp",
+          "score_value": "692"
+        },
+        {
+          "slot": 745,
+          "profile": {
+            "R": 1440,
+            "N": 720,
+            "ratio": 2.0,
+            "scale": 1.0,
+            "values": [
+              1440,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_1440_720"
+          },
+          "move": "a2a1",
+          "reported_nodes": 64,
+          "completed_depth": 3,
+          "score_kind": "cp",
+          "score_value": "346"
+        },
+        {
+          "slot": 746,
+          "profile": {
+            "R": 720,
+            "N": 360,
+            "ratio": 2.0,
+            "scale": 0.5,
+            "values": [
+              720,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_720_360"
+          },
+          "move": "a2a1",
+          "reported_nodes": 64,
+          "completed_depth": 3,
+          "score_kind": "cp",
+          "score_value": "173"
+        },
+        {
+          "slot": 747,
+          "profile": {
+            "R": 360,
+            "N": 180,
+            "ratio": 2.0,
+            "scale": 0.25,
+            "values": [
+              360,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_360_180"
+          },
+          "move": "a2a4",
+          "reported_nodes": 65,
+          "completed_depth": 2,
+          "score_kind": "cp",
+          "score_value": "173"
+        }
+      ]
+    },
+    {
+      "state": 21,
+      "family": 10,
+      "ratio": 0.5,
+      "control": "nodes64",
+      "rows": [
+        {
+          "slot": 756,
+          "profile": {
+            "R": 720,
+            "N": 1440,
+            "ratio": 0.5,
+            "scale": 2.0,
+            "values": [
+              720,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_720_1440"
+          },
+          "move": "b4a2",
+          "reported_nodes": 64,
+          "completed_depth": 4,
+          "score_kind": "cp",
+          "score_value": "346"
+        },
+        {
+          "slot": 757,
+          "profile": {
+            "R": 360,
+            "N": 720,
+            "ratio": 0.5,
+            "scale": 1.0,
+            "values": [
+              360,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_360_720"
+          },
+          "move": "b4a2",
+          "reported_nodes": 68,
+          "completed_depth": 4,
+          "score_kind": "cp",
+          "score_value": "173"
+        },
+        {
+          "slot": 758,
+          "profile": {
+            "R": 180,
+            "N": 360,
+            "ratio": 0.5,
+            "scale": 0.5,
+            "values": [
+              180,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_180_360"
+          },
+          "move": "b4a2",
+          "reported_nodes": 71,
+          "completed_depth": 3,
+          "score_kind": "cp",
+          "score_value": "86"
+        },
+        {
+          "slot": 759,
+          "profile": {
+            "R": 90,
+            "N": 180,
+            "ratio": 0.5,
+            "scale": 0.25,
+            "values": [
+              90,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_90_180"
+          },
+          "move": "d3c3",
+          "reported_nodes": 64,
+          "completed_depth": 3,
+          "score_kind": "cp",
+          "score_value": "86"
+        }
+      ]
+    },
+    {
+      "state": 0,
+      "family": 0,
+      "ratio": 2.0,
+      "control": "nodes4096",
+      "rows": [
+        {
+          "slot": 28,
+          "profile": {
+            "R": 2880,
+            "N": 1440,
+            "ratio": 2.0,
+            "scale": 2.0,
+            "values": [
+              2880,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_2880_1440"
+          },
+          "move": "d3b2",
+          "reported_nodes": 4096,
+          "completed_depth": 12,
+          "score_kind": "cp",
+          "score_value": "692"
+        },
+        {
+          "slot": 29,
+          "profile": {
+            "R": 1440,
+            "N": 720,
+            "ratio": 2.0,
+            "scale": 1.0,
+            "values": [
+              1440,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_1440_720"
+          },
+          "move": "d3b2",
+          "reported_nodes": 4097,
+          "completed_depth": 11,
+          "score_kind": "cp",
+          "score_value": "346"
+        },
+        {
+          "slot": 30,
+          "profile": {
+            "R": 720,
+            "N": 360,
+            "ratio": 2.0,
+            "scale": 0.5,
+            "values": [
+              720,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_720_360"
+          },
+          "move": "d3b2",
+          "reported_nodes": 4097,
+          "completed_depth": 10,
+          "score_kind": "cp",
+          "score_value": "173"
+        },
+        {
+          "slot": 31,
+          "profile": {
+            "R": 360,
+            "N": 180,
+            "ratio": 2.0,
+            "scale": 0.25,
+            "values": [
+              360,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_360_180"
+          },
+          "move": "d3c1",
+          "reported_nodes": 4097,
+          "completed_depth": 10,
+          "score_kind": "cp",
+          "score_value": "173"
+        }
+      ]
+    },
+    {
+      "state": 7,
+      "family": 3,
+      "ratio": 0.5,
+      "control": "nodes4096",
+      "rows": [
+        {
+          "slot": 256,
+          "profile": {
+            "R": 720,
+            "N": 1440,
+            "ratio": 0.5,
+            "scale": 2.0,
+            "values": [
+              720,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_720_1440"
+          },
+          "move": "c2b4",
+          "reported_nodes": 4096,
+          "completed_depth": 26,
+          "score_kind": "mate",
+          "score_value": "-3"
+        },
+        {
+          "slot": 257,
+          "profile": {
+            "R": 360,
+            "N": 720,
+            "ratio": 0.5,
+            "scale": 1.0,
+            "values": [
+              360,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_360_720"
+          },
+          "move": "c2b4",
+          "reported_nodes": 4096,
+          "completed_depth": 20,
+          "score_kind": "mate",
+          "score_value": "-3"
+        },
+        {
+          "slot": 258,
+          "profile": {
+            "R": 180,
+            "N": 360,
+            "ratio": 0.5,
+            "scale": 0.5,
+            "values": [
+              180,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_180_360"
+          },
+          "move": "c2a3",
+          "reported_nodes": 4098,
+          "completed_depth": 39,
+          "score_kind": "mate",
+          "score_value": "-3"
+        },
+        {
+          "slot": 259,
+          "profile": {
+            "R": 90,
+            "N": 180,
+            "ratio": 0.5,
+            "scale": 0.25,
+            "values": [
+              90,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_90_180"
+          },
+          "move": "c2a3",
+          "reported_nodes": 4098,
+          "completed_depth": 37,
+          "score_kind": "mate",
+          "score_value": "-3"
+        }
+      ]
+    },
+    {
+      "state": 11,
+      "family": 5,
+      "ratio": 1.0,
+      "control": "nodes4096",
+      "rows": [
+        {
+          "slot": 412,
+          "profile": {
+            "R": 180,
+            "N": 180,
+            "ratio": 1.0,
+            "scale": 0.25,
+            "values": [
+              180,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_180_180"
+          },
+          "move": "a4b2",
+          "reported_nodes": 4103,
+          "completed_depth": 11,
+          "score_kind": "cp",
+          "score_value": "86"
+        },
+        {
+          "slot": 413,
+          "profile": {
+            "R": 360,
+            "N": 360,
+            "ratio": 1.0,
+            "scale": 0.5,
+            "values": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_360_360"
+          },
+          "move": "a4b2",
+          "reported_nodes": 4097,
+          "completed_depth": 11,
+          "score_kind": "cp",
+          "score_value": "173"
+        },
+        {
+          "slot": 414,
+          "profile": {
+            "R": 720,
+            "N": 720,
+            "ratio": 1.0,
+            "scale": 1.0,
+            "values": [
+              720,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_720_720"
+          },
+          "move": "a4b2",
+          "reported_nodes": 4098,
+          "completed_depth": 13,
+          "score_kind": "cp",
+          "score_value": "346"
+        },
+        {
+          "slot": 415,
+          "profile": {
+            "R": 1440,
+            "N": 1440,
+            "ratio": 1.0,
+            "scale": 2.0,
+            "values": [
+              1440,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_1440_1440"
+          },
+          "move": "d4c4",
+          "reported_nodes": 4096,
+          "completed_depth": 12,
+          "score_kind": "cp",
+          "score_value": "1384"
+        }
+      ]
+    },
+    {
+      "state": 11,
+      "family": 5,
+      "ratio": 2.0,
+      "control": "nodes4096",
+      "rows": [
+        {
+          "slot": 424,
+          "profile": {
+            "R": 360,
+            "N": 180,
+            "ratio": 2.0,
+            "scale": 0.25,
+            "values": [
+              360,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_360_180"
+          },
+          "move": "a4b2",
+          "reported_nodes": 4099,
+          "completed_depth": 11,
+          "score_kind": "cp",
+          "score_value": "173"
+        },
+        {
+          "slot": 425,
+          "profile": {
+            "R": 720,
+            "N": 360,
+            "ratio": 2.0,
+            "scale": 0.5,
+            "values": [
+              720,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_720_360"
+          },
+          "move": "a4b2",
+          "reported_nodes": 4097,
+          "completed_depth": 11,
+          "score_kind": "cp",
+          "score_value": "346"
+        },
+        {
+          "slot": 426,
+          "profile": {
+            "R": 1440,
+            "N": 720,
+            "ratio": 2.0,
+            "scale": 1.0,
+            "values": [
+              1440,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_1440_720"
+          },
+          "move": "a4b2",
+          "reported_nodes": 4097,
+          "completed_depth": 12,
+          "score_kind": "cp",
+          "score_value": "692"
+        },
+        {
+          "slot": 427,
+          "profile": {
+            "R": 2880,
+            "N": 1440,
+            "ratio": 2.0,
+            "scale": 2.0,
+            "values": [
+              2880,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_2880_1440"
+          },
+          "move": "d4c4",
+          "reported_nodes": 4097,
+          "completed_depth": 12,
+          "score_kind": "cp",
+          "score_value": "1872"
+        }
+      ]
+    },
+    {
+      "state": 12,
+      "family": 6,
+      "ratio": 0.5,
+      "control": "nodes4096",
+      "rows": [
+        {
+          "slot": 436,
+          "profile": {
+            "R": 90,
+            "N": 180,
+            "ratio": 0.5,
+            "scale": 0.25,
+            "values": [
+              90,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_90_180"
+          },
+          "move": "b3c3",
+          "reported_nodes": 4098,
+          "completed_depth": 27,
+          "score_kind": "mate",
+          "score_value": "4"
+        },
+        {
+          "slot": 437,
+          "profile": {
+            "R": 180,
+            "N": 360,
+            "ratio": 0.5,
+            "scale": 0.5,
+            "values": [
+              180,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_180_360"
+          },
+          "move": "b3c3",
+          "reported_nodes": 4099,
+          "completed_depth": 28,
+          "score_kind": "mate",
+          "score_value": "4"
+        },
+        {
+          "slot": 438,
+          "profile": {
+            "R": 360,
+            "N": 720,
+            "ratio": 0.5,
+            "scale": 1.0,
+            "values": [
+              360,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_360_720"
+          },
+          "move": "d1c3",
+          "reported_nodes": 4105,
+          "completed_depth": 14,
+          "score_kind": "cp",
+          "score_value": "346"
+        },
+        {
+          "slot": 439,
+          "profile": {
+            "R": 720,
+            "N": 1440,
+            "ratio": 0.5,
+            "scale": 2.0,
+            "values": [
+              720,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_720_1440"
+          },
+          "move": "d1c3",
+          "reported_nodes": 4099,
+          "completed_depth": 14,
+          "score_kind": "cp",
+          "score_value": "692"
+        }
+      ]
+    },
+    {
+      "state": 20,
+      "family": 10,
+      "ratio": 0.5,
+      "control": "nodes4096",
+      "rows": [
+        {
+          "slot": 724,
+          "profile": {
+            "R": 90,
+            "N": 180,
+            "ratio": 0.5,
+            "scale": 0.25,
+            "values": [
+              90,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_90_180"
+          },
+          "move": "a2a4",
+          "reported_nodes": 4097,
+          "completed_depth": 10,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 725,
+          "profile": {
+            "R": 180,
+            "N": 360,
+            "ratio": 0.5,
+            "scale": 0.5,
+            "values": [
+              180,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_180_360"
+          },
+          "move": "a2a4",
+          "reported_nodes": 4099,
+          "completed_depth": 11,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 726,
+          "profile": {
+            "R": 360,
+            "N": 720,
+            "ratio": 0.5,
+            "scale": 1.0,
+            "values": [
+              360,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_360_720"
+          },
+          "move": "a2b2",
+          "reported_nodes": 4099,
+          "completed_depth": 12,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 727,
+          "profile": {
+            "R": 720,
+            "N": 1440,
+            "ratio": 0.5,
+            "scale": 2.0,
+            "values": [
+              720,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_720_1440"
+          },
+          "move": "a2b2",
+          "reported_nodes": 4102,
+          "completed_depth": 14,
+          "score_kind": "cp",
+          "score_value": "0"
+        }
+      ]
+    },
+    {
+      "state": 20,
+      "family": 10,
+      "ratio": 1.0,
+      "control": "nodes4096",
+      "rows": [
+        {
+          "slot": 736,
+          "profile": {
+            "R": 1440,
+            "N": 1440,
+            "ratio": 1.0,
+            "scale": 2.0,
+            "values": [
+              1440,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_1440_1440"
+          },
+          "move": "a2a4",
+          "reported_nodes": 4099,
+          "completed_depth": 10,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 737,
+          "profile": {
+            "R": 720,
+            "N": 720,
+            "ratio": 1.0,
+            "scale": 1.0,
+            "values": [
+              720,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_720_720"
+          },
+          "move": "a2b2",
+          "reported_nodes": 4099,
+          "completed_depth": 11,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 738,
+          "profile": {
+            "R": 360,
+            "N": 360,
+            "ratio": 1.0,
+            "scale": 0.5,
+            "values": [
+              360,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_360_360"
+          },
+          "move": "a2b2",
+          "reported_nodes": 4096,
+          "completed_depth": 10,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 739,
+          "profile": {
+            "R": 180,
+            "N": 180,
+            "ratio": 1.0,
+            "scale": 0.25,
+            "values": [
+              180,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_180_180"
+          },
+          "move": "a2b2",
+          "reported_nodes": 4100,
+          "completed_depth": 10,
+          "score_kind": "cp",
+          "score_value": "0"
+        }
+      ]
+    },
+    {
+      "state": 21,
+      "family": 10,
+      "ratio": 0.5,
+      "control": "nodes4096",
+      "rows": [
+        {
+          "slot": 760,
+          "profile": {
+            "R": 720,
+            "N": 1440,
+            "ratio": 0.5,
+            "scale": 2.0,
+            "values": [
+              720,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_720_1440"
+          },
+          "move": "b4a2",
+          "reported_nodes": 4098,
+          "completed_depth": 13,
+          "score_kind": "cp",
+          "score_value": "692"
+        },
+        {
+          "slot": 761,
+          "profile": {
+            "R": 360,
+            "N": 720,
+            "ratio": 0.5,
+            "scale": 1.0,
+            "values": [
+              360,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_360_720"
+          },
+          "move": "b4a2",
+          "reported_nodes": 4098,
+          "completed_depth": 11,
+          "score_kind": "cp",
+          "score_value": "346"
+        },
+        {
+          "slot": 762,
+          "profile": {
+            "R": 180,
+            "N": 360,
+            "ratio": 0.5,
+            "scale": 0.5,
+            "values": [
+              180,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_180_360"
+          },
+          "move": "d4c3",
+          "reported_nodes": 4099,
+          "completed_depth": 11,
+          "score_kind": "cp",
+          "score_value": "173"
+        },
+        {
+          "slot": 763,
+          "profile": {
+            "R": 90,
+            "N": 180,
+            "ratio": 0.5,
+            "scale": 0.25,
+            "values": [
+              90,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_90_180"
+          },
+          "move": "d4c3",
+          "reported_nodes": 4101,
+          "completed_depth": 10,
+          "score_kind": "cp",
+          "score_value": "86"
+        }
+      ]
+    },
+    {
+      "state": 20,
+      "family": 10,
+      "ratio": 2.0,
+      "control": "depth5",
+      "rows": [
+        {
+          "slot": 752,
+          "profile": {
+            "R": 360,
+            "N": 180,
+            "ratio": 2.0,
+            "scale": 0.25,
+            "values": [
+              360,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_360_180"
+          },
+          "move": "a2a4",
+          "reported_nodes": 431,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 753,
+          "profile": {
+            "R": 720,
+            "N": 360,
+            "ratio": 2.0,
+            "scale": 0.5,
+            "values": [
+              720,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_720_360"
+          },
+          "move": "a2b2",
+          "reported_nodes": 347,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "173"
+        },
+        {
+          "slot": 754,
+          "profile": {
+            "R": 1440,
+            "N": 720,
+            "ratio": 2.0,
+            "scale": 1.0,
+            "values": [
+              1440,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_1440_720"
+          },
+          "move": "a2b2",
+          "reported_nodes": 259,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "346"
+        },
+        {
+          "slot": 755,
+          "profile": {
+            "R": 2880,
+            "N": 1440,
+            "ratio": 2.0,
+            "scale": 2.0,
+            "values": [
+              2880,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_2880_1440"
+          },
+          "move": "a2b2",
+          "reported_nodes": 244,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "692"
+        }
+      ]
+    },
+    {
+      "state": 21,
+      "family": 10,
+      "ratio": 0.5,
+      "control": "depth5",
+      "rows": [
+        {
+          "slot": 764,
+          "profile": {
+            "R": 90,
+            "N": 180,
+            "ratio": 0.5,
+            "scale": 0.25,
+            "values": [
+              90,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_90_180"
+          },
+          "move": "d4c3",
+          "reported_nodes": 402,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "43"
+        },
+        {
+          "slot": 765,
+          "profile": {
+            "R": 180,
+            "N": 360,
+            "ratio": 0.5,
+            "scale": 0.5,
+            "values": [
+              180,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_180_360"
+          },
+          "move": "d4c3",
+          "reported_nodes": 350,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "86"
+        },
+        {
+          "slot": 766,
+          "profile": {
+            "R": 360,
+            "N": 720,
+            "ratio": 0.5,
+            "scale": 1.0,
+            "values": [
+              360,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_360_720"
+          },
+          "move": "b4a2",
+          "reported_nodes": 163,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "173"
+        },
+        {
+          "slot": 767,
+          "profile": {
+            "R": 720,
+            "N": 1440,
+            "ratio": 0.5,
+            "scale": 2.0,
+            "values": [
+              720,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_720_1440"
+          },
+          "move": "b4a2",
+          "reported_nodes": 120,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "346"
+        }
+      ]
+    },
+    {
+      "state": 31,
+      "family": 15,
+      "ratio": 2.0,
+      "control": "depth5",
+      "rows": [
+        {
+          "slot": 1148,
+          "profile": {
+            "R": 2880,
+            "N": 1440,
+            "ratio": 2.0,
+            "scale": 2.0,
+            "values": [
+              2880,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_2880_1440"
+          },
+          "move": "b3b4",
+          "reported_nodes": 262,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 1149,
+          "profile": {
+            "R": 1440,
+            "N": 720,
+            "ratio": 2.0,
+            "scale": 1.0,
+            "values": [
+              1440,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_1440_720"
+          },
+          "move": "b3b4",
+          "reported_nodes": 261,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 1150,
+          "profile": {
+            "R": 720,
+            "N": 360,
+            "ratio": 2.0,
+            "scale": 0.5,
+            "values": [
+              720,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_720_360"
+          },
+          "move": "d4c2",
+          "reported_nodes": 157,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 1151,
+          "profile": {
+            "R": 360,
+            "N": 180,
+            "ratio": 2.0,
+            "scale": 0.25,
+            "values": [
+              360,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_360_180"
+          },
+          "move": "d4c2",
+          "reported_nodes": 226,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        }
+      ]
+    },
+    {
+      "state": 35,
+      "family": 17,
+      "ratio": 0.5,
+      "control": "depth5",
+      "rows": [
+        {
+          "slot": 1268,
+          "profile": {
+            "R": 90,
+            "N": 180,
+            "ratio": 0.5,
+            "scale": 0.25,
+            "values": [
+              90,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_90_180"
+          },
+          "move": "c3d3",
+          "reported_nodes": 262,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "129"
+        },
+        {
+          "slot": 1269,
+          "profile": {
+            "R": 180,
+            "N": 360,
+            "ratio": 0.5,
+            "scale": 0.5,
+            "values": [
+              180,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_180_360"
+          },
+          "move": "c3d3",
+          "reported_nodes": 194,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "259"
+        },
+        {
+          "slot": 1270,
+          "profile": {
+            "R": 360,
+            "N": 720,
+            "ratio": 0.5,
+            "scale": 1.0,
+            "values": [
+              360,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_360_720"
+          },
+          "move": "d4c2",
+          "reported_nodes": 136,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "346"
+        },
+        {
+          "slot": 1271,
+          "profile": {
+            "R": 720,
+            "N": 1440,
+            "ratio": 0.5,
+            "scale": 2.0,
+            "values": [
+              720,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_720_1440"
+          },
+          "move": "d4c2",
+          "reported_nodes": 131,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "692"
+        }
+      ]
+    },
+    {
+      "state": 36,
+      "family": 18,
+      "ratio": 0.5,
+      "control": "depth5",
+      "rows": [
+        {
+          "slot": 1304,
+          "profile": {
+            "R": 720,
+            "N": 1440,
+            "ratio": 0.5,
+            "scale": 2.0,
+            "values": [
+              720,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_720_1440"
+          },
+          "move": "a4b2",
+          "reported_nodes": 286,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 1305,
+          "profile": {
+            "R": 360,
+            "N": 720,
+            "ratio": 0.5,
+            "scale": 1.0,
+            "values": [
+              360,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_360_720"
+          },
+          "move": "a4b2",
+          "reported_nodes": 324,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 1306,
+          "profile": {
+            "R": 180,
+            "N": 360,
+            "ratio": 0.5,
+            "scale": 0.5,
+            "values": [
+              180,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_180_360"
+          },
+          "move": "a4b2",
+          "reported_nodes": 346,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 1307,
+          "profile": {
+            "R": 90,
+            "N": 180,
+            "ratio": 0.5,
+            "scale": 0.25,
+            "values": [
+              90,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_90_180"
+          },
+          "move": "a3c3",
+          "reported_nodes": 298,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        }
+      ]
+    },
+    {
+      "state": 40,
+      "family": 20,
+      "ratio": 0.5,
+      "control": "depth5",
+      "rows": [
+        {
+          "slot": 1448,
+          "profile": {
+            "R": 720,
+            "N": 1440,
+            "ratio": 0.5,
+            "scale": 2.0,
+            "values": [
+              720,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_720_1440"
+          },
+          "move": "d3c1",
+          "reported_nodes": 217,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 1449,
+          "profile": {
+            "R": 360,
+            "N": 720,
+            "ratio": 0.5,
+            "scale": 1.0,
+            "values": [
+              360,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_360_720"
+          },
+          "move": "d3c1",
+          "reported_nodes": 240,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 1450,
+          "profile": {
+            "R": 180,
+            "N": 360,
+            "ratio": 0.5,
+            "scale": 0.5,
+            "values": [
+              180,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_180_360"
+          },
+          "move": "d3c1",
+          "reported_nodes": 320,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 1451,
+          "profile": {
+            "R": 90,
+            "N": 180,
+            "ratio": 0.5,
+            "scale": 0.25,
+            "values": [
+              90,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_90_180"
+          },
+          "move": "c4b4",
+          "reported_nodes": 284,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "-43"
+        }
+      ]
+    },
+    {
+      "state": 40,
+      "family": 20,
+      "ratio": 2.0,
+      "control": "depth5",
+      "rows": [
+        {
+          "slot": 1472,
+          "profile": {
+            "R": 360,
+            "N": 180,
+            "ratio": 2.0,
+            "scale": 0.25,
+            "values": [
+              360,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_360_180"
+          },
+          "move": "d3c1",
+          "reported_nodes": 224,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "86"
+        },
+        {
+          "slot": 1473,
+          "profile": {
+            "R": 720,
+            "N": 360,
+            "ratio": 2.0,
+            "scale": 0.5,
+            "values": [
+              720,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_720_360"
+          },
+          "move": "d3c1",
+          "reported_nodes": 213,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "-173"
+        },
+        {
+          "slot": 1474,
+          "profile": {
+            "R": 1440,
+            "N": 720,
+            "ratio": 2.0,
+            "scale": 1.0,
+            "values": [
+              1440,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_1440_720"
+          },
+          "move": "c4b4",
+          "reported_nodes": 207,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 1475,
+          "profile": {
+            "R": 2880,
+            "N": 1440,
+            "ratio": 2.0,
+            "scale": 2.0,
+            "values": [
+              2880,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_2880_1440"
+          },
+          "move": "c4b4",
+          "reported_nodes": 206,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        }
+      ]
+    },
+    {
+      "state": 43,
+      "family": 21,
+      "ratio": 0.5,
+      "control": "depth5",
+      "rows": [
+        {
+          "slot": 1556,
+          "profile": {
+            "R": 90,
+            "N": 180,
+            "ratio": 0.5,
+            "scale": 0.25,
+            "values": [
+              90,
+              180,
+              180,
+              180
+            ],
+            "name": "aux61unit_90_180"
+          },
+          "move": "c4d2",
+          "reported_nodes": 481,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 1557,
+          "profile": {
+            "R": 180,
+            "N": 360,
+            "ratio": 0.5,
+            "scale": 0.5,
+            "values": [
+              180,
+              360,
+              360,
+              360
+            ],
+            "name": "aux61unit_180_360"
+          },
+          "move": "c4d2",
+          "reported_nodes": 367,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 1558,
+          "profile": {
+            "R": 360,
+            "N": 720,
+            "ratio": 0.5,
+            "scale": 1.0,
+            "values": [
+              360,
+              720,
+              720,
+              720
+            ],
+            "name": "aux61unit_360_720"
+          },
+          "move": "c4b2",
+          "reported_nodes": 344,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        },
+        {
+          "slot": 1559,
+          "profile": {
+            "R": 720,
+            "N": 1440,
+            "ratio": 0.5,
+            "scale": 2.0,
+            "values": [
+              720,
+              1440,
+              1440,
+              1440
+            ],
+            "name": "aux61unit_720_1440"
+          },
+          "move": "c4b2",
+          "reported_nodes": 330,
+          "completed_depth": 5,
+          "score_kind": "cp",
+          "score_value": "0"
+        }
+      ]
+    }
+  ],
+  "seconds": 0.12647160000051372,
+  "native_seconds": 45.76133540000592,
+  "source_unchanged_at_completion": true,
+  "conclusion": "Commonunits can change policy iff changedaction quartets>0; samereporteddepth differences cannot be explained solely by more completed depth. This doesnot distinguish idealmaterialties from suboptimal actions, prove winimprovement, isolate one pruning heuristic, select units, or invalidate old source-pinned conditionalresults. Current100ms actualpolicy differs from these fixednode/depth controls."
+}

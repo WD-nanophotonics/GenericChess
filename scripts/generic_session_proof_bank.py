@@ -32,6 +32,7 @@ class BankQuery:
     verification: object | None
     key: tuple
     verification_scope: str = 'NONE'
+    physical_proof_stats: tuple = ()
 
 
 class SessionLogicalProofBank:
@@ -61,6 +62,7 @@ class SessionLogicalProofBank:
         verification = None
         hit = stored = False
         origin_time = 0.
+        physical_stats = ()
         try:
             b.poll(); replay_bound(session); b.poll()
             if key in self._entries:
@@ -68,6 +70,9 @@ class SessionLogicalProofBank:
                 self._entries.move_to_end(key)
                 origin_time = result.seconds
                 hit = True
+                physical_stats = tuple((n, 0) for n in (
+                    'frontiers','transitions','iterations','peak_depth',
+                    'eager_board_successors','claims_assessed') if hasattr(result,n))
                 b.poll()
             else:
                 # Admission is part of this physical query's wall allowance.
@@ -75,6 +80,9 @@ class SessionLogicalProofBank:
                     seconds=max(0., seconds-b.elapsed()), max_depth=max_depth,
                     cancel=cancel, _clock=_clock)
                 proof_nodes, proof_time = result.nodes, result.seconds
+                physical_stats = tuple((n, getattr(result,n)) for n in (
+                    'frontiers','transitions','iterations','peak_depth',
+                    'eager_board_successors','claims_assessed') if hasattr(result,n))
                 origin_time = result.seconds
                 b.poll()
                 eligible = result.status == 'UNKNOWN' and result.reason in (
@@ -111,4 +119,4 @@ class SessionLogicalProofBank:
             assert _same_state(session.state, root) and _same_state(session.to_record(), record) and session.result == terminal
         return BankQuery(result, hit, stored, proof_nodes, verifier_nodes,
             b.elapsed(), proof_time, verifier_time, origin_time, None if verification is None else dict(verification), key,
-            'NONE' if verification is None else 'HISTORICAL_SAME_LIMITS' if hit else 'THIS_QUERY')
+            'NONE' if verification is None else 'HISTORICAL_SAME_LIMITS' if hit else 'THIS_QUERY', physical_stats)

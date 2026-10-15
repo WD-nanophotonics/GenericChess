@@ -1,0 +1,1916 @@
+{
+  "status": "PASS",
+  "source_unchanged": true,
+  "seconds": 4.536176499997964,
+  "rows": [
+    {
+      "source": "PROOF",
+      "proof_reason": "finite_session_all_defense_certificate",
+      "proof_nodes": 71,
+      "verification_nodes": 4,
+      "search_nodes": 0,
+      "seconds": 0.010679900005925447,
+      "exit_cause": "certificate",
+      "proof_rank": 3,
+      "admission_seconds": 0.00037170000723563135,
+      "proof_seconds": 0.005115100007969886,
+      "verification_seconds": 0.0023274999985005707,
+      "normal_seconds": 0.0,
+      "proof_stats": [
+        [
+          "frontiers",
+          10
+        ],
+        [
+          "transitions",
+          70
+        ],
+        [
+          "iterations",
+          10
+        ],
+        [
+          "peak_depth",
+          3
+        ],
+        [
+          "eager_board_successors",
+          72
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "phase_limits": [
+        [
+          "normal_nodes",
+          4096
+        ],
+        [
+          "proof_nodes",
+          16384
+        ],
+        [
+          "verification_nodes",
+          16384
+        ],
+        [
+          "total_seconds",
+          2.75
+        ],
+        [
+          "proof_seconds",
+          1.5
+        ],
+        [
+          "verification_seconds",
+          0.5
+        ],
+        [
+          "normal_seconds",
+          0.1
+        ],
+        [
+          "bank_fill_verification_nodes",
+          16384
+        ],
+        [
+          "bank_fill_verification_seconds",
+          0.5
+        ]
+      ],
+      "bank_hit": false,
+      "bank_stored": true,
+      "bank_verification_scope": "THIS_QUERY",
+      "bank_query_seconds": 0.007913199995527975,
+      "fill_verification_nodes": 4,
+      "fill_verification_seconds": 0.0023465999984182417,
+      "logical_proof_nodes": 71,
+      "logical_proof_seconds": 0.005115100007969886,
+      "logical_proof_stats": [
+        [
+          "frontiers",
+          10
+        ],
+        [
+          "transitions",
+          70
+        ],
+        [
+          "iterations",
+          10
+        ],
+        [
+          "peak_depth",
+          3
+        ],
+        [
+          "eager_board_successors",
+          72
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "logical_status": "PROVEN_WIN",
+      "logical_reason": "finite_session_all_defense_certificate",
+      "case": "positive",
+      "slot": 3,
+      "mode": "MISS",
+      "paid_nodes": 79,
+      "physical_moves": 3,
+      "winner": 0,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "ce3b5cfb6d9581b05276d8346b6853c6a1ade2b2294b51bc6e528dbf6c98e034",
+        "schema_version": 1
+      }
+    },
+    {
+      "source": "PROOF",
+      "proof_reason": "finite_session_all_defense_certificate",
+      "proof_nodes": 0,
+      "verification_nodes": 4,
+      "search_nodes": 0,
+      "seconds": 0.0029894000035710633,
+      "exit_cause": "certificate",
+      "proof_rank": 3,
+      "admission_seconds": 0.00030679999326821417,
+      "proof_seconds": 0.0,
+      "verification_seconds": 0.0022813999967183918,
+      "normal_seconds": 0.0,
+      "proof_stats": [
+        [
+          "frontiers",
+          0
+        ],
+        [
+          "transitions",
+          0
+        ],
+        [
+          "iterations",
+          0
+        ],
+        [
+          "peak_depth",
+          0
+        ],
+        [
+          "eager_board_successors",
+          0
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "phase_limits": [
+        [
+          "normal_nodes",
+          4096
+        ],
+        [
+          "proof_nodes",
+          16384
+        ],
+        [
+          "verification_nodes",
+          16384
+        ],
+        [
+          "total_seconds",
+          2.75
+        ],
+        [
+          "proof_seconds",
+          1.5
+        ],
+        [
+          "verification_seconds",
+          0.5
+        ],
+        [
+          "normal_seconds",
+          0.1
+        ],
+        [
+          "bank_fill_verification_nodes",
+          16384
+        ],
+        [
+          "bank_fill_verification_seconds",
+          0.5
+        ]
+      ],
+      "bank_hit": true,
+      "bank_stored": false,
+      "bank_verification_scope": "HISTORICAL_SAME_LIMITS",
+      "bank_query_seconds": 0.00034440000308677554,
+      "fill_verification_nodes": 0,
+      "fill_verification_seconds": 0.0,
+      "logical_proof_nodes": 71,
+      "logical_proof_seconds": 0.005115100007969886,
+      "logical_proof_stats": [
+        [
+          "frontiers",
+          10
+        ],
+        [
+          "transitions",
+          70
+        ],
+        [
+          "iterations",
+          10
+        ],
+        [
+          "peak_depth",
+          3
+        ],
+        [
+          "eager_board_successors",
+          72
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "logical_status": "PROVEN_WIN",
+      "logical_reason": "finite_session_all_defense_certificate",
+      "case": "positive",
+      "slot": 3,
+      "mode": "HIT_ATTEMPT",
+      "paid_nodes": 4,
+      "physical_moves": 3,
+      "winner": 0,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "ce3b5cfb6d9581b05276d8346b6853c6a1ade2b2294b51bc6e528dbf6c98e034",
+        "schema_version": 1
+      }
+    },
+    {
+      "source": "PROOF",
+      "proof_reason": "finite_session_all_defense_certificate",
+      "proof_nodes": 71,
+      "verification_nodes": 4,
+      "search_nodes": 0,
+      "seconds": 0.010231699998257682,
+      "exit_cause": "certificate",
+      "proof_rank": 3,
+      "admission_seconds": 0.00030279999191407114,
+      "proof_seconds": 0.004899299994576722,
+      "verification_seconds": 0.00227499999164138,
+      "normal_seconds": 0.0,
+      "proof_stats": [
+        [
+          "frontiers",
+          10
+        ],
+        [
+          "transitions",
+          70
+        ],
+        [
+          "iterations",
+          10
+        ],
+        [
+          "peak_depth",
+          3
+        ],
+        [
+          "eager_board_successors",
+          72
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "phase_limits": [
+        [
+          "normal_nodes",
+          4096
+        ],
+        [
+          "proof_nodes",
+          16384
+        ],
+        [
+          "verification_nodes",
+          16384
+        ],
+        [
+          "total_seconds",
+          2.75
+        ],
+        [
+          "proof_seconds",
+          1.5
+        ],
+        [
+          "verification_seconds",
+          0.5
+        ],
+        [
+          "normal_seconds",
+          0.1
+        ],
+        [
+          "bank_fill_verification_nodes",
+          16384
+        ],
+        [
+          "bank_fill_verification_seconds",
+          0.5
+        ]
+      ],
+      "bank_hit": false,
+      "bank_stored": true,
+      "bank_verification_scope": "THIS_QUERY",
+      "bank_query_seconds": 0.007603500009281561,
+      "fill_verification_nodes": 4,
+      "fill_verification_seconds": 0.0022979000059422106,
+      "logical_proof_nodes": 71,
+      "logical_proof_seconds": 0.004899299994576722,
+      "logical_proof_stats": [
+        [
+          "frontiers",
+          10
+        ],
+        [
+          "transitions",
+          70
+        ],
+        [
+          "iterations",
+          10
+        ],
+        [
+          "peak_depth",
+          3
+        ],
+        [
+          "eager_board_successors",
+          72
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "logical_status": "PROVEN_WIN",
+      "logical_reason": "finite_session_all_defense_certificate",
+      "case": "positive",
+      "slot": 4,
+      "mode": "MISS",
+      "paid_nodes": 79,
+      "physical_moves": 3,
+      "winner": 0,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "ce3b5cfb6d9581b05276d8346b6853c6a1ade2b2294b51bc6e528dbf6c98e034",
+        "schema_version": 1
+      }
+    },
+    {
+      "source": "PROOF",
+      "proof_reason": "finite_session_all_defense_certificate",
+      "proof_nodes": 0,
+      "verification_nodes": 4,
+      "search_nodes": 0,
+      "seconds": 0.002962900005513802,
+      "exit_cause": "certificate",
+      "proof_rank": 3,
+      "admission_seconds": 0.00030590000096708536,
+      "proof_seconds": 0.0,
+      "verification_seconds": 0.0022655000066151842,
+      "normal_seconds": 0.0,
+      "proof_stats": [
+        [
+          "frontiers",
+          0
+        ],
+        [
+          "transitions",
+          0
+        ],
+        [
+          "iterations",
+          0
+        ],
+        [
+          "peak_depth",
+          0
+        ],
+        [
+          "eager_board_successors",
+          0
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "phase_limits": [
+        [
+          "normal_nodes",
+          4096
+        ],
+        [
+          "proof_nodes",
+          16384
+        ],
+        [
+          "verification_nodes",
+          16384
+        ],
+        [
+          "total_seconds",
+          2.75
+        ],
+        [
+          "proof_seconds",
+          1.5
+        ],
+        [
+          "verification_seconds",
+          0.5
+        ],
+        [
+          "normal_seconds",
+          0.1
+        ],
+        [
+          "bank_fill_verification_nodes",
+          16384
+        ],
+        [
+          "bank_fill_verification_seconds",
+          0.5
+        ]
+      ],
+      "bank_hit": true,
+      "bank_stored": false,
+      "bank_verification_scope": "HISTORICAL_SAME_LIMITS",
+      "bank_query_seconds": 0.0003440000000409782,
+      "fill_verification_nodes": 0,
+      "fill_verification_seconds": 0.0,
+      "logical_proof_nodes": 71,
+      "logical_proof_seconds": 0.004899299994576722,
+      "logical_proof_stats": [
+        [
+          "frontiers",
+          10
+        ],
+        [
+          "transitions",
+          70
+        ],
+        [
+          "iterations",
+          10
+        ],
+        [
+          "peak_depth",
+          3
+        ],
+        [
+          "eager_board_successors",
+          72
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "logical_status": "PROVEN_WIN",
+      "logical_reason": "finite_session_all_defense_certificate",
+      "case": "positive",
+      "slot": 4,
+      "mode": "HIT_ATTEMPT",
+      "paid_nodes": 4,
+      "physical_moves": 3,
+      "winner": 0,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "ce3b5cfb6d9581b05276d8346b6853c6a1ade2b2294b51bc6e528dbf6c98e034",
+        "schema_version": 1
+      }
+    },
+    {
+      "source": "PROOF",
+      "proof_reason": "finite_session_all_defense_certificate",
+      "proof_nodes": 71,
+      "verification_nodes": 4,
+      "search_nodes": 0,
+      "seconds": 0.010478799988050014,
+      "exit_cause": "certificate",
+      "proof_rank": 3,
+      "admission_seconds": 0.00030300000798888505,
+      "proof_seconds": 0.0050789999950211495,
+      "verification_seconds": 0.002319899998838082,
+      "normal_seconds": 0.0,
+      "proof_stats": [
+        [
+          "frontiers",
+          10
+        ],
+        [
+          "transitions",
+          70
+        ],
+        [
+          "iterations",
+          10
+        ],
+        [
+          "peak_depth",
+          3
+        ],
+        [
+          "eager_board_successors",
+          72
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "phase_limits": [
+        [
+          "normal_nodes",
+          4096
+        ],
+        [
+          "proof_nodes",
+          16384
+        ],
+        [
+          "verification_nodes",
+          16384
+        ],
+        [
+          "total_seconds",
+          2.75
+        ],
+        [
+          "proof_seconds",
+          1.5
+        ],
+        [
+          "verification_seconds",
+          0.5
+        ],
+        [
+          "normal_seconds",
+          0.1
+        ],
+        [
+          "bank_fill_verification_nodes",
+          16384
+        ],
+        [
+          "bank_fill_verification_seconds",
+          0.5
+        ]
+      ],
+      "bank_hit": false,
+      "bank_stored": true,
+      "bank_verification_scope": "THIS_QUERY",
+      "bank_query_seconds": 0.007803300002706237,
+      "fill_verification_nodes": 4,
+      "fill_verification_seconds": 0.0023201000003609806,
+      "logical_proof_nodes": 71,
+      "logical_proof_seconds": 0.0050789999950211495,
+      "logical_proof_stats": [
+        [
+          "frontiers",
+          10
+        ],
+        [
+          "transitions",
+          70
+        ],
+        [
+          "iterations",
+          10
+        ],
+        [
+          "peak_depth",
+          3
+        ],
+        [
+          "eager_board_successors",
+          72
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "logical_status": "PROVEN_WIN",
+      "logical_reason": "finite_session_all_defense_certificate",
+      "case": "positive",
+      "slot": 5,
+      "mode": "MISS",
+      "paid_nodes": 79,
+      "physical_moves": 3,
+      "winner": 0,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "ce3b5cfb6d9581b05276d8346b6853c6a1ade2b2294b51bc6e528dbf6c98e034",
+        "schema_version": 1
+      }
+    },
+    {
+      "source": "PROOF",
+      "proof_reason": "finite_session_all_defense_certificate",
+      "proof_nodes": 0,
+      "verification_nodes": 4,
+      "search_nodes": 0,
+      "seconds": 0.00297359999967739,
+      "exit_cause": "certificate",
+      "proof_rank": 3,
+      "admission_seconds": 0.00030720001086592674,
+      "proof_seconds": 0.0,
+      "verification_seconds": 0.0022693000064464286,
+      "normal_seconds": 0.0,
+      "proof_stats": [
+        [
+          "frontiers",
+          0
+        ],
+        [
+          "transitions",
+          0
+        ],
+        [
+          "iterations",
+          0
+        ],
+        [
+          "peak_depth",
+          0
+        ],
+        [
+          "eager_board_successors",
+          0
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "phase_limits": [
+        [
+          "normal_nodes",
+          4096
+        ],
+        [
+          "proof_nodes",
+          16384
+        ],
+        [
+          "verification_nodes",
+          16384
+        ],
+        [
+          "total_seconds",
+          2.75
+        ],
+        [
+          "proof_seconds",
+          1.5
+        ],
+        [
+          "verification_seconds",
+          0.5
+        ],
+        [
+          "normal_seconds",
+          0.1
+        ],
+        [
+          "bank_fill_verification_nodes",
+          16384
+        ],
+        [
+          "bank_fill_verification_seconds",
+          0.5
+        ]
+      ],
+      "bank_hit": true,
+      "bank_stored": false,
+      "bank_verification_scope": "HISTORICAL_SAME_LIMITS",
+      "bank_query_seconds": 0.00034889999369625,
+      "fill_verification_nodes": 0,
+      "fill_verification_seconds": 0.0,
+      "logical_proof_nodes": 71,
+      "logical_proof_seconds": 0.0050789999950211495,
+      "logical_proof_stats": [
+        [
+          "frontiers",
+          10
+        ],
+        [
+          "transitions",
+          70
+        ],
+        [
+          "iterations",
+          10
+        ],
+        [
+          "peak_depth",
+          3
+        ],
+        [
+          "eager_board_successors",
+          72
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "logical_status": "PROVEN_WIN",
+      "logical_reason": "finite_session_all_defense_certificate",
+      "case": "positive",
+      "slot": 5,
+      "mode": "HIT_ATTEMPT",
+      "paid_nodes": 4,
+      "physical_moves": 3,
+      "winner": 0,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              3
+            ]
+          },
+          {
+            "from": [
+              3,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              3,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "ce3b5cfb6d9581b05276d8346b6853c6a1ade2b2294b51bc6e528dbf6c98e034",
+        "schema_version": 1
+      }
+    },
+    {
+      "source": "PROOF",
+      "proof_reason": "finite_session_all_defense_certificate",
+      "proof_nodes": 416,
+      "verification_nodes": 28,
+      "search_nodes": 0,
+      "seconds": 0.10718310000083875,
+      "exit_cause": "certificate",
+      "proof_rank": 11,
+      "admission_seconds": 0.0007011000125203282,
+      "proof_seconds": 0.035230900000897236,
+      "verification_seconds": 0.03505890000087675,
+      "normal_seconds": 0.0,
+      "proof_stats": [
+        [
+          "frontiers",
+          83
+        ],
+        [
+          "transitions",
+          415
+        ],
+        [
+          "iterations",
+          83
+        ],
+        [
+          "peak_depth",
+          11
+        ],
+        [
+          "eager_board_successors",
+          443
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "phase_limits": [
+        [
+          "normal_nodes",
+          4096
+        ],
+        [
+          "proof_nodes",
+          16384
+        ],
+        [
+          "verification_nodes",
+          16384
+        ],
+        [
+          "total_seconds",
+          2.75
+        ],
+        [
+          "proof_seconds",
+          1.5
+        ],
+        [
+          "verification_seconds",
+          0.5
+        ],
+        [
+          "normal_seconds",
+          0.1
+        ],
+        [
+          "bank_fill_verification_nodes",
+          16384
+        ],
+        [
+          "bank_fill_verification_seconds",
+          0.5
+        ]
+      ],
+      "bank_hit": false,
+      "bank_stored": true,
+      "bank_verification_scope": "THIS_QUERY",
+      "bank_query_seconds": 0.0713465000008,
+      "fill_verification_nodes": 28,
+      "fill_verification_seconds": 0.035125299997162074,
+      "logical_proof_nodes": 416,
+      "logical_proof_seconds": 0.035230900000897236,
+      "logical_proof_stats": [
+        [
+          "frontiers",
+          83
+        ],
+        [
+          "transitions",
+          415
+        ],
+        [
+          "iterations",
+          83
+        ],
+        [
+          "peak_depth",
+          11
+        ],
+        [
+          "eager_board_successors",
+          443
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "logical_status": "PROVEN_WIN",
+      "logical_reason": "finite_session_all_defense_certificate",
+      "case": "positive",
+      "slot": 21,
+      "mode": "MISS",
+      "paid_nodes": 472,
+      "physical_moves": 7,
+      "winner": 1,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "initial_setup_key": "family-1",
+        "resigned_by": null,
+        "ruleset_fingerprint": "ce3b5cfb6d9581b05276d8346b6853c6a1ade2b2294b51bc6e528dbf6c98e034",
+        "schema_version": 3
+      }
+    },
+    {
+      "source": "PROOF",
+      "proof_reason": "finite_session_all_defense_certificate",
+      "proof_nodes": 0,
+      "verification_nodes": 28,
+      "search_nodes": 0,
+      "seconds": 0.03829869999026414,
+      "exit_cause": "certificate",
+      "proof_rank": 11,
+      "admission_seconds": 0.0007029999978840351,
+      "proof_seconds": 0.0,
+      "verification_seconds": 0.03672930000175256,
+      "normal_seconds": 0.0,
+      "proof_stats": [
+        [
+          "frontiers",
+          0
+        ],
+        [
+          "transitions",
+          0
+        ],
+        [
+          "iterations",
+          0
+        ],
+        [
+          "peak_depth",
+          0
+        ],
+        [
+          "eager_board_successors",
+          0
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "phase_limits": [
+        [
+          "normal_nodes",
+          4096
+        ],
+        [
+          "proof_nodes",
+          16384
+        ],
+        [
+          "verification_nodes",
+          16384
+        ],
+        [
+          "total_seconds",
+          2.75
+        ],
+        [
+          "proof_seconds",
+          1.5
+        ],
+        [
+          "verification_seconds",
+          0.5
+        ],
+        [
+          "normal_seconds",
+          0.1
+        ],
+        [
+          "bank_fill_verification_nodes",
+          16384
+        ],
+        [
+          "bank_fill_verification_seconds",
+          0.5
+        ]
+      ],
+      "bank_hit": true,
+      "bank_stored": false,
+      "bank_verification_scope": "HISTORICAL_SAME_LIMITS",
+      "bank_query_seconds": 0.0007781000022077933,
+      "fill_verification_nodes": 0,
+      "fill_verification_seconds": 0.0,
+      "logical_proof_nodes": 416,
+      "logical_proof_seconds": 0.035230900000897236,
+      "logical_proof_stats": [
+        [
+          "frontiers",
+          83
+        ],
+        [
+          "transitions",
+          415
+        ],
+        [
+          "iterations",
+          83
+        ],
+        [
+          "peak_depth",
+          11
+        ],
+        [
+          "eager_board_successors",
+          443
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "logical_status": "PROVEN_WIN",
+      "logical_reason": "finite_session_all_defense_certificate",
+      "case": "positive",
+      "slot": 21,
+      "mode": "HIT_ATTEMPT",
+      "paid_nodes": 28,
+      "physical_moves": 7,
+      "winner": 1,
+      "record": {
+        "actions": [
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              1,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              2,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          }
+        ],
+        "initial_setup_key": "family-1",
+        "resigned_by": null,
+        "ruleset_fingerprint": "ce3b5cfb6d9581b05276d8346b6853c6a1ade2b2294b51bc6e528dbf6c98e034",
+        "schema_version": 3
+      }
+    },
+    {
+      "source": "EXTERNAL_SEARCH",
+      "proof_reason": "bank_fill_verification_time_budget",
+      "proof_nodes": 15760,
+      "verification_nodes": 0,
+      "search_nodes": 1,
+      "seconds": 1.5800199000077555,
+      "exit_cause": "external_search_return",
+      "proof_rank": null,
+      "admission_seconds": 0.0005031000036979094,
+      "proof_seconds": 1.0665716999938013,
+      "verification_seconds": 0.0,
+      "normal_seconds": 0.0014988999901106581,
+      "proof_stats": [
+        [
+          "frontiers",
+          3327
+        ],
+        [
+          "transitions",
+          15759
+        ],
+        [
+          "iterations",
+          3327
+        ],
+        [
+          "peak_depth",
+          28
+        ],
+        [
+          "eager_board_successors",
+          16272
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "phase_limits": [
+        [
+          "normal_nodes",
+          4096
+        ],
+        [
+          "proof_nodes",
+          16384
+        ],
+        [
+          "verification_nodes",
+          16384
+        ],
+        [
+          "total_seconds",
+          2.75
+        ],
+        [
+          "proof_seconds",
+          1.5
+        ],
+        [
+          "verification_seconds",
+          0.5
+        ],
+        [
+          "normal_seconds",
+          0.1
+        ],
+        [
+          "bank_fill_verification_nodes",
+          16384
+        ],
+        [
+          "bank_fill_verification_seconds",
+          0.5
+        ]
+      ],
+      "bank_hit": false,
+      "bank_stored": false,
+      "bank_verification_scope": "THIS_QUERY",
+      "bank_query_seconds": 1.57793679999304,
+      "fill_verification_nodes": 285,
+      "fill_verification_seconds": 0.5005314000009093,
+      "logical_proof_nodes": 15760,
+      "logical_proof_seconds": 1.0665716999938013,
+      "logical_proof_stats": [
+        [
+          "frontiers",
+          3327
+        ],
+        [
+          "transitions",
+          15759
+        ],
+        [
+          "iterations",
+          3327
+        ],
+        [
+          "peak_depth",
+          28
+        ],
+        [
+          "eager_board_successors",
+          16272
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "logical_status": "PROVEN_WIN",
+      "logical_reason": "finite_session_all_defense_certificate",
+      "case": "old_verifier_timeout",
+      "slot": 276,
+      "mode": "MISS",
+      "paid_nodes": 16046
+    },
+    {
+      "source": "EXTERNAL_SEARCH",
+      "proof_reason": "bank_fill_verification_time_budget",
+      "proof_nodes": 15760,
+      "verification_nodes": 0,
+      "search_nodes": 1,
+      "seconds": 1.605371899990132,
+      "exit_cause": "external_search_return",
+      "proof_rank": null,
+      "admission_seconds": 0.0005223000043770298,
+      "proof_seconds": 1.0912320999923395,
+      "verification_seconds": 0.0,
+      "normal_seconds": 0.0014521999983116984,
+      "proof_stats": [
+        [
+          "frontiers",
+          3327
+        ],
+        [
+          "transitions",
+          15759
+        ],
+        [
+          "iterations",
+          3327
+        ],
+        [
+          "peak_depth",
+          28
+        ],
+        [
+          "eager_board_successors",
+          16272
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "phase_limits": [
+        [
+          "normal_nodes",
+          4096
+        ],
+        [
+          "proof_nodes",
+          16384
+        ],
+        [
+          "verification_nodes",
+          16384
+        ],
+        [
+          "total_seconds",
+          2.75
+        ],
+        [
+          "proof_seconds",
+          1.5
+        ],
+        [
+          "verification_seconds",
+          0.5
+        ],
+        [
+          "normal_seconds",
+          0.1
+        ],
+        [
+          "bank_fill_verification_nodes",
+          16384
+        ],
+        [
+          "bank_fill_verification_seconds",
+          0.5
+        ]
+      ],
+      "bank_hit": false,
+      "bank_stored": false,
+      "bank_verification_scope": "THIS_QUERY",
+      "bank_query_seconds": 1.603321300004609,
+      "fill_verification_nodes": 288,
+      "fill_verification_seconds": 0.5012429000053089,
+      "logical_proof_nodes": 15760,
+      "logical_proof_seconds": 1.0912320999923395,
+      "logical_proof_stats": [
+        [
+          "frontiers",
+          3327
+        ],
+        [
+          "transitions",
+          15759
+        ],
+        [
+          "iterations",
+          3327
+        ],
+        [
+          "peak_depth",
+          28
+        ],
+        [
+          "eager_board_successors",
+          16272
+        ],
+        [
+          "claims_assessed",
+          0
+        ]
+      ],
+      "logical_status": "PROVEN_WIN",
+      "logical_reason": "finite_session_all_defense_certificate",
+      "case": "old_verifier_timeout",
+      "slot": 276,
+      "mode": "HIT_ATTEMPT",
+      "paid_nodes": 16049
+    }
+  ],
+  "negative_changed_cap": {
+    "proof_reason": "bank_fill_verification_node_budget",
+    "actualproof": 15760,
+    "stored": false,
+    "currentverification": 0
+  },
+  "scope": "4exposed winning requests/2unique roots plus old1860 verifier-timeout record, each cold/miss/hit; real currentchecks, no price fitting, no Native. Oldtimefailure may or maynot recur under current load; zero-node qualification is separately declared, not an oldresult rewrite."
+}

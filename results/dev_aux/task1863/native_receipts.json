@@ -1,0 +1,19 @@
+{
+  "status": "PASS_ALL_NATIVE_POSITION_HISTORY_AND_PROFILE_BINDINGS",
+  "queries": 430,
+  "actual_full_root_plus_prefix_commands": 430,
+  "actual_full_record_strings": 430,
+  "exact_profile_acks": 222,
+  "cold_clears": 208,
+  "options": {
+    "Threads": 1,
+    "Hash": 16,
+    "Use NNUE": "false",
+    "SyzygyPath": "<empty>",
+    "VariantPath": "results\\dev_aux\\task1824\\variant.ini"
+  },
+  "seconds": 0.14650070000789128,
+  "new_native_go": 0,
+  "new_games": 0,
+  "scope": "Independent complete actual before-record/rootFEN/actionprefix/role-price binding against saved Native INTENT; no raw-log source or oldresult rewrite."
+}
