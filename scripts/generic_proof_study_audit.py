@@ -5,6 +5,7 @@ from scripts.generic_proof_rnb_bridge import compile_rnb,from_actor,actor_state,
 from generic_chess.core.movegen import legal_actions
 from generic_chess.core.transition import apply_action
 from generic_chess.core.terminal import terminal_result
+from scripts.generic_proof_roles import roles,row_role,row_target
 
 
 def quantile(x,q):return sorted(x)[int((len(x)-1)*q)]
@@ -33,8 +34,13 @@ def audit(folder):
         key=orbit(tuple(f['roots'][0]));assert not key&root_orbits;root_orbits.update(key)
     choice_index=0;conversion=collections.Counter()
     for row in rows:
-        key=(row['family'],row['proof'],row['price_index'],row['color'],row['opponent']);assert key not in seen;seen.add(key)
-        f=families[row['family']];state=from_actor(c,f['roots'][row['color']]);target=state.position.side_to_move
+        key=(row['family'],row['proof'],row['price_index'],row['color'],row['opponent'],row_role(row));assert row_role(row) in roles(plan);assert key not in seen;seen.add(key)
+        f=families[row['family']];state=from_actor(c,f['roots'][row['color']]);target=row_target(row,state.position.side_to_move)
+        assert row['phase']==f['phase'] and row['price']==plan['prices'][row['price_index']]
+        assert type(row.get('candidate_side',target)) is int
+        if len(roles(plan))>1:assert 'candidate_role' in row and 'candidate_side' in row
+        assert type(row.get('opponent_proof',row['proof'])) is bool
+        assert row.get('opponent_proof',row['proof'])==plan.get('opponent_proof',row['proof'])
         op=next(o for o in plan['opponents'] if o['id']==row['opponent'])
         for step in row['trajectory']:
             assert actor_state(state)==tuple(step['actor']);z=step['decision'];actions={uci(a):a for a in legal_actions(state,c)};assert z['action'] in actions
@@ -42,7 +48,8 @@ def audit(folder):
             max_time=max(max_time,z['seconds']);over_time+=z['seconds']>plan['step_seconds']
             assert z['nodes']==z['proof_nodes']+z['verification_nodes']+z['search_nodes']
             assert z['proof_nodes']<=cap//4 and z['verification_nodes']<=cap//4
-            assert row['proof'] or z['proof_nodes']==z['verification_nodes']==0
+            enabled=row['proof'] if state.position.side_to_move==target else row.get('opponent_proof',row['proof'])
+            assert enabled or z['proof_nodes']==z['verification_nodes']==0
             if z['source']=='EXTERNAL_SEARCH':
                 receipt=choices[choice_index];ack=acks[choice_index];choice_index+=1
                 assert tuple(receipt['state'])==actor_state(state) and receipt['raw'][-1].split()[1]==z['action']
@@ -55,9 +62,9 @@ def audit(folder):
                     assert expected in ack['ack']
                 overruns+=receipt['reported_nodes']>receipt['requested_nodes']
             elif z['source']=='PROOF':
-                assert row['proof'] and z['proof_nodes']>0 and z['verification_nodes']>0;proofcalls+=1
+                assert enabled and z['proof_nodes']>0 and z['verification_nodes']>0;proofcalls+=1
             elif z['source']=='PROOF_CONTINUATION':
-                assert row['proof'] and z['nodes']==0;continuations+=1
+                assert enabled and z['nodes']==0;continuations+=1
             else:assert z['source']=='LEGAL_FALLBACK'
             state=apply_action(state,actions[z['action']],c);steps+=1
         assert actor_state(state)==tuple(row['end']) and terminal_result(state,c).status.value==row['terminal']
@@ -77,7 +84,7 @@ def audit(folder):
     baseline=plan.get('baseline_index',0);selected=selection['selected_index'] if selection else 1
     if selection:
         assert not any(incomplete(r,plan) for r in rows if r['phase']=='TRAIN'), 'incomplete finite TRAIN objective cannot select prices'
-        expected_train=2*len(plan['opponents'])*sum(f['phase']=='TRAIN' for f in plan['families'])
+        expected_train=2*len(roles(plan))*len(plan['opponents'])*sum(f['phase']=='TRAIN' for f in plan['families'])
         assert all(sum(r['phase']=='TRAIN' and r['price_index']==i for r in rows)==expected_train for i in range(len(plan['prices']))), 'missing TRAIN slots'
         scores={i:sum(r['payoff'] or 0 for r in rows if r['phase']=='TRAIN' and r['price_index']==i) for i in range(len(plan['prices']))}
         assert str(selection['integer_scores'])==str({str(k):v for k,v in scores.items()})
@@ -98,7 +105,7 @@ def audit(folder):
                            lower=sum(r['lower'] for r in data)/len(data) if data else None,
                            upper=sum(r['upper'] for r in data)/len(data) if data else None,
                            outcomes=dict(collections.Counter(str(r['payoff']) for r in data)))
-    planned_n=2*len(plan['opponents'])*sum(f['phase']=='DEV' for f in plan['families'])
+    planned_n=2*len(roles(plan))*len(plan['opponents'])*sum(f['phase']=='DEV' for f in plan['families'])
     for label,(q,j) in dict(A=(False,baseline),B=(True,baseline),C=(False,selected),D=(True,selected)).items():
         data=[r for r in dev if r['proof']==q and r['price_index']==j]
         groups[label].update(planned_bounds(data,planned_n,plan))
@@ -109,15 +116,16 @@ def audit(folder):
     for lhs,rhs,label in [('A','B','solver_unit'),('A','C','price_plain'),('B','D','price_with_solver')]:
         spec={'A':(False,baseline),'B':(True,baseline),'C':(False,selected),'D':(True,selected)}
         by={}
-        for r in dev:by[r['family'],r['proof'],r['price_index'],r['color'],r['opponent']]=r
+        for r in dev:by[r['family'],r['proof'],r['price_index'],r['color'],r['opponent'],row_role(r)]=r
         values=[];missing=[]
         for f in [f for f in plan['families'] if f['phase']=='DEV']:
             pairs=[]
             for color in (0,1):
                 for op in plan['opponents']:
-                    a=by.get((f['family'],*spec[lhs],color,op['id']));b=by.get((f['family'],*spec[rhs],color,op['id']))
-                    if a is not None and b is not None:pairs.append((b['payoff'] or 0)-(a['payoff'] or 0))
-            if len(pairs)==2*len(plan['opponents']):values.append(sum(pairs)/len(pairs))
+                    for role in roles(plan):
+                        a=by.get((f['family'],*spec[lhs],color,op['id'],role));b=by.get((f['family'],*spec[rhs],color,op['id'],role))
+                        if a is not None and b is not None:pairs.append((b['payoff'] or 0)-(a['payoff'] or 0))
+            if len(pairs)==2*len(roles(plan))*len(plan['opponents']):values.append(sum(pairs)/len(pairs))
             else:missing.append(f['family'])
         if values:
             samples=[sum(rng.choice(values) for _ in values)/len(values) for _ in range(4000)]

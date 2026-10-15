@@ -1,0 +1,1117 @@
+{
+  "status": "DESCRIPTIVE_ROLE_REPORT",
+  "opponent_policy": "FIXED_True",
+  "TRAIN_scores": [
+    {
+      "price": [
+        360,
+        720,
+        720,
+        720
+      ],
+      "price_index": 0,
+      "role": "TO_MOVE",
+      "n": 32,
+      "net": 18,
+      "outcomes": {
+        "1": 18,
+        "None": 14
+      }
+    },
+    {
+      "price": [
+        360,
+        720,
+        720,
+        720
+      ],
+      "price_index": 0,
+      "role": "OTHER",
+      "n": 32,
+      "net": -6,
+      "outcomes": {
+        "0": 18,
+        "None": 8,
+        "-1": 6
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        720,
+        720
+      ],
+      "price_index": 1,
+      "role": "TO_MOVE",
+      "n": 32,
+      "net": 18,
+      "outcomes": {
+        "1": 18,
+        "None": 8,
+        "0": 6
+      }
+    },
+    {
+      "price": [
+        720,
+        720,
+        720,
+        720
+      ],
+      "price_index": 1,
+      "role": "OTHER",
+      "n": 32,
+      "net": -6,
+      "outcomes": {
+        "0": 14,
+        "None": 12,
+        "-1": 6
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720,
+        720
+      ],
+      "price_index": 2,
+      "role": "TO_MOVE",
+      "n": 32,
+      "net": 24,
+      "outcomes": {
+        "1": 24,
+        "None": 6,
+        "0": 2
+      }
+    },
+    {
+      "price": [
+        1440,
+        720,
+        720,
+        720
+      ],
+      "price_index": 2,
+      "role": "OTHER",
+      "n": 32,
+      "net": -4,
+      "outcomes": {
+        "0": 18,
+        "None": 6,
+        "-1": 6,
+        "1": 2
+      }
+    }
+  ],
+  "DEV_cells": [
+    {
+      "role": "TO_MOVE",
+      "opponent": "MIXED",
+      "cell": "A",
+      "n": 32,
+      "outcomes": {
+        "None": 14,
+        "1": 16,
+        "0": 2
+      },
+      "net": 16,
+      "actual_game_seconds": 14.237149900043732,
+      "planned_n": 32,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.5,
+        0.5
+      ],
+      "planned_infinite_outcome_bounds": [
+        0.0625,
+        0.9375
+      ]
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "MIXED",
+      "cell": "B",
+      "n": 32,
+      "outcomes": {
+        "None": 14,
+        "1": 16,
+        "0": 2
+      },
+      "net": 16,
+      "actual_game_seconds": 24.456625800026814,
+      "planned_n": 32,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.5,
+        0.5
+      ],
+      "planned_infinite_outcome_bounds": [
+        0.0625,
+        0.9375
+      ]
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "MIXED",
+      "cell": "C",
+      "n": 32,
+      "outcomes": {
+        "None": 12,
+        "0": 4,
+        "1": 16
+      },
+      "net": 16,
+      "actual_game_seconds": 15.325637400019332,
+      "planned_n": 32,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.5,
+        0.5
+      ],
+      "planned_infinite_outcome_bounds": [
+        0.125,
+        0.875
+      ]
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "MIXED",
+      "cell": "D",
+      "n": 32,
+      "outcomes": {
+        "None": 10,
+        "0": 4,
+        "1": 18
+      },
+      "net": 18,
+      "actual_game_seconds": 26.167288599986932,
+      "planned_n": 32,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.5625,
+        0.5625
+      ],
+      "planned_infinite_outcome_bounds": [
+        0.25,
+        0.875
+      ]
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "UNIT64",
+      "cell": "A",
+      "n": 16,
+      "outcomes": {
+        "None": 6,
+        "1": 10
+      },
+      "net": 10,
+      "actual_game_seconds": 3.989278600027319,
+      "planned_n": 16,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.625,
+        0.625
+      ],
+      "planned_infinite_outcome_bounds": [
+        0.25,
+        1.0
+      ]
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "UNIT64",
+      "cell": "B",
+      "n": 16,
+      "outcomes": {
+        "None": 6,
+        "1": 10
+      },
+      "net": 10,
+      "actual_game_seconds": 8.303483200041228,
+      "planned_n": 16,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.625,
+        0.625
+      ],
+      "planned_infinite_outcome_bounds": [
+        0.25,
+        1.0
+      ]
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "UNIT64",
+      "cell": "C",
+      "n": 16,
+      "outcomes": {
+        "None": 6,
+        "1": 10
+      },
+      "net": 10,
+      "actual_game_seconds": 4.611181500004022,
+      "planned_n": 16,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.625,
+        0.625
+      ],
+      "planned_infinite_outcome_bounds": [
+        0.25,
+        1.0
+      ]
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "UNIT64",
+      "cell": "D",
+      "n": 16,
+      "outcomes": {
+        "None": 6,
+        "1": 10
+      },
+      "net": 10,
+      "actual_game_seconds": 8.885778100026073,
+      "planned_n": 16,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.625,
+        0.625
+      ],
+      "planned_infinite_outcome_bounds": [
+        0.25,
+        1.0
+      ]
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "UNIT4096",
+      "cell": "A",
+      "n": 16,
+      "outcomes": {
+        "None": 8,
+        "1": 6,
+        "0": 2
+      },
+      "net": 6,
+      "actual_game_seconds": 10.247871300016413,
+      "planned_n": 16,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.375,
+        0.375
+      ],
+      "planned_infinite_outcome_bounds": [
+        -0.125,
+        0.875
+      ]
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "UNIT4096",
+      "cell": "B",
+      "n": 16,
+      "outcomes": {
+        "None": 8,
+        "1": 6,
+        "0": 2
+      },
+      "net": 6,
+      "actual_game_seconds": 16.153142599985586,
+      "planned_n": 16,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.375,
+        0.375
+      ],
+      "planned_infinite_outcome_bounds": [
+        -0.125,
+        0.875
+      ]
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "UNIT4096",
+      "cell": "C",
+      "n": 16,
+      "outcomes": {
+        "0": 4,
+        "1": 6,
+        "None": 6
+      },
+      "net": 6,
+      "actual_game_seconds": 10.71445590001531,
+      "planned_n": 16,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.375,
+        0.375
+      ],
+      "planned_infinite_outcome_bounds": [
+        0.0,
+        0.75
+      ]
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "UNIT4096",
+      "cell": "D",
+      "n": 16,
+      "outcomes": {
+        "0": 4,
+        "1": 8,
+        "None": 4
+      },
+      "net": 8,
+      "actual_game_seconds": 17.28151049996086,
+      "planned_n": 16,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.5,
+        0.5
+      ],
+      "planned_infinite_outcome_bounds": [
+        0.25,
+        0.75
+      ]
+    },
+    {
+      "role": "OTHER",
+      "opponent": "MIXED",
+      "cell": "A",
+      "n": 32,
+      "outcomes": {
+        "0": 10,
+        "None": 16,
+        "-1": 6
+      },
+      "net": -6,
+      "actual_game_seconds": 13.441124900011346,
+      "planned_n": 32,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        -0.1875,
+        -0.1875
+      ],
+      "planned_infinite_outcome_bounds": [
+        -0.6875,
+        0.3125
+      ]
+    },
+    {
+      "role": "OTHER",
+      "opponent": "MIXED",
+      "cell": "B",
+      "n": 32,
+      "outcomes": {
+        "0": 10,
+        "None": 16,
+        "-1": 6
+      },
+      "net": -6,
+      "actual_game_seconds": 25.619506600036402,
+      "planned_n": 32,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        -0.1875,
+        -0.1875
+      ],
+      "planned_infinite_outcome_bounds": [
+        -0.6875,
+        0.3125
+      ]
+    },
+    {
+      "role": "OTHER",
+      "opponent": "MIXED",
+      "cell": "C",
+      "n": 32,
+      "outcomes": {
+        "None": 22,
+        "0": 4,
+        "-1": 6
+      },
+      "net": -6,
+      "actual_game_seconds": 15.115041800032486,
+      "planned_n": 32,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        -0.1875,
+        -0.1875
+      ],
+      "planned_infinite_outcome_bounds": [
+        -0.875,
+        0.5
+      ]
+    },
+    {
+      "role": "OTHER",
+      "opponent": "MIXED",
+      "cell": "D",
+      "n": 32,
+      "outcomes": {
+        "None": 22,
+        "-1": 8,
+        "0": 2
+      },
+      "net": -8,
+      "actual_game_seconds": 28.775871000034385,
+      "planned_n": 32,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        -0.25,
+        -0.25
+      ],
+      "planned_infinite_outcome_bounds": [
+        -0.9375,
+        0.4375
+      ]
+    },
+    {
+      "role": "OTHER",
+      "opponent": "UNIT64",
+      "cell": "A",
+      "n": 16,
+      "outcomes": {
+        "0": 8,
+        "None": 8
+      },
+      "net": 0,
+      "actual_game_seconds": 2.808084100004635,
+      "planned_n": 16,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.0,
+        0.0
+      ],
+      "planned_infinite_outcome_bounds": [
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "role": "OTHER",
+      "opponent": "UNIT64",
+      "cell": "B",
+      "n": 16,
+      "outcomes": {
+        "0": 8,
+        "None": 8
+      },
+      "net": 0,
+      "actual_game_seconds": 9.521702600031858,
+      "planned_n": 16,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.0,
+        0.0
+      ],
+      "planned_infinite_outcome_bounds": [
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "role": "OTHER",
+      "opponent": "UNIT64",
+      "cell": "C",
+      "n": 16,
+      "outcomes": {
+        "None": 12,
+        "0": 4
+      },
+      "net": 0,
+      "actual_game_seconds": 3.745913600010681,
+      "planned_n": 16,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.0,
+        0.0
+      ],
+      "planned_infinite_outcome_bounds": [
+        -0.75,
+        0.75
+      ]
+    },
+    {
+      "role": "OTHER",
+      "opponent": "UNIT64",
+      "cell": "D",
+      "n": 16,
+      "outcomes": {
+        "None": 14,
+        "0": 2
+      },
+      "net": 0,
+      "actual_game_seconds": 11.277823000011267,
+      "planned_n": 16,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        0.0,
+        0.0
+      ],
+      "planned_infinite_outcome_bounds": [
+        -0.875,
+        0.875
+      ]
+    },
+    {
+      "role": "OTHER",
+      "opponent": "UNIT4096",
+      "cell": "A",
+      "n": 16,
+      "outcomes": {
+        "None": 8,
+        "-1": 6,
+        "0": 2
+      },
+      "net": -6,
+      "actual_game_seconds": 10.633040800006711,
+      "planned_n": 16,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        -0.375,
+        -0.375
+      ],
+      "planned_infinite_outcome_bounds": [
+        -0.875,
+        0.125
+      ]
+    },
+    {
+      "role": "OTHER",
+      "opponent": "UNIT4096",
+      "cell": "B",
+      "n": 16,
+      "outcomes": {
+        "None": 8,
+        "-1": 6,
+        "0": 2
+      },
+      "net": -6,
+      "actual_game_seconds": 16.097804000004544,
+      "planned_n": 16,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        -0.375,
+        -0.375
+      ],
+      "planned_infinite_outcome_bounds": [
+        -0.875,
+        0.125
+      ]
+    },
+    {
+      "role": "OTHER",
+      "opponent": "UNIT4096",
+      "cell": "C",
+      "n": 16,
+      "outcomes": {
+        "None": 10,
+        "-1": 6
+      },
+      "net": -6,
+      "actual_game_seconds": 11.369128200021805,
+      "planned_n": 16,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        -0.375,
+        -0.375
+      ],
+      "planned_infinite_outcome_bounds": [
+        -1.0,
+        0.25
+      ]
+    },
+    {
+      "role": "OTHER",
+      "opponent": "UNIT4096",
+      "cell": "D",
+      "n": 16,
+      "outcomes": {
+        "None": 8,
+        "-1": 8
+      },
+      "net": -8,
+      "actual_game_seconds": 17.498048000023118,
+      "planned_n": 16,
+      "missing_games": 0,
+      "early_incomplete": 0,
+      "planned_finite_event_bounds": [
+        -0.5,
+        -0.5
+      ],
+      "planned_infinite_outcome_bounds": [
+        -1.0,
+        0.0
+      ]
+    }
+  ],
+  "DEV_contrasts": [
+    {
+      "role": "BALANCED",
+      "opponent": "MIXED",
+      "contrast": "candidate_solver_policy",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "BALANCED",
+      "opponent": "MIXED",
+      "contrast": "price_plain",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "BALANCED",
+      "opponent": "MIXED",
+      "contrast": "price_with_solver",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "BALANCED",
+      "opponent": "UNIT64",
+      "contrast": "candidate_solver_policy",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "BALANCED",
+      "opponent": "UNIT64",
+      "contrast": "price_plain",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "BALANCED",
+      "opponent": "UNIT64",
+      "contrast": "price_with_solver",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "BALANCED",
+      "opponent": "UNIT4096",
+      "contrast": "candidate_solver_policy",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "BALANCED",
+      "opponent": "UNIT4096",
+      "contrast": "price_plain",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "BALANCED",
+      "opponent": "UNIT4096",
+      "contrast": "price_with_solver",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "MIXED",
+      "contrast": "candidate_solver_policy",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "MIXED",
+      "contrast": "price_plain",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "MIXED",
+      "contrast": "price_with_solver",
+      "event_delta": 0.0625,
+      "family95": [
+        0.0,
+        0.1875
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "UNIT64",
+      "contrast": "candidate_solver_policy",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "UNIT64",
+      "contrast": "price_plain",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "UNIT64",
+      "contrast": "price_with_solver",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "UNIT4096",
+      "contrast": "candidate_solver_policy",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "UNIT4096",
+      "contrast": "price_plain",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "TO_MOVE",
+      "opponent": "UNIT4096",
+      "contrast": "price_with_solver",
+      "event_delta": 0.125,
+      "family95": [
+        0.0,
+        0.375
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "OTHER",
+      "opponent": "MIXED",
+      "contrast": "candidate_solver_policy",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "OTHER",
+      "opponent": "MIXED",
+      "contrast": "price_plain",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "OTHER",
+      "opponent": "MIXED",
+      "contrast": "price_with_solver",
+      "event_delta": -0.0625,
+      "family95": [
+        -0.1875,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "OTHER",
+      "opponent": "UNIT64",
+      "contrast": "candidate_solver_policy",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "OTHER",
+      "opponent": "UNIT64",
+      "contrast": "price_plain",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "OTHER",
+      "opponent": "UNIT64",
+      "contrast": "price_with_solver",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "OTHER",
+      "opponent": "UNIT4096",
+      "contrast": "candidate_solver_policy",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "OTHER",
+      "opponent": "UNIT4096",
+      "contrast": "price_plain",
+      "event_delta": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    },
+    {
+      "role": "OTHER",
+      "opponent": "UNIT4096",
+      "contrast": "price_with_solver",
+      "event_delta": -0.125,
+      "family95": [
+        -0.375,
+        0.0
+      ],
+      "complete_families": 8,
+      "missing_families": []
+    }
+  ],
+  "equal_budget_baseline_symmetry": [
+    {
+      "phase": "TRAIN",
+      "proof": true,
+      "paired": 16,
+      "equal_paths": 16,
+      "opposite_payoffs": 16,
+      "nonzero_opposite": 6,
+      "differences": []
+    },
+    {
+      "phase": "DEV",
+      "proof": true,
+      "paired": 16,
+      "equal_paths": 16,
+      "opposite_payoffs": 16,
+      "nonzero_opposite": 6,
+      "differences": []
+    }
+  ],
+  "selection": {
+    "selected_index": 2,
+    "selected": [
+      1440,
+      720,
+      720,
+      720
+    ],
+    "integer_scores": {
+      "0": 12,
+      "1": 12,
+      "2": 20
+    },
+    "paths": [
+      {
+        "initial": [
+          360,
+          720,
+          720,
+          720
+        ],
+        "path": [
+          [
+            360,
+            720,
+            720,
+            720
+          ]
+        ],
+        "endpoint": [
+          360,
+          720,
+          720,
+          720
+        ]
+      },
+      {
+        "initial": [
+          720,
+          720,
+          720,
+          720
+        ],
+        "path": [
+          [
+            720,
+            720,
+            720,
+            720
+          ],
+          [
+            1440,
+            720,
+            720,
+            720
+          ]
+        ],
+        "endpoint": [
+          1440,
+          720,
+          720,
+          720
+        ]
+      },
+      {
+        "initial": [
+          1440,
+          720,
+          720,
+          720
+        ],
+        "path": [
+          [
+            1440,
+            720,
+            720,
+            720
+          ]
+        ],
+        "endpoint": [
+          1440,
+          720,
+          720,
+          720
+        ]
+      }
+    ],
+    "source": "TRAIN only, before DEV",
+    "candidate_roles": [
+      "TO_MOVE",
+      "OTHER"
+    ],
+    "games_per_price": 64
+  },
+  "scope": "Fixed finite H16 plus already verified physical tails, no infinite-WDL or human-price claim. CI resamples complete independent families with all colors/roles/opponents kept paired; finite unknown contributes zero event, remains unknown for outcome bounds. Per-role/opponent strata exploratory, no multiple-comparison success selection. Timed proof can change actual visited work between otherwise same player inputs."
+}

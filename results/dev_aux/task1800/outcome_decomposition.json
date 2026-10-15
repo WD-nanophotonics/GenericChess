@@ -1,0 +1,63 @@
+{
+  "status": "COMPLETE_PAIRED_ACTUAL_OUTCOME_DECOMPOSITION",
+  "paired_games": 512,
+  "cells": {
+    "B": {
+      "UNKNOWN": 138,
+      "L": 72,
+      "W": 142,
+      "DRAW": 160
+    },
+    "D": {
+      "DRAW": 156,
+      "UNKNOWN": 143,
+      "W": 155,
+      "L": 58
+    }
+  },
+  "transition_matrix": {
+    "UNKNOWN->DRAW": 22,
+    "L->UNKNOWN": 12,
+    "W->W": 136,
+    "DRAW->DRAW": 130,
+    "L->L": 58,
+    "UNKNOWN->UNKNOWN": 108,
+    "UNKNOWN->W": 8,
+    "DRAW->UNKNOWN": 19,
+    "W->DRAW": 2,
+    "DRAW->W": 11,
+    "W->UNKNOWN": 4,
+    "L->DRAW": 2
+  },
+  "contrasts": {
+    "win": {
+      "delta": 0.025390625,
+      "conditional_family95": [
+        0.001953125,
+        0.048828125
+      ]
+    },
+    "loss": {
+      "delta": -0.02734375,
+      "conditional_family95": [
+        -0.046875,
+        -0.0078125
+      ]
+    },
+    "unknown": {
+      "delta": 0.009765625,
+      "conditional_family95": [
+        -0.03515625,
+        0.052734375
+      ]
+    },
+    "net": {
+      "delta": 0.052734375,
+      "conditional_family95": [
+        0.0234375,
+        0.08203125
+      ]
+    }
+  },
+  "scope": "Conditional frozen TRAIN-selected B-to-D, same actual planned pairs and familystrata. UNKNOWN stays distinct. Win-only increase is a finite-policy actual win-event difference, not infinite win probability. Loss->UNKNOWN is displayed, not called a proven improvement in infinite WDL. No newgo/refit or post-result extension."
+}

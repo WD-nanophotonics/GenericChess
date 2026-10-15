@@ -1,0 +1,54 @@
+{
+  "checkpoints": [
+    {
+      "at": "2026-10-15T06:25:47.438443+00:00",
+      "evidence": "results/dev_aux/task1789/role_symmetry.json",
+      "kind": "research",
+      "next_action": "Run unchanged balanced-role TRAIN8/DEV8; audit actual price/budget receipts, defensive W-L, complete planned slots and per-role costs; select next useful control.",
+      "observation": "Implemented explicit candidate identity;19 focused tests pass.192 Nativeperft across all parent roots/profiles pass before games.8 actual control games112go have identical paired actions/ends, all repetitiondraws. Actual nodes differ under timed proofs, initial overspecified equality corrected and preserved. Parent1787guard intact; successor1788 max448games900s40000go.",
+      "question": "Does candidate role change real prices and budgets independently of board turn?"
+    },
+    {
+      "at": "2026-10-15T06:31:58.931961+00:00",
+      "evidence": "results/dev_aux/task1788/role_report.json",
+      "kind": "research",
+      "next_action": "Execute already jointly frozen1791/1792 independent32/32 two-role cohorts, with no sign adaptation. Bound and validate public no-progress proof against finite exhaustive outcomes; old timed runtime experiments unchanged.",
+      "observation": "1788 complete448games253.85s5339go. TRAINnets2/10/14 selectR1440; DEV B-to-D+.03125 familyCI[0,.09375] with8families only, exploratory and not definitive. Public actual replay/NativeACK/tail audit pass;66opponent and114candidate proofwins physicallyredeemed,28tails.48equalbudgetbaseline pairs have identical paths/oppositepayoffs,30nonzero. Separate opt-in public-state proof supports complete no-progress history;13real-rule tests pass. First newtest wrongly assumed all quiet terminals were no-progressdraw; actual1stalematedraw retained, test corrected.",
+      "question": "Does physical-role balanced learning retain cheap genuine W-L signals?"
+    },
+    {
+      "at": "2026-10-15T06:54:14.685803+00:00",
+      "evidence": "results/dev_aux/task1791/role_report.json",
+      "kind": "research",
+      "next_action": "Close/audit1792, then actualfixed-opponent entry and both alreadyfrozen pilots sequentially; compare rootlaw event differences/cost, not terminal counts. Review/sync ownsidermission with fullSHA and no private information.",
+      "observation": "1791closed1792games1091.42s22923go: TRAIN34/44/54 picksR2 from all3strictpaths; DEVprice-withsolver+.0546875 familyCI[.015625,.09375], secondfrozencohort1792alreadyrunningoriginalloadedsource. Locally diagnosed legacyA-to-B changes bothplayers, notfixed-opponent candidateeffect. Future source now has explicit fixedopponentflag; new1796entry+1797/1798joint pilots frozen, no Nativego yet. Public fallback96matched-workcalls1.62-1.67x cost; 144finitecalls7actualwins; explicit hybridfactory physicallyfinishesreal3ply win. Dot actual-eventvector/cost advice adopted, old labels/caps preserved.",
+      "question": "Is the positive price signal independent of initiation and opponent ablation?"
+    },
+    {
+      "at": "2026-10-15T07:22:55.080089+00:00",
+      "evidence": "results/dev_aux/SEGMENT_20261015_56.md",
+      "kind": "research",
+      "next_action": "Review exact outgoing data/source, package/independentlyrestore archives, refill executable memo, then finish at safe checkpoint and publish onlysidemission/fullremoteSHA with fixed Slack evidence. Keep own patrolACTIVE.",
+      "observation": "All7actual game studies closed4944records61486go2112perft;1479adopted proof games and317tails physicallywin,2101extra moves905go. Large rolebalanced cohorts TRAINbothR2, B-to-D+.0546875/.05078125, pooled+.052734375 CI[.0234375,.08203125]; actualwin142->155 but12loss->UNKNOWN explicit. Correctedfixedopponent pilots solvernet0; standardpricegain0, richer+.0625CI[0,.15625]. RichrootTRAIN2/8nonflat vsstandard4/8at similarcost, no adoption from terminalrate.96tests/journals/fullplannedslots verified.1803newH16/H24guardedinputs0go, no oldcap extension.",
+      "question": "What survives both independent replication and corrected fixed-opponent controls?"
+    }
+  ],
+  "duration_gate_passed": true,
+  "elapsed_minutes": 67.014,
+  "ended_at": "2026-10-15T07:29:04.241000+00:00",
+  "ending_evidence": "results/dev_aux/SEGMENT_20261015_56.md",
+  "id": "b1e5097a-0b8e-440a-a1a1-2140a099ca4d",
+  "quality_review_required": true,
+  "reason": "safe_checkpoint",
+  "research_stage_count": 4,
+  "started_at": "2026-10-15T06:22:03.372161+00:00",
+  "state": "ended",
+  "segment": 56,
+  "science": "OPEN",
+  "heartbeat": "ACTIVE_RESTORED_BY_EXPLICIT_USER",
+  "manual_quality_review": "PASS actual code/statistics/privacy/staged ZIP blob review;96tests;4archives219members restored. Validator gate alone is not scientific quality.",
+  "all_producers_closed": true,
+  "actual_episode_records": 4944,
+  "actual_native_go": 61486,
+  "actual_native_perft": 2112
+}

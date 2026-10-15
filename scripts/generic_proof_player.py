@@ -37,7 +37,7 @@ class ProofMaterialPlayer:
     never receives it. Call observe(state, action) for EVERY committed move.
     The normal arm uses the identical class with proof_enabled=False.
     """
-    def __init__(self, compiled, evaluate, *, proof_enabled=True, max_depth=3, normal_search=None, proof_search=prove_win, proof_trigger=None):
+    def __init__(self, compiled, evaluate, *, proof_enabled=True, max_depth=3, normal_search=None, proof_search=prove_win, proof_trigger=None, cursor_factory=None):
         if not isinstance(max_depth, int) or not 1 <= max_depth <= 64:
             raise ValueError('fallback max_depth must be in [1,64]')
         self.compiled, self.evaluate = compiled, evaluate
@@ -46,6 +46,7 @@ class ProofMaterialPlayer:
         self.normal_search = normal_search
         self.proof_search = proof_search
         self.proof_trigger = proof_trigger
+        self.cursor_factory = cursor_factory
 
     def observe(self, state, action):
         if self.cursor is not None:
@@ -99,7 +100,7 @@ class ProofMaterialPlayer:
                     # Verification uses the next quarter; failed verification
                     # means UNKNOWN and still leaves half the visits for AB.
                     try:
-                        cursor = StrategyCursor(self.compiled, result.certificate,
+                        cursor = (self.cursor_factory or StrategyCursor)(self.compiled, result.certificate,
                                                 max_nodes=quarter,
                                                 seconds=min(seconds / 4, remaining_seconds()),
                                                 cancel=cancel, _clock=_clock)

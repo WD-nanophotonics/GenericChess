@@ -7,6 +7,7 @@ from pathlib import Path
 from generic_chess.core.transition import apply_action
 from scripts.generic_proof_rnb_bridge import compile_rnb,from_actor,actor_state,uci
 from generic_chess.core.movegen import legal_actions
+from scripts.generic_proof_roles import row_target
 
 
 def audit(folder):
@@ -14,13 +15,14 @@ def audit(folder):
     rows=[json.loads(x) for x in (p/'run/games.jsonl').read_text().splitlines()]
     families={f['family']:f for f in plan['families']};stats=collections.Counter();cells={};train={};start=time.perf_counter()
     for row in rows:
-        s=from_actor(c,families[row['family']]['roots'][row['color']]);path=row['trajectory'];tail=row.get('tail_admission');H=plan['H']
+        s=from_actor(c,families[row['family']]['roots'][row['color']]);target=row_target(row,s.position.side_to_move);path=row['trajectory'];tail=row.get('tail_admission');H=plan['H']
         assert len(path)<=H+plan.get('tail_max_rank',64)
         prefix_pay=None;owner=None;last_rank=None
         for ply,step in enumerate(path):
             assert not s.terminal_status.is_terminal
             if ply==H:
-                assert tail is not None and row['proof'] and plan['certified_tail']
+                assert tail is not None and plan['certified_tail']
+                assert row['proof'] if tail['owner']==target else row.get('opponent_proof',row['proof'])
                 snap=row['horizon_snapshot'];assert tuple(snap['end'])==actor_state(s) and snap['payoff'] is None and snap['terminal']=='ongoing'
                 assert type(tail['rank']) is int and 0<tail['rank']<=plan['tail_max_rank']
                 owner=tail['owner'];last_rank=tail['rank'];stats['admissions']+=1
@@ -37,13 +39,13 @@ def audit(folder):
             actions={uci(a):a for a in legal_actions(s,c)}
             s=apply_action(s,actions[z['action']],c)
             if ply+1<=H and s.terminal_status.is_terminal:
-                prefix_pay=0 if s.terminal_status.winner is None else (1 if s.terminal_status.winner==row['color'] else -1)
+                prefix_pay=0 if s.terminal_status.winner is None else (1 if s.terminal_status.winner==target else -1)
         if len(path)>H:
             assert len(path)-H<=tail['rank']
             if s.terminal_status.is_terminal:
                 assert s.terminal_status.winner==owner and tail['remaining_rank']==0
                 stats['actual_tail_wins']+=1
-                stats['tail_candidate_wins' if owner==row['color'] else 'tail_opponent_wins']+=1
+                stats['tail_candidate_wins' if owner==target else 'tail_opponent_wins']+=1
             else:
                 assert row['payoff'] is None and tail['remaining_rank']>0
                 stats['incomplete_tail_unknown']+=1

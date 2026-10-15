@@ -1,0 +1,99 @@
+{
+  "status": "OBSERVED_TIMED_WORK_DIFFERENCE_PRESERVED",
+  "pairs": [
+    {
+      "color": 0,
+      "first_divergence_ply": 9,
+      "actor": [
+        ".",
+        "R",
+        ".",
+        "N",
+        ".",
+        ".",
+        "n",
+        ".",
+        ".",
+        ".",
+        ".",
+        "k",
+        "K",
+        ".",
+        ".",
+        ".",
+        1
+      ],
+      "left": {
+        "action": "d3d2",
+        "source": "EXTERNAL_SEARCH",
+        "proof_nodes": 468,
+        "verification_nodes": 0,
+        "search_nodes": 3635,
+        "proof_reason": "time_budget",
+        "seconds": 0.07368670000869315
+      },
+      "right": {
+        "action": "c2d4",
+        "source": "EXTERNAL_SEARCH",
+        "proof_nodes": 493,
+        "verification_nodes": 0,
+        "search_nodes": 3605,
+        "proof_reason": "time_budget",
+        "seconds": 0.0732548000087263
+      },
+      "payoffs": [
+        null,
+        0
+      ],
+      "finite_event_difference": 0
+    },
+    {
+      "color": 1,
+      "first_divergence_ply": 5,
+      "actor": [
+        ".",
+        "r",
+        ".",
+        "n",
+        ".",
+        ".",
+        "N",
+        ".",
+        ".",
+        ".",
+        ".",
+        "K",
+        "k",
+        ".",
+        ".",
+        ".",
+        0
+      ],
+      "left": {
+        "action": "d3d2",
+        "source": "EXTERNAL_SEARCH",
+        "proof_nodes": 422,
+        "verification_nodes": 0,
+        "search_nodes": 3675,
+        "proof_reason": "time_budget",
+        "seconds": 0.07332820000010543
+      },
+      "right": {
+        "action": "c2d4",
+        "source": "EXTERNAL_SEARCH",
+        "proof_nodes": 490,
+        "verification_nodes": 0,
+        "search_nodes": 3609,
+        "proof_reason": "time_budget",
+        "seconds": 0.07361150000360794
+      },
+      "payoffs": [
+        null,
+        0
+      ],
+      "finite_event_difference": 0
+    }
+  ],
+  "cause": "Same configured inputs but proof polling time changes spent visits and residual Native requested nodes. No assumption of identical actual work; Native actual receipts available. These two observed terminal-vsUNKNOWN differences do not change finite W-L events, both0. No automatic rerun or proof of noise-free price gain.",
+  "decision": "Keep all observations; conditional CI does not include repeated-run timing variation. Future fixed partition control only if it changes a decision, no current default change."
+}

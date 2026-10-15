@@ -1,0 +1,8 @@
+{
+  "decision": "DEFER_CLOSED_LOOP_OPTIMIZATION",
+  "measured_paired_callbacks": 300,
+  "mean_saved_seconds_per_callback": 0.00048722333357242555,
+  "reason": "Micro wrapper ratio0.309 hides small absolute saving about0.49ms/callback. Does not justify a new engine batch or semantic validation tradeoff now; proof budget and informative real W-L remain larger decisions. No whole-game speedup claim, no source/adoption change.",
+  "limits": "60available paid full-history Native states,5crossed repetitions. Actualcallback-family counts inplan, not an equalized/unseen population sample. Different workcounts1550vs300, concurrent load.",
+  "native_go": 0
+}

@@ -1,0 +1,1882 @@
+{
+  "status": "COMPLETE_TRAIN_ONLY_DIAGNOSTIC",
+  "actual_result_density": {
+    "full_paid_study_seconds": 293.74737879999157,
+    "includes": "All executed TRAIN and DEV games plus run setup, no subset-time denominator. Standalone qualification and Agent engineering separate.",
+    "nonflat_family_vectors": 4,
+    "nonflat_vectors_per_paid_second": 0.013617142785548202,
+    "sum_family_grid_net_ranges_per_paid_second": 0.027234285571096403,
+    "role_canceled_families": 0,
+    "meaning": "Exposed TRAIN objective variation/cost diagnostic only, not learning gain or stable signal; actual independent DEV gains remain necessary."
+  },
+  "TRAIN_families": 8,
+  "bootstrap_grid_selection_frequency": {
+    "2": 4988,
+    "0": 12
+  },
+  "bootstrap_replicates": 5000,
+  "flat_families": 4,
+  "paid_pair_comparisons": 128,
+  "event_changed_pairs": 8,
+  "identical_first_own_state_pairs": 128,
+  "first_own_action_changes": 34,
+  "families": [
+    {
+      "family": 0,
+      "scores": [
+        2,
+        2,
+        4
+      ],
+      "flat_scores": false,
+      "role_scores": {
+        "TO_MOVE": [
+          2,
+          2,
+          4
+        ],
+        "OTHER": [
+          0,
+          0,
+          0
+        ]
+      },
+      "opposite_role_effect_cancellations": [],
+      "comparisons": [
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": true,
+          "payoffs": [
+            null,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": true,
+          "payoffs": [
+            null,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "family": 1,
+      "scores": [
+        0,
+        0,
+        0
+      ],
+      "flat_scores": true,
+      "role_scores": {
+        "TO_MOVE": [
+          0,
+          0,
+          0
+        ],
+        "OTHER": [
+          0,
+          0,
+          0
+        ]
+      },
+      "opposite_role_effect_cancellations": [],
+      "comparisons": [
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            0
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            0
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "family": 2,
+      "scores": [
+        2,
+        2,
+        2
+      ],
+      "flat_scores": true,
+      "role_scores": {
+        "TO_MOVE": [
+          4,
+          4,
+          4
+        ],
+        "OTHER": [
+          -2,
+          -2,
+          -2
+        ]
+      },
+      "opposite_role_effect_cancellations": [],
+      "comparisons": [
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            -1,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "family": 3,
+      "scores": [
+        2,
+        2,
+        4
+      ],
+      "flat_scores": false,
+      "role_scores": {
+        "TO_MOVE": [
+          4,
+          4,
+          4
+        ],
+        "OTHER": [
+          -2,
+          -2,
+          0
+        ]
+      },
+      "opposite_role_effect_cancellations": [],
+      "comparisons": [
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": true,
+          "payoffs": [
+            0,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": true,
+          "payoffs": [
+            0,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            -1,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "family": 4,
+      "scores": [
+        0,
+        0,
+        0
+      ],
+      "flat_scores": true,
+      "role_scores": {
+        "TO_MOVE": [
+          0,
+          0,
+          0
+        ],
+        "OTHER": [
+          0,
+          0,
+          0
+        ]
+      },
+      "opposite_role_effect_cancellations": [],
+      "comparisons": [
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            null
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            null
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "family": 5,
+      "scores": [
+        2,
+        2,
+        4
+      ],
+      "flat_scores": false,
+      "role_scores": {
+        "TO_MOVE": [
+          2,
+          2,
+          4
+        ],
+        "OTHER": [
+          0,
+          0,
+          0
+        ]
+      },
+      "opposite_role_effect_cancellations": [],
+      "comparisons": [
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": true,
+          "payoffs": [
+            0,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": true,
+          "payoffs": [
+            0,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "family": 6,
+      "scores": [
+        2,
+        2,
+        4
+      ],
+      "flat_scores": false,
+      "role_scores": {
+        "TO_MOVE": [
+          2,
+          2,
+          4
+        ],
+        "OTHER": [
+          0,
+          0,
+          0
+        ]
+      },
+      "opposite_role_effect_cancellations": [],
+      "comparisons": [
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            0
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": true,
+          "payoffs": [
+            null,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            0
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": true,
+          "payoffs": [
+            null,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "family": 7,
+      "scores": [
+        2,
+        2,
+        2
+      ],
+      "flat_scores": true,
+      "role_scores": {
+        "TO_MOVE": [
+          4,
+          4,
+          4
+        ],
+        "OTHER": [
+          -2,
+          -2,
+          -2
+        ]
+      },
+      "opposite_role_effect_cancellations": [],
+      "comparisons": [
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            0
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 0,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            0
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT64",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            null,
+            0
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "TO_MOVE",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": false,
+          "event_changed": false,
+          "payoffs": [
+            1,
+            1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 0,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "role": "OTHER",
+          "opponent": "UNIT4096",
+          "color": 1,
+          "price_index": 2,
+          "comparable_first_own_state": true,
+          "first_own_action_changed": true,
+          "event_changed": false,
+          "payoffs": [
+            -1,
+            -1
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "Descriptive exposed TRAIN only, no new engine queries, filtering, DEVselection or claim of independent online training. Bootstrap keeps all colors/opponents/roles of sampled family together. Exact prior actor/action prefix also required for first-own-state comparison; same-board different-history is never an action-response control."
+}

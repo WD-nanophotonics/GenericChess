@@ -1,4 +1,4 @@
-"""Post-run Native perft qualification of BOTH exact pilot price profiles."""
+"""Actual Native perft qualification with explicitly recorded invocation timing."""
 import json,time,re,importlib.util
 from pathlib import Path
 from scripts.generic_proof_rnb_bridge import compile_rnb,from_actor,uci
@@ -23,5 +23,5 @@ try:
      assert native==expected,(f['family'],color,depth,native,expected)
      records.append(dict(family=f['family'],color=color,price=price,depth=depth,raw=out))
 finally:e.close()
-(p/'native_perft_records.json').write_text(json.dumps(records),encoding='utf-8');out=dict(status='PASS_ALL_ROOTS_ALL_PROFILES_D1_D2',actual_perft=len(records),seconds=time.perf_counter()-start,qualification_timing='After study, preserved as post-run qualification; no games repeated or relabeled.',exit_code=e.p.poll())
+(p/'native_perft_records.json').write_text(json.dumps(records),encoding='utf-8');out=dict(status='PASS_ALL_ROOTS_ALL_PROFILES_D1_D2',actual_perft=len(records),seconds=time.perf_counter()-start,qualification_timing=(sys.argv[2] if len(sys.argv)>2 else 'UNSPECIFIED_NOT_INFERRED_FROM_SCRIPT_NAME'),exit_code=e.p.poll())
 (p/'native_qualification.json').write_text(json.dumps(out,indent=2),encoding='utf-8');print(out)

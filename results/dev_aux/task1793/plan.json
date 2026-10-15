@@ -1,0 +1,148 @@
+{
+  "seed": 20261015565,
+  "roots": [
+    {
+      "k": 15,
+      "b": 13,
+      "r": 2
+    },
+    {
+      "k": 3,
+      "b": 9,
+      "r": 12
+    },
+    {
+      "k": 12,
+      "b": 15,
+      "r": 6
+    },
+    {
+      "k": 6,
+      "b": 13,
+      "r": 7
+    },
+    {
+      "k": 8,
+      "b": 10,
+      "r": 15
+    },
+    {
+      "k": 11,
+      "b": 4,
+      "r": 3
+    },
+    {
+      "k": 4,
+      "b": 10,
+      "r": 15
+    },
+    {
+      "k": 14,
+      "b": 7,
+      "r": 13
+    },
+    {
+      "k": 7,
+      "b": 0,
+      "r": 11
+    },
+    {
+      "k": 8,
+      "b": 1,
+      "r": 7
+    },
+    {
+      "k": 6,
+      "b": 13,
+      "r": 11
+    },
+    {
+      "k": 12,
+      "b": 1,
+      "r": 10
+    },
+    {
+      "k": 4,
+      "b": 7,
+      "r": 12
+    },
+    {
+      "k": 1,
+      "b": 11,
+      "r": 5
+    },
+    {
+      "k": 10,
+      "b": 8,
+      "r": 7
+    },
+    {
+      "k": 4,
+      "b": 6,
+      "r": 15
+    },
+    {
+      "k": 6,
+      "b": 12,
+      "r": 11
+    },
+    {
+      "k": 2,
+      "b": 10,
+      "r": 4
+    },
+    {
+      "k": 15,
+      "b": 5,
+      "r": 8
+    },
+    {
+      "k": 5,
+      "b": 14,
+      "r": 7
+    },
+    {
+      "k": 11,
+      "b": 12,
+      "r": 9
+    },
+    {
+      "k": 10,
+      "b": 4,
+      "r": 11
+    },
+    {
+      "k": 2,
+      "b": 14,
+      "r": 4
+    },
+    {
+      "k": 8,
+      "b": 7,
+      "r": 10
+    }
+  ],
+  "thresholds": [
+    1,
+    2,
+    4
+  ],
+  "max_ply": 4,
+  "targets": [
+    0,
+    1
+  ],
+  "max_nodes": 16384,
+  "seconds_per_call": 0.5,
+  "verification_nodes": 65536,
+  "verification_seconds": 1.0,
+  "total_seconds": 600,
+  "expected_seconds": 180,
+  "max_reference_nodes": 2000000,
+  "source_sha256": {
+    "scripts/generic_public_win_proof.py": "a14fd62522d4897b6ca0a640e7666811eff78ecbd79fbd9abfb4a2e0b38eea9a",
+    "scripts/generic_proof_public_path.py": "668cdf6448f22f057fe13cde8f444b8fef162fb630f714c801068d9d45ca2e0c",
+    "scripts/generic_public_proof_validation.py": "e590e2c1eaa92c0eea7b0d31084ce740eac3dc95b43c5e5dc7abfde78182fbee"
+  },
+  "purpose": "Actual finite maxply4 rule WDL including no-progress threshold/capture reset; no price learning or infinite-WDL inference. Root selection before labels, all planned roots/targets retained, no cap extension."
+}

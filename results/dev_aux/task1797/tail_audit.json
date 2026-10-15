@@ -1,0 +1,108 @@
+{
+  "status": "PASS_ACTUAL_TAIL_AND_PREFIX_AUDIT",
+  "counts": {
+    "admissions": 26,
+    "tail_steps": 164,
+    "tail_native_go": 70,
+    "actual_tail_wins": 26,
+    "tail_opponent_wins": 14,
+    "tail_candidate_wins": 12
+  },
+  "cells": [
+    {
+      "phase": "DEV",
+      "proof": false,
+      "price_index": 1,
+      "n": 64,
+      "H16_WL": 12,
+      "tail_policy_WL": 10,
+      "H16_unknown": 32,
+      "final_unknown": 30,
+      "new_tail_events": 2
+    },
+    {
+      "phase": "DEV",
+      "proof": false,
+      "price_index": 2,
+      "n": 64,
+      "H16_WL": 12,
+      "tail_policy_WL": 10,
+      "H16_unknown": 36,
+      "final_unknown": 34,
+      "new_tail_events": 2
+    },
+    {
+      "phase": "DEV",
+      "proof": true,
+      "price_index": 1,
+      "n": 64,
+      "H16_WL": 10,
+      "tail_policy_WL": 10,
+      "H16_unknown": 34,
+      "final_unknown": 30,
+      "new_tail_events": 4
+    },
+    {
+      "phase": "DEV",
+      "proof": true,
+      "price_index": 2,
+      "n": 64,
+      "H16_WL": 10,
+      "tail_policy_WL": 10,
+      "H16_unknown": 40,
+      "final_unknown": 32,
+      "new_tail_events": 8
+    },
+    {
+      "phase": "TRAIN",
+      "proof": true,
+      "price_index": 0,
+      "n": 64,
+      "H16_WL": 14,
+      "tail_policy_WL": 12,
+      "H16_unknown": 24,
+      "final_unknown": 22,
+      "new_tail_events": 2
+    },
+    {
+      "phase": "TRAIN",
+      "proof": true,
+      "price_index": 1,
+      "n": 64,
+      "H16_WL": 12,
+      "tail_policy_WL": 12,
+      "H16_unknown": 24,
+      "final_unknown": 20,
+      "new_tail_events": 4
+    },
+    {
+      "phase": "TRAIN",
+      "proof": true,
+      "price_index": 2,
+      "n": 64,
+      "H16_WL": 16,
+      "tail_policy_WL": 20,
+      "H16_unknown": 16,
+      "final_unknown": 12,
+      "new_tail_events": 4
+    }
+  ],
+  "TRAIN_scores": {
+    "0": {
+      "H16": 14,
+      "tail": 12
+    },
+    "1": {
+      "H16": 12,
+      "tail": 12
+    },
+    "2": {
+      "H16": 16,
+      "tail": 20
+    }
+  },
+  "scope": "Same trajectories prefix versus physical tail; H16 score is descriptive counterfactual prefix, not retrained H16 policy or independent DEV.",
+  "seconds": 0.9158649999881163,
+  "TRAIN_full_grid_prefix_choice": 2,
+  "TRAIN_full_grid_tail_choice": 2
+}

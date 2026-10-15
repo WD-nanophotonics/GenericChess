@@ -242,18 +242,19 @@ the authorized channel, never write another checkout. A resolved entry keeps its
 normal research cadence. Preserve historical failures and mark mistaken endings
 as mistakes rather than rewriting them into compliant runs.
 
-# DEV_AUX current scope —2026-10-15 segment55
+# DEV_AUX current scope —2026-10-15 segment56
 
-ScienceOPEN; sidemission only; heartbeatPAUSED; manual research at reviewed safe checkpoint.
-H16 plus ALREADY verified rank-bounded physical tails; actual Core terminals only, UNKNOWN distinct.
-Four independent TRAIN32/DEV32 KRN4/5 cohorts globally choose R/N2; all price-gain CIs cross0.
-1780 low-start local peak persists; no universal/continuous/human-price or arbitrary-start recovery claim.
-1402adopted proof games physically redeemed;318tails1804moves745go; all executed cohorts complete.
-60671newNativego/4860episode records/3664perft;77focusedtests pass; real unsupported-normal-fallback defect repaired.
-SMALL gate saves30–34percent per hybridgame but highR loses4finitewins; no default adoption.
-Depth2paid-subtree retention64cases0actualhits deferred; all old caps/stops/partial records preserved.
-Guarded1787balanced-role inputsonly prepared, NOT implemented/executed. No primary/default/UI writes.
-Evidence:SEGMENT_20261015_55.md,COST/QA/FAILURES/ARCHIVE_MANIFEST55; exact source snapshots and restored archives.
+ScienceOPEN; independent sidemission only; own heartbeatACTIVE by current user's
+explicit恢复巡检，继续工作. Historical pauses remain history; new stops win.
+Fixed candidate identity covers both initial roles with full actual Native/Core
+reward/receipt auditing.1791/1792 independent32/32cohorts have positive conditional
+price gain, not universal/human values; full outcome/UNKNOWN decomposition kept.
+Legacy A-to-B switches both players: not isolated candidate solver contribution.
+New1796/1797/1798 hold opponent proof fixed, preserving old B-to-D validity/data.
+Opt-in public-state proof supports authoritative no-progress history with explicit
+matching cursor verifier;96focusedtests pass, no product/Core/default/UI changes.
+Guarded1803 is next H16/H24 fixed-hybrid input law,0go/not implemented; no oldcaps
+reset. Exact current tasks are own NEXT_WORK; reports/costs/failures remain evidence.
 
 ## Current user publication grant2026-10-15
 
@@ -271,11 +272,9 @@ Separate checkouts/branches, stops and machine safety remain mandatory.
 
 ## DEV_AUX current direction — user implementation2026-10-15
 
-The user approved generic rule-win proof/execution before further price learning.
-Auxiliary sidemission now develops an opt-in bounded AND/OR proof tree, independent
-all-defense verification and rank-decreasing strategy cursor; optional PN is a
-measured algorithm alternative. Actual rule wins retain their terminal kind;
-UNKNOWN never becomes draw or quantity reward. Prototype declaration/no-progress
-exclusions remain explicit. No primary product, UI or default integration.
-See docs/research/GENERIC_WIN_PROOF.md and segment54 evidence. Prior frozen
-caps/partial results remain intact; manual work does not resume the paused heartbeat.
+The approved complete-player experiment separates material choices from fixed
+rule-win proofs and executable rank-decreasing strategies. Actual rule terminals
+alone earn rewards, UNKNOWN stays distinct. No declaration board-action shortcut
+or theoretical reward. See GENERIC_WIN_PROOF.md, LOCAL_MAINLINE.md and segment56.
+Current user restoration applies only to this Agent's own work/patrol. Preserve
+all old stop/cap/failure records, independent primary state and branch boundaries.

@@ -19,7 +19,11 @@ production search, defaults, UI, or primary checkout.
   `proof_enabled=False` provides the normal-policy control. `proof_search`
   selects one frozen prover for all price candidates. An optional state-only
   `proof_trigger` can skip new proofs; it never discards an existing verified
-  strategy. The default remains every ongoing state.
+  strategy. The default remains every ongoing state. An explicit `cursor_factory`
+  selects an independently checked verifier/cursor; its default remains
+  `StrategyCursor`. For the opt-in public prover, pair
+  `proof_search=prove_win_public` with `cursor_factory=PublicStrategyCursor`.
+  A public certificate is not silently trusted by the unsupported runtime verifier.
 
 `PROVEN_WIN` includes an immutable root/history-bound `WinCertificate`.
 `UNKNOWN` is not draw or loss. `ALREADY_TERMINAL` reports an actual rule
@@ -42,7 +46,8 @@ reference solver V3 remains unchanged and is not a deployment engine.
 
 Declaration choices are absent from the runtime's board-action interface.
 Rules containing them are explicitly refused. No-progress rules unsupported
-by this runtime are also refused. Incomplete adjudication history gives
+by this mutable runtime are also refused by the runtime prover. The separate
+opt-in immutable public-state prover below handles them via authoritative replay. Incomplete adjudication history gives
 UNKNOWN; malformed input remains a caller error. Inconsistent imported
 terminal metadata is rejected, rather than producing an unexecutable proof.
 These exclusions restrict this prototype, not GenericChess's intended domain.
@@ -154,3 +159,56 @@ internal material search or a proof. The prover's unsupported-history exclusion
 remains. Atomic public generation is timed with cancellation/deadline checks
 around it. This repairs the reproduced pre-normal-callback exception without
 changing the supported runtime path used in the frozen KRN cohorts.
+
+
+## Candidate identity and fixed-opponent interpretation (segment56)
+
+The learner is an explicit candidate side chosen once from the initial turn
+and declared role (`TO_MOVE` or `OTHER`). Changing that role never changes the
+public state, turn, history or actual winning player. Candidate prices and
+candidate node limits follow that identity throughout the game. Each frozen
+family includes both roles, colors and fixed opponent budgets with equal
+weight. Analysis keeps these correlated observations inside one family block.
+
+A discovered limitation of the legacy four cells is retained: their proof flag
+changes BOTH players. Therefore their A-to-B contrast changes both candidate
+and opponent proof/tail policies. It is not an isolated candidate-solver effect
+against a fixed opponent. B-to-D still compares prices against the same
+proof-equipped opponent, so that price contrast is not invalidated. Previously
+recorded games, rewards, caps and receipts are preserved.
+
+The corrected research plan holds the opponent proof configuration fixed in
+all four cells. With an always proof-equipped uniform opponent, A/C leave the
+candidate proof disabled, B/D enable it, and A/B use baseline prices while C/D
+use the TRAIN-selected prices. Then A-to-B estimates the candidate's complete
+proof-plus-tail policy contribution, while B-to-D estimates prices conditional
+on that policy. Actual opponent search, proof, observed transitions and admitted
+tails must still be charged and audited, including when the candidate is plain.
+This is a research control, not a production/default change.
+
+## Optional immutable public-state proof
+
+`generic_public_win_proof.py` is a separate opt-in AND/OR prover and independent
+public certificate verifier. `generic_proof_public_path.py` retains every exact
+immutable `GameState` and applies public legal transitions. It can follow actual
+no-progress adjudication history, which the current mutable runtime explicitly
+rejects. It does not synthesize a halfmove clock, reset history, merge boards,
+import a material evaluator or bypass declarations. Declaration choices remain
+unsupported. Incomplete authoritative history yields UNKNOWN, not a draw.
+
+A public transition and its history adjudication are atomic. Cancellation is
+checked before and after it, before committing the path stack; a rejected child
+leaves the parent intact. All elapsed time is charged. This is cooperative
+bounded execution, not a hard real-time guarantee. The separate verifier
+recursively enumerates all defenses via public transitions and recomputes actual
+terminal results. `PublicStrategyCursor` then follows that verified finite tree
+after both players move, with the same rank and full-history bindings.
+
+On segment56's 72 declared finite maxply4 no-progress games, 144 target calls
+match full public-game reference outcomes for every proof: seven certificates
+verify and physically win. This validates solver logic against the public rule
+semantics, not an independent reimplementation of those semantics or unlimited
+WDL. A 96-call paired/counterbalanced supported-rule control matches work and
+trees but takes about1.62–1.67 times mutable-runtime cost on the tested small
+roots. The public path therefore remains an optional unsupported-history route;
+no general performance advantage is claimed.

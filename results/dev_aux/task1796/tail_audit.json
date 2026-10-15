@@ -1,0 +1,31 @@
+{
+  "status": "PASS_ACTUAL_TAIL_AND_PREFIX_AUDIT",
+  "counts": {},
+  "cells": [
+    {
+      "phase": "DEV",
+      "proof": false,
+      "price_index": 1,
+      "n": 4,
+      "H16_WL": 0,
+      "tail_policy_WL": 0,
+      "H16_unknown": 4,
+      "final_unknown": 4,
+      "new_tail_events": 0
+    },
+    {
+      "phase": "DEV",
+      "proof": true,
+      "price_index": 1,
+      "n": 4,
+      "H16_WL": 0,
+      "tail_policy_WL": 0,
+      "H16_unknown": 4,
+      "final_unknown": 4,
+      "new_tail_events": 0
+    }
+  ],
+  "TRAIN_scores": {},
+  "scope": "Same trajectories prefix versus physical tail; H16 score is descriptive counterfactual prefix, not retrained H16 policy or independent DEV.",
+  "seconds": 0.018648400000529364
+}

@@ -1189,3 +1189,54 @@ branch/stop boundaries and prior capped/partial results remain.
 Full evidence: results/dev_aux/SEGMENT_20261015_55.md and the exact restored
 segment55 archives. Deliver the fixed sidemission revision to Dot/PRIMARY through
 the established project Slack; PRIMARY integrates deliberately, no automatic merge.
+
+
+## DEV_AUX56 — balanced learning and fixed-opponent correction
+
+User restored this chat's own90-minute heartbeat; official ACTIVE receipt and
+same-chat binding verified. DEV_AUX stays separate on sidemission, primary state,
+product, defaults and UI untouched; no added Agent/worker or quiet-window demand.
+PRIMARY's prior fixed41e69 coordination is read-only historical context, not a
+new execution/integration claim. Its current sandbox work remains separately owned.
+
+DEV_AUX implemented fixed learner identity in both initial roles and audited
+actual Native prices/budgets, public histories and finite W-L. Two independent
+TRAIN32/DEV32 cohorts select R/N2; conditional B-to-D gains .0546875/.05078125,
+pooled .052734375 with family95[.0234375,.08203125]. Actualwins142->155, losses72->58;
+12losses->UNKNOWN remain explicit, so no infinite-WDL or human-price claim.
+
+A scientific correction is material: legacy A-to-B changed BOTH proof policies,
+not a fixed opponent. Old source/data/numeric contrasts are preserved, B-to-D
+remains same-opponent. New fixed-opponent entry+two8/8pilots now qualify actual
+opponent proofs even with plain candidates. Both candidate-solver net contrasts
+are0; standard pricegain0, richer-root .0625CI[0,.15625]. More tactical terminal
+coverage yields only2/8nonflat TRAIN vectors versus4/8standard at similarcost:
+no root-filter/default adoption or wholesale success declaration.
+
+Dot supplied a concrete counterexample to terminal/action density as learning
+signal; adopt actual paired price-objective vectors/full paid cost and preserve
+role cancellation. It read the request/old Slack summary, not56code/execution;
+its fixed55 report fetch returned404. No approval or resend loop. Exact sensitive
+reads/replies stay privately ignored; this is a checked technical summary.
+
+The opt-in public-state no-progress prover/verifier/cursor physically finishes
+actual wins and preserves different histories on identical boards.96focusedtests;
+144finite-reference calls7verified executedwins.96matched-work calls public1.62-
+1.67x runtime, so optional fallback only. Caller validation micro-attribution
+saves only .49ms/callback despite .309ratio; defer further optimization. All4944
+game records/61486Nativego/2112perft closed,1479adopted proofgames and317tails
+physicallywin. No oldcaps/stops extended, sources archived by loadedversion.
+
+Next1803 freezes fresh H16/H24 fixed-hybrid inputs,512maxgames,0go/notimplemented.
+This decision-changing horizon check precedes broader price claims; no long-game
+expansion or human fitting. Details: SEGMENT_20261015_56.md, COST/QA/FAILURES56 and
+exact restored archives. Publish reviewed own artifacts to origin/sidemission,
+verify full remoteSHA and give Dot/PRIMARY the fixed evidence; no automatic merge.
+
+
+Latest coordination read before delivery: PRIMARY reports separate Native PV
+caller replay/terminal-check work against base348761ff3cbdb4ef94d03f26c21105a5a9b387b6,
+with its own tested uncommitted source9e66d92e. Its thread explicitly leaves the
+generic prover/cursor/learning lane to AUX56. DEV_AUX read the full four replies,
+did not fetch/execute that attachment, adopt its authority change or write its
+checkout. Our public proof fallback and caller-cost deferral remain independent.
