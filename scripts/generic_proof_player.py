@@ -110,7 +110,9 @@ class ProofMaterialPlayer:
                                                 cancel=cancel, _clock=_clock)
                         verification_nodes = cursor.receipt['nodes']
                         total.poll()
-                        action = cursor.choose(state)
+                        selected = cursor.choose(state)
+                        total.poll()
+                        action = selected
                         self.cursor = cursor
                         source, cause = 'PROOF', 'certificate'
                         return out()

@@ -35,9 +35,10 @@ cryptographic process authentication. Other isolation/safety rules stay.
 User2026-10-11 also requires a remotely readable collaboration record. At each
 completed segment update docs/operations/COLLABORATION_LOG.md with both Agents'
 contributions, coordination, disagreements/corrections, adoption reasoning,
-efficiency evidence/limits and unresolved issues; publish reviewed Agent-only
-summaries to sandbox and give Dot a fixed-revision link. Exclude raw Slack,
-account/private inputs. This is a short evidence summary, not extra approval,
+efficiency evidence/limits and unresolved issues; publish checked project collaboration
+summaries to sidemission and give Dot a fixed-revision link; PRIMARY owns
+its own sandbox log. Exclude actual personal information/passwords/credentials
+from publication; preserve sensitive originals in the ignored private layer. This is a short evidence summary, not extra approval,
 identity challenges or a requirement to wake the auxiliary for routine replies.
 
 
@@ -208,19 +209,20 @@ restart never clears stopped state. Local Agent/heartbeat use normal allowance;
 dot/transport must not delegate workers. Quota evidence is in advisor.json.
 
 Git is version control/final delivery, not mandatory communication. Inspect
-outgoing diffs and relevant tests before publish; verify full origin/sandbox SHA.
+outgoing diffs and relevant tests before publish; verify full origin/sidemission SHA in this checkout.
 User2026-10-07 grants standing publication authorization for this project's
 Agent-generated code, research results and evidence, including the pending
-backlog. At every completed work segment commit and sync these to origin/sandbox
-so dot can inspect actual changes, without per-push confirmation. Exclude user-
-authored/private input data, raw Slack/account records and credentials, including
-inside archives and outgoing history. Authorization persists until revoked;
+backlog. At every completed work segment commit and sync these to origin/sidemission
+so dot can inspect actual changes, without per-push confirmation. Exclude actual personal information/passwords/credentials, including inside
+archives and outgoing history. Any checked project content is authorized
+regardless of source; raw sensitive originals stay ignored and private. Authorization persists until revoked;
 explicit project stop suspends publication. Old held-publication records are
 historical status, not an active gate. Review and test; report push failures and
 verify the exact remote SHA. Never claim a local commit was published.
-Use existing generic-chess-local.cmd publish --tests <relevant pytest targets>;
-the repository hook requires this tested entry for sandbox pushes.
-Master promotion is tested fast-forward only; never force-push. Report truthfully.
+Use own reviewed Git commit/push only for refs/heads/sidemission; own
+dev-aux-local.cmd rejects inherited publish/promote. PRIMARY alone uses its
+tested sandbox publication entry. DEV_AUX never pushes sandbox/master, never
+force-pushes or promotes master. Report actual receipts and full remote SHA.
 Notify only meaningful results, failures or required decisions. Scientific
 completion requires the evidence in LOCAL_MAINLINE.md, not a phase/turn boundary.
 Operations: docs/operations/LOCAL_AGENT.md and SLACK_WORKFLOW.md.

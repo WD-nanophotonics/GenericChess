@@ -148,3 +148,15 @@ def test_verified_continuation_checks_cancel_after_atomic_terminal(monkeypatch):
         assert d.action is None and d.source!='PROOF_CONTINUATION'
         assert d.exit_cause==('cancelled' if mode=='cancel' else 'time_budget')
         assert d.nodes==0 and p.cursor is not None
+
+
+def test_new_verified_cursor_cannot_commit_after_cancel_during_choice():
+    from scripts.generic_win_proof import StrategyCursor
+    c=compile_krk();s=krk_state(c,1,3,8,0);flag=[False]
+    class CancelAtChoice(StrategyCursor):
+        def choose(self,state):
+            choice=super().choose(state);flag[0]=True;return choice
+    p=ProofMaterialPlayer(c,material,cursor_factory=CancelAtChoice)
+    d=p.choose(s,max_nodes=4096,seconds=3.,cancel=lambda:flag[0])
+    assert flag[0] and d.exit_cause=='cancelled' and d.action is None
+    assert p.cursor is None and d.proof_nodes>0 and d.verification_nodes>0
