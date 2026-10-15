@@ -1,3 +1,38 @@
+## Slack repair closure —2026-10-15
+
+User approved repair before mainline. PRIMARY reproduced Core ongoing vs Native
+max_ply and rejected c7c6 on e2e4,d7d5,f1b5+; shared automatic-status/checked-edge,
+full import and explicit capacity/Core-route repairs now pass2648full tests,
+51focused and35source-only rebuilt checks. Existing pending PV caller is delivered
+with underlying authority repair, retaining all79 fields/defaults and exception
+contract; no new diagnostics API or learning/solver implementation. Current
+policy/manual/mainline separate durable authority from revisable selection;
+fixed prior4f6858b1 retains history. No guaranteed future model-compliance claim.
+
+By the user's implementation authorization PRIMARY messaged EXISTING gc辅助,
+not a new Agent. DEV_AUX published its own fix11dddd801c68ef9289ff8293dba1dbb00701ede9:
+real-cursor post-atomic cancellation/deadline guards, reported32tests; already-paid
+1797/1798 C-to-D/factorial interaction/UNKNOWN/time,0newgames/go/retraining for the
+correction; its branch identity and actual runner inventory corrected.
+PRIMARY read fixed source/test/report and verified published cell/vector arithmetic,
+not AUX tests/raw trajectories or bootstrap reproduction. No cross-checkout edits,
+automatic merge, duplicate solver, pause of other projects or additional workers.
+
+1797 C-to-D0 despite+2wins/+2losses, cost30.441->54.943s;1798+.03125/family95
+[0,.09375], twoUNKNOWN->WIN, oneof8families,26.792->43.912s. Baseline A-to-B0
+cannot establish learned-price solver null; no proven general benefit follows.
+AUX's already-started512game horizon batch completed original caps before this
+closure; separate from zero-new-game repair. Actual coordination timing is kept,
+not a retroactive claim all research was halted. No routine receipt loop or
+quantitative efficiency claim. Separate lanes closed useful defects and exposed
+the previous caller-only review's dependency coverage limitation.
+
+Full Slack/account outputs are stored ignored before reconcile. Dot's dependency
+review changed the plan; CHAT_Comments API split/bulk script consolidation are
+deferred after consumer inventory. PRIMARY launched no mainline experiments.
+Report, source hashes, recovery cases and failures:
+../research/SLACK_REVIEW_FIXES_20261015.md.
+
 ## Direction-recovery correction —2026-10-15
 
 PRIMARY mistakenly reused superseded PRIVATE authorization despite the earlier

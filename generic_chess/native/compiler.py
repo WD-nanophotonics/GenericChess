@@ -788,6 +788,13 @@ class NativeSemanticCompiledRules:
     def require_terminal_policy_support(self) -> None:
         """Legality support does not imply Native terminal/search support."""
         support = getattr(self._semantic, "support", None)
+        if self.automatic_adjudications and not self._backend_module.native_capabilities().get(
+            "semantic_pending_continuation", False
+        ):
+            raise NativeUnsupportedRuleError(
+                "Native automatic PENDING continuation requires a rebuilt kernel; "
+                "use Core terminal/search"
+            )
         expected = 1 if support is not None and support.stalemate_result == "loss" else 0
         # Check C-owned metadata: an older installed binary may ignore the
         # new optional field. Legality remains usable, but never certify loss.

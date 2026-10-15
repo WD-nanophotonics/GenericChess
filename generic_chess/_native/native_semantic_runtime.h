@@ -18,6 +18,11 @@ void gc_semantic_runtime_audit_stop(void);
 void gc_semantic_runtime_history_mode_start(void);
 void gc_semantic_runtime_history_mode_stop(void);
 
+/* Shared automatic adjudication authority: 0 inactive, 1 PENDING,
+ * 2 configured outcome, -1 incomplete/unsupported authoritative history. */
+int gc_semantic_runtime_automatic_status(const GCSemanticRules *,
+    const GCSemanticPosition *);
+
 /* Apply one exact semantic action to a copied position.  This first validates
  * the action's pattern/geometry/target binding, then executes the declared
  * board, hand, type and auxiliary effects in order.  Returns 1 on success;

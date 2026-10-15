@@ -15,7 +15,7 @@ from collections.abc import Mapping
 from ..ai.cancellation import CancellationToken
 from ..ai.limits import SearchLimits
 from ..core.actions import Action
-from ..core.transition import apply_action
+from ..core.errors import IllegalActionError
 from .adapter import pack_semantic_search_position
 from .compiler import GC_SEM_MAX_PLY, NativeUnsupportedRuleError
 from .mirror import pack_semantic_action
@@ -544,33 +544,37 @@ class SemanticSearchEngine:
         action = None if packed_best is None else public_action(
             self._native_rules, int(packed_best)
         )
+        raw_pv = tuple(int(value) for value in raw.get("principal_variation", ()))
         decision_line = []
-        for packed in raw.get("principal_variation", ()):
-            packed = int(packed)
+        leaf_position = position
+        for index, packed in enumerate(raw_pv):
+            # A checked transition validates an edge, not permission to continue a
+            # game already ended by repetition or another automatic adjudication.
+            if index and self._backend.semantic_terminal(
+                self._native_rules.capsule, leaf_position
+            )["status"] != "ongoing":
+                raise IllegalActionError("semantic PV continues after a terminal position")
             if packed & DECLARATION_ACTION_TAG:
-                index = packed & 0xFF
-                if index >= len(self._native_rules.declarations):
+                declaration_index = packed & 0xFF
+                if (packed != (DECLARATION_ACTION_TAG | declaration_index)
+                        or declaration_index >= len(self._native_rules.declarations)):
                     raise ValueError("semantic search returned invalid declaration decision")
-                decision_line.append(self._native_rules.declarations[index].declaration_id)
+                if index != len(raw_pv) - 1:
+                    raise ValueError("semantic PV continues after a declaration")
+                decision_line.append(self._native_rules.declarations[declaration_index].declaration_id)
             else:
                 decision_line.append(public_action(self._native_rules, packed))
+                try:
+                    leaf_position = self._backend.semantic_make_checked(
+                        self._native_rules.capsule, leaf_position, packed
+                    )
+                except ValueError as exc:
+                    raise IllegalActionError(str(exc)) from exc
         if declaration_id is not None and not decision_line:
             decision_line.append(declaration_id)
         pv = tuple(item for item in decision_line if not isinstance(item, str))
-        state = session.state
-        for pv_action in pv:
-            state = apply_action(state, pv_action, self._compiled)
-
         leaf_dynamic: tuple[int, int, int] = ()
         if pv:
-            leaf_position = position
-            for packed in raw.get("principal_variation", ()):
-                packed = int(packed)
-                if packed & DECLARATION_ACTION_TAG:
-                    break
-                leaf_position = self._backend.semantic_make_checked(
-                    self._native_rules.capsule, leaf_position, packed
-                )
             from .semantic import dynamic_features as native_dynamic_features
             leaf_dynamic = native_dynamic_features(self._native_rules, leaf_position)
 

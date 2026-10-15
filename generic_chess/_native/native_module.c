@@ -438,6 +438,7 @@ static PyObject *gc_native_capabilities(PyObject *self, PyObject *args) {
     value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "semantic_exact_root_windows", value);
     PyDict_SetItemString(dict, "semantic_immediate_win_goal", value);
+    PyDict_SetItemString(dict, "semantic_pending_continuation", value);
     Py_DECREF(value);
     value = PyBool_FromLong(1);
     PyDict_SetItemString(dict, "semantic_material_evaluator", value);
@@ -2216,9 +2217,15 @@ static PyObject *gc_semantic_pack_position(PyObject *self, PyObject *args) {
     bp.history_exact = 1;
     int ok = 1;
     bp.side_to_move = (uint8_t)gc_py_long_as_long(side_obj, &ok);
-    bp.ply = (uint16_t)gc_py_long_as_long(ply_obj, &ok);
+    long supplied_ply = gc_py_long_as_long(ply_obj, &ok);
+    if (ok && (supplied_ply < 0 || supplied_ply > GC_SEM_MAX_PLY)) {
+        PyErr_SetString(PyExc_NotImplementedError,
+                        "semantic history capacity exceeded; use Core execution");
+        return NULL;
+    }
+    bp.ply = (uint16_t)supplied_ply;
     const uint16_t squares = (uint16_t)(rules->board_size * rules->board_size);
-    if (!ok || bp.side_to_move > 1 || bp.ply > rules->max_ply ||
+    if (!ok || bp.side_to_move > 1 || bp.ply > GC_SEM_MAX_PLY ||
         PyList_Size(board) != squares || PyList_Size(hands) != 2) {
         PyErr_SetString(PyExc_ValueError, "invalid semantic position scalar or board shape");
         return NULL;
@@ -2852,6 +2859,11 @@ static PyObject *gc_semantic_make_checked(PyObject *self, PyObject *args) {
     GCSemanticPosition *parent = (GCSemanticPosition *)PyCapsule_GetPointer(pos_capsule, GC_SEM_POSITION_CAPSULE);
     if (!rules || !parent) return NULL;
     if (!gc_semantic_require_matching_rules(rules, parent)) return NULL;
+    if (parent->history_len >= GC_SEM_MAX_PLY + 1) {
+        PyErr_SetString(PyExc_NotImplementedError,
+                        "semantic history capacity exceeded; use Core execution");
+        return NULL;
+    }
     GCSemanticPosition *child = (GCSemanticPosition *)malloc(sizeof(*child));
     if (!child) { PyErr_NoMemory(); return NULL; }
     if (!gc_semantic_runtime_make_checked(child, rules, parent, (uint64_t)action)) {
@@ -3001,6 +3013,11 @@ static PyObject *gc_semantic_guarded_actions(PyObject *self, PyObject *args) {
     GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
     if (!rules || !position) return NULL;
     if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    if (position->history_len >= GC_SEM_MAX_PLY + 1) {
+        PyErr_SetString(PyExc_NotImplementedError,
+                        "semantic history capacity exceeded; use Core legality");
+        return NULL;
+    }
     PyObject *candidates = gc_semantic_candidate_tuple_native(rules, position);
     if (!candidates) return NULL;
     PyObject *guarded = PyList_New(0);
@@ -3451,33 +3468,19 @@ static int gc_semantic_continuous_check_winner(const GCSemanticRules *rules,
     return 1;
 }
 
-/* Return 0 for no automatic result, 1 for pending continuation, 2 for the
- * configured terminal outcome, and -1 when the authoritative history is
- * incomplete or the record cannot be interpreted safely. */
-static int gc_semantic_automatic_status(const GCSemanticRules *rules,
-                                        const GCSemanticPosition *position) {
-    for (uint8_t a = 0; a < rules->automatic_adjudication_count; a++) {
-        const GCSemAutomaticAdjudication *record =
-            &rules->automatic_adjudications[a];
-        if (position->ply < record->trigger_ply) continue;
-        if (!position->history_events_exact ||
-            position->history_len != position->ply + 1 ||
-            position->history_len == 0 || position->history_actor[0] != 255)
-            return -1;
-        for (uint16_t i = 1; i < position->history_len; i++)
-            if (position->history_actor[i] > 1) return -1;
-        if (record->trigger_ply >= position->history_len) return -1;
-        if (record->continuation_policy != 0) return -1;
-        uint8_t checker = position->history_actor[record->trigger_ply];
-        if (!position->history_gave_check[record->trigger_ply]) return 2;
-        for (uint16_t i = record->trigger_ply + 1;
-             i < position->history_len; i++) {
-            if (position->history_actor[i] == checker &&
-                !position->history_gave_check[i]) return 2;
-        }
-        return 1;
+
+/* A search must never turn fixed history storage into a game adjudication.
+ * Automatic PENDING can legally run past rules->max_ply. Reject a request
+ * whose declared path could exceed storage before entering recursive C work. */
+static int gc_semantic_require_search_capacity(const GCSemanticRules *rules,
+    const GCSemanticPosition *position, unsigned int extra_plies) {
+    if (rules->automatic_adjudication_count &&
+        (unsigned long)position->ply + extra_plies > GC_SEM_MAX_PLY) {
+        PyErr_SetString(PyExc_NotImplementedError,
+                        "semantic history capacity exceeded by requested search; use Core search");
+        return 0;
     }
-    return 0;
+    return 1;
 }
 
 static int gc_semantic_terminal_status_known(const GCSemanticRules *rules,
@@ -3515,10 +3518,11 @@ static int gc_semantic_terminal_status_known(const GCSemanticRules *rules,
         }
     }
     if (repetitions >= rules->repetition_limit) return 3; /* repetition */
-    int automatic = gc_semantic_automatic_status(rules, position);
+    int automatic = gc_semantic_runtime_automatic_status(rules, position);
     if (automatic < 0) return -1;
     if (automatic == 2 && rules->automatic_adjudication_count > 0 &&
         rules->automatic_adjudications[0].outcome == 3) return 6;
+    if (automatic == 1) return 0; /* PENDING precedes the rule ply limit. */
     if (position->ply >= rules->max_ply) return 4; /* max ply */
     return 0; /* ongoing */
 }
@@ -4286,6 +4290,7 @@ static PyObject *gc_semantic_probe_search(PyObject *self, PyObject *args) {
     if (!rules || !position || depth > GC_MAX_PLY) return NULL;
     if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
     if (!gc_semantic_require_exact_history(position)) return NULL;
+    if (!gc_semantic_require_search_capacity(rules, position, depth + 1)) return NULL;
     GCSemanticProbeProfile profile;
     memset(&profile, 0, sizeof(profile));
     if ((board_values == NULL) != (hand_values == NULL)) {
@@ -6393,6 +6398,8 @@ static PyObject *gc_semantic_iterative_search(
     }
     if (!gc_semantic_require_matching_rules(rules, position) ||
         !gc_semantic_require_exact_history(position)) return NULL;
+    if (!gc_semantic_require_search_capacity(rules, position,
+            max_depth + (qdepth > 0 ? qhard_depth : 0) + 1)) return NULL;
     GCSemanticProbeProfile profile;
     if (!gc_semantic_parse_profile(board_values, hand_values, dynamic_values,
                                    spatial_values, localized_control_values, compact_values, rules,
@@ -7305,6 +7312,7 @@ static PyObject *gc_semantic_perft(PyObject *self, PyObject *args) {
     GCSemanticPosition *position = (GCSemanticPosition *)PyCapsule_GetPointer(position_capsule, GC_SEM_POSITION_CAPSULE);
     if (!rules || !position) return NULL;
     if (!gc_semantic_require_matching_rules(rules, position)) return NULL;
+    if (!gc_semantic_require_search_capacity(rules, position, depth + 1)) return NULL;
     int ok = 1;
     unsigned long long nodes = gc_semantic_perft_rec(rules, position, depth, &ok);
     if (!ok) { if (!PyErr_Occurred()) PyErr_SetString(PyExc_RuntimeError, "semantic perft failed"); return NULL; }

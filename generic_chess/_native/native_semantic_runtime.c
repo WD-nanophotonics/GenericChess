@@ -2,6 +2,36 @@
 
 #include <string.h>
 
+/* Return 0 for no automatic result, 1 for pending continuation, 2 for the
+ * configured terminal outcome, and -1 when the authoritative history is
+ * incomplete or the record cannot be interpreted safely. */
+int gc_semantic_runtime_automatic_status(const GCSemanticRules *rules,
+                                        const GCSemanticPosition *position) {
+    for (uint8_t a = 0; a < rules->automatic_adjudication_count; a++) {
+        const GCSemAutomaticAdjudication *record =
+            &rules->automatic_adjudications[a];
+        if (position->ply < record->trigger_ply) continue;
+        if (!position->history_events_exact ||
+            position->history_len != position->ply + 1 ||
+            position->history_len == 0 || position->history_actor[0] != 255)
+            return -1;
+        for (uint16_t i = 1; i < position->history_len; i++)
+            if (position->history_actor[i] > 1) return -1;
+        if (record->trigger_ply >= position->history_len) return -1;
+        if (record->continuation_policy != 0) return -1;
+        uint8_t checker = position->history_actor[record->trigger_ply];
+        if (!position->history_gave_check[record->trigger_ply]) return 2;
+        for (uint16_t i = record->trigger_ply + 1;
+             i < position->history_len; i++) {
+            if (position->history_actor[i] == checker &&
+                !position->history_gave_check[i]) return 2;
+        }
+        return 1;
+    }
+    return 0;
+}
+
+
 static GCSemanticRuntimeAudit *gc_runtime_audit = NULL;
 static int gc_runtime_transient = 0;
 
@@ -539,7 +569,13 @@ static int postconditions_hold(const GCSemanticRules *r, const GCSemanticPositio
 
 static int gc_semantic_runtime_make_mode(GCSemanticPosition *child, const GCSemanticRules *r, const GCSemanticPosition *parent, uint64_t action, int include_postconditions, int record_history) {
     if (gc_runtime_audit) gc_runtime_audit->s3_trial_count++;
-    if(!child||!r||!parent||parent->ply>=r->max_ply)return 0; const GCSemPattern *pattern=NULL; const GCSemGeometry *geo=NULL; uint16_t source=0,target=0; if(!validate_action(r,parent,action,&pattern,&geo,&source,&target))return 0; (void)geo;
+    if(!child||!r||!parent)return 0;
+    if (parent->ply >= r->max_ply) {
+        int automatic = gc_semantic_runtime_automatic_status(r, parent);
+        if (automatic < 0) return -1;
+        if (automatic != 1) return 0;
+    }
+    if (record_history && parent->history_len >= GC_SEM_MAX_PLY + 1) return -1; const GCSemPattern *pattern=NULL; const GCSemGeometry *geo=NULL; uint16_t source=0,target=0; if(!validate_action(r,parent,action,&pattern,&geo,&source,&target))return 0; (void)geo;
     GCSemanticPosition work;
     copy_live_position(&work, parent);
     uint8_t side=parent->side_to_move;

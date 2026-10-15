@@ -1,3 +1,17 @@
+## 2026-10-15 automatic PENDING and checked PV repair
+
+Rebuild Native for semantic_pending_continuation. Automatic PENDING now precedes
+rule max_ply consistently in terminal and checked transitions; full exact roots
+past that rule limit can import up to fixed history capacity. Old automatic-
+authority kernels decline with rebuild/Core guidance. Fixed storage exhaustion
+raises explicit unsupported errors; it is not a game result or empty frontier.
+Native-only APIs do not silently swap evaluator/search; use existing Core paths
+when unsupported. PV delivery uses one checked Native replay with intermediate
+terminal and canonical final-declaration guards; all79 result fields/defaults,
+public aliases and UI policy remain. Independent Core replay remains in tests.
+Actual final2648full/51focused and35isolated source-rebuilt tests pass.
+Scope/reproduction/auxiliary closure: ../research/SLACK_REVIEW_FIXES_20261015.md.
+
 ## 2026-10-15 immediate goals and explicit backend entry
 
 Native semantic search accepts stop_on_immediate_win=True; defaultFalse keeps finite analysis. A true physical winning child may return before completeD1: immediate_win=True, result_source=verified_root_child, completed_depth0, completedqNone, one-actionPV. Preserve node/time/cancel reasons, do not require depth>0 to recognize this explicit goal, and do not relabel it completedD1/q4. Native rebuild is required for True; old kernels still support False without extra arguments. Existing declarations/fallbacks remain distinct.

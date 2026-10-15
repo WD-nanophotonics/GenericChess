@@ -1,521 +1,148 @@
 # Local Agent operations
 
-AGENTS.md is the sole active policy. The user approved broader exploration,
-time plus executable work reserves, and a small local work-segment validator.
+AGENTS.md owns current user authority, PUBLIC/reasons, safety/Agent boundaries,
+stops, research integrity and duration rules. This file owns operating methods;
+LOCAL_MAINLINE.md owns revisable research choices. Do not reconstruct current
+policy from dated consultation history. Full pre-cleanup manuals remain at
+Git4f6858b128e38c3b93360d78b7f5de6ad61af695; they are evidence, not active tasks.
 
-## Current Git/Slack grant —2026-10-15
+## Start, recovery and memo
 
-The latest user grant in AGENTS.md supersedes older narrower exclusions: ANY
-GenericChess project content may be uploaded to the established project Git and
-Slack destinations when it contains no personal information, passwords or other
-credentials. Project data, failed/partial results and checked technical records
-are included; record origin alone is not a prohibition. Preserve exact private
-originals; sanitize the outgoing copy where needed. No renewed consent after
-compaction, per push, per message or per file. Include this concrete grant and
-actual content scope when requesting tool escalation. Local instructions do not
-guarantee the reviewer has read them or override enforced controls. Report an
-unresolved refusal immediately with exact evidence and practical next steps.
-No extra approval framework, global permission change or new automation needed.
+1. Read .local_agent/NEXT_WORK.md in full, AGENTS.md, LOCAL_MAINLINE.md and
+   rollout/advisor/slack stop flags. Latest user direction wins. Reconcile
+   decision + reason + superseded alternative + execution consequence before
+   acting. Never clear a stop merely to resume.
+2. For RESEARCH use generic-chess-local.cmd session start. session.json owns
+   UUID/UTC start; active same-chat segments retain both after compaction.
+   Another chat cannot take over. Explicit bounded configuration/review/repair
+   is not a60–90minute duration sample and must not reset a research clock.
+3. Execute Main, validate and assess the result, checkpoint and begin the next
+   decision-changing step. No extra writer, Goal, scheduler or restart loop.
 
-## Standing project authority —2026-10-13
+NEXT_WORK.md <=20lines/2048 UTF-8 bytes, one each State/Segment/Main/Backup1/
+Backup2/Evidence. Each task has four nonempty fields separated by |:
+question | immediate action | expected evidence | done condition.
+Keep distinct executable tasks and the critical current decision/reason
+(PUBLIC for Dot/Chat access; PRIVATE abandoned). Other current decisions live in
+AGENTS.md. Replace stale tasks/evidence; shorten detail rather than losing the
+causal relationship. Missing memo is rebuilt from evidence before research.
 
-AGENTS.md explicitly records continuing authority for reasonable GenericChess
-work and private local data storage. Raw Slack/account outputs, diagnostics and
-failed-run evidence may be saved/read/parsed in Git-ignored .local_agent without
-asking again. Publication exclusions apply only to outgoing Git/history/archive
-delivery; they do not prohibit the private local originals required by reconcile.
-Machine safety, stops, sole-writer/other-project boundaries and fair conditions
-remain concrete limits. Do not add approval queues or treat ordinary concurrency
-as a reason to stop. Diagnose/report real tool or OS failures and keep progressing.
+## Research checkpoints and cost
 
-### TOML scope checked2026-10-13
+session checkpoint --question Q --observation NEW --evidence REF --next-action ACTION
+Use --kind research|documentation|transport honestly. Only actual research is a
+research stage; old conclusions, Slack receipts and document saves are not new
+science. The helper retains recent details; purpose reports retain full evidence.
+Do not reset active clocks, fabricate stages or reinterpret elapsed App time as
+effective work. A soft block triggers a useful backup, new source or bounded
+hypothesis check, not an unchanged rerun or early exit.
 
-This checkout has no project .codex/config.toml. pyproject.toml controls build,
-dependencies and tests; it is not a consent/approval policy and is unchanged.
-The existing genericchess automation.toml prompt was updated through the native
-automation interface, preserving its active90-minute schedule and same chat.
-AGENTS.md records project authority; platform/OS enforced settings remain
-separate. No global permission file was changed or extra automation created.
-Configuration references: [official AGENTS.md guidance](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
-and [official config basics](https://learn.chatgpt.com/docs/config-file/config-basic).
+Before a bounded batch record the unknown, decision-changing possible outcomes,
+resource estimate and cheaper alternatives. Include preparation, recording and
+engineering overhead. Development limits are cost checkpoints, while permissions,
+machine safety and frozen fair-comparison caps remain hard boundaries. Do not
+extend a frozen experiment or erase its failure by renaming seeds/phases.
+Use existing recorders/atomic writes; no new framework merely for receipts.
+Small training is authorized. A single project run expected>1hour first obtains
+Dot's necessity assessment; continue shorter independent work while pending.
+Do not split the run to evade this rule or confuse it with segment duration.
 
-## Start and resume
+Inspect completed result files, not a large report being atomically replaced by
+its producer. A Windows read can block replacement. Monitor producer stdout or
+use a reader sharing delete access; preserve interrupted cases separately from
+budget-censored ones. Measure actual disk use before removing only redundant
+owned output; never delete unique evidence or user files blindly.
 
-Read NEXT_WORK.md first, policy, current mainline and persisted stop flags.
-Before acting, reconcile the memo with AGENTS.md's current decisions/reasons and
-any newer user direction. Carry decision + reason + superseded alternative +
-execution consequence through compaction; history and old permissions cannot
-revive an abandoned direction. Update existing current entries when direction
-changes, rather than appending competing policies. Keep unresolved issues and
-active boundaries in the handoff. No new approval or automatic monitoring loop.
-Normal manual starts and heartbeat wakes start/resume RESEARCH, not just patrol.
-Use `.venv\Scripts\python.exe -m tools.local_agent.cli session start`.
-It checks stop flags and compact memo structure. An active same-chat segment
-retains its UUID/start; a different chat cannot take it over. An ended segment
-gets a new start. Never use configuration work as a duration sample.
-Inspect session status after compact; session.json is authoritative for time,
-not the memo's copy. Do not start a second writer when a turn is already active.
+## Slack consultation and collaboration
 
-## Compact memo and task reserve
+Use docs/operations/SLACK_WORKFLOW.md for exact request/receipt/reconcile commands,
+identity and pagination. Sole channel C0C6L21UU20; PRIMARY_SANDBOX and DEV_AUX
+share the verified account. Labels route messages, not process authentication.
+No per-message challenges. Read new roots plus full relevant/completed threads,
+with pagination coverage. Save exact originals in Git-ignored .local_agent BEFORE
+parsing/reconcile; local raw storage is expressly authorized.
 
-NEXT_WORK.md is <=20 lines/2048 UTF-8 bytes with exactly one each:
-State, Segment, Main, Backup1, Backup2, Evidence. Each task has four nonempty
-parts separated by `|`: question, immediate first action, expected evidence,
-done condition. Three tasks must be distinct and genuinely executable; the
-validator checks structure, the Agent checks scientific usefulness. Overwrite
-completed/superseded entries; no memo history, rule repetition or per-version
-archives. Detailed evidence belongs in research documents/Git. Tasks are
-revisable reserves, not work quotas or an approval queue. State also carries the
-critical current decision/reason (PUBLIC for Dot/Chat access; PRIVATE abandoned),
-with remaining decisions in AGENTS.md. Shorten stale evidence rather than dropping
-that causal relationship to meet the existing memo size limit.
+User-directed inquiries use NEW AGENT_REQUEST/new REQUEST_ID/new thread.
+Evidence-based Agent followups may retain the root with a unique FOLLOWUP_ID.
+Information-only EVIDENCE/RESULT are not new consultation requests. No routine
+acknowledgements or automatic retry/self-reply loops. Reconcile uncertain sends;
+record actual receipt, purpose and duplicate risk before a reasoned recontact.
+Dot silence is not a stop/publication gate. Daily10:00 Tokyo is the main window;
+if no turn is active use its first later continuation, no missed-day catchup.
+One native90-minute same-chat heartbeat resumes without a second writer.
 
-## Research loop
+Communicate with existing DEV_AUX only for dependencies, blockers or useful
+results. Do not edit its checkout/state or reproduce its solver/learning lane.
+At completed segments update COLLABORATION_LOG.md with contributions, actual
+coordination, corrections, adoption and limits. Read source/results at a fixed
+revision. Do not call delivery, source review or another Agent's tests independent
+execution. Public repository access enables review; Slack attachments alone do
+not prove whole-repository access. Keep PUBLIC unless a NEW user direction says
+otherwise; PRIVATE rollback history is not a retry procedure.
 
-Current priority is search-first attribution, described in LOCAL_MAINLINE.md
-(Current priority2026-10-10). Backend, minimal AB/optimized algorithms and
-completion prototypes are separate axes. Repair evidenced infrastructure gaps
-that block comparability; measure cost and equal-time decision/completion effects.
-Retained price/learning routes below are subsequent goals, not equal scheduling.
+## Publication
 
-Latest direction-review addition2026-10-10: a bounded one-second actual UI
-path/basic-error comparison precedes the next backend bridge. Verify the remote
-UI revision and its actual material, budget, completion and final action without
-editing the frozen UI lane. Generic usefulness on newly supplied rules does not
-require matching specialist engine speed/strength. Start mechanical specialization
-with board/basic moves, retain all subsequent state semantics, and inspect already
-compiled information before rebuilding it. Representation/search joint cost is
-an eligible research question, not an established optimum or automatic redesign.
-Dot relayed private user context; preserve that attribution and the lack of an
-independently reproduced game. Existing stop, duration, long-run, publication
-and single-writer rules are unchanged.
+Continuing authority covers ANY project content without personal information,
+passwords or credentials. Record origin is not a prohibition. Preserve exact
+private originals and check/sanitize outgoing copies, including archives/history.
+No per-file/message/push consent, even after compaction. AGENTS.md does not disable
+platform enforcement; state the actual grant when requesting supported escalation.
 
-User-directed Slack questions/new requirements/direction inquiries always use
-a fresh channel-root AGENT_REQUEST and new REQUEST_ID, never an old-thread
-follow-up. Follow SLACK_WORKFLOW.md actual argument/receipt checks. Active reads
-still include new channel roots and relevant existing threads; no read-only
-completion status closes future advice.
+Review diffs/history and relevant tests, commit only the intended delivery, then:
+generic-chess-local.cmd publish --tests <relevant pytest targets>
+The tested entry fetches, checks ancestry, tests, pushes and verifies the full
+origin/sandbox SHA. Direct pushes are rejected by the existing hook; do not
+bypass it. Verify independently with git ls-remote origin refs/heads/sandbox.
+No force-push or automatic untested master promotion. Report actual failures.
+Keep unrelated unfinished changes out of a bounded document delivery; if owned
+changes are temporarily stashed, restore them and verify exact file hashes.
 
-Current science has two primary lines (user clarification verified2026-10-08):
-rule-derived generic prices with cross-game bias explanation, and unfamiliar-rule
-search efficiency/stability/interfaces. Games and bounded decisions diagnose evaluation/search failures; throughput alone is not playing evidence. Frozen
-human references are comparisons, never fitting targets or universal optima.
-Do not expand player patches/reference tiers to chase strength. Explore mixtures,
-recombined mechanics and generated rules. Static tables are cheap baselines;
-learning/frozen constants and small interaction evaluators are eligible for
-literature, low-cost feasibility comparison and appropriate small local training
-under the user's2026-10-09 standing authorization. See Budget for long runs.
-Generic targets the complete generated rule domain in search/state/evaluation/
-learning, including promotion, drops, auxiliary state and relevant history.
-Smaller models/samples and declared scoped prototypes are permitted; deleting
-task semantics or hand-writing one solution per game cannot establish completion.
-Use EVALUATION_ROUTES.md for the current candidate comparison. Old learning
-failures restrict their actual premises; do not revive historical phase gates.
-Exact probabilities and complete interpretability are not development admission
-requirements. Optional precision diagnostics must distinguish next choices;
-if either outcome merely invites more subdivisions, reprioritize useful work.
-Earlier practical-player efficiency advice below describes historical context;
-it does not override this current priority. Keep semantic and fair-resource checks.
+## Finish, real limits and failure reporting
 
-The2026-10-08 direction review adds a finite generator-consistency priority:
-supported equivalent rule encodings should agree; behaviorally small capability
-changes and finite-board saturation should have explained raw/scale behavior.
-Record raw opportunity, density curves, fixed-reference scale and production
-median normalization/rounding/clipping separately. Explicit unsupported patterns
-remain exclusions, not full-price evidence. Limited positional/coalition modeling
-cannot excuse representation defects; actor splitting/quantity effects are
-empirical, with no assumed linear conservation. Do one decision-changing family,
-then return to a concrete failure; do not build a universal proof prerequisite.
-Separate input semantics, price sensitivity and search cost. Fix attack authority
-and search policy for price comparisons, distinguish ordering from leaf prices,
-and retain static controls when they distinguish the hypothesis. A changed move
-or tie break is sensitivity, not evidence of improvement. These rules adopt the
-advisor's reasoning, not its attributed account of another user conversation.
-Review: https://nanomelon.slack.com/archives/C0C6L21UU20/p1791444831460819
-Dot reviewed the published base; this segment's new measurements were local
-reports, not independently executed by dot. Duration/stop/publication rules stay.
+Before final RESEARCH reply:
+session finish --reason REASON --evidence REF
+Normal safe_checkpoint/no_viable_action requires>=60minutes, actual research and
+valid memo reserve. Continue useful work toward90 then stop safely, no idle
+padding. no_viable_action requires two fresh substantive alternatives, supplied
+with --alternative Q twice and matching recent checkpoint questions.
+Refusal means continue, not bypass. Tests/docs/publish alone are not ending reasons.
+Explicit bounded user repair/configuration requests retain their bounded scope.
 
-Execute Main immediately. Validate each milestone, assess mainline impact,
-record checkpoint and actually begin the next task. CLI:
-`session checkpoint --question Q --observation NEW --evidence REF --next-action ACTION`
-Use `--kind research|documentation|transport`; only research counts as a
-research stage. New primary-source analysis can be research; an old conclusion
-re-read, Slack receipt or document save alone cannot. Duplicate observations
-are rejected. Keep the last6 checkpoint details; full evidence lives elsewhere.
-
-Soft blocks (missing formula, failed probe, old restriction, unanswered dot)
-trigger backup work or active exploration. New explicit approximate hypotheses
-are allowed without a complete WDL bridge or uniquely rule-given population.
-Freeze a proposed empirical test before observing its validation evidence;
-keep old failures and report assumption-dependent conclusions accurately.
-Revisit old routes only with a changed premise and a decision-changing test.
-Do not tune exposed/human labels, read the Xiangqi human holdout, rewrite frozen
-experiment conditions, repeat unchanged failed batches or substitute framework
-work for science. Development continuation follows the Budget section below.
-
-## Budget
-
-User2026-10-09 permits the Agent to initiate appropriate small local training
-without asking for approval each time. For any single project run estimated to
-take more than one hour, first consult dot on whether it is genuinely necessary
-and obtain that assessment before launching. Briefly record the decision question,
-expected information, runtime estimate and cheaper alternatives. This covers
-training and other project runs; the60-90minute research segment is a different
-unit. Do not artificially split one long run to bypass consultation. If dot has
-not confirmed necessity, continue independent shorter work. Record actual runtime
-and unfavorable results; preserve stop flags, data boundaries, fair conditions
-and machine safety. No additional workers, fees or uncontrolled heavy jobs follow.
-This is a targeted cost consultation, not a new approval queue for small fits.
-
-User2026-10-06 requests value per cost rather than universal time/count gates.
-Dot's complete reply was read, reconciled and adopted in the same Slack thread:
-https://nanomelon.slack.com/archives/C0C6L21UU20/p1791260944221889
-Request GC-SLACK-20261006-132838-03368ffa; raw reply remains in the ignored
-local Slack record. Dot reviewed the request/user preference and earlier public
-cost records; it did not run today's69-edge tree or change machine permissions.
-
-Keep work centered on concrete results. Extra engineering or validation must
-address an observed defect or a specific serious foreseeable error, not a growing
-hypothetical-risk checklist. Keep current entry files short; use existing Git and
-purpose reports for history rather than duplicating whole exports/index layers.
-Measure actual disk use before deleting only demonstrably redundant owned output.
-Communicate with DEV_AUX for dependencies, blockers or decision-changing results,
-not routine receipts/repeated synchronization. Report concise new conclusions.
-
-Use a short continuation record: what is unknown; which possible outcomes change
-the next decision; expected incremental resources. Include implementation and
-explanation/token costs. No numeric ROI fiction or new approval framework.
-For bulk context producers, retain an initial declaration and bounded batch
-checkpoints rather than rewriting the entire growing result after every tiny
-context. A2026-10-08 representative512-context recording control wrote86.8MB
-in514 calls versus5.86MB in34 calls with16-context checkpoints; final hashes
-match. Timing includes byte-count checks, not a production speed guarantee.
-Use the existing atomic writer; document the small unsaved-batch bound, retain
-stop checks, and do not change frozen evidence or add a new logging framework.
-Within existing authorization, an interruptible small batch may continue past
-a development cost checkpoint when it has concrete information value. Record
-actual transitions, cache accesses, scoring, time and bytes separately:129 as
-a conservative upper bound is not129 measured transitions.128/5000/15seconds
-are not universal scientific thresholds;60-90minutes remains the user's active
-research-continuation target, not an experiment-value or machine-safety metric.
-
-Keep permission, stop flags, finite machine-safety protections and formally
-declared comparison conditions. Discuss material new cost, long machine
-occupation or uncontrolled growth before proceeding; no heavy jobs/extra worker
-or access bypass. Preserve all old frozen trials and failures. Additional
-development must explain changed premises and its adaptive/exposed status;
-renaming phases/seeds cannot restore an independent holdout. Report favorable,
-unfavorable and unchanged outcomes alike. Give candidate and baseline the same
-resource condition or show resource/result curves. Pause a route whose possible
-outcomes no longer change decisions; choose useful independent work instead.
-
-Exploratory development measurements may be useful without exact WDL, complete
-all-defense certificates or an unexposed holdout. Label their limitations and
-reserve those stronger requirements for stronger claims. Prioritize a runnable
-candidate with a fixed existing search configuration and common comparison
-entry; reuse existing recording/state helpers. Broader proofs and new adapters
-should address an observed failure or explicit use, not precede all useful tests.
-
-User2026-10-06 explicitly requested review/discussion of dot's efficiency
-diagnosis. Adopt its practical priority: one repeatable candidate/search comparison,
-then failure-driven improvements. Start with a declared tactical development batch;
-hold rules, horizon, ordering/TT and resource conditions equal across evaluators.
-Record concrete tactical errors, selected moves, completeness and cost. Internal
-score differences or no short mate alone do not measure playing improvement.
-Short games/external references may follow through the same entry; depth2 smoke
-tests do not establish amateur strength or generic-rule transfer. Keep exposed
-data exposed and old proofs intact, without requiring new per-case admission
-reports. Ask dot for a critical objection and one useful next action; do not
-automatically turn its possible risks into tasks. Consultation is not approval.
-
-Same-thread followup efficiency-20261006-01 received a complete dot reply at
-14:04:28 JST (sent14:03:47;41seconds), read all6 posts and preserved raw output.
-Adopt: use existing tactical problems/independent reference answers, fixing
-acceptable move sets and their basis before candidate runs; disputed answers are
-separate, never revised to favor a result. Primary development metric is explicit
-tactical error rate with paired candidate-correct/baseline-wrong and reverse
-counts. Equally acceptable different moves imply no gain. Incomplete search is
-a separate execution failure. Record nodes/time as costs. Then run short games
-without a pass-all gate or searching new problems until a difference appears.
-Do not build a new problem generator. Dot's local search numbers were Agent
-reports, not independently reproduced. Raw receipts/reads are ignored locally;
-thread: https://nanomelon.slack.com/archives/C0C6L21UU20/p1791263068910849
-
-The implemented comparison is documented in CHESS_DEVELOPMENT.md. Original
-reference answers may be nonexhaustive: report agreement, not an asserted
-tactical error rate, until a concrete error has supporting evidence. Keep the
-original answer sets fixed; bounded independent child scores/actual games can
-diagnose errors without turning every case into a certificate. One result file
-and the existing common serializer suffice; raw local histories remain preserved.
-
-On Windows, do not hold a large active JSON report open with `Get-Content`
-while its producer uses atomic replacement. An observed long read interrupted
-a game with WinError5; the previous frontier survived. Monitor producer stdout
-and read completed reports, or use a reader explicitly sharing delete access.
-Keep an interrupted sample distinct from a capped unfinished game; preserve the
-old report and continue untouched declared cells, without silently rerunning it.
-
-## Finish and limits
-
-Before a final research reply use `session finish --reason REASON --evidence REF`.
-Normal reasons: safe_checkpoint, no_viable_action; refused before60 minutes,
-without a research stage, or without a valid memo reserve. After60 minutes
-continue effective work toward90 and use a safe checkpoint. no_viable_action
-needs fresh substantive review of two alternatives; supply `--alternative Q`
-twice, matching distinct fresh research checkpoint questions. Old stop notes
-are not proof. Resumed segments need fresh research, not an old stage plus idle time.
 Early reasons: user_stop, user_decision, tool_limit, quota_limit, runtime_limit,
-scientific_complete. Evidence must identify the actual instruction/failure or
-necessary human choice; lack of a model/formula is not user_decision.
-User stop takes precedence and requires no further research or memo preparation.
-After finish copy status/start/reason into compact memo; aborted turns retain
-active state. Publish/docs/consultation completion cannot end a segment.
-Rejected finish or bypass followed by a final reply is a workflow failure.
+scientific_complete. Stop wins immediately. A missing idea/formula or old launch
+failure is not a necessary user decision or runtime exhaustion. Preserve active
+session on interruption; after a normal finish update memo status/start/reason.
 
-The helper is receipts/structural validation, not a model, task runner, Goal,
-scheduler, lease manager or auto-restart loop. It cannot prevent an App/model
-exit, prove checkpoint truth/usefulness or verify effective research duration.
-Elapsed time plus one stage passes only the mechanical duration gate, not the
-acceptance test. No waiting or fabrication to achieve60 minutes.
+For user_decision/runtime_limit the helper requires a JSON evidence file bound
+to active session_id and observed_at, containing failure, diagnosis, impact,
+attempted_fixes, cannot_continue and evidence_reference. user_decision additionally
+needs user_request.sent=true, action, reference and why_agent_cannot_do_it tied to
+an actual delivered user-visible request. runtime_limit needs
+actual_runtime_exhausted=true and limit_kind runtime_shutdown/runtime_expired/
+resource_exhaustion backed by THIS run. Old evidence/resume settings do not prove
+failure. Scientific completion requires actual research, whole_current_objective,
+remaining_work=[], conclusion/evidence_reference, and mainline Science is COMPLETE
+without Science is OPEN. A local milestone is not whole-objective completion.
+Structural validation cannot authenticate truth or guarantee App uptime.
 
-## Acceptance and delivery
+For serious failures report proactively: exact error/evidence, affected work,
+checks/fixes and outcomes, confirmed cause versus uncertainty, specific user steps
+needed and recovery verification. State when no user action is needed. Diagnose
+what existing authority permits, keep independent work moving; no concealed block
+or repeated unchanged launch. A Windows4551 symptom does not by itself identify
+Smart App Control: inspect relevant CodeIntegrity evidence for THIS project's
+path, distinguish policy/permissions/dependencies. Machine-wide security changes
+remain the user's decision. Prior incidents/three segment-duration acceptance
+samples and old cost thresholds are retained at the fixed historical Git above;
+they are not new obstacles or scientific admission criteria.
 
-The first3 NORMAL segments after this rebuild have now been observed and
-reviewed below. session_receipts.json retains at most3 summaries; session.json retains
-the current/last segment. Inspect actual phase chains, elapsed time and evidence
-for effective research. A short hard-blocked turn is recorded separately, not
-a duration pass. A two-minute voluntary exit fails; diagnose the execution
-break instead of relabelling it or writing retroactive justifications.
-Pre-rebuild34-minute and80-second failures remain historical evidence in
-docs/archive/continuation_before_20261004; they are not new-policy successes.
+## Repository and configuration
 
-### Duration-policy acceptance
-
-Observed3/3 normal segments after the rebuild with actual chain review. This is
-an execution observation, not an App uptime guarantee or proof from a validator.
-First segment2c26a558-2026-48ae-bfe2-473ec51eac31 ran from
-2026-10-04T08:24:25.387003+00:00 to2026-10-04T09:45:44.571061+00:00:
-81.320 minutes elapsed, eight research stages, normal safe_checkpoint ending.
-Compaction resumed the same ID/start and later produced fresh research.
-
-Quality review: the actual chain progressed from coupled-capture assumptions,
-typed incidence and joint motifs to public replacement/signed-exposure controls,
-exact leaf-choice/independent-label audit, finite owned-mode construction,
-anonymous-hand arithmetic, ten ordered-effect controls and an H=2 closure
-residual. Original memo tasks were completed and replaced with executable new
-context/residual/certificate tasks. Publication was followed by a new research
-stage, not final reply. No idle wait, extra worker, Goal or enlarged failed
-experiment supplied the duration.81 relevant checks pass; five raw diagnostic
-reports retain matching43 pinned input hashes. Scientific objective remains OPEN.
-
-Evidence: docs/research/LOCAL_MAINLINE.md, FINITE_RESOURCE_LIFETIME_PROPOSAL.md,
-OWNED_TAG_TRACE_RESULTS.md and the ignored local session receipt. Finish passed
-its mechanical gate; this separate review evaluates the chain's content.
-No early-ending claim was needed. Remaining future observations should check
-actual continuation, especially after soft blocks, without repeating this sample
-as additional acceptance or claiming that short exits can no longer happen.
-
-Second segment5c0ad4a7-360d-4306-81b0-28ce02d6fc0b ran
-2026-10-04T09:48:28.084939+00:00 to2026-10-04T10:52:37.541112+00:00:
-64.158 minutes elapsed, nine research stages, normal safe_checkpoint ending.
-Compaction resumed its original ID/start. Original memo's resource-context,
-closure and pure-certificate tasks completed before replacement with new tasks.
-Quality review: resource guards/proposals -> frozen root feasibility and specific
-Pawn-table correction -> actual H2 paths/conditional rewards -> scoped origin/
-custody controls and preserved partial-report failure -> DTM guard arithmetic ->
-Queen rule equivalence -> direct-service tower/precision -> post-publication
-held structural bound.81 relevant checks pass; four raw reports42 pinned inputs
-match. Failed metadata lookup and missing original Chess numerical rows remain
-explicit limitations; no completed Chess rerun was used to hide that failure.
-No idle wait, Goal, worker or enlarged failed experiment supplied this duration.
-End reason is elapsed safe checkpoint, not memo completion, dot reply or Git.
-Evidence: LOCAL_MAINLINE.md, OWNED_H2_PATH_RESULTS.md,
-DIRECT_FINITE_SERVICE_CONSTRUCTION.md and HELD_H2_STRUCTURAL_BOUND.md; ignored
-session receipt records the actual time. Scientific objective remains OPEN;
-the third observation below completes this limited three-segment acceptance.
-
-Third segment f39424da-8a20-4061-a687-7fd2a5b63960 ran
-2026-10-04T11:05:42.313726+00:00 to2026-10-04T12:06:07.428573+00:00:
-60.419 minutes elapsed,12 research stages, safe_checkpoint. Actual chain:
-held stratification/board covariance caveat -> decision-sensitive exact boxes ->
-origin/castling scope and preserved final-write failure -> source metadata and
-full-state request -> bounded actual independent table/parser acquisition ->
-complete legal/terminal probes -> full-selector selected-child comparisons ->
-H2 custody depletion -> independently specified two-victim root preflight ->
-positive native-board bounds -> fixed-budget prospective direct pilot ->
-post-publication tie sensitivity.100 relevant checks pass; eight reports74 local
-pinned input hashes match. External source files remain ignored and verified.
-Dot's full reply was reread/reconciled without routine acknowledgement; actual
-Slack emphasis rendering friction was repaired with regression coverage.
-Original memo tasks completed, then were replaced with executable pilot,
-reserved-use and held/control tasks. No Goal, worker, expanded budget, idle wait
-or unchanged empirical rerun supplied the duration. A finish attempted about
-seven seconds before60 was rejected; work continued with stored-table tie
-analysis before the accepted finish, rather than bypassing the gate. One
-PowerShell inline verification failed quoting and was corrected with a literal
-multiline Python input; the exact counterfactual margins[0,1,0,1] were verified.
-No future App uptime or permanent prevention of short exits is claimed.
-Scientific objective remains OPEN; prospective direct pilot has not executed.
-Evidence: SMALL_CERTIFICATE_FIRST_PROBE_RESULTS.md,
-SMALL_SELECTOR_DIAGNOSTIC_RESULTS.md, TWO_VICTIM_PREFLIGHT_RESULTS.md,
-TWO_VICTIM_FIRST_REWARD_BOUND.md, TWO_VICTIM_DIRECT_INTERVAL_PILOT.md and the
-ignored local segment receipt. The separate review, not elapsed time alone,
-qualifies these three observations; keep observing future normal continuations.
-
-One native90-minute heartbeat, same chat, preserving notification intent.
-User changed cadence on2026-10-07 from four hours to90minutes; the existing
-automation was updated through the native tool, not duplicated.
-The2026-10-08 prompt revision aligns the saved continuation with the two current
-research lines and standing end-of-segment publication authorization. It routes
-detailed policy to the current AGENTS/manual/mainline instead of freezing older
-research tasks in the schedule. Same-chat target, ACTIVE status,90-minute cadence
-and the absent/default notification override were read back unchanged after the
-native update. Prompt equality was checked against the actual update arguments.
-This verifies configuration, not future dispatch, sustained research or dot
-agreement. A concrete revision question was sent to the existing Slack thread;
-no advisor reply had arrived at the initial complete-thread readback. Follow-up
-advice is reconciled under the ordinary workflow, never an approval gate.
-Two later advisor posts were read in full and reconciled on2026-10-08. The
-prompt reviewer agreed with the two-line scope but warned that a duration target
-can induce low-information filler. That warning is adopted; its optional
-single-question early-finish rule is deferred because the user's explicit
-minimum-duration instruction still governs. No timing policy was silently
-changed. The reviewer saw the supplied outline, not the saved prompt/config.
-The separate research reply's joint capture/use criticism is adopted as one
-scoped modeling check, not a new backlog or independently executed validation.
-Daily10:00 Tokyo consultation remains the main window; if no turn is active,
-the first continuation after10:00 handles the current day once. No missed-day
-catchup, extra task or concurrent writer. Historical two/four-hour receipts
-remain evidence of previous configurations, not proof of new dispatch timing.
-Daily10:00 Tokyo substantive dot window, no mandatory external response or
-routine acknowledgement. Standing Slack authorization and complete-reply/
-uncertain-send handling: SLACK_WORKFLOW.md. Standing authorization includes
-Agent judgment on deliberate resend/recontact, reaffirmed2026-10-05 and
-2026-10-08, including repeated content. Local adapter retry availability is
-mechanical capability, never a user-permission denial. Reconcile
-delivery first, record evidence and duplicate risk, keep known-root followups
-in that thread; no per-attempt user approval, automatic loop or ledger reset.
-Explicit stop persists flags;
-Agent pauses heartbeat/cancels dot monitoring, no scheduled automatic resume.
-Transport/local Agent allowance boundaries remain in advisor.json.
-Inspect outgoing diffs, run relevant tests, publish and verify origin/sandbox.
-User2026-10-07 grants continuing publication authorization for Agent-generated
-GenericChess code, results and evidence, including the held backlog. Finish each
-work segment by committing/syncing that work to origin/sandbox so dot can inspect
-the actual code; no repeated push approval. Review the entire outgoing history
-and archive contents for personal information, passwords and other credentials,
-which remain excluded from publication. Project data is authorized regardless
-of origin under the current2026-10-15 grant above. Saving and
-processing their project-related private local originals remains authorized.
-The standing grant ends only if revoked;
-explicit project stop suspends publication. Previous held statuses describe
-their original segment, not a current approval requirement. Keep tests/diff
-review and exact remote SHA verification; report failures instead of claiming
-publication. No force push or automatic untested master promotion.
-Use generic-chess-local.cmd publish --tests <relevant pytest targets>, which
-fetches, checks fast-forward ancestry, runs the chosen tests, pushes and verifies
-the full remote SHA. Direct git push is rejected by the existing repository
-hook; do not bypass it. A full passing regression may precede the focused checks
-required by this publication entry.
-
-### Current repository visibility — PUBLIC, user2026-10-15
-
-WD-nanophotonics/GenericChess must stay PUBLIC because Dot/Chat need direct access
-across repository source and evidence. PUBLIC/private=false was verified through
-both authenticated and unauthenticated GitHub API reads on2026-10-15. This proves
-anonymous repository access, not that Dot has read every file or run the tests.
-Only a NEW explicit user direction can authorize another visibility change;
-old PRIVATE permission is not a pending action. Slack attachments can support a
-specific review, but do not establish whole-repository access or replace fixing
-an observed access problem. Report actual read coverage and execution limits.
-
-Historical PRIVATE experiment — superseded, NOT an operating procedure:
-On2026-10-11 authenticated local access worked but Dot's connector returned404;
-PUBLIC restoration then allowed its connector to read sandbox9146a2e and a matching
-fixed-SHA source blob. A later Agent mistakenly reused the old PRIVATE permission,
-again breaking connected reads; Slack evidence/source attachments supported only
-scoped reviews. The user rejected that regression on2026-10-15 and PUBLIC was
-restored. Preserve these events as failure evidence; do not retry the abandoned
-experiment or infer future work from its old acceptance checklist.
-Publication tests, full-SHA verification, content checks and Agent boundaries
-remain as currently specified in AGENTS.md.
-
-Recovery/isolation evidence remains REBUILD_20261003.md; never import old
-App databases, credentials, Goals or retired queues. Do not touch other projects.
-
-## Repository layers
-
-REPOSITORY_LAYOUT.md owns the purpose map and isolated historical recovery.
-Default pytest uses product/development/workflow/specification directories; old
-experiment receipts and retired policies are evidence, not active requirements.
-
-## Concurrent local work — user2026-10-11
-
-Multiple projects and Agents running on this computer are normal. Do not ask
-other projects or DEV_AUX to pause, obtain source-only timing windows, or treat
-ordinary concurrent computation as a collaboration violation. The boundary is
-unauthorized writes to another Agent's files or direct alteration of its running
-computation/state. Keep separate checkouts and sole sandbox publication.
-For timing evidence, report observed concurrent load briefly when relevant;
-use paired/counterbalanced comparisons and actual work/backend counters. Do not
-claim machine exclusivity or noise-free speedups. Ordinary load variation is an
-interpretation limit, not a stop/approval gate, a reason for automatic reruns or
-extra process monitoring. Preserve frozen raw results and earlier declarations;
-this user instruction supersedes the earlier resource-window practice without
-retrospectively converting old timing evidence into a clean benchmark.
-
-## Diagnose execution blocks —2026-10-12 correction
-
-Windows4551 is an execution-policy symptom, not a sufficient root-cause report.
-For an observed binary/import failure, inspect the exact error and relevant
-CodeIntegrity event for this project's path; distinguish Smart App Control,
-other policy, permissions and missing dependencies. Report the confirmed cause,
-what remains unknown and the concrete remedy promptly. Do not repeat an
-unchanged blocked launch or spend a night recording the same failure. Continue
-useful independent work while resolving the actual cause; do not hide the block.
-If user action is necessary, promptly state the exact error, checks already
-performed and the specific next action needed. Fix authorized causes directly.
-For a serious problem or necessary user intervention, report proactively:
-exact error and evidence; affected work/results and current status; checks and
-attempted fixes with outcomes; confirmed cause versus unresolved questions;
-the concrete user steps needed and how recovery will be verified. Say explicitly
-when no user action is needed and continue the authorized repair. Report before
-repeated attempts or another blocked continuation, not only when asked.
-Absent this report, a hidden obstacle cannot excuse lack of progress. Do not
-conceal failure, invent completion or repeat peripheral preparation. Silence
-does not prove the obstacle is solvable or authorize crossing a boundary.
-A runtime_limit/block label is not a default excuse for repeated short exits
-or peripheral preparation; no waiting or microchecks to manufacture duration.
-A changed condition warrants one bounded startup/protocol qualification before
-resuming the intended experiment. Never claim recovery from a setting alone.
-The existing session finish entry now requires a JSON file for user_decision
-and runtime_limit. Bind session_id and observed_at to the active segment; state
-failure, diagnosis, impact, attempted_fixes, cannot_continue and evidence_reference.
-For user_decision, user_request contains sent=true, action, reference and
-why_agent_cannot_do_it, pointing to the actual delivered user-visible request.
-For runtime_limit, actual_runtime_exhausted=true and limit_kind is runtime_shutdown,
-runtime_expired or resource_exhaustion, backed by this run's real failure.
-Runtime evidence older than the current resume is rejected; the original segment
-clock is retained. All user_paused/stopped flags in rollout/advisor/slack stop
-start/checkpoint; no flag is cleared. An old4551 or vague waiting note is neither. These structural checks
-cannot prove report truth or replace Agent judgment. Actual user_stop and other
-real hard-limit paths remain available; no waiting to satisfy duration.
-Machine-wide security changes remain the user's decision, not an automatic
-Agent action; provide the actionable diagnosis instead of silently giving up.
-
-The observed2026-10-12 case was Smart App Control. Project CodeIntegrity3077
-records corroborated the earlier4551 failures; current registry state0 is Off.
-After that change, PRIMARY's preserved Stockfish passed uci/isready, and DEV_AUX
-task120 reports20 actual Fairy search probes. Earlier failures stay historical.
-Primary had recorded AppControl4551 without making the SAC diagnosis/remedy
-clear: that was inadequate handling and reporting, not a scientific limitation.
-Microsoft documents these state values and enforcement events at
-https://learn.microsoft.com/en-us/windows/apps/develop/smart-app-control/test-your-app-with-smart-app-control .
-
-Scientific_complete also requires actual research and a JSON record bound to
-this session: scope=whole_current_objective, remaining_work=[], conclusion and
-evidence_reference. Current LOCAL_MAINLINE must explicitly say Science is
-COMPLETE, without Science is OPEN. A single result/local milestone is insufficient.
-This preserves the user's genuine evidence-supported early-completion exception;
-it does not impose idle waiting on completed science or on real stop/forced limits.
-The check cannot authenticate evidence truth; Agent review still owns that duty.
+REPOSITORY_LAYOUT.md owns active/history layers; default pytest covers
+product/development/workflow/specification. Old receipt tests are history.
+Use existing project pyproject.toml/build script and normal supported dependencies.
+Project permission text is not a global enforcement setting. No new TOML policy,
+automation, external service, ownership framework or scheduler is needed here.
+Recovery evidence remains REBUILD_20261003.md; do not import old App databases,
+credentials, Goals or retired queues. Current hardware load is normal concurrency,
+not permission to alter other projects or demand exclusive timing windows.

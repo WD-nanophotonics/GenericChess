@@ -20,7 +20,7 @@ int gc_semantic_position_pack(GCSemanticPosition *pos,
                               const GCSemanticRules *rules,
                               const GCSemanticBoardPayload *payload) {
     if (pos == NULL || rules == NULL || payload == NULL ||
-        payload->side_to_move > 1 || payload->ply > rules->max_ply) {
+        payload->side_to_move > 1 || payload->ply > GC_SEM_MAX_PLY) {
         return 0;
     }
     GCSemAuxValue provided[GC_SEM_MAX_AUX_SLOTS][3];

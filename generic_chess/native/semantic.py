@@ -292,6 +292,8 @@ def history_occurrences(position, lo: int, hi: int, *, native_rules=None) -> int
 
 def make_checked(native_rules, position, action: int):
     """Apply an exact semantic candidate in Native and return its child capsule."""
+    if native_rules.automatic_adjudications:
+        native_rules.require_terminal_policy_support()
     return _backend(native_rules).semantic_make_checked(native_rules.capsule, position, int(action))
 
 
