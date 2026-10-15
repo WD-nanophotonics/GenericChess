@@ -1,0 +1,72 @@
+{
+  "status": "KNOWN_DIRECT_CALLER_KEY_PATHS_UNCHANGED",
+  "records": [
+    {
+      "source": "audit_f23v_minimal_analytic_evaluator",
+      "group": "SHOGI_LIKE",
+      "features": {
+        "declarations": false,
+        "consecutive_action_adjudications": false,
+        "automatic_adjudications": false,
+        "repeated_cycle_target_conditions": false
+      },
+      "repetition_policy": "draw"
+    },
+    {
+      "source": "audit_f23v_minimal_analytic_evaluator",
+      "group": "WESTERN_CHESS_LIKE",
+      "features": {
+        "declarations": false,
+        "consecutive_action_adjudications": false,
+        "automatic_adjudications": false,
+        "repeated_cycle_target_conditions": false
+      },
+      "repetition_policy": "draw"
+    },
+    {
+      "source": "audit_f23v_minimal_analytic_evaluator",
+      "group": "MIXED_MECHANIC",
+      "features": {
+        "declarations": false,
+        "consecutive_action_adjudications": false,
+        "automatic_adjudications": false,
+        "repeated_cycle_target_conditions": false
+      },
+      "repetition_policy": "draw"
+    },
+    {
+      "source": "audit_f23v_minimal_analytic_evaluator_r1",
+      "group": "SHOGI_LIKE",
+      "features": {
+        "declarations": false,
+        "consecutive_action_adjudications": false,
+        "automatic_adjudications": false,
+        "repeated_cycle_target_conditions": false
+      },
+      "repetition_policy": "draw"
+    },
+    {
+      "source": "audit_f23v_minimal_analytic_evaluator_r1",
+      "group": "WESTERN_CHESS_LIKE",
+      "features": {
+        "declarations": false,
+        "consecutive_action_adjudications": false,
+        "automatic_adjudications": false,
+        "repeated_cycle_target_conditions": false
+      },
+      "repetition_policy": "draw"
+    },
+    {
+      "source": "audit_f23v_minimal_analytic_evaluator_r1",
+      "group": "MIXED_MECHANIC",
+      "features": {
+        "declarations": false,
+        "consecutive_action_adjudications": false,
+        "automatic_adjudications": false,
+        "repeated_cycle_target_conditions": false
+      },
+      "repetition_policy": "draw"
+    }
+  ],
+  "scope": "Compilation only; no labels/humanholdouts read, no historical reruns or primary source checked"
+}

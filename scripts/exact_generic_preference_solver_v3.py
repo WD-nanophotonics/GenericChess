@@ -17,7 +17,7 @@ PROVED_TRUE = "PROVED_TRUE"
 PROVED_FALSE = "PROVED_FALSE"
 UNRESOLVED = "UNRESOLVED"
 THRESHOLDS = (0, 1)
-SOLVER_VERSION = "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1-DECLARATION-GUARD"
+SOLVER_VERSION = "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1-DECLARATION-HISTORY-GUARD"
 
 
 @dataclass(frozen=True)
@@ -53,11 +53,18 @@ def _combine_threshold_children(maximizing: bool, children: list[ThresholdResult
     return ThresholdResult(PROVED_FALSE if maximizing else PROVED_TRUE)
 
 
+def _history_sensitive(runtime, policy):
+    return policy == "continuous_check_loss" or any(
+        getattr(runtime.compiled, name, ()) for name in (
+            "consecutive_action_adjudications", "automatic_adjudications",
+            "repeated_cycle_target_conditions"))
+
+
 def _runtime_key(runtime, *, policy: str):
     key = runtime.search_key()
     repetition = tuple(sorted(runtime.repetition_counts.items(), key=lambda item: repr(item[0])))
-    if policy == "continuous_check_loss":
-        history = tuple((record.identity, record.actor, record.gave_check) for record in runtime.history)
+    if _history_sensitive(runtime, policy):
+        history = tuple((record.identity, record.actor, record.action_signature, record.gave_check) for record in runtime.history)
         return (key.ruleset_fingerprint, key.runtime_hash, key.position_key, repetition, key.ply_count, history)
     return (key.ruleset_fingerprint, key.runtime_hash, key.position_key, repetition, key.ply_count)
 
@@ -181,7 +188,7 @@ def solve_root_threshold_v3(compiled, state, *, max_nodes: int, max_depth: int |
 
     initial_terminal = _status_for_terminal(runtime, root_actor, 0)
     if initial_terminal is not None:
-        return ThresholdSolveResult(False, None, (), (), {"history_key_mode": "FULL_HISTORY_REQUIRED" if policy == "continuous_check_loss" else "REPETITION_COUNTS_SUFFICIENT"}, "ROOT_ALREADY_TERMINAL")
+        return ThresholdSolveResult(False, None, (), (), {"history_key_mode": "FULL_HISTORY_REQUIRED" if _history_sensitive(runtime, policy) else "REPETITION_COUNTS_SUFFICIENT"}, "ROOT_ALREADY_TERMINAL")
     root_actions = runtime.legal_actions()
     stats["legal_actions_enumerated"] += len(root_actions)
     stats["root_actions"] = len(root_actions)
@@ -216,7 +223,7 @@ def solve_root_threshold_v3(compiled, state, *, max_nodes: int, max_depth: int |
     total = profile["total_seconds"] or 1.0
     profile_proportions = {key: value / total for key, value in profile.items() if key != "total_seconds"}
     stats_dict = dict(stats)
-    stats_dict.update({"tt_entries": len(table) if use_tt else 0, "threshold_tt_enabled": use_tt, "history_key_mode": "FULL_HISTORY_REQUIRED" if policy == "continuous_check_loss" else "REPETITION_COUNTS_SUFFICIENT", "authoritative_horizon": max_depth is None, "effective_max_depth": horizon, "runtime_pushes": runtime.pushes, "runtime_pops": runtime.pops, "peak_depth": runtime.peak_depth, "unresolved": dict(unresolved), "terminal_statuses": dict(sorted(terminal_statuses.items()))})
+    stats_dict.update({"tt_entries": len(table) if use_tt else 0, "threshold_tt_enabled": use_tt, "history_key_mode": "FULL_HISTORY_REQUIRED" if _history_sensitive(runtime, policy) else "REPETITION_COUNTS_SUFFICIENT", "authoritative_horizon": max_depth is None, "effective_max_depth": horizon, "runtime_pushes": runtime.pushes, "runtime_pops": runtime.pops, "peak_depth": runtime.peak_depth, "unresolved": dict(unresolved), "terminal_statuses": dict(sorted(terminal_statuses.items()))})
     stats_dict.update({"solver_version": SOLVER_VERSION, "final_runtime_depth": runtime.depth, "profile_seconds": dict(profile), "profile_proportions": profile_proportions})
     if any(row["value"] is None for row in values):
         return ThresholdSolveResult(False, None, (), tuple(values), stats_dict, next(iter(unresolved), "REFERENCE_SOLVE_UNRESOLVED:unknown"))
