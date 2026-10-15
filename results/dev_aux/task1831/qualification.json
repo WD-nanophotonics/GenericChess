@@ -1,0 +1,1739 @@
+{
+  "status": "PASS_EXPOSED_FUNCTIONAL_CONTROLS",
+  "searches": 192,
+  "perft": 32,
+  "pairs": 96,
+  "mismatches": [],
+  "rows": [
+    {
+      "arm": "ORIGINAL",
+      "family": 0,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 65,
+      "action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=2, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 0,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=2, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 0,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=2, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 0,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=2, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 0,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=2, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 0,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4102,
+      "action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=2, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 0,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 0,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4103,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 0,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 68,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 0,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 0,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 0,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 1,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 1,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4104,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 1,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 69,
+      "action": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 1,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4098,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 1,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 72,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 1,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 1,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=0, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 1,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 1,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=0, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 1,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4098,
+      "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 1,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 68,
+      "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 1,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 2,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 2,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 2,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 2,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4098,
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 2,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 67,
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 2,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 2,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 2,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4098,
+      "action": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 2,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 2,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 2,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 2,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 3,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 3,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 3,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 3,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 3,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 3,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 3,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 3,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 3,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 3,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 3,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 3,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 4,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=0, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 4,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=0, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 4,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 69,
+      "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=0, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 4,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4102,
+      "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=0, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 4,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 4,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 4,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 68,
+      "action": "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=2, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 4,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=2, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 4,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 65,
+      "action": "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=2, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 4,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4101,
+      "action": "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=2, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 4,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 65,
+      "action": "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=2, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 4,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4101,
+      "action": "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=2, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 5,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 5,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 5,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 65,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 5,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4098,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 5,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 5,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4098,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 5,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 65,
+      "action": "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 5,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 5,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 5,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 5,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 67,
+      "action": "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 5,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4115,
+      "action": "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 6,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 6,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 6,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 68,
+      "action": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 6,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4102,
+      "action": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 6,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 68,
+      "action": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 6,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 6,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 6,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4098,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 6,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 67,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 6,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4101,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 6,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 6,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 7,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 7,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 2231,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 7,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 7,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 2219,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 7,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 7,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 2223,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 7,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 67,
+      "action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 7,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 7,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 7,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4106,
+      "action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 7,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "ORIGINAL",
+      "family": 7,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4098,
+      "action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 0,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 65,
+      "action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=2, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 0,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=2, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 0,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=2, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 0,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=2, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 0,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=2, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 0,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4102,
+      "action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=2, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 0,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 0,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4103,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 0,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 68,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 0,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 0,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 0,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 1,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 1,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4104,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 1,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 69,
+      "action": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=2, rank=2), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 1,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4098,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 1,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 72,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 1,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 1,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=0, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 1,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 1,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=0, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 1,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4098,
+      "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 1,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 68,
+      "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 1,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=2, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 2,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 2,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 2,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 2,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4098,
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 2,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 67,
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 2,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 2,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 2,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4098,
+      "action": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 2,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 2,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 2,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 2,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=2, rank=2), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 3,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 3,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 3,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 3,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 3,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 3,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 3,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 3,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 3,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 3,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=2, rank=1), to_square=Square(file=0, rank=2), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 3,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 3,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=2, rank=0), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 4,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=0, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 4,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=0, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 4,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 69,
+      "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=0, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 4,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4102,
+      "action": "BoardMove(from_square=Square(file=3, rank=0), to_square=Square(file=0, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 4,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 4,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=3, rank=2), to_square=Square(file=1, rank=3), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 4,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 68,
+      "action": "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=2, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 4,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=0, rank=0), to_square=Square(file=2, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 4,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 65,
+      "action": "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=2, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 4,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4101,
+      "action": "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=2, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 4,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 65,
+      "action": "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=2, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 4,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4101,
+      "action": "BoardMove(from_square=Square(file=1, rank=2), to_square=Square(file=2, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 5,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 5,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 5,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 65,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 5,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4098,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 5,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 5,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4098,
+      "action": "BoardMove(from_square=Square(file=1, rank=1), to_square=Square(file=1, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 5,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 65,
+      "action": "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 5,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 5,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 5,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 5,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 67,
+      "action": "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 5,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4115,
+      "action": "BoardMove(from_square=Square(file=3, rank=3), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 6,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 6,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4097,
+      "action": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 6,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 68,
+      "action": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 6,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4102,
+      "action": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 6,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 68,
+      "action": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 6,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=0, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 6,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 6,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4098,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 6,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 67,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 6,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4101,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 6,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 6,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4096,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 7,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 7,
+      "prefix": false,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 2231,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 7,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 7,
+      "prefix": false,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 2219,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 7,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 7,
+      "prefix": false,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 2223,
+      "action": "BoardMove(from_square=Square(file=3, rank=1), to_square=Square(file=3, rank=0), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 7,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 64,
+      "actual_nodes": 67,
+      "action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 7,
+      "prefix": true,
+      "R": 360,
+      "requested_nodes": 4096,
+      "actual_nodes": 4099,
+      "action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 7,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 64,
+      "actual_nodes": 64,
+      "action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 7,
+      "prefix": true,
+      "R": 720,
+      "requested_nodes": 4096,
+      "actual_nodes": 4106,
+      "action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 7,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 64,
+      "actual_nodes": 66,
+      "action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    },
+    {
+      "arm": "REBUILT",
+      "family": 7,
+      "prefix": true,
+      "R": 1440,
+      "requested_nodes": 4096,
+      "actual_nodes": 4098,
+      "action": "BoardMove(from_square=Square(file=2, rank=3), to_square=Square(file=1, rank=1), promotion_target_id=None)"
+    }
+  ],
+  "seconds": 4.437641199998325,
+  "scope": "Same action and actual reported nodes on all96cold fixed-node pairs ifPASS; metadata differs. All oldgame results remain pinned to ORIGINAL, no proof of universal equivalence or fresh-machine acceptance."
+}

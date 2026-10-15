@@ -192,3 +192,52 @@ def test_real_no_progress_terminal_is_not_unknown_or_material_win():
     assert d.choice is not None
     out=commit_session_decision(s,d,[p]);assert out.status is SessionStatus.NO_PROGRESS_DRAW and out.winner is None
     stopped=p.choose(s,seconds=3.);assert stopped.source=='TERMINAL' and stopped.choice is None
+
+@pytest.mark.parametrize('kind',['declaration','action'])
+def test_cancel_during_real_atomic_commit_returns_actual_result_and_advances_observers(monkeypatch,kind):
+    if kind=='declaration':s=session(claim(0,'WIN'))
+    else:s=session(k=1,b=3,r=8)
+    p=player(s);q=player(s);d=p.choose(s,max_nodes=4096,seconds=3.)
+    assert d.source=='PROOF';q.cursor=SessionStrategyCursor(s,p.cursor.certificate,seconds=3.)
+    flag=[False];method='declare' if kind=='declaration' else 'submit';original=getattr(GameSession,method);actual=[0]
+    def crossing(current,*args):
+        out=original(current,*args)
+        if current is s:actual[0]+=1;flag[0]=True
+        return out
+    monkeypatch.setattr(GameSession,method,crossing)
+    before=s.to_record();out=commit_session_decision(s,d,[p,q],cancel=lambda:flag[0])
+    assert flag[0] and actual[0]==1 and out.winner==0
+    assert p.cursor.node.rank==q.cursor.node.rank==0
+    assert len(s.to_record().actions)==len(before.actions)+(kind=='action')
+    if kind=='declaration':assert s.to_record().declaration is not None
+    with pytest.raises(ValueError):commit_session_decision(s,d,[p,q])
+    assert actual[0]==1 and GameSession.replay(s.compiled,s.to_record()).result==out
+
+
+def test_horizon_disables_new_proof_but_keeps_verified_strategy(monkeypatch):
+    import scripts.generic_session_proof_player as m
+    s=session(claim(0,'WIN'));p=player(s)
+    first=p.choose(s,seconds=3.);assert first.source=='PROOF'
+    def forbidden(*args,**kw):raise AssertionError('new proof after closed horizon')
+    p.proof_search=forbidden
+    continuation=p.choose(s,seconds=3.,allow_new_proof=False)
+    assert continuation.source=='PROOF_CONTINUATION' and continuation.choice==first.choice
+    assert continuation.proof_nodes==continuation.verification_nodes==0
+    fresh=player(s);fresh.proof_search=forbidden
+    fallback=fresh.choose(s,max_nodes=64,seconds=3.,allow_new_proof=False)
+    assert fallback.choice.kind=='ACTION' and fallback.proof_reason=='new_proof_disabled'
+    assert fallback.proof_nodes==fallback.verification_nodes==0
+
+@pytest.mark.parametrize('proof_depth',[0,1])
+def test_phase_cost_receipts_cover_actual_calls_without_changing_node_allocation(proof_depth):
+    s=session(claim(0,'WIN')) if proof_depth else session()
+    p=player(s,proof_depth=proof_depth,max_depth=1)
+    d=p.choose(s,max_nodes=4096,seconds=3.)
+    parts=[d.admission_seconds,d.proof_seconds,d.verification_seconds,d.normal_seconds]
+    assert all(x>=0 for x in parts) and sum(parts)<=d.seconds+.000001
+    assert d.admission_seconds>0 and d.proof_seconds>0
+    if proof_depth:
+        assert d.source=='PROOF' and d.verification_seconds>0 and d.normal_seconds==0
+    else:
+        assert d.verification_seconds==0 and d.normal_seconds==d.normal_receipt.seconds>0
+    assert d.nodes==d.proof_nodes+d.verification_nodes+d.search_nodes<=4096

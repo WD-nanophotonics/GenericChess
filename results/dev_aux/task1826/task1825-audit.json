@@ -1,0 +1,26 @@
+{
+  "status": "PASS_ALL_PHYSICAL_SLOTS",
+  "folder": "results\\dev_aux\\task1825",
+  "games": 384,
+  "moves": 4748,
+  "actual_native": 4421,
+  "proof_games": 104,
+  "proof_steps": 104,
+  "all_adopted_proof_games_physically_won": true,
+  "tail_games": 16,
+  "tail_moves": 82,
+  "terminal": {
+    "ongoing": 191,
+    "checkmate": 173,
+    "repetition": 14,
+    "stalemate": 6
+  },
+  "exit_causes": {
+    "reported_node_overrun": 2666,
+    "external_search_return": 1755,
+    "certificate": 327
+  },
+  "node_overruns": 2666,
+  "selection_scope": "fullTRAIN-only deterministic selector; current rows not altered",
+  "source": "No proving/search/Native calls; public record replay+literal actor transition+exact state/result/rank/receipt checks"
+}

@@ -1,0 +1,3145 @@
+{
+  "status": "FROZEN_BEFORE_GAMES",
+  "question": "Can the new actual-session chooser safely execute bounded price/proof controls, and is finite-event price signal present under a fixed opponent? Not mature-engine replication or human-price recovery.",
+  "roots": "results\\dev_aux\\task1822\\qualification.json",
+  "roots_sha": "a9b00fdfcbf7d008f1d5f7245fefc50f1d5fd733be534e7d02af677202559b89",
+  "rules": "results\\dev_aux\\task1822\\rules.json",
+  "rules_sha": "75976d1ec63d0b324485ab28af6469c0eb0c4ecbb66f179d2383db1fb6d1e410",
+  "native_plan": {
+    "binary": ".local_agent/leaf-rnbp-46/fairy-leaf-rnb.exe",
+    "variant_ini": "results\\dev_aux\\task1824\\variant.ini",
+    "variant_names": {
+      "(360, 720, 720, 720)": "aux55_4_360_720_720_720",
+      "(720, 720, 720, 720)": "aux55_4_720_720_720_720",
+      "(1440, 720, 720, 720)": "aux55_4_1440_720_720_720"
+    },
+    "fingerprint": "a533d4d83e91e46f87f6461319de157499357117cfe57724129378c100e0acfd",
+    "files": {
+      "scripts/generic_session_native_material.py": "5b511a963e51c163d34417ee4c18e7ed84be71fcd19fd1fe6c7a6ba0a0f02054",
+      "results/dev_aux/task109/adapter.py": "592251a1f25d773540f51645b8b4d8e11e8d1679f599c367a8108dcff6a32f37",
+      ".local_agent/leaf-rnbp-46/fairy-leaf-rnb.exe": "0263e8d6e9677b82e179c0d1a61ea5080df3275aba3464569e040eb222a20fe9",
+      "results\\dev_aux\\task1824\\variant.ini": "ad6a71b43ab0f3efb50057b05e6f5c03219a84bbcba9404de5f6e1a7031b4a52",
+      "results/dev_aux/task1822/rules.json": "75976d1ec63d0b324485ab28af6469c0eb0c4ecbb66f179d2383db1fb6d1e410"
+    },
+    "seconds_cap": 300,
+    "max_go": 64,
+    "declaration": "32allroot public/native one-ply frontiers plus every child of first2roots, before gameplay. Then2fixedrole actualSession pilots withR720, fixedopponent64 andcandidate4096, H16+existingstrategy tail64. PriceACK everyprofile; full rootFEN/actionhistory sent. No WDLprice conclusions, 0traininggames.",
+    "native_scope": "Exact new1822KRNrules fingerprint only; modified material-only Fairy, full public authority; rollout nfold/nmove disabled, not unmodified Stockfish or general declarations."
+  },
+  "qualification": "results/dev_aux/task1824/qualification.json",
+  "qualification_sha": "3f027f9b06b98a5e65acf200bf18fe96b7c995abf9efee99adee61f019f8807d",
+  "source_sha": {
+    "scripts/generic_session_proof_player.py": "2ca9cfc47bf537bf0432418f860ba8bbe6fa6bc788a4c1521b79d44a0082b130",
+    "scripts/generic_session_win_proof.py": "87d883aaa39505d6f024d5b30b782714003116efa4f57436b0129a7fbfa2b5c3",
+    "scripts/generic_session_win_proof_pn.py": "5d45ca15281394d5cb7083a8e7da0076b2438024fddf5945d62389b8480d8eda",
+    "scripts/generic_proof_player.py": "cc8c22b5db6a5124e7f7e01b96125765b45622d0577eef84d725c081d0b2043d",
+    "scripts/generic_win_proof.py": "1c79db4805df9dbba62a49b8d91337f0d46f9fc1cfaa1d8247298c507c4526c3",
+    "scripts/generic_session_native_material.py": "5b511a963e51c163d34417ee4c18e7ed84be71fcd19fd1fe6c7a6ba0a0f02054",
+    "results/dev_aux/task109/adapter.py": "592251a1f25d773540f51645b8b4d8e11e8d1679f599c367a8108dcff6a32f37",
+    "generic_chess/session/session.py": "1070e555619d244b357a0b3c72c2280b4c0276311ccab02280eae4e2e4c42c4b",
+    "generic_chess/core/search_runtime.py": "142a79bea4f663d42baa2ceb0d3d50b0fdd933aae17434c6bf8c4000622c56eb",
+    "results\\dev_aux\\task1825\\study.py": "c5ba765eadfbeb799e664ad59b6c55ad8743d5e82f641fb30bfb11493f2fb163"
+  },
+  "slots": [
+    {
+      "slot": 0,
+      "family": 0,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 1,
+      "family": 0,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 2,
+      "family": 0,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 3,
+      "family": 0,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 4,
+      "family": 0,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 5,
+      "family": 0,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 6,
+      "family": 0,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 7,
+      "family": 0,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 8,
+      "family": 0,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 9,
+      "family": 0,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 10,
+      "family": 0,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 11,
+      "family": 0,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 12,
+      "family": 1,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 13,
+      "family": 1,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 14,
+      "family": 1,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 15,
+      "family": 1,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 16,
+      "family": 1,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 17,
+      "family": 1,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 18,
+      "family": 1,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 19,
+      "family": 1,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 20,
+      "family": 1,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 21,
+      "family": 1,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 22,
+      "family": 1,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 23,
+      "family": 1,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 24,
+      "family": 2,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 25,
+      "family": 2,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 26,
+      "family": 2,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 27,
+      "family": 2,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 28,
+      "family": 2,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 29,
+      "family": 2,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 30,
+      "family": 2,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 31,
+      "family": 2,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 32,
+      "family": 2,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 33,
+      "family": 2,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 34,
+      "family": 2,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 35,
+      "family": 2,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 36,
+      "family": 3,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 37,
+      "family": 3,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 38,
+      "family": 3,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 39,
+      "family": 3,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 40,
+      "family": 3,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 41,
+      "family": 3,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 42,
+      "family": 3,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 43,
+      "family": 3,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 44,
+      "family": 3,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 45,
+      "family": 3,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 46,
+      "family": 3,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 47,
+      "family": 3,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 48,
+      "family": 4,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 49,
+      "family": 4,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 50,
+      "family": 4,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 51,
+      "family": 4,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 52,
+      "family": 4,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 53,
+      "family": 4,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 54,
+      "family": 4,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 55,
+      "family": 4,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 56,
+      "family": 4,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 57,
+      "family": 4,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 58,
+      "family": 4,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 59,
+      "family": 4,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 60,
+      "family": 5,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 61,
+      "family": 5,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 62,
+      "family": 5,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 63,
+      "family": 5,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 64,
+      "family": 5,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 65,
+      "family": 5,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 66,
+      "family": 5,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 67,
+      "family": 5,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 68,
+      "family": 5,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 69,
+      "family": 5,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 70,
+      "family": 5,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 71,
+      "family": 5,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 72,
+      "family": 6,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 73,
+      "family": 6,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 74,
+      "family": 6,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 75,
+      "family": 6,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 76,
+      "family": 6,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 77,
+      "family": 6,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 78,
+      "family": 6,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 79,
+      "family": 6,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 80,
+      "family": 6,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 81,
+      "family": 6,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 82,
+      "family": 6,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 83,
+      "family": 6,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 84,
+      "family": 7,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 85,
+      "family": 7,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 86,
+      "family": 7,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 87,
+      "family": 7,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 88,
+      "family": 7,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 89,
+      "family": 7,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 90,
+      "family": 7,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 91,
+      "family": 7,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 92,
+      "family": 7,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 93,
+      "family": 7,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 94,
+      "family": 7,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 95,
+      "family": 7,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 96,
+      "family": 8,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 97,
+      "family": 8,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 98,
+      "family": 8,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 99,
+      "family": 8,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 100,
+      "family": 8,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 101,
+      "family": 8,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 102,
+      "family": 8,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 103,
+      "family": 8,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 104,
+      "family": 8,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 105,
+      "family": 8,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 106,
+      "family": 8,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 107,
+      "family": 8,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 108,
+      "family": 9,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 109,
+      "family": 9,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 110,
+      "family": 9,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 111,
+      "family": 9,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 112,
+      "family": 9,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 113,
+      "family": 9,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 114,
+      "family": 9,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 115,
+      "family": 9,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 116,
+      "family": 9,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 117,
+      "family": 9,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 118,
+      "family": 9,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 119,
+      "family": 9,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 120,
+      "family": 10,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 121,
+      "family": 10,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 122,
+      "family": 10,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 123,
+      "family": 10,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 124,
+      "family": 10,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 125,
+      "family": 10,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 126,
+      "family": 10,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 127,
+      "family": 10,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 128,
+      "family": 10,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 129,
+      "family": 10,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 130,
+      "family": 10,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 131,
+      "family": 10,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 132,
+      "family": 11,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 133,
+      "family": 11,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 134,
+      "family": 11,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 135,
+      "family": 11,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 136,
+      "family": 11,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 137,
+      "family": 11,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 138,
+      "family": 11,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 139,
+      "family": 11,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 140,
+      "family": 11,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 141,
+      "family": 11,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 142,
+      "family": 11,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 143,
+      "family": 11,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 144,
+      "family": 12,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 145,
+      "family": 12,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 146,
+      "family": 12,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 147,
+      "family": 12,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 148,
+      "family": 12,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 149,
+      "family": 12,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 150,
+      "family": 12,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 151,
+      "family": 12,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 152,
+      "family": 12,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 153,
+      "family": 12,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 154,
+      "family": 12,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 155,
+      "family": 12,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 156,
+      "family": 13,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 157,
+      "family": 13,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 158,
+      "family": 13,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 159,
+      "family": 13,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 160,
+      "family": 13,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 161,
+      "family": 13,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 162,
+      "family": 13,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 163,
+      "family": 13,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 164,
+      "family": 13,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 165,
+      "family": 13,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 166,
+      "family": 13,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 167,
+      "family": 13,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 168,
+      "family": 14,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 169,
+      "family": 14,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 170,
+      "family": 14,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 171,
+      "family": 14,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 172,
+      "family": 14,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 173,
+      "family": 14,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 174,
+      "family": 14,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 175,
+      "family": 14,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 176,
+      "family": 14,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 177,
+      "family": 14,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 178,
+      "family": 14,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 179,
+      "family": 14,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 180,
+      "family": 15,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 181,
+      "family": 15,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 182,
+      "family": 15,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 183,
+      "family": 15,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 184,
+      "family": 15,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 185,
+      "family": 15,
+      "phase": "TRAIN",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 186,
+      "family": 15,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 187,
+      "family": 15,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 188,
+      "family": 15,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 189,
+      "family": 15,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 190,
+      "family": 15,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 191,
+      "family": 15,
+      "phase": "TRAIN",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 192,
+      "family": 16,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 193,
+      "family": 16,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 194,
+      "family": 16,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 195,
+      "family": 16,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 196,
+      "family": 16,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 197,
+      "family": 16,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 198,
+      "family": 16,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 199,
+      "family": 16,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 200,
+      "family": 16,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 201,
+      "family": 16,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 202,
+      "family": 16,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 203,
+      "family": 16,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 204,
+      "family": 17,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 205,
+      "family": 17,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 206,
+      "family": 17,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 207,
+      "family": 17,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 208,
+      "family": 17,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 209,
+      "family": 17,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 210,
+      "family": 17,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 211,
+      "family": 17,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 212,
+      "family": 17,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 213,
+      "family": 17,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 214,
+      "family": 17,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 215,
+      "family": 17,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 216,
+      "family": 18,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 217,
+      "family": 18,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 218,
+      "family": 18,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 219,
+      "family": 18,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 220,
+      "family": 18,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 221,
+      "family": 18,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 222,
+      "family": 18,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 223,
+      "family": 18,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 224,
+      "family": 18,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 225,
+      "family": 18,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 226,
+      "family": 18,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 227,
+      "family": 18,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 228,
+      "family": 19,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 229,
+      "family": 19,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 230,
+      "family": 19,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 231,
+      "family": 19,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 232,
+      "family": 19,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 233,
+      "family": 19,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 234,
+      "family": 19,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 235,
+      "family": 19,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 236,
+      "family": 19,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 237,
+      "family": 19,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 238,
+      "family": 19,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 239,
+      "family": 19,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 240,
+      "family": 20,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 241,
+      "family": 20,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 242,
+      "family": 20,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 243,
+      "family": 20,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 244,
+      "family": 20,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 245,
+      "family": 20,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 246,
+      "family": 20,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 247,
+      "family": 20,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 248,
+      "family": 20,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 249,
+      "family": 20,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 250,
+      "family": 20,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 251,
+      "family": 20,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 252,
+      "family": 21,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 253,
+      "family": 21,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 254,
+      "family": 21,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 255,
+      "family": 21,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 256,
+      "family": 21,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 257,
+      "family": 21,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 258,
+      "family": 21,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 259,
+      "family": 21,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 260,
+      "family": 21,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 261,
+      "family": 21,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 262,
+      "family": 21,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 263,
+      "family": 21,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 264,
+      "family": 22,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 265,
+      "family": 22,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 266,
+      "family": 22,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 267,
+      "family": 22,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 268,
+      "family": 22,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 269,
+      "family": 22,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 270,
+      "family": 22,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 271,
+      "family": 22,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 272,
+      "family": 22,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 273,
+      "family": 22,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 274,
+      "family": 22,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 275,
+      "family": 22,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 276,
+      "family": 23,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 277,
+      "family": 23,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 278,
+      "family": 23,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 279,
+      "family": 23,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 280,
+      "family": 23,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 281,
+      "family": 23,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 282,
+      "family": 23,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 283,
+      "family": 23,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 284,
+      "family": 23,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 285,
+      "family": 23,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 286,
+      "family": 23,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 287,
+      "family": 23,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 288,
+      "family": 24,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 289,
+      "family": 24,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 290,
+      "family": 24,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 291,
+      "family": 24,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 292,
+      "family": 24,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 293,
+      "family": 24,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 294,
+      "family": 24,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 295,
+      "family": 24,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 296,
+      "family": 24,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 297,
+      "family": 24,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 298,
+      "family": 24,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 299,
+      "family": 24,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 300,
+      "family": 25,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 301,
+      "family": 25,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 302,
+      "family": 25,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 303,
+      "family": 25,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 304,
+      "family": 25,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 305,
+      "family": 25,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 306,
+      "family": 25,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 307,
+      "family": 25,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 308,
+      "family": 25,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 309,
+      "family": 25,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 310,
+      "family": 25,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 311,
+      "family": 25,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 312,
+      "family": 26,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 313,
+      "family": 26,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 314,
+      "family": 26,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 315,
+      "family": 26,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 316,
+      "family": 26,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 317,
+      "family": 26,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 318,
+      "family": 26,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 319,
+      "family": 26,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 320,
+      "family": 26,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 321,
+      "family": 26,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 322,
+      "family": 26,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 323,
+      "family": 26,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 324,
+      "family": 27,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 325,
+      "family": 27,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 326,
+      "family": 27,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 327,
+      "family": 27,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 328,
+      "family": 27,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 329,
+      "family": 27,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 330,
+      "family": 27,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 331,
+      "family": 27,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 332,
+      "family": 27,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 333,
+      "family": 27,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 334,
+      "family": 27,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 335,
+      "family": 27,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 336,
+      "family": 28,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 337,
+      "family": 28,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 338,
+      "family": 28,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 339,
+      "family": 28,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 340,
+      "family": 28,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 341,
+      "family": 28,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 342,
+      "family": 28,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 343,
+      "family": 28,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 344,
+      "family": 28,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 345,
+      "family": 28,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 346,
+      "family": 28,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 347,
+      "family": 28,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 348,
+      "family": 29,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 349,
+      "family": 29,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 350,
+      "family": 29,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 351,
+      "family": 29,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 352,
+      "family": 29,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 353,
+      "family": 29,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 354,
+      "family": 29,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 355,
+      "family": 29,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 356,
+      "family": 29,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 357,
+      "family": 29,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 358,
+      "family": 29,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 359,
+      "family": 29,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 360,
+      "family": 30,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 361,
+      "family": 30,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 362,
+      "family": 30,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 363,
+      "family": 30,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 364,
+      "family": 30,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 365,
+      "family": 30,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 366,
+      "family": 30,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 367,
+      "family": 30,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 368,
+      "family": 30,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 369,
+      "family": 30,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 370,
+      "family": 30,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 371,
+      "family": 30,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 372,
+      "family": 31,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 1440
+    },
+    {
+      "slot": 373,
+      "family": 31,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 374,
+      "family": 31,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 375,
+      "family": 31,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 376,
+      "family": 31,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 377,
+      "family": 31,
+      "phase": "DEV",
+      "candidate_side": 0,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 378,
+      "family": 31,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 360
+    },
+    {
+      "slot": 379,
+      "family": 31,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 720
+    },
+    {
+      "slot": 380,
+      "family": 31,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": false,
+      "R": 1440
+    },
+    {
+      "slot": 381,
+      "family": 31,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 360
+    },
+    {
+      "slot": 382,
+      "family": 31,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 720
+    },
+    {
+      "slot": 383,
+      "family": 31,
+      "phase": "DEV",
+      "candidate_side": 1,
+      "candidate_proof": true,
+      "R": 1440
+    }
+  ],
+  "expected_games": 384,
+  "candidate_nodes": 4096,
+  "opponent_nodes": 64,
+  "step_seconds": 0.25,
+  "normal_depth": 3,
+  "proof_depth": 64,
+  "H": 16,
+  "opponent": {
+    "R": 720,
+    "N": 720,
+    "proof": true
+  },
+  "prices": [
+    360,
+    720,
+    1440
+  ],
+  "N": 720,
+  "tail": "At H16 only already verified rank<=64 strategies authorize up to64extra physical moves; no new proof after H. UNKNOWN not draw, no quantity reward.",
+  "seconds_cap": 1200,
+  "expected_seconds": 300,
+  "max_moves": 30720,
+  "selector": "TRAIN actual W-L averaged equally over16families and bothroles separately for each candidate proof mode; maximum, smallestR tie. Adjacent strict-improvement grid paths reported from all3initials. DEV never selects price/mu/weight/budget.",
+  "cost_decision": "One bounded384game three-price/two-role/two-policy control can expose integration failures and whether real outcomes distinguish prices. Existing GameState/mature engine study remains unchanged; do not enlarge/extend if partial or flat.",
+  "load": "Ordinary concurrent projects allowed; real elapsed and visit units reported, not equal primitive engine work.",
+  "backend": "MODIFIED_FAIRY_MATERIAL_ONLY_SESSION",
+  "previous_python_control": "results/dev_aux/task1823",
+  "native_scope": "Exact1822fingerprint, full rootFEN+record actions, native repetition/nmove disabled; actualSession remains authority. Leaf/native/capture tables aligned jointly, not unmodified Stockfish/NNUE."
+}

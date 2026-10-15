@@ -1,0 +1,48 @@
+{
+  "status": "PASS_WORKING_AND_FINAL_RESTORED",
+  "tests": 221,
+  "failures": 0,
+  "errors": 0,
+  "scope": "21focused proof/player/Session/reference/role modules, not wholeproduct or fresh-machine acceptance.",
+  "actual_session": {
+    "python_games": 384,
+    "mature_games": 384,
+    "all_moves_independently_audited": 9753,
+    "adopted_proof_games_all_physically_won": 196
+  },
+  "native_qualification": {
+    "frontiers": 51,
+    "actions": 380,
+    "go": 32
+  },
+  "rebuilt_engine": {
+    "all_source_objects": 29,
+    "source_files": 74,
+    "perft": 32,
+    "fixed_node_queries": 192,
+    "pairs": 96,
+    "mismatches": 0
+  },
+  "finite_reference": {
+    "cases": 16,
+    "target_labels": 32,
+    "nodes": 46306,
+    "all_edge_equivalence_edges": 46290,
+    "frontiers": 6528,
+    "claims": 3054,
+    "scope": "NEW maxply4rules, not originalH16/fullgame WDL"
+  },
+  "oldcaps_unchanged": true,
+  "current_default_solver_unchanged": true,
+  "product_Core_UI_primary_writes": false,
+  "restoration": {
+    "status": "PASS_INDEPENDENT_FINAL_RESTORED_SOURCE",
+    "tests": 221,
+    "failures": 0,
+    "errors": 0,
+    "offline_policy_audits": 2,
+    "moves": 9753,
+    "stored_witness_consumed_with_provers_disabled": true,
+    "scope": "Fresh finalsource/evidence extraction, CRC/allmemberSHA, actual imported project paths asserted restored; installed interpreter/dependencies reused. No Native fullgame rerun/freshmachine/OS acceptance."
+  }
+}

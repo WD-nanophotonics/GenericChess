@@ -1,0 +1,45 @@
+{
+  "status": "SEALED_EXACT_BYTES",
+  "archives": [
+    {
+      "path": "SOURCE_REPRO_20261015_59.zip",
+      "files": 310,
+      "bytes": 988455,
+      "raw_bytes": 3489212,
+      "sha256": "383d05119d1ba74f07d45ff9ec0c992ecd56463e07a3c39c0893bdcf28c2f1b2"
+    },
+    {
+      "path": "EVIDENCE_20261015_59.zip",
+      "files": 61,
+      "bytes": 1619982,
+      "raw_bytes": 23615058,
+      "sha256": "b30e3880ce8ce00a5eb81f67ea9d63ed9c57e5fca5e8ee1693f66233c45cfcba"
+    },
+    {
+      "path": "task1831/MATERIAL_ENGINE_SOURCE_59.zip",
+      "bytes": 376149,
+      "sha256": "f8c016cc65c729c1467460f59f8de7bb2065cb15d3b66228e1a90156cae28b35",
+      "source_files": 74,
+      "scope": "Modified mature engine all-source build closure inclGPL attribution, no binary/compiler"
+    },
+    {
+      "path": "SOURCE_REPRO_FINAL_20261015_59.zip",
+      "files": 311,
+      "bytes": 989833,
+      "sha256": "52b9ab9b6f819be3e4d000a229da5ba9fa4b6162f241ac1c2c655f712551d68e",
+      "scope": "Corrected actor dependency for offline audit; initialsource retained"
+    }
+  ],
+  "private_layer_excluded": true,
+  "current_working_tests": 221,
+  "restoration": {
+    "status": "PASS_INDEPENDENT_FINAL_RESTORED_SOURCE",
+    "tests": 221,
+    "failures": 0,
+    "errors": 0,
+    "offline_policy_audits": 2,
+    "moves": 9753,
+    "stored_witness_consumed_with_provers_disabled": true,
+    "scope": "Fresh finalsource/evidence extraction, CRC/allmemberSHA, actual imported project paths asserted restored; installed interpreter/dependencies reused. No Native fullgame rerun/freshmachine/OS acceptance."
+  }
+}

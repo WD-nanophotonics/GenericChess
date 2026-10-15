@@ -34,6 +34,10 @@ class SessionDecision:
     root_state: object
     root_result: object
     normal_receipt: object | None = None
+    admission_seconds: float = 0.
+    proof_seconds: float = 0.
+    verification_seconds: float = 0.
+    normal_seconds: float = 0.
 
     @property
     def nodes(self):return self.proof_nodes+self.verification_nodes+self.search_nodes
@@ -60,14 +64,16 @@ class SessionProofMaterialPlayer:
         root_record=session.to_record();root_state=session.state;root_result=session.result
         choice=None;source='NO_CHOICE';reason='disabled';cause='depth_budget'
         proof_nodes=verification_nodes=search_nodes=0;normal_receipt=None;rank=None
+        admission_seconds=proof_seconds=verification_seconds=normal_seconds=0.
         def left():return max(0.,seconds-b.elapsed())
         def out():return SessionDecision(choice,source,reason,proof_nodes,verification_nodes,
-            search_nodes,b.elapsed(),cause,rank,root_record,root_state,root_result,normal_receipt)
+            search_nodes,b.elapsed(),cause,rank,root_record,root_state,root_result,normal_receipt,
+            admission_seconds,proof_seconds,verification_seconds,normal_seconds)
         try:
             b.poll()
             if session.compiled.ruleset_fingerprint!=self.compiled.ruleset_fingerprint:
                 raise ValueError('player/session rules mismatch')
-            replay_bound(session);b.poll()
+            admission_start=_clock();replay_bound(session);admission_seconds=_clock()-admission_start;b.poll()
             if root_result.status is not SessionStatus.ONGOING:
                 source='TERMINAL';cause='actual_session_terminal';return out()
             if self.proof_enabled and self.cursor is not None:
@@ -83,25 +89,25 @@ class SessionProofMaterialPlayer:
                 result=self.proof_search(session,max_nodes=quarter,
                     seconds=min(1.,seconds/4,left()),max_depth=self.proof_depth,
                     cancel=cancel,_clock=_clock)
-                proof_nodes=result.nodes;reason=result.reason;b.poll()
+                proof_nodes=result.nodes;proof_seconds=result.seconds;reason=result.reason;b.poll()
                 if result.status=='PROVEN_WIN':
                     try:
                         cursor=SessionStrategyCursor(session,result.certificate,max_nodes=quarter,
                             seconds=min(seconds/4,left()),cancel=cancel,_clock=_clock)
-                        verification_nodes=cursor.receipt['nodes'];b.poll()
+                        verification_nodes=cursor.receipt['nodes'];verification_seconds=cursor.receipt['seconds'];b.poll()
                         selected=cursor.choose(session);b.poll()
                         if selected is not None:
                             self.cursor=cursor;choice=selected;source='PROOF';cause='certificate'
                             rank=cursor.node.rank;return out()
                         reason='verified_no_choice'
                     except CertificateVerificationError as error:
-                        verification_nodes=error.receipt['nodes']
+                        verification_nodes=error.receipt['nodes'];verification_seconds=error.receipt['seconds']
                         reason='verification_'+error.receipt['reason']
             b.poll()
             normal_receipt=self.normal.choose(session.state,
                 max_nodes=max(0,max_nodes-proof_nodes-verification_nodes),seconds=left(),
                 cancel=cancel,_clock=_clock)
-            search_nodes=normal_receipt.nodes
+            search_nodes=normal_receipt.nodes;normal_seconds=normal_receipt.seconds
             source=normal_receipt.source;cause=normal_receipt.exit_cause
             if normal_receipt.action is not None:
                 choice=SessionChoice('ACTION',action=normal_receipt.action)

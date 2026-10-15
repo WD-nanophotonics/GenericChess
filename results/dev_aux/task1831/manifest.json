@@ -1,0 +1,356 @@
+{
+  "upstream": "https://github.com/fairy-stockfish/Fairy-Stockfish",
+  "upstream_pin": "9f778da667f6e07dae1e85d3e2ea204fc6dee94d",
+  "modified": true,
+  "description": "Actual modified material-only Fairy source used by1825, alignment-order base plus leafRNBP uci override. GPL source attribution retained. Not unmodified Stockfish, not NNUE.",
+  "sources": [
+    "benchmark.cpp",
+    "bitbase.cpp",
+    "bitboard.cpp",
+    "endgame.cpp",
+    "evaluate.cpp",
+    "main.cpp",
+    "material.cpp",
+    "misc.cpp",
+    "movegen.cpp",
+    "movepick.cpp",
+    "pawns.cpp",
+    "position.cpp",
+    "psqt.cpp",
+    "search.cpp",
+    "thread.cpp",
+    "timeman.cpp",
+    "tt.cpp",
+    "uci.cpp",
+    "ucioption.cpp",
+    "tune.cpp",
+    "syzygy/tbprobe.cpp",
+    "nnue/evaluate_nnue.cpp",
+    "nnue/features/half_ka_v2.cpp",
+    "partner.cpp",
+    "parser.cpp",
+    "piece.cpp",
+    "variant.cpp",
+    "xboard.cpp",
+    "nnue/features/half_ka_v2_variants.cpp"
+  ],
+  "flags": [
+    "-include",
+    "iterator",
+    "-std=c++17",
+    "-O2",
+    "-DNDEBUG",
+    "-fno-exceptions",
+    "-DIS_64BIT",
+    "-DNO_PREFETCH",
+    "-DNNUE_EMBEDDING_OFF",
+    "-DGENERICCHESS_MATERIAL_DEVELOPMENT",
+    "-msse2",
+    "-pthread"
+  ],
+  "link_flags": [
+    "-pthread",
+    "-static"
+  ],
+  "original_binary_sha256": "0263e8d6e9677b82e179c0d1a61ea5080df3275aba3464569e040eb222a20fe9",
+  "compiler_sha256": "ee85bef2c733e24a26c22be3df94bd631cf9528a048fce91241c182a936737fe",
+  "files": {
+    "apiutil.h": {
+      "bytes": 42779,
+      "sha256": "91c6287b2391f46abc94454aa1d138b50dd0d32c990c4a8679cf5ff4da997f27"
+    },
+    "benchmark.cpp": {
+      "bytes": 7245,
+      "sha256": "cdb8b8963ee2a023443827b0956e2f28da3fc05d22aef6354ac5ab5a80195567"
+    },
+    "bitbase.cpp": {
+      "bytes": 5952,
+      "sha256": "a03e309abe5dd7c5cb17f8473fa41c72071966a8a6da3bdf6db17fa537ad5041"
+    },
+    "bitboard.cpp": {
+      "bytes": 21983,
+      "sha256": "767c344c93b6d2e1daaa9a861b3e20d4ff4bc5324935565aebad8fdf7f877b29"
+    },
+    "bitboard.h": {
+      "bytes": 23817,
+      "sha256": "b50e9349fc763d483beb0c8169fce60b972969e6a764516e7243d1f6aad06c69"
+    },
+    "endgame.cpp": {
+      "bytes": 49613,
+      "sha256": "58dc3e70e598d86ca1ff8bf3772a831190e7be614045ab79806f2cb274055442"
+    },
+    "endgame.h": {
+      "bytes": 3870,
+      "sha256": "84afd296086db72c5f9e16c468c7a30a437bd6e420f30f30c4f40b1e4f1ede1c"
+    },
+    "evaluate.cpp": {
+      "bytes": 74305,
+      "sha256": "b875e3f460216430daf5ad61bee19bf5c5d2efb4c0377a2cde5c2d9172012fc3"
+    },
+    "evaluate.h": {
+      "bytes": 1859,
+      "sha256": "8a956df983d20df68905bf35ea342790f81455d5b8f15281bec1871998b89e59"
+    },
+    "ffishjs.cpp": {
+      "bytes": 23362,
+      "sha256": "9784526bcd7c8d9284ac104d442438b78e72c226b520b999a51c7441c760915d"
+    },
+    "magic.h": {
+      "bytes": 80409,
+      "sha256": "3c9d909b3cf78b0d064bf574b47181795307f8cc714b0a2c98ff196cbff3d6fe"
+    },
+    "main.cpp": {
+      "bytes": 1643,
+      "sha256": "88edb1472bd5c241ed49c55edebb4d7ee6037d35a2f32d19e0108398c2caa639"
+    },
+    "Makefile": {
+      "bytes": 26820,
+      "sha256": "09d661b25b89670e10634b0ca45feb3b677682345a3465d4babafa251245ab2f"
+    },
+    "Makefile_js": {
+      "bytes": 2793,
+      "sha256": "ecb42152b637ef1a72b275de21f62eeaa04d458b694a284f4d2bacfa0c85bfef"
+    },
+    "material.cpp": {
+      "bytes": 12989,
+      "sha256": "e9bf9f79ce64a94f3df7da288019c28bda3f1c665e07255eb693ff6d993b346d"
+    },
+    "material.h": {
+      "bytes": 2940,
+      "sha256": "9cef8f2f8e4614ec46295b0915132f34d78b0849e95ad69b01c475419fb41577"
+    },
+    "misc.cpp": {
+      "bytes": 17812,
+      "sha256": "d81cd5fcd40352e391680d71e0bb3cfbd5c3f639293b76df9f619777159fd420"
+    },
+    "misc.h": {
+      "bytes": 6269,
+      "sha256": "0779506314f9579ac59bd78d0c54b2c7aa586e0cfdbbfea1c311dff2a5736141"
+    },
+    "movegen.cpp": {
+      "bytes": 20966,
+      "sha256": "0ec1dd919ee6778f690030dc78dce9b18fded040089904b55ea37f9fb781b748"
+    },
+    "movegen.h": {
+      "bytes": 2686,
+      "sha256": "fcde98b7330e52efa8a915c40ddf06df55b4a518ccc7747412b7b0ff45a16736"
+    },
+    "movepick.cpp": {
+      "bytes": 10873,
+      "sha256": "496fcdbdd760838825cdc1647d5d11c8fd41d2988b3d899fe310cdb554297371"
+    },
+    "movepick.h": {
+      "bytes": 6938,
+      "sha256": "848ba54a704301990dd6293333962b8f49e6e4e82b1491df41cf9a302975e896"
+    },
+    "parser.cpp": {
+      "bytes": 32725,
+      "sha256": "b696c1fcc3f7f2a2e28732eb73fb3cff2e8762f92eda7d0f0aeb5cf5c00e3f41"
+    },
+    "parser.h": {
+      "bytes": 2017,
+      "sha256": "0efd4fe339fb281098e4c587c3584f0cf824d58a8a49d3032b9e38ec9acc01f3"
+    },
+    "partner.cpp": {
+      "bytes": 5275,
+      "sha256": "49428e981a1ab6dfa40e05beedfa2f89c457abd1c1e2e7a11fc16cd173eb0569"
+    },
+    "partner.h": {
+      "bytes": 1633,
+      "sha256": "86fd08977f85a9d784f9f16b2cb1b2e7f079ce92e8d38fed98de6c6200722d4f"
+    },
+    "pawns.cpp": {
+      "bytes": 11830,
+      "sha256": "b440976d91ae833ca012be2e2460a335fffe68ea3f47cdcf9177ba182b194641"
+    },
+    "pawns.h": {
+      "bytes": 2327,
+      "sha256": "82d61e1b8a565ff8e4f4164fda8bbd700088fdea5cc7fea3699911ef92840a8e"
+    },
+    "piece.cpp": {
+      "bytes": 10799,
+      "sha256": "6695601cb82b230aab5bd3f8f7422ff8be1ab05163f80bc374ec8137e23399ef"
+    },
+    "piece.h": {
+      "bytes": 1761,
+      "sha256": "e28923848f006c4e7d218c6b07b8c7c6294891c118309107b5c4c938d37425bf"
+    },
+    "position.cpp": {
+      "bytes": 127695,
+      "sha256": "de4148ffa56266a8bb3676e8e46d4b0fc6b18cb7fa399d052bbeaf2fa8fec1aa"
+    },
+    "position.h": {
+      "bytes": 50041,
+      "sha256": "afa87108128a1562a02878cb6dbd8ae3667af338c46d207ef774ae5bad3da43e"
+    },
+    "psqt.cpp": {
+      "bytes": 20088,
+      "sha256": "ee64970e60bbcaf9c6876189b499cc7f0585303de25aedef5d103e51ffb1f5dc"
+    },
+    "psqt.h": {
+      "bytes": 1092,
+      "sha256": "4d32ef879c6cc5d459234fe02337b8343c7feb9c873a121efaa601db6ebcf4b1"
+    },
+    "pyffish.cpp": {
+      "bytes": 17950,
+      "sha256": "cc9921d1ac6ad7623083fa3014f9fb2942b54833f44a7bdfbd8542c98accfdc2"
+    },
+    "search.cpp": {
+      "bytes": 81839,
+      "sha256": "02f1a8002cfd945f18b70582740139311c61dcb9805315f735bde4ad5b5be01a"
+    },
+    "search.h": {
+      "bytes": 3177,
+      "sha256": "7c36d8bbe95f82bf544a1a869db24df5a47c21ab02114d654119094f8d891a93"
+    },
+    "thread.cpp": {
+      "bytes": 8715,
+      "sha256": "690983f6d61c05ba9f646040930b8cbe314de98af76779654e170aef930cb92c"
+    },
+    "thread.h": {
+      "bytes": 3799,
+      "sha256": "ccbcf870c45cbff1e45bea82c87335b09acb09d3c0d054a710f67cf1dbbde259"
+    },
+    "thread_win32_osx.h": {
+      "bytes": 2318,
+      "sha256": "4c10904be0075492aac6ab3db2356a9dc9a9b1f1bce00c250bb1da64abed9462"
+    },
+    "timeman.cpp": {
+      "bytes": 4177,
+      "sha256": "8d95bacf61d3e3181a175ae06ea4be6954b35b35cd0447ce8df50f6a1b401836"
+    },
+    "timeman.h": {
+      "bytes": 1671,
+      "sha256": "05ae5e582995a082f5452fffa2584f6e8b11131dd628113abda9bd625e211c4c"
+    },
+    "tt.cpp": {
+      "bytes": 5585,
+      "sha256": "d7196362fc06a1adcb0a2fd2d18ee751453425069834a018a6a4424ac0450dd1"
+    },
+    "tt.h": {
+      "bytes": 3471,
+      "sha256": "8bb2b55c08348105c79cda687751d5e0676cc4266105b48dd79664f018f37b3f"
+    },
+    "tune.cpp": {
+      "bytes": 3830,
+      "sha256": "5c4ec1cb22a171e8758afba4e6d467a1e9e7c5299dce5dd202d5e94316d5ecac"
+    },
+    "tune.h": {
+      "bytes": 6036,
+      "sha256": "664a3e28614d32ddb7c813137d6bf5583b4b4bd316561bf84ee34aa95245537e"
+    },
+    "types.h": {
+      "bytes": 30374,
+      "sha256": "7e42ef80439fb779713d8be1b06e14f31f85e7dfdd18a915a61fad38f355868d"
+    },
+    "uci.cpp": {
+      "bytes": 29211,
+      "sha256": "5cf8816d7b3a495385c7db335ed379c4ca92f28610d113ba5b0031ac853f3f2a"
+    },
+    "uci.h": {
+      "bytes": 3178,
+      "sha256": "a7681a2f78feb3b1f9d0cccb9e901dd3561429f169604585b70d3ed87dd3c63b"
+    },
+    "ucioption.cpp": {
+      "bytes": 13762,
+      "sha256": "b41c40fe1ad75e21ba33bc6fe1c85fca736a5cf61eced73bdc0a1f38143e1022"
+    },
+    "variant.cpp": {
+      "bytes": 96305,
+      "sha256": "0e835a90bb2c2d27b03e55ef164092927d68084087cdad19ccd29ba9981058d4"
+    },
+    "variant.h": {
+      "bytes": 9093,
+      "sha256": "c8b43102aa59a0eddb69741c92982f9d248f21ebc23a03640f3a22c71d2b9f51"
+    },
+    "variants.ini": {
+      "bytes": 69931,
+      "sha256": "a2407c39e6469e8172fad61f259938c5724a7e0e386d1a91eb758ec380769a19"
+    },
+    "xboard.cpp": {
+      "bytes": 14800,
+      "sha256": "ff76bc5024a129aac6cb15fa2909b7ad83435f94b41297672703193d20d738c1"
+    },
+    "xboard.h": {
+      "bytes": 1941,
+      "sha256": "a17003c2580fe474cb1481a2c169d150497d47d436dbd4e3de499dbf1f1a83f2"
+    },
+    "incbin/incbin.h": {
+      "bytes": 11618,
+      "sha256": "0f2dd87917154badb8837c6ced77a5a39b7434f53b6f6381fe9695e0ab07dfee"
+    },
+    "incbin/UNLICENCE": {
+      "bytes": 1292,
+      "sha256": "80f60d0578200231dac96e2a42bf508f22ce8540b96f96777b649498656842ff"
+    },
+    "nnue/evaluate_nnue.cpp": {
+      "bytes": 14352,
+      "sha256": "42748f6ef0923e4899e3d57b59fff40089f31f3bd8408132f1f40cfc6266e3d5"
+    },
+    "nnue/evaluate_nnue.h": {
+      "bytes": 1754,
+      "sha256": "fdf590a94d581b1352e7adbb9a352aacce2140cee346f6aeb4b95534aea78fba"
+    },
+    "nnue/nnue_accumulator.h": {
+      "bytes": 1317,
+      "sha256": "954e827b7b4a474fbe114d8c93df4be2b8ba7cc2e44e9169d051a4febd825df6"
+    },
+    "nnue/nnue_architecture.h": {
+      "bytes": 2098,
+      "sha256": "84f1f42837870f874317282a109984a83081610b12db7322e40da7bee8207abb"
+    },
+    "nnue/nnue_common.h": {
+      "bytes": 5257,
+      "sha256": "ed1b73e4c2d8067e5068912b1ae158442b166356a0039175848bdae40ac48551"
+    },
+    "nnue/nnue_feature_transformer.h": {
+      "bytes": 23521,
+      "sha256": "770a7dd55492065624d1cf769b91260e7a8a145c7c90c5263c0d7ba2dbd265ea"
+    },
+    "syzygy/tbprobe.cpp": {
+      "bytes": 61853,
+      "sha256": "c0badee0722895e5e52a8d7c5906256c56ff13aff127ea744f81cffa2ca1850d"
+    },
+    "syzygy/tbprobe.h": {
+      "bytes": 2523,
+      "sha256": "2148dda02e128a7e30d68f9179ae031b606f24733d5f4da6d882eb9cf4654eb5"
+    },
+    "nnue/features/half_ka_v2.cpp": {
+      "bytes": 3040,
+      "sha256": "49f089a2092500892532d93196dcd5001961e778916b767e7d5f7f16b8eaaec3"
+    },
+    "nnue/features/half_ka_v2.h": {
+      "bytes": 6717,
+      "sha256": "3795ae91368005a45738806b04d324849b2295b19e71fac9dd14bdf76c58e4f4"
+    },
+    "nnue/features/half_ka_v2_variants.cpp": {
+      "bytes": 4565,
+      "sha256": "0db1773800327d8faa86987c49d48790786a879c6df4b92dd2459c66f5b28200"
+    },
+    "nnue/features/half_ka_v2_variants.h": {
+      "bytes": 3359,
+      "sha256": "5d8ea95232d873551ecce3dff0a76c6190ffac393af3402557f800959d91a270"
+    },
+    "nnue/layers/affine_transform.h": {
+      "bytes": 17893,
+      "sha256": "1c9867c2568cf54c45b853b2c92db583b7e6d12f5b3b8d6d056138a83f9c3e28"
+    },
+    "nnue/layers/clipped_relu.h": {
+      "bytes": 7615,
+      "sha256": "f3f7b6783a8a1a96777775963567d9279b52c1005081e3431b94f3e8162a24c2"
+    },
+    "nnue/layers/input_slice.h": {
+      "bytes": 2177,
+      "sha256": "685ba49cec54760ffcdcc52e5cc5b49a61af9be4c8b29669cc478cce99274d53"
+    },
+    "LICENSES/AUTHORS": {
+      "bytes": 4950,
+      "sha256": "55a0a4599358308af8349344d79176469f04119558e85595efe0a39b583cdf00"
+    },
+    "LICENSES/Copying.txt": {
+      "bytes": 35821,
+      "sha256": "0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b"
+    }
+  },
+  "scope": "Source/build closure, compiler/runtime must be installed separately; no bit-identical binary or fresh-machine acceptance claim."
+}

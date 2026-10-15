@@ -1,0 +1,789 @@
+{
+  "status": "PASS",
+  "error": null,
+  "frontiers": 51,
+  "legal_actions": 380,
+  "games": [
+    {
+      "role": 0,
+      "moves": [
+        {
+          "ply": 0,
+          "side": 0,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 4097,
+          "proof_nodes": 393,
+          "verification_nodes": 0,
+          "search_nodes": 3704,
+          "seconds": 0.07987649999267887,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 1,
+          "side": 1,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 64,
+          "proof_nodes": 16,
+          "verification_nodes": 0,
+          "search_nodes": 48,
+          "seconds": 0.012012300008791499,
+          "cause": "external_search_return"
+        },
+        {
+          "ply": 2,
+          "side": 0,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 4097,
+          "proof_nodes": 502,
+          "verification_nodes": 0,
+          "search_nodes": 3595,
+          "seconds": 0.07734390000405256,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 3,
+          "side": 1,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 64,
+          "proof_nodes": 16,
+          "verification_nodes": 0,
+          "search_nodes": 48,
+          "seconds": 0.01342639999347739,
+          "cause": "external_search_return"
+        },
+        {
+          "ply": 4,
+          "side": 0,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 4096,
+          "proof_nodes": 500,
+          "verification_nodes": 0,
+          "search_nodes": 3596,
+          "seconds": 0.07811509999737609,
+          "cause": "external_search_return"
+        },
+        {
+          "ply": 5,
+          "side": 1,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 68,
+          "proof_nodes": 16,
+          "verification_nodes": 0,
+          "search_nodes": 52,
+          "seconds": 0.013448800003970973,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 6,
+          "side": 0,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 4096,
+          "proof_nodes": 457,
+          "verification_nodes": 0,
+          "search_nodes": 3639,
+          "seconds": 0.07831320000695996,
+          "cause": "external_search_return"
+        },
+        {
+          "ply": 7,
+          "side": 1,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 66,
+          "proof_nodes": 16,
+          "verification_nodes": 0,
+          "search_nodes": 50,
+          "seconds": 0.01332189999811817,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 8,
+          "side": 0,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 4099,
+          "proof_nodes": 478,
+          "verification_nodes": 0,
+          "search_nodes": 3621,
+          "seconds": 0.07907560000603553,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 9,
+          "side": 1,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 64,
+          "proof_nodes": 16,
+          "verification_nodes": 0,
+          "search_nodes": 48,
+          "seconds": 0.013685600002645515,
+          "cause": "external_search_return"
+        },
+        {
+          "ply": 10,
+          "side": 0,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 4098,
+          "proof_nodes": 490,
+          "verification_nodes": 0,
+          "search_nodes": 3608,
+          "seconds": 0.08057279999775346,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 11,
+          "side": 1,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 65,
+          "proof_nodes": 16,
+          "verification_nodes": 0,
+          "search_nodes": 49,
+          "seconds": 0.015210500001558103,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 12,
+          "side": 0,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 4099,
+          "proof_nodes": 460,
+          "verification_nodes": 0,
+          "search_nodes": 3639,
+          "seconds": 0.08149959999718703,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 13,
+          "side": 1,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 64,
+          "proof_nodes": 16,
+          "verification_nodes": 0,
+          "search_nodes": 48,
+          "seconds": 0.015645799998310395,
+          "cause": "external_search_return"
+        },
+        {
+          "ply": 14,
+          "side": 0,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 4110,
+          "proof_nodes": 480,
+          "verification_nodes": 0,
+          "search_nodes": 3630,
+          "seconds": 0.08323589999054093,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 15,
+          "side": 1,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 64,
+          "proof_nodes": 16,
+          "verification_nodes": 0,
+          "search_nodes": 48,
+          "seconds": 0.0159599999897182,
+          "cause": "external_search_return"
+        }
+      ],
+      "result": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          {
+            "from": [
+              3,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "a533d4d83e91e46f87f6461319de157499357117cfe57724129378c100e0acfd",
+        "schema_version": 1
+      }
+    },
+    {
+      "role": 1,
+      "moves": [
+        {
+          "ply": 0,
+          "side": 0,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 67,
+          "proof_nodes": 16,
+          "verification_nodes": 0,
+          "search_nodes": 51,
+          "seconds": 0.012021999995340593,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 1,
+          "side": 1,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 4097,
+          "proof_nodes": 499,
+          "verification_nodes": 0,
+          "search_nodes": 3598,
+          "seconds": 0.07707359999767505,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 2,
+          "side": 0,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 64,
+          "proof_nodes": 16,
+          "verification_nodes": 0,
+          "search_nodes": 48,
+          "seconds": 0.015008100002887659,
+          "cause": "external_search_return"
+        },
+        {
+          "ply": 3,
+          "side": 1,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 4096,
+          "proof_nodes": 506,
+          "verification_nodes": 0,
+          "search_nodes": 3590,
+          "seconds": 0.0797415999986697,
+          "cause": "external_search_return"
+        },
+        {
+          "ply": 4,
+          "side": 0,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 68,
+          "proof_nodes": 16,
+          "verification_nodes": 0,
+          "search_nodes": 52,
+          "seconds": 0.012027499993564561,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 5,
+          "side": 1,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 4096,
+          "proof_nodes": 473,
+          "verification_nodes": 0,
+          "search_nodes": 3623,
+          "seconds": 0.07826280000153929,
+          "cause": "external_search_return"
+        },
+        {
+          "ply": 6,
+          "side": 0,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 66,
+          "proof_nodes": 16,
+          "verification_nodes": 0,
+          "search_nodes": 50,
+          "seconds": 0.012720200000330806,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 7,
+          "side": 1,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 4097,
+          "proof_nodes": 454,
+          "verification_nodes": 0,
+          "search_nodes": 3643,
+          "seconds": 0.0787863000005018,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 8,
+          "side": 0,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 64,
+          "proof_nodes": 16,
+          "verification_nodes": 0,
+          "search_nodes": 48,
+          "seconds": 0.014294200009317137,
+          "cause": "external_search_return"
+        },
+        {
+          "ply": 9,
+          "side": 1,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 4097,
+          "proof_nodes": 480,
+          "verification_nodes": 0,
+          "search_nodes": 3617,
+          "seconds": 0.07972929999232292,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 10,
+          "side": 0,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 69,
+          "proof_nodes": 16,
+          "verification_nodes": 0,
+          "search_nodes": 53,
+          "seconds": 0.0182172999921022,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 11,
+          "side": 1,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 4096,
+          "proof_nodes": 481,
+          "verification_nodes": 0,
+          "search_nodes": 3615,
+          "seconds": 0.07983440000680275,
+          "cause": "external_search_return"
+        },
+        {
+          "ply": 12,
+          "side": 0,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 64,
+          "proof_nodes": 16,
+          "verification_nodes": 0,
+          "search_nodes": 48,
+          "seconds": 0.01537599999574013,
+          "cause": "external_search_return"
+        },
+        {
+          "ply": 13,
+          "side": 1,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 4098,
+          "proof_nodes": 480,
+          "verification_nodes": 0,
+          "search_nodes": 3618,
+          "seconds": 0.08026789998984896,
+          "cause": "reported_node_overrun"
+        },
+        {
+          "ply": 14,
+          "side": 0,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 64,
+          "proof_nodes": 16,
+          "verification_nodes": 0,
+          "search_nodes": 48,
+          "seconds": 0.016372499987483025,
+          "cause": "external_search_return"
+        },
+        {
+          "ply": 15,
+          "side": 1,
+          "source": "EXTERNAL_SEARCH",
+          "nodes": 4097,
+          "proof_nodes": 507,
+          "verification_nodes": 0,
+          "search_nodes": 3590,
+          "seconds": 0.08069819999218453,
+          "cause": "reported_node_overrun"
+        }
+      ],
+      "result": {
+        "status": "ongoing",
+        "winner": null,
+        "resigned_by": null,
+        "declaration_id": null,
+        "declared_by": null,
+        "declaration_outcome": null,
+        "declaration_score": null
+      },
+      "record": {
+        "actions": [
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              3
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              1,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              3,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              2
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              0
+            ]
+          },
+          {
+            "from": [
+              3,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              3
+            ]
+          },
+          {
+            "from": [
+              2,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              1
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              1
+            ]
+          },
+          {
+            "from": [
+              0,
+              3
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              2
+            ]
+          },
+          {
+            "from": [
+              2,
+              0
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              2
+            ]
+          },
+          {
+            "from": [
+              0,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              0,
+              1
+            ]
+          },
+          {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              2,
+              0
+            ]
+          }
+        ],
+        "resigned_by": null,
+        "ruleset_fingerprint": "a533d4d83e91e46f87f6461319de157499357117cfe57724129378c100e0acfd",
+        "schema_version": 1
+      }
+    }
+  ],
+  "native_go": 32,
+  "native_nodes": 58715,
+  "seconds": 2.231944699989981
+}

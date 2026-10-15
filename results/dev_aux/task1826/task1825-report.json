@@ -1,0 +1,651 @@
+{
+  "folder": "results\\dev_aux\\task1825",
+  "cells": [
+    {
+      "phase": "TRAIN",
+      "proof": false,
+      "R": 360,
+      "games": 32,
+      "outcomes": {
+        "UNKNOWN": 22,
+        "WIN": 6,
+        "DRAW": 2,
+        "LOSS": 2
+      },
+      "net": 4,
+      "seconds": 10.075985699964804
+    },
+    {
+      "phase": "TRAIN",
+      "proof": false,
+      "R": 720,
+      "games": 32,
+      "outcomes": {
+        "UNKNOWN": 20,
+        "WIN": 8,
+        "DRAW": 2,
+        "LOSS": 2
+      },
+      "net": 6,
+      "seconds": 9.19395260004967
+    },
+    {
+      "phase": "TRAIN",
+      "proof": false,
+      "R": 1440,
+      "games": 32,
+      "outcomes": {
+        "UNKNOWN": 18,
+        "WIN": 10,
+        "DRAW": 2,
+        "LOSS": 2
+      },
+      "net": 8,
+      "seconds": 10.558651499988628
+    },
+    {
+      "phase": "TRAIN",
+      "proof": true,
+      "R": 360,
+      "games": 32,
+      "outcomes": {
+        "UNKNOWN": 22,
+        "WIN": 6,
+        "DRAW": 2,
+        "LOSS": 2
+      },
+      "net": 4,
+      "seconds": 20.65708890002861
+    },
+    {
+      "phase": "TRAIN",
+      "proof": true,
+      "R": 720,
+      "games": 32,
+      "outcomes": {
+        "UNKNOWN": 17,
+        "WIN": 11,
+        "DRAW": 2,
+        "LOSS": 2
+      },
+      "net": 9,
+      "seconds": 18.82424449993414
+    },
+    {
+      "phase": "TRAIN",
+      "proof": true,
+      "R": 1440,
+      "games": 32,
+      "outcomes": {
+        "UNKNOWN": 16,
+        "WIN": 12,
+        "DRAW": 2,
+        "LOSS": 2
+      },
+      "net": 10,
+      "seconds": 19.941716799978167
+    },
+    {
+      "phase": "DEV",
+      "proof": false,
+      "R": 360,
+      "games": 32,
+      "outcomes": {
+        "UNKNOWN": 12,
+        "WIN": 15,
+        "LOSS": 3,
+        "DRAW": 2
+      },
+      "net": 12,
+      "seconds": 10.479198899978655
+    },
+    {
+      "phase": "DEV",
+      "proof": false,
+      "R": 720,
+      "games": 32,
+      "outcomes": {
+        "UNKNOWN": 13,
+        "WIN": 15,
+        "LOSS": 3,
+        "DRAW": 1
+      },
+      "net": 12,
+      "seconds": 9.701770499974373
+    },
+    {
+      "phase": "DEV",
+      "proof": false,
+      "R": 1440,
+      "games": 32,
+      "outcomes": {
+        "UNKNOWN": 13,
+        "WIN": 15,
+        "LOSS": 3,
+        "DRAW": 1
+      },
+      "net": 12,
+      "seconds": 10.71648180000193
+    },
+    {
+      "phase": "DEV",
+      "proof": true,
+      "R": 360,
+      "games": 32,
+      "outcomes": {
+        "UNKNOWN": 12,
+        "WIN": 15,
+        "LOSS": 3,
+        "DRAW": 2
+      },
+      "net": 12,
+      "seconds": 14.762117700025556
+    },
+    {
+      "phase": "DEV",
+      "proof": true,
+      "R": 720,
+      "games": 32,
+      "outcomes": {
+        "UNKNOWN": 13,
+        "WIN": 15,
+        "LOSS": 3,
+        "DRAW": 1
+      },
+      "net": 12,
+      "seconds": 14.39891910001461
+    },
+    {
+      "phase": "DEV",
+      "proof": true,
+      "R": 1440,
+      "games": 32,
+      "outcomes": {
+        "UNKNOWN": 13,
+        "WIN": 15,
+        "LOSS": 3,
+        "DRAW": 1
+      },
+      "net": 12,
+      "seconds": 15.656990399991628
+    }
+  ],
+  "selections": {
+    "False": {
+      "scores": {
+        "360": 4,
+        "720": 6,
+        "1440": 8
+      },
+      "selected": 1440,
+      "paths": [
+        {
+          "initial": 360,
+          "path": [
+            360,
+            720,
+            1440
+          ],
+          "endpoint": 1440
+        },
+        {
+          "initial": 720,
+          "path": [
+            720,
+            1440
+          ],
+          "endpoint": 1440
+        },
+        {
+          "initial": 1440,
+          "path": [
+            1440
+          ],
+          "endpoint": 1440
+        }
+      ],
+      "nonflat_families": 6,
+      "family_vectors": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "True": {
+      "scores": {
+        "360": 4,
+        "720": 9,
+        "1440": 10
+      },
+      "selected": 1440,
+      "paths": [
+        {
+          "initial": 360,
+          "path": [
+            360,
+            720,
+            1440
+          ],
+          "endpoint": 1440
+        },
+        {
+          "initial": 720,
+          "path": [
+            720,
+            1440
+          ],
+          "endpoint": 1440
+        },
+        {
+          "initial": 1440,
+          "path": [
+            1440
+          ],
+          "endpoint": 1440
+        }
+      ],
+      "nonflat_families": 7,
+      "family_vectors": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  "contrasts": [
+    {
+      "name": "A_to_B",
+      "left": [
+        false,
+        720
+      ],
+      "right": [
+        true,
+        720
+      ],
+      "mean": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": 0.0,
+        "1": 0.0
+      },
+      "transitions": {
+        "UNKNOWN->UNKNOWN": 13,
+        "WIN->WIN": 15,
+        "LOSS->LOSS": 3,
+        "DRAW->DRAW": 1
+      },
+      "seconds": [
+        9.701770499974373,
+        14.39891910001461
+      ],
+      "unknown_worst_case_bounds": [
+        -0.8125,
+        0.8125
+      ]
+    },
+    {
+      "name": "A_to_C",
+      "left": [
+        false,
+        720
+      ],
+      "right": [
+        false,
+        1440
+      ],
+      "mean": 0.0,
+      "family95": [
+        -0.09375,
+        0.09375
+      ],
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": -0.0625,
+        "1": 0.0625
+      },
+      "transitions": {
+        "UNKNOWN->UNKNOWN": 11,
+        "WIN->WIN": 14,
+        "LOSS->LOSS": 3,
+        "UNKNOWN->DRAW": 1,
+        "WIN->UNKNOWN": 1,
+        "UNKNOWN->WIN": 1,
+        "DRAW->UNKNOWN": 1
+      },
+      "seconds": [
+        9.701770499974373,
+        10.71648180000193
+      ],
+      "unknown_worst_case_bounds": [
+        -0.8125,
+        0.8125
+      ]
+    },
+    {
+      "name": "B_to_D",
+      "left": [
+        true,
+        720
+      ],
+      "right": [
+        true,
+        1440
+      ],
+      "mean": 0.0,
+      "family95": [
+        -0.09375,
+        0.09375
+      ],
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": -0.0625,
+        "1": 0.0625
+      },
+      "transitions": {
+        "UNKNOWN->UNKNOWN": 11,
+        "WIN->WIN": 14,
+        "LOSS->LOSS": 3,
+        "UNKNOWN->DRAW": 1,
+        "WIN->UNKNOWN": 1,
+        "UNKNOWN->WIN": 1,
+        "DRAW->UNKNOWN": 1
+      },
+      "seconds": [
+        14.39891910001461,
+        15.656990399991628
+      ],
+      "unknown_worst_case_bounds": [
+        -0.8125,
+        0.8125
+      ]
+    },
+    {
+      "name": "C_to_D",
+      "left": [
+        false,
+        1440
+      ],
+      "right": [
+        true,
+        1440
+      ],
+      "mean": 0.0,
+      "family95": [
+        0.0,
+        0.0
+      ],
+      "family_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "role_means": {
+        "0": 0.0,
+        "1": 0.0
+      },
+      "transitions": {
+        "UNKNOWN->UNKNOWN": 13,
+        "WIN->WIN": 15,
+        "LOSS->LOSS": 3,
+        "DRAW->DRAW": 1
+      },
+      "seconds": [
+        10.71648180000193,
+        15.656990399991628
+      ],
+      "unknown_worst_case_bounds": [
+        -0.8125,
+        0.8125
+      ]
+    }
+  ],
+  "interaction": {
+    "mean": 0.0,
+    "family95": [
+      0.0,
+      0.0
+    ],
+    "family_deltas": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "interpretation": "Exploratory finite-event W-L on declared new initialside0 mu, fixedUNIT64 opponent; UNKNOWN contributes no event but remains censored, worstcase bounds explicit. CI resamples16families, not moves/roles as independent. No unique/human price or infinite WDL claim."
+}

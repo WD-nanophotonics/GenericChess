@@ -57,3 +57,24 @@ new explicit rules fingerprint. Existing played history is never discarded.
 The old KRN study roots fail this admission; no balanced Session learning assay
 is claimed on their behalf. Future integration requires an explicit supported
 root/record design, separately frozen distribution and unchanged fixed opponent.
+
+## Segment59 opt-in player and experimental batch model
+
+SessionProofMaterialPlayer returns a root-bound typed choice without mutating
+the actual session. One commit_session_decision physically submits/declares once,
+then broadcasts exact pre/post observation; cursor.observe advances without
+second submission. Pre-commit cancellation prevents dispatch; cancellation inside
+an atomic commit leaves the real result authoritative. Observer failure is not
+a rollback. UNKNOWN normal fallback is board-only, with internal proof disabled.
+After H only already verified cursors continue; allow_new_proof=False forbids new
+proving. Full admission/proof/verification/normal times are separate receipts;
+old frozen games used the preserved pre-instrumentation source.
+
+Experimental batch PN uses full immutable public Core states and exact records,
+not private Session injection. Public legal_successors batches board children;
+public declaration assessment proposes complete record/result metadata. That
+forward model is untrusted relative to actual Session witness verification.
+Eager computed children and visited PN nodes differ; atomic batches may overrun.
+No default/current learner adoption: equal current quarter coverage did not rise.
+16separate finite maxply4reference games and46290all-edge comparisons qualify
+only that small domain; full generic deployment remains an open task.

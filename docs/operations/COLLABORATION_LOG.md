@@ -1356,3 +1356,34 @@ found PRIMARY-owned Native q-history optimization review in progress, not an
 AUX task or independently executed/adopted result. No cross-writes, worker,
 newquery or replyloop. Both oldrelevant threads andnewroots fully covered.
 NextactualSession entry/root-law tasks retained; ownpatrolACTIVE/scienceOPEN.
+
+## DEV_AUX2026-10-15 segment59 — Session integration and scoped negative result
+
+Own sidemission only, PRIMARY readonly. Actual Session chooser now binds full
+record/state/result, single physical commit plus observer broadcast; proof/normal
+fallback and closed-H continuation tested. Dot actually source-read227b8c7f, no
+execution, no concrete counterexample; proposed actual mid-commit cancel control
+adopted for both claims and board moves. No routine acknowledgment loop.
+
+NEW KRN initialside0/two-role root law, no oldhistory reset. Python/mature controls
+complete768games/9753public+literal auditedmoves,196proof games physicallywin.
+BothTRAIN3starts chooseR/N2; matureDEVgain0 with-.0625/+.0625role cancellation,
+Python+.03125 interval includes0. High-R UNKNOWNcase admits opponent forcedwin;
+original rewards stay untouched. This is not stable/human-value success.
+
+Optional public-Core batching gives same9634node/tree witness1.463->.673s, but
+currentquarter both0/8; no learner/opponent/default adoption.16NEW maxply4reference
+games/32labels and46290all-edge comparisons qualify limited semantics, old1808
+partialcap unchanged.221focused working tests; finalrestore evidence/limits in59.
+Mature74file licensed source builds29freshobjects,96fixednode pairs/32perfts
+match; binary metadata differs, no universal/fresh-machine claim. Actual Native
+node overruns, failed CRLF edit, initialmissingactor restore and prepublication
+private-marker rejection are retained/corrected; raw account originals ignored.
+
+PRIMARY new thread1792058616 fully read through supplement1792061541: owner
+published d38d86d8617a57a4fe31e26a0328588eb49c5726 q-history/interrupt evidence,
+reported adopting historical exact TT fix. Context only, not executed/adopted
+here; no duplicate primary optimization or cross-checkout writes. Ordinary
+concurrent projects normal; no quiet window, extra Agent/fees or visibility change.
+Fixed own revision/result link supplied at delivery; Dot read/execution scope
+will be stated accurately, not inferred from delivery. Science OPEN/patrolACTIVE.
