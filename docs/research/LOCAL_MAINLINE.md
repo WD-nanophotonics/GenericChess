@@ -149,14 +149,51 @@ attributing improvement to phase mixing alone; it does not rewrite the original
 prospective40games/caps or turn component diagnosis into new validation.
 Both players kept the same static rule-derived prices; no price learning claim.
 
-Current next choice: test cheap fullydisabled-q D2-only on ALL eight exposed
-families/both roles against the original fixedq4 control, to distinguish the
-cappedD2 component from its q4 second phase. The runnable protocol is prepared
-with0games/0queries, not executed. Keep categorical outcomes/cost and no default.
-Backup: qdepth0 first-child descendant attribution on ALL13parents, separating
-forced evasions/captures/noncheckinginventory/check/terminal classes, with
-reserve/requested iterations separate. Prepared0builds/0queries; counts are not
-wall-cost proof. Only a changed, substantial premise justifies a selective pilot.
+Current component/continuation result: ALL16 exposed D2-only games are6W8L1D1UNKNOWN,
+finite delta-2 versus prior upfront+9; gamecost293.832s versus879.365s. ALL80
+shared-prefix first-D2 results match in every non-time field;12first divergences
+follow requested-q4 choices.24literal reply checks find no one-ply win, not
+deeper safety/WDL. Cheap shallow search alone does not explain the portfolio.
+
+ALL52 normal/counter calls on13parents match non-time results. Nonchecking
+noncapture inventory accounts886/907616 requested descendants (.098%); reject
+that classifier pilot. Capture/check/evasion dominate. A private quiet-check
+subset completes more localD2 (104queries;26reserve controls equal) but18finite
+games give5W3L10UNKNOWN/net+2 at659.744s. Local depth is not utility; no adoption.
+
+New frozen9family/45game balanced8/12/16 comparison: q1=14W2L2UNKNOWN versus
+shared4W4L10UNKNOWN (delta+12), q0=11W1L6UNKNOWN (+10); actualgamecost411/568s.
+Pairedq1-minus-q0 is only+2/18, family interval[-.1111,.3889], with WIN-to-LOSS
+and WIN-to-UNKNOWN retained. A fresh6family/18game transfer against FIXEDq0 is
+adverse: q1=2W6L1D3UNKNOWN versus4W4L4UNKNOWN, delta-4/12. No caller refusals
+there under common50msreserve. Families/reserve also change, so this does not
+isolate opponent causality. Do not infer a universalq1 shortcut from q4 wins.
+
+A preexisting.25sD2 reserve beforeq1 completes ALL16first-divergence probes and
+retains the storedq0 action at both critical time-first calls. Sevenlogic/two
+actualcancel controls pass. ALL12 exposed finite games rescue one literal
+matched-policy LOSS-to-WIN (future policy also changes), but give4W5L1D2UNKNOWN, delta-1 versusq0, +3versuspureq1,518.554s.
+Keep adverse categories/cost and no default/mixed-policy superiority claim.
+These are method diagnostics, not Elo/price fitting or independent optimalWDL.
+
+Ten original20msreserve refusals stayUNKNOWN, including opponent failures.
+Twelve profiles and source-shared search-disabled replay show required dynamic
+features14.6-15.7ms plus serialization~4ms; packing<1.6ms, checkedPV edges
+13-85microseconds. Retain every result field/PV/history.50msreserve is a new
+common protocol on fresh transfer, not a hard timer or repair of old outcomes.
+
+Current next choice: distinguish ACTUAL check-only forced-evasion continuation
+from disabledq0 and ordinaryq1. Existing Python opt-in has this distinction;
+current Nativeq0 disables allq. Private source preparationa5e9f595 has0builds/
+0queries, not a new API/default. ALL13 exposed parents support a cheap78query
+fixed-work triad; include one accepted persistent-aux/history semantic contrast
+before broader claims. If no meaningful difference, stop cheaply; if useful,
+choose one bounded finite-method question. No completeWDL prerequisite.
+This supersedes more unchanged q1/quiet-check/mixing reruns; reconsider those only
+with a changed mechanism/opponent/cost premise. Preserve the complete generic
+target, existing generated inputs/caps and AUX solver/learning ownership.
+Full new source, all109physical games, censors/failures and qualification:
+Q_HORIZON_COMPONENTS_20261016.md. Normal product/API/price/default/UI unchanged.
 
 16normal/reconstruction-counter calls all non-time fields match: measured
 canonical sections are~1-2microseconds at the two testedq4hardstops, not their

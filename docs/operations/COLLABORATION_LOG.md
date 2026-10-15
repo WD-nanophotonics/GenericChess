@@ -2816,3 +2816,76 @@ limit. Reused runners/records/source/reader avoid duplicate solver/training;
 there is no controlled inter-Agent efficiency percentage. Wrapper attribute,
 quoting/conditional/template faults were fixed locally before affected queries.
 No OS/SAC/approval block or user intervention remains; raw failures are retained.
+
+## PRIMARY Q horizons and different-opponent transfer —2026-10-16
+
+PRIMARY_SANDBOX alone wrote this checkout and sandbox delivery. Normal product
+source/API/default/price/UI stayed unchanged. Completed109physical games:
+16exposed D2 components,45fresh q0/q1/fixedq4,18private quiet-check-subset,
+18fresh fixedq0 transfer and12exposed reserve-beforeq1. Baselines played once
+are not doubled as physical games. All caps/failures/UNKNOWN and adverse events
+remain. D2alone does not explain prior upfront gains; local quiet-check depth
+gain does not establish utility. q1's positive fixedq4 result fails freshq0
+transfer (-4/12); changed families/reserve prevent isolated-opponent causality.
+Reserve fixes one matched policy LOSS-to-WIN but is still-1versusq0 at greater
+cost than pureq1. Future policy also changes: no first-action-only causal proof.
+
+Measured required dynamic features (~15ms) and serialization (~4ms), rather
+than checked PV microseconds, explain sampled20msreserve refusals. Original
+refused games remainUNKNOWN, including opponent failures. Fresh transfer uses
+one common50msreserve; no hard realtime/default/API change. Existing Python
+check-only continuation is a distinct next control; private Native source is
+prepared with0builds/0queries and an explicit aux/history scope requirement.
+
+DEV_AUX remained owner of separate sidemission solver/verifier/cursor/learning.
+Initial recovery/checkpoint reads had no new request/result before capsule closure.
+Prior04993 order-chamber source/report reading and a579 final OWNER MESSAGE
+remain the existing tiers: no final AUX source/tests/games/proofs independently
+executed or adopted this segment. No cross-checkout writes, merge, duplicate
+solver/training, extra Agent/worker/fees or coordination quiet window occurred.
+
+Coordination: full primary12reply and AUX63two-reply reads were preserved before
+assessment; no new Dot technical advice or disagreement appeared. Earlier Dot
+retained-policy/shared-clock/main+q advice is applied; shared-account labels are
+routing, not process authentication. Legacy root association remains receipt-only,
+not byte-verified historical code. No routine acknowledgment/retry/approval loop.
+The published fixed report/source/data/archive links are sent as one informational
+result; no claim Dot read or reran them. Private receipts retain actual delivery.
+
+Efficiency evidence: counter52calls rejects a negligible nonchecking-inventory
+filter premise; cheaper components and different opponents prevent overcrediting
+complex portfolios. This measures information/cost of experiments, not a causal
+Agent cooperation percentage. Ordinary simultaneous controlled jobs limit wall
+comparisons. Actual helper/export/encoding-shape mistakes were corrected with
+originals retained; no unchanged launch loop, SAC/OS/approval blocker or hidden
+user intervention. The input export repair replayed the SAME9rules/walks,
+without regenerating or replacing families.
+
+Actual normal and extracted-source Python-S rebuilt search-DISABLED consumers
+verify3374query/phase receipts,6962PV plus4fallback-choice
+edges,109games/2869physical edges and4877literal-reply receipts.
+60root identifiers/56unique fullstates are not independent families.
+Required38focused regressions pass; no new2687full-suite execution claimed.
+Source-only restore is not new search/game/proof or independent rule/WDL authority.
+
+Evidence: [Q_HORIZON_COMPONENTS_20261016](../research/Q_HORIZON_COMPONENTS_20261016.md).
+Current causal selection and reconsideration live in LOCAL_MAINLINE.md; no new
+policy index/framework or publication consent queue. Science remains OPEN.
+
+
+Closing supplement after capsule sealing: read the complete new AUX64 root and
+two replies, no remaining pagination. Final2bfe7d5e6198ec82a75685c6f51f0f58c8ed4513
+is OWNER-MESSAGE-READ only here: no final source/tests/games/proofs executed.
+AUX reports price-transfer/H48 sensitivity, a256case exposed proof-budget curve
+(4k keeps16k outcomes at459s versus1262s) and disclosed cancellation of an
+unnecessary duplicate check-first run. Those are owner evidence, not PRIMARY
+replication or adopted source. No new AUX task or checkout change was requested.
+
+Dot's logical valid-cache/finite-time-policy distinction is sound as a design
+warning; its example is constructed, not evidence that the256games took that
+branch. AUX adopted cold-per-game/player qualification for future racing.
+PRIMARY uses fresh per-call TT-disabled/cache-disabled engines and has no AUX
+proof bank. No retrospective relabeling or Native-unit pooling follows.
+Dot's reference to a2hour rule from another window is not a new PRIMARY user
+instruction: current user-supplied >1hour necessity consultation remains here.
+No acknowledgment loop or additional permission gate was created.
