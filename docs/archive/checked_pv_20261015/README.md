@@ -33,3 +33,8 @@ only in a fresh restored workspace and under the original frozen limits if neede
 do not overwrite the published records or interpret a timing rerun as the original.
 
 Report: `docs/research/CHECKED_PV_REPLAY_AND_WIDE_PREPARATION.md`.
+
+Late correction: frozen `exact_generic_preference_solver_v3.py` is a board-action
+reference and must not certify declaration games. Current source adds explicit
+unsupported-domain refusal after PRIMARY reproduced AUX's counterexample. The
+Native/caller curves and qualification above do not invoke that reference.

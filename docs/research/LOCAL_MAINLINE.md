@@ -69,6 +69,11 @@ declaration/promotion/drop/auxiliary semantics. If avoidable share is small,
 reject this optimization and compare actual consumer/algorithm costs instead.
 Do not repeat unchanged q curves or duplicate AUX solver/learning work.
 
+Late AUX declaration supplement exposed PRIMARY's same historical reference:
+four falseLOSS cases reproduced, scoped guard adopted; five declaration/control
+and38related checks pass. It explicitly refuses declaration domains; no new
+session-aware solver or old-label rewrite. Frozen q/caller studies do not call it.
+
 Prior caller study:2640tests,52source-built API checks/35full roots/4497actions/
 two32goals and280final-source controls passed BEFORE the current C repair.
 Fresh248calls yielded1deeper/123same, q4completion unchanged, no general gain;

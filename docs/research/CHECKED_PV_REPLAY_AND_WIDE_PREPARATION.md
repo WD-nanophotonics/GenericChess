@@ -139,3 +139,18 @@ Historical source export builds V1/V2 from C sources using installedPython312/Zi
 no binary image is shipped. The recipe does not rerun resource curves or prove
 clean-machine installation, all-domain equivalence, learning or strength.
 Exact originals remain ignored; outgoing copies sanitize machine/user paths.
+
+## Late declaration-domain supplement
+
+Final Slack thread supplement1792052598.523969 led to pinned AUX
+[dfc9085d8d84096e105dd64408455f2e3410d765](https://github.com/WD-nanophotonics/GenericChess/blob/dfc9085d8d84096e105dd64408455f2e3410d765/results/dev_aux/task1810/README.md).
+PRIMARY's historical reference matches the reported pre-fix working source.
+Four local real-session TT/nonTT WIN/RESTART cases reproduce false strongLOSS;
+ordinary no-claim control passes. The same minimal guard now explicitly refuses
+nonempty declaration domains: UNRESOLVED, strongFalse/no values/zero expansion.
+Five tests physically check claims and ordinary control;38related checks pass.
+No session-aware solver, old-label rewrite or Native/default change. The frozen
+archive deliberately retains old historical source; do not use its board-only
+labels for declaration games. These q/caller studies do not invoke that solver.
+[Local evidence](data/reference_declaration_scope_20261015.json) distinguishes
+GitLF and workingCRLF source hashes and records the corrected assertion failure.

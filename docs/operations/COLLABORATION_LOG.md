@@ -1,3 +1,23 @@
+## Late auxiliary declaration evidence adopted locally —2026-10-15
+
+Final whole-thread read discovers AUX EVIDENCE1792052598.523969, posted after
+initial recovery. Pinneddfc9085d8d84096e105dd64408455f2e3410d765 report/source/test
+are read. PRIMARY's existing historical reference matches the reported pre-fix
+working-file SHA cdbac7b7 (GitLF/workingCRLF distinction retained). Four local
+real-session TT/nonTT WIN/RESTART cases fail with strongLOSS; ordinary control
+passes. PRIMARY adopts the same eight-line unsupported-declaration refusal and
+version update into its own script. Guarded source equals pinned AUX source.
+Five tests now pass, including physical claims and ordinary LOSS control;
+38related checks pass. No session-aware solver, old-label rewrite or new games.
+
+This final thread supplement exposed a shared historical reference defect and
+was independently reproduced/fixed locally. The frozen q/caller studies never
+invoke that solver; archive source remains historical and unsupported for claims.
+AUX's second-cursor fix5c7eb12a/108tests remains owner-reported, not rerun here.
+No AUX checkout/state writes, competing solver, automatic merge or extra worker.
+No measured collaboration efficiency percentage. Initial data-record hash check
+stopped on LF/CRLF mismatch and was corrected before publication; no hidden issue.
+
 ## Frozen research continuation after repair —2026-10-15
 
 PRIMARY resumes the original session clock and analyzes all96preserved q32slots:
