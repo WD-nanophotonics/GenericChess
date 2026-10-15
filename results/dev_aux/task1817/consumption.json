@@ -1,0 +1,78 @@
+{
+  "status": "ALL_SAVED_WITNESSES_INDEPENDENTLY_VERIFIED_AND_EXECUTED",
+  "cases": [
+    {
+      "label": "EXPOSED_ROOT0_NONE",
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 12,
+        "seconds": 0.00618130000657402,
+        "terminal_leaves": {
+          "checkmate:None": 2
+        },
+        "session_transitions": 11
+      },
+      "physical_path": [
+        "ACTION",
+        "ACTION",
+        "ACTION",
+        "ACTION",
+        "ACTION",
+        "ACTION",
+        "ACTION"
+      ],
+      "physical_terminal": "checkmate",
+      "physical_declaration": null,
+      "winner": 0,
+      "root_record_prefix": 0,
+      "seconds": 0.008037500010686927
+    },
+    {
+      "label": "ACTUAL_IMMEDIATE_WIN",
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 2,
+        "seconds": 0.0001517000055173412,
+        "terminal_leaves": {
+          "declaration:WIN": 1
+        },
+        "session_transitions": 1
+      },
+      "physical_path": [
+        "DECLARATION"
+      ],
+      "physical_terminal": "declaration",
+      "physical_declaration": "WIN",
+      "winner": 0,
+      "root_record_prefix": 0,
+      "seconds": 0.00040809999336488545
+    },
+    {
+      "label": "PLAYED_PREFIX_DEFENDER_LOSS",
+      "verification": {
+        "verified": true,
+        "reason": "verified",
+        "nodes": 15,
+        "seconds": 0.0058357999951113015,
+        "terminal_leaves": {
+          "declaration:LOSS": 4,
+          "checkmate:None": 2
+        },
+        "session_transitions": 14
+      },
+      "physical_path": [
+        "DECLARATION"
+      ],
+      "physical_terminal": "declaration",
+      "physical_declaration": "LOSS",
+      "winner": 0,
+      "root_record_prefix": 1,
+      "seconds": 0.006443400008720346
+    }
+  ],
+  "proof_calls_at_consumption": 0,
+  "new_native_go": 0,
+  "training_games": 0
+}

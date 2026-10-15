@@ -1,0 +1,184 @@
+{
+  "cases": [
+    {
+      "root": 0,
+      "profile": "NONE",
+      "target": 0,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 0,
+      "profile": "NONE",
+      "target": 1,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 0,
+      "profile": "CONDITIONAL_WIN_RESTART",
+      "target": 0,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 0,
+      "profile": "CONDITIONAL_WIN_RESTART",
+      "target": 1,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 0,
+      "profile": "CONDITIONAL_RESTART_LOSS",
+      "target": 0,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 0,
+      "profile": "CONDITIONAL_RESTART_LOSS",
+      "target": 1,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 1,
+      "profile": "NONE",
+      "target": 0,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 1,
+      "profile": "NONE",
+      "target": 1,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 1,
+      "profile": "CONDITIONAL_WIN_RESTART",
+      "target": 0,
+      "exact_for_player0": 0
+    },
+    {
+      "root": 1,
+      "profile": "CONDITIONAL_WIN_RESTART",
+      "target": 1,
+      "exact_for_player0": 0
+    },
+    {
+      "root": 1,
+      "profile": "CONDITIONAL_RESTART_LOSS",
+      "target": 0,
+      "exact_for_player0": 0
+    },
+    {
+      "root": 1,
+      "profile": "CONDITIONAL_RESTART_LOSS",
+      "target": 1,
+      "exact_for_player0": 0
+    },
+    {
+      "root": 2,
+      "profile": "NONE",
+      "target": 0,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 2,
+      "profile": "NONE",
+      "target": 1,
+      "exact_for_player0": 1
+    },
+    {
+      "root": 2,
+      "profile": "CONDITIONAL_WIN_RESTART",
+      "target": 0,
+      "exact_for_player0": 0
+    },
+    {
+      "root": 2,
+      "profile": "CONDITIONAL_WIN_RESTART",
+      "target": 1,
+      "exact_for_player0": 0
+    },
+    {
+      "root": 2,
+      "profile": "CONDITIONAL_RESTART_LOSS",
+      "target": 0,
+      "exact_for_player0": 0
+    },
+    {
+      "root": 2,
+      "profile": "CONDITIONAL_RESTART_LOSS",
+      "target": 1,
+      "exact_for_player0": 0
+    }
+  ],
+  "roots": [
+    {
+      "k": 3,
+      "b": 12,
+      "r": 9
+    },
+    {
+      "k": 11,
+      "b": 0,
+      "r": 15
+    },
+    {
+      "k": 0,
+      "b": 2,
+      "r": 15
+    },
+    {
+      "k": 12,
+      "b": 15,
+      "r": 5
+    },
+    {
+      "k": 0,
+      "b": 10,
+      "r": 7
+    },
+    {
+      "k": 12,
+      "b": 0,
+      "r": 11
+    },
+    {
+      "k": 13,
+      "b": 11,
+      "r": 0
+    },
+    {
+      "k": 7,
+      "b": 5,
+      "r": 8
+    }
+  ],
+  "max_ply": 8,
+  "max_depth": 9,
+  "proof_nodes": 65536,
+  "seconds": [
+    0.1,
+    1.0,
+    5.0
+  ],
+  "repetitions": 2,
+  "algorithms": [
+    "ANDOR",
+    "SESSION_PN"
+  ],
+  "global_seconds": 600,
+  "verification_nodes": 262144,
+  "verification_seconds": 3.0,
+  "expected_seconds": 180,
+  "source_sha256": {
+    "scripts/generic_session_win_proof.py": "785d1e1afe89de7d07b6e4c921bddd1f353525d6d3e59efff15c84194ecfa18d",
+    "scripts/generic_session_win_proof_pn.py": "5d45ca15281394d5cb7083a8e7da0076b2438024fddf5945d62389b8480d8eda",
+    "scripts/generic_session_proof_validation.py": "26ea1554b04f8737cb8a18b867c2cdd1347fb5d460832b3bef14010255f2bd06",
+    "results/dev_aux/task1816/compare.py": "03a6f49486704b33b4b61f8ef35c61387d163fbb193dad3609a11977db158853"
+  },
+  "old_call_file": "results\\dev_aux\\task1808\\calls.jsonl",
+  "old_call_sha256": "b1802a704f31c5551c9ba23967a470a2efe617eb35570e0aa0f8737a1e3c6e51",
+  "new_native_go": 0,
+  "training_games": 0,
+  "reference_nodes_generated": 0,
+  "scope": "exposed completed9root/profile references only, method/cost engineering comparison, not new independent holdout or price learning; original1808partial/cap untouched",
+  "decision": "Would same public-session certificate PN change useful proof coverage/cost enough to retain it as an optional future assay, or defer it? all18case targets, budgets and2counterbalanced repeats fixed; no extension on result"
+}

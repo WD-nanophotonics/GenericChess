@@ -50,13 +50,17 @@ class SessionProofResult:
 
 def choices(session,budget):
     budget.poll()
-    if session.result.status is not SessionStatus.ONGOING:return ()
-    actions=tuple(SessionChoice('ACTION',action=a) for a in _ordered(session.legal_actions()))
+    if session.result.status is not SessionStatus.ONGOING:return
+    # An OR node may finish after a real claim without needing a board frontier.
+    # Exhaustion at an AND node still includes every owned claim and board move.
+    for declaration in sorted(session.compiled.declarations,key=lambda d:d.declaration_id):
+        budget.poll()
+        if declaration.owner==session.state.position.side_to_move:
+            yield SessionChoice('DECLARATION',declaration_id=declaration.declaration_id)
     budget.poll()
-    declarations=tuple(SessionChoice('DECLARATION',declaration_id=d.declaration_id)
-                       for d in sorted(session.compiled.declarations,key=lambda d:d.declaration_id)
-                       if d.owner==session.state.position.side_to_move)
-    budget.poll();return declarations+actions
+    actions=_ordered(session.legal_actions());budget.poll()
+    for action in actions:
+        budget.poll();yield SessionChoice('ACTION',action=action)
 
 
 def execute(session,choice):
@@ -128,11 +132,13 @@ def verify_session_certificate(session,certificate,*,max_nodes=65536,seconds=1.,
             if ok:leaves[result.status.value+':'+str(result.declaration_outcome)]=leaves.get(result.status.value+':'+str(result.declaration_outcome),0)+1
             return ok
         if node.rank==0 or node.terminal is not None:return False
-        legal=set(choices(current,b));edges=[c for c,_ in node.edges]
-        if not edges or len(set(edges))!=len(edges) or not set(edges)<=legal:return False
+        edges=[c for c,_ in node.edges]
+        if not edges or len(set(edges))!=len(edges):return False
         if current.state.position.side_to_move==certificate.target:
             if len(edges)!=1:return False
-        elif set(edges)!=legal:return False
+            # Independent public submit/declare below validates this one edge.
+            # Do not enumerate unrelated OR alternatives merely for membership.
+        elif set(edges)!=set(choices(current,b)):return False
         for choice,childnode in node.edges:
             if not isinstance(childnode,SessionProofNode) or childnode.rank>=node.rank:return False
             b.poll();child=GameSession.replay(current.compiled,current.to_record());b.poll()

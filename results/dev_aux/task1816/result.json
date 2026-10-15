@@ -1,0 +1,106 @@
+{
+  "status": "COMPLETE",
+  "error": null,
+  "active": {},
+  "planned_calls": 216,
+  "complete_calls": 216,
+  "elapsed_seconds": 46.91683290000947,
+  "summary": [
+    {
+      "algorithm": "ANDOR",
+      "seconds_budget": 0.1,
+      "calls": 36,
+      "proved": 2,
+      "independently_verified": 2,
+      "physical_wins": 2,
+      "proof_seconds": 1.4567229000240332,
+      "verification_seconds": 0.0015608999965479597,
+      "nodes": 14155,
+      "reasons": {
+        "time_budget": 14,
+        "no_forced_win_in_exhausted_tree": 20,
+        "finite_session_all_defense_certificate": 2
+      }
+    },
+    {
+      "algorithm": "SESSION_PN",
+      "seconds_budget": 0.1,
+      "calls": 36,
+      "proved": 2,
+      "independently_verified": 2,
+      "physical_wins": 2,
+      "proof_seconds": 0.9700246000720654,
+      "verification_seconds": 0.0015684999962104484,
+      "nodes": 8823,
+      "reasons": {
+        "time_budget": 8,
+        "no_forced_win_in_exhausted_tree": 26,
+        "finite_session_all_defense_certificate": 2
+      }
+    },
+    {
+      "algorithm": "ANDOR",
+      "seconds_budget": 1.0,
+      "calls": 36,
+      "proved": 2,
+      "independently_verified": 2,
+      "physical_wins": 2,
+      "proof_seconds": 14.05679319993942,
+      "verification_seconds": 0.001560000004246831,
+      "nodes": 141074,
+      "reasons": {
+        "time_budget": 14,
+        "no_forced_win_in_exhausted_tree": 20,
+        "finite_session_all_defense_certificate": 2
+      }
+    },
+    {
+      "algorithm": "SESSION_PN",
+      "seconds_budget": 1.0,
+      "calls": 36,
+      "proved": 10,
+      "independently_verified": 10,
+      "physical_wins": 10,
+      "proof_seconds": 1.4060852999973577,
+      "verification_seconds": 0.05251220001082402,
+      "nodes": 12416,
+      "reasons": {
+        "finite_session_all_defense_certificate": 10,
+        "no_forced_win_in_exhausted_tree": 26
+      }
+    },
+    {
+      "algorithm": "ANDOR",
+      "seconds_budget": 5.0,
+      "calls": 36,
+      "proved": 10,
+      "independently_verified": 10,
+      "physical_wins": 10,
+      "proof_seconds": 27.031873099927907,
+      "verification_seconds": 0.05546600000525359,
+      "nodes": 255652,
+      "reasons": {
+        "finite_session_all_defense_certificate": 10,
+        "no_forced_win_in_exhausted_tree": 26
+      }
+    },
+    {
+      "algorithm": "SESSION_PN",
+      "seconds_budget": 5.0,
+      "calls": 36,
+      "proved": 10,
+      "independently_verified": 10,
+      "physical_wins": 10,
+      "proof_seconds": 1.402209199979552,
+      "verification_seconds": 0.05173430001013912,
+      "nodes": 12416,
+      "reasons": {
+        "finite_session_all_defense_certificate": 10,
+        "no_forced_win_in_exhausted_tree": 26
+      }
+    }
+  ],
+  "new_native_go": 0,
+  "training_games": 0,
+  "new_reference_nodes": 0
+}

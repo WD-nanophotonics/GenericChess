@@ -1,0 +1,49 @@
+{
+  "purpose": "independent actual certificate replay and execution, not more price/game evidence",
+  "nodes_cap": 65536,
+  "seconds_cap": 1.0,
+  "max_depth": 9,
+  "cases": [
+    {
+      "label": "EXPOSED_ROOT0_NONE",
+      "rules_file": "rules_0.json",
+      "rules_sha256": "f2f21191b64ee4fbb933c451d89c86f62dbe23aa7af309cefe064b5537fc9768",
+      "certificate_file": "certificate_0.json",
+      "certificate_sha256": "c48ff3f7cb67f71bb0fbce47087f99af24727ee949e62ab29ea541a9cb17e824",
+      "proof_nodes": 1028,
+      "proof_seconds": 0.13890119999996386,
+      "proof_rank": 7,
+      "actual_root_prefix_actions": 0
+    },
+    {
+      "label": "ACTUAL_IMMEDIATE_WIN",
+      "rules_file": "rules_1.json",
+      "rules_sha256": "83161401cd6386f578a4dc9a4afaa63b41f8b0289b17172e4f56690f6c1499f3",
+      "certificate_file": "certificate_1.json",
+      "certificate_sha256": "7981a2ecdaac88de2cc88405c6d2a9205f1b468c1d563952c00bd3bca8cee8c0",
+      "proof_nodes": 2,
+      "proof_seconds": 0.0001362999901175499,
+      "proof_rank": 1,
+      "actual_root_prefix_actions": 0
+    },
+    {
+      "label": "PLAYED_PREFIX_DEFENDER_LOSS",
+      "rules_file": "rules_2.json",
+      "rules_sha256": "83305a1de6b50eef570a2aaa277e778677e7c60534df49c19e361cea0712c68e",
+      "certificate_file": "certificate_2.json",
+      "certificate_sha256": "b46c92361100adc1aae2450a7184c64fea935396e56ddfdbffaa25d985cdbb51",
+      "proof_nodes": 76,
+      "proof_seconds": 0.008680500002810732,
+      "proof_rank": 6,
+      "actual_root_prefix_actions": 1
+    }
+  ],
+  "new_native_go": 0,
+  "training_games": 0,
+  "source_sha256": {
+    "scripts/generic_session_win_proof_pn.py": "5d45ca15281394d5cb7083a8e7da0076b2438024fddf5945d62389b8480d8eda",
+    "scripts/generic_session_win_proof.py": "785d1e1afe89de7d07b6e4c921bddd1f353525d6d3e59efff15c84194ecfa18d",
+    "scripts/generic_session_certificate_json.py": "4998945df28eae722f0f0c6598b957dfbad3ee502b69a8fd67b71977c1919200",
+    "results/dev_aux/task1817/artifacts.py": "91d616fbe9cc476cf946964bee2a89aee3e15c561caa25265e1f86f308facaf3"
+  }
+}

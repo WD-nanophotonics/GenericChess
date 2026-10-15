@@ -1,0 +1,285 @@
+{
+  "root_record": {
+    "actions": [],
+    "resigned_by": null,
+    "ruleset_fingerprint": "38869dafdec139af4c7396db880a7cd2c8bb4178b3f68aac288a45a7f52ee78f",
+    "schema_version": 1
+  },
+  "root_state_repr_sha256": "956308416a1fb0712dd633fc008521704a5490a13f1babf9493abb0a4c4baab2",
+  "ruleset_fingerprint": "38869dafdec139af4c7396db880a7cd2c8bb4178b3f68aac288a45a7f52ee78f",
+  "schema_version": 1,
+  "target": 0,
+  "tree": {
+    "edges": [
+      {
+        "child": {
+          "edges": [
+            {
+              "child": {
+                "edges": [
+                  {
+                    "child": {
+                      "edges": [
+                        {
+                          "child": {
+                            "edges": [
+                              {
+                                "child": {
+                                  "edges": [
+                                    {
+                                      "child": {
+                                        "edges": [
+                                          {
+                                            "child": {
+                                              "edges": [],
+                                              "rank": 0,
+                                              "terminal": {
+                                                "declaration_id": null,
+                                                "declaration_outcome": null,
+                                                "declaration_score": null,
+                                                "declared_by": null,
+                                                "resigned_by": null,
+                                                "status": "checkmate",
+                                                "winner": 0
+                                              }
+                                            },
+                                            "choice": {
+                                              "action": {
+                                                "from": [
+                                                  1,
+                                                  2
+                                                ],
+                                                "kind": "board",
+                                                "promotion_target_id": null,
+                                                "to": [
+                                                  0,
+                                                  2
+                                                ]
+                                              },
+                                              "kind": "ACTION"
+                                            }
+                                          }
+                                        ],
+                                        "rank": 1,
+                                        "terminal": null
+                                      },
+                                      "choice": {
+                                        "action": {
+                                          "from": [
+                                            0,
+                                            1
+                                          ],
+                                          "kind": "board",
+                                          "promotion_target_id": null,
+                                          "to": [
+                                            0,
+                                            0
+                                          ]
+                                        },
+                                        "kind": "ACTION"
+                                      }
+                                    }
+                                  ],
+                                  "rank": 2,
+                                  "terminal": null
+                                },
+                                "choice": {
+                                  "action": {
+                                    "from": [
+                                      1,
+                                      0
+                                    ],
+                                    "kind": "board",
+                                    "promotion_target_id": null,
+                                    "to": [
+                                      1,
+                                      2
+                                    ]
+                                  },
+                                  "kind": "ACTION"
+                                }
+                              }
+                            ],
+                            "rank": 3,
+                            "terminal": null
+                          },
+                          "choice": {
+                            "action": {
+                              "from": [
+                                0,
+                                2
+                              ],
+                              "kind": "board",
+                              "promotion_target_id": null,
+                              "to": [
+                                0,
+                                1
+                              ]
+                            },
+                            "kind": "ACTION"
+                          }
+                        },
+                        {
+                          "child": {
+                            "edges": [
+                              {
+                                "child": {
+                                  "edges": [
+                                    {
+                                      "child": {
+                                        "edges": [
+                                          {
+                                            "child": {
+                                              "edges": [],
+                                              "rank": 0,
+                                              "terminal": {
+                                                "declaration_id": null,
+                                                "declaration_outcome": null,
+                                                "declaration_score": null,
+                                                "declared_by": null,
+                                                "resigned_by": null,
+                                                "status": "checkmate",
+                                                "winner": 0
+                                              }
+                                            },
+                                            "choice": {
+                                              "action": {
+                                                "from": [
+                                                  1,
+                                                  0
+                                                ],
+                                                "kind": "board",
+                                                "promotion_target_id": null,
+                                                "to": [
+                                                  0,
+                                                  0
+                                                ]
+                                              },
+                                              "kind": "ACTION"
+                                            }
+                                          }
+                                        ],
+                                        "rank": 1,
+                                        "terminal": null
+                                      },
+                                      "choice": {
+                                        "action": {
+                                          "from": [
+                                            0,
+                                            3
+                                          ],
+                                          "kind": "board",
+                                          "promotion_target_id": null,
+                                          "to": [
+                                            0,
+                                            2
+                                          ]
+                                        },
+                                        "kind": "ACTION"
+                                      }
+                                    }
+                                  ],
+                                  "rank": 2,
+                                  "terminal": null
+                                },
+                                "choice": {
+                                  "action": {
+                                    "from": [
+                                      2,
+                                      1
+                                    ],
+                                    "kind": "board",
+                                    "promotion_target_id": null,
+                                    "to": [
+                                      2,
+                                      2
+                                    ]
+                                  },
+                                  "kind": "ACTION"
+                                }
+                              }
+                            ],
+                            "rank": 3,
+                            "terminal": null
+                          },
+                          "choice": {
+                            "action": {
+                              "from": [
+                                0,
+                                2
+                              ],
+                              "kind": "board",
+                              "promotion_target_id": null,
+                              "to": [
+                                0,
+                                3
+                              ]
+                            },
+                            "kind": "ACTION"
+                          }
+                        }
+                      ],
+                      "rank": 4,
+                      "terminal": null
+                    },
+                    "choice": {
+                      "action": {
+                        "from": [
+                          3,
+                          0
+                        ],
+                        "kind": "board",
+                        "promotion_target_id": null,
+                        "to": [
+                          2,
+                          1
+                        ]
+                      },
+                      "kind": "ACTION"
+                    }
+                  }
+                ],
+                "rank": 5,
+                "terminal": null
+              },
+              "choice": {
+                "action": {
+                  "from": [
+                    0,
+                    3
+                  ],
+                  "kind": "board",
+                  "promotion_target_id": null,
+                  "to": [
+                    0,
+                    2
+                  ]
+                },
+                "kind": "ACTION"
+              }
+            }
+          ],
+          "rank": 6,
+          "terminal": null
+        },
+        "choice": {
+          "action": {
+            "from": [
+              1,
+              2
+            ],
+            "kind": "board",
+            "promotion_target_id": null,
+            "to": [
+              1,
+              0
+            ]
+          },
+          "kind": "ACTION"
+        }
+      }
+    ],
+    "rank": 7,
+    "terminal": null
+  }
+}

@@ -1,0 +1,984 @@
+{
+  "repetitions": 20,
+  "order": "alternating fixture order each repetition; proof then verifier; after comparison counterbalanced",
+  "new_native_go": 0,
+  "training_games": 0,
+  "scope": "actual immediate declaration WIN, root record replay and actual public execution; not a mate-search speedup",
+  "source_sha256": "81eb7b935df800dd95b0180b9594110f9f3f399bb3c15764f1cef8a426ead225",
+  "rows": [
+    {
+      "repeat": 0,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00028070001280866563,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 5.119999696034938e-05
+      },
+      "verification_seconds": 0.00021980000019539148,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.7299996367655694e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 0,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.0007977999921422452,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005153999954927713
+      },
+      "verification_seconds": 0.0007799000013619661,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.000454099994385615
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 0,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008991999930003658,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005939999973634258
+      },
+      "verification_seconds": 0.0009497999999439344,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005579999997280538
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 1,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008494999929098412,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005569999921135604
+      },
+      "verification_seconds": 0.0009353999921586365,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005574999959208071
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 1,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.0006852000078652054,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.00044669999624602497
+      },
+      "verification_seconds": 0.0007302000012714416,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.00043510000978130847
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 1,
+      "fixture": "KRK4",
+      "proof_seconds": 0.0001686000032350421,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.739999712910503e-05
+      },
+      "verification_seconds": 0.0001843999925768003,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.4200001866556704e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 2,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00015639999764971435,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.4599990360438824e-05
+      },
+      "verification_seconds": 0.000182100004167296,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.460000491235405e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 2,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.0006682999955955893,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.00043220000225119293
+      },
+      "verification_seconds": 0.000723299992387183,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0004332999960752204
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 2,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008587999909650534,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005640999879688025
+      },
+      "verification_seconds": 0.0009234000026481226,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005485000001499429
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 3,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008282999915536493,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005429000011645257
+      },
+      "verification_seconds": 0.0009066999919014052,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005404000112321228
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 3,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.0006615000020246953,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.00043319999531377107
+      },
+      "verification_seconds": 0.0007282000005943701,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.00044169998727738857
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 3,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00016680000408086926,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.709999484475702e-05
+      },
+      "verification_seconds": 0.00018409999029245228,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.490000719670206e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 4,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00015300000086426735,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.369999805931002e-05
+      },
+      "verification_seconds": 0.00017729999672155827,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.350001108832657e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 4,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.0007355999987339601,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0004941999941365793
+      },
+      "verification_seconds": 0.000738000002456829,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.00043650000588968396
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 4,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008613000100012869,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005629000079352409
+      },
+      "verification_seconds": 0.0009422000002814457,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.000556800005142577
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 5,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.00082970000221394,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005505000008270144
+      },
+      "verification_seconds": 0.0009337999945273623,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005579999997280538
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 5,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.000676499999826774,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.00044419999176170677
+      },
+      "verification_seconds": 0.0007589000015286729,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.00044069999421481043
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 5,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00016769999638199806,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.6200002543628216e-05
+      },
+      "verification_seconds": 0.0001821999903768301,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.369999805931002e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 6,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00015500000154133886,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.400000034365803e-05
+      },
+      "verification_seconds": 0.0001756999990902841,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.33000095654279e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 6,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.0006714000046486035,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0004397000011522323
+      },
+      "verification_seconds": 0.0007279000128619373,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.00043399998685345054
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 6,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008505000005243346,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005574999959208071
+      },
+      "verification_seconds": 0.0009264999971492216,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005548999906750396
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 7,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008222000033129007,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005455000064102933
+      },
+      "verification_seconds": 0.0009171999990940094,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005452999903354794
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 7,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.0006550999969476834,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0004278999986127019
+      },
+      "verification_seconds": 0.000704799997038208,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0004199999966658652
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 7,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00016039999900385737,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.4899992644786835e-05
+      },
+      "verification_seconds": 0.00017810000281315297,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.339999577496201e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 8,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00015360000543296337,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.3400010326877236e-05
+      },
+      "verification_seconds": 0.00017769999976735562,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.560001252684742e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 8,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.000665700004901737,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.00043739999819081277
+      },
+      "verification_seconds": 0.0009502000029897317,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.00043149999692104757
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 8,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008812999876681715,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005806999979540706
+      },
+      "verification_seconds": 0.0009497999999439344,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005670999962603673
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 9,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008468000014545396,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005594999965978786
+      },
+      "verification_seconds": 0.0009310000023106113,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005546999891521409
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 9,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.0006819999980507419,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.00044750000233761966
+      },
+      "verification_seconds": 0.0007260000129463151,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0004312999953981489
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 9,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00016700000560376793,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.6200002543628216e-05
+      },
+      "verification_seconds": 0.00017920001118909568,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.300000728107989e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 10,
+      "fixture": "KRK4",
+      "proof_seconds": 0.0001512000017100945,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.260000423528254e-05
+      },
+      "verification_seconds": 0.0001731999946059659,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.260000423528254e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 10,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.0006648999988101423,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0004354999982751906
+      },
+      "verification_seconds": 0.0007244000007631257,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.00043339999683666974
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 10,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008563000010326505,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005673999985447153
+      },
+      "verification_seconds": 0.000930900001549162,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005517999961739406
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 11,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008341000066138804,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005452000041259453
+      },
+      "verification_seconds": 0.0009699000074760988,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005986000032862648
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 11,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.0006659000064246356,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.00043390000064391643
+      },
+      "verification_seconds": 0.0007241000130306929,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0004265000025043264
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 11,
+      "fixture": "KRK4",
+      "proof_seconds": 0.0001655999949434772,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.569999873638153e-05
+      },
+      "verification_seconds": 0.000182100004167296,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.3799998820759356e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 12,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00015160000475589186,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.3400010326877236e-05
+      },
+      "verification_seconds": 0.00017359999765176326,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.289999196771532e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 12,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.000658600009046495,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.00043250000453554094
+      },
+      "verification_seconds": 0.0007221999985631555,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.00043169999844394624
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 12,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008903999987524003,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005979999987175688
+      },
+      "verification_seconds": 0.0009406000026501715,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005620000010821968
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 13,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008741000056033954,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005841999955009669
+      },
+      "verification_seconds": 0.0009546000073896721,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005626000056508929
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 13,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.0006815999950049445,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.00044859999616164714
+      },
+      "verification_seconds": 0.0007311999943340197,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.00043509999522939324
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 13,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00016369999502785504,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.530001024249941e-05
+      },
+      "verification_seconds": 0.0001801999896997586,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.3499996536411345e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 14,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00015039999561849982,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.270000499673188e-05
+      },
+      "verification_seconds": 0.0001762000028975308,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.25000034738332e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 14,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.0006783999997423962,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0004464000085135922
+      },
+      "verification_seconds": 0.0007258999976329505,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0004321000014897436
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 14,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008479999960400164,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005602999881375581
+      },
+      "verification_seconds": 0.0009404000011272728,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005604000034509227
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 15,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008391000010306016,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005584000027738512
+      },
+      "verification_seconds": 0.0009234000026481226,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.000556800005142577
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 15,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.0006630999996559694,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0004360000020824373
+      },
+      "verification_seconds": 0.0007244000007631257,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0004318999999668449
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 15,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00016429999959655106,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.600000102072954e-05
+      },
+      "verification_seconds": 0.0001883000077214092,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.440000338945538e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 16,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00015069999790284783,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.370001261122525e-05
+      },
+      "verification_seconds": 0.00017279999156016856,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.2800005758181214e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 16,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.0006567000091308728,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0004324000037740916
+      },
+      "verification_seconds": 0.0007190000033006072,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.00042740000935737044
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 16,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008435000054305419,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.000548899988643825
+      },
+      "verification_seconds": 0.000971200002823025,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005906000005779788
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 17,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008522999996785074,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005647000070894137
+      },
+      "verification_seconds": 0.0009453000093344599,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005696000007446855
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 17,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.000679899996612221,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.00044380000326782465
+      },
+      "verification_seconds": 0.0007248000038089231,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0004344999906606972
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 17,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00016870000399649143,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.6499990276061e-05
+      },
+      "verification_seconds": 0.00018590000399854034,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.499999340623617e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 18,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00015310000162571669,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.270000499673188e-05
+      },
+      "verification_seconds": 0.0001779000012902543,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.2400002712383866e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 18,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.000679599994327873,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0004490999999688938
+      },
+      "verification_seconds": 0.0007335999980568886,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.00044069999421481043
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 18,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008540999988326803,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.0005629000079352409
+      },
+      "verification_seconds": 0.000939800011110492,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005626000056508929
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 19,
+      "fixture": "SHOGI9",
+      "proof_seconds": 0.0008493000059388578,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.000561400011065416
+      },
+      "verification_seconds": 0.0009132999985013157,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0005410000012489036
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 19,
+      "fixture": "CHESS8",
+      "proof_seconds": 0.0006626999966101721,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 0.00043559999903663993
+      },
+      "verification_seconds": 0.0007833999989088625,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 0.0004894000012427568
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    },
+    {
+      "repeat": 19,
+      "fixture": "KRK4",
+      "proof_seconds": 0.00016229999891947955,
+      "proof_frontier": {
+        "calls": 1,
+        "seconds": 4.509999416768551e-05
+      },
+      "verification_seconds": 0.00017810000281315297,
+      "verification_frontier": {
+        "calls": 1,
+        "seconds": 4.3799998820759356e-05
+      },
+      "proof_nodes": 3,
+      "verification_nodes": 2
+    }
+  ],
+  "summary": {
+    "KRK4": {
+      "proof_seconds": 0.00016134999896166846,
+      "verification_seconds": 0.00017865000700112432
+    },
+    "CHESS8": {
+      "proof_seconds": 0.0006698500001220964,
+      "verification_seconds": 0.0007269500129041262
+    },
+    "SHOGI9": {
+      "proof_seconds": 0.0008499999967170879,
+      "verification_seconds": 0.0009376000016345643
+    }
+  }
+}

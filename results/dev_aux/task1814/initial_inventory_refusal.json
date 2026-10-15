@@ -1,0 +1,22 @@
+{
+  "source": "results\\dev_aux\\task1803\\plan.json",
+  "sha256": "0feb35c0733052ca29f4b8a24a8518b7bb2ff0dfd1ea1356aa3e6a39d54b359d",
+  "first_input_family": 0,
+  "rows": [
+    {
+      "color": 0,
+      "source_side": 0,
+      "status": "UNSUPPORTED_EXACT_FRESH_SETUP",
+      "reason": "[INITIAL_SETUP_INVENTORY_MISMATCH] initial_setup_options[0].position: setup options must preserve the default piece inventory"
+    },
+    {
+      "color": 1,
+      "source_side": 1,
+      "status": "UNSUPPORTED_EXACT_FRESH_SETUP",
+      "reason": "[INITIAL_SETUP_INVENTORY_MISMATCH] initial_setup_options[0].position: setup options must preserve the default piece inventory"
+    }
+  ],
+  "new_native_go": 0,
+  "training_games": 0,
+  "interpretation": "color1 fresh turn1 cannot be expressed by public initial-setup schema; do not adopt a one-color bridge as a balanced paired study, reset history, or relabel existing results"
+}

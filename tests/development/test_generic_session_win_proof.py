@@ -186,3 +186,61 @@ def test_defender_winning_claim_cannot_be_treated_as_only_a_board_defense():
     assert current.to_record()==before and current.result.status is SessionStatus.ONGOING
     end=execute(current,SessionChoice('DECLARATION',declaration_id='claim'))
     assert end.winner==1 and end.declaration_outcome=='WIN'
+
+
+def test_immediate_claim_avoids_board_frontier_in_prover_and_independent_verifier(monkeypatch):
+    current=session(claim(0,'WIN'))
+    def unexpected_frontier(self):
+        raise AssertionError('unrelated board frontier requested before actual WIN claim')
+    monkeypatch.setattr(GameSession,'legal_actions',unexpected_frontier)
+    result=prove_session_win(current,max_depth=1,seconds=3.)
+    assert result.status=='PROVEN_WIN'
+    assert verify_session_certificate(current,result.certificate,seconds=3.)['verified']
+    cursor=SessionStrategyCursor(current,result.certificate,seconds=3.)
+    assert cursor.commit(current,cursor.choose(current)).winner==0
+
+
+@pytest.mark.parametrize('declaration_id',['missing','opponent'])
+def test_single_target_claim_is_independently_validated_by_public_declare(declaration_id):
+    current=session(claim(0,'WIN'),claim(1,'WIN','opponent'))
+    cert=prove_session_win(current,max_depth=1,seconds=3.).certificate
+    _,leaf=cert.tree.edges[0]
+    forged=replace(cert,tree=replace(cert.tree,edges=((SessionChoice('DECLARATION',declaration_id=declaration_id),leaf),)))
+    assert not verify_session_certificate(current,forged,seconds=3.)['verified']
+    assert current.result.status is SessionStatus.ONGOING
+
+
+def test_single_target_board_choice_still_requires_actual_public_legality():
+    from generic_chess.core.actions import BoardMove
+    from generic_chess.core.coordinates import Square
+    current=session(claim(0,'WIN'))
+    cert=prove_session_win(current,max_depth=1,seconds=3.).certificate
+    _,leaf=cert.tree.edges[0]
+    illegal=SessionChoice('ACTION',action=BoardMove(Square(0,0),Square(0,1)))
+    forged=replace(cert,tree=replace(cert.tree,edges=((illegal,leaf),)))
+    assert not verify_session_certificate(current,forged,seconds=3.)['verified']
+    assert current.result.status is SessionStatus.ONGOING
+
+
+@pytest.mark.parametrize('mode',['cancel','time'])
+def test_deferred_board_frontier_crossing_budget_cannot_issue_certificate(monkeypatch,mode):
+    current=session(k=1,b=3,r=8);record=current.to_record();flag=[False];clock=[0.]
+    original=GameSession.legal_actions
+    def crossing(self):
+        actions=original(self);flag[0]=True;clock[0]=2.;return actions
+    monkeypatch.setattr(GameSession,'legal_actions',crossing)
+    result=prove_session_win(current,max_depth=1,seconds=1.,cancel=(lambda:flag[0]) if mode=='cancel' else None,_clock=lambda:clock[0])
+    assert result.status=='UNKNOWN' and result.reason==('cancelled' if mode=='cancel' else 'time_budget')
+    assert result.certificate is None and current.to_record()==record
+
+
+def test_defender_frontier_cancellation_prevents_partial_verifier_acceptance(monkeypatch):
+    current=session(claim(1,'LOSS'),k=0,b=2,r=10,turn=1)
+    cert=prove_session_win(current,target=0,max_depth=8,seconds=3.,max_nodes=65536).certificate
+    flag=[False];original=GameSession.legal_actions;record=current.to_record()
+    def crossing(self):
+        actions=original(self);flag[0]=True;return actions
+    monkeypatch.setattr(GameSession,'legal_actions',crossing)
+    receipt=verify_session_certificate(current,cert,seconds=3.,cancel=lambda:flag[0])
+    assert not receipt['verified'] and receipt['reason']=='cancelled'
+    assert receipt['session_transitions']==0 and current.to_record()==record

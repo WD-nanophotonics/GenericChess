@@ -1303,3 +1303,24 @@ final evidence for PRIMARY's own adoption decision; no automatic integration.
 Own segment57 finish accepted61.236minutes/safe_checkpoint,6research stages;
 manual actualqualityreviewPASS, allownedproducersclosed, patrolACTIVE. The
 1500s reference cap was experimentcost, not a tool/runtime earlyfinish exception.
+
+
+## DEV_AUX58 active checkpoint —2026-10-15
+
+Own session6f484d5b active; prior57 stopped normally61.236min. Recovery saved
+exact channel/own/PRIMARY threads privately; no new roots/replies beyond known
+57 boundary, no routine acknowledgements. PRIMARY9a4bc4e declaration-guard
+adoption remains its report, not rerun here. Public remains the current user
+purpose; old Private/source-origin exclusions stay superseded.
+
+AUX optional SessionChoice lazy OR traversal removes unused immediate-claim
+frontiers while preserving full defenders/public edge execution. New Session
+PN on the18 already-complete exposed1808 targets proves all5known wins at1s
+in both counterbalanced repeats versus1for iterative AND/OR;216cost-curve calls
+46.917s,36verified actual wins across all caps,0Native/training/new exactlabels.
+This is mechanism/cost evidence, not more independent samples or price gain.
+Three saved typed JSON witnesses replay/verify/execute without proof search.
+Fresh named setup cannot import the existing balancedKRN roots: inventory and
+initial-side schema are real constraints, not permission gates. Exact scopes,
+failed assumptions and unchanged oldcaps are in PROGRESS_20261015_58.md.
+No default/Core/UI/PRIMARY writes, otherproject files, new workers or fees.

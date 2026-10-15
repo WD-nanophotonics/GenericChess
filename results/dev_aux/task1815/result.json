@@ -1,0 +1,84 @@
+{
+  "rows": [
+    {
+      "caller": "scripts.audit_f23v_minimal_analytic_evaluator",
+      "source_sha256": "6301737193dbc910dce81be8744d524fdd1c3ec780760a44d84a59e38e77b5c7",
+      "actual_claim": "WIN",
+      "actual_winner": 1,
+      "transport": {
+        "strong": false,
+        "root_value": null,
+        "optimal_actions": [],
+        "action_values": [],
+        "proof_depth": 0,
+        "stats": {
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1-DECLARATION-HISTORY-GUARD",
+          "states_expanded": 0,
+          "supported_scope": "board_actions_only; session declarations unsupported"
+        },
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:declarations"
+      }
+    },
+    {
+      "caller": "scripts.audit_f23v_minimal_analytic_evaluator",
+      "source_sha256": "6301737193dbc910dce81be8744d524fdd1c3ec780760a44d84a59e38e77b5c7",
+      "actual_claim": "RESTART",
+      "actual_winner": null,
+      "transport": {
+        "strong": false,
+        "root_value": null,
+        "optimal_actions": [],
+        "action_values": [],
+        "proof_depth": 0,
+        "stats": {
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1-DECLARATION-HISTORY-GUARD",
+          "states_expanded": 0,
+          "supported_scope": "board_actions_only; session declarations unsupported"
+        },
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:declarations"
+      }
+    },
+    {
+      "caller": "scripts.audit_f23v_minimal_analytic_evaluator_r1",
+      "source_sha256": "12def40a9549123f20d4301be616fcdb5694828b5b04500cf43d637286bc6ded",
+      "actual_claim": "WIN",
+      "actual_winner": 1,
+      "transport": {
+        "strong": false,
+        "root_value": null,
+        "optimal_actions": [],
+        "action_values": [],
+        "proof_depth": 0,
+        "stats": {
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1-DECLARATION-HISTORY-GUARD",
+          "states_expanded": 0,
+          "supported_scope": "board_actions_only; session declarations unsupported"
+        },
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:declarations"
+      }
+    },
+    {
+      "caller": "scripts.audit_f23v_minimal_analytic_evaluator_r1",
+      "source_sha256": "12def40a9549123f20d4301be616fcdb5694828b5b04500cf43d637286bc6ded",
+      "actual_claim": "RESTART",
+      "actual_winner": null,
+      "transport": {
+        "strong": false,
+        "root_value": null,
+        "optimal_actions": [],
+        "action_values": [],
+        "proof_depth": 0,
+        "stats": {
+          "solver_version": "exact_generic_preference_solver_v3@F23M-CORRECTIVE-R1-DECLARATION-HISTORY-GUARD",
+          "states_expanded": 0,
+          "supported_scope": "board_actions_only; session declarations unsupported"
+        },
+        "unresolved_reason": "REFERENCE_SOLVE_UNRESOLVED:declarations"
+      }
+    }
+  ],
+  "scope": "two direct historical worker field mappers called serially with actual public WIN/RESTART fixtures; input builders substituted explicitly, no multiprocessing/isolation, no corpus/labels/holdouts read or regenerated",
+  "new_native_go": 0,
+  "training_games": 0,
+  "caller_code_changes": 0
+}
